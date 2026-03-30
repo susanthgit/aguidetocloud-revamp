@@ -21,39 +21,14 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/themes.css">
   <link rel="stylesheet" href="/css/sections.css">
+  {{ partial "analytics.html" . }}
 </head>
-<body class="theme-amber">
+<body>
   {{ partial "nav.html" . }}
   <main>
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-
-  <!-- Theme & Layout Picker (prototype only) -->
-  {{ if .IsHome }}
-  <div class="theme-picker">
-    <h4>🎨 Color Theme</h4>
-    <button data-theme="default" class="active">
-      <span class="swatch" style="background: #00e5ff;"></span> Neon Cyan
-    </button>
-    <button data-theme="purple">
-      <span class="swatch" style="background: #b388ff;"></span> Neon Purple
-    </button>
-    <button data-theme="green">
-      <span class="swatch" style="background: #39ff14;"></span> Neon Green
-    </button>
-    <button data-theme="amber">
-      <span class="swatch" style="background: #ffab40;"></span> Warm Amber
-    </button>
-  </div>
-  <div class="layout-picker">
-    <h4>📐 Layout Style</h4>
-    <button data-layout="default" class="active">Grid (Default)</button>
-    <button data-layout="featured">Featured Hero</button>
-    <button data-layout="netflix">Netflix Rows</button>
-    <button data-layout="magazine">Magazine</button>
-  </div>
-  {{ end }}
   <script src="/js/switcher.js"></script>
 </body>
 </html>

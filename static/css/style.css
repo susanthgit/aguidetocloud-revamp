@@ -618,6 +618,14 @@ a:hover {
   background: rgba(0, 229, 255, 0.06);
 }
 .eco-card .eco-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.eco-card .eco-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(102, 255, 255, 0.2);
+}
 .eco-card h3 { font-size: 1rem; color: #fff; margin-bottom: 0.3rem; }
 .eco-card p { font-size: 0.85rem; color: var(--text-muted); }
 
@@ -826,6 +834,145 @@ a:hover {
   border-color: var(--neon-cyan);
   background: rgba(0, 229, 255, 0.05);
   box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+/* ── SEARCH ─────────────────────────────── */
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 1.15rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+.search-btn:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.search-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 26, 0.92);
+  backdrop-filter: blur(12px);
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+}
+.search-modal.active { display: flex; }
+
+.search-modal-inner {
+  width: 90%;
+  max-width: 640px;
+  position: relative;
+}
+
+.search-modal-close {
+  position: absolute;
+  top: -2.2rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.search-modal-close:hover { color: var(--neon-cyan); }
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.15rem;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 2px solid var(--border-glow);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(102, 255, 255, 0.2);
+}
+
+.search-results {
+  margin-top: 0.75rem;
+  max-height: 55vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.search-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.search-result-item:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.04);
+  box-shadow: 0 0 12px rgba(102, 255, 255, 0.1);
+}
+
+.search-result-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.search-result-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.search-result-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.search-result-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.search-no-results {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+/* ── COMMENTS ───────────────────────────── */
+.comments-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-glow);
+}
+.comments-section .giscus {
+  margin-top: 1rem;
 }
 
 /* ── RESPONSIVE ─────────────────────────── */

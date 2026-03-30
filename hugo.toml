@@ -14,6 +14,9 @@ summaryLength = 20
   learn_portal = "https://learn.aguidetocloud.com"
   ainews = "https://ainews.aguidetocloud.com"
 
+[outputs]
+  home = ["HTML", "RSS"]
+
 [taxonomies]
   tag = "tags"
   category = "categories"
