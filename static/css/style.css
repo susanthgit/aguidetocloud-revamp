@@ -1079,6 +1079,41 @@ a:hover {
   padding: 3rem;
 }
 
+/* ── AI NEWS TABS ───────────────────────── */
+.ainews-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.ainews-tab {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-heading);
+}
+.ainews-tab:hover, .ainews-tab.active {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.08);
+}
+.ainews-section-header {
+  grid-column: 1 / -1;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  padding: 1rem 0 0.5rem;
+  border-bottom: 1px solid rgba(102, 255, 255, 0.15);
+  margin-top: 1rem;
+}
+
 /* ── RESPONSIVE ─────────────────────────── */
 @media (max-width: 768px) {
   .video-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
