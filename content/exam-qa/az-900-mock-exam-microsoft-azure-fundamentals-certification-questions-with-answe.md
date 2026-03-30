@@ -5,7 +5,7 @@ youtube_id: "uhDcDLztBKk"
 card_tag: "AZ--900"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "az--900", "az--900 certification", "az--900 exam", "learnaiandcloud", "microsoft certification", "susanth sutheesh", "az-900 exam questions"]
-featured: true
+featured: false
 views: 116301
 likes: 2049
 ---

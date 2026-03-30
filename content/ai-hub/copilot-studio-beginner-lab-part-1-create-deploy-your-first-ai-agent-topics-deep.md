@@ -5,7 +5,7 @@ youtube_id: "u3IuLm8UuoI"
 card_tag: "Agentic AI"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiagents", "aiforbeginners", "chatbots", "copilotagent", "copilotbuilder"]
-featured: true
+featured: false
 views: 2701
 likes: 52
 ---

@@ -5,7 +5,7 @@ youtube_id: "WbTdbOrNSxs"
 card_tag: "Agentic AI"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiassistant", "aiautomation", "aichatbot", "aiproductivity", "aitraining"]
-featured: true
+featured: false
 views: 3299
 likes: 49
 ---

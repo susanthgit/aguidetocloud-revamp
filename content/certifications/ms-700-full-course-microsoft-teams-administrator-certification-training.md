@@ -5,7 +5,7 @@ youtube_id: "-Gs3dmS-jnE"
 card_tag: "MS--700"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "ms--700", "ms--700 certification", "ms--700 exam", "microsoft certification", "susanth sutheesh", "beginner tutorial"]
-featured: true
+featured: false
 views: 133577
 likes: 1210
 ---

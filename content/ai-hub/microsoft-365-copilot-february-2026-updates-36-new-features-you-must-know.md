@@ -5,7 +5,7 @@ youtube_id: "TKr-WB38ixQ"
 card_tag: "What's New"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiproductivity", "aiinmicrosoft365", "copilotchat", "copilotfeatures", "copilotnews"]
-featured: true
+featured: false
 views: 1335
 likes: 37
 ---

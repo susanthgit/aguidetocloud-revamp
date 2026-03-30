@@ -5,7 +5,7 @@ youtube_id: "lpsre6vWzCc"
 card_tag: "PL--900"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "microsoft certification", "pl--900", "pl--900 certification", "pl--900 exam", "susanth sutheesh", "beginner tutorial"]
-featured: true
+featured: false
 views: 148582
 likes: 2027
 ---

@@ -5,7 +5,7 @@ youtube_id: "sLIaWJC0NJE"
 card_tag: "Exam Tips"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "susanth sutheesh", "azure exam", "beginner tutorial", "free training voucher", "fundamentals certifications", "microsoft exam"]
-featured: true
+featured: false
 views: 180530
 likes: 2842
 ---

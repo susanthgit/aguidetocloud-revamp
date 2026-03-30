@@ -5,7 +5,7 @@ youtube_id: "anef67apIEA"
 card_tag: "AZ--204"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "az--204", "az--204 certification", "az--204 exam", "az-204", "learnaiandcloud", "susanth sutheesh", "az-204 certification"]
-featured: true
+featured: false
 views: 190758
 likes: 2591
 ---

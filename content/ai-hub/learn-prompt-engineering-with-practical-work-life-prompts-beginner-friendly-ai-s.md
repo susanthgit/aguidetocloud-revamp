@@ -5,7 +5,7 @@ youtube_id: "MBZ6RCR4VPc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aibeginners", "aiexplained", "aiinlife", "aiinwork", "aiproductivity"]
-featured: true
+featured: false
 views: 2356
 likes: 46
 ---

@@ -5,7 +5,7 @@ youtube_id: "1WAPZoxtPjU"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai tutorial", "microsoft 365 copilot", "susanth sutheesh", "beginner tutorial"]
-featured: true
+featured: false
 views: 2173
 likes: 23
 ---

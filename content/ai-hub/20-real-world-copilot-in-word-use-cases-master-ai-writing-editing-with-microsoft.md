@@ -5,7 +5,7 @@ youtube_id: "S823oKDnGWU"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai document editing", "ai writing tools", "ai writing in word", "ai for beginners", "ai in microsoft word", "ai tutorial", "copilot real use cases"]
-featured: true
+featured: false
 views: 2572
 likes: 27
 ---

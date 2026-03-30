@@ -5,7 +5,7 @@ youtube_id: "j26eNpUU0zM"
 card_tag: "AZ--900"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "az--900", "az--900 certification", "az--900 exam", "az900", "azure for beginners", "azure fundamentals", "learnaiandcloud"]
-featured: true
+featured: false
 views: 314926
 likes: 4583
 ---

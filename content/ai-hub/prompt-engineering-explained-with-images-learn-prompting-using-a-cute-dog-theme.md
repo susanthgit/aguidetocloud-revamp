@@ -5,7 +5,7 @@ youtube_id: "F1z6PesK1Nc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aibasics", "aiexplained", "aiforbeginners", "aiprompts", "cavalierkingcharlesspaniel"]
-featured: true
+featured: false
 views: 1564
 likes: 44
 ---

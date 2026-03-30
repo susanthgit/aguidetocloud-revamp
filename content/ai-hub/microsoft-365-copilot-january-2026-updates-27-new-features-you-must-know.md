@@ -5,7 +5,7 @@ youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiproductivity", "aiupdates", "copilotagent", "copilotinoutlook", "copilotinword"]
-featured: true
+featured: false
 views: 2039
 likes: 30
 ---

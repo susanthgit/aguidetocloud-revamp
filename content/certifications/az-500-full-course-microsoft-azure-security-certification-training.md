@@ -5,7 +5,7 @@ youtube_id: "m1VWSWlrJa8"
 card_tag: "AZ--500"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "az--500", "az--500 certification", "az--500 exam", "az-500", "az500 questions", "learnaiandcloud", "microsoft certification"]
-featured: true
+featured: false
 views: 156445
 likes: 2331
 ---

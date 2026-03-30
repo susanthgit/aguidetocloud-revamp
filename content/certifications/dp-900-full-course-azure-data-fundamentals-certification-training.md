@@ -5,7 +5,7 @@ youtube_id: "XbV0Di5ggvY"
 card_tag: "DP--900"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "dp--900", "dp--900 certification", "dp--900 exam", "dp-900", "data fundamentals", "learnaiandcloud", "microsoft certification"]
-featured: true
+featured: false
 views: 139797
 likes: 2162
 ---

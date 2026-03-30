@@ -5,7 +5,7 @@ youtube_id: "7NTgtKzmEnY"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai tutorial", "microsoft 365 copilot", "susanth sutheesh", "beginner tutorial"]
-featured: true
+featured: false
 views: 2013
 likes: 25
 ---

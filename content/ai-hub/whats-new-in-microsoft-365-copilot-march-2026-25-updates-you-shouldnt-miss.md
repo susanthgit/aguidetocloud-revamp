@@ -5,7 +5,7 @@ youtube_id: "FHD3Sez_MeU"
 card_tag: "What's New"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiinmicrosoft365", "copilotchat", "copilotfeatures", "copilotmarch2026", "copilotnews"]
-featured: true
+featured: false
 views: 1352
 likes: 21
 ---

@@ -5,7 +5,7 @@ youtube_id: "kGhw7z0sQC4"
 card_tag: "MS--900"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "ms--900", "ms--900 certification", "ms--900 exam", "ms-900", "microsoft certification", "microsoft365"]
-featured: true
+featured: false
 views: 206645
 likes: 3014
 ---

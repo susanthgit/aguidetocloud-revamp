@@ -5,7 +5,7 @@ youtube_id: "I1zvntPHNMk"
 card_tag: "AZ--104"
 tag_class: "cert"
 tags: ["a guide to cloud and ai", "az--104", "az--104 certification", "az--104 exam", "learnaiandcloud", "microsoft certification", "susanth sutheesh", "az-104"]
-featured: true
+featured: false
 views: 523083
 likes: 8009
 ---

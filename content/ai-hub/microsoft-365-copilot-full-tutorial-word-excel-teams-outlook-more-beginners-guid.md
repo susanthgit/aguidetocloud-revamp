@@ -5,7 +5,7 @@ youtube_id: "1beYHq8aMyE"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiforwork", "aiproductivity", "copilotforexcel", "copilotforteams", "copilotforword"]
-featured: true
+featured: false
 views: 55731
 likes: 815
 ---

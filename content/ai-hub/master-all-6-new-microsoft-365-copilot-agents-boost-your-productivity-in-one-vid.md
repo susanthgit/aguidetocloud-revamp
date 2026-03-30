@@ -5,7 +5,7 @@ youtube_id: "Kqq1kBPgYoY"
 card_tag: "Agentic AI"
 tag_class: "ai"
 tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiinmicrosoft365", "aiproductivitytools", "careercoach", "copilotagents", "copilotmasterclass"]
-featured: true
+featured: false
 views: 934
 likes: 22
 ---
