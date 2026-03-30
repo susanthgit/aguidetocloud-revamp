@@ -3,6 +3,10 @@ title: "👋 About"
 layout: "single"
 ---
 
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/images/logo_agtc_dark_1.jpg" alt="A Guide to Cloud & AI" style="width: 120px; height: 120px; object-fit: contain; border-radius: 16px; border: 1px solid var(--border-glow);">
+</div>
+
 ## About Me — Susanth Sutheesh
 
 Hi, I'm **Susanth Sutheesh** — a passionate cloud educator, Microsoft Technical Specialist, and content creator based in New Zealand 🇳🇿

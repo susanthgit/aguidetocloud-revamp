@@ -5,9 +5,19 @@
       <span class="hamburger-icon"></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
-      {{ end }}
+      <li><a href="/ai-hub/">🤖 AI Hub</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">☁️ Cloud & Certs ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="/cloud-labs/">☁️ Cloud Labs</a></li>
+          <li><a href="/certifications/">📜 Certifications</a></li>
+          <li><a href="/exam-qa/">📝 Exam Q&A</a></li>
+          <li><a href="/interview-prep/">💼 Interview Prep</a></li>
+          <li><a href="/music/">🎵 Study Music</a></li>
+        </ul>
+      </li>
+      <li><a href="/about/">👋 About</a></li>
+      <li><a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" class="nav-cta">☕ Resources</a></li>
     </ul>
   </div>
 </nav>
