@@ -1,0 +1,136 @@
+backend:
+  name: github
+  repo: susanthgit/aguidetocloud-revamp
+  branch: main
+  base_url: https://sveltia-cms-auth.susanth-ss.workers.dev
+
+media_folder: "static/images"
+public_folder: "/images"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ── AI Hub ──────────────────────────────────────────
+  - name: "ai-hub"
+    label: "🤖 AI Hub"
+    folder: "content/ai-hub"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!🤖)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string", hint: "The part after v= in the YouTube URL (e.g., 1WAPZoxtPjU)" }
+      - { label: "Card Tag", name: "card_tag", widget: "select", options: ["M365 Copilot", "Copilot Studio", "AI Foundry", "AI Agents", "AI Tools", "Prompt Engineering", "AI Overview"], default: "M365 Copilot" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "ai" }
+      - { label: "Tags", name: "tags", widget: "list", hint: "Comma-separated tags for search" }
+      - { label: "⭐ Author's Pick (Featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── Cloud Labs ──────────────────────────────────────
+  - name: "cloud-labs"
+    label: "☁️ Cloud Labs"
+    folder: "content/cloud-labs"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!☁️)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+      - { label: "Card Tag", name: "card_tag", widget: "select", options: ["Azure", "Intune", "Virtual Desktop", "Networking", "Security", "DevOps", "Microsoft 365", "Entra ID", "Power Platform"], default: "Azure" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "cloud" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "⭐ Author's Pick (Featured)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── Certifications ──────────────────────────────────
+  - name: "certifications"
+    label: "📜 Certifications"
+    folder: "content/certifications"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!📜)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+      - { label: "Card Tag", name: "card_tag", widget: "select", options: ["AZ-900", "AZ-104", "AZ-204", "AZ-400", "AZ-500", "SC-900", "MS-900", "MS-700", "PL-900", "DP-900", "AI-900", "SC-300", "MD-102"], default: "AZ-900" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "cert" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── Exam Q&A ────────────────────────────────────────
+  - name: "exam-qa"
+    label: "❓ Exam Q&A"
+    folder: "content/exam-qa"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!❓)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+      - { label: "Card Tag", name: "card_tag", widget: "select", options: ["AZ-900", "AZ-104", "AZ-204", "AZ-400", "AZ-500", "SC-900", "MS-900", "PL-900", "DP-900", "AI-900"], default: "AZ-900" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "cert" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── Interview Prep ──────────────────────────────────
+  - name: "interview-prep"
+    label: "💼 Interview Prep"
+    folder: "content/interview-prep"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!💼)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+      - { label: "Card Tag", name: "card_tag", widget: "select", options: ["Interview Prep", "Resume Tips", "Career Advice"], default: "Interview Prep" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "cloud" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── Study Music ─────────────────────────────────────
+  - name: "music"
+    label: "🎵 Study Music"
+    folder: "content/music"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "title", pattern: "^(?!🎵)" }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+      - { label: "Card Tag", name: "card_tag", widget: "hidden", default: "Study Music" }
+      - { label: "Tag Style", name: "tag_class", widget: "hidden", default: "music" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Views", name: "views", widget: "number", default: 0, required: false }
+      - { label: "Likes", name: "likes", widget: "number", default: 0, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── About Page ──────────────────────────────────────
+  - name: "pages"
+    label: "📄 Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
+          - { label: "Body", name: "body", widget: "markdown" }
