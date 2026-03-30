@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="page-hero">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+<div class="container">
+  <section class="section">
+    {{ with .Content }}
+      <div style="margin-bottom: 2rem; color: var(--text-secondary);">{{ . }}</div>
+    {{ end }}
+    <div class="video-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}

@@ -1,0 +1,206 @@
+/* ============================================
+   Theme Switcher — Preview different styles
+   ============================================ */
+
+.theme-picker {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  background: rgba(10, 10, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 16px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.theme-picker h4 {
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.theme-picker button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #e0e0f0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+.theme-picker button:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+}
+.theme-picker button.active {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 229, 255, 0.1);
+}
+.theme-picker .swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* ── LAYOUT SECTION ─────────────────── */
+.layout-picker {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 999;
+  background: rgba(10, 10, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 16px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.layout-picker h4 {
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.layout-picker button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #e0e0f0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+.layout-picker button:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+}
+.layout-picker button.active {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 229, 255, 0.1);
+}
+
+/* ── THEME: NEON CYAN (Default — already in main CSS) ── */
+
+/* ── THEME: NEON PURPLE ────────────────── */
+body.theme-purple {
+  --neon-cyan: #b388ff;
+  --neon-magenta: #ffab40;
+  --border-glow: rgba(179, 136, 255, 0.3);
+  --shadow-neon: 0 0 15px rgba(179, 136, 255, 0.2);
+  --shadow-neon-strong: 0 0 30px rgba(179, 136, 255, 0.4);
+}
+body.theme-purple .hero {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(179, 136, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 171, 64, 0.06) 0%, transparent 50%),
+    var(--bg-primary);
+}
+body.theme-purple .btn-primary { background: #b388ff; }
+body.theme-purple .btn-secondary { border-color: #b388ff; color: #b388ff; }
+body.theme-purple .site-logo span { color: #b388ff; text-shadow: 0 0 20px #b388ff; }
+
+/* ── THEME: NEON GREEN ─────────────────── */
+body.theme-green {
+  --neon-cyan: #39ff14;
+  --neon-magenta: #00e5ff;
+  --border-glow: rgba(57, 255, 20, 0.3);
+  --shadow-neon: 0 0 15px rgba(57, 255, 20, 0.2);
+  --shadow-neon-strong: 0 0 30px rgba(57, 255, 20, 0.4);
+}
+body.theme-green .hero {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(57, 255, 20, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 229, 255, 0.06) 0%, transparent 50%),
+    var(--bg-primary);
+}
+body.theme-green .btn-primary { background: #39ff14; }
+body.theme-green .btn-secondary { border-color: #39ff14; color: #39ff14; }
+body.theme-green .site-logo span { color: #39ff14; text-shadow: 0 0 20px #39ff14; }
+
+/* ── THEME: WARM AMBER ─────────────────── */
+body.theme-amber {
+  --bg-primary: #0f0c08;
+  --bg-secondary: #1a1510;
+  --bg-card: #231e16;
+  --bg-card-hover: #2d2618;
+  --neon-cyan: #ffab40;
+  --neon-magenta: #ff6e40;
+  --border-glow: rgba(255, 171, 64, 0.3);
+  --shadow-neon: 0 0 15px rgba(255, 171, 64, 0.2);
+  --shadow-neon-strong: 0 0 30px rgba(255, 171, 64, 0.4);
+}
+body.theme-amber .hero {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(255, 171, 64, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 110, 64, 0.06) 0%, transparent 50%),
+    var(--bg-primary);
+}
+body.theme-amber .btn-primary { background: #ffab40; color: #0f0c08; }
+body.theme-amber .btn-secondary { border-color: #ffab40; color: #ffab40; }
+body.theme-amber .site-logo span { color: #ffab40; text-shadow: 0 0 20px #ffab40; }
+body.theme-amber .site-nav { background: rgba(15, 12, 8, 0.95); }
+body.theme-amber .site-footer { background: var(--bg-secondary); }
+
+/* ── LAYOUT: FEATURED HERO ─────────────── */
+body.layout-featured .video-grid {
+  grid-template-columns: 1fr 1fr;
+}
+body.layout-featured .video-grid .video-card:first-child {
+  grid-column: 1 / -1;
+}
+body.layout-featured .video-grid .video-card:first-child .thumb {
+  aspect-ratio: 21/9;
+}
+body.layout-featured .video-grid .video-card:first-child .card-title {
+  font-size: 1.3rem;
+}
+
+/* ── LAYOUT: NETFLIX ROWS ──────────────── */
+body.layout-netflix .video-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  grid-template-columns: unset;
+}
+body.layout-netflix .video-grid .video-card {
+  min-width: 300px;
+  max-width: 300px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ── LAYOUT: MAGAZINE ──────────────────── */
+body.layout-magazine .video-grid {
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: auto;
+}
+body.layout-magazine .video-grid .video-card:nth-child(3n+1) {
+  grid-row: span 2;
+}
+body.layout-magazine .video-grid .video-card:nth-child(3n+1) .thumb {
+  aspect-ratio: 4/3;
+}

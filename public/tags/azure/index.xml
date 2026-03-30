@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on A Guide to Cloud &amp; AI</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on A Guide to Cloud &amp; AI</description>
+    <generator>Hugo</generator>
+    <language>en-nz</language>
+    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure DevOps CI/CD — Full Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-devops-cicd/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-devops-cicd/</guid>
+      <description>&lt;p&gt;This practical Azure DevOps hands-on lab takes you through the full CI/CD process — build, test, and deploy — using real-world examples.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure App Service Migration Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-app-service-migrate/</link>
+      <pubDate>Thu, 08 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-app-service-migrate/</guid>
+      <description>&lt;p&gt;Get hands-on with Azure App Service migration in this step-by-step tutorial. Whether you&amp;rsquo;re new to Azure or looking to sharpen your cloud migration skills, this practical lab shows you how to move your applications to Azure with confidence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AZ-104 — Azure Administrator</title>
+      <link>http://localhost:1313/certifications/az-104/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certifications/az-104/</guid>
+      <description>&lt;h2 id=&#34;about-this-certification&#34;&gt;About This Certification&lt;/h2&gt;&#xA;&lt;p&gt;Exam AZ-104 measures your ability to manage Azure identities, governance, storage, compute, and virtual networks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-topics&#34;&gt;Key Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Manage Azure identities and governance (15-20%)&lt;/li&gt;&#xA;&lt;li&gt;Implement and manage storage (15-20%)&lt;/li&gt;&#xA;&lt;li&gt;Deploy and manage Azure compute resources (20-25%)&lt;/li&gt;&#xA;&lt;li&gt;Configure and manage virtual networking (20-25%)&lt;/li&gt;&#xA;&lt;li&gt;Monitor and maintain Azure resources (10-15%)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>AZ-500 — Azure Security Technologies</title>
+      <link>http://localhost:1313/certifications/az-500/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certifications/az-500/</guid>
+      <description>&lt;h2 id=&#34;about-this-certification&#34;&gt;About This Certification&lt;/h2&gt;&#xA;&lt;p&gt;AZ-500 measures your ability to manage identity and access, implement platform protection, manage security operations, and secure data and applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AZ-900 — Azure Fundamentals</title>
+      <link>http://localhost:1313/certifications/az-900/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certifications/az-900/</guid>
+      <description>&lt;h2 id=&#34;about-this-certification&#34;&gt;About This Certification&lt;/h2&gt;&#xA;&lt;p&gt;Exam AZ-900 validates your foundational knowledge of cloud concepts, Azure services, Azure workloads, security, privacy, pricing, and support.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure VNet Peering — Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-vnet-peering/</link>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-vnet-peering/</guid>
+      <description>&lt;p&gt;Get hands-on experience with Azure VNet Peering. Learn how to connect virtual networks in Azure, configure peering, and understand key networking concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Firewall — Beginner Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-firewall/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-firewall/</guid>
+      <description>&lt;p&gt;This lab walks you through how to set up and configure Azure Firewall. Learn about rules, policies, and how Azure Firewall helps protect your cloud workloads.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

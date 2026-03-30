@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.description }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/sections.css">
+</head>
+<body class="theme-amber">
+  {{ partial "nav.html" . }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+
+  <!-- Theme & Layout Picker (prototype only) -->
+  {{ if .IsHome }}
+  <div class="theme-picker">
+    <h4>🎨 Color Theme</h4>
+    <button data-theme="default" class="active">
+      <span class="swatch" style="background: #00e5ff;"></span> Neon Cyan
+    </button>
+    <button data-theme="purple">
+      <span class="swatch" style="background: #b388ff;"></span> Neon Purple
+    </button>
+    <button data-theme="green">
+      <span class="swatch" style="background: #39ff14;"></span> Neon Green
+    </button>
+    <button data-theme="amber">
+      <span class="swatch" style="background: #ffab40;"></span> Warm Amber
+    </button>
+  </div>
+  <div class="layout-picker">
+    <h4>📐 Layout Style</h4>
+    <button data-layout="default" class="active">Grid (Default)</button>
+    <button data-layout="featured">Featured Hero</button>
+    <button data-layout="netflix">Netflix Rows</button>
+    <button data-layout="magazine">Magazine</button>
+  </div>
+  {{ end }}
+  <script src="/js/switcher.js"></script>
+</body>
+</html>

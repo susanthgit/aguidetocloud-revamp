@@ -1,0 +1,158 @@
+{{ define "main" }}
+
+<!-- HERO: MINIMAL STRIP -->
+<section class="hero hero-minimal">
+  <div class="minimal-inner">
+    <div class="minimal-left">
+      <p class="tagline">{{ .Site.Params.tagline }}</p>
+      <p class="minimal-sub">Hands-on tutorials for beginners — by Susanth Sutheesh</p>
+    </div>
+    <a href="/ai-hub/" class="btn-primary">🤖 Start Learning</a>
+  </div>
+</section>
+
+<!-- STATS: INLINE -->
+<div class="container">
+  <div class="stats-inline">
+    <span>📺 <strong>80+</strong> Tutorials</span>
+    <span class="stats-dot">·</span>
+    <span>📜 <strong>15</strong> Certifications</span>
+    <span class="stats-dot">·</span>
+    <span>🧪 <strong>20+</strong> Hands-on Labs</span>
+    <span class="stats-dot">·</span>
+    <span>💚 Always <strong>Free</strong></span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- LATEST VIDEOS -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">🔥 Latest Videos</h2>
+    </div>
+    <div class="video-grid">
+      {{ $latest := .Site.RegularPages.ByDate.Reverse }}
+      {{ range first 8 $latest }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- FEATURED PICK + CATEGORIES -->
+  <section class="section">
+    <div class="featured-layout">
+      <div class="featured-main">
+        <div class="featured-badge">⭐ Sutheesh's Pick</div>
+        {{ with index (where .Site.RegularPages "Params.featured" true) 0 }}
+        <a href="{{ .RelPermalink }}" class="featured-video">
+          {{ if .Params.youtube_id }}
+          <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg" alt="{{ .Title }}" loading="lazy">
+          {{ end }}
+          <div class="featured-info">
+            <span class="card-tag ai">{{ .Params.card_tag }}</span>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description | default .Summary }}</p>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+      <div class="featured-sidebar">
+        <h4 class="sidebar-title">Jump to a Category</h4>
+        <a href="/ai-hub/" class="sidebar-link sidebar-ai">
+          <span>🤖 AI Hub</span><span class="sidebar-count">28</span>
+        </a>
+        <a href="/cloud-labs/" class="sidebar-link sidebar-cloud">
+          <span>☁️ Cloud Labs</span><span class="sidebar-count">20+</span>
+        </a>
+        <a href="/certifications/" class="sidebar-link sidebar-cert">
+          <span>📜 Certifications</span><span class="sidebar-count">15</span>
+        </a>
+        <a href="https://ainews.aguidetocloud.com" target="_blank" class="sidebar-link sidebar-news">
+          <span>📰 AI News</span><span class="sidebar-count">Daily</span>
+        </a>
+        <a href="https://learn.aguidetocloud.com" target="_blank" class="sidebar-link sidebar-learn">
+          <span>📚 Learning Portal</span><span class="sidebar-count">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI HUB SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">🤖 AI Hub</h2>
+      <a href="/ai-hub/" class="section-link">View all →</a>
+    </div>
+    <div class="category-pills">
+      <a href="/ai-hub/" class="pill active">All</a>
+      <a href="/tags/m365-copilot/" class="pill">M365 Copilot</a>
+      <a href="/tags/agents/" class="pill">Agentic AI</a>
+      <a href="/tags/prompt-engineering/" class="pill">Prompt Engineering</a>
+      <a href="/tags/azure-ai/" class="pill">Azure AI</a>
+      <a href="/tags/github-copilot/" class="pill">GitHub Copilot</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "ai-hub") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- CLOUD LABS SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">☁️ Cloud Labs</h2>
+      <a href="/cloud-labs/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "cloud-labs") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">📜 Certifications</h2>
+      <a href="/certifications/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "certifications") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM BANNER -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">🌐 The Ecosystem</h2>
+    </div>
+    <div class="ecosystem">
+      <a href="https://learn.aguidetocloud.com" target="_blank" class="eco-card">
+        <div class="eco-icon">📚</div>
+        <h3>Learning Portal</h3>
+        <p>Track progress, access study guides & deep dives</p>
+      </a>
+      <a href="https://ainews.aguidetocloud.com" target="_blank" class="eco-card">
+        <div class="eco-icon">📰</div>
+        <h3>AI News</h3>
+        <p>Daily automated AI news dashboard</p>
+      </a>
+      <a href="{{ .Site.Params.youtube_channel }}" target="_blank" class="eco-card">
+        <div class="eco-icon">📺</div>
+        <h3>YouTube Channel</h3>
+        <p>Subscribe for new tutorials every week</p>
+      </a>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" class="eco-card">
+        <div class="eco-icon">💼</div>
+        <h3>Connect on LinkedIn</h3>
+        <p>Join the community & stay updated</p>
+      </a>
+    </div>
+  </section>
+
+</div>
+{{ end }}

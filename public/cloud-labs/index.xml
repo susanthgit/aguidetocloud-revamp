@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>☁️ Cloud Labs on A Guide to Cloud &amp; AI</title>
+    <link>http://localhost:1313/cloud-labs/</link>
+    <description>Recent content in ☁️ Cloud Labs on A Guide to Cloud &amp; AI</description>
+    <generator>Hugo</generator>
+    <language>en-nz</language>
+    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/cloud-labs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure DevOps CI/CD — Full Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-devops-cicd/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-devops-cicd/</guid>
+      <description>&lt;p&gt;This practical Azure DevOps hands-on lab takes you through the full CI/CD process — build, test, and deploy — using real-world examples.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure App Service Migration Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-app-service-migrate/</link>
+      <pubDate>Thu, 08 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-app-service-migrate/</guid>
+      <description>&lt;p&gt;Get hands-on with Azure App Service migration in this step-by-step tutorial. Whether you&amp;rsquo;re new to Azure or looking to sharpen your cloud migration skills, this practical lab shows you how to move your applications to Azure with confidence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure VNet Peering — Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-vnet-peering/</link>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-vnet-peering/</guid>
+      <description>&lt;p&gt;Get hands-on experience with Azure VNet Peering. Learn how to connect virtual networks in Azure, configure peering, and understand key networking concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Firewall — Beginner Hands-on Lab</title>
+      <link>http://localhost:1313/cloud-labs/azure-firewall/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cloud-labs/azure-firewall/</guid>
+      <description>&lt;p&gt;This lab walks you through how to set up and configure Azure Firewall. Learn about rules, policies, and how Azure Firewall helps protect your cloud workloads.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

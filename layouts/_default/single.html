@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="single-content">
+  {{ if .Params.youtube_id }}
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/{{ .Params.youtube_id }}" 
+            title="{{ .Title }}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+    </iframe>
+  </div>
+  {{ end }}
+
+  <h1>{{ .Title }}</h1>
+  <p class="meta">
+    {{ if .Params.card_tag }}<span class="card-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span> · {{ end }}
+    {{ .Date.Format "2 January 2006" }} · by {{ .Site.Params.author }}
+  </p>
+
+  <div class="content-body">
+    {{ .Content }}
+  </div>
+
+  {{ if .Params.resources }}
+  <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border-glow);">
+    <h2 style="color: var(--neon-cyan); margin-bottom: 1rem;">📥 Resources</h2>
+    <ul>
+      {{ range .Params.resources }}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

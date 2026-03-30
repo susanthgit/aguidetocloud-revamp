@@ -1,0 +1,42 @@
+baseURL = "https://www.aguidetocloud.com/"
+languageCode = "en-nz"
+title = "A Guide to Cloud & AI"
+summaryLength = 20
+
+[params]
+  description = "Your AI & Cloud Skills Hub — Hands-on tutorials, labs & certification prep by Susanth Sutheesh"
+  author = "Susanth Sutheesh"
+  tagline = "Your AI & Cloud Skills Hub"
+  subtitle = "Hands-on tutorials for beginners — by Susanth Sutheesh"
+  youtube_channel = "https://www.youtube.com/@yourcloudcampus"
+  linkedin = "https://www.linkedin.com/in/susanthsutheesh/"
+  github = "https://github.com/susanthgit"
+  learn_portal = "https://learn.aguidetocloud.com"
+  ainews = "https://ainews.aguidetocloud.com"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  [[menu.main]]
+    name = "🤖 AI Hub"
+    url = "/ai-hub/"
+    weight = 1
+  [[menu.main]]
+    name = "☁️ Cloud Labs"
+    url = "/cloud-labs/"
+    weight = 2
+  [[menu.main]]
+    name = "📜 Certifications"
+    url = "/certifications/"
+    weight = 3
+  [[menu.main]]
+    name = "👋 About"
+    url = "/about/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
