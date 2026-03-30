@@ -975,6 +975,110 @@ a:hover {
   margin-top: 1rem;
 }
 
+/* ── AI NEWS PAGE ───────────────────────── */
+.ainews-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.ainews-date {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+.ainews-stats {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.ainews-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.ainews-filter {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-heading);
+}
+.ainews-filter:hover, .ainews-filter.active {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.06);
+}
+.ainews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+.ainews-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.ainews-card:hover {
+  border-color: var(--neon-cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon);
+  text-shadow: none;
+}
+.ainews-cat {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(102, 255, 255, 0.1);
+  color: var(--neon-cyan);
+}
+.ainews-card h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+.ainews-summary {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+.ainews-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.ainews-loading {
+  text-align: center;
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+  padding: 3rem;
+}
+
 /* ── RESPONSIVE ─────────────────────────── */
 @media (max-width: 768px) {
   .video-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }

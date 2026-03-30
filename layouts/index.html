@@ -25,12 +25,12 @@
         {{ with index (where .Site.RegularPages "Params.featured" true) 0 }}
         <a href="{{ .RelPermalink }}" class="featured-video">
           {{ if .Params.youtube_id }}
-          <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg" alt="{{ .Title }}" loading="lazy">
+          <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg" alt="{{ .Title | htmlEscape }}" loading="lazy">
           {{ end }}
           <div class="featured-info">
             <span class="card-tag ai">{{ .Params.card_tag }}</span>
             <h3>{{ .Title }}</h3>
-            <p>{{ .Description | default .Summary }}</p>
+            <p>{{ .Summary | plainify | truncate 200 }}</p>
           </div>
         </a>
         {{ end }}

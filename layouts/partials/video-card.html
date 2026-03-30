@@ -1,7 +1,7 @@
 <a href="{{ .RelPermalink }}" class="video-card">
   <div class="thumb">
     {{ if .Params.youtube_id }}
-      <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg" alt="{{ .Title }}" loading="lazy">
+      <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg" alt="{{ .Title | htmlEscape }}" loading="lazy">
     {{ else if .Params.thumbnail }}
       <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
     {{ else }}
