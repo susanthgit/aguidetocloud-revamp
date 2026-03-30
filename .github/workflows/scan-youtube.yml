@@ -1,0 +1,47 @@
+name: Scan YouTube for New Videos
+
+on:
+  workflow_dispatch: # Manual trigger only — click "Run workflow" in GitHub Actions
+
+jobs:
+  scan-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch new videos from YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          CHANNEL_ID: "UCYN12Rlv9hgZlWJa1XPfdyg"
+        run: node scripts/scan-youtube.js
+
+      - name: Check for new content
+        id: check
+        run: |
+          if [ -n "$(git status --porcelain content/)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "New videos found!"
+            git diff --stat content/
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No new videos found."
+          fi
+
+      - name: Commit new videos
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/ data/videos-fresh.json
+          git commit -m "Add new videos from YouTube scan
+
+          Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git push
+
+      # The push above triggers the deploy.yml workflow automatically
