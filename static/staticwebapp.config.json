@@ -1,0 +1,51 @@
+{
+  "routes": [
+    { "route": "/courses/az-900", "redirect": "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/courses/az-104", "redirect": "/certifications/az-104-full-course-microsoft-azure-administrator-certification-training/", "statusCode": 301 },
+    { "route": "/courses/az-204", "redirect": "/certifications/az-204-full-course-azure-developer-certification-training/", "statusCode": 301 },
+    { "route": "/courses/az-303", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/courses/az-304", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/courses/az-400", "redirect": "/certifications/az-400-full-course-microsoft-devops-engineer-certification-training/", "statusCode": 301 },
+    { "route": "/courses/az-500", "redirect": "/certifications/az-500-full-course-microsoft-azure-security-certification-training/", "statusCode": 301 },
+    { "route": "/courses/ms-100", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/courses/ms-500", "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-tra/", "statusCode": 301 },
+    { "route": "/courses/ms-700", "redirect": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification-training/", "statusCode": 301 },
+    { "route": "/courses/ms-900", "redirect": "/certifications/ms-900-full-course-microsoft-365-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/courses/sc-900", "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification/", "statusCode": 301 },
+    { "route": "/courses/pl-900", "redirect": "/certifications/pl-900-full-course-power-platform-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/courses/dp-900", "redirect": "/certifications/dp-900-full-course-azure-data-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/courses/ai-900", "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/", "statusCode": 301 },
+
+    { "route": "/full-courses/az900fullcourse", "redirect": "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/az-104-fullcourse", "redirect": "/certifications/az-104-full-course-microsoft-azure-administrator-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/az-204-fullcourse", "redirect": "/certifications/az-204-full-course-azure-developer-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/az-303-fullcourse", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/full-courses/az-304-fullcourse", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/full-courses/az-400-fullcourse", "redirect": "/certifications/az-400-full-course-microsoft-devops-engineer-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/az-500-fullcourse", "redirect": "/certifications/az-500-full-course-microsoft-azure-security-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/ms-100-fullcourse", "redirect": "/certifications/", "statusCode": 301 },
+    { "route": "/full-courses/ms-500-fullcourse", "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-tra/", "statusCode": 301 },
+    { "route": "/full-courses/ms-700-fullcourse", "redirect": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/ms-900-fullcourse", "redirect": "/certifications/ms-900-full-course-microsoft-365-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/sc-900-fullcourse", "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification/", "statusCode": 301 },
+    { "route": "/full-courses/pl-900-fullcourse", "redirect": "/certifications/pl-900-full-course-power-platform-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/dp-900-fullcourse", "redirect": "/certifications/dp-900-full-course-azure-data-fundamentals-certification-training/", "statusCode": 301 },
+    { "route": "/full-courses/ai-900-fullcourse", "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/", "statusCode": 301 },
+
+    { "route": "/exam-qa/*", "redirect": "/exam-qa/", "statusCode": 301 },
+
+    { "route": "/bootcamps/copilot-studio-1", "redirect": "/ai-hub/", "statusCode": 301 },
+    { "route": "/bootcamps/copilot-studio2", "redirect": "/ai-hub/", "statusCode": 301 },
+    { "route": "/bootcamps/azure-migrate", "redirect": "/cloud-labs/", "statusCode": 301 },
+    { "route": "/bootcamps/azure-firewall", "redirect": "/cloud-labs/", "statusCode": 301 },
+    { "route": "/bootcamps/azure-networking", "redirect": "/cloud-labs/", "statusCode": 301 },
+    { "route": "/bootcamps/*", "redirect": "/", "statusCode": 301 },
+
+    { "route": "/ai-hub/*", "redirect": "/ai-hub/", "statusCode": 301 }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html"
+    }
+  }
+}
