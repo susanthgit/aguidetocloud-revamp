@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="page-hero">
+  <h1>🏷️ {{ .Title }}</h1>
+  <p>{{ len .Pages }} video{{ if ne (len .Pages) 1 }}s{{ end }} tagged with "{{ .Title }}"</p>
+</div>
+<div class="container">
+  <section class="section">
+    <div class="video-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
