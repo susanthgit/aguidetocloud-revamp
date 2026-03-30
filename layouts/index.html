@@ -1,28 +1,6 @@
 {{ define "main" }}
 
-<!-- HERO: MINIMAL STRIP -->
-<section class="hero hero-minimal">
-  <div class="minimal-inner">
-    <div class="minimal-left">
-      <p class="tagline">{{ .Site.Params.tagline }}</p>
-      <p class="minimal-sub">Hands-on tutorials for beginners — by Susanth Sutheesh</p>
-    </div>
-    <a href="/ai-hub/" class="btn-primary">🤖 Start Learning</a>
-  </div>
-</section>
-
-<!-- STATS: INLINE -->
-<div class="container">
-  <div class="stats-inline">
-    <span>📺 <strong>80+</strong> Tutorials</span>
-    <span class="stats-dot">·</span>
-    <span>📜 <strong>15</strong> Certifications</span>
-    <span class="stats-dot">·</span>
-    <span>🧪 <strong>20+</strong> Hands-on Labs</span>
-    <span class="stats-dot">·</span>
-    <span>💚 Always <strong>Free</strong></span>
-  </div>
-</div>
+{{ partial "welcome-strip.html" . }}
 
 <div class="container">
 
@@ -43,7 +21,7 @@
   <section class="section">
     <div class="featured-layout">
       <div class="featured-main">
-        <div class="featured-badge">⭐ Sutheesh's Pick</div>
+        <div class="featured-badge">⭐ Author's Pick</div>
         {{ with index (where .Site.RegularPages "Params.featured" true) 0 }}
         <a href="{{ .RelPermalink }}" class="featured-video">
           {{ if .Params.youtube_id }}
@@ -60,19 +38,22 @@
       <div class="featured-sidebar">
         <h4 class="sidebar-title">Jump to a Category</h4>
         <a href="/ai-hub/" class="sidebar-link sidebar-ai">
-          <span>🤖 AI Hub</span><span class="sidebar-count">28</span>
+          <span>🤖 AI Hub</span><span class="sidebar-count">17</span>
         </a>
         <a href="/cloud-labs/" class="sidebar-link sidebar-cloud">
-          <span>☁️ Cloud Labs</span><span class="sidebar-count">20+</span>
+          <span>☁️ Cloud Labs</span><span class="sidebar-count">19</span>
         </a>
         <a href="/certifications/" class="sidebar-link sidebar-cert">
-          <span>📜 Certifications</span><span class="sidebar-count">15</span>
+          <span>📜 Certifications</span><span class="sidebar-count">14</span>
         </a>
-        <a href="https://ainews.aguidetocloud.com" target="_blank" class="sidebar-link sidebar-news">
-          <span>📰 AI News</span><span class="sidebar-count">Daily</span>
+        <a href="/exam-qa/" class="sidebar-link sidebar-cert">
+          <span>📝 Exam Q&A</span><span class="sidebar-count">18</span>
         </a>
-        <a href="https://learn.aguidetocloud.com" target="_blank" class="sidebar-link sidebar-learn">
-          <span>📚 Learning Portal</span><span class="sidebar-count">→</span>
+        <a href="/interview-prep/" class="sidebar-link sidebar-cloud">
+          <span>💼 Interview Prep</span><span class="sidebar-count">2</span>
+        </a>
+        <a href="/music/" class="sidebar-link sidebar-news">
+          <span>🎵 Study Music</span><span class="sidebar-count">4</span>
         </a>
       </div>
     </div>
@@ -122,6 +103,70 @@
       {{ range first 4 (where .Site.RegularPages "Section" "certifications") }}
         {{ partial "video-card.html" . }}
       {{ end }}
+    </div>
+  </section>
+
+  <!-- EXAM Q&A SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">📝 Exam Q&A</h2>
+      <a href="/exam-qa/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "exam-qa") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- INTERVIEW PREP SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">💼 Interview Prep</h2>
+      <a href="/interview-prep/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "interview-prep") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- STUDY MUSIC SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">🎵 Study Music</h2>
+      <a href="/music/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {{ range first 4 (where .Site.RegularPages "Section" "music") }}
+        {{ partial "video-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- STATS + CTA -->
+  <section class="section">
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-number">74</span>
+        <span class="stat-label">Video Tutorials</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">14</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">19</span>
+        <span class="stat-label">Hands-on Labs</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">Free</span>
+        <span class="stat-label">Always</span>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/ai-hub/" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">🤖 Start Learning</a>
     </div>
   </section>
 

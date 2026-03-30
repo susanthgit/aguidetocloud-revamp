@@ -7,7 +7,7 @@ layout: "single"
 
 Hi, I'm **Susanth Sutheesh** — a passionate cloud educator, Microsoft Technical Specialist, and content creator based in New Zealand 🇳🇿
 
-I'm the person behind **A Guide to Cloud**, a free learning platform designed to help students, IT professionals, and career switchers learn **AI, Microsoft 365, Azure, Security** — in a practical, easy-to-follow way.
+I'm the person behind **A Guide to Cloud & AI**, a free learning platform designed to help students, IT professionals, and career switchers learn **AI, Microsoft 365, Azure, Security** — in a practical, easy-to-follow way.
 
 ## 🎯 Why I Started This
 
@@ -21,11 +21,10 @@ I currently work at **Microsoft New Zealand** as a Technical Specialist, helping
 
 ## 🤖 The AI Pivot
 
-I'm now pivoting towards **AI-first content** — from Microsoft 365 Copilot to GitHub Copilot, Copilot Studio, MCP Servers, and Azure AI Foundry. The future is AI, and I want to help you navigate it.
+I'm now focused on **AI-first content** — from Microsoft 365 Copilot to GitHub Copilot, Copilot Studio, MCP Servers, and Azure AI Foundry. The future is AI, and I want to help you navigate it.
 
 ## 🙌 Join the Journey
 
-- 📺 [YouTube — Learn AI & Cloud with Susanth](https://www.youtube.com/@yourcloudcampus)
+- 📺 [YouTube — AI & Cloud Skills Hub](https://www.youtube.com/susanthsutheesh)
 - 💼 [LinkedIn](https://www.linkedin.com/in/susanthsutheesh/)
-- 📚 [Learning Portal](https://learn.aguidetocloud.com)
-- 📰 [AI News Dashboard](https://ainews.aguidetocloud.com)
+- ☕ [Support my work](https://ko-fi.com/aguidetocloud/shop)
