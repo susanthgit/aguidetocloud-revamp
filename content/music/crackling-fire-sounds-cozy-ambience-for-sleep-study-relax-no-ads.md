@@ -1,5 +1,6 @@
 ---
 title: "Crackling Fire Sounds – Cozy Ambience for Sleep, Study & Relax | No Ads"
+description: "Watch Crackling Fire Sounds  Cozy Ambience for Sleep, Study & Relax | No Ads - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-05-27
 youtube_id: "e5BEzMlFXCM"
 card_tag: "Study Music"

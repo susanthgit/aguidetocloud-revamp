@@ -1,5 +1,6 @@
 ---
 title: "100 Azure Interview Questions and Answers | Beginner to Advanced Guide for Landing Azure Jobs"
+description: "Watch 100 Azure Interview Questions and Answers | Beginner to Advanced Guide for Landing Azure Jobs - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-05-27
 youtube_id: "LgAe1khJ5eY"
 card_tag: "Interview Prep"

@@ -1,5 +1,6 @@
 ---
 title: "Microsoft 365 Copilot Full Tutorial | Word, Excel, Teams, Outlook & More (Beginner’s Guide)"
+description: "Watch Microsoft 365 Copilot Full Tutorial | Word, Excel, Teams, Outlook & More (Beginners Guide) - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-04-22
 youtube_id: "1beYHq8aMyE"
 card_tag: "M365 Copilot"

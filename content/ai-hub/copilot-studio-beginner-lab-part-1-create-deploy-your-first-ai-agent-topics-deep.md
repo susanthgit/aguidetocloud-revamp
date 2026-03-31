@@ -1,5 +1,6 @@
 ---
 title: "Copilot Studio Beginner Lab Part 1 | Create & Deploy Your First AI Agent + Topics Deep Dive"
+description: "Watch Copilot Studio Beginner Lab Part 1 | Create & Deploy Your First AI Agent + Topics Deep Dive - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-07-01
 youtube_id: "u3IuLm8UuoI"
 card_tag: "Agentic AI"

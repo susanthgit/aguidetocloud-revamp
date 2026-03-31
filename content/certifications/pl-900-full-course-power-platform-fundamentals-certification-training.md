@@ -1,5 +1,6 @@
 ---
 title: "PL-900 Full Course | Power Platform Fundamentals Certification Training"
+description: "Watch PL-900 Full Course | Power Platform Fundamentals Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-03-15
 youtube_id: "lpsre6vWzCc"
 card_tag: "PL--900"

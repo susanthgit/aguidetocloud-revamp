@@ -1,5 +1,6 @@
 ---
 title: "Master All 6 New Microsoft 365 Copilot Agents | Boost Your Productivity in One Video"
+description: "Watch Master All 6 New Microsoft 365 Copilot Agents | Boost Your Productivity in One Video - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-05-20
 youtube_id: "Kqq1kBPgYoY"
 card_tag: "Agentic AI"

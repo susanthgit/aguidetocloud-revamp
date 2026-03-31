@@ -1,5 +1,6 @@
 ---
 title: "MS-500 Full Course | Microsoft 365 Security Administrator Certification Training"
+description: "Watch MS-500 Full Course | Microsoft 365 Security Administrator Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-01-31
 youtube_id: "cG00gMyvwfo"
 card_tag: "MS--500"

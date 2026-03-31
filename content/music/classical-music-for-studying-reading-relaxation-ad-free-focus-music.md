@@ -1,5 +1,6 @@
 ---
 title: "Classical Music for Studying, Reading & Relaxation | Ad-Free Focus Music"
+description: "Watch Classical Music for Studying, Reading & Relaxation | Ad-Free Focus Music - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-06-18
 youtube_id: "wPCFulsKx9s"
 card_tag: "Study Music"

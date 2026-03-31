@@ -1,5 +1,6 @@
 ---
 title: "DP-900 Full Course | Azure Data Fundamentals Certification Training"
+description: "Watch DP-900 Full Course | Azure Data Fundamentals Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-03-01
 youtube_id: "XbV0Di5ggvY"
 card_tag: "DP--900"

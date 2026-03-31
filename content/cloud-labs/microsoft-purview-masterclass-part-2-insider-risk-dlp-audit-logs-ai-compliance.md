@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Purview Masterclass Part 2 🔐 | Insider Risk, DLP, Audit Logs & AI Compliance"
+description: "Watch Microsoft Purview Masterclass Part 2  | Insider Risk, DLP, Audit Logs & AI Compliance - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-09-02
 youtube_id: "wHoLEr7tjP0"
 card_tag: "Security"

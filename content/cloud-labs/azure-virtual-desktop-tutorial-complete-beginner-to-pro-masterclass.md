@@ -1,5 +1,6 @@
 ---
 title: "Azure Virtual Desktop Tutorial | Complete Beginner to Pro Masterclass"
+description: "Watch Azure Virtual Desktop Tutorial | Complete Beginner to Pro Masterclass - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-07-05
 youtube_id: "rEjddntRnZk"
 card_tag: "Virtual Desktop"

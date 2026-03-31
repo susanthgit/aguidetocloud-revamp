@@ -1,5 +1,6 @@
 ---
 title: "SC-900 Full Course | Microsoft Security, Compliance & Identity Certification Training"
+description: "Watch SC-900 Full Course | Microsoft Security, Compliance & Identity Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-06-07
 youtube_id: "7aEIP0h00PA"
 card_tag: "SC--900"

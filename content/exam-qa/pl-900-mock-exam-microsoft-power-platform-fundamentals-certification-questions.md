@@ -1,5 +1,6 @@
 ---
 title: "PL-900 Mock Exam | Microsoft Power Platform Fundamentals Certification Questions"
+description: "Watch PL-900 Mock Exam | Microsoft Power Platform Fundamentals Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-06-03
 youtube_id: "Sp_rWGaQ2Eg"
 card_tag: "PL--900"

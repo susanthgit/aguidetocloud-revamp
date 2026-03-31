@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Exam Simulations | What They Look Like + Tips"
+description: "Watch Microsoft Exam Simulations | What They Look Like + Tips - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-01-25
 youtube_id: "n7FD6L9dWpk"
 card_tag: "Exam Tips"

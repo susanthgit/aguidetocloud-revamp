@@ -1,5 +1,6 @@
 ---
 title: "100 AI-900 Azure AI Fundamentals Practice Questions with Answers & Explanations | Full Mock Exam"
+description: "Watch 100 AI-900 Azure AI Fundamentals Practice Questions with Answers & Explanations | Full Mock Exam - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-08-12
 youtube_id: "OxwcKJcIE40"
 card_tag: "AI--900"

@@ -1,5 +1,6 @@
 ---
 title: "AZ-204 Mock Exam | Microsoft Azure Developer Certification Questions with Answers"
+description: "Watch AZ-204 Mock Exam | Microsoft Azure Developer Certification Questions with Answers - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2024-03-26
 youtube_id: "z2EsgHL86lM"
 card_tag: "AZ--204"

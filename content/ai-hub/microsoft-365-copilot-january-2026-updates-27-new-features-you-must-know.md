@@ -1,5 +1,6 @@
 ---
 title: "Microsoft 365 Copilot January 2026 Updates | 27 New Features You Must Know"
+description: "Watch Microsoft 365 Copilot January 2026 Updates | 27 New Features You Must Know - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2026-01-18
 youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"

@@ -1,5 +1,6 @@
 ---
 title: "Azure VNet Peering Explained | Practical Hands-on Lab for Beginners"
+description: "Watch Azure VNet Peering Explained | Practical Hands-on Lab for Beginners - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-04-26
 youtube_id: "bcEx6w14Mew"
 card_tag: "Azure"

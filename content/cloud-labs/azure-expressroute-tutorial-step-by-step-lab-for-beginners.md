@@ -1,5 +1,6 @@
 ---
 title: "Azure ExpressRoute Tutorial | Step-by-Step Lab for Beginners"
+description: "Watch Azure ExpressRoute Tutorial | Step-by-Step Lab for Beginners - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-05-30
 youtube_id: "XjlGJ2AjyII"
 card_tag: "Networking"

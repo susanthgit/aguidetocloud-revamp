@@ -1,5 +1,6 @@
 ---
 title: "👋 About"
+description: "Watch About - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 layout: "single"
 ---
 

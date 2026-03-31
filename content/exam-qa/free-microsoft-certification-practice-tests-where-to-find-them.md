@@ -1,5 +1,6 @@
 ---
 title: "Free Microsoft Certification Practice Tests | Where to Find Them"
+description: "Watch Free Microsoft Certification Practice Tests | Where to Find Them - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-02-21
 youtube_id: "LeeSPd_0HOI"
 card_tag: "Exam Tips"

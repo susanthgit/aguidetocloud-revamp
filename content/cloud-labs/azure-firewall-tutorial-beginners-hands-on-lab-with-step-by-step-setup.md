@@ -1,5 +1,6 @@
 ---
 title: "Azure Firewall Tutorial | Beginner’s Hands-on Lab with Step-by-Step Setup"
+description: "Watch Azure Firewall Tutorial | Beginners Hands-on Lab with Step-by-Step Setup - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-08-30
 youtube_id: "Bx94L5jZxTo"
 card_tag: "Security"

@@ -1,5 +1,6 @@
 ---
 title: "Learn Prompt Engineering with Practical Work & Life Prompts | Beginner Friendly AI Skills"
+description: "Watch Learn Prompt Engineering with Practical Work & Life Prompts | Beginner Friendly AI Skills - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-07-08
 youtube_id: "MBZ6RCR4VPc"
 card_tag: "Prompt Engineering"

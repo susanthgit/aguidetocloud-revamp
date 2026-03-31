@@ -1,5 +1,6 @@
 ---
 title: "SC-900 Mock Exam | Microsoft Security, Compliance & Identity Certification Questions"
+description: "Watch SC-900 Mock Exam | Microsoft Security, Compliance & Identity Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2024-03-26
 youtube_id: "JtIP-WGeiA4"
 card_tag: "SC--900"

@@ -1,5 +1,6 @@
 ---
 title: "MS-900 Full Course | Microsoft 365 Fundamentals Certification Training"
+description: "Watch MS-900 Full Course | Microsoft 365 Fundamentals Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2021-12-08
 youtube_id: "kGhw7z0sQC4"
 card_tag: "MS--900"

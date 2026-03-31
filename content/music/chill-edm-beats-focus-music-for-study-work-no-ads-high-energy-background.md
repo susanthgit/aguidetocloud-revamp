@@ -1,5 +1,6 @@
 ---
 title: "Chill EDM Beats – Focus Music for Study & Work | No Ads | High-Energy Background"
+description: "Watch Chill EDM Beats  Focus Music for Study & Work | No Ads | High-Energy Background - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-06-09
 youtube_id: "B3G1WGokaOY"
 card_tag: "Study Music"

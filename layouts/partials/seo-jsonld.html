@@ -1,0 +1,28 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  }
+}
+</script>
+{{ else if .Params.youtube_id }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+  "thumbnailUrl": "https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg",
+  "uploadDate": "{{ .Date.Format "2006-01-02" }}",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}",
+  "contentUrl": "https://www.youtube.com/watch?v={{ .Params.youtube_id }}"
+}
+</script>
+{{ end }}

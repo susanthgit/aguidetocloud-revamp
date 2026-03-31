@@ -1,5 +1,6 @@
 ---
 title: "AZ-104 Full Course | Microsoft Azure Administrator Certification Training"
+description: "Watch AZ-104 Full Course | Microsoft Azure Administrator Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-01-18
 youtube_id: "I1zvntPHNMk"
 card_tag: "AZ--104"

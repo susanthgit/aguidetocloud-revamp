@@ -1,5 +1,6 @@
 ---
 title: "AZ-500 Mock Exam | Microsoft Azure Security Certification Questions with Answers"
+description: "Watch AZ-500 Mock Exam | Microsoft Azure Security Certification Questions with Answers - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-05-24
 youtube_id: "95ixLf5194Q"
 card_tag: "AZ--500"

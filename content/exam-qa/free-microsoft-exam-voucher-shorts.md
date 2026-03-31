@@ -1,5 +1,6 @@
 ---
 title: "Free Microsoft Exam Voucher #shorts"
+description: "Watch Free Microsoft Exam Voucher #shorts - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-05-11
 youtube_id: "wzuRJ2sXGTo"
 card_tag: "Exam Tips"

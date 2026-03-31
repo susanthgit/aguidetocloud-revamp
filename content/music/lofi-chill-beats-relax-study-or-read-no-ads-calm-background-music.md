@@ -1,5 +1,6 @@
 ---
 title: "LoFi Chill Beats – Relax, Study, or Read | No Ads | Calm Background Music"
+description: "Watch LoFi Chill Beats  Relax, Study, or Read | No Ads | Calm Background Music - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-04-05
 youtube_id: "jJQG3WJphTQ"
 card_tag: "Study Music"

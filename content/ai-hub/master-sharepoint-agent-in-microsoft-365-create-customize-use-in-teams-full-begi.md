@@ -1,5 +1,6 @@
 ---
 title: "Master SharePoint Agent in Microsoft 365 | Create, Customize & Use in Teams (Full Beginner Guide)"
+description: "Watch Master SharePoint Agent in Microsoft 365 | Create, Customize & Use in Teams (Full Beginner Guide) - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-08-26
 youtube_id: "CPbJ1u-6uBU"
 card_tag: "Agentic AI"

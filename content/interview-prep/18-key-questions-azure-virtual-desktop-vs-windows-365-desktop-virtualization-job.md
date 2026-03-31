@@ -1,5 +1,6 @@
 ---
 title: "18 Key Questions: Azure Virtual Desktop vs Windows 365 | Desktop Virtualization Job Interview Prep"
+description: "Watch 18 Key Questions: Azure Virtual Desktop vs Windows 365 | Desktop Virtualization Job Interview Prep - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-07-29
 youtube_id: "7_DiwgQGeig"
 card_tag: "Interview Prep"

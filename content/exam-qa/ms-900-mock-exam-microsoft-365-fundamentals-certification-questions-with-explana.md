@@ -1,5 +1,6 @@
 ---
 title: "MS-900 Mock Exam | Microsoft 365 Fundamentals Certification Questions with Explanations"
+description: "Watch MS-900 Mock Exam | Microsoft 365 Fundamentals Certification Questions with Explanations - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-04-19
 youtube_id: "6wC3YOw32vU"
 card_tag: "MS--900"

@@ -1,5 +1,6 @@
 ---
 title: "Azure App Service Migration Lab | Step-by-Step Hands-on Walkthrough"
+description: "Watch Azure App Service Migration Lab | Step-by-Step Hands-on Walkthrough - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-06-10
 youtube_id: "U1qBB6k-BnE"
 card_tag: "Migration"

@@ -1,5 +1,6 @@
 ---
 title: "MS-900 Exam Practice | 100 Microsoft 365 Fundamentals Questions with Answers & Explanations"
+description: "Watch MS-900 Exam Practice | 100 Microsoft 365 Fundamentals Questions with Answers & Explanations - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-09-09
 youtube_id: "ojUp3AjGLZM"
 card_tag: "MS--900"

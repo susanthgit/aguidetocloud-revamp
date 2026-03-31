@@ -1,5 +1,6 @@
 ---
 title: "AZ-204 Full Course | Azure Developer Certification Training"
+description: "Watch AZ-204 Full Course | Azure Developer Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-05-10
 youtube_id: "anef67apIEA"
 card_tag: "AZ--204"

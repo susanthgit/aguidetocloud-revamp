@@ -1,5 +1,6 @@
 ---
 title: "MS-500 Mock Exam | Microsoft 365 Security Administration Certification Questions"
+description: "Watch MS-500 Mock Exam | Microsoft 365 Security Administration Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-06-14
 youtube_id: "aStLYYNkW7o"
 card_tag: "MS--500"

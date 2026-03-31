@@ -1,5 +1,6 @@
 ---
 title: "Request Azure Quota Increase | Step-by-Step for Beginners"
+description: "Watch Request Azure Quota Increase | Step-by-Step for Beginners - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-04-29
 youtube_id: "Y8-E-mVAEsI"
 card_tag: "Azure"

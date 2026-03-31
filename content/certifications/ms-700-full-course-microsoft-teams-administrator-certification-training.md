@@ -1,5 +1,6 @@
 ---
 title: "MS-700 Full Course | Microsoft Teams Administrator Certification Training"
+description: "Watch MS-700 Full Course | Microsoft Teams Administrator Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-01-03
 youtube_id: "-Gs3dmS-jnE"
 card_tag: "MS--700"

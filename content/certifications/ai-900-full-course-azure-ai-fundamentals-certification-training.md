@@ -1,5 +1,6 @@
 ---
 title: "AI-900 Full Course | Azure AI Fundamentals Certification Training"
+description: "Watch AI-900 Full Course | Azure AI Fundamentals Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2022-03-24
 youtube_id: "TOZZ0iWdrO0"
 card_tag: "AI--900"

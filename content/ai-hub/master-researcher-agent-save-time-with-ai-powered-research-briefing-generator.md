@@ -1,5 +1,6 @@
 ---
 title: "Master Researcher Agent | Save Time with AI-Powered Research & Briefing Generator"
+description: "Watch Master Researcher Agent | Save Time with AI-Powered Research & Briefing Generator - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-06-03
 youtube_id: "ke1M1k1aMVI"
 card_tag: "Agentic AI"

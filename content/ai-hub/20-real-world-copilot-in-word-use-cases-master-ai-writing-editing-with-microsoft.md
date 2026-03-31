@@ -1,5 +1,6 @@
 ---
 title: "20 Real-World Copilot in Word Use Cases | Master AI Writing & Editing with Microsoft 365"
+description: "Watch 20 Real-World Copilot in Word Use Cases | Master AI Writing & Editing with Microsoft 365 - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
 date: 2025-08-05
 youtube_id: "S823oKDnGWU"
 card_tag: "M365 Copilot"
