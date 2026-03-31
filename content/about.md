@@ -11,7 +11,7 @@ layout: "single"
   </div>
   <div class="about-hero-text">
     <h2 style="color: var(--neon-cyan); margin-bottom: 0.3rem; font-size: 1.4rem;">Susanth Sutheesh</h2>
-    <p style="color: var(--text-secondary); font-size: 0.9rem;">Cloud Educator · Microsoft Technical Specialist · Yoga Instructor</p>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">AI Solution Engineer at Microsoft</p>
   </div>
 </div>
 
@@ -31,8 +31,8 @@ layout: "single"
   flex-shrink: 0;
 }
 .about-headshot {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid rgba(102, 255, 255, 0.3);
@@ -82,6 +82,7 @@ Most importantly, I cherish time with my **wife and daughter** — my greatest s
 
 ## 🙌 Join the Journey
 
-- 📺 [YouTube — AI & Cloud Skills Hub](https://www.youtube.com/susanthsutheesh)
+- 📺 [YouTube — A Guide to Cloud & AI](https://www.youtube.com/susanthsutheesh) (full tutorials & masterclasses)
+- 📺 [YouTube — Bites](https://www.youtube.com/aguidetocloud) (quick 10–20 min lessons)
 - 💼 [LinkedIn](https://www.linkedin.com/in/susanthsutheesh/)
 - ☕ [Support my work](https://ko-fi.com/aguidetocloud/shop)
