@@ -4,11 +4,57 @@ description: "About Susanth Sutheesh — cloud educator, Microsoft Technical Spe
 layout: "single"
 ---
 
-<div style="text-align: center; margin-bottom: 2rem;">
-  <img src="/images/logo_agtc_dark_1.jpg" alt="A Guide to Cloud & AI" style="width: 120px; height: 120px; object-fit: contain; border-radius: 16px; border: 1px solid var(--border-glow);">
+<div class="about-hero">
+  <div class="about-photo-wrap">
+    <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" class="about-headshot">
+    <img src="/images/logo_agtc_dark_1.webp" alt="A Guide to Cloud & AI" class="about-logo-badge">
+  </div>
+  <div class="about-hero-text">
+    <h2 style="color: var(--neon-cyan); margin-bottom: 0.3rem; font-size: 1.4rem;">Susanth Sutheesh</h2>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Cloud Educator · Microsoft Technical Specialist · Yoga Instructor</p>
+  </div>
 </div>
 
-## About Me — Susanth Sutheesh
+<style>
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px solid rgba(102, 255, 255, 0.15);
+}
+.about-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.about-headshot {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(102, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(102, 255, 255, 0.15);
+}
+.about-logo-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-secondary);
+  box-shadow: 0 0 10px rgba(255, 102, 255, 0.3);
+}
+.about-hero-text {
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .about-hero { flex-direction: column; text-align: center; }
+}
+</style>
 
 Hi, I'm **[Susanth Sutheesh](https://www.linkedin.com/in/susanthsutheesh/)** — a lifelong learner passionate about simplifying complex technology. With 18+ years in AI, Microsoft 365, Azure, and the cloud ecosystem, I help businesses and professionals unlock value quickly.
 
