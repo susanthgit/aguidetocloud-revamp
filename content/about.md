@@ -75,6 +75,10 @@ Back in 2020, I started **A Guide to Cloud & AI** as a passion project to share 
 
 That's why I create **beginner-friendly tutorials**, hands-on labs, and job interview prep videos — all focused on **real-world learning**.
 
+### 🤖 The AI Pivot
+
+Today, most of my content is **AI-first** — from Microsoft 365 Copilot to GitHub Copilot, Copilot Studio, MCP Servers, and Azure AI Foundry. That's where the industry is heading, and I want to share what I learn day to day so others can benefit. The future is AI, and I want to help you navigate it.
+
 ## 🧘 Beyond Technology
 
 Outside of work, I ground myself through **yoga, meditation, and study of ancient spiritual texts**. As a certified yoga instructor, I spend much of my time contemplating life and the deeper spiritual realm — it helps me stay balanced while navigating the fast-moving world of technology.
