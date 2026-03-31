@@ -15,7 +15,7 @@ summaryLength = 20
   ainews = "https://ainews.aguidetocloud.com"
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
   tag = "tags"

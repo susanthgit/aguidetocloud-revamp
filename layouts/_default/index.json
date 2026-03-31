@@ -1,0 +1,12 @@
+{{- $pages := where .Site.RegularPages "Params.youtube_id" "!=" nil -}}
+[{{ range $i, $p := $pages }}{{ if $i }},{{ end }}
+  {
+    "title": {{ $p.Title | jsonify }},
+    "url": {{ $p.Permalink | jsonify }},
+    "date": "{{ $p.Date.Format "2 Jan 2006" }}",
+    "section": {{ $p.CurrentSection.Title | jsonify }},
+    "tag_class": {{ (default "" $p.Params.tag_class) | jsonify }},
+    "card_tag": {{ (default "" $p.Params.card_tag) | jsonify }},
+    "description": {{ (default "" $p.Description) | jsonify }}
+  }{{ end }}
+]

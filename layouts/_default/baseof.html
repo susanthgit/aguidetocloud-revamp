@@ -23,24 +23,31 @@
   {{ else }}
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/themes.css">
   <link rel="stylesheet" href="/css/sections.css">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
   {{ partial "seo-jsonld.html" . }}
   {{ partial "analytics.html" . }}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   {{ partial "nav.html" . }}
-  <main>
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <div id="search-modal" class="search-modal">
+    <div class="search-modal-inner">
+      <button id="search-close" class="search-modal-close" aria-label="Close search">&times;</button>
+      <input id="search-input" class="search-input" type="text" placeholder="Search videos... (Ctrl+K)" autocomplete="off">
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
   <script src="/js/switcher.js"></script>
+  <script src="/js/search.js"></script>
 </body>
 </html>
