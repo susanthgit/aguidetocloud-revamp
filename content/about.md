@@ -1,6 +1,6 @@
 ---
-title: "👋 About"
-description: "About Susanth Sutheesh — Sr AI Solution Engineer at Microsoft, content creator, certified yoga instructor, and the person behind A Guide to Cloud & AI."
+title: "About Susanth Sutheesh — Sr AI Solution Engineer at Microsoft"
+description: "Susanth Sutheesh is a Sr AI Solution Engineer at Microsoft New Zealand, creator of A Guide to Cloud & AI — free YouTube tutorials on Microsoft 365 Copilot, Azure, AI Agents, and cloud certifications. 18+ years in IT, based in Auckland NZ."
 layout: "single"
 ---
 
@@ -75,6 +75,12 @@ Back in 2020, I started **A Guide to Cloud & AI** as a passion project to share 
 
 That's why I create **beginner-friendly tutorials**, hands-on labs, and job interview prep videos — all focused on **real-world learning**.
 
+## 🧘 Beyond Technology
+
+Outside of work, I ground myself through **yoga, meditation, and study of ancient spiritual texts**. As a certified yoga instructor, I spend much of my time contemplating life and the deeper spiritual realm — it helps me stay balanced while navigating the fast-moving world of technology.
+
+Most importantly, I cherish time with my **wife and daughter** — my greatest source of inspiration and joy.
+
 ## 💼 Career Journey
 
 <div class="timeline">
@@ -135,12 +141,6 @@ Microsoft Vision Award · Microsoft PET (Perfect Every Time) · Microsoft Power 
 ## 📜 Certifications
 
 Azure Solutions Architect Expert · M365 Enterprise Administrator · M365 Security Administrator · Azure Administrator · MCSA: Office 365 · Azure Fundamentals · M365 Fundamentals · AWS Cloud Practitioner · ITIL Practitioner · CCNA
-
-## 🧘 Beyond Technology
-
-Outside of work, I ground myself through **yoga, meditation, and study of ancient spiritual texts**. As a certified yoga instructor, I spend much of my time contemplating life and the deeper spiritual realm — it helps me stay balanced while navigating the fast-moving world of technology.
-
-Most importantly, I cherish time with my **wife and daughter** — my greatest source of inspiration and joy.
 
 ## 🙌 Join the Journey
 

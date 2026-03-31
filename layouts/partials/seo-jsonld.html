@@ -40,6 +40,40 @@
 }
 </script>
 {{ end }}
+{{ if eq .RelPermalink "/about/" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Susanth Sutheesh",
+  "jobTitle": "Sr AI Solution Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Microsoft"
+  },
+  "url": "https://www.aguidetocloud.com/about/",
+  "image": "https://www.aguidetocloud.com/images/about/headshot.webp",
+  "description": "Sr AI Solution Engineer at Microsoft New Zealand. Creator of A Guide to Cloud & AI — free YouTube tutorials on Microsoft 365 Copilot, Azure, AI Agents, and cloud certifications.",
+  "sameAs": [
+    "https://www.linkedin.com/in/susanthsutheesh/",
+    "https://www.youtube.com/susanthsutheesh",
+    "https://www.youtube.com/aguidetocloud",
+    "https://github.com/susanthgit"
+  ],
+  "knowsAbout": ["Microsoft 365 Copilot", "Azure", "AI Agents", "Copilot Studio", "Microsoft Intune", "Cloud Architecture", "Yoga"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Anna University Chennai"
+  },
+  "nationality": "New Zealand",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Auckland",
+    "addressCountry": "NZ"
+  }
+}
+</script>
+{{ end }}
 {{ if not .IsHome }}
 <script type="application/ld+json">
 {
