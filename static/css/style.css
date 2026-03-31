@@ -97,10 +97,12 @@ a:hover {
   height: 64px;
 }
 .site-logo {
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: 'Barlow Condensed', var(--font-heading), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #fff;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 .site-logo span {
   color: #ff66ff;
