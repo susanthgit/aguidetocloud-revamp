@@ -13,7 +13,7 @@
   {{ if .Params.youtube_id }}
   <meta property="og:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
   {{ else if eq .RelPermalink "/about/" }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}images/about/headshot.webp">
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}
@@ -23,7 +23,7 @@
   {{ if .Params.youtube_id }}
   <meta name="twitter:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
   {{ else if eq .RelPermalink "/about/" }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/about/headshot.webp">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
   {{ else }}
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}

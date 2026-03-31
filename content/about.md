@@ -1,6 +1,6 @@
 ---
-title: "About Susanth Sutheesh — Sr AI Solution Engineer at Microsoft"
-description: "Susanth Sutheesh is a Sr AI Solution Engineer at Microsoft New Zealand, creator of A Guide to Cloud & AI — free YouTube tutorials on Microsoft 365 Copilot, Azure, AI Agents, and cloud certifications. 18+ years in IT, based in Auckland NZ."
+title: "Susanth Sutheesh — AI Solution Engineer"
+description: "Sr AI Solution Engineer at Microsoft NZ. Creator of A Guide to Cloud & AI — free YouTube tutorials on Copilot, Azure, AI Agents and cloud certifications."
 layout: "single"
 ---
 
