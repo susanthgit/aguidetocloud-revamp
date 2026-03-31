@@ -1,6 +1,6 @@
 ---
 title: "👋 About"
-description: "Watch About - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+description: "About Susanth Sutheesh — cloud educator, Microsoft Technical Specialist, certified yoga instructor, and the person behind A Guide to Cloud & AI."
 layout: "single"
 ---
 
@@ -10,7 +10,7 @@ layout: "single"
 
 ## About Me — Susanth Sutheesh
 
-Hi, I'm **Susanth Sutheesh** — a passionate cloud educator, Microsoft Technical Specialist, and content creator based in New Zealand 🇳🇿
+Hi, I'm **[Susanth Sutheesh](https://www.linkedin.com/in/susanthsutheesh/)** — a lifelong learner passionate about simplifying complex technology. With 18+ years in AI, Microsoft 365, Azure, and the cloud ecosystem, I help businesses and professionals unlock value quickly.
 
 I'm the person behind **A Guide to Cloud & AI**, a free learning platform designed to help students, IT professionals, and career switchers learn **AI, Microsoft 365, Azure, Security** — in a practical, easy-to-follow way.
 
@@ -27,6 +27,12 @@ I currently work at **Microsoft New Zealand** as a Technical Specialist, helping
 ## 🤖 The AI Pivot
 
 I'm now focused on **AI-first content** — from Microsoft 365 Copilot to GitHub Copilot, Copilot Studio, MCP Servers, and Azure AI Foundry. The future is AI, and I want to help you navigate it.
+
+## 🧘 Beyond Technology
+
+Outside of work, I ground myself through **yoga, meditation, and study of ancient spiritual texts**. As a certified yoga instructor, I spend much of my time contemplating life and the deeper spiritual realm — it helps me stay balanced while navigating the fast-moving world of technology.
+
+Most importantly, I cherish time with my **wife and daughter** — my greatest source of inspiration and joy.
 
 ## 🙌 Join the Journey
 
