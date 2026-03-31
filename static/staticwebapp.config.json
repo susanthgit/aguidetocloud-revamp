@@ -42,7 +42,7 @@
     },
     {
       "route": "/courses/ms-500",
-      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-tra/",
+      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-training/",
       "statusCode": 301
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "route": "/courses/sc-900",
-      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification/",
+      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification-training/",
       "statusCode": 301
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "route": "/full-courses/ms-500-fullcourse",
-      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-tra/",
+      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-training/",
       "statusCode": 301
     },
     {
@@ -132,7 +132,7 @@
     },
     {
       "route": "/full-courses/sc-900-fullcourse",
-      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification/",
+      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification-training/",
       "statusCode": 301
     },
     {
@@ -180,5 +180,14 @@
     "404": {
       "rewrite": "/404.html"
     }
-  }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+  },
+  "navigationFallback": null
 }
