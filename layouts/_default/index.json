@@ -1,5 +1,7 @@
-{{- $pages := where .Site.RegularPages "Params.youtube_id" "!=" nil -}}
-[{{ range $i, $p := $pages }}{{ if $i }},{{ end }}
+{{- $videos := where .Site.RegularPages "Params.youtube_id" "!=" nil -}}
+{{- $sections := .Site.Sections -}}
+{{- $about := .Site.GetPage "/about" -}}
+[{{ range $i, $p := $videos }}{{ if $i }},{{ end }}
   {
     "title": {{ $p.Title | jsonify }},
     "url": {{ $p.Permalink | jsonify }},
@@ -7,6 +9,27 @@
     "section": {{ $p.CurrentSection.Title | jsonify }},
     "tag_class": {{ (default "" $p.Params.tag_class) | jsonify }},
     "card_tag": {{ (default "" $p.Params.card_tag) | jsonify }},
-    "description": {{ (default "" $p.Description) | jsonify }}
+    "description": {{ (default "" $p.Description) | jsonify }},
+    "type": "video"
+  }{{ end }}{{ range $sections }},
+  {
+    "title": {{ .Title | jsonify }},
+    "url": {{ .Permalink | jsonify }},
+    "date": "",
+    "section": {{ .Title | jsonify }},
+    "tag_class": "",
+    "card_tag": "Section",
+    "description": {{ (default "" .Description) | jsonify }},
+    "type": "section"
+  }{{ end }}{{ if $about }},
+  {
+    "title": "About Susanth Sutheesh",
+    "url": {{ $about.Permalink | jsonify }},
+    "date": "",
+    "section": "About",
+    "tag_class": "",
+    "card_tag": "About",
+    "description": "Sr AI Solution Engineer at Microsoft — creator of A Guide to Cloud & AI",
+    "type": "page"
   }{{ end }}
 ]

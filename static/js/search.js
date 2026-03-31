@@ -54,7 +54,8 @@
         <span class="search-result-title">${item.title}</span>
         <div class="search-result-meta">
           ${item.card_tag ? `<span class="search-result-badge ${item.tag_class}">${item.card_tag}</span>` : ''}
-          <span class="search-result-date">${item.date}</span>
+          ${item.type && item.type !== 'video' ? `<span class="search-result-badge" style="border-color:var(--neon-magenta);color:var(--neon-magenta)">${item.type === 'section' ? '📂 Section' : '📄 Page'}</span>` : ''}
+          ${item.date ? `<span class="search-result-date">${item.date}</span>` : ''}
         </div>
       </a>
     `).join('');
