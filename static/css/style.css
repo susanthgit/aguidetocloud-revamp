@@ -97,11 +97,10 @@ a:hover {
   height: 64px;
 }
 .site-logo {
-  font-family: 'Barlow Condensed', var(--font-heading), sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 800;
   color: #fff;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.5px;
 }
 .site-logo span {
   color: #ff66ff;
@@ -389,6 +388,17 @@ a:hover {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+.welcome-author {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.welcome-author:hover {
+  color: var(--neon-cyan);
+  border-bottom-color: var(--neon-cyan);
 }
 
 /* ── CHANNEL CARDS ───────────────────────── */
