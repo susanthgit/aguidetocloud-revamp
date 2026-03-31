@@ -1,4 +1,4 @@
 ---
 title: "☁️ Cloud Labs"
-description: "Practical Azure Hands-on Labs — Learn by Doing"
+description: "Practical Azure hands-on labs — learn by doing with step-by-step cloud tutorials covering virtual machines, networking, storage, and real-world deployments"
 ---

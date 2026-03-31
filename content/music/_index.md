@@ -1,4 +1,4 @@
 ---
 title: "🎵 Study Music"
-description: "Focus Music for Studying, Reading & Relaxation — Ad-Free Background Beats"
+description: "Ad-free background beats for studying, reading and relaxation — focus music playlists to help you concentrate during exam prep and deep work sessions"
 ---
