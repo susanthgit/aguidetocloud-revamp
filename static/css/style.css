@@ -1094,14 +1094,6 @@ a:hover {
   line-height: 1.6;
   flex-grow: 1;
 }
-.ainews-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
 .ainews-loading {
   text-align: center;
   color: var(--text-muted);
@@ -1142,6 +1134,197 @@ a:hover {
   padding: 1rem 0 0.5rem;
   border-bottom: 1px solid rgba(102, 255, 255, 0.15);
   margin-top: 1rem;
+}
+
+/* ── AI NEWS: 3-TIER LAYOUT ─────────────── */
+.ainews-tier-section {
+  grid-column: 1 / -1;
+  margin-bottom: 1.5rem;
+}
+.ainews-tier-header {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ainews-tier-header span {
+  font-size: 1.2rem;
+}
+.ainews-tier-headlines {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 0, 255, 0.08));
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  color: #ff6b35;
+}
+.ainews-tier-deepdives {
+  background: linear-gradient(135deg, rgba(102, 255, 255, 0.08), rgba(102, 255, 255, 0.03));
+  border: 1px solid rgba(102, 255, 255, 0.15);
+  color: var(--neon-cyan);
+}
+.ainews-tier-quick {
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.08), rgba(57, 255, 20, 0.03));
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  color: #39ff14;
+}
+
+/* ── HERO CARDS (Headlines tier) ────────── */
+.ainews-heroes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.ainews-card-hero {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-left: 4px solid #ff6b35;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.ainews-card-hero:hover {
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.15), 0 4px 20px rgba(0,0,0,0.3);
+  text-shadow: none;
+}
+.ainews-card-hero h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+}
+.ainews-card-hero .ainews-summary {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.ainews-card-hero .ainews-cat {
+  background: rgba(255, 107, 53, 0.15);
+  color: #ff6b35;
+}
+
+/* ── "WHY IT MATTERS" CALLOUT ───────────── */
+.ainews-why {
+  font-size: 0.82rem;
+  color: var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.05);
+  border-left: 3px solid var(--neon-cyan);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.5;
+}
+.ainews-why strong {
+  color: var(--neon-cyan);
+  font-weight: 700;
+}
+.ainews-card-hero .ainews-why {
+  background: rgba(255, 107, 53, 0.06);
+  border-left-color: #ff6b35;
+  color: #ffb088;
+}
+.ainews-card-hero .ainews-why strong {
+  color: #ff6b35;
+}
+
+/* ── QUICK LINKS (compact rows) ─────────── */
+.ainews-quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ainews-quick-item {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0 0.6rem;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.ainews-quick-item:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  background: rgba(57, 255, 20, 0.03);
+}
+.ainews-quick-emoji {
+  grid-row: 1 / 3;
+  font-size: 1rem;
+}
+.ainews-quick-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+.ainews-quick-why {
+  grid-column: 2;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.ainews-quick-meta {
+  grid-row: 1 / 3;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── SOURCE FAVICONS ────────────────────── */
+.ainews-favicon {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  opacity: 0.8;
+}
+.ainews-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── RESPONSIVE: AI NEWS TIERS ──────────── */
+@media (max-width: 768px) {
+  .ainews-card-hero {
+    padding: 1.2rem;
+  }
+  .ainews-card-hero h3 {
+    font-size: 1rem;
+  }
+  .ainews-quick-item {
+    grid-template-columns: 1.2rem 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .ainews-quick-meta {
+    grid-row: auto;
+    grid-column: 2;
+    margin-top: 0.2rem;
+  }
 }
 
 /* ── RESPONSIVE ─────────────────────────── */
