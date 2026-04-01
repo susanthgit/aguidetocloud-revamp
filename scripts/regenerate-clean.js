@@ -178,7 +178,7 @@ for (const v of videos) {
 // Re-add jazz music manually
 const jazzContent = `---
 title: "Smooth Jazz for Studying & Reading | Ad-Free Relaxing Background Music"
-date: 2022-04-22
+date: 2022-04-22T00:00:00Z
 youtube_id: "sz73OdPnb5w"
 card_tag: "Study Music"
 tag_class: ""

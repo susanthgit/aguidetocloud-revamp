@@ -140,7 +140,7 @@ async function getVideoDetails(videoIds) {
         title: item.snippet.title,
         description: item.snippet.description,
         tags: item.snippet.tags || [],
-        date: item.snippet.publishedAt.substring(0, 10),
+        date: item.snippet.publishedAt,
         views: parseInt(item.statistics.viewCount || '0'),
         likes: parseInt(item.statistics.likeCount || '0'),
         duration: item.contentDetails.duration,
