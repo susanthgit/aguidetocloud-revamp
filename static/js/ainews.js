@@ -32,6 +32,9 @@ var CATEGORY_ORDER = [
   'OpenAI', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours'
 ];
 
+// Categories that always appear in filter bar even with 0 articles
+var ALWAYS_SHOW_CATS = ['M365 Copilot', 'Copilot Studio'];
+
 // Only show articles related to AI
 var AI_KEYWORDS = [
   'ai ', ' ai', 'artificial intelligence', 'machine learning', 'deep learning',
@@ -131,8 +134,17 @@ function renderNews(data, view) {
   }
   statsEl.textContent = articles.length + ' articles across ' + countCategories(articles) + ' categories' + updatedStr;
 
-  // Category filters
+  // Category filters — merge always-show categories with those that have articles
   var categories = getOrderedCategories(articles);
+  ALWAYS_SHOW_CATS.forEach(function (cat) {
+    if (categories.indexOf(cat) === -1) categories.push(cat);
+  });
+  // Re-sort by CATEGORY_ORDER
+  categories.sort(function (a, b) {
+    var idxA = CATEGORY_ORDER.indexOf(a); if (idxA === -1) idxA = 999;
+    var idxB = CATEGORY_ORDER.indexOf(b); if (idxB === -1) idxB = 999;
+    return idxA - idxB;
+  });
   filtersEl.innerHTML = '<button class="ainews-filter active" data-cat="all">All (' + articles.length + ')</button>' +
     categories.map(function (cat) {
       var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
