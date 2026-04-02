@@ -150,6 +150,15 @@ function getFaviconUrl(articleUrl) {
   }
 }
 
+function getLogoUrl(articleUrl) {
+  try {
+    var domain = new URL(articleUrl).hostname;
+    return 'https://logo.clearbit.com/' + domain;
+  } catch (e) {
+    return '';
+  }
+}
+
 function renderNews(data, view) {
   var allArticles = data.articles || [];
   var generatedAt = data.generated_at;
@@ -295,9 +304,11 @@ function renderHeroCard(article) {
   var favicon = getFaviconUrl(url);
   var rtime = readingTime(summary);
   var image = article.image || '';
+  var logo = !image ? getLogoUrl(url) : '';
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
-    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' : '') +
+    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' :
+     logo ? '<div class="ainews-thumb ainews-thumb-logo"><img src="' + escapeHtml(logo) + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' : '') +
     '<div class="ainews-card-body">' +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
@@ -327,9 +338,11 @@ function renderCard(article) {
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
   var image = article.image || '';
   var cluster = article.cluster || '';
+  var logo = !image ? getLogoUrl(url) : '';
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
-    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' : '') +
+    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' :
+     logo ? '<div class="ainews-thumb ainews-thumb-logo"><img src="' + escapeHtml(logo) + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' : '') +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     (cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(cluster.replace(/-/g, ' ')) + '</span>' : '') +
     '<h3>' + escapeHtml(title) + '</h3>' +
