@@ -1049,10 +1049,6 @@ a:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.2rem;
   margin-bottom: 3rem;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
 }
 .ainews-card {
   background: var(--bg-card);
@@ -1157,14 +1153,24 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .ainews-tier-header span {
   font-size: 1.2rem;
 }
+.ainews-tier-desc {
+  width: 100%;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
 .ainews-tier-headlines {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 0, 255, 0.08));
-  border: 1px solid rgba(255, 107, 53, 0.3);
-  color: #ff6b35;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(180, 74, 255, 0.06));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
 }
 .ainews-tier-deepdives {
   background: linear-gradient(135deg, rgba(102, 255, 255, 0.08), rgba(102, 255, 255, 0.03));
@@ -1185,8 +1191,8 @@ a:hover {
 }
 .ainews-card-hero {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 107, 53, 0.25);
-  border-left: 4px solid #ff6b35;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-left: 4px solid #ffd700;
   border-radius: var(--radius);
   padding: 1.5rem;
   display: flex;
@@ -1197,9 +1203,9 @@ a:hover {
   color: inherit;
 }
 .ainews-card-hero:hover {
-  border-color: #ff6b35;
+  border-color: #ffd700;
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.15), 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.12), 0 4px 20px rgba(0,0,0,0.3);
   text-shadow: none;
 }
 .ainews-card-hero h3 {
@@ -1215,8 +1221,15 @@ a:hover {
   line-height: 1.7;
 }
 .ainews-card-hero .ainews-cat {
-  background: rgba(255, 107, 53, 0.15);
-  color: #ff6b35;
+  background: rgba(255, 215, 0, 0.12);
+  color: #ffd700;
+}
+
+/* ── DEEP DIVE CARD GRID ─────────────────── */
+.ainews-deepdive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 /* ── "WHY IT MATTERS" CALLOUT ───────────── */
@@ -1234,12 +1247,12 @@ a:hover {
   font-weight: 700;
 }
 .ainews-card-hero .ainews-why {
-  background: rgba(255, 107, 53, 0.06);
-  border-left-color: #ff6b35;
-  color: #ffb088;
+  background: rgba(255, 215, 0, 0.05);
+  border-left-color: #ffd700;
+  color: #ffe066;
 }
 .ainews-card-hero .ainews-why strong {
-  color: #ff6b35;
+  color: #ffd700;
 }
 
 /* ── QUICK LINKS (box cards) ─────────────── */

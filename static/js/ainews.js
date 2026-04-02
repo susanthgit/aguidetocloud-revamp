@@ -174,7 +174,7 @@ function renderNews(data, view) {
   // 🔥 HEADLINES
   if (headlines.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines</div>';
+    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines <div class="ainews-tier-desc">Major breaking news and industry-shaping announcements you need to know</div></div>';
     html += '<div class="ainews-heroes">';
     headlines.forEach(function (article) {
       html += renderHeroCard(article);
@@ -185,17 +185,18 @@ function renderNews(data, view) {
   // 🧠 DEEP DIVES
   if (deepDives.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>🧠</span> Deep Dives</div>';
+    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>🧠</span> Deep Dives <div class="ainews-tier-desc">In-depth analysis and noteworthy developments worth reading in full</div></div>';
+    html += '<div class="ainews-deepdive-grid">';
     deepDives.forEach(function (article) {
       html += renderCard(article);
     });
-    html += '</div>';
+    html += '</div></div>';
   }
 
   // ⚡ QUICK LINKS
   if (quickLinks.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-quick"><span>⚡</span> Quick Links</div>';
+    html += '<div class="ainews-tier-header ainews-tier-quick"><span>⚡</span> Quick Links <div class="ainews-tier-desc">Minor updates and niche topics — good to know at a glance</div></div>';
     html += '<div class="ainews-quick-list">';
     quickLinks.forEach(function (article) {
       html += renderQuickLink(article);
