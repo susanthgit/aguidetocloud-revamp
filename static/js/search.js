@@ -31,18 +31,59 @@
     modal.classList.remove('active');
   }
 
+  // Abbreviation/synonym map — expand shorthand to match full terms
+  const SYNONYMS = {
+    'w365': 'windows 365',
+    'avd': 'azure virtual desktop',
+    'm365': 'microsoft 365',
+    'o365': 'office 365',
+    'aad': 'azure active directory entra',
+    'mfa': 'multi-factor authentication',
+    'dlp': 'data loss prevention',
+    'sso': 'single sign-on',
+    'rbac': 'role-based access control',
+    'nsg': 'network security group',
+    'vnet': 'virtual network',
+    'vm': 'virtual machine',
+    'aks': 'azure kubernetes service',
+    'aci': 'azure container instances',
+    'acr': 'azure container registry',
+    'swa': 'static web app',
+    'cicd': 'continuous integration delivery devops pipeline',
+    'ci/cd': 'continuous integration delivery devops pipeline',
+    'k8s': 'kubernetes',
+    'gpt': 'gpt openai copilot',
+    'llm': 'large language model',
+    'rag': 'retrieval augmented generation',
+    'mcp': 'model context protocol',
+    'pe': 'prompt engineering',
+    'copilot studio lite': 'agent builder',
+    'agent builder': 'copilot studio lite',
+    'bizchat': 'business chat microsoft 365',
+    'pim': 'privileged identity management',
+    'purview': 'microsoft purview compliance',
+    'sentinel': 'microsoft sentinel siem',
+    'intune': 'microsoft intune endpoint',
+    'devops': 'azure devops pipeline',
+  };
+
+  function expandQuery(q) {
+    const lower = q.toLowerCase();
+    const expansion = SYNONYMS[lower];
+    return expansion ? lower + ' ' + expansion : lower;
+  }
+
   function doSearch(query) {
     if (!searchIndex || !query.trim()) {
       results.innerHTML = '';
       return;
     }
-    const q = query.toLowerCase();
-    const matches = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(q) ||
-      item.card_tag.toLowerCase().includes(q) ||
-      item.description.toLowerCase().includes(q) ||
-      item.section.toLowerCase().includes(q)
-    ).slice(0, 12);
+    const expanded = expandQuery(query.trim());
+    const terms = expanded.split(/\s+/);
+    const matches = searchIndex.filter(item => {
+      const text = (item.title + ' ' + item.card_tag + ' ' + item.description + ' ' + item.section).toLowerCase();
+      return terms.some(t => text.includes(t));
+    }).slice(0, 12);
 
     if (matches.length === 0) {
       results.innerHTML = '<div class="search-no-results">No results found</div>';
