@@ -4,35 +4,31 @@
   <p>{{ .Description }}</p>
 </div>
 <div class="container">
-  <div class="blog-feed-wrap">
-    <div class="blog-feed-header">
-      <input type="text" id="blog-search" class="blog-feed-search" placeholder="🔍 Search articles..." autocomplete="off">
-      <span class="blog-feed-count">{{ len .Pages }} articles</span>
-    </div>
+  <div class="blog-tl-header">
+    <input type="text" id="blog-search" class="blog-tl-search" placeholder="🔍 Search..." autocomplete="off">
+    <span class="blog-tl-count">{{ len .Pages }} articles</span>
+  </div>
 
-    <div class="blog-feed" id="blog-list">
-      {{ range .Pages.ByDate.Reverse }}
-      <a href="{{ .RelPermalink }}" class="blog-feed-item">
-        <div class="blog-feed-top">
-          {{ if .Params.card_tag }}<span class="blog-feed-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
-          <span class="blog-feed-date">{{ .Date.Format "2 Jan 2006" }}</span>
+  <div class="blog-timeline" id="blog-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .RelPermalink }}" class="blog-tl-item">
+      <div class="blog-tl-dot"></div>
+      <div class="blog-tl-card">
+        <div class="blog-tl-top">
+          {{ if .Params.card_tag }}<span class="blog-tl-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
+          <span class="blog-tl-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
         </div>
         <h3>{{ .Title }}</h3>
-        <p>{{ .Description }}</p>
-        <div class="blog-feed-bottom">
-          <span>{{ .ReadingTime }} min read</span>
-          <span class="blog-feed-arrow">→</span>
-        </div>
-      </a>
-      {{ end }}
-    </div>
+      </div>
+    </a>
+    {{ end }}
   </div>
 </div>
 
 <script>
 document.getElementById('blog-search').addEventListener('input', function() {
   var q = this.value.toLowerCase();
-  document.querySelectorAll('.blog-feed-item').forEach(function(el) {
+  document.querySelectorAll('.blog-tl-item').forEach(function(el) {
     el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
   });
 });
