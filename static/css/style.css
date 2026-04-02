@@ -1161,16 +1161,17 @@ a:hover {
 .ainews-tier-desc {
   width: 100%;
   font-size: 0.78rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
-  opacity: 0.7;
+  color: #fff;
+  opacity: 0.85;
   margin-top: 0.2rem;
 }
 .ainews-tier-headlines {
-  background: linear-gradient(135deg, rgba(57, 255, 20, 0.12), rgba(57, 255, 20, 0.04));
-  border: 1px solid rgba(57, 255, 20, 0.3);
-  color: #39ff14;
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.04));
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  color: #ff00ff;
 }
 .ainews-tier-deepdives {
   background: linear-gradient(135deg, rgba(102, 255, 255, 0.08), rgba(102, 255, 255, 0.03));
@@ -1191,8 +1192,8 @@ a:hover {
 }
 .ainews-card-hero {
   background: var(--bg-card);
-  border: 1px solid rgba(57, 255, 20, 0.2);
-  border-left: 4px solid #39ff14;
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-left: 4px solid #ff00ff;
   border-radius: var(--radius);
   padding: 1.5rem;
   display: flex;
@@ -1203,9 +1204,9 @@ a:hover {
   color: inherit;
 }
 .ainews-card-hero:hover {
-  border-color: #39ff14;
+  border-color: #ff00ff;
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(57, 255, 20, 0.12), 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.12), 0 4px 20px rgba(0,0,0,0.3);
   text-shadow: none;
 }
 .ainews-card-hero h3 {
@@ -1221,8 +1222,8 @@ a:hover {
   line-height: 1.7;
 }
 .ainews-card-hero .ainews-cat {
-  background: rgba(57, 255, 20, 0.12);
-  color: #39ff14;
+  background: rgba(255, 0, 255, 0.12);
+  color: #ff00ff;
 }
 
 /* ── DEEP DIVE CARD GRID ─────────────────── */
@@ -1235,8 +1236,8 @@ a:hover {
 /* ── "WHY IT MATTERS" CALLOUT ───────────── */
 .ainews-why {
   font-size: 0.82rem;
-  color: #39ff14;
-  background: rgba(57, 255, 20, 0.05);
+  color: #fff;
+  background: rgba(57, 255, 20, 0.04);
   border-left: 3px solid #39ff14;
   padding: 0.5rem 0.8rem;
   border-radius: 0 6px 6px 0;
@@ -1245,6 +1246,27 @@ a:hover {
 .ainews-why strong {
   color: #39ff14;
   font-weight: 700;
+}
+/* Hero cards (headlines) — magenta why-it-matters label */
+.ainews-card-hero .ainews-why {
+  background: rgba(255, 0, 255, 0.04);
+  border-left-color: #ff00ff;
+}
+.ainews-card-hero .ainews-why strong {
+  color: #ff00ff;
+}
+/* Quick link cards — gold why-it-matters label */
+.ainews-quick-item .ainews-quick-why-label {
+  color: #ffd700;
+  font-weight: 700;
+}
+/* Deep dive cards — cyan why-it-matters label */
+.ainews-deepdive-grid .ainews-why {
+  background: rgba(102, 255, 255, 0.04);
+  border-left-color: var(--neon-cyan);
+}
+.ainews-deepdive-grid .ainews-why strong {
+  color: var(--neon-cyan);
 }
 
 /* ── QUICK LINKS (box cards) ─────────────── */
