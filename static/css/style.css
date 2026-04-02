@@ -1764,6 +1764,64 @@ a:hover {
 
 /* ── RESPONSIVE: AI NEWS TIERS ──────────── */
 @media (max-width: 768px) {
+  /* Change 1: Compact page hero — hide description, tighten padding (AI news only) */
+  .ainews-page-hero {
+    padding: 1.5rem 1rem 1rem;
+  }
+  .ainews-page-hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
+  .ainews-page-hero p {
+    display: none;
+  }
+
+  /* Change 2: Horizontal scrollable category filters */
+  .ainews-categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    scrollbar-width: none; /* Firefox */
+  }
+  .ainews-categories::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  .ainews-filter {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  /* Change 3: Compact tabs + merge stats */
+  .ainews-tabs {
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .ainews-tab {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .ainews-header {
+    margin-bottom: 0.75rem;
+  }
+  .ainews-date {
+    font-size: 1rem;
+  }
+  .ainews-stats {
+    font-size: 0.75rem;
+  }
+
+  /* Tighten trending section */
+  .ainews-trending {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Existing card tweaks */
   .ainews-card-hero {
     padding: 1.2rem;
   }
