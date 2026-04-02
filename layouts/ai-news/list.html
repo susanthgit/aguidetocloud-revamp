@@ -1,7 +1,10 @@
 {{ define "main" }}
-<div class="page-hero">
-  <h1>{{ .Title }}</h1>
-  <p>{{ .Description }}</p>
+<div class="page-hero ainews-hero-banner">
+  <img src="/images/ainews-banner.webp" alt="AI News Banner" class="ainews-banner-img" loading="eager">
+  <div class="ainews-hero-overlay">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </div>
 </div>
 <div class="container">
   <div class="ainews-tabs">
