@@ -1046,9 +1046,13 @@ a:hover {
 }
 .ainews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.2rem;
   margin-bottom: 3rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
 }
 .ainews-card {
   background: var(--bg-card);
@@ -1176,7 +1180,7 @@ a:hover {
 /* ── HERO CARDS (Headlines tier) ────────── */
 .ainews-heroes {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 }
 .ainews-card-hero {
@@ -1238,22 +1242,20 @@ a:hover {
   color: #ff6b35;
 }
 
-/* ── QUICK LINKS (compact rows) ─────────── */
+/* ── QUICK LINKS (box cards) ─────────────── */
 .ainews-quick-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.8rem;
+}
+.ainews-quick-item {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-}
-.ainews-quick-item {
-  display: grid;
-  grid-template-columns: 1.5rem 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 0 0.6rem;
-  align-items: center;
-  padding: 0.7rem 1rem;
+  padding: 1rem;
   background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
@@ -1261,9 +1263,9 @@ a:hover {
 .ainews-quick-item:hover {
   border-color: rgba(57, 255, 20, 0.3);
   background: rgba(57, 255, 20, 0.03);
+  transform: translateY(-2px);
 }
 .ainews-quick-emoji {
-  grid-row: 1 / 3;
   font-size: 1rem;
 }
 .ainews-quick-title {
@@ -1274,19 +1276,19 @@ a:hover {
   line-height: 1.4;
 }
 .ainews-quick-why {
-  grid-column: 2;
   font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.4;
+  flex-grow: 1;
 }
 .ainews-quick-meta {
-  grid-row: 1 / 3;
   font-size: 0.72rem;
   color: var(--text-muted);
-  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* ── SOURCE FAVICONS ────────────────────── */
@@ -1316,14 +1318,8 @@ a:hover {
   .ainews-card-hero h3 {
     font-size: 1rem;
   }
-  .ainews-quick-item {
-    grid-template-columns: 1.2rem 1fr;
-    grid-template-rows: auto auto auto;
-  }
-  .ainews-quick-meta {
-    grid-row: auto;
-    grid-column: 2;
-    margin-top: 0.2rem;
+  .ainews-quick-list {
+    grid-template-columns: 1fr;
   }
 }
 
