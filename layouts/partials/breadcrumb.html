@@ -1,0 +1,11 @@
+{{ if not .IsHome }}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">🏠 Home</a>
+  <span class="breadcrumb-sep">›</span>
+  {{ with .Parent }}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+  {{ end }}
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">{{ .Title | truncate 60 }}</span>
+</nav>
+{{ end }}
