@@ -586,6 +586,9 @@ a:hover {
 .video-card .card-tag.cloud { background: rgba(0, 229, 255, 0.1); color: var(--neon-cyan); }
 .video-card .card-tag.cert { background: rgba(57, 255, 20, 0.1); color: var(--neon-green); }
 .video-card .card-tag.legacy { background: rgba(255, 230, 0, 0.1); color: var(--neon-yellow); }
+.video-card .card-body {
+  padding: 0.8rem;
+}
 .video-card .card-title {
   font-size: 1rem;
   font-weight: 700;
@@ -1366,6 +1369,12 @@ a:hover {
   color: var(--text-muted);
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255,255,255,0.05);
+}
+.ainews-source {
+  font-weight: 600;
+}
+.ainews-time {
+  opacity: 0.8;
 }
 
 /* ── SEARCH BAR ─────────────────────────── */

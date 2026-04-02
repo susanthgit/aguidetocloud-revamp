@@ -186,6 +186,10 @@
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
 }
+.sidebar-ai:hover { border-color: #ff00ff; }
+.sidebar-cloud:hover { border-color: #ffd700; }
+.sidebar-cert:hover { border-color: #39ff14; }
+.sidebar-news:hover { border-color: var(--neon-cyan); }
 
 /* ═══ OPTION C: LEARNING PATHS ═══ */
 .paths-grid {
