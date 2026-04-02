@@ -1,6 +1,6 @@
 ---
-title: "📰 AI News — Daily AI Headlines, Summaries & Trends"
-description: "Daily AI news digest powered by Azure OpenAI — curated headlines, summaries and trends from the world of artificial intelligence, updated every day"
+title: "📰 AI News"
+description: "Daily AI news digest — curated headlines, summaries and trends from the world of artificial intelligence, updated every day"
 layout: "ainews"
 images:
   - "/images/ainews-og.png"
