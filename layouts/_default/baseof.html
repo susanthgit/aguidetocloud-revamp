@@ -12,6 +12,8 @@
   <meta property="og:site_name" content="{{ .Site.Title }}">
   {{ if .Params.youtube_id }}
   <meta property="og:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
+  {{ else if .Params.images }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
   {{ else if eq .RelPermalink "/about/" }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
   {{ else }}
@@ -22,6 +24,8 @@
   <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ if .Params.youtube_id }}
   <meta name="twitter:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
+  {{ else if .Params.images }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
   {{ else if eq .RelPermalink "/about/" }}
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
   {{ else }}
