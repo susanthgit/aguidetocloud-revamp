@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="page-hero">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Description }}</p>
+</div>
+<div class="container">
+  <div class="blog-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .RelPermalink }}" class="blog-card">
+      {{ if .Params.youtube_id }}
+      <div class="blog-thumb" style="background-image:url(https://i.ytimg.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg)"></div>
+      {{ else if .Params.cover }}
+      <div class="blog-thumb" style="background-image:url({{ .Params.cover }})"></div>
+      {{ end }}
+      <div class="blog-card-body">
+        {{ if .Params.card_tag }}<span class="card-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
+        <h3>{{ .Title }}</h3>
+        <p class="blog-excerpt">{{ .Description }}</p>
+        <div class="blog-meta">
+          <span>{{ .Date.Format "2 Jan 2006" }}</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
