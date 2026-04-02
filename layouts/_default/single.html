@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ partial "breadcrumb.html" . }}
 <div class="single-content">
   {{ if .Params.youtube_id }}
   <div class="video-embed">
@@ -36,7 +35,5 @@
     </ul>
   </div>
   {{ end }}
-
-  {{ partial "prev-next.html" . }}
 </div>
 {{ end }}
