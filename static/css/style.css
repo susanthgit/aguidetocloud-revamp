@@ -1579,64 +1579,64 @@ a:hover {
 }
 
 /* ── BLOG SECTION ───────────────────────── */
-.blog-filter-bar {
+.blog-feed-wrap {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+.blog-feed-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-.blog-search-sm {
+.blog-feed-search {
   flex: 1;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.1);
   background: var(--bg-card);
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-family: var(--font-heading);
   outline: none;
   transition: border-color 0.3s;
 }
-.blog-search-sm:focus {
-  border-color: var(--neon-cyan);
-}
-.blog-search-sm::placeholder { color: var(--text-muted); }
-.blog-count {
+.blog-feed-search:focus { border-color: var(--neon-cyan); }
+.blog-feed-search::placeholder { color: var(--text-muted); }
+.blog-feed-count {
   font-family: var(--font-heading);
   font-size: 0.8rem;
   color: var(--text-muted);
   white-space: nowrap;
 }
-.blog-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-.blog-mini {
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius);
-  padding: 1.1rem;
-  text-decoration: none;
-  color: inherit;
+.blog-feed {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  transition: all 0.25s ease;
-  min-height: 110px;
+  gap: 0;
 }
-.blog-mini:hover {
-  border-color: var(--neon-cyan);
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(102, 255, 255, 0.15);
+.blog-feed-item {
+  display: block;
+  padding: 1.3rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.2s ease;
 }
-.blog-mini-tag {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 0.15rem 0.5rem;
+.blog-feed-item:hover {
+  background: rgba(102, 255, 255, 0.02);
+  border-left-color: var(--neon-cyan);
+}
+.blog-feed-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.blog-feed-tag {
+  padding: 0.15rem 0.55rem;
   border-radius: 4px;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   font-weight: 700;
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -1644,27 +1644,49 @@ a:hover {
   background: rgba(102, 255, 255, 0.1);
   color: var(--neon-cyan);
 }
-.blog-mini-tag.cert { background: rgba(57, 255, 20, 0.1); color: #39ff14; }
-.blog-mini-tag.ai { background: rgba(255, 0, 255, 0.1); color: #ff00ff; }
-.blog-mini-tag.lab { background: rgba(255, 215, 0, 0.1); color: #ffd700; }
-.blog-mini h3 {
+.blog-feed-tag.cert { background: rgba(57, 255, 20, 0.1); color: #39ff14; }
+.blog-feed-tag.ai { background: rgba(255, 0, 255, 0.1); color: #ff00ff; }
+.blog-feed-tag.lab { background: rgba(255, 215, 0, 0.1); color: #ffd700; }
+.blog-feed-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.blog-feed-item h3 {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #fff;
   line-height: 1.4;
+  margin: 0 0 0.3rem;
+}
+.blog-feed-item:hover h3 { color: var(--neon-cyan); }
+.blog-feed-item p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex-grow: 1;
 }
-.blog-mini:hover h3 { color: var(--neon-cyan); }
-.blog-mini-meta {
-  font-size: 0.7rem;
+.blog-feed-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: auto;
+}
+.blog-feed-arrow {
+  color: var(--neon-cyan);
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.blog-feed-item:hover .blog-feed-arrow {
+  opacity: 1;
+  transform: translateX(4px);
 }
 /* Blog content body styles */
 .content-body h2 {
