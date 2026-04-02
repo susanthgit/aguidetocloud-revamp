@@ -29,8 +29,24 @@ var MAX_OTHER = 10;
 // Display order: Top Stories first, then Microsoft family, then rest
 var CATEGORY_ORDER = [
   'Top Stories', 'Microsoft', 'M365 Copilot', 'Copilot Studio', 'AI Foundry',
-  'OpenAI', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours'
+  'OpenAI', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours & Gossip'
 ];
+
+// Category colours and emojis for pills
+var CATEGORY_META = {
+  'Top Stories':       { emoji: '🔥', color: '#ff00ff' },
+  'Microsoft':         { emoji: '🟦', color: '#0078D4' },
+  'M365 Copilot':      { emoji: '✨', color: '#6264A7' },
+  'Copilot Studio':    { emoji: '🛠️', color: '#742774' },
+  'AI Foundry':        { emoji: '🏭', color: '#008272' },
+  'OpenAI':            { emoji: '🟩', color: '#10A37F' },
+  'Google':            { emoji: '🟥', color: '#EA4335' },
+  'Meta':              { emoji: '🟪', color: '#0668E1' },
+  'Anthropic':         { emoji: '🟧', color: '#D4A574' },
+  'Open Source':       { emoji: '⬛', color: '#888' },
+  'Industry':          { emoji: '🔵', color: '#4A90D9' },
+  'Rumours & Gossip':  { emoji: '🗣️', color: '#9B59B6' }
+};
 
 // Categories that always appear in filter bar even with 0 articles
 var ALWAYS_SHOW_CATS = ['M365 Copilot', 'Copilot Studio'];
@@ -77,6 +93,32 @@ function escapeHtml(str) {
 function isMicrosoftCat(cat) {
   var lower = cat.toLowerCase();
   return MICROSOFT_CATS.some(function (m) { return lower.indexOf(m) !== -1; });
+}
+
+function readingTime(text) {
+  if (!text) return '1 min';
+  var words = text.split(/\s+/).length;
+  var mins = Math.max(1, Math.ceil(words / 200));
+  return mins + ' min read';
+}
+
+function extractTrending(articles, topN) {
+  var stopWords = new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','it','its','that','this','are','was','were','be','been','has','have','had','do','does','did','will','would','could','should','may','might','can','how','what','why','when','where','who','which','not','no','all','more','than','just','about','over','into','out','up','new','now','says','said','get','got','also','like','after','before','here','your','you','we','our','their','his','her','as','if','so','very','most','some','any','other','us','use','using','used','make','made','first','want','one','two','per','way','top','big','best','next','last','being','still','even','much','don','let','back','going']);
+  var counts = {};
+  articles.forEach(function (a) {
+    var words = (a.title || '').match(/[A-Za-z][A-Za-z'-]+/g) || [];
+    words.forEach(function (w) {
+      if (w.length > 2 && !stopWords.has(w.toLowerCase())) {
+        var key = w[0] === w[0].toUpperCase() ? w : w.toLowerCase();
+        counts[key] = (counts[key] || 0) + 1;
+      }
+    });
+  });
+  return Object.entries(counts)
+    .filter(function (e) { return e[1] >= 2; })
+    .sort(function (a, b) { return b[1] - a[1]; })
+    .slice(0, topN || 12)
+    .map(function (e) { return e[0]; });
 }
 
 function applyLimits(articles) {
@@ -148,7 +190,9 @@ function renderNews(data, view) {
   filtersEl.innerHTML = '<button class="ainews-filter active" data-cat="all">All (' + articles.length + ')</button>' +
     categories.map(function (cat) {
       var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
-      return '<button class="ainews-filter" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(cat) + ' (' + count + ')</button>';
+      var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
+      var pill = '<span class="ainews-pill-dot" style="background:' + meta.color + '"></span>';
+      return '<button class="ainews-filter" data-cat="' + escapeHtml(cat) + '" data-color="' + meta.color + '">' + pill + (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + ' (' + count + ')</button>';
     }).join('');
 
   filtersEl.querySelectorAll('.ainews-filter').forEach(function (btn) {
@@ -170,6 +214,19 @@ function renderNews(data, view) {
 
   // Build 3-tier HTML
   var html = '';
+
+  // 🔍 SEARCH BAR
+  html += '<div class="ainews-search-wrap" style="grid-column:1/-1"><input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off"></div>';
+
+  // 📈 TRENDING TOPICS
+  var trending = extractTrending(articles, 12);
+  if (trending.length > 0) {
+    html += '<div class="ainews-trending" style="grid-column:1/-1"><span class="ainews-trending-label">Trending:</span> ';
+    trending.forEach(function (t) {
+      html += '<span class="ainews-trending-tag">' + escapeHtml(t) + '</span>';
+    });
+    html += '</div>';
+  }
 
   // 🔥 HEADLINES
   if (headlines.length > 0) {
@@ -212,6 +269,18 @@ function renderNews(data, view) {
   }
 
   grid.innerHTML = html || '<p class="ainews-loading">No articles found for this period.</p>';
+
+  // Search functionality
+  var searchInput = document.getElementById('ainews-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      var q = this.value.toLowerCase();
+      grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-quick-item').forEach(function (el) {
+        var text = el.textContent.toLowerCase();
+        el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+      });
+    });
+  }
 }
 
 function renderHeroCard(article) {
@@ -224,6 +293,7 @@ function renderHeroCard(article) {
   var title = article.title || 'Untitled';
   var time = timeAgo(article.published);
   var favicon = getFaviconUrl(url);
+  var rtime = readingTime(summary);
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
@@ -233,6 +303,7 @@ function renderHeroCard(article) {
     '<div class="ainews-meta">' +
       (favicon ? '<img src="' + favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(source) + '</span>' +
+      '<span class="ainews-rtime">' + rtime + '</span>' +
       '<span class="ainews-time">' + time + '</span>' +
     '</div>' +
   '</a>';
@@ -248,8 +319,11 @@ function renderCard(article) {
   var title = article.title || 'Untitled';
   var time = timeAgo(article.published);
   var favicon = getFaviconUrl(url);
+  var rtime = readingTime(summary);
+  var isRumour = cat.toLowerCase().indexOf('rumour') !== -1;
+  var extraClass = isRumour ? ' ainews-card-rumour' : '';
 
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card" data-category="' + escapeHtml(cat) + '">' +
+  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
@@ -257,6 +331,7 @@ function renderCard(article) {
     '<div class="ainews-meta">' +
       (favicon ? '<img src="' + favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(source) + '</span>' +
+      '<span class="ainews-rtime">' + rtime + '</span>' +
       '<span class="ainews-time">' + time + '</span>' +
     '</div>' +
   '</a>';

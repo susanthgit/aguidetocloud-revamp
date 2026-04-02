@@ -1368,6 +1368,112 @@ a:hover {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
+/* ── SEARCH BAR ─────────────────────────── */
+.ainews-search-wrap {
+  margin-bottom: 0.5rem;
+}
+.ainews-search {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-card);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.ainews-search:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 8px rgba(102, 255, 255, 0.15);
+}
+.ainews-search::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── TRENDING TOPICS BAR ───────────────── */
+.ainews-trending {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ainews-trending-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ainews-trending-tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(102, 255, 255, 0.08);
+  border: 1px solid rgba(102, 255, 255, 0.15);
+  color: var(--neon-cyan);
+}
+
+/* ── CATEGORY PILL DOTS ────────────────── */
+.ainews-pill-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+/* ── READING TIME BADGE ────────────────── */
+.ainews-rtime {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+/* ── RUMOURS & GOSSIP STYLE ────────────── */
+.ainews-card-rumour {
+  border-style: dashed;
+  border-color: rgba(155, 89, 182, 0.3);
+}
+.ainews-card-rumour:hover {
+  border-color: #9B59B6;
+  box-shadow: 0 0 12px rgba(155, 89, 182, 0.25), 0 0 25px rgba(155, 89, 182, 0.1);
+}
+.ainews-card-rumour h3 {
+  font-style: italic;
+}
+.ainews-card-rumour .ainews-cat {
+  background: rgba(155, 89, 182, 0.15);
+  color: #9B59B6;
+}
+
+/* ── SKELETON LOADING ──────────────────── */
+.ainews-skeleton-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.ainews-skeleton-card {
+  height: 180px;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--bg-card) 25%, rgba(255,255,255,0.04) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* ── RESPONSIVE: AI NEWS TIERS ──────────── */
 @media (max-width: 768px) {
   .ainews-card-hero {
