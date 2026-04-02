@@ -102,25 +102,6 @@ function readingTime(text) {
   return mins + ' min read';
 }
 
-function extractTrending(articles, topN) {
-  var stopWords = new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','it','its','that','this','are','was','were','be','been','has','have','had','do','does','did','will','would','could','should','may','might','can','how','what','why','when','where','who','which','not','no','all','more','than','just','about','over','into','out','up','new','now','says','said','get','got','also','like','after','before','here','your','you','we','our','their','his','her','as','if','so','very','most','some','any','other','us','use','using','used','make','made','first','want','one','two','per','way','top','big','best','next','last','being','still','even','much','don','let','back','going']);
-  var counts = {};
-  articles.forEach(function (a) {
-    var words = (a.title || '').match(/[A-Za-z][A-Za-z'-]+/g) || [];
-    words.forEach(function (w) {
-      if (w.length > 2 && !stopWords.has(w.toLowerCase())) {
-        var key = w[0] === w[0].toUpperCase() ? w : w.toLowerCase();
-        counts[key] = (counts[key] || 0) + 1;
-      }
-    });
-  });
-  return Object.entries(counts)
-    .filter(function (e) { return e[1] >= 2; })
-    .sort(function (a, b) { return b[1] - a[1]; })
-    .slice(0, topN || 12)
-    .map(function (e) { return e[0]; });
-}
-
 function applyLimits(articles) {
   var grouped = {};
   articles.forEach(function (a) {
@@ -161,29 +142,15 @@ function getLogoUrl(articleUrl) {
 
 function renderNews(data, view) {
   var allArticles = data.articles || [];
-  var generatedAt = data.generated_at;
   var articles = allArticles.filter(isAiRelated);
   articles = applyLimits(articles);
 
   var grid = document.getElementById('news-grid');
-  var dateEl = document.getElementById('news-date');
-  var statsEl = document.getElementById('news-stats');
-  var filtersEl = document.getElementById('category-filters');
 
   // Separate by tier
   var headlines = articles.filter(function (a) { return a.tier === 'headline'; });
   var deepDives = articles.filter(function (a) { return a.tier === 'deep_dive' || !a.tier; });
   var quickLinks = articles.filter(function (a) { return a.tier === 'quick'; });
-
-  var viewLabel = view === 'weekly' ? "This Week's" : view === 'monthly' ? "This Month's" : "Today's";
-  dateEl.textContent = viewLabel + ' AI News';
-
-  // Updated timestamp
-  var updatedStr = '';
-  if (generatedAt) {
-    updatedStr = ' · Updated ' + timeAgo(generatedAt);
-  }
-  statsEl.textContent = articles.length + ' articles across ' + countCategories(articles) + ' categories' + updatedStr;
 
   // Category filters — merge always-show categories with those that have articles
   var categories = getOrderedCategories(articles);
@@ -196,46 +163,23 @@ function renderNews(data, view) {
     var idxB = CATEGORY_ORDER.indexOf(b); if (idxB === -1) idxB = 999;
     return idxA - idxB;
   });
-  filtersEl.innerHTML = '<button class="ainews-filter active" data-cat="all">All (' + articles.length + ')</button>' +
-    categories.map(function (cat) {
-      var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
-      var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
-      var pill = '<span class="ainews-pill-dot" style="background:' + meta.color + '"></span>';
-      return '<button class="ainews-filter" data-cat="' + escapeHtml(cat) + '" data-color="' + meta.color + '">' + pill + (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + ' (' + count + ')</button>';
-    }).join('');
 
-  filtersEl.querySelectorAll('.ainews-filter').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      var cat = this.dataset.cat;
-      grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-quick-item, .ainews-section-header').forEach(function (el) {
-        if (cat === 'all') { el.style.display = ''; return; }
-        el.style.display = (el.dataset.category === cat) ? '' : 'none';
-      });
-      // Also show/hide section headers
-      grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
-        var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"]), .ainews-quick-item:not([style*="display: none"])');
-        sec.style.display = hasVisible.length > 0 ? '' : 'none';
-      });
-    });
-  });
-
-  // Build 3-tier HTML
+  // Build HTML: search bar → category filters → articles
   var html = '';
 
   // 🔍 SEARCH BAR
   html += '<div class="ainews-search-wrap" style="grid-column:1/-1"><input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off"></div>';
 
-  // 📈 TRENDING TOPICS
-  var trending = extractTrending(articles, 12);
-  if (trending.length > 0) {
-    html += '<div class="ainews-trending" style="grid-column:1/-1"><span class="ainews-trending-label">Trending:</span> ';
-    trending.forEach(function (t) {
-      html += '<span class="ainews-trending-tag">' + escapeHtml(t) + '</span>';
-    });
-    html += '</div>';
-  }
+  // 📂 CATEGORY FILTERS (below search)
+  html += '<div class="ainews-categories" id="category-filters" style="grid-column:1/-1">';
+  html += '<button class="ainews-filter active" data-cat="all">All (' + articles.length + ')</button>';
+  categories.forEach(function (cat) {
+    var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
+    var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
+    var pill = '<span class="ainews-pill-dot" style="background:' + meta.color + '"></span>';
+    html += '<button class="ainews-filter" data-cat="' + escapeHtml(cat) + '" data-color="' + meta.color + '">' + pill + (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + ' (' + count + ')</button>';
+  });
+  html += '</div>';
 
   // 🔥 HEADLINES
   if (headlines.length > 0) {
@@ -278,6 +222,26 @@ function renderNews(data, view) {
   }
 
   grid.innerHTML = html || '<p class="ainews-loading">No articles found for this period.</p>';
+
+  // Wire up category filter clicks
+  var filtersEl = document.getElementById('category-filters');
+  if (filtersEl) {
+    filtersEl.querySelectorAll('.ainews-filter').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        var cat = this.dataset.cat;
+        grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-quick-item, .ainews-section-header').forEach(function (el) {
+          if (cat === 'all') { el.style.display = ''; return; }
+          el.style.display = (el.dataset.category === cat) ? '' : 'none';
+        });
+        grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
+          var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"]), .ainews-quick-item:not([style*="display: none"])');
+          sec.style.display = hasVisible.length > 0 ? '' : 'none';
+        });
+      });
+    });
+  }
 
   // Search functionality
   var searchInput = document.getElementById('ainews-search');
