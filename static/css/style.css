@@ -1456,6 +1456,84 @@ a:hover {
   color: #9B59B6;
 }
 
+/* ── ARTICLE THUMBNAILS ─────────────────── */
+.ainews-thumb {
+  width: 100%;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin: -1.2rem -1.2rem 0.8rem -1.2rem;
+  width: calc(100% + 2.4rem);
+}
+.ainews-card-hero .ainews-thumb {
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  width: calc(100% + 3rem);
+  height: 160px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.ainews-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.8rem;
+}
+
+/* ── CLUSTER BADGES ────────────────────── */
+.ainews-cluster {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(180, 74, 255, 0.1);
+  color: #b44aff;
+  text-transform: capitalize;
+}
+
+/* ── EMAIL / RSS CTA ───────────────────── */
+.ainews-email-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin-top: 2rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(102, 255, 255, 0.15);
+  border-radius: var(--radius);
+}
+.ainews-email-cta span:first-child {
+  font-size: 1.8rem;
+}
+.ainews-email-cta strong {
+  color: #fff;
+  font-family: var(--font-heading);
+}
+.ainews-email-cta p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.ainews-email-btn {
+  margin-left: auto;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.08);
+  color: var(--neon-cyan);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.ainews-email-btn:hover {
+  background: rgba(102, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(102, 255, 255, 0.2);
+}
+
 /* ── SKELETON LOADING ──────────────────── */
 .ainews-skeleton-wrap {
   display: grid;

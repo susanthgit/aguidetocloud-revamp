@@ -294,8 +294,11 @@ function renderHeroCard(article) {
   var time = timeAgo(article.published);
   var favicon = getFaviconUrl(url);
   var rtime = readingTime(summary);
+  var image = article.image || '';
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
+    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' : '') +
+    '<div class="ainews-card-body">' +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
@@ -305,7 +308,7 @@ function renderHeroCard(article) {
       '<span class="ainews-source">' + escapeHtml(source) + '</span>' +
       '<span class="ainews-rtime">' + rtime + '</span>' +
       '<span class="ainews-time">' + time + '</span>' +
-    '</div>' +
+    '</div></div>' +
   '</a>';
 }
 
@@ -322,9 +325,13 @@ function renderCard(article) {
   var rtime = readingTime(summary);
   var isRumour = cat.toLowerCase().indexOf('rumour') !== -1;
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
+  var image = article.image || '';
+  var cluster = article.cluster || '';
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
+    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' : '') +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
+    (cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(cluster.replace(/-/g, ' ')) + '</span>' : '') +
     '<h3>' + escapeHtml(title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
     (whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(whyMatters) + '</p>' : '') +
