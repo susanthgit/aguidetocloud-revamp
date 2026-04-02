@@ -10,9 +10,18 @@
       <h2 class="section-title">🔥 Latest Videos</h2>
     </div>
     <div class="video-grid">
-      {{ $latest := .Site.RegularPages.ByDate.Reverse }}
-      {{ range first 8 $latest }}
-        {{ partial "video-card.html" . }}
+      {{/* Deduplicate: use blog section as canonical to avoid showing the same video from blog + ai-hub/certs */}}
+      {{ $seen := slice }}
+      {{ $count := 0 }}
+      {{ range .Site.RegularPages.ByDate.Reverse }}
+        {{ if lt $count 8 }}
+          {{ $ytid := .Params.youtube_id | default .RelPermalink }}
+          {{ if not (in $seen $ytid) }}
+            {{ partial "video-card.html" . }}
+            {{ $seen = $seen | append $ytid }}
+            {{ $count = add $count 1 }}
+          {{ end }}
+        {{ end }}
       {{ end }}
     </div>
   </section>
