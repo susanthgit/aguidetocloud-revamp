@@ -15,7 +15,7 @@
   {{ else if .Params.images }}
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
   {{ else if eq .RelPermalink "/about/" }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/about/og-about.webp">
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}
@@ -27,7 +27,7 @@
   {{ else if .Params.images }}
   <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
   {{ else if eq .RelPermalink "/about/" }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/about/og-about.jpg">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/about/og-about.webp">
   {{ else }}
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}
@@ -38,6 +38,12 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
+  <link rel="alternate" type="application/rss+xml" title="AI News Feed" href="{{ .Site.BaseURL }}data/ainews/feed.xml">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://i.ytimg.com">
   {{ partial "seo-jsonld.html" . }}
   {{ partial "analytics.html" . }}
 </head>
@@ -55,7 +61,7 @@
       <div id="search-results" class="search-results"></div>
     </div>
   </div>
-  <script src="/js/switcher.js"></script>
-  <script src="/js/search.js"></script>
+  <script src="/js/switcher.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

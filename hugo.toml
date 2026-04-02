@@ -2,6 +2,14 @@ baseURL = "https://www.aguidetocloud.com/"
 languageCode = "en-nz"
 title = "A Guide to Cloud & AI"
 summaryLength = 20
+enableRobotsTXT = false
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[frontmatter]
+  lastmod = [":git", "lastmod", "date"]
 
 [params]
   description = "Your AI & Cloud Skills Hub — Hands-on tutorials, step-by-step labs, certification prep & interview guides for Microsoft 365, Azure & AI beginners"
@@ -15,12 +23,14 @@ summaryLength = 20
   learn_portal = "https://learn.aguidetocloud.com"
   ainews = "https://ainews.aguidetocloud.com"
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
 [taxonomies]
   tag = "tags"
   category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  tag = ["HTML"]
+  category = ["HTML"]
 
 [menu]
   [[menu.main]]

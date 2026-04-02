@@ -178,7 +178,8 @@
   ],
   "responseOverrides": {
     "404": {
-      "rewrite": "/404.html"
+      "redirect": "/",
+      "statusCode": 302
     }
   },
   "globalHeaders": {
@@ -187,7 +188,8 @@
     "X-XSS-Protection": "1; mode=block",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Cache-Control": "public, max-age=3600"
   },
   "navigationFallback": null
 }
