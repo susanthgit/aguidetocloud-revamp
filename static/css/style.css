@@ -130,14 +130,14 @@ a:hover {
   text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 .nav-cta {
-  background: rgba(255, 171, 64, 0.15) !important;
-  border-color: rgba(255, 171, 64, 0.4) !important;
-  color: #ffab40 !important;
+  background: rgba(102, 255, 255, 0.1) !important;
+  border-color: rgba(102, 255, 255, 0.3) !important;
+  color: #66ffff !important;
 }
 .nav-cta:hover {
-  background: rgba(255, 171, 64, 0.25) !important;
-  border-color: #ffab40 !important;
-  box-shadow: 0 0 15px rgba(255, 171, 64, 0.3) !important;
+  background: rgba(102, 255, 255, 0.2) !important;
+  border-color: #66ffff !important;
+  box-shadow: 0 0 15px rgba(102, 255, 255, 0.3) !important;
   color: #fff !important;
 }
 
@@ -1096,7 +1096,7 @@ a:hover {
 .ainews-card:hover {
   border-color: var(--neon-cyan);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-neon);
+  box-shadow: 0 0 12px rgba(102, 255, 255, 0.25), 0 0 25px rgba(102, 255, 255, 0.1);
   text-shadow: none;
 }
 .ainews-cat {
@@ -1223,8 +1223,7 @@ a:hover {
 }
 .ainews-card-hero {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 0, 255, 0.2);
-  border-left: 4px solid #ff00ff;
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius);
   padding: 1.5rem;
   display: flex;
@@ -1237,7 +1236,7 @@ a:hover {
 .ainews-card-hero:hover {
   border-color: #ff00ff;
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.12), 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.3), 0 0 25px rgba(255, 0, 255, 0.12);
   text-shadow: none;
 }
 .ainews-card-hero h3 {
@@ -1319,9 +1318,10 @@ a:hover {
   transition: all 0.2s ease;
 }
 .ainews-quick-item:hover {
-  border-color: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
   background: rgba(255, 215, 0, 0.03);
   transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.25), 0 0 25px rgba(255, 215, 0, 0.1);
 }
 .ainews-quick-emoji {
   font-size: 1rem;
