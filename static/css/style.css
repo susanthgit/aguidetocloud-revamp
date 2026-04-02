@@ -1704,13 +1704,8 @@ a:hover {
   }
 }
 
-/* ── RESPONSIVE ─────────────────────────── */
-@media (max-width: 768px) {
-  .video-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-  .about-content { grid-template-columns: 1fr; }
-  .ecosystem { grid-template-columns: 1fr 1fr; }
-  .stats-bar { grid-template-columns: repeat(2, 1fr); }
-
+/* ── RESPONSIVE: NAV COLLAPSE ───────────── */
+@media (max-width: 1024px) {
   .hamburger { display: block; }
   .nav-links {
     display: none;
@@ -1735,6 +1730,14 @@ a:hover {
     font-size: 1rem;
     border-bottom: none !important;
   }
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 768px) {
+  .video-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .about-content { grid-template-columns: 1fr; }
+  .ecosystem { grid-template-columns: 1fr 1fr; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
