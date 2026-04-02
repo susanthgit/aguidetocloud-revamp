@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-02T00:45:13.686416+00:00",
-  "total_articles": 86,
+  "generated_at": "2026-04-02T01:07:24.938277+00:00",
+  "total_articles": 87,
   "summarised": 0,
   "articles": [
     {
@@ -11,7 +11,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721562+00:00",
+      "published": "2026-04-02T01:05:59.117254+00:00",
       "snippet": "Google I/O returns May 19-20. Watch the livestreams for updates on Android, AI, Chrome, and Cloud. Registration is open on the Google I/O website.",
       "ai_summary": ""
     },
@@ -23,7 +23,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721553+00:00",
+      "published": "2026-04-02T01:05:59.117244+00:00",
       "snippet": "The Android XR team is using Gemini's Canvas feature to make creating immersive extended reality (XR) experiences more accessible. This allows developers to rapidly prototype interactive 3D environments and models on a Samsung Galaxy XR headset using simple creative prompts.",
       "ai_summary": ""
     },
@@ -35,7 +35,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721543+00:00",
+      "published": "2026-04-02T01:05:59.117235+00:00",
       "snippet": "Google has introduced FunctionGemma, a specialized 270M parameter model designed to bring efficient, action-oriented AI experiences directly to mobile devices through on-device function calling. By leveraging Google AI Edge and LiteRT-LM, the model enables complex tasks—such as managing calendars, controlling device hardware, or executing specific game logic in the \"Tiny Garden\" demo—to be performed entirely offline with high speed and low latency. Available for testing in the Google AI Edge Gal",
       "ai_summary": ""
     },
@@ -47,7 +47,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721533+00:00",
+      "published": "2026-04-02T01:05:59.117225+00:00",
       "snippet": "Agent Development Kit (ADK) now supports a robust ecosystem of third-party tools and integrations. Connect your agents to GitHub, Notion, Hugging Face, and more to build capable, real-world applications.",
       "ai_summary": ""
     },
@@ -59,7 +59,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721523+00:00",
+      "published": "2026-04-02T01:05:59.117216+00:00",
       "snippet": "Google I/O 2026 is returning May 19-20 at Shoreline Amphitheatre in Mountain View, CA. But before the keynotes begin, you can get into the spirit of the event with our annual tradition: the save the date puzzle.  This year's experience highlights how AI can empower and accelerate",
       "ai_summary": ""
     },
@@ -71,7 +71,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721511+00:00",
+      "published": "2026-04-02T01:05:59.117206+00:00",
       "snippet": "While keynotes are available online, Google Cloud Next '26 in Las Vegas offers an irreplaceable in-person experience centered on networking, hands-on problem solving, and the transition to agentic AI. The event features specialized technical tracks covering everything from Gemini multimodal breakthroughs to zero-trust security on Cloud Run, providing developers with the tools to balance individual speed with organizational stability. Beyond formal sessions, the \"in-person advantage\" lies in over",
       "ai_summary": ""
     },
@@ -83,7 +83,7 @@
       "category_id": "google",
       "category_name": "Google",
       "category_emoji": "🟥",
-      "published": "2026-04-02T00:42:00.721481+00:00",
+      "published": "2026-04-02T01:05:59.117196+00:00",
       "snippet": "Google has officially launched LiteRT, the successor to TFLite, which offers significantly faster GPU and NPU acceleration alongside seamless support for PyTorch and JAX. The update also introduces lower-precision data type support for increased efficiency and a commitment to more frequent security and dependency updates across the TensorFlow ecosystem. This transition solidifies LiteRT as Google's primary high-performance framework for deploying GenAI and advanced on-device inference.",
       "ai_summary": ""
     },
@@ -256,6 +256,66 @@
       "ai_summary": ""
     },
     {
+      "id": "95c1feb2fac9526a97ed4f18fd9f7c32",
+      "title": "infinium-claude-code-connector 1.1.1",
+      "url": "https://pypi.org/project/infinium-claude-code-connector/1.1.1/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-04-01T01:04:39+00:00",
+      "snippet": "Bridge between Claude Code hooks and Infinium agent tracing",
+      "ai_summary": ""
+    },
+    {
+      "id": "a206a56642e20452578cacbc9ee93f52",
+      "title": "Toyota's Woven Capital appoints new CIO and COO in push for finding the 'future of mobility' | TechCrunch",
+      "url": "https://techcrunch.com/2026/03/31/toyotas-woven-capital-appoints-new-cio-and-coo-in-push-for-finding-the-future-of-mobility/",
+      "source": "TechCrunch",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-01T01:01:41+00:00",
+      "snippet": "Woven Capital is the growth-stage venture capital arm of Toyota, focused on backing founders building in space, cybersecurity, and autonomous driving.",
+      "ai_summary": ""
+    },
+    {
+      "id": "c65a9a905b64b6861205dd992bed28b5",
+      "title": "横須賀商工会議所パソコン教室が2026年4月1日にリニューアル！",
+      "url": "https://prtimes.jp/main/html/rd/p/000000012.000149948.html",
+      "source": "Prtimes.jp",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-04-01T01:00:00+00:00",
+      "snippet": "[株式会社ミライフ]\n[画像1: https://prcdn.freetls.fastly.net/release_image/149948/12/149948-12-0d56960d87ff8d77c06ad9c36abc8c73-720x540.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+      "ai_summary": ""
+    },
+    {
+      "id": "95bbcf10224189b4437605e2f47fd731",
+      "title": "'You've tarnished Apple's reputation': 11 things Apple got horribly wrong over the past 50 years",
+      "url": "https://www.techradar.com/tech/youve-tarnished-apples-reputation-11-things-apple-got-horribly-wrong-over-the-past-50-years",
+      "source": "TechRadar",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-04-01T01:00:00+00:00",
+      "snippet": "From rock band downloads to unreliable keyboards, here are the biggest Apple misfires in the last fifty years.",
+      "ai_summary": ""
+    },
+    {
+      "id": "fd41cd62c2b5e416e688ec6c09a627fb",
+      "title": "Show HN: WMB-100K – Open benchmark for AI memory systems at 100K turns",
+      "url": "https://github.com/Irina1920/WMB-100K",
+      "source": "Github.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-04-01T00:59:55+00:00",
+      "snippet": "Article URL: https://github.com/Irina1920/WMB-100K\nComments URL: https://news.ycombinator.com/item?id=47595494\nPoints: 1\n# Comments: 0",
+      "ai_summary": ""
+    },
+    {
       "id": "a79fd05a6c832eec3b603eb38b232dd7",
       "title": "Meta Deploys AI to Accelerate and Enhance Risk Review During Product Development",
       "url": "https://www.pymnts.com/meta/2026/meta-deploys-ai-to-accelerate-and-enhance-risk-review-during-product-development/",
@@ -421,42 +481,6 @@
       "category_emoji": "🟩",
       "published": "2026-04-01T00:02:38+00:00",
       "snippet": "OpenAI adds retail investors to its record $122B funding round OpenAI has closed a massive funding round totaling about $122 billion at an $852 billion valuation, and the company’s capital raise now includes retail investors for the first time. That portion o…",
-      "ai_summary": ""
-    },
-    {
-      "id": "2729c4c0c0e355fc1ee67938cd637e36",
-      "title": "Anthropic is having a month | TechCrunch",
-      "url": "https://techcrunch.com/2026/03/31/anthropic-is-having-a-month/",
-      "source": "TechCrunch",
-      "category_id": "openai",
-      "category_name": "OpenAI",
-      "category_emoji": "🟩",
-      "published": "2026-04-01T00:01:39+00:00",
-      "snippet": "A human really borks things at Anthropic for the second time this week.",
-      "ai_summary": ""
-    },
-    {
-      "id": "d9f9c2162810680ee44e29ce159b354a",
-      "title": "agentbreak 0.3.0",
-      "url": "https://pypi.org/project/agentbreak/0.3.0/",
-      "source": "Pypi.org",
-      "category_id": "openai",
-      "category_name": "OpenAI",
-      "category_emoji": "🟩",
-      "published": "2026-04-01T00:01:16+00:00",
-      "snippet": "Chaos proxy for testing LLM agents. Supports OpenAI, Anthropic, and MCP.",
-      "ai_summary": ""
-    },
-    {
-      "id": "62a2613dfca13bda9517f2191d18c7d5",
-      "title": "Ajit Varma on the Future of Firefox and the Open Web",
-      "url": "https://www.thurrott.com/cloud/web-browsers/mozilla-firefox/334403/ajit-varma-on-the-future-of-firefox-and-the-open-web",
-      "source": "Thurrott.com",
-      "category_id": "openai",
-      "category_name": "OpenAI",
-      "category_emoji": "🟩",
-      "published": "2026-04-01T00:00:20+00:00",
-      "snippet": "I recently spoke with Mozilla's Head of Firefox Ajit Varma about the future of the open web in the age of AI. \nThe post Ajit Varma on the Future of Firefox and the Open Web appeared first on Thurrott.com.",
       "ai_summary": ""
     },
     {
@@ -928,18 +952,6 @@
       "ai_summary": ""
     },
     {
-      "id": "4386936f0d0b676dc541589a102086e2",
-      "title": "Project Mario: the inside story of DeepMind",
-      "url": "https://colossus.com/article/project-mario-demis-hassabis-deepmind-mallaby/",
-      "source": "Colossus.com",
-      "category_id": "industry",
-      "category_name": "Industry",
-      "category_emoji": "🔵",
-      "published": "2026-03-31T15:18:40+00:00",
-      "snippet": "The inside story of how DeepMind’s experiments in AI safety governance transformed Demis Hassabis from an idealist into a realist",
-      "ai_summary": ""
-    },
-    {
       "id": "09ffc410d5d508518a905e6bf0957d01",
       "title": "違絅純⒢ () (various)",
       "url": "http://www.st.ryukoku.ac.jp/~kjm/security/memo/2026/04.html#20260401_new",
@@ -952,18 +964,6 @@
       "ai_summary": ""
     },
     {
-      "id": "8b421b16bd18f8e22efeba4a4c608ba1",
-      "title": "(PC蚊㍾紜膀, 3/31) indows11WindowsUpdat ...",
-      "url": "http://www.st.ryukoku.ac.jp/~kjm/security/memo/2026/04.html#20260401__win11",
-      "source": "Ryukoku.ac.jp",
-      "category_id": "m365-copilot",
-      "category_name": "M365 Copilot",
-      "category_emoji": "✨",
-      "published": "2026-03-31T15:00:00+00:00",
-      "snippet": "(PC蚊㍾紜膀, 3/31) <li> indows11WindowsUpdate 2026綛筝 絽紊違㏍ー❼ KB5086672 (PC蚊㍾紜膀, 4/1) \r\n </li>",
-      "ai_summary": ""
-    },
-    {
       "id": "690c536f975d8627fa06d29a95430710",
       "title": "(ebisuda.net, 3/31) Microsoft撮炊罧泣o ...",
       "url": "http://www.st.ryukoku.ac.jp/~kjm/security/memo/2026/04.html#20260401__wmic",
@@ -973,6 +973,18 @@
       "category_emoji": "✨",
       "published": "2026-03-31T15:00:00+00:00",
       "snippet": "(ebisuda.net, 3/31) Microsoft撮炊罧泣owerShell*Windows Management Instrumentation鐚徑I鐚*owerShell腟у⑧礙エミowerShellMI鴻「サ鴻 Get-WmiObject Get-CimInstance 潟潟ャ潟潟❼、潟篁ヤ純",
+      "ai_summary": ""
+    },
+    {
+      "id": "8b421b16bd18f8e22efeba4a4c608ba1",
+      "title": "(PC蚊㍾紜膀, 3/31) indows11WindowsUpdat ...",
+      "url": "http://www.st.ryukoku.ac.jp/~kjm/security/memo/2026/04.html#20260401__win11",
+      "source": "Ryukoku.ac.jp",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-03-31T15:00:00+00:00",
+      "snippet": "(PC蚊㍾紜膀, 3/31) <li> indows11WindowsUpdate 2026綛筝 絽紊違㏍ー❼ KB5086672 (PC蚊㍾紜膀, 4/1) \r\n </li>",
       "ai_summary": ""
     },
     {
