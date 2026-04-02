@@ -1466,27 +1466,37 @@ a:hover {
   margin: -1.2rem -1.2rem 0.8rem -1.2rem;
   width: calc(100% + 2.4rem);
 }
-.ainews-thumb-logo {
-  background: linear-gradient(135deg, #0f0f2a, #1a1a3a);
+.ainews-thumb-placeholder {
+  background: linear-gradient(135deg, #0f0f2a 0%, #1a1a3a 50%, #12122a 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   height: 100px;
 }
-.ainews-thumb-logo img {
-  max-height: 48px;
-  max-width: 160px;
-  object-fit: contain;
-  filter: brightness(1.1);
+.ainews-thumb-emoji {
+  font-size: 2rem;
+}
+.ainews-thumb-source {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ainews-card-hero .ainews-thumb-placeholder {
+  height: 120px;
+}
+.ainews-card-hero .ainews-thumb-emoji {
+  font-size: 2.5rem;
 }
 .ainews-card-hero .ainews-thumb {
   margin: -1.5rem -1.5rem 0 -1.5rem;
   width: calc(100% + 3rem);
   height: 160px;
   border-radius: var(--radius) var(--radius) 0 0;
-}
-.ainews-card-hero .ainews-thumb-logo {
-  height: 120px;
 }
 .ainews-card-body {
   display: flex;

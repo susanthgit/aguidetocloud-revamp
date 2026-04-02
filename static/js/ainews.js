@@ -304,11 +304,16 @@ function renderHeroCard(article) {
   var favicon = getFaviconUrl(url);
   var rtime = readingTime(summary);
   var image = article.image || '';
-  var logo = !image ? getLogoUrl(url) : '';
+
+  var thumbHtml;
+  if (image) {
+    thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
+  } else {
+    thumbHtml = '<div class="ainews-thumb ainews-thumb-placeholder"><span class="ainews-thumb-emoji">' + emoji + '</span><span class="ainews-thumb-source">' + escapeHtml(source) + '</span></div>';
+  }
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
-    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' :
-     logo ? '<div class="ainews-thumb ainews-thumb-logo"><img src="' + escapeHtml(logo) + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' : '') +
+    thumbHtml +
     '<div class="ainews-card-body">' +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
@@ -338,11 +343,16 @@ function renderCard(article) {
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
   var image = article.image || '';
   var cluster = article.cluster || '';
-  var logo = !image ? getLogoUrl(url) : '';
+
+  var thumbHtml;
+  if (image) {
+    thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
+  } else {
+    thumbHtml = '<div class="ainews-thumb ainews-thumb-placeholder"><span class="ainews-thumb-emoji">' + emoji + '</span><span class="ainews-thumb-source">' + escapeHtml(source) + '</span></div>';
+  }
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
-    (image ? '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>' :
-     logo ? '<div class="ainews-thumb ainews-thumb-logo"><img src="' + escapeHtml(logo) + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' : '') +
+    thumbHtml +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     (cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(cluster.replace(/-/g, ' ')) + '</span>' : '') +
     '<h3>' + escapeHtml(title) + '</h3>' +
