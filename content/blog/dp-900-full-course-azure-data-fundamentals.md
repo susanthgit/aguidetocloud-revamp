@@ -92,6 +92,50 @@ DP-203 (Data Engineer), DP-300 (Database Administrator), or PL-300 (Power BI Dat
 
 ---
 
+## Exam Preparation Roadmap
+
+Here's a structured study plan to go from zero to exam-ready:
+
+### Week-by-Week Plan
+
+| Week | Focus | Activities |
+|------|-------|-----------|
+| **Week 1** | Watch the course | Complete the full video course, take notes on key concepts |
+| **Week 2** | Microsoft Learn | Work through the official learning paths on Microsoft Learn |
+| **Week 3** | Hands-on labs | Practice in your Azure/M365 environment (use free trials) |
+| **Week 4** | Practice exams | Take mock exams, review weak areas, re-study as needed |
+
+### Free Study Resources
+
+| Resource | URL | Cost |
+|----------|-----|------|
+| **Microsoft Learn** | [learn.microsoft.com](https://learn.microsoft.com/en-us/training/) | Free |
+| **Microsoft Virtual Training Days** | [events.microsoft.com](https://events.microsoft.com/en-us/mvtd) | Free + exam voucher |
+| **Azure free account** | [azure.microsoft.com/free](https://azure.microsoft.com/en-us/free/) | Free ($200 credit) |
+| **M365 Developer Program** | [developer.microsoft.com](https://developer.microsoft.com/en-us/microsoft-365/dev-program) | Free (25 E5 licences) |
+| **Microsoft Cloud Skills Challenge** | [learn.microsoft.com](https://learn.microsoft.com/en-us/training/cloud-skills-challenge/) | Free + sometimes exam voucher |
+
+### Certification Renewal
+
+Microsoft role-based and specialty certifications **expire after one year**. To renew:
+
+1. You'll receive an email 6 months before expiry
+2. Complete a free online renewal assessment on Microsoft Learn
+3. No exam centre visit required — it's done online
+4. You can attempt the renewal assessment as many times as needed
+
+> Fundamentals certifications (AZ-900, AI-900, SC-900, etc.) **do not expire** — they're valid for life.
+
+### Career Value
+
+| Certification Level | Average Salary Impact | Source |
+|---------------------|----------------------|--------|
+| Fundamentals | Validates foundation — entry-level advantage | Microsoft/Pearson VUE |
+| Associate | $10,000-$20,000+ salary premium | Global Knowledge salary report |
+| Expert | $15,000-$30,000+ salary premium | Global Knowledge salary report |
+
+> [Microsoft certification overview](https://learn.microsoft.com/en-us/credentials/certifications/) · [Certification poster (PDF)](https://arch-center.azureedge.net/Credentials/Certification-Poster_en-us.pdf)
+
 ## 💡 Want More?
 
 - 📺 [Subscribe to A Guide to Cloud & AI on YouTube](https://www.youtube.com/susanthsutheesh) for new tutorials every week

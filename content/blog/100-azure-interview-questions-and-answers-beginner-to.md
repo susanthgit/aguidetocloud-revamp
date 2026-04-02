@@ -40,6 +40,39 @@ Deepen your knowledge with these official Microsoft Learn resources:
 - [Browse all interview prep](/interview-prep/)
 - [Azure certification courses](/certifications/)
 
+## Interview Preparation Strategy
+
+### The STAR Method
+
+For behavioural and scenario-based questions, structure your answers using **STAR**:
+
+| Component | What to Say | Example |
+|-----------|------------|---------|
+| **Situation** | Set the scene | "In my previous role, our team managed 500 Azure VMs..." |
+| **Task** | What was your responsibility? | "I was asked to reduce our monthly cloud spend by 20%..." |
+| **Action** | What did you do? | "I implemented Azure Reserved Instances and right-sized VMs..." |
+| **Result** | What was the outcome? | "We reduced costs by 35% in 3 months, saving $50K annually." |
+
+### Technical Interview Tips
+
+1. **Think out loud** — Interviewers want to see your reasoning process, not just the final answer
+2. **It's okay to say "I don't know"** — But follow up with "Here's how I'd find out..." or "My best guess based on experience is..."
+3. **Ask clarifying questions** — Show that you think before jumping to answers
+4. **Relate to real experience** — Even lab experience counts. "When I set up Azure Sentinel in my test environment..."
+5. **Know the latest features** — Check the [Azure updates page](https://azure.microsoft.com/en-us/updates/) and [M365 roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap)
+
+### Common Question Categories
+
+| Category | What They Test | How to Prepare |
+|----------|---------------|---------------|
+| **Conceptual** | Do you understand the technology? | Study Microsoft Learn fundamentals |
+| **Scenario-based** | Can you solve real problems? | Practice with case studies and labs |
+| **Troubleshooting** | Can you debug issues? | Know common error codes and resolution steps |
+| **Design** | Can you architect solutions? | Study reference architectures and best practices |
+| **Behavioural** | Do you work well in teams? | Prepare 5-6 STAR stories from your experience |
+
+📖 [Azure architecture centre](https://learn.microsoft.com/en-us/azure/architecture/) · [Microsoft 365 admin documentation](https://learn.microsoft.com/en-us/microsoft-365/admin/)
+
 ## 💡 Want More?
 
 - 📺 [Subscribe to A Guide to Cloud & AI on YouTube](https://www.youtube.com/susanthsutheesh) for new tutorials every week
