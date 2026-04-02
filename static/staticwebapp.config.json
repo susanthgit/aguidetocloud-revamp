@@ -174,6 +174,22 @@
       "route": "/bootcamps/azure-networking",
       "redirect": "/cloud-labs/",
       "statusCode": 301
+    },
+    {
+      "route": "/css/*",
+      "headers": { "Cache-Control": "public, max-age=86400" }
+    },
+    {
+      "route": "/js/*",
+      "headers": { "Cache-Control": "public, max-age=86400" }
+    },
+    {
+      "route": "/images/*",
+      "headers": { "Cache-Control": "public, max-age=86400" }
+    },
+    {
+      "route": "/fonts/*",
+      "headers": { "Cache-Control": "public, max-age=86400" }
     }
   ],
   "responseOverrides": {
@@ -188,8 +204,7 @@
     "X-XSS-Protection": "1; mode=block",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-    "Cache-Control": "public, max-age=3600"
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
   },
   "navigationFallback": null
 }
