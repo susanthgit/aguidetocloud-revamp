@@ -4,30 +4,17 @@
   <p>{{ .Description }}</p>
 </div>
 <div class="container">
-  <div class="blog-stats-bar">
-    <span>📝 {{ len .Pages }} articles</span>
-    <span>·</span>
-    <span>📺 Each with video tutorial</span>
-    <span>·</span>
-    <span>📚 Microsoft Learn deep links</span>
+  <div class="blog-filter-bar">
+    <input type="text" id="blog-search" class="blog-search-sm" placeholder="🔍 Search..." autocomplete="off">
+    <span class="blog-count">{{ len .Pages }} articles</span>
   </div>
 
-  <div class="blog-search-wrap">
-    <input type="text" id="blog-search" class="blog-search-input" placeholder="🔍 Search articles..." autocomplete="off">
-  </div>
-
-  <div class="blog-list" id="blog-list">
+  <div class="blog-cards" id="blog-list">
     {{ range .Pages.ByDate.Reverse }}
-    <a href="{{ .RelPermalink }}" class="blog-list-item" data-title="{{ .Title | lower }}">
-      <div class="blog-list-left">
-        {{ if .Params.card_tag }}<span class="blog-list-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Description }}</p>
-      </div>
-      <div class="blog-list-right">
-        <span class="blog-list-date">{{ .Date.Format "Jan 2006" }}</span>
-        <span class="blog-list-read">{{ .ReadingTime }} min</span>
-      </div>
+    <a href="{{ .RelPermalink }}" class="blog-mini">
+      {{ if .Params.card_tag }}<span class="blog-mini-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
+      <h3>{{ .Title }}</h3>
+      <span class="blog-mini-meta">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
     </a>
     {{ end }}
   </div>
@@ -36,7 +23,7 @@
 <script>
 document.getElementById('blog-search').addEventListener('input', function() {
   var q = this.value.toLowerCase();
-  document.querySelectorAll('.blog-list-item').forEach(function(el) {
+  document.querySelectorAll('.blog-mini').forEach(function(el) {
     el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
   });
 });
