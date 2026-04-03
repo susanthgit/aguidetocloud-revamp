@@ -5,68 +5,108 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Apr 2026 23:34:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 11:40:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>On-Device Function Calling in Google AI Edge Gallery</title>
       <link>https://developers.googleblog.com/on-device-function-calling-in-google-ai-edge-gallery/</link>
-      <description>Google has launched FunctionGemma, a 270M parameter model that enables efficient on-device function calling for mobile AI applications, allowing tasks to be performed offline with low latency. This development enhances user experience by enabling complex functions like calendar management and game logic execution directly on devices.</description>
+      <description>Google has launched FunctionGemma, a 270M parameter model for on-device function calling, enabling efficient offline AI tasks on mobile devices. This innovation allows users to manage calendars and control device hardware with low latency, enhancing user experience significantly.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242368+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127450+00:00</pubDate>
       <guid>https://developers.googleblog.com/on-device-function-calling-in-google-ai-edge-gallery/</guid>
     </item>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now integrates with various third-party tools, allowing developers to connect their AI agents to platforms like GitHub and Notion, facilitating the creation of real-world applications. This ecosystem aims to enhance the functionality and versatility of AI agents.</description>
+      <description>The Agent Development Kit (ADK) now integrates with various third-party tools like GitHub and Notion, allowing developers to create more capable AI agents. This ecosystem aims to enhance the functionality and real-world application of AI agents.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242354+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127436+00:00</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is scheduled for May 19-20, featuring a save the date puzzle that showcases how AI can enhance event experiences. This annual tradition builds excitement for the event while highlighting AI's role in innovation.</description>
+      <description>Google I/O 2026 will take place on May 19-20, featuring a save the date puzzle that showcases AI's potential. This event aims to engage attendees and highlight advancements in AI technology.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242341+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127423+00:00</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on in-person networking and hands-on problem-solving, featuring sessions on agentic AI and Gemini multimodal breakthroughs. The event emphasizes the importance of direct interaction for developers in navigating complex tech landscapes.</description>
+      <description>Google Cloud Next '26 in Las Vegas emphasizes in-person networking and hands-on problem solving, featuring sessions on agentic AI and Gemini multimodal breakthroughs. The event aims to equip developers with essential tools for modern challenges.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242327+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127408+00:00</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, the successor to TFLite, which offers improved GPU and NPU acceleration and supports PyTorch and JAX. This update enhances TensorFlow's efficiency and security, positioning LiteRT as the primary framework for deploying advanced AI applications.</description>
+      <description>Google has launched LiteRT, a successor to TFLite, enhancing GPU and NPU acceleration and supporting PyTorch and JAX. This update positions LiteRT as a key framework for deploying advanced AI applications.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242313+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127394+00:00</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Wednesday Build Hour is a new weekly session by Google Cloud aimed at helping developers enhance their cloud skills through hands-on activities. This initiative focuses on practical applications of AI and developer tools, providing immediate benefits to participants.</description>
+      <description>Wednesday Build Hour is a new weekly session by Google Cloud experts aimed at helping developers enhance their cloud skills through hands-on building. This initiative focuses on practical applications in AI and developer productivity.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242299+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127380+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has rolled out updates to improve coding workflows with tools like Agent Mode and Inline Diff Views. These enhancements aim to make AI a more effective collaborator tailored to individual developer needs.</description>
+      <description>The Gemini Code Assist team has rolled out updates to improve coding workflows with tools like Agent Mode and Inline Diff Views. These enhancements aim to make AI a more effective collaborator tailored to developers' needs.</description>
       <category>Google</category>
-      <pubDate>2026-04-02T23:32:25.242285+00:00</pubDate>
+      <pubDate>2026-04-03T11:39:02.127365+00:00</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Purview in Microsoft Admin Center</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559617</link>
+      <description>Microsoft Purview in the Admin Center helps AI and IT admins manage oversharing risks and secure M365 Copilot interactions. This feature enhances data protection and compliance for organizations using AI tools.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T23:15:15+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559617</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Annotations on Teams Single Window Sharing on macOS</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559611</link>
+      <description>Microsoft Teams has introduced a feature allowing presenters to share a single application window with annotation capabilities for participants. This enhances privacy and engagement during presentations.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T23:15:15+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559611</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Viva Glint and Viva Insights Integration - Exclusion List for data sharing</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559266</link>
+      <description>Viva Glint now allows admins to manage an exclusion list for data shared with Viva Insights, enhancing privacy controls. This feature aims to streamline data management and ensure compliance with privacy standards.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T23:15:15+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559266</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention – Inline DLP for Prompts for Microsoft Foundry apps and agents</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558565</link>
+      <description>Microsoft Purview introduces inline Data Loss Prevention (DLP) for prompts in Foundry apps, enhancing data security for sensitive information. This feature is set to be generally available by June 2026.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T23:15:15+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558565</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention – Block External Domain/User action in DLP for SharePoint/OneDrive</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557191</link>
+      <description>Microsoft Purview enhances DLP for SharePoint and OneDrive by allowing admins to block access for specific external domains or users, improving control over sensitive files. This feature will be available in June 2026.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T23:15:15+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=557191</guid>
     </item>
     <item>
       <title>OpenAI acquires TBPN, the buzzy founder-led business talk show</title>
       <link>https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/</link>
-      <description>OpenAI has acquired TBPN, a popular tech podcast, which will continue to operate independently under the oversight of Chris Lehane. This acquisition reflects OpenAI's interest in expanding its media presence and influence in the tech community.</description>
+      <description>OpenAI has acquired TBPN, a popular tech podcast, which will continue to operate independently under the leadership of Chris Lehane. This move expands OpenAI's media presence.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T19:21:00+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/</guid>
@@ -74,7 +114,7 @@
     <item>
       <title>PSA: Anyone with a link can view your Granola notes by default</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/906253/granola-note-links-ai-training-psa</link>
-      <description>Users of the AI note-taking app Granola should review their privacy settings, as notes are viewable by anyone with a link by default, and are used for internal AI training unless opted out. This raises concerns about user privacy and data security.</description>
+      <description>Users of the Granola note-taking app should review privacy settings, as notes are viewable by anyone with a link by default. The app also uses notes for AI training unless opted out.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T17:56:16-04:00</pubDate>
       <guid>https://www.theverge.com/ai-artificial-intelligence/906253/granola-note-links-ai-training-psa</guid>
@@ -82,7 +122,7 @@
     <item>
       <title>New Rowhammer attacks give complete control of machines running Nvidia GPUs</title>
       <link>https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/</link>
-      <description>New Rowhammer attacks, GDDRHammer and GeForge, exploit vulnerabilities in Nvidia GPUs, allowing attackers to gain complete control over affected machines. This development poses significant security risks for systems utilizing these GPUs.</description>
+      <description>New Rowhammer attacks, GDDRHammer and GeForge, exploit vulnerabilities in Nvidia GPUs, allowing attackers to gain complete control over affected machines. This raises concerns about hardware security.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T17:00:11+00:00</pubDate>
       <guid>https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/</guid>
@@ -90,7 +130,7 @@
     <item>
       <title>Microsoft takes on AI rivals with three new foundational models</title>
       <link>https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/</link>
-      <description>Microsoft has launched three new foundational AI models capable of transcribing voice to text and generating audio and images, enhancing its competitive edge in AI. This move follows the formation of the MAI group six months ago, aiming to challenge rivals in the AI space.</description>
+      <description>Microsoft has launched three new foundational AI models capable of transcribing voice to text and generating audio and images, marking a significant step in its AI development.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T16:48:16+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/</guid>
@@ -98,7 +138,7 @@
     <item>
       <title>Google now lets you direct avatars through prompts in its Vids app</title>
       <link>https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/</link>
-      <description>Google's Vids app now allows users to customize and direct avatars through prompts, enhancing user interaction in video creation. This feature aims to make content creation more engaging and user-friendly.</description>
+      <description>Google's Vids app now allows users to direct avatars through prompts, enhancing customization and interactivity in video creation.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T16:00:00+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/</guid>
@@ -106,7 +146,7 @@
     <item>
       <title>Elon Musk is about to be a very busy boy!</title>
       <link>https://www.theverge.com/tech/906027/elon-musk-lawsuit-ipo-spacex-tesla</link>
-      <description>Elon Musk is expected to file for SpaceX's IPO on June 7th, generating significant anticipation in the tech and investment communities. This potential move reflects Musk's ongoing influence in the aerospace sector.</description>
+      <description>Elon Musk is expected to file for SpaceX's IPO soon, with June 7th being a potential date, indicating significant developments for the company.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T14:15:00-04:00</pubDate>
       <guid>https://www.theverge.com/tech/906027/elon-musk-lawsuit-ipo-spacex-tesla</guid>
@@ -114,298 +154,258 @@
     <item>
       <title>OpenAI just bought TBPN</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/906022/openai-buys-tbpn</link>
-      <description>OpenAI has acquired TBPN, an online talk show that features interviews with AI and tech leaders. This acquisition aims to enhance OpenAI's engagement with the tech community and expand its media presence.</description>
+      <description>OpenAI has officially purchased TBPN, a talk show that features interviews with AI and tech leaders, further integrating itself into the tech media landscape.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T13:40:07-04:00</pubDate>
       <guid>https://www.theverge.com/ai-artificial-intelligence/906022/openai-buys-tbpn</guid>
     </item>
     <item>
+      <title>5 top SOC-as-a-service providers and how to evaluate them</title>
+      <link>https://www.techtarget.com/searchsecurity/tip/Top-SOC-as-a-service-providers-and-how-to-evaluate-them</link>
+      <description>This article reviews five top SOC-as-a-service providers, focusing on key evaluation criteria like tools, automation, and compliance to simplify security operations.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-02T11:35:00+00:00</pubDate>
+      <guid>https://www.techtarget.com/searchsecurity/tip/Top-SOC-as-a-service-providers-and-how-to-evaluate-them</guid>
+    </item>
+    <item>
+      <title>cc-context-stats 1.15.1</title>
+      <link>https://pypi.org/project/cc-context-stats/1.15.1/</link>
+      <description>The release of cc-context-stats 1.15.1 allows users to monitor their Claude Code session context in real-time, tracking token usage effectively. This tool helps prevent running out of context during sessions.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-02T11:33:29+00:00</pubDate>
+      <guid>https://pypi.org/project/cc-context-stats/1.15.1/</guid>
+    </item>
+    <item>
       <title>It’s not easy to get depression-detecting AI through the FDA</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/905864/depression-detecting-ai-kintsugi-clinical-ai-startup-shut-down</link>
-      <description>Kintsugi, a startup focused on AI for detecting depression and anxiety, is shutting down after failing to secure FDA clearance. The company plans to release most of its technology as open-source, potentially benefiting future developments.</description>
+      <description>Kintsugi, a startup focused on AI for detecting depression and anxiety, is shutting down after failing to secure FDA approval. The company plans to release most of its technology as open-source, potentially benefiting future developments.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-02T11:33:23-04:00</pubDate>
       <guid>https://www.theverge.com/ai-artificial-intelligence/905864/depression-detecting-ai-kintsugi-clinical-ai-startup-shut-down</guid>
     </item>
     <item>
-      <title>Microsoft’s new ‘superintelligence’ game plan is all about business</title>
-      <link>https://www.theverge.com/report/905791/mustafa-suleyman-microsoft-ai-transcription-model</link>
-      <description>Microsoft's Mustafa Suleyman is focusing on developing 'superintelligence' as part of a restructuring effort. This strategic shift aims to position Microsoft as a leader in advanced AI solutions.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-02T10:00:00-04:00</pubDate>
-      <guid>https://www.theverge.com/report/905791/mustafa-suleyman-microsoft-ai-transcription-model</guid>
+      <title>When the machine asks you to stay</title>
+      <link>https://thenextweb.com/news/when-the-machine-asks-you-to-stay/</link>
+      <description>Sam Altman's promise of allowing verified adults to access erotica through ChatGPT has sparked significant online discussion. This move is framed as a step towards treating adults with respect in digital spaces.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:32:43+00:00</pubDate>
+      <guid>https://thenextweb.com/news/when-the-machine-asks-you-to-stay/</guid>
     </item>
     <item>
-      <title>Google Home’s latest update makes Gemini better at understanding your commands</title>
-      <link>https://www.theverge.com/tech/905805/google-home-gemini-temperature-controls-lighting</link>
-      <description>Google Home's latest update enhances the Gemini AI assistant's ability to understand user commands, making smart home control more intuitive. Users can now describe lighting preferences in more creative ways.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-02T09:30:12-04:00</pubDate>
-      <guid>https://www.theverge.com/tech/905805/google-home-gemini-temperature-controls-lighting</guid>
-    </item>
-    <item>
-      <title>Welcome Gemma 4: Frontier multimodal intelligence on device</title>
-      <link>https://huggingface.co/blog/gemma4</link>
-      <description>Gemma 4 has been introduced as a frontier multimodal intelligence device, although specific details about its capabilities were not provided. This launch signifies advancements in on-device AI technology.</description>
+      <title>yantrix-adapters 1.0.0</title>
+      <link>https://pypi.org/project/yantrix-adapters/1.0.0/</link>
+      <description>Yantrix-adapters 1.0.0 introduces cross-framework adapters for various agent infrastructures, enhancing compatibility and functionality across platforms like LangChain and AutoGen.</description>
       <category>Open Source</category>
-      <pubDate>2026-04-02T00:00:00+00:00</pubDate>
-      <guid>https://huggingface.co/blog/gemma4</guid>
+      <pubDate>2026-04-02T11:32:34+00:00</pubDate>
+      <guid>https://pypi.org/project/yantrix-adapters/1.0.0/</guid>
     </item>
     <item>
-      <title>Training an AI Chatbot to Manage Health in Underserved Populations: Methodological Approach</title>
-      <link>https://ai.jmir.org/2026/1/e84145</link>
-      <description>Research is underway to train an AI chatbot to manage health in underserved populations, addressing significant health disparities. This approach aims to improve healthcare access for vulnerable groups.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T23:29:54+00:00</pubDate>
-      <guid>https://ai.jmir.org/2026/1/e84145</guid>
-    </item>
-    <item>
-      <title>Obfuscation is not security – AI can deobfuscate any minified JavaScript code</title>
-      <link>https://afterpack.dev</link>
-      <description>The discussion around AI's ability to deobfuscate minified JavaScript code highlights concerns over security and source code leaks. This situation emphasizes the need for better security measures in software development.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-01T23:25:29+00:00</pubDate>
-      <guid>https://afterpack.dev</guid>
-    </item>
-    <item>
-      <title>The Survivalist’s Odds ‘n Sods</title>
-      <link>https://survivalblog.com/2026/04/02/the-survivalists-odds-n-sods-69/</link>
-      <description>SurvivalBlog's latest column features various news relevant to survivalists and preppers, aiming to educate readers on emergency preparedness.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-01T23:16:32+00:00</pubDate>
-      <guid>https://survivalblog.com/2026/04/02/the-survivalists-odds-n-sods-69/</guid>
-    </item>
-    <item>
-      <title>SharePoint: Extending AI in SharePoint using custom skills</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559800</link>
-      <description>SharePoint introduces custom skills for its AI Agent, allowing businesses to create tailored solutions that enhance functionality and workflows.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-01T23:15:50+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559800</guid>
-    </item>
-    <item>
-      <title>Microsoft Teams: Improved organization for muted and meeting chats</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559605</link>
-      <description>Microsoft Teams enhances chat organization by grouping muted and meeting chats into dedicated sections, improving user experience.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-01T23:15:50+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559605</guid>
-    </item>
-    <item>
-      <title>Microsoft Viva: Following feed in Viva Engage</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559482</link>
-      <description>Microsoft Viva Engage introduces a new feed type to help users stay updated on posts from followed individuals and communities.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-01T23:15:50+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559482</guid>
-    </item>
-    <item>
-      <title>Microsoft Purview: Data Catalog – Migration tool in Unified Catalog to migrate classic glossary terms to Unified Catalog</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558683</link>
-      <description>Microsoft Purview's Unified Catalog now includes a migration tool to transition classic glossary terms to the new system.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-01T23:15:50+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558683</guid>
-    </item>
-    <item>
-      <title>Microsoft Teams: Facilitator detects and answers questions</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558341</link>
-      <description>Teams' Facilitator feature now detects unanswered questions during meetings and offers to find answers using web searches.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-01T23:15:50+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558341</guid>
-    </item>
-    <item>
-      <title>django-traduire 0.1.0</title>
-      <link>https://pypi.org/project/django-traduire/0.1.0/</link>
-      <description>django-traduire 0.1.0 allows automatic translation of django-modeltranslation fields using popular translation services.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T23:11:59+00:00</pubDate>
-      <guid>https://pypi.org/project/django-traduire/0.1.0/</guid>
-    </item>
-    <item>
-      <title>django-traduire added to PyPI</title>
-      <link>https://pypi.org/project/django-traduire/</link>
-      <description>django-traduire has been added to PyPI, enabling automatic translation for Django model fields using various translation tools.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T23:11:55+00:00</pubDate>
-      <guid>https://pypi.org/project/django-traduire/</guid>
-    </item>
-    <item>
-      <title>Blind artist to run marathon using AI glasses and app in ‘world first’</title>
-      <link>https://www.the-independent.com/tech/dot-victoria-coren-mitchell-runners-eyes-tower-bridge-b2950471.html</link>
-      <description>Blind artist Clarke Reynolds plans to run the Brighton Marathon with assistance from AI glasses and an app, marking a world first.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-01T23:01:00+00:00</pubDate>
-      <guid>https://www.the-independent.com/tech/dot-victoria-coren-mitchell-runners-eyes-tower-bridge-b2950471.html</guid>
-    </item>
-    <item>
-      <title>Bitcoin Exchange Inflows Flash Rare Signal As Large Deposits Return</title>
-      <link>http://www.newsbtc.com/bitcoin-news/hong-kong-stablecoin-hsbc-standard-chartered/</link>
-      <description>Recent data indicates a surge in Bitcoin exchange inflows, suggesting that large investors, or 'whales', are re-entering the market.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T23:00:13+00:00</pubDate>
-      <guid>http://www.newsbtc.com/bitcoin-news/hong-kong-stablecoin-hsbc-standard-chartered/</guid>
-    </item>
-    <item>
-      <title>"AIの棚取り"できていますか？--ChatGPTやGeminiでのブランド推薦状況を可視化するB2B向け診断ツール「AIタナドリ」を無料公開</title>
-      <link>https://prtimes.jp/main/html/rd/p/000000063.000035683.html</link>
-      <description>Orosy Corporation has launched 'AIタナドリ', a free diagnostic tool for B2B that visualizes brand recommendations using ChatGPT and Gemini. This tool aims to enhance businesses' understanding of AI's impact on branding.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T23:00:00+00:00</pubDate>
-      <guid>https://prtimes.jp/main/html/rd/p/000000063.000035683.html</guid>
-    </item>
-    <item>
-      <title>10 Great Sci-Fi Movies You Can Now Stream For Free</title>
-      <link>http://comicbook.com/movies/list/free-sci-fi-movies-streaming-april-2026/</link>
-      <description>Several streaming platforms are now offering free access to a selection of underrated and classic sci-fi movies, catering to fans looking for quality content to binge-watch. This initiative highlights the ongoing popularity of the sci-fi genre.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-01T23:00:00+00:00</pubDate>
-      <guid>http://comicbook.com/movies/list/free-sci-fi-movies-streaming-april-2026/</guid>
-    </item>
-    <item>
-      <title>nteract 2.1.1a202604012243</title>
-      <link>https://pypi.org/project/nteract/2.1.1a202604012243/</link>
-      <description>Interact 2.1.1a202604012243 introduces AI capabilities to Jupyter notebooks, enabling integration with various AI models like Claude and ChatGPT. This update aims to enhance the functionality of data science workflows.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T22:54:41+00:00</pubDate>
-      <guid>https://pypi.org/project/nteract/2.1.1a202604012243/</guid>
-    </item>
-    <item>
-      <title>The SpaceX IPO is great — but it won’t deliver 100x returns</title>
-      <link>https://fortune.com/2026/04/01/why-spacex-ipo-wont-deliver-value-elon-musk/</link>
-      <description>The article discusses the changing landscape of IPOs in the U.S., noting that companies now face higher thresholds for going public. This shift impacts investors' expectations regarding returns.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-01T22:51:15+00:00</pubDate>
-      <guid>https://fortune.com/2026/04/01/why-spacex-ipo-wont-deliver-value-elon-musk/</guid>
-    </item>
-    <item>
-      <title>mscs 2.2.0</title>
-      <link>https://pypi.org/project/mscs/2.2.0/</link>
-      <description>The release of mscs 2.2.0 offers a secure and fast serialization method for Python, serving as a replacement for the traditional pickle method. It supports numpy arrays and PyTorch tensors, enhancing data handling.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-01T22:50:44+00:00</pubDate>
-      <guid>https://pypi.org/project/mscs/2.2.0/</guid>
-    </item>
-    <item>
-      <title>mscs added to PyPI</title>
-      <link>https://pypi.org/project/mscs/</link>
-      <description>The mscs library has been added to PyPI, providing a secure serialization option for Python. It is designed to work seamlessly with numpy arrays and PyTorch tensors.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-01T22:50:44+00:00</pubDate>
-      <guid>https://pypi.org/project/mscs/</guid>
-    </item>
-    <item>
-      <title>SpaceX Files Draft for Potentially Stratospheric IPO</title>
-      <link>https://www.cnet.com/news/spacex-files-draft-for-potentially-stratospheric-ipo/</link>
-      <description>SpaceX has filed a draft for a potential IPO that could raise $75 billion, although challenges remain in the market. This move indicates SpaceX's ambition for significant growth.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-01T22:50:00+00:00</pubDate>
-      <guid>https://www.cnet.com/news/spacex-files-draft-for-potentially-stratospheric-ipo/</guid>
-    </item>
-    <item>
-      <title>claude-jacked 0.32.0</title>
-      <link>https://pypi.org/project/claude-jacked/0.32.0/</link>
-      <description>The release of claude-jacked 0.32.0 introduces smart reviewers and session search capabilities for Claude Code, enhancing user interaction and functionality.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-01T22:47:34+00:00</pubDate>
-      <guid>https://pypi.org/project/claude-jacked/0.32.0/</guid>
-    </item>
-    <item>
-      <title>language-model-common 1.0.28</title>
-      <link>https://pypi.org/project/language-model-common/1.0.28/</link>
-      <description>The language-model-common 1.0.28 framework has been released to improve langchain and add loading configurations, facilitating better integration of language models.</description>
+      <title>yantrix-adapters added to PyPI</title>
+      <link>https://pypi.org/project/yantrix-adapters/</link>
+      <description>The yantrix-adapters have been added to PyPI, providing developers with tools for cross-framework compatibility in AI applications.</description>
       <category>Open Source</category>
-      <pubDate>2026-04-01T22:43:20+00:00</pubDate>
-      <guid>https://pypi.org/project/language-model-common/1.0.28/</guid>
+      <pubDate>2026-04-02T11:32:27+00:00</pubDate>
+      <guid>https://pypi.org/project/yantrix-adapters/</guid>
     </item>
     <item>
-      <title>Sona Raises $45 Million to Expand AI Platform for Frontline Businesses</title>
-      <link>https://www.pymnts.com/news/investment-tracker/2026/sona-raises-45-million-to-expand-ai-platform-for-frontline-businesses/</link>
-      <description>Sona has successfully raised $45 million in a Series B funding round to expand its AI platform aimed at frontline businesses in sectors like hospitality and healthcare. This funding will help enhance its service offerings.</description>
+      <title>Microsoft just had its worst quarter on Wall Street in nearly two decades — the steepest fall since the Great Recession</title>
+      <link>https://finance.yahoo.com/markets/stocks/articles/microsoft-just-had-worst-quarter-113000733.html</link>
+      <description>Microsoft reported its worst quarterly performance in nearly two decades, primarily due to costly AI investments that have yet to yield significant returns. This raises concerns about the sustainability of such investments.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T11:30:00+00:00</pubDate>
+      <guid>https://finance.yahoo.com/markets/stocks/articles/microsoft-just-had-worst-quarter-113000733.html</guid>
+    </item>
+    <item>
+      <title>scrapingbee-cli 1.4.0</title>
+      <link>https://pypi.org/project/scrapingbee-cli/1.4.0/</link>
+      <description>The scrapingbee-cli 1.4.0 is a command-line client for the ScrapingBee API, allowing users to scrape web pages and access various services directly from the terminal.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:27:20+00:00</pubDate>
+      <guid>https://pypi.org/project/scrapingbee-cli/1.4.0/</guid>
+    </item>
+    <item>
+      <title>Mozilla President Mark Surman on AI, the future of the open web, and collapsing publisher models</title>
+      <link>https://www.medianama.com/2026/04/223-open-web-future-ai-mark-surman/</link>
+      <description>Mozilla President Mark Surman discusses the transformative impact of AI on the internet and the potential for redefining the open web amidst changing publisher models.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:25:55+00:00</pubDate>
+      <guid>https://www.medianama.com/2026/04/223-open-web-future-ai-mark-surman/</guid>
+    </item>
+    <item>
+      <title>OpenAI's CFO says the company is passing on opportunities because it does not have enough compute</title>
+      <link>https://www.businessinsider.com/openai-cfo-says-compute-crunch-is-forcing-tough-trade-offs-2026-4</link>
+      <description>OpenAI's CFO Sarah Friar revealed that the company is forgoing certain opportunities due to insufficient computing resources, indicating a strategic focus on resource allocation.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:23:55+00:00</pubDate>
+      <guid>https://www.businessinsider.com/openai-cfo-says-compute-crunch-is-forcing-tough-trade-offs-2026-4</guid>
+    </item>
+    <item>
+      <title>pytorch-geometric added to PyPI</title>
+      <link>https://pypi.org/project/pytorch-geometric/</link>
+      <description>A dummy package named pytorch-geometric has been added to PyPI to assist users who mistakenly install non-existent package names, addressing a common issue in the community.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:19:53+00:00</pubDate>
+      <guid>https://pypi.org/project/pytorch-geometric/</guid>
+    </item>
+    <item>
+      <title>pytorch-geometric 0.0.2</title>
+      <link>https://pypi.org/project/pytorch-geometric/0.0.2/</link>
+      <description>A new dummy package named pytorch-geometric 0.0.2 has been created to assist users who mistakenly install non-existent packages suggested by LLMs. This highlights the issue of LLM hallucinations in software development.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-02T11:19:53+00:00</pubDate>
+      <guid>https://pypi.org/project/pytorch-geometric/0.0.2/</guid>
+    </item>
+    <item>
+      <title>The Toolkit Pattern</title>
+      <link>https://www.oreilly.com/radar/the-toolkit-pattern/#BlogPosting</link>
+      <description>This article discusses the toolkit pattern in AI-driven development, focusing on how to document project configurations effectively. It is part of a series exploring agentic engineering.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:19:06+00:00</pubDate>
+      <guid>https://www.oreilly.com/radar/the-toolkit-pattern/#BlogPosting</guid>
+    </item>
+    <item>
+      <title>Show HN: Hacker News, summarized and printed to your local printer</title>
+      <link>https://github.com/thejchap/jc-news</link>
+      <description>A new tool allows users to summarize Hacker News articles and print them locally. This tool aims to enhance accessibility and engagement with online content.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-02T11:16:36+00:00</pubDate>
+      <guid>https://github.com/thejchap/jc-news</guid>
+    </item>
+    <item>
+      <title>videosdk-plugins-openai 1.0.2</title>
+      <link>https://pypi.org/project/videosdk-plugins-openai/1.0.2/</link>
+      <description>The videosdk-plugins-openai 1.0.2 plugin has been released, enabling integration of OpenAI services within the VideoSDK Agent Framework. This expands the capabilities of video applications using AI.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-02T11:11:45+00:00</pubDate>
+      <guid>https://pypi.org/project/videosdk-plugins-openai/1.0.2/</guid>
+    </item>
+    <item>
+      <title>videosdk-plugins-langchain 1.0.2</title>
+      <link>https://pypi.org/project/videosdk-plugins-langchain/1.0.2/</link>
+      <description>The videosdk-plugins-langchain 1.0.2 plugin has been introduced, allowing integration of LangChain and LangGraph into the VideoSDK Agent Framework, enhancing its versatility.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-02T11:11:17+00:00</pubDate>
+      <guid>https://pypi.org/project/videosdk-plugins-langchain/1.0.2/</guid>
+    </item>
+    <item>
+      <title>Big Tech Shouldn’t Be Writing the Rules for AI</title>
+      <link>https://www.project-syndicate.org/commentary/ai-government-must-not-be-left-to-profit-driven-private-firms-by-gabriela-ramos-2026-04</link>
+      <description>Anthropic's conflict with the Trump administration highlights the need for governments to take responsibility in AI governance, rather than leaving it to big tech companies. This raises concerns about corporate influence on AI regulations.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-02T11:02:21+00:00</pubDate>
+      <guid>https://www.project-syndicate.org/commentary/ai-government-must-not-be-left-to-profit-driven-private-firms-by-gabriela-ramos-2026-04</guid>
+    </item>
+    <item>
+      <title>Blend’s post-IPO reset: CEO Nima Ghamsari bets that AI can turn it all around</title>
+      <link>https://fortune.com/2026/04/02/blend-fintech-ipo-nima-ghamsari-ai/</link>
+      <description>Blend's CEO Nima Ghamsari is pivoting the company towards AI-driven automation following a downturn in the mortgage market. This shift aims to revitalize the company's performance post-IPO.</description>
       <category>AI Foundry</category>
-      <pubDate>2026-04-01T22:36:23+00:00</pubDate>
-      <guid>https://www.pymnts.com/news/investment-tracker/2026/sona-raises-45-million-to-expand-ai-platform-for-frontline-businesses/</guid>
+      <pubDate>2026-04-02T11:00:42+00:00</pubDate>
+      <guid>https://fortune.com/2026/04/02/blend-fintech-ipo-nima-ghamsari-ai/</guid>
     </item>
     <item>
-      <title>pitloom 0.3.0</title>
-      <link>https://pypi.org/project/pitloom/0.3.0/</link>
-      <description>Pitloom 0.3.0 introduces automated transparency for Python and AI projects, enabling SBOM generation and metadata extraction from various model formats.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-01T22:34:41+00:00</pubDate>
-      <guid>https://pypi.org/project/pitloom/0.3.0/</guid>
-    </item>
-    <item>
-      <title>uipath-langchain 0.9.15</title>
-      <link>https://pypi.org/project/uipath-langchain/0.9.15/</link>
-      <description>The uipath-langchain 0.9.15 SDK allows developers to create and deploy LangGraph agents on the UiPath Cloud Platform, expanding automation capabilities.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-01T22:29:54+00:00</pubDate>
-      <guid>https://pypi.org/project/uipath-langchain/0.9.15/</guid>
-    </item>
-    <item>
-      <title>Intel Next-Gen Nova Lake-HX Laptop CPUs Pack Up To 28 Cores, AMD Halo Competitor Arrives As Razer Lake-AX</title>
-      <link>https://wccftech.com/intel-nova-lake-hx-laptop-cpus-pack-up-to-28-cores-amd-halo-competitor-razer-lake-ax/</link>
-      <description>Intel's upcoming Nova Lake-HX laptop CPUs will feature up to 28 cores, marking a significant upgrade aimed at competing with AMD's offerings.</description>
+      <title>The Dynamic Island is Finally Changing: New iPhone 18 Leak Reveals 35% Smaller Design</title>
+      <link>https://www.geeky-gadgets.com/iphone-18-details-leaked/</link>
+      <description>Recent leaks about the iPhone 18 suggest a 35% smaller Dynamic Island design, indicating a focus on internal advancements rather than a complete redesign. This could significantly impact user experience.</description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>2026-04-01T22:17:22+00:00</pubDate>
-      <guid>https://wccftech.com/intel-nova-lake-hx-laptop-cpus-pack-up-to-28-cores-amd-halo-competitor-razer-lake-ax/</guid>
+      <pubDate>2026-04-02T11:00:22+00:00</pubDate>
+      <guid>https://www.geeky-gadgets.com/iphone-18-details-leaked/</guid>
     </item>
     <item>
-      <title>dobby-ai-sdk 0.1.0</title>
-      <link>https://pypi.org/project/dobby-ai-sdk/0.1.0/</link>
-      <description>The Dobby AI SDK 0.1.0 is officially launched, providing a platform for developers to create AI agents.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-01T22:12:50+00:00</pubDate>
-      <guid>https://pypi.org/project/dobby-ai-sdk/0.1.0/</guid>
-    </item>
-    <item>
-      <title>dobby-ai-sdk added to PyPI</title>
-      <link>https://pypi.org/project/dobby-ai-sdk/</link>
-      <description>The Dobby AI SDK has been added to PyPI, making it accessible for developers to build AI agents.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-01T22:12:44+00:00</pubDate>
-      <guid>https://pypi.org/project/dobby-ai-sdk/</guid>
-    </item>
-    <item>
-      <title>torchio 1.0.2</title>
-      <link>https://pypi.org/project/torchio/1.0.2/</link>
-      <description>Torchio 1.0.2 offers tools for medical image processing using PyTorch, enhancing capabilities in healthcare applications.</description>
+      <title>chem_mat_database 1.7.1</title>
+      <link>https://pypi.org/project/chem_mat_database/</link>
+      <description>The chem_mat_database 1.7.1 has been released, providing a Command Line Interface for various projects. This tool aims to streamline project management in chemistry-related applications.</description>
       <category>Meta</category>
-      <pubDate>2026-04-01T21:55:44+00:00</pubDate>
-      <guid>https://pypi.org/project/torchio/1.0.2/</guid>
+      <pubDate>2026-04-02T10:56:25+00:00</pubDate>
+      <guid>https://pypi.org/project/chem_mat_database/</guid>
     </item>
     <item>
-      <title>azure-ai-evaluation 1.16.3</title>
-      <link>https://pypi.org/project/azure-ai-evaluation/1.16.3/</link>
-      <description>Microsoft's Azure AI Evaluation Library for Python has been updated to version 1.16.3, providing enhanced tools for AI evaluation.</description>
-      <category>Microsoft</category>
-      <pubDate>2026-04-01T21:54:45+00:00</pubDate>
-      <guid>https://pypi.org/project/azure-ai-evaluation/1.16.3/</guid>
-    </item>
-    <item>
-      <title>Project Hail Mary &amp; Artemis II Prove 2026 Is The Year Space Came Back</title>
-      <link>https://screenrant.com/project-haily-mary-movie-artemis-ii-launch-2026-space/</link>
-      <description>The successful launches of Artemis II and Project Hail Mary signal a resurgence in space exploration, with 2026 poised for significant advancements.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>2026-04-01T21:51:18+00:00</pubDate>
-      <guid>https://screenrant.com/project-haily-mary-movie-artemis-ii-launch-2026-space/</guid>
-    </item>
-    <item>
-      <title>knowledge2 added to PyPI</title>
-      <link>https://pypi.org/project/knowledge2/</link>
-      <description>Knowledge2, a new Python SDK for the Knowledge2 retrieval platform, has been added to PyPI, enhancing data retrieval capabilities.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-01T21:23:57+00:00</pubDate>
-      <guid>https://pypi.org/project/knowledge2/</guid>
-    </item>
-    <item>
-      <title>5 Honest Lessons on How AI is Actually Rewiring B2B Sales (From Salesforce, Momentum, and Mangomint)</title>
-      <link>https://www.saastr.com/5-honest-lessons-on-how-ai-is-actually-rewiring-b2b-sales-from-salesforce-momentum-and-mangomint/</link>
-      <description>Industry leaders shared insights at SaaStr AI London on how AI is transforming B2B sales, highlighting practical lessons learned.</description>
+      <title>AI laws overlook environmental damage – here’s what needs to change</title>
+      <link>https://theconversation.com/ai-laws-overlook-environmental-damage-heres-what-needs-to-change-279047</link>
+      <description>The article discusses the need to integrate environmental considerations into AI laws to mitigate potential ecological damage as AI technology expands rapidly. It emphasizes a balanced approach to AI governance.</description>
       <category>Industry</category>
-      <pubDate>2026-04-01T21:14:16+00:00</pubDate>
-      <guid>https://www.saastr.com/5-honest-lessons-on-how-ai-is-actually-rewiring-b2b-sales-from-salesforce-momentum-and-mangomint/</guid>
+      <pubDate>2026-04-02T10:55:06+00:00</pubDate>
+      <guid>https://theconversation.com/ai-laws-overlook-environmental-damage-heres-what-needs-to-change-279047</guid>
+    </item>
+    <item>
+      <title>Jack Tan, Zizan Razak Join 2026 Ambassador Lineup as Malaysia Film Fest Unveils ‘Resonance’ Theme</title>
+      <link>https://variety.com/2026/film/news/jack-tan-zizan-razak-malaysia-film-fest-ambassador-1236705229/</link>
+      <description>The 9th Malaysia International Film Festival has announced its 2026 ambassadors, including actors Zizan Razak and Jack Tan, alongside key programming details. The festival will take place from July 18 to 25 in Kuala Lumpur, highlighting the importance of cultural events in the region.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-02T10:53:08+00:00</pubDate>
+      <guid>https://variety.com/2026/film/news/jack-tan-zizan-razak-malaysia-film-fest-ambassador-1236705229/</guid>
+    </item>
+    <item>
+      <title>hcom 0.7.8</title>
+      <link>https://pypi.org/project/hcom/0.7.8/</link>
+      <description>The hcom 0.7.8 update allows AI agents to communicate and interact across terminals, enhancing capabilities for Claude Code, Gemini CLI, Codex, and OpenCode. This development signifies a step forward in AI agent collaboration.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-02T10:50:01+00:00</pubDate>
+      <guid>https://pypi.org/project/hcom/0.7.8/</guid>
+    </item>
+    <item>
+      <title>Maintaining cyber control when AI can act autonomously</title>
+      <link>https://www.techradar.com/pro/maintaining-cyber-control-when-ai-can-act-autonomously</link>
+      <description>This article discusses the importance of defining the permissions and workflows for autonomous AI agents to ensure they operate within authorized boundaries. It raises critical questions about governance and control in AI systems.</description>
+      <category>AI Foundry</category>
+      <pubDate>2026-04-02T10:40:22+00:00</pubDate>
+      <guid>https://www.techradar.com/pro/maintaining-cyber-control-when-ai-can-act-autonomously</guid>
+    </item>
+    <item>
+      <title>litert-torch-nightly 0.9.0.dev20260402</title>
+      <link>https://pypi.org/project/litert-torch-nightly/0.9.0.dev20260402/</link>
+      <description>The litert-torch-nightly 0.9.0.dev20260402 update introduces support for converting PyTorch models with LiteRT, enhancing model deployment efficiency. This update is significant for developers working with AI models.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-02T10:32:14+00:00</pubDate>
+      <guid>https://pypi.org/project/litert-torch-nightly/0.9.0.dev20260402/</guid>
+    </item>
+    <item>
+      <title>Freight Technologies Announces Strategic Update on Transition to AI-Powered, Software-First Logistics Technology Company</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/02/3267201/0/en/Freight-Technologies-Announces-Strategic-Update-on-Transition-to-AI-Powered-Software-First-Logistics-Technology-Company.html</link>
+      <description>Freight Technologies is exploring strategic options for its online brokerage business while accelerating the commercialization of its AI-powered logistics platform. This move indicates a shift towards a software-first approach in logistics.</description>
+      <category>AI Foundry</category>
+      <pubDate>2026-04-02T10:30:00+00:00</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/02/3267201/0/en/Freight-Technologies-Announces-Strategic-Update-on-Transition-to-AI-Powered-Software-First-Logistics-Technology-Company.html</guid>
+    </item>
+    <item>
+      <title>evaluatorq 1.2.3rc1</title>
+      <link>https://pypi.org/project/evaluatorq/1.2.3rc1/</link>
+      <description>The evaluatorq 1.2.3rc1 update introduces a flexible evaluation framework for Python, allowing parallel evaluations and integration with the Orq AI platform. This tool is beneficial for developers in AI research and application.</description>
+      <category>AI Foundry</category>
+      <pubDate>2026-04-02T10:29:54+00:00</pubDate>
+      <guid>https://pypi.org/project/evaluatorq/1.2.3rc1/</guid>
+    </item>
+    <item>
+      <title>GitHub Will Use Copilot Interaction Data from Free, Pro, and Pro+ Users to Train AI Models</title>
+      <link>https://www.infoq.com/news/2026/04/github-copilot-training-data/</link>
+      <description>GitHub plans to use interaction data from Copilot users to train its AI models, starting April 24. This data collection will include various user interactions, raising privacy and ethical concerns.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-02T10:17:00+00:00</pubDate>
+      <guid>https://www.infoq.com/news/2026/04/github-copilot-training-data/</guid>
+    </item>
+    <item>
+      <title>iPhone 18 Pro Reportedly Won't Come in Black</title>
+      <link>https://www.macrumors.com/2026/04/02/iphone-18-pro-wont-come-in-black/</link>
+      <description>The upcoming iPhone 18 Pro will reportedly not be available in black, continuing a trend seen with the iPhone 17 Pro. This change reflects Apple's evolving design choices and market strategy.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>2026-04-02T10:16:52+00:00</pubDate>
+      <guid>https://www.macrumors.com/2026/04/02/iphone-18-pro-wont-come-in-black/</guid>
+    </item>
+    <item>
+      <title>torchax 0.0.12.dev20260402</title>
+      <link>https://pypi.org/project/torchax/0.0.12.dev20260402/</link>
+      <description>The torchax 0.0.12.dev20260402 update introduces a library for running Jax and PyTorch together, enhancing flexibility for developers working with different AI frameworks. This integration is significant for AI model development.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-02T10:15:46+00:00</pubDate>
+      <guid>https://pypi.org/project/torchax/0.0.12.dev20260402/</guid>
+    </item>
+    <item>
+      <title>UAT-10608: Inside a large-scale automated credential harvesting operation targeting web applications</title>
+      <link>https://blog.talosintelligence.com/uat-10608-inside-a-large-scale-automated-credential-harvesting-operation-targeting-web-applications/</link>
+      <description>Talos has disclosed a large-scale automated credential harvesting operation, tracked as UAT-10608, which uses a framework called 'NEXUS Listener.' This campaign highlights ongoing cybersecurity threats targeting web applications.</description>
+      <category>AI Foundry</category>
+      <pubDate>2026-04-02T10:00:57+00:00</pubDate>
+      <guid>https://blog.talosintelligence.com/uat-10608-inside-a-large-scale-automated-credential-harvesting-operation-targeting-web-applications/</guid>
     </item>
   </channel>
 </rss>
