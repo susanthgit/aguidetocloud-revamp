@@ -5,92 +5,380 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Apr 2026 11:31:47 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 23:29:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>On-Device Function Calling in Google AI Edge Gallery</title>
       <link>https://developers.googleblog.com/on-device-function-calling-in-google-ai-edge-gallery/</link>
-      <description>Google launched FunctionGemma, a 270M parameter model for on-device function calling, enabling efficient AI tasks offline on mobile devices. This innovation enhances user experience by allowing complex operations like calendar management without internet dependency.</description>
+      <description>Google has launched FunctionGemma, a 270M parameter model that enables on-device function calling for efficient AI experiences on mobile devices. This allows users to perform complex tasks offline with low latency, enhancing mobile AI capabilities.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515709+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646713+00:00</pubDate>
       <guid>https://developers.googleblog.com/on-device-function-calling-in-google-ai-edge-gallery/</guid>
     </item>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a new ecosystem of third-party integrations, allowing developers to connect AI agents with tools like GitHub and Notion. This enhancement aims to facilitate the creation of more capable real-world applications.</description>
+      <description>The Agent Development Kit (ADK) now features a new ecosystem of third-party integrations, allowing developers to connect their AI agents with tools like GitHub and Notion. This expansion aims to facilitate the creation of more capable real-world applications.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515695+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646699+00:00</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 will take place on May 19-20, featuring a save the date puzzle that showcases AI's potential. This event aims to engage participants and highlight advancements in AI technology.</description>
+      <description>Google I/O 2026 is scheduled for May 19-20, featuring a save the date puzzle that showcases AI's potential. This annual tradition helps build excitement for the event while highlighting AI's role in enhancing experiences.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515681+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646686+00:00</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, featuring keynotes available online. The event emphasizes the transition to agentic AI and offers specialized tracks for developers.</description>
+      <description>Google Cloud Next '26 in Las Vegas will offer an in-person experience focused on networking and hands-on problem solving. The event will cover various topics related to agentic AI and provide developers with essential tools.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515668+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646672+00:00</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, the successor to TFLite, enhancing GPU and NPU acceleration and supporting PyTorch and JAX. This update positions LiteRT as the primary framework for deploying advanced AI and on-device inference.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, which provides faster GPU and NPU acceleration and better support for PyTorch and JAX. This update enhances efficiency and security within the TensorFlow ecosystem.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515654+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646658+00:00</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Wednesday Build Hour is a new weekly interactive session by Google Cloud experts aimed at helping developers enhance their cloud skills through hands-on experience. The program covers advanced AI topics and aims for immediate practical application.</description>
+      <description>Wednesday Build Hour is a new interactive session by Google Cloud aimed at helping developers enhance their cloud skills through hands-on building. It focuses on advanced topics, providing immediate practical results.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515640+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646644+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has rolled out updates to improve coding workflows with tools like Agent Mode and Inline Diff Views. These enhancements aim to make AI a more tailored collaborator for developers.</description>
+      <description>The Gemini Code Assist team has rolled out updates to improve the coding experience, introducing tools like Agent Mode and Inline Diff Views. These features aim to customize AI assistance to better fit individual developer workflows.</description>
       <category>Google</category>
-      <pubDate>2026-04-04T11:30:19.515627+00:00</pubDate>
+      <pubDate>2026-04-04T23:28:28.646631+00:00</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
+    </item>
+    <item>
+      <title>Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage</title>
+      <link>https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/</link>
+      <description>Claude Code subscribers will face additional charges for using OpenClaw and other third-party tools, increasing the cost of accessing Anthropic's coding assistant. This change may impact users' budgeting for AI tools.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-04T16:32:22+00:00</pubDate>
+      <guid>https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/</guid>
+    </item>
+    <item>
+      <title>A folk musician became a target for AI fakes and a copyright troll</title>
+      <link>https://www.theverge.com/entertainment/907111/murphy-campbell-folk-music-ai-copyright</link>
+      <description>Folk musician Murphy Campbell found unauthorized AI-generated versions of her songs on Spotify, leading to concerns about copyright infringement and the authenticity of music online. This incident highlights the challenges artists face in the age of AI.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-04T13:52:10-04:00</pubDate>
+      <guid>https://www.theverge.com/entertainment/907111/murphy-campbell-folk-music-ai-copyright</guid>
+    </item>
+    <item>
+      <title>Really, you made this without AI? Prove it</title>
+      <link>https://www.theverge.com/tech/906453/human-made-ai-free-logo-creative-content</link>
+      <description>As generative AI technology advances, creators face skepticism regarding the authenticity of their work. The increasing ability of AI to mimic human creations raises questions about originality and trust in creative fields.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-04T09:00:00-04:00</pubDate>
+      <guid>https://www.theverge.com/tech/906453/human-made-ai-free-logo-creative-content</guid>
     </item>
     <item>
       <title>Anthropic is having a moment in the private markets; SpaceX could spoil the party</title>
       <link>https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/</link>
-      <description>The private market for shares is booming, with Anthropic emerging as a leading trade while OpenAI is losing traction. SpaceX's upcoming IPO could significantly impact this competitive landscape.</description>
+      <description>Anthropic is currently the most sought-after private market investment, while OpenAI is losing traction. SpaceX's upcoming IPO could significantly impact this landscape.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-04T01:31:00+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/</guid>
     </item>
     <item>
+      <title>Extra usage credit for Claude to celebrate usage bundles launch (Pro, Max, Team)</title>
+      <link>https://support.claude.com/en/articles/14246053-extra-usage-credit-for-pro-max-and-team-plans</link>
+      <description>Claude is offering extra usage credits to celebrate the launch of its new usage bundles for Pro, Max, and Team plans.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-03T23:26:44+00:00</pubDate>
+      <guid>https://support.claude.com/en/articles/14246053-extra-usage-credit-for-pro-max-and-team-plans</guid>
+    </item>
+    <item>
+      <title>Supply Chain Attacks Surge in March 2026</title>
+      <link>https://www.zscaler.com/blogs/security-research/supply-chain-attacks-surge-march-2026</link>
+      <description>March 2026 saw a notable rise in software supply chain attacks, including a significant compromise of the Axios NPM package linked to North Korean hackers.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T23:17:02+00:00</pubDate>
+      <guid>https://www.zscaler.com/blogs/security-research/supply-chain-attacks-surge-march-2026</guid>
+    </item>
+    <item>
+      <title>pluck-mcp 0.1.1</title>
+      <link>https://pypi.org/project/pluck-mcp/0.1.1/</link>
+      <description>Pluck has released version 0.1.1 of its MCP server, enabling users to query their knowledge graph from various clients.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-03T23:07:22+00:00</pubDate>
+      <guid>https://pypi.org/project/pluck-mcp/0.1.1/</guid>
+    </item>
+    <item>
+      <title>Show HN: SpeechSDK – free, open-source SDK that unifies all AI voice models</title>
+      <link>https://www.speechsdk.dev/</link>
+      <description>SpeechSDK is a new open-source SDK that integrates various AI voice models into a unified platform.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T23:00:10+00:00</pubDate>
+      <guid>https://www.speechsdk.dev/</guid>
+    </item>
+    <item>
+      <title>Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw</title>
+      <link>https://news.ycombinator.com/item?id=47633396</link>
+      <description>Anthropic has announced that Claude Code subscriptions will no longer support third-party harnesses like OpenClaw starting April 4.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-03T22:55:24+00:00</pubDate>
+      <guid>https://news.ycombinator.com/item?id=47633396</guid>
+    </item>
+    <item>
+      <title>air-controls 0.1.0</title>
+      <link>https://pypi.org/project/air-controls/0.1.0/</link>
+      <description>Version 0.1.0 of air-controls has been released, providing runtime visibility and audit trails for AI agents across various platforms.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-03T22:54:03+00:00</pubDate>
+      <guid>https://pypi.org/project/air-controls/0.1.0/</guid>
+    </item>
+    <item>
+      <title>air-controls added to PyPI</title>
+      <link>https://pypi.org/project/air-controls/</link>
+      <description>The air-controls package has been added to PyPI, offering tools for monitoring AI agents' activities.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-03T22:54:03+00:00</pubDate>
+      <guid>https://pypi.org/project/air-controls/</guid>
+    </item>
+    <item>
+      <title>skill-installer 0.1.2</title>
+      <link>https://pypi.org/project/skill-installer/0.1.2/</link>
+      <description>Skill-installer version 0.1.2 has been released, allowing users to install Claude Code skills directly from GitHub.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-03T22:52:49+00:00</pubDate>
+      <guid>https://pypi.org/project/skill-installer/0.1.2/</guid>
+    </item>
+    <item>
+      <title>pluck-mcp added to PyPI</title>
+      <link>https://pypi.org/project/pluck-mcp/</link>
+      <description>Pluck-mcp has been added to PyPI, enabling users to query their knowledge graph from various clients.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-03T22:52:06+00:00</pubDate>
+      <guid>https://pypi.org/project/pluck-mcp/</guid>
+    </item>
+    <item>
+      <title>glassbox-mech-interp 4.2.0</title>
+      <link>https://pypi.org/project/glassbox-mech-interp/4.2.0/</link>
+      <description>The release of glassbox-mech-interp 4.2.0 focuses on mechanistic interpretability and compliance with the EU AI Act, introducing various frameworks for AI analysis.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-03T22:39:20+00:00</pubDate>
+      <guid>https://pypi.org/project/glassbox-mech-interp/4.2.0/</guid>
+    </item>
+    <item>
+      <title>Deepfakes and malware: AI menu grows longer for threat actors, causing headaches for defenders</title>
+      <link>https://siliconangle.com/2026/04/03/deepfakes-malware-ai-menu-grows-longer-threat-actors-causing-headaches-defenders/</link>
+      <description>AI technologies are increasingly being weaponized by malicious actors, leading to a rise in threats like deepfakes and malware, creating challenges for cybersecurity.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T22:36:33+00:00</pubDate>
+      <guid>https://siliconangle.com/2026/04/03/deepfakes-malware-ai-menu-grows-longer-threat-actors-causing-headaches-defenders/</guid>
+    </item>
+    <item>
+      <title>hermes-px 0.0.4</title>
+      <link>https://pypi.org/project/hermes-px/0.0.4/</link>
+      <description>Hermes-px 0.0.4 is introduced as a secure AI inference proxy library that utilizes Tor routing, serving as a drop-in replacement for the OpenAI SDK.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T22:33:00+00:00</pubDate>
+      <guid>https://pypi.org/project/hermes-px/0.0.4/</guid>
+    </item>
+    <item>
+      <title>Two OpenAI Execs, Including CEO of AGI, Going on Medical Leave</title>
+      <link>http://futurism.com/health-medicine/openai-execs-medical-leave</link>
+      <description>Two executives from OpenAI, including the CEO of AGI, are going on medical leave, raising questions about the company's leadership during critical times.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T22:30:00+00:00</pubDate>
+      <guid>http://futurism.com/health-medicine/openai-execs-medical-leave</guid>
+    </item>
+    <item>
+      <title>hermes-px 0.0.3</title>
+      <link>https://pypi.org/project/hermes-px/0.0.3/</link>
+      <description>Hermes-px 0.0.3 is another version of the secure AI inference proxy library with Tor routing, continuing the trend of enhancing AI security.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T22:27:21+00:00</pubDate>
+      <guid>https://pypi.org/project/hermes-px/0.0.3/</guid>
+    </item>
+    <item>
+      <title>After Cutting Down on 'Side Quests,' OpenAI Bought a Talk Show</title>
+      <link>https://www.cnet.com/tech/services-and-software/openai-acquires-tbpn/</link>
+      <description>OpenAI has decided to discontinue its Sora image generator and delay the launch of a planned adult mode for ChatGPT, focusing on core projects.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-03T22:20:01+00:00</pubDate>
+      <guid>https://www.cnet.com/tech/services-and-software/openai-acquires-tbpn/</guid>
+    </item>
+    <item>
       <title>Microsoft Teams: Sharing recap access</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=559606</link>
-      <description>Microsoft Teams has introduced a feature allowing recording and transcript owners to share access with specific individuals without requests. This update aims to streamline collaboration within the platform.</description>
+      <description>Microsoft Teams has introduced a feature allowing recording and transcript owners to grant access to specific individuals without requests, enhancing user experience.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-03T22:15:57+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559606</guid>
     </item>
     <item>
+      <title>Chuck Norris' Family Warns of AI-Generated Videos Spreading 'Fabricated Reports' About His Health Before Death</title>
+      <link>https://latest.vincemag.pp.ua/blog/chuck-norris-x27-family-warns-of-ai-generated-vide-chuck-norris-family-warns-ai-212622517/</link>
+      <description>Chuck Norris' family has issued a warning about AI-generated videos spreading false reports about his health, highlighting the dangers of misinformation.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>2026-04-03T21:56:56+00:00</pubDate>
+      <guid>https://latest.vincemag.pp.ua/blog/chuck-norris-x27-family-warns-of-ai-generated-vide-chuck-norris-family-warns-ai-212622517/</guid>
+    </item>
+    <item>
+      <title>llama-cloud 2.2.0</title>
+      <link>https://pypi.org/project/llama-cloud/2.2.0/</link>
+      <description>The llama-cloud 2.2.0 release is the official Python library for accessing the llama-cloud API, facilitating easier integration for developers.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-03T21:56:04+00:00</pubDate>
+      <guid>https://pypi.org/project/llama-cloud/2.2.0/</guid>
+    </item>
+    <item>
+      <title>llama-agents-core 0.8.4</title>
+      <link>https://pypi.org/project/llama-agents-core/0.8.4/</link>
+      <description>Llama-agents-core 0.8.4 introduces core models and schemas for LlamaDeploy, enhancing the functionality of AI deployment.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-03T21:43:52+00:00</pubDate>
+      <guid>https://pypi.org/project/llama-agents-core/0.8.4/</guid>
+    </item>
+    <item>
+      <title>llama-agents-appserver 0.10.2</title>
+      <link>https://pypi.org/project/llama-agents-appserver/0.10.2/</link>
+      <description>LlamaDeploy has released version 0.10.2 of its application server components, enhancing its deployment capabilities. This update is significant for developers using LlamaDeploy.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-03T21:43:51+00:00</pubDate>
+      <guid>https://pypi.org/project/llama-agents-appserver/0.10.2/</guid>
+    </item>
+    <item>
+      <title>llama-agents-agentcore 0.8.7</title>
+      <link>https://pypi.org/project/llama-agents-agentcore/0.8.7/</link>
+      <description>Version 0.8.7 of LlamaAgents' AgentCore deployment utilities has been launched, aimed at improving integration with Bedrock. This update is relevant for developers in AI deployment.</description>
+      <category>Meta</category>
+      <pubDate>2026-04-03T21:43:50+00:00</pubDate>
+      <guid>https://pypi.org/project/llama-agents-agentcore/0.8.7/</guid>
+    </item>
+    <item>
+      <title>openinference-instrumentation-langchain 0.1.62</title>
+      <link>https://pypi.org/project/openinference-instrumentation-langchain/0.1.62/</link>
+      <description>OpenInference has introduced version 0.1.62 of its LangChain Instrumentation, which aids in monitoring and optimizing AI models. This is crucial for developers focused on performance.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-03T21:41:11+00:00</pubDate>
+      <guid>https://pypi.org/project/openinference-instrumentation-langchain/0.1.62/</guid>
+    </item>
+    <item>
+      <title>Developer behind controversial AI apps sues Apple over App Store takedowns</title>
+      <link>https://9to5mac.com/2026/04/03/developer-behind-controversial-ai-apps-sues-apple-over-app-store-takedowns/</link>
+      <description>The developer behind controversial AI apps, Ex-Human, is suing Apple for removing its apps from the App Store, claiming the actions were arbitrary. This lawsuit highlights ongoing tensions between developers and platform providers.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-03T21:34:05+00:00</pubDate>
+      <guid>https://9to5mac.com/2026/04/03/developer-behind-controversial-ai-apps-sues-apple-over-app-store-takedowns/</guid>
+    </item>
+    <item>
+      <title>bernstein 1.4.13</title>
+      <link>https://pypi.org/project/bernstein/1.4.13/</link>
+      <description>Bernstein has released version 1.4.13, focusing on declarative agent orchestration for engineering teams. This update aims to streamline workflows in AI project management.</description>
+      <category>Copilot Studio</category>
+      <pubDate>2026-04-03T21:29:49+00:00</pubDate>
+      <guid>https://pypi.org/project/bernstein/1.4.13/</guid>
+    </item>
+    <item>
+      <title>azure-ai-evaluation 1.16.4</title>
+      <link>https://pypi.org/project/azure-ai-evaluation/1.16.4/</link>
+      <description>Microsoft has launched version 1.16.4 of its Azure Evaluation Library for Python, providing tools for evaluating AI models. This is significant for developers working with Azure AI services.</description>
+      <category>Microsoft</category>
+      <pubDate>2026-04-03T21:29:17+00:00</pubDate>
+      <guid>https://pypi.org/project/azure-ai-evaluation/1.16.4/</guid>
+    </item>
+    <item>
+      <title>Meta Pauses Work With Mercor After Data Breach Puts AI Industry Secrets at Risk</title>
+      <link>https://www.wired.com/story/meta-pauses-work-with-mercor-after-data-breach-puts-ai-industry-secrets-at-risk/</link>
+      <description>Meta has paused its collaboration with Mercor following a data breach that may have compromised sensitive AI training data. This incident raises concerns about data security in the AI industry.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-03T21:28:14+00:00</pubDate>
+      <guid>https://www.wired.com/story/meta-pauses-work-with-mercor-after-data-breach-puts-ai-industry-secrets-at-risk/</guid>
+    </item>
+    <item>
+      <title>Charles Schwab Is Gearing Up to Offer Bitcoin, Ethereum Spot Trading</title>
+      <link>https://decrypt.co/363336/charles-schwab-bitcoin-ethereum-spot-trading</link>
+      <description>Charles Schwab plans to offer spot trading for Bitcoin and Ethereum by the end of the quarter, marking a significant move into cryptocurrency trading. This could impact the financial landscape.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>2026-04-03T21:11:55+00:00</pubDate>
+      <guid>https://decrypt.co/363336/charles-schwab-bitcoin-ethereum-spot-trading</guid>
+    </item>
+    <item>
+      <title>Off-Grid Data Centers Will Help Protect Ratepayers, But Codifying ARC-ES Would Do Even More</title>
+      <link>https://wattsupwiththat.com/2026/04/03/off-grid-data-centers-will-help-protect-ratepayers-but-codifying-arc-es-would-do-even-more/</link>
+      <description>The article discusses the importance of off-grid data centers for energy security in the U.S., especially as the nation approaches its 250th birthday. It emphasizes the need for sustainable energy solutions.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-03T21:00:00+00:00</pubDate>
+      <guid>https://wattsupwiththat.com/2026/04/03/off-grid-data-centers-will-help-protect-ratepayers-but-codifying-arc-es-would-do-even-more/</guid>
+    </item>
+    <item>
+      <title>langchain-swarmsync added to PyPI</title>
+      <link>https://pypi.org/project/langchain-swarmsync/</link>
+      <description>LangChain has added SwarmSync integration to PyPI, enabling agent-to-agent marketplace functionalities and intelligent LLM routing. This enhances collaboration in AI applications.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-03T20:53:29+00:00</pubDate>
+      <guid>https://pypi.org/project/langchain-swarmsync/</guid>
+    </item>
+    <item>
+      <title>ioc-cfn-cognition-engines added to PyPI</title>
+      <link>https://pypi.org/project/ioc-cfn-cognition-engines/</link>
+      <description>The IOC CFN Cognition Engine has been added to PyPI, offering tools for knowledge extraction and semantic negotiation. This addition enhances the resources available for developers in AI applications.</description>
+      <category>Microsoft</category>
+      <pubDate>2026-04-03T20:46:46+00:00</pubDate>
+      <guid>https://pypi.org/project/ioc-cfn-cognition-engines/</guid>
+    </item>
+    <item>
+      <title>Three insights you may have missed from theCUBE’s coverage of RSAC 2026</title>
+      <link>https://siliconangle.com/2026/04/03/three-insights-ai-attack-thecube-rsac-2026-rsac26/</link>
+      <description>At RSAC 2026, the theme 'The Power of Community' highlighted the cybersecurity sector's growing autonomy and vulnerability to AI attacks. Insights from discussions emphasized the need for collaboration in addressing these challenges.</description>
+      <category>AI Foundry</category>
+      <pubDate>2026-04-03T20:44:06+00:00</pubDate>
+      <guid>https://siliconangle.com/2026/04/03/three-insights-ai-attack-thecube-rsac-2026-rsac26/</guid>
+    </item>
+    <item>
+      <title>Netflix - yes Netflix - jumps on the AI bandwagon with video editor</title>
+      <link>https://www.theregister.com/2026/04/03/netflix_video_ai/</link>
+      <description>Netflix has introduced a new AI video editor that alters object interactions in scenes, potentially transforming filmmaking. This innovation aims to streamline the editing process and enhance creative possibilities.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-03T20:42:44+00:00</pubDate>
+      <guid>https://www.theregister.com/2026/04/03/netflix_video_ai/</guid>
+    </item>
+    <item>
+      <title>bernstein 1.4.12</title>
+      <link>https://pypi.org/project/bernstein/1.4.12/</link>
+      <description>The release of Bernstein 1.4.12 focuses on declarative agent orchestration, aimed at improving workflows for engineering teams. This update is significant for teams looking to enhance their project management.</description>
+      <category>Copilot Studio</category>
+      <pubDate>2026-04-03T20:36:08+00:00</pubDate>
+      <guid>https://pypi.org/project/bernstein/1.4.12/</guid>
+    </item>
+    <item>
       <title>OpenAI executive shuffle includes new role for COO Brad Lightcap to lead ‘special projects’</title>
       <link>https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/</link>
-      <description>OpenAI's COO Brad Lightcap has taken on a new role leading special projects, while CMO Kate Rouch is stepping away to focus on health. This leadership change reflects ongoing adjustments within the organization.</description>
+      <description>OpenAI has shuffled its executive team, appointing COO Brad Lightcap to lead special projects while CMO Kate Rouch steps back for health reasons. This change may influence the company's strategic direction.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-03T20:35:34+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/</guid>
     </item>
     <item>
+      <title>Anthropic buys biotech startup Coefficient Bio in $400M deal: reports | TechCrunch</title>
+      <link>https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/</link>
+      <description>Anthropic has acquired biotech startup Coefficient Bio for $400 million, enhancing its capabilities in AI applications for the medical field. This move reflects a growing trend of AI companies diversifying into healthcare.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-03T20:31:01+00:00</pubDate>
+      <guid>https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/</guid>
+    </item>
+    <item>
       <title>OpenClaw gives users yet another reason to be freaked out about security</title>
       <link>https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/</link>
-      <description>The AI tool OpenClaw has been exploited by attackers to gain unauthorized admin access, raising serious security concerns for users. This incident highlights vulnerabilities in AI systems.</description>
+      <description>The OpenClaw tool has raised security concerns by allowing attackers to gain unauthorized admin access. This incident underscores the risks associated with AI tools in cybersecurity.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-03T20:30:15+00:00</pubDate>
       <guid>https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/</guid>
@@ -98,314 +386,26 @@
     <item>
       <title>Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports</title>
       <link>https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/</link>
-      <description>Anthropic has acquired biotech startup Coefficient Bio for $400 million, aiming to enhance its AI capabilities with biotech innovations. This move signifies a growing trend of AI companies diversifying their portfolios.</description>
+      <description>Anthropic's acquisition of Coefficient Bio for $400 million has been reported, emphasizing its strategic investment in biotech. This acquisition is part of a broader trend of AI firms expanding into healthcare.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-03T20:28:40+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/</guid>
     </item>
     <item>
+      <title>Anthropic reportedly acquires medical AI startup Coefficient Bio for $400M+</title>
+      <link>https://siliconangle.com/2026/04/03/anthropic-reportedly-acquires-medical-ai-startup-coefficient-bio-400m/</link>
+      <description>Anthropic has reportedly acquired Coefficient Bio, a medical AI startup, for over $400 million. This acquisition is significant for enhancing AI's role in medical research.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-03T20:28:32+00:00</pubDate>
+      <guid>https://siliconangle.com/2026/04/03/anthropic-reportedly-acquires-medical-ai-startup-coefficient-bio-400m/</guid>
+    </item>
+    <item>
       <title>Anthropic ramps up its political activities with a new PAC</title>
       <link>https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/</link>
-      <description>Anthropic has established a political action committee (PAC) to support candidates aligned with its AI policy goals as midterm elections approach. This reflects the company's intent to influence AI regulation.</description>
+      <description>Anthropic has launched a new political action committee (PAC) to support candidates aligned with its AI policy agenda ahead of the midterm elections. This move indicates the company's growing involvement in political advocacy.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-03T20:22:18+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/</guid>
-    </item>
-    <item>
-      <title>Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban</link>
-      <description>Anthropic has announced that using OpenClaw with its Claude AI will incur additional costs starting April 4th, effectively limiting access for subscribers. This policy change may impact user engagement with third-party tools.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-03T19:52:49-04:00</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban</guid>
-    </item>
-    <item>
-      <title>AI companies are building huge natural gas plants to power data centers. What could go wrong?</title>
-      <link>https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/</link>
-      <description>Major tech companies like Meta, Microsoft, and Google are investing in natural gas power plants to support their AI data centers, raising environmental concerns about sustainability and reliance on fossil fuels.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-03T19:48:22+00:00</pubDate>
-      <guid>https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/</guid>
-    </item>
-    <item>
-      <title>People would rather have an Amazon warehouse in their backyard than a data center</title>
-      <link>https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/</link>
-      <description>A recent poll reveals that people prefer having an Amazon warehouse over a data center in their neighborhood, indicating ongoing community concerns about data center impacts.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-03T19:20:36+00:00</pubDate>
-      <guid>https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/</guid>
-    </item>
-    <item>
-      <title>OpenAI’s AGI boss is taking a leave of absence</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/906965/openais-agi-boss-is-taking-a-leave-of-absence</link>
-      <description>OpenAI's CEO of AGI deployment, Fidji Simo, is taking a medical leave of absence, prompting further leadership changes within the company. This could affect OpenAI's strategic direction.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-03T16:22:59-04:00</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/906965/openais-agi-boss-is-taking-a-leave-of-absence</guid>
-    </item>
-    <item>
-      <title>The Facebook insider building content moderation for the AI era</title>
-      <link>https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/</link>
-      <description>Moonbounce has secured $12 million to develop its AI content moderation engine, which aims to enforce consistent moderation policies across platforms. This reflects the growing need for effective AI governance.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-03T14:00:15+00:00</pubDate>
-      <guid>https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/</guid>
-    </item>
-    <item>
-      <title>ChatGPT Ads: New Acquisition Channel Or Just Another Brand Tax? via @sejournal, @brookeosmundson</title>
-      <link>https://www.searchenginejournal.com/chatgpt-ads-new-acquisition-channel-or-just-another-brand-tax/571042/</link>
-      <description>OpenAI is expanding its ChatGPT Ads platform with self-serve access, prompting discussions among PPC managers about its effectiveness as a marketing tool. This could reshape online advertising strategies.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:30:05+00:00</pubDate>
-      <guid>https://www.searchenginejournal.com/chatgpt-ads-new-acquisition-channel-or-just-another-brand-tax/571042/</guid>
-    </item>
-    <item>
-      <title>agenticore 1.2.0</title>
-      <link>https://pypi.org/project/agenticore/1.2.0/</link>
-      <description>The release of agenticore 1.2.0 introduces new features for Claude Code, including job lifecycle management and repository handling, enhancing its functionality for developers.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-03T11:29:53+00:00</pubDate>
-      <guid>https://pypi.org/project/agenticore/1.2.0/</guid>
-    </item>
-    <item>
-      <title>The startup looking to solve health care’s fax machine problem</title>
-      <link>https://fortune.com/2026/04/03/health-care-fax-machine-problem-insight-health-series-a-11-million-ai-assistants/</link>
-      <description>Insight Health has raised $11 million in a Series A funding round led by Standard Capital to address inefficiencies in healthcare communication, particularly the reliance on fax machines. This funding aims to enhance digital solutions in healthcare.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-03T11:28:25+00:00</pubDate>
-      <guid>https://fortune.com/2026/04/03/health-care-fax-machine-problem-insight-health-series-a-11-million-ai-assistants/</guid>
-    </item>
-    <item>
-      <title>totalreclaw added to PyPI</title>
-      <link>https://pypi.org/project/totalreclaw/</link>
-      <description>totalreclaw, a new Python client, offers end-to-end encrypted memory for AI agents, enhancing security and privacy in AI applications. This tool aims to improve the reliability of AI memory management.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-03T11:25:35+00:00</pubDate>
-      <guid>https://pypi.org/project/totalreclaw/</guid>
-    </item>
-    <item>
-      <title>What’s Really Changing Inside the Airline Industry</title>
-      <link>https://skift.com/2026/04/03/whats-really-changing-inside-the-airline-industry/</link>
-      <description>The airline industry is undergoing significant changes with leadership shifts, new alliances, and the integration of AI technologies, as discussed in a recent podcast episode. These developments suggest a transformative period for travel.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:25:21+00:00</pubDate>
-      <guid>https://skift.com/2026/04/03/whats-really-changing-inside-the-airline-industry/</guid>
-    </item>
-    <item>
-      <title>Microsoft still working to fix Exchange Online mailbox access issues</title>
-      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-still-working-to-fix-exchange-online-mailbox-access-issues/</link>
-      <description>Microsoft is addressing ongoing issues with Exchange Online mailbox access that have affected users on Outlook mobile and macOS for several weeks. The company is actively working to resolve these problems.</description>
-      <category>Microsoft</category>
-      <pubDate>2026-04-03T11:25:20+00:00</pubDate>
-      <guid>https://www.bleepingcomputer.com/news/microsoft/microsoft-still-working-to-fix-exchange-online-mailbox-access-issues/</guid>
-    </item>
-    <item>
-      <title>agentihooks 1.2.0</title>
-      <link>https://pypi.org/project/agentihooks/1.2.0/</link>
-      <description>agentihooks 1.2.0 has been released, providing a hook system and MCP tool server for Claude Code agents, enhancing their functionality and integration. This update aims to streamline agent operations.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-03T11:24:59+00:00</pubDate>
-      <guid>https://pypi.org/project/agentihooks/1.2.0/</guid>
-    </item>
-    <item>
-      <title>pytest-agent-health added to PyPI</title>
-      <link>https://pypi.org/project/pytest-agent-health/</link>
-      <description>pytest-agent-health has been added to PyPI, offering tools to catch silent agent failures in continuous integration environments. This tool enhances the reliability of LLM agents.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-03T11:23:35+00:00</pubDate>
-      <guid>https://pypi.org/project/pytest-agent-health/</guid>
-    </item>
-    <item>
-      <title>agenticore 1.1.0</title>
-      <link>https://pypi.org/project/agenticore/1.1.0/</link>
-      <description>agenticore 1.1.0 has been released, serving as a Claude Code runner and orchestrator, focusing on job lifecycle management and repository management. This update aims to optimize agent operations.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-03T11:22:03+00:00</pubDate>
-      <guid>https://pypi.org/project/agenticore/1.1.0/</guid>
-    </item>
-    <item>
-      <title>claude-cortex 1.6.0</title>
-      <link>https://pypi.org/project/claude-cortex/1.6.0/</link>
-      <description>claude-cortex 1.6.0 introduces a context orchestration CLI with curated agents, rules, skills, and management tools for Claude Code, improving user interaction with AI agents.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-03T11:19:40+00:00</pubDate>
-      <guid>https://pypi.org/project/claude-cortex/1.6.0/</guid>
-    </item>
-    <item>
-      <title>Is Xbox Releasing A Brand-New Controller In 2026?</title>
-      <link>https://www.bgr.com/2138659/xbox-new-controller-revision-2026/</link>
-      <description>Speculation surrounds the potential release of a new Xbox controller in 2026, following recent changes within Xbox. This could signal a new direction for the gaming console.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>2026-04-03T11:17:00+00:00</pubDate>
-      <guid>https://www.bgr.com/2138659/xbox-new-controller-revision-2026/</guid>
-    </item>
-    <item>
-      <title>memweave added to PyPI</title>
-      <link>https://pypi.org/project/memweave/</link>
-      <description>memweave has been added to PyPI, providing agentic memory that can be read, searched, and compared using git diff. This tool aims to enhance memory management in AI applications.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:12:26+00:00</pubDate>
-      <guid>https://pypi.org/project/memweave/</guid>
-    </item>
-    <item>
-      <title>Google Gemini in Android Auto Starts Rolling Out More Widely</title>
-      <link>https://www.thurrott.com/a-i/334505/google-gemini-in-android-auto-starts-rolling-out-more-widely</link>
-      <description>Google is expanding the availability of its Gemini AI on the Android Auto platform, but user feedback has been mixed regarding the experience.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:08:29+00:00</pubDate>
-      <guid>https://www.thurrott.com/a-i/334505/google-gemini-in-android-auto-starts-rolling-out-more-widely</guid>
-    </item>
-    <item>
-      <title>One of the world's largest book publishers sued OpenAI for copyright infringement</title>
-      <link>https://www.afterdawn.com/news/article.cfm/2026/04/03/penguin-random-house-court-case-openai-copyright</link>
-      <description>Penguin Random House has sued OpenAI, claiming that ChatGPT infringed on copyrights by reproducing content from a German children's book series.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:07:54+00:00</pubDate>
-      <guid>https://www.afterdawn.com/news/article.cfm/2026/04/03/penguin-random-house-court-case-openai-copyright</guid>
-    </item>
-    <item>
-      <title>The Tech Download: Defense startups eye Iran war windfall as U.S. and Gulf states turn to tech</title>
-      <link>https://www.cnbc.com/2026/04/03/the-tech-download-defense-startups-eye-iran-war-windfall.html</link>
-      <description>Funding for defense startups has surged as U.S. and Gulf states seek to modernize their military capabilities amid ongoing conflicts.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T11:00:01+00:00</pubDate>
-      <guid>https://www.cnbc.com/2026/04/03/the-tech-download-defense-startups-eye-iran-war-windfall.html</guid>
-    </item>
-    <item>
-      <title>OpenAI Buys Tech Talk Show TBPN in Media Expansion</title>
-      <link>https://www.pymnts.com/acquisitions/2026/openai-buys-tech-talk-show-tbpn-in-media-expansion/</link>
-      <description>OpenAI has acquired the tech talk show TBPN, marking a significant move into media and expanding its influence beyond AI.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-03T10:57:00+00:00</pubDate>
-      <guid>https://www.pymnts.com/acquisitions/2026/openai-buys-tech-talk-show-tbpn-in-media-expansion/</guid>
-    </item>
-    <item>
-      <title>RiskReady-open-source GRC platform with MCP gateway and human-approved mutations</title>
-      <link>https://github.com/riskreadyeu/riskready-community</link>
-      <description>RiskReady has launched an open-source GRC platform featuring a gateway and human-approved mutations, aimed at enhancing governance, risk, and compliance.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-03T10:40:25+00:00</pubDate>
-      <guid>https://github.com/riskreadyeu/riskready-community</guid>
-    </item>
-    <item>
-      <title>Show HN: LLMnesia – search across ChatGPT, Claude, Gemini chats locally</title>
-      <link>https://chromewebstore.google.com/detail/llmnesia/leekfgbdojiaabifbjbbgiiclannjdkf</link>
-      <description>A new Chrome extension called LLMnesia allows users to search across chats from ChatGPT, Claude, and Gemini, addressing the challenge of locating useful answers.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-03T10:38:04+00:00</pubDate>
-      <guid>https://chromewebstore.google.com/detail/llmnesia/leekfgbdojiaabifbjbbgiiclannjdkf</guid>
-    </item>
-    <item>
-      <title>Leaders push for a ‘Manhattan Project’ and public-private solutions around AI and labor</title>
-      <link>https://fortune.com/2026/04/03/leaders-public-private-solutions-ai-transition-just-capital-best-of-american-business/</link>
-      <description>Leaders are advocating for a 'Manhattan Project' approach to tackle AI and labor challenges, emphasizing collaboration between public and private sectors.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-03T10:30:09+00:00</pubDate>
-      <guid>https://fortune.com/2026/04/03/leaders-public-private-solutions-ai-transition-just-capital-best-of-american-business/</guid>
-    </item>
-    <item>
-      <title>litert-torch-nightly 0.9.0.dev20260403</title>
-      <link>https://pypi.org/project/litert-torch-nightly/0.9.0.dev20260403/</link>
-      <description>The release of litert-torch-nightly 0.9.0.dev20260403 adds support for converting PyTorch models with LiteRT, enhancing model interoperability.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-03T10:26:13+00:00</pubDate>
-      <guid>https://pypi.org/project/litert-torch-nightly/0.9.0.dev20260403/</guid>
-    </item>
-    <item>
-      <title>Microsoft’s new AI transcription model beats Google Gemini 3.1 Flash: Here’s how little it costs</title>
-      <link>https://indianexpress.com/article/technology/artificial-intelligence/microsoft-mai-transcribe-1-launch-accuracy-price-features-10617165/</link>
-      <description>Microsoft has launched MAI-Transcribe-1, an AI transcription model that outperforms Google Gemini 3.1 Flash with a lower cost and error rate.</description>
-      <category>Microsoft</category>
-      <pubDate>2026-04-03T10:18:15+00:00</pubDate>
-      <guid>https://indianexpress.com/article/technology/artificial-intelligence/microsoft-mai-transcribe-1-launch-accuracy-price-features-10617165/</guid>
-    </item>
-    <item>
-      <title>torchax 0.0.12.dev20260403</title>
-      <link>https://pypi.org/project/torchax/0.0.12.dev20260403/</link>
-      <description>The torchax library has been released, enabling the use of Jax and PyTorch together, which could enhance AI model training capabilities.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-03T10:11:10+00:00</pubDate>
-      <guid>https://pypi.org/project/torchax/0.0.12.dev20260403/</guid>
-    </item>
-    <item>
-      <title>nvidia-nat-llama-index 1.6.0a20260403</title>
-      <link>https://pypi.org/project/nvidia-nat-llama-index/1.6.0a20260403/</link>
-      <description>Nvidia has released a subpackage for Llama-Index integration within its NeMo Agent Toolkit, enhancing AI model capabilities. This update is significant for developers using Nvidia's tools for AI applications.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-03T09:48:43+00:00</pubDate>
-      <guid>https://pypi.org/project/nvidia-nat-llama-index/1.6.0a20260403/</guid>
-    </item>
-    <item>
-      <title>neuragram added to PyPI</title>
-      <link>https://pypi.org/project/neuragram/</link>
-      <description>Neuragram, a new lightweight agent memory library, has been added to PyPI, offering a framework-agnostic solution for agent memory management. This tool aims to simplify memory handling for developers.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-03T09:07:12+00:00</pubDate>
-      <guid>https://pypi.org/project/neuragram/</guid>
-    </item>
-    <item>
-      <title>traceotter 0.2.6</title>
-      <link>https://pypi.org/project/traceotter/0.2.6/</link>
-      <description>Traceotter 0.2.6 has been released as a production observability SDK for LLM applications, featuring OpenTelemetry-style tracing. This SDK aims to improve monitoring and debugging for AI applications.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-03T09:01:33+00:00</pubDate>
-      <guid>https://pypi.org/project/traceotter/0.2.6/</guid>
-    </item>
-    <item>
-      <title>ai-translate added to PyPI</title>
-      <link>https://pypi.org/project/ai-translate/</link>
-      <description>AI-Translate has been added to PyPI, providing a zero-configuration localization tool for developers. This tool allows for easy localization across multiple platforms with a single command.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-03T09:00:15+00:00</pubDate>
-      <guid>https://pypi.org/project/ai-translate/</guid>
-    </item>
-    <item>
-      <title>N.S. launching 5-person team to help government staff incorporate AI into their work</title>
-      <link>https://www.cbc.ca/news/canada/nova-scotia/nova-scotia-artificial-intelligence-9.7148369</link>
-      <description>Nova Scotia is launching a five-person team with a $4.4 million investment to help government staff integrate AI into their work processes. This initiative aims to enhance efficiency and innovation within the public sector.</description>
-      <category>Microsoft</category>
-      <pubDate>2026-04-03T09:00:00+00:00</pubDate>
-      <guid>https://www.cbc.ca/news/canada/nova-scotia/nova-scotia-artificial-intelligence-9.7148369</guid>
-    </item>
-    <item>
-      <title>moment-neural-network added to PyPI</title>
-      <link>https://pypi.org/project/moment-neural-network/</link>
-      <description>Moment-neural-network has been added to PyPI, providing a PyTorch-based framework for building and training moment neural networks. This framework is designed to facilitate advanced AI model development.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-03T08:41:41+00:00</pubDate>
-      <guid>https://pypi.org/project/moment-neural-network/</guid>
-    </item>
-    <item>
-      <title>wavestreamer-langchain added to PyPI</title>
-      <link>https://pypi.org/project/wavestreamer-langchain/</link>
-      <description>Wavestreamer-langchain has been added to PyPI, offering tools for integrating waveStreamer into LangChain-based agents. This addition aims to enhance the capabilities of AI agents in processing audio data.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-03T08:40:22+00:00</pubDate>
-      <guid>https://pypi.org/project/wavestreamer-langchain/</guid>
-    </item>
-    <item>
-      <title>Fidelity marks down conversational AI platform Gupshup's valuation by 80% to $278 million</title>
-      <link>https://economictimes.indiatimes.com/tech/startups/fidelity-marks-down-conversational-ai-platform-gupshups-valuation-by-80-to-278-million/articleshow/129997269.cms</link>
-      <description>Fidelity has significantly marked down the valuation of Gupshup's conversational AI platform by 80% to $278 million, reflecting ongoing concerns about the company's performance since its peak valuation of $1.4 billion in 2021.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-03T08:31:00+00:00</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/startups/fidelity-marks-down-conversational-ai-platform-gupshups-valuation-by-80-to-278-million/articleshow/129997269.cms</guid>
-    </item>
-    <item>
-      <title>ghostcore added to PyPI</title>
-      <link>https://pypi.org/project/ghostcore/</link>
-      <description>Ghostcore has been added to PyPI as an LLM orchestration gateway, featuring intelligent routing and support for over ten providers. This tool aims to streamline interactions between different AI models.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-03T07:33:12+00:00</pubDate>
-      <guid>https://pypi.org/project/ghostcore/</guid>
-    </item>
-    <item>
-      <title>mcp-newebpay added to PyPI</title>
-      <link>https://pypi.org/project/mcp-newebpay/</link>
-      <description>MCP-newebpay has been added to PyPI, providing AI-callable payment tools via Model Context Protocol for NewebPay. This addition aims to enhance payment processing capabilities for AI applications.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-03T07:15:54+00:00</pubDate>
-      <guid>https://pypi.org/project/mcp-newebpay/</guid>
     </item>
   </channel>
 </rss>
