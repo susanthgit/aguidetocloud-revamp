@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
     window.__ainewsData = data;
     renderNews(data, 'daily');
+    renderFreshnessBadge(data.generated_at);
   } catch (e) {
     document.getElementById('news-grid').innerHTML =
       '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">AI News data not available yet. Check back tomorrow!</p>';
@@ -29,7 +30,7 @@ var MAX_OTHER = 10;
 // Display order: Top Stories first, then Microsoft family, then rest
 var CATEGORY_ORDER = [
   'Top Stories', 'Microsoft', 'M365 Copilot', 'Copilot Studio', 'AI Foundry',
-  'OpenAI', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours & Gossip'
+  'OpenAI', 'Apple', 'NVIDIA', 'Amazon', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours & Gossip'
 ];
 
 // Category colours and emojis for pills
@@ -40,6 +41,9 @@ var CATEGORY_META = {
   'Copilot Studio':    { emoji: '🛠️', color: '#742774' },
   'AI Foundry':        { emoji: '🏭', color: '#008272' },
   'OpenAI':            { emoji: '🟩', color: '#10A37F' },
+  'Apple':             { emoji: '🍎', color: '#A2AAAD' },
+  'NVIDIA':            { emoji: '💚', color: '#76B900' },
+  'Amazon':            { emoji: '📦', color: '#FF9900' },
   'Google':            { emoji: '🟥', color: '#EA4335' },
   'Meta':              { emoji: '🟪', color: '#0668E1' },
   'Anthropic':         { emoji: '🟧', color: '#D4A574' },
@@ -63,7 +67,9 @@ var AI_KEYWORDS = [
   'ai act', 'superintelligence', 'agi', 'multimodal', 'reasoning',
   'meta llama', 'mistral', 'phi-', 'deepseek', 'hugging face',
   'langchain', 'semantic kernel', 'autogen', 'crew ai', 'mcp server',
-  'model context protocol', 'ai adoption', 'ai strategy', 'ai tool'
+  'model context protocol', 'ai adoption', 'ai strategy', 'ai tool',
+  'apple intelligence', 'siri', 'nvidia', 'cuda', 'gpu', 'inference',
+  'bedrock', 'sagemaker', 'amazon q', 'amazon nova', 'trainium'
 ];
 
 function isAiRelated(article) {
@@ -350,6 +356,31 @@ function renderQuickLink(article) {
       escapeHtml(source) + ' · ' + time +
     '</span>' +
   '</a>';
+}
+
+function renderFreshnessBadge(generatedAt) {
+  if (!generatedAt) return;
+  var badge = document.createElement('div');
+  badge.className = 'ainews-freshness';
+  var now = new Date();
+  var gen = new Date(generatedAt);
+  var diffMs = now - gen;
+  var hours = Math.floor(diffMs / 3600000);
+  var label, statusClass;
+  if (hours < 6) {
+    label = 'Updated ' + (hours < 1 ? 'just now' : hours + 'h ago');
+    statusClass = 'ainews-fresh';
+  } else if (hours < 18) {
+    label = 'Updated ' + hours + 'h ago';
+    statusClass = 'ainews-stale';
+  } else {
+    var days = Math.floor(hours / 24);
+    label = 'Updated ' + (days < 1 ? hours + 'h' : days + 'd') + ' ago';
+    statusClass = 'ainews-old';
+  }
+  badge.innerHTML = '<span class="ainews-fresh-dot ' + statusClass + '"></span> ' + label;
+  var tabsEl = document.querySelector('.ainews-tabs');
+  if (tabsEl) tabsEl.appendChild(badge);
 }
 
 function countCategories(articles) {
