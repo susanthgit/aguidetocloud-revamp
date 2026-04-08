@@ -5,68 +5,156 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2026 06:15:59 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 11:58:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a variety of third-party integrations, allowing developers to connect their AI agents to platforms like GitHub and Notion. This enhancement aims to facilitate the creation of more capable real-world applications.</description>
+      <description>The Agent Development Kit (ADK) now features a wide range of third-party tool integrations, enhancing the capabilities of AI agents for real-world applications. This development allows developers to connect their agents to platforms like GitHub and Notion.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149445+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036323+00:00</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's role in enhancing event experiences. This annual tradition aims to engage attendees ahead of the main event.</description>
+      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's role in enhancing event experiences. This annual tradition builds excitement for the upcoming tech conference.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149431+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036310+00:00</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem-solving, featuring keynotes on agentic AI and technical tracks. The event emphasizes the benefits of in-person collaboration for developers.</description>
+      <description>Google Cloud Next '26 in Las Vegas emphasizes in-person networking and hands-on learning, focusing on agentic AI and technical advancements. The event promises specialized tracks for developers to enhance their skills.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149417+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036296+00:00</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, the successor to TFLite, which enhances GPU and NPU acceleration and supports PyTorch and JAX. This update aims to improve efficiency and security in deploying GenAI applications.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, featuring improved GPU acceleration and better support for PyTorch and JAX. This update aims to enhance efficiency for deploying GenAI and advanced on-device inference.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149402+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036282+00:00</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Wednesday Build Hour is a new interactive session by Google Cloud aimed at helping developers enhance their cloud skills through hands-on building. The program focuses on advanced topics like AI agents and developer productivity tools.</description>
+      <description>Wednesday Build Hour is a new interactive session by Google Cloud aimed at helping developers improve their cloud skills through hands-on building. The program covers advanced topics like AI agents and productivity tools.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149388+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036268+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has launched updates to improve coding workflows, including Agent Mode and Inline Diff Views. These tools aim to transform AI into a more tailored collaborator for developers.</description>
+      <description>Gemini Code Assist has introduced updates to streamline coding workflows, including features like Agent Mode and Inline Diff Views. These tools aim to enhance collaboration and adapt to individual developer styles.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149375+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036254+00:00</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>Google has introduced new features in Gemini Code Assist for IntelliJ and VS Code, including Finish Changes and Outlines, which streamline coding by reducing manual prompting and improving code comprehension.</description>
+      <description>New features in Gemini Code Assist for IntelliJ and VS Code, including Finish Changes and Outlines, aim to reduce developer friction. These tools help automate coding tasks and improve code comprehension.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T06:14:08.149360+00:00</pubDate>
+      <pubDate>2026-04-08T11:55:59.036237+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
+    </item>
+    <item>
+      <title>Dutch healthcare software vendor goes dark after ransomware attack</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/chipsoft_ransomware/</link>
+      <description>A Dutch healthcare software vendor, ChipSoft, has gone offline following a ransomware attack, although email services remain operational. The incident highlights ongoing cybersecurity threats in the healthcare sector.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T11:30:48+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/chipsoft_ransomware/</guid>
+    </item>
+    <item>
+      <title>Investors are going nuclear to keep UK's AI datacenters fed</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/nuclear_investors_ai_demand/</link>
+      <description>Investors are increasingly funding nuclear and fusion startups in the UK to meet the rising energy demands of AI datacenters. This trend reflects a strategic shift towards sustainable energy solutions.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T11:21:10+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/nuclear_investors_ai_demand/</guid>
+    </item>
+    <item>
+      <title>I found a 'DISM' command that reclaims Windows 11 system storage - but you'll have to use it wisely</title>
+      <link>https://www.zdnet.com/article/windows-reserved-storage-setting-turn-off-and-why/</link>
+      <description>A new 'DISM' command can help reclaim storage on Windows 11 by managing Reserved Storage, which retains space for updates. Users are advised to use this command wisely to optimize system performance.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-08T11:16:43+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/windows-reserved-storage-setting-turn-off-and-why/</guid>
+    </item>
+    <item>
+      <title>Why you shouldn't buy cheap DisplayPort cables - the 'Death Pin' can put your GPU at serious risk</title>
+      <link>https://www.zdnet.com/article/dont-buy-cheap-displayport-cables-or-they-can-brick-your-pc/</link>
+      <description>Cheap DisplayPort cables can pose serious risks to your GPU due to a manufacturing flaw known as the 'Death Pin'. Users are advised to invest in higher-quality cables to avoid potential damage.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-08T10:30:39+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/dont-buy-cheap-displayport-cables-or-they-can-brick-your-pc/</guid>
+    </item>
+    <item>
+      <title>DXC lands Metropolitan Police outsourcing deal that could climb to £1B</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/dxc_met_police_contract/</link>
+      <description>DXC Technology has secured a contract with the Metropolitan Police worth up to £1 billion to manage business process outsourcing and transition to a new Oracle ERP system. This deal highlights the increasing reliance on technology in public sector operations.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T10:29:53+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/dxc_met_police_contract/</guid>
+    </item>
+    <item>
+      <title>NHS Scotland-linked domains caught serving pr0n and dodgy sports streams</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/scotland_nhs_domain_compromised/</link>
+      <description>Several domains linked to NHS Scotland have been compromised, redirecting users to adult content and illegal sports streams. This breach raises concerns about cybersecurity in healthcare.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T10:00:14+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/scotland_nhs_domain_compromised/</guid>
+    </item>
+    <item>
+      <title>Virtual SG-41 project brings Nazi cipher machine to life in the browser</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/virtual_sg41/</link>
+      <description>A 3D digital model of the SG-41 cipher machine, a potential successor to the Enigma, has been created for online exploration. This project showcases the intersection of history and technology.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T09:15:10+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/virtual_sg41/</guid>
+    </item>
+    <item>
+      <title>The best Windows laptops of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-windows-laptop/</link>
+      <description>A review of the best Windows laptops of 2026 has been published, highlighting performance, portability, and value. This guide helps consumers make informed purchasing decisions.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-08T09:01:00+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/best-windows-laptop/</guid>
+    </item>
+    <item>
+      <title>UK's grand plan to fuel AI with public data faces uphill battle</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/national_data_library_plan/</link>
+      <description>The UK's initiative to create a National Data Library for AI development faces challenges, as officials need to improve data accessibility. Without better datasets, the project may fail to meet its goals.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T08:30:13+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/national_data_library_plan/</guid>
+    </item>
+    <item>
+      <title>Unionized ProPublica staff are on strike over AI, layoffs, and wages</title>
+      <link>https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs</link>
+      <description>ProPublica staff are striking over issues related to AI, layoffs, and wages, highlighting tensions in the media industry regarding the impact of technology on jobs. The strike emphasizes the need for fair labor practices in newsrooms.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T07:53:28-04:00</pubDate>
+      <guid>https://www.theverge.com/news/908401/propublica-union-strike-negotiations-ai-layoffs</guid>
+    </item>
+    <item>
+      <title>Microsoft hints at bit bunkers for war zones</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/microsoft_armored_datacenters/</link>
+      <description>Microsoft is reconsidering its datacenter designs in conflict zones, following attacks on data centers in the Middle East. This shift could enhance the resilience of tech infrastructure in unstable regions.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-08T06:53:08+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/microsoft_armored_datacenters/</guid>
     </item>
     <item>
       <title>Google quietly launched an AI dictation app that works offline</title>
       <link>https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/</link>
-      <description>Google has quietly launched an offline dictation app powered by Gemma AI models, aiming to compete with existing dictation apps like Wispr Flow. This app enhances accessibility for users without internet access.</description>
+      <description>Google has launched an offline AI dictation app using Gemma AI models, aiming to compete with existing dictation tools. This innovation enhances accessibility and usability for users without internet access.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T05:40:19+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/</guid>
@@ -74,7 +162,7 @@
     <item>
       <title>Japan relaxes privacy laws to make itself the ‘easiest country to develop AI’</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/japan_privacy_law_changes_ai/</link>
-      <description>Japan's government is relaxing privacy laws to facilitate AI development, stating that organizations won't need consent to use certain personal data. This move aims to position Japan as a leader in AI innovation.</description>
+      <description>Japan is easing privacy laws to become the most favorable country for AI development, eliminating the need for consent to use certain personal data. This move aims to accelerate AI innovation but raises ethical concerns.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T04:48:21+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/japan_privacy_law_changes_ai/</guid>
@@ -82,7 +170,7 @@
     <item>
       <title>I listened to Sony, Bose, and Apple's flagship headphones - and this pair's ahead of the pack</title>
       <link>https://www.zdnet.com/article/airpods-max-2-vs-sony-wh-1000xm6-vs-bose-quietcomfort-ultra-2/</link>
-      <description>A comparison of flagship headphones from Sony, Bose, and Apple reveals which model stands out in real-world testing. The analysis provides insights into the performance and features of these top products.</description>
+      <description>A comparison of flagship headphones from Apple, Bose, and Sony reveals that one model stands out in performance after real-world testing. This analysis highlights the strengths and weaknesses of each option.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T02:00:57+00:00</pubDate>
       <guid>https://www.zdnet.com/article/airpods-max-2-vs-sony-wh-1000xm6-vs-bose-quietcomfort-ultra-2/</guid>
@@ -90,7 +178,7 @@
     <item>
       <title>I tested an $80 monitor with a 144Hz refresh rate, and it's a 'Pro' option in several ways</title>
       <link>https://www.zdnet.com/article/msi-pro-mp243w-24-inch-monitor-review/</link>
-      <description>MSI's Pro MP243W monitor offers a budget-friendly option with a 144Hz refresh rate, making it a solid choice for home workstations. Its affordability and performance make it appealing for users seeking value.</description>
+      <description>The MSI Pro MP243W monitor offers a 144Hz refresh rate at an affordable price, making it a strong choice for budget-conscious users. Its features cater well to home workstation needs.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T02:00:41+00:00</pubDate>
       <guid>https://www.zdnet.com/article/msi-pro-mp243w-24-inch-monitor-review/</guid>
@@ -98,7 +186,7 @@
     <item>
       <title>Pebblebee Halo vs. AirTag: One of these trackers has a 130dB siren and strobe light</title>
       <link>https://www.zdnet.com/article/pebblebee-halo-review/</link>
-      <description>The Pebblebee Halo tracker is designed as a personal safety device, featuring a 130dB siren and strobe light, distinguishing it from conventional trackers like AirTag. This makes it a versatile tool for personal security.</description>
+      <description>The Pebblebee Halo tracker distinguishes itself with a 130dB siren and strobe light, enhancing personal safety beyond typical tracking devices. This makes it a unique option for security-conscious consumers.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T01:02:16+00:00</pubDate>
       <guid>https://www.zdnet.com/article/pebblebee-halo-review/</guid>
@@ -106,55 +194,31 @@
     <item>
       <title>Why the 'Subwoofer Crawl' is the only way I found the bass sweet spot in my living room</title>
       <link>https://www.zdnet.com/article/best-subwoofer-placement-in-weird-rooms/</link>
-      <description>The article discusses the 'Subwoofer Crawl' technique for optimizing bass placement in home theaters, highlighting the importance of room acoustics. This method helps users achieve better sound quality.</description>
+      <description>The 'Subwoofer Crawl' technique helps users find the best bass placement in non-square rooms, optimizing home theater sound. This practical advice is essential for effective audio setup.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T00:30:44+00:00</pubDate>
       <guid>https://www.zdnet.com/article/best-subwoofer-placement-in-weird-rooms/</guid>
     </item>
     <item>
-      <title>Anthropic: All your zero-days are belong to Mythos</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/anthropic_all_your_zerodays_are_belong_to_us/</link>
-      <description>Anthropic has developed an AI model capable of generating zero-day vulnerabilities, raising concerns about cybersecurity and the potential for widespread exploitation. This development poses significant risks to digital security.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T23:50:06+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/anthropic_all_your_zerodays_are_belong_to_us/</guid>
-    </item>
-    <item>
       <title>Manage AI costs with Amazon Bedrock Projects</title>
       <link>https://aws.amazon.com/blogs/machine-learning/manage-ai-costs-with-amazon-bedrock-projects/</link>
-      <description>Amazon Bedrock Projects allows users to manage AI inference costs by linking them to specific workloads, providing insights through AWS Cost Explorer. This feature enhances cost management for AI projects.</description>
+      <description>Amazon Bedrock Projects allows users to manage AI inference costs by linking them to specific workloads, providing insights through AWS tools. This feature aids in cost analysis and project management.</description>
       <category>Amazon</category>
       <pubDate>2026-04-07T23:32:00+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/manage-ai-costs-with-amazon-bedrock-projects/</guid>
     </item>
     <item>
-      <title>Iran cyber actors disrupting US water, energy facilities, FBI warns</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/iran_hackers_disrupting_us_water_energy/</link>
-      <description>The FBI warns of Iranian cyber actors targeting US water and energy facilities, escalating threats to critical infrastructure. This highlights the ongoing risks posed by state-sponsored cyber activities.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T23:30:24+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/iran_hackers_disrupting_us_water_energy/</guid>
-    </item>
-    <item>
       <title>Outlook: Copilot Search Suggestions for Outlook</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=559990</link>
-      <description>Microsoft is introducing Copilot suggestions in Outlook's search menu to enhance productivity by helping users manage their inbox and calendar more effectively. This feature aims to streamline user experience.</description>
+      <description>Outlook's new Copilot feature offers search suggestions to streamline inbox management and improve productivity. This integration aims to enhance user efficiency in handling emails and calendars.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-07T23:15:03+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559990</guid>
     </item>
     <item>
-      <title>Nutanix thinks some Azure cloud desktops belong on-prem to make them usable</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/nutanix_azure_cloud_desktops/</link>
-      <description>Nutanix is collaborating with Microsoft to bring Azure cloud desktops on-premises, leveraging its VDI expertise to enhance usability. This move aims to improve the performance of cloud-based applications.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T23:14:43+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/nutanix_azure_cloud_desktops/</guid>
-    </item>
-    <item>
       <title>Microsoft Viva: New Overview experience and agent categories in Agent Dashboard</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=559996</link>
-      <description>Microsoft Viva has launched a new Overview experience in its Agent Dashboard, allowing organizations to gain insights into agent usage and adoption. This feature aims to improve operational transparency.</description>
+      <description>Microsoft Viva introduces an Overview page in its Agent Dashboard, providing insights into agent usage and adoption within organizations. This feature aims to enhance visibility and understanding of AI agents.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-07T23:00:18+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559996</guid>
@@ -162,7 +226,7 @@
     <item>
       <title>Microsoft Viva: Unlocking Deeper Copilot Insights with Enhanced Power BI Filtering</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=559995</link>
-      <description>Microsoft Viva is enhancing Power BI with new filtering options for deeper insights, allowing users to tailor reports to their needs. This feature aims to improve data analysis capabilities.</description>
+      <description>Enhanced filtering options in Power BI reports for Microsoft Viva allow admins to customize insights based on specific organizational needs. This upgrade aims to improve data analysis capabilities.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-07T23:00:18+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559995</guid>
@@ -170,79 +234,15 @@
     <item>
       <title>Outlook: Data Loss Prevention (DLP) Policy Tips &amp; Override in Outlook for Mac</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=558689</link>
-      <description>Outlook for Mac will introduce Data Loss Prevention (DLP) policy tips to help users avoid accidental data leaks by alerting them when sensitive content is detected. This feature is set to be generally available by May 2026, with a preview in November 2025.</description>
+      <description>Outlook for Mac now features Data Loss Prevention (DLP) policy tips to help users avoid accidental data leaks. This enhancement alerts users when sensitive content is detected.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-07T23:00:18+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558689</guid>
     </item>
     <item>
-      <title>I can’t help rooting for tiny open source AI model maker Arcee</title>
-      <link>https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/</link>
-      <description>Arcee, a small U.S. startup, has developed a high-performing open-source language model that is gaining traction among users of OpenClaw. Their success highlights the growing interest in accessible AI solutions.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T21:35:02+00:00</pubDate>
-      <guid>https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/</guid>
-    </item>
-    <item>
-      <title>Cloudflare, GoDaddy team up to curb AI bot brigades</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/cloudflare_godaddy_ai_bot_blocking/</link>
-      <description>Cloudflare and GoDaddy are collaborating to improve web scraping standards and control AI bot interactions with web content. This partnership aims to protect site owners from unwanted AI activity.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T21:32:59+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/cloudflare_godaddy_ai_bot_blocking/</guid>
-    </item>
-    <item>
-      <title>AWS CEO: It's funny when people ask me if AI is overhyped</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/aws_garman_humanx_ai_underhyped/</link>
-      <description>AWS CEO Matt Garman discussed the skepticism surrounding AI hype at the Human[X] conference, emphasizing the need for realistic expectations in the tech industry. He acknowledged the challenges but downplayed fears of an impending SaaS crisis.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T21:21:28+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/aws_garman_humanx_ai_underhyped/</guid>
-    </item>
-    <item>
-      <title>Hundreds of orgs compromised daily in Microsoft device code phishing attacks</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/microsoft_device_code_phishing/</link>
-      <description>A Microsoft device-code phishing campaign is compromising hundreds of organizations daily, utilizing AI and automation to infiltrate corporate email systems and steal sensitive financial data. This highlights the evolving threat landscape in cybersecurity.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T20:19:42+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/microsoft_device_code_phishing/</guid>
-    </item>
-    <item>
-      <title>Your AirPods are gross. This $6 tool will keep them sparkling clean</title>
-      <link>https://www.zdnet.com/article/airpod-cleaner-tool-testimonial/</link>
-      <description>A simple $6 tool is recommended for cleaning AirPods, emphasizing the importance of regular maintenance for earbuds. This affordable solution makes it easy for users to keep their devices hygienic.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-07T20:07:20+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/airpod-cleaner-tool-testimonial/</guid>
-    </item>
-    <item>
-      <title>Intel gets trapped in Elon’s reality distortion field as it joins in megafab delusions</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/07/intel_elon_space_delusion/</link>
-      <description>Intel has joined Elon Musk's Terafab initiative, which aims to significantly increase semiconductor production for orbital data centers, despite skepticism about its feasibility. This move reflects the ongoing hype surrounding AI and space technology.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-07T19:36:48+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/07/intel_elon_space_delusion/</guid>
-    </item>
-    <item>
-      <title>LG C6 vs. LG C5: I compared two generations of OLED TVs, and it was pretty darn close</title>
-      <link>https://www.zdnet.com/article/lg-c6-vs-lg-c5/</link>
-      <description>A comparison between the LG C6 and C5 OLED TVs reveals that while the C6 offers some upgrades, the differences may not justify an upgrade for all users. The analysis helps consumers make informed decisions.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-07T18:55:00+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/lg-c6-vs-lg-c5/</guid>
-    </item>
-    <item>
-      <title>I swapped my MacBook Air with a Snapdragon X Elite Extreme laptop - here's how they compared</title>
-      <link>https://www.zdnet.com/article/asus-zenbook-a16-review/</link>
-      <description>A user compared the performance of a MacBook Air with an Asus Snapdragon X Elite Extreme laptop, highlighting differences in ultraportability and usability. The results vary based on user preferences.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-07T18:46:00+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/asus-zenbook-a16-review/</guid>
-    </item>
-    <item>
       <title>Building real-time conversational podcasts with Amazon Nova 2 Sonic</title>
       <link>https://aws.amazon.com/blogs/machine-learning/building-real-time-conversational-podcasts-with-amazon-nova-2-sonic/</link>
-      <description>This article details the creation of real-time conversational podcasts using Amazon Nova 2 Sonic, showcasing its capabilities in generating engaging AI-hosted discussions on various topics.</description>
+      <description>Amazon Nova 2 Sonic enables the creation of real-time conversational podcasts with AI hosts, showcasing its streaming and audio generation capabilities. This innovation demonstrates the potential for automated content creation.</description>
       <category>Amazon</category>
       <pubDate>2026-04-07T16:29:11+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/building-real-time-conversational-podcasts-with-amazon-nova-2-sonic/</guid>
@@ -256,156 +256,156 @@
       <guid>https://aws.amazon.com/blogs/machine-learning/text-to-sql-solution-powered-by-amazon-bedrock/</guid>
     </item>
     <item>
+      <title>Prioritize security alerts with runtime context from Dynatrace</title>
+      <link>https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</link>
+      <description>Dynatrace now allows users to prioritize GitHub Advanced Security alerts based on runtime context, improving security management in Kubernetes environments.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-07T15:15:24+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</guid>
+    </item>
+    <item>
       <title>Verifying and optimizing post-quantum cryptography at Amazon</title>
       <link>https://www.amazon.science/blog/verifying-and-optimizing-post-quantum-cryptography-at-amazon</link>
-      <description>Amazon is exploring automated reasoning to enhance post-quantum cryptography, balancing security, performance, and maintainability in its systems.</description>
+      <description>Amazon is focusing on verifying and optimizing post-quantum cryptography through automated reasoning, balancing security with performance and maintainability.</description>
       <category>Amazon</category>
       <pubDate>2026-04-07T15:00:00+00:00</pubDate>
       <guid>https://www.amazon.science/blog/verifying-and-optimizing-post-quantum-cryptography-at-amazon</guid>
     </item>
     <item>
-      <title>National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources</title>
-      <link>https://blogs.nvidia.com/blog/national-robotics-week-2026/</link>
-      <description>During National Robotics Week, NVIDIA showcases advancements in AI and robotics, highlighting their impact across various industries like agriculture and manufacturing.</description>
+      <title>Copilot CLI now supports BYOK and local models</title>
+      <link>https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</link>
+      <description>GitHub Copilot CLI has added support for bringing your own key (BYOK) and running local models, providing more flexibility for developers.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-07T14:53:34+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</guid>
+    </item>
+    <item>
+      <title>Dependabot alerts are now assignable to AI agents for remediation</title>
+      <link>https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</link>
+      <description>Dependabot now allows users to assign alerts for dependency vulnerabilities to AI agents, facilitating more complex code remediation.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-07T14:22:51+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</guid>
+    </item>
+    <item>
+      <title>Dependabot version updates now support the Nix ecosystem</title>
+      <link>https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</link>
+      <description>Dependabot has expanded its capabilities to support the Nix ecosystem, enabling better version management for Nix flakes.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-07T14:14:49+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</guid>
+    </item>
+    <item>
+      <title>OpenAI encourages firms to trial four-day weeks to adapt to AI era</title>
+      <link>https://www.bbc.com/news/articles/c8x71ejrp92o</link>
+      <description>OpenAI is advocating for companies to experiment with four-day work weeks as a response to the evolving capabilities of AI technologies.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-07T11:55:47+00:00</pubDate>
+      <guid>https://www.bbc.com/news/articles/c8x71ejrp92o</guid>
+    </item>
+    <item>
+      <title>context-stats added to PyPI</title>
+      <link>https://pypi.org/project/context-stats/</link>
+      <description>The context-stats package has been added to PyPI, allowing developers to monitor their Claude Code session context in real-time.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-07T11:53:29+00:00</pubDate>
+      <guid>https://pypi.org/project/context-stats/</guid>
+    </item>
+    <item>
+      <title>SpaceX, OpenAI, and Anthropic could reopen the IPO market—or drain it</title>
+      <link>https://fortune.com/2026/04/07/spacex-openai-anthropic-reopen-ipo-market-crunchbase/</link>
+      <description>Startups like SpaceX, OpenAI, and Anthropic are influencing the IPO market, with established unicorns struggling to demonstrate AI growth potential.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-07T11:46:18+00:00</pubDate>
+      <guid>https://fortune.com/2026/04/07/spacex-openai-anthropic-reopen-ipo-market-crunchbase/</guid>
+    </item>
+    <item>
+      <title>a11y-expert-mcp added to PyPI</title>
+      <link>https://pypi.org/project/a11y-expert-mcp/</link>
+      <description>The a11y-expert-mcp package has been introduced to PyPI, aiding developers in building accessible components with guidance on WAI-ARIA patterns and WCAG standards.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-07T11:40:19+00:00</pubDate>
+      <guid>https://pypi.org/project/a11y-expert-mcp/</guid>
+    </item>
+    <item>
+      <title>Show HN: Open-Source Higgsfiled AI Alternative</title>
+      <link>https://github.com/Anil-matcha/Open-Higgsfield-AI</link>
+      <description>An open-source alternative to Higgsfield AI has been launched, offering free AI image generation and cinema studio capabilities with over 20 models. This self-hosted solution allows for customization without subscription fees.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-07T11:36:50+00:00</pubDate>
+      <guid>https://github.com/Anil-matcha/Open-Higgsfield-AI</guid>
+    </item>
+    <item>
+      <title>memchinesepalace added to PyPI</title>
+      <link>https://pypi.org/project/memchinesepalace/</link>
+      <description>A new package called memchinesepalace has been added to PyPI, focusing on using Classical Chinese as a memory compression core for language models. This innovative approach aims to enhance memory efficiency in AI applications.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-07T11:36:50+00:00</pubDate>
+      <guid>https://pypi.org/project/memchinesepalace/</guid>
+    </item>
+    <item>
+      <title>Anthropic Google Broadcom TPU deal 3.5 gigawatts and $30 billion revenue</title>
+      <link>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_efc0d434-8233-4686-a345-07e311820d5d</link>
+      <description>Anthropic has secured a deal with Broadcom for 3.5 gigawatts of Google TPU capacity, significantly boosting its AI infrastructure. This partnership is expected to enhance Anthropic's capabilities as its annual revenue run rate surpasses $30 billion.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-07T11:32:34+00:00</pubDate>
+      <guid>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_efc0d434-8233-4686-a345-07e311820d5d</guid>
+    </item>
+    <item>
+      <title>The Morning After: Apple’s foldable iPhone may be delayed</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181400334</link>
+      <description>Apple's release of its foldable iPhone may be delayed due to unexpected issues encountered during early production tests. Reports suggest that these complications could push back the launch timeline.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-07T11:32:06+00:00</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181400334</guid>
+    </item>
+    <item>
+      <title>atompack-db added to PyPI</title>
+      <link>https://pypi.org/project/atompack-db/</link>
+      <description>The atompack-db has been added to PyPI, providing fast and compressed storage solutions for atomic structures and their properties. This tool aims to enhance data management in scientific research.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-07T11:28:03+00:00</pubDate>
+      <guid>https://pypi.org/project/atompack-db/</guid>
+    </item>
+    <item>
+      <title>A wild, wide foldable iPhone dummy emerges amid rumors of a delay</title>
+      <link>https://www.theverge.com/tech/907856/iphone-fold-dummy-design-delay-production</link>
+      <description>Photos of a dummy unit of Apple's wide foldable iPhone have surfaced, amid rumors of delays in its release. The images also include models of the upcoming iPhone 18 Pro and Pro Max.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>2026-04-07T11:27:04+00:00</pubDate>
+      <guid>https://www.theverge.com/tech/907856/iphone-fold-dummy-design-delay-production</guid>
+    </item>
+    <item>
+      <title>GPUBreach exploit uses GPU memory bit-flips to achieve full system takeover</title>
+      <link>https://securityaffairs.com/190455/security/gpubreach-exploit-uses-gpu-memory-bit-flips-to-achieve-full-system-takeover.html</link>
+      <description>The GPUBreach exploit has been revealed, utilizing GPU memory bit-flips to escalate privileges and potentially take full control of systems. This research highlights vulnerabilities in GPU memory that could lead to severe security breaches.</description>
       <category>NVIDIA</category>
-      <pubDate>2026-04-07T09:55:59+00:00</pubDate>
-      <guid>https://blogs.nvidia.com/blog/national-robotics-week-2026/</guid>
+      <pubDate>2026-04-07T11:26:17+00:00</pubDate>
+      <guid>https://securityaffairs.com/190455/security/gpubreach-exploit-uses-gpu-memory-bit-flips-to-achieve-full-system-takeover.html</guid>
     </item>
     <item>
-      <title>Galaxy Z Fold 8 price leak may make you happy</title>
-      <link>https://www.sammobile.com/news/galaxy-z-fold-8-price-leak-may-make-you-happy/</link>
-      <description>Leaks suggest that Samsung's Galaxy Z Fold 8, featuring a foldable display, is set to launch in July 2026, with details on its design and specifications emerging.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>2026-04-07T06:06:32+00:00</pubDate>
-      <guid>https://www.sammobile.com/news/galaxy-z-fold-8-price-leak-may-make-you-happy/</guid>
-    </item>
-    <item>
-      <title>Four-day week, taxes on robots, public wealth fund: OpenAI floats policy ideas for the intelligence age</title>
-      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/four-day-week-taxes-on-robots-public-wealth-fund-openai-floats-policy-ideas-for-the-intelligence-age/articleshow/130077855.cms</link>
-      <description>OpenAI has proposed several policy ideas for the AI age, including a four-day workweek and taxes on automated labor, aiming to ensure equitable benefits from AI advancements.</description>
+      <title>Broadcom to supply Anthropic with 3.5 gigawatts of Google TPU capacity from 2027 — Claude pioneer says its annual revenue run rate has passed $30 billion</title>
+      <link>https://www.tomshardware.com/tech-industry/broadcom-expands-anthropic-deal-to-3-5gw-of-google-tpu-capacity-from-2027</link>
+      <description>Broadcom's agreement to supply Anthropic with 3.5 gigawatts of Google TPU capacity starting in 2027 is a significant development in AI infrastructure. This deal supports Anthropic's growth as it approaches a $30 billion revenue run rate.</description>
       <category>OpenAI</category>
-      <pubDate>2026-04-07T06:03:44+00:00</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/four-day-week-taxes-on-robots-public-wealth-fund-openai-floats-policy-ideas-for-the-intelligence-age/articleshow/130077855.cms</guid>
+      <pubDate>2026-04-07T11:26:13+00:00</pubDate>
+      <guid>https://www.tomshardware.com/tech-industry/broadcom-expands-anthropic-deal-to-3-5gw-of-google-tpu-capacity-from-2027</guid>
     </item>
     <item>
-      <title>These 3 Signals Mark Bear Market Exits—Bitcoin Has Yet To Trigger Them</title>
-      <link>http://www.newsbtc.com/bitcoin-news/3-signals-bear-market-bitcoin-yet-trigger-them/</link>
-      <description>Analyst Willy Woo reports that Bitcoin has not yet triggered key signals indicating the end of its bear market, remaining below the cost basis for recent investors.</description>
+      <title>GenAI in product manufacturing cuts costs but adds risks</title>
+      <link>https://www.techtarget.com/searchenterpriseai/feature/GenAI-in-product-manufacturing-cuts-costs-but-adds-risks</link>
+      <description>Generative AI is being utilized in product manufacturing to consolidate supplier data and improve processes, resulting in significant cost savings. However, it also introduces unique risks that need to be managed.</description>
       <category>OpenAI</category>
-      <pubDate>2026-04-07T06:00:54+00:00</pubDate>
-      <guid>http://www.newsbtc.com/bitcoin-news/3-signals-bear-market-bitcoin-yet-trigger-them/</guid>
+      <pubDate>2026-04-07T11:26:00+00:00</pubDate>
+      <guid>https://www.techtarget.com/searchenterpriseai/feature/GenAI-in-product-manufacturing-cuts-costs-but-adds-risks</guid>
     </item>
     <item>
-      <title>Anthropic signs biggest compute deal yet with Google and Broadcom as revenue run rate hits $30bn</title>
-      <link>https://thenextweb.com/news/anthropic-google-broadcom-compute-deal/</link>
-      <description>Anthropic has secured its largest compute deal with Google and Broadcom, gaining access to significant TPU capacity while reporting a revenue run rate of $30 billion.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-07T06:00:36+00:00</pubDate>
-      <guid>https://thenextweb.com/news/anthropic-google-broadcom-compute-deal/</guid>
-    </item>
-    <item>
-      <title>The 2026 Brand Genius Creators: Innovating How to Connect With Audiences</title>
-      <link>https://www.adweek.com/brand-marketing/the-2026-brand-genius-creators-innovating-how-to-connect-with-audiences/</link>
-      <description>The 2026 Brand Genius Creators are recognized for their innovative strategies in connecting with audiences, showcasing the importance of creativity in marketing.</description>
-      <category>Microsoft</category>
-      <pubDate>2026-04-07T06:00:00+00:00</pubDate>
-      <guid>https://www.adweek.com/brand-marketing/the-2026-brand-genius-creators-innovating-how-to-connect-with-audiences/</guid>
-    </item>
-    <item>
-      <title>spmd_types 0.1.1</title>
-      <link>https://pypi.org/project/spmd-types/0.1.1/</link>
-      <description>A new type system for distributed tensor computations in PyTorch, named spmd_types 0.1.1, has been introduced to enhance computational efficiency.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-07T06:00:00+00:00</pubDate>
-      <guid>https://pypi.org/project/spmd-types/0.1.1/</guid>
-    </item>
-    <item>
-      <title>gawa added to PyPI</title>
-      <link>https://pypi.org/project/gawa/</link>
-      <description>GAWA, or Gaussian-Weighted Abstraction for Word Architecture, has been added to PyPI, expanding the tools available for natural language processing tasks.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-07T05:58:24+00:00</pubDate>
-      <guid>https://pypi.org/project/gawa/</guid>
-    </item>
-    <item>
-      <title>Flowise AI Agent Builder Under Active CVSS 10.0 RCE Exploitation; 12,000+ Instances Exposed</title>
-      <link>https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html</link>
-      <description>A critical security flaw (CVSS 10.0) in the Flowise AI platform is being actively exploited, exposing over 12,000 instances. This vulnerability poses significant risks to users and organizations relying on this open-source tool.</description>
-      <category>AI Foundry</category>
-      <pubDate>2026-04-07T05:56:00+00:00</pubDate>
-      <guid>https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html</guid>
-    </item>
-    <item>
-      <title>Foxconn begins trial production of Apple’s first foldable iPhone, expected to be its priciest ever</title>
-      <link>http://technode.com/2026/04/07/foxconn-begins-trial-production-of-apples-first-foldable-iphone-expected-to-be-its-priciest-ever/</link>
-      <description>Foxconn has started trial production of Apple's first foldable iPhone, expected to launch in late 2026. This device is anticipated to be Apple's most expensive phone yet, featuring a unique foldable design.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>2026-04-07T05:55:29+00:00</pubDate>
-      <guid>http://technode.com/2026/04/07/foxconn-begins-trial-production-of-apples-first-foldable-iphone-expected-to-be-its-priciest-ever/</guid>
-    </item>
-    <item>
-      <title>langchain-nono 0.1.0</title>
-      <link>https://pypi.org/project/langchain-nono/0.1.0/</link>
-      <description>The release of langchain-nono 0.1.0 introduces an OS-enforced sandbox backend for LangChain Deep Agents, enhancing security on Linux and macOS systems. This development aims to improve the safety of AI agent operations.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-07T05:55:08+00:00</pubDate>
-      <guid>https://pypi.org/project/langchain-nono/0.1.0/</guid>
-    </item>
-    <item>
-      <title>langchain-nono added to PyPI</title>
-      <link>https://pypi.org/project/langchain-nono/</link>
-      <description>Langchain-nono has been added to PyPI, providing an OS-enforced sandbox backend for LangChain Deep Agents. This addition aims to enhance the security of AI applications on various operating systems.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-07T05:55:04+00:00</pubDate>
-      <guid>https://pypi.org/project/langchain-nono/</guid>
-    </item>
-    <item>
-      <title>How Do You Find an Illegal Image Without Looking at It?</title>
-      <link>https://mahmoud-salem.net/the-invisible-shield</link>
-      <description>In 2025, 61.8 million files of suspected child abuse were reported, prompting the need for advanced detection methods. This article explores how machines identify illegal images without human oversight.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-07T05:47:01+00:00</pubDate>
-      <guid>https://mahmoud-salem.net/the-invisible-shield</guid>
-    </item>
-    <item>
-      <title>Show HN: I built a tiny LLM to demystify how language models work | Hacker News</title>
-      <link>https://news.ycombinator.com/item?id=47655408</link>
-      <description>A developer shared a project on Hacker News that demonstrates a tiny language model designed to clarify how language models function. This initiative aims to demystify AI for a broader audience.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-07T05:47:01+00:00</pubDate>
-      <guid>https://news.ycombinator.com/item?id=47655408</guid>
-    </item>
-    <item>
-      <title>haive-mcp 1.0.1</title>
-      <link>https://pypi.org/project/haive-mcp/1.0.1/</link>
-      <description>Haive-mcp 1.0.1 introduces dynamic MCP integration for AI agents, allowing users to search over 1,960 servers and connect via LangChain or Docker. This version enhances the functionality of AI agents.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-07T05:46:01+00:00</pubDate>
-      <guid>https://pypi.org/project/haive-mcp/1.0.1/</guid>
-    </item>
-    <item>
-      <title>aig-guardian 1.1.0</title>
-      <link>https://pypi.org/project/aig-guardian/1.1.0/</link>
-      <description>Aig-guardian 1.1.0 offers zero-dependency security for AI agents, covering 137 patterns for various vulnerabilities. It integrates with popular frameworks, enhancing the security landscape for AI applications.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-07T05:44:33+00:00</pubDate>
-      <guid>https://pypi.org/project/aig-guardian/1.1.0/</guid>
-    </item>
-    <item>
-      <title>haive added to PyPI</title>
-      <link>https://pypi.org/project/haive/</link>
-      <description>Haive has been added to PyPI, providing a comprehensive AI agent framework that includes over 53 agents and various integration options. This meta-package aims to streamline AI development.</description>
-      <category>Meta</category>
-      <pubDate>2026-04-07T05:37:12+00:00</pubDate>
-      <guid>https://pypi.org/project/haive/</guid>
-    </item>
-    <item>
-      <title>This new chip survives 1300°F (700°C) and could change AI forever</title>
-      <link>https://www.sciencedaily.com/releases/2026/04/260406192904.htm</link>
-      <description>Engineers have developed a new memory chip that can withstand temperatures of 1300°F (700°C), potentially revolutionizing AI technology. This breakthrough addresses a significant limitation in electronics.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-07T05:32:38+00:00</pubDate>
-      <guid>https://www.sciencedaily.com/releases/2026/04/260406192904.htm</guid>
+      <title>Show HN: Serif.sh – it's like ray.so for quotes (Open source)</title>
+      <link>https://github.com/ticketping-com/serif-sh</link>
+      <description>Serif.sh, an open-source tool similar to ray.so for quotes, has been introduced. It allows users to create and share quote graphics easily.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-07T11:24:37+00:00</pubDate>
+      <guid>https://github.com/ticketping-com/serif-sh</guid>
     </item>
   </channel>
 </rss>
