@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 // Microsoft-related categories get unlimited articles, others capped at 10
-var MICROSOFT_CATS = ['microsoft', 'm365 copilot', 'copilot studio', 'ai foundry', 'azure ai'];
+var MICROSOFT_CATS = ['microsoft', 'm365 copilot', 'copilot studio', 'ai foundry', 'azure ai', 'github copilot'];
 var MAX_OTHER = 10;
 
 // Display order: Top Stories first, then Microsoft family, then rest
 var CATEGORY_ORDER = [
-  'Top Stories', 'Microsoft', 'M365 Copilot', 'Copilot Studio', 'AI Foundry',
+  'Top Stories', 'Microsoft', 'M365 Copilot', 'Copilot Studio', 'GitHub Copilot', 'AI Foundry',
   'OpenAI', 'Apple', 'NVIDIA', 'Amazon', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours & Gossip'
 ];
 
@@ -39,6 +39,7 @@ var CATEGORY_META = {
   'Microsoft':         { emoji: '🟦', color: '#0078D4' },
   'M365 Copilot':      { emoji: '✨', color: '#6264A7' },
   'Copilot Studio':    { emoji: '🛠️', color: '#742774' },
+  'GitHub Copilot':    { emoji: '🤖', color: '#1F6FEB' },
   'AI Foundry':        { emoji: '🏭', color: '#008272' },
   'OpenAI':            { emoji: '🟩', color: '#10A37F' },
   'Apple':             { emoji: '🍎', color: '#A2AAAD' },
@@ -69,7 +70,8 @@ var AI_KEYWORDS = [
   'langchain', 'semantic kernel', 'autogen', 'crew ai', 'mcp server',
   'model context protocol', 'ai adoption', 'ai strategy', 'ai tool',
   'apple intelligence', 'siri', 'nvidia', 'cuda', 'gpu', 'inference',
-  'bedrock', 'sagemaker', 'amazon q', 'amazon nova', 'trainium'
+  'bedrock', 'sagemaker', 'amazon q', 'amazon nova', 'trainium',
+  'github copilot', 'copilot cli', 'code completion', 'coding agent', 'copilot workspace'
 ];
 
 function isAiRelated(article) {
