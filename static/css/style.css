@@ -1507,6 +1507,37 @@ a:hover {
   gap: 0.4rem;
   height: 100px;
 }
+.ainews-thumb-logo {
+  background: linear-gradient(135deg, #0a0a1a 0%, #161633 40%, #1a1a3a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 120px;
+  position: relative;
+}
+.ainews-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: brightness(0.9);
+  transition: filter 0.2s;
+}
+.ainews-card:hover .ainews-logo-img,
+.ainews-card-hero:hover .ainews-logo-img {
+  filter: brightness(1.1);
+}
+.ainews-logo-fallback {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ainews-thumb-logo .ainews-thumb-source {
+  position: absolute;
+  bottom: 0.5rem;
+}
 .ainews-thumb-emoji {
   font-size: 2rem;
 }
@@ -1520,6 +1551,13 @@ a:hover {
 }
 .ainews-card-hero .ainews-thumb-placeholder {
   height: 120px;
+}
+.ainews-card-hero .ainews-thumb-logo {
+  height: 140px;
+}
+.ainews-card-hero .ainews-logo-img {
+  width: 56px;
+  height: 56px;
 }
 .ainews-card-hero .ainews-thumb-emoji {
   font-size: 2.5rem;

@@ -158,6 +158,15 @@ function renderNews(data, view) {
   var deepDives = articles.filter(function (a) { return a.tier === 'deep_dive' || !a.tier; });
   var quickLinks = articles.filter(function (a) { return a.tier === 'quick'; });
 
+  // Sort: articles with images first within each tier
+  var imageFirst = function (a, b) {
+    var aImg = a.image ? 1 : 0;
+    var bImg = b.image ? 1 : 0;
+    return bImg - aImg;
+  };
+  headlines.sort(imageFirst);
+  deepDives.sort(imageFirst);
+
   // Category filters — merge always-show categories with those that have articles
   var categories = getOrderedCategories(articles);
   ALWAYS_SHOW_CATS.forEach(function (cat) {
@@ -274,12 +283,17 @@ function renderHeroCard(article) {
   var favicon = getFaviconUrl(url);
   var rtime = readingTime(summary);
   var image = article.image || '';
+  var logo = getLogoUrl(url);
 
   var thumbHtml;
   if (image) {
     thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
   } else {
-    thumbHtml = '<div class="ainews-thumb ainews-thumb-placeholder"><span class="ainews-thumb-emoji">' + emoji + '</span><span class="ainews-thumb-source">' + escapeHtml(source) + '</span></div>';
+    thumbHtml = '<div class="ainews-thumb ainews-thumb-logo">' +
+      (logo ? '<img src="' + escapeHtml(logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
+      '<span class="ainews-logo-fallback" style="' + (logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + emoji + '</span></span>' +
+      '<span class="ainews-thumb-source">' + escapeHtml(source) + '</span>' +
+    '</div>';
   }
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
@@ -313,12 +327,17 @@ function renderCard(article) {
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
   var image = article.image || '';
   var cluster = article.cluster || '';
+  var logo = getLogoUrl(url);
 
   var thumbHtml;
   if (image) {
     thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
   } else {
-    thumbHtml = '<div class="ainews-thumb ainews-thumb-placeholder"><span class="ainews-thumb-emoji">' + emoji + '</span><span class="ainews-thumb-source">' + escapeHtml(source) + '</span></div>';
+    thumbHtml = '<div class="ainews-thumb ainews-thumb-logo">' +
+      (logo ? '<img src="' + escapeHtml(logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
+      '<span class="ainews-logo-fallback" style="' + (logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + emoji + '</span></span>' +
+      '<span class="ainews-thumb-source">' + escapeHtml(source) + '</span>' +
+    '</div>';
   }
 
   return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
