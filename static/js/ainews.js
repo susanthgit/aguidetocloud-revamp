@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', async function () {
       loadView(view);
     });
   });
+
+  // Pre-fetch tab counts for weekly/monthly
+  updateTabCounts();
+
+  // Mark last visit timestamp for "new" badges
+  var lastVisit = localStorage.getItem('ainews_last_visit');
+  window.__ainewsLastVisit = lastVisit ? new Date(lastVisit) : null;
+  localStorage.setItem('ainews_last_visit', new Date().toISOString());
 });
 
 // Microsoft-related categories get unlimited articles, others capped at 10
@@ -52,7 +60,8 @@ var MAX_OTHER = 10;
 // Display order: Top Stories first, then Microsoft family, then rest
 var CATEGORY_ORDER = [
   'Top Stories', 'Microsoft', 'M365 Copilot', 'Copilot Studio', 'GitHub Copilot', 'AI Foundry',
-  'OpenAI', 'Apple', 'NVIDIA', 'Amazon', 'Google', 'Meta', 'Anthropic', 'Open Source', 'Industry', 'Rumours & Gossip'
+  'OpenAI', 'Anthropic', 'Google', 'Meta', 'DeepSeek', 'Mistral', 'xAI', 'Perplexity',
+  'Apple', 'NVIDIA', 'Amazon', 'Open Source', 'Industry', 'Rumours & Gossip'
 ];
 
 // Category colours and emojis for pills
@@ -64,12 +73,16 @@ var CATEGORY_META = {
   'GitHub Copilot':    { emoji: '🤖', color: '#1F6FEB' },
   'AI Foundry':        { emoji: '🏭', color: '#008272' },
   'OpenAI':            { emoji: '🟩', color: '#10A37F' },
+  'Anthropic':         { emoji: '🟧', color: '#D4A574' },
+  'Google':            { emoji: '🟥', color: '#EA4335' },
+  'Meta':              { emoji: '🟪', color: '#0668E1' },
+  'DeepSeek':          { emoji: '🇨🇳', color: '#4D6BFE' },
+  'Mistral':           { emoji: '🇪🇺', color: '#FF7000' },
+  'xAI':               { emoji: '⚡', color: '#1DA1F2' },
+  'Perplexity':        { emoji: '🔍', color: '#20808D' },
   'Apple':             { emoji: '🍎', color: '#A2AAAD' },
   'NVIDIA':            { emoji: '💚', color: '#76B900' },
   'Amazon':            { emoji: '📦', color: '#FF9900' },
-  'Google':            { emoji: '🟥', color: '#EA4335' },
-  'Meta':              { emoji: '🟪', color: '#0668E1' },
-  'Anthropic':         { emoji: '🟧', color: '#D4A574' },
   'Open Source':       { emoji: '⬛', color: '#888' },
   'Industry':          { emoji: '🔵', color: '#4A90D9' },
   'Rumours & Gossip':  { emoji: '🗣️', color: '#9B59B6' }
@@ -320,9 +333,10 @@ function renderHeroCard(article) {
     '</div>';
   }
 
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '">' +
+  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '" onclick="trackArticleClick(\'' + escapeHtml(cat).replace(/'/g, '') + '\',\'' + escapeHtml(title).replace(/'/g, '').substring(0, 50) + '\')">' +
     thumbHtml +
     '<div class="ainews-card-body">' +
+    (isNewSinceLastVisit(article.published) ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
@@ -364,8 +378,9 @@ function renderCard(article) {
     '</div>';
   }
 
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '">' +
+  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '" onclick="trackArticleClick(\'' + escapeHtml(cat).replace(/'/g, '') + '\',\'' + escapeHtml(title).replace(/'/g, '').substring(0, 50) + '\')">' +
     thumbHtml +
+    (isNewSinceLastVisit(article.published) ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
     (cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(cluster.replace(/-/g, ' ')) + '</span>' : '') +
     '<h3>' + escapeHtml(title) + '</h3>' +
@@ -449,3 +464,104 @@ function getOrderedCategories(articles) {
   });
   return categories;
 }
+
+// === TAB COUNTS ===
+async function updateTabCounts() {
+  var DATA_URLS = {
+    weekly: '/data/ainews/weekly.json',
+    monthly: '/data/ainews/monthly.json'
+  };
+  for (var view in DATA_URLS) {
+    try {
+      var resp = await fetch(DATA_URLS[view]);
+      if (!resp.ok) continue;
+      var raw = await resp.json();
+      var articles = (raw.articles || []).filter(isAiRelated);
+      var tab = document.querySelector('.ainews-tab[data-view="' + view + '"]');
+      if (tab) {
+        var labels = { weekly: '📊 This Week', monthly: '📈 This Month' };
+        tab.textContent = labels[view] + ' (' + articles.length + ')';
+      }
+    } catch (e) { /* ignore */ }
+  }
+  // Update daily count from already loaded data
+  if (window.__ainewsData) {
+    var dailyArticles = (window.__ainewsData.articles || []).filter(isAiRelated);
+    var dailyTab = document.querySelector('.ainews-tab[data-view="daily"]');
+    if (dailyTab) dailyTab.textContent = '📅 Today (' + dailyArticles.length + ')';
+  }
+}
+
+// === "NEW" BADGES ===
+function isNewSinceLastVisit(publishedStr) {
+  if (!window.__ainewsLastVisit || !publishedStr) return false;
+  try {
+    return new Date(publishedStr) > window.__ainewsLastVisit;
+  } catch (e) { return false; }
+}
+
+// === SHARE BUTTON ===
+function renderShareButton() {
+  var container = document.querySelector('.ainews-tabs');
+  if (!container || document.getElementById('ainews-share-btn')) return;
+  var btn = document.createElement('button');
+  btn.id = 'ainews-share-btn';
+  btn.className = 'ainews-share-btn';
+  btn.innerHTML = '📤 Share';
+  btn.title = 'Copy link to clipboard';
+  btn.addEventListener('click', function () {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        btn.innerHTML = '✅ Copied!';
+        setTimeout(function () { btn.innerHTML = '📤 Share'; }, 2000);
+      });
+    } else {
+      prompt('Copy this link:', url);
+    }
+  });
+  container.appendChild(btn);
+}
+
+// === DARK/LIGHT TOGGLE ===
+function renderThemeToggle() {
+  var container = document.querySelector('.ainews-tabs');
+  if (!container || document.getElementById('ainews-theme-toggle')) return;
+  var savedTheme = localStorage.getItem('ainews_theme') || 'dark';
+  if (savedTheme === 'light') document.body.classList.add('ainews-light');
+
+  var btn = document.createElement('button');
+  btn.id = 'ainews-theme-toggle';
+  btn.className = 'ainews-theme-toggle';
+  btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+  btn.title = 'Toggle dark/light mode';
+  btn.addEventListener('click', function () {
+    document.body.classList.toggle('ainews-light');
+    var isLight = document.body.classList.contains('ainews-light');
+    btn.innerHTML = isLight ? '🌙' : '☀️';
+    localStorage.setItem('ainews_theme', isLight ? 'light' : 'dark');
+  });
+  container.appendChild(btn);
+}
+
+// === CLICK ANALYTICS (Microsoft Clarity) ===
+function trackArticleClick(category, title) {
+  if (window.clarity) {
+    window.clarity('event', 'ainews_click', { category: category, title: title.substring(0, 50) });
+  }
+}
+
+// Init share + theme on first render
+(function initExtras() {
+  var observer = new MutationObserver(function () {
+    if (document.querySelector('.ainews-tabs')) {
+      renderShareButton();
+      renderThemeToggle();
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+  // Also try immediately
+  renderShareButton();
+  renderThemeToggle();
+})();

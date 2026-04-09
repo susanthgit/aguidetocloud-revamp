@@ -1,0 +1,23 @@
+{{ define "main" }}
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#6264A7">
+<div class="page-hero ainews-page-hero">
+  <h1>{{ .Title }}</h1>
+  <p style="color: var(--text-muted); margin-top: 0.5rem;">{{ .Description }}</p>
+  <p style="margin-top: 0.5rem;"><a href="/ai-news/" style="color: var(--neon-cyan);">← Back to All AI News</a></p>
+</div>
+<div class="container">
+  <div class="ainews-grid" id="news-grid">
+    <div class="ainews-skeleton-wrap" style="grid-column:1/-1">
+      <div class="ainews-skeleton-card"></div>
+      <div class="ainews-skeleton-card"></div>
+      <div class="ainews-skeleton-card"></div>
+    </div>
+  </div>
+</div>
+<script>
+  window.__ainewsCategoryFilter = "{{ .Params.category_filter }}";
+</script>
+<script src="/js/ainews.js?v={{ now.Unix }}"></script>
+<script src="/js/ainews-category.js?v={{ now.Unix }}"></script>
+{{ end }}

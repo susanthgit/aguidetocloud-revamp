@@ -1,0 +1,17 @@
+{
+  "name": "AI News — A Guide to Cloud & AI",
+  "short_name": "AI News",
+  "description": "Daily AI news digest — curated headlines, summaries and trends",
+  "start_url": "/ai-news/",
+  "scope": "/ai-news/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#6264A7",
+  "icons": [
+    {
+      "src": "/images/og-default.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

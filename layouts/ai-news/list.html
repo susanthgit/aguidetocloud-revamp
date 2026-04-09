@@ -1,4 +1,6 @@
 {{ define "main" }}
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#6264A7">
 <div class="page-hero ainews-page-hero">
   <h1>{{ .Title }}</h1>
 </div>
@@ -17,6 +19,24 @@
       <div class="ainews-skeleton-card"></div>
       <div class="ainews-skeleton-card"></div>
       <div class="ainews-skeleton-card"></div>
+    </div>
+  </div>
+
+  <div class="ainews-email-cta">
+    <span>📂</span>
+    <div>
+      <strong>Browse by Vendor</strong>
+      <p style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.3rem">
+        <a href="/ai-news/microsoft/" style="color:var(--neon-cyan)">🟦 Microsoft</a> ·
+        <a href="/ai-news/m365-copilot/" style="color:var(--neon-cyan)">✨ M365 Copilot</a> ·
+        <a href="/ai-news/openai/" style="color:var(--neon-cyan)">🟩 OpenAI</a> ·
+        <a href="/ai-news/anthropic/" style="color:var(--neon-cyan)">🟧 Anthropic</a> ·
+        <a href="/ai-news/google/" style="color:var(--neon-cyan)">🟥 Google</a> ·
+        <a href="/ai-news/meta/" style="color:var(--neon-cyan)">🟪 Meta</a> ·
+        <a href="/ai-news/deepseek/" style="color:var(--neon-cyan)">🇨🇳 DeepSeek</a> ·
+        <a href="/ai-news/nvidia/" style="color:var(--neon-cyan)">💚 NVIDIA</a> ·
+        <a href="/ai-news/amazon/" style="color:var(--neon-cyan)">📦 Amazon</a>
+      </p>
     </div>
   </div>
 
