@@ -35,15 +35,69 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  // Initial load — skip if we're on a category page (category JS handles it)
-  if (!window.__ainewsCategoryFilter) {
+  async function loadCategoryView(filter) {
+    var SLUG_TO_NAME = {
+      'microsoft': 'Microsoft', 'm365-copilot': 'M365 Copilot',
+      'copilot-studio': 'Copilot Studio', 'github-copilot': 'GitHub Copilot',
+      'ai-foundry': 'AI Foundry', 'openai': 'OpenAI', 'anthropic': 'Anthropic',
+      'google': 'Google', 'meta': 'Meta', 'deepseek': 'DeepSeek',
+      'mistral': 'Mistral', 'xai': 'xAI', 'perplexity': 'Perplexity',
+      'nvidia': 'NVIDIA', 'apple': 'Apple', 'amazon': 'Amazon'
+    };
+    var categoryName = SLUG_TO_NAME[filter] || filter;
+    var grid = document.getElementById('news-grid');
+
+    // Try monthly → weekly → daily (most articles first)
+    var urls = ['/data/ainews/monthly.json', '/data/ainews/weekly.json', '/data/ainews/latest.json'];
+    var data = null;
+    for (var i = 0; i < urls.length; i++) {
+      try {
+        var resp = await fetch(urls[i]);
+        if (resp.ok) {
+          var raw = await resp.json();
+          data = Array.isArray(raw) ? { articles: raw } : raw;
+          if (data.articles && data.articles.length > 0) break;
+        }
+      } catch (e) { /* try next */ }
+    }
+
+    if (!data || !data.articles) {
+      grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No articles available yet.</p>';
+      return;
+    }
+
+    // Filter to ONLY this category (match on category_name or category_id)
+    var targetLower = categoryName.toLowerCase();
+    var filterLower = filter.toLowerCase();
+    var filtered = data.articles.filter(function (a) {
+      var name = (a.category_name || '').toLowerCase();
+      var id = (a.category_id || '').toLowerCase();
+      return name === targetLower || id === filterLower;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No ' + categoryName + ' articles found this period. <a href="/ai-news/" style="color: var(--neon-cyan);">View all news →</a></p>';
+      return;
+    }
+
+    // Render ONLY filtered articles
+    window.__ainewsData = { articles: filtered, generated_at: data.generated_at };
+    renderNews(window.__ainewsData, 'daily');
+  }
+
+  // Initial load
+  if (window.__ainewsCategoryFilter) {
+    // Category landing page — fetch, filter, render
+    await loadCategoryView(window.__ainewsCategoryFilter);
+  } else {
+    // Main AI News page — load daily view
     await loadView('daily');
 
     // Pre-fetch tab counts for weekly/monthly
     updateTabCounts();
   }
 
-  // Tab switching — fetch correct JSON per tab
+  // Tab switching — only on main page (tabs don't exist on category pages)
   document.querySelectorAll('.ainews-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       document.querySelectorAll('.ainews-tab').forEach(function (t) { t.classList.remove('active'); });
