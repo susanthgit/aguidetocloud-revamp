@@ -1,12 +1,52 @@
 {{ define "main" }}
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#6264A7">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "isPartOf": {
+    "@type": "WebPage",
+    "name": "AI News",
+    "url": "{{ .Site.BaseURL }}ai-news/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+      {"@type": "ListItem", "position": 2, "name": "AI News", "item": "{{ .Site.BaseURL }}ai-news/"},
+      {"@type": "ListItem", "position": 3, "name": "{{ .Title }}"}
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
 <div class="page-hero ainews-page-hero">
+  <!-- Breadcrumb navigation -->
+  <nav aria-label="Breadcrumb" style="font-size: 0.8rem; margin-bottom: 0.5rem; opacity: 0.7;">
+    <a href="/" style="color: var(--neon-cyan);">Home</a> › 
+    <a href="/ai-news/" style="color: var(--neon-cyan);">AI News</a> › 
+    <span>{{ .Title }}</span>
+  </nav>
   <h1>{{ .Title }}</h1>
-  <p style="color: var(--text-muted); margin-top: 0.5rem;">{{ .Description }}</p>
-  <p style="margin-top: 0.5rem;"><a href="/ai-news/" style="color: var(--neon-cyan);">← Back to All AI News</a></p>
+  <p style="color: var(--text-muted); margin-top: 0.5rem; max-width: 700px;">{{ .Description }}</p>
 </div>
 <div class="container">
+  <!-- SEO intro text (visible to search engines) -->
+  <div style="grid-column:1/-1; padding: 0.8rem 0 0.5rem; color: var(--text-muted); font-size: 0.85rem; max-width: 800px; line-height: 1.6;">
+    {{ .Content }}
+  </div>
+
   <div class="ainews-grid" id="news-grid">
     <div class="ainews-skeleton-wrap" style="grid-column:1/-1">
       <div class="ainews-skeleton-card"></div>
