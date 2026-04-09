@@ -5,76 +5,140 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2026 23:37:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 06:15:43 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a range of third-party integrations, allowing developers to connect AI agents with tools like GitHub and Notion. This enhancement aims to facilitate the creation of practical applications using AI.</description>
+      <description>The Agent Development Kit (ADK) now features a new ecosystem of third-party integrations, allowing developers to connect their AI agents to various tools like GitHub and Notion. This enhancement aims to facilitate the creation of more capable real-world applications.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311610+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815569+00:00</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's potential. This event aims to build excitement and engagement ahead of the main presentations.</description>
+      <description>Google I/O 2026 will take place on May 19-20, featuring a save the date puzzle that showcases AI's role in enhancing event experiences. This annual tradition builds excitement ahead of the main event.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311596+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815556+00:00</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, emphasizing the transition to agentic AI. The event includes technical tracks on various topics, enhancing developers' skills.</description>
+      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, featuring technical tracks on agentic AI and security. The event emphasizes the benefits of in-person participation for developers.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311583+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815543+00:00</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, a new framework that enhances GPU and NPU performance while supporting PyTorch and JAX. This update aims to improve efficiency and security in deploying GenAI applications.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, which enhances GPU and NPU acceleration and supports PyTorch and JAX. This update aims to improve efficiency and security within the TensorFlow ecosystem.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311568+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815530+00:00</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Google Cloud's Wednesday Build Hour offers interactive sessions led by experts to help developers enhance their cloud skills. The program emphasizes hands-on learning and practical application of advanced topics.</description>
+      <description>Google Cloud has introduced Wednesday Build Hour, a weekly interactive session for developers to enhance their cloud skills through hands-on building. The program focuses on advanced topics like AI agents and productivity tools.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311554+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815517+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>Gemini Code Assist has introduced updates to improve coding workflows, including features like Agent Mode and Inline Diff Views. These tools aim to make AI a more effective collaborator for developers.</description>
+      <description>The Gemini Code Assist team has rolled out updates to streamline coding workflows, including features like Agent Mode and Inline Diff Views. These tools aim to transform AI into a more tailored coding collaborator.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311541+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815504+00:00</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>New features in Gemini Code Assist for IntelliJ and VS Code, such as Finish Changes and Outlines, aim to streamline coding by reducing manual input and enhancing code comprehension. These tools act as AI pair programmers.</description>
+      <description>Google has introduced new features for Gemini Code Assist in IntelliJ and VS Code, including Finish Changes and Outlines, which aim to reduce developer friction and improve code comprehension. These tools help streamline coding processes.</description>
       <category>Google</category>
-      <pubDate>2026-04-08T23:35:25.311527+00:00</pubDate>
+      <pubDate>2026-04-09T06:13:29.815492+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
+    </item>
+    <item>
+      <title>GitHub availability report: March 2026</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</link>
+      <description>The GitHub availability report for March 2026 details four incidents that led to degraded performance across its services. This report highlights ongoing reliability challenges.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-09T02:21:17+00:00</pubDate>
+      <guid>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</guid>
+    </item>
+    <item>
+      <title>Why I stopped using 'Modern Standby' on my Windows laptop to save battery overnight</title>
+      <link>https://www.zdnet.com/article/sleep-vs-hibernate-does-modern-standby-save-battery-on-windows/</link>
+      <description>An article discusses the drawbacks of using 'Modern Standby' on Windows laptops for overnight battery saving, suggesting that sleep mode may not be the best option. It offers insights into better battery preservation methods.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T01:00:47+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/sleep-vs-hibernate-does-modern-standby-save-battery-on-windows/</guid>
+    </item>
+    <item>
+      <title>KDE Linux is the purest form of Plasma I've tested - but the install isn't for the meek</title>
+      <link>https://www.zdnet.com/article/kde-linux-distribution-review/</link>
+      <description>KDE Linux offers a pure version of the KDE Plasma desktop environment, but the installation process may be challenging for less experienced users. This distro is noted for its clean and customizable interface.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T00:17:47+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/kde-linux-distribution-review/</guid>
+    </item>
+    <item>
+      <title>I found a hidden Google Photos tool that makes clearing storage feel less like a chore</title>
+      <link>https://www.zdnet.com/article/google-photos-clean-up-this-day-how-it-works/</link>
+      <description>Google Photos introduced a new feature for Android users that allows them to easily swipe to keep or delete photos, simplifying storage management.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T00:00:40+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/google-photos-clean-up-this-day-how-it-works/</guid>
+    </item>
+    <item>
+      <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
+      <link>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</link>
+      <description>GitHub's Copilot usage metrics API now includes new metrics for pull request merges, building on previously released throughput and cycle-time metrics.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-08T23:21:50+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</guid>
     </item>
     <item>
       <title>Meta's latest model is as open as Zuckerberg's private school</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/meta_muse_spark/</link>
-      <description>Meta's recent shift towards proprietary models contrasts its earlier advocacy for open-source AI, raising questions about its commitment to openness in AI development. This change reflects a broader industry trend.</description>
+      <description>Meta's CEO Mark Zuckerberg has shifted from promoting open-source AI to embracing proprietary models, raising questions about the future of open AI.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T23:06:42+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/meta_muse_spark/</guid>
     </item>
     <item>
+      <title>Outlook: Upgraded Video and Audio Player for iOS</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=560056</link>
+      <description>Outlook for iOS has upgraded its video and audio player, offering improved controls and smoother playback, set to launch in May 2026.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-08T23:00:03+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=560056</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: AI-generated meeting archive for knowledge retention</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558933</link>
+      <description>Microsoft Teams is introducing an AI-generated meeting archive feature that allows retention of key insights beyond standard transcript periods.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-08T23:00:03+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558933</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Entra passwordless resource account support for Teams Rooms on Windows devices</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558853</link>
+      <description>Teams Rooms on Windows will support passwordless sign-in through Entra Resource Accounts, enhancing security and user identity management.</description>
+      <category>M365 Copilot</category>
+      <pubDate>2026-04-08T23:00:03+00:00</pubDate>
+      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558853</guid>
+    </item>
+    <item>
       <title>Western Union zaps VMware and moves to Nutanix</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/western_union_vmware_nutanix_migration/</link>
-      <description>Western Union has begun migrating from VMware to Nutanix, indicating a strategic shift away from Broadcom. This move reflects broader trends in enterprise software solutions.</description>
+      <description>Western Union is migrating from VMware to Nutanix, seeking to avoid business with Broadcom amid broader industry shifts.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T22:35:54+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/western_union_vmware_nutanix_migration/</guid>
@@ -82,7 +146,7 @@
     <item>
       <title>Conflicting Rulings Leave Anthropic in ‘Supply-Chain Risk’ Limbo</title>
       <link>https://www.wired.com/story/anthropic-appeals-court-ruling/</link>
-      <description>Conflicting court rulings have left Anthropic uncertain about the US military's use of its Claude model, creating a 'supply-chain risk' for the company. This legal ambiguity could impact its operations.</description>
+      <description>Conflicting court rulings create uncertainty for Anthropic regarding the US military's use of its Claude AI model, posing supply-chain risks.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T22:27:26+00:00</pubDate>
       <guid>https://www.wired.com/story/anthropic-appeals-court-ruling/</guid>
@@ -90,7 +154,7 @@
     <item>
       <title>Atlassian gussies up Confluence for the AI era</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/atlassian_brings_ai_and_agents/</link>
-      <description>Atlassian is enhancing Confluence with AI tools that allow users to convert notes into graphics and software applications, aiming to improve productivity and collaboration. This modernization reflects the growing trend of integrating AI into workplace tools.</description>
+      <description>Atlassian is updating Confluence with AI capabilities to help users convert notes into graphics and software applications, modernizing the platform.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T22:02:37+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/atlassian_brings_ai_and_agents/</guid>
@@ -98,7 +162,7 @@
     <item>
       <title>Criminal wannabes even more dangerous than the pros, says ex-FBI cyber chief</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/cynthia_kaiser_interview/</link>
-      <description>Cynthia Kaiser, a former FBI cyber chief, warns that inexperienced cybercriminals pose a significant threat, particularly in the realm of ransomware. Her insights highlight the evolving landscape of cyber threats and the need for heightened awareness.</description>
+      <description>A former FBI cyber chief warns that inexperienced criminals pose a significant threat, potentially leading to irreversible data loss.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T21:09:51+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/cynthia_kaiser_interview/</guid>
@@ -106,15 +170,15 @@
     <item>
       <title>You can read PDFs and articles on your Kindle: How to send all kinds of files to your device</title>
       <link>https://www.zdnet.com/article/how-to-send-articles-and-files-kindle/</link>
-      <description>This article provides a guide on how to send various file types, including PDFs and articles, to a Kindle device for reading. It offers a quick and easy solution for Kindle users looking to access more content.</description>
+      <description>Users can now easily send PDFs and articles to their Kindle devices, enhancing the reading experience with various file types. This feature allows for greater accessibility of content on Kindle.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T21:06:00+00:00</pubDate>
       <guid>https://www.zdnet.com/article/how-to-send-articles-and-files-kindle/</guid>
     </item>
     <item>
-      <title>AI agent Poke makes setting up automations as easy as sending a text</title>
+      <title>Poke makes using AI agents as easy as sending a text</title>
       <link>https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/</link>
-      <description>Poke introduces an AI agent that simplifies task automation through text messaging, allowing users to set up automations without needing technical skills or complex setups. This innovation aims to make AI more accessible to everyday users.</description>
+      <description>Poke simplifies the use of AI agents by allowing users to interact with them via text messages, eliminating the need for complex setups. This development makes AI more accessible to everyday users.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T21:05:13+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/</guid>
@@ -122,7 +186,7 @@
     <item>
       <title>DARPA looking for battery that could power a laptop for months</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/darpa_fusion_firm_radioactive_battery/</link>
-      <description>DARPA is collaborating with a fusion energy startup to develop a battery capable of powering laptops for months using radioactive materials. This project aims to revolutionize energy storage for high-demand devices.</description>
+      <description>DARPA is collaborating with a fusion energy startup to develop a radioactive battery capable of powering laptops for months. This innovation could revolutionize energy consumption for portable devices.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T20:52:10+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/darpa_fusion_firm_radioactive_battery/</guid>
@@ -130,7 +194,7 @@
     <item>
       <title>Iran-linked hackers disrupt operations at US critical infrastructure sites</title>
       <link>https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/</link>
-      <description>Iran-linked hackers have intensified their attacks on U.S. critical infrastructure amidst rising geopolitical tensions. This disruption raises concerns about national security and the vulnerability of essential services.</description>
+      <description>Iran-linked hackers have intensified their cyberattacks on US critical infrastructure amid escalating tensions with Israel. This disruption poses serious risks to national security.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T20:49:11+00:00</pubDate>
       <guid>https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/</guid>
@@ -138,7 +202,7 @@
     <item>
       <title>Call your existing automation ‘zero-token architecture’ to become an instant agentic AI wiz</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/08/automation_zerotoken_architecture_ai/</link>
-      <description>Kelsey Hightower suggests that IT professionals can enhance productivity by rebranding existing automation as 'zero-token architecture' in response to the rise of agentic AI. This approach aims to help businesses adapt to new technological demands.</description>
+      <description>Kelsey Hightower suggests that IT professionals can enhance productivity by rebranding existing automations as 'zero-token architecture.' This approach aims to adapt to the rise of agentic AI.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T20:21:41+00:00</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/08/automation_zerotoken_architecture_ai/</guid>
@@ -146,7 +210,7 @@
     <item>
       <title>AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict</title>
       <link>https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/</link>
-      <description>AWS CEO explains that investing in both Anthropic and OpenAI is a strategic move despite potential conflicts, emphasizing the company's culture of managing competition among partners. This reflects AWS's unique position in the cloud market.</description>
+      <description>AWS's CEO defends the company's investment in both Anthropic and OpenAI, arguing that competition is a natural part of their business model. This strategy reflects AWS's approach to partnerships.</description>
       <category>Top Stories</category>
       <pubDate>2026-04-08T20:09:14+00:00</pubDate>
       <guid>https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/</guid>
@@ -154,7 +218,7 @@
     <item>
       <title>Secret scanning improvements to alert APIs, webhooks, and delegated workflows</title>
       <link>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</link>
-      <description>GitHub is rolling out improvements to its secret scanning features, enhancing APIs, webhooks, and workflows to better support developers. These updates aim to strengthen security and user experience.</description>
+      <description>GitHub has announced improvements to its secret scanning features, enhancing APIs, webhooks, and delegated workflows. These updates aim to bolster the developer experience.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T19:56:31+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</guid>
@@ -162,7 +226,7 @@
     <item>
       <title>Customize Amazon Nova models with Amazon Bedrock fine-tuning</title>
       <link>https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning/</link>
-      <description>This article provides a detailed guide on fine-tuning Amazon Nova models using Amazon Bedrock, demonstrating the process through an intent classifier example. It aims to help users improve model performance on specific tasks.</description>
+      <description>This guide details how to fine-tune Amazon Nova models using Amazon Bedrock, providing step-by-step instructions for optimizing model performance. It emphasizes the importance of quality training data.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T19:51:50+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning/</guid>
@@ -170,7 +234,7 @@
     <item>
       <title>Human-in-the-loop constructs for agentic workflows in healthcare and life sciences</title>
       <link>https://aws.amazon.com/blogs/machine-learning/human-in-the-loop-constructs-for-agentic-workflows-in-healthcare-and-life-sciences/</link>
-      <description>AI agents are increasingly used in healthcare to process data and automate tasks, but human oversight is crucial due to regulatory requirements. The article outlines four approaches to implementing human-in-the-loop systems to ensure compliance and safety.</description>
+      <description>AI agents are increasingly used in healthcare for tasks like data processing and regulatory compliance, but human oversight remains crucial. The article discusses implementing human-in-the-loop systems.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T19:48:07+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/human-in-the-loop-constructs-for-agentic-workflows-in-healthcare-and-life-sciences/</guid>
@@ -178,7 +242,7 @@
     <item>
       <title>Building intelligent audio search with Amazon Nova Embeddings: A deep dive into semantic audio understanding</title>
       <link>https://aws.amazon.com/blogs/machine-learning/building-intelligent-audio-search-with-amazon-nova-embeddings-a-deep-dive-into-semantic-audio-understanding/</link>
-      <description>This article provides a comprehensive guide on using Amazon Nova Embeddings for intelligent audio search, detailing how audio can be represented as vectors. It includes technical insights and practical examples for deploying audio search systems.</description>
+      <description>The article explores building intelligent audio search systems using Amazon Nova Embeddings, focusing on how audio can be represented as vectors for effective searching. It includes practical coding examples.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T19:45:13+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/building-intelligent-audio-search-with-amazon-nova-embeddings-a-deep-dive-into-semantic-audio-understanding/</guid>
@@ -186,7 +250,7 @@
     <item>
       <title>Reinforcement fine-tuning on Amazon Bedrock: Best practices</title>
       <link>https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-on-amazon-bedrock-best-practices/</link>
-      <description>The article discusses reinforcement fine-tuning (RFT) on Amazon Bedrock, showcasing its effectiveness with the GSM8K dataset. It offers best practices for dataset preparation, reward function design, and hyperparameter tuning.</description>
+      <description>This article discusses reinforcement fine-tuning (RFT) on Amazon Bedrock, highlighting its effectiveness using the GSM8K dataset and offering best practices for dataset preparation and hyperparameter tuning.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T19:43:28+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-on-amazon-bedrock-best-practices/</guid>
@@ -194,7 +258,7 @@
     <item>
       <title>This AirTag alternative with a 130dB siren and strobe light has my name written all over it</title>
       <link>https://www.zdnet.com/article/pebblebee-halo-review/</link>
-      <description>The Pebblebee Halo is introduced as a Bluetooth tracker that doubles as a personal safety device, featuring a loud siren and strobe light. This offers users enhanced security and peace of mind.</description>
+      <description>The Pebblebee Halo is a Bluetooth tracker that doubles as a personal safety device, featuring a loud siren and strobe light for emergencies.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T19:41:00+00:00</pubDate>
       <guid>https://www.zdnet.com/article/pebblebee-halo-review/</guid>
@@ -202,7 +266,7 @@
     <item>
       <title>GitHub Mobile: Research and code with Copilot cloud agent anywhere</title>
       <link>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</link>
-      <description>GitHub Mobile now allows users to utilize the Copilot cloud agent for research and coding on the go, enhancing productivity away from the desk. This expands the functionality of GitHub Mobile significantly.</description>
+      <description>GitHub Mobile now allows users to utilize the Copilot cloud agent for research and coding on-the-go, expanding its functionality beyond pull requests.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T19:37:15+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</guid>
@@ -210,7 +274,7 @@
     <item>
       <title>How to quickly convert EPUB files to Kindle format - and why it matters</title>
       <link>https://www.zdnet.com/article/how-to-convert-epub-files-to-kindle-format/</link>
-      <description>The article explains how to convert EPUB files to Kindle format, providing users with more flexibility in managing their digital libraries. This process can enhance the reading experience on Kindle devices.</description>
+      <description>This guide explains how to convert EPUB files to Kindle format, providing users with more control over their e-book collections.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T19:29:00+00:00</pubDate>
       <guid>https://www.zdnet.com/article/how-to-convert-epub-files-to-kindle-format/</guid>
@@ -218,39 +282,15 @@
     <item>
       <title>Your Kindle's not obsolete, it just needs a jailbreak - and I'll show you how it's done</title>
       <link>https://www.zdnet.com/article/your-kindles-not-obsolete-it-needs-a-jailbreak-ill-show-you-how-its-done/</link>
-      <description>This guide shows how to jailbreak old Kindle devices, transforming them into open-source e-readers. It provides step-by-step instructions for users looking to revitalize their devices.</description>
+      <description>Learn how to jailbreak your Kindle to transform it into an open-source e-reader, even if the device is bricked.</description>
       <category>Industry</category>
       <pubDate>2026-04-08T19:24:00+00:00</pubDate>
       <guid>https://www.zdnet.com/article/your-kindles-not-obsolete-it-needs-a-jailbreak-ill-show-you-how-its-done/</guid>
     </item>
     <item>
-      <title>How to add EPUB, MOBI, and PDF files to your Kindle - follow my easy step-by-step</title>
-      <link>https://www.zdnet.com/article/how-to-add-epub-mobi-and-pdf-files-to-your-kindle-no-converting-required/</link>
-      <description>The article provides a straightforward guide for transferring EPUB, MOBI, and PDF files to Kindle devices via USB and Amazon's cloud. This helps users easily expand their e-book collections.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-08T19:24:00+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-add-epub-mobi-and-pdf-files-to-your-kindle-no-converting-required/</guid>
-    </item>
-    <item>
-      <title>Got an old Kindle? How to resurrect your e-reader with new books</title>
-      <link>https://www.zdnet.com/article/old-kindle-how-to-resurrect-your-e-reader-with-new-books/</link>
-      <description>This article shares tips on how to add new books to an old Kindle DX, effectively reviving outdated e-readers. It offers practical advice for users wanting to breathe new life into their devices.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-08T19:24:00+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/old-kindle-how-to-resurrect-your-e-reader-with-new-books/</guid>
-    </item>
-    <item>
-      <title>Android users can get up to $100 each from this class action suit - see if you're eligible</title>
-      <link>https://www.zdnet.com/article/android-users-google-class-action-suit/</link>
-      <description>A class action suit against Google alleges unauthorized data transmission over cellular connections, potentially allowing Android users to claim up to $100 each. The article explains how to check eligibility and file a claim.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-08T17:55:38+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/android-users-google-class-action-suit/</guid>
-    </item>
-    <item>
       <title>Code Security risk assessment available for organizations</title>
       <link>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</link>
-      <description>Organizations can now utilize a free Code Security risk assessment tool to identify security vulnerabilities, categorized by severity and rule type. This initiative aims to enhance overall security practices.</description>
+      <description>GitHub now provides a free Code Security risk assessment tool for organizations to identify and summarize security vulnerabilities.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T16:52:15+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</guid>
@@ -258,7 +298,7 @@
     <item>
       <title>GitHub Universe is back: We want you to take the stage</title>
       <link>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</link>
-      <description>GitHub Universe is returning, inviting participants to share their memorable experiences from past sessions. This event aims to inspire and engage the developer community.</description>
+      <description>GitHub Universe is returning, inviting participants to share memorable sessions and experiences from past events.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T16:35:46+00:00</pubDate>
       <guid>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</guid>
@@ -266,7 +306,7 @@
     <item>
       <title>How Amazon uses agentic AI for vulnerability detection at global scale</title>
       <link>https://www.amazon.science/blog/how-amazon-uses-agentic-ai-for-vulnerability-detection-at-global-scale</link>
-      <description>Amazon's RuleForge system employs agentic AI to create production-ready detection rules 336% faster than traditional methods, significantly enhancing vulnerability detection capabilities.</description>
+      <description>Amazon's RuleForge system utilizes agentic AI to create detection rules for vulnerabilities 336% faster than traditional methods, improving security measures.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T16:17:20+00:00</pubDate>
       <guid>https://www.amazon.science/blog/how-amazon-uses-agentic-ai-for-vulnerability-detection-at-global-scale</guid>
@@ -274,15 +314,23 @@
     <item>
       <title>New PGP signing key for GitHub CLI Linux packages</title>
       <link>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</link>
-      <description>GitHub has released an updated PGP keyring for its CLI Linux packages, which includes both the current and a new replacement signing key to enhance security.</description>
+      <description>An updated PGP signing keyring for GitHub CLI's Linux packages has been released, ensuring secure package management.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T16:13:36+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</guid>
     </item>
     <item>
+      <title>Cloud Cost Optimization: How to maximize ROI from AI, manage costs, and unlock real business value</title>
+      <link>https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-how-to-maximize-roi-from-ai-manage-costs-and-unlock-real-business-value/</link>
+      <description>This article provides strategies for cloud cost optimization, focusing on maximizing ROI from AI investments while managing costs effectively.</description>
+      <category>Microsoft</category>
+      <pubDate>2026-04-08T16:00:00+00:00</pubDate>
+      <guid>https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-how-to-maximize-roi-from-ai-manage-costs-and-unlock-real-business-value/</guid>
+    </item>
+    <item>
       <title>ALTK‑Evolve: On‑the‑Job Learning for AI Agents</title>
       <link>https://huggingface.co/blog/ibm-research/altk-evolve</link>
-      <description>The article discusses ALTK-Evolve, a framework for on-the-job learning tailored for AI agents, enhancing their adaptability and performance in real-world tasks.</description>
+      <description>ALTK-Evolve introduces on-the-job learning for AI agents, enhancing their ability to adapt and improve in real-time environments. This development signifies a step forward in creating more autonomous and capable AI systems.</description>
       <category>Open Source</category>
       <pubDate>2026-04-08T14:27:42+00:00</pubDate>
       <guid>https://huggingface.co/blog/ibm-research/altk-evolve</guid>
@@ -290,7 +338,7 @@
     <item>
       <title>GitHub Copilot in Visual Studio Code, March Releases</title>
       <link>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</link>
-      <description>The March releases for GitHub Copilot in Visual Studio Code include several updates, with a focus on enhancing user experience and functionality through weekly stable releases.</description>
+      <description>GitHub Copilot has released updates in Visual Studio Code, enhancing features like Autopilot. These improvements aim to streamline coding processes for developers.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T13:44:52+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</guid>
@@ -298,114 +346,66 @@
     <item>
       <title>National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources</title>
       <link>https://blogs.nvidia.com/blog/national-robotics-week-2026/</link>
-      <description>During National Robotics Week, NVIDIA showcases advancements in physical AI, emphasizing the integration of AI in various industries through improved robot learning and simulation technologies.</description>
+      <description>During National Robotics Week, NVIDIA showcased advancements in physical AI and robotics, highlighting their impact on various industries. This reflects the growing integration of AI in real-world applications.</description>
       <category>NVIDIA</category>
       <pubDate>2026-04-08T09:45:59+00:00</pubDate>
       <guid>https://blogs.nvidia.com/blog/national-robotics-week-2026/</guid>
     </item>
     <item>
-      <title>Governance-Aware Agent Telemetry for Closed-Loop Enforcement in Multi-Agent AI Systems</title>
-      <link>https://machinelearning.apple.com/research/governance-aware-agent-telemetry</link>
-      <description>The article introduces Governance-Aware Agent Telemetry (GAAT), a new framework aimed at real-time enforcement of policies in multi-agent AI systems, addressing the gap in current observability tools.</description>
-      <category>Apple</category>
-      <pubDate>2026-04-08T00:00:00+00:00</pubDate>
-      <guid>https://machinelearning.apple.com/research/governance-aware-agent-telemetry</guid>
-    </item>
-    <item>
-      <title>Safetensors is Joining the PyTorch Foundation</title>
-      <link>https://huggingface.co/blog/safetensors-joins-pytorch-foundation</link>
-      <description>Safetensors has joined the PyTorch Foundation, indicating a commitment to advancing safe and efficient tensor operations within the PyTorch ecosystem.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-08T00:00:00+00:00</pubDate>
-      <guid>https://huggingface.co/blog/safetensors-joins-pytorch-foundation</guid>
-    </item>
-    <item>
-      <title>quantum-dice-mcp added to PyPI</title>
-      <link>https://pypi.org/project/quantum-dice-mcp/</link>
-      <description>The quantum-dice-mcp package has been added to PyPI, enabling users to roll dice using quantum random numbers, showcasing the application of quantum computing in practical tools.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-07T23:30:52+00:00</pubDate>
-      <guid>https://pypi.org/project/quantum-dice-mcp/</guid>
-    </item>
-    <item>
-      <title>Outlook: Copilot Search Suggestions for Outlook</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559990</link>
-      <description>Outlook is introducing Copilot search suggestions to enhance user productivity by making it easier to find emails and calendar events. This feature is set to be generally available by June 2026.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-07T23:15:03+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559990</guid>
-    </item>
-    <item>
-      <title>ksadk 0.4.0</title>
-      <link>https://pypi.org/project/ksadk/0.4.0/</link>
-      <description>The Kingsoft Cloud Agent Development Kit version 0.4.0 supports local and cloud deployment with integrations for LangChain, LangGraph, and DeepAgents.</description>
-      <category>Open Source</category>
-      <pubDate>2026-04-07T23:14:56+00:00</pubDate>
-      <guid>https://pypi.org/project/ksadk/0.4.0/</guid>
-    </item>
-    <item>
-      <title>Musk Changes OpenAI Lawsuit So that If He Wins the $134 Billion, OpenAI’s Nonprofit Gets It</title>
-      <link>https://gizmodo.com/musk-changes-openai-lawsuit-so-that-if-he-wins-the-134-billion-openais-nonprofit-gets-it-2000743663</link>
-      <description>Elon Musk has modified his lawsuit against OpenAI, stating that if he wins the $134 billion, the funds should go to OpenAI’s nonprofit. He also seeks the removal of Sam Altman.</description>
+      <title>truthlocks-openai 1.0.0</title>
+      <link>https://pypi.org/project/truthlocks-openai/1.0.0/</link>
+      <description>Truthlocks has launched a MAIP wrapper for OpenAI that auto-generates cryptographic receipts for API calls, enhancing security and accountability in AI interactions.</description>
       <category>OpenAI</category>
-      <pubDate>2026-04-07T23:11:58+00:00</pubDate>
-      <guid>https://gizmodo.com/musk-changes-openai-lawsuit-so-that-if-he-wins-the-134-billion-openais-nonprofit-gets-it-2000743663</guid>
+      <pubDate>2026-04-08T06:13:24+00:00</pubDate>
+      <guid>https://pypi.org/project/truthlocks-openai/1.0.0/</guid>
     </item>
     <item>
-      <title>Show HN: Open Browser Control – drive your real Chrome from any MCP client</title>
-      <link>https://github.com/smankoo/open-browser-control</link>
-      <description>A new project called Open Browser Control allows users to drive their real Chrome browser from any MCP client, enhancing remote browser control capabilities.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-07T23:08:36+00:00</pubDate>
-      <guid>https://github.com/smankoo/open-browser-control</guid>
+      <title>truthlocks-openai added to PyPI</title>
+      <link>https://pypi.org/project/truthlocks-openai/</link>
+      <description>Truthlocks MAIP wrapper for OpenAI has been added to PyPI, allowing developers to easily implement cryptographic receipts for API calls. This addition supports better security practices.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-08T06:13:24+00:00</pubDate>
+      <guid>https://pypi.org/project/truthlocks-openai/</guid>
     </item>
     <item>
-      <title>colony-langchain 0.1.0</title>
-      <link>https://pypi.org/project/colony-langchain/0.1.0/</link>
-      <description>The Colony has released version 0.1.0 of its LangChain integration, providing tools for AI agents to engage in collaborative intelligence.</description>
+      <title>truthlocks-langchain added to PyPI</title>
+      <link>https://pypi.org/project/truthlocks-langchain/</link>
+      <description>Truthlocks has introduced a MAIP integration for LangChain, enabling automatic generation of cryptographic receipts for actions within chains and agents. This enhances security for developers using LangChain.</description>
       <category>Open Source</category>
-      <pubDate>2026-04-07T23:05:16+00:00</pubDate>
-      <guid>https://pypi.org/project/colony-langchain/0.1.0/</guid>
+      <pubDate>2026-04-08T06:13:03+00:00</pubDate>
+      <guid>https://pypi.org/project/truthlocks-langchain/</guid>
     </item>
     <item>
-      <title>colony-langchain added to PyPI</title>
-      <link>https://pypi.org/project/colony-langchain/</link>
-      <description>The Colony's LangChain integration has been added to PyPI, making it accessible for developers to implement collaborative AI tools.</description>
+      <title>truthlocks-langchain 1.0.0</title>
+      <link>https://pypi.org/project/truthlocks-langchain/1.0.0/</link>
+      <description>The Truthlocks MAIP integration for LangChain has been released, providing developers with tools to auto-generate cryptographic receipts for their actions. This aims to improve accountability in AI workflows.</description>
       <category>Open Source</category>
-      <pubDate>2026-04-07T23:05:16+00:00</pubDate>
-      <guid>https://pypi.org/project/colony-langchain/</guid>
+      <pubDate>2026-04-08T06:13:03+00:00</pubDate>
+      <guid>https://pypi.org/project/truthlocks-langchain/1.0.0/</guid>
     </item>
     <item>
-      <title>Anthropic Hires Microsoft AI Executive</title>
-      <link>https://www.thurrott.com/a-i/334655/anthropic-hires-microsoft-ai-executive</link>
-      <description>Anthropic has hired Eric Boyd, a former Microsoft AI executive, to strengthen its leadership in AI development.</description>
+      <title>How do I integrate OpenAI or Azure OpenAI API with a C# .NET 9 application</title>
+      <link>https://www.c-sharpcorner.com/article/how-do-i-integrate-openai-or-azure-openai-api-with-a-c-sharp-net-9-application/</link>
+      <description>A guide has been published on integrating OpenAI and Azure OpenAI APIs with C# .NET 9 applications, detailing setup and secure API management. This resource aims to help developers leverage AI features effectively.</description>
       <category>Microsoft</category>
-      <pubDate>2026-04-07T23:02:56+00:00</pubDate>
-      <guid>https://www.thurrott.com/a-i/334655/anthropic-hires-microsoft-ai-executive</guid>
+      <pubDate>2026-04-08T06:11:13+00:00</pubDate>
+      <guid>https://www.c-sharpcorner.com/article/how-do-i-integrate-openai-or-azure-openai-api-with-a-c-sharp-net-9-application/</guid>
     </item>
     <item>
-      <title>Microsoft Viva: New Overview experience and agent categories in Agent Dashboard</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559996</link>
-      <description>Microsoft Viva is launching a new Overview page in its Agent Dashboard, providing insights into agent usage and adoption within organizations by June 2026.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-07T23:00:18+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559996</guid>
+      <title>coding-proxy 0.1.4a3</title>
+      <link>https://pypi.org/project/coding-proxy/0.1.4a3/</link>
+      <description>The coding-proxy 0.1.4a3 has been released, offering a multi-vendor proxy for Claude Code, supporting various AI tools. This aims to enhance accessibility and functionality for developers.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-08T06:10:20+00:00</pubDate>
+      <guid>https://pypi.org/project/coding-proxy/0.1.4a3/</guid>
     </item>
     <item>
-      <title>Microsoft Viva: Unlocking Deeper Copilot Insights with Enhanced Power BI Filtering</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=559995</link>
-      <description>Microsoft Viva is enhancing Power BI with new filtering options for admins, allowing tailored reporting to meet business needs, set to launch in May 2026.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-07T23:00:18+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=559995</guid>
-    </item>
-    <item>
-      <title>Outlook: Data Loss Prevention (DLP) Policy Tips &amp; Override in Outlook for Mac</title>
-      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558689</link>
-      <description>Outlook for Mac now includes Data Loss Prevention (DLP) policy tips to help users avoid data leaks, with general availability planned for May 2026.</description>
-      <category>M365 Copilot</category>
-      <pubDate>2026-04-07T23:00:18+00:00</pubDate>
-      <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558689</guid>
+      <title>mcp-synology 0.4.1</title>
+      <link>https://pypi.org/project/mcp-synology/0.4.1/</link>
+      <description>The MCP server for Synology NAS has been updated to version 0.4.1, allowing users to manage files via Claude. This integration enhances usability for NAS users.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-08T06:10:05+00:00</pubDate>
+      <guid>https://pypi.org/project/mcp-synology/0.4.1/</guid>
     </item>
   </channel>
 </rss>
