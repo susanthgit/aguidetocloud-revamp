@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
       window.__ainewsData = data;
       renderNews(data, view);
+      // Show trending topics for weekly view
+      if (view === 'weekly' && data.trending_topics && data.trending_topics.length > 0) {
+        renderTrendingBar(data.trending_topics);
+      }
       // Update freshness badge
       var badge = document.querySelector('.ainews-freshness');
       if (badge) badge.remove();
@@ -31,8 +35,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  // Initial load
-  await loadView('daily');
+  // Initial load — skip if we're on a category page (category JS handles it)
+  if (!window.__ainewsCategoryFilter) {
+    await loadView('daily');
+
+    // Pre-fetch tab counts for weekly/monthly
+    updateTabCounts();
+  }
 
   // Tab switching — fetch correct JSON per tab
   document.querySelectorAll('.ainews-tab').forEach(function (tab) {
@@ -43,9 +52,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       loadView(view);
     });
   });
-
-  // Pre-fetch tab counts for weekly/monthly
-  updateTabCounts();
 
   // Mark last visit timestamp for "new" badges
   var lastVisit = localStorage.getItem('ainews_last_visit');
@@ -101,12 +107,13 @@ var AI_KEYWORDS = [
   'foundry', 'azure ai', 'cognitive', 'nlp', 'computer vision',
   'chatbot', 'automation', 'copilot studio', 'ai safety', 'ai regulation',
   'ai act', 'superintelligence', 'agi', 'multimodal', 'reasoning',
-  'meta llama', 'mistral', 'phi-', 'deepseek', 'hugging face',
+  'meta llama', 'mistral', 'mixtral', 'phi-', 'deepseek', 'hugging face',
   'langchain', 'semantic kernel', 'autogen', 'crew ai', 'mcp server',
   'model context protocol', 'ai adoption', 'ai strategy', 'ai tool',
   'apple intelligence', 'siri', 'nvidia', 'cuda', 'gpu', 'inference',
   'bedrock', 'sagemaker', 'amazon q', 'amazon nova', 'trainium',
-  'github copilot', 'copilot cli', 'code completion', 'coding agent', 'copilot workspace'
+  'github copilot', 'copilot cli', 'code completion', 'coding agent', 'copilot workspace',
+  'grok', 'xai', 'perplexity', 'le chat', 'pixtral', 'glasswing'
 ];
 
 function isAiRelated(article) {
@@ -523,27 +530,6 @@ function renderShareButton() {
   container.appendChild(btn);
 }
 
-// === DARK/LIGHT TOGGLE ===
-function renderThemeToggle() {
-  var container = document.querySelector('.ainews-tabs');
-  if (!container || document.getElementById('ainews-theme-toggle')) return;
-  var savedTheme = localStorage.getItem('ainews_theme') || 'dark';
-  if (savedTheme === 'light') document.body.classList.add('ainews-light');
-
-  var btn = document.createElement('button');
-  btn.id = 'ainews-theme-toggle';
-  btn.className = 'ainews-theme-toggle';
-  btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
-  btn.title = 'Toggle dark/light mode';
-  btn.addEventListener('click', function () {
-    document.body.classList.toggle('ainews-light');
-    var isLight = document.body.classList.contains('ainews-light');
-    btn.innerHTML = isLight ? '🌙' : '☀️';
-    localStorage.setItem('ainews_theme', isLight ? 'light' : 'dark');
-  });
-  container.appendChild(btn);
-}
-
 // === CLICK ANALYTICS (Microsoft Clarity) ===
 function trackArticleClick(category, title) {
   if (window.clarity) {
@@ -551,17 +537,33 @@ function trackArticleClick(category, title) {
   }
 }
 
-// Init share + theme on first render
+// === TRENDING TOPICS BAR ===
+function renderTrendingBar(topics) {
+  // Remove any existing trending bar
+  var existing = document.getElementById('ainews-trending-bar');
+  if (existing) existing.remove();
+
+  var grid = document.getElementById('news-grid');
+  var bar = document.createElement('div');
+  bar.id = 'ainews-trending-bar';
+  bar.className = 'ainews-trending-bar';
+  bar.style.cssText = 'grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem;padding:0.8rem 1rem;background:rgba(255,0,255,0.06);border:1px solid rgba(255,0,255,0.15);border-radius:8px;margin-bottom:0.5rem;';
+  var html = '<span style="font-weight:700;color:#ff00ff;margin-right:0.3rem;">🔥 Trending This Week:</span>';
+  topics.forEach(function (topic) {
+    html += '<span style="background:rgba(255,0,255,0.12);color:#ff88ff;padding:2px 8px;border-radius:12px;font-size:0.78rem;font-weight:600;">' + escapeHtml(topic) + '</span>';
+  });
+  bar.innerHTML = html;
+  grid.insertBefore(bar, grid.firstChild);
+}
+
+// Init share button on first render
 (function initExtras() {
   var observer = new MutationObserver(function () {
     if (document.querySelector('.ainews-tabs')) {
       renderShareButton();
-      renderThemeToggle();
       observer.disconnect();
     }
   });
   observer.observe(document.body, { childList: true, subtree: true });
-  // Also try immediately
   renderShareButton();
-  renderThemeToggle();
 })();
