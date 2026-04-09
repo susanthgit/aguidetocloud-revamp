@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA AI News"
 description: "NVIDIA GPUs, inference, NIM, and AI infrastructure updates"
-layout: "ai-news-category"
+type: "ai-news-category"
 category_filter: "nvidia"
 ---

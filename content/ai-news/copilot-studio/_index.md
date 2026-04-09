@@ -1,6 +1,6 @@
 ---
 title: "Copilot Studio News"
 description: "Copilot Studio, declarative agents, and extensibility updates"
-layout: "ai-news-category"
+type: "ai-news-category"
 category_filter: "copilot-studio"
 ---
