@@ -1,24 +1,46 @@
 document.addEventListener('DOMContentLoaded', async function () {
-  try {
-    var response = await fetch('/data/ainews/latest.json');
-    var raw = await response.json();
-    // Support both old (bare array) and new (object with articles key) format
-    var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
-    window.__ainewsData = data;
-    renderNews(data, 'daily');
-    renderFreshnessBadge(data.generated_at);
-  } catch (e) {
-    document.getElementById('news-grid').innerHTML =
-      '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">AI News data not available yet. Check back tomorrow!</p>';
+  var DATA_URLS = {
+    daily: '/data/ainews/latest.json',
+    weekly: '/data/ainews/weekly.json',
+    monthly: '/data/ainews/monthly.json'
+  };
+
+  async function loadView(view) {
+    var grid = document.getElementById('news-grid');
+    grid.innerHTML = '<div class="ainews-skeleton-wrap" style="grid-column:1/-1"><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div></div>';
+    try {
+      var url = DATA_URLS[view] || DATA_URLS.daily;
+      var response = await fetch(url);
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      var raw = await response.json();
+      var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
+      window.__ainewsData = data;
+      renderNews(data, view);
+      // Update freshness badge
+      var badge = document.querySelector('.ainews-freshness');
+      if (badge) badge.remove();
+      renderFreshnessBadge(data.generated_at);
+    } catch (e) {
+      // If weekly/monthly not available yet, fall back to daily
+      if (view !== 'daily') {
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No ' + view + ' data available yet — showing today\'s news instead.</p>';
+        setTimeout(function() { loadView('daily'); }, 1500);
+      } else {
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">AI News data not available yet. Check back tomorrow!</p>';
+      }
+    }
   }
 
-  // Tab switching
+  // Initial load
+  await loadView('daily');
+
+  // Tab switching — fetch correct JSON per tab
   document.querySelectorAll('.ainews-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       document.querySelectorAll('.ainews-tab').forEach(function (t) { t.classList.remove('active'); });
       this.classList.add('active');
       var view = this.dataset.view;
-      if (window.__ainewsData) renderNews(window.__ainewsData, view);
+      loadView(view);
     });
   });
 });
