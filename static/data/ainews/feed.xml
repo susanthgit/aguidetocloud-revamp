@@ -5,212 +5,300 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Apr 2026 11:58:08 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 17:59:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a wide range of third-party integrations, allowing developers to connect their AI agents with tools like GitHub and Notion. This expansion enhances the capabilities of AI applications in real-world scenarios.</description>
+      <description>The Agent Development Kit (ADK) now integrates with various third-party tools like GitHub and Notion, enhancing the capabilities of AI agents for real-world applications. This ecosystem allows developers to create more powerful and versatile AI solutions.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645348+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886838+00:00</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's potential. This event is a key opportunity for tech enthusiasts to engage with upcoming innovations.</description>
+      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's role in enhancing event experiences. This tradition aims to engage attendees and highlight the significance of AI in upcoming presentations.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645334+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886824+00:00</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on experiences, emphasizing the transition to agentic AI. The event includes specialized tracks on various technical topics, enhancing developer skills.</description>
+      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, emphasizing the shift to agentic AI. The event will cover various technical tracks, providing developers with essential tools for modern challenges.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645320+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886810+00:00</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, a new framework that significantly improves GPU and NPU acceleration for AI applications. This update also enhances support for PyTorch and JAX, marking a shift in TensorFlow's deployment capabilities.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, which offers improved GPU and NPU acceleration and supports PyTorch and JAX. This update aims to enhance efficiency and security in deploying AI models.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645306+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886796+00:00</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Google Cloud's Wednesday Build Hour is a new initiative aimed at helping developers enhance their cloud skills through interactive sessions. The program focuses on practical building and advanced AI topics.</description>
+      <description>Google Cloud's Wednesday Build Hour is a weekly interactive session aimed at helping developers improve their cloud skills through hands-on building. The program focuses on advanced topics like AI agents and productivity tools.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645293+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886782+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has rolled out updates to improve coding workflows, introducing features like Agent Mode and Inline Diff Views. These tools aim to make AI a more effective coding collaborator.</description>
+      <description>The Gemini Code Assist team has introduced updates to streamline coding workflows, including features like Agent Mode and Inline Diff Views. These tools aim to make AI a more tailored collaborator for developers.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645279+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886768+00:00</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, designed to streamline coding by reducing manual prompting and improving code comprehension.</description>
+      <description>Google's Gemini Code Assist now includes Finish Changes and Outlines features for IntelliJ and VS Code, which help reduce developer friction by automating code completion and providing high-level summaries. This enhances coding efficiency and comprehension.</description>
       <category>Google</category>
-      <pubDate>2026-04-09T11:55:49.645265+00:00</pubDate>
+      <pubDate>2026-04-09T17:57:05.886754+00:00</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
     </item>
     <item>
-      <title>Amazon put a filesystem on S3; I showed up with a test suite and bad intentions</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/aws_s3_files_stress_test_corey_quinn/</link>
-      <description>AWS has launched S3 Files, allowing users to mount S3 buckets as NFS shares. This new capability is being tested for its reliability and performance in real-world scenarios.</description>
+      <title>World's smallest violin spotted at Amazon HQ as exec pay packets deflate</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/amazon_execs_pay_packet_pinch/</link>
+      <description>Amazon executives are facing reduced pay, leading to humorous reactions about their financial struggles. The article highlights the contrast in executive compensation compared to previous years.</description>
       <category>Top Stories</category>
-      <pubDate>2026-04-09T11:52:19+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/aws_s3_files_stress_test_corey_quinn/</guid>
+      <pubDate>2026-04-09T17:45:25+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/amazon_execs_pay_packet_pinch/</guid>
     </item>
     <item>
-      <title>I asked 5 data leaders about how they use AI to automate - and end integration nightmares</title>
-      <link>https://www.zdnet.com/article/ai-data-leaders-automation-integration-workloads-pipelines/</link>
-      <description>Tech leaders discuss their strategies for automating data pipelines with AI, significantly reducing integration workloads. This shift marks a move away from outdated methods like Excel mapping.</description>
+      <title>I tested CuerdOS and its unique app lineup is even better than its blazing speed</title>
+      <link>https://www.zdnet.com/article/cuerdos-debian-based-linux-distro-fast-and-unique/</link>
+      <description>CuerdOS, a niche Debian-based operating system, offers a unique app lineup and impressive speed, providing a refreshing alternative to mainstream distributions. Its approach to preinstalled software sets it apart.</description>
       <category>Industry</category>
-      <pubDate>2026-04-09T11:49:42+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/ai-data-leaders-automation-integration-workloads-pipelines/</guid>
+      <pubDate>2026-04-09T17:37:53+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/cuerdos-debian-based-linux-distro-fast-and-unique/</guid>
     </item>
     <item>
-      <title>Zephyr Energy loses £700K in cyber hit that rerouted contractor payment</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/zephyr_energy_cyberattack/</link>
-      <description>Zephyr Energy has reported a cyber incident that resulted in a loss of £700,000 due to redirected contractor payments. The company is now working to recover the funds.</description>
+      <title>Understanding Amazon Bedrock model lifecycle</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/understanding-amazon-bedrock-model-lifecycle/</link>
+      <description>This article explains how to manage the lifecycle of models in Amazon Bedrock, focusing on ensuring operational continuity as models evolve. It provides strategies for smooth transitions between model versions.</description>
+      <category>Amazon</category>
+      <pubDate>2026-04-09T17:33:28+00:00</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/understanding-amazon-bedrock-model-lifecycle/</guid>
+    </item>
+    <item>
+      <title>AWS: Agents shouldn't be secret, so we built a registry for them</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/aws_ai_agent_registry/</link>
+      <description>AWS has introduced a registry for AI agents to enhance visibility and management in corporate environments, promoting transparency in automation. This move aims to streamline the deployment and sharing of AI tools within enterprises.</description>
       <category>Top Stories</category>
-      <pubDate>2026-04-09T11:32:51+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/zephyr_energy_cyberattack/</guid>
+      <pubDate>2026-04-09T17:30:10+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/aws_ai_agent_registry/</guid>
     </item>
     <item>
-      <title>It's not a BIOS bug: How swapping to a DisplayPort 2.1b cable may fix your PC's boot loops</title>
-      <link>https://www.zdnet.com/article/dont-buy-cheap-displayport-cables-or-they-can-brick-your-pc/</link>
-      <description>Swapping to a DisplayPort 2.1b cable can resolve boot loop issues in PCs, highlighting the impact of minor manufacturing errors on performance. This guidance helps users prevent potential problems.</description>
+      <title>The future of managing agents at scale: AWS Agent Registry now in preview</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/the-future-of-managing-agents-at-scale-aws-agent-registry-now-in-preview/</link>
+      <description>The AWS Agent Registry is now in preview, allowing enterprises to discover, share, and reuse AI agents and skills in a centralized platform. This initiative is part of AWS's broader strategy to facilitate AI integration in business operations.</description>
+      <category>Amazon</category>
+      <pubDate>2026-04-09T17:28:20+00:00</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/the-future-of-managing-agents-at-scale-aws-agent-registry-now-in-preview/</guid>
+    </item>
+    <item>
+      <title>Sierra’s Bret Taylor says the era of clicking buttons is over</title>
+      <link>https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/</link>
+      <description>Sierra's co-founder Bret Taylor claims that the rise of AI agents will render traditional software interfaces obsolete, indicating a shift towards more intuitive interaction methods. This prediction highlights the transformative potential of AI in software design.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-09T17:20:50+00:00</pubDate>
+      <guid>https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/</guid>
+    </item>
+    <item>
+      <title>How I turned my Android tablet into the ultimate Kindle alternative - for free</title>
+      <link>https://www.zdnet.com/article/how-to-turn-ipad-android-tablet-into-e-reader/</link>
+      <description>An article explains how to convert an Android tablet into a Kindle alternative for free, showcasing the versatility of tablets for reading. This guide emphasizes the practicality of using existing devices for multiple purposes.</description>
       <category>Industry</category>
-      <pubDate>2026-04-09T11:00:39+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/dont-buy-cheap-displayport-cables-or-they-can-brick-your-pc/</guid>
+      <pubDate>2026-04-09T17:16:00+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-turn-ipad-android-tablet-into-e-reader/</guid>
     </item>
     <item>
-      <title>UK.gov's top tech jobs pay more than prime minister earns</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/dsit_tech_jobs/</link>
-      <description>The UK government's Department for Science, Innovation and Technology is hiring directors general with salaries exceeding that of the Prime Minister, reflecting the high demand for tech leadership. This move underscores the importance of technology in government operations.</description>
+      <title>Repository member role labels now in pull request list view</title>
+      <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
+      <description>GitHub has updated its pull request list view to include repository member role labels, enhancing clarity on contributor status. This feature aims to improve collaboration and recognition within projects.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-09T17:15:16+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
+    </item>
+    <item>
+      <title>'Several dozen' high-value corporations hit by new extortion crew in helpdesk phishing spree</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/several_dozen_highvalue_corporations_targeted/</link>
+      <description>A new extortion crew has targeted numerous high-value corporations through phishing attacks, potentially linked to a recent Adobe breach. This highlights the ongoing cybersecurity threats facing businesses today.</description>
       <category>Top Stories</category>
-      <pubDate>2026-04-09T10:50:01+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/dsit_tech_jobs/</guid>
+      <pubDate>2026-04-09T17:11:41+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/several_dozen_highvalue_corporations_targeted/</guid>
     </item>
     <item>
-      <title>Capita's pension portal exposes civil servants' private data</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/capita_breach/</link>
-      <description>Capita's pension portal briefly exposed the private data of civil servants, prompting a reduction in online functionality. This incident raises concerns about data security in public sector services.</description>
+      <title>Embed a live AI browser agent in your React app with Amazon Bedrock AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/embed-a-live-ai-browser-agent-in-your-react-app-with-amazon-bedrock-agentcore/</link>
+      <description>This article provides a guide on embedding a live AI browser agent in a React application using Amazon Bedrock AgentCore, offering developers a practical tool for enhancing user interaction. It includes step-by-step instructions for implementation.</description>
+      <category>Amazon</category>
+      <pubDate>2026-04-09T17:06:07+00:00</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/embed-a-live-ai-browser-agent-in-your-react-app-with-amazon-bedrock-agentcore/</guid>
+    </item>
+    <item>
+      <title>Deere oh Deere: Tractor repair row heads for $99M settlement</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/john_deere_repair_settlement/</link>
+      <description>John Deere has proposed a $99 million settlement in response to a class action lawsuit related to tractor repairs, while legislative efforts in Iowa may also support consumer rights. This reflects ongoing legal challenges in the agricultural sector.</description>
       <category>Top Stories</category>
-      <pubDate>2026-04-09T10:15:13+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/capita_breach/</guid>
+      <pubDate>2026-04-09T17:00:07+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/john_deere_repair_settlement/</guid>
     </item>
     <item>
-      <title>The best business VoIP services in 2026: Expert tested and reviewed</title>
-      <link>https://www.zdnet.com/article/best-business-voip-providers/</link>
-      <description>A guide to the best business VoIP services for 2026 has been released, helping businesses transition from traditional phone lines. This resource is essential for companies looking to modernize their communication systems.</description>
+      <title>Apple's iOS 26.4.1 update enables Stolen Device Protection by default now - grab it today</title>
+      <link>https://www.zdnet.com/article/apple-ios-26-4-1-update-stolen-device-protection/</link>
+      <description>Apple's latest iOS update, version 26.4.1, introduces default Stolen Device Protection and fixes various bugs, enhancing user security and experience. This update reflects Apple's commitment to improving device safety.</description>
       <category>Industry</category>
-      <pubDate>2026-04-09T10:01:23+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/best-business-voip-providers/</guid>
+      <pubDate>2026-04-09T16:59:24+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/apple-ios-26-4-1-update-stolen-device-protection/</guid>
     </item>
     <item>
-      <title>Is fake grass a bad idea? The AstroTurf wars are far from over.</title>
-      <link>https://www.technologyreview.com/2026/04/09/1135092/astroturf-fake-grass-artificial-heated-debates/</link>
-      <description>The debate over synthetic turf versus natural grass continues, as a new athletic field at Cornell University raises environmental concerns. This discussion reflects broader issues regarding sustainability in sports facilities.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-09T10:00:00+00:00</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/09/1135092/astroturf-fake-grass-artificial-heated-debates/</guid>
-    </item>
-    <item>
-      <title>Desalination technology, by the numbers</title>
-      <link>https://www.technologyreview.com/2026/04/09/1135495/desalination-technology-numbers/</link>
-      <description>A detailed analysis of desalination technology reveals its growing importance in water-scarce regions, particularly in the Middle East. Understanding these statistics is crucial for addressing global water challenges.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-09T10:00:00+00:00</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/09/1135495/desalination-technology-numbers/</guid>
-    </item>
-    <item>
-      <title>UK to spend £15M on AI-powered crime mapping in knife violence crackdown</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/uk_ai_crime_mapping/</link>
-      <description>The UK government is investing £15 million in AI-powered crime mapping to combat knife violence, aiming to enhance targeted policing. This initiative reflects a growing reliance on technology in law enforcement.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-09T09:30:17+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/uk_ai_crime_mapping/</guid>
-    </item>
-    <item>
-      <title>This AI Wearable From Ex-Apple Engineers Looks Like an iPod Shuffle</title>
-      <link>https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/</link>
-      <description>A new AI wearable designed by former Apple engineers only activates when tapped, prioritizing user privacy. This innovation aims to address privacy concerns prevalent in many AI devices.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-09T09:30:00+00:00</pubDate>
-      <guid>https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/</guid>
-    </item>
-    <item>
-      <title>The best Hisense TVs of 2026: Expert tested and reviewed</title>
-      <link>https://www.zdnet.com/article/best-hisense-tv/</link>
-      <description>A review of the best Hisense TVs for 2026 highlights the brand's rise in the mid-range and premium TV market. This guide is valuable for consumers seeking quality home entertainment options.</description>
+      <title>I use ChatGPT's new Tubi app to find free movies and TV shows to watch - here's how</title>
+      <link>https://www.zdnet.com/article/chatgpts-tubi-app-movies-tv-shows/</link>
+      <description>The new Tubi app integrates with ChatGPT, allowing users to find free movies and TV shows by querying the AI. This feature enhances user experience by simplifying content discovery on the platform.</description>
       <category>Industry</category>
-      <pubDate>2026-04-09T09:00:40+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/best-hisense-tv/</guid>
+      <pubDate>2026-04-09T16:53:13+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/chatgpts-tubi-app-movies-tv-shows/</guid>
     </item>
     <item>
-      <title>Microsoft software resale appeal catches eye of £3.5B class action</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/microsoft_valuelicensing_appeal/</link>
-      <description>Microsoft's ongoing legal battle with ValueLicensing is entering an appeals phase, potentially impacting a £3.5 billion class action lawsuit. The outcome could have significant implications for software resale practices.</description>
-      <category>Top Stories</category>
-      <pubDate>2026-04-09T08:45:10+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/microsoft_valuelicensing_appeal/</guid>
+      <title>National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources</title>
+      <link>https://blogs.nvidia.com/blog/national-robotics-week-2026/</link>
+      <description>NVIDIA is showcasing advancements in physical AI and robotics during National Robotics Week, highlighting how these technologies are transforming various industries. This includes improvements in robot learning and simulation that enhance real-world applications.</description>
+      <category>NVIDIA</category>
+      <pubDate>2026-04-09T16:45:59+00:00</pubDate>
+      <guid>https://blogs.nvidia.com/blog/national-robotics-week-2026/</guid>
     </item>
     <item>
-      <title>Sticky-note security turned gym into hall of '80s horrors</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/pwned/</link>
-      <description>An article discusses how security credentials left unsecured can lead to mischief, highlighting vulnerabilities even in fitness setups. This serves as a reminder of the importance of proper security practices.</description>
+      <title>Why Ubuntu 26.04 will thrill gamers - and it's not just the performance bump</title>
+      <link>https://www.zdnet.com/article/ubuntu-26-04-performance/</link>
+      <description>Ubuntu 26.04 is set to excite gamers with performance improvements and new applications, while also omitting some features that may affect user experience. The release aims to enhance gaming on the platform significantly.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T16:45:05+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/ubuntu-26-04-performance/</guid>
+    </item>
+    <item>
+      <title>Spark creator bags computing gong for making big data a little bit smaller</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/matei_zaharia_acm_prize/</link>
+      <description>Matei Zaharia, co-founder of Databricks, has received the ACM Prize in Computing for his contributions to open source data software, particularly the Apache Spark analytics engine. This recognition highlights the importance of big data innovations.</description>
       <category>Top Stories</category>
-      <pubDate>2026-04-09T08:00:08+00:00</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/pwned/</guid>
+      <pubDate>2026-04-09T16:30:06+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/matei_zaharia_acm_prize/</guid>
+    </item>
+    <item>
+      <title>Release information in issue sidebar and default values for project fields</title>
+      <link>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</link>
+      <description>GitHub has introduced updates that enhance issue tracking by integrating release information into the issue sidebar and allowing configurable defaults for project fields. These changes aim to improve user navigation and project management.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>2026-04-09T16:15:32+00:00</pubDate>
+      <guid>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</guid>
+    </item>
+    <item>
+      <title>Nutanix to add KubeVirt support to run VMs on K8s at the edge</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/nutanix_kubevirt_arm_supoprt/</link>
+      <description>Nutanix is set to incorporate KubeVirt support, enabling the running of virtual machines alongside containers on edge computing environments. This move aligns with the growing trend of AI applications at the edge.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-09T15:51:32+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/nutanix_kubevirt_arm_supoprt/</guid>
+    </item>
+    <item>
+      <title>Chevin pulls the handbrake on FleetWave software after security scare</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/chevin_fleetwave_security_incident/</link>
+      <description>Chevin Fleet Solutions has experienced a major outage due to a cybersecurity incident, affecting its FleetWave software and leaving customers in the UK and US without service. The company has taken parts of its platform offline for security reasons.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-09T15:20:11+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/chevin_fleetwave_security_incident/</guid>
+    </item>
+    <item>
+      <title>The best Android tablets of 2026: Lab tested, expert recommended</title>
+      <link>https://www.zdnet.com/article/best-android-tablet/</link>
+      <description>ZDNET has tested and reviewed various Android tablets, showcasing top models from brands like Samsung and TCL. The article emphasizes that there are strong alternatives to iPads in the tablet market.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T14:55:00+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/best-android-tablet/</guid>
+    </item>
+    <item>
+      <title>OpenAI puts Stargate UK on ice, blames energy costs and red tape</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/openai_puts_stargate_uk_on/</link>
+      <description>OpenAI has paused its Stargate datacenter project in the UK, citing high energy costs and regulatory challenges as the main reasons. This decision impacts the company's expansion plans in Europe.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-09T14:54:41+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/openai_puts_stargate_uk_on/</guid>
+    </item>
+    <item>
+      <title>Introducing stateful MCP client capabilities on Amazon Bedrock AgentCore Runtime</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/introducing-stateful-mcp-client-capabilities-on-amazon-bedrock-agentcore-runtime/</link>
+      <description>Amazon Bedrock has introduced stateful MCP client capabilities, allowing developers to build servers that can handle user input and generate dynamic content. The article provides code examples for implementation.</description>
+      <category>Amazon</category>
+      <pubDate>2026-04-09T14:47:57+00:00</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/introducing-stateful-mcp-client-capabilities-on-amazon-bedrock-agentcore-runtime/</guid>
+    </item>
+    <item>
+      <title>The best dedicated web hosting of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-dedicated-web-hosting/</link>
+      <description>This article reviews the best dedicated web hosting providers of 2026, offering insights into their performance, security, and reliability. It aims to guide consumers in choosing the right hosting service.</description>
+      <category>Industry</category>
+      <pubDate>2026-04-09T14:45:57+00:00</pubDate>
+      <guid>https://www.zdnet.com/article/best-dedicated-web-hosting/</guid>
+    </item>
+    <item>
+      <title>Months-old Adobe Reader zero-day uses PDFs to size up targets</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/monthsold_adobe_reader_zeroday_uses/</link>
+      <description>Hackers have been exploiting a zero-day vulnerability in Adobe Acrobat Reader for months, using malicious PDFs to gather system data and select targets for further attacks. This highlights the ongoing risks associated with widely used software and the importance of timely security updates.</description>
+      <category>Top Stories</category>
+      <pubDate>2026-04-09T14:30:13+00:00</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/monthsold_adobe_reader_zeroday_uses/</guid>
+    </item>
+    <item>
+      <title>Strength and Destiny Collide: ‘Samson: A Tyndalston Story’ Arrives in the Cloud</title>
+      <link>https://blogs.nvidia.com/blog/geforce-now-thursday-samson-a-tyndalston-story/</link>
+      <description>The cloud gaming platform GeForce NOW has added 'Samson: A Tyndalston Story' to its library, allowing users to stream this new game across various devices. This release showcases the growing trend of cloud gaming and its accessibility.</description>
+      <category>NVIDIA</category>
+      <pubDate>2026-04-09T13:00:57+00:00</pubDate>
+      <guid>https://blogs.nvidia.com/blog/geforce-now-thursday-samson-a-tyndalston-story/</guid>
     </item>
     <item>
       <title>GitHub availability report: March 2026</title>
       <link>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</link>
-      <description>GitHub's March 2026 availability report details four incidents that caused performance degradation across its services, affecting user experience. This highlights ongoing reliability challenges for the platform.</description>
+      <description>GitHub reported four incidents in March 2026 that caused degraded performance across its services. This availability report underscores the importance of reliability in software development platforms.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-09T02:21:17+00:00</pubDate>
       <guid>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</guid>
     </item>
     <item>
-      <title>Why I stopped using 'Modern Standby' on my Windows laptop to save battery overnight</title>
-      <link>https://www.zdnet.com/article/sleep-vs-hibernate-does-modern-standby-save-battery-on-windows/</link>
-      <description>The article explains why using 'Modern Standby' on Windows laptops may not be the best choice for battery preservation overnight, suggesting alternative methods. This insight can help users optimize their device usage.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-09T01:00:47+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/sleep-vs-hibernate-does-modern-standby-save-battery-on-windows/</guid>
+      <title>A Theoretical Framework for Acoustic Neighbor Embeddings</title>
+      <link>https://machinelearning.apple.com/research/neighbor</link>
+      <description>A new theoretical framework for acoustic neighbor embeddings has been proposed, aiming to better understand phonetic similarities in audio and text. This research could enhance the application of embeddings in various AI tasks.</description>
+      <category>Apple</category>
+      <pubDate>2026-04-09T00:00:00+00:00</pubDate>
+      <guid>https://machinelearning.apple.com/research/neighbor</guid>
     </item>
     <item>
-      <title>KDE Linux is the purest form of Plasma I've tested - but the install isn't for the meek</title>
-      <link>https://www.zdnet.com/article/kde-linux-distribution-review/</link>
-      <description>KDE Linux is praised for offering the purest form of the Plasma desktop environment, although the installation process may be challenging for less experienced users. This highlights the diversity in Linux distributions.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-09T00:17:47+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/kde-linux-distribution-review/</guid>
+      <title>LaCy: What Small Language Models Can and Should Learn is Not Just a Question of Loss</title>
+      <link>https://machinelearning.apple.com/research/lacy</link>
+      <description>A paper discusses the limitations of Small Language Models (SLMs) in knowledge retention and suggests that allowing SLMs to access external sources can mitigate factual inaccuracies. This is crucial for improving the reliability of AI-generated content.</description>
+      <category>Apple</category>
+      <pubDate>2026-04-09T00:00:00+00:00</pubDate>
+      <guid>https://machinelearning.apple.com/research/lacy</guid>
     </item>
     <item>
-      <title>I found a hidden Google Photos tool that makes clearing storage feel less like a chore</title>
-      <link>https://www.zdnet.com/article/google-photos-clean-up-this-day-how-it-works/</link>
-      <description>A newly discovered tool in Google Photos allows users to easily swipe to keep or delete photos, streamlining the process of clearing storage, although it's currently available only on Android devices.</description>
-      <category>Industry</category>
-      <pubDate>2026-04-09T00:00:40+00:00</pubDate>
-      <guid>https://www.zdnet.com/article/google-photos-clean-up-this-day-how-it-works/</guid>
+      <title>Multimodal Embedding &amp; Reranker Models with Sentence Transformers</title>
+      <link>https://huggingface.co/blog/multimodal-sentence-transformers</link>
+      <description>The article discusses advancements in multimodal embedding and reranker models using Sentence Transformers, focusing on their applications in various AI tasks. This research contributes to the understanding of how to effectively combine different data modalities.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-09T00:00:00+00:00</pubDate>
+      <guid>https://huggingface.co/blog/multimodal-sentence-transformers</guid>
     </item>
     <item>
       <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
       <link>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</link>
-      <description>The Copilot usage metrics API has been updated to include new metrics for pull requests reviewed by Copilot, building on previous metrics introduced in February. This enhances tracking of AI-assisted coding.</description>
+      <description>GitHub's Copilot usage metrics API has been updated to include new metrics for pull request merges reviewed by Copilot, building on previous metrics. This improvement allows developers to better track the effectiveness of AI-assisted coding.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T23:21:50+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</guid>
@@ -218,7 +306,7 @@
     <item>
       <title>Outlook: Upgraded Video and Audio Player for iOS</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=560056</link>
-      <description>Outlook's iOS app has received an upgrade with a new video and audio player that offers improved controls and playback experience. This update aims to enhance user engagement with multimedia content.</description>
+      <description>Outlook for iOS has introduced an upgraded video and audio player, providing better controls and smoother playback for users. This update aims to enhance the user experience on mobile devices.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-08T23:00:03+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=560056</guid>
@@ -226,7 +314,7 @@
     <item>
       <title>Microsoft Teams: AI-generated meeting archive for knowledge retention</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=558933</link>
-      <description>Microsoft Teams is introducing an AI-generated meeting archive feature that allows retention of key insights from meetings, even after transcripts expire. This aims to enhance knowledge retention within organizations.</description>
+      <description>Microsoft Teams is introducing an AI-generated meeting archive feature that allows for the retention of key insights beyond transcript expiration. This aims to improve knowledge retention and accessibility of past meeting information.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-08T23:00:03+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558933</guid>
@@ -234,7 +322,7 @@
     <item>
       <title>Microsoft Teams: Entra passwordless resource account support for Teams Rooms on Windows devices</title>
       <link>https://www.microsoft.com/microsoft-365/roadmap?id=558853</link>
-      <description>Microsoft Teams Rooms on Windows will support passwordless sign-in through Entra Resource Accounts, enhancing security and simplifying user management. This feature is set to improve the user experience for IT admins.</description>
+      <description>Microsoft Teams is adding support for Entra passwordless resource accounts, allowing secure sign-ins for Teams Rooms on Windows devices. This feature simplifies account management for IT admins.</description>
       <category>M365 Copilot</category>
       <pubDate>2026-04-08T23:00:03+00:00</pubDate>
       <guid>https://www.microsoft.com/microsoft-365/roadmap?id=558853</guid>
@@ -242,7 +330,7 @@
     <item>
       <title>Secret scanning improvements to alert APIs, webhooks, and delegated workflows</title>
       <link>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</link>
-      <description>GitHub is rolling out improvements to its secret scanning features, enhancing alert systems for APIs, webhooks, and workflows. This aims to bolster security for developers using these tools.</description>
+      <description>GitHub has announced enhancements to its secret scanning features, improving APIs, webhooks, and workflows to better support developers. These updates aim to strengthen security and streamline developer experience.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T19:56:31+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</guid>
@@ -250,162 +338,74 @@
     <item>
       <title>Customize Amazon Nova models with Amazon Bedrock fine-tuning</title>
       <link>https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning/</link>
-      <description>Amazon Bedrock now allows users to fine-tune Amazon Nova models for specific tasks, enhancing model performance through better training data and hyperparameter optimization. This capability is significant for businesses needing tailored AI solutions.</description>
+      <description>Amazon Bedrock now allows users to fine-tune Amazon Nova models, improving their performance on specific tasks. The guide details preparing data, optimizing hyperparameters, and deploying models for better accuracy.</description>
       <category>Amazon</category>
       <pubDate>2026-04-08T19:51:50+00:00</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning/</guid>
     </item>
     <item>
-      <title>Human-in-the-loop constructs for agentic workflows in healthcare and life sciences</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/human-in-the-loop-constructs-for-agentic-workflows-in-healthcare-and-life-sciences/</link>
-      <description>AI agents in healthcare require human oversight to comply with regulations and ensure data sensitivity. The article discusses four approaches to implement human-in-the-loop systems effectively.</description>
-      <category>Amazon</category>
-      <pubDate>2026-04-08T19:48:07+00:00</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/human-in-the-loop-constructs-for-agentic-workflows-in-healthcare-and-life-sciences/</guid>
-    </item>
-    <item>
-      <title>Building intelligent audio search with Amazon Nova Embeddings: A deep dive into semantic audio understanding</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/building-intelligent-audio-search-with-amazon-nova-embeddings-a-deep-dive-into-semantic-audio-understanding/</link>
-      <description>This post details the creation of an audio search system using Amazon Nova Multimodal Embeddings, explaining how audio can be represented as vectors for improved search capabilities. It provides practical code examples for implementation.</description>
-      <category>Amazon</category>
-      <pubDate>2026-04-08T19:45:13+00:00</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/building-intelligent-audio-search-with-amazon-nova-embeddings-a-deep-dive-into-semantic-audio-understanding/</guid>
-    </item>
-    <item>
-      <title>Reinforcement fine-tuning on Amazon Bedrock: Best practices</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-on-amazon-bedrock-best-practices/</link>
-      <description>The article outlines best practices for reinforcement fine-tuning on Amazon Bedrock, using the GSM8K dataset as an example. It covers dataset preparation, reward function design, and hyperparameter tuning.</description>
-      <category>Amazon</category>
-      <pubDate>2026-04-08T19:43:28+00:00</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-on-amazon-bedrock-best-practices/</guid>
-    </item>
-    <item>
       <title>GitHub Mobile: Research and code with Copilot cloud agent anywhere</title>
       <link>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</link>
-      <description>GitHub Mobile now allows users to utilize the Copilot cloud agent for research and coding on-the-go, enhancing productivity outside the traditional workspace. This feature expands Copilot's usability.</description>
+      <description>GitHub Mobile has expanded the capabilities of the Copilot cloud agent, allowing users to manage pull requests and conduct research on the go. This feature enhances productivity for developers away from their desks.</description>
       <category>GitHub Copilot</category>
       <pubDate>2026-04-08T19:37:15+00:00</pubDate>
       <guid>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</guid>
     </item>
     <item>
-      <title>Code Security risk assessment available for organizations</title>
-      <link>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</link>
-      <description>GitHub has introduced a free Code Security risk assessment tool for organizations to identify and summarize security vulnerabilities, helping to enhance overall security posture.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>2026-04-08T16:52:15+00:00</pubDate>
-      <guid>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</guid>
+      <title>trw-mcp 0.40.0</title>
+      <link>https://pypi.org/project/trw-mcp/0.40.0/</link>
+      <description>The release of trw-mcp 0.40.0 focuses on engineering memory for Claude Code, addressing patterns and challenges that persist across sessions. This update aims to improve project knowledge retention.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-08T17:56:49+00:00</pubDate>
+      <guid>https://pypi.org/project/trw-mcp/0.40.0/</guid>
     </item>
     <item>
-      <title>GitHub Universe is back: We want you to take the stage</title>
-      <link>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</link>
-      <description>GitHub Universe is returning, inviting participants to share memorable sessions from past events, aiming to inspire and engage the developer community.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>2026-04-08T16:35:46+00:00</pubDate>
-      <guid>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</guid>
+      <title>Solidigm targets the AI bottleneck with advanced storage tech and ecosystem partnerships</title>
+      <link>https://siliconangle.com/2026/04/08/solidigm-vast-data-storage-industry-ai-tech-vastforward/</link>
+      <description>Solidigm is tackling AI-related memory bottlenecks with new storage technologies and partnerships, aiming to enhance AI inferencing capabilities. This move is crucial as AI demands continue to rise.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-08T17:56:24+00:00</pubDate>
+      <guid>https://siliconangle.com/2026/04/08/solidigm-vast-data-storage-industry-ai-tech-vastforward/</guid>
     </item>
     <item>
-      <title>How Amazon uses agentic AI for vulnerability detection at global scale</title>
-      <link>https://www.amazon.science/blog/how-amazon-uses-agentic-ai-for-vulnerability-detection-at-global-scale</link>
-      <description>Amazon's RuleForge system employs agentic AI to create detection rules for vulnerabilities at a much faster rate than traditional methods, showcasing efficiency in security processes.</description>
-      <category>Amazon</category>
-      <pubDate>2026-04-08T16:17:20+00:00</pubDate>
-      <guid>https://www.amazon.science/blog/how-amazon-uses-agentic-ai-for-vulnerability-detection-at-global-scale</guid>
+      <title>Hidden Mechanics</title>
+      <link>https://www.penny-arcade.com/news/post/2026/04/08/hidden-mechanics</link>
+      <description>The article discusses philosophical reflections on the ethical machinery of the universe, drawing from childhood lessons. It explores timeless concepts and their relevance to contemporary life.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-08T17:55:00+00:00</pubDate>
+      <guid>https://www.penny-arcade.com/news/post/2026/04/08/hidden-mechanics</guid>
     </item>
     <item>
-      <title>New PGP signing key for GitHub CLI Linux packages</title>
-      <link>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</link>
-      <description>GitHub has released an updated PGP keyring for its CLI Linux packages, which includes both the current and a new signing key, ensuring secure package management.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>2026-04-08T16:13:36+00:00</pubDate>
-      <guid>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</guid>
+      <title>The Survivalist’s Odds ‘n Sods</title>
+      <link>https://survivalblog.com/2026/04/09/survivalists-odds-n-sods-774/</link>
+      <description>The Survivalist’s Odds ‘n Sods column provides various news relevant to modern survivalists and preppers, aiming to educate readers on emerging trends and preparedness.</description>
+      <category>Anthropic</category>
+      <pubDate>2026-04-08T17:54:29+00:00</pubDate>
+      <guid>https://survivalblog.com/2026/04/09/survivalists-odds-n-sods-774/</guid>
     </item>
     <item>
-      <title>ALTK‑Evolve: On‑the‑Job Learning for AI Agents</title>
-      <link>https://huggingface.co/blog/ibm-research/altk-evolve</link>
-      <description>The article discusses ALTK-Evolve, a framework for on-the-job learning for AI agents, emphasizing the importance of continuous learning in AI applications.</description>
+      <title>Meta Debuts New LLM Muse Spark</title>
+      <link>https://www.pymnts.com/metaverse/2026/meta-debuts-new-llm-muse-spark/</link>
+      <description>Meta has launched Muse Spark, a new AI model that will power its AI app and social media platforms. This marks the beginning of a series of AI innovations from Meta.</description>
+      <category>OpenAI</category>
+      <pubDate>2026-04-08T17:53:11+00:00</pubDate>
+      <guid>https://www.pymnts.com/metaverse/2026/meta-debuts-new-llm-muse-spark/</guid>
+    </item>
+    <item>
+      <title>agent-llm-service added to PyPI</title>
+      <link>https://pypi.org/project/agent-llm-service/</link>
+      <description>The agent-llm-service has been added to PyPI, showcasing a GenAI project developed with LangChain and modern Python tools. This addition enhances accessibility for developers.</description>
       <category>Open Source</category>
-      <pubDate>2026-04-08T14:27:42+00:00</pubDate>
-      <guid>https://huggingface.co/blog/ibm-research/altk-evolve</guid>
+      <pubDate>2026-04-08T17:50:55+00:00</pubDate>
+      <guid>https://pypi.org/project/agent-llm-service/</guid>
     </item>
     <item>
-      <title>GitHub Copilot in Visual Studio Code, March Releases</title>
-      <link>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</link>
-      <description>GitHub has released updates for Visual Studio Code, introducing new features and improvements in its weekly stable releases. This enhances the development experience for users.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>2026-04-08T13:44:52+00:00</pubDate>
-      <guid>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</guid>
-    </item>
-    <item>
-      <title>claude-mpm 6.2.25</title>
-      <link>https://pypi.org/project/claude-mpm/6.2.25/</link>
-      <description>The Claude Code framework has been updated to version 6.2.25, featuring multi-agent orchestration and enhanced session management for AI development. This update aims to streamline AI-powered workflows.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-08T11:54:43+00:00</pubDate>
-      <guid>https://pypi.org/project/claude-mpm/6.2.25/</guid>
-    </item>
-    <item>
-      <title>Anthropic rolls out cyber AI model days after source code leak - ft.com</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181416678</link>
-      <description>Anthropic has launched its new cyber AI model, Project Glasswing, shortly after a source code leak. This model aims to identify zero-day vulnerabilities in major systems.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-08T11:52:44+00:00</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181416678</guid>
-    </item>
-    <item>
-      <title>1 May / Call for Submissions: Thresholds 55 – Property</title>
-      <link>https://landezine.com/1-may-call-for-submissions-thresholds-55-property/</link>
-      <description>MIT's Thresholds journal is calling for submissions for its upcoming issue focused on the concept of property, exploring its various implications. This provides a platform for academic discourse.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-08T11:52:44+00:00</pubDate>
-      <guid>https://landezine.com/1-may-call-for-submissions-thresholds-55-property/</guid>
-    </item>
-    <item>
-      <title>Small Wisconsin Town Rebukes Trump-Backed Project In Stunning Vote — With Famous Comedian’s Support</title>
-      <link>https://dailycaller.com/2026/04/08/port-washington-wisconsin-data-center-vote-trump-charlie-berens/</link>
-      <description>In a surprising vote, residents of a small Wisconsin town rejected a Trump-backed AI data center project, showcasing community resistance to AI infrastructure. This reflects growing concerns over AI's impact.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-08T11:52:33+00:00</pubDate>
-      <guid>https://dailycaller.com/2026/04/08/port-washington-wisconsin-data-center-vote-trump-charlie-berens/</guid>
-    </item>
-    <item>
-      <title>axiom-spec added to PyPI</title>
-      <link>https://pypi.org/project/axiom-spec/</link>
-      <description>The Axiom specification has been added to PyPI, allowing developers to compile .axiom specs into verified Python code using large language models. This enhances code reliability.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-08T11:52:29+00:00</pubDate>
-      <guid>https://pypi.org/project/axiom-spec/</guid>
-    </item>
-    <item>
-      <title>amfs-mcp-server 0.2.1</title>
-      <link>https://pypi.org/project/amfs-mcp-server/0.2.1/</link>
-      <description>The AMFS MCP Server has been updated to version 0.2.1, enabling the exposure of Agent Memory as MCP tools for AI applications. This update enhances functionality for developers.</description>
-      <category>Anthropic</category>
-      <pubDate>2026-04-08T11:49:32+00:00</pubDate>
-      <guid>https://pypi.org/project/amfs-mcp-server/0.2.1/</guid>
-    </item>
-    <item>
-      <title>Grab an entire RTX 5090 gaming PC for just $8 more than the GPU itself and score a whopping $1,600 off — huge HP discount requires a $39 controller or monitor to secure you a 4K powerhouse with a 9800X3D, 32GB DDR5, and a 1TB SSD</title>
-      <link>https://www.tomshardware.com/desktops/gaming-pcs/grab-an-entire-rtx-5090-gaming-pc-for-just-usd8-more-than-the-gpu-itself-and-score-a-whopping-usd1-600-off-huge-hp-discount-requires-a-usd39-controller-or-monitor-to-secure-you-a-4k-powerhouse-with-a-9800x3d-32gb-ddr5-and-a-1tb-ssd</link>
-      <description>HP is offering a significant discount on a gaming PC equipped with an RTX 5090, making it available for just $8 more than the GPU alone when bundled with certain accessories.</description>
-      <category>NVIDIA</category>
-      <pubDate>2026-04-08T11:44:59+00:00</pubDate>
-      <guid>https://www.tomshardware.com/desktops/gaming-pcs/grab-an-entire-rtx-5090-gaming-pc-for-just-usd8-more-than-the-gpu-itself-and-score-a-whopping-usd1-600-off-huge-hp-discount-requires-a-usd39-controller-or-monitor-to-secure-you-a-4k-powerhouse-with-a-9800x3d-32gb-ddr5-and-a-1tb-ssd</guid>
-    </item>
-    <item>
-      <title>openai-agents-opentelemetry 0.2.2</title>
-      <link>https://pypi.org/project/openai-agents-opentelemetry/0.2.2/</link>
-      <description>OpenTelemetry has released an update for the OpenAI Agents SDK, enhancing tracing capabilities for developers. This update aims to improve monitoring and debugging.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-08T11:34:32+00:00</pubDate>
-      <guid>https://pypi.org/project/openai-agents-opentelemetry/0.2.2/</guid>
-    </item>
-    <item>
-      <title>WhatsApp adds a better, native interface for CarPlay</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181416552</link>
-      <description>WhatsApp has improved its integration with CarPlay, providing users with a better native interface compared to the previous version. This enhances user experience while driving.</description>
-      <category>OpenAI</category>
-      <pubDate>2026-04-08T11:32:08+00:00</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181416552</guid>
+      <title>agent-llm-service 0.0.1</title>
+      <link>https://pypi.org/project/agent-llm-service/0.0.1/</link>
+      <description>The agent-llm-service 0.0.1 is introduced as a GenAI project utilizing LangChain and modern Python tools, aimed at enhancing AI development capabilities.</description>
+      <category>Open Source</category>
+      <pubDate>2026-04-08T17:50:55+00:00</pubDate>
+      <guid>https://pypi.org/project/agent-llm-service/0.0.1/</guid>
     </item>
   </channel>
 </rss>
