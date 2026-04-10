@@ -152,3 +152,15 @@ Azure Solutions Architect Expert · M365 Enterprise Administrator · M365 Securi
 - 📺 [YouTube — Bites](https://www.youtube.com/aguidetocloud) (quick 10–20 min lessons)
 - 💼 [LinkedIn](https://www.linkedin.com/in/susanthsutheesh/)
 - ☕ [Support my work](https://ko-fi.com/aguidetocloud/shop)
+
+---
+
+## ⚠️ Disclaimer
+
+I work at Microsoft as a Sr AI Solution Engineer, but **the views, opinions, and content shared on this website and my YouTube channels are entirely my own** and do not represent the official positions, strategies, or endorsements of Microsoft.
+
+- All pricing mentioned is in USD and sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change
+- Product information, features, and roadmap details are based on publicly available information and may not reflect the latest updates
+- This site is a personal project and is not affiliated with, endorsed by, or sponsored by Microsoft
+
+Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most accurate and up-to-date information.

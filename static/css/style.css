@@ -733,6 +733,18 @@ a:hover {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+.footer-disclaimer {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  opacity: 0.6;
+  max-width: 600px;
+  margin: 0 auto 0.8rem;
+  line-height: 1.5;
+}
+.footer-disclaimer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
 
 /* ── SECTION PAGE ───────────────────────── */
 .page-hero {
