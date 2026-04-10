@@ -41,20 +41,12 @@ This is a reversal of the [September 2025 announcement](https://techcommunity.mi
 The impact depends entirely on your **tenant size**:
 
 ```mermaid
-flowchart TD
-    A[Your Organisation] --> B{How many M365 users?}
-    B -->|More than 2,000| C[MC1253858]
-    B -->|Fewer than 2,000| D[MC1253863]
-    C --> E["❌ Copilot REMOVED from\nWord, Excel, PPT, OneNote"]
-    D --> F["⚠️ Standard access in\nWord, Excel, PPT"]
-    D --> G["❌ OneNote removed"]
-    E --> H["✅ WXP Agents still work\n✅ Copilot web app stays\n✅ Outlook & Teams stay"]
-    F --> H
-    G --> H
-    style E fill:#5c1a1a,stroke:#ff6666,color:#ffffff
-    style G fill:#5c1a1a,stroke:#ff6666,color:#ffffff
-    style F fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
-    style H fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+flowchart LR
+    A["🏢 Your Org"] --> B{"Tenant size?"}
+    B -->|"> 2,000 users"| C["MC1253858\n❌ Copilot REMOVED\nfrom Word, Excel,\nPPT, OneNote"]
+    B -->|"< 2,000 users"| D["MC1253863\n⚠️ Standard access\nin Word, Excel, PPT\n❌ OneNote removed"]
+    style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style D fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
 ```
 
 ### MC1253858 — Organisations With More Than 2,000 Users
@@ -119,17 +111,11 @@ They are **different** from the Copilot side panel inside Office apps:
 
 ```mermaid
 flowchart LR
-    subgraph removed["What's Being Removed/Degraded"]
-        A["Copilot Side Panel\nINSIDE Word/Excel/PPT"] 
-    end
-    subgraph stays["What Stays for Everyone"]
-        B["WXP Agents\nIN the Copilot App"]
-    end
-    A -. "Embedded in\nOffice apps" .-> C["❌ Removed or\n⚠️ Degraded"]
-    B -. "Agent in\nCopilot Chat" .-> D["✅ Still available\nfor all users"]
-    style removed fill:#3d1a1a,stroke:#ff6666,color:#ffffff
-    style stays fill:#1a3d2a,stroke:#66ff99,color:#ffffff
-    style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    A["🖥️ Copilot Side Panel\nINSIDE Word/Excel/PPT"] ---|"April 15"| B["❌ Removed or\n⚠️ Degraded"]
+    C["🤖 WXP Agents\nIN the Copilot App"] ---|"April 15"| D["✅ Still available\nfor all users"]
+    style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
+    style B fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style C fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
 ```
 
@@ -158,19 +144,11 @@ Here's the critical technical detail: **WXP Agents are powered exclusively by An
 > *"These agents exclusively use Anthropic's AI models. This AI model must be enabled. These requirements are mandatory for Word, Excel, and PowerPoint Agents to function."*
 
 ```mermaid
-flowchart TD
-    A["Admin: Is Anthropic enabled\nas a subprocessor?"] --> B{Enabled?}
-    B -->|"✅ Yes"| C["Claude models available"]
-    B -->|"❌ No"| D["Claude models blocked"]
-    C --> E["WXP Agents visible\nand functional for all users"]
-    D --> F["WXP Agents completely\nHIDDEN from all users"]
-    E --> G["Users can create docs\nvia Copilot app"]
-    F --> H["No workaround —\nmust enable Anthropic"]
-    style B fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style E fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style F fill:#5c1a1a,stroke:#ff6666,color:#ffffff
-    style G fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style H fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+flowchart LR
+    A{"🔧 Anthropic\nenabled?"} -->|"✅ Yes"| B["WXP Agents visible\n& functional"]
+    A -->|"❌ No"| C["WXP Agents\ncompletely HIDDEN"]
+    style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
 ```
 
 This means:

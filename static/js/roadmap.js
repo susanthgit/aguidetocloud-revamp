@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     monthly: '/data/roadmap/monthly.json'
   };
 
-  // SessionStorage cache
   var _cache = {};
   async function fetchJson(url) {
     if (_cache[url]) return _cache[url];
@@ -17,17 +16,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var data = await resp.json();
     _cache[url] = data;
-    try { sessionStorage.setItem('roadmap_' + url, JSON.stringify(data)); } catch (e) { /* quota */ }
+    try { sessionStorage.setItem('roadmap_' + url, JSON.stringify(data)); } catch (e) {}
     return data;
   }
 
-  // Current state
+  // State
   var currentData = null;
-  var currentView = 'latest';
+  var activeLayout = 'list';
   var activeProductFilter = 'all';
   var activeStatusFilter = 'active';
 
-  // Category display order + metadata
   var CATEGORY_META = {
     'copilot':     { name: 'Copilot',              emoji: '🤖', color: '#7B68EE' },
     'teams':       { name: 'Teams',                emoji: '💬', color: '#6264A7' },
@@ -43,63 +41,98 @@ document.addEventListener('DOMContentLoaded', async function () {
   };
 
   var STATUS_META = {
-    'Rolling out':    { emoji: '🔵', color: '#2196F3' },
-    'In development': { emoji: '🟡', color: '#FF9800' },
-    'Launched':       { emoji: '🟢', color: '#4CAF50' },
-    'Cancelled':      { emoji: '🔴', color: '#F44336' }
+    'Rolling out':    { emoji: '🔵', color: '#06B6D4', label: 'Rolling Out' },
+    'In development': { emoji: '🟡', color: '#F59E0B', label: 'In Dev' },
+    'Launched':       { emoji: '🟢', color: '#10B981', label: 'Launched' },
+    'Cancelled':      { emoji: '🔴', color: '#EF4444', label: 'Cancelled' }
   };
 
   var CHANGE_BADGES = {
-    'new':            { label: '🆕 NEW',    color: '#4CAF50' },
-    'status_changed': { label: '🔄 STATUS', color: '#2196F3' },
-    'date_changed':   { label: '📅 DATE',   color: '#FF9800' },
-    'updated':        { label: '✏️ UPDATED', color: '#9C27B0' }
+    'new':            { label: 'NEW',     color: '#10B981', icon: '●' },
+    'status_changed': { label: 'STATUS',  color: '#06B6D4', icon: '↻' },
+    'date_changed':   { label: 'DATE',    color: '#F59E0B', icon: '◷' },
+    'updated':        { label: 'UPDATED', color: '#8B5CF6', icon: '✎' }
   };
 
-  // --- DATA LOADING ---
+  // ── DATA LOADING ──
   async function loadView(view) {
-    currentView = view;
-    var grid = document.getElementById('roadmap-grid');
-    grid.innerHTML = '<div class="roadmap-skeleton-wrap"><div class="roadmap-skeleton-card"></div><div class="roadmap-skeleton-card"></div><div class="roadmap-skeleton-card"></div></div>';
-
+    var content = document.getElementById('rdmap-content');
+    content.innerHTML = '<div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>';
     try {
-      var url = DATA_URLS[view] || DATA_URLS.latest;
-      var data = await fetchJson(url);
+      var data = await fetchJson(DATA_URLS[view] || DATA_URLS.latest);
       currentData = data;
-      renderStats(data);
+      renderStatusBar(data);
+      renderMetrics(data);
       populateProductFilter(data.product_categories || []);
-      renderCategoryPills(data.product_categories || []);
-      renderItems(data);
+      renderChips(data.product_categories || []);
+      renderTimeline(data.items || []);
+      renderContent(data);
       renderFreshness(data.generated_at);
     } catch (e) {
       if (view !== 'latest') {
-        grid.innerHTML = '<p class="roadmap-empty">No ' + view + ' data available yet — showing latest instead.</p>';
-        setTimeout(function () { loadView('latest'); }, 1500);
+        content.innerHTML = '<p class="rdmap-empty">No ' + view + ' data yet — loading latest.</p>';
+        setTimeout(function () { loadView('latest'); }, 1200);
       } else {
-        grid.innerHTML = '<p class="roadmap-empty">Roadmap data not available yet. Check back tomorrow!</p>';
+        content.innerHTML = '<p class="rdmap-empty">Roadmap data not available yet. Check back tomorrow!</p>';
       }
     }
   }
 
-  // --- STATS BAR ---
-  function renderStats(data) {
-    var el = document.getElementById('roadmap-stats');
-    var changes = data.changes_summary || {};
-    var totalChanges = (changes.new_items || 0) + (changes.status_changes || 0) + (changes.date_changes || 0);
+  // ── STATUS DISTRIBUTION BAR (hero) ──
+  function renderStatusBar(data) {
+    var el = document.getElementById('rdmap-status-bar');
+    var sc = data.status_counts || {};
+    var total = (sc['Rolling out'] || 0) + (sc['In development'] || 0) + (sc['Launched'] || 0) + (sc['Cancelled'] || 0);
+    if (!total) { el.innerHTML = ''; return; }
 
-    var html = '<div class="roadmap-stat"><span class="roadmap-stat-num">' + (data.active_items || 0) + '</span><span class="roadmap-stat-label">Active Items</span></div>';
-    html += '<div class="roadmap-stat"><span class="roadmap-stat-num">' + (data.status_counts ? (data.status_counts['Rolling out'] || 0) : 0) + '</span><span class="roadmap-stat-label">Rolling Out</span></div>';
-    html += '<div class="roadmap-stat"><span class="roadmap-stat-num">' + (data.status_counts ? (data.status_counts['In development'] || 0) : 0) + '</span><span class="roadmap-stat-label">In Development</span></div>';
-    if (totalChanges > 0) {
-      html += '<div class="roadmap-stat roadmap-stat-highlight"><span class="roadmap-stat-num">' + totalChanges + '</span><span class="roadmap-stat-label">Changes Today</span></div>';
-    }
+    var segments = [
+      { status: 'Rolling out', count: sc['Rolling out'] || 0, color: '#06B6D4' },
+      { status: 'In development', count: sc['In development'] || 0, color: '#F59E0B' },
+      { status: 'Launched', count: sc['Launched'] || 0, color: '#10B981' },
+      { status: 'Cancelled', count: sc['Cancelled'] || 0, color: '#EF4444' }
+    ];
+
+    var html = '<div class="rdmap-bar-track">';
+    segments.forEach(function (s) {
+      var pct = (s.count / total * 100).toFixed(1);
+      if (s.count > 0) {
+        html += '<div class="rdmap-bar-seg" style="width:' + pct + '%;background:' + s.color + '" title="' + s.status + ': ' + s.count + ' (' + pct + '%)"></div>';
+      }
+    });
+    html += '</div><div class="rdmap-bar-legend">';
+    segments.forEach(function (s) {
+      if (s.count > 0) {
+        html += '<span class="rdmap-legend-item"><span class="rdmap-legend-dot" style="background:' + s.color + '"></span>' + s.status + ' <b>' + s.count + '</b></span>';
+      }
+    });
+    html += '</div>';
     el.innerHTML = html;
   }
 
-  // --- PRODUCT FILTER DROPDOWN ---
+  // ── METRICS ROW ──
+  function renderMetrics(data) {
+    var el = document.getElementById('rdmap-metrics');
+    var changes = data.changes_summary || {};
+    var totalChanges = (changes.new_items || 0) + (changes.status_changes || 0) + (changes.date_changes || 0);
+
+    var metrics = [
+      { value: data.active_items || 0, label: 'Active', icon: '⚡' },
+      { value: data.status_counts ? (data.status_counts['Rolling out'] || 0) : 0, label: 'Rolling Out', icon: '🔵' },
+      { value: data.status_counts ? (data.status_counts['In development'] || 0) : 0, label: 'In Dev', icon: '🟡' },
+    ];
+    if (totalChanges > 0) {
+      metrics.push({ value: totalChanges, label: 'Changes', icon: '🔄', highlight: true });
+    }
+
+    el.innerHTML = metrics.map(function (m) {
+      return '<div class="rdmap-metric' + (m.highlight ? ' rdmap-metric-hl' : '') + '"><span class="rdmap-metric-icon">' + m.icon + '</span><span class="rdmap-metric-val">' + m.value.toLocaleString() + '</span><span class="rdmap-metric-lbl">' + m.label + '</span></div>';
+    }).join('');
+  }
+
+  // ── PRODUCT FILTER DROPDOWN ──
   function populateProductFilter(categories) {
-    var select = document.getElementById('roadmap-product-filter');
-    var currentVal = select.value;
+    var select = document.getElementById('rdmap-product-filter');
+    var val = select.value;
     select.innerHTML = '<option value="all">All Products</option>';
     categories.forEach(function (cat) {
       if (cat.count > 0) {
@@ -109,246 +142,253 @@ document.addEventListener('DOMContentLoaded', async function () {
         select.appendChild(opt);
       }
     });
-    select.value = currentVal || 'all';
+    select.value = val || 'all';
   }
 
-  // --- CATEGORY PILLS ---
-  function renderCategoryPills(categories) {
-    var el = document.getElementById('roadmap-categories');
-    var html = '<button class="roadmap-pill active" data-cat="all">All</button>';
+  // ── PRODUCT CHIPS ──
+  function renderChips(categories) {
+    var el = document.getElementById('rdmap-chips');
+    var html = '<button class="rdmap-chip active" data-cat="all">All</button>';
     categories.forEach(function (cat) {
       if (cat.count > 0) {
         var meta = CATEGORY_META[cat.id] || {};
-        html += '<button class="roadmap-pill" data-cat="' + cat.id + '" style="--pill-color:' + (meta.color || '#888') + '">';
-        html += '<span class="roadmap-pill-dot" style="background:' + (meta.color || '#888') + '"></span>';
-        html += (meta.emoji || '') + ' ' + escapeHtml(cat.name) + ' <span class="roadmap-pill-count">' + cat.count + '</span>';
-        html += '</button>';
+        html += '<button class="rdmap-chip" data-cat="' + cat.id + '" style="--chip-c:' + (meta.color || '#888') + '">'
+          + (meta.emoji || '') + ' ' + escapeHtml(cat.name) + ' <span>' + cat.count + '</span></button>';
       }
     });
     el.innerHTML = html;
-
-    // Wire up pill clicks
-    el.querySelectorAll('.roadmap-pill').forEach(function (btn) {
+    el.querySelectorAll('.rdmap-chip').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        el.querySelectorAll('.roadmap-pill').forEach(function (b) { b.classList.remove('active'); });
+        el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.classList.remove('active'); });
         this.classList.add('active');
         activeProductFilter = this.dataset.cat;
-        document.getElementById('roadmap-product-filter').value = activeProductFilter;
+        document.getElementById('rdmap-product-filter').value = activeProductFilter;
         applyFilters();
       });
     });
   }
 
-  // --- RENDER ITEMS ---
-  function renderItems(data) {
-    var grid = document.getElementById('roadmap-grid');
+  // ── GA TIMELINE (unique to roadmap!) ──
+  function renderTimeline(items) {
+    var el = document.getElementById('rdmap-timeline');
+    var months = {};
+    items.forEach(function (item) {
+      var gp = item.ga_date_parsed;
+      if (gp && gp.length >= 7 && item.status !== 'Launched' && item.status !== 'Cancelled') {
+        if (!months[gp]) months[gp] = 0;
+        months[gp]++;
+      }
+    });
+
+    var sorted = Object.keys(months).sort();
+    if (sorted.length === 0) { el.innerHTML = ''; return; }
+
+    // Only show upcoming months
+    var now = new Date().toISOString().slice(0, 7);
+    sorted = sorted.filter(function (m) { return m >= now; }).slice(0, 8);
+    if (sorted.length === 0) { el.innerHTML = ''; return; }
+
+    var maxCount = Math.max.apply(null, sorted.map(function (m) { return months[m]; }));
+    var MONTH_NAMES = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    var html = '<div class="rdmap-tl-label">📅 Upcoming GA Dates</div><div class="rdmap-tl-bars">';
+    sorted.forEach(function (m) {
+      var count = months[m];
+      var pct = Math.max(8, (count / maxCount) * 100);
+      var parts = m.split('-');
+      var label = MONTH_NAMES[parseInt(parts[1])] + ' ' + parts[0].slice(2);
+      var isThisMonth = m === now;
+      html += '<div class="rdmap-tl-col' + (isThisMonth ? ' rdmap-tl-now' : '') + '">'
+        + '<div class="rdmap-tl-count">' + count + '</div>'
+        + '<div class="rdmap-tl-fill" style="height:' + pct + '%;background:' + (isThisMonth ? '#06B6D4' : '#1e3a5f') + '"></div>'
+        + '<div class="rdmap-tl-month">' + label + '</div>'
+        + '</div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  // ── RENDER CONTENT (list or cards) ──
+  function renderContent(data) {
+    if (activeLayout === 'list') renderList(data);
+    else renderCards(data);
+  }
+
+  function renderList(data) {
+    var content = document.getElementById('rdmap-content');
     var items = data.items || [];
+    if (items.length === 0) { content.innerHTML = '<p class="rdmap-empty">No items found.</p>'; return; }
+
+    // Changes section
+    var changed = items.filter(function (i) { return i.change_type; });
     var html = '';
 
-    // Separate changed items for hero section
-    var changedItems = items.filter(function (i) { return i.change_type !== null && i.change_type !== undefined; });
-    var regularItems = items;
-
-    // "What's Changed" hero section
-    if (changedItems.length > 0) {
-      html += '<div class="roadmap-section" data-section="changes">';
-      html += '<div class="roadmap-section-header"><span>🔄</span> Recent Changes <span class="roadmap-section-count">' + changedItems.length + '</span></div>';
-      html += '<div class="roadmap-changes-grid">';
-      changedItems.slice(0, 12).forEach(function (item) {
-        html += renderChangeCard(item);
-      });
+    if (changed.length > 0) {
+      html += '<div class="rdmap-list-section" data-section="changes"><div class="rdmap-list-heading">🔄 Recent Changes <span>' + changed.length + '</span></div>';
+      html += '<div class="rdmap-list">';
+      changed.slice(0, 20).forEach(function (item) { html += renderListRow(item, true); });
       html += '</div></div>';
     }
 
-    // Main items grid
-    html += '<div class="roadmap-section" data-section="all">';
-    html += '<div class="roadmap-section-header"><span>📋</span> All Items <span class="roadmap-section-count" id="items-count">' + items.length + '</span></div>';
-    html += '<div class="roadmap-items-grid">';
-    regularItems.forEach(function (item) {
-      html += renderCard(item);
-    });
+    // All items
+    html += '<div class="rdmap-list-section" data-section="all"><div class="rdmap-list-heading">📋 All Items <span id="rdmap-count">' + items.length + '</span></div>';
+    html += '<div class="rdmap-list-header"><div class="rdmap-lh-status">Status</div><div class="rdmap-lh-title">Feature</div><div class="rdmap-lh-product">Product</div><div class="rdmap-lh-date">GA Date</div></div>';
+    html += '<div class="rdmap-list">';
+    items.forEach(function (item) { html += renderListRow(item, false); });
     html += '</div></div>';
 
-    grid.innerHTML = html || '<p class="roadmap-empty">No items found.</p>';
+    content.innerHTML = html;
     applyFilters();
   }
 
-  // --- CARD RENDERERS ---
-  function renderChangeCard(item) {
-    var change = CHANGE_BADGES[item.change_type] || {};
-    var status = STATUS_META[item.status] || { emoji: '⚪', color: '#999' };
-    var catMeta = CATEGORY_META[item.product_category] || {};
-
-    var changeDetail = '';
-    if (item.change_type === 'status_changed' && item.previous_status) {
-      changeDetail = '<div class="roadmap-change-detail">' + escapeHtml(item.previous_status) + ' → ' + escapeHtml(item.status) + '</div>';
-    } else if (item.change_type === 'date_changed' && item.previous_ga_date) {
-      changeDetail = '<div class="roadmap-change-detail">' + escapeHtml(item.previous_ga_date) + ' → ' + escapeHtml(item.ga_date) + '</div>';
-    }
-
-    return '<div class="roadmap-change-card" data-status="' + escapeHtml(item.status) + '" data-category="' + escapeHtml(item.product_category) + '" data-products="' + escapeHtml((item.products || []).join(',')) + '">'
-      + '<div class="roadmap-change-badge" style="background:' + (change.color || '#888') + '">' + (change.label || '') + '</div>'
-      + '<h4 class="roadmap-card-title"><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></h4>'
-      + changeDetail
-      + '<div class="roadmap-card-meta">'
-      + '<span class="roadmap-status-badge" style="background:' + status.color + '">' + status.emoji + ' ' + escapeHtml(item.status) + '</span>'
-      + '<span class="roadmap-product-pill" style="border-color:' + (catMeta.color || '#888') + '">' + (catMeta.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
-      + (item.ga_date ? '<span class="roadmap-ga-date">📅 ' + escapeHtml(item.ga_date) + '</span>' : '')
-      + '</div></div>';
-  }
-
-  function renderCard(item) {
-    var status = STATUS_META[item.status] || { emoji: '⚪', color: '#999' };
-    var catMeta = CATEGORY_META[item.product_category] || {};
+  function renderListRow(item, showChange) {
+    var st = STATUS_META[item.status] || { color: '#666', label: '?', emoji: '⚪' };
+    var cat = CATEGORY_META[item.product_category] || {};
     var change = item.change_type ? CHANGE_BADGES[item.change_type] : null;
-
     var summary = item.ai_summary || '';
-    if (!summary && item.description) {
-      summary = item.description.length > 150 ? item.description.substring(0, 150) + '…' : item.description;
+    if (!summary && item.description) summary = item.description.length > 120 ? item.description.substring(0, 120) + '…' : item.description;
+
+    var changeHtml = '';
+    if (showChange && change) {
+      var detail = '';
+      if (item.change_type === 'status_changed' && item.previous_status) detail = ' · ' + escapeHtml(item.previous_status) + ' → ' + escapeHtml(item.status);
+      else if (item.change_type === 'date_changed' && item.previous_ga_date) detail = ' · ' + escapeHtml(item.previous_ga_date) + ' → ' + escapeHtml(item.ga_date);
+      changeHtml = '<span class="rdmap-change" style="color:' + change.color + '">' + change.icon + ' ' + change.label + detail + '</span>';
+    } else if (change) {
+      changeHtml = '<span class="rdmap-change-dot" style="background:' + change.color + '" title="' + change.label + '"></span>';
     }
 
-    var platformIcons = (item.platforms || []).map(function (p) {
-      var icons = { 'Web': '🌐', 'Desktop': '💻', 'iOS': '📱', 'Android': '🤖', 'Mac': '🍎', 'Linux': '🐧' };
-      return icons[p] || '';
-    }).filter(Boolean).join(' ');
-
-    return '<div class="roadmap-card" data-status="' + escapeHtml(item.status) + '" data-category="' + escapeHtml(item.product_category) + '" data-all-cats="' + escapeHtml((item.all_categories || []).join(',')) + '" data-products="' + escapeHtml((item.products || []).join(',')) + '">'
-      + '<div class="roadmap-card-top">'
-      + '<span class="roadmap-status-badge" style="background:' + status.color + '">' + status.emoji + ' ' + escapeHtml(item.status) + '</span>'
-      + (change ? '<span class="roadmap-change-indicator" style="color:' + change.color + '">' + change.label + '</span>' : '')
+    return '<div class="rdmap-row" data-status="' + escapeHtml(item.status) + '" data-category="' + escapeHtml(item.product_category) + '" data-all-cats="' + escapeHtml((item.all_categories || []).join(',')) + '" data-products="' + escapeHtml((item.products || []).join(',')) + '">'
+      + '<div class="rdmap-row-status"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span></div>'
+      + '<div class="rdmap-row-main">'
+      + '<a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row-title">' + escapeHtml(item.title) + '</a>'
+      + (summary ? '<div class="rdmap-row-desc">' + escapeHtml(summary) + '</div>' : '')
+      + changeHtml
       + '</div>'
-      + '<h4 class="roadmap-card-title"><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></h4>'
-      + (summary ? '<p class="roadmap-card-summary">' + escapeHtml(summary) + '</p>' : '')
-      + '<div class="roadmap-card-meta">'
-      + '<span class="roadmap-product-pill" style="border-color:' + (catMeta.color || '#888') + '">' + (catMeta.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
-      + (item.ga_date ? '<span class="roadmap-ga-date">📅 ' + escapeHtml(item.ga_date) + '</span>' : '')
-      + (platformIcons ? '<span class="roadmap-platforms">' + platformIcons + '</span>' : '')
-      + '</div>'
-      + '<div class="roadmap-card-footer">'
-      + '<span class="roadmap-card-id">#' + item.id + '</span>'
-      + '<span class="roadmap-card-modified">' + timeAgo(item.modified) + '</span>'
-      + '</div>'
+      + '<div class="rdmap-row-product"><span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + '</span> ' + escapeHtml(item.product_category_name || '') + '</div>'
+      + '<div class="rdmap-row-date">' + escapeHtml(item.ga_date || '—') + '</div>'
       + '</div>';
   }
 
-  // --- FILTERING ---
+  function renderCards(data) {
+    var content = document.getElementById('rdmap-content');
+    var items = data.items || [];
+    if (items.length === 0) { content.innerHTML = '<p class="rdmap-empty">No items found.</p>'; return; }
+
+    var html = '<div class="rdmap-cards-grid">';
+    items.forEach(function (item) {
+      var st = STATUS_META[item.status] || { color: '#666', label: '?', emoji: '⚪' };
+      var cat = CATEGORY_META[item.product_category] || {};
+      var change = item.change_type ? CHANGE_BADGES[item.change_type] : null;
+      var summary = item.ai_summary || '';
+      if (!summary && item.description) summary = item.description.length > 150 ? item.description.substring(0, 150) + '…' : item.description;
+
+      html += '<div class="rdmap-card" data-status="' + escapeHtml(item.status) + '" data-category="' + escapeHtml(item.product_category) + '" data-all-cats="' + escapeHtml((item.all_categories || []).join(',')) + '" data-products="' + escapeHtml((item.products || []).join(',')) + '">'
+        + '<div class="rdmap-card-accent" style="background:' + st.color + '"></div>'
+        + '<div class="rdmap-card-body">'
+        + '<div class="rdmap-card-top"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span>'
+        + (change ? '<span class="rdmap-change-sm" style="color:' + change.color + '">' + change.icon + ' ' + change.label + '</span>' : '')
+        + '</div>'
+        + '<h4><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></h4>'
+        + (summary ? '<p>' + escapeHtml(summary) + '</p>' : '')
+        + '<div class="rdmap-card-foot">'
+        + '<span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
+        + (item.ga_date ? '<span>📅 ' + escapeHtml(item.ga_date) + '</span>' : '')
+        + '</div></div></div>';
+    });
+    html += '</div>';
+    content.innerHTML = html;
+    applyFilters();
+  }
+
+  // ── FILTERING ──
   function applyFilters() {
-    var searchQuery = (document.getElementById('roadmap-search').value || '').toLowerCase();
-    var statusFilter = activeStatusFilter;
-    var productFilter = activeProductFilter;
+    var q = (document.getElementById('rdmap-search').value || '').toLowerCase();
+    var rows = document.querySelectorAll('.rdmap-row, .rdmap-card');
+    var visible = 0;
 
-    var allCards = document.querySelectorAll('.roadmap-card, .roadmap-change-card');
-    var visibleCount = 0;
-
-    allCards.forEach(function (card) {
+    rows.forEach(function (el) {
       var show = true;
+      var s = el.dataset.status || '';
+      if (activeStatusFilter === 'active') { if (s === 'Launched') show = false; }
+      else if (activeStatusFilter !== 'all') { if (s !== activeStatusFilter) show = false; }
 
-      // Status filter
-      var cardStatus = card.dataset.status || '';
-      if (statusFilter === 'active') {
-        if (cardStatus === 'Launched') show = false;
-      } else if (statusFilter !== 'all') {
-        if (cardStatus !== statusFilter) show = false;
+      if (show && activeProductFilter !== 'all') {
+        var c = el.dataset.category || '';
+        var all = (el.dataset.allCats || '').split(',');
+        if (c !== activeProductFilter && all.indexOf(activeProductFilter) === -1) show = false;
       }
 
-      // Product filter
-      if (show && productFilter !== 'all') {
-        var cardCat = card.dataset.category || '';
-        var allCats = (card.dataset.allCats || '').split(',');
-        if (cardCat !== productFilter && allCats.indexOf(productFilter) === -1) {
-          show = false;
-        }
+      if (show && q) {
+        var txt = el.textContent.toLowerCase() + (el.dataset.products || '').toLowerCase();
+        if (txt.indexOf(q) === -1) show = false;
       }
 
-      // Search
-      if (show && searchQuery) {
-        var text = card.textContent.toLowerCase();
-        var products = (card.dataset.products || '').toLowerCase();
-        if (text.indexOf(searchQuery) === -1 && products.indexOf(searchQuery) === -1) {
-          show = false;
-        }
-      }
-
-      card.style.display = show ? '' : 'none';
-      if (show) visibleCount++;
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
 
-    // Update count
-    var countEl = document.getElementById('items-count');
-    if (countEl) countEl.textContent = visibleCount;
+    var cnt = document.getElementById('rdmap-count');
+    if (cnt) cnt.textContent = visible;
 
-    // Show/hide section headers based on visible children
-    document.querySelectorAll('.roadmap-section').forEach(function (sec) {
-      var hasVisible = sec.querySelectorAll('.roadmap-card:not([style*="display: none"]), .roadmap-change-card:not([style*="display: none"])');
-      sec.style.display = hasVisible.length > 0 ? '' : 'none';
+    document.querySelectorAll('.rdmap-list-section').forEach(function (sec) {
+      var has = sec.querySelectorAll('.rdmap-row:not([style*="display: none"])');
+      sec.style.display = has.length > 0 ? '' : 'none';
     });
   }
 
-  // --- FRESHNESS BADGE ---
-  function renderFreshness(generatedAt) {
-    var existing = document.querySelector('.roadmap-freshness');
-    if (existing) existing.remove();
-    if (!generatedAt) return;
-
-    var badge = document.createElement('div');
-    badge.className = 'roadmap-freshness';
-    badge.textContent = '🕐 Updated ' + timeAgo(generatedAt);
-    var stats = document.getElementById('roadmap-stats');
-    if (stats) stats.appendChild(badge);
+  // ── FRESHNESS ──
+  function renderFreshness(dt) {
+    var el = document.getElementById('rdmap-freshness');
+    if (!dt) { el.textContent = ''; return; }
+    el.textContent = 'Updated ' + timeAgo(dt);
   }
 
-  // --- HELPERS ---
-  function timeAgo(dateStr) {
-    if (!dateStr) return '';
-    var now = new Date();
-    var then = new Date(dateStr);
-    var diffMs = now - then;
-    var mins = Math.floor(diffMs / 60000);
-    if (mins < 60) return mins + 'm ago';
-    var hours = Math.floor(mins / 60);
-    if (hours < 24) return hours + 'h ago';
-    var days = Math.floor(hours / 24);
+  // ── HELPERS ──
+  function timeAgo(d) {
+    if (!d) return '';
+    var ms = new Date() - new Date(d);
+    var m = Math.floor(ms / 60000);
+    if (m < 60) return m + 'm ago';
+    var h = Math.floor(m / 60);
+    if (h < 24) return h + 'h ago';
+    var days = Math.floor(h / 24);
     if (days < 7) return days + 'd ago';
-    return then.toLocaleDateString('en-NZ', { month: 'short', day: 'numeric' });
+    return new Date(d).toLocaleDateString('en-NZ', { month: 'short', day: 'numeric' });
   }
+  function escapeHtml(s) { return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 
-  function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
-
-  // --- EVENT WIRING ---
-
-  // Tab switching
-  document.querySelectorAll('.roadmap-tab').forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      document.querySelectorAll('.roadmap-tab').forEach(function (t) { t.classList.remove('active'); });
+  // ── EVENT WIRING ──
+  document.querySelectorAll('.rdmap-tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.rdmap-tab').forEach(function (x) { x.classList.remove('active'); });
       this.classList.add('active');
       loadView(this.dataset.view);
     });
   });
 
-  // Status filter
-  document.getElementById('roadmap-status-filter').addEventListener('change', function () {
+  document.querySelectorAll('.rdmap-view-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.rdmap-view-btn').forEach(function (x) { x.classList.remove('active'); });
+      this.classList.add('active');
+      activeLayout = this.dataset.layout;
+      if (currentData) renderContent(currentData);
+    });
+  });
+
+  document.getElementById('rdmap-status-filter').addEventListener('change', function () {
     activeStatusFilter = this.value;
     applyFilters();
   });
 
-  // Product filter dropdown (syncs with pills)
-  document.getElementById('roadmap-product-filter').addEventListener('change', function () {
+  document.getElementById('rdmap-product-filter').addEventListener('change', function () {
     activeProductFilter = this.value;
-    // Sync pills
-    document.querySelectorAll('.roadmap-pill').forEach(function (p) {
-      p.classList.toggle('active', p.dataset.cat === activeProductFilter);
-    });
+    document.querySelectorAll('.rdmap-chip').forEach(function (c) { c.classList.toggle('active', c.dataset.cat === activeProductFilter); });
     applyFilters();
   });
 
-  // Search
-  document.getElementById('roadmap-search').addEventListener('input', function () {
-    applyFilters();
-  });
+  document.getElementById('rdmap-search').addEventListener('input', applyFilters);
 
-  // Initial load
+  // ── INIT ──
   await loadView('latest');
 });
