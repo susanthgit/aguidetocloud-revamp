@@ -1,6 +1,23 @@
 {
   "articles": [
     {
+      "id": "c25e670ad48933fc9f23cc4385fac57f",
+      "title": "Surprise: Not every Lenovo laptop is worth recommending in 2026 - the Yoga 7i is proof",
+      "url": "https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-10T02:00:50+00:00",
+      "snippet": "Lenovo's Yoga 7a 2-in-1 is a versatile and well-built PC, though its mid-tier hardware makes it hard to recommend over rivals.",
+      "image": "https://www.zdnet.com/a/img/resize/bff251002f0e6a498b941da9060c468055bd103c/2026/04/08/b3b400aa-6f66-457a-9009-a9e7a2ba6568/lenovo-yoga-7a-2-in-1-image-2.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "Lenovo's Yoga 7a 2-in-1 laptop is versatile but features mid-tier hardware, making it less competitive against rivals. The review suggests it may not be the best choice for consumers.",
+      "why_it_matters": "Informs potential buyers about the limitations of a popular laptop model in 2026.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "9m ago"
+    },
+    {
       "id": "024f3cc6cc1b6b394ccacc5352569a14",
       "title": "Samsung S95H vs. Samsung S95F: I compared the OLED TVs and wasn't prepared for the upset",
       "url": "https://www.zdnet.com/article/samsung-s95h-vs-samsung-s95f/",
@@ -10,12 +27,12 @@
       "category_emoji": "🔵",
       "published": "2026-04-10T01:05:00+00:00",
       "snippet": "Samsung's flagship OLED TV got a refresh in 2026, but is it enough of an upgrade to skip over last year's S95F? For most people, probably not.",
-      "image": "",
-      "ai_summary": "A comparison of Samsung's S95H and S95F OLED TVs reveals that the 2026 refresh may not be compelling enough for most consumers to upgrade. The analysis highlights the subtle differences between the models.",
-      "why_it_matters": "Informs consumers about the value of upgrading to newer tech.",
+      "image": "https://www.zdnet.com/a/img/resize/18f86cd6762a63d4ef5d60d101475d7ceab7a119/2026/04/09/90ce7c4d-1181-4e40-a670-6ff260f94727/samsung-s95f-vs-s95h-tv.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "A comparison of Samsung's S95H and S95F OLED TVs reveals that the 2026 refresh may not offer enough upgrades to justify skipping last year's model. The analysis highlights consumer decision-making.",
+      "why_it_matters": "Guides consumers in making informed choices about high-end TV purchases.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "31m ago"
+      "published_display": "1h ago"
     },
     {
       "id": "b06b03c07812ff820693b558c15422c6",
@@ -27,9 +44,9 @@
       "category_emoji": "🔥",
       "published": "2026-04-10T00:28:32+00:00",
       "snippet": "Just in time to get buyers thinking as physical PC prices rise Microsoft has told its channel partners to get ready for a 20 percent price cut for Windows 365 cloud PCs, effective May 1st.…",
-      "image": "",
-      "ai_summary": "Microsoft has announced a 20% price cut for Windows 365 cloud PCs, effective May 1st, in response to rising physical PC prices. This move aims to attract buyers to cloud solutions.",
-      "why_it_matters": "Signals a shift towards more affordable cloud computing options.",
+      "image": "https://regmedia.co.uk/2022/10/18/shutterstock_cloud_pc.jpg",
+      "ai_summary": "Microsoft has announced a 20% price cut for Windows 365 cloud PCs, effective May 1st, as physical PC prices rise. This move aims to attract buyers in a shifting market.",
+      "why_it_matters": "Signals a strategic shift in pricing to remain competitive in the cloud PC market.",
       "tier": "quick",
       "cluster": null,
       "published_display": "1h ago"
@@ -45,10 +62,10 @@
       "published": "2026-04-10T00:19:53+00:00",
       "snippet": "The ChatGPT-maker testified in favor of an Illinois bill that would limit when AI labs can be held liable—even in cases where their products cause “critical harm.”",
       "image": "https://media.wired.com/photos/69d81fc99011397f817a1986/master/pass/OpenAI-Backs-Bill-That-Lets-AI-Labs-Dodge-Liability-for-Critical-Harms-Business-2244268254.jpg",
-      "ai_summary": "OpenAI has supported an Illinois bill that would limit liability for AI labs in cases of severe harm caused by their products. This legislation could impact how AI companies manage risk.",
-      "why_it_matters": "Sets a precedent for legal accountability in AI development.",
+      "ai_summary": "OpenAI supported an Illinois bill that limits liability for AI labs in cases of severe harm caused by their products. This could set a precedent for how AI companies are held accountable.",
+      "why_it_matters": "Influences future regulations on AI accountability and liability.",
       "tier": "headline",
-      "cluster": null,
+      "cluster": "openai-liability-bill",
       "published_display": "1h ago"
     },
     {
@@ -61,12 +78,12 @@
       "category_emoji": "🔵",
       "published": "2026-04-10T00:00:39+00:00",
       "snippet": "Get a jump on lawn care projects with this DeWalt string trimmer and leaf blower bundle - plus choose an extra tool or extra battery for free.",
-      "image": "",
-      "ai_summary": "Home Depot is offering a DeWalt bundle that includes a string trimmer and leaf blower, plus a free tool or battery. This promotion aims to attract customers for lawn care projects.",
-      "why_it_matters": "Boosts Home Depot's sales while promoting DeWalt products in a competitive market.",
+      "image": "https://www.zdnet.com/a/img/resize/2c779ffacfad0f0fbe0cab75dd0b75f51e78076f/2026/04/09/216e643b-9459-462f-bfb3-b0cebfbacb9d/dewalt-bundle.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "Home Depot is offering a promotion where customers can get a free power tool with the purchase of a DeWalt bundle, enhancing its lawn care product lineup.",
+      "why_it_matters": "Highlights consumer trends and marketing strategies in home improvement.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "1h ago"
+      "published_display": "2h ago"
     },
     {
       "id": "065d34a2378de5aed73bb3029b7598fc",
@@ -100,7 +117,7 @@
       "why_it_matters": "Raises ethical concerns about AI's role in advertising and consumer manipulation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "3h ago"
     },
     {
       "id": "0c72b0fb2fdbe65e40b2b914e6e04314",
@@ -134,7 +151,7 @@
       "why_it_matters": "Showcases innovation in Linux distributions that could enhance user experience.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "8db520026612176d64f679e5fd5a4a2b",
@@ -168,7 +185,7 @@
       "why_it_matters": "Indicates potential shifts in the tech landscape due to vendor reputation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "fe96d4bb9d426213819a534c53af5c25",
@@ -236,7 +253,7 @@
       "why_it_matters": "Demonstrates the impact of new AI features on app popularity and user engagement.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "9ba6972bcc67d1415f1308c63c036783",
@@ -253,7 +270,7 @@
       "why_it_matters": "Signals continued collaboration between major tech companies in the hardware space.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "9ed51b10742eff7f1d1e647314a97719",
@@ -270,7 +287,7 @@
       "why_it_matters": "Reflects OpenAI's strategy to monetize advanced AI capabilities for professional users.",
       "tier": "headline",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "3h ago"
     },
     {
       "id": "02c7cd3349c0648233d62d97c3f067ef",
@@ -287,7 +304,7 @@
       "why_it_matters": "Highlights the balance between innovation and security in AI development.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "d68637b21e80293cf28f7778a726eccf",
@@ -389,7 +406,7 @@
       "why_it_matters": "Demonstrates that smaller companies can challenge industry leaders in AI.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "d553b7f118e56d45284e75ef6f8d20cd",
@@ -406,7 +423,7 @@
       "why_it_matters": "Reveals trends in corporate compensation amidst economic pressures.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "118ece3ffff1ad84b7b228113d022d81",
@@ -423,7 +440,7 @@
       "why_it_matters": "Improves community management tools for developers on GitHub.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "a03d802ce00bdd7df15db52eef19ef99",
@@ -559,7 +576,7 @@
       "why_it_matters": "Empowers developers to integrate advanced AI features into their applications.",
       "tier": "deep_dive",
       "cluster": "amazon-bedrock-agentcore",
-      "published_display": "8h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "3606b7f6ceea94e95c0d882dc3a59740",
@@ -576,7 +593,7 @@
       "why_it_matters": "Strengthens security measures for iOS users.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "4a32f12c754249f95b70ddd610e61e21",
@@ -593,7 +610,7 @@
       "why_it_matters": "Improves content discovery through AI assistance.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "5637d2c9f1cb57fc2d0287700534f090",
@@ -610,7 +627,7 @@
       "why_it_matters": "Boosts Linux's appeal in the gaming community.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "1a51e775ee3e62578c067fdfc0c4a345",
@@ -644,7 +661,7 @@
       "why_it_matters": "Improves real-time communication technology crucial for various applications.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "9h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "26e73bbdb242aae075405ab5fff812d6",
@@ -661,7 +678,7 @@
       "why_it_matters": "Guides consumers in choosing the best Android tablets in a competitive market.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "10h ago"
+      "published_display": "11h ago"
     },
     {
       "id": "a5c59b92fec84941055e5c70fb242d7c",
@@ -678,7 +695,7 @@
       "why_it_matters": "Signals the impact of energy costs and regulations on AI infrastructure development.",
       "tier": "headline",
       "cluster": "openai-stargate-pause",
-      "published_display": "10h ago"
+      "published_display": "11h ago"
     },
     {
       "id": "567c60d81ba3cbd1cd07a3c88da7e975",
@@ -695,7 +712,7 @@
       "why_it_matters": "Enhances AI application capabilities, making them more interactive and responsive.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "10h ago"
+      "published_display": "11h ago"
     },
     {
       "id": "a31f3ca0a5cac9fb695ce5bc4aa91b42",
@@ -712,7 +729,7 @@
       "why_it_matters": "Expands the cloud gaming library, enhancing user access to diverse gaming experiences.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "12h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "cf483493d0046f77f113908d2f27898e",
@@ -729,7 +746,7 @@
       "why_it_matters": "Highlights critical security vulnerabilities in widely used AI systems.",
       "tier": "headline",
       "cluster": "apple-intelligence-vulnerability",
-      "published_display": "12h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "c6a84077383f0ed78d61974ec374d7ac",
@@ -746,7 +763,7 @@
       "why_it_matters": "Emphasizes the need for AI companies to develop viable profit strategies.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "11h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "66d79593a9fa7f426ee2cd727fd9c571",
@@ -1303,8 +1320,8 @@
       "published": "2026-04-08T17:00:00+00:00",
       "snippet": "Amid rapid enterprise growth, Anthropic is trying to lower the barrier to entry for businesses to build AI agents with Claude.",
       "image": "https://media.wired.com/photos/69d55aad5eeab2b48af87714/master/pass/Business_AnthropicLaunchesClaudeManagedAgents.jpg",
-      "ai_summary": "Anthropic is launching a new product aimed at simplifying the process for businesses to build AI agents using its Claude model, catering to rapid enterprise growth.",
-      "why_it_matters": "Facilitates broader adoption of AI technologies in business, driving innovation and efficiency.",
+      "ai_summary": "Anthropic is launching a new product aimed at simplifying the process of building AI agents with its Claude model, targeting enterprise growth. This could lower barriers for businesses entering the AI space.",
+      "why_it_matters": "Facilitates easier access to AI development, potentially accelerating innovation in various industries.",
       "tier": "headline",
       "cluster": null,
       "published_display": "Apr 08, 17:00"
@@ -1376,6 +1393,23 @@
       "tier": "quick",
       "cluster": null,
       "published_display": "Apr 08, 16:13"
+    },
+    {
+      "id": "4596dcebd180843daf183ee8e747408c",
+      "title": "Cloud Cost Optimization: How to maximize ROI from AI, manage costs, and unlock real business value",
+      "url": "https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-how-to-maximize-roi-from-ai-manage-costs-and-unlock-real-business-value/",
+      "source": "Azure Blog",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-04-08T16:00:00+00:00",
+      "snippet": "Get practical strategies and best practices to help you plan, design, and manage AI investments for sustainable value and efficiency.\nThe post Cloud Cost Optimization: How to maximize ROI from AI, manage costs, and unlock real business value appeared first on Microsoft Azure Blog.",
+      "image": "https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/04/Maximizing-ROI-manage-cost-1.jpg",
+      "ai_summary": "Microsoft Azure provides strategies for cloud cost optimization, focusing on maximizing ROI from AI investments while managing costs effectively. This guidance aims to unlock sustainable business value.",
+      "why_it_matters": "Helps organizations leverage AI investments for better financial outcomes.",
+      "tier": "deep_dive",
+      "cluster": null,
+      "published_display": "Apr 08, 16:00"
     },
     {
       "id": "83b5d85cfeb7f3fd88157101954525c5",
@@ -9997,6 +10031,6 @@
       "published_display": "Apr 01, 02:30"
     }
   ],
-  "generated_at": "2026-04-10T01:36:08.779770+00:00",
+  "generated_at": "2026-04-10T02:10:36.687548+00:00",
   "period": "April 2026"
 }
