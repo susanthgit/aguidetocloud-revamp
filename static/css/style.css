@@ -720,8 +720,6 @@ a:hover {
 }
 .site-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .site-btt:hover { background: #99ffff; box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5); }
-/* Hide site-wide button on roadmap page (has its own gold one) */
-.rdmap-container ~ .site-btt { display: none; }
 
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
