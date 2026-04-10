@@ -1301,16 +1301,6 @@ a:hover {
 .ainews-tier-header span {
   font-size: 1.2rem;
 }
-.ainews-tier-desc {
-  width: 100%;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
-  color: #fff;
-  opacity: 0.85;
-  margin-top: 0.2rem;
-}
 .ainews-tier-headlines {
   background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.04));
   border: 1px solid rgba(255, 0, 255, 0.3);
@@ -1824,36 +1814,6 @@ a:hover {
   50% { opacity: 0.6; }
 }
 
-/* ── AI NEWS: SHARE BUTTON ──────────────── */
-.ainews-share-btn {
-  background: rgba(102, 255, 255, 0.08);
-  border: 1px solid var(--neon-cyan, #66ffff);
-  color: var(--neon-cyan, #66ffff);
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-left: 0.5rem;
-}
-.ainews-share-btn:hover {
-  background: rgba(102, 255, 255, 0.18);
-  box-shadow: 0 0 8px rgba(102, 255, 255, 0.2);
-}
-.ainews-theme-toggle {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
-  font-size: 1.1rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 0.3rem;
-  transition: all 0.3s;
-}
-.ainews-theme-toggle:hover {
-  background: rgba(255,255,255,0.08);
-}
-
 /* ── BLOG SECTION ───────────────────────── */
 .blog-tl-header {
   display: flex;
@@ -2130,6 +2090,14 @@ pre.mermaid {
   }
   .ainews-quick-list {
     grid-template-columns: 1fr;
+  }
+
+  /* Hide summaries on deep dive cards (mobile) — titles are enough */
+  .ainews-deepdive-grid .ainews-summary {
+    display: none;
+  }
+  .ainews-deepdive-grid .ainews-why {
+    display: none;
   }
 }
 

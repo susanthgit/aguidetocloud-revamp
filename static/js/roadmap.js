@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
   var DATA_URL = '/data/roadmap/latest.json';
-  var CACHE_VERSION = 'v6';
+  var CACHE_VERSION = 'v7';
   var PAGE_SIZE = 50;
   var _cache = null;
 
@@ -45,19 +45,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       var data = await fetchData();
       if (!Array.isArray(data.items)) data.items = [];
       currentData = data;
-      renderHero(data); populateProductFilter(data.product_categories || []);
+      populateProductFilter(data.product_categories || []);
       renderChips(data); render(); renderFreshness(data.generated_at); renderBrowse();
     } catch (e) {
       document.getElementById('rdmap-content').innerHTML = '<p class="rdmap-empty">Roadmap data not available yet. Check back tomorrow!</p>';
-    }
-  }
-
-  // ── HERO ──
-  function renderHero(data) {
-    var sub = document.getElementById('rdmap-hero-sub');
-    if (sub && data.items.length) {
-      var cats = new Set(); data.items.forEach(function (i) { cats.add(i.product_category); });
-      sub.textContent = 'Tracking ' + data.items.length.toLocaleString() + ' features across ' + cats.size + ' products';
     }
   }
 
