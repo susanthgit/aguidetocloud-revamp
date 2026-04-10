@@ -1,6 +1,74 @@
 {
   "articles": [
     {
+      "id": "024f3cc6cc1b6b394ccacc5352569a14",
+      "title": "Samsung S95H vs. Samsung S95F: I compared the OLED TVs and wasn't prepared for the upset",
+      "url": "https://www.zdnet.com/article/samsung-s95h-vs-samsung-s95f/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-10T01:05:00+00:00",
+      "snippet": "Samsung's flagship OLED TV got a refresh in 2026, but is it enough of an upgrade to skip over last year's S95F? For most people, probably not.",
+      "image": "",
+      "ai_summary": "A comparison of Samsung's S95H and S95F OLED TVs reveals that the 2026 refresh may not be compelling enough for most consumers to upgrade. The analysis highlights the subtle differences between the models.",
+      "why_it_matters": "Informs consumers about the value of upgrading to newer tech.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "31m ago"
+    },
+    {
+      "id": "b06b03c07812ff820693b558c15422c6",
+      "title": "Microsoft cuts cloudy desktop prices by 20 percent, warns they’ll wake up slowly",
+      "url": "https://go.theregister.com/feed/www.theregister.com/2026/04/10/microsoft_cuts_cloudy_desktop_prices/",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-04-10T00:28:32+00:00",
+      "snippet": "Just in time to get buyers thinking as physical PC prices rise Microsoft has told its channel partners to get ready for a 20 percent price cut for Windows 365 cloud PCs, effective May 1st.…",
+      "image": "",
+      "ai_summary": "Microsoft has announced a 20% price cut for Windows 365 cloud PCs, effective May 1st, in response to rising physical PC prices. This move aims to attract buyers to cloud solutions.",
+      "why_it_matters": "Signals a shift towards more affordable cloud computing options.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "1h ago"
+    },
+    {
+      "id": "d100098e6bde855bfeefd32ec0eb6a77",
+      "title": "OpenAI Backs Bill That Would Limit Liability for AI-Enabled Mass Deaths or Financial Disasters",
+      "url": "https://www.wired.com/story/openai-backs-bill-exempt-ai-firms-model-harm-lawsuits/",
+      "source": "Wired AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-04-10T00:19:53+00:00",
+      "snippet": "The ChatGPT-maker testified in favor of an Illinois bill that would limit when AI labs can be held liable—even in cases where their products cause “critical harm.”",
+      "image": "https://media.wired.com/photos/69d81fc99011397f817a1986/master/pass/OpenAI-Backs-Bill-That-Lets-AI-Labs-Dodge-Liability-for-Critical-Harms-Business-2244268254.jpg",
+      "ai_summary": "OpenAI has supported an Illinois bill that would limit liability for AI labs in cases of severe harm caused by their products. This legislation could impact how AI companies manage risk.",
+      "why_it_matters": "Sets a precedent for legal accountability in AI development.",
+      "tier": "headline",
+      "cluster": null,
+      "published_display": "1h ago"
+    },
+    {
+      "id": "caee0d18b07ea8ae57d8d08980a0bf47",
+      "title": "Home Depot's new DeWalt deal comes with a free power tool - how to redeem the offer",
+      "url": "https://www.zdnet.com/article/dewalt-power-tool-bundle-deal-home-depot-spring-black-friday-2026/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-10T00:00:39+00:00",
+      "snippet": "Get a jump on lawn care projects with this DeWalt string trimmer and leaf blower bundle - plus choose an extra tool or extra battery for free.",
+      "image": "",
+      "ai_summary": "Home Depot is offering a DeWalt bundle that includes a string trimmer and leaf blower, plus a free tool or battery. This promotion aims to attract customers for lawn care projects.",
+      "why_it_matters": "Boosts Home Depot's sales while promoting DeWalt products in a competitive market.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "1h ago"
+    },
+    {
       "id": "065d34a2378de5aed73bb3029b7598fc",
       "title": "Company",
       "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
@@ -15,7 +83,7 @@
       "why_it_matters": "Strengthens governance frameworks for AI, crucial for safe deployment.",
       "tier": "headline",
       "cluster": null,
-      "published_display": "1m ago"
+      "published_display": "2h ago"
     },
     {
       "id": "ca9ca1fdda2e4223601f0904ae691a53",
@@ -32,7 +100,7 @@
       "why_it_matters": "Raises ethical concerns about AI's role in advertising and consumer manipulation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "31m ago"
+      "published_display": "2h ago"
     },
     {
       "id": "0c72b0fb2fdbe65e40b2b914e6e04314",
@@ -49,7 +117,7 @@
       "why_it_matters": "Makes advanced AI tools more accessible to a broader audience.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "4h ago"
     },
     {
       "id": "12977d198a558ca305de7cc757661e7d",
@@ -66,7 +134,7 @@
       "why_it_matters": "Showcases innovation in Linux distributions that could enhance user experience.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "4h ago"
     },
     {
       "id": "8db520026612176d64f679e5fd5a4a2b",
@@ -83,7 +151,7 @@
       "why_it_matters": "Raises serious legal and ethical questions about AI's role in violent incidents.",
       "tier": "headline",
       "cluster": "openai-investigation",
-      "published_display": "3h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "6f8df54120ec8f75b0201abbbbea145c",
@@ -100,7 +168,7 @@
       "why_it_matters": "Indicates potential shifts in the tech landscape due to vendor reputation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "3h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "fe96d4bb9d426213819a534c53af5c25",
@@ -117,7 +185,7 @@
       "why_it_matters": "Highlights the severe repercussions of cybersecurity incidents for startups.",
       "tier": "headline",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "9e9bba7ec0827991722f911619e597d2",
@@ -134,7 +202,7 @@
       "why_it_matters": "Enhances security management by integrating AI assistance into risk assessments.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "60e7e2a80632a45dd5e5c267086d365d",
@@ -151,7 +219,7 @@
       "why_it_matters": "Promotes the growing trend of AI-driven automation in business processes.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "5480621222a6cb5d97404be514abf4b1",
@@ -168,7 +236,7 @@
       "why_it_matters": "Demonstrates the impact of new AI features on app popularity and user engagement.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "9ba6972bcc67d1415f1308c63c036783",
@@ -185,7 +253,7 @@
       "why_it_matters": "Signals continued collaboration between major tech companies in the hardware space.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "9ed51b10742eff7f1d1e647314a97719",
@@ -202,7 +270,7 @@
       "why_it_matters": "Reflects OpenAI's strategy to monetize advanced AI capabilities for professional users.",
       "tier": "headline",
       "cluster": null,
-      "published_display": "39m ago"
+      "published_display": "2h ago"
     },
     {
       "id": "02c7cd3349c0648233d62d97c3f067ef",
@@ -219,7 +287,7 @@
       "why_it_matters": "Highlights the balance between innovation and security in AI development.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "d68637b21e80293cf28f7778a726eccf",
@@ -236,7 +304,7 @@
       "why_it_matters": "Strengthens AI infrastructure capabilities crucial for tech advancements.",
       "tier": "headline",
       "cluster": "google-intel-partnership",
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "f2e183fa1ef034018053afe70896e112",
@@ -253,7 +321,7 @@
       "why_it_matters": "Promotes consumer engagement in the home improvement market.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "af1b45410c9c9538b614ed715ca6a16b",
@@ -270,7 +338,7 @@
       "why_it_matters": "Highlights the importance of security in the rapidly evolving cryptocurrency landscape.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "8a8f55c54dd34c8c2d4512feb60207ed",
@@ -287,7 +355,7 @@
       "why_it_matters": "Signals increasing regulatory focus on AI firms and their societal implications.",
       "tier": "headline",
       "cluster": "florida-openai-investigation",
-      "published_display": "1h ago"
+      "published_display": "3h ago"
     },
     {
       "id": "b41b723365bf3c3e8851ab253357fc5e",
@@ -304,7 +372,7 @@
       "why_it_matters": "Informs consumers about the best options in premium TV technology.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "cfaeb689c1eedb24b1d46d76afd7577b",
@@ -321,7 +389,7 @@
       "why_it_matters": "Demonstrates that smaller companies can challenge industry leaders in AI.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "d553b7f118e56d45284e75ef6f8d20cd",
@@ -338,7 +406,7 @@
       "why_it_matters": "Reveals trends in corporate compensation amidst economic pressures.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "118ece3ffff1ad84b7b228113d022d81",
@@ -355,7 +423,7 @@
       "why_it_matters": "Improves community management tools for developers on GitHub.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "a03d802ce00bdd7df15db52eef19ef99",
@@ -372,7 +440,7 @@
       "why_it_matters": "Provides essential insights for maintaining operational AI applications.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "a28951e3d6f42d425025335dceb91cb8",
@@ -389,7 +457,7 @@
       "why_it_matters": "Enhances operational transparency for businesses using AI automation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "e18b7fd053dec1bfadc268dc8ac2f0ce",
@@ -406,7 +474,7 @@
       "why_it_matters": "Enhances enterprise AI capabilities by simplifying agent management.",
       "tier": "headline",
       "cluster": "aws-agent-registry",
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "767a55c9360877c540bb478564bfbfc2",
@@ -423,7 +491,7 @@
       "why_it_matters": "Improves usability for developers managing notifications.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "d19d958f248ded1212495cc3d76d516b",
@@ -440,7 +508,7 @@
       "why_it_matters": "Revolutionizes how users interact with technology by simplifying agent creation.",
       "tier": "deep_dive",
       "cluster": "sierra-ghostwriter-launch",
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "c6756606ae3f3579dedad6622e3c993a",
@@ -457,7 +525,7 @@
       "why_it_matters": "Offers a cost-effective solution for avid readers.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "5aaa6e1513a3c05c670d47949b727c2c",
@@ -474,7 +542,7 @@
       "why_it_matters": "Facilitates better collaboration and recognition among contributors.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "fae3258fdcd85cedf70d3bb2df2aff84",
@@ -491,7 +559,7 @@
       "why_it_matters": "Empowers developers to integrate advanced AI features into their applications.",
       "tier": "deep_dive",
       "cluster": "amazon-bedrock-agentcore",
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "3606b7f6ceea94e95c0d882dc3a59740",
@@ -508,7 +576,7 @@
       "why_it_matters": "Strengthens security measures for iOS users.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "4a32f12c754249f95b70ddd610e61e21",
@@ -525,7 +593,7 @@
       "why_it_matters": "Improves content discovery through AI assistance.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "5637d2c9f1cb57fc2d0287700534f090",
@@ -542,7 +610,7 @@
       "why_it_matters": "Boosts Linux's appeal in the gaming community.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "6h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "1a51e775ee3e62578c067fdfc0c4a345",
@@ -559,7 +627,7 @@
       "why_it_matters": "Streamlines project management for developers on GitHub.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "85c41d1a880ecc6b458a2ca3faef1e65",
@@ -576,7 +644,7 @@
       "why_it_matters": "Improves real-time communication technology crucial for various applications.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "26e73bbdb242aae075405ab5fff812d6",
@@ -593,7 +661,7 @@
       "why_it_matters": "Guides consumers in choosing the best Android tablets in a competitive market.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "a5c59b92fec84941055e5c70fb242d7c",
@@ -610,7 +678,7 @@
       "why_it_matters": "Signals the impact of energy costs and regulations on AI infrastructure development.",
       "tier": "headline",
       "cluster": "openai-stargate-pause",
-      "published_display": "8h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "567c60d81ba3cbd1cd07a3c88da7e975",
@@ -627,7 +695,7 @@
       "why_it_matters": "Enhances AI application capabilities, making them more interactive and responsive.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "a31f3ca0a5cac9fb695ce5bc4aa91b42",
@@ -644,7 +712,7 @@
       "why_it_matters": "Expands the cloud gaming library, enhancing user access to diverse gaming experiences.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "10h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "cf483493d0046f77f113908d2f27898e",
@@ -661,7 +729,7 @@
       "why_it_matters": "Highlights critical security vulnerabilities in widely used AI systems.",
       "tier": "headline",
       "cluster": "apple-intelligence-vulnerability",
-      "published_display": "10h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "c6a84077383f0ed78d61974ec374d7ac",
@@ -678,7 +746,7 @@
       "why_it_matters": "Emphasizes the need for AI companies to develop viable profit strategies.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "9h ago"
+      "published_display": "11h ago"
     },
     {
       "id": "66d79593a9fa7f426ee2cd727fd9c571",
@@ -695,7 +763,7 @@
       "why_it_matters": "Informs users about service reliability issues that could affect their projects.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "21h ago"
+      "published_display": "23h ago"
     },
     {
       "id": "f3c61e11e151a9c23bef93cdc89e1c52",
@@ -712,7 +780,7 @@
       "why_it_matters": "Demonstrates how businesses can effectively integrate AI to boost productivity.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 09, 00:00"
     },
     {
       "id": "2145d8d1d733505dc1c4035e51fed6d1",
@@ -729,7 +797,7 @@
       "why_it_matters": "Enhances understanding of phonetic embeddings, crucial for improving speech recognition technologies.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 09, 00:00"
     },
     {
       "id": "5c1eb558ec7821dbfe2945506b838f79",
@@ -746,7 +814,7 @@
       "why_it_matters": "Addresses challenges in AI language generation, impacting the reliability of AI in real-world applications.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 09, 00:00"
     },
     {
       "id": "5d5ce16e20806236559be39896fecbad",
@@ -763,7 +831,7 @@
       "why_it_matters": "Improves accessibility of high-quality interactive experiences, crucial for gaming and virtual reality industries.",
       "tier": "headline",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 09, 00:00"
     },
     {
       "id": "0acbd71d09b620e8aae5e79602185914",
@@ -780,7 +848,7 @@
       "why_it_matters": "Advances AI's ability to process and understand diverse data types, crucial for developing smarter applications.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 09, 00:00"
     },
     {
       "id": "edde6ff239e064bf6889e89889b88c1e",
@@ -1223,6 +1291,23 @@
       "tier": "quick",
       "cluster": null,
       "published_display": "Apr 08, 17:55"
+    },
+    {
+      "id": "0d018231810a077c91c1a6dd349d8b3f",
+      "title": "Anthropic’s New Product Aims to Handle the Hard Part of Building AI Agents",
+      "url": "https://www.wired.com/story/anthropic-launches-claude-managed-agents/",
+      "source": "Wired AI",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-04-08T17:00:00+00:00",
+      "snippet": "Amid rapid enterprise growth, Anthropic is trying to lower the barrier to entry for businesses to build AI agents with Claude.",
+      "image": "https://media.wired.com/photos/69d55aad5eeab2b48af87714/master/pass/Business_AnthropicLaunchesClaudeManagedAgents.jpg",
+      "ai_summary": "Anthropic is launching a new product aimed at simplifying the process for businesses to build AI agents using its Claude model, catering to rapid enterprise growth.",
+      "why_it_matters": "Facilitates broader adoption of AI technologies in business, driving innovation and efficiency.",
+      "tier": "headline",
+      "cluster": null,
+      "published_display": "Apr 08, 17:00"
     },
     {
       "id": "4c625871be8f8dc52ae672e5f6aad7c0",
@@ -9912,6 +9997,6 @@
       "published_display": "Apr 01, 02:30"
     }
   ],
-  "generated_at": "2026-04-09T23:37:02.306225+00:00",
+  "generated_at": "2026-04-10T01:36:08.779770+00:00",
   "period": "April 2026"
 }
