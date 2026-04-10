@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M365 Roadmap Tracker — A Guide to Cloud &amp; AI</title>
+    <link>https://www.aguidetocloud.com/m365-roadmap/</link>
+    <description>Daily Microsoft 365 roadmap updates — new features, status changes, and AI summaries</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Apr 2026 05:54:05 +0000</lastBuildDate>
+    <atom:link href="https://www.aguidetocloud.com/data/roadmap/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Microsoft Purview: File Creation/Modification conditions in DLP for Sharepoint/OneDrive and AutoLabelling</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557590</link>
+      <description>File Creation and File Modification conditions in Microsoft Purview DLP for SharePoint and OneDrive and AutoLabelling will give organizations more precise control over DLP policy definition. These conditions allow admins to configure policies based on when the files were created or last modified, en (GA: April CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">557590</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Edit with the model of your choice in PowerPoint</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558443</link>
+      <description>When create or edit a presentation with Copilot in PowerPoint, you can now select which model to use, including both Open AI and Anthropic models. Available to Microsoft 365 Copilot–licensed users. (GA: April CY2026) — PowerPoint, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">558443</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention- Security Store now available within Purview DLP to browse, purchase, and enable partner integrations</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557977</link>
+      <description>Microsoft Security Store is now integrated into the Microsoft Purview DLP experience, giving admins an in‑product way to discover a curated set of integrations that extend Purview capabilities, including data security capabilities for the network. Purchasing and management are completed through Secu (GA: March CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">557977</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Admin setting for simpler meeting passcodes (numeric‑only)</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=555858</link>
+      <description>Tenant admins can enable a meeting policy setting that generates 8 digit numeric-only passcodes for meetings organized by selected users/groups. Because numeric-only passcodes increase the risk of unauthorized access, enabling the setting displays a warning and requires explicit confirmation. (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">555858</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Attendee capacity packs for Teams events</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558856</link>
+      <description>Attendee capacity packs provide increased capacity limits for Teams events. Organizers can scale event attendance beyond base limits while maintaining a consistent Teams events experience.  (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">558856</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Video recap in Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558540</link>
+      <description>Intelligent meeting recap will now include video-based recaps. Video recap creates narrated video highlights from recorded meetings, featuring key takeaways and short clips that showcase important moments. (GA: April CY2026) — Microsoft Teams, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">558540</guid>
+    </item>
+    <item>
+      <title>Outlook: Copilot Chat available in shared and delegate mailboxes </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=554936</link>
+      <description>Shared mailbox users and delegates with Read and manage (full access), and/or mail folder-level permission will now be able to access Copilot Chat directly from their shared and delegate mailboxes in new Outlook. (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">554936</guid>
+    </item>
+    <item>
+      <title>Outlook: Print calendar events in new Outlook and Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=551199</link>
+      <description>Users will now have basic options for printing calendar events in the #newoutlookforwindows and Teams calendar, including choosing whether to show or hide the attendee list on the printout. (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">551199</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Spoken language detection is now automatic</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558543</link>
+      <description>Spoken language detection is now fully automatic. Teams will automatically detect each speaker’s spoken language and update it in real time as the conversation evolves. Manual spoken language selection will no longer be available. This applies to both live captions and transcripts when Interpreter i (GA: April CY2026) — Microsoft Teams, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">558543</guid>
+    </item>
+    <item>
+      <title>Outlook: Delimiter setting admin policy</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557676</link>
+      <description>Admins will be able to define a tenant‑wide default value for the Mail Compose and Reply setting that controls whether commas are used to separate recipients. (GA: April CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">557676</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention- Additional Diagnostics for Data Loss Prevention and Information Protection</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=547833</link>
+      <description>The below diagnostics will help users understand which sensitive information exist in their document and what labels applied and what policies have been triggered: DLP SharePoint Diagnostics DLP EXO Diagnostics Auto labeling diagnostics for SPO/ODB
+ (GA: February CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">547833</guid>
+    </item>
+    <item>
+      <title>Outlook: Draft emails using saved email snippets with Quick Parts for Outlook for Windows and web</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=532733</link>
+      <description>Drafting emails is faster and easier with Quick Parts, now available for Outlook for Windows and web. Quick Parts are saved email snippets that can be reused when composing new messages, making it easy to assemble messages with reusable parts. #newoutlookforwindows (GA: February CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">532733</guid>
+    </item>
+    <item>
+      <title>Outlook: Insert Graphic</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=495467</link>
+      <description>When composing a message in the new Outlook for Windows and Outlook on the web, there will be a new Graphics button under the Insert ribbon tab. This opens a panel that will allow users to search and pick from a large selection of emoji, stock photos, and stickers, which are inserted into the messag (GA: April CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">495467</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Meeting Notes now available for instant meetings</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=541831</link>
+      <description>Teams meeting Notes, powered by Loop, are now available for instant meetings that started via ‘Meet now’ from the calendar. Notes are Loop components in Teams meetings and chats that allow end users to co-create and collaborate on their meeting agenda, notes, and action items that can be co-authored (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">541831</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Context preservation in Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557184</link>
+      <description>When you return to a conversation within a short duration of time, your selected tab, opened side panel, and layout are restored automatically, so you can keep working without resetting your workspace. In addition, returning to a Quick View within a short duration will restore your previously select (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">557184</guid>
+    </item>
+    <item>
+      <title>Planner: Planner Agent in group-based basic plans</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=511820</link>
+      <description>Planner Agent will now be available for M365 Copilot licensed users in all group-based Planner plans, including basic plans. (GA: March CY2026) — Planner, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Admin &amp; Platform</category>
+      <guid isPermaLink="false">511820</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Teams Phone user multi-line</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557716</link>
+      <description>Teams Phone user multi‑line gives callers more flexibility and control by allowing administrators to assign up to 10 phone numbers to a single user. With full support across Teams desktop, Teams mobile, and Teams devices, users can seamlessly make and receive calls from multiple numbers without swit (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">557716</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Experts &amp; verified answers in communities in Engage and Teams for iOS &amp; Android</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=537270</link>
+      <description>In the Engage app for Android and Engage app in Teams for iOS and Android, we are introducing the Community Expert. Experts will be able to endorse accurate and credible answers and be recognized as community experts with a special label next to their name.  As well, experts &amp;amp; community admins will  (GA: April CY2026) — Microsoft Teams, Microsoft Viva</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">537270</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Endpoint Data Loss Prevention-Endpoint DLP Device Status API</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542792</link>
+      <description>Provides access to the same device health details currently available through the export function on the device onboarding page. ​With the new device status API, customers can pull device-level information directly into their own BI tools, dashboards, and workflows, eliminating manual exports and ma (GA: March CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">542792</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Engage community membership management in Teams for iOS &amp; Android</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=532722</link>
+      <description>Community admins will be able to add and remove members from their communities. (GA: April CY2026) — Microsoft Teams, Microsoft Viva</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">532722</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Consult and merge a PSTN caller through DTMF</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=518218</link>
+      <description>Users have always been able to dial a phone number and add someone to a meeting. Now, meeting organizers can seamlessly consult and merge PSTN callers to active Teams meetings even if they are behind auto-attendants that require Dual-Tone Multi-Frequency, or DTMF, navigation. For example, you can co (GA: April CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">518218</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Unread News Notifications in Connections</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=498323</link>
+      <description>After further review, this has been delayed to a later date. We apologize for any inconvenience. Users will receive a weekly notification in the Connections apps in Microsoft Teams on mobile and desktop linking them to relevant SharePoint news that they might have missed in the preceding week. This  (GA: March CY2026) — Microsoft Viva</description>
+      <category>Rolling out</category>
+      <category>Viva</category>
+      <guid isPermaLink="false">498323</guid>
+    </item>
+    <item>
+      <title>Microsoft SharePoint: New web part for FAQs</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=482198</link>
+      <description>After further review, we mistakenly marked the roadmap as "launched." The correct status is In Development. We apologize the inconvenience. SharePoint FAQ web part help assist content owners keep their content fresh and relevant. Powered by Microsoft 365 Copilot, this new web part can help content o (GA: April CY2026) — Microsoft Copilot (Microsoft 365), SharePoint</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">482198</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Apply sensitivity labels with user-defined permissions in Office for the web in Microsoft 365</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=468888</link>
+      <description>Office for the web in Microsoft 365 supports the application of sensitivity labels with user-defined permissions. (GA: April CY2026) — Excel, Microsoft Purview, PowerPoint, Word</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">468888</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention – File Testing Against Sensitive Information Classifiers</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557554</link>
+      <description>A new feature will be introduced on the main Classification page, allowing users to test files against all available classifiers to identify the presence of sensitive information. Users will have the option to select a single classifier or run tests across all classifiers. This capability is designe (GA: March CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">557554</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Copilot can edit your document in PowerPoint</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=548646</link>
+      <description>Copilot in PowerPoint lets you create, edit, and refine presentations through natural conversation, directly in your presentation. You can start a new presentation or build on an existing one, asking Copilot to generate slides, update content, improve layouts, and polish design—while preserving form (GA: February CY2026) — PowerPoint, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">548646</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: Data Loss Prevention for Microsoft 365 Copilot to safeguard prompts </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=515945</link>
+      <description>We are expanding Microsoft Purview Data Loss Prevention for Microsoft 365 Copilot to safeguard prompts containing sensitive data. This real-time control helps organizations mitigate data leakage and oversharing risks by preventing Microsoft 365 Copilot, including pre-built agents in Microsoft 365 Co (GA: March CY2026) — Microsoft Purview, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">515945</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Employee Self-Service Agent in M365 Copilot</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=487836</link>
+      <description>The Employee Self-Service Agent in M365 Copilot expedites answers for the most common workplace policy-related questions and takes action on key HR and IT related tasks, connecting employees to authorized knowledge bases and HR/IT systems of record for faster resolution time and a streamlined employ (GA: November CY2025) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">487836</guid>
+    </item>
+    <item>
+      <title>Exchange: High Volume Email for Microsoft 365</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=382633</link>
+      <description>High Volume Email is a new service for line of business applications and other high-volume SMTP scenarios that enables you to send internal messages beyond the current limits of Exchange Online. (GA: March CY2026) — Exchange</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">382633</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Simplified Teams app bar to create a cleaner and more focused experience.</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557169</link>
+      <description>We’ve simplified the app bar to help you focus on what matters. Apps are easier to scan in a cleaner View more apps list, the overflow menu is less cluttered, and you can choose to show or hide the app bar to create more space for your work. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">557169</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Researcher Agent for GCC</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=554928</link>
+      <description>Researcher will be available for Microsoft 365 business and enterprise users with a Microsoft 365 Copilot add-on license. Researcher is an advanced deep reasoning agent in Microsoft 365 Copilot designed to tackle complex, multi-step tasks by acting as a deep research assistant. (GA: March CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">554928</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Feature conversations to all network members</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=558438</link>
+      <description>The featured conversation feature in public Viva Engage communities will include the option to feature a conversation to all network members or only to community members. (GA: April CY2026) — Microsoft Viva</description>
+      <category>Rolling out</category>
+      <category>Viva</category>
+      <guid isPermaLink="false">558438</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Channel Agent Updates</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557555</link>
+      <description>Updates include dynamic, channel‑aware welcome messages, greater flexibility in channel creation (with or without an agent), expanded agent permissions for member management, scheduling enhancements, and overall quality improvements. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">557555</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Teams shared display mode and peripheral detection available for GCC-H and DoD environments</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=553592</link>
+      <description>Shared display mode in Teams is now available in government CCC-H and DoD environments, enabling more seamless and private meeting hosting from your PC. Additionally, peripheral detection for bring-your-own-device spaces is available for inventory management and reporting through the Teams Rooms Pro (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">553592</guid>
+    </item>
+    <item>
+      <title>Microsoft 365: Drawn electronic signatures with eSignature for Microsoft 365</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=548670</link>
+      <description>Signers will be able to add their electronic signature to PDFs using a stylus, touch, or mouse, in addition to the existing typed signature option. (GA: March CY2026) — Microsoft 365, SharePoint, Word</description>
+      <category>Rolling out</category>
+      <category>Admin &amp; Platform</category>
+      <guid isPermaLink="false">548670</guid>
+    </item>
+    <item>
+      <title>SharePoint: Admin policy for expiring "People in your organization" links</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=553220</link>
+      <description>Administrators can now set organization-wide policies to automatically expire "People in your organization" sharing links after a specified period. This helps organizations maintain tighter control over internal content sharing by ensuring links don't remain active indefinitely. Configure expiration (GA: March CY2026) — OneDrive, SharePoint</description>
+      <category>Rolling out</category>
+      <category>SharePoint &amp; OneDrive</category>
+      <guid isPermaLink="false">553220</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Copilot Analytics: Copilot adoption PBI version update including Power user insights.</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557674</link>
+      <description>The updated Copilot adoption Power BI report will come with a streamlined UX and new Power user insights.  (GA: March CY2026) — Microsoft Viva, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Viva</category>
+      <guid isPermaLink="false">557674</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Report a Suspicious Call in Microsoft Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=536573</link>
+      <description>Microsoft Teams now includes a capability that lets users flag calls they believe are unusual or suspicious. When a call is reported, the signal helps Microsoft strengthen security measures and reduce future unwanted or malicious call activity. This feature empowers users to actively contribute to r (GA: March CY2026) — Microsoft Teams, Microsoft Defender for Office 365</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">536573</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Activity in other accounts and organizations</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=534490</link>
+      <description>Users can view and respond to activity across multiple tenants without switching accounts. You can triage notifications, reply to chats, and pin tenants to the left rail for quick access.
+
+ (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">534490</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview: eDiscovery - Add Sample to Review Set</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=516578</link>
+      <description>This feature allows users to add only a sampled subset of search results to a review set, rather than adding the entire query output. Users can configure sampling parameters—such as confidence level and sample size—to ensure the subset meets their review objectives while reducing unnecessary data in (GA: March CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">516578</guid>
+    </item>
+    <item>
+      <title>Outlook: Improved results when filtering your message list</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557349</link>
+      <description>When you apply a filter in the message list, Outlook for iOS now helps you search for all matching messages—even older ones that aren’t currently synced. If more results may be available, you can tap to run a search with the filter already applied.  (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">557349</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Voice tethering</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=553223</link>
+      <description>The voice tethering feature builds on the recent introduction of Sign Language Mode. It ensures that when an interpreter voices for a D/HH signer, captions and transcripts attribute the spoken content to the signer rather than the interpreter. This provides accurate representation in meetings and ma (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">553223</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Say "Hey Copilot" to activate voice conversations with the Microsoft 365 Copilot app on Windows</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=497848</link>
+      <description>With the Microsoft 365 Copilot app on Windows, say “Hey Copilot” to activate real-time voice conversations with Copilot. The wake word keeps you in flow, helping you draft content, analyze data, and get critical insights without having to navigate to a separate app or window. Built for enterprise, i (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">497848</guid>
+    </item>
+    <item>
+      <title>Exchange: Exchange Online Moderation approval requests via Actionable Messages</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=492743</link>
+      <description>The Exchange Online Moderation feature gives message moderators the ability to Approve or Reject sending a moderated message to its intended recipients via a special email message form that includes Approve and Reject buttons in the Outlook Desktop or Outlook on the web toolbar. However, the ability (GA: March CY2026) — Exchange</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">492743</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Image viewer improvements enable scrolling and jumping to original message</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=554924</link>
+      <description>Lightbox enhancements let users scroll through all previously shared images in a conversation, provide a clearer visual focus on the image being viewed, and add a header option that jumps directly to the original message where the image was posted. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">554924</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Voice and Face Enrollment Dashboard for Admins</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=506750</link>
+      <description>Admins now have visibility and insight for voice and facial profile enrollments through a dashboard in the Teams Admin Center (TAC). Voice and face profiles are critical for supporting AI-enhanced meeting experiences for users across the organization. The dashboard provides metrics on enrollments ov (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">506750</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Copilot Dashboard - Broader access to M365 Copilot Chat insights</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=501581</link>
+      <description>Microsoft Viva is expanding access to M365 Copilot Chat Insights in Microsoft Copilot Dashboard by enabling tenants with 1-49 M365 Copilot licenses- allowing more tenants, including those with fewer licenses, to track adoption trends. Insights will include usage over time, group level adoption, rete (GA: March CY2026) — Microsoft Viva, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Viva</category>
+      <guid isPermaLink="false">501581</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Simplifying Content in the Input Box</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=552592</link>
+      <description>When users insert content in a prompt using 'Add Work Content' under the Plus menu, the content will only appear as a pill in the Input Box UI and will not be repeated as part of the user's prompt. This helps to simplify the Input Box and reserve it for prompt creation. (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">552592</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Excel Agent</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=543422</link>
+      <description>Excel Agent helps you turn data into clear charts, summaries, and insights using built‑in formulas and logic. It streamlines data preparation, formulas, and visualization so you can stay focused on the story behind the numbers. Use multi‑turn chat to refine your output or open it in Excel for full e (GA: March CY2026) — Excel, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">543422</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): PowerPoint Agent </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=543421</link>
+      <description>PowerPoint Agent helps you build polished presentations with strong storytelling and visual structure. It streamlines research, formatting, and layout so you can stay focused on your message. Use multi‑turn chat to refine content or open the deck in PowerPoint for full editing and collaboration. Ide (GA: March CY2026) — PowerPoint, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">543421</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Knowledge Agent</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=501451</link>
+      <description>Simplifies SharePoint content management and ensures content is Copilot-ready by automating metadata, fixing stale content, enabling fast page creation, improving compliance, and enriching content so Copilot can deliver more accurate, grounded answers.
+ (GA: January CY2026) — SharePoint, SharePoint Syntex, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>SharePoint &amp; OneDrive</category>
+      <guid isPermaLink="false">501451</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: New Organization chart in the Profile Card for Web and Desktop</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=500696</link>
+      <description>With the new org chart users will not only be able to contextaulize a person, they will also be able to scroll through visited profiles, see a manager's reports counts, and more. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">500696</guid>
+    </item>
+    <item>
+      <title>Microsoft Viva: Enhanced AI governance for Glint Copilot </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=551197</link>
+      <description>Copilot in Viva Glint will align with Microsoft's enterprise AI governance platform: enabling your IT and compliance teams to use centralized governance tools for access management and unified monitoring and reporting across all AI deployments in your tenant. This reduces governance complexity and a (GA: March CY2026) — Microsoft Viva</description>
+      <category>Rolling out</category>
+      <category>Viva</category>
+      <guid isPermaLink="false">551197</guid>
+    </item>
+    <item>
+      <title>Outlook: Scheduling with Copilot chat in classic Outlook for Windows</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542185</link>
+      <description>Users can now schedule meetings directly from chat or by clicking "Schedule with Copilot" in the UI. Simply ask Copilot to schedule a meeting with colleagues, and it will find available times, book rooms, draft agendas, and send invites—all within the chat experience. This feature is available to us (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">542185</guid>
+    </item>
+    <item>
+      <title>Outlook: Prepare for meetings with Copilot in classic Outlook for Windows</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542186</link>
+      <description>With so many of us in back-to-back meetings, it can be a real struggle to stay on top of pre-reads, action items, and even what each meeting is about. Copilot quickly prepares you for meetings within minutes by bringing real-time insights and summarizing relevant context, tasks, documents, and other (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">542186</guid>
+    </item>
+    <item>
+      <title>Microsoft Defender for Office 365: Introducing a new URL click alert in Teams via Microsoft Defender for Office 365</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557549</link>
+      <description>We are introducing a new URL click alert that proactively notifies security teams when a user clicks on a malicious link in Teams, helping organizations quickly identify risk and respond before further impact occurs. (GA: March CY2026) — Microsoft Defender for Office 365</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">557549</guid>
+    </item>
+    <item>
+      <title>Outlook: Expand to Full Event Details on iPad</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=554939</link>
+      <description>When viewing your calendar on iPad, you can now expand an event to a full‑screen view, giving you more space to review information and make edits. (GA: March CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">554939</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: New controls for quick views in the chat list</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=555856</link>
+      <description>Positioned at the top of the chat and channels list, quick views give users fast access to mentions, followed threads, and more. Users can choose when and how quick views are displayed – selecting “always show,” “always hide,” or “show only when unread” – and can collapse the section at any time. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">555856</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Audio recap language expansion</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=554926</link>
+      <description>Audio recap in Teams will begin supporting 8 new languages. These are (in alphabetical order) Chinese, variations across English, French, German, Italian, Japanese, Portuguese, and Spanish.   (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">554926</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Easily find unsent drafts</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542789</link>
+      <description>Use the Drafts quick view to easily find, edit, and send draft messages. (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">542789</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Choose Your Enter Key Behavior in Teams Chat</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=537279</link>
+      <description>Microsoft Teams now gives you control over how the Enter key works when composing messages. You can choose whether pressing Enter sends your message or starts a new line—making it easier to write longer messages without accidental sends. (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">537279</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Generative-AI skills for Create in Microsoft 365 Copilot app for Government Clouds</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=498548</link>
+      <description>Design and edit images, posters, banners, infographics, text drafts, and forms with Copilot—align them to your brand using kits built by you or your team. (GA: March CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">498548</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Annotations on Teams Single Window Sharing on Windows OS</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=555239</link>
+      <description>Presenters can now share a single application window and enable participants to annotate directly on top of that content, without exposing their entire desktop. This means cleaner presentations, protected privacy, and more engaging discussions across training sessions, workshops, and client meetings (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">555239</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Live meetings indicator for channels</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=513272</link>
+      <description>Introducing a new indicator in channels to help users find meetings occurring live within the channel and join them. (GA: March CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">513272</guid>
+    </item>
+    <item>
+      <title>Outlook: Account Manager</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=497546</link>
+      <description>Users can use the new Account Manager feature to learn more about their Microsoft account, display their profile picture, and add new accounts (if permitted by their organization).  (GA: February CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">497546</guid>
+    </item>
+    <item>
+      <title>Outlook: One-step folder sharing</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=557680</link>
+      <description>Today, sharing a folder requires manually sharing each parent folder in the hierarchy. Outlook will simplify this by allowing users to share a folder in a single step, automatically applying the required permissions to its parent folders. Before sharing, users will clearly see which folders (includi (GA: June CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">557680</guid>
+    </item>
+    <item>
+      <title>Outlook: Clear &amp; Flag Actions in New Outlook</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=543425</link>
+      <description>We’re introducing new rule actions in the new Outlook for Web and Windows to give users greater flexibility and control. This includes Clear Categories, Clear Flag, Complete Flag, and Flag Message, enabling more precise automation of message organization and follow‑up workflows. #newoutlookforwindow (GA: February CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">543425</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Organization Evaluation Score for Apps and Agents</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=532720</link>
+      <description>Today, IT admins manually review trust data for Teams apps and agents in the Teams admin center to ensure they meet organizational security, privacy, and compliance standards. This feature introduces a scalable, automated evaluation process. Admins can define their organization’s trust requirements  (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">532720</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: New SlimCore-based optimization for Microsoft Teams in VDI - support for Windows endpoints on Omnissa environments</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=518286</link>
+      <description>This feature allows Windows endpoints to optimize Microsoft Teams in VDI environments with the new SlimCore-based media engine, providing an expanded feature set and multiple improvements in quality, reliability and performance. (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">518286</guid>
+    </item>
+    <item>
+      <title>Outlook: Expanded Conditions for Conditional Formatting in the New Outlook for Web and Windows</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=503551</link>
+      <description>The new Outlook for web and Windows now offers expanded Conditional Formatting options, allowing you to highlight emails based on size, read/unread status, presence of attachments, flag settings, categories, or importance. These enhanced rules make it easier to identify critical messages at a glance (GA: January CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">503551</guid>
+    </item>
+    <item>
+      <title>Outlook: Play a Sound Rule</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=497836</link>
+      <description>Users can set up Outlook rules to play a sound or show a desktop alert whenever an email that matches your chosen conditions arrives, whether it’s from a specific person, includes certain words, or meets any other rule criteria you define. These features help you stay alerted to the emails that matt (GA: January CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">497836</guid>
+    </item>
+    <item>
+      <title>Outlook: Rule to display desktop alert</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=496141</link>
+      <description>Create rules that trigger a desktop alert when specific emails arrive. This makes it easier to stay on top of important messages without missing a beat. Look for the new "Display a Desktop Alert" action when setting up or editing your rules. #newoutlookforwindows (GA: January CY2026) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">496141</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Voice chats can reference Memory</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=523204</link>
+      <description>While users are in M365 Copilot voice chat, Copilot can respond using existing memories already stored in user personalization settings. Users cannot modify/edit their memories from voice chats yet due to privacy considerations. All memories that can be used for Copilot responses in voice chat are v (GA: January CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">523204</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Copilot voice support in Word &amp; PowerPoint. </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=516569</link>
+      <description>Chat in Work and PowerPoint now supports voice. Users can talk and interact with Copilot to brainstorm ideas, create content, and analyze information. Same as text, voice understand documents, work and web context. (GA: December CY2025) — PowerPoint, Word, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">516569</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Metadata understanding support for queries scoped to SharePoint document libraries or folders</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=516044</link>
+      <description>We’re introducing column metadata support for queries in Microsoft 365 Copilot when a SharePoint library or folder is attached or its URL is provided. This enhancement improves contextual relevance by enabling Copilot to leverage additional metadata from the selected library, delivering more accurat (GA: November CY2025) — SharePoint, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>SharePoint &amp; OneDrive</category>
+      <guid isPermaLink="false">516044</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Enable watermarks for AI-generated content for M365 Copilot</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=547831</link>
+      <description>Add watermarks for AI-generated video, audio, and image gen content. (GA: February CY2026) — Microsoft Clipchamp, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Edge &amp; Media</category>
+      <guid isPermaLink="false">547831</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Events in Meet app in Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=547834</link>
+      <description>Users can now use the Teams Meet app to discover events across their organization, track what important events are upcoming, and plan and organize their own professional events.  (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">547834</guid>
+    </item>
+    <item>
+      <title>Microsoft Purview compliance portal: eDiscovery - Generate keyword query language from natural language prompt in eDiscovery with Copilot for Security</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=505444</link>
+      <description>Copilot for Security is embedded in eDiscovery to enable users to provide a search prompt in natural language and will translate into keyword query language to help expedite the start of an eDiscovery search. (GA: January CY2026) — Microsoft Purview</description>
+      <category>Rolling out</category>
+      <category>Purview &amp; Security</category>
+      <guid isPermaLink="false">505444</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: New SlimCore-based optimization for Microsoft Teams in VDI - support for MacOS on Citrix and Azure Virtual Desktops/Windows 365</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=502524</link>
+      <description>This feature allows MAC endpoints to optimize Microsoft Teams in VDI environments with the new SlimCore-based media engine, providing an expanded feature set and multiple improvements in quality, reliability and performance. (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">502524</guid>
+    </item>
+    <item>
+      <title>Microsoft Entra: App Deactivation</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=545894</link>
+      <description>Admins or app owners can now safely pause an app’s access to Entra protected resources without deleting it or disrupting configuration. When deactivated, the app and its service principals globally (across tenants) can’t request new tokens and user sign ins are blocked, while existing tokens simply  (GA: February CY2026) — Microsoft Entra</description>
+      <category>Rolling out</category>
+      <category>Entra</category>
+      <guid isPermaLink="false">545894</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Word Agent</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=543420</link>
+      <description>Word Agent helps you handle research, structure, and formatting so you can stay focused on your ideas. Use multi‑turn chat to refine your draft or open it in Word for full editing and collaboration. It’s designed for long‑form, information‑dense work—like strategic plans, policy documents, and techn (GA: February CY2026) — Word, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">543420</guid>
+    </item>
+    <item>
+      <title>Microsoft Edge: Ground Microsoft 365 Copilot Chat in Edge for Business in your open YouTube videos</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=499424</link>
+      <description>Get relevant answers and insights about your open YouTube videos in Copilot Chat in Edge.  (GA: February CY2026) — Microsoft Edge, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Edge &amp; Media</category>
+      <guid isPermaLink="false">499424</guid>
+    </item>
+    <item>
+      <title>Microsoft Edge: Microsoft 365 Copilot Chat access to page content will soon extend to work across multiple open tabs</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=496364</link>
+      <description>Microsoft 365 Copilot Chat in Edge will soon be able to answer contextual questions about a user's open window. This extends the existing capability which can only access the open page. All existing user settings and policies and DLP considerations will continue to be respected.  (GA: February CY2026) — Microsoft Edge, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Edge &amp; Media</category>
+      <guid isPermaLink="false">496364</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Create custom templates for immersive events in Microsoft Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542794</link>
+      <description>This release brings the next evolution in immersive collaboration in Teams. Designed for creators and event organizers, these new capabilities empower users to create, manage, and use immersive templates for immersive events in Teams and save those templates to collections to use in future events—di (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">542794</guid>
+    </item>
+    <item>
+      <title>Outlook: Summarize email with Copilot chat in Outlook </title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=503316</link>
+      <description>Easily summarize your email and attachments with Copilot chat in a single click. This will be available to users with a Microsoft 365 Copilot license who have pinning enabled. This change is coming to both Classic and New Outlook for Windows #newoutlookforwindows Updated February 13, 2026: We previo (GA: October CY2025) — Outlook</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">503316</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Copilot Search Helps You Discover People</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=555240</link>
+      <description>Now Copilot Search can return matching people for your broader people search queries. Allowing you to discover, disambiguate, and explore known and new people to contact. Discover Whether you're looking for people with a specific skill like "Project leadership" or "Artificial Intelligence" Copilot S (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">555240</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Copilot Search Matches on People's Department</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=508527</link>
+      <description>Copilot Search can now match on a person's department, and you can find/lookup all people in a given department when searching the people source directly.  (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">508527</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Updated Copilot Notebooks UX</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=516042</link>
+      <description>Users will find an updated, streamlined UX flow within Copilot Notebooks. (GA: February CY2026) — Microsoft 365 app, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Admin &amp; Platform</category>
+      <guid isPermaLink="false">516042</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Admins can now edit user mappings and query filters for ServiceNow Connector</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=503590</link>
+      <description>Support connection edit of user mapping, query filter for ServiceNow (GA: March CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">503590</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Find Exactly What You Need, Faster</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=508529</link>
+      <description>Now you can filter your search as you type. Use person and source filters right in the Search box to refine results instantly. Get smart suggestions and see only what matters, all without leaving the box.
+1.	When “person” or “source” is typed, a list of relevant filter suggestions appears. This help (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">508529</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Update user labels to show familiarity with external users</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=515169</link>
+      <description>Trust Indicators are visual badges next to external users in Microsoft Teams that show a person’s trust level. They help you quickly see if someone is internal, external, a guest, or anonymous. This lets you collaborate confidently with users from external organizations and avoid sharing sensitive i (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">515169</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Use voice for Q&amp;A during Read Aloud in Word</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=523205</link>
+      <description>Interact in real time with read aloud in Word with Copilot. While your document is being read aloud, you can ask questions with your voice—such as “What does this mean?” or “Summarize this section”—and get answers instantly. No need to pause and search manually. This keeps you in context, reduces in (GA: February CY2026) — Word, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">523205</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Intelligent meeting recap can summarize content shared on screen</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=490052</link>
+      <description>Intelligent meeting recap can incorporate content shared on screen in the AI-based summary provided after the meeting, providing a richer and more comprehensive recap of the meeting.  It captures details that are shown when a participant shares their screen, ensuring those unspoken insights become p (GA: February CY2026) — Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Copilot</category>
+      <guid isPermaLink="false">490052</guid>
+    </item>
+    <item>
+      <title>Excel: Formula completion with Copilot in Excel</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=496370</link>
+      <description>This feature leverages AI to autocomplete the user's formula upon typing the '=' sign. It provides context-based suggestions, streamlining the formula creation process by offering intelligent and relevant completions. (GA: September CY2025) — Excel</description>
+      <category>Rolling out</category>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">496370</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Automatic removal of EXIF data from shared images</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=542795</link>
+      <description>Teams will automatically remove hidden metadata (EXIF) from images shared in conversations. This privacy protection helps prevent sensitive information such as photo location and device details from being shared without your knowledge.
+ 
+ (GA: February CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">542795</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Troubleshoot meetings and calls with automatic issue identification and recommendations</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=526784</link>
+      <description>Administrators can troubleshoot Teams meetings and calls in Teams admin center with ease with a streamlined flow, meeting quality issues, and detailed telemetry. (GA: January CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">526784</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Restart your Town hall event</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=523214</link>
+      <description>Teams town hall producers can now restart a live event while the event is active in order to address technical issues that might arise during the execution of an instance. Whether technical, network, or other issue, this feature enables those managing the event to quickly resolve problems for attend (GA: January CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">523214</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Migration Tool for Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=485709</link>
+      <description>Customers will now be able to migrate content seamlessly from Slack public and private channels to Teams shared, public, and private channels. A new first-party migration tool in the Microsoft Admin Center (MAC) will allow admins to review which Slack channels they wish to migrate, then perform cont (GA: January CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">485709</guid>
+    </item>
+    <item>
+      <title>Microsoft Copilot (Microsoft 365): Copilot Chat in Outlook expands to reason over inbox, calendar, and enterprise data</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=531910</link>
+      <description>Copilot Chat in Outlook expanding to support reasoning over a user's entire inbox, calendar and other enterprise data for Microsoft 365 Copilot Chat users (without a Microsoft 365 Copilot license). (GA: January CY2026) — Outlook, Microsoft Copilot (Microsoft 365)</description>
+      <category>Rolling out</category>
+      <category>Outlook &amp; Exchange</category>
+      <guid isPermaLink="false">531910</guid>
+    </item>
+    <item>
+      <title>Microsoft Teams: Apps in Private Channels for Microsoft Teams</title>
+      <link>https://www.microsoft.com/microsoft-365/roadmap?id=518215</link>
+      <description>Bring the apps your team relies on—tabs, bots, and message extensions—directly into Private Channels in Microsoft Teams. This update lets channel owners add apps to a specific private channel, so everyone collaborating there (including invited collaborators from other teams or organizations, subject (GA: January CY2026) — Microsoft Teams</description>
+      <category>Rolling out</category>
+      <category>Teams</category>
+      <guid isPermaLink="false">518215</guid>
+    </item>
+  </channel>
+</rss>

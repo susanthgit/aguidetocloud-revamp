@@ -2214,6 +2214,7 @@ pre.mermaid {
 }
 .rdmap-source a { color: #E5A00D; }
 .rdmap-freshness { color: #6B6575; }
+.rdmap-delayed { font-size: 0.65rem; font-weight: 700; color: #EF4444; letter-spacing: 0.03em; }
 
 /* Empty + skeleton */
 .rdmap-empty { color: #6B6575; text-align: center; padding: 3rem; }

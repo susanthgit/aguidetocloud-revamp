@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       + changeHtml
       + '</div>'
       + '<div class="rdmap-row-product"><span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + '</span> ' + escapeHtml(item.product_category_name || '') + '</div>'
-      + '<div class="rdmap-row-date">' + escapeHtml(item.ga_date || '—') + '</div>'
+      + '<div class="rdmap-row-date">' + escapeHtml(item.ga_date || '—') + (item.is_delayed ? ' <span class="rdmap-delayed">⚠️ DELAYED</span>' : '') + '</div>'
       + '</div>';
   }
 
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         + (summary ? '<p>' + escapeHtml(summary) + '</p>' : '')
         + '<div class="rdmap-card-foot">'
         + '<span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
-        + (item.ga_date ? '<span>📅 ' + escapeHtml(item.ga_date) + '</span>' : '')
+        + (item.ga_date ? '<span>📅 ' + escapeHtml(item.ga_date) + (item.is_delayed ? ' <span class="rdmap-delayed">⚠️</span>' : '') + '</span>' : '')
         + '</div></div></div>';
     });
     html += '</div>';
@@ -406,6 +406,87 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   document.getElementById('rdmap-search').addEventListener('input', debounce(applyFilters, 200));
 
+  // ── CSV EXPORT ──
+  function addExportButton() {
+    var toolbar = document.querySelector('.rdmap-toolbar');
+    if (!toolbar) return;
+    var btn = document.createElement('button');
+    btn.className = 'rdmap-tab';
+    btn.textContent = '⬇ CSV';
+    btn.title = 'Download filtered items as CSV';
+    btn.addEventListener('click', exportCSV);
+    toolbar.appendChild(btn);
+  }
+
+  function exportCSV() {
+    var rows = document.querySelectorAll('.rdmap-row:not([style*="display: none"]), .rdmap-card:not([style*="display: none"])');
+    if (!currentData || !currentData.items) return;
+
+    // Get visible item IDs from the DOM data attributes
+    var cols = ['ID', 'Title', 'Status', 'Product', 'GA Date', 'Platforms', 'Delayed', 'Roadmap URL'];
+    var csv = [cols.join(',')];
+    var items = currentData.items;
+
+    // Filter based on current active filters
+    items.forEach(function (item) {
+      var s = item.status || '';
+      if (activeStatusFilter === 'active' && s === 'Launched') return;
+      if (activeStatusFilter !== 'all' && activeStatusFilter !== 'active' && s !== activeStatusFilter) return;
+      if (activeProductFilter !== 'all') {
+        var cats = item.all_categories || [];
+        if (item.product_category !== activeProductFilter && cats.indexOf(activeProductFilter) === -1) return;
+      }
+      var q = (document.getElementById('rdmap-search').value || '').toLowerCase();
+      if (q && (item.title || '').toLowerCase().indexOf(q) === -1 && (item.products || []).join(' ').toLowerCase().indexOf(q) === -1) return;
+
+      var row = [
+        item.id,
+        '"' + (item.title || '').replace(/"/g, '""') + '"',
+        item.status || '',
+        (item.products || []).join('; '),
+        item.ga_date || '',
+        (item.platforms || []).join('; '),
+        item.is_delayed ? 'Yes' : '',
+        item.roadmap_url || ''
+      ];
+      csv.push(row.join(','));
+    });
+
+    var blob = new Blob([csv.join('\n')], { type: 'text/csv' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'm365-roadmap-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ── CATEGORY PAGE SUPPORT ──
+  async function loadCategoryView(filter) {
+    var content = document.getElementById('rdmap-content');
+    content.innerHTML = '<div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>';
+    try {
+      var data = await fetchJson(DATA_URLS.latest);
+      // Filter items to this category
+      var filtered = (data.items || []).filter(function (i) {
+        return i.product_category === filter || (i.all_categories || []).indexOf(filter) !== -1;
+      });
+      var catData = Object.assign({}, data, { items: filtered, total_items: filtered.length, active_items: filtered.filter(function (i) { return i.status !== 'Launched'; }).length });
+      currentData = catData;
+      renderStatusBar(catData);
+      renderMetrics(catData);
+      renderContent(catData);
+      renderFreshness(data.generated_at);
+    } catch (e) {
+      content.innerHTML = '<p class="rdmap-empty">Data not available. <a href="/m365-roadmap/" style="color:#E5A00D">View full roadmap →</a></p>';
+    }
+  }
+
   // ── INIT ──
-  await loadView('latest');
+  addExportButton();
+  if (window.__roadmapCategoryFilter) {
+    await loadCategoryView(window.__roadmapCategoryFilter);
+  } else {
+    await loadView('latest');
+  }
 });
