@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       var isThisMonth = m === now;
       html += '<div class="rdmap-tl-col' + (isThisMonth ? ' rdmap-tl-now' : '') + '">'
         + '<div class="rdmap-tl-count">' + count + '</div>'
-        + '<div class="rdmap-tl-fill" style="height:' + pct + '%;background:' + (isThisMonth ? '#06B6D4' : '#1e3a5f') + '"></div>'
+        + '<div class="rdmap-tl-fill" style="height:' + pct + '%;background:' + (isThisMonth ? '#E5A00D' : '#2A2533') + '"></div>'
         + '<div class="rdmap-tl-month">' + label + '</div>'
         + '</div>';
     });
