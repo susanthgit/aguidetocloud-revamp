@@ -413,7 +413,10 @@ function getArticleVars(article) {
 
 function buildThumbHtml(v) {
   if (v.image) {
-    return '<img src="' + escapeHtml(v.image) + '" alt="" class="ainews-thumb-img" loading="lazy">';
+    return '<img src="' + escapeHtml(v.image) + '" alt="" class="ainews-thumb-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
+      '<div class="ainews-thumb ainews-thumb-logo" style="display:none">' +
+      '<span class="ainews-logo-fallback" style="display:flex"><span class="ainews-thumb-emoji">' + v.emoji + '</span></span>' +
+      '<span class="ainews-thumb-source">' + escapeHtml(v.source) + '</span></div>';
   }
   return '<div class="ainews-thumb ainews-thumb-logo">' +
     (v.logo ? '<img src="' + escapeHtml(v.logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +

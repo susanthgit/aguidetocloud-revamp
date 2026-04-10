@@ -1288,6 +1288,13 @@ a:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 }
+.ainews-deepdive-grid .ainews-thumb-wrap {
+  height: 100px;
+}
+.ainews-deepdive-grid .ainews-thumb,
+.ainews-deepdive-grid .ainews-thumb-logo {
+  height: 80px;
+}
 
 /* ── "WHY IT MATTERS" CALLOUT ───────────── */
 .ainews-why {
