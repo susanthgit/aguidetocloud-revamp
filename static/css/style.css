@@ -1917,6 +1917,11 @@ a:hover {
   text-align: center;
   overflow-x: auto;
 }
+pre.mermaid {
+  font-family: inherit;
+  white-space: pre;
+  color: transparent;
+}
 .content-body ul, .content-body ol {
   padding-left: 1.5rem;
   margin: 0.5rem 0;
