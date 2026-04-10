@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     monthly: '/data/roadmap/monthly.json'
   };
 
+  var CACHE_VERSION = 'v2';  // Bump to invalidate stale sessionStorage
   var _cache = {};
   async function fetchJson(url) {
+    var cacheKey = 'roadmap_' + CACHE_VERSION + '_' + url;
     if (_cache[url]) return _cache[url];
-    var cached = sessionStorage.getItem('roadmap_' + url);
+    var cached = sessionStorage.getItem(cacheKey);
     if (cached) {
       try { _cache[url] = JSON.parse(cached); return _cache[url]; } catch (e) { /* re-fetch */ }
     }
@@ -19,8 +21,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Only cache if payload < 2MB to avoid quota issues
     var str = JSON.stringify(data);
     if (str.length < 2000000) {
-      try { sessionStorage.setItem('roadmap_' + url, str); } catch (e) { /* quota full */ }
+      try { sessionStorage.setItem(cacheKey, str); } catch (e) { /* quota full */ }
     }
+    // Clean old cache keys
+    try { sessionStorage.removeItem('roadmap_' + url); } catch (e) {}
     return data;
   }
 
