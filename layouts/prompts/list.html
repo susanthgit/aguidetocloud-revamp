@@ -20,6 +20,9 @@
       <h1>✨ AI <span>Prompt Library</span></h1>
       <p class="prompts-subtitle">Find the perfect prompt for any AI tool. Copy. Use. Done.</p>
       {{ else }}
+      <nav class="prompts-back-nav">
+        <a href="/prompts/">← All Prompts</a>
+      </nav>
       <h1>{{ .Title }}</h1>
       {{ with .Description }}<p class="prompts-subtitle">{{ . }}</p>{{ end }}
       {{ end }}
@@ -190,6 +193,9 @@
 
   </div>
 </div>
+
+<!-- Back to top button -->
+<button class="prompts-btt" id="prompts-btt" title="Back to top" aria-label="Back to top">↑</button>
 
 <script src="/js/prompts.js?v={{ now.Unix }}"></script>
 {{ end }}
