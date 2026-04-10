@@ -188,6 +188,27 @@ a:hover {
   padding-left: 1.5rem;
 }
 
+/* Coming Soon badges in dropdown */
+.dropdown-menu li a.coming-soon {
+  opacity: 0.5;
+}
+.dropdown-menu li a.coming-soon:hover {
+  opacity: 0.7;
+}
+.badge-soon {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 102, 255, 0.15);
+  color: #ff66ff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
 /* ── HERO ───────────────────────────────── */
 .hero {
   text-align: center;
@@ -818,6 +839,48 @@ a:hover {
   transform: rotate(-45deg);
   top: 0;
   background: var(--neon-cyan);
+}
+
+/* ── COMING SOON PAGES ─────────────────── */
+.coming-soon-page {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.coming-soon-page .coming-soon-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.coming-soon-page h2 {
+  font-size: 2rem;
+  color: #ff66ff;
+  text-shadow: 0 0 20px rgba(255, 102, 255, 0.4);
+  margin-bottom: 1rem;
+}
+.coming-soon-page p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.coming-soon-page ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.coming-soon-page ul li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.coming-soon-page .coming-soon-cta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.coming-soon-page .coming-soon-cta a {
+  color: var(--neon-cyan);
 }
 
 /* ── 404 PAGE ──────────────────────────── */
@@ -2030,6 +2093,22 @@ pre.mermaid {
     padding: 0.85rem 0;
     font-size: 1rem;
     border-bottom: none !important;
+  }
+  /* Mobile: dropdown menus stack inline */
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    transform: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0 0 0 1rem;
+    min-width: auto;
+  }
+  .nav-dropdown .dropdown-menu li { border-bottom: none; }
+  .nav-dropdown .dropdown-menu li a {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
   }
 }
 

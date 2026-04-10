@@ -38,24 +38,24 @@ enableRobotsTXT = false
     url = "/ai-hub/"
     weight = 1
   [[menu.main]]
-    name = "☁️ Cloud Labs"
-    url = "/cloud-labs/"
+    name = "🛠️ Free Tools"
+    url = "#"
     weight = 2
   [[menu.main]]
-    name = "📜 Certifications"
-    url = "/certifications/"
+    name = "📝 Blog"
+    url = "/blog/"
     weight = 3
   [[menu.main]]
-    name = "📝 Exam Q&A"
-    url = "/exam-qa/"
+    name = "☁️ Cloud & Certs"
+    url = "#"
     weight = 4
-  [[menu.main]]
-    name = "💼 Interview"
-    url = "/interview-prep/"
-    weight = 5
   [[menu.main]]
     name = "👋 About"
     url = "/about/"
+    weight = 5
+  [[menu.main]]
+    name = "☕ Download Resources"
+    url = "https://ko-fi.com/aguidetocloud/shop"
     weight = 6
 
 [markup]
