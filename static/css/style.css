@@ -1489,22 +1489,22 @@ a:hover {
 }
 .ainews-search {
   width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.1);
-  background: var(--bg-card);
-  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #1C1924;
+  color: #E8E4ED;
   font-size: 0.9rem;
   font-family: var(--font-heading);
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .ainews-search:focus {
   border-color: var(--neon-cyan);
-  box-shadow: 0 0 8px rgba(102, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(102, 255, 255, 0.12);
 }
 .ainews-search::placeholder {
-  color: var(--text-muted);
+  color: #504A59;
 }
 
 /* ── STICKY SEARCH + FILTERS ─────────────── */

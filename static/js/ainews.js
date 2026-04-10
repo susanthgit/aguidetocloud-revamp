@@ -33,10 +33,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
       window.__ainewsData = data;
       renderNews(data, view);
-      // Show trending topics for weekly view
-      if (view === 'weekly' && data.trending_topics && data.trending_topics.length > 0) {
-        renderTrendingBar(data.trending_topics);
-      }
       // Update freshness badge
       var badge = document.querySelector('.ainews-freshness');
       if (badge) badge.remove();
@@ -265,10 +261,9 @@ function renderNews(data, view) {
 
   var grid = document.getElementById('news-grid');
 
-  // Separate by tier
+  // Separate by tier (quick links merged into deep dives)
   var headlines = articles.filter(function (a) { return a.tier === 'headline'; });
-  var deepDives = articles.filter(function (a) { return a.tier === 'deep_dive' || !a.tier; });
-  var quickLinks = articles.filter(function (a) { return a.tier === 'quick'; });
+  var deepDives = articles.filter(function (a) { return a.tier !== 'headline'; });
 
   // Sort: articles with images first within each tier
   var imageFirst = function (a, b) {
@@ -338,23 +333,8 @@ function renderNews(data, view) {
     html += '</div>';
   }
 
-  // ⚡ QUICK LINKS
-  if (quickLinks.length > 0) {
-    html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-quick"><span>⚡</span> Quick Links (' + quickLinks.length + ')</div>';
-    html += '<div class="ainews-quick-list" id="ainews-quicklinks">';
-    quickLinks.forEach(function (article, i) {
-      html += '<div class="ainews-loadmore-item"' + (i >= 10 ? ' style="display:none"' : '') + '>' + renderQuickLink(article) + '</div>';
-    });
-    html += '</div>';
-    if (quickLinks.length > 10) {
-      html += '<button class="ainews-show-more" data-target="ainews-quicklinks" data-step="10">Show ' + (quickLinks.length - 10) + ' more quick links</button>';
-    }
-    html += '</div>';
-  }
-
   // Fallback: if no tiers assigned, render all as cards (backward compat)
-  if (headlines.length === 0 && deepDives.length === 0 && quickLinks.length === 0 && articles.length > 0) {
+  if (headlines.length === 0 && deepDives.length === 0 && articles.length > 0) {
     articles.forEach(function (article) {
       html += renderCard(article);
     });
@@ -370,12 +350,12 @@ function renderNews(data, view) {
         filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); });
         this.classList.add('active');
         var cat = this.dataset.cat;
-        grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-quick-item, .ainews-section-header').forEach(function (el) {
+        grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-section-header').forEach(function (el) {
           if (cat === 'all') { el.style.display = ''; return; }
           el.style.display = (el.dataset.category === cat) ? '' : 'none';
         });
         grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
-          var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"]), .ainews-quick-item:not([style*="display: none"])');
+          var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"])');
           sec.style.display = hasVisible.length > 0 ? '' : 'none';
         });
       });
@@ -387,7 +367,7 @@ function renderNews(data, view) {
   if (searchInput) {
     searchInput.addEventListener('input', function () {
       var q = this.value.toLowerCase();
-      grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-quick-item').forEach(function (el) {
+      grid.querySelectorAll('.ainews-card, .ainews-card-hero').forEach(function (el) {
         var text = el.textContent.toLowerCase();
         el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
       });
@@ -560,28 +540,16 @@ function getOrderedCategories(articles) {
 
 // === TAB COUNTS ===
 async function updateTabCounts() {
-  var DATA_URLS = {
-    weekly: '/data/ainews/weekly.json',
-    monthly: '/data/ainews/monthly.json'
-  };
-  // Fetch both in parallel
-  var keys = Object.keys(DATA_URLS);
-  var results = await Promise.allSettled(keys.map(function (k) {
-    // Use cached data if available (from sessionStorage or memory)
-    var cached = sessionStorage.getItem('ainews_' + DATA_URLS[k]);
-    if (cached) return Promise.resolve(JSON.parse(cached));
-    return fetch(DATA_URLS[k]).then(function (r) { return r.ok ? r.json() : null; });
-  }));
-  keys.forEach(function (view, i) {
-    if (results[i].status !== 'fulfilled' || !results[i].value) return;
-    var raw = results[i].value;
-    var articles = (raw.articles || []).filter(isAiRelated);
-    var tab = document.querySelector('.ainews-tab[data-view="' + view + '"]');
-    if (tab) {
-      var labels = { weekly: '📊 This Week', monthly: '📈 This Month' };
-      tab.textContent = labels[view] + ' (' + articles.length + ')';
+  // Fetch monthly count
+  try {
+    var cached = sessionStorage.getItem('ainews_/data/ainews/monthly.json');
+    var raw = cached ? JSON.parse(cached) : await fetch('/data/ainews/monthly.json').then(function (r) { return r.ok ? r.json() : null; });
+    if (raw) {
+      var articles = (raw.articles || []).filter(isAiRelated);
+      var tab = document.querySelector('.ainews-tab[data-view="monthly"]');
+      if (tab) tab.textContent = '📈 This Month (' + articles.length + ')';
     }
-  });
+  } catch (e) { /* ignore */ }
   // Update daily count from already loaded data
   if (window.__ainewsData) {
     var dailyArticles = (window.__ainewsData.articles || []).filter(isAiRelated);
