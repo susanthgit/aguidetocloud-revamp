@@ -364,4 +364,6 @@ Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents 
 
 ---
 
+> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
+
 *Published: April 10, 2026 · Last updated: April 10, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/microsoft-agent-365/overview), [Microsoft Partner Center](https://learn.microsoft.com/partner-center/announcements/2026-march), [Microsoft Security Blog](https://www.microsoft.com/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/), community analysis*

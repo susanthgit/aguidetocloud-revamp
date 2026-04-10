@@ -311,4 +311,6 @@ For enterprises (>300 users): **$30 USD per user per month**. For businesses (<3
 
 ---
 
+> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
+
 *Published: April 9, 2026 · Last updated: April 10, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), community analysis*

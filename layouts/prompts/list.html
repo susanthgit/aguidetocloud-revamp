@@ -1,0 +1,151 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/prompts.css?v={{ now.Unix }}">
+
+{{/* Determine if this is the main prompts page or a subcategory */}}
+{{ $isMainPage := eq .RelPermalink "/prompts/" }}
+{{ $allPrompts := .RegularPagesRecursive }}
+{{ $pagePrompts := $allPrompts }}
+
+{{/* For category pages, only show that category's prompts */}}
+{{ if not $isMainPage }}
+  {{ $pagePrompts = .RegularPages }}
+{{ end }}
+
+<div class="prompts-page">
+  <div class="container">
+
+    <!-- ── HERO ──────────────────────────── -->
+    <div class="prompts-hero">
+      {{ if $isMainPage }}
+      <h1>✨ AI <span>Prompt Library</span></h1>
+      <p class="prompts-subtitle">Find the perfect prompt for any AI tool. Copy. Use. Done.</p>
+      {{ else }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="prompts-subtitle">{{ . }}</p>{{ end }}
+      {{ end }}
+
+      <div class="prompts-search-wrap">
+        <span class="prompts-search-icon">🔍</span>
+        <input type="text" id="prompts-search" class="prompts-search"
+               placeholder="Search {{ len $pagePrompts }} prompts..."
+               autocomplete="off" aria-label="Search prompts">
+      </div>
+
+      <p class="prompts-stats">
+        <strong id="prompts-count">{{ len $pagePrompts }}</strong> of
+        <strong>{{ len $allPrompts }}</strong> prompts ·
+        {{ len hugo.Data.platforms }} platforms · tested by a human 🧪
+      </p>
+    </div>
+
+    {{/* ── CATEGORY QUICK LINKS (main page only) ── */}}
+    {{ if $isMainPage }}
+    <div class="prompts-categories">
+      {{ range .Sections }}
+      {{ $count := len .RegularPages }}
+      {{ if gt $count 0 }}
+      <a href="{{ .RelPermalink }}" class="prompts-category-card">
+        <span class="cat-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
+        {{ .Title }}
+        <span class="cat-count">{{ $count }}</span>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* ── FILTERS (main page only) ── */}}
+    {{ if $isMainPage }}
+    <div class="prompts-filters">
+      <!-- Platform filter -->
+      <div class="prompts-filter-row">
+        <span class="prompts-filter-label">Platform</span>
+        <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
+        {{ range $key, $val := hugo.Data.platforms }}
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="{{ $key }}">{{ $val.emoji }} {{ $val.short }}</button>
+        {{ end }}
+      </div>
+
+      <!-- Role filter -->
+      <div class="prompts-filter-row">
+        <span class="prompts-filter-label">Role</span>
+        <button class="prompts-chip active" data-filter-type="role" data-filter-value="all">All</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="it-admin">🖥️ IT Admin</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="hr">👥 HR</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="finance">💰 Finance</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="marketing">📣 Marketing</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="developer">💻 Developer</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="student">🎓 Student</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="creative">🎨 Creative</button>
+      </div>
+
+      <!-- Use case filter -->
+      <div class="prompts-filter-row">
+        <span class="prompts-filter-label">Use case</span>
+        <button class="prompts-chip active" data-filter-type="usecase" data-filter-value="all">All</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="writing">✏️ Writing</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="data-analysis">📊 Data</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="meetings">🎥 Meetings</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="research">🔬 Research</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="presentations">📑 Presentations</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="summarising">📝 Summarising</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="image-generation">🎨 Images</button>
+        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="coding">💻 Coding</button>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* ── PROMPT CARDS GRID ── */}}
+    <div class="prompts-grid">
+      {{ range $pagePrompts }}
+      {{ $prompt := .Params.prompt | default "" }}
+      {{ $platforms := .Params.platforms | default (slice) }}
+      {{ $roles := .Params.roles | default (slice) }}
+      {{ $useCase := .Params.use_case | default "" }}
+      {{ $bestOn := .Params.best_on | default "" }}
+      {{ $difficulty := .Params.difficulty | default "beginner" }}
+
+      <div class="prompt-card"
+           data-platforms="{{ delimit $platforms " " }}"
+           data-roles="{{ delimit $roles " " }}"
+           data-usecase="{{ $useCase }}"
+           data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }}">
+
+        <div class="prompt-card-header">
+          <h3 class="prompt-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <span class="prompt-difficulty" title="{{ $difficulty | title }}">
+            {{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}
+          </span>
+        </div>
+
+        <div class="prompt-text">{{ $prompt }}</div>
+
+        <div class="prompt-card-footer">
+          <div class="prompt-platforms">
+            {{ range $platforms }}
+              {{ $pdata := index hugo.Data.platforms . }}
+              {{ if $pdata }}
+              <span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>
+              {{ end }}
+            {{ end }}
+          </div>
+          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Empty state -->
+      <div id="prompts-empty" class="prompts-empty" style="display: none;">
+        <p>🔍 No prompts match your filters</p>
+        <p>Try adjusting your search or filters</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/prompts.js?v={{ now.Unix }}"></script>
+{{ end }}

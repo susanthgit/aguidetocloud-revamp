@@ -1,0 +1,154 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/prompts.css?v={{ now.Unix }}">
+
+{{ $prompt := .Params.prompt | default "" }}
+{{ $platforms := .Params.platforms | default (slice) }}
+{{ $bestOn := .Params.best_on | default "" }}
+{{ $difficulty := .Params.difficulty | default "beginner" }}
+{{ $roles := .Params.roles | default (slice) }}
+{{ $useCase := .Params.use_case | default "" }}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "text": "Copy this prompt and paste it into your preferred AI tool"
+    }
+  ],
+  "tool": [
+    {{ range $i, $p := $platforms }}{{ if $i }},{{ end }}
+    {
+      "@type": "HowToTool",
+      "name": "{{ with (index hugo.Data.platforms $p) }}{{ .name }}{{ else }}{{ $p }}{{ end }}"
+    }
+    {{ end }}
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+      {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
+      {{ with .Parent }}{{ if ne .RelPermalink "/prompts/" }}
+      {"@type": "ListItem", "position": 3, "name": "{{ .Title }}", "item": "{{ .Permalink }}"},
+      {"@type": "ListItem", "position": 4, "name": "{{ $.Title }}"}
+      {{ else }}
+      {"@type": "ListItem", "position": 3, "name": "{{ $.Title }}"}
+      {{ end }}{{ end }}
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+<div class="prompts-page">
+  <div class="container">
+    <div class="prompt-single">
+
+      <!-- Breadcrumbs -->
+      <nav class="prompt-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> ›
+        <a href="/prompts/">Prompt Library</a> ›
+        {{ with .Parent }}{{ if ne .RelPermalink "/prompts/" }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> ›
+        {{ end }}{{ end }}
+        <span>{{ .Title }}</span>
+      </nav>
+
+      <!-- Header -->
+      <div class="prompt-single-header">
+        <h1>{{ .Title }}</h1>
+        <div class="prompt-single-meta">
+          <span class="prompt-tested-badge">🧪 Tested by a human</span>
+          <span>{{ $difficulty | title }}</span>
+          {{ range $roles }}
+          <span>👤 {{ . | humanize | title }}</span>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Full Prompt Block -->
+      <div class="prompt-full-block">
+        <div class="prompt-full-text">{{ $prompt }}</div>
+        <button class="prompt-full-copy" data-prompt="{{ $prompt }}">📋 Copy</button>
+      </div>
+
+      <!-- Platforms -->
+      {{ if $platforms }}
+      <div class="prompt-single-platforms">
+        <h3>Works on</h3>
+        <div class="prompt-single-platform-list">
+          {{ range $platforms }}
+            {{ $pdata := index hugo.Data.platforms . }}
+            {{ if $pdata }}
+            <span class="prompt-single-platform-tag{{ if eq . $bestOn }} best{{ end }}">
+              {{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.name }}
+              {{ if eq . $bestOn }}(Best){{ end }}
+            </span>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Body Content (tips, variations) -->
+      {{ if .Content }}
+      <div class="prompt-single-body">
+        {{ .Content }}
+      </div>
+      {{ end }}
+
+      <!-- Related Prompts -->
+      {{ $related := first 3 (where (where .Site.RegularPages "Section" "prompts") ".RelPermalink" "!=" .RelPermalink) }}
+      {{ if $related }}
+      <div class="prompts-related">
+        <h2>📎 More Prompts</h2>
+        <div class="prompts-related-grid">
+          {{ range $related }}
+          {{ $rPrompt := .Params.prompt | default "" }}
+          {{ $rPlatforms := .Params.platforms | default (slice) }}
+          {{ $rBestOn := .Params.best_on | default "" }}
+          {{ $rDifficulty := .Params.difficulty | default "beginner" }}
+          <div class="prompt-card">
+            <div class="prompt-card-header">
+              <h3 class="prompt-card-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h3>
+              <span class="prompt-difficulty">
+                {{ if eq $rDifficulty "beginner" }}●{{ else if eq $rDifficulty "intermediate" }}●●{{ else }}●●●{{ end }}
+              </span>
+            </div>
+            <div class="prompt-text">{{ $rPrompt }}</div>
+            <div class="prompt-card-footer">
+              <div class="prompt-platforms">
+                {{ range $rPlatforms }}
+                  {{ $pdata := index hugo.Data.platforms . }}
+                  {{ if $pdata }}
+                  <span class="prompt-platform-badge{{ if eq . $rBestOn }} best{{ end }}">{{ if eq . $rBestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>
+                  {{ end }}
+                {{ end }}
+              </div>
+              <button class="prompt-copy-btn" data-prompt="{{ $rPrompt }}">📋 Copy</button>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/prompts.js?v={{ now.Unix }}"></script>
+{{ end }}

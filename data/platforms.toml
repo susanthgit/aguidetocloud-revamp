@@ -1,0 +1,47 @@
+[m365-copilot]
+name = "M365 Copilot"
+short = "M365"
+emoji = "⚡"
+color = "#6264A7"
+
+[chatgpt]
+name = "ChatGPT"
+short = "GPT"
+emoji = "🟢"
+color = "#10a37f"
+
+[claude]
+name = "Claude"
+short = "Claude"
+emoji = "🟠"
+color = "#d97706"
+
+[gemini]
+name = "Gemini"
+short = "Gemini"
+emoji = "🔵"
+color = "#4285f4"
+
+[notebooklm]
+name = "NotebookLM"
+short = "NbLM"
+emoji = "📓"
+color = "#ea4335"
+
+[dall-e]
+name = "DALL-E"
+short = "DALL-E"
+emoji = "🎨"
+color = "#ff6b6b"
+
+[midjourney]
+name = "Midjourney"
+short = "MJ"
+emoji = "🖼️"
+color = "#738ADB"
+
+[perplexity]
+name = "Perplexity"
+short = "Pplx"
+emoji = "🔍"
+color = "#20B2AA"
