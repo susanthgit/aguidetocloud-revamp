@@ -231,14 +231,17 @@
 }
 
 /* ── Category colour accents on prompt text border ── */
-.prompt-card[data-usecase="writing"] .prompt-text          { border-left-color: #A78BFA; }
-.prompt-card[data-usecase="data-analysis"] .prompt-text    { border-left-color: #22D3EE; }
-.prompt-card[data-usecase="meetings"] .prompt-text         { border-left-color: #60A5FA; }
-.prompt-card[data-usecase="research"] .prompt-text         { border-left-color: #34D399; }
-.prompt-card[data-usecase="presentations"] .prompt-text    { border-left-color: #FB923C; }
-.prompt-card[data-usecase="summarising"] .prompt-text      { border-left-color: #F472B6; }
-.prompt-card[data-usecase="image-generation"] .prompt-text { border-left-color: #F87171; }
-.prompt-card[data-usecase="coding"] .prompt-text           { border-left-color: #4ADE80; }
+.prompt-card[data-usecase="writing"] .prompt-text            { border-left-color: #A78BFA; }
+.prompt-card[data-usecase="email"] .prompt-text              { border-left-color: #38BDF8; }
+.prompt-card[data-usecase="data-analysis"] .prompt-text      { border-left-color: #22D3EE; }
+.prompt-card[data-usecase="meetings"] .prompt-text           { border-left-color: #60A5FA; }
+.prompt-card[data-usecase="research"] .prompt-text           { border-left-color: #34D399; }
+.prompt-card[data-usecase="presentations"] .prompt-text      { border-left-color: #FB923C; }
+.prompt-card[data-usecase="summarising"] .prompt-text        { border-left-color: #F472B6; }
+.prompt-card[data-usecase="project-management"] .prompt-text { border-left-color: #FACC15; }
+.prompt-card[data-usecase="brainstorming"] .prompt-text      { border-left-color: #C084FC; }
+.prompt-card[data-usecase="customer-service"] .prompt-text   { border-left-color: #2DD4BF; }
+.prompt-card[data-usecase="image-generation"] .prompt-text   { border-left-color: #F87171; }
 
 /* Card footer */
 .prompt-card-footer {
@@ -350,14 +353,17 @@
 }
 
 /* Category card left-accent colours */
-.prompts-category-card[data-cat="writing"]          { border-left: 3px solid #A78BFA; }
-.prompts-category-card[data-cat="data-analysis"]    { border-left: 3px solid #22D3EE; }
-.prompts-category-card[data-cat="meetings"]         { border-left: 3px solid #60A5FA; }
-.prompts-category-card[data-cat="research"]         { border-left: 3px solid #34D399; }
-.prompts-category-card[data-cat="presentations"]    { border-left: 3px solid #FB923C; }
-.prompts-category-card[data-cat="summarising"]      { border-left: 3px solid #F472B6; }
-.prompts-category-card[data-cat="image-generation"] { border-left: 3px solid #F87171; }
-.prompts-category-card[data-cat="coding"]           { border-left: 3px solid #4ADE80; }
+.prompts-category-card[data-cat="writing"]            { border-left: 3px solid #A78BFA; }
+.prompts-category-card[data-cat="email"]              { border-left: 3px solid #38BDF8; }
+.prompts-category-card[data-cat="data-analysis"]      { border-left: 3px solid #22D3EE; }
+.prompts-category-card[data-cat="meetings"]           { border-left: 3px solid #60A5FA; }
+.prompts-category-card[data-cat="research"]           { border-left: 3px solid #34D399; }
+.prompts-category-card[data-cat="presentations"]      { border-left: 3px solid #FB923C; }
+.prompts-category-card[data-cat="summarising"]        { border-left: 3px solid #F472B6; }
+.prompts-category-card[data-cat="project-management"] { border-left: 3px solid #FACC15; }
+.prompts-category-card[data-cat="brainstorming"]      { border-left: 3px solid #C084FC; }
+.prompts-category-card[data-cat="customer-service"]   { border-left: 3px solid #2DD4BF; }
+.prompts-category-card[data-cat="image-generation"]   { border-left: 3px solid #F87171; }
 
 /* ── SINGLE PROMPT PAGE ─────────────────────── */
 

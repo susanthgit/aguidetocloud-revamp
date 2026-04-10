@@ -13,7 +13,7 @@ roles:
 - it-admin
 - manager
 - developer
-use_case: writing
+use_case: email
 difficulty: intermediate
 tags:
 - email

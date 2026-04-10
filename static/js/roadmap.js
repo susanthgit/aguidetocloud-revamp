@@ -411,8 +411,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     var toolbar = document.querySelector('.rdmap-toolbar');
     if (!toolbar) return;
     var btn = document.createElement('button');
-    btn.className = 'rdmap-tab';
-    btn.textContent = '⬇ CSV';
+    btn.className = 'rdmap-csv-btn';
+    btn.textContent = '⬇ Download CSV';
     btn.title = 'Download filtered items as CSV';
     btn.addEventListener('click', exportCSV);
     toolbar.appendChild(btn);

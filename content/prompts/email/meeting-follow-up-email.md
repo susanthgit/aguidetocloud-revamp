@@ -12,7 +12,7 @@ roles:
 - manager
 - sales
 - executive-assistant
-use_case: writing
+use_case: email
 difficulty: beginner
 tags:
 - email

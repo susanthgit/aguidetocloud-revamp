@@ -14,7 +14,7 @@ roles:
 - executive
 - manager
 - hr
-use_case: writing
+use_case: email
 difficulty: beginner
 tags:
 - email

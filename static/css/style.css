@@ -2216,6 +2216,23 @@ pre.mermaid {
 .rdmap-freshness { color: #6B6575; }
 .rdmap-delayed { font-size: 0.65rem; font-weight: 700; color: #EF4444; letter-spacing: 0.03em; }
 
+/* CSV download button — magenta neon glow */
+.rdmap-csv-btn {
+  background: transparent; border: 1px solid #E040FB; color: #E040FB;
+  padding: 0.45rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.84rem;
+  font-weight: 600; transition: all 0.2s; white-space: nowrap;
+  box-shadow: 0 0 8px rgba(224, 64, 251, 0.3), inset 0 0 8px rgba(224, 64, 251, 0.05);
+  animation: rdmap-glow 2s ease-in-out infinite alternate;
+}
+.rdmap-csv-btn:hover {
+  background: #E040FB; color: #fff;
+  box-shadow: 0 0 16px rgba(224, 64, 251, 0.6), 0 0 32px rgba(224, 64, 251, 0.3);
+}
+@keyframes rdmap-glow {
+  from { box-shadow: 0 0 6px rgba(224, 64, 251, 0.25), inset 0 0 6px rgba(224, 64, 251, 0.03); }
+  to   { box-shadow: 0 0 14px rgba(224, 64, 251, 0.45), inset 0 0 10px rgba(224, 64, 251, 0.08); }
+}
+
 /* Empty + skeleton */
 .rdmap-empty { color: #6B6575; text-align: center; padding: 3rem; }
 .rdmap-skeleton { display: flex; flex-direction: column; gap: 0.6rem; }
