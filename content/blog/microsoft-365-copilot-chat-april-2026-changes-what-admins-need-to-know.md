@@ -51,10 +51,10 @@ flowchart TD
     E --> H["✅ WXP Agents still work\n✅ Copilot web app stays\n✅ Outlook & Teams stay"]
     F --> H
     G --> H
-    style E fill:#4a1a1a,stroke:#ff6666,color:#ff9999
-    style G fill:#4a1a1a,stroke:#ff6666,color:#ff9999
-    style F fill:#3a3a1a,stroke:#ffaa00,color:#ffcc66
-    style H fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+    style E fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style G fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style F fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
+    style H fill:#1a4a2a,stroke:#66ff99,color:#ffffff
 ```
 
 ### MC1253858 — Organisations With More Than 2,000 Users
@@ -127,10 +127,10 @@ flowchart LR
     end
     A -. "Embedded in\nOffice apps" .-> C["❌ Removed or\n⚠️ Degraded"]
     B -. "Agent in\nCopilot Chat" .-> D["✅ Still available\nfor all users"]
-    style removed fill:#2a1a1a,stroke:#ff6666,color:#e6edf3
-    style stays fill:#1a2a1a,stroke:#66ff99,color:#e6edf3
-    style C fill:#4a1a1a,stroke:#ff6666,color:#ff9999
-    style D fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+    style removed fill:#3d1a1a,stroke:#ff6666,color:#ffffff
+    style stays fill:#1a3d2a,stroke:#66ff99,color:#ffffff
+    style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
 ```
 
 ### WXP Agents Stay for Both Tenant Sizes
@@ -166,11 +166,11 @@ flowchart TD
     D --> F["WXP Agents completely\nHIDDEN from all users"]
     E --> G["Users can create docs\nvia Copilot app"]
     F --> H["No workaround —\nmust enable Anthropic"]
-    style B fill:#1a3a4a,stroke:#66ffff,color:#e6edf3
-    style E fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
-    style F fill:#4a1a1a,stroke:#ff6666,color:#ff9999
-    style G fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
-    style H fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+    style B fill:#1e3a5f,stroke:#66ffff,color:#ffffff
+    style E fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    style F fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    style G fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    style H fill:#5c1a1a,stroke:#ff6666,color:#ffffff
 ```
 
 This means:
@@ -200,8 +200,8 @@ flowchart LR
     B --> C["AI providers operating\nas Microsoft subprocessors"]
     C --> D["Enable Anthropic\n+ accept terms"]
     D --> E["✅ WXP Agents\nnow available"]
-    style A fill:#1a3a4a,stroke:#66ffff,color:#e6edf3
-    style E fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+    style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
+    style E fill:#1a4a2a,stroke:#66ff99,color:#ffffff
 ```
 
 1. Go to the [Microsoft 365 Admin Center](https://admin.microsoft.com)
