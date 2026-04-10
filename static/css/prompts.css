@@ -178,81 +178,119 @@
   color: var(--prompt-accent);
 }
 
-/* ── PROMPT CARD GRID ───────────────────────── */
+/* ── PROMPT ACCORDION LIST ───────────────────── */
 
-.prompts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.3rem;
+.prompts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   padding: 0.5rem 0 3rem;
 }
 
-/* ── PROMPT CARD ────────────────────────────── */
+/* ── PROMPT ROW (collapsed state) ───────────── */
 
-.prompt-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius);
-  padding: 1.5rem 1.6rem;
+.prompt-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease;
+}
+.prompt-row:hover {
+  background: rgba(167, 139, 250, 0.03);
+}
+
+.prompt-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.prompt-row-header:focus-visible {
+  outline: 2px solid var(--prompt-accent);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.prompt-row-arrow {
+  color: var(--prompt-accent);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  width: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.prompt-row-info {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  transition: all 0.3s ease;
-  position: relative;
+  gap: 0.15rem;
 }
-.prompt-card:hover {
-  border-color: var(--prompt-accent-border);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 15px var(--prompt-accent-glow);
-  transform: translateY(-2px);
-}
-
-/* Card header */
-.prompt-card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-.prompt-card-title {
+.prompt-row-title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #fff;
-  line-height: 1.35;
+  line-height: 1.3;
 }
-.prompt-card-title a {
+.prompt-row-title a {
   color: inherit;
   text-decoration: none;
 }
-.prompt-card-title a:hover {
+.prompt-row-title a:hover {
   color: var(--prompt-accent);
   text-shadow: none;
 }
-
-/* Card description */
-.prompt-card-desc {
-  font-size: 0.82rem;
-  color: var(--prompt-accent);
-  opacity: 0.8;
-  line-height: 1.4;
-  margin: -0.2rem 0 0;
+.prompt-row-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Category + meta row */
-.prompt-card-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.prompt-card-category {
-  font-size: 0.68rem;
-  padding: 0.12rem 0.5rem;
+.prompt-row-cat {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   font-family: var(--font-heading);
   font-weight: 600;
   white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.prompt-row-platforms {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ── PROMPT ROW BODY (expanded) ─────────────── */
+
+.prompt-row-body {
+  padding: 0 0.5rem 1rem 2.2rem;
+}
+.prompt-row-body .prompt-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: rgba(167, 139, 250, 0.03);
+  border: 1px solid rgba(167, 139, 250, 0.08);
+  border-left: 3px solid var(--prompt-accent-border);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Row highlight for random pick */
+.prompt-row-highlight {
+  animation: highlightPulse 2s ease;
 }
 
 /* Difficulty dots */
@@ -802,9 +840,7 @@
 /* ── RESPONSIVE ─────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .prompts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .prompt-row-platforms { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -814,9 +850,12 @@
   .prompts-subtitle {
     font-size: 0.95rem;
   }
-  .prompts-grid {
-    grid-template-columns: 1fr;
+  .prompt-row-header {
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
+  .prompt-row-cat { display: none; }
+  .prompt-row-desc { display: none; }
   .prompts-filter-label {
     min-width: 50px;
     font-size: 0.6rem;
@@ -852,13 +891,5 @@
   }
   .prompts-hero h1 {
     font-size: 1.5rem;
-  }
-  .prompt-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-  .prompt-copy-btn {
-    align-self: flex-end;
   }
 }

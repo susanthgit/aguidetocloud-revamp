@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── ELEMENTS ───────────────────────────────────
   var searchInput = document.getElementById('prompts-search');
   var chips = document.querySelectorAll('.prompts-chip');
-  var cards = document.querySelectorAll('.prompt-card');
+  var cards = document.querySelectorAll('.prompt-row');
   var countEl = document.getElementById('prompts-count');
   var emptyEl = document.getElementById('prompts-empty');
   var sortEl = document.getElementById('prompts-sort');
-  var grid = document.querySelector('.prompts-grid');
+  var grid = document.querySelector('.prompts-list');
 
   // ── INIT ───────────────────────────────────────
   initFavourites();
@@ -73,7 +73,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Favourite buttons
     var favBtn = e.target.closest('.prompt-fav-btn');
-    if (favBtn) { e.preventDefault(); handleFavourite(favBtn); return; }
+    if (favBtn) { e.preventDefault(); e.stopPropagation(); handleFavourite(favBtn); return; }
+
+    // Accordion toggle
+    var rowHeader = e.target.closest('.prompt-row-header');
+    if (rowHeader && !e.target.closest('.prompt-copy-btn') && !e.target.closest('.prompt-fav-btn') && !e.target.closest('a')) {
+      var row = rowHeader.closest('.prompt-row');
+      var body = row.querySelector('.prompt-row-body');
+      var arrow = rowHeader.querySelector('.prompt-row-arrow');
+      var isOpen = !body.hidden;
+      body.hidden = isOpen;
+      arrow.textContent = isOpen ? '▸' : '▾';
+      rowHeader.setAttribute('aria-expanded', !isOpen);
+      return;
+    }
 
     // Random button
     if (e.target.closest('#prompts-random')) { handleRandom(); return; }
@@ -92,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!text) return;
 
     // Track copy count
-    var slug = btn.closest('.prompt-card, .prompt-single')?.dataset?.slug || '';
+    var slug = btn.closest('.prompt-row, .prompt-single')?.dataset?.slug || '';
     if (slug) {
       copyCounts[slug] = (copyCounts[slug] || 0) + 1;
       try { localStorage.setItem('prompt-copy-counts', JSON.stringify(copyCounts)); } catch(e){}
@@ -154,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updatePopularBadge(slug) {
     if ((copyCounts[slug] || 0) >= 5) {
-      var card = document.querySelector('.prompt-card[data-slug="' + slug + '"]');
+      var card = document.querySelector('.prompt-row[data-slug="' + slug + '"]');
       if (card && !card.querySelector('.prompt-popular')) addPopularBadge(card);
     }
   }
@@ -164,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var badge = document.createElement('span');
     badge.className = 'prompt-popular';
     badge.textContent = '🔥 Popular';
-    card.querySelector('.prompt-card-header')?.appendChild(badge);
+    card.querySelector('.prompt-row-header')?.appendChild(badge);
   }
 
   // ── RANDOM PROMPT ──────────────────────────────
@@ -175,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var pick = visible[Math.floor(Math.random() * visible.length)];
     // Flash highlight and scroll
     pick.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    pick.classList.add('prompt-card-highlight');
-    setTimeout(function () { pick.classList.remove('prompt-card-highlight'); }, 2000);
+    pick.classList.add('prompt-row-highlight');
+    setTimeout(function () { pick.classList.remove('prompt-row-highlight'); }, 2000);
   }
 
   // ── FILTER COUNTS ──────────────────────────────

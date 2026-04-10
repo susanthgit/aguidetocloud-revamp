@@ -183,8 +183,8 @@
     </div>
     {{ end }}
 
-    {{/* ── PROMPT CARDS GRID ── */}}
-    <div class="prompts-grid">
+    {{/* ── PROMPT ACCORDION LIST ── */}}
+    <div class="prompts-list">
       {{ range $pagePrompts }}
       {{ $prompt := .Params.prompt | default "" }}
       {{ $platforms := .Params.platforms | default (slice) }}
@@ -198,7 +198,7 @@
       {{ $catName := "" }}{{ with .Parent }}{{ $catName = .Title }}{{ end }}
       {{ $catEmoji := "" }}{{ with .Parent }}{{ $catEmoji = .Params.emoji | default "" }}{{ end }}
 
-      <div class="prompt-card"
+      <div class="prompt-row"
            data-platforms="{{ delimit $platforms " " }}"
            data-roles="{{ delimit $roles " " }}"
            data-usecase="{{ $useCase }}"
@@ -208,41 +208,30 @@
            data-difficulty="{{ $difficulty }}"
            data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
 
-        <div class="prompt-card-header">
-          <h3 class="prompt-card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h3>
-          <div class="prompt-card-actions">
-            <button class="prompt-fav-btn" data-slug="{{ $slug }}" title="Save to favourites">♡</button>
-            <span class="prompt-difficulty" title="{{ $difficulty | title }}">
-              {{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}
-            </span>
+        <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
+          <span class="prompt-row-arrow">▸</span>
+          <div class="prompt-row-info">
+            <span class="prompt-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+            {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
           </div>
-        </div>
-
-        {{ if $description }}<p class="prompt-card-desc">{{ $description }}</p>{{ end }}
-
-        <div class="prompt-card-meta-row">
-          {{ if $catName }}<span class="prompt-card-category">{{ $catEmoji }} {{ $catName }}</span>{{ end }}
-        </div>
-
-        <div class="prompt-text">{{ $prompt }}</div>
-
-        <div class="prompt-card-footer">
-          <div class="prompt-platforms">
+          <span class="prompt-row-cat">{{ $catEmoji }} {{ $catName }}</span>
+          <div class="prompt-row-platforms">
             {{ range $platforms }}
               {{ $pdata := index hugo.Data.platforms . }}
-              {{ if $pdata }}
-              <span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>
-              {{ end }}
+              {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
             {{ end }}
           </div>
-          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy Prompt</button>
+          <span class="prompt-difficulty" title="{{ $difficulty | title }}">{{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}</span>
+          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+          <button class="prompt-fav-btn" data-slug="{{ $slug }}" title="Save to favourites">♡</button>
+        </div>
+
+        <div class="prompt-row-body" hidden>
+          <div class="prompt-text">{{ $prompt }}</div>
         </div>
       </div>
       {{ end }}
 
-      <!-- Empty state -->
       <div id="prompts-empty" class="prompts-empty" style="display: none;">
         <p>🔍 No prompts match your filters</p>
         <p>Try adjusting your search or filters</p>
