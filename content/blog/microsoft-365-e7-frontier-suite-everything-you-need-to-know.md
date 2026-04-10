@@ -5,6 +5,27 @@ date: 2026-04-10
 lastmod: 2026-04-10
 card_tag: "Copilot"
 tag_class: "ai"
+faq:
+  - question: "What is Microsoft 365 E7?"
+    answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month."
+  - question: "When does Microsoft 365 E7 become available?"
+    answer: "May 1, 2026. Both E7 and standalone Agent 365 become generally available and transactable through EA, EAS, CSP, and MCA channels."
+  - question: "How much does Microsoft 365 E7 cost?"
+    answer: "$99 USD per user per month with an annual commitment. This is 15% cheaper than buying E5, Copilot, Entra Suite, and Agent 365 separately ($117/month)."
+  - question: "What is Agent 365?"
+    answer: "Agent 365 is a centralised platform for governing AI agents in your organisation. It provides an agent registry, identity management via Entra Agent ID, lifecycle controls, observability dashboards, and security integration with Defender and Purview."
+  - question: "Can I buy Agent 365 without E7?"
+    answer: "Yes. Agent 365 is available as a standalone add-on at $15/user/month for organisations on any Microsoft 365 plan that includes Copilot."
+  - question: "Do I need E7 if I already have E5 plus Copilot?"
+    answer: "Not necessarily. The key differentiators in E7 beyond E5 plus Copilot are Agent 365 (AI governance) and the full Entra Suite (ZTNA, Private Access). If you're not deploying AI agents at scale, staying on E5 plus Copilot may be more cost-effective."
+  - question: "Is Microsoft 365 E7 available for small businesses?"
+    answer: "E7 is positioned for enterprise customers (typically 300+ users) using EA or CSP licensing. Small businesses should look at the Microsoft 365 Copilot add-on instead."
+  - question: "What happens to my existing E3 or E5 plan?"
+    answer: "Nothing changes. E3 and E5 continue to exist. E7 is a new tier above E5 — migration is optional and depends on your organisation's AI maturity and governance needs."
+  - question: "Does E7 include consumption-based Azure costs?"
+    answer: "No. The $99/user/month covers the platform, governance, and licensing. Building and running custom AI agents may incur additional consumption-based Azure costs."
+  - question: "What is Work IQ?"
+    answer: "Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents broader context about organisational data, workflows, and work patterns — improving AI relevance and safety."
 ---
 
 Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — codenamed the **"Frontier Suite"** — is a brand-new top-tier plan that bundles E5, Copilot, the Entra Suite, and the entirely new **Agent 365** platform into a single $99/user/month SKU. It goes GA on **May 1, 2026**.

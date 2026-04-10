@@ -169,7 +169,7 @@
   background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius);
-  padding: 1.4rem 1.5rem;
+  padding: 1.5rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -191,7 +191,7 @@
 }
 .prompt-card-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #fff;
   line-height: 1.35;
@@ -217,23 +217,28 @@
 /* Prompt text preview — the monospace snippet */
 .prompt-text {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.88rem;
+  line-height: 1.6;
   color: var(--text-secondary);
   background: rgba(167, 139, 250, 0.03);
   border: 1px solid rgba(167, 139, 250, 0.08);
   border-left: 3px solid var(--prompt-accent-border);
   border-radius: 6px;
-  padding: 0.75rem 0.9rem;
+  padding: 1rem 1.1rem;
   white-space: pre-wrap;
   word-break: break-word;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  max-height: 8em;
   flex-grow: 1;
 }
+
+/* ── Category colour accents on prompt text border ── */
+.prompt-card[data-usecase="writing"] .prompt-text          { border-left-color: #A78BFA; }
+.prompt-card[data-usecase="data-analysis"] .prompt-text    { border-left-color: #22D3EE; }
+.prompt-card[data-usecase="meetings"] .prompt-text         { border-left-color: #60A5FA; }
+.prompt-card[data-usecase="research"] .prompt-text         { border-left-color: #34D399; }
+.prompt-card[data-usecase="presentations"] .prompt-text    { border-left-color: #FB923C; }
+.prompt-card[data-usecase="summarising"] .prompt-text      { border-left-color: #F472B6; }
+.prompt-card[data-usecase="image-generation"] .prompt-text { border-left-color: #F87171; }
+.prompt-card[data-usecase="coding"] .prompt-text           { border-left-color: #4ADE80; }
 
 /* Card footer */
 .prompt-card-footer {
@@ -343,6 +348,16 @@
   color: var(--text-muted);
   margin-left: auto;
 }
+
+/* Category card left-accent colours */
+.prompts-category-card[data-cat="writing"]          { border-left: 3px solid #A78BFA; }
+.prompts-category-card[data-cat="data-analysis"]    { border-left: 3px solid #22D3EE; }
+.prompts-category-card[data-cat="meetings"]         { border-left: 3px solid #60A5FA; }
+.prompts-category-card[data-cat="research"]         { border-left: 3px solid #34D399; }
+.prompts-category-card[data-cat="presentations"]    { border-left: 3px solid #FB923C; }
+.prompts-category-card[data-cat="summarising"]      { border-left: 3px solid #F472B6; }
+.prompts-category-card[data-cat="image-generation"] { border-left: 3px solid #F87171; }
+.prompts-category-card[data-cat="coding"]           { border-left: 3px solid #4ADE80; }
 
 /* ── SINGLE PROMPT PAGE ─────────────────────── */
 

@@ -5,6 +5,27 @@ date: 2026-04-09
 lastmod: 2026-04-10
 card_tag: "Copilot"
 tag_class: "ai"
+faq:
+  - question: "Why is Microsoft removing free Copilot Chat from Office apps?"
+    answer: "Only about 3% of Microsoft 365 customers pay for the Copilot add-on licence. Microsoft offered free Copilot Chat in September 2025, hoping users would upgrade. That strategy didn't generate enough conversions, so Microsoft is tightening the gap between free and paid to drive licence adoption."
+  - question: "What is MC1253858?"
+    answer: "MC1253858 is a Microsoft 365 Message Center post for organisations with more than 2,000 users. It announces the complete removal of Copilot Chat from Word, Excel, PowerPoint, and OneNote for unlicensed users, effective April 15, 2026."
+  - question: "What is MC1253863?"
+    answer: "MC1253863 is a companion Message Center post for organisations with fewer than 2,000 users. Copilot Chat will remain in Word, Excel, and PowerPoint under standard access — meaning degraded performance during peak hours and upgrade prompts."
+  - question: "What is the difference between Copilot Chat Basic and M365 Copilot Premium?"
+    answer: "Copilot Chat Basic is the free tier — web-grounded AI chat with no organisational data. M365 Copilot Premium is the paid tier ($30/user/month enterprise, $21 business) — full in-app Copilot with Work Graph grounding, Claude model access, and agents."
+  - question: "Can unlicensed users still use Copilot after April 15?"
+    answer: "Yes — but in fewer places. Unlicensed users keep Copilot Chat on the web, Copilot in Outlook, Copilot in Teams, and the WXP agents. What they lose in large tenants is the Copilot side panel inside Word, Excel, PowerPoint, and OneNote."
+  - question: "What are WXP agents and do they still work for free users?"
+    answer: "WXP agents are AI-driven creation agents for Word, Excel, and PowerPoint that live inside the Copilot app. Yes, they still work for free users in both large and small tenants — but only if Anthropic is enabled at the tenant level."
+  - question: "Why do WXP agents require Anthropic to be enabled?"
+    answer: "WXP agents exclusively use Anthropic's Claude AI models — not OpenAI GPT. If your admin disables Anthropic as a subprocessor, the WXP agents are completely hidden from all users."
+  - question: "Is Anthropic Claude enabled by default?"
+    answer: "In non-EU commercial tenants, yes — enabled by default since January 7, 2026. In EU/EFTA/UK tenants, disabled by default and admins must opt in. In government clouds (GCC, GCC High, DoD), not available."
+  - question: "Does Copilot in Outlook change on April 15?"
+    answer: "No. Copilot Chat in Outlook remains available for all users — licensed and unlicensed, regardless of tenant size."
+  - question: "How much does a Microsoft 365 Copilot licence cost?"
+    answer: "For enterprises (over 300 users): $30 USD per user per month. For businesses (under 300 users): $21 USD per user per month. Both require an annual commitment as add-on licences."
 ---
 
 Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNote for millions of Microsoft 365 users on **April 15, 2026**. The changes were announced via Message Center posts [MC1253858](#mc1253858--organisations-with-more-than-2000-users) and [MC1253863](#mc1253863--organisations-with-fewer-than-2000-users) on March 17, 2026. Whether you're affected — and how severely — depends on your tenant size. This guide covers everything: what's changing, what stays, the WXP agent loophole most people don't know about, and the Anthropic Claude dependency that controls it all.

@@ -44,7 +44,7 @@
       {{ range .Sections }}
       {{ $count := len .RegularPages }}
       {{ if gt $count 0 }}
-      <a href="{{ .RelPermalink }}" class="prompts-category-card">
+      <a href="{{ .RelPermalink }}" class="prompts-category-card" data-cat="{{ .File.ContentBaseName }}">
         <span class="cat-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
         {{ .Title }}
         <span class="cat-count">{{ $count }}</span>
