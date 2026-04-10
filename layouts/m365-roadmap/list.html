@@ -5,89 +5,84 @@
   <div class="rdmap-status-bar" id="rdmap-status-bar"></div>
 </div>
 <div class="rdmap-container">
-  <!-- Dashboard metrics row -->
   <div class="rdmap-metrics" id="rdmap-metrics"></div>
 
-  <!-- Controls row: tabs + view toggle + search -->
-  <div class="rdmap-toolbar">
-    <div class="rdmap-tabs" role="tablist" aria-label="Time period">
-      <button class="rdmap-tab active" data-view="latest" role="tab" aria-selected="true">Latest</button>
-      <button class="rdmap-tab" data-view="weekly" role="tab" aria-selected="false">This Week</button>
-      <button class="rdmap-tab" data-view="monthly" role="tab" aria-selected="false">This Month</button>
+  <!-- Sticky toolbar -->
+  <div class="rdmap-sticky" id="rdmap-sticky">
+    <div class="rdmap-toolbar">
+      <div class="rdmap-tabs" role="tablist" aria-label="Time period">
+        <button class="rdmap-tab active" data-view="latest" role="tab" aria-selected="true">Latest</button>
+        <button class="rdmap-tab" data-view="weekly" role="tab" aria-selected="false">This Week</button>
+        <button class="rdmap-tab" data-view="monthly" role="tab" aria-selected="false">This Month</button>
+      </div>
+      <div class="rdmap-toolbar-right">
+        <select id="rdmap-sort" class="rdmap-select rdmap-sort-select" aria-label="Sort by">
+          <option value="default">Sort: Default</option>
+          <option value="ga-asc">GA Date (Soonest)</option>
+          <option value="ga-desc">GA Date (Latest)</option>
+          <option value="modified">Recently Modified</option>
+          <option value="title">Title A-Z</option>
+        </select>
+        <div class="rdmap-view-toggle" role="group" aria-label="Layout">
+          <button class="rdmap-view-btn active" data-layout="list" title="List view" aria-pressed="true">&#9776;</button>
+          <button class="rdmap-view-btn" data-layout="cards" title="Card view" aria-pressed="false">&#9638;</button>
+        </div>
+      </div>
     </div>
-    <div class="rdmap-view-toggle" role="group" aria-label="Layout">
-      <button class="rdmap-view-btn active" data-layout="list" title="List view" aria-pressed="true">☰</button>
-      <button class="rdmap-view-btn" data-layout="cards" title="Card view" aria-pressed="false">▦</button>
+    <div class="rdmap-filters">
+      <label for="rdmap-search" class="sr-only">Search roadmap items</label>
+      <input type="text" id="rdmap-search" class="rdmap-search" placeholder="Search 1,800+ roadmap items..." autocomplete="off">
+      <label for="rdmap-status-filter" class="sr-only">Filter by status</label>
+      <select id="rdmap-status-filter" class="rdmap-select">
+        <option value="active" selected>Active Only</option>
+        <option value="all">All Statuses</option>
+        <option value="Rolling out">Rolling Out</option>
+        <option value="In development">In Development</option>
+        <option value="Launched">Launched</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+      <label for="rdmap-product-filter" class="sr-only">Filter by product</label>
+      <select id="rdmap-product-filter" class="rdmap-select">
+        <option value="all">All Products</option>
+      </select>
     </div>
+    <div class="rdmap-filter-info" id="rdmap-filter-info"></div>
   </div>
 
-  <!-- Filters -->
-  <div class="rdmap-filters">
-    <label for="rdmap-search" class="sr-only">Search roadmap items</label>
-    <input type="text" id="rdmap-search" class="rdmap-search" placeholder="Search 1,800+ roadmap items..." autocomplete="off">
-    <label for="rdmap-status-filter" class="sr-only">Filter by status</label>
-    <select id="rdmap-status-filter" class="rdmap-select">
-      <option value="active" selected>⚡ Active Only</option>
-      <option value="all">All Statuses</option>
-      <option value="Rolling out">🟢 Rolling Out</option>
-      <option value="In development">🟡 In Development</option>
-      <option value="Launched">🔵 Launched</option>
-      <option value="Cancelled">🔴 Cancelled</option>
-    </select>
-    <label for="rdmap-product-filter" class="sr-only">Filter by product</label>
-    <select id="rdmap-product-filter" class="rdmap-select">
-      <option value="all">All Products</option>
-    </select>
-  </div>
-
-  <!-- Product category chips -->
   <h2 class="sr-only">Filter by Product</h2>
   <div class="rdmap-chips" id="rdmap-chips" role="group" aria-label="Product filters"></div>
-
-  <!-- GA Timeline bar -->
   <div class="rdmap-timeline" id="rdmap-timeline" aria-label="Upcoming GA dates"></div>
 
-  <!-- Main content area -->
   <h2 class="sr-only">Roadmap Items</h2>
   <div class="rdmap-content" id="rdmap-content" aria-live="polite">
     <div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>
   </div>
 
-  <!-- Source attribution -->
   <div class="rdmap-source">
-    <span>📡 Data from the <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap" target="_blank" rel="noopener">official Microsoft 365 Roadmap</a></span>
-    <span><a href="/data/roadmap/feed.xml" target="_blank" rel="noopener" style="color:#E5A00D">📡 RSS Feed</a></span>
+    <span>Data from the <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap" target="_blank" rel="noopener">official Microsoft 365 Roadmap</a></span>
+    <span><a href="/data/roadmap/feed.xml" target="_blank" rel="noopener" style="color:#E5A00D">RSS Feed</a></span>
     <span class="rdmap-freshness" id="rdmap-freshness"></span>
   </div>
 </div>
 
-<!-- WebApplication structured data for SEO -->
+<div class="rdmap-detail-overlay" id="rdmap-detail-overlay"></div>
+<div class="rdmap-detail-panel" id="rdmap-detail-panel"></div>
+<button class="rdmap-btt" id="rdmap-btt" title="Back to top" aria-label="Back to top">&#8593;</button>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "M365 Roadmap Tracker",
   "url": "https://www.aguidetocloud.com/m365-roadmap/",
-  "description": "Track every Microsoft 365 feature change with AI summaries, change detection, and smart filtering. Updated daily from the official Microsoft 365 Roadmap.",
+  "description": "Track every Microsoft 365 feature change with AI summaries, change detection, and smart filtering.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Susanth Sutheesh",
-    "url": "https://www.aguidetocloud.com/about/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "A Guide to Cloud & AI",
-    "url": "https://www.aguidetocloud.com"
-  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com/about/" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "https://www.aguidetocloud.com" },
   "datePublished": "2026-04-10",
-  "keywords": ["Microsoft 365 roadmap", "M365 updates", "Copilot roadmap", "Teams new features", "Outlook updates", "SharePoint roadmap", "Intune updates"]
+  "keywords": ["Microsoft 365 roadmap", "M365 updates", "Copilot roadmap", "Teams new features"]
 }
 </script>
 <script src="/js/roadmap.js?v={{ now.Unix }}"></script>

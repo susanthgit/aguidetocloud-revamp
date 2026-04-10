@@ -35,6 +35,7 @@
         <strong id="prompts-count">{{ len $pagePrompts }}</strong> of
         <strong>{{ len $allPrompts }}</strong> prompts ·
         {{ len hugo.Data.platforms }} platforms · tested by a human 🧪
+        <button id="prompts-random" class="prompts-random-btn" title="Show a random prompt">🎲 Surprise Me!</button>
       </p>
     </div>
 
@@ -106,8 +107,34 @@
         <button class="prompts-chip" data-filter-type="usecase" data-filter-value="customer-service">🤝 Support</button>
         <button class="prompts-chip" data-filter-type="usecase" data-filter-value="image-generation">🎨 Images</button>
       </div>
+
+      <!-- M365 App filter -->
+      <div class="prompts-filter-row">
+        <span class="prompts-filter-label">M365 App</span>
+        <button class="prompts-chip active" data-filter-type="surface" data-filter-value="all">All</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-work">💬 Chat (Work)</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-web">🌐 Chat (Web)</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="word">📝 Word</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="excel">📊 Excel</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="powerpoint">📑 PowerPoint</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="outlook">📧 Outlook</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="teams">💬 Teams</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="onenote">📓 OneNote</button>
+        <button class="prompts-chip" data-filter-type="surface" data-filter-value="loop">🔄 Loop</button>
+      </div>
     </div>
-    {{ end }}
+
+    <!-- Results bar: difficulty legend + sort -->
+    <div class="prompts-results-bar">
+      <span class="prompts-difficulty-legend">● Beginner &nbsp; ●● Intermediate &nbsp; ●●● Advanced</span>
+      <select id="prompts-sort" class="prompts-sort">
+        <option value="default">Sort: Default</option>
+        <option value="az">A → Z</option>
+        <option value="difficulty">By Difficulty</option>
+        <option value="category">By Category</option>
+        <option value="popular">Most Copied</option>
+      </select>
+    </div>
 
     {{/* ── PROMPT CARDS GRID ── */}}
     <div class="prompts-grid">
