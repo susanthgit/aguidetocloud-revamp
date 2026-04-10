@@ -76,7 +76,7 @@
 {{ end }}
 
 <div class="prompts-page">
-  <div class="prompts-container">
+  <div class="prompts-container" style="max-width:1100px;margin:0 auto;padding:0 3rem">
 
     <!-- ── HERO ──────────────────────────── -->
     <div class="prompts-hero">
@@ -251,7 +251,10 @@
 
   </div>
 </div>
-<button class="prompts-btt" id="prompts-btt" title="Back to top" aria-label="Back to top">&#8593;</button>
+<button id="prompts-btt" title="Back to top" aria-label="Back to top" style="position:fixed;bottom:2rem;right:2rem;z-index:100;width:42px;height:42px;border-radius:50%;background:#A78BFA;color:#0f0f1a;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 2px 12px rgba(167,139,250,.3);opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('prompts-btt');if(!b)return;window.addEventListener('scroll',function(){var s=window.scrollY>400;b.style.opacity=s?'1':'0';b.style.transform=s?'translateY(0)':'translateY(20px)';b.style.pointerEvents=s?'auto':'none'});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
 
 <script src="/js/prompts.js?v={{ now.Unix }}"></script>
 {{ end }}
