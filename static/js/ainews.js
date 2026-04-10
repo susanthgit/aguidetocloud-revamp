@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 // Microsoft-related categories get unlimited articles, others capped at 10
-var MICROSOFT_CATS = ['microsoft', 'm365 copilot', 'copilot studio', 'ai foundry', 'azure ai', 'github copilot'];
+var MICROSOFT_CATS = ['microsoft', 'm365 copilot', 'copilot studio', 'ai foundry', 'github copilot'];
 var MAX_OTHER = 10;
 
 // Display order: Top Stories first, then Microsoft family, then rest
@@ -126,7 +126,7 @@ var CATEGORY_ORDER = [
 
 // Category colours and emojis for pills
 var CATEGORY_META = {
-  'Top Stories':       { emoji: '🔥', color: '#ff00ff' },
+  'Top Stories':       { emoji: '🔥', color: '#FF6B35' },
   'Microsoft':         { emoji: '🟦', color: '#0078D4' },
   'M365 Copilot':      { emoji: '✨', color: '#6264A7' },
   'Copilot Studio':    { emoji: '🛠️', color: '#742774' },
@@ -143,7 +143,7 @@ var CATEGORY_META = {
   'Apple':             { emoji: '🍎', color: '#A2AAAD' },
   'NVIDIA':            { emoji: '💚', color: '#76B900' },
   'Amazon':            { emoji: '📦', color: '#FF9900' },
-  'Open Source':       { emoji: '⬛', color: '#888' },
+  'Open Source':       { emoji: '⬛', color: '#333333' },
   'Industry':          { emoji: '🔵', color: '#4A90D9' },
   'Rumours & Gossip':  { emoji: '🗣️', color: '#9B59B6' }
 };
