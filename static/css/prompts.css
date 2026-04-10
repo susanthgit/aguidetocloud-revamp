@@ -91,6 +91,48 @@
   font-weight: 700;
 }
 
+/* ── TOOLBAR: Search + Dropdown ──────────────── */
+
+.prompts-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  padding: 1rem 0 0.5rem;
+}
+.prompts-search {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+.prompts-search::placeholder {
+  color: var(--text-muted);
+}
+.prompts-search:focus {
+  outline: none;
+  border-color: var(--prompt-accent);
+  box-shadow: 0 0 15px var(--prompt-accent-glow);
+}
+.prompts-select {
+  padding: 0.6rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  cursor: pointer;
+  min-width: 160px;
+}
+.prompts-select:focus {
+  outline: none;
+  border-color: var(--prompt-accent);
+}
+
 /* ── FILTER CHIPS ───────────────────────────── */
 
 .prompts-filter-bar {
@@ -717,21 +759,20 @@
   .prompts-subtitle {
     font-size: 0.95rem;
   }
+  .prompts-toolbar {
+    flex-direction: column;
+  }
+  .prompts-select {
+    min-width: auto;
+  }
   .prompt-row-header {
     flex-wrap: wrap;
     gap: 0.4rem;
   }
   .prompt-row-desc { display: none; }
-  .prompts-filter-label {
-    min-width: 50px;
-    font-size: 0.6rem;
-  }
   .prompts-chip {
     font-size: 0.72rem;
     padding: 0.25rem 0.6rem;
-  }
-  .prompt-card {
-    padding: 1.1rem;
   }
   .prompt-single-header h1 {
     font-size: 1.5rem;

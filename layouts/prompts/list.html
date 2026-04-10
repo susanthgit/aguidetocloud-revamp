@@ -80,11 +80,23 @@
   <!-- ── CONTENT ── -->
   <div class="prompts-container">
 
-    {{/* ── PLATFORM FILTER (main page only) ── */}}
+    {{/* ── TOOLBAR: Search + Category dropdown (main page only) ── */}}
     {{ if $isMainPage }}
+    <div class="prompts-toolbar">
+      <input type="text" id="prompts-search" class="prompts-search" placeholder="Search {{ len $allPrompts }} prompts..." autocomplete="off" aria-label="Search prompts">
+      <select id="prompts-category" class="prompts-select" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        {{ range .Sections.ByWeight }}
+        {{ if gt (len .RegularPages) 0 }}
+        <option value="{{ .File.ContentBaseName }}">{{ with .Params.emoji }}{{ . }}{{ end }} {{ .Title }} ({{ len .RegularPages }})</option>
+        {{ end }}
+        {{ end }}
+      </select>
+    </div>
+
+    {{/* ── PLATFORM CHIPS ── */}}
     <div class="prompts-filter-bar">
-      <span class="prompts-filter-label">Show:</span>
-      <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
+      <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All Platforms</button>
       <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
       <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
       <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>

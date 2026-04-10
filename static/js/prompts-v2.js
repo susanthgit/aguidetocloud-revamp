@@ -1,55 +1,84 @@
 document.addEventListener('DOMContentLoaded', function () {
   var activeFilter = 'all';
+  var activeCategory = 'all';
+  var searchQuery = '';
   var chips = document.querySelectorAll('.prompts-chip');
   var rows = document.querySelectorAll('.prompt-row');
   var groups = document.querySelectorAll('.prompts-category-group');
   var emptyEl = document.getElementById('prompts-empty');
+  var searchInput = document.getElementById('prompts-search');
+  var categorySelect = document.getElementById('prompts-category');
 
-  // ── PLATFORM FILTER ────────────────────────
+  // ── SEARCH ─────────────────────────────────
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      searchQuery = this.value.toLowerCase().trim();
+      filterAll();
+    });
+  }
+
+  // ── CATEGORY DROPDOWN ──────────────────────
+  if (categorySelect) {
+    categorySelect.addEventListener('change', function () {
+      activeCategory = this.value;
+      filterAll();
+    });
+  }
+
+  // ── PLATFORM CHIPS ─────────────────────────
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
       chips.forEach(function (c) { c.classList.remove('active'); });
       this.classList.add('active');
       activeFilter = this.dataset.filterValue;
-      filterRows();
+      filterAll();
     });
   });
 
-  function filterRows() {
+  function filterAll() {
     var totalVisible = 0;
 
-    // Filter individual rows
     rows.forEach(function (row) {
-      if (activeFilter === 'all') {
-        row.style.display = '';
-        totalVisible++;
-      } else {
+      var show = true;
+
+      // Platform filter
+      if (activeFilter !== 'all') {
         var platforms = (row.dataset.platforms || '').split(' ');
-        var show = platforms.indexOf(activeFilter) !== -1;
-        row.style.display = show ? '' : 'none';
-        if (show) totalVisible++;
+        if (platforms.indexOf(activeFilter) === -1) show = false;
       }
+
+      // Search
+      if (searchQuery && show) {
+        var text = (row.dataset.searchText || '').toLowerCase();
+        if (text.indexOf(searchQuery) === -1) show = false;
+      }
+
+      row.style.display = show ? '' : 'none';
+      if (show) totalVisible++;
     });
 
-    // Hide empty category groups
+    // Show/hide category groups
     groups.forEach(function (group) {
-      var visibleInGroup = group.querySelectorAll('.prompt-row:not([style*="display: none"])').length;
-      // Also check rows without explicit style (visible by default)
-      if (activeFilter === 'all') {
-        group.style.display = '';
-      } else {
-        var hasVisible = false;
-        group.querySelectorAll('.prompt-row').forEach(function (r) {
-          if (r.style.display !== 'none') hasVisible = true;
-        });
-        group.style.display = hasVisible ? '' : 'none';
+      var cat = group.dataset.category;
+
+      // Category dropdown filter
+      if (activeCategory !== 'all' && cat !== activeCategory) {
+        group.style.display = 'none';
+        return;
       }
+
+      // Check if any rows visible in this group
+      var hasVisible = false;
+      group.querySelectorAll('.prompt-row').forEach(function (r) {
+        if (r.style.display !== 'none') hasVisible = true;
+      });
+      group.style.display = hasVisible ? '' : 'none';
     });
 
     if (emptyEl) emptyEl.style.display = totalVisible === 0 ? '' : 'none';
   }
 
-  // ── ACCORDION TOGGLE ──────────────────────
+  // ── ACCORDION TOGGLE + COPY ────────────────
   document.addEventListener('click', function (e) {
     // Copy button
     var copyBtn = e.target.closest('.prompt-copy-btn, .prompt-full-copy');
