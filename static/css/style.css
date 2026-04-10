@@ -708,6 +708,21 @@ a:hover {
   color: var(--text-secondary);
 }
 
+/* ── BACK TO TOP (SITE-WIDE) ────────────── */
+.site-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--neon-cyan); color: #0a0a1a; border: none;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(102, 255, 255, 0.3);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  pointer-events: none;
+}
+.site-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.site-btt:hover { background: #99ffff; box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5); }
+/* Hide site-wide button on roadmap page (has its own gold one) */
+.rdmap-container ~ .site-btt { display: none; }
+
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid rgba(102, 255, 255, 0.2);

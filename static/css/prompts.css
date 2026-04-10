@@ -11,6 +11,9 @@
   --prompt-accent-border: rgba(167, 139, 250, 0.3);
   --prompt-accent-subtle: rgba(167, 139, 250, 0.08);
 }
+.prompts-page .container {
+  max-width: 1100px;
+}
 
 /* ── HERO — Search-first design ─────────────── */
 
@@ -754,8 +757,8 @@
 
 .prompts-btt {
   position: fixed;
-  bottom: 50%;
-  right: calc((100vw - var(--max-width)) / 2 - 60px);
+  bottom: 2rem;
+  right: 2rem;
   z-index: 100;
   width: 44px;
   height: 44px;
@@ -829,13 +832,6 @@
 
 /* ── RESPONSIVE ─────────────────────────────── */
 
-@media (max-width: 1400px) {
-  .prompts-btt {
-    right: 1.5rem;
-    bottom: 2rem;
-  }
-}
-
 @media (max-width: 1024px) {
   .prompts-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -851,10 +847,6 @@
   }
   .prompts-grid {
     grid-template-columns: 1fr;
-  }
-  .prompts-btt {
-    right: 1rem;
-    bottom: 1.5rem;
   }
   .prompts-filter-label {
     min-width: 50px;
