@@ -125,12 +125,17 @@ a:hover {
   font-family: var(--font-heading);
 }
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-links a.nav-active {
   color: var(--neon-cyan);
   border-color: var(--neon-cyan);
   background: rgba(0, 229, 255, 0.06);
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
   text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+.nav-dropdown-active > .dropdown-toggle {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
 }
 .nav-cta {
   background: rgba(102, 255, 255, 0.1) !important;
@@ -1145,6 +1150,8 @@ a:hover {
   -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
 .ainews-categories::-webkit-scrollbar { display: none; }
+.ainews-filter-info { font-size: 0.78rem; color: var(--text-muted); padding: 0.3rem 0 0.5rem; }
+.ainews-filter-info b { color: var(--neon-cyan); }
 .ainews-filter {
   padding: 0.4rem 1rem;
   border-radius: 20px;
@@ -2179,6 +2186,9 @@ pre.mermaid {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .rdmap-hero-sub { color: #8B8594; font-size: 0.92rem; margin: 0 0 1.5rem; }
+.rdmap-breadcrumbs { font-size: 0.85rem; margin-bottom: 0.8rem; color: #8B8594; }
+.rdmap-breadcrumbs a { color: #E5A00D; text-decoration: none; }
+.rdmap-breadcrumbs a:hover { text-decoration: underline; }
 
 /* Status bar */
 .rdmap-status-bar { max-width: 700px; margin: 0 auto; }
@@ -2226,6 +2236,8 @@ pre.mermaid {
 /* List info */
 .rdmap-list-info { font-size: 0.78rem; color: #6B6575; margin-bottom: 0.5rem; }
 .rdmap-list-info b { color: #E5A00D; }
+.rdmap-clear-btn { background: none; border: 1px solid #6B6575; color: #8B8594; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
+.rdmap-clear-btn:hover { border-color: #E5A00D; color: #E5A00D; }
 
 /* List — card-style rows */
 .rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }

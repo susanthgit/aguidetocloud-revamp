@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var emptyEl = document.getElementById('prompts-empty');
   var searchInput = document.getElementById('prompts-search');
   var categorySelect = document.getElementById('prompts-category');
+  var countEl = document.getElementById('prompts-count');
+  var clearBtn = document.getElementById('prompts-clear');
 
   // ── SEARCH ─────────────────────────────────
   if (searchInput) {
@@ -76,6 +78,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     if (emptyEl) emptyEl.style.display = totalVisible === 0 ? '' : 'none';
+    if (countEl) countEl.textContent = totalVisible;
+    var hasFilters = activeFilter !== 'all' || activeCategory !== 'all' || searchQuery;
+    if (clearBtn) clearBtn.style.display = hasFilters ? '' : 'none';
+  }
+
+  // ── CLEAR FILTERS ─────────────────────
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      activeFilter = 'all'; activeCategory = 'all'; searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      if (categorySelect) categorySelect.value = 'all';
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      var allChip = document.querySelector('.prompts-chip[data-filter-value="all"]');
+      if (allChip) allChip.classList.add('active');
+      filterAll();
+    });
   }
 
   // ── ACCORDION TOGGLE + COPY ────────────────

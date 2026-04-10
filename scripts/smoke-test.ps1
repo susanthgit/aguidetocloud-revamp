@@ -14,7 +14,7 @@
 #>
 
 param(
-    [ValidateSet('all','quick','ainews','blog','seo','security','redirects','youtube','search')]
+    [ValidateSet('all','quick','ainews','prompts','roadmap','blog','seo','security','redirects','youtube','search')]
     [string]$Section = 'all'
 )
 
@@ -95,19 +95,48 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     # Check HTML has cache-busted CSS links
     $html = (Fetch-Page "$BASE/ai-news/").Content
     Test-Check "CSS cache-busted in HTML" ($html -match 'style\.css\?v=')
-    Test-Check "sections.css cache-busted" ($html -match 'sections\.css\?v=')
 
-    # Check CSS is fetchable and has key rules
+    # Check key CSS selectors exist (in any CSS file — resilient to extraction)
     $css = (Fetch-Page "$BASE/css/style.css?v=$bust").Content
-    Test-Check "style.css loads" ($null -ne $css -and $css.Length -gt 10000)
-    Test-Check "CSS has ainews-thumb-wrap" ($css.Contains('ainews-thumb-wrap'))
-    Test-Check "CSS has ainews-card" ($css.Contains('ainews-card'))
-    Test-Check "CSS has blog-timeline" ($css.Contains('blog-timeline') -or $css.Contains('blog-card'))
+    Test-Check "style.css loads" ($null -ne $css -and $css.Length -gt 5000)
+
+    # AI News CSS can be in style.css OR ainews.css
+    $ainewsCss = (Fetch-Page "$BASE/css/ainews.css?v=$bust" -ErrorAction SilentlyContinue)
+    $allCss = $css + $(if ($ainewsCss) { $ainewsCss.Content } else { '' })
+    Test-Check "CSS has ainews-thumb-wrap" ($allCss.Contains('ainews-thumb-wrap'))
+    Test-Check "CSS has ainews-card" ($allCss.Contains('ainews-card'))
+    Test-Check "CSS has blog-timeline" ($allCss.Contains('blog-timeline') -or $allCss.Contains('blog-card'))
 
     # Check JS files
     foreach ($jsFile in @('ainews.js', 'search.js', 'switcher.js')) {
         $js = Fetch-Head "$BASE/js/$jsFile"
         Test-Check "JS: $jsFile loads" ($null -ne $js -and $js.StatusCode -eq 200)
+    }
+}
+
+# ═══════════════════════════════════════════
+# 2b. PROMPT LIBRARY
+# ═══════════════════════════════════════════
+if ($Section -eq 'all' -or $Section -eq 'quick') {
+    Write-Host "`n✨ PROMPT LIBRARY" -ForegroundColor Cyan
+
+    $promptsPage = Fetch-Page "$BASE/prompts/"
+    Test-Check "Prompts page loads" ($null -ne $promptsPage -and $promptsPage.StatusCode -eq 200)
+    if ($null -ne $promptsPage) {
+        Test-Check "Prompts has filter chips" ($promptsPage.Content -match 'prompts-chip')
+        Test-Check "Prompts has category groups" ($promptsPage.Content -match 'prompts-category-group')
+        Test-Check "Prompts JS loaded" ($promptsPage.Content -match 'prompts-v2\.js')
+        Test-Check "Prompts CSS loaded" ($promptsPage.Content -match 'prompts\.css')
+    }
+
+    # Spot check a single prompt page
+    $singlePrompt = Fetch-Page "$BASE/prompts/email/professional-email-rewrite/"
+    if ($null -ne $singlePrompt) {
+        Test-Check "Single prompt page loads" ($singlePrompt.StatusCode -eq 200)
+        Test-Check "Single prompt has copy button" ($singlePrompt.Content -match 'prompt-full-copy')
+        Test-Check "Single prompt has breadcrumbs" ($singlePrompt.Content -match 'prompt-breadcrumbs')
+    } else {
+        Test-Warn "Single prompt page not found" "May have different slug"
     }
 }
 

@@ -1,6 +1,9 @@
 {{ define "main" }}
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
 <div class="rdmap-hero">
+  <nav class="rdmap-breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/m365-roadmap/">M365 Roadmap</a> › <span>{{ .Title }}</span>
+  </nav>
   <h1>{{ .Title }}</h1>
   <p>{{ .Description }}</p>
   <div class="rdmap-status-bar" id="rdmap-status-bar"></div>

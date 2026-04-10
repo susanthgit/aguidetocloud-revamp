@@ -139,9 +139,17 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 0 1rem;
+  padding: 0.8rem 0 0.5rem;
   flex-wrap: wrap;
 }
+.prompts-filter-info {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 0 0 0.8rem;
+}
+.prompts-filter-info b { color: #A78BFA; }
+.prompts-clear-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
+.prompts-clear-btn:hover { border-color: #A78BFA; color: #A78BFA; }
 .prompts-filter-label {
   font-family: var(--font-heading);
   font-size: 0.78rem;

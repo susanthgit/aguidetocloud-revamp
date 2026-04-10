@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   async function loadView(view) {
     var grid = document.getElementById('news-grid');
-    grid.innerHTML = '<div class="ainews-skeleton-wrap" style="grid-column:1/-1"><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div></div>';
+    grid.innerHTML = '<div class="ainews-skeleton-wrap" style="grid-column:1/-1"><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div></div>';
     try {
       var url = DATA_URLS[view] || DATA_URLS.daily;
       var raw = await fetchJson(url);
@@ -303,6 +303,9 @@ function renderNews(data, view) {
   });
   html += '</div>';
 
+  // 📊 FILTER INFO + CLEAR
+  html += '<div class="ainews-filter-info" id="ainews-filter-info" style="grid-column:1/-1"><span>Showing <b id="ainews-count">' + articles.length + '</b> of ' + articles.length + ' articles</span></div>';
+
   // 🔥 HEADLINES
   if (headlines.length > 0) {
     html += '<div class="ainews-tier-section">';
@@ -342,6 +345,14 @@ function renderNews(data, view) {
 
   grid.innerHTML = html || '<p class="ainews-loading">No articles found for this period.</p>';
 
+  // Helper: update visible count display
+  function updateAinewsCount() {
+    var countEl = document.getElementById('ainews-count');
+    if (!countEl) return;
+    var visible = grid.querySelectorAll('.ainews-card:not([style*="display: none"]):not([style*="display:none"]), .ainews-card-hero:not([style*="display: none"]):not([style*="display:none"])');
+    countEl.textContent = visible.length;
+  }
+
   // Wire up category filter clicks
   var filtersEl = document.getElementById('category-filters');
   if (filtersEl) {
@@ -350,32 +361,42 @@ function renderNews(data, view) {
         filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); });
         this.classList.add('active');
         var cat = this.dataset.cat;
+        var visibleCount = 0;
         grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-section-header').forEach(function (el) {
-          if (cat === 'all') { el.style.display = ''; return; }
-          el.style.display = (el.dataset.category === cat) ? '' : 'none';
+          if (cat === 'all') { el.style.display = ''; visibleCount++; return; }
+          var show = el.dataset.category === cat;
+          el.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
         });
         grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
           var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"])');
           sec.style.display = hasVisible.length > 0 ? '' : 'none';
         });
+        updateAinewsCount();
       });
     });
   }
 
-  // Search functionality
+  // Search functionality (debounced)
   var searchInput = document.getElementById('ainews-search');
   if (searchInput) {
+    var _searchTimer;
     searchInput.addEventListener('input', function () {
-      var q = this.value.toLowerCase();
-      grid.querySelectorAll('.ainews-card, .ainews-card-hero').forEach(function (el) {
-        var text = el.textContent.toLowerCase();
-        el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
-      });
-      // Show all load-more items when searching
-      if (q) {
-        grid.querySelectorAll('.ainews-loadmore-item').forEach(function (el) { el.style.display = ''; });
-        grid.querySelectorAll('.ainews-show-more').forEach(function (btn) { btn.style.display = 'none'; });
-      }
+      clearTimeout(_searchTimer);
+      var input = this;
+      _searchTimer = setTimeout(function () {
+        var q = input.value.toLowerCase();
+        grid.querySelectorAll('.ainews-card, .ainews-card-hero').forEach(function (el) {
+          var text = el.textContent.toLowerCase();
+          el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+        });
+        // Show all load-more items when searching
+        if (q) {
+          grid.querySelectorAll('.ainews-loadmore-item').forEach(function (el) { el.style.display = ''; });
+          grid.querySelectorAll('.ainews-show-more').forEach(function (btn) { btn.style.display = 'none'; });
+        }
+        updateAinewsCount();
+      }, 200);
     });
   }
 

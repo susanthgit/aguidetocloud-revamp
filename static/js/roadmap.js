@@ -102,8 +102,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     currentFiltered = getFiltered();
     renderedCount = 0;
     var content = document.getElementById('rdmap-content');
-    if (!currentFiltered.length) { content.innerHTML = '<p class="rdmap-empty">No items match your filters.</p>'; return; }
-    content.innerHTML = '<div class="rdmap-list-info">Showing <b>' + currentFiltered.length + '</b> items</div><div class="rdmap-list" id="rdmap-list"></div>';
+    if (!currentFiltered.length) {
+      content.innerHTML = '<p class="rdmap-empty">No items match your filters. <button class="rdmap-clear-btn" id="rdmap-clear">Clear filters</button></p>';
+      var clearBtn = document.getElementById('rdmap-clear');
+      if (clearBtn) clearBtn.addEventListener('click', clearAllFilters);
+      return;
+    }
+    var clearHtml = (activeProductFilter !== 'all' || activeStatusFilter !== 'all' || document.getElementById('rdmap-search').value) ? ' <button class="rdmap-clear-btn" id="rdmap-clear">✕ Clear filters</button>' : '';
+    content.innerHTML = '<div class="rdmap-list-info">Showing <b>' + currentFiltered.length + '</b> of <b>' + currentData.items.length + '</b> items' + clearHtml + '</div><div class="rdmap-list" id="rdmap-list"></div>';
+    var clearBtn2 = document.getElementById('rdmap-clear');
+    if (clearBtn2) clearBtn2.addEventListener('click', clearAllFilters);
     loadMore();
   }
 
@@ -139,6 +147,14 @@ document.addEventListener('DOMContentLoaded', async function () {
       + '<span class="rdmap-row-product" style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + esc(item.product_category_name || '') + '</span>'
       + '<span class="rdmap-row-date">' + esc(item.ga_date || '\u2014') + (item.is_delayed ? ' <span class="rdmap-delayed">DELAYED</span>' : '') + '</span>'
       + '</div></a>';
+  }
+
+  function clearAllFilters() {
+    activeProductFilter = 'all'; activeStatusFilter = 'all';
+    document.getElementById('rdmap-search').value = '';
+    document.getElementById('rdmap-status-filter').value = 'all';
+    document.getElementById('rdmap-product-filter').value = 'all';
+    applyFilters();
   }
 
   function applyFilters() {
