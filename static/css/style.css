@@ -2229,9 +2229,9 @@ pre.mermaid {
   padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
   background: #1C1924; border: 1px solid #2A2533; border-radius: 10px;
   border-left: 3px solid transparent; transition: all 0.15s;
-  text-decoration: none; color: inherit; cursor: pointer;
+  text-decoration: none; color: inherit; cursor: pointer; text-shadow: none;
 }
-.rdmap-row:hover { border-color: #3D3648; border-left-color: #E5A00D; background: #211E29; }
+.rdmap-row:hover { border-color: #3D3648; border-left-color: #E5A00D; background: #211E29; text-shadow: none; color: inherit; }
 .rdmap-row-status { padding-top: 0.15rem; }
 .rdmap-st {
   display: inline-block; font-size: 0.7rem; font-weight: 600;
