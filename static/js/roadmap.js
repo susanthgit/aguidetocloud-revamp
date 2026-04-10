@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       + '<div class="rdmap-row-status"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span></div>'
       + '<div class="rdmap-row-main">'
       + '<a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row-title">' + escapeHtml(item.title) + '</a>'
-      + '<a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center for this feature">📬</a>'
+      + '<a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center for this feature">📬 Message Center</a>'
       + (summary ? '<div class="rdmap-row-desc">' + escapeHtml(summary) + '</div>' : '')
       + changeHtml
       + '</div>'
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         + '<div class="rdmap-card-top"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span>'
         + (change ? '<span class="rdmap-change-sm" style="color:' + change.color + '">' + change.icon + ' ' + change.label + '</span>' : '')
         + '</div>'
-        + '<h4><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a> <a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center">📬</a></h4>'
+        + '<h4><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a> <a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center">📬 Message Center</a></h4>'
         + (summary ? '<p>' + escapeHtml(summary) + '</p>' : '')
         + '<div class="rdmap-card-foot">'
         + '<span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
