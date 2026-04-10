@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
   var DATA_URLS = { latest: '/data/roadmap/latest.json', weekly: '/data/roadmap/weekly.json', monthly: '/data/roadmap/monthly.json' };
-  var CACHE_VERSION = 'v3';
+  var CACHE_VERSION = 'v4';
   var _cache = {};
 
   async function fetchJson(url) {
@@ -88,7 +88,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   // ── STATUS BAR (clickable segments) ──
   function renderStatusBar(data) {
     var el = document.getElementById('rdmap-status-bar');
-    var sc = data.status_counts || {};
+    // Compute from actual items in this view
+    var items = data.items || [];
+    var sc = {}; items.forEach(function (i) { var s = i.status || '?'; sc[s] = (sc[s] || 0) + 1; });
     var total = (sc['Rolling out'] || 0) + (sc['In development'] || 0) + (sc['Launched'] || 0) + (sc['Cancelled'] || 0);
     if (!total) { el.innerHTML = ''; return; }
     var segs = [
@@ -117,16 +119,19 @@ document.addEventListener('DOMContentLoaded', async function () {
   // ── METRICS (animated counters) ──
   function renderMetrics(data) {
     var el = document.getElementById('rdmap-metrics');
-    var ch = data.changes_summary || {};
-    var tc = (ch.new_items || 0) + (ch.status_changes || 0) + (ch.date_changes || 0);
-    var delayed = data.delayed_items || 0;
+    // Compute stats from actual items in this view (not pre-computed totals)
+    var items = data.items || [];
+    var sc = {}; items.forEach(function (i) { var s = i.status || '?'; sc[s] = (sc[s] || 0) + 1; });
+    var active = items.filter(function (i) { return i.status !== 'Launched'; }).length;
+    var delayed = items.filter(function (i) { return i.is_delayed; }).length;
+    var changed = items.filter(function (i) { return i.change_type; }).length;
     var metrics = [
-      { value: data.active_items || 0, label: 'Active', icon: '\u26A1' },
-      { value: data.status_counts ? (data.status_counts['Rolling out'] || 0) : 0, label: 'Rolling Out', icon: '\u{1F7E2}' },
-      { value: data.status_counts ? (data.status_counts['In development'] || 0) : 0, label: 'In Dev', icon: '\u{1F7E1}' },
+      { value: active, label: 'Active', icon: '\u26A1' },
+      { value: sc['Rolling out'] || 0, label: 'Rolling Out', icon: '\u{1F7E2}' },
+      { value: sc['In development'] || 0, label: 'In Dev', icon: '\u{1F7E1}' },
     ];
     if (delayed > 0) metrics.push({ value: delayed, label: 'Delayed', icon: '\u26A0\uFE0F', highlight: true });
-    if (tc > 0) metrics.push({ value: tc, label: 'Changes', icon: '\u{1F504}', highlight: true });
+    if (changed > 0) metrics.push({ value: changed, label: 'Changes', icon: '\u{1F504}', highlight: true });
     el.innerHTML = metrics.map(function (m) {
       return '<div class="rdmap-metric' + (m.highlight ? ' rdmap-metric-hl' : '') + '"><span class="rdmap-metric-icon">' + m.icon + '</span><span class="rdmap-metric-val" data-target="' + m.value + '">0</span><span class="rdmap-metric-lbl">' + m.label + '</span></div>';
     }).join('');

@@ -41,17 +41,19 @@
 
     {{/* ── CATEGORY QUICK LINKS (main page only) ── */}}
     {{ if $isMainPage }}
-    <div class="prompts-categories">
-      {{ range .Sections }}
-      {{ $count := len .RegularPages }}
-      {{ if gt $count 0 }}
-      <a href="{{ .RelPermalink }}" class="prompts-category-card" data-cat="{{ .File.ContentBaseName }}">
-        <span class="cat-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
-        {{ .Title }}
-        <span class="cat-count">{{ $count }}</span>
-      </a>
-      {{ end }}
-      {{ end }}
+    <div class="prompts-categories-wrap">
+      <div class="prompts-categories">
+        {{ range .Sections }}
+        {{ $count := len .RegularPages }}
+        {{ if gt $count 0 }}
+        <a href="{{ .RelPermalink }}" class="prompts-category-card" data-cat="{{ .File.ContentBaseName }}">
+          <span class="cat-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
+          {{ .Title }}
+          <span class="cat-count">{{ $count }}</span>
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
     </div>
     {{ end }}
 
@@ -59,68 +61,57 @@
     {{ if $isMainPage }}
     <div class="prompts-filters">
       <!-- Platform filter -->
-      <div class="prompts-filter-row">
+      <div class="prompts-filter-row prompts-scroll-row">
         <span class="prompts-filter-label">Platform</span>
-        <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
+        <div class="prompts-chip-track">
+          <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
+          <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
+        </div>
       </div>
 
       <!-- Role filter -->
-      <div class="prompts-filter-row">
+      <div class="prompts-filter-row prompts-scroll-row">
         <span class="prompts-filter-label">Role</span>
-        <button class="prompts-chip active" data-filter-type="role" data-filter-value="all">All</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="executive">👔 Executive</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="executive-assistant">🗂️ EA</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="it-admin">🖥️ IT Admin</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="hr">👥 HR</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="finance">💰 Finance</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="sales">🤝 Sales</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="marketing">📣 Marketing</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="legal">⚖️ Legal</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="customer-service">🎧 Support</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="consultant">💼 Consultant</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="student">🎓 Student</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="creative">🎨 Creative</button>
-      </div>
-
-      <!-- Use case filter -->
-      <div class="prompts-filter-row">
-        <span class="prompts-filter-label">Use case</span>
-        <button class="prompts-chip active" data-filter-type="usecase" data-filter-value="all">All</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="writing">✏️ Writing</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="email">📧 Email</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="data-analysis">📊 Data</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="meetings">🎥 Meetings</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="summarising">📝 Summarising</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="presentations">📑 Presentations</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="project-management">📋 Projects</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="brainstorming">💡 Strategy</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="research">🔬 Research</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="customer-service">🤝 Support</button>
-        <button class="prompts-chip" data-filter-type="usecase" data-filter-value="image-generation">🎨 Images</button>
+        <div class="prompts-chip-track">
+          <button class="prompts-chip active" data-filter-type="role" data-filter-value="all">All</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="executive">👔 Executive</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="executive-assistant">🗂️ EA</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="it-admin">🖥️ IT Admin</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="hr">👥 HR</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="finance">💰 Finance</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="sales">🤝 Sales</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="marketing">📣 Marketing</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="legal">⚖️ Legal</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="customer-service">🎧 Support</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="consultant">💼 Consultant</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="student">🎓 Student</button>
+          <button class="prompts-chip" data-filter-type="role" data-filter-value="creative">🎨 Creative</button>
+        </div>
       </div>
 
       <!-- M365 App filter -->
-      <div class="prompts-filter-row">
+      <div class="prompts-filter-row prompts-scroll-row">
         <span class="prompts-filter-label">M365 App</span>
-        <button class="prompts-chip active" data-filter-type="surface" data-filter-value="all">All</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-work">💬 Chat (Work)</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-web">🌐 Chat (Web)</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="word">📝 Word</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="excel">📊 Excel</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="powerpoint">📑 PowerPoint</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="outlook">📧 Outlook</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="teams">💬 Teams</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="onenote">📓 OneNote</button>
-        <button class="prompts-chip" data-filter-type="surface" data-filter-value="loop">🔄 Loop</button>
+        <div class="prompts-chip-track">
+          <button class="prompts-chip active" data-filter-type="surface" data-filter-value="all">All</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-work">💬 Chat (Work)</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-web">🌐 Chat (Web)</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="word">📝 Word</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="excel">📊 Excel</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="powerpoint">📑 PowerPoint</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="outlook">📧 Outlook</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="teams">💬 Teams</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="onenote">📓 OneNote</button>
+          <button class="prompts-chip" data-filter-type="surface" data-filter-value="loop">🔄 Loop</button>
+        </div>
       </div>
     </div>
 

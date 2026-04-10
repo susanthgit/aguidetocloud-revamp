@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // ── STATE ──────────────────────────────────────
-  var activeFilters = { platform: 'all', role: 'all', usecase: 'all', surface: 'all' };
+  var activeFilters = { platform: 'all', role: 'all', surface: 'all' };
   var searchQuery = '';
   var favourites = JSON.parse(localStorage.getItem('prompt-favourites') || '[]');
   var copyCounts = JSON.parse(localStorage.getItem('prompt-copy-counts') || '{}');
@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var match = false;
         if (type === 'platform') match = (card.dataset.platforms || '').split(' ').indexOf(value) !== -1;
         else if (type === 'role') match = (card.dataset.roles || '').split(' ').indexOf(value) !== -1;
-        else if (type === 'usecase') match = card.dataset.usecase === value;
         else if (type === 'surface') match = (card.dataset.surfaces || '').split(' ').indexOf(value) !== -1;
         if (match) count++;
       });
@@ -207,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams();
     if (activeFilters.platform !== 'all') params.set('platform', activeFilters.platform);
     if (activeFilters.role !== 'all') params.set('role', activeFilters.role);
-    if (activeFilters.usecase !== 'all') params.set('usecase', activeFilters.usecase);
     if (activeFilters.surface !== 'all') params.set('surface', activeFilters.surface);
     if (searchQuery) params.set('q', searchQuery);
     var qs = params.toString();
@@ -218,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function readURLState() {
     var params = new URLSearchParams(window.location.search);
     var changed = false;
-    ['platform', 'role', 'usecase', 'surface'].forEach(function (key) {
+    ['platform', 'role', 'surface'].forEach(function (key) {
       var val = params.get(key);
       if (val) {
         activeFilters[key] = val;
@@ -246,9 +244,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (activeFilters.role !== 'all') {
         if ((card.dataset.roles || '').split(' ').indexOf(activeFilters.role) === -1) show = false;
-      }
-      if (activeFilters.usecase !== 'all') {
-        if (card.dataset.usecase !== activeFilters.usecase) show = false;
       }
       if (activeFilters.surface !== 'all') {
         if ((card.dataset.surfaces || '').split(' ').indexOf(activeFilters.surface) === -1) show = false;
