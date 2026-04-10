@@ -90,21 +90,6 @@
       <h1>{{ .Title }}</h1>
       {{ with .Description }}<p class="prompts-subtitle">{{ . }}</p>{{ end }}
       {{ end }}
-
-      <div class="prompts-search-wrap">
-        <span class="prompts-search-icon">🔍</span>
-        <input type="text" id="prompts-search" class="prompts-search"
-               placeholder="Search {{ len $pagePrompts }} prompts..."
-               autocomplete="off" aria-label="Search prompts">
-      </div>
-
-      <p class="prompts-stats">
-        <strong id="prompts-count">{{ len $pagePrompts }}</strong> of
-        <strong>{{ len $allPrompts }}</strong> prompts ·
-        {{ len (where .Site.Sections "Section" "prompts") }} categories ·
-        {{ len hugo.Data.platforms }} platforms · tested by a human 🧪
-        <button id="prompts-random" class="prompts-random-btn" title="Show a random prompt">🎲 Surprise Me!</button>
-      </p>
     </div>
 
     {{/* ── CATEGORY QUICK LINKS (main page only) ── */}}
