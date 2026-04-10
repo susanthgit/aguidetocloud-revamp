@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function debounce(fn, ms) { var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); }; }
 
   var currentData = null, currentFiltered = [], renderedCount = 0;
-  var activeProductFilter = 'copilot', activeStatusFilter = 'all';
+  var activeProductFilter = 'all', activeStatusFilter = 'all';
 
   var CATEGORY_META = {
     'copilot': { name: 'Copilot', emoji: '\u{1F916}', color: '#7B68EE' },
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // URL state for shareable links
   function readUrl() { var p = new URLSearchParams(location.search); if (p.get('product')) activeProductFilter = p.get('product'); if (p.get('status')) activeStatusFilter = p.get('status'); if (p.get('q')) document.getElementById('rdmap-search').value = p.get('q'); }
-  function syncUrl() { var p = new URLSearchParams(); if (activeProductFilter !== 'copilot') p.set('product', activeProductFilter); if (activeStatusFilter !== 'all') p.set('status', activeStatusFilter); var q = document.getElementById('rdmap-search').value; if (q) p.set('q', q); var s = p.toString(); history.replaceState(null, '', s ? '?' + s : location.pathname); }
+  function syncUrl() { var p = new URLSearchParams(); if (activeProductFilter !== 'all') p.set('product', activeProductFilter); if (activeStatusFilter !== 'all') p.set('status', activeStatusFilter); var q = document.getElementById('rdmap-search').value; if (q) p.set('q', q); var s = p.toString(); history.replaceState(null, '', s ? '?' + s : location.pathname); }
 
   // ── LOAD ──
   async function init() {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var el = document.getElementById('rdmap-chips');
     var items = data.items || []; var cats = data.product_categories || [];
     var counts = {}; items.forEach(function (i) {
-      if (activeStatusFilter === 'all' || (activeStatusFilter === 'active' && i.status !== 'Launched') || i.status === activeStatusFilter) {
+      if (activeStatusFilter === 'all' || (activeStatusFilter === 'active' && i.status !== 'Launched' && i.status !== 'Cancelled') || i.status === activeStatusFilter) {
         (i.all_categories || [i.product_category]).forEach(function (c) { counts[c] = (counts[c] || 0) + 1; });
       }
     });
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!currentData) return [];
     var q = (document.getElementById('rdmap-search').value || '').toLowerCase();
     return currentData.items.filter(function (i) {
-      if (activeStatusFilter === 'active' && i.status === 'Launched') return false;
+      if (activeStatusFilter === 'active' && (i.status === 'Launched' || i.status === 'Cancelled')) return false;
       if (activeStatusFilter !== 'all' && activeStatusFilter !== 'active' && i.status !== activeStatusFilter) return false;
       if (activeProductFilter !== 'all') { if (i.product_category !== activeProductFilter && (i.all_categories || []).indexOf(activeProductFilter) === -1) return false; }
       if (q) { var t = ((i.title || '') + ' ' + (i.ai_summary || '') + ' ' + (i.products || []).join(' ')).toLowerCase(); if (t.indexOf(q) === -1) return false; }

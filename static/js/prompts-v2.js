@@ -113,5 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
       arrow.textContent = isOpen ? '▸' : '▾';
       rowHeader.setAttribute('aria-expanded', !isOpen);
     }
+
+    // Open-in-platform buttons (copy prompt then navigate)
+    var openBtn = e.target.closest('.prompt-open-btn');
+    if (openBtn) {
+      var promptEl = document.querySelector('.prompt-full-text');
+      if (promptEl) navigator.clipboard.writeText(promptEl.textContent.trim()).catch(function(){});
+    }
   });
 });

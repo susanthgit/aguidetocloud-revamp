@@ -1763,6 +1763,11 @@ a:hover {
   box-shadow: 0 0 10px rgba(102, 255, 255, 0.2);
 }
 
+/* ── AI NEWS: FOOTER ──────────────────────── */
+.ainews-footer { text-align: center; padding: 1.5rem 0 0.5rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.ainews-footer a { color: var(--neon-cyan); text-decoration: none; font-size: 0.9rem; opacity: 0.7; transition: opacity 0.2s; }
+.ainews-footer a:hover { opacity: 1; }
+
 /* ── AI NEWS: BACK TO TOP ────────────────── */
 .ainews-btt {
   position: fixed; bottom: 2.5rem; right: 2.5rem; z-index: 9999;
