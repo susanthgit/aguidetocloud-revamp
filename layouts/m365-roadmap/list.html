@@ -1,5 +1,4 @@
 {{ define "main" }}
-<meta name="theme-color" content="#E5A00D">
 <div class="rdmap-hero">
   <h1>M365 Roadmap Tracker</h1>
   <p>Every Microsoft 365 feature change — AI-summarised, tracked daily</p>
@@ -11,41 +10,46 @@
 
   <!-- Controls row: tabs + view toggle + search -->
   <div class="rdmap-toolbar">
-    <div class="rdmap-tabs">
-      <button class="rdmap-tab active" data-view="latest">Latest</button>
-      <button class="rdmap-tab" data-view="weekly">This Week</button>
-      <button class="rdmap-tab" data-view="monthly">This Month</button>
+    <div class="rdmap-tabs" role="tablist" aria-label="Time period">
+      <button class="rdmap-tab active" data-view="latest" role="tab" aria-selected="true">Latest</button>
+      <button class="rdmap-tab" data-view="weekly" role="tab" aria-selected="false">This Week</button>
+      <button class="rdmap-tab" data-view="monthly" role="tab" aria-selected="false">This Month</button>
     </div>
-    <div class="rdmap-view-toggle">
-      <button class="rdmap-view-btn active" data-layout="list" title="List view">☰</button>
-      <button class="rdmap-view-btn" data-layout="cards" title="Card view">▦</button>
+    <div class="rdmap-view-toggle" role="group" aria-label="Layout">
+      <button class="rdmap-view-btn active" data-layout="list" title="List view" aria-pressed="true">☰</button>
+      <button class="rdmap-view-btn" data-layout="cards" title="Card view" aria-pressed="false">▦</button>
     </div>
   </div>
 
   <!-- Filters -->
   <div class="rdmap-filters">
+    <label for="rdmap-search" class="sr-only">Search roadmap items</label>
     <input type="text" id="rdmap-search" class="rdmap-search" placeholder="Search 1,800+ roadmap items..." autocomplete="off">
+    <label for="rdmap-status-filter" class="sr-only">Filter by status</label>
     <select id="rdmap-status-filter" class="rdmap-select">
       <option value="active" selected>⚡ Active Only</option>
       <option value="all">All Statuses</option>
-      <option value="Rolling out">🔵 Rolling Out</option>
+      <option value="Rolling out">🟢 Rolling Out</option>
       <option value="In development">🟡 In Development</option>
-      <option value="Launched">🟢 Launched</option>
+      <option value="Launched">🔵 Launched</option>
       <option value="Cancelled">🔴 Cancelled</option>
     </select>
+    <label for="rdmap-product-filter" class="sr-only">Filter by product</label>
     <select id="rdmap-product-filter" class="rdmap-select">
       <option value="all">All Products</option>
     </select>
   </div>
 
   <!-- Product category chips -->
-  <div class="rdmap-chips" id="rdmap-chips"></div>
+  <h2 class="sr-only">Filter by Product</h2>
+  <div class="rdmap-chips" id="rdmap-chips" role="group" aria-label="Product filters"></div>
 
-  <!-- GA Timeline bar (unique to roadmap!) -->
-  <div class="rdmap-timeline" id="rdmap-timeline"></div>
+  <!-- GA Timeline bar -->
+  <div class="rdmap-timeline" id="rdmap-timeline" aria-label="Upcoming GA dates"></div>
 
   <!-- Main content area -->
-  <div class="rdmap-content" id="rdmap-content">
+  <h2 class="sr-only">Roadmap Items</h2>
+  <div class="rdmap-content" id="rdmap-content" aria-live="polite">
     <div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>
   </div>
 
@@ -55,5 +59,35 @@
     <span class="rdmap-freshness" id="rdmap-freshness"></span>
   </div>
 </div>
+
+<!-- WebApplication structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "M365 Roadmap Tracker",
+  "url": "https://www.aguidetocloud.com/m365-roadmap/",
+  "description": "Track every Microsoft 365 feature change with AI summaries, change detection, and smart filtering. Updated daily from the official Microsoft 365 Roadmap.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Susanth Sutheesh",
+    "url": "https://www.aguidetocloud.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "https://www.aguidetocloud.com"
+  },
+  "datePublished": "2026-04-10",
+  "keywords": ["Microsoft 365 roadmap", "M365 updates", "Copilot roadmap", "Teams new features", "Outlook updates", "SharePoint roadmap", "Intune updates"]
+}
+</script>
 <script src="/js/roadmap.js?v={{ now.Unix }}"></script>
 {{ end }}

@@ -1,15 +1,15 @@
 /* ============================================
    AI Prompt Library — "The Prompt Workbench"
-   Warm amber accent · monospace prompt text
+   Soft violet accent · monospace prompt text
    Tool-first design (search → find → copy)
    ============================================ */
 
 .prompts-page {
-  --prompt-amber: #FFB86C;
-  --prompt-amber-hover: #FF9F43;
-  --prompt-amber-glow: rgba(255, 184, 108, 0.2);
-  --prompt-amber-border: rgba(255, 184, 108, 0.3);
-  --prompt-amber-subtle: rgba(255, 184, 108, 0.08);
+  --prompt-accent: #A78BFA;
+  --prompt-accent-hover: #8B5CF6;
+  --prompt-accent-glow: rgba(167, 139, 250, 0.2);
+  --prompt-accent-border: rgba(167, 139, 250, 0.3);
+  --prompt-accent-subtle: rgba(167, 139, 250, 0.08);
 }
 
 /* ── HERO — Search-first design ─────────────── */
@@ -27,8 +27,8 @@
   letter-spacing: -0.5px;
 }
 .prompts-hero h1 span {
-  color: var(--prompt-amber);
-  text-shadow: 0 0 30px var(--prompt-amber-glow);
+  color: var(--prompt-accent);
+  text-shadow: 0 0 30px var(--prompt-accent-glow);
 }
 .prompts-subtitle {
   color: var(--text-secondary);
@@ -56,7 +56,7 @@
   width: 100%;
   padding: 0.85rem 1.2rem 0.85rem 3rem;
   background: var(--bg-card);
-  border: 1px solid var(--prompt-amber-border);
+  border: 1px solid var(--prompt-accent-border);
   border-radius: 10px;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -68,8 +68,8 @@
 }
 .prompts-search:focus {
   outline: none;
-  border-color: var(--prompt-amber);
-  box-shadow: 0 0 25px var(--prompt-amber-glow);
+  border-color: var(--prompt-accent);
+  box-shadow: 0 0 25px var(--prompt-accent-glow);
   background: var(--bg-card-hover);
 }
 
@@ -82,7 +82,7 @@
   letter-spacing: 0.3px;
 }
 .prompts-stats strong {
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
   font-weight: 700;
 }
 
@@ -126,15 +126,15 @@
   white-space: nowrap;
 }
 .prompts-chip:hover {
-  border-color: var(--prompt-amber-border);
-  color: var(--prompt-amber);
-  background: var(--prompt-amber-subtle);
+  border-color: var(--prompt-accent-border);
+  color: var(--prompt-accent);
+  background: var(--prompt-accent-subtle);
 }
 .prompts-chip.active {
-  background: var(--prompt-amber-subtle);
-  border-color: var(--prompt-amber);
-  color: var(--prompt-amber);
-  box-shadow: 0 0 12px var(--prompt-amber-glow);
+  background: var(--prompt-accent-subtle);
+  border-color: var(--prompt-accent);
+  color: var(--prompt-accent);
+  box-shadow: 0 0 12px var(--prompt-accent-glow);
 }
 
 /* ── RESULTS BAR ────────────────────────────── */
@@ -151,15 +151,15 @@
   font-family: var(--font-heading);
 }
 .prompts-results-count strong {
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
 }
 
 /* ── PROMPT CARD GRID ───────────────────────── */
 
 .prompts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.3rem;
   padding: 0.5rem 0 3rem;
 }
 
@@ -169,16 +169,16 @@
   background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius);
-  padding: 1.3rem 1.4rem;
+  padding: 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.8rem;
   transition: all 0.3s ease;
   position: relative;
 }
 .prompt-card:hover {
-  border-color: var(--prompt-amber-border);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 15px var(--prompt-amber-glow);
+  border-color: var(--prompt-accent-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 15px var(--prompt-accent-glow);
   transform: translateY(-2px);
 }
 
@@ -201,14 +201,14 @@
   text-decoration: none;
 }
 .prompt-card-title a:hover {
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
   text-shadow: none;
 }
 
 /* Difficulty dots */
 .prompt-difficulty {
   font-size: 0.7rem;
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
   white-space: nowrap;
   flex-shrink: 0;
   letter-spacing: 1px;
@@ -220,18 +220,18 @@
   font-size: 0.8rem;
   line-height: 1.55;
   color: var(--text-secondary);
-  background: rgba(255, 184, 108, 0.03);
-  border: 1px solid rgba(255, 184, 108, 0.08);
-  border-left: 3px solid var(--prompt-amber-border);
+  background: rgba(167, 139, 250, 0.03);
+  border: 1px solid rgba(167, 139, 250, 0.08);
+  border-left: 3px solid var(--prompt-accent-border);
   border-radius: 6px;
   padding: 0.75rem 0.9rem;
   white-space: pre-wrap;
   word-break: break-word;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
-  max-height: 5.2em;
+  max-height: 8em;
   flex-grow: 1;
 }
 
@@ -259,16 +259,16 @@
   white-space: nowrap;
 }
 .prompt-platform-badge.best {
-  background: rgba(255, 184, 108, 0.12);
-  color: var(--prompt-amber);
-  border: 1px solid rgba(255, 184, 108, 0.25);
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--prompt-accent);
+  border: 1px solid rgba(167, 139, 250, 0.25);
 }
 
 /* Copy button */
 .prompt-copy-btn {
-  background: var(--prompt-amber-subtle);
-  border: 1px solid var(--prompt-amber-border);
-  color: var(--prompt-amber);
+  background: var(--prompt-accent-subtle);
+  border: 1px solid var(--prompt-accent-border);
+  color: var(--prompt-accent);
   padding: 0.28rem 0.65rem;
   border-radius: 6px;
   font-size: 0.76rem;
@@ -280,9 +280,9 @@
   flex-shrink: 0;
 }
 .prompt-copy-btn:hover {
-  background: var(--prompt-amber);
+  background: var(--prompt-accent);
   color: var(--bg-primary);
-  box-shadow: 0 0 15px var(--prompt-amber-glow);
+  box-shadow: 0 0 15px var(--prompt-accent-glow);
 }
 .prompt-copy-btn.copied {
   background: var(--neon-green);
@@ -329,9 +329,9 @@
   text-decoration: none;
 }
 .prompts-category-card:hover {
-  border-color: var(--prompt-amber-border);
-  color: var(--prompt-amber);
-  box-shadow: 0 0 12px var(--prompt-amber-glow);
+  border-color: var(--prompt-accent-border);
+  color: var(--prompt-accent);
+  box-shadow: 0 0 12px var(--prompt-accent-glow);
   text-shadow: none;
   transform: translateY(-1px);
 }
@@ -359,11 +359,11 @@
   margin-bottom: 1.5rem;
 }
 .prompt-breadcrumbs a {
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
   text-decoration: none;
 }
 .prompt-breadcrumbs a:hover {
-  text-shadow: 0 0 8px var(--prompt-amber-glow);
+  text-shadow: 0 0 8px var(--prompt-accent-glow);
 }
 
 /* Single page header */
@@ -410,8 +410,8 @@
   line-height: 1.65;
   color: var(--text-primary);
   background: var(--bg-card);
-  border: 1px solid var(--prompt-amber-border);
-  border-left: 4px solid var(--prompt-amber);
+  border: 1px solid var(--prompt-accent-border);
+  border-left: 4px solid var(--prompt-accent);
   border-radius: 8px;
   padding: 1.2rem 1.4rem;
   padding-right: 4rem;
@@ -422,7 +422,7 @@
   position: absolute;
   top: 0.8rem;
   right: 0.8rem;
-  background: var(--prompt-amber);
+  background: var(--prompt-accent);
   border: none;
   color: var(--bg-primary);
   padding: 0.4rem 0.8rem;
@@ -434,7 +434,7 @@
   transition: all 0.2s ease;
 }
 .prompt-full-copy:hover {
-  box-shadow: 0 0 20px var(--prompt-amber-glow);
+  box-shadow: 0 0 20px var(--prompt-accent-glow);
   transform: scale(1.05);
 }
 .prompt-full-copy.copied {
@@ -473,9 +473,9 @@
   font-weight: 600;
 }
 .prompt-single-platform-tag.best {
-  background: rgba(255, 184, 108, 0.12);
-  color: var(--prompt-amber);
-  border: 1px solid rgba(255, 184, 108, 0.25);
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--prompt-accent);
+  border: 1px solid rgba(167, 139, 250, 0.25);
 }
 
 /* Body content (tips, variations) */
@@ -488,7 +488,7 @@
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
   margin: 2rem 0 0.8rem;
 }
 .prompt-single-body h3 {
@@ -512,7 +512,7 @@
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.85em;
-  color: var(--prompt-amber);
+  color: var(--prompt-accent);
 }
 
 /* Related prompts grid */

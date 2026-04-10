@@ -17,7 +17,7 @@
   {{ if not .Date.IsZero }}
   <p class="meta">
     {{ if .Params.card_tag }}<span class="card-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span> · {{ end }}
-    {{ .Date.Format "2 January 2006" }} · by {{ .Site.Params.author }}
+    {{ .Date.Format "2 January 2006" }} · by <a href="/about/" style="color: var(--neon-cyan);">{{ .Site.Params.author }}</a>
   </p>
   {{ end }}
 

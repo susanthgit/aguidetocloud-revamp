@@ -176,6 +176,10 @@
       "statusCode": 301
     },
     {
+      "route": "/data/roadmap/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+    },
+    {
       "route": "/css/*",
       "headers": { "Cache-Control": "public, max-age=86400" }
     },

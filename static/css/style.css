@@ -3,6 +3,9 @@
    Dark background, cyan/magenta neon accents
    ============================================ */
 
+/* Utility: screen-reader only (accessible hidden text) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
 :root {
   --bg-primary: #0f0f1a;
   --bg-secondary: #141425;

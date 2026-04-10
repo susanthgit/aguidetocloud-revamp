@@ -16,8 +16,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var data = await resp.json();
     _cache[url] = data;
-    try { sessionStorage.setItem('roadmap_' + url, JSON.stringify(data)); } catch (e) {}
+    // Only cache if payload < 2MB to avoid quota issues
+    var str = JSON.stringify(data);
+    if (str.length < 2000000) {
+      try { sessionStorage.setItem('roadmap_' + url, str); } catch (e) { /* quota full */ }
+    }
     return data;
+  }
+
+  // Debounce helper
+  function debounce(fn, ms) {
+    var timer; return function () { clearTimeout(timer); timer = setTimeout(fn, ms); };
   }
 
   // State
@@ -61,11 +70,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
       var data = await fetchJson(DATA_URLS[view] || DATA_URLS.latest);
       currentData = data;
+      // Guard: ensure items is an array
+      if (!Array.isArray(data.items)) data.items = [];
+      if (!Array.isArray(data.product_categories)) data.product_categories = [];
       renderStatusBar(data);
       renderMetrics(data);
-      populateProductFilter(data.product_categories || []);
-      renderChips(data.product_categories || []);
-      renderTimeline(data.items || []);
+      populateProductFilter(data.product_categories);
+      renderChips(data.product_categories);
+      renderTimeline(data.items);
       renderContent(data);
       renderFreshness(data.generated_at);
     } catch (e) {
@@ -364,16 +376,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   // ── EVENT WIRING ──
   document.querySelectorAll('.rdmap-tab').forEach(function (t) {
     t.addEventListener('click', function () {
-      document.querySelectorAll('.rdmap-tab').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.rdmap-tab').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-selected', 'false'); });
       this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
       loadView(this.dataset.view);
     });
   });
 
   document.querySelectorAll('.rdmap-view-btn').forEach(function (b) {
     b.addEventListener('click', function () {
-      document.querySelectorAll('.rdmap-view-btn').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.rdmap-view-btn').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
       this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
       activeLayout = this.dataset.layout;
       if (currentData) renderContent(currentData);
     });
@@ -390,7 +404,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     applyFilters();
   });
 
-  document.getElementById('rdmap-search').addEventListener('input', applyFilters);
+  document.getElementById('rdmap-search').addEventListener('input', debounce(applyFilters, 200));
 
   // ── INIT ──
   await loadView('latest');
