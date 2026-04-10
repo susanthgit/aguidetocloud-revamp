@@ -5,68 +5,188 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Apr 2026 06:27:22 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 11:53:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now integrates with various third-party tools like GitHub and Notion, enhancing the capabilities of AI agents for real-world applications. This development is significant as it broadens the scope for developers to create more effective AI solutions.</description>
+      <description>The Agent Development Kit (ADK) now offers a wide range of third-party integrations, enhancing the capabilities of AI agents for real-world applications. This development allows developers to connect their agents with popular tools like GitHub and Notion.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save-the-date puzzle that showcases AI's potential. This event is significant as it highlights Google's commitment to integrating AI into its future developments.</description>
+      <description>Google I/O 2026 will take place on May 19-20, featuring a save the date puzzle that showcases AI's role in enhancing event experiences. This tradition aims to engage attendees ahead of the conference.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will offer a unique in-person experience focused on networking and hands-on learning about agentic AI. This event is crucial for developers looking to enhance their skills and adapt to new AI technologies.</description>
+      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem-solving, emphasizing the transition to agentic AI. The event will feature technical tracks covering various advanced topics.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, the successor to TFLite, which enhances GPU and NPU acceleration and supports PyTorch and JAX. This update is significant as it positions LiteRT as a key framework for deploying advanced AI applications.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, which enhances GPU and NPU acceleration and supports PyTorch and JAX. This update aims to improve efficiency and security in deploying GenAI applications.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Google Cloud's Wednesday Build Hour offers interactive sessions for developers to improve their cloud skills through hands-on activities. This initiative is important as it fosters practical learning and collaboration in cloud technology.</description>
+      <description>Wednesday Build Hour is a new weekly session by Google Cloud aimed at helping developers enhance their cloud skills through hands-on building. The program focuses on advanced topics like AI agents and developer productivity.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has rolled out updates to enhance coding workflows with features like Agent Mode and Inline Diff Views. These improvements aim to make AI a more effective collaborator in software development.</description>
+      <description>The Gemini Code Assist team has rolled out updates to streamline coding workflows, introducing features like Agent Mode and Inline Diff Views. These tools aim to enhance collaboration and adapt to individual developer styles.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, which streamline coding by reducing manual prompting. This is significant as it enhances developer efficiency and code comprehension.</description>
+      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, which help reduce developer friction by automating code completion and generating summaries.</description>
       <category>Google</category>
-      <pubDate>Fri, 10 Apr 2026 06:24:44 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2026 11:50:38 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
+    </item>
+    <item>
+      <title>Project Glasswing and open source software: The good, the bad, and the ugly</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/project_glasswing/</link>
+      <description>Anthropic's Project Glasswing aims to utilize AI to identify and fix vulnerabilities in open source software, with a $100 million commitment from tech giants. This initiative highlights the dual nature of AI in security.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 10 Apr 2026 11:30:08 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/project_glasswing/</guid>
+    </item>
+    <item>
+      <title>Britain seeks views before it drops the hammer on signal jammers</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/signal_jammer_consultation/</link>
+      <description>The UK government is seeking public input on proposed legislation to ban radiofrequency jammers, which are often linked to criminal activities. This call for evidence will shape future laws.</description>
+      <category>Amazon</category>
+      <pubDate>Fri, 10 Apr 2026 11:01:11 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/signal_jammer_consultation/</guid>
+    </item>
+    <item>
+      <title>The best data removal services of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-data-removal-services/</link>
+      <description>A review of the best data removal services for 2026 highlights options for individuals looking to minimize their online presence and reclaim their data from brokers. These services aim to simplify the process of data removal.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 10 Apr 2026 11:00:55 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-data-removal-services/</guid>
+    </item>
+    <item>
+      <title>I'm no longer using Google Photos as just a cloud storage - 5 tools that elevate the app</title>
+      <link>https://www.zdnet.com/article/google-photos-hidden-features-for-android-users/</link>
+      <description>Google Photos offers various features beyond cloud storage, enhancing user experience with tools for organization and creativity. This shift highlights the app's versatility in managing visual content.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 10 Apr 2026 11:00:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-photos-hidden-features-for-android-users/</guid>
+    </item>
+    <item>
+      <title>AI Podcasters Really Want to Tell You How to Keep a Man Happy</title>
+      <link>https://www.wired.com/story/ai-podcasters-really-want-to-tell-you-how-to-keep-a-man-happy/</link>
+      <description>AI-generated relationship guru podcasters are gaining popularity by promoting traditional gender roles, significantly influencing viewers and driving interest in AI influencer education. This trend raises questions about authenticity and social impact.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 10:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/ai-podcasters-really-want-to-tell-you-how-to-keep-a-man-happy/</guid>
+    </item>
+    <item>
+      <title>The best Samsung TVs of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-samsung-tv/</link>
+      <description>Samsung's 2026 TV lineup continues to impress with a range of budget to premium options, reinforcing its reputation as a leading brand in the television market. Expert reviews highlight the quality and innovation in their offerings.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 10 Apr 2026 10:01:21 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-samsung-tv/</guid>
+    </item>
+    <item>
+      <title>The best mobile scanning apps of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-mobile-scanning-apps/</link>
+      <description>A review of the best mobile scanning apps of 2026 reveals top choices for converting documents to PDFs and translating text on the go, showcasing advancements in mobile technology. These tools enhance productivity for users on the move.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 10 Apr 2026 10:01:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-mobile-scanning-apps/</guid>
+    </item>
+    <item>
+      <title>Constellations</title>
+      <link>https://www.technologyreview.com/2026/04/10/1135106/jeff-vandermeer-constellations-science-fiction/</link>
+      <description>A narrative about a crash-landed spaceship explores themes of survival and human-AI interaction in a hostile environment. This fictional piece delves into the psychological and operational dynamics among the crew.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 10:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/10/1135106/jeff-vandermeer-constellations-science-fiction/</guid>
+    </item>
+    <item>
+      <title>Meta’s New AI Asked for My Raw Health Data—and Gave Me Terrible Advice</title>
+      <link>https://www.wired.com/story/metas-new-ai-asked-for-my-raw-health-data-and-gave-me-terrible-advice/</link>
+      <description>Meta's Muse Spark AI model offers health data analysis but raises privacy concerns and provides inadequate medical advice, highlighting the limitations of AI in healthcare. This situation underscores the risks of relying on AI for personal health insights.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 09:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/metas-new-ai-asked-for-my-raw-health-data-and-gave-me-terrible-advice/</guid>
+    </item>
+    <item>
+      <title>Britain's biggest nuclear site skips competition, hands SAP £33M to start ERP switch</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/sellafield_sap_erp/</link>
+      <description>Sellafield has awarded a £33 million contract to SAP for an ERP system switch, bypassing competition due to urgency in updating legacy systems before support ends. This decision emphasizes the challenges faced by large organizations in technology upgrades.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 09:15:08 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/sellafield_sap_erp/</guid>
+    </item>
+    <item>
+      <title>The best HP laptops of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-hp-laptops/</link>
+      <description>The best HP laptops of 2026 have been reviewed, showcasing a range of options from ultraportables to larger models, reflecting HP's commitment to innovation and quality in the laptop market. These insights help consumers make informed choices.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 10 Apr 2026 09:00:59 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-hp-laptops/</guid>
+    </item>
+    <item>
+      <title>Fewer than 3 in 10 register for HMRC's Making Tax Digital shake-up</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/mtd_hmrc/</link>
+      <description>Less than 30% of those required to register for HMRC's Making Tax Digital initiative have done so, indicating a lack of engagement despite impending fines. This highlights challenges in digital adoption among small businesses.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 08:30:07 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/mtd_hmrc/</guid>
+    </item>
+    <item>
+      <title>Gen Z’s love-hate relationship with AI</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup</link>
+      <description>A Gallup report reveals Gen Z's mixed feelings about AI, showing disillusionment yet continued usage, as AI becomes more integrated into their daily lives. This trend reflects broader societal shifts in technology perception.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 07:23:28 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup</guid>
+    </item>
+    <item>
+      <title>Tech support chap's boss got him out of jail so he could finish a job</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/on_call/</link>
+      <description>A tech support worker was bailed out of jail by his boss to complete an urgent job, highlighting the lengths some will go to for customer service.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 07:00:06 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/on_call/</guid>
+    </item>
+    <item>
+      <title>Microsoft starts removing Copilot buttons from Windows 11 apps</title>
+      <link>https://www.theverge.com/news/909640/microsoft-removing-copilot-windows-11-buttons</link>
+      <description>Microsoft is removing unnecessary Copilot buttons from Windows 11 apps, opting for a more streamlined 'writing tools' menu in Notepad and Snipping Tool.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 10 Apr 2026 05:22:06 -0400</pubDate>
+      <guid>https://www.theverge.com/news/909640/microsoft-removing-copilot-windows-11-buttons</guid>
     </item>
     <item>
       <title>AWS ponders selling its home-grown chips by the rack-load, has almost sold out AI capacity</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/amazon_may_sell_homegrown_chips/</link>
-      <description>Amazon's CEO letter reveals plans to sell Graviton servers and highlights a massive rollout of AI capabilities, indicating strong demand for its cloud services. This matters as it showcases Amazon's aggressive growth strategy in the AI sector.</description>
+      <description>Amazon CEO Andy Jassy's annual letter reveals high demand for AWS's Graviton servers and plans for a massive drone rollout and robot deployment.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 05:04:14 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/amazon_may_sell_homegrown_chips/</guid>
@@ -74,7 +194,7 @@
     <item>
       <title>South Korea introduces universal basic mobile data access</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/south_korea_data_access_universal/</link>
-      <description>South Korea has implemented a universal basic mobile data access scheme, providing unlimited 400 Kbps access for all citizens. This initiative is significant as it aims to bridge the digital divide and enhance connectivity.</description>
+      <description>South Korea has launched a universal basic mobile data access scheme, providing all citizens with unlimited 400 Kbps access to mobile data.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 03:14:13 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/south_korea_data_access_universal/</guid>
@@ -82,7 +202,7 @@
     <item>
       <title>Surprise: Not every Lenovo laptop is worth recommending in 2026 - the Yoga 7i is proof</title>
       <link>https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/</link>
-      <description>Lenovo's Yoga 7i 2-in-1 laptop is well-built but struggles to compete with rivals due to its mid-tier hardware. This review is important as it reflects the competitive landscape in the laptop market.</description>
+      <description>Lenovo's Yoga 7a 2-in-1 laptop is well-built but struggles to compete with rivals due to its mid-tier hardware, making it hard to recommend.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 02:00:50 +0000</pubDate>
       <guid>https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/</guid>
@@ -90,87 +210,39 @@
     <item>
       <title>Samsung S95H vs. Samsung S95F: I compared the OLED TVs and wasn't prepared for the upset</title>
       <link>https://www.zdnet.com/article/samsung-s95h-vs-samsung-s95f/</link>
-      <description>Samsung's 2026 S95H OLED TV refresh may not be compelling enough for consumers to upgrade from last year's S95F model, suggesting limited advancements.</description>
+      <description>A comparison of Samsung's S95H and S95F OLED TVs reveals that the latest model may not offer significant improvements to justify the upgrade.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 01:05:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/samsung-s95h-vs-samsung-s95f/</guid>
     </item>
     <item>
-      <title>Microsoft cuts cloudy desktop prices by 20 percent, warns they’ll wake up slowly</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/microsoft_cuts_cloudy_desktop_prices/</link>
-      <description>Microsoft announced a 20% price cut for Windows 365 cloud PCs, effective May 1, as physical PC prices rise, signaling a shift in market strategy.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 10 Apr 2026 00:28:32 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/microsoft_cuts_cloudy_desktop_prices/</guid>
-    </item>
-    <item>
       <title>OpenAI Backs Bill That Would Limit Liability for AI-Enabled Mass Deaths or Financial Disasters</title>
       <link>https://www.wired.com/story/openai-backs-bill-exempt-ai-firms-model-harm-lawsuits/</link>
-      <description>OpenAI supported an Illinois bill limiting liability for AI-related disasters, raising concerns about accountability for AI developers in critical situations.</description>
+      <description>OpenAI supported an Illinois bill that would limit liability for AI labs in cases of mass harm, raising concerns about accountability in AI development.</description>
       <category>OpenAI</category>
       <pubDate>Fri, 10 Apr 2026 00:19:53 +0000</pubDate>
       <guid>https://www.wired.com/story/openai-backs-bill-exempt-ai-firms-model-harm-lawsuits/</guid>
     </item>
     <item>
-      <title>Home Depot's new DeWalt deal comes with a free power tool - how to redeem the offer</title>
-      <link>https://www.zdnet.com/article/dewalt-power-tool-bundle-deal-home-depot-spring-black-friday-2026/</link>
-      <description>Home Depot is offering a promotion on DeWalt tools, providing a free power tool or battery with the purchase of a string trimmer and leaf blower bundle.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 10 Apr 2026 00:00:39 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/dewalt-power-tool-bundle-deal-home-depot-spring-black-friday-2026/</guid>
-    </item>
-    <item>
-      <title>Chatbots are great at manipulating people to buy stuff, Princeton boffins find</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/chatbots_excel_at_manipulating_people/</link>
-      <description>Research from Princeton reveals that chatbots can effectively manipulate consumer behavior, raising ethical concerns about their use in advertising.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 23:05:31 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/chatbots_excel_at_manipulating_people/</guid>
-    </item>
-    <item>
       <title>ChatGPT finally offers $100/month Pro plan</title>
       <link>https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/</link>
-      <description>OpenAI introduced a $100/month Pro plan for ChatGPT, catering to power users and providing a more affordable option compared to previous pricing.</description>
+      <description>OpenAI has introduced a new $100/month Pro plan for ChatGPT, catering to power users who require enhanced features.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 21:29:11 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/</guid>
     </item>
     <item>
-      <title>I tried CuerdOS and this niche Debian distro is dramatically fast</title>
-      <link>https://www.zdnet.com/article/cuerdos-debian-based-linux-distro-fast-and-unique/</link>
-      <description>CuerdOS is a new, fast Debian-based Linux distribution that offers a unique approach to preinstalled software, appealing to performance-focused users.</description>
-      <category>Industry</category>
-      <pubDate>Thu, 09 Apr 2026 21:03:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/cuerdos-debian-based-linux-distro-fast-and-unique/</guid>
-    </item>
-    <item>
       <title>Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT</title>
       <link>https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/</link>
-      <description>Florida's Attorney General is investigating OpenAI after ChatGPT was allegedly used to plan a shooting, raising serious legal and ethical questions.</description>
+      <description>The Florida Attorney General is investigating OpenAI after ChatGPT was allegedly used to plan a deadly shooting, with potential lawsuits looming.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 20:11:55 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/</guid>
     </item>
     <item>
-      <title>“Negative” views of Broadcom driving thousands of VMware migrations, rival says</title>
-      <link>https://arstechnica.com/information-technology/2026/04/nutanix-claims-it-has-poached-30000-vmware-customers/</link>
-      <description>Negative perceptions of Broadcom are reportedly driving many companies to migrate away from VMware, indicating potential instability in partnerships.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 19:44:31 +0000</pubDate>
-      <guid>https://arstechnica.com/information-technology/2026/04/nutanix-claims-it-has-poached-30000-vmware-customers/</guid>
-    </item>
-    <item>
-      <title>After data breach, $10B-valued startup Mercor is having a month</title>
-      <link>https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/</link>
-      <description>Startup Mercor, valued at $10 billion, is facing lawsuits and losing clients after a significant data breach, impacting its market reputation.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 19:33:54 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/</guid>
-    </item>
-    <item>
       <title>Ask Copilot in security assessments now available</title>
       <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
-      <description>GitHub has introduced a Copilot feature that allows organization admins and security managers to access contextual explanations and guidance directly from security assessment results. This enhancement aims to streamline security processes and improve risk management.</description>
+      <description>A new Copilot feature allows organization admins to access contextual explanations during security assessments, enhancing risk management.</description>
       <category>GitHub Copilot</category>
       <pubDate>Thu, 09 Apr 2026 19:33:16 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</guid>
@@ -178,7 +250,7 @@
     <item>
       <title>Anthropic will let your agents sleep on its couch</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/anthropic_offers_to_host_ai/</link>
-      <description>Anthropic has launched Managed Agents, a service designed to help businesses automate ongoing tasks using AI agents. This offering aims to simplify operations by allowing organizations to run their processes on autopilot.</description>
+      <description>Anthropic has launched Managed Agents, a service designed to automate ongoing business tasks using AI agents. This development aims to enhance operational efficiency for organizations.</description>
       <category>Anthropic</category>
       <pubDate>Thu, 09 Apr 2026 19:29:46 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/anthropic_offers_to_host_ai/</guid>
@@ -186,23 +258,15 @@
     <item>
       <title>Meta AI app climbs to No. 5 on the App Store after Muse Spark launch</title>
       <link>https://techcrunch.com/2026/04/09/meta-ai-app-climbs-to-no-5-on-the-app-store-after-muse-spark-launch/</link>
-      <description>Meta AI's app has surged to No. 5 on the App Store following the launch of its new model, Muse Spark, which significantly boosted its visibility and user engagement. This rapid rise highlights the growing interest in AI applications.</description>
+      <description>Meta AI's app has surged to No. 5 on the App Store following the launch of its Muse Spark model, a significant rise from its previous No. 57 ranking.</description>
       <category>Meta</category>
       <pubDate>Thu, 09 Apr 2026 19:10:07 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/09/meta-ai-app-climbs-to-no-5-on-the-app-store-after-muse-spark-launch/</guid>
     </item>
     <item>
-      <title>Google wants more Intel inside ... its datacenters, taps Chipzilla for more SmartNICs</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/google_intel_ipu/</link>
-      <description>Google has decided to continue its partnership with Intel, purchasing SmartNICs for its cloud services instead of developing its own solutions. This decision underscores Google's reliance on Intel's technology as it scales its infrastructure.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 19:03:41 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/google_intel_ipu/</guid>
-    </item>
-    <item>
       <title>ChatGPT has a new $100 per month Pro subscription</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/909599/chatgpt-pro-subscription-new</link>
-      <description>OpenAI has launched a new ChatGPT Pro subscription tier priced at $100 per month, offering significantly increased usage of its Codex coding tool. This move aims to cater to users needing more extensive coding capabilities.</description>
+      <description>OpenAI introduced a new $100 per month Pro subscription for ChatGPT, offering significantly more usage of its Codex coding tool compared to the previous Plus subscription.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 18:57:15 -0400</pubDate>
       <guid>https://www.theverge.com/ai-artificial-intelligence/909599/chatgpt-pro-subscription-new</guid>
@@ -210,47 +274,23 @@
     <item>
       <title>Is Anthropic limiting the release of Mythos to protect the internet — or Anthropic?</title>
       <link>https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/</link>
-      <description>Anthropic has limited the release of its new model, Mythos, citing concerns about its potential to exploit security vulnerabilities in widely used software. This decision raises questions about balancing innovation with cybersecurity risks.</description>
+      <description>Anthropic has restricted the release of its new model, Mythos, citing concerns over its ability to identify security vulnerabilities in widely-used software.</description>
       <category>Anthropic</category>
       <pubDate>Thu, 09 Apr 2026 18:50:05 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/</guid>
     </item>
     <item>
-      <title>Google and Intel deepen AI infrastructure partnership</title>
-      <link>https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/</link>
-      <description>Google and Intel are deepening their partnership to co-develop custom chips, responding to the high demand for CPUs amid a global shortage. This collaboration aims to enhance AI infrastructure capabilities.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 18:27:47 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/</guid>
-    </item>
-    <item>
-      <title>Crypto? Huh. Good gawd y'all, what is it good for? $45M in this case</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/crypto_fraud_scam_45_million/</link>
-      <description>Law enforcement in the US, UK, and Canada has disrupted a $45 million global cryptocurrency scam, recovering $12 million in stolen funds. This operation highlights ongoing efforts to combat cryptocurrency fraud.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 18:20:15 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/crypto_fraud_scam_45_million/</guid>
-    </item>
-    <item>
       <title>Florida launches investigation into OpenAI</title>
       <link>https://www.theverge.com/policy/909557/openai-florida-investigation</link>
-      <description>Florida's Attorney General is investigating OpenAI over potential public safety and national security risks, expressing concerns about the misuse of its technology by adversaries. This scrutiny reflects growing regulatory attention on AI companies.</description>
+      <description>Florida's Attorney General is investigating OpenAI for potential public safety and national security risks, particularly regarding data security concerns involving foreign adversaries.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 18:17:06 -0400</pubDate>
       <guid>https://www.theverge.com/policy/909557/openai-florida-investigation</guid>
     </item>
     <item>
-      <title>The 70-Person AI Image Startup Taking on Silicon Valley's Giants</title>
-      <link>https://www.wired.com/story/black-forest-labs-ai-image-generation/</link>
-      <description>Black Forest Labs, a small AI image startup, is gaining traction in the competitive AI image generation market and is planning to expand into physical AI applications. This move could challenge larger tech companies in the field.</description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 09 Apr 2026 18:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/black-forest-labs-ai-image-generation/</guid>
-    </item>
-    <item>
       <title>New Low Quality option in the Hide comment menu</title>
       <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
-      <description>GitHub has introduced a 'Low Quality' option in the Hide comment menu, allowing moderators to better manage comment visibility across various platforms. This feature aims to enhance the quality of discussions by filtering out less valuable contributions.</description>
+      <description>GitHub has introduced a 'Low Quality' option for moderators to classify hidden comments, enhancing the management of comment quality across its platform.</description>
       <category>GitHub Copilot</category>
       <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
@@ -258,7 +298,7 @@
     <item>
       <title>Understanding Amazon Bedrock model lifecycle</title>
       <link>https://aws.amazon.com/blogs/machine-learning/understanding-amazon-bedrock-model-lifecycle/</link>
-      <description>The article explains how to manage the lifecycle of models in Amazon Bedrock, detailing strategies for transitioning AI applications to newer models without disruption. It emphasizes the importance of planning migrations effectively as models evolve.</description>
+      <description>A new post explains how to manage the lifecycle of models in Amazon Bedrock, focusing on ensuring operational continuity during model transitions.</description>
       <category>Amazon</category>
       <pubDate>Thu, 09 Apr 2026 17:33:28 +0000</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/understanding-amazon-bedrock-model-lifecycle/</guid>
@@ -266,7 +306,7 @@
     <item>
       <title>The future of managing agents at scale: AWS Agent Registry now in preview</title>
       <link>https://aws.amazon.com/blogs/machine-learning/the-future-of-managing-agents-at-scale-aws-agent-registry-now-in-preview/</link>
-      <description>AWS has announced the preview of AWS Agent Registry, a centralized platform for discovering and sharing AI agents and tools within enterprises. This aims to streamline the management of AI agents at scale.</description>
+      <description>AWS has announced the preview of its Agent Registry, a centralized platform for discovering and sharing AI agents and tools within enterprises.</description>
       <category>Amazon</category>
       <pubDate>Thu, 09 Apr 2026 17:28:20 +0000</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/the-future-of-managing-agents-at-scale-aws-agent-registry-now-in-preview/</guid>
@@ -274,23 +314,15 @@
     <item>
       <title>New Sort by control added to Notifications</title>
       <link>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</link>
-      <description>GitHub has added a new 'Sort by' control to the Notifications page, allowing users to sort notifications either from newest to oldest or oldest to newest. This feature enhances user navigation and accessibility.</description>
+      <description>GitHub has added a new 'Sort by' control to its Notifications page, allowing users to choose between sorting notifications from newest to oldest or vice versa.</description>
       <category>GitHub Copilot</category>
       <pubDate>Thu, 09 Apr 2026 17:27:51 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</guid>
     </item>
     <item>
-      <title>How I turned my Android tablet into the ultimate Kindle alternative - for free</title>
-      <link>https://www.zdnet.com/article/how-to-turn-ipad-android-tablet-into-e-reader/</link>
-      <description>The article discusses how to transform an Android tablet into a Kindle alternative at no cost, highlighting the benefits of using a tablet for reading. It provides tips on managing a digital library effectively.</description>
-      <category>Industry</category>
-      <pubDate>Thu, 09 Apr 2026 17:16:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-turn-ipad-android-tablet-into-e-reader/</guid>
-    </item>
-    <item>
       <title>Repository member role labels now in pull request list view</title>
       <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
-      <description>GitHub has introduced repository member role labels in the pull request list view for public repositories, allowing users to see contributor roles directly. This feature aims to enhance transparency and collaboration.</description>
+      <description>GitHub now displays repository member role labels in the pull request list view, making it easier to identify contributors' roles at a glance.</description>
       <category>GitHub Copilot</category>
       <pubDate>Thu, 09 Apr 2026 17:15:16 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
@@ -298,39 +330,23 @@
     <item>
       <title>Embed a live AI browser agent in your React app with Amazon Bedrock AgentCore</title>
       <link>https://aws.amazon.com/blogs/machine-learning/embed-a-live-ai-browser-agent-in-your-react-app-with-amazon-bedrock-agentcore/</link>
-      <description>The article provides a guide on embedding a live AI browser agent in a React application using Amazon Bedrock AgentCore. It outlines the steps to create an interactive user experience with AI-driven browsing.</description>
+      <description>This article provides a guide on embedding a live AI browser agent in a React application using Amazon Bedrock AgentCore, culminating in a sample application. It highlights the ease of integrating AI functionalities into web apps.</description>
       <category>Amazon</category>
       <pubDate>Thu, 09 Apr 2026 17:06:07 +0000</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/embed-a-live-ai-browser-agent-in-your-react-app-with-amazon-bedrock-agentcore/</guid>
     </item>
     <item>
-      <title>Apple's iOS 26.4.1 update enables Stolen Device Protection by default now - grab it today</title>
-      <link>https://www.zdnet.com/article/apple-ios-26-4-1-update-stolen-device-protection/</link>
-      <description>Apple's latest iOS update, version 26.4.1, now includes Stolen Device Protection by default and fixes a glitch with iCloud syncing. This update aims to enhance user security and device functionality.</description>
-      <category>Industry</category>
-      <pubDate>Thu, 09 Apr 2026 16:59:24 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/apple-ios-26-4-1-update-stolen-device-protection/</guid>
-    </item>
-    <item>
       <title>I use ChatGPT's new Tubi app to find free movies and TV shows to watch - here's how</title>
       <link>https://www.zdnet.com/article/chatgpts-tubi-app-movies-tv-shows/</link>
-      <description>The new Tubi app integrates with ChatGPT, allowing users to search for free movies and TV shows using AI. This feature enhances the streaming experience by simplifying content discovery.</description>
+      <description>The Tubi TV video streaming service now integrates with ChatGPT, allowing users to ask the AI for recommendations from its extensive library of movies and TV shows. This feature enhances user engagement and simplifies content discovery.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 16:53:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/chatgpts-tubi-app-movies-tv-shows/</guid>
     </item>
     <item>
-      <title>Why Ubuntu 26.04 will thrill gamers - and it's not just the performance bump</title>
-      <link>https://www.zdnet.com/article/ubuntu-26-04-performance/</link>
-      <description>The article highlights the features of Ubuntu 26.04 that appeal to gamers, including performance improvements and new applications. It discusses how these changes enhance the gaming experience on the platform.</description>
-      <category>Industry</category>
-      <pubDate>Thu, 09 Apr 2026 16:45:05 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/ubuntu-26-04-performance/</guid>
-    </item>
-    <item>
       <title>Release information in issue sidebar and default values for project fields</title>
       <link>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</link>
-      <description>GitHub has updated its issue sidebar to include release tracking and introduced configurable defaults for project fields, enhancing navigation and user experience. This improvement aims to streamline project management for developers.</description>
+      <description>GitHub has updated its issue tracking system to include release information in the sidebar and configurable defaults for project fields, improving navigation and project management. This update aims to streamline workflows for developers.</description>
       <category>GitHub Copilot</category>
       <pubDate>Thu, 09 Apr 2026 16:15:32 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</guid>
@@ -338,7 +354,7 @@
     <item>
       <title>Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases</title>
       <link>https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/</link>
-      <description>Meta has modernized WebRTC to support over 50 use cases, addressing challenges from forking the open-source project. This modernization allows for better integration and community collaboration.</description>
+      <description>Meta discusses its modernization of WebRTC across over 50 use cases, addressing challenges of maintaining an internal fork of the open-source project. The article details their strategies to keep up with community upgrades and improve real-time communication.</description>
       <category>Meta</category>
       <pubDate>Thu, 09 Apr 2026 16:00:34 +0000</pubDate>
       <guid>https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/</guid>
@@ -346,7 +362,7 @@
     <item>
       <title>OpenAI puts Stargate UK on ice, blames energy costs and red tape</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/openai_puts_stargate_uk_on/</link>
-      <description>OpenAI has paused its Stargate datacenter project in the UK due to high energy costs and regulatory challenges, impacting its expansion plans in Europe. This decision reflects the difficulties tech companies face in balancing operational costs and compliance.</description>
+      <description>OpenAI has paused its Stargate datacenter project in the UK due to high energy costs and regulatory challenges. This decision reflects the difficulties tech companies face in expanding operations in certain regions.</description>
       <category>OpenAI</category>
       <pubDate>Thu, 09 Apr 2026 14:54:41 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/openai_puts_stargate_uk_on/</guid>
@@ -354,7 +370,7 @@
     <item>
       <title>Introducing stateful MCP client capabilities on Amazon Bedrock AgentCore Runtime</title>
       <link>https://aws.amazon.com/blogs/machine-learning/introducing-stateful-mcp-client-capabilities-on-amazon-bedrock-agentcore-runtime/</link>
-      <description>Amazon Bedrock has introduced stateful MCP client capabilities, allowing for dynamic content generation and user interaction during task execution. This feature aims to enhance the functionality of applications built on the platform.</description>
+      <description>This article introduces stateful MCP client capabilities on Amazon Bedrock AgentCore Runtime, detailing how to build servers that can interact with users and generate dynamic content. It includes code examples for practical implementation.</description>
       <category>Amazon</category>
       <pubDate>Thu, 09 Apr 2026 14:47:57 +0000</pubDate>
       <guid>https://aws.amazon.com/blogs/machine-learning/introducing-stateful-mcp-client-capabilities-on-amazon-bedrock-agentcore-runtime/</guid>
@@ -362,7 +378,7 @@
     <item>
       <title>Strength and Destiny Collide: ‘Samson: A Tyndalston Story’ Arrives in the Cloud</title>
       <link>https://blogs.nvidia.com/blog/geforce-now-thursday-samson-a-tyndalston-story/</link>
-      <description>The game 'Samson: A Tyndalston Story' has been released on GeForce NOW, enabling streaming on various devices. This title combines cinematic storytelling with cloud gaming technology.</description>
+      <description>The game 'Samson: A Tyndalston Story' has been released on the GeForce NOW cloud gaming platform, allowing users to stream it on various devices. This launch emphasizes the growing trend of cloud-based gaming.</description>
       <category>NVIDIA</category>
       <pubDate>Thu, 09 Apr 2026 13:00:57 +0000</pubDate>
       <guid>https://blogs.nvidia.com/blog/geforce-now-thursday-samson-a-tyndalston-story/</guid>
@@ -370,42 +386,26 @@
     <item>
       <title>Security researchers tricked Apple Intelligence into cursing at users. It could have been a lot worse</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/09/security_researchers_tricked_apple_intelligence/</link>
-      <description>Security researchers demonstrated that Apple Intelligence can be manipulated through prompt injection, allowing it to produce harmful outputs. This vulnerability poses risks to millions of users.</description>
+      <description>Security researchers have demonstrated that Apple Intelligence can be manipulated through prompt injection, allowing it to produce inappropriate responses. This vulnerability poses risks to user safety and privacy.</description>
       <category>Apple</category>
       <pubDate>Thu, 09 Apr 2026 13:00:06 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/09/security_researchers_tricked_apple_intelligence/</guid>
     </item>
     <item>
-      <title>The AI industry’s race for profits is now existential</title>
-      <link>https://www.theverge.com/podcast/909042/ai-monetization-cliff-anthropic-openai-profitable-ai-existential-moment</link>
-      <description>The AI industry faces a monetization cliff, with companies needing to find sustainable profit models before potential collapse. This discussion highlights the urgency for AI firms to innovate and adapt.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 09 Apr 2026 10:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/podcast/909042/ai-monetization-cliff-anthropic-openai-profitable-ai-existential-moment</guid>
+      <title>ModelOp Wins Diamond Award for Responsible AI Platform in 2026 Pinnacle Awards for Artificial Intelligence, Shapes the Future of Enterprise AI Governance</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/09/3270845/0/en/ModelOp-Wins-Diamond-Award-for-Responsible-AI-Platform-in-2026-Pinnacle-Awards-for-Artificial-Intelligence-Shapes-the-Future-of-Enterprise-AI-Governance.html</link>
+      <description>ModelOp has been awarded the Diamond Award for its Responsible AI platform at the 2026 Pinnacle Awards, highlighting its role in shaping enterprise AI governance. This recognition underscores the importance of responsible AI practices.</description>
+      <category>AI Foundry</category>
+      <pubDate>Thu, 09 Apr 2026 11:50:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/09/3270845/0/en/ModelOp-Wins-Diamond-Award-for-Responsible-AI-Platform-in-2026-Pinnacle-Awards-for-Artificial-Intelligence-Shapes-the-Future-of-Enterprise-AI-Governance.html</guid>
     </item>
     <item>
-      <title>National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources</title>
-      <link>https://blogs.nvidia.com/blog/national-robotics-week-2026/</link>
-      <description>During National Robotics Week, NVIDIA showcased advancements in physical AI and robotics, emphasizing their impact on various industries. These developments are accelerating the integration of AI in real-world applications.</description>
+      <title>pylibcugraph-cu13 26.4.0</title>
+      <link>https://pypi.org/project/pylibcugraph-cu13/26.4.0/</link>
+      <description>The article discusses the release of version 26.4.0 of pylibcugraph, which provides Python bindings for the libcugraph library. This update enhances the capabilities for GPU-accelerated graph analytics in Python.</description>
       <category>NVIDIA</category>
-      <pubDate>Thu, 09 Apr 2026 09:45:59 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/national-robotics-week-2026/</guid>
-    </item>
-    <item>
-      <title>Anthropic loses first round in fight over Pentagon's 'supply chain risk' label</title>
-      <link>https://cointelegraph.com/news/anthropic-loses-bid-pause-pentagon-supply-chain-risk-designation</link>
-      <description>Anthropic lost an initial legal battle regarding the Pentagon's 'supply chain risk' label, with judges favoring the government's stance. This case could have implications for AI companies working with defense contracts.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 09 Apr 2026 06:12:45 +0000</pubDate>
-      <guid>https://cointelegraph.com/news/anthropic-loses-bid-pause-pentagon-supply-chain-risk-designation</guid>
-    </item>
-    <item>
-      <title>A 115-Inch Mini LED TV Exists Now, and It Has 330Hz Gaming</title>
-      <link>https://the-gadgeteer.com/2026/04/09/a-115-inch-mini-led-tv-exists-now-and-it-has-330hz-gaming/</link>
-      <description>LG has introduced a 115-inch Mini LED TV with a 330Hz refresh rate, challenging perceptions of Mini LED as a budget alternative to OLED. This innovation showcases advancements in display technology.</description>
-      <category>Microsoft</category>
-      <pubDate>Thu, 09 Apr 2026 06:00:08 +0000</pubDate>
-      <guid>https://the-gadgeteer.com/2026/04/09/a-115-inch-mini-led-tv-exists-now-and-it-has-330hz-gaming/</guid>
+      <pubDate>Thu, 09 Apr 2026 11:47:43 +0000</pubDate>
+      <guid>https://pypi.org/project/pylibcugraph-cu13/26.4.0/</guid>
     </item>
   </channel>
 </rss>
