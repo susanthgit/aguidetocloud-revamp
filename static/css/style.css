@@ -2150,27 +2150,28 @@ pre.mermaid {
 .rdmap-tl-now .rdmap-tl-month { color: #E5A00D; font-weight: 700; }
 .rdmap-tl-now .rdmap-tl-count { color: #E5A00D; }
 
-/* ── LIST VIEW — readable, airy rows ── */
+/* ── LIST VIEW — card-style rows with visible boundaries ── */
 .rdmap-list-section { margin-bottom: 1.8rem; }
 .rdmap-list-heading {
   font-size: 0.88rem; font-weight: 600; color: #8B8594; text-transform: uppercase;
   letter-spacing: 0.05em; padding-bottom: 0.6rem; border-bottom: 1px solid #2A2533;
-  margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;
 }
 .rdmap-list-heading span { background: #2A2533; padding: 0.15rem 0.55rem; border-radius: 8px; font-size: 0.75rem; color: #6B6575; }
 .rdmap-list-header {
   display: grid; grid-template-columns: 110px 1fr 160px 130px;
   font-size: 0.72rem; color: #504A59; text-transform: uppercase; letter-spacing: 0.06em;
-  padding: 0.5rem 1rem; background: #16131C;
+  padding: 0.5rem 1rem; margin-bottom: 0.4rem;
 }
-.rdmap-list { display: flex; flex-direction: column; }
+.rdmap-list { display: flex; flex-direction: column; gap: 0.45rem; }
 .rdmap-row {
   display: grid; grid-template-columns: 110px 1fr 160px 130px;
-  padding: 0.85rem 1rem; border-bottom: 1px solid #1C1924;
-  align-items: start; transition: all 0.12s; font-size: 0.9rem;
+  padding: 0.85rem 1rem; align-items: start; font-size: 0.9rem;
+  background: #1C1924; border: 1px solid #2A2533; border-radius: 10px;
   border-left: 3px solid transparent;
+  transition: all 0.15s;
 }
-.rdmap-row:hover { background: #1C1924; border-left-color: #E5A00D; }
+.rdmap-row:hover { border-color: #3D3648; border-left-color: #E5A00D; background: #211E29; }
 .rdmap-row-status { padding-top: 0.15rem; }
 .rdmap-st {
   display: inline-block; font-size: 0.72rem; font-weight: 600;
@@ -2230,7 +2231,7 @@ pre.mermaid {
   .rdmap-metric-val { font-size: 1rem; }
   .rdmap-filters { flex-direction: column; }
   .rdmap-list-header { display: none; }
-  .rdmap-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 0.8rem 0.7rem; border-left-width: 3px; }
+  .rdmap-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 0.8rem 0.7rem; border-left-width: 3px; border-radius: 10px; }
   .rdmap-row-status { order: 0; }
   .rdmap-row-main { order: 1; padding-right: 0; }
   .rdmap-row-product { order: 2; font-size: 0.78rem; }

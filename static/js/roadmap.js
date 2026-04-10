@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   };
 
   var STATUS_META = {
-    'Rolling out':    { emoji: '🔵', color: '#06B6D4', label: 'Rolling Out' },
+    'Rolling out':    { emoji: '🟢', color: '#00CC33', label: 'Rolling Out' },
     'In development': { emoji: '🟡', color: '#F59E0B', label: 'In Dev' },
-    'Launched':       { emoji: '🟢', color: '#10B981', label: 'Launched' },
+    'Launched':       { emoji: '🔵', color: '#06B6D4', label: 'Launched' },
     'Cancelled':      { emoji: '🔴', color: '#EF4444', label: 'Cancelled' }
   };
 
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!total) { el.innerHTML = ''; return; }
 
     var segments = [
-      { status: 'Rolling out', count: sc['Rolling out'] || 0, color: '#06B6D4' },
+      { status: 'Rolling out', count: sc['Rolling out'] || 0, color: '#00CC33' },
       { status: 'In development', count: sc['In development'] || 0, color: '#F59E0B' },
-      { status: 'Launched', count: sc['Launched'] || 0, color: '#10B981' },
+      { status: 'Launched', count: sc['Launched'] || 0, color: '#06B6D4' },
       { status: 'Cancelled', count: sc['Cancelled'] || 0, color: '#EF4444' }
     ];
 
@@ -192,15 +192,18 @@ document.addEventListener('DOMContentLoaded', async function () {
     var MONTH_NAMES = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     var html = '<div class="rdmap-tl-label">📅 Upcoming GA Dates</div><div class="rdmap-tl-bars">';
-    sorted.forEach(function (m) {
+    sorted.forEach(function (m, idx) {
       var count = months[m];
       var pct = Math.max(8, (count / maxCount) * 100);
       var parts = m.split('-');
       var label = MONTH_NAMES[parseInt(parts[1])] + ' ' + parts[0].slice(2);
       var isThisMonth = m === now;
+      // Gradient: closer months warmer, further months cooler
+      var barColors = ['#5B4A2E', '#4A3F30', '#3D3648', '#35304A', '#2E2B4D', '#28274F', '#232452', '#1F2155'];
+      var barColor = isThisMonth ? '#E5A00D' : (barColors[idx] || '#2E2B4D');
       html += '<div class="rdmap-tl-col' + (isThisMonth ? ' rdmap-tl-now' : '') + '">'
         + '<div class="rdmap-tl-count">' + count + '</div>'
-        + '<div class="rdmap-tl-fill" style="height:' + pct + '%;background:' + (isThisMonth ? '#E5A00D' : '#2A2533') + '"></div>'
+        + '<div class="rdmap-tl-fill" style="height:' + pct + '%;background:' + barColor + '"></div>'
         + '<div class="rdmap-tl-month">' + label + '</div>'
         + '</div>';
     });
