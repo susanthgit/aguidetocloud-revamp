@@ -98,7 +98,7 @@
 
     {{/* ── PROMPTS GROUPED BY CATEGORY ── */}}
     {{ if $isMainPage }}
-      {{ range .Sections }}
+      {{ range .Sections.ByWeight }}
         {{ $sectionPrompts := .RegularPages }}
         {{ if gt (len $sectionPrompts) 0 }}
         <div class="prompts-category-group" data-category="{{ .File.ContentBaseName }}">

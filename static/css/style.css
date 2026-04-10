@@ -1134,11 +1134,17 @@ a:hover {
 }
 .ainews-categories {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.3rem;
+  mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
+.ainews-categories::-webkit-scrollbar { display: none; }
 .ainews-filter {
   padding: 0.4rem 1rem;
   border-radius: 20px;
@@ -1150,6 +1156,8 @@ a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-heading);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .ainews-filter:hover, .ainews-filter.active {
   border-color: var(--neon-cyan);
@@ -1509,6 +1517,48 @@ a:hover {
   color: var(--text-muted);
 }
 
+/* ── STICKY SEARCH + FILTERS ─────────────── */
+.ainews-sticky-bar {
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  background: rgba(10, 10, 26, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem 0;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ── "SHOW MORE" BUTTON ──────────────────── */
+.ainews-show-more {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 255, 255, 0.3);
+  background: rgba(102, 255, 255, 0.06);
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.ainews-show-more:hover {
+  background: rgba(102, 255, 255, 0.15);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(102, 255, 255, 0.2);
+}
+
+/* ── DEEP DIVE SUMMARY: MAX 3 LINES ─────── */
+.ainews-deepdive-grid .ainews-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* ── TRENDING TOPICS BAR ───────────────── */
 .ainews-trending {
   margin-bottom: 1rem;
@@ -1543,17 +1593,6 @@ a:hover {
   border-radius: 50%;
   margin-right: 0.3rem;
   vertical-align: middle;
-}
-
-/* ── READING TIME BADGE ────────────────── */
-.ainews-rtime {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  background: rgba(255,255,255,0.05);
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  margin-left: auto;
-  margin-right: 0.5rem;
 }
 
 /* ── RUMOURS & GOSSIP STYLE ────────────── */

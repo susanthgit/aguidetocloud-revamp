@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   });
 
 // Init share button directly (no MutationObserver needed — tabs are in DOM from Hugo)
-  renderShareButton();
+  // [REMOVED: share button — UX audit 2026-04-10]
 
   // Mark last visit timestamp for "new" badges
   var lastVisit = localStorage.getItem('ainews_last_visit');
@@ -220,13 +220,6 @@ function isMicrosoftCat(cat) {
   return MICROSOFT_CATS.some(function (m) { return lower.indexOf(m) !== -1; });
 }
 
-function readingTime(text) {
-  if (!text) return '1 min';
-  var words = text.split(/\s+/).length;
-  var mins = Math.max(1, Math.ceil(words / 200));
-  return mins + ' min read';
-}
-
 function applyLimits(articles) {
   var grouped = {};
   articles.forEach(function (a) {
@@ -318,34 +311,46 @@ function renderNews(data, view) {
   // 🔥 HEADLINES
   if (headlines.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines <div class="ainews-tier-desc">Major breaking news and industry-shaping announcements you need to know</div></div>';
-    html += '<div class="ainews-heroes">';
-    headlines.forEach(function (article) {
-      html += renderHeroCard(article);
+    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines (' + headlines.length + ')</div>';
+    html += '<div class="ainews-heroes" id="ainews-heroes">';
+    headlines.forEach(function (article, i) {
+      html += '<div class="ainews-loadmore-item"' + (i >= 6 ? ' style="display:none"' : '') + '>' + renderHeroCard(article) + '</div>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    if (headlines.length > 6) {
+      html += '<button class="ainews-show-more" data-target="ainews-heroes" data-step="6">Show ' + (headlines.length - 6) + ' more headlines</button>';
+    }
+    html += '</div>';
   }
 
   // 🧠 DEEP DIVES
   if (deepDives.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>🧠</span> Deep Dives <div class="ainews-tier-desc">In-depth analysis and noteworthy developments worth reading in full</div></div>';
-    html += '<div class="ainews-deepdive-grid">';
-    deepDives.forEach(function (article) {
-      html += renderCard(article);
+    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>🧠</span> Deep Dives (' + deepDives.length + ')</div>';
+    html += '<div class="ainews-deepdive-grid" id="ainews-deepdives">';
+    deepDives.forEach(function (article, i) {
+      html += '<div class="ainews-loadmore-item"' + (i >= 12 ? ' style="display:none"' : '') + '>' + renderCard(article) + '</div>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    if (deepDives.length > 12) {
+      html += '<button class="ainews-show-more" data-target="ainews-deepdives" data-step="12">Show ' + (deepDives.length - 12) + ' more deep dives</button>';
+    }
+    html += '</div>';
   }
 
   // ⚡ QUICK LINKS
   if (quickLinks.length > 0) {
     html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-quick"><span>⚡</span> Quick Links <div class="ainews-tier-desc">Minor updates and niche topics — good to know at a glance</div></div>';
-    html += '<div class="ainews-quick-list">';
-    quickLinks.forEach(function (article) {
-      html += renderQuickLink(article);
+    html += '<div class="ainews-tier-header ainews-tier-quick"><span>⚡</span> Quick Links (' + quickLinks.length + ')</div>';
+    html += '<div class="ainews-quick-list" id="ainews-quicklinks">';
+    quickLinks.forEach(function (article, i) {
+      html += '<div class="ainews-loadmore-item"' + (i >= 10 ? ' style="display:none"' : '') + '>' + renderQuickLink(article) + '</div>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    if (quickLinks.length > 10) {
+      html += '<button class="ainews-show-more" data-target="ainews-quicklinks" data-step="10">Show ' + (quickLinks.length - 10) + ' more quick links</button>';
+    }
+    html += '</div>';
   }
 
   // Fallback: if no tiers assigned, render all as cards (backward compat)
@@ -386,8 +391,34 @@ function renderNews(data, view) {
         var text = el.textContent.toLowerCase();
         el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
       });
+      // Show all load-more items when searching
+      if (q) {
+        grid.querySelectorAll('.ainews-loadmore-item').forEach(function (el) { el.style.display = ''; });
+        grid.querySelectorAll('.ainews-show-more').forEach(function (btn) { btn.style.display = 'none'; });
+      }
     });
   }
+
+  // "Show more" buttons
+  grid.querySelectorAll('.ainews-show-more').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = this.dataset.target;
+      var step = parseInt(this.dataset.step, 10);
+      var container = document.getElementById(targetId);
+      if (!container) return;
+      var hidden = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]');
+      var count = 0;
+      hidden.forEach(function (el) {
+        if (count < step) { el.style.display = ''; count++; }
+      });
+      var remaining = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]').length;
+      if (remaining === 0) {
+        btn.style.display = 'none';
+      } else {
+        btn.textContent = 'Show ' + remaining + ' more';
+      }
+    });
+  });
 }
 
 // === SHARED RENDER HELPERS ===
@@ -403,7 +434,6 @@ function getArticleVars(article) {
     title: article.title || 'Untitled',
     time: timeAgo(article.published),
     favicon: getFaviconUrl(article.url || article.link || ''),
-    rtime: readingTime(article.ai_summary || article.snippet || ''),
     image: article.image || '',
     logo: getLogoUrl(article.url || article.link || ''),
     cluster: article.cluster || '',
@@ -442,7 +472,6 @@ function renderHeroCard(article) {
     '<div class="ainews-meta">' +
       (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
-      '<span class="ainews-rtime">' + v.rtime + '</span>' +
       '<span class="ainews-time">' + v.time + '</span>' +
     '</div></div>' +
   '</a>';
@@ -456,14 +485,12 @@ function renderCard(article) {
     '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
     (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +
-    (v.cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(v.cluster.replace(/-/g, ' ')) + '</span>' : '') +
     '<h3>' + escapeHtml(v.title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>' +
     (v.whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>' : '') +
     '<div class="ainews-meta">' +
       (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
-      '<span class="ainews-rtime">' + v.rtime + '</span>' +
       '<span class="ainews-time">' + v.time + '</span>' +
     '</div>' +
   '</a>';
@@ -569,29 +596,6 @@ function isNewSinceLastVisit(publishedStr) {
   try {
     return new Date(publishedStr) > window.__ainewsLastVisit;
   } catch (e) { return false; }
-}
-
-// === SHARE BUTTON ===
-function renderShareButton() {
-  var container = document.querySelector('.ainews-tabs');
-  if (!container || document.getElementById('ainews-share-btn')) return;
-  var btn = document.createElement('button');
-  btn.id = 'ainews-share-btn';
-  btn.className = 'ainews-share-btn';
-  btn.innerHTML = '📤 Share';
-  btn.title = 'Copy link to clipboard';
-  btn.addEventListener('click', function () {
-    var url = window.location.href;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(function () {
-        btn.innerHTML = '✅ Copied!';
-        setTimeout(function () { btn.innerHTML = '📤 Share'; }, 2000);
-      });
-    } else {
-      prompt('Copy this link:', url);
-    }
-  });
-  container.appendChild(btn);
 }
 
 // === CLICK ANALYTICS (Microsoft Clarity) ===
