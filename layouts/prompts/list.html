@@ -49,20 +49,6 @@
     "name": "AI Prompt Library",
     "url": "{{ .Site.BaseURL }}prompts/"
   },
-  "mainEntity": {
-    "@type": "ItemList",
-    "numberOfItems": {{ len $pagePrompts }},
-    "itemListElement": [
-      {{ range $i, $p := $pagePrompts }}{{ if $i }},{{ end }}
-      {
-        "@type": "ListItem",
-        "position": {{ add $i 1 }},
-        "name": "{{ $p.Title }}",
-        "url": "{{ $p.Permalink }}"
-      }
-      {{ end }}
-    ]
-  },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -77,11 +63,11 @@
 
 <div class="prompts-page">
 
-  <!-- ── HERO (full width, like rdmap-hero) ── -->
+  <!-- ── HERO ── -->
   <div class="prompts-hero">
     {{ if $isMainPage }}
     <h1>✨ AI <span>Prompt Library</span></h1>
-    <p class="prompts-subtitle">Find the perfect prompt for any AI tool. Copy. Use. Done.</p>
+    <p class="prompts-subtitle">{{ len $allPrompts }} tested prompts across {{ len hugo.Data.platforms }} AI platforms — find, copy, use.</p>
     {{ else }}
     <nav class="prompts-back-nav">
       <a href="/prompts/">← All Prompts</a>
@@ -91,105 +77,80 @@
     {{ end }}
   </div>
 
-  <!-- ── CONTENT (constrained, like rdmap-container) ── -->
+  <!-- ── CONTENT ── -->
   <div class="prompts-container">
 
-    {{/* ── FILTERS (main page only) ── */}}
+    {{/* ── PLATFORM FILTER (main page only) ── */}}
     {{ if $isMainPage }}
-    <div class="prompts-filters">
-      <!-- Platform filter -->
-      <div class="prompts-filter-row prompts-scroll-row">
-        <span class="prompts-filter-label">Platform</span>
-        <div class="prompts-chip-track">
-          <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
-          <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
-        </div>
-      </div>
-
-      <!-- Role filter -->
-      <div class="prompts-filter-row prompts-scroll-row">
-        <span class="prompts-filter-label">Role</span>
-        <div class="prompts-chip-track">
-          <button class="prompts-chip active" data-filter-type="role" data-filter-value="all">All</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="executive">👔 Executive</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="executive-assistant">🗂️ EA</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="it-admin">🖥️ IT Admin</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="hr">👥 HR</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="finance">💰 Finance</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="sales">🤝 Sales</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="marketing">📣 Marketing</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="legal">⚖️ Legal</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="customer-service">🎧 Support</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="consultant">💼 Consultant</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="student">🎓 Student</button>
-          <button class="prompts-chip" data-filter-type="role" data-filter-value="creative">🎨 Creative</button>
-        </div>
-      </div>
-
-      <!-- M365 App filter -->
-      <div class="prompts-filter-row prompts-scroll-row">
-        <span class="prompts-filter-label">M365 App</span>
-        <div class="prompts-chip-track">
-          <button class="prompts-chip active" data-filter-type="surface" data-filter-value="all">All</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-work">💬 Chat (Work)</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="copilot-chat-web">🌐 Chat (Web)</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="word">📝 Word</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="excel">📊 Excel</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="powerpoint">📑 PowerPoint</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="outlook">📧 Outlook</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="teams">💬 Teams</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="onenote">📓 OneNote</button>
-          <button class="prompts-chip" data-filter-type="surface" data-filter-value="loop">🔄 Loop</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Results bar: difficulty legend + sort -->
-    <div class="prompts-results-bar">
-      <span class="prompts-difficulty-legend">● Beginner &nbsp; ●● Intermediate &nbsp; ●●● Advanced</span>
-      <select id="prompts-sort" class="prompts-sort">
-        <option value="default">Sort: Default</option>
-        <option value="az">A → Z</option>
-        <option value="difficulty">By Difficulty</option>
-        <option value="category">By Category</option>
-        <option value="popular">Most Copied</option>
-      </select>
-    </div>
-
+    <div class="prompts-filter-bar">
+      <span class="prompts-filter-label">Show:</span>
+      <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
+      <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
     </div>
     {{ end }}
 
-    {{/* ── PROMPT ACCORDION LIST ── */}}
-    <div class="prompts-list">
+    {{/* ── PROMPTS GROUPED BY CATEGORY ── */}}
+    {{ if $isMainPage }}
+      {{ range .Sections }}
+        {{ $sectionPrompts := .RegularPages }}
+        {{ if gt (len $sectionPrompts) 0 }}
+        <div class="prompts-category-group" data-category="{{ .File.ContentBaseName }}">
+          <h2 class="prompts-category-heading">
+            <span class="prompts-category-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
+            {{ .Title }}
+            <span class="prompts-category-count">{{ len $sectionPrompts }}</span>
+          </h2>
+
+          {{ range $sectionPrompts }}
+          {{ $prompt := .Params.prompt | default "" }}
+          {{ $platforms := .Params.platforms | default (slice) }}
+          {{ $bestOn := .Params.best_on | default "" }}
+          {{ $description := .Description | default "" }}
+
+          <div class="prompt-row"
+               data-platforms="{{ delimit $platforms " " }}"
+               data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
+
+            <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
+              <span class="prompt-row-arrow">▸</span>
+              <div class="prompt-row-info">
+                <span class="prompt-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+                {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
+              </div>
+              <div class="prompt-row-platforms">
+                {{ range $platforms }}
+                  {{ $pdata := index hugo.Data.platforms . }}
+                  {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
+                {{ end }}
+              </div>
+              <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+            </div>
+
+            <div class="prompt-row-body" hidden>
+              <div class="prompt-text">{{ $prompt }}</div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{/* Category sub-pages — flat list, no grouping needed */}}
       {{ range $pagePrompts }}
       {{ $prompt := .Params.prompt | default "" }}
       {{ $platforms := .Params.platforms | default (slice) }}
-      {{ $roles := .Params.roles | default (slice) }}
-      {{ $useCase := .Params.use_case | default "" }}
       {{ $bestOn := .Params.best_on | default "" }}
-      {{ $difficulty := .Params.difficulty | default "beginner" }}
-      {{ $surfaces := .Params.m365_surfaces | default (slice) }}
-      {{ $slug := .File.ContentBaseName }}
       {{ $description := .Description | default "" }}
-      {{ $catName := "" }}{{ with .Parent }}{{ $catName = .Title }}{{ end }}
-      {{ $catEmoji := "" }}{{ with .Parent }}{{ $catEmoji = .Params.emoji | default "" }}{{ end }}
 
       <div class="prompt-row"
            data-platforms="{{ delimit $platforms " " }}"
-           data-roles="{{ delimit $roles " " }}"
-           data-usecase="{{ $useCase }}"
-           data-surfaces="{{ delimit $surfaces " " }}"
-           data-slug="{{ $slug }}"
-           data-title="{{ .Title }}"
-           data-difficulty="{{ $difficulty }}"
            data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
 
         <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
@@ -198,16 +159,13 @@
             <span class="prompt-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
             {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
           </div>
-          <span class="prompt-row-cat">{{ $catEmoji }} {{ $catName }}</span>
           <div class="prompt-row-platforms">
             {{ range $platforms }}
               {{ $pdata := index hugo.Data.platforms . }}
               {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
             {{ end }}
           </div>
-          <span class="prompt-difficulty" title="{{ $difficulty | title }}">{{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}</span>
           <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
-          <button class="prompt-fav-btn" data-slug="{{ $slug }}" title="Save to favourites">♡</button>
         </div>
 
         <div class="prompt-row-body" hidden>
@@ -215,11 +173,10 @@
         </div>
       </div>
       {{ end }}
+    {{ end }}
 
-      <div id="prompts-empty" class="prompts-empty" style="display: none;">
-        <p>🔍 No prompts match your filters</p>
-        <p>Try adjusting your search or filters</p>
-      </div>
+    <div id="prompts-empty" class="prompts-empty" style="display: none;">
+      <p>🔍 No prompts match this platform filter</p>
     </div>
 
   </div>
@@ -229,5 +186,5 @@
 (function(){var b=document.getElementById('prompts-btt');if(!b)return;window.addEventListener('scroll',function(){var s=window.scrollY>400;b.style.opacity=s?'1':'0';b.style.transform=s?'translateY(0)':'translateY(20px)';b.style.pointerEvents=s?'auto':'none'});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
 
-<script src="/js/prompts.js?v={{ now.Unix }}"></script>
+<script src="/js/prompts-v2.js?v={{ now.Unix }}"></script>
 {{ end }}
