@@ -76,39 +76,23 @@
 {{ end }}
 
 <div class="prompts-page">
-  <div class="prompts-container" style="max-width:1100px;margin:0 auto;padding:0 3rem">
 
-    <!-- ── HERO ──────────────────────────── -->
-    <div class="prompts-hero">
-      {{ if $isMainPage }}
-      <h1>✨ AI <span>Prompt Library</span></h1>
-      <p class="prompts-subtitle">Find the perfect prompt for any AI tool. Copy. Use. Done.</p>
-      {{ else }}
-      <nav class="prompts-back-nav">
-        <a href="/prompts/">← All Prompts</a>
-      </nav>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="prompts-subtitle">{{ . }}</p>{{ end }}
-      {{ end }}
-    </div>
-
-    {{/* ── CATEGORY QUICK LINKS (main page only) ── */}}
+  <!-- ── HERO (full width, like rdmap-hero) ── -->
+  <div class="prompts-hero">
     {{ if $isMainPage }}
-    <div class="prompts-categories-wrap">
-      <div class="prompts-categories">
-        {{ range .Sections }}
-        {{ $count := len .RegularPages }}
-        {{ if gt $count 0 }}
-        <a href="{{ .RelPermalink }}" class="prompts-category-card" data-cat="{{ .File.ContentBaseName }}">
-          <span class="cat-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
-          {{ .Title }}
-          <span class="cat-count">{{ $count }}</span>
-        </a>
-        {{ end }}
-        {{ end }}
-      </div>
-    </div>
+    <h1>✨ AI <span>Prompt Library</span></h1>
+    <p class="prompts-subtitle">Find the perfect prompt for any AI tool. Copy. Use. Done.</p>
+    {{ else }}
+    <nav class="prompts-back-nav">
+      <a href="/prompts/">← All Prompts</a>
+    </nav>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="prompts-subtitle">{{ . }}</p>{{ end }}
     {{ end }}
+  </div>
+
+  <!-- ── CONTENT (constrained, like rdmap-container) ── -->
+  <div class="prompts-container">
 
     {{/* ── FILTERS (main page only) ── */}}
     {{ if $isMainPage }}
