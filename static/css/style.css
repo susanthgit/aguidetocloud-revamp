@@ -2216,10 +2216,10 @@ pre.mermaid {
 .rdmap-list-info b { color: #E5A00D; }
 
 /* List — card-style rows */
-.rdmap-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-row {
   display: grid; grid-template-columns: 100px 1fr auto;
-  padding: 0.8rem 1rem; align-items: start; font-size: 0.9rem;
+  padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
   background: #1C1924; border: 1px solid #2A2533; border-radius: 10px;
   border-left: 3px solid transparent; transition: all 0.15s;
   text-decoration: none; color: inherit; cursor: pointer;
@@ -2231,9 +2231,8 @@ pre.mermaid {
   padding: 0.2rem 0.5rem; border-radius: 4px; color: #fff; white-space: nowrap;
 }
 .rdmap-row-main { min-width: 0; padding: 0 1rem 0 0; }
-.rdmap-row-title { color: #E8E4ED; font-weight: 500; font-size: 0.92rem; line-height: 1.4; }
-.rdmap-row:hover .rdmap-row-title { color: #E5A00D; }
-.rdmap-row-desc { font-size: 0.82rem; color: #6B6575; margin-top: 0.2rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rdmap-row-title { color: #E8E4ED; font-weight: 500; font-size: 0.95rem; line-height: 1.45; }
+.rdmap-row-desc { font-size: 0.84rem; color: #6B6575; margin-top: 0.25rem; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .rdmap-row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; white-space: nowrap; }
 .rdmap-row-product { font-size: 0.78rem; }
 .rdmap-row-date { font-size: 0.78rem; color: #6B6575; }

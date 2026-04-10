@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       var data = await fetchData();
       if (!Array.isArray(data.items)) data.items = [];
       currentData = data;
-      renderHero(data); renderStatusBar(data); populateProductFilter(data.product_categories || []);
+      renderHero(data); populateProductFilter(data.product_categories || []);
       renderChips(data); render(); renderFreshness(data.generated_at); renderBrowse();
     } catch (e) {
       document.getElementById('rdmap-content').innerHTML = '<p class="rdmap-empty">Roadmap data not available yet. Check back tomorrow!</p>';
