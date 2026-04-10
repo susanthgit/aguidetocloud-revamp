@@ -77,7 +77,8 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
         @("/interview-prep/", "Interview Prep"),
         @("/music/", "Study Music"),
         @("/blog/", "Blog"),
-        @("/ai-news/", "AI News")
+        @("/ai-news/", "AI News"),
+        @("/m365-roadmap/", "M365 Roadmap")
     )
     foreach ($p in $pages) {
         $resp = Fetch-Head "$BASE$($p[0])"
@@ -168,6 +169,28 @@ if ($Section -eq 'all' -or $Section -eq 'ainews') {
     # RSS feed
     $rss = Fetch-Page "$BASE/data/ainews/feed.xml"
     Test-Check "AI News RSS feed" ($null -ne $rss -and $rss.Content.Contains('<rss'))
+}
+
+# ═══════════════════════════════════════════
+# 3b. M365 ROADMAP
+# ═══════════════════════════════════════════
+if ($Section -eq 'all') {
+    Write-Host "`n📋 M365 ROADMAP" -ForegroundColor Cyan
+
+    $raw = Fetch-Page "$BASE/data/roadmap/latest.json"
+    $jsonOk = $null -ne $raw
+    Test-Check "Roadmap latest.json loads" $jsonOk
+
+    if ($jsonOk) {
+        $data = $raw.Content | ConvertFrom-Json
+        Test-Check "Has items ($($data.total_items))" ($data.total_items -gt 100)
+        Test-Check "Has active items ($($data.active_items))" ($data.active_items -gt 50)
+        Test-Check "Has product categories ($($data.product_categories.Count))" ($data.product_categories.Count -ge 5)
+        Test-Check "generated_at present" ($null -ne $data.generated_at)
+    }
+
+    $rdPage = Fetch-Page "$BASE/m365-roadmap/"
+    Test-Check "Roadmap page has JS" ($null -ne $rdPage -and $rdPage.Content.Contains('roadmap.js'))
 }
 
 # ═══════════════════════════════════════════
