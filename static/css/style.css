@@ -708,19 +708,6 @@ a:hover {
   color: var(--text-secondary);
 }
 
-/* ── BACK TO TOP (SITE-WIDE) ────────────── */
-.site-btt {
-  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--neon-cyan); color: #0a0a1a; border: none;
-  font-size: 1.2rem; font-weight: 700; cursor: pointer;
-  box-shadow: 0 2px 12px rgba(102, 255, 255, 0.3);
-  opacity: 0; transform: translateY(20px); transition: all 0.3s;
-  pointer-events: none;
-}
-.site-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.site-btt:hover { background: #99ffff; box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5); }
-
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid rgba(102, 255, 255, 0.2);
@@ -1747,6 +1734,19 @@ a:hover {
   box-shadow: 0 0 10px rgba(102, 255, 255, 0.2);
 }
 
+/* ── AI NEWS: BACK TO TOP ────────────────── */
+.ainews-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--neon-cyan); color: #0a0a1a; border: none;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(102, 255, 255, 0.3);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  pointer-events: none;
+}
+.ainews-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.ainews-btt:hover { background: #99ffff; box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5); }
+
 /* ── SKELETON LOADING ──────────────────── */
 .ainews-skeleton-wrap {
   display: grid;
@@ -2387,6 +2387,19 @@ pre.mermaid {
 }
 .rdmap-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px rgba(229, 160, 13, 0.5); }
+
+/* Prompt Library — Back to top (same pattern as roadmap) */
+.prompts-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #A78BFA; color: #0f0f1a; border: none;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(167, 139, 250, 0.3);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  pointer-events: none;
+}
+.prompts-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.prompts-btt:hover { background: #8B5CF6; box-shadow: 0 4px 20px rgba(167, 139, 250, 0.5); }
 
 /* Load more button */
 .rdmap-load-more {

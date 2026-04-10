@@ -45,17 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
-
-  // Back-to-top button (site-wide, hidden if page has its own)
-  var btt = document.getElementById('site-btt');
-  if (btt && !document.getElementById('rdmap-btt')) {
-    window.addEventListener('scroll', function() {
-      btt.classList.toggle('site-btt-show', window.scrollY > 400);
-    });
-    btt.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  } else if (btt) {
-    btt.style.display = 'none';
-  }
 });

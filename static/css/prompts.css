@@ -754,39 +754,6 @@
   text-shadow: none;
 }
 
-/* ── BACK TO TOP BUTTON ─────────────────────── */
-
-.prompts-btt {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 100;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--prompt-accent);
-  color: var(--bg-primary);
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 2px 12px var(--prompt-accent-glow);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-.prompts-btt-show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.prompts-btt:hover {
-  background: var(--prompt-accent-hover);
-  box-shadow: 0 4px 24px var(--prompt-accent-glow);
-  transform: translateY(-2px);
-}
-
 /* ── OPEN IN PLATFORM BUTTONS ───────────────── */
 
 .prompt-open-in {
