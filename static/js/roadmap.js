@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       + '<div class="rdmap-row-status"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span></div>'
       + '<div class="rdmap-row-main">'
       + '<a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row-title">' + escapeHtml(item.title) + '</a>'
+      + '<a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center for this feature">📬</a>'
       + (summary ? '<div class="rdmap-row-desc">' + escapeHtml(summary) + '</div>' : '')
       + changeHtml
       + '</div>'
@@ -308,7 +309,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         + '<div class="rdmap-card-top"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span>'
         + (change ? '<span class="rdmap-change-sm" style="color:' + change.color + '">' + change.icon + ' ' + change.label + '</span>' : '')
         + '</div>'
-        + '<h4><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></h4>'
+        + '<h4><a href="' + escapeHtml(item.roadmap_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a> <a href="' + mcSearchUrl(item.title) + '" target="_blank" rel="noopener" class="rdmap-mc-link" title="Search Message Center">📬</a></h4>'
         + (summary ? '<p>' + escapeHtml(summary) + '</p>' : '')
         + '<div class="rdmap-card-foot">'
         + '<span style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + escapeHtml(item.product_category_name || '') + '</span>'
@@ -376,6 +377,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     return new Date(d).toLocaleDateString('en-NZ', { month: 'short', day: 'numeric' });
   }
   function escapeHtml(s) { return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+
+  function mcSearchUrl(title) {
+    // Extract key terms: strip product prefix ("Teams: "), take first ~6 words
+    var clean = (title || '').replace(/^[^:]+:\s*/, '').replace(/[–—|]/g, ' ').trim();
+    var words = clean.split(/\s+/).slice(0, 6).join(' ');
+    return 'https://admin.microsoft.com/Adminportal/Home#/MessageCenter/:/search/' + encodeURIComponent(words);
+  }
 
   // ── EVENT WIRING ──
   document.querySelectorAll('.rdmap-tab').forEach(function (t) {

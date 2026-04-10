@@ -2294,6 +2294,9 @@ pre.mermaid {
 .rdmap-source a { color: #E5A00D; }
 .rdmap-freshness { color: #6B6575; }
 .rdmap-delayed { font-size: 0.65rem; font-weight: 700; color: #EF4444; letter-spacing: 0.03em; }
+.rdmap-mc-link { font-size: 0.75rem; text-decoration: none; opacity: 0.35; margin-left: 0.3rem; transition: opacity 0.15s; }
+.rdmap-mc-link:hover { opacity: 1; }
+.rdmap-row:hover .rdmap-mc-link { opacity: 0.7; }
 
 /* CSV download button — magenta neon glow */
 .rdmap-csv-btn {
