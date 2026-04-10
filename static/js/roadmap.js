@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function debounce(fn, ms) { var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); }; }
 
   // State
-  var currentData = null, activeLayout = 'list', activeProductFilter = 'all', activeStatusFilter = 'active', activeSort = 'default';
+  var currentData = null, activeLayout = 'list', activeProductFilter = 'copilot', activeStatusFilter = 'all', activeSort = 'default';
   var favorites = JSON.parse(localStorage.getItem('rdmap_favs') || '{}');
 
   var CATEGORY_META = {
@@ -309,10 +309,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       info.innerHTML = 'Showing <b>' + visible + '</b> of ' + total + ' items <button class="rdmap-clear-btn" id="rdmap-clear-filters">\u2715 Clear filters</button>';
       info.style.display = '';
       document.getElementById('rdmap-clear-filters').addEventListener('click', function () {
-        activeProductFilter = 'all'; activeStatusFilter = 'active';
+        activeProductFilter = 'copilot'; activeStatusFilter = 'all';
         document.getElementById('rdmap-search').value = '';
-        document.getElementById('rdmap-status-filter').value = 'active';
-        document.getElementById('rdmap-product-filter').value = 'all';
+        document.getElementById('rdmap-status-filter').value = 'all';
+        document.getElementById('rdmap-product-filter').value = 'copilot';
         renderChips(currentData.product_categories || []);
         applyFilters(); syncUrl();
       });
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // ── INIT ──
   readUrlParams();
-  if (activeStatusFilter !== 'active') document.getElementById('rdmap-status-filter').value = activeStatusFilter;
+  document.getElementById('rdmap-status-filter').value = activeStatusFilter;
   if (activeSort !== 'default' && sortSel) sortSel.value = activeSort;
   addExportButton();
   if (window.__roadmapCategoryFilter) { await loadCategoryView(window.__roadmapCategoryFilter); }
