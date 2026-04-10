@@ -5,14 +5,31 @@ document.addEventListener('DOMContentLoaded', async function () {
     monthly: '/data/ainews/monthly.json'
   };
 
+  // SessionStorage cache — avoid re-fetching on tab switch / category pages
+  var _cache = {};
+  async function fetchJson(url) {
+    if (_cache[url]) return _cache[url];
+    var cached = sessionStorage.getItem('ainews_' + url);
+    if (cached) {
+      try {
+        _cache[url] = JSON.parse(cached);
+        return _cache[url];
+      } catch (e) { /* parse error, re-fetch */ }
+    }
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    var data = await resp.json();
+    _cache[url] = data;
+    try { sessionStorage.setItem('ainews_' + url, JSON.stringify(data)); } catch (e) { /* quota exceeded */ }
+    return data;
+  }
+
   async function loadView(view) {
     var grid = document.getElementById('news-grid');
     grid.innerHTML = '<div class="ainews-skeleton-wrap" style="grid-column:1/-1"><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div><div class="ainews-skeleton-card"></div></div>';
     try {
       var url = DATA_URLS[view] || DATA_URLS.daily;
-      var response = await fetch(url);
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      var raw = await response.json();
+      var raw = await fetchJson(url);
       var data = Array.isArray(raw) ? { articles: raw, generated_at: null } : raw;
       window.__ainewsData = data;
       renderNews(data, view);
@@ -47,18 +64,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     var categoryName = SLUG_TO_NAME[filter] || filter;
     var grid = document.getElementById('news-grid');
 
-    // Try monthly → weekly → daily (most articles first)
+    // Fetch all three in parallel, use the one with most articles
     var urls = ['/data/ainews/monthly.json', '/data/ainews/weekly.json', '/data/ainews/latest.json'];
+    var results = await Promise.allSettled(urls.map(function (u) { return fetchJson(u); }));
     var data = null;
-    for (var i = 0; i < urls.length; i++) {
-      try {
-        var resp = await fetch(urls[i]);
-        if (resp.ok) {
-          var raw = await resp.json();
-          data = Array.isArray(raw) ? { articles: raw } : raw;
-          if (data.articles && data.articles.length > 0) break;
+    for (var i = 0; i < results.length; i++) {
+      if (results[i].status === 'fulfilled' && results[i].value) {
+        var raw = results[i].value;
+        var candidate = Array.isArray(raw) ? { articles: raw } : raw;
+        if (candidate.articles && candidate.articles.length > 0) {
+          data = candidate;
+          break;
         }
-      } catch (e) { /* try next */ }
+      }
     }
 
     if (!data || !data.articles) {
@@ -106,6 +124,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       loadView(view);
     });
   });
+
+// Init share button directly (no MutationObserver needed — tabs are in DOM from Hugo)
+  renderShareButton();
 
   // Mark last visit timestamp for "new" badges
   var lastVisit = localStorage.getItem('ainews_last_visit');
@@ -369,110 +390,91 @@ function renderNews(data, view) {
   }
 }
 
-function renderHeroCard(article) {
+// === SHARED RENDER HELPERS ===
+function getArticleVars(article) {
   var cat = article.category_name || article.category || 'General';
-  var emoji = article.category_emoji || '';
-  var summary = article.ai_summary || article.snippet || '';
-  var whyMatters = article.why_it_matters || '';
-  var source = article.source || '';
-  var url = article.url || article.link || '#';
-  var title = article.title || 'Untitled';
-  var time = timeAgo(article.published);
-  var favicon = getFaviconUrl(url);
-  var rtime = readingTime(summary);
-  var image = article.image || '';
-  var logo = getLogoUrl(url);
+  return {
+    cat: cat,
+    emoji: article.category_emoji || '',
+    summary: article.ai_summary || article.snippet || '',
+    whyMatters: article.why_it_matters || '',
+    source: article.source || '',
+    url: article.url || article.link || '#',
+    title: article.title || 'Untitled',
+    time: timeAgo(article.published),
+    favicon: getFaviconUrl(article.url || article.link || ''),
+    rtime: readingTime(article.ai_summary || article.snippet || ''),
+    image: article.image || '',
+    logo: getLogoUrl(article.url || article.link || ''),
+    cluster: article.cluster || '',
+    isNew: isNewSinceLastVisit(article.published)
+  };
+}
 
-  var thumbHtml;
-  if (image) {
-    thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
-  } else {
-    thumbHtml = '<div class="ainews-thumb ainews-thumb-logo">' +
-      (logo ? '<img src="' + escapeHtml(logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
-      '<span class="ainews-logo-fallback" style="' + (logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + emoji + '</span></span>' +
-      '<span class="ainews-thumb-source">' + escapeHtml(source) + '</span>' +
-    '</div>';
+function buildThumbHtml(v) {
+  if (v.image) {
+    return '<img src="' + escapeHtml(v.image) + '" alt="" class="ainews-thumb-img" loading="lazy">';
   }
+  return '<div class="ainews-thumb ainews-thumb-logo">' +
+    (v.logo ? '<img src="' + escapeHtml(v.logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
+    '<span class="ainews-logo-fallback" style="' + (v.logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + v.emoji + '</span></span>' +
+    '<span class="ainews-thumb-source">' + escapeHtml(v.source) + '</span>' +
+  '</div>';
+}
 
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(cat) + '" onclick="trackArticleClick(\'' + escapeHtml(cat).replace(/'/g, '') + '\',\'' + escapeHtml(title).replace(/'/g, '').substring(0, 50) + '\')">' +
-    thumbHtml +
+function buildClickAttr(v) {
+  return ' onclick="trackArticleClick(\'' + escapeHtml(v.cat).replace(/'/g, '') + '\',\'' + escapeHtml(v.title).replace(/'/g, '').substring(0, 50) + '\')"';
+}
+
+function renderHeroCard(article) {
+  var v = getArticleVars(article);
+  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
+    '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
     '<div class="ainews-card-body">' +
-    (isNewSinceLastVisit(article.published) ? '<span class="ainews-new-badge">NEW</span>' : '') +
-    '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
-    '<h3>' + escapeHtml(title) + '</h3>' +
-    '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
-    (whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(whyMatters) + '</p>' : '') +
+    (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
+    '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +
+    '<h3>' + escapeHtml(v.title) + '</h3>' +
+    '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>' +
+    (v.whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>' : '') +
     '<div class="ainews-meta">' +
-      (favicon ? '<img src="' + favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
-      '<span class="ainews-source">' + escapeHtml(source) + '</span>' +
-      '<span class="ainews-rtime">' + rtime + '</span>' +
-      '<span class="ainews-time">' + time + '</span>' +
+      (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
+      '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
+      '<span class="ainews-rtime">' + v.rtime + '</span>' +
+      '<span class="ainews-time">' + v.time + '</span>' +
     '</div></div>' +
   '</a>';
 }
 
 function renderCard(article) {
-  var cat = article.category_name || article.category || 'General';
-  var emoji = article.category_emoji || '';
-  var summary = article.ai_summary || article.snippet || '';
-  var whyMatters = article.why_it_matters || '';
-  var source = article.source || '';
-  var url = article.url || article.link || '#';
-  var title = article.title || 'Untitled';
-  var time = timeAgo(article.published);
-  var favicon = getFaviconUrl(url);
-  var rtime = readingTime(summary);
-  var isRumour = cat.toLowerCase().indexOf('rumour') !== -1;
+  var v = getArticleVars(article);
+  var isRumour = v.cat.toLowerCase().indexOf('rumour') !== -1;
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
-  var image = article.image || '';
-  var cluster = article.cluster || '';
-  var logo = getLogoUrl(url);
-
-  var thumbHtml;
-  if (image) {
-    thumbHtml = '<div class="ainews-thumb" style="background-image:url(' + escapeHtml(image) + ')"></div>';
-  } else {
-    thumbHtml = '<div class="ainews-thumb ainews-thumb-logo">' +
-      (logo ? '<img src="' + escapeHtml(logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
-      '<span class="ainews-logo-fallback" style="' + (logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + emoji + '</span></span>' +
-      '<span class="ainews-thumb-source">' + escapeHtml(source) + '</span>' +
-    '</div>';
-  }
-
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(cat) + '" onclick="trackArticleClick(\'' + escapeHtml(cat).replace(/'/g, '') + '\',\'' + escapeHtml(title).replace(/'/g, '').substring(0, 50) + '\')">' +
-    thumbHtml +
-    (isNewSinceLastVisit(article.published) ? '<span class="ainews-new-badge">NEW</span>' : '') +
-    '<span class="ainews-cat">' + emoji + ' ' + escapeHtml(cat) + '</span>' +
-    (cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(cluster.replace(/-/g, ' ')) + '</span>' : '') +
-    '<h3>' + escapeHtml(title) + '</h3>' +
-    '<p class="ainews-summary">' + escapeHtml(summary) + '</p>' +
-    (whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(whyMatters) + '</p>' : '') +
+  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
+    '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
+    (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
+    '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +
+    (v.cluster ? '<span class="ainews-cluster">🔗 ' + escapeHtml(v.cluster.replace(/-/g, ' ')) + '</span>' : '') +
+    '<h3>' + escapeHtml(v.title) + '</h3>' +
+    '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>' +
+    (v.whyMatters ? '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>' : '') +
     '<div class="ainews-meta">' +
-      (favicon ? '<img src="' + favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
-      '<span class="ainews-source">' + escapeHtml(source) + '</span>' +
-      '<span class="ainews-rtime">' + rtime + '</span>' +
-      '<span class="ainews-time">' + time + '</span>' +
+      (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
+      '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
+      '<span class="ainews-rtime">' + v.rtime + '</span>' +
+      '<span class="ainews-time">' + v.time + '</span>' +
     '</div>' +
   '</a>';
 }
 
 function renderQuickLink(article) {
-  var cat = article.category_name || article.category || 'General';
-  var emoji = article.category_emoji || '';
-  var source = article.source || '';
-  var url = article.url || article.link || '#';
-  var title = article.title || 'Untitled';
-  var time = timeAgo(article.published);
-  var whyMatters = article.why_it_matters || '';
-  var favicon = getFaviconUrl(url);
-
-  return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="ainews-quick-item" data-category="' + escapeHtml(cat) + '">' +
-    '<span class="ainews-quick-emoji">' + emoji + '</span>' +
-    '<span class="ainews-quick-title">' + escapeHtml(title) + '</span>' +
-    (whyMatters ? '<span class="ainews-quick-why">' + escapeHtml(whyMatters) + '</span>' : '') +
+  var v = getArticleVars(article);
+  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-quick-item" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
+    '<span class="ainews-quick-emoji">' + v.emoji + '</span>' +
+    '<span class="ainews-quick-title">' + escapeHtml(v.title) + '</span>' +
+    (v.whyMatters ? '<span class="ainews-quick-why">' + escapeHtml(v.whyMatters) + '</span>' : '') +
     '<span class="ainews-quick-meta">' +
-      (favicon ? '<img src="' + favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
-      escapeHtml(source) + ' · ' + time +
+      (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
+      escapeHtml(v.source) + ' · ' + v.time +
     '</span>' +
   '</a>';
 }
@@ -532,19 +534,24 @@ async function updateTabCounts() {
     weekly: '/data/ainews/weekly.json',
     monthly: '/data/ainews/monthly.json'
   };
-  for (var view in DATA_URLS) {
-    try {
-      var resp = await fetch(DATA_URLS[view]);
-      if (!resp.ok) continue;
-      var raw = await resp.json();
-      var articles = (raw.articles || []).filter(isAiRelated);
-      var tab = document.querySelector('.ainews-tab[data-view="' + view + '"]');
-      if (tab) {
-        var labels = { weekly: '📊 This Week', monthly: '📈 This Month' };
-        tab.textContent = labels[view] + ' (' + articles.length + ')';
-      }
-    } catch (e) { /* ignore */ }
-  }
+  // Fetch both in parallel
+  var keys = Object.keys(DATA_URLS);
+  var results = await Promise.allSettled(keys.map(function (k) {
+    // Use cached data if available (from sessionStorage or memory)
+    var cached = sessionStorage.getItem('ainews_' + DATA_URLS[k]);
+    if (cached) return Promise.resolve(JSON.parse(cached));
+    return fetch(DATA_URLS[k]).then(function (r) { return r.ok ? r.json() : null; });
+  }));
+  keys.forEach(function (view, i) {
+    if (results[i].status !== 'fulfilled' || !results[i].value) return;
+    var raw = results[i].value;
+    var articles = (raw.articles || []).filter(isAiRelated);
+    var tab = document.querySelector('.ainews-tab[data-view="' + view + '"]');
+    if (tab) {
+      var labels = { weekly: '📊 This Week', monthly: '📈 This Month' };
+      tab.textContent = labels[view] + ' (' + articles.length + ')';
+    }
+  });
   // Update daily count from already loaded data
   if (window.__ainewsData) {
     var dailyArticles = (window.__ainewsData.articles || []).filter(isAiRelated);
@@ -609,15 +616,3 @@ function renderTrendingBar(topics) {
   bar.innerHTML = html;
   grid.insertBefore(bar, grid.firstChild);
 }
-
-// Init share button on first render
-(function initExtras() {
-  var observer = new MutationObserver(function () {
-    if (document.querySelector('.ainews-tabs')) {
-      renderShareButton();
-      observer.disconnect();
-    }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-  renderShareButton();
-})();

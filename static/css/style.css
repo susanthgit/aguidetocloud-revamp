@@ -1489,6 +1489,25 @@ a:hover {
 }
 
 /* ── ARTICLE THUMBNAILS ─────────────────── */
+.ainews-thumb-wrap {
+  width: calc(100% + 2.4rem);
+  height: 140px;
+  margin: -1.2rem -1.2rem 0.8rem -1.2rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+.ainews-card-hero .ainews-thumb-wrap {
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  width: calc(100% + 3rem);
+  height: 160px;
+}
+.ainews-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: block;
+}
 .ainews-thumb {
   width: 100%;
   height: 140px;
