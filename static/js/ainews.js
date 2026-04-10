@@ -259,7 +259,7 @@ function getFaviconUrl(articleUrl) {
 function getLogoUrl(articleUrl) {
   try {
     var domain = new URL(articleUrl).hostname;
-    return 'https://logo.clearbit.com/' + domain;
+    return 'https://www.google.com/s2/favicons?domain=' + domain + '&sz=64';
   } catch (e) {
     return '';
   }
