@@ -11,8 +11,9 @@
   --prompt-accent-border: rgba(167, 139, 250, 0.3);
   --prompt-accent-subtle: rgba(167, 139, 250, 0.08);
 }
-.prompts-page .container {
+.prompts-container {
   max-width: 1100px;
+  margin: 0 auto;
   padding: 0 3rem;
 }
 

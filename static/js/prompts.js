@@ -259,15 +259,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (countEl) countEl.textContent = visible;
     if (emptyEl) emptyEl.style.display = visible === 0 ? '' : 'none';
   }
-
-  // ── BACK TO TOP ────────────────────────────
-  var btt = document.getElementById('prompts-btt');
-  if (btt) {
-    window.addEventListener('scroll', function () {
-      btt.classList.toggle('prompts-btt-show', window.scrollY > 400);
-    });
-    btt.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 });
+
+// ── BACK TO TOP (independent — runs even if filters error) ──
+(function () {
+  var btt = document.getElementById('prompts-btt');
+  if (!btt) return;
+  window.addEventListener('scroll', function () {
+    btt.classList.toggle('prompts-btt-show', window.scrollY > 400);
+  });
+  btt.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
