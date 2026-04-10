@@ -1,0 +1,154 @@
+/* ── M365 Roadmap Tracker Styles ─────────── */
+/* Extracted from style.css for maintainability */
+
+/* Tool accent tokens — used by shared components */
+.rdmap-hero,
+.rdmap-container {
+  --tool-accent: #E5A00D;
+  --tool-accent-dim: rgba(229, 160, 13, 0.15);
+  --tool-accent-glow: rgba(229, 160, 13, 0.25);
+}
+
+/* ══════════════════════════════════════════════
+   M365 ROADMAP TRACKER — "Amber Command" palette
+   Accent: Warm Gold (#E5A00D) on charcoal (#141118)
+   Design: Minimal, data-first, no clutter
+   ══════════════════════════════════════════════ */
+
+.rdmap-hero {
+  background: linear-gradient(180deg, #1a1510 0%, #141118 100%);
+  padding: 2.5rem 1rem 1.8rem; text-align: center;
+}
+.rdmap-hero h1 {
+  font-size: 1.9rem; margin: 0 0 0.3rem;
+  background: linear-gradient(135deg, #E5A00D 0%, #F4C542 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.rdmap-hero-sub { color: #8B8594; font-size: 0.92rem; margin: 0 0 1.5rem; }
+.rdmap-breadcrumbs { font-size: 0.85rem; margin-bottom: 0.8rem; color: #8B8594; }
+.rdmap-breadcrumbs a { color: #E5A00D; text-decoration: none; }
+.rdmap-breadcrumbs a:hover { text-decoration: underline; }
+
+/* Status bar */
+.rdmap-status-bar { max-width: 700px; margin: 0 auto; }
+.rdmap-bar-track { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: #2A2533; margin-bottom: 0.7rem; }
+.rdmap-bar-seg { transition: width 0.6s ease; min-width: 3px; }
+.rdmap-bar-legend { display: flex; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
+.rdmap-legend-item { font-size: 0.75rem; color: #8B8594; display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+.rdmap-legend-item:hover { color: #D4D0DA; }
+.rdmap-legend-item b { color: #D4D0DA; }
+.rdmap-legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+/* Container */
+.rdmap-container { max-width: 1000px; margin: 0 auto; padding: 1.2rem 1rem 2rem; }
+
+/* Controls — search + two dropdowns, one clean row */
+.rdmap-controls { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.rdmap-search {
+  flex: 2; min-width: 200px; padding: 0.6rem 1rem; border-radius: 8px;
+  border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.9rem;
+}
+.rdmap-search:focus { outline: none; border-color: #E5A00D; box-shadow: 0 0 0 2px rgba(229,160,13,0.12); }
+.rdmap-search::placeholder { color: #504A59; }
+.rdmap-select {
+  flex: 1; min-width: 130px; padding: 0.6rem 0.8rem; border-radius: 8px;
+  border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.84rem; cursor: pointer;
+}
+.rdmap-select:focus { outline: none; border-color: #E5A00D; }
+
+/* Product chips */
+.rdmap-chips {
+  display: flex; gap: 0.4rem; margin-bottom: 1.2rem;
+  overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 0.3rem;
+}
+.rdmap-chips::-webkit-scrollbar { display: none; }
+.rdmap-chip {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.78rem;
+  background: #1C1924; border: 1px solid #2A2533; color: #8B8594;
+  cursor: pointer; white-space: nowrap; transition: all 0.15s; flex-shrink: 0;
+}
+.rdmap-chip:hover { border-color: var(--chip-c, #E5A00D); color: #D4D0DA; }
+.rdmap-chip.active { background: var(--chip-c, #E5A00D); color: #fff; border-color: var(--chip-c, #E5A00D); }
+.rdmap-chip span { opacity: 0.6; font-size: 0.72rem; }
+
+/* List info */
+.rdmap-list-info { font-size: 0.78rem; color: #6B6575; margin-bottom: 0.5rem; }
+.rdmap-list-info b { color: #E5A00D; }
+.rdmap-clear-btn { background: none; border: 1px solid #6B6575; color: #8B8594; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
+.rdmap-clear-btn:hover { border-color: #E5A00D; color: #E5A00D; }
+
+/* List — card-style rows */
+.rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.rdmap-row {
+  display: grid; grid-template-columns: 100px 1fr auto;
+  padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
+  background: #1C1924; border: 1px solid #2A2533; border-radius: 10px;
+  border-left: 3px solid transparent; transition: all 0.15s;
+  text-decoration: none; color: inherit; cursor: pointer; text-shadow: none;
+}
+.rdmap-row:hover { border-color: #3D3648; border-left-color: #E5A00D; background: #211E29; text-shadow: none; color: inherit; }
+.rdmap-row-status { padding-top: 0.15rem; }
+.rdmap-st {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  padding: 0.2rem 0.5rem; border-radius: 4px; color: #fff; white-space: nowrap;
+}
+.rdmap-row-main { min-width: 0; padding: 0 1rem 0 0; }
+.rdmap-row-title { color: #E8E4ED; font-weight: 500; font-size: 0.95rem; line-height: 1.45; }
+.rdmap-row-desc { font-size: 0.84rem; color: #6B6575; margin-top: 0.25rem; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rdmap-row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; white-space: nowrap; }
+.rdmap-row-product { font-size: 0.78rem; }
+.rdmap-row-date { font-size: 0.78rem; color: #6B6575; }
+.rdmap-delayed { font-size: 0.62rem; font-weight: 700; color: #EF4444; background: rgba(239,68,68,0.1); padding: 0.1rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; letter-spacing: 0.03em; }
+
+/* Load more */
+.rdmap-load-more {
+  display: block; width: 100%; padding: 0.7rem; margin-top: 0.6rem;
+  background: #1C1924; border: 1px dashed #3D3648; border-radius: 10px;
+  color: #8B8594; font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
+}
+.rdmap-load-more:hover { border-color: #E5A00D; color: #E5A00D; background: #211E29; }
+
+/* Footer */
+.rdmap-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2533; }
+.rdmap-footer-links { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: 0.8rem; margin-bottom: 0.6rem; }
+.rdmap-footer-links a { color: #6B6575; text-decoration: none; }
+.rdmap-footer-links a:hover { color: #E5A00D; }
+.rdmap-footer-btn { background: none; border: 1px solid #3D3648; color: #6B6575; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; }
+.rdmap-footer-btn:hover { border-color: #E5A00D; color: #E5A00D; }
+.rdmap-browse { font-size: 0.78rem; color: #504A59; line-height: 1.8; margin-bottom: 0.4rem; }
+.rdmap-browse a { color: #6B6575; text-decoration: none; }
+.rdmap-browse a:hover { color: #E5A00D; }
+.rdmap-freshness { font-size: 0.75rem; color: #504A59; }
+
+/* Empty + skeleton */
+.rdmap-empty { color: #6B6575; text-align: center; padding: 3rem; }
+.rdmap-skeleton { display: flex; flex-direction: column; gap: 0.5rem; }
+.rdmap-skeleton-row {
+  height: 70px; border-radius: 10px;
+  background: linear-gradient(110deg, #1C1924 40%, #2A2533 50%, #1C1924 60%);
+  background-size: 200% 100%; animation: rdmap-shimmer 1.5s infinite;
+}
+@keyframes rdmap-shimmer { to { background-position: -200% 0; } }
+
+/* Back to top */
+.rdmap-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #E5A00D; color: #141118; border: none;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(229,160,13,0.3);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s; pointer-events: none;
+}
+.rdmap-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px rgba(229,160,13,0.5); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rdmap-hero { padding: 1.8rem 1rem 1.2rem; }
+  .rdmap-hero h1 { font-size: 1.5rem; }
+  .rdmap-controls { flex-direction: column; }
+  .rdmap-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 0.7rem 0.7rem; }
+  .rdmap-row-meta { flex-direction: row; justify-content: space-between; align-items: center; }
+  .rdmap-row-main { padding: 0; }
+}

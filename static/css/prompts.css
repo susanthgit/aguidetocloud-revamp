@@ -10,6 +10,10 @@
   --prompt-accent-glow: rgba(167, 139, 250, 0.2);
   --prompt-accent-border: rgba(167, 139, 250, 0.3);
   --prompt-accent-subtle: rgba(167, 139, 250, 0.08);
+  /* Shared tool accent tokens */
+  --tool-accent: #A78BFA;
+  --tool-accent-dim: rgba(167, 139, 250, 0.15);
+  --tool-accent-glow: rgba(167, 139, 250, 0.25);
 }
 .prompts-container {
   max-width: 1100px;
