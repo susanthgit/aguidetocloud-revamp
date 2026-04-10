@@ -555,6 +555,156 @@
   gap: 1rem;
 }
 
+/* ── RANDOM BUTTON ──────────────────────────── */
+
+.prompts-random-btn {
+  display: inline-block;
+  margin-left: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  background: var(--prompt-accent-subtle);
+  border: 1px solid var(--prompt-accent-border);
+  border-radius: 20px;
+  color: var(--prompt-accent);
+  font-size: 0.78rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+.prompts-random-btn:hover {
+  background: var(--prompt-accent);
+  color: var(--bg-primary);
+  box-shadow: 0 0 12px var(--prompt-accent-glow);
+}
+
+/* ── RESULTS BAR ────────────────────────────── */
+
+.prompts-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0 0.3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.prompts-difficulty-legend {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  letter-spacing: 0.3px;
+}
+.prompts-sort {
+  padding: 0.35rem 0.7rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  cursor: pointer;
+}
+.prompts-sort:focus {
+  outline: none;
+  border-color: var(--prompt-accent-border);
+}
+
+/* ── FAVOURITE BUTTON ───────────────────────── */
+
+.prompt-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.prompt-fav-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.1rem;
+  line-height: 1;
+  opacity: 0.4;
+  transition: all 0.2s ease;
+}
+.prompt-fav-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.prompt-fav-btn.fav-active {
+  opacity: 1;
+}
+
+/* ── POPULAR BADGE ──────────────────────────── */
+
+.prompt-popular {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.45rem;
+  background: rgba(255, 100, 50, 0.15);
+  border: 1px solid rgba(255, 100, 50, 0.3);
+  color: #ff6432;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  white-space: nowrap;
+  margin-left: 0.3rem;
+}
+
+/* ── CARD HIGHLIGHT (random pick) ───────────── */
+
+.prompt-card-highlight {
+  animation: highlightPulse 2s ease;
+}
+@keyframes highlightPulse {
+  0%   { box-shadow: 0 0 0 0 var(--prompt-accent); }
+  30%  { box-shadow: 0 0 30px 5px var(--prompt-accent-glow); border-color: var(--prompt-accent); }
+  100% { box-shadow: none; }
+}
+
+/* ── OPEN IN PLATFORM BUTTONS ───────────────── */
+
+.prompt-open-in {
+  margin: 1.5rem 0;
+}
+.prompt-open-in h3 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.prompt-open-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.prompt-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.prompt-open-btn:hover {
+  border-color: var(--prompt-accent-border);
+  color: var(--prompt-accent);
+  box-shadow: 0 0 10px var(--prompt-accent-glow);
+  text-shadow: none;
+}
+.prompt-open-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
 /* ── RESPONSIVE ─────────────────────────────── */
 
 @media (max-width: 768px) {

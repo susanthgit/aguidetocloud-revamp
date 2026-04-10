@@ -136,6 +136,9 @@
       </select>
     </div>
 
+    </div>
+    {{ end }}
+
     {{/* ── PROMPT CARDS GRID ── */}}
     <div class="prompts-grid">
       {{ range $pagePrompts }}
@@ -145,19 +148,29 @@
       {{ $useCase := .Params.use_case | default "" }}
       {{ $bestOn := .Params.best_on | default "" }}
       {{ $difficulty := .Params.difficulty | default "beginner" }}
+      {{ $surfaces := .Params.m365_surfaces | default (slice) }}
+      {{ $slug := .File.ContentBaseName }}
 
       <div class="prompt-card"
            data-platforms="{{ delimit $platforms " " }}"
            data-roles="{{ delimit $roles " " }}"
            data-usecase="{{ $useCase }}"
+           data-surfaces="{{ delimit $surfaces " " }}"
+           data-slug="{{ $slug }}"
+           data-title="{{ .Title }}"
+           data-difficulty="{{ $difficulty }}"
            data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }}">
 
         <div class="prompt-card-header">
           <h3 class="prompt-card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h3>
-          <span class="prompt-difficulty" title="{{ $difficulty | title }}">
-            {{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}
+          <div class="prompt-card-actions">
+            <button class="prompt-fav-btn" data-slug="{{ $slug }}" title="Save to favourites">♡</button>
+            <span class="prompt-difficulty" title="{{ $difficulty | title }}">
+              {{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}
+            </span>
+          </div>
           </span>
         </div>
 
