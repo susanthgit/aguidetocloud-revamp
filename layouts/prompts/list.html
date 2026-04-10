@@ -61,20 +61,29 @@
       <div class="prompts-filter-row">
         <span class="prompts-filter-label">Platform</span>
         <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All</button>
-        {{ range $key, $val := hugo.Data.platforms }}
-        <button class="prompts-chip" data-filter-type="platform" data-filter-value="{{ $key }}">{{ $val.emoji }} {{ $val.short }}</button>
-        {{ end }}
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
+        <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
       </div>
 
       <!-- Role filter -->
       <div class="prompts-filter-row">
         <span class="prompts-filter-label">Role</span>
         <button class="prompts-chip active" data-filter-type="role" data-filter-value="all">All</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="executive">👔 Executive</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="executive-assistant">🗂️ EA</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="it-admin">🖥️ IT Admin</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="hr">👥 HR</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="finance">💰 Finance</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="sales">🤝 Sales</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="marketing">📣 Marketing</button>
-        <button class="prompts-chip" data-filter-type="role" data-filter-value="manager">📋 Manager</button>
+        <button class="prompts-chip" data-filter-type="role" data-filter-value="legal">⚖️ Legal</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="developer">💻 Developer</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="student">🎓 Student</button>
         <button class="prompts-chip" data-filter-type="role" data-filter-value="creative">🎨 Creative</button>
