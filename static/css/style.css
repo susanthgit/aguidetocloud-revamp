@@ -2375,6 +2375,35 @@ pre.mermaid {
 .rdmap-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px rgba(229, 160, 13, 0.5); }
 
+/* Load more button */
+.rdmap-load-more {
+  display: block; width: 100%; padding: 0.7rem; margin-top: 0.8rem;
+  background: #1C1924; border: 1px dashed #3D3648; border-radius: 10px;
+  color: #8B8594; font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
+}
+.rdmap-load-more:hover { border-color: #E5A00D; color: #E5A00D; background: #211E29; }
+
+/* Empty state (favourites) */
+.rdmap-empty-state { text-align: center; padding: 3rem 1rem; color: #6B6575; }
+.rdmap-empty-state span { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+.rdmap-empty-state h3 { color: #8B8594; margin: 0 0 0.3rem; font-size: 1.1rem; }
+.rdmap-empty-state p { margin: 0; font-size: 0.85rem; }
+
+/* Share button */
+.rdmap-share-btn {
+  background: none; border: 1px solid #3D3648; color: #8B8594;
+  padding: 0.15rem 0.5rem; border-radius: 6px; cursor: pointer; font-size: 0.72rem; transition: all 0.15s;
+}
+.rdmap-share-btn:hover { border-color: #E5A00D; color: #E5A00D; }
+
+/* Browse by product links */
+.rdmap-browse {
+  font-size: 0.8rem; color: #6B6575; padding: 0.8rem 0; margin-bottom: 0.5rem;
+  border-bottom: 1px solid #2A2533; line-height: 1.8;
+}
+.rdmap-browse a { color: #8B8594; text-decoration: none; }
+.rdmap-browse a:hover { color: #E5A00D; }
+
 /* CSV download button — magenta neon glow */
 .rdmap-csv-btn {
   background: transparent; border: 1px solid #E040FB; color: #E040FB;

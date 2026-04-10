@@ -37,6 +37,7 @@
       <p class="prompts-stats">
         <strong id="prompts-count">{{ len $pagePrompts }}</strong> of
         <strong>{{ len $allPrompts }}</strong> prompts ·
+        {{ len (where .Site.Sections "Section" "prompts") }} categories ·
         {{ len hugo.Data.platforms }} platforms · tested by a human 🧪
         <button id="prompts-random" class="prompts-random-btn" title="Show a random prompt">🎲 Surprise Me!</button>
       </p>
@@ -144,6 +145,9 @@
       {{ $difficulty := .Params.difficulty | default "beginner" }}
       {{ $surfaces := .Params.m365_surfaces | default (slice) }}
       {{ $slug := .File.ContentBaseName }}
+      {{ $description := .Description | default "" }}
+      {{ $catName := "" }}{{ with .Parent }}{{ $catName = .Title }}{{ end }}
+      {{ $catEmoji := "" }}{{ with .Parent }}{{ $catEmoji = .Params.emoji | default "" }}{{ end }}
 
       <div class="prompt-card"
            data-platforms="{{ delimit $platforms " " }}"
@@ -153,7 +157,7 @@
            data-slug="{{ $slug }}"
            data-title="{{ .Title }}"
            data-difficulty="{{ $difficulty }}"
-           data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }}">
+           data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
 
         <div class="prompt-card-header">
           <h3 class="prompt-card-title">
@@ -165,7 +169,12 @@
               {{ if eq $difficulty "beginner" }}●{{ else if eq $difficulty "intermediate" }}●●{{ else }}●●●{{ end }}
             </span>
           </div>
-          </span>
+        </div>
+
+        {{ if $description }}<p class="prompt-card-desc">{{ $description }}</p>{{ end }}
+
+        <div class="prompt-card-meta-row">
+          {{ if $catName }}<span class="prompt-card-category">{{ $catEmoji }} {{ $catName }}</span>{{ end }}
         </div>
 
         <div class="prompt-text">{{ $prompt }}</div>
@@ -179,7 +188,7 @@
               {{ end }}
             {{ end }}
           </div>
-          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy Prompt</button>
         </div>
       </div>
       {{ end }}

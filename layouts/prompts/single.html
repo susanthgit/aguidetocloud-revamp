@@ -68,6 +68,7 @@
       <!-- Header -->
       <div class="prompt-single-header">
         <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="prompt-single-desc">{{ . }}</p>{{ end }}
         <div class="prompt-single-meta">
           <span class="prompt-tested-badge">🧪 Tested by a human</span>
           <span>{{ $difficulty | title }}</span>
@@ -80,7 +81,7 @@
       <!-- Full Prompt Block -->
       <div class="prompt-full-block">
         <div class="prompt-full-text">{{ $prompt }}</div>
-        <button class="prompt-full-copy" data-prompt="{{ $prompt }}">📋 Copy</button>
+        <button class="prompt-full-copy" data-prompt="{{ $prompt }}">📋 Copy Prompt</button>
       </div>
 
       <!-- Platforms -->
