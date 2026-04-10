@@ -44,39 +44,7 @@
 
 /* ── SEARCH BAR ─────────────────────────────── */
 
-.prompts-search-wrap {
-  max-width: 560px;
-  margin: 0 auto 1rem;
-  position: relative;
-}
-.prompts-search-icon {
-  position: absolute;
-  left: 1.1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.1rem;
-  pointer-events: none;
-}
-.prompts-search {
-  width: 100%;
-  padding: 0.85rem 1.2rem 0.85rem 3rem;
-  background: var(--bg-card);
-  border: 1px solid var(--prompt-accent-border);
-  border-radius: 10px;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-.prompts-search::placeholder {
-  color: var(--text-muted);
-}
-.prompts-search:focus {
-  outline: none;
-  border-color: var(--prompt-accent);
-  box-shadow: 0 0 25px var(--prompt-accent-glow);
-  background: var(--bg-card-hover);
-}
+
 
 /* ── STATS LINE ─────────────────────────────── */
 
@@ -295,23 +263,15 @@
 .prompt-row-body {
   padding: 0 0.5rem 1rem 2.2rem;
 }
-.prompt-row-body .prompt-text {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  background: rgba(167, 139, 250, 0.03);
-  border: 1px solid rgba(167, 139, 250, 0.08);
-  border-left: 3px solid var(--prompt-accent-border);
-  border-radius: 6px;
-  padding: 1rem 1.1rem;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
 
 /* Row highlight for random pick */
 .prompt-row-highlight {
   animation: highlightPulse 2s ease;
+}
+@keyframes highlightPulse {
+  0%, 100% { background: transparent; }
+  25% { background: rgba(167, 139, 250, 0.1); }
+  50% { background: rgba(167, 139, 250, 0.05); }
 }
 
 /* Difficulty dots */

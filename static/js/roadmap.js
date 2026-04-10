@@ -52,21 +52,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  // ── STATUS BAR (clickable) ──
-  function renderStatusBar(data) {
-    var el = document.getElementById('rdmap-status-bar');
-    var items = data.items || []; var sc = {}; items.forEach(function (i) { sc[i.status] = (sc[i.status] || 0) + 1; });
-    var total = (sc['Rolling out'] || 0) + (sc['In development'] || 0) + (sc['Launched'] || 0) + (sc['Cancelled'] || 0);
-    if (!total) { el.innerHTML = ''; return; }
-    var segs = [{ s: 'Rolling out', c: sc['Rolling out'] || 0, col: '#00CC33' }, { s: 'In development', c: sc['In development'] || 0, col: '#F59E0B' }, { s: 'Launched', c: sc['Launched'] || 0, col: '#06B6D4' }, { s: 'Cancelled', c: sc['Cancelled'] || 0, col: '#EF4444' }];
-    var html = '<div class="rdmap-bar-track">';
-    segs.forEach(function (x) { if (x.c > 0) html += '<div class="rdmap-bar-seg" style="width:' + (x.c / total * 100).toFixed(1) + '%;background:' + x.col + '" title="' + x.s + ': ' + x.c + '" data-status="' + x.s + '"></div>'; });
-    html += '</div><div class="rdmap-bar-legend">';
-    segs.forEach(function (x) { if (x.c > 0) html += '<span class="rdmap-legend-item" data-status="' + x.s + '"><span class="rdmap-legend-dot" style="background:' + x.col + '"></span>' + x.s + ' <b>' + x.c + '</b></span>'; });
-    el.innerHTML = html + '</div>';
-    el.querySelectorAll('[data-status]').forEach(function (e) { e.style.cursor = 'pointer'; e.addEventListener('click', function () { activeStatusFilter = this.dataset.status; document.getElementById('rdmap-status-filter').value = activeStatusFilter; applyFilters(); }); });
-  }
-
   function populateProductFilter(cats) { var sel = document.getElementById('rdmap-product-filter'), v = sel.value; sel.innerHTML = '<option value="all">All Products</option>'; cats.forEach(function (c) { if (c.count > 0) { var o = document.createElement('option'); o.value = c.id; o.textContent = c.name + ' (' + c.count + ')'; sel.appendChild(o); } }); sel.value = v || 'all'; }
 
   // ── CHIPS (dynamic counts) ──

@@ -497,19 +497,6 @@ function renderCard(article) {
   '</a>';
 }
 
-function renderQuickLink(article) {
-  var v = getArticleVars(article);
-  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-quick-item" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
-    '<span class="ainews-quick-emoji">' + v.emoji + '</span>' +
-    '<span class="ainews-quick-title">' + escapeHtml(v.title) + '</span>' +
-    (v.whyMatters ? '<span class="ainews-quick-why">' + escapeHtml(v.whyMatters) + '</span>' : '') +
-    '<span class="ainews-quick-meta">' +
-      (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
-      escapeHtml(v.source) + ' · ' + v.time +
-    '</span>' +
-  '</a>';
-}
-
 function renderFreshnessBadge(generatedAt) {
   if (!generatedAt) return;
   var badge = document.createElement('div');
@@ -533,12 +520,6 @@ function renderFreshnessBadge(generatedAt) {
   badge.innerHTML = '<span class="ainews-fresh-dot ' + statusClass + '"></span> ' + label;
   var tabsEl = document.querySelector('.ainews-tabs');
   if (tabsEl) tabsEl.appendChild(badge);
-}
-
-function countCategories(articles) {
-  var seen = {};
-  articles.forEach(function (a) { seen[a.category_name || a.category || 'General'] = true; });
-  return Object.keys(seen).length;
 }
 
 function getOrderedCategories(articles) {
@@ -592,25 +573,6 @@ function trackArticleClick(category, title) {
   if (window.clarity) {
     window.clarity('event', 'ainews_click', { category: category, title: title.substring(0, 50) });
   }
-}
-
-// === TRENDING TOPICS BAR ===
-function renderTrendingBar(topics) {
-  // Remove any existing trending bar
-  var existing = document.getElementById('ainews-trending-bar');
-  if (existing) existing.remove();
-
-  var grid = document.getElementById('news-grid');
-  var bar = document.createElement('div');
-  bar.id = 'ainews-trending-bar';
-  bar.className = 'ainews-trending-bar';
-  bar.style.cssText = 'grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem;padding:0.8rem 1rem;background:rgba(255,0,255,0.06);border:1px solid rgba(255,0,255,0.15);border-radius:8px;margin-bottom:0.5rem;';
-  var html = '<span style="font-weight:700;color:#ff00ff;margin-right:0.3rem;">🔥 Trending This Week:</span>';
-  topics.forEach(function (topic) {
-    html += '<span style="background:rgba(255,0,255,0.12);color:#ff88ff;padding:2px 8px;border-radius:12px;font-size:0.78rem;font-weight:600;">' + escapeHtml(topic) + '</span>';
-  });
-  bar.innerHTML = html;
-  grid.insertBefore(bar, grid.firstChild);
 }
 
 // === BACK TO TOP BUTTON ===
