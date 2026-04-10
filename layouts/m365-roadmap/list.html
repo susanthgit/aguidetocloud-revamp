@@ -1,0 +1,62 @@
+{{ define "main" }}
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#7B68EE">
+<div class="page-hero roadmap-page-hero">
+  <h1>{{ .Title }}</h1>
+  <p class="roadmap-subtitle">Track every Microsoft 365 feature change — updated daily from the official roadmap</p>
+</div>
+<div class="container">
+  <div class="roadmap-tabs">
+    <button class="roadmap-tab active" data-view="latest">📅 Latest</button>
+    <button class="roadmap-tab" data-view="weekly">📊 This Week</button>
+    <button class="roadmap-tab" data-view="monthly">📈 This Month</button>
+  </div>
+
+  <!-- Stats bar (populated by JS) -->
+  <div class="roadmap-stats" id="roadmap-stats"></div>
+
+  <!-- Filters -->
+  <div class="roadmap-controls" id="roadmap-controls">
+    <input type="text" id="roadmap-search" class="roadmap-search" placeholder="🔍 Search roadmap items..." autocomplete="off">
+    <div class="roadmap-filter-row">
+      <select id="roadmap-status-filter" class="roadmap-select">
+        <option value="all">All Statuses</option>
+        <option value="active" selected>Active Only</option>
+        <option value="Rolling out">🔵 Rolling Out</option>
+        <option value="In development">🟡 In Development</option>
+        <option value="Launched">🟢 Launched</option>
+        <option value="Cancelled">🔴 Cancelled</option>
+      </select>
+      <select id="roadmap-product-filter" class="roadmap-select">
+        <option value="all">All Products</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product category pills (populated by JS) -->
+  <div class="roadmap-categories" id="roadmap-categories"></div>
+
+  <!-- Main grid -->
+  <div class="roadmap-grid" id="roadmap-grid">
+    <div class="roadmap-skeleton-wrap">
+      <div class="roadmap-skeleton-card"></div>
+      <div class="roadmap-skeleton-card"></div>
+      <div class="roadmap-skeleton-card"></div>
+      <div class="roadmap-skeleton-card"></div>
+      <div class="roadmap-skeleton-card"></div>
+      <div class="roadmap-skeleton-card"></div>
+    </div>
+  </div>
+
+  <!-- Footer CTA -->
+  <div class="roadmap-footer-cta">
+    <span>📡</span>
+    <div>
+      <strong>Data sourced from the official Microsoft 365 Roadmap</strong>
+      <p>AI summaries generated daily. Items link directly to Microsoft's roadmap page.</p>
+    </div>
+    <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap" target="_blank" rel="noopener" class="roadmap-footer-btn">View Official Roadmap →</a>
+  </div>
+</div>
+<script src="/js/roadmap.js?v={{ now.Unix }}"></script>
+{{ end }}

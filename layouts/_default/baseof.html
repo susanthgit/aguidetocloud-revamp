@@ -63,5 +63,33 @@
   </div>
   <script src="/js/switcher.js" defer></script>
   <script src="/js/search.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#0d1117',
+        primaryColor: '#1a3a4a',
+        primaryTextColor: '#e6edf3',
+        primaryBorderColor: '#66ffff',
+        secondaryColor: '#1c2333',
+        tertiaryColor: '#161b22',
+        lineColor: '#66ffff',
+        textColor: '#e6edf3',
+        mainBkg: '#1a3a4a',
+        nodeBorder: '#66ffff',
+        clusterBkg: '#161b22',
+        clusterBorder: 'rgba(255,255,255,0.1)',
+        titleColor: '#66ffff',
+        edgeLabelBackground: '#0d1117',
+        nodeTextColor: '#e6edf3'
+      },
+      flowchart: { curve: 'basis', padding: 15 },
+      fontFamily: '"Inter", sans-serif',
+      fontSize: 14
+    });
+  </script>
 </body>
 </html>

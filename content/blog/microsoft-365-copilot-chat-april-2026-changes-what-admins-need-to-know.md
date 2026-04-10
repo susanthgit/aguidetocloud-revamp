@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot Chat Changes April 15, 2026 — What Every IT Admin Needs to Know"
 description: "Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNote for unlicensed users on April 15, 2026. Full breakdown of MC1253858, MC1253863, Copilot Chat Basic vs Premium, WXP agents, and the Anthropic Claude dependency."
 date: 2026-04-09
-lastmod: 2026-04-09
+lastmod: 2026-04-10
 card_tag: "Copilot"
 tag_class: "ai"
 ---
@@ -10,6 +10,16 @@ tag_class: "ai"
 Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNote for millions of Microsoft 365 users on **April 15, 2026**. The changes were announced via Message Center posts [MC1253858](#mc1253858--organisations-with-more-than-2000-users) and [MC1253863](#mc1253863--organisations-with-fewer-than-2000-users) on March 17, 2026. Whether you're affected — and how severely — depends on your tenant size. This guide covers everything: what's changing, what stays, the WXP agent loophole most people don't know about, and the Anthropic Claude dependency that controls it all.
 
 **Quick links:** [Who's affected?](#who-is-affected-and-how) · [Basic vs Premium labels](#new-labels-basic-vs-premium) · [WXP agents surprise](#the-wxp-agent-surprise-most-people-miss) · [Anthropic dependency](#the-anthropic-dependency-you-need-to-know-about) · [Pricing](#what-does-the-paid-copilot-licence-cost) · [Admin checklist](#what-should-you-do-now) · [FAQ](#frequently-asked-questions)
+
+### How We Got Here
+
+```mermaid
+timeline
+    title Copilot Chat Timeline
+    September 2025 : Microsoft makes Copilot Chat free in Office apps for all M365 users
+    March 17, 2026 : MC1253858 and MC1253863 published — announcing rollback
+    April 15, 2026 : Free Copilot removed or degraded in Word, Excel, PPT, OneNote
+```
 
 ## What's Happening on April 15, 2026?
 
@@ -29,6 +39,23 @@ This is a reversal of the [September 2025 announcement](https://techcommunity.mi
 ## Who Is Affected and How?
 
 The impact depends entirely on your **tenant size**:
+
+```mermaid
+flowchart TD
+    A[Your Organisation] --> B{How many M365 users?}
+    B -->|More than 2,000| C[MC1253858]
+    B -->|Fewer than 2,000| D[MC1253863]
+    C --> E["❌ Copilot REMOVED from\nWord, Excel, PPT, OneNote"]
+    D --> F["⚠️ Standard access in\nWord, Excel, PPT"]
+    D --> G["❌ OneNote removed"]
+    E --> H["✅ WXP Agents still work\n✅ Copilot web app stays\n✅ Outlook & Teams stay"]
+    F --> H
+    G --> H
+    style E fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+    style G fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+    style F fill:#3a3a1a,stroke:#ffaa00,color:#ffcc66
+    style H fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+```
 
 ### MC1253858 — Organisations With More Than 2,000 Users
 
@@ -90,11 +117,20 @@ Here's the part almost nobody is talking about — and it changes the narrative 
 
 They are **different** from the Copilot side panel inside Office apps:
 
-```
-"Copilot IN Word" (side panel)  ≠  "Word Agent in the Copilot App"
-        ↓                                     ↓
-  Embedded in the Word app              Agent in Copilot Chat
-  THIS gets removed/degraded            THIS stays for everyone
+```mermaid
+flowchart LR
+    subgraph removed["What's Being Removed/Degraded"]
+        A["Copilot Side Panel\nINSIDE Word/Excel/PPT"] 
+    end
+    subgraph stays["What Stays for Everyone"]
+        B["WXP Agents\nIN the Copilot App"]
+    end
+    A -. "Embedded in\nOffice apps" .-> C["❌ Removed or\n⚠️ Degraded"]
+    B -. "Agent in\nCopilot Chat" .-> D["✅ Still available\nfor all users"]
+    style removed fill:#2a1a1a,stroke:#ff6666,color:#e6edf3
+    style stays fill:#1a2a1a,stroke:#66ff99,color:#e6edf3
+    style C fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+    style D fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
 ```
 
 ### WXP Agents Stay for Both Tenant Sizes
@@ -121,6 +157,22 @@ Here's the critical technical detail: **WXP Agents are powered exclusively by An
 
 > *"These agents exclusively use Anthropic's AI models. This AI model must be enabled. These requirements are mandatory for Word, Excel, and PowerPoint Agents to function."*
 
+```mermaid
+flowchart TD
+    A["Admin: Is Anthropic enabled\nas a subprocessor?"] --> B{Enabled?}
+    B -->|"✅ Yes"| C["Claude models available"]
+    B -->|"❌ No"| D["Claude models blocked"]
+    C --> E["WXP Agents visible\nand functional for all users"]
+    D --> F["WXP Agents completely\nHIDDEN from all users"]
+    E --> G["Users can create docs\nvia Copilot app"]
+    F --> H["No workaround —\nmust enable Anthropic"]
+    style B fill:#1a3a4a,stroke:#66ffff,color:#e6edf3
+    style E fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+    style F fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+    style G fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+    style H fill:#4a1a1a,stroke:#ff6666,color:#ff9999
+```
+
 This means:
 
 | Anthropic Setting | WXP Agents |
@@ -141,6 +193,16 @@ If your admin has done nothing in a **non-EU commercial tenant**, Anthropic is a
 If you're in the **EU, NZ/AU public sector, or other regulated environments**, Anthropic may be off — which means your users have no WXP agents, even if they have a paid Copilot licence.
 
 ### How to Enable Anthropic
+
+```mermaid
+flowchart LR
+    A["M365 Admin Center"] --> B["Copilot → Settings\n→ Data access"]
+    B --> C["AI providers operating\nas Microsoft subprocessors"]
+    C --> D["Enable Anthropic\n+ accept terms"]
+    D --> E["✅ WXP Agents\nnow available"]
+    style A fill:#1a3a4a,stroke:#66ffff,color:#e6edf3
+    style E fill:#1a3a2a,stroke:#66ff99,color:#99ffbb
+```
 
 1. Go to the [Microsoft 365 Admin Center](https://admin.microsoft.com)
 2. Navigate to **Copilot → Settings → Data access**
@@ -270,4 +332,4 @@ For enterprises (>300 users): **$30 USD per user per month**. For businesses (<3
 
 ---
 
-*Published: April 9, 2026 · Last updated: April 9, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), community analysis*
+*Published: April 9, 2026 · Last updated: April 10, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), community analysis*
