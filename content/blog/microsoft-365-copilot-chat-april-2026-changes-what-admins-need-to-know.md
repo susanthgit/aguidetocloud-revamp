@@ -11,16 +11,6 @@ Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNot
 
 **Quick links:** [Who's affected?](#who-is-affected-and-how) · [Basic vs Premium labels](#new-labels-basic-vs-premium) · [WXP agents surprise](#the-wxp-agent-surprise-most-people-miss) · [Anthropic dependency](#the-anthropic-dependency-you-need-to-know-about) · [Pricing](#what-does-the-paid-copilot-licence-cost) · [Admin checklist](#what-should-you-do-now) · [FAQ](#frequently-asked-questions)
 
-### How We Got Here
-
-```mermaid
-timeline
-    title Copilot Chat Timeline
-    September 2025 : Microsoft makes Copilot Chat free in Office apps for all M365 users
-    March 17, 2026 : MC1253858 and MC1253863 published — announcing rollback
-    April 15, 2026 : Free Copilot removed or degraded in Word, Excel, PPT, OneNote
-```
-
 ## What's Happening on April 15, 2026?
 
 Starting **April 15, 2026**, Microsoft is making significant changes to **Copilot Chat** for users without a paid [Microsoft 365 Copilot license](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview). The free in-app Copilot experience inside Word, Excel, PowerPoint, and OneNote is either being **removed** or **degraded**, depending on your organisation's size.
