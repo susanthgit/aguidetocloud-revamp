@@ -1736,16 +1736,17 @@ a:hover {
 
 /* ── AI NEWS: BACK TO TOP ────────────────── */
 .ainews-btt {
-  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--neon-cyan); color: #0a0a1a; border: none;
-  font-size: 1.2rem; font-weight: 700; cursor: pointer;
-  box-shadow: 0 2px 12px rgba(102, 255, 255, 0.3);
+  position: fixed; bottom: 2.5rem; right: 2.5rem; z-index: 9999;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--neon-cyan); color: #0a0a1a; border: 2px solid rgba(102, 255, 255, 0.6);
+  font-size: 1.5rem; font-weight: 900; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5), 0 0 40px rgba(102, 255, 255, 0.2);
   opacity: 0; transform: translateY(20px); transition: all 0.3s;
   pointer-events: none;
+  display: flex; align-items: center; justify-content: center;
 }
 .ainews-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.ainews-btt:hover { background: #99ffff; box-shadow: 0 4px 20px rgba(102, 255, 255, 0.5); }
+.ainews-btt:hover { background: #fff; box-shadow: 0 4px 30px rgba(102, 255, 255, 0.8), 0 0 60px rgba(102, 255, 255, 0.3); }
 
 /* ── SKELETON LOADING ──────────────────── */
 .ainews-skeleton-wrap {
