@@ -11,6 +11,70 @@
   {{ $pagePrompts = .RegularPages }}
 {{ end }}
 
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+{{ if $isMainPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "AI Prompt Library — Tested Prompts for M365 Copilot, ChatGPT, Claude & More",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "numberOfItems": {{ len $allPrompts }},
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+      {"@type": "ListItem", "position": 2, "name": "AI Prompt Library"}
+    ]
+  }
+}
+</script>
+{{ else }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ .Title }} — AI Prompts for M365 Copilot, ChatGPT & More",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "numberOfItems": {{ len $pagePrompts }},
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "AI Prompt Library",
+    "url": "{{ .Site.BaseURL }}prompts/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ len $pagePrompts }},
+    "itemListElement": [
+      {{ range $i, $p := $pagePrompts }}{{ if $i }},{{ end }}
+      {
+        "@type": "ListItem",
+        "position": {{ add $i 1 }},
+        "name": "{{ $p.Title }}",
+        "url": "{{ $p.Permalink }}"
+      }
+      {{ end }}
+    ]
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+      {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
+      {"@type": "ListItem", "position": 3, "name": "{{ .Title }}"}
+    ]
+  }
+}
+</script>
+{{ end }}
+
 <div class="prompts-page">
   <div class="container">
 

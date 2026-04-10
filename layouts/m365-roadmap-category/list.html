@@ -1,4 +1,5 @@
 {{ define "main" }}
+<link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
 <div class="rdmap-hero">
   <h1>{{ .Title }}</h1>
   <p>{{ .Description }}</p>
@@ -11,21 +12,48 @@
     <input type="text" id="rdmap-search" class="rdmap-search" placeholder="Search {{ .Title | plainify }} items..." autocomplete="off">
     <label for="rdmap-status-filter" class="sr-only">Filter by status</label>
     <select id="rdmap-status-filter" class="rdmap-select">
-      <option value="active" selected>⚡ Active Only</option>
-      <option value="all">All Statuses</option>
-      <option value="Rolling out">🟢 Rolling Out</option>
-      <option value="In development">🟡 In Development</option>
-      <option value="Launched">🔵 Launched</option>
+      <option value="all" selected>All Statuses</option>
+      <option value="active">Active Only</option>
+      <option value="Rolling out">Rolling Out</option>
+      <option value="In development">In Development</option>
+      <option value="Launched">Launched</option>
     </select>
   </div>
+  <div class="rdmap-filter-info" id="rdmap-filter-info"></div>
   <div class="rdmap-content" id="rdmap-content" aria-live="polite">
     <div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>
   </div>
+  <div class="rdmap-browse" style="margin-top:1.5rem">
+    <strong>Browse other products:</strong>
+    <a href="/m365-roadmap/copilot/">Copilot</a> ·
+    <a href="/m365-roadmap/teams/">Teams</a> ·
+    <a href="/m365-roadmap/outlook/">Outlook</a> ·
+    <a href="/m365-roadmap/sharepoint/">SharePoint</a> ·
+    <a href="/m365-roadmap/purview/">Purview</a> ·
+    <a href="/m365-roadmap/intune/">Intune</a> ·
+    <a href="/m365-roadmap/viva/">Viva</a> ·
+    <a href="/m365-roadmap/office-apps/">Office Apps</a> ·
+    <a href="/m365-roadmap/">View All</a>
+  </div>
   <div class="rdmap-source">
-    <a href="/m365-roadmap/">← Back to full roadmap</a>
+    <a href="/m365-roadmap/">&larr; Back to full roadmap</a>
     <span class="rdmap-freshness" id="rdmap-freshness"></span>
   </div>
 </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "{{ .Title | plainify }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ .Description }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebApplication", "name": "M365 Roadmap Tracker", "url": "https://www.aguidetocloud.com/m365-roadmap/" }
+}
+</script>
+<button class="rdmap-btt" id="rdmap-btt" title="Back to top" aria-label="Back to top">&#8593;</button>
 <script>window.__roadmapCategoryFilter = '{{ .Params.roadmap_filter }}';</script>
 <script src="/js/roadmap.js?v={{ now.Unix }}"></script>
 {{ end }}
