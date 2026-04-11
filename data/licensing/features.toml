@@ -240,3 +240,260 @@ name = "Agent 365"
 description = "AI agents that can act on your behalf — built into M365 E7"
 category = "AI"
 icon = "🤖"
+
+# ── DYNAMICS 365 FEATURES ────────────────────
+
+[[features]]
+id = "d365-sales-core"
+name = "Sales CRM"
+description = "Lead management, opportunity tracking, quotes, orders, and invoices"
+category = "Dynamics 365"
+icon = "🤝"
+
+[[features]]
+id = "d365-sales-advanced"
+name = "Sales AI & Forecasting"
+description = "Sales forecasting, relationship analytics, LinkedIn integration"
+category = "Dynamics 365"
+icon = "🤝"
+
+[[features]]
+id = "d365-copilot"
+name = "Dynamics 365 Copilot"
+description = "AI-powered insights, conversation intelligence, predictive scoring"
+category = "Dynamics 365"
+icon = "🤖"
+
+[[features]]
+id = "d365-cs-core"
+name = "Customer Service"
+description = "Case management, knowledge base, SLA tracking"
+category = "Dynamics 365"
+icon = "🎧"
+
+[[features]]
+id = "d365-cs-advanced"
+name = "Omnichannel Service"
+description = "Chat, voice, social channels, unified routing, AI suggestions"
+category = "Dynamics 365"
+icon = "🎧"
+
+[[features]]
+id = "d365-field-core"
+name = "Field Service"
+description = "Work orders, scheduling, mobile worker app, IoT integration"
+category = "Dynamics 365"
+icon = "🔧"
+
+[[features]]
+id = "d365-finance-core"
+name = "Financial Management"
+description = "GL, AP/AR, budgeting, fixed assets, financial reporting"
+category = "Dynamics 365"
+icon = "💰"
+
+[[features]]
+id = "d365-scm-core"
+name = "Supply Chain"
+description = "Procurement, warehousing, manufacturing, transportation, planning"
+category = "Dynamics 365"
+icon = "📦"
+
+[[features]]
+id = "d365-bc-core"
+name = "Business Central Core"
+description = "Finance, supply chain, project management, CRM basics for SMBs"
+category = "Dynamics 365"
+icon = "🏢"
+
+[[features]]
+id = "d365-bc-premium-features"
+name = "Manufacturing & Service"
+description = "Production orders, BOM, capacity planning, service management"
+category = "Dynamics 365"
+icon = "🏭"
+
+[[features]]
+id = "d365-bc-readonly"
+name = "Read-Only Access"
+description = "View data, approve workflows, enter timesheets, run basic reports"
+category = "Dynamics 365"
+icon = "👁️"
+
+# ── POWER PLATFORM FEATURES ─────────────────
+
+[[features]]
+id = "pp-powerapps"
+name = "Power Apps"
+description = "Build canvas and model-driven apps with low code"
+category = "Power Platform"
+icon = "⚡"
+
+[[features]]
+id = "pp-powerautomate"
+name = "Power Automate"
+description = "Automated cloud flows across hundreds of connectors"
+category = "Power Platform"
+icon = "⚡"
+
+[[features]]
+id = "pp-rpa"
+name = "Robotic Process Automation"
+description = "Desktop flows, unattended automation of legacy apps"
+category = "Power Platform"
+icon = "🤖"
+
+[[features]]
+id = "pp-dataverse"
+name = "Dataverse Storage"
+description = "Relational cloud database for Power Platform data"
+category = "Power Platform"
+icon = "🗃️"
+
+[[features]]
+id = "pp-premium-connectors"
+name = "Premium Connectors"
+description = "SAP, Salesforce, Oracle, and 400+ premium data connectors"
+category = "Power Platform"
+icon = "🔌"
+
+[[features]]
+id = "pp-powerbi-pro"
+name = "Power BI Pro"
+description = "Interactive dashboards, reports, and data visualisation"
+category = "Power Platform"
+icon = "📊"
+
+[[features]]
+id = "pp-powerbi-premium"
+name = "Power BI Premium Features"
+description = "Paginated reports, AI, larger datasets, deployment pipelines"
+category = "Power Platform"
+icon = "📊"
+
+[[features]]
+id = "pp-copilot-studio"
+name = "Copilot Studio"
+description = "Build custom AI copilots and agents with generative AI"
+category = "Power Platform"
+icon = "🤖"
+
+# ── VIVA FEATURES ────────────────────────────
+
+[[features]]
+id = "viva-connections"
+name = "Viva Connections"
+description = "Company intranet and dashboard experience in Teams"
+category = "Viva"
+icon = "💜"
+
+[[features]]
+id = "viva-engage"
+name = "Viva Engage"
+description = "Enterprise social network and employee communities"
+category = "Viva"
+icon = "💜"
+
+[[features]]
+id = "viva-insights"
+name = "Viva Insights"
+description = "Workplace analytics, meeting effectiveness, focus time"
+category = "Viva"
+icon = "💜"
+
+[[features]]
+id = "viva-learning"
+name = "Viva Learning"
+description = "Learning management and third-party LMS integration"
+category = "Viva"
+icon = "💜"
+
+[[features]]
+id = "viva-goals"
+name = "Viva Goals"
+description = "OKR tracking and goal alignment across the organisation"
+category = "Viva"
+icon = "💜"
+
+# ── TEAMS ADD-ON FEATURES ────────────────────
+
+[[features]]
+id = "teams-premium-features"
+name = "Teams Premium"
+description = "AI recap, custom branding, advanced webinars, meeting protection"
+category = "Teams"
+icon = "💬"
+
+[[features]]
+id = "teams-rooms"
+name = "Teams Rooms"
+description = "Meeting room device management and one-touch join"
+category = "Teams"
+icon = "💬"
+
+# ── PROJECT / VISIO FEATURES ────────────────
+
+[[features]]
+id = "project-web"
+name = "Project for the Web"
+description = "Grid, board, timeline views for task and project tracking"
+category = "Project & Visio"
+icon = "📐"
+
+[[features]]
+id = "project-desktop"
+name = "Project Desktop App"
+description = "Full desktop app with Gantt, dependencies, baselines, resources"
+category = "Project & Visio"
+icon = "📐"
+
+[[features]]
+id = "project-portfolio"
+name = "Portfolio Management"
+description = "Portfolio selection, demand management, enterprise resource planning"
+category = "Project & Visio"
+icon = "📐"
+
+[[features]]
+id = "visio-web"
+name = "Visio for the Web"
+description = "Browser-based diagramming with basic templates"
+category = "Project & Visio"
+icon = "📐"
+
+[[features]]
+id = "visio-desktop"
+name = "Visio Desktop App"
+description = "Full desktop app with data-linked diagrams and advanced templates"
+category = "Project & Visio"
+icon = "📐"
+
+# ── WINDOWS & DEV FEATURES ──────────────────
+
+[[features]]
+id = "windows-365"
+name = "Windows 365 Cloud PC"
+description = "Personal Cloud PC streamed from Azure, managed via Intune"
+category = "Windows & Dev"
+icon = "🪟"
+
+[[features]]
+id = "github-enterprise-features"
+name = "GitHub Enterprise"
+description = "Advanced security, SAML SSO, audit logs, Copilot Business"
+category = "Windows & Dev"
+icon = "🐙"
+
+[[features]]
+id = "vs-pro-features"
+name = "Visual Studio Pro"
+description = "Full IDE, Azure dev/test credits ($50/mo), debugging tools"
+category = "Windows & Dev"
+icon = "💻"
+
+[[features]]
+id = "vs-enterprise-features"
+name = "Visual Studio Enterprise"
+description = "Pro + advanced testing, $150/mo Azure credits, IntelliTest"
+category = "Windows & Dev"
+icon = "💻"
