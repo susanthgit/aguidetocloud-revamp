@@ -112,28 +112,14 @@
   {{ end }}
   {{ end }}
 
-  <!-- 📊 STATS + CTA -->
+  <!-- 🔍 SEARCH VIDEOS -->
   <section class="section">
-    <div class="stats-bar">
-      <div class="stat">
-        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "!=" "blog") }}</span>
-        <span class="stat-label">Video Tutorials</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "certifications") }}</span>
-        <span class="stat-label">Certifications</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "cloud-labs") }}</span>
-        <span class="stat-label">Hands-on Labs</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">Free</span>
-        <span class="stat-label">Always</span>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="/ai-hub/" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">🤖 Start Learning</a>
+    <div class="hp-search-wrap">
+      <button id="hp-search-trigger" class="hp-search-box" aria-label="Search videos">
+        <span class="hp-search-icon">🔍</span>
+        <span class="hp-search-placeholder">Search videos, labs, certifications...</span>
+        <span class="hp-search-shortcut">Ctrl+K</span>
+      </button>
     </div>
   </section>
 
@@ -143,15 +129,20 @@
       <h2 class="section-title">🌐 Connect</h2>
     </div>
     <div class="ecosystem">
+      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">
+        <img src="/images/logo_agtc_dark_1.webp" alt="Main Channel" class="eco-logo" loading="lazy">
+        <h3>A Guide to Cloud & AI</h3>
+        <p>Full tutorials & masterclasses</p>
+      </a>
+      <a href="https://www.youtube.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="eco-card">
+        <img src="/images/logo_agtc_dark_2.webp" alt="Bites Channel" class="eco-logo" loading="lazy">
+        <h3>Cloud & AI — Bites</h3>
+        <p>Quick 10–20 min lessons</p>
+      </a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer" class="eco-card">
         <div class="eco-icon">💼</div>
         <h3>Connect on LinkedIn</h3>
         <p>Join the community & stay updated</p>
-      </a>
-      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <img src="/images/logo_agtc_dark_1.webp" alt="Main Channel" class="eco-logo" loading="lazy">
-        <h3>Subscribe on YouTube</h3>
-        <p>Full tutorials & masterclasses</p>
       </a>
       <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer" class="eco-card">
         <div class="eco-icon">☕</div>
@@ -162,4 +153,11 @@
   </section>
 
 </div>
+<script>
+// Wire homepage search box to existing search modal (Ctrl+K)
+document.getElementById('hp-search-trigger')?.addEventListener('click', function() {
+  var modal = document.getElementById('search-modal');
+  if (modal) { modal.classList.add('active'); document.getElementById('search-input')?.focus(); }
+});
+</script>
 {{ end }}

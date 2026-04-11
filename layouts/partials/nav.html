@@ -5,7 +5,7 @@
       <span class="hamburger-icon"></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><button id="search-btn" class="search-btn" aria-label="Search">🔍</button></li>
+      <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">🔍</button></li>
       <li><a href="/ai-hub/"{{ if hasPrefix $.RelPermalink "/ai-hub/" }} aria-current="page" class="nav-active"{{ end }}>🤖 AI Hub</a></li>
       <li class="nav-dropdown{{ if or (hasPrefix $.RelPermalink "/ai-news/") (hasPrefix $.RelPermalink "/m365-roadmap/") (hasPrefix $.RelPermalink "/prompts/") (hasPrefix $.RelPermalink "/free-tools/") }} nav-dropdown-active{{ end }}">
         <a href="/free-tools/" class="dropdown-toggle">🛠️ Free Tools ▾</a>

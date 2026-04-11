@@ -47,7 +47,7 @@
   {{ partial "seo-jsonld.html" . }}
   {{ partial "analytics.html" . }}
 </head>
-<body>
+<body{{ if .IsHome }} class="is-home"{{ end }}>
   <a href="#main-content" class="skip-link">Skip to content</a>
   {{ partial "nav.html" . }}
   <main id="main-content">
