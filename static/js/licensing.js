@@ -45,13 +45,16 @@
     if (!container) return;
 
     let html = '';
-    categories.forEach(cat => {
+    categories.forEach((cat, idx) => {
       const catPlans = plans.filter(p => p.category === cat.id);
       if (!catPlans.length) return;
 
-      html += `<div class="lic-category" id="cat-${cat.id}">`;
+      // First category expanded, rest collapsed
+      const collapsed = idx > 0 ? ' collapsed' : '';
+
+      html += `<div class="lic-category${collapsed}" id="cat-${cat.id}">`;
       html += `<div class="lic-category-header">
-        <h2>${cat.emoji} ${cat.name}</h2>`;
+        <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${cat.name} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
       if (cat.m365maps_all) {
         html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener">🗺️ View all on M365 Maps →</a>`;
       }
@@ -76,6 +79,17 @@
         updateCompareBar();
       });
     });
+
+    // Attach category toggle events
+    $$('.lic-category-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const catEl = toggle.closest('.lic-category');
+        catEl.classList.toggle('collapsed');
+      });
+    });
+
+    // Build category jump nav
+    renderCatNav();
   }
 
   function renderPlanCard(plan) {
@@ -445,22 +459,176 @@
     }
     // Highlight specific plan
     if (hash.startsWith('plan-')) {
-      const card = $(`#${hash}`);
-      if (card) {
-        card.classList.add('highlighted');
-        setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
-        setTimeout(() => card.classList.remove('highlighted'), 3000);
-      }
+      scrollToPlan(hash.replace('plan-', ''));
+    }
+    // Handle preset compare from URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('compare')) {
+      const ids = params.get('compare').split(',');
+      triggerPresetCompare(ids);
     }
   }
 
   window.addEventListener('hashchange', handleHash);
+
+  // ── SEARCH ──────────────────────────────────
+
+  function initSearch() {
+    const input = $('#lic-search');
+    const resultsEl = $('#lic-search-results');
+    if (!input || !resultsEl) return;
+
+    // Build search index with aliases
+    const searchIndex = plans.map(p => {
+      const cat = categories.find(c => c.id === p.category);
+      return {
+        id: p.id,
+        name: p.name,
+        tagline: p.tagline,
+        category: cat ? cat.name : p.category,
+        price: p.price,
+        searchText: [p.name, p.tagline, p.who, p.description, p.id, p.category].join(' ').toLowerCase()
+      };
+    });
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      if (q.length < 2) { resultsEl.classList.remove('visible'); return; }
+
+      const matches = searchIndex.filter(p => p.searchText.includes(q)).slice(0, 10);
+      if (!matches.length) {
+        resultsEl.innerHTML = '<div class="lic-search-result"><span class="lic-search-result-name">No plans found</span></div>';
+        resultsEl.classList.add('visible');
+        return;
+      }
+
+      resultsEl.innerHTML = matches.map(m => `
+        <div class="lic-search-result" data-plan-id="${m.id}">
+          <div>
+            <span class="lic-search-result-name">${m.name}</span>
+            <span class="lic-search-result-cat">${m.category}</span>
+          </div>
+          <span class="lic-search-result-price">${m.price === 0 ? 'Free' : '$' + m.price}</span>
+        </div>
+      `).join('');
+      resultsEl.classList.add('visible');
+
+      // Click to jump to plan
+      $$('.lic-search-result', resultsEl).forEach(r => {
+        r.addEventListener('click', () => {
+          const planId = r.dataset.planId;
+          if (planId) scrollToPlan(planId);
+          input.value = '';
+          resultsEl.classList.remove('visible');
+        });
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.lic-search-wrap')) resultsEl.classList.remove('visible');
+    });
+
+    // Close on Escape
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { input.value = ''; resultsEl.classList.remove('visible'); }
+    });
+  }
+
+  function scrollToPlan(planId) {
+    // Ensure Compare tab is active
+    const compareTab = $(`.lic-tab[data-tab="compare"]`);
+    if (compareTab && !compareTab.classList.contains('active')) compareTab.click();
+
+    const card = $(`#plan-${planId}`);
+    if (!card) return;
+
+    // Expand the category if collapsed
+    const catEl = card.closest('.lic-category');
+    if (catEl && catEl.classList.contains('collapsed')) {
+      catEl.classList.remove('collapsed');
+    }
+
+    // Scroll and highlight
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('highlighted');
+      setTimeout(() => card.classList.remove('highlighted'), 3000);
+    }, 100);
+  }
+
+  // ── CATEGORY JUMP NAV ──────────────────────
+
+  function renderCatNav() {
+    const nav = $('#lic-cat-nav');
+    if (!nav) return;
+
+    let html = '';
+    categories.forEach(cat => {
+      const count = plans.filter(p => p.category === cat.id).length;
+      if (!count) return;
+      html += `<button class="lic-cat-nav-btn" data-cat="${cat.id}">${cat.emoji} ${cat.name}<span class="lic-cat-nav-count">${count}</span></button>`;
+    });
+    nav.innerHTML = html;
+
+    // Click to jump + expand
+    $$('.lic-cat-nav-btn', nav).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const catId = btn.dataset.cat;
+        const catEl = $(`#cat-${catId}`);
+        if (!catEl) return;
+
+        // Expand if collapsed
+        if (catEl.classList.contains('collapsed')) catEl.classList.remove('collapsed');
+
+        catEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Highlight active nav button
+        $$('.lic-cat-nav-btn', nav).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  }
+
+  // ── PRESET COMPARISONS ─────────────────────
+
+  function initPresets() {
+    $$('.lic-preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ids = btn.dataset.plans.split(',');
+        triggerPresetCompare(ids);
+      });
+    });
+  }
+
+  function triggerPresetCompare(planIds) {
+    // Ensure Compare tab is active
+    const compareTab = $(`.lic-tab[data-tab="compare"]`);
+    if (compareTab && !compareTab.classList.contains('active')) compareTab.click();
+
+    // Clear existing
+    compareSet.clear();
+    $$('.lic-compare-input').forEach(cb => { cb.checked = false; });
+
+    // Check the preset plans
+    planIds.forEach(id => {
+      const cb = $(`.lic-compare-input[value="${id}"]`);
+      if (cb) { cb.checked = true; compareSet.add(id); }
+    });
+
+    updateCompareBar();
+
+    // Auto-trigger the comparison table
+    setTimeout(() => buildCompareTable(), 100);
+  }
 
   // ── INIT ────────────────────────────────────
 
   renderCompare();
   renderQuiz();
   renderChangelog();
+  initSearch();
+  initPresets();
   handleHash();
 
 })();

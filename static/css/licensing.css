@@ -51,6 +51,176 @@
 .lic-hero-meta a { color: var(--lic-accent); text-decoration: none; }
 .lic-hero-meta a:hover { text-decoration: underline; }
 
+/* ── SEARCH BAR ────────────────────────────── */
+
+.lic-search-wrap {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+.lic-search {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lic-search:focus {
+  border-color: var(--lic-accent);
+  box-shadow: 0 0 20px var(--lic-accent-glow);
+}
+.lic-search::placeholder { color: #475569; }
+.lic-search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+.lic-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e293b;
+  border: 1px solid var(--lic-accent-border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  z-index: 50;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.lic-search-results.visible { display: block; }
+.lic-search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid rgba(51,65,85,0.5);
+}
+.lic-search-result:hover { background: var(--lic-accent-subtle); }
+.lic-search-result-name { color: #e2e8f0; font-weight: 600; font-size: 0.9rem; }
+.lic-search-result-cat { color: #64748b; font-size: 0.75rem; }
+.lic-search-result-price { color: var(--lic-accent); font-weight: 700; font-size: 0.9rem; }
+
+/* ── QUICK COMPARE PRESETS ─────────────────── */
+
+.lic-presets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0 auto 1.5rem;
+  max-width: 900px;
+}
+.lic-presets-label {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.lic-preset-btn {
+  padding: 0.35rem 0.8rem;
+  border-radius: 99px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.lic-preset-btn:hover {
+  border-color: var(--lic-accent);
+  color: var(--lic-accent);
+  background: var(--lic-accent-subtle);
+}
+
+/* ── CATEGORY JUMP NAV (sticky) ────────────── */
+
+.lic-cat-nav {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 0;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 60px;
+  z-index: 40;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+}
+.lic-cat-nav-btn {
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.lic-cat-nav-btn:hover,
+.lic-cat-nav-btn.active {
+  border-color: var(--lic-accent);
+  color: var(--lic-accent);
+  background: var(--lic-accent-subtle);
+}
+.lic-cat-nav-count {
+  font-size: 0.65rem;
+  color: #475569;
+  margin-left: 0.2rem;
+}
+
+/* ── COLLAPSIBLE CATEGORIES ────────────────── */
+
+.lic-category-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+.lic-category-toggle::after {
+  content: ' ▾';
+  font-size: 0.85rem;
+  color: #475569;
+  transition: transform 0.2s;
+}
+.lic-category.collapsed .lic-category-toggle::after {
+  content: ' ▸';
+}
+.lic-category.collapsed .lic-cards {
+  display: none;
+}
+.lic-category.collapsed .lic-category-desc {
+  display: none;
+}
+.lic-category.collapsed .lic-category-link {
+  display: none;
+}
+
+/* ── QUIZ SCOPE NOTICE ─────────────────────── */
+
+.lic-quiz-scope {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+.lic-quiz-scope strong { color: var(--lic-accent); }
+
 /* ── TABS ──────────────────────────────────── */
 
 .lic-tabs {
