@@ -8,7 +8,7 @@
 <div class="container">
   <div class="free-tools-grid">
 
-    <a href="/ai-news/" class="free-tool-card" style="--card-accent: #00e5ff">
+    <a href="/ai-news/" class="free-tool-card" style="--card-accent: #ff66ff">
       <div class="free-tool-icon">📰</div>
       <h2>AI News</h2>
       <p>Daily AI news digest with 3-tier layout, 20 vendor categories, and AI summaries. Updated 4× daily.</p>
@@ -89,9 +89,8 @@
   margin-bottom: 3rem;
 }
 .free-tool-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-top: 3px solid var(--card-accent, var(--neon-cyan));
+  background: color-mix(in srgb, var(--card-accent) 10%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--card-accent) 18%, transparent);
   border-radius: var(--radius);
   padding: 2rem;
   text-decoration: none;
@@ -102,9 +101,10 @@
   gap: 0.8rem;
 }
 .free-tool-card:hover {
-  border-color: var(--card-accent);
+  background: color-mix(in srgb, var(--card-accent) 18%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--card-accent) 35%, transparent);
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--card-accent) 20%, transparent);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--card-accent) 12%, transparent);
   text-shadow: none;
 }
 .free-tool-icon {
@@ -134,7 +134,7 @@
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  background: rgba(255,255,255,0.04);
+  background: color-mix(in srgb, var(--card-accent) 10%, rgba(255,255,255,0.04));
   color: var(--text-muted);
   font-family: var(--font-heading);
   font-weight: 600;

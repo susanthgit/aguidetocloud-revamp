@@ -325,18 +325,18 @@ a:hover {
   flex-direction: column;
   gap: 0.6rem;
   padding: 1.3rem 1.4rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-top: 3px solid var(--tool-color, var(--neon-cyan));
+  background: color-mix(in srgb, var(--tool-color) 10%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--tool-color) 18%, transparent);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
   transition: all 0.25s;
 }
 .hp-tool-card:hover {
-  border-color: var(--tool-color);
+  background: color-mix(in srgb, var(--tool-color) 18%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--tool-color) 35%, transparent);
   transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.3), 0 0 15px color-mix(in srgb, var(--tool-color) 15%, transparent);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--tool-color) 12%, transparent);
   text-shadow: none;
 }
 .hp-tool-header {
@@ -366,7 +366,7 @@ a:hover {
   font-size: 0.68rem;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  background: rgba(255,255,255,0.04);
+  background: color-mix(in srgb, var(--tool-color) 10%, rgba(255,255,255,0.04));
   color: var(--text-muted);
   font-family: var(--font-heading);
   font-weight: 600;

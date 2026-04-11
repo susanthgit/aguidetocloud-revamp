@@ -144,6 +144,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-
 features = ["desktop-apps", "web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb", "entra-p1", "intune-p1", "defender-business", "information-protection"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-apps-business/"
 id = "apps-biz"
 name = "Microsoft 365 Apps for Business"
 category = "business"
@@ -239,6 +240,7 @@ features = ["security-copilot"]
 # ── SECURITY & COMPLIANCE ADD-ONS ────────────
 
 [[plans]]
+detail_url = "/licensing/defender-office-365-p2/"
 id = "defender-o365-p2"
 name = "Defender for Office 365 Plan 2"
 category = "security"
@@ -253,6 +255,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-defen
 features = ["defender-o365-p2"]
 
 [[plans]]
+detail_url = "/licensing/defender-endpoint-p2/"
 id = "defender-endpoint-p2"
 name = "Defender for Endpoint Plan 2"
 category = "security"
@@ -267,6 +270,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-defen
 features = ["defender-endpoint-p2"]
 
 [[plans]]
+detail_url = "/licensing/purview-suite/"
 id = "purview-suite"
 name = "Microsoft Purview Suite"
 category = "security"
@@ -281,6 +285,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-purvi
 features = ["dlp-advanced", "ediscovery-premium", "insider-risk", "information-protection"]
 
 [[plans]]
+detail_url = "/licensing/ems-e3-e5/"
 id = "ems-e3"
 name = "Enterprise Mobility + Security E3"
 category = "security"
@@ -295,6 +300,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra
 features = ["entra-p1", "intune-p1", "information-protection"]
 
 [[plans]]
+detail_url = "/licensing/ems-e3-e5/"
 id = "ems-e5"
 name = "Enterprise Mobility + Security E5"
 category = "security"
@@ -309,6 +315,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra
 features = ["entra-p2", "intune-p1", "information-protection", "defender-cloud-apps"]
 
 [[plans]]
+detail_url = "/licensing/intune-suite/"
 id = "intune-suite"
 name = "Microsoft Intune Suite"
 category = "security"
@@ -323,6 +330,7 @@ ms_official = "https://www.microsoft.com/en-us/security/business/endpoint-manage
 features = ["intune-suite"]
 
 [[plans]]
+detail_url = "/licensing/entra-id-p2/"
 id = "entra-p2"
 name = "Microsoft Entra ID P2"
 category = "security"
@@ -339,6 +347,7 @@ features = ["entra-p2"]
 # ── DYNAMICS 365 — CRM ───────────────────────
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-sales-professional/"
 id = "d365-sales-pro"
 name = "Dynamics 365 Sales Professional"
 category = "d365-crm"
@@ -368,6 +377,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/sales/prici
 features = ["d365-sales-core", "d365-sales-advanced"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-sales-premium/"
 id = "d365-sales-premium"
 name = "Dynamics 365 Sales Premium"
 category = "d365-crm"
@@ -382,6 +392,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/sales/prici
 features = ["d365-sales-core", "d365-sales-advanced", "d365-copilot"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-customer-service/"
 id = "d365-cs-pro"
 name = "Dynamics 365 Customer Service Professional"
 category = "d365-crm"
@@ -396,6 +407,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/customer-se
 features = ["d365-cs-core"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-customer-service/"
 id = "d365-cs-ent"
 name = "Dynamics 365 Customer Service Enterprise"
 category = "d365-crm"
@@ -410,6 +422,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/customer-se
 features = ["d365-cs-core", "d365-cs-advanced"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-field-service/"
 id = "d365-field"
 name = "Dynamics 365 Field Service"
 category = "d365-crm"
@@ -426,6 +439,7 @@ features = ["d365-field-core"]
 # ── DYNAMICS 365 — ERP ───────────────────────
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-finance/"
 id = "d365-finance"
 name = "Dynamics 365 Finance"
 category = "d365-erp"
@@ -440,6 +454,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/finance/pri
 features = ["d365-finance-core"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-supply-chain/"
 id = "d365-scm"
 name = "Dynamics 365 Supply Chain Management"
 category = "d365-erp"
@@ -469,6 +484,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/business-ce
 features = ["d365-bc-core"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-bc-premium/"
 id = "d365-bc-premium"
 name = "Dynamics 365 Business Central Premium"
 category = "d365-erp"
@@ -483,6 +499,7 @@ ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/business-ce
 features = ["d365-bc-core", "d365-bc-premium-features"]
 
 [[plans]]
+detail_url = "/licensing/dynamics-365-bc-team-member/"
 id = "d365-bc-team"
 name = "Dynamics 365 Business Central Team Member"
 category = "d365-erp"
@@ -529,6 +546,7 @@ ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-aut
 features = ["pp-powerautomate", "pp-dataverse", "pp-premium-connectors"]
 
 [[plans]]
+detail_url = "/licensing/power-automate-rpa/"
 id = "powerautomate-rpa"
 name = "Power Automate per User + RPA"
 category = "power-platform"
@@ -558,6 +576,7 @@ ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-bi/
 features = ["pp-powerbi-pro"]
 
 [[plans]]
+detail_url = "/licensing/power-bi-premium-per-user/"
 id = "powerbi-ppu"
 name = "Power BI Premium per User"
 category = "power-platform"
@@ -572,6 +591,7 @@ ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-bi/
 features = ["pp-powerbi-pro", "pp-powerbi-premium"]
 
 [[plans]]
+detail_url = "/licensing/copilot-studio/"
 id = "copilot-studio"
 name = "Microsoft Copilot Studio"
 category = "power-platform"
@@ -588,6 +608,7 @@ features = ["pp-copilot-studio"]
 # ── MICROSOFT VIVA ───────────────────────────
 
 [[plans]]
+detail_url = "/licensing/viva-suite/"
 id = "viva-suite"
 name = "Microsoft Viva Suite"
 category = "viva"
@@ -602,6 +623,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-viva/pricing"
 features = ["viva-connections", "viva-engage", "viva-insights", "viva-learning", "viva-goals"]
 
 [[plans]]
+detail_url = "/licensing/viva-communications/"
 id = "viva-comms"
 name = "Viva Employee Communications & Communities"
 category = "viva"
@@ -616,6 +638,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-viva/pricing"
 features = ["viva-connections", "viva-engage"]
 
 [[plans]]
+detail_url = "/licensing/viva-analytics/"
 id = "viva-analytics"
 name = "Viva Workplace Analytics & Feedback"
 category = "viva"
@@ -647,6 +670,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-teams/premium"
 features = ["teams-premium-features"]
 
 [[plans]]
+detail_url = "/licensing/teams-rooms/"
 id = "teams-rooms-pro"
 name = "Microsoft Teams Rooms Pro"
 category = "teams-addons"
@@ -661,6 +685,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-r
 features = ["teams-rooms"]
 
 [[plans]]
+detail_url = "/licensing/teams-rooms/"
 id = "teams-rooms-basic"
 name = "Microsoft Teams Rooms Basic"
 category = "teams-addons"
@@ -675,6 +700,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-r
 features = ["teams-rooms"]
 
 [[plans]]
+detail_url = "/licensing/teams-phone-standard/"
 id = "teams-phone-standard"
 name = "Teams Phone Standard"
 category = "teams-addons"
@@ -691,6 +717,7 @@ features = ["teams-phone"]
 # ── PROJECT, VISIO, PLANNER ──────────────────
 
 [[plans]]
+detail_url = "/licensing/microsoft-project/"
 id = "project-p1"
 name = "Project Plan 1"
 category = "project-visio"
@@ -705,6 +732,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-pla
 features = ["project-web"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-project/"
 id = "project-p3"
 name = "Project Plan 3"
 category = "project-visio"
@@ -719,6 +747,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-pla
 features = ["project-web", "project-desktop"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-project/"
 id = "project-p5"
 name = "Project Plan 5"
 category = "project-visio"
@@ -733,6 +762,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-pla
 features = ["project-web", "project-desktop", "project-portfolio"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-visio/"
 id = "visio-p1"
 name = "Visio Plan 1"
 category = "project-visio"
@@ -747,6 +777,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/visio/visio-plan-1"
 features = ["visio-web"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-visio/"
 id = "visio-p2"
 name = "Visio Plan 2"
 category = "project-visio"
@@ -761,6 +792,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/visio/visio-plan-2"
 features = ["visio-web", "visio-desktop"]
 
 [[plans]]
+detail_url = "/licensing/planner-premium/"
 id = "planner-premium"
 name = "Microsoft Planner Premium"
 category = "project-visio"
@@ -777,6 +809,7 @@ features = ["project-web"]
 # ── EDUCATION ────────────────────────────────
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a1"
 name = "Microsoft 365 Education A1"
 category = "education"
@@ -791,6 +824,7 @@ ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
 features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a3"
 name = "Microsoft 365 Education A3"
 category = "education"
@@ -805,6 +839,7 @@ ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
 features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "intune-p1", "entra-p1", "windows-e3"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a5"
 name = "Microsoft 365 Education A5"
 category = "education"
@@ -821,6 +856,7 @@ features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams
 # ── WINDOWS & DEVELOPER ──────────────────────
 
 [[plans]]
+detail_url = "/licensing/windows-365/"
 id = "windows-365-ent"
 name = "Windows 365 Enterprise"
 category = "windows-dev"
@@ -835,6 +871,7 @@ ms_official = "https://www.microsoft.com/en-us/windows-365/enterprise/compare-pl
 features = ["windows-365"]
 
 [[plans]]
+detail_url = "/licensing/github-enterprise/"
 id = "github-enterprise"
 name = "GitHub Enterprise"
 category = "windows-dev"
@@ -849,6 +886,7 @@ ms_official = "https://github.com/pricing"
 features = ["github-enterprise-features"]
 
 [[plans]]
+detail_url = "/licensing/visual-studio/"
 id = "vs-pro"
 name = "Visual Studio Professional"
 category = "windows-dev"
@@ -863,6 +901,7 @@ ms_official = "https://visualstudio.microsoft.com/vs/pricing/"
 features = ["vs-pro-features"]
 
 [[plans]]
+detail_url = "/licensing/visual-studio/"
 id = "vs-enterprise"
 name = "Visual Studio Enterprise"
 category = "windows-dev"
@@ -981,5 +1020,6 @@ emoji = "👷"
 accent = "#f97316"
 description = "For shift workers, retail staff, and field workers."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
+
 
 
