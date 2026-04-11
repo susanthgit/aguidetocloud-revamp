@@ -1,0 +1,156 @@
+{{ define "main" }}
+
+{{ partial "tool-hero" (dict
+  "accent" "#DC2626"
+  "title" "M365 Deprecation Timeline"
+  "subtitle" "Every Microsoft 365 deprecation, retirement, and end-of-support date — urgency-scored with countdown timers and migration guidance."
+) }}
+
+<link rel="stylesheet" href="/css/deptime.css?v={{ site.Params.cache_version }}">
+<link rel="alternate" type="application/rss+xml" title="M365 Deprecation Timeline RSS" href="/data/deprecation-timeline/feed.xml">
+
+<div class="deptime-container">
+
+  <!-- Quick Stats Dashboard -->
+  <div class="deptime-stats" id="deptime-stats">
+    <div class="deptime-stat-card deptime-stat-critical">
+      <span class="deptime-stat-number" id="stat-critical">—</span>
+      <span class="deptime-stat-label">🔴 Critical</span>
+    </div>
+    <div class="deptime-stat-card deptime-stat-warning">
+      <span class="deptime-stat-number" id="stat-warning">—</span>
+      <span class="deptime-stat-label">🟠 Warning</span>
+    </div>
+    <div class="deptime-stat-card deptime-stat-watch">
+      <span class="deptime-stat-number" id="stat-watch">—</span>
+      <span class="deptime-stat-label">🟡 Watch</span>
+    </div>
+    <div class="deptime-stat-card deptime-stat-future">
+      <span class="deptime-stat-number" id="stat-future">—</span>
+      <span class="deptime-stat-label">🟢 Future</span>
+    </div>
+    <div class="deptime-stat-card deptime-stat-total">
+      <span class="deptime-stat-number" id="stat-total">—</span>
+      <span class="deptime-stat-label">📊 Total Active</span>
+    </div>
+  </div>
+
+  <!-- Next Deadline Alert -->
+  <div class="deptime-next-alert" id="deptime-next-alert" style="display:none;">
+    <span class="deptime-next-icon">⏰</span>
+    <span class="deptime-next-text" id="deptime-next-text"></span>
+  </div>
+
+  <!-- Controls Row -->
+  <div class="deptime-controls">
+    <div class="deptime-search-wrap">
+      <input type="text" id="deptime-search" class="deptime-search" placeholder="Search deprecations, MC IDs, services..." aria-label="Search deprecations">
+    </div>
+    <div class="deptime-filter-row">
+      <select id="deptime-category-filter" class="deptime-select" aria-label="Filter by category">
+        <option value="">All Categories</option>
+      </select>
+      <select id="deptime-urgency-filter" class="deptime-select" aria-label="Filter by urgency">
+        <option value="">All Urgency Levels</option>
+        <option value="critical">🔴 Critical (&lt;30 days)</option>
+        <option value="warning">🟠 Warning (30-90 days)</option>
+        <option value="watch">🟡 Watch (90-180 days)</option>
+        <option value="future">🟢 Future (180+ days)</option>
+        <option value="passed">⚫ Passed</option>
+      </select>
+      <select id="deptime-type-filter" class="deptime-select" aria-label="Filter by type">
+        <option value="">All Types</option>
+        <option value="retirement">⛔ Retirement</option>
+        <option value="end-of-support">📅 End of Support</option>
+        <option value="breaking-change">💥 Breaking Change</option>
+        <option value="deprecation">⚠️ Deprecation</option>
+        <option value="api-sunset">🔌 API Sunset</option>
+      </select>
+      <select id="deptime-impact-filter" class="deptime-select" aria-label="Filter by impact">
+        <option value="">All Impact</option>
+        <option value="high">🔴 High Impact</option>
+        <option value="medium">🟠 Medium Impact</option>
+        <option value="low">🟢 Low Impact</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Active Filters Chips -->
+  <div class="deptime-active-filters" id="deptime-active-filters" style="display:none;">
+    <span class="deptime-filter-label">Filters:</span>
+    <div id="deptime-chips"></div>
+    <button class="deptime-clear-all" id="deptime-clear-filters">Clear all</button>
+  </div>
+
+  <!-- Results Count -->
+  <div class="deptime-results-info" id="deptime-results-info"></div>
+
+  <!-- View Toggle -->
+  <div class="deptime-view-toggle">
+    <button class="deptime-view-btn active" id="deptime-view-grid" aria-label="Grid view">▦ Grid</button>
+    <button class="deptime-view-btn" id="deptime-view-timeline" aria-label="Timeline view">━ Timeline</button>
+  </div>
+
+  <!-- Timeline View -->
+  <div class="deptime-timeline-view" id="deptime-timeline-view" style="display:none;">
+    <div class="deptime-timeline-scroll" id="deptime-timeline-scroll">
+      <div class="deptime-timeline-track" id="deptime-timeline-track"></div>
+    </div>
+  </div>
+
+  <!-- Card Grid -->
+  <div class="deptime-grid" id="deptime-grid">
+    <div class="deptime-loading">Loading deprecation data...</div>
+  </div>
+
+  <!-- Load More -->
+  <div class="deptime-load-more" id="deptime-load-more" style="display:none;">
+    <button class="deptime-load-btn" id="deptime-load-btn">Load More</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="deptime-footer">
+    <p>Data sourced from Microsoft Learn Lifecycle, Azure Updates, Message Center, and community trackers. Updated daily.</p>
+    <div class="deptime-footer-links">
+      <a href="/data/deprecation-timeline/feed.xml" class="deptime-footer-link">📡 RSS Feed</a>
+      <button class="deptime-footer-link" id="deptime-export-csv">📥 Export CSV</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Detail Modal -->
+<div class="deptime-modal" id="deptime-modal" role="dialog" aria-modal="true" style="display:none;">
+  <div class="deptime-modal-overlay" id="deptime-modal-overlay"></div>
+  <div class="deptime-modal-content" id="deptime-modal-content">
+    <button class="deptime-modal-close" id="deptime-modal-close" aria-label="Close">✕</button>
+    <div id="deptime-modal-body"></div>
+  </div>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "M365 Deprecation Timeline",
+  "url": "https://www.aguidetocloud.com/deprecation-timeline/",
+  "description": "Interactive timeline of Microsoft 365 deprecations, retirements, and end-of-support dates with urgency scoring and migration guidance.",
+  "applicationCategory": "IT Management Tool",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sutheesh S",
+    "url": "https://www.aguidetocloud.com/about/"
+  }
+}
+</script>
+
+<script src="/js/deptime.js?v={{ site.Params.cache_version }}"></script>
+
+{{ end }}

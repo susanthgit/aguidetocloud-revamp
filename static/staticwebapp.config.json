@@ -192,6 +192,10 @@
       "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
     },
     {
+      "route": "/data/deprecation-timeline/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+    },
+    {
       "route": "/css/*",
       "headers": { "Cache-Control": "public, max-age=86400" }
     },

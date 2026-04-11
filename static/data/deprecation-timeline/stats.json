@@ -1,0 +1,102 @@
+{
+  "generated": "2026-04-11T21:45:13.396169+00:00",
+  "total": 52,
+  "active": 41,
+  "passed": 11,
+  "action_required": 40,
+  "urgency": {
+    "critical": 6,
+    "warning": 24,
+    "watch": 10,
+    "future": 1
+  },
+  "categories": {
+    "azure": 20,
+    "teams": 1,
+    "office-apps": 7,
+    "sharepoint": 4,
+    "windows": 6,
+    "exchange": 2,
+    "entra": 1
+  },
+  "types": {
+    "end-of-support": 21,
+    "retirement": 19,
+    "breaking-change": 1
+  },
+  "next_deadline": {
+    "title": "Dynamics NAV 2016 End of Support",
+    "deadline": "2026-04-14",
+    "days_remaining": 2,
+    "urgency": "critical"
+  },
+  "category_meta": {
+    "sharepoint": {
+      "name": "SharePoint",
+      "emoji": "📂",
+      "color": "#038387"
+    },
+    "teams": {
+      "name": "Teams",
+      "emoji": "💬",
+      "color": "#6264A7"
+    },
+    "exchange": {
+      "name": "Exchange",
+      "emoji": "📧",
+      "color": "#0078D4"
+    },
+    "entra": {
+      "name": "Entra ID",
+      "emoji": "🔐",
+      "color": "#0078D4"
+    },
+    "azure": {
+      "name": "Azure",
+      "emoji": "☁️",
+      "color": "#0089D6"
+    },
+    "office-apps": {
+      "name": "Office Apps",
+      "emoji": "📎",
+      "color": "#D83B01"
+    },
+    "windows": {
+      "name": "Windows",
+      "emoji": "🪟",
+      "color": "#0078D6"
+    },
+    "security": {
+      "name": "Security",
+      "emoji": "🛡️",
+      "color": "#E3008C"
+    }
+  },
+  "type_meta": {
+    "retirement": {
+      "name": "Retirement",
+      "emoji": "⛔",
+      "description": "Feature/product completely removed"
+    },
+    "end-of-support": {
+      "name": "End of Support",
+      "emoji": "📅",
+      "description": "No more patches or updates"
+    },
+    "deprecation": {
+      "name": "Deprecation",
+      "emoji": "⚠️",
+      "description": "No new investment, will eventually retire"
+    },
+    "breaking-change": {
+      "name": "Breaking Change",
+      "emoji": "💥",
+      "description": "Existing behaviour changes"
+    },
+    "api-sunset": {
+      "name": "API Sunset",
+      "emoji": "🔌",
+      "description": "Specific API version discontinued"
+    }
+  }
+}

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M365 Deprecation Timeline — A Guide to Cloud</title>
+    <link>https://www.aguidetocloud.com/deprecation-timeline/</link>
+    <description>Microsoft 365 deprecation and retirement timeline — urgency-scored, filterable, with migration guidance.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Apr 2026 21:45:13 GMT</lastBuildDate>
+    <atom:link href="https://www.aguidetocloud.com/data/deprecation-timeline/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>📅 Dynamics NAV 2016 End of Support — 2026-04-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/dynamics-nav-2016</link>
+      <description><![CDATA[🔴 2 days remaining — Dynamics NAV 2016 reaches end of extended support.
+
+Migration: Migrate to Dynamics 365 Business Central.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-dynamics-nav-2016</guid>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Viva Engage Live Events (Teams Live Events) Deprecation — 2026-04-15</title>
+      <link>https://admin.cloud.microsoft/?#/MessageCenter/:/messages/MC1227085</link>
+      <description><![CDATA[🔴 3 days remaining — Viva Engage is retiring live events powered by Teams Live Events. Organizers can no longer schedule new live events using Teams Live Events in Engage. Existing events scheduled before retirement continue until Feb 28, 2027.
+
+Migration: Migrate to Viva Engage events powered by Teams town halls.]]></description>
+      <category>Teams</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-engage-live-events</guid>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>💥 Copilot Removed from Word, Excel, PowerPoint for Unlicensed Users — 2026-04-15</title>
+      <link>https://admin.cloud.microsoft/?#/MessageCenter/:/messages/MC1253858</link>
+      <description><![CDATA[🔴 3 days remaining — Microsoft Copilot features in Word, Excel, and PowerPoint are being removed for users without a Copilot license. Previously available features will require a paid Copilot license.
+
+Migration: Purchase Microsoft 365 Copilot licenses for users who need AI features in Office apps, or use Copilot Chat (free) for basic AI assistance.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-copilot-wxp-unlicensed</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Application Gateway V1 Retirement — 2026-04-28</title>
+      <link>https://azure.microsoft.com/updates/application-gateway-v1-will-be-retired-on-28-april-2026-transition-to-application-gateway-v2/</link>
+      <description><![CDATA[🔴 16 days remaining — Azure Application Gateway V1 SKU will be fully retired.
+
+Migration: Migrate to Application Gateway V2 SKU.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-app-gateway-v1</guid>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ SharePoint Online Legacy Information Management Features Retirement — 2026-04-30</title>
+      <link>https://admin.cloud.microsoft/?#/MessageCenter/:/messages/MC1211579</link>
+      <description><![CDATA[🔴 18 days remaining — SharePoint Online is retiring several legacy compliance and records management features including Information Management Policies, In-Place Records Management, and deletion-only policies for documents.
+
+Migration: Migrate to modern Microsoft Purview capabilities including Data Lifecycle Management and Purview Records Management.]]></description>
+      <category>SharePoint</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sp-legacy-info-mgmt</guid>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 .NET 9 End of Support — 2026-05-12</title>
+      <link>https://learn.microsoft.com/lifecycle/products/microsoft-net-and-net-core</link>
+      <description><![CDATA[🔴 30 days remaining — .NET 9 (STS release) reaches end of support. No more security or non-security updates will be provided.
+
+Migration: Upgrade to .NET 10 (LTS) when available, or continue on .NET 8 (LTS, supported until Nov 2026).]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-dotnet9-eos</guid>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Microsoft Configuration Manager Version 2409 End of Support — 2026-06-06</title>
+      <link>https://learn.microsoft.com/lifecycle/products/microsoft-configuration-manager</link>
+      <description><![CDATA[🟠 55 days remaining — Configuration Manager (SCCM) version 2409 reaches end of servicing.
+
+Migration: Update to the latest current branch version of Configuration Manager.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-config-mgr-2409</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 SharePoint Server 2016 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/sharepoint-server-2016</link>
+      <description><![CDATA[🟠 93 days remaining — SharePoint Server 2016 reaches end of extended support. No security updates, non-security updates, or technical support after this date.
+
+Migration: Migrate to SharePoint Server Subscription Edition or SharePoint Online (Microsoft 365).]]></description>
+      <category>SharePoint</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sharepoint-server-2016</guid>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 SharePoint Server 2019 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/sharepoint-server-2019</link>
+      <description><![CDATA[🟠 93 days remaining — SharePoint Server 2019 reaches end of extended support. No security updates, non-security updates, or technical support after this date.
+
+Migration: Migrate to SharePoint Server Subscription Edition or SharePoint Online (Microsoft 365).]]></description>
+      <category>SharePoint</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sharepoint-server-2019</guid>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Project Server 2016 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/project-server-2016</link>
+      <description><![CDATA[🟠 93 days remaining — Project Server 2016 reaches end of extended support.
+
+Migration: Migrate to Project for the Web or Project Online.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-project-server-2016</guid>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Project Server 2019 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/project-server-2019</link>
+      <description><![CDATA[🟠 93 days remaining — Project Server 2019 reaches end of extended support.
+
+Migration: Migrate to Project for the Web or Project Online.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-project-server-2019</guid>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 SQL Server 2016 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/sql-server-2016</link>
+      <description><![CDATA[🟠 93 days remaining — SQL Server 2016 reaches end of extended support. No more security patches unless you purchase Extended Security Updates (ESU) or migrate to Azure.
+
+Migration: Upgrade to SQL Server 2022, migrate to Azure SQL, or purchase Extended Security Updates.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sql-server-2016</guid>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 InfoPath 2013 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/infopath-2013</link>
+      <description><![CDATA[🟠 93 days remaining — InfoPath 2013 reaches end of extended support. The last version of InfoPath ever released.
+
+Migration: Migrate InfoPath forms to Power Apps or Microsoft Forms.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-infopath-2013</guid>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 SharePoint Designer 2013 End of Support — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/sharepoint-designer-2013</link>
+      <description><![CDATA[🟠 93 days remaining — SharePoint Designer 2013 reaches end of extended support. The last version of SharePoint Designer ever released.
+
+Migration: Use Power Automate for workflows and SharePoint modern experience for page design.]]></description>
+      <category>SharePoint</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sharepoint-designer-2013</guid>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 SQL Server 2014 Extended Security Updates Year 2 End — 2026-07-14</title>
+      <link>https://learn.microsoft.com/lifecycle/products/sql-server-2014</link>
+      <description><![CDATA[🟠 93 days remaining — SQL Server 2014 Extended Security Updates (Year 2) ends. No more security patches available through any program.
+
+Migration: Migrate to Azure SQL or upgrade to SQL Server 2022.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-sql-server-2014-esu2</guid>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure AI Document Intelligence v2.0 API Retirement — 2026-08-31</title>
+      <link>https://azure.microsoft.com/updates/retirement-azure-ai-document-intelligence-v20-api-will-be-retired-on-31-august-2026/</link>
+      <description><![CDATA[🟠 141 days remaining — Azure AI Document Intelligence (formerly Form Recognizer) v2.0 API will be retired.
+
+Migration: Migrate to Azure AI Document Intelligence v3.1 GA or later.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-doc-intel-v20</guid>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Computer Vision API v1.0-v3.1 Retirement — 2026-09-13</title>
+      <link>https://azure.microsoft.com/updates/computer-vision-api-retirements-13-9-2026/</link>
+      <description><![CDATA[🟠 154 days remaining — Azure Computer Vision API versions 1.0, 2.0, 2.1, 3.0, and 3.1 will all be retired simultaneously.
+
+Migration: Migrate to the latest Computer Vision API (v4.0) or Azure AI Vision.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-computer-vision-legacy</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Azure Functions 1.x Runtime Deprecation — 2026-09-14</title>
+      <link>https://azure.microsoft.com/updates/support-for-the-1x-version-of-azure-functions-ends-14-september-2026/</link>
+      <description><![CDATA[🟠 155 days remaining — Support for Azure Functions runtime version 1.x ends. Functions on this runtime will continue to work but receive no patches.
+
+Migration: Upgrade to Azure Functions runtime v4.x.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-functions-1x</guid>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Monitor Data Collector API Retirement — 2026-09-14</title>
+      <link>https://learn.microsoft.com/azure/azure-monitor/logs/custom-logs-migrate</link>
+      <description><![CDATA[🟠 155 days remaining — The Data Collector API (HTTP Data Collector) for Azure Monitor Logs is being retired. Replace with Logs Ingestion API.
+
+Migration: Migrate to the Azure Monitor Logs Ingestion API.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-monitor-data-collector</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Maps Gen1 Price Tier Retirement — 2026-09-15</title>
+      <link>https://azure.microsoft.com/updates/azure-maps-gen1-price-tier-retirement/</link>
+      <description><![CDATA[🟠 156 days remaining — Azure Maps Gen1 pricing tier will be retired. All Gen1 accounts will need to upgrade.
+
+Migration: Upgrade to Azure Maps Gen2 pricing tier.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-maps-gen1</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure API for FHIR Retirement — 2026-09-30</title>
+      <link>https://azure.microsoft.com/updates/azure-api-for-fhir-retirement/</link>
+      <description><![CDATA[🟠 171 days remaining — Azure API for FHIR (Gen 1) will be fully retired. Service will no longer be available.
+
+Migration: Migrate to Azure Health Data Services FHIR service (Gen 2).]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-api-fhir</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Project Online Retirement — 2026-09-30</title>
+      <link>https://learn.microsoft.com/project/project-web-get-started-guide-for-admins</link>
+      <description><![CDATA[🟠 171 days remaining — Project Online is being retired. Organizations must migrate project management to Project for the Web.
+
+Migration: Migrate to Project for the Web. Microsoft provides migration tools and guidance.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-project-online</guid>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Virtual Desktop (Classic) Retirement — 2026-09-30</title>
+      <link>https://learn.microsoft.com/azure/virtual-desktop/virtual-desktop-fall-2019/classic-retirement</link>
+      <description><![CDATA[🟠 171 days remaining — Azure Virtual Desktop (Classic), the Fall 2019 release, will be fully retired.
+
+Migration: Migrate to Azure Virtual Desktop (ARM-based). Use the migration tool provided by Microsoft.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-avd-classic</guid>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Container Log V1 Table Retirement (Azure Monitor) — 2026-09-30</title>
+      <link>https://azure.microsoft.com/updates/transition-to-the-containerlogv2-table-by-30-september-2026/</link>
+      <description><![CDATA[🟠 171 days remaining — The ContainerLog (v1) table in Azure Monitor will be retired. Transition to ContainerLogV2.
+
+Migration: Transition to ContainerLogV2 table which provides better schema and reduced costs.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-container-log-v1</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Service Bus Track 0/1 SDKs and SBMP Protocol Retirement — 2026-09-30</title>
+      <link>https://azure.microsoft.com/updates/retirement-notice-update-your-azure-service-bus-sdk-libraries-by-30-september-2026/</link>
+      <description><![CDATA[🟠 171 days remaining — Legacy Service Bus SDKs (Track 0 and Track 1) and the SBMP protocol will be retired. Also affects legacy control plane APIs.
+
+Migration: Migrate to the latest Azure Service Bus SDK (Track 2) using AMQP protocol.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-servicebus-legacy-sdks</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Exchange Web Services (EWS) Retirement in Exchange Online — 2026-10-01</title>
+      <link>https://mc.merill.net/message/MC1227454</link>
+      <description><![CDATA[🟠 172 days remaining — Exchange Web Services API will be fully retired in Exchange Online. EWS will stop accepting connections from all applications.
+
+Migration: Migrate all EWS-based applications to Microsoft Graph API. Review the EWS to Graph migration guide.]]></description>
+      <category>Exchange</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-ews-exchange-online</guid>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Entra ID Protection Risk Policy Retirement — 2026-10-01</title>
+      <link>https://learn.microsoft.com/entra/id-protection/howto-identity-protection-configure-risk-policies</link>
+      <description><![CDATA[🟠 172 days remaining — Classic Entra ID Protection risk policies will be retired. Policies must be migrated to Conditional Access.
+
+Migration: Migrate risk policies to Conditional Access policies with risk conditions.]]></description>
+      <category>Entra ID</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-entra-risk-policy</guid>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Anomaly Detector Retirement — 2026-10-01</title>
+      <link>https://azure.microsoft.com/updates/ai-services-anomaly-detector-will-be-retired-on-1-october-2026/</link>
+      <description><![CDATA[🟠 172 days remaining — Azure AI Anomaly Detector service will be fully retired and no longer available.
+
+Migration: Migrate to custom anomaly detection solutions using Azure Machine Learning or partner solutions.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-anomaly-detector</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Metrics Advisor Retirement — 2026-10-01</title>
+      <link>https://azure.microsoft.com/updates/ai-services-metrics-advisor-will-be-retired-on-1-october-2026/</link>
+      <description><![CDATA[🟠 172 days remaining — Azure AI Metrics Advisor service will be fully retired.
+
+Migration: Use Azure Monitor or custom solutions for metrics analysis.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-metrics-advisor</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Azure Personalizer Retirement — 2026-10-01</title>
+      <link>https://azure.microsoft.com/updates/ai-services-personalizer-will-be-retired-on-1-october-2026/</link>
+      <description><![CDATA[🟠 172 days remaining — Azure AI Personalizer service will be fully retired.
+
+Migration: Use Azure Machine Learning for personalisation scenarios.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-personalizer</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Microsoft Publisher Retirement — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/publisher-2021</link>
+      <description><![CDATA[🟡 184 days remaining — Microsoft Publisher will be fully retired. The application will no longer be included in Microsoft 365 or available as a standalone product.
+
+Migration: Use Microsoft Designer, Word, or PowerPoint for desktop publishing. Use Canva or Adobe Express for marketing materials.]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-publisher</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Office LTSC 2021 End of Support — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/office-ltsc-2021</link>
+      <description><![CDATA[🟡 184 days remaining — Office LTSC 2021 (perpetual license) reaches end of mainstream support. Includes Access, Excel, OneNote, Outlook, PowerPoint, Project, Publisher, Visio, Word, and Skype for Business LTSC 2021.
+
+Migration: Upgrade to Office LTSC 2024 or migrate to Microsoft 365 Apps (subscription).]]></description>
+      <category>Office Apps</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-office-ltsc-2021</guid>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Windows 10 2016 LTSB End of Support — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/windows-10-2016-ltsb</link>
+      <description><![CDATA[🟡 184 days remaining — Windows 10 Enterprise 2016 LTSB reaches end of extended support.
+
+Migration: Upgrade to Windows 11 or Windows 10 IoT Enterprise LTSC 2021.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-win10-ltsb-2016</guid>
+      <pubDate>Mon, 01 Aug 2016 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Windows Server 2012/R2 Extended Security Updates Year 3 End — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/windows-server-2012-r2</link>
+      <description><![CDATA[🟡 184 days remaining — Windows Server 2012 and 2012 R2 ESU Year 3 ends. Absolutely no more updates after this date unless migrated to Azure.
+
+Migration: Migrate to Windows Server 2022 or Azure. Azure provides free ESUs for Server 2012 workloads.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-win-server-2012-esu3</guid>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Windows 11 Home and Pro Version 24H2 End of Servicing — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/windows-11-home-and-pro</link>
+      <description><![CDATA[🟡 184 days remaining — Windows 11 Home and Pro version 24H2 reaches end of servicing.
+
+Migration: Update to the latest Windows 11 feature update.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-win11-home-pro-24h2</guid>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Windows Server 2022 Moves to Extended Support — 2026-10-13</title>
+      <link>https://learn.microsoft.com/lifecycle/products/windows-server-2022</link>
+      <description><![CDATA[🟢 184 days remaining — Windows Server 2022 mainstream support ends. Moves to extended support phase — security updates continue but no new features or non-security hotfixes.
+
+Migration: No immediate action required. Security updates continue in extended support. Plan future migration to Windows Server 2025.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-win-server-2022-mainstream</guid>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Azure Functions In-Process Model (.NET) End of Support — 2026-11-10</title>
+      <link>https://azure.microsoft.com/updates/retirement-support-for-the-inprocess-model-for-net-apps-in-azure-functions-ends-10-november-2026/</link>
+      <description><![CDATA[🟡 212 days remaining — The in-process hosting model for .NET apps in Azure Functions reaches end of support. Functions continue to run but receive no patches.
+
+Migration: Migrate to the isolated worker model for .NET Azure Functions.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-azure-functions-inprocess</guid>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 .NET 8 LTS End of Support — 2026-11-10</title>
+      <link>https://learn.microsoft.com/lifecycle/products/microsoft-net-and-net-core</link>
+      <description><![CDATA[🟡 212 days remaining — .NET 8 (Long Term Support) reaches end of support.
+
+Migration: Upgrade to .NET 10 (LTS).]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-dotnet8-lts</guid>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 PowerShell 7.4 LTS End of Support — 2026-11-10</title>
+      <link>https://learn.microsoft.com/lifecycle/products/powershell</link>
+      <description><![CDATA[🟡 212 days remaining — PowerShell 7.4 (Long Term Support) reaches end of support.
+
+Migration: Upgrade to PowerShell 7.6 (LTS) when available.]]></description>
+      <category>Azure</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-powershell-74-lts</guid>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>📅 Windows 11 Enterprise and Education Version 23H2 End of Servicing — 2026-11-10</title>
+      <link>https://learn.microsoft.com/lifecycle/products/windows-11-enterprise-and-education</link>
+      <description><![CDATA[🟡 212 days remaining — Windows 11 Enterprise and Education version 23H2 reaches end of servicing.
+
+Migration: Update to the latest Windows 11 feature update.]]></description>
+      <category>Windows</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-win11-ent-edu-23h2</guid>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⛔ Exchange Web Services (EWS) Full Retirement — All Exchange Online — 2027-04-01</title>
+      <link>https://mc.merill.net/message/MC1227454</link>
+      <description><![CDATA[🟡 354 days remaining — Full and final retirement of EWS from Exchange Online. No EWS connections will be accepted from any application after this date.
+
+Migration: Complete migration of all EWS applications to Microsoft Graph API.]]></description>
+      <category>Exchange</category>
+      <guid isPermaLink="false">aguidetocloud-dep-dep-ews-full-retirement</guid>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
