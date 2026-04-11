@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   var activeFilter = 'all';
-  var activeCategory = 'all';
   var searchQuery = '';
-  var chips = document.querySelectorAll('.prompts-chip');
   var rows = document.querySelectorAll('.prompt-row');
   var groups = document.querySelectorAll('.prompts-category-group');
   var emptyEl = document.getElementById('prompts-empty');
   var searchInput = document.getElementById('prompts-search');
-  var categorySelect = document.getElementById('prompts-category');
+  var platformSelect = document.getElementById('prompts-platform');
   var countEl = document.getElementById('prompts-count');
   var clearBtn = document.getElementById('prompts-clear');
 
@@ -20,25 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ── CATEGORY DROPDOWN ──────────────────────
-  if (categorySelect) {
-    categorySelect.addEventListener('change', function () {
-      activeCategory = this.value;
+  // ── PLATFORM DROPDOWN ──────────────────────
+  if (platformSelect) {
+    platformSelect.addEventListener('change', function () {
+      activeFilter = this.value;
       filterAll();
       syncPromptsUrl();
     });
   }
-
-  // ── PLATFORM CHIPS ─────────────────────────
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      chips.forEach(function (c) { c.classList.remove('active'); });
-      this.classList.add('active');
-      activeFilter = this.dataset.filterValue;
-      filterAll();
-      syncPromptsUrl();
-    });
-  });
 
   function filterAll() {
     var totalVisible = 0;
@@ -64,14 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show/hide category groups
     groups.forEach(function (group) {
-      var cat = group.dataset.category;
-
-      // Category dropdown filter
-      if (activeCategory !== 'all' && cat !== activeCategory) {
-        group.style.display = 'none';
-        return;
-      }
-
       // Check if any rows visible in this group
       var hasVisible = false;
       group.querySelectorAll('.prompt-row').forEach(function (r) {
@@ -82,19 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (emptyEl) emptyEl.style.display = totalVisible === 0 ? '' : 'none';
     if (countEl) countEl.textContent = totalVisible;
-    var hasFilters = activeFilter !== 'all' || activeCategory !== 'all' || searchQuery;
+    var hasFilters = activeFilter !== 'all' || searchQuery;
     if (clearBtn) clearBtn.style.display = hasFilters ? '' : 'none';
   }
 
   // ── CLEAR FILTERS ─────────────────────
   if (clearBtn) {
     clearBtn.addEventListener('click', function () {
-      activeFilter = 'all'; activeCategory = 'all'; searchQuery = '';
+      activeFilter = 'all'; searchQuery = '';
       if (searchInput) searchInput.value = '';
-      if (categorySelect) categorySelect.value = 'all';
-      chips.forEach(function (c) { c.classList.remove('active'); });
-      var allChip = document.querySelector('.prompts-chip[data-filter-value="all"]');
-      if (allChip) allChip.classList.add('active');
+      if (platformSelect) platformSelect.value = 'all';
       filterAll();
       syncPromptsUrl();
     });
@@ -158,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function syncPromptsUrl() {
     var p = new URLSearchParams();
     if (activeFilter !== 'all') p.set('platform', activeFilter);
-    if (activeCategory !== 'all') p.set('category', activeCategory);
     if (searchQuery) p.set('q', searchQuery);
     var s = p.toString();
     history.replaceState(null, '', s ? '?' + s : location.pathname);
@@ -167,17 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function readPromptsUrl() {
     var p = new URLSearchParams(location.search);
     var platform = p.get('platform');
-    var category = p.get('category');
     var q = p.get('q');
     var changed = false;
     if (platform) {
       activeFilter = platform;
-      chips.forEach(function (c) { c.classList.remove('active'); if (c.dataset.filterValue === platform) c.classList.add('active'); });
-      changed = true;
-    }
-    if (category && categorySelect) {
-      activeCategory = category;
-      categorySelect.value = category;
+      if (platformSelect) platformSelect.value = platform;
       changed = true;
     }
     if (q && searchInput) {

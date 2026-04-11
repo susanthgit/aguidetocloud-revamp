@@ -78,31 +78,16 @@
   <!-- ── CONTENT ── -->
   <div class="prompts-container">
 
-    {{/* ── TOOLBAR: Search + Category dropdown (main page only) ── */}}
+    {{/* ── TOOLBAR: Search + Platform dropdown (main page only) ── */}}
     {{ if $isMainPage }}
     <div class="prompts-toolbar">
       <input type="text" id="prompts-search" class="prompts-search" placeholder="Search {{ len $allPrompts }} prompts..." autocomplete="off" aria-label="Search prompts">
-      <select id="prompts-category" class="prompts-select" aria-label="Filter by category">
-        <option value="all">All Categories</option>
-        {{ range .Sections.ByWeight }}
-        {{ if gt (len .RegularPages) 0 }}
-        <option value="{{ .File.ContentBaseName }}">{{ with .Params.emoji }}{{ . }}{{ end }} {{ .Title }} ({{ len .RegularPages }})</option>
-        {{ end }}
+      <select id="prompts-platform" class="prompts-select" aria-label="Filter by platform">
+        <option value="all">All Platforms</option>
+        {{ range $key, $val := hugo.Data.platforms }}
+        <option value="{{ $key }}">{{ $val.emoji }} {{ $val.name }}</option>
         {{ end }}
       </select>
-    </div>
-
-    {{/* ── PLATFORM CHIPS ── */}}
-    <div class="prompts-filter-bar">
-      <button class="prompts-chip active" data-filter-type="platform" data-filter-value="all">All Platforms</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="m365-copilot">⚡ M365 Copilot</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="chatgpt">🟢 ChatGPT</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="claude">🟠 Claude</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="gemini">🔵 Gemini</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="notebooklm">📓 NotebookLM</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="dall-e">🎨 DALL-E</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="midjourney">🖼️ Midjourney</button>
-      <button class="prompts-chip" data-filter-type="platform" data-filter-value="perplexity">🔍 Perplexity</button>
     </div>
     <div class="prompts-filter-info">
       <span>Showing <b id="prompts-count">{{ len $allPrompts }}</b> of {{ len $allPrompts }} prompts</span>

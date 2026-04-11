@@ -413,11 +413,14 @@
 }
 
 /* ── SEARCH BAR ─────────────────────────── */
-.ainews-search-wrap {
+/* ── TOOLBAR: Search + Category Dropdown ──── */
+.ainews-toolbar {
+  display: flex;
+  gap: 0.6rem;
   margin-bottom: 0.5rem;
 }
 .ainews-search {
-  width: 100%;
+  flex: 1;
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -434,6 +437,21 @@
 }
 .ainews-search::placeholder {
   color: #504A59;
+}
+.ainews-select {
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #1C1924;
+  color: #E8E4ED;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  cursor: pointer;
+  min-width: 180px;
+}
+.ainews-select:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
 }
 
 /* ── STICKY SEARCH + FILTERS ─────────────── */
@@ -765,25 +783,12 @@
     display: none;
   }
 
-  /* Change 2: Horizontal scrollable category filters */
-  .ainews-categories {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.4rem;
-    scrollbar-width: none; /* Firefox */
+  /* Toolbar: stack on mobile */
+  .ainews-toolbar {
+    flex-direction: column;
   }
-  .ainews-categories::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
-  .ainews-filter {
-    white-space: nowrap;
-    flex-shrink: 0;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.75rem;
+  .ainews-select {
+    min-width: auto;
   }
 
   /* Change 3: Compact tabs + merge stats */
