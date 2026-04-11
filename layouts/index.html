@@ -78,7 +78,7 @@
       <a href="{{ .RelPermalink }}" class="hp-blog-card">
         <time class="hp-blog-date">{{ .Date.Format "Jan 2, 2006" }}</time>
         <h3>{{ .Title }}</h3>
-        {{ with .Description }}<p>{{ . | truncate 100 }}</p>{{ end }}
+        {{ with .Description }}<p>{{ . | truncate 160 }}</p>{{ end }}
         <span class="hp-blog-read">Read more →</span>
       </a>
       {{ end }}
