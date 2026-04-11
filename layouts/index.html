@@ -77,7 +77,7 @@
     </div>
     <div class="video-grid">
       {{ $nonBlog := where .Site.RegularPages "Section" "!=" "blog" }}
-      {{ range first 6 $nonBlog.ByDate.Reverse }}
+      {{ range first 8 $nonBlog.ByDate.Reverse }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>

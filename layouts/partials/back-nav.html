@@ -1,0 +1,29 @@
+{{/*
+  back-nav.html — Universal "← Back to …" pill button.
+  Auto-resolves parent: section pages → .Parent, regular pages → .CurrentSection.
+  Skips rendering if parent is site home (nav handles that).
+  
+  Usage:  {{ partial "back-nav" . }}
+  Override label:  {{ partial "back-nav" (dict "Page" . "Label" "All Plans") }}
+  Override target: {{ partial "back-nav" (dict "Page" . "URL" "/licensing/" "Label" "All Plans") }}
+*/}}
+
+{{ $page   := .Page | default . }}
+{{ $label  := .Label | default "" }}
+{{ $url    := .URL | default "" }}
+
+{{/* Auto-resolve target */}}
+{{ $target := cond $page.IsSection $page.Parent $page.CurrentSection }}
+
+{{ if and (not $url) $target (ne $target site.Home) }}
+  {{ $url = $target.RelPermalink }}
+  {{ if not $label }}
+    {{ $label = $target.Title | default ($target.Section | humanize | title) }}
+  {{ end }}
+{{ end }}
+
+{{ if $url }}
+<nav class="back-nav" aria-label="Back navigation">
+  <a href="{{ $url }}" class="back-nav-link">← Back to {{ $label }}</a>
+</nav>
+{{ end }}
