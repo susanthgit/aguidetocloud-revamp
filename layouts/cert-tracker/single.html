@@ -16,6 +16,7 @@
   <div class="cert-status-banner cert-status-retiring">
     ⚠️ <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
     {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+    {{ with .Params.retirement_date }}<div class="cert-countdown" id="cert-countdown" data-date="{{ . }}"></div>{{ end }}
   </div>
   {{ else if eq .Params.exam_status "retired" }}
   <div class="cert-status-banner cert-status-retired">

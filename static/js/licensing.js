@@ -212,6 +212,31 @@
 
     // Scroll to table
     $('#lic-compare-table-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Update URL for sharing
+    const ids = [...compareSet].join(',');
+    const url = new URL(window.location);
+    url.searchParams.set('compare', ids);
+    url.hash = '';
+    history.replaceState(null, '', url);
+
+    // Show share link
+    const shareHtml = `<div style="margin-top:1rem;text-align:center;">
+      <button class="lic-btn" id="lic-share-compare" style="font-size:0.8rem;">🔗 Copy Share Link</button>
+    </div>`;
+    const existingShare = $('#lic-share-compare');
+    if (!existingShare) {
+      $('#lic-compare-table-section').insertAdjacentHTML('beforeend', shareHtml);
+      setTimeout(() => {
+        const btn = $('#lic-share-compare');
+        if (btn) btn.addEventListener('click', () => {
+          navigator.clipboard.writeText(url.toString()).then(() => {
+            btn.textContent = '✅ Link copied!';
+            setTimeout(() => { btn.textContent = '🔗 Copy Share Link'; }, 2000);
+          });
+        });
+      }, 50);
+    }
   }
 
   function hideCompareTable() {
@@ -461,7 +486,7 @@
 
   function handleHash() {
     const hash = window.location.hash.replace('#', '');
-    if (['compare', 'calculator', 'quiz', 'changelog'].includes(hash)) {
+    if (['compare', 'calculator', 'addons', 'quiz', 'changelog'].includes(hash)) {
       const tab = $(`.lic-tab[data-tab="${hash}"]`);
       if (tab) tab.click();
     }
@@ -595,6 +620,134 @@
 
     // Auto-trigger the comparison table
     setTimeout(() => buildCompareTable(), 100);
+  }
+
+  // ── ADD-ONS ADVISOR ─────────────────────────
+
+  const addonMatrix = {
+    'm365-e3': {
+      has: ['Desktop Apps', 'Exchange 100GB', 'Teams', 'Intune P1', 'Entra P1', 'Defender Endpoint P1', 'Defender O365 P1', 'Windows E3', 'DLP Basic', 'eDiscovery Standard'],
+      addons: [
+        { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon' },
+        { need: 'Teams Phone (PSTN calling)', addon: 'Teams Phone Standard', price: 8, id: 'teams-phone-standard' },
+        { need: 'Full EDR + threat hunting', addon: 'Defender for Endpoint P2', price: 5.20, id: 'defender-endpoint-p2' },
+        { need: 'PIM + risk-based identity', addon: 'Entra ID P2', price: 9, id: 'entra-p2' },
+        { need: 'Insider Risk + advanced compliance', addon: 'Purview Suite', price: 12, id: 'purview-suite' },
+        { need: 'Advanced endpoint management', addon: 'Intune Suite', price: 10, id: 'intune-suite' },
+        { need: 'Employee experience platform', addon: 'Viva Suite', price: 12, id: 'viva-suite' },
+        { need: 'Power BI dashboards', addon: 'Power BI Pro', price: 10, id: 'powerbi-pro' },
+        { need: 'AI meeting recaps + branding', addon: 'Teams Premium', price: 10, id: 'teams-premium' },
+      ],
+      upgrade: { plan: 'Microsoft 365 E5', price: 60, id: 'm365-e5', note: 'Includes Defender P2, Entra P2, Teams Phone, Power BI Pro, Insider Risk, and more. Often cheaper than E3 + multiple add-ons.' }
+    },
+    'm365-e5': {
+      has: ['Everything in E3', 'Entra P2 (PIM)', 'Defender Endpoint P2', 'Defender O365 P2', 'CASB', 'Teams Phone', 'Power BI Pro', 'Insider Risk', 'eDiscovery Premium', 'Windows E5'],
+      addons: [
+        { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon' },
+        { need: 'Advanced endpoint management', addon: 'Intune Suite', price: 10, id: 'intune-suite' },
+        { need: 'Employee experience platform', addon: 'Viva Suite', price: 12, id: 'viva-suite' },
+        { need: 'AI meeting recaps + branding', addon: 'Teams Premium', price: 10, id: 'teams-premium' },
+      ],
+      upgrade: { plan: 'Microsoft 365 E7', price: 99, id: 'm365-e7', note: 'Includes Copilot ($30 value) + Agent 365 + full Entra Suite. Only $9 more than E5+Copilot.' }
+    },
+    'biz-standard': {
+      has: ['Desktop Apps', 'Exchange 50GB', 'Teams', 'OneDrive 1TB', 'SharePoint'],
+      addons: [
+        { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon' },
+        { need: 'Device management + security', addon: 'Upgrade to Business Premium', price: 22, id: 'biz-premium', isUpgrade: true },
+      ],
+      upgrade: { plan: 'Business Premium', price: 22, id: 'biz-premium', note: 'Adds Intune, Defender, Entra P1, and DLP for just $8 more. Best security deal for SMBs.' }
+    },
+    'biz-premium': {
+      has: ['Desktop Apps', 'Exchange 50GB', 'Teams', 'Intune P1', 'Defender for Business', 'Entra P1', 'DLP'],
+      addons: [
+        { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon' },
+        { need: 'AI meeting recaps + branding', addon: 'Teams Premium', price: 10, id: 'teams-premium' },
+        { need: 'Employee experience platform', addon: 'Viva Suite', price: 12, id: 'viva-suite' },
+      ],
+      upgrade: null
+    },
+    'o365-e3': {
+      has: ['Desktop Apps', 'Exchange 100GB', 'Teams', 'DLP Basic', 'eDiscovery Standard'],
+      addons: [
+        { need: 'Device management + identity', addon: 'EMS E3 (Intune + Entra P1)', price: 12, id: 'ems-e3' },
+        { need: 'Full security + device mgmt', addon: 'Upgrade to Microsoft 365 E3', price: 39, id: 'm365-e3', isUpgrade: true },
+        { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon', note: 'Requires M365 E3+ base' },
+      ],
+      upgrade: { plan: 'Microsoft 365 E3', price: 39, id: 'm365-e3', note: 'Includes Intune P1, Entra P1, Defender P1, and Windows E3. The $13 upgrade gets you enterprise security.' }
+    },
+    'o365-e5': {
+      has: ['Desktop Apps', 'Exchange 100GB', 'Teams', 'Teams Phone', 'Power BI Pro', 'eDiscovery Premium'],
+      addons: [
+        { need: 'Device management + identity', addon: 'EMS E5 (Intune + Entra P2)', price: 18, id: 'ems-e5' },
+        { need: 'Full security + compliance', addon: 'Upgrade to Microsoft 365 E5', price: 60, id: 'm365-e5', isUpgrade: true },
+      ],
+      upgrade: { plan: 'Microsoft 365 E5', price: 60, id: 'm365-e5', note: 'Includes full Defender suite, Intune, Entra P2, and Insider Risk. Better value than O365 E5 + EMS E5 separately.' }
+    }
+  };
+
+  function initAddonsAdvisor() {
+    const select = $('#lic-addons-base');
+    if (!select) return;
+
+    select.addEventListener('change', () => {
+      const planId = select.value;
+      renderAddonsResults(planId);
+    });
+  }
+
+  function renderAddonsResults(planId) {
+    const container = $('#lic-addons-results');
+    if (!container) return;
+
+    if (!planId || !addonMatrix[planId]) {
+      container.innerHTML = '';
+      return;
+    }
+
+    const data = addonMatrix[planId];
+    const plan = planMap[planId];
+
+    let html = '';
+
+    // What's already included
+    html += '<div style="margin-bottom:1.5rem;">';
+    html += '<h3 style="color:#22c55e;font-size:1rem;margin-bottom:0.6rem;">✅ Already included in ' + plan.name + '</h3>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:0.4rem;">';
+    data.has.forEach(item => {
+      html += `<span style="padding:0.25rem 0.6rem;border-radius:99px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;font-size:0.78rem;">${item}</span>`;
+    });
+    html += '</div></div>';
+
+    // Available add-ons
+    html += '<h3 style="color:#e2e8f0;font-size:1rem;margin-bottom:0.8rem;">🧩 Available Add-ons</h3>';
+
+    data.addons.forEach(addon => {
+      const detailUrl = planMap[addon.id]?.detail_url || '';
+      html += `<div class="lic-addon-card">
+        <div class="lic-addon-info">
+          <div class="lic-addon-need">${addon.need}</div>
+          <div class="lic-addon-name">${addon.isUpgrade ? '⬆️ ' : ''}${addon.addon}</div>
+          ${addon.note ? `<div class="lic-addon-desc">${addon.note}</div>` : ''}
+        </div>
+        <div style="text-align:right;">
+          <div class="lic-addon-price">${addon.isUpgrade ? '' : '+'}$${addon.price}/mo</div>
+          ${detailUrl ? `<a href="${detailUrl}" class="lic-btn" style="margin-top:0.4rem;font-size:0.75rem;">Details →</a>` : ''}
+        </div>
+      </div>`;
+    });
+
+    // Upgrade suggestion
+    if (data.upgrade) {
+      const u = data.upgrade;
+      html += `<div class="lic-addons-upgrade">
+        <strong>💡 Consider upgrading to ${u.plan} ($${u.price}/mo)</strong>
+        <p>${u.note}</p>
+        <a href="${planMap[u.id]?.detail_url || '/licensing/'}" class="lic-btn lic-btn-primary" style="margin-top:0.5rem;">View ${u.plan} Details →</a>
+      </div>`;
+    }
+
+    container.innerHTML = html;
   }
 
   // ── BUILD YOUR STACK CALCULATOR ─────────────
@@ -791,6 +944,7 @@
     initSearch();
     initPresets();
     initCalculator();
+    initAddonsAdvisor();
     handleHash();
   } catch (e) {
     console.error('[Licensing Simplifier] Init error:', e);

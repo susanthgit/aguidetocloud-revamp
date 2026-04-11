@@ -44,6 +44,29 @@
       {{ .Content }}
     </div>
 
+    {{/* ── RELATED BLOG POSTS ── */}}
+    {{ $planName := .Params.plan_name }}
+    {{ $related := where site.RegularPages "Section" "blog" }}
+    {{ $matched := slice }}
+    {{ range $related }}
+      {{ if or (in (lower .Title) (lower $planName)) (in (lower .Description) (lower $planName)) }}
+        {{ $matched = $matched | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if len $matched }}
+    <div class="lic-related">
+      <h2>📝 Related Blog Posts</h2>
+      <div class="lic-related-list">
+        {{ range first 3 $matched }}
+        <a href="{{ .RelPermalink }}" class="lic-related-link">
+          <span class="lic-related-title">{{ .Title }}</span>
+          <span class="lic-related-date">{{ .Date.Format "Jan 2006" }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
     {{/* ── DISCLAIMER ── */}}
     <div class="lic-disclaimer">
       <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
