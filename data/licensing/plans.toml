@@ -867,22 +867,6 @@ description = "For organisations with 300+ users. Unlimited user count."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Enterprise-All.htm"
 
 [[categories]]
-id = "business"
-name = "Business Plans"
-emoji = "💼"
-accent = "#06b6d4"
-description = "For small and medium businesses with up to 300 users."
-m365maps_all = "https://m365maps.com/files/Microsoft-365-Business-All.htm"
-
-[[categories]]
-id = "frontline"
-name = "Frontline Worker Plans"
-emoji = "👷"
-accent = "#f97316"
-description = "For shift workers, retail staff, and field workers."
-m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
-
-[[categories]]
 id = "copilot"
 name = "Copilot & AI"
 emoji = "🤖"
@@ -961,3 +945,19 @@ emoji = "🪟"
 accent = "#64748b"
 description = "Cloud PCs, Visual Studio, and GitHub Enterprise."
 m365maps_all = "https://m365maps.com/files/Windows-365.htm"
+
+[[categories]]
+id = "business"
+name = "Business Plans"
+emoji = "💼"
+accent = "#06b6d4"
+description = "For small and medium businesses with up to 300 users."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Business-All.htm"
+
+[[categories]]
+id = "frontline"
+name = "Frontline Worker Plans"
+emoji = "👷"
+accent = "#f97316"
+description = "For shift workers, retail staff, and field workers."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"

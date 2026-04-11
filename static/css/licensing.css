@@ -1,18 +1,18 @@
 /* ============================================
    Microsoft Licensing Simplifier
-   Emerald accent · clean comparison cards
+   Rose accent · clean comparison cards
    Tool-first design (compare → quiz → changelog)
    ============================================ */
 
 .lic-page {
-  --lic-accent: #10B981;
-  --lic-accent-hover: #059669;
-  --lic-accent-glow: rgba(16, 185, 129, 0.2);
-  --lic-accent-border: rgba(16, 185, 129, 0.3);
-  --lic-accent-subtle: rgba(16, 185, 129, 0.08);
-  --tool-accent: #10B981;
-  --tool-accent-dim: rgba(16, 185, 129, 0.15);
-  --tool-accent-glow: rgba(16, 185, 129, 0.25);
+  --lic-accent: #F43F5E;
+  --lic-accent-hover: #E11D48;
+  --lic-accent-glow: rgba(244, 63, 94, 0.2);
+  --lic-accent-border: rgba(244, 63, 94, 0.3);
+  --lic-accent-subtle: rgba(244, 63, 94, 0.08);
+  --tool-accent: #F43F5E;
+  --tool-accent-dim: rgba(244, 63, 94, 0.15);
+  --tool-accent-glow: rgba(244, 63, 94, 0.25);
 }
 
 .lic-container {
