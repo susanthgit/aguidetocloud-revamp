@@ -113,9 +113,7 @@
     </div>
   </div>
 
-  <div class="cert-single-nav" style="margin-top:2rem">
-    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Study Guides</a>
-  </div>
+  {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Study Guides") }}
 </div>
 
 <script type="application/ld+json">

@@ -56,6 +56,8 @@
       <div class="ainews-skeleton-card"></div>
     </div>
   </div>
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/ai-news/" "Label" "AI News") }}
 </div>
 <script>
   window.__ainewsCategoryFilter = "{{ .Params.category_filter }}";

@@ -8,9 +8,16 @@
   Override target: {{ partial "back-nav" (dict "Page" . "URL" "/licensing/" "Label" "All Plans") }}
 */}}
 
-{{ $page   := .Page | default . }}
-{{ $label  := .Label | default "" }}
-{{ $url    := .URL | default "" }}
+{{/* Detect calling convention: dict vs raw Page */}}
+{{ $page   := . }}
+{{ $label  := "" }}
+{{ $url    := "" }}
+
+{{ if reflect.IsMap . }}
+  {{ $page  = .Page | default . }}
+  {{ $label = .Label | default "" }}
+  {{ $url   = .URL | default "" }}
+{{ end }}
 
 {{/* Auto-resolve target */}}
 {{ $target := cond $page.IsSection $page.Parent $page.CurrentSection }}

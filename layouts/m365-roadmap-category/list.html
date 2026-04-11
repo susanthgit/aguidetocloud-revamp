@@ -60,4 +60,6 @@
 </script>
 <script>window.__roadmapCategoryFilter = '{{ .Params.roadmap_filter }}';</script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/m365-roadmap/" "Label" "Full Roadmap") }}
 {{ end }}

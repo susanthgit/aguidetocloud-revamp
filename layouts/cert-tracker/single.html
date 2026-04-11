@@ -94,9 +94,7 @@
   </div>
 
   {{/* Back to all exams */}}
-  <div class="cert-single-nav">
-    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Study Guides</a>
-  </div>
+  {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Study Guides") }}
 </div>
 
 {{/* SEO structured data */}}
