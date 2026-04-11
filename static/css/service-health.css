@@ -28,6 +28,129 @@
   padding: 1rem 1rem 3rem;
 }
 
+/* ── Summary Banner ── */
+.shealth-summary {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  background: var(--sh-card);
+  border: 1px solid var(--sh-border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--sh-text-dim);
+}
+.shealth-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.shealth-summary-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sh-text);
+}
+.shealth-summary-value.red { color: var(--sh-red); }
+.shealth-summary-value.green { color: var(--sh-green); }
+.shealth-summary-value.accent { color: var(--sh-accent); }
+
+.shealth-all-ok {
+  text-align: center;
+  padding: 0.8rem;
+  color: var(--sh-green);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── Grid Header ── */
+.shealth-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.shealth-grid-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sh-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.shealth-grid-hint {
+  font-size: 0.7rem;
+  color: var(--sh-text-dim);
+  opacity: 0.6;
+}
+
+/* ── Section Headers ── */
+.shealth-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.2rem 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sh-text);
+}
+.shealth-section-active { color: var(--sh-red); }
+.shealth-active-count {
+  font-size: 0.75rem;
+  background: var(--sh-red);
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* ── Active Incidents Section ── */
+.shealth-active-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.shealth-active-list .shealth-incident {
+  border-left: 3px solid var(--sh-red);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+/* ── Clear Filters Button ── */
+.shealth-clear-btn {
+  background: none;
+  border: 1px solid var(--sh-border);
+  color: var(--sh-text-dim);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.shealth-clear-btn:hover {
+  border-color: var(--sh-accent);
+  color: var(--sh-accent);
+}
+
+/* ── Month Dividers ── */
+.shealth-month-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sh-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.shealth-month-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sh-border);
+}
+
 /* ── Status Grid ── */
 .shealth-status-grid {
   display: grid;

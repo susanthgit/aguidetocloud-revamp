@@ -71,6 +71,61 @@
     return data;
   }
 
+  // ── Render Summary Banner ──
+  function renderSummary(data) {
+    const el = document.getElementById('shealth-summary');
+    if (!el) return;
+
+    const activeCount = data.active_issues || 0;
+    const totalServices = data.total_services || 0;
+    const degradedCount = (data.services || []).filter(s => s.severity > 0).length;
+    const totalIssues = data.total_issues || 0;
+
+    if (degradedCount === 0) {
+      el.innerHTML = `
+        <div class="shealth-all-ok">✅ All ${totalServices} services operational</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value accent">${totalIssues}</span> incidents tracked</div>
+      `;
+    } else {
+      el.innerHTML = `
+        <div class="shealth-summary-item"><span class="shealth-summary-value red">${activeCount}</span> active incidents</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value red">${degradedCount}</span> services affected</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value green">${totalServices - degradedCount}</span> operational</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value accent">${totalIssues}</span> total tracked</div>
+      `;
+    }
+
+    // Add freshness to summary
+    const freshEl = document.getElementById('shealth-freshness');
+    if (freshEl && data.generated_at) {
+      freshEl.textContent = `Last updated: ${timeAgo(data.generated_at)} · Updates every 2 hours`;
+    }
+  }
+
+  // ── Render Active Incidents ──
+  function renderActiveIncidents() {
+    const section = document.getElementById('shealth-active-section');
+    const list = document.getElementById('shealth-active-list');
+    const countEl = document.getElementById('shealth-active-count');
+    if (!section || !list) return;
+
+    const active = allIssues.filter(i => !i.is_resolved);
+
+    if (active.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+
+    section.style.display = '';
+    if (countEl) countEl.textContent = active.length;
+    list.innerHTML = active.map(renderIncident).join('');
+
+    list.querySelectorAll('.shealth-incident').forEach(el => {
+      el.addEventListener('click', () => openModal(el.dataset.id));
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(el.dataset.id); } });
+    });
+  }
+
   // ── Render Service Cards ──
   function renderServiceCards(services) {
     const grid = document.getElementById('shealth-status-grid');
@@ -165,14 +220,23 @@
     const container = document.getElementById('shealth-timeline');
     const meta = document.getElementById('shealth-meta');
     const loadMore = document.getElementById('shealth-load-more');
+    const clearBtn = document.getElementById('shealth-clear-btn');
     if (!container) return;
 
-    const showing = filtered.slice(0, displayCount);
+    // Show/hide clear button based on active filters
+    const hasFilters = (document.getElementById('shealth-search')?.value || '').trim() !== ''
+      || (document.getElementById('shealth-service-filter')?.value || 'all') !== 'all'
+      || (document.getElementById('shealth-status-filter')?.value || 'all') !== 'all';
+    if (clearBtn) clearBtn.style.display = hasFilters ? '' : 'none';
+
+    // For the history section, show only resolved issues (active shown separately above)
+    const historyFiltered = hasFilters ? filtered : filtered.filter(i => i.is_resolved);
+    const showing = historyFiltered.slice(0, displayCount);
     const activeCount = filtered.filter(i => !i.is_resolved).length;
 
     if (meta) {
       meta.innerHTML = `
-        <span><span class="shealth-meta-count">${filtered.length}</span> incident${filtered.length !== 1 ? 's' : ''} found${activeCount > 0 ? ` · <span style="color:var(--sh-red)">${activeCount} active</span>` : ''}</span>
+        <span><span class="shealth-meta-count">${historyFiltered.length}</span> incident${historyFiltered.length !== 1 ? 's' : ''}${hasFilters ? ' match filters' : ' in history'}${activeCount > 0 && hasFilters ? ` · <span style="color:var(--sh-red)">${activeCount} active</span>` : ''}</span>
       `;
     }
 
@@ -182,10 +246,24 @@
       return;
     }
 
-    container.innerHTML = showing.map(renderIncident).join('');
+    // Build HTML with month dividers
+    let html = '';
+    let currentMonth = '';
+    for (const i of showing) {
+      const dt = i.start_time ? new Date(i.start_time) : null;
+      if (dt) {
+        const monthKey = dt.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+        if (monthKey !== currentMonth) {
+          currentMonth = monthKey;
+          html += `<div class="shealth-month-divider">${monthKey}</div>`;
+        }
+      }
+      html += renderIncident(i);
+    }
+    container.innerHTML = html;
 
     if (loadMore) {
-      loadMore.style.display = filtered.length > displayCount ? '' : 'none';
+      loadMore.style.display = historyFiltered.length > displayCount ? '' : 'none';
     }
 
     // Click handlers for incidents (Enter + Space)
@@ -196,6 +274,16 @@
   }
 
   // ── Filters ──
+  function clearFilters() {
+    const search = document.getElementById('shealth-search');
+    const svc = document.getElementById('shealth-service-filter');
+    const status = document.getElementById('shealth-status-filter');
+    if (search) search.value = '';
+    if (svc) svc.value = 'all';
+    if (status) status.value = 'all';
+    applyFilters();
+  }
+
   function applyFilters() {
     const search = (document.getElementById('shealth-search')?.value || '').toLowerCase().trim();
     const svcFilter = document.getElementById('shealth-service-filter')?.value || 'all';
@@ -301,8 +389,10 @@
       allIssues = data.issues || [];
       filtered = [...allIssues];
 
+      renderSummary(data);
       renderServiceCards(allServices);
       populateServiceFilter(allServices);
+      renderActiveIncidents();
       renderTimeline();
       renderFreshness(data.generated_at);
 
@@ -310,6 +400,7 @@
       document.getElementById('shealth-search')?.addEventListener('input', debounce(applyFilters, 250));
       document.getElementById('shealth-service-filter')?.addEventListener('change', applyFilters);
       document.getElementById('shealth-status-filter')?.addEventListener('change', applyFilters);
+      document.getElementById('shealth-clear-btn')?.addEventListener('click', clearFilters);
       document.getElementById('shealth-load-btn')?.addEventListener('click', () => {
         displayCount += PAGE_SIZE;
         renderTimeline();
