@@ -53,6 +53,8 @@ id = "draft_document"
 name = "Draft a document"
 description = "Generate new documents, reports, or content from a prompt"
 category = "content_creation"
+platforms = ["Windows", "Mac", "Web", "iOS", "Android"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic drafting with web context only" }
@@ -69,6 +71,8 @@ id = "rewrite_refine"
 name = "Rewrite & refine text"
 description = "Reword paragraphs, adjust tone, fix grammar, polish language"
 category = "content_creation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic rewriting from Copilot Chat panel" }
@@ -85,6 +89,8 @@ id = "generate_slides"
 name = "Generate slides from prompt"
 description = "Create presentation slides from text prompts, documents, or outlines"
 category = "content_creation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.powerpoint]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic slide creation from prompt" }
@@ -96,6 +102,8 @@ id = "draft_email"
 name = "Draft email replies"
 description = "Generate email responses, compose new emails, or improve existing drafts"
 category = "content_creation"
+platforms = ["Windows", "Mac", "Web", "iOS", "Android"]
+added_date = "2023-11-01"
 [features.availability.outlook]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic drafting with web context" }
@@ -107,6 +115,8 @@ id = "image_generation"
 name = "Image generation"
 description = "Create images from text prompts using DALL-E"
 category = "content_creation"
+platforms = ["Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "full", note = "Standard quality" }
 chat = { state = "full" }
@@ -123,6 +133,8 @@ id = "speaker_notes"
 name = "Generate speaker notes"
 description = "Auto-generate speaker notes for presentation slides"
 category = "content_creation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2024-03-01"
 [features.availability.powerpoint]
 free = { state = "none" }
 chat = { state = "none" }
@@ -138,6 +150,8 @@ id = "summarise_document"
 name = "Summarise a document"
 description = "Condense long documents into key points and summaries"
 category = "summarisation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "partial", note = "Summarise open file with web context" }
@@ -154,6 +168,8 @@ id = "summarise_email"
 name = "Summarise email threads"
 description = "Get quick summaries of long email conversations and threads"
 category = "summarisation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.outlook]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic thread summary" }
@@ -165,6 +181,8 @@ id = "summarise_meeting"
 name = "Summarise meetings"
 description = "Get meeting summaries with key decisions, action items, and follow-ups"
 category = "meetings"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.teams]
 free = { state = "none" }
 chat = { state = "none" }
@@ -176,6 +194,8 @@ id = "summarise_chat"
 name = "Summarise Teams chats"
 description = "Catch up on long Teams chat threads with AI-generated summaries"
 category = "communication"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.teams]
 free = { state = "none" }
 chat = { state = "none" }
@@ -187,6 +207,8 @@ id = "summarise_notes"
 name = "Summarise notebooks"
 description = "Condense and organise large notebooks, extract key points"
 category = "summarisation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.onenote]
 free = { state = "none" }
 chat = { state = "none" }
@@ -198,6 +220,8 @@ id = "summarise_presentation"
 name = "Summarise a presentation"
 description = "Get key points and overview from a PowerPoint deck"
 category = "summarisation"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.powerpoint]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic summary of open deck" }
@@ -213,6 +237,8 @@ id = "data_analysis"
 name = "Analyse data & trends"
 description = "Summarise data, find trends, and highlight key insights in plain language"
 category = "analysis"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.excel]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic analysis of open spreadsheet" }
@@ -224,6 +250,8 @@ id = "formula_generation"
 name = "Generate formulas"
 description = "Build Excel formulas from natural-language descriptions"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.excel]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic formula suggestions" }
@@ -235,6 +263,8 @@ id = "chart_creation"
 name = "Create charts & visuals"
 description = "Generate charts, pivot tables, and visualisations from data"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.excel]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic chart suggestions" }
@@ -246,6 +276,8 @@ id = "what_if"
 name = "What-if analysis"
 description = "Model scenarios and forecast outcomes with natural language"
 category = "analysis"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.excel]
 free = { state = "none" }
 chat = { state = "none" }
@@ -257,6 +289,8 @@ id = "ask_questions"
 name = "Ask questions about content"
 description = "Query documents, spreadsheets, or data for specific information"
 category = "analysis"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "partial", note = "Questions about open document only" }
@@ -287,6 +321,8 @@ id = "coaching_tips"
 name = "Email coaching tips"
 description = "Get suggestions to improve email tone, clarity, and sentiment"
 category = "communication"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.outlook]
 free = { state = "none" }
 chat = { state = "none" }
@@ -298,6 +334,8 @@ id = "action_items"
 name = "Extract action items"
 description = "Identify action items, follow-ups, and tasks from emails and meetings"
 category = "communication"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.outlook]
 free = { state = "none" }
 chat = { state = "none" }
@@ -314,6 +352,8 @@ id = "meeting_prep"
 name = "Meeting preparation"
 description = "Prepare for meetings with relevant context, documents, and past decisions"
 category = "meetings"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.outlook]
 free = { state = "none" }
 chat = { state = "none" }
@@ -330,6 +370,8 @@ id = "realtime_catchup"
 name = "Real-time meeting catch-up"
 description = "Join a meeting late and instantly catch up on what was discussed"
 category = "meetings"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.teams]
 free = { state = "none" }
 chat = { state = "none" }
@@ -345,6 +387,8 @@ id = "file_search"
 name = "Find files across org"
 description = "Search and find documents, emails, and files across your Microsoft 365 tenant"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "none" }
@@ -356,6 +400,8 @@ id = "file_upload"
 name = "Upload files for context"
 description = "Upload documents, images, or PDFs for Copilot to analyse"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "full", note = "Basic file upload" }
 chat = { state = "full" }
@@ -367,6 +413,8 @@ id = "copilot_pages"
 name = "Copilot Pages"
 description = "Save, edit, and share AI-generated content as collaborative pages"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "full" }
@@ -378,6 +426,8 @@ id = "task_creation"
 name = "Create tasks & to-dos"
 description = "Generate tasks, checklists, and action plans from notes or conversations"
 category = "data"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.onenote]
 free = { state = "none" }
 chat = { state = "none" }
@@ -403,6 +453,8 @@ id = "agent_mode"
 name = "Agent Mode (multi-step)"
 description = "Copilot acts as an active collaborator — multi-step reasoning, transparent explanations"
 category = "agents"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "partial", note = "Basic agent mode with web grounding" }
@@ -424,6 +476,8 @@ id = "custom_agents"
 name = "Custom agents"
 description = "Build and deploy custom AI agents via Copilot Studio for specific business workflows"
 category = "agents"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "partial", note = "Pay-as-you-go agents only" }
@@ -440,6 +494,8 @@ id = "work_web_toggle"
 name = "Work / Web mode toggle"
 description = "Switch between org-data-grounded and web-grounded answers"
 category = "agents"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "none", note = "Web mode only" }
@@ -455,6 +511,8 @@ id = "copilot_analytics"
 name = "Copilot Analytics"
 description = "Admin dashboard showing Copilot usage, adoption, and impact metrics"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "none" }
@@ -466,6 +524,8 @@ id = "edp"
 name = "Enterprise data protection"
 description = "Prompts and responses protected — not used to train models, compliant with org policies"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "full" }
@@ -477,6 +537,8 @@ id = "sensitivity_labels"
 name = "Sensitivity label inheritance"
 description = "Copilot-generated content inherits sensitivity labels from source documents"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.word]
 free = { state = "none" }
 chat = { state = "none" }
@@ -498,6 +560,8 @@ id = "dspm_ai"
 name = "Data Security Posture for AI"
 description = "Monitor and manage how Copilot interacts with sensitive data via Microsoft Purview"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "none" }
@@ -509,6 +573,8 @@ id = "dlp_copilot"
 name = "DLP policies for Copilot"
 description = "Apply Data Loss Prevention policies to Copilot interactions"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.copilot_chat]
 free = { state = "none" }
 chat = { state = "none" }
@@ -520,6 +586,8 @@ id = "spo_advanced"
 name = "SharePoint Advanced Management"
 description = "Site ownership policies, data access governance, restricted access control for Copilot readiness"
 category = "admin"
+platforms = ["Windows", "Mac", "Web"]
+added_date = "2023-11-01"
 [features.availability.sharepoint]
 free = { state = "none" }
 chat = { state = "none" }

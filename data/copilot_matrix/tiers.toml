@@ -19,6 +19,7 @@ highlights = [
 ]
 best_for = "Personal use, quick web lookups, casual AI chat"
 data_access = "Public web only"
+licensing_url = ""
 
 [[tiers]]
 id = "chat"
@@ -40,6 +41,7 @@ highlights = [
 best_for = "Organisations wanting free AI chat with enterprise security"
 data_access = "Public web + manually uploaded files"
 important_note = "After April 15, 2026: orgs >2,000 users lose in-app access (web only)"
+licensing_url = ""
 
 [[tiers]]
 id = "pro"
@@ -59,6 +61,7 @@ highlights = [
 ]
 best_for = "Individual power users, freelancers, students wanting premium AI in Office apps"
 data_access = "Public web + local files open in apps"
+licensing_url = ""
 
 [[tiers]]
 id = "m365"
@@ -81,3 +84,4 @@ highlights = [
 ]
 best_for = "Enterprises wanting AI deeply integrated with their work data"
 data_access = "Organisation data (Graph) + public web"
+licensing_url = "/licensing/?compare=m365-e3,m365-e5"
