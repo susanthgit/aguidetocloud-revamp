@@ -183,9 +183,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function timeAgo(d) { if (!d) return ''; var ms = new Date() - new Date(d), m = Math.floor(ms / 60000); if (m < 60) return m + 'm ago'; var h = Math.floor(m / 60); if (h < 24) return h + 'h ago'; var days = Math.floor(h / 24); return days < 7 ? days + 'd ago' : new Date(d).toLocaleDateString('en-NZ', { month: 'short', day: 'numeric' }); }
   function esc(s) { return s ? s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') : ''; }
 
-  // Back to top
-  var btt = document.getElementById('rdmap-btt');
-  if (btt) { window.addEventListener('scroll', function () { btt.classList.toggle('rdmap-btt-show', window.scrollY > 400); }); btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+  // Back-to-top is now global (baseof.html)
 
   // Keyboard: / to focus search
   document.addEventListener('keydown', function (e) { if (e.key === '/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); document.getElementById('rdmap-search').focus(); } });

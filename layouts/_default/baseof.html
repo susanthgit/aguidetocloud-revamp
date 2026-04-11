@@ -112,5 +112,10 @@
       flowchart: { curve: 'basis', padding: 15 }
     });
   </script>
+  <!-- Global back-to-top button (all pages) -->
+  <button class="global-btt" id="global-btt" aria-label="Back to top">↑</button>
+  <script>
+    (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+  </script>
 </body>
 </html>

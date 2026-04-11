@@ -920,6 +920,20 @@ a:hover {
   color: var(--text-secondary);
 }
 
+/* ── GLOBAL: BACK TO TOP ────────────────── */
+.global-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--neon-cyan); color: #0a0a1a; border: 2px solid rgba(102, 255, 255, 0.5);
+  font-size: 1.3rem; font-weight: 900; cursor: pointer;
+  box-shadow: 0 3px 15px rgba(102, 255, 255, 0.35);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  pointer-events: none;
+  display: flex; align-items: center; justify-content: center;
+}
+.global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.global-btt:hover { background: #fff; box-shadow: 0 4px 25px rgba(102, 255, 255, 0.6); }
+
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid rgba(102, 255, 255, 0.2);

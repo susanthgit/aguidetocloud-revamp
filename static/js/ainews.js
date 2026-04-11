@@ -621,6 +621,4 @@ if (ainewsCsvBtn) {
   });
 }
 
-// === BACK TO TOP BUTTON ===
-var ainewsBtt = document.getElementById('ainews-btt');
-if (ainewsBtt) { window.addEventListener('scroll', function () { ainewsBtt.classList.toggle('ainews-btt-show', window.scrollY > 400); }); ainewsBtt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+// Back-to-top is now global (baseof.html)
