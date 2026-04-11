@@ -24,6 +24,24 @@
   padding: 1.5rem 1rem 3rem;
 }
 
+/* ── Value proposition banner ── */
+.cert-value-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--cert-accent-dim);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+}
+.cert-value-item {
+  font-size: 0.85rem;
+  color: var(--cert-text);
+  line-height: 1.4;
+}
+.cert-value-item strong { color: var(--cert-accent); }
+
 /* ── Controls ── */
 .cert-controls {
   display: flex;
@@ -209,6 +227,33 @@
   border-radius: 50%;
   background: #F59E0B;
 }
+
+/* CTA button on cards */
+.cert-card-cta {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--cert-accent);
+  border-top: 1px solid var(--cert-border);
+  transition: color 0.2s;
+}
+.cert-card:hover .cert-card-cta {
+  color: #fff;
+}
+
+/* Status notes on cards */
+.cert-card-status-note {
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+.cert-card-status-retiring { color: #FCD34D; background: rgba(245, 158, 11, 0.08); }
+.cert-card-status-retired { color: #FCA5A5; background: rgba(239, 68, 68, 0.08); }
+.cert-card-status-beta { color: #C4B5FD; background: rgba(139, 92, 246, 0.08); }
 
 /* ── Modal ── */
 .cert-modal {
