@@ -48,7 +48,7 @@
 <button class="ainews-btt" id="ainews-btt" title="Back to top" aria-label="Back to top">&#8593;</button>
 <script>
 window.__ainewsCategoryConfig = {
-  {{ range $key, $val := .Site.Data.ainews_categories }}
+  {{ range $key, $val := hugo.Data.ainews_categories }}
   {{ $val.name | jsonify }}: { emoji: {{ $val.emoji | jsonify }}, color: {{ $val.color | jsonify }} },
   {{ end }}
 };

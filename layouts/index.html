@@ -4,21 +4,74 @@
 
 <div class="container">
 
-  <!-- LATEST VIDEOS -->
+  <!-- 🛠️ FREE TOOLS SHOWCASE -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">🛠️ Free Tools</h2>
+      <a href="/free-tools/" class="section-link">View all →</a>
+    </div>
+    <div class="hp-tools-grid">
+      <a href="/ai-news/" class="hp-tool-card" style="--tool-color: #00e5ff">
+        <span class="hp-tool-emoji">📰</span>
+        <div class="hp-tool-info">
+          <strong>AI News</strong>
+          <span>Daily AI digest — 20 categories, AI summaries, updated 4× daily</span>
+        </div>
+      </a>
+      <a href="/m365-roadmap/" class="hp-tool-card" style="--tool-color: #E5A00D">
+        <span class="hp-tool-emoji">🗺️</span>
+        <div class="hp-tool-info">
+          <strong>M365 Roadmap Tracker</strong>
+          <span>Track every M365 feature — AI summaries, change detection, delay alerts</span>
+        </div>
+      </a>
+      <a href="/prompts/" class="hp-tool-card" style="--tool-color: #A78BFA">
+        <span class="hp-tool-emoji">💡</span>
+        <div class="hp-tool-info">
+          <strong>AI Prompt Library</strong>
+          <span>{{ len (where .Site.RegularPages "Section" "prompts") }} tested prompts for M365 Copilot, ChatGPT, Claude & more</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 🔥 LATEST VIDEOS -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🔥 Latest Videos</h2>
     </div>
     <div class="video-grid">
-      {{/* Exclude blog section — only show video entries from ai-hub, cloud-labs, certs, etc. */}}
       {{ $nonBlog := where .Site.RegularPages "Section" "!=" "blog" }}
-      {{ range first 8 $nonBlog.ByDate.Reverse }}
+      {{ range first 6 $nonBlog.ByDate.Reverse }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>
   </section>
 
-  <!-- FEATURED PICK + CATEGORIES -->
+  <!-- 📝 FROM THE BLOG -->
+  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+  {{ if gt (len $blogPosts) 0 }}
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">📝 From the Blog</h2>
+      <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
+    </div>
+    <div class="hp-blog-list">
+      {{ range first 4 $blogPosts }}
+      <a href="{{ .RelPermalink }}" class="hp-blog-item">
+        <time class="hp-blog-date">{{ .Date.Format "Jan 2006" }}</time>
+        <div class="hp-blog-content">
+          <h3>{{ .Title }}</h3>
+          {{ with .Description }}<p>{{ . | truncate 120 }}</p>{{ end }}
+        </div>
+        <span class="hp-blog-arrow">→</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- ⭐ FEATURED PICK + CATEGORIES -->
   <section class="section">
     <div class="featured-layout">
       <div class="featured-main">
@@ -38,121 +91,62 @@
       </div>
       <div class="featured-sidebar">
         <h4 class="sidebar-title">Jump to a Category</h4>
-        <a href="/ai-hub/" class="sidebar-link sidebar-ai">
-          <span>🤖 AI Hub</span><span class="sidebar-count">17</span>
+        {{ $sections := slice
+          (dict "path" "/ai-hub/" "label" "🤖 AI Hub" "class" "sidebar-ai" "section" "ai-hub")
+          (dict "path" "/cloud-labs/" "label" "☁️ Cloud Labs" "class" "sidebar-cloud" "section" "cloud-labs")
+          (dict "path" "/certifications/" "label" "📜 Certifications" "class" "sidebar-cert" "section" "certifications")
+          (dict "path" "/exam-qa/" "label" "📝 Exam Q&A" "class" "sidebar-cert" "section" "exam-qa")
+          (dict "path" "/interview-prep/" "label" "💼 Interview Prep" "class" "sidebar-cloud" "section" "interview-prep")
+          (dict "path" "/music/" "label" "🎵 Study Music" "class" "sidebar-news" "section" "music")
+        }}
+        {{ range $sections }}
+        <a href="{{ .path }}" class="sidebar-link {{ .class }}">
+          <span>{{ .label }}</span><span class="sidebar-count">{{ len (where $.Site.RegularPages "Section" .section) }}</span>
         </a>
-        <a href="/cloud-labs/" class="sidebar-link sidebar-cloud">
-          <span>☁️ Cloud Labs</span><span class="sidebar-count">19</span>
-        </a>
-        <a href="/certifications/" class="sidebar-link sidebar-cert">
-          <span>📜 Certifications</span><span class="sidebar-count">14</span>
-        </a>
-        <a href="/exam-qa/" class="sidebar-link sidebar-cert">
-          <span>📝 Exam Q&A</span><span class="sidebar-count">18</span>
-        </a>
-        <a href="/interview-prep/" class="sidebar-link sidebar-cloud">
-          <span>💼 Interview Prep</span><span class="sidebar-count">2</span>
-        </a>
-        <a href="/music/" class="sidebar-link sidebar-news">
-          <span>🎵 Study Music</span><span class="sidebar-count">4</span>
-        </a>
+        {{ end }}
       </div>
     </div>
   </section>
 
-  <!-- AI HUB SECTION -->
+  <!-- CATEGORY SECTIONS (2 cards each for tighter homepage) -->
+  {{ $cats := slice
+    (dict "title" "🤖 AI Hub" "section" "ai-hub" "path" "/ai-hub/")
+    (dict "title" "☁️ Cloud Labs" "section" "cloud-labs" "path" "/cloud-labs/")
+    (dict "title" "📜 Certifications" "section" "certifications" "path" "/certifications/")
+    (dict "title" "📝 Exam Q&A" "section" "exam-qa" "path" "/exam-qa/")
+    (dict "title" "💼 Interview Prep" "section" "interview-prep" "path" "/interview-prep/")
+    (dict "title" "🎵 Study Music" "section" "music" "path" "/music/")
+  }}
+  {{ range $cats }}
+  {{ $pages := where $.Site.RegularPages "Section" .section }}
+  {{ if gt (len $pages) 0 }}
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">🤖 AI Hub</h2>
-      <a href="/ai-hub/" class="section-link">View all →</a>
-    </div>
-    <div class="category-pills">
+      <h2 class="section-title">{{ .title }}</h2>
+      <a href="{{ .path }}" class="section-link">View all {{ len $pages }} →</a>
     </div>
     <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "ai-hub") }}
+      {{ range first 2 $pages }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>
   </section>
+  {{ end }}
+  {{ end }}
 
-  <!-- CLOUD LABS SECTION -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">☁️ Cloud Labs</h2>
-      <a href="/cloud-labs/" class="section-link">View all →</a>
-    </div>
-    <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "cloud-labs") }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS SECTION -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">📜 Certifications</h2>
-      <a href="/certifications/" class="section-link">View all →</a>
-    </div>
-    <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "certifications") }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- EXAM Q&A SECTION -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">📝 Exam Q&A</h2>
-      <a href="/exam-qa/" class="section-link">View all →</a>
-    </div>
-    <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "exam-qa") }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- INTERVIEW PREP SECTION -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">💼 Interview Prep</h2>
-      <a href="/interview-prep/" class="section-link">View all →</a>
-    </div>
-    <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "interview-prep") }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- STUDY MUSIC SECTION -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">🎵 Study Music</h2>
-      <a href="/music/" class="section-link">View all →</a>
-    </div>
-    <div class="video-grid">
-      {{ range first 4 (where .Site.RegularPages "Section" "music") }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- STATS + CTA -->
+  <!-- 📊 STATS + CTA -->
   <section class="section">
     <div class="stats-bar">
       <div class="stat">
-        <span class="stat-number">74</span>
+        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "!=" "blog") }}</span>
         <span class="stat-label">Video Tutorials</span>
       </div>
       <div class="stat">
-        <span class="stat-number">14</span>
+        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "certifications") }}</span>
         <span class="stat-label">Certifications</span>
       </div>
       <div class="stat">
-        <span class="stat-number">19</span>
+        <span class="stat-number">{{ len (where .Site.RegularPages "Section" "cloud-labs") }}</span>
         <span class="stat-label">Hands-on Labs</span>
       </div>
       <div class="stat">
@@ -165,26 +159,21 @@
     </div>
   </section>
 
-  <!-- CONNECT BANNER -->
+  <!-- 🌐 CONNECT -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🌐 Connect</h2>
     </div>
     <div class="ecosystem">
-      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <img src="/images/logo_agtc_dark_1.webp" alt="Main Channel" class="eco-logo" loading="lazy">
-        <h3>A Guide to Cloud & AI</h3>
-        <p>Full tutorials & masterclasses</p>
-      </a>
-      <a href="https://www.youtube.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <img src="/images/logo_agtc_dark_2.webp" alt="Bites Channel" class="eco-logo" loading="lazy">
-        <h3>A Guide to Cloud & AI — Bites</h3>
-        <p>Quick 10–20 min lessons</p>
-      </a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer" class="eco-card">
         <div class="eco-icon">💼</div>
         <h3>Connect on LinkedIn</h3>
         <p>Join the community & stay updated</p>
+      </a>
+      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">
+        <img src="/images/logo_agtc_dark_1.webp" alt="Main Channel" class="eco-logo" loading="lazy">
+        <h3>Subscribe on YouTube</h3>
+        <p>Full tutorials & masterclasses</p>
       </a>
       <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer" class="eco-card">
         <div class="eco-icon">☕</div>
