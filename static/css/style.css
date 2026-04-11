@@ -606,7 +606,7 @@ a:hover {
 .is-home .site-nav {
   --nav-accent: transparent;
   border-image: linear-gradient(90deg, #00e5ff, #ff66ff) 1;
-  border-bottom-width: 3px;
+  border-bottom-width: 1px;
   border-bottom-style: solid;
 }
 .welcome-inner {
