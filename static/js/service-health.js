@@ -8,12 +8,14 @@
   'use strict';
 
   const DATA_URL = '/data/service-health/latest.json';
+  const STATS_URL = '/data/service-health/stats.json';
   const INCIDENTS_URL = '/data/service-health/incidents/';
   const PAGE_SIZE = 30;
-  const CACHE_KEY = 'shealth_v1';
+  const CACHE_KEY = 'shealth_v2';
 
   let allIssues = [];
   let allServices = [];
+  let statsData = null;
   let filtered = [];
   let displayCount = PAGE_SIZE;
 
@@ -189,6 +191,25 @@
     });
   }
 
+  // ── Duration Bar Helper ──
+  function parseDurationMinutes(dur) {
+    if (!dur) return 0;
+    let mins = 0;
+    const d = dur.match(/(\d+)d/); if (d) mins += parseInt(d[1]) * 1440;
+    const h = dur.match(/(\d+)h/); if (h) mins += parseInt(h[1]) * 60;
+    const m = dur.match(/(\d+)m/); if (m) mins += parseInt(m[1]);
+    return mins;
+  }
+
+  function renderDurationBar(duration) {
+    const mins = parseDurationMinutes(duration);
+    if (mins <= 0) return '';
+    // Scale: 0-60min = green, 60-360min = yellow, 360+ = red. Max bar at 24h (1440min)
+    const pct = Math.min((mins / 1440) * 100, 100);
+    const color = mins < 60 ? 'var(--sh-green)' : mins < 360 ? 'var(--sh-yellow)' : 'var(--sh-red)';
+    return `<div class="shealth-duration-bar"><div class="shealth-duration-fill" style="width:${pct}%;background:${color}"></div></div>`;
+  }
+
   // ── Render Incident Card ──
   function renderIncident(i) {
     const active = !i.is_resolved;
@@ -203,6 +224,7 @@
             <span class="shealth-badge shealth-badge-service">${i.service_icon} ${escHtml(i.service_short)}</span>
             <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${escHtml(i.status_label)}</span>
             ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge" style="background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.25)">🌍 ${escHtml(i.regions.join(', '))}</span>` : ''}
+            ${i.feature ? `<span class="shealth-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border:1px solid rgba(167,139,250,0.25)">${escHtml(i.feature)}</span>` : ''}
             ${i.update_count > 0 ? `<span style="color:var(--sh-text-dim)">💬 ${i.update_count} updates</span>` : ''}
           </div>
         </div>
@@ -212,6 +234,7 @@
         </div>
       </div>
       ${i.impact ? `<div class="shealth-incident-impact">${escHtml(stripHtml(i.impact))}</div>` : ''}
+      ${i.duration ? renderDurationBar(i.duration) : ''}
     </div>`;
   }
 
@@ -306,6 +329,7 @@
 
     displayCount = PAGE_SIZE;
     renderTimeline();
+    writeUrlState();
   }
 
   // ── Modal ──
@@ -380,6 +404,152 @@
     el.textContent = `Last updated: ${timeAgo(generatedAt)} · Updates every 2 hours`;
   }
 
+  // ── Trend Chart ──
+  function renderTrendChart(stats) {
+    const el = document.getElementById('shealth-trend');
+    if (!el || !stats?.monthly?.length) return;
+
+    const months = stats.monthly.slice(0, 6).reverse(); // last 6 months, oldest first
+    const maxCount = Math.max(...months.map(m => m.incident_count), 1);
+
+    el.innerHTML = `
+      <div class="shealth-trend-title">📈 Monthly Incident Trend</div>
+      <div class="shealth-trend-bars">
+        ${months.map(m => {
+          const pct = Math.max((m.incident_count / maxCount) * 100, 3);
+          const label = new Date(m.month + '-01').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' });
+          return `<div class="shealth-trend-bar-wrap">
+            <span class="shealth-trend-bar-val">${m.incident_count}</span>
+            <div class="shealth-trend-bar" style="height:${pct}%" title="${m.month}: ${m.incident_count} incidents across ${m.services_affected} services"></div>
+            <span class="shealth-trend-bar-label">${label}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  // ── Most Affected Widget ──
+  function renderMostAffected(stats) {
+    const el = document.getElementById('shealth-most-affected');
+    if (!el || !stats?.services?.length) return;
+
+    const top5 = stats.services.slice(0, 5);
+    const maxInc = top5[0]?.total_incidents || 1;
+
+    el.innerHTML = `
+      <div class="shealth-ma-title">🏆 Most Affected Services</div>
+      ${top5.map((s, i) => `
+        <div class="shealth-ma-item">
+          <span class="shealth-ma-rank r${i + 1}">${i + 1}</span>
+          <span class="shealth-ma-name">${s.icon} ${escHtml(s.short_name)}</span>
+          <span class="shealth-ma-count">${s.total_incidents}</span>
+          <div class="shealth-ma-bar-track"><div class="shealth-ma-bar-fill" style="width:${(s.total_incidents / maxInc) * 100}%"></div></div>
+        </div>
+      `).join('')}
+    `;
+  }
+
+  // ── Scorecard ──
+  function renderScorecard(stats) {
+    const el = document.getElementById('shealth-scorecard');
+    if (!el || !stats) return;
+
+    const total = stats.total_incidents_tracked || 0;
+    const services = stats.services || [];
+    const totalDurations = services.reduce((a, s) => a + (s.avg_duration_minutes * s.total_incidents), 0);
+    const avgRes = total > 0 ? Math.round(totalDurations / total) : 0;
+    const avgResStr = avgRes < 60 ? avgRes + 'm' : Math.round(avgRes / 60) + 'h ' + (avgRes % 60) + 'm';
+    const thisMonth = stats.monthly?.[0] || {};
+    const lastMonth = stats.monthly?.[1] || {};
+    const trend = thisMonth.incident_count > lastMonth.incident_count ? '📈 Up' : thisMonth.incident_count < lastMonth.incident_count ? '📉 Down' : '➡️ Same';
+
+    el.innerHTML = `
+      <div class="shealth-sc-title">📋 Quick Stats</div>
+      <div class="shealth-sc-item"><span class="shealth-sc-label">Total incidents tracked</span><span class="shealth-sc-value">${total}</span></div>
+      <div class="shealth-sc-item"><span class="shealth-sc-label">Services with issues</span><span class="shealth-sc-value">${services.length}</span></div>
+      <div class="shealth-sc-item"><span class="shealth-sc-label">Avg resolution time</span><span class="shealth-sc-value">${avgResStr}</span></div>
+      <div class="shealth-sc-item"><span class="shealth-sc-label">This month vs last</span><span class="shealth-sc-value">${trend} (${thisMonth.incident_count || 0} vs ${lastMonth.incident_count || 0})</span></div>
+      <div class="shealth-sc-item"><span class="shealth-sc-label">History since</span><span class="shealth-sc-value">${stats.monthly?.length ? stats.monthly[stats.monthly.length - 1].month : 'N/A'}</span></div>
+    `;
+  }
+
+  // ── Date Lookup ──
+  function dateLookup() {
+    const datePicker = document.getElementById('shealth-date-picker');
+    const svcSelect = document.getElementById('shealth-date-service');
+    const resultEl = document.getElementById('shealth-date-result');
+    if (!datePicker?.value || !resultEl) return;
+
+    const targetDate = datePicker.value; // YYYY-MM-DD
+    const svcFilter = svcSelect?.value || 'all';
+
+    const matches = allIssues.filter(i => {
+      if (svcFilter !== 'all' && i.service !== svcFilter) return false;
+      if (!i.start_time) return false;
+      const start = i.start_time.substring(0, 10);
+      const end = i.end_time ? i.end_time.substring(0, 10) : start;
+      return targetDate >= start && targetDate <= end;
+    });
+
+    if (matches.length === 0) {
+      resultEl.innerHTML = `<div class="shealth-date-result-msg shealth-date-result-ok">✅ No incidents found ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}. All clear!</div>`;
+    } else {
+      resultEl.innerHTML = `
+        <div class="shealth-date-result-msg shealth-date-result-bad">
+          ⚠️ <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
+          ${matches.map(m => `<div style="margin-top:0.4rem;padding-left:1rem">• ${m.service_icon} <strong>${escHtml(m.service_short)}</strong>: ${escHtml(m.title)} <span style="color:var(--sh-text-dim)">(${m.duration || 'ongoing'})</span></div>`).join('')}
+        </div>`;
+    }
+  }
+
+  // ── CSV Export ──
+  function exportCSV() {
+    const data = (filtered.length ? filtered : allIssues);
+    const rows = [['ID', 'Service', 'Title', 'Status', 'Classification', 'Start', 'End', 'Duration', 'Regions', 'Impact']];
+    data.forEach(i => {
+      rows.push([
+        i.id, i.service, `"${(i.title || '').replace(/"/g, '""')}"`, i.status_label,
+        i.classification, i.start_time || '', i.end_time || '', i.duration || '',
+        (i.regions || []).join('; '), `"${(stripHtml(i.impact) || '').replace(/"/g, '""').substring(0, 200)}"`
+      ]);
+    });
+    const csv = rows.map(r => r.join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `service-health-${new Date().toISOString().substring(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ── URL State ──
+  function readUrlState() {
+    const params = new URLSearchParams(window.location.search);
+    const search = params.get('q') || '';
+    const svc = params.get('service') || 'all';
+    const status = params.get('status') || 'all';
+
+    if (search) { const el = document.getElementById('shealth-search'); if (el) el.value = search; }
+    if (svc !== 'all') { const el = document.getElementById('shealth-service-filter'); if (el) el.value = svc; }
+    if (status !== 'all') { const el = document.getElementById('shealth-status-filter'); if (el) el.value = status; }
+  }
+
+  function writeUrlState() {
+    const search = (document.getElementById('shealth-search')?.value || '').trim();
+    const svc = document.getElementById('shealth-service-filter')?.value || 'all';
+    const status = document.getElementById('shealth-status-filter')?.value || 'all';
+
+    const params = new URLSearchParams();
+    if (search) params.set('q', search);
+    if (svc !== 'all') params.set('service', svc);
+    if (status !== 'all') params.set('status', status);
+
+    const qs = params.toString();
+    const url = window.location.pathname + (qs ? '?' + qs : '');
+    window.history.replaceState(null, '', url);
+  }
+
   // ── Init ──
   async function init() {
     try {
@@ -389,11 +559,37 @@
       allIssues = data.issues || [];
       filtered = [...allIssues];
 
+      // Load stats (non-blocking)
+      fetch(STATS_URL).then(r => r.ok ? r.json() : null).then(s => {
+        if (s) {
+          statsData = s;
+          renderTrendChart(s);
+          renderMostAffected(s);
+          renderScorecard(s);
+        }
+      }).catch(() => {});
+
       renderSummary(data);
       renderServiceCards(allServices);
       populateServiceFilter(allServices);
+
+      // Also populate date lookup service dropdown
+      const dateSvc = document.getElementById('shealth-date-service');
+      if (dateSvc) {
+        allServices.filter(s => allIssues.some(i => i.service === s.service))
+          .sort((a, b) => a.short_name.localeCompare(b.short_name))
+          .forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s.service;
+            opt.textContent = `${s.icon} ${s.short_name}`;
+            dateSvc.appendChild(opt);
+          });
+      }
+
+      // Read URL state before rendering
+      readUrlState();
+      applyFilters();
       renderActiveIncidents();
-      renderTimeline();
       renderFreshness(data.generated_at);
 
       // Event listeners
@@ -401,6 +597,8 @@
       document.getElementById('shealth-service-filter')?.addEventListener('change', applyFilters);
       document.getElementById('shealth-status-filter')?.addEventListener('change', applyFilters);
       document.getElementById('shealth-clear-btn')?.addEventListener('click', clearFilters);
+      document.getElementById('shealth-date-btn')?.addEventListener('click', dateLookup);
+      document.getElementById('shealth-csv-btn')?.addEventListener('click', exportCSV);
       document.getElementById('shealth-load-btn')?.addEventListener('click', () => {
         displayCount += PAGE_SIZE;
         renderTimeline();

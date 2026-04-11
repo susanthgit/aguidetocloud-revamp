@@ -470,6 +470,193 @@
 }
 @keyframes shealth-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
+/* ── Analytics Section ── */
+.shealth-analytics { margin-bottom: 0.5rem; }
+
+/* Trend Chart */
+.shealth-trend {
+  background: var(--sh-card);
+  border: 1px solid var(--sh-border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+.shealth-trend-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sh-text-dim);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.shealth-trend-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 80px;
+}
+.shealth-trend-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+.shealth-trend-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: var(--sh-accent);
+  min-height: 2px;
+  transition: height 0.4s ease;
+  position: relative;
+}
+.shealth-trend-bar:hover { opacity: 0.8; }
+.shealth-trend-bar-val {
+  font-size: 0.65rem;
+  color: var(--sh-text);
+  font-weight: 600;
+}
+.shealth-trend-bar-label {
+  font-size: 0.6rem;
+  color: var(--sh-text-dim);
+  white-space: nowrap;
+}
+
+/* Insights Grid */
+.shealth-insights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Most Affected Widget */
+.shealth-most-affected {
+  background: var(--sh-card);
+  border: 1px solid var(--sh-border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.shealth-ma-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sh-text-dim);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.shealth-ma-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.8rem;
+}
+.shealth-ma-rank {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.shealth-ma-rank.r1 { background: var(--sh-red); color: #fff; }
+.shealth-ma-rank.r2 { background: var(--sh-orange); color: #fff; }
+.shealth-ma-rank.r3 { background: var(--sh-yellow); color: #000; }
+.shealth-ma-rank.r4,.shealth-ma-rank.r5 { background: var(--sh-border); color: var(--sh-text-dim); }
+.shealth-ma-name { flex: 1; color: var(--sh-text); }
+.shealth-ma-count { font-weight: 700; color: var(--sh-accent); }
+.shealth-ma-bar-track {
+  width: 60px;
+  height: 5px;
+  background: var(--sh-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.shealth-ma-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--sh-accent);
+  transition: width 0.5s ease;
+}
+
+/* Scorecard */
+.shealth-scorecard {
+  background: var(--sh-card);
+  border: 1px solid var(--sh-border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.shealth-sc-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sh-text-dim);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.shealth-sc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--sh-border);
+}
+.shealth-sc-item:last-child { border-bottom: none; }
+.shealth-sc-label { color: var(--sh-text-dim); }
+.shealth-sc-value { font-weight: 700; color: var(--sh-text); }
+
+/* Date Lookup */
+.shealth-date-lookup {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+.shealth-date-lookup input[type="date"] {
+  flex: 1;
+  min-width: 140px;
+}
+.shealth-date-result {
+  margin-bottom: 1rem;
+}
+.shealth-date-result-msg {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.shealth-date-result-ok {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: var(--sh-green);
+}
+.shealth-date-result-bad {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--sh-text);
+}
+
+/* Duration Bar */
+.shealth-duration-bar {
+  height: 4px;
+  background: var(--sh-border);
+  border-radius: 2px;
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+.shealth-duration-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .shealth-status-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.4rem; }
@@ -480,9 +667,12 @@
   .shealth-incident-right { flex-direction: row; align-items: center; gap: 0.5rem; }
   .shealth-controls { flex-direction: column; }
   .shealth-select { min-width: unset; }
+  .shealth-insights-grid { grid-template-columns: 1fr; }
+  .shealth-date-lookup { flex-direction: column; }
 }
 
 @media (max-width: 480px) {
   .shealth-status-grid { grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); }
   .shealth-modal { padding: 1rem; margin-top: 1rem; }
+  .shealth-trend-bars { gap: 2px; }
 }
