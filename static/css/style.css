@@ -1747,6 +1747,8 @@ pre.mermaid {
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
   .video-grid .video-card:nth-child(n+5) { display: none; }
+  .hp-tools-grid .hp-tool-card:nth-child(n+5) { display: none; }
+  .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
   .ecosystem { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
 }
