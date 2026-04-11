@@ -77,11 +77,20 @@ Build custom dashboards, workflows, and entities using Power Apps and Power Auto
 
 ## Frequently Asked Questions
 
-**Do I need a separate M365 licence?**
+
+**1. Do I need a separate M365 licence?**
+
 Yes. D365 Sales is a standalone product. You'll typically pair it with M365 E3 or E5 for email, Teams, and Office apps.
 
-**Can I start with Professional and upgrade?**
+
+
+**2. Can I start with Professional and upgrade?**
+
 Yes — upgrade anytime. Your data migrates seamlessly. Downgrading is also possible but you'll lose access to Enterprise features.
 
-**What about Salesforce vs D365?**
+
+
+**3. What about Salesforce vs D365?**
+
 D365 Sales integrates natively with the Microsoft ecosystem (Outlook, Teams, Power Platform, Azure). If you're already a Microsoft shop, D365 eliminates integration complexity and third-party costs.
+

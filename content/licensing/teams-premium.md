@@ -66,11 +66,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**Can I mix Teams Premium and standard users?**
+
+**1. Can I mix Teams Premium and standard users?**
+
 Yes. Only users with Premium licences get the premium features. Meetings with mixed attendees work fine — Premium users see the AI recap, others don't.
 
-**Does Teams Premium replace Teams Phone?**
+
+
+**2. Does Teams Premium replace Teams Phone?**
+
 No. Teams Premium is about **meeting features**. Teams Phone ($8/user/month) is about **making phone calls**. They're separate add-ons that complement each other.
 
-**Do I need Teams Premium for ALL meeting participants?**
+
+
+**3. Do I need Teams Premium for ALL meeting participants?**
+
 Only the **meeting organiser** needs Premium to enable branded meetings and advanced webinars. For AI recap, each user who wants to view the recap needs their own Premium licence.
+

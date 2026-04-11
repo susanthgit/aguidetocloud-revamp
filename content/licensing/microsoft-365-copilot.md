@@ -113,11 +113,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**Is Copilot worth $30/user/month?**
+
+**1. Is Copilot worth $30/user/month?**
+
 It depends on the user. For knowledge workers who live in Outlook and Teams, the meeting summaries alone can save 30+ minutes per day. For users who rarely use Office apps, it's probably not worth it.
 
-**Can I try Copilot before committing?**
+
+
+**2. Can I try Copilot before committing?**
+
 Yes. Microsoft offers trial licences (typically 25 seats for 30 days). Ask your Microsoft rep or partner.
 
-**Does Copilot store my prompts?**
+
+
+**3. Does Copilot store my prompts?**
+
 Copilot follows your Microsoft 365 compliance and data residency policies. Prompts are not used to train the AI model. Data stays within your tenant's geographic boundary.
+

@@ -96,11 +96,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**Can I migrate from QuickBooks to Business Central?**
+
+**0. Can I migrate from QuickBooks to Business Central?**
+
 Yes. Microsoft provides data migration tools for QuickBooks, and most implementation partners offer migration services. Typical migration takes 2-4 weeks.
 
-**Is Business Central cloud-only?**
+
+
+**1. Is Business Central cloud-only?**
+
 Business Central is primarily cloud (SaaS on Azure), but on-premises deployment is available for specific compliance needs. The cloud version gets updates automatically.
 
-**Does it integrate with Power BI?**
+
+
+**2. Does it integrate with Power BI?**
+
 Yes — Business Central has built-in Power BI integration. Financial reports, dashboards, and KPIs can be embedded directly in the BC interface.
+

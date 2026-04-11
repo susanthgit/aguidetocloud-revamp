@@ -62,11 +62,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**Do report VIEWERS need a Pro licence?**
+
+**1. Do report VIEWERS need a Pro licence?**
+
 Yes — anyone who views shared Pro reports needs their own Pro licence. Exception: if your org has Power BI Premium capacity (P SKU), viewers can access reports without individual licences.
 
-**Can I embed Power BI in Teams?**
+
+
+**2. Can I embed Power BI in Teams?**
+
 Yes. Power BI tabs in Teams channels and dashboards in Teams meetings are fully supported with Pro licences.
 
-**Is Pro enough for my data team?**
+
+
+**3. Is Pro enough for my data team?**
+
 For most business analysts, Pro is sufficient. Data engineers working with large datasets (>1 GB), needing dataflows, or paginated reports should consider Premium per User ($20).
+

@@ -95,11 +95,20 @@ If you hit the **300-user limit** or need more advanced features, here's the upg
 
 ## Frequently Asked Questions
 
-**Is Business Premium enough for cyber insurance?**
+
+**1. Is Business Premium enough for cyber insurance?**
+
 For most SMBs, yes. It includes MFA (Entra P1), endpoint protection (Defender), device management (Intune), and email security — the four things insurers look for.
 
-**Can I add Copilot to Business Premium?**
+
+
+**2. Can I add Copilot to Business Premium?**
+
 Yes. The Microsoft 365 Copilot add-on ($30/user/month) works with Business Premium.
 
-**What about HIPAA/PCI compliance?**
+
+
+**3. What about HIPAA/PCI compliance?**
+
 Business Premium provides the foundational tools (DLP, encryption, Intune), but serious compliance needs may require Enterprise E5 with Purview Suite.
+

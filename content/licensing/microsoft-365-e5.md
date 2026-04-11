@@ -142,11 +142,20 @@ E5 already includes most security and compliance features, but some organisation
 
 ## Frequently Asked Questions
 
-**Should I give E5 to all users or just some?**
+
+**1. Should I give E5 to all users or just some?**
+
 Most organisations use **mixed licensing** — E5 for security teams, executives, finance, and legal; E3 for everyone else. This is fully supported and the most cost-effective approach.
 
-**Does E5 replace CrowdStrike/Netskope/Splunk?**
+
+
+**2. Does E5 replace CrowdStrike/Netskope/Splunk?**
+
 Potentially. Defender for Endpoint P2 competes with CrowdStrike, Defender for Cloud Apps competes with Netskope, and Sentinel (separate) competes with Splunk. Many organisations consolidate to save costs and reduce integration complexity.
 
-**Is Teams Phone in E5 a full phone system?**
+
+
+**3. Is Teams Phone in E5 a full phone system?**
+
 Yes — E5 includes the Teams Phone System (cloud PBX). You still need a **Calling Plan** or **Direct Routing** for actual PSTN connectivity (making/receiving external calls). The phone system itself is included.
+

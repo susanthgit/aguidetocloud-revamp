@@ -68,11 +68,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**How many apps can I build?**
+
+**1. How many apps can I build?**
+
 Unlimited. Per User has no app limit — you can build and run as many canvas and model-driven apps as you want.
 
-**What is Dataverse?**
+
+
+**2. What is Dataverse?**
+
 Dataverse is Microsoft's managed relational database for Power Platform. Think of it as the "backend" for your apps — tables, relationships, security roles, business rules, and APIs built in.
 
-**Can I share apps with users who don't have a Power Apps licence?**
+
+
+**3. Can I share apps with users who don't have a Power Apps licence?**
+
 Users who RUN your apps need their own licence. Per App ($10/app/user/month) is good for users who only need one specific app. Per User ($20) is better for users who run multiple apps.
+

@@ -91,11 +91,20 @@ flowchart LR
 
 ## Frequently Asked Questions
 
-**What's the difference between Office 365 and Microsoft 365 Business Standard?**
+
+**1. What's the difference between Office 365 and Microsoft 365 Business Standard?**
+
 Microsoft 365 Business Standard is the current name. "Office 365 Business" was the old branding. Same product, new name.
 
-**Can I upgrade from Standard to Premium later?**
+
+
+**2. Can I upgrade from Standard to Premium later?**
+
 Yes — it's a simple licence change in the admin centre. No data migration. Your users keep all their files and email.
 
-**Is 300 users really the limit?**
+
+
+**3. Is 300 users really the limit?**
+
 Yes. If you grow past 300 users, you must switch to Enterprise plans (E3 at $39/user/month). Plan the transition early.
+

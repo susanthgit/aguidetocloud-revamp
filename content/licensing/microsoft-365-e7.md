@@ -109,14 +109,26 @@ Agent 365 is also available standalone at **$15/user/month** for organisations n
 
 ## Frequently Asked Questions
 
-**Is E7 available now?**
+
+**1. Is E7 available now?**
+
 E7 reaches General Availability on **May 1, 2026**. It's available worldwide via Enterprise Agreement (EA), Cloud Solution Provider (CSP), and Web Direct.
 
-**Can I mix E5 and E7 in the same tenant?**
+
+
+**2. Can I mix E5 and E7 in the same tenant?**
+
 Yes. Give E7 to power users, AI champions, and security teams. Keep E5 or E3 for users who don't need Copilot or Agent 365.
 
-**What if I only want Agent 365, not the full E7?**
+
+
+**3. What if I only want Agent 365, not the full E7?**
+
 Agent 365 is available standalone at **$15/user/month**. You can add it to any E3 or E5 licence.
 
-**Is E7 just E5 + Copilot repackaged?**
+
+
+**4. Is E7 just E5 + Copilot repackaged?**
+
 No. E7 adds the **full Entra Suite** (ZTNA, Internet Access, Verified ID) and **Agent 365** — neither of which is available in E5 even with the Copilot add-on. It's a genuine upgrade.
+

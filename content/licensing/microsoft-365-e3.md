@@ -195,17 +195,32 @@ If E3 almost covers your needs but you need one more thing, here are the most co
 
 ## Frequently Asked Questions
 
-**Can I mix E3 and E5 users in the same tenant?**
+
+**1. Can I mix E3 and E5 users in the same tenant?**
+
 Yes! Most organisations give E3 to general staff and E5 to security teams, executives, and finance. This is called "mixed licensing" and is fully supported.
 
-**Can I upgrade from E3 to E5 later?**
+
+
+**2. Can I upgrade from E3 to E5 later?**
+
 Yes — it's a simple licence change in the admin centre. No data migration needed.
 
-**Is Copilot included in E3?**
+
+
+**3. Is Copilot included in E3?**
+
 No. You need the **Microsoft 365 Copilot add-on** ($30/user/month) or upgrade to **M365 E7** ($99/user/month) which includes Copilot.
 
-**Do I still need SCCM/ConfigMgr with E3?**
+
+
+**4. Do I still need SCCM/ConfigMgr with E3?**
+
 E3 includes Intune P1, which can manage devices entirely from the cloud. Many organisations are moving to Intune-only. You can also use co-management (SCCM + Intune together) during the transition.
 
-**What happens to my data if I downgrade from E3?**
+
+
+**5. What happens to my data if I downgrade from E3?**
+
 Your data stays in Exchange, OneDrive, and SharePoint — but features tied to the higher licence (like DLP policies, Conditional Access rules) will stop working. You have a 30-day grace period.
+
