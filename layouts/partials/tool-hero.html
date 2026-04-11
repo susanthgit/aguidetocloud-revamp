@@ -1,0 +1,11 @@
+{{/* Tool Hero — Shared hero section for all Free Tools
+     Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "emoji" "📰" "subtitle" "..." "accent" "#00e5ff") }}
+     All tools get the same structure, just different accent color.
+*/}}
+<div class="tool-hero" style="--hero-accent: {{ .accent }}">
+  <div class="tool-hero-inner">
+    <span class="tool-hero-emoji">{{ .emoji }}</span>
+    <h1 class="tool-hero-title">{{ .title }}</h1>
+    {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>

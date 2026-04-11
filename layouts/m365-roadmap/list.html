@@ -1,10 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/roadmap.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
-<div class="rdmap-hero">
-  <h1>M365 Roadmap Tracker</h1>
-  <p class="rdmap-hero-sub" id="rdmap-hero-sub">Tracking all M365 Features across 11 Products — AI summarised, updated daily</p>
-</div>
+{{ partial "tool-hero.html" (dict "title" "M365 Roadmap Tracker" "emoji" "🗺️" "subtitle" "Tracking all M365 features across 11 products — AI summarised, updated daily" "accent" "#E5A00D") }}
 <div class="rdmap-container">
   <div class="rdmap-controls" id="rdmap-controls">
     <label for="rdmap-search" class="sr-only">Search roadmap items</label>

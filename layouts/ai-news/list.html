@@ -20,9 +20,7 @@
   }
 }
 </script>
-<div class="page-hero ainews-page-hero">
-  <h1>{{ .Title }}</h1>
-</div>
+{{ partial "tool-hero.html" (dict "title" .Title "emoji" "📰" "subtitle" "Daily AI digest across 20 vendor categories — AI summaries, updated 4× daily" "accent" "#00e5ff") }}
 <div class="container">
   <div class="ainews-tabs" role="tablist" aria-label="Time period">
     <button class="ainews-tab active" data-view="daily" role="tab" aria-selected="true">📅 Today</button>

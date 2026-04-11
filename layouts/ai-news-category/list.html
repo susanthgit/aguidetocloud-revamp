@@ -32,15 +32,17 @@
 }
 </script>
 
-<div class="page-hero ainews-page-hero">
-  <!-- Breadcrumb navigation -->
-  <nav aria-label="Breadcrumb" style="font-size: 0.8rem; margin-bottom: 0.5rem; opacity: 0.7;">
-    <a href="/" style="color: var(--neon-cyan);">Home</a> › 
-    <a href="/ai-news/" style="color: var(--neon-cyan);">AI News</a> › 
-    <span>{{ .Title }}</span>
-  </nav>
-  <h1>{{ .Title }}</h1>
-  <p style="color: var(--text-muted); margin-top: 0.5rem; max-width: 700px;">{{ .Description }}</p>
+<div class="tool-hero" style="--hero-accent: #00e5ff">
+  <div class="tool-hero-inner">
+    <nav class="tool-hero-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> › 
+      <a href="/ai-news/">AI News</a> › 
+      <span>{{ .Title }}</span>
+    </nav>
+    <span class="tool-hero-emoji">📰</span>
+    <h1 class="tool-hero-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+  </div>
 </div>
 <div class="container">
   <!-- SEO intro text (visible to search engines) -->
