@@ -461,7 +461,7 @@
 
   function handleHash() {
     const hash = window.location.hash.replace('#', '');
-    if (['compare', 'quiz', 'changelog'].includes(hash)) {
+    if (['compare', 'calculator', 'quiz', 'changelog'].includes(hash)) {
       const tab = $(`.lic-tab[data-tab="${hash}"]`);
       if (tab) tab.click();
     }
@@ -597,6 +597,191 @@
     setTimeout(() => buildCompareTable(), 100);
   }
 
+  // ── BUILD YOUR STACK CALCULATOR ─────────────
+
+  let calcRows = [];
+  let calcNextId = 0;
+
+  function initCalculator() {
+    const addBtn = $('#lic-calc-add');
+    const copyBtn = $('#lic-calc-copy');
+    const resetBtn = $('#lic-calc-reset');
+
+    if (addBtn) addBtn.addEventListener('click', () => addCalcRow());
+    if (copyBtn) copyBtn.addEventListener('click', copyCalcSummary);
+    if (resetBtn) resetBtn.addEventListener('click', resetCalc);
+
+    // Start with one empty row
+    addCalcRow();
+  }
+
+  function addCalcRow(preselectedId) {
+    const id = calcNextId++;
+    calcRows.push({ id, planId: preselectedId || '', users: 0 });
+
+    const container = $('#lic-calc-rows');
+    if (!container) return;
+
+    // Build plan dropdown options grouped by category
+    let options = '<option value="">Select a plan...</option>';
+    categories.forEach(cat => {
+      const catPlans = plans.filter(p => p.category === cat.id && p.price > 0);
+      if (!catPlans.length) return;
+      options += `<optgroup label="${cat.emoji} ${cat.name}">`;
+      catPlans.sort((a, b) => b.price - a.price);
+      catPlans.forEach(p => {
+        const sel = (p.id === preselectedId) ? ' selected' : '';
+        options += `<option value="${p.id}"${sel}>$${p.price} — ${p.name}</option>`;
+      });
+      options += '</optgroup>';
+    });
+
+    const rowHtml = `
+    <div class="lic-calc-row" data-row-id="${id}">
+      <select class="lic-calc-select" data-row="${id}">${options}</select>
+      <input type="number" class="lic-calc-users" data-row="${id}" placeholder="Users" min="0" value="${preselectedId ? 1 : ''}">
+      <div class="lic-calc-line-cost" data-row="${id}">$0</div>
+      <button class="lic-calc-remove" data-row="${id}" aria-label="Remove">&times;</button>
+    </div>`;
+
+    container.insertAdjacentHTML('beforeend', rowHtml);
+
+    // Events for this row
+    const row = container.querySelector(`[data-row-id="${id}"]`);
+    row.querySelector('.lic-calc-select').addEventListener('change', e => {
+      const r = calcRows.find(r => r.id === id);
+      if (r) r.planId = e.target.value;
+      updateCalcTotals();
+    });
+    row.querySelector('.lic-calc-users').addEventListener('input', e => {
+      const r = calcRows.find(r => r.id === id);
+      if (r) r.users = parseInt(e.target.value) || 0;
+      updateCalcTotals();
+    });
+    row.querySelector('.lic-calc-remove').addEventListener('click', () => {
+      calcRows = calcRows.filter(r => r.id !== id);
+      row.remove();
+      updateCalcTotals();
+    });
+
+    updateCalcTotals();
+  }
+
+  function updateCalcTotals() {
+    const totalsEl = $('#lic-calc-totals');
+    if (!totalsEl) return;
+
+    const activeRows = calcRows.filter(r => r.planId && r.users > 0);
+
+    if (!activeRows.length) {
+      totalsEl.innerHTML = '<div class="lic-calc-empty">Add plans above to see your estimated cost</div>';
+      return;
+    }
+
+    let totalMonthly = 0;
+    let totalUsers = 0;
+    let summaryRows = '';
+
+    activeRows.forEach(r => {
+      const plan = planMap[r.planId];
+      if (!plan) return;
+      const lineCost = plan.price * r.users;
+      totalMonthly += lineCost;
+      totalUsers += r.users;
+
+      summaryRows += `<div class="lic-calc-summary-row">
+        <span class="plan-name">${plan.name} × ${r.users} users</span>
+        <span class="plan-cost">$${lineCost.toLocaleString()}/mo</span>
+      </div>`;
+
+      // Update line cost display
+      const lineEl = $(`.lic-calc-line-cost[data-row="${r.id}"]`);
+      if (lineEl) lineEl.textContent = `$${lineCost.toLocaleString()}`;
+    });
+
+    // Clear line costs for empty rows
+    calcRows.filter(r => !r.planId || r.users <= 0).forEach(r => {
+      const lineEl = $(`.lic-calc-line-cost[data-row="${r.id}"]`);
+      if (lineEl) lineEl.textContent = '$0';
+    });
+
+    const totalAnnual = totalMonthly * 12;
+    const avgPerUser = totalUsers > 0 ? (totalMonthly / totalUsers).toFixed(2) : 0;
+
+    let html = `
+    <div class="lic-calc-totals-grid">
+      <div class="lic-calc-total-box">
+        <h3>Monthly Cost</h3>
+        <div class="lic-calc-amount">$${totalMonthly.toLocaleString()}</div>
+        <div style="color:#64748b;font-size:0.78rem;">${totalUsers} users</div>
+      </div>
+      <div class="lic-calc-total-box">
+        <h3>Annual Cost</h3>
+        <div class="lic-calc-amount annual">$${totalAnnual.toLocaleString()}</div>
+        <div style="color:#64748b;font-size:0.78rem;">12 months</div>
+      </div>
+      <div class="lic-calc-total-box">
+        <h3>Avg per User</h3>
+        <div class="lic-calc-amount annual">$${avgPerUser}</div>
+        <div style="color:#64748b;font-size:0.78rem;">per month</div>
+      </div>
+    </div>
+    <div class="lic-calc-summary">${summaryRows}</div>`;
+
+    // July 2026 price impact estimate
+    const julyNote = activeRows.some(r => {
+      const p = planMap[r.planId];
+      return p && ['m365-e3', 'm365-e5', 'biz-basic', 'biz-standard', 'o365-e3', 'o365-e5'].includes(p.id);
+    });
+
+    if (julyNote) {
+      html += `
+      <div class="lic-calc-impact">
+        <div class="lic-calc-impact-title">⚠️ July 2026 Price Changes</div>
+        <p class="lic-calc-impact-detail">Some of your selected plans have price increases effective July 1, 2026. The prices shown above reflect the new pricing. Check the <a href="/licensing/#changelog" style="color:var(--lic-accent);">changelog</a> for details on what changed.</p>
+      </div>`;
+    }
+
+    totalsEl.innerHTML = html;
+  }
+
+  function copyCalcSummary() {
+    const activeRows = calcRows.filter(r => r.planId && r.users > 0);
+    if (!activeRows.length) return;
+
+    let text = 'Microsoft Licensing Stack Estimate\n';
+    text += '='.repeat(40) + '\n\n';
+
+    let total = 0;
+    activeRows.forEach(r => {
+      const plan = planMap[r.planId];
+      if (!plan) return;
+      const cost = plan.price * r.users;
+      total += cost;
+      text += `${plan.name}\n  ${r.users} users × $${plan.price}/mo = $${cost.toLocaleString()}/mo\n\n`;
+    });
+
+    text += '-'.repeat(40) + '\n';
+    text += `Total: $${total.toLocaleString()}/month · $${(total * 12).toLocaleString()}/year\n`;
+    text += `\nGenerated at aguidetocloud.com/licensing/\n`;
+    text += `Prices in USD · April 2026 · Check official Microsoft pricing for latest rates\n`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = $('#lic-calc-copy');
+      if (btn) { btn.textContent = '✅ Copied!'; setTimeout(() => { btn.textContent = '📋 Copy Summary'; }, 2000); }
+    });
+  }
+
+  function resetCalc() {
+    calcRows = [];
+    calcNextId = 0;
+    const container = $('#lic-calc-rows');
+    if (container) container.innerHTML = '';
+    const totals = $('#lic-calc-totals');
+    if (totals) totals.innerHTML = '<div class="lic-calc-empty">Add plans above to see your estimated cost</div>';
+    addCalcRow();
+  }
+
   // ── INIT ────────────────────────────────────
 
   try {
@@ -605,6 +790,7 @@
     renderChangelog();
     initSearch();
     initPresets();
+    initCalculator();
     handleHash();
   } catch (e) {
     console.error('[Licensing Simplifier] Init error:', e);

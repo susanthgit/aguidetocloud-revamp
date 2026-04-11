@@ -191,6 +191,169 @@
   display: none;
 }
 
+/* ── BUILD YOUR STACK CALCULATOR ───────────── */
+
+.lic-calc { max-width: 800px; margin: 0 auto; }
+.lic-calc-intro { text-align: center; margin-bottom: 2rem; }
+.lic-calc-intro h2 { color: #f1f5f9; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.lic-calc-intro p { color: #94a3b8; font-size: 0.95rem; }
+.lic-calc-intro strong { color: var(--lic-accent); }
+
+.lic-calc-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 120px 40px;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+.lic-calc-row:hover { border-color: var(--lic-accent-border); }
+
+.lic-calc-select {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.88rem;
+  width: 100%;
+  cursor: pointer;
+}
+.lic-calc-select:focus { border-color: var(--lic-accent); outline: none; }
+
+.lic-calc-users {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+}
+.lic-calc-users:focus { border-color: var(--lic-accent); outline: none; }
+
+.lic-calc-line-cost {
+  color: var(--lic-accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.lic-calc-remove {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.lic-calc-remove:hover { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+
+#lic-calc-add {
+  margin: 1rem 0 2rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem;
+  border-style: dashed;
+  border-color: #334155;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+#lic-calc-add:hover { border-color: var(--lic-accent); color: var(--lic-accent); }
+
+/* Totals card */
+.lic-calc-totals {
+  background: #1e293b;
+  border: 2px solid var(--lic-accent-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.lic-calc-totals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.lic-calc-total-box h3 {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+.lic-calc-total-box .lic-calc-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--lic-accent);
+  font-family: var(--font-heading);
+}
+.lic-calc-total-box .lic-calc-amount.annual {
+  color: #e2e8f0;
+}
+.lic-calc-total-box .lic-calc-amount.savings {
+  color: #22c55e;
+}
+
+/* Price impact banner */
+.lic-calc-impact {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid var(--lic-accent-border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+.lic-calc-impact-title {
+  color: var(--lic-accent);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.lic-calc-impact-detail { color: #94a3b8; }
+
+/* Line items summary */
+.lic-calc-summary {
+  margin-top: 1rem;
+  border-top: 1px solid #334155;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.lic-calc-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+.lic-calc-summary-row .plan-name { color: #cbd5e1; }
+.lic-calc-summary-row .plan-cost { color: var(--lic-accent); font-weight: 600; }
+
+.lic-calc-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.lic-calc-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .lic-calc-row { grid-template-columns: 1fr 80px 90px 36px; gap: 0.5rem; padding: 0.6rem; }
+  .lic-calc-totals-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+  .lic-calc-total-box .lic-calc-amount { font-size: 1.4rem; }
+}
+
 /* ── QUIZ SCOPE NOTICE ─────────────────────── */
 
 .lic-quiz-scope {
