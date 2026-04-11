@@ -769,8 +769,30 @@
     min-width: auto;
   }
   .prompt-row-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.8rem 0.5rem;
+  }
+  .prompt-row-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.9rem;
+  }
+  .prompt-row {
+    position: relative;
+  }
+  .prompt-row-info {
+    padding-right: 1.5rem;
+  }
+  .prompt-row-platforms {
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.3rem;
+  }
+  .prompt-copy-btn {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
   }
   .prompt-row-desc { display: none; }
   .prompts-chip {
