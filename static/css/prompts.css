@@ -724,7 +724,8 @@
 /* ── RESPONSIVE ─────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .prompt-row-platforms { display: none; }
+  .prompt-row-platforms { font-size: 0.65rem; gap: 0.15rem; }
+  .prompt-platform-badge { padding: 0.1rem 0.35rem; font-size: 0.6rem; }
 }
 
 @media (max-width: 768px) {

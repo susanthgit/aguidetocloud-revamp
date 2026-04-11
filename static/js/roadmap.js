@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       populateProductFilter(data.product_categories || []);
       renderChips(data); render(); renderFreshness(data.generated_at); renderBrowse();
     } catch (e) {
-      document.getElementById('rdmap-content').innerHTML = '<p class="rdmap-empty">Roadmap data not available yet. Check back tomorrow!</p>';
+      document.getElementById('rdmap-content').innerHTML = '<div class="rdmap-empty"><p>⚠️ Roadmap data could not be loaded.</p><button onclick="location.reload()" class="rdmap-clear-btn" style="margin-top:0.8rem">Retry</button></div>';
     }
   }
 
@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var csv = ['ID,Title,Status,Product,GA Date,Delayed,Summary,URL'];
     currentFiltered.forEach(function (i) { csv.push([i.id, '"' + (i.title || '').replace(/"/g, '""') + '"', i.status, (i.products || []).join('; '), i.ga_date || '', i.is_delayed ? 'Yes' : '', '"' + (i.ai_summary || '').replace(/"/g, '""') + '"', i.roadmap_url || ''].join(',')); });
     var b = new Blob([csv.join('\n')], { type: 'text/csv' }), u = URL.createObjectURL(b), a = document.createElement('a'); a.href = u; a.download = 'm365-roadmap-' + new Date().toISOString().slice(0, 10) + '.csv'; a.click(); URL.revokeObjectURL(u);
+    if (window.clarity) window.clarity('event', 'roadmap_csv_export');
   });
 
   // HELPERS

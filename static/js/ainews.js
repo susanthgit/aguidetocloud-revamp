@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No ' + view + ' data available yet — showing today\'s news instead.</p>';
         setTimeout(function() { loadView('daily'); }, 1500);
       } else {
-        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">AI News data not available yet. Check back tomorrow!</p>';
+        grid.innerHTML = '<div style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;"><p>⚠️ Could not load AI News data.</p><button onclick="location.reload()" style="margin-top:0.8rem;padding:0.4rem 1.2rem;border-radius:8px;border:1px solid var(--neon-cyan);background:rgba(102,255,255,0.08);color:var(--neon-cyan);cursor:pointer;font-weight:600">Retry</button></div>';
       }
     }
   }

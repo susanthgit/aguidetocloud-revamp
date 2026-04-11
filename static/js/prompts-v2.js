@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
       navigator.clipboard.writeText(text).then(function () {
         copyBtn.textContent = '✅ Copied!';
         copyBtn.classList.add('copied');
+        if (window.clarity) window.clarity('event', 'prompt_copy');
         setTimeout(function () { copyBtn.textContent = '📋 Copy'; copyBtn.classList.remove('copied'); }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
