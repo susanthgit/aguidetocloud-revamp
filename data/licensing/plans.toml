@@ -65,6 +65,7 @@ features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "share
 
 [[plans]]
 id = "m365-e5"
+detail_url = "/licensing/microsoft-365-e5/"
 name = "Microsoft 365 E5"
 category = "enterprise"
 price = 60
@@ -79,6 +80,7 @@ features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams
 
 [[plans]]
 id = "m365-e7"
+detail_url = "/licensing/microsoft-365-e7/"
 name = "Microsoft 365 E7"
 category = "enterprise"
 price = 99
@@ -109,6 +111,7 @@ features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive
 
 [[plans]]
 id = "biz-standard"
+detail_url = "/licensing/microsoft-365-business-standard/"
 name = "Microsoft 365 Business Standard"
 category = "business"
 price = 14
@@ -123,6 +126,7 @@ features = ["desktop-apps", "web-mobile-apps", "exchange-50gb", "teams", "sharep
 
 [[plans]]
 id = "biz-premium"
+detail_url = "/licensing/microsoft-365-business-premium/"
 name = "Microsoft 365 Business Premium"
 category = "business"
 price = 22
@@ -183,6 +187,7 @@ features = ["web-mobile-apps", "teams", "sharepoint", "entra-p1", "intune-p1", "
 
 [[plans]]
 id = "copilot-addon"
+detail_url = "/licensing/microsoft-365-copilot/"
 name = "Microsoft 365 Copilot"
 category = "copilot"
 price = 30
@@ -341,6 +346,7 @@ features = ["d365-sales-core"]
 
 [[plans]]
 id = "d365-sales-ent"
+detail_url = "/licensing/dynamics-365-sales-enterprise/"
 name = "Dynamics 365 Sales Enterprise"
 category = "d365-crm"
 price = 95
@@ -441,6 +447,7 @@ features = ["d365-scm-core"]
 
 [[plans]]
 id = "d365-bc-essentials"
+detail_url = "/licensing/dynamics-365-business-central/"
 name = "Dynamics 365 Business Central Essentials"
 category = "d365-erp"
 price = 70
@@ -485,6 +492,7 @@ features = ["d365-bc-readonly"]
 
 [[plans]]
 id = "powerapps-user"
+detail_url = "/licensing/power-apps-per-user/"
 name = "Power Apps per User"
 category = "power-platform"
 price = 20
@@ -527,6 +535,7 @@ features = ["pp-powerautomate", "pp-rpa", "pp-dataverse", "pp-premium-connectors
 
 [[plans]]
 id = "powerbi-pro"
+detail_url = "/licensing/power-bi-pro/"
 name = "Power BI Pro"
 category = "power-platform"
 price = 10
@@ -615,6 +624,7 @@ features = ["viva-insights"]
 
 [[plans]]
 id = "teams-premium"
+detail_url = "/licensing/teams-premium/"
 name = "Microsoft Teams Premium"
 category = "teams-addons"
 price = 10
@@ -962,3 +972,4 @@ emoji = "👷"
 accent = "#f97316"
 description = "For shift workers, retail staff, and field workers."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
+
