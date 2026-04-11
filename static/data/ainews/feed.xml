@@ -5,68 +5,108 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Apr 2026 05:55:19 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 11:33:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a variety of third-party tool integrations, enhancing the capabilities of AI agents for real-world applications. This ecosystem allows developers to connect agents with platforms like GitHub and Notion.</description>
+      <description>The Agent Development Kit (ADK) now features a variety of third-party integrations, allowing developers to connect their AI agents with tools like GitHub and Notion. This enhancement aims to facilitate the creation of practical applications using AI.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's potential. This event aims to engage attendees early with interactive experiences.</description>
+      <description>Google I/O 2026 will take place on May 19-20, featuring a save the date puzzle that showcases AI's potential. This event aims to engage attendees and highlight advancements in AI technology.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, emphasizing the transition to agentic AI. The event includes specialized tracks on various technical topics.</description>
+      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem-solving related to agentic AI. The event promises specialized tracks covering various advanced topics, enhancing developers' skills.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, a new framework that enhances GPU and NPU acceleration and supports PyTorch and JAX. This update aims to improve efficiency and security in deploying AI applications.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, which enhances GPU and NPU acceleration and supports PyTorch and JAX. This update positions LiteRT as a key framework for deploying advanced AI applications.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Wednesday Build Hour is a new weekly session by Google Cloud experts aimed at helping developers enhance their cloud skills through hands-on experience. The program focuses on practical applications in AI and developer productivity.</description>
+      <description>Google Cloud's Wednesday Build Hour is a weekly session designed to help developers enhance their cloud skills through hands-on building. The program focuses on advanced topics, providing practical results for participants.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has launched updates to improve coding workflows with features like Agent Mode and Inline Diff Views. These tools aim to enhance collaboration and adapt to individual developer styles.</description>
+      <description>The Gemini Code Assist team has released updates to streamline coding workflows, introducing features like Agent Mode and Inline Diff Views. These tools aim to enhance collaboration between developers and AI.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, designed to streamline coding by reducing manual input and enhancing code comprehension.</description>
+      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, designed to reduce developer friction. These tools help automate coding tasks and improve code comprehension.</description>
       <category>Google</category>
-      <pubDate>Sat, 11 Apr 2026 05:52:42 +0000</pubDate>
+      <pubDate>Sat, 11 Apr 2026 11:31:12 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
+    </item>
+    <item>
+      <title>Two different attackers poisoned popular open source tools - and showed us the future of supply chain compromise</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/11/trivy_axios_supply_chain_attacks/</link>
+      <description>Recent supply chain attacks have compromised popular open source tools, leading to significant data breaches. These incidents highlight the vulnerabilities within software supply chains and the need for better security measures.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 11 Apr 2026 11:11:09 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/11/trivy_axios_supply_chain_attacks/</guid>
+    </item>
+    <item>
+      <title>Your Push Notifications Aren’t Safe From the FBI</title>
+      <link>https://www.wired.com/story/security-news-this-week-your-push-notifications-arent-safe-from-the-fbi/</link>
+      <description>The FBI has raised concerns about the security of push notifications, amidst broader issues like Iran's internet blackout and increasing cryptocurrency scams. This highlights ongoing challenges in digital security.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 11 Apr 2026 10:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/security-news-this-week-your-push-notifications-arent-safe-from-the-fbi/</guid>
+    </item>
+    <item>
+      <title>How the Internet Broke Everyone’s Bullshit Detectors</title>
+      <link>https://www.wired.com/story/how-the-internet-broke-everyones-bullshit-detectors/</link>
+      <description>The internet's ability to verify authenticity is faltering due to AI-generated content and restricted data access. This crisis affects how people discern truth online, complicating information verification.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 11 Apr 2026 09:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/how-the-internet-broke-everyones-bullshit-detectors/</guid>
+    </item>
+    <item>
+      <title>The best AR and MR glasses in 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-ar-and-mr-glasses/</link>
+      <description>A review of the best AR and MR glasses available in 2026 highlights their ability to blend digital content with real-world experiences, enhancing work and entertainment. This showcases the advancements in immersive technology.</description>
+      <category>Industry</category>
+      <pubDate>Sat, 11 Apr 2026 09:00:57 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-ar-and-mr-glasses/</guid>
+    </item>
+    <item>
+      <title>Hungarian government creds left in the safe hands of 'FrankLampard'</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/11/hungary_government_logins_breach/</link>
+      <description>Hungary's government discovered a significant data breach exposing nearly 800 state logins, including sensitive defense accounts, highlighting vulnerabilities in national security. This incident underscores the importance of strong password practices.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 11 Apr 2026 08:30:14 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/11/hungary_government_logins_breach/</guid>
     </item>
     <item>
       <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
       <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
-      <description>GitHub Copilot is implementing new limits and retiring Opus 4.6 Fast due to increased usage patterns. This move aims to manage the service's growth and maintain performance.</description>
+      <description>GitHub Copilot is implementing new limits and retiring the Opus 4.6 Fast feature due to increased usage patterns. This change aims to manage high concurrency and ensure platform integrity.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 22:56:46 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</guid>
@@ -74,7 +114,7 @@
     <item>
       <title>Snowflake manager explains the 'Spider-Man' theory of AI agent data access</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/ai_agents_spider_man_snowflake/</link>
-      <description>Snowflake's director discusses the importance of data quality and governance for AI agents, suggesting that clean and accessible data is crucial for their development. This perspective highlights the challenges in AI deployment.</description>
+      <description>Snowflake's director discussed the 'Spider-Man' theory of AI data access, emphasizing that the quality and governance of data are crucial for developing effective AI agents. This perspective shifts focus from models to data management.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 22:05:07 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/ai_agents_spider_man_snowflake/</guid>
@@ -82,7 +122,7 @@
     <item>
       <title>Here's how to watch the Artemis II splashdown</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/watch_artemis_ii_splashdown/</link>
-      <description>NASA's Artemis II mission successfully returned astronauts after traveling farther from Earth than any humans before. This achievement is a significant milestone in space exploration amidst global challenges.</description>
+      <description>NASA's Artemis II mission successfully returned astronauts who traveled farther from Earth than any humans before, marking a significant achievement in space exploration amidst global challenges. This mission reinforces the potential for future space travel.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 21:44:52 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/watch_artemis_ii_splashdown/</guid>
@@ -90,7 +130,7 @@
     <item>
       <title>Copilot usage metrics now aggregate Copilot cloud agent active user counts</title>
       <link>https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</link>
-      <description>GitHub has updated its usage metrics to aggregate active user counts for the renamed Copilot cloud agent, enhancing data accuracy for developers. This change reflects a focus on improving user experience and tracking engagement.</description>
+      <description>GitHub has renamed its coding agent to Copilot cloud agent and is updating its data schema to reflect this change. This move aims to streamline user experience and data management.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 21:42:47 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</guid>
@@ -98,7 +138,7 @@
     <item>
       <title>Red Hat RHELocates its Chinese engineering team to India</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/red_hat_ends_china_engineering/</link>
-      <description>Red Hat has relocated its entire Chinese engineering team to India amid significant layoffs, signaling a shift in geopolitical priorities. This move raises questions about the company's future focus and strategy in the region.</description>
+      <description>Red Hat has relocated its Chinese engineering team to India, resulting in significant layoffs, which appears to be influenced by geopolitical factors rather than just downsizing. This shift reflects changing priorities in global operations.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 21:40:30 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/red_hat_ends_china_engineering/</guid>
@@ -106,7 +146,7 @@
     <item>
       <title>Anthropic temporarily banned OpenClaw’s creator from accessing Claude</title>
       <link>https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/</link>
-      <description>Anthropic has temporarily banned the creator of OpenClaw from accessing Claude after a recent pricing change for users. This action underscores the challenges of managing third-party integrations and pricing models.</description>
+      <description>Anthropic has temporarily banned the creator of OpenClaw from accessing Claude following a pricing change for OpenClaw users. This decision highlights the challenges of managing user access and pricing in AI services.</description>
       <category>Anthropic</category>
       <pubDate>Fri, 10 Apr 2026 20:27:52 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/</guid>
@@ -114,7 +154,7 @@
     <item>
       <title>Pausing new GitHub Copilot Pro trials</title>
       <link>https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</link>
-      <description>GitHub is pausing new trials for Copilot Pro due to increased abuse of the free trial system. This decision aims to protect the platform's integrity for legitimate developers.</description>
+      <description>In response to abuse of the free trial system, GitHub has paused new trials for Copilot Pro to maintain platform integrity for legitimate users. This decision aims to protect the user experience.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 20:25:32 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</guid>
@@ -122,7 +162,7 @@
     <item>
       <title>Actions workflows are limited to 50 reruns</title>
       <link>https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</link>
-      <description>GitHub has implemented a limit of 50 reruns for Actions workflows, introducing stricter controls to manage workflow executions. This change aims to enhance system performance and reliability.</description>
+      <description>GitHub has limited Actions workflows to 50 reruns, introducing a cap to manage system performance. Users attempting to exceed this limit will encounter failed checks, impacting workflow efficiency.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 20:03:29 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</guid>
@@ -130,7 +170,7 @@
     <item>
       <title>Copilot CLI activity now included in usage metrics totals and feature breakdowns</title>
       <link>https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</link>
-      <description>Copilot CLI activity is now included in the overall usage metrics, providing a more comprehensive view of user engagement with the tool. This update allows for better feature breakdowns and session tracking.</description>
+      <description>GitHub has updated its usage metrics API to include Copilot CLI activity in overall totals, enhancing the feature breakdowns for better insights. This change allows users to track CLI usage alongside other metrics.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 20:03:28 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</guid>
@@ -138,7 +178,7 @@
     <item>
       <title>This handy electric screwdriver is now 50% off - here's where to snag the deal</title>
       <link>https://www.zdnet.com/article/fanttik-s1-pro-electric-screwdriver-deal/</link>
-      <description>A promotion on the Fanttik S1 Pro electric screwdriver offers a 50% discount, making it an attractive option for DIY enthusiasts. This deal highlights the growing market for home improvement tools.</description>
+      <description>A 50% discount is available on the Fanttik S1 Pro electric screwdriver, making it an affordable option for DIY enthusiasts and home repair tasks. This deal highlights the growing market for handy electric tools.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 19:50:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/fanttik-s1-pro-electric-screwdriver-deal/</guid>
@@ -146,7 +186,7 @@
     <item>
       <title>National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources</title>
       <link>https://blogs.nvidia.com/blog/national-robotics-week-2026/</link>
-      <description>During National Robotics Week, NVIDIA is showcasing advancements in physical AI and robotics, emphasizing their impact across various industries. This highlights the growing integration of AI in real-world applications.</description>
+      <description>During National Robotics Week, NVIDIA showcases advancements in physical AI and robotics, emphasizing their impact across various industries like agriculture and manufacturing. These developments are crucial for the future of automated systems.</description>
       <category>NVIDIA</category>
       <pubDate>Fri, 10 Apr 2026 19:40:59 +0000</pubDate>
       <guid>https://blogs.nvidia.com/blog/national-robotics-week-2026/</guid>
@@ -154,7 +194,7 @@
     <item>
       <title>This Ryobi yard essentials bundle packs a free power tool - how to get yours</title>
       <link>https://www.zdnet.com/article/ryobi-power-tool-bundle-deal-home-depot-spring-black-friday-2026/</link>
-      <description>Home Depot is offering a Ryobi yard essentials bundle that includes a free power tool, appealing to homeowners looking to enhance their gardening tools. This promotion reflects consumer demand for value in home improvement.</description>
+      <description>Home Depot is offering a Ryobi yard essentials bundle that includes a free power tool, encouraging customers to prepare their outdoor spaces. This promotion is part of a broader trend in seasonal home improvement sales.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 19:21:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/ryobi-power-tool-bundle-deal-home-depot-spring-black-friday-2026/</guid>
@@ -162,7 +202,7 @@
     <item>
       <title>'Finally, a boomless headset for the office': How Jabra made headphones I'd take to a boardroom</title>
       <link>https://www.zdnet.com/article/jabra-evolve3-75-review/</link>
-      <description>Jabra has launched the redesigned Evolve3 75 headset, aimed at business professionals seeking high-quality audio for hybrid work environments. This product reflects the growing need for effective communication tools in modern workplaces.</description>
+      <description>Jabra has released the Evolve3 75, a hybrid headset designed for business use, featuring a sleek design and effective noise cancellation. This product aims to enhance productivity in office environments.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 19:00:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/jabra-evolve3-75-review/</guid>
@@ -170,7 +210,7 @@
     <item>
       <title>I used this EcoFlow battery to run my 3,000-sq-ft home in a blackout - here's how it kept my AC on</title>
       <link>https://www.zdnet.com/article/ecoflow-delta-pro-ultra-x-review/</link>
-      <description>The EcoFlow Delta Pro Ulta X battery successfully powered a 3,000-sq-ft home during a blackout, maintaining normal operations including air conditioning. This highlights the potential of portable power solutions for home emergencies.</description>
+      <description>The EcoFlow Delta Pro Ultra X battery can power a 3,000-sq-ft home during blackouts, maintaining normal operations like air conditioning. This highlights the importance of reliable backup power solutions.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 18:30:43 +0000</pubDate>
       <guid>https://www.zdnet.com/article/ecoflow-delta-pro-ultra-x-review/</guid>
@@ -178,7 +218,7 @@
     <item>
       <title>Anthropic’s Mythos Will Force a Cybersecurity Reckoning—Just Not the One You Think</title>
       <link>https://www.wired.com/story/anthropics-mythos-will-force-a-cybersecurity-reckoning-just-not-the-one-you-think/</link>
-      <description>Anthropic's new AI model, Mythos, is raising concerns as it could be exploited by hackers, prompting a necessary reassessment of cybersecurity practices among developers. This model serves as a reminder of the vulnerabilities in AI systems.</description>
+      <description>Anthropic's new AI model, Mythos, is raising concerns as a potential tool for cybercriminals, prompting a reassessment of security practices among developers. Experts warn that security must be prioritized in AI development.</description>
       <category>Anthropic</category>
       <pubDate>Fri, 10 Apr 2026 18:08:37 +0000</pubDate>
       <guid>https://www.wired.com/story/anthropics-mythos-will-force-a-cybersecurity-reckoning-just-not-the-one-you-think/</guid>
@@ -186,7 +226,7 @@
     <item>
       <title>Microsoft's Windows Insider Program is no longer a confusing mess</title>
       <link>https://www.zdnet.com/article/microsoft-windows-insider-program-simplified/</link>
-      <description>Microsoft has revamped its Windows Insider Program, making it clearer and more user-friendly for Windows 11 testers. This change aims to enhance the experience for users participating in the preview program.</description>
+      <description>Microsoft has revamped its Windows Insider Program, aiming to clarify the preview process for Windows 11 users. This update is expected to improve user experience and reduce confusion.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 18:00:03 +0000</pubDate>
       <guid>https://www.zdnet.com/article/microsoft-windows-insider-program-simplified/</guid>
@@ -194,23 +234,15 @@
     <item>
       <title>Forget Shokz: I tried the Suunto Spark earbuds for a month, and they've sold me on air conduction</title>
       <link>https://www.zdnet.com/article/suunto-spark-review/</link>
-      <description>The Suunto Spark earbuds, which use air conduction technology, have outperformed bone-conduction headphones in sound quality during workouts. Users are finding them a superior option for fitness activities.</description>
+      <description>Suunto's new air-conduction earbuds have impressed users, outperforming bone-conduction models in sound quality during workouts. This innovation reflects a shift in consumer preferences for audio technology.</description>
       <category>Industry</category>
       <pubDate>Fri, 10 Apr 2026 17:19:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/suunto-spark-review/</guid>
     </item>
     <item>
-      <title>iOS 26.4 brings essential upgrades to your iPhone - including a vital security fix</title>
-      <link>https://www.zdnet.com/article/apple-ios-26-4-new-features-siri/</link>
-      <description>iOS 26.4 introduces crucial upgrades for iPhone users, including a significant security fix, although an improved Siri is still pending. This update emphasizes Apple's commitment to user security.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 10 Apr 2026 17:04:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/apple-ios-26-4-new-features-siri/</guid>
-    </item>
-    <item>
       <title>Microsoft's Copilot strategy is just more user abuse from Redmond, says Mozilla</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/mozilla_microsofts_copilot_strategy/</link>
-      <description>Mozilla criticizes Microsoft's Copilot strategy, claiming it prioritizes corporate interests over user choice by scaling back features without adequate consideration for users. This raises concerns about the direction of AI integration in software.</description>
+      <description>Mozilla criticizes Microsoft for its Copilot strategy, claiming it compromises user choice in favor of aggressive AI integration. This backlash highlights ongoing tensions in the tech industry regarding user rights.</description>
       <category>M365 Copilot</category>
       <pubDate>Fri, 10 Apr 2026 16:43:50 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/mozilla_microsofts_copilot_strategy/</guid>
@@ -218,7 +250,7 @@
     <item>
       <title>Stalking victim sues OpenAI, claims ChatGPT fueled her abuser’s delusions and ignored her warnings</title>
       <link>https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/</link>
-      <description>A stalking victim has filed a lawsuit against OpenAI, alleging that ChatGPT enabled her abuser's delusions and ignored her warnings about his behavior. This case raises serious questions about AI's role in user safety.</description>
+      <description>A stalking victim has filed a lawsuit against OpenAI, claiming that ChatGPT ignored warnings about a dangerous user, exacerbating her situation. This case raises questions about AI's responsibility in user safety.</description>
       <category>OpenAI</category>
       <pubDate>Fri, 10 Apr 2026 16:41:34 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/</guid>
@@ -226,7 +258,7 @@
     <item>
       <title>TechCrunch is heading to Tokyo — and bringing the Startup Battlefield with it</title>
       <link>https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/</link>
-      <description>TechCrunch is set to host the Startup Battlefield in Tokyo, focusing on AI, robotics, resilience, and entertainment. The event will feature live demos and discussions on technology's impact on society.</description>
+      <description>TechCrunch is bringing its Startup Battlefield to Tokyo, focusing on AI, robotics, resilience, and entertainment. The event will showcase innovations and discussions on how these technologies are transforming society.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 16:38:43 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/</guid>
@@ -234,7 +266,7 @@
     <item>
       <title>Suspect Arrested for Allegedly Throwing Molotov Cocktail at Sam Altman’s Home</title>
       <link>https://www.wired.com/story/sam-altman-home-attack-openai-san-franisco-office-threat/</link>
-      <description>A suspect was arrested for allegedly throwing a Molotov cocktail at OpenAI CEO Sam Altman's home, raising security concerns for tech leaders. The incident underscores the risks associated with high-profile positions in the tech industry.</description>
+      <description>A 20-year-old man has been arrested for allegedly throwing a Molotov cocktail at OpenAI CEO Sam Altman's home, following threats made outside the company's headquarters. The incident raises security concerns for tech leaders.</description>
       <category>OpenAI</category>
       <pubDate>Fri, 10 Apr 2026 16:32:19 +0000</pubDate>
       <guid>https://www.wired.com/story/sam-altman-home-attack-openai-san-franisco-office-threat/</guid>
@@ -242,7 +274,7 @@
     <item>
       <title>20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail</link>
-      <description>San Francisco police arrested a 20-year-old man for allegedly throwing a Molotov cocktail at Sam Altman's residence. The incident was captured on surveillance footage, highlighting security issues for tech executives.</description>
+      <description>San Francisco police arrested a suspect for allegedly throwing a Molotov cocktail at Sam Altman's residence. Surveillance footage captured the incident, which has heightened concerns over safety in the tech community.</description>
       <category>OpenAI</category>
       <pubDate>Fri, 10 Apr 2026 16:16:57 -0400</pubDate>
       <guid>https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail</guid>
@@ -250,7 +282,7 @@
     <item>
       <title>This Startup Wants You to Pay Up to Talk With AI Versions of Human Experts</title>
       <link>https://www.wired.com/story/onix-substack-ai-platform-therapy-medicine-nutrition/</link>
-      <description>Onix is launching a platform where users can pay to interact with AI versions of health and wellness influencers, providing advice and promoting products. This model could transform how expert advice is accessed online.</description>
+      <description>Onix is launching a platform where users can pay to interact with AI versions of health and wellness influencers. This service aims to provide personalized advice while promoting products.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 16:00:00 +0000</pubDate>
       <guid>https://www.wired.com/story/onix-substack-ai-platform-therapy-medicine-nutrition/</guid>
@@ -258,7 +290,7 @@
     <item>
       <title>GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI</title>
       <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</link>
-      <description>A tutorial has been released for beginners on using GitHub Copilot CLI, guiding users through its features and functionalities. This resource aims to enhance user experience and productivity in coding.</description>
+      <description>A tutorial has been released for beginners on how to use GitHub Copilot CLI, providing step-by-step guidance for new users. This aims to enhance user experience with GitHub's coding tools.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 16:00:00 +0000</pubDate>
       <guid>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</guid>
@@ -266,47 +298,15 @@
     <item>
       <title>Electronics industry says FCC's foreign-made router policy is a bit of a mesh</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/gea_fcc_routers/</link>
-      <description>The Global Electronics Association warns that the FCC's policy banning foreign-made routers could hinder access to advanced technology for consumers. This could slow down the adoption of next-gen Wi-Fi products.</description>
+      <description>The Global Electronics Association warns that the FCC's ban on foreign-made routers could limit consumer choices and delay access to advanced technology. This policy may hinder Wi-Fi 7 adoption.</description>
       <category>Top Stories</category>
       <pubDate>Fri, 10 Apr 2026 15:44:59 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/gea_fcc_routers/</guid>
     </item>
     <item>
-      <title>What’s in a name? Moderna’s “vaccine” vs. “therapy” dilemma</title>
-      <link>https://www.technologyreview.com/2026/04/10/1135631/whats-in-a-name-modernas-vaccine-vs-therapy-dilemma/</link>
-      <description>Moderna faces challenges in branding its new mRNA products as vaccines or therapies, impacting public perception and acceptance. This dilemma reflects broader issues in the pharmaceutical industry.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 10 Apr 2026 14:04:20 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/10/1135631/whats-in-a-name-modernas-vaccine-vs-therapy-dilemma/</guid>
-    </item>
-    <item>
-      <title>Last 24 hours: Save up to $500 on your TechCrunch Disrupt 2026 pass</title>
-      <link>https://techcrunch.com/2026/04/10/final-24-hours-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/</link>
-      <description>TechCrunch is offering a final chance to save up to $500 on passes for its Disrupt 2026 event, with discounts ending tonight. This promotion aims to boost attendance at the tech conference.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 10 Apr 2026 14:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/10/final-24-hours-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/</guid>
-    </item>
-    <item>
-      <title>The Iranian Lego AI video creators credit their virality to &amp;#8216;heart&amp;#8217;</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu</link>
-      <description>An Iranian content creation group has gained attention for its viral AI-generated Lego videos, which creatively reinterpret political narratives. This reflects the growing influence of AI in media production.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 10 Apr 2026 13:30:00 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu</guid>
-    </item>
-    <item>
-      <title>CPUID site hijacked to serve malware instead of HWMonitor downloads</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/cpuid_site_hijacked/</link>
-      <description>The CPUID website was briefly compromised, redirecting users to malware instead of legitimate downloads. This incident highlights vulnerabilities in trusted sites and the risks of cyberattacks.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 10 Apr 2026 12:53:30 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/cpuid_site_hijacked/</guid>
-    </item>
-    <item>
       <title>Copilot cloud agent’s validation tools are now 20% faster</title>
       <link>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</link>
-      <description>GitHub's Copilot cloud agent has improved its validation tools, making them 20% faster. This enhancement aims to streamline the coding process and improve code quality.</description>
+      <description>GitHub's Copilot cloud agent has improved its validation tools, making them 20% faster. This enhancement aims to streamline code quality checks for developers.</description>
       <category>GitHub Copilot</category>
       <pubDate>Fri, 10 Apr 2026 12:19:17 +0000</pubDate>
       <guid>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</guid>
@@ -314,98 +314,98 @@
     <item>
       <title>Project Glasswing and open source software: The good, the bad, and the ugly</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/project_glasswing/</link>
-      <description>Anthropic's Project Glasswing aims to address vulnerabilities in open source software with a $100 million investment in AI resources. This initiative seeks to improve security in critical software systems.</description>
+      <description>Anthropic's Project Glasswing aims to address vulnerabilities in open source software using AI. The initiative has raised concerns about AI-generated vulnerabilities while committing $100 million to improve security.</description>
       <category>Anthropic</category>
       <pubDate>Fri, 10 Apr 2026 11:30:08 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/project_glasswing/</guid>
     </item>
     <item>
-      <title>Britain seeks views before it drops the hammer on signal jammers</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/10/signal_jammer_consultation/</link>
-      <description>The UK government is gathering public opinions on the use of radiofrequency jammers as it prepares to legislate against these devices linked to criminal activity. This move could impact law enforcement and public safety.</description>
-      <category>Amazon</category>
-      <pubDate>Fri, 10 Apr 2026 11:01:11 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/10/signal_jammer_consultation/</guid>
-    </item>
-    <item>
-      <title>Fear and loathing at OpenAI</title>
-      <link>https://www.theverge.com/podcast/909621/openai-sam-altman-drama-vergecast</link>
-      <description>Sam Altman's leadership at OpenAI has been tumultuous, marked by a brief firing and subsequent reinstatement, leading to significant organizational changes. This situation raises important questions about leadership stability in AI companies.</description>
+      <title>From 'BuddhaBot' to $1.99 chats with AI Jesus, the faith-based tech boom is here</title>
+      <link>https://abcnews.com/Technology/wireStory/buddhabot-199-chats-ai-jesus-faith-based-tech-131909847</link>
+      <description>The faith-based AI market is growing, with new tools emerging for various religions, including AI versions of spiritual figures. This trend reflects the intersection of technology and spirituality.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 10 Apr 2026 08:23:18 -0400</pubDate>
-      <guid>https://www.theverge.com/podcast/909621/openai-sam-altman-drama-vergecast</guid>
+      <pubDate>Fri, 10 Apr 2026 11:28:49 +0000</pubDate>
+      <guid>https://abcnews.com/Technology/wireStory/buddhabot-199-chats-ai-jesus-faith-based-tech-131909847</guid>
     </item>
     <item>
-      <title>Scott Bessent called in US bank CEOs to discuss Anthropic model’s cyber risks - Financial Times</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181516066</link>
-      <description>Scott Bessent convened US bank CEOs to discuss the cyber risks associated with Anthropic's AI model, emphasizing the need for secure software in the AI landscape. This meeting underscores the growing concern over AI's impact on cybersecurity.</description>
+      <title>Marketers on the Move: Hires and Exits at Babylist, OpenAI, McDonald’s, and more</title>
+      <link>https://www.adweek.com/brand-marketing/marketers-on-the-move-hires-and-exits-at-babylist-openai-mcdonalds-and-more/</link>
+      <description>This article highlights recent leadership changes at various companies, including Babylist, OpenAI, and McDonald’s, showcasing the dynamic nature of brand management. These appointments can significantly impact company strategies and market positioning.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 10 Apr 2026 11:27:49 +0000</pubDate>
+      <guid>https://www.adweek.com/brand-marketing/marketers-on-the-move-hires-and-exits-at-babylist-openai-mcdonalds-and-more/</guid>
+    </item>
+    <item>
+      <title>leashd 0.14.0</title>
+      <link>https://pypi.org/project/leashd/0.14.0/</link>
+      <description>Leashd 0.14.0 introduces a safety-first coding framework that allows for agentic coding with pluggable runtimes, enhancing governance in AI applications. This framework supports human oversight, ensuring safer deployment of AI models.</description>
       <category>Anthropic</category>
-      <pubDate>Fri, 10 Apr 2026 05:52:36 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181516066</guid>
+      <pubDate>Fri, 10 Apr 2026 11:21:56 +0000</pubDate>
+      <guid>https://pypi.org/project/leashd/0.14.0/</guid>
     </item>
     <item>
-      <title>AI需要が爆発的に増加も計算能力が制約に、大規模に投資していたOpenAIが巻き返しをはかる</title>
-      <link>https://news.livedoor.com/article/detail/30961304/</link>
-      <description>OpenAI has communicated to investors its strategy of heavily investing in computational resources to maintain a competitive edge over rivals like Anthropic. This move signals OpenAI's commitment to long-term success in the AI market.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 10 Apr 2026 05:50:00 +0000</pubDate>
-      <guid>https://news.livedoor.com/article/detail/30961304/</guid>
+      <title>stormlog 0.3.1</title>
+      <link>https://pypi.org/project/stormlog/0.3.1/</link>
+      <description>Stormlog 0.3.1 is a new GPU memory profiler designed for PyTorch and TensorFlow, offering command-line interface, visualization, and analytics features. This tool aims to help developers optimize their deep learning models more effectively.</description>
+      <category>Meta</category>
+      <pubDate>Fri, 10 Apr 2026 11:21:32 +0000</pubDate>
+      <guid>https://pypi.org/project/stormlog/0.3.1/</guid>
     </item>
     <item>
-      <title>The demise of software engineering jobs has been greatly exaggerated</title>
-      <link>https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs</link>
-      <description>Despite fears that AI tools will replace software engineers, the demand for skilled engineers is actually increasing as more software is developed. This suggests a shift in job roles rather than a decline.</description>
+      <title>claude-code-llm-router 3.4.0</title>
+      <link>https://pypi.org/project/claude-code-llm-router/3.4.0/</link>
+      <description>Claude-code-llm-router 3.4.0 is a multi-LLM router server that enhances complexity routing and integrates with various providers. This update aims to improve subscription monitoring and streamline AI model management.</description>
       <category>Anthropic</category>
-      <pubDate>Fri, 10 Apr 2026 05:47:01 +0000</pubDate>
-      <guid>https://www.cnn.com/2026/04/08/tech/ai-software-developer-jobs</guid>
+      <pubDate>Fri, 10 Apr 2026 11:20:37 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-code-llm-router/3.4.0/</guid>
     </item>
     <item>
-      <title>langchain-systematicmind added to PyPI</title>
-      <link>https://pypi.org/project/langchain-systematicmind/</link>
-      <description>LangChain has introduced tools for SystematicMind, providing real-time market signals for AI agents. This addition aims to enhance the capabilities of AI in financial markets.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 10 Apr 2026 05:42:23 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-systematicmind/</guid>
-    </item>
-    <item>
-      <title>langchain-systematicmind 0.1.0</title>
-      <link>https://pypi.org/project/langchain-systematicmind/0.1.0/</link>
-      <description>The release of LangChain tools for SystematicMind offers real-time market signals for AI agents, enhancing their operational capabilities. This development is part of ongoing innovations in AI applications.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 10 Apr 2026 05:42:23 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-systematicmind/0.1.0/</guid>
-    </item>
-    <item>
-      <title>llm-spend-tracker added to PyPI</title>
-      <link>https://pypi.org/project/llm-spend-tracker/</link>
-      <description>A new middleware tool, LLM Spend Tracker, has been added to PyPI, allowing users to monitor and limit their spending on LLM APIs in real-time. This tool aims to help developers manage costs effectively.</description>
+      <title>LiteParse : Open-Source Tool Finally Fixing OCR’s Biggest Table &amp; Layout Flaws</title>
+      <link>https://www.geeky-gadgets.com/liteparse-document-parser/</link>
+      <description>LiteParse is an open-source tool developed by Llama Index that addresses significant challenges in OCR, particularly in parsing complex documents. It focuses on structured data extraction while maintaining spatial formatting, improving usability.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 10 Apr 2026 05:33:51 +0000</pubDate>
-      <guid>https://pypi.org/project/llm-spend-tracker/</guid>
+      <pubDate>Fri, 10 Apr 2026 11:19:00 +0000</pubDate>
+      <guid>https://www.geeky-gadgets.com/liteparse-document-parser/</guid>
     </item>
     <item>
-      <title>llm-fallback added to PyPI</title>
-      <link>https://pypi.org/project/llm-fallback/</link>
-      <description>The LLM Fallback tool has been introduced to enable automatic switching between different LLM providers, ensuring continuity when one service is down. This enhances reliability for developers.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 10 Apr 2026 05:31:45 +0000</pubDate>
-      <guid>https://pypi.org/project/llm-fallback/</guid>
+      <title>slowai added to PyPI</title>
+      <link>https://pypi.org/project/slowai/</link>
+      <description>Slowai, now available on PyPI, provides a single command to diagnose and fix performance issues in PyTorch models. This tool aims to streamline the debugging process for developers.</description>
+      <category>NVIDIA</category>
+      <pubDate>Fri, 10 Apr 2026 11:11:42 +0000</pubDate>
+      <guid>https://pypi.org/project/slowai/</guid>
     </item>
     <item>
-      <title>Deepin: deepin 25.1 Released: AI-Powered, Smooth as Silk to the Core</title>
-      <link>https://www.deepin.org/en/deepin-25-1-announcement/</link>
-      <description>Deepin has released version 25.1 of its open-source operating system, which incorporates AI features and improvements based on user feedback. This update aims to enhance user experience and performance.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 10 Apr 2026 05:21:32 +0000</pubDate>
-      <guid>https://www.deepin.org/en/deepin-25-1-announcement/</guid>
+      <title>Dew Drop – April 10, 2026 (#4644)</title>
+      <link>https://www.alvinashcraft.com/2026/04/10/dew-drop-april-10-2026-4644/</link>
+      <description>Dew Drop – April 10, 2026, features a compilation of links addressing various technical issues and updates in the .NET ecosystem. It serves as a resource for developers seeking solutions and insights.</description>
+      <category>Microsoft</category>
+      <pubDate>Fri, 10 Apr 2026 11:10:33 +0000</pubDate>
+      <guid>https://www.alvinashcraft.com/2026/04/10/dew-drop-april-10-2026-4644/</guid>
     </item>
     <item>
-      <title>xenarch added to PyPI</title>
-      <link>https://pypi.org/project/xenarch/</link>
-      <description>The Xenarch Python SDK has been launched, providing payment middleware for AI agents and publishers. This tool aims to streamline payment processes in AI applications.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 10 Apr 2026 05:09:06 +0000</pubDate>
-      <guid>https://pypi.org/project/xenarch/</guid>
+      <title>ramjetio 0.6.5</title>
+      <link>https://pypi.org/project/ramjetio/0.6.5/</link>
+      <description>Ramjetio 0.6.5 is a distributed cache system designed to enhance PyTorch training efficiency. This update aims to improve the performance of deep learning applications by optimizing data access.</description>
+      <category>Meta</category>
+      <pubDate>Fri, 10 Apr 2026 11:10:20 +0000</pubDate>
+      <guid>https://pypi.org/project/ramjetio/0.6.5/</guid>
+    </item>
+    <item>
+      <title>Is XRP Safer Than Bitcoin? This Analyst Explains The Real Quantum Risk For Holders</title>
+      <link>http://www.newsbtc.com/xrp-news/is-xrp-safer-than-bitcoin-this-analyst-explains-the-real-quantum-risk-for-holders/</link>
+      <description>Experts discuss the comparative safety of XRP versus Bitcoin in the context of potential quantum attacks, suggesting XRP's design may offer better protection. This analysis comes amid rising concerns about quantum risks in cryptocurrency.</description>
+      <category>Perplexity</category>
+      <pubDate>Fri, 10 Apr 2026 11:08:06 +0000</pubDate>
+      <guid>http://www.newsbtc.com/xrp-news/is-xrp-safer-than-bitcoin-this-analyst-explains-the-real-quantum-risk-for-holders/</guid>
+    </item>
+    <item>
+      <title>Tata Power Collaborates with Databricks to Build Future-Ready Data and AI Platform to Accelerate Energy Transition</title>
+      <link>https://www.thehindubusinessline.com/brandhub/pr-release/tata-power-collaborates-with-databricks-to-build-future-ready-data-and-ai-platform-to-accelerate-energy-transition/article70846286.ece</link>
+      <description>Tata Power is collaborating with Databricks to develop a data and AI platform aimed at accelerating the energy transition. This partnership highlights the growing importance of AI in the energy sector.</description>
+      <category>AI Foundry</category>
+      <pubDate>Fri, 10 Apr 2026 11:05:29 +0000</pubDate>
+      <guid>https://www.thehindubusinessline.com/brandhub/pr-release/tata-power-collaborates-with-databricks-to-build-future-ready-data-and-ai-platform-to-accelerate-energy-transition/article70846286.ece</guid>
     </item>
   </channel>
 </rss>
