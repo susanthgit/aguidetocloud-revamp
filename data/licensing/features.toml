@@ -1,0 +1,242 @@
+# ============================================
+# Feature Definitions for Comparison Matrix
+# Used by licensing.js to build the compare view
+# ============================================
+
+[[features]]
+id = "desktop-apps"
+name = "Desktop Office Apps"
+description = "Word, Excel, PowerPoint, Outlook — installed on PC/Mac"
+category = "Productivity"
+icon = "💻"
+
+[[features]]
+id = "web-mobile-apps"
+name = "Web & Mobile Office Apps"
+description = "Office apps in the browser and on iOS/Android"
+category = "Productivity"
+icon = "🌐"
+
+[[features]]
+id = "exchange-50gb"
+name = "Exchange Online (50 GB)"
+description = "Business email with 50 GB mailbox"
+category = "Productivity"
+icon = "📧"
+
+[[features]]
+id = "exchange-100gb"
+name = "Exchange Online (100 GB)"
+description = "Business email with 100 GB mailbox"
+category = "Productivity"
+icon = "📧"
+
+[[features]]
+id = "exchange-2gb"
+name = "Exchange Online (2 GB)"
+description = "Limited mailbox for frontline workers"
+category = "Productivity"
+icon = "📧"
+
+[[features]]
+id = "teams"
+name = "Microsoft Teams"
+description = "Chat, meetings, webinars, and collaboration"
+category = "Productivity"
+icon = "💬"
+
+[[features]]
+id = "teams-phone"
+name = "Teams Phone System"
+description = "PSTN calling, call queues, and auto attendants"
+category = "Productivity"
+icon = "📞"
+
+[[features]]
+id = "sharepoint"
+name = "SharePoint Online"
+description = "Intranet, document libraries, and team sites"
+category = "Productivity"
+icon = "📁"
+
+[[features]]
+id = "onedrive-1tb"
+name = "OneDrive (1 TB)"
+description = "Personal cloud storage — 1 TB per user"
+category = "Productivity"
+icon = "☁️"
+
+[[features]]
+id = "onedrive-unlimited"
+name = "OneDrive (Unlimited)"
+description = "Personal cloud storage — unlimited for 5+ users"
+category = "Productivity"
+icon = "☁️"
+
+[[features]]
+id = "entra-p1"
+name = "Entra ID P1"
+description = "Conditional Access, MFA, self-service password reset, group-based licensing"
+category = "Identity"
+icon = "🔐"
+
+[[features]]
+id = "entra-p2"
+name = "Entra ID P2"
+description = "P1 + Privileged Identity Management (PIM), Identity Protection, access reviews"
+category = "Identity"
+icon = "🔐"
+
+[[features]]
+id = "intune-p1"
+name = "Intune Plan 1"
+description = "Mobile device management (MDM), mobile app management (MAM), PC management"
+category = "Device Management"
+icon = "📱"
+
+[[features]]
+id = "intune-suite"
+name = "Intune Suite"
+description = "P1 + remote help, endpoint privilege management, advanced analytics"
+category = "Device Management"
+icon = "📱"
+
+[[features]]
+id = "defender-endpoint-p1"
+name = "Defender for Endpoint P1"
+description = "Next-gen antimalware, attack surface reduction, device control"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "defender-endpoint-p2"
+name = "Defender for Endpoint P2"
+description = "P1 + full EDR, automated investigation, threat analytics"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "defender-o365-p1"
+name = "Defender for Office 365 P1"
+description = "Safe Attachments, Safe Links, anti-phishing policies"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "defender-o365-p2"
+name = "Defender for Office 365 P2"
+description = "P1 + automated investigation, attack simulation, threat hunting"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "defender-business"
+name = "Defender for Business"
+description = "Simplified endpoint protection for SMBs (up to 300 users)"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "defender-cloud-apps"
+name = "Defender for Cloud Apps"
+description = "Cloud app discovery, session controls, anomaly detection"
+category = "Security"
+icon = "🛡️"
+
+[[features]]
+id = "dlp-basic"
+name = "Data Loss Prevention (Basic)"
+description = "Basic DLP policies for Exchange, SharePoint, OneDrive"
+category = "Compliance"
+icon = "🔒"
+
+[[features]]
+id = "dlp-advanced"
+name = "Data Loss Prevention (Advanced)"
+description = "Advanced DLP with endpoint DLP, exact data match, trainable classifiers"
+category = "Compliance"
+icon = "🔒"
+
+[[features]]
+id = "ediscovery-standard"
+name = "eDiscovery (Standard)"
+description = "Content search, legal hold, basic case management"
+category = "Compliance"
+icon = "🔍"
+
+[[features]]
+id = "ediscovery-premium"
+name = "eDiscovery (Premium)"
+description = "Standard + custodian management, review sets, analytics, predictive coding"
+category = "Compliance"
+icon = "🔍"
+
+[[features]]
+id = "insider-risk"
+name = "Insider Risk Management"
+description = "Detect and act on risky user activities — data theft, policy violations"
+category = "Compliance"
+icon = "⚠️"
+
+[[features]]
+id = "information-protection"
+name = "Information Protection"
+description = "Sensitivity labels, encryption, rights management (AIP)"
+category = "Compliance"
+icon = "🏷️"
+
+[[features]]
+id = "compliance-manager"
+name = "Compliance Manager"
+description = "Compliance posture dashboard with improvement actions and score"
+category = "Compliance"
+icon = "📋"
+
+[[features]]
+id = "power-bi-pro"
+name = "Power BI Pro"
+description = "Business intelligence dashboards, reports, and data visualisation"
+category = "Analytics"
+icon = "📊"
+
+[[features]]
+id = "windows-e3"
+name = "Windows Enterprise E3"
+description = "Windows 11 Enterprise with Autopatch, AppLocker, Credential Guard"
+category = "Windows"
+icon = "🪟"
+
+[[features]]
+id = "windows-e5"
+name = "Windows Enterprise E5"
+description = "E3 + Defender for Endpoint, Credential Guard with hardware lock"
+category = "Windows"
+icon = "🪟"
+
+[[features]]
+id = "copilot-chat"
+name = "Copilot Chat"
+description = "Basic AI chat — no enterprise data grounding"
+category = "AI"
+icon = "🤖"
+
+[[features]]
+id = "copilot-full"
+name = "Microsoft 365 Copilot"
+description = "Full AI assistant in Word, Excel, PowerPoint, Outlook, Teams"
+category = "AI"
+icon = "🤖"
+
+[[features]]
+id = "security-copilot"
+name = "Security Copilot"
+description = "AI-powered security investigation and threat hunting (pay-per-use)"
+category = "AI"
+icon = "🤖"
+
+[[features]]
+id = "agent-365"
+name = "Agent 365"
+description = "AI agents that can act on your behalf — built into M365 E7"
+category = "AI"
+icon = "🤖"

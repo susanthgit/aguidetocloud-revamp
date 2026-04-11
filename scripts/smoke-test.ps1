@@ -343,8 +343,8 @@ if ($Section -eq 'all' -or $Section -eq 'redirects') {
 
     $redirects = @(
         @("/courses/az-900", "/certifications/"),
-        @("/full-courses/az-104", "/certifications/"),
-        @("/bootcamps/ai", "/ai-hub/")
+        @("/full-courses/az-104-fullcourse", "/certifications/"),
+        @("/bootcamps/azure-networking", "/cloud-labs/")
     )
     foreach ($r in $redirects) {
         try {

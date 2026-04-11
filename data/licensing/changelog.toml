@@ -1,0 +1,50 @@
+# ============================================
+# Licensing Changelog — What Changed?
+# Manually curated, newest first
+# Last updated: April 2026
+# ============================================
+
+[[entries]]
+id = "2026-07"
+date = "2026-07-01"
+title = "Price Increases Across Most Plans"
+severity = "major"
+description = "Microsoft 365 prices increase 8–33% for most plans. Business Premium and Office 365 E1 maintain current pricing. Defender for Office 365 Plan 1 now included in M365 E3 at no extra cost."
+affected = ["m365-e3", "m365-e5", "biz-basic", "biz-standard", "o365-e3", "o365-e5"]
+source = "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates"
+
+[[entries]]
+id = "2026-05"
+date = "2026-05-01"
+title = "Microsoft 365 E7 (Frontier Suite) Goes GA"
+severity = "major"
+description = "The first enterprise plan with Copilot and Agent 365 built in. Priced at $99/user/month. Includes everything in E5 plus AI governance and advanced identity protection."
+affected = ["m365-e7"]
+source = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing"
+
+[[entries]]
+id = "2026-04"
+date = "2026-04-15"
+title = "Copilot Chat Removed from Word, Excel, PowerPoint for Unlicensed Users"
+severity = "moderate"
+description = "Users without a Microsoft 365 Copilot licence lose Copilot Chat in Word, Excel, and PowerPoint desktop and web apps. Copilot Chat remains available in the standalone Copilot app and Teams."
+affected = ["copilot-chat", "copilot-addon"]
+source = ""
+
+[[entries]]
+id = "2025-h2"
+date = "2025-07-01"
+title = "Copilot Bundling Changes & Security Copilot Pay-Per-Use"
+severity = "moderate"
+description = "Microsoft restructures Copilot licensing. Security Copilot moves to a pay-per-use model at $4 per Security Compute Unit (SCU) per hour, replacing the fixed-price model."
+affected = ["security-copilot", "copilot-addon"]
+source = ""
+
+[[entries]]
+id = "2025-q1"
+date = "2025-01-15"
+title = "Microsoft 365 Copilot Available to All Business Plans"
+severity = "moderate"
+description = "Copilot add-on eligibility expands to Business Basic and Business Standard plans, no longer limited to Business Premium and Enterprise."
+affected = ["copilot-addon", "biz-basic", "biz-standard"]
+source = ""

@@ -1,0 +1,360 @@
+# ============================================
+# Microsoft 365 Licensing Plans Database
+# Prices in USD per user/month (list price)
+# Last verified: April 2026
+# ============================================
+
+# ── ENTERPRISE PLANS ─────────────────────────
+
+[[plans]]
+id = "o365-e1"
+name = "Office 365 E1"
+category = "enterprise"
+price = 10
+price_note = ""
+tagline = "Web & mobile apps for budget-conscious teams"
+description = "Entry-level enterprise plan with web and mobile versions of Office apps, 50 GB Exchange mailbox, Teams, SharePoint, and OneDrive (1 TB). No desktop Office apps."
+who = "Large organisations that only need web/mobile apps and email"
+badge = ""
+m365maps = "https://m365maps.com/files/Office-365-E1.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e1"
+features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
+
+[[plans]]
+id = "o365-e3"
+name = "Office 365 E3"
+category = "enterprise"
+price = 26
+price_note = ""
+tagline = "Desktop Office apps + basic compliance"
+description = "Everything in E1 plus full desktop Office apps (Word, Excel, PowerPoint, Outlook), 100 GB mailbox, unlimited OneDrive storage, and basic data loss prevention."
+who = "Organisations needing desktop apps and basic compliance tools"
+badge = ""
+m365maps = "https://m365maps.com/files/Office-365-E3.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e3"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "dlp-basic"]
+
+[[plans]]
+id = "o365-e5"
+name = "Office 365 E5"
+category = "enterprise"
+price = 41
+price_note = ""
+tagline = "Analytics, Teams Phone & Power BI Pro"
+description = "Everything in E3 plus advanced analytics with Power BI Pro, Teams Phone System, advanced eDiscovery, Customer Lockbox, and Defender for Office 365 Plan 1."
+who = "Organisations needing calling, analytics, and enhanced security"
+badge = ""
+m365maps = "https://m365maps.com/files/Office-365-E5.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "dlp-basic", "ediscovery-standard", "power-bi-pro", "defender-o365-p1"]
+
+[[plans]]
+id = "m365-e3"
+name = "Microsoft 365 E3"
+category = "enterprise"
+price = 39
+price_note = ""
+tagline = "The enterprise standard — productivity + security"
+description = "Office 365 E3 plus Windows 11 Enterprise E3, Enterprise Mobility + Security E3 (Intune P1, Entra ID P1), and Defender for Endpoint P1. The most popular enterprise plan."
+who = "Most enterprises — the go-to plan for productivity, security, and device management"
+badge = "Most Popular"
+m365maps = "https://m365maps.com/files/Microsoft-365-E3.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e3"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "dlp-basic", "ediscovery-standard", "entra-p1", "intune-p1", "defender-endpoint-p1", "windows-e3", "information-protection"]
+
+[[plans]]
+id = "m365-e5"
+name = "Microsoft 365 E5"
+category = "enterprise"
+price = 60
+price_note = ""
+tagline = "Full security, compliance & analytics suite"
+description = "Everything in E3 plus Entra ID P2, Defender for Office 365 P2, Defender for Endpoint P2, Insider Risk Management, advanced eDiscovery, Power BI Pro, Teams Phone System, and Audio Conferencing."
+who = "Security-first organisations needing advanced threat protection and full compliance"
+badge = "Best Value"
+m365maps = "https://m365maps.com/files/Microsoft-365-E5.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e5"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "dlp-advanced", "ediscovery-premium", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "insider-risk", "power-bi-pro", "windows-e5", "information-protection", "compliance-manager"]
+
+[[plans]]
+id = "m365-e7"
+name = "Microsoft 365 E7"
+category = "enterprise"
+price = 99
+price_note = "GA May 2026"
+tagline = "AI-first enterprise — Copilot + Agent 365 built in"
+description = "Everything in E5 plus Microsoft 365 Copilot, Agent 365, advanced AI governance, and enhanced identity protection. The first plan with Copilot included (not as an add-on)."
+who = "AI-forward enterprises wanting Copilot and Agent 365 bundled in"
+badge = "Coming May 2026"
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "dlp-advanced", "ediscovery-premium", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "insider-risk", "power-bi-pro", "windows-e5", "information-protection", "compliance-manager", "copilot-full", "agent-365"]
+
+# ── BUSINESS PLANS ───────────────────────────
+
+[[plans]]
+id = "biz-basic"
+name = "Microsoft 365 Business Basic"
+category = "business"
+price = 7
+price_note = ""
+tagline = "Web apps + Teams + email for small teams"
+description = "Web and mobile versions of Office apps, 50 GB Exchange mailbox, Teams, SharePoint, and OneDrive (1 TB). No desktop apps. Up to 300 users."
+who = "Small businesses that only need web apps and collaboration"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Business-Basic.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-basic"
+features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
+
+[[plans]]
+id = "biz-standard"
+name = "Microsoft 365 Business Standard"
+category = "business"
+price = 14
+price_note = ""
+tagline = "Desktop Office apps for growing businesses"
+description = "Everything in Business Basic plus full desktop Office apps, webinar hosting, and business app integrations. The sweet spot for most SMBs."
+who = "SMBs needing desktop Office apps and webinar capabilities"
+badge = "SMB Favourite"
+m365maps = "https://m365maps.com/files/Microsoft-365-Business-Standard.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard"
+features = ["desktop-apps", "web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
+
+[[plans]]
+id = "biz-premium"
+name = "Microsoft 365 Business Premium"
+category = "business"
+price = 22
+price_note = ""
+tagline = "Security-first SMB — Intune + Defender included"
+description = "Everything in Business Standard plus Intune P1, Entra ID P1, Defender for Business, and advanced information protection. The most secure SMB plan."
+who = "Security-conscious SMBs handling sensitive data"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Business-Premium.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium"
+features = ["desktop-apps", "web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb", "entra-p1", "intune-p1", "defender-business", "information-protection"]
+
+[[plans]]
+id = "apps-biz"
+name = "Microsoft 365 Apps for Business"
+category = "business"
+price = 10
+price_note = ""
+tagline = "Desktop apps only — no cloud services"
+description = "Full desktop Office apps (Word, Excel, PowerPoint, Outlook) plus 1 TB OneDrive. No Exchange, no Teams, no SharePoint. Up to 300 users."
+who = "Businesses that already have email and just need Office apps"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Apps-Business.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-apps-for-business"
+features = ["desktop-apps", "web-mobile-apps", "onedrive-1tb"]
+
+# ── FRONTLINE PLANS ──────────────────────────
+
+[[plans]]
+id = "m365-f1"
+name = "Microsoft 365 F1"
+category = "frontline"
+price = 3
+price_note = ""
+tagline = "Entry-level mobile-first for shift workers"
+description = "Web and mobile Office apps (view only for some), Teams, SharePoint, Entra ID P1, and Intune P1. Designed for frontline workers who primarily use mobile devices."
+who = "Shift workers, retail staff, field workers on mobile"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-F1.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/frontline"
+features = ["web-mobile-apps", "teams", "sharepoint", "entra-p1", "intune-p1", "exchange-2gb"]
+
+[[plans]]
+id = "m365-f3"
+name = "Microsoft 365 F3"
+category = "frontline"
+price = 10
+price_note = ""
+tagline = "Full frontline experience — apps + security"
+description = "Everything in F1 plus full web and mobile Office apps (not view-only), Windows Enterprise, and more storage. The complete frontline worker solution."
+who = "Frontline workers who need to create content, not just view"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-F3.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/frontline"
+features = ["web-mobile-apps", "teams", "sharepoint", "entra-p1", "intune-p1", "exchange-2gb", "windows-e3"]
+
+# ── COPILOT & AI ─────────────────────────────
+
+[[plans]]
+id = "copilot-addon"
+name = "Microsoft 365 Copilot"
+category = "copilot"
+price = 30
+price_note = "Add-on"
+tagline = "AI assistant in every Office app"
+description = "Full Copilot experience in Word, Excel, PowerPoint, Outlook, Teams, and more. Requires a qualifying base plan (E3, E5, Business Standard, or Business Premium)."
+who = "Knowledge workers who want AI-powered productivity in Office apps"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Copilot.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/copilot/enterprise"
+features = ["copilot-full"]
+
+[[plans]]
+id = "copilot-chat"
+name = "Microsoft Copilot (Chat)"
+category = "copilot"
+price = 0
+price_note = "Included with most plans"
+tagline = "Basic AI chat for everyone"
+description = "Web-based Copilot chat available to most M365 users. Can answer questions and generate content but does NOT access your enterprise data (emails, files, meetings). From April 2026, removed from Word, Excel, and PowerPoint for unlicensed users."
+who = "All M365 users — basic AI chat without enterprise data grounding"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/copilot"
+features = ["copilot-chat"]
+
+[[plans]]
+id = "security-copilot"
+name = "Microsoft Security Copilot"
+category = "copilot"
+price = 4
+price_note = "Per SCU/hour"
+tagline = "AI for security teams — pay per use"
+description = "AI-powered security analysis using Security Compute Units (SCUs). Helps security teams investigate incidents, hunt threats, and generate reports. Pay-per-use model."
+who = "Security operations teams wanting AI-assisted threat investigation"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot"
+features = ["security-copilot"]
+
+# ── SECURITY & COMPLIANCE ADD-ONS ────────────
+
+[[plans]]
+id = "defender-o365-p2"
+name = "Defender for Office 365 Plan 2"
+category = "security"
+price = 5
+price_note = "Add-on"
+tagline = "Advanced email & collaboration threat protection"
+description = "Automated investigation and response, attack simulation training, and advanced threat hunting for email and collaboration tools. Plan 1 is now included in M365 E3 from July 2026."
+who = "Organisations needing advanced email security beyond what E3 includes"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Defender-for-Office-365.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-defender-pricing"
+features = ["defender-o365-p2"]
+
+[[plans]]
+id = "defender-endpoint-p2"
+name = "Defender for Endpoint Plan 2"
+category = "security"
+price = 5.20
+price_note = "Add-on"
+tagline = "Full endpoint detection and response (EDR)"
+description = "Complete endpoint protection with EDR, automated investigation, threat analytics, and attack surface reduction. Plan 1 is included in M365 E3."
+who = "Organisations needing full EDR beyond what E3 includes"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Defender-for-Endpoint.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-defender-pricing"
+features = ["defender-endpoint-p2"]
+
+[[plans]]
+id = "purview-suite"
+name = "Microsoft Purview Suite"
+category = "security"
+price = 12
+price_note = "Add-on"
+tagline = "Full compliance — DLP, eDiscovery, retention"
+description = "Comprehensive compliance suite including advanced DLP, eDiscovery Premium, Insider Risk Management, Information Barriers, and Communication Compliance."
+who = "Regulated industries needing full compliance capabilities"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Purview-Suite.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-purview-pricing"
+features = ["dlp-advanced", "ediscovery-premium", "insider-risk", "information-protection"]
+
+[[plans]]
+id = "ems-e3"
+name = "Enterprise Mobility + Security E3"
+category = "security"
+price = 12
+price_note = "Add-on"
+tagline = "Identity + device management essentials"
+description = "Entra ID P1, Intune P1, Azure Information Protection P1, and Microsoft Defender for Cloud Apps (discovery only). The identity and device management baseline."
+who = "Organisations with Office 365 plans needing identity and device management"
+badge = ""
+m365maps = "https://m365maps.com/files/EMS-E3.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+features = ["entra-p1", "intune-p1", "information-protection"]
+
+[[plans]]
+id = "ems-e5"
+name = "Enterprise Mobility + Security E5"
+category = "security"
+price = 18
+price_note = "Add-on"
+tagline = "Advanced identity + cloud app security"
+description = "Everything in EMS E3 plus Entra ID P2 (PIM, risk-based access), Defender for Cloud Apps (full), and Azure Information Protection P2 (automatic classification)."
+who = "Organisations needing advanced identity governance and cloud app control"
+badge = ""
+m365maps = "https://m365maps.com/files/EMS-E5.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+features = ["entra-p2", "intune-p1", "information-protection", "defender-cloud-apps"]
+
+[[plans]]
+id = "intune-suite"
+name = "Microsoft Intune Suite"
+category = "security"
+price = 10
+price_note = "Add-on"
+tagline = "Advanced endpoint management beyond P1"
+description = "Adds Intune P2 capabilities including remote help, endpoint privilege management, advanced endpoint analytics, and tunnel for MAM."
+who = "Organisations with complex device management needs"
+badge = ""
+m365maps = "https://m365maps.com/files/Intune.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/endpoint-management/microsoft-intune-pricing"
+features = ["intune-suite"]
+
+[[plans]]
+id = "entra-p2"
+name = "Microsoft Entra ID P2"
+category = "security"
+price = 9
+price_note = "Add-on"
+tagline = "PIM + risk-based conditional access"
+description = "Adds Privileged Identity Management (PIM), Identity Protection (risk-based sign-in policies), and access reviews on top of Entra ID P1."
+who = "Organisations needing just-in-time admin access and risk-based policies"
+badge = ""
+m365maps = "https://m365maps.com/files/Entra-ID-Paid.htm"
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+features = ["entra-p2"]
+
+# ── CATEGORIES (for display order + labels) ──
+
+[[categories]]
+id = "enterprise"
+name = "Enterprise Plans"
+emoji = "🏢"
+description = "For organisations with 300+ users. Unlimited user count."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Enterprise-All.htm"
+
+[[categories]]
+id = "business"
+name = "Business Plans"
+emoji = "💼"
+description = "For small and medium businesses with up to 300 users."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Business-All.htm"
+
+[[categories]]
+id = "frontline"
+name = "Frontline Worker Plans"
+emoji = "👷"
+description = "For shift workers, retail staff, and field workers."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
+
+[[categories]]
+id = "copilot"
+name = "Copilot & AI"
+emoji = "🤖"
+description = "AI-powered add-ons and included capabilities."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Copilot.htm"
+
+[[categories]]
+id = "security"
+name = "Security & Compliance Add-ons"
+emoji = "🛡️"
+description = "Standalone add-ons for identity, endpoint, and compliance."
+m365maps_all = "https://m365maps.com/files/EMS-All.htm"

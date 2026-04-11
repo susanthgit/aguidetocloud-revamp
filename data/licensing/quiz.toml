@@ -1,0 +1,134 @@
+# ============================================
+# Licensing Quiz — "Which Plan Do I Need?"
+# Weighted scoring: each answer adds points to plan IDs
+# ============================================
+
+[[questions]]
+id = "q1"
+text = "How many people are in your organisation?"
+help = "This determines whether you need Business (≤300) or Enterprise (unlimited) plans."
+order = 1
+
+[[questions.options]]
+label = "Under 300 users"
+scores = { biz-basic = 3, biz-standard = 3, biz-premium = 3, apps-biz = 2 }
+
+[[questions.options]]
+label = "300 or more users"
+scores = { o365-e1 = 2, o365-e3 = 2, m365-e3 = 3, m365-e5 = 3, m365-e7 = 2 }
+
+[[questions.options]]
+label = "Mostly frontline / shift workers"
+scores = { m365-f1 = 4, m365-f3 = 4 }
+
+[[questions]]
+id = "q2"
+text = "Do your users need desktop Office apps (Word, Excel, PowerPoint installed on their PC/Mac)?"
+help = "Some plans only include web/mobile versions. Desktop apps cost more."
+order = 2
+
+[[questions.options]]
+label = "Yes — they need the installed desktop apps"
+scores = { biz-standard = 3, biz-premium = 3, apps-biz = 3, o365-e3 = 3, o365-e5 = 2, m365-e3 = 3, m365-e5 = 3, m365-e7 = 2 }
+
+[[questions.options]]
+label = "No — web and mobile apps are fine"
+scores = { biz-basic = 3, o365-e1 = 3, m365-f1 = 2, m365-f3 = 2 }
+
+[[questions.options]]
+label = "Some users do, some don't"
+scores = { biz-standard = 2, m365-e3 = 2, o365-e3 = 2 }
+
+[[questions]]
+id = "q3"
+text = "What level of security does your organisation need?"
+help = "Higher security means more protection but also higher cost."
+order = 3
+
+[[questions.options]]
+label = "Basic — just email protection and MFA"
+scores = { biz-basic = 2, biz-standard = 2, o365-e1 = 2, o365-e3 = 2, m365-f1 = 1, m365-f3 = 1 }
+
+[[questions.options]]
+label = "Standard — device management + identity protection"
+scores = { biz-premium = 3, m365-e3 = 3, m365-f3 = 2 }
+
+[[questions.options]]
+label = "Advanced — full endpoint protection, threat hunting, EDR"
+scores = { m365-e5 = 4, m365-e7 = 3 }
+
+[[questions.options]]
+label = "Maximum — advanced compliance, DLP, Insider Risk, eDiscovery"
+scores = { m365-e5 = 4, m365-e7 = 4 }
+
+[[questions]]
+id = "q4"
+text = "Do you need Teams Phone (make and receive regular phone calls through Teams)?"
+help = "Teams Phone System is only included in E5 and E7. Other plans need a paid add-on."
+order = 4
+
+[[questions.options]]
+label = "Yes — we want to replace our phone system with Teams"
+scores = { o365-e5 = 3, m365-e5 = 3, m365-e7 = 3 }
+
+[[questions.options]]
+label = "No — we only need Teams for chat and video meetings"
+scores = { biz-basic = 1, biz-standard = 1, biz-premium = 1, m365-e3 = 1, o365-e3 = 1, m365-f1 = 1, m365-f3 = 1 }
+
+[[questions]]
+id = "q5"
+text = "Are you interested in Microsoft 365 Copilot (AI assistant in Office apps)?"
+help = "Copilot is a $30/user/month add-on for most plans, or included in M365 E7."
+order = 5
+
+[[questions.options]]
+label = "Yes — we want Copilot now"
+scores = { m365-e7 = 4, m365-e5 = 2, m365-e3 = 2, biz-premium = 1, biz-standard = 1, copilot-addon = 5 }
+
+[[questions.options]]
+label = "Maybe later — not a priority right now"
+scores = { m365-e3 = 1, biz-standard = 1, m365-e5 = 1 }
+
+[[questions.options]]
+label = "No — not interested"
+scores = { m365-e3 = 1, biz-standard = 1, o365-e3 = 1 }
+
+[[questions]]
+id = "q6"
+text = "What's your approximate budget per user, per month?"
+help = "This helps narrow down to plans within your price range."
+order = 6
+
+[[questions.options]]
+label = "Under $15/user/month"
+scores = { biz-basic = 4, apps-biz = 3, o365-e1 = 3, m365-f1 = 3, m365-f3 = 2 }
+
+[[questions.options]]
+label = "$15 – $40/user/month"
+scores = { biz-standard = 3, biz-premium = 3, o365-e3 = 3, m365-e3 = 4 }
+
+[[questions.options]]
+label = "$40 – $60/user/month"
+scores = { o365-e5 = 3, m365-e5 = 4 }
+
+[[questions.options]]
+label = "Over $60/user/month"
+scores = { m365-e5 = 3, m365-e7 = 4 }
+
+[[questions]]
+id = "q7"
+text = "Do you need advanced compliance features (DLP, eDiscovery, Insider Risk Management)?"
+help = "Required for regulated industries like finance, healthcare, or government."
+order = 7
+
+[[questions.options]]
+label = "Yes — we're in a regulated industry"
+scores = { m365-e5 = 4, m365-e7 = 3 }
+
+[[questions.options]]
+label = "Some — basic data protection is enough"
+scores = { m365-e3 = 2, biz-premium = 2, o365-e3 = 1 }
+
+[[questions.options]]
+label = "No — not a priority"
+scores = { biz-basic = 1, biz-standard = 1, o365-e1 = 1, m365-f1 = 1, m365-f3 = 1 }
