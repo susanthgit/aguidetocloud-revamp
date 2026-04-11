@@ -1,5 +1,5 @@
 ---
 title: "Free Tools"
-description: "AI-powered tools for IT pros and cloud enthusiasts — AI News aggregator, M365 Roadmap tracker, and AI Prompt Library. All free, updated daily."
+description: "Free tools for IT pros and cloud enthusiasts — AI News, M365 Roadmap tracker, AI Prompt Library, and Licensing Simplifier. All free, updated regularly."
 layout: "free-tools"
 ---

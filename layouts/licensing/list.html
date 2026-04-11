@@ -1,0 +1,152 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/licensing.css?v={{ site.Params.cache_version }}">
+
+{{/* ── Inject plan data as JSON for JS ── */}}
+{{ $plans := hugo.Data.licensing.plans.plans }}
+{{ $categories := hugo.Data.licensing.plans.categories }}
+{{ $features := hugo.Data.licensing.features.features }}
+{{ $quiz := hugo.Data.licensing.quiz.questions }}
+{{ $changelog := hugo.Data.licensing.changelog.entries }}
+
+<script>
+  window.__licData = {
+    plans: {{ $plans | jsonify }},
+    categories: {{ $categories | jsonify }},
+    features: {{ $features | jsonify }},
+    quiz: {{ $quiz | jsonify }},
+    changelog: {{ $changelog | jsonify }}
+  };
+</script>
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Microsoft 365 Licensing Guide — FAQ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Microsoft 365 E3 and E5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Microsoft 365 E3 ($39/user/month) includes desktop Office apps, Exchange 100GB, Teams, Entra ID P1, Intune P1, and Defender for Endpoint P1. E5 ($60/user/month) adds Entra ID P2, Defender for Endpoint P2, Defender for Office 365 P2, Teams Phone, Power BI Pro, Insider Risk Management, and advanced eDiscovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Office 365 and Microsoft 365?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Office 365 plans include productivity apps and cloud services. Microsoft 365 plans include everything in Office 365 plus Windows Enterprise licences, Enterprise Mobility + Security (Intune, Entra ID), and advanced security features. Microsoft 365 is the more complete package."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Microsoft 365 plan is best for small businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most small businesses (under 300 users), Microsoft 365 Business Standard ($14/user/month) is the sweet spot — it includes desktop Office apps, Teams, Exchange, SharePoint, and OneDrive. If you need security features like Intune and Defender, upgrade to Business Premium ($22/user/month)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Microsoft 365 Copilot cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Microsoft 365 Copilot is a $30/user/month add-on that works with E3, E5, Business Standard, and Business Premium plans. The upcoming M365 E7 plan ($99/user/month, GA May 2026) includes Copilot built in. Basic Copilot Chat is available at no extra cost with most plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Microsoft 365 E7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Microsoft 365 E7 (also known as Frontier Suite) is a new enterprise plan at $99/user/month, going GA in May 2026. It includes everything in E5 plus Microsoft 365 Copilot, Agent 365, advanced AI governance, and enhanced identity protection. It is the first plan with Copilot included rather than as an add-on."
+      }
+    }
+  ]
+}
+</script>
+
+<div class="lic-page">
+
+  {{/* ── HERO ── */}}
+  <div class="lic-hero">
+    <h1>Microsoft 365 <span>Licensing Simplifier</span></h1>
+    <p class="lic-hero-subtitle">Compare plans in plain English · Find your ideal licence · Track what changed</p>
+    <p class="lic-hero-meta">Prices in USD · Last updated April 2026 · <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">Official Microsoft Pricing →</a></p>
+  </div>
+
+  {{/* ── TABS ── */}}
+  <div class="lic-tabs" role="tablist">
+    <button class="lic-tab active" data-tab="compare" role="tab" aria-selected="true">📊 Compare Plans</button>
+    <button class="lic-tab" data-tab="quiz" role="tab" aria-selected="false">🧠 Which Plan Do I Need?</button>
+    <button class="lic-tab" data-tab="changelog" role="tab" aria-selected="false">📰 What Changed?</button>
+  </div>
+
+  <div class="lic-container">
+
+    {{/* ══════════════ TAB: COMPARE ══════════════ */}}
+    <div class="lic-panel active" id="panel-compare">
+      <div id="lic-compare-content">
+        {{/* JS renders category sections + plan cards here */}}
+      </div>
+
+      {{/* Side-by-side comparison table (shown when 2+ plans checked) */}}
+      <div id="lic-compare-table-section" style="display:none;">
+        <h2 style="color:#e2e8f0;margin:2rem 0 1rem;">Side-by-Side Comparison</h2>
+        <div class="lic-compare-table-wrap">
+          <table class="lic-compare-table" id="lic-compare-table">
+            {{/* JS builds this table */}}
+          </table>
+        </div>
+        <button class="lic-btn" id="lic-clear-compare" style="margin-top:1rem;">Clear comparison</button>
+      </div>
+    </div>
+
+    {{/* ══════════════ TAB: QUIZ ══════════════ */}}
+    <div class="lic-panel" id="panel-quiz">
+      <div class="lic-quiz">
+        <div class="lic-quiz-progress" id="lic-quiz-progress"></div>
+        <div id="lic-quiz-questions">
+          {{/* JS renders questions here */}}
+        </div>
+        <div class="lic-quiz-actions">
+          <button class="lic-btn lic-btn-primary" id="lic-quiz-submit" style="display:none;">Show My Recommendations</button>
+          <button class="lic-btn" id="lic-quiz-reset" style="display:none;">Start Over</button>
+        </div>
+        <div class="lic-quiz-results" id="lic-quiz-results"></div>
+      </div>
+    </div>
+
+    {{/* ══════════════ TAB: CHANGELOG ══════════════ */}}
+    <div class="lic-panel" id="panel-changelog">
+      <div class="lic-changelog" id="lic-changelog-content">
+        {{/* JS renders timeline here */}}
+      </div>
+    </div>
+
+    {{/* ── DISCLAIMER ── */}}
+    <div class="lic-disclaimer">
+      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. All pricing is in <strong>USD (list price, per user, per month)</strong> and was sourced from official Microsoft pricing pages as of <strong>April 2026</strong> — pricing, features, and availability are subject to change. Enterprise Agreement (EA), CSP, and nonprofit pricing may differ. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
+    </div>
+
+    {{/* ── ATTRIBUTION ── */}}
+    <div class="lic-attribution">
+      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
+    </div>
+
+  </div><!-- /.lic-container -->
+
+  {{/* ── COMPARE BAR (fixed bottom) ── */}}
+  <div class="lic-compare-bar" id="lic-compare-bar">
+    <span class="lic-compare-count"><span id="lic-compare-count">0</span> plans selected</span>
+    <button class="lic-btn lic-btn-primary" id="lic-compare-go">Compare Side-by-Side</button>
+    <button class="lic-btn" id="lic-compare-clear">Clear</button>
+  </div>
+
+</div><!-- /.lic-page -->
+
+<script src="/js/licensing.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

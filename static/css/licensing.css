@@ -1,0 +1,554 @@
+/* ============================================
+   Microsoft Licensing Simplifier
+   Emerald accent · clean comparison cards
+   Tool-first design (compare → quiz → changelog)
+   ============================================ */
+
+.lic-page {
+  --lic-accent: #10B981;
+  --lic-accent-hover: #059669;
+  --lic-accent-glow: rgba(16, 185, 129, 0.2);
+  --lic-accent-border: rgba(16, 185, 129, 0.3);
+  --lic-accent-subtle: rgba(16, 185, 129, 0.08);
+  --tool-accent: #10B981;
+  --tool-accent-dim: rgba(16, 185, 129, 0.15);
+  --tool-accent-glow: rgba(16, 185, 129, 0.25);
+}
+
+.lic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem 2rem;
+}
+
+/* ── HERO ──────────────────────────────────── */
+
+.lic-hero {
+  text-align: center;
+  padding: 3rem 0 1.5rem;
+}
+.lic-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+}
+.lic-hero h1 span {
+  color: var(--lic-accent);
+  text-shadow: 0 0 30px var(--lic-accent-glow);
+}
+.lic-hero-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.lic-hero-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.lic-hero-meta a { color: var(--lic-accent); text-decoration: none; }
+.lic-hero-meta a:hover { text-decoration: underline; }
+
+/* ── TABS ──────────────────────────────────── */
+
+.lic-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+.lic-tab {
+  padding: 0.6rem 1.4rem;
+  border-radius: 99px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lic-tab:hover {
+  border-color: var(--lic-accent-border);
+  color: #e2e8f0;
+}
+.lic-tab.active {
+  background: var(--lic-accent);
+  border-color: var(--lic-accent);
+  color: #000;
+  font-weight: 600;
+}
+
+/* ── TAB PANELS ────────────────────────────── */
+
+.lic-panel { display: none; }
+.lic-panel.active { display: block; }
+
+/* ── CATEGORY SECTIONS ─────────────────────── */
+
+.lic-category {
+  margin-bottom: 2.5rem;
+}
+.lic-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+.lic-category-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+}
+.lic-category-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.lic-category-link {
+  font-size: 0.85rem;
+  color: var(--lic-accent);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+.lic-category-link:hover { text-decoration: underline; }
+
+/* ── PLAN CARDS GRID ───────────────────────── */
+
+.lic-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.lic-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.lic-card:hover {
+  border-color: var(--lic-accent-border);
+  box-shadow: 0 0 20px var(--lic-accent-glow);
+}
+.lic-card.highlighted {
+  border-color: var(--lic-accent);
+  box-shadow: 0 0 30px var(--lic-accent-glow);
+}
+
+/* Badge (Most Popular, Best Value, etc.) */
+.lic-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--lic-accent);
+  color: #000;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.lic-badge.coming-soon {
+  background: #f59e0b;
+  color: #000;
+}
+
+/* Card header */
+.lic-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+.lic-card-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+.lic-card-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--lic-accent);
+  white-space: nowrap;
+}
+.lic-card-price .price-unit {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+.lic-card-price .price-note {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #f59e0b;
+  display: block;
+}
+
+.lic-card-tagline {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+.lic-card-who {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Feature list inside card */
+.lic-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 0.8rem;
+}
+.lic-card-features li {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  padding: 0.15rem 0;
+}
+.lic-card-features li .feat-yes { color: var(--lic-accent); }
+.lic-card-features li .feat-no { color: #475569; }
+.lic-card-features li .feat-addon { color: #f59e0b; }
+
+/* Card actions */
+.lic-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.lic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  background: transparent;
+}
+.lic-btn:hover {
+  border-color: var(--lic-accent-border);
+  color: #e2e8f0;
+}
+.lic-btn-primary {
+  background: var(--lic-accent);
+  border-color: var(--lic-accent);
+  color: #000;
+  font-weight: 600;
+}
+.lic-btn-primary:hover {
+  background: var(--lic-accent-hover);
+  border-color: var(--lic-accent-hover);
+  color: #000;
+}
+
+/* ── COMPARE MODE ──────────────────────────── */
+
+.lic-compare-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  border-top: 2px solid var(--lic-accent);
+  padding: 0.8rem 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+.lic-compare-bar.visible { display: flex; }
+.lic-compare-count {
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Compare checkbox on cards */
+.lic-compare-check {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.lic-compare-check input[type="checkbox"] {
+  accent-color: var(--lic-accent);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ── COMPARISON TABLE (side-by-side) ───────── */
+
+.lic-compare-table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.lic-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.lic-compare-table th {
+  background: #1e293b;
+  color: var(--lic-accent);
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--lic-accent-border);
+  position: sticky;
+  top: 0;
+}
+.lic-compare-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+.lic-compare-table tr:nth-child(even) td {
+  background: rgba(30, 41, 59, 0.5);
+}
+.lic-compare-table .feat-cell-yes { color: var(--lic-accent); font-weight: 600; }
+.lic-compare-table .feat-cell-no { color: #475569; }
+.lic-compare-table .feat-cell-addon { color: #f59e0b; font-weight: 500; }
+
+/* ── QUIZ ──────────────────────────────────── */
+
+.lic-quiz { max-width: 700px; margin: 0 auto; }
+
+.lic-quiz-question {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.lic-quiz-question h3 {
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+.lic-quiz-help {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.lic-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lic-quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+.lic-quiz-option:hover {
+  border-color: var(--lic-accent-border);
+  background: var(--lic-accent-subtle);
+}
+.lic-quiz-option.selected {
+  border-color: var(--lic-accent);
+  background: var(--lic-accent-subtle);
+  color: #f1f5f9;
+}
+.lic-quiz-option input[type="radio"] {
+  accent-color: var(--lic-accent);
+  width: 16px;
+  height: 16px;
+}
+
+.lic-quiz-progress {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.lic-quiz-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+}
+.lic-quiz-dot.answered { background: var(--lic-accent); }
+
+.lic-quiz-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Quiz results */
+.lic-quiz-results {
+  margin-top: 2rem;
+}
+.lic-result-card {
+  background: #1e293b;
+  border: 2px solid var(--lic-accent-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.lic-result-card:first-child {
+  border-color: var(--lic-accent);
+  box-shadow: 0 0 25px var(--lic-accent-glow);
+}
+.lic-result-rank {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--lic-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.lic-result-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.3rem;
+}
+.lic-result-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--lic-accent);
+  margin-bottom: 0.6rem;
+}
+.lic-result-why {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+/* ── CHANGELOG ─────────────────────────────── */
+
+.lic-changelog { max-width: 800px; margin: 0 auto; }
+
+.lic-change {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+.lic-change::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: -2rem;
+  width: 2px;
+  background: #334155;
+}
+.lic-change:last-child::before {
+  bottom: 0;
+}
+.lic-change-dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--lic-accent);
+  border: 3px solid #0f172a;
+}
+.lic-change-dot.major { background: #ef4444; }
+.lic-change-dot.moderate { background: #f59e0b; }
+
+.lic-change-date {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+.lic-change-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.4rem;
+}
+.lic-change-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.lic-change-affected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+.lic-change-tag {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  background: var(--lic-accent-subtle);
+  border: 1px solid var(--lic-accent-border);
+  color: var(--lic-accent);
+}
+
+/* ── DISCLAIMER ────────────────────────────── */
+
+.lic-disclaimer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.lic-disclaimer a { color: var(--lic-accent); }
+.lic-disclaimer strong { color: #94a3b8; }
+
+/* ── ATTRIBUTION ───────────────────────────── */
+
+.lic-attribution {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+.lic-attribution a { color: var(--lic-accent); text-decoration: none; }
+.lic-attribution a:hover { text-decoration: underline; }
+
+/* ── MOBILE ────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .lic-container { padding: 0.5rem 1rem 2rem; }
+  .lic-hero h1 { font-size: 1.8rem; }
+  .lic-cards { grid-template-columns: 1fr; }
+  .lic-card-features { grid-template-columns: 1fr; }
+  .lic-tabs { gap: 0.3rem; }
+  .lic-tab { padding: 0.5rem 1rem; font-size: 0.85rem; }
+  .lic-compare-bar { padding: 0.6rem 1rem; flex-wrap: wrap; }
+}
