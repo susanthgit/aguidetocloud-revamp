@@ -1,0 +1,148 @@
+{{ define "main" }}
+<div class="page-hero">
+  <h1>🛠️ Free Tools</h1>
+  <p class="hero-subtitle">AI-powered tools for IT pros — built by <a href="/about/">Susanth</a>, free for everyone</p>
+</div>
+
+<div class="container">
+  <div class="free-tools-grid">
+
+    <a href="/ai-news/" class="free-tool-card" style="--card-accent: #00e5ff">
+      <div class="free-tool-icon">📰</div>
+      <h2>AI News</h2>
+      <p>Daily AI news digest with 3-tier layout, 20 vendor categories, and AI summaries. Updated 4× daily.</p>
+      <div class="free-tool-features">
+        <span>📅 Daily/Monthly views</span>
+        <span>🔍 Search & filter</span>
+        <span>📡 RSS feed</span>
+        <span>📥 CSV export</span>
+      </div>
+      <span class="free-tool-cta">Explore AI News →</span>
+    </a>
+
+    <a href="/m365-roadmap/" class="free-tool-card" style="--card-accent: #E5A00D">
+      <div class="free-tool-icon">🗺️</div>
+      <h2>M365 Roadmap Tracker</h2>
+      <p>Track every Microsoft 365 feature across 11 products with AI summaries, change detection, and delay flagging.</p>
+      <div class="free-tool-features">
+        <span>🔄 Updated daily</span>
+        <span>📋 11 product categories</span>
+        <span>📡 RSS feed</span>
+        <span>📥 CSV export</span>
+      </div>
+      <span class="free-tool-cta">Explore Roadmap →</span>
+    </a>
+
+    <a href="/prompts/" class="free-tool-card" style="--card-accent: #A78BFA">
+      <div class="free-tool-icon">💡</div>
+      <h2>AI Prompt Library</h2>
+      <p>84 tested prompts across 8 AI platforms — M365 Copilot, ChatGPT, Claude, Gemini, and more. Copy and use instantly.</p>
+      <div class="free-tool-features">
+        <span>✨ 8 platforms</span>
+        <span>📋 11 categories</span>
+        <span>📋 Copy & open-in</span>
+        <span>🧪 Human-tested</span>
+      </div>
+      <span class="free-tool-cta">Explore Prompts →</span>
+    </a>
+
+  </div>
+
+  <div class="free-tools-about">
+    <h2>Built with Copilot CLI</h2>
+    <p>These tools were designed, built, and deployed entirely using <strong>GitHub Copilot CLI</strong> — by someone with zero coding background. Learn how in the <a href="/blog/">Blog</a>.</p>
+  </div>
+</div>
+
+<style>
+.free-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.free-tool-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 3px solid var(--card-accent, var(--neon-cyan));
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.free-tool-card:hover {
+  border-color: var(--card-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--card-accent) 20%, transparent);
+  text-shadow: none;
+}
+.free-tool-icon {
+  font-size: 2.5rem;
+}
+.free-tool-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--card-accent);
+  margin: 0;
+}
+.free-tool-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+.free-tool-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.free-tool-features span {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+.free-tool-cta {
+  color: var(--card-accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.free-tools-about {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 1rem;
+}
+.free-tools-about h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.free-tools-about p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.free-tools-about a {
+  color: var(--neon-cyan);
+}
+@media (max-width: 768px) {
+  .free-tools-grid { grid-template-columns: 1fr; }
+  .free-tool-card { padding: 1.5rem; }
+}
+</style>
+{{ end }}

@@ -83,6 +83,11 @@
 
 /* List — card-style rows */
 .rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.rdmap-row-wrap { position: relative; }
+.rdmap-fav { position: absolute; left: -0.3rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: #3D3648; font-size: 1rem; cursor: pointer; padding: 0.3rem; transition: all 0.2s; opacity: 0; }
+.rdmap-row-wrap:hover .rdmap-fav { opacity: 0.6; }
+.rdmap-fav:hover { color: #E5A00D; opacity: 1 !important; }
+.rdmap-fav-active { color: #E5A00D !important; opacity: 1 !important; }
 .rdmap-row {
   display: grid; grid-template-columns: 100px 1fr auto;
   padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;

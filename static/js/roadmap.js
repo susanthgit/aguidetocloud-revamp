@@ -118,11 +118,24 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
+  // Favourites (localStorage)
+  var _favKey = 'rdmap_favourites';
+  var _favs = {};
+  try { _favs = JSON.parse(localStorage.getItem(_favKey) || '{}'); } catch(e) { _favs = {}; }
+  function isFav(id) { return !!_favs[id]; }
+  function toggleFav(id) {
+    if (_favs[id]) { delete _favs[id]; } else { _favs[id] = true; }
+    try { localStorage.setItem(_favKey, JSON.stringify(_favs)); } catch(e) {}
+  }
+
   function listRow(item) {
     var st = STATUS_META[item.status] || { color: '#666', label: '?' };
     var cat = CATEGORY_META[item.product_category] || {};
     var summary = item.ai_summary || '';
-    return '<a href="' + esc(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row" data-id="' + item.id + '" style="border-left:3px solid ' + (cat.color || '#3D3648') + '">'
+    var favClass = isFav(item.id) ? ' rdmap-fav-active' : '';
+    return '<div class="rdmap-row-wrap">'
+      + '<button class="rdmap-fav' + favClass + '" data-fav-id="' + item.id + '" aria-label="Favourite" title="Watch this item">★</button>'
+      + '<a href="' + esc(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row" data-id="' + item.id + '" style="border-left:3px solid ' + (cat.color || '#3D3648') + '">'
       + '<div class="rdmap-row-status"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span></div>'
       + '<div class="rdmap-row-main">'
       + '<div class="rdmap-row-title">' + esc(item.title) + '</div>'
@@ -131,7 +144,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       + '<div class="rdmap-row-meta">'
       + '<span class="rdmap-row-product" style="color:' + (cat.color || '#888') + '">' + (cat.emoji || '') + ' ' + esc(item.product_category_name || '') + '</span>'
       + '<span class="rdmap-row-date">' + esc(item.ga_date || '\u2014') + (item.is_delayed ? ' <span class="rdmap-delayed">DELAYED</span>' : '') + '</span>'
-      + '</div></a>';
+      + '</div></a></div>';
   }
 
   function clearAllFilters() {
@@ -181,6 +194,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   document.getElementById('rdmap-status-filter').addEventListener('change', function () { activeStatusFilter = this.value; applyFilters(); });
   document.getElementById('rdmap-product-filter').addEventListener('change', function () { activeProductFilter = this.value; document.querySelectorAll('.rdmap-chip').forEach(function (c) { c.classList.toggle('active', c.dataset.cat === activeProductFilter); }); applyFilters(); });
   document.getElementById('rdmap-search').addEventListener('input', debounce(applyFilters, 250));
+
+  // Favourite clicks (delegated)
+  document.addEventListener('click', function (e) {
+    var favBtn = e.target.closest('.rdmap-fav');
+    if (!favBtn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var id = favBtn.dataset.favId;
+    toggleFav(id);
+    favBtn.classList.toggle('rdmap-fav-active');
+    if (window.clarity) window.clarity('event', 'roadmap_favourite');
+  });
 
   // Category page support
   if (window.__roadmapCategoryFilter) {
