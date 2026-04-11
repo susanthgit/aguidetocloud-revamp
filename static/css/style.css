@@ -390,19 +390,18 @@ a:hover {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.4rem 1.5rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-left: 3px solid var(--neon-cyan);
+  background: color-mix(in srgb, var(--neon-cyan) 8%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--neon-cyan) 18%, transparent);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
   transition: all 0.2s;
 }
 .hp-blog-card:hover {
-  border-color: var(--neon-cyan);
-  background: var(--bg-card-hover);
+  background: color-mix(in srgb, var(--neon-cyan) 16%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--neon-cyan) 30%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 0 12px color-mix(in srgb, var(--neon-cyan) 8%, transparent);
   text-shadow: none;
 }
 .hp-blog-date {
@@ -442,8 +441,44 @@ a:hover {
 }
 .hp-blog-card:hover .hp-blog-read { opacity: 1; }
 
-/* ── HOMEPAGE: Category grid — hide 3rd+4th on mobile ── */
-.hp-cat-grid .video-card:nth-child(n+3) { display: block; }
+/* ── HOMEPAGE: Compact Category Grid ────── */
+.hp-cat-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+.hp-cat-compact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--neon-cyan) 6%, var(--bg-card));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  text-align: center;
+}
+.hp-cat-compact-card:hover {
+  background: color-mix(in srgb, var(--neon-cyan) 14%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--neon-cyan) 25%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  text-shadow: none;
+}
+.hp-cat-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+.hp-cat-count {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
 
 /* ── HOMEPAGE: SEARCH BOX ────────────────── */
 /* ── SHARED: IN-PAGE SEARCH BOX ─────────── */

@@ -64,6 +64,20 @@
     <button class="cert-progress-reset" id="cert-progress-reset">Reset progress</button>
   </div>
 
+  {{/* Feature 7: Study Plan Generator */}}
+  {{ if not (or (eq .Params.exam_status "beta") (eq .Params.exam_status "upcoming")) }}
+  <details class="cert-planner" id="cert-planner">
+    <summary class="cert-planner-toggle">📅 Generate a Study Plan</summary>
+    <div class="cert-planner-body">
+      <label class="cert-planner-label">When is your exam?
+        <input type="date" id="cert-exam-date" class="cert-planner-input">
+      </label>
+      <button class="cert-planner-btn" id="cert-planner-go">Generate Plan</button>
+      <div id="cert-plan-output"></div>
+    </div>
+  </details>
+  {{ end }}
+
   {{/* Jump-to TOC — built by JS from page headings */}}
   <nav class="cert-toc" id="cert-toc" aria-label="Table of contents"></nav>
 
@@ -195,6 +209,81 @@
         });
       }
     }
+  }
+
+  // ── Feature 7: Study Plan Generator ──
+  var planBtn = document.getElementById("cert-planner-go");
+  if (planBtn && content) {
+    planBtn.addEventListener("click", function() {
+      var dateInput = document.getElementById("cert-exam-date");
+      if (!dateInput || !dateInput.value) { alert("Please select your exam date."); return; }
+      var examDate = new Date(dateInput.value);
+      var now = new Date();
+      var diffDays = Math.ceil((examDate - now) / 86400000);
+      if (diffDays < 1) { alert("Please select a future date."); return; }
+      var weeks = Math.max(1, Math.ceil(diffDays / 7));
+
+      // Gather domains from h3 headings in content
+      var domains = [];
+      content.querySelectorAll("h3").forEach(function(h3) {
+        var text = h3.textContent.trim();
+        if (text.length < 5) return;
+        var objCount = 0;
+        var el = h3.nextElementSibling;
+        while (el && el.tagName !== "H3" && el.tagName !== "H2" && el.tagName !== "HR") {
+          objCount += el.querySelectorAll("li").length;
+          el = el.nextElementSibling;
+        }
+        if (objCount > 0) domains.push({ name: text, objectives: objCount });
+      });
+
+      if (domains.length === 0) {
+        document.getElementById("cert-plan-output").innerHTML = '<p style="color:var(--cert-text-dim)">Could not detect skill domains on this page.</p>';
+        return;
+      }
+
+      // Distribute domains across weeks proportionally
+      var totalObj = domains.reduce(function(s, d) { return s + d.objectives; }, 0);
+      var plan = [];
+      var domIdx = 0;
+      var remaining = domains[0].objectives;
+
+      for (var w = 0; w < weeks; w++) {
+        var weekObj = Math.round(totalObj / weeks);
+        var weekItems = [];
+        var allocated = 0;
+        while (domIdx < domains.length && allocated < weekObj) {
+          var take = Math.min(remaining, weekObj - allocated);
+          weekItems.push({ name: domains[domIdx].name, count: take, total: domains[domIdx].objectives });
+          allocated += take;
+          remaining -= take;
+          if (remaining <= 0) { domIdx++; if (domIdx < domains.length) remaining = domains[domIdx].objectives; }
+        }
+        plan.push({ week: w + 1, items: weekItems });
+      }
+      // Push any leftover into last week
+      while (domIdx < domains.length) {
+        plan[plan.length - 1].items.push({ name: domains[domIdx].name, count: remaining, total: domains[domIdx].objectives });
+        domIdx++; if (domIdx < domains.length) remaining = domains[domIdx].objectives;
+      }
+
+      var lastWeekLabel = weeks === 1 ? "" : "Week " + weeks + ": ";
+      var html = '<div class="cert-plan-result">';
+      html += '<p><strong>' + weeks + '-week study plan</strong> for ' + code + ' (' + diffDays + ' days until exam)</p>';
+      plan.forEach(function(w) {
+        html += '<div class="cert-plan-week"><strong>Week ' + w.week + '</strong>';
+        if (w.week === weeks) html += ' — Review + Practice Assessment';
+        html += '<ul>';
+        w.items.forEach(function(item) {
+          var shortName = item.name.length > 50 ? item.name.substring(0, 47) + "..." : item.name;
+          html += '<li>' + shortName + ' <span style="color:var(--cert-accent)">(' + item.count + ' objectives)</span></li>';
+        });
+        html += '</ul></div>';
+      });
+      html += '<p style="color:var(--cert-text-dim);font-size:0.82rem;margin-top:0.5rem;">💡 Reserve the final week for practice assessments and review of weak areas.</p>';
+      html += '</div>';
+      document.getElementById("cert-plan-output").innerHTML = html;
+    });
   }
 
   // ── TOC from h2 headings ──

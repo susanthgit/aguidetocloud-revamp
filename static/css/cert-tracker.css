@@ -579,6 +579,71 @@
 }
 .cert-progress-reset:hover { color: #EF4444; }
 
+/* Study Plan Generator */
+.cert-planner {
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.cert-planner-toggle {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cert-accent);
+  list-style: none;
+}
+.cert-planner-toggle::-webkit-details-marker { display: none; }
+.cert-planner-toggle::before { content: "▸ "; transition: transform 0.2s; }
+.cert-planner[open] .cert-planner-toggle::before { content: "▾ "; }
+.cert-planner-body {
+  padding: 0 1rem 1rem;
+}
+.cert-planner-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--cert-text-dim);
+  margin-bottom: 0.5rem;
+}
+.cert-planner-input {
+  display: block;
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  background: var(--cert-bg);
+  border: 1px solid var(--cert-border);
+  border-radius: 6px;
+  color: var(--cert-text);
+  font-size: 0.85rem;
+}
+.cert-planner-input:focus { border-color: var(--cert-accent); outline: none; }
+.cert-planner-btn {
+  margin-top: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: var(--cert-accent);
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.cert-planner-btn:hover { background: var(--cert-accent-hover); }
+.cert-plan-result {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--cert-text);
+}
+.cert-plan-week {
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--cert-accent);
+}
+.cert-plan-week ul { margin: 0.3rem 0 0; padding-left: 1.25rem; }
+.cert-plan-week li { font-size: 0.83rem; color: var(--cert-text-dim); }
+
 /* Study checkboxes */
 .cert-cb {
   appearance: none;
