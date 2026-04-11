@@ -476,6 +476,64 @@
   margin-top: 0.8rem;
 }
 
+/* ── Score delta badge ── */
+.polisher-score-delta {
+  margin-top: 0.8rem;
+  text-align: center;
+}
+.polisher-delta-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.polisher-delta-up {
+  color: #22c55e;
+  font-weight: 700;
+  margin-left: 0.3rem;
+}
+
+/* ── Related Prompts ── */
+.polisher-related-section {
+  margin-bottom: 1.5rem;
+}
+.polisher-related-list {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.polisher-related-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: var(--radius);
+  color: #A78BFA;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+.polisher-related-item:hover {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: rgba(167, 139, 250, 0.4);
+  transform: translateY(-1px);
+}
+.polisher-related-arrow {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.polisher-related-item:hover .polisher-related-arrow {
+  opacity: 1;
+}
+
 /* ── Added text legend ── */
 .polisher-added-legend {
   color: #22c55e;

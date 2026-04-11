@@ -540,13 +540,14 @@
 
   let currentPolished = '';
 
-  function renderScore(analysis) {
+  function renderScore(analysis, polishedAnalysis) {
     const $number = document.getElementById('polisher-score-number');
     const $label = document.getElementById('polisher-score-label');
     const $desc = document.getElementById('polisher-score-desc');
     const $pillars = document.getElementById('polisher-pillars');
 
-    $number.textContent = analysis.total;
+    // Animate score count-up
+    animateScore($number, analysis.total);
     $number.className = 'polisher-score-number ' + totalScoreClass(analysis.total);
     $label.textContent = analysis.label;
     $desc.textContent = analysis.desc;
@@ -556,16 +557,53 @@
       const p = analysis.pillars[key];
       const pct = p.score / p.max;
       const cls = scoreClass(pct);
+      // Start bars at 0 width, animate in via CSS transition
       html += `
         <div class="polisher-pillar">
           <span class="polisher-pillar-name"><span class="craft-icon">${meta.icon}</span> ${meta.label}</span>
           <div class="polisher-pillar-bar">
-            <div class="polisher-pillar-fill fill-${cls}" style="width: ${Math.round(pct * 100)}%"></div>
+            <div class="polisher-pillar-fill fill-${cls}" style="width: 0%" data-target="${Math.round(pct * 100)}"></div>
           </div>
           <span class="polisher-pillar-score score-${cls}">${p.score}/${p.max}</span>
         </div>`;
     }
     $pillars.innerHTML = html;
+
+    // Trigger bar animations after render
+    requestAnimationFrame(() => {
+      $pillars.querySelectorAll('.polisher-pillar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.target + '%';
+      });
+    });
+
+    // Render polished score delta if available
+    const $delta = document.getElementById('polisher-score-delta');
+    if ($delta && polishedAnalysis) {
+      const diff = polishedAnalysis.total - analysis.total;
+      if (diff > 0) {
+        $delta.innerHTML = `<span class="polisher-delta-badge">Original: <strong>${analysis.total}</strong> → Polished: <strong class="score-good">${polishedAnalysis.total}</strong> <span class="polisher-delta-up">+${diff} points</span></span>`;
+        $delta.style.display = '';
+      } else {
+        $delta.style.display = 'none';
+      }
+    }
+  }
+
+  function animateScore(el, target) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = target;
+      return;
+    }
+    const duration = 600;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   function renderTips(tips) {
@@ -601,6 +639,61 @@
     });
     $output.innerHTML = htmlParts.join('\n\n');
     currentPolished = polished;
+  }
+
+  /* ════════════════════════════════════════════
+     RELATED PROMPTS
+     ════════════════════════════════════════════ */
+
+  const DOMAIN_TO_PROMPTS = {
+    tech: [
+      { title: 'Debug & Fix Code', path: '/prompts/data-analysis/debug-and-fix-code/' },
+      { title: 'Deep Dive Research', path: '/prompts/research/deep-dive-research/' },
+      { title: 'Professional Blog Post', path: '/prompts/writing/professional-blog-post/' }
+    ],
+    business: [
+      { title: 'Executive Brief', path: '/prompts/summarising/executive-brief/' },
+      { title: 'Slide Deck Builder', path: '/prompts/presentations/slide-deck-builder/' },
+      { title: 'Strategic Brainstorm', path: '/prompts/brainstorming/strategic-brainstorm/' }
+    ],
+    creative: [
+      { title: 'Blog Post Writer', path: '/prompts/writing/professional-blog-post/' },
+      { title: 'Social Media Creator', path: '/prompts/writing/social-media-post-creator/' },
+      { title: 'Creative Brainstorm', path: '/prompts/brainstorming/creative-brainstorm/' }
+    ],
+    email: [
+      { title: 'Professional Email', path: '/prompts/email/professional-email-composer/' },
+      { title: 'Follow-Up Email', path: '/prompts/email/follow-up-email/' },
+      { title: 'Meeting Request', path: '/prompts/email/meeting-request/' }
+    ],
+    data: [
+      { title: 'Data Analysis Report', path: '/prompts/data-analysis/data-analysis-report/' },
+      { title: 'Excel Formula Helper', path: '/prompts/data-analysis/excel-formula-helper/' },
+      { title: 'Meeting Notes Summary', path: '/prompts/summarising/meeting-notes-summariser/' }
+    ],
+    education: [
+      { title: 'Deep Dive Research', path: '/prompts/research/deep-dive-research/' },
+      { title: 'ELI5 Explainer', path: '/prompts/research/eli5-explainer/' },
+      { title: 'Study Guide Creator', path: '/prompts/summarising/study-guide-creator/' }
+    ],
+    academic: [
+      { title: 'Deep Dive Research', path: '/prompts/research/deep-dive-research/' },
+      { title: 'Executive Brief', path: '/prompts/summarising/executive-brief/' },
+      { title: 'Professional Writing', path: '/prompts/writing/professional-blog-post/' }
+    ]
+  };
+
+  function renderRelatedPrompts(domain) {
+    const $section = document.getElementById('polisher-related');
+    if (!$section) return;
+    const prompts = DOMAIN_TO_PROMPTS[domain];
+    if (!prompts) { $section.style.display = 'none'; return; }
+    $section.style.display = '';
+    document.getElementById('polisher-related-list').innerHTML = prompts.map(p =>
+      `<a href="${p.path}" class="polisher-related-item">
+        <span>${escapeHtml(p.title)}</span><span class="polisher-related-arrow">→</span>
+      </a>`
+    ).join('');
   }
 
   function renderHistory() {
@@ -639,6 +732,7 @@
     if (!analysis) return;
 
     const polished = rewrite(text, analysis);
+    const polishedAnalysis = analyse(polished);
     const tips = generateTips(analysis);
 
     // Show results, hide "how it works"
@@ -647,9 +741,10 @@
     const $howItWorks = document.getElementById('polisher-how-it-works');
     if ($howItWorks) $howItWorks.style.display = 'none';
 
-    renderScore(analysis);
+    renderScore(analysis, polishedAnalysis);
     renderTips(tips);
     renderOutput(text, polished);
+    renderRelatedPrompts(analysis.domain);
     saveHistory(text, analysis.total);
     renderHistory();
 
