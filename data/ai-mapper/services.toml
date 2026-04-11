@@ -44,6 +44,8 @@ integration_gcp = false
 use_cases = ["chatbots", "document-processing", "code-assistant", "content-generation", "search", "customer-service"]
 best_for = ["Enterprise GPT deployment", "M365 integration", "Regulated industries"]
 compare_with = ["openai-api", "aws-bedrock", "google-vertex-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [azure-ai-foundry]
 name = "Azure AI Foundry"
@@ -84,6 +86,8 @@ integration_gcp = false
 use_cases = ["agent-building", "model-evaluation", "prompt-engineering", "custom-models", "enterprise-ai"]
 best_for = ["Multi-model AI apps", "Agent orchestration", "Model evaluation"]
 compare_with = ["aws-bedrock", "google-vertex-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [copilot-studio]
 name = "Microsoft Copilot Studio"
@@ -124,6 +128,8 @@ integration_gcp = false
 use_cases = ["customer-service", "internal-helpdesk", "hr-bot", "it-support", "knowledge-base"]
 best_for = ["No-code agent building", "M365-connected bots", "IT admins"]
 compare_with = ["aws-bedrock-agents", "google-vertex-agent-builder"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [github-copilot]
 name = "GitHub Copilot"
@@ -164,6 +170,8 @@ integration_gcp = false
 use_cases = ["code-completion", "code-review", "debugging", "documentation", "testing"]
 best_for = ["Developers", "Code completion in IDE", "PR automation"]
 compare_with = ["amazon-q-developer", "google-gemini-code-assist"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [azure-ai-search]
 name = "Azure AI Search"
@@ -204,6 +212,8 @@ integration_gcp = false
 use_cases = ["enterprise-search", "rag", "document-search", "e-commerce-search", "knowledge-base"]
 best_for = ["RAG grounding", "Enterprise document search", "Azure-native apps"]
 compare_with = ["google-vertex-ai-search", "amazon-kendra"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [azure-ai-document-intelligence]
 name = "Azure AI Document Intelligence"
@@ -244,6 +254,8 @@ integration_gcp = false
 use_cases = ["invoice-processing", "receipt-scanning", "form-extraction", "id-verification", "contract-analysis"]
 best_for = ["Invoice automation", "Form data extraction", "Document digitisation"]
 compare_with = ["amazon-textract", "google-document-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [azure-ai-speech]
 name = "Azure AI Speech"
@@ -284,6 +296,8 @@ integration_gcp = false
 use_cases = ["transcription", "voice-assistant", "accessibility", "call-center", "podcast-transcription"]
 best_for = ["Real-time transcription", "Custom neural voices", "Accessibility"]
 compare_with = ["amazon-polly", "amazon-transcribe", "elevenlabs", "google-cloud-speech"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # OPENAI
@@ -328,6 +342,8 @@ integration_gcp = false
 use_cases = ["chatbots", "content-generation", "code-assistant", "image-generation", "research", "prototyping"]
 best_for = ["Latest models first", "Rapid prototyping", "Multi-modal AI"]
 compare_with = ["azure-openai", "anthropic-api", "google-gemini-api"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [chatgpt]
 name = "ChatGPT"
@@ -368,6 +384,8 @@ integration_gcp = false
 use_cases = ["general-assistant", "writing", "research", "coding-help", "brainstorming", "learning"]
 best_for = ["General-purpose AI chat", "Creative writing", "Quick research"]
 compare_with = ["claude-ai", "google-gemini", "perplexity"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # GOOGLE
@@ -412,6 +430,8 @@ integration_gcp = true
 use_cases = ["custom-models", "enterprise-ai", "data-science", "search", "content-generation"]
 best_for = ["ML/data science teams", "Open-source models", "Largest context windows"]
 compare_with = ["azure-openai", "aws-bedrock", "azure-ai-foundry"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [google-gemini-api]
 name = "Google Gemini API"
@@ -452,6 +472,8 @@ integration_gcp = true
 use_cases = ["prototyping", "content-generation", "multimodal-apps", "coding", "research"]
 best_for = ["Best free tier", "Longest context window", "Multimodal at low cost"]
 compare_with = ["openai-api", "anthropic-api"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [google-gemini]
 name = "Google Gemini (Consumer)"
@@ -492,6 +514,8 @@ integration_gcp = true
 use_cases = ["general-assistant", "writing", "research", "google-workspace", "brainstorming"]
 best_for = ["Google Workspace users", "General AI chat", "Research with grounding"]
 compare_with = ["chatgpt", "claude-ai", "perplexity"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [notebooklm]
 name = "NotebookLM"
@@ -532,6 +556,8 @@ integration_gcp = true
 use_cases = ["research", "document-analysis", "study-aid", "podcast-creation", "meeting-notes"]
 best_for = ["Source-grounded research", "AI podcast generation", "Study tool"]
 compare_with = ["perplexity", "claude-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # AMAZON
@@ -576,6 +602,8 @@ integration_gcp = false
 use_cases = ["enterprise-ai", "chatbots", "content-generation", "code-assistant", "agents"]
 best_for = ["Multi-model flexibility", "AWS-native shops", "Claude enterprise access"]
 compare_with = ["azure-openai", "google-vertex-ai", "azure-ai-foundry"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [amazon-q]
 name = "Amazon Q"
@@ -616,6 +644,8 @@ integration_gcp = false
 use_cases = ["business-assistant", "code-generation", "aws-management", "data-analysis", "enterprise-search"]
 best_for = ["AWS power users", "Enterprise Q&A", "AWS console automation"]
 compare_with = ["copilot-studio", "github-copilot", "google-gemini-code-assist"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [amazon-textract]
 name = "Amazon Textract"
@@ -656,6 +686,8 @@ integration_gcp = false
 use_cases = ["invoice-processing", "form-extraction", "document-digitisation", "lending-automation"]
 best_for = ["AWS document processing", "Invoice automation", "Lending workflows"]
 compare_with = ["azure-ai-document-intelligence", "google-document-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # ANTHROPIC
@@ -700,6 +732,8 @@ integration_gcp = true
 use_cases = ["chatbots", "code-assistant", "document-analysis", "research", "content-generation", "long-document-processing"]
 best_for = ["Safety-focused AI", "Long document analysis", "Instruction following"]
 compare_with = ["openai-api", "google-gemini-api", "azure-openai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [claude-ai]
 name = "Claude.ai"
@@ -740,6 +774,8 @@ integration_gcp = false
 use_cases = ["writing", "coding", "research", "analysis", "document-review", "brainstorming"]
 best_for = ["Long-form writing", "Code projects", "Document analysis"]
 compare_with = ["chatgpt", "google-gemini", "perplexity"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # META
@@ -784,6 +820,8 @@ integration_gcp = true
 use_cases = ["custom-models", "on-premises-ai", "research", "fine-tuning", "cost-optimisation"]
 best_for = ["Open-source flexibility", "On-premises deployment", "Custom fine-tuning"]
 compare_with = ["mistral-api", "google-gemma"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # MISTRAL
@@ -828,6 +866,8 @@ integration_gcp = true
 use_cases = ["multilingual-content", "european-compliance", "code-generation", "enterprise-ai"]
 best_for = ["EU data sovereignty", "Cost-effective performance", "Multilingual tasks"]
 compare_with = ["openai-api", "anthropic-api", "meta-llama"]
+status = "ga"
+last_updated = "2026-04-11"
 
 # ============================================================
 # OTHERS
@@ -872,6 +912,8 @@ integration_gcp = false
 use_cases = ["research", "fact-checking", "academic-research", "market-research", "competitive-analysis"]
 best_for = ["Cited research answers", "Real-time web search AI", "Fact verification"]
 compare_with = ["chatgpt", "google-gemini", "notebooklm"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [midjourney]
 name = "Midjourney"
@@ -912,6 +954,8 @@ integration_gcp = false
 use_cases = ["marketing-visuals", "concept-art", "product-design", "social-media", "branding"]
 best_for = ["Highest-quality AI art", "Marketing visuals", "Creative professionals"]
 compare_with = ["dalle", "stable-diffusion", "imagen"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [elevenlabs]
 name = "ElevenLabs"
@@ -952,6 +996,8 @@ integration_gcp = false
 use_cases = ["audiobooks", "podcasts", "video-narration", "voice-cloning", "dubbing", "accessibility"]
 best_for = ["Most realistic AI voices", "Voice cloning", "Content creators"]
 compare_with = ["azure-ai-speech", "amazon-polly"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [runway]
 name = "Runway"
@@ -992,6 +1038,8 @@ integration_gcp = false
 use_cases = ["video-creation", "video-editing", "marketing-video", "social-media", "film-production"]
 best_for = ["AI video generation", "Creative video editing", "Social media content"]
 compare_with = ["openai-sora", "google-vids"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [deepseek]
 name = "DeepSeek"
@@ -1032,6 +1080,8 @@ integration_gcp = false
 use_cases = ["cost-effective-ai", "coding", "reasoning-tasks", "research", "math"]
 best_for = ["Ultra-low-cost API", "Strong reasoning", "Budget-conscious projects"]
 compare_with = ["openai-api", "anthropic-api", "mistral-api"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [hugging-face]
 name = "Hugging Face"
@@ -1072,6 +1122,8 @@ integration_gcp = true
 use_cases = ["model-hosting", "open-source-ai", "research", "fine-tuning", "datasets", "demos"]
 best_for = ["Open-source model access", "AI research", "Model fine-tuning"]
 compare_with = ["meta-llama", "aws-bedrock", "google-vertex-ai"]
+status = "ga"
+last_updated = "2026-04-11"
 
 [cohere]
 name = "Cohere"
@@ -1112,3 +1164,5 @@ integration_gcp = true
 use_cases = ["enterprise-search", "rag", "multilingual-content", "customer-service", "semantic-search"]
 best_for = ["Enterprise RAG", "Multilingual search", "Embeddings & reranking"]
 compare_with = ["azure-ai-search", "openai-api", "aws-bedrock"]
+status = "ga"
+last_updated = "2026-04-11"

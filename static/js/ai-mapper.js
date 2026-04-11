@@ -1,6 +1,8 @@
 /* ============================================================
-   AI Service Mapper — Interactive Engine
-   All filtering, compare, quiz, pricing, glossary logic
+   AI Service Mapper v2 — Full Interactive Engine
+   Features: scenarios, heatmap, modal, favourites, filter counts,
+   quiz reasoning, presets, cost estimator, glossary x-links,
+   changelog, status badges, last-updated, alternatives
    ============================================================ */
 
 (function() {
@@ -13,16 +15,63 @@
   const categories = DATA.categories || {};
   const quizData = DATA.quiz || {};
   const quizQuestions = quizData.questions || [];
+  const changelogData = DATA.changelog || {};
+  const changelogEntries = changelogData.entries || [];
 
   // State
   let compareSet = new Set();
-  let activeFilters = { provider: [], category: [], pricing: [], capabilities: [], enterprise: [], integration: [] };
+  let activeFilters = { provider: [], category: [], pricing: [], capabilities: [], enterprise: [], integration: [], status: [] };
   let searchQuery = '';
   let sortBy = 'name';
   let quizAnswers = {};
   let quizStep = 0;
+  let favourites = loadFavourites();
+  let currentView = 'cards';
 
-  // ---- INIT ----
+  // Glossary terms for cross-linking (#14)
+  const glossaryTerms = [
+    { term: 'LLM', full: 'Large Language Model', def: 'A type of AI trained on massive amounts of text. Think of it as a very advanced autocomplete that can write, answer questions, and code. Examples: GPT-4, Claude, Gemini.' },
+    { term: 'Token', full: 'Token', def: 'The unit AI models use to measure text. Roughly 1 token = 3/4 of a word. "Hello world" = 2 tokens. Pricing is usually per million tokens.' },
+    { term: 'Context Window', full: 'Context Window', def: 'How much text an AI can "remember" in a conversation. 128K context = ~100,000 words = a full novel.' },
+    { term: 'RAG', full: 'Retrieval-Augmented Generation', def: 'The AI searches your documents first, then generates an answer based on what it found. Like giving the AI a textbook before asking a question.' },
+    { term: 'Embedding', full: 'Embedding', def: 'Converting text into numbers (vectors) that capture meaning. Used for semantic search — finding documents that are conceptually similar.' },
+    { term: 'Fine-tuning', full: 'Fine-tuning', def: 'Customising a pre-trained model with your own data for a specific task. Like specialising a GP into a cardiologist.' },
+    { term: 'Function Calling', full: 'Function Calling / Tool Use', def: "An AI model's ability to call external tools and APIs. Instead of just generating text, it can check weather, query databases, send emails." },
+    { term: 'Multimodal', full: 'Multimodal', def: 'AI that understands multiple content types — text, images, audio, video. Can describe photos or generate images from text.' },
+    { term: 'Inference', full: 'Inference', def: "When an AI processes your input and generates a response. Every ChatGPT message is inference. You're charged per inference." },
+    { term: 'Prompt', full: 'Prompt', def: 'The instruction you give an AI. A good prompt includes context, role, action, format, and scope. Better prompts = better responses.' },
+    { term: 'Agent', full: 'AI Agent', def: 'An AI system that plans, reasons, and acts autonomously. Unlike a chatbot, an agent breaks down tasks and uses tools to complete them.' },
+    { term: 'Orchestration', full: 'Orchestration', def: 'Coordinating multiple AI models and tools to complete complex tasks. Like a conductor managing an orchestra.' },
+    { term: 'Guardrails', full: 'Guardrails', def: 'Safety mechanisms preventing harmful or off-topic AI outputs. Like guardrails on a highway — keeps AI on the safe path.' },
+    { term: 'Data Residency', full: 'Data Residency', def: 'Requirement that data stays in a specific region. GDPR requires EU data to stay in the EU.' },
+    { term: 'SLA', full: 'Service Level Agreement', def: 'Uptime guarantee. 99.9% SLA = max ~8.7 hours downtime per year.' },
+    { term: 'Pay-per-use', full: 'Pay-per-use', def: 'Only pay for what you consume — per token, per API call, per page. No monthly commitment.' },
+    { term: 'Reasoning', full: 'Reasoning', def: "An AI's ability to think step-by-step and solve complex problems. Models like o3 and DeepSeek-R1 specialise in chain-of-thought reasoning." },
+    { term: 'Grounding', full: 'Grounding', def: 'Connecting AI responses to real data sources for factual, sourced answers instead of making things up.' },
+    { term: 'Hallucination', full: 'Hallucination', def: 'When AI confidently generates incorrect information. Grounding, RAG, and citations help reduce this.' },
+    { term: 'Vector Database', full: 'Vector Database', def: 'Database for storing and searching embeddings. Used in RAG to find relevant documents. Examples: Azure AI Search, Pinecone.' },
+  ];
+
+  // Comparison presets (#9)
+  const PRESETS = {
+    'big3-llm': ['azure-openai', 'aws-bedrock', 'google-vertex-ai'],
+    'agents': ['copilot-studio', 'azure-ai-foundry', 'amazon-q'],
+    'coding': ['github-copilot', 'amazon-q', 'openai-api'],
+    'consumer-chat': ['chatgpt', 'claude-ai', 'google-gemini', 'perplexity'],
+    'documents': ['azure-ai-document-intelligence', 'amazon-textract'],
+  };
+
+  // Scenario filters (#1)
+  const SCENARIOS = {
+    enterprise: { capabilities: ['text_generation', 'reasoning'], enterprise: ['soc2', 'data_residency'] },
+    coding: { capabilities: ['code_generation'] },
+    images: { capabilities: ['image_generation'] },
+    free: { pricing: ['free'] },
+    agents: { category: ['agent-platform'] },
+    voice: { capabilities: ['audio_speech'] },
+    documents: { category: ['document-processing'] },
+  };
+
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
@@ -39,6 +88,13 @@
     setupQuiz();
     renderPricingTable();
     renderGlossary();
+    renderChangelog();
+    setupScenarios();
+    setupViewToggle();
+    setupModal();
+    setupPresets();
+    setupCostEstimator();
+    renderFavBar();
     restoreFromURL();
   }
 
@@ -58,46 +114,120 @@
   }
 
   function switchToTab(tabName) {
-    const tab = document.querySelector(`.aimap-tab[data-tab="${tabName}"]`);
+    const tab = document.querySelector('.aimap-tab[data-tab="' + tabName + '"]');
     if (tab) tab.click();
   }
 
-  // ---- PROVIDER FILTERS (dynamic) ----
+  // ---- SCENARIOS (#1) ----
+  function setupScenarios() {
+    document.querySelectorAll('.aimap-scenario-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const scenario = SCENARIOS[btn.dataset.scenario];
+        if (!scenario) return;
+        clearAllFilters(true);
+        // Apply scenario filters
+        Object.entries(scenario).forEach(([key, vals]) => {
+          activeFilters[key] = vals;
+          const containerMap = { provider: 'filter-provider', category: 'filter-category', pricing: 'filter-pricing',
+            capabilities: 'filter-capabilities', enterprise: 'filter-enterprise', integration: 'filter-integration', status: 'filter-status' };
+          const container = document.getElementById(containerMap[key]);
+          if (container) vals.forEach(v => { const cb = container.querySelector('input[value="' + v + '"]'); if (cb) cb.checked = true; });
+        });
+        // Highlight active scenario
+        document.querySelectorAll('.aimap-scenario-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCards();
+        updateURL();
+      });
+    });
+  }
+
+  // ---- VIEW TOGGLE (#7 heatmap) ----
+  function setupViewToggle() {
+    document.querySelectorAll('.aimap-view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.aimap-view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = btn.dataset.view;
+        document.getElementById('aimap-grid').style.display = currentView === 'cards' ? '' : 'none';
+        document.getElementById('aimap-heatmap').style.display = currentView === 'heatmap' ? '' : 'none';
+        if (currentView === 'heatmap') renderHeatmap();
+      });
+    });
+  }
+
+  function renderHeatmap() {
+    const container = document.getElementById('aimap-heatmap');
+    if (!container) return;
+    const filtered = getFilteredServices().sort((a,b) => (a.name||'').localeCompare(b.name||''));
+    const caps = ['text_generation','code_generation','image_generation','audio_speech','video_generation','reasoning'];
+    const capLabels = ['💬 Text','💻 Code','🎨 Image','🎙️ Audio','🎬 Video','🧠 Reason'];
+
+    let html = '<div class="aimap-heatmap-scroll"><table class="aimap-heatmap-table"><thead><tr><th>Service</th><th>Provider</th>';
+    capLabels.forEach(l => html += '<th>' + l + '</th>');
+    html += '<th>Free</th><th>Multimodal</th></tr></thead><tbody>';
+
+    filtered.forEach(s => {
+      html += '<tr class="aimap-heatmap-row" data-id="' + s.id + '">';
+      html += '<td class="aimap-hm-name">' + s.name + '</td>';
+      html += '<td class="aimap-hm-provider">' + s.provider + '</td>';
+      caps.forEach(cap => {
+        const v = s[cap] || 0;
+        const cls = v >= 4 ? 'hm-high' : v >= 2 ? 'hm-med' : v > 0 ? 'hm-low' : 'hm-none';
+        html += '<td class="aimap-hm-cell ' + cls + '">' + (v || '—') + '</td>';
+      });
+      html += '<td class="aimap-hm-cell ' + (s.free_tier ? 'hm-high' : 'hm-none') + '">' + (s.free_tier ? '✅' : '—') + '</td>';
+      html += '<td class="aimap-hm-cell ' + (s.multimodal ? 'hm-med' : 'hm-none') + '">' + (s.multimodal ? '✅' : '—') + '</td>';
+      html += '</tr>';
+    });
+
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+
+    // Click row to open modal
+    container.querySelectorAll('.aimap-heatmap-row').forEach(row => {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', () => openModal(row.dataset.id));
+    });
+  }
+
+  // ---- PROVIDER/CATEGORY FILTERS with counts (#6) ----
   function buildProviderFilters() {
     const providers = [...new Set(services.map(s => s.provider))].sort();
     const container = document.getElementById('filter-provider');
     if (!container) return;
-    container.innerHTML = providers.map(p =>
-      `<label class="aimap-filter-check"><input type="checkbox" value="${p}"> ${p}</label>`
-    ).join('');
+    container.innerHTML = providers.map(p => {
+      const count = services.filter(s => s.provider === p).length;
+      return '<label class="aimap-filter-check"><input type="checkbox" value="' + p + '"> ' + p + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
+    }).join('');
   }
 
   function buildCategoryFilters() {
     const container = document.getElementById('filter-category');
     if (!container) return;
     const catEntries = Object.entries(categories).sort((a,b) => (a[1].order||99) - (b[1].order||99));
-    container.innerHTML = catEntries.map(([id, cat]) =>
-      `<label class="aimap-filter-check"><input type="checkbox" value="${id}"> ${cat.emoji} ${cat.name}</label>`
-    ).join('');
+    container.innerHTML = catEntries.map(function(entry) {
+      var id = entry[0], cat = entry[1];
+      var count = services.filter(function(s) { return s.category === id; }).length;
+      return '<label class="aimap-filter-check"><input type="checkbox" value="' + id + '"> ' + cat.emoji + ' ' + cat.name + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
+    }).join('');
   }
 
-  // ---- CARDS ----
+  // ---- CARDS with favourites, status badges, last_updated ----
   function renderCards() {
     const grid = document.getElementById('aimap-grid');
     const noResults = document.getElementById('aimap-no-results');
     const countEl = document.getElementById('aimap-count');
     if (!grid) return;
 
-    let filtered = getFilteredServices();
-
-    // Sort
-    filtered.sort((a, b) => {
+    var filtered = getFilteredServices();
+    filtered.sort(function(a, b) {
       if (sortBy === 'provider') return (a.provider || '').localeCompare(b.provider || '');
       if (sortBy === 'category') return (a.category || '').localeCompare(b.category || '');
       return (a.name || '').localeCompare(b.name || '');
     });
 
-    if (countEl) countEl.textContent = `${filtered.length} service${filtered.length !== 1 ? 's' : ''}`;
+    if (countEl) countEl.textContent = filtered.length + ' service' + (filtered.length !== 1 ? 's' : '');
 
     if (filtered.length === 0) {
       grid.innerHTML = '';
@@ -106,360 +236,465 @@
     }
     if (noResults) noResults.style.display = 'none';
 
-    grid.innerHTML = filtered.map(s => cardHTML(s)).join('');
+    grid.innerHTML = filtered.map(function(s) { return cardHTML(s); }).join('');
 
-    // Attach compare checkboxes
-    grid.querySelectorAll('.aimap-card-compare').forEach(cb => {
+    // Attach events
+    grid.querySelectorAll('.aimap-card-compare').forEach(function(cb) {
       cb.checked = compareSet.has(cb.dataset.id);
-      cb.addEventListener('change', () => {
-        if (cb.checked) {
-          if (compareSet.size >= 4) { cb.checked = false; return; }
-          compareSet.add(cb.dataset.id);
-        } else {
-          compareSet.delete(cb.dataset.id);
-        }
+      cb.addEventListener('change', function() {
+        if (cb.checked) { if (compareSet.size >= 4) { cb.checked = false; return; } compareSet.add(cb.dataset.id); }
+        else { compareSet.delete(cb.dataset.id); }
         updateCompareBtn();
       });
     });
+
+    // Card click -> modal (#2)
+    grid.querySelectorAll('.aimap-card-name-link').forEach(function(link) {
+      link.addEventListener('click', function(e) { e.preventDefault(); openModal(link.dataset.id); });
+    });
+
+    // Favourite buttons (#5)
+    grid.querySelectorAll('.aimap-fav-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleFavourite(btn.dataset.id);
+        btn.classList.toggle('active');
+        btn.textContent = favourites.has(btn.dataset.id) ? '★' : '☆';
+        renderFavBar();
+      });
+    });
+
+    if (currentView === 'heatmap') renderHeatmap();
   }
 
   function cardHTML(s) {
-    const cat = categories[s.category] || {};
-    const catColor = cat.colour || '#3B82F6';
+    var cat = categories[s.category] || {};
+    var catColor = cat.colour || '#3B82F6';
+    var isFav = favourites.has(s.id);
+
+    // Status badge (#10)
+    var statusBadge = '';
+    if (s.status === 'preview') statusBadge = '<span class="aimap-status-badge preview">🧪 Preview</span>';
+    else if (s.status === 'deprecated') statusBadge = '<span class="aimap-status-badge deprecated">⚠️ Deprecated</span>';
 
     // Capability badges
-    const caps = [
-      { key: 'text_generation', label: '💬 Text', val: s.text_generation },
-      { key: 'code_generation', label: '💻 Code', val: s.code_generation },
-      { key: 'image_generation', label: '🎨 Image', val: s.image_generation },
-      { key: 'audio_speech', label: '🎙️ Audio', val: s.audio_speech },
-      { key: 'video_generation', label: '🎬 Video', val: s.video_generation },
-      { key: 'reasoning', label: '🧠 Reasoning', val: s.reasoning },
-    ].filter(c => c.val > 0);
+    var caps = [
+      { label: '💬', val: s.text_generation }, { label: '💻', val: s.code_generation },
+      { label: '🎨', val: s.image_generation }, { label: '🎙️', val: s.audio_speech },
+      { label: '🎬', val: s.video_generation }, { label: '🧠', val: s.reasoning },
+    ].filter(function(c) { return c.val > 0; });
 
-    const capsHTML = caps.map(c =>
-      `<span class="aimap-cap-badge${c.val >= 4 ? ' strong' : ''}">${c.label} ${c.val}/5</span>`
-    ).join('');
+    var capsHTML = caps.map(function(c) {
+      return '<span class="aimap-cap-badge' + (c.val >= 4 ? ' strong' : '') + '" title="' + c.val + '/5">' + c.label + '<span class="aimap-cap-dots">' + '●'.repeat(c.val) + '○'.repeat(5-c.val) + '</span></span>';
+    }).join('');
 
-    // Best-for
-    const bestHTML = (s.best_for || []).map(b =>
-      `<span class="aimap-best-tag">${b}</span>`
-    ).join('');
+    var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + b + '</span>'; }).join('');
 
-    // Price display
-    let priceClass = 'paid';
-    let priceText = s.price_note || s.pricing_model || '';
+    var priceClass = 'paid', priceText = s.price_note || s.pricing_model || '';
     if (s.free_tier && s.pricing_model === 'free') { priceClass = 'free'; priceText = '🆓 Free'; }
-    else if (s.free_tier) { priceClass = 'free'; priceText = '🆓 Free tier available'; }
+    else if (s.free_tier) { priceClass = 'free'; priceText = '🆓 Free tier'; }
     else if (s.pricing_model === 'subscription') { priceClass = 'sub'; }
 
-    return `<div class="aimap-card" style="--card-cat-color: ${catColor}">
-      <div class="aimap-card-top">
-        <div class="aimap-card-identity">
-          <span class="aimap-card-provider">${s.provider}</span>
-          <span class="aimap-card-category">${cat.emoji || ''} ${cat.name || s.category}</span>
-        </div>
-        <input type="checkbox" class="aimap-card-compare" data-id="${s.id}" title="Add to compare" aria-label="Compare ${s.name}">
-      </div>
-      <h3 class="aimap-card-name">${s.name}</h3>
-      <p class="aimap-card-desc">${s.description || ''}</p>
-      <div class="aimap-card-caps">${capsHTML}</div>
-      <div class="aimap-card-best">${bestHTML}</div>
-      <div class="aimap-card-footer">
-        <span class="aimap-card-price ${priceClass}">${priceText}</span>
-        <a href="${s.url}" target="_blank" rel="noopener" class="aimap-card-link">Visit →</a>
-      </div>
-    </div>`;
+    // Last updated (#8)
+    var updatedHTML = s.last_updated ? '<span class="aimap-card-updated" title="Data last verified">✓ ' + s.last_updated + '</span>' : '';
+
+    return '<div class="aimap-card" style="--card-cat-color:' + catColor + '">' +
+      '<div class="aimap-card-top">' +
+        '<div class="aimap-card-identity">' +
+          '<span class="aimap-card-provider">' + s.provider + '</span>' +
+          statusBadge +
+        '</div>' +
+        '<div class="aimap-card-actions">' +
+          '<button class="aimap-fav-btn' + (isFav ? ' active' : '') + '" data-id="' + s.id + '" title="' + (isFav ? 'Remove from' : 'Add to') + ' shortlist">' + (isFav ? '★' : '☆') + '</button>' +
+          '<input type="checkbox" class="aimap-card-compare" data-id="' + s.id + '" title="Add to compare" aria-label="Compare ' + s.name + '">' +
+        '</div>' +
+      '</div>' +
+      '<a href="#" class="aimap-card-name-link" data-id="' + s.id + '"><h3 class="aimap-card-name">' + s.name + '</h3></a>' +
+      '<span class="aimap-card-category">' + (cat.emoji || '') + ' ' + (cat.name || s.category) + '</span>' +
+      '<p class="aimap-card-desc">' + (s.description || '') + '</p>' +
+      '<div class="aimap-card-caps">' + capsHTML + '</div>' +
+      '<div class="aimap-card-best">' + bestHTML + '</div>' +
+      '<div class="aimap-card-footer">' +
+        '<span class="aimap-card-price ' + priceClass + '">' + priceText + '</span>' +
+        updatedHTML +
+      '</div>' +
+    '</div>';
+  }
+
+  // ---- DETAIL MODAL (#2) with alternatives (#4) ----
+  function setupModal() {
+    var overlay = document.getElementById('aimap-modal-overlay');
+    var closeBtn = document.getElementById('aimap-modal-close');
+    if (!overlay || !closeBtn) return;
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  }
+
+  function openModal(serviceId) {
+    var s = services.find(function(x) { return x.id === serviceId; });
+    if (!s) return;
+    var cat = categories[s.category] || {};
+    var content = document.getElementById('aimap-modal-content');
+    var overlay = document.getElementById('aimap-modal-overlay');
+
+    var caps = [
+      { label: 'Text Generation', val: s.text_generation }, { label: 'Code Generation', val: s.code_generation },
+      { label: 'Image Generation', val: s.image_generation }, { label: 'Voice / Audio', val: s.audio_speech },
+      { label: 'Video Generation', val: s.video_generation }, { label: 'Reasoning', val: s.reasoning },
+    ];
+
+    var capsHTML = '<div class="aimap-modal-caps">' + caps.map(function(c) {
+      return '<div class="aimap-modal-cap-row"><span class="aimap-modal-cap-label">' + c.label + '</span>' +
+        '<div class="aimap-modal-cap-bar"><div class="aimap-modal-cap-fill" style="width:' + ((c.val||0)*20) + '%;background:' + (c.val >= 4 ? '#3B82F6' : c.val >= 2 ? '#fbbf24' : '#666') + '"></div></div>' +
+        '<span class="aimap-modal-cap-val">' + (c.val||0) + '/5</span></div>';
+    }).join('') + '</div>';
+
+    var features = [
+      { label: 'Multimodal', val: s.multimodal }, { label: 'Fine-tuning', val: s.fine_tuning },
+      { label: 'Function Calling', val: s.function_calling }, { label: 'Data Residency', val: s.data_residency },
+      { label: 'SOC 2', val: s.soc2 }, { label: 'HIPAA', val: s.hipaa },
+      { label: 'GDPR', val: s.gdpr }, { label: 'Private Networking', val: s.private_networking },
+    ];
+    var featHTML = '<div class="aimap-modal-features">' + features.map(function(f) {
+      return '<span class="aimap-modal-feat ' + (f.val ? 'yes' : 'no') + '">' + (f.val ? '✅' : '❌') + ' ' + f.label + '</span>';
+    }).join('') + '</div>';
+
+    // Alternatives (#4)
+    var altHTML = '';
+    if (s.compare_with && s.compare_with.length) {
+      var alts = s.compare_with.map(function(id) { return services.find(function(x) { return x.id === id; }); }).filter(Boolean);
+      if (alts.length) {
+        altHTML = '<div class="aimap-modal-alts"><h4>Similar Services</h4><div class="aimap-modal-alt-cards">' +
+          alts.map(function(a) {
+            var aCat = categories[a.category] || {};
+            return '<div class="aimap-modal-alt-card" data-id="' + a.id + '">' +
+              '<strong>' + a.name + '</strong><br><span style="color:#999;font-size:0.8rem">' + a.provider + ' · ' + (aCat.emoji||'') + ' ' + (aCat.name||'') + '</span></div>';
+          }).join('') + '</div></div>';
+      }
+    }
+
+    var statusBadge = '';
+    if (s.status === 'preview') statusBadge = ' <span class="aimap-status-badge preview">🧪 Preview</span>';
+    else if (s.status === 'deprecated') statusBadge = ' <span class="aimap-status-badge deprecated">⚠️ Deprecated</span>';
+
+    content.innerHTML =
+      '<div class="aimap-modal-header">' +
+        '<span class="aimap-card-provider">' + s.provider + '</span>' + statusBadge +
+        '<span class="aimap-card-category">' + (cat.emoji||'') + ' ' + (cat.name||'') + '</span>' +
+        (s.last_updated ? '<span class="aimap-card-updated">✓ Verified ' + s.last_updated + '</span>' : '') +
+      '</div>' +
+      '<h2>' + s.name + '</h2>' +
+      '<p style="color:#ccc;line-height:1.6">' + (s.description||'') + '</p>' +
+      capsHTML +
+      '<div class="aimap-modal-section"><h4>💰 Pricing</h4>' +
+        '<p>' + (s.price_note || s.pricing_model || 'N/A') + '</p>' +
+        (s.free_tier ? '<p style="color:#4ade80">🆓 ' + (s.free_tier_detail || 'Free tier available') + '</p>' : '') +
+        (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener" class="aimap-card-link">View pricing page →</a>' : '') +
+      '</div>' +
+      '<div class="aimap-modal-section"><h4>🔧 Features</h4>' + featHTML + '</div>' +
+      (s.context_window ? '<div class="aimap-modal-section"><h4>📏 Context Window</h4><p>' + s.context_window + '</p></div>' : '') +
+      (s.regions && s.regions.length ? '<div class="aimap-modal-section"><h4>🌍 Available Regions</h4><p>' + s.regions.join(', ') + '</p></div>' : '') +
+      (s.sla ? '<div class="aimap-modal-section"><h4>📊 SLA</h4><p>' + s.sla + '</p></div>' : '') +
+      '<div class="aimap-modal-section"><h4>🏷️ Best For</h4><div class="aimap-card-best">' + (s.best_for||[]).map(function(b) { return '<span class="aimap-best-tag">' + b + '</span>'; }).join('') + '</div></div>' +
+      '<div class="aimap-modal-section"><h4>🎯 Use Cases</h4><div class="aimap-card-best">' + (s.use_cases||[]).map(function(u) { return '<span class="aimap-best-tag">' + u.replace(/-/g,' ') + '</span>'; }).join('') + '</div></div>' +
+      altHTML +
+      '<div class="aimap-modal-actions">' +
+        '<a href="' + (s.url||'#') + '" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary">Visit ' + s.name + ' →</a>' +
+        (s.docs_url ? '<a href="' + s.docs_url + '" target="_blank" rel="noopener" class="aimap-btn">📄 Documentation</a>' : '') +
+      '</div>';
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Alt card clicks
+    content.querySelectorAll('.aimap-modal-alt-card').forEach(function(card) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() { openModal(card.dataset.id); });
+    });
+  }
+
+  function closeModal() {
+    var overlay = document.getElementById('aimap-modal-overlay');
+    if (overlay) overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // ---- FAVOURITES (#5) ----
+  function loadFavourites() {
+    try { return new Set(JSON.parse(localStorage.getItem('aimap_favourites') || '[]')); }
+    catch(e) { return new Set(); }
+  }
+  function saveFavourites() {
+    localStorage.setItem('aimap_favourites', JSON.stringify([...favourites]));
+  }
+  function toggleFavourite(id) {
+    if (favourites.has(id)) favourites.delete(id); else favourites.add(id);
+    saveFavourites();
+  }
+  function renderFavBar() {
+    var bar = document.getElementById('aimap-fav-bar');
+    var items = document.getElementById('aimap-fav-bar-items');
+    if (!bar || !items) return;
+    if (favourites.size === 0) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    items.innerHTML = [...favourites].map(function(id) {
+      var s = services.find(function(x) { return x.id === id; });
+      if (!s) return '';
+      return '<span class="aimap-fav-chip" data-id="' + id + '">' + s.name + ' <button class="aimap-fav-chip-x" data-id="' + id + '">×</button></span>';
+    }).join('');
+    items.querySelectorAll('.aimap-fav-chip-x').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleFavourite(btn.dataset.id);
+        renderFavBar();
+        renderCards();
+      });
+    });
+    items.querySelectorAll('.aimap-fav-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() { openModal(chip.dataset.id); });
+    });
+    var clearBtn = document.getElementById('aimap-fav-clear');
+    if (clearBtn) clearBtn.onclick = function() { favourites.clear(); saveFavourites(); renderFavBar(); renderCards(); };
   }
 
   // ---- FILTERING ----
   function getFilteredServices() {
-    return services.filter(s => {
-      // Search
+    return services.filter(function(s) {
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const haystack = `${s.name} ${s.provider} ${s.description} ${(s.tags||[]).join(' ')} ${(s.use_cases||[]).join(' ')} ${(s.best_for||[]).join(' ')}`.toLowerCase();
-        if (!haystack.includes(q)) return false;
+        var q = searchQuery.toLowerCase();
+        var haystack = (s.name + ' ' + s.provider + ' ' + s.description + ' ' + (s.tags||[]).join(' ') + ' ' + (s.use_cases||[]).join(' ') + ' ' + (s.best_for||[]).join(' ')).toLowerCase();
+        if (haystack.indexOf(q) === -1) return false;
       }
-      // Provider
-      if (activeFilters.provider.length && !activeFilters.provider.includes(s.provider)) return false;
-      // Category
-      if (activeFilters.category.length && !activeFilters.category.includes(s.category)) return false;
-      // Pricing
+      if (activeFilters.provider.length && activeFilters.provider.indexOf(s.provider) === -1) return false;
+      if (activeFilters.category.length && activeFilters.category.indexOf(s.category) === -1) return false;
       if (activeFilters.pricing.length) {
-        const matches = activeFilters.pricing.some(p => {
-          if (p === 'free') return s.free_tier;
-          return s.pricing_model === p;
-        });
+        var matches = activeFilters.pricing.some(function(p) { return p === 'free' ? s.free_tier : s.pricing_model === p; });
         if (!matches) return false;
       }
-      // Capabilities
       if (activeFilters.capabilities.length) {
-        const matches = activeFilters.capabilities.every(cap => (s[cap] || 0) >= 3);
-        if (!matches) return false;
+        if (!activeFilters.capabilities.every(function(cap) { return (s[cap]||0) >= 3; })) return false;
       }
-      // Enterprise
       if (activeFilters.enterprise.length) {
-        const matches = activeFilters.enterprise.every(e => s[e]);
-        if (!matches) return false;
+        if (!activeFilters.enterprise.every(function(e) { return s[e]; })) return false;
       }
-      // Integration
       if (activeFilters.integration.length) {
-        const matches = activeFilters.integration.some(i => s[i]);
-        if (!matches) return false;
+        if (!activeFilters.integration.some(function(i) { return s[i]; })) return false;
+      }
+      if (activeFilters.status.length) {
+        if (activeFilters.status.indexOf(s.status || 'ga') === -1) return false;
       }
       return true;
     });
   }
 
   function setupSearch() {
-    const input = document.getElementById('aimap-search');
+    var input = document.getElementById('aimap-search');
     if (!input) return;
-    let timeout;
-    input.addEventListener('input', () => {
+    var timeout;
+    input.addEventListener('input', function() {
       clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        searchQuery = input.value.trim();
-        renderCards();
-        updateURL();
-      }, 200);
+      timeout = setTimeout(function() { searchQuery = input.value.trim(); renderCards(); updateURL(); }, 200);
     });
   }
 
   function setupFilterListeners() {
-    const filterMap = {
-      'filter-provider': 'provider',
-      'filter-category': 'category',
-      'filter-pricing': 'pricing',
-      'filter-capabilities': 'capabilities',
-      'filter-enterprise': 'enterprise',
-      'filter-integration': 'integration',
+    var filterMap = {
+      'filter-provider': 'provider', 'filter-category': 'category', 'filter-pricing': 'pricing',
+      'filter-capabilities': 'capabilities', 'filter-enterprise': 'enterprise', 'filter-integration': 'integration', 'filter-status': 'status'
     };
-
-    Object.entries(filterMap).forEach(([containerId, filterKey]) => {
-      const container = document.getElementById(containerId);
+    Object.keys(filterMap).forEach(function(containerId) {
+      var filterKey = filterMap[containerId];
+      var container = document.getElementById(containerId);
       if (!container) return;
-      container.addEventListener('change', () => {
-        activeFilters[filterKey] = Array.from(container.querySelectorAll('input:checked')).map(i => i.value);
+      container.addEventListener('change', function() {
+        activeFilters[filterKey] = Array.from(container.querySelectorAll('input:checked')).map(function(i) { return i.value; });
+        // Clear scenario highlight
+        document.querySelectorAll('.aimap-scenario-btn').forEach(function(b) { b.classList.remove('active'); });
         renderCards();
         updateURL();
       });
     });
-
-    // Clear filters
-    const clearBtn = document.getElementById('aimap-clear-filters');
-    const clearLink = document.getElementById('aimap-clear-link');
-    [clearBtn, clearLink].forEach(el => {
-      if (!el) return;
-      el.addEventListener('click', clearAllFilters);
+    [document.getElementById('aimap-clear-filters'), document.getElementById('aimap-clear-link')].forEach(function(el) {
+      if (el) el.addEventListener('click', function() { clearAllFilters(); });
     });
   }
 
-  function clearAllFilters() {
-    document.querySelectorAll('.aimap-filters input[type="checkbox"]').forEach(cb => cb.checked = false);
-    const searchInput = document.getElementById('aimap-search');
+  function clearAllFilters(silent) {
+    document.querySelectorAll('.aimap-filters input[type="checkbox"]').forEach(function(cb) { cb.checked = false; });
+    var searchInput = document.getElementById('aimap-search');
     if (searchInput) searchInput.value = '';
     searchQuery = '';
-    Object.keys(activeFilters).forEach(k => activeFilters[k] = []);
-    renderCards();
-    updateURL();
+    Object.keys(activeFilters).forEach(function(k) { activeFilters[k] = []; });
+    document.querySelectorAll('.aimap-scenario-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (!silent) { renderCards(); updateURL(); }
   }
 
   function setupSort() {
-    const select = document.getElementById('aimap-sort-select');
+    var select = document.getElementById('aimap-sort-select');
     if (!select) return;
-    select.addEventListener('change', () => {
-      sortBy = select.value;
-      renderCards();
-    });
+    select.addEventListener('change', function() { sortBy = select.value; renderCards(); });
   }
 
   function setupMobileFilterToggle() {
-    const toggle = document.getElementById('aimap-mobile-filter-toggle');
-    const filters = document.querySelector('.aimap-filters');
+    var toggle = document.getElementById('aimap-mobile-filter-toggle');
+    var filters = document.querySelector('.aimap-filters');
     if (!toggle || !filters) return;
-    toggle.addEventListener('click', () => filters.classList.toggle('open'));
+    toggle.addEventListener('click', function() { filters.classList.toggle('open'); });
   }
 
-  // ---- COMPARE ----
+  // ---- COMPARE with PRESETS (#9) ----
   function updateCompareBtn() {
-    const btn = document.getElementById('aimap-open-compare');
-    const count = document.getElementById('aimap-compare-count');
+    var btn = document.getElementById('aimap-open-compare');
+    var count = document.getElementById('aimap-compare-count');
     if (btn) btn.disabled = compareSet.size < 2;
     if (count) count.textContent = compareSet.size;
   }
 
   function setupCompareBtn() {
-    const btn = document.getElementById('aimap-open-compare');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      if (compareSet.size >= 2) switchToTab('compare');
-    });
+    var btn = document.getElementById('aimap-open-compare');
+    if (btn) btn.addEventListener('click', function() { if (compareSet.size >= 2) switchToTab('compare'); });
   }
 
   function setupComparePickers() {
-    const container = document.getElementById('aimap-compare-pickers');
+    var container = document.getElementById('aimap-compare-pickers');
     if (!container) return;
-    for (let i = 0; i < 4; i++) {
-      const sel = document.createElement('select');
-      sel.innerHTML = `<option value="">Select service ${i+1}...</option>` +
-        services.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
-      sel.addEventListener('change', () => {
-        syncPickersToCompareSet();
-        renderCompareTable();
-      });
+    for (var i = 0; i < 4; i++) {
+      var sel = document.createElement('select');
+      sel.innerHTML = '<option value="">Select service ' + (i+1) + '...</option>' + services.map(function(s) { return '<option value="' + s.id + '">' + s.name + '</option>'; }).join('');
+      sel.addEventListener('change', function() { syncPickersToCompareSet(); renderCompareTable(); });
       container.appendChild(sel);
     }
   }
 
-  function syncPickersToCompareSet() {
-    const pickers = document.querySelectorAll('#aimap-compare-pickers select');
-    compareSet.clear();
-    pickers.forEach(sel => { if (sel.value) compareSet.add(sel.value); });
-    updateCompareBtn();
-    // Sync checkboxes on cards
-    document.querySelectorAll('.aimap-card-compare').forEach(cb => {
-      cb.checked = compareSet.has(cb.dataset.id);
+  function setupPresets() {
+    document.querySelectorAll('.aimap-preset-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var ids = PRESETS[btn.dataset.preset];
+        if (!ids) return;
+        compareSet.clear();
+        ids.forEach(function(id) { compareSet.add(id); });
+        updateCompareBtn();
+        renderCompareTable();
+      });
     });
   }
 
+  function syncPickersToCompareSet() {
+    var pickers = document.querySelectorAll('#aimap-compare-pickers select');
+    compareSet.clear();
+    pickers.forEach(function(sel) { if (sel.value) compareSet.add(sel.value); });
+    updateCompareBtn();
+    document.querySelectorAll('.aimap-card-compare').forEach(function(cb) { cb.checked = compareSet.has(cb.dataset.id); });
+  }
+
   function renderCompareTable() {
-    const wrap = document.getElementById('aimap-compare-table-wrap');
-    const empty = document.getElementById('aimap-compare-empty');
-    const actions = document.getElementById('aimap-compare-actions');
+    var wrap = document.getElementById('aimap-compare-table-wrap');
+    var empty = document.getElementById('aimap-compare-empty');
+    var actions = document.getElementById('aimap-compare-actions');
     if (!wrap) return;
 
-    // Sync pickers with compareSet
-    const pickers = document.querySelectorAll('#aimap-compare-pickers select');
-    const ids = [...compareSet];
-    pickers.forEach((sel, i) => { sel.value = ids[i] || ''; });
+    var pickers = document.querySelectorAll('#aimap-compare-pickers select');
+    var ids = [...compareSet];
+    pickers.forEach(function(sel, i) { sel.value = ids[i] || ''; });
 
     if (compareSet.size < 2) {
       if (empty) empty.style.display = 'block';
       if (actions) actions.style.display = 'none';
-      const table = wrap.querySelector('.aimap-compare-table');
-      if (table) table.remove();
+      var oldTable = wrap.querySelector('.aimap-compare-table');
+      if (oldTable) oldTable.remove();
       return;
     }
     if (empty) empty.style.display = 'none';
     if (actions) actions.style.display = 'flex';
 
-    const selected = ids.map(id => services.find(s => s.id === id)).filter(Boolean);
+    var selected = ids.map(function(id) { return services.find(function(s) { return s.id === id; }); }).filter(Boolean);
 
-    const rows = [
-      { label: 'Provider', key: s => s.provider },
-      { label: 'Category', key: s => { const c = categories[s.category]; return c ? `${c.emoji} ${c.name}` : s.category; }},
-      { label: 'Pricing Model', key: s => s.pricing_model || 'N/A' },
-      { label: 'Free Tier', key: s => s.free_tier ? `✅ ${s.free_tier_detail || ''}` : '❌' },
-      { label: 'Price (Input/1M)', key: s => s.price_input || 'N/A' },
-      { label: 'Price (Output/1M)', key: s => s.price_output || 'N/A' },
-      { label: 'Price Note', key: s => s.price_note || '' },
-      { label: 'Text Generation', key: s => capBar(s.text_generation) },
-      { label: 'Code Generation', key: s => capBar(s.code_generation) },
-      { label: 'Image Generation', key: s => capBar(s.image_generation) },
-      { label: 'Voice / Audio', key: s => capBar(s.audio_speech) },
-      { label: 'Video Generation', key: s => capBar(s.video_generation) },
-      { label: 'Reasoning', key: s => capBar(s.reasoning) },
-      { label: 'Context Window', key: s => s.context_window || 'N/A' },
-      { label: 'Multimodal', key: s => s.multimodal ? '✅' : '❌' },
-      { label: 'Fine-tuning', key: s => s.fine_tuning ? '✅' : '❌' },
-      { label: 'Function Calling', key: s => s.function_calling ? '✅' : '❌' },
-      { label: 'Data Residency', key: s => s.data_residency ? `✅ ${(s.regions||[]).join(', ')}` : '❌' },
-      { label: 'SOC 2', key: s => s.soc2 ? '✅' : '❌' },
-      { label: 'HIPAA', key: s => s.hipaa ? '✅' : '❌' },
-      { label: 'GDPR', key: s => s.gdpr ? '✅' : '❌' },
-      { label: 'Private Networking', key: s => s.private_networking ? '✅' : '❌' },
-      { label: 'SLA', key: s => s.sla || 'N/A' },
-      { label: 'M365 Integration', key: s => s.integration_m365 ? '✅' : '❌' },
-      { label: 'Azure Integration', key: s => s.integration_azure ? '✅' : '❌' },
-      { label: 'AWS Integration', key: s => s.integration_aws ? '✅' : '❌' },
-      { label: 'GCP Integration', key: s => s.integration_gcp ? '✅' : '❌' },
-      { label: 'Best For', key: s => (s.best_for||[]).join(', ') },
-      { label: 'Use Cases', key: s => (s.use_cases||[]).join(', ') },
+    var rows = [
+      { label: 'Provider', key: function(s) { return s.provider; } },
+      { label: 'Status', key: function(s) { var st = s.status || 'ga'; return st === 'ga' ? '✅ GA' : st === 'preview' ? '🧪 Preview' : '⚠️ ' + st; } },
+      { label: 'Pricing Model', key: function(s) { return s.pricing_model || 'N/A'; } },
+      { label: 'Free Tier', key: function(s) { return s.free_tier ? '✅ ' + (s.free_tier_detail || '') : '❌'; } },
+      { label: 'Input / 1M tokens', key: function(s) { return s.price_input || 'N/A'; } },
+      { label: 'Output / 1M tokens', key: function(s) { return s.price_output || 'N/A'; } },
+      { label: 'Text Generation', key: function(s) { return capBar(s.text_generation); } },
+      { label: 'Code Generation', key: function(s) { return capBar(s.code_generation); } },
+      { label: 'Image Generation', key: function(s) { return capBar(s.image_generation); } },
+      { label: 'Voice / Audio', key: function(s) { return capBar(s.audio_speech); } },
+      { label: 'Video', key: function(s) { return capBar(s.video_generation); } },
+      { label: 'Reasoning', key: function(s) { return capBar(s.reasoning); } },
+      { label: 'Context Window', key: function(s) { return s.context_window || 'N/A'; } },
+      { label: 'Multimodal', key: function(s) { return s.multimodal ? '✅' : '❌'; } },
+      { label: 'Fine-tuning', key: function(s) { return s.fine_tuning ? '✅' : '❌'; } },
+      { label: 'Function Calling', key: function(s) { return s.function_calling ? '✅' : '❌'; } },
+      { label: 'Data Residency', key: function(s) { return s.data_residency ? '✅ ' + (s.regions||[]).join(', ') : '❌'; } },
+      { label: 'SOC 2 / HIPAA / GDPR', key: function(s) { return [s.soc2?'SOC2':'', s.hipaa?'HIPAA':'', s.gdpr?'GDPR':''].filter(Boolean).join(', ') || '❌ None'; } },
+      { label: 'Private Networking', key: function(s) { return s.private_networking ? '✅' : '❌'; } },
+      { label: 'SLA', key: function(s) { return s.sla || 'N/A'; } },
+      { label: 'M365', key: function(s) { return s.integration_m365 ? '✅' : '❌'; } },
+      { label: 'Azure', key: function(s) { return s.integration_azure ? '✅' : '❌'; } },
+      { label: 'AWS', key: function(s) { return s.integration_aws ? '✅' : '❌'; } },
+      { label: 'GCP', key: function(s) { return s.integration_gcp ? '✅' : '❌'; } },
+      { label: 'Best For', key: function(s) { return (s.best_for||[]).join(', '); } },
     ];
 
-    let html = `<table class="aimap-compare-table">
-      <thead><tr><th></th>${selected.map(s => `<th>${s.name}</th>`).join('')}</tr></thead>
-      <tbody>`;
-
-    rows.forEach(row => {
-      const vals = selected.map(s => row.key(s));
-      const allSame = vals.every(v => v === vals[0]);
-      html += `<tr>
-        <th>${row.label}</th>
-        ${vals.map(v => `<td${allSame ? '' : ' class="diff-highlight"'}>${v}</td>`).join('')}
-      </tr>`;
+    var html = '<table class="aimap-compare-table"><thead><tr><th></th>' + selected.map(function(s) { return '<th>' + s.name + '</th>'; }).join('') + '</tr></thead><tbody>';
+    rows.forEach(function(row) {
+      var vals = selected.map(function(s) { return row.key(s); });
+      var allSame = vals.every(function(v) { return v === vals[0]; });
+      html += '<tr><th>' + row.label + '</th>' + vals.map(function(v) { return '<td' + (allSame ? '' : ' class="diff-highlight"') + '>' + v + '</td>'; }).join('') + '</tr>';
     });
-
     html += '</tbody></table>';
-    // Remove old table
-    const old = wrap.querySelector('.aimap-compare-table');
+
+    var old = wrap.querySelector('.aimap-compare-table');
     if (old) old.remove();
     wrap.insertAdjacentHTML('beforeend', html);
-
-    // Copy + share
     setupCopyCompare(selected, rows);
     setupShareCompare();
   }
 
   function capBar(val) {
-    if (!val || val === 0) return '<span style="color:#666">—</span>';
-    const filled = '█'.repeat(val);
-    const empty = '░'.repeat(5 - val);
-    const color = val >= 4 ? '#3B82F6' : val >= 2 ? '#fbbf24' : '#666';
-    return `<span style="color:${color}">${filled}${empty}</span> ${val}/5`;
+    if (!val) return '<span style="color:#555">—</span>';
+    var color = val >= 4 ? '#3B82F6' : val >= 2 ? '#fbbf24' : '#666';
+    return '<span style="color:' + color + '">' + '●'.repeat(val) + '○'.repeat(5-val) + '</span> ' + val + '/5';
   }
 
   function setupCopyCompare(selected, rows) {
-    const btn = document.getElementById('aimap-copy-compare');
+    var btn = document.getElementById('aimap-copy-compare');
     if (!btn) return;
-    btn.onclick = () => {
-      let md = `| Feature | ${selected.map(s => s.name).join(' | ')} |\n`;
-      md += `|---|${selected.map(() => '---').join('|')}|\n`;
-      rows.forEach(row => {
-        const vals = selected.map(s => {
-          const v = row.key(s);
-          return typeof v === 'string' ? v.replace(/[█░]/g, '').trim() : String(v);
-        });
-        md += `| ${row.label} | ${vals.join(' | ')} |\n`;
+    btn.onclick = function() {
+      var md = '| Feature | ' + selected.map(function(s) { return s.name; }).join(' | ') + ' |\n';
+      md += '|---|' + selected.map(function() { return '---'; }).join('|') + '|\n';
+      rows.forEach(function(row) {
+        var vals = selected.map(function(s) { return String(row.key(s)).replace(/[●○]/g, '').trim(); });
+        md += '| ' + row.label + ' | ' + vals.join(' | ') + ' |\n';
       });
-      navigator.clipboard.writeText(md).then(() => {
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => btn.textContent = '📋 Copy as Markdown', 2000);
-      });
+      navigator.clipboard.writeText(md).then(function() { btn.textContent = '✅ Copied!'; setTimeout(function() { btn.textContent = '📋 Copy as Markdown'; }, 2000); });
     };
   }
 
   function setupShareCompare() {
-    const btn = document.getElementById('aimap-share-compare');
+    var btn = document.getElementById('aimap-share-compare');
     if (!btn) return;
-    btn.onclick = () => {
-      const ids = [...compareSet].join(',');
-      const url = `${location.origin}${location.pathname}?tab=compare&compare=${ids}`;
-      navigator.clipboard.writeText(url).then(() => {
-        btn.textContent = '✅ Link copied!';
-        setTimeout(() => btn.textContent = '🔗 Share comparison', 2000);
-      });
+    btn.onclick = function() {
+      var ids = [...compareSet].join(',');
+      var url = location.origin + location.pathname + '?tab=compare&compare=' + ids;
+      navigator.clipboard.writeText(url).then(function() { btn.textContent = '✅ Link copied!'; setTimeout(function() { btn.textContent = '🔗 Share comparison'; }, 2000); });
     };
   }
 
-  // ---- QUIZ ----
+  // ---- QUIZ with reasoning (#3) ----
   function setupQuiz() {
-    const startBtn = document.getElementById('aimap-quiz-start');
-    const retakeBtn = document.getElementById('aimap-quiz-retake');
-    const compareBtn = document.getElementById('aimap-quiz-compare-results');
-
+    var startBtn = document.getElementById('aimap-quiz-start');
+    var retakeBtn = document.getElementById('aimap-quiz-retake');
+    var compareBtn = document.getElementById('aimap-quiz-compare-results');
     if (startBtn) startBtn.addEventListener('click', startQuiz);
-    if (retakeBtn) retakeBtn.addEventListener('click', () => { quizAnswers = {}; quizStep = 0; startQuiz(); });
-    if (compareBtn) compareBtn.addEventListener('click', () => {
-      const resultCards = document.querySelectorAll('.aimap-quiz-result-card');
+    if (retakeBtn) retakeBtn.addEventListener('click', function() { quizAnswers = {}; quizStep = 0; startQuiz(); });
+    if (compareBtn) compareBtn.addEventListener('click', function() {
+      var cards = document.querySelectorAll('.aimap-quiz-result-card');
       compareSet.clear();
-      resultCards.forEach(card => {
-        const id = card.dataset.id;
-        if (id) compareSet.add(id);
-      });
-      updateCompareBtn();
-      switchToTab('compare');
+      cards.forEach(function(c) { if (c.dataset.id) compareSet.add(c.dataset.id); });
+      updateCompareBtn(); switchToTab('compare');
     });
   }
 
@@ -467,36 +702,21 @@
     document.getElementById('aimap-quiz-intro').style.display = 'none';
     document.getElementById('aimap-quiz-results').style.display = 'none';
     document.getElementById('aimap-quiz-step').style.display = 'block';
-    quizStep = 0;
-    renderQuizStep();
+    quizStep = 0; renderQuizStep();
   }
 
   function renderQuizStep() {
     if (quizStep >= quizQuestions.length) { showQuizResults(); return; }
-    const q = quizQuestions[quizStep];
+    var q = quizQuestions[quizStep];
     document.getElementById('aimap-quiz-question').textContent = q.text;
-
-    // Progress dots
-    const progressEl = document.getElementById('aimap-quiz-progress');
-    progressEl.innerHTML = quizQuestions.map((_, i) =>
-      `<div class="aimap-quiz-progress-dot ${i < quizStep ? 'done' : i === quizStep ? 'current' : ''}"></div>`
-    ).join('');
-
-    // Options
-    const optionsEl = document.getElementById('aimap-quiz-options');
-    optionsEl.innerHTML = (q.options || []).map(opt =>
-      `<button class="aimap-quiz-option" data-value="${opt.value}">
-        <span class="aimap-quiz-option-icon">${opt.icon || ''}</span>
-        <span>${opt.label}</span>
-      </button>`
-    ).join('');
-
-    optionsEl.querySelectorAll('.aimap-quiz-option').forEach(btn => {
-      btn.addEventListener('click', () => {
-        quizAnswers[q.id] = btn.dataset.value;
-        quizStep++;
-        renderQuizStep();
-      });
+    document.getElementById('aimap-quiz-progress').innerHTML = quizQuestions.map(function(_, i) {
+      return '<div class="aimap-quiz-progress-dot ' + (i < quizStep ? 'done' : i === quizStep ? 'current' : '') + '"></div>';
+    }).join('');
+    document.getElementById('aimap-quiz-options').innerHTML = (q.options||[]).map(function(opt) {
+      return '<button class="aimap-quiz-option" data-value="' + opt.value + '"><span class="aimap-quiz-option-icon">' + (opt.icon||'') + '</span><span>' + opt.label + '</span></button>';
+    }).join('');
+    document.querySelectorAll('.aimap-quiz-option').forEach(function(btn) {
+      btn.addEventListener('click', function() { quizAnswers[q.id] = btn.dataset.value; quizStep++; renderQuizStep(); });
     });
   }
 
@@ -504,250 +724,230 @@
     document.getElementById('aimap-quiz-step').style.display = 'none';
     document.getElementById('aimap-quiz-results').style.display = 'block';
 
-    // Score services
-    const scored = services.map(s => ({ service: s, score: scoreService(s, quizAnswers) }))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3);
+    var scored = services.map(function(s) {
+      var result = scoreService(s, quizAnswers);
+      return { service: s, score: result.score, reasons: result.reasons };
+    }).sort(function(a,b) { return b.score - a.score; }).slice(0, 3);
 
-    const medals = ['🥇', '🥈', '🥉'];
-    const resultsEl = document.getElementById('aimap-quiz-results-list');
-    resultsEl.innerHTML = scored.map((item, i) => {
-      const s = item.service;
-      const cat = categories[s.category] || {};
-      return `<div class="aimap-quiz-result-card" data-id="${s.id}">
-        <div class="aimap-quiz-result-medal">${medals[i]}</div>
-        <div class="aimap-quiz-result-info">
-          <h3>${s.name}</h3>
-          <p>${s.provider} · ${cat.emoji || ''} ${cat.name || s.category}</p>
-          <p>${s.description || ''}</p>
-          <span class="aimap-quiz-result-score">${item.score} point match</span>
-        </div>
-      </div>`;
+    var medals = ['🥇','🥈','🥉'];
+    document.getElementById('aimap-quiz-results-list').innerHTML = scored.map(function(item, i) {
+      var s = item.service;
+      var cat = categories[s.category] || {};
+      // Reasoning text (#3)
+      var reasonsHTML = '<div class="aimap-quiz-reasons">' + item.reasons.map(function(r) {
+        return '<span class="aimap-quiz-reason">' + r + '</span>';
+      }).join('') + '</div>';
+      return '<div class="aimap-quiz-result-card" data-id="' + s.id + '">' +
+        '<div class="aimap-quiz-result-medal">' + medals[i] + '</div>' +
+        '<div class="aimap-quiz-result-info"><h3>' + s.name + '</h3>' +
+        '<p>' + s.provider + ' · ' + (cat.emoji||'') + ' ' + (cat.name||'') + '</p>' +
+        '<p style="color:#ccc;font-size:0.85rem">' + (s.description||'') + '</p>' +
+        reasonsHTML +
+        '<span class="aimap-quiz-result-score">' + item.score + ' point match</span></div></div>';
     }).join('');
   }
 
   function scoreService(s, answers) {
-    let score = 0;
+    var score = 0;
+    var reasons = [];
 
-    // Primary need
-    const needMap = { text: 'text_generation', code: 'code_generation', images: 'image_generation',
-      documents: 'reasoning', voice: 'audio_speech', agents: 'function_calling',
-      search: 'reasoning', video: 'video_generation' };
-    const needKey = needMap[answers['primary-need']];
+    var needMap = { text: 'text_generation', code: 'code_generation', images: 'image_generation',
+      documents: 'reasoning', voice: 'audio_speech', agents: 'function_calling', search: 'reasoning', video: 'video_generation' };
+    var needLabels = { text: 'text generation', code: 'coding', images: 'image generation', documents: 'document processing',
+      voice: 'voice/audio', agents: 'agent capabilities', search: 'search/knowledge', video: 'video generation' };
+    var needKey = needMap[answers['primary-need']];
     if (needKey) {
-      const val = s[needKey];
-      if (typeof val === 'number') score += val * 4;
-      else if (val === true) score += 16;
+      var val = s[needKey];
+      if (typeof val === 'number' && val >= 3) { score += val * 4; reasons.push('✅ Strong ' + (needLabels[answers['primary-need']]||'') + ' (' + val + '/5)'); }
+      else if (val === true) { score += 16; reasons.push('✅ Supports ' + (needLabels[answers['primary-need']]||'')); }
     }
 
-    // Category bonus for need
-    const catMap = { text: 'llm-platform', code: 'code-development', images: 'image-generation',
-      documents: 'document-processing', voice: 'voice-audio', agents: 'agent-platform',
-      search: 'search-knowledge', video: 'video-generation' };
-    if (s.category === catMap[answers['primary-need']]) score += 10;
+    var catMap = { text: 'llm-platform', code: 'code-development', images: 'image-generation',
+      documents: 'document-processing', voice: 'voice-audio', agents: 'agent-platform', search: 'search-knowledge', video: 'video-generation' };
+    if (s.category === catMap[answers['primary-need']]) { score += 10; reasons.push('✅ Purpose-built for this use case'); }
 
-    // Cloud provider
-    const provMap = { azure: 'integration_azure', aws: 'integration_aws', gcp: 'integration_gcp' };
-    const provKey = provMap[answers['cloud-provider']];
-    if (provKey && s[provKey]) score += 12;
-    if (answers['cloud-provider'] === 'none') score += 3;
+    var provMap = { azure: 'integration_azure', aws: 'integration_aws', gcp: 'integration_gcp' };
+    var provLabels = { azure: 'Azure', aws: 'AWS', gcp: 'Google Cloud' };
+    var provKey = provMap[answers['cloud-provider']];
+    if (provKey && s[provKey]) { score += 12; reasons.push('✅ Integrates with ' + (provLabels[answers['cloud-provider']]||'')); }
 
-    // Budget
-    if (answers.budget === 'free' && s.free_tier) score += 10;
-    if (answers.budget === 'free' && s.pricing_model === 'free') score += 5;
-    if (answers.budget === 'enterprise' && s.sla && s.sla !== 'N/A') score += 8;
+    if (answers.budget === 'free' && s.free_tier) { score += 10; reasons.push('✅ Has free tier'); }
+    if (answers.budget === 'free' && s.pricing_model === 'free') { score += 5; }
+    if (answers.budget === 'enterprise' && s.sla && s.sla !== 'N/A') { score += 8; reasons.push('✅ Enterprise SLA (' + s.sla + ')'); }
 
-    // Compliance
     if (answers.compliance === 'strict') {
-      if (s.hipaa) score += 5;
-      if (s.gdpr) score += 5;
-      if (s.data_residency) score += 5;
+      var complianceHits = [];
+      if (s.hipaa) { score += 5; complianceHits.push('HIPAA'); }
+      if (s.gdpr) { score += 5; complianceHits.push('GDPR'); }
+      if (s.data_residency) { score += 5; complianceHits.push('data residency'); }
+      if (complianceHits.length) reasons.push('✅ Compliance: ' + complianceHits.join(', '));
     } else if (answers.compliance === 'basic') {
-      if (s.soc2) score += 5;
-      if (s.gdpr) score += 3;
+      if (s.soc2) { score += 5; }
+      if (s.gdpr) { score += 3; }
+      if (s.soc2 || s.gdpr) reasons.push('✅ Basic compliance (SOC 2/GDPR)');
     }
 
-    // Technical level
     if (answers['technical-level'] === 'non-technical') {
-      if (['subscription', 'free'].includes(s.pricing_model)) score += 6;
-      if (s.category === 'agent-platform') score += 4;
+      if (['subscription','free'].includes(s.pricing_model)) { score += 6; reasons.push('✅ Ready-to-use (no API needed)'); }
     }
     if (answers['technical-level'] === 'developer') {
-      if (s.function_calling) score += 4;
-      if (s.fine_tuning) score += 3;
+      if (s.function_calling) { score += 4; }
+      if (s.fine_tuning) { score += 3; reasons.push('✅ Supports fine-tuning & API access'); }
     }
 
-    // Ecosystem
-    const ecoMap = { m365: 'integration_m365', 'google-workspace': 'integration_gcp',
-      github: 'integration_azure', 'aws-ecosystem': 'integration_aws' };
-    const ecoKey = ecoMap[answers.ecosystem];
-    if (ecoKey && s[ecoKey]) score += 8;
+    var ecoMap = { m365: 'integration_m365', 'google-workspace': 'integration_gcp', github: 'integration_azure', 'aws-ecosystem': 'integration_aws' };
+    var ecoLabels = { m365: 'Microsoft 365', 'google-workspace': 'Google Workspace', github: 'GitHub/Azure', 'aws-ecosystem': 'AWS' };
+    var ecoKey = ecoMap[answers.ecosystem];
+    if (ecoKey && s[ecoKey]) { score += 8; reasons.push('✅ Works with ' + (ecoLabels[answers.ecosystem]||'')); }
 
-    // Data location
     if (answers['data-location'] !== 'anywhere' && s.data_residency) {
-      const regionMap = { us: 'US', eu: 'EU', apac: ['Australia', 'Japan', 'Singapore'] };
-      const needed = regionMap[answers['data-location']];
-      if (needed && s.regions) {
-        const regs = Array.isArray(needed) ? needed : [needed];
-        if (regs.some(r => s.regions.includes(r))) score += 8;
+      var regionMap = { us: ['US'], eu: ['EU'], apac: ['Australia','Japan','Singapore'] };
+      var needed = regionMap[answers['data-location']];
+      if (needed && s.regions && needed.some(function(r) { return s.regions.indexOf(r) >= 0; })) {
+        score += 8; reasons.push('✅ Available in your required region');
       }
     }
 
-    return score;
+    return { score: score, reasons: reasons };
   }
 
-  // ---- PRICING TABLE ----
+  // ---- PRICING TABLE + COST ESTIMATOR (#13) ----
   function renderPricingTable() {
-    const tbody = document.getElementById('aimap-pricing-tbody');
+    var tbody = document.getElementById('aimap-pricing-tbody');
     if (!tbody) return;
 
-    const render = (freeOnly) => {
-      let data = [...services];
-      if (freeOnly) data = data.filter(s => s.free_tier);
-      data.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-
-      tbody.innerHTML = data.map(s => `<tr>
-        <td><strong>${s.name}</strong></td>
-        <td>${s.provider}</td>
-        <td>${s.free_tier ? '<span class="price-free">✅ Yes</span>' : '❌ No'}</td>
-        <td>${s.price_input || 'N/A'}</td>
-        <td>${s.price_output || 'N/A'}</td>
-        <td>${s.pricing_model || 'N/A'}</td>
-        <td>${s.pricing_url ? `<a href="${s.pricing_url}" target="_blank" rel="noopener">Pricing →</a>` : ''}</td>
-      </tr>`).join('');
-    };
-
+    function render(freeOnly) {
+      var data = services.slice();
+      if (freeOnly) data = data.filter(function(s) { return s.free_tier; });
+      data.sort(function(a,b) { return (a.name||'').localeCompare(b.name||''); });
+      tbody.innerHTML = data.map(function(s) {
+        return '<tr><td><strong>' + s.name + '</strong></td><td>' + s.provider + '</td>' +
+          '<td>' + (s.free_tier ? '<span class="price-free">✅</span>' : '❌') + '</td>' +
+          '<td>' + (s.price_input||'N/A') + '</td><td>' + (s.price_output||'N/A') + '</td>' +
+          '<td>' + (s.pricing_model||'N/A') + '</td>' +
+          '<td>' + (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener">Pricing →</a>' : '') + '</td></tr>';
+      }).join('');
+    }
     render(false);
-
-    // Free-only filter
-    const freeCheck = document.getElementById('pricing-free-only');
-    if (freeCheck) freeCheck.addEventListener('change', () => render(freeCheck.checked));
+    var freeCheck = document.getElementById('pricing-free-only');
+    if (freeCheck) freeCheck.addEventListener('change', function() { render(freeCheck.checked); });
 
     // Sortable headers
-    document.querySelectorAll('.aimap-pricing-table th[data-sort]').forEach(th => {
-      th.addEventListener('click', () => {
-        const key = th.dataset.sort;
-        const rows = Array.from(tbody.querySelectorAll('tr'));
-        const idx = Array.from(th.parentNode.children).indexOf(th);
-        const dir = th.classList.contains('sort-asc') ? -1 : 1;
-        th.parentNode.querySelectorAll('th').forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+    document.querySelectorAll('.aimap-pricing-table th[data-sort]').forEach(function(th) {
+      th.addEventListener('click', function() {
+        var idx = Array.from(th.parentNode.children).indexOf(th);
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        var dir = th.classList.contains('sort-asc') ? -1 : 1;
+        th.parentNode.querySelectorAll('th').forEach(function(h) { h.classList.remove('sort-asc','sort-desc'); });
         th.classList.add(dir === 1 ? 'sort-asc' : 'sort-desc');
-        rows.sort((a, b) => {
-          const aText = a.children[idx]?.textContent || '';
-          const bText = b.children[idx]?.textContent || '';
-          return aText.localeCompare(bText) * dir;
-        });
-        rows.forEach(r => tbody.appendChild(r));
+        rows.sort(function(a,b) { return (a.children[idx]?.textContent||'').localeCompare(b.children[idx]?.textContent||'') * dir; });
+        rows.forEach(function(r) { tbody.appendChild(r); });
       });
     });
   }
 
-  // ---- GLOSSARY ----
-  function renderGlossary() {
-    const glossary = [
-      { term: 'LLM (Large Language Model)', def: 'A type of AI trained on massive amounts of text data. Think of it as a very advanced autocomplete that can write essays, answer questions, and generate code. Examples: GPT-4, Claude, Gemini.' },
-      { term: 'Token', def: 'The unit AI models use to measure text. Roughly 1 token = ¾ of a word in English. "Hello world" = 2 tokens. Pricing is usually per million tokens.' },
-      { term: 'Context Window', def: 'How much text an AI can "remember" in a single conversation. A 128K context window means it can process about 100,000 words at once — like reading a full novel.' },
-      { term: 'RAG (Retrieval-Augmented Generation)', def: 'A technique where the AI searches your documents first, then generates an answer based on what it found. Like giving the AI a textbook before asking it a question.' },
-      { term: 'Embedding', def: 'Converting text into numbers (vectors) that capture meaning. Used for semantic search — finding documents that are conceptually similar, not just keyword matches.' },
-      { term: 'Fine-tuning', def: 'Customising a pre-trained model with your own data to make it better at a specific task. Like specialising a general doctor into a cardiologist.' },
-      { term: 'Function Calling / Tool Use', def: 'An AI model\'s ability to call external tools, APIs, or code. Instead of just generating text, it can take actions — check weather, query databases, send emails.' },
-      { term: 'Multimodal', def: 'AI that can understand and generate multiple types of content — text, images, audio, video. A multimodal model can describe a photo or generate an image from text.' },
-      { term: 'Inference', def: 'When an AI model processes your input and generates a response. Every time you send a message to ChatGPT, that\'s inference. You\'re charged per inference (per token).' },
-      { term: 'Prompt', def: 'The instruction you give an AI model. A good prompt includes context, role, action, format, and scope. Better prompts = better AI responses.' },
-      { term: 'Agent', def: 'An AI system that can plan, reason, and take actions autonomously. Unlike a chatbot that just responds, an agent can break down tasks, use tools, and work through multi-step processes.' },
-      { term: 'Orchestration', def: 'Coordinating multiple AI models, tools, and data sources to complete complex tasks. Like a conductor managing an orchestra — each instrument plays its part.' },
-      { term: 'Guardrails', def: 'Safety mechanisms that prevent AI from generating harmful, biased, or off-topic content. Think of guardrails on a highway — they keep the AI on the safe path.' },
-      { term: 'Data Residency', def: 'The requirement that your data must be stored and processed in a specific geographic region. Important for compliance (GDPR requires EU data to stay in the EU).' },
-      { term: 'SLA (Service Level Agreement)', def: 'A guarantee of uptime and availability. "99.9% SLA" means the service promises to be available 99.9% of the time (about 8.7 hours of downtime per year max).' },
-      { term: 'Pay-per-use', def: 'Pricing model where you only pay for what you consume — per token, per API call, per page processed. No monthly commitment. Great for unpredictable workloads.' },
-      { term: 'Reasoning', def: 'An AI model\'s ability to think step-by-step, solve complex problems, and show its work. Models like o3 and DeepSeek-R1 specialise in chain-of-thought reasoning.' },
-      { term: 'Grounding', def: 'Connecting AI responses to real data sources so it gives factual, sourced answers instead of making things up. RAG is one way to achieve grounding.' },
-      { term: 'Hallucination', def: 'When an AI confidently generates information that\'s incorrect or completely made up. Grounding, RAG, and citations help reduce hallucinations.' },
-      { term: 'Vector Database', def: 'A database optimised for storing and searching embeddings (vectors). Used in RAG systems to quickly find relevant documents. Examples: Azure AI Search, Pinecone, Weaviate.' },
-    ];
+  function setupCostEstimator() {
+    var calcBtn = document.getElementById('aimap-cost-calc');
+    if (!calcBtn) return;
+    calcBtn.addEventListener('click', function() {
+      var msgs = parseInt(document.getElementById('aimap-cost-messages').value) || 100;
+      var tokensPerMsg = parseInt(document.getElementById('aimap-cost-tokens').value) || 1500;
+      var resultsDiv = document.getElementById('aimap-cost-results');
+      if (!resultsDiv) return;
 
-    const listEl = document.getElementById('aimap-glossary-list');
-    const searchEl = document.getElementById('aimap-glossary-search');
+      var monthlyMsgs = msgs * 30;
+      var inputTokens = monthlyMsgs * tokensPerMsg;
+      var outputTokens = monthlyMsgs * (tokensPerMsg * 0.75); // assume 75% output ratio
+
+      var estimates = services.filter(function(s) { return s.price_input && s.price_input !== 'N/A' && s.price_input !== 'Varies' && s.price_input !== 'Free'; })
+        .map(function(s) {
+          var inPrice = parseFloat(s.price_input.replace('$','')) || 0;
+          var outPrice = parseFloat(s.price_output.replace('$','')) || 0;
+          var monthlyCost = ((inputTokens / 1000000) * inPrice) + ((outputTokens / 1000000) * outPrice);
+          return { name: s.name, provider: s.provider, cost: monthlyCost, id: s.id };
+        }).sort(function(a,b) { return a.cost - b.cost; });
+
+      resultsDiv.style.display = 'block';
+      resultsDiv.innerHTML = '<h4>Estimated monthly cost for ' + monthlyMsgs.toLocaleString() + ' messages</h4>' +
+        '<p style="color:#999;font-size:0.8rem">Based on ~' + tokensPerMsg.toLocaleString() + ' tokens/message (input) + ~' + Math.round(tokensPerMsg*0.75).toLocaleString() + ' tokens (output)</p>' +
+        '<div class="aimap-cost-cards">' + estimates.map(function(e) {
+          return '<div class="aimap-cost-card">' +
+            '<span class="aimap-cost-card-name">' + e.name + '</span>' +
+            '<span class="aimap-cost-card-provider">' + e.provider + '</span>' +
+            '<span class="aimap-cost-card-price">$' + e.cost.toFixed(2) + '<span style="color:#999;font-size:0.7rem">/month</span></span>' +
+          '</div>';
+        }).join('') + '</div>';
+    });
+  }
+
+  // ---- GLOSSARY with cross-linking (#14) ----
+  function renderGlossary() {
+    var listEl = document.getElementById('aimap-glossary-list');
+    var searchEl = document.getElementById('aimap-glossary-search');
     if (!listEl) return;
 
-    const render = (filter) => {
-      const q = (filter || '').toLowerCase();
-      const filtered = q ? glossary.filter(g => g.term.toLowerCase().includes(q) || g.def.toLowerCase().includes(q)) : glossary;
-      listEl.innerHTML = filtered.map(g =>
-        `<div class="aimap-glossary-item">
-          <div class="aimap-glossary-term">${g.term}</div>
-          <div class="aimap-glossary-def">${g.def}</div>
-        </div>`
-      ).join('') || '<p style="text-align:center;color:#999;padding:2rem;">No matching terms found.</p>';
-    };
-
+    function render(filter) {
+      var q = (filter||'').toLowerCase();
+      var filtered = q ? glossaryTerms.filter(function(g) { return g.term.toLowerCase().indexOf(q) >= 0 || g.def.toLowerCase().indexOf(q) >= 0; }) : glossaryTerms;
+      listEl.innerHTML = filtered.map(function(g) {
+        return '<div class="aimap-glossary-item" id="glossary-' + g.term.toLowerCase().replace(/[^a-z0-9]/g,'-') + '">' +
+          '<div class="aimap-glossary-term">' + g.full + '</div>' +
+          '<div class="aimap-glossary-def">' + g.def + '</div></div>';
+      }).join('') || '<p style="text-align:center;color:#999;padding:2rem">No matching terms.</p>';
+    }
     render('');
     if (searchEl) {
-      let timeout;
-      searchEl.addEventListener('input', () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => render(searchEl.value), 200);
-      });
+      var timeout;
+      searchEl.addEventListener('input', function() { clearTimeout(timeout); timeout = setTimeout(function() { render(searchEl.value); }, 200); });
     }
+  }
+
+  // ---- CHANGELOG (#12) ----
+  function renderChangelog() {
+    var listEl = document.getElementById('aimap-changelog-list');
+    if (!listEl || !changelogEntries.length) return;
+
+    var typeEmoji = { launch: '🚀', added: '➕', updated: '🔄', removed: '🗑️', fixed: '🐛' };
+    listEl.innerHTML = changelogEntries.map(function(e) {
+      return '<div class="aimap-changelog-entry">' +
+        '<span class="aimap-changelog-date">' + e.date + '</span>' +
+        '<span class="aimap-changelog-type">' + (typeEmoji[e.type]||'📝') + '</span>' +
+        '<span class="aimap-changelog-text">' + e.text + '</span></div>';
+    }).join('');
   }
 
   // ---- URL STATE ----
   function updateURL() {
-    const params = new URLSearchParams();
+    var params = new URLSearchParams();
     if (searchQuery) params.set('q', searchQuery);
-    Object.entries(activeFilters).forEach(([key, vals]) => {
-      if (vals.length) params.set(key, vals.join(','));
+    Object.keys(activeFilters).forEach(function(key) {
+      if (activeFilters[key].length) params.set(key, activeFilters[key].join(','));
     });
     if (compareSet.size) params.set('compare', [...compareSet].join(','));
-    const tab = document.querySelector('.aimap-tab.active');
+    var tab = document.querySelector('.aimap-tab.active');
     if (tab && tab.dataset.tab !== 'explore') params.set('tab', tab.dataset.tab);
-
-    const newURL = params.toString() ? `${location.pathname}?${params}` : location.pathname;
+    var newURL = params.toString() ? location.pathname + '?' + params : location.pathname;
     history.replaceState(null, '', newURL);
   }
 
   function restoreFromURL() {
-    const params = new URLSearchParams(location.search);
-
-    // Tab
-    const tab = params.get('tab');
+    var params = new URLSearchParams(location.search);
+    var tab = params.get('tab');
     if (tab) switchToTab(tab);
-
-    // Search
-    const q = params.get('q');
-    if (q) {
-      searchQuery = q;
-      const input = document.getElementById('aimap-search');
-      if (input) input.value = q;
-    }
-
-    // Filters
-    Object.keys(activeFilters).forEach(key => {
-      const val = params.get(key);
+    var q = params.get('q');
+    if (q) { searchQuery = q; var input = document.getElementById('aimap-search'); if (input) input.value = q; }
+    Object.keys(activeFilters).forEach(function(key) {
+      var val = params.get(key);
       if (val) {
         activeFilters[key] = val.split(',');
-        // Check corresponding checkboxes
-        const containerMap = { provider: 'filter-provider', category: 'filter-category', pricing: 'filter-pricing',
-          capabilities: 'filter-capabilities', enterprise: 'filter-enterprise', integration: 'filter-integration' };
-        const container = document.getElementById(containerMap[key]);
-        if (container) {
-          activeFilters[key].forEach(v => {
-            const cb = container.querySelector(`input[value="${v}"]`);
-            if (cb) cb.checked = true;
-          });
-        }
+        var containerMap = { provider: 'filter-provider', category: 'filter-category', pricing: 'filter-pricing',
+          capabilities: 'filter-capabilities', enterprise: 'filter-enterprise', integration: 'filter-integration', status: 'filter-status' };
+        var container = document.getElementById(containerMap[key]);
+        if (container) activeFilters[key].forEach(function(v) { var cb = container.querySelector('input[value="' + v + '"]'); if (cb) cb.checked = true; });
       }
     });
-
-    // Compare
-    const compare = params.get('compare');
-    if (compare) {
-      compare.split(',').forEach(id => compareSet.add(id));
-      updateCompareBtn();
-      if (tab === 'compare') setTimeout(() => renderCompareTable(), 100);
-    }
-
+    var compare = params.get('compare');
+    if (compare) { compare.split(',').forEach(function(id) { compareSet.add(id); }); updateCompareBtn(); if (tab === 'compare') setTimeout(renderCompareTable, 100); }
     renderCards();
   }
 

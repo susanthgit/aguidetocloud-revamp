@@ -1,0 +1,161 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/ai-mapper.css?v={{ site.Params.cache_version }}">
+
+{{ $dataDir := index hugo.Data "ai-mapper" | default (index hugo.Data "ai_mapper") | default dict }}
+{{ $allServices := index $dataDir "services" | default dict }}
+{{ $categories := index $dataDir "categories" | default dict }}
+
+{{ $slug := .File.BaseFileName }}
+{{ $s := index $allServices $slug | default dict }}
+{{ $cat := index $categories ($s.category | default "") | default dict }}
+
+{{ partial "back-nav" (dict "Page" . "URL" "/ai-mapper/" "Label" "AI Service Mapper") }}
+
+<div class="aimap-page aimap-single">
+
+  <div class="aimap-single-header">
+    <div class="aimap-single-meta">
+      <span class="aimap-card-provider">{{ $s.provider }}</span>
+      <span class="aimap-card-category">{{ $cat.emoji }} {{ $cat.name }}</span>
+      {{ if eq ($s.status | default "ga") "preview" }}<span class="aimap-status-badge preview">🧪 Preview</span>{{ end }}
+      {{ if $s.last_updated }}<span class="aimap-card-updated">✓ Verified {{ $s.last_updated }}</span>{{ end }}
+    </div>
+    <h1>{{ $s.name | default .Title }}</h1>
+    <p class="aimap-single-desc">{{ $s.description }}</p>
+  </div>
+
+  <div class="aimap-single-grid">
+    {{/* Left column: capabilities */}}
+    <div class="aimap-single-main">
+
+      <div class="aimap-modal-section">
+        <h2>Capabilities</h2>
+        <div class="aimap-modal-caps">
+          {{ $caps := slice
+            (dict "label" "Text Generation" "val" ($s.text_generation | default 0))
+            (dict "label" "Code Generation" "val" ($s.code_generation | default 0))
+            (dict "label" "Image Generation" "val" ($s.image_generation | default 0))
+            (dict "label" "Voice / Audio" "val" ($s.audio_speech | default 0))
+            (dict "label" "Video Generation" "val" ($s.video_generation | default 0))
+            (dict "label" "Reasoning" "val" ($s.reasoning | default 0))
+          }}
+          {{ range $caps }}
+          <div class="aimap-modal-cap-row">
+            <span class="aimap-modal-cap-label">{{ .label }}</span>
+            <div class="aimap-modal-cap-bar">
+              <div class="aimap-modal-cap-fill" style="width:{{ mul (default 0 .val) 20 }}%;background:{{ cond (ge (default 0 .val) 4) "#3B82F6" (cond (ge (default 0 .val) 2) "#fbbf24" "#666") }}"></div>
+            </div>
+            <span class="aimap-modal-cap-val">{{ default 0 .val }}/5</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="aimap-modal-section">
+        <h2>💰 Pricing</h2>
+        <p>{{ $s.price_note }}</p>
+        {{ if $s.free_tier }}<p style="color:#4ade80">🆓 {{ $s.free_tier_detail }}</p>{{ end }}
+        {{ with $s.pricing_url }}<p><a href="{{ . }}" target="_blank" rel="noopener" class="aimap-btn">View official pricing →</a></p>{{ end }}
+      </div>
+
+      <div class="aimap-modal-section">
+        <h2>🏷️ Best For</h2>
+        <div class="aimap-card-best">
+          {{ range $s.best_for }}<span class="aimap-best-tag">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+
+      <div class="aimap-modal-section">
+        <h2>🎯 Use Cases</h2>
+        <div class="aimap-card-best">
+          {{ range $s.use_cases }}<span class="aimap-best-tag">{{ replace . "-" " " }}</span>{{ end }}
+        </div>
+      </div>
+
+      {{ if $s.compare_with }}
+      <div class="aimap-modal-section">
+        <h2>Similar Services</h2>
+        <div class="aimap-modal-alt-cards">
+          {{ range $s.compare_with }}
+            {{ $alt := index $allServices . }}
+            {{ if $alt }}
+            <a href="/ai-mapper/{{ . }}/" class="aimap-modal-alt-card" style="text-decoration:none">
+              <strong>{{ $alt.name }}</strong><br>
+              <span style="color:#999;font-size:0.8rem">{{ $alt.provider }}</span>
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+
+    {{/* Right sidebar: features */}}
+    <aside class="aimap-single-sidebar">
+      <div class="aimap-single-info-box">
+        <h3>Quick Facts</h3>
+        <dl class="aimap-single-facts">
+          <dt>Provider</dt><dd>{{ $s.provider }}</dd>
+          <dt>Category</dt><dd>{{ $cat.emoji }} {{ $cat.name }}</dd>
+          <dt>Pricing</dt><dd>{{ $s.pricing_model }}</dd>
+          <dt>Free Tier</dt><dd>{{ if $s.free_tier }}✅ Yes{{ else }}❌ No{{ end }}</dd>
+          {{ with $s.context_window }}<dt>Context</dt><dd>{{ . }}</dd>{{ end }}
+          <dt>Multimodal</dt><dd>{{ if $s.multimodal }}✅{{ else }}❌{{ end }}</dd>
+          <dt>Fine-tuning</dt><dd>{{ if $s.fine_tuning }}✅{{ else }}❌{{ end }}</dd>
+          <dt>Function Calling</dt><dd>{{ if $s.function_calling }}✅{{ else }}❌{{ end }}</dd>
+          {{ with $s.sla }}<dt>SLA</dt><dd>{{ . }}</dd>{{ end }}
+        </dl>
+      </div>
+
+      <div class="aimap-single-info-box">
+        <h3>🔒 Compliance</h3>
+        <div class="aimap-modal-features">
+          <span class="aimap-modal-feat {{ if $s.soc2 }}yes{{ else }}no{{ end }}">{{ if $s.soc2 }}✅{{ else }}❌{{ end }} SOC 2</span>
+          <span class="aimap-modal-feat {{ if $s.hipaa }}yes{{ else }}no{{ end }}">{{ if $s.hipaa }}✅{{ else }}❌{{ end }} HIPAA</span>
+          <span class="aimap-modal-feat {{ if $s.gdpr }}yes{{ else }}no{{ end }}">{{ if $s.gdpr }}✅{{ else }}❌{{ end }} GDPR</span>
+          <span class="aimap-modal-feat {{ if $s.data_residency }}yes{{ else }}no{{ end }}">{{ if $s.data_residency }}✅{{ else }}❌{{ end }} Data Residency</span>
+          <span class="aimap-modal-feat {{ if $s.private_networking }}yes{{ else }}no{{ end }}">{{ if $s.private_networking }}✅{{ else }}❌{{ end }} Private Network</span>
+        </div>
+      </div>
+
+      {{ if $s.regions }}
+      <div class="aimap-single-info-box">
+        <h3>🌍 Regions</h3>
+        <p style="font-size:0.85rem;color:#ccc">{{ delimit $s.regions ", " }}</p>
+      </div>
+      {{ end }}
+
+      <div class="aimap-single-info-box">
+        <h3>🔗 Integration</h3>
+        <div class="aimap-modal-features">
+          <span class="aimap-modal-feat {{ if $s.integration_m365 }}yes{{ else }}no{{ end }}">{{ if $s.integration_m365 }}✅{{ else }}❌{{ end }} M365</span>
+          <span class="aimap-modal-feat {{ if $s.integration_azure }}yes{{ else }}no{{ end }}">{{ if $s.integration_azure }}✅{{ else }}❌{{ end }} Azure</span>
+          <span class="aimap-modal-feat {{ if $s.integration_aws }}yes{{ else }}no{{ end }}">{{ if $s.integration_aws }}✅{{ else }}❌{{ end }} AWS</span>
+          <span class="aimap-modal-feat {{ if $s.integration_gcp }}yes{{ else }}no{{ end }}">{{ if $s.integration_gcp }}✅{{ else }}❌{{ end }} GCP</span>
+        </div>
+      </div>
+
+      <div class="aimap-single-actions">
+        <a href="{{ $s.url }}" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary" style="width:100%;text-align:center;display:block">Visit {{ $s.name }} →</a>
+        {{ with $s.docs_url }}<a href="{{ . }}" target="_blank" rel="noopener" class="aimap-btn" style="width:100%;text-align:center;display:block;margin-top:0.5rem">📄 Documentation</a>{{ end }}
+      </div>
+    </aside>
+  </div>
+
+</div>
+
+{{/* FAQPage + Product Schema */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ $s.name }}",
+  "description": "{{ $s.description }}",
+  "url": "{{ .Permalink }}",
+  "brand": { "@type": "Brand", "name": "{{ $s.provider }}" },
+  "category": "{{ $cat.name }}"
+}
+</script>
+
+{{ end }}
