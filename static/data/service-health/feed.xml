@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Apr 2026 14:53:01 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 16:53:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Exchange Online] Users' email messages are being delivered in Exchange Online but senders may receive incorrect non‑delivery reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1276049</link>
-      <description>[Exchange Online] Users' email messages are being delivered in Exchange Online but senders may receive incorrect non‑delivery reports.</description>
-      <category>Exchange Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">EX1276049</guid>
-      <pubDate>Fri, 10 Apr 2026 12:15:32 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users' responses from Microsoft 365 Copilot Chat are delayed up to seven seconds or longer</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1276339</link>
@@ -457,6 +448,15 @@ This incident impacted customer resources and queries in the following regions: 
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-8GCS-858</guid>
       <pubDate>Tue, 10 Mar 2026 19:32:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users see additional Microsoft 365 Copilot Chat agents available to use</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1247849</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have seen additional Copilot Chat agents available to use.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1247849</guid>
+      <pubDate>Mon, 09 Mar 2026 03:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
