@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     searchInput.addEventListener('input', function () {
       searchQuery = this.value.toLowerCase().trim();
       filterAll();
+      syncPromptsUrl();
     });
   }
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     categorySelect.addEventListener('change', function () {
       activeCategory = this.value;
       filterAll();
+      syncPromptsUrl();
     });
   }
 
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.add('active');
       activeFilter = this.dataset.filterValue;
       filterAll();
+      syncPromptsUrl();
     });
   });
 
@@ -93,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var allChip = document.querySelector('.prompts-chip[data-filter-value="all"]');
       if (allChip) allChip.classList.add('active');
       filterAll();
+      syncPromptsUrl();
     });
   }
 
@@ -139,4 +143,40 @@ document.addEventListener('DOMContentLoaded', function () {
       if (promptEl) navigator.clipboard.writeText(promptEl.textContent.trim()).catch(function(){});
     }
   });
+
+  // ── URL STATE (shareable links) ────────────
+  function syncPromptsUrl() {
+    var p = new URLSearchParams();
+    if (activeFilter !== 'all') p.set('platform', activeFilter);
+    if (activeCategory !== 'all') p.set('category', activeCategory);
+    if (searchQuery) p.set('q', searchQuery);
+    var s = p.toString();
+    history.replaceState(null, '', s ? '?' + s : location.pathname);
+  }
+
+  function readPromptsUrl() {
+    var p = new URLSearchParams(location.search);
+    var platform = p.get('platform');
+    var category = p.get('category');
+    var q = p.get('q');
+    var changed = false;
+    if (platform) {
+      activeFilter = platform;
+      chips.forEach(function (c) { c.classList.remove('active'); if (c.dataset.filterValue === platform) c.classList.add('active'); });
+      changed = true;
+    }
+    if (category && categorySelect) {
+      activeCategory = category;
+      categorySelect.value = category;
+      changed = true;
+    }
+    if (q && searchInput) {
+      searchInput.value = q;
+      searchQuery = q.toLowerCase().trim();
+      changed = true;
+    }
+    if (changed) filterAll();
+  }
+
+  readPromptsUrl();
 });

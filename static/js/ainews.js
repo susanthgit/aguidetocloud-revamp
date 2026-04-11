@@ -373,6 +373,7 @@ function renderNews(data, view) {
           sec.style.display = hasVisible.length > 0 ? '' : 'none';
         });
         updateAinewsCount();
+        syncAinewsUrl(cat, document.getElementById('ainews-search')?.value || '');
       });
     });
   }
@@ -396,6 +397,8 @@ function renderNews(data, view) {
           grid.querySelectorAll('.ainews-show-more').forEach(function (btn) { btn.style.display = 'none'; });
         }
         updateAinewsCount();
+        var activeBtn = document.querySelector('#category-filters .ainews-filter.active');
+        syncAinewsUrl(activeBtn ? activeBtn.dataset.cat : 'all', input.value);
       }, 200);
     });
   }
@@ -420,8 +423,33 @@ function renderNews(data, view) {
       }
     });
   });
+
+  // Apply URL state after render (category + search)
+  readAinewsUrl();
 }
 
+// === URL STATE (shareable links) ===
+function syncAinewsUrl(cat, q) {
+  var p = new URLSearchParams();
+  if (cat && cat !== 'all') p.set('cat', cat);
+  if (q) p.set('q', q);
+  var s = p.toString();
+  history.replaceState(null, '', s ? '?' + s : location.pathname);
+}
+
+function readAinewsUrl() {
+  var p = new URLSearchParams(location.search);
+  var cat = p.get('cat');
+  var q = p.get('q');
+  if (cat) {
+    var btn = document.querySelector('#category-filters .ainews-filter[data-cat="' + cat + '"]');
+    if (btn) btn.click();
+  }
+  if (q) {
+    var searchInput = document.getElementById('ainews-search');
+    if (searchInput) { searchInput.value = q; searchInput.dispatchEvent(new Event('input')); }
+  }
+}
 // === SHARED RENDER HELPERS ===
 function getArticleVars(article) {
   var cat = article.category_name || article.category || 'General';
