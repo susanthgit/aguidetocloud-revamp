@@ -54,10 +54,10 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  <div id="search-modal" class="search-modal">
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
     <div class="search-modal-inner">
       <button id="search-close" class="search-modal-close" aria-label="Close search">&times;</button>
-      <input id="search-input" class="search-input" type="text" placeholder="Search videos... (Ctrl+K)" autocomplete="off">
+      <input id="search-input" class="search-input" type="text" placeholder="Search videos... (Ctrl+K)" autocomplete="off" aria-label="Search videos">
       <div id="search-results" class="search-results"></div>
     </div>
   </div>

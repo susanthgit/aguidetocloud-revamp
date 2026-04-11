@@ -962,7 +962,7 @@ a:hover {
 .footer-disclaimer {
   color: var(--text-muted);
   font-size: 0.72rem;
-  opacity: 0.6;
+  opacity: 0.8;
   max-width: 600px;
   margin: 0 auto 0.8rem;
   line-height: 1.5;

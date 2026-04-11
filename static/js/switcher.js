@@ -24,16 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Dropdown tap-to-toggle (mobile & touch devices)
+  // Dropdown tap-to-toggle (mobile only — on desktop, clicks navigate)
   document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      var parent = this.closest('.nav-dropdown');
-      // Close other open dropdowns
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
-        if (dd !== parent) dd.classList.remove('open');
-      });
-      parent.classList.toggle('open');
+      // On mobile (hamburger visible), toggle dropdown. On desktop, allow navigation.
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        var parent = this.closest('.nav-dropdown');
+        document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
+          if (dd !== parent) dd.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      }
     });
   });
 
