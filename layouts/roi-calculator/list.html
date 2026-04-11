@@ -24,6 +24,48 @@
 }
 </script>
 
+{{/* ── FAQ Schema for SEO ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Microsoft 365 Copilot worth $30 per user per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to Forrester's Total Economic Impact study, M365 Copilot delivers 353% ROI for SMBs and 116% ROI for enterprises over 3 years. The actual value depends on adoption rate, user roles, and investment in training. Use our free calculator to estimate your specific ROI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate Microsoft 365 Copilot ROI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copilot ROI = (Total productivity savings - Total cost) / Total cost × 100. Savings are calculated by multiplying hours saved per user per week by fully-loaded hourly rate, factoring in adoption curves over time. Total cost includes licence fees plus implementation costs like training and change management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many hours does Microsoft 365 Copilot save per week?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research shows Copilot saves 1-6 hours per week depending on role. Executives and legal professionals save the most (3-6 hrs/week), while general knowledge workers save 1-3 hrs/week. The UK Government trial found an average of 26 minutes saved per day (about 2 hours per week)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the payback period for Microsoft 365 Copilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payback period varies by organisation size and adoption rate. High-adoption scenarios can break even in as little as 6-8 weeks. Moderate adoption typically sees payback within 6-12 months. Conservative adoption with low training investment may take 12-18 months or longer."
+      }
+    }
+  ]
+}
+</script>
+
 <div class="roi-page">
 
   {{ partial "tool-hero.html" (dict "title" "Copilot ROI Calculator" "subtitle" "Estimate your Microsoft 365 Copilot savings — by role, with realistic adoption curves. Free, instant, no sign-up." "accent" "#14B8A6") }}
@@ -76,7 +118,21 @@
               <option value="e5">E5 + Copilot add-on — $90.00/user/mo</option>
               <option value="e7">E7 (Frontier Suite) — $99.00/user/mo</option>
             </select>
-            <span class="roi-field-hint">Copilot cost component: <strong id="roi-copilot-cost">$30.00</strong>/user/mo</span>
+            <span class="roi-field-hint">Copilot cost used in ROI: <strong id="roi-copilot-cost-display">$30.00</strong>/user/mo &nbsp;<span id="roi-rrp-hint" class="roi-rrp-hint">RRP — using public list price</span></span>
+          </div>
+
+          {{/* Custom pricing toggle */}}
+          <div class="roi-field roi-custom-cost-field">
+            <label class="roi-toggle-label">
+              <input type="checkbox" id="roi-cost-toggle"> Have a negotiated / discounted price?
+            </label>
+            <div class="roi-custom-cost-row" id="roi-custom-cost-wrap" style="display:none">
+              <label for="roi-custom-cost" class="roi-sr-only">Custom Copilot cost per user per month</label>
+              <span class="roi-custom-cost-prefix">$</span>
+              <input type="number" id="roi-custom-cost" min="1" max="200" step="0.50" placeholder="30.00" class="roi-num-input roi-num-sm" aria-label="Your Copilot cost per user per month">
+              <span class="roi-custom-cost-suffix">/user/mo</span>
+              <span class="roi-field-hint">💡 Don't know your price? Leave unchecked to use the public RRP ($30/user/mo).</span>
+            </div>
           </div>
 
           <div class="roi-field">
@@ -88,6 +144,18 @@
             </div>
           </div>
 
+          <div class="roi-field">
+            <label for="roi-overhead">Overhead multiplier
+              <button type="button" class="roi-tooltip-btn" aria-label="Overhead accounts for benefits, taxes, office costs on top of base salary. 30% is the industry standard.">ℹ️</button>
+            </label>
+            <select id="roi-overhead" class="roi-select roi-select-sm" aria-label="Salary overhead multiplier">
+              <option value="1.0">Salary only (no overhead)</option>
+              <option value="1.2">+ 20% overhead</option>
+              <option value="1.3" selected>+ 30% overhead (standard)</option>
+              <option value="1.4">+ 40% overhead</option>
+            </select>
+          </div>
+
           <div class="roi-presets">
             <span class="roi-presets-label">Try:</span>
             <button class="roi-preset-btn" data-users="50" data-salary="65000" data-plan="bus-std">Small Biz (50)</button>
@@ -97,16 +165,16 @@
         </div>
 
         {{/* ── Results Column ── */}}
-        <div class="roi-results-card">
+        <div class="roi-results-card" id="roi-results-live" aria-live="polite" aria-atomic="false">
           <h2 class="roi-card-title">Your ROI Estimate</h2>
 
           <div class="roi-metrics-grid">
             <div class="roi-metric">
-              <span class="roi-metric-label">Monthly Savings</span>
+              <span class="roi-metric-label">Avg Monthly Savings (Yr 1)</span>
               <span class="roi-metric-value" id="roi-monthly-savings">$0</span>
             </div>
             <div class="roi-metric">
-              <span class="roi-metric-label">Annual Savings</span>
+              <span class="roi-metric-label">Year 1 Savings</span>
               <span class="roi-metric-value roi-metric-highlight" id="roi-annual-savings">$0</span>
             </div>
             <div class="roi-metric">
@@ -120,12 +188,34 @@
             </div>
           </div>
 
+          {{/* Per-user metrics */}}
+          <div class="roi-per-user-row">
+            <div class="roi-per-user-item">
+              <span class="roi-per-user-label">Savings / user</span>
+              <span class="roi-per-user-val" id="roi-per-user-savings">$0/mo</span>
+            </div>
+            <div class="roi-per-user-item">
+              <span class="roi-per-user-label">Net value / user</span>
+              <span class="roi-per-user-val" id="roi-per-user-net">$0/mo</span>
+            </div>
+            <div class="roi-per-user-item">
+              <span class="roi-per-user-label">Month 12 run-rate</span>
+              <span class="roi-per-user-val" id="roi-m12-runrate">$0/mo</span>
+            </div>
+          </div>
+
           <div class="roi-big-number">
             <span class="roi-big-label">3-Year Net Gain</span>
             <span class="roi-big-value" id="roi-net-gain">$0</span>
           </div>
 
-          {{/* ── Mini Bar Chart ── */}}
+          {{/* Benchmark comparison */}}
+          <div class="roi-benchmark" id="roi-benchmark" aria-live="polite"></div>
+
+          {{/* Auto-generated narrative */}}
+          <div class="roi-narrative" id="roi-narrative"></div>
+
+          {{/* Mini Bar Chart */}}
           <div class="roi-mini-chart" id="roi-mini-chart" aria-label="3-year cost vs savings comparison">
             <div class="roi-bar-group">
               <div class="roi-bar-label">Cost</div>
@@ -137,6 +227,13 @@
               <div class="roi-bar-track"><div class="roi-bar roi-bar-savings" id="roi-bar-savings" style="width:0%"></div></div>
               <span class="roi-bar-val" id="roi-bar-savings-val">$0</span>
             </div>
+          </div>
+
+          {{/* Cross-tool CTAs */}}
+          <div class="roi-cross-tools">
+            <a href="/copilot-readiness/" class="roi-cross-link">🎯 Check Copilot Readiness</a>
+            <a href="/licensing/" class="roi-cross-link">📜 Compare M365 Plans</a>
+            <button class="roi-cross-link" id="roi-share-url">🔗 Share Link</button>
           </div>
 
           <p class="roi-source-note">
@@ -200,6 +297,8 @@
         <h3>🏆 Highest-Value Roles</h3>
         <div class="roi-top-roles-list" id="roi-top-roles-list"></div>
       </div>
+
+      <div class="roi-roles-net" id="roi-roles-net"></div>
 
       {{/* Stacked bar visualisation */}}
       <div class="roi-roles-chart" id="roi-roles-chart" aria-label="Savings by role bar chart"></div>
