@@ -315,9 +315,10 @@
       parts.push(`You are ${role}.`);
     }
 
-    // ── Context injection ──
+    // ── Context injection (smart, not placeholder) ──
     if (pillars.context.score < 8) {
-      parts.push(`[Add 1-2 sentences of context here: who is this for, what's the situation, what background does the AI need?]`);
+      const ctxSuggestion = generateContextSuggestion(text, domain);
+      if (ctxSuggestion) parts.push(ctxSuggestion);
     }
 
     // ── Original prompt (cleaned up) ──
@@ -326,8 +327,17 @@
     if (core[0] && core[0] === core[0].toLowerCase()) {
       core = core[0].toUpperCase() + core.slice(1);
     }
+    // Strengthen vague openers
+    core = core.replace(/^(?:can you |could you |please |i need you to |i want you to )/i, '');
+    if (core[0] && core[0] === core[0].toLowerCase()) {
+      core = core[0].toUpperCase() + core.slice(1);
+    }
     // Add period if missing
     if (!/[.!?]$/.test(core)) core += '.';
+    // Expand very short prompts
+    if (core.split(/\s+/).length <= 5) {
+      core = expandShortPrompt(core, domain);
+    }
     parts.push(core);
 
     // ── Format injection ──
@@ -345,10 +355,51 @@
 
     // ── Scope injection ──
     if (pillars.scope.score < 8) {
-      parts.push(`Keep your response focused and concise — aim for a complete but not overly long answer.`);
+      const scopeSuggestion = generateScopeSuggestion(text, domain);
+      parts.push(scopeSuggestion);
     }
 
     return parts.join('\n\n');
+  }
+
+  function generateContextSuggestion(text, domain) {
+    const lower = text.toLowerCase();
+    const suggestions = {
+      tech: 'I am working on a software project and need technical guidance for a production environment.',
+      business: 'This is for a business context where clear, actionable recommendations are needed for decision-making.',
+      creative: 'I am creating content for a general audience and want it to be engaging and shareable.',
+      academic: 'This is for an academic context where accuracy, proper structure, and evidence-based reasoning are important.',
+      education: 'I am preparing learning material for someone who is new to this topic and needs clear explanations.',
+      email: 'This is a workplace email where professionalism and clarity are important.',
+      data: 'I need to work with data and want clear, actionable insights that non-technical stakeholders can understand.',
+      general: 'I need a well-thought-out response that I can use directly.'
+    };
+    return suggestions[domain] || suggestions.general;
+  }
+
+  function expandShortPrompt(core, domain) {
+    const lower = core.toLowerCase();
+    // "Explain X" → "Explain X in detail, covering what it is, why it matters, and how it works"
+    if (/^explain\s/i.test(core)) {
+      return core.replace(/\.$/, '') + ' in detail, covering what it is, why it matters, and how it works in practice.';
+    }
+    // "Write X" → add specificity
+    if (/^write\s/i.test(core)) {
+      return core.replace(/\.$/, '') + ' Include key points, practical examples, and a clear structure.';
+    }
+    // "Help me with X" → reframe
+    if (/^help\s/i.test(core)) {
+      return core.replace(/^help\s+(me\s+)?(with\s+)?/i, 'Provide detailed guidance on ');
+    }
+    return core + ' Be thorough and include specific details, examples, and actionable recommendations.';
+  }
+
+  function generateScopeSuggestion(text, domain) {
+    const wordCount = text.split(/\s+/).length;
+    if (wordCount <= 10) {
+      return 'Keep your response between 200-400 words. Focus on the most important points and be specific.';
+    }
+    return 'Keep your response focused and well-structured. Aim for completeness without unnecessary repetition.';
   }
 
 

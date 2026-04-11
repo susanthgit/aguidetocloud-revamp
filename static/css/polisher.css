@@ -290,12 +290,21 @@
 /* ── Output Section ── */
 .polisher-output-section {
   margin-bottom: 2rem;
+  background: rgba(255, 107, 107, 0.04);
+  border: 2px solid rgba(255, 107, 107, 0.25);
+  border-radius: var(--radius);
+  padding: 1.5rem;
 }
 .polisher-output-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.polisher-output-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
 }
 .polisher-output-actions {
   display: flex;
