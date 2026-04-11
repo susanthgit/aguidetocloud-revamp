@@ -811,6 +811,15 @@
       });
     }
 
+    // Before/After toggle
+    const $viewToggle = document.getElementById('polisher-view-toggle');
+    if ($viewToggle) {
+      $viewToggle.addEventListener('click', function (e) {
+        const btn = e.target.closest('[data-view]');
+        if (btn) showView(btn.dataset.view);
+      });
+    }
+
     // Copy button
     $copy.addEventListener('click', function () {
       if (!currentPolished) return;

@@ -122,6 +122,87 @@
   color: var(--tool-accent);
 }
 
+/* ── Platform Selector ── */
+.polisher-platform-select {
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.polisher-platform-select:focus {
+  border-color: var(--tool-accent);
+  outline: none;
+}
+.polisher-platform-select option {
+  background: #1e1e30;
+  color: var(--text-primary);
+}
+
+/* ── View Toggle (Polished / Before-After) ── */
+.polisher-view-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.polisher-toggle-btn {
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.polisher-toggle-btn.active {
+  background: var(--tool-accent);
+  color: #0a0a1a;
+}
+.polisher-toggle-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+/* ── Compare View ── */
+.polisher-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.polisher-compare-col {
+  padding: 1rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.polisher-compare-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+  color: var(--text-muted);
+}
+.polisher-compare-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.polisher-compare-after {
+  color: #22c55e;
+}
+
 /* ── Examples Dropdown ── */
 .polisher-examples-wrap {
   position: relative;
@@ -587,6 +668,7 @@
   .polisher-output-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .polisher-how-it-works { flex-direction: column; gap: 0.6rem; padding: 1.5rem 0; }
   .polisher-shortcut-hint { display: none; }
+  .polisher-compare { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .polisher-crafts-grid { grid-template-columns: 1fr; }
