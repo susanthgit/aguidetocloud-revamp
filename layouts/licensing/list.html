@@ -219,5 +219,7 @@
 
 </div><!-- /.lic-page -->
 
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
 <script src="/js/licensing.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

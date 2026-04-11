@@ -92,7 +92,7 @@
       <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
     </div>
     <div class="hp-blog-grid">
-      {{ range first 8 $blogPosts }}
+      {{ range first 6 $blogPosts }}
       <a href="{{ .RelPermalink }}" class="hp-blog-card">
         <time class="hp-blog-date">{{ .Date.Format "Jan 2, 2006" }}</time>
         <h3>{{ .Title }}</h3>

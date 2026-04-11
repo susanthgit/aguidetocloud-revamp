@@ -51,4 +51,6 @@ window.__ainewsCategoryConfig = {
 };
 </script>
 <script src="/js/ainews.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 {{ end }}
