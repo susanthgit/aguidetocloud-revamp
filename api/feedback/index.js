@@ -161,15 +161,30 @@ async function createDiscussion(pat, repoId, categoryId, title, body) {
 }
 
 async function graphql(pat, query, variables = {}) {
-  const fetch = (await import('node-fetch')).default;
-  const res = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: {
-      Authorization: `bearer ${pat}`,
-      'Content-Type': 'application/json',
-      'User-Agent': 'aguidetocloud-feedback',
-    },
-    body: JSON.stringify({ query, variables }),
+  const https = require('https');
+  const postData = JSON.stringify({ query, variables });
+
+  return new Promise((resolve, reject) => {
+    const req = https.request({
+      hostname: 'api.github.com',
+      path: '/graphql',
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${pat}`,
+        'Content-Type': 'application/json',
+        'User-Agent': 'aguidetocloud-feedback',
+        'Content-Length': Buffer.byteLength(postData),
+      },
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => { data += chunk; });
+      res.on('end', () => {
+        try { resolve(JSON.parse(data)); }
+        catch (e) { reject(new Error('Failed to parse GitHub response')); }
+      });
+    });
+    req.on('error', reject);
+    req.write(postData);
+    req.end();
   });
-  return res.json();
 }
