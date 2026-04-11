@@ -599,10 +599,15 @@ a:hover {
 
 /* ── WELCOME STRIP ───────────────────────── */
 .welcome-strip {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, #00e5ff 30%, #0f0f1a) 0%, #141425 50%, color-mix(in srgb, #ff66ff 20%, #0f0f1a) 100%);
-  border-bottom: 1px solid rgba(102, 255, 255, 0.15);
+  background: #141425;
+  border-bottom: none;
   padding: 1.2rem 2rem;
+}
+.is-home .site-nav {
+  --nav-accent: transparent;
+  border-image: linear-gradient(90deg, #00e5ff, #ff66ff) 1;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
 }
 .welcome-inner {
   max-width: var(--max-width);
