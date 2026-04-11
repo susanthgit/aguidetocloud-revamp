@@ -3,143 +3,101 @@
 <style>
 .roadmap-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 
+/* Column layout */
+.roadmap-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.roadmap-col-header {
+  text-align: center; padding: 0.75rem; border-radius: 10px;
+  font-weight: 700; font-size: 1rem; margin-bottom: 0.75rem;
+}
+.roadmap-col-fund .roadmap-col-header { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.roadmap-col-assoc .roadmap-col-header { background: rgba(59, 130, 246, 0.12); color: #3B82F6; }
+.roadmap-col-expert .roadmap-col-header { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+
+/* Category section within a column */
+.roadmap-cat-section { margin-bottom: 1.25rem; }
+.roadmap-cat-label {
+  font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 0.5rem; padding-left: 0.25rem;
+}
+
+/* Exam card */
+.roadmap-card {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 0.85rem; margin-bottom: 0.5rem;
+  background: var(--cert-card); border: 1px solid var(--cert-border);
+  border-radius: 8px; text-decoration: none; color: inherit;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+}
+.roadmap-card:hover {
+  border-color: var(--cert-accent); transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.roadmap-card-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.roadmap-card-code {
+  font-weight: 700; font-size: 0.88rem; white-space: nowrap;
+}
+.roadmap-card-title {
+  font-size: 0.75rem; color: var(--cert-text-dim); line-height: 1.3; flex: 1;
+}
+.roadmap-card-status {
+  font-size: 0.6rem; flex-shrink: 0;
+}
+
+/* Category colours on dot + code */
+.roadmap-card[data-cat="Azure"] .roadmap-card-dot { background: #3B82F6; }
+.roadmap-card[data-cat="Azure"] .roadmap-card-code { color: #3B82F6; }
+.roadmap-card[data-cat="AI"] .roadmap-card-dot { background: #8B5CF6; }
+.roadmap-card[data-cat="AI"] .roadmap-card-code { color: #8B5CF6; }
+.roadmap-card[data-cat="Data"] .roadmap-card-dot { background: #8B5CF6; }
+.roadmap-card[data-cat="Data"] .roadmap-card-code { color: #8B5CF6; }
+.roadmap-card[data-cat="Security"] .roadmap-card-dot { background: #EF4444; }
+.roadmap-card[data-cat="Security"] .roadmap-card-code { color: #EF4444; }
+.roadmap-card[data-cat="Microsoft 365"] .roadmap-card-dot { background: #F59E0B; }
+.roadmap-card[data-cat="Microsoft 365"] .roadmap-card-code { color: #F59E0B; }
+.roadmap-card[data-cat="Power Platform"] .roadmap-card-dot { background: #A855F7; }
+.roadmap-card[data-cat="Power Platform"] .roadmap-card-code { color: #A855F7; }
+.roadmap-card[data-cat="Dynamics 365"] .roadmap-card-dot { background: #14B8A6; }
+.roadmap-card[data-cat="Dynamics 365"] .roadmap-card-code { color: #14B8A6; }
+
+/* Status card borders */
+.roadmap-card-retiring { border-left: 3px solid #F59E0B; }
+.roadmap-card-retired { opacity: 0.5; border-left: 3px solid #666; }
+.roadmap-card-beta { border-left: 3px solid #8B5CF6; border-left-style: dashed; }
+
+/* Arrow between columns */
+.roadmap-arrow {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: var(--cert-border); padding-top: 2.5rem;
+}
+
 /* Legend */
 .roadmap-legend {
   display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
-  padding: 0.75rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border); border-radius: 10px;
-  font-size: 0.82rem; color: var(--cert-text-dim);
+  padding: 0.75rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border);
+  border-radius: 10px; font-size: 0.82rem; color: var(--cert-text-dim); align-items: center;
 }
 .roadmap-legend-item { display: flex; align-items: center; gap: 0.35rem; }
-.roadmap-legend-line { width: 24px; height: 4px; border-radius: 2px; flex-shrink: 0; }
-.roadmap-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; border: 2px solid; box-sizing: border-box; }
+.roadmap-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.roadmap-legend-swatch { width: 20px; height: 3px; border-radius: 2px; flex-shrink: 0; }
 
-/* Metro line = one track */
-.metro-line {
-  margin-bottom: 2rem;
-  position: relative;
-}
-.metro-line-header {
-  display: flex; align-items: center; gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.metro-line-color {
-  width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
-}
-.metro-line-name {
-  font-size: 1.05rem; font-weight: 700; color: var(--cert-text);
-}
-.metro-line-count {
-  font-size: 0.78rem; color: var(--cert-text-dim); font-weight: 400;
-}
-
-/* The track itself — horizontal scrollable on mobile */
-.metro-track-scroll {
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
-}
-.metro-track {
-  display: flex; align-items: center; gap: 0;
-  position: relative; min-width: max-content;
-  padding: 0.5rem 0;
-}
-
-/* The horizontal line running through all stations */
-.metro-track::before {
-  content: ""; position: absolute;
-  left: 0; right: 0; top: 50%;
-  height: 4px; border-radius: 2px;
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-/* Station (exam node) */
-.metro-station {
-  display: flex; flex-direction: column; align-items: center;
-  position: relative; z-index: 1;
-  text-decoration: none; color: inherit;
-  min-width: 100px; padding: 0 0.35rem;
-  transition: transform 0.15s;
-}
-.metro-station:hover { transform: scale(1.08); }
-
-.metro-dot {
-  width: 22px; height: 22px; border-radius: 50%;
-  border: 3px solid; background: var(--cert-bg);
-  box-sizing: border-box; flex-shrink: 0;
-  transition: background 0.15s;
-}
-.metro-station:hover .metro-dot { background: currentColor; }
-
-.metro-code {
-  font-size: 0.78rem; font-weight: 700; margin-top: 0.35rem;
-  white-space: nowrap;
-}
-.metro-title {
-  font-size: 0.68rem; color: var(--cert-text-dim);
-  text-align: center; max-width: 110px;
-  line-height: 1.25; margin-top: 0.15rem;
-}
-.metro-status-tag {
-  font-size: 0.6rem; margin-top: 0.15rem;
-}
-
-/* Level separator on the line */
-.metro-separator {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 0 0.25rem; position: relative; z-index: 1;
-}
-.metro-sep-label {
-  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--cert-text-dim); white-space: nowrap;
-  background: var(--cert-bg); padding: 0 0.4rem;
-  position: relative; z-index: 2;
-}
-.metro-sep-tick {
-  width: 2px; height: 16px; background: var(--cert-border);
-}
-
-/* Line colours */
-.metro-azure .metro-track::before { background: #3B82F6; }
-.metro-azure .metro-dot { border-color: #3B82F6; color: #3B82F6; }
-.metro-azure .metro-code { color: #3B82F6; }
-
-.metro-ai .metro-track::before { background: #8B5CF6; }
-.metro-ai .metro-dot { border-color: #8B5CF6; color: #8B5CF6; }
-.metro-ai .metro-code { color: #8B5CF6; }
-
-.metro-security .metro-track::before { background: #EF4444; }
-.metro-security .metro-dot { border-color: #EF4444; color: #EF4444; }
-.metro-security .metro-code { color: #EF4444; }
-
-.metro-m365 .metro-track::before { background: #F59E0B; }
-.metro-m365 .metro-dot { border-color: #F59E0B; color: #F59E0B; }
-.metro-m365 .metro-code { color: #F59E0B; }
-
-.metro-power .metro-track::before { background: #A855F7; }
-.metro-power .metro-dot { border-color: #A855F7; color: #A855F7; }
-.metro-power .metro-code { color: #A855F7; }
-
-.metro-d365 .metro-track::before { background: #14B8A6; }
-.metro-d365 .metro-dot { border-color: #14B8A6; color: #14B8A6; }
-.metro-d365 .metro-code { color: #14B8A6; }
-
-/* Status overrides */
-.metro-station-retiring .metro-dot { border-style: dashed; border-color: #F59E0B !important; }
-.metro-station-retired .metro-dot { border-color: #666 !important; opacity: 0.5; }
-.metro-station-beta .metro-dot { border-style: dotted; }
-
-/* Terminal stations (first and last) get filled dots */
-.metro-station:first-of-type .metro-dot,
-.metro-track .metro-station:first-child .metro-dot { background: currentColor; }
-
+/* Responsive — stack on mobile */
 @media (max-width: 768px) {
-  .metro-title { max-width: 80px; font-size: 0.62rem; }
-  .metro-station { min-width: 75px; }
-  .metro-dot { width: 18px; height: 18px; }
+  .roadmap-columns { grid-template-columns: 1fr; }
+  .roadmap-arrow { display: none; }
+  .roadmap-col-header { font-size: 0.9rem; }
 }
 </style>
 
-{{ partial "tool-hero.html" (dict "title" "Microsoft Certification Roadmap" "subtitle" "Interactive metro map — follow the lines from Fundamentals to Expert" "accent" "#10B981") }}
+{{ partial "tool-hero.html" (dict "title" "Microsoft Certification Roadmap" "subtitle" "Visual guide — pick your starting point, then progress to Associate and Expert" "accent" "#10B981") }}
 
 <div class="roadmap-container">
 
@@ -150,20 +108,19 @@
   </nav>
 
   <div class="roadmap-legend">
-    <strong>Lines:</strong>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#3B82F6"></div> Azure</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#8B5CF6"></div> AI & Data</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#EF4444"></div> Security</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#F59E0B"></div> M365</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#A855F7"></div> Power Platform</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-line" style="background:#14B8A6"></div> Dynamics 365</div>
-    <strong style="margin-left:0.5rem">Stations:</strong>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="border-color:#10B981"></div> Active</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="border-color:#F59E0B;border-style:dashed"></div> Retiring</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="border-color:#8B5CF6;border-style:dotted"></div> Beta</div>
+    <strong>Categories:</strong>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#3B82F6"></div> Azure</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#8B5CF6"></div> AI & Data</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#EF4444"></div> Security</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#F59E0B"></div> M365</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#A855F7"></div> Power Platform</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#14B8A6"></div> Dynamics 365</div>
+    <strong style="margin-left:0.5rem">Status:</strong>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#F59E0B"></div> Retiring</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#8B5CF6;border-style:dashed"></div> Beta</div>
   </div>
 
-  <p style="font-size:0.85rem;color:var(--cert-text-dim);margin-bottom:1.5rem;">Each station is a certification exam — click to open its study guide. Follow the line from left (Fundamentals) to right (Expert). Scroll horizontally on mobile.</p>
+  <p style="font-size:0.85rem;color:var(--cert-text-dim);margin-bottom:1.5rem;">Start on the left with a Fundamentals exam, then progress right through Associate to Expert. Click any card to open its study guide.</p>
 
   <div id="roadmap-content">
     <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
@@ -179,95 +136,80 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Microsoft Certification Roadmap",
-  "description": "Interactive metro map of all Microsoft certification paths — follow the lines from Fundamentals to Expert.",
+  "description": "Interactive visual roadmap of all Microsoft certification paths — Fundamentals to Expert.",
   "url": "https://www.aguidetocloud.com/cert-tracker/roadmap/"
 }
 </script>
 <script>
 (function(){
-  var tracks = [
-    { name: "☁️ Azure Line", css: "metro-azure", levels: [
-      { label: "Fundamentals", exams: ["AZ-900"] },
-      { label: "Associate", exams: ["AZ-104", "AZ-204", "AZ-500", "AZ-700", "AZ-140"] },
-      { label: "Specialist", exams: ["AZ-120", "AZ-800", "AZ-801"] },
-      { label: "Expert", exams: ["AZ-305", "AZ-400", "AZ-802"] }
-    ]},
-    { name: "🤖 AI & Data Line", css: "metro-ai", levels: [
-      { label: "Fundamentals", exams: ["AI-900", "DP-900"] },
-      { label: "Associate", exams: ["AI-102", "DP-100", "DP-300", "DP-420", "DP-600", "DP-700"] },
-      { label: "Next Gen (Beta)", exams: ["AI-901", "AI-103", "AI-200", "AI-300", "DP-750", "DP-800"] }
-    ]},
-    { name: "🔒 Security Line", css: "metro-security", levels: [
-      { label: "Fundamentals", exams: ["SC-900"] },
-      { label: "Associate", exams: ["SC-200", "SC-300", "SC-400"] },
-      { label: "Expert", exams: ["SC-100"] },
-      { label: "Next Gen (Beta)", exams: ["SC-500", "SC-730"] }
-    ]},
-    { name: "📧 Microsoft 365 Line", css: "metro-m365", levels: [
-      { label: "Fundamentals", exams: ["MS-900"] },
-      { label: "Associate", exams: ["MD-102", "MS-700", "MS-721"] },
-      { label: "Expert", exams: ["MS-102"] }
-    ]},
-    { name: "⚡ Power Platform Line", css: "metro-power", levels: [
-      { label: "Fundamentals", exams: ["PL-900"] },
-      { label: "Associate", exams: ["PL-200", "PL-300", "PL-400", "PL-500"] },
-      { label: "Expert", exams: ["PL-600"] }
-    ]},
-    { name: "💼 Dynamics 365 Line", css: "metro-d365", levels: [
-      { label: "Fundamentals", exams: ["MB-910", "MB-920"] },
-      { label: "Functional", exams: ["MB-210", "MB-220", "MB-230", "MB-240", "MB-310", "MB-330", "MB-800"] },
-      { label: "Developer", exams: ["MB-500", "MB-820"] }
-    ]}
-  ];
+  // Map exams to their level column
+  var fundExams = ["AZ-900","AI-900","DP-900","SC-900","MS-900","PL-900","MB-910","MB-920"];
+  var expertExams = ["AZ-305","AZ-400","AZ-802","SC-100","MS-102","PL-600","SC-500","SC-730"];
+  // Everything else is Associate
+
+  function getLevel(code) {
+    if (fundExams.indexOf(code) !== -1) return "fund";
+    if (expertExams.indexOf(code) !== -1) return "expert";
+    return "assoc";
+  }
+
+  var catEmoji = {
+    "Azure": "☁️", "AI": "🤖", "Data": "📊", "Security": "🔒",
+    "Microsoft 365": "📧", "Power Platform": "⚡", "Dynamics 365": "💼"
+  };
+  var catOrder = ["Azure", "AI", "Data", "Security", "Microsoft 365", "Power Platform", "Dynamics 365"];
 
   fetch("/data/cert-tracker/latest.json")
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var examMap = {};
-      (data.exams || []).forEach(function(e) { examMap[e.code] = e; });
+      // Group by level, then by category
+      var cols = { fund: {}, assoc: {}, expert: {} };
+      (data.exams || []).forEach(function(e) {
+        var lev = getLevel(e.code);
+        var cat = e.category || "Other";
+        if (!cols[lev][cat]) cols[lev][cat] = [];
+        cols[lev][cat].push(e);
+      });
 
-      var html = "";
-      tracks.forEach(function(track) {
-        var totalExams = track.levels.reduce(function(s, l) { return s + l.exams.length; }, 0);
-        html += '<div class="metro-line ' + track.css + '">';
-        html += '<div class="metro-line-header">';
-        html += '<div class="metro-line-color" style="background:currentColor"></div>';
-        html += '<span class="metro-line-name">' + track.name + '</span>';
-        html += '<span class="metro-line-count">' + totalExams + ' exams</span>';
-        html += '</div>';
-        html += '<div class="metro-track-scroll"><div class="metro-track">';
+      function renderCol(level, colData, headerText) {
+        var html = '<div class="roadmap-col-' + level + '">';
+        html += '<div class="roadmap-col-header">' + headerText + '</div>';
 
-        track.levels.forEach(function(level, li) {
-          // Add separator between levels
-          if (li > 0) {
-            html += '<div class="metro-separator"><div class="metro-sep-tick"></div><div class="metro-sep-label">' + level.label + '</div><div class="metro-sep-tick"></div></div>';
-          } else {
-            html += '<div class="metro-separator"><div class="metro-sep-label">' + level.label + '</div></div>';
-          }
+        catOrder.forEach(function(cat) {
+          var exams = colData[cat];
+          if (!exams || !exams.length) return;
+          html += '<div class="roadmap-cat-section">';
+          html += '<div class="roadmap-cat-label" style="color:var(--cert-text-dim)">' + (catEmoji[cat]||"") + " " + cat + '</div>';
 
-          level.exams.forEach(function(code) {
-            var exam = examMap[code];
-            var title = exam ? exam.title : code;
-            var s = exam ? (exam.status || "active") : "active";
-            var statusClass = s !== "active" ? " metro-station-" + s : "";
+          exams.forEach(function(e) {
+            var s = e.status || "active";
+            var statusClass = s !== "active" ? " roadmap-card-" + s : "";
             var statusTag = "";
-            if (s === "retiring") statusTag = '<span class="metro-status-tag cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️</span>';
-            else if (s === "beta") statusTag = '<span class="metro-status-tag cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪</span>';
-            else if (s === "retired") statusTag = '<span class="metro-status-tag cert-badge cert-badge-retired" style="font-size:0.55rem;padding:0.05rem 0.3rem">🚫</span>';
+            if (s === "retiring") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️ Retiring</span>';
+            else if (s === "beta") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪 Beta</span>';
+            else if (s === "retired") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-retired" style="font-size:0.55rem;padding:0.05rem 0.3rem">🚫</span>';
 
-            var shortTitle = title.length > 35 ? title.substring(0, 32) + "..." : title;
+            var shortTitle = e.title.length > 40 ? e.title.substring(0, 37) + "..." : e.title;
 
-            html += '<a href="/cert-tracker/' + code.toLowerCase() + '/" class="metro-station' + statusClass + '" title="' + code + ': ' + title + '">';
-            html += '<div class="metro-dot"></div>';
-            html += '<span class="metro-code">' + code + '</span>';
-            html += '<span class="metro-title">' + shortTitle + '</span>';
+            html += '<a href="/cert-tracker/' + e.code.toLowerCase() + '/" class="roadmap-card' + statusClass + '" data-cat="' + cat + '" title="' + e.code + ': ' + e.title + '">';
+            html += '<div class="roadmap-card-dot"></div>';
+            html += '<span class="roadmap-card-code">' + e.code + '</span>';
+            html += '<span class="roadmap-card-title">' + shortTitle + '</span>';
             html += statusTag;
             html += '</a>';
           });
-        });
 
-        html += '</div></div></div>';
-      });
+          html += '</div>';
+        });
+        html += '</div>';
+        return html;
+      }
+
+      var html = '<div class="roadmap-columns">';
+      html += renderCol("fund", cols.fund, "🟢 Fundamentals");
+      html += renderCol("assoc", cols.assoc, "🔵 Associate");
+      html += renderCol("expert", cols.expert, "🟡 Expert & Beta");
+      html += '</div>';
 
       document.getElementById("roadmap-content").innerHTML = html;
     })
