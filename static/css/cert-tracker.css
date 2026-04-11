@@ -98,6 +98,33 @@
 
 /* ── Exam grid ── */
 .cert-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Category groups */
+.cert-category-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cert-category-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cert-accent);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--cert-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cert-category-heading .cert-category-count {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--cert-text-dim);
+}
+.cert-category-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1rem;
@@ -110,15 +137,14 @@
   border: 1px solid var(--cert-border);
   border-radius: 12px;
   padding: 1.25rem;
-  transition: all 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   position: relative;
   color: inherit;
 }
 .cert-card:hover {
-  background: var(--cert-card-hover);
   border-color: var(--cert-accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .cert-card-header {

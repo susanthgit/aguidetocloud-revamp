@@ -102,7 +102,34 @@
       return;
     }
 
-    grid.innerHTML = exams.map((e) => renderCard(e)).join("");
+    const catEmoji = {
+      Azure: "☁️", AI: "🤖", Data: "📊", Security: "🔒",
+      "Microsoft 365": "📧", "Power Platform": "⚡", "Dynamics 365": "💼"
+    };
+
+    // Group by category
+    const groups = {};
+    exams.forEach((e) => {
+      const cat = e.category || "Other";
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(e);
+    });
+
+    // Render each category group
+    const catOrder = ["Azure", "AI", "Security", "Microsoft 365", "Data", "Power Platform", "Dynamics 365"];
+    const sortedCats = Object.keys(groups).sort((a, b) => {
+      const ia = catOrder.indexOf(a), ib = catOrder.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+
+    grid.innerHTML = sortedCats.map((cat) => {
+      const cards = groups[cat].map((e) => renderCard(e)).join("");
+      return `
+        <div class="cert-category-group">
+          <h3 class="cert-category-heading">${catEmoji[cat] || "📋"} ${cat} <span class="cert-category-count">(${groups[cat].length})</span></h3>
+          <div class="cert-category-cards">${cards}</div>
+        </div>`;
+    }).join("");
   }
 
   function renderCard(exam) {
