@@ -762,6 +762,17 @@
 .lic-single-content strong {
   color: #f1f5f9;
 }
+/* FAQ styling — questions in rose, answers in white */
+.lic-single-content p > strong:only-child {
+  color: var(--lic-accent);
+  font-size: 1.05rem;
+  display: block;
+  margin-top: 1.5rem;
+}
+.lic-single-content p > strong:only-child + p,
+.lic-single-content p:has(> strong:only-child) + p {
+  color: #f1f5f9;
+}
 .lic-single-content table {
   width: 100%;
   border-collapse: collapse;
