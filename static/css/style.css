@@ -603,6 +603,9 @@ a:hover {
   border-bottom: none;
   padding: 1.2rem 2rem;
 }
+.is-home .site-nav {
+  border-bottom-color: transparent;
+}
 .welcome-inner {
   max-width: var(--max-width);
   margin: 0 auto;
