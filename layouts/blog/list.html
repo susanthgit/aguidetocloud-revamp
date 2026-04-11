@@ -19,6 +19,7 @@
           <span class="blog-tl-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
         </div>
         <h3>{{ .Title }}</h3>
+        {{ with .Description }}<p class="blog-tl-desc">{{ . | truncate 150 }}</p>{{ end }}
       </div>
     </a>
     {{ end }}
