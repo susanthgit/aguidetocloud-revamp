@@ -462,34 +462,38 @@
     }
   };
 
+  // ─── Precompute pillar question ranges ───
+  const PILLAR_RANGES = {};
+  PILLARS.forEach(p => { PILLAR_RANGES[p.id] = { start: -1, count: 0 }; });
+  QUESTIONS.forEach((q, i) => {
+    const r = PILLAR_RANGES[q.pillar];
+    if (r.start === -1) r.start = i;
+    r.count++;
+  });
+
   // ─── State ───
   let currentQuestion = 0;
-  let answers = new Array(QUESTIONS.length).fill(-1); // -1 = unanswered
+  let answers = new Array(QUESTIONS.length).fill(-1);
+  let touchStartX = 0;
 
-  // ─── DOM Elements ───
   const $ = id => document.getElementById(id);
+  const STORAGE_KEY = 'copilot-readiness-answers';
+  const HISTORY_KEY = 'copilot-readiness-history';
 
   // ─── Init ───
   function init() {
-    // Check for shared score in URL
     const params = new URLSearchParams(window.location.search);
-    if (params.has('score')) {
-      loadSharedResults(params);
-      return;
-    }
+    if (params.has('score')) { loadSharedResults(params); return; }
 
-    // Load saved progress from sessionStorage
-    const saved = sessionStorage.getItem('copilot-readiness-answers');
+    // Restore from localStorage
+    const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length === QUESTIONS.length) {
           answers = parsed;
-          // Find last answered question
           const lastAnswered = answers.reduce((acc, v, i) => v >= 0 ? i : acc, -1);
-          if (lastAnswered >= 0) {
-            currentQuestion = Math.min(lastAnswered + 1, QUESTIONS.length - 1);
-          }
+          if (lastAnswered >= 0) currentQuestion = Math.min(lastAnswered + 1, QUESTIONS.length - 1);
         }
       } catch (e) { /* ignore */ }
     }
@@ -509,28 +513,96 @@
       } else if (e.key === 'ArrowLeft') {
         if (!$('readiness-prev-btn').disabled) prevQuestion();
       } else if (e.key >= '1' && e.key <= '5') {
-        const idx = parseInt(e.key) - 1;
         const opts = document.querySelectorAll('.readiness-option');
-        if (opts[idx]) opts[idx].click();
+        if (opts[parseInt(e.key) - 1]) opts[parseInt(e.key) - 1].click();
       }
     });
+
+    // Mobile swipe on question card
+    const card = $('readiness-question-card');
+    if (card) {
+      card.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+      card.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(dx) > 60) {
+          if (dx < 0 && !$('readiness-next-btn').disabled) nextQuestion();
+          if (dx > 0 && !$('readiness-prev-btn').disabled) prevQuestion();
+        }
+      }, { passive: true });
+    }
   }
 
   function startAssessment() {
     $('readiness-intro').hidden = true;
     $('readiness-assessment').hidden = false;
+    renderPillarNav();
     renderQuestion();
+  }
+
+  // ─── Pillar Nav (skip-to-pillar) ───
+  function renderPillarNav() {
+    const nav = $('readiness-pillar-nav');
+    if (!nav) return;
+    nav.innerHTML = '';
+    PILLARS.forEach((p, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'rpn-item';
+      btn.dataset.pillar = p.id;
+      btn.innerHTML = `<span class="rpn-icon">${p.icon}</span><span class="rpn-score" id="rpn-score-${p.id}"></span>`;
+      btn.title = p.name;
+      btn.addEventListener('click', () => jumpToPillar(p.id));
+      nav.appendChild(btn);
+    });
+    updatePillarNav();
+  }
+
+  function updatePillarNav() {
+    PILLARS.forEach(p => {
+      const range = PILLAR_RANGES[p.id];
+      const btn = document.querySelector(`.rpn-item[data-pillar="${p.id}"]`);
+      if (!btn) return;
+
+      // Check if all questions in this pillar are answered
+      let allAnswered = true, earned = 0, max = range.count * 3;
+      for (let i = range.start; i < range.start + range.count; i++) {
+        if (answers[i] < 0) { allAnswered = false; }
+        else { earned += QUESTIONS[i].options[answers[i]].points; }
+      }
+
+      const scoreEl = $(`rpn-score-${p.id}`);
+      const currentPillar = QUESTIONS[currentQuestion].pillar;
+      btn.classList.toggle('rpn-active', currentPillar === p.id);
+      btn.classList.toggle('rpn-done', allAnswered);
+
+      if (allAnswered) {
+        const pct = Math.round((earned / max) * 100);
+        scoreEl.textContent = pct + '%';
+        scoreEl.style.color = pct >= 80 ? '#22C55E' : pct >= 60 ? '#EAB308' : pct >= 40 ? '#F97316' : '#EF4444';
+      } else {
+        scoreEl.textContent = '';
+      }
+    });
+  }
+
+  function jumpToPillar(pillarId) {
+    const range = PILLAR_RANGES[pillarId];
+    if (range) {
+      currentQuestion = range.start;
+      renderQuestion();
+    }
   }
 
   // ─── Render Question ───
   function renderQuestion() {
     const q = QUESTIONS[currentQuestion];
     const pillar = PILLARS.find(p => p.id === q.pillar);
+    const range = PILLAR_RANGES[q.pillar];
+    const qInPillar = currentQuestion - range.start + 1;
 
     // Progress
     const pct = ((currentQuestion + 1) / QUESTIONS.length) * 100;
     $('readiness-progress-fill').style.width = pct + '%';
-    $('readiness-progress-text').textContent = `Question ${currentQuestion + 1} of ${QUESTIONS.length}`;
+    $('readiness-progress-text').textContent = `Q${qInPillar} of ${range.count} in ${pillar.name} · ${currentQuestion + 1}/${QUESTIONS.length} overall`;
 
     // Pillar indicator
     $('readiness-current-pillar-icon').textContent = pillar.icon;
@@ -538,7 +610,17 @@
 
     // Question text
     $('readiness-question-text').textContent = q.text;
-    $('readiness-question-context').textContent = q.context;
+
+    // "Why this matters" expandable context
+    const ctxEl = $('readiness-question-context');
+    ctxEl.innerHTML = `<button class="readiness-why-toggle" aria-expanded="false">💡 Why this matters <span class="why-arrow">▸</span></button><div class="readiness-why-detail" hidden>${q.context}</div>`;
+    ctxEl.querySelector('.readiness-why-toggle').addEventListener('click', function() {
+      const detail = this.nextElementSibling;
+      const expanded = detail.hidden;
+      detail.hidden = !expanded;
+      this.setAttribute('aria-expanded', expanded);
+      this.querySelector('.why-arrow').textContent = expanded ? '▾' : '▸';
+    });
 
     // Options
     const optContainer = $('readiness-options');
@@ -546,81 +628,81 @@
     q.options.forEach((opt, i) => {
       const btn = document.createElement('button');
       btn.className = 'readiness-option' + (answers[currentQuestion] === i ? ' selected' : '');
-      btn.innerHTML = `<span class="readiness-option-radio"></span><span>${opt.label}</span>`;
+      const numHint = `<span class="readiness-opt-num">${i + 1}</span>`;
+      btn.innerHTML = `<span class="readiness-option-radio"></span>${numHint}<span>${opt.label}</span>`;
       btn.addEventListener('click', () => selectOption(i));
       optContainer.appendChild(btn);
     });
 
+    // Keyboard hint
+    let hintEl = document.querySelector('.readiness-kbd-hint');
+    if (!hintEl) {
+      hintEl = document.createElement('p');
+      hintEl.className = 'readiness-kbd-hint';
+      hintEl.innerHTML = '<kbd>1</kbd>–<kbd>' + q.options.length + '</kbd> to select · <kbd>←</kbd><kbd>→</kbd> to navigate · swipe on mobile';
+      $('readiness-options').after(hintEl);
+    }
+
     // Nav buttons
     $('readiness-prev-btn').disabled = currentQuestion === 0;
     updateNextButton();
+    updatePillarNav();
   }
 
   function selectOption(idx) {
     answers[currentQuestion] = idx;
-    sessionStorage.setItem('copilot-readiness-answers', JSON.stringify(answers));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
 
-    // Update UI
     document.querySelectorAll('.readiness-option').forEach((btn, i) => {
       btn.classList.toggle('selected', i === idx);
     });
-
     updateNextButton();
 
-    // Auto-advance after a short delay
     setTimeout(() => {
-      if (currentQuestion < QUESTIONS.length - 1) {
-        nextQuestion();
-      }
+      if (currentQuestion < QUESTIONS.length - 1) nextQuestion();
     }, 400);
   }
 
   function updateNextButton() {
     const btn = $('readiness-next-btn');
-    const isLastQ = currentQuestion === QUESTIONS.length - 1;
+    const isLast = currentQuestion === QUESTIONS.length - 1;
     const isAnswered = answers[currentQuestion] >= 0;
-
     btn.disabled = !isAnswered;
-    btn.textContent = isLastQ ? '✨ See Results' : 'Next →';
+    btn.textContent = isLast ? '✨ See Results' : 'Next →';
   }
 
   function nextQuestion() {
-    if (currentQuestion < QUESTIONS.length - 1) {
-      currentQuestion++;
-      renderQuestion();
-    } else {
-      showResults();
-    }
+    if (currentQuestion < QUESTIONS.length - 1) { currentQuestion++; renderQuestion(); }
+    else showResults();
   }
 
   function prevQuestion() {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      renderQuestion();
-    }
+    if (currentQuestion > 0) { currentQuestion--; renderQuestion(); }
   }
 
   // ─── Calculate Scores ───
   function calculateScores() {
     const pillarScores = {};
+    const investigateItems = [];
     PILLARS.forEach(p => { pillarScores[p.id] = { earned: 0, max: 0 }; });
 
     QUESTIONS.forEach((q, i) => {
       const ps = pillarScores[q.pillar];
-      ps.max += 3; // max per question
+      ps.max += 3;
       if (answers[i] >= 0) {
-        ps.earned += q.options[answers[i]].points;
+        const opt = q.options[answers[i]];
+        ps.earned += opt.points;
+        // Track "not sure" answers (typically the last option with 0 points)
+        if (opt.points === 0 && opt.label.toLowerCase().includes('not sure')) {
+          investigateItems.push({ pillar: q.pillar, question: q.text });
+        }
       }
     });
 
     let totalEarned = 0, totalMax = 0;
-    Object.values(pillarScores).forEach(s => {
-      totalEarned += s.earned;
-      totalMax += s.max;
-    });
-
+    Object.values(pillarScores).forEach(s => { totalEarned += s.earned; totalMax += s.max; });
     const overallScore = Math.round((totalEarned / totalMax) * 100);
-    return { pillarScores, overallScore };
+    return { pillarScores, overallScore, investigateItems };
   }
 
   // ─── Show Results ───
@@ -628,66 +710,81 @@
     $('readiness-assessment').hidden = true;
     $('readiness-results').hidden = false;
 
-    const { pillarScores, overallScore } = calculateScores();
+    const { pillarScores, overallScore, investigateItems } = calculateScores();
     const tier = TIERS.find(t => overallScore >= t.min && overallScore <= t.max) || TIERS[0];
 
+    // Save to history for re-assessment delta
+    saveScoreHistory(overallScore, pillarScores);
+    const previousScore = getPreviousScore();
+
     // Animate score ring
-    const circumference = 2 * Math.PI * 52; // r=52
-    const offset = circumference - (overallScore / 100) * circumference;
+    const circumference = 2 * Math.PI * 52;
     const ring = $('readiness-ring-fg');
     ring.style.stroke = tier.color;
 
-    // Animate score number
-    let currentNum = 0;
     const scoreEl = $('readiness-score-number');
-    const animDuration = 1500;
     const startTime = performance.now();
-
     function animateScore(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / animDuration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      currentNum = Math.round(eased * overallScore);
-      scoreEl.textContent = currentNum;
-
-      // Animate ring
-      const currentOffset = circumference - (eased * overallScore / 100) * circumference;
-      ring.style.strokeDashoffset = currentOffset;
-
+      const progress = Math.min((now - startTime) / 1500, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      scoreEl.textContent = Math.round(eased * overallScore);
+      ring.style.strokeDashoffset = circumference - (eased * overallScore / 100) * circumference;
       if (progress < 1) requestAnimationFrame(animateScore);
     }
     requestAnimationFrame(animateScore);
 
-    // Labels
+    // Score label + delta
     $('readiness-score-label').textContent = tier.label;
-    $('readiness-score-desc').textContent = tier.desc;
+    let descHtml = tier.desc;
+    if (previousScore !== null && previousScore !== overallScore) {
+      const delta = overallScore - previousScore;
+      const deltaClass = delta > 0 ? 'delta-up' : 'delta-down';
+      const deltaIcon = delta > 0 ? '📈' : '📉';
+      descHtml += ` <span class="readiness-delta ${deltaClass}">${deltaIcon} ${delta > 0 ? '+' : ''}${delta} points since last assessment</span>`;
+    }
+    $('readiness-score-desc').innerHTML = descHtml;
 
-    // Pillar bars
+    // Benchmark comparison
+    const benchEl = $('readiness-benchmark');
+    if (benchEl) {
+      const diff = overallScore - BENCHMARKS.overall;
+      benchEl.innerHTML = diff >= 0
+        ? `📊 You're <strong>${diff} points above</strong> the typical organisation score of ${BENCHMARKS.overall}`
+        : `📊 The typical organisation scores ${BENCHMARKS.overall} — you're <strong>${Math.abs(diff)} points below</strong>. Focus on the red areas below.`;
+      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'bench-above' : 'bench-below');
+    }
+
+    // Confetti on high score
+    if (overallScore >= 86) setTimeout(launchConfetti, 800);
+
+    // Pillar bars with benchmarks
     const barsContainer = $('readiness-pillar-bars');
     barsContainer.innerHTML = '';
     PILLARS.forEach(p => {
       const ps = pillarScores[p.id];
       const pct = Math.round((ps.earned / ps.max) * 100);
+      const bench = BENCHMARKS[p.id] || 50;
       const barColor = pct >= 80 ? '#22C55E' : pct >= 60 ? '#EAB308' : pct >= 40 ? '#F97316' : '#EF4444';
 
       const row = document.createElement('div');
       row.className = 'readiness-pillar-row';
+      row.id = `pillar-${p.id}`;
       row.innerHTML = `
         <span class="readiness-pillar-label">${p.icon} ${p.name}</span>
-        <div class="readiness-bar-track"><div class="readiness-bar-fill" style="background:${barColor}"></div></div>
+        <div class="readiness-bar-track">
+          <div class="readiness-bar-fill" style="background:${barColor}"></div>
+          <div class="readiness-bar-benchmark" style="left:${bench}%" title="Typical: ${bench}%"></div>
+        </div>
         <span class="readiness-pillar-pct" style="color:${barColor}">${pct}%</span>
       `;
       barsContainer.appendChild(row);
-
-      // Animate bar after a slight delay
-      setTimeout(() => {
-        row.querySelector('.readiness-bar-fill').style.width = pct + '%';
-      }, 300);
+      setTimeout(() => { row.querySelector('.readiness-bar-fill').style.width = pct + '%'; }, 300);
     });
 
-    // Recommendations
+    // Recommendations with deep-link IDs
     const recsContainer = $('readiness-recommendations-list');
     recsContainer.innerHTML = '';
+    let recIdx = 0;
 
     PILLARS.forEach(p => {
       const ps = pillarScores[p.id];
@@ -695,50 +792,182 @@
       const rec = RECOMMENDATIONS[p.id];
 
       if (pct >= 80) {
-        // Good — show green ✅
-        const item = document.createElement('div');
-        item.className = 'readiness-rec-item priority-good';
-        item.innerHTML = `
-          <span class="readiness-rec-icon">${p.icon}</span>
-          <div class="readiness-rec-content">
-            <div class="readiness-rec-title">${p.name}</div>
-            <div class="readiness-rec-desc">${rec.good}</div>
-          </div>
-        `;
-        recsContainer.appendChild(item);
+        appendRec(recsContainer, 'good', p.icon, p.name, rec.good, recIdx++);
       } else if (pct < 50) {
-        // High priority
-        rec.high.forEach(r => {
-          const item = document.createElement('div');
-          item.className = 'readiness-rec-item priority-high';
-          item.innerHTML = `
-            <span class="readiness-rec-icon">🔴</span>
-            <div class="readiness-rec-content">
-              <div class="readiness-rec-title">${r.title}</div>
-              <div class="readiness-rec-desc">${r.desc}</div>
-            </div>
-          `;
-          recsContainer.appendChild(item);
-        });
+        rec.high.forEach(r => appendRec(recsContainer, 'high', '🔴', r.title, r.desc, recIdx++));
       } else {
-        // Medium priority
-        rec.medium.forEach(r => {
-          const item = document.createElement('div');
-          item.className = 'readiness-rec-item priority-medium';
-          item.innerHTML = `
-            <span class="readiness-rec-icon">🟠</span>
-            <div class="readiness-rec-content">
-              <div class="readiness-rec-title">${r.title}</div>
-              <div class="readiness-rec-desc">${r.desc}</div>
-            </div>
-          `;
-          recsContainer.appendChild(item);
-        });
+        rec.medium.forEach(r => appendRec(recsContainer, 'medium', '🟠', r.title, r.desc, recIdx++));
       }
     });
 
-    // Scroll to results
+    // "Investigate" items from "Not sure" answers
+    if (investigateItems.length > 0) {
+      const header = document.createElement('div');
+      header.className = 'readiness-rec-item priority-investigate';
+      header.innerHTML = `
+        <span class="readiness-rec-icon">🔍</span>
+        <div class="readiness-rec-content">
+          <div class="readiness-rec-title">Items to Investigate</div>
+          <div class="readiness-rec-desc">You answered "Not sure" on ${investigateItems.length} question${investigateItems.length > 1 ? 's' : ''}. These need investigation before deployment:<ul>${investigateItems.map(item => `<li>${item.question}</li>`).join('')}</ul></div>
+        </div>
+      `;
+      recsContainer.appendChild(header);
+    }
+
+    // Render Next Steps resource section
+    renderNextSteps(overallScore);
+
     $('readiness-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function appendRec(container, priority, icon, title, desc, idx) {
+    const item = document.createElement('div');
+    item.className = `readiness-rec-item priority-${priority}`;
+    item.id = `rec-${idx}`;
+    item.innerHTML = `
+      <span class="readiness-rec-icon">${icon}</span>
+      <div class="readiness-rec-content">
+        <div class="readiness-rec-title">${title}</div>
+        <div class="readiness-rec-desc">${desc}</div>
+      </div>
+    `;
+    container.appendChild(item);
+  }
+
+  // ─── Next Steps Resources ───
+  const NEXT_STEPS = [
+    {
+      phase: '🔍 Phase 1 — Get Ready',
+      desc: 'Assess your current state and prepare your environment',
+      items: [
+        { icon: '📊', title: 'Copilot Optimisation Assessment', desc: 'Official Microsoft assessment for data governance maturity and security controls', url: 'https://www.microsoft.com/solutionassessments/' },
+        { icon: '🛡️', title: 'Configure Secure Data Foundation', desc: 'Remediate oversharing, apply sensitivity labels, set up DLP', url: 'https://learn.microsoft.com/copilot/microsoft-365/configure-secure-governed-data-foundation-microsoft-365-copilot' },
+        { icon: '📂', title: 'SharePoint Advanced Management', desc: 'Permission reports, access reviews, restricted access control', url: 'https://learn.microsoft.com/sharepoint/get-ready-copilot-sharepoint-advanced-management' },
+        { icon: '📋', title: 'Copilot Readiness Report', desc: 'Built-in report in M365 admin centre showing prerequisite coverage', url: 'https://learn.microsoft.com/microsoft-365/admin/activity-reports/microsoft-365-copilot-readiness' }
+      ]
+    },
+    {
+      phase: '🚀 Phase 2 — Deploy',
+      desc: 'Set up Copilot and assign licences',
+      items: [
+        { icon: '⚙️', title: 'Copilot Setup Guide (Admin)', desc: 'Step-by-step: update channels, MFA, audit logging, licence assignment', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-setup' },
+        { icon: '🔑', title: 'Licensing Options', desc: 'All qualifying base plans + Copilot add-on details', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-licensing' },
+        { icon: '🌐', title: 'App & Network Requirements', desc: 'Required endpoints, WebSocket support, update channels', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-requirements' },
+        { icon: '🔄', title: 'Change Update Channel for Copilot', desc: 'Switch from Semi-Annual to Current or Monthly Enterprise', url: 'https://learn.microsoft.com/microsoft-365-apps/updates/change-channel-for-copilot' }
+      ]
+    },
+    {
+      phase: '📣 Phase 3 — Adopt',
+      desc: 'Drive user adoption and enablement',
+      items: [
+        { icon: '📖', title: 'Copilot Adoption Guide', desc: '5-step adoption framework: ready, licence, apps, setup, welcome', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enablement-resources' },
+        { icon: '🎯', title: 'Microsoft Adoption Portal', desc: 'Success Kit, Launch Day kit, Interactive Scenario Library', url: 'https://adoption.microsoft.com/copilot' },
+        { icon: '👋', title: 'Welcome Users & Enable Feedback', desc: 'Welcome email templates and feedback collection setup', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enable-users' },
+        { icon: '💡', title: 'Copilot Prompt Gallery', desc: 'Official prompt examples across Word, Excel, Teams, Outlook', url: 'https://copilot.cloud.microsoft/prompts' }
+      ]
+    },
+    {
+      phase: '🔒 Phase 4 — Govern & Optimise',
+      desc: 'Monitor, protect, and maximise value',
+      items: [
+        { icon: '🛡️', title: 'Microsoft Purview for Copilot', desc: 'Sensitivity labels, DLP, audit, eDiscovery for Copilot content', url: 'https://learn.microsoft.com/purview/ai-microsoft-365-copilot' },
+        { icon: '📊', title: 'Copilot Usage Reports', desc: 'Admin centre dashboards: adoption, active users, feature usage', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-reports-for-admins' },
+        { icon: '🔐', title: 'Security Copilot in E5', desc: 'Included Security Copilot compute units for E5 customers', url: 'https://learn.microsoft.com/copilot/security/security-copilot-inclusion' },
+        { icon: '📋', title: 'Copilot Deployment Blueprint', desc: 'End-to-end deployment guide with security and governance', url: 'https://learn.microsoft.com/copilot/microsoft-365/secure-govern-copilot-foundational-deployment-guidance' }
+      ]
+    },
+    {
+      phase: '🎓 Training Modules',
+      desc: 'Free Microsoft Learn courses for your team',
+      items: [
+        { icon: '📚', title: 'Implement Microsoft 365 Copilot', desc: 'Prerequisites, SAM, data prep, licence assignment, extensibility', url: 'https://learn.microsoft.com/training/modules/implement-microsoft-365-copilot/' },
+        { icon: '🌟', title: 'Explore Possibilities with Copilot', desc: 'Practical usage across M365 apps for all users', url: 'https://learn.microsoft.com/training/modules/explore-possibilities-microsoft-365-copilot/' },
+        { icon: '📜', title: 'Our Licensing Simplifier', desc: 'Compare M365 plans, take a quiz, find the right licence', url: '/licensing/' },
+        { icon: '💡', title: 'Our AI Prompt Library', desc: '84 tested prompts across 8 platforms — ready to use', url: '/prompts/' }
+      ]
+    }
+  ];
+
+  function renderNextSteps(score) {
+    const container = $('readiness-next-steps');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Highlight which phases matter most based on score
+    NEXT_STEPS.forEach(phase => {
+      const section = document.createElement('div');
+      section.className = 'readiness-ns-phase';
+      section.innerHTML = `<h3>${phase.phase}</h3><p class="readiness-ns-desc">${phase.desc}</p>`;
+
+      const grid = document.createElement('div');
+      grid.className = 'readiness-ns-grid';
+
+      phase.items.forEach(item => {
+        const isExternal = item.url.startsWith('http');
+        const card = document.createElement('a');
+        card.href = item.url;
+        card.className = 'readiness-ns-card';
+        if (isExternal) { card.target = '_blank'; card.rel = 'noopener'; }
+        card.innerHTML = `
+          <span class="readiness-ns-icon">${item.icon}</span>
+          <div class="readiness-ns-text">
+            <strong>${item.title}</strong>
+            <small>${item.desc}</small>
+          </div>
+          ${isExternal ? '<span class="readiness-ns-ext">↗</span>' : ''}
+        `;
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+      container.appendChild(section);
+    });
+  }
+
+  // ─── Score History (re-assessment delta) ───
+  function saveScoreHistory(score, pillarScores) {
+    try {
+      const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+      const entry = {
+        date: new Date().toISOString(),
+        score: score,
+        pillars: {}
+      };
+      PILLARS.forEach(p => {
+        const ps = pillarScores[p.id];
+        entry.pillars[p.id] = Math.round((ps.earned / ps.max) * 100);
+      });
+      history.push(entry);
+      // Keep last 10
+      if (history.length > 10) history.splice(0, history.length - 10);
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    } catch (e) { /* ignore */ }
+  }
+
+  function getPreviousScore() {
+    try {
+      const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+      if (history.length >= 2) return history[history.length - 2].score;
+    } catch (e) { /* ignore */ }
+    return null;
+  }
+
+  // ─── Confetti ───
+  function launchConfetti() {
+    const container = document.createElement('div');
+    container.className = 'readiness-confetti';
+    document.body.appendChild(container);
+    const colors = ['#3B82F6', '#22C55E', '#EAB308', '#F97316', '#A78BFA', '#FF6B6B'];
+    for (let i = 0; i < 60; i++) {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.left = Math.random() * 100 + '%';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDelay = Math.random() * 0.5 + 's';
+      piece.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+      container.appendChild(piece);
+    }
+    setTimeout(() => container.remove(), 4000);
   }
 
   // ─── Share ───
@@ -755,20 +984,15 @@
 
     navigator.clipboard.writeText(url.toString()).then(() => {
       showToast('🔗 Link copied to clipboard!');
-    }).catch(() => {
-      // Fallback
-      prompt('Copy this link:', url.toString());
-    });
+    }).catch(() => { prompt('Copy this link:', url.toString()); });
   }
 
   // ─── Load Shared Results ───
   function loadSharedResults(params) {
     const score = parseInt(params.get('score'));
     const pillarPcts = (params.get('pillars') || '').split(',').map(Number);
-
     if (isNaN(score)) return;
 
-    // Hide intro, show results directly
     $('readiness-intro').hidden = true;
     $('readiness-results').hidden = false;
 
@@ -777,8 +1001,6 @@
     const ring = $('readiness-ring-fg');
     ring.style.stroke = tier.color;
 
-    // Animate score
-    let currentNum = 0;
     const scoreEl = $('readiness-score-number');
     const startTime = performance.now();
     function animateScore(now) {
@@ -790,31 +1012,47 @@
     }
     requestAnimationFrame(animateScore);
 
+    // Benchmark
+    const benchEl = $('readiness-benchmark');
+    if (benchEl) {
+      const diff = score - BENCHMARKS.overall;
+      benchEl.innerHTML = diff >= 0
+        ? `📊 This org is <strong>${diff} points above</strong> the typical score of ${BENCHMARKS.overall}`
+        : `📊 This org is <strong>${Math.abs(diff)} points below</strong> the typical score of ${BENCHMARKS.overall}`;
+      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'bench-above' : 'bench-below');
+    }
+
+    if (score >= 86) setTimeout(launchConfetti, 800);
+
     $('readiness-score-label').textContent = tier.label;
     $('readiness-score-desc').textContent = tier.desc;
 
-    // Pillar bars from URL
     const barsContainer = $('readiness-pillar-bars');
     barsContainer.innerHTML = '';
     PILLARS.forEach((p, i) => {
       const pct = pillarPcts[i] || 0;
+      const bench = BENCHMARKS[p.id] || 50;
       const barColor = pct >= 80 ? '#22C55E' : pct >= 60 ? '#EAB308' : pct >= 40 ? '#F97316' : '#EF4444';
       const row = document.createElement('div');
       row.className = 'readiness-pillar-row';
       row.innerHTML = `
         <span class="readiness-pillar-label">${p.icon} ${p.name}</span>
-        <div class="readiness-bar-track"><div class="readiness-bar-fill" style="background:${barColor}"></div></div>
+        <div class="readiness-bar-track">
+          <div class="readiness-bar-fill" style="background:${barColor}"></div>
+          <div class="readiness-bar-benchmark" style="left:${bench}%" title="Typical: ${bench}%"></div>
+        </div>
         <span class="readiness-pillar-pct" style="color:${barColor}">${pct}%</span>
       `;
       barsContainer.appendChild(row);
       setTimeout(() => { row.querySelector('.readiness-bar-fill').style.width = pct + '%'; }, 300);
     });
 
-    // Shared view — show a notice instead of recommendations
     const recsContainer = $('readiness-recommendations-list');
     recsContainer.innerHTML = '<div class="readiness-rec-item priority-low"><span class="readiness-rec-icon">ℹ️</span><div class="readiness-rec-content"><div class="readiness-rec-title">Shared results view</div><div class="readiness-rec-desc">This is a shared score. To get personalised recommendations, <a href="/copilot-readiness/">take the full assessment</a>.</div></div></div>';
 
-    // Hide share/print in shared view, show retake
+    // Still render Next Steps for shared view
+    renderNextSteps(score);
+
     $('readiness-share-btn').style.display = 'none';
     $('readiness-print-btn').style.display = 'none';
     $('readiness-restart-btn').textContent = '🚀 Take the Full Assessment';
@@ -827,16 +1065,13 @@
   function restart() {
     answers = new Array(QUESTIONS.length).fill(-1);
     currentQuestion = 0;
-    sessionStorage.removeItem('copilot-readiness-answers');
+    localStorage.removeItem(STORAGE_KEY);
 
     $('readiness-results').hidden = true;
     $('readiness-assessment').hidden = true;
     $('readiness-intro').hidden = false;
 
-    // Reset URL if shared
-    if (window.location.search) {
-      history.replaceState(null, '', window.location.pathname);
-    }
+    if (window.location.search) history.replaceState(null, '', window.location.pathname);
   }
 
   // ─── Toast ───

@@ -61,6 +61,9 @@
 
     {{/* ── ASSESSMENT (hidden until started) ── */}}
     <div id="readiness-assessment" class="readiness-assessment" hidden>
+      {{/* Pillar skip-to nav */}}
+      <div class="readiness-pillar-nav" id="readiness-pillar-nav"></div>
+
       {{/* Progress bar */}}
       <div class="readiness-progress-wrap">
         <div class="readiness-progress-bar">
@@ -110,6 +113,7 @@
             <p id="readiness-score-desc"></p>
           </div>
         </div>
+        <div class="readiness-benchmark" id="readiness-benchmark"></div>
       </div>
 
       {{/* Pillar breakdown */}}
@@ -124,24 +128,31 @@
         <div id="readiness-recommendations-list" class="readiness-recs-list"></div>
       </div>
 
-      {{/* Cross-links */}}
+      {{/* Next Steps — Curated Microsoft Learn Resources */}}
+      <div class="readiness-next-steps-wrap">
+        <h2>📖 Your Next Steps — Microsoft Learn Resources</h2>
+        <p class="readiness-ns-intro">Follow these phases in order. Each links to official Microsoft documentation and tools.</p>
+        <div id="readiness-next-steps"></div>
+      </div>
+
+      {{/* Cross-links to our tools */}}
       <div class="readiness-crosslinks">
-        <h2>🔗 Helpful Resources</h2>
+        <h2>🔗 More Free Tools</h2>
         <div class="readiness-links-grid">
           <a href="/licensing/" class="readiness-link-card">
             <span class="readiness-link-icon">📜</span>
             <span>Licensing Simplifier</span>
             <small>Compare M365 plans & find the right licence</small>
           </a>
-          <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements" target="_blank" rel="noopener" class="readiness-link-card">
-            <span class="readiness-link-icon">📖</span>
-            <span>Official Requirements</span>
-            <small>Microsoft Learn — Copilot prerequisites</small>
+          <a href="/prompts/" class="readiness-link-card">
+            <span class="readiness-link-icon">💡</span>
+            <span>AI Prompt Library</span>
+            <small>84 tested prompts to kickstart Copilot training</small>
           </a>
-          <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup" target="_blank" rel="noopener" class="readiness-link-card">
-            <span class="readiness-link-icon">⚙️</span>
-            <span>Setup Guide</span>
-            <small>Microsoft Learn — Copilot deployment guide</small>
+          <a href="/m365-roadmap/" class="readiness-link-card">
+            <span class="readiness-link-icon">📋</span>
+            <span>M365 Roadmap Tracker</span>
+            <small>Track upcoming Copilot features & releases</small>
           </a>
           <a href="/service-health/" class="readiness-link-card">
             <span class="readiness-link-icon">🏥</span>
