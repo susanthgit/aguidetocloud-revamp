@@ -484,6 +484,35 @@
 /* ── Single exam page ── */
 .cert-single { max-width: 900px; }
 
+/* Breadcrumbs */
+.cert-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--cert-text-dim);
+  margin-bottom: 1rem;
+}
+.cert-breadcrumb a { color: var(--cert-accent); text-decoration: none; }
+.cert-breadcrumb a:hover { text-decoration: underline; }
+.cert-breadcrumb span:last-child { color: var(--cert-text); font-weight: 500; }
+
+/* TOC jump-to bar */
+.cert-toc {
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--cert-text-dim);
+}
+.cert-toc:empty { display: none; }
+.cert-toc strong { color: var(--cert-text); margin-right: 0.3rem; }
+.cert-toc a { color: var(--cert-accent); text-decoration: none; }
+.cert-toc a:hover { text-decoration: underline; }
+
 .cert-status-banner {
   padding: 0.85rem 1.25rem;
   border-radius: 10px;
@@ -554,13 +583,18 @@
   width: 100%;
   border-collapse: collapse;
   margin: 0.75rem 0 1.25rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .cert-single-content th, .cert-single-content td {
   text-align: left;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--cert-border);
   font-size: 0.88rem;
+  white-space: nowrap;
 }
+.cert-single-content td:last-child { white-space: normal; }
 .cert-single-content th {
   color: var(--cert-accent);
   font-weight: 600;
@@ -571,6 +605,32 @@
   text-decoration: none;
 }
 .cert-single-content a:hover { text-decoration: underline; }
+
+/* Collapsible skill sections */
+.cert-collapsible-toggle {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.cert-collapsible-toggle::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  color: var(--cert-accent);
+  transition: transform 0.2s;
+}
+.cert-collapsible-toggle.cert-collapsed::after {
+  transform: rotate(-90deg);
+}
+.cert-collapsible {
+  transition: max-height 0.3s ease, opacity 0.2s;
+  overflow: hidden;
+}
+.cert-collapsible.cert-collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin: 0;
+}
 
 .cert-single-nav {
   margin-top: 2.5rem;

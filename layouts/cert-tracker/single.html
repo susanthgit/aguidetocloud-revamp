@@ -3,6 +3,14 @@
 {{ partial "tool-hero.html" (dict "title" (printf "%s Study Guide" .Params.exam_code) "subtitle" .Params.exam_title "accent" "#10B981") }}
 
 <div class="cert-container cert-single">
+
+  {{/* Fix 5: Breadcrumbs */}}
+  <nav class="cert-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span>
+    <a href="/cert-tracker/">Cert Study Guides</a> <span>›</span>
+    <span>{{ .Params.exam_code }}</span>
+  </nav>
+
   {{/* Status banner */}}
   {{ if eq .Params.exam_status "retiring" }}
   <div class="cert-status-banner cert-status-retiring">
@@ -39,6 +47,9 @@
     {{ if eq .Params.exam_status "upcoming" }}<span class="cert-badge cert-badge-upcoming">🔜 Upcoming</span>{{ end }}
   </div>
 
+  {{/* Fix 1: Jump-to TOC — built by JS from page headings */}}
+  <nav class="cert-toc" id="cert-toc" aria-label="Table of contents"></nav>
+
   {{/* Main content (skills measured, etc.) */}}
   <div class="cert-single-content">
     {{ .Content }}
@@ -46,14 +57,14 @@
 
   {{/* Related exams — loaded from per-exam JSON */}}
   <div id="cert-related" class="cert-detail-section" style="display:none">
-    <h2 style="color:var(--cert-accent);border-bottom:1px solid var(--cert-border);padding-bottom:0.5rem;">What to Study Next</h2>
+    <h2 id="what-to-study-next">What to Study Next</h2>
     <p style="color:var(--cert-text-dim);font-size:0.88rem;margin-bottom:0.75rem;">Based on this exam, here are related certifications to consider:</p>
     <div id="cert-related-list"></div>
   </div>
 
   {{/* Back to all exams */}}
   <div class="cert-single-nav">
-    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Exams</a>
+    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Study Guides</a>
   </div>
 </div>
 
@@ -79,6 +90,56 @@
 </script>
 <script>
 (function(){
+  // Fix 1: Build TOC from h2 headings
+  var content = document.querySelector(".cert-single-content");
+  var toc = document.getElementById("cert-toc");
+  if (content && toc) {
+    var headings = content.querySelectorAll("h2[id]");
+    if (headings.length > 2) {
+      var items = [];
+      headings.forEach(function(h) {
+        var text = h.textContent.replace(/^#+\s*/, "").trim();
+        if (text.length > 60) text = text.substring(0, 57) + "...";
+        items.push('<a href="#' + h.id + '">' + text + '</a>');
+      });
+      toc.innerHTML = '<strong>Jump to:</strong> ' + items.join(' · ');
+    }
+  }
+
+  // Fix 4: Make h3 skill areas collapsible
+  if (content) {
+    var h3s = content.querySelectorAll("h3");
+    h3s.forEach(function(h3) {
+      // Collect all siblings until next h2 or h3
+      var siblings = [];
+      var el = h3.nextElementSibling;
+      while (el && el.tagName !== "H3" && el.tagName !== "H2" && el.tagName !== "HR") {
+        siblings.push(el);
+        el = el.nextElementSibling;
+      }
+      if (siblings.length < 2) return;
+
+      // Wrap siblings in a collapsible div
+      var wrapper = document.createElement("div");
+      wrapper.className = "cert-collapsible";
+      h3.parentNode.insertBefore(wrapper, siblings[0]);
+      siblings.forEach(function(s) { wrapper.appendChild(s); });
+
+      // Make h3 clickable
+      h3.classList.add("cert-collapsible-toggle");
+      h3.setAttribute("role", "button");
+      h3.setAttribute("tabindex", "0");
+      h3.addEventListener("click", function() {
+        var expanded = wrapper.classList.toggle("cert-collapsed");
+        h3.classList.toggle("cert-collapsed", expanded);
+      });
+      h3.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); h3.click(); }
+      });
+    });
+  }
+
+  // Related exams
   var code = {{ .Params.exam_code | jsonify }};
   fetch("/data/cert-tracker/exams/" + code.toLowerCase() + ".json")
     .then(function(r){ return r.ok ? r.json() : null; })
@@ -94,8 +155,7 @@
           + '<span class="cert-card-code">' + r.code + '</span> '
           + '<span class="cert-card-title">' + r.title + '</span>'
           + '<span class="cert-badge cert-badge-' + r.level + '">' + (levelLabels[r.level]||r.level) + '</span>'
-          + status
-          + '</a>';
+          + status + '</a>';
       }).join("");
       document.getElementById("cert-related-list").innerHTML = html;
       document.getElementById("cert-related").style.display = "block";
