@@ -15,5 +15,7 @@
       {{ end }}
     </div>
   </section>
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/" "Label" "Home") }}
 </div>
 {{ end }}

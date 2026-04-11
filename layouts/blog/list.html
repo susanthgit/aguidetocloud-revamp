@@ -34,4 +34,6 @@ document.getElementById('blog-search').addEventListener('input', function() {
   });
 });
 </script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/" "Label" "Home") }}
 {{ end }}
