@@ -39,6 +39,13 @@
       <textarea id="polisher-input" class="polisher-textarea" placeholder="Paste your AI prompt here...&#10;&#10;Example: &quot;write me a blog post about AI&quot;" rows="6" aria-label="Enter your AI prompt"></textarea>
       <div class="polisher-actions">
         <button id="polisher-btn" class="polisher-btn-primary" disabled>✨ Polish My Prompt</button>
+        <select id="polisher-platform" class="polisher-platform-select" aria-label="Optimise for platform">
+          <option value="general">Any AI platform</option>
+          <option value="copilot">M365 Copilot</option>
+          <option value="chatgpt">ChatGPT</option>
+          <option value="claude">Claude</option>
+          <option value="gemini">Gemini</option>
+        </select>
         <button id="polisher-clear" class="polisher-btn-secondary" style="display:none">✕ Clear</button>
         <div class="polisher-examples-wrap">
           <button id="polisher-examples-btn" class="polisher-btn-secondary">💡 Try an example</button>
@@ -87,12 +94,26 @@
         <div class="polisher-output-header">
           <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
           <div class="polisher-output-actions">
+            <div class="polisher-view-toggle" id="polisher-view-toggle">
+              <button class="polisher-toggle-btn active" data-view="polished">✨ Polished</button>
+              <button class="polisher-toggle-btn" data-view="compare">⚡ Before / After</button>
+            </div>
             <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
           </div>
         </div>
         <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
         <div class="polisher-output" id="polisher-output">
           {{/* Rendered by JS */}}
+        </div>
+        <div class="polisher-compare" id="polisher-compare" style="display:none">
+          <div class="polisher-compare-col">
+            <div class="polisher-compare-label">❌ Before</div>
+            <div class="polisher-compare-text" id="polisher-compare-before"></div>
+          </div>
+          <div class="polisher-compare-col">
+            <div class="polisher-compare-label">✅ After</div>
+            <div class="polisher-compare-text polisher-compare-after" id="polisher-compare-after"></div>
+          </div>
         </div>
         <div class="polisher-score-delta" id="polisher-score-delta" style="display:none">
           {{/* Rendered by JS — shows "Original: 22 → Polished: 78 (+56 points)" */}}

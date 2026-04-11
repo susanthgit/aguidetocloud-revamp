@@ -359,8 +359,27 @@
       parts.push(scopeSuggestion);
     }
 
+    // ── Platform-specific tweaks ──
+    const platform = getCurrentPlatform();
+    if (platform !== 'general') {
+      const hint = PLATFORM_HINTS[platform];
+      if (hint) parts.push(hint);
+    }
+
     return parts.join('\n\n');
   }
+
+  function getCurrentPlatform() {
+    const el = document.getElementById('polisher-platform');
+    return el ? el.value : 'general';
+  }
+
+  const PLATFORM_HINTS = {
+    copilot: 'Note: This prompt is optimised for Microsoft 365 Copilot. Keep it grounded — Copilot already has access to your org data, so focus on what you want done rather than providing context it already knows. Reference specific files, emails, or meetings by name when possible.',
+    chatgpt: 'Note: This prompt is optimised for ChatGPT. Be explicit about the output format and provide examples of what good output looks like. ChatGPT responds well to detailed system-level instructions and step-by-step reasoning.',
+    claude: 'Note: This prompt is optimised for Claude. Claude responds well to clear constraints, structured instructions, and explicit boundaries. If you want it to think step-by-step, say so. Be direct about what to include and exclude.',
+    gemini: 'Note: This prompt is optimised for Gemini. Structure your request with clear numbered steps. Gemini handles multi-part tasks well — break complex requests into sub-tasks and specify the output format for each.'
+  };
 
   function generateContextSuggestion(text, domain) {
     const lower = text.toLowerCase();
@@ -625,12 +644,14 @@
 
   function renderOutput(original, polished) {
     const $output = document.getElementById('polisher-output');
-    // Highlight added parts in green by comparing with original
+    const $compareBefore = document.getElementById('polisher-compare-before');
+    const $compareAfter = document.getElementById('polisher-compare-after');
+
+    // Highlight added parts in green
     const originalLower = original.toLowerCase().trim();
     const lines = polished.split('\n\n');
     const htmlParts = lines.map(line => {
       const lineLower = line.toLowerCase().trim();
-      // If this line's core content exists in the original, it's not added
       const isOriginal = originalLower.includes(lineLower.replace(/\.$/, '').slice(0, 20));
       if (isOriginal && line.length < original.length * 1.5) {
         return escapeHtml(line);
@@ -639,6 +660,32 @@
     });
     $output.innerHTML = htmlParts.join('\n\n');
     currentPolished = polished;
+
+    // Populate compare view
+    if ($compareBefore) $compareBefore.textContent = original;
+    if ($compareAfter) $compareAfter.textContent = polished;
+
+    // Reset to polished view
+    showView('polished');
+  }
+
+  function showView(view) {
+    const $output = document.getElementById('polisher-output');
+    const $compare = document.getElementById('polisher-compare');
+    const $toggle = document.getElementById('polisher-view-toggle');
+    if (!$toggle) return;
+
+    $toggle.querySelectorAll('.polisher-toggle-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.view === view);
+    });
+
+    if (view === 'compare') {
+      $output.style.display = 'none';
+      if ($compare) $compare.style.display = '';
+    } else {
+      $output.style.display = '';
+      if ($compare) $compare.style.display = 'none';
+    }
   }
 
   /* ════════════════════════════════════════════
