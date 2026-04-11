@@ -63,6 +63,7 @@
   </div>
   <script src="/js/switcher.js" defer></script>
   <script src="/js/search.js" defer></script>
+  {{ if findRE "```mermaid" .Content }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({
@@ -112,7 +113,7 @@
       flowchart: { curve: 'basis', padding: 15 }
     });
   </script>
-  <!-- Global back-to-top button (all pages) -->
+  {{ end }}
   <button class="global-btt" id="global-btt" aria-label="Back to top">↑</button>
   <script>
     (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
