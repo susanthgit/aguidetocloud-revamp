@@ -1,13 +1,13 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/polisher.css?v={{ site.Params.cache_version }}">
 
-{{/* ── SEO: JSON-LD Structured Data ── */}}
+{{/* ── SEO: JSON-LD Structured Data (BreadcrumbList is handled by global seo-jsonld.html) ── */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Prompt Polisher — Improve Any AI Prompt Instantly",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "Utility",
   "operatingSystem": "Any",
@@ -20,14 +20,6 @@
     "@type": "Organization",
     "name": "A Guide to Cloud & AI",
     "url": "{{ .Site.BaseURL }}"
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
-      {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "{{ .Site.BaseURL }}free-tools/"},
-      {"@type": "ListItem", "position": 3, "name": "Prompt Polisher"}
-    ]
   }
 }
 </script>
@@ -70,7 +62,7 @@
     </div>
 
     {{/* ── RESULTS (hidden until analysis) ── */}}
-    <div id="polisher-results" class="polisher-results" hidden>
+    <div id="polisher-results" class="polisher-results" hidden aria-live="polite">
 
       {{/* ── SCORE DASHBOARD (between input and polished output) ── */}}
       <div class="polisher-score-section">
@@ -120,7 +112,8 @@
     {{/* ── CRAFTS FRAMEWORK EXPLAINER ── */}}
     <div class="polisher-about">
       <h2>The CRAFTS Framework</h2>
-      <p>Every great AI prompt includes six elements. The Prompt Polisher scores yours against each one.</p>
+      <p>Every great AI prompt includes six elements. The Prompt Polisher scores yours against each one.<br>
+      Need ready-made prompts? Browse our <a href="/prompts/" style="color: var(--tool-accent); font-weight: 600;">AI Prompt Library →</a></p>
       <div class="polisher-crafts-grid">
         <div class="polisher-craft-card">
           <span class="craft-letter">C</span>

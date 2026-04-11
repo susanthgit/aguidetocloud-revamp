@@ -617,7 +617,7 @@
     $list.innerHTML = history.map((h, i) => {
       const cls = totalScoreClass(h.score);
       const preview = h.text.length > 70 ? h.text.slice(0, 70) + '…' : h.text;
-      return `<div class="polisher-history-item" data-history="${i}">
+      return `<div class="polisher-history-item" data-history="${i}" tabindex="0" role="button" aria-label="Load prompt: ${escapeHtml(preview)}">
         <span class="polisher-history-text">${escapeHtml(preview)}</span>
         <span class="polisher-history-score ${cls}">${h.score}/100</span>
       </div>`;
@@ -750,8 +750,9 @@
       $examplesMenu.hidden = true;
     });
 
-    // History clicks
-    document.getElementById('polisher-history').addEventListener('click', function (e) {
+    // History clicks + keyboard
+    const $historyEl = document.getElementById('polisher-history');
+    function loadHistoryItem(e) {
       const item = e.target.closest('[data-history]');
       if (!item) return;
       const history = loadHistory();
@@ -760,6 +761,13 @@
         $input.value = history[idx].text;
         $input.dispatchEvent(new Event('input'));
         polish();
+      }
+    }
+    $historyEl.addEventListener('click', loadHistoryItem);
+    $historyEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        loadHistoryItem(e);
       }
     });
 
