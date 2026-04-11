@@ -256,7 +256,6 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
 }
 
 .deptime-card-badges {
@@ -606,6 +605,128 @@
 }
 .deptime-footer-link:hover { text-decoration: underline; }
 
+/* [#1] Clickable stat cards */
+.deptime-stat-card { cursor: pointer; transition: all 0.2s; }
+.deptime-stat-card:hover { border-color: var(--dt-accent); transform: translateY(-2px); }
+
+/* [#8] Critical banner */
+.deptime-critical-banner {
+  background: linear-gradient(135deg, rgba(220,38,38,0.2), rgba(220,38,38,0.08));
+  border: 1px solid rgba(220,38,38,0.4);
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: #f87171;
+  animation: deptime-pulse 2s ease-in-out infinite;
+}
+@keyframes deptime-pulse {
+  0%, 100% { border-color: rgba(220,38,38,0.4); }
+  50% { border-color: rgba(220,38,38,0.7); }
+}
+.deptime-banner-icon { font-size: 1.3rem; }
+.deptime-banner-text { color: var(--dt-text); }
+.deptime-banner-text strong { color: #f87171; }
+
+/* [#7] Monthly summary */
+.deptime-month-summary {
+  background: var(--dt-card);
+  border: 1px solid var(--dt-card-border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.deptime-month-header {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.deptime-month-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.deptime-month-col-title { font-size: 0.8rem; font-weight: 600; color: var(--dt-accent); margin-bottom: 0.4rem; }
+.deptime-month-count { background: var(--dt-accent-dim); padding: 0.1rem 0.4rem; border-radius: 10px; font-size: 0.7rem; }
+.deptime-month-item {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.deptime-month-item:hover { opacity: 0.7; }
+.deptime-month-item-critical { background: rgba(220,38,38,0.12); color: #f87171; }
+.deptime-month-item-warning { background: rgba(249,115,22,0.12); color: #fb923c; }
+.deptime-month-item-watch { background: rgba(234,179,8,0.12); color: #facc15; }
+.deptime-month-item-future { background: rgba(34,197,94,0.12); color: #4ade80; }
+.deptime-month-date { font-weight: 600; margin-right: 0.3rem; }
+.deptime-month-empty { font-size: 0.75rem; color: var(--dt-text-dim); padding: 0.3rem 0; }
+.deptime-month-more { font-size: 0.7rem; color: var(--dt-text-dim); padding: 0.2rem 0; }
+
+/* [#3] Quick toggles */
+.deptime-quick-toggles { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.deptime-toggle-pill {
+  padding: 0.35rem 0.8rem;
+  background: var(--dt-card);
+  border: 1px solid var(--dt-card-border);
+  border-radius: 20px;
+  color: var(--dt-text-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.deptime-toggle-pill:hover { border-color: var(--dt-accent); color: #fff; }
+.deptime-toggle-pill.active { background: var(--dt-accent-dim); border-color: var(--dt-accent); color: #fff; }
+
+/* [#6] Card layout — countdown prominent */
+.deptime-card-top { display: flex; gap: 0.8rem; align-items: flex-start; padding-left: 0.5rem; margin-bottom: 0.4rem; }
+.deptime-card-countdown {
+  min-width: 60px;
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.deptime-countdown-num { display: block; font-size: 1.4rem; font-weight: 800; line-height: 1; }
+.deptime-countdown-unit { display: block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; }
+.deptime-card-info { flex: 1; min-width: 0; }
+
+/* [#9] Mobile filter drawer */
+.deptime-filter-toggle {
+  display: none;
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--dt-card);
+  border: 1px solid var(--dt-card-border);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* [#10] Keyboard hint */
+.deptime-kbd-hint {
+  font-size: 0.65rem;
+  color: var(--dt-text-dim);
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.deptime-kbd-hint kbd {
+  background: rgba(255,255,255,0.1);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .deptime-stats {
@@ -618,16 +739,15 @@
   .deptime-grid {
     grid-template-columns: 1fr;
   }
-  .deptime-filter-row {
-    flex-direction: column;
-  }
-  .deptime-select {
-    min-width: 100%;
-  }
-  .deptime-modal-content {
-    width: 95%;
-    padding: 1.25rem;
-  }
+  /* [#9] Mobile drawer */
+  .deptime-filter-toggle { display: block; }
+  .deptime-filter-drawer { display: none; }
+  .deptime-filter-drawer.deptime-drawer-open { display: block; }
+  .deptime-filter-row { flex-direction: column; }
+  .deptime-select { min-width: 100%; }
+  .deptime-modal-content { width: 95%; padding: 1.25rem; }
+  .deptime-month-cols { grid-template-columns: 1fr; }
+  .deptime-kbd-hint { display: none; }
 }
 
 @media (max-width: 480px) {

@@ -11,29 +11,35 @@
 
 <div class="deptime-container">
 
-  <!-- Quick Stats Dashboard -->
+  <!-- [#8] Critical Banner -->
+  <div class="deptime-critical-banner" id="deptime-critical-banner" style="display:none;"></div>
+
+  <!-- Quick Stats Dashboard — [#1] clickable -->
   <div class="deptime-stats" id="deptime-stats">
-    <div class="deptime-stat-card deptime-stat-critical">
+    <div class="deptime-stat-card deptime-stat-critical" role="button" tabindex="0" aria-label="Filter critical items">
       <span class="deptime-stat-number" id="stat-critical">—</span>
       <span class="deptime-stat-label">🔴 Critical</span>
     </div>
-    <div class="deptime-stat-card deptime-stat-warning">
+    <div class="deptime-stat-card deptime-stat-warning" role="button" tabindex="0" aria-label="Filter warning items">
       <span class="deptime-stat-number" id="stat-warning">—</span>
       <span class="deptime-stat-label">🟠 Warning</span>
     </div>
-    <div class="deptime-stat-card deptime-stat-watch">
+    <div class="deptime-stat-card deptime-stat-watch" role="button" tabindex="0" aria-label="Filter watch items">
       <span class="deptime-stat-number" id="stat-watch">—</span>
       <span class="deptime-stat-label">🟡 Watch</span>
     </div>
-    <div class="deptime-stat-card deptime-stat-future">
+    <div class="deptime-stat-card deptime-stat-future" role="button" tabindex="0" aria-label="Filter future items">
       <span class="deptime-stat-number" id="stat-future">—</span>
       <span class="deptime-stat-label">🟢 Future</span>
     </div>
-    <div class="deptime-stat-card deptime-stat-total">
+    <div class="deptime-stat-card deptime-stat-total" role="button" tabindex="0" aria-label="Show all items">
       <span class="deptime-stat-number" id="stat-total">—</span>
       <span class="deptime-stat-label">📊 Total Active</span>
     </div>
   </div>
+
+  <!-- [#7] Monthly Summary -->
+  <div class="deptime-month-summary" id="deptime-month-summary" style="display:none;"></div>
 
   <!-- Next Deadline Alert -->
   <div class="deptime-next-alert" id="deptime-next-alert" style="display:none;">
@@ -41,10 +47,13 @@
     <span class="deptime-next-text" id="deptime-next-text"></span>
   </div>
 
-  <!-- Controls Row -->
-  <div class="deptime-controls">
+  <!-- [#9] Mobile Filter Toggle -->
+  <button class="deptime-filter-toggle" id="deptime-filter-toggle">⚙️ Filters</button>
+
+  <!-- Controls Row — [#9] wrapped in drawer for mobile -->
+  <div class="deptime-controls deptime-filter-drawer" id="deptime-filter-drawer">
     <div class="deptime-search-wrap">
-      <input type="text" id="deptime-search" class="deptime-search" placeholder="Search deprecations, MC IDs, services..." aria-label="Search deprecations">
+      <input type="text" id="deptime-search" class="deptime-search" placeholder="Search deprecations, MC IDs, services... (press /)" aria-label="Search deprecations">
     </div>
     <div class="deptime-filter-row">
       <select id="deptime-category-filter" class="deptime-select" aria-label="Filter by category">
@@ -72,6 +81,18 @@
         <option value="medium">🟠 Medium Impact</option>
         <option value="low">🟢 Low Impact</option>
       </select>
+      <!-- [#4] Sort -->
+      <select id="deptime-sort" class="deptime-select" aria-label="Sort by">
+        <option value="deadline">Sort: Deadline ↑</option>
+        <option value="urgency">Sort: Urgency</option>
+        <option value="impact">Sort: Impact</option>
+        <option value="category">Sort: Category</option>
+      </select>
+    </div>
+    <!-- [#3] Quick toggles -->
+    <div class="deptime-quick-toggles">
+      <button class="deptime-toggle-pill" id="deptime-action-toggle" aria-label="Show action required only">⚡ Action Required Only</button>
+      <button class="deptime-toggle-pill" id="deptime-passed-toggle">👁️ Show Passed Items</button>
     </div>
   </div>
 
@@ -89,6 +110,7 @@
   <div class="deptime-view-toggle">
     <button class="deptime-view-btn active" id="deptime-view-grid" aria-label="Grid view">▦ Grid</button>
     <button class="deptime-view-btn" id="deptime-view-timeline" aria-label="Timeline view">━ Timeline</button>
+    <span class="deptime-kbd-hint">Keyboard: <kbd>/</kbd> search · <kbd>c</kbd> critical · <kbd>w</kbd> warning · <kbd>g</kbd> grid · <kbd>t</kbd> timeline</span>
   </div>
 
   <!-- Timeline View -->
@@ -138,16 +160,8 @@
   "description": "Interactive timeline of Microsoft 365 deprecations, retirements, and end-of-support dates with urgency scoring and migration guidance.",
   "applicationCategory": "IT Management Tool",
   "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Sutheesh S",
-    "url": "https://www.aguidetocloud.com/about/"
-  }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Sutheesh S", "url": "https://www.aguidetocloud.com/about/" }
 }
 </script>
 
