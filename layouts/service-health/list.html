@@ -27,10 +27,42 @@
     <div class="shealth-active-list" id="shealth-active-list"></div>
   </div>
 
+  <!-- Analytics Section -->
+  <div class="shealth-analytics" id="shealth-analytics">
+    <div class="shealth-section-header">
+      <span>📊 Service Reliability Insights</span>
+    </div>
+
+    <!-- Monthly Trend Chart -->
+    <div class="shealth-trend" id="shealth-trend"></div>
+
+    <!-- Most Affected + Scorecard -->
+    <div class="shealth-insights-grid">
+      <div class="shealth-most-affected" id="shealth-most-affected"></div>
+      <div class="shealth-scorecard" id="shealth-scorecard"></div>
+    </div>
+  </div>
+
+  <!-- Date Lookup -->
+  <div class="shealth-section-header">
+    <span>📅 Was a service down on a specific date?</span>
+  </div>
+  <div class="shealth-date-lookup" id="shealth-date-lookup">
+    <input type="date" id="shealth-date-picker" class="shealth-search">
+    <select id="shealth-date-service" class="shealth-select">
+      <option value="all">Any Service</option>
+    </select>
+    <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
+  </div>
+  <div class="shealth-date-result" id="shealth-date-result"></div>
+
   <!-- Controls -->
   <div class="shealth-section-header">
     <span>📋 Incident History</span>
-    <button class="shealth-clear-btn" id="shealth-clear-btn" style="display:none">✕ Clear filters</button>
+    <div style="display:flex;gap:0.5rem;align-items:center">
+      <button class="shealth-clear-btn" id="shealth-csv-btn">📥 Export CSV</button>
+      <button class="shealth-clear-btn" id="shealth-clear-btn" style="display:none">✕ Clear filters</button>
+    </div>
   </div>
   <div class="shealth-controls" id="shealth-controls">
     <label for="shealth-search" class="sr-only">Search incidents</label>

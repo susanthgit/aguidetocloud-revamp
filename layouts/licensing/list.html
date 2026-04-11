@@ -99,6 +99,7 @@
   <div class="lic-tabs" role="tablist">
     <button class="lic-tab active" data-tab="compare" role="tab" aria-selected="true">📊 Compare Plans</button>
     <button class="lic-tab" data-tab="calculator" role="tab" aria-selected="false">💰 Build Your Stack</button>
+    <button class="lic-tab" data-tab="addons" role="tab" aria-selected="false">🧩 Add-ons Advisor</button>
     <button class="lic-tab" data-tab="quiz" role="tab" aria-selected="false">🧠 Which M365 Plan?</button>
     <button class="lic-tab" data-tab="changelog" role="tab" aria-selected="false">📰 What Changed?</button>
   </div>
@@ -148,6 +149,29 @@
           <button class="lic-btn lic-btn-primary" id="lic-calc-copy">📋 Copy Summary</button>
           <button class="lic-btn" id="lic-calc-reset">🗑️ Reset</button>
         </div>
+      </div>
+    </div>
+
+    {{/* ══════════════ TAB: ADD-ONS ADVISOR ══════════════ */}}
+    <div class="lic-panel" id="panel-addons">
+      <div class="lic-addons">
+        <div class="lic-addons-intro">
+          <h2>What Add-ons Do I Need?</h2>
+          <p>Select your current plan below — we'll show you which add-ons fill the gaps and what they cost.</p>
+        </div>
+        <div class="lic-addons-selector">
+          <label for="lic-addons-base">I currently have:</label>
+          <select id="lic-addons-base" class="lic-calc-select" style="max-width:400px;margin:0.5rem auto;display:block;">
+            <option value="">Select your base plan...</option>
+            <option value="m365-e3">Microsoft 365 E3 ($39/mo)</option>
+            <option value="m365-e5">Microsoft 365 E5 ($60/mo)</option>
+            <option value="biz-standard">Business Standard ($14/mo)</option>
+            <option value="biz-premium">Business Premium ($22/mo)</option>
+            <option value="o365-e3">Office 365 E3 ($26/mo)</option>
+            <option value="o365-e5">Office 365 E5 ($41/mo)</option>
+          </select>
+        </div>
+        <div id="lic-addons-results"></div>
       </div>
     </div>
 
