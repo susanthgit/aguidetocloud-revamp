@@ -145,43 +145,6 @@
   background: var(--lic-accent-subtle);
 }
 
-/* ── CATEGORY JUMP NAV (sticky) ────────────── */
-
-.lic-cat-nav {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  padding: 0.8rem 0;
-  margin-bottom: 1rem;
-  position: sticky;
-  top: 60px;
-  z-index: 40;
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
-}
-.lic-cat-nav-btn {
-  padding: 0.3rem 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: transparent;
-  color: #94a3b8;
-  font-size: 0.78rem;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.lic-cat-nav-btn:hover,
-.lic-cat-nav-btn.active {
-  border-color: var(--lic-accent);
-  color: var(--lic-accent);
-  background: var(--lic-accent-subtle);
-}
-.lic-cat-nav-count {
-  font-size: 0.65rem;
-  color: #475569;
-  margin-left: 0.2rem;
-}
-
 /* ── COLLAPSIBLE CATEGORIES ────────────────── */
 
 .lic-category-toggle {
@@ -261,17 +224,32 @@
 
 .lic-category {
   margin-bottom: 2.5rem;
+  border-left: 3px solid var(--cat-accent, var(--lic-accent));
+  padding-left: 1.2rem;
+  position: relative;
+}
+.lic-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cat-accent, var(--lic-accent)) 8%, transparent), transparent 70%);
+  border-radius: 0 12px 0 0;
+  pointer-events: none;
 }
 .lic-category-header {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 0.3rem;
+  position: relative;
 }
 .lic-category-header h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--cat-accent, #e2e8f0);
   margin: 0;
 }
 .lic-category-desc {
@@ -298,14 +276,15 @@
 .lic-card {
   background: #1e293b;
   border: 1px solid #334155;
+  border-top: 2px solid var(--cat-accent, var(--lic-accent));
   border-radius: 12px;
   padding: 1.4rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   position: relative;
 }
 .lic-card:hover {
-  border-color: var(--lic-accent-border);
-  box-shadow: 0 0 20px var(--lic-accent-glow);
+  border-color: var(--cat-accent, var(--lic-accent-border));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--cat-accent, var(--lic-accent)) 20%, transparent);
 }
 .lic-card.highlighted {
   border-color: var(--lic-accent);

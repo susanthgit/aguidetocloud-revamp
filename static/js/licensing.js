@@ -45,14 +45,16 @@
     if (!container) return;
 
     let html = '';
-    categories.forEach((cat, idx) => {
+    categories.forEach(cat => {
       const catPlans = plans.filter(p => p.category === cat.id);
       if (!catPlans.length) return;
 
-      // First category expanded, rest collapsed
-      const collapsed = idx > 0 ? ' collapsed' : '';
+      // Sort plans by price descending (highest first)
+      catPlans.sort((a, b) => b.price - a.price);
 
-      html += `<div class="lic-category${collapsed}" id="cat-${cat.id}">`;
+      const accent = cat.accent || '#10B981';
+
+      html += `<div class="lic-category" id="cat-${cat.id}" style="--cat-accent:${accent}">`;
       html += `<div class="lic-category-header">
         <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${cat.name} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
       if (cat.m365maps_all) {
@@ -87,9 +89,6 @@
         catEl.classList.toggle('collapsed');
       });
     });
-
-    // Build category jump nav
-    renderCatNav();
   }
 
   function renderPlanCard(plan) {
@@ -555,39 +554,6 @@
       card.classList.add('highlighted');
       setTimeout(() => card.classList.remove('highlighted'), 3000);
     }, 100);
-  }
-
-  // ── CATEGORY JUMP NAV ──────────────────────
-
-  function renderCatNav() {
-    const nav = $('#lic-cat-nav');
-    if (!nav) return;
-
-    let html = '';
-    categories.forEach(cat => {
-      const count = plans.filter(p => p.category === cat.id).length;
-      if (!count) return;
-      html += `<button class="lic-cat-nav-btn" data-cat="${cat.id}">${cat.emoji} ${cat.name}<span class="lic-cat-nav-count">${count}</span></button>`;
-    });
-    nav.innerHTML = html;
-
-    // Click to jump + expand
-    $$('.lic-cat-nav-btn', nav).forEach(btn => {
-      btn.addEventListener('click', () => {
-        const catId = btn.dataset.cat;
-        const catEl = $(`#cat-${catId}`);
-        if (!catEl) return;
-
-        // Expand if collapsed
-        if (catEl.classList.contains('collapsed')) catEl.classList.remove('collapsed');
-
-        catEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Highlight active nav button
-        $$('.lic-cat-nav-btn', nav).forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
   }
 
   // ── PRESET COMPARISONS ─────────────────────
