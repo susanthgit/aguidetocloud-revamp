@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-04-11T06:19:26.030478+00:00",
+  "total_incidents_tracked": 100,
+  "services": [
+    {
+      "service": "Microsoft 365 suite",
+      "short_name": "M365 Suite",
+      "icon": "📦",
+      "total_incidents": 23,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5435,
+      "last_incident": "2026-04-08T14:38:00+00:00",
+      "classifications": {
+        "incident": 13,
+        "advisory": 10
+      }
+    },
+    {
+      "service": "Exchange Online",
+      "short_name": "Exchange",
+      "icon": "📧",
+      "total_incidents": 17,
+      "active_incidents": 3,
+      "avg_duration_minutes": 17109,
+      "last_incident": "2026-04-10T12:15:32+00:00",
+      "classifications": {
+        "advisory": 12,
+        "incident": 5
+      }
+    },
+    {
+      "service": "Microsoft Copilot (Microsoft 365)",
+      "short_name": "Copilot",
+      "icon": "🤖",
+      "total_incidents": 17,
+      "active_incidents": 1,
+      "avg_duration_minutes": 6951,
+      "last_incident": "2026-04-07T06:15:00+00:00",
+      "classifications": {
+        "advisory": 11,
+        "incident": 6
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 7,
+      "active_incidents": 2,
+      "avg_duration_minutes": 6081,
+      "last_incident": "2026-03-31T21:18:23+00:00",
+      "classifications": {
+        "advisory": 7
+      }
+    },
+    {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 7,
+      "active_incidents": 1,
+      "avg_duration_minutes": 1101,
+      "last_incident": "2026-04-02T16:53:00+00:00",
+      "classifications": {
+        "advisory": 6,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 5,
+      "active_incidents": 2,
+      "avg_duration_minutes": 7141,
+      "last_incident": "2026-04-09T06:15:29+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 2
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 5,
+      "active_incidents": 1,
+      "avg_duration_minutes": 10966,
+      "last_incident": "2026-03-27T04:39:00+00:00",
+      "classifications": {
+        "advisory": 4,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 5,
+      "active_incidents": 1,
+      "avg_duration_minutes": 23142,
+      "last_incident": "2026-03-19T13:30:00+00:00",
+      "classifications": {
+        "advisory": 5
+      }
+    },
+    {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 13837,
+      "last_incident": "2026-04-10T06:00:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 2
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 13340,
+      "last_incident": "2026-04-02T03:30:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Planner",
+      "short_name": "Planner",
+      "icon": "📋",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 23645,
+      "last_incident": "2026-03-02T07:15:00+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Windows Autopatch",
+      "short_name": "Autopatch",
+      "icon": "🪟",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 3140,
+      "last_incident": "2026-02-17T00:00:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Microsoft Power Automate in Microsoft 365",
+      "short_name": "Automate (M365)",
+      "icon": "🔄",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2085,
+      "last_incident": "2026-02-16T10:00:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 12570,
+      "last_incident": "2026-02-16T06:30:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 10825,
+      "last_incident": "2026-02-02T17:47:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-04",
+      "incident_count": 17,
+      "services_affected": 7
+    },
+    {
+      "month": "2026-03",
+      "incident_count": 39,
+      "services_affected": 10
+    },
+    {
+      "month": "2026-02",
+      "incident_count": 40,
+      "services_affected": 15
+    },
+    {
+      "month": "2026-01",
+      "incident_count": 4,
+      "services_affected": 2
+    }
+  ]
+}
