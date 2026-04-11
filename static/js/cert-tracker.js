@@ -112,6 +112,11 @@
 
   function renderCard(exam) {
     const levelLabel = { beginner: "Fundamentals", intermediate: "Associate", advanced: "Expert" };
+    const statusLabels = { active: "", retiring: "⚠️ Retiring", retired: "🚫 Retired", beta: "🧪 Beta", upcoming: "🔜 Upcoming" };
+    const status = exam.status || "active";
+    const statusBadge = status !== "active" ? `<span class="cert-badge cert-badge-${status}">${statusLabels[status]}</span>` : "";
+    const statusClass = status !== "active" ? ` cert-card-${status}` : "";
+
     const skillsHtml = (exam.skills_at_a_glance || [])
       .map(
         (s) =>
@@ -119,8 +124,15 @@
       )
       .join("");
 
+    const retireNote = (status === "retiring" && exam.retirement_date) ? `<div style="font-size:0.78rem;color:#F59E0B;margin-top:0.5rem;">⚠️ Retiring ${exam.retirement_date}${exam.replacement ? " → " + exam.replacement : ""}</div>` : "";
+    const retiredNote = (status === "retired") ? `<div style="font-size:0.78rem;color:#EF4444;margin-top:0.5rem;">🚫 Retired${exam.replacement ? " → " + exam.replacement : ""}</div>` : "";
+    const betaNote = (status === "beta") ? `<div style="font-size:0.78rem;color:#8B5CF6;margin-top:0.5rem;">🧪 Beta${exam.replaces ? " (replaces " + exam.replaces + ")" : ""}</div>` : "";
+
+    // Link to individual study guide page
+    const examUrl = `/cert-tracker/${exam.code.toLowerCase()}/`;
+
     return `
-      <article class="cert-card${exam.has_changes ? " cert-card-changed" : ""}" data-code="${exam.code}" tabindex="0" role="button" aria-label="View ${exam.code} details">
+      <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}" aria-label="View ${exam.code} study guide">
         <div class="cert-card-header">
           <span class="cert-card-code">${exam.code}</span>
           <span class="cert-card-title">${exam.title}</span>
@@ -128,13 +140,15 @@
         <div class="cert-card-meta">
           <span class="cert-badge cert-badge-${exam.level}">${levelLabel[exam.level] || exam.level}</span>
           <span class="cert-badge cert-badge-category">${exam.category}</span>
+          ${statusBadge}
         </div>
         <div class="cert-card-skills">${skillsHtml}</div>
+        ${retireNote}${retiredNote}${betaNote}
         <div class="cert-card-footer">
-          <span class="cert-card-objectives">${exam.total_objectives} objectives</span>
+          <span class="cert-card-objectives">${exam.total_objectives || 0} objectives</span>
           <span>${exam.skills_date || "—"}</span>
         </div>
-      </article>
+      </a>
     `;
   }
 

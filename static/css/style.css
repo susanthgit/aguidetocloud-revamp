@@ -88,7 +88,7 @@ a:hover {
   z-index: 100;
   background: rgba(15, 15, 26, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--nav-accent, rgba(102, 255, 255, 0.2));
+  border-bottom: 2px solid var(--nav-accent, rgba(102, 255, 255, 0.3));
   padding: 0 2rem;
 }
 .nav-inner {
@@ -1089,10 +1089,10 @@ a:hover {
 .is-about main {
   background: linear-gradient(180deg, color-mix(in srgb, #ff66ff 50%, #0f0f1a) 0%, var(--bg-primary) 300px);
 }
-.is-about .site-nav { --nav-accent: rgba(255, 102, 255, 0.25); }
-.page-ainews .site-nav { --nav-accent: rgba(255, 102, 255, 0.25); }
-.page-roadmap .site-nav { --nav-accent: rgba(229, 160, 13, 0.25); }
-.page-prompts .site-nav { --nav-accent: rgba(167, 139, 250, 0.25); }
+.is-about .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
+.page-ainews .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
+.page-roadmap .site-nav { --nav-accent: rgba(229, 160, 13, 0.35); }
+.page-prompts .site-nav { --nav-accent: rgba(167, 139, 250, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

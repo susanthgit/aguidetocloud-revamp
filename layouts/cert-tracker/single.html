@@ -1,0 +1,67 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
+{{ partial "tool-hero.html" (dict "title" (printf "%s Study Guide" .Params.exam_code) "subtitle" .Params.exam_title "accent" "#10B981") }}
+
+<div class="cert-container cert-single">
+  {{/* Status banner */}}
+  {{ if eq .Params.exam_status "retiring" }}
+  <div class="cert-status-banner cert-status-retiring">
+    ⚠️ <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
+    {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+  </div>
+  {{ else if eq .Params.exam_status "retired" }}
+  <div class="cert-status-banner cert-status-retired">
+    🚫 <strong>This exam was retired {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
+    {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+  </div>
+  {{ else if eq .Params.exam_status "beta" }}
+  <div class="cert-status-banner cert-status-beta">
+    🧪 <strong>Currently in Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong>
+    — Beta exams typically offered at 80% discount.
+    {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Exam meta badges */}}
+  <div class="cert-single-meta">
+    <span class="cert-badge cert-badge-{{ .Params.exam_level }}">
+      {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if eq .Params.exam_level "intermediate" }}Associate{{ else }}Expert{{ end }}
+    </span>
+    <span class="cert-badge cert-badge-category">{{ .Params.exam_category }}</span>
+    {{ if eq .Params.exam_status "retiring" }}<span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>{{ end }}
+    {{ if eq .Params.exam_status "retired" }}<span class="cert-badge cert-badge-retired">🚫 Retired</span>{{ end }}
+    {{ if eq .Params.exam_status "beta" }}<span class="cert-badge cert-badge-beta">🧪 Beta</span>{{ end }}
+  </div>
+
+  {{/* Main content (skills measured, etc.) */}}
+  <div class="cert-single-content">
+    {{ .Content }}
+  </div>
+
+  {{/* Back to all exams */}}
+  <div class="cert-single-nav">
+    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Exams</a>
+  </div>
+</div>
+
+{{/* SEO structured data */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "{{ .Params.exam_code }}: {{ .Params.exam_title }}",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "Microsoft",
+    "url": "https://learn.microsoft.com"
+  },
+  "educationalLevel": "{{ .Params.exam_level }}",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online"
+  }
+}
+</script>
+{{ end }}

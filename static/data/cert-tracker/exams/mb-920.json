@@ -1,0 +1,122 @@
+{
+  "code": "MB-920",
+  "title": "Microsoft Dynamics 365 Fundamentals (ERP)",
+  "level": "beginner",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "updated_at": "2025-12-31 16:52:00+00:00",
+  "skills_date": "December 23, 2024",
+  "skills_at_a_glance": [
+    {
+      "area": "Describe Dynamics 365 Supply Chain Management",
+      "weight": "35-40%"
+    },
+    {
+      "area": "Describe Dynamics 365 Finance",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Describe the core capabilities of the finance and operations apps",
+      "weight": "25-30%"
+    }
+  ],
+  "skills_detailed": {
+    "Describe Dynamics 365 Supply Chain Management (35–40%)": {
+      "Describe Supply Chain Management core capabilities": [
+        "Describe use cases of Supply Chain Management",
+        "Describe products and released products",
+        "Describe product master records, product variants, and product dimensions",
+        "Describe pricing and discounts in relation to trade agreements",
+        "Describe intercompany capabilities"
+      ],
+      "Describe the manufacturing process": [
+        "Describe lean, discrete, and process manufacturing",
+        "Describe manufacturing strategies",
+        "Describe bills of materials (BOMs), formulas, routes, and operations as they relate to production orders",
+        "Identify the production lifecycle stages",
+        "Describe shop floor management",
+        "Describe master planning and planning optimization"
+      ],
+      "Describe inventory and warehousing capabilities": [
+        "Describe costing methods",
+        "Describe on-hand inventory capabilities",
+        "Identify types of inventory journals",
+        "Describe quality management capabilities",
+        "Describe use cases for Warehouse Management Systems (WMS)",
+        "Describe use cases for Transportation Management Systems (TMS)",
+        "Describe use cases for landed cost"
+      ],
+      "Describe the sales and procurement processes": [
+        "Describe the order-to-cash process",
+        "Describe the sales order creation process",
+        "Describe the fulfillment process, including inventory reservations and picking and packing",
+        "Describe the procure-to-pay process",
+        "Describe purchase requisitions",
+        "Describe the purchase order creation process",
+        "Describe purchase order receipts"
+      ]
+    },
+    "Describe Dynamics 365 Finance (30–35%)": {
+      "Describe Finance core capabilities": [
+        "Describe use cases of Finance",
+        "Describe organization and legal entities",
+        "Describe reporting currency and accounting currency",
+        "Describe tax capabilities",
+        "Describe cost accounting concepts"
+      ],
+      "Describe general ledgers": [
+        "Describe charts of accounts, including main accounts",
+        "Describe the concept of a fiscal calendar",
+        "Describe financial dimensions and dimension sets concepts",
+        "Describe the accounting structure",
+        "Describe financial journal concepts",
+        "Describe periodic financial processes"
+      ],
+      "Describe accounts payables and accounts receivables": [
+        "Describe core accounts payable components, including vendors, purchase orders, and vendor invoices",
+        "Describe vendor payments and settlements, including three-way matching concepts",
+        "Describe core accounts receivable components, including customers, customer invoices, and free text invoices",
+        "Describe credit management processes",
+        "Describe the collection process",
+        "Describe the concept of subscription billing"
+      ],
+      "Describe expense management, fixed asset management, and budgeting": [
+        "Describe cash and bank management concepts",
+        "Describe expense management capabilities",
+        "Describe fixed asset management capabilities",
+        "Describe budgeting capabilities"
+      ]
+    },
+    "Describe the core capabilities of the finance and operations apps (25–30%)": {
+      "Describe the finance and operations apps": [
+        "Describe enterprise resource planning (ERP)",
+        "Describe the business value of Commerce",
+        "Describe the business value of Human Resources",
+        "Describe the business value of Project Operations",
+        "Describe finance and operations apps use cases",
+        "Explore the finance and operations user interface"
+      ],
+      "Describe reporting and integration capabilities": [
+        "Describe built-in reporting capabilities, including workspaces",
+        "Describe options for analyzing data by using Power BI",
+        "Describe Microsoft Office 365 integration capabilities, including Microsoft Excel, SharePoint, and Teams",
+        "Describe Microsoft Power Platform integration options"
+      ],
+      "Describe common features": [
+        "Describe security capabilities",
+        "Describe workflow capabilities",
+        "Describe the concept of batch jobs"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-920/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-920",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-920/practice/assessment?assessment-type=practice"
+}

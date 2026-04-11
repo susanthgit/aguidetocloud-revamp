@@ -104,13 +104,15 @@
 }
 
 .cert-card {
+  display: block;
+  text-decoration: none;
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
   border-radius: 12px;
   padding: 1.25rem;
-  cursor: pointer;
   transition: all 0.2s;
   position: relative;
+  color: inherit;
 }
 .cert-card:hover {
   background: var(--cert-card-hover);
@@ -413,6 +415,114 @@
   padding: 3rem 1rem;
   color: var(--cert-text-dim);
   font-size: 1.1rem;
+}
+
+/* ── Status badges ── */
+.cert-badge-retiring { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+.cert-badge-retired { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+.cert-badge-beta { background: rgba(139, 92, 246, 0.15); color: #8B5CF6; }
+.cert-badge-upcoming { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+
+/* Status card overlay */
+.cert-card-retiring { border-left: 3px solid #F59E0B; }
+.cert-card-retired { opacity: 0.7; border-left: 3px solid #EF4444; }
+.cert-card-beta { border-left: 3px solid #8B5CF6; }
+
+/* ── Single exam page ── */
+.cert-single { max-width: 900px; }
+
+.cert-status-banner {
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.cert-status-retiring {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #FCD34D;
+}
+.cert-status-retired {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #FCA5A5;
+}
+.cert-status-beta {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #C4B5FD;
+}
+
+.cert-single-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cert-single-content {
+  color: var(--cert-text);
+  line-height: 1.7;
+}
+.cert-single-content h2 {
+  color: var(--cert-accent);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cert-border);
+  padding-bottom: 0.5rem;
+}
+.cert-single-content h3 {
+  color: var(--cert-text);
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.cert-single-content h4 {
+  color: var(--cert-accent);
+  font-size: 0.92rem;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+.cert-single-content ul {
+  padding-left: 1.5rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.cert-single-content li {
+  font-size: 0.88rem;
+  color: var(--cert-text-dim);
+  line-height: 1.6;
+  margin-bottom: 0.15rem;
+}
+.cert-single-content li::marker { color: var(--cert-accent); }
+.cert-single-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1.25rem;
+}
+.cert-single-content th, .cert-single-content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--cert-border);
+  font-size: 0.88rem;
+}
+.cert-single-content th {
+  color: var(--cert-accent);
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.05);
+}
+.cert-single-content a {
+  color: var(--cert-accent);
+  text-decoration: none;
+}
+.cert-single-content a:hover { text-decoration: underline; }
+
+.cert-single-nav {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cert-border);
 }
 
 /* ── Responsive ── */
