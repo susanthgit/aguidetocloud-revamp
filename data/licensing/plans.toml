@@ -322,6 +322,540 @@ m365maps = "https://m365maps.com/files/Entra-ID-Paid.htm"
 ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
 features = ["entra-p2"]
 
+# ── DYNAMICS 365 — CRM ───────────────────────
+
+[[plans]]
+id = "d365-sales-pro"
+name = "Dynamics 365 Sales Professional"
+category = "d365-crm"
+price = 65
+price_note = ""
+tagline = "Core CRM for small sales teams"
+description = "Lead and opportunity management, product catalog, quotes, orders, and invoices. Basic sales automation for teams that don't need advanced analytics or AI."
+who = "Small sales teams needing basic CRM without advanced analytics"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing"
+features = ["d365-sales-core"]
+
+[[plans]]
+id = "d365-sales-ent"
+name = "Dynamics 365 Sales Enterprise"
+category = "d365-crm"
+price = 95
+price_note = ""
+tagline = "Full sales CRM with AI and forecasting"
+description = "Everything in Professional plus sales forecasting, relationship analytics, LinkedIn Sales Navigator integration, and customisation with Power Platform."
+who = "Sales organisations needing forecasting, AI insights, and customisation"
+badge = "Most Popular"
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing"
+features = ["d365-sales-core", "d365-sales-advanced"]
+
+[[plans]]
+id = "d365-sales-premium"
+name = "Dynamics 365 Sales Premium"
+category = "d365-crm"
+price = 135
+price_note = ""
+tagline = "AI-first sales — Copilot + conversation intelligence"
+description = "Everything in Enterprise plus Copilot for Sales, conversation intelligence, predictive scoring, and advanced relationship analytics."
+who = "Enterprise sales teams wanting full AI-powered selling"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing"
+features = ["d365-sales-core", "d365-sales-advanced", "d365-copilot"]
+
+[[plans]]
+id = "d365-cs-pro"
+name = "Dynamics 365 Customer Service Professional"
+category = "d365-crm"
+price = 50
+price_note = ""
+tagline = "Basic case management and service desk"
+description = "Case management, knowledge base, SLA tracking, and basic service scheduling. Good for teams with straightforward support workflows."
+who = "Support teams needing basic ticketing and case management"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/customer-service/pricing"
+features = ["d365-cs-core"]
+
+[[plans]]
+id = "d365-cs-ent"
+name = "Dynamics 365 Customer Service Enterprise"
+category = "d365-crm"
+price = 95
+price_note = ""
+tagline = "Omnichannel service with AI routing"
+description = "Everything in Professional plus omnichannel engagement (chat, voice, social), unified routing, AI suggestions, analytics dashboards, and Power Platform customisation."
+who = "Service organisations needing omnichannel support and AI-assisted routing"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/customer-service/pricing"
+features = ["d365-cs-core", "d365-cs-advanced"]
+
+[[plans]]
+id = "d365-field"
+name = "Dynamics 365 Field Service"
+category = "d365-crm"
+price = 95
+price_note = ""
+tagline = "Manage field workers, schedules & IoT"
+description = "Work order management, resource scheduling optimisation, IoT integration, mobile field worker app, and inventory management. Includes Copilot for automated scheduling."
+who = "Organisations with field technicians, maintenance crews, or on-site service teams"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/field-service/pricing"
+features = ["d365-field-core"]
+
+# ── DYNAMICS 365 — ERP ───────────────────────
+
+[[plans]]
+id = "d365-finance"
+name = "Dynamics 365 Finance"
+category = "d365-erp"
+price = 210
+price_note = ""
+tagline = "Enterprise financial management"
+description = "General ledger, accounts payable/receivable, budgeting, fixed assets, cash and bank management, financial reporting, and AI-powered cash flow forecasting."
+who = "Mid-to-large enterprises needing sophisticated financial management"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing"
+features = ["d365-finance-core"]
+
+[[plans]]
+id = "d365-scm"
+name = "Dynamics 365 Supply Chain Management"
+category = "d365-erp"
+price = 210
+price_note = ""
+tagline = "End-to-end supply chain visibility"
+description = "Procurement, production, warehousing, transportation, quality control, master planning, and demand forecasting. IoT-enabled asset management."
+who = "Manufacturing and distribution organisations with complex supply chains"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/supply-chain-management/pricing"
+features = ["d365-scm-core"]
+
+[[plans]]
+id = "d365-bc-essentials"
+name = "Dynamics 365 Business Central Essentials"
+category = "d365-erp"
+price = 70
+price_note = ""
+tagline = "All-in-one ERP for SMBs"
+description = "Financial management, supply chain, project management, warehousing, and CRM basics. Designed for growing businesses that need more than spreadsheets."
+who = "SMBs outgrowing QuickBooks/Xero who need integrated ERP"
+badge = "SMB Favourite"
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing"
+features = ["d365-bc-core"]
+
+[[plans]]
+id = "d365-bc-premium"
+name = "Dynamics 365 Business Central Premium"
+category = "d365-erp"
+price = 100
+price_note = ""
+tagline = "Essentials + manufacturing + service"
+description = "Everything in Essentials plus manufacturing (BOM, production orders, capacity planning) and service management modules."
+who = "SMB manufacturers and service businesses"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing"
+features = ["d365-bc-core", "d365-bc-premium-features"]
+
+[[plans]]
+id = "d365-bc-team"
+name = "Dynamics 365 Business Central Team Member"
+category = "d365-erp"
+price = 8
+price_note = ""
+tagline = "Read-only access for light users"
+description = "View data, approve workflows, enter timesheets, and run basic reports. Cannot create or edit master records."
+who = "Employees who need to view data and approve workflows but not manage records"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing"
+features = ["d365-bc-readonly"]
+
+# ── POWER PLATFORM ───────────────────────────
+
+[[plans]]
+id = "powerapps-user"
+name = "Power Apps per User"
+category = "power-platform"
+price = 20
+price_note = ""
+tagline = "Build unlimited apps — one user price"
+description = "Unlimited canvas and model-driven apps per user. Includes Dataverse storage, premium connectors, Power Pages, and AI Builder credits."
+who = "Power users and citizen developers building multiple apps"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-apps/pricing"
+features = ["pp-powerapps", "pp-dataverse", "pp-premium-connectors"]
+
+[[plans]]
+id = "powerautomate-user"
+name = "Power Automate per User"
+category = "power-platform"
+price = 15
+price_note = ""
+tagline = "Unlimited cloud flows per user"
+description = "Unlimited cloud flows, premium connectors, attended RPA (desktop flows), and Dataverse storage. Automate repetitive tasks across hundreds of services."
+who = "Users automating workflows across M365, D365, and third-party services"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+features = ["pp-powerautomate", "pp-dataverse", "pp-premium-connectors"]
+
+[[plans]]
+id = "powerautomate-rpa"
+name = "Power Automate per User + RPA"
+category = "power-platform"
+price = 40
+price_note = ""
+tagline = "Cloud flows + unattended desktop automation"
+description = "Everything in per User plan plus unattended RPA (run desktop flows without a logged-in user). For automating legacy desktop applications at scale."
+who = "IT teams automating legacy desktop processes and data entry"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing"
+features = ["pp-powerautomate", "pp-rpa", "pp-dataverse", "pp-premium-connectors"]
+
+[[plans]]
+id = "powerbi-pro"
+name = "Power BI Pro"
+category = "power-platform"
+price = 10
+price_note = ""
+tagline = "Business intelligence for everyone"
+description = "Create, share, and collaborate on interactive dashboards and reports. Included in M365 E5 and M365 E7. Standalone licence for users on other plans."
+who = "Analysts and business users creating and sharing BI reports"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing"
+features = ["pp-powerbi-pro"]
+
+[[plans]]
+id = "powerbi-ppu"
+name = "Power BI Premium per User"
+category = "power-platform"
+price = 20
+price_note = ""
+tagline = "Advanced analytics + larger datasets"
+description = "Everything in Pro plus paginated reports, AI features, larger dataset limits, deployment pipelines, and advanced dataflow capabilities."
+who = "Advanced analysts working with large datasets and AI-driven insights"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing"
+features = ["pp-powerbi-pro", "pp-powerbi-premium"]
+
+[[plans]]
+id = "copilot-studio"
+name = "Microsoft Copilot Studio"
+category = "power-platform"
+price = 200
+price_note = "Per tenant/month"
+tagline = "Build custom AI agents and copilots"
+description = "Create, test, and publish custom copilots and AI agents with generative AI capabilities. Includes 25,000 messages/month. Additional capacity available."
+who = "IT teams and makers building custom AI chatbots and agents"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio/pricing"
+features = ["pp-copilot-studio"]
+
+# ── MICROSOFT VIVA ───────────────────────────
+
+[[plans]]
+id = "viva-suite"
+name = "Microsoft Viva Suite"
+category = "viva"
+price = 12
+price_note = ""
+tagline = "Complete employee experience platform"
+description = "All Viva modules in one bundle — Connections, Engage, Amplify, Insights, Glint, Pulse, Goals, and Learning. The full employee experience platform."
+who = "Organisations investing in employee experience, engagement, and development"
+badge = "Best Value"
+m365maps = "https://m365maps.com/files/Viva.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-viva/pricing"
+features = ["viva-connections", "viva-engage", "viva-insights", "viva-learning", "viva-goals"]
+
+[[plans]]
+id = "viva-comms"
+name = "Viva Employee Communications & Communities"
+category = "viva"
+price = 2
+price_note = ""
+tagline = "Internal comms + employee communities"
+description = "Viva Connections (company intranet in Teams), Viva Engage (enterprise social), and Viva Amplify (multi-channel internal communications)."
+who = "Organisations focused on improving internal communications"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-viva/pricing"
+features = ["viva-connections", "viva-engage"]
+
+[[plans]]
+id = "viva-analytics"
+name = "Viva Workplace Analytics & Feedback"
+category = "viva"
+price = 6
+price_note = ""
+tagline = "People analytics + employee surveys"
+description = "Viva Insights (workplace analytics, meeting effectiveness), Viva Glint (employee surveys), and Viva Pulse (team check-ins)."
+who = "HR and leadership teams wanting data-driven people insights"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-viva/pricing"
+features = ["viva-insights"]
+
+# ── TEAMS ADD-ONS ────────────────────────────
+
+[[plans]]
+id = "teams-premium"
+name = "Microsoft Teams Premium"
+category = "teams-addons"
+price = 10
+price_note = "Add-on"
+tagline = "Advanced meetings, webinars & AI"
+description = "AI-powered meeting recap, intelligent recap, custom branded meetings, advanced webinar features, virtual appointments, and advanced meeting protection."
+who = "Organisations wanting AI meeting features and professional branding"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Teams-Premium.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-teams/premium"
+features = ["teams-premium-features"]
+
+[[plans]]
+id = "teams-rooms-pro"
+name = "Microsoft Teams Rooms Pro"
+category = "teams-addons"
+price = 40
+price_note = "Per room/month"
+tagline = "Full meeting room management"
+description = "Advanced room management, remote device management, conditional access, Teams Rooms Pro Management portal, and AI-powered intelligent speakers."
+who = "Organisations managing meeting room devices at scale"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Teams-Rooms-Pro.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-rooms"
+features = ["teams-rooms"]
+
+[[plans]]
+id = "teams-rooms-basic"
+name = "Microsoft Teams Rooms Basic"
+category = "teams-addons"
+price = 0
+price_note = "Free (up to 25 rooms)"
+tagline = "Basic meeting room experience"
+description = "Join and manage meetings from Teams Rooms devices. Free for up to 25 rooms. Includes basic device management and one-touch join."
+who = "Small organisations with fewer than 25 meeting rooms"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Teams-Rooms-Basic.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-rooms"
+features = ["teams-rooms"]
+
+[[plans]]
+id = "teams-phone-standard"
+name = "Teams Phone Standard"
+category = "teams-addons"
+price = 8
+price_note = "Add-on"
+tagline = "Cloud PBX — make calls from Teams"
+description = "Cloud-based phone system with call queues, auto attendants, voicemail, call transfer, and music on hold. Requires a calling plan or direct routing for PSTN."
+who = "Organisations replacing traditional phone systems with Teams"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Teams.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-phone"
+features = ["teams-phone"]
+
+# ── PROJECT, VISIO, PLANNER ──────────────────
+
+[[plans]]
+id = "project-p1"
+name = "Project Plan 1"
+category = "project-visio"
+price = 10
+price_note = ""
+tagline = "Lightweight project management"
+description = "Grid, board, and timeline views for simple project tracking. Task management, file sharing, and basic reporting. No desktop app."
+who = "Teams needing simple project tracking without full PM tools"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Project.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-plan-1"
+features = ["project-web"]
+
+[[plans]]
+id = "project-p3"
+name = "Project Plan 3"
+category = "project-visio"
+price = 30
+price_note = ""
+tagline = "Full project management + desktop app"
+description = "Everything in Plan 1 plus Project desktop app, resource management, Gantt charts, dependencies, baselines, and portfolio management."
+who = "Project managers needing full scheduling, dependencies, and resource management"
+badge = "Most Popular"
+m365maps = "https://m365maps.com/files/Microsoft-Project.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-plan-3"
+features = ["project-web", "project-desktop"]
+
+[[plans]]
+id = "project-p5"
+name = "Project Plan 5"
+category = "project-visio"
+price = 55
+price_note = ""
+tagline = "Enterprise portfolio + demand management"
+description = "Everything in Plan 3 plus portfolio selection and optimisation, demand management, and enterprise resource management across the organisation."
+who = "PMO teams managing portfolios of projects and resource demand"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Project.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/project/project-plan-5"
+features = ["project-web", "project-desktop", "project-portfolio"]
+
+[[plans]]
+id = "visio-p1"
+name = "Visio Plan 1"
+category = "project-visio"
+price = 5
+price_note = ""
+tagline = "Web-based diagramming"
+description = "Create and share diagrams in the browser using Visio for the web. Includes basic templates and shapes. No desktop app."
+who = "Occasional diagram users who only need web access"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Visio.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/visio/visio-plan-1"
+features = ["visio-web"]
+
+[[plans]]
+id = "visio-p2"
+name = "Visio Plan 2"
+category = "project-visio"
+price = 15
+price_note = ""
+tagline = "Full Visio desktop + web"
+description = "Full Visio desktop app plus web access. Advanced templates, data-linked diagrams, database reverse engineering, and process visualisation."
+who = "IT architects, process engineers, and anyone creating complex diagrams"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Visio.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/visio/visio-plan-2"
+features = ["visio-web", "visio-desktop"]
+
+[[plans]]
+id = "planner-premium"
+name = "Microsoft Planner Premium"
+category = "project-visio"
+price = 10
+price_note = ""
+tagline = "Advanced task management with Copilot"
+description = "Premium Planner features including Goals, advanced dependencies, Copilot-assisted planning, portfolio view, baselines, and sprints. Formerly Project for the Web premium."
+who = "Teams needing Planner with advanced project management capabilities"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-Project.htm"
+ms_official = "https://www.microsoft.com/en-us/microsoft-365/planner/microsoft-planner"
+features = ["project-web"]
+
+# ── EDUCATION ────────────────────────────────
+
+[[plans]]
+id = "m365-a1"
+name = "Microsoft 365 Education A1"
+category = "education"
+price = 0
+price_note = "Free for qualifying institutions"
+tagline = "Free cloud tools for education"
+description = "Web Office apps, Teams, Exchange (50 GB), SharePoint, and OneDrive (1 TB). Free for qualifying educational institutions. No desktop apps."
+who = "Schools and universities needing free cloud tools for students and staff"
+badge = "Free"
+m365maps = "https://m365maps.com/files/Microsoft-365-Education-A1-(Legacy).htm"
+ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
+features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
+
+[[plans]]
+id = "m365-a3"
+name = "Microsoft 365 Education A3"
+category = "education"
+price = 3.25
+price_note = "Per user/month (faculty)"
+tagline = "Desktop apps + security for education"
+description = "Everything in A1 plus desktop Office apps, Intune for Education, Windows Enterprise, advanced security, and 100 GB Exchange mailbox."
+who = "Educational institutions needing desktop apps and device management"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Education-A3.htm"
+ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "intune-p1", "entra-p1", "windows-e3"]
+
+[[plans]]
+id = "m365-a5"
+name = "Microsoft 365 Education A5"
+category = "education"
+price = 8
+price_note = "Per user/month (faculty)"
+tagline = "Full security + analytics for education"
+description = "Everything in A3 plus advanced security (Defender P2, Entra P2), Power BI Pro, Teams Phone, and advanced compliance. The most comprehensive education plan."
+who = "Large educational institutions needing enterprise-grade security and analytics"
+badge = ""
+m365maps = "https://m365maps.com/files/Microsoft-365-Education-A5.htm"
+ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "power-bi-pro", "windows-e5"]
+
+# ── WINDOWS & DEVELOPER ──────────────────────
+
+[[plans]]
+id = "windows-365-ent"
+name = "Windows 365 Enterprise"
+category = "windows-dev"
+price = 28
+price_note = "Starting at (2 vCPU/4GB)"
+tagline = "Cloud PC — Windows in the browser"
+description = "Personal Cloud PC streamed from Azure. Always on, accessible from any device. Multiple configurations from 2 vCPU/4GB RAM to 16 vCPU/64GB. Managed through Intune."
+who = "Organisations wanting Cloud PCs for remote, BYOD, or temporary workers"
+badge = ""
+m365maps = "https://m365maps.com/files/Windows-365.htm"
+ms_official = "https://www.microsoft.com/en-us/windows-365/enterprise/compare-plans-pricing"
+features = ["windows-365"]
+
+[[plans]]
+id = "github-enterprise"
+name = "GitHub Enterprise"
+category = "windows-dev"
+price = 21
+price_note = ""
+tagline = "Enterprise DevOps + advanced security"
+description = "GitHub Enterprise Cloud with advanced security (secret scanning, dependency review, code scanning), SAML SSO, audit log streaming, and GitHub Copilot Business included."
+who = "Development teams needing enterprise security, compliance, and AI-assisted coding"
+badge = ""
+m365maps = ""
+ms_official = "https://github.com/pricing"
+features = ["github-enterprise-features"]
+
+[[plans]]
+id = "vs-pro"
+name = "Visual Studio Professional"
+category = "windows-dev"
+price = 45
+price_note = "Per month (subscription)"
+tagline = "Professional IDE for developers"
+description = "Full Visual Studio IDE, Azure DevOps, Azure dev/test credits ($50/mo), and developer tools for .NET, C++, Python, and more."
+who = "Professional developers building enterprise applications"
+badge = ""
+m365maps = ""
+ms_official = "https://visualstudio.microsoft.com/vs/pricing/"
+features = ["vs-pro-features"]
+
+[[plans]]
+id = "vs-enterprise"
+name = "Visual Studio Enterprise"
+category = "windows-dev"
+price = 250
+price_note = "Per month (subscription)"
+tagline = "Ultimate dev toolkit + testing + credits"
+description = "Everything in Professional plus advanced testing tools, Azure dev/test credits ($150/mo), CodeLens, Architecture tools, and IntelliTest."
+who = "Enterprise development teams needing the full Microsoft dev toolchain"
+badge = ""
+m365maps = ""
+ms_official = "https://visualstudio.microsoft.com/vs/pricing/"
+features = ["vs-enterprise-features"]
+
 # ── CATEGORIES (for display order + labels) ──
 
 [[categories]]
@@ -358,3 +892,59 @@ name = "Security & Compliance Add-ons"
 emoji = "🛡️"
 description = "Standalone add-ons for identity, endpoint, and compliance."
 m365maps_all = "https://m365maps.com/files/EMS-All.htm"
+
+[[categories]]
+id = "d365-crm"
+name = "Dynamics 365 — CRM & Customer Engagement"
+emoji = "🤝"
+description = "Sales, customer service, and field service applications."
+m365maps_all = ""
+
+[[categories]]
+id = "d365-erp"
+name = "Dynamics 365 — ERP & Business Operations"
+emoji = "📦"
+description = "Finance, supply chain, and business management for SMBs and enterprises."
+m365maps_all = ""
+
+[[categories]]
+id = "power-platform"
+name = "Power Platform"
+emoji = "⚡"
+description = "Low-code apps, automation, analytics, and AI agents."
+m365maps_all = ""
+
+[[categories]]
+id = "viva"
+name = "Microsoft Viva"
+emoji = "💜"
+description = "Employee experience, engagement, learning, and workplace analytics."
+m365maps_all = "https://m365maps.com/files/Viva.htm"
+
+[[categories]]
+id = "teams-addons"
+name = "Teams Add-ons"
+emoji = "💬"
+description = "Premium meeting features, phone system, and room devices."
+m365maps_all = "https://m365maps.com/files/Microsoft-Teams-Enterprise.htm"
+
+[[categories]]
+id = "project-visio"
+name = "Project, Planner & Visio"
+emoji = "📐"
+description = "Project management, task tracking, and diagramming tools."
+m365maps_all = "https://m365maps.com/files/Microsoft-Project.htm"
+
+[[categories]]
+id = "education"
+name = "Education Plans"
+emoji = "🎓"
+description = "Discounted plans for qualifying schools and universities."
+m365maps_all = "https://m365maps.com/files/Microsoft-365-Education-All.htm"
+
+[[categories]]
+id = "windows-dev"
+name = "Windows & Developer Tools"
+emoji = "🪟"
+description = "Cloud PCs, Visual Studio, and GitHub Enterprise."
+m365maps_all = "https://m365maps.com/files/Windows-365.htm"

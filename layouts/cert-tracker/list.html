@@ -1,0 +1,66 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
+<link rel="alternate" type="application/rss+xml" title="Microsoft Cert Exam Changes" href="/data/cert-tracker/rss.xml">
+{{ partial "tool-hero.html" (dict "title" "Cert Exam Change Tracker" "subtitle" "Tracking 41 Microsoft certification exams — skills measured, study resources, and objective changes" "accent" "#10B981") }}
+<div class="cert-container">
+  <div class="cert-controls" id="cert-controls">
+    <label for="cert-search" class="sr-only">Search exams</label>
+    <input type="text" id="cert-search" class="cert-search" placeholder="Search exams (e.g. AZ-900, Azure, beginner)..." autocomplete="off">
+    <label for="cert-category-filter" class="sr-only">Filter by category</label>
+    <select id="cert-category-filter" class="cert-select">
+      <option value="all" selected>All Categories</option>
+    </select>
+    <label for="cert-level-filter" class="sr-only">Filter by level</label>
+    <select id="cert-level-filter" class="cert-select">
+      <option value="all">All Levels</option>
+      <option value="beginner">Beginner (Fundamentals)</option>
+      <option value="intermediate">Intermediate (Associate)</option>
+      <option value="advanced">Advanced (Expert)</option>
+    </select>
+  </div>
+
+  <div class="cert-stats" id="cert-stats"></div>
+
+  <div class="cert-chips" id="cert-chips" role="group" aria-label="Category filters"></div>
+
+  <h2 class="sr-only">Certification Exams</h2>
+  <div class="cert-grid" id="cert-grid" aria-live="polite">
+    <div class="cert-skeleton"><div class="cert-skeleton-row"></div><div class="cert-skeleton-row"></div><div class="cert-skeleton-row"></div></div>
+  </div>
+
+  <!-- Exam detail modal -->
+  <div class="cert-modal" id="cert-modal" role="dialog" aria-modal="true" aria-label="Exam details" hidden>
+    <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
+    <div class="cert-modal-content" id="cert-modal-content">
+      <button class="cert-modal-close" id="cert-modal-close" aria-label="Close">&times;</button>
+      <div id="cert-modal-body"></div>
+    </div>
+  </div>
+
+  <div class="cert-footer">
+    <div class="cert-footer-links">
+      <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener">📡 RSS Feed</a>
+      <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener">📋 Official Credentials</a>
+    </div>
+    <div class="cert-freshness" id="cert-freshness"></div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Microsoft Cert Exam Change Tracker",
+  "url": "https://www.aguidetocloud.com/cert-tracker/",
+  "description": "Track all Microsoft certification exam changes — see when objectives update, study the current syllabus, and get direct links to Microsoft Learn resources. Updated weekly.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com/about/" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "https://www.aguidetocloud.com" },
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "keywords": ["Microsoft certification exam changes", "AZ-900 study guide", "Microsoft cert tracker", "exam objective updates"]
+}
+</script>
+<script src="/js/cert-tracker.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
