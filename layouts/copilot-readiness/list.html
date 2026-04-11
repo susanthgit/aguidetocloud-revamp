@@ -1,0 +1,169 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/readiness.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Copilot Readiness Checker — Is Your Org Ready for Microsoft 365 Copilot?",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+<div class="readiness-page">
+
+  {{ partial "tool-hero.html" (dict "title" "Copilot Readiness Checker" "subtitle" "Answer 30 questions across 7 pillars → get a 0–100 readiness score with per-pillar breakdown and actionable recommendations. Free, instant, no sign-up." "accent" "#3B82F6") }}
+
+  <div class="readiness-container">
+
+    {{/* ── INTRO (visible before assessment starts) ── */}}
+    <div id="readiness-intro" class="readiness-intro">
+      <div class="readiness-why">
+        <h2>🎯 Why Use This Checker?</h2>
+        <p>Every IT admin's first question about Copilot: <strong>"Is my org ready?"</strong> This tool scores your readiness across the 7 areas Microsoft recommends — and gives you a prioritised action plan.</p>
+      </div>
+
+      <div class="readiness-pillars-preview">
+        <div class="pillar-preview-item"><span class="pillar-icon">🔑</span> Licensing</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">🛡️</span> Identity & Access</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">📂</span> Data Governance</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">🔒</span> Security</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">🌐</span> Network & Apps</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">👥</span> Change Management</div>
+        <div class="pillar-preview-item"><span class="pillar-icon">📊</span> Monitoring</div>
+      </div>
+
+      <div class="readiness-how-it-works">
+        <div class="readiness-step"><span class="readiness-step-num">1</span> Answer 30 quick questions</div>
+        <div class="readiness-step"><span class="readiness-step-num">2</span> Get scored across 7 pillars</div>
+        <div class="readiness-step"><span class="readiness-step-num">3</span> Receive actionable recommendations</div>
+      </div>
+
+      <div class="readiness-start-wrap">
+        <button id="readiness-start-btn" class="readiness-btn-primary">🚀 Start Assessment</button>
+        <p class="readiness-time-hint">⏱️ Takes about 5 minutes · 100% private · nothing leaves your browser</p>
+      </div>
+    </div>
+
+    {{/* ── ASSESSMENT (hidden until started) ── */}}
+    <div id="readiness-assessment" class="readiness-assessment" hidden>
+      {{/* Progress bar */}}
+      <div class="readiness-progress-wrap">
+        <div class="readiness-progress-bar">
+          <div class="readiness-progress-fill" id="readiness-progress-fill"></div>
+        </div>
+        <span class="readiness-progress-text" id="readiness-progress-text">Question 1 of 30</span>
+      </div>
+
+      {{/* Pillar indicator */}}
+      <div class="readiness-pillar-indicator" id="readiness-pillar-indicator">
+        <span class="pillar-icon" id="readiness-current-pillar-icon">🔑</span>
+        <span class="pillar-name" id="readiness-current-pillar-name">Licensing & Subscription</span>
+      </div>
+
+      {{/* Question card */}}
+      <div class="readiness-question-card" id="readiness-question-card">
+        <h3 class="readiness-question-text" id="readiness-question-text"></h3>
+        <p class="readiness-question-context" id="readiness-question-context"></p>
+        <div class="readiness-options" id="readiness-options"></div>
+      </div>
+
+      {{/* Navigation */}}
+      <div class="readiness-nav">
+        <button id="readiness-prev-btn" class="readiness-btn-secondary" disabled>← Previous</button>
+        <button id="readiness-next-btn" class="readiness-btn-primary" disabled>Next →</button>
+      </div>
+    </div>
+
+    {{/* ── RESULTS (hidden until assessment complete) ── */}}
+    <div id="readiness-results" class="readiness-results" hidden aria-live="polite">
+
+      {{/* Score dashboard */}}
+      <div class="readiness-score-section">
+        <div class="readiness-score-header">
+          <div class="readiness-score-ring" id="readiness-score-ring">
+            <svg viewBox="0 0 120 120" class="readiness-score-svg">
+              <circle class="readiness-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="readiness-ring-fg" id="readiness-ring-fg" cx="60" cy="60" r="52" />
+            </svg>
+            <div class="readiness-score-inner">
+              <span class="readiness-score-number" id="readiness-score-number">0</span>
+              <span class="readiness-score-max">/100</span>
+            </div>
+          </div>
+          <div class="readiness-score-label">
+            <h2 id="readiness-score-label">Calculating...</h2>
+            <p id="readiness-score-desc"></p>
+          </div>
+        </div>
+      </div>
+
+      {{/* Pillar breakdown */}}
+      <div class="readiness-breakdown">
+        <h2>📊 Pillar Breakdown</h2>
+        <div id="readiness-pillar-bars" class="readiness-pillar-bars"></div>
+      </div>
+
+      {{/* Recommendations */}}
+      <div class="readiness-recommendations">
+        <h2>📋 Recommended Actions</h2>
+        <div id="readiness-recommendations-list" class="readiness-recs-list"></div>
+      </div>
+
+      {{/* Cross-links */}}
+      <div class="readiness-crosslinks">
+        <h2>🔗 Helpful Resources</h2>
+        <div class="readiness-links-grid">
+          <a href="/licensing/" class="readiness-link-card">
+            <span class="readiness-link-icon">📜</span>
+            <span>Licensing Simplifier</span>
+            <small>Compare M365 plans & find the right licence</small>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements" target="_blank" rel="noopener" class="readiness-link-card">
+            <span class="readiness-link-icon">📖</span>
+            <span>Official Requirements</span>
+            <small>Microsoft Learn — Copilot prerequisites</small>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup" target="_blank" rel="noopener" class="readiness-link-card">
+            <span class="readiness-link-icon">⚙️</span>
+            <span>Setup Guide</span>
+            <small>Microsoft Learn — Copilot deployment guide</small>
+          </a>
+          <a href="/service-health/" class="readiness-link-card">
+            <span class="readiness-link-icon">🏥</span>
+            <span>Service Health</span>
+            <small>Check M365 service status before rollout</small>
+          </a>
+        </div>
+      </div>
+
+      {{/* Actions */}}
+      <div class="readiness-actions">
+        <button id="readiness-share-btn" class="readiness-btn-primary">🔗 Copy Shareable Link</button>
+        <button id="readiness-print-btn" class="readiness-btn-secondary">🖨️ Print Report</button>
+        <button id="readiness-restart-btn" class="readiness-btn-secondary">🔄 Retake Assessment</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/readiness.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+{{ end }}

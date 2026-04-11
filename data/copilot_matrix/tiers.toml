@@ -1,0 +1,83 @@
+# ─── Copilot Product Tiers ───
+# Each tier represents a distinct Copilot product/license level
+
+[[tiers]]
+id = "free"
+name = "Microsoft Copilot (Free)"
+short_name = "Free"
+emoji = "🆓"
+price = "Free"
+price_note = "Consumer version at copilot.microsoft.com"
+description = "Free AI assistant for personal tasks, web-grounded answers, image generation. No work data access."
+colour = "#9CA3AF"
+highlights = [
+  "Web-grounded AI chat",
+  "Image generation (DALL-E)",
+  "Available on web, Edge, Windows, Bing",
+  "No sign-in required for basic use",
+  "No work/org data access"
+]
+best_for = "Personal use, quick web lookups, casual AI chat"
+data_access = "Public web only"
+
+[[tiers]]
+id = "chat"
+name = "Copilot Chat"
+short_name = "Chat"
+emoji = "💬"
+price = "Included"
+price_note = "Included with any M365 subscription (E3, E5, Business Standard, etc.)"
+description = "Secure AI chat with enterprise data protection. Web-grounded. Available in M365 apps with limitations."
+colour = "#60A5FA"
+highlights = [
+  "Enterprise data protection",
+  "Available in Teams, Outlook, Word, Excel, PowerPoint",
+  "Web-grounded answers (not org data)",
+  "File upload for context",
+  "Copilot Pages for saving/sharing",
+  "Pay-as-you-go agents"
+]
+best_for = "Organisations wanting free AI chat with enterprise security"
+data_access = "Public web + manually uploaded files"
+important_note = "After April 15, 2026: orgs >2,000 users lose in-app access (web only)"
+
+[[tiers]]
+id = "pro"
+name = "Copilot Pro"
+short_name = "Pro"
+emoji = "⭐"
+price = "$20/user/month"
+price_note = "Individual subscription add-on to M365 Personal/Family"
+description = "Enhanced AI for individuals. Priority GPT-4o access, in-app Copilot in desktop Office apps, better image generation."
+colour = "#A78BFA"
+highlights = [
+  "Priority GPT-4o access",
+  "Copilot in Word, Excel, PowerPoint, Outlook, OneNote",
+  "Enhanced image generation",
+  "Works with M365 Personal/Family subscription",
+  "No org data access (personal only)"
+]
+best_for = "Individual power users, freelancers, students wanting premium AI in Office apps"
+data_access = "Public web + local files open in apps"
+
+[[tiers]]
+id = "m365"
+name = "Microsoft 365 Copilot"
+short_name = "M365 Copilot"
+emoji = "🚀"
+price = "$30/user/month"
+price_note = "Add-on to M365 E3/E5/Business Premium/Standard"
+description = "Enterprise AI assistant grounded in your organisation's data via Microsoft Graph. Full app integration, agents, analytics."
+colour = "#3B82F6"
+highlights = [
+  "Work-grounded (Microsoft Graph) — emails, files, meetings, chats",
+  "Full in-app integration across all M365 apps",
+  "Work/Web mode toggle",
+  "Built-in and custom agents (Copilot Studio)",
+  "Copilot Analytics for admins",
+  "SharePoint Advanced Management included",
+  "Meeting summarisation in Teams",
+  "Priority access and performance"
+]
+best_for = "Enterprises wanting AI deeply integrated with their work data"
+data_access = "Organisation data (Graph) + public web"

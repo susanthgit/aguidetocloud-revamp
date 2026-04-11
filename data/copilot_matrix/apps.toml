@@ -1,0 +1,153 @@
+# ─── Microsoft 365 Apps ───
+# Apps where Copilot features are available
+
+[[apps]]
+id = "word"
+name = "Word"
+emoji = "📝"
+colour = "#2B579A"
+category = "Productivity"
+description = "Document creation, editing, and collaboration"
+
+[[apps]]
+id = "excel"
+name = "Excel"
+emoji = "📊"
+colour = "#217346"
+category = "Productivity"
+description = "Spreadsheets, data analysis, and visualisation"
+
+[[apps]]
+id = "powerpoint"
+name = "PowerPoint"
+emoji = "📽️"
+colour = "#B7472A"
+category = "Productivity"
+description = "Presentations and slide decks"
+
+[[apps]]
+id = "outlook"
+name = "Outlook"
+emoji = "📧"
+colour = "#0078D4"
+category = "Communication"
+description = "Email, calendar, and scheduling"
+
+[[apps]]
+id = "teams"
+name = "Teams"
+emoji = "💜"
+colour = "#6264A7"
+category = "Communication"
+description = "Chat, meetings, calls, and collaboration"
+
+[[apps]]
+id = "onenote"
+name = "OneNote"
+emoji = "📓"
+colour = "#7719AA"
+category = "Productivity"
+description = "Digital notebooks and note-taking"
+
+[[apps]]
+id = "loop"
+name = "Loop"
+emoji = "🔄"
+colour = "#0E7A0D"
+category = "Collaboration"
+description = "Collaborative workspaces and components"
+
+[[apps]]
+id = "sharepoint"
+name = "SharePoint"
+emoji = "🌐"
+colour = "#0B6A0B"
+category = "Collaboration"
+description = "Intranet sites, document libraries, and content management"
+
+[[apps]]
+id = "onedrive"
+name = "OneDrive"
+emoji = "☁️"
+colour = "#0078D4"
+category = "Storage"
+description = "Cloud file storage and sharing"
+
+[[apps]]
+id = "planner"
+name = "Planner"
+emoji = "📋"
+colour = "#31752F"
+category = "Productivity"
+description = "Task and project management"
+
+[[apps]]
+id = "whiteboard"
+name = "Whiteboard"
+emoji = "🖊️"
+colour = "#51B0E0"
+category = "Collaboration"
+description = "Digital canvas for brainstorming and visual collaboration"
+
+[[apps]]
+id = "forms"
+name = "Forms"
+emoji = "📝"
+colour = "#077568"
+category = "Productivity"
+description = "Surveys, quizzes, and polls"
+
+[[apps]]
+id = "stream"
+name = "Stream"
+emoji = "🎥"
+colour = "#BC1948"
+category = "Communication"
+description = "Enterprise video platform"
+
+[[apps]]
+id = "copilot_chat"
+name = "Copilot Chat (Web/App)"
+emoji = "🤖"
+colour = "#3B82F6"
+category = "AI Chat"
+description = "Standalone Copilot chat experience at m365copilot.com or in the app"
+
+[[apps]]
+id = "edge"
+name = "Edge"
+emoji = "🌊"
+colour = "#0078D7"
+category = "Browser"
+description = "Microsoft Edge browser with Copilot sidebar"
+
+# ─── App Categories ───
+[[categories]]
+id = "Productivity"
+name = "Productivity"
+emoji = "⚡"
+
+[[categories]]
+id = "Communication"
+name = "Communication"
+emoji = "💬"
+
+[[categories]]
+id = "Collaboration"
+name = "Collaboration"
+emoji = "🤝"
+
+[[categories]]
+id = "Storage"
+name = "Storage"
+emoji = "☁️"
+
+[[categories]]
+id = "AI Chat"
+name = "AI Chat"
+emoji = "🤖"
+
+[[categories]]
+id = "Browser"
+name = "Browser"
+emoji = "🌊"
