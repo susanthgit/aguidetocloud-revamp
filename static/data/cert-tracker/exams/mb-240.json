@@ -1,0 +1,198 @@
+{
+  "code": "MB-240",
+  "title": "Microsoft Dynamics 365 Field Service Functional Consultant",
+  "level": "intermediate",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "updated_at": "2026-03-31 22:46:00+00:00",
+  "skills_date": "September 18, 2025",
+  "skills_at_a_glance": [
+    {
+      "area": "Configure field service applications",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Manage work orders and customer assets",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Schedule and dispatch work orders",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Manage the Field Service mobile app",
+      "weight": "5-10%"
+    },
+    {
+      "area": "Manage inventory and purchasing by using the built-in inventory management system",
+      "weight": "5-10%"
+    },
+    {
+      "area": "Implement Microsoft Power Platform",
+      "weight": "5-10%"
+    }
+  ],
+  "skills_detailed": {
+    "Configure field service applications (20–25%)": {
+      "Configure core Field Service components": [
+        "Implement security for standard user groups",
+        "Configure territories, postal codes, and organizational units",
+        "Configure characteristics and proficiency models",
+        "Implement resource roles and categories",
+        "Configure Field Service settings",
+        "Configure trades and trade coverages",
+        "Configure not-to-exceed values",
+        "Configure Copilot summary"
+      ],
+      "Configure product and service pricing": [
+        "Create and configure required product and service types",
+        "Configure minimum charge amounts and durations",
+        "Determine how pricing rules affect the price that is applied to a product on a work order",
+        "Associate products and services with price lists"
+      ],
+      "Configure bookable resources": [
+        "Create and manage bookable resources, including frontline workers",
+        "Configure start and end locations for resources",
+        "Configure pay types and rates",
+        "Configure working hours and working hour templates",
+        "Manage time off requests",
+        "Enable technician time tracking",
+        "Configure facilities and equipment"
+      ],
+      "Configure scheduling of multiple resources": [
+        "Configure and apply Requirement group templates",
+        "Set up resource pools and crews",
+        "Schedule and visualize pools, crews, and Requirement groups on the schedule board"
+      ],
+      "Integrate other tools with Field Service": [
+        "Implement Dynamics 365 Remote Assist for use with Field Service",
+        "Set up and use Dynamics 365 Remote Assist one-time call",
+        "Use Dynamics 365 Guides with work orders",
+        "Set up the Field Service Portal"
+      ]
+    },
+    "Manage work orders and customer assets (25–30%)": {
+      "Configure the work order lifecycle": [
+        "Configure work order types and work order resolutions",
+        "Configure booking status and work order sub-status values"
+      ],
+      "Create and manage work orders": [
+        "Create a work order",
+        "Add status and sub-status information to a work order",
+        "Organize work orders and resources by geography",
+        "Associate a work order with a price list, service-level agreement, and entitlement",
+        "Close a work order, including attaching a work order resolution",
+        "Create a work order by using Microsoft 365 Copilot in Outlook"
+      ],
+      "Manage incidents": [
+        "Configure incident types and suggestions",
+        "Assign requirement group templates to incident types",
+        "Add service tasks to incidents",
+        "Add products and services to incidents"
+      ],
+      "Create and manage agreements": [
+        "Configure agreements",
+        "Configure automatic generation of work orders",
+        "Configure agreement booking setup",
+        "Configure agreement invoicing",
+        "Create entitlements for agreements"
+      ],
+      "Manage inspections": [
+        "Create inspection templates",
+        "Associate inspections with work orders and customer assets",
+        "Create inspections without work orders"
+      ],
+      "Configure customer assets": [
+        "Create and manage customer assets",
+        "Configure products to enable automatic creation of customer assets",
+        "Create child assets",
+        "Configure 3D asset models",
+        "Create and manage functional locations",
+        "Configure properties and property templates"
+      ]
+    },
+    "Schedule and dispatch work orders (15–20%)": {
+      "Manage scheduling options": [
+        "Schedule work orders by using the schedule board and schedule assistant",
+        "Configure fulfillment preferences",
+        "Configure quick scheduling (“quick book“)",
+        "Configure resource requirements for multi-day scheduling",
+        "Include appointments in scheduling"
+      ],
+      "Configure, customize, and manage schedule boards": [
+        "Configure and manage schedule boards, including customizing views",
+        "Configure the Requirements panel",
+        "Configure schedule board settings",
+        "Customize a schedule board"
+      ],
+      "Configure the schedule assistant": [
+        "Configure schedule assistant settings",
+        "Apply filtering constraints",
+        "Troubleshoot the schedule assistant"
+      ],
+      "Configure Universal Resource Scheduling": [
+        "Enable scheduling for a table, including configuring the metadata",
+        "Configure geocoding for a custom table",
+        "Configure booking timestamps, booking journals, and actuals"
+      ]
+    },
+    "Manage the Field Service mobile app (5–10%)": {
+      "Deliver work orders by using the mobile app": [
+        "Complete work orders, including tasks, booking statuses, follow-up work orders, signatures, images, and Field Service technician reports",
+        "Service and maintain customer assets, including IoT devices",
+        "Perform inspections, including adding ad hoc inspections",
+        "Manage working offline",
+        "Perform time entry",
+        "Launch related apps, including Dynamics 365 Remote Assist and Guides"
+      ],
+      "Set up the mobile app": [
+        "Configure security roles",
+        "Customize the mobile app including forms, views, pages, and navigation",
+        "Enable and configure location tracking and geofencing",
+        "Configure mobile offline profiles, online mode, and synchronization",
+        "Configure push notifications",
+        "Configure barcode features",
+        "Install the mobile app",
+        "Configure technician service reports"
+      ]
+    },
+    "Manage inventory and purchasing by using the built-in inventory management system (5–10%)": {
+      "Manage inventory and warehouses": [
+        "Set up inventory and warehouses",
+        "View product inventory",
+        "Adjust inventory levels",
+        "Transfer inventory between warehouses",
+        "Manually update inventory by using inventory journals"
+      ],
+      "Manage purchasing and product returns": [
+        "Create purchase orders",
+        "Create a list of receivable products for a purchase order",
+        "Create return merchandise authorizations",
+        "Create return to vendor transactions",
+        "Finalize returns"
+      ]
+    },
+    "Implement Microsoft Power Platform (5–10%)": {
+      "Configure model-driven apps": [
+        "Create and configure forms",
+        "Create and configure views",
+        "Configure navigation"
+      ],
+      "Create custom apps and automations": [
+        "Create task-specific canvas apps and custom pages",
+        "Embed apps in Field Service",
+        "Use Power Automate cloud flows to automate tasks and enhance Field Service"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-240",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/practice/assessment?assessment-type=practice"
+}

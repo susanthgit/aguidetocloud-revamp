@@ -1,0 +1,127 @@
+{
+  "code": "PL-900",
+  "title": "Microsoft Power Platform Fundamentals",
+  "level": "beginner",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "power-platform"
+  ],
+  "category": "Power Platform",
+  "updated_at": "2025-12-05 03:46:00+00:00",
+  "skills_date": "June 20, 2025",
+  "skills_at_a_glance": [
+    {
+      "area": "Describe the business value of Microsoft Power Platform",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Manage the Microsoft Power Platform environment",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Demonstrate the capabilities of Power Apps",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Demonstrate the capabilities of Power Automate",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Demonstrate the capabilities of Power Pages",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Describe the business value of Microsoft Power Platform (15–20%)": {
+      "Describe the business value of Microsoft Power Platform services": [
+        "Describe the value of Microsoft Power Apps to build applications",
+        "Describe the value of Microsoft Power Automate to automate processes",
+        "Describe the value of Microsoft Power Pages to build websites",
+        "Describe the value of connectors to integrate services and data",
+        "Describe the value of Microsoft Dataverse to organize business data",
+        "Describe the value of Copilots and generative AI features in Microsoft Power Platform",
+        "Describe the value of Copilot Studio",
+        "Describe the value of Power FX as a low-code solution"
+      ],
+      "Describe the business value of extending business solutions by using Microsoft Power Platform": [
+        "Describe how Microsoft Power Platform business solutions work together with Microsoft 365 apps and services, including Microsoft Teams",
+        "Describe how Microsoft Power Platform services work together"
+      ]
+    },
+    "Manage the Microsoft Power Platform environment (15–20%)": {
+      "Describe Microsoft Dataverse": [
+        "Describe differences between traditional databases and Dataverse",
+        "Describe tables, columns, and relationships in Dataverse",
+        "Describe the options for business logic in Dataverse",
+        "Create and modify tables and columns through conversations",
+        "Describe options for importing and exporting data"
+      ],
+      "Describe Microsoft Power Platform administration and governance": [
+        "Describe the Microsoft Power Platform security model",
+        "Describe environments",
+        "Describe the different Microsoft Power Platform admin centers and portals",
+        "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines"
+      ]
+    },
+    "Demonstrate the capabilities of Power Apps (25–30%)": {
+      "Identify Power Apps capabilities": [
+        "Describe use cases for and capabilities of canvas apps",
+        "Describe use cases for and capabilities of model-driven apps",
+        "Explore model-driven app features"
+      ],
+      "Build a canvas app": [
+        "Connect to data sources by using connectors",
+        "Describe common controls",
+        "Build responsive pages by using containers",
+        "Describe the capabilities of Copilot controls",
+        "Share a canvas app"
+      ],
+      "Build a model-driven app": [
+        "Create a model-driven app from tables",
+        "Modify forms",
+        "Create and modify views",
+        "Share a model-driven app"
+      ]
+    },
+    "Demonstrate the capabilities of Power Automate (15–20%)": {
+      "Identify Power Automate components": [
+        "Describe use cases for cloud and desktop flows",
+        "Describe use cases for cloud flow templates",
+        "Describe how Power Automate cloud flows use connector triggers and actions",
+        "Describe Power Automate use cases for approvals, Microsoft Teams, Outlook, SharePoint, Forms, and document automation",
+        "Describe the Power Automate apps including Power Automate for Desktop, Power Automate mobile, and the Power Automate maker portal",
+        "Describe actions for Power Automate desktop flows",
+        "Describe Process Mining",
+        "Describe loops and branching in cloud flows"
+      ],
+      "Build a Power Automate flow": [
+        "Create a cloud flow by using an instant, automated, or scheduled trigger",
+        "Create and modify cloud flows through conversations",
+        "Run and monitor cloud flows",
+        "Test a cloud flow",
+        "Share a cloud flow"
+      ]
+    },
+    "Demonstrate the capabilities of Power Pages (10–15%)": {
+      "Describe the capabilities of Power Pages": [
+        "Describe use cases for Power Pages",
+        "Describe methods for creating sites",
+        "Describe Power Pages security concepts"
+      ],
+      "Create a Power Pages site": [
+        "Create and modify Power Pages sites by using Copilot",
+        "Describe design studio workspaces",
+        "Create and modify pages",
+        "Configure Power Pages components",
+        "Modify a Power Pages theme"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-900/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-900",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-900/practice/assessment?assessment-type=practice"
+}

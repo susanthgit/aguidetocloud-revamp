@@ -1085,6 +1085,10 @@ a:hover {
   margin: 0 auto;
   padding: 3rem 2rem;
 }
+/* About page: magenta gradient top */
+.is-about main {
+  background: linear-gradient(180deg, color-mix(in srgb, #ff66ff 50%, #0f0f1a) 0%, var(--bg-primary) 300px);
+}
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

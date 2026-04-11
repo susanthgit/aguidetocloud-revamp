@@ -1,0 +1,1604 @@
+{
+  "generated_at": "2026-04-11T03:21:31Z",
+  "exam_count": 41,
+  "categories": [
+    "AI",
+    "Azure",
+    "Data",
+    "Dynamics 365",
+    "Microsoft 365",
+    "Power Platform",
+    "Security"
+  ],
+  "last_change_detected": "",
+  "total_changes": 0,
+  "exams": [
+    {
+      "code": "AI-900",
+      "title": "Microsoft Azure AI Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "ai-engineer",
+        "data-scientist"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "updated_at": "2026-03-16 02:02:00+00:00",
+      "skills_date": "May 2, 2025",
+      "skill_areas": 5,
+      "total_objectives": 40,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe Artificial Intelligence workloads and considerations",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe fundamental principles of machine learning on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of computer vision workloads on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of Natural Language Processing (NLP) workloads on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of generative AI workloads on Azure",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900"
+    },
+    {
+      "code": "AI-102",
+      "title": "Designing and Implementing a Microsoft Azure AI Solution",
+      "level": "intermediate",
+      "roles": [
+        "ai-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "updated_at": "2026-03-16 02:02:00+00:00",
+      "skills_date": "December 23, 2025",
+      "skill_areas": 6,
+      "total_objectives": 106,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and manage an Azure AI solution",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement generative AI solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement an agentic solution",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Implement computer vision solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement natural language processing solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement knowledge mining and information extraction solutions",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-102"
+    },
+    {
+      "code": "AZ-900",
+      "title": "Microsoft Azure Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "administrator",
+        "developer",
+        "solution-architect"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2025-12-16 17:07:00+00:00",
+      "skills_date": "January 14, 2026",
+      "skill_areas": 3,
+      "total_objectives": 57,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe cloud concepts",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Describe Azure architecture and services",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Describe Azure management and governance",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-900"
+    },
+    {
+      "code": "AZ-104",
+      "title": "Microsoft Azure Administrator",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-19 18:11:00+00:00",
+      "skills_date": "April 17, 2026",
+      "skill_areas": 5,
+      "total_objectives": 82,
+      "skills_at_a_glance": [
+        {
+          "area": "Manage Azure identities and governance",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement and manage storage",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Deploy and manage Azure compute resources",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement and manage virtual networking",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Monitor and maintain Azure resources",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-104/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-104"
+    },
+    {
+      "code": "AZ-140",
+      "title": "Configuring and Operating Microsoft Azure Virtual Desktop",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "azure-virtual-desktop"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-19 18:11:00+00:00",
+      "skills_date": "April 17, 2026",
+      "skill_areas": 4,
+      "total_objectives": 78,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and implement an Azure Virtual Desktop infrastructure",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Plan and implement identity and security",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Plan and implement user environments and apps",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Monitor and maintain an Azure Virtual Desktop infrastructure",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-140"
+    },
+    {
+      "code": "AZ-204",
+      "title": "Developing Solutions for Microsoft Azure",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-16 02:02:00+00:00",
+      "skills_date": "January 14, 2026",
+      "skill_areas": 5,
+      "total_objectives": 37,
+      "skills_at_a_glance": [
+        {
+          "area": "Develop Azure compute solutions",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Develop for Azure storage",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement Azure security",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Monitor, troubleshoot, and optimize Azure solutions",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Connect to and consume Azure services and third-party services",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204"
+    },
+    {
+      "code": "AZ-500",
+      "title": "Microsoft Azure Security Technologies",
+      "level": "intermediate",
+      "roles": [
+        "security-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-16 02:02:00+00:00",
+      "skills_date": "January 22, 2026",
+      "skill_areas": 4,
+      "total_objectives": 78,
+      "skills_at_a_glance": [
+        {
+          "area": "Secure identity and access",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Secure networking",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Secure compute, storage, and databases",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Secure Azure using Microsoft Defender for Cloud and Microsoft Sentinel",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-500/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-500"
+    },
+    {
+      "code": "AZ-700",
+      "title": "Designing and Implementing Microsoft Azure Networking Solutions",
+      "level": "intermediate",
+      "roles": [
+        "network-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-26 06:04:00+00:00",
+      "skills_date": "April 24, 2026",
+      "skill_areas": 5,
+      "total_objectives": 136,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement core networking infrastructure",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design, implement, and manage connectivity services",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Design and implement application delivery services",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Design and implement private access to Azure services",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Design and implement Azure network security services",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-700"
+    },
+    {
+      "code": "AZ-800",
+      "title": "Administering Windows Server Hybrid Core Infrastructure",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "windows-server"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-04-02 15:58:00+00:00",
+      "skills_date": "January 21, 2026",
+      "skill_areas": 5,
+      "total_objectives": 101,
+      "skills_at_a_glance": [
+        {
+          "area": "Deploy and manage Active Directory Domain Services (AD DS) in on-premises and cloud environments",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Manage Windows Servers and workloads in a hybrid environment",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage virtual machines and containers",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement and manage an on-premises and hybrid networking infrastructure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Manage storage and file services",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-800/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-800"
+    },
+    {
+      "code": "AZ-801",
+      "title": "Configuring Windows Server Hybrid Advanced Services",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "windows-server"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-04-02 15:58:00+00:00",
+      "skills_date": "October 6, 2025",
+      "skill_areas": 5,
+      "total_objectives": 115,
+      "skills_at_a_glance": [
+        {
+          "area": "Secure Windows Server on-premises and hybrid infrastructures",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Implement and manage Windows Server high availability",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement disaster recovery",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Migrate servers and workloads",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Monitor and troubleshoot Windows Server environments",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-801"
+    },
+    {
+      "code": "AZ-120",
+      "title": "Planning and Administering Microsoft Azure for SAP Workloads",
+      "level": "advanced",
+      "roles": [
+        "administrator",
+        "solution-architect"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-19 18:11:00+00:00",
+      "skills_date": "April 17, 2026",
+      "skill_areas": 4,
+      "total_objectives": 78,
+      "skills_at_a_glance": [
+        {
+          "area": "Migrate SAP workloads to Azure",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design and implement an infrastructure to support SAP workloads on Azure",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design and implement high availability and disaster recovery (HADR)",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Maintain SAP workloads on Azure",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-120/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-120"
+    },
+    {
+      "code": "AZ-305",
+      "title": "Designing Microsoft Azure Infrastructure Solutions",
+      "level": "advanced",
+      "roles": [
+        "solution-architect"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-19 18:11:00+00:00",
+      "skills_date": "April 17, 2026",
+      "skill_areas": 4,
+      "total_objectives": 49,
+      "skills_at_a_glance": [
+        {
+          "area": "Design identity, governance, and monitoring solutions",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design data storage solutions",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Design business continuity solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Design infrastructure solutions",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-305/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-305"
+    },
+    {
+      "code": "AZ-400",
+      "title": "Designing and Implementing Microsoft DevOps Solutions",
+      "level": "advanced",
+      "roles": [
+        "devops-engineer"
+      ],
+      "products": [
+        "azure",
+        "azure-devops"
+      ],
+      "category": "Azure",
+      "updated_at": "2026-03-26 06:04:00+00:00",
+      "skills_date": "April 24, 2026",
+      "skill_areas": 5,
+      "total_objectives": 86,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement processes and communications",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Design and implement a source control strategy",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Design and implement build and release pipelines",
+          "weight": "50-55%"
+        },
+        {
+          "area": "Develop a security and compliance plan",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement an instrumentation strategy",
+          "weight": "5-10%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-400"
+    },
+    {
+      "code": "DP-900",
+      "title": "Microsoft Azure Data Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "data-engineer",
+        "database-administrator"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Data",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "November 1, 2024",
+      "skill_areas": 4,
+      "total_objectives": 29,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe core data concepts",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Identify considerations for relational data on Azure",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Describe considerations for working with non-relational data on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe an analytics workload on Azure",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-900"
+    },
+    {
+      "code": "DP-100",
+      "title": "Designing and Implementing a Data Science Solution on Azure",
+      "level": "intermediate",
+      "roles": [
+        "data-scientist"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Data",
+      "updated_at": "2026-03-16 07:23:00+00:00",
+      "skills_date": "April 11, 2025",
+      "skill_areas": 4,
+      "total_objectives": 64,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and prepare a machine learning solution",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Explore data, and run experiments",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Train and deploy models",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Optimize language models for AI applications",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100"
+    },
+    {
+      "code": "DP-300",
+      "title": "Administering Microsoft Azure SQL Solutions",
+      "level": "intermediate",
+      "roles": [
+        "database-administrator"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Data",
+      "updated_at": "2026-03-26 06:04:00+00:00",
+      "skills_date": "April 24, 2026",
+      "skill_areas": 5,
+      "total_objectives": 94,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and implement data platform resources",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement a secure environment",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Monitor, configure, and optimize database resources",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Configure and manage automation of tasks",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Plan and configure a high availability and disaster recovery (HA/DR) environment",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-300"
+    },
+    {
+      "code": "DP-420",
+      "title": "Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "azure",
+        "azure-cosmos-db"
+      ],
+      "category": "Data",
+      "updated_at": "2026-03-20 17:49:00+00:00",
+      "skills_date": "April 20, 2026",
+      "skill_areas": 5,
+      "total_objectives": 132,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement data models",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Design and implement data distribution",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Integrate an Azure Cosmos DB solution",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Optimize an Azure Cosmos DB solution",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Maintain an Azure Cosmos DB solution",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-420"
+    },
+    {
+      "code": "MB-210",
+      "title": "Microsoft Dynamics 365 Sales Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2024-09-30 17:14:00+00:00",
+      "skills_date": "April 19, 2024",
+      "skill_areas": 3,
+      "total_objectives": 167,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure Dynamics 365 Sales",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Manage core sales features",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Configure additional tools and services",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-210"
+    },
+    {
+      "code": "MB-220",
+      "title": "Microsoft Dynamics 365 Customer Insights (Journeys) Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2024-09-30 17:14:00+00:00",
+      "skills_date": "March 20, 2024",
+      "skill_areas": 6,
+      "total_objectives": 252,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure Dynamics 365 Customer Insights – Journeys",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage segments and preferences",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Manage leads, contacts, and accounts",
+          "weight": "1-5%"
+        },
+        {
+          "area": "Manage marketing channels",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Manage journeys",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage events and webinars",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-220/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-220"
+    },
+    {
+      "code": "MB-230",
+      "title": "Microsoft Dynamics 365 Customer Service Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2026-02-09 23:06:00+00:00",
+      "skills_date": "March 11, 2026",
+      "skill_areas": 3,
+      "total_objectives": 50,
+      "skills_at_a_glance": [
+        {
+          "area": "Manage cases in Customer Service",
+          "weight": "51-55%"
+        },
+        {
+          "area": "Configure representative experience and routing",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Extend Customer Service",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-230/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-230"
+    },
+    {
+      "code": "MB-240",
+      "title": "Microsoft Dynamics 365 Field Service Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2026-03-31 22:46:00+00:00",
+      "skills_date": "September 18, 2025",
+      "skill_areas": 6,
+      "total_objectives": 97,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure field service applications",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage work orders and customer assets",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Schedule and dispatch work orders",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Manage the Field Service mobile app",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Manage inventory and purchasing by using the built-in inventory management system",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Implement Microsoft Power Platform",
+          "weight": "5-10%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-240"
+    },
+    {
+      "code": "MB-310",
+      "title": "Microsoft Dynamics 365 Finance Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "July 25, 2025",
+      "skill_areas": 5,
+      "total_objectives": 108,
+      "skills_at_a_glance": [
+        {
+          "area": "Implement financial management",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Implement accounts receivable, credit, collections, and subscription billing",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement and manage accounts payable and expenses",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage budgeting",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage fixed assets",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-310/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-310"
+    },
+    {
+      "code": "MB-330",
+      "title": "Microsoft Dynamics 365 Supply Chain Management Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "June 20, 2025",
+      "skill_areas": 5,
+      "total_objectives": 101,
+      "skills_at_a_glance": [
+        {
+          "area": "Implement product information management",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Implement inventory and asset management",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement and manage supply chain processes",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement warehouse management and transportation management",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement master planning",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-330"
+    },
+    {
+      "code": "MB-500",
+      "title": "Microsoft Dynamics 365 Finance and Operations Apps Developer",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2025-12-31 16:52:00+00:00",
+      "skills_date": "January 30, 2026",
+      "skill_areas": 7,
+      "total_objectives": 89,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan the architecture and solution design",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Apply developer tools",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Design and develop AOT elements",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Develop and test code",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement reporting",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Integrate and manage data solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement security and optimize performance",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-500/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-500"
+    },
+    {
+      "code": "MB-800",
+      "title": "Microsoft Dynamics 365 Business Central Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "December 17, 2025",
+      "skill_areas": 4,
+      "total_objectives": 119,
+      "skills_at_a_glance": [
+        {
+          "area": "Set up Business Central",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Configure financials",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Configure sales and purchasing",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Perform Business Central operations",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-800"
+    },
+    {
+      "code": "MS-900",
+      "title": "Microsoft 365 Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "Microsoft 365",
+      "updated_at": "2026-03-31 22:46:00+00:00",
+      "skills_date": "April 30, 2025",
+      "skill_areas": 4,
+      "total_objectives": 41,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe cloud concepts",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Describe Microsoft 365 apps and services",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Describe security, compliance, privacy, and trust in Microsoft 365",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Describe Microsoft 365 pricing, licensing, and support",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-900"
+    },
+    {
+      "code": "MD-102",
+      "title": "Microsoft 365 Endpoint Administrator",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365",
+        "intune"
+      ],
+      "category": "Microsoft 365",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 28, 2026",
+      "skill_areas": 4,
+      "total_objectives": 61,
+      "skills_at_a_glance": [
+        {
+          "area": "Prepare infrastructure for devices",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Manage and maintain devices",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Manage applications",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Protect devices",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/md-102"
+    },
+    {
+      "code": "MS-102",
+      "title": "Microsoft 365 Administrator",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "Microsoft 365",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 28, 2026",
+      "skill_areas": 4,
+      "total_objectives": 54,
+      "skills_at_a_glance": [
+        {
+          "area": "Deploy and manage a Microsoft 365 tenant",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Implement and manage Microsoft Entra identity and access",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Manage security and threats by using Microsoft Defender XDR",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Manage compliance by using Microsoft Purview",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-102"
+    },
+    {
+      "code": "MS-700",
+      "title": "Managing Microsoft Teams",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365",
+        "teams"
+      ],
+      "category": "Microsoft 365",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 28, 2026",
+      "skill_areas": 4,
+      "total_objectives": 97,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure and manage a Teams environment",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Manage teams, channels, chats, and apps",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage meetings and calling",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Monitor, report on, and troubleshoot Teams",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-700"
+    },
+    {
+      "code": "MS-721",
+      "title": "Collaboration Communications Systems Engineer",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365",
+        "teams"
+      ],
+      "category": "Microsoft 365",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 28, 2026",
+      "skill_areas": 4,
+      "total_objectives": 173,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and design collaboration communications systems",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Configure and manage Teams meetings, webinars, and town halls",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Configure and manage Teams Phone",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Configure and manage Teams Rooms and devices",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-721/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-721"
+    },
+    {
+      "code": "PL-900",
+      "title": "Microsoft Power Platform Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "power-platform"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "June 20, 2025",
+      "skill_areas": 5,
+      "total_objectives": 52,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe the business value of Microsoft Power Platform",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Manage the Microsoft Power Platform environment",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Demonstrate the capabilities of Power Apps",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Demonstrate the capabilities of Power Automate",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Demonstrate the capabilities of Power Pages",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-900"
+    },
+    {
+      "code": "PL-200",
+      "title": "Microsoft Power Platform Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "power-platform"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2026-03-31 22:46:00+00:00",
+      "skills_date": "December 26, 2024",
+      "skill_areas": 4,
+      "total_objectives": 56,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure Microsoft Dataverse",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Create apps by using Microsoft Power Apps",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Create and manage logic and process automation",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Manage environments",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-200/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-200"
+    },
+    {
+      "code": "PL-300",
+      "title": "Microsoft Power BI Data Analyst",
+      "level": "intermediate",
+      "roles": [
+        "data-analyst"
+      ],
+      "products": [
+        "power-bi"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2026-03-20 17:49:00+00:00",
+      "skills_date": "April 20, 2026",
+      "skill_areas": 4,
+      "total_objectives": 78,
+      "skills_at_a_glance": [
+        {
+          "area": "Prepare the data",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Model the data",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Visualize and analyze the data",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Manage and secure Power BI",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-300"
+    },
+    {
+      "code": "PL-400",
+      "title": "Microsoft Power Platform Developer",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "power-platform"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2026-03-02 19:59:00+00:00",
+      "skills_date": "March 19, 2026",
+      "skill_areas": 6,
+      "total_objectives": 76,
+      "skills_at_a_glance": [
+        {
+          "area": "Create a technical design",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Build Power Platform solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement Power Apps improvements",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Extend the user experience",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Extend the platform",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Develop integrations",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-400/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-400"
+    },
+    {
+      "code": "PL-500",
+      "title": "Microsoft Power Automate RPA Developer",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "power-automate"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2026-03-31 22:46:00+00:00",
+      "skills_date": "July 8, 2024",
+      "skill_areas": 3,
+      "total_objectives": 156,
+      "skills_at_a_glance": [
+        {
+          "area": "Design automations",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Develop automations",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Deploy and manage automations",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500"
+    },
+    {
+      "code": "PL-600",
+      "title": "Microsoft Power Platform Solution Architect",
+      "level": "advanced",
+      "roles": [
+        "solution-architect"
+      ],
+      "products": [
+        "power-platform"
+      ],
+      "category": "Power Platform",
+      "updated_at": "2026-03-31 22:46:00+00:00",
+      "skills_date": "September 23, 2024",
+      "skill_areas": 3,
+      "total_objectives": 126,
+      "skills_at_a_glance": [
+        {
+          "area": "Perform solution envisioning and requirement analysis",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Architect a solution",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Implement the solution",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-600"
+    },
+    {
+      "code": "SC-900",
+      "title": "Microsoft Security, Compliance, and Identity Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "m365",
+        "entra-id"
+      ],
+      "category": "Security",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "November 7, 2025",
+      "skill_areas": 4,
+      "total_objectives": 59,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe the concepts of security, compliance, and identity",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Describe the capabilities of Microsoft Entra",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Describe the capabilities of Microsoft security solutions",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Describe the capabilities of Microsoft compliance solutions",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-900"
+    },
+    {
+      "code": "SC-200",
+      "title": "Microsoft Security Operations Analyst",
+      "level": "intermediate",
+      "roles": [
+        "security-engineer"
+      ],
+      "products": [
+        "azure",
+        "m365"
+      ],
+      "category": "Security",
+      "updated_at": "2026-03-19 18:11:00+00:00",
+      "skills_date": "April 16, 2026",
+      "skill_areas": 3,
+      "total_objectives": 54,
+      "skills_at_a_glance": [
+        {
+          "area": "Manage a security operations environment",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Respond to security incidents",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Perform threat hunting",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-200/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-200"
+    },
+    {
+      "code": "SC-300",
+      "title": "Microsoft Identity and Access Administrator",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "entra-id"
+      ],
+      "category": "Security",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 27, 2026",
+      "skill_areas": 4,
+      "total_objectives": 98,
+      "skills_at_a_glance": [
+        {
+          "area": "Implement and manage user identities",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement authentication and access management",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Plan and implement workload identities",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Plan and automate identity governance",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-300"
+    },
+    {
+      "code": "SC-400",
+      "title": "Administering Information Protection and Compliance in Microsoft 365",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "Security",
+      "updated_at": "2025-08-08 14:53:00+00:00",
+      "skills_date": "August 22, 2023",
+      "skill_areas": 0,
+      "total_objectives": 185,
+      "skills_at_a_glance": [],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-400/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-400"
+    },
+    {
+      "code": "SC-100",
+      "title": "Microsoft Cybersecurity Architect",
+      "level": "advanced",
+      "roles": [
+        "security-engineer",
+        "solution-architect"
+      ],
+      "products": [
+        "azure",
+        "m365"
+      ],
+      "category": "Security",
+      "updated_at": "2026-03-27 23:35:00+00:00",
+      "skills_date": "April 27, 2026",
+      "skill_areas": 4,
+      "total_objectives": 78,
+      "skills_at_a_glance": [
+        {
+          "area": "Design solutions that align with security best practices and priorities",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Design security operations, identity, and compliance capabilities",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design security solutions for infrastructure",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design security solutions for applications and data",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-100"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "code": "MD-102",
+  "title": "Microsoft 365 Endpoint Administrator",
+  "level": "intermediate",
+  "roles": [
+    "administrator"
+  ],
+  "products": [
+    "m365",
+    "intune"
+  ],
+  "category": "Microsoft 365",
+  "updated_at": "2026-03-27 23:35:00+00:00",
+  "skills_date": "April 28, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Prepare infrastructure for devices",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Manage and maintain devices",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Manage applications",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Protect devices",
+      "weight": "15-20%"
+    }
+  ],
+  "skills_detailed": {
+    "Prepare infrastructure for devices (25–30%)": {
+      "Add devices to Microsoft Entra ID": [
+        "Choose an appropriate device join type",
+        "Join devices to Microsoft Entra ID",
+        "Register devices to Microsoft Entra ID",
+        "Plan and implement groups for devices in Microsoft Entra ID"
+      ],
+      "Enroll devices to Microsoft Intune": [
+        "Configure enrollment settings",
+        "Configure automatic enrollment for Windows and bulk enrollment for iOS/iPadOS and Android",
+        "Configure enrollment profiles for Android devices, including fully managed, dedicated, corporate owned, and work profile"
+      ],
+      "Implement identity and compliance": [
+        "Manage roles in Intune",
+        "Implement compliance policies for all supported device platforms by using Intune",
+        "Implement Microsoft Entra Conditional Access policies that require a compliance status",
+        "Configure Windows Hello for Business",
+        "Implement and manage Windows Local Administrator Password Solution (Windows LAPS)",
+        "Manage the membership of local groups on Windows devices by using Intune"
+      ]
+    },
+    "Manage and maintain devices (30–35%)": {
+      "Deploy and upgrade Windows clients by using cloud-based tools": [
+        "Choose between Windows Autopilot and provisioning packages",
+        "Choose a Windows Autopilot deployment mode",
+        "Apply a device name template",
+        "Implement Windows client deployment by using Windows Autopilot",
+        "Create an Enrollment Status Page (ESP)",
+        "Plan and implement provisioning packages",
+        "Plan and implement device upgrades for Windows 11",
+        "Implement a Windows 365 Cloud PC deployment"
+      ],
+      "Plan and implement device configuration profiles": [
+        "Create device configuration profiles for Windows devices, including importing ADMX files",
+        "Create device configuration profiles for Android devices",
+        "Create device configuration profiles for iOS/iPadOS devices",
+        "Create device configuration profiles for macOS devices",
+        "Create device configuration profiles for Windows 11 Enterprise multi-session devices",
+        "Target a profile by using filters"
+      ],
+      "Implement Intune Suite add-on capabilities": [
+        "Configure Endpoint Privilege Management",
+        "Manage applications by using the Enterprise App Catalog",
+        "Implement Microsoft Intune Advanced Analytics",
+        "Configure Microsoft Intune Remote Help",
+        "Identify use cases for Microsoft Cloud PKI",
+        "Implement Microsoft Tunnel for Mobile Application Management"
+      ],
+      "Perform remote actions on devices": [
+        "Sync, restart, retire, or wipe devices",
+        "Perform bulk remote actions",
+        "Update Microsoft Defender Antivirus security intelligence",
+        "Rotate BitLocker recovery keys",
+        "Run a device query by using KQL"
+      ]
+    },
+    "Manage applications (15–20%)": {
+      "Deploy and update apps": [
+        "Prepare applications for deployment by using Intune",
+        "Deploy apps by using Intune",
+        "Deploy Microsoft 365 Apps by using Intune",
+        "Configure policies for Office apps",
+        "Deploy Microsoft 365 Apps as part of a Windows Autopilot deployment by using the Office Deployment Tool (ODT) or Office Customization Tool (OCT)",
+        "Manage Microsoft 365 Apps by using the Microsoft 365 Apps admin center",
+        "Deploy apps from platform-specific app stores by using Intune"
+      ],
+      "Plan and implement app protection and app configuration policies": [
+        "Plan and implement app protection policies",
+        "Implement Microsoft Entra Conditional Access policies for app protection policies",
+        "Plan and implement app configuration policies for managed apps and managed devices"
+      ]
+    },
+    "Protect devices (15–20%)": {
+      "Configure endpoint security": [
+        "Create antivirus policies",
+        "Create disk encryption policies",
+        "Create firewall policies",
+        "Configure Attack surface reduction policies",
+        "Plan and implement security baselines",
+        "Integrate Intune with Microsoft Defender for Endpoint",
+        "Onboard devices into Microsoft Defender for Endpoint"
+      ],
+      "Manage device updates by using Intune": [
+        "Plan for device updates",
+        "Create and manage update rings by using Intune",
+        "Create and manage update policies by using Intune, including iOS/iPadOS and macOS",
+        "Manage Android updates by using configuration profiles or firmware-over-the-air (FOTA) deployments",
+        "Configure Windows client Delivery Optimization by using Intune",
+        "Monitor updates"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/md-102",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/practice/assessment?assessment-type=practice"
+}

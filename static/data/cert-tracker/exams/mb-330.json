@@ -1,0 +1,188 @@
+{
+  "code": "MB-330",
+  "title": "Microsoft Dynamics 365 Supply Chain Management Functional Consultant",
+  "level": "intermediate",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "updated_at": "2025-12-05 03:46:00+00:00",
+  "skills_date": "June 20, 2025",
+  "skills_at_a_glance": [
+    {
+      "area": "Implement product information management",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Implement inventory and asset management",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Implement and manage supply chain processes",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Implement warehouse management and transportation management",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Implement master planning",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Implement product information management (25–30%)": {
+      "Create and manage products": [
+        "Create and release products and product variants",
+        "Create and apply product templates",
+        "Create bills of materials (BOMs) and BOM versions",
+        "Create and configure category hierarchies",
+        "Create and manage product states during the lifecycle of a product",
+        "Create and manage product attributes"
+      ],
+      "Configure prerequisites for products": [
+        "Configure inventory dimensions, including storage, tracking, and product dimension groups",
+        "Configure item model groups",
+        "Configure reservation hierarchies",
+        "Configure unit sequence groups"
+      ],
+      "Configure additional product details": [
+        "Create and assign bar codes and Global Trade Item Number (GTIN) codes",
+        "Configure product unit conversions",
+        "Configure default order settings",
+        "Configure product filter codes for warehouse operations"
+      ],
+      "Manage inventory pricing and costing": [
+        "Configure and maintain costing versions for standard and planned costs",
+        "Configure price groups",
+        "Configure items with standard costs",
+        "Configure default item prices, purchase and sales prices, and discounts in trade agreements"
+      ]
+    },
+    "Implement inventory and asset management (20–25%)": {
+      "Manage and process inventory activities": [
+        "Create and process journals, including BOMs, item arrival, output order, transfer, movement, inventory adjustment, and counting journals",
+        "Create and process transfer orders",
+        "Configure and manage the inventory closing and adjustment process",
+        "Apply and remove inventory blocking manually",
+        "Create batch disposition codes",
+        "Configure and run inventory reports including ABC classification"
+      ],
+      "Manage quality": [
+        "Configure and process nonconformances",
+        "Configure quality associations",
+        "Configure components for the quality control process",
+        "Process quality orders",
+        "Process quarantine orders"
+      ],
+      "Configure asset management": [
+        "Create and manage work orders",
+        "Create and configure assets and asset types",
+        "View and manage capacity for work orders",
+        "Configure work order settings",
+        "Schedule preventive maintenance and reactive maintenance",
+        "Manage and configure asset loans",
+        "Create and configure asset lifecycle models and states"
+      ],
+      "Implement asset management": [
+        "Configure maintenance plans",
+        "Configure functional locations",
+        "Manage maintenance requests",
+        "Manage work order consumption",
+        "Manage work order scheduling"
+      ]
+    },
+    "Implement and manage supply chain processes (15–20%)": {
+      "Implement procurement and sourcing": [
+        "Create and maintain vendors",
+        "Create and manage purchase requisitions, requests for quotation (RFQs), and purchase orders (POs)",
+        "Create purchase agreements and vendor rebates",
+        "Configure and process consignment inventory",
+        "Manage over and under deliveries and delivery schedules",
+        "Configure procurement categories, charge codes, and purchasing policies",
+        "Configure vendor collaboration features",
+        "Create and process vendor returns",
+        "Manage registration and product receipt",
+        "Configure procurement workflows"
+      ],
+      "Implement landed cost": [
+        "Configure landed cost parameters and voyage statuses",
+        "Create and process voyage with purchase orders or transfer orders",
+        "Configure cost estimations, tracking control center, over/under tolerance setup, and journey templates",
+        "Configure cost type codes and auto-costs",
+        "Track inbound voyages and shipping container journeys"
+      ],
+      "Implement common sales and marketing features": [
+        "Create and maintain customers",
+        "Configure sales agreements",
+        "Configure and process sales quotations, sales orders, reservations, and sales returns",
+        "Configure sales groups and commissions",
+        "Configure and process intercompany orders",
+        "Configure and process customer rebates",
+        "Configure and manage delivery schedule, available-to-promise (ATP), and capable-to-promise (CTP)",
+        "Configure and use product bundles"
+      ]
+    },
+    "Implement warehouse management and transportation management (20–25%)": {
+      "Configure warehouse management": [
+        "Create sites, warehouses, locations, location formats, location profiles, location types, and zones",
+        "Configure work policies and work breaks",
+        "Implement location directives",
+        "Configure wave, load, and work templates",
+        "Create and print labels, including product, wave, GS1 label segments, and license plate labels",
+        "Configure packing dimensions",
+        "Configure inbound receiving process",
+        "Configure outbound shipment process",
+        "Configure and update inventory status"
+      ],
+      "Perform warehouse management processes": [
+        "Configure and process replenishment",
+        "Manage inbound and outbound load planning workbench",
+        "Configure and process inventory movements via warehouse work",
+        "Create cycle counting work and perform cycle counting",
+        "Process inbound and outbound orders by using the Warehouse Management mobile app",
+        "Configure containerization and packaging options",
+        "Configure and process cross docking"
+      ],
+      "Implement transportation management": [
+        "Configure shipping carriers and carrier groups",
+        "Perform planning and executing of loads and shipments",
+        "Configure and generate freight bills and invoices",
+        "Configure route plans and guides",
+        "Manage route and rate engines",
+        "Configure and use dock appointment scheduling",
+        "Reconcile freight by using manual or automatic processes"
+      ],
+      "Implement the Warehouse Management mobile app": [
+        "Configure mobile device menus, menu items, and display settings",
+        "Configure detours for mobile device steps",
+        "Install and configure the Warehouse Management mobile app",
+        "Create and manage warehouse workers for the Warehouse Management mobile app"
+      ]
+    },
+    "Implement master planning (10–15%)": {
+      "Configure master planning": [
+        "Set up coverage groups and item coverage",
+        "Configure and maintain master planning parameters and master plans",
+        "Define positive and negative days",
+        "Define action messages, delay, and time fences",
+        "Configure period templates"
+      ],
+      "Manage master plans": [
+        "Run master planning and analyze the results",
+        "Evaluate and process planned purchase and transfer orders",
+        "Set up and use the Supply Schedule form",
+        "Configure safety margins",
+        "Configure and process safety stock journals"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-330",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/practice/assessment?assessment-type=practice"
+}

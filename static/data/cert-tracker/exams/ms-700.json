@@ -1,0 +1,169 @@
+{
+  "code": "MS-700",
+  "title": "Managing Microsoft Teams",
+  "level": "intermediate",
+  "roles": [
+    "administrator"
+  ],
+  "products": [
+    "m365",
+    "teams"
+  ],
+  "category": "Microsoft 365",
+  "updated_at": "2026-03-27 23:35:00+00:00",
+  "skills_date": "April 28, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Configure and manage a Teams environment",
+      "weight": "40-45%"
+    },
+    {
+      "area": "Manage teams, channels, chats, and apps",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Manage meetings and calling",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Monitor, report on, and troubleshoot Teams",
+      "weight": "15-20%"
+    }
+  ],
+  "skills_detailed": {
+    "Configure and manage a Teams environment (40–45%)": {
+      "Plan network settings for Teams": [
+        "Calculate network bandwidth capacity for Teams voice, video, meetings, and events",
+        "Analyze network impact by using Network planner",
+        "Specify network ports and protocols used by Teams",
+        "Assess network readiness and connectivity by using the Microsoft Teams Network Assessment Tool and Microsoft 365 network connectivity test tool"
+      ],
+      "Manage security and compliance settings for Teams": [
+        "Identify licensing requirements for security and compliance features",
+        "Specify security and compliance alert policies for Teams",
+        "Choose appropriate Teams administrator roles",
+        "Plan and configure threat policies in Microsoft Defender XDR",
+        "Specify retention policies",
+        "Specify sensitivity labels and publishing policies, including Teams meeting policies",
+        "Specify data loss prevention (DLP) policies",
+        "Specify Microsoft Entra Conditional Access policies for Teams",
+        "Specify information barrier (IB) policies",
+        "Identify appropriate use cases for communication compliance and insider risk management"
+      ],
+      "Plan and implement governance for Teams": [
+        "Identify licensing requirements for lifecycle management of teams",
+        "Identify where Teams stores content",
+        "Plan and manage update policies",
+        "Create and manage policy packages in Teams",
+        "Plan and configure policy assignment for users and groups",
+        "Configure settings for Microsoft 365 group creation",
+        "Configure an expiration policy for Microsoft 365 groups",
+        "Configure a naming policy for Microsoft 365 groups, including blocked words",
+        "Archive, delete, or unarchive one or more teams",
+        "Restore or troubleshoot the deletion of a Microsoft 365 group",
+        "Identify when to use Microsoft Entra Access reviews for teams and groups",
+        "Perform operations for Teams by using PowerShell and Microsoft Graph"
+      ],
+      "Configure and manage external collaboration": [
+        "Identify licensing requirements for external collaboration",
+        "Configure SharePoint Online and OneDrive external sharing settings",
+        "Configure External access in the Microsoft Teams admin center",
+        "Control External Access by Domain for Specific Users and Groups",
+        "Configure External collaboration settings in Microsoft Entra ID for guest access",
+        "Configure guest access and sharing in the Microsoft Teams admin center, Microsoft 365 admin center, Microsoft Entra admin center, or the SharePoint admin center",
+        "Control guest access to a specific team by using Microsoft Purview and Microsoft Entra ID",
+        "Remove guests from Teams, including from a team or a tenant",
+        "Configure shared channels for external access",
+        "Configure and manage B2B direct connect cross-tenant access settings in Microsoft Entra ID for shared channels",
+        "Configure a multitenant organization (MTO)"
+      ],
+      "Manage Teams clients and devices": [
+        "Identify licensing requirements for Teams Phone accounts and resource accounts",
+        "Identify licensing requirements for Teams devices",
+        "Manage configuration profiles for Teams devices",
+        "Configure accounts and systems for Microsoft Teams Rooms",
+        "Manage device settings and firmware",
+        "Manage Teams device tags",
+        "Provision and configure remote sign-in for new devices",
+        "Plan and configure Teams for VDI"
+      ]
+    },
+    "Manage teams, channels, chats, and apps (20–25%)": {
+      "Create and manage teams": [
+        "Plan for a Teams rollout by using Advisor for Teams",
+        "Create a team by using the Microsoft Teams admin center, Teams client, the Teams PowerShell module, or Microsoft Graph",
+        "Create a team from an existing Microsoft 365 group, SharePoint site, or team",
+        "Create a team from a template",
+        "Create and manage templates and template policies for teams",
+        "Manage the membership and roles for a team",
+        "Manage a team in the Microsoft Teams admin center",
+        "Manage Teams environment settings",
+        "Configure privacy and sensitivity settings for a team",
+        "Create and manage frontline teams and experiences"
+      ],
+      "Manage channels and chats": [
+        "Recommend channel types, including standard, private, and shared",
+        "Add, edit, and remove channels",
+        "Manage channel settings",
+        "Create and manage Teams policies for channel creation and sharing",
+        "Manage private and shared channel membership",
+        "Create and manage messaging policies"
+      ],
+      "Manage apps for Teams": [
+        "Manage Org-wide app settings in the Microsoft Teams admin center",
+        "Create and manage app assignments and app setup policies",
+        "Manage permissions and consent for apps, including blocking apps",
+        "Recommend appropriate extensibility options, including apps, tabs, meetings, messaging extensions, and workflows",
+        "Manage purchasing of apps in the Teams app store",
+        "Customize the appearance of the Teams app store",
+        "Upload an app to Teams"
+      ]
+    },
+    "Manage meetings and calling (15–20%)": {
+      "Manage meetings and events": [
+        "Recommend meeting types based on business requirements, including Virtual appointments, Webinars, Teams town halls, and meetings",
+        "Configure meeting settings, including for Microsoft 365 Copilot",
+        "Create and manage meeting templates and template policies",
+        "Create and manage meeting policies",
+        "Create and manage meeting customization policies",
+        "Create and manage event settings and policies",
+        "Configure and manage Teams webinars",
+        "Configure and manage Teams town halls"
+      ],
+      "Manage phone numbers and services for Teams Phone": [
+        "Provision and manage phone numbers for users, services, and conferencing bridges",
+        "Assign, change, or remove a phone number for a user or a resource account",
+        "Manage voice settings and policies for users",
+        "Create and manage voicemail policies",
+        "Manage auto-attendants and call queues",
+        "Create and manage calling policies"
+      ]
+    },
+    "Monitor, report on, and troubleshoot Teams (15–20%)": {
+      "Monitor and report on Teams": [
+        "Monitor and report on voice and meeting quality",
+        "Configure alert rules",
+        "Report on Teams usage, including team activity, app usage, active users, per-meeting metrics, and storage usage",
+        "Monitor and report on the creation and deletion of teams",
+        "Monitor and report on guest access",
+        "Monitor the Microsoft 365 network connectivity test tool",
+        "Manage feedback, including policies"
+      ],
+      "Troubleshoot audio, video, and client issues": [
+        "Collect client-side logs",
+        "Clear the Teams client cache",
+        "Troubleshoot issues by using self-help diagnostics for Teams",
+        "Troubleshoot Teams client installation and update issues",
+        "Troubleshoot Teams client health and issues in the Microsoft Teams admin center",
+        "Troubleshoot sign-in issues to Teams",
+        "Troubleshoot Microsoft 365 Copilot and AI experiences in Teams",
+        "Troubleshoot issues with joining meetings and accessing features in meetings"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-700",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/practice/assessment?assessment-type=practice"
+}

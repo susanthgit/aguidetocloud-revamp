@@ -1,0 +1,261 @@
+{
+  "code": "PL-500",
+  "title": "Microsoft Power Automate RPA Developer",
+  "level": "intermediate",
+  "roles": [
+    "developer"
+  ],
+  "products": [
+    "power-automate"
+  ],
+  "category": "Power Platform",
+  "updated_at": "2026-03-31 22:46:00+00:00",
+  "skills_date": "July 8, 2024",
+  "skills_at_a_glance": [
+    {
+      "area": "Design automations",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Develop automations",
+      "weight": "45-50%"
+    },
+    {
+      "area": "Deploy and manage automations",
+      "weight": "20-25%"
+    }
+  ],
+  "skills_detailed": {
+    "Design automations (25–30%)": {
+      "Design automations using Power Automate features and capabilities": [
+        "Leverage the Power Automate ecosystem",
+        "Differentiate between cloud flows and desktop flows",
+        "Design automations using desktop flows and cloud flows",
+        "Differentiate trigger types for cloud flows",
+        "Differentiate options for interacting with target applications and browsers",
+        "Differentiate the different methods for running a desktop flow",
+        "Assess the ability to run cloud and desktop flows concurrently",
+        "Recommend running desktop flows attended versus unattended",
+        "Differentiate HTTP actions in cloud and desktop flows",
+        "Assess if work queues are applicable for the automation",
+        "Design custom actions"
+      ],
+      "Design automations using other Microsoft Power Platform features and capabilities": [
+        "Design automations that include canvas and model-driven apps",
+        "Design automations using connectors, custom connectors, connection references, and connections for cloud flows",
+        "Design automations that include Microsoft Dataverse"
+      ],
+      "Design automations that analyze and enhance data and documents": [
+        "Differentiate Microsoft AI options for processing documents in desktop and cloud flows",
+        "Differentiate Microsoft AI options for processing data in desktop and cloud flows",
+        "Recommend optical character recognition (OCR) capabilities in desktop flows",
+        "Recommend Document Automation Toolkit for use in automation design"
+      ],
+      "Design automations using scripting languages in desktop flows": [
+        "Design automations using scripting languages including PowerShell and Visual Basic Script (VBScript)",
+        "Recommend automation use cases that use JavaScript",
+        "Design an automation that uses the document object model (DOM)"
+      ]
+    },
+    "Develop automations (45–50%)": {
+      "Develop cloud flows": [
+        "Develop a cloud flow that calls a desktop flow",
+        "Develop and use child cloud flows including passing and returning data",
+        "Perform actions in cloud flows by calling external APIs",
+        "Implement trigger conditions and concurrency in cloud flows",
+        "Implement timeout and retry policies in cloud flows",
+        "Implement data objects and data operations in cloud flows",
+        "Perform text parsing including JSON, XML, and CSV in cloud flows"
+      ],
+      "Develop desktop flows": [
+        "Implement UI options",
+        "Implement datatables, lists, and custom objects in desktop flows",
+        "Implement subflows in desktop flows",
+        "Perform actions in desktop flows by calling external APIs",
+        "Implement timeout and retry in desktop flows",
+        "Implement data objects and data operations in desktop flows",
+        "Perform text parsing including JSON, XML, and CSV in desktop flows",
+        "Implement custom actions in desktop flows"
+      ],
+      "Implement logic in cloud and desktop flows": [
+        "Implement flow control in cloud and desktop flows including loops",
+        "Implement expressions in cloud flows",
+        "Implement variable actions for cloud and desktop flows",
+        "Implement secure input and output data in actions in cloud flows",
+        "Implement secure variables in desktop flows",
+        "Implement priority for desktop flows in a queue",
+        "Implement exception handling blocks in cloud and desktop flows to handle system exceptions",
+        "Implement error handling routines in cloud and desktop flows to handle business exceptions",
+        "Implement work queues in cloud and desktop flows"
+      ],
+      "Build custom connectors and implement connector configurations": [
+        "Build a custom connector",
+        "Implement authentication for custom connectors",
+        "Implement custom connector policy templates",
+        "Develop code in a custom connector"
+      ],
+      "Perform automation infrastructure management": [
+        "Recommend credential management practices",
+        "Utilize on-premises data gateway to connect resources from cloud flows",
+        "Build components in Microsoft Dataverse solutions"
+      ],
+      "Test automations and finalize development efforts": [
+        "Test a cloud flow",
+        "Test a desktop flow",
+        "Utilize environment variables and configuration files to manage configurations",
+        "Utilize debugging features in cloud and desktop flows"
+      ]
+    },
+    "Deploy and manage automations (20–25%)": {
+      "Perform target environment preparation": [
+        "Implement Microsoft Power Platform application lifecycle management (ALM)",
+        "Differentiate credentials used for different environments",
+        "Recommend how to deploy solution components to other environments",
+        "Build virtual desktop environments for unattended desktop flow execution"
+      ],
+      "Assess data loss prevention (DLP) policies for RPA execution": [
+        "Assess Microsoft Power Platform DLP policies",
+        "Assess how DLP policies impact actions in cloud and desktop flows",
+        "Assess how DLP policies apply to custom connectors"
+      ],
+      "Implement access to RPA components": [
+        "Perform sharing of cloud and desktop flows",
+        "Perform sharing of machines and machine groups",
+        "Recommend security roles required to run and monitor cloud and desktop flows",
+        "Implement service accounts and service principals"
+      ],
+      "Implement machine groups and queues required for desktop flow automations": [
+        "Assess machine and machine group requirements",
+        "Perform machine registration management",
+        "Perform machine group management",
+        "Implement load balancing of desktop flows by using machine groups and queues",
+        "Perform operations on the run queue to manage desktop flows",
+        "Analyze cloud and desktop flow run history from the Power Automate portal"
+      ],
+      "Audience profile": [
+        "Design automations (30–35%)",
+        "Develop automations (40–45%)",
+        "Deploy and manage automations (20–25%)"
+      ],
+      "Prepare target environments": [
+        "Implement Microsoft Power Platform application lifecycle management (ALM)",
+        "Differentiate credentials used for different environments",
+        "Deploy RPA solutions to other environments",
+        "Prepare virtual desktop environments for unattended desktop flow execution"
+      ],
+      "Evaluate data loss prevention (DLP) policies for RPA execution": [
+        "Identify Microsoft Power Platform data loss prevention (DLP) policies",
+        "Identify how DLP policies impact actions in cloud and desktop flows",
+        "Identify how DLP policies apply to custom connectors"
+      ],
+      "Manage access to RPA components": [
+        "Share a cloud flow",
+        "Share a desktop flow",
+        "Share machines and machine groups",
+        "Identify security roles required to run and monitor cloud and desktop flows",
+        "Create service accounts and service principals"
+      ],
+      "Configure machine groups and queues required for desktop flow automations": [
+        "Identify use cases for and capabilities of machines and machine groups",
+        "Manage machine registrations",
+        "Create and manage machine groups",
+        "Implement load balancing of desktop flows by using machine groups and queues",
+        "Work with queues and queue operations for desktop flows",
+        "Evaluate cloud and desktop flow run history from the Power Automate portal"
+      ]
+    },
+    "Design automations (30–35%)": {
+      "Describe Power Automate features and capabilities": [
+        "Identify the Power Automate ecosystem and offerings",
+        "Identify the differences among cloud flows, and desktop flows, and business process flows",
+        "Identify when to use a desktop flow or a cloud flow, and when to use them together",
+        "Identify the different trigger types for cloud flows",
+        "Identify options for interacting with target applications and browsers",
+        "Identify the different methods for running a desktop flow",
+        "Identify considerations for running cloud and desktop flows concurrently",
+        "Identify considerations for running desktop flows attended versus unattended",
+        "Differentiate HTTP actions in cloud and desktop flows"
+      ],
+      "Work with other Microsoft Power Platform offerings": [
+        "Identify how canvas apps and model-driven apps work with automation",
+        "Identify use cases for connectors, custom connectors, connection references, and connections for cloud flows",
+        "Identify use cases for Microsoft Dataverse"
+      ],
+      "Record and analyze processes": [
+        "Create processes in Process Advisor",
+        "Identify the steps for Process mining",
+        "Identify the steps for Task mining",
+        "Identify the use cases for Process Advisor"
+      ],
+      "Identify how to analyze and enhance data and documents": [
+        "Identify Microsoft AI options for processing documents in desktop and cloud flows",
+        "Identify Microsoft AI options for processing data in desktop and cloud flows",
+        "Identify optical character recognition (OCR) capabilities in desktop flows",
+        "Identify use cases for the Document Automation Toolkit"
+      ],
+      "Identify use cases for scripting languages in desktop flows": [
+        "Identify use cases for scripting languages including PowerShell and VBScript",
+        "Identify use cases for application-specific macro languages including VBA in Microsoft Excel and Office Scripts",
+        "Identify use cases for using JavaScript",
+        "Identify how to use the document object model (DOM) in automation"
+      ]
+    },
+    "Develop automations (40–45%)": {
+      "Create and manage cloud flows": [
+        "Create a cloud flow",
+        "Create a cloud flow that calls a desktop flow",
+        "Create and use child cloud flows including how to pass data to a child cloud flow and return data back",
+        "Perform actions in cloud flows by calling external APIs",
+        "Configure filter conditions and concurrency in cloud flows",
+        "Configure timeout and retry policies in cloud flows",
+        "Implement data objects in cloud flows",
+        "Identify common processes for parsing text including JSON, XML, and CSV in cloud flows",
+        "Configure cloud flow action to run Microsoft Office Scripts"
+      ],
+      "Create and manage desktop flows": [
+        "Create desktop flows to launch, connect to, and authenticate target application",
+        "Configure user interface (UI) options",
+        "Configure datatables, lists, and custom objects in desktop flows",
+        "Implement subflows in desktop flows",
+        "Add desktop actions to exit from target applications",
+        "Perform actions in desktop flows by calling external APIs",
+        "Configure timeout and retry in desktop flows",
+        "Implement data objects in desktop flows",
+        "Identify common processes for parsing text including JSON, XML, and CSV in desktop flows"
+      ],
+      "Implement logic in cloud and desktop flows": [
+        "Configure flow control in cloud and desktop flows including loops",
+        "Configure expressions in cloud flows",
+        "Configure variable actions for cloud and desktop flows",
+        "Configure secure input and output data in actions in cloud flows",
+        "Configure secure variables in desktop flows",
+        "Configure priority for desktop flows in a queue",
+        "Create exception handling blocks in cloud and desktop flows to handle system exceptions",
+        "Create error handling routines in cloud and desktop flows to handle business exceptions",
+        "Configure document processing by using AI Builder"
+      ],
+      "Create and configure custom connectors": [
+        "Create a custom connector",
+        "Implement authentication for custom connectors",
+        "Identify custom connector policy templates",
+        "Write code in a custom connector"
+      ],
+      "Manage automation infrastructure": [
+        "Configure credential management",
+        "Connect cloud flows to on-premises data by using the on-premises data gateway",
+        "Create and manage components in Microsoft Dataverse solutions"
+      ],
+      "Test automations and finalize development efforts": [
+        "Run and test a cloud flow",
+        "Run and test a desktop flow",
+        "Manage configurations by using environment variables and configuration files",
+        "Debug solutions by using Power Automate cloud and desktop flows debugging features"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/practice/assessment?assessment-type=practice"
+}

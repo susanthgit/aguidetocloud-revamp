@@ -1,0 +1,238 @@
+{
+  "code": "MB-210",
+  "title": "Microsoft Dynamics 365 Sales Functional Consultant",
+  "level": "intermediate",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "updated_at": "2024-09-30 17:14:00+00:00",
+  "skills_date": "April 19, 2024",
+  "skills_at_a_glance": [
+    {
+      "area": "Configure Dynamics 365 Sales",
+      "weight": "35-40%"
+    },
+    {
+      "area": "Manage core sales features",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Configure additional tools and services",
+      "weight": "25-30%"
+    }
+  ],
+  "skills_detailed": {
+    "Configure Dynamics 365 Sales (35–40%)": {
+      "Configure user interfaces": [
+        "Configure model-driven apps",
+        "Create and configure forms",
+        "Create and configure views",
+        "Create email, Excel, and Word templates",
+        "Configure the timeline control",
+        "Describe Microsoft Dataverse security concepts",
+        "Configure column mappings on table relationships",
+        "Configure model-driven apps",
+        "Create and configure forms",
+        "Create and configure views",
+        "Create email, Excel, and Word templates",
+        "Configure the timeline control",
+        "Describe Microsoft Dataverse security concepts",
+        "Configure column mappings on table relationships"
+      ],
+      "Configure sales settings": [
+        "Configure sales territories and hierarchical sales territories",
+        "Configure auto number settings for quotes, orders, and invoices",
+        "Configure currencies and fiscal years",
+        "Describe sales security roles",
+        "Manage sales literature",
+        "Configure hierarchy security",
+        "Configure and utilize the assistant",
+        "Configure the business card scanner control",
+        "Enable the Kanban control",
+        "Describe goal management",
+        "Configure sales territories and hierarchical sales territories",
+        "Configure auto number settings for quotes, orders, and invoices",
+        "Configure currencies and fiscal years",
+        "Describe sales security roles",
+        "Manage sales literature",
+        "Configure hierarchy security",
+        "Configure and utilize the assistant",
+        "Configure the business card scanner control",
+        "Enable the Kanban control",
+        "Describe goal management"
+      ],
+      "Configure processes": [
+        "Configure duplicate detection rules",
+        "Configure sales business process flows",
+        "Import data by using the Data Import wizard and export data to Excel",
+        "Configure duplicate detection rules",
+        "Configure sales business process flows",
+        "Create and manage playbooks",
+        "Import data by using the Data Import wizard and export data to Excel"
+      ],
+      "Configure sales visualizations": [
+        "Implement Power BI apps for Sales",
+        "Configure sales dashboards",
+        "Describe options for sales reports",
+        "Configure the opportunity pipeline view",
+        "Implement Power BI apps for Sales",
+        "Configure sales dashboards",
+        "Describe options for sales reports",
+        "Configure the opportunity pipeline view"
+      ],
+      "Configure sales engagement": [
+        "Configure and utilize the Sales accelerator",
+        "Configure the workspace",
+        "Create and manage sequences",
+        "Create and manage segments",
+        "Configure lead and opportunity assignment rules for routing",
+        "Configure the Up Next widget"
+      ],
+      "Evaluate Sales licensing": [
+        "Compare and contrast Sales Professional and Enterprise configuration",
+        "Describe use cases for Team member licensing",
+        "Describe the upgrade pathway from Sales Professional to Enterprise",
+        "Compare and contrast Sales Professional and Enterprise configuration",
+        "Describe use cases for Team member licensing",
+        "Describe the upgrade pathway from Sales Professional to Enterprise"
+      ],
+      "Work with the sales accelerator": [
+        "Configure and utilize the sales accelerator",
+        "Configure the workspace",
+        "Create and manage sequences",
+        "Create and manage segments",
+        "Configure lead and opportunity assignment rules for routing",
+        "Configure the Up Next widget"
+      ]
+    },
+    "Manage core sales features (30–35%)": {
+      "Create and manage accounts and contacts": [
+        "Create and manage accounts",
+        "Create and manage contacts",
+        "Describe use cases for auto capture",
+        "Describe use cases for email engagement",
+        "Describe relationship intelligence",
+        "Describe use cases for notes analysis",
+        "Describe SMS message engagement with customers",
+        "Create and manage accounts",
+        "Create and manage contacts",
+        "Describe use cases for auto capture",
+        "Describe use cases for email engagement",
+        "Describe relationship intelligence",
+        "Describe use cases for notes analysis",
+        "Describe SMS message engagement with customers"
+      ],
+      "Create and manage leads and opportunities": [
+        "Create and manage leads",
+        "Perform lead qualification and disqualification",
+        "Configure lead qualification",
+        "Manage opportunities",
+        "Track stakeholders, sales team members, and competitors",
+        "Manage product line items on opportunities",
+        "Customize the Opportunity Close form",
+        "Configure and utilize predictive lead and opportunity scoring",
+        "Manage the sales pipeline by using the work list",
+        "Configure duplicate lead detection",
+        "Create and manage leads",
+        "Perform lead qualification and disqualification",
+        "Configure lead qualification",
+        "Manage opportunities",
+        "Track stakeholders, sales team members, and competitors",
+        "Manage product line items on opportunities",
+        "Customize the Opportunity Close form",
+        "Configure and utilize predictive lead and opportunity scoring",
+        "Manage the sales pipeline by using the work list",
+        "Configure duplicate lead detection"
+      ],
+      "Create and manage quotes, orders, and invoices": [
+        "Add quotes to opportunities",
+        "Edit quotes in various stages",
+        "Send quotes and invoices to customers",
+        "Convert quotes to orders",
+        "Manage orders and invoices",
+        "Add quotes to opportunities",
+        "Edit quotes in various stages",
+        "Send quotes and invoices to customers",
+        "Convert quotes to orders",
+        "Manage orders and invoices"
+      ],
+      "Create and manage the product catalog": [
+        "Create and manage products, product bundles, and product families",
+        "Describe the product lifecycle",
+        "Create and manage price lists",
+        "Create and manage unit groups",
+        "Create and manage products, product bundles, and product families",
+        "Describe the product lifecycle",
+        "Create and manage price lists",
+        "Create and manage unit groups"
+      ],
+      "Create and manage forecasts": [
+        "Configure and utilize forecasts",
+        "Describe the forecast templates",
+        "Configure and utilize premium forecasting",
+        "Configure and utilize forecasts",
+        "Describe the forecast templates",
+        "Configure and utilize premium forecasting"
+      ],
+      "Manage in-app campaigns": [
+        "Create and manage marketing lists",
+        "Create quick campaigns",
+        "Create and manage marketing lists",
+        "Create quick campaigns"
+      ]
+    },
+    "Configure additional tools and services (25–30%)": {
+      "Integrate sales applications": [
+        "Integrate with LinkedIn Sales Navigator and Insights",
+        "Describe Dynamics 365 Sales mobile app capabilities",
+        "Create push notifications for the Dynamics 365 Sales mobile app",
+        "Integrate with LinkedIn Sales Navigator and Insights",
+        "Describe Dynamics 365 Sales mobile app capabilities",
+        "Create push notifications for the Dynamics 365 Sales mobile app"
+      ],
+      "Integrate with Microsoft 365 services": [
+        "Configure mailboxes",
+        "Describe Server-Side Synchronization",
+        "Configure document management",
+        "Deploy the Dynamics 365 App for Outlook",
+        "Configure the Dynamics 365 App for Outlook",
+        "Configure auto capture and email engagement",
+        "Configure SharePoint integration",
+        "Describe Microsoft Teams calling and conversation intelligence",
+        "Describe Microsoft Teams collaboration",
+        "Achieve revenue targets.",
+        "Execute business strategies.",
+        "Meet an organization's objectives.",
+        "Integrations",
+        "Business process flows",
+        "Visualizations",
+        "Custom applications",
+        "Have strong business knowledge of sales processes for business-to-customer and business-to-business scenarios.",
+        "Understand the sales process of the customer as well as the core functionality of Dynamics 365 Sales to identify where the two align and differ.",
+        "Be proficient in configuring Microsoft Power Platform, primarily model-driven apps.",
+        "Have knowledge of Microsoft 365 services and their interactions with Microsoft Dataverse.",
+        "Configure Dynamics 365 Sales (35–40%)",
+        "Manage core sales features (30–35%)",
+        "Configure additional tools and services (25–30%)",
+        "Configure mailboxes",
+        "Describe Server-Side Synchronization",
+        "Configure document management",
+        "Deploy the Dynamics 365 App for Outlook",
+        "Configure the Dynamics 365 App for Outlook",
+        "Configure auto capture and email engagement",
+        "Configure SharePoint integration",
+        "Describe Microsoft Teams calling and conversation intelligence",
+        "Describe Microsoft Teams collaboration"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-210",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/practice/assessment?assessment-type=practice"
+}
