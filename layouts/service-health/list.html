@@ -1,0 +1,75 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/service-health.css?v={{ site.Params.cache_version }}">
+<link rel="alternate" type="application/rss+xml" title="Microsoft Service Health Incidents" href="/data/service-health/feed.xml">
+
+{{ partial "tool-hero.html" (dict "title" "Microsoft Service Health Tracker" "subtitle" "32 Microsoft 365 services tracked every 2 hours — searchable incident timeline" "accent" "#F97316") }}
+
+<div class="shealth-container">
+
+  <!-- Service Status Cards -->
+  <div class="shealth-status-grid" id="shealth-status-grid" aria-label="Current service status">
+    <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
+  </div>
+
+  <!-- Controls -->
+  <div class="shealth-controls" id="shealth-controls">
+    <label for="shealth-search" class="sr-only">Search incidents</label>
+    <input type="text" id="shealth-search" class="shealth-search" placeholder="Search incidents (e.g. Teams, Exchange, unable to send)..." autocomplete="off">
+    <label for="shealth-service-filter" class="sr-only">Filter by service</label>
+    <select id="shealth-service-filter" class="shealth-select">
+      <option value="all" selected>All Services</option>
+    </select>
+    <label for="shealth-status-filter" class="sr-only">Filter by status</label>
+    <select id="shealth-status-filter" class="shealth-select">
+      <option value="all" selected>All Statuses</option>
+      <option value="active">🔴 Active Only</option>
+      <option value="resolved">✅ Resolved Only</option>
+      <option value="advisory">ℹ️ Advisories Only</option>
+      <option value="incident">⚠️ Incidents Only</option>
+    </select>
+  </div>
+
+  <!-- Incident Timeline -->
+  <div class="shealth-meta" id="shealth-meta" aria-live="polite"></div>
+  <div class="shealth-timeline" id="shealth-timeline" aria-live="polite">
+    <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
+  </div>
+
+  <!-- Load More -->
+  <div class="shealth-load-more" id="shealth-load-more" style="display:none">
+    <button class="shealth-load-btn" id="shealth-load-btn">Load More Incidents</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="shealth-footer">
+    <div class="shealth-footer-links">
+      <a href="/data/service-health/feed.xml" target="_blank" rel="noopener">📡 RSS Feed</a>
+      <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener">🔗 M365 Admin Center</a>
+    </div>
+    <div class="shealth-freshness" id="shealth-freshness"></div>
+  </div>
+</div>
+
+<!-- Incident Detail Modal -->
+<div class="shealth-modal-overlay" id="shealth-modal-overlay">
+  <div class="shealth-modal" id="shealth-modal" role="dialog" aria-modal="true">
+    <button class="shealth-modal-close" id="shealth-modal-close" aria-label="Close">✕</button>
+    <div class="shealth-modal-body" id="shealth-modal-body"></div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Microsoft Service Health Tracker",
+  "url": "https://www.aguidetocloud.com/service-health/",
+  "description": "Searchable timeline of Microsoft 365 service incidents — 32 services tracked every 2 hours.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com/about/" }
+}
+</script>
+<script src="/js/service-health.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
