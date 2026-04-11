@@ -96,6 +96,7 @@
     {{ end }}
 
     {{/* ── PROMPTS GROUPED BY CATEGORY ── */}}
+    {{ $promptIndex := 0 }}
     {{ if $isMainPage }}
       {{ range .Sections.ByWeight }}
         {{ $sectionPrompts := .RegularPages }}
@@ -112,13 +113,14 @@
           {{ $platforms := .Params.platforms | default (slice) }}
           {{ $bestOn := .Params.best_on | default "" }}
           {{ $description := .Description | default "" }}
+          {{ $isFirst := eq $promptIndex 0 }}
 
           <div class="prompt-row"
                data-platforms="{{ delimit $platforms " " }}"
                data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
 
-            <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
-              <span class="prompt-row-arrow">▸</span>
+            <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="{{ if $isFirst }}true{{ else }}false{{ end }}">
+              <span class="prompt-row-arrow">{{ if $isFirst }}▾{{ else }}▸{{ end }}</span>
               <div class="prompt-row-info">
                 <span class="prompt-row-title">
                   {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
@@ -135,10 +137,11 @@
               <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
             </div>
 
-            <div class="prompt-row-body" hidden>
+            <div class="prompt-row-body"{{ if not $isFirst }} hidden{{ end }}>
               <div class="prompt-text">{{ $prompt }}</div>
             </div>
           </div>
+          {{ $promptIndex = add $promptIndex 1 }}
           {{ end }}
         </div>
         {{ end }}
