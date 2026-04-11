@@ -135,7 +135,7 @@
       "position": 1,
       "name": "Home",
       "item": "{{ .Site.BaseURL }}"
-    }{{ if .Parent }},
+    }{{ if and .Parent (not .Parent.IsHome) }},
     {
       "@type": "ListItem",
       "position": 2,

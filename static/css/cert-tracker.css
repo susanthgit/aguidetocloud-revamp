@@ -67,11 +67,18 @@
 .cert-stats {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 0.85rem;
   color: var(--cert-text-dim);
 }
 .cert-stats span { color: var(--cert-accent); font-weight: 600; }
+
+.cert-result-count {
+  font-size: 0.82rem;
+  color: var(--cert-text-dim);
+  margin-bottom: 1rem;
+  min-height: 1.2em;
+}
 
 /* ── Category chips ── */
 .cert-chips {
@@ -113,8 +120,9 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--cert-accent);
-  padding-bottom: 0.4rem;
+  padding: 0.5rem 0 0.4rem 0.75rem;
   border-bottom: 1px solid var(--cert-border);
+  border-left: 3px solid var(--cert-accent);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -219,34 +227,11 @@
   color: var(--cert-text-dim);
 }
 
-.cert-card-objectives {
-  color: var(--cert-accent);
-  font-weight: 500;
-}
-
-/* Change indicator dot */
-.cert-card-changed::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #F59E0B;
-}
-
-/* CTA button on cards */
 .cert-card-cta {
-  display: block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 0;
-  text-align: center;
-  font-size: 0.88rem;
-  font-weight: 600;
   color: var(--cert-accent);
-  border-top: 1px solid var(--cert-border);
-  transition: color 0.2s;
+  font-weight: 600;
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 .cert-card:hover .cert-card-cta {
   color: var(--cert-accent-hover);

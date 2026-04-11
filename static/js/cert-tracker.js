@@ -53,10 +53,13 @@
   // ── Render ──
   function renderStats(data) {
     const el = document.getElementById("cert-stats");
+    const statusCounts = { active: 0, retiring: 0, beta: 0, retired: 0 };
+    (data.exams || []).forEach((e) => { statusCounts[e.status || "active"]++; });
     el.innerHTML = `
-      <div>📊 <span>${data.exam_count}</span> study guides</div>
-      <div>📂 <span>${data.categories.length}</span> categories</div>
-      <div>🔄 <span>${data.total_changes}</span> changes detected</div>
+      <div>📖 <span>${data.exam_count}</span> study guides</div>
+      <div>✅ <span>${statusCounts.active}</span> active</div>
+      <div>⚠️ <span>${statusCounts.retiring}</span> retiring</div>
+      <div>🧪 <span>${statusCounts.beta}</span> beta</div>
     `;
   }
 
@@ -97,6 +100,17 @@
 
   function renderGrid(exams) {
     const grid = document.getElementById("cert-grid");
+
+    // Fix 5: Update result count
+    const countEl = document.getElementById("cert-result-count");
+    if (countEl) {
+      if (exams.length === allExams.length) {
+        countEl.textContent = "";
+      } else {
+        countEl.textContent = `Showing ${exams.length} of ${allExams.length}`;
+      }
+    }
+
     if (!exams.length) {
       grid.innerHTML = '<div class="cert-no-results">No exams match your filters. Try a different search.</div>';
       return;
@@ -152,7 +166,7 @@
 
     const examUrl = `/cert-tracker/${exam.code.toLowerCase()}/`;
     const objCount = exam.total_objectives || 0;
-    const ctaText = objCount > 0 ? "📖 View Study Guide →" : "📋 View Details →";
+    const skillAreas = exam.skill_areas || 0;
 
     return `
       <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}" aria-label="${exam.code} study guide">
@@ -162,16 +176,13 @@
         </div>
         <div class="cert-card-meta">
           <span class="cert-badge cert-badge-${exam.level}">${levelLabel[exam.level] || exam.level}</span>
-          <span class="cert-badge cert-badge-category">${exam.category}</span>
           ${statusBadge}
         </div>
-        <div class="cert-card-skills">${skillsHtml}</div>
         ${retireNote}${retiredNote}${betaNote}
         <div class="cert-card-footer">
-          <span class="cert-card-objectives">${objCount} objectives</span>
-          <span>${exam.skills_date || "—"}</span>
+          <span>${objCount > 0 ? `${objCount} objectives · ${skillAreas} domains` : "Details →"}</span>
+          <span class="cert-card-cta">📖 Study Guide →</span>
         </div>
-        <div class="cert-card-cta">${ctaText}</div>
       </a>
     `;
   }
@@ -179,10 +190,13 @@
   // ── Filtering ──
   function applyFilters() {
     const search = document.getElementById("cert-search").value.toLowerCase().trim();
-    const category = document.getElementById("cert-category-filter").value;
     const level = document.getElementById("cert-level-filter").value;
     const statusEl = document.getElementById("cert-status-filter");
     const status = statusEl ? statusEl.value : "all";
+
+    // Read category from active chip
+    const activeChip = document.querySelector(".cert-chip.active");
+    const category = activeChip ? activeChip.dataset.cat : "all";
 
     let filtered = allExams;
 
@@ -214,26 +228,10 @@
       searchTimer = setTimeout(applyFilters, 200);
     });
 
-    // Dropdowns
-    document.getElementById("cert-category-filter").addEventListener("change", () => {
-      const val = document.getElementById("cert-category-filter").value;
-      document.querySelectorAll(".cert-chip").forEach((c) => {
-        c.classList.toggle("active", c.dataset.cat === val);
-      });
-      applyFilters();
-    });
+    // Dropdowns (level + status only — category uses chips)
     document.getElementById("cert-level-filter").addEventListener("change", applyFilters);
     const statusFilter = document.getElementById("cert-status-filter");
     if (statusFilter) statusFilter.addEventListener("change", applyFilters);
-
-    // Populate category dropdown
-    const catSelect = document.getElementById("cert-category-filter");
-    categories.forEach((c) => {
-      const opt = document.createElement("option");
-      opt.value = c;
-      opt.textContent = c;
-      catSelect.appendChild(opt);
-    });
   }
 
   // ── Helpers ──
