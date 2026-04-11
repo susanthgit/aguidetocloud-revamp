@@ -24,24 +24,6 @@
   padding: 1.5rem 1rem 3rem;
 }
 
-/* ── Value proposition banner ── */
-.cert-value-banner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: var(--cert-accent-dim);
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  border-radius: 12px;
-}
-.cert-value-item {
-  font-size: 0.85rem;
-  color: var(--cert-text);
-  line-height: 1.4;
-}
-.cert-value-item strong { color: var(--cert-accent); }
-
 /* ── Controls ── */
 .cert-controls {
   display: flex;
@@ -136,7 +118,7 @@
   background: var(--cert-card-hover);
   border-color: var(--cert-accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
 }
 
 .cert-card-header {
@@ -241,7 +223,7 @@
   transition: color 0.2s;
 }
 .cert-card:hover .cert-card-cta {
-  color: #fff;
+  color: var(--cert-accent-hover);
 }
 
 /* Status notes on cards */

@@ -1,16 +1,8 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="Microsoft Cert Exam Changes" href="/data/cert-tracker/rss.xml">
-{{ partial "tool-hero.html" (dict "title" "Free Microsoft Cert Study Guides" "subtitle" "Current exam objectives, skills measured, and practice links for every active Microsoft certification — updated weekly" "accent" "#10B981") }}
+{{ partial "tool-hero.html" (dict "title" "Free Microsoft Cert Study Guides" "subtitle" "Full study guides with every exam — click on any card to access the study guide" "accent" "#10B981") }}
 <div class="cert-container">
-
-  {{/* Value proposition banner */}}
-  <div class="cert-value-banner">
-    <div class="cert-value-item">📖 <strong>Full study guides</strong> with every exam objective</div>
-    <div class="cert-value-item">📊 <strong>Skills measured</strong> with percentage weights</div>
-    <div class="cert-value-item">🔄 <strong>Weekly change detection</strong> — never study outdated material</div>
-    <div class="cert-value-item">🧪 <strong>Beta & retiring</strong> exams tracked with replacement paths</div>
-  </div>
 
   <div class="cert-controls" id="cert-controls">
     <label for="cert-search" class="sr-only">Search exams</label>
