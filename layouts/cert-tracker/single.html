@@ -20,6 +20,11 @@
     — Beta exams typically offered at 80% discount.
     {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
   </div>
+  {{ else if eq .Params.exam_status "upcoming" }}
+  <div class="cert-status-banner cert-status-beta">
+    🔜 <strong>This exam has been announced but is not yet available.</strong>
+    Check the official exam page for availability updates.
+  </div>
   {{ end }}
 
   {{/* Exam meta badges */}}
@@ -31,6 +36,7 @@
     {{ if eq .Params.exam_status "retiring" }}<span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>{{ end }}
     {{ if eq .Params.exam_status "retired" }}<span class="cert-badge cert-badge-retired">🚫 Retired</span>{{ end }}
     {{ if eq .Params.exam_status "beta" }}<span class="cert-badge cert-badge-beta">🧪 Beta</span>{{ end }}
+    {{ if eq .Params.exam_status "upcoming" }}<span class="cert-badge cert-badge-upcoming">🔜 Upcoming</span>{{ end }}
   </div>
 
   {{/* Main content (skills measured, etc.) */}}

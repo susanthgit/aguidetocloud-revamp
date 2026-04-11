@@ -6,7 +6,7 @@
   "use strict";
 
   const DATA_URL = "/data/cert-tracker/latest.json";
-  const DETAIL_BASE = "/data/cert-tracker/exams/";
+  const DETAIL_BASE = "/data/cert-tracker/exams/"; // kept for potential future use
   const CACHE_KEY = "cert-tracker-v1";
 
   let allExams = [];

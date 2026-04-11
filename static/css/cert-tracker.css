@@ -580,7 +580,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  .cert-grid { grid-template-columns: 1fr; }
+  .cert-category-cards { grid-template-columns: 1fr; }
   .cert-controls { flex-direction: column; }
   .cert-modal-content { width: 95%; padding: 1.25rem; max-height: 90vh; }
 }

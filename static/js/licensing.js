@@ -104,16 +104,19 @@
       ? `<div class="lic-badge${plan.badge.includes('Coming') ? ' coming-soon' : ''}">${plan.badge}</div>`
       : '';
 
-    // Build feature list (show key features from plan)
+    // Build feature list (show top 5, then "and X more")
     let featHtml = '';
     if (plan.features && plan.features.length) {
+      const resolved = plan.features.map(fid => featureMap[fid]).filter(Boolean);
+      const show = resolved.slice(0, 5);
+      const extra = resolved.length - show.length;
       featHtml = '<ul class="lic-card-features">';
-      plan.features.forEach(fid => {
-        const feat = featureMap[fid];
-        if (feat) {
-          featHtml += `<li><span class="feat-yes">✓</span> ${feat.name}</li>`;
-        }
+      show.forEach(feat => {
+        featHtml += `<li><span class="feat-yes">✓</span> ${feat.name}</li>`;
       });
+      if (extra > 0) {
+        featHtml += `<li class="lic-feat-more">+ ${extra} more</li>`;
+      }
       featHtml += '</ul>';
     }
 
@@ -133,7 +136,10 @@
     <div class="lic-card" id="plan-${plan.id}" data-plan-id="${plan.id}">
       ${badgeHtml}
       <div class="lic-compare-check">
-        <input type="checkbox" class="lic-compare-input" value="${plan.id}" title="Add to comparison" aria-label="Compare ${plan.name}">
+        <label class="lic-compare-label">
+          <input type="checkbox" class="lic-compare-input" value="${plan.id}" aria-label="Compare ${plan.name}">
+          <span>Compare</span>
+        </label>
       </div>
       <div class="lic-card-head">
         <h3 class="lic-card-name">${plan.name}</h3>

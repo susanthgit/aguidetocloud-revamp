@@ -349,7 +349,7 @@ a:hover {
 .hp-tool-header strong {
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  color: var(--tool-color, #fff);
+  color: #ffffff;
 }
 .hp-tool-card p {
   font-size: 0.82rem;
@@ -373,7 +373,7 @@ a:hover {
   font-weight: 600;
 }
 .hp-tool-cta {
-  color: var(--tool-color);
+  color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.85rem;
