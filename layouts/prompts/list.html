@@ -64,12 +64,11 @@
 <div class="prompts-page">
 
   {{ if $isMainPage }}
-  {{ partial "tool-hero.html" (dict "title" "AI Prompt Library" "emoji" "💡" "subtitle" (printf "%d tested prompts across %d AI platforms — find, copy, use." (len $allPrompts) (len hugo.Data.platforms)) "accent" "#A78BFA") }}
+  {{ partial "tool-hero.html" (dict "title" "AI Prompt Library" "subtitle" (printf "%d tested prompts across %d AI platforms — find, copy, use." (len $allPrompts) (len hugo.Data.platforms)) "accent" "#A78BFA") }}
   {{ else }}
   <div class="tool-hero" style="--hero-accent: #A78BFA">
     <div class="tool-hero-inner">
       <nav class="prompts-back-nav"><a href="/prompts/">← All Prompts</a></nav>
-      <span class="tool-hero-emoji">💡</span>
       <h1 class="tool-hero-title">{{ .Title }}</h1>
       {{ with .Description }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
     </div>
