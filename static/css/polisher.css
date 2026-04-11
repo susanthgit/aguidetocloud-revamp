@@ -274,26 +274,29 @@
 .polisher-tips {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 .polisher-tip {
   display: flex;
-  gap: 0.6rem;
-  padding: 0.8rem 1rem;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   border-left: 3px solid var(--tool-accent);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.65;
 }
 .polisher-tip-icon {
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-top: 0.05rem;
 }
 .polisher-tip strong {
   color: var(--text-primary);
+  display: inline-block;
+  margin-bottom: 0.15rem;
 }
 .polisher-no-tips {
   padding: 1rem;

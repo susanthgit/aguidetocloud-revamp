@@ -72,24 +72,7 @@
     {{/* ── RESULTS (hidden until analysis) ── */}}
     <div id="polisher-results" class="polisher-results" hidden>
 
-      {{/* ── POLISHED OUTPUT (shown FIRST — this is what users came for) ── */}}
-      <div class="polisher-output-section" id="polisher-output-section">
-        <div class="polisher-output-header">
-          <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
-          <div class="polisher-output-actions">
-            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
-          </div>
-        </div>
-        <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
-        <div class="polisher-output" id="polisher-output">
-          {{/* Rendered by JS */}}
-        </div>
-        <div class="polisher-output-footer">
-          <button id="polisher-edit-btn" class="polisher-btn-secondary">✏️ Edit & re-polish</button>
-        </div>
-      </div>
-
-      {{/* ── SCORE DASHBOARD ── */}}
+      {{/* ── SCORE DASHBOARD (between input and polished output) ── */}}
       <div class="polisher-score-section">
         <div class="polisher-score-header">
           <div class="polisher-score-ring" id="polisher-score-ring">
@@ -104,6 +87,23 @@
 
         <div class="polisher-pillars" id="polisher-pillars">
           {{/* Rendered by JS */}}
+        </div>
+      </div>
+
+      {{/* ── POLISHED OUTPUT ── */}}
+      <div class="polisher-output-section" id="polisher-output-section">
+        <div class="polisher-output-header">
+          <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
+          <div class="polisher-output-actions">
+            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
+          </div>
+        </div>
+        <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
+        <div class="polisher-output" id="polisher-output">
+          {{/* Rendered by JS */}}
+        </div>
+        <div class="polisher-output-footer">
+          <button id="polisher-edit-btn" class="polisher-btn-secondary">✏️ Edit & re-polish</button>
         </div>
       </div>
 
