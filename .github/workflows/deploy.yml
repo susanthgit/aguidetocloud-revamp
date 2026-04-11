@@ -32,3 +32,4 @@ jobs:
           action: ${{ github.event.action == 'closed' && 'close' || 'upload' }}
           skip_app_build: true
           app_location: "public"
+          api_location: "api"
