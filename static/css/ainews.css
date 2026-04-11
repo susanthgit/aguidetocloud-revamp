@@ -301,36 +301,37 @@
   height: 80px;
 }
 
-/* ── "WHY IT MATTERS" CALLOUT ───────────── */
+/* ── "WHY IT MATTERS" CALLOUT — USP, make it stand out ── */
 .ainews-why {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: #fff;
-  background: rgba(57, 255, 20, 0.04);
-  border-left: 3px solid #39ff14;
-  padding: 0.5rem 0.8rem;
-  border-radius: 0 6px 6px 0;
-  line-height: 1.5;
+  background: rgba(57, 255, 20, 0.06);
+  border-left: 4px solid #39ff14;
+  padding: 0.7rem 1rem;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.6;
+  margin-top: 0.3rem;
 }
 .ainews-why strong {
   color: #39ff14;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.15rem;
 }
-/* Hero cards (headlines) — cyan why-it-matters label */
+/* Hero cards (headlines) — cyan */
 .ainews-card-hero .ainews-why {
-  background: rgba(102, 255, 255, 0.04);
+  background: rgba(102, 255, 255, 0.06);
   border-left-color: var(--neon-cyan);
 }
 .ainews-card-hero .ainews-why strong {
   color: var(--neon-cyan);
 }
-/* Quick link cards — gold why-it-matters label */
-.ainews-quick-item .ainews-quick-why-label {
-  color: #ffd700;
-  font-weight: 700;
-}
-/* Deep dive cards — magenta why-it-matters label */
+/* Deep dive cards — magenta */
 .ainews-deepdive-grid .ainews-why {
-  background: rgba(255, 0, 255, 0.04);
+  background: rgba(255, 0, 255, 0.06);
   border-left-color: #ff00ff;
 }
 .ainews-deepdive-grid .ainews-why strong {

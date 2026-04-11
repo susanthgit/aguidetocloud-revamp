@@ -210,11 +210,15 @@
 /* ── PROMPT ROW (collapsed state) ───────────── */
 
 .prompt-row {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition: background 0.2s ease;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
 }
 .prompt-row:hover {
-  background: rgba(167, 139, 250, 0.03);
+  border-color: rgba(167, 139, 250, 0.25);
+  background: var(--bg-card-hover);
 }
 
 .prompt-row-header {
