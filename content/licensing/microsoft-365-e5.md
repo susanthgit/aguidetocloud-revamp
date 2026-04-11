@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 E5 — Complete Guide, Pricing & What's Included (2026)"
-description: "Everything about Microsoft 365 E5 — full security suite, advanced compliance, Teams Phone, Power BI Pro. $60/user/month. Compare with E3 and E7. Plain English guide."
+description: "Microsoft 365 E5 — full security, compliance, Teams Phone, Power BI Pro. $60/user/month. Compare with E3 and E7."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 E5"

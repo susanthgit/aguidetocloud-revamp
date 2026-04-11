@@ -1,0 +1,459 @@
+/* ── Prompt Polisher ──
+   Accent: Coral #FF6B6B
+   Namespace: .polisher-*
+*/
+
+.polisher-page {
+  --tool-accent: #FF6B6B;
+  --tool-accent-dim: rgba(255, 107, 107, 0.15);
+  --tool-accent-glow: rgba(255, 107, 107, 0.25);
+}
+
+/* ── Container ── */
+.polisher-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Input Section ── */
+.polisher-input-section {
+  margin-bottom: 2rem;
+}
+.polisher-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+.polisher-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.polisher-char-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.polisher-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+.polisher-textarea:focus {
+  outline: none;
+  border-color: var(--tool-accent);
+  box-shadow: 0 0 0 3px var(--tool-accent-dim);
+}
+.polisher-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* ── Action Buttons ── */
+.polisher-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.polisher-btn-primary {
+  padding: 0.7rem 1.5rem;
+  background: var(--tool-accent);
+  color: #0a0a1a;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.polisher-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px var(--tool-accent-glow);
+}
+.polisher-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.polisher-btn-secondary {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.polisher-btn-secondary:hover {
+  border-color: var(--tool-accent);
+  color: var(--tool-accent);
+}
+
+/* ── Examples Dropdown ── */
+.polisher-examples-wrap {
+  position: relative;
+}
+.polisher-examples-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #1e1e30;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  min-width: 220px;
+  overflow: hidden;
+}
+.polisher-examples-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.polisher-examples-menu button:hover {
+  background: var(--tool-accent-dim);
+  color: var(--tool-accent);
+}
+
+/* ── Results Section ── */
+.polisher-results {
+  animation: polisher-fade-in 0.4s ease;
+}
+@keyframes polisher-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Score Dashboard ── */
+.polisher-score-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.polisher-score-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.polisher-score-ring {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.polisher-score-number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2.8rem;
+  line-height: 1;
+  transition: color 0.3s;
+}
+.polisher-score-max {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.polisher-score-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.polisher-score-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+.polisher-score-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* ── Pillar Bars ── */
+.polisher-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.polisher-pillar {
+  display: grid;
+  grid-template-columns: 90px 1fr 50px;
+  align-items: center;
+  gap: 0.8rem;
+}
+.polisher-pillar-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.polisher-pillar-name .craft-icon {
+  margin-right: 0.3rem;
+}
+.polisher-pillar-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.polisher-pillar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease, background 0.3s;
+}
+.polisher-pillar-score {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+/* Score colours */
+.score-low { color: #ef4444; }
+.score-med { color: #f59e0b; }
+.score-good { color: #22c55e; }
+.score-great { color: #3b82f6; }
+.fill-low { background: #ef4444; }
+.fill-med { background: #f59e0b; }
+.fill-good { background: #22c55e; }
+.fill-great { background: #3b82f6; }
+
+/* ── Tips Section ── */
+.polisher-tips-section {
+  margin-bottom: 1.5rem;
+}
+.polisher-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+.polisher-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.polisher-tip {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--tool-accent);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.polisher-tip-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.polisher-tip strong {
+  color: var(--text-primary);
+}
+.polisher-no-tips {
+  padding: 1rem;
+  text-align: center;
+  color: #22c55e;
+  font-weight: 600;
+  font-family: var(--font-heading);
+}
+
+/* ── Output Section ── */
+.polisher-output-section {
+  margin-bottom: 2rem;
+}
+.polisher-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.polisher-output-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.polisher-btn-copy {
+  padding: 0.4rem 0.8rem;
+  background: var(--tool-accent);
+  color: #0a0a1a;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.polisher-btn-copy:hover {
+  filter: brightness(1.15);
+}
+.polisher-output {
+  padding: 1.2rem;
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.polisher-output .added {
+  background: rgba(34, 197, 94, 0.15);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* ── CRAFTS Framework Cards ── */
+.polisher-about {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.polisher-about h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--tool-accent);
+  margin-bottom: 0.5rem;
+}
+.polisher-about > p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+.polisher-crafts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+.polisher-craft-card {
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+}
+.polisher-craft-card .craft-letter {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: var(--tool-accent);
+  color: #0a0a1a;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+.polisher-craft-card strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+.polisher-craft-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── History Section ── */
+.polisher-history {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.polisher-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.polisher-history-item:hover {
+  background: var(--tool-accent-dim);
+}
+.polisher-history-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+}
+.polisher-history-score {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+/* ── Nav accent ── */
+.page-polisher .site-nav {
+  --nav-accent: rgba(255, 107, 107, 0.35);
+}
+
+/* ── Focus visible ── */
+.polisher-page :focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: 2px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .polisher-results { animation: none; }
+  .polisher-pillar-fill { transition: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .polisher-container { padding: 0 1rem 3rem; }
+  .polisher-score-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .polisher-score-number { font-size: 2.2rem; }
+  .polisher-pillar { grid-template-columns: 80px 1fr 45px; gap: 0.5rem; }
+  .polisher-crafts-grid { grid-template-columns: 1fr 1fr; }
+  .polisher-output-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+@media (max-width: 480px) {
+  .polisher-crafts-grid { grid-template-columns: 1fr; }
+  .polisher-actions { flex-direction: column; align-items: stretch; }
+  .polisher-actions .polisher-btn-primary { text-align: center; }
+}

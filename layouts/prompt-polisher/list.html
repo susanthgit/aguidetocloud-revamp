@@ -1,0 +1,158 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/polisher.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Prompt Polisher — Improve Any AI Prompt Instantly",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+      {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "{{ .Site.BaseURL }}free-tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Prompt Polisher"}
+    ]
+  }
+}
+</script>
+
+<div class="polisher-page">
+
+  {{ partial "tool-hero.html" (dict "title" "Prompt Polisher" "subtitle" "Paste any AI prompt → get it scored, analysed & rewritten using the CRAFTS framework. Free, instant, no sign-up." "accent" "#FF6B6B") }}
+
+  <div class="polisher-container">
+
+    {{/* ── INPUT SECTION ── */}}
+    <div class="polisher-input-section">
+      <div class="polisher-input-header">
+        <label for="polisher-input" class="polisher-label">Your prompt</label>
+        <span class="polisher-char-count" id="polisher-char-count">0 characters</span>
+      </div>
+      <textarea id="polisher-input" class="polisher-textarea" placeholder="Paste your AI prompt here...&#10;&#10;Example: &quot;write me a blog post about AI&quot;" rows="6" aria-label="Enter your AI prompt"></textarea>
+      <div class="polisher-actions">
+        <button id="polisher-btn" class="polisher-btn-primary" disabled>✨ Polish My Prompt</button>
+        <button id="polisher-clear" class="polisher-btn-secondary" style="display:none">✕ Clear</button>
+        <div class="polisher-examples-wrap">
+          <button id="polisher-examples-btn" class="polisher-btn-secondary">💡 Try an example</button>
+          <div id="polisher-examples-menu" class="polisher-examples-menu" hidden>
+            <button data-example="0">🖊️ Vague blog request</button>
+            <button data-example="1">❓ Simple question</button>
+            <button data-example="2">📄 Resume help</button>
+            <button data-example="3">📧 Email draft</button>
+            <button data-example="4">📊 Data analysis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── RESULTS (hidden until analysis) ── */}}
+    <div id="polisher-results" class="polisher-results" hidden>
+
+      {{/* ── SCORE DASHBOARD ── */}}
+      <div class="polisher-score-section">
+        <div class="polisher-score-header">
+          <div class="polisher-score-ring" id="polisher-score-ring">
+            <span class="polisher-score-number" id="polisher-score-number">0</span>
+            <span class="polisher-score-max">/100</span>
+          </div>
+          <div class="polisher-score-meta">
+            <span class="polisher-score-label" id="polisher-score-label">Analysing...</span>
+            <span class="polisher-score-desc" id="polisher-score-desc"></span>
+          </div>
+        </div>
+
+        <div class="polisher-pillars" id="polisher-pillars">
+          {{/* Rendered by JS */}}
+        </div>
+      </div>
+
+      {{/* ── TIPS ── */}}
+      <div class="polisher-tips-section" id="polisher-tips-section">
+        <h2 class="polisher-section-title">💡 How to improve</h2>
+        <div class="polisher-tips" id="polisher-tips">
+          {{/* Rendered by JS */}}
+        </div>
+      </div>
+
+      {{/* ── POLISHED OUTPUT ── */}}
+      <div class="polisher-output-section" id="polisher-output-section">
+        <div class="polisher-output-header">
+          <h2 class="polisher-section-title">✨ Polished Version</h2>
+          <div class="polisher-output-actions">
+            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy</button>
+          </div>
+        </div>
+        <div class="polisher-output" id="polisher-output">
+          {{/* Rendered by JS */}}
+        </div>
+      </div>
+
+    </div>
+
+    {{/* ── CRAFTS FRAMEWORK EXPLAINER ── */}}
+    <div class="polisher-about">
+      <h2>The CRAFTS Framework</h2>
+      <p>Every great AI prompt includes six elements. The Prompt Polisher scores yours against each one.</p>
+      <div class="polisher-crafts-grid">
+        <div class="polisher-craft-card">
+          <span class="craft-letter">C</span>
+          <strong>Context</strong>
+          <p>Background, situation, or domain that helps the AI understand your world</p>
+        </div>
+        <div class="polisher-craft-card">
+          <span class="craft-letter">R</span>
+          <strong>Role</strong>
+          <p>The persona or expertise you want the AI to adopt</p>
+        </div>
+        <div class="polisher-craft-card">
+          <span class="craft-letter">A</span>
+          <strong>Action</strong>
+          <p>A clear, specific task with strong verbs — the core instruction</p>
+        </div>
+        <div class="polisher-craft-card">
+          <span class="craft-letter">F</span>
+          <strong>Format</strong>
+          <p>How you want the output — bullets, table, code, paragraphs, etc.</p>
+        </div>
+        <div class="polisher-craft-card">
+          <span class="craft-letter">T</span>
+          <strong>Tone</strong>
+          <p>The audience and voice — professional, casual, technical, beginner-friendly</p>
+        </div>
+        <div class="polisher-craft-card">
+          <span class="craft-letter">S</span>
+          <strong>Scope</strong>
+          <p>Constraints — length, focus areas, what to include or exclude</p>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── HISTORY ── */}}
+    <div class="polisher-history-section" id="polisher-history-section" style="display:none">
+      <h2 class="polisher-section-title">🕐 Recent prompts</h2>
+      <div class="polisher-history" id="polisher-history">
+        {{/* Rendered by JS */}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/polisher.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

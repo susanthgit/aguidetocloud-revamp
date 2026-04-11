@@ -325,18 +325,19 @@ a:hover {
   flex-direction: column;
   gap: 0.6rem;
   padding: 1.3rem 1.4rem;
-  background: color-mix(in srgb, var(--tool-color) 10%, var(--bg-card));
-  border: 1px solid color-mix(in srgb, var(--tool-color) 18%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 12%, #1a1a2e);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 25%, transparent);
   border-radius: var(--radius);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--tool-color) 8%, transparent);
   text-decoration: none;
   color: inherit;
   transition: all 0.25s;
 }
 .hp-tool-card:hover {
-  background: color-mix(in srgb, var(--tool-color) 18%, var(--bg-card));
-  border-color: color-mix(in srgb, var(--tool-color) 35%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 22%, #1a1a2e);
+  border-color: color-mix(in srgb, var(--tool-color) 40%, transparent);
   transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--tool-color) 12%, transparent);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3), 0 0 25px color-mix(in srgb, var(--tool-color) 18%, transparent);
   text-shadow: none;
 }
 .hp-tool-header {
@@ -1096,6 +1097,7 @@ a:hover {
 .page-ainews .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
 .page-roadmap .site-nav { --nav-accent: rgba(229, 160, 13, 0.35); }
 .page-prompts .site-nav { --nav-accent: rgba(167, 139, 250, 0.35); }
+.page-polisher .site-nav { --nav-accent: rgba(255, 107, 107, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

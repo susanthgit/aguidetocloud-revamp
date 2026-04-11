@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 Copilot — Complete Guide, Pricing & Requirements (2026)"
-description: "Everything about the Microsoft 365 Copilot add-on — what it does, which plans support it, requirements, and pricing ($30/user/month). Compare with Copilot Chat and Copilot Studio."
+description: "Microsoft 365 Copilot — AI in every Office app, grounded on your data. $30/user/month add-on. Requirements and plans."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Copilot"

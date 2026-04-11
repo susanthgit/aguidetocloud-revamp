@@ -57,7 +57,7 @@
   </div>
 </div>
 
-{{/* ── SEO: JSON-LD ── */}}
+{{/* ── SEO: Product JSON-LD ── */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,15 +76,28 @@
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
     "url": "{{ .Params.ms_official }}"
-  },
-  "review": {
-    "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": "Susanth Sutheesh"
-    },
-    "reviewBody": "{{ .Params.tagline }}"
   }
 }
 </script>
+
+{{/* ── SEO: FAQPage JSON-LD (from faq: front matter) ── */}}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $faq := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.a | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
 {{ end }}

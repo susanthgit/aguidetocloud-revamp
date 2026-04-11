@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 Business Premium — Complete Guide, Pricing & What's Included (2026)"
-description: "Everything about Microsoft 365 Business Premium — the most secure SMB plan with Intune, Defender, and Entra ID P1. $22/user/month. Compare with Business Standard."
+description: "Microsoft 365 Business Premium — Intune, Defender, Entra ID P1 for SMBs. $22/user/month. Compare with Standard."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Premium"

@@ -1,6 +1,6 @@
 ---
 title: "Power Apps per User — Complete Guide & Pricing (2026)"
-description: "Everything about Microsoft Power Apps per User plan — build unlimited canvas and model-driven apps for $20/user/month. Includes Dataverse, premium connectors, and AI Builder."
+description: "Power Apps per User — build unlimited low-code apps with Dataverse and premium connectors. $20/user/month."
 type: "licensing"
 layout: "single"
 plan_name: "Power Apps per User"
