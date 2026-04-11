@@ -7,6 +7,12 @@
 
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 
+  <!-- Stats Counter -->
+  <div class="feedback-stats" id="feedback-stats" aria-live="polite">
+    <span class="feedback-stats-icon">💬</span>
+    <span class="feedback-stats-text" id="feedback-stats-text">Loading community feedback…</span>
+  </div>
+
   <!-- How It Works -->
   <div class="feedback-how">
     <div class="feedback-how-step">
@@ -64,6 +70,29 @@
     </div>
   </div>
 
+  <!-- Quick Reactions -->
+  <div class="feedback-quick">
+    <div class="feedback-quick-title">⚡ Quick Feedback</div>
+    <div class="feedback-quick-row">
+      <button class="feedback-quick-btn" data-reaction="love" data-category="general" aria-label="Love it">
+        <span class="feedback-quick-emoji">🤩</span>
+        <span class="feedback-quick-label">Love the tools!</span>
+      </button>
+      <button class="feedback-quick-btn" data-reaction="idea" data-category="feature-requests" aria-label="I have an idea">
+        <span class="feedback-quick-emoji">💡</span>
+        <span class="feedback-quick-label">I have an idea</span>
+      </button>
+      <button class="feedback-quick-btn" data-reaction="video" data-category="video-requests" aria-label="Request a video">
+        <span class="feedback-quick-emoji">🎬</span>
+        <span class="feedback-quick-label">Request a video</span>
+      </button>
+      <button class="feedback-quick-btn" data-reaction="bug" data-category="bug-reports" aria-label="Found a bug">
+        <span class="feedback-quick-emoji">🐛</span>
+        <span class="feedback-quick-label">Found a bug</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Submit Form -->
   <div class="feedback-form-section" id="feedback-form-section">
     <div class="feedback-form-title">📝 Share Your Feedback</div>
@@ -113,14 +142,16 @@
       <div class="feedback-form-row full">
         <div class="feedback-field">
           <label class="feedback-label" for="fb-subject">Subject</label>
-          <input class="feedback-input" type="text" id="fb-subject" name="subject" placeholder="Brief summary of your feedback" required>
+          <input class="feedback-input" type="text" id="fb-subject" name="subject" placeholder="Brief summary of your feedback" required maxlength="150">
+          <span class="feedback-char-count" id="fb-subject-count" aria-live="off">0 / 150</span>
         </div>
       </div>
 
       <div class="feedback-form-row full">
         <div class="feedback-field">
           <label class="feedback-label" for="fb-message">Message</label>
-          <textarea class="feedback-textarea" id="fb-message" name="message" placeholder="Tell us more — the more detail, the better we can help!" required></textarea>
+          <textarea class="feedback-textarea" id="fb-message" name="message" placeholder="Tell us more — the more detail, the better we can help!" required maxlength="2000"></textarea>
+          <span class="feedback-char-count" id="fb-message-count" aria-live="off">0 / 2,000</span>
         </div>
       </div>
 
@@ -138,6 +169,10 @@
       </div>
 
       <div class="feedback-status" id="fb-status" role="alert" aria-live="polite"></div>
+      <div class="feedback-success-detail" id="fb-success-detail" style="display:none">
+        <p>📬 We personally read every submission and respond within <strong>48 hours</strong>.</p>
+        <a id="fb-success-link" href="#" target="_blank" rel="noopener" class="feedback-success-link">View your submission on GitHub →</a>
+      </div>
     </form>
   </div>
 
