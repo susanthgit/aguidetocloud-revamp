@@ -4,7 +4,7 @@
 
 <div class="container">
 
-  <!-- 🛠️ FREE TOOLS SHOWCASE -->
+  <!-- 🛠️ FREE TOOLS SHOWCASE (proper cards) -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🛠️ Free Tools</h2>
@@ -12,25 +12,42 @@
     </div>
     <div class="hp-tools-grid">
       <a href="/ai-news/" class="hp-tool-card" style="--tool-color: #00e5ff">
-        <span class="hp-tool-emoji">📰</span>
-        <div class="hp-tool-info">
+        <div class="hp-tool-header">
+          <span class="hp-tool-emoji">📰</span>
           <strong>AI News</strong>
-          <span>Daily AI digest — 20 categories, AI summaries, updated 4× daily</span>
         </div>
+        <p>Daily AI digest across 20 vendor categories with AI summaries. Updated 4× daily.</p>
+        <div class="hp-tool-tags">
+          <span>🔍 Search & Filter</span>
+          <span>📡 RSS</span>
+          <span>📥 CSV</span>
+        </div>
+        <span class="hp-tool-cta">Explore →</span>
       </a>
       <a href="/m365-roadmap/" class="hp-tool-card" style="--tool-color: #E5A00D">
-        <span class="hp-tool-emoji">🗺️</span>
-        <div class="hp-tool-info">
+        <div class="hp-tool-header">
+          <span class="hp-tool-emoji">🗺️</span>
           <strong>M365 Roadmap Tracker</strong>
-          <span>Track every M365 feature — AI summaries, change detection, delay alerts</span>
         </div>
+        <p>Track every Microsoft 365 feature with AI summaries, change detection & delay alerts.</p>
+        <div class="hp-tool-tags">
+          <span>🔄 Daily Updates</span>
+          <span>📡 RSS</span>
+          <span>📥 CSV</span>
+        </div>
+        <span class="hp-tool-cta">Explore →</span>
       </a>
       <a href="/prompts/" class="hp-tool-card" style="--tool-color: #A78BFA">
-        <span class="hp-tool-emoji">💡</span>
-        <div class="hp-tool-info">
+        <div class="hp-tool-header">
+          <span class="hp-tool-emoji">💡</span>
           <strong>AI Prompt Library</strong>
-          <span>{{ len (where .Site.RegularPages "Section" "prompts") }} tested prompts for M365 Copilot, ChatGPT, Claude & more</span>
         </div>
+        <p>{{ len (where .Site.RegularPages "Section" "prompts") }} tested prompts for M365 Copilot, ChatGPT, Claude, Gemini & more.</p>
+        <div class="hp-tool-tags">
+          <span>📋 Copy & Use</span>
+          <span>🧪 Human-tested</span>
+        </div>
+        <span class="hp-tool-cta">Explore →</span>
       </a>
     </div>
   </section>
@@ -48,7 +65,7 @@
     </div>
   </section>
 
-  <!-- 📝 FROM THE BLOG -->
+  <!-- 📝 FROM THE BLOG (card style, no thumbnails) -->
   {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
   {{ if gt (len $blogPosts) 0 }}
   <section class="section">
@@ -56,59 +73,20 @@
       <h2 class="section-title">📝 From the Blog</h2>
       <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
     </div>
-    <div class="hp-blog-list">
+    <div class="hp-blog-grid">
       {{ range first 4 $blogPosts }}
-      <a href="{{ .RelPermalink }}" class="hp-blog-item">
-        <time class="hp-blog-date">{{ .Date.Format "Jan 2006" }}</time>
-        <div class="hp-blog-content">
-          <h3>{{ .Title }}</h3>
-          {{ with .Description }}<p>{{ . | truncate 120 }}</p>{{ end }}
-        </div>
-        <span class="hp-blog-arrow">→</span>
+      <a href="{{ .RelPermalink }}" class="hp-blog-card">
+        <time class="hp-blog-date">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <h3>{{ .Title }}</h3>
+        {{ with .Description }}<p>{{ . | truncate 100 }}</p>{{ end }}
+        <span class="hp-blog-read">Read more →</span>
       </a>
       {{ end }}
     </div>
   </section>
   {{ end }}
 
-  <!-- ⭐ FEATURED PICK + CATEGORIES -->
-  <section class="section">
-    <div class="featured-layout">
-      <div class="featured-main">
-        <div class="featured-badge">⭐ Author's Pick</div>
-        {{ with index (where .Site.RegularPages "Params.featured" true) 0 }}
-        <a href="{{ .RelPermalink }}" class="featured-video">
-          {{ if .Params.youtube_id }}
-          <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg" alt="{{ .Title | htmlEscape }}" loading="lazy">
-          {{ end }}
-          <div class="featured-info">
-            <span class="card-tag ai">{{ .Params.card_tag }}</span>
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Summary | plainify | truncate 200 }}</p>
-          </div>
-        </a>
-        {{ end }}
-      </div>
-      <div class="featured-sidebar">
-        <h4 class="sidebar-title">Jump to a Category</h4>
-        {{ $sections := slice
-          (dict "path" "/ai-hub/" "label" "🤖 AI Hub" "class" "sidebar-ai" "section" "ai-hub")
-          (dict "path" "/cloud-labs/" "label" "☁️ Cloud Labs" "class" "sidebar-cloud" "section" "cloud-labs")
-          (dict "path" "/certifications/" "label" "📜 Certifications" "class" "sidebar-cert" "section" "certifications")
-          (dict "path" "/exam-qa/" "label" "📝 Exam Q&A" "class" "sidebar-cert" "section" "exam-qa")
-          (dict "path" "/interview-prep/" "label" "💼 Interview Prep" "class" "sidebar-cloud" "section" "interview-prep")
-          (dict "path" "/music/" "label" "🎵 Study Music" "class" "sidebar-news" "section" "music")
-        }}
-        {{ range $sections }}
-        <a href="{{ .path }}" class="sidebar-link {{ .class }}">
-          <span>{{ .label }}</span><span class="sidebar-count">{{ len (where $.Site.RegularPages "Section" .section) }}</span>
-        </a>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORY SECTIONS (2 cards each for tighter homepage) -->
+  <!-- CATEGORY SECTIONS (4 desktop, 2 mobile via CSS) -->
   {{ $cats := slice
     (dict "title" "🤖 AI Hub" "section" "ai-hub" "path" "/ai-hub/")
     (dict "title" "☁️ Cloud Labs" "section" "cloud-labs" "path" "/cloud-labs/")
@@ -125,8 +103,8 @@
       <h2 class="section-title">{{ .title }}</h2>
       <a href="{{ .path }}" class="section-link">View all {{ len $pages }} →</a>
     </div>
-    <div class="video-grid">
-      {{ range first 2 $pages }}
+    <div class="video-grid hp-cat-grid">
+      {{ range first 4 $pages }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>
