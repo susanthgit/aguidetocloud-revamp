@@ -48,7 +48,23 @@
     {{ if eq .Params.exam_status "upcoming" }}<span class="cert-badge cert-badge-upcoming">🔜 Upcoming</span>{{ end }}
   </div>
 
-  {{/* Fix 1: Jump-to TOC — built by JS from page headings */}}
+  {{/* Feature 3: Prep time estimate + Feature 2: Print button */}}
+  <div class="cert-toolbar">
+    <span class="cert-prep-time" id="cert-prep-time"></span>
+    <button class="cert-print-btn" onclick="window.print()" aria-label="Print study checklist">🖨️ Print Checklist</button>
+  </div>
+
+  {{/* Feature 4: Study progress bar — filled by JS */}}
+  <div class="cert-progress-wrap" id="cert-progress-wrap" style="display:none">
+    <div class="cert-progress-header">
+      <span>📚 Your Study Progress</span>
+      <span class="cert-progress-text" id="cert-progress-text">0%</span>
+    </div>
+    <div class="cert-progress-bar"><div class="cert-progress-fill" id="cert-progress-fill"></div></div>
+    <button class="cert-progress-reset" id="cert-progress-reset">Reset progress</button>
+  </div>
+
+  {{/* Jump-to TOC — built by JS from page headings */}}
   <nav class="cert-toc" id="cert-toc" aria-label="Table of contents"></nav>
 
   {{/* Main content (skills measured, etc.) */}}
@@ -91,8 +107,97 @@
 </script>
 <script>
 (function(){
-  // Fix 1: Build TOC from h2 headings
   var content = document.querySelector(".cert-single-content");
+  var code = {{ .Params.exam_code | jsonify }};
+  var level = {{ .Params.exam_level | jsonify }};
+  var status = {{ (default "active" .Params.exam_status) | jsonify }};
+
+  // ── Feature 1: Retirement countdown ──
+  var cdEl = document.getElementById("cert-countdown");
+  if (cdEl) {
+    var retDate = new Date(cdEl.dataset.date + "T23:59:59");
+    var now = new Date();
+    var diff = retDate - now;
+    if (diff > 0) {
+      var days = Math.ceil(diff / 86400000);
+      cdEl.innerHTML = '<strong>' + days + ' days remaining</strong> to take this exam';
+    } else {
+      cdEl.innerHTML = '<strong>This exam has been retired.</strong>';
+    }
+  }
+
+  // ── Feature 3: Prep time estimate ──
+  var prepEl = document.getElementById("cert-prep-time");
+  if (prepEl) {
+    var prepTimes = { beginner: "2–4 weeks", intermediate: "4–8 weeks", advanced: "6–12 weeks" };
+    var t = prepTimes[level];
+    if (t && status !== "beta" && status !== "upcoming") {
+      prepEl.innerHTML = '⏱️ Typical prep time: <strong>' + t + '</strong>';
+    }
+  }
+
+  // ── Feature 4: Study progress checklist ──
+  if (content) {
+    var bullets = content.querySelectorAll("li");
+    // Only activate for pages with enough objectives (study guide pages)
+    if (bullets.length > 5) {
+      var storageKey = "cert-progress-" + code;
+      var checked = {};
+      try { checked = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch(e) {}
+
+      var total = 0;
+      bullets.forEach(function(li, i) {
+        // Only add checkboxes to li items that contain links (objectives)
+        var link = li.querySelector("a");
+        if (!link) return;
+        total++;
+        var id = "obj-" + i;
+
+        var cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.className = "cert-cb";
+        cb.id = id;
+        cb.checked = !!checked[id];
+        if (cb.checked) li.classList.add("cert-checked");
+
+        cb.addEventListener("change", function() {
+          if (cb.checked) { checked[id] = 1; li.classList.add("cert-checked"); }
+          else { delete checked[id]; li.classList.remove("cert-checked"); }
+          try { localStorage.setItem(storageKey, JSON.stringify(checked)); } catch(e) {}
+          updateProgress();
+        });
+
+        li.insertBefore(cb, li.firstChild);
+      });
+
+      function updateProgress() {
+        var done = Object.keys(checked).length;
+        var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+        var textEl = document.getElementById("cert-progress-text");
+        var fillEl = document.getElementById("cert-progress-fill");
+        var wrapEl = document.getElementById("cert-progress-wrap");
+        if (textEl) textEl.textContent = done + " of " + total + " (" + pct + "%)";
+        if (fillEl) fillEl.style.width = pct + "%";
+        if (wrapEl) wrapEl.style.display = "block";
+      }
+      updateProgress();
+
+      // Reset button
+      var resetBtn = document.getElementById("cert-progress-reset");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", function() {
+          if (!confirm("Reset all progress for " + code + "?")) return;
+          checked = {};
+          localStorage.removeItem(storageKey);
+          content.querySelectorAll(".cert-cb").forEach(function(c) { c.checked = false; });
+          content.querySelectorAll(".cert-checked").forEach(function(l) { l.classList.remove("cert-checked"); });
+          updateProgress();
+        });
+      }
+    }
+  }
+
+  // ── TOC from h2 headings ──
   var toc = document.getElementById("cert-toc");
   if (content && toc) {
     var headings = content.querySelectorAll("h2[id]");
@@ -107,11 +212,10 @@
     }
   }
 
-  // Fix 4: Make h3 skill areas collapsible
+  // ── Collapsible h3 skill areas ──
   if (content) {
     var h3s = content.querySelectorAll("h3");
     h3s.forEach(function(h3) {
-      // Collect all siblings until next h2 or h3
       var siblings = [];
       var el = h3.nextElementSibling;
       while (el && el.tagName !== "H3" && el.tagName !== "H2" && el.tagName !== "HR") {
@@ -119,14 +223,10 @@
         el = el.nextElementSibling;
       }
       if (siblings.length < 2) return;
-
-      // Wrap siblings in a collapsible div
       var wrapper = document.createElement("div");
       wrapper.className = "cert-collapsible";
       h3.parentNode.insertBefore(wrapper, siblings[0]);
       siblings.forEach(function(s) { wrapper.appendChild(s); });
-
-      // Make h3 clickable
       h3.classList.add("cert-collapsible-toggle");
       h3.setAttribute("role", "button");
       h3.setAttribute("tabindex", "0");
@@ -140,23 +240,22 @@
     });
   }
 
-  // Related exams
-  var code = {{ .Params.exam_code | jsonify }};
+  // ── Related exams ──
   fetch("/data/cert-tracker/exams/" + code.toLowerCase() + ".json")
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){
       if (!d || !d.related_exams || !d.related_exams.length) return;
       var levelLabels = {beginner:"Fundamentals",intermediate:"Associate",advanced:"Expert"};
       var html = d.related_exams.map(function(r){
-        var status = "";
-        if (r.status === "retiring") status = ' <span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>';
-        else if (r.status === "beta") status = ' <span class="cert-badge cert-badge-beta">🧪 Beta</span>';
-        else if (r.status === "retired") status = ' <span class="cert-badge cert-badge-retired">🚫 Retired</span>';
+        var st = "";
+        if (r.status === "retiring") st = ' <span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>';
+        else if (r.status === "beta") st = ' <span class="cert-badge cert-badge-beta">🧪 Beta</span>';
+        else if (r.status === "retired") st = ' <span class="cert-badge cert-badge-retired">🚫 Retired</span>';
         return '<a href="/cert-tracker/' + r.code.toLowerCase() + '/" class="cert-related-card">'
           + '<span class="cert-card-code">' + r.code + '</span> '
           + '<span class="cert-card-title">' + r.title + '</span>'
           + '<span class="cert-badge cert-badge-' + r.level + '">' + (levelLabels[r.level]||r.level) + '</span>'
-          + status + '</a>';
+          + st + '</a>';
       }).join("");
       document.getElementById("cert-related-list").innerHTML = html;
       document.getElementById("cert-related").style.display = "block";

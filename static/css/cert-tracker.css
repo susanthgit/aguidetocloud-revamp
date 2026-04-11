@@ -506,6 +506,128 @@
 .cert-toc a { color: var(--cert-accent); text-decoration: none; }
 .cert-toc a:hover { text-decoration: underline; }
 
+/* Countdown */
+.cert-countdown {
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+}
+
+/* Toolbar (prep time + print) */
+.cert-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.cert-prep-time {
+  font-size: 0.85rem;
+  color: var(--cert-text-dim);
+}
+.cert-prep-time strong { color: var(--cert-accent); }
+.cert-print-btn {
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  color: var(--cert-text);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.cert-print-btn:hover { border-color: var(--cert-accent); color: var(--cert-accent); }
+
+/* Progress bar */
+.cert-progress-wrap {
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+.cert-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--cert-text);
+  margin-bottom: 0.5rem;
+}
+.cert-progress-text { color: var(--cert-accent); font-weight: 600; }
+.cert-progress-bar {
+  height: 8px;
+  background: var(--cert-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cert-progress-fill {
+  height: 100%;
+  background: var(--cert-accent);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+.cert-progress-reset {
+  background: none;
+  border: none;
+  color: var(--cert-text-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  padding: 0;
+}
+.cert-progress-reset:hover { color: #EF4444; }
+
+/* Study checkboxes */
+.cert-cb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--cert-border);
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  flex-shrink: 0;
+}
+.cert-cb:checked {
+  background: var(--cert-accent);
+  border-color: var(--cert-accent);
+}
+.cert-cb:checked::after {
+  content: "✓";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+}
+.cert-checked { opacity: 0.5; }
+.cert-checked a { text-decoration: line-through !important; }
+
+/* Print styles */
+@media print {
+  .tool-hero, .cert-breadcrumb, .cert-toolbar, .cert-toc,
+  .cert-progress-wrap, .cert-single-nav, .cert-single-meta,
+  .site-header, .site-footer, .global-btt,
+  #cert-related, .cert-status-banner { display: none !important; }
+  .cert-single-content { max-width: 100%; }
+  .cert-single-content h2 { page-break-before: auto; }
+  .cert-collapsible.cert-collapsed { max-height: none !important; opacity: 1 !important; }
+  .cert-cb { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .cert-checked { opacity: 1; }
+  body { background: #fff; color: #000; }
+  .cert-single-content, .cert-single-content h2, .cert-single-content h3,
+  .cert-single-content h4, .cert-single-content li, .cert-single-content a {
+    color: #000 !important;
+  }
+  .cert-single-content table th { background: #eee !important; }
+}
+
 .cert-status-banner {
   padding: 0.85rem 1.25rem;
   border-radius: 10px;
