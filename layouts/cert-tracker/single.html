@@ -102,7 +102,7 @@
         if (text.length > 60) text = text.substring(0, 57) + "...";
         items.push('<a href="#' + h.id + '">' + text + '</a>');
       });
-      toc.innerHTML = '<strong>Jump to:</strong> ' + items.join(' · ');
+      toc.innerHTML = '<strong>Jump to:</strong><ol class="cert-toc-list">' + items.map(function(a){ return '<li>' + a + '</li>'; }).join('') + '</ol>';
     }
   }
 

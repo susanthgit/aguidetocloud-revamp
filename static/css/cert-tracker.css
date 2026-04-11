@@ -509,7 +509,15 @@
   color: var(--cert-text-dim);
 }
 .cert-toc:empty { display: none; }
-.cert-toc strong { color: var(--cert-text); margin-right: 0.3rem; }
+.cert-toc strong { color: var(--cert-text); }
+.cert-toc-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+.cert-toc-list li {
+  padding: 0.15rem 0;
+}
+.cert-toc-list li::marker { color: var(--cert-accent); font-weight: 600; }
 .cert-toc a { color: var(--cert-accent); text-decoration: none; }
 .cert-toc a:hover { text-decoration: underline; }
 
