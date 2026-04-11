@@ -1,0 +1,527 @@
+# ─── Copilot Features Matrix ───
+# Each feature has availability across apps and tiers
+# States: "full" | "partial" | "preview" | "none"
+# Each cell can have an optional note for context
+
+# ─── Feature Categories ───
+[[feature_categories]]
+id = "content_creation"
+name = "Content Creation"
+emoji = "✏️"
+
+[[feature_categories]]
+id = "summarisation"
+name = "Summarisation"
+emoji = "📋"
+
+[[feature_categories]]
+id = "analysis"
+name = "Analysis & Insights"
+emoji = "🔍"
+
+[[feature_categories]]
+id = "communication"
+name = "Communication"
+emoji = "💬"
+
+[[feature_categories]]
+id = "meetings"
+name = "Meetings"
+emoji = "📅"
+
+[[feature_categories]]
+id = "data"
+name = "Data & Files"
+emoji = "📊"
+
+[[feature_categories]]
+id = "agents"
+name = "Agents & Automation"
+emoji = "🤖"
+
+[[feature_categories]]
+id = "admin"
+name = "Admin & Governance"
+emoji = "🔒"
+
+# ═══════════════════════════════════════════════
+# CONTENT CREATION FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "draft_document"
+name = "Draft a document"
+description = "Generate new documents, reports, or content from a prompt"
+category = "content_creation"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic drafting with web context only" }
+pro = { state = "full", note = "Full drafting with local file context" }
+m365 = { state = "full", note = "Full drafting grounded in org data" }
+[features.availability.copilot_chat]
+free = { state = "partial", note = "Web-grounded text generation" }
+chat = { state = "partial", note = "Web-grounded, enterprise data protection" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Can reference org files and data" }
+
+[[features]]
+id = "rewrite_refine"
+name = "Rewrite & refine text"
+description = "Reword paragraphs, adjust tone, fix grammar, polish language"
+category = "content_creation"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic rewriting from Copilot Chat panel" }
+pro = { state = "full" }
+m365 = { state = "full" }
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic email polishing" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "generate_slides"
+name = "Generate slides from prompt"
+description = "Create presentation slides from text prompts, documents, or outlines"
+category = "content_creation"
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic slide creation from prompt" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Can pull content from org documents" }
+
+[[features]]
+id = "draft_email"
+name = "Draft email replies"
+description = "Generate email responses, compose new emails, or improve existing drafts"
+category = "content_creation"
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic drafting with web context" }
+pro = { state = "full", note = "Context from current email thread" }
+m365 = { state = "full", note = "Full context from inbox, calendar, and org data" }
+
+[[features]]
+id = "image_generation"
+name = "Image generation"
+description = "Create images from text prompts using DALL-E"
+category = "content_creation"
+[features.availability.copilot_chat]
+free = { state = "full", note = "Standard quality" }
+chat = { state = "full" }
+pro = { state = "full", note = "Higher resolution, more generations" }
+m365 = { state = "full" }
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "speaker_notes"
+name = "Generate speaker notes"
+description = "Auto-generate speaker notes for presentation slides"
+category = "content_creation"
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+# ═══════════════════════════════════════════════
+# SUMMARISATION FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "summarise_document"
+name = "Summarise a document"
+description = "Condense long documents into key points and summaries"
+category = "summarisation"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "partial", note = "Summarise open file with web context" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Can cross-reference related org documents" }
+[features.availability.copilot_chat]
+free = { state = "partial", note = "Upload file to summarise" }
+chat = { state = "partial", note = "Upload or reference open file" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Summarise any org document by name" }
+
+[[features]]
+id = "summarise_email"
+name = "Summarise email threads"
+description = "Get quick summaries of long email conversations and threads"
+category = "summarisation"
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic thread summary" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Full inbox-aware summary with action items" }
+
+[[features]]
+id = "summarise_meeting"
+name = "Summarise meetings"
+description = "Get meeting summaries with key decisions, action items, and follow-ups"
+category = "meetings"
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Requires meeting transcript; includes action items and decisions" }
+
+[[features]]
+id = "summarise_chat"
+name = "Summarise Teams chats"
+description = "Catch up on long Teams chat threads with AI-generated summaries"
+category = "communication"
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Summarise any Teams chat or channel thread" }
+
+[[features]]
+id = "summarise_notes"
+name = "Summarise notebooks"
+description = "Condense and organise large notebooks, extract key points"
+category = "summarisation"
+[features.availability.onenote]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "summarise_presentation"
+name = "Summarise a presentation"
+description = "Get key points and overview from a PowerPoint deck"
+category = "summarisation"
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic summary of open deck" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+# ═══════════════════════════════════════════════
+# ANALYSIS & INSIGHTS FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "data_analysis"
+name = "Analyse data & trends"
+description = "Summarise data, find trends, and highlight key insights in plain language"
+category = "analysis"
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic analysis of open spreadsheet" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Can cross-reference org data sources" }
+
+[[features]]
+id = "formula_generation"
+name = "Generate formulas"
+description = "Build Excel formulas from natural-language descriptions"
+category = "data"
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic formula suggestions" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "chart_creation"
+name = "Create charts & visuals"
+description = "Generate charts, pivot tables, and visualisations from data"
+category = "data"
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic chart suggestions" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "what_if"
+name = "What-if analysis"
+description = "Model scenarios and forecast outcomes with natural language"
+category = "analysis"
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "ask_questions"
+name = "Ask questions about content"
+description = "Query documents, spreadsheets, or data for specific information"
+category = "analysis"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "partial", note = "Questions about open document only" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Can search across org documents" }
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "partial" }
+pro = { state = "full" }
+m365 = { state = "full" }
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "partial" }
+pro = { state = "full" }
+m365 = { state = "full" }
+[features.availability.onenote]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+# ═══════════════════════════════════════════════
+# COMMUNICATION FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "coaching_tips"
+name = "Email coaching tips"
+description = "Get suggestions to improve email tone, clarity, and sentiment"
+category = "communication"
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "action_items"
+name = "Extract action items"
+description = "Identify action items, follow-ups, and tasks from emails and meetings"
+category = "communication"
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "partial", note = "From individual emails only" }
+m365 = { state = "full", note = "Cross-inbox and meeting-aware action items" }
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "From meeting transcripts and chat threads" }
+
+[[features]]
+id = "meeting_prep"
+name = "Meeting preparation"
+description = "Prepare for meetings with relevant context, documents, and past decisions"
+category = "meetings"
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Pulls from calendar, emails, and related docs" }
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Meeting context from past transcripts and chats" }
+
+[[features]]
+id = "realtime_catchup"
+name = "Real-time meeting catch-up"
+description = "Join a meeting late and instantly catch up on what was discussed"
+category = "meetings"
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Live transcript-based catch-up" }
+
+# ═══════════════════════════════════════════════
+# DATA & FILES FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "file_search"
+name = "Find files across org"
+description = "Search and find documents, emails, and files across your Microsoft 365 tenant"
+category = "data"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Searches SharePoint, OneDrive, Exchange via Microsoft Graph" }
+
+[[features]]
+id = "file_upload"
+name = "Upload files for context"
+description = "Upload documents, images, or PDFs for Copilot to analyse"
+category = "data"
+[features.availability.copilot_chat]
+free = { state = "full", note = "Basic file upload" }
+chat = { state = "full" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "copilot_pages"
+name = "Copilot Pages"
+description = "Save, edit, and share AI-generated content as collaborative pages"
+category = "data"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "full" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "task_creation"
+name = "Create tasks & to-dos"
+description = "Generate tasks, checklists, and action plans from notes or conversations"
+category = "data"
+[features.availability.onenote]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "full" }
+m365 = { state = "full" }
+[features.availability.planner]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Create and assign tasks from Copilot" }
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Create tasks from meeting action items" }
+
+# ═══════════════════════════════════════════════
+# AGENTS & AUTOMATION FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "agent_mode"
+name = "Agent Mode (multi-step)"
+description = "Copilot acts as an active collaborator — multi-step reasoning, transparent explanations"
+category = "agents"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic agent mode with web grounding" }
+pro = { state = "full" }
+m365 = { state = "full", note = "Full context with org data" }
+[features.availability.excel]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic agent mode" }
+pro = { state = "full" }
+m365 = { state = "full" }
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "partial", note = "Basic agent mode" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "custom_agents"
+name = "Custom agents"
+description = "Build and deploy custom AI agents via Copilot Studio for specific business workflows"
+category = "agents"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "partial", note = "Pay-as-you-go agents only" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Built-in + custom agents via Copilot Studio" }
+[features.availability.teams]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Deploy agents in Teams channels and chats" }
+
+[[features]]
+id = "work_web_toggle"
+name = "Work / Web mode toggle"
+description = "Switch between org-data-grounded and web-grounded answers"
+category = "agents"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "none", note = "Web mode only" }
+pro = { state = "none", note = "Web mode only" }
+m365 = { state = "full", note = "Toggle between Work (Graph) and Web modes" }
+
+# ═══════════════════════════════════════════════
+# ADMIN & GOVERNANCE FEATURES
+# ═══════════════════════════════════════════════
+
+[[features]]
+id = "copilot_analytics"
+name = "Copilot Analytics"
+description = "Admin dashboard showing Copilot usage, adoption, and impact metrics"
+category = "admin"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Viva Insights + Copilot Dashboard" }
+
+[[features]]
+id = "edp"
+name = "Enterprise data protection"
+description = "Prompts and responses protected — not used to train models, compliant with org policies"
+category = "admin"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "full" }
+pro = { state = "full" }
+m365 = { state = "full" }
+
+[[features]]
+id = "sensitivity_labels"
+name = "Sensitivity label inheritance"
+description = "Copilot-generated content inherits sensitivity labels from source documents"
+category = "admin"
+[features.availability.word]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Inherits labels from referenced source documents" }
+[features.availability.powerpoint]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full" }
+[features.availability.outlook]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full" }
+
+[[features]]
+id = "dspm_ai"
+name = "Data Security Posture for AI"
+description = "Monitor and manage how Copilot interacts with sensitive data via Microsoft Purview"
+category = "admin"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Requires E5 for prompt & response auditing; E3 gets basic view" }
+
+[[features]]
+id = "dlp_copilot"
+name = "DLP policies for Copilot"
+description = "Apply Data Loss Prevention policies to Copilot interactions"
+category = "admin"
+[features.availability.copilot_chat]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "DLP scope depends on base license (E3 vs E5)" }
+
+[[features]]
+id = "spo_advanced"
+name = "SharePoint Advanced Management"
+description = "Site ownership policies, data access governance, restricted access control for Copilot readiness"
+category = "admin"
+[features.availability.sharepoint]
+free = { state = "none" }
+chat = { state = "none" }
+pro = { state = "none" }
+m365 = { state = "full", note = "Included with M365 Copilot license" }

@@ -1,0 +1,131 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/copilot-matrix.css?v={{ site.Params.cache_version }}">
+
+{{/* ── Inject TOML data as JSON for JS ── */}}
+{{ $tiers := hugo.Data.copilot_matrix.tiers.tiers }}
+{{ $apps := hugo.Data.copilot_matrix.apps.apps }}
+{{ $appCats := hugo.Data.copilot_matrix.apps.categories }}
+{{ $features := hugo.Data.copilot_matrix.features.features }}
+{{ $featureCats := hugo.Data.copilot_matrix.features.feature_categories }}
+{{ $changelog := hugo.Data.copilot_matrix.changelog.entries }}
+
+<script>
+  window.__cpData = {
+    tiers: {{ $tiers | jsonify | safeJS }},
+    apps: {{ $apps | jsonify | safeJS }},
+    appCategories: {{ $appCats | jsonify | safeJS }},
+    features: {{ $features | jsonify | safeJS }},
+    featureCategories: {{ $featureCats | jsonify | safeJS }},
+    changelog: {{ $changelog | jsonify | safeJS }}
+  };
+</script>
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Microsoft Copilot Feature Matrix",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Susanth Sutheesh",
+    "url": "https://www.aguidetocloud.com/about/"
+  }
+}
+</script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+{{ partial "tool-hero.html" (dict "title" "Copilot Feature Matrix" "subtitle" "See exactly what Microsoft 365 Copilot can do — across every app and license tier" "accent" "#3B82F6") }}
+
+<div class="cpmatrix-container">
+  {{/* ── Tab Navigation ── */}}
+  <div class="cpmatrix-tabs" role="tablist" aria-label="Feature Matrix Views">
+    <button class="cpmatrix-tab active" role="tab" aria-selected="true" data-tab="matrix">
+      <span class="cpmatrix-tab-emoji">📊</span> Feature Matrix
+    </button>
+    <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="compare">
+      <span class="cpmatrix-tab-emoji">⚖️</span> Compare Tiers
+    </button>
+    <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="changes">
+      <span class="cpmatrix-tab-emoji">🕐</span> What Changed
+    </button>
+  </div>
+
+  {{/* ── Tab 1: Feature Matrix ── */}}
+  <div class="cpmatrix-panel active" id="panel-matrix" role="tabpanel">
+    {{/* Controls */}}
+    <div class="cpmatrix-controls">
+      <div class="cpmatrix-search-wrap">
+        <input type="text" id="cpmatrix-search" class="cpmatrix-search" placeholder="Search features..." aria-label="Search features">
+      </div>
+      <div class="cpmatrix-filters">
+        <select id="cpmatrix-cat-filter" class="cpmatrix-select" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+        </select>
+        <select id="cpmatrix-app-filter" class="cpmatrix-select cpmatrix-desktop-only" aria-label="Filter by app">
+          <option value="all">All Apps</option>
+        </select>
+      </div>
+    </div>
+
+    {{/* Mobile: App Picker */}}
+    <div class="cpmatrix-app-picker cpmatrix-mobile-only" aria-label="Select app to view">
+      <label for="cpmatrix-mobile-app">Select App:</label>
+      <select id="cpmatrix-mobile-app" class="cpmatrix-select">
+      </select>
+    </div>
+
+    {{/* Legend */}}
+    <div class="cpmatrix-legend">
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-full"></span> Full</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-partial"></span> Partial</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-preview"></span> Preview</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-none"></span> Not Available</span>
+    </div>
+
+    {{/* Matrix Grid (rendered by JS) */}}
+    <div id="cpmatrix-grid" class="cpmatrix-grid" role="grid" aria-label="Copilot feature availability matrix">
+    </div>
+
+    <div id="cpmatrix-no-results" class="cpmatrix-no-results" hidden>
+      No features match your filters. Try adjusting your search or category.
+    </div>
+  </div>
+
+  {{/* ── Tab 2: Compare Tiers ── */}}
+  <div class="cpmatrix-panel" id="panel-compare" role="tabpanel" hidden>
+    <div id="cpmatrix-tiers" class="cpmatrix-tiers-grid">
+    </div>
+  </div>
+
+  {{/* ── Tab 3: What Changed ── */}}
+  <div class="cpmatrix-panel" id="panel-changes" role="tabpanel" hidden>
+    <div class="cpmatrix-controls">
+      <select id="cpmatrix-change-filter" class="cpmatrix-select" aria-label="Filter changes">
+        <option value="all">All Changes</option>
+        <option value="high">High Impact Only</option>
+      </select>
+    </div>
+    <div id="cpmatrix-timeline" class="cpmatrix-timeline">
+    </div>
+  </div>
+</div>
+
+{{/* ── Disclaimer ── */}}
+<div class="cpmatrix-disclaimer">
+  <p><strong>Disclaimer:</strong> The views and opinions expressed here are my own and do not represent the official positions of Microsoft. Feature availability, pricing, and capabilities are subject to change. Always refer to <a href="https://learn.microsoft.com" target="_blank" rel="noopener">official Microsoft documentation</a> for the most up-to-date information.</p>
+  <p>Data last verified: April 2026. Have a correction? <a href="https://github.com/susanthgit/aguidetocloud-revamp/issues" target="_blank" rel="noopener">Open an issue</a>.</p>
+</div>
+
+<script src="/js/copilot-matrix.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

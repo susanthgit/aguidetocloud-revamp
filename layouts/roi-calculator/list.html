@@ -1,0 +1,472 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/roi-calculator.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Copilot ROI Calculator — Estimate Your Microsoft 365 Copilot Savings",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+<div class="roi-page">
+
+  {{ partial "tool-hero.html" (dict "title" "Copilot ROI Calculator" "subtitle" "Estimate your Microsoft 365 Copilot savings — by role, with realistic adoption curves. Free, instant, no sign-up." "accent" "#14B8A6") }}
+
+  {{/* ── Tab Navigation ── */}}
+  <div class="roi-container">
+    <div class="roi-tabs" role="tablist" aria-label="ROI Calculator sections">
+      <button class="roi-tab roi-tab-active" role="tab" aria-selected="true" aria-controls="tab-quick" id="tab-btn-quick" data-tab="quick">⚡ Quick Calculator</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-roles" id="tab-btn-roles" data-tab="roles">👥 By Role</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-costs" id="tab-btn-costs" data-tab="costs">💳 Cost Breakdown</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" id="tab-btn-scenarios" data-tab="scenarios">📊 Scenarios</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-summary" id="tab-btn-summary" data-tab="summary">📄 Executive Summary</button>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 1: QUICK CALCULATOR
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="roi-panel roi-panel-active" role="tabpanel" id="tab-quick" aria-labelledby="tab-btn-quick">
+
+      <div class="roi-quick-grid">
+        {{/* ── Input Column ── */}}
+        <div class="roi-input-card">
+          <h2 class="roi-card-title">Your Organisation</h2>
+
+          <div class="roi-field">
+            <label for="roi-users">Number of Copilot users</label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-users-range" min="10" max="5000" value="100" step="10" aria-hidden="true">
+              <input type="number" id="roi-users" min="1" max="50000" value="100" class="roi-num-input" aria-label="Number of Copilot users">
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-salary">Average annual salary (USD)
+              <span class="roi-tooltip" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">ℹ️</span>
+            </label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-salary-range" min="30000" max="300000" value="75000" step="5000" aria-hidden="true">
+              <input type="number" id="roi-salary" min="10000" max="500000" value="75000" class="roi-num-input" aria-label="Average annual salary">
+            </div>
+            <span class="roi-field-hint">Fully-loaded hourly rate: <strong id="roi-hourly-rate">$46.88</strong></span>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-plan">Microsoft 365 plan</label>
+            <select id="roi-plan" class="roi-select" aria-label="Microsoft 365 plan">
+              <option value="bus-std">Business Standard + Copilot — $42.50/user/mo</option>
+              <option value="bus-prem">Business Premium + Copilot — $52.00/user/mo</option>
+              <option value="e3" selected>E3 + Copilot add-on — $69.00/user/mo</option>
+              <option value="e5">E5 + Copilot add-on — $90.00/user/mo</option>
+              <option value="e7">E7 (Frontier Suite) — $99.00/user/mo</option>
+            </select>
+            <span class="roi-field-hint">Copilot cost component: <strong id="roi-copilot-cost">$30.00</strong>/user/mo</span>
+          </div>
+
+          <div class="roi-field">
+            <label>Adoption scenario</label>
+            <div class="roi-radio-group" role="radiogroup" aria-label="Adoption scenario">
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative"> 🐢 Conservative</label>
+              <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked> ⚖️ Moderate</label>
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive"> 🚀 Aggressive</label>
+            </div>
+          </div>
+
+          <div class="roi-presets">
+            <span class="roi-presets-label">Try:</span>
+            <button class="roi-preset-btn" data-users="50" data-salary="65000" data-plan="bus-std">Small Biz (50)</button>
+            <button class="roi-preset-btn" data-users="500" data-salary="85000" data-plan="e3">Enterprise (500)</button>
+            <button class="roi-preset-btn" data-users="2000" data-salary="95000" data-plan="e5">Large (2,000)</button>
+          </div>
+        </div>
+
+        {{/* ── Results Column ── */}}
+        <div class="roi-results-card">
+          <h2 class="roi-card-title">Your ROI Estimate</h2>
+
+          <div class="roi-metrics-grid">
+            <div class="roi-metric">
+              <span class="roi-metric-label">Monthly Savings</span>
+              <span class="roi-metric-value" id="roi-monthly-savings">$0</span>
+            </div>
+            <div class="roi-metric">
+              <span class="roi-metric-label">Annual Savings</span>
+              <span class="roi-metric-value roi-metric-highlight" id="roi-annual-savings">$0</span>
+            </div>
+            <div class="roi-metric">
+              <span class="roi-metric-label">3-Year ROI</span>
+              <span class="roi-metric-value" id="roi-percentage">0%</span>
+              <span class="roi-metric-badge" id="roi-badge"></span>
+            </div>
+            <div class="roi-metric">
+              <span class="roi-metric-label">Payback Period</span>
+              <span class="roi-metric-value" id="roi-payback">—</span>
+            </div>
+          </div>
+
+          <div class="roi-big-number">
+            <span class="roi-big-label">3-Year Net Gain</span>
+            <span class="roi-big-value" id="roi-net-gain">$0</span>
+          </div>
+
+          {{/* ── Mini Bar Chart ── */}}
+          <div class="roi-mini-chart" id="roi-mini-chart" aria-label="3-year cost vs savings comparison">
+            <div class="roi-bar-group">
+              <div class="roi-bar-label">Cost</div>
+              <div class="roi-bar-track"><div class="roi-bar roi-bar-cost" id="roi-bar-cost" style="width:0%"></div></div>
+              <span class="roi-bar-val" id="roi-bar-cost-val">$0</span>
+            </div>
+            <div class="roi-bar-group">
+              <div class="roi-bar-label">Savings</div>
+              <div class="roi-bar-track"><div class="roi-bar roi-bar-savings" id="roi-bar-savings" style="width:0%"></div></div>
+              <span class="roi-bar-val" id="roi-bar-savings-val">$0</span>
+            </div>
+          </div>
+
+          <p class="roi-source-note">
+            📊 Based on <a href="https://tei.forrester.com/go/microsoft/M365Copilot/" target="_blank" rel="noopener">Forrester TEI</a>,
+            <a href="https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/" target="_blank" rel="noopener">UK Gov</a> &amp;
+            <a href="https://www.microsoft.com/en-us/research/publication/early-impacts-of-m365-copilot/" target="_blank" rel="noopener">Microsoft Research</a> data.
+            All calculations run in your browser — your data never leaves this page.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 2: ROLE-BASED DEEP DIVE
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="roi-panel" role="tabpanel" id="tab-roles" aria-labelledby="tab-btn-roles" hidden>
+
+      <div class="roi-roles-header">
+        <h2 class="roi-card-title">Role-Based Savings Breakdown</h2>
+        <p class="roi-roles-desc">Add roles to see where Copilot delivers the most value. Time savings are pre-filled from research — adjust to match your organisation.</p>
+        <div class="roi-roles-controls">
+          <select id="roi-role-scenario" class="roi-select roi-select-sm" aria-label="Adoption scenario for roles">
+            <option value="conservative">🐢 Conservative</option>
+            <option value="moderate" selected>⚖️ Moderate</option>
+            <option value="aggressive">🚀 Aggressive</option>
+          </select>
+          <button class="roi-btn-accent" id="roi-add-role">+ Add Role</button>
+        </div>
+      </div>
+
+      <div class="roi-roles-table-wrap">
+        <table class="roi-roles-table" id="roi-roles-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Headcount</th>
+              <th>Avg Salary (USD)</th>
+              <th>Hours Saved/Week</th>
+              <th>Annual Savings</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="roi-roles-tbody">
+            <!-- Rows added by JS -->
+          </tbody>
+          <tfoot>
+            <tr class="roi-roles-total-row">
+              <td><strong>Total</strong></td>
+              <td id="roi-roles-total-hc">0</td>
+              <td>—</td>
+              <td>—</td>
+              <td id="roi-roles-total-savings"><strong>$0</strong></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      {{/* Top 3 callout */}}
+      <div class="roi-top-roles" id="roi-top-roles" style="display:none">
+        <h3>🏆 Highest-Value Roles</h3>
+        <div class="roi-top-roles-list" id="roi-top-roles-list"></div>
+      </div>
+
+      {{/* Stacked bar visualisation */}}
+      <div class="roi-roles-chart" id="roi-roles-chart" aria-label="Savings by role bar chart"></div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 3: COST BREAKDOWN
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="roi-panel" role="tabpanel" id="tab-costs" aria-labelledby="tab-btn-costs" hidden>
+
+      <h2 class="roi-card-title">Total Cost of Ownership</h2>
+      <p class="roi-roles-desc">Copilot costs more than just the licence. Factor in implementation costs for a realistic picture.</p>
+
+      <div class="roi-cost-grid">
+        <div class="roi-input-card">
+          <h3 class="roi-card-subtitle">Implementation Costs (One-Time)</h3>
+
+          <div class="roi-field">
+            <label for="roi-training">Training per user
+              <span class="roi-tooltip" aria-label="Includes workshops, e-learning, and champions programme">ℹ️</span>
+            </label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-training-range" min="0" max="300" value="100" step="10" aria-hidden="true">
+              <span class="roi-range-val" id="roi-training-val">$100</span>
+            </div>
+            <div class="roi-preset-chips">
+              <button class="roi-chip" data-target="roi-training-range" data-val="50">Low ($50)</button>
+              <button class="roi-chip roi-chip-active" data-target="roi-training-range" data-val="100">Med ($100)</button>
+              <button class="roi-chip" data-target="roi-training-range" data-val="200">High ($200)</button>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-change-mgmt">Change management consulting
+              <span class="roi-tooltip" aria-label="External consultancy or internal programme for adoption">ℹ️</span>
+            </label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-change-mgmt-range" min="0" max="100000" value="20000" step="5000" aria-hidden="true">
+              <span class="roi-range-val" id="roi-change-mgmt-val">$20,000</span>
+            </div>
+            <div class="roi-preset-chips">
+              <button class="roi-chip" data-target="roi-change-mgmt-range" data-val="5000">Low ($5K)</button>
+              <button class="roi-chip roi-chip-active" data-target="roi-change-mgmt-range" data-val="20000">Med ($20K)</button>
+              <button class="roi-chip" data-target="roi-change-mgmt-range" data-val="50000">High ($50K)</button>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-data-gov">Data governance & cleanup
+              <span class="roi-tooltip" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">ℹ️</span>
+            </label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-data-gov-range" min="0" max="150000" value="40000" step="5000" aria-hidden="true">
+              <span class="roi-range-val" id="roi-data-gov-val">$40,000</span>
+            </div>
+            <div class="roi-preset-chips">
+              <button class="roi-chip" data-target="roi-data-gov-range" data-val="10000">Low ($10K)</button>
+              <button class="roi-chip roi-chip-active" data-target="roi-data-gov-range" data-val="40000">Med ($40K)</button>
+              <button class="roi-chip" data-target="roi-data-gov-range" data-val="100000">High ($100K)</button>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-admin-hours">Admin rollout time (hours)</label>
+            <div class="roi-range-row">
+              <input type="range" id="roi-admin-hours-range" min="0" max="320" value="80" step="8" aria-hidden="true">
+              <span class="roi-range-val" id="roi-admin-hours-val">80 hrs</span>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="roi-admin-rate">Admin hourly rate (USD)</label>
+            <input type="number" id="roi-admin-rate" min="20" max="300" value="75" class="roi-num-input roi-num-sm" aria-label="Admin hourly rate">
+          </div>
+        </div>
+
+        {{/* Cost results */}}
+        <div class="roi-results-card">
+          <h3 class="roi-card-subtitle">Cost vs Value (3 Years)</h3>
+
+          <div class="roi-cost-summary">
+            <div class="roi-cost-row">
+              <span>Annual licence cost</span>
+              <span class="roi-cost-val" id="roi-annual-licence">$0</span>
+            </div>
+            <div class="roi-cost-row">
+              <span>Implementation (one-time)</span>
+              <span class="roi-cost-val" id="roi-impl-cost">$0</span>
+            </div>
+            <div class="roi-cost-row roi-cost-row-total">
+              <span><strong>3-Year Total Cost</strong></span>
+              <span class="roi-cost-val" id="roi-total-cost"><strong>$0</strong></span>
+            </div>
+          </div>
+
+          <div class="roi-cost-divider"></div>
+
+          <div class="roi-cost-summary">
+            <div class="roi-cost-row">
+              <span>Year 1 savings (with ramp-up)</span>
+              <span class="roi-cost-val roi-val-positive" id="roi-y1-savings">$0</span>
+            </div>
+            <div class="roi-cost-row">
+              <span>Year 2 savings</span>
+              <span class="roi-cost-val roi-val-positive" id="roi-y2-savings">$0</span>
+            </div>
+            <div class="roi-cost-row">
+              <span>Year 3 savings</span>
+              <span class="roi-cost-val roi-val-positive" id="roi-y3-savings">$0</span>
+            </div>
+            <div class="roi-cost-row roi-cost-row-total">
+              <span><strong>3-Year Total Value</strong></span>
+              <span class="roi-cost-val roi-val-positive" id="roi-total-value"><strong>$0</strong></span>
+            </div>
+          </div>
+
+          <div class="roi-cost-divider"></div>
+
+          <div class="roi-cost-row roi-cost-row-net">
+            <span><strong>3-Year Net ROI</strong></span>
+            <span class="roi-cost-val" id="roi-cost-net"><strong>$0</strong></span>
+          </div>
+
+          {{/* Break-even indicator */}}
+          <div class="roi-breakeven" id="roi-breakeven">
+            <span class="roi-breakeven-icon">⏱️</span>
+            <span>Break-even in <strong id="roi-breakeven-months">—</strong> months</span>
+          </div>
+
+          {{/* Timeline bar */}}
+          <div class="roi-timeline" id="roi-timeline" aria-label="Break-even timeline">
+            <div class="roi-timeline-track">
+              <div class="roi-timeline-marker" id="roi-timeline-marker" style="left:0%"></div>
+              <div class="roi-timeline-fill" id="roi-timeline-fill" style="width:0%"></div>
+            </div>
+            <div class="roi-timeline-labels">
+              <span>Month 0</span>
+              <span>Month 12</span>
+              <span>Month 24</span>
+              <span>Month 36</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 4: SCENARIO COMPARISON
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="roi-panel" role="tabpanel" id="tab-scenarios" aria-labelledby="tab-btn-scenarios" hidden>
+
+      <h2 class="roi-card-title">Scenario Comparison</h2>
+      <p class="roi-roles-desc">See how adoption rate changes your ROI. The biggest factor in Copilot ROI isn't the tool — it's how well your organisation adopts it.</p>
+
+      <div class="roi-scenario-grid" id="roi-scenario-grid">
+        {{/* 3 scenario columns rendered by JS */}}
+      </div>
+
+      <div class="roi-custom-scenario">
+        <h3 class="roi-card-subtitle">🎛️ Custom "What-If" Scenario</h3>
+        <div class="roi-field">
+          <label for="roi-custom-adoption">Custom adoption rate at Month 12</label>
+          <div class="roi-range-row">
+            <input type="range" id="roi-custom-adoption" min="10" max="100" value="75" step="5" aria-label="Custom adoption percentage">
+            <span class="roi-range-val" id="roi-custom-adoption-val">75%</span>
+          </div>
+        </div>
+        <div class="roi-custom-result" id="roi-custom-result"></div>
+      </div>
+
+      {{/* 3-year projection table */}}
+      <div class="roi-projection-table-wrap">
+        <h3 class="roi-card-subtitle">📅 3-Year Projection</h3>
+        <table class="roi-projection-table" id="roi-projection-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>🐢 Conservative</th>
+              <th>⚖️ Moderate</th>
+              <th>🚀 Aggressive</th>
+            </tr>
+          </thead>
+          <tbody id="roi-projection-tbody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 5: EXECUTIVE SUMMARY
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="roi-panel" role="tabpanel" id="tab-summary" aria-labelledby="tab-btn-summary" hidden>
+
+      <div class="roi-summary-page" id="roi-summary-page">
+        <div class="roi-summary-header">
+          <h2>Microsoft 365 Copilot — ROI Business Case</h2>
+          <p class="roi-summary-subtitle">Generated by <a href="https://www.aguidetocloud.com/roi-calculator/">aguidetocloud.com/roi-calculator</a></p>
+        </div>
+
+        <div class="roi-summary-params" id="roi-summary-params">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="roi-summary-metrics" id="roi-summary-metrics">
+          <!-- 4 key metric cards -->
+        </div>
+
+        <div class="roi-summary-table-wrap">
+          <h3>3-Year Financial Projection</h3>
+          <table class="roi-summary-table" id="roi-summary-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Year 1</th>
+                <th>Year 2</th>
+                <th>Year 3</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="roi-summary-tbody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="roi-summary-assumptions" id="roi-summary-assumptions">
+          <h3>Assumptions & Methodology</h3>
+          <ul id="roi-summary-assumptions-list">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+
+        <div class="roi-summary-sources">
+          <h3>Data Sources</h3>
+          <ul>
+            <li><a href="https://tei.forrester.com/go/microsoft/M365Copilot/" target="_blank" rel="noopener">Forrester Total Economic Impact™ Study</a> — 353% ROI for SMBs, 116% for enterprise</li>
+            <li><a href="https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/" target="_blank" rel="noopener">UK Government Copilot Experiment</a> — 26 min/day average time savings</li>
+            <li><a href="https://www.openaccessgovernment.org/nhs-ai-trial-saves-400000-hours-a-month-with-microsoft-365-copilot/200260/" target="_blank" rel="noopener">NHS AI Trial</a> — 43 min/day, 400K hours/month</li>
+            <li><a href="https://www.microsoft.com/en-us/research/publication/early-impacts-of-m365-copilot/" target="_blank" rel="noopener">Microsoft Research — Early Impacts of M365 Copilot</a> — 29% faster task completion</li>
+          </ul>
+        </div>
+
+        <p class="roi-summary-disclaimer">
+          ⚠️ This calculator provides estimates based on published research and industry benchmarks. Actual ROI depends on adoption rate, use cases, training investment, and organisational readiness. All calculations run client-side — no data is transmitted or stored externally.
+        </p>
+      </div>
+
+      <div class="roi-summary-actions">
+        <button class="roi-btn-accent" id="roi-copy-summary">📋 Copy Summary</button>
+        <button class="roi-btn-secondary" id="roi-print-summary">🖨️ Print</button>
+        <button class="roi-btn-secondary" id="roi-save-history">💾 Save to History</button>
+      </div>
+
+      {{/* History */}}
+      <div class="roi-history" id="roi-history" style="display:none">
+        <h3 class="roi-card-subtitle">📜 Saved Calculations</h3>
+        <div class="roi-history-list" id="roi-history-list"></div>
+        <button class="roi-btn-danger" id="roi-clear-history">Clear History</button>
+      </div>
+    </div>
+
+  </div>{{/* .roi-container */}}
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+</div>{{/* .roi-page */}}
+
+<script src="/js/roi-calculator.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

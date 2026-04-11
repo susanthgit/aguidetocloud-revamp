@@ -1,0 +1,82 @@
+# ─── Copilot Feature Changes Timeline ───
+# Track what changed and when, with source links
+
+[[entries]]
+date = "2026-04-15"
+type = "removal"
+scope = "Copilot Chat"
+apps = ["word", "excel", "powerpoint", "outlook"]
+title = "Copilot Chat removed from Office apps for large orgs"
+summary = "Organisations with more than 2,000 users lose in-app Copilot Chat access in Word, Excel, PowerPoint, and Outlook. Web-based Copilot Chat at m365copilot.com remains available."
+source = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing"
+impact = "high"
+
+[[entries]]
+date = "2026-05-01"
+type = "launch"
+scope = "M365 Copilot"
+apps = ["copilot_chat"]
+title = "Agent 365 & M365 E7 (Frontier Suite) GA"
+summary = "Microsoft 365 E7 bundles M365 E5 + Copilot + Agent 365. Centralised agent management across Teams, Outlook, SharePoint. New Agent 365 dashboard for IT admins."
+source = "https://www.microsoft.com/microsoft-365"
+impact = "high"
+
+[[entries]]
+date = "2026-03-01"
+type = "expansion"
+scope = "Copilot Chat"
+apps = ["word", "excel", "powerpoint", "outlook", "onenote"]
+title = "Copilot Chat moves inside M365 apps"
+summary = "Free Copilot Chat (web-grounded) now available directly inside Word, Excel, PowerPoint, Outlook, and OneNote for all M365 subscribers. Previously web-only."
+source = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog"
+impact = "medium"
+
+[[entries]]
+date = "2026-03-01"
+type = "feature"
+scope = "M365 Copilot"
+apps = ["word", "excel", "powerpoint"]
+title = "Agent Mode launches in Office apps"
+summary = "Copilot Agent Mode enables multi-step reasoning in Word, Excel, and PowerPoint. Copilot acts as an active collaborator with transparent explanations of each step."
+source = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog"
+impact = "medium"
+
+[[entries]]
+date = "2026-01-15"
+type = "feature"
+scope = "Copilot Chat"
+apps = ["copilot_chat"]
+title = "Pay-as-you-go agents for Copilot Chat"
+summary = "Organisations can now use pay-as-you-go agents in Copilot Chat without a full M365 Copilot license. Agents are billed per message consumption."
+source = "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview"
+impact = "medium"
+
+[[entries]]
+date = "2025-12-01"
+type = "feature"
+scope = "M365 Copilot"
+apps = ["copilot_chat", "teams"]
+title = "Model choice: Anthropic Claude available"
+summary = "M365 Copilot users can now choose between OpenAI GPT-4o and Anthropic Claude models for better context handling and accuracy on certain tasks."
+source = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog"
+impact = "medium"
+
+[[entries]]
+date = "2025-10-01"
+type = "expansion"
+scope = "M365 Copilot"
+apps = ["sharepoint"]
+title = "SharePoint Advanced Management included with Copilot"
+summary = "SharePoint Advanced Management (site ownership policies, data access governance, restricted access control) now included with every M365 Copilot license at no extra cost."
+source = "https://learn.microsoft.com/en-us/sharepoint/advanced-management"
+impact = "medium"
+
+[[entries]]
+date = "2025-09-01"
+type = "feature"
+scope = "M365 Copilot"
+apps = ["copilot_chat"]
+title = "Security Copilot included in E5"
+summary = "Microsoft Security Copilot is now included with Microsoft 365 E5 subscriptions, providing AI-powered security workflows for incident response, threat hunting, and posture management."
+source = "https://learn.microsoft.com/en-us/copilot/security/security-copilot-inclusion"
+impact = "high"
