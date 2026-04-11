@@ -96,20 +96,22 @@
     const shown = [...degraded, ...healthy].slice(0, 16);
 
     grid.innerHTML = shown.map(s => `
-      <div class="shealth-svc-card" data-severity="${s.severity}" data-service="${escHtml(s.service)}" title="${escHtml(s.service)}: ${escHtml(s.status_label)}">
+      <div class="shealth-svc-card" data-severity="${s.severity}" data-service="${escHtml(s.service)}" title="${escHtml(s.service)}: ${escHtml(s.status_label)}" role="button" tabindex="0" aria-label="${escHtml(s.short_name)}: ${escHtml(s.status_label)}">
         <div class="shealth-svc-icon">${s.icon}</div>
         <div class="shealth-svc-name">${escHtml(s.short_name)}</div>
         <div class="shealth-svc-status" data-severity="${s.severity}">${s.status_icon} ${escHtml(s.status_label)}</div>
       </div>
     `).join('');
 
-    // Click to filter by service
+    // Click and keyboard to filter by service
     grid.querySelectorAll('.shealth-svc-card').forEach(card => {
-      card.addEventListener('click', () => {
+      const handler = () => {
         const svc = card.dataset.service;
         const sel = document.getElementById('shealth-service-filter');
         if (sel) { sel.value = svc; applyFilters(); }
-      });
+      };
+      card.addEventListener('click', handler);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); } });
     });
   }
 
@@ -145,6 +147,7 @@
           <div class="shealth-incident-meta">
             <span class="shealth-badge shealth-badge-service">${i.service_icon} ${escHtml(i.service_short)}</span>
             <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${escHtml(i.status_label)}</span>
+            ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge" style="background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.25)">🌍 ${escHtml(i.regions.join(', '))}</span>` : ''}
             ${i.update_count > 0 ? `<span style="color:var(--sh-text-dim)">💬 ${i.update_count} updates</span>` : ''}
           </div>
         </div>
@@ -185,10 +188,10 @@
       loadMore.style.display = filtered.length > displayCount ? '' : 'none';
     }
 
-    // Click handlers for incidents
+    // Click handlers for incidents (Enter + Space)
     container.querySelectorAll('.shealth-incident').forEach(el => {
       el.addEventListener('click', () => openModal(el.dataset.id));
-      el.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(el.dataset.id); });
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(el.dataset.id); } });
     });
   }
 
@@ -207,7 +210,7 @@
       if (statusFilter === 'incident' && i.classification !== 'incident') return false;
 
       if (search) {
-        const hay = (i.title + ' ' + i.service + ' ' + i.service_short + ' ' + i.id + ' ' + (i.impact || '') + ' ' + (i.feature || '')).toLowerCase();
+        const hay = (i.title + ' ' + i.service + ' ' + i.service_short + ' ' + i.id + ' ' + (i.impact || '') + ' ' + (i.feature || '') + ' ' + (i.regions || []).join(' ')).toLowerCase();
         if (!hay.includes(search)) return false;
       }
       return true;
@@ -231,6 +234,9 @@
     body.innerHTML = '<div class="shealth-skeleton"><div class="shealth-skeleton-row"></div></div>';
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Store trigger for focus restore and move focus to close button
+    closeModal._trigger = document.activeElement;
+    setTimeout(() => document.getElementById('shealth-modal-close')?.focus(), 50);
 
     // Try to load per-incident detail (has update posts)
     let detail = null;
@@ -272,6 +278,11 @@
     const overlay = document.getElementById('shealth-modal-overlay');
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
+    // Restore focus to the triggering element
+    if (closeModal._trigger) {
+      closeModal._trigger.focus();
+      closeModal._trigger = null;
+    }
   }
 
   // ── Freshness ──
