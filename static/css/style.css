@@ -600,7 +600,7 @@ a:hover {
 /* ── WELCOME STRIP ───────────────────────── */
 .welcome-strip {
   background:
-    linear-gradient(135deg, color-mix(in srgb, #ff66ff 60%, #0f0f1a) 0%, #141425 50%, color-mix(in srgb, #00e5ff 60%, #0f0f1a) 100%);
+    linear-gradient(135deg, color-mix(in srgb, #00e5ff 30%, #0f0f1a) 0%, #141425 50%, color-mix(in srgb, #ff66ff 20%, #0f0f1a) 100%);
   border-bottom: 1px solid rgba(102, 255, 255, 0.15);
   padding: 1.2rem 2rem;
 }
@@ -630,11 +630,12 @@ a:hover {
 }
 .welcome-title {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--neon-cyan);
   margin-bottom: 0.2rem;
   text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  letter-spacing: -0.3px;
 }
 .welcome-ctas {
   display: flex;
