@@ -231,14 +231,14 @@
   font-size: 1.2rem;
 }
 .ainews-tier-headlines {
-  background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.04));
-  border: 1px solid rgba(255, 0, 255, 0.3);
-  color: #ff00ff;
-}
-.ainews-tier-deepdives {
   background: linear-gradient(135deg, rgba(102, 255, 255, 0.08), rgba(102, 255, 255, 0.03));
   border: 1px solid rgba(102, 255, 255, 0.15);
   color: var(--neon-cyan);
+}
+.ainews-tier-deepdives {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.12), rgba(255, 0, 255, 0.04));
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  color: #ff00ff;
 }
 .ainews-tier-quick {
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.10), rgba(255, 215, 0, 0.03));
@@ -265,9 +265,9 @@
   color: inherit;
 }
 .ainews-card-hero:hover {
-  border-color: #ff00ff;
+  border-color: var(--neon-cyan);
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(255, 0, 255, 0.3), 0 0 25px rgba(255, 0, 255, 0.12);
+  box-shadow: 0 0 12px rgba(102, 255, 255, 0.3), 0 0 25px rgba(102, 255, 255, 0.12);
   text-shadow: none;
 }
 .ainews-card-hero h3 {
@@ -283,8 +283,8 @@
   line-height: 1.7;
 }
 .ainews-card-hero .ainews-cat {
-  background: rgba(255, 0, 255, 0.12);
-  color: #ff00ff;
+  background: rgba(102, 255, 255, 0.12);
+  color: var(--neon-cyan);
 }
 
 /* ── DEEP DIVE CARD GRID ─────────────────── */
@@ -315,26 +315,26 @@
   color: #39ff14;
   font-weight: 700;
 }
-/* Hero cards (headlines) — magenta why-it-matters label */
+/* Hero cards (headlines) — cyan why-it-matters label */
 .ainews-card-hero .ainews-why {
-  background: rgba(255, 0, 255, 0.04);
-  border-left-color: #ff00ff;
+  background: rgba(102, 255, 255, 0.04);
+  border-left-color: var(--neon-cyan);
 }
 .ainews-card-hero .ainews-why strong {
-  color: #ff00ff;
+  color: var(--neon-cyan);
 }
 /* Quick link cards — gold why-it-matters label */
 .ainews-quick-item .ainews-quick-why-label {
   color: #ffd700;
   font-weight: 700;
 }
-/* Deep dive cards — cyan why-it-matters label */
+/* Deep dive cards — magenta why-it-matters label */
 .ainews-deepdive-grid .ainews-why {
-  background: rgba(102, 255, 255, 0.04);
-  border-left-color: var(--neon-cyan);
+  background: rgba(255, 0, 255, 0.04);
+  border-left-color: #ff00ff;
 }
 .ainews-deepdive-grid .ainews-why strong {
-  color: var(--neon-cyan);
+  color: #ff00ff;
 }
 
 /* ── QUICK LINKS (box cards) ─────────────── */
