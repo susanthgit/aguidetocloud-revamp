@@ -1,103 +1,91 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
 <style>
-.roadmap-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-
-/* Column layout */
-.roadmap-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-.roadmap-col-header {
-  text-align: center; padding: 0.75rem; border-radius: 10px;
-  font-weight: 700; font-size: 1rem; margin-bottom: 0.75rem;
-}
-.roadmap-col-fund .roadmap-col-header { background: rgba(16, 185, 129, 0.12); color: #10B981; }
-.roadmap-col-assoc .roadmap-col-header { background: rgba(59, 130, 246, 0.12); color: #3B82F6; }
-.roadmap-col-expert .roadmap-col-header { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
-
-/* Category section within a column */
-.roadmap-cat-section { margin-bottom: 1.25rem; }
-.roadmap-cat-label {
-  font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.05em; margin-bottom: 0.5rem; padding-left: 0.25rem;
-}
-
-/* Exam card */
-.roadmap-card {
-  display: flex; align-items: center; gap: 0.6rem;
-  padding: 0.6rem 0.85rem; margin-bottom: 0.5rem;
-  background: var(--cert-card); border: 1px solid var(--cert-border);
-  border-radius: 8px; text-decoration: none; color: inherit;
-  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
-  position: relative;
-}
-.roadmap-card:hover {
-  border-color: var(--cert-accent); transform: translateX(4px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-}
-
-.roadmap-card-dot {
-  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-}
-.roadmap-card-code {
-  font-weight: 700; font-size: 0.88rem; white-space: nowrap;
-}
-.roadmap-card-title {
-  font-size: 0.75rem; color: var(--cert-text-dim); line-height: 1.3; flex: 1;
-}
-.roadmap-card-status {
-  font-size: 0.6rem; flex-shrink: 0;
-}
-
-/* Category colours on dot + code */
-.roadmap-card[data-cat="Azure"] .roadmap-card-dot { background: #3B82F6; }
-.roadmap-card[data-cat="Azure"] .roadmap-card-code { color: #3B82F6; }
-.roadmap-card[data-cat="AI"] .roadmap-card-dot { background: #8B5CF6; }
-.roadmap-card[data-cat="AI"] .roadmap-card-code { color: #8B5CF6; }
-.roadmap-card[data-cat="Data"] .roadmap-card-dot { background: #8B5CF6; }
-.roadmap-card[data-cat="Data"] .roadmap-card-code { color: #8B5CF6; }
-.roadmap-card[data-cat="Security"] .roadmap-card-dot { background: #EF4444; }
-.roadmap-card[data-cat="Security"] .roadmap-card-code { color: #EF4444; }
-.roadmap-card[data-cat="Microsoft 365"] .roadmap-card-dot { background: #F59E0B; }
-.roadmap-card[data-cat="Microsoft 365"] .roadmap-card-code { color: #F59E0B; }
-.roadmap-card[data-cat="Power Platform"] .roadmap-card-dot { background: #A855F7; }
-.roadmap-card[data-cat="Power Platform"] .roadmap-card-code { color: #A855F7; }
-.roadmap-card[data-cat="Dynamics 365"] .roadmap-card-dot { background: #14B8A6; }
-.roadmap-card[data-cat="Dynamics 365"] .roadmap-card-code { color: #14B8A6; }
-
-/* Status card borders */
-.roadmap-card-retiring { border-left: 3px solid #F59E0B; }
-.roadmap-card-retired { opacity: 0.5; border-left: 3px solid #666; }
-.roadmap-card-beta { border-left: 3px solid #8B5CF6; border-left-style: dashed; }
-
-/* Arrow between columns */
-.roadmap-arrow {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; color: var(--cert-border); padding-top: 2.5rem;
-}
+.roadmap-container { max-width: 1300px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 
 /* Legend */
 .roadmap-legend {
-  display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
-  padding: 0.75rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border);
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;
+  padding: 0.6rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border);
   border-radius: 10px; font-size: 0.82rem; color: var(--cert-text-dim); align-items: center;
 }
-.roadmap-legend-item { display: flex; align-items: center; gap: 0.35rem; }
-.roadmap-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.roadmap-legend-swatch { width: 20px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.roadmap-legend-item { display: flex; align-items: center; gap: 0.3rem; }
+.roadmap-legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
 
-/* Responsive — stack on mobile */
+/* Kanban table */
+.kanban-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.kanban {
+  display: grid;
+  grid-template-columns: 140px repeat(3, 1fr);
+  gap: 0;
+  min-width: 800px;
+}
+
+/* Column headers */
+.kanban-header {
+  padding: 0.65rem 0.75rem; font-weight: 700; font-size: 0.9rem;
+  text-align: center; border-bottom: 2px solid var(--cert-border);
+  position: sticky; top: 0; z-index: 2; background: var(--cert-bg);
+}
+.kanban-header-cat { text-align: left; color: var(--cert-text-dim); font-size: 0.8rem; }
+.kanban-header-fund { color: #10B981; border-bottom-color: #10B981; }
+.kanban-header-assoc { color: #3B82F6; border-bottom-color: #3B82F6; }
+.kanban-header-expert { color: #F59E0B; border-bottom-color: #F59E0B; }
+
+/* Swim lane (one row = one category) */
+.kanban-lane-label {
+  padding: 0.75rem 0.5rem;
+  font-weight: 700; font-size: 0.85rem;
+  border-bottom: 1px solid var(--cert-border);
+  display: flex; align-items: flex-start; gap: 0.3rem;
+  position: sticky; left: 0; background: var(--cert-bg); z-index: 1;
+}
+.kanban-lane-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 3px; flex-shrink: 0; }
+.kanban-cell {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--cert-border);
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+
+/* Exam card inside a cell */
+.kanban-card {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  background: var(--cert-card); border: 1px solid var(--cert-border); border-radius: 6px;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+  font-size: 0.82rem;
+}
+.kanban-card:hover { border-color: var(--cert-accent); transform: translateY(-1px); }
+.kanban-card-code { font-weight: 700; white-space: nowrap; }
+.kanban-card-title { color: var(--cert-text-dim); font-size: 0.72rem; line-height: 1.3; flex: 1; }
+.kanban-card-badge { font-size: 0.6rem; flex-shrink: 0; }
+
+/* Category row colours on card codes */
+.kanban-row-azure .kanban-card-code { color: #3B82F6; }
+.kanban-row-ai .kanban-card-code { color: #8B5CF6; }
+.kanban-row-security .kanban-card-code { color: #EF4444; }
+.kanban-row-m365 .kanban-card-code { color: #F59E0B; }
+.kanban-row-power .kanban-card-code { color: #A855F7; }
+.kanban-row-d365 .kanban-card-code { color: #14B8A6; }
+
+/* Status borders */
+.kanban-card-retiring { border-left: 3px solid #F59E0B; }
+.kanban-card-retired { opacity: 0.45; }
+.kanban-card-beta { border-left: 3px solid #8B5CF6; border-left-style: dashed; }
+
+/* Empty cell indicator */
+.kanban-empty { color: var(--cert-text-dim); font-size: 0.72rem; opacity: 0.4; padding: 0.3rem; }
+
+/* Mobile */
 @media (max-width: 768px) {
-  .roadmap-columns { grid-template-columns: 1fr; }
-  .roadmap-arrow { display: none; }
-  .roadmap-col-header { font-size: 0.9rem; }
+  .kanban { min-width: 650px; grid-template-columns: 100px repeat(3, 1fr); }
+  .kanban-card-title { display: none; }
+  .kanban-lane-label { font-size: 0.75rem; }
 }
 </style>
 
-{{ partial "tool-hero.html" (dict "title" "Microsoft Certification Roadmap" "subtitle" "Visual guide — pick your starting point, then progress to Associate and Expert" "accent" "#10B981") }}
+{{ partial "tool-hero.html" (dict "title" "Microsoft Certification Roadmap" "subtitle" "Kanban view — see every exam organised by category and level at a glance" "accent" "#10B981") }}
 
 <div class="roadmap-container">
 
@@ -109,21 +97,20 @@
 
   <div class="roadmap-legend">
     <strong>Categories:</strong>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#3B82F6"></div> Azure</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#8B5CF6"></div> AI & Data</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#EF4444"></div> Security</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#F59E0B"></div> M365</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#A855F7"></div> Power Platform</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#14B8A6"></div> Dynamics 365</div>
-    <strong style="margin-left:0.5rem">Status:</strong>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#F59E0B"></div> Retiring</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#8B5CF6;border-style:dashed"></div> Beta</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#3B82F6"></div> Azure</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#8B5CF6"></div> AI & Data</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#EF4444"></div> Security</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#F59E0B"></div> M365</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#A855F7"></div> Power Platform</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#14B8A6"></div> Dynamics 365</div>
   </div>
 
-  <p style="font-size:0.85rem;color:var(--cert-text-dim);margin-bottom:1.5rem;">Start on the left with a Fundamentals exam, then progress right through Associate to Expert. Click any card to open its study guide.</p>
+  <p style="font-size:0.85rem;color:var(--cert-text-dim);margin-bottom:1rem;">Read left to right: start with Fundamentals, progress to Associate, then Expert. Click any card to open its study guide.</p>
 
-  <div id="roadmap-content">
-    <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
+  <div class="kanban-wrap">
+    <div id="roadmap-content">
+      <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
+    </div>
   </div>
 
   <div class="cert-single-nav" style="margin-top:2rem">
@@ -136,16 +123,23 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Microsoft Certification Roadmap",
-  "description": "Interactive visual roadmap of all Microsoft certification paths — Fundamentals to Expert.",
+  "description": "Kanban-style roadmap of all Microsoft certifications — organised by category and progression level.",
   "url": "https://www.aguidetocloud.com/cert-tracker/roadmap/"
 }
 </script>
 <script>
 (function(){
-  // Map exams to their level column
   var fundExams = ["AZ-900","AI-900","DP-900","SC-900","MS-900","PL-900","MB-910","MB-920"];
   var expertExams = ["AZ-305","AZ-400","AZ-802","SC-100","MS-102","PL-600","SC-500","SC-730"];
-  // Everything else is Associate
+
+  var rows = [
+    { key: "azure", label: "☁️ Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },
+    { key: "ai", label: "🤖 AI & Data", color: "#8B5CF6", css: "kanban-row-ai", cats: ["AI", "Data"] },
+    { key: "security", label: "🔒 Security", color: "#EF4444", css: "kanban-row-security", cats: ["Security"] },
+    { key: "m365", label: "📧 M365", color: "#F59E0B", css: "kanban-row-m365", cats: ["Microsoft 365"] },
+    { key: "power", label: "⚡ Power", color: "#A855F7", css: "kanban-row-power", cats: ["Power Platform"] },
+    { key: "d365", label: "💼 D365", color: "#14B8A6", css: "kanban-row-d365", cats: ["Dynamics 365"] }
+  ];
 
   function getLevel(code) {
     if (fundExams.indexOf(code) !== -1) return "fund";
@@ -153,64 +147,59 @@
     return "assoc";
   }
 
-  var catEmoji = {
-    "Azure": "☁️", "AI": "🤖", "Data": "📊", "Security": "🔒",
-    "Microsoft 365": "📧", "Power Platform": "⚡", "Dynamics 365": "💼"
-  };
-  var catOrder = ["Azure", "AI", "Data", "Security", "Microsoft 365", "Power Platform", "Dynamics 365"];
+  function renderCard(e) {
+    var s = e.status || "active";
+    var cls = s !== "active" ? " kanban-card-" + s : "";
+    var badge = "";
+    if (s === "retiring") badge = '<span class="kanban-card-badge cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️</span>';
+    else if (s === "beta") badge = '<span class="kanban-card-badge cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪</span>';
+    else if (s === "retired") badge = '<span class="kanban-card-badge cert-badge cert-badge-retired" style="font-size:0.55rem;padding:0.05rem 0.3rem">🚫</span>';
+    var t = e.title.length > 30 ? e.title.substring(0, 27) + "..." : e.title;
+    return '<a href="/cert-tracker/' + e.code.toLowerCase() + '/" class="kanban-card' + cls + '" title="' + e.code + ': ' + e.title + '">'
+      + '<span class="kanban-card-code">' + e.code + '</span>'
+      + '<span class="kanban-card-title">' + t + '</span>'
+      + badge + '</a>';
+  }
 
   fetch("/data/cert-tracker/latest.json")
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      // Group by level, then by category
-      var cols = { fund: {}, assoc: {}, expert: {} };
-      (data.exams || []).forEach(function(e) {
-        var lev = getLevel(e.code);
-        var cat = e.category || "Other";
-        if (!cols[lev][cat]) cols[lev][cat] = [];
-        cols[lev][cat].push(e);
+      var examMap = {};
+      (data.exams || []).forEach(function(e) { examMap[e.code] = e; });
+
+      // Build cells: rows[].cols.fund/assoc/expert = [exams]
+      var grid = {};
+      rows.forEach(function(row) {
+        grid[row.key] = { fund: [], assoc: [], expert: [] };
+        (data.exams || []).forEach(function(e) {
+          if (row.cats.indexOf(e.category) === -1) return;
+          grid[row.key][getLevel(e.code)].push(e);
+        });
       });
 
-      function renderCol(level, colData, headerText) {
-        var html = '<div class="roadmap-col-' + level + '">';
-        html += '<div class="roadmap-col-header">' + headerText + '</div>';
+      var html = '<div class="kanban">';
+      // Headers
+      html += '<div class="kanban-header kanban-header-cat"></div>';
+      html += '<div class="kanban-header kanban-header-fund">🟢 Fundamentals</div>';
+      html += '<div class="kanban-header kanban-header-assoc">🔵 Associate</div>';
+      html += '<div class="kanban-header kanban-header-expert">🟡 Expert & Beta</div>';
 
-        catOrder.forEach(function(cat) {
-          var exams = colData[cat];
-          if (!exams || !exams.length) return;
-          html += '<div class="roadmap-cat-section">';
-          html += '<div class="roadmap-cat-label" style="color:var(--cert-text-dim)">' + (catEmoji[cat]||"") + " " + cat + '</div>';
-
-          exams.forEach(function(e) {
-            var s = e.status || "active";
-            var statusClass = s !== "active" ? " roadmap-card-" + s : "";
-            var statusTag = "";
-            if (s === "retiring") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️ Retiring</span>';
-            else if (s === "beta") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪 Beta</span>';
-            else if (s === "retired") statusTag = '<span class="roadmap-card-status cert-badge cert-badge-retired" style="font-size:0.55rem;padding:0.05rem 0.3rem">🚫</span>';
-
-            var shortTitle = e.title.length > 40 ? e.title.substring(0, 37) + "..." : e.title;
-
-            html += '<a href="/cert-tracker/' + e.code.toLowerCase() + '/" class="roadmap-card' + statusClass + '" data-cat="' + cat + '" title="' + e.code + ': ' + e.title + '">';
-            html += '<div class="roadmap-card-dot"></div>';
-            html += '<span class="roadmap-card-code">' + e.code + '</span>';
-            html += '<span class="roadmap-card-title">' + shortTitle + '</span>';
-            html += statusTag;
-            html += '</a>';
-          });
-
+      // Rows
+      rows.forEach(function(row) {
+        var g = grid[row.key];
+        html += '<div class="kanban-lane-label"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';
+        ["fund", "assoc", "expert"].forEach(function(lev) {
+          html += '<div class="kanban-cell ' + row.css + '">';
+          if (g[lev].length) {
+            g[lev].forEach(function(e) { html += renderCard(e); });
+          } else {
+            html += '<span class="kanban-empty">—</span>';
+          }
           html += '</div>';
         });
-        html += '</div>';
-        return html;
-      }
+      });
 
-      var html = '<div class="roadmap-columns">';
-      html += renderCol("fund", cols.fund, "🟢 Fundamentals");
-      html += renderCol("assoc", cols.assoc, "🔵 Associate");
-      html += renderCol("expert", cols.expert, "🟡 Expert & Beta");
       html += '</div>';
-
       document.getElementById("roadmap-content").innerHTML = html;
     })
     .catch(function() {
