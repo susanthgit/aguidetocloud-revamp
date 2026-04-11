@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     'admin': { name: 'Admin & Platform', emoji: '\u2699\uFE0F', color: '#5C2D91' },
     'edge-media': { name: 'Edge & Media', emoji: '\u{1F310}', color: '#3C8527' }
   };
-  var STATUS_META = { 'Rolling out': { color: '#00CC33', label: 'Rolling Out' }, 'In development': { color: '#F59E0B', label: 'In Dev' }, 'Launched': { color: '#06B6D4', label: 'Launched' }, 'Cancelled': { color: '#EF4444', label: 'Cancelled' } };
+  var STATUS_META = { 'Rolling out': { color: '#059669', label: 'Rolling Out' }, 'In development': { color: '#D97706', label: 'In Dev' }, 'Launched': { color: '#0891B2', label: 'Launched' }, 'Cancelled': { color: '#DC2626', label: 'Cancelled' } };
 
   // URL state for shareable links
   function readUrl() { var p = new URLSearchParams(location.search); if (p.get('product')) activeProductFilter = p.get('product'); if (p.get('status')) activeStatusFilter = p.get('status'); if (p.get('q')) document.getElementById('rdmap-search').value = p.get('q'); }
