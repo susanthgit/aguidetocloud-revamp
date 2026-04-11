@@ -390,25 +390,25 @@ a:hover {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.4rem 1.5rem;
-  background: color-mix(in srgb, var(--neon-cyan) 8%, var(--bg-card));
-  border: 1px solid color-mix(in srgb, var(--neon-cyan) 18%, transparent);
+  background: color-mix(in srgb, #ff66ff 8%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, #ff66ff 18%, transparent);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
   transition: all 0.2s;
 }
 .hp-blog-card:hover {
-  background: color-mix(in srgb, var(--neon-cyan) 16%, var(--bg-card));
-  border-color: color-mix(in srgb, var(--neon-cyan) 30%, transparent);
+  background: color-mix(in srgb, #ff66ff 16%, var(--bg-card));
+  border-color: color-mix(in srgb, #ff66ff 30%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 0 12px color-mix(in srgb, var(--neon-cyan) 8%, transparent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 0 12px color-mix(in srgb, #ff66ff 8%, transparent);
   text-shadow: none;
 }
 .hp-blog-date {
   font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--neon-cyan);
+  color: #ff66ff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   opacity: 0.8;
@@ -432,7 +432,7 @@ a:hover {
   overflow: hidden;
 }
 .hp-blog-read {
-  color: var(--neon-cyan);
+  color: #ff66ff;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.78rem;
@@ -453,8 +453,8 @@ a:hover {
   align-items: center;
   gap: 0.3rem;
   padding: 1rem;
-  background: color-mix(in srgb, var(--neon-cyan) 6%, var(--bg-card));
-  border: 1px solid rgba(255,255,255,0.06);
+  background: color-mix(in srgb, #FFD700 6%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, #FFD700 12%, transparent);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
@@ -462,8 +462,8 @@ a:hover {
   text-align: center;
 }
 .hp-cat-compact-card:hover {
-  background: color-mix(in srgb, var(--neon-cyan) 14%, var(--bg-card));
-  border-color: color-mix(in srgb, var(--neon-cyan) 25%, transparent);
+  background: color-mix(in srgb, #FFD700 14%, var(--bg-card));
+  border-color: color-mix(in srgb, #FFD700 25%, transparent);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
   text-shadow: none;
