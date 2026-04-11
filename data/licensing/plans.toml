@@ -7,6 +7,7 @@
 # ── ENTERPRISE PLANS ─────────────────────────
 
 [[plans]]
+detail_url = "/licensing/office-365-e1/"
 id = "o365-e1"
 name = "Office 365 E1"
 category = "enterprise"
@@ -21,6 +22,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-3
 features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
 
 [[plans]]
+detail_url = "/licensing/office-365-e3/"
 id = "o365-e3"
 name = "Office 365 E3"
 category = "enterprise"
@@ -35,6 +37,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-3
 features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "dlp-basic"]
 
 [[plans]]
+detail_url = "/licensing/office-365-e5/"
 id = "o365-e5"
 name = "Office 365 E5"
 category = "enterprise"
@@ -96,6 +99,7 @@ features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams
 # ── BUSINESS PLANS ───────────────────────────
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-business-basic/"
 id = "biz-basic"
 name = "Microsoft 365 Business Basic"
 category = "business"
@@ -156,6 +160,7 @@ features = ["desktop-apps", "web-mobile-apps", "onedrive-1tb"]
 # ── FRONTLINE PLANS ──────────────────────────
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-frontline/"
 id = "m365-f1"
 name = "Microsoft 365 F1"
 category = "frontline"
@@ -170,6 +175,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/frontlin
 features = ["web-mobile-apps", "teams", "sharepoint", "entra-p1", "intune-p1", "exchange-2gb"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-365-frontline/"
 id = "m365-f3"
 name = "Microsoft 365 F3"
 category = "frontline"
@@ -201,6 +207,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/copilot/enterprise"
 features = ["copilot-full"]
 
 [[plans]]
+detail_url = "/licensing/microsoft-copilot-chat/"
 id = "copilot-chat"
 name = "Microsoft Copilot (Chat)"
 category = "copilot"
@@ -215,6 +222,7 @@ ms_official = "https://www.microsoft.com/en-us/microsoft-365/copilot"
 features = ["copilot-chat"]
 
 [[plans]]
+detail_url = "/licensing/security-copilot/"
 id = "security-copilot"
 name = "Microsoft Security Copilot"
 category = "copilot"
@@ -506,6 +514,7 @@ ms_official = "https://www.microsoft.com/en-us/power-platform/products/power-app
 features = ["pp-powerapps", "pp-dataverse", "pp-premium-connectors"]
 
 [[plans]]
+detail_url = "/licensing/power-automate-per-user/"
 id = "powerautomate-user"
 name = "Power Automate per User"
 category = "power-platform"
@@ -972,4 +981,5 @@ emoji = "👷"
 accent = "#f97316"
 description = "For shift workers, retail staff, and field workers."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
+
 
