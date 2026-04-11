@@ -119,6 +119,9 @@
 
     // Build action buttons
     let actions = '';
+    if (plan.detail_url) {
+      actions += `<a class="lic-btn lic-btn-primary" href="${plan.detail_url}">📖 View Details</a>`;
+    }
     if (plan.m365maps) {
       actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener">🗺️ M365 Maps</a>`;
     }
