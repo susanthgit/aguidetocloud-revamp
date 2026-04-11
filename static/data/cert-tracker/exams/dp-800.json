@@ -10,12 +10,36 @@
     "azure"
   ],
   "category": "Data",
+  "status": "beta",
   "updated_at": "",
   "skills_date": null,
   "skills_at_a_glance": [],
   "skills_detailed": {},
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "DP-300",
+      "title": "Administering Microsoft Azure SQL Solutions",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Data"
+    },
+    {
+      "code": "DP-900",
+      "title": "Microsoft Azure Data Fundamentals",
+      "level": "beginner",
+      "status": "active",
+      "category": "Data"
+    },
+    {
+      "code": "AI-102",
+      "title": "Designing and Implementing a Microsoft Azure AI Solution",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "AI"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-800/",
   "study_guide_url": "",
   "practice_assessment_url": ""

@@ -578,6 +578,33 @@
   border-top: 1px solid var(--cert-border);
 }
 
+/* Related exam cards */
+.cert-related-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.5rem;
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.cert-related-card:hover {
+  border-color: var(--cert-accent);
+}
+.cert-related-card .cert-card-code {
+  font-size: 0.95rem;
+}
+.cert-related-card .cert-card-title {
+  flex: 1;
+  font-size: 0.85rem;
+  min-width: 150px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .cert-category-cards { grid-template-columns: 1fr; }

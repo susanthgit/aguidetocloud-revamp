@@ -44,6 +44,13 @@
     {{ .Content }}
   </div>
 
+  {{/* Related exams — loaded from per-exam JSON */}}
+  <div id="cert-related" class="cert-detail-section" style="display:none">
+    <h2 style="color:var(--cert-accent);border-bottom:1px solid var(--cert-border);padding-bottom:0.5rem;">What to Study Next</h2>
+    <p style="color:var(--cert-text-dim);font-size:0.88rem;margin-bottom:0.75rem;">Based on this exam, here are related certifications to consider:</p>
+    <div id="cert-related-list"></div>
+  </div>
+
   {{/* Back to all exams */}}
   <div class="cert-single-nav">
     <a href="/cert-tracker/" class="cert-detail-link">← Back to All Exams</a>
@@ -69,5 +76,31 @@
     "courseMode": "online"
   }
 }
+</script>
+<script>
+(function(){
+  var code = {{ .Params.exam_code | jsonify }};
+  fetch("/data/cert-tracker/exams/" + code.toLowerCase() + ".json")
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (!d || !d.related_exams || !d.related_exams.length) return;
+      var levelLabels = {beginner:"Fundamentals",intermediate:"Associate",advanced:"Expert"};
+      var html = d.related_exams.map(function(r){
+        var status = "";
+        if (r.status === "retiring") status = ' <span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>';
+        else if (r.status === "beta") status = ' <span class="cert-badge cert-badge-beta">🧪 Beta</span>';
+        else if (r.status === "retired") status = ' <span class="cert-badge cert-badge-retired">🚫 Retired</span>';
+        return '<a href="/cert-tracker/' + r.code.toLowerCase() + '/" class="cert-related-card">'
+          + '<span class="cert-card-code">' + r.code + '</span> '
+          + '<span class="cert-card-title">' + r.title + '</span>'
+          + '<span class="cert-badge cert-badge-' + r.level + '">' + (levelLabels[r.level]||r.level) + '</span>'
+          + status
+          + '</a>';
+      }).join("");
+      document.getElementById("cert-related-list").innerHTML = html;
+      document.getElementById("cert-related").style.display = "block";
+    })
+    .catch(function(){});
+})();
 </script>
 {{ end }}

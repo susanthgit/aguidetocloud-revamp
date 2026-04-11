@@ -11,6 +11,7 @@
     "m365"
   ],
   "category": "Security",
+  "status": "active",
   "updated_at": "2026-03-27 23:35:00+00:00",
   "skills_date": "April 27, 2026",
   "skills_at_a_glance": [
@@ -149,6 +150,36 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "SC-300",
+      "title": "Microsoft Identity and Access Administrator",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Security"
+    },
+    {
+      "code": "SC-200",
+      "title": "Microsoft Security Operations Analyst",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Security"
+    },
+    {
+      "code": "AZ-500",
+      "title": "Microsoft Azure Security Technologies",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Azure"
+    },
+    {
+      "code": "AZ-305",
+      "title": "Designing Microsoft Azure Infrastructure Solutions",
+      "level": "advanced",
+      "status": "active",
+      "category": "Azure"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-100",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/practice/assessment?assessment-type=practice"

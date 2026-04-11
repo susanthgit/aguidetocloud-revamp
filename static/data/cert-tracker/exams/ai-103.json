@@ -10,12 +10,36 @@
     "azure"
   ],
   "category": "AI",
+  "status": "beta",
   "updated_at": "",
   "skills_date": null,
   "skills_at_a_glance": [],
   "skills_detailed": {},
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "AI-901",
+      "title": "Microsoft Azure AI Fundamentals (Updated)",
+      "level": "beginner",
+      "status": "beta",
+      "category": "AI"
+    },
+    {
+      "code": "AI-200",
+      "title": "Azure AI Cloud Developer Associate",
+      "level": "intermediate",
+      "status": "beta",
+      "category": "AI"
+    },
+    {
+      "code": "AZ-204",
+      "title": "Developing Solutions for Microsoft Azure",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Azure"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-103/",
   "study_guide_url": "",
   "practice_assessment_url": ""

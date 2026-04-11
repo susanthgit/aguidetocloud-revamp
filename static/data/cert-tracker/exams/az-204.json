@@ -9,6 +9,7 @@
     "azure"
   ],
   "category": "Azure",
+  "status": "retiring",
   "updated_at": "2026-03-16 02:02:00+00:00",
   "skills_date": "January 14, 2026",
   "skills_at_a_glance": [
@@ -106,6 +107,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "AZ-400",
+      "title": "Designing and Implementing Microsoft DevOps Solutions",
+      "level": "advanced",
+      "status": "active",
+      "category": "Azure"
+    },
+    {
+      "code": "AZ-305",
+      "title": "Designing Microsoft Azure Infrastructure Solutions",
+      "level": "advanced",
+      "status": "active",
+      "category": "Azure"
+    },
+    {
+      "code": "AI-102",
+      "title": "Designing and Implementing a Microsoft Azure AI Solution",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "AI"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/practice/assessment?assessment-type=practice"

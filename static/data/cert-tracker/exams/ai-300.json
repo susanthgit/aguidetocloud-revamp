@@ -10,12 +10,36 @@
     "azure"
   ],
   "category": "AI",
+  "status": "beta",
   "updated_at": "",
   "skills_date": null,
   "skills_at_a_glance": [],
   "skills_detailed": {},
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "AI-200",
+      "title": "Azure AI Cloud Developer Associate",
+      "level": "intermediate",
+      "status": "beta",
+      "category": "AI"
+    },
+    {
+      "code": "DP-100",
+      "title": "Designing and Implementing a Data Science Solution on Azure",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Data"
+    },
+    {
+      "code": "AI-103",
+      "title": "Azure AI App and Agent Developer Associate",
+      "level": "intermediate",
+      "status": "beta",
+      "category": "AI"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-300/",
   "study_guide_url": "",
   "practice_assessment_url": ""

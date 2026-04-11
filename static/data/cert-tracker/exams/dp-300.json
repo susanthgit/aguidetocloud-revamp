@@ -9,6 +9,7 @@
     "azure"
   ],
   "category": "Data",
+  "status": "active",
   "updated_at": "2026-03-26 06:04:00+00:00",
   "skills_date": "April 24, 2026",
   "skills_at_a_glance": [
@@ -171,6 +172,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "DP-900",
+      "title": "Microsoft Azure Data Fundamentals",
+      "level": "beginner",
+      "status": "active",
+      "category": "Data"
+    },
+    {
+      "code": "AZ-104",
+      "title": "Microsoft Azure Administrator",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Azure"
+    },
+    {
+      "code": "DP-420",
+      "title": "Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Data"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-300",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/practice/assessment?assessment-type=practice"
