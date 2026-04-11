@@ -1,0 +1,124 @@
+# AI News category configuration
+# Used by ainews.js for filter pills, colours, and display order
+
+[top-stories]
+name = "Top Stories"
+emoji = "🔥"
+color = "#FF6B35"
+order = 1
+
+[microsoft]
+name = "Microsoft"
+emoji = "🟦"
+color = "#0078D4"
+order = 2
+
+[m365-copilot]
+name = "M365 Copilot"
+emoji = "✨"
+color = "#6264A7"
+order = 3
+always_show = true
+
+[copilot-studio]
+name = "Copilot Studio"
+emoji = "🛠️"
+color = "#742774"
+order = 4
+always_show = true
+
+[github-copilot]
+name = "GitHub Copilot"
+emoji = "🤖"
+color = "#1F6FEB"
+order = 5
+
+[ai-foundry]
+name = "AI Foundry"
+emoji = "🏭"
+color = "#008272"
+order = 6
+
+[openai]
+name = "OpenAI"
+emoji = "🟩"
+color = "#10A37F"
+order = 7
+
+[anthropic]
+name = "Anthropic"
+emoji = "🟧"
+color = "#D4A574"
+order = 8
+
+[google]
+name = "Google"
+emoji = "🟥"
+color = "#EA4335"
+order = 9
+
+[meta]
+name = "Meta"
+emoji = "🟪"
+color = "#0668E1"
+order = 10
+
+[deepseek]
+name = "DeepSeek"
+emoji = "🇨🇳"
+color = "#4D6BFE"
+order = 11
+
+[mistral]
+name = "Mistral"
+emoji = "🇪🇺"
+color = "#FF7000"
+order = 12
+
+[xai]
+name = "xAI"
+emoji = "⚡"
+color = "#1DA1F2"
+order = 13
+
+[perplexity]
+name = "Perplexity"
+emoji = "🔍"
+color = "#20808D"
+order = 14
+
+[apple]
+name = "Apple"
+emoji = "🍎"
+color = "#A2AAAD"
+order = 15
+
+[nvidia]
+name = "NVIDIA"
+emoji = "💚"
+color = "#76B900"
+order = 16
+
+[amazon]
+name = "Amazon"
+emoji = "📦"
+color = "#FF9900"
+order = 17
+
+[open-source]
+name = "Open Source"
+emoji = "⬛"
+color = "#333333"
+order = 18
+
+[industry]
+name = "Industry"
+emoji = "🔵"
+color = "#4A90D9"
+order = 19
+
+[rumours-gossip]
+name = "Rumours & Gossip"
+emoji = "🗣️"
+color = "#9B59B6"
+order = 20

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<link rel="stylesheet" href="/css/prompts.css?v={{ now.Unix }}">
+<link rel="stylesheet" href="/css/prompts.css?v={{ site.Params.cache_version }}">
 
 {{ $prompt := .Params.prompt | default "" }}
 {{ $platforms := .Params.platforms | default (slice) }}
@@ -174,5 +174,5 @@
 (function(){var b=document.getElementById('prompts-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('prompts-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
 
-<script src="/js/prompts-v2.js?v={{ now.Unix }}"></script>
+<script src="/js/prompts-v2.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

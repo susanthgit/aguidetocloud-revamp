@@ -1,5 +1,5 @@
 {{ define "main" }}
-<link rel="stylesheet" href="/css/prompts.css?v={{ now.Unix }}">
+<link rel="stylesheet" href="/css/prompts.css?v={{ site.Params.cache_version }}">
 
 {{/* Determine if this is the main prompts page or a subcategory */}}
 {{ $isMainPage := eq .RelPermalink "/prompts/" }}
@@ -137,7 +137,10 @@
             <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
               <span class="prompt-row-arrow">▸</span>
               <div class="prompt-row-info">
-                <span class="prompt-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+                <span class="prompt-row-title">
+                  {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </span>
                 {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
               </div>
               <div class="prompt-row-platforms">
@@ -172,7 +175,10 @@
         <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
           <span class="prompt-row-arrow">▸</span>
           <div class="prompt-row-info">
-            <span class="prompt-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+            <span class="prompt-row-title">
+              {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </span>
             {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
           </div>
           <div class="prompt-row-platforms">
@@ -202,5 +208,5 @@
 (function(){var b=document.getElementById('prompts-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('prompts-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
 
-<script src="/js/prompts-v2.js?v={{ now.Unix }}"></script>
+<script src="/js/prompts-v2.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

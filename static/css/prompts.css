@@ -176,6 +176,18 @@
   align-items: center;
   gap: 0.5rem;
 }
+/* Category-specific accent colors on headings */
+.prompts-category-group[data-category="writing"] .prompts-category-heading           { color: #A78BFA; border-bottom-color: rgba(167,139,250,0.25); }
+.prompts-category-group[data-category="email"] .prompts-category-heading             { color: #38BDF8; border-bottom-color: rgba(56,189,248,0.25); }
+.prompts-category-group[data-category="data-analysis"] .prompts-category-heading     { color: #22D3EE; border-bottom-color: rgba(34,211,238,0.25); }
+.prompts-category-group[data-category="meetings"] .prompts-category-heading          { color: #60A5FA; border-bottom-color: rgba(96,165,250,0.25); }
+.prompts-category-group[data-category="research"] .prompts-category-heading          { color: #34D399; border-bottom-color: rgba(52,211,153,0.25); }
+.prompts-category-group[data-category="presentations"] .prompts-category-heading     { color: #FB923C; border-bottom-color: rgba(251,146,60,0.25); }
+.prompts-category-group[data-category="summarising"] .prompts-category-heading       { color: #F472B6; border-bottom-color: rgba(244,114,182,0.25); }
+.prompts-category-group[data-category="project-management"] .prompts-category-heading{ color: #FACC15; border-bottom-color: rgba(250,204,21,0.25); }
+.prompts-category-group[data-category="brainstorming"] .prompts-category-heading     { color: #C084FC; border-bottom-color: rgba(192,132,252,0.25); }
+.prompts-category-group[data-category="customer-service"] .prompts-category-heading  { color: #2DD4BF; border-bottom-color: rgba(45,212,191,0.25); }
+.prompts-category-group[data-category="image-generation"] .prompts-category-heading  { color: #F87171; border-bottom-color: rgba(248,113,113,0.25); }
 .prompts-category-emoji {
   font-size: 1.1rem;
 }
@@ -250,6 +262,21 @@
   color: var(--prompt-accent);
   text-shadow: none;
 }
+.prompt-new-badge {
+  display: inline-block;
+  background: #A78BFA;
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+  animation: promptNewPulse 2s infinite;
+}
+@keyframes promptNewPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 .prompt-row-desc {
   font-size: 0.78rem;
   color: var(--text-muted);

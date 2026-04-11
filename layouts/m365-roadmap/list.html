@@ -1,5 +1,5 @@
 {{ define "main" }}
-<link rel="stylesheet" href="/css/roadmap.css?v={{ now.Unix }}">
+<link rel="stylesheet" href="/css/roadmap.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
 <div class="rdmap-hero">
   <h1>M365 Roadmap Tracker</h1>
@@ -60,5 +60,5 @@
   "keywords": ["Microsoft 365 roadmap", "M365 updates", "Copilot roadmap", "Teams new features"]
 }
 </script>
-<script src="/js/roadmap.js?v={{ now.Unix }}"></script>
+<script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

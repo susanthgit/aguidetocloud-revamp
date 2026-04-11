@@ -1,5 +1,5 @@
 {{ define "main" }}
-<link rel="stylesheet" href="/css/ainews.css?v={{ now.Unix }}">
+<link rel="stylesheet" href="/css/ainews.css?v={{ site.Params.cache_version }}">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#6264A7">
 
@@ -59,5 +59,5 @@
 <script>
   window.__ainewsCategoryFilter = "{{ .Params.category_filter }}";
 </script>
-<script src="/js/ainews.js?v={{ now.Unix }}"></script>
+<script src="/js/ainews.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

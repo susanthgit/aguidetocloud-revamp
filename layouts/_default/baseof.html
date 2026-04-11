@@ -32,8 +32,8 @@
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
   {{ end }}
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
-  <link rel="stylesheet" href="/css/sections.css?v={{ now.Unix }}">
+  <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

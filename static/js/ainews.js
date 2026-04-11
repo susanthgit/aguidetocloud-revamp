@@ -142,8 +142,8 @@ var CATEGORY_ORDER = [
   'Apple', 'NVIDIA', 'Amazon', 'Open Source', 'Industry', 'Rumours & Gossip'
 ];
 
-// Category colours and emojis for pills
-var CATEGORY_META = {
+// Category colours and emojis for pills (prefer Hugo-injected config, fallback to defaults)
+var CATEGORY_META = window.__ainewsCategoryConfig || {
   'Top Stories':       { emoji: '🔥', color: '#FF6B35' },
   'Microsoft':         { emoji: '🟦', color: '#0078D4' },
   'M365 Copilot':      { emoji: '✨', color: '#6264A7' },
@@ -603,6 +603,22 @@ function trackArticleClick(category, title) {
   if (window.clarity) {
     window.clarity('event', 'ainews_click', { category: category, title: title.substring(0, 50) });
   }
+}
+
+// === CSV EXPORT ===
+var ainewsCsvBtn = document.getElementById('ainews-csv');
+if (ainewsCsvBtn) {
+  ainewsCsvBtn.addEventListener('click', function () {
+    var data = window.__ainewsData;
+    if (!data || !data.articles || !data.articles.length) return;
+    var csv = ['Title,Category,Source,URL,Published'];
+    data.articles.forEach(function (a) {
+      csv.push(['"' + (a.title || '').replace(/"/g, '""') + '"', a.category_name || a.category || '', a.source || '', a.url || a.link || '', a.published || ''].join(','));
+    });
+    var b = new Blob([csv.join('\n')], { type: 'text/csv' }), u = URL.createObjectURL(b), el = document.createElement('a');
+    el.href = u; el.download = 'ai-news-' + new Date().toISOString().slice(0, 10) + '.csv'; el.click(); URL.revokeObjectURL(u);
+    if (window.clarity) window.clarity('event', 'ainews_csv_export');
+  });
 }
 
 // === BACK TO TOP BUTTON ===
