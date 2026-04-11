@@ -445,6 +445,49 @@ a:hover {
 .hp-cat-grid .video-card:nth-child(n+3) { display: block; }
 
 /* ── HOMEPAGE: SEARCH BOX ────────────────── */
+/* ── SHARED: IN-PAGE SEARCH BOX ─────────── */
+.page-search-wrap {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+.page-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.7rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+.page-search-box:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(102, 255, 255, 0.08);
+}
+.page-search-icon { font-size: 1rem; flex-shrink: 0; }
+.page-search-text {
+  flex: 1;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.page-search-shortcut {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 768px) {
+  .page-search-shortcut { display: none; }
+}
+
 .hp-search-wrap {
   max-width: 600px;
   margin: 0 auto;
@@ -1010,20 +1053,29 @@ a:hover {
 
 .page-hero {
   text-align: center;
-  padding: 4rem 2rem 2rem;
-  background: 
-    radial-gradient(ellipse at 30% 50%, rgba(0, 229, 255, 0.06) 0%, transparent 50%),
-    var(--bg-primary);
+  padding: 2.5rem 1.5rem 1rem;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #00e5ff 50%, #0f0f1a) 0%, var(--bg-primary) 100%);
+  margin-bottom: -0.5rem;
 }
 .page-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
   color: #fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.3px;
 }
 .page-hero p {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 0.92rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .page-hero { padding: 1.8rem 1rem 0.8rem; }
+  .page-hero h1 { font-size: 1.5rem; }
 }
 
 /* ── SINGLE PAGE ────────────────────────── */
@@ -1224,7 +1276,7 @@ a:hover {
   color: var(--neon-cyan);
   text-shadow: 0 0 10px var(--neon-cyan);
 }
-.is-home .nav-search-li { display: none; }
+.nav-search-li { display: none; }
 
 .search-modal {
   display: none;

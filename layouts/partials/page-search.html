@@ -1,0 +1,10 @@
+{{/* In-page search box — triggers global search modal (Ctrl+K)
+     Usage: {{ partial "page-search.html" . }}
+*/}}
+<div class="page-search-wrap">
+  <button class="page-search-box" onclick="document.getElementById('search-modal')?.classList.add('active');document.getElementById('search-input')?.focus();" aria-label="Search">
+    <span class="page-search-icon">🔍</span>
+    <span class="page-search-text">Search videos, articles, prompts...</span>
+    <span class="page-search-shortcut">Ctrl+K</span>
+  </button>
+</div>

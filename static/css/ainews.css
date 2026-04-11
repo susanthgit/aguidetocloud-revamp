@@ -5,9 +5,9 @@
 .ainews-page-hero,
 .ainews-grid,
 .ainews-footer {
-  --tool-accent: #00e5ff;
-  --tool-accent-dim: rgba(0, 229, 255, 0.15);
-  --tool-accent-glow: rgba(0, 229, 255, 0.25);
+  --tool-accent: #ff66ff;
+  --tool-accent-dim: rgba(255, 102, 255, 0.15);
+  --tool-accent-glow: rgba(255, 102, 255, 0.25);
 }
 
 /* ── AI NEWS PAGE ───────────────────────── */

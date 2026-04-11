@@ -10,11 +10,11 @@
 
 <script>
   window.__licData = {
-    plans: {{ $plans | jsonify }},
-    categories: {{ $categories | jsonify }},
-    features: {{ $features | jsonify }},
-    quiz: {{ $quiz | jsonify }},
-    changelog: {{ $changelog | jsonify }}
+    plans: {{ $plans | jsonify | safeJS }},
+    categories: {{ $categories | jsonify | safeJS }},
+    features: {{ $features | jsonify | safeJS }},
+    quiz: {{ $quiz | jsonify | safeJS }},
+    changelog: {{ $changelog | jsonify | safeJS }}
   };
 </script>
 
