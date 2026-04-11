@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Cert Exam Change Tracker"
-description: "Track all Microsoft certification exam changes — see when objectives update, study the current syllabus, and get direct links to Microsoft Learn resources. Updated weekly."
+title: "Free Microsoft Cert Study Guides"
+description: "Free study guides for every Microsoft certification exam — current objectives deep-linked to Microsoft Learn, skills measured with weights, practice assessments, and weekly change tracking."
 type: "cert-tracker"
 ---
