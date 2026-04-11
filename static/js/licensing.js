@@ -624,11 +624,17 @@
 
   // ── INIT ────────────────────────────────────
 
-  renderCompare();
-  renderQuiz();
-  renderChangelog();
-  initSearch();
-  initPresets();
-  handleHash();
+  try {
+    renderCompare();
+    renderQuiz();
+    renderChangelog();
+    initSearch();
+    initPresets();
+    handleHash();
+  } catch (e) {
+    console.error('[Licensing Simplifier] Init error:', e);
+    const container = document.querySelector('#lic-compare-content');
+    if (container) container.innerHTML = '<p style="color:#ef4444;padding:2rem;text-align:center;">Something went wrong loading the licensing data. Please try refreshing the page (Ctrl+Shift+R).</p>';
+  }
 
 })();
