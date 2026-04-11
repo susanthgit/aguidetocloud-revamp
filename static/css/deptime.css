@@ -630,6 +630,25 @@
 .deptime-banner-icon { font-size: 1.3rem; }
 .deptime-banner-text { color: var(--dt-text); }
 .deptime-banner-text strong { color: #f87171; }
+.deptime-banner-header { display: flex; align-items: center; gap: 0.5rem; color: #f87171; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.deptime-banner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.deptime-banner-list li {
+  font-size: 0.8rem;
+  color: var(--dt-text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.deptime-banner-list li:hover { background: rgba(220,38,38,0.15); }
+.deptime-banner-list li strong { color: #f87171; }
 
 /* [#7] Monthly summary */
 .deptime-month-summary {

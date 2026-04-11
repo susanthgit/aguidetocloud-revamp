@@ -108,20 +108,20 @@
 
   <!-- View Toggle -->
   <div class="deptime-view-toggle">
-    <button class="deptime-view-btn active" id="deptime-view-grid" aria-label="Grid view">▦ Grid</button>
-    <button class="deptime-view-btn" id="deptime-view-timeline" aria-label="Timeline view">━ Timeline</button>
+    <button class="deptime-view-btn" id="deptime-view-grid" aria-label="Grid view">▦ Grid</button>
+    <button class="deptime-view-btn active" id="deptime-view-timeline" aria-label="Timeline view">━ Timeline</button>
     <span class="deptime-kbd-hint">Keyboard: <kbd>/</kbd> search · <kbd>c</kbd> critical · <kbd>w</kbd> warning · <kbd>g</kbd> grid · <kbd>t</kbd> timeline</span>
   </div>
 
-  <!-- Timeline View -->
-  <div class="deptime-timeline-view" id="deptime-timeline-view" style="display:none;">
+  <!-- Timeline View (default) -->
+  <div class="deptime-timeline-view" id="deptime-timeline-view">
     <div class="deptime-timeline-scroll" id="deptime-timeline-scroll">
       <div class="deptime-timeline-track" id="deptime-timeline-track"></div>
     </div>
   </div>
 
-  <!-- Card Grid -->
-  <div class="deptime-grid" id="deptime-grid">
+  <!-- Card Grid (hidden by default) -->
+  <div class="deptime-grid" id="deptime-grid" style="display:none;">
     <div class="deptime-loading">Loading deprecation data...</div>
   </div>
 

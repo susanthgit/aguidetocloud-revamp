@@ -14,7 +14,7 @@
   let allItems = [];
   let filteredItems = [];
   let displayedCount = 0;
-  let currentView = 'grid';
+  let currentView = 'timeline';
   let showPassed = false;
   let currentSort = 'deadline'; // [#4] sort options
   let actionOnlyFilter = false; // [#3] action required toggle
@@ -62,16 +62,16 @@
       alertEl.style.display = 'flex';
     }
 
-    // [#8] Critical banner
+    // [#8] Critical banner — numbered list
     const banner = document.getElementById('deptime-critical-banner');
     if (counts.critical > 0 && banner) {
-      const critItems = active.filter(i => i.urgency === 'critical').slice(0, 3);
-      const names = critItems.map(i => i.title).join(' • ');
-      banner.innerHTML = `<span class="deptime-banner-icon">🚨</span>
-        <span class="deptime-banner-text"><strong>${counts.critical} critical item${counts.critical > 1 ? 's' : ''} need${counts.critical === 1 ? 's' : ''} immediate attention:</strong> ${names}</span>`;
-      banner.style.display = 'flex';
-      banner.style.cursor = 'pointer';
-      banner.onclick = () => { setStatFilter('critical'); };
+      const critItems = active.filter(i => i.urgency === 'critical');
+      let listHtml = critItems.map((i, idx) =>
+        `<li onclick="window.__deptimeShowDetail('${i.id}')">${idx + 1}. <strong>${i.title}</strong> — ${i.urgency_label}</li>`
+      ).join('');
+      banner.innerHTML = `<div class="deptime-banner-header"><span class="deptime-banner-icon">🚨</span> <strong>${counts.critical} critical item${counts.critical > 1 ? 's' : ''} need${counts.critical === 1 ? 's' : ''} immediate attention</strong></div>
+        <ol class="deptime-banner-list">${listHtml}</ol>`;
+      banner.style.display = 'block';
     }
 
     // [#7] Monthly summary
