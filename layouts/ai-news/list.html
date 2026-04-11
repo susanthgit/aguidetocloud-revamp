@@ -7,9 +7,9 @@
   <h1>{{ .Title }}</h1>
 </div>
 <div class="container">
-  <div class="ainews-tabs">
-    <button class="ainews-tab active" data-view="daily">📅 Today</button>
-    <button class="ainews-tab" data-view="monthly">📈 This Month</button>
+  <div class="ainews-tabs" role="tablist" aria-label="Time period">
+    <button class="ainews-tab active" data-view="daily" role="tab" aria-selected="true">📅 Today</button>
+    <button class="ainews-tab" data-view="monthly" role="tab" aria-selected="false">📈 This Month</button>
   </div>
 
   <div class="ainews-grid" id="news-grid">

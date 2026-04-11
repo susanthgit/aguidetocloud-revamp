@@ -70,6 +70,9 @@
 }
 .rdmap-chip:hover { border-color: var(--chip-c, #E5A00D); color: #D4D0DA; }
 .rdmap-chip.active { background: var(--chip-c, #E5A00D); color: #fff; border-color: var(--chip-c, #E5A00D); }
+.rdmap-chip:focus-visible, .rdmap-select:focus-visible, .rdmap-search:focus-visible, .rdmap-load-more:focus-visible {
+  outline: 2px solid #E5A00D; outline-offset: 2px;
+}
 .rdmap-chip span { opacity: 0.6; font-size: 0.72rem; }
 
 /* List info */

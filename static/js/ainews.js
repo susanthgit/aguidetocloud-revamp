@@ -114,8 +114,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Tab switching — only on main page (tabs don't exist on category pages)
   document.querySelectorAll('.ainews-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
-      document.querySelectorAll('.ainews-tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.ainews-tab').forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
       this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
       var view = this.dataset.view;
       loadView(view);
     });
@@ -293,8 +294,8 @@ function renderNews(data, view) {
   html += '<div class="ainews-search-wrap" style="grid-column:1/-1"><input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off"></div>';
 
   // 📂 CATEGORY FILTERS (below search)
-  html += '<div class="ainews-categories" id="category-filters" style="grid-column:1/-1">';
-  html += '<button class="ainews-filter active" data-cat="all">All (' + articles.length + ')</button>';
+  html += '<div class="ainews-categories" id="category-filters" role="group" aria-label="Filter by category" style="grid-column:1/-1">';
+  html += '<button class="ainews-filter active" data-cat="all" aria-pressed="true">All (' + articles.length + ')</button>';
   categories.forEach(function (cat) {
     var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
     var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
@@ -358,8 +359,9 @@ function renderNews(data, view) {
   if (filtersEl) {
     filtersEl.querySelectorAll('.ainews-filter').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); });
+        filtersEl.querySelectorAll('.ainews-filter').forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
         this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
         var cat = this.dataset.cat;
         var visibleCount = 0;
         grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-section-header').forEach(function (el) {

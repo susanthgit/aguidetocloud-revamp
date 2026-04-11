@@ -155,6 +155,9 @@
   color: var(--prompt-accent);
   box-shadow: 0 0 12px var(--prompt-accent-glow);
 }
+.prompts-chip:focus-visible, .prompts-search:focus-visible, .prompts-select:focus-visible, .prompt-copy-btn:focus-visible, .prompt-row-header:focus-visible {
+  outline: 2px solid var(--prompt-accent); outline-offset: 2px;
+}
 
 /* ── CATEGORY GROUP HEADINGS ─────────────────── */
 
@@ -772,3 +775,17 @@
     font-size: 1.5rem;
   }
 }
+
+/* ── BACK TO TOP ────────────────────────────── */
+.prompts-btt {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #A78BFA; color: #0f0f1a; border: none;
+  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(167, 139, 250, 0.3);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  pointer-events: none;
+  display: flex; align-items: center; justify-content: center;
+}
+.prompts-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.prompts-btt:hover { box-shadow: 0 4px 20px rgba(167, 139, 250, 0.5); }

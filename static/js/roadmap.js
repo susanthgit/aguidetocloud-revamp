@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         (i.all_categories || [i.product_category]).forEach(function (c) { counts[c] = (counts[c] || 0) + 1; });
       }
     });
-    var html = '<button class="rdmap-chip' + (activeProductFilter === 'all' ? ' active' : '') + '" data-cat="all">All</button>';
-    cats.forEach(function (c) { var cnt = counts[c.id] || 0; var m = CATEGORY_META[c.id] || {}; html += '<button class="rdmap-chip' + (activeProductFilter === c.id ? ' active' : '') + '" data-cat="' + c.id + '" style="--chip-c:' + (m.color || '#888') + '">' + (m.emoji || '') + ' ' + esc(c.name) + ' <span>' + cnt + '</span></button>'; });
+    var html = '<button class="rdmap-chip' + (activeProductFilter === 'all' ? ' active' : '') + '" data-cat="all" aria-pressed="' + (activeProductFilter === 'all') + '">All</button>';
+    cats.forEach(function (c) { var cnt = counts[c.id] || 0; var m = CATEGORY_META[c.id] || {}; var isActive = activeProductFilter === c.id; html += '<button class="rdmap-chip' + (isActive ? ' active' : '') + '" data-cat="' + c.id + '" aria-pressed="' + isActive + '" style="--chip-c:' + (m.color || '#888') + '">' + (m.emoji || '') + ' ' + esc(c.name) + ' <span>' + cnt + '</span></button>'; });
     el.innerHTML = html;
-    el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.addEventListener('click', function () { el.querySelectorAll('.rdmap-chip').forEach(function (x) { x.classList.remove('active'); }); this.classList.add('active'); activeProductFilter = this.dataset.cat; document.getElementById('rdmap-product-filter').value = activeProductFilter; applyFilters(); }); });
+    el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.addEventListener('click', function () { el.querySelectorAll('.rdmap-chip').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); }); this.classList.add('active'); this.setAttribute('aria-pressed', 'true'); activeProductFilter = this.dataset.cat; document.getElementById('rdmap-product-filter').value = activeProductFilter; applyFilters(); }); });
   }
 
   // ── FILTER ──

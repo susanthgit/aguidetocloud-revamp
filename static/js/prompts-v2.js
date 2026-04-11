@@ -144,6 +144,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ── KEYBOARD: Accordion Enter/Space ────────
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var header = e.target.closest('.prompt-row-header');
+    if (!header || e.target.closest('a, button')) return;
+    e.preventDefault();
+    header.click();
+  });
+
   // ── URL STATE (shareable links) ────────────
   function syncPromptsUrl() {
     var p = new URLSearchParams();
