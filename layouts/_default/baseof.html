@@ -63,7 +63,7 @@
   </div>
   <script src="/js/switcher.js" defer></script>
   <script src="/js/search.js" defer></script>
-  {{ if findRE "```mermaid" .Content }}
+  {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({

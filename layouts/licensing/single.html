@@ -1,0 +1,90 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/licensing.css?v={{ site.Params.cache_version }}">
+
+<div class="lic-page">
+
+  {{/* ── HERO ── */}}
+  {{ partial "tool-hero.html" (dict "title" .Params.plan_name "subtitle" .Params.tagline "accent" "#F43F5E") }}
+
+  <div class="lic-container lic-single">
+
+    {{/* ── BREADCRUMB ── */}}
+    <nav class="lic-breadcrumb" aria-label="Breadcrumb">
+      <a href="/licensing/">← All Plans</a>
+      <span>›</span>
+      <span>{{ .Params.plan_name }}</span>
+    </nav>
+
+    {{/* ── PRICE + BADGES ── */}}
+    <div class="lic-single-header">
+      <div class="lic-single-price-block">
+        {{ if eq .Params.price 0 }}
+        <span class="lic-single-price">Free</span>
+        {{ else }}
+        <span class="lic-single-price">${{ .Params.price }}</span>
+        <span class="lic-single-price-unit">per user / month (USD)</span>
+        {{ end }}
+        {{ with .Params.price_note }}<span class="lic-single-price-note">{{ . }}</span>{{ end }}
+      </div>
+      <div class="lic-single-badges">
+        {{ with .Params.plan_category }}<span class="lic-single-badge">{{ . }}</span>{{ end }}
+        {{ with .Params.badge }}<span class="lic-single-badge lic-single-badge-highlight">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+
+    {{/* ── QUICK LINKS ── */}}
+    <div class="lic-single-links">
+      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener" class="lic-btn lic-btn-primary">📄 Official Microsoft Page</a>{{ end }}
+      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener" class="lic-btn">🗺️ M365 Maps Feature Map</a>{{ end }}
+      <a href="/licensing/#compare" class="lic-btn">📊 Compare All Plans</a>
+    </div>
+
+    {{/* ── MAIN CONTENT (Markdown → HTML) ── */}}
+    <div class="lic-single-content">
+      {{ .Content }}
+    </div>
+
+    {{/* ── DISCLAIMER ── */}}
+    <div class="lic-disclaimer">
+      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
+    </div>
+
+    {{/* ── ATTRIBUTION ── */}}
+    <div class="lic-attribution">
+      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
+    </div>
+
+  </div>
+</div>
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ .Params.plan_name }}",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Microsoft"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ .Params.price }}",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ .Params.ms_official }}"
+  },
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Susanth Sutheesh"
+    },
+    "reviewBody": "{{ .Params.tagline }}"
+  }
+}
+</script>
+{{ end }}

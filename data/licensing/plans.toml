@@ -58,6 +58,7 @@ tagline = "The enterprise standard — productivity + security"
 description = "Office 365 E3 plus Windows 11 Enterprise E3, Enterprise Mobility + Security E3 (Intune P1, Entra ID P1), and Defender for Endpoint P1. The most popular enterprise plan."
 who = "Most enterprises — the go-to plan for productivity, security, and device management"
 badge = "Most Popular"
+detail_url = "/licensing/microsoft-365-e3/"
 m365maps = "https://m365maps.com/files/Microsoft-365-E3.htm"
 ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e3"
 features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "dlp-basic", "ediscovery-standard", "entra-p1", "intune-p1", "defender-endpoint-p1", "windows-e3", "information-protection"]

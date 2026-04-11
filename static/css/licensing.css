@@ -663,6 +663,153 @@
   color: var(--lic-accent);
 }
 
+/* ── SINGLE PLAN PAGE ──────────────────────── */
+
+.lic-single {
+  max-width: 900px;
+}
+.lic-breadcrumb {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+.lic-breadcrumb a {
+  color: var(--lic-accent);
+  text-decoration: none;
+}
+.lic-breadcrumb a:hover { text-decoration: underline; }
+.lic-breadcrumb span { margin: 0 0.3rem; }
+
+.lic-single-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #1e293b;
+}
+.lic-single-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--lic-accent);
+  font-family: var(--font-heading);
+}
+.lic-single-price-unit {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-left: 0.3rem;
+}
+.lic-single-price-note {
+  display: block;
+  font-size: 0.85rem;
+  color: #f59e0b;
+  margin-top: 0.2rem;
+}
+.lic-single-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+.lic-single-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.lic-single-badge-highlight {
+  border-color: var(--lic-accent);
+  color: var(--lic-accent);
+  background: var(--lic-accent-subtle);
+}
+
+.lic-single-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Rich content styling */
+.lic-single-content {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.lic-single-content h2 {
+  color: #f1f5f9;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--lic-accent-border);
+}
+.lic-single-content h3 {
+  color: #e2e8f0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.6rem;
+}
+.lic-single-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.lic-single-content li {
+  margin-bottom: 0.4rem;
+}
+.lic-single-content strong {
+  color: #f1f5f9;
+}
+.lic-single-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.88rem;
+}
+.lic-single-content th {
+  background: #1e293b;
+  color: var(--lic-accent);
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--lic-accent-border);
+}
+.lic-single-content td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+.lic-single-content tr:nth-child(even) td {
+  background: rgba(30, 41, 59, 0.3);
+}
+.lic-single-content a {
+  color: var(--lic-accent);
+  text-decoration: none;
+}
+.lic-single-content a:hover { text-decoration: underline; }
+.lic-single-content blockquote {
+  border-left: 3px solid var(--lic-accent);
+  margin: 1.5rem 0;
+  padding: 0.8rem 1.2rem;
+  background: var(--lic-accent-subtle);
+  border-radius: 0 8px 8px 0;
+  color: #94a3b8;
+}
+.lic-single-content blockquote strong {
+  color: var(--lic-accent);
+}
+/* Mermaid diagrams in dark theme */
+.lic-single-content pre.mermaid {
+  background: transparent;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
 /* ── DISCLAIMER ────────────────────────────── */
 
 .lic-disclaimer {
