@@ -52,7 +52,7 @@
       // Sort plans by price descending (highest first)
       catPlans.sort((a, b) => b.price - a.price);
 
-      const accent = cat.accent || '#10B981';
+      const accent = cat.accent || '#F43F5E';
 
       html += `<div class="lic-category" id="cat-${cat.id}" style="--cat-accent:${accent}">`;
       html += `<div class="lic-category-header">
@@ -179,12 +179,12 @@
     // Build table
     let html = '<thead><tr><th>Feature</th>';
     selectedPlans.forEach(p => {
-      html += `<th>${p.name}<br><small style="color:#10B981">$${p.price}/mo</small></th>`;
+      html += `<th>${p.name}<br><small style="color:#F43F5E">$${p.price}/mo</small></th>`;
     });
     html += '</tr></thead><tbody>';
 
     Object.keys(grouped).forEach(catName => {
-      html += `<tr><td colspan="${selectedPlans.length + 1}" style="color:#10B981;font-weight:700;padding-top:1rem;">${catName}</td></tr>`;
+      html += `<tr><td colspan="${selectedPlans.length + 1}" style="color:#F43F5E;font-weight:700;padding-top:1rem;">${catName}</td></tr>`;
       grouped[catName].forEach(feat => {
         html += `<tr><td>${feat.icon} ${feat.name}</td>`;
         selectedPlans.forEach(p => {
@@ -372,7 +372,7 @@
       if (topPlan && topPlan.id !== 'm365-e7' && !topPlan.features?.includes('copilot-full')) {
         html += `
         <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:1.2rem;margin-top:1rem;">
-          <strong style="color:#10B981;">💡 Copilot Add-on Recommended</strong>
+          <strong style="color:#F43F5E;">💡 Copilot Add-on Recommended</strong>
           <p style="color:#94a3b8;font-size:0.9rem;margin:0.4rem 0 0;">Since you want Copilot, add the <strong>Microsoft 365 Copilot</strong> add-on ($30/user/month) to your plan. Or consider <strong>Microsoft 365 E7</strong> ($99/user/month) which includes Copilot built in.</p>
         </div>`;
       }
@@ -426,7 +426,7 @@
 
       let sourceHtml = '';
       if (entry.source) {
-        sourceHtml = `<a href="${entry.source}" target="_blank" rel="noopener" style="color:#10B981;font-size:0.8rem;">Source →</a>`;
+        sourceHtml = `<a href="${entry.source}" target="_blank" rel="noopener" style="color:#F43F5E;font-size:0.8rem;">Source →</a>`;
       }
 
       html += `
