@@ -585,9 +585,21 @@
     ).join('');
   }
 
-  function renderOutput(polished) {
+  function renderOutput(original, polished) {
     const $output = document.getElementById('polisher-output');
-    $output.textContent = polished;
+    // Highlight added parts in green by comparing with original
+    const originalLower = original.toLowerCase().trim();
+    const lines = polished.split('\n\n');
+    const htmlParts = lines.map(line => {
+      const lineLower = line.toLowerCase().trim();
+      // If this line's core content exists in the original, it's not added
+      const isOriginal = originalLower.includes(lineLower.replace(/\.$/, '').slice(0, 20));
+      if (isOriginal && line.length < original.length * 1.5) {
+        return escapeHtml(line);
+      }
+      return `<span class="polisher-added">${escapeHtml(line)}</span>`;
+    });
+    $output.innerHTML = htmlParts.join('\n\n');
     currentPolished = polished;
   }
 
@@ -629,13 +641,15 @@
     const polished = rewrite(text, analysis);
     const tips = generateTips(analysis);
 
-    // Show results
+    // Show results, hide "how it works"
     const $results = document.getElementById('polisher-results');
     $results.hidden = false;
+    const $howItWorks = document.getElementById('polisher-how-it-works');
+    if ($howItWorks) $howItWorks.style.display = 'none';
 
     renderScore(analysis);
     renderTips(tips);
-    renderOutput(polished);
+    renderOutput(text, polished);
     saveHistory(text, analysis.total);
     renderHistory();
 
@@ -687,9 +701,20 @@
       $btn.disabled = true;
       $charCount.textContent = '0 characters';
       document.getElementById('polisher-results').hidden = true;
+      const $howItWorks = document.getElementById('polisher-how-it-works');
+      if ($howItWorks) $howItWorks.style.display = '';
       this.style.display = 'none';
       $input.focus();
     });
+
+    // Edit & re-polish button
+    const $editBtn = document.getElementById('polisher-edit-btn');
+    if ($editBtn) {
+      $editBtn.addEventListener('click', function () {
+        $input.focus();
+        $input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
 
     // Copy button
     $copy.addEventListener('click', function () {

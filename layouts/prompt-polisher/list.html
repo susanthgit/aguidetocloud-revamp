@@ -59,10 +59,35 @@
           </div>
         </div>
       </div>
+      <p class="polisher-shortcut-hint">Tip: Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to polish instantly</p>
+    </div>
+
+    {{/* ── HOW IT WORKS (visible before first analysis) ── */}}
+    <div id="polisher-how-it-works" class="polisher-how-it-works">
+      <div class="polisher-step"><span class="polisher-step-num">1</span> Paste your prompt above</div>
+      <div class="polisher-step"><span class="polisher-step-num">2</span> We score it against 6 CRAFTS pillars</div>
+      <div class="polisher-step"><span class="polisher-step-num">3</span> Get a polished version — ready to copy</div>
     </div>
 
     {{/* ── RESULTS (hidden until analysis) ── */}}
     <div id="polisher-results" class="polisher-results" hidden>
+
+      {{/* ── POLISHED OUTPUT (shown FIRST — this is what users came for) ── */}}
+      <div class="polisher-output-section" id="polisher-output-section">
+        <div class="polisher-output-header">
+          <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
+          <div class="polisher-output-actions">
+            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
+          </div>
+        </div>
+        <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
+        <div class="polisher-output" id="polisher-output">
+          {{/* Rendered by JS */}}
+        </div>
+        <div class="polisher-output-footer">
+          <button id="polisher-edit-btn" class="polisher-btn-secondary">✏️ Edit & re-polish</button>
+        </div>
+      </div>
 
       {{/* ── SCORE DASHBOARD ── */}}
       <div class="polisher-score-section">
@@ -86,20 +111,6 @@
       <div class="polisher-tips-section" id="polisher-tips-section">
         <h2 class="polisher-section-title">💡 How to improve</h2>
         <div class="polisher-tips" id="polisher-tips">
-          {{/* Rendered by JS */}}
-        </div>
-      </div>
-
-      {{/* ── POLISHED OUTPUT ── */}}
-      <div class="polisher-output-section" id="polisher-output-section">
-        <div class="polisher-output-header">
-          <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
-          <div class="polisher-output-actions">
-            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
-          </div>
-        </div>
-        <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. Copy it and paste into any AI tool.</p>
-        <div class="polisher-output" id="polisher-output">
           {{/* Rendered by JS */}}
         </div>
       </div>

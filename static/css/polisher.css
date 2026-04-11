@@ -49,6 +49,7 @@
   line-height: 1.6;
   resize: vertical;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 .polisher-textarea:focus {
   outline: none;
@@ -67,6 +68,21 @@
   gap: 0.75rem;
   margin-top: 0.75rem;
   flex-wrap: wrap;
+}
+.polisher-shortcut-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-top: 0.4rem;
+}
+.polisher-shortcut-hint kbd {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
 }
 .polisher-btn-primary {
   padding: 0.7rem 1.5rem;
@@ -310,21 +326,6 @@
   display: flex;
   gap: 0.5rem;
 }
-.polisher-btn-copy {
-  padding: 0.4rem 0.8rem;
-  background: var(--tool-accent);
-  color: #0a0a1a;
-  border: none;
-  border-radius: var(--radius);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.polisher-btn-copy:hover {
-  filter: brightness(1.15);
-}
 .polisher-output {
   padding: 1.2rem;
   background: rgba(255, 107, 107, 0.06);
@@ -435,6 +436,69 @@
   font-size: 0.78rem;
 }
 
+/* ── How It Works (pre-analysis) ── */
+.polisher-how-it-works {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  margin-bottom: 1rem;
+}
+.polisher-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.polisher-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--tool-accent-dim);
+  color: var(--tool-accent);
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── Output footer ── */
+.polisher-output-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+/* ── Added text legend ── */
+.polisher-added-legend {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* ── Diff highlighting in output ── */
+.polisher-output .polisher-added {
+  color: #22c55e;
+}
+
+/* ── Bigger copy button ── */
+.polisher-btn-copy {
+  padding: 0.55rem 1.2rem;
+  background: var(--tool-accent);
+  color: #0a0a1a;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+
 /* ── Nav accent ── */
 .page-polisher .site-nav {
   --nav-accent: rgba(255, 107, 107, 0.35);
@@ -460,6 +524,8 @@
   .polisher-pillar { grid-template-columns: 80px 1fr 45px; gap: 0.5rem; }
   .polisher-crafts-grid { grid-template-columns: 1fr 1fr; }
   .polisher-output-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .polisher-how-it-works { flex-direction: column; gap: 0.6rem; padding: 1.5rem 0; }
+  .polisher-shortcut-hint { display: none; }
 }
 @media (max-width: 480px) {
   .polisher-crafts-grid { grid-template-columns: 1fr; }
