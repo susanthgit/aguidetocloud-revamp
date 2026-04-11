@@ -1,0 +1,217 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
+<style>
+/* Roadmap-specific styles */
+.roadmap-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+.roadmap-legend {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border); border-radius: 10px;
+  font-size: 0.82rem; color: var(--cert-text-dim);
+}
+.roadmap-legend-item { display: flex; align-items: center; gap: 0.35rem; }
+.roadmap-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.roadmap-track {
+  margin-bottom: 2.5rem;
+}
+.roadmap-track-title {
+  font-size: 1.15rem; font-weight: 700; padding: 0.5rem 0 0.4rem 0.75rem;
+  border-left: 3px solid var(--cert-accent); border-bottom: 1px solid var(--cert-border);
+  margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.roadmap-track-title span { font-size: 0.8rem; font-weight: 400; color: var(--cert-text-dim); }
+
+/* Tree levels */
+.roadmap-level { margin-bottom: 1.25rem; }
+.roadmap-level-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--cert-text-dim); margin-bottom: 0.5rem; padding-left: 0.25rem;
+}
+
+.roadmap-nodes {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  position: relative; padding-left: 1.5rem;
+}
+/* Vertical connector line */
+.roadmap-nodes::before {
+  content: ""; position: absolute; left: 0.5rem; top: 0; bottom: 0;
+  width: 2px; background: var(--cert-border);
+}
+.roadmap-level:first-child .roadmap-nodes::before { top: 50%; }
+.roadmap-level:last-child .roadmap-nodes::before { bottom: 50%; }
+
+/* Exam node */
+.roadmap-node {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 0.85rem; background: var(--cert-card); border: 1px solid var(--cert-border);
+  border-radius: 8px; text-decoration: none; color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s; position: relative; min-width: 160px;
+}
+.roadmap-node:hover { border-color: var(--cert-accent); box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+
+.roadmap-node-code { font-weight: 700; color: var(--cert-accent); font-size: 0.9rem; white-space: nowrap; }
+.roadmap-node-title { font-size: 0.78rem; color: var(--cert-text-dim); line-height: 1.3; max-width: 180px; }
+.roadmap-node-arrow { position: absolute; left: -1.25rem; color: var(--cert-border); font-size: 0.7rem; }
+
+/* Status styling on nodes */
+.roadmap-node-retiring { border-left: 3px solid #F59E0B; }
+.roadmap-node-retired { opacity: 0.5; border-left: 3px solid #EF4444; }
+.roadmap-node-beta { border-left: 3px solid #8B5CF6; border-style: dashed; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .roadmap-nodes { flex-direction: column; }
+  .roadmap-node { min-width: auto; width: 100%; }
+  .roadmap-node-title { max-width: none; }
+}
+</style>
+
+{{ partial "tool-hero.html" (dict "title" "Microsoft Certification Roadmap" "subtitle" "Interactive visual guide — see how certifications connect from Fundamentals to Expert" "accent" "#10B981") }}
+
+<div class="roadmap-container">
+
+  <nav class="cert-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span>
+    <a href="/cert-tracker/">Cert Study Guides</a> <span>›</span>
+    <span>Roadmap</span>
+  </nav>
+
+  <div class="roadmap-legend">
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#10B981"></div> Active</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#F59E0B"></div> Retiring</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#8B5CF6"></div> Beta (New)</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-dot" style="background:#EF4444"></div> Retired</div>
+  </div>
+
+  <div id="roadmap-content">
+    <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
+  </div>
+
+  <div class="cert-single-nav" style="margin-top:2rem">
+    <a href="/cert-tracker/" class="cert-detail-link">← Back to All Study Guides</a>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Microsoft Certification Roadmap",
+  "description": "Interactive visual roadmap of all Microsoft certification paths — Fundamentals to Expert.",
+  "url": "https://www.aguidetocloud.com/cert-tracker/roadmap/"
+}
+</script>
+<script>
+(function(){
+  // Define certification tracks with progression paths
+  var tracks = [
+    {
+      name: "☁️ Azure",
+      emoji: "☁️",
+      levels: [
+        { label: "Fundamentals", exams: ["AZ-900"] },
+        { label: "Associate", exams: ["AZ-104", "AZ-204", "AZ-500", "AZ-700", "AZ-140", "AZ-120", "AZ-800", "AZ-801"] },
+        { label: "Expert", exams: ["AZ-305", "AZ-400", "AZ-802"] }
+      ]
+    },
+    {
+      name: "🤖 AI & Data Science",
+      emoji: "🤖",
+      levels: [
+        { label: "Fundamentals", exams: ["AI-900", "DP-900"] },
+        { label: "Associate", exams: ["AI-102", "DP-100", "DP-300", "DP-420", "DP-600", "DP-700"] },
+        { label: "Beta (New Generation)", exams: ["AI-901", "AI-103", "AI-200", "AI-300", "DP-750", "DP-800"] }
+      ]
+    },
+    {
+      name: "🔒 Security & Identity",
+      emoji: "🔒",
+      levels: [
+        { label: "Fundamentals", exams: ["SC-900"] },
+        { label: "Associate", exams: ["SC-200", "SC-300", "SC-400"] },
+        { label: "Expert", exams: ["SC-100"] },
+        { label: "Beta (New Generation)", exams: ["SC-500", "SC-730"] }
+      ]
+    },
+    {
+      name: "📧 Microsoft 365",
+      emoji: "📧",
+      levels: [
+        { label: "Fundamentals", exams: ["MS-900"] },
+        { label: "Associate", exams: ["MD-102", "MS-700", "MS-721"] },
+        { label: "Expert", exams: ["MS-102"] }
+      ]
+    },
+    {
+      name: "⚡ Power Platform",
+      emoji: "⚡",
+      levels: [
+        { label: "Fundamentals", exams: ["PL-900"] },
+        { label: "Associate", exams: ["PL-200", "PL-300", "PL-400", "PL-500"] },
+        { label: "Expert", exams: ["PL-600"] }
+      ]
+    },
+    {
+      name: "💼 Dynamics 365",
+      emoji: "💼",
+      levels: [
+        { label: "Fundamentals", exams: ["MB-910", "MB-920"] },
+        { label: "Functional Consultant", exams: ["MB-210", "MB-220", "MB-230", "MB-240", "MB-310", "MB-330", "MB-800"] },
+        { label: "Developer", exams: ["MB-500", "MB-820"] }
+      ]
+    }
+  ];
+
+  fetch("/data/cert-tracker/latest.json")
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var examMap = {};
+      (data.exams || []).forEach(function(e) { examMap[e.code] = e; });
+
+      var html = "";
+      tracks.forEach(function(track) {
+        html += '<div class="roadmap-track">';
+        html += '<h2 class="roadmap-track-title" style="color:var(--cert-accent)">' + track.name + '</h2>';
+
+        track.levels.forEach(function(level) {
+          html += '<div class="roadmap-level">';
+          html += '<div class="roadmap-level-label">' + level.label + '</div>';
+          html += '<div class="roadmap-nodes">';
+
+          level.exams.forEach(function(code) {
+            var exam = examMap[code];
+            if (!exam) {
+              html += '<div class="roadmap-node" style="opacity:0.4"><span class="roadmap-node-code">' + code + '</span><span class="roadmap-node-title">Not tracked</span></div>';
+              return;
+            }
+            var statusClass = "";
+            var statusTag = "";
+            var s = exam.status || "active";
+            if (s === "retiring") { statusClass = " roadmap-node-retiring"; statusTag = ' <span class="cert-badge cert-badge-retiring" style="font-size:0.65rem">⚠️</span>'; }
+            else if (s === "retired") { statusClass = " roadmap-node-retired"; statusTag = ' <span class="cert-badge cert-badge-retired" style="font-size:0.65rem">🚫</span>'; }
+            else if (s === "beta") { statusClass = " roadmap-node-beta"; statusTag = ' <span class="cert-badge cert-badge-beta" style="font-size:0.65rem">🧪</span>'; }
+
+            var shortTitle = exam.title.length > 40 ? exam.title.substring(0, 37) + "..." : exam.title;
+
+            html += '<a href="/cert-tracker/' + code.toLowerCase() + '/" class="roadmap-node' + statusClass + '">';
+            html += '<span class="roadmap-node-arrow">→</span>';
+            html += '<span class="roadmap-node-code">' + code + statusTag + '</span>';
+            html += '<span class="roadmap-node-title">' + shortTitle + '</span>';
+            html += '</a>';
+          });
+
+          html += '</div></div>';
+        });
+
+        html += '</div>';
+      });
+
+      document.getElementById("roadmap-content").innerHTML = html;
+    })
+    .catch(function() {
+      document.getElementById("roadmap-content").innerHTML = '<div class="cert-no-results">Failed to load roadmap data.</div>';
+    });
+})();
+</script>
+{{ end }}
