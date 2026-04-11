@@ -189,6 +189,8 @@
 
   </div>
 
+  {{ partial "feedback-cta.html" (dict "tool" "prompts" "label" "AI Prompt Library") }}
+
   {{ if not $isMainPage }}
   {{ partial "back-nav" (dict "Page" . "URL" "/prompts/" "Label" "Prompt Library") }}
   {{ else }}

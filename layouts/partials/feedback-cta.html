@@ -1,0 +1,14 @@
+{{/*
+  feedback-cta.html — Inline feedback call-to-action for tool pages.
+  Usage: {{ partial "feedback-cta.html" (dict "tool" "ai-news" "label" "AI News") }}
+  Renders a teal pill button that links to /feedback/ with category pre-selected.
+*/}}
+{{ $tool  := .tool | default "general" }}
+{{ $label := .label | default "this tool" }}
+
+<div class="feedback-cta-bar">
+  <p class="feedback-cta-text">Have a question, idea, or found a bug?</p>
+  <a href="/feedback/?category=tool-feedback&tool={{ $tool }}" class="feedback-cta-btn" aria-label="Share feedback on {{ $label }}">
+    💬 Share Feedback on {{ $label }}
+  </a>
+</div>

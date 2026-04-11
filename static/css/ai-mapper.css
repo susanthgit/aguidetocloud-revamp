@@ -1,0 +1,649 @@
+/* ============================================================
+   AI Service Mapper — Electric Blue Theme
+   Accent: #3B82F6 | Namespace: .aimap-*
+   ============================================================ */
+
+.aimap-page {
+  --aimap-accent: #3B82F6;
+  --aimap-accent-hover: #2563EB;
+  --aimap-accent-glow: rgba(59, 130, 246, 0.2);
+  --aimap-accent-dim: rgba(59, 130, 246, 0.12);
+  --aimap-accent-border: rgba(59, 130, 246, 0.25);
+  --tool-accent: #3B82F6;
+  --aimap-bg: #141425;
+  --aimap-card-bg: #1a1a2e;
+  --aimap-text: #e0e0e0;
+  --aimap-text-muted: #999;
+  --aimap-border: rgba(255,255,255,0.08);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  color: var(--aimap-text);
+}
+
+/* ---- Tabs ---- */
+.aimap-tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--aimap-border);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.aimap-tabs::-webkit-scrollbar { display: none; }
+
+.aimap-tab {
+  background: none;
+  border: none;
+  color: var(--aimap-text-muted);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: inherit;
+}
+.aimap-tab:hover { color: #fff; }
+.aimap-tab.active {
+  color: var(--aimap-accent);
+  border-bottom-color: var(--aimap-accent);
+  font-weight: 600;
+}
+
+/* ---- Panels ---- */
+.aimap-panel { display: none; }
+.aimap-panel.active { display: block; }
+
+/* ---- Explore layout ---- */
+.aimap-explore-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+}
+
+/* ---- Filter sidebar ---- */
+.aimap-filters {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.aimap-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.aimap-filter-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.aimap-clear-filters {
+  background: none;
+  border: none;
+  color: var(--aimap-accent);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+.aimap-clear-filters:hover { text-decoration: underline; }
+
+.aimap-search-wrap { margin-bottom: 1rem; }
+.aimap-search {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--aimap-border);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.aimap-search:focus {
+  outline: none;
+  border-color: var(--aimap-accent);
+  box-shadow: 0 0 0 3px var(--aimap-accent-glow);
+}
+.aimap-search::placeholder { color: var(--aimap-text-muted); }
+
+.aimap-filter-group {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--aimap-border);
+}
+.aimap-filter-group h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--aimap-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.aimap-filter-options { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.aimap-filter-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  color: var(--aimap-text);
+}
+.aimap-filter-check input[type="checkbox"] {
+  accent-color: var(--aimap-accent);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* ---- Results bar ---- */
+.aimap-results-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+#aimap-count {
+  font-size: 0.9rem;
+  color: var(--aimap-text-muted);
+}
+.aimap-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--aimap-text-muted);
+}
+.aimap-sort select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--aimap-border);
+  color: #fff;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.aimap-compare-btn {
+  margin-left: auto;
+  background: var(--aimap-accent-dim);
+  border: 1px solid var(--aimap-accent-border);
+  color: var(--aimap-accent);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s;
+}
+.aimap-compare-btn:hover:not(:disabled) {
+  background: rgba(59,130,246,0.25);
+  border-color: var(--aimap-accent);
+}
+.aimap-compare-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* ---- Card grid ---- */
+.aimap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+/* ---- Service card ---- */
+.aimap-card {
+  background: color-mix(in srgb, var(--card-cat-color, var(--aimap-accent)) 8%, var(--aimap-card-bg));
+  border: 1px solid color-mix(in srgb, var(--card-cat-color, var(--aimap-accent)) 20%, transparent);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  position: relative;
+}
+.aimap-card:hover {
+  border-color: color-mix(in srgb, var(--card-cat-color, var(--aimap-accent)) 40%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--card-cat-color, var(--aimap-accent)) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+.aimap-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.aimap-card-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.aimap-card-provider {
+  font-size: 0.75rem;
+  color: var(--aimap-text-muted);
+  background: rgba(255,255,255,0.06);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.aimap-card-compare {
+  accent-color: var(--aimap-accent);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.aimap-card-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.aimap-card-desc {
+  font-size: 0.82rem;
+  color: var(--aimap-text-muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.aimap-card-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  color: var(--aimap-text);
+  width: fit-content;
+}
+
+/* Capability bars */
+.aimap-card-caps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.aimap-cap-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  color: var(--aimap-text-muted);
+}
+.aimap-cap-badge.strong {
+  background: var(--aimap-accent-dim);
+  color: var(--aimap-accent);
+}
+
+/* Best-for tags */
+.aimap-card-best {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+.aimap-best-tag {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(59,130,246,0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.15);
+}
+
+/* Price + link row */
+.aimap-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--aimap-border);
+  margin-top: 0.3rem;
+}
+.aimap-card-price {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.aimap-card-price.free { color: #4ade80; }
+.aimap-card-price.paid { color: #fbbf24; }
+.aimap-card-price.sub { color: #f97316; }
+
+.aimap-card-link {
+  font-size: 0.8rem;
+  color: var(--aimap-accent);
+  text-decoration: none;
+}
+.aimap-card-link:hover { text-decoration: underline; }
+
+/* No results */
+.aimap-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--aimap-text-muted);
+}
+.aimap-clear-link {
+  background: none;
+  border: none;
+  color: var(--aimap-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ---- Buttons ---- */
+.aimap-btn {
+  background: var(--aimap-accent-dim);
+  border: 1px solid var(--aimap-accent-border);
+  color: var(--aimap-accent);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.aimap-btn:hover {
+  background: rgba(59,130,246,0.25);
+}
+.aimap-btn-primary {
+  background: var(--aimap-accent);
+  color: #fff;
+  border-color: var(--aimap-accent);
+  font-weight: 600;
+}
+.aimap-btn-primary:hover {
+  background: var(--aimap-accent-hover);
+}
+
+/* ---- Compare tab ---- */
+.aimap-compare-header { margin-bottom: 1.5rem; }
+.aimap-compare-header h2 { color: #fff; margin-bottom: 0.5rem; }
+.aimap-compare-header p { color: var(--aimap-text-muted); font-size: 0.9rem; }
+
+.aimap-compare-pickers {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.aimap-compare-pickers select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--aimap-border);
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  min-width: 200px;
+}
+
+.aimap-compare-table-wrap { overflow-x: auto; }
+.aimap-compare-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--aimap-text-muted);
+}
+
+.aimap-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.aimap-compare-table th,
+.aimap-compare-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--aimap-border);
+  text-align: left;
+  vertical-align: top;
+}
+.aimap-compare-table th {
+  color: var(--aimap-text-muted);
+  font-weight: 600;
+  background: rgba(255,255,255,0.03);
+  white-space: nowrap;
+  width: 160px;
+}
+.aimap-compare-table td { color: var(--aimap-text); }
+.aimap-compare-table thead th {
+  color: #fff;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--aimap-accent-border);
+}
+.aimap-compare-table .diff-highlight {
+  background: rgba(59,130,246,0.08);
+}
+
+.aimap-compare-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* ---- Quiz tab ---- */
+.aimap-quiz-container { max-width: 700px; margin: 0 auto; }
+
+.aimap-quiz-intro { text-align: center; padding: 2rem 0; }
+.aimap-quiz-intro h2 { color: #fff; margin-bottom: 0.75rem; }
+.aimap-quiz-intro p { color: var(--aimap-text-muted); margin-bottom: 1.5rem; }
+
+.aimap-quiz-progress {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+.aimap-quiz-progress-dot {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--aimap-border);
+  transition: background 0.3s;
+}
+.aimap-quiz-progress-dot.done { background: var(--aimap-accent); }
+.aimap-quiz-progress-dot.current { background: rgba(59,130,246,0.5); }
+
+#aimap-quiz-question {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.aimap-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.aimap-quiz-option {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--aimap-border);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--aimap-text);
+  transition: border-color 0.2s, background 0.2s;
+  text-align: left;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.aimap-quiz-option:hover {
+  border-color: var(--aimap-accent-border);
+  background: var(--aimap-accent-dim);
+}
+.aimap-quiz-option.selected {
+  border-color: var(--aimap-accent);
+  background: rgba(59,130,246,0.15);
+  color: #fff;
+}
+.aimap-quiz-option-icon { font-size: 1.3rem; }
+
+/* Quiz results */
+.aimap-quiz-results { padding: 1rem 0; }
+.aimap-quiz-results h2 { color: #fff; text-align: center; margin-bottom: 1.5rem; }
+
+.aimap-quiz-result-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--aimap-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.aimap-quiz-result-medal {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.aimap-quiz-result-info h3 {
+  margin: 0 0 0.3rem;
+  color: #fff;
+}
+.aimap-quiz-result-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--aimap-text-muted);
+}
+.aimap-quiz-result-score {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  background: var(--aimap-accent-dim);
+  color: var(--aimap-accent);
+}
+
+.aimap-quiz-results-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ---- Pricing tab ---- */
+.aimap-pricing-disclaimer {
+  color: var(--aimap-text-muted);
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.aimap-pricing-filters { margin-bottom: 1rem; }
+.aimap-pricing-table-wrap { overflow-x: auto; }
+
+.aimap-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.aimap-pricing-table th {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  color: var(--aimap-text-muted);
+  border-bottom: 2px solid var(--aimap-accent-border);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  font-weight: 600;
+}
+.aimap-pricing-table th:hover { color: #fff; }
+.aimap-pricing-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--aimap-border);
+  color: var(--aimap-text);
+}
+.aimap-pricing-table tr:hover td { background: rgba(255,255,255,0.02); }
+.aimap-pricing-table .price-free { color: #4ade80; font-weight: 600; }
+.aimap-pricing-table a { color: var(--aimap-accent); text-decoration: none; }
+.aimap-pricing-table a:hover { text-decoration: underline; }
+
+/* ---- Glossary tab ---- */
+.aimap-glossary-list { margin-top: 1rem; }
+
+.aimap-glossary-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--aimap-border);
+}
+.aimap-glossary-item:last-child { border-bottom: none; }
+.aimap-glossary-term {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.aimap-glossary-def {
+  color: var(--aimap-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ---- Mobile ---- */
+.aimap-mobile-filter-toggle {
+  display: none;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--aimap-border);
+  border-radius: 8px;
+  color: var(--aimap-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 900px) {
+  .aimap-explore-layout {
+    grid-template-columns: 1fr;
+  }
+  .aimap-filters {
+    display: none;
+    position: static;
+    max-height: none;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+  .aimap-filters.open { display: block; }
+  .aimap-mobile-filter-toggle { display: block; }
+  .aimap-grid {
+    grid-template-columns: 1fr;
+  }
+  .aimap-compare-pickers select { min-width: 150px; }
+}
+
+@media (max-width: 600px) {
+  .aimap-page { padding: 0 1rem 2rem; }
+  .aimap-tabs { gap: 0; }
+  .aimap-tab { padding: 0.6rem 0.8rem; font-size: 0.8rem; }
+  .aimap-results-bar { font-size: 0.8rem; }
+  .aimap-compare-btn { display: none; }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .aimap-card,
+  .aimap-tab,
+  .aimap-quiz-option,
+  .aimap-quiz-progress-dot,
+  .aimap-btn { transition: none; }
+  .aimap-card:hover { transform: none; }
+}
+
+/* ---- Nav accent override ---- */
+body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }

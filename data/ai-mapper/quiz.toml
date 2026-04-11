@@ -1,0 +1,161 @@
+# AI Service Mapper — Recommendation Quiz
+# Maps user answers to service attributes for personalised recommendations
+
+[[questions]]
+id = "primary-need"
+text = "What's your primary AI need?"
+type = "single"
+[[questions.options]]
+value = "text"
+label = "Text generation / chatbots"
+icon = "💬"
+[[questions.options]]
+value = "code"
+label = "Code assistance / development"
+icon = "💻"
+[[questions.options]]
+value = "images"
+label = "Image generation / editing"
+icon = "🎨"
+[[questions.options]]
+value = "documents"
+label = "Document processing / analysis"
+icon = "📄"
+[[questions.options]]
+value = "voice"
+label = "Voice / speech / audio"
+icon = "🎙️"
+[[questions.options]]
+value = "agents"
+label = "AI agents / automation"
+icon = "🤖"
+[[questions.options]]
+value = "search"
+label = "Search / knowledge base"
+icon = "🔍"
+[[questions.options]]
+value = "video"
+label = "Video generation / editing"
+icon = "🎬"
+
+[[questions]]
+id = "cloud-provider"
+text = "What's your primary cloud provider?"
+type = "single"
+[[questions.options]]
+value = "azure"
+label = "Microsoft Azure"
+icon = "☁️"
+[[questions.options]]
+value = "aws"
+label = "Amazon Web Services"
+icon = "☁️"
+[[questions.options]]
+value = "gcp"
+label = "Google Cloud"
+icon = "☁️"
+[[questions.options]]
+value = "none"
+label = "No preference / multi-cloud"
+icon = "🌐"
+
+[[questions]]
+id = "budget"
+text = "What's your budget situation?"
+type = "single"
+[[questions.options]]
+value = "free"
+label = "Free only — I'm exploring"
+icon = "🆓"
+[[questions.options]]
+value = "low"
+label = "Low budget — under $100/month"
+icon = "💵"
+[[questions.options]]
+value = "medium"
+label = "Team budget — $100–1,000/month"
+icon = "💰"
+[[questions.options]]
+value = "enterprise"
+label = "Enterprise — cost is secondary to features"
+icon = "🏢"
+
+[[questions]]
+id = "compliance"
+text = "Do you need enterprise compliance?"
+type = "single"
+[[questions.options]]
+value = "none"
+label = "No — personal or small project"
+icon = "👤"
+[[questions.options]]
+value = "basic"
+label = "Basic — SOC 2, data privacy"
+icon = "🔒"
+[[questions.options]]
+value = "strict"
+label = "Strict — HIPAA, GDPR, data residency"
+icon = "🏛️"
+
+[[questions]]
+id = "technical-level"
+text = "What's your technical comfort level?"
+type = "single"
+[[questions.options]]
+value = "non-technical"
+label = "Non-technical — I want ready-to-use tools"
+icon = "🧑‍💼"
+[[questions.options]]
+value = "it-pro"
+label = "IT pro — comfortable with admin portals"
+icon = "🧑‍💻"
+[[questions.options]]
+value = "developer"
+label = "Developer — I'll use APIs and SDKs"
+icon = "👨‍💻"
+
+[[questions]]
+id = "ecosystem"
+text = "What ecosystem do you work in?"
+type = "single"
+[[questions.options]]
+value = "m365"
+label = "Microsoft 365 (Teams, Outlook, SharePoint)"
+icon = "📧"
+[[questions.options]]
+value = "google-workspace"
+label = "Google Workspace (Gmail, Docs, Drive)"
+icon = "📝"
+[[questions.options]]
+value = "github"
+label = "GitHub / Developer tools"
+icon = "🐙"
+[[questions.options]]
+value = "aws-ecosystem"
+label = "AWS ecosystem"
+icon = "☁️"
+[[questions.options]]
+value = "standalone"
+label = "Standalone / no specific ecosystem"
+icon = "🔗"
+
+[[questions]]
+id = "data-location"
+text = "Where must your data stay?"
+type = "single"
+[[questions.options]]
+value = "anywhere"
+label = "No restriction"
+icon = "🌍"
+[[questions.options]]
+value = "us"
+label = "United States"
+icon = "🇺🇸"
+[[questions.options]]
+value = "eu"
+label = "European Union"
+icon = "🇪🇺"
+[[questions.options]]
+value = "apac"
+label = "Asia-Pacific (ANZ, Japan, etc.)"
+icon = "🌏"

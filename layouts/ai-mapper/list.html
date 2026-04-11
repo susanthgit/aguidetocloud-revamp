@@ -1,0 +1,235 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/ai-mapper.css?v={{ site.Params.cache_version }}">
+
+{{/* Load data — directory is data/ai-mapper/ */}}
+{{ $dataDir := index hugo.Data "ai-mapper" | default (index hugo.Data "ai_mapper") | default dict }}
+{{ $services := slice }}
+{{ $svcData := index $dataDir "services" | default dict }}
+{{ range $key, $val := $svcData }}
+  {{ $svc := merge $val (dict "id" $key) }}
+  {{ $services = $services | append $svc }}
+{{ end }}
+{{ $categories := index $dataDir "categories" | default dict }}
+{{ $quiz := index $dataDir "quiz" | default dict }}
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+{{ partial "tool-hero.html" (dict "title" "AI Service Mapper" "subtitle" "Find the right AI service for your use case — compare 50+ services across every major provider" "accent" "#3B82F6") }}
+
+<div class="aimap-page">
+
+  {{/* Tabs */}}
+  <div class="aimap-tabs" role="tablist">
+    <button class="aimap-tab active" data-tab="explore" role="tab" aria-selected="true">🗺️ Explore</button>
+    <button class="aimap-tab" data-tab="compare" role="tab" aria-selected="false">⚖️ Compare</button>
+    <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">🧭 Which AI?</button>
+    <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">💰 Pricing</button>
+    <button class="aimap-tab" data-tab="glossary" role="tab" aria-selected="false">📚 Glossary</button>
+  </div>
+
+  {{/* ============ TAB 1: EXPLORE ============ */}}
+  <div class="aimap-panel active" id="panel-explore" role="tabpanel">
+
+    <div class="aimap-explore-layout">
+      {{/* Filter sidebar */}}
+      <aside class="aimap-filters">
+        <div class="aimap-filter-header">
+          <h3>Filters</h3>
+          <button class="aimap-clear-filters" id="aimap-clear-filters">Clear all</button>
+        </div>
+
+        <div class="aimap-search-wrap">
+          <input type="text" id="aimap-search" class="aimap-search" placeholder="Search services..." aria-label="Search AI services">
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Provider</h4>
+          <div class="aimap-filter-options" id="filter-provider"></div>
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Category</h4>
+          <div class="aimap-filter-options" id="filter-category"></div>
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Pricing</h4>
+          <div class="aimap-filter-options" id="filter-pricing">
+            <label class="aimap-filter-check"><input type="checkbox" value="free"> 🆓 Free tier available</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="pay-per-use"> 💳 Pay-per-use</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="subscription"> 📅 Subscription</label>
+          </div>
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Capabilities</h4>
+          <div class="aimap-filter-options" id="filter-capabilities">
+            <label class="aimap-filter-check"><input type="checkbox" value="text_generation"> 💬 Text generation</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="code_generation"> 💻 Code generation</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="image_generation"> 🎨 Image generation</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="audio_speech"> 🎙️ Voice / Audio</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="video_generation"> 🎬 Video generation</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="reasoning"> 🧠 Reasoning</label>
+          </div>
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Enterprise</h4>
+          <div class="aimap-filter-options" id="filter-enterprise">
+            <label class="aimap-filter-check"><input type="checkbox" value="soc2"> 🔒 SOC 2</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="hipaa"> 🏥 HIPAA</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="gdpr"> 🇪🇺 GDPR</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="data_residency"> 📍 Data residency</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="private_networking"> 🔐 Private networking</label>
+          </div>
+        </div>
+
+        <div class="aimap-filter-group">
+          <h4>Integration</h4>
+          <div class="aimap-filter-options" id="filter-integration">
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_m365"> 📧 Microsoft 365</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_azure"> ☁️ Azure</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_aws"> ☁️ AWS</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_gcp"> ☁️ Google Cloud</label>
+          </div>
+        </div>
+      </aside>
+
+      {{/* Card grid */}}
+      <div class="aimap-grid-area">
+        <div class="aimap-results-bar">
+          <span id="aimap-count">0 services</span>
+          <div class="aimap-sort">
+            <label for="aimap-sort-select">Sort:</label>
+            <select id="aimap-sort-select">
+              <option value="name">Name (A–Z)</option>
+              <option value="provider">Provider</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+          <button class="aimap-compare-btn" id="aimap-open-compare" disabled>⚖️ Compare selected (<span id="aimap-compare-count">0</span>)</button>
+        </div>
+
+        {{/* Mobile filter toggle */}}
+        <button class="aimap-mobile-filter-toggle" id="aimap-mobile-filter-toggle">🔍 Filters</button>
+
+        <div class="aimap-grid" id="aimap-grid">
+          {{/* Cards rendered by JS */}}
+        </div>
+        <div class="aimap-no-results" id="aimap-no-results" style="display:none;">
+          <p>No services match your filters. Try adjusting or <button class="aimap-clear-link" id="aimap-clear-link">clearing all filters</button>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ============ TAB 2: COMPARE ============ */}}
+  <div class="aimap-panel" id="panel-compare" role="tabpanel">
+    <div class="aimap-compare-header">
+      <h2>Compare Services Side-by-Side</h2>
+      <p>Select 2–4 services to compare. Use the checkboxes on the Explore tab, or pick from below.</p>
+      <div class="aimap-compare-pickers" id="aimap-compare-pickers"></div>
+    </div>
+    <div class="aimap-compare-table-wrap" id="aimap-compare-table-wrap">
+      <p class="aimap-compare-empty" id="aimap-compare-empty">Select at least 2 services to compare.</p>
+    </div>
+    <div class="aimap-compare-actions" id="aimap-compare-actions" style="display:none;">
+      <button class="aimap-btn" id="aimap-copy-compare">📋 Copy as Markdown</button>
+      <button class="aimap-btn" id="aimap-share-compare">🔗 Share comparison</button>
+    </div>
+  </div>
+
+  {{/* ============ TAB 3: QUIZ ============ */}}
+  <div class="aimap-panel" id="panel-quiz" role="tabpanel">
+    <div class="aimap-quiz-container" id="aimap-quiz-container">
+      <div class="aimap-quiz-intro" id="aimap-quiz-intro">
+        <h2>🧭 Which AI Service Should You Use?</h2>
+        <p>Answer 7 quick questions and get a personalised recommendation based on your needs, budget, and environment.</p>
+        <button class="aimap-btn aimap-btn-primary" id="aimap-quiz-start">Start the Quiz →</button>
+      </div>
+      <div class="aimap-quiz-step" id="aimap-quiz-step" style="display:none;">
+        <div class="aimap-quiz-progress" id="aimap-quiz-progress"></div>
+        <h3 id="aimap-quiz-question"></h3>
+        <div class="aimap-quiz-options" id="aimap-quiz-options"></div>
+      </div>
+      <div class="aimap-quiz-results" id="aimap-quiz-results" style="display:none;">
+        <h2>Your Top Recommendations</h2>
+        <div id="aimap-quiz-results-list"></div>
+        <div class="aimap-quiz-results-actions">
+          <button class="aimap-btn" id="aimap-quiz-retake">🔄 Retake Quiz</button>
+          <button class="aimap-btn" id="aimap-quiz-compare-results">⚖️ Compare These</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ============ TAB 4: PRICING ============ */}}
+  <div class="aimap-panel" id="panel-pricing" role="tabpanel">
+    <h2>💰 Pricing Snapshot</h2>
+    <p class="aimap-pricing-disclaimer">Pricing as of April 2026. Always verify on vendor pricing pages. Prices in USD.</p>
+    <div class="aimap-pricing-filters">
+      <label class="aimap-filter-check"><input type="checkbox" id="pricing-free-only"> Show only services with free tier</label>
+    </div>
+    <div class="aimap-pricing-table-wrap">
+      <table class="aimap-pricing-table" id="aimap-pricing-table">
+        <thead>
+          <tr>
+            <th data-sort="name">Service ↕</th>
+            <th data-sort="provider">Provider ↕</th>
+            <th data-sort="free_tier">Free Tier ↕</th>
+            <th data-sort="price_input">Input / 1M Tokens ↕</th>
+            <th data-sort="price_output">Output / 1M Tokens ↕</th>
+            <th data-sort="pricing_model">Model ↕</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="aimap-pricing-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  {{/* ============ TAB 5: GLOSSARY ============ */}}
+  <div class="aimap-panel" id="panel-glossary" role="tabpanel">
+    <h2>📚 AI Glossary</h2>
+    <p>Quick reference for AI terms used throughout this tool — in plain English.</p>
+    <input type="text" id="aimap-glossary-search" class="aimap-search" placeholder="Search terms..." aria-label="Search glossary">
+    <div class="aimap-glossary-list" id="aimap-glossary-list"></div>
+  </div>
+
+</div>
+
+{{/* Inject data into JS */}}
+<script>
+window.__aimapData = {
+  services: {{ $services | jsonify | safeJS }},
+  categories: {{ $categories | jsonify | safeJS }},
+  quiz: {{ $quiz | jsonify | safeJS }}
+};
+</script>
+
+{{/* JSON-LD Schema */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Service Mapper",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sutheesh Susanth",
+    "url": "https://www.aguidetocloud.com/about/"
+  }
+}
+</script>
+
+<script src="/js/ai-mapper.js?v={{ site.Params.cache_version }}"></script>
+
+{{ end }}

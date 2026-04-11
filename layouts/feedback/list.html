@@ -1,0 +1,182 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/feedback.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "title" "Community Feedback" "subtitle" "Ask questions, suggest features, request videos — help us build better tools for the cloud community" "accent" "#14B8A6") }}
+
+<div class="feedback-container">
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+  <!-- How It Works -->
+  <div class="feedback-how">
+    <div class="feedback-how-step">
+      <div class="feedback-how-num">1</div>
+      <div>
+        <div class="feedback-how-label">Pick a category</div>
+        <div class="feedback-how-desc">Select what your feedback is about</div>
+      </div>
+    </div>
+    <div class="feedback-how-step">
+      <div class="feedback-how-num">2</div>
+      <div>
+        <div class="feedback-how-label">Write your message</div>
+        <div class="feedback-how-desc">Questions, ideas, bugs — anything helps</div>
+      </div>
+    </div>
+    <div class="feedback-how-step">
+      <div class="feedback-how-num">3</div>
+      <div>
+        <div class="feedback-how-label">We respond</div>
+        <div class="feedback-how-desc">Every submission gets a personal reply</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Cards -->
+  <div class="feedback-categories" id="feedback-categories" role="radiogroup" aria-label="Feedback category">
+    <div class="feedback-cat-card" data-category="questions" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">❓</span>
+      <span class="feedback-cat-label">Questions</span>
+    </div>
+    <div class="feedback-cat-card" data-category="feature-requests" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">💡</span>
+      <span class="feedback-cat-label">Feature Requests</span>
+    </div>
+    <div class="feedback-cat-card" data-category="video-requests" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">🎬</span>
+      <span class="feedback-cat-label">Video Requests</span>
+    </div>
+    <div class="feedback-cat-card" data-category="bug-reports" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">🐛</span>
+      <span class="feedback-cat-label">Bug Reports</span>
+    </div>
+    <div class="feedback-cat-card" data-category="tool-feedback" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">🔧</span>
+      <span class="feedback-cat-label">Tool Feedback</span>
+    </div>
+    <div class="feedback-cat-card" data-category="content-ideas" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">📝</span>
+      <span class="feedback-cat-label">Content Ideas</span>
+    </div>
+    <div class="feedback-cat-card" data-category="general" tabindex="0" role="radio" aria-checked="false">
+      <span class="feedback-cat-emoji">💬</span>
+      <span class="feedback-cat-label">General</span>
+    </div>
+  </div>
+
+  <!-- Submit Form -->
+  <div class="feedback-form-section" id="feedback-form-section">
+    <div class="feedback-form-title">📝 Share Your Feedback</div>
+    <form id="feedback-form" novalidate>
+      <div class="feedback-form-row">
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-name">Name <span class="optional">(optional)</span></label>
+          <input class="feedback-input" type="text" id="fb-name" name="name" placeholder="How should we address you?" autocomplete="name">
+        </div>
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-email">Email <span class="optional">(optional — for reply notifications)</span></label>
+          <input class="feedback-input" type="email" id="fb-email" name="email" placeholder="your@email.com" autocomplete="email">
+        </div>
+      </div>
+
+      <div class="feedback-form-row">
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-category">Category</label>
+          <select class="feedback-select" id="fb-category" name="category" required>
+            <option value="">Select a category…</option>
+            <option value="questions">❓ Questions</option>
+            <option value="feature-requests">💡 Feature Requests</option>
+            <option value="video-requests">🎬 Video Requests</option>
+            <option value="bug-reports">🐛 Bug Reports</option>
+            <option value="tool-feedback">🔧 Tool Feedback</option>
+            <option value="content-ideas">📝 Content Ideas</option>
+            <option value="general">💬 General</option>
+          </select>
+        </div>
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-tool">Related Tool <span class="optional">(optional)</span></label>
+          <select class="feedback-select" id="fb-tool" name="tool">
+            <option value="">Not specific to a tool</option>
+            <option value="ai-news">📰 AI News</option>
+            <option value="m365-roadmap">🗺️ M365 Roadmap Tracker</option>
+            <option value="prompts">💡 AI Prompt Library</option>
+            <option value="prompt-polisher">✨ Prompt Polisher</option>
+            <option value="cert-tracker">📊 Cert Study Guides</option>
+            <option value="licensing">📜 Licensing Simplifier</option>
+            <option value="service-health">🏥 Service Health Tracker</option>
+            <option value="copilot-readiness">🎯 Copilot Readiness Checker</option>
+            <option value="copilot-matrix">📊 Copilot Feature Matrix</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="feedback-form-row full">
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-subject">Subject</label>
+          <input class="feedback-input" type="text" id="fb-subject" name="subject" placeholder="Brief summary of your feedback" required>
+        </div>
+      </div>
+
+      <div class="feedback-form-row full">
+        <div class="feedback-field">
+          <label class="feedback-label" for="fb-message">Message</label>
+          <textarea class="feedback-textarea" id="fb-message" name="message" placeholder="Tell us more — the more detail, the better we can help!" required></textarea>
+        </div>
+      </div>
+
+      <!-- Honeypot -->
+      <div class="feedback-hp" aria-hidden="true">
+        <label for="fb-website">Website</label>
+        <input type="text" id="fb-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="feedback-submit-row">
+        <button type="submit" class="feedback-submit" id="fb-submit">
+          <span id="fb-submit-text">Send Feedback</span>
+        </button>
+        <span class="feedback-submit-hint">No sign-up required. We read every submission.</span>
+      </div>
+
+      <div class="feedback-status" id="fb-status" role="alert" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <!-- Recent Feedback -->
+  <div class="feedback-recent" id="feedback-recent">
+    <div class="feedback-recent-title">💬 Recent Community Feedback</div>
+    <div class="feedback-recent-list" id="feedback-recent-list">
+      <div class="feedback-empty">
+        <div class="feedback-empty-icon">🌱</div>
+        <p>Be the first to share feedback! Your voice shapes our tools and content.</p>
+      </div>
+    </div>
+    <div class="feedback-github-link">
+      <a href="https://github.com/susanthgit/aguidetocloud-feedback/discussions" target="_blank" rel="noopener">
+        Browse all feedback on GitHub →
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "A Guide to Cloud — Community Feedback",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "Feedback",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "Susanth Sutheesh",
+    "url": "https://www.aguidetocloud.com/about/"
+  }
+}
+</script>
+
+<script src="/js/feedback.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

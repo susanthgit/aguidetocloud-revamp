@@ -1,0 +1,65 @@
+# AI Service Mapper — Category Definitions
+# Each category groups related AI services together
+
+[llm-platform]
+name = "LLM Platforms"
+emoji = "🧠"
+description = "Large language model hosting and API platforms"
+colour = "#3B82F6"
+order = 1
+
+[image-generation]
+name = "Image Generation"
+emoji = "🎨"
+description = "AI image creation and editing tools"
+colour = "#EC4899"
+order = 2
+
+[voice-audio]
+name = "Voice & Audio"
+emoji = "🎙️"
+description = "Speech-to-text, text-to-speech, and audio AI"
+colour = "#F59E0B"
+order = 3
+
+[agent-platform]
+name = "Agent Platforms"
+emoji = "🤖"
+description = "AI agent builders and orchestration platforms"
+colour = "#8B5CF6"
+order = 4
+
+[search-knowledge]
+name = "Search & Knowledge"
+emoji = "🔍"
+description = "AI-powered search, RAG, and knowledge retrieval"
+colour = "#10B981"
+order = 5
+
+[code-development]
+name = "Code & Development"
+emoji = "💻"
+description = "AI coding assistants and development tools"
+colour = "#06B6D4"
+order = 6
+
+[document-processing]
+name = "Document Processing"
+emoji = "📄"
+description = "Document intelligence, OCR, and content extraction"
+colour = "#F97316"
+order = 7
+
+[video-generation]
+name = "Video Generation"
+emoji = "🎬"
+description = "AI video creation and editing"
+colour = "#EF4444"
+order = 8
+
+[data-analytics]
+name = "Data & Analytics"
+emoji = "📊"
+description = "AI-powered data analysis and business intelligence"
+colour = "#6366F1"
+order = 9

@@ -58,5 +58,6 @@
 </script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "feedback-cta.html" (dict "tool" "m365-roadmap" "label" "M365 Roadmap Tracker") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 {{ end }}
