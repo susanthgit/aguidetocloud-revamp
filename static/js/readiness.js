@@ -1,10 +1,18 @@
-/* ── Copilot Readiness Checker — Assessment Engine ──
+/* ── Copilot Readiness Checker v2 — Assessment Engine ──
    30 questions across 7 pillars, 0–3 points each.
    100% client-side, zero API calls.
+   v2: localStorage, pillar nav, score delta, confetti, swipe,
+       keyboard hints, benchmarks, next-steps resources.
 */
 
 (function () {
   'use strict';
+
+  // ─── Industry Benchmarks (approximate, based on field experience) ───
+  const BENCHMARKS = {
+    licensing: 72, identity: 65, data: 45, security: 52,
+    network: 68, change: 40, monitoring: 35, overall: 54
+  };
 
   // ─── Question Data ───
   const PILLARS = [

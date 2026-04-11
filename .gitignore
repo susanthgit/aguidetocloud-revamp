@@ -1,6 +1,7 @@
 public/
 resources/
 .hugo_build.lock
+api/node_modules/
 
 credentials.json
 tokens.json
