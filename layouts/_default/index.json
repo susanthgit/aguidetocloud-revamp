@@ -1,6 +1,8 @@
 {{- $videos := where .Site.RegularPages "Params.youtube_id" "!=" nil -}}
 {{- $sections := .Site.Sections -}}
 {{- $about := .Site.GetPage "/about" -}}
+{{- $blog := where .Site.RegularPages "Section" "blog" -}}
+{{- $toolSections := slice "ai-news" "m365-roadmap" "prompts" "prompt-polisher" "cert-tracker" "licensing" "service-health" "deprecation-timeline" "copilot-readiness" "copilot-matrix" "roi-calculator" "ai-mapper" "ai-showdown" "feedback" -}}
 [{{ range $i, $p := $videos }}{{ if $i }},{{ end }}
   {
     "title": {{ $p.Title | jsonify }},
@@ -11,7 +13,27 @@
     "card_tag": {{ (default "" $p.Params.card_tag) | jsonify }},
     "description": {{ (default "" $p.Description) | jsonify }},
     "type": "video"
-  }{{ end }}{{ range $sections }},
+  }{{ end }}{{ range $blog }},
+  {
+    "title": {{ .Title | jsonify }},
+    "url": {{ .Permalink | jsonify }},
+    "date": "{{ .Date.Format "2 Jan 2006" }}",
+    "section": "Blog",
+    "tag_class": "",
+    "card_tag": "Blog",
+    "description": {{ (default "" .Description) | jsonify }},
+    "type": "blog"
+  }{{ end }}{{ range $toolSections }}{{ $sec := $.Site.GetPage (printf "/%s" .) }}{{ if $sec }},
+  {
+    "title": {{ $sec.Title | jsonify }},
+    "url": {{ $sec.Permalink | jsonify }},
+    "date": "",
+    "section": "Toolkit",
+    "tag_class": "",
+    "card_tag": "Tool",
+    "description": {{ (default "" $sec.Description) | jsonify }},
+    "type": "tool"
+  }{{ end }}{{ end }}{{ range $sections }},
   {
     "title": {{ .Title | jsonify }},
     "url": {{ .Permalink | jsonify }},

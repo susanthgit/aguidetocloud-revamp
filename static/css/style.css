@@ -359,7 +359,7 @@ a:hover {
 }
 .hp-toolkit-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 0.6rem;
 }
 .hp-toolkit-card {
