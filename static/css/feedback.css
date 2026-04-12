@@ -6,9 +6,9 @@
 
 :root {
   --fb-accent: #FBBF24;
-  --fb-accent-dim: rgba(20, 184, 166, 0.15);
+  --fb-accent-dim: rgba(251, 191, 36, 0.15);
   --fb-accent-hover: #2DD4BF;
-  --fb-accent-glow: rgba(20, 184, 166, 0.25);
+  --fb-accent-glow: rgba(251, 191, 36, 0.25);
   --fb-bg: #141118;
   --fb-card: #1e1b24;
   --fb-card-hover: #252230;
@@ -294,7 +294,7 @@
   flex-shrink: 0;
 }
 .feedback-badge.open {
-  background: rgba(20, 184, 166, 0.15);
+  background: rgba(251, 191, 36, 0.15);
   color: var(--fb-accent);
 }
 .feedback-badge.answered {
@@ -363,7 +363,7 @@
 }
 .feedback-cta-btn:hover {
   background: #2DD4BF;
-  box-shadow: 0 0 14px rgba(20, 184, 166, 0.25);
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.25);
 }
 
 /* ── How It Works ── */

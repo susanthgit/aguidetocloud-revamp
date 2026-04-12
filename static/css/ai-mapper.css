@@ -1,15 +1,15 @@
 /* ============================================================
    AI Service Mapper — Electric Blue Theme
-   Accent: #3B82F6 | Namespace: .aimap-*
+   Accent: #8B5CF6 | Namespace: .aimap-*
    ============================================================ */
 
 .aimap-page {
-  --aimap-accent: #3B82F6;
+  --aimap-accent: #8B5CF6;
   --aimap-accent-hover: #2563EB;
-  --aimap-accent-glow: rgba(59, 130, 246, 0.2);
-  --aimap-accent-dim: rgba(59, 130, 246, 0.12);
-  --aimap-accent-border: rgba(59, 130, 246, 0.25);
-  --tool-accent: #3B82F6;
+  --aimap-accent-glow: rgba(139, 92, 246, 0.2);
+  --aimap-accent-dim: rgba(139, 92, 246, 0.12);
+  --aimap-accent-border: rgba(139, 92, 246, 0.25);
+  --tool-accent: #8B5CF6;
   --aimap-bg: #141425;
   --aimap-card-bg: #1a1a2e;
   --aimap-text: #e0e0e0;
@@ -185,7 +185,7 @@
   transition: background 0.2s, border-color 0.2s;
 }
 .aimap-compare-btn:hover:not(:disabled) {
-  background: rgba(59,130,246,0.25);
+  background: rgba(139,92,246,0.25);
   border-color: var(--aimap-accent);
 }
 .aimap-compare-btn:disabled { opacity: 0.4; cursor: default; }
@@ -300,9 +300,9 @@
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
   border-radius: 20px;
-  background: rgba(59,130,246,0.1);
+  background: rgba(139,92,246,0.1);
   color: #93c5fd;
-  border: 1px solid rgba(59,130,246,0.15);
+  border: 1px solid rgba(139,92,246,0.15);
 }
 
 /* Price + link row */
@@ -358,7 +358,7 @@
   transition: background 0.2s;
 }
 .aimap-btn:hover {
-  background: rgba(59,130,246,0.25);
+  background: rgba(139,92,246,0.25);
 }
 .aimap-btn-primary {
   background: var(--aimap-accent);
@@ -425,7 +425,7 @@
   border-bottom: 2px solid var(--aimap-accent-border);
 }
 .aimap-compare-table .diff-highlight {
-  background: rgba(59,130,246,0.08);
+  background: rgba(139,92,246,0.08);
 }
 
 .aimap-compare-actions {
@@ -454,7 +454,7 @@
   transition: background 0.3s;
 }
 .aimap-quiz-progress-dot.done { background: var(--aimap-accent); }
-.aimap-quiz-progress-dot.current { background: rgba(59,130,246,0.5); }
+.aimap-quiz-progress-dot.current { background: rgba(139,92,246,0.5); }
 
 #aimap-quiz-question {
   color: #fff;
@@ -488,7 +488,7 @@
 }
 .aimap-quiz-option.selected {
   border-color: var(--aimap-accent);
-  background: rgba(59,130,246,0.15);
+  background: rgba(139,92,246,0.15);
   color: #fff;
 }
 .aimap-quiz-option-icon { font-size: 1.3rem; }
@@ -646,7 +646,7 @@
 }
 
 /* ---- Nav accent override ---- */
-body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
+body.page-ai-mapper .site-nav { border-bottom-color: #8B5CF6; }
 
 /* ============================================================
    V2 ADDITIONS — All 16 improvement features
@@ -659,8 +659,8 @@ body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
   gap: 0.75rem;
   padding: 0.6rem 1rem;
   margin-bottom: 1rem;
-  background: rgba(59,130,246,0.08);
-  border: 1px solid rgba(59,130,246,0.2);
+  background: rgba(139,92,246,0.08);
+  border: 1px solid rgba(139,92,246,0.2);
   border-radius: 10px;
   flex-wrap: wrap;
 }
@@ -686,7 +686,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
   color: var(--aimap-text); cursor: pointer; font-family: inherit; transition: border-color 0.2s, background 0.2s;
 }
 .aimap-scenario-btn:hover { border-color: var(--aimap-accent-border); background: var(--aimap-accent-dim); }
-.aimap-scenario-btn.active { border-color: var(--aimap-accent); background: rgba(59,130,246,0.15); color: #fff; }
+.aimap-scenario-btn.active { border-color: var(--aimap-accent); background: rgba(139,92,246,0.15); color: #fff; }
 
 /* ---- View toggle (#7) ---- */
 .aimap-view-toggle { display: flex; gap: 0.3rem; margin-bottom: 0.75rem; }
@@ -730,7 +730,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
   padding: 1rem;
 }
 .aimap-modal {
-  background: #1a1a2e; border: 1px solid rgba(59,130,246,0.2);
+  background: #1a1a2e; border: 1px solid rgba(139,92,246,0.2);
   border-radius: 16px; max-width: 700px; width: 100%;
   max-height: 85vh; overflow-y: auto; padding: 2rem; position: relative;
   scrollbar-width: thin;
@@ -792,7 +792,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
 .aimap-hm-name { font-weight: 600; color: #fff; white-space: nowrap; padding: 0.4rem 0.6rem; }
 .aimap-hm-provider { color: var(--aimap-text-muted); padding: 0.4rem; white-space: nowrap; }
 .aimap-hm-cell { text-align: center; padding: 0.4rem; font-weight: 600; border-bottom: 1px solid var(--aimap-border); }
-.hm-high { background: rgba(59,130,246,0.2); color: #93c5fd; }
+.hm-high { background: rgba(139,92,246,0.2); color: #93c5fd; }
 .hm-med { background: rgba(251,191,36,0.12); color: #fbbf24; }
 .hm-low { background: rgba(255,255,255,0.03); color: #888; }
 .hm-none { color: #444; }
@@ -800,7 +800,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: #3B82F6; }
 
 /* ---- Cost estimator (#13) ---- */
 .aimap-cost-estimator {
-  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15);
+  background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15);
   border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
 }
 .aimap-cost-estimator h3 { color: #fff; margin: 0 0 0.75rem; font-size: 1rem; }

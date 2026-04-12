@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════
-   Copilot Feature Matrix — Electric Blue #3B82F6
+   Copilot Feature Matrix — Electric Blue #60A5FA
    Namespace: .cpmatrix-*
    ═══════════════════════════════════════════════ */
 
 :root {
-  --cp-accent: #3B82F6;
-  --cp-accent-dim: rgba(59, 130, 246, 0.15);
-  --cp-accent-border: rgba(59, 130, 246, 0.3);
+  --cp-accent: #60A5FA;
+  --cp-accent-dim: rgba(96, 165, 250, 0.15);
+  --cp-accent-border: rgba(96, 165, 250, 0.3);
   --cp-bg: #141425;
   --cp-card: #1a1a2e;
   --cp-card-hover: #22223a;
@@ -21,7 +21,7 @@
 
 /* ── Body class overrides ── */
 .page-copilot-matrix {
-  --nav-accent: #3B82F6;
+  --nav-accent: #60A5FA;
 }
 
 /* ── Container ── */
@@ -292,12 +292,12 @@
 
 .cpmatrix-tier-card:hover {
   border-color: var(--cp-accent-border);
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.1);
 }
 
 .cpmatrix-tier-card.recommended {
   border-color: var(--cp-accent);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
 }
 
 .cpmatrix-tier-badge {
@@ -507,7 +507,7 @@
 }
 .cpmatrix-timeline-type[data-type="removal"] { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
 .cpmatrix-timeline-type[data-type="launch"] { background: rgba(34, 197, 94, 0.2); color: #86efac; }
-.cpmatrix-timeline-type[data-type="expansion"] { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+.cpmatrix-timeline-type[data-type="expansion"] { background: rgba(96, 165, 250, 0.2); color: #93c5fd; }
 .cpmatrix-timeline-type[data-type="feature"] { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; }
 
 .cpmatrix-timeline-apps {
@@ -760,8 +760,8 @@
 .cpmatrix-platform-tag {
   font-size: 0.6rem;
   padding: 0.05rem 0.3rem;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
   border-radius: 3px;
   color: var(--cp-accent);
   font-weight: 600;

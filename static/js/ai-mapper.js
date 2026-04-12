@@ -269,7 +269,7 @@
 
   function cardHTML(s) {
     var cat = categories[s.category] || {};
-    var catColor = cat.colour || '#3B82F6';
+    var catColor = cat.colour || '#8B5CF6';
     var isFav = favourites.has(s.id);
 
     // Status badge (#10)
@@ -346,7 +346,7 @@
 
     var capsHTML = '<div class="aimap-modal-caps">' + caps.map(function(c) {
       return '<div class="aimap-modal-cap-row"><span class="aimap-modal-cap-label">' + c.label + '</span>' +
-        '<div class="aimap-modal-cap-bar"><div class="aimap-modal-cap-fill" style="width:' + ((c.val||0)*20) + '%;background:' + (c.val >= 4 ? '#3B82F6' : c.val >= 2 ? '#fbbf24' : '#666') + '"></div></div>' +
+        '<div class="aimap-modal-cap-bar"><div class="aimap-modal-cap-fill" style="width:' + ((c.val||0)*20) + '%;background:' + (c.val >= 4 ? '#8B5CF6' : c.val >= 2 ? '#fbbf24' : '#666') + '"></div></div>' +
         '<span class="aimap-modal-cap-val">' + (c.val||0) + '/5</span></div>';
     }).join('') + '</div>';
 
@@ -655,7 +655,7 @@
 
   function capBar(val) {
     if (!val) return '<span style="color:#555">—</span>';
-    var color = val >= 4 ? '#3B82F6' : val >= 2 ? '#fbbf24' : '#666';
+    var color = val >= 4 ? '#8B5CF6' : val >= 2 ? '#fbbf24' : '#666';
     return '<span style="color:' + color + '">' + '●'.repeat(val) + '○'.repeat(5-val) + '</span> ' + val + '/5';
   }
 

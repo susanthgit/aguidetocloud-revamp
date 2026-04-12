@@ -43,7 +43,7 @@
           <div class="aimap-modal-cap-row">
             <span class="aimap-modal-cap-label">{{ .label }}</span>
             <div class="aimap-modal-cap-bar">
-              <div class="aimap-modal-cap-fill" style="width:{{ mul (default 0 .val) 20 }}%;background:{{ cond (ge (default 0 .val) 4) "#3B82F6" (cond (ge (default 0 .val) 2) "#fbbf24" "#666") }}"></div>
+              <div class="aimap-modal-cap-fill" style="width:{{ mul (default 0 .val) 20 }}%;background:{{ cond (ge (default 0 .val) 4) "#8B5CF6" (cond (ge (default 0 .val) 2) "#fbbf24" "#666") }}"></div>
             </div>
             <span class="aimap-modal-cap-val">{{ default 0 .val }}/5</span>
           </div>

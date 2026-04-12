@@ -1157,9 +1157,11 @@ a:hover {
 .page-prompts .site-nav { --nav-accent: rgba(167, 139, 250, 0.35); }
 .page-polisher .site-nav { --nav-accent: rgba(255, 107, 107, 0.35); }
 .page-readiness .site-nav { --nav-accent: rgba(59, 130, 246, 0.35); }
+.page-copilot-matrix .site-nav { --nav-accent: rgba(96, 165, 250, 0.35); }
+.page-ai-mapper .site-nav { --nav-accent: rgba(139, 92, 246, 0.35); }
 .page-roi-calculator .site-nav { --nav-accent: rgba(20, 184, 166, 0.35); }
 .page-deptime .site-nav { --nav-accent: rgba(220, 38, 38, 0.35); }
-.page-feedback .site-nav { --nav-accent: rgba(20, 184, 166, 0.35); }
+.page-feedback .site-nav { --nav-accent: rgba(251, 191, 36, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;
