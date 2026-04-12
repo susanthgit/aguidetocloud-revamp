@@ -45,6 +45,8 @@ If you spot something outdated or think something should be added, please [let m
 ### 📋 Table of Contents
 
 - [What Does the Copilot Licence Unlock?](#what-does-the-microsoft-365-copilot-licence-unlock)
+- [Security & Enterprise Data Protection](#security--enterprise-data-protection)
+- [Copilot Data Flow — How It Works](#copilot-data-flow--how-it-works)
 - [Work Data Grounding — The Game Changer](#work-data-grounding--the-game-changer)
 - **Copilot in Every App**
   - [Copilot in Word](#copilot-in-word)
@@ -118,6 +120,108 @@ flowchart LR
 | **Copilot Analytics** | ❌ | ✅ Usage & adoption dashboard |
 
 > 🔧 **Explore every feature in detail:** Use our interactive [Copilot Feature Matrix](/copilot-matrix/) to compare across all tiers.
+
+---
+
+## Security & Enterprise Data Protection
+
+Before teaching any feature, your users need to **trust** the tool. This section gives you everything you need to address security concerns confidently. Microsoft 365 Copilot (licensed) inherits **all** the Enterprise Data Protection guarantees of Copilot Chat — plus additional controls.
+
+### What Is Enterprise Data Protection (EDP)?
+
+Enterprise Data Protection means that **all Copilot interactions are covered by the exact same security, privacy, and compliance commitments** that protect your emails in Exchange and your files in SharePoint. This applies to both Copilot Chat (free) and licensed Copilot.
+
+### The Five EDP Promises
+
+| # | Promise | What It Means | Why It Matters for Your Org |
+|:--|:--|:--|:--|
+| **1** | **Your data is secured** | Encrypted at rest and in transit. Physical security controls. Data isolation between tenants. | Your data never mingles with another organisation's data |
+| **2** | **Your data is private** | Microsoft won't use your data except as you instruct. Supports GDPR, EU Data Boundary, ISO 27018. | Full regulatory compliance for government, healthcare, finance |
+| **3** | **Your policies apply** | Copilot respects identity model, permissions, sensitivity labels, retention policies, and audit settings | Existing DLP, conditional access, and compliance rules work automatically |
+| **4** | **Protected against AI risks** | Safeguards against harmful content, prompt injection, and copyright risks. Customer Copyright Commitment applies. | Legal protection for AI-generated content used in business |
+| **5** | **Never trains the model** | Prompts and responses are **never** used to train foundation models | Your intellectual property stays yours |
+
+### Additional Security for Licensed Users
+
+Licensed users benefit from these extra controls beyond what Copilot Chat provides:
+
+| Control | What It Does |
+|:--|:--|
+| **Microsoft Graph permissions** | Copilot only accesses data the user already has permission to see |
+| **Sensitivity label inheritance** | When Copilot references a labelled document, the output inherits the highest sensitivity label |
+| **Purview audit logging** | All Copilot interactions can be audited, searched in eDiscovery, and retained |
+| **Retention policies** | Copilot conversations can be covered by the same retention policies as Teams chats |
+| **Admin controls** | IT can manage Copilot settings, disable features, and control agent access |
+| **Copilot Analytics** | Dashboard showing adoption, usage patterns, and data access (licensed only) |
+
+<div class="trainer-script">
+
+🗣️ **Say this to your users:**
+
+*"When you see the green shield 🛡️ in Copilot, it means your conversation is protected by the same enterprise security that protects your emails and files. Nothing you type leaves Microsoft's trust boundary, and nothing is used to train AI models. When Copilot accesses your work data — emails, files, meetings — it only sees what you already have access to. No boundaries are broken."*
+
+</div>
+
+### Common Security Questions
+
+| Question | Answer |
+|:--|:--|
+| **Does Copilot share data with OpenAI?** | ❌ No. Microsoft uses OpenAI models through Azure OpenAI Service — Microsoft controls the infrastructure. No data is shared with OpenAI. |
+| **Does Copilot use my data to train AI?** | ❌ No. Under EDP, prompts and responses are never used to train foundation models. |
+| **Can Copilot access files I can't see?** | ❌ No. Copilot respects all existing access controls and permissions. |
+| **What about Anthropic Claude data?** | Data sent to Claude is processed outside the EU Data Boundary. Anthropic is a Microsoft subprocessor — your data isn't used for Anthropic's training. Microsoft DPA applies. |
+| **Is Copilot data discoverable in eDiscovery?** | ✅ Yes. Copilot interactions are logged and available for audit, eDiscovery, and retention. |
+| **Does Copilot work with sensitivity labels?** | ✅ Yes. Output inherits the highest sensitivity label from referenced content. |
+
+> 📖 **Official references:**
+> - [Enterprise Data Protection in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection)
+> - [Privacy and protections in Copilot Chat](https://learn.microsoft.com/en-us/copilot/privacy-and-protections)
+> - [Data, privacy, and security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy)
+
+---
+
+## Copilot Data Flow — How It Works
+
+Understanding how data flows through Copilot helps trainers explain the security story visually. Here's the simplified end-to-end flow.
+
+```mermaid
+flowchart LR
+    A["👤 User sends\na prompt"] --> B["🔒 EDP Layer\nIdentity + Permissions\n+ Sensitivity Labels"]
+    B --> C["🧠 Microsoft 365\nCopilot Orchestrator"]
+    C --> D["📊 Microsoft Graph\n(Emails, Files,\nMeetings, Chats)"]
+    C --> E["🌐 Web Search\n(Bing, if enabled)"]
+    C --> F["🤖 AI Model\n(GPT-5 or Claude\nvia Azure)"]
+    F --> G["🔒 EDP Layer\nContent filtering\n+ Label inheritance"]
+    G --> H["👤 User receives\nsecure response"]
+    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
+    style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    style C fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
+    style D fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
+    style E fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style F fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style G fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    style H fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
+```
+
+### Step-by-Step Data Flow
+
+| Step | What Happens | Security Applied |
+|:--|:--|:--|
+| **1. User prompts** | User types a question or request | User authenticated via Microsoft Entra ID |
+| **2. Identity check** | Copilot checks who the user is and what they can access | Conditional access, MFA, permissions all enforced |
+| **3. Orchestration** | Copilot determines what data sources to query | Only queries sources the user has access to |
+| **4. Graph retrieval** | Retrieves relevant emails, files, meetings, chats | Sensitivity labels and DLP policies respected |
+| **5. Web search** | Optionally searches the web for additional context | Web queries don't include organisational data |
+| **6. AI processing** | AI model generates a response | Processed in Azure (GPT) or Anthropic infrastructure (Claude) |
+| **7. Content filtering** | Response checked for harmful content, copyright, prompt injection | Microsoft's responsible AI safeguards applied |
+| **8. Label inheritance** | If referenced data had sensitivity labels, output inherits the highest | Ensures classified content stays classified |
+| **9. Response delivered** | User receives the response | Response protected under EDP, available for audit |
+
+<div class="trainer-tip">
+
+💡 **Trainer tip:** Use this data flow diagram in your training sessions. It's the best way to answer the question *"Where does my data go?"* — walk them through each step, emphasising that EDP wraps the entire journey from prompt to response.
+
+</div>
 
 ---
 
@@ -359,9 +463,24 @@ Copilot in OneNote transforms note-taking from passive recording to active AI-po
 Copilot in OneDrive lets you ask questions about your files directly from the OneDrive web interface — without opening each file individually.
 
 **Example prompts:**
-- *"Summarise the key findings from Q4-Report.pdf"*
-- *"What are the action items mentioned in Meeting-Notes.docx?"*
-- *"Compare the budget figures in Budget-v1.xlsx and Budget-v2.xlsx"*
+
+<div class="prompt-example">
+
+**📄 Summarise:** *"Summarise the key findings from Q4-Report.pdf"*
+
+</div>
+
+<div class="prompt-example">
+
+**✅ Extract actions:** *"What are the action items mentioned in Meeting-Notes.docx?"*
+
+</div>
+
+<div class="prompt-example">
+
+**🔄 Compare:** *"Compare the budget figures in Budget-v1.xlsx and Budget-v2.xlsx"*
+
+</div>
 
 Works with Word, PDF, PowerPoint, Excel, and text files.
 
@@ -395,9 +514,24 @@ Researcher performs **deep, multi-step web research** with citations — like ha
 | **Best for** | Market analysis, competitive intelligence, topic exploration, due diligence |
 
 **Example prompts to try:**
-- *"Research the current state of AI regulation in New Zealand and Australia. Include recent legislation, proposed changes, and how they compare to the EU AI Act."*
-- *"Compile a competitive analysis of our top 5 competitors in the cloud consulting space in ANZ. Include strengths, weaknesses, and recent news."*
-- *"Research best practices for Microsoft 365 Copilot adoption in organisations with 5,000+ employees."*
+
+<div class="prompt-example">
+
+**🔬 AI Regulation Research:** *"Research the current state of AI regulation in New Zealand and Australia. Include recent legislation, proposed changes, and how they compare to the EU AI Act."*
+
+</div>
+
+<div class="prompt-example">
+
+**🔬 Competitive Analysis:** *"Compile a competitive analysis of our top 5 competitors in the cloud consulting space in ANZ. Include strengths, weaknesses, and recent news."*
+
+</div>
+
+<div class="prompt-example">
+
+**🔬 Adoption Best Practices:** *"Research best practices for Microsoft 365 Copilot adoption in organisations with 5,000+ employees."*
+
+</div>
 
 ### 📊 Analyst
 
@@ -411,9 +545,24 @@ Analyst is a **data analysis agent** that uses Python under the hood to process,
 | **Best for** | Sales analysis, trend detection, forecasting, data cleaning, visual reports |
 
 **Example prompts to try:**
-- *Upload a CSV →* *"Analyse this sales data. Show me monthly trends, identify the top-performing products, and flag any anomalies."*
-- *"Create a dashboard-style summary with charts showing our Q1 performance vs targets."*
-- *"Run a regression analysis to predict next quarter's revenue based on the last 8 quarters."*
+
+<div class="prompt-example">
+
+**📊 Sales Analysis:** *Upload a CSV →* *"Analyse this sales data. Show me monthly trends, identify the top-performing products, and flag any anomalies."*
+
+</div>
+
+<div class="prompt-example">
+
+**📊 Dashboard Summary:** *"Create a dashboard-style summary with charts showing our Q1 performance vs targets."*
+
+</div>
+
+<div class="prompt-example">
+
+**📊 Predictive Analysis:** *"Run a regression analysis to predict next quarter's revenue based on the last 8 quarters."*
+
+</div>
 
 <div class="trainer-tip">
 
@@ -558,9 +707,24 @@ For licensed users, **Search** transforms from basic web search into an AI-power
 | **📦 Archived mailboxes** | Historic emails (append *"from my archives"*) |
 
 **Example prompts:**
-- *"Find the presentation Sarah shared about the Melbourne project last month"*
-- *"What emails have I received about the budget review this week?"*
-- *"Who in our team has expertise in Azure networking?"*
+
+<div class="prompt-example">
+
+**🔍 Find files:** *"Find the presentation Sarah shared about the Melbourne project last month"*
+
+</div>
+
+<div class="prompt-example">
+
+**📧 Search emails:** *"What emails have I received about the budget review this week?"*
+
+</div>
+
+<div class="prompt-example">
+
+**👥 Find expertise:** *"Who in our team has expertise in Azure networking?"*
+
+</div>
 
 <div class="trainer-script">
 

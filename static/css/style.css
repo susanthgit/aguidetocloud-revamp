@@ -1959,6 +1959,20 @@ pre.mermaid {
 .living-doc-banner strong { color: #F59E0B; }
 .living-doc-banner a { color: #60A5FA; }
 
+/* Prompt Example Card — purple accent */
+.prompt-example {
+  background: linear-gradient(135deg, #1a0a2e 0%, #2a1a3a 100%);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-left: 4px solid #A78BFA;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin: 0.8rem 0;
+  color: rgba(255,255,255,0.92);
+  font-style: italic;
+}
+.prompt-example strong { color: #A78BFA; font-style: normal; }
+.prompt-example code { background: rgba(167,139,250,0.15); padding: 2px 6px; border-radius: 4px; font-style: normal; }
+
 /* ============================================
    Print Stylesheet — Force exact screen look
    Preserves the dark theme for PDF/print.
@@ -1983,7 +1997,7 @@ pre.mermaid {
 
   /* Page break control */
   h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
-  table, .trainer-script, .trainer-tip, .agent-highlight,
+  table, .trainer-script, .trainer-tip, .agent-highlight, .prompt-example,
   .living-doc-banner, blockquote, pre.mermaid, .mermaid {
     page-break-inside: avoid;
   }

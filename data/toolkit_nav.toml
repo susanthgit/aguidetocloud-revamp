@@ -105,6 +105,12 @@ name = "Cert Study Guides"
 short = "Cert Guides"
 
 [[tools]]
+url = "/world-clock/"
+emoji = "🌍"
+name = "World Clock"
+short = "Clock"
+
+[[tools]]
 url = "/feedback/"
 emoji = "💬"
 name = "Community Feedback"

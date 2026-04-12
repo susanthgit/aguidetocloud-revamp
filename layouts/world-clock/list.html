@@ -1,0 +1,217 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/world-clock.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "World Clock & Time Zone Converter",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#0EA5E9" "title" "World Clock & Time Zone Converter" "subtitle" "Live multi-city clocks, instant conversions, visual meeting planner & DST guide — 100% free, runs in your browser") }}
+
+<div class="wclk-page">
+
+  {{/* ── Tabs ── */}}
+  <div class="wclk-tabs" role="tablist">
+    <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">🕐 World Clock</button>
+    <button class="wclk-tab" role="tab" data-tab="convert">🔄 Convert</button>
+    <button class="wclk-tab" role="tab" data-tab="meeting">📅 Meeting Planner</button>
+    <button class="wclk-tab" role="tab" data-tab="dst">🌞 DST Guide</button>
+  </div>
+
+  {{/* ══════════════ TAB 1: WORLD CLOCK ══════════════ */}}
+  <div class="wclk-panel active" id="panel-clock" role="tabpanel">
+
+    {{/* Local time hero */}}
+    <div class="wclk-local">
+      <div class="wclk-local-label">Your Local Time</div>
+      <div class="wclk-local-time" id="wclk-local-time">--:--:--</div>
+      <div class="wclk-local-details" id="wclk-local-details"></div>
+    </div>
+
+    {{/* Controls */}}
+    <div class="wclk-controls">
+      <div class="wclk-search-wrap">
+        <input type="text" class="wclk-search" id="wclk-city-search" placeholder="Search city or time zone..." autocomplete="off" aria-label="Search cities">
+        <div class="wclk-search-results" id="wclk-search-results"></div>
+      </div>
+      <div class="wclk-control-row">
+        <div class="wclk-quick-adds" id="wclk-quick-adds">
+          <span class="wclk-quick-label">Quick add:</span>
+        </div>
+        <div class="wclk-toggles">
+          <button class="wclk-toggle" id="wclk-format-toggle" title="Toggle 12h/24h">24h</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* Clock grid */}}
+    <div class="wclk-grid" id="wclk-grid"></div>
+
+    <p class="wclk-hint" id="wclk-empty-hint">👆 Search for a city above or use the quick-add buttons to get started</p>
+  </div>
+
+  {{/* ══════════════ TAB 2: CONVERT ══════════════ */}}
+  <div class="wclk-panel" id="panel-convert" role="tabpanel">
+
+    <div class="wclk-convert-form">
+      <div class="wclk-convert-row">
+        <div class="wclk-field">
+          <label class="wclk-label" for="wclk-conv-datetime">Date & Time</label>
+          <input type="datetime-local" class="wclk-input" id="wclk-conv-datetime">
+        </div>
+        <div class="wclk-field">
+          <label class="wclk-label" for="wclk-conv-source">From Time Zone</label>
+          <select class="wclk-select" id="wclk-conv-source"></select>
+        </div>
+      </div>
+      <div class="wclk-convert-presets">
+        <span class="wclk-quick-label">Quick:</span>
+        <button class="wclk-preset" data-preset="now">Now</button>
+        <button class="wclk-preset" data-preset="tomorrow9">Tomorrow 9 AM</button>
+        <button class="wclk-preset" data-preset="monday10">Next Monday 10 AM</button>
+      </div>
+      <div class="wclk-field">
+        <label class="wclk-label">Convert to</label>
+        <div class="wclk-target-search-wrap">
+          <input type="text" class="wclk-search" id="wclk-target-search" placeholder="Add a target time zone..." autocomplete="off">
+          <div class="wclk-search-results" id="wclk-target-results"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wclk-convert-results" id="wclk-convert-results"></div>
+    <p class="wclk-hint" id="wclk-convert-hint">👆 Pick a date/time and add target time zones to see conversions</p>
+  </div>
+
+  {{/* ══════════════ TAB 3: MEETING PLANNER ══════════════ */}}
+  <div class="wclk-panel" id="panel-meeting" role="tabpanel">
+
+    <div class="wclk-meeting-controls">
+      <div class="wclk-field">
+        <label class="wclk-label" for="wclk-meeting-date">Meeting Date</label>
+        <input type="date" class="wclk-input" id="wclk-meeting-date">
+      </div>
+      <div class="wclk-field wclk-field-grow">
+        <label class="wclk-label">Add Participant</label>
+        <div class="wclk-target-search-wrap">
+          <input type="text" class="wclk-search" id="wclk-participant-search" placeholder="Search city or time zone..." autocomplete="off">
+          <div class="wclk-search-results" id="wclk-participant-results"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wclk-meeting-timeline" id="wclk-meeting-timeline"></div>
+    <div class="wclk-meeting-golden" id="wclk-meeting-golden"></div>
+    <div class="wclk-meeting-summary" id="wclk-meeting-summary"></div>
+
+    <p class="wclk-hint" id="wclk-meeting-hint">👆 Pick a date and add participants from different time zones to find the best meeting time</p>
+  </div>
+
+  {{/* ══════════════ TAB 4: DST GUIDE ══════════════ */}}
+  <div class="wclk-panel" id="panel-dst" role="tabpanel">
+    <div class="wclk-dst-content">
+
+      <div class="wclk-dst-intro">
+        <h2>🌞 What is Daylight Saving Time?</h2>
+        <p>Daylight Saving Time (DST) is when clocks are moved forward by one hour during warmer months to extend evening daylight. When DST ends, clocks "fall back" one hour to standard time.</p>
+        <div class="wclk-dst-tldr">
+          <strong>The simple version:</strong> In spring, you lose an hour of sleep. In autumn, you gain one. Your 3 PM meeting with London might suddenly be at 2 PM or 4 PM — and that's why this tool exists! 😄
+        </div>
+      </div>
+
+      <div class="wclk-dst-section">
+        <h3>⚠️ Common Gotchas</h3>
+        <div class="wclk-dst-gotchas">
+          <div class="wclk-dst-card">
+            <strong>🗓️ Not everyone changes on the same date</strong>
+            <p>The US changes in March/November, Europe in March/October, and Australia in April/October. There are weeks where offsets shift unexpectedly.</p>
+          </div>
+          <div class="wclk-dst-card">
+            <strong>🌏 Southern hemisphere is opposite</strong>
+            <p>When the northern hemisphere "springs forward", the southern hemisphere "falls back" — and vice versa. New Zealand and London have a 12-hour or 13-hour difference depending on the time of year.</p>
+          </div>
+          <div class="wclk-dst-card">
+            <strong>🚫 Many countries don't observe DST at all</strong>
+            <p>Most of Asia, Africa, and South America don't use DST. India, China, Japan, Singapore, UAE — their clocks never change.</p>
+          </div>
+          <div class="wclk-dst-card">
+            <strong>📅 Your recurring meeting might shift</strong>
+            <p>A weekly meeting at "3 PM Auckland / 8 AM Mumbai" stays stable (neither uses DST). But "3 PM Auckland / 3 AM London" shifts by an hour twice a year.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wclk-dst-section">
+        <h3>🔍 Check DST for Any Time Zone</h3>
+        <div class="wclk-field">
+          <input type="text" class="wclk-search" id="wclk-dst-search" placeholder="Search a city or time zone..." autocomplete="off">
+          <div class="wclk-search-results" id="wclk-dst-results"></div>
+        </div>
+        <div id="wclk-dst-info" class="wclk-dst-info"></div>
+      </div>
+
+      <div class="wclk-dst-section">
+        <h3>🗺️ Who Observes DST?</h3>
+        <div class="wclk-dst-map">
+          <div class="wclk-dst-group">
+            <h4>✅ Observes DST</h4>
+            <p>USA, Canada, most of Europe, UK, Australia (most states), New Zealand, parts of Mexico, Chile, Paraguay</p>
+          </div>
+          <div class="wclk-dst-group">
+            <h4>❌ Does NOT Observe DST</h4>
+            <p>Japan, China, India, Singapore, UAE, South Korea, most of Africa, most of South America, Iceland, Russia, Turkey, Queensland (Australia)</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{/* ── Cross-links ── */}}
+  {{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "world-clock") }}
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "← Back to Cloud & AI Toolkit") }}
+</div>
+
+<script src="/js/world-clock.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
