@@ -575,16 +575,31 @@ function renderConvertResults() {
 }
 
 /* ═══════════════════════════════════
-   TAB 3: MEETING PLANNER
+   TAB 3: MEETING PLANNER (V2)
    ═══════════════════════════════════ */
+
+function getWorkHours(city) {
+  const custom = S.participantHours[city];
+  return custom || { start: 9, end: 17 };
+}
 
 function initMeetingPlanner() {
   const dateInput = document.getElementById('wclk-meeting-date');
   if (!dateInput) return;
 
-  // Default to today
   const now = new Date();
   dateInput.value = toLocalISOString(now).split('T')[0];
+
+  // Duration selector
+  const durSelect = document.getElementById('wclk-duration');
+  if (durSelect) {
+    durSelect.value = String(S.duration);
+    durSelect.addEventListener('change', () => {
+      S.duration = parseInt(durSelect.value) || 60;
+      saveState();
+      renderMeetingTimeline();
+    });
+  }
 
   // Add local user as first participant
   const localCity = CITIES.find(c => c.tz === S.localTz);
@@ -599,8 +614,78 @@ function initMeetingPlanner() {
     }
   }, (c) => S.participants.some(p => p.city === c.city));
 
+  // Preset buttons
+  initPresets();
+
   dateInput.addEventListener('change', renderMeetingTimeline);
   renderMeetingTimeline();
+}
+
+function initPresets() {
+  renderPresetButtons();
+  const saveBtn = document.getElementById('wclk-save-preset');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      if (S.participants.length < 2) return;
+      const name = prompt('Name this team preset:');
+      if (!name || !name.trim()) return;
+      S.teamPresets.push({ name: name.trim(), cities: S.participants.map(p => p.city) });
+      saveState();
+      renderPresetButtons();
+    });
+  }
+}
+
+function renderPresetButtons() {
+  const container = document.getElementById('wclk-presets-list');
+  if (!container) return;
+  if (S.teamPresets.length === 0) {
+    container.innerHTML = '<span class="wclk-text-dim" style="font-size:0.78rem">No saved teams yet</span>';
+    return;
+  }
+  container.innerHTML = S.teamPresets.map((p, i) =>
+    `<button class="wclk-preset" data-preset-idx="${i}">${esc(p.name)} (${p.cities.length})</button>` +
+    `<button class="wclk-preset-del" data-preset-idx="${i}" title="Delete">✕</button>`
+  ).join('');
+  container.querySelectorAll('.wclk-preset[data-preset-idx]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const preset = S.teamPresets[parseInt(btn.dataset.presetIdx)];
+      if (!preset) return;
+      S.participants = [];
+      preset.cities.forEach(name => {
+        const c = findCity(name);
+        if (c) S.participants.push(c);
+      });
+      renderMeetingTimeline();
+    });
+  });
+  container.querySelectorAll('.wclk-preset-del').forEach(btn => {
+    btn.addEventListener('click', () => {
+      S.teamPresets.splice(parseInt(btn.dataset.presetIdx), 1);
+      saveState();
+      renderPresetButtons();
+    });
+  });
+}
+
+function scoreHour(h, baseDate, participants) {
+  // Score: 3 = business, 2 = extended, 1 = off. Higher = better.
+  const durationHours = Math.ceil(S.duration / 60);
+  let totalScore = 0;
+  let allValid = true;
+  for (let dh = 0; dh < durationHours; dh++) {
+    const testDate = new Date(baseDate.getTime());
+    testDate.setHours(h + dh, 0, 0, 0);
+    participants.forEach(p => {
+      const pHour = getHourInTz(testDate, p.tz);
+      const wh = getWorkHours(p.city);
+      const cls = getBizClass(pHour, wh.start, wh.end);
+      if (cls === 'biz') totalScore += 3;
+      else if (cls === 'ext') totalScore += 2;
+      else { totalScore += 0; allValid = false; }
+    });
+  }
+  return { score: totalScore, allBiz: allValid && totalScore === participants.length * durationHours * 3, hour: h };
 }
 
 function renderMeetingTimeline() {
@@ -621,48 +706,50 @@ function renderMeetingTimeline() {
 
   const dateInput = document.getElementById('wclk-meeting-date');
   const baseDate = new Date(dateInput.value + 'T00:00:00');
+  const durationHours = Math.ceil(S.duration / 60);
+
+  // Score all hours
+  const hourScores = [];
+  const goldenHours = [];
+  for (let h = 0; h <= 24 - durationHours; h++) {
+    const result = scoreHour(h, baseDate, S.participants);
+    hourScores.push(result);
+    if (result.allBiz) goldenHours.push(h);
+  }
 
   // Hour labels
   let html = '<div class="wclk-timeline-hours">';
   for (let h = 0; h < 24; h++) html += `<span>${h}</span>`;
   html += '</div>';
 
-  // Legend
+  // Legend — show custom hours info
+  const hasCustom = S.participants.some(p => {
+    const wh = getWorkHours(p.city);
+    return wh.start !== 9 || wh.end !== 17;
+  });
   html += `<div class="wclk-timeline-legend">
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch biz"></div> Business (9-5)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch ext"></div> Extended (7-9, 5-8)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch biz"></div> Business hours</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch ext"></div> Extended hours</div>
     <div class="wclk-legend-item"><div class="wclk-legend-swatch off"></div> Off hours</div>
+    ${S.duration !== 60 ? `<div class="wclk-legend-item">⏱️ ${S.duration} min meeting</div>` : ''}
   </div>`;
 
-  // Find golden hours (all participants in business hours)
-  const goldenHours = [];
-  for (let h = 0; h < 24; h++) {
-    const testDate = new Date(baseDate.getTime());
-    // Set hour in UTC perspective
-    const localOff = getOffsetMinutes(testDate, S.localTz);
-    testDate.setHours(h);
-    testDate.setMinutes(0);
-    // Adjust to local user's timezone
-    const adjustedDate = new Date(testDate.getTime() - (localOff - getOffsetMinutes(testDate, S.localTz)) * 60000);
-
-    const allBiz = S.participants.every(p => {
-      const pHour = getHourInTz(adjustedDate, p.tz);
-      return pHour >= 9 && pHour < 17;
-    });
-    if (allBiz) goldenHours.push(h);
-  }
-
-  // Timeline rows
+  // Timeline rows with custom work hours controls
   S.participants.forEach((p, i) => {
+    const wh = getWorkHours(p.city);
     html += `<div class="wclk-timeline-row">
-      <div class="wclk-timeline-label">${esc(p.flag)} ${esc(p.city)}<br><span class="wclk-timeline-label-sub">${esc(getUtcOffset(p.tz))}</span></div>
+      <div class="wclk-timeline-label">
+        ${esc(p.flag)} ${esc(p.city)}<br>
+        <span class="wclk-timeline-label-sub">${esc(getUtcOffset(p.tz, baseDate))}</span><br>
+        <span class="wclk-hours-edit" data-city="${esc(p.city)}" title="Click to change work hours">${wh.start}–${wh.end}</span>
+      </div>
       <div class="wclk-timeline-bar">`;
 
     for (let h = 0; h < 24; h++) {
       const testDate = new Date(baseDate.getTime());
       testDate.setHours(h, 0, 0, 0);
       const pHour = getHourInTz(testDate, p.tz);
-      const cls = getBizClass(pHour);
+      const cls = getBizClass(pHour, wh.start, wh.end);
       const isGolden = goldenHours.includes(h);
       html += `<div class="wclk-timeline-hour ${cls}${isGolden ? ' golden' : ''}" title="${pHour}:00 in ${esc(p.city)}"></div>`;
     }
@@ -672,6 +759,24 @@ function renderMeetingTimeline() {
 
   container.innerHTML = html;
 
+  // Work hours click-to-edit
+  container.querySelectorAll('.wclk-hours-edit').forEach(el => {
+    el.addEventListener('click', () => {
+      const city = el.dataset.city;
+      const current = getWorkHours(city);
+      const input = prompt(`Set work hours for ${city} (e.g. 9-17, 8-16, 10-19):`, `${current.start}-${current.end}`);
+      if (!input) return;
+      const match = input.match(/^(\d{1,2})\s*[-–]\s*(\d{1,2})$/);
+      if (!match) { alert('Please use format: 9-17'); return; }
+      const start = parseInt(match[1]);
+      const end = parseInt(match[2]);
+      if (start < 0 || start > 23 || end < 1 || end > 24 || start >= end) { alert('Invalid hours. Start must be before end (0-24).'); return; }
+      S.participantHours[city] = { start, end };
+      saveState();
+      renderMeetingTimeline();
+    });
+  });
+
   // Remove buttons
   container.querySelectorAll('.wclk-timeline-remove').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -680,7 +785,7 @@ function renderMeetingTimeline() {
     });
   });
 
-  // Golden window
+  // Golden window + best compromise
   if (goldenContainer) {
     if (goldenHours.length > 0) {
       // Group into contiguous ranges
@@ -709,13 +814,39 @@ function renderMeetingTimeline() {
       goldenContainer.innerHTML = `<div class="wclk-golden-box">
         <div class="wclk-golden-title">✅ Golden Window Found</div>
         <div class="wclk-golden-time">${rangeText}</div>
-        <div class="wclk-golden-details">${totalHours} hour${totalHours > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
+        <div class="wclk-golden-details">${totalHours} slot${totalHours > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
       </div>`;
     } else if (S.participants.length >= 2) {
-      goldenContainer.innerHTML = `<div class="wclk-golden-box wclk-no-golden">
-        <div class="wclk-golden-title">⚠️ No Full Overlap</div>
-        <div class="wclk-golden-details">There's no hour where all participants are in 9-5 business hours. Look for the most green overlap in the timeline above.</div>
-      </div>`;
+      // Best compromise — rank top 3 slots
+      const sorted = hourScores.filter(s => s.hour + durationHours <= 24).sort((a, b) => b.score - a.score);
+      const top3 = sorted.slice(0, 3);
+      let compHtml = `<div class="wclk-golden-box wclk-no-golden">
+        <div class="wclk-golden-title">⚠️ No Perfect Overlap — Here Are the Best Options</div>
+        <div class="wclk-compromise-list">`;
+      top3.forEach((slot, idx) => {
+        const endH = slot.hour + durationHours;
+        let whoAffected = [];
+        const testDate = new Date(baseDate.getTime());
+        testDate.setHours(slot.hour, 0, 0, 0);
+        S.participants.forEach(p => {
+          const pHour = getHourInTz(testDate, p.tz);
+          const wh = getWorkHours(p.city);
+          const cls = getBizClass(pHour, wh.start, wh.end);
+          if (cls === 'off') whoAffected.push(`${p.flag} ${p.city} (${pHour}:00 — outside hours)`);
+          else if (cls === 'ext') whoAffected.push(`${p.flag} ${p.city} (${pHour}:00 — extended)`);
+        });
+        const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉';
+        const affectedText = whoAffected.length > 0 ? whoAffected.join(', ') : 'Everyone in business hours';
+        compHtml += `<div class="wclk-compromise-slot">
+          <div class="wclk-compromise-rank">${medal}</div>
+          <div class="wclk-compromise-info">
+            <strong>${slot.hour}:00 – ${endH}:00 (your time)</strong>
+            <div class="wclk-compromise-affected">${esc(affectedText)}</div>
+          </div>
+        </div>`;
+      });
+      compHtml += '</div></div>';
+      goldenContainer.innerHTML = compHtml;
     } else {
       goldenContainer.innerHTML = '';
     }
@@ -725,14 +856,17 @@ function renderMeetingTimeline() {
   if (summaryContainer && S.participants.length >= 2) {
     summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">📋 Copy Meeting Summary</button>`;
     document.getElementById('wclk-copy-meeting').addEventListener('click', () => {
-      let text = `Meeting Time Comparison (${dateInput.value}):\n`;
-      if (goldenHours.length > 0) {
-        text += `\n✅ Best time: ${goldenHours[0]}:00 – ${goldenHours[goldenHours.length-1]+1}:00 (${S.participants[0].city} time)\n`;
-      }
+      let text = `Meeting Time Comparison (${dateInput.value}, ${S.duration} min):\n`;
+      const bestHour = goldenHours.length > 0 ? goldenHours[0] : (hourScores.sort((a,b) => b.score - a.score)[0] || { hour: 9 }).hour;
+      text += `\n${goldenHours.length > 0 ? '✅ Best' : '⚠️ Least painful'}: ${bestHour}:00 – ${bestHour + Math.ceil(S.duration/60)}:00 (${S.participants[0].city} time)\n`;
       S.participants.forEach(p => {
         const testDate = new Date(baseDate.getTime());
-        testDate.setHours(goldenHours.length > 0 ? goldenHours[0] : 9, 0, 0, 0);
-        text += `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)} (${getUtcOffset(p.tz)})\n`;
+        testDate.setHours(bestHour, 0, 0, 0);
+        const pHour = getHourInTz(testDate, p.tz);
+        const wh = getWorkHours(p.city);
+        const cls = getBizClass(pHour, wh.start, wh.end);
+        const icon = cls === 'biz' ? '✅' : cls === 'ext' ? '⚠️' : '🔴';
+        text += `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)} ${icon} (${getUtcOffset(p.tz, baseDate)})\n`;
       });
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('wclk-copy-meeting');

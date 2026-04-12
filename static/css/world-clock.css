@@ -439,8 +439,80 @@
 .wclk-meeting-controls {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   align-items: flex-end;
+}
+
+/* Presets bar */
+.wclk-presets-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.wclk-presets-list {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wclk-preset-del {
+  background: none;
+  border: none;
+  color: var(--wclk-text-dim);
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+.wclk-preset-del:hover {
+  color: var(--wclk-red);
+  background: rgba(239,68,68,0.1);
+}
+
+/* Work hours editor */
+.wclk-hours-edit {
+  font-size: 0.65rem;
+  color: var(--wclk);
+  cursor: pointer;
+  border-bottom: 1px dashed rgba(14,165,233,0.4);
+  padding-bottom: 1px;
+  transition: all 0.15s ease;
+}
+.wclk-hours-edit:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Compromise slots */
+.wclk-compromise-list {
+  margin-top: 0.75rem;
+}
+.wclk-compromise-slot {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.wclk-compromise-slot:last-child { border-bottom: none; }
+.wclk-compromise-rank {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+.wclk-compromise-info strong {
+  color: #fff;
+  font-size: 0.9rem;
+}
+.wclk-compromise-affected {
+  font-size: 0.78rem;
+  color: var(--wclk-text-dim);
+  margin-top: 0.2rem;
+  line-height: 1.5;
 }
 
 /* Timeline */
@@ -695,6 +767,10 @@
   .wclk-timeline-label { min-width: 90px; font-size: 0.75rem; }
   .wclk-timeline-hours { margin-left: calc(90px + 0.5rem); }
   .wclk-timeline-legend { margin-left: 0; }
+  /* Mobile timeline: horizontal scroll */
+  .wclk-meeting-timeline { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .wclk-timeline-row { min-width: 600px; }
+  .wclk-timeline-hours { min-width: 600px; }
 }
 
 @media (max-width: 480px) {
@@ -702,4 +778,7 @@
   .wclk-convert-results { grid-template-columns: 1fr; }
   .wclk-dst-gotchas { grid-template-columns: 1fr; }
   .wclk-tab { padding: 0.6rem 0.7rem; font-size: 0.8rem; }
+  .wclk-timeline-label { min-width: 70px; font-size: 0.68rem; }
+  .wclk-timeline-hours { margin-left: calc(70px + 0.5rem); }
+  .wclk-presets-bar { flex-direction: column; align-items: flex-start; }
 }

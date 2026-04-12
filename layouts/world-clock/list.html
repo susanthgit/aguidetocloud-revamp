@@ -131,6 +131,16 @@
         <label class="wclk-label" for="wclk-meeting-date">Meeting Date</label>
         <input type="date" class="wclk-input" id="wclk-meeting-date">
       </div>
+      <div class="wclk-field">
+        <label class="wclk-label" for="wclk-duration">Duration</label>
+        <select class="wclk-select" id="wclk-duration">
+          <option value="30">30 min</option>
+          <option value="60" selected>1 hour</option>
+          <option value="90">1.5 hours</option>
+          <option value="120">2 hours</option>
+          <option value="180">3 hours</option>
+        </select>
+      </div>
       <div class="wclk-field wclk-field-grow">
         <label class="wclk-label">Add Participant</label>
         <div class="wclk-target-search-wrap">
@@ -138,6 +148,11 @@
           <div class="wclk-search-results" id="wclk-participant-results"></div>
         </div>
       </div>
+    </div>
+
+    <div class="wclk-presets-bar">
+      <div class="wclk-presets-list" id="wclk-presets-list"></div>
+      <button class="wclk-preset" id="wclk-save-preset" title="Save current participants as a team preset">💾 Save Team</button>
     </div>
 
     <div class="wclk-meeting-timeline" id="wclk-meeting-timeline"></div>
