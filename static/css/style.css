@@ -339,16 +339,16 @@ a:hover {
   padding: 0.7rem 0.9rem;
   text-decoration: none;
   color: inherit;
-  background: color-mix(in srgb, var(--tool-color) 12%, #1a1a2e);
-  border: 1px solid color-mix(in srgb, var(--tool-color) 25%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 24%, #1a1a2e);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 45%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--tool-color) 8%, transparent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--tool-color) 18%, transparent);
   transition: all 0.25s;
 }
 .hp-toolkit-card:hover {
-  background: color-mix(in srgb, var(--tool-color) 24%, #1a1a2e);
-  border-color: color-mix(in srgb, var(--tool-color) 45%, transparent);
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--tool-color) 20%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 10%, #1a1a2e);
+  border-color: color-mix(in srgb, var(--tool-color) 18%, transparent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--tool-color) 6%, transparent);
   transform: translateY(-2px);
 }
 .hp-toolkit-card strong {
@@ -628,8 +628,8 @@ a:hover {
   .welcome-stat-box { padding: 0.35rem 0.4rem; min-width: auto; }
   .welcome-stat-num { font-size: 0.9rem; }
   .welcome-stat-label { font-size: 0.5rem; }
-  .welcome-cta-row { gap: 0.5rem; }
-  .welcome-cta-btn { font-size: 0.72rem; padding: 0.4rem 0.9rem; }
+  .welcome-cta-row { gap: 0.5rem; flex-wrap: nowrap; }
+  .welcome-cta-btn { font-size: 0.68rem; padding: 0.4rem 0.7rem; white-space: nowrap; }
   .hp-toolkit-card p { display: none; }
 }
 
