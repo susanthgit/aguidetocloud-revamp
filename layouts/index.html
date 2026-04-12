@@ -118,15 +118,16 @@
 
   </section>
 
-  <!-- 🔥 LATEST VIDEOS -->
+  <!-- 🤖 AI HUB VIDEOS -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">🔥 Latest Videos</h2>
-      <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365, Azure, AI & certifications.</p>
+      <h2 class="section-title">🤖 Latest from AI Hub</h2>
+      <a href="/ai-hub/" class="section-link">View all →</a>
+      <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365 Copilot, Azure AI & more.</p>
     </div>
     <div class="video-grid">
-      {{ $videos := where .Site.RegularPages "Params.youtube_id" "!=" nil }}
-      {{ range first 8 $videos.ByDate.Reverse }}
+      {{ $aiHub := where (where .Site.RegularPages "Section" "ai-hub") "Params.youtube_id" "!=" nil }}
+      {{ range first 8 $aiHub.ByDate.Reverse }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>
