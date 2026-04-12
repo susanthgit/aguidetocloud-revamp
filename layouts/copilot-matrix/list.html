@@ -70,21 +70,21 @@
     <button class="cpmatrix-qs-btn cpmatrix-qs-clear" data-licence="all">Show All</button>
   </div>
 
-  {{/* ── Tab Navigation ── */}}
+  {{/* ── Tab Navigation — Compare first (default), then Changes, then Matrix ── */}}
   <div class="cpmatrix-tabs" role="tablist" aria-label="Feature Matrix Views">
-    <button class="cpmatrix-tab active" role="tab" aria-selected="true" data-tab="matrix">
-      <span class="cpmatrix-tab-emoji">📊</span> Feature Matrix
-    </button>
-    <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="compare">
+    <button class="cpmatrix-tab active" role="tab" aria-selected="true" data-tab="compare">
       <span class="cpmatrix-tab-emoji">⚖️</span> Compare Tiers
     </button>
     <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="changes">
       <span class="cpmatrix-tab-emoji">🕐</span> What Changed
     </button>
+    <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="matrix">
+      <span class="cpmatrix-tab-emoji">📊</span> Feature Matrix
+    </button>
   </div>
 
-  {{/* ── Tab 1: Feature Matrix ── */}}
-  <div class="cpmatrix-panel active" id="panel-matrix" role="tabpanel">
+  {{/* ── Tab 3: Feature Matrix ── */}}
+  <div class="cpmatrix-panel" id="panel-matrix" role="tabpanel" hidden>
     {{/* Controls */}}
     <div class="cpmatrix-controls">
       <div class="cpmatrix-search-wrap">
@@ -144,13 +144,13 @@
     </div>
   </div>
 
-  {{/* ── Tab 2: Compare Tiers ── */}}
-  <div class="cpmatrix-panel" id="panel-compare" role="tabpanel" hidden>
+  {{/* ── Tab 1: Compare Tiers (default) ── */}}
+  <div class="cpmatrix-panel active" id="panel-compare" role="tabpanel">
     <div id="cpmatrix-tiers" class="cpmatrix-tiers-grid">
     </div>
   </div>
 
-  {{/* ── Tab 3: What Changed ── */}}
+  {{/* ── Tab 2: What Changed ── */}}
   <div class="cpmatrix-panel" id="panel-changes" role="tabpanel" hidden>
     <div class="cpmatrix-controls">
       <select id="cpmatrix-change-filter" class="cpmatrix-select" aria-label="Filter changes">

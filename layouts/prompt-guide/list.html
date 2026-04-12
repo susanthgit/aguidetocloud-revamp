@@ -35,25 +35,7 @@
 
   <div class="pguide-container">
 
-    {{/* ══ Quick Win Demo ══ */}}
-    <div class="pguide-quickwin">
-      <h2>⚡ See the Difference One Technique Makes</h2>
-      <div class="pguide-ba-cards">
-        <div class="pguide-ba-card pguide-ba-before">
-          <span class="pguide-ba-label">❌ Before</span>
-          <p>Help me with my presentation</p>
-        </div>
-        <div class="pguide-ba-arrow">→</div>
-        <div class="pguide-ba-card pguide-ba-after">
-          <span class="pguide-ba-label">✅ After (using 3 techniques)</span>
-          <p>You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides.</p>
-          <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">📋</button>
-        </div>
-      </div>
-      <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>🎯 Instructions</strong> + <strong>🚧 Constraints</strong>. Learn all 8 below 👇</p>
-    </div>
-
-    {{/* ── Tab Navigation (4 tabs: Learn, Builder, Quiz, Challenges) ── */}}
+    {{/* ── Tab Navigation FIRST (fix I — above quick-win) ── */}}
     <div class="pguide-tabs" role="tablist">
       <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn</button>
       <button class="pguide-tab" role="tab" aria-selected="false" data-tab="builder" id="tab-builder" aria-controls="panel-builder">🔧 Builder</button>
@@ -65,6 +47,24 @@
          TAB 1: LEARN TECHNIQUES
          ══════════════════════════════════════════ */}}
     <div class="pguide-panel active" id="panel-learn" role="tabpanel" aria-labelledby="tab-learn">
+
+      {{/* ══ Quick Win Demo (inside Learn tab) ══ */}}
+      <div class="pguide-quickwin">
+        <h2>⚡ See the Difference One Technique Makes</h2>
+        <div class="pguide-ba-cards">
+          <div class="pguide-ba-card pguide-ba-before">
+            <span class="pguide-ba-label">❌ Before</span>
+            <p>Help me with my presentation</p>
+          </div>
+          <div class="pguide-ba-arrow">→</div>
+          <div class="pguide-ba-card pguide-ba-after">
+            <span class="pguide-ba-label">✅ After (using 3 techniques)</span>
+            <p>You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides.</p>
+            <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">📋</button>
+          </div>
+        </div>
+        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>🎯 Instructions</strong> + <strong>🚧 Constraints</strong>. Learn all 8 below 👇</p>
+      </div>
 
       {{/* Progress + Certificate trigger */}}
       <div class="pguide-progress-wrap">

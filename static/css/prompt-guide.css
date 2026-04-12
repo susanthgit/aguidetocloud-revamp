@@ -1243,3 +1243,22 @@
   .pguide-card-title, .pguide-technique-title { color: #000; }
   .pguide-card-desc, .pguide-card-meta { color: #333; }
 }
+
+/* ══ "Open in" Links on After examples (fix J) ══ */
+.pguide-open-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+.pguide-open-link {
+  font-size: 0.75rem;
+  color: var(--tool-accent-text);
+  background: var(--tool-accent-dim);
+  border: 1px solid var(--tool-accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.pguide-open-link:hover { background: var(--tool-accent-glow); }

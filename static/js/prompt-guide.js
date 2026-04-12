@@ -830,22 +830,67 @@
     const content = $('.pguide-technique-content');
     if (!content) return;
 
-    // Find "Related Techniques" heading in the markdown-rendered content
-    // It shows as text like "After mastering..." or a list of links to /prompt-guide/
-    // Actually it appears as a standalone paragraph with links, not an H2
-    // The markdown renders it as loose text at the bottom. Let's just leave it for now
-    // since the sidebar already has "Next technique" — removing would require knowing exact structure.
+    // Related Techniques appear as: paragraph text "After mastering..." followed by a <ul> with /prompt-guide/ links
+    // OR as standalone links at the end of content before the sandbox
+    const allLinks = $$('a[href^="/prompt-guide/"]', content);
+    if (allLinks.length < 2) return;
+
+    // Find the last cluster of /prompt-guide/ links that are in a <ul> (the Related Techniques section)
+    const lists = $$('ul', content);
+    lists.forEach(function (ul) {
+      const links = $$('a[href^="/prompt-guide/"]', ul);
+      if (links.length >= 2) {
+        // This is the Related Techniques list — hide it and any preceding paragraph
+        ul.style.display = 'none';
+        const prev = ul.previousElementSibling;
+        if (prev && prev.tagName === 'P' && /level up|related|after mastering/i.test(prev.textContent)) {
+          prev.style.display = 'none';
+        }
+      }
+    });
   }
 
   /* ════════════════════════════════════════
      FIX E: LOADING SKELETONS FOR QUIZ/CHALLENGES
      ════════════════════════════════════════ */
-  // Already handled — quiz/challenge render immediately on DOMContentLoaded
+  function initLoadingSkeletons() {
+    var quizBody = $('#pguide-quiz-body');
+    var challengeList = $('#pguide-challenge-list');
+    if (quizBody && !quizBody.innerHTML.trim()) {
+      quizBody.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">Loading quiz questions...</p>';
+    }
+    if (challengeList && !challengeList.innerHTML.trim()) {
+      challengeList.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">Loading challenges...</p>';
+    }
+  }
 
   /* ════════════════════════════════════════
-     FIX F: QUIZ AUTO-ADVANCE
+     FIX J: "OPEN IN CHATGPT" LINKS ON AFTER EXAMPLES
      ════════════════════════════════════════ */
-  // Integrated into initQuiz — see updated quiz code
+  function initOpenInLinks() {
+    var content = $('.pguide-technique-content');
+    if (!content) return;
+
+    var h3s = $$('h3', content);
+    h3s.forEach(function (h3) {
+      if (!/after/i.test(h3.textContent)) return;
+      var el = h3.nextElementSibling;
+      while (el && el.tagName !== 'H2' && el.tagName !== 'H3') {
+        if (el.tagName === 'BLOCKQUOTE') {
+          var text = el.textContent.trim();
+          if (text && !el.querySelector('.pguide-open-links')) {
+            var div = document.createElement('div');
+            div.className = 'pguide-open-links';
+            var encoded = encodeURIComponent(text);
+            div.innerHTML = '<a href="https://chatgpt.com/?q=' + encoded + '" target="_blank" rel="noopener noreferrer" class="pguide-open-link">Try in ChatGPT ↗</a>' +
+              '<a href="https://copilot.microsoft.com/?q=' + encoded + '" target="_blank" rel="noopener noreferrer" class="pguide-open-link">Try in Copilot ↗</a>';
+            el.appendChild(div);
+          }
+        }
+        el = el.nextElementSibling;
+      }
+    });
+  }
 
   /* ════════════════════════════════════════
      FIX H: BUILDER STATE RESTORE
@@ -932,6 +977,7 @@
     initCopyButtons();
     initFixExercise();
     initCertificate();
+    initLoadingSkeletons();
     initQuiz();
     initChallenges();
 
@@ -939,6 +985,8 @@
     initSectionReorder();        // Fix A: sandbox before platform tips
     initPlatformAccordions();    // Fix B: collapsible platform tips
     initAfterCopyButtons();      // Fix C: copy on After examples
+    initRemoveInlineRelated();   // Fix D: hide inline Related Techniques
+    initOpenInLinks();           // Fix J: "Open in ChatGPT" links
     initSectionDividers();       // Fix L: visual section dividers
     initAutoMark();              // Fix N: auto-mark on sandbox complete
   });
