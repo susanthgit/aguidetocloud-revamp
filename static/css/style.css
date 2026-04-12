@@ -1250,15 +1250,15 @@ a:hover {
   font-family: var(--font-heading);
   font-size: clamp(5rem, 12vw, 9rem);
   font-weight: 900;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 40px var(--neon-cyan), 0 0 80px rgba(0, 229, 255, 0.3);
+  color: #FF8A80;
+  text-shadow: 0 0 40px #FF8A80, 0 0 80px rgba(255, 138, 128, 0.3);
   line-height: 1;
   margin-bottom: 0.5rem;
   animation: glowPulse404 3s ease-in-out infinite;
 }
 @keyframes glowPulse404 {
-  0%, 100% { text-shadow: 0 0 40px var(--neon-cyan), 0 0 80px rgba(0, 229, 255, 0.3); }
-  50% { text-shadow: 0 0 60px var(--neon-cyan), 0 0 120px rgba(0, 229, 255, 0.5); }
+  0%, 100% { text-shadow: 0 0 40px #FF8A80, 0 0 80px rgba(255, 138, 128, 0.3); }
+  50% { text-shadow: 0 0 60px #FF8A80, 0 0 120px rgba(255, 138, 128, 0.5); }
 }
 .error-404-msg {
   font-size: 1.3rem;
@@ -1269,7 +1269,7 @@ a:hover {
 .error-404-note {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 3px solid var(--neon-cyan);
+  border-left: 3px solid #FF8A80;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 2.5rem;
@@ -1285,7 +1285,7 @@ a:hover {
 .error-404-section-title {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  color: var(--neon-cyan);
+  color: #FF8A80;
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
 }

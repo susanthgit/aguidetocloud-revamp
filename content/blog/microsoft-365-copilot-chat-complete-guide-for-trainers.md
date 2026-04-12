@@ -36,7 +36,28 @@ This guide is built for **AI Change Leads**, **Digital Champions**, and **Train-
 
 > 📋 **How to use this guide:** Bookmark it. Print it. Share it with your training team. Each section is self-contained — jump to what you need using the table of contents below.
 
-**Quick links:** [What is Copilot Chat?](#what-is-microsoft-365-copilot-chat) · [Security & EDP](#security--enterprise-data-protection) · [Upcoming Changes](#-upcoming-changes-april-15-2026) · [Chat Experience](#1-the-copilot-chat-experience) · [File Upload](#2-upload-documents-for-better-answers) · [Suggested Prompts](#3-suggested-prompts--adaptive-cards) · [Save Prompts](#4-save-your-favourite-prompts) · [Custom Instructions](#5-custom-instructions) · [Memory](#6-memory) · [Create](#7-create--images-videos--more) · [Pages](#8-copilot-pages--collaborative-ai-canvas) · [Chat History](#9-chat-history--search) · [Agents](#10-agents) · [Model Choice](#11-model-choice) · [In-App Experience](#copilot-chat-inside-microsoft-365-apps) · [Resources](#official-microsoft-resources) · [FAQ](#frequently-asked-questions)
+### 📋 Table of Contents
+
+- [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
+- [Security & Enterprise Data Protection](#security--enterprise-data-protection)
+- [⚠️ Upcoming Changes (April 15, 2026)](#-upcoming-changes-april-15-2026)
+- **Deep Dive: Copilot Chat Features**
+  - [1. The Chat Experience](#1-the-copilot-chat-experience)
+  - [2. Upload Documents](#2-upload-documents-for-better-answers)
+  - [3. Suggested Prompts & Adaptive Cards](#3-suggested-prompts--adaptive-cards)
+  - [4. Save Your Favourite Prompts](#4-save-your-favourite-prompts)
+  - [5. Custom Instructions](#5-custom-instructions)
+  - [6. Memory](#6-memory)
+  - [7. Create — Images, Videos & More](#7-create--images-videos--more)
+  - [8. Copilot Pages](#8-copilot-pages--collaborative-ai-canvas)
+  - [9. Chat History & Search](#9-chat-history--search)
+  - [10. Agents](#10-agents)
+  - [11. Model Choice](#11-model-choice)
+- [Copilot Chat Inside M365 Apps](#copilot-chat-inside-microsoft-365-apps)
+- [Positioning for Different Audiences](#positioning-copilot-chat--for-ai-change-leads)
+- [Official Microsoft Resources](#official-microsoft-resources)
+- [Tools to Help Your Journey](#tools-i-built-to-help-your-copilot-journey)
+- [FAQ](#frequently-asked-questions)
 
 ---
 
@@ -46,12 +67,36 @@ This guide is built for **AI Change Leads**, **Digital Champions**, and **Train-
 
 ```mermaid
 flowchart LR
-    A["🆓 Copilot Chat\n(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat\n📄 File Upload\n🖼️ Create\n📝 Pages\n🤖 Agents"]
-    C["💳 M365 Copilot\n($30/user/month)"] -->|"Work-grounded AI"| D["Everything in Chat\n+\n📊 Work Data (Graph)\n📱 Deep App Integration\n🔬 Researcher & Analyst\n📓 Notebooks"]
+    A["🆓 Copilot Chat\n(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat"]
+    A --> C["📄 File Upload"]
+    A --> D["🖼️ Create"]
+    A --> E["📝 Pages"]
+    A --> F["🤖 Agents"]
+    A --> G["🧠 Memory"]
     style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style C fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style D fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
+    style B fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style C fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style D fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style E fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style F fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    style G fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+```
+
+```mermaid
+flowchart LR
+    A["💳 M365 Copilot\n($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
+    B --> C["📊 Work Data via Graph"]
+    B --> D["📱 Deep App Integration"]
+    B --> E["🔬 Researcher & Analyst"]
+    B --> F["📓 Notebooks"]
+    B --> G["🧬 Anthropic Model Choice"]
+    style A fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
+    style B fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style C fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style D fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style E fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style F fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    style G fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
 ```
 
 ### The Two Tiers at a Glance
@@ -73,7 +118,11 @@ flowchart LR
 | **Enterprise Data Protection** | ✅ | ✅ |
 | **Model Choice** | ✅ Standard access | ✅ Priority access |
 
-> 💡 **Trainer tip:** Position Copilot Chat as **"your organisation's approved AI"** — it replaces the need for users to go to consumer AI tools like ChatGPT, Google Gemini, or Claude. Same AI power, but with enterprise security built in. This is the Shadow AI story.
+<div class="trainer-tip">
+
+💡 **Trainer tip:** Position Copilot Chat as **"your organisation's approved AI"** — it replaces the need for users to go to consumer AI tools like ChatGPT, Google Gemini, or Claude. Same AI power, but with enterprise security built in. This is the Shadow AI story.
+
+</div>
 
 > 🔧 **Want a deeper side-by-side comparison?** Use our interactive [Copilot Feature Matrix](/copilot-matrix/) to explore every feature across all Copilot tiers.
 
@@ -104,15 +153,21 @@ flowchart LR
 
 | # | Promise | What It Means in Plain English |
 |:--|:--|:--|
-| 🔐 **1** | **Your data is secured** | Encrypted at rest and in transit. Physical security controls. Data isolation between tenants. |
-| 🔏 **2** | **Your data is private** | Microsoft won't use your data except as you instruct. Supports GDPR, EU Data Boundary, ISO 27018. |
-| 🛡️ **3** | **Your policies apply** | Copilot respects your identity model, permissions, sensitivity labels, retention policies, and audit settings. |
-| ⚔️ **4** | **Protected against AI risks** | Safeguards against harmful content, prompt injection attacks, and copyright risks. Microsoft's Customer Copyright Commitment applies. |
-| 🚫 **5** | **Never trains the model** | Your prompts and responses are **never** used to train foundation models. Period. |
+| **1** | **Your data is secured** | Encrypted at rest and in transit. Physical security controls. Data isolation between tenants. |
+| **2** | **Your data is private** | Microsoft won't use your data except as you instruct. Supports GDPR, EU Data Boundary, ISO 27018. |
+| **3** | **Your policies apply** | Copilot respects your identity model, permissions, sensitivity labels, retention policies, and audit settings. |
+| **4** | **Protected against AI risks** | Safeguards against harmful content, prompt injection attacks, and copyright risks. Microsoft's Customer Copyright Commitment applies. |
+| **5** | **Never trains the model** | Your prompts and responses are **never** used to train foundation models. Period. |
 
 ### How to Explain Security to Your Users
 
-> **"When you see the green shield 🛡️ in Copilot Chat, it means your conversation is protected by the same enterprise security that protects your emails and files. Nothing you type leaves Microsoft's trust boundary, and nothing is used to train AI models. It's the same security your IT team already trusts."**
+<div class="trainer-script">
+
+🗣️ **Say this to your users:**
+
+*"When you see the green shield 🛡️ in Copilot Chat, it means your conversation is protected by the same enterprise security that protects your emails and files. Nothing you type leaves Microsoft's trust boundary, and nothing is used to train AI models. It's the same security your IT team already trusts."*
+
+</div>
 
 ### What About Sharing Data with OpenAI?
 
@@ -168,7 +223,13 @@ flowchart LR
 
 For large organisations, frame it as:
 
-> **"Copilot Chat continues to be your go-to secure AI assistant. You'll access it through the Copilot app, Teams, and Outlook. For AI features directly inside Word, Excel, and PowerPoint — like drafting documents or analysing data inside the app — that's where the full Microsoft 365 Copilot licence comes in."**
+<div class="trainer-script">
+
+🗣️ **Say this to your users:**
+
+*"Copilot Chat continues to be your go-to secure AI assistant. You'll access it through the Copilot app, Teams, and Outlook. For AI features directly inside Word, Excel, and PowerPoint — like drafting documents or analysing data inside the app — that's where the full Microsoft 365 Copilot licence comes in."*
+
+</div>
 
 ---
 
@@ -222,7 +283,7 @@ When users sign in with their work account, they'll see the **green shield 🛡�
 | **Edge Browser** | Copilot side pane |
 | **Word, Excel, PPT** | Side pane (availability depends on tenant size — see [changes above](#-upcoming-changes-april-15-2026)) |
 
-#### Prompting Matters — A Lot
+### Prompting Matters — A Lot
 
 The single biggest factor in getting value from Copilot Chat is **the quality of the prompt**. As a trainer, this is your highest-impact teaching moment.
 
@@ -280,7 +341,11 @@ Need Copilot to compare two documents or synthesise information from several sou
 | **Prepare for a meeting** | *Upload meeting agenda →* "Based on this agenda, draft 3 discussion questions for each topic that would help drive productive conversation." |
 | **Simplify complex content** | *Upload a technical document →* "Explain the key concepts from this document in plain English, suitable for a non-technical audience." |
 
-> 💡 **Trainer tip:** This is the feature that makes Copilot Chat genuinely useful for knowledge workers — even without the paid licence. They can get AI-powered analysis of their own documents, securely and privately.
+<div class="trainer-tip">
+
+💡 **Trainer tip:** This is the feature that makes Copilot Chat genuinely useful for knowledge workers — even without the paid licence. They can get AI-powered analysis of their own documents, securely and privately.
+
+</div>
 
 ---
 
@@ -316,7 +381,11 @@ Found a prompt that works brilliantly? **Save it.** Copilot Chat lets users book
 - **Time-saving** — no retyping complex prompts
 - **Knowledge sharing** — trainers can create a library of recommended prompts and share them with the team
 
-> 💡 **Trainer tip:** Create a team "prompt playbook" — a shared document with your best prompts, categorised by task type. Users can copy-paste from this until they're confident writing their own.
+<div class="trainer-tip">
+
+💡 **Trainer tip:** Create a team "prompt playbook" — a shared document with your best prompts, categorised by task type. Users can copy-paste from this until they're confident writing their own.
+
+</div>
 
 ---
 
@@ -343,7 +412,11 @@ Custom instructions let users tell Copilot **how they want all responses to beha
 - 🎯 **Better relevance** — Copilot understands your role and needs upfront
 - 📏 **Consistent quality** — every response follows your preferred style
 
-> 💡 **Trainer tip:** In your training session, guide every user through setting up their custom instructions. It takes 2 minutes and transforms their entire Copilot experience. This is one of the highest-value, lowest-effort configuration changes.
+<div class="trainer-tip">
+
+💡 **Trainer tip:** In your training session, guide every user through setting up their custom instructions. It takes 2 minutes and transforms their entire Copilot experience. This is one of the highest-value, lowest-effort configuration changes.
+
+</div>
 
 ---
 
@@ -485,7 +558,11 @@ flowchart LR
     style E fill:#3a2a1a,stroke:#ff9900,color:#ffffff
 ```
 
-> 💡 **Recommendation for trainers:** Work with your IT team to understand what agent capabilities are enabled for your users. This varies by organisation and is completely at the admin's discretion. Be prepared to explain why some users can see agents that others can't.
+<div class="trainer-tip">
+
+💡 **Recommendation for trainers:** Work with your IT team to understand what agent capabilities are enabled for your users. This varies by organisation and is completely at the admin's discretion. Be prepared to explain why some users can see agents that others can't.
+
+</div>
 
 > 📖 **For the paid licence blog:** Licensed users get full agent creation with any grounding source, plus the powerful **Researcher** (deep web research with citations) and **Analyst** (data analysis with Python) agents. These are covered in our [companion guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).
 
@@ -507,7 +584,11 @@ Copilot Chat lets users choose how the underlying AI model behaves. By default, 
 
 Look for the model selector at the **top right** of the Copilot Chat interface. Click it to switch between Auto, Quick Response, and Think Deeper.
 
-> 💡 **Trainer tip:** For most users, **Auto mode** is the best default. Only teach "Think Deeper" to users who regularly do complex analysis or strategic work — it's slower but significantly more thorough.
+<div class="trainer-tip">
+
+💡 **Trainer tip:** For most users, **Auto mode** is the best default. Only teach "Think Deeper" to users who regularly do complex analysis or strategic work — it's slower but significantly more thorough.
+
+</div>
 
 #### Standard vs Priority Access
 
@@ -592,19 +673,43 @@ Here's how to frame Copilot Chat for different audiences in your organisation:
 
 ### For Leadership / Executives
 
-> **"Copilot Chat gives every employee a secure, enterprise-grade AI assistant — at no extra cost. It eliminates the need for shadow AI tools, protects our data, and builds AI fluency across the organisation. It's the foundation for our AI transformation."**
+<div class="trainer-script">
+
+🗣️ **Say this to executives:**
+
+*"Copilot Chat gives every employee a secure, enterprise-grade AI assistant — at no extra cost. It eliminates the need for shadow AI tools, protects our data, and builds AI fluency across the organisation. It's the foundation for our AI transformation."*
+
+</div>
 
 ### For IT / Security Teams
 
-> **"Copilot Chat is covered by Enterprise Data Protection — same DPA, same Product Terms as Exchange and SharePoint. Prompts and responses are encrypted, never leave our trust boundary, and are never used to train models. Admin controls let you manage who can use agents and what data they can access."**
+<div class="trainer-script">
+
+🗣️ **Say this to IT teams:**
+
+*"Copilot Chat is covered by Enterprise Data Protection — same DPA, same Product Terms as Exchange and SharePoint. Prompts and responses are encrypted, never leave our trust boundary, and are never used to train models. Admin controls let you manage who can use agents and what data they can access."*
+
+</div>
 
 ### For End Users
 
-> **"Think of Copilot Chat as your personal AI assistant at work. It can help you write emails, brainstorm ideas, summarise documents, create images, and so much more — all within the secure Microsoft environment your company already uses. It's free, it's private, and it's ready to use today."**
+<div class="trainer-script">
+
+🗣️ **Say this to end users:**
+
+*"Think of Copilot Chat as your personal AI assistant at work. It can help you write emails, brainstorm ideas, summarise documents, create images, and so much more — all within the secure Microsoft environment your company already uses. It's free, it's private, and it's ready to use today."*
+
+</div>
 
 ### For Sceptics
 
-> **"You don't have to use Copilot for everything. Start small — try it for one task this week. Maybe summarise a long email thread, or brainstorm ideas for a presentation. The more specific your request, the better the result. And remember, nothing you type is used to train AI models."**
+<div class="trainer-script">
+
+🗣️ **Say this to sceptics:**
+
+*"You don't have to use Copilot for everything. Start small — try it for one task this week. Maybe summarise a long email thread, or brainstorm ideas for a presentation. The more specific your request, the better the result. And remember, nothing you type is used to train AI models."*
+
+</div>
 
 ---
 
