@@ -4,9 +4,9 @@
    ================================================================ */
 
 :root {
-  --showdown-accent: #84CC16;
-  --showdown-accent-dim: rgba(132, 204, 22, 0.15);
-  --showdown-accent-mid: rgba(132, 204, 22, 0.3);
+  --showdown-accent: #D4A853;
+  --showdown-accent-dim: rgba(212, 168, 83, 0.15);
+  --showdown-accent-mid: rgba(212, 168, 83, 0.3);
   --showdown-bg: #141425;
   --showdown-card-bg: #1a1a2e;
   --showdown-card-border: rgba(132, 204, 22, 0.2);
@@ -505,7 +505,7 @@
   font-weight: 600;
 }
 .showdown-btn-primary:hover:not(:disabled) {
-  background: #a3e635;
+  background: #e0bb6a;
 }
 .showdown-btn-secondary {
   background: transparent;

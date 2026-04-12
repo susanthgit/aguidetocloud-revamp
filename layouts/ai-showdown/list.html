@@ -25,10 +25,7 @@
 </script>
 
 {{/* ── Hero ── */}}
-{{ partial "tool-hero.html" (dict "title" "🥊 AI SaaS Showdown" "subtitle" "Compare ChatGPT, Claude, Gemini, Grok & more — plans, pricing, features, and enterprise readiness" "accent" "#84CC16") }}
-
-{{/* ── Back Nav ── */}}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+{{ partial "tool-hero.html" (dict "title" "🥊 AI SaaS Showdown" "subtitle" "Compare ChatGPT, Claude, Gemini, Grok & more — plans, pricing, features, and enterprise readiness" "accent" "#D4A853") }}
 
 {{/* ── Tab Navigation ── */}}
 <div class="showdown-container">
@@ -195,6 +192,9 @@ window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | json
 </script>
 
 {{ partial "page-search.html" . }}
+
+{{/* ── Back Nav (bottom) ── */}}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 
 <script src="/js/showdown.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
