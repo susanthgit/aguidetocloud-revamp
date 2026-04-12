@@ -32,17 +32,7 @@
 }
 </script>
 
-<div class="tool-hero" style="--hero-accent: #ff66ff">
-  <div class="tool-hero-inner">
-    <nav class="tool-hero-breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a> › 
-      <a href="/ai-news/">AI News</a> › 
-      <span>{{ .Title }}</span>
-    </nav>
-    <h1 class="tool-hero-title">{{ .Title }}</h1>
-    {{ with .Description }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
-  </div>
-</div>
+{{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" "#ff66ff") }}
 <div class="container">
   <!-- SEO intro text (visible to search engines) -->
   <div style="grid-column:1/-1; padding: 0.8rem 0 0.5rem; color: var(--text-muted); font-size: 0.85rem; max-width: 800px; line-height: 1.6;">

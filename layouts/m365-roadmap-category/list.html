@@ -1,15 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/roadmap.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
-<div class="tool-hero" style="--hero-accent: #E5A00D">
-  <div class="tool-hero-inner">
-    <nav class="rdmap-breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a> › <a href="/m365-roadmap/">M365 Roadmap</a> › <span>{{ .Title }}</span>
-    </nav>
-    <h1 class="tool-hero-title">{{ .Title }}</h1>
-    {{ with .Description }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
-  </div>
-</div>
+{{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" "#E5A00D") }}
 <div class="rdmap-container">
   <div class="rdmap-metrics" id="rdmap-metrics"></div>
   <div class="rdmap-filters">

@@ -201,6 +201,8 @@ window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | json
 
 {{ partial "page-search.html" . }}
 
+{{ partial "feedback-cta.html" (dict "tool" "ai-showdown" "label" "AI SaaS Showdown") }}
+
 {{/* ── Back Nav (bottom) ── */}}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 

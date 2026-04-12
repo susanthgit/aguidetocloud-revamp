@@ -176,5 +176,6 @@
 
 <script src="/js/readiness.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "feedback-cta.html" (dict "tool" "copilot-readiness" "label" "Copilot Readiness Checker") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}

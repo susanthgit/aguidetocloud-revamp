@@ -43,8 +43,6 @@
 }
 </script>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-
 {{ partial "tool-hero.html" (dict "title" "Copilot Feature Matrix" "subtitle" "See exactly what Microsoft 365 Copilot can do — across every app and license tier" "accent" "#60A5FA") }}
 
 <div class="cpmatrix-container">
@@ -146,6 +144,9 @@
   <p><strong>Disclaimer:</strong> The views and opinions expressed here are my own and do not represent the official positions of Microsoft. Feature availability, pricing, and capabilities are subject to change. Always refer to <a href="https://learn.microsoft.com" target="_blank" rel="noopener">official Microsoft documentation</a> for the most up-to-date information.</p>
   <p>Data last verified: April 2026. Have a correction? <a href="https://github.com/susanthgit/aguidetocloud-revamp/issues" target="_blank" rel="noopener">Open an issue</a>.</p>
 </div>
+
+{{ partial "feedback-cta.html" (dict "tool" "copilot-matrix" "label" "Copilot Feature Matrix") }}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
 <script src="/js/copilot-matrix.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

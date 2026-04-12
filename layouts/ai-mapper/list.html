@@ -13,8 +13,6 @@
 {{ $quiz := index $dataDir "quiz" | default dict }}
 {{ $changelog := index $dataDir "changelog" | default dict }}
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-
 {{ partial "tool-hero.html" (dict "title" "AI Service Mapper" "subtitle" "Find the right AI service for your use case — compare 50+ services across every major provider" "accent" "#8B5CF6") }}
 
 <div class="aimap-page">
@@ -311,5 +309,8 @@ window.__aimapData = {
 </script>
 
 <script src="/js/ai-mapper.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "feedback-cta.html" (dict "tool" "ai-mapper" "label" "AI Service Mapper") }}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
 {{ end }}
