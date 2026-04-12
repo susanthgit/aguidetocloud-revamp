@@ -71,8 +71,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
 }
-/* Futuristic grid pattern — homepage only */
-.is-home::after {
+/* Futuristic grid pattern — site-wide */
+body::after {
   content: '';
   position: fixed;
   top: 0; left: 0;
