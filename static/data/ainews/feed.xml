@@ -5,68 +5,92 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Apr 2026 17:34:45 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2026 23:34:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Supercharge your AI agents: The New ADK Integrations Ecosystem</title>
       <link>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</link>
-      <description>The Agent Development Kit (ADK) now features a variety of third-party integrations, allowing developers to connect their AI agents to platforms like GitHub and Notion. This expansion enhances the capabilities of AI applications in real-world scenarios.</description>
+      <description>The Agent Development Kit (ADK) now features a wide range of third-party tool integrations, enhancing the capabilities of AI agents for real-world applications. This development allows for seamless connections to platforms like GitHub and Notion.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/supercharge-your-ai-agents-adk-integrations-ecosystem/</guid>
     </item>
     <item>
       <title>How we built the Google I/O 2026 Save the Date experience</title>
       <link>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</link>
-      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's potential. This tradition aims to engage attendees ahead of the event.</description>
+      <description>Google I/O 2026 is set for May 19-20, featuring a save the date puzzle that showcases AI's potential. This annual event builds excitement and highlights innovations in AI technology.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/how-we-built-the-google-io-2026-save-the-date-experience/</guid>
     </item>
     <item>
       <title>You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas</title>
       <link>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</link>
-      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem-solving, emphasizing the shift towards agentic AI. The event includes technical tracks on various advanced topics.</description>
+      <description>Google Cloud Next '26 in Las Vegas will focus on networking and hands-on problem solving, featuring keynotes on agentic AI and technical tracks for developers. The event emphasizes the value of in-person interactions.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/</guid>
     </item>
     <item>
       <title>What's new in TensorFlow 2.21</title>
       <link>https://developers.googleblog.com/whats-new-in-tensorflow-221/</link>
-      <description>Google has launched LiteRT, a new framework that enhances GPU and NPU acceleration for TensorFlow, while also supporting PyTorch and JAX. This update aims to improve efficiency and security within the TensorFlow ecosystem.</description>
+      <description>Google has launched LiteRT, the successor to TFLite, enhancing GPU and NPU acceleration and supporting PyTorch and JAX. This update aims to improve efficiency and security in deploying GenAI.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/whats-new-in-tensorflow-221/</guid>
     </item>
     <item>
       <title>Introducing Wednesday Build Hour</title>
       <link>https://developers.googleblog.com/introducing-wednesday-build-hour/</link>
-      <description>Google Cloud has introduced Wednesday Build Hour, a weekly interactive session for developers to enhance their cloud skills through hands-on activities. The program focuses on practical applications in AI and developer productivity.</description>
+      <description>Google Cloud's Wednesday Build Hour is a new interactive session aimed at helping developers enhance their cloud skills through hands-on activities. It focuses on practical applications in AI and developer productivity.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-wednesday-build-hour/</guid>
     </item>
     <item>
       <title>Unleash Your Development Superpowers: Refining the Core Coding Experience</title>
       <link>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</link>
-      <description>The Gemini Code Assist team has rolled out updates to improve coding workflows, including features like Agent Mode and Inline Diff Views. These tools aim to make AI a more effective coding collaborator.</description>
+      <description>The Gemini Code Assist team has launched updates to streamline coding workflows, introducing features like Agent Mode and custom commands to enhance collaboration with AI. These tools aim to adapt to individual developer styles.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/unleash-your-development-superpowers-refining-the-core-coding-experience/</guid>
     </item>
     <item>
       <title>Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code</title>
       <link>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</link>
-      <description>Google's Gemini Code Assist now includes features like Finish Changes and Outlines in IntelliJ and VS Code, designed to reduce manual coding efforts. These tools enhance code comprehension and streamline the development process.</description>
+      <description>Google's Gemini Code Assist now includes Finish Changes and Outlines features in IntelliJ and VS Code, designed to reduce manual coding tasks and improve code comprehension through AI-generated summaries.</description>
       <category>Google</category>
-      <pubDate>Sun, 12 Apr 2026 17:32:22 +0000</pubDate>
+      <pubDate>Sun, 12 Apr 2026 23:31:44 +0000</pubDate>
       <guid>https://developers.googleblog.com/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/</guid>
+    </item>
+    <item>
+      <title>Anthropic's mysterious Mythos AI threatens to upend the infosec world</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/12/anthropic_mythos_kettle_podcast/</link>
+      <description>Anthropic has launched Mythos, an AI model claimed to identify and exploit zero-day vulnerabilities, stirring significant interest and skepticism in the cybersecurity community. The model's capabilities could disrupt traditional security practices.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 12 Apr 2026 23:12:27 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/12/anthropic_mythos_kettle_podcast/</guid>
+    </item>
+    <item>
+      <title>Trump officials may be encouraging banks to test Anthropic’s Mythos model</title>
+      <link>https://techcrunch.com/2026/04/12/trump-officials-may-be-encouraging-banks-to-test-anthropics-mythos-model/</link>
+      <description>Reports suggest Trump officials may be encouraging banks to test Anthropic's Mythos model, despite concerns about supply-chain risks associated with the company. This development highlights the intersection of technology and regulatory scrutiny.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 12 Apr 2026 21:14:38 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/12/trump-officials-may-be-encouraging-banks-to-test-anthropics-mythos-model/</guid>
+    </item>
+    <item>
+      <title>Apple reportedly testing four designs for upcoming smart glasses</title>
+      <link>https://techcrunch.com/2026/04/12/apple-reportedly-testing-four-designs-for-upcoming-smart-glasses/</link>
+      <description>Apple is reportedly testing four designs for upcoming smart glasses, signaling a shift from its previous ambitious plans for mixed and augmented reality devices. This reflects ongoing innovation in wearable technology.</description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 12 Apr 2026 19:58:42 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/12/apple-reportedly-testing-four-designs-for-upcoming-smart-glasses/</guid>
     </item>
     <item>
       <title>From LLMs to hallucinations, here’s a simple guide to common AI terms</title>
       <link>https://techcrunch.com/2026/04/12/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/</link>
-      <description>A new glossary explains common AI terms, helping users navigate the complex language surrounding artificial intelligence. This resource is timely as AI continues to evolve rapidly.</description>
+      <description>A new glossary has been created to help people understand the growing number of terms and slang associated with AI. This resource is significant as it aids in demystifying AI for newcomers.</description>
       <category>Top Stories</category>
       <pubDate>Sun, 12 Apr 2026 15:07:08 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/12/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/</guid>
@@ -74,7 +98,7 @@
     <item>
       <title>At the HumanX conference, everyone was talking about Claude</title>
       <link>https://techcrunch.com/2026/04/12/at-the-humanx-conference-everyone-was-talking-about-claude/</link>
-      <description>At the HumanX conference, Anthropic gained significant attention, showcasing its advancements in AI. The event highlighted the growing interest and developments in the AI field.</description>
+      <description>At the HumanX conference, Anthropic's Claude was a major topic of discussion, highlighting its prominence in the AI community. This indicates growing interest and investment in Claude's capabilities.</description>
       <category>Anthropic</category>
       <pubDate>Sun, 12 Apr 2026 15:00:00 +0000</pubDate>
       <guid>https://techcrunch.com/2026/04/12/at-the-humanx-conference-everyone-was-talking-about-claude/</guid>
@@ -82,7 +106,7 @@
     <item>
       <title>I vibe coded a feed reading web app. It was enlightening and uncomfortable</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/12/vibe_coding_works/</link>
-      <description>An exploration of AI-assisted software development reveals both its transformative potential and the discomfort it brings. The author reflects on the implications of this technology in the industry.</description>
+      <description>The author reflects on their experience with AI-assisted software development, expressing mixed feelings about its effectiveness. This highlights the ongoing transformation and challenges in the coding industry.</description>
       <category>Top Stories</category>
       <pubDate>Sun, 12 Apr 2026 14:45:11 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/12/vibe_coding_works/</guid>
@@ -90,7 +114,7 @@
     <item>
       <title>30 years later, I returned to Enlightenment Linux to test the Elive beta - and it's much better</title>
       <link>https://www.zdnet.com/article/elive-linux/</link>
-      <description>The Elive beta, a Debian-based Linux distribution, revives an old-school desktop environment with improved features but still lacks some functionalities. This update appeals to users seeking nostalgia with modern enhancements.</description>
+      <description>The author revisits Enlightenment Linux and finds the Elive beta improved yet lacking some features. This indicates a nostalgic revival of old-school computing environments.</description>
       <category>Industry</category>
       <pubDate>Sun, 12 Apr 2026 11:00:46 +0000</pubDate>
       <guid>https://www.zdnet.com/article/elive-linux/</guid>
@@ -98,7 +122,7 @@
     <item>
       <title>Growing void between enterprise and frontier AI puts open weights models in the spotlight</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/12/ai_open_weights_models/</link>
-      <description>The gap between enterprise and frontier AI is leading to a focus on open weights models, which are more affordable and secure for businesses. Companies like Google and Nvidia are responding to this demand with new offerings.</description>
+      <description>The article discusses the growing gap between enterprise needs and frontier AI models, emphasizing the demand for open-weight models that are cost-effective and secure. This shift could reshape AI model accessibility.</description>
       <category>Top Stories</category>
       <pubDate>Sun, 12 Apr 2026 10:51:06 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/12/ai_open_weights_models/</guid>
@@ -106,7 +130,7 @@
     <item>
       <title>Here's my favorite email trick for cleaning up inbox clutter - automatically</title>
       <link>https://www.zdnet.com/article/how-to-use-email-aliases/</link>
-      <description>A simple email trick can help users automatically clean up clutter in their inboxes, making it easier to manage overwhelming amounts of ads and updates. This feature is commonly available in most email solutions.</description>
+      <description>A simple email trick is shared to help users manage their inbox clutter automatically. This practical advice can enhance productivity for many users.</description>
       <category>Industry</category>
       <pubDate>Sun, 12 Apr 2026 09:00:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/how-to-use-email-aliases/</guid>
@@ -114,7 +138,7 @@
     <item>
       <title>Apple update looks like Czech mate for locked-out iPhone user</title>
       <link>https://go.theregister.com/feed/www.theregister.com/2026/04/12/ios_passcode_bug/</link>
-      <description>A university student is unable to access his iPhone due to a recent Apple update that removed a character from the Czech keyboard, which was part of his passcode. This situation highlights potential issues with software updates affecting user access.</description>
+      <description>A university student is unable to access their iPhone due to a software update that removed a character from the Czech keyboard, highlighting issues with device compatibility. This raises concerns about user accessibility.</description>
       <category>Top Stories</category>
       <pubDate>Sun, 12 Apr 2026 08:01:09 +0000</pubDate>
       <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/12/ios_passcode_bug/</guid>
@@ -122,7 +146,7 @@
     <item>
       <title>The AI code wars are heating up</title>
       <link>https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic</link>
-      <description>The AI code wars are intensifying as companies explore the potential of AI in coding and software development. This newsletter provides insights into the evolving landscape of AI-driven coding.</description>
+      <description>The article discusses the increasing competition in AI coding, particularly focusing on vibe coding as a new trend. This reflects the evolving nature of coding practices in the tech industry.</description>
       <category>Top Stories</category>
       <pubDate>Sun, 12 Apr 2026 08:00:00 -0400</pubDate>
       <guid>https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic</guid>
@@ -130,7 +154,7 @@
     <item>
       <title>After using Lenovo's new Yoga laptop, I'm wondering if Windows makers are running out of ideas</title>
       <link>https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/</link>
-      <description>Lenovo's Yoga 7a 2-in-1 laptop offers versatility and solid build quality, but its mid-tier hardware makes it less competitive against rivals. This raises questions about innovation in Windows laptop designs.</description>
+      <description>The Lenovo Yoga 7a 2-in-1 laptop is reviewed as a versatile device, but its mid-tier hardware raises questions about innovation among Windows manufacturers. This suggests a stagnation in the market.</description>
       <category>Industry</category>
       <pubDate>Sun, 12 Apr 2026 01:00:49 +0000</pubDate>
       <guid>https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/</guid>
@@ -138,274 +162,250 @@
     <item>
       <title>The $30 Google TV stick may be the budget Chromecast successor we've been waiting for</title>
       <link>https://www.zdnet.com/article/walmarts-4k-chromecast-replacement/</link>
-      <description>Walmart is set to release a $30 Google TV stick that could serve as a budget-friendly successor to Chromecast, appealing to streaming device enthusiasts. The device is expected to meet the needs of cost-conscious consumers.</description>
+      <description>Walmart is expected to release a $30 Google TV stick, which may serve as a budget-friendly successor to Chromecast. This could impact the streaming device market significantly.</description>
       <category>Industry</category>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/walmarts-4k-chromecast-replacement/</guid>
     </item>
     <item>
-      <title>Show HN: Docker-whisper: Self-hosted Whisper speech-to-text server (OpenAI API)</title>
-      <link>https://github.com/hwdsl2/docker-whisper</link>
-      <description>Docker-whisper is a self-hosted server for OpenAI's Whisper speech-to-text API, allowing users to run their own transcription services. This tool supports various models and response formats.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:31:23 +0000</pubDate>
-      <guid>https://github.com/hwdsl2/docker-whisper</guid>
-    </item>
-    <item>
-      <title>genaiforgenews added to PyPI</title>
-      <link>https://pypi.org/project/genaiforgenews/</link>
-      <description>Genaiforgenews has been added to PyPI, offering AI-driven news aggregation with multi-source fetching and bilingual summaries. This tool aims to enhance news accessibility and comprehension.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:29:46 +0000</pubDate>
-      <guid>https://pypi.org/project/genaiforgenews/</guid>
-    </item>
-    <item>
-      <title>Masters Prize Money Hits Record $22.5 Million in 2026. Here's the Purse Breakdown.</title>
-      <link>https://skratch.golf/news/pro-golf/masters-prize-money-payout-breakdown-augusta-national-purse</link>
-      <description>The Masters Prize Money has reached a record $22.5 million for 2026, with all participants earning a share of the purse. This reflects the growing financial stakes in competitive sports.</description>
+      <title>Flyers Get Massive Playoff Help from Claude Giroux, Senators</title>
+      <link>https://thehockeynews.com/nhl/philadelphia-flyers/latest-news/flyers-get-massive-playoff-help-from-claude-giroux-senators</link>
+      <description>Claude Giroux, now with the Ottawa Senators, helped the Philadelphia Flyers in their playoff race by contributing to a crucial game. This unexpected support highlights the interconnected nature of sports teams and player legacies.</description>
       <category>Anthropic</category>
-      <pubDate>Sat, 11 Apr 2026 17:29:30 +0000</pubDate>
-      <guid>https://skratch.golf/news/pro-golf/masters-prize-money-payout-breakdown-augusta-national-purse</guid>
+      <pubDate>Sat, 11 Apr 2026 23:30:36 +0000</pubDate>
+      <guid>https://thehockeynews.com/nhl/philadelphia-flyers/latest-news/flyers-get-massive-playoff-help-from-claude-giroux-senators</guid>
     </item>
     <item>
-      <title>What AI Can Teach Web Developers About WordPress</title>
-      <link>https://speckyboy.com/what-ai-can-teach-web-developers-about-wordpress/</link>
-      <description>AI is being leveraged by web developers to enhance WordPress functionality, offering tools for code explanation, feature comparison, and security reviews. This integration can improve the efficiency and effectiveness of web development.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:28:31 +0000</pubDate>
-      <guid>https://speckyboy.com/what-ai-can-teach-web-developers-about-wordpress/</guid>
-    </item>
-    <item>
-      <title>gdrive-organizer added to PyPI</title>
-      <link>https://pypi.org/project/gdrive-organizer/</link>
-      <description>A new AI-powered command-line interface (CLI) tool called gdrive-organizer has been added to PyPI, allowing users to scan, classify, review, apply, and rollback changes in Google Drive. This tool aims to streamline file management.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:25:04 +0000</pubDate>
-      <guid>https://pypi.org/project/gdrive-organizer/</guid>
-    </item>
-    <item>
-      <title>qualito 0.1.6</title>
-      <link>https://pypi.org/project/qualito/0.1.6/</link>
-      <description>The release of qualito version 0.1.6 introduces quality metrics for AI-assisted development, aimed at improving Claude Code sessions. This update focuses on measuring and enhancing the development process.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 11 Apr 2026 17:23:48 +0000</pubDate>
-      <guid>https://pypi.org/project/qualito/0.1.6/</guid>
-    </item>
-    <item>
-      <title>Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home</title>
-      <link>https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/</link>
-      <description>Sam Altman, CEO of OpenAI, addressed an attack on his home and responded to a critical New Yorker article questioning his trustworthiness. His blog post aims to clarify his position amidst rising scrutiny.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:18:22 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/</guid>
-    </item>
-    <item>
-      <title>qualito 0.1.5</title>
-      <link>https://pypi.org/project/qualito/0.1.5/</link>
-      <description>Qualito version 0.1.5 has been released, continuing to offer quality metrics for AI-assisted development to improve Claude Code sessions. This version builds on previous updates to enhance development quality.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 11 Apr 2026 17:15:14 +0000</pubDate>
-      <guid>https://pypi.org/project/qualito/0.1.5/</guid>
-    </item>
-    <item>
-      <title>Hollywood's Worst Nightmare: Indian Film Studios Rapidly Adopt AI to Slash Costs &amp; Production Time by 75-80%</title>
-      <link>https://www.breitbart.com/entertainment/2026/04/11/hollywoods-worst-nightmare-indian-film-studios-rapidly-adopt-ai-to-slash-costs-production-time-by-75-80/</link>
-      <description>Indian film studios are rapidly adopting AI technologies to reduce production time and costs by 75-80%, potentially reshaping the film industry and posing challenges for Hollywood. This trend signifies a major shift in filmmaking practices.</description>
-      <category>Industry</category>
-      <pubDate>Sat, 11 Apr 2026 17:11:43 +0000</pubDate>
-      <guid>https://www.breitbart.com/entertainment/2026/04/11/hollywoods-worst-nightmare-indian-film-studios-rapidly-adopt-ai-to-slash-costs-production-time-by-75-80/</guid>
-    </item>
-    <item>
-      <title>spyllm 0.3.2</title>
-      <link>https://pypi.org/project/spyllm/0.3.2/</link>
-      <description>The spyllm 0.3.2 update introduces framework-agnostic agent observability and LLM tracing, supporting various AI platforms. This enhancement aims to improve the monitoring and tracing of AI agents.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:10:06 +0000</pubDate>
-      <guid>https://pypi.org/project/spyllm/0.3.2/</guid>
-    </item>
-    <item>
-      <title>xAI exodus: Why cofounders left and Musk’s comeback plan</title>
-      <link>https://economictimes.indiatimes.com/tech/technology/xai-exodus-why-cofounders-left-and-musks-comeback-plan/articleshow/130196155.cms</link>
-      <description>xAI is experiencing significant cofounder departures amid internal restructuring, raising questions about the company's future. Elon Musk remains optimistic about rebuilding, but the reasons for the exits are under scrutiny.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:09:10 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/technology/xai-exodus-why-cofounders-left-and-musks-comeback-plan/articleshow/130196155.cms</guid>
-    </item>
-    <item>
-      <title>spyllm 0.3.1</title>
-      <link>https://pypi.org/project/spyllm/0.3.1/</link>
-      <description>The spyllm 0.3.1 version offers similar features to 0.3.2, focusing on framework-agnostic agent observability and LLM tracing. This version also supports multiple AI platforms, enhancing usability.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 11 Apr 2026 17:07:36 +0000</pubDate>
-      <guid>https://pypi.org/project/spyllm/0.3.1/</guid>
-    </item>
-    <item>
-      <title>How SoundHound AI (SOUN) Is Expanding Its Agentic AI Platform Across New Verticals</title>
-      <link>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8d1724f0-e7ec-47bb-ab38-8cce7639f893</link>
-      <description>SoundHound AI is expanding its agentic AI platform into new verticals, aiming to broaden its market reach and applications. This expansion reflects the growing demand for AI solutions across various industries.</description>
-      <category>AI Foundry</category>
-      <pubDate>Sat, 11 Apr 2026 17:06:52 +0000</pubDate>
-      <guid>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8d1724f0-e7ec-47bb-ab38-8cce7639f893</guid>
-    </item>
-    <item>
-      <title>Show HN: MarkitMe, Turn Anything into Markdown</title>
-      <link>https://github.com/Luthiraa/markitme</link>
-      <description>MarkitMe is a new tool that allows users to convert any content into Markdown format easily. This could enhance productivity for developers and writers who prefer Markdown for documentation.</description>
-      <category>Mistral</category>
-      <pubDate>Sat, 11 Apr 2026 17:06:15 +0000</pubDate>
-      <guid>https://github.com/Luthiraa/markitme</guid>
-    </item>
-    <item>
-      <title>$1.6 billion Ether Machine SPAC deal collapses over unfavorable market</title>
-      <link>https://www.coindesk.com/business/2026/04/11/usd1-6-billion-ether-machine-spac-deal-collapses-over-unfavorable-market</link>
-      <description>The $1.6 billion SPAC deal for Ether Machine has collapsed due to unfavorable market conditions, impacting its plans for expansion. This reflects the volatility in the crypto market.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 11 Apr 2026 16:58:59 +0000</pubDate>
-      <guid>https://www.coindesk.com/business/2026/04/11/usd1-6-billion-ether-machine-spac-deal-collapses-over-unfavorable-market</guid>
-    </item>
-    <item>
-      <title>qualito 0.1.4</title>
-      <link>https://pypi.org/project/qualito/0.1.4/</link>
-      <description>Qualito 0.1.4 has been released, providing quality metrics for AI-assisted development to help improve Claude Code sessions. This tool aims to enhance the reliability of AI outputs.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 11 Apr 2026 16:53:50 +0000</pubDate>
-      <guid>https://pypi.org/project/qualito/0.1.4/</guid>
-    </item>
-    <item>
-      <title>omnipose-viewer added to PyPI</title>
-      <link>https://pypi.org/project/omnipose-viewer/</link>
-      <description>Omnipose-viewer has been added to PyPI, offering a browser-based GUI for cell segmentation. This tool can facilitate research in biological sciences by simplifying data visualization.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 11 Apr 2026 16:45:25 +0000</pubDate>
-      <guid>https://pypi.org/project/omnipose-viewer/</guid>
-    </item>
-    <item>
-      <title>Artemis II splashdown captures nationwide attention</title>
-      <link>https://www.npr.org/2026/04/11/nx-s1-5781820/artemis-ii-splashdown-captures-nationwide-attention</link>
-      <description>The splashdown of Artemis II captured nationwide attention as fans watched the crew return to Earth. This event marks a significant milestone in NASA's Artemis program.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 11 Apr 2026 16:29:53 +0000</pubDate>
-      <guid>https://www.npr.org/2026/04/11/nx-s1-5781820/artemis-ii-splashdown-captures-nationwide-attention</guid>
-    </item>
-    <item>
-      <title>fapi-limiter added to PyPI</title>
-      <link>https://pypi.org/project/fapi-limiter/</link>
-      <description>Fapi-limiter has been released on PyPI, providing flexible rate limiting for FastAPI applications using pyrate-limiter. This can help developers manage API traffic effectively.</description>
+      <title>Show HN: I benchmarked MCP vs. CLI for browser automation. MCP wins by 25x</title>
+      <link>https://github.com/HKUDS/CLI-Anything/pull/212</link>
+      <description>A developer benchmarked MCP against CLI for browser automation, finding MCP to be 25 times faster. This new tool enhances native Safari automation on macOS without needing headless Chrome or extensions.</description>
       <category>GitHub Copilot</category>
-      <pubDate>Sat, 11 Apr 2026 16:07:46 +0000</pubDate>
-      <guid>https://pypi.org/project/fapi-limiter/</guid>
+      <pubDate>Sat, 11 Apr 2026 23:29:38 +0000</pubDate>
+      <guid>https://github.com/HKUDS/CLI-Anything/pull/212</guid>
     </item>
     <item>
-      <title>gptperoz added to PyPI</title>
-      <link>https://pypi.org/project/gptperoz/</link>
-      <description>Gptperoz has been introduced on PyPI, allowing users to train AI models in just three lines of code, simplifying the process for developers. This tool aims to make AI training more accessible.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 11 Apr 2026 15:55:03 +0000</pubDate>
-      <guid>https://pypi.org/project/gptperoz/</guid>
+      <title>spyder-ai-chat 0.8.1</title>
+      <link>https://pypi.org/project/spyder-ai-chat/0.8.1/</link>
+      <description>The release of spyder-ai-chat 0.8.1 introduces an OpenAI-compatible AI chat pane and FIM completion for Spyder 6. This update enhances the functionality of the Spyder IDE for AI developers.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 23:23:40 +0000</pubDate>
+      <guid>https://pypi.org/project/spyder-ai-chat/0.8.1/</guid>
     </item>
     <item>
-      <title>While the Stock Market Was Rallying, Palantir Stock Sold Off. Should You Buy the Dip in PLTR?</title>
-      <link>https://www.barchart.com/story/news/1258008/while-the-stock-market-was-rallying-palantir-stock-sold-off-should-you-buy-the-dip-in-pltr</link>
-      <description>Palantir's stock dropped over 14% amid market rally due to ceasefire news, raising questions about its future performance. Investors are considering if this dip presents a buying opportunity.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 11 Apr 2026 15:30:02 +0000</pubDate>
-      <guid>https://www.barchart.com/story/news/1258008/while-the-stock-market-was-rallying-palantir-stock-sold-off-should-you-buy-the-dip-in-pltr</guid>
+      <title>wrg-devguard 0.1.0</title>
+      <link>https://pypi.org/project/wrg-devguard/0.1.0/</link>
+      <description>wrg-devguard 0.1.0 provides developer-focused AI safety checks, including prompt-policy linting and secret scanning. This tool aims to enhance security in AI development workflows.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 11 Apr 2026 23:22:32 +0000</pubDate>
+      <guid>https://pypi.org/project/wrg-devguard/0.1.0/</guid>
     </item>
     <item>
-      <title>Galaxy Z Fold 8 and more: Launch date for three Samsung foldables leaked</title>
-      <link>https://www.notebookcheck.net/Galaxy-Z-Fold-8-and-more-Launch-date-for-three-Samsung-foldables-leaked.1271430.0.html</link>
-      <description>Leaked information suggests Samsung will launch three foldable devices, including the Galaxy Z Fold8 and Z Flip8, in summer. This could intensify competition in the foldable market.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 11 Apr 2026 15:29:00 +0000</pubDate>
-      <guid>https://www.notebookcheck.net/Galaxy-Z-Fold-8-and-more-Launch-date-for-three-Samsung-foldables-leaked.1271430.0.html</guid>
-    </item>
-    <item>
-      <title>How to Build Your Brand Guide in 30 Minutes Using ChatGPT, WhisperFlow, and Perplexity</title>
-      <link>https://www.asianefficiency.com/productivity/how-to-build-your-brand-guide-in-30-minutes/</link>
-      <description>A new guide outlines how to create a brand guide in 30 minutes using ChatGPT, WhisperFlow, and Perplexity, streamlining the branding process for founders. This approach can help startups establish their identity quickly.</description>
-      <category>Perplexity</category>
-      <pubDate>Sat, 11 Apr 2026 15:01:18 +0000</pubDate>
-      <guid>https://www.asianefficiency.com/productivity/how-to-build-your-brand-guide-in-30-minutes/</guid>
-    </item>
-    <item>
-      <title>In Memphis, Investors Benefit From AI Boom While the Public Bears Its Cos</title>
-      <link>https://truthout.org/articles/in-memphis-investors-benefit-from-ai-boom-while-the-public-bears-its-cos/</link>
-      <description>In Memphis, the construction of AI data centers benefits investors while local residents face negative impacts, highlighting a disconnect between economic gain and community costs.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 11 Apr 2026 14:57:55 +0000</pubDate>
-      <guid>https://truthout.org/articles/in-memphis-investors-benefit-from-ai-boom-while-the-public-bears-its-cos/</guid>
-    </item>
-    <item>
-      <title>chromadose added to PyPI</title>
-      <link>https://pypi.org/project/chromadose/</link>
-      <description>Chromadose, a tool for modern multichannel radiochromic film dosimetry, has been added to the Python Package Index (PyPI), enhancing accessibility for developers.</description>
+      <title>wrap-torch2jax 0.7.2</title>
+      <link>https://pypi.org/project/wrap-torch2jax/0.7.2/</link>
+      <description>wrap-torch2jax 0.7.2 allows seamless integration of PyTorch with JAX, enabling no-copy calls under various execution modes. This package enhances flexibility for developers using both frameworks.</description>
       <category>Meta</category>
-      <pubDate>Sat, 11 Apr 2026 14:51:07 +0000</pubDate>
-      <guid>https://pypi.org/project/chromadose/</guid>
+      <pubDate>Sat, 11 Apr 2026 23:17:33 +0000</pubDate>
+      <guid>https://pypi.org/project/wrap-torch2jax/0.7.2/</guid>
     </item>
     <item>
-      <title>Trump’s World Liberty Financial Makes FTX-esque Move, Borrows Against Its Own Crypto Token</title>
-      <link>https://gizmodo.com/trumps-world-liberty-financial-makes-ftx-esque-move-borrows-against-its-own-crypto-token-2000745326</link>
-      <description>Trump’s World Liberty Financial is borrowing against its own crypto token, drawing comparisons to FTX's controversial practices, but with more transparency.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 11 Apr 2026 14:47:52 +0000</pubDate>
-      <guid>https://gizmodo.com/trumps-world-liberty-financial-makes-ftx-esque-move-borrows-against-its-own-crypto-token-2000745326</guid>
+      <title>dynabatch 0.2.2</title>
+      <link>https://pypi.org/project/dynabatch/0.2.2/</link>
+      <description>dynabatch 0.2.2 introduces a PyTorch DataLoader that dynamically adjusts batch sizes based on a pre-trained GPU memory regressor. This innovation optimizes resource usage during model training.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 11 Apr 2026 22:21:41 +0000</pubDate>
+      <guid>https://pypi.org/project/dynabatch/0.2.2/</guid>
     </item>
     <item>
-      <title>How Salesforce and ServiceNow are squaring off in the battle for the helpdesk</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/11/salesforce_vs_servicenow_itsm_battle/</link>
-      <description>Salesforce and ServiceNow are competing for dominance in the helpdesk market, with Salesforce focusing on user engagement and ServiceNow on AI governance.</description>
+      <title>‘Big Short’ Michael Burry sends signal on Nvidia stock</title>
+      <link>https://www.thestreet.com/investing/stocks/big-short-michael-burry-sends-signal-on-nvidia-stock</link>
+      <description>Investor Michael Burry has expressed a bearish outlook on Nvidia stock, making his stance public through a Substack post. This signals potential concerns about Nvidia's future performance.</description>
       <category>Top Stories</category>
-      <pubDate>Sat, 11 Apr 2026 14:45:13 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/11/salesforce_vs_servicenow_itsm_battle/</guid>
+      <pubDate>Sat, 11 Apr 2026 22:07:00 +0000</pubDate>
+      <guid>https://www.thestreet.com/investing/stocks/big-short-michael-burry-sends-signal-on-nvidia-stock</guid>
     </item>
     <item>
-      <title>Best Laptops 2026: Our benchmarked picks for productivity, portability, and battery life</title>
-      <link>https://www.tomshardware.com/laptops/best-laptops</link>
-      <description>A review of the best laptops for 2026 emphasizes performance, screen quality, and battery life, providing consumers with informed choices for productivity.</description>
-      <category>M365 Copilot</category>
-      <pubDate>Sat, 11 Apr 2026 14:35:03 +0000</pubDate>
-      <guid>https://www.tomshardware.com/laptops/best-laptops</guid>
+      <title>Trillion Dollar Robot Under Investigation: New 2026 Report Highlights Nvidia AI Expansion, Autonomous Trucking Breakthroughs, and Rapid Expansion of Robotics Infrastructure</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/11/3272128/0/en/Trillion-Dollar-Robot-Under-Investigation-New-2026-Report-Highlights-Nvidia-AI-Expansion-Autonomous-Trucking-Breakthroughs-and-Rapid-Expansion-of-Robotics-Infrastructure.html</link>
+      <description>A new report predicts significant growth in AI robotics, particularly in autonomous trucking, highlighting Nvidia's role in this expansion. This trend reflects increasing demand for advanced robotics infrastructure.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 11 Apr 2026 22:02:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/11/3272128/0/en/Trillion-Dollar-Robot-Under-Investigation-New-2026-Report-Highlights-Nvidia-AI-Expansion-Autonomous-Trucking-Breakthroughs-and-Rapid-Expansion-of-Robotics-Infrastructure.html</guid>
     </item>
     <item>
-      <title>Anthony Scaramucci Says He Owns SpaceX Stock And Won't Miss Out On The IPO Despite Elon Musk's 'Cult Of Personality' Premium</title>
-      <link>https://finance.yahoo.com/markets/stocks/articles/anthony-scaramucci-says-owns-spacex-143105685.html</link>
-      <description>Anthony Scaramucci plans to invest in SpaceX's upcoming IPO, acknowledging the influence of Elon Musk's personal brand on the company's value.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 11 Apr 2026 14:31:05 +0000</pubDate>
-      <guid>https://finance.yahoo.com/markets/stocks/articles/anthony-scaramucci-says-owns-spacex-143105685.html</guid>
+      <title>Evalution 0.0.3</title>
+      <link>https://pypi.org/project/evalution/0.0.3/</link>
+      <description>Evalution 0.0.3 is a new tool for evaluating modern LLM models, compatible with various frameworks like Transformers and OpenAI. This tool aims to streamline model assessment processes.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 21:50:15 +0000</pubDate>
+      <guid>https://pypi.org/project/evalution/0.0.3/</guid>
     </item>
     <item>
-      <title>bernstein 1.6.5</title>
-      <link>https://pypi.org/project/bernstein/1.6.5/</link>
-      <description>Bernstein 1.6.5 introduces declarative agent orchestration aimed at improving efficiency for engineering teams.</description>
-      <category>Copilot Studio</category>
-      <pubDate>Sat, 11 Apr 2026 14:19:40 +0000</pubDate>
-      <guid>https://pypi.org/project/bernstein/1.6.5/</guid>
+      <title>langchain-task-steering 0.1.5</title>
+      <link>https://pypi.org/project/langchain-task-steering/0.1.5/</link>
+      <description>langchain-task-steering 0.1.5 introduces middleware for LangChain v1 agents, enabling ordered task pipelines and enhanced validation. This update aims to improve task management in AI applications.</description>
+      <category>Open Source</category>
+      <pubDate>Sat, 11 Apr 2026 21:46:06 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-task-steering/0.1.5/</guid>
     </item>
     <item>
-      <title>The Genesis revitalizing U.S. scientific research</title>
-      <link>https://www.wnd.com/2026/04/genesis-revitalizing-u-s-scientific-research/</link>
-      <description>The Genesis initiative is revitalizing U.S. scientific research, promising significant advancements in various fields.</description>
-      <category>Microsoft</category>
-      <pubDate>Sat, 11 Apr 2026 14:17:33 +0000</pubDate>
-      <guid>https://www.wnd.com/2026/04/genesis-revitalizing-u-s-scientific-research/</guid>
+      <title>neural-trees added to PyPI</title>
+      <link>https://pypi.org/project/neural-trees/</link>
+      <description>The 'neural-trees' package has been added to PyPI, featuring algorithms from Prof. Dr. Ethem Alpaydın's research and ML textbook. This addition enhances the resources available for machine learning practitioners.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 11 Apr 2026 21:41:07 +0000</pubDate>
+      <guid>https://pypi.org/project/neural-trees/</guid>
     </item>
     <item>
-      <title>If You Make Fart Music, ChatGPT Will Be the Most Supportive Girlfriend You Could Ask For</title>
-      <link>https://gizmodo.com/if-you-make-fart-music-chatgpt-will-be-the-most-supportive-girlfriend-you-could-ask-for-2000745058</link>
-      <description>ChatGPT provides enthusiastic support for creative projects, even humorously engaging with unconventional content like fart music, showcasing its versatility.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 11 Apr 2026 14:14:04 +0000</pubDate>
-      <guid>https://gizmodo.com/if-you-make-fart-music-chatgpt-will-be-the-most-supportive-girlfriend-you-could-ask-for-2000745058</guid>
+      <title>Democratic AI to serve the public – OneProject.org</title>
+      <link>https://oneproject.org/how-to-make-ai-serve-the-public/</link>
+      <description>OneProject.org discusses the need for public governance in AI systems, emphasizing the importance of democratic oversight in shaping technology that impacts daily life. This perspective aims to ensure AI serves the public good.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 21:35:12 +0000</pubDate>
+      <guid>https://oneproject.org/how-to-make-ai-serve-the-public/</guid>
     </item>
     <item>
-      <title>HIVE Digital (HIVE) Betting Big on AI Data Centers</title>
-      <link>https://finance.yahoo.com/sectors/technology/articles/hive-digital-hive-betting-big-140606035.html</link>
-      <description>HIVE Digital Technologies is heavily investing in AI data centers, positioning itself as a leading player in the software penny stock market.</description>
+      <title>subcap added to PyPI</title>
+      <link>https://pypi.org/project/subcap/</link>
+      <description>The 'subcap' package has been added to PyPI, allowing users to burn precisely-timed captions into videos using forced alignment techniques. This tool is beneficial for video accessibility and content creation.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 21:11:09 +0000</pubDate>
+      <guid>https://pypi.org/project/subcap/</guid>
+    </item>
+    <item>
+      <title>synth-wiki added to PyPI</title>
+      <link>https://pypi.org/project/synth-wiki/</link>
+      <description>The 'synth-wiki' package is now available on PyPI, enabling the synthesis of Wikipedia-style articles through LLM-powered research and tree search methods. This innovation could streamline content generation.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 21:06:29 +0000</pubDate>
+      <guid>https://pypi.org/project/synth-wiki/</guid>
+    </item>
+    <item>
+      <title>txtcaptcha added to PyPI</title>
+      <link>https://pypi.org/project/txtcaptcha/</link>
+      <description>The 'txtcaptcha' package has been added to PyPI, designed for reading, annotating, training, and decrypting text captchas using a CRNN+CTC model. This tool can enhance security measures in AI applications.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 11 Apr 2026 20:54:32 +0000</pubDate>
+      <guid>https://pypi.org/project/txtcaptcha/</guid>
+    </item>
+    <item>
+      <title>evalview 0.6.2</title>
+      <link>https://pypi.org/project/evalview/0.6.2/</link>
+      <description>Evalview 0.6.2 has been released as an open-source framework for testing and regression detection in AI agents. It supports various platforms, facilitating integration and ensuring reliability in AI development.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 20:29:27 +0000</pubDate>
+      <guid>https://pypi.org/project/evalview/0.6.2/</guid>
+    </item>
+    <item>
+      <title>How Citations Ruined Science.</title>
+      <link>https://languagehat.com/how-citations-ruined-science/</link>
+      <description>David Oks’s essay critiques the role of citations in science, suggesting they may hinder rather than help scientific progress. The discussion invites reflection on the current academic practices.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 11 Apr 2026 20:27:53 +0000</pubDate>
+      <guid>https://languagehat.com/how-citations-ruined-science/</guid>
+    </item>
+    <item>
+      <title>torchbridge-ml 0.5.92</title>
+      <link>https://pypi.org/project/torchbridge-ml/0.5.92/</link>
+      <description>The 'torchbridge-ml' package version 0.5.92 has been released, offering cross-backend validation and configuration intelligence for PyTorch across various hardware platforms. This enhances compatibility and performance in AI projects.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 11 Apr 2026 20:26:29 +0000</pubDate>
+      <guid>https://pypi.org/project/torchbridge-ml/0.5.92/</guid>
+    </item>
+    <item>
+      <title>hypertensor 1.0.1</title>
+      <link>https://pypi.org/project/hypertensor/1.0.1/</link>
+      <description>Hypertensor 1.0.1 has been released, featuring per-weight precision and CUDA kernels for PyTorch. This update aims to enhance computational efficiency in machine learning tasks.</description>
       <category>NVIDIA</category>
-      <pubDate>Sat, 11 Apr 2026 14:06:06 +0000</pubDate>
-      <guid>https://finance.yahoo.com/sectors/technology/articles/hive-digital-hive-betting-big-140606035.html</guid>
+      <pubDate>Sat, 11 Apr 2026 20:21:30 +0000</pubDate>
+      <guid>https://pypi.org/project/hypertensor/1.0.1/</guid>
+    </item>
+    <item>
+      <title>hypertensor 1.0.0</title>
+      <link>https://pypi.org/project/hypertensor/1.0.0/</link>
+      <description>Hypertensor 1.0.0 has also been released, providing similar features as version 1.0.1, focusing on per-weight precision and CUDA kernels for PyTorch. This supports enhanced performance in AI computations.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 11 Apr 2026 19:54:31 +0000</pubDate>
+      <guid>https://pypi.org/project/hypertensor/1.0.0/</guid>
+    </item>
+    <item>
+      <title>hypertensor added to PyPI</title>
+      <link>https://pypi.org/project/hypertensor/</link>
+      <description>Hypertensor has been added to PyPI, introducing per-weight precision and CUDA kernels for PyTorch, enhancing performance for machine learning tasks. This addition is significant for developers looking to optimize their models.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 11 Apr 2026 19:54:31 +0000</pubDate>
+      <guid>https://pypi.org/project/hypertensor/</guid>
+    </item>
+    <item>
+      <title>WindowTop Pro 5.31.6</title>
+      <link>https://post.rlsbb.to/windowtop-pro-5-31-6/</link>
+      <description>WindowTop Pro 5.31.6 has been released, allowing users to keep windows always on top and utilize features like Picture-In-Picture mode and dark mode for improved productivity. This update is aimed at enhancing user experience with multitasking.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 11 Apr 2026 19:53:00 +0000</pubDate>
+      <guid>https://post.rlsbb.to/windowtop-pro-5-31-6/</guid>
+    </item>
+    <item>
+      <title>langchain-saudi-gov added to PyPI</title>
+      <link>https://pypi.org/project/langchain-saudi-gov/</link>
+      <description>The LangChain toolkit for the Saudi Arabian government has been added to PyPI, facilitating the integration of public APIs. This toolkit aims to streamline governmental processes and improve public service delivery.</description>
+      <category>Open Source</category>
+      <pubDate>Sat, 11 Apr 2026 19:52:29 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-saudi-gov/</guid>
+    </item>
+    <item>
+      <title>langchain-saudi-gov 0.1.0</title>
+      <link>https://pypi.org/project/langchain-saudi-gov/0.1.0/</link>
+      <description>LangChain toolkit version 0.1.0 has been released for the Saudi Arabian government, providing essential tools for working with public APIs. This release is crucial for enhancing governmental digital infrastructure.</description>
+      <category>Open Source</category>
+      <pubDate>Sat, 11 Apr 2026 19:52:29 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-saudi-gov/0.1.0/</guid>
+    </item>
+    <item>
+      <title>15-inch M5 MacBook Air 512GB Is $150 Off</title>
+      <link>https://www.ilounge.com/news/daily-deals/15-inch-m5-macbook-air-512gb-is-150-off</link>
+      <description>The 15-inch M5 MacBook Air with 512GB storage is now available at a $150 discount, featuring the next-generation M5 chip and built-in Neural Accelerators for enhanced AI performance. This makes it a strong contender for users needing powerful computing.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 11 Apr 2026 19:39:50 +0000</pubDate>
+      <guid>https://www.ilounge.com/news/daily-deals/15-inch-m5-macbook-air-512gb-is-150-off</guid>
+    </item>
+    <item>
+      <title>Foldable iPhone Held Back Due to Snags in Manufacturing</title>
+      <link>https://www.ilounge.com/news/iphone/foldable-iphone-held-back-due-to-snags-in-manufacturing</link>
+      <description>The launch of the foldable iPhone is delayed due to unresolved manufacturing negotiations and material choices for the hinge. This anticipated device is expected to offer a unique book-style design, but its release timeline remains uncertain.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sat, 11 Apr 2026 19:32:45 +0000</pubDate>
+      <guid>https://www.ilounge.com/news/iphone/foldable-iphone-held-back-due-to-snags-in-manufacturing</guid>
+    </item>
+    <item>
+      <title>Indie App Spotlight: ‘PackGoat’ intelligently helps you pack for trips in an easy manner</title>
+      <link>https://9to5mac.com/2026/04/11/indie-app-spotlight-packgoat-trip-planner-tool/</link>
+      <description>The Indie App Spotlight features 'PackGoat', an app designed to simplify packing for trips by intelligently organizing items. This app aims to alleviate the stress of travel preparation for users.</description>
+      <category>Apple</category>
+      <pubDate>Sat, 11 Apr 2026 19:30:00 +0000</pubDate>
+      <guid>https://9to5mac.com/2026/04/11/indie-app-spotlight-packgoat-trip-planner-tool/</guid>
+    </item>
+    <item>
+      <title>Musk’s SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI</title>
+      <link>https://www.coindesk.com/markets/2026/04/11/musk-s-spacex-holds-usd603-million-in-bitcoin-despite-usd5-billion-loss-stemming-from-xai</link>
+      <description>SpaceX holds $603 million in bitcoin despite a $5 billion loss related to xAI, as revealed by Arkham data. This financial shift highlights the volatility of investments and the challenges faced by the company ahead of its IPO.</description>
+      <category>xAI</category>
+      <pubDate>Sat, 11 Apr 2026 19:30:00 +0000</pubDate>
+      <guid>https://www.coindesk.com/markets/2026/04/11/musk-s-spacex-holds-usd603-million-in-bitcoin-despite-usd5-billion-loss-stemming-from-xai</guid>
+    </item>
+    <item>
+      <title>Apple Watch Ultra 3 is $99 off</title>
+      <link>https://www.ilounge.com/news/apple-watch/apple-watch-ultra-3-is-99-off</link>
+      <description>The Apple Watch Ultra 3 is currently $99 off, featuring a durable design suitable for extreme sports and aquatic activities. This watch is marketed as a top choice for adventure enthusiasts.</description>
+      <category>Apple</category>
+      <pubDate>Sat, 11 Apr 2026 19:29:00 +0000</pubDate>
+      <guid>https://www.ilounge.com/news/apple-watch/apple-watch-ultra-3-is-99-off</guid>
+    </item>
+    <item>
+      <title>starnus 1.0.1</title>
+      <link>https://pypi.org/project/starnus/1.0.1/</link>
+      <description>The Starnus AI platform has released version 1.0.1 of its official Python SDK and CLI, providing developers with tools to integrate and utilize its AI capabilities. This release is significant for those building applications on the Starnus platform.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 11 Apr 2026 19:26:30 +0000</pubDate>
+      <guid>https://pypi.org/project/starnus/1.0.1/</guid>
     </item>
   </channel>
 </rss>
