@@ -1,29 +1,20 @@
 <div class="welcome-strip">
   <div class="welcome-inner">
-    {{ partial "page-search.html" . }}
     <div class="welcome-text-block">
       <h1 class="welcome-title">Your AI & Cloud Learning Hub</h1>
       <p class="welcome-subtitle">AI & cloud video tutorials, tools & blogs for IT pros — made with ❤️ by Susanth Sutheesh</p>
     </div>
-    {{ $toolCount := 12 }}
-    {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
-    {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
-    {{ $videoSections := slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music" }}
-    {{ $videoCount := 0 }}
-    {{ range $videoSections }}
-      {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
-    {{ end }}
     <div class="welcome-stat-boxes">
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ $toolCount }}</span>
+        <span class="welcome-stat-num">12</span>
         <span class="welcome-stat-label">Tools</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ $videoCount }}</span>
+        <span class="welcome-stat-num">76</span>
         <span class="welcome-stat-label">Videos</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ $promptCount }}</span>
+        <span class="welcome-stat-num">{{ len (where .Site.RegularPages "Section" "prompts") }}</span>
         <span class="welcome-stat-label">Prompts</span>
       </div>
       <div class="welcome-stat-box">
@@ -31,10 +22,11 @@
         <span class="welcome-stat-label">Cert Guides</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ $blogCount }}</span>
+        <span class="welcome-stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
         <span class="welcome-stat-label">Articles</span>
       </div>
     </div>
+    {{ partial "page-search.html" . }}
     <div class="welcome-cta-row">
       <a href="/free-tools/" class="welcome-cta-btn">Explore the Toolkit →</a>
       <a href="/ai-hub/" class="welcome-cta-btn">Explore AI Video Hub →</a>

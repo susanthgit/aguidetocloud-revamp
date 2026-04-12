@@ -719,7 +719,7 @@ a:hover {
 }
 .welcome-subtitle {
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1.5;
   margin: 0;
 }
@@ -734,20 +734,20 @@ a:hover {
   align-items: center;
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
-  border: 2px solid rgba(102, 255, 255, 0.4);
-  background: rgba(102, 255, 255, 0.08);
-  color: var(--neon-cyan);
+  border: 2px solid rgba(255, 102, 255, 0.4);
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff66ff;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 0 12px rgba(102, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(255, 102, 255, 0.15);
 }
 .welcome-cta-btn:hover {
-  border-color: var(--neon-cyan);
-  background: rgba(102, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(102, 255, 255, 0.3);
+  border-color: #ff66ff;
+  background: rgba(255, 102, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.3);
   transform: translateY(-1px);
   text-shadow: none;
 }
@@ -757,6 +757,7 @@ a:hover {
   justify-content: center;
   gap: 0.8rem;
   margin-top: 1rem;
+  width: 100%;
 }
 .welcome-stat-box {
   display: flex;
@@ -766,7 +767,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
-  min-width: 80px;
+  flex: 1;
 }
 .welcome-stat-num {
   font-family: var(--font-heading);
@@ -957,7 +958,7 @@ a:hover {
   .welcome-text-block { text-align: center; }
   .welcome-channels { justify-content: center; }
   .welcome-stat-boxes { gap: 0.3rem; }
-  .welcome-stat-box { padding: 0.4rem 0.5rem; min-width: auto; }
+  .welcome-stat-box { padding: 0.4rem 0.3rem; }
   .welcome-stat-num { font-size: 1rem; }
   .welcome-stat-label { font-size: 0.55rem; }
   .welcome-cta-row { flex-wrap: wrap; }
@@ -999,7 +1000,7 @@ a:hover {
 .section-desc {
   width: 100%;
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
 @media (max-width: 768px) {
