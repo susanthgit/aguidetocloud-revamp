@@ -1,13 +1,103 @@
 {{ define "main" }}
 <section class="error-404">
   <div class="error-404-code">404</div>
-  <p class="error-404-msg">Oops! This page got lost in the cloud ☁️</p>
+  <p class="error-404-msg">Hmm, this page seems to have wandered off ☁️</p>
+
+  <div class="error-404-note">
+    <p><strong>Here's what probably happened:</strong> We've been busy revamping the site — reorganising content, adding new tools, and improving the experience for you. As part of that, some older links may have moved to new locations.</p>
+    <p>The good news? Everything is still here — it just might have a new address. Use the quick links below to jump straight to what you're looking for, or head to the homepage to explore what's new.</p>
+  </div>
+
+  <h2 class="error-404-section-title">🧰 Cloud & AI Toolkit</h2>
+  <div class="error-404-grid">
+    <a href="/prompts/" class="error-404-card" style="--card-accent: #A78BFA">
+      <span class="error-404-card-emoji">💡</span>
+      <span class="error-404-card-name">Prompt Library</span>
+    </a>
+    <a href="/prompt-polisher/" class="error-404-card" style="--card-accent: #FF6B6B">
+      <span class="error-404-card-emoji">✨</span>
+      <span class="error-404-card-name">Prompt Polisher</span>
+    </a>
+    <a href="/prompt-guide/" class="error-404-card" style="--card-accent: #84CC16">
+      <span class="error-404-card-emoji">📖</span>
+      <span class="error-404-card-name">Prompt Guide</span>
+    </a>
+    <a href="/copilot-readiness/" class="error-404-card" style="--card-accent: #3B82F6">
+      <span class="error-404-card-emoji">🎯</span>
+      <span class="error-404-card-name">Copilot Readiness</span>
+    </a>
+    <a href="/copilot-matrix/" class="error-404-card" style="--card-accent: #60A5FA">
+      <span class="error-404-card-emoji">📊</span>
+      <span class="error-404-card-name">Copilot Features</span>
+    </a>
+    <a href="/roi-calculator/" class="error-404-card" style="--card-accent: #14B8A6">
+      <span class="error-404-card-emoji">💰</span>
+      <span class="error-404-card-name">ROI Calculator</span>
+    </a>
+    <a href="/ai-news/" class="error-404-card" style="--card-accent: #ff66ff">
+      <span class="error-404-card-emoji">📰</span>
+      <span class="error-404-card-name">AI News</span>
+    </a>
+    <a href="/m365-roadmap/" class="error-404-card" style="--card-accent: #E5A00D">
+      <span class="error-404-card-emoji">📋</span>
+      <span class="error-404-card-name">M365 Roadmap</span>
+    </a>
+    <a href="/service-health/" class="error-404-card" style="--card-accent: #F97316">
+      <span class="error-404-card-emoji">🏥</span>
+      <span class="error-404-card-name">Service Health</span>
+    </a>
+    <a href="/deprecation-timeline/" class="error-404-card" style="--card-accent: #DC2626">
+      <span class="error-404-card-emoji">⏰</span>
+      <span class="error-404-card-name">Deprecation Timeline</span>
+    </a>
+    <a href="/ai-mapper/" class="error-404-card" style="--card-accent: #8B5CF6">
+      <span class="error-404-card-emoji">🗺️</span>
+      <span class="error-404-card-name">AI Service Mapper</span>
+    </a>
+    <a href="/ai-showdown/" class="error-404-card" style="--card-accent: #D4A853">
+      <span class="error-404-card-emoji">🥊</span>
+      <span class="error-404-card-name">AI SaaS Showdown</span>
+    </a>
+    <a href="/licensing/" class="error-404-card" style="--card-accent: #F43F5E">
+      <span class="error-404-card-emoji">📜</span>
+      <span class="error-404-card-name">Licensing Simplifier</span>
+    </a>
+    <a href="/ca-builder/" class="error-404-card" style="--card-accent: #7C3AED">
+      <span class="error-404-card-emoji">🛡️</span>
+      <span class="error-404-card-name">CA Policy Builder</span>
+    </a>
+    <a href="/ps-builder/" class="error-404-card" style="--card-accent: #4ADE80">
+      <span class="error-404-card-emoji">⚡</span>
+      <span class="error-404-card-name">PowerShell Builder</span>
+    </a>
+    <a href="/migration-planner/" class="error-404-card" style="--card-accent: #6366F1">
+      <span class="error-404-card-emoji">🚀</span>
+      <span class="error-404-card-name">Migration Planner</span>
+    </a>
+    <a href="/cert-tracker/" class="error-404-card" style="--card-accent: #10B981">
+      <span class="error-404-card-emoji">📖</span>
+      <span class="error-404-card-name">Cert Study Guides</span>
+    </a>
+  </div>
+
+  <h2 class="error-404-section-title">📺 Videos & Content</h2>
   <div class="error-404-links">
     <a href="/ai-hub/">🤖 AI Hub</a>
     <a href="/cloud-labs/">☁️ Cloud Labs</a>
     <a href="/certifications/">📜 Certifications</a>
+    <a href="/exam-qa/">❓ Exam Q&A</a>
+    <a href="/interview-prep/">🎤 Interview Prep</a>
+    <a href="/music/">🎵 Study Music</a>
+    <a href="/blog/">📝 Blog</a>
     <a href="/about/">👋 About</a>
   </div>
-  <a href="/" class="btn-primary">← Go Home</a>
+
+  <a href="/" class="btn-primary error-404-home">← Explore the Homepage</a>
+
+  <div class="error-404-help">
+    <h2 class="error-404-section-title">🤔 Still can't find what you're looking for?</h2>
+    <p>No worries — I'm here to help! Drop me a message below and I'll personally get back to you. Whether it's a broken link, a missing page, or just a question — I'd love to hear from you.</p>
+    <a href="/feedback/?category=bug-reports&subject=Broken%20link%20-%20404%20page" class="error-404-feedback-btn">💬 Let Me Know — I'll Help</a>
+  </div>
 </section>
 {{ end }}
