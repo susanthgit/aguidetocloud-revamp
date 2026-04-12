@@ -46,6 +46,30 @@
 {{ partial "tool-hero.html" (dict "title" "Copilot Feature Matrix" "subtitle" "See exactly what Microsoft 365 Copilot can do — across every app and license tier" "accent" "#60A5FA") }}
 
 <div class="cpmatrix-container">
+
+  {{/* ── TL;DR + How to Use (fix A, I) ── */}}
+  <div class="cpmatrix-intro">
+    <div class="cpmatrix-tldr">
+      <span class="cpmatrix-tldr-label">⚡ TL;DR</span>
+      <p>M365 Copilot has <strong id="cpmatrix-total-features">30+</strong> features across <strong>15 apps</strong>. Free users get basic chat. Copilot Chat (included) adds in-app access. M365 Copilot ($30/user/mo) unlocks everything — including your org data.</p>
+    </div>
+    <div class="cpmatrix-howto">
+      <div class="cpmatrix-howto-step"><span>1</span> Pick your licence below</div>
+      <div class="cpmatrix-howto-step"><span>2</span> See what you get</div>
+      <div class="cpmatrix-howto-step"><span>3</span> Compare what you're missing</div>
+    </div>
+  </div>
+
+  {{/* ── Quick Start Scenarios (fix B) ── */}}
+  <div class="cpmatrix-quickstart">
+    <label>I have:</label>
+    <button class="cpmatrix-qs-btn" data-licence="free">🆓 Free Copilot</button>
+    <button class="cpmatrix-qs-btn" data-licence="chat">💬 Copilot Chat (E3/E5)</button>
+    <button class="cpmatrix-qs-btn" data-licence="pro">⭐ Copilot Pro</button>
+    <button class="cpmatrix-qs-btn cpmatrix-qs-highlight" data-licence="m365">🚀 M365 Copilot</button>
+    <button class="cpmatrix-qs-btn cpmatrix-qs-clear" data-licence="all">Show All</button>
+  </div>
+
   {{/* ── Tab Navigation ── */}}
   <div class="cpmatrix-tabs" role="tablist" aria-label="Feature Matrix Views">
     <button class="cpmatrix-tab active" role="tab" aria-selected="true" data-tab="matrix">
@@ -99,12 +123,12 @@
       </select>
     </div>
 
-    {{/* Legend */}}
+    {{/* Legend — bigger with explanations (fix D) */}}
     <div class="cpmatrix-legend">
-      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-full"></span> Full</span>
-      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-partial"></span> Partial</span>
-      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-preview"></span> Preview</span>
-      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-none"></span> Not Available</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-full"></span> <strong>Full</strong> — works as expected</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-partial"></span> <strong>Partial</strong> — limited features</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-preview"></span> <strong>Preview</strong> — early access</span>
+      <span class="cpmatrix-legend-item"><span class="cpmatrix-dot cpmatrix-dot-none"></span> <strong>N/A</strong> — not available</span>
       <span class="cpmatrix-legend-item"><span class="cpmatrix-badge-new">NEW</span> Added recently</span>
     </div>
 

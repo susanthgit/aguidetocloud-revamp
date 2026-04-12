@@ -386,72 +386,125 @@
 
   function renderTiers() {
     const el = document.getElementById('cpmatrix-tiers');
-    let html = '';
 
-    D.tiers.forEach(tier => {
-      let fullCount = 0, partialCount = 0;
-      D.features.forEach(f => {
+    // Count features per tier
+    function countForTier(tierId) {
+      let full = 0, partial = 0, apps = new Set();
+      D.features.forEach(function (f) {
         if (!f.availability) return;
-        Object.values(f.availability).forEach(appData => {
-          const cell = appData[tier.id];
+        Object.keys(f.availability).forEach(function (appId) {
+          var cell = f.availability[appId][tierId];
           if (!cell) return;
-          const st = typeof cell === 'string' ? cell : cell.state;
-          if (st === 'full') fullCount++;
-          else if (st === 'partial' || st === 'preview') partialCount++;
+          var st = typeof cell === 'string' ? cell : cell.state;
+          if (st === 'full') { full++; apps.add(appId); }
+          else if (st === 'partial' || st === 'preview') { partial++; apps.add(appId); }
         });
       });
+      return { full: full, partial: partial, apps: apps.size };
+    }
 
-      const appCount = new Set();
-      D.features.forEach(f => {
-        if (!f.availability) return;
-        Object.keys(f.availability).forEach(appId => {
-          const cell = f.availability[appId][tier.id];
-          if (!cell) return;
-          const st = typeof cell === 'string' ? cell : cell.state;
-          if (st !== 'none') appCount.add(appId);
-        });
-      });
+    var consumerTiers = D.tiers.filter(function (t) { return t.id === 'free' || t.id === 'pro'; });
+    var enterpriseTiers = D.tiers.filter(function (t) { return t.id === 'chat' || t.id === 'm365'; });
 
-      const isRecommended = tier.id === 'm365';
+    // Build comparison table
+    var html = '';
 
-      html += `<div class="cpmatrix-tier-card${isRecommended ? ' cpmatrix-recommended' : ''}">`;
-      if (isRecommended) html += '<div class="cpmatrix-tier-badge">Most Complete</div>';
-      html += `<div class="cpmatrix-tier-emoji">${tier.emoji}</div>`;
-      html += `<div class="cpmatrix-tier-name">${tier.name}</div>`;
-      html += `<div class="cpmatrix-tier-price" style="color:${tier.colour}">${tier.price}</div>`;
-      html += `<div class="cpmatrix-tier-price-note">${escHtml(tier.price_note)}</div>`;
-      html += `<div class="cpmatrix-tier-desc">${escHtml(tier.description)}</div>`;
+    // Consumer section
+    html += '<div class="cpmatrix-tier-section cpmatrix-tier-consumer">';
+    html += '<div class="cpmatrix-tier-section-label"><span class="cpmatrix-tier-badge-type cpmatrix-badge-consumer">👤 Consumer</span> For individuals & personal use</div>';
+    html += '<div class="cpmatrix-tiers-compare">';
+    html += buildTierColumn(consumerTiers[0], countForTier(consumerTiers[0].id), false);
+    html += '<div class="cpmatrix-tier-vs">VS</div>';
+    html += buildTierColumn(consumerTiers[1], countForTier(consumerTiers[1].id), false);
+    html += '</div>';
 
-      html += '<ul class="cpmatrix-tier-highlights">';
-      tier.highlights.forEach(h => {
-        html += `<li>${escHtml(h)}</li>`;
-      });
-      html += '</ul>';
-
-      html += '<div class="cpmatrix-tier-stats">';
-      html += `<div class="cpmatrix-tier-stat"><span class="cpmatrix-tier-stat-num" style="color:${tier.colour}">${fullCount}</span><span class="cpmatrix-tier-stat-label">Full Features</span></div>`;
-      html += `<div class="cpmatrix-tier-stat"><span class="cpmatrix-tier-stat-num" style="color:var(--cp-partial)">${partialCount}</span><span class="cpmatrix-tier-stat-label">Partial</span></div>`;
-      html += `<div class="cpmatrix-tier-stat"><span class="cpmatrix-tier-stat-num">${appCount.size}</span><span class="cpmatrix-tier-stat-label">Apps</span></div>`;
-      html += '</div>';
-
-      html += `<div class="cpmatrix-tier-bestfor">💡 Best for: ${escHtml(tier.best_for)}</div>`;
-
-      if (tier.important_note) {
-        html += `<div class="cpmatrix-tier-note">⚠️ ${escHtml(tier.important_note)}</div>`;
-      }
-
-      // Cross-links
-      html += '<div class="cpmatrix-tier-links">';
-      html += `<a href="?tab=matrix&licence=${tier.id}" class="cpmatrix-tier-link" onclick="event.preventDefault();document.querySelector('.cpmatrix-tab[data-tab=matrix]').click();document.getElementById('cpmatrix-licence-filter').value='${tier.id}';document.getElementById('cpmatrix-licence-filter').dispatchEvent(new Event('change'));">📊 View features in matrix →</a>`;
-      if (tier.licensing_url) {
-        html += `<a href="${tier.licensing_url}" class="cpmatrix-tier-link">📜 Compare in Licensing Simplifier →</a>`;
-      }
-      html += '</div>';
-
+    // Feature comparison rows for consumer
+    html += '<div class="cpmatrix-compare-table">';
+    html += '<div class="cpmatrix-compare-header"><span>Feature</span><span>' + escHtml(consumerTiers[0].short_name) + '</span><span>' + escHtml(consumerTiers[1].short_name) + '</span></div>';
+    var consumerFeatures = getCompareFeatures(['free', 'pro']);
+    consumerFeatures.forEach(function (row) {
+      html += '<div class="cpmatrix-compare-row">';
+      html += '<span class="cpmatrix-compare-feat">' + escHtml(row.name) + '</span>';
+      html += cellBadge(row.states.free || 'none');
+      html += cellBadge(row.states.pro || 'none');
       html += '</div>';
     });
+    html += '</div></div>';
+
+    // Enterprise section
+    html += '<div class="cpmatrix-tier-section cpmatrix-tier-enterprise">';
+    html += '<div class="cpmatrix-tier-section-label"><span class="cpmatrix-tier-badge-type cpmatrix-badge-enterprise">🏢 Enterprise</span> For organisations & teams</div>';
+    html += '<div class="cpmatrix-tiers-compare">';
+    html += buildTierColumn(enterpriseTiers[0], countForTier(enterpriseTiers[0].id), false);
+    html += '<div class="cpmatrix-tier-vs">VS</div>';
+    html += buildTierColumn(enterpriseTiers[1], countForTier(enterpriseTiers[1].id), true);
+    html += '</div>';
+
+    html += '<div class="cpmatrix-compare-table">';
+    html += '<div class="cpmatrix-compare-header"><span>Feature</span><span>' + escHtml(enterpriseTiers[0].short_name) + '</span><span>' + escHtml(enterpriseTiers[1].short_name) + '</span></div>';
+    var entFeatures = getCompareFeatures(['chat', 'm365']);
+    entFeatures.forEach(function (row) {
+      html += '<div class="cpmatrix-compare-row">';
+      html += '<span class="cpmatrix-compare-feat">' + escHtml(row.name) + '</span>';
+      html += cellBadge(row.states.chat || 'none');
+      html += cellBadge(row.states.m365 || 'none');
+      html += '</div>';
+    });
+    html += '</div></div>';
 
     el.innerHTML = html;
+
+    function buildTierColumn(tier, counts, recommended) {
+      var h = '<div class="cpmatrix-tier-col' + (recommended ? ' cpmatrix-recommended' : '') + '" style="--tier-color:' + tier.colour + '">';
+      if (recommended) h += '<div class="cpmatrix-tier-badge">★ Most Complete</div>';
+      h += '<div class="cpmatrix-tier-emoji">' + tier.emoji + '</div>';
+      h += '<div class="cpmatrix-tier-name">' + escHtml(tier.name) + '</div>';
+      h += '<div class="cpmatrix-tier-price" style="color:' + tier.colour + '">' + tier.price + '</div>';
+      h += '<div class="cpmatrix-tier-price-note">' + escHtml(tier.price_note) + '</div>';
+      h += '<div class="cpmatrix-tier-mini-stats">';
+      h += '<span><strong style="color:var(--cp-full)">' + counts.full + '</strong> full</span>';
+      h += '<span><strong style="color:var(--cp-partial)">' + counts.partial + '</strong> partial</span>';
+      h += '<span><strong>' + counts.apps + '</strong> apps</span>';
+      h += '</div>';
+      h += '<div class="cpmatrix-tier-bestfor">💡 ' + escHtml(tier.best_for) + '</div>';
+      if (tier.important_note) h += '<div class="cpmatrix-tier-note">⚠️ ' + escHtml(tier.important_note) + '</div>';
+      h += '</div>';
+      return h;
+    }
+
+    function getCompareFeatures(tierIds) {
+      var rows = [];
+      var seen = {};
+      D.features.forEach(function (f) {
+        if (!f.availability) return;
+        var hasAny = false;
+        var states = {};
+        tierIds.forEach(function (tid) {
+          var best = 'none';
+          Object.values(f.availability).forEach(function (appData) {
+            var cell = appData[tid];
+            if (!cell) return;
+            var st = typeof cell === 'string' ? cell : cell.state;
+            if (st === 'full') best = 'full';
+            else if (st === 'partial' && best !== 'full') best = 'partial';
+            else if (st === 'preview' && best === 'none') best = 'preview';
+          });
+          states[tid] = best;
+          if (best !== 'none') hasAny = true;
+        });
+        if (hasAny && !seen[f.id]) {
+          seen[f.id] = true;
+          rows.push({ name: f.name, states: states });
+        }
+      });
+      return rows;
+    }
+
+    function cellBadge(state) {
+      var labels = { full: '✅', partial: '⚠️', preview: '🧪', none: '❌' };
+      var cls = 'cpmatrix-compare-cell cpmatrix-cell-' + state;
+      return '<span class="' + cls + '">' + (labels[state] || '❌') + '</span>';
+    }
   }
 
   // ═══════════════════════════════════════════════
@@ -509,6 +562,38 @@
   changeFilter.addEventListener('change', renderChangelog);
 
   // ═══════════════════════════════════════════════
+  // Quick Start Scenario Buttons (fix B)
+  // ═══════════════════════════════════════════════
+  document.querySelectorAll('.cpmatrix-qs-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var licence = btn.dataset.licence;
+      // Highlight active button
+      document.querySelectorAll('.cpmatrix-qs-btn').forEach(function (b) { b.classList.remove('active'); });
+      if (licence !== 'all') btn.classList.add('active');
+      // Switch to matrix tab and set licence filter
+      var matrixTab = document.querySelector('.cpmatrix-tab[data-tab="matrix"]');
+      if (matrixTab && !matrixTab.classList.contains('active')) matrixTab.click();
+      licenceFilter.value = licence;
+      licenceFilter.dispatchEvent(new Event('change'));
+    });
+  });
+
+  // ═══════════════════════════════════════════════
+  // Add count badges to quick filter buttons (fix G)
+  // ═══════════════════════════════════════════════
+  function updateQuickFilterCounts() {
+    var freeCount = D.features.filter(function (f) { return isFreeFeature(f); }).length;
+    var m365Count = D.features.filter(function (f) { return isM365Only(f); }).length;
+    var newCount = D.features.filter(function (f) { return isNew(f); }).length;
+    var freeBtn = document.querySelector('.cpmatrix-quick-btn[data-filter="free-only"]');
+    var m365Btn = document.querySelector('.cpmatrix-quick-btn[data-filter="m365-only"]');
+    var newBtn = document.querySelector('.cpmatrix-quick-btn[data-filter="new"]');
+    if (freeBtn) freeBtn.textContent = '🆓 Free (' + freeCount + ')';
+    if (m365Btn) m365Btn.textContent = '🚀 M365 Only (' + m365Count + ')';
+    if (newBtn) newBtn.textContent = '✨ New (' + newCount + ')';
+  }
+
+  // ═══════════════════════════════════════════════
   // Restore state from URL and render
   // ═══════════════════════════════════════════════
 
@@ -530,6 +615,7 @@
   renderMatrix();
   renderTiers();
   renderChangelog();
+  updateQuickFilterCounts();
 
   // ── Utilities ──
   function escHtml(str) {
