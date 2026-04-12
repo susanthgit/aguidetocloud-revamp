@@ -1,0 +1,105 @@
+# Toolkit Navigation — Ordered list for prev/next circular nav.
+# When adding a new tool, insert an entry in the desired position.
+# The partial `tool-prev-next.html` reads this automatically.
+
+[[tools]]
+url = "/prompts/"
+emoji = "💡"
+name = "Prompt Library"
+short = "Prompts"
+
+[[tools]]
+url = "/prompt-polisher/"
+emoji = "✨"
+name = "Prompt Polisher"
+short = "Polisher"
+
+[[tools]]
+url = "/prompt-guide/"
+emoji = "📖"
+name = "Prompt Guide"
+short = "Prompt Guide"
+
+[[tools]]
+url = "/copilot-readiness/"
+emoji = "🎯"
+name = "Copilot Readiness"
+short = "Readiness"
+
+[[tools]]
+url = "/copilot-matrix/"
+emoji = "📊"
+name = "Copilot Features"
+short = "Features"
+
+[[tools]]
+url = "/roi-calculator/"
+emoji = "💰"
+name = "ROI Calculator"
+short = "ROI"
+
+[[tools]]
+url = "/ai-news/"
+emoji = "📰"
+name = "AI News"
+short = "AI News"
+
+[[tools]]
+url = "/m365-roadmap/"
+emoji = "📋"
+name = "M365 Roadmap"
+short = "Roadmap"
+
+[[tools]]
+url = "/service-health/"
+emoji = "🏥"
+name = "Service Health"
+short = "Health"
+
+[[tools]]
+url = "/deprecation-timeline/"
+emoji = "⏰"
+name = "Deprecation Timeline"
+short = "Deprecations"
+
+[[tools]]
+url = "/ai-mapper/"
+emoji = "🗺️"
+name = "AI Service Mapper"
+short = "AI Mapper"
+
+[[tools]]
+url = "/ai-showdown/"
+emoji = "🥊"
+name = "AI SaaS Showdown"
+short = "Showdown"
+
+[[tools]]
+url = "/licensing/"
+emoji = "📜"
+name = "Licensing Simplifier"
+short = "Licensing"
+
+[[tools]]
+url = "/ca-builder/"
+emoji = "🛡️"
+name = "CA Policy Builder"
+short = "CA Builder"
+
+[[tools]]
+url = "/ps-builder/"
+emoji = "⚡"
+name = "PowerShell Builder"
+short = "PS Builder"
+
+[[tools]]
+url = "/migration-planner/"
+emoji = "🚀"
+name = "Migration Planner"
+short = "Migration"
+
+[[tools]]
+url = "/cert-tracker/"
+emoji = "📖"
+name = "Cert Study Guides"
+short = "Cert Guides"

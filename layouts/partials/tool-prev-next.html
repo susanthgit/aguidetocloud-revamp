@@ -1,0 +1,43 @@
+{{/*
+  tool-prev-next.html — Circular prev/next navigation between toolkit pages.
+  Reads tool order from data/toolkit_nav.toml.
+  Auto-detects current page from .RelPermalink.
+
+  Usage: {{ partial "tool-prev-next.html" . }}
+  Add new tools by editing data/toolkit_nav.toml — no template changes needed.
+*/}}
+
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+{{ $current := .RelPermalink }}
+{{ $count := len $tools }}
+{{ $idx := -1 }}
+
+{{/* Find index of current page */}}
+{{ range $i, $t := $tools }}
+  {{ if eq $current $t.url }}
+    {{ $idx = $i }}
+  {{ end }}
+{{ end }}
+
+{{/* Only render if current page is a known tool */}}
+{{ if ge $idx 0 }}
+  {{ $prevIdx := cond (eq $idx 0) (sub $count 1) (sub $idx 1) }}
+  {{ $nextIdx := cond (eq $idx (sub $count 1)) 0 (add $idx 1) }}
+  {{ $prev := index $tools $prevIdx }}
+  {{ $next := index $tools $nextIdx }}
+
+  <nav class="tool-pn" aria-label="Browse tools">
+    <a href="{{ $prev.url }}" class="tool-pn-link tool-pn-prev" title="{{ $prev.name }}">
+      <span class="tool-pn-arrow">←</span>
+      <span class="tool-pn-emoji">{{ $prev.emoji }}</span>
+      <span class="tool-pn-name">{{ $prev.name }}</span>
+      <span class="tool-pn-short">{{ $prev.short }}</span>
+    </a>
+    <a href="{{ $next.url }}" class="tool-pn-link tool-pn-next" title="{{ $next.name }}">
+      <span class="tool-pn-name">{{ $next.name }}</span>
+      <span class="tool-pn-short">{{ $next.short }}</span>
+      <span class="tool-pn-emoji">{{ $next.emoji }}</span>
+      <span class="tool-pn-arrow">→</span>
+    </a>
+  </nav>
+{{ end }}
