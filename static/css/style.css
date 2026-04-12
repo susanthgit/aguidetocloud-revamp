@@ -156,11 +156,11 @@ a:hover {
 .nav-links a:hover,
 .nav-links a.active,
 .nav-links a.nav-active {
-  color: var(--neon-cyan);
-  border-color: var(--neon-cyan);
-  background: rgba(0, 229, 255, 0.06);
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  color: #ff99ff;
+  border-color: #ff99ff;
+  background: rgba(255, 102, 255, 0.06);
+  box-shadow: 0 0 12px rgba(255, 102, 255, 0.15);
+  text-shadow: 0 0 10px rgba(255, 102, 255, 0.4);
 }
 .nav-dropdown-active > .dropdown-toggle {
   color: var(--neon-cyan);
@@ -218,8 +218,8 @@ a:hover {
   white-space: nowrap;
 }
 .dropdown-menu li a:hover {
-  background: rgba(0, 229, 255, 0.08);
-  color: var(--neon-cyan);
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff99ff;
   box-shadow: none;
   padding-left: 1.5rem;
 }
