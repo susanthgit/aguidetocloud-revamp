@@ -231,6 +231,53 @@
 .cab-wizard-step-btn--done { color: var(--cab-safe); border-color: rgba(16,185,129,0.3); }
 .cab-step-icon { font-size: 1rem; }
 .cab-step-name { white-space: nowrap; }
+/* #6: Mobile step label */
+.cab-wizard-mobile-label {
+  display: none; text-align: center; font-size: 0.85rem; color: var(--cab-accent);
+  font-weight: 600; margin-bottom: 0.5rem;
+}
+
+/* #7: Syntax highlighting */
+.cab-syn-comment { color: #6A9955; }
+.cab-syn-string { color: #CE9178; }
+.cab-syn-keyword { color: #569CD6; font-weight: 600; }
+.cab-syn-var { color: #9CDCFE; }
+.cab-syn-key { color: #9CDCFE; }
+
+/* #10: Next steps */
+.cab-next-steps {
+  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.88rem;
+}
+.cab-next-steps h4 { margin: 0 0 0.5rem; color: var(--cab-safe); }
+.cab-next-steps ol { margin: 0; padding-left: 1.25rem; }
+.cab-next-steps li { margin-bottom: 0.3rem; color: var(--cab-text); }
+.cab-next-steps code { background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 3px; font-size: 0.82rem; }
+
+/* #14: Import section */
+.cab-import-section { margin-top: 1rem; }
+
+/* #8: How many policies */
+.cab-how-many {
+  margin-top: 1.5rem; background: var(--cab-card-bg); border: 1px solid var(--cab-border);
+  border-radius: 12px;
+}
+.cab-how-many summary { padding: 1rem 1.25rem; cursor: pointer; color: #fff; font-size: 0.95rem; list-style: none; }
+.cab-how-many summary::-webkit-details-marker { display: none; }
+.cab-how-many summary::before { content: "▶ "; transition: 0.2s; display: inline-block; }
+.cab-how-many[open] summary::before, .cab-how-many details[open] > summary::before { transform: rotate(90deg); }
+.cab-how-many-content { padding: 0 1.25rem 1.25rem; }
+.cab-how-many-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.cab-how-many-table th { text-align: left; color: var(--cab-accent); padding: 0.5rem; border-bottom: 1px solid var(--cab-border); }
+.cab-how-many-table td { padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--cab-text); }
+
+/* #18: Content CTA */
+.cab-content-cta {
+  margin-top: 1.5rem; padding: 0.75rem 1.25rem; background: var(--cab-accent-dim);
+  border: 1px solid color-mix(in srgb, var(--cab-accent) 25%, transparent);
+  border-radius: 8px; font-size: 0.88rem; color: var(--cab-text);
+}
+.cab-content-cta a { color: var(--cab-accent); }
 
 /* ── Wizard ── */
 .cab-wizard {
@@ -467,8 +514,25 @@
   .cab-wizard-steps { gap: 0.15rem; }
   .cab-wizard-step-btn { min-width: 48px; padding: 0.3rem 0.4rem; }
   .cab-step-name { display: none; }
+  .cab-wizard-mobile-label { display: block; }
   .cab-quickstart { padding: 1rem; }
   .cab-quickstart h2 { font-size: 1rem; }
+  .cab-scenario-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* #11: Print CSS */
+@media print {
+  .cab-tabs, .cab-quickstart, .cab-filter-row, .cab-policy-card__actions,
+  .cab-review-actions, .cab-share-section, .cab-help-section, .cab-disclaimer,
+  .cab-content-cta, .cab-how-many, .cab-import-section, .cab-toast,
+  .cab-btn, nav, footer, .back-nav-link, .feedback-fab, .global-btt { display: none !important; }
+  .cab-page { max-width: 100%; padding: 0; }
+  .cab-policy-card { break-inside: avoid; border: 1px solid #ccc; margin-bottom: 0.5rem; }
+  .cab-zt-score-section { border: 1px solid #ccc; }
+  .cab-linter-item { border-left-width: 3px; }
+  body { background: #fff; color: #000; }
+  .cab-policy-card__name, .cab-linter-text strong, h3 { color: #000; }
+  .cab-policy-card__desc, .cab-detail-value, .cab-linter-text { color: #333; }
 }
 
 /* ── Reduced motion ── */
