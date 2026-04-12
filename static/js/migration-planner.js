@@ -238,14 +238,35 @@
 
   /* ---- Risk Filtering ---- */
   function filterRisks() {
+    // Map user answers to likelihood factor keys
+    const userFactors = new Set();
+    if (S.dataVolume === 'large' || S.dataVolume === 'massive') userFactors.add('large-data-volume');
+    if (S.customApps === 'many' || S.customApps === 'complex') userFactors.add('many-custom-apps');
+    if (S.experience === 'first') userFactors.add('first-migration');
+    if (S.compliance === 'regulated') userFactors.add('regulated-industry');
+    if (S.compliance === 'advanced' || S.compliance === 'regulated') userFactors.add('active-legal-holds');
+    if (S.userCount === 'large' || S.userCount === 'enterprise') userFactors.add('large-user-count');
+    if (S.multiGeo === 'multi' || S.multiGeo === 'residency') userFactors.add('multi-geo');
+    if (S.scenario === 'google-m365' || S.scenario === 'other-source') userFactors.add('google-source');
+    if (S.scenario === 'other-source') userFactors.add('other-source');
+    if (S.deadline === '1m' || S.deadline === '3m') userFactors.add('tight-deadline');
+
     S.risks = D.risks.filter(r => {
       if (r.scenarios && r.scenarios.length && !r.scenarios.includes(S.scenario)) return false;
       if (r.workloads && r.workloads.length && !r.workloads.some(w => S.workloads.includes(w))) return false;
       return true;
+    }).map(r => {
+      // Boost severity if likelihood factors match
+      let boosted = r.severity;
+      if (r.likelihood_factors && r.likelihood_factors.some(f => userFactors.has(f))) {
+        const sev = { low: 'medium', medium: 'high' };
+        boosted = sev[r.severity] || r.severity;
+      }
+      return { ...r, displaySeverity: boosted };
     });
-    // sort by severity
+
     const sev = { critical: 0, high: 1, medium: 2, low: 3 };
-    S.risks.sort((a, b) => (sev[a.severity] || 9) - (sev[b.severity] || 9));
+    S.risks.sort((a, b) => (sev[a.displaySeverity] || 9) - (sev[b.displaySeverity] || 9));
   }
 
   /* ---- Timeline Estimation ---- */
@@ -379,13 +400,30 @@
     const canNext = q.multi ? (S[q.id] || []).length > 0 : S[q.id] != null;
     const isLast = S.wizardStep === total - 1;
 
+    // Live preview — show provisional data after step 3
+    let livePreviewHtml = '';
+    if (S.wizardStep >= 3 && S.scenario && S.userCount) {
+      const prevScore = (SCORE_MAP.scenario[S.scenario] || 0) + (SCORE_MAP.userCount[S.userCount] || 0) +
+        (SCORE_MAP.dataVolume[S.dataVolume] || 0) + Math.min((S.workloads || []).length * 2, 15) +
+        (SCORE_MAP.customApps[S.customApps] || 0) + (SCORE_MAP.compliance[S.compliance] || 0) +
+        (SCORE_MAP.reason[S.reason] || 0) + (SCORE_MAP.experience[S.experience] || 0);
+      const prevTier = prevScore <= 25 ? '🟢 Simple' : prevScore <= 50 ? '🟡 Moderate' : prevScore <= 75 ? '🟠 Complex' : '🔴 Critical';
+      livePreviewHtml = `
+        <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:10px;padding:0.75rem 1rem;margin-bottom:1.5rem;display:flex;justify-content:space-around;text-align:center;flex-wrap:wrap;gap:0.5rem">
+          <div><div style="font-size:1.2rem;font-weight:800;color:var(--tool-accent)">${Math.min(prevScore, 100)}</div><div style="font-size:0.7rem;color:#888">Score so far</div></div>
+          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${prevTier}</div><div style="font-size:0.7rem;color:#888">Complexity</div></div>
+          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${(S.workloads || []).length}</div><div style="font-size:0.7rem;color:#888">Workloads</div></div>
+        </div>`;
+    }
+
     el.innerHTML = `
       <div class="migplan-wizard-progress">
-        <span class="migplan-wizard-step-label">Question ${S.wizardStep + 1} of ${total}</span>
+        <span class="migplan-wizard-step-label">Question ${S.wizardStep + 1} of ${total}${S.wizardStep === 0 ? ' · ⏱️ Takes ~2 minutes' : ''}</span>
         <div class="migplan-wizard-progress-bar">
           <div class="migplan-wizard-progress-fill" style="width:${progress}%"></div>
         </div>
       </div>
+      ${livePreviewHtml}
       <div class="migplan-question">${q.question}</div>
       <div class="migplan-question-tip"><span class="tip-icon">${q.tip}</span></div>
       <div class="migplan-options" role="listbox" aria-label="${q.question}">
@@ -413,6 +451,7 @@
         } else {
           S[q.id] = val;
         }
+        saveToStorage();
         renderWizard();
       });
     });
@@ -420,10 +459,10 @@
     // Nav handlers
     const backBtn = el.querySelector('#wizard-back');
     const nextBtn = el.querySelector('#wizard-next');
-    if (backBtn) backBtn.addEventListener('click', () => { S.wizardStep--; renderWizard(); });
+    if (backBtn) backBtn.addEventListener('click', () => { S.wizardStep--; saveToStorage(); renderWizard(); });
     if (nextBtn) nextBtn.addEventListener('click', () => {
       if (isLast) { finishWizard(); }
-      else { S.wizardStep++; renderWizard(); }
+      else { S.wizardStep++; saveToStorage(); renderWizard(); }
     });
   }
 
@@ -441,6 +480,7 @@
     renderTools();
     renderSummary();
     updateURL();
+    saveToStorage();
     if (window.clarity) window.clarity('event', 'migplan_wizard_complete');
   }
 
@@ -541,6 +581,9 @@
       const migrateHtml = w.migrates.slice(0, 4).map(m => `<li>✅ ${m}</li>`).join('');
       const noMigrateHtml = w.does_not_migrate.slice(0, 4).map(m => `<li>❌ ${m}</li>`).join('');
       const blockerHtml = w.common_blockers.slice(0, 3).map(b => `<li>⚠️ ${b}</li>`).join('');
+      const checklistHtml = (w.assessment_items || []).map(item =>
+        `<li style="padding:0.3rem 0">☐ <strong>${item.label}</strong><br><span style="font-size:0.75rem;color:#777">${item.tip}</span></li>`
+      ).join('');
 
       return `
         <div class="migplan-workload-card">
@@ -557,6 +600,10 @@
           </div>
           <button class="migplan-toggle-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Less detail':'▼ More detail'">▼ More detail</button>
           <div class="migplan-toggle-content">
+            <div style="margin-top:0.5rem">
+              <strong style="font-size:0.8rem;color:var(--tool-accent);">📋 Discovery Checklist:</strong>
+              <ul class="migplan-workload-items">${checklistHtml}</ul>
+            </div>
             <div style="margin-top:0.5rem">
               <strong style="font-size:0.8rem;color:#aaa;">What Doesn't Migrate:</strong>
               <ul class="migplan-workload-items">${noMigrateHtml}</ul>
@@ -635,8 +682,8 @@
       }).join('');
 
     const cardsHtml = S.risks.map(r => `
-      <div class="migplan-risk-card ${r.severity}" data-cat="${r.category}">
-        <div class="migplan-risk-severity ${r.severity}">${r.severity.toUpperCase()}</div>
+      <div class="migplan-risk-card ${r.displaySeverity}" data-cat="${r.category}">
+        <div class="migplan-risk-severity ${r.displaySeverity}">${r.displaySeverity.toUpperCase()}${r.displaySeverity !== r.severity ? ' <span style="font-size:0.65rem;opacity:0.6">(elevated)</span>' : ''}</div>
         <div class="migplan-risk-title">${r.title}</div>
         <div class="migplan-risk-desc">${r.description}</div>
         <div class="migplan-risk-mitigation">
@@ -672,11 +719,43 @@
     const el = document.getElementById('migplan-tools-content');
     if (!el || !S.wizardDone) return;
 
+    const sizeOrder = ['small', 'medium', 'large', 'enterprise'];
+    const userSizeKey = S.userCount || 'medium';
+
     const relevant = D.tools.filter(t => {
       if (t.scenarios && t.scenarios.length && !t.scenarios.includes(S.scenario)) return false;
       if (t.workloads && t.workloads.length && !t.workloads.some(w => S.workloads.includes(w))) return false;
       return true;
     });
+
+    // Estimate user count for cost calc
+    const estUsers = { tiny: 25, small: 250, medium: 2500, large: 25000, enterprise: 75000 }[S.userCount] || 1000;
+
+    // Cost estimate
+    const nativeTools = relevant.filter(t => t.type === 'native');
+    const thirdParty = relevant.filter(t => t.type === 'third-party');
+    const minCost = thirdParty.length > 0 ? Math.min(...thirdParty.map(t => t.cost_per_user || 0)) * estUsers : 0;
+    const maxCost = thirdParty.length > 0 ? Math.max(...thirdParty.map(t => t.cost_per_user || 0)) * estUsers : 0;
+    const costEstHtml = `
+      <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:1.25rem;margin-bottom:1.5rem">
+        <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.5rem">💰 Estimated Tool Costs (${estUsers.toLocaleString()} users)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center">
+          <div>
+            <div style="font-size:1.3rem;font-weight:800;color:#10B981">$0</div>
+            <div style="font-size:0.75rem;color:#888">Native tools only</div>
+          </div>
+          <div>
+            <div style="font-size:1.3rem;font-weight:800;color:var(--tool-accent)">$${(minCost).toLocaleString()}</div>
+            <div style="font-size:0.75rem;color:#888">Low estimate</div>
+          </div>
+          <div>
+            <div style="font-size:1.3rem;font-weight:800;color:#F97316">$${(maxCost).toLocaleString()}</div>
+            <div style="font-size:0.75rem;color:#888">High estimate</div>
+          </div>
+        </div>
+        <div style="font-size:0.75rem;color:#666;margin-top:0.5rem;text-align:center">Based on per-user tool pricing × estimated user count. Actual costs depend on licensing model.</div>
+      </div>
+    `;
 
     const cardsHtml = relevant.map(t => {
       const prosHtml = t.pros.slice(0, 3).map(p => `<li>${p}</li>`).join('');
@@ -710,6 +789,7 @@
     el.innerHTML = `
       <h2 class="migplan-section-title">🔧 Tool Recommendations</h2>
       <p class="migplan-section-subtitle">${relevant.length} tools matched to your scenario and workloads</p>
+      ${costEstHtml}
       <div class="migplan-tool-grid">${cardsHtml}</div>
     `;
   }
@@ -872,6 +952,7 @@
     S.wizardStep = 0;
     S.wizardDone = false;
     history.replaceState(null, '', location.pathname);
+    try { localStorage.removeItem(LS_KEY); } catch (e) {}
     switchTab('wizard');
     renderWizard();
     // Reset other panels to empty state
@@ -911,6 +992,41 @@
     }
   }
 
+  /* ---- localStorage Save/Resume ---- */
+  const LS_KEY = 'migplan_state';
+  const LS_HISTORY = 'migplan_history';
+
+  function saveToStorage() {
+    const data = {
+      scenario: S.scenario, reason: S.reason, userCount: S.userCount,
+      workloads: S.workloads, dataVolume: S.dataVolume, largestMailbox: S.largestMailbox,
+      customApps: S.customApps, compliance: S.compliance, deadline: S.deadline,
+      multiGeo: S.multiGeo, directory: S.directory, experience: S.experience,
+      wizardStep: S.wizardStep, wizardDone: S.wizardDone,
+      savedAt: new Date().toISOString()
+    };
+    try { localStorage.setItem(LS_KEY, JSON.stringify(data)); } catch (e) {}
+    // Save to history if wizard is complete
+    if (S.wizardDone) {
+      try {
+        const history = JSON.parse(localStorage.getItem(LS_HISTORY) || '[]');
+        history.unshift({ ...data, complexityScore: S.complexityScore, complexityTier: S.complexityTier });
+        localStorage.setItem(LS_HISTORY, JSON.stringify(history.slice(0, 5)));
+      } catch (e) {}
+    }
+  }
+
+  function loadFromStorage() {
+    // Don't load if URL has params (URL takes priority)
+    if (location.search.includes('scenario=')) return false;
+    try {
+      const data = JSON.parse(localStorage.getItem(LS_KEY));
+      if (!data || !data.scenario) return false;
+      Object.keys(data).forEach(k => { if (k in S) S[k] = data[k]; });
+      return true;
+    } catch (e) { return false; }
+  }
+
   /* ---- Init ---- */
   function init() {
     // Tab click handlers
@@ -918,7 +1034,26 @@
       tab.addEventListener('click', () => switchTab(tab.dataset.tab));
     });
     document.addEventListener('keydown', handleKeyboard);
+
+    // Load state: URL params > localStorage > fresh start
     loadFromURL();
+    if (!S.wizardDone) {
+      const restored = loadFromStorage();
+      if (restored && S.wizardDone) {
+        // Re-run calculations
+        calcComplexity();
+        S.approach = getApproach();
+        scoreWorkloads();
+        filterRisks();
+        estimateTimeline();
+        renderResults();
+        renderWorkloads();
+        renderTimeline();
+        renderRisks();
+        renderTools();
+        renderSummary();
+      }
+    }
     renderWizard();
   }
 

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/ps-builder.css?v={{ site.Params.cache_version }}">
 
-{{/* ── SEO: JSON-LD Structured Data ── */}}
+{{/* ── SEO: WebApplication Schema (FAQPage handled by global seo-jsonld.html) ── */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,33 +24,19 @@
 }
 </script>
 
-{{/* ── FAQPage Schema ── */}}
-{{ with .Params.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $faq := . }}{{ if $i }},{{ end }}
-    {
-      "@type": "Question",
-      "name": {{ $faq.question | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ $faq.answer | jsonify }}
-      }
-    }
-    {{ end }}
-  ]
-}
-</script>
-{{ end }}
-
 <div class="psb-page">
 
   {{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "Build M365, Azure & Windows admin commands visually. Select a task or cmdlet → fill parameters → get a ready-to-run command. Free, no sign-up, works offline." "accent" "#4ADE80") }}
 
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+
+  {{/* ── STATS BANNER ── */}}
+  <div class="psb-stats-bar" id="psb-stats-bar">
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
+    <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
+  </div>
 
   <div class="psb-container">
 
@@ -70,7 +56,6 @@
         </div>
         <div class="psb-filter-pills" id="psb-recipe-filters" role="group" aria-label="Filter by service">
           <button class="psb-pill active" data-filter="all">All</button>
-          <!-- Populated by JS from module data -->
         </div>
         <div class="psb-filter-row">
           <div class="psb-filter-pills" id="psb-difficulty-filters" role="group" aria-label="Filter by difficulty">
@@ -82,8 +67,15 @@
           <span class="psb-recipe-count" id="psb-recipe-count"></span>
         </div>
       </div>
-      <div class="psb-recipe-grid" id="psb-recipe-grid">
-        <!-- Rendered by JS -->
+
+      {{/* Quick Start — populated by JS */}}
+      <div class="psb-quick-start" id="psb-quick-start"></div>
+
+      <div class="psb-recipe-grid" id="psb-recipe-grid"></div>
+
+      {{/* Suggest a recipe CTA */}}
+      <div class="psb-suggest-cta">
+        <p>Can't find what you need? <a href="/feedback/">💬 Suggest a recipe</a> and we'll add it.</p>
       </div>
     </div>
 
@@ -91,41 +83,37 @@
     <div class="psb-panel" id="psb-panel-build" role="tabpanel" hidden>
       <h2 class="psb-section-title">Build a Command</h2>
 
-      {{/* Step 1: Module */}}
+      {{/* Module categories */}}
       <div class="psb-build-step" id="psb-step-module">
-        <label class="psb-step-label">1. Choose a Module</label>
-        <div class="psb-module-grid" id="psb-module-grid">
-          <!-- Rendered by JS -->
+        <label class="psb-step-label"><span class="psb-step-num">1</span> Choose a Module</label>
+        <div class="psb-module-cats" id="psb-module-cats">
+          <button class="psb-pill-sm active" data-cat="all">All</button>
+          <button class="psb-pill-sm" data-cat="cloud">☁️ Cloud</button>
+          <button class="psb-pill-sm" data-cat="onprem">🏢 On-Prem</button>
+          <button class="psb-pill-sm" data-cat="windows">🖥️ Windows</button>
         </div>
-        <div class="psb-module-info" id="psb-module-info" hidden>
-          <!-- Shows install/connect commands -->
-        </div>
+        <div class="psb-module-grid" id="psb-module-grid"></div>
+        <div class="psb-module-info" id="psb-module-info" hidden></div>
       </div>
 
-      {{/* Step 2: Cmdlet */}}
       <div class="psb-build-step" id="psb-step-cmdlet" hidden>
-        <label class="psb-step-label">2. Choose a Cmdlet</label>
+        <label class="psb-step-label"><span class="psb-step-num">2</span> Choose a Cmdlet</label>
         <div class="psb-cmdlet-search-wrap">
           <input type="text" id="psb-cmdlet-search" class="psb-search psb-search-sm" placeholder="Search cmdlets..." aria-label="Search cmdlets">
         </div>
-        <div class="psb-cmdlet-list" id="psb-cmdlet-list">
-          <!-- Rendered by JS -->
-        </div>
+        <div class="psb-cmdlet-list" id="psb-cmdlet-list"></div>
       </div>
 
-      {{/* Step 3: Parameters */}}
       <div class="psb-build-step" id="psb-step-params" hidden>
-        <label class="psb-step-label">3. Fill Parameters</label>
-        <div class="psb-params-form" id="psb-params-form">
-          <!-- Rendered by JS -->
-        </div>
+        <label class="psb-step-label"><span class="psb-step-num">3</span> Fill Parameters</label>
+        <div class="psb-params-form" id="psb-params-form"></div>
         <div class="psb-build-actions">
           <button class="psb-btn-primary" id="psb-build-btn">⚡ Build Command</button>
           <button class="psb-btn-secondary" id="psb-reset-btn">↩ Reset</button>
         </div>
       </div>
 
-      {{/* Output */}}
+      {{/* Live preview */}}
       <div class="psb-output-section" id="psb-output-section" hidden>
         <label class="psb-step-label">Your Command</label>
         <div class="psb-output-block">
@@ -145,19 +133,17 @@
       <div class="psb-search-wrap">
         <input type="text" id="psb-ref-search" class="psb-search" placeholder="Search all cmdlets..." aria-label="Search cmdlet reference">
       </div>
-      <div class="psb-ref-modules" id="psb-ref-modules">
-        <!-- Rendered by JS: accordion per module -->
-      </div>
+      <div class="psb-ref-modules" id="psb-ref-modules"></div>
     </div>
 
-    {{/* ── HISTORY SIDEBAR ── */}}
-    <div class="psb-history" id="psb-history">
-      <h3 class="psb-history-title">Recent Commands</h3>
+    {{/* ── HISTORY (collapsible, above FAQ) ── */}}
+    <details class="psb-history" id="psb-history">
+      <summary class="psb-history-title">📜 Recent Commands <span class="psb-history-badge" id="psb-history-badge"></span></summary>
       <div class="psb-history-list" id="psb-history-list">
         <p class="psb-history-empty">No commands yet. Build or use a recipe to get started.</p>
       </div>
       <button class="psb-btn-text" id="psb-clear-history" hidden>Clear History</button>
-    </div>
+    </details>
 
     {{/* ── FAQ SECTION ── */}}
     {{ with .Params.faq }}
@@ -193,13 +179,18 @@
           <span class="psb-cross-name">Prompt Library</span>
           <span class="psb-cross-desc">AI prompts for M365 Copilot and more</span>
         </a>
+        <a href="/copilot-readiness/" class="psb-cross-card">
+          <span class="psb-cross-emoji">🎯</span>
+          <span class="psb-cross-name">Copilot Readiness</span>
+          <span class="psb-cross-desc">Check if your tenant is ready for M365 Copilot</span>
+        </a>
       </div>
     </div>
 
   </div>
 </div>
 
-{{ partial "feedback-cta.html" (dict "Page" . "tool" "ps-builder" "label" "Prompt Strategy Builder") }}
+{{ partial "feedback-cta.html" (dict "Page" . "tool" "ps-builder" "label" "PowerShell Builder") }}
 
 {{/* ── INJECT TOML DATA AS JSON ── */}}
 <script>
