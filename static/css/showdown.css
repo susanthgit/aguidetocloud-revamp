@@ -25,6 +25,36 @@
   padding: 0 1rem 3rem;
 }
 
+/* ── Intro ── */
+.showdown-intro {
+  padding: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--showdown-text);
+  line-height: 1.6;
+  max-width: 800px;
+}
+.showdown-intro strong {
+  color: var(--showdown-accent);
+}
+
+/* ── Card Actions ── */
+.showdown-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.showdown-card-link {
+  font-size: 0.75rem;
+  color: var(--showdown-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.showdown-card-link:hover {
+  text-decoration: underline;
+}
+
 /* ── Tabs ── */
 .showdown-tabs {
   display: flex;

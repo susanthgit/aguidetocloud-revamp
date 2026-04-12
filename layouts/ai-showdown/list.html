@@ -29,6 +29,13 @@
 
 {{/* ── Tab Navigation ── */}}
 <div class="showdown-container">
+
+  {{/* ── Intro ── */}}
+  <div class="showdown-intro">
+    <p>Not sure which AI to subscribe to? This free tool compares <strong>10 major AI providers</strong> across plans, pricing, features, and enterprise compliance — so you can make an informed choice whether you're an individual user or an IT decision-maker.</p>
+    <p style="font-size:0.8rem;color:var(--showdown-text-dim)">👉 <strong>Click any provider card</strong> to jump straight to a side-by-side comparison, or use the tabs to explore pricing, strengths, and our "Which AI?" quiz.</p>
+  </div>
+
   <div class="showdown-tabs" role="tablist">
     <button class="showdown-tab active" role="tab" data-tab="overview" aria-selected="true">🏠 Overview</button>
     <button class="showdown-tab" role="tab" data-tab="compare">🆚 Compare</button>
@@ -179,6 +186,13 @@
       <!-- JS renders -->
     </div>
   </div>
+</div>
+
+{{/* ── Disclaimer ── */}}
+<div class="showdown-container" style="margin-top:2rem">
+  <blockquote style="border-left:3px solid var(--showdown-accent);padding:0.75rem 1rem;font-size:0.8rem;color:var(--showdown-text-dim);background:rgba(212,168,83,0.05);border-radius:0 8px 8px 0">
+    <strong>Disclaimer:</strong> The views and opinions expressed in this tool are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official provider pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to each provider's official website for the most up-to-date information.
+  </blockquote>
 </div>
 
 {{/* ── Inject TOML Data as JS ── */}}
