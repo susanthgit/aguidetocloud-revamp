@@ -587,10 +587,6 @@
           const nextQ = $(`.pguide-quiz-q:not(.pguide-quiz-answered)`);
           if (nextQ) setTimeout(() => nextQ.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
         }
-        answers[qi] = +opt.dataset.oi;
-        const allAnswered = QUESTIONS.every((_, i) => answers[i] !== undefined);
-        const sub = $('#pguide-quiz-submit');
-        if (sub) sub.disabled = !allAnswered;
       });
 
       const submitCheck = setInterval(() => {
