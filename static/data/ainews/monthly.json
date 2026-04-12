@@ -1,6 +1,74 @@
 {
   "articles": [
     {
+      "id": "185f1ea9332a2b73acb8f640d4dca3f7",
+      "title": "Here's my favorite email trick for cleaning up inbox clutter - automatically",
+      "url": "https://www.zdnet.com/article/how-to-use-email-aliases/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-12T09:00:00+00:00",
+      "snippet": "Is your inbox overflowing with ads, newsletters, and social media updates? This one feature that's built into most email solutions will fix that for you.",
+      "image": "https://www.zdnet.com/a/img/resize/b5787790a08c7818793924c8b2ec10025025ffa7/2026/04/10/ad26f5e6-fc43-4ee9-bf0e-7995e97ad5c4/gettyimages-1175179556.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "A simple email trick can help users automatically clean up their inboxes, reducing clutter from ads and newsletters.",
+      "why_it_matters": "Offers a practical solution for managing digital communication more effectively.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "19m ago"
+    },
+    {
+      "id": "6723af678b8774e6e1539b1f8c45e5b8",
+      "title": "Apple update looks like Czech mate for locked-out iPhone user",
+      "url": "https://go.theregister.com/feed/www.theregister.com/2026/04/12/ios_passcode_bug/",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-04-12T08:01:09+00:00",
+      "snippet": "Lock-screen keyboard no longer accepts háček in student's alphanumeric passcode A university student in the US is in data limbo after Apple removed a character from its Czech keyboard, preventing him from entering his iPhone passcode.…",
+      "image": "https://regmedia.co.uk/2024/03/27/passcode_shutterstock.jpg",
+      "ai_summary": "A US university student is unable to access their iPhone due to a removed character from Apple's Czech keyboard, highlighting issues with device accessibility.",
+      "why_it_matters": "Raises concerns about user accessibility and device functionality in diverse language settings.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "1h ago"
+    },
+    {
+      "id": "e668ac8aed35224d3dbe2888eb3afdc4",
+      "title": "After using Lenovo's new Yoga laptop, I'm wondering if Windows makers are running out of ideas",
+      "url": "https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-12T01:00:49+00:00",
+      "snippet": "Lenovo's Yoga 7a 2-in-1 is a versatile and well-built PC, though its mid-tier hardware makes it hard to recommend over rivals.",
+      "image": "https://www.zdnet.com/a/img/resize/1f90a48f65c86beec2a6dae7134938c4621eeba8/2026/04/08/a65e48f6-4c08-45e7-85de-55ff92bf3c14/lenovo-yoga-7a-2-in-1-image-1.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "Lenovo's Yoga 7a 2-in-1 laptop is well-built but its mid-tier hardware raises questions about innovation among Windows laptop makers.",
+      "why_it_matters": "Sparks discussion on the current state of innovation in the laptop market.",
+      "tier": "quick",
+      "cluster": null,
+      "published_display": "8h ago"
+    },
+    {
+      "id": "3aaf3d0093df0e07e47c311c5656bae8",
+      "title": "The $30 Google TV stick may be the budget Chromecast successor we've been waiting for",
+      "url": "https://www.zdnet.com/article/walmarts-4k-chromecast-replacement/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-04-12T00:00:00+00:00",
+      "snippet": "Walmart's next streaming device might be exactly what Chromecast fans have been longing for. Here's what's expected.",
+      "image": "https://www.zdnet.com/a/img/resize/ecda68a2e998f8603a1a94139f011288afb80a83/2026/04/10/8a6f28fa-7160-4c84-b7b1-5abc26386dfc/chromecast3screenshot-2026-04-10-130726.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "Walmart is set to release a new $30 Google TV stick, which is anticipated to be a budget-friendly successor to Chromecast, appealing to streaming enthusiasts.",
+      "why_it_matters": "Offers an affordable streaming option, potentially reshaping the budget tech market.",
+      "tier": "headline",
+      "cluster": null,
+      "published_display": "9h ago"
+    },
+    {
       "id": "994da0b1abc6735908460b837b5d5457",
       "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
       "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
@@ -15,7 +83,7 @@
       "why_it_matters": "Sheds light on leadership challenges in the AI industry and public perception.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "12m ago"
+      "published_display": "16h ago"
     },
     {
       "id": "0d82fc97f784a6db13e13353a614f4ae",
@@ -32,7 +100,7 @@
       "why_it_matters": "Illustrates the competitive landscape in AI-driven customer service solutions.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "18h ago"
     },
     {
       "id": "e449dfc3e03e58de24654992124b8729",
@@ -49,7 +117,7 @@
       "why_it_matters": "Addresses a common consumer issue with innovative tech, improving user experience.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "5h ago"
+      "published_display": "21h ago"
     },
     {
       "id": "95d157497e442d65425b18e09380b037",
@@ -66,7 +134,7 @@
       "why_it_matters": "Exposes critical vulnerabilities in open source software that could impact countless organizations.",
       "tier": "headline",
       "cluster": "supply-chain-attacks",
-      "published_display": "6h ago"
+      "published_display": "22h ago"
     },
     {
       "id": "08ec5787806c0bf99326347697ce3579",
@@ -83,7 +151,7 @@
       "why_it_matters": "Challenges the role of AI in creative fields and its impact on public perception.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "2h ago"
+      "published_display": "18h ago"
     },
     {
       "id": "2758176b5bae02fd76b44be3b4f1c9a7",
@@ -100,7 +168,7 @@
       "why_it_matters": "Highlights the ongoing tension between privacy rights and law enforcement capabilities in the digital age.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "7h ago"
+      "published_display": "22h ago"
     },
     {
       "id": "36a98e955dc31b8dfff6894f6f8756ca",
@@ -117,7 +185,7 @@
       "why_it_matters": "Illustrates how quickly misinformation can spread in the digital age.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "3h ago"
+      "published_display": "19h ago"
     },
     {
       "id": "fa248e735562b19dd4437bdd83de2787",
@@ -134,7 +202,7 @@
       "why_it_matters": "Underlines the urgent need for better tools to verify online information in an era of misinformation.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "23h ago"
     },
     {
       "id": "3eaf9afbd7a21f46dabfcd9bcff5822d",
@@ -151,7 +219,7 @@
       "why_it_matters": "Showcases the evolving landscape of AR and MR technologies, crucial for future tech enthusiasts.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "8h ago"
+      "published_display": "Apr 11, 09:00"
     },
     {
       "id": "92f3593346463609e70ce324dbf86234",
@@ -168,7 +236,7 @@
       "why_it_matters": "Demonstrates the importance of digital communication strategies in modern geopolitical conflicts.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "4h ago"
+      "published_display": "20h ago"
     },
     {
       "id": "fedc83601d4a9cb587791c282c188438",
@@ -185,7 +253,7 @@
       "why_it_matters": "Reveals the critical need for stronger cybersecurity practices in government institutions.",
       "tier": "headline",
       "cluster": "security-breach",
-      "published_display": "9h ago"
+      "published_display": "Apr 11, 08:30"
     },
     {
       "id": "59962e2ccf073492c59a1dea99c06261",
@@ -202,7 +270,7 @@
       "why_it_matters": "Addresses scalability challenges in AI tools as usage surges.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "18h ago"
+      "published_display": "Apr 10, 22:56"
     },
     {
       "id": "d7a8098cf2352fa3800482e04906a392",
@@ -219,7 +287,7 @@
       "why_it_matters": "Reinforces the critical role of data management in AI advancements.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "19h ago"
+      "published_display": "Apr 10, 22:05"
     },
     {
       "id": "0c435af68924f3a27c14ab7b57823e80",
@@ -236,7 +304,7 @@
       "why_it_matters": "Highlights human achievement in space exploration, inspiring future technological innovations.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "19h ago"
+      "published_display": "Apr 10, 21:44"
     },
     {
       "id": "be45b95f6e6f151ee65b0fcaad7df8c6",
@@ -253,7 +321,7 @@
       "why_it_matters": "Enhances user engagement tracking for developers using Copilot.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "19h ago"
+      "published_display": "Apr 10, 21:42"
     },
     {
       "id": "473f9bdf411b7b6c964e287d79b1af06",
@@ -270,7 +338,7 @@
       "why_it_matters": "Signals a significant geopolitical shift in tech operations and workforce strategy.",
       "tier": "headline",
       "cluster": "red-hat-relocation",
-      "published_display": "19h ago"
+      "published_display": "Apr 10, 21:40"
     },
     {
       "id": "0e7c2dc79d60b9586f5c92d2c54a903f",
@@ -287,7 +355,7 @@
       "why_it_matters": "Illustrates the complexities of AI partnerships and pricing strategies.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 20:27"
     },
     {
       "id": "b5c87c7afd9def9a8b31e088dcb5ce0f",
@@ -304,7 +372,7 @@
       "why_it_matters": "Addresses the growing issue of trial abuse in tech services.",
       "tier": "deep_dive",
       "cluster": "github-copilot-trials",
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 20:25"
     },
     {
       "id": "0419b78a1a81f9f158abf688dfed7e6f",
@@ -321,7 +389,7 @@
       "why_it_matters": "Improves platform reliability and resource management for developers.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 20:03"
     },
     {
       "id": "df77d0bca3490742dba0d78ee19f122e",
@@ -338,7 +406,7 @@
       "why_it_matters": "Offers deeper insights into user engagement with Copilot features.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 20:03"
     },
     {
       "id": "4b9907cce8b7a45e25333c02d443849d",
@@ -355,7 +423,7 @@
       "why_it_matters": "Highlights consumer tech deals that can enhance DIY home projects.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 19:50"
     },
     {
       "id": "525787c420e84292041a327827f216e4",
@@ -372,7 +440,7 @@
       "why_it_matters": "Promotes consumer interest in home improvement and gardening tools.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "22h ago"
+      "published_display": "Apr 10, 19:21"
     },
     {
       "id": "c09d94149807e82616626714164864cb",
@@ -389,7 +457,7 @@
       "why_it_matters": "Addresses the growing demand for effective audio solutions in hybrid work settings.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "22h ago"
+      "published_display": "Apr 10, 19:00"
     },
     {
       "id": "c215e8e4ad72211a86133fe7f96e570b",
@@ -406,7 +474,7 @@
       "why_it_matters": "Demonstrates the growing capability of portable power solutions for home resilience.",
       "tier": "quick",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 10, 18:30"
     },
     {
       "id": "47fd5cf5e72e8841b4f7eab01534cc1a",
@@ -423,7 +491,7 @@
       "why_it_matters": "Highlights the urgent need for improved AI security measures in development.",
       "tier": "headline",
       "cluster": "anthropic-mythos-cybersecurity",
-      "published_display": "23h ago"
+      "published_display": "Apr 10, 18:08"
     },
     {
       "id": "733f65dccb079b5f7eb9a1b4125334e0",
@@ -440,7 +508,7 @@
       "why_it_matters": "Improves user engagement and feedback in Windows development.",
       "tier": "deep_dive",
       "cluster": null,
-      "published_display": "23h ago"
+      "published_display": "Apr 10, 18:00"
     },
     {
       "id": "a75579ebd0f2535e510eb95704ce9d2f",
@@ -865,7 +933,7 @@
       "why_it_matters": "Emphasizes the need for enhanced security measures for tech executives.",
       "tier": "quick",
       "cluster": "sam-altman-attack",
-      "published_display": "21h ago"
+      "published_display": "Apr 10, 16:16"
     },
     {
       "id": "7f0892f22b5898ddc19088400e7ad6c5",
@@ -13764,6 +13832,6 @@
       "published_display": "Apr 01, 02:30"
     }
   ],
-  "generated_at": "2026-04-11T17:31:15.351129+00:00",
+  "generated_at": "2026-04-12T09:19:11.316120+00:00",
   "period": "April 2026"
 }
