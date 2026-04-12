@@ -333,6 +333,98 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 .psb-fade-in { animation: psbFadeIn 0.2s ease-out; }
 @keyframes psbFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
+/* ═══════ D1 FAVOURITES ═══════ */
+.psb-fav-btn {
+  background: none; border: none; font-size: 1.1rem; cursor: pointer; padding: 0 0.3rem;
+  color: var(--psb-text-dim); transition: all 0.2s; flex-shrink: 0; line-height: 1;
+}
+.psb-fav-btn:hover, .psb-fav-btn.active { color: #FBBF24; }
+.psb-recipe-card.psb-fav { border-left: 3px solid #FBBF24; }
+.psb-quick-fav { border-color: #FBBF24; background: rgba(251, 191, 36, 0.1); }
+
+/* ═══════ B1 TAGS ═══════ */
+.psb-recipe-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0 1.25rem 0.5rem; }
+.psb-tag { font-size: 0.7rem; color: var(--psb-accent-muted); background: var(--psb-accent-dim); padding: 0.1rem 0.5rem; border-radius: 10px; }
+
+/* ═══════ B2 SEARCH HIGHLIGHT ═══════ */
+.psb-highlight { background: rgba(74, 222, 128, 0.3); color: #fff; padding: 0 2px; border-radius: 2px; }
+
+/* ═══════ B3 NEW BADGE ═══════ */
+.psb-badge-new { background: rgba(34, 197, 94, 0.2); color: #22c55e; font-size: 0.65rem; animation: psbPulse 2s ease-in-out infinite; }
+@keyframes psbPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+/* ═══════ B4 VIEW TOGGLE ═══════ */
+.psb-view-toggle { display: inline-flex; gap: 0.3rem; margin-left: 0.5rem; }
+.psb-group-header {
+  font-size: 1.05rem; font-weight: 700; color: var(--psb-accent); padding: 1.25rem 0 0.5rem;
+  border-bottom: 1px solid var(--psb-border); margin-bottom: 0.5rem;
+}
+.psb-group-count { font-size: 0.8rem; color: var(--psb-text-dim); font-weight: 400; }
+
+/* ═══════ A1 HOW TO RUN GUIDE ═══════ */
+.psb-how-to-run {
+  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-glow); border-radius: 8px;
+  margin-bottom: 1rem; overflow: hidden;
+}
+.psb-how-to-run summary {
+  padding: 0.6rem 1rem; cursor: pointer; font-weight: 600; color: var(--psb-accent);
+  font-size: 0.85rem; list-style: none;
+}
+.psb-how-to-run summary::-webkit-details-marker { display: none; }
+.psb-run-steps {
+  padding: 0 1rem 0.75rem 2rem; font-size: 0.85rem; color: var(--psb-text-dim); line-height: 1.8;
+}
+.psb-run-steps li { margin-bottom: 0.4rem; }
+.psb-run-steps code {
+  background: var(--psb-surface); padding: 0.15rem 0.5rem; border-radius: 4px;
+  font-size: 0.8rem; color: var(--psb-accent); display: inline-block; margin-top: 0.2rem;
+}
+
+/* ═══════ A2 SHORTCUT HINTS ═══════ */
+.psb-shortcut-hint { font-size: 0.75rem; color: var(--psb-text-dim); margin-top: 0.4rem; opacity: 0.7; }
+.psb-shortcut-hint kbd {
+  background: var(--psb-surface-hover); border: 1px solid var(--psb-border); border-radius: 3px;
+  padding: 0.05rem 0.35rem; font-size: 0.7rem; font-family: inherit;
+}
+
+/* ═══════ C1 PIPELINE BREAKDOWN ═══════ */
+.psb-pipeline-breakdown { margin: 0.75rem 0; }
+.psb-breakdown-toggle {
+  background: none; border: 1px dashed var(--psb-border); border-radius: 6px;
+  color: var(--psb-accent-muted); padding: 0.4rem 0.8rem; font-size: 0.8rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.psb-breakdown-toggle:hover { border-color: var(--psb-accent); color: var(--psb-accent); }
+.psb-breakdown-steps { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.psb-breakdown-step { display: flex; align-items: flex-start; gap: 0.5rem; }
+.psb-breakdown-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--psb-accent);
+  color: #000; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 2px;
+}
+.psb-breakdown-content { flex: 1; }
+.psb-breakdown-code { display: block; font-size: 0.8rem; color: var(--psb-text); background: var(--psb-surface); padding: 0.3rem 0.6rem; border-radius: 4px; margin-bottom: 0.2rem; }
+.psb-breakdown-label { font-size: 0.75rem; color: var(--psb-text-dim); }
+.psb-breakdown-pipe { color: var(--psb-accent); font-weight: 700; font-size: 0.9rem; margin-left: 1.5rem; }
+
+/* ═══════ C3 COMMON MISTAKES ═══════ */
+.psb-recipe-mistake {
+  background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; border-radius: 0 6px 6px 0;
+  padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--psb-text-dim); margin-bottom: 0.75rem; line-height: 1.5;
+}
+.psb-recipe-mistake strong { color: #ef4444; }
+
+/* ═══════ D3 SHARE RECIPE ═══════ */
+.psb-share-recipe-btn { font-size: 0.8rem; }
+
+/* ═══════ D5 RANDOM BUTTON ═══════ */
+.psb-random-btn {
+  background: none; border: 1px solid var(--psb-border); border-radius: 16px;
+  padding: 0.2rem 0.6rem; font-size: 0.75rem; color: var(--psb-text-dim);
+  cursor: pointer; margin-left: 0.5rem; transition: all 0.2s;
+}
+.psb-random-btn:hover { border-color: var(--psb-accent); color: var(--psb-accent); }
+
 /* ═══════ RESPONSIVE ═══════ */
 @media (max-width: 768px) {
   .psb-module-grid { grid-template-columns: repeat(2, 1fr); }

@@ -227,30 +227,47 @@
     updateURL();
   }
 
-  /* ═══════ QUICK START (#10) ═══════ */
+  /* ═══════ QUICK START + FAVOURITES + RANDOM ═══════ */
   function renderQuickStart() {
     const container = $('#psb-quick-start');
     if (!container) return;
-    const popular = POPULAR_IDS.map(id => recipeById(id)).filter(Boolean);
-    if (!popular.length) return;
 
-    container.innerHTML = `
-      <div class="psb-quick-header">🔥 Most Common Tasks</div>
-      <div class="psb-quick-grid">
-        ${popular.map(r => {
-          const mod = moduleById(r.module);
-          return `<button class="psb-quick-item" data-recipe="${r.id}" tabindex="0">
-            <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
-            <span class="psb-quick-label">${esc(r.title)}</span>
-          </button>`;
-        }).join('')}
-      </div>
-    `;
+    const favs = getFavs();
+    const favRecipes = favs.map(id => recipeById(id)).filter(Boolean);
+    const popular = POPULAR_IDS.map(id => recipeById(id)).filter(Boolean);
+
+    let html = '';
+
+    // D1 — Favourites section
+    if (favRecipes.length) {
+      html += `<div class="psb-quick-header">⭐ My Favourites</div>
+      <div class="psb-quick-grid">${favRecipes.map(r => {
+        const mod = moduleById(r.module);
+        return `<button class="psb-quick-item psb-quick-fav" data-recipe="${r.id}" tabindex="0">
+          <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
+          <span class="psb-quick-label">${esc(r.title)}</span>
+        </button>`;
+      }).join('')}</div>`;
+    }
+
+    // Popular tasks
+    html += `<div class="psb-quick-header">${favRecipes.length ? '' : '🔥 '}Most Common Tasks
+      <button class="psb-random-btn" id="psb-random-btn" title="Show a random recipe">🎲 Surprise Me</button>
+    </div>
+    <div class="psb-quick-grid">${popular.map(r => {
+      const mod = moduleById(r.module);
+      return `<button class="psb-quick-item" data-recipe="${r.id}" tabindex="0">
+        <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
+        <span class="psb-quick-label">${esc(r.title)}</span>
+      </button>`;
+    }).join('')}</div>`;
+
+    container.innerHTML = html;
   }
 
   /* ═══════ RECIPES TAB ═══════ */
 
-  // #6 — Recipe count per service pill
+  // #6 — Recipe count per service pill + A3 export button
   function renderRecipeFilters() {
     const container = $('#psb-recipe-filters');
     const services = [...new Set(D.recipes.map(r => r.service))].sort();
@@ -266,8 +283,10 @@
     });
   }
 
-  // #4 — Expand chevron, #9 — Related recipes, #11 — Prerequisites in copy,
-  // #14 — Sort beginner first, #18 — Keyboard nav, #19 — Deep-links
+  // B4 — View toggle state
+  let recipeViewMode = 'list'; // 'list' or 'grouped'
+
+  // Full recipe render — all A-D features
   function renderRecipes() {
     const grid = $('#psb-recipe-grid');
     const countEl = $('#psb-recipe-count');
@@ -283,58 +302,127 @@
       r.command.toLowerCase().includes(q)
     );
 
-    // #14 — Sort: beginner first, then intermediate, then advanced
+    // Sort: favourites first, then beginner → advanced
+    const favs = getFavs();
     const diffOrder = { beginner: 0, intermediate: 1, advanced: 2 };
-    filtered.sort((a, b) => (diffOrder[a.difficulty] || 0) - (diffOrder[b.difficulty] || 0));
+    filtered.sort((a, b) => {
+      const aFav = favs.includes(a.id) ? 0 : 1;
+      const bFav = favs.includes(b.id) ? 0 : 1;
+      if (aFav !== bFav) return aFav - bFav;
+      return (diffOrder[a.difficulty] || 0) - (diffOrder[b.difficulty] || 0);
+    });
 
-    countEl.textContent = `${filtered.length} recipe${filtered.length !== 1 ? 's' : ''}`;
+    // A3 — Export button for active filter
+    const exportBtnHTML = S.recipeFilter !== 'all'
+      ? ` · <button class="psb-btn-text psb-export-svc-btn" data-export-service="${esc(S.recipeFilter)}">📥 Export all as .ps1</button>`
+      : '';
+
+    // B4 — View toggle
+    const viewToggle = `<span class="psb-view-toggle">
+      <button class="psb-pill-sm${recipeViewMode === 'list' ? ' active' : ''}" data-view="list">📋 List</button>
+      <button class="psb-pill-sm${recipeViewMode === 'grouped' ? ' active' : ''}" data-view="grouped">📂 Grouped</button>
+    </span>`;
+
+    countEl.innerHTML = `${filtered.length} recipe${filtered.length !== 1 ? 's' : ''}${exportBtnHTML} ${viewToggle}`;
 
     if (!filtered.length) {
       grid.innerHTML = '<p style="color:var(--psb-text-dim);text-align:center;padding:2rem;">No recipes match your filters. Try broadening your search.</p>';
       return;
     }
 
-    grid.innerHTML = filtered.map(r => {
-      const isExpanded = S.expandedRecipe === r.id;
-      const mod = moduleById(r.module);
+    // B4 — Grouped view
+    if (recipeViewMode === 'grouped' && S.recipeFilter === 'all' && !q) {
+      const byService = {};
+      filtered.forEach(r => { (byService[r.service] = byService[r.service] || []).push(r); });
+      grid.innerHTML = Object.keys(byService).sort().map(svc => {
+        const mod = D.modules.find(m => m.display_name === svc);
+        return `<div class="psb-group-header">${mod ? mod.emoji + ' ' : ''}${esc(svc)} <span class="psb-group-count">(${byService[svc].length})</span></div>
+        ${byService[svc].map(r => renderRecipeCard(r, q)).join('')}`;
+      }).join('');
+    } else {
+      grid.innerHTML = filtered.map(r => renderRecipeCard(r, q)).join('');
+    }
+  }
 
-      // #9 — Related recipes
-      let relatedHTML = '';
-      if (r.related_recipes && r.related_recipes.length) {
-        const related = r.related_recipes.map(id => recipeById(id)).filter(Boolean);
-        if (related.length) {
-          relatedHTML = `<div class="psb-recipe-related"><strong>Related:</strong> ${related.map(rr => `<a href="?recipe=${rr.id}" class="psb-related-link" data-goto-recipe="${rr.id}">${esc(rr.title)}</a>`).join(', ')}</div>`;
-        }
+  function renderRecipeCard(r, q) {
+    const isExpanded = S.expandedRecipe === r.id;
+    const mod = moduleById(r.module);
+    const fav = isFav(r.id);
+
+    // #9 — Related recipes
+    let relatedHTML = '';
+    if (r.related_recipes && r.related_recipes.length) {
+      const related = r.related_recipes.map(id => recipeById(id)).filter(Boolean);
+      if (related.length) {
+        relatedHTML = `<div class="psb-recipe-related"><strong>Related:</strong> ${related.map(rr => `<a href="?recipe=${rr.id}" class="psb-related-link" data-goto-recipe="${rr.id}">${esc(rr.title)}</a>`).join(', ')}</div>`;
       }
+    }
 
-      return `
-      <div class="psb-recipe-card${isExpanded ? ' expanded' : ''}" data-recipe="${r.id}" tabindex="0" role="button" aria-expanded="${isExpanded}">
-        <div class="psb-recipe-header">
-          <span class="psb-recipe-title">${esc(r.title)}</span>
-          <div class="psb-recipe-badges">
-            <span class="psb-badge psb-badge-service">${esc(r.service)}</span>
-            <span class="psb-badge psb-badge-${r.difficulty}">${r.difficulty}</span>
-          </div>
-          <span class="psb-recipe-chevron">${isExpanded ? '▾' : '▸'}</span>
+    // C3 — Common mistakes
+    const mistake = COMMON_MISTAKES[r.id];
+    const mistakeHTML = mistake ? `<div class="psb-recipe-mistake">⚠️ <strong>Common mistake:</strong> ${esc(mistake)}</div>` : '';
+
+    // C1 — Pipeline breakdown
+    const breakdownHTML = pipelineBreakdown(r.command);
+
+    // B1 — Tags
+    const tagsHTML = r.tags && r.tags.length
+      ? `<div class="psb-recipe-tags">${r.tags.slice(0, 5).map(t => `<span class="psb-tag">#${esc(t)}</span>`).join('')}</div>`
+      : '';
+
+    // B2 — Search highlight
+    const title = q ? highlightMatch(r.title, q) : esc(r.title);
+    const desc = q ? highlightMatch(r.description, q) : esc(r.description);
+
+    // B3 — New badge
+    const newBadge = isNewRecipe(r) ? '<span class="psb-badge psb-badge-new">🆕 NEW</span>' : '';
+
+    // A1 — How to run guide (shown in expanded view)
+    const howToRun = mod ? `<details class="psb-how-to-run">
+      <summary>📋 How to run this command</summary>
+      <ol class="psb-run-steps">
+        <li>Open <strong>PowerShell</strong>${mod.requires_admin ? ' as <strong>Administrator</strong>' : ''}</li>
+        ${mod.install_command ? `<li>Install the module (one-time):<br><code>${esc(mod.install_command)}</code></li>` : '<li>No module install needed — built into Windows</li>'}
+        ${mod.connect_command ? `<li>Connect to the service:<br><code>${esc(mod.connect_command)}</code></li>` : ''}
+        <li>Paste and run the command below</li>
+        ${mod.disconnect_command ? `<li>When done, disconnect:<br><code>${esc(mod.disconnect_command)}</code></li>` : ''}
+      </ol>
+    </details>` : '';
+
+    return `
+    <div class="psb-recipe-card${isExpanded ? ' expanded' : ''}${fav ? ' psb-fav' : ''}" data-recipe="${r.id}" tabindex="0" role="button" aria-expanded="${isExpanded}">
+      <div class="psb-recipe-header">
+        <button class="psb-fav-btn${fav ? ' active' : ''}" data-fav="${r.id}" title="${fav ? 'Remove from favourites' : 'Add to favourites'}" aria-label="Toggle favourite">${fav ? '★' : '☆'}</button>
+        <span class="psb-recipe-title">${title}</span>
+        <div class="psb-recipe-badges">
+          ${newBadge}
+          <span class="psb-badge psb-badge-service">${mod ? mod.emoji + ' ' : ''}${esc(r.service)}</span>
+          <span class="psb-badge psb-badge-${r.difficulty}">${r.difficulty}</span>
         </div>
-        <div class="psb-recipe-desc">${esc(r.description)}</div>
-        <div class="psb-recipe-detail">
-          <div class="psb-recipe-command">
-            <pre class="psb-output-code">${highlightPS(r.command)}</pre>
-          </div>
-          <div class="psb-recipe-explanation">${esc(r.explanation)}</div>
-          ${r.prerequisites ? `<div class="psb-recipe-prereq"><strong>Prerequisites:</strong> ${esc(r.prerequisites)}</div>` : ''}
-          ${relatedHTML}
-          <div class="psb-recipe-actions">
-            <button class="psb-btn-copy" data-recipe-id="${r.id}">📋 Copy</button>
-            <button class="psb-btn-copy" data-recipe-id="${r.id}" data-with-prereqs="1">📋 Copy with Prerequisites</button>
-            <button class="psb-btn-download" data-recipe-id="${r.id}">💾 .ps1</button>
-            <button class="psb-btn-secondary psb-customise-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔧 Customise →</button>
-          </div>
+        <span class="psb-recipe-chevron">${isExpanded ? '▾' : '▸'}</span>
+      </div>
+      <div class="psb-recipe-desc">${desc}</div>
+      ${tagsHTML}
+      <div class="psb-recipe-detail">
+        ${howToRun}
+        <div class="psb-recipe-command">
+          <pre class="psb-output-code">${highlightPS(r.command)}</pre>
+        </div>
+        ${breakdownHTML}
+        <div class="psb-recipe-explanation">${esc(r.explanation)}</div>
+        ${mistakeHTML}
+        ${r.prerequisites ? `<div class="psb-recipe-prereq"><strong>Prerequisites:</strong> ${esc(r.prerequisites)}</div>` : ''}
+        ${relatedHTML}
+        <div class="psb-recipe-actions">
+          <button class="psb-btn-copy" data-recipe-id="${r.id}">📋 Copy</button>
+          <button class="psb-btn-copy" data-recipe-id="${r.id}" data-with-prereqs="1">📋 + Prerequisites</button>
+          <button class="psb-btn-download" data-recipe-id="${r.id}">💾 .ps1</button>
+          <button class="psb-btn-secondary psb-share-recipe-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔗 Share</button>
+          <button class="psb-btn-secondary psb-customise-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔧 Customise →</button>
         </div>
       </div>
-      `;
-    }).join('');
+    </div>
+    `;
   }
 
   /* ═══════ BUILD TAB ═══════ */
@@ -628,6 +716,55 @@
         return;
       }
 
+      // D1 — Favourite toggle
+      const favBtn = e.target.closest('.psb-fav-btn');
+      if (favBtn) { e.stopPropagation(); toggleFav(favBtn.dataset.fav); renderQuickStart(); return; }
+
+      // D5 — Random recipe
+      if (e.target.id === 'psb-random-btn' || e.target.closest('#psb-random-btn')) {
+        const rand = D.recipes[Math.floor(Math.random() * D.recipes.length)];
+        if (rand) {
+          S.expandedRecipe = rand.id;
+          S.recipeFilter = 'all';
+          S.recipeSearch = '';
+          const search = $('#psb-recipe-search');
+          if (search) search.value = '';
+          $$('#psb-recipe-filters .psb-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === 'all'));
+          renderRecipes();
+          updateURL();
+          setTimeout(() => {
+            const card = document.querySelector(`.psb-recipe-card[data-recipe="${rand.id}"]`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 50);
+        }
+        return;
+      }
+
+      // B4 — View toggle
+      const viewBtn = e.target.closest('[data-view]');
+      if (viewBtn) { recipeViewMode = viewBtn.dataset.view; renderRecipes(); return; }
+
+      // A3 — Export all per service
+      const exportBtn = e.target.closest('.psb-export-svc-btn');
+      if (exportBtn) { exportServiceRecipes(exportBtn.dataset.exportService); return; }
+
+      // D3 — Share recipe deep-link
+      const shareRecipeBtn = e.target.closest('.psb-share-recipe-btn');
+      if (shareRecipeBtn) {
+        const url = `${location.origin}${location.pathname}?recipe=${shareRecipeBtn.dataset.recipeId}`;
+        copyText(url);
+        return;
+      }
+
+      // C1 — Pipeline breakdown toggle
+      const breakdownToggle = e.target.closest('.psb-breakdown-toggle');
+      if (breakdownToggle) {
+        const steps = breakdownToggle.nextElementSibling;
+        if (steps) steps.hidden = !steps.hidden;
+        breakdownToggle.textContent = steps.hidden ? '🔍 Step-by-step breakdown' : '🔍 Hide breakdown';
+        return;
+      }
+
       // Quick Start item
       const quickItem = e.target.closest('.psb-quick-item');
       if (quickItem) {
@@ -772,9 +909,14 @@
       }
     });
 
-    // Search inputs
+    // Search inputs + A2 shortcut hints
     const recipeSearch = $('#psb-recipe-search');
-    if (recipeSearch) recipeSearch.addEventListener('input', () => { S.recipeSearch = recipeSearch.value; renderRecipes(); });
+    if (recipeSearch) {
+      recipeSearch.addEventListener('input', () => { S.recipeSearch = recipeSearch.value; renderRecipes(); });
+      // A2 — Shortcut hint
+      const hint = el('div', 'psb-shortcut-hint', '💡 Press <kbd>/</kbd> to focus search · <kbd>Enter</kbd> to expand recipes');
+      recipeSearch.parentNode.appendChild(hint);
+    }
 
     const cmdletSearch = $('#psb-cmdlet-search');
     if (cmdletSearch) cmdletSearch.addEventListener('input', () => renderCmdletList());
