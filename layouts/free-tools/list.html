@@ -1,4 +1,5 @@
 {{ define "main" }}
+<link rel="stylesheet" href="/css/free-tools.css?v={{ site.Params.cache_version }}">
 <div class="page-hero">
   <h1>🧰 Cloud & AI Toolkit</h1>
   <p class="hero-subtitle">Professional-grade tools for IT pros — built by <a href="/about/">Susanth</a>. No sign-up, no ads.</p>
@@ -235,101 +236,6 @@
     <p>Every tool in this toolkit was designed, built, and deployed using <strong>GitHub Copilot CLI</strong> — by someone with zero coding background. Learn how in the <a href="/blog/">Blog</a>.</p>
   </div>
 </div>
-
-<style>
-.free-tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-.free-tool-card {
-  background: color-mix(in srgb, var(--card-accent) 10%, rgba(26, 26, 46, 0.7));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
-  border-radius: var(--radius);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--card-accent) 6%, transparent);
-  padding: 2rem;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.free-tool-card:hover {
-  background: color-mix(in srgb, var(--card-accent) 22%, #1a1a2e);
-  border-color: color-mix(in srgb, var(--card-accent) 40%, transparent);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 25px color-mix(in srgb, var(--card-accent) 18%, transparent);
-  text-shadow: none;
-}
-.free-tool-icon {
-  font-size: 2.5rem;
-}
-.free-tool-card h2 {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--card-accent);
-  margin: 0;
-}
-.free-tool-card p {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  margin: 0;
-  flex-grow: 1;
-}
-.free-tool-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-.free-tool-features span {
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--card-accent) 10%, rgba(255,255,255,0.04));
-  color: var(--text-muted);
-  font-family: var(--font-heading);
-  font-weight: 600;
-}
-.free-tool-cta {
-  color: var(--card-accent);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-.free-tools-about {
-  text-align: center;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 1rem;
-}
-.free-tools-about h2 {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-.free-tools-about p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.free-tools-about a {
-  color: var(--neon-cyan);
-}
-@media (max-width: 768px) {
-  .free-tools-grid { grid-template-columns: 1fr; }
-  .free-tool-card { padding: 1.5rem; }
-}
-</style>
 
 {{ partial "back-nav" (dict "Page" . "URL" "/" "Label" "Home") }}
 {{ end }}

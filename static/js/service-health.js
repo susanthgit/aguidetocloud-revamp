@@ -20,6 +20,12 @@
   let displayCount = PAGE_SIZE;
 
   // ── Helpers ──
+  function esc(s) {
+    const e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   function timeAgo(iso) {
     if (!iso) return '';
     const d = new Date(iso);
@@ -153,10 +159,10 @@
     const shown = [...degraded, ...healthy].slice(0, 16);
 
     grid.innerHTML = shown.map(s => `
-      <div class="shealth-svc-card" data-severity="${s.severity}" data-service="${escHtml(s.service)}" title="${escHtml(s.service)}: ${escHtml(s.status_label)}" role="button" tabindex="0" aria-label="${escHtml(s.short_name)}: ${escHtml(s.status_label)}">
+      <div class="shealth-svc-card" data-severity="${s.severity}" data-service="${esc(s.service)}" title="${esc(s.service)}: ${esc(s.status_label)}" role="button" tabindex="0" aria-label="${esc(s.short_name)}: ${esc(s.status_label)}">
         <div class="shealth-svc-icon">${s.icon}</div>
-        <div class="shealth-svc-name">${escHtml(s.short_name)}</div>
-        <div class="shealth-svc-status" data-severity="${s.severity}">${s.status_icon} ${escHtml(s.status_label)}</div>
+        <div class="shealth-svc-name">${esc(s.short_name)}</div>
+        <div class="shealth-svc-status" data-severity="${s.severity}">${s.status_icon} ${esc(s.status_label)}</div>
       </div>
     `).join('');
 
@@ -216,24 +222,24 @@
     const statusStyle = `background:${i.status_color}22; color:${i.status_color}; border-color:${i.status_color}44`;
 
     return `
-    <div class="shealth-incident" data-active="${active}" data-id="${escHtml(i.id)}" role="button" tabindex="0">
+    <div class="shealth-incident" data-active="${active}" data-id="${esc(i.id)}" role="button" tabindex="0">
       <div class="shealth-incident-header">
         <div class="shealth-incident-left">
-          <h3 class="shealth-incident-title">${escHtml(i.title)}</h3>
+          <h3 class="shealth-incident-title">${esc(i.title)}</h3>
           <div class="shealth-incident-meta">
-            <span class="shealth-badge shealth-badge-service">${i.service_icon} ${escHtml(i.service_short)}</span>
-            <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${escHtml(i.status_label)}</span>
-            ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge" style="background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.25)">🌍 ${escHtml(i.regions.join(', '))}</span>` : ''}
-            ${i.feature ? `<span class="shealth-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border:1px solid rgba(167,139,250,0.25)">${escHtml(i.feature)}</span>` : ''}
+            <span class="shealth-badge shealth-badge-service">${i.service_icon} ${esc(i.service_short)}</span>
+            <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${esc(i.status_label)}</span>
+            ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge" style="background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.25)">🌍 ${esc(i.regions.join(', '))}</span>` : ''}
+            ${i.feature ? `<span class="shealth-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border:1px solid rgba(167,139,250,0.25)">${esc(i.feature)}</span>` : ''}
             ${i.update_count > 0 ? `<span style="color:var(--sh-text-dim)">💬 ${i.update_count} updates</span>` : ''}
           </div>
         </div>
         <div class="shealth-incident-right">
           <span class="shealth-incident-time">${formatDate(i.start_time)}</span>
-          ${i.duration ? `<span class="shealth-incident-duration">⏱ ${escHtml(i.duration)}</span>` : active ? '<span class="shealth-incident-duration" style="color:var(--sh-red)">⏱ Ongoing</span>' : ''}
+          ${i.duration ? `<span class="shealth-incident-duration">⏱ ${esc(i.duration)}</span>` : active ? '<span class="shealth-incident-duration" style="color:var(--sh-red)">⏱ Ongoing</span>' : ''}
         </div>
       </div>
-      ${i.impact ? `<div class="shealth-incident-impact">${escHtml(stripHtml(i.impact))}</div>` : ''}
+      ${i.impact ? `<div class="shealth-incident-impact">${esc(stripHtml(i.impact))}</div>` : ''}
       ${i.duration ? renderDurationBar(i.duration) : ''}
     </div>`;
   }
@@ -361,25 +367,25 @@
     const updates = d.updates || [];
 
     body.innerHTML = `
-      <h2 class="shealth-modal-title">${escHtml(d.title)}</h2>
+      <h2 class="shealth-modal-title">${esc(d.title)}</h2>
       <div class="shealth-modal-meta">
-        <span class="shealth-badge shealth-badge-service">${issue.service_icon} ${escHtml(d.service_short || d.service)}</span>
-        <span>${escHtml(d.classification || '')}</span>
-        <span>ID: ${escHtml(d.id)}</span>
-        ${d.feature ? `<span>Feature: ${escHtml(d.feature)}</span>` : ''}
+        <span class="shealth-badge shealth-badge-service">${issue.service_icon} ${esc(d.service_short || d.service)}</span>
+        <span>${esc(d.classification || '')}</span>
+        <span>ID: ${esc(d.id)}</span>
+        ${d.feature ? `<span>Feature: ${esc(d.feature)}</span>` : ''}
       </div>
       <div class="shealth-modal-meta">
         <span>🕐 Started: ${formatDate(d.start_time)}</span>
         ${d.end_time ? `<span>✅ Ended: ${formatDate(d.end_time)}</span>` : '<span style="color:var(--sh-red)">🔴 Ongoing</span>'}
-        ${d.duration ? `<span>⏱ Duration: ${escHtml(d.duration)}</span>` : ''}
+        ${d.duration ? `<span>⏱ Duration: ${esc(d.duration)}</span>` : ''}
       </div>
-      ${d.impact ? `<div class="shealth-modal-impact">${escHtml(stripHtml(d.impact))}</div>` : ''}
+      ${d.impact ? `<div class="shealth-modal-impact">${esc(stripHtml(d.impact))}</div>` : ''}
       ${updates.length > 0 ? `
         <div class="shealth-updates-title">📋 Communication Timeline (${updates.length} update${updates.length !== 1 ? 's' : ''})</div>
         ${updates.map(u => `
           <div class="shealth-update">
             <div class="shealth-update-time">${formatDate(u.timestamp)}</div>
-            <div class="shealth-update-content">${escHtml(stripHtml(u.content))}</div>
+            <div class="shealth-update-content">${esc(stripHtml(u.content))}</div>
           </div>
         `).join('')}
       ` : ''}
@@ -420,7 +426,7 @@
           const label = new Date(m.month + '-01').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' });
           return `<div class="shealth-trend-bar-wrap">
             <span class="shealth-trend-bar-val">${m.incident_count}</span>
-            <div class="shealth-trend-bar" style="height:${pct}%" title="${m.month}: ${m.incident_count} incidents across ${m.services_affected} services"></div>
+            <div class="shealth-trend-bar" style="height:${pct}%" title="${esc(m.month)}: ${m.incident_count} incidents across ${m.services_affected} services"></div>
             <span class="shealth-trend-bar-label">${label}</span>
           </div>`;
         }).join('')}
@@ -441,7 +447,7 @@
       ${top5.map((s, i) => `
         <div class="shealth-ma-item">
           <span class="shealth-ma-rank shealth-r${i + 1}">${i + 1}</span>
-          <span class="shealth-ma-name">${s.icon} ${escHtml(s.short_name)}</span>
+          <span class="shealth-ma-name">${s.icon} ${esc(s.short_name)}</span>
           <span class="shealth-ma-count">${s.total_incidents}</span>
           <div class="shealth-ma-bar-track"><div class="shealth-ma-bar-fill" style="width:${(s.total_incidents / maxInc) * 100}%"></div></div>
         </div>
@@ -497,7 +503,7 @@
       resultEl.innerHTML = `
         <div class="shealth-date-result-msg shealth-date-result-bad">
           ⚠️ <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
-          ${matches.map(m => `<div style="margin-top:0.4rem;padding-left:1rem">• ${m.service_icon} <strong>${escHtml(m.service_short)}</strong>: ${escHtml(m.title)} <span style="color:var(--sh-text-dim)">(${m.duration || 'ongoing'})</span></div>`).join('')}
+          ${matches.map(m => `<div style="margin-top:0.4rem;padding-left:1rem">• ${m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span style="color:var(--sh-text-dim)">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
         </div>`;
     }
   }

@@ -5,6 +5,13 @@
 (function () {
   'use strict';
 
+  // ── Escape helper ──
+  function esc(s) {
+    const e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   // ── Data ──
   const PROVIDERS = window.__showdownProviders || {};
   const PLANS = window.__showdownPlans || {};
@@ -81,19 +88,19 @@
       const lowest = getLowestPrice(key);
       const priceLabel = lowest ? `From $${lowest}/mo` : 'Free / API';
       html += `
-        <div class="showdown-provider-card" data-provider="${key}" tabindex="0" role="button" aria-label="Compare ${p.name}">
+        <div class="showdown-provider-card" data-provider="${key}" tabindex="0" role="button" aria-label="Compare ${esc(p.name)}">
           <div class="showdown-provider-header">
             <span class="showdown-provider-emoji">${p.logo_emoji}</span>
             <div>
-              <div class="showdown-provider-name">${p.name}</div>
-              <div class="showdown-provider-product">${p.product} — <em>${p.tagline}</em></div>
+              <div class="showdown-provider-name">${esc(p.name)}</div>
+              <div class="showdown-provider-product">${esc(p.product)} — <em>${esc(p.tagline)}</em></div>
             </div>
           </div>
-          <div class="showdown-provider-desc">${p.description}</div>
+          <div class="showdown-provider-desc">${esc(p.description)}</div>
           <div class="showdown-provider-meta">
             <span class="showdown-badge showdown-badge-price">${priceLabel}</span>
-            <span class="showdown-badge showdown-badge-model">${p.flagship_model}</span>
-            <span class="showdown-badge showdown-badge-context">📏 ${p.context_window}</span>
+            <span class="showdown-badge showdown-badge-model">${esc(p.flagship_model)}</span>
+            <span class="showdown-badge showdown-badge-context">📏 ${esc(p.context_window)}</span>
             ${p.open_source ? '<span class="showdown-badge showdown-badge-open">Open Source</span>' : ''}
           </div>
           <div class="showdown-card-actions">
@@ -142,7 +149,7 @@
       const p = PROVIDERS[k];
       const sel = selectedProviders.includes(k) ? ' selected' : '';
       return `<label class="showdown-compare-check${sel}" data-key="${k}">
-        <input type="checkbox" ${sel ? 'checked' : ''}>${p.logo_emoji} ${p.product}
+        <input type="checkbox" ${sel ? 'checked' : ''}>${p.logo_emoji} ${esc(p.product)}
       </label>`;
     }).join('');
 
@@ -228,7 +235,7 @@
     }
     let html = '<table class="showdown-compare-table"><thead><tr><th>Feature</th>';
     for (const pk of selectedProviders) {
-      html += `<th>${PROVIDERS[pk].logo_emoji} ${PROVIDERS[pk].product}</th>`;
+      html += `<th>${PROVIDERS[pk].logo_emoji} ${esc(PROVIDERS[pk].product)}</th>`;
     }
     html += '</tr></thead><tbody>';
     for (const feat of COMPARE_FEATURES) {
@@ -306,12 +313,12 @@
       const savings = (!custom && mp > 0 && ap > 0 && ap < mp) ? ` <small style="color:var(--showdown-green)">(${Math.round((1 - ap / mp) * 100)}% off)</small>` : '';
 
       return `<tr>
-        <td>${prov.logo_emoji || ''} ${prov.name || r.provider}</td>
-        <td><strong>${r.name}</strong></td>
+        <td>${prov.logo_emoji || ''} ${esc(prov.name || r.provider)}</td>
+        <td><strong>${esc(r.name)}</strong></td>
         <td class="${priceClass}">${priceText}</td>
         <td>${annualText}${savings}</td>
-        <td style="font-size:0.78rem">${r.message_limit || '—'}</td>
-        <td style="font-size:0.78rem">${r.best_for || '—'}</td>
+        <td style="font-size:0.78rem">${esc(r.message_limit || '—')}</td>
+        <td style="font-size:0.78rem">${esc(r.best_for || '—')}</td>
       </tr>`;
     }).join('');
   }
@@ -341,8 +348,8 @@
       const maxShow = 3;
       const mkList = (arr, cls) => {
         if (!arr || !arr.length) return '';
-        const visible = arr.slice(0, maxShow).map(x => `<li>${x}</li>`).join('');
-        const hidden = arr.length > maxShow ? arr.slice(maxShow).map(x => `<li>${x}</li>`).join('') : '';
+        const visible = arr.slice(0, maxShow).map(x => `<li>${esc(x)}</li>`).join('');
+        const hidden = arr.length > maxShow ? arr.slice(maxShow).map(x => `<li>${esc(x)}</li>`).join('') : '';
         const more = arr.length > maxShow ? `<li class="showdown-show-more" style="cursor:pointer;color:var(--showdown-accent);font-weight:600;list-style:none;padding-left:0">+ ${arr.length - maxShow} more...</li>` : '';
         return `<ul class="showdown-strength-list showdown-list-${cls}">${visible}<span class="showdown-hidden-items" style="display:none">${hidden}</span>${more}</ul>`;
       };
@@ -351,7 +358,7 @@
         <div class="showdown-strength-card">
           <div class="showdown-strength-header">
             <span style="font-size:1.5rem">${prov.logo_emoji}</span>
-            <span class="showdown-strength-title">${prov.name} (${prov.product})</span>
+            <span class="showdown-strength-title">${esc(prov.name)} (${esc(prov.product)})</span>
           </div>
           <div class="showdown-strength-section">
             <div class="showdown-strength-label showdown-label-pros">✅ STRENGTHS</div>

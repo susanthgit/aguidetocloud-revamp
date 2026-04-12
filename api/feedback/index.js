@@ -31,10 +31,44 @@ const TOOL_LABELS = {
   'copilot-matrix': 'Copilot Feature Matrix',
 };
 
+// Simple in-memory rate limiter (per IP, 3 submissions per 10 min)
+const RATE_LIMIT = new Map();
+const RATE_WINDOW = 10 * 60 * 1000; // 10 minutes
+const RATE_MAX = 3;
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = RATE_LIMIT.get(ip);
+  if (!entry) {
+    RATE_LIMIT.set(ip, { count: 1, start: now });
+    return false;
+  }
+  if (now - entry.start > RATE_WINDOW) {
+    RATE_LIMIT.set(ip, { count: 1, start: now });
+    return false;
+  }
+  entry.count++;
+  return entry.count > RATE_MAX;
+}
+
 module.exports = async function (context, req) {
   // Only accept POST with JSON body
   if (req.method !== 'POST') {
     context.res = { status: 405, body: { error: 'Method not allowed' } };
+    return;
+  }
+
+  // Origin check — only accept from our own site
+  const origin = req.headers['origin'] || req.headers['referer'] || '';
+  if (!origin.includes('aguidetocloud.com') && !origin.includes('localhost')) {
+    context.res = { status: 403, body: { error: 'Forbidden' } };
+    return;
+  }
+
+  // Server-side rate limiting
+  const clientIp = req.headers['x-forwarded-for'] || req.headers['x-client-ip'] || 'unknown';
+  if (isRateLimited(clientIp)) {
+    context.res = { status: 429, body: { error: 'Too many submissions. Please try again later.' } };
     return;
   }
 

@@ -1,17 +1,17 @@
 /*
-   PowerShell Command Builder — Lime green accent #84CC16
+   PowerShell Command Builder — Lime green accent #4ADE80
    CSS namespace: .psb-*
 */
 
 :root {
-  --psb-accent: #84CC16;
-  --psb-accent-hover: #A3E635;
-  --psb-accent-dim: rgba(132, 204, 22, 0.15);
-  --psb-accent-glow: rgba(132, 204, 22, 0.25);
-  --psb-accent-muted: rgba(132, 204, 22, 0.6);
-  --tool-accent: #84CC16;
-  --tool-accent-dim: rgba(132, 204, 22, 0.15);
-  --tool-accent-glow: rgba(132, 204, 22, 0.25);
+  --psb-accent: #4ADE80;
+  --psb-accent-hover: #86EFAC;
+  --psb-accent-dim: rgba(74, 222, 128, 0.15);
+  --psb-accent-glow: rgba(74, 222, 128, 0.25);
+  --psb-accent-muted: rgba(74, 222, 128, 0.6);
+  --tool-accent: #4ADE80;
+  --tool-accent-dim: rgba(74, 222, 128, 0.15);
+  --tool-accent-glow: rgba(74, 222, 128, 0.25);
   --psb-bg: #141425;
   --psb-surface: #1a1a2e;
   --psb-surface-hover: #22223a;
