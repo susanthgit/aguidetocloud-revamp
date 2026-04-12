@@ -4,70 +4,42 @@
 
 <div class="container">
 
-  <!-- 🔍 SEARCH -->
-  {{ partial "page-search.html" . }}
-
   <!-- 🧰 CLOUD & AI TOOLKIT SHOWCASE -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🧰 Toolkit</h2>
       <a href="/free-tools/" class="section-link">View all →</a>
+      <p class="section-desc">Professional-grade tools for IT pros — intelligence dashboards, decision support & productivity boosters.</p>
+    </div>
+
+    <div class="hp-toolkit-group">
+      <h3 class="hp-toolkit-label">⚡ Work Smarter</h3>
+      <div class="hp-toolkit-grid">
+        <a href="/prompts/" class="hp-toolkit-card" style="--tool-color: #A78BFA"><strong>Prompt Library</strong></a>
+        <a href="/prompt-polisher/" class="hp-toolkit-card" style="--tool-color: #FF6B6B"><strong>Prompt Polisher</strong></a>
+        <a href="/cert-tracker/" class="hp-toolkit-card" style="--tool-color: #10B981"><strong>Cert Study Guides</strong></a>
+      </div>
     </div>
 
     <div class="hp-toolkit-group">
       <h3 class="hp-toolkit-label">📡 Stay Informed</h3>
       <div class="hp-toolkit-grid">
-        <a href="/ai-news/" class="hp-toolkit-card" style="--tool-color: #ff66ff">
-          <span class="hp-tool-emoji">📰</span><strong>AI News</strong>
-        </a>
-        <a href="/m365-roadmap/" class="hp-toolkit-card" style="--tool-color: #E5A00D">
-          <span class="hp-tool-emoji">🗺️</span><strong>M365 Roadmap</strong>
-        </a>
-        <a href="/service-health/" class="hp-toolkit-card" style="--tool-color: #F97316">
-          <span class="hp-tool-emoji">🏥</span><strong>Service Health</strong>
-        </a>
-        <a href="/deprecation-timeline/" class="hp-toolkit-card" style="--tool-color: #DC2626">
-          <span class="hp-tool-emoji">⏰</span><strong>Deprecation Timeline</strong>
-        </a>
+        <a href="/ai-news/" class="hp-toolkit-card" style="--tool-color: #ff66ff"><strong>AI News</strong></a>
+        <a href="/m365-roadmap/" class="hp-toolkit-card" style="--tool-color: #E5A00D"><strong>M365 Roadmap</strong></a>
+        <a href="/service-health/" class="hp-toolkit-card" style="--tool-color: #F97316"><strong>Service Health</strong></a>
+        <a href="/deprecation-timeline/" class="hp-toolkit-card" style="--tool-color: #DC2626"><strong>Deprecation Timeline</strong></a>
       </div>
     </div>
 
     <div class="hp-toolkit-group">
       <h3 class="hp-toolkit-label">🧭 Make Decisions</h3>
       <div class="hp-toolkit-grid">
-        <a href="/licensing/" class="hp-toolkit-card" style="--tool-color: #F43F5E">
-          <span class="hp-tool-emoji">📜</span><strong>Licensing Simplifier</strong>
-        </a>
-        <a href="/copilot-readiness/" class="hp-toolkit-card" style="--tool-color: #3B82F6">
-          <span class="hp-tool-emoji">🎯</span><strong>Copilot Readiness</strong>
-        </a>
-        <a href="/roi-calculator/" class="hp-toolkit-card" style="--tool-color: #14B8A6">
-          <span class="hp-tool-emoji">💰</span><strong>ROI Calculator</strong>
-        </a>
-        <a href="/copilot-matrix/" class="hp-toolkit-card" style="--tool-color: #60A5FA">
-          <span class="hp-tool-emoji">📊</span><strong>Copilot Features</strong>
-        </a>
-        <a href="/ai-mapper/" class="hp-toolkit-card" style="--tool-color: #8B5CF6">
-          <span class="hp-tool-emoji">🗺️</span><strong>AI Service Mapper</strong>
-        </a>
-        <a href="/ai-showdown/" class="hp-toolkit-card" style="--tool-color: #D4A853">
-          <span class="hp-tool-emoji">🥊</span><strong>AI SaaS Showdown</strong>
-        </a>
-      </div>
-    </div>
-
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">⚡ Work Smarter</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/prompts/" class="hp-toolkit-card" style="--tool-color: #A78BFA">
-          <span class="hp-tool-emoji">💡</span><strong>Prompt Library</strong>
-        </a>
-        <a href="/prompt-polisher/" class="hp-toolkit-card" style="--tool-color: #FF6B6B">
-          <span class="hp-tool-emoji">✨</span><strong>Prompt Polisher</strong>
-        </a>
-        <a href="/cert-tracker/" class="hp-toolkit-card" style="--tool-color: #10B981">
-          <span class="hp-tool-emoji">📖</span><strong>Cert Study Guides</strong>
-        </a>
+        <a href="/licensing/" class="hp-toolkit-card" style="--tool-color: #F43F5E"><strong>Licensing Simplifier</strong></a>
+        <a href="/copilot-readiness/" class="hp-toolkit-card" style="--tool-color: #3B82F6"><strong>Copilot Readiness</strong></a>
+        <a href="/roi-calculator/" class="hp-toolkit-card" style="--tool-color: #14B8A6"><strong>ROI Calculator</strong></a>
+        <a href="/copilot-matrix/" class="hp-toolkit-card" style="--tool-color: #60A5FA"><strong>Copilot Features</strong></a>
+        <a href="/ai-mapper/" class="hp-toolkit-card" style="--tool-color: #8B5CF6"><strong>AI Service Mapper</strong></a>
+        <a href="/ai-showdown/" class="hp-toolkit-card" style="--tool-color: #D4A853"><strong>AI SaaS Showdown</strong></a>
       </div>
     </div>
 
@@ -77,6 +49,7 @@
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🔥 Latest Videos</h2>
+      <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365, Azure, AI & certifications.</p>
     </div>
     <div class="video-grid">
       {{ $nonBlog := where .Site.RegularPages "Section" "!=" "blog" }}
@@ -93,6 +66,7 @@
     <div class="section-header">
       <h2 class="section-title">📝 From the Blog</h2>
       <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
+      <p class="section-desc">Deep dives on Copilot updates, licensing changes, new features & practical how-tos.</p>
     </div>
     <div class="hp-blog-grid">
       {{ range first 6 $blogPosts }}

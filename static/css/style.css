@@ -321,10 +321,9 @@ a:hover {
 }
 .hp-toolkit-label {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
   margin: 0 0 0.5rem 0.2rem;
 }
@@ -357,7 +356,7 @@ a:hover {
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--tool-color, rgba(255, 255, 255, 0.9));
   white-space: nowrap;
 }
 .hp-tools-grid {
@@ -752,18 +751,6 @@ a:hover {
   transform: translateY(-1px);
   text-shadow: none;
 }
-.welcome-cta-secondary {
-  border-color: rgba(255, 102, 255, 0.4);
-  background: rgba(255, 102, 255, 0.08);
-  color: #ff66ff;
-  box-shadow: 0 0 12px rgba(255, 102, 255, 0.15);
-}
-.welcome-cta-secondary:hover {
-  border-color: #ff66ff;
-  background: rgba(255, 102, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.3);
-  color: #ff66ff;
-}
 /* ── HOMEPAGE: HERO STATS BOXES ───────────── */
 .welcome-stat-boxes {
   display: flex;
@@ -988,12 +975,14 @@ a:hover {
 }
 .section-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
 }
 .section-title {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--neon-cyan);
   display: flex;
@@ -1007,8 +996,17 @@ a:hover {
   background: linear-gradient(90deg, var(--border-glow), transparent);
   margin-left: 1rem;
 }
+.section-desc {
+  width: 100%;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .section-desc { display: none; }
+}
 .section-link {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--neon-cyan);
   white-space: nowrap;
 }
