@@ -346,14 +346,15 @@ a:hover {
 }
 .hp-toolkit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  max-width: 100%;
+  gap: 0.8rem;
 }
 .hp-toolkit-card {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  padding: 0.7rem 0.9rem;
+  padding: 0.8rem 1rem;
   text-decoration: none;
   color: inherit;
   background: color-mix(in srgb, var(--tool-color) 10%, rgba(26, 26, 46, 0.7));
