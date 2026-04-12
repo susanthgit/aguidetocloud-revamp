@@ -615,20 +615,21 @@
   100% { border-color: var(--fb-border); box-shadow: none; }
 }
 
-/* ── Accordion ── */
-.feedback-accordion {
+/* ── Accordion (Prompts-style pattern) ── */
+.feedback-acc {
   border: 1px solid var(--fb-border);
   border-radius: 8px;
   overflow: hidden;
+  margin-bottom: 0.5rem;
   transition: border-color 0.2s;
 }
-.feedback-accordion:hover {
+.feedback-acc:hover {
   border-color: color-mix(in srgb, var(--fb-accent) 25%, transparent);
 }
-.feedback-accordion-header {
+.feedback-acc-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   width: 100%;
   padding: 0.85rem 1rem;
   background: var(--fb-card);
@@ -637,65 +638,64 @@
   color: inherit;
   font-family: inherit;
   text-align: left;
+  user-select: none;
 }
-.feedback-accordion-header:hover {
+.feedback-acc-header:hover {
   background: var(--fb-card-hover);
 }
-.feedback-accordion-chevron {
-  font-size: 0.65rem;
-  color: var(--fb-text-dim);
-  transition: transform 0.2s;
+.feedback-acc-header:focus-visible {
+  outline: 2px solid var(--fb-accent);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+.feedback-acc-arrow {
+  color: var(--fb-accent);
+  font-size: 0.9rem;
   flex-shrink: 0;
-  margin-left: auto;
+  width: 1rem;
+  text-align: center;
 }
-.feedback-accordion-header[aria-expanded="true"] .feedback-accordion-chevron {
-  transform: rotate(180deg);
+.feedback-acc-emoji {
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
-.feedback-accordion-body {
-  padding: 0 1rem 1rem;
+.feedback-acc-info {
+  flex: 1;
+  min-width: 0;
+}
+.feedback-acc-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--fb-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.feedback-acc-meta {
+  font-size: 0.72rem;
+  color: var(--fb-text-dim);
+  margin-top: 0.1rem;
+}
+.feedback-acc-body {
+  padding: 0.75rem 1rem 1rem 2.6rem;
   background: color-mix(in srgb, var(--fb-accent) 3%, var(--fb-bg));
   border-top: 1px solid var(--fb-border);
 }
-.feedback-accordion-question {
-  padding: 0.75rem 0;
+.feedback-acc-question {
   font-size: 0.85rem;
   color: var(--fb-text-dim);
   line-height: 1.6;
+  margin-bottom: 0.6rem;
+  white-space: pre-wrap;
 }
-.feedback-accordion-question p {
-  margin: 0;
-}
-
-/* ── Reply inside accordion ── */
-.feedback-reply {
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  background: color-mix(in srgb, var(--fb-accent) 6%, var(--fb-card));
-  border: 1px solid color-mix(in srgb, var(--fb-accent) 12%, transparent);
-  border-radius: 8px;
-  border-left: 3px solid var(--fb-accent);
-}
-.feedback-reply-header {
-  margin-bottom: 0.3rem;
-}
-.feedback-reply-author {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--fb-accent);
-}
-.feedback-reply-body {
-  font-size: 0.82rem;
-  color: var(--fb-text);
-  line-height: 1.6;
-}
-.feedback-accordion-link {
+.feedback-acc-link {
   display: inline-block;
   margin-top: 0.5rem;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--fb-accent);
   text-decoration: none;
 }
-.feedback-accordion-link:hover {
+.feedback-acc-link:hover {
   text-decoration: underline;
 }

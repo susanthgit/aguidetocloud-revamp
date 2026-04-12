@@ -1,128 +1,126 @@
 /* ──────────────────────────────────────────
    Community Feedback Portal — JS
-   Handles: category selection, URL params,
-   form validation, submission, recent items,
-   quick reactions, char counters, stats
+   Handles: URL params, form, accordions
+   Uses event delegation (Prompts pattern)
    ────────────────────────────────────────── */
 
 (function () {
   'use strict';
 
-  const categorySelect = document.getElementById('fb-category');
-  const toolSelect = document.getElementById('fb-tool');
+  var categorySelect = document.getElementById('fb-category');
+  var toolSelect = document.getElementById('fb-tool');
 
-  // ── URL params pre-fill (from tool page CTA links) ──
-  const params = new URLSearchParams(window.location.search);
-  const urlCat = params.get('category');
-  const urlTool = params.get('tool');
-
+  // URL params pre-fill
+  var params = new URLSearchParams(window.location.search);
+  var urlCat = params.get('category');
+  var urlTool = params.get('tool');
   if (urlCat && categorySelect) categorySelect.value = urlCat;
   if (urlTool && toolSelect) toolSelect.value = urlTool;
-
-  // If coming from a tool page, scroll to form
   if (urlCat || urlTool) {
-    const formSection = document.getElementById('feedback-form-section');
-    if (formSection) {
-      setTimeout(() => formSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
-    }
+    var fs = document.getElementById('feedback-form-section');
+    if (fs) setTimeout(function () { fs.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
   }
 
-  // ── Character counters ──
-  function setupCharCounter(inputId, counterId, max) {
-    const input = document.getElementById(inputId);
-    const counter = document.getElementById(counterId);
+  // Character counters
+  function setupCC(inputId, counterId, max) {
+    var input = document.getElementById(inputId);
+    var counter = document.getElementById(counterId);
     if (!input || !counter) return;
-    function update() {
-      const len = input.value.length;
+    function upd() {
+      var len = input.value.length;
       counter.textContent = len.toLocaleString() + ' / ' + max.toLocaleString();
       counter.classList.toggle('warn', len > max * 0.9);
       counter.classList.toggle('over', len > max);
     }
-    input.addEventListener('input', update);
-    update();
+    input.addEventListener('input', upd);
+    upd();
   }
-  setupCharCounter('fb-subject', 'fb-subject-count', 150);
-  setupCharCounter('fb-message', 'fb-message-count', 2000);
+  setupCC('fb-subject', 'fb-subject-count', 150);
+  setupCC('fb-message', 'fb-message-count', 2000);
+
+  // ── ACCORDION TOGGLE (event delegation — proven Prompts pattern) ──
+  document.addEventListener('click', function (e) {
+    var header = e.target.closest('.feedback-acc-header');
+    if (!header) return;
+    if (e.target.closest('a')) return;
+
+    var row = header.closest('.feedback-acc');
+    if (!row) return;
+    var body = row.querySelector('.feedback-acc-body');
+    var arrow = header.querySelector('.feedback-acc-arrow');
+    if (!body) return;
+
+    var isOpen = !body.hidden;
+    body.hidden = isOpen;
+    if (arrow) arrow.textContent = isOpen ? '▸' : '▾';
+    header.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var header = e.target.closest('.feedback-acc-header');
+    if (!header || e.target.closest('a')) return;
+    e.preventDefault();
+    header.click();
+  });
 
   // ── Form submission ──
-  const form = document.getElementById('feedback-form');
-  const submitBtn = document.getElementById('fb-submit');
-  const submitText = document.getElementById('fb-submit-text');
-  const statusEl = document.getElementById('fb-status');
-  const successDetail = document.getElementById('fb-success-detail');
-  const successLink = document.getElementById('fb-success-link');
+  var form = document.getElementById('feedback-form');
+  var submitBtn = document.getElementById('fb-submit');
+  var submitText = document.getElementById('fb-submit-text');
+  var statusEl = document.getElementById('fb-status');
+  var successDetail = document.getElementById('fb-success-detail');
+  var successLink = document.getElementById('fb-success-link');
 
   if (form) {
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      // Honeypot check
-      const hp = document.getElementById('fb-website');
+      var hp = document.getElementById('fb-website');
       if (hp && hp.value) return;
 
-      // Basic validation
-      const category = document.getElementById('fb-category').value;
-      const subject = document.getElementById('fb-subject').value.trim();
-      const message = document.getElementById('fb-message').value.trim();
+      var category = document.getElementById('fb-category').value;
+      var subject = document.getElementById('fb-subject').value.trim();
+      var message = document.getElementById('fb-message').value.trim();
 
       if (!category) return showStatus('error', 'Please select a category.');
-      if (!subject) return showStatus('error', 'Please enter a subject.');
-      if (subject.length < 5) return showStatus('error', 'Subject must be at least 5 characters.');
-      if (!message) return showStatus('error', 'Please enter a message.');
-      if (message.length < 10) return showStatus('error', 'Message must be at least 10 characters.');
+      if (!subject || subject.length < 5) return showStatus('error', 'Subject must be at least 5 characters.');
+      if (!message || message.length < 10) return showStatus('error', 'Message must be at least 10 characters.');
 
-      // Rate limit (1 submission per 30 seconds)
-      const lastSubmit = sessionStorage.getItem('fb_last_submit');
-      if (lastSubmit && Date.now() - parseInt(lastSubmit) < 30000) {
-        return showStatus('error', 'Please wait a moment before submitting again.');
-      }
+      var ls = sessionStorage.getItem('fb_last_submit');
+      if (ls && Date.now() - parseInt(ls) < 30000) return showStatus('error', 'Please wait before submitting again.');
 
-      // Collect form data
-      const data = {
-        name: document.getElementById('fb-name').value.trim(),
-        email: document.getElementById('fb-email').value.trim(),
-        category: category,
-        tool: document.getElementById('fb-tool').value,
-        subject: subject,
-        message: message,
-      };
-
-      // Submit
       submitBtn.disabled = true;
       submitText.textContent = 'Sending…';
 
-      try {
-        const res = await fetch('/api/feedback', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-
+      fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('fb-name').value.trim(),
+          email: document.getElementById('fb-email').value.trim(),
+          category: category, tool: document.getElementById('fb-tool').value,
+          subject: subject, message: message
+        })
+      }).then(function (res) {
         if (res.ok) {
-          const result = await res.json().catch(() => ({}));
-          sessionStorage.setItem('fb_last_submit', Date.now().toString());
-          showStatus('success', '✅ Thank you! Your feedback has been submitted.');
-
-          // Show the detailed success state with link
-          if (successDetail && result.url) {
-            successLink.href = result.url;
-            successDetail.style.display = 'block';
-          }
-
-          form.reset();
-          // Reset char counters
-          setupCharCounter('fb-subject', 'fb-subject-count', 150);
-          setupCharCounter('fb-message', 'fb-message-count', 2000);
-        } else {
-          const err = await res.json().catch(() => ({}));
-          showStatus('error', err.error || 'Something went wrong. Please try again.');
+          return res.json().then(function (result) {
+            sessionStorage.setItem('fb_last_submit', Date.now().toString());
+            showStatus('success', '✅ Thank you! Your feedback has been submitted.');
+            if (successDetail && result.url) { successLink.href = result.url; successDetail.style.display = 'block'; }
+            form.reset();
+            setupCC('fb-subject', 'fb-subject-count', 150);
+            setupCC('fb-message', 'fb-message-count', 2000);
+          });
         }
-      } catch (err) {
-        showStatus('error', 'Network error — please check your connection and try again.');
-      } finally {
+        return res.json().catch(function () { return {}; }).then(function (err) {
+          showStatus('error', err.error || 'Something went wrong.');
+        });
+      }).catch(function () {
+        showStatus('error', 'Network error — check your connection.');
+      }).finally(function () {
         submitBtn.disabled = false;
         submitText.textContent = 'Send Feedback';
-      }
+      });
     });
   }
 
@@ -133,113 +131,68 @@
     statusEl.style.display = 'block';
     if (successDetail && type !== 'success') successDetail.style.display = 'none';
     statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    if (type === 'success') {
-      setTimeout(() => {
-        statusEl.style.display = 'none';
-        if (successDetail) successDetail.style.display = 'none';
-      }, 12000);
-    }
+    if (type === 'success') setTimeout(function () {
+      statusEl.style.display = 'none';
+      if (successDetail) successDetail.style.display = 'none';
+    }, 12000);
   }
 
-  // ── Fetch discussions via our API (server-side auth) ──
-  const recentList = document.getElementById('feedback-recent-list');
+  // ── Load discussions as accordions ──
+  var recentList = document.getElementById('feedback-recent-list');
+  var TITLE_RE = /^\[([^\]]+)\]\s*/;
+  var CAT_EMOJI = { 'Questions':'❓','Feature Requests':'💡','Video Requests':'🎬',
+    'Bug Reports':'🐛','Tool Feedback':'🔧','Content Ideas':'📝','General':'💬' };
 
-  const TITLE_PREFIX_RE = /^\[([^\]]+)\]\s*/;
+  function esc(s) { var el = document.createElement('span'); el.textContent = s; return el.innerHTML; }
 
-  const CATEGORY_EMOJI = {
-    'Questions': '❓',
-    'Feature Requests': '💡',
-    'Video Requests': '🎬',
-    'Bug Reports': '🐛',
-    'Tool Feedback': '🔧',
-    'Content Ideas': '📝',
-    'General': '💬',
-  };
+  fetch('/api/discussions').then(function (res) {
+    if (!res.ok) throw new Error('fail');
+    return res.json();
+  }).then(function (data) {
+    var list = data.discussions;
+    if (!list || !list.length) return;
+    recentList.innerHTML = '';
 
-  async function loadRecent() {
-    try {
-      const res = await fetch('/api/discussions');
-      if (!res.ok) return;
+    list.forEach(function (d) {
+      var m = d.title.match(TITLE_RE);
+      var catLabel = m ? m[1] : (d.category && d.category.name || 'General');
+      var title = m ? d.title.replace(TITLE_RE, '') : d.title;
+      var emoji = CAT_EMOJI[d.category && d.category.name] || '💬';
+      var hasReplies = d.comments && d.comments.totalCount > 0;
+      var date = new Date(d.createdAt).toLocaleDateString('en-NZ', { day:'numeric', month:'short', year:'numeric' });
+      var bodyText = (d.body || '').split('---')[0].trim();
 
-      const { discussions, totalCount } = await res.json();
-      if (!discussions || !discussions.length) return;
-
-      recentList.innerHTML = '';
-
-      discussions.forEach(d => {
-        const titleMatch = d.title.match(TITLE_PREFIX_RE);
-        const catLabel = titleMatch ? titleMatch[1] : (d.category?.name || 'General');
-        const displayTitle = titleMatch ? d.title.replace(TITLE_PREFIX_RE, '') : d.title;
-        const emoji = catLabel.match(/^(\p{Emoji})/u)?.[1] || CATEGORY_EMOJI[d.category?.name] || '💬';
-        const hasReplies = d.comments?.totalCount > 0;
-        const date = new Date(d.createdAt).toLocaleDateString('en-NZ', {
-          day: 'numeric', month: 'short', year: 'numeric'
+      var repliesHtml = '';
+      if (d.comments && d.comments.nodes && d.comments.nodes.length) {
+        d.comments.nodes.forEach(function (c) {
+          repliesHtml += '<div class="feedback-reply">' +
+            '<div class="feedback-reply-author">💬 ' + esc(c.author && c.author.login || 'Team') + '</div>' +
+            '<div class="feedback-reply-body">' + (c.body || '').replace(/\n/g, '<br>') + '</div></div>';
         });
+      }
 
-        // Build the accordion item
-        const item = document.createElement('div');
-        item.className = 'feedback-accordion';
+      var row = document.createElement('div');
+      row.className = 'feedback-acc';
+      row.innerHTML =
+        '<div class="feedback-acc-header" role="button" tabindex="0" aria-expanded="false">' +
+          '<span class="feedback-acc-arrow">▸</span>' +
+          '<span class="feedback-acc-emoji">' + emoji + '</span>' +
+          '<div class="feedback-acc-info">' +
+            '<div class="feedback-acc-title">' + esc(title) + '</div>' +
+            '<div class="feedback-acc-meta">' + esc(catLabel) + ' · ' + date +
+              (hasReplies ? ' · ' + d.comments.totalCount + (d.comments.totalCount === 1 ? ' reply' : ' replies') : '') +
+            '</div>' +
+          '</div>' +
+          '<span class="feedback-badge ' + (hasReplies ? 'answered' : 'open') + '">' +
+            (hasReplies ? 'Answered' : 'Open') + '</span>' +
+        '</div>' +
+        '<div class="feedback-acc-body" hidden>' +
+          '<div class="feedback-acc-question">' + esc(bodyText) + '</div>' +
+          repliesHtml +
+          '<a href="' + d.url + '" target="_blank" rel="noopener" class="feedback-acc-link">View full thread on GitHub →</a>' +
+        '</div>';
+      recentList.appendChild(row);
+    });
+  }).catch(function () { /* silent */ });
 
-        // Clean the body — remove metadata footer
-        const bodyText = (d.body || '').split('---')[0].trim();
-        const preview = bodyText.length > 120 ? bodyText.substring(0, 120) + '…' : bodyText;
-
-        // Build replies HTML
-        let repliesHtml = '';
-        if (d.comments?.nodes?.length) {
-          repliesHtml = d.comments.nodes.map(c => {
-            const replyBody = (c.body || '').replace(/\n/g, '<br>');
-            return `<div class="feedback-reply">
-              <div class="feedback-reply-header">
-                <span class="feedback-reply-author">💬 ${escapeHtml(c.author?.login || 'Team')}</span>
-              </div>
-              <div class="feedback-reply-body">${replyBody}</div>
-            </div>`;
-          }).join('');
-        }
-
-        item.innerHTML = `
-          <button class="feedback-accordion-header" aria-expanded="false" aria-controls="fb-acc-${d.number}">
-            <span class="feedback-recent-cat">${emoji}</span>
-            <div class="feedback-recent-body">
-              <div class="feedback-recent-body-title">${escapeHtml(displayTitle)}</div>
-              <div class="feedback-recent-meta">${escapeHtml(catLabel)} · ${date}${hasReplies ? ' · ' + d.comments.totalCount + ' repl' + (d.comments.totalCount === 1 ? 'y' : 'ies') : ''}</div>
-            </div>
-            <span class="feedback-badge ${hasReplies ? 'answered' : 'open'}">${hasReplies ? 'Answered' : 'Open'}</span>
-            <span class="feedback-accordion-chevron">▼</span>
-          </button>
-          <div class="feedback-accordion-body" id="fb-acc-${d.number}" hidden>
-            <div class="feedback-accordion-question">
-              <p>${escapeHtml(preview)}</p>
-            </div>
-            ${repliesHtml}
-            <a href="${d.url}" target="_blank" rel="noopener" class="feedback-accordion-link">
-              View full thread on GitHub →
-            </a>
-          </div>`;
-
-        // Toggle accordion
-        const headerBtn = item.querySelector('.feedback-accordion-header');
-        const bodyEl = item.querySelector('.feedback-accordion-body');
-        headerBtn.addEventListener('click', () => {
-          const expanded = headerBtn.getAttribute('aria-expanded') === 'true';
-          headerBtn.setAttribute('aria-expanded', !expanded);
-          bodyEl.hidden = expanded;
-        });
-
-        recentList.appendChild(item);
-      });
-    } catch (e) {
-      // Silently fail — empty state is fine
-    }
-  }
-
-  function escapeHtml(str) {
-    const el = document.createElement('span');
-    el.textContent = str;
-    return el.innerHTML;
-  }
-
-  loadRecent();
 })();
