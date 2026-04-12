@@ -17,6 +17,7 @@
     <a href="/roi-calculator/" class="tool-eco-card{{ if eq $active "roi" }} tool-eco-active{{ end }}"><span>💰</span><strong>ROI</strong><p>Is it worth it?</p></a>
     <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>📜</span><strong>Licensing</strong><p>What licence?</p></a>
   </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "m365-admin" }}
@@ -27,6 +28,7 @@
     <a href="/deprecation-timeline/" class="tool-eco-card{{ if eq $active "deprecation" }} tool-eco-active{{ end }}"><span>⏰</span><strong>Deprecations</strong><p>What's retiring?</p></a>
     <a href="/service-health/" class="tool-eco-card{{ if eq $active "health" }} tool-eco-active{{ end }}"><span>🏥</span><strong>Service Health</strong><p>Is it working?</p></a>
   </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "ai-compare" }}
@@ -37,6 +39,7 @@
     <a href="/ai-showdown/" class="tool-eco-card{{ if eq $active "showdown" }} tool-eco-active{{ end }}"><span>🥊</span><strong>SaaS Showdown</strong><p>Which subscription?</p></a>
     <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>📊</span><strong>Copilot Features</strong><p>What's in M365?</p></a>
   </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "cert" }}
@@ -46,5 +49,17 @@
     <a href="/cert-tracker/" class="tool-eco-card{{ if eq $active "certs" }} tool-eco-active{{ end }}"><span>📖</span><strong>Study Guides</strong><p>52 exam guides</p></a>
     <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>📜</span><strong>Licensing</strong><p>Know the plans</p></a>
   </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+</div>
+
+{{ else if eq $group "admin" }}
+<div class="tool-eco" style="--eco-accent: #7C3AED">
+  <h2 class="tool-eco-title">🔧 Your Admin Toolkit</h2>
+  <div class="tool-eco-grid tool-eco-3">
+    <a href="/ca-builder/" class="tool-eco-card{{ if eq $active "ca-builder" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>CA Policies</strong><p>Conditional Access</p></a>
+    <a href="/ps-builder/" class="tool-eco-card{{ if eq $active "ps-builder" }} tool-eco-active{{ end }}"><span>⚡</span><strong>PowerShell</strong><p>Script builder</p></a>
+    <a href="/migration-planner/" class="tool-eco-card{{ if eq $active "migration" }} tool-eco-active{{ end }}"><span>🚀</span><strong>Migration</strong><p>Plan your move</p></a>
+  </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 {{ end }}

@@ -197,9 +197,8 @@
       <a href="/prompt-polisher/" class="prompts-eco-card"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
       <a href="/prompts/" class="prompts-eco-card prompts-eco-active"><span>💡</span><strong>Library</strong><p>84 ready prompts</p></a>
     </div>
+    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
-
-  {{ partial "feedback-cta.html" (dict "tool" "prompts" "label" "AI Prompt Library") }}
 
   {{ if not $isMainPage }}
   {{ partial "back-nav" (dict "Page" . "URL" "/prompts/" "Label" "Prompt Library") }}

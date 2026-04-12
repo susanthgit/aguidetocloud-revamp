@@ -170,10 +170,8 @@
 
   </div>{{/* end .migplan-container */}}
 
-  {{ partial "feedback-cta.html" (dict "tool" "migration-planner" "label" "Migration Planner") }}
+  {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "migration") }}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-
-</div>{{/* end .migplan-page */}}
 
 <script src="/js/migration-planner.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

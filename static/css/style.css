@@ -1714,3 +1714,16 @@ pre.mermaid {
   .tool-eco-4 { grid-template-columns: repeat(2, 1fr); }
   .tool-eco-3 { grid-template-columns: 1fr; }
 }
+
+/* ══ Tool Ecosystem Feedback Line ══ */
+.tool-eco-feedback {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0.75rem 0 0;
+}
+.tool-eco-feedback a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tool-eco-feedback a:hover { color: #fff; }

@@ -286,7 +286,7 @@
     <p>⚠️ <strong>Design-time tool only.</strong> This tool helps you plan Conditional Access policies offline. It does not connect to your tenant, does not read real data, and cannot enforce policies. All analysis is heuristic-based — always test in Report-Only mode before enabling. Compliance mappings are illustrative and do not constitute certification guidance. Refer to <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener">official Microsoft documentation</a> for the most up-to-date information.</p>
   </div>
 
-  {{ partial "feedback-cta.html" (dict "tool" "ca-builder" "label" "CA Policy Builder") }}
+  {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "ca-builder") }}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 </div>
 

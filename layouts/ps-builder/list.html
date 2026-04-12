@@ -196,11 +196,8 @@
   </div>
 </div>
 
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "ps-builder") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-
-{{ partial "feedback-cta.html" (dict "Page" . "tool" "ps-builder" "label" "PowerShell Builder") }}
-
-{{/* ── INJECT TOML DATA AS JSON ── */}}
 <script>
 window.__psBuilderData = {
   modules: {{ index hugo.Data "ps_builder" "modules" "modules" | jsonify | safeJS }},
