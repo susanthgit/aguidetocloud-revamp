@@ -1279,18 +1279,9 @@ a:hover {
   color: var(--text-secondary);
   font-size: 0.95rem;
 }
-.error-404-note p { margin: 0 0 0.5rem; }
+.error-404-note p { margin: 0 0 0.6rem; }
 .error-404-note p:last-child { margin-bottom: 0; }
 .error-404-note strong { color: rgba(255, 255, 255, 0.9); }
-.error-404-note ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.error-404-note ul li {
-  padding: 0.3rem 0;
-  line-height: 1.6;
-}
 .error-404-all-tools {
   display: inline-block;
   color: #FF8A80;
