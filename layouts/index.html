@@ -125,8 +125,8 @@
       <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365, Azure, AI & certifications.</p>
     </div>
     <div class="video-grid">
-      {{ $nonBlog := where .Site.RegularPages "Section" "!=" "blog" }}
-      {{ range first 8 $nonBlog.ByDate.Reverse }}
+      {{ $videos := where .Site.RegularPages "Params.youtube_id" "!=" nil }}
+      {{ range first 8 $videos.ByDate.Reverse }}
         {{ partial "video-card.html" . }}
       {{ end }}
     </div>
