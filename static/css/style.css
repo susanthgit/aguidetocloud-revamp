@@ -544,8 +544,8 @@ a:hover {
   text-align: left;
 }
 .page-search-box:hover {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 15px rgba(102, 255, 255, 0.08);
+  border-color: rgba(255, 102, 255, 0.3);
+  box-shadow: 0 0 12px rgba(255, 102, 255, 0.06);
 }
 .page-search-icon { font-size: 1rem; flex-shrink: 0; }
 .page-search-text {
@@ -734,20 +734,19 @@ a:hover {
   align-items: center;
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
-  border: 2px solid rgba(255, 102, 255, 0.4);
-  background: rgba(255, 102, 255, 0.08);
-  color: #ff66ff;
+  border: 1px solid rgba(255, 102, 255, 0.3);
+  background: rgba(255, 102, 255, 0.06);
+  color: rgba(255, 102, 255, 0.8);
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 0 12px rgba(255, 102, 255, 0.15);
 }
 .welcome-cta-btn:hover {
-  border-color: #ff66ff;
-  background: rgba(255, 102, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.3);
+  border-color: rgba(255, 102, 255, 0.5);
+  background: rgba(255, 102, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(255, 102, 255, 0.15);
   transform: translateY(-1px);
   text-shadow: none;
 }
@@ -771,9 +770,9 @@ a:hover {
 }
 .welcome-stat-num {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  color: var(--neon-cyan);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1;
 }
 .welcome-stat-label {
@@ -871,15 +870,15 @@ a:hover {
   line-height: 1.5;
 }
 .welcome-author {
-  color: #fff;
+  color: rgba(255, 102, 255, 0.7);
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  border-bottom: 1px dashed rgba(255, 102, 255, 0.25);
   transition: all 0.3s ease;
 }
 .welcome-author:hover {
-  color: var(--neon-cyan);
-  border-bottom-color: var(--neon-cyan);
+  color: rgba(255, 102, 255, 0.9);
+  border-bottom-color: rgba(255, 102, 255, 0.5);
 }
 
 /* ── CHANNEL CARDS ───────────────────────── */
@@ -1008,8 +1007,11 @@ a:hover {
 }
 .section-link {
   font-size: 0.85rem;
-  color: var(--neon-cyan);
+  color: rgba(255, 102, 255, 0.7);
   white-space: nowrap;
+}
+.section-link:hover {
+  color: rgba(255, 102, 255, 0.9);
 }
 
 /* ── VIDEO GRID ─────────────────────────── */
@@ -1141,13 +1143,13 @@ a:hover {
 .eco-card {
   padding: 1.5rem;
   border-radius: 8px;
-  background: rgba(0, 229, 255, 0.03);
-  border: 1px solid rgba(0, 229, 255, 0.08);
+  background: rgba(255, 102, 255, 0.03);
+  border: 1px solid rgba(255, 102, 255, 0.08);
   transition: all 0.3s ease;
 }
 .eco-card:hover {
-  border-color: var(--neon-cyan);
-  background: rgba(0, 229, 255, 0.06);
+  border-color: rgba(255, 102, 255, 0.35);
+  background: rgba(255, 102, 255, 0.06);
 }
 .eco-card .eco-icon { font-size: 2rem; margin-bottom: 0.5rem; }
 .eco-card .eco-logo {
@@ -1156,7 +1158,7 @@ a:hover {
   object-fit: contain;
   border-radius: 50%;
   margin-bottom: 0.5rem;
-  border: 1px solid rgba(102, 255, 255, 0.2);
+  border: 1px solid rgba(255, 102, 255, 0.15);
 }
 .eco-card h3 { font-size: 1rem; color: #fff; margin-bottom: 0.3rem; }
 .eco-card p { font-size: 0.85rem; color: var(--text-muted); }
