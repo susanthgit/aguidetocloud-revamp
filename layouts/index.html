@@ -11,120 +11,33 @@
       <a href="/free-tools/" class="section-link">View all 12 →</a>
     </div>
 
-    <!-- 📡 STAY INFORMED -->
     <div class="hp-toolkit-group">
       <h3 class="hp-toolkit-label">📡 Stay Informed</h3>
-      <div class="hp-tools-grid">
-        <a href="/ai-news/" class="hp-tool-card" style="--tool-color: #ff66ff">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">📰</span>
-            <strong>AI News</strong>
-          </div>
-          <p>Daily AI digest across 20 vendor categories with AI summaries. Updated 4× daily.</p>
-          <span class="hp-tool-cta">Explore →</span>
-        </a>
-        <a href="/m365-roadmap/" class="hp-tool-card" style="--tool-color: #E5A00D">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">🗺️</span>
-            <strong>M365 Roadmap</strong>
-          </div>
-          <p>Track every Microsoft 365 feature with AI summaries, change detection & delay alerts.</p>
-          <span class="hp-tool-cta">Explore →</span>
-        </a>
-        <a href="/service-health/" class="hp-tool-card" style="--tool-color: #F97316">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">🏥</span>
-            <strong>Service Health</strong>
-          </div>
-          <p>32 Microsoft 365 + Azure services tracked every 2 hours — searchable incident timeline.</p>
-          <span class="hp-tool-cta">Check Status →</span>
-        </a>
-        <a href="/deprecation-timeline/" class="hp-tool-card" style="--tool-color: #DC2626">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">⏰</span>
-            <strong>Deprecation Timeline</strong>
-          </div>
-          <p>Every M365 deprecation & retirement urgency-scored with countdown timers.</p>
-          <span class="hp-tool-cta">View Timeline →</span>
-        </a>
+      <div class="hp-toolkit-pills">
+        <a href="/ai-news/" class="hp-pill" style="--pill-color: #ff66ff">📰 AI News</a>
+        <a href="/m365-roadmap/" class="hp-pill" style="--pill-color: #E5A00D">🗺️ M365 Roadmap</a>
+        <a href="/service-health/" class="hp-pill" style="--pill-color: #F97316">🏥 Service Health</a>
+        <a href="/deprecation-timeline/" class="hp-pill" style="--pill-color: #DC2626">⏰ Deprecation Timeline</a>
       </div>
     </div>
 
-    <!-- 🧭 MAKE DECISIONS -->
     <div class="hp-toolkit-group">
       <h3 class="hp-toolkit-label">🧭 Make Decisions</h3>
-      <div class="hp-tools-grid">
-        <a href="/licensing/" class="hp-tool-card" style="--tool-color: #F43F5E">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">📜</span>
-            <strong>Licensing Simplifier</strong>
-          </div>
-          <p>Compare Microsoft 365 plans in plain English. Quiz to find your ideal licence.</p>
-          <span class="hp-tool-cta">Explore →</span>
-        </a>
-        <a href="/copilot-readiness/" class="hp-tool-card" style="--tool-color: #3B82F6">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">🎯</span>
-            <strong>Copilot Readiness</strong>
-          </div>
-          <p>Score your org's Copilot readiness across 7 pillars — licensing, identity, data & more.</p>
-          <span class="hp-tool-cta">Check Readiness →</span>
-        </a>
-        <a href="/roi-calculator/" class="hp-tool-card" style="--tool-color: #14B8A6">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">💰</span>
-            <strong>ROI Calculator</strong>
-          </div>
-          <p>Estimate Copilot ROI by role with realistic adoption curves — Forrester TEI data.</p>
-          <span class="hp-tool-cta">Calculate ROI →</span>
-        </a>
-        <a href="/copilot-matrix/" class="hp-tool-card" style="--tool-color: #60A5FA">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">📊</span>
-            <strong>Copilot Features</strong>
-          </div>
-          <p>Interactive feature comparison across every M365 app and Copilot licence tier.</p>
-          <span class="hp-tool-cta">Explore Matrix →</span>
-        </a>
-        <a href="/ai-mapper/" class="hp-tool-card" style="--tool-color: #8B5CF6">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">🗺️</span>
-            <strong>AI Service Mapper</strong>
-          </div>
-          <p>Compare 25+ AI services across Azure, AWS, Google & more — pricing & capabilities.</p>
-          <span class="hp-tool-cta">Explore AI Services →</span>
-        </a>
+      <div class="hp-toolkit-pills">
+        <a href="/licensing/" class="hp-pill" style="--pill-color: #F43F5E">📜 Licensing Simplifier</a>
+        <a href="/copilot-readiness/" class="hp-pill" style="--pill-color: #3B82F6">🎯 Copilot Readiness</a>
+        <a href="/roi-calculator/" class="hp-pill" style="--pill-color: #14B8A6">💰 ROI Calculator</a>
+        <a href="/copilot-matrix/" class="hp-pill" style="--pill-color: #60A5FA">📊 Copilot Features</a>
+        <a href="/ai-mapper/" class="hp-pill" style="--pill-color: #8B5CF6">🗺️ AI Service Mapper</a>
       </div>
     </div>
 
-    <!-- ⚡ WORK SMARTER -->
     <div class="hp-toolkit-group">
       <h3 class="hp-toolkit-label">⚡ Work Smarter</h3>
-      <div class="hp-tools-grid">
-        <a href="/prompts/" class="hp-tool-card" style="--tool-color: #A78BFA">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">💡</span>
-            <strong>AI Prompt Library</strong>
-          </div>
-          <p>{{ len (where .Site.RegularPages "Section" "prompts") }} tested prompts for M365 Copilot, ChatGPT, Claude, Gemini & more.</p>
-          <span class="hp-tool-cta">Explore →</span>
-        </a>
-        <a href="/prompt-polisher/" class="hp-tool-card" style="--tool-color: #FF6B6B">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">✨</span>
-            <strong>Prompt Polisher</strong>
-          </div>
-          <p>Paste any prompt, get it scored & rewritten using the CRAFTS framework. Instant, no sign-up.</p>
-          <span class="hp-tool-cta">Polish →</span>
-        </a>
-        <a href="/cert-tracker/" class="hp-tool-card" style="--tool-color: #10B981">
-          <div class="hp-tool-header">
-            <span class="hp-tool-emoji">📖</span>
-            <strong>Cert Study Guides</strong>
-          </div>
-          <p>Free study guides for every Microsoft cert — objectives deep-linked to Learn, updated weekly.</p>
-          <span class="hp-tool-cta">Explore →</span>
-        </a>
+      <div class="hp-toolkit-pills">
+        <a href="/prompts/" class="hp-pill" style="--pill-color: #A78BFA">💡 Prompt Library</a>
+        <a href="/prompt-polisher/" class="hp-pill" style="--pill-color: #FF6B6B">✨ Prompt Polisher</a>
+        <a href="/cert-tracker/" class="hp-pill" style="--pill-color: #10B981">📖 Cert Study Guides</a>
       </div>
     </div>
 
