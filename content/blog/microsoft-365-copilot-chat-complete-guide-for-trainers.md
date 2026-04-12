@@ -535,11 +535,21 @@ Agents are specialised AI assistants designed for specific tasks. They extend wh
 | **Researcher agent** | ❌ | Paid Copilot licence only |
 | **Analyst agent** | ❌ | Paid Copilot licence only |
 
-#### Key Agents to Highlight in Training
+### Key Agents to Highlight in Training
 
-**Prompt Coach** — Helps users improve their prompts. Perfect for users who are learning to work with AI.
+<div class="agent-highlight">
 
-**Writing Coach** — Helps users improve their writing quality. Great for emails, reports, and documentation.
+**🎯 Prompt Coach**
+Helps users improve their prompts. Perfect for users who are learning to work with AI. Recommend this agent to every new user — it's like having a personal prompting tutor.
+
+</div>
+
+<div class="agent-highlight">
+
+**✍️ Writing Coach**
+Helps users improve their writing quality. Great for emails, reports, and documentation. Particularly useful for non-native English speakers or anyone who wants to sharpen their communication.
+
+</div>
 
 #### Agent Creation — What Trainers Need to Know
 
@@ -733,9 +743,9 @@ Here's how to frame Copilot Chat for different audiences in your organisation:
 
 ---
 
-## Explore Our Free Tools
+## Tools I Built to Help Your Copilot Journey
 
-Take your Copilot journey further with these free tools on [A Guide to Cloud](https://www.aguidetocloud.com):
+I build free, open tools to make Copilot adoption easier for everyone — trainers, IT pros, and decision-makers. Here are some that go hand-in-hand with this guide:
 
 | Tool | What It Helps With |
 |:--|:--|
