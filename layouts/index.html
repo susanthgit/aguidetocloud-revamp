@@ -4,11 +4,27 @@
 
 <div class="container">
 
+  <!-- 📊 STATS BAR -->
+  {{ $toolCount := 12 }}
+  {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
+  {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
+  <div class="hp-stats-bar">
+    <span>🧰 {{ $toolCount }} Tools</span>
+    <span class="hp-stats-dot">•</span>
+    <span>💡 {{ $promptCount }} Prompts</span>
+    <span class="hp-stats-dot">•</span>
+    <span>📖 52 Cert Guides</span>
+    <span class="hp-stats-dot">•</span>
+    <span>📝 {{ $blogCount }} Blog Posts</span>
+    <span class="hp-stats-dot">•</span>
+    <span>🔄 Updated Daily</span>
+  </div>
+
   <!-- 🧰 CLOUD & AI TOOLKIT SHOWCASE -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">🧰 Toolkit</h2>
-      <a href="/free-tools/" class="section-link">View all 12 →</a>
+      <a href="/free-tools/" class="section-link">View all →</a>
     </div>
 
     <div class="hp-toolkit-group">
@@ -101,43 +117,6 @@
   </section>
   {{ end }}
 
-  <!-- 📂 BROWSE BY CATEGORY (compact grid) -->
-  {{ $cats := slice
-    (dict "title" "🤖 AI Hub" "section" "ai-hub" "path" "/ai-hub/")
-    (dict "title" "☁️ Cloud Labs" "section" "cloud-labs" "path" "/cloud-labs/")
-    (dict "title" "📜 Certifications" "section" "certifications" "path" "/certifications/")
-    (dict "title" "📝 Exam Q&A" "section" "exam-qa" "path" "/exam-qa/")
-    (dict "title" "💼 Interview Prep" "section" "interview-prep" "path" "/interview-prep/")
-    (dict "title" "🎵 Study Music" "section" "music" "path" "/music/")
-  }}
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">📂 Browse by Category</h2>
-    </div>
-    <div class="hp-cat-compact-grid">
-      {{ range $cats }}
-      {{ $pages := where $.Site.RegularPages "Section" .section }}
-      {{ if gt (len $pages) 0 }}
-      <a href="{{ .path }}" class="hp-cat-compact-card">
-        <span class="hp-cat-title">{{ .title }}</span>
-        <span class="hp-cat-count">{{ len $pages }} videos</span>
-      </a>
-      {{ end }}
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- 🔍 SEARCH VIDEOS -->
-  <section class="section">
-    <div class="hp-search-wrap">
-      <button id="hp-search-trigger" class="hp-search-box" aria-label="Search videos">
-        <span class="hp-search-icon">🔍</span>
-        <span class="hp-search-placeholder">Search videos, labs, certifications...</span>
-        <span class="hp-search-shortcut">Ctrl+K</span>
-      </button>
-    </div>
-  </section>
-
   <!-- 🌐 CONNECT -->
   <section class="section">
     <div class="section-header">
@@ -168,11 +147,4 @@
   </section>
 
 </div>
-<script>
-// Wire homepage search box to existing search modal (Ctrl+K)
-document.getElementById('hp-search-trigger')?.addEventListener('click', function() {
-  var modal = document.getElementById('search-modal');
-  if (modal) { modal.classList.add('active'); document.getElementById('search-input')?.focus(); }
-});
-</script>
 {{ end }}

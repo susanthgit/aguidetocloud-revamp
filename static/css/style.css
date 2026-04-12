@@ -719,6 +719,47 @@ a:hover {
   margin-bottom: 0.2rem;
   letter-spacing: -0.3px;
 }
+.welcome-cta-row {
+  margin-top: 0.8rem;
+}
+.welcome-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid rgba(102, 255, 255, 0.4);
+  background: rgba(102, 255, 255, 0.08);
+  color: var(--neon-cyan);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.welcome-cta-btn:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(102, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(102, 255, 255, 0.3);
+  transform: translateY(-1px);
+  text-shadow: none;
+}
+/* ── HOMEPAGE: STATS BAR ─────────────────── */
+.hp-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 0 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.hp-stats-dot {
+  opacity: 0.3;
+}
 .welcome-ctas {
   display: flex;
   gap: 0.6rem;
