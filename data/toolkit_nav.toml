@@ -103,3 +103,9 @@ url = "/cert-tracker/"
 emoji = "📖"
 name = "Cert Study Guides"
 short = "Cert Guides"
+
+[[tools]]
+url = "/feedback/"
+emoji = "💬"
+name = "Community Feedback"
+short = "Feedback"

@@ -24,20 +24,15 @@
 }
 </script>
 
+{{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "Build admin commands for M365, Azure, AD, GPO & Windows — visually. No syntax to memorise. No sign-up. Works offline." "accent" "#4ADE80") }}
+
 <div class="psb-page">
 
-  {{/* ── HERO with integrated stats ── */}}
-  <div class="tool-hero" style="--hero-accent: #4ADE80">
-    <div class="tool-hero-inner">
-      <h1 class="tool-hero-title">PowerShell Command Builder</h1>
-      <div class="psb-stats-bar" id="psb-stats-bar">
-        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
-        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
-        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
-        <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
-      </div>
-      <p class="tool-hero-subtitle">Build admin commands for M365, Azure, AD, GPO & Windows — visually. No syntax to memorise. No sign-up. Works offline.</p>
-    </div>
+  <div class="psb-stats-bar" id="psb-stats-bar">
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
+    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
+    <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
   </div>
 
   <div class="psb-container">
