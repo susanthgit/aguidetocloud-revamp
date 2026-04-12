@@ -684,9 +684,7 @@ a:hover {
 
 /* ── WELCOME STRIP ───────────────────────── */
 .welcome-strip {
-  background: #141425;
-  border-bottom: none;
-  padding: 1.2rem 2rem;
+  padding: 2rem 2rem 1rem;
 }
 .is-home .site-nav {
   border-bottom-color: transparent;
@@ -694,9 +692,7 @@ a:hover {
 .welcome-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  text-align: center;
 }
 .welcome-logo {
   width: 64px;
@@ -713,7 +709,7 @@ a:hover {
   to   { box-shadow: 0 0 20px rgba(0, 229, 255, 0.35), 0 0 40px rgba(0, 229, 255, 0.15); }
 }
 .welcome-text-block {
-  text-align: left;
+  text-align: center;
 }
 .welcome-title {
   font-family: var(--font-heading);
@@ -949,7 +945,7 @@ a:hover {
   margin-top: 0.2rem;
 }
 @media (max-width: 768px) {
-  .welcome-inner { flex-direction: column; text-align: center; }
+  .welcome-inner { text-align: center; }
   .welcome-channels { justify-content: center; }
 }
 
