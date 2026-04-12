@@ -1668,7 +1668,14 @@ pre.mermaid {
     gap: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
-  .nav-links.open { display: flex; }
+  .nav-links.open {
+    display: flex;
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  body.nav-open { overflow: hidden; }
   .nav-links li { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .nav-links li:last-child { border-bottom: none; }
   .nav-links a {

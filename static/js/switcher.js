@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const isOpen = navLinks.classList.toggle('open');
       hamburger.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
     });
     navLinks.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
       link.addEventListener('click', function() {
         navLinks.classList.remove('open');
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
       });
     });
     document.addEventListener('click', function(e) {
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.remove('open');
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
       }
     });
   }
