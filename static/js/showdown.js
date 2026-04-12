@@ -485,11 +485,11 @@
         return `
           <div class="showdown-result-card${i === 0 ? ' showdown-top-pick' : ''}">
             <div class="showdown-result-rank ${ranks[i]}">${labels[i]}</div>
-            <div class="showdown-result-name">${r.provider.logo_emoji} ${r.provider.name} (${r.provider.product})</div>
+            <div class="showdown-result-name">${r.provider.logo_emoji} ${esc(r.provider.name)} (${esc(r.provider.product)})</div>
             <div class="showdown-result-score">Match: ${pct}%</div>
-            <div class="showdown-result-reason">${r.provider.description}</div>
+            <div class="showdown-result-reason">${esc(r.provider.description)}</div>
             <div class="showdown-result-actions">
-              <a href="${r.provider.url}" target="_blank" class="showdown-btn showdown-btn-primary" style="text-decoration:none">Try ${r.provider.product} →</a>
+              <a href="${r.provider.url}" target="_blank" class="showdown-btn showdown-btn-primary" style="text-decoration:none">Try ${esc(r.provider.product)} →</a>
               <a href="${r.provider.pricing_url}" target="_blank" class="showdown-btn showdown-btn-secondary" style="text-decoration:none">See Pricing</a>
             </div>
           </div>`;
@@ -594,7 +594,7 @@
         return `<td class="showdown-compliance-partial">⚠️</td>`;
       }).join('');
       const dr = Array.isArray(c.data_residency) ? c.data_residency.join(', ') : (c.data_residency || '—');
-      return `<tr><td>${prov.logo_emoji} ${prov.name}</td>${cells}<td style="font-size:0.75rem">${dr}</td><td style="font-size:0.75rem">${c.sla || '—'}</td></tr>`;
+      return `<tr><td>${prov.logo_emoji} ${esc(prov.name)}</td>${cells}<td style="font-size:0.75rem">${esc(dr)}</td><td style="font-size:0.75rem">${esc(c.sla || '—')}</td></tr>`;
     }).join('');
 
     if (filteredProviders.length === 0) {
@@ -650,12 +650,12 @@
         <div class="showdown-changelog-entry">
           <div class="showdown-changelog-header">
             <span class="showdown-changelog-date">${e.date}</span>
-            <span class="showdown-changelog-provider-badge">${prov.logo_emoji || ''} ${prov.name || e.provider}</span>
-            <span class="showdown-changelog-type-badge showdown-type-${e.type}">${TYPE_LABELS[e.type] || e.type}</span>
+            <span class="showdown-changelog-provider-badge">${prov.logo_emoji || ''} ${esc(prov.name || e.provider)}</span>
+            <span class="showdown-changelog-type-badge showdown-type-${e.type}">${TYPE_LABELS[e.type] || esc(e.type)}</span>
             ${e.impact === 'high' ? '<span class="showdown-badge" style="background:rgba(239,68,68,0.15);color:#ef4444">🔴 High Impact</span>' : ''}
           </div>
-          <div class="showdown-changelog-title">${e.title}</div>
-          <div class="showdown-changelog-desc">${e.description}</div>
+          <div class="showdown-changelog-title">${esc(e.title)}</div>
+          <div class="showdown-changelog-desc">${esc(e.description)}</div>
           ${e.source ? `<a href="${e.source}" target="_blank" rel="noopener" class="showdown-changelog-source">📎 Source →</a>` : ''}
         </div>`;
     }).join('');
