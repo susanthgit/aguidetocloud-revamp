@@ -346,9 +346,8 @@ a:hover {
 }
 .hp-toolkit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  max-width: 100%;
-  gap: 0.8rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.7rem;
 }
 .hp-toolkit-card {
   display: flex;
