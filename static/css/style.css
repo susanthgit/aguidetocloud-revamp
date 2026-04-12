@@ -1727,3 +1727,19 @@ pre.mermaid {
   text-underline-offset: 2px;
 }
 .tool-eco-feedback a:hover { color: #fff; }
+
+/* ══ Footer Feedback Line (global) ══ */
+.footer-feedback {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-feedback a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-feedback a:hover { color: #fff; }
