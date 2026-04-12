@@ -94,6 +94,9 @@ const S = {
   use24h: true,
   targets: [],         // Tab 2
   participants: [],    // Tab 3
+  participantHours: {}, // { "Auckland": { start: 9, end: 17 } }
+  duration: 60,        // meeting duration in minutes
+  teamPresets: [],     // [{ name: "APAC Team", cities: ["Auckland","London","Mumbai"] }]
   localTz: Intl.DateTimeFormat().resolvedOptions().timeZone,
 };
 
@@ -145,12 +148,12 @@ function formatDateShort(date, tz) {
   }).format(date);
 }
 
-function getUtcOffset(tz) {
-  const now = new Date();
+function getUtcOffset(tz, date) {
+  const d = date || new Date();
   const parts = new Intl.DateTimeFormat('en-US', {
     timeZone: tz,
     timeZoneName: 'shortOffset',
-  }).formatToParts(now);
+  }).formatToParts(d);
   const offsetPart = parts.find(p => p.type === 'timeZoneName');
   return offsetPart ? offsetPart.value : '';
 }
@@ -198,15 +201,23 @@ function getHourInTz(date, tz) {
   return parseInt(new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', hour12: false }).format(date));
 }
 
-function getBizClass(hour) {
-  if (hour >= 9 && hour < 17) return 'biz';
-  if ((hour >= 7 && hour < 9) || (hour >= 17 && hour < 20)) return 'ext';
+function getBizClass(hour, workStart, workEnd) {
+  const ws = workStart !== undefined ? workStart : 9;
+  const we = workEnd !== undefined ? workEnd : 17;
+  const extBefore = Math.max(ws - 2, 0);
+  const extAfter = Math.min(we + 3, 24);
+  if (hour >= ws && hour < we) return 'biz';
+  if ((hour >= extBefore && hour < ws) || (hour >= we && hour < extAfter)) return 'ext';
   return 'off';
 }
 
-function getBizLabel(hour) {
-  if (hour >= 9 && hour < 17) return { text: 'Business hours', cls: 'biz-green' };
-  if ((hour >= 7 && hour < 9) || (hour >= 17 && hour < 20)) return { text: 'Extended hours', cls: 'biz-yellow' };
+function getBizLabel(hour, workStart, workEnd) {
+  const ws = workStart !== undefined ? workStart : 9;
+  const we = workEnd !== undefined ? workEnd : 17;
+  const extBefore = Math.max(ws - 2, 0);
+  const extAfter = Math.min(we + 3, 24);
+  if (hour >= ws && hour < we) return { text: 'Business hours', cls: 'biz-green' };
+  if ((hour >= extBefore && hour < ws) || (hour >= we && hour < extAfter)) return { text: 'Extended hours', cls: 'biz-yellow' };
   return { text: 'Outside hours', cls: 'biz-red' };
 }
 
@@ -228,6 +239,9 @@ function saveState() {
   try {
     localStorage.setItem('wclk_clocks', JSON.stringify(S.clocks.map(c => c.city)));
     localStorage.setItem('wclk_24h', S.use24h ? '1' : '0');
+    localStorage.setItem('wclk_presets', JSON.stringify(S.teamPresets));
+    localStorage.setItem('wclk_hours', JSON.stringify(S.participantHours));
+    localStorage.setItem('wclk_duration', String(S.duration));
   } catch(e) {}
 }
 
@@ -243,6 +257,12 @@ function loadState() {
     }
     const fmt = localStorage.getItem('wclk_24h');
     if (fmt !== null) S.use24h = fmt === '1';
+    const presets = localStorage.getItem('wclk_presets');
+    if (presets) S.teamPresets = JSON.parse(presets);
+    const hours = localStorage.getItem('wclk_hours');
+    if (hours) S.participantHours = JSON.parse(hours);
+    const dur = localStorage.getItem('wclk_duration');
+    if (dur) S.duration = parseInt(dur) || 60;
   } catch(e) {}
 }
 

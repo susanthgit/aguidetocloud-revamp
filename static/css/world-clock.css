@@ -97,6 +97,27 @@
   border-color: var(--wclk);
   box-shadow: 0 0 0 2px var(--wclk-dim);
 }
+/* Native date/time picker icon styling for dark theme */
+.wclk-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+.wclk-input::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
+  background: rgba(14, 165, 233, 0.15);
+}
+/* Firefox — make entire input clickable */
+.wclk-input[type="date"],
+.wclk-input[type="datetime-local"] {
+  cursor: pointer;
+}
+/* Ensure the color-scheme allows dark date pickers in supported browsers */
+.wclk-input[type="date"],
+.wclk-input[type="datetime-local"] {
+  color-scheme: dark;
+}
 
 /* ── Search ── */
 .wclk-search-wrap, .wclk-target-search-wrap { position: relative; }

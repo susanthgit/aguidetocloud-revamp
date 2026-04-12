@@ -62,6 +62,7 @@ If you spot something outdated or think something should be added, please [let m
 - [Full Agent Capabilities](#full-agent-capabilities)
 - [Anthropic Claude — Model Choice](#anthropic-claude--model-choice)
 - [AI-Powered Enterprise Search](#ai-powered-enterprise-search)
+- [🎯 Training Tomorrow? Start Here](#-training-tomorrow-start-here)
 - [Positioning for Different Audiences](#positioning-copilot--for-ai-change-leads)
 - [Pricing & Licensing](#pricing--licensing)
 - [Official Microsoft Resources](#official-microsoft-resources)
@@ -736,6 +737,53 @@ For licensed users, **Search** transforms from basic web search into an AI-power
 
 ---
 
+## 🎯 Training Tomorrow? Start Here
+
+Running your first M365 Copilot (licensed) training session? Here's your quick-start playbook.
+
+### 60-Minute Session Agenda
+
+| Time | Activity | Notes |
+|:--|:--|:--|
+| **0-5 min** | What does the Copilot licence unlock? | Show the feature comparison table — free vs paid |
+| **5-10 min** | Security & EDP + Data Flow | Build trust — walk through the data flow diagram |
+| **10-20 min** | Live demo: Copilot in Outlook + Teams | Summarise an email thread, show a meeting recap |
+| **20-30 min** | Live demo: Copilot in Word + Excel | Draft a document, ask Copilot to analyse data |
+| **30-35 min** | Live demo: PowerPoint | Create a presentation from a Word doc |
+| **35-45 min** | Researcher + Analyst agents | Show deep research and data analysis |
+| **45-50 min** | Prompting tips + Custom Instructions | CRAFT framework, set up instructions together |
+| **50-55 min** | Agents, Pages, Notebooks | Quick overview of advanced capabilities |
+| **55-60 min** | Q&A + Resources | Share this blog, encourage bookmarking |
+
+### Top 5 Demos That Always Land
+
+1. **Teams meeting recap** — Join a call, talk for 5 minutes, show instant summary + action items
+2. **Outlook email summarisation** — Open a long thread, click Summarise — instant clarity
+3. **Word: Draft from another file** — Type `/` to reference a doc, generate a new document from it
+4. **Excel: Ask a question about data** — Upload a spreadsheet, ask *"What are the key trends?"*
+5. **Researcher agent** — Ask it to research a competitor — the depth of output is impressive
+
+### Pre-Session Checklist
+
+- ✅ Confirm users have Microsoft 365 Copilot licences assigned
+- ✅ Test Copilot in each app you plan to demo (Word, Excel, PPT, Outlook, Teams)
+- ✅ Prepare sample files: a Word report, an Excel dataset, a long email thread
+- ✅ Check if Teams meeting transcription is enabled (required for meeting recaps)
+- ✅ Check if Anthropic is enabled if you plan to demo model choice
+- ✅ Verify agents are visible in the Copilot app
+
+### What Might Not Show Up (and What to Say)
+
+| Feature | Why It Might Be Missing | What to Tell Users |
+|:--|:--|:--|
+| **Meeting recaps** | Transcription not enabled by IT | *"Your IT team needs to enable meeting transcription. Let's follow up with them."* |
+| **Model choice (Claude)** | Anthropic not enabled in tenant | *"Model choice depends on an admin setting. We'll check with IT."* |
+| **Notebooks** | Rolling out gradually | *"Notebooks is a new feature — it may not be in your tenant yet."* |
+| **Agent creation** | Admin controls who can create agents | *"Agent creation is managed by IT. You can use existing agents today."* |
+| **Copilot in OneNote** | Requires latest desktop version | *"Make sure you're on the latest version of OneNote for Windows."* |
+
+---
+
 ## Positioning Copilot — For AI Change Leads
 
 ### For Leadership / Executives
@@ -818,6 +866,40 @@ If your organisation has users who **don't** have a paid Copilot licence, make s
 👉 **[Microsoft 365 Copilot Chat (Free) — Complete Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)**
 
 It covers everything about the free Copilot Chat experience — security, EDP, chat, file upload, Pages, agents, memory, custom instructions, and the April 15, 2026 changes. All of those foundations apply to licensed users too.
+
+---
+
+## Frequently Asked Questions
+
+**What is the Microsoft 365 Copilot licence?**
+It's a paid add-on ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all M365 apps — work data grounding, deep in-app integration, Researcher & Analyst agents, Notebooks, Anthropic model choice, and priority access.
+
+**What does work data grounding mean?**
+Copilot can read and reason over your organisation's data through Microsoft Graph — emails, files, meetings, chats, calendar, and contacts. This means Copilot understands your work context, not just the web.
+
+**Can Copilot access files I don't have permission to see?**
+No. Copilot strictly respects all existing access controls, sensitivity labels, and compliance policies. If you can't see a document in SharePoint, Copilot can't either.
+
+**Does Copilot use my data to train AI models?**
+No. Under Enterprise Data Protection, prompts and responses are never used to train foundation models. This applies to both OpenAI GPT and Anthropic Claude models.
+
+**What about Anthropic Claude — is my data safe?**
+Anthropic acts as a Microsoft subprocessor. Your data isn't used for Anthropic's training. The Microsoft DPA applies. Note: Claude processing may occur outside the EU Data Boundary. Admins in EU/EFTA/UK must explicitly opt in.
+
+**Which apps support Anthropic Claude model choice?**
+Claude is available in Copilot Chat (Researcher), Word, Excel (Agent Mode), PowerPoint, and Copilot Studio. Users see a model selector to switch between GPT and Claude. Availability varies by region and admin settings.
+
+**What are the Researcher and Analyst agents?**
+Researcher performs deep, multi-step web research with citations — ideal for market analysis and due diligence. Analyst uses Python for data analysis, visualisation, and statistical modelling. Both are exclusive to licensed users.
+
+**What are Copilot Notebooks?**
+A secure AI workspace for deep thinking. Unlike chat (transactional), Notebooks maintain context across sessions, support file and communication references, generate audio summaries, and enable collaboration. Licensed users only.
+
+**What features require admin enablement?**
+Teams meeting transcription (for recaps), Anthropic subprocessor toggle, agent creation policies, Enhanced Personalisation (for memory), and Copilot pinning in apps. Check with your IT team if features aren't visible.
+
+**How much does the Copilot licence cost?**
+$30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business (under 300 users). Both require annual commitment. Education pricing is discounted.
 
 ---
 
