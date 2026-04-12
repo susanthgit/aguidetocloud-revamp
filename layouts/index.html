@@ -4,20 +4,13 @@
 
 <div class="container">
 
-  <!-- 📊 STATS BAR -->
-  {{ $toolCount := 12 }}
-  {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
-  {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
-  <div class="hp-stats-bar">
-    <span>🧰 {{ $toolCount }} Tools</span>
-    <span class="hp-stats-dot">•</span>
-    <span>💡 {{ $promptCount }} Prompts</span>
-    <span class="hp-stats-dot">•</span>
-    <span>📖 52 Cert Guides</span>
-    <span class="hp-stats-dot">•</span>
-    <span>📝 {{ $blogCount }} Blog Posts</span>
-    <span class="hp-stats-dot">•</span>
-    <span>🔄 Updated Daily</span>
+  <!-- 🔍 SEARCH (magenta accent) -->
+  <div class="hp-search-hero">
+    <button class="hp-search-btn" onclick="document.getElementById('search-modal')?.classList.add('active');document.getElementById('search-input')?.focus();" aria-label="Search">
+      <span class="hp-search-icon">🔍</span>
+      <span>Search tools, videos, articles, prompts...</span>
+      <span class="hp-search-shortcut">Ctrl+K</span>
+    </button>
   </div>
 
   <!-- 🧰 CLOUD & AI TOOLKIT SHOWCASE -->

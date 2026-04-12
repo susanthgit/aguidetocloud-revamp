@@ -743,6 +743,55 @@ a:hover {
   transform: translateY(-1px);
   text-shadow: none;
 }
+/* ── HOMEPAGE: HERO STATS ─────────────────── */
+.welcome-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.03em;
+}
+.welcome-stats-dot { opacity: 0.3; }
+/* ── HOMEPAGE: SEARCH (magenta) ──────────── */
+.hp-search-hero {
+  padding: 1.2rem 0 0.5rem;
+}
+.hp-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid rgba(255, 102, 255, 0.3);
+  border-radius: 50px;
+  background: rgba(255, 102, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.hp-search-btn:hover {
+  border-color: rgba(255, 102, 255, 0.5);
+  background: rgba(255, 102, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(255, 102, 255, 0.12);
+}
+.hp-search-btn .hp-search-icon { font-size: 1rem; }
+.hp-search-btn .hp-search-shortcut {
+  margin-left: auto;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 102, 255, 0.12);
+  color: rgba(255, 102, 255, 0.7);
+  font-weight: 700;
+}
 /* ── HOMEPAGE: STATS BAR ─────────────────── */
 .hp-stats-bar {
   display: flex;
