@@ -198,8 +198,16 @@
   cursor: not-allowed;
 }
 .feedback-submit-hint {
-  font-size: 0.75rem;
-  color: var(--fb-text-dim);
+  font-size: 0.72rem;
+  color: #6b6577;
+}
+.feedback-submit-hints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  color: #6b6577;
+  line-height: 1.4;
 }
 
 /* ── Status Messages ── */

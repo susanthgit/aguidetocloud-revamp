@@ -7,12 +7,6 @@
 
   <!-- Submit Form -->
   <div class="feedback-form-section" id="feedback-form-section">
-    <div class="feedback-form-title">📝 Share Your Feedback</div>
-
-    <div class="feedback-disclaimer">
-      🔓 Your submission will be posted publicly so others can benefit from the discussion. Name and email are optional — only use them if you'd like a personal reply.
-    </div>
-
     <form id="feedback-form" novalidate>
       <div class="feedback-form-row">
         <div class="feedback-field">
@@ -82,7 +76,10 @@
         <button type="submit" class="feedback-submit" id="fb-submit">
           <span id="fb-submit-text">Send Feedback</span>
         </button>
-        <span class="feedback-submit-hint">No sign-up required. We read every submission.</span>
+        <div class="feedback-submit-hints">
+          <span>No sign-up required. We read every submission.</span>
+          <span>🔓 Your submission will be posted publicly so others can benefit. Name and email are optional.</span>
+        </div>
       </div>
 
       <div class="feedback-status" id="fb-status" role="alert" aria-live="polite"></div>
