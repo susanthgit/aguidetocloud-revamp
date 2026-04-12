@@ -715,7 +715,7 @@ a:hover {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--neon-cyan);
   margin-bottom: 0.2rem;
   letter-spacing: -0.3px;
 }
@@ -858,7 +858,7 @@ a:hover {
 .section-title {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #fff;
+  color: #E5C07B;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1798,7 +1798,7 @@ pre.mermaid {
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
   .video-grid .video-card:nth-child(n+5) { display: none; }
-  .hp-toolkit-grid .hp-toolkit-card:nth-child(n+3) { display: none; }
+  .hp-toolkit-grid .hp-toolkit-card:nth-child(n+3) { /* show all on mobile */ }
   .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
   .ecosystem { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
