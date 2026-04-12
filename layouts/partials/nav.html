@@ -20,22 +20,22 @@
       <li class="nav-dropdown{{ if or (hasPrefix $.RelPermalink "/ai-news/") (hasPrefix $.RelPermalink "/m365-roadmap/") (hasPrefix $.RelPermalink "/prompts/") (hasPrefix $.RelPermalink "/prompt-polisher/") (hasPrefix $.RelPermalink "/prompt-guide/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/licensing/") (hasPrefix $.RelPermalink "/service-health/") (hasPrefix $.RelPermalink "/copilot-readiness/") (hasPrefix $.RelPermalink "/copilot-matrix/") (hasPrefix $.RelPermalink "/deprecation-timeline/") (hasPrefix $.RelPermalink "/roi-calculator/") (hasPrefix $.RelPermalink "/ai-mapper/") (hasPrefix $.RelPermalink "/ai-showdown/") (hasPrefix $.RelPermalink "/ps-builder/") (hasPrefix $.RelPermalink "/migration-planner/") (hasPrefix $.RelPermalink "/free-tools/") (hasPrefix $.RelPermalink "/feedback/") }} nav-dropdown-active{{ end }}">
         <a href="/free-tools/" class="dropdown-toggle">🧰 Toolkit ▾</a>
         <ul class="dropdown-menu">
+          <li><a href="/prompts/"{{ if hasPrefix $.RelPermalink "/prompts/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Library</a></li>
+          <li><a href="/prompt-polisher/"{{ if hasPrefix $.RelPermalink "/prompt-polisher/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Polisher</a></li>
+          <li><a href="/prompt-guide/"{{ if hasPrefix $.RelPermalink "/prompt-guide/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Guide</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="/copilot-readiness/"{{ if hasPrefix $.RelPermalink "/copilot-readiness/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Readiness</a></li>
+          <li><a href="/copilot-matrix/"{{ if hasPrefix $.RelPermalink "/copilot-matrix/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Features</a></li>
+          <li><a href="/roi-calculator/"{{ if hasPrefix $.RelPermalink "/roi-calculator/" }} aria-current="page" class="nav-active"{{ end }}>ROI Calculator</a></li>
+          <li class="nav-dropdown-divider"></li>
           <li><a href="/ai-news/"{{ if hasPrefix $.RelPermalink "/ai-news/" }} aria-current="page" class="nav-active"{{ end }}>AI News</a></li>
           <li><a href="/m365-roadmap/"{{ if hasPrefix $.RelPermalink "/m365-roadmap/" }} aria-current="page" class="nav-active"{{ end }}>M365 Roadmap</a></li>
           <li><a href="/service-health/"{{ if hasPrefix $.RelPermalink "/service-health/" }} aria-current="page" class="nav-active"{{ end }}>Service Health</a></li>
           <li><a href="/deprecation-timeline/"{{ if hasPrefix $.RelPermalink "/deprecation-timeline/" }} aria-current="page" class="nav-active"{{ end }}>Deprecation Timeline</a></li>
           <li class="nav-dropdown-divider"></li>
-          <li><a href="/copilot-readiness/"{{ if hasPrefix $.RelPermalink "/copilot-readiness/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Readiness</a></li>
-          <li><a href="/copilot-matrix/"{{ if hasPrefix $.RelPermalink "/copilot-matrix/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Features</a></li>
-          <li><a href="/roi-calculator/"{{ if hasPrefix $.RelPermalink "/roi-calculator/" }} aria-current="page" class="nav-active"{{ end }}>ROI Calculator</a></li>
-          <li><a href="/licensing/"{{ if hasPrefix $.RelPermalink "/licensing/" }} aria-current="page" class="nav-active"{{ end }}>Licensing Simplifier</a></li>
-          <li class="nav-dropdown-divider"></li>
-          <li><a href="/prompts/"{{ if hasPrefix $.RelPermalink "/prompts/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Library</a></li>
-          <li><a href="/prompt-polisher/"{{ if hasPrefix $.RelPermalink "/prompt-polisher/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Polisher</a></li>
-          <li><a href="/prompt-guide/"{{ if hasPrefix $.RelPermalink "/prompt-guide/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Guide</a></li>
-          <li class="nav-dropdown-divider"></li>
           <li><a href="/ai-mapper/"{{ if hasPrefix $.RelPermalink "/ai-mapper/" }} aria-current="page" class="nav-active"{{ end }}>AI Service Mapper</a></li>
           <li><a href="/ai-showdown/"{{ if hasPrefix $.RelPermalink "/ai-showdown/" }} aria-current="page" class="nav-active"{{ end }}>AI SaaS Showdown</a></li>
+          <li><a href="/licensing/"{{ if hasPrefix $.RelPermalink "/licensing/" }} aria-current="page" class="nav-active"{{ end }}>Licensing Simplifier</a></li>
           <li class="nav-dropdown-divider"></li>
           <li><a href="/ca-builder/"{{ if hasPrefix $.RelPermalink "/ca-builder/" }} aria-current="page" class="nav-active"{{ end }}>CA Policy Builder</a></li>
           <li><a href="/ps-builder/"{{ if hasPrefix $.RelPermalink "/ps-builder/" }} aria-current="page" class="nav-active"{{ end }}>PowerShell Builder</a></li>
