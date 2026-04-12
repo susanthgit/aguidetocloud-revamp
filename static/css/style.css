@@ -185,6 +185,7 @@ a:hover {
   border: none !important;
   border-radius: 0 !important;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .dropdown-menu li a:hover {
   background: rgba(0, 229, 255, 0.08);
