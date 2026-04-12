@@ -269,6 +269,70 @@
 }
 .psb-toast.show { opacity: 1; }
 
+/* ═══════ #5 STATS BANNER ═══════ */
+.psb-stats-bar {
+  display: flex; justify-content: center; gap: 2rem; padding: 1rem; margin: -0.5rem auto 1rem;
+  max-width: 600px;
+}
+.psb-stat { text-align: center; }
+.psb-stat-num { display: block; font-size: 1.5rem; font-weight: 800; color: var(--psb-accent); }
+.psb-stat-label { font-size: 0.75rem; color: var(--psb-text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ═══════ #10 QUICK START ═══════ */
+.psb-quick-start { margin-bottom: 1.5rem; }
+.psb-quick-header { font-size: 0.9rem; font-weight: 700; color: var(--psb-text); margin-bottom: 0.75rem; }
+.psb-quick-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.psb-quick-item {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem;
+  background: var(--psb-accent-dim); border: 1px solid var(--psb-accent-glow);
+  border-radius: 20px; color: var(--psb-text); font-size: 0.8rem; cursor: pointer;
+  transition: all 0.2s; white-space: nowrap;
+}
+.psb-quick-item:hover { background: var(--psb-accent-glow); border-color: var(--psb-accent); }
+.psb-quick-emoji { font-size: 0.9rem; }
+
+/* ═══════ #4 RECIPE CHEVRON ═══════ */
+.psb-recipe-chevron { color: var(--psb-text-dim); font-size: 0.85rem; transition: color 0.2s; flex-shrink: 0; margin-left: 0.5rem; }
+.psb-recipe-card:hover .psb-recipe-chevron { color: var(--psb-accent); }
+.psb-recipe-card.expanded .psb-recipe-chevron { color: var(--psb-accent); }
+
+/* ═══════ #9 RELATED RECIPES ═══════ */
+.psb-recipe-related { font-size: 0.8rem; color: var(--psb-text-dim); margin-bottom: 0.75rem; }
+.psb-recipe-related strong { color: var(--psb-accent-muted); }
+.psb-related-link { color: var(--psb-accent); text-decoration: none; }
+.psb-related-link:hover { text-decoration: underline; }
+
+/* ═══════ #15 SUGGEST CTA ═══════ */
+.psb-suggest-cta { text-align: center; padding: 1.5rem; color: var(--psb-text-dim); font-size: 0.85rem; }
+.psb-suggest-cta a { color: var(--psb-accent); text-decoration: none; font-weight: 600; }
+.psb-suggest-cta a:hover { text-decoration: underline; }
+
+/* ═══════ #16 MODULE CATEGORY TABS ═══════ */
+.psb-module-cats { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+
+/* ═══════ #16 STEP NUMBERS ═══════ */
+.psb-step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--psb-accent); color: #000; font-size: 0.75rem; font-weight: 800;
+  margin-right: 0.5rem;
+}
+
+/* ═══════ #7 HISTORY AS COLLAPSIBLE ═══════ */
+details.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; }
+details.psb-history > summary {
+  padding: 1rem 1.25rem; cursor: pointer; font-weight: 700; color: var(--psb-text);
+  font-size: 0.95rem; list-style: none; display: flex; align-items: center; gap: 0.5rem;
+}
+details.psb-history > summary::-webkit-details-marker { display: none; }
+details.psb-history > .psb-history-list { padding: 0 1.25rem 0.75rem; max-height: 300px; overflow-y: auto; }
+details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
+.psb-history-badge { font-size: 0.75rem; color: var(--psb-accent); font-weight: 600; }
+
+/* ═══════ #17 FADE ANIMATION ═══════ */
+.psb-fade-in { animation: psbFadeIn 0.2s ease-out; }
+@keyframes psbFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
 /* ═══════ RESPONSIVE ═══════ */
 @media (max-width: 768px) {
   .psb-module-grid { grid-template-columns: repeat(2, 1fr); }
@@ -276,11 +340,32 @@
   .psb-ref-cmdlet { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
   .psb-ref-cmdlet-name { min-width: auto; }
   .psb-output-actions { flex-wrap: wrap; }
+  .psb-stats-bar { gap: 1rem; }
+  .psb-stat-num { font-size: 1.2rem; }
+  .psb-quick-grid { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; }
 }
 @media (max-width: 480px) {
   .psb-module-grid { grid-template-columns: 1fr 1fr; }
   .psb-tabs { gap: 0; }
   .psb-tab { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+  .psb-recipe-header { flex-wrap: wrap; }
+}
+
+/* ═══════ #20 PRINT STYLES ═══════ */
+@media print {
+  .psb-tabs, .psb-search-wrap, .psb-filter-pills, .psb-filter-row, .psb-quick-start,
+  .psb-suggest-cta, .psb-history, .psb-cross-links, .psb-build-actions,
+  .psb-recipe-actions, .psb-output-actions, .psb-module-cats, .psb-btn-copy,
+  .psb-btn-download, .psb-btn-share, .psb-customise-btn, .back-nav,
+  .tool-hero, .psb-stats-bar, .site-nav, footer, .global-btt, .feedback-fab { display: none !important; }
+  .psb-panel { display: block !important; }
+  .psb-panel[hidden] { display: none !important; }
+  .psb-recipe-card { break-inside: avoid; border: 1px solid #ccc; margin-bottom: 0.5rem; }
+  .psb-recipe-detail { display: block !important; }
+  .psb-output-code { background: #f5f5f5 !important; color: #000 !important; border: 1px solid #ccc; padding: 0.5rem; }
+  body { background: #fff !important; color: #000 !important; }
+  .psb-page { max-width: 100%; }
+  .psb-recipe-title, .psb-section-title { color: #000 !important; }
 }
 
 /* ═══════ REDUCED MOTION ═══════ */

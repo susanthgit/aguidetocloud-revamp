@@ -1,17 +1,21 @@
 /**
- * ⚡ PowerShell Command Builder
+ * ⚡ PowerShell Command Builder v2
  * 100% client-side, zero API calls
+ * Addresses all 20 UX improvements
  */
 (function () {
   'use strict';
 
-  /* ════════════════════════════════════════════
-     DATA & STATE
-     ════════════════════════════════════════════ */
-
   const D = window.__psBuilderData || { modules: [], cmdlets: [], recipes: [] };
   const HISTORY_KEY = 'psb_history';
   const MAX_HISTORY = 20;
+
+  // Popular recipe IDs for Quick Start section
+  const POPULAR_IDS = [
+    'exo-shared-mailbox-create', 'ad-locked-accounts', 'graph-all-users',
+    'win-disk-space', 'az-list-vms', 'exo-forwarding-check',
+    'gpo-backup-all', 'teams-guest-report'
+  ];
 
   const S = {
     activeTab: 'recipes',
@@ -20,20 +24,23 @@
     recipeFilter: 'all',
     difficultyFilter: 'all',
     recipeSearch: '',
-    refSearch: ''
+    refSearch: '',
+    moduleCat: 'all',
+    expandedRecipe: null
   };
 
-  /* ════════════════════════════════════════════
-     HELPERS
-     ════════════════════════════════════════════ */
-
+  /* ═══════ HELPERS ═══════ */
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => [...(ctx || document).querySelectorAll(sel)];
   const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
-
   function moduleById(id) { return D.modules.find(m => m.id === id); }
   function cmdletsForModule(modId) { return D.cmdlets.filter(c => c.module === modId); }
-  function serviceForModule(modId) { const m = moduleById(modId); return m ? m.display_name : ''; }
+  function recipeById(id) { return D.recipes.find(r => r.id === id); }
+
+  function esc(s) {
+    if (!s) return '';
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
   function toast(msg) {
     let t = $('.psb-toast');
@@ -57,10 +64,36 @@
     toast('💾 Downloaded!');
   }
 
-  /* ════════════════════════════════════════════
-     HISTORY (localStorage)
-     ════════════════════════════════════════════ */
+  function timeAgo(ts) {
+    const d = Date.now() - ts;
+    if (d < 60000) return 'just now';
+    if (d < 3600000) return Math.floor(d / 60000) + 'm ago';
+    if (d < 86400000) return Math.floor(d / 3600000) + 'h ago';
+    return Math.floor(d / 86400000) + 'd ago';
+  }
 
+  // #11 — Build full command with prerequisites as comments
+  function fullCommandText(command, modId) {
+    const mod = moduleById(modId);
+    if (!mod) return command;
+    let full = '';
+    if (mod.install_command) full += `# ${mod.install_command}\n`;
+    if (mod.connect_command) full += `# ${mod.connect_command}\n\n`;
+    full += command;
+    return full;
+  }
+
+  /* ═══════ STATS BANNER (#5) ═══════ */
+  function renderStats() {
+    const rs = $('#psb-stat-recipes');
+    const cs = $('#psb-stat-cmdlets');
+    const ms = $('#psb-stat-modules');
+    if (rs) rs.textContent = D.recipes.length;
+    if (cs) cs.textContent = D.cmdlets.length;
+    if (ms) ms.textContent = D.modules.length;
+  }
+
+  /* ═══════ HISTORY ═══════ */
   function getHistory() {
     try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
   }
@@ -78,10 +111,15 @@
     renderHistory();
   }
 
+  // #7 — History as collapsible <details> with badge count
   function renderHistory() {
     const list = $('#psb-history-list');
     const btn = $('#psb-clear-history');
+    const badge = $('#psb-history-badge');
     const h = getHistory();
+
+    if (badge) badge.textContent = h.length ? `(${h.length})` : '';
+
     if (!h.length) {
       list.innerHTML = '<p class="psb-history-empty">No commands yet. Build or use a recipe to get started.</p>';
       if (btn) btn.hidden = true;
@@ -89,30 +127,14 @@
     }
     if (btn) btn.hidden = false;
     list.innerHTML = h.map((item, i) => `
-      <div class="psb-history-item" data-idx="${i}" tabindex="0" role="button" aria-label="Copy: ${esc(item.label || item.cmd.substring(0, 50))}">
-        <div class="psb-history-cmd">${esc(item.cmd.split('\n')[0])}</div>
+      <div class="psb-history-item" data-idx="${i}" tabindex="0" role="button" aria-label="Copy command">
+        <div class="psb-history-cmd">${esc(item.cmd.split('\n')[0].substring(0, 80))}</div>
         <div class="psb-history-time">${timeAgo(item.time)}</div>
       </div>
     `).join('');
   }
 
-  function timeAgo(ts) {
-    const d = Date.now() - ts;
-    if (d < 60000) return 'just now';
-    if (d < 3600000) return Math.floor(d / 60000) + 'm ago';
-    if (d < 86400000) return Math.floor(d / 3600000) + 'h ago';
-    return Math.floor(d / 86400000) + 'd ago';
-  }
-
-  function esc(s) {
-    if (!s) return '';
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
-
-  /* ════════════════════════════════════════════
-     TAB SWITCHING
-     ════════════════════════════════════════════ */
-
+  /* ═══════ TABS (#17 smooth transition) ═══════ */
   function switchTab(tab) {
     S.activeTab = tab;
     $$('.psb-tab').forEach(t => {
@@ -122,29 +144,60 @@
     });
     $$('.psb-panel').forEach(p => {
       const isActive = p.id === 'psb-panel-' + tab;
-      p.classList.toggle('active', isActive);
-      p.hidden = !isActive;
+      if (isActive) {
+        p.hidden = false;
+        p.classList.remove('psb-fade-in');
+        void p.offsetWidth; // reflow
+        p.classList.add('active', 'psb-fade-in');
+      } else {
+        p.classList.remove('active', 'psb-fade-in');
+        p.hidden = true;
+      }
     });
     updateURL();
   }
 
-  /* ════════════════════════════════════════════
-     RECIPES TAB
-     ════════════════════════════════════════════ */
+  /* ═══════ QUICK START (#10) ═══════ */
+  function renderQuickStart() {
+    const container = $('#psb-quick-start');
+    if (!container) return;
+    const popular = POPULAR_IDS.map(id => recipeById(id)).filter(Boolean);
+    if (!popular.length) return;
 
+    container.innerHTML = `
+      <div class="psb-quick-header">🔥 Most Common Tasks</div>
+      <div class="psb-quick-grid">
+        ${popular.map(r => {
+          const mod = moduleById(r.module);
+          return `<button class="psb-quick-item" data-recipe="${r.id}" tabindex="0">
+            <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
+            <span class="psb-quick-label">${esc(r.title)}</span>
+          </button>`;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  /* ═══════ RECIPES TAB ═══════ */
+
+  // #6 — Recipe count per service pill
   function renderRecipeFilters() {
     const container = $('#psb-recipe-filters');
     const services = [...new Set(D.recipes.map(r => r.service))].sort();
-    const existing = container.querySelector('[data-filter="all"]');
+    const counts = {};
+    D.recipes.forEach(r => { counts[r.service] = (counts[r.service] || 0) + 1; });
+
     services.forEach(svc => {
       const mod = D.modules.find(m => m.display_name === svc);
       const btn = el('button', 'psb-pill');
       btn.dataset.filter = svc;
-      btn.textContent = (mod ? mod.emoji + ' ' : '') + svc;
+      btn.textContent = (mod ? mod.emoji + ' ' : '') + svc + ` (${counts[svc]})`;
       container.appendChild(btn);
     });
   }
 
+  // #4 — Expand chevron, #9 — Related recipes, #11 — Prerequisites in copy,
+  // #14 — Sort beginner first, #18 — Keyboard nav, #19 — Deep-links
   function renderRecipes() {
     const grid = $('#psb-recipe-grid');
     const countEl = $('#psb-recipe-count');
@@ -160,6 +213,10 @@
       r.command.toLowerCase().includes(q)
     );
 
+    // #14 — Sort: beginner first, then intermediate, then advanced
+    const diffOrder = { beginner: 0, intermediate: 1, advanced: 2 };
+    filtered.sort((a, b) => (diffOrder[a.difficulty] || 0) - (diffOrder[b.difficulty] || 0));
+
     countEl.textContent = `${filtered.length} recipe${filtered.length !== 1 ? 's' : ''}`;
 
     if (!filtered.length) {
@@ -167,14 +224,28 @@
       return;
     }
 
-    grid.innerHTML = filtered.map(r => `
-      <div class="psb-recipe-card" data-recipe="${r.id}">
+    grid.innerHTML = filtered.map(r => {
+      const isExpanded = S.expandedRecipe === r.id;
+      const mod = moduleById(r.module);
+
+      // #9 — Related recipes
+      let relatedHTML = '';
+      if (r.related_recipes && r.related_recipes.length) {
+        const related = r.related_recipes.map(id => recipeById(id)).filter(Boolean);
+        if (related.length) {
+          relatedHTML = `<div class="psb-recipe-related"><strong>Related:</strong> ${related.map(rr => `<a href="?recipe=${rr.id}" class="psb-related-link" data-goto-recipe="${rr.id}">${esc(rr.title)}</a>`).join(', ')}</div>`;
+        }
+      }
+
+      return `
+      <div class="psb-recipe-card${isExpanded ? ' expanded' : ''}" data-recipe="${r.id}" tabindex="0" role="button" aria-expanded="${isExpanded}">
         <div class="psb-recipe-header">
           <span class="psb-recipe-title">${esc(r.title)}</span>
           <div class="psb-recipe-badges">
             <span class="psb-badge psb-badge-service">${esc(r.service)}</span>
             <span class="psb-badge psb-badge-${r.difficulty}">${r.difficulty}</span>
           </div>
+          <span class="psb-recipe-chevron">${isExpanded ? '▾' : '▸'}</span>
         </div>
         <div class="psb-recipe-desc">${esc(r.description)}</div>
         <div class="psb-recipe-detail">
@@ -183,24 +254,29 @@
           </div>
           <div class="psb-recipe-explanation">${esc(r.explanation)}</div>
           ${r.prerequisites ? `<div class="psb-recipe-prereq"><strong>Prerequisites:</strong> ${esc(r.prerequisites)}</div>` : ''}
+          ${relatedHTML}
           <div class="psb-recipe-actions">
-            <button class="psb-btn-copy" data-copy="${esc(r.command)}">📋 Copy</button>
-            <button class="psb-btn-download" data-dl="${esc(r.command)}" data-name="${r.id}.ps1">💾 .ps1</button>
-            <button class="psb-btn-secondary psb-customise-btn" data-module="${r.module}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔧 Customise →</button>
+            <button class="psb-btn-copy" data-recipe-id="${r.id}">📋 Copy</button>
+            <button class="psb-btn-copy" data-recipe-id="${r.id}" data-with-prereqs="1">📋 Copy with Prerequisites</button>
+            <button class="psb-btn-download" data-recipe-id="${r.id}">💾 .ps1</button>
+            <button class="psb-btn-secondary psb-customise-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔧 Customise →</button>
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
-  /* ════════════════════════════════════════════
-     BUILD TAB
-     ════════════════════════════════════════════ */
+  /* ═══════ BUILD TAB ═══════ */
 
+  // #16 — Module category tabs
   function renderModuleGrid() {
     const grid = $('#psb-module-grid');
-    grid.innerHTML = D.modules.map(m => `
-      <div class="psb-module-card" data-module="${m.id}" tabindex="0" role="button">
+    const cat = S.moduleCat;
+    const filtered = cat === 'all' ? D.modules : D.modules.filter(m => m.category === cat);
+
+    grid.innerHTML = filtered.map(m => `
+      <div class="psb-module-card${S.selectedModule === m.id ? ' active' : ''}" data-module="${m.id}" tabindex="0" role="button">
         <span class="psb-module-emoji">${m.emoji}</span>
         <div class="psb-module-name">${esc(m.display_name)}</div>
         <div class="psb-module-desc">${esc(m.description).substring(0, 60)}…</div>
@@ -211,7 +287,6 @@
   function selectModule(modId) {
     S.selectedModule = modId;
     S.selectedCmdlet = null;
-
     $$('.psb-module-card').forEach(c => c.classList.toggle('active', c.dataset.module === modId));
 
     const mod = moduleById(modId);
@@ -226,7 +301,7 @@
       html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Connect:</span><code class="psb-module-info-value">${esc(mod.connect_command)}</code></div>`;
     }
     if (mod.learn_url) {
-      html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Docs:</span><a href="${mod.learn_url}" target="_blank" rel="noopener noreferrer" class="psb-module-info-link">Microsoft Learn ↗</a></div>`;
+      html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Docs:</span><a href="${mod.learn_url}" target="_blank" rel="noopener" class="psb-module-info-link">Microsoft Learn ↗</a></div>`;
     }
     if (mod.install_note) {
       html += `<div class="psb-module-info-note">💡 ${esc(mod.install_note)}</div>`;
@@ -245,16 +320,12 @@
     const q = ($('#psb-cmdlet-search') || {}).value || '';
     const filtered = q ? cmdlets.filter(c => c.name.toLowerCase().includes(q.toLowerCase()) || c.description.toLowerCase().includes(q.toLowerCase())) : cmdlets;
 
-    list.innerHTML = filtered.map(c => `
-      <div class="psb-cmdlet-item" data-cmdlet="${c.id}" tabindex="0" role="button">
+    list.innerHTML = filtered.length ? filtered.map(c => `
+      <div class="psb-cmdlet-item${S.selectedCmdlet === c.id ? ' active' : ''}" data-cmdlet="${c.id}" tabindex="0" role="button">
         <span class="psb-cmdlet-name">${esc(c.name)}</span>
         <span class="psb-cmdlet-desc">${esc(c.description)}</span>
       </div>
-    `).join('');
-
-    if (!filtered.length) {
-      list.innerHTML = '<p style="color:var(--psb-text-dim);padding:1rem;">No cmdlets found.</p>';
-    }
+    `).join('') : '<p style="color:var(--psb-text-dim);padding:1rem;">No cmdlets found.</p>';
   }
 
   function selectCmdlet(cmdletId) {
@@ -271,7 +342,6 @@
 
     const form = $('#psb-params-form');
     form.innerHTML = cmdlet.parameters.map((p, i) => {
-      const req = p.required ? ' required' : '';
       const reqBadge = p.required ? '<span class="psb-param-required-badge">REQUIRED</span>' : '';
       let input = '';
 
@@ -280,7 +350,7 @@
       } else if (p.type === 'select' && p.options) {
         input = `<select class="psb-param-select" id="psb-p-${i}" data-param="${esc(p.name)}" data-type="select"><option value="">— Select —</option>${p.options.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('')}</select>`;
       } else {
-        input = `<input type="text" class="psb-param-input" id="psb-p-${i}" data-param="${esc(p.name)}" data-type="${p.type || 'string'}" placeholder="${esc(p.placeholder || p.example || '')}"${req}>`;
+        input = `<input type="text" class="psb-param-input" id="psb-p-${i}" data-param="${esc(p.name)}" data-type="${p.type || 'string'}" placeholder="${esc(p.placeholder || p.example || '')}"${p.required ? ' required' : ''}>`;
       }
 
       return `
@@ -295,9 +365,27 @@
         </div>
       `;
     }).join('');
+
+    // #8 — Auto-preview: listen for input changes
+    form.addEventListener('input', debounce(autoPreview, 300));
+    form.addEventListener('change', debounce(autoPreview, 100));
   }
 
-  function buildCommand() {
+  // #8 — Live auto-preview as user types
+  function autoPreview() {
+    if (!S.selectedCmdlet) return;
+    buildCommand(true);
+  }
+
+  let _debounceTimer;
+  function debounce(fn, ms) {
+    return function () {
+      clearTimeout(_debounceTimer);
+      _debounceTimer = setTimeout(fn, ms);
+    };
+  }
+
+  function buildCommand(isAutoPreview) {
     const cmdlet = D.cmdlets.find(c => c.id === S.selectedCmdlet);
     if (!cmdlet) return;
 
@@ -315,10 +403,7 @@
       } else {
         const val = input.value.trim();
         if (val) {
-          // Quote strings that contain spaces or special chars
-          if (val.includes(' ') || val.includes('@') || val.includes("'")) {
-            params.push(`-${name} "${val}"`);
-          } else if (val.startsWith('$') || val.startsWith('(') || val.startsWith('@') || val === 'Unlimited' || val === '$true' || val === '$false') {
+          if (val.startsWith('$') || val.startsWith('(') || val.startsWith('@{') || val === 'Unlimited' || val === '$true' || val === '$false') {
             params.push(`-${name} ${val}`);
           } else {
             params.push(`-${name} "${val}"`);
@@ -330,23 +415,17 @@
     let command = cmdlet.name;
     if (params.length) command += ' ' + params.join(' ');
 
-    // Add prerequisites as comments
-    let fullCommand = '';
-    if (mod.install_command) fullCommand += `# ${mod.install_command}\n`;
-    if (mod.connect_command) fullCommand += `# ${mod.connect_command}\n\n`;
-    fullCommand += command;
-
+    const fullCmd = fullCommandText(command, S.selectedModule);
     const outputEl = $('#psb-output-code');
-    outputEl.innerHTML = highlightPS(fullCommand);
-
-    $('#psb-output-section').hidden = false;
-    $('#psb-output-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    // Store for copy/download
-    outputEl.dataset.raw = fullCommand;
+    outputEl.innerHTML = highlightPS(fullCmd);
+    outputEl.dataset.raw = fullCmd;
     outputEl.dataset.cmdOnly = command;
 
-    addHistory(command, `${cmdlet.name} (${mod.display_name})`);
+    $('#psb-output-section').hidden = false;
+    if (!isAutoPreview) {
+      $('#psb-output-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      addHistory(command, `${cmdlet.name} (${mod.display_name})`);
+    }
   }
 
   function resetBuild() {
@@ -361,10 +440,7 @@
     if (search) search.value = '';
   }
 
-  /* ════════════════════════════════════════════
-     REFERENCE TAB
-     ════════════════════════════════════════════ */
-
+  /* ═══════ REFERENCE TAB ═══════ */
   function renderReference() {
     const container = $('#psb-ref-modules');
     const q = S.refSearch.toLowerCase().trim();
@@ -377,7 +453,7 @@
       return `
         <div class="psb-ref-module${q ? ' open' : ''}">
           <div class="psb-ref-module-header">
-            <span class="psb-module-emoji">${mod.emoji}</span>
+            <span class="psb-module-emoji" style="font-size:1.2rem;margin:0">${mod.emoji}</span>
             <span class="psb-ref-module-title">${esc(mod.display_name)}</span>
             <span class="psb-ref-module-count">${cmdlets.length} cmdlets</span>
             <span class="psb-ref-module-arrow">▸</span>
@@ -389,43 +465,30 @@
                 <span class="psb-ref-cmdlet-desc">${esc(c.description)}</span>
                 <div class="psb-ref-cmdlet-actions">
                   <button class="psb-ref-load-btn" data-load-module="${c.module}" data-load-cmdlet="${c.id}">Load →</button>
-                  ${c.learn_url ? `<a href="${c.learn_url}" target="_blank" rel="noopener noreferrer" class="psb-ref-learn-link">Docs ↗</a>` : ''}
+                  ${c.learn_url ? `<a href="${c.learn_url}" target="_blank" rel="noopener" class="psb-ref-learn-link">Docs ↗</a>` : ''}
                 </div>
               </div>
             `).join('')}
           </div>
         </div>
       `;
-    }).join('');
+    }).filter(Boolean).join('');
   }
 
-  /* ════════════════════════════════════════════
-     SYNTAX HIGHLIGHTING (client-side)
-     ════════════════════════════════════════════ */
-
+  /* ═══════ SYNTAX HIGHLIGHTING ═══════ */
   function highlightPS(code) {
     if (!code) return '';
     return esc(code)
-      // Comments
       .replace(/(#[^\n]*)/g, '<span class="psb-syn-comment">$1</span>')
-      // Variables
       .replace(/(\$\w+)/g, '<span class="psb-syn-variable">$1</span>')
-      // Pipe
       .replace(/(\|)/g, '<span class="psb-syn-pipe">$1</span>')
-      // Cmdlet names (Verb-Noun pattern)
       .replace(/\b([A-Z][a-z]+-[A-Z]\w+)/g, '<span class="psb-syn-cmdlet">$1</span>')
-      // Parameters
       .replace(/(\s)(-[A-Za-z]+)/g, '$1<span class="psb-syn-param">$2</span>')
-      // Quoted strings
       .replace(/(&quot;[^&]*&quot;)/g, '<span class="psb-syn-value">$1</span>')
-      // Single-quoted strings
       .replace(/('(?:[^'\\]|\\.)*')/g, '<span class="psb-syn-value">$1</span>');
   }
 
-  /* ════════════════════════════════════════════
-     URL STATE
-     ════════════════════════════════════════════ */
-
+  /* ═══════ URL STATE (#19 recipe deep-links) ═══════ */
   function updateURL() {
     const p = new URLSearchParams();
     if (S.activeTab !== 'recipes') p.set('tab', S.activeTab);
@@ -433,6 +496,7 @@
     if (S.recipeSearch) p.set('q', S.recipeSearch);
     if (S.selectedModule) p.set('module', S.selectedModule);
     if (S.selectedCmdlet) p.set('cmdlet', S.selectedCmdlet);
+    if (S.expandedRecipe) p.set('recipe', S.expandedRecipe);
     const qs = p.toString();
     history.replaceState(null, '', qs ? '?' + qs : location.pathname);
   }
@@ -444,21 +508,31 @@
     if (p.get('q')) S.recipeSearch = p.get('q');
     if (p.get('module')) S.selectedModule = p.get('module');
     if (p.get('cmdlet')) S.selectedCmdlet = p.get('cmdlet');
+    if (p.get('recipe')) S.expandedRecipe = p.get('recipe');
   }
 
-  /* ════════════════════════════════════════════
-     EVENT HANDLERS
-     ════════════════════════════════════════════ */
+  /* ═══════ #13 — Export all recipes per service ═══════ */
+  function exportServiceRecipes(service) {
+    const recipes = D.recipes.filter(r => r.service === service);
+    if (!recipes.length) return;
+    const mod = D.modules.find(m => m.display_name === service);
+    let text = `# ${service} PowerShell Recipes\n# Generated by aguidetocloud.com/ps-builder/\n# ${new Date().toISOString().split('T')[0]}\n\n`;
+    if (mod && mod.install_command) text += `# Setup: ${mod.install_command}\n`;
+    if (mod && mod.connect_command) text += `# Setup: ${mod.connect_command}\n\n`;
+    text += recipes.map(r => `# ── ${r.title} ──\n# ${r.description}\n${r.command}\n`).join('\n');
+    downloadPS1(text, `${service.toLowerCase().replace(/\s+/g, '-')}-recipes.ps1`);
+  }
 
+  /* ═══════ EVENT HANDLERS ═══════ */
   function bindEvents() {
-    // Tabs
     document.addEventListener('click', e => {
+      // Tabs
       const tab = e.target.closest('.psb-tab');
       if (tab) { switchTab(tab.dataset.tab); return; }
 
-      // Recipe filters
-      const pill = e.target.closest('.psb-pill');
-      if (pill && pill.closest('#psb-recipe-filters')) {
+      // Recipe service filters
+      const pill = e.target.closest('#psb-recipe-filters .psb-pill');
+      if (pill) {
         S.recipeFilter = pill.dataset.filter;
         $$('#psb-recipe-filters .psb-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === S.recipeFilter));
         renderRecipes();
@@ -467,35 +541,80 @@
       }
 
       // Difficulty filters
-      const dpill = e.target.closest('.psb-pill-sm');
-      if (dpill && dpill.closest('#psb-difficulty-filters')) {
+      const dpill = e.target.closest('#psb-difficulty-filters .psb-pill-sm');
+      if (dpill) {
         S.difficultyFilter = dpill.dataset.difficulty;
         $$('#psb-difficulty-filters .psb-pill-sm').forEach(p => p.classList.toggle('active', p.dataset.difficulty === S.difficultyFilter));
         renderRecipes();
         return;
       }
 
-      // Recipe card toggle
-      const card = e.target.closest('.psb-recipe-card');
-      if (card && !e.target.closest('.psb-btn-copy') && !e.target.closest('.psb-btn-download') && !e.target.closest('.psb-customise-btn')) {
-        card.classList.toggle('expanded');
+      // #16 — Module category filters
+      const mcatPill = e.target.closest('#psb-module-cats .psb-pill-sm');
+      if (mcatPill) {
+        S.moduleCat = mcatPill.dataset.cat;
+        $$('#psb-module-cats .psb-pill-sm').forEach(p => p.classList.toggle('active', p.dataset.cat === S.moduleCat));
+        renderModuleGrid();
         return;
       }
 
-      // Copy button
+      // Quick Start item
+      const quickItem = e.target.closest('.psb-quick-item');
+      if (quickItem) {
+        const id = quickItem.dataset.recipe;
+        S.expandedRecipe = id;
+        renderRecipes();
+        updateURL();
+        setTimeout(() => {
+          const card = document.querySelector(`.psb-recipe-card[data-recipe="${id}"]`);
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+        return;
+      }
+
+      // #9 — Related recipe link
+      const relatedLink = e.target.closest('.psb-related-link');
+      if (relatedLink) {
+        e.preventDefault();
+        const id = relatedLink.dataset.gotoRecipe;
+        S.expandedRecipe = id;
+        renderRecipes();
+        updateURL();
+        setTimeout(() => {
+          const card = document.querySelector(`.psb-recipe-card[data-recipe="${id}"]`);
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+        return;
+      }
+
+      // #2 — Copy button (reads from data array, not HTML attribute)
       const copyBtn = e.target.closest('.psb-btn-copy');
       if (copyBtn) {
-        const text = copyBtn.dataset.copy || ($('#psb-output-code') || {}).dataset?.raw || '';
-        if (text) copyText(text);
+        if (copyBtn.dataset.recipeId) {
+          const recipe = recipeById(copyBtn.dataset.recipeId);
+          if (recipe) {
+            // #11 — Copy with prerequisites option
+            const text = copyBtn.dataset.withPrereqs ? fullCommandText(recipe.command, recipe.module) : recipe.command;
+            copyText(text);
+          }
+        } else {
+          const raw = ($('#psb-output-code') || {}).dataset?.raw || '';
+          if (raw) copyText(raw);
+        }
         return;
       }
 
       // Download button
       const dlBtn = e.target.closest('.psb-btn-download');
       if (dlBtn) {
-        const text = dlBtn.dataset.dl || ($('#psb-output-code') || {}).dataset?.raw || '';
-        const name = dlBtn.dataset.name || 'command.ps1';
-        if (text) downloadPS1(text, name);
+        if (dlBtn.dataset.recipeId) {
+          const recipe = recipeById(dlBtn.dataset.recipeId);
+          if (recipe) downloadPS1(fullCommandText(recipe.command, recipe.module), recipe.id + '.ps1');
+        } else {
+          const raw = ($('#psb-output-code') || {}).dataset?.raw || '';
+          const cmdlet = D.cmdlets.find(c => c.id === S.selectedCmdlet);
+          downloadPS1(raw, (cmdlet ? cmdlet.id : 'command') + '.ps1');
+        }
         return;
       }
 
@@ -505,12 +624,30 @@
         return;
       }
 
-      // Customise button (recipe → build)
+      // #3 — Customise button (selects module AND finds matching cmdlet)
       const custBtn = e.target.closest('.psb-customise-btn');
       if (custBtn) {
-        const modId = custBtn.dataset.module;
-        switchTab('build');
-        if (modId) selectModule(modId);
+        const recipe = recipeById(custBtn.dataset.recipeId);
+        if (recipe) {
+          switchTab('build');
+          selectModule(recipe.module);
+          // Try to match the cmdlet from the recipe command
+          const cmdMatch = recipe.command.match(/^([A-Z][a-z]+-[A-Z]\w+)/);
+          if (cmdMatch) {
+            const cmdlet = D.cmdlets.find(c => c.name === cmdMatch[1] && c.module === recipe.module);
+            if (cmdlet) setTimeout(() => selectCmdlet(cmdlet.id), 100);
+          }
+        }
+        return;
+      }
+
+      // Recipe card toggle (#4 — chevron, #18 — keyboard)
+      const card = e.target.closest('.psb-recipe-card');
+      if (card && !e.target.closest('.psb-btn-copy, .psb-btn-download, .psb-customise-btn, .psb-related-link')) {
+        const id = card.dataset.recipe;
+        S.expandedRecipe = S.expandedRecipe === id ? null : id;
+        renderRecipes();
+        updateURL();
         return;
       }
 
@@ -522,20 +659,16 @@
       const cmdItem = e.target.closest('.psb-cmdlet-item');
       if (cmdItem) { selectCmdlet(cmdItem.dataset.cmdlet); return; }
 
-      // Build button
-      if (e.target.id === 'psb-build-btn') { buildCommand(); return; }
-
-      // Reset button
+      // Build/Reset buttons
+      if (e.target.id === 'psb-build-btn') { buildCommand(false); return; }
       if (e.target.id === 'psb-reset-btn') { resetBuild(); return; }
 
-      // Copy from output section
+      // Output copy/download
       if (e.target.id === 'psb-copy-btn') {
         const raw = ($('#psb-output-code') || {}).dataset?.raw || '';
         if (raw) copyText(raw);
         return;
       }
-
-      // Download from output section
       if (e.target.id === 'psb-download-btn') {
         const raw = ($('#psb-output-code') || {}).dataset?.raw || '';
         const cmdlet = D.cmdlets.find(c => c.id === S.selectedCmdlet);
@@ -545,10 +678,7 @@
 
       // Reference accordion
       const refHeader = e.target.closest('.psb-ref-module-header');
-      if (refHeader) {
-        refHeader.closest('.psb-ref-module').classList.toggle('open');
-        return;
-      }
+      if (refHeader) { refHeader.closest('.psb-ref-module').classList.toggle('open'); return; }
 
       // Reference load button
       const loadBtn = e.target.closest('.psb-ref-load-btn');
@@ -574,83 +704,78 @@
 
     // Search inputs
     const recipeSearch = $('#psb-recipe-search');
-    if (recipeSearch) {
-      recipeSearch.addEventListener('input', () => {
-        S.recipeSearch = recipeSearch.value;
-        renderRecipes();
-      });
-    }
+    if (recipeSearch) recipeSearch.addEventListener('input', () => { S.recipeSearch = recipeSearch.value; renderRecipes(); });
 
     const cmdletSearch = $('#psb-cmdlet-search');
-    if (cmdletSearch) {
-      cmdletSearch.addEventListener('input', () => renderCmdletList());
-    }
+    if (cmdletSearch) cmdletSearch.addEventListener('input', () => renderCmdletList());
 
     const refSearch = $('#psb-ref-search');
-    if (refSearch) {
-      refSearch.addEventListener('input', () => {
-        S.refSearch = refSearch.value;
-        renderReference();
-      });
-    }
+    if (refSearch) refSearch.addEventListener('input', () => { S.refSearch = refSearch.value; renderReference(); });
 
-    // Keyboard shortcuts
+    // #18 — Keyboard shortcuts & recipe keyboard nav
     document.addEventListener('keydown', e => {
-      // Ctrl+Enter → build
       if (e.ctrlKey && e.key === 'Enter' && S.activeTab === 'build' && S.selectedCmdlet) {
         e.preventDefault();
-        buildCommand();
+        buildCommand(false);
       }
-      // / → focus search (if not in input)
+      // / → focus search
       if (e.key === '/' && !e.target.closest('input, textarea, select')) {
         e.preventDefault();
         const search = S.activeTab === 'recipes' ? recipeSearch : S.activeTab === 'reference' ? refSearch : null;
         if (search) search.focus();
       }
+      // Enter on focused recipe card
+      if (e.key === 'Enter' && e.target.closest('.psb-recipe-card')) {
+        const card = e.target.closest('.psb-recipe-card');
+        const id = card.dataset.recipe;
+        S.expandedRecipe = S.expandedRecipe === id ? null : id;
+        renderRecipes();
+        updateURL();
+      }
     });
   }
 
-  /* ════════════════════════════════════════════
-     INIT
-     ════════════════════════════════════════════ */
+  /* ═══════ #20 — PRINT STYLES ═══════ */
+  // Print is handled via CSS @media print in the stylesheet
 
+  /* ═══════ INIT ═══════ */
   function init() {
     readURL();
 
-    // Populate recipe search from URL
     const recipeSearch = $('#psb-recipe-search');
     if (recipeSearch && S.recipeSearch) recipeSearch.value = S.recipeSearch;
 
-    // Render all sections
+    renderStats();
+    renderQuickStart();
     renderRecipeFilters();
     renderRecipes();
     renderModuleGrid();
     renderReference();
     renderHistory();
 
-    // Activate correct tab
     switchTab(S.activeTab);
 
-    // Restore build state from URL
     if (S.selectedModule) {
       selectModule(S.selectedModule);
-      if (S.selectedCmdlet) {
-        setTimeout(() => selectCmdlet(S.selectedCmdlet), 50);
-      }
+      if (S.selectedCmdlet) setTimeout(() => selectCmdlet(S.selectedCmdlet), 50);
     }
 
-    // Activate correct recipe filter
     if (S.recipeFilter !== 'all') {
       $$('#psb-recipe-filters .psb-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === S.recipeFilter));
       renderRecipes();
     }
 
+    // #19 — Auto-expand and scroll to deep-linked recipe
+    if (S.expandedRecipe) {
+      setTimeout(() => {
+        const card = document.querySelector(`.psb-recipe-card[data-recipe="${S.expandedRecipe}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+    }
+
     bindEvents();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
