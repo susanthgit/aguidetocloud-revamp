@@ -186,12 +186,12 @@
 
 {{/* ── Inject TOML Data as JS ── */}}
 <script>
-window.__showdownProviders = {{ (index hugo.Data "ai-showdown").providers | jsonify }};
-window.__showdownPlans = {{ (index hugo.Data "ai-showdown").plans | jsonify }};
-window.__showdownStrengths = {{ (index hugo.Data "ai-showdown").strengths | jsonify }};
-window.__showdownCompliance = {{ (index hugo.Data "ai-showdown").compliance | jsonify }};
-window.__showdownQuiz = {{ (index hugo.Data "ai-showdown").quiz | jsonify }};
-window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | jsonify }};
+window.__showdownProviders = {{ (index hugo.Data "ai-showdown").providers | jsonify | safeJS }};
+window.__showdownPlans = {{ (index hugo.Data "ai-showdown").plans | jsonify | safeJS }};
+window.__showdownStrengths = {{ (index hugo.Data "ai-showdown").strengths | jsonify | safeJS }};
+window.__showdownCompliance = {{ (index hugo.Data "ai-showdown").compliance | jsonify | safeJS }};
+window.__showdownQuiz = {{ (index hugo.Data "ai-showdown").quiz | jsonify | safeJS }};
+window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | jsonify | safeJS }};
 </script>
 
 {{ partial "page-search.html" . }}
