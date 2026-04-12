@@ -843,3 +843,24 @@
 }
 .prompts-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .prompts-btt:hover { box-shadow: 0 4px 20px rgba(167, 139, 250, 0.5); }
+
+/* ══ Prompt Toolkit Cross-Links ══ */
+.prompts-ecosystem { text-align: center; padding: 2rem 0; max-width: 700px; margin: 0 auto; }
+.prompts-ecosystem h2 { color: #e6edf3; margin-bottom: 1rem; font-size: 1.2rem; }
+.prompts-eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.prompts-eco-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-decoration: none;
+  color: #e6edf3;
+  transition: all 0.2s;
+  text-align: center;
+}
+.prompts-eco-card:hover { border-color: #A78BFA; }
+.prompts-eco-card.prompts-eco-active { border-color: #A78BFA; background: rgba(167, 139, 250, 0.1); }
+.prompts-eco-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.prompts-eco-card strong { display: block; margin-bottom: 0.25rem; }
+.prompts-eco-card p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 0; }
+@media (max-width: 480px) { .prompts-eco-grid { grid-template-columns: 1fr; } }

@@ -193,6 +193,16 @@
 
 <script src="/js/polisher.js?v={{ site.Params.cache_version }}"></script>
 
+{{/* ── Prompt Toolkit Cross-Links ── */}}
+<div class="polisher-ecosystem">
+  <h2>🔗 Your Prompt Engineering Toolkit</h2>
+  <div class="polisher-eco-grid">
+    <a href="/prompt-guide/" class="polisher-eco-card"><span>🎓</span><strong>Guide</strong><p>Learn techniques</p></a>
+    <a href="/prompt-polisher/" class="polisher-eco-card polisher-eco-active"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
+    <a href="/prompts/" class="polisher-eco-card"><span>💡</span><strong>Library</strong><p>84 ready prompts</p></a>
+  </div>
+</div>
+
 {{ partial "feedback-cta.html" (dict "tool" "prompt-polisher" "label" "Prompt Polisher") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}
