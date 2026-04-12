@@ -970,13 +970,10 @@
     if (svcSelect && S.recipeFilter !== 'all') { svcSelect.value = S.recipeFilter; renderRecipes(); }
     const diffSelect = $('#psb-difficulty-select');
     if (diffSelect && S.difficultyFilter !== 'all') diffSelect.value = S.difficultyFilter;
+
+    if (S.selectedModule) {
       selectModule(S.selectedModule);
       if (S.selectedCmdlet) setTimeout(() => selectCmdlet(S.selectedCmdlet), 50);
-    }
-
-    if (S.recipeFilter !== 'all') {
-      $$('#psb-recipe-filters .psb-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === S.recipeFilter));
-      renderRecipes();
     }
 
     // #19 — Auto-expand and scroll to deep-linked recipe
