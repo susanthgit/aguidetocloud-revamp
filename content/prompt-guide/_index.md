@@ -1,0 +1,18 @@
+---
+title: "🎓 Prompt Engineering Guide — Learn to Write Better AI Prompts"
+description: "Interactive guide to prompt engineering techniques. Learn 8 essential techniques with hands-on practice, before/after examples, and a step-by-step Prompt Builder. Free, no sign-up."
+type: "prompt-guide"
+layout: "list"
+sitemap:
+  priority: 0.9
+  changefreq: "weekly"
+faq:
+  - question: "What is prompt engineering?"
+    answer: "Prompt engineering is the skill of writing clear, effective instructions for AI tools like ChatGPT, M365 Copilot, Claude, and Gemini. Good prompts get better, more useful responses — and it's a skill anyone can learn."
+  - question: "Do I need coding experience to learn prompt engineering?"
+    answer: "Not at all. Prompt engineering is about clear communication, not code. Our guide uses plain English, real workplace examples, and hands-on practice — designed for IT pros, admins, and knowledge workers."
+  - question: "What prompt engineering techniques should I learn first?"
+    answer: "Start with the 4 beginner techniques: Give Clear Instructions, Set a Role, Add Context, and Define the Format. These alone will dramatically improve your AI results."
+  - question: "How is this different from the Prompt Library and Prompt Polisher?"
+    answer: "The Prompt Library gives you 84 ready-to-use prompts. The Prompt Polisher scores and rewrites your prompts. This Guide teaches you the WHY — the techniques behind great prompts, so you can write your own from scratch."
+---

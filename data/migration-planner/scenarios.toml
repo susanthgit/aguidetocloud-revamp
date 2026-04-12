@@ -1,0 +1,129 @@
+# M365 Migration Planner — Migration Scenarios
+
+[[scenarios]]
+id = "onprem-cloud"
+name = "On-Premises → Microsoft 365"
+emoji = "🏢"
+description = "Migrate from on-premises Exchange, SharePoint, file servers, and Active Directory to Microsoft 365 cloud services."
+complexity_base = 12
+approaches = ["cutover", "staged", "hybrid"]
+typical_workloads = ["exchange", "sharepoint", "onedrive", "identity"]
+key_considerations = [
+  "Directory synchronisation (Entra Connect) setup",
+  "Mail flow coexistence during hybrid period",
+  "SharePoint site modernisation requirements",
+  "File server to OneDrive/SharePoint mapping",
+  "Public folder migration strategy",
+  "Client reconfiguration (Outlook profiles, OneDrive sync)"
+]
+
+[[scenarios]]
+id = "tenant-tenant"
+name = "Tenant-to-Tenant Migration"
+emoji = "🔄"
+description = "Move users, data, and configuration between two Microsoft 365 tenants — common in mergers, acquisitions, and divestitures."
+complexity_base = 16
+approaches = ["phased", "bigbang"]
+typical_workloads = ["exchange", "sharepoint", "onedrive", "teams", "identity", "power", "security"]
+key_considerations = [
+  "Cross-tenant trust and organisation relationship setup",
+  "Domain transfer between tenants",
+  "Teams data migration (channels, chats, files)",
+  "Licence procurement in target tenant",
+  "Coexistence for calendar free/busy and mail routing",
+  "Power Platform environment migration",
+  "Security policy alignment between tenants"
+]
+
+[[scenarios]]
+id = "google-m365"
+name = "Google Workspace → Microsoft 365"
+emoji = "🔀"
+description = "Migrate from Google Workspace (Gmail, Drive, Groups, Sites) to Microsoft 365 equivalents."
+complexity_base = 14
+approaches = ["cutover", "phased"]
+typical_workloads = ["exchange", "onedrive", "teams", "identity"]
+key_considerations = [
+  "Gmail label-to-folder mapping",
+  "Google Drive permissions and sharing model differences",
+  "Google Groups to M365 Groups conversion",
+  "Google Sites migration (limited support)",
+  "User retraining — significant UX change",
+  "Calendar migration and delegation",
+  "Chrome → Edge browser policy migration"
+]
+
+[[scenarios]]
+id = "hybrid"
+name = "Hybrid Configuration"
+emoji = "🔗"
+description = "Establish long-term coexistence between on-premises infrastructure and Microsoft 365 cloud — some workloads stay on-prem."
+complexity_base = 15
+approaches = ["hybrid"]
+typical_workloads = ["exchange", "sharepoint", "identity"]
+key_considerations = [
+  "Hybrid Exchange configuration and mail routing",
+  "Entra Connect with password hash sync or pass-through auth",
+  "SharePoint hybrid search and taxonomy",
+  "Ongoing management of two environments",
+  "Licensing for both on-prem and cloud",
+  "Network connectivity requirements (ExpressRoute or VPN)"
+]
+
+[[scenarios]]
+id = "other-source"
+name = "Other Source → Microsoft 365"
+emoji = "📦"
+description = "Migrate from Lotus Notes/Domino, Zimbra, GroupWise, or other legacy platforms to Microsoft 365."
+complexity_base = 18
+approaches = ["cutover", "staged"]
+typical_workloads = ["exchange", "onedrive", "identity"]
+key_considerations = [
+  "Third-party migration tool required (no native support)",
+  "Application-to-M365 feature mapping may be incomplete",
+  "Custom database/application migration beyond email",
+  "User retraining from unfamiliar UI",
+  "Legacy archive migration",
+  "Calendar and contact format conversion"
+]
+
+# Approach definitions
+[[approaches]]
+id = "cutover"
+name = "Cutover Migration"
+description = "All users migrate at once in a single weekend or maintenance window."
+best_for = "Small organisations (<150 users) with simple environments"
+risk_level = "medium"
+typical_duration_weeks = "1-2"
+
+[[approaches]]
+id = "staged"
+name = "Staged Migration"
+description = "Users migrate in planned batches (waves) over several weeks."
+best_for = "Medium organisations or complex environments needing controlled rollout"
+risk_level = "low"
+typical_duration_weeks = "4-12"
+
+[[approaches]]
+id = "phased"
+name = "Phased Migration"
+description = "Workloads migrate one at a time with coexistence between phases."
+best_for = "Large organisations, M&A scenarios, or regulated industries"
+risk_level = "low"
+typical_duration_weeks = "8-24"
+
+[[approaches]]
+id = "hybrid"
+name = "Hybrid (Coexistence)"
+description = "On-premises and cloud run side-by-side indefinitely or during a long transition."
+best_for = "Organisations with regulatory constraints or legacy dependencies"
+risk_level = "medium"
+typical_duration_weeks = "12-52"
+
+[[approaches]]
+id = "bigbang"
+name = "Big-Bang Migration"
+description = "All workloads for all users migrate in one planned cutover event."
+best_for = "Tenant-to-tenant with small user counts or clear deadlines"
+risk_level = "high"
+typical_duration_weeks = "1-4"

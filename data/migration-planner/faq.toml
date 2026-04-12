@@ -1,0 +1,29 @@
+# M365 Migration Planner — FAQ (for SEO FAQPage schema)
+
+[[faq]]
+question = "How long does a Microsoft 365 migration take?"
+answer = "Migration timelines vary significantly based on organisation size, data volume, and complexity. A small organisation (<50 users) can complete a cutover migration in 1-2 weeks. Medium organisations (500-5,000 users) typically need 8-16 weeks for a phased approach. Large enterprises (50,000+ users) may require 6-12 months. Key factors include data volume (Exchange migrates at ~10-15 GB/hour, SharePoint at ~5-10 GB/hour), number of workloads, custom applications, and compliance requirements. Always include a 2-4 week pilot phase before production migration."
+
+[[faq]]
+question = "What tools do I need for a tenant-to-tenant migration?"
+answer = "Microsoft provides native tools for tenant-to-tenant migration: Cross-Tenant Mailbox Migration (MRS) for Exchange, Migration Manager for files, Cross-Tenant Teams Migration, and Entra ID Cross-Tenant Synchronisation for identity. For complex scenarios requiring chat history migration, full coexistence, or Power Platform migration, third-party tools like Quest On Demand Migration, BitTitan MigrationWiz, or ShareGate may be needed. The choice depends on your workload scope, coexistence requirements, and budget."
+
+[[faq]]
+question = "How much does a Microsoft 365 migration cost?"
+answer = "Native Microsoft migration tools are free with your M365 subscription. Third-party tools typically cost $8-15 per user. Professional services range from $5,000-$50,000+ depending on complexity. Key cost factors include: tool licensing, internal IT labour hours, external consultant fees, training and change management, dual licensing during coexistence, and post-migration support. A small organisation might spend $2,000-$10,000 total, while a large enterprise could invest $100,000-$500,000+."
+
+[[faq]]
+question = "What are the biggest risks in M365 migration?"
+answer = "The top migration risks are: (1) Data loss — mitigate with pilot testing and post-migration validation. (2) Authentication disruption — plan MFA re-registration and SSO testing. (3) Permission escalation — audit permissions pre and post-migration. (4) Legal hold breaks — work with legal team before migrating held content. (5) Custom app failures — inventory all integrations and test in pilot. (6) Service throttling — plan for reduced throughput and schedule off-peak. (7) User disruption — invest in change management and training."
+
+[[faq]]
+question = "Can I migrate from Google Workspace to Microsoft 365?"
+answer = "Yes. Microsoft's Migration Manager supports Google Workspace to Microsoft 365 migration for email (Gmail to Exchange Online), files (Google Drive to OneDrive/SharePoint), and contacts/calendars. Google Groups can be migrated to M365 Groups. However, some Google-specific features don't have direct equivalents: Google Sites migration is limited, Google Forms must be recreated in Microsoft Forms, and Google Chat history requires third-party tools. Plan for significant user retraining as the interfaces are very different."
+
+[[faq]]
+question = "What is the best migration approach for my organisation?"
+answer = "The best approach depends on your size and complexity: Cutover migration (all at once) works for <150 users with simple environments. Staged migration (batches over weeks) suits medium organisations. Phased migration (workload by workload) is best for large organisations or M&A scenarios. Hybrid (coexistence) suits organisations with regulatory constraints. Always start with a pilot of 5-10% of users regardless of approach. Consider deadline pressure, compliance requirements, and user tolerance for disruption when choosing."
+
+[[faq]]
+question = "Do I need to keep my old tenant or environment after migration?"
+answer = "Best practice is to maintain the source environment in read-only mode for 30-90 days after migration. This provides a safety net for missed data, allows verification, and supports legal discovery requirements. After the retention period, you should: confirm all data is migrated and validated, ensure no active legal holds reference source content, verify no applications still point to source, export audit logs, and then decommission. For tenant-to-tenant migrations, domain transfer must complete before the source tenant can be fully decommissioned."

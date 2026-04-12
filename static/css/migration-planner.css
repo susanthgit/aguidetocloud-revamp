@@ -1,0 +1,716 @@
+/* =========================================================
+   M365 Migration Planner — Indigo #6366F1
+   CSS namespace: .migplan-*
+   ========================================================= */
+
+:root {
+  --tool-accent: #6366F1;
+  --tool-accent-rgb: 99, 102, 241;
+  --tool-accent-dim: rgba(99, 102, 241, 0.15);
+  --tool-accent-glow: rgba(99, 102, 241, 0.08);
+}
+
+/* ---- Layout ---- */
+.migplan-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+/* ---- Tabs ---- */
+.migplan-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.migplan-tabs::-webkit-scrollbar { display: none; }
+
+.migplan-tab {
+  padding: 0.75rem 1.1rem;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  position: relative;
+}
+.migplan-tab:hover { color: #ddd; }
+.migplan-tab[aria-selected="true"] {
+  color: #fff;
+  border-bottom-color: var(--tool-accent);
+}
+.migplan-tab:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+/* ---- Tab Panels ---- */
+.migplan-panel { display: none; }
+.migplan-panel.active { display: block; animation: migplanFadeIn 0.3s ease; }
+
+@keyframes migplanFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Wizard ---- */
+.migplan-wizard {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.migplan-wizard-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.migplan-wizard-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.migplan-wizard-progress-fill {
+  height: 100%;
+  background: var(--tool-accent);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.migplan-wizard-step-label {
+  font-size: 0.8rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.migplan-question {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.migplan-question-tip {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.migplan-question-tip .tip-icon { color: var(--tool-accent); }
+
+.migplan-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.migplan-option {
+  background: rgba(99, 102, 241, 0.06);
+  border: 1.5px solid rgba(99, 102, 241, 0.18);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.migplan-option:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #fff;
+}
+.migplan-option.selected {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: var(--tool-accent);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+}
+.migplan-option:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: 2px;
+}
+.migplan-option-emoji {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.migplan-option-label { font-weight: 600; }
+.migplan-option-desc {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+/* Multi-select checkbox style */
+.migplan-option.multi-select.selected::before {
+  content: "✓ ";
+  color: var(--tool-accent);
+  font-weight: 700;
+}
+
+.migplan-wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.migplan-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.migplan-btn-primary {
+  background: var(--tool-accent);
+  color: #fff;
+}
+.migplan-btn-primary:hover { filter: brightness(1.15); }
+.migplan-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.migplan-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: #aaa;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.migplan-btn-secondary:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+/* ---- Complexity Score ---- */
+.migplan-score-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+.migplan-score-number {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.migplan-score-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+.migplan-score-tier {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.migplan-score-tier.simple { color: #10B981; }
+.migplan-score-tier.moderate { color: #EAB308; }
+.migplan-score-tier.complex { color: #F97316; }
+.migplan-score-tier.critical { color: #EF4444; }
+
+.migplan-score-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+.migplan-score-meta span { white-space: nowrap; }
+.migplan-score-meta strong { color: #fff; }
+
+.migplan-score-narrative {
+  font-size: 0.9rem;
+  color: #bbb;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+}
+
+.migplan-score-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ---- Workload Cards ---- */
+.migplan-workload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+.migplan-workload-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+.migplan-workload-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+}
+.migplan-workload-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.migplan-workload-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.migplan-workload-score-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.migplan-workload-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.migplan-workload-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.migplan-workload-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.migplan-workload-items li {
+  font-size: 0.82rem;
+  color: #bbb;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.migplan-workload-items li:last-child { border: none; }
+
+/* Toggle sections */
+.migplan-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--tool-accent);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  margin-top: 0.5rem;
+}
+.migplan-toggle-btn:hover { text-decoration: underline; }
+.migplan-toggle-content {
+  display: none;
+  margin-top: 0.5rem;
+}
+.migplan-toggle-content.open { display: block; }
+
+/* ---- Timeline ---- */
+.migplan-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+.migplan-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(99, 102, 241, 0.2);
+}
+.migplan-phase {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+.migplan-phase::before {
+  content: "";
+  position: absolute;
+  left: -1.65rem;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tool-accent);
+  border: 2px solid #141425;
+}
+.migplan-phase-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.migplan-phase-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.migplan-phase-duration {
+  font-size: 0.8rem;
+  color: var(--tool-accent);
+  font-weight: 600;
+}
+.migplan-phase-desc {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+.migplan-phase-bar {
+  height: 24px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.migplan-phase-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tool-accent), rgba(99, 102, 241, 0.5));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  transition: width 0.6s ease;
+}
+.migplan-milestones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.migplan-milestones li {
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 0.2rem 0;
+}
+.migplan-milestones li::before {
+  content: "○ ";
+  color: var(--tool-accent);
+}
+
+.migplan-timeline-total {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+.migplan-timeline-total-label {
+  font-size: 0.85rem;
+  color: #888;
+}
+.migplan-timeline-total-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.migplan-timeline-feasibility {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.migplan-timeline-feasibility.feasible { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-timeline-feasibility.tight { background: rgba(234,179,8,0.15); color: #EAB308; }
+.migplan-timeline-feasibility.risky { background: rgba(239,68,68,0.15); color: #EF4444; }
+
+/* ---- Risk Cards ---- */
+.migplan-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+.migplan-risk-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-left: 4px solid;
+  transition: transform 0.15s;
+}
+.migplan-risk-card:hover { transform: translateY(-2px); }
+.migplan-risk-card.critical { border-left-color: #EF4444; }
+.migplan-risk-card.high { border-left-color: #F97316; }
+.migplan-risk-card.medium { border-left-color: #EAB308; }
+.migplan-risk-card.low { border-left-color: #10B981; }
+
+.migplan-risk-severity {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+.migplan-risk-severity.critical { color: #EF4444; }
+.migplan-risk-severity.high { color: #F97316; }
+.migplan-risk-severity.medium { color: #EAB308; }
+.migplan-risk-severity.low { color: #10B981; }
+
+.migplan-risk-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.migplan-risk-desc {
+  font-size: 0.82rem;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.migplan-risk-mitigation {
+  font-size: 0.8rem;
+  color: #bbb;
+  background: rgba(99, 102, 241, 0.06);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+.migplan-risk-mitigation strong {
+  color: var(--tool-accent);
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.migplan-risk-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--tool-accent);
+  text-decoration: none;
+}
+.migplan-risk-link:hover { text-decoration: underline; }
+
+.migplan-risk-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.migplan-filter-chip {
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #aaa;
+  transition: all 0.2s;
+}
+.migplan-filter-chip:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
+.migplan-filter-chip.active {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: #fff;
+}
+
+/* ---- Tool Recommender ---- */
+.migplan-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+.migplan-tool-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.migplan-tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.migplan-tool-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.migplan-tool-vendor {
+  font-size: 0.78rem;
+  color: #888;
+}
+.migplan-tool-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.migplan-tool-badge.native { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-tool-badge.third-party { background: rgba(99,102,241,0.15); color: #6366F1; }
+
+.migplan-tool-cost {
+  font-size: 0.85rem;
+  color: var(--tool-accent);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.migplan-tool-pros, .migplan-tool-cons {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+}
+.migplan-tool-pros li, .migplan-tool-cons li {
+  font-size: 0.8rem;
+  padding: 0.2rem 0;
+}
+.migplan-tool-pros li::before { content: "✅ "; }
+.migplan-tool-cons li::before { content: "❌ "; }
+
+.migplan-tool-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--tool-accent);
+  text-decoration: none;
+}
+.migplan-tool-link:hover { text-decoration: underline; }
+
+/* ---- Executive Summary ---- */
+.migplan-summary {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.migplan-summary-section {
+  margin-bottom: 2rem;
+}
+.migplan-summary-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tool-accent);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+.migplan-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.migplan-summary-stat {
+  background: rgba(99, 102, 241, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+.migplan-summary-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+.migplan-summary-stat-label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+.migplan-summary-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ---- Empty / Not Started State ---- */
+.migplan-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #888;
+}
+.migplan-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+.migplan-empty-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.migplan-empty-cta {
+  color: var(--tool-accent);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+}
+.migplan-empty-cta:hover { text-decoration: underline; }
+
+/* ---- Utility ---- */
+.migplan-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.migplan-section-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+.migplan-count {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .migplan-tabs { gap: 0; }
+  .migplan-tab { padding: 0.6rem 0.7rem; font-size: 0.78rem; }
+  .migplan-options { grid-template-columns: 1fr 1fr; }
+  .migplan-workload-grid { grid-template-columns: 1fr; }
+  .migplan-risk-grid { grid-template-columns: 1fr; }
+  .migplan-tool-grid { grid-template-columns: 1fr; }
+  .migplan-score-number { font-size: 3rem; }
+  .migplan-score-meta { gap: 1rem; }
+  .migplan-summary-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- Print ---- */
+@media print {
+  .migplan-tabs, .migplan-wizard-nav, .migplan-summary-actions,
+  .migplan-score-actions, .migplan-filter-chip { display: none !important; }
+  .migplan-panel { display: block !important; }
+  .migplan-panel:not(.migplan-panel-summary) { display: none !important; }
+  .migplan-panel-summary { display: block !important; }
+  .migplan-container { max-width: 100%; padding: 0; }
+  .migplan-summary-section h3 { color: #333; }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .migplan-panel.active { animation: none; }
+  .migplan-workload-bar-fill,
+  .migplan-phase-bar-fill,
+  .migplan-wizard-progress-fill { transition: none; }
+}

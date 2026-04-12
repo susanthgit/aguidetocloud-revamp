@@ -1,0 +1,23 @@
+---
+title: "PowerShell Command Builder — Build M365, Azure & Windows Admin Commands Visually"
+description: "Free, visual PowerShell command builder for IT admins. Build Exchange, Teams, SharePoint, Entra ID, Azure, Active Directory, GPO & Windows commands with guided parameters. No sign-up, works offline."
+layout: "list"
+type: "ps-builder"
+faq:
+  - question: "What is the PowerShell Command Builder?"
+    answer: "A free, browser-based tool that helps IT admins visually build PowerShell commands for Microsoft 365, Azure, Active Directory, Group Policy, and Windows. Select a module, choose a cmdlet, fill in parameters with guided tooltips, and get a ready-to-run command — no syntax memorisation needed."
+  - question: "Do I need to install anything to use this tool?"
+    answer: "No. The tool runs entirely in your browser with zero installation. However, to run the generated commands, you'll need the relevant PowerShell modules installed on your machine. The tool shows you the exact Install-Module command for each module."
+  - question: "Which PowerShell modules are supported?"
+    answer: "We support 8 modules covering the full Microsoft admin stack: Exchange Online (ExchangeOnlineManagement), Microsoft Teams, Microsoft Graph (Entra ID), SharePoint Online (PnP.PowerShell), Azure (Az), Active Directory, Group Policy, and Windows built-in cmdlets."
+  - question: "Is my data safe? Does this tool send anything to a server?"
+    answer: "Yes, completely safe. This tool is 100% client-side — all processing happens in your browser. No data is sent to any server, no API calls are made, and no cookies are used. Your command history is stored only in your browser's localStorage."
+  - question: "Can I save my commands?"
+    answer: "Yes. The tool automatically saves your last 20 built commands in browser localStorage. You can also download any command as a .ps1 file or copy it to your clipboard with one click."
+  - question: "Does this work offline?"
+    answer: "Yes. Once the page is loaded, the entire tool works without an internet connection. All cmdlet data and recipes are embedded in the page."
+  - question: "Is it free to use?"
+    answer: "Completely free, forever. No sign-up, no premium tier, no ads. Built as a community resource for IT admins."
+  - question: "How are Recipes different from the Build tab?"
+    answer: "Recipes are pre-built, tested PowerShell commands for common admin tasks like 'Create a Shared Mailbox' or 'Find Locked-Out Accounts.' The Build tab lets you construct custom commands by choosing any cmdlet and filling in parameters yourself. Recipes are faster for common tasks; Build is for custom needs."
+---

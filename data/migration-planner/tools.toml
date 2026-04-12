@@ -1,0 +1,259 @@
+# M365 Migration Planner — Tool Recommendations
+
+# --- Native Microsoft Tools ---
+
+[[tools]]
+id = "cross-tenant-mrs"
+name = "Cross-Tenant Mailbox Migration (MRS)"
+vendor = "Microsoft"
+type = "native"
+workloads = ["exchange"]
+cost_model = "Free (included with M365)"
+cost_per_user = 0
+best_for = "Tenant-to-tenant Exchange mailbox migration"
+scenarios = ["tenant-tenant"]
+pros = [
+  "Free — included with Microsoft 365",
+  "Native integration with Exchange Online",
+  "Supports incremental sync before cutover",
+  "Microsoft-supported and maintained"
+]
+cons = [
+  "Tenant-to-tenant only (not for on-prem)",
+  "Requires organisation relationship setup",
+  "Currently in preview for some features",
+  "No chat or Teams data migration"
+]
+url = "https://learn.microsoft.com/microsoft-365/enterprise/cross-tenant-mailbox-migration"
+org_size = "any"
+
+[[tools]]
+id = "migration-manager"
+name = "Migration Manager"
+vendor = "Microsoft"
+type = "native"
+workloads = ["onedrive", "sharepoint"]
+cost_model = "Free (included with M365)"
+cost_per_user = 0
+best_for = "File share, Google Drive, Dropbox, Box to OneDrive/SharePoint"
+scenarios = ["onprem-cloud", "google-m365"]
+pros = [
+  "Free — built into SharePoint admin center",
+  "Supports multiple sources (file shares, Google, Box, Dropbox)",
+  "Scan and assessment before migration",
+  "Incremental migration support"
+]
+cons = [
+  "Not for tenant-to-tenant SharePoint migration",
+  "Limited metadata mapping options",
+  "Can be slow for very large datasets",
+  "No Teams channel file migration"
+]
+url = "https://learn.microsoft.com/sharepointmigration/mm-get-started"
+org_size = "any"
+
+[[tools]]
+id = "spmt"
+name = "SharePoint Migration Tool (SPMT)"
+vendor = "Microsoft"
+type = "native"
+workloads = ["sharepoint"]
+cost_model = "Free download"
+cost_per_user = 0
+best_for = "On-premises SharePoint to SharePoint Online migration"
+scenarios = ["onprem-cloud"]
+pros = [
+  "Free — downloadable from Microsoft",
+  "Supports SharePoint 2010, 2013, 2016, 2019",
+  "Preserves metadata and permissions",
+  "JSON-based bulk migration support"
+]
+cons = [
+  "Desktop application (not cloud-based)",
+  "Limited to SharePoint content (no Exchange)",
+  "Can be slow for large environments",
+  "Not suitable for tenant-to-tenant"
+]
+url = "https://learn.microsoft.com/sharepointmigration/introducing-the-sharepoint-migration-tool"
+org_size = "any"
+
+[[tools]]
+id = "cross-tenant-teams"
+name = "Cross-Tenant Teams Migration"
+vendor = "Microsoft"
+type = "native"
+workloads = ["teams"]
+cost_model = "Free (included with M365)"
+cost_per_user = 0
+best_for = "Tenant-to-tenant Teams structure migration"
+scenarios = ["tenant-tenant"]
+pros = [
+  "Native Microsoft solution",
+  "Migrates team structure and channels",
+  "Part of orchestrated migration workflow"
+]
+cons = [
+  "Does not migrate 1:1 or group chat history",
+  "Limited metadata preservation",
+  "Relatively new — still maturing",
+  "Complex setup with multiple prerequisites"
+]
+url = "https://learn.microsoft.com/microsoft-365/enterprise/cross-tenant-teams-migration"
+org_size = "any"
+
+[[tools]]
+id = "entra-cross-tenant-sync"
+name = "Entra ID Cross-Tenant Synchronisation"
+vendor = "Microsoft"
+type = "native"
+workloads = ["identity"]
+cost_model = "Free (Entra ID P1 or P2)"
+cost_per_user = 0
+best_for = "Synchronising users between tenants for coexistence"
+scenarios = ["tenant-tenant"]
+pros = [
+  "Native Entra ID feature",
+  "Continuous sync for coexistence period",
+  "Supports attribute mapping",
+  "Works with B2B collaboration"
+]
+cons = [
+  "Requires Entra ID P1 or P2 licence",
+  "Does not migrate passwords or MFA",
+  "Not a full identity migration tool",
+  "Complex initial configuration"
+]
+url = "https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview"
+org_size = "any"
+
+# --- Third-Party Tools ---
+
+[[tools]]
+id = "bittitan"
+name = "BitTitan MigrationWiz"
+vendor = "BitTitan"
+type = "third-party"
+workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+cost_model = "Per-user licence"
+cost_per_user = 12
+best_for = "Multi-workload migrations with wide source support"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365", "other-source"]
+pros = [
+  "Supports 20+ source platforms",
+  "Well-established with large install base",
+  "Good reporting and error handling",
+  "Automated user provisioning",
+  "DeploymentPro for Outlook profile reconfiguration"
+]
+cons = [
+  "Per-user cost adds up for large orgs",
+  "Teams chat migration is limited",
+  "Complex pricing structure",
+  "Support can be slow for basic plans"
+]
+url = "https://www.bittitan.com/migrationwiz/"
+org_size = "small-enterprise"
+
+[[tools]]
+id = "quest-odm"
+name = "Quest On Demand Migration"
+vendor = "Quest"
+type = "third-party"
+workloads = ["exchange", "sharepoint", "onedrive", "teams", "identity", "power"]
+cost_model = "Per-user subscription"
+cost_per_user = 15
+best_for = "Enterprise tenant-to-tenant with full coexistence"
+scenarios = ["tenant-tenant", "onprem-cloud"]
+pros = [
+  "Most comprehensive tenant-to-tenant solution",
+  "Full coexistence features (directory, mail, Teams)",
+  "Teams chat history migration",
+  "Power Platform migration support",
+  "Excellent reporting dashboard"
+]
+cons = [
+  "Premium pricing — enterprise-focused",
+  "Complex setup for full feature set",
+  "Overkill for simple migrations",
+  "Requires dedicated migration admin"
+]
+url = "https://www.quest.com/products/on-demand-migration/"
+org_size = "medium-enterprise"
+
+[[tools]]
+id = "sharegate"
+name = "ShareGate by Workleap"
+vendor = "Workleap"
+type = "third-party"
+workloads = ["sharepoint", "onedrive", "teams"]
+cost_model = "Per-user subscription"
+cost_per_user = 10
+best_for = "SharePoint-focused migrations with excellent permissions handling"
+scenarios = ["onprem-cloud", "tenant-tenant"]
+pros = [
+  "Excellent SharePoint permission handling",
+  "Pre-migration assessment and reporting",
+  "Intuitive UI — easy to learn",
+  "Good Teams migration support",
+  "Bulk operations for ongoing management"
+]
+cons = [
+  "No Exchange migration",
+  "Desktop agent required",
+  "Teams chat history not included",
+  "Less suited for very large enterprises"
+]
+url = "https://sharegate.com/"
+org_size = "small-large"
+
+[[tools]]
+id = "cloudiway"
+name = "Cloudiway"
+vendor = "Cloudiway"
+type = "third-party"
+workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+cost_model = "Per-user licence"
+cost_per_user = 8
+best_for = "Google Workspace to M365 migration with good pricing"
+scenarios = ["google-m365", "tenant-tenant", "other-source"]
+pros = [
+  "Strong Google Workspace migration",
+  "Competitive pricing",
+  "Cloud-based — no agent install",
+  "Good batch processing",
+  "Lotus Notes support"
+]
+cons = [
+  "Smaller vendor — less community support",
+  "Less feature-rich than Quest for complex T2T",
+  "Limited Power Platform migration",
+  "UI is less polished than competitors"
+]
+url = "https://www.cloudiway.com/"
+org_size = "small-large"
+
+[[tools]]
+id = "avepoint"
+name = "AvePoint FLY"
+vendor = "AvePoint"
+type = "third-party"
+workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+cost_model = "Per-user licence"
+cost_per_user = 14
+best_for = "Enterprise migrations with governance requirements"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365"]
+pros = [
+  "Strong governance and compliance features",
+  "Good SharePoint modernisation tools",
+  "Cloud-based SaaS platform",
+  "Comprehensive reporting",
+  "Multi-geo support"
+]
+cons = [
+  "Enterprise pricing",
+  "Complex feature set — steep learning curve",
+  "Overkill for SMBs",
+  "Requires dedicated admin"
+]
+url = "https://www.avepoint.com/products/fly"
+org_size = "large-enterprise"

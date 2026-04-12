@@ -1,0 +1,122 @@
+# PowerShell Command Builder — Module Definitions
+# 8 modules covering the full Microsoft IT admin stack
+
+[[modules]]
+id = "exchange"
+name = "ExchangeOnlineManagement"
+display_name = "Exchange Online"
+emoji = "📧"
+category = "cloud"
+install_command = "Install-Module -Name ExchangeOnlineManagement -Force"
+connect_command = "Connect-ExchangeOnline -UserPrincipalName admin@contoso.com"
+disconnect_command = "Disconnect-ExchangeOnline"
+learn_url = "https://learn.microsoft.com/powershell/exchange/exchange-online-powershell"
+min_version = "3.0.0"
+requires_admin = false
+install_note = "Requires PowerShell 5.1+ or PowerShell 7+"
+description = "Manage Exchange Online mailboxes, permissions, transport rules, and mail flow"
+
+[[modules]]
+id = "teams"
+name = "MicrosoftTeams"
+display_name = "Microsoft Teams"
+emoji = "💬"
+category = "cloud"
+install_command = "Install-Module -Name MicrosoftTeams -Force"
+connect_command = "Connect-MicrosoftTeams"
+disconnect_command = "Disconnect-MicrosoftTeams"
+learn_url = "https://learn.microsoft.com/microsoftteams/teams-powershell-overview"
+min_version = "6.0.0"
+requires_admin = false
+install_note = "Requires PowerShell 5.1+ or PowerShell 7+"
+description = "Manage Teams, channels, users, policies, and calling configuration"
+
+[[modules]]
+id = "graph"
+name = "Microsoft.Graph"
+display_name = "Microsoft Graph"
+emoji = "🔗"
+category = "cloud"
+install_command = "Install-Module -Name Microsoft.Graph -Force"
+connect_command = "Connect-MgGraph -Scopes 'User.Read.All','Group.Read.All'"
+disconnect_command = "Disconnect-MgGraph"
+learn_url = "https://learn.microsoft.com/powershell/microsoftgraph/get-started"
+min_version = "2.0.0"
+requires_admin = false
+install_note = "Large module — use sub-modules like Microsoft.Graph.Users for faster install"
+description = "Manage users, groups, licences, Entra ID, conditional access, and audit logs via Microsoft Graph"
+
+[[modules]]
+id = "pnp"
+name = "PnP.PowerShell"
+display_name = "SharePoint Online"
+emoji = "📂"
+category = "cloud"
+install_command = "Install-Module -Name PnP.PowerShell -Force"
+connect_command = "Connect-PnPOnline -Url https://contoso.sharepoint.com -Interactive"
+disconnect_command = "Disconnect-PnPOnline"
+learn_url = "https://pnp.github.io/powershell/"
+min_version = "2.0.0"
+requires_admin = false
+install_note = "Community-maintained. Requires app registration for some operations"
+description = "Manage SharePoint Online sites, lists, permissions, and content"
+
+[[modules]]
+id = "az"
+name = "Az"
+display_name = "Azure"
+emoji = "☁️"
+category = "cloud"
+install_command = "Install-Module -Name Az -Force -AllowClobber"
+connect_command = "Connect-AzAccount"
+disconnect_command = "Disconnect-AzAccount"
+learn_url = "https://learn.microsoft.com/powershell/azure/get-started-azureps"
+min_version = "12.0.0"
+requires_admin = false
+install_note = "Large module — use sub-modules like Az.Compute, Az.Storage for faster install"
+description = "Manage Azure VMs, resource groups, storage accounts, networking, and cloud infrastructure"
+
+[[modules]]
+id = "ad"
+name = "ActiveDirectory"
+display_name = "Active Directory"
+emoji = "🏢"
+category = "onprem"
+install_command = "Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0"
+connect_command = ""
+disconnect_command = ""
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory"
+min_version = ""
+requires_admin = true
+install_note = "Part of RSAT — install via Settings > Optional Features or the command above. No Connect cmdlet needed."
+description = "Manage on-premises Active Directory users, groups, OUs, computers, and passwords"
+
+[[modules]]
+id = "gpo"
+name = "GroupPolicy"
+display_name = "Group Policy"
+emoji = "📋"
+category = "onprem"
+install_command = "Add-WindowsCapability -Online -Name Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0"
+connect_command = ""
+disconnect_command = ""
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy"
+min_version = ""
+requires_admin = true
+install_note = "Part of RSAT — install via Settings > Optional Features. Requires domain connectivity."
+description = "Create, link, backup, and manage Group Policy Objects (GPOs) across your domain"
+
+[[modules]]
+id = "windows"
+name = "Windows Built-in"
+display_name = "Windows"
+emoji = "🖥️"
+category = "windows"
+install_command = ""
+connect_command = ""
+disconnect_command = ""
+learn_url = "https://learn.microsoft.com/powershell/scripting/overview"
+min_version = ""
+requires_admin = true
+install_note = "Built into Windows — no installation needed. Some commands require Run as Administrator."
+description = "Manage Windows services, scheduled tasks, firewall, registry, disk, network, and system configuration"

@@ -1,0 +1,248 @@
+# M365 Migration Planner — Risk Database
+
+# Data Risks
+[[risks]]
+id = "data-loss"
+category = "data"
+title = "Data Loss During Migration"
+severity = "critical"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365", "other-source"]
+workloads = ["exchange", "sharepoint", "onedrive"]
+description = "Incomplete data transfer, corrupted files, or missed mailboxes resulting in permanent data loss."
+likelihood_factors = ["large-data-volume", "complex-permissions", "first-migration"]
+mitigation = "Run pilot migration first. Verify item counts and data sizes post-migration. Maintain source environment read-only for 30 days after cutover. Use migration tool validation reports."
+learn_url = "https://learn.microsoft.com/exchange/mailbox-migration/office-365-migration-best-practices"
+
+[[risks]]
+id = "version-history-loss"
+category = "data"
+title = "Version History Loss"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365"]
+workloads = ["sharepoint", "onedrive"]
+description = "File version history may be lost or truncated during migration depending on the tool and settings used."
+likelihood_factors = ["large-data-volume"]
+mitigation = "Configure migration tool to include version history (increases migration time). Document expected behaviour. Test with representative files in pilot."
+learn_url = "https://learn.microsoft.com/sharepointmigration/fileshare-to-odsp-migration-guide"
+
+[[risks]]
+id = "permissions-loss"
+category = "data"
+title = "Permission and Sharing Link Loss"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365"]
+workloads = ["sharepoint", "onedrive", "teams"]
+description = "Sharing links break, permissions don't map correctly, and external sharing configurations change."
+likelihood_factors = ["complex-permissions", "external-sharing"]
+mitigation = "Audit permissions before migration. Map permissions between source and target. Notify users about broken sharing links. Re-share critical external links post-migration."
+learn_url = "https://learn.microsoft.com/sharepointmigration/fileshare-to-odsp-migration-guide#migration-planning"
+
+# Identity Risks
+[[risks]]
+id = "auth-disruption"
+category = "identity"
+title = "Authentication Disruption"
+severity = "critical"
+scenarios = ["onprem-cloud", "tenant-tenant", "hybrid"]
+workloads = ["identity"]
+description = "Users unable to sign in after migration due to SSO breaks, MFA re-registration, or token cache issues."
+likelihood_factors = ["large-user-count", "complex-ca-policies"]
+mitigation = "Plan MFA re-registration campaign. Test SSO flow in pilot. Prepare break-glass accounts in target. Have helpdesk ready for Day 1 surge."
+learn_url = "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks"
+
+[[risks]]
+id = "conditional-access-gap"
+category = "identity"
+title = "Conditional Access Policy Gaps"
+severity = "high"
+scenarios = ["tenant-tenant"]
+workloads = ["identity"]
+description = "Conditional Access policies cannot be exported — must be manually recreated, risking security gaps."
+likelihood_factors = ["complex-ca-policies"]
+mitigation = "Document all CA policies with screenshots before migration. Recreate in target tenant before go-live. Test with pilot users."
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/overview"
+
+[[risks]]
+id = "guest-access-loss"
+category = "identity"
+title = "B2B Guest Access Disruption"
+severity = "medium"
+scenarios = ["tenant-tenant"]
+workloads = ["identity", "teams", "sharepoint"]
+description = "External guest users lose access and need re-invitation to the new tenant."
+likelihood_factors = ["many-guests"]
+mitigation = "Export guest user list. Send re-invitation batch. Communicate with external partners about the change."
+learn_url = "https://learn.microsoft.com/entra/external-id/what-is-b2b"
+
+# Application Risks
+[[risks]]
+id = "custom-app-break"
+category = "application"
+title = "Custom Application Failures"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant", "hybrid"]
+workloads = ["power", "sharepoint"]
+description = "Custom Power Apps, workflows, Teams apps, and third-party integrations break due to changed tenant IDs, URLs, or connections."
+likelihood_factors = ["many-custom-apps"]
+mitigation = "Inventory all custom apps and integrations. Test each in pilot. Update hardcoded tenant IDs and URLs. Reconnect data sources."
+learn_url = "https://learn.microsoft.com/power-apps/maker/canvas-apps/export-import-app"
+
+[[risks]]
+id = "workflow-disruption"
+category = "application"
+title = "Power Automate Flow Disruption"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant"]
+workloads = ["power"]
+description = "Automated workflows stop running, approvals are lost, and scheduled flows need reconfiguration."
+likelihood_factors = ["many-custom-apps"]
+mitigation = "Export all flows before migration. Recreate connections in target. Test critical business flows in pilot."
+learn_url = "https://learn.microsoft.com/power-automate/export-flow-solution"
+
+# Compliance Risks
+[[risks]]
+id = "legal-hold-break"
+category = "compliance"
+title = "Legal Hold Chain of Custody Break"
+severity = "critical"
+scenarios = ["tenant-tenant", "onprem-cloud"]
+workloads = ["security", "exchange"]
+description = "Breaking legal holds during migration can violate court orders and destroy evidence."
+likelihood_factors = ["active-legal-holds"]
+mitigation = "Work with legal team BEFORE migration. Maintain holds in both source and target during transition. Document chain of custody. Consider keeping source tenant until holds are resolved."
+learn_url = "https://learn.microsoft.com/purview/ediscovery-create-a-litigation-hold"
+
+[[risks]]
+id = "retention-gap"
+category = "compliance"
+title = "Retention Policy Gap"
+severity = "high"
+scenarios = ["tenant-tenant", "onprem-cloud"]
+workloads = ["security"]
+description = "Content may be deleted if retention policies are not applied in target before migration."
+likelihood_factors = ["regulated-industry"]
+mitigation = "Recreate all retention policies in target BEFORE migrating data. Verify policy application with test content."
+learn_url = "https://learn.microsoft.com/purview/retention"
+
+[[risks]]
+id = "data-residency-violation"
+category = "compliance"
+title = "Data Residency Violation"
+severity = "critical"
+scenarios = ["tenant-tenant", "google-m365"]
+workloads = ["security"]
+description = "Data may be stored in a different geographic region after migration, violating sovereignty requirements."
+likelihood_factors = ["multi-geo", "regulated-industry"]
+mitigation = "Verify target tenant data location. Configure Multi-Geo if needed. Check regional compliance requirements (GDPR, CCPA, NZ Privacy Act)."
+learn_url = "https://learn.microsoft.com/microsoft-365/enterprise/o365-data-locations"
+
+[[risks]]
+id = "audit-log-loss"
+category = "compliance"
+title = "Audit Log History Loss"
+severity = "medium"
+scenarios = ["tenant-tenant", "onprem-cloud"]
+workloads = ["security"]
+description = "Unified audit logs do not migrate between tenants. Historical audit data is lost."
+likelihood_factors = ["regulated-industry"]
+mitigation = "Export audit logs before migration. Store in external SIEM or archive. Document the gap for compliance team."
+learn_url = "https://learn.microsoft.com/purview/audit-log-search"
+
+# User Experience Risks
+[[risks]]
+id = "user-disruption"
+category = "user-experience"
+title = "User Workflow Disruption"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365", "other-source"]
+workloads = ["exchange", "teams", "sharepoint"]
+description = "Users experience broken bookmarks, missing favourites, changed URLs, and unfamiliar interfaces."
+likelihood_factors = ["large-user-count", "first-migration"]
+mitigation = "Comprehensive change management plan. Pre-migration communications. Day-of support. Quick reference guides. Champions network."
+learn_url = "https://learn.microsoft.com/microsoft-365/fasttrack/us-gov-appendix-fasttrack-responsibilities"
+
+[[risks]]
+id = "retraining-needed"
+category = "user-experience"
+title = "Significant Retraining Required"
+severity = "medium"
+scenarios = ["google-m365", "other-source"]
+workloads = ["exchange", "teams", "sharepoint", "onedrive"]
+description = "Moving between platforms (e.g., Gmail to Outlook) requires substantial user retraining."
+likelihood_factors = ["google-source", "other-source"]
+mitigation = "Start training 4-6 weeks before migration. Create comparison guides (Gmail vs Outlook). Identify power users as champions. Plan phased go-live."
+learn_url = "https://adoption.microsoft.com"
+
+# Timeline Risks
+[[risks]]
+id = "throttling"
+category = "timeline"
+title = "Service Throttling Delays"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant", "google-m365"]
+workloads = ["exchange", "sharepoint", "onedrive"]
+description = "Microsoft throttles migration throughput to protect service quality, extending migration timelines."
+likelihood_factors = ["large-data-volume"]
+mitigation = "Plan for 50% throughput buffer. Schedule large migrations during off-peak hours. Use incremental sync. Contact Microsoft support for temporary throttling adjustments."
+learn_url = "https://learn.microsoft.com/exchange/mailbox-migration/office-365-migration-best-practices"
+
+[[risks]]
+id = "unexpected-data-volume"
+category = "timeline"
+title = "Unexpected Data Volume"
+severity = "medium"
+scenarios = ["onprem-cloud", "tenant-tenant"]
+workloads = ["sharepoint", "onedrive", "exchange"]
+description = "Actual data volumes exceed estimates due to undiscovered sites, archives, or version history."
+likelihood_factors = ["large-data-volume", "first-migration"]
+mitigation = "Run thorough discovery before planning. Include 30% buffer on volume estimates. Check for orphaned sites and abandoned mailboxes."
+learn_url = "https://learn.microsoft.com/sharepointmigration/sharepoint-migration-assessment-toolscan-reports-roadmap"
+
+[[risks]]
+id = "dependency-delay"
+category = "timeline"
+title = "Third-Party Dependency Delays"
+severity = "medium"
+scenarios = ["onprem-cloud", "tenant-tenant", "hybrid"]
+workloads = ["exchange", "identity"]
+description = "DNS changes, domain transfers, certificate updates, or vendor actions introduce delays."
+likelihood_factors = ["complex-environment"]
+mitigation = "Identify all external dependencies early. Request domain transfer well in advance. Pre-stage DNS changes. Have vendor contacts on standby."
+learn_url = "https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-tenant-to-tenant-migrations"
+
+# Security Risks
+[[risks]]
+id = "permission-escalation"
+category = "security"
+title = "Unintended Permission Escalation"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant"]
+workloads = ["sharepoint", "identity"]
+description = "Permissions may be incorrectly mapped, giving users access to content they shouldn't see."
+likelihood_factors = ["complex-permissions"]
+mitigation = "Audit permissions pre and post-migration. Use principle of least privilege. Run post-migration permission report. Test with sample users."
+learn_url = "https://learn.microsoft.com/sharepoint/perm-policy-manage-access"
+
+[[risks]]
+id = "external-sharing-exposure"
+category = "security"
+title = "External Sharing Exposure"
+severity = "high"
+scenarios = ["onprem-cloud", "tenant-tenant"]
+workloads = ["sharepoint", "onedrive"]
+description = "Default sharing settings in new tenant may be more permissive than source, exposing data."
+likelihood_factors = ["external-sharing"]
+mitigation = "Configure sharing policies in target BEFORE migration. Match or tighten source settings. Audit sharing links post-migration."
+learn_url = "https://learn.microsoft.com/sharepoint/turn-external-sharing-on-or-off"
+
+[[risks]]
+id = "mfa-gap"
+category = "security"
+title = "MFA Protection Gap"
+severity = "high"
+scenarios = ["tenant-tenant"]
+workloads = ["identity"]
+description = "Users without MFA re-registration have reduced security until they set up new methods."
+likelihood_factors = ["large-user-count"]
+mitigation = "Enable security defaults or CA policies requiring MFA registration. Set registration deadline. Monitor registration progress."
+learn_url = "https://learn.microsoft.com/entra/identity/authentication/howto-mfa-getstarted"

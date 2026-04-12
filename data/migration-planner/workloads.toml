@@ -1,0 +1,296 @@
+# M365 Migration Planner — Workload Definitions
+
+[[workloads]]
+id = "exchange"
+name = "Exchange / Email"
+emoji = "📧"
+color = "#0078D4"
+complexity_weight = 20
+assessment_items = [
+  { id = "mailbox-count", label = "Number of mailboxes", tip = "Include shared, room, and equipment mailboxes" },
+  { id = "mailbox-size", label = "Average mailbox size", tip = "Check via Exchange Admin Center or PowerShell Get-MailboxStatistics" },
+  { id = "large-mailboxes", label = "Mailboxes over 50 GB", tip = "These need special handling — may require archive split" },
+  { id = "shared-mailboxes", label = "Shared mailboxes", tip = "Permissions and delegation must be remapped" },
+  { id = "public-folders", label = "Public folders", tip = "Consider migrating to M365 Groups or SharePoint" },
+  { id = "mail-rules", label = "Transport rules", tip = "Must be manually recreated in target" },
+  { id = "distribution-lists", label = "Distribution lists / groups", tip = "Mail-enabled security groups need careful handling" },
+  { id = "archive-mailboxes", label = "In-place archive mailboxes", tip = "Enable archive in target before migration" },
+  { id = "delegated-access", label = "Send-as / Send-on-behalf permissions", tip = "Document and recreate post-migration" },
+  { id = "journal-rules", label = "Journaling rules", tip = "Recreate in target to maintain compliance" }
+]
+migrates = [
+  "Mailbox content (email, calendar, contacts)",
+  "Folder structure",
+  "Mailbox permissions (Send-as, Full Access)",
+  "Auto-replies (OOF settings)",
+  "Mailbox rules (server-side)",
+  "Archive mailbox content",
+  "Calendar items and meeting requests"
+]
+does_not_migrate = [
+  "Client-side Outlook rules",
+  "Outlook Quick Steps",
+  "Custom Outlook forms",
+  "PST file contents (separate import)",
+  "RMS/IRM encrypted messages (may need re-encryption)",
+  "Deleted items beyond retention",
+  "Mailbox audit log history"
+]
+common_blockers = [
+  "Mailboxes over 100 GB (need archive split strategy)",
+  "Unsupported characters in email addresses",
+  "Mail-enabled public folders with complex permissions",
+  "Third-party journal archiving dependencies",
+  "Active litigation holds (must maintain chain of custody)"
+]
+
+[[workloads]]
+id = "sharepoint"
+name = "SharePoint"
+emoji = "📂"
+color = "#038387"
+complexity_weight = 18
+assessment_items = [
+  { id = "site-count", label = "Number of site collections", tip = "Include team sites, communication sites, and hub sites" },
+  { id = "data-volume", label = "Total SharePoint data volume", tip = "Check via SharePoint Admin Center storage metrics" },
+  { id = "custom-solutions", label = "Custom solutions (WSPs, apps)", tip = "Server-side solutions won't work in SPO — need modernisation" },
+  { id = "workflows", label = "SharePoint workflows", tip = "2010/2013 workflows must be rebuilt in Power Automate" },
+  { id = "infopath", label = "InfoPath forms", tip = "Deprecated — migrate to Power Apps" },
+  { id = "permissions", label = "Custom permission levels", tip = "SPO has different permission model — audit and simplify" },
+  { id = "large-lists", label = "Lists with 5,000+ items", tip = "Need indexed columns for views to work in SPO" },
+  { id = "site-templates", label = "Custom site templates", tip = "Classic templates need modernisation" }
+]
+migrates = [
+  "Documents and files",
+  "File metadata (created/modified dates)",
+  "Folder structure",
+  "List items and data",
+  "Site permissions (mapped)",
+  "Content types and columns",
+  "Modern pages and web parts"
+]
+does_not_migrate = [
+  "SharePoint 2010/2013 workflows",
+  "InfoPath forms",
+  "Server-side solutions (WSPs)",
+  "Custom master pages",
+  "Sandbox solutions",
+  "BCS connections",
+  "Classic publishing page layouts"
+]
+common_blockers = [
+  "Sites with custom server-side code",
+  "Active InfoPath forms in production",
+  "Complex permission inheritance breaks",
+  "Files exceeding 250 GB size limit",
+  "Path lengths over 400 characters",
+  "Blocked file types (scripts disabled by default)"
+]
+
+[[workloads]]
+id = "onedrive"
+name = "OneDrive"
+emoji = "☁️"
+color = "#0078D4"
+complexity_weight = 10
+assessment_items = [
+  { id = "user-count", label = "Number of OneDrive users", tip = "All licensed users with personal storage" },
+  { id = "avg-size", label = "Average OneDrive storage per user", tip = "Typical: 5-20 GB per user" },
+  { id = "large-users", label = "Users with over 50 GB", tip = "These take longer to migrate" },
+  { id = "sync-clients", label = "OneDrive sync client deployment", tip = "May need reconfiguration for new tenant" },
+  { id = "sharing-links", label = "External sharing links", tip = "Shared links break on migration — users must reshare" }
+]
+migrates = [
+  "All files and folders",
+  "File metadata (dates, modified by)",
+  "Folder structure",
+  "File versions (configurable)"
+]
+does_not_migrate = [
+  "Sharing links (must be recreated)",
+  "Sync client settings",
+  "OneNote notebooks (separate migration)",
+  "Recycle bin contents",
+  "Files shared by external users"
+]
+common_blockers = [
+  "Users with 1 TB+ of data (very slow migration)",
+  "OneNote notebooks embedded in OneDrive",
+  "Special characters in file/folder names",
+  "Path length exceeding 400 characters"
+]
+
+[[workloads]]
+id = "teams"
+name = "Microsoft Teams"
+emoji = "💬"
+color = "#6264A7"
+complexity_weight = 16
+assessment_items = [
+  { id = "team-count", label = "Number of Teams", tip = "Include private channels and shared channels" },
+  { id = "channel-count", label = "Total channels", tip = "Private channels have separate SharePoint sites" },
+  { id = "chat-history", label = "Chat history required?", tip = "1:1 and group chat migration is complex — may need 3rd party" },
+  { id = "teams-apps", label = "Custom Teams apps/tabs", tip = "Custom apps need republishing in target" },
+  { id = "meetings-data", label = "Meeting recordings", tip = "Stored in OneDrive/SharePoint — migrate with files" },
+  { id = "policies", label = "Teams policies (messaging, meetings)", tip = "Must be recreated in target tenant" }
+]
+migrates = [
+  "Team structure and channels (native cross-tenant)",
+  "Channel files (via SharePoint migration)",
+  "Team membership",
+  "Channel tabs and connectors (limited)",
+  "Meeting recordings (if in SharePoint/OneDrive)"
+]
+does_not_migrate = [
+  "1:1 chat history (native — 3rd party needed)",
+  "Group chat history (native — 3rd party needed)",
+  "Teams apps and bots (need reinstall)",
+  "Planner boards linked to Teams",
+  "Approvals and custom workflows",
+  "Wiki tab content (deprecated)",
+  "Meeting chat and meeting notes"
+]
+common_blockers = [
+  "Requirement to preserve chat history (adds cost + complexity)",
+  "Custom Teams apps with tenant-specific config",
+  "Teams phone system / calling plans migration",
+  "Large number of private channels (separate SP sites each)"
+]
+
+[[workloads]]
+id = "identity"
+name = "Identity (Entra ID)"
+emoji = "🔐"
+color = "#00BCF2"
+complexity_weight = 14
+assessment_items = [
+  { id = "user-count", label = "Total user accounts", tip = "Include guests, service accounts, break-glass accounts" },
+  { id = "group-count", label = "Security and M365 groups", tip = "Dynamic groups need rule recreation" },
+  { id = "mfa-method", label = "MFA configuration", tip = "Users may need to re-register MFA methods" },
+  { id = "conditional-access", label = "Conditional Access policies", tip = "Must be recreated — no export/import" },
+  { id = "app-registrations", label = "App registrations", tip = "Custom apps need new client IDs in target" },
+  { id = "b2b-guests", label = "B2B guest users", tip = "Guests need re-invitation in target tenant" },
+  { id = "custom-roles", label = "Custom admin roles", tip = "Recreate in target" },
+  { id = "pim", label = "Privileged Identity Management", tip = "PIM roles and assignments need reconfiguration" }
+]
+migrates = [
+  "User accounts (via cross-tenant sync or manual)",
+  "Group membership",
+  "Basic user attributes"
+]
+does_not_migrate = [
+  "Passwords (users must reset or new passwords provisioned)",
+  "MFA registrations (users re-register)",
+  "Conditional Access policies (recreate)",
+  "App registrations and service principals",
+  "PIM role assignments",
+  "Custom directory extensions",
+  "Sign-in and audit log history"
+]
+common_blockers = [
+  "Complex Conditional Access policies (50+ rules)",
+  "Hybrid AD requiring new Entra Connect setup",
+  "App registrations with hardcoded tenant IDs",
+  "B2B collaboration agreements with partner orgs"
+]
+
+[[workloads]]
+id = "power"
+name = "Power Platform"
+emoji = "⚡"
+color = "#742774"
+complexity_weight = 12
+assessment_items = [
+  { id = "apps-count", label = "Number of Power Apps", tip = "Canvas and model-driven apps" },
+  { id = "flows-count", label = "Number of Power Automate flows", tip = "Include cloud flows, desktop flows, scheduled flows" },
+  { id = "connectors", label = "Custom connectors", tip = "Must be recreated with new credentials" },
+  { id = "environments", label = "Power Platform environments", tip = "Each environment migrates separately" },
+  { id = "dataverse", label = "Dataverse databases", tip = "Dataverse requires separate migration strategy" },
+  { id = "powerbi", label = "Power BI reports and datasets", tip = "Export/import .pbix files — data sources need reconnecting" }
+]
+migrates = [
+  "Power Apps (export/import .zip packages)",
+  "Power Automate flows (export/import)",
+  "Power BI reports (.pbix export/import)"
+]
+does_not_migrate = [
+  "Connection credentials (must reconnect)",
+  "Custom connectors (recreate)",
+  "Dataverse data (separate tool needed)",
+  "Flow run history",
+  "Environment settings and DLP policies",
+  "Power BI dashboard comments and subscriptions"
+]
+common_blockers = [
+  "Flows with hardcoded tenant/site URLs",
+  "Custom connectors using certificate auth",
+  "Dataverse tables with complex relationships",
+  "Power Apps using on-premises data gateway"
+]
+
+[[workloads]]
+id = "security"
+name = "Security & Compliance"
+emoji = "🛡️"
+color = "#D13438"
+complexity_weight = 14
+assessment_items = [
+  { id = "dlp-policies", label = "DLP policies", tip = "Must be recreated in target" },
+  { id = "retention-policies", label = "Retention policies and labels", tip = "Recreate before migration to avoid data loss" },
+  { id = "sensitivity-labels", label = "Sensitivity labels", tip = "Labels may need remapping between tenants" },
+  { id = "ediscovery-cases", label = "Active eDiscovery cases", tip = "Cases cannot be migrated — close or preserve separately" },
+  { id = "legal-holds", label = "Legal/litigation holds", tip = "CRITICAL — must maintain chain of custody" },
+  { id = "audit-logs", label = "Audit log requirements", tip = "Export before migration — cannot be transferred" },
+  { id = "insider-risk", label = "Insider Risk policies", tip = "Recreate in target" }
+]
+migrates = [
+  "Content with applied labels (labels preserved if matched)",
+  "Encrypted content (if key management aligned)"
+]
+does_not_migrate = [
+  "DLP policies (recreate)",
+  "Retention policies (recreate)",
+  "Sensitivity label definitions (recreate)",
+  "eDiscovery cases and searches",
+  "Audit log data",
+  "Compliance Manager assessments",
+  "Insider Risk Management policies",
+  "Communication compliance policies"
+]
+common_blockers = [
+  "Active legal holds (cannot remove during migration)",
+  "Regulatory requirement for audit log continuity",
+  "Customer Key encryption (separate key migration)",
+  "Active eDiscovery cases spanning migration period"
+]
+
+[[workloads]]
+id = "other"
+name = "Other Services"
+emoji = "📋"
+color = "#7A7574"
+complexity_weight = 6
+assessment_items = [
+  { id = "planner", label = "Planner boards", tip = "Linked to M365 Groups — migrate with groups" },
+  { id = "forms", label = "Microsoft Forms", tip = "Export/recreate — no bulk migration" },
+  { id = "bookings", label = "Bookings", tip = "Recreate in target" },
+  { id = "stream", label = "Stream videos", tip = "Now stored in SharePoint/OneDrive" },
+  { id = "viva", label = "Viva Engage (Yammer)", tip = "Network migration is complex — consider fresh start" },
+  { id = "project", label = "Project for the web", tip = "Linked to Dataverse — migrate with Power Platform" }
+]
+migrates = [
+  "Planner data (with M365 Group migration)",
+  "Stream videos (if in SharePoint/OneDrive)",
+  "Bookings data (manual export/import)"
+]
+does_not_migrate = [
+  "Viva Engage/Yammer communities (separate migration)",
+  "Forms responses and analytics",
+  "Bookings custom pages",
+  "Sway presentations",
+  "To Do tasks (personal — user must export)"
+]
+common_blockers = [
+  "Large Yammer communities with compliance requirements",
+  "Project data in Dataverse with complex relationships"
+]

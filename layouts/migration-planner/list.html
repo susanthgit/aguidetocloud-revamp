@@ -1,0 +1,179 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/migration-planner.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD WebApplication ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "M365 Migration Planner — Free Interactive Microsoft 365 Migration Tool",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+
+{{/* ── SEO: FAQPage Schema ── */}}
+{{ $mpData := index hugo.Data "migration-planner" | default dict }}
+{{ $faqFile := $mpData.faq | default dict }}
+{{ with $faqFile.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ index $q "question" | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ index $q "answer" | jsonify }} }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{/* ── Inject data into JS ── */}}
+{{ $data := index hugo.Data "migration-planner" | default dict }}
+{{ $scFile := $data.scenarios | default dict }}
+{{ $wlFile := $data.workloads | default dict }}
+{{ $rkFile := $data.risks | default dict }}
+{{ $tlFile := $data.tools | default dict }}
+{{ $tmFile := $data.timeline | default dict }}
+{{ $fqFile := $data.faq | default dict }}
+<script>
+  window.__migplanData = {
+    scenarios: {{ $scFile.scenarios | jsonify | safeJS }},
+    approaches: {{ $scFile.approaches | jsonify | safeJS }},
+    workloads: {{ $wlFile.workloads | jsonify | safeJS }},
+    risks: {{ $rkFile.risks | jsonify | safeJS }},
+    tools: {{ $tlFile.tools | jsonify | safeJS }},
+    timeline: {
+      phases: {{ $tmFile.phases | jsonify | safeJS }},
+      size_tiers: {{ $tmFile.size_tiers | jsonify | safeJS }},
+      throughput: {{ $tmFile.throughput | jsonify | safeJS }}
+    },
+    faq: {{ $fqFile.faq | jsonify | safeJS }}
+  };
+</script>
+
+<div class="migplan-page">
+
+  {{ partial "tool-hero.html" (dict "title" "M365 Migration Planner" "subtitle" "Plan your Microsoft 365 migration in minutes. Interactive wizard, workload assessments, timeline estimates, risk analysis, and tool recommendations — free, no sign-up." "accent" "#6366F1") }}
+
+  <div class="migplan-container">
+
+    {{/* ── Tab Bar ── */}}
+    <div class="migplan-tabs" role="tablist" aria-label="Migration Planner sections">
+      <button class="migplan-tab" role="tab" aria-selected="true" aria-controls="panel-wizard" id="tab-wizard" data-tab="wizard">🧙‍♂️ Wizard</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-workloads" id="tab-workloads" data-tab="workloads">📊 Workloads</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-timeline" id="tab-timeline" data-tab="timeline">📅 Timeline</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-risks" id="tab-risks" data-tab="risks">⚠️ Risks</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools" data-tab="tools">🔧 Tools</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-summary" id="tab-summary" data-tab="summary">📄 Summary</button>
+    </div>
+
+    {{/* ── Panel: Wizard ── */}}
+    <div class="migplan-panel active" id="panel-wizard" role="tabpanel" aria-labelledby="tab-wizard">
+      <div class="migplan-wizard" id="migplan-wizard">
+        {{/* Wizard is fully rendered by JS */}}
+      </div>
+    </div>
+
+    {{/* ── Panel: Workloads ── */}}
+    <div class="migplan-panel" id="panel-workloads" role="tabpanel" aria-labelledby="tab-workloads">
+      <div id="migplan-workloads-content">
+        <div class="migplan-empty">
+          <div class="migplan-empty-icon">📊</div>
+          <div class="migplan-empty-text">Complete the Migration Wizard first to see your workload assessments.</div>
+          <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Panel: Timeline ── */}}
+    <div class="migplan-panel" id="panel-timeline" role="tabpanel" aria-labelledby="tab-timeline">
+      <div id="migplan-timeline-content">
+        <div class="migplan-empty">
+          <div class="migplan-empty-icon">📅</div>
+          <div class="migplan-empty-text">Complete the Migration Wizard first to see your estimated timeline.</div>
+          <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Panel: Risks ── */}}
+    <div class="migplan-panel" id="panel-risks" role="tabpanel" aria-labelledby="tab-risks">
+      <div id="migplan-risks-content">
+        <div class="migplan-empty">
+          <div class="migplan-empty-icon">⚠️</div>
+          <div class="migplan-empty-text">Complete the Migration Wizard first to see your risk assessment.</div>
+          <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Panel: Tools ── */}}
+    <div class="migplan-panel" id="panel-tools" role="tabpanel" aria-labelledby="tab-tools">
+      <div id="migplan-tools-content">
+        <div class="migplan-empty">
+          <div class="migplan-empty-icon">🔧</div>
+          <div class="migplan-empty-text">Complete the Migration Wizard first to see tool recommendations.</div>
+          <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Panel: Executive Summary ── */}}
+    <div class="migplan-panel migplan-panel-summary" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
+      <div id="migplan-summary-content">
+        <div class="migplan-empty">
+          <div class="migplan-empty-icon">📄</div>
+          <div class="migplan-empty-text">Complete the Migration Wizard to generate your Executive Summary.</div>
+          <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── FAQ Section (visible, for SEO) ── */}}
+    {{ with $faqFile.faq }}
+    <div class="migplan-faq" style="margin-top:3rem;">
+      <h2 class="migplan-section-title">❓ Frequently Asked Questions</h2>
+      {{ range $i, $q := . }}
+      <details style="margin-bottom:0.75rem;background:rgba(99,102,241,0.04);border:1px solid rgba(99,102,241,0.12);border-radius:10px;padding:0.75rem 1rem;">
+        <summary style="font-weight:700;color:#fff;font-size:0.9rem;cursor:pointer;">{{ index $q "question" }}</summary>
+        <p style="font-size:0.85rem;color:#bbb;line-height:1.6;margin-top:0.5rem;">{{ index $q "answer" }}</p>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* ── Cross-tool Links ── */}}
+    <div style="margin-top:2.5rem;text-align:center;">
+      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">🔗 Explore our other free tools</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/licensing/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">📜 Licensing Simplifier</a>
+        <a href="/copilot-readiness/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">✅ Copilot Readiness</a>
+        <a href="/deprecation-timeline/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">⏰ Deprecation Timeline</a>
+        <a href="/roi-calculator/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">💰 ROI Calculator</a>
+      </div>
+    </div>
+
+    {{/* ── Disclaimer ── */}}
+    <div style="margin-top:2.5rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:10px;font-size:0.78rem;color:#777;line-height:1.6;">
+      <strong>Disclaimer:</strong> This tool provides general guidance for migration planning. Actual migration complexity, timelines, and costs depend on your specific environment. Always validate with your own testing and consider engaging Microsoft FastTrack or a certified partner for complex migrations. Tool pricing is approximate and subject to change. The views expressed are personal and do not represent Microsoft. Always refer to <a href="https://learn.microsoft.com" style="color:var(--tool-accent)">official Microsoft documentation</a> for the most up-to-date information.
+    </div>
+
+  </div>{{/* end .migplan-container */}}
+
+  {{ partial "feedback-cta.html" (dict "tool" "migration-planner" "label" "Migration Planner") }}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+</div>{{/* end .migplan-page */}}
+
+<script src="/js/migration-planner.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

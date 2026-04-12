@@ -1,0 +1,763 @@
+# PowerShell Command Builder — Admin Recipes
+# 68 task-first recipes across 8 services
+
+# ════════════════════════════════════════════════
+# EXCHANGE ONLINE RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "exo-shared-mailbox-create"
+title = "Create a Shared Mailbox"
+description = "Create a shared mailbox that multiple users can access without a licence"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["mailbox", "shared", "create"]
+module = "exchange"
+command = '''New-Mailbox -Shared -Name "Sales Team" -DisplayName "Sales Team" -Alias salesteam'''
+explanation = "Creates a shared mailbox. Shared mailboxes don't need a licence (up to 50GB). Team members can send/receive from this mailbox once you grant them access."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-shared-mailbox-grant"
+title = "Grant Access to a Shared Mailbox"
+description = "Give a user Full Access to a shared mailbox"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["mailbox", "permissions", "shared"]
+module = "exchange"
+command = '''Add-MailboxPermission -Identity "shared@contoso.com" -User "user@contoso.com" -AccessRights FullAccess -AutoMapping:$true'''
+explanation = "Grants Full Access so the user can open the shared mailbox. AutoMapping:$true makes it appear automatically in their Outlook."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-all-mailbox-sizes"
+title = "Get All Mailbox Sizes"
+description = "Report the size and item count of every mailbox"
+service = "Exchange Online"
+difficulty = "intermediate"
+tags = ["mailbox", "reporting", "storage"]
+module = "exchange"
+command = '''Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics | Select-Object DisplayName, TotalItemSize, ItemCount | Sort-Object TotalItemSize -Descending'''
+explanation = "Gets all mailboxes, then pipes to Get-MailboxStatistics to retrieve size info. Results are sorted largest-first — great for finding mailboxes approaching quota."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-forwarding-check"
+title = "Find All Mailboxes with Forwarding"
+description = "Audit which mailboxes have email forwarding enabled"
+service = "Exchange Online"
+difficulty = "intermediate"
+tags = ["mailbox", "forwarding", "security", "audit"]
+module = "exchange"
+command = '''Get-Mailbox -ResultSize Unlimited | Where-Object {$_.ForwardingSmtpAddress -ne $null} | Select-Object DisplayName, PrimarySmtpAddress, ForwardingSmtpAddress'''
+explanation = "Finds all mailboxes with forwarding rules — important for security audits. Forwarding to external addresses can be a data exfiltration risk."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-message-trace"
+title = "Track an Email"
+description = "Find where a specific email went (delivered, blocked, or delayed)"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["email", "tracking", "troubleshooting"]
+module = "exchange"
+command = '''Get-MessageTrace -SenderAddress "sender@contoso.com" -RecipientAddress "recipient@contoso.com" -StartDate (Get-Date).AddDays(-7) -EndDate (Get-Date)'''
+explanation = "Searches the last 7 days of email flow for messages between the sender and recipient. Shows status (Delivered, Failed, Filtered) and timestamps."
+prerequisites = "Exchange Online admin role. Message trace only covers last 10 days."
+
+[[recipes]]
+id = "exo-disable-protocols"
+title = "Disable POP and IMAP for a User"
+description = "Turn off legacy mail protocols for security"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["security", "protocols", "mailbox"]
+module = "exchange"
+command = '''Set-CASMailbox -Identity "user@contoso.com" -PopEnabled $false -ImapEnabled $false'''
+explanation = "Disables POP3 and IMAP access for a mailbox. This is a security best practice — legacy protocols don't support modern authentication and are targeted by attackers."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-distribution-members"
+title = "List Distribution Group Members"
+description = "Get all members of a distribution list"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["group", "distribution", "reporting"]
+module = "exchange"
+command = '''Get-DistributionGroupMember -Identity "all-staff@contoso.com" -ResultSize Unlimited | Select-Object DisplayName, PrimarySmtpAddress'''
+explanation = "Lists every member of a distribution group with their name and email. Use -ResultSize Unlimited to ensure you get all members for large groups."
+prerequisites = "Exchange Online admin role"
+
+[[recipes]]
+id = "exo-set-forwarding"
+title = "Set Up Email Forwarding"
+description = "Forward a user's email to another address (keeping a copy)"
+service = "Exchange Online"
+difficulty = "beginner"
+tags = ["mailbox", "forwarding"]
+module = "exchange"
+command = '''Set-Mailbox -Identity "user@contoso.com" -ForwardingSmtpAddress "smtp:external@gmail.com" -DeliverToMailboxAndForward $true'''
+explanation = "Forwards all incoming email to the specified address while keeping a copy in the original mailbox. Use DeliverToMailboxAndForward:$true to keep copies."
+prerequisites = "Exchange Online admin role"
+
+# ════════════════════════════════════════════════
+# MICROSOFT TEAMS RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "teams-list-all"
+title = "List All Teams"
+description = "Get a list of every team in your organisation"
+service = "Microsoft Teams"
+difficulty = "beginner"
+tags = ["teams", "reporting", "inventory"]
+module = "teams"
+command = '''Get-Team | Select-Object DisplayName, Visibility, MailNickName, GroupId | Sort-Object DisplayName'''
+explanation = "Returns all teams with their visibility (Public/Private), mail nickname, and Group ID. The GroupId is needed for most other Teams cmdlets."
+prerequisites = "Teams admin role"
+
+[[recipes]]
+id = "teams-owners-report"
+title = "Find Teams with No Owner"
+description = "Identify teams that have lost all owners"
+service = "Microsoft Teams"
+difficulty = "intermediate"
+tags = ["teams", "owners", "governance"]
+module = "teams"
+command = '''Get-Team | ForEach-Object { $owners = (Get-TeamUser -GroupId $_.GroupId -Role Owner); if($owners.Count -eq 0) { $_ } } | Select-Object DisplayName, GroupId'''
+explanation = "Loops through every team and checks for owners. Teams with zero owners become unmanageable — this helps you find them so you can assign new owners."
+prerequisites = "Teams admin role. May take a while for large tenants."
+
+[[recipes]]
+id = "teams-create-team"
+title = "Create a Private Team"
+description = "Create a new private team with an owner"
+service = "Microsoft Teams"
+difficulty = "beginner"
+tags = ["teams", "create"]
+module = "teams"
+command = '''New-Team -DisplayName "Project Alpha" -Description "Collaboration space for Project Alpha" -Visibility Private -Owner "owner@contoso.com"'''
+explanation = "Creates a new private team. Only invited members can see and join it. The -Owner parameter sets the initial owner."
+prerequisites = "Teams admin role"
+
+[[recipes]]
+id = "teams-add-bulk-members"
+title = "Add Multiple Members to a Team"
+description = "Add a list of users to a team in one go"
+service = "Microsoft Teams"
+difficulty = "intermediate"
+tags = ["teams", "members", "bulk"]
+module = "teams"
+command = '''$users = @("user1@contoso.com","user2@contoso.com","user3@contoso.com")
+$teamId = (Get-Team -DisplayName "Project Alpha").GroupId
+$users | ForEach-Object { Add-TeamUser -GroupId $teamId -User $_ -Role Member }'''
+explanation = "Adds multiple users to a team using a loop. Edit the $users array with your email addresses. Change -Role to Owner if needed."
+prerequisites = "Teams admin role"
+
+[[recipes]]
+id = "teams-guest-report"
+title = "List All Guest Users in Teams"
+description = "Find all external/guest members across all teams"
+service = "Microsoft Teams"
+difficulty = "intermediate"
+tags = ["teams", "guest", "security", "reporting"]
+module = "teams"
+command = '''Get-Team | ForEach-Object { $team = $_; Get-TeamUser -GroupId $_.GroupId -Role Guest | Select-Object @{N='Team';E={$team.DisplayName}}, User, Name }'''
+explanation = "Loops through all teams and finds guest accounts. Essential for security reviews — helps you know which external users have access to what."
+prerequisites = "Teams admin role"
+
+[[recipes]]
+id = "teams-disable-recording"
+title = "Disable Meeting Recording (Global)"
+description = "Turn off cloud recording for all meetings"
+service = "Microsoft Teams"
+difficulty = "beginner"
+tags = ["teams", "meeting", "policy", "recording"]
+module = "teams"
+command = '''Set-CsTeamsMeetingPolicy -Identity "Global" -AllowCloudRecording $false'''
+explanation = "Disables meeting recording globally. Users won't see the Record option in meetings. You can also create a custom policy and assign it to specific users instead."
+prerequisites = "Teams admin role"
+
+# ════════════════════════════════════════════════
+# ENTRA ID / MICROSOFT GRAPH RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "graph-all-users"
+title = "List All Users"
+description = "Get all Entra ID users with key properties"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["user", "entra", "reporting"]
+module = "graph"
+command = '''Get-MgUser -All -Property DisplayName,UserPrincipalName,AccountEnabled,CreatedDateTime | Select-Object DisplayName, UserPrincipalName, AccountEnabled, CreatedDateTime'''
+explanation = "Returns all users in Entra ID (Azure AD) with their sign-in name, account status, and creation date. The -All flag ensures you get every user, not just the first page."
+prerequisites = "User.Read.All permission"
+
+[[recipes]]
+id = "graph-disabled-users"
+title = "Find All Disabled Users"
+description = "List users whose accounts are disabled"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["user", "disabled", "audit"]
+module = "graph"
+command = '''Get-MgUser -All -Filter "accountEnabled eq false" -Property DisplayName,UserPrincipalName | Select-Object DisplayName, UserPrincipalName'''
+explanation = "Uses server-side filtering to efficiently find disabled accounts. Useful for cleanup — disabled users may still consume licences."
+prerequisites = "User.Read.All permission"
+
+[[recipes]]
+id = "graph-user-licences"
+title = "Check a User's Licences"
+description = "See what licences are assigned to a specific user"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["licence", "user", "reporting"]
+module = "graph"
+command = '''Get-MgUserLicenseDetail -UserId "user@contoso.com" | Select-Object SkuPartNumber, SkuId'''
+explanation = "Shows the licence SKUs assigned to a user. The SkuPartNumber is the human-readable name (e.g., ENTERPRISEPACK = Office 365 E3)."
+prerequisites = "User.Read.All permission"
+
+[[recipes]]
+id = "graph-guest-users"
+title = "List All Guest Users"
+description = "Find all external/guest accounts in your tenant"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["guest", "external", "security"]
+module = "graph"
+command = '''Get-MgUser -All -Filter "userType eq 'Guest'" -Property DisplayName,UserPrincipalName,CreatedDateTime | Select-Object DisplayName, UserPrincipalName, CreatedDateTime'''
+explanation = "Finds all guest accounts (external users invited via B2B). Review these regularly — stale guest accounts are a security risk."
+prerequisites = "User.Read.All permission"
+
+[[recipes]]
+id = "graph-inactive-users"
+title = "Find Users Who Haven't Signed In (90 Days)"
+description = "Identify potentially stale accounts for cleanup"
+service = "Entra ID"
+difficulty = "intermediate"
+tags = ["user", "inactive", "security", "audit"]
+module = "graph"
+command = '''$cutoff = (Get-Date).AddDays(-90).ToString("yyyy-MM-ddTHH:mm:ssZ")
+Get-MgUser -All -Property DisplayName,UserPrincipalName,SignInActivity | Where-Object { $_.SignInActivity.LastSignInDateTime -lt $cutoff } | Select-Object DisplayName, UserPrincipalName, @{N='LastSignIn';E={$_.SignInActivity.LastSignInDateTime}}'''
+explanation = "Finds users who haven't signed in for 90+ days. These may be candidates for disabling or licence removal. Requires Entra ID P1 for sign-in activity data."
+prerequisites = "AuditLog.Read.All permission, Entra ID P1 licence"
+
+[[recipes]]
+id = "graph-ca-policies"
+title = "List Conditional Access Policies"
+description = "Get all Conditional Access policies and their state"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["conditional access", "security", "policy"]
+module = "graph"
+command = '''Get-MgIdentityConditionalAccessPolicy -All | Select-Object DisplayName, State, CreatedDateTime | Sort-Object State'''
+explanation = "Lists all Conditional Access policies with their state (enabled/disabled/report-only). Essential for security reviews and compliance audits."
+prerequisites = "Policy.Read.All permission"
+
+[[recipes]]
+id = "graph-signin-failures"
+title = "Check Recent Sign-In Failures"
+description = "Find failed login attempts for security monitoring"
+service = "Entra ID"
+difficulty = "intermediate"
+tags = ["signin", "security", "audit"]
+module = "graph"
+command = '''Get-MgAuditLogSignIn -Filter "status/errorCode ne 0" -Top 50 | Select-Object UserDisplayName, UserPrincipalName, @{N='Error';E={$_.Status.ErrorCode}}, @{N='Reason';E={$_.Status.FailureReason}}, CreatedDateTime'''
+explanation = "Returns the last 50 failed sign-in attempts with error codes and reasons. Look for patterns — multiple failures from the same IP or user could indicate an attack."
+prerequisites = "AuditLog.Read.All permission"
+
+[[recipes]]
+id = "graph-create-security-group"
+title = "Create a Security Group"
+description = "Create a new Entra ID security group"
+service = "Entra ID"
+difficulty = "beginner"
+tags = ["group", "security", "create"]
+module = "graph"
+command = '''New-MgGroup -DisplayName "VPN Users" -MailEnabled:$false -MailNickname "vpnusers" -SecurityEnabled'''
+explanation = "Creates a security group. Set MailEnabled to $false and SecurityEnabled to $true for a pure security group (no email). Use this for access control and Conditional Access."
+prerequisites = "Group.ReadWrite.All permission"
+
+# ════════════════════════════════════════════════
+# SHAREPOINT ONLINE RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "spo-all-sites"
+title = "List All SharePoint Sites"
+description = "Get every site collection in the tenant"
+service = "SharePoint Online"
+difficulty = "beginner"
+tags = ["sharepoint", "site", "inventory"]
+module = "pnp"
+command = '''Get-PnPTenantSite | Select-Object Url, Title, Template, StorageUsageCurrent | Sort-Object StorageUsageCurrent -Descending'''
+explanation = "Lists all site collections with their URL, title, template type, and storage usage. Sorted by storage so you can find the largest sites first."
+prerequisites = "SharePoint admin role, connected to admin site (-Url https://contoso-admin.sharepoint.com)"
+
+[[recipes]]
+id = "spo-site-admins"
+title = "List Site Collection Admins"
+description = "See who has admin access to a specific site"
+service = "SharePoint Online"
+difficulty = "beginner"
+tags = ["sharepoint", "permissions", "admin"]
+module = "pnp"
+command = '''Get-PnPSiteCollectionAdmin | Select-Object Title, Email, LoginName'''
+explanation = "Shows all site collection administrators for the currently connected site. Run Connect-PnPOnline first to connect to the target site."
+prerequisites = "Connected to the target site"
+
+[[recipes]]
+id = "spo-export-list"
+title = "Export a SharePoint List to CSV"
+description = "Download all items from a list as a CSV file"
+service = "SharePoint Online"
+difficulty = "intermediate"
+tags = ["sharepoint", "list", "export", "csv"]
+module = "pnp"
+command = '''Get-PnPListItem -List "Tasks" -PageSize 500 | Select-Object @{N='Title';E={$_.FieldValues.Title}}, @{N='Status';E={$_.FieldValues.Status}}, @{N='AssignedTo';E={$_.FieldValues.AssignedTo.Email}} | Export-Csv -Path "C:\Export\tasks.csv" -NoTypeInformation'''
+explanation = "Exports all items from a SharePoint list to a CSV file. Adjust the field names in the Select-Object to match your list columns. PageSize 500 handles large lists."
+prerequisites = "Connected to the site containing the list"
+
+[[recipes]]
+id = "spo-permissions-report"
+title = "Get Users with Site Permissions"
+description = "List all users who have access to the current site"
+service = "SharePoint Online"
+difficulty = "beginner"
+tags = ["sharepoint", "permissions", "audit"]
+module = "pnp"
+command = '''Get-PnPUser -WithRightsAssigned | Select-Object Title, Email, LoginName'''
+explanation = "Returns users who have explicitly granted permissions on the current site. Use -WithRightsAssigned to filter out users without direct permissions."
+prerequisites = "Connected to the target site"
+
+[[recipes]]
+id = "spo-add-admin"
+title = "Add a Site Collection Admin"
+description = "Grant admin access to a SharePoint site"
+service = "SharePoint Online"
+difficulty = "beginner"
+tags = ["sharepoint", "permissions", "admin", "add"]
+module = "pnp"
+command = '''Add-PnPSiteCollectionAdmin -Owners "admin@contoso.com"'''
+explanation = "Adds a user as a site collection administrator. Site collection admins have full control over the site, its content, and permissions."
+prerequisites = "Connected to the target site, existing admin access"
+
+[[recipes]]
+id = "spo-storage-report"
+title = "SharePoint Storage Usage Report"
+description = "See storage used by each site collection"
+service = "SharePoint Online"
+difficulty = "beginner"
+tags = ["sharepoint", "storage", "reporting"]
+module = "pnp"
+command = '''Get-PnPTenantSite | Select-Object Title, Url, @{N='StorageMB';E={$_.StorageUsageCurrent}}, @{N='StorageQuotaMB';E={$_.StorageQuota}} | Sort-Object StorageMB -Descending'''
+explanation = "Shows storage usage vs quota for every site. Helps identify sites approaching their limit and plan storage allocation."
+prerequisites = "SharePoint admin role, connected to admin site"
+
+# ════════════════════════════════════════════════
+# AZURE RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "az-list-vms"
+title = "List All VMs with Power State"
+description = "See all Azure VMs and whether they're running or stopped"
+service = "Azure"
+difficulty = "beginner"
+tags = ["azure", "vm", "reporting"]
+module = "az"
+command = '''Get-AzVM -Status | Select-Object Name, ResourceGroupName, @{N='Size';E={$_.HardwareProfile.VmSize}}, @{N='Status';E={$_.PowerState}}'''
+explanation = "Lists all VMs with their resource group, size, and power state (running/deallocated). The -Status flag is key — without it, you don't get the power state."
+prerequisites = "Reader role on subscription"
+
+[[recipes]]
+id = "az-stop-all-vms"
+title = "Stop All VMs in a Resource Group"
+description = "Deallocate all VMs to save costs (stops billing)"
+service = "Azure"
+difficulty = "intermediate"
+tags = ["azure", "vm", "cost", "stop"]
+module = "az"
+command = '''Get-AzVM -ResourceGroupName "myResourceGroup" | Stop-AzVM -Force'''
+explanation = "Stops and deallocates every VM in the resource group. Deallocated VMs don't incur compute charges (only storage). Use -Force to skip confirmation."
+prerequisites = "Contributor role on the resource group"
+
+[[recipes]]
+id = "az-create-rg"
+title = "Create a Resource Group"
+description = "Create a new Azure resource group with tags"
+service = "Azure"
+difficulty = "beginner"
+tags = ["azure", "resource group", "create"]
+module = "az"
+command = '''New-AzResourceGroup -Name "prod-resources" -Location "australiaeast" -Tag @{Environment="Production"; Team="IT"; CostCentre="12345"}'''
+explanation = "Creates a resource group in the specified region with tags. Tags help with cost management and organisation. Always tag your resource groups."
+prerequisites = "Contributor role on subscription"
+
+[[recipes]]
+id = "az-resource-inventory"
+title = "Full Azure Resource Inventory"
+description = "List every resource across all resource groups"
+service = "Azure"
+difficulty = "beginner"
+tags = ["azure", "inventory", "reporting"]
+module = "az"
+command = '''Get-AzResource | Select-Object Name, ResourceGroupName, ResourceType, Location | Sort-Object ResourceType | Export-Csv -Path "C:\Export\azure-inventory.csv" -NoTypeInformation'''
+explanation = "Exports a complete inventory of all Azure resources to CSV. Great for compliance audits, cost reviews, and documentation."
+prerequisites = "Reader role on subscription"
+
+[[recipes]]
+id = "az-nsg-rules"
+title = "List NSG Security Rules"
+description = "View all inbound/outbound rules on a Network Security Group"
+service = "Azure"
+difficulty = "intermediate"
+tags = ["azure", "network", "security", "nsg"]
+module = "az"
+command = '''Get-AzNetworkSecurityGroup -Name "myNSG" -ResourceGroupName "myResourceGroup" | Get-AzNetworkSecurityRuleConfig | Select-Object Name, Priority, Direction, Access, Protocol, DestinationPortRange'''
+explanation = "Shows all security rules on an NSG. Check for overly permissive rules (like allowing all traffic on port 3389 from Any source) during security reviews."
+prerequisites = "Reader role on the NSG"
+
+[[recipes]]
+id = "az-unused-disks"
+title = "Find Unattached (Orphaned) Disks"
+description = "Find managed disks not attached to any VM — potential cost waste"
+service = "Azure"
+difficulty = "intermediate"
+tags = ["azure", "disk", "cost", "cleanup"]
+module = "az"
+command = '''Get-AzDisk | Where-Object { $_.ManagedBy -eq $null } | Select-Object Name, ResourceGroupName, DiskSizeGB, @{N='SKU';E={$_.Sku.Name}} | Sort-Object DiskSizeGB -Descending'''
+explanation = "Finds managed disks not attached to any VM. These orphaned disks still incur storage charges. Review and delete if no longer needed."
+prerequisites = "Reader role on subscription"
+
+[[recipes]]
+id = "az-vm-sizes"
+title = "List Available VM Sizes in a Region"
+description = "See what VM sizes are available in a specific Azure region"
+service = "Azure"
+difficulty = "beginner"
+tags = ["azure", "vm", "sizing"]
+module = "az"
+command = '''Get-AzVMSize -Location "australiaeast" | Select-Object Name, NumberOfCores, MemoryInMB, MaxDataDiskCount | Sort-Object NumberOfCores'''
+explanation = "Lists all VM sizes available in the specified region with core count, memory, and disk limits. Useful when planning new VMs or right-sizing existing ones."
+prerequisites = "Reader role on subscription"
+
+# ════════════════════════════════════════════════
+# ACTIVE DIRECTORY RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "ad-locked-accounts"
+title = "Find All Locked-Out Accounts"
+description = "Identify users who are locked out of their accounts"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "lockout", "troubleshooting"]
+module = "ad"
+command = '''Search-ADAccount -LockedOut | Select-Object Name, SamAccountName, LockedOut, LastLogonDate'''
+explanation = "Finds all currently locked-out user accounts. This is usually the first thing helpdesk checks when a user can't sign in."
+prerequisites = "AD RSAT installed, domain connectivity"
+
+[[recipes]]
+id = "ad-unlock-user"
+title = "Unlock a User Account"
+description = "Unlock a locked-out Active Directory account"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "unlock", "helpdesk"]
+module = "ad"
+command = '''Unlock-ADAccount -Identity "jsmith"'''
+explanation = "Unlocks the specified user account immediately. The user can then sign in again. Use this instead of waiting for the lockout timer to expire."
+prerequisites = "Account Operator or Helpdesk role"
+
+[[recipes]]
+id = "ad-inactive-computers"
+title = "Find Inactive Computer Accounts (90 Days)"
+description = "Identify computers that haven't logged in recently"
+service = "Active Directory"
+difficulty = "intermediate"
+tags = ["ad", "computer", "cleanup", "stale"]
+module = "ad"
+command = '''$cutoff = (Get-Date).AddDays(-90)
+Get-ADComputer -Filter {LastLogonDate -lt $cutoff} -Properties LastLogonDate | Select-Object Name, LastLogonDate, DistinguishedName | Sort-Object LastLogonDate'''
+explanation = "Finds computer accounts that haven't authenticated to AD in 90+ days. These are likely decommissioned machines — disable or remove them to keep AD clean."
+prerequisites = "AD read permissions"
+
+[[recipes]]
+id = "ad-password-expiry"
+title = "Find Users with Expired Passwords"
+description = "List users whose passwords have expired"
+service = "Active Directory"
+difficulty = "intermediate"
+tags = ["ad", "password", "security"]
+module = "ad"
+command = '''Get-ADUser -Filter {Enabled -eq $true -and PasswordExpired -eq $true} -Properties PasswordLastSet, PasswordExpired | Select-Object Name, SamAccountName, PasswordLastSet'''
+explanation = "Finds enabled users with expired passwords. These users can't sign in until they change their password. Useful for proactive helpdesk support."
+prerequisites = "AD read permissions"
+
+[[recipes]]
+id = "ad-new-user"
+title = "Create a New AD User"
+description = "Create a user account in a specific OU"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "user", "create", "onboarding"]
+module = "ad"
+command = '''New-ADUser -Name "Jane Smith" -SamAccountName "jsmith" -UserPrincipalName "jsmith@contoso.com" -Path "OU=Users,DC=contoso,DC=com" -AccountPassword (ConvertTo-SecureString "TempP@ss123!" -AsPlainText -Force) -Enabled $true -ChangePasswordAtLogon $true'''
+explanation = "Creates a new user in the specified OU with a temporary password. The user must change their password at first logon. Adjust the -Path to match your OU structure."
+prerequisites = "Account creation permissions on the target OU"
+
+[[recipes]]
+id = "ad-group-membership"
+title = "Check a User's Group Memberships"
+description = "See which AD groups a user belongs to"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "group", "membership"]
+module = "ad"
+command = '''Get-ADUser -Identity "jsmith" -Properties MemberOf | Select-Object -ExpandProperty MemberOf | Get-ADGroup | Select-Object Name'''
+explanation = "Shows all groups the user is a member of. Useful for troubleshooting access issues — if a user can't access something, check if they're in the right group."
+prerequisites = "AD read permissions"
+
+[[recipes]]
+id = "ad-users-in-ou"
+title = "List All Users in an OU"
+description = "Get users from a specific Organisational Unit"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "user", "ou", "reporting"]
+module = "ad"
+command = '''Get-ADUser -Filter * -SearchBase "OU=Sales,DC=contoso,DC=com" -Properties Title, Department, Enabled | Select-Object Name, SamAccountName, Title, Department, Enabled'''
+explanation = "Lists all users in the specified OU with their job details. Change the SearchBase path to match your OU. Useful for org-level user reports."
+prerequisites = "AD read permissions"
+
+[[recipes]]
+id = "ad-add-to-group"
+title = "Add a User to an AD Group"
+description = "Grant group membership to a user"
+service = "Active Directory"
+difficulty = "beginner"
+tags = ["ad", "group", "membership", "add"]
+module = "ad"
+command = '''Add-ADGroupMember -Identity "VPN-Users" -Members "jsmith"'''
+explanation = "Adds the user to the specified group. The user inherits all permissions and policies associated with that group. Takes effect at next logon or policy refresh."
+prerequisites = "Group management permissions"
+
+# ════════════════════════════════════════════════
+# GROUP POLICY RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "gpo-backup-all"
+title = "Backup All GPOs"
+description = "Create a backup of every Group Policy Object"
+service = "Group Policy"
+difficulty = "beginner"
+tags = ["gpo", "backup", "disaster recovery"]
+module = "gpo"
+command = '''Backup-GPO -All -Path "C:\GPOBackups\$(Get-Date -Format 'yyyy-MM-dd')"'''
+explanation = "Backs up all GPOs to a dated folder. Do this BEFORE making any GPO changes and on a regular schedule. You can restore individual GPOs from these backups."
+prerequisites = "Group Policy management rights, write access to backup path"
+
+[[recipes]]
+id = "gpo-list-all"
+title = "List All GPOs with Status"
+description = "Get all GPOs with their creation and modification dates"
+service = "Group Policy"
+difficulty = "beginner"
+tags = ["gpo", "reporting", "inventory"]
+module = "gpo"
+command = '''Get-GPO -All | Select-Object DisplayName, GpoStatus, CreationTime, ModificationTime | Sort-Object ModificationTime -Descending'''
+explanation = "Lists every GPO in the domain. GpoStatus tells you if settings are enabled/disabled. Sorted by last modified date to see recent changes first."
+prerequisites = "Group Policy read permissions"
+
+[[recipes]]
+id = "gpo-create-and-link"
+title = "Create a GPO and Link to an OU"
+description = "Create a new GPO and immediately link it"
+service = "Group Policy"
+difficulty = "intermediate"
+tags = ["gpo", "create", "link"]
+module = "gpo"
+command = '''New-GPO -Name "Disable USB Storage" -Comment "Blocks USB mass storage devices for security" | New-GPLink -Target "OU=Workstations,DC=contoso,DC=com"'''
+explanation = "Creates a new GPO and pipes it directly to New-GPLink to link it to an OU. The GPO will be empty — you still need to configure the actual settings via GPMC."
+prerequisites = "GPO creation and link permissions"
+
+[[recipes]]
+id = "gpo-rsop-report"
+title = "Generate RSoP Report"
+description = "See which policies apply to a user/computer"
+service = "Group Policy"
+difficulty = "intermediate"
+tags = ["gpo", "rsop", "troubleshooting"]
+module = "gpo"
+command = '''Get-GPResultantSetOfPolicy -Computer "WORKSTATION01" -User "contoso\jsmith" -ReportType Html -Path "C:\Reports\RSoP-jsmith.html"'''
+explanation = "Generates an HTML report showing all policies that apply to the specified user on the specified computer. Open the HTML file in a browser to review."
+prerequisites = "Read access to GPO and remote access to the computer"
+
+[[recipes]]
+id = "gpo-unlinked"
+title = "Find Unlinked GPOs"
+description = "Identify GPOs that aren't linked anywhere (potentially orphaned)"
+service = "Group Policy"
+difficulty = "intermediate"
+tags = ["gpo", "cleanup", "governance"]
+module = "gpo"
+command = '''Get-GPO -All | ForEach-Object { $gpo = $_; $links = (Get-GPOReport -Guid $gpo.Id -ReportType Xml | Select-Xml -XPath "//LinksTo").Count; if($links -eq 0) { $gpo } } | Select-Object DisplayName, CreationTime'''
+explanation = "Finds GPOs that aren't linked to any OU, domain, or site. These may be leftover from testing or decommissioned policies. Review and delete if no longer needed."
+prerequisites = "Group Policy read permissions. May take a while for many GPOs."
+
+# ════════════════════════════════════════════════
+# WINDOWS RECIPES
+# ════════════════════════════════════════════════
+
+[[recipes]]
+id = "win-failed-services"
+title = "Find Failed/Stopped Auto-Start Services"
+description = "Identify services that should be running but aren't"
+service = "Windows"
+difficulty = "beginner"
+tags = ["service", "troubleshooting", "windows"]
+module = "windows"
+command = '''Get-Service | Where-Object { $_.StartType -eq 'Automatic' -and $_.Status -ne 'Running' } | Select-Object Name, DisplayName, Status, StartType'''
+explanation = "Finds services set to Automatic start that aren't currently running. These may have crashed or failed to start — investigate each one for potential issues."
+prerequisites = "Run as Administrator for full list"
+
+[[recipes]]
+id = "win-restart-service-remote"
+title = "Restart a Service on a Remote Computer"
+description = "Restart a service on another machine without RDP"
+service = "Windows"
+difficulty = "beginner"
+tags = ["service", "restart", "remote"]
+module = "windows"
+command = '''Get-Service -Name "Spooler" -ComputerName "SERVER01" | Restart-Service -Force'''
+explanation = "Restarts the Print Spooler service on SERVER01. Change the -Name and -ComputerName to match your scenario. Requires WinRM/PowerShell Remoting enabled."
+prerequisites = "Admin rights on remote computer, WinRM enabled"
+
+[[recipes]]
+id = "win-create-scheduled-task"
+title = "Create a Daily Scheduled Task"
+description = "Schedule a PowerShell script to run daily at 2 AM"
+service = "Windows"
+difficulty = "intermediate"
+tags = ["scheduled task", "automation", "backup"]
+module = "windows"
+command = '''$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File C:\Scripts\backup.ps1"
+$trigger = New-ScheduledTaskTrigger -Daily -At 2am
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd
+Register-ScheduledTask -TaskName "DailyBackup" -Action $action -Trigger $trigger -Settings $settings -User "SYSTEM" -RunLevel Highest'''
+explanation = "Creates a scheduled task that runs a PowerShell script daily at 2 AM as SYSTEM. The -StartWhenAvailable ensures it runs even if the computer was asleep at the scheduled time."
+prerequisites = "Administrator access"
+
+[[recipes]]
+id = "win-disk-space"
+title = "Check Disk Space on All Drives"
+description = "Get free space and percentage used for every volume"
+service = "Windows"
+difficulty = "beginner"
+tags = ["disk", "storage", "reporting"]
+module = "windows"
+command = '''Get-Volume | Where-Object { $_.DriveLetter } | Select-Object DriveLetter, FileSystemLabel, @{N='SizeGB';E={[math]::Round($_.Size/1GB,2)}}, @{N='FreeGB';E={[math]::Round($_.SizeRemaining/1GB,2)}}, @{N='UsedPct';E={[math]::Round(($_.Size-$_.SizeRemaining)/$_.Size*100,1)}} | Sort-Object DriveLetter'''
+explanation = "Shows disk space for all drive letters with size, free space, and usage percentage. Quick way to identify drives running low on space."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-firewall-allow-port"
+title = "Open a Firewall Port"
+description = "Create an inbound rule to allow traffic on a specific port"
+service = "Windows"
+difficulty = "beginner"
+tags = ["firewall", "security", "network"]
+module = "windows"
+command = '''New-NetFirewallRule -DisplayName "Allow RDP" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Allow -Enabled True'''
+explanation = "Creates a firewall rule to allow inbound TCP traffic on port 3389 (RDP). Change the port and display name for other services. Use -Action Block to block instead."
+prerequisites = "Administrator access"
+
+[[recipes]]
+id = "win-event-log-errors"
+title = "Get Recent System Errors"
+description = "Find error events from the System log in the last 24 hours"
+service = "Windows"
+difficulty = "beginner"
+tags = ["event log", "troubleshooting", "errors"]
+module = "windows"
+command = '''Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=(Get-Date).AddDays(-1)} -MaxEvents 50 | Select-Object TimeCreated, Id, ProviderName, Message'''
+explanation = "Pulls the last 50 error events (Level=2) from the System log in the past 24 hours. Level 2 = Error, Level 3 = Warning. Check these when troubleshooting server issues."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-installed-hotfixes"
+title = "List Installed Updates/Hotfixes"
+description = "Check which Windows updates are installed"
+service = "Windows"
+difficulty = "beginner"
+tags = ["updates", "patching", "compliance"]
+module = "windows"
+command = '''Get-HotFix | Select-Object HotFixID, Description, InstalledOn | Sort-Object InstalledOn -Descending'''
+explanation = "Lists all installed Windows updates sorted by install date. Useful for verifying patch compliance or troubleshooting issues that started after an update."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-startup-programs"
+title = "List Startup Programs"
+description = "See which programs run at Windows startup"
+service = "Windows"
+difficulty = "beginner"
+tags = ["startup", "performance", "windows"]
+module = "windows"
+command = '''Get-CimInstance -ClassName Win32_StartupCommand | Select-Object Name, Command, Location, User | Sort-Object Location'''
+explanation = "Shows all programs that launch at startup, including their location (registry key or Startup folder) and which user they run for. Remove unwanted items to speed up boot time."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-export-eventlog"
+title = "Export Event Log to CSV"
+description = "Save event log entries to a file for analysis"
+service = "Windows"
+difficulty = "intermediate"
+tags = ["event log", "export", "reporting"]
+module = "windows"
+command = '''Get-WinEvent -LogName System -MaxEvents 1000 | Select-Object TimeCreated, LevelDisplayName, Id, ProviderName, Message | Export-Csv -Path "C:\Export\system-events.csv" -NoTypeInformation'''
+explanation = "Exports the last 1000 System log events to CSV. Change -LogName to Application or Security for other logs. Great for sending to vendors or archiving."
+prerequisites = "Security log requires Administrator"
+
+[[recipes]]
+id = "win-network-test"
+title = "Test Network Connectivity"
+description = "Ping and trace route to diagnose network issues"
+service = "Windows"
+difficulty = "beginner"
+tags = ["network", "troubleshooting", "connectivity"]
+module = "windows"
+command = '''Test-Connection -ComputerName "8.8.8.8" -Count 4; Test-Connection -ComputerName "contoso.com" -Count 4'''
+explanation = "Tests connectivity to Google DNS and your domain. If 8.8.8.8 works but your domain doesn't, it's likely a DNS issue. -Count 4 sends 4 pings."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-system-uptime"
+title = "Check System Uptime"
+description = "See how long the computer has been running since last reboot"
+service = "Windows"
+difficulty = "beginner"
+tags = ["system", "uptime", "windows"]
+module = "windows"
+command = '''$os = Get-CimInstance -ClassName Win32_OperatingSystem
+$uptime = (Get-Date) - $os.LastBootUpTime
+"Last boot: $($os.LastBootUpTime) — Uptime: $($uptime.Days) days, $($uptime.Hours) hours, $($uptime.Minutes) minutes"'''
+explanation = "Shows when the computer last booted and calculates the uptime. Long uptimes might mean the computer is missing important reboots for patching."
+prerequisites = "None"
+
+[[recipes]]
+id = "win-registry-read"
+title = "Read a Registry Value"
+description = "Check a specific registry setting"
+service = "Windows"
+difficulty = "beginner"
+tags = ["registry", "configuration", "windows"]
+module = "windows"
+command = '''Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion" -Name "ProgramFilesDir"'''
+explanation = "Reads a specific registry value. Change the -Path to the registry key and -Name to the value you want to check. Use HKLM: for machine settings, HKCU: for user settings."
+prerequisites = "HKLM requires Administrator for some keys"

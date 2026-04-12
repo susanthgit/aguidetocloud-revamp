@@ -1,0 +1,100 @@
+## Compliance Framework Mappings (Illustrative)
+## These show which control objectives CA policies SUPPORT — NOT certify
+
+[[frameworks]]
+id = "iso27001"
+name = "ISO 27001:2022"
+description = "International standard for information security management"
+
+  [[frameworks.controls]]
+  id = "A.5.15"
+  label = "A.5.15 — Access Control"
+  description = "Policies to ensure authorised access to information"
+  ca_relevance = "CA policies enforce access decisions based on identity, device, and context"
+
+  [[frameworks.controls]]
+  id = "A.5.16"
+  label = "A.5.16 — Identity Management"
+  description = "Unique identification and authentication of users"
+  ca_relevance = "MFA controls ensure strong identity verification"
+
+  [[frameworks.controls]]
+  id = "A.5.17"
+  label = "A.5.17 — Authentication Information"
+  description = "Secure handling of authentication credentials"
+  ca_relevance = "Phishing-resistant MFA and auth strength policies"
+
+  [[frameworks.controls]]
+  id = "A.8.1"
+  label = "A.8.1 — User Endpoint Devices"
+  description = "Protection of information on user devices"
+  ca_relevance = "Device compliance and platform restrictions"
+
+[[frameworks]]
+id = "nist800-53"
+name = "NIST 800-53 Rev 5"
+description = "US federal security and privacy controls"
+
+  [[frameworks.controls]]
+  id = "AC-2"
+  label = "AC-2 — Account Management"
+  description = "Manage information system accounts"
+  ca_relevance = "User/group assignments and role-based targeting"
+
+  [[frameworks.controls]]
+  id = "AC-3"
+  label = "AC-3 — Access Enforcement"
+  description = "Enforce authorised access at system level"
+  ca_relevance = "Grant/block controls enforce access decisions"
+
+  [[frameworks.controls]]
+  id = "IA-2"
+  label = "IA-2 — Identification and Authentication"
+  description = "Uniquely identify and authenticate users"
+  ca_relevance = "MFA and authentication strength policies"
+
+  [[frameworks.controls]]
+  id = "AC-7"
+  label = "AC-7 — Unsuccessful Logon Attempts"
+  description = "Enforce limit on consecutive invalid logon attempts"
+  ca_relevance = "Risk-based policies respond to suspicious sign-in patterns"
+
+[[frameworks]]
+id = "soc2"
+name = "SOC 2 Type II"
+description = "Trust Services Criteria for service organisations"
+
+  [[frameworks.controls]]
+  id = "CC6.1"
+  label = "CC6.1 — Logical and Physical Access"
+  description = "Restrict logical access to information assets"
+  ca_relevance = "CA policies are the primary logical access control for M365"
+
+  [[frameworks.controls]]
+  id = "CC6.3"
+  label = "CC6.3 — Role-Based Access"
+  description = "Role-based access and least privilege"
+  ca_relevance = "Role-based targeting (admin vs user policies)"
+
+  [[frameworks.controls]]
+  id = "CC6.6"
+  label = "CC6.6 — System Boundaries"
+  description = "Protect system boundaries from unauthorised access"
+  ca_relevance = "Location-based and network-based conditions"
+
+[[frameworks]]
+id = "essential8"
+name = "Essential Eight"
+description = "Australian Signals Directorate cybersecurity framework"
+
+  [[frameworks.controls]]
+  id = "MFA"
+  label = "Multi-factor Authentication"
+  description = "MFA for accessing internet-facing services and privileged actions"
+  ca_relevance = "Core MFA policies directly satisfy this control"
+
+  [[frameworks.controls]]
+  id = "ADMIN"
+  label = "Restrict Administrative Privileges"
+  description = "Restrict admin privileges and use dedicated admin accounts"
+  ca_relevance = "Admin-specific CA policies with stronger controls"

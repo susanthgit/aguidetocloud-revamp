@@ -1,0 +1,1867 @@
+# PowerShell Command Builder — Curated Cmdlets
+# ~65 high-value cmdlets across 8 modules, task-driven selection
+
+# ════════════════════════════════════════════════
+# EXCHANGE ONLINE (~10 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-mailbox"
+name = "Get-Mailbox"
+module = "exchange"
+description = "Retrieve mailbox information for one or all users"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-mailbox"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "exchange", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "Email address, alias, or display name"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "ResultSize"
+  type = "string"
+  required = false
+  description = "Max results. Use 'Unlimited' for all"
+  placeholder = "Unlimited"
+
+  [[cmdlets.parameters]]
+  name = "RecipientTypeDetails"
+  type = "select"
+  required = false
+  description = "Filter by mailbox type"
+  options = ["UserMailbox", "SharedMailbox", "RoomMailbox", "EquipmentMailbox"]
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "Server-side filter expression"
+  placeholder = "{DisplayName -like 'Sales*'}"
+
+[[cmdlets]]
+id = "get-mailboxpermission"
+name = "Get-MailboxPermission"
+module = "exchange"
+description = "View who has access to a mailbox"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-mailboxpermission"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "permissions", "delegation"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "The mailbox to check permissions on"
+  placeholder = "shared@contoso.com"
+
+[[cmdlets]]
+id = "add-mailboxpermission"
+name = "Add-MailboxPermission"
+module = "exchange"
+description = "Grant a user access to another mailbox"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/add-mailboxpermission"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "permissions", "delegation"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "The mailbox to grant access to"
+  placeholder = "shared@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "User"
+  type = "string"
+  required = true
+  description = "The user to grant access"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "AccessRights"
+  type = "select"
+  required = true
+  description = "Permission level to grant"
+  options = ["FullAccess", "ReadPermission", "ChangePermission", "ChangeOwner"]
+
+  [[cmdlets.parameters]]
+  name = "AutoMapping"
+  type = "switch"
+  required = false
+  description = "Auto-map mailbox in Outlook"
+
+[[cmdlets]]
+id = "new-mailbox"
+name = "New-Mailbox"
+module = "exchange"
+description = "Create a new mailbox (shared, room, or equipment)"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/new-mailbox"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "create", "shared"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Name for the new mailbox"
+  placeholder = "Sales Team"
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = false
+  description = "Display name shown in address book"
+  placeholder = "Sales Team Shared"
+
+  [[cmdlets.parameters]]
+  name = "Alias"
+  type = "string"
+  required = false
+  description = "Email alias (before the @)"
+  placeholder = "salesteam"
+
+  [[cmdlets.parameters]]
+  name = "Shared"
+  type = "switch"
+  required = false
+  description = "Create as a shared mailbox (no licence needed)"
+
+  [[cmdlets.parameters]]
+  name = "Room"
+  type = "switch"
+  required = false
+  description = "Create as a room mailbox"
+
+[[cmdlets]]
+id = "set-mailbox"
+name = "Set-Mailbox"
+module = "exchange"
+description = "Modify mailbox settings (forwarding, quotas, features)"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/set-mailbox"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "modify", "forwarding"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "The mailbox to modify"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "ForwardingSmtpAddress"
+  type = "string"
+  required = false
+  description = "Forward emails to this address"
+  placeholder = "smtp:forward@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "DeliverToMailboxAndForward"
+  type = "switch"
+  required = false
+  description = "Keep a copy in original mailbox when forwarding"
+
+  [[cmdlets.parameters]]
+  name = "ProhibitSendQuota"
+  type = "string"
+  required = false
+  description = "Max mailbox size before sending is blocked"
+  placeholder = "49GB"
+
+[[cmdlets]]
+id = "get-mailboxstatistics"
+name = "Get-MailboxStatistics"
+module = "exchange"
+description = "Get mailbox size, item count, and last logon time"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-mailboxstatistics"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "reporting", "storage"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "The mailbox to get statistics for"
+  placeholder = "user@contoso.com"
+
+[[cmdlets]]
+id = "get-messagetrace"
+name = "Get-MessageTrace"
+module = "exchange"
+description = "Track email delivery — find where a message went"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-messagetrace"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["email", "tracking", "troubleshooting"]
+
+  [[cmdlets.parameters]]
+  name = "SenderAddress"
+  type = "string"
+  required = false
+  description = "Filter by sender email"
+  placeholder = "sender@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "RecipientAddress"
+  type = "string"
+  required = false
+  description = "Filter by recipient email"
+  placeholder = "recipient@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "StartDate"
+  type = "string"
+  required = false
+  description = "Start date for search (last 10 days max)"
+  placeholder = "04/10/2026"
+
+  [[cmdlets.parameters]]
+  name = "EndDate"
+  type = "string"
+  required = false
+  description = "End date for search"
+  placeholder = "04/12/2026"
+
+[[cmdlets]]
+id = "get-distributiongroupmember"
+name = "Get-DistributionGroupMember"
+module = "exchange"
+description = "List members of a distribution group"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-distributiongroupmember"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["group", "distribution", "membership"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "Name or email of the distribution group"
+  placeholder = "all-staff@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "ResultSize"
+  type = "string"
+  required = false
+  description = "Max results. Use 'Unlimited' for all"
+  placeholder = "Unlimited"
+
+[[cmdlets]]
+id = "get-transportrule"
+name = "Get-TransportRule"
+module = "exchange"
+description = "List mail flow rules (transport rules)"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-transportrule"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mail flow", "transport", "rules"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "Name of a specific rule (leave blank for all)"
+  placeholder = ""
+
+[[cmdlets]]
+id = "set-casmailbox"
+name = "Set-CASMailbox"
+module = "exchange"
+description = "Enable or disable email protocols (OWA, ActiveSync, POP, IMAP)"
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/set-casmailbox"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["mailbox", "protocols", "security"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "The mailbox to configure"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "OWAEnabled"
+  type = "switch"
+  required = false
+  description = "Enable/disable Outlook on the Web"
+
+  [[cmdlets.parameters]]
+  name = "ActiveSyncEnabled"
+  type = "switch"
+  required = false
+  description = "Enable/disable ActiveSync (mobile)"
+
+  [[cmdlets.parameters]]
+  name = "PopEnabled"
+  type = "switch"
+  required = false
+  description = "Enable/disable POP3 access"
+
+  [[cmdlets.parameters]]
+  name = "ImapEnabled"
+  type = "switch"
+  required = false
+  description = "Enable/disable IMAP access"
+
+# ════════════════════════════════════════════════
+# MICROSOFT TEAMS (~8 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-team"
+name = "Get-Team"
+module = "teams"
+description = "List Teams or get details of a specific team"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/get-team"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "listing", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = false
+  description = "Filter by team display name"
+  placeholder = "Marketing"
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = false
+  description = "Get a specific team by its Group ID"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "Visibility"
+  type = "select"
+  required = false
+  description = "Filter by team visibility"
+  options = ["Public", "Private"]
+
+[[cmdlets]]
+id = "get-teamuser"
+name = "Get-TeamUser"
+module = "teams"
+description = "List members and owners of a team"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/get-teamuser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "members", "owners"]
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = true
+  description = "The Group ID of the team"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "Role"
+  type = "select"
+  required = false
+  description = "Filter by role"
+  options = ["Owner", "Member", "Guest"]
+
+[[cmdlets]]
+id = "new-team"
+name = "New-Team"
+module = "teams"
+description = "Create a new Microsoft Team"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/new-team"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "create"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = true
+  description = "Name for the new team"
+  placeholder = "Project Alpha"
+
+  [[cmdlets.parameters]]
+  name = "Description"
+  type = "string"
+  required = false
+  description = "Team description"
+  placeholder = "Collaboration space for Project Alpha"
+
+  [[cmdlets.parameters]]
+  name = "Visibility"
+  type = "select"
+  required = false
+  description = "Team visibility"
+  options = ["Public", "Private"]
+
+  [[cmdlets.parameters]]
+  name = "Owner"
+  type = "string"
+  required = false
+  description = "UPN of the team owner"
+  placeholder = "owner@contoso.com"
+
+[[cmdlets]]
+id = "add-teamuser"
+name = "Add-TeamUser"
+module = "teams"
+description = "Add a member or owner to a team"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/add-teamuser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "members", "add"]
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = true
+  description = "The Group ID of the team"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "User"
+  type = "string"
+  required = true
+  description = "UPN of the user to add"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "Role"
+  type = "select"
+  required = false
+  description = "Role to assign"
+  options = ["Member", "Owner"]
+
+[[cmdlets]]
+id = "get-csonlineuser"
+name = "Get-CsOnlineUser"
+module = "teams"
+description = "Get Teams-specific user details (calling, policies)"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/get-csonlineuser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "user", "calling", "policies"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "UPN of the user"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "Filter expression"
+  placeholder = "{EnterpriseVoiceEnabled -eq $true}"
+
+[[cmdlets]]
+id = "set-csteamsmeetingpolicy"
+name = "Set-CsTeamsMeetingPolicy"
+module = "teams"
+description = "Configure Teams meeting settings (recording, lobby, etc.)"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/set-csteamsmeetingpolicy"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "meeting", "policy"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "Policy name (use 'Global' for default)"
+  placeholder = "Global"
+
+  [[cmdlets.parameters]]
+  name = "AllowCloudRecording"
+  type = "switch"
+  required = false
+  description = "Allow meeting recording"
+
+  [[cmdlets.parameters]]
+  name = "AutoAdmittedUsers"
+  type = "select"
+  required = false
+  description = "Who bypasses the lobby"
+  options = ["EveryoneInCompany", "Everyone", "EveryoneInSameAndFederatedCompany", "OrganizerOnly", "InvitedUsers"]
+
+[[cmdlets]]
+id = "grant-csteamsmeetingpolicy"
+name = "Grant-CsTeamsMeetingPolicy"
+module = "teams"
+description = "Assign a meeting policy to a user"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/grant-csteamsmeetingpolicy"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "meeting", "policy", "assign"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "UPN of the user"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "PolicyName"
+  type = "string"
+  required = true
+  description = "Name of the policy to assign (use $null for global)"
+  placeholder = "RestrictedMeetingPolicy"
+
+[[cmdlets]]
+id = "remove-teamuser"
+name = "Remove-TeamUser"
+module = "teams"
+description = "Remove a member from a team"
+learn_url = "https://learn.microsoft.com/powershell/module/teams/remove-teamuser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["teams", "members", "remove"]
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = true
+  description = "The Group ID of the team"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "User"
+  type = "string"
+  required = true
+  description = "UPN of the user to remove"
+  placeholder = "user@contoso.com"
+
+# ════════════════════════════════════════════════
+# MICROSOFT GRAPH (~10 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-mguser"
+name = "Get-MgUser"
+module = "graph"
+description = "Get user details from Entra ID"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["user", "entra", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "UserId"
+  type = "string"
+  required = false
+  description = "User ID or UPN (leave blank for all users)"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all users (not just first page)"
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "OData filter expression"
+  placeholder = "accountEnabled eq true"
+
+  [[cmdlets.parameters]]
+  name = "Property"
+  type = "string"
+  required = false
+  description = "Specific properties to return (comma-separated)"
+  placeholder = "DisplayName,UserPrincipalName,AccountEnabled"
+
+[[cmdlets]]
+id = "new-mguser"
+name = "New-MgUser"
+module = "graph"
+description = "Create a new user in Entra ID"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/new-mguser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["user", "entra", "create"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = true
+  description = "Full display name"
+  placeholder = "Jane Smith"
+
+  [[cmdlets.parameters]]
+  name = "MailNickname"
+  type = "string"
+  required = true
+  description = "Mail alias"
+  placeholder = "jsmith"
+
+  [[cmdlets.parameters]]
+  name = "UserPrincipalName"
+  type = "string"
+  required = true
+  description = "Sign-in address"
+  placeholder = "jsmith@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "AccountEnabled"
+  type = "switch"
+  required = false
+  description = "Enable the account immediately"
+
+[[cmdlets]]
+id = "update-mguser"
+name = "Update-MgUser"
+module = "graph"
+description = "Modify user properties (job title, department, etc.)"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/update-mguser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["user", "entra", "modify"]
+
+  [[cmdlets.parameters]]
+  name = "UserId"
+  type = "string"
+  required = true
+  description = "User ID or UPN"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "JobTitle"
+  type = "string"
+  required = false
+  description = "Job title"
+  placeholder = "IT Administrator"
+
+  [[cmdlets.parameters]]
+  name = "Department"
+  type = "string"
+  required = false
+  description = "Department name"
+  placeholder = "Information Technology"
+
+  [[cmdlets.parameters]]
+  name = "AccountEnabled"
+  type = "switch"
+  required = false
+  description = "Enable or disable the account"
+
+[[cmdlets]]
+id = "get-mggroup"
+name = "Get-MgGroup"
+module = "graph"
+description = "List groups or get details of a specific group"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.groups/get-mggroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["group", "entra", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = false
+  description = "Group ID (leave blank for all)"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all groups"
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "OData filter"
+  placeholder = "groupTypes/any(c:c eq 'Unified')"
+
+[[cmdlets]]
+id = "get-mggroupmember"
+name = "Get-MgGroupMember"
+module = "graph"
+description = "List members of a group"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.groups/get-mggroupmember"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["group", "members", "entra"]
+
+  [[cmdlets.parameters]]
+  name = "GroupId"
+  type = "string"
+  required = true
+  description = "The group ID"
+  placeholder = "a1b2c3d4-..."
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all members"
+
+[[cmdlets]]
+id = "get-mguserlicensedetail"
+name = "Get-MgUserLicenseDetail"
+module = "graph"
+description = "View licences assigned to a user"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguserlicensedetail"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["licence", "user", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "UserId"
+  type = "string"
+  required = true
+  description = "User ID or UPN"
+  placeholder = "user@contoso.com"
+
+[[cmdlets]]
+id = "set-mguserlicense"
+name = "Set-MgUserLicense"
+module = "graph"
+description = "Assign or remove licences for a user"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["licence", "user", "assign"]
+
+  [[cmdlets.parameters]]
+  name = "UserId"
+  type = "string"
+  required = true
+  description = "User ID or UPN"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "AddLicenses"
+  type = "string"
+  required = false
+  description = "Licence SKU IDs to add (use @{SkuId='...'} format)"
+  placeholder = "@{SkuId='c7df2760-2c81-4ef7-b578-5b5392b571df'}"
+
+  [[cmdlets.parameters]]
+  name = "RemoveLicenses"
+  type = "string"
+  required = false
+  description = "Licence SKU IDs to remove"
+  placeholder = "@('c7df2760-2c81-4ef7-b578-5b5392b571df')"
+
+[[cmdlets]]
+id = "get-mgauditlogsignin"
+name = "Get-MgAuditLogSignIn"
+module = "graph"
+description = "Get sign-in logs for security auditing"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.reports/get-mgauditlogsignin"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["audit", "signin", "security", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "OData filter for sign-in logs"
+  placeholder = "userPrincipalName eq 'user@contoso.com'"
+
+  [[cmdlets.parameters]]
+  name = "Top"
+  type = "string"
+  required = false
+  description = "Number of records to return"
+  placeholder = "50"
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all sign-in records"
+
+[[cmdlets]]
+id = "get-mgidentityconditionalaccesspolicy"
+name = "Get-MgIdentityConditionalAccessPolicy"
+module = "graph"
+description = "List Conditional Access policies"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccesspolicy"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["conditional access", "security", "entra", "policy"]
+
+  [[cmdlets.parameters]]
+  name = "ConditionalAccessPolicyId"
+  type = "string"
+  required = false
+  description = "Specific policy ID (leave blank for all)"
+  placeholder = ""
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all policies"
+
+[[cmdlets]]
+id = "new-mggroup"
+name = "New-MgGroup"
+module = "graph"
+description = "Create a new Entra ID group (security or M365)"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.groups/new-mggroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["group", "entra", "create"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = true
+  description = "Group display name"
+  placeholder = "IT Admins"
+
+  [[cmdlets.parameters]]
+  name = "MailEnabled"
+  type = "switch"
+  required = false
+  description = "Enable mail for this group"
+
+  [[cmdlets.parameters]]
+  name = "MailNickname"
+  type = "string"
+  required = true
+  description = "Mail alias"
+  placeholder = "itadmins"
+
+  [[cmdlets.parameters]]
+  name = "SecurityEnabled"
+  type = "switch"
+  required = false
+  description = "Make this a security group"
+
+# ════════════════════════════════════════════════
+# PNP SHAREPOINT (~7 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-pnpsite"
+name = "Get-PnPSite"
+module = "pnp"
+description = "Get details of the current SharePoint site"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPSite.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "site", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Includes"
+  type = "select"
+  required = false
+  description = "Extra properties to include"
+  options = ["Usage", "Owner", "All"]
+
+[[cmdlets]]
+id = "get-pnptenantsite"
+name = "Get-PnPTenantSite"
+module = "pnp"
+description = "List all site collections in the tenant"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPTenantSite.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "site", "tenant", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "Filter sites by URL"
+  placeholder = "Url -like '*project*'"
+
+  [[cmdlets.parameters]]
+  name = "IncludeOneDriveSites"
+  type = "switch"
+  required = false
+  description = "Include OneDrive personal sites"
+
+[[cmdlets]]
+id = "get-pnplist"
+name = "Get-PnPList"
+module = "pnp"
+description = "Get lists and libraries in the current site"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPList.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "list", "library"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "Name or ID of a specific list"
+  placeholder = "Documents"
+
+[[cmdlets]]
+id = "get-pnplistitem"
+name = "Get-PnPListItem"
+module = "pnp"
+description = "Get items from a SharePoint list"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPListItem.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "list", "items", "data"]
+
+  [[cmdlets.parameters]]
+  name = "List"
+  type = "string"
+  required = true
+  description = "Name of the list"
+  placeholder = "Tasks"
+
+  [[cmdlets.parameters]]
+  name = "PageSize"
+  type = "string"
+  required = false
+  description = "Items per page (for large lists)"
+  placeholder = "500"
+
+  [[cmdlets.parameters]]
+  name = "Query"
+  type = "string"
+  required = false
+  description = "CAML query to filter items"
+  placeholder = "<View><Query><Where>...</Where></Query></View>"
+
+[[cmdlets]]
+id = "get-pnpsitecollectionadmin"
+name = "Get-PnPSiteCollectionAdmin"
+module = "pnp"
+description = "List site collection administrators"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPSiteCollectionAdmin.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "permissions", "admin"]
+
+[[cmdlets]]
+id = "add-pnpsitecollectionadmin"
+name = "Add-PnPSiteCollectionAdmin"
+module = "pnp"
+description = "Add a site collection administrator"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Add-PnPSiteCollectionAdmin.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "permissions", "admin", "add"]
+
+  [[cmdlets.parameters]]
+  name = "Owners"
+  type = "string"
+  required = true
+  description = "UPN(s) to add as admin"
+  placeholder = "user@contoso.com"
+
+[[cmdlets]]
+id = "get-pnpuser"
+name = "Get-PnPUser"
+module = "pnp"
+description = "Get users with access to the current site"
+learn_url = "https://pnp.github.io/powershell/cmdlets/Get-PnPUser.html"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["sharepoint", "user", "permissions"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "Email or login name of a specific user"
+  placeholder = "user@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "WithRightsAssigned"
+  type = "switch"
+  required = false
+  description = "Only return users with explicit permissions"
+
+# ════════════════════════════════════════════════
+# AZURE (~8 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-azvm"
+name = "Get-AzVM"
+module = "az"
+description = "List Azure virtual machines"
+learn_url = "https://learn.microsoft.com/powershell/module/az.compute/get-azvm"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "vm", "compute", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = false
+  description = "Filter by resource group"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Specific VM name"
+  placeholder = "myVM"
+
+  [[cmdlets.parameters]]
+  name = "Status"
+  type = "switch"
+  required = false
+  description = "Include power state (running/stopped)"
+
+[[cmdlets]]
+id = "start-azvm"
+name = "Start-AzVM"
+module = "az"
+description = "Start a stopped Azure VM"
+learn_url = "https://learn.microsoft.com/powershell/module/az.compute/start-azvm"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "vm", "start"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = true
+  description = "Resource group containing the VM"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Name of the VM to start"
+  placeholder = "myVM"
+
+[[cmdlets]]
+id = "stop-azvm"
+name = "Stop-AzVM"
+module = "az"
+description = "Stop (deallocate) an Azure VM"
+learn_url = "https://learn.microsoft.com/powershell/module/az.compute/stop-azvm"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "vm", "stop", "cost"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = true
+  description = "Resource group containing the VM"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Name of the VM to stop"
+  placeholder = "myVM"
+
+  [[cmdlets.parameters]]
+  name = "Force"
+  type = "switch"
+  required = false
+  description = "Skip confirmation prompt"
+
+[[cmdlets]]
+id = "get-azresourcegroup"
+name = "Get-AzResourceGroup"
+module = "az"
+description = "List Azure resource groups"
+learn_url = "https://learn.microsoft.com/powershell/module/az.resources/get-azresourcegroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "resource group", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Specific resource group name"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Location"
+  type = "string"
+  required = false
+  description = "Filter by Azure region"
+  placeholder = "australiaeast"
+
+[[cmdlets]]
+id = "new-azresourcegroup"
+name = "New-AzResourceGroup"
+module = "az"
+description = "Create a new Azure resource group"
+learn_url = "https://learn.microsoft.com/powershell/module/az.resources/new-azresourcegroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "resource group", "create"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Name for the new resource group"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Location"
+  type = "string"
+  required = true
+  description = "Azure region"
+  placeholder = "australiaeast"
+
+  [[cmdlets.parameters]]
+  name = "Tag"
+  type = "string"
+  required = false
+  description = "Tags as hashtable"
+  placeholder = "@{Environment='Dev'; Team='IT'}"
+
+[[cmdlets]]
+id = "get-azstorageaccount"
+name = "Get-AzStorageAccount"
+module = "az"
+description = "List Azure storage accounts"
+learn_url = "https://learn.microsoft.com/powershell/module/az.storage/get-azstorageaccount"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "storage", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = false
+  description = "Filter by resource group"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Specific storage account name"
+  placeholder = "mystorageaccount"
+
+[[cmdlets]]
+id = "get-azresource"
+name = "Get-AzResource"
+module = "az"
+description = "List all Azure resources (across types)"
+learn_url = "https://learn.microsoft.com/powershell/module/az.resources/get-azresource"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "resources", "inventory"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = false
+  description = "Filter by resource group"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "ResourceType"
+  type = "string"
+  required = false
+  description = "Filter by resource type"
+  placeholder = "Microsoft.Compute/virtualMachines"
+
+  [[cmdlets.parameters]]
+  name = "TagName"
+  type = "string"
+  required = false
+  description = "Filter by tag name"
+  placeholder = "Environment"
+
+  [[cmdlets.parameters]]
+  name = "TagValue"
+  type = "string"
+  required = false
+  description = "Filter by tag value"
+  placeholder = "Production"
+
+[[cmdlets]]
+id = "get-aznetworksecuritygroup"
+name = "Get-AzNetworkSecurityGroup"
+module = "az"
+description = "List Network Security Groups (NSGs)"
+learn_url = "https://learn.microsoft.com/powershell/module/az.network/get-aznetworksecuritygroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["azure", "network", "security", "nsg"]
+
+  [[cmdlets.parameters]]
+  name = "ResourceGroupName"
+  type = "string"
+  required = false
+  description = "Filter by resource group"
+  placeholder = "myResourceGroup"
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Specific NSG name"
+  placeholder = "myNSG"
+
+# ════════════════════════════════════════════════
+# ACTIVE DIRECTORY (~7 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-aduser"
+name = "Get-ADUser"
+module = "ad"
+description = "Get user accounts from Active Directory"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/get-aduser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "user", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "SAMAccountName, DN, or GUID"
+  placeholder = "jsmith"
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "Filter expression (use * for all)"
+  placeholder = "*"
+
+  [[cmdlets.parameters]]
+  name = "SearchBase"
+  type = "string"
+  required = false
+  description = "OU path to search within"
+  placeholder = "OU=Users,DC=contoso,DC=com"
+
+  [[cmdlets.parameters]]
+  name = "Properties"
+  type = "string"
+  required = false
+  description = "Additional properties to return"
+  placeholder = "LastLogonDate,PasswordLastSet,Enabled"
+
+[[cmdlets]]
+id = "new-aduser"
+name = "New-ADUser"
+module = "ad"
+description = "Create a new Active Directory user"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/new-aduser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "user", "create"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Full name of the user"
+  placeholder = "Jane Smith"
+
+  [[cmdlets.parameters]]
+  name = "SamAccountName"
+  type = "string"
+  required = true
+  description = "Logon name (pre-Windows 2000)"
+  placeholder = "jsmith"
+
+  [[cmdlets.parameters]]
+  name = "UserPrincipalName"
+  type = "string"
+  required = false
+  description = "UPN for sign-in"
+  placeholder = "jsmith@contoso.com"
+
+  [[cmdlets.parameters]]
+  name = "Path"
+  type = "string"
+  required = false
+  description = "OU to create the user in"
+  placeholder = "OU=Users,DC=contoso,DC=com"
+
+  [[cmdlets.parameters]]
+  name = "Enabled"
+  type = "switch"
+  required = false
+  description = "Enable the account immediately"
+
+[[cmdlets]]
+id = "set-aduser"
+name = "Set-ADUser"
+module = "ad"
+description = "Modify an Active Directory user's properties"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/set-aduser"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "user", "modify"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "SAMAccountName or DN of the user"
+  placeholder = "jsmith"
+
+  [[cmdlets.parameters]]
+  name = "Title"
+  type = "string"
+  required = false
+  description = "Job title"
+  placeholder = "IT Administrator"
+
+  [[cmdlets.parameters]]
+  name = "Department"
+  type = "string"
+  required = false
+  description = "Department name"
+  placeholder = "IT"
+
+  [[cmdlets.parameters]]
+  name = "Enabled"
+  type = "switch"
+  required = false
+  description = "Enable or disable the account"
+
+[[cmdlets]]
+id = "get-adgroup"
+name = "Get-ADGroup"
+module = "ad"
+description = "Get Active Directory group details"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/get-adgroup"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "group", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = false
+  description = "Group name, DN, or GUID"
+  placeholder = "Domain Admins"
+
+  [[cmdlets.parameters]]
+  name = "Filter"
+  type = "string"
+  required = false
+  description = "Filter expression"
+  placeholder = "*"
+
+[[cmdlets]]
+id = "get-adgroupmember"
+name = "Get-ADGroupMember"
+module = "ad"
+description = "List members of an AD group"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/get-adgroupmember"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "group", "members"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "Group name"
+  placeholder = "Domain Admins"
+
+  [[cmdlets.parameters]]
+  name = "Recursive"
+  type = "switch"
+  required = false
+  description = "Include nested group members"
+
+[[cmdlets]]
+id = "add-adgroupmember"
+name = "Add-ADGroupMember"
+module = "ad"
+description = "Add a user to an AD group"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/add-adgroupmember"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "group", "members", "add"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "Group to add members to"
+  placeholder = "IT-Admins"
+
+  [[cmdlets.parameters]]
+  name = "Members"
+  type = "string"
+  required = true
+  description = "User(s) to add (SAMAccountName, comma-separated)"
+  placeholder = "jsmith,mjones"
+
+[[cmdlets]]
+id = "unlock-adaccount"
+name = "Unlock-ADAccount"
+module = "ad"
+description = "Unlock a locked-out user account"
+learn_url = "https://learn.microsoft.com/powershell/module/activedirectory/unlock-adaccount"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["ad", "user", "unlock", "lockout"]
+
+  [[cmdlets.parameters]]
+  name = "Identity"
+  type = "string"
+  required = true
+  description = "SAMAccountName of the locked account"
+  placeholder = "jsmith"
+
+# ════════════════════════════════════════════════
+# GROUP POLICY (~5 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-gpo"
+name = "Get-GPO"
+module = "gpo"
+description = "List Group Policy Objects"
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy/get-gpo"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["gpo", "policy", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "GPO name (leave blank for all)"
+  placeholder = "Default Domain Policy"
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Return all GPOs"
+
+[[cmdlets]]
+id = "backup-gpo"
+name = "Backup-GPO"
+module = "gpo"
+description = "Backup a GPO or all GPOs"
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy/backup-gpo"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["gpo", "backup", "disaster recovery"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Specific GPO name (or use -All)"
+  placeholder = "Default Domain Policy"
+
+  [[cmdlets.parameters]]
+  name = "All"
+  type = "switch"
+  required = false
+  description = "Backup all GPOs"
+
+  [[cmdlets.parameters]]
+  name = "Path"
+  type = "string"
+  required = true
+  description = "Folder path for backup files"
+  placeholder = "C:\\GPOBackups"
+
+[[cmdlets]]
+id = "new-gpo"
+name = "New-GPO"
+module = "gpo"
+description = "Create a new Group Policy Object"
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy/new-gpo"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["gpo", "create"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Name for the new GPO"
+  placeholder = "Password Policy - IT"
+
+  [[cmdlets.parameters]]
+  name = "Comment"
+  type = "string"
+  required = false
+  description = "Description/notes for the GPO"
+  placeholder = "Enforces 14-char password for IT OU"
+
+[[cmdlets]]
+id = "new-gplink"
+name = "New-GPLink"
+module = "gpo"
+description = "Link a GPO to an OU, domain, or site"
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy/new-gplink"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["gpo", "link", "ou"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "GPO name to link"
+  placeholder = "Password Policy - IT"
+
+  [[cmdlets.parameters]]
+  name = "Target"
+  type = "string"
+  required = true
+  description = "Target OU path"
+  placeholder = "OU=IT,DC=contoso,DC=com"
+
+  [[cmdlets.parameters]]
+  name = "Enforced"
+  type = "select"
+  required = false
+  description = "Enforce the GPO link"
+  options = ["Yes", "No"]
+
+[[cmdlets]]
+id = "get-gpresultantsetofpolicy"
+name = "Get-GPResultantSetOfPolicy"
+module = "gpo"
+description = "Generate RSoP report (what policies apply to a user/computer)"
+learn_url = "https://learn.microsoft.com/powershell/module/grouppolicy/get-gpresultantsetofpolicy"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["gpo", "rsop", "troubleshooting"]
+
+  [[cmdlets.parameters]]
+  name = "Computer"
+  type = "string"
+  required = false
+  description = "Target computer name"
+  placeholder = "WORKSTATION01"
+
+  [[cmdlets.parameters]]
+  name = "User"
+  type = "string"
+  required = false
+  description = "Target user"
+  placeholder = "contoso\\jsmith"
+
+  [[cmdlets.parameters]]
+  name = "ReportType"
+  type = "select"
+  required = true
+  description = "Output format"
+  options = ["Html", "Xml"]
+
+  [[cmdlets.parameters]]
+  name = "Path"
+  type = "string"
+  required = true
+  description = "Output file path"
+  placeholder = "C:\\Reports\\RSoP.html"
+
+# ════════════════════════════════════════════════
+# WINDOWS BUILT-IN (~10 cmdlets)
+# ════════════════════════════════════════════════
+
+[[cmdlets]]
+id = "get-service"
+name = "Get-Service"
+module = "windows"
+description = "List Windows services and their status"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["service", "windows", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = false
+  description = "Service name (supports wildcards)"
+  placeholder = "Spooler"
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = false
+  description = "Filter by display name (supports wildcards)"
+  placeholder = "*SQL*"
+
+  [[cmdlets.parameters]]
+  name = "ComputerName"
+  type = "string"
+  required = false
+  description = "Remote computer name"
+  placeholder = "SERVER01"
+
+[[cmdlets]]
+id = "restart-service"
+name = "Restart-Service"
+module = "windows"
+description = "Restart a Windows service"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-service"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["service", "restart", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "Name"
+  type = "string"
+  required = true
+  description = "Service name to restart"
+  placeholder = "Spooler"
+
+  [[cmdlets.parameters]]
+  name = "Force"
+  type = "switch"
+  required = false
+  description = "Force restart dependent services too"
+
+[[cmdlets]]
+id = "get-scheduledtask"
+name = "Get-ScheduledTask"
+module = "windows"
+description = "List scheduled tasks on the computer"
+learn_url = "https://learn.microsoft.com/powershell/module/scheduledtasks/get-scheduledtask"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["scheduled task", "automation", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "TaskName"
+  type = "string"
+  required = false
+  description = "Task name (supports wildcards)"
+  placeholder = "*Backup*"
+
+  [[cmdlets.parameters]]
+  name = "TaskPath"
+  type = "string"
+  required = false
+  description = "Task folder path"
+  placeholder = "\\Microsoft\\Windows\\Backup\\"
+
+[[cmdlets]]
+id = "register-scheduledtask"
+name = "Register-ScheduledTask"
+module = "windows"
+description = "Create a new scheduled task"
+learn_url = "https://learn.microsoft.com/powershell/module/scheduledtasks/register-scheduledtask"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["scheduled task", "create", "automation"]
+
+  [[cmdlets.parameters]]
+  name = "TaskName"
+  type = "string"
+  required = true
+  description = "Name for the new task"
+  placeholder = "DailyBackup"
+
+  [[cmdlets.parameters]]
+  name = "Action"
+  type = "string"
+  required = true
+  description = "Action object (use New-ScheduledTaskAction)"
+  placeholder = "(New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-File C:\\Scripts\\backup.ps1')"
+
+  [[cmdlets.parameters]]
+  name = "Trigger"
+  type = "string"
+  required = true
+  description = "Trigger object (use New-ScheduledTaskTrigger)"
+  placeholder = "(New-ScheduledTaskTrigger -Daily -At 2am)"
+
+  [[cmdlets.parameters]]
+  name = "User"
+  type = "string"
+  required = false
+  description = "User account to run the task"
+  placeholder = "SYSTEM"
+
+[[cmdlets]]
+id = "get-netfirewallrule"
+name = "Get-NetFirewallRule"
+module = "windows"
+description = "List Windows Firewall rules"
+learn_url = "https://learn.microsoft.com/powershell/module/netsecurity/get-netfirewallrule"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["firewall", "security", "network", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = false
+  description = "Filter by rule display name"
+  placeholder = "*Remote Desktop*"
+
+  [[cmdlets.parameters]]
+  name = "Enabled"
+  type = "select"
+  required = false
+  description = "Filter by enabled state"
+  options = ["True", "False"]
+
+  [[cmdlets.parameters]]
+  name = "Direction"
+  type = "select"
+  required = false
+  description = "Filter by direction"
+  options = ["Inbound", "Outbound"]
+
+[[cmdlets]]
+id = "new-netfirewallrule"
+name = "New-NetFirewallRule"
+module = "windows"
+description = "Create a new Windows Firewall rule"
+learn_url = "https://learn.microsoft.com/powershell/module/netsecurity/new-netfirewallrule"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["firewall", "security", "create", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "DisplayName"
+  type = "string"
+  required = true
+  description = "Name for the firewall rule"
+  placeholder = "Allow RDP"
+
+  [[cmdlets.parameters]]
+  name = "Direction"
+  type = "select"
+  required = true
+  description = "Traffic direction"
+  options = ["Inbound", "Outbound"]
+
+  [[cmdlets.parameters]]
+  name = "Action"
+  type = "select"
+  required = true
+  description = "Allow or block traffic"
+  options = ["Allow", "Block"]
+
+  [[cmdlets.parameters]]
+  name = "Protocol"
+  type = "select"
+  required = false
+  description = "Network protocol"
+  options = ["TCP", "UDP", "ICMPv4", "ICMPv6", "Any"]
+
+  [[cmdlets.parameters]]
+  name = "LocalPort"
+  type = "string"
+  required = false
+  description = "Port number(s)"
+  placeholder = "3389"
+
+  [[cmdlets.parameters]]
+  name = "Enabled"
+  type = "select"
+  required = false
+  description = "Enable the rule immediately"
+  options = ["True", "False"]
+
+[[cmdlets]]
+id = "get-eventlog-winevent"
+name = "Get-WinEvent"
+module = "windows"
+description = "Query Windows event logs"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["event log", "diagnostics", "troubleshooting", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "LogName"
+  type = "select"
+  required = false
+  description = "Which event log to query"
+  options = ["System", "Application", "Security", "Setup"]
+
+  [[cmdlets.parameters]]
+  name = "MaxEvents"
+  type = "string"
+  required = false
+  description = "Maximum events to return"
+  placeholder = "50"
+
+  [[cmdlets.parameters]]
+  name = "FilterHashtable"
+  type = "string"
+  required = false
+  description = "Filter with hashtable (advanced)"
+  placeholder = "@{LogName='System'; Level=2; StartTime=(Get-Date).AddDays(-1)}"
+
+[[cmdlets]]
+id = "get-disk"
+name = "Get-Disk"
+module = "windows"
+description = "List physical disks on the computer"
+learn_url = "https://learn.microsoft.com/powershell/module/storage/get-disk"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["disk", "storage", "hardware", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "Number"
+  type = "string"
+  required = false
+  description = "Specific disk number"
+  placeholder = "0"
+
+[[cmdlets]]
+id = "get-volume"
+name = "Get-Volume"
+module = "windows"
+description = "Get disk volume/partition info (drive letters, free space)"
+learn_url = "https://learn.microsoft.com/powershell/module/storage/get-volume"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["disk", "storage", "free space", "windows"]
+
+  [[cmdlets.parameters]]
+  name = "DriveLetter"
+  type = "string"
+  required = false
+  description = "Specific drive letter"
+  placeholder = "C"
+
+[[cmdlets]]
+id = "get-computerinfo"
+name = "Get-ComputerInfo"
+module = "windows"
+description = "Get detailed system info (OS, hardware, BIOS)"
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-computerinfo"
+last_reviewed = "2026-04-12"
+status = "current"
+tags = ["system", "hardware", "os", "windows", "reporting"]
+
+  [[cmdlets.parameters]]
+  name = "Property"
+  type = "string"
+  required = false
+  description = "Specific properties to return"
+  placeholder = "OsName,OsVersion,CsProcessors,CsTotalPhysicalMemory"

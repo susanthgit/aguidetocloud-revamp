@@ -1,0 +1,286 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/prompt-guide.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Prompt Engineering Guide — Learn to Write Better AI Prompts",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="pguide-page">
+
+  {{ partial "tool-hero.html" (dict "title" "Prompt Engineering Guide" "subtitle" "Learn 8 essential techniques with hands-on practice, before/after examples, and a step-by-step Prompt Builder. Free, instant, no sign-up." "accent" "#84CC16") }}
+
+  <div class="pguide-container">
+
+    {{/* ── Tab Navigation ── */}}
+    <div class="pguide-tabs" role="tablist">
+      <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn Techniques</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="builder" id="tab-builder" aria-controls="panel-builder">🔧 Prompt Builder</button>
+    </div>
+
+    {{/* ══════════════════════════════════════════
+         TAB 1: LEARN TECHNIQUES
+         ══════════════════════════════════════════ */}}
+    <div class="pguide-panel active" id="panel-learn" role="tabpanel" aria-labelledby="tab-learn">
+
+      {{/* Progress bar */}}
+      <div class="pguide-progress-wrap">
+        <div class="pguide-progress-bar">
+          <div class="pguide-progress-fill" id="pguide-progress-fill"></div>
+        </div>
+        <span class="pguide-progress-text" id="pguide-progress-text">0 of 8 techniques explored</span>
+      </div>
+
+      {{/* Filters */}}
+      <div class="pguide-filters">
+        <button class="pguide-filter active" data-difficulty="all">All</button>
+        <button class="pguide-filter" data-difficulty="beginner">⭐ Beginner</button>
+        <button class="pguide-filter" data-difficulty="intermediate">⭐⭐ Intermediate</button>
+      </div>
+
+      {{/* Technique Cards Grid */}}
+      <div class="pguide-grid" id="pguide-grid">
+        {{ range .Pages.ByWeight }}
+        <a href="{{ .RelPermalink }}" class="pguide-card" data-difficulty="{{ .Params.difficulty }}" data-technique="{{ .Params.technique_id }}">
+          <div class="pguide-card-header">
+            <span class="pguide-card-emoji">{{ .Params.emoji }}</span>
+            <span class="pguide-card-check" aria-label="Completed">✅</span>
+          </div>
+          <h2 class="pguide-card-title">{{ .Title | replaceRE "^[^ ]+ " "" }}</h2>
+          <p class="pguide-card-desc">{{ .Description | truncate 120 }}</p>
+          <div class="pguide-card-meta">
+            <span class="pguide-badge pguide-badge-{{ .Params.difficulty }}">{{ if eq .Params.difficulty "beginner" }}⭐ Beginner{{ else }}⭐⭐ Intermediate{{ end }}</span>
+            <span class="pguide-card-time">{{ .Params.read_time }}</span>
+          </div>
+          <span class="pguide-card-cta">Learn this technique →</span>
+        </a>
+        {{ end }}
+      </div>
+
+      {{/* Ecosystem CTA */}}
+      <div class="pguide-ecosystem">
+        <h2>🔗 Your Prompt Engineering Toolkit</h2>
+        <p>This guide is part of a complete prompt engineering ecosystem:</p>
+        <div class="pguide-eco-grid">
+          <a href="/prompt-guide/" class="pguide-eco-card pguide-eco-active">
+            <span>🎓</span>
+            <strong>Guide</strong>
+            <p>Learn techniques</p>
+          </a>
+          <a href="/prompt-polisher/" class="pguide-eco-card">
+            <span>✨</span>
+            <strong>Polisher</strong>
+            <p>Score & rewrite prompts</p>
+          </a>
+          <a href="/prompts/" class="pguide-eco-card">
+            <span>💡</span>
+            <strong>Library</strong>
+            <p>84 ready-to-use prompts</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {{/* ══════════════════════════════════════════
+         TAB 2: PROMPT BUILDER
+         ══════════════════════════════════════════ */}}
+    <div class="pguide-panel" id="panel-builder" role="tabpanel" aria-labelledby="tab-builder">
+
+      <div class="pguide-builder-layout">
+        {{/* Left: Steps */}}
+        <div class="pguide-builder-steps">
+          <h2>Build Your Prompt Step by Step</h2>
+          <p class="pguide-builder-intro">Fill in each section below. Your prompt builds in real time on the right. Skip any optional step.</p>
+
+          {{/* Templates */}}
+          <div class="pguide-builder-templates">
+            <label>Start with a template:</label>
+            <select id="pguide-template-select">
+              <option value="">— Choose a template —</option>
+              <option value="email">📧 Professional Email</option>
+              <option value="summary">📋 Meeting Summary</option>
+              <option value="analysis">📊 Data Analysis</option>
+              <option value="troubleshoot">🔧 Troubleshooting</option>
+              <option value="presentation">📽️ Presentation Content</option>
+              <option value="document">📄 Document Draft</option>
+              <option value="brainstorm">💡 Brainstorming Ideas</option>
+            </select>
+          </div>
+
+          {{/* Step 1: Goal */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">1</span>
+              <label for="pguide-goal">What's your goal?</label>
+              <span class="pguide-step-technique">🎯 Clear Instructions</span>
+            </div>
+            <textarea id="pguide-goal" class="pguide-input" rows="2" placeholder="e.g. Draft a follow-up email to a client who hasn't responded to our proposal in 2 weeks"></textarea>
+          </div>
+
+          {{/* Step 2: Role */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">2</span>
+              <label for="pguide-role">Set a role <span class="pguide-optional">(optional)</span></label>
+              <span class="pguide-step-technique">🎭 Role Prompting</span>
+            </div>
+            <textarea id="pguide-role" class="pguide-input" rows="1" placeholder="e.g. You are a senior account manager with 10 years of client relations experience"></textarea>
+          </div>
+
+          {{/* Step 3: Context */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">3</span>
+              <label for="pguide-context">Add context <span class="pguide-optional">(optional)</span></label>
+              <span class="pguide-step-technique">📋 Context</span>
+            </div>
+            <textarea id="pguide-context" class="pguide-input" rows="2" placeholder="e.g. The client is a mid-sized logistics company. We proposed a $45K cloud migration project. They seemed interested in the initial meeting but haven't replied in 14 days."></textarea>
+          </div>
+
+          {{/* Step 4: Format */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">4</span>
+              <label>Define the format</label>
+              <span class="pguide-step-technique">📐 Format</span>
+            </div>
+            <div class="pguide-format-options">
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value=""> None specified</label>
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value="bullet points"> Bullet points</label>
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value="table"> Table</label>
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value="numbered list"> Numbered list</label>
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value="email format"> Email format</label>
+              <label class="pguide-radio"><input type="radio" name="pguide-format" value="paragraph"> Paragraphs</label>
+            </div>
+          </div>
+
+          {{/* Step 5: Constraints */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">5</span>
+              <label>Set constraints <span class="pguide-optional">(optional)</span></label>
+              <span class="pguide-step-technique">🚧 Constraints</span>
+            </div>
+            <div class="pguide-constraint-toggles">
+              <label class="pguide-toggle">
+                <input type="checkbox" data-constraint="word-limit"> Word limit
+                <input type="number" class="pguide-constraint-val" data-for="word-limit" placeholder="150" min="10" max="5000" style="display:none">
+              </label>
+              <label class="pguide-toggle">
+                <input type="checkbox" data-constraint="no-jargon"> No jargon / plain English
+              </label>
+              <label class="pguide-toggle">
+                <input type="checkbox" data-constraint="no-opinions"> Stick to facts only
+              </label>
+            </div>
+          </div>
+
+          {{/* Step 6: Audience & Tone */}}
+          <div class="pguide-step">
+            <div class="pguide-step-header">
+              <span class="pguide-step-num">6</span>
+              <label for="pguide-tone">Audience & tone <span class="pguide-optional">(optional)</span></label>
+              <span class="pguide-step-technique">🗣️ Tone</span>
+            </div>
+            <div class="pguide-tone-row">
+              <select id="pguide-audience">
+                <option value="">Audience...</option>
+                <option value="my manager">My manager</option>
+                <option value="executive leadership">Executive leadership</option>
+                <option value="the client">Client / customer</option>
+                <option value="my team">My team</option>
+                <option value="non-technical stakeholders">Non-technical stakeholders</option>
+                <option value="developers">Developers</option>
+              </select>
+              <select id="pguide-tone">
+                <option value="">Tone...</option>
+                <option value="professional">Professional</option>
+                <option value="friendly">Friendly</option>
+                <option value="formal">Formal</option>
+                <option value="casual">Casual</option>
+                <option value="diplomatic">Diplomatic</option>
+                <option value="confident">Confident</option>
+                <option value="reassuring">Reassuring</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {{/* Right: Live Preview */}}
+        <div class="pguide-builder-preview">
+          <div class="pguide-preview-sticky">
+            <h3>📝 Your Prompt</h3>
+            <div class="pguide-preview-box" id="pguide-preview">
+              <p class="pguide-preview-placeholder">Start filling in the steps to see your prompt build in real time...</p>
+            </div>
+            <div class="pguide-preview-actions">
+              <button class="pguide-btn pguide-btn-primary" id="pguide-copy-btn">📋 Copy Prompt</button>
+              <a href="/prompt-polisher/" class="pguide-btn pguide-btn-secondary">✨ Polish It →</a>
+              <a href="/prompts/" class="pguide-btn pguide-btn-secondary">💡 Find Similar →</a>
+            </div>
+            <div class="pguide-preview-stats" id="pguide-preview-stats">
+              <span>Techniques used: <strong id="pguide-tech-count">0</strong>/6</span>
+              <span>Words: <strong id="pguide-word-count">0</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── FAQ Section ── */}}
+    {{ with .Params.faq }}
+    <div class="pguide-faq">
+      <h2>❓ Frequently Asked Questions</h2>
+      {{ range . }}
+      <details class="pguide-faq-item">
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </div>
+</div>
+
+<script src="/js/prompt-guide.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}

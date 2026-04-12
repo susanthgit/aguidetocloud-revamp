@@ -1,0 +1,336 @@
+## Policy Templates — Organized by Microsoft Zero Trust Tiers
+## Source: https://learn.microsoft.com/security/zero-trust/zero-trust-identity-device-access-policies-common
+
+# ═══════════════════════════════════════════════════════
+#  STARTING POINT TIER — Minimum recommended for all orgs
+# ═══════════════════════════════════════════════════════
+
+[[templates]]
+id = "sp-mfa-all"
+name = "Require MFA for all users"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "Require all users to perform multifactor authentication. This is the #1 Zero Trust foundational policy."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts", "Service accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = []
+risk = "Prevents 99.9% of identity attacks"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+
+[[templates]]
+id = "sp-block-legacy"
+name = "Block legacy authentication"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "Block sign-ins from clients that don't support modern authentication (IMAP, POP3, SMTP, older Office clients). Legacy auth cannot do MFA."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Client apps: Exchange ActiveSync clients, Other clients"]
+grant_controls = ["Block access"]
+grant_operator = "AND"
+session_controls = []
+risk = "Legacy protocols are the #1 attack vector for password spray"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy"
+
+[[templates]]
+id = "sp-mfa-admins"
+name = "Require MFA for administrators"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "Require MFA specifically for all users with administrative directory roles. Admin accounts are high-value targets."
+users = "Directory roles: Global Administrator, Security Administrator, Exchange Administrator, SharePoint Administrator, Conditional Access Administrator, Billing Administrator, User Administrator, Authentication Administrator, Helpdesk Administrator, Password Administrator, Privileged Role Administrator, Cloud Application Administrator, Application Administrator"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = []
+risk = "Compromised admin accounts can cause catastrophic damage"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-admin-mfa"
+
+[[templates]]
+id = "sp-secure-registration"
+name = "Secure security info registration"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "Require users to be on a trusted network or compliant device when registering MFA methods. Prevents attackers from registering their own MFA."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "User actions: Register security information"
+conditions = ["Locations: Any location except trusted"]
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = []
+risk = "Attackers who compromise a password could register their own MFA"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-registration"
+
+[[templates]]
+id = "sp-block-high-risk"
+name = "Block high-risk sign-ins"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "Block sign-ins that Entra ID Protection flags as high risk (impossible travel, malware-linked IPs, leaked credentials)."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Sign-in risk: High"]
+grant_controls = ["Block access"]
+grant_operator = "AND"
+session_controls = []
+risk = "High-risk sign-ins indicate active compromise attempts"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-risk"
+
+[[templates]]
+id = "sp-mfa-medium-risk"
+name = "Require MFA for medium-risk sign-ins"
+tier = "starting-point"
+tier_label = "Starting Point"
+description = "When sign-in risk is medium (unfamiliar location, suspicious IP), require MFA before granting access instead of blocking."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Sign-in risk: Medium"]
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = []
+risk = "Medium-risk events may be legitimate travel — MFA verifies"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-risk"
+
+# ═══════════════════════════════════════════════════════
+#  ENTERPRISE TIER — Recommended for organisations with
+#  managed devices and stronger security posture
+# ═══════════════════════════════════════════════════════
+
+[[templates]]
+id = "ent-compliant-device"
+name = "Require compliant device for Office 365"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Only allow access to Office 365 apps from Intune-managed devices that meet your compliance policies (encryption, OS version, antivirus)."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts", "Guest users"]
+target_apps = "Office 365"
+conditions = []
+grant_controls = ["Require device to be marked as compliant"]
+grant_operator = "OR"
+session_controls = []
+risk = "Unmanaged devices may have malware or be shared computers"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-compliant-device"
+
+[[templates]]
+id = "ent-block-unsupported"
+name = "Block access from unsupported platforms"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Block access from device platforms your organisation doesn't support or manage (e.g. Linux, Windows Phone)."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Device platforms: Select platforms to block"]
+grant_controls = ["Block access"]
+grant_operator = "AND"
+session_controls = []
+risk = "Unsupported platforms cannot be managed or verified"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-block-unsupported"
+
+[[templates]]
+id = "ent-sign-in-frequency"
+name = "Set sign-in frequency"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Require users to re-authenticate periodically (e.g. every 8 hours) rather than staying signed in indefinitely."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = ["Sign-in frequency: 8 hours"]
+risk = "Long-lived sessions increase token theft impact"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-session-lifetime"
+
+[[templates]]
+id = "ent-no-persistent-unmanaged"
+name = "No persistent browser on unmanaged devices"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Prevent users from staying signed in on personal/unmanaged devices by disabling persistent browser sessions."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Filter for devices: device.isCompliant -ne True"]
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = ["Persistent browser session: Never"]
+risk = "Shared computers retain browser sessions after user leaves"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-session-lifetime"
+
+[[templates]]
+id = "ent-approved-apps"
+name = "Require approved client apps"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Only allow access from approved Microsoft client apps that support app protection policies (Outlook, Teams, OneDrive, etc.)."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "Office 365"
+conditions = ["Device platforms: iOS, Android"]
+grant_controls = ["Require approved client app", "Require app protection policy"]
+grant_operator = "OR"
+session_controls = []
+risk = "Unapproved apps may not enforce data loss prevention"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-approved-app-or-app-protection"
+
+[[templates]]
+id = "ent-guest-mfa"
+name = "Require MFA for guest users"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Require all external/guest users to complete MFA when accessing your tenant's resources."
+users = "Guest users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = []
+risk = "Guest accounts from other tenants may have weaker security"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+
+[[templates]]
+id = "ent-location-block"
+name = "Block access from untrusted countries"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Block sign-ins from countries where your organisation has no employees. Requires named locations configured in Entra ID."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = ["Locations: All locations except allowed countries"]
+grant_controls = ["Block access"]
+grant_operator = "AND"
+session_controls = []
+risk = "Attacks often originate from countries with no business presence"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-location"
+
+[[templates]]
+id = "ent-terms-of-use"
+name = "Require Terms of Use acceptance"
+tier = "enterprise"
+tier_label = "Enterprise"
+description = "Require users to accept your organisation's Terms of Use before accessing cloud applications."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require terms of use"]
+grant_operator = "AND"
+session_controls = []
+risk = "Users should acknowledge acceptable use and security policies"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/terms-of-use"
+
+# ═══════════════════════════════════════════════════════
+#  SPECIALISED TIER — For highly sensitive environments
+#  and privileged access
+# ═══════════════════════════════════════════════════════
+
+[[templates]]
+id = "spec-always-mfa"
+name = "Require MFA every time for sensitive apps"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Require MFA on every single sign-in (no remember MFA) for highly sensitive applications like HR systems, finance, or admin portals."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "Selected sensitive apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = ["Sign-in frequency: Every time"]
+risk = "Sensitive apps need maximum assurance on every access"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/concept-conditional-access-session"
+
+[[templates]]
+id = "spec-phishing-resistant-admins"
+name = "Require phishing-resistant MFA for admins"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Require administrators to use phishing-resistant MFA methods only (FIDO2 keys, Windows Hello, certificate-based auth). Blocks SMS and phone-based MFA."
+users = "Directory roles: All admin roles"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require authentication strength: Phishing-resistant MFA"]
+grant_operator = "OR"
+session_controls = []
+risk = "Admin accounts are #1 target — phishing-resistant MFA prevents token theft"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/concept-conditional-access-grant"
+
+[[templates]]
+id = "spec-compliant-all-apps"
+name = "Require compliant device for ALL apps"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Extend device compliance requirement to all cloud apps (not just Office 365). Only Intune-managed compliant devices can access any cloud resource."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts", "Guest users"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require device to be marked as compliant"]
+grant_operator = "OR"
+session_controls = []
+risk = "Zero Trust principle: never trust the device without verification"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-compliant-device"
+
+[[templates]]
+id = "spec-token-lifetime"
+name = "Restrict token lifetime"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Set short sign-in frequency (1-4 hours) and disable persistent browser sessions for all users to limit token theft impact window."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "All cloud apps"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = ["Sign-in frequency: 4 hours", "Persistent browser session: Never"]
+risk = "Shorter sessions reduce the blast radius of stolen tokens"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-session-lifetime"
+
+[[templates]]
+id = "spec-mcas-session"
+name = "Enforce Defender for Cloud Apps session controls"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Route sessions through Microsoft Defender for Cloud Apps to block downloads, watermark files, and monitor sensitive actions."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "Office 365"
+conditions = []
+grant_controls = ["Require multifactor authentication"]
+grant_operator = "OR"
+session_controls = ["Use Conditional Access App Control: Monitor only / Block downloads"]
+risk = "Prevents data exfiltration from browser sessions"
+learn_url = "https://learn.microsoft.com/defender-cloud-apps/proxy-deployment-aad"
+
+[[templates]]
+id = "spec-azure-management"
+name = "Protect Azure Management portal"
+tier = "specialised"
+tier_label = "Specialised"
+description = "Require MFA and compliant device for access to Azure portal, Azure CLI, Azure PowerShell, and Azure Resource Manager APIs."
+users = "All users"
+exclusions = ["Break-glass emergency access accounts"]
+target_apps = "Microsoft Azure Management"
+conditions = []
+grant_controls = ["Require multifactor authentication", "Require device to be marked as compliant"]
+grant_operator = "AND"
+session_controls = ["Sign-in frequency: 4 hours"]
+risk = "Azure management access can modify infrastructure and billing"
+learn_url = "https://learn.microsoft.com/entra/identity/conditional-access/howto-conditional-access-policy-azure-management"

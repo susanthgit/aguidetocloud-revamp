@@ -1,0 +1,289 @@
+/*
+   PowerShell Command Builder — Lime green accent #84CC16
+   CSS namespace: .psb-*
+*/
+
+:root {
+  --psb-accent: #84CC16;
+  --psb-accent-hover: #A3E635;
+  --psb-accent-dim: rgba(132, 204, 22, 0.15);
+  --psb-accent-glow: rgba(132, 204, 22, 0.25);
+  --psb-accent-muted: rgba(132, 204, 22, 0.6);
+  --tool-accent: #84CC16;
+  --tool-accent-dim: rgba(132, 204, 22, 0.15);
+  --tool-accent-glow: rgba(132, 204, 22, 0.25);
+  --psb-bg: #141425;
+  --psb-surface: #1a1a2e;
+  --psb-surface-hover: #22223a;
+  --psb-border: #2a2a4a;
+  --psb-text: #e2e8f0;
+  --psb-text-dim: #94a3b8;
+  --psb-code-bg: #0d1117;
+  --psb-danger: #ef4444;
+  --psb-success: #22c55e;
+}
+
+/* ═══════ PAGE ═══════ */
+.psb-page { max-width: 1200px; margin: 0 auto; padding: 0 1rem 3rem; }
+.psb-container { margin-top: 1.5rem; }
+
+/* ═══════ TABS ═══════ */
+.psb-tabs {
+  display: flex; gap: 0; border-bottom: 2px solid var(--psb-border);
+  margin-bottom: 1.5rem; overflow-x: auto;
+}
+.psb-tab {
+  padding: 0.75rem 1.25rem; background: none; border: none; border-bottom: 3px solid transparent;
+  color: var(--psb-text-dim); font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; transition: all 0.2s;
+}
+.psb-tab:hover { color: var(--psb-text); }
+.psb-tab.active { color: var(--psb-accent); border-bottom-color: var(--psb-accent); }
+.psb-tab:focus-visible { outline: 2px solid var(--psb-accent); outline-offset: -2px; }
+.psb-panel { display: none; }
+.psb-panel.active { display: block; }
+
+/* ═══════ SECTION TITLES ═══════ */
+.psb-section-title { font-size: 1.4rem; font-weight: 700; color: var(--psb-text); margin-bottom: 1rem; }
+
+/* ═══════ SEARCH ═══════ */
+.psb-search-wrap { margin-bottom: 1rem; }
+.psb-search {
+  width: 100%; padding: 0.75rem 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
+  border-radius: 8px; color: var(--psb-text); font-size: 0.95rem; transition: border-color 0.2s;
+}
+.psb-search:focus { outline: none; border-color: var(--psb-accent); box-shadow: 0 0 0 3px var(--psb-accent-dim); }
+.psb-search-sm { max-width: 400px; }
+.psb-search::placeholder { color: var(--psb-text-dim); }
+
+/* ═══════ FILTER PILLS ═══════ */
+.psb-filter-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.psb-pill {
+  padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid var(--psb-border);
+  background: var(--psb-surface); color: var(--psb-text-dim); font-size: 0.85rem;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.psb-pill:hover { border-color: var(--psb-accent-muted); color: var(--psb-text); }
+.psb-pill.active { background: var(--psb-accent-dim); border-color: var(--psb-accent); color: var(--psb-accent); font-weight: 600; }
+.psb-pill-sm { padding: 0.3rem 0.7rem; font-size: 0.8rem; border-radius: 16px; border: 1px solid var(--psb-border); background: var(--psb-surface); color: var(--psb-text-dim); cursor: pointer; transition: all 0.2s; }
+.psb-pill-sm:hover { border-color: var(--psb-accent-muted); color: var(--psb-text); }
+.psb-pill-sm.active { background: var(--psb-accent-dim); border-color: var(--psb-accent); color: var(--psb-accent); }
+.psb-filter-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.psb-recipe-count { font-size: 0.85rem; color: var(--psb-text-dim); }
+
+/* ═══════ RECIPE GRID ═══════ */
+.psb-recipe-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+
+.psb-recipe-card {
+  background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px;
+  overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; cursor: pointer;
+}
+.psb-recipe-card:hover { border-color: var(--psb-accent-muted); box-shadow: 0 2px 12px var(--psb-accent-dim); }
+.psb-recipe-header { padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+.psb-recipe-title { font-weight: 600; color: var(--psb-text); flex: 1; font-size: 0.95rem; }
+.psb-recipe-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.psb-badge {
+  padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.3px;
+}
+.psb-badge-service { background: var(--psb-accent-dim); color: var(--psb-accent); }
+.psb-badge-beginner { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.psb-badge-intermediate { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+.psb-badge-advanced { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.psb-recipe-desc { padding: 0 1.25rem 0.75rem; color: var(--psb-text-dim); font-size: 0.85rem; line-height: 1.5; }
+
+.psb-recipe-detail { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--psb-border); display: none; }
+.psb-recipe-card.expanded .psb-recipe-detail { display: block; padding-top: 1rem; }
+.psb-recipe-command { margin: 0.75rem 0; }
+.psb-recipe-explanation { color: var(--psb-text-dim); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.75rem; }
+.psb-recipe-prereq { font-size: 0.8rem; color: var(--psb-text-dim); margin-bottom: 1rem; }
+.psb-recipe-prereq strong { color: var(--psb-accent-muted); }
+.psb-recipe-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* ═══════ MODULE GRID ═══════ */
+.psb-module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+.psb-module-card {
+  padding: 1rem; background: var(--psb-surface); border: 2px solid var(--psb-border);
+  border-radius: 10px; cursor: pointer; transition: all 0.2s; text-align: center;
+}
+.psb-module-card:hover { border-color: var(--psb-accent-muted); background: var(--psb-surface-hover); }
+.psb-module-card.active { border-color: var(--psb-accent); background: var(--psb-accent-dim); }
+.psb-module-emoji { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+.psb-module-name { font-weight: 600; color: var(--psb-text); font-size: 0.9rem; }
+.psb-module-desc { font-size: 0.75rem; color: var(--psb-text-dim); margin-top: 0.3rem; }
+
+.psb-module-info {
+  background: var(--psb-code-bg); border: 1px solid var(--psb-border); border-radius: 8px;
+  padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+}
+.psb-module-info-title { font-weight: 700; color: var(--psb-accent); margin-bottom: 0.5rem; }
+.psb-module-info-row { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.85rem; }
+.psb-module-info-label { color: var(--psb-text-dim); min-width: 80px; flex-shrink: 0; }
+.psb-module-info-value { color: var(--psb-text); font-family: 'Consolas', 'Monaco', monospace; word-break: break-all; }
+.psb-module-info-note { font-size: 0.8rem; color: var(--psb-text-dim); margin-top: 0.5rem; font-style: italic; }
+.psb-module-info-link { color: var(--psb-accent); text-decoration: none; }
+.psb-module-info-link:hover { text-decoration: underline; }
+
+/* ═══════ CMDLET LIST ═══════ */
+.psb-cmdlet-list { display: grid; grid-template-columns: 1fr; gap: 0.4rem; max-height: 300px; overflow-y: auto; }
+.psb-cmdlet-item {
+  padding: 0.6rem 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
+  border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; transition: all 0.15s;
+}
+.psb-cmdlet-item:hover { border-color: var(--psb-accent-muted); background: var(--psb-surface-hover); }
+.psb-cmdlet-item.active { border-color: var(--psb-accent); background: var(--psb-accent-dim); }
+.psb-cmdlet-name { font-weight: 600; color: var(--psb-accent); font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9rem; }
+.psb-cmdlet-desc { font-size: 0.8rem; color: var(--psb-text-dim); flex: 1; }
+
+/* ═══════ PARAMETER FORM ═══════ */
+.psb-build-step { margin-bottom: 1.5rem; }
+.psb-step-label { display: block; font-weight: 700; color: var(--psb-text); font-size: 1rem; margin-bottom: 0.75rem; }
+.psb-params-form { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+.psb-param-group { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 8px; padding: 0.75rem 1rem; }
+.psb-param-group.required { border-left: 3px solid var(--psb-accent); }
+.psb-param-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.psb-param-name { font-weight: 600; color: var(--psb-text); font-family: 'Consolas', monospace; font-size: 0.9rem; }
+.psb-param-required-badge { font-size: 0.65rem; background: var(--psb-accent-dim); color: var(--psb-accent); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+.psb-param-type { font-size: 0.7rem; color: var(--psb-text-dim); background: var(--psb-surface-hover); padding: 0.1rem 0.4rem; border-radius: 4px; }
+.psb-param-desc { font-size: 0.8rem; color: var(--psb-text-dim); margin-bottom: 0.5rem; }
+.psb-param-input {
+  width: 100%; padding: 0.5rem 0.75rem; background: var(--psb-code-bg); border: 1px solid var(--psb-border);
+  border-radius: 6px; color: var(--psb-text); font-family: 'Consolas', monospace; font-size: 0.85rem;
+}
+.psb-param-input:focus { outline: none; border-color: var(--psb-accent); box-shadow: 0 0 0 2px var(--psb-accent-dim); }
+.psb-param-select { width: 100%; padding: 0.5rem 0.75rem; background: var(--psb-code-bg); border: 1px solid var(--psb-border); border-radius: 6px; color: var(--psb-text); font-size: 0.85rem; }
+.psb-param-select:focus { outline: none; border-color: var(--psb-accent); }
+.psb-param-switch { display: flex; align-items: center; gap: 0.5rem; }
+.psb-param-switch input[type="checkbox"] { accent-color: var(--psb-accent); width: 18px; height: 18px; }
+.psb-param-switch label { font-size: 0.85rem; color: var(--psb-text-dim); cursor: pointer; }
+
+/* ═══════ BUILD ACTIONS ═══════ */
+.psb-build-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+
+/* ═══════ BUTTONS ═══════ */
+.psb-btn-primary {
+  padding: 0.65rem 1.5rem; background: var(--psb-accent); color: #000; border: none;
+  border-radius: 8px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+}
+.psb-btn-primary:hover { background: var(--psb-accent-hover); box-shadow: 0 4px 15px var(--psb-accent-glow); }
+.psb-btn-secondary {
+  padding: 0.65rem 1.5rem; background: transparent; color: var(--psb-text-dim);
+  border: 1px solid var(--psb-border); border-radius: 8px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+}
+.psb-btn-secondary:hover { border-color: var(--psb-accent); color: var(--psb-text); }
+.psb-btn-copy, .psb-btn-download, .psb-btn-share {
+  padding: 0.45rem 0.9rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
+  border-radius: 6px; color: var(--psb-text-dim); font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+}
+.psb-btn-copy:hover, .psb-btn-download:hover, .psb-btn-share:hover { border-color: var(--psb-accent); color: var(--psb-accent); }
+.psb-btn-text { background: none; border: none; color: var(--psb-text-dim); font-size: 0.8rem; cursor: pointer; padding: 0.25rem 0; }
+.psb-btn-text:hover { color: var(--psb-accent); }
+
+/* ═══════ OUTPUT ═══════ */
+.psb-output-section { margin-top: 1.5rem; }
+.psb-output-block {
+  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-muted); border-radius: 10px;
+  overflow: hidden;
+}
+.psb-output-code {
+  padding: 1.25rem; margin: 0; color: var(--psb-text); font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem; line-height: 1.6; overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+}
+.psb-output-actions { display: flex; gap: 0.5rem; padding: 0.75rem 1.25rem; border-top: 1px solid var(--psb-border); }
+
+/* Syntax highlight classes */
+.psb-syn-cmdlet { color: var(--psb-accent); font-weight: 700; }
+.psb-syn-param { color: #60A5FA; }
+.psb-syn-value { color: #F59E0B; }
+.psb-syn-comment { color: #6B7280; font-style: italic; }
+.psb-syn-pipe { color: #A78BFA; font-weight: 700; }
+.psb-syn-variable { color: #F472B6; }
+
+/* ═══════ REFERENCE ═══════ */
+.psb-ref-modules { display: grid; gap: 0.75rem; }
+.psb-ref-module { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; overflow: hidden; }
+.psb-ref-module-header {
+  padding: 1rem 1.25rem; cursor: pointer; display: flex; align-items: center; gap: 0.75rem;
+  transition: background 0.2s;
+}
+.psb-ref-module-header:hover { background: var(--psb-surface-hover); }
+.psb-ref-module-header .psb-module-emoji { font-size: 1.2rem; margin: 0; }
+.psb-ref-module-title { font-weight: 700; color: var(--psb-text); flex: 1; }
+.psb-ref-module-count { font-size: 0.8rem; color: var(--psb-text-dim); }
+.psb-ref-module-arrow { color: var(--psb-text-dim); transition: transform 0.2s; }
+.psb-ref-module.open .psb-ref-module-arrow { transform: rotate(90deg); }
+.psb-ref-module-body { display: none; padding: 0 1.25rem 1rem; border-top: 1px solid var(--psb-border); }
+.psb-ref-module.open .psb-ref-module-body { display: block; padding-top: 0.75rem; }
+.psb-ref-cmdlet { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--psb-border); }
+.psb-ref-cmdlet:last-child { border-bottom: none; }
+.psb-ref-cmdlet-name { font-family: 'Consolas', monospace; color: var(--psb-accent); font-weight: 600; font-size: 0.9rem; min-width: 200px; }
+.psb-ref-cmdlet-desc { font-size: 0.8rem; color: var(--psb-text-dim); flex: 1; }
+.psb-ref-cmdlet-actions { display: flex; gap: 0.4rem; }
+.psb-ref-load-btn { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--psb-border); background: none; color: var(--psb-accent); cursor: pointer; }
+.psb-ref-load-btn:hover { background: var(--psb-accent-dim); border-color: var(--psb-accent); }
+.psb-ref-learn-link { font-size: 0.75rem; color: var(--psb-text-dim); text-decoration: none; padding: 0.2rem 0.6rem; }
+.psb-ref-learn-link:hover { color: var(--psb-accent); }
+
+/* ═══════ HISTORY ═══════ */
+.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; padding: 1.25rem; }
+.psb-history-title { font-size: 0.95rem; font-weight: 700; color: var(--psb-text); margin-bottom: 0.75rem; }
+.psb-history-list { max-height: 300px; overflow-y: auto; }
+.psb-history-empty { color: var(--psb-text-dim); font-size: 0.85rem; }
+.psb-history-item {
+  padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--psb-border); cursor: pointer;
+  transition: background 0.15s;
+}
+.psb-history-item:hover { background: var(--psb-surface-hover); }
+.psb-history-item:last-child { border-bottom: none; }
+.psb-history-cmd { font-family: 'Consolas', monospace; font-size: 0.8rem; color: var(--psb-accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.psb-history-time { font-size: 0.7rem; color: var(--psb-text-dim); }
+
+/* ═══════ FAQ ═══════ */
+.psb-faq { margin-top: 3rem; }
+.psb-faq-list { display: grid; gap: 0.5rem; }
+.psb-faq-item { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 8px; overflow: hidden; }
+.psb-faq-q { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; color: var(--psb-accent); font-size: 0.95rem; list-style: none; }
+.psb-faq-q::-webkit-details-marker { display: none; }
+.psb-faq-q::before { content: '▸ '; }
+.psb-faq-item[open] .psb-faq-q::before { content: '▾ '; }
+.psb-faq-a { padding: 0 1.25rem 1rem; color: var(--psb-text-dim); font-size: 0.9rem; line-height: 1.6; }
+
+/* ═══════ CROSS-LINKS ═══════ */
+.psb-cross-links { margin-top: 3rem; }
+.psb-cross-links h3 { font-size: 1.1rem; color: var(--psb-text); margin-bottom: 1rem; }
+.psb-cross-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; }
+.psb-cross-card {
+  padding: 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px;
+  text-decoration: none; display: flex; gap: 0.75rem; align-items: flex-start; transition: all 0.2s;
+}
+.psb-cross-card:hover { border-color: var(--psb-accent); box-shadow: 0 2px 10px var(--psb-accent-dim); }
+.psb-cross-emoji { font-size: 1.5rem; flex-shrink: 0; }
+.psb-cross-name { font-weight: 600; color: var(--psb-text); font-size: 0.9rem; }
+.psb-cross-desc { font-size: 0.8rem; color: var(--psb-text-dim); }
+
+/* ═══════ TOAST ═══════ */
+.psb-toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); padding: 0.6rem 1.5rem;
+  background: var(--psb-accent); color: #000; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+  z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none;
+}
+.psb-toast.show { opacity: 1; }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 768px) {
+  .psb-module-grid { grid-template-columns: repeat(2, 1fr); }
+  .psb-recipe-badges { flex-wrap: wrap; }
+  .psb-ref-cmdlet { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .psb-ref-cmdlet-name { min-width: auto; }
+  .psb-output-actions { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .psb-module-grid { grid-template-columns: 1fr 1fr; }
+  .psb-tabs { gap: 0; }
+  .psb-tab { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+}
+
+/* ═══════ REDUCED MOTION ═══════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

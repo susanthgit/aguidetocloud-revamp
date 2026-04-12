@@ -1,0 +1,763 @@
+/* ── Prompt Engineering Guide ──
+   Accent: Lime #84CC16
+   Namespace: .pguide-*
+*/
+
+.pguide-page {
+  --tool-accent: #84CC16;
+  --tool-accent-dim: rgba(132, 204, 22, 0.15);
+  --tool-accent-glow: rgba(132, 204, 22, 0.25);
+  --tool-accent-text: #A3E635;
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.07);
+  --border-subtle: rgba(255,255,255,0.08);
+  --text-primary: #e6edf3;
+  --text-secondary: rgba(255,255,255,0.6);
+}
+
+/* ── Container ── */
+.pguide-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Tabs ── */
+.pguide-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border-subtle);
+  margin-bottom: 2rem;
+}
+.pguide-tab {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-heading, 'Inter', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.pguide-tab:hover { color: var(--text-primary); }
+.pguide-tab.active {
+  color: var(--tool-accent-text);
+  border-bottom-color: var(--tool-accent);
+}
+.pguide-panel { display: none; }
+.pguide-panel.active { display: block; }
+
+/* ── Progress Bar ── */
+.pguide-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.pguide-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.pguide-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--tool-accent);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.pguide-progress-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ── Filters ── */
+.pguide-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.pguide-filter {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pguide-filter:hover { border-color: var(--tool-accent); color: var(--text-primary); }
+.pguide-filter.active {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-text);
+}
+
+/* ── Technique Cards Grid ── */
+.pguide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+.pguide-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pguide-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--tool-accent);
+  box-shadow: 0 0 20px var(--tool-accent-glow);
+  transform: translateY(-2px);
+}
+.pguide-card.pguide-card-hidden { display: none; }
+.pguide-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.pguide-card-emoji { font-size: 2rem; }
+.pguide-card-check {
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.pguide-card.completed .pguide-card-check { opacity: 1; }
+.pguide-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+.pguide-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem;
+  flex: 1;
+  line-height: 1.5;
+}
+.pguide-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.pguide-card-time {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.pguide-card-cta {
+  font-size: 0.85rem;
+  color: var(--tool-accent-text);
+  font-weight: 600;
+}
+
+/* ── Badges ── */
+.pguide-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.pguide-badge-beginner {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+}
+.pguide-badge-intermediate {
+  background: rgba(251, 191, 36, 0.15);
+  color: #FBBF24;
+}
+
+/* ── Ecosystem Section ── */
+.pguide-ecosystem {
+  text-align: center;
+  padding: 2rem 0;
+}
+.pguide-ecosystem h2 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.pguide-ecosystem p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.pguide-eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.pguide-eco-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+.pguide-eco-card:hover { border-color: var(--tool-accent); }
+.pguide-eco-card.pguide-eco-active {
+  border-color: var(--tool-accent);
+  background: var(--tool-accent-dim);
+}
+.pguide-eco-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.pguide-eco-card strong { display: block; margin-bottom: 0.25rem; }
+.pguide-eco-card p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+
+/* ══════════════════════════════════════
+   PROMPT BUILDER
+   ══════════════════════════════════════ */
+.pguide-builder-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.pguide-builder-steps h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+}
+.pguide-builder-intro {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+.pguide-builder-templates {
+  margin-bottom: 1.5rem;
+}
+.pguide-builder-templates label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+.pguide-builder-templates select,
+#pguide-audience, #pguide-tone {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+/* Steps */
+.pguide-step {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+}
+.pguide-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.pguide-step-num {
+  width: 24px;
+  height: 24px;
+  background: var(--tool-accent);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.pguide-step-header label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.pguide-optional {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.pguide-step-technique {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--tool-accent-text);
+  opacity: 0.7;
+}
+.pguide-input {
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+}
+.pguide-input:focus {
+  border-color: var(--tool-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tool-accent-glow);
+}
+
+/* Format radio */
+.pguide-format-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pguide-radio {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.pguide-radio input[type="radio"] { accent-color: var(--tool-accent); }
+
+/* Constraint toggles */
+.pguide-constraint-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pguide-toggle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.pguide-toggle input[type="checkbox"] { accent-color: var(--tool-accent); }
+.pguide-constraint-val {
+  width: 70px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+.pguide-tone-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* Preview pane */
+.pguide-builder-preview { position: relative; }
+.pguide-preview-sticky {
+  position: sticky;
+  top: 5rem;
+}
+.pguide-preview-sticky h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--tool-accent-text);
+}
+.pguide-preview-box {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem;
+  min-height: 200px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.pguide-preview-placeholder { color: var(--text-secondary); font-style: italic; }
+.pguide-preview-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.pguide-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.pguide-btn-primary {
+  background: var(--tool-accent);
+  color: #000;
+}
+.pguide-btn-primary:hover { filter: brightness(1.1); }
+.pguide-btn-secondary {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+.pguide-btn-secondary:hover { border-color: var(--tool-accent); }
+.pguide-preview-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ══════════════════════════════════════
+   TECHNIQUE SINGLE PAGE
+   ══════════════════════════════════════ */
+.pguide-technique-hero {
+  background: linear-gradient(180deg, color-mix(in srgb, #84CC16 15%, #141425) 0%, #141425 100%);
+  padding: 3rem 1.5rem 2rem;
+}
+.pguide-technique-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.pguide-technique-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.pguide-technique-time {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.pguide-technique-academic {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+.pguide-technique-title {
+  font-size: 2rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+.pguide-technique-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+.pguide-mark-complete {
+  background: var(--tool-accent-dim);
+  border: 1px solid var(--tool-accent);
+  color: var(--tool-accent-text);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pguide-mark-complete:hover { background: var(--tool-accent-glow); }
+.pguide-mark-complete.completed {
+  background: var(--tool-accent);
+  color: #000;
+}
+
+/* Technique Layout */
+.pguide-technique-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+.pguide-technique-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Content Styles */
+.pguide-technique-content h2 {
+  color: var(--tool-accent-text);
+  font-size: 1.3rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 0.5rem;
+}
+.pguide-technique-content h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.pguide-technique-content p {
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.pguide-technique-content ul, .pguide-technique-content ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+.pguide-technique-content li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.pguide-technique-content blockquote {
+  border-left: 3px solid var(--tool-accent);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: var(--tool-accent-dim);
+  border-radius: 0 8px 8px 0;
+}
+.pguide-technique-content blockquote p { margin: 0; }
+.pguide-technique-content a {
+  color: var(--tool-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.pguide-technique-content a:hover { opacity: 0.8; }
+
+/* Sidebar */
+.pguide-technique-sidebar { position: sticky; top: 5rem; }
+.pguide-toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.pguide-toc h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+.pguide-toc ul { list-style: none; padding: 0; margin: 0; }
+.pguide-toc li { margin-bottom: 0.4rem; }
+.pguide-toc a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+  display: block;
+  padding: 0.15rem 0;
+}
+.pguide-toc a:hover { color: var(--tool-accent-text); }
+
+/* Next Technique */
+.pguide-next-technique { margin-top: 1.5rem; }
+.pguide-next-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.pguide-next-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+.pguide-next-card:hover { border-color: var(--tool-accent); }
+.pguide-next-emoji { font-size: 1.5rem; }
+.pguide-next-title { font-weight: 600; font-size: 0.9rem; }
+
+/* ── Sandbox ── */
+.pguide-sandbox {
+  background: var(--bg-card);
+  border: 2px solid var(--tool-accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.pguide-sandbox h2 { margin-top: 0; color: var(--tool-accent-text); }
+.pguide-sandbox-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.pguide-sandbox-bad {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #FCA5A5;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.pguide-sandbox-textarea {
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.5;
+}
+.pguide-sandbox-textarea:focus {
+  border-color: var(--tool-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tool-accent-glow);
+}
+.pguide-sandbox-criteria {
+  margin-top: 1rem;
+}
+.pguide-sandbox-criteria-title {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.pguide-criterion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.pguide-criterion.met {
+  color: var(--tool-accent-text);
+}
+.pguide-criterion.met .pguide-criterion-icon::after {
+  content: '✅';
+}
+.pguide-criterion-icon {
+  font-size: 1rem;
+  width: 1.2em;
+  text-align: center;
+}
+.pguide-criterion.met .pguide-criterion-icon { font-size: 0; }
+.pguide-sandbox-feedback {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+.pguide-sandbox-feedback.show { display: block; }
+.pguide-sandbox-feedback.success {
+  background: rgba(132, 204, 22, 0.15);
+  border: 1px solid var(--tool-accent);
+  color: var(--tool-accent-text);
+}
+.pguide-sandbox-feedback.partial {
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid #FBBF24;
+  color: #FBBF24;
+}
+
+/* ── FAQ ── */
+.pguide-faq {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.pguide-faq h2 { margin-bottom: 1rem; }
+.pguide-faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+.pguide-faq-item summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--tool-accent-text);
+  list-style: none;
+}
+.pguide-faq-item summary::before {
+  content: '▸ ';
+  font-size: 0.9rem;
+}
+.pguide-faq-item[open] summary::before { content: '▾ '; }
+.pguide-faq-item p {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ── Cross-tool CTAs ── */
+.pguide-cross-cta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.pguide-cta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+  text-align: center;
+}
+.pguide-cta-card:hover { border-color: var(--tool-accent); }
+.pguide-cta-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.pguide-cta-card strong { display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
+.pguide-cta-card p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .pguide-grid { grid-template-columns: 1fr 1fr; }
+  .pguide-builder-layout { grid-template-columns: 1fr; }
+  .pguide-preview-sticky { position: static; margin-top: 2rem; }
+  .pguide-technique-layout { grid-template-columns: 1fr; }
+  .pguide-technique-sidebar { display: none; }
+  .pguide-technique-title { font-size: 1.5rem; }
+  .pguide-cross-cta { grid-template-columns: 1fr; }
+  .pguide-eco-grid { grid-template-columns: 1fr; }
+  .pguide-tone-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .pguide-grid { grid-template-columns: 1fr; }
+  .pguide-tabs { gap: 0; }
+  .pguide-tab { font-size: 0.9rem; padding: 0.6rem 1rem; }
+}
+
+/* ── Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  .pguide-card, .pguide-progress-fill, .pguide-criterion { transition: none; }
+}
+.pguide-tab:focus-visible,
+.pguide-card:focus-visible,
+.pguide-filter:focus-visible,
+.pguide-btn:focus-visible,
+.pguide-mark-complete:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: 2px;
+}
+
+/* ── Print ── */
+@media print {
+  .pguide-tabs, .pguide-filters, .pguide-progress-wrap,
+  .pguide-mark-complete, .pguide-sandbox, .pguide-cross-cta,
+  .pguide-preview-actions, .pguide-eco-grid { display: none; }
+  .pguide-technique-hero { background: none; color: #000; }
+}

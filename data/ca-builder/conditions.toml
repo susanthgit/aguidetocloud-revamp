@@ -1,0 +1,295 @@
+## Conditional Access Conditions & Controls Reference
+## Used by the Build wizard to populate dropdowns and generate policy JSON
+
+# ═══════════════════════════════════════════════════════
+#  USER ASSIGNMENT TYPES
+# ═══════════════════════════════════════════════════════
+
+[[user_types]]
+id = "all-users"
+label = "All users"
+description = "Applies to every user in the directory"
+
+[[user_types]]
+id = "all-guests"
+label = "All guest and external users"
+description = "Applies to B2B guests, external members, and other external users"
+
+[[user_types]]
+id = "directory-roles"
+label = "Directory roles"
+description = "Target users with specific admin roles"
+
+[[user_types]]
+id = "specific-groups"
+label = "Specific groups"
+description = "Target members of specific security or M365 groups"
+
+[[user_types]]
+id = "workload-identities"
+label = "Workload identities"
+description = "Service principals and managed identities (requires Workload ID licence)"
+
+# ═══════════════════════════════════════════════════════
+#  COMMON DIRECTORY ROLES
+# ═══════════════════════════════════════════════════════
+
+[[directory_roles]]
+id = "global-admin"
+label = "Global Administrator"
+risk_level = "critical"
+
+[[directory_roles]]
+id = "security-admin"
+label = "Security Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "conditional-access-admin"
+label = "Conditional Access Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "exchange-admin"
+label = "Exchange Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "sharepoint-admin"
+label = "SharePoint Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "user-admin"
+label = "User Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "helpdesk-admin"
+label = "Helpdesk Administrator"
+risk_level = "medium"
+
+[[directory_roles]]
+id = "billing-admin"
+label = "Billing Administrator"
+risk_level = "medium"
+
+[[directory_roles]]
+id = "auth-admin"
+label = "Authentication Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "password-admin"
+label = "Password Administrator"
+risk_level = "medium"
+
+[[directory_roles]]
+id = "privileged-role-admin"
+label = "Privileged Role Administrator"
+risk_level = "critical"
+
+[[directory_roles]]
+id = "cloud-app-admin"
+label = "Cloud Application Administrator"
+risk_level = "medium"
+
+[[directory_roles]]
+id = "intune-admin"
+label = "Intune Administrator"
+risk_level = "high"
+
+[[directory_roles]]
+id = "teams-admin"
+label = "Teams Administrator"
+risk_level = "medium"
+
+# ═══════════════════════════════════════════════════════
+#  TARGET RESOURCES
+# ═══════════════════════════════════════════════════════
+
+[[target_apps]]
+id = "all-cloud-apps"
+label = "All cloud apps"
+description = "Every cloud application registered in your tenant"
+
+[[target_apps]]
+id = "office-365"
+label = "Office 365"
+description = "Exchange Online, SharePoint Online, Teams, OneDrive"
+
+[[target_apps]]
+id = "azure-management"
+label = "Microsoft Azure Management"
+description = "Azure portal, CLI, PowerShell, and ARM APIs"
+
+[[target_apps]]
+id = "microsoft-admin"
+label = "Microsoft Admin Portals"
+description = "M365 Admin Center, Entra Admin Center, etc."
+
+[[target_apps]]
+id = "selected-apps"
+label = "Select specific apps"
+description = "Choose individual applications"
+
+# User actions (not apps)
+[[target_actions]]
+id = "register-security-info"
+label = "Register security information"
+description = "When users register MFA methods or SSPR"
+
+[[target_actions]]
+id = "register-join-devices"
+label = "Register or join devices"
+description = "When users register or join devices to Entra ID"
+
+# ═══════════════════════════════════════════════════════
+#  CONDITIONS
+# ═══════════════════════════════════════════════════════
+
+[[conditions]]
+id = "device-platform"
+category = "Device"
+label = "Device platforms"
+description = "Filter by operating system"
+options = ["Android", "iOS", "Windows", "macOS", "Linux"]
+multi_select = true
+
+[[conditions]]
+id = "locations"
+category = "Network"
+label = "Locations"
+description = "Filter by network location (requires named locations)"
+options = ["Any location", "All trusted locations", "Selected locations"]
+multi_select = false
+
+[[conditions]]
+id = "client-apps"
+category = "Client"
+label = "Client apps"
+description = "Filter by application type"
+options = ["Browser", "Mobile apps and desktop clients", "Exchange ActiveSync clients", "Other clients"]
+multi_select = true
+
+[[conditions]]
+id = "sign-in-risk"
+category = "Risk"
+label = "Sign-in risk level"
+description = "Real-time risk from Entra ID Protection"
+options = ["No risk", "Low", "Medium", "High"]
+multi_select = true
+requires = "Entra ID P2 licence"
+
+[[conditions]]
+id = "user-risk"
+category = "Risk"
+label = "User risk level"
+description = "Cumulative risk score for the user account"
+options = ["No risk", "Low", "Medium", "High"]
+multi_select = true
+requires = "Entra ID P2 licence"
+
+[[conditions]]
+id = "device-filter"
+category = "Device"
+label = "Filter for devices"
+description = "Dynamic filter using device properties (compliance, OS, etc.)"
+options = ["device.isCompliant -eq True", "device.isCompliant -ne True", "device.trustType -eq 'AzureAD'", "device.trustType -eq 'ServerAD'"]
+multi_select = false
+
+# ═══════════════════════════════════════════════════════
+#  GRANT CONTROLS
+# ═══════════════════════════════════════════════════════
+
+[[grant_controls]]
+id = "block"
+label = "Block access"
+description = "Completely prevent access. Use with caution."
+is_block = true
+
+[[grant_controls]]
+id = "mfa"
+label = "Require multifactor authentication"
+description = "User must complete MFA challenge (phone, authenticator, FIDO2, etc.)"
+is_block = false
+
+[[grant_controls]]
+id = "auth-strength"
+label = "Require authentication strength"
+description = "Require specific MFA methods (phishing-resistant, passwordless, etc.)"
+is_block = false
+options = ["Multifactor authentication", "Passwordless MFA", "Phishing-resistant MFA"]
+
+[[grant_controls]]
+id = "compliant-device"
+label = "Require device to be marked as compliant"
+description = "Device must meet Intune compliance policies"
+is_block = false
+requires = "Microsoft Intune"
+
+[[grant_controls]]
+id = "hybrid-joined"
+label = "Require Microsoft Entra hybrid joined device"
+description = "Device must be joined to on-prem AD and Entra ID"
+is_block = false
+
+[[grant_controls]]
+id = "approved-app"
+label = "Require approved client app"
+description = "Only allow access from Microsoft-approved applications"
+is_block = false
+
+[[grant_controls]]
+id = "app-protection"
+label = "Require app protection policy"
+description = "App must have Intune app protection policy applied"
+is_block = false
+requires = "Microsoft Intune"
+
+[[grant_controls]]
+id = "password-change"
+label = "Require password change"
+description = "User must change their password (for risky users)"
+is_block = false
+
+[[grant_controls]]
+id = "terms-of-use"
+label = "Require terms of use"
+description = "User must accept Terms of Use document"
+is_block = false
+
+# ═══════════════════════════════════════════════════════
+#  SESSION CONTROLS
+# ═══════════════════════════════════════════════════════
+
+[[session_controls]]
+id = "sign-in-frequency"
+label = "Sign-in frequency"
+description = "How often users must re-authenticate"
+options = ["1 hour", "4 hours", "8 hours", "12 hours", "24 hours", "Every time"]
+
+[[session_controls]]
+id = "persistent-browser"
+label = "Persistent browser session"
+description = "Whether browser sessions persist after closing"
+options = ["Always", "Never"]
+
+[[session_controls]]
+id = "app-enforced"
+label = "Use app enforced restrictions"
+description = "Limited access in SharePoint/Exchange for unmanaged devices"
+options = ["Enabled"]
+
+[[session_controls]]
+id = "mcas"
+label = "Use Conditional Access App Control"
+description = "Route through Defender for Cloud Apps"
+options = ["Monitor only", "Block downloads"]
+requires = "Microsoft Defender for Cloud Apps"
+
+[[session_controls]]
+id = "cae"
+label = "Customize continuous access evaluation"
+description = "Real-time token revocation on policy changes"
+options = ["Disable", "Strictly enforce location policies"]

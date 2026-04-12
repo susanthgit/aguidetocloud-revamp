@@ -1,0 +1,186 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/prompt-guide.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD HowTo Schema ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "totalTime": "PT{{ .Params.read_time | replaceRE "[^0-9]" "" }}M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Understand the technique",
+      "text": "Learn what {{ .Params.academic_name }} is and when to use it in your prompts."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Study the before and after examples",
+      "text": "Compare a vague prompt with an improved version using this technique."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Practice in the sandbox",
+      "text": "Rewrite the starter prompt using the technique and check your work against the criteria."
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="pguide-page">
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/prompt-guide/" "Label" "Prompt Engineering Guide") }}
+
+  {{/* ── Technique Hero ── */}}
+  <div class="pguide-technique-hero">
+    <div class="pguide-technique-hero-inner">
+      <div class="pguide-technique-meta">
+        <span class="pguide-badge pguide-badge-{{ .Params.difficulty }}">{{ if eq .Params.difficulty "beginner" }}⭐ Beginner{{ else }}⭐⭐ Intermediate{{ end }}</span>
+        <span class="pguide-technique-time">⏱️ {{ .Params.read_time }} read</span>
+        <span class="pguide-technique-academic" title="Academic name">{{ .Params.academic_name }}</span>
+      </div>
+      <h1 class="pguide-technique-title">{{ .Title }}</h1>
+      <p class="pguide-technique-desc">{{ .Description }}</p>
+      <button class="pguide-mark-complete" id="pguide-mark-btn" data-technique="{{ .Params.technique_id }}">
+        <span class="pguide-mark-icon">☐</span> Mark as explored
+      </button>
+    </div>
+  </div>
+
+  <div class="pguide-technique-container">
+    <div class="pguide-technique-layout">
+
+      {{/* ── Main Content ── */}}
+      <article class="pguide-technique-content">
+        {{ .Content }}
+
+        {{/* ── Interactive Sandbox ── */}}
+        <div class="pguide-sandbox" id="pguide-sandbox">
+          <h2>🧪 Try It Yourself</h2>
+          <p>Rewrite this vague prompt using the <strong>{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</strong> technique:</p>
+
+          <div class="pguide-sandbox-starter">
+            <span class="pguide-sandbox-label">Starter prompt (needs improvement):</span>
+            <div class="pguide-sandbox-bad">{{ .Params.sandbox_starter }}</div>
+          </div>
+
+          <div class="pguide-sandbox-input-wrap">
+            <label for="pguide-sandbox-input" class="pguide-sandbox-label">Your improved version:</label>
+            <textarea id="pguide-sandbox-input" class="pguide-sandbox-textarea" rows="4" placeholder="Rewrite the prompt above using what you just learned..."></textarea>
+          </div>
+
+          {{/* Criteria Checklist */}}
+          <div class="pguide-sandbox-criteria" id="pguide-sandbox-criteria">
+            <span class="pguide-sandbox-criteria-title">Checklist — does your prompt include:</span>
+            {{ range .Params.sandbox_criteria }}
+            <div class="pguide-criterion" data-id="{{ .id }}" data-pattern="{{ .pattern }}" {{ with .check }}data-check="{{ . }}"{{ end }}>
+              <span class="pguide-criterion-icon">⬜</span>
+              <span class="pguide-criterion-label">{{ .label }}</span>
+            </div>
+            {{ end }}
+          </div>
+
+          <div class="pguide-sandbox-feedback" id="pguide-sandbox-feedback"></div>
+        </div>
+
+      </article>
+
+      {{/* ── Sidebar TOC ── */}}
+      <aside class="pguide-technique-sidebar">
+        <nav class="pguide-toc">
+          <h3>On this page</h3>
+          <ul id="pguide-toc-list"></ul>
+        </nav>
+
+        {{/* Next technique */}}
+        {{ $pages := .Parent.Pages.ByWeight }}
+        {{ $current := .Weight }}
+        {{ $next := false }}
+        {{ range $pages }}
+          {{ if and (not $next) (gt .Weight $current) }}
+            {{ $next = . }}
+          {{ end }}
+        {{ end }}
+        {{ with $next }}
+        <div class="pguide-next-technique">
+          <span class="pguide-next-label">Next technique →</span>
+          <a href="{{ .RelPermalink }}" class="pguide-next-card">
+            <span class="pguide-next-emoji">{{ .Params.emoji }}</span>
+            <span class="pguide-next-title">{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</span>
+          </a>
+        </div>
+        {{ end }}
+      </aside>
+    </div>
+
+    {{/* ── FAQ ── */}}
+    {{ with .Params.faq }}
+    <div class="pguide-faq">
+      <h2>❓ Frequently Asked Questions</h2>
+      {{ range . }}
+      <details class="pguide-faq-item">
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* ── Cross-tool CTAs ── */}}
+    <div class="pguide-cross-cta">
+      <a href="/prompt-polisher/" class="pguide-cta-card">
+        <span>✨</span>
+        <strong>Practice with Prompt Polisher</strong>
+        <p>Score and rewrite your own prompts using CRAFTS</p>
+      </a>
+      <a href="/prompts/" class="pguide-cta-card">
+        <span>💡</span>
+        <strong>Browse Prompt Library</strong>
+        <p>84 ready-to-use prompts across 8 platforms</p>
+      </a>
+      <a href="/prompt-guide/" class="pguide-cta-card">
+        <span>🎓</span>
+        <strong>Back to All Techniques</strong>
+        <p>Explore all 8 prompt engineering techniques</p>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  window.__pguideData = {
+    techniqueId: {{ .Params.technique_id | jsonify }},
+    sandboxCriteria: {{ .Params.sandbox_criteria | jsonify }}
+  };
+</script>
+<script src="/js/prompt-guide.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}

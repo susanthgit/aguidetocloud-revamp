@@ -1,0 +1,234 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/ca-builder.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CA Policy Builder — Conditional Access Policy Designer",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+{{/* ── FAQPage schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": "{{ $f.q }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ $f.a }}" } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="cab-page">
+
+  {{ partial "tool-hero.html" (dict "title" "CA Policy Builder" "subtitle" "Design, lint, and export Conditional Access policies for Microsoft Entra ID. Browse 20+ Zero Trust templates, build custom policies, check for safety risks, and get deploy-ready PowerShell & JSON — 100% offline, no login." "accent" "#7C3AED") }}
+
+  <div class="cab-container">
+
+    {{/* ── Tab Navigation ── */}}
+    <div class="cab-tabs" role="tablist" aria-label="CA Policy Builder sections">
+      <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="templates" id="tab-templates" aria-controls="panel-templates">📋 Templates</button>
+      <button class="cab-tab" role="tab" aria-selected="false" data-tab="build" id="tab-build" aria-controls="panel-build">🔨 Build</button>
+      <button class="cab-tab" role="tab" aria-selected="false" data-tab="review" id="tab-review" aria-controls="panel-review">🔍 Review <span class="cab-badge" id="cab-policy-count" style="display:none">0</span></button>
+      <button class="cab-tab" role="tab" aria-selected="false" data-tab="export" id="tab-export" aria-controls="panel-export">📤 Export</button>
+    </div>
+
+    {{/* ═══ TEMPLATES TAB ═══ */}}
+    <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates">
+
+      <div class="cab-panel-header">
+        <p class="cab-panel-desc">Browse <strong>20 pre-built policy templates</strong> based on Microsoft's Zero Trust framework. Add to your set or customise before adding.</p>
+        <div class="cab-filter-row">
+          <input type="text" class="cab-search" id="cab-tpl-search" placeholder="Search templates..." aria-label="Search templates">
+          <select class="cab-select" id="cab-tpl-tier-filter" aria-label="Filter by tier">
+            <option value="all">All Tiers</option>
+            <option value="starting-point">🟢 Starting Point</option>
+            <option value="enterprise">🟡 Enterprise</option>
+            <option value="specialised">🔴 Specialised</option>
+          </select>
+          <span class="cab-result-count" id="cab-tpl-count"></span>
+        </div>
+      </div>
+
+      <div class="cab-tpl-grid" id="cab-tpl-grid">
+        {{/* JS renders template cards */}}
+      </div>
+    </div>
+
+    {{/* ═══ BUILD TAB ═══ */}}
+    <div class="cab-panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build" hidden>
+
+      <div class="cab-panel-header">
+        <p class="cab-panel-desc">Build a custom Conditional Access policy step by step. The preview updates live as you make selections.</p>
+      </div>
+
+      <div class="cab-build-layout">
+        <div class="cab-wizard" id="cab-wizard">
+          {{/* Wizard steps rendered by JS */}}
+          <div class="cab-wizard-progress">
+            <div class="cab-wizard-bar"><div class="cab-wizard-fill" id="cab-wizard-fill"></div></div>
+            <span class="cab-wizard-step-label" id="cab-wizard-step-label">Step 1 of 7</span>
+          </div>
+          <div class="cab-wizard-content" id="cab-wizard-content"></div>
+          <div class="cab-wizard-nav">
+            <button class="cab-btn cab-btn--secondary" id="cab-wizard-prev" disabled>← Previous</button>
+            <button class="cab-btn cab-btn--primary" id="cab-wizard-next">Next →</button>
+          </div>
+        </div>
+
+        <div class="cab-build-preview">
+          <h3>📋 Live Preview</h3>
+          <div class="cab-policy-card cab-policy-card--preview" id="cab-build-preview-card">
+            <p class="cab-preview-empty">Start filling in the wizard to see your policy preview here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ═══ REVIEW TAB ═══ */}}
+    <div class="cab-panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review" hidden>
+
+      <div class="cab-panel-header">
+        <p class="cab-panel-desc">Review your policy set. The linter checks for <strong>safety risks</strong> and scores your <strong>Zero Trust baseline alignment</strong>.</p>
+      </div>
+
+      {{/* Empty state */}}
+      <div class="cab-review-empty" id="cab-review-empty">
+        <div class="cab-review-empty-icon">🛡️</div>
+        <h3>No policies yet</h3>
+        <p>Add policies from the <strong>Templates</strong> tab or create one in the <strong>Build</strong> tab to start reviewing your set.</p>
+        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">📋 Browse Templates</button>
+      </div>
+
+      {{/* Review dashboard (hidden until policies added) */}}
+      <div class="cab-review-dashboard" id="cab-review-dashboard" style="display:none">
+
+        {{/* Zero Trust Score */}}
+        <div class="cab-zt-score-section">
+          <div class="cab-zt-score-ring-wrap">
+            <svg class="cab-zt-ring" viewBox="0 0 120 120" aria-label="Zero Trust Score">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#7C3AED" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327" id="cab-zt-ring-fill" transform="rotate(-90 60 60)"/>
+              <text x="60" y="55" text-anchor="middle" class="cab-zt-score-num" id="cab-zt-score-num">0</text>
+              <text x="60" y="72" text-anchor="middle" class="cab-zt-score-label">/ 100</text>
+            </svg>
+          </div>
+          <div class="cab-zt-score-detail">
+            <h3 id="cab-zt-tier-label">🔴 Minimal</h3>
+            <p id="cab-zt-tier-desc">Add more policies to improve your Zero Trust posture.</p>
+            <div class="cab-zt-bars">
+              <div class="cab-zt-bar-row"><span>🟢 Starting Point</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill" id="cab-zt-bar-sp" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-sp">0/40</span></div>
+              <div class="cab-zt-bar-row"><span>🟡 Enterprise</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--ent" id="cab-zt-bar-ent" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-ent">0/35</span></div>
+              <div class="cab-zt-bar-row"><span>🔴 Specialised</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--spec" id="cab-zt-bar-spec" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-spec">0/25</span></div>
+            </div>
+          </div>
+        </div>
+
+        {{/* Safety Linter */}}
+        <div class="cab-linter-section">
+          <h3>🛡️ Rollout Safety Linter</h3>
+          <div class="cab-linter-results" id="cab-linter-results"></div>
+        </div>
+
+        {{/* Policy Cards */}}
+        <div class="cab-review-policies">
+          <h3>Your Policies <span class="cab-badge" id="cab-review-count">0</span></h3>
+          <div class="cab-review-grid" id="cab-review-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ═══ EXPORT TAB ═══ */}}
+    <div class="cab-panel" role="tabpanel" id="panel-export" aria-labelledby="tab-export" hidden>
+
+      <div class="cab-panel-header">
+        <p class="cab-panel-desc">Generate deploy-ready output for your policy set. <strong>Always deploy in Report-Only mode first.</strong></p>
+      </div>
+
+      <div class="cab-export-empty" id="cab-export-empty">
+        <div class="cab-review-empty-icon">📤</div>
+        <h3>Nothing to export</h3>
+        <p>Add policies first, then come back to export.</p>
+      </div>
+
+      <div class="cab-export-dashboard" id="cab-export-dashboard" style="display:none">
+        <div class="cab-export-format-tabs">
+          <button class="cab-export-tab cab-export-tab--active" data-format="powershell">⚡ PowerShell</button>
+          <button class="cab-export-tab" data-format="json">📋 Graph API JSON</button>
+          <button class="cab-export-tab" data-format="csv">📊 CSV Summary</button>
+          <button class="cab-export-tab" data-format="docs">📄 Documentation</button>
+          <button class="cab-export-tab" data-format="rollout">🚀 Rollout Plan</button>
+        </div>
+        <div class="cab-export-actions">
+          <button class="cab-btn cab-btn--primary" id="cab-export-copy">📋 Copy to Clipboard</button>
+          <button class="cab-btn cab-btn--secondary" id="cab-export-download">💾 Download</button>
+        </div>
+        <pre class="cab-export-output" id="cab-export-output"></pre>
+      </div>
+    </div>
+
+  </div>{{/* .cab-container */}}
+
+  {{/* ── Inline Help ── */}}
+  <div class="cab-help-section">
+    <details class="cab-help-details">
+      <summary><strong>📚 Conditional Access Quick Reference</strong></summary>
+      <div class="cab-help-content">
+        <div class="cab-help-grid">
+          <div class="cab-help-card">
+            <h4>What is Conditional Access?</h4>
+            <p>An if-then policy engine in Microsoft Entra ID. <strong>If</strong> a user matches conditions (who, where, device), <strong>then</strong> enforce controls (MFA, block, compliant device). Multiple policies combine with AND logic.</p>
+          </div>
+          <div class="cab-help-card">
+            <h4>The Two Phases</h4>
+            <p><strong>Phase 1:</strong> Collect session details (location, device, risk). <strong>Phase 2:</strong> Enforce — if any policy blocks, access is denied. Otherwise, all grant controls from all matching policies must be satisfied.</p>
+          </div>
+          <div class="cab-help-card">
+            <h4>Break-Glass Accounts</h4>
+            <p>Emergency access accounts excluded from ALL CA policies. At least 2 cloud-only accounts with Global Admin, using phishing-resistant MFA. Test monthly.</p>
+          </div>
+          <div class="cab-help-card">
+            <h4>Report-Only Mode</h4>
+            <p>Test a policy without enforcing it. Sign-in logs show what <em>would</em> happen. Run for 1-2 weeks before enabling. Up to 20 policies in report-only simultaneously.</p>
+          </div>
+          <div class="cab-help-card">
+            <h4>Key Requirement</h4>
+            <p><strong>Entra ID P1</strong> (included in M365 E3/E5, Business Premium). Risk-based policies need <strong>P2</strong> (included in E5). Device compliance needs <strong>Intune</strong>.</p>
+          </div>
+          <div class="cab-help-card">
+            <h4>Common Mistakes</h4>
+            <p>❌ No break-glass exclusion · ❌ Block policy too broad · ❌ Skipping report-only · ❌ Forgetting legacy auth · ❌ Not blocking admin sign-ins from untrusted locations</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  {{/* ── Disclaimer ── */}}
+  <div class="cab-disclaimer">
+    <p>⚠️ <strong>Design-time tool only.</strong> This tool helps you plan Conditional Access policies offline. It does not connect to your tenant, does not read real data, and cannot enforce policies. All analysis is heuristic-based — always test in Report-Only mode before enabling. Compliance mappings are illustrative and do not constitute certification guidance. Refer to <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener">official Microsoft documentation</a> for the most up-to-date information.</p>
+  </div>
+
+  {{ partial "feedback-cta.html" (dict "tool" "ca-builder" "label" "CA Policy Builder") }}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "← Free Tools") }}
+</div>
+
+{{/* ── Inject TOML data into JS ── */}}
+<script>
+  window.__cabTemplates = {{ (index .Site.Data "ca-builder").templates.templates | jsonify | safeJS }};
+  window.__cabConditions = {{ (index .Site.Data "ca-builder").conditions | jsonify | safeJS }};
+  window.__cabCompliance = {{ (index .Site.Data "ca-builder").compliance.frameworks | jsonify | safeJS }};
+</script>
+<script src="/js/ca-builder.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

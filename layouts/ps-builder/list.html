@@ -199,14 +199,14 @@
   </div>
 </div>
 
-{{ partial "feedback-cta.html" (dict "tool" "ps-builder" "label" "Prompt Strategy Builder") }}
+{{ partial "feedback-cta.html" (dict "Page" . "tool" "ps-builder" "label" "Prompt Strategy Builder") }}
 
 {{/* ── INJECT TOML DATA AS JSON ── */}}
 <script>
 window.__psBuilderData = {
-  modules: {{ index .Site.Data "ps_builder" "modules" "modules" | jsonify | safeJS }},
-  cmdlets: {{ index .Site.Data "ps_builder" "cmdlets" "cmdlets" | jsonify | safeJS }},
-  recipes: {{ index .Site.Data "ps_builder" "recipes" "recipes" | jsonify | safeJS }}
+  modules: {{ index hugo.Data "ps_builder" "modules" "modules" | jsonify | safeJS }},
+  cmdlets: {{ index hugo.Data "ps_builder" "cmdlets" "cmdlets" | jsonify | safeJS }},
+  recipes: {{ index hugo.Data "ps_builder" "recipes" "recipes" | jsonify | safeJS }}
 };
 </script>
 <script src="/js/ps-builder.js?v={{ site.Params.cache_version }}"></script>

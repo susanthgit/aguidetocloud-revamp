@@ -1,0 +1,96 @@
+# M365 Migration Planner — Timeline Phases & Estimation
+
+[[phases]]
+id = "discovery"
+name = "Discovery & Assessment"
+emoji = "🔍"
+order = 1
+description = "Inventory users, data, apps, and integrations. Identify risks and blockers."
+milestones = [
+  "Complete user and mailbox inventory",
+  "Audit SharePoint sites and data volumes",
+  "Document custom apps and integrations",
+  "Identify compliance requirements",
+  "Stakeholder alignment meeting"
+]
+# Duration in weeks based on user count tiers
+duration_by_size = { tiny = 1, small = 2, medium = 3, large = 4, enterprise = 6 }
+
+[[phases]]
+id = "planning"
+name = "Planning & Preparation"
+emoji = "📋"
+order = 2
+description = "Design migration approach, configure target tenant, set up tools, plan communications."
+milestones = [
+  "Migration approach approved",
+  "Target tenant configured",
+  "Migration tool selected and set up",
+  "Communication plan created",
+  "Pilot group identified",
+  "Rollback plan documented"
+]
+duration_by_size = { tiny = 1, small = 2, medium = 4, large = 6, enterprise = 8 }
+
+[[phases]]
+id = "pilot"
+name = "Pilot Migration"
+emoji = "🧪"
+order = 3
+description = "Migrate 5-10% of users to validate approach, tooling, and support processes."
+milestones = [
+  "Pilot users migrated",
+  "Post-pilot validation complete",
+  "Pilot feedback collected",
+  "Runbook updated with findings",
+  "Go/no-go decision for production"
+]
+duration_by_size = { tiny = 1, small = 2, medium = 2, large = 3, enterprise = 4 }
+
+[[phases]]
+id = "production"
+name = "Production Migration"
+emoji = "🚀"
+order = 4
+description = "Migrate remaining users in waves. Execute cutover for each batch."
+milestones = [
+  "Wave 1 complete (early adopters)",
+  "Wave 2 complete (general users)",
+  "Final wave complete",
+  "DNS/MX cutover (if applicable)",
+  "All users validated"
+]
+duration_by_size = { tiny = 1, small = 2, medium = 4, large = 8, enterprise = 16 }
+
+[[phases]]
+id = "post-migration"
+name = "Post-Migration & Cleanup"
+emoji = "✅"
+order = 5
+description = "Validate data, decommission source, conduct training, monitor for issues."
+milestones = [
+  "Data validation complete",
+  "User training sessions delivered",
+  "Source environment decommissioned",
+  "Post-migration support period complete",
+  "Project closure and lessons learned"
+]
+duration_by_size = { tiny = 1, small = 2, medium = 2, large = 3, enterprise = 4 }
+
+# Size tier definitions
+[size_tiers]
+tiny = { label = "Tiny", min_users = 1, max_users = 49 }
+small = { label = "Small", min_users = 50, max_users = 499 }
+medium = { label = "Medium", min_users = 500, max_users = 4999 }
+large = { label = "Large", min_users = 5000, max_users = 49999 }
+enterprise = { label = "Enterprise", min_users = 50000, max_users = 999999 }
+
+# Throughput rates (GB per hour) — from Microsoft published data
+[throughput]
+exchange_mrs = { rate = 12, unit = "GB/hour", note = "Cross-tenant MRS average" }
+exchange_hybrid = { rate = 10, unit = "GB/hour", note = "Hybrid migration average" }
+sharepoint_spmt = { rate = 5, unit = "GB/hour", note = "SPMT average (varies by file count)" }
+sharepoint_migration_manager = { rate = 8, unit = "GB/hour", note = "Migration Manager average" }
+onedrive_migration_manager = { rate = 10, unit = "GB/hour", note = "OneDrive Migration Manager" }
+google_to_m365 = { rate = 6, unit = "GB/hour", note = "Google to M365 average" }
+third_party_avg = { rate = 15, unit = "GB/hour", note = "Third-party tools average (varies)" }
