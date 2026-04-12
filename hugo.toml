@@ -30,8 +30,8 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  tag = ["HTML"]
-  category = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
 
 [menu]
   [[menu.main]]

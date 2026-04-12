@@ -4,4 +4,7 @@ description: "Interactive comparison of ChatGPT, Claude, Gemini, Grok, Mistral, 
 layout: list
 type: ai-showdown
 url: /ai-showdown/
+sitemap:
+  priority: 0.9
+  changefreq: "weekly"
 ---

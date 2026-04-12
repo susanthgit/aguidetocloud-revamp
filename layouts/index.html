@@ -4,14 +4,8 @@
 
 <div class="container">
 
-  <!-- 🔍 SEARCH (magenta accent) -->
-  <div class="hp-search-hero">
-    <button class="hp-search-btn" onclick="document.getElementById('search-modal')?.classList.add('active');document.getElementById('search-input')?.focus();" aria-label="Search">
-      <span class="hp-search-icon">🔍</span>
-      <span>Search tools, videos, articles, prompts...</span>
-      <span class="hp-search-shortcut">Ctrl+K</span>
-    </button>
-  </div>
+  <!-- 🔍 SEARCH -->
+  {{ partial "page-search.html" . }}
 
   <!-- 🧰 CLOUD & AI TOOLKIT SHOWCASE -->
   <section class="section">
@@ -55,6 +49,9 @@
         </a>
         <a href="/ai-mapper/" class="hp-toolkit-card" style="--tool-color: #8B5CF6">
           <span class="hp-tool-emoji">🗺️</span><strong>AI Service Mapper</strong>
+        </a>
+        <a href="/ai-showdown/" class="hp-toolkit-card" style="--tool-color: #D4A853">
+          <span class="hp-tool-emoji">🥊</span><strong>AI SaaS Showdown</strong>
         </a>
       </div>
     </div>

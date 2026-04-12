@@ -196,6 +196,22 @@
       "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
     },
     {
+      "route": "/data/copilot-matrix/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+    },
+    {
+      "route": "/data/ai-mapper/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+    },
+    {
+      "route": "/data/ai-showdown/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+    },
+    {
+      "route": "/data/roi-calculator/*",
+      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+    },
+    {
       "route": "/css/*",
       "headers": { "Cache-Control": "public, max-age=86400" }
     },

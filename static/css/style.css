@@ -615,6 +615,10 @@ a:hover {
   .hp-cat-grid .video-card:nth-child(n+3) { display: none; }
   .welcome-ctas { flex-wrap: nowrap; }
   .hp-search-shortcut { display: none; }
+  .welcome-stat-boxes { gap: 0.5rem; }
+  .welcome-stat-box { padding: 0.5rem 0.8rem; min-width: 65px; }
+  .welcome-stat-num { font-size: 1.2rem; }
+  .welcome-stat-label { font-size: 0.62rem; }
 }
 
 /* ── STATS BAR (box format) ──────────────── */
@@ -743,20 +747,39 @@ a:hover {
   transform: translateY(-1px);
   text-shadow: none;
 }
-/* ── HOMEPAGE: HERO STATS ─────────────────── */
-.welcome-stats {
+/* ── HOMEPAGE: HERO STATS BOXES ───────────── */
+.welcome-stat-boxes {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.6rem;
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.03em;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
-.welcome-stats-dot { opacity: 0.3; }
+.welcome-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  min-width: 80px;
+}
+.welcome-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
+  line-height: 1;
+}
+.welcome-stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+}
 /* ── HOMEPAGE: SEARCH (magenta) ──────────── */
 .hp-search-hero {
   padding: 1.2rem 0 0.5rem;
