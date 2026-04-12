@@ -173,12 +173,11 @@ function getOffsetMinutes(date, tz) {
 
 function getRelativeDay(tz) {
   const now = new Date();
-  const localDay = new Intl.DateTimeFormat('en-US', { timeZone: S.localTz, day: 'numeric', month: 'numeric' }).format(now);
-  const targetDay = new Intl.DateTimeFormat('en-US', { timeZone: tz, day: 'numeric', month: 'numeric' }).format(now);
-  if (localDay === targetDay) return { text: 'Same day', cls: 'same-day' };
-  const localDate = parseInt(localDay.split('/')[1]);
-  const targetDate = parseInt(targetDay.split('/')[1]);
-  if (targetDate > localDate || (targetDate === 1 && localDate > 27)) return { text: 'Tomorrow', cls: 'diff-day' };
+  const localParts = new Intl.DateTimeFormat('en-CA', { timeZone: S.localTz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const targetParts = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  if (localParts === targetParts) return { text: 'Same day', cls: 'same-day' };
+  // Compare as ISO strings (YYYY-MM-DD) for correct ordering
+  if (targetParts > localParts) return { text: 'Tomorrow', cls: 'diff-day' };
   return { text: 'Yesterday', cls: 'diff-day' };
 }
 
@@ -326,6 +325,8 @@ function initWorldClock() {
       toggle.textContent = S.use24h ? '24h' : '12h';
       saveState();
       renderClocks();
+      renderConvertResults();
+      renderMeetingTimeline();
     });
   }
 
@@ -418,8 +419,10 @@ function renderClocks() {
 }
 
 function startTicking() {
+  let lastMinute = -1;
   setInterval(() => {
     const now = new Date();
+    const currentMinute = now.getMinutes();
     // Local time
     const localEl = document.getElementById('wclk-local-time');
     const localDet = document.getElementById('wclk-local-details');
@@ -428,10 +431,15 @@ function startTicking() {
       const dst = isDstActive(S.localTz);
       localDet.textContent = `${formatDate(now, S.localTz)} · ${getUtcOffset(S.localTz)}${dst !== null ? (dst ? ' · 🌞 DST Active' : ' · ⏰ Standard Time') : ''}`;
     }
-    // Clock cards
+    // Clock cards — update time every second
     document.querySelectorAll('.wclk-card-time[data-tz]').forEach(el => {
       el.textContent = formatTime(now, el.dataset.tz, S.use24h);
     });
+    // Full card refresh every minute (catches date/DST/offset changes)
+    if (currentMinute !== lastMinute) {
+      lastMinute = currentMinute;
+      if (S.clocks.length > 0) renderClocks();
+    }
   }, 1000);
 }
 
@@ -655,17 +663,33 @@ function renderMeetingTimeline() {
   // Golden window
   if (goldenContainer) {
     if (goldenHours.length > 0) {
-      const startH = goldenHours[0];
-      const endH = goldenHours[goldenHours.length - 1] + 1;
+      // Group into contiguous ranges
+      const ranges = [];
+      let start = goldenHours[0];
+      let prev = goldenHours[0];
+      for (let i = 1; i < goldenHours.length; i++) {
+        if (goldenHours[i] !== prev + 1) {
+          ranges.push({ start, end: prev + 1 });
+          start = goldenHours[i];
+        }
+        prev = goldenHours[i];
+      }
+      ranges.push({ start, end: prev + 1 });
+
+      const bestRange = ranges.reduce((a, b) => (b.end - b.start) > (a.end - a.start) ? b : a);
       let details = S.participants.map(p => {
         const testDate = new Date(baseDate.getTime());
-        testDate.setHours(startH, 0, 0, 0);
+        testDate.setHours(bestRange.start, 0, 0, 0);
         return `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)}`;
       }).join(' · ');
+      const totalHours = goldenHours.length;
+      const rangeText = ranges.length === 1
+        ? `${bestRange.start}:00 – ${bestRange.end}:00 (your time)`
+        : ranges.map(r => `${r.start}:00–${r.end}:00`).join(', ') + ' (your time)';
       goldenContainer.innerHTML = `<div class="wclk-golden-box">
         <div class="wclk-golden-title">✅ Golden Window Found</div>
-        <div class="wclk-golden-time">${startH}:00 – ${endH}:00 (your time)</div>
-        <div class="wclk-golden-details">${goldenHours.length} hour${goldenHours.length > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
+        <div class="wclk-golden-time">${rangeText}</div>
+        <div class="wclk-golden-details">${totalHours} hour${totalHours > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
       </div>`;
     } else if (S.participants.length >= 2) {
       goldenContainer.innerHTML = `<div class="wclk-golden-box wclk-no-golden">
@@ -687,13 +711,15 @@ function renderMeetingTimeline() {
       }
       S.participants.forEach(p => {
         const testDate = new Date(baseDate.getTime());
-        testDate.setHours(goldenHours[0] || 9, 0, 0, 0);
+        testDate.setHours(goldenHours.length > 0 ? goldenHours[0] : 9, 0, 0, 0);
         text += `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)} (${getUtcOffset(p.tz)})\n`;
       });
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('wclk-copy-meeting');
         btn.textContent = '✅ Copied!';
         setTimeout(() => { btn.textContent = '📋 Copy Meeting Summary'; }, 2000);
+      }).catch(() => {
+        prompt('Copy this meeting summary:', text);
       });
     });
   } else if (summaryContainer) {
