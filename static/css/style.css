@@ -689,8 +689,7 @@ a:hover {
   .welcome-stat-box { padding: 0.35rem 0.4rem; min-width: auto; }
   .welcome-stat-num { font-size: 0.9rem; }
   .welcome-stat-label { font-size: 0.5rem; }
-  .welcome-cta-row { gap: 0.5rem; flex-wrap: nowrap; }
-  .welcome-cta-btn { font-size: 0.68rem; padding: 0.4rem 0.7rem; white-space: nowrap; }
+  .welcome-cta-row { display: none; }
   .hp-toolkit-card p { display: none; }
 }
 
