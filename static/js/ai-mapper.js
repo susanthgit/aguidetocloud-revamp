@@ -397,7 +397,7 @@
       '<div class="aimap-modal-section"><h4>💰 Pricing</h4>' +
         '<p>' + esc(s.price_note || s.pricing_model || 'N/A') + '</p>' +
         (s.free_tier ? '<p style="color:#4ade80">🆓 ' + esc(s.free_tier_detail || 'Free tier available') + '</p>' : '') +
-        (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener" class="aimap-card-link">View pricing page →</a>' : '') +
+        (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener noreferrer" class="aimap-card-link">View pricing page →</a>' : '') +
       '</div>' +
       '<div class="aimap-modal-section"><h4>🔧 Features</h4>' + featHTML + '</div>' +
       (s.context_window ? '<div class="aimap-modal-section"><h4>📏 Context Window</h4><p>' + esc(s.context_window) + '</p></div>' : '') +
@@ -407,8 +407,8 @@
       '<div class="aimap-modal-section"><h4>🎯 Use Cases</h4><div class="aimap-card-best">' + (s.use_cases||[]).map(function(u) { return '<span class="aimap-best-tag">' + esc(u.replace(/-/g,' ')) + '</span>'; }).join('') + '</div></div>' +
       altHTML +
       '<div class="aimap-modal-actions">' +
-        '<a href="' + (s.url||'#') + '" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary">Visit ' + esc(s.name) + ' →</a>' +
-        (s.docs_url ? '<a href="' + s.docs_url + '" target="_blank" rel="noopener" class="aimap-btn">📄 Documentation</a>' : '') +
+        '<a href="' + (s.url||'#') + '" target="_blank" rel="noopener noreferrer" class="aimap-btn aimap-btn-primary">Visit ' + esc(s.name) + ' →</a>' +
+        (s.docs_url ? '<a href="' + s.docs_url + '" target="_blank" rel="noopener noreferrer" class="aimap-btn">📄 Documentation</a>' : '') +
       '</div>';
 
     overlay.style.display = 'flex';
@@ -832,7 +832,7 @@
           '<td>' + (s.free_tier ? '<span class="aimap-price-free">✅</span>' : '❌') + '</td>' +
           '<td>' + (s.price_input||'N/A') + '</td><td>' + (s.price_output||'N/A') + '</td>' +
           '<td>' + (s.pricing_model||'N/A') + '</td>' +
-          '<td>' + (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener">Pricing →</a>' : '') + '</td></tr>';
+          '<td>' + (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener noreferrer">Pricing →</a>' : '') + '</td></tr>';
       }).join('');
     }
     render(false);

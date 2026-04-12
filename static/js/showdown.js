@@ -104,8 +104,8 @@
             ${p.open_source ? '<span class="showdown-badge showdown-badge-open">Open Source</span>' : ''}
           </div>
           <div class="showdown-card-actions">
-            <a href="${p.url}" target="_blank" rel="noopener" class="showdown-card-link" onclick="event.stopPropagation()">Visit Site ↗</a>
-            <a href="${p.pricing_url}" target="_blank" rel="noopener" class="showdown-card-link" onclick="event.stopPropagation()">Pricing ↗</a>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="showdown-card-link" onclick="event.stopPropagation()">Visit Site ↗</a>
+            <a href="${p.pricing_url}" target="_blank" rel="noopener noreferrer" class="showdown-card-link" onclick="event.stopPropagation()">Pricing ↗</a>
           </div>
         </div>`;
     }
@@ -656,7 +656,7 @@
           </div>
           <div class="showdown-changelog-title">${esc(e.title)}</div>
           <div class="showdown-changelog-desc">${esc(e.description)}</div>
-          ${e.source ? `<a href="${e.source}" target="_blank" rel="noopener" class="showdown-changelog-source">📎 Source →</a>` : ''}
+          ${e.source ? `<a href="${e.source}" target="_blank" rel="noopener noreferrer" class="showdown-changelog-source">📎 Source →</a>` : ''}
         </div>`;
     }).join('');
 

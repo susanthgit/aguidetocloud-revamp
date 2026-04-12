@@ -152,20 +152,44 @@
     compliance: { none: 0, basic: 3, advanced: 7, regulated: 10 },
     multiGeo: { single: 0, multi: 3, residency: 5 },
     deadline: { none: 0, '12m': 1, '6m': 2, '3m': 4, '1m': 5 },
-    largestMailbox: { small: 0, medium: 1, large: 2, xlarge: 3, xxlarge: 4 }
+    largestMailbox: { small: 0, medium: 1, large: 2, xlarge: 3, xxlarge: 4 },
+    reason: { merger: 3, divestiture: 4, modernise: 1, compliance: 3, cost: 1, consolidation: 2 },
+    experience: { first: 4, 'done-one': 1, experienced: 0 },
+    directory: { 'onprem-ad': 3, hybrid: 2, 'cloud-entra': 0, google: 2 }
+  };
+
+  const SCORE_LABELS = {
+    scenario: 'Migration type',
+    userCount: 'Organisation size',
+    dataVolume: 'Data volume',
+    workloads: 'Workload count',
+    customApps: 'Custom apps',
+    compliance: 'Compliance requirements',
+    multiGeo: 'Geographic scope',
+    deadline: 'Deadline pressure',
+    largestMailbox: 'Largest mailbox',
+    reason: 'Migration driver',
+    experience: 'Team experience',
+    directory: 'Directory complexity'
   };
 
   function calcComplexity() {
+    S.scoreBreakdown = [];
     let score = 0;
-    score += SCORE_MAP.scenario[S.scenario] || 0;
-    score += SCORE_MAP.userCount[S.userCount] || 0;
-    score += SCORE_MAP.dataVolume[S.dataVolume] || 0;
-    score += Math.min(S.workloads.length * 2, 15);
-    score += SCORE_MAP.customApps[S.customApps] || 0;
-    score += SCORE_MAP.compliance[S.compliance] || 0;
-    score += SCORE_MAP.multiGeo[S.multiGeo] || 0;
-    score += SCORE_MAP.deadline[S.deadline] || 0;
-    score += SCORE_MAP.largestMailbox[S.largestMailbox] || 0;
+    const add = (key, val) => { if (val > 0) { S.scoreBreakdown.push({ label: SCORE_LABELS[key] || key, points: val }); score += val; } };
+    add('scenario', SCORE_MAP.scenario[S.scenario] || 0);
+    add('userCount', SCORE_MAP.userCount[S.userCount] || 0);
+    add('dataVolume', SCORE_MAP.dataVolume[S.dataVolume] || 0);
+    add('workloads', Math.min(S.workloads.length * 2, 15));
+    add('customApps', SCORE_MAP.customApps[S.customApps] || 0);
+    add('compliance', SCORE_MAP.compliance[S.compliance] || 0);
+    add('multiGeo', SCORE_MAP.multiGeo[S.multiGeo] || 0);
+    add('deadline', SCORE_MAP.deadline[S.deadline] || 0);
+    add('largestMailbox', SCORE_MAP.largestMailbox[S.largestMailbox] || 0);
+    add('reason', SCORE_MAP.reason[S.reason] || 0);
+    add('experience', SCORE_MAP.experience[S.experience] || 0);
+    add('directory', SCORE_MAP.directory[S.directory] || 0);
+    S.scoreBreakdown.sort((a, b) => b.points - a.points);
     S.complexityScore = Math.min(score, 100);
     if (score <= 25) S.complexityTier = 'simple';
     else if (score <= 50) S.complexityTier = 'moderate';
@@ -176,10 +200,17 @@
   function getApproach() {
     const sc = D.scenarios.find(s => s.id === S.scenario);
     if (!sc) return 'phased';
-    if (S.userCount === 'tiny' && sc.approaches.includes('cutover')) return 'cutover';
-    if (S.userCount === 'small' && sc.approaches.includes('staged')) return 'staged';
+    const size = { tiny: 1, small: 2, medium: 3, large: 4, enterprise: 5 }[S.userCount] || 3;
+    // Cutover only for tiny orgs
+    if (size <= 1 && sc.approaches.includes('cutover')) return 'cutover';
+    // Staged for small orgs
+    if (size <= 2 && sc.approaches.includes('staged')) return 'staged';
+    // Phased for medium+
     if (sc.approaches.includes('phased')) return 'phased';
-    return sc.approaches[0] || 'phased';
+    // Hybrid if available for large+
+    if (size >= 4 && sc.approaches.includes('hybrid')) return 'hybrid';
+    // Phased as safe default for any size
+    return 'phased';
   }
 
   function getTierLabel(tier) {
@@ -220,9 +251,21 @@
   /* ---- Timeline Estimation ---- */
   function estimateTimeline() {
     const tier = S.userCount || 'small';
+    // Multipliers based on additional factors
+    const dataMultiplier = { tiny: 0.8, small: 1, medium: 1.2, large: 1.5, massive: 2 }[S.dataVolume] || 1;
+    const workloadMultiplier = S.workloads.length <= 2 ? 0.8 : S.workloads.length <= 4 ? 1 : S.workloads.length <= 6 ? 1.3 : 1.5;
+    const complianceMultiplier = { none: 1, basic: 1.1, advanced: 1.3, regulated: 1.5 }[S.compliance] || 1;
+    const appsMultiplier = { none: 1, few: 1.1, many: 1.3, complex: 1.5 }[S.customApps] || 1;
+    const experienceMultiplier = { first: 1.3, 'done-one': 1, experienced: 0.85 }[S.experience] || 1;
+
     let totalWeeks = 0;
     S.phaseEstimates = D.timeline.phases.map(p => {
-      const weeks = p.duration_by_size[tier] || 2;
+      let weeks = p.duration_by_size[tier] || 2;
+      // Apply relevant multipliers per phase
+      if (p.id === 'discovery') weeks = Math.ceil(weeks * workloadMultiplier * complianceMultiplier);
+      else if (p.id === 'planning') weeks = Math.ceil(weeks * appsMultiplier * complianceMultiplier * experienceMultiplier);
+      else if (p.id === 'production') weeks = Math.ceil(weeks * dataMultiplier * workloadMultiplier);
+      else if (p.id === 'post-migration') weeks = Math.ceil(weeks * experienceMultiplier);
       totalWeeks += weeks;
       return { ...p, weeks };
     });
@@ -250,16 +293,54 @@
   function updateURL() {
     if (!S.wizardDone) return;
     const p = new URLSearchParams();
-    p.set('scenario', S.scenario);
-    p.set('users', S.userCount);
+    // Store all wizard answers for full restoration
+    p.set('scenario', S.scenario || '');
+    p.set('reason', S.reason || '');
+    p.set('users', S.userCount || '');
     p.set('workloads', S.workloads.join(','));
-    p.set('score', S.complexityScore);
+    p.set('data', S.dataVolume || '');
+    p.set('mailbox', S.largestMailbox || '');
+    p.set('apps', S.customApps || '');
+    p.set('compliance', S.compliance || '');
+    p.set('deadline', S.deadline || '');
+    p.set('geo', S.multiGeo || '');
+    p.set('dir', S.directory || '');
+    p.set('exp', S.experience || '');
     p.set('tab', S.currentTab);
     history.replaceState(null, '', '?' + p.toString());
   }
 
   function loadFromURL() {
     const p = new URLSearchParams(location.search);
+    // Restore full state if scenario param exists
+    if (p.has('scenario') && p.get('scenario')) {
+      S.scenario = p.get('scenario');
+      S.reason = p.get('reason') || null;
+      S.userCount = p.get('users') || null;
+      S.workloads = p.get('workloads') ? p.get('workloads').split(',').filter(Boolean) : [];
+      S.dataVolume = p.get('data') || null;
+      S.largestMailbox = p.get('mailbox') || null;
+      S.customApps = p.get('apps') || null;
+      S.compliance = p.get('compliance') || null;
+      S.deadline = p.get('deadline') || null;
+      S.multiGeo = p.get('geo') || null;
+      S.directory = p.get('dir') || null;
+      S.experience = p.get('exp') || null;
+      if (S.userCount && S.workloads.length > 0) {
+        S.wizardDone = true;
+        calcComplexity();
+        S.approach = getApproach();
+        scoreWorkloads();
+        filterRisks();
+        estimateTimeline();
+        renderResults();
+        renderWorkloads();
+        renderTimeline();
+        renderRisks();
+        renderTools();
+        renderSummary();
+      }
+    }
     if (p.has('tab')) {
       const tab = p.get('tab');
       if (['wizard', 'workloads', 'timeline', 'risks', 'tools', 'summary'].includes(tab)) {
@@ -371,6 +452,14 @@
     const ap = D.approaches.find(a => a.id === S.approach);
     const userLabel = { tiny: '< 50', small: '50-500', medium: '500-5K', large: '5K-50K', enterprise: '50K+' }[S.userCount] || '';
 
+    // Score breakdown HTML (top 6 factors)
+    const breakdownHtml = (S.scoreBreakdown || []).slice(0, 6).map(b =>
+      `<div style="display:flex;justify-content:space-between;align-items:center;padding:0.25rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+        <span style="font-size:0.8rem;color:#aaa">${b.label}</span>
+        <span style="font-size:0.8rem;font-weight:700;color:var(--tool-accent)">+${b.points}</span>
+      </div>`
+    ).join('');
+
     el.innerHTML = `
       <div class="migplan-score-card">
         <div class="migplan-score-number" style="color:${tierColor(S.complexityTier)}">${S.complexityScore}</div>
@@ -383,6 +472,17 @@
           <span>📋 <strong>${ap ? ap.name : S.approach}</strong></span>
         </div>
         <div class="migplan-score-narrative">${generateNarrative()}</div>
+
+        <button class="migplan-toggle-btn" style="margin:1rem auto;display:block;font-size:0.85rem" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score breakdown':'📊 Why this score?'">📊 Why this score?</button>
+        <div class="migplan-toggle-content" style="max-width:400px;margin:0 auto;background:rgba(99,102,241,0.06);border-radius:10px;padding:1rem">
+          <div style="font-size:0.78rem;font-weight:700;color:#888;text-transform:uppercase;margin-bottom:0.5rem">Score Breakdown</div>
+          ${breakdownHtml}
+          <div style="display:flex;justify-content:space-between;padding:0.4rem 0;margin-top:0.3rem;border-top:1px solid rgba(99,102,241,0.2)">
+            <span style="font-size:0.85rem;font-weight:700;color:#fff">Total</span>
+            <span style="font-size:0.85rem;font-weight:700;color:${tierColor(S.complexityTier)}">${S.complexityScore}</span>
+          </div>
+        </div>
+
         <div class="migplan-score-actions">
           <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('workloads')">📊 View Workloads</button>
           <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('timeline')">📅 View Timeline</button>
@@ -411,7 +511,17 @@
     if (S.workloads.length > 5) parts.push(`With ${S.workloads.length} workloads in scope, a phased approach is recommended.`);
     if (S.compliance === 'regulated') parts.push('Regulated industry compliance adds constraints that must be addressed early.');
     if (S.deadline === '1m') parts.push('⚠️ Your 1-month deadline is extremely aggressive — consider negotiating more time.');
+    if (S.deadline === '3m' && S.complexityScore > 50) parts.push('⚠️ A 3-month deadline for this complexity level will require parallel workstreams.');
     if (S.customApps === 'complex') parts.push('Your extensive custom apps will need thorough testing and remediation.');
+    // Use reason in narrative
+    if (S.reason === 'merger' || S.reason === 'divestiture') parts.push('M&A migrations often have hard deadlines — start domain transfer planning early.');
+    if (S.reason === 'compliance') parts.push('Compliance-driven migrations require thorough documentation of every step.');
+    // Use experience in narrative
+    if (S.experience === 'first') parts.push('Since this is your first migration, consider engaging Microsoft FastTrack (free for 150+ licences) or a certified partner.');
+    if (S.experience === 'experienced') parts.push('Your experience will help, but every environment has surprises — don\'t skip the pilot phase.');
+    // Use directory in narrative
+    if (S.directory === 'onprem-ad') parts.push('Your on-premises AD will need Entra Connect setup — plan this in the preparation phase.');
+    if (S.directory === 'google' && S.scenario !== 'google-m365') parts.push('Your Google directory will need to be migrated to Entra ID.');
 
     return parts.join(' ');
   }
@@ -533,7 +643,7 @@
           <strong>Mitigation</strong>
           ${r.mitigation}
         </div>
-        ${r.learn_url ? `<a class="migplan-risk-link" href="${r.learn_url}" target="_blank" rel="noopener">📚 Learn more →</a>` : ''}
+        ${r.learn_url ? `<a class="migplan-risk-link" href="${r.learn_url}" target="_blank" rel="noopener noreferrer">📚 Learn more →</a>` : ''}
       </div>
     `).join('');
 
@@ -592,7 +702,7 @@
             <div><ul class="migplan-tool-pros">${prosHtml}</ul></div>
             <div><ul class="migplan-tool-cons">${consHtml}</ul></div>
           </div>
-          <a class="migplan-tool-link" href="${t.url}" target="_blank" rel="noopener">🔗 Visit tool page →</a>
+          <a class="migplan-tool-link" href="${t.url}" target="_blank" rel="noopener noreferrer">🔗 Visit tool page →</a>
         </div>
       `;
     }).join('');

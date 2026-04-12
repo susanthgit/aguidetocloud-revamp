@@ -226,7 +226,7 @@
       html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Connect:</span><code class="psb-module-info-value">${esc(mod.connect_command)}</code></div>`;
     }
     if (mod.learn_url) {
-      html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Docs:</span><a href="${mod.learn_url}" target="_blank" rel="noopener" class="psb-module-info-link">Microsoft Learn ↗</a></div>`;
+      html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Docs:</span><a href="${mod.learn_url}" target="_blank" rel="noopener noreferrer" class="psb-module-info-link">Microsoft Learn ↗</a></div>`;
     }
     if (mod.install_note) {
       html += `<div class="psb-module-info-note">💡 ${esc(mod.install_note)}</div>`;
@@ -389,7 +389,7 @@
                 <span class="psb-ref-cmdlet-desc">${esc(c.description)}</span>
                 <div class="psb-ref-cmdlet-actions">
                   <button class="psb-ref-load-btn" data-load-module="${c.module}" data-load-cmdlet="${c.id}">Load →</button>
-                  ${c.learn_url ? `<a href="${c.learn_url}" target="_blank" rel="noopener" class="psb-ref-learn-link">Docs ↗</a>` : ''}
+                  ${c.learn_url ? `<a href="${c.learn_url}" target="_blank" rel="noopener noreferrer" class="psb-ref-learn-link">Docs ↗</a>` : ''}
                 </div>
               </div>
             `).join('')}

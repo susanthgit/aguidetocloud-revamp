@@ -135,8 +135,8 @@
   function renderCard(item) {
     const urgencyClass = item.urgency || 'future';
     const actions = [];
-    if (item.migration_url) actions.push(`<a href="${item.migration_url}" class="deptime-action-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">📖 Migration</a>`);
-    if (item.official_url) actions.push(`<a href="${item.official_url}" class="deptime-action-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔗 Source</a>`);
+    if (item.migration_url) actions.push(`<a href="${item.migration_url}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 Migration</a>`);
+    if (item.official_url) actions.push(`<a href="${item.official_url}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🔗 Source</a>`);
 
     // [#5] Deep-link copy
     actions.push(`<button class="deptime-action-link deptime-share-btn" onclick="event.stopPropagation();window.__deptimeCopyLink('${item.id}')" title="Copy shareable link">🔗 Share</button>`);
@@ -378,9 +378,9 @@
     const countdownBg = `deptime-countdown-${urgencyClass}`;
 
     let linksHtml = '';
-    if (item.migration_url) linksHtml += `<a href="${item.migration_url}" class="deptime-modal-link" target="_blank" rel="noopener">📖 Migration Guide</a>`;
-    if (item.official_url) linksHtml += `<a href="${item.official_url}" class="deptime-modal-link" target="_blank" rel="noopener">🔗 Official Source</a>`;
-    if (item.lifecycle_url) linksHtml += `<a href="${item.lifecycle_url}" class="deptime-modal-link" target="_blank" rel="noopener">📅 Lifecycle Page</a>`;
+    if (item.migration_url) linksHtml += `<a href="${item.migration_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📖 Migration Guide</a>`;
+    if (item.official_url) linksHtml += `<a href="${item.official_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">🔗 Official Source</a>`;
+    if (item.lifecycle_url) linksHtml += `<a href="${item.lifecycle_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📅 Lifecycle Page</a>`;
     linksHtml += `<button class="deptime-modal-link" onclick="window.__deptimeCopyLink('${item.id}')">📋 Copy Link</button>`;
 
     body.innerHTML = `

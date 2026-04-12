@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var favClass = isFav(item.id) ? ' rdmap-fav-active' : '';
     return '<div class="rdmap-row-wrap">'
       + '<button class="rdmap-fav' + favClass + '" data-fav-id="' + item.id + '" aria-label="Favourite" title="Watch this item">★</button>'
-      + '<a href="' + esc(item.roadmap_url) + '" target="_blank" rel="noopener" class="rdmap-row" data-id="' + item.id + '" style="border-left:3px solid ' + (cat.color || '#3D3648') + '">'
+      + '<a href="' + esc(item.roadmap_url) + '" target="_blank" rel="noopener noreferrer" class="rdmap-row" data-id="' + item.id + '" style="border-left:3px solid ' + (cat.color || '#3D3648') + '">'
       + '<div class="rdmap-row-status"><span class="rdmap-st" style="background:' + st.color + '">' + st.label + '</span></div>'
       + '<div class="rdmap-row-main">'
       + '<div class="rdmap-row-title">' + esc(item.title) + '</div>'

@@ -219,7 +219,7 @@
       '<div class="feedback-acc-body" hidden>' +
         '<div class="feedback-acc-question">' + esc(bodyText) + '</div>' +
         repliesHtml +
-        '<a href="' + d.url + '" target="_blank" rel="noopener" class="feedback-acc-link">View full thread on GitHub →</a>' +
+        '<a href="' + d.url + '" target="_blank" rel="noopener noreferrer" class="feedback-acc-link">View full thread on GitHub →</a>' +
       '</div>';
     return row;
   }

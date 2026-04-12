@@ -497,7 +497,7 @@
       }
 
       if (entry.source) {
-        html += `<a href="${escHtml(entry.source)}" target="_blank" rel="noopener" class="cpmatrix-timeline-source">📖 Source →</a>`;
+        html += `<a href="${escHtml(entry.source)}" target="_blank" rel="noopener noreferrer" class="cpmatrix-timeline-source">📖 Source →</a>`;
       }
 
       html += '</div>';

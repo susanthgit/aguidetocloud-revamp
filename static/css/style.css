@@ -1627,6 +1627,8 @@ pre.mermaid {
     background: transparent;
     border: none;
     box-shadow: none;
+    -webkit-backdrop-filter: none;
+
     backdrop-filter: none;
     padding: 0 0 0 1rem;
     min-width: auto;

@@ -65,7 +65,7 @@
       html += `<div class="lic-category-header">
         <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${esc(cat.name)} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
       if (cat.m365maps_all) {
-        html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener">🗺️ View all on M365 Maps →</a>`;
+        html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener noreferrer">🗺️ View all on M365 Maps →</a>`;
       }
       html += `</div>`;
       html += `<p class="lic-category-desc">${esc(cat.description)}</p>`;
@@ -133,10 +133,10 @@
       actions += `<a class="lic-btn lic-btn-primary" href="${plan.detail_url}">📖 View Details</a>`;
     }
     if (plan.m365maps) {
-      actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener">🗺️ M365 Maps</a>`;
+      actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener noreferrer">🗺️ M365 Maps</a>`;
     }
     if (plan.ms_official) {
-      actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener">📄 Microsoft</a>`;
+      actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener noreferrer">📄 Microsoft</a>`;
     }
 
     return `
@@ -389,10 +389,10 @@
 
       let actions = '';
       if (plan.m365maps) {
-        actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener">🗺️ Feature Map</a>`;
+        actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener noreferrer">🗺️ Feature Map</a>`;
       }
       if (plan.ms_official) {
-        actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener">📄 Official Page</a>`;
+        actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener noreferrer">📄 Official Page</a>`;
       }
       actions += `<button class="lic-btn" onclick="document.getElementById('plan-${plan.id}')?.scrollIntoView({behavior:'smooth'});document.querySelector('[data-tab=compare]')?.click();">🔍 View in Compare</button>`;
 
@@ -467,7 +467,7 @@
 
       let sourceHtml = '';
       if (entry.source) {
-        sourceHtml = `<a href="${entry.source}" target="_blank" rel="noopener" style="color:#F43F5E;font-size:0.8rem;">Source →</a>`;
+        sourceHtml = `<a href="${entry.source}" target="_blank" rel="noopener noreferrer" style="color:#F43F5E;font-size:0.8rem;">Source →</a>`;
       }
 
       html += `

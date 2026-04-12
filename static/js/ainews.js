@@ -483,7 +483,7 @@ function buildClickAttr(v) {
 
 function renderHeroCard(article) {
   var v = getArticleVars(article);
-  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-card-hero" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
+  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-card-hero" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
     '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
     '<div class="ainews-card-body">' +
     (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
@@ -503,7 +503,7 @@ function renderCard(article) {
   var v = getArticleVars(article);
   var isRumour = v.cat.toLowerCase().indexOf('rumour') !== -1;
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
-  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
+  return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
     '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
     (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +

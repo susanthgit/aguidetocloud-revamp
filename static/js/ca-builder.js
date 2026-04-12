@@ -69,7 +69,7 @@
         </div>
         <div class="cab-policy-card__actions">
           <button class="cab-btn cab-btn--primary cab-btn--sm" onclick="window.__cab.addTemplate('${t.id}')">➕ Add to My Set</button>
-          <a href="${t.learn_url}" target="_blank" rel="noopener" class="cab-btn cab-btn--secondary cab-btn--sm">📖 Learn More</a>
+          <a href="${t.learn_url}" target="_blank" rel="noopener noreferrer" class="cab-btn cab-btn--secondary cab-btn--sm">📖 Learn More</a>
         </div>
       </div>
     `).join('');

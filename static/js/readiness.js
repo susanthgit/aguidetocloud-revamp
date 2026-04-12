@@ -396,7 +396,7 @@
     },
     identity: {
       high: [
-        { title: 'Enforce MFA for all users', desc: 'Enable Conditional Access policies requiring MFA — this is Microsoft\'s #1 security recommendation. <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener">Learn more</a>.' },
+        { title: 'Enforce MFA for all users', desc: 'Enable Conditional Access policies requiring MFA — this is Microsoft\'s #1 security recommendation. <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener noreferrer">Learn more</a>.' },
         { title: 'Ensure all users are in Entra ID', desc: 'Copilot requires Entra ID accounts. Sync on-premises users with Entra Connect if needed.' }
       ],
       medium: [
@@ -407,7 +407,7 @@
     },
     data: {
       high: [
-        { title: 'Run an oversharing audit immediately', desc: 'Use SharePoint Advanced Management to find sites shared with "Everyone except external users". Copilot will surface this content. <a href="https://learn.microsoft.com/sharepoint/data-access-governance-reports" target="_blank" rel="noopener">Learn how</a>.' },
+        { title: 'Run an oversharing audit immediately', desc: 'Use SharePoint Advanced Management to find sites shared with "Everyone except external users". Copilot will surface this content. <a href="https://learn.microsoft.com/sharepoint/data-access-governance-reports" target="_blank" rel="noopener noreferrer">Learn how</a>.' },
         { title: 'Deploy sensitivity labels', desc: 'Configure and publish Microsoft Purview sensitivity labels to protect confidential content from Copilot exposure.' }
       ],
       medium: [
@@ -419,7 +419,7 @@
     security: {
       high: [
         { title: 'Improve your Secure Score', desc: 'Target 60%+ before Copilot rollout. Review recommendations in Microsoft Defender portal → Secure Score.' },
-        { title: 'Enable audit logging for Copilot', desc: 'Turn on Purview Audit to capture Copilot interactions — required for compliance. <a href="https://learn.microsoft.com/purview/audit-copilot" target="_blank" rel="noopener">Setup guide</a>.' }
+        { title: 'Enable audit logging for Copilot', desc: 'Turn on Purview Audit to capture Copilot interactions — required for compliance. <a href="https://learn.microsoft.com/purview/audit-copilot" target="_blank" rel="noopener noreferrer">Setup guide</a>.' }
       ],
       medium: [
         { title: 'Configure Defender for Cloud Apps', desc: 'Set up Copilot-specific monitoring policies to detect unusual AI usage patterns.' },
@@ -429,8 +429,8 @@
     },
     network: {
       high: [
-        { title: 'Switch to Current or Monthly Enterprise Channel', desc: 'Semi-Annual Channel may not support Copilot features. <a href="https://learn.microsoft.com/deployoffice/updates/overview-update-channels" target="_blank" rel="noopener">Update channel guide</a>.' },
-        { title: 'Allow required M365 endpoints', desc: 'Ensure your firewall/proxy allows all endpoints listed in the <a href="https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges" target="_blank" rel="noopener">Microsoft 365 URL list</a>.' }
+        { title: 'Switch to Current or Monthly Enterprise Channel', desc: 'Semi-Annual Channel may not support Copilot features. <a href="https://learn.microsoft.com/deployoffice/updates/overview-update-channels" target="_blank" rel="noopener noreferrer">Update channel guide</a>.' },
+        { title: 'Allow required M365 endpoints', desc: 'Ensure your firewall/proxy allows all endpoints listed in the <a href="https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges" target="_blank" rel="noopener noreferrer">Microsoft 365 URL list</a>.' }
       ],
       medium: [
         { title: 'Test WebSocket connectivity', desc: 'Copilot requires WSS connections to *.cloud.microsoft and *.office.com — verify these aren\'t blocked by your proxy.' },
