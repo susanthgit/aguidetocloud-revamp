@@ -317,7 +317,7 @@ a:hover {
 
 /* ── HOMEPAGE: TOOLKIT SHOWCASE ────────── */
 .hp-toolkit-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 .hp-toolkit-label {
   font-family: var(--font-heading);
@@ -326,36 +326,39 @@ a:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin: 0 0 0.6rem 0.2rem;
+  margin: 0 0 0.5rem 0.2rem;
 }
-.hp-toolkit-pills {
+.hp-toolkit-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
-.hp-pill {
+.hp-toolkit-card {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1.1rem;
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #fff;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
   text-decoration: none;
-  background: color-mix(in srgb, var(--pill-color) 14%, #1a1a2e);
-  border: 1px solid color-mix(in srgb, var(--pill-color) 30%, transparent);
-  border-radius: 50px;
-  box-shadow: 0 0 10px color-mix(in srgb, var(--pill-color) 8%, transparent);
+  color: #fff;
+  background: color-mix(in srgb, var(--tool-color) 12%, #1a1a2e);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 25%, transparent);
+  border-radius: var(--radius);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--tool-color) 8%, transparent);
   transition: all 0.25s;
-  white-space: nowrap;
 }
-.hp-pill:hover {
-  background: color-mix(in srgb, var(--pill-color) 28%, #1a1a2e);
-  border-color: color-mix(in srgb, var(--pill-color) 50%, transparent);
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--pill-color) 22%, transparent);
+.hp-toolkit-card:hover {
+  background: color-mix(in srgb, var(--tool-color) 24%, #1a1a2e);
+  border-color: color-mix(in srgb, var(--tool-color) 45%, transparent);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--tool-color) 20%, transparent);
   transform: translateY(-2px);
-  color: var(--pill-color);
+}
+.hp-toolkit-card .hp-tool-emoji { font-size: 1.15rem; }
+.hp-toolkit-card strong {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--tool-color, #fff);
+  white-space: nowrap;
 }
 .hp-tools-grid {
   display: grid;
@@ -1795,7 +1798,7 @@ pre.mermaid {
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
   .video-grid .video-card:nth-child(n+5) { display: none; }
-  .hp-toolkit-pills .hp-pill:nth-child(n+3) { display: none; }
+  .hp-toolkit-grid .hp-toolkit-card:nth-child(n+3) { display: none; }
   .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
   .ecosystem { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
