@@ -226,7 +226,7 @@ function findCity(name) {
 }
 
 function searchCities(query) {
-  if (!query || query.length < 1) return [];
+  if (!query || query.length < 2) return [];
   const q = query.toLowerCase();
   return CITIES.filter(c =>
     c.city.toLowerCase().includes(q) ||
@@ -271,6 +271,20 @@ function loadState() {
    ═══════════════════════════════════ */
 
 function initTabs() {
+  // Restore tab from URL hash
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const target = document.querySelector(`.wclk-tab[data-tab="${hash}"]`);
+    if (target) {
+      document.querySelectorAll('.wclk-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      document.querySelectorAll('.wclk-panel').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+      target.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('panel-' + hash);
+      if (panel) panel.classList.add('active');
+    }
+  }
+
   document.querySelectorAll('.wclk-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.wclk-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
@@ -279,6 +293,8 @@ function initTabs() {
       tab.setAttribute('aria-selected', 'true');
       const panel = document.getElementById('panel-' + tab.dataset.tab);
       if (panel) panel.classList.add('active');
+      // Update URL hash without scrolling
+      history.replaceState(null, '', '#' + tab.dataset.tab);
     });
   });
 }
@@ -347,6 +363,18 @@ function initWorldClock() {
       renderClocks();
       renderConvertResults();
       renderMeetingTimeline();
+    });
+  }
+
+  // Clear all button
+  const clearBtn = document.getElementById('wclk-clear-all');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (S.clocks.length === 0) return;
+      S.clocks = [];
+      saveState();
+      renderClocks();
+      updateQuickButtons();
     });
   }
 
@@ -476,11 +504,17 @@ function initConvert() {
   const now = new Date();
   dtInput.value = toLocalISOString(now);
 
-  // Populate source dropdown with all IANA zones grouped
+  // Populate source dropdown: friendly cities first, then all IANA zones
   const allZones = getAllTimezones();
-  sourceSelect.innerHTML = allZones.map(tz =>
-    `<option value="${esc(tz)}" ${tz === S.localTz ? 'selected' : ''}>${esc(tz.replace(/_/g, ' '))} (${esc(getUtcOffset(tz))})</option>`
-  ).join('');
+  const cityOpts = CITIES
+    .filter((c, i, arr) => arr.findIndex(x => x.tz === c.tz) === i)
+    .map(c => `<option value="${esc(c.tz)}" ${c.tz === S.localTz ? 'selected' : ''}>${esc(c.flag)} ${esc(c.city)} (${esc(getUtcOffset(c.tz))})</option>`)
+    .join('');
+  const ianaOpts = allZones
+    .filter(tz => !CITIES.some(c => c.tz === tz))
+    .map(tz => `<option value="${esc(tz)}" ${tz === S.localTz ? 'selected' : ''}>${esc(tz.replace(/_/g, ' '))} (${esc(getUtcOffset(tz))})</option>`)
+    .join('');
+  sourceSelect.innerHTML = `<optgroup label="Popular Cities">${cityOpts}</optgroup><optgroup label="All Time Zones">${ianaOpts}</optgroup>`;
 
   // Presets
   document.querySelectorAll('.wclk-preset').forEach(btn => {
@@ -559,7 +593,7 @@ function renderConvertResults() {
       <div style="text-align:right;display:flex;align-items:center;gap:0.5rem">
         <div>
           <div class="wclk-result-time">${formatTimeShort(adjusted, c.tz, S.use24h)}</div>
-          <div style="font-size:0.72rem;color:var(--wclk-text-dim)">${esc(getUtcOffset(c.tz))}</div>
+          <div style="font-size:0.72rem;color:var(--wclk-text-dim)">${esc(getUtcOffset(c.tz, adjusted))}</div>
         </div>
         <button class="wclk-result-remove" data-idx="${i}" title="Remove">✕</button>
       </div>
