@@ -369,19 +369,18 @@ a:hover {
   padding: 0.7rem 0.9rem;
   text-decoration: none;
   color: inherit;
-  background: color-mix(in srgb, var(--tool-color) 18%, rgba(26, 26, 46, 0.7));
+  background: color-mix(in srgb, var(--tool-color) 10%, rgba(26, 26, 46, 0.7));
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid color-mix(in srgb, var(--tool-color) 35%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 20%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--tool-color) 14%, transparent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--tool-color) 6%, transparent);
   transition: all 0.25s;
 }
 .hp-toolkit-card:hover {
-  background: color-mix(in srgb, var(--tool-color) 8%, rgba(26, 26, 46, 0.5));
-  border-color: color-mix(in srgb, var(--tool-color) 15%, transparent);
-  box-shadow: 0 0 4px color-mix(in srgb, var(--tool-color) 5%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 22%, rgba(26, 26, 46, 0.8));
+  border-color: color-mix(in srgb, var(--tool-color) 40%, transparent);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--tool-color) 18%, transparent);
   transform: translateY(-2px);
 }
 .hp-toolkit-card strong {
@@ -1222,6 +1221,7 @@ a:hover {
 .page-roi-calculator .site-nav { --nav-accent: rgba(20, 184, 166, 0.35); }
 .page-deptime .site-nav { --nav-accent: rgba(220, 38, 38, 0.35); }
 .page-feedback .site-nav { --nav-accent: rgba(251, 191, 36, 0.35); }
+.page-migration-planner .site-nav { --nav-accent: rgba(99, 102, 241, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;
