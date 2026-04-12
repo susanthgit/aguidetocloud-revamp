@@ -615,10 +615,10 @@ a:hover {
   .hp-cat-grid .video-card:nth-child(n+3) { display: none; }
   .welcome-ctas { flex-wrap: nowrap; }
   .hp-search-shortcut { display: none; }
-  .welcome-stat-boxes { gap: 0.5rem; }
-  .welcome-stat-box { padding: 0.5rem 0.8rem; min-width: 65px; }
-  .welcome-stat-num { font-size: 1.2rem; }
-  .welcome-stat-label { font-size: 0.62rem; }
+  .welcome-stat-boxes { gap: 0.25rem; }
+  .welcome-stat-box { padding: 0.35rem 0.4rem; min-width: auto; }
+  .welcome-stat-num { font-size: 0.9rem; }
+  .welcome-stat-label { font-size: 0.5rem; }
 }
 
 /* ── STATS BAR (box format) ──────────────── */
@@ -692,7 +692,6 @@ a:hover {
 .welcome-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  text-align: center;
 }
 .welcome-logo {
   width: 64px;
@@ -709,18 +708,27 @@ a:hover {
   to   { box-shadow: 0 0 20px rgba(0, 229, 255, 0.35), 0 0 40px rgba(0, 229, 255, 0.15); }
 }
 .welcome-text-block {
-  text-align: center;
+  text-align: left;
 }
 .welcome-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--neon-cyan);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   letter-spacing: -0.3px;
 }
+.welcome-subtitle {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+}
 .welcome-cta-row {
-  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
 .welcome-cta-btn {
   display: inline-flex;
@@ -735,6 +743,7 @@ a:hover {
   font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.3s;
+  box-shadow: 0 0 12px rgba(102, 255, 255, 0.15);
 }
 .welcome-cta-btn:hover {
   border-color: var(--neon-cyan);
@@ -742,6 +751,18 @@ a:hover {
   box-shadow: 0 4px 20px rgba(102, 255, 255, 0.3);
   transform: translateY(-1px);
   text-shadow: none;
+}
+.welcome-cta-secondary {
+  border-color: rgba(255, 102, 255, 0.4);
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff66ff;
+  box-shadow: 0 0 12px rgba(255, 102, 255, 0.15);
+}
+.welcome-cta-secondary:hover {
+  border-color: #ff66ff;
+  background: rgba(255, 102, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.3);
+  color: #ff66ff;
 }
 /* ── HOMEPAGE: HERO STATS BOXES ───────────── */
 .welcome-stat-boxes {
@@ -946,7 +967,14 @@ a:hover {
 }
 @media (max-width: 768px) {
   .welcome-inner { text-align: center; }
+  .welcome-text-block { text-align: center; }
   .welcome-channels { justify-content: center; }
+  .welcome-stat-boxes { gap: 0.3rem; }
+  .welcome-stat-box { padding: 0.4rem 0.5rem; min-width: auto; }
+  .welcome-stat-num { font-size: 1rem; }
+  .welcome-stat-label { font-size: 0.55rem; }
+  .welcome-cta-row { flex-wrap: wrap; }
+  .welcome-cta-btn { font-size: 0.78rem; padding: 0.45rem 1rem; }
 }
 
 /* ── SECTIONS ───────────────────────────── */
