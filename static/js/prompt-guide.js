@@ -13,7 +13,7 @@
      UTILITY
      ════════════════════════════════════════ */
   function getCompleted() {
-    try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch { return []; }
+    try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch (e) { return []; }
   }
   function setCompleted(arr) {
     localStorage.setItem(LS_KEY, JSON.stringify(arr));
@@ -155,7 +155,7 @@
         } else if (spec.pattern) {
           try {
             met = new RegExp(spec.pattern, 'i').test(text);
-          } catch { met = false; }
+          } catch (e) { met = false; }
         }
 
         el.classList.toggle('met', met);
@@ -359,7 +359,7 @@
       // Save state
       try {
         localStorage.setItem(LS_BUILDER, JSON.stringify({ goal: goal, role: role, context: context }));
-      } catch {}
+      } catch (e) {}
     }
 
     // Listen to all inputs
@@ -424,7 +424,7 @@
     document.addEventListener('click', e => {
       const btn = e.target.closest('.pguide-copy-small');
       if (!btn) return;
-      const text = btn.dataset.copy || btn.previousElementSibling?.textContent;
+      const text = btn.dataset.copy || (btn.previousElementSibling && btn.previousElementSibling.textContent);
       if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
         const orig = btn.textContent;
@@ -449,7 +449,7 @@
       criteria.forEach(el => {
         const pat = el.dataset.pattern;
         let ok = false;
-        try { ok = new RegExp(pat, 'i').test(text); } catch {}
+        try { ok = new RegExp(pat, 'i').test(text); } catch (e) {}
         el.classList.toggle('met', ok);
         if (ok) met++;
       });
@@ -582,7 +582,7 @@
         if (sub) sub.disabled = !allAnswered;
         // Auto-scroll to next unanswered or submit
         if (allAnswered) {
-          sub?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (sub) sub.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           const nextQ = $(`.pguide-quiz-q:not(.pguide-quiz-answered)`);
           if (nextQ) setTimeout(() => nextQ.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
@@ -600,7 +600,8 @@
     function showResults() {
       const scores = {};
       answers.forEach((oi, qi) => {
-        const techs = QUESTIONS[qi].opts[oi]?.techs || {};
+        const opt = QUESTIONS[qi].opts[oi];
+        const techs = (opt && opt.techs) || {};
         Object.entries(techs).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v; });
       });
       const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]).slice(0, 3);
@@ -862,7 +863,7 @@
         const goal = fields.goal;
         if (goal && goal.value) goal.dispatchEvent(new Event('input'));
       }, 100);
-    } catch {}
+    } catch (e) {}
   }
 
   /* ════════════════════════════════════════
