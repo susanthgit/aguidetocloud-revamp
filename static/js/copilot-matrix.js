@@ -8,6 +8,9 @@
 (function () {
   'use strict';
 
+  // ─── XSS Prevention ───
+  // Note: escHtml function is defined later below. Using it as our escape function.
+
   const D = window.__cpData;
   if (!D) { console.error('[CopilotMatrix] No data found'); return; }
 

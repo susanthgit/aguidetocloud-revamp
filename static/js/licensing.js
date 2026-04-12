@@ -6,6 +6,13 @@
 (function () {
   'use strict';
 
+  // ─── XSS Prevention ───
+  function esc(s) {
+    var e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   const D = window.__licData;
   if (!D) return;
 
@@ -56,12 +63,12 @@
 
       html += `<div class="lic-category" id="cat-${cat.id}" style="--cat-accent:${accent}">`;
       html += `<div class="lic-category-header">
-        <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${cat.name} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
+        <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${esc(cat.name)} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
       if (cat.m365maps_all) {
         html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener">🗺️ View all on M365 Maps →</a>`;
       }
       html += `</div>`;
-      html += `<p class="lic-category-desc">${cat.description}</p>`;
+      html += `<p class="lic-category-desc">${esc(cat.description)}</p>`;
       html += `<div class="lic-cards">`;
 
       catPlans.forEach(plan => {
@@ -97,11 +104,11 @@
       : `$${plan.price}<span class="lic-price-unit">/user/mo</span>`;
 
     const noteHtml = plan.price_note
-      ? `<span class="lic-price-note">${plan.price_note}</span>`
+      ? `<span class="lic-price-note">${esc(plan.price_note)}</span>`
       : '';
 
     const badgeHtml = plan.badge
-      ? `<div class="lic-badge${plan.badge.includes('Coming') ? ' coming-soon' : ''}">${plan.badge}</div>`
+      ? `<div class="lic-badge${plan.badge.includes('Coming') ? ' coming-soon' : ''}">${esc(plan.badge)}</div>`
       : '';
 
     // Build feature list (show top 5, then "and X more")
@@ -112,7 +119,7 @@
       const extra = resolved.length - show.length;
       featHtml = '<ul class="lic-card-features">';
       show.forEach(feat => {
-        featHtml += `<li><span class="lic-feat-yes">✓</span> ${feat.name}</li>`;
+        featHtml += `<li><span class="lic-feat-yes">✓</span> ${esc(feat.name)}</li>`;
       });
       if (extra > 0) {
         featHtml += `<li class="lic-feat-more">+ ${extra} more</li>`;
@@ -137,16 +144,16 @@
       ${badgeHtml}
       <div class="lic-compare-check">
         <label class="lic-compare-label">
-          <input type="checkbox" class="lic-compare-input" value="${plan.id}" aria-label="Compare ${plan.name}">
+          <input type="checkbox" class="lic-compare-input" value="${plan.id}" aria-label="Compare ${esc(plan.name)}">
           <span>Compare</span>
         </label>
       </div>
       <div class="lic-card-head">
-        <h3 class="lic-card-name">${plan.name}</h3>
+        <h3 class="lic-card-name">${esc(plan.name)}</h3>
         <div class="lic-card-price">${priceDisplay}${noteHtml}</div>
       </div>
-      <p class="lic-card-tagline">${plan.tagline}</p>
-      <p class="lic-card-who">${plan.who}</p>
+      <p class="lic-card-tagline">${esc(plan.tagline)}</p>
+      <p class="lic-card-who">${esc(plan.who)}</p>
       ${featHtml}
       <div class="lic-card-actions">${actions}</div>
     </div>`;
@@ -188,14 +195,14 @@
     // Build table
     let html = '<thead><tr><th>Feature</th>';
     selectedPlans.forEach(p => {
-      html += `<th>${p.name}<br><small style="color:#F43F5E">$${p.price}/mo</small></th>`;
+      html += `<th>${esc(p.name)}<br><small style="color:#F43F5E">$${p.price}/mo</small></th>`;
     });
     html += '</tr></thead><tbody>';
 
     Object.keys(grouped).forEach(catName => {
-      html += `<tr><td colspan="${selectedPlans.length + 1}" style="color:#F43F5E;font-weight:700;padding-top:1rem;">${catName}</td></tr>`;
+      html += `<tr><td colspan="${selectedPlans.length + 1}" style="color:#F43F5E;font-weight:700;padding-top:1rem;">${esc(catName)}</td></tr>`;
       grouped[catName].forEach(feat => {
-        html += `<tr><td>${feat.icon} ${feat.name}</td>`;
+        html += `<tr><td>${feat.icon} ${esc(feat.name)}</td>`;
         selectedPlans.forEach(p => {
           const has = p.features && p.features.includes(feat.id);
           html += `<td class="${has ? 'lic-feat-cell-yes' : 'lic-feat-cell-no'}">${has ? '✅' : '—'}</td>`;
@@ -280,15 +287,15 @@
     let html = '';
     sorted.forEach((q, idx) => {
       html += `<div class="lic-quiz-question" data-qid="${q.id}">
-        <h3>Q${idx + 1}. ${q.text}</h3>
-        <p class="lic-quiz-help">${q.help || ''}</p>
+        <h3>Q${idx + 1}. ${esc(q.text)}</h3>
+        <p class="lic-quiz-help">${esc(q.help || '')}</p>
         <div class="lic-quiz-options">`;
 
       q.options.forEach((opt, oidx) => {
         const inputId = `${q.id}-opt${oidx}`;
         html += `<label class="lic-quiz-option" for="${inputId}">
           <input type="radio" id="${inputId}" name="${q.id}" value="${oidx}" class="lic-quiz-radio">
-          ${opt.label}
+          ${esc(opt.label)}
         </label>`;
       });
 
@@ -392,9 +399,9 @@
       html += `
       <div class="lic-result-card">
         <div class="lic-result-rank">${labels[idx] || 'Also Consider'} — ${pct}% match</div>
-        <div class="lic-result-name">${plan.name}</div>
-        <div class="lic-result-price">${priceText}${plan.price_note ? ' · ' + plan.price_note : ''}</div>
-        <p class="lic-result-why">${plan.description}</p>
+        <div class="lic-result-name">${esc(plan.name)}</div>
+        <div class="lic-result-price">${priceText}${plan.price_note ? ' · ' + esc(plan.price_note) : ''}</div>
+        <p class="lic-result-why">${esc(plan.description)}</p>
         <div class="lic-card-actions">${actions}</div>
       </div>`;
     });

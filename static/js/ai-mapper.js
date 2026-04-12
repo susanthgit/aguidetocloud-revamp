@@ -8,6 +8,13 @@
 (function() {
   'use strict';
 
+  // ─── XSS Prevention ───
+  function esc(s) {
+    var e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   const DATA = window.__aimapData;
   if (!DATA) return;
 
@@ -198,7 +205,7 @@
     if (!container) return;
     container.innerHTML = providers.map(p => {
       const count = services.filter(s => s.provider === p).length;
-      return '<label class="aimap-filter-check"><input type="checkbox" value="' + p + '"> ' + p + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
+      return '<label class="aimap-filter-check"><input type="checkbox" value="' + p + '"> ' + esc(p) + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
     }).join('');
   }
 
@@ -209,7 +216,7 @@
     container.innerHTML = catEntries.map(function(entry) {
       var id = entry[0], cat = entry[1];
       var count = services.filter(function(s) { return s.category === id; }).length;
-      return '<label class="aimap-filter-check"><input type="checkbox" value="' + id + '"> ' + cat.emoji + ' ' + cat.name + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
+      return '<label class="aimap-filter-check"><input type="checkbox" value="' + id + '"> ' + cat.emoji + ' ' + esc(cat.name) + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
     }).join('');
   }
 
@@ -288,30 +295,30 @@
       return '<span class="aimap-cap-badge' + (c.val >= 4 ? ' strong' : '') + '" title="' + c.val + '/5">' + c.label + '<span class="aimap-cap-dots">' + '●'.repeat(c.val) + '○'.repeat(5-c.val) + '</span></span>';
     }).join('');
 
-    var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + b + '</span>'; }).join('');
+    var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('');
 
-    var priceClass = 'aimap-paid', priceText = s.price_note || s.pricing_model || '';
+    var priceClass = 'aimap-paid', priceText = esc(s.price_note || s.pricing_model || '');
     if (s.free_tier && s.pricing_model === 'free') { priceClass = 'aimap-free'; priceText = '🆓 Free'; }
     else if (s.free_tier) { priceClass = 'aimap-free'; priceText = '🆓 Free tier'; }
     else if (s.pricing_model === 'subscription') { priceClass = 'aimap-sub'; }
 
     // Last updated (#8)
-    var updatedHTML = s.last_updated ? '<span class="aimap-card-updated" title="Data last verified">✓ ' + s.last_updated + '</span>' : '';
+    var updatedHTML = s.last_updated ? '<span class="aimap-card-updated" title="Data last verified">✓ ' + esc(s.last_updated) + '</span>' : '';
 
     return '<div class="aimap-card" style="--card-cat-color:' + catColor + '">' +
       '<div class="aimap-card-top">' +
         '<div class="aimap-card-identity">' +
-          '<span class="aimap-card-provider">' + s.provider + '</span>' +
+          '<span class="aimap-card-provider">' + esc(s.provider) + '</span>' +
           statusBadge +
         '</div>' +
         '<div class="aimap-card-actions">' +
           '<button class="aimap-fav-btn' + (isFav ? ' active' : '') + '" data-id="' + s.id + '" title="' + (isFav ? 'Remove from' : 'Add to') + ' shortlist">' + (isFav ? '★' : '☆') + '</button>' +
-          '<input type="checkbox" class="aimap-card-compare" data-id="' + s.id + '" title="Add to compare" aria-label="Compare ' + s.name + '">' +
+          '<input type="checkbox" class="aimap-card-compare" data-id="' + s.id + '" title="Add to compare" aria-label="Compare ' + esc(s.name) + '">' +
         '</div>' +
       '</div>' +
-      '<a href="#" class="aimap-card-name-link" data-id="' + s.id + '"><h3 class="aimap-card-name">' + s.name + '</h3></a>' +
-      '<span class="aimap-card-category">' + (cat.emoji || '') + ' ' + (cat.name || s.category) + '</span>' +
-      '<p class="aimap-card-desc">' + (s.description || '') + '</p>' +
+      '<a href="#" class="aimap-card-name-link" data-id="' + s.id + '"><h3 class="aimap-card-name">' + esc(s.name) + '</h3></a>' +
+      '<span class="aimap-card-category">' + (cat.emoji || '') + ' ' + esc(cat.name || s.category) + '</span>' +
+      '<p class="aimap-card-desc">' + esc(s.description || '') + '</p>' +
       '<div class="aimap-card-caps">' + capsHTML + '</div>' +
       '<div class="aimap-card-best">' + bestHTML + '</div>' +
       '<div class="aimap-card-footer">' +
@@ -369,7 +376,7 @@
           alts.map(function(a) {
             var aCat = categories[a.category] || {};
             return '<div class="aimap-modal-alt-card" data-id="' + a.id + '">' +
-              '<strong>' + a.name + '</strong><br><span style="color:#999;font-size:0.8rem">' + a.provider + ' · ' + (aCat.emoji||'') + ' ' + (aCat.name||'') + '</span></div>';
+              '<strong>' + esc(a.name) + '</strong><br><span style="color:#999;font-size:0.8rem">' + esc(a.provider) + ' · ' + (aCat.emoji||'') + ' ' + esc(aCat.name||'') + '</span></div>';
           }).join('') + '</div></div>';
       }
     }
@@ -380,27 +387,27 @@
 
     content.innerHTML =
       '<div class="aimap-modal-header">' +
-        '<span class="aimap-card-provider">' + s.provider + '</span>' + statusBadge +
-        '<span class="aimap-card-category">' + (cat.emoji||'') + ' ' + (cat.name||'') + '</span>' +
-        (s.last_updated ? '<span class="aimap-card-updated">✓ Verified ' + s.last_updated + '</span>' : '') +
+        '<span class="aimap-card-provider">' + esc(s.provider) + '</span>' + statusBadge +
+        '<span class="aimap-card-category">' + (cat.emoji||'') + ' ' + esc(cat.name||'') + '</span>' +
+        (s.last_updated ? '<span class="aimap-card-updated">✓ Verified ' + esc(s.last_updated) + '</span>' : '') +
       '</div>' +
-      '<h2>' + s.name + '</h2>' +
-      '<p style="color:#ccc;line-height:1.6">' + (s.description||'') + '</p>' +
+      '<h2>' + esc(s.name) + '</h2>' +
+      '<p style="color:#ccc;line-height:1.6">' + esc(s.description||'') + '</p>' +
       capsHTML +
       '<div class="aimap-modal-section"><h4>💰 Pricing</h4>' +
-        '<p>' + (s.price_note || s.pricing_model || 'N/A') + '</p>' +
-        (s.free_tier ? '<p style="color:#4ade80">🆓 ' + (s.free_tier_detail || 'Free tier available') + '</p>' : '') +
+        '<p>' + esc(s.price_note || s.pricing_model || 'N/A') + '</p>' +
+        (s.free_tier ? '<p style="color:#4ade80">🆓 ' + esc(s.free_tier_detail || 'Free tier available') + '</p>' : '') +
         (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener" class="aimap-card-link">View pricing page →</a>' : '') +
       '</div>' +
       '<div class="aimap-modal-section"><h4>🔧 Features</h4>' + featHTML + '</div>' +
-      (s.context_window ? '<div class="aimap-modal-section"><h4>📏 Context Window</h4><p>' + s.context_window + '</p></div>' : '') +
-      (s.regions && s.regions.length ? '<div class="aimap-modal-section"><h4>🌍 Available Regions</h4><p>' + s.regions.join(', ') + '</p></div>' : '') +
-      (s.sla ? '<div class="aimap-modal-section"><h4>📊 SLA</h4><p>' + s.sla + '</p></div>' : '') +
-      '<div class="aimap-modal-section"><h4>🏷️ Best For</h4><div class="aimap-card-best">' + (s.best_for||[]).map(function(b) { return '<span class="aimap-best-tag">' + b + '</span>'; }).join('') + '</div></div>' +
-      '<div class="aimap-modal-section"><h4>🎯 Use Cases</h4><div class="aimap-card-best">' + (s.use_cases||[]).map(function(u) { return '<span class="aimap-best-tag">' + u.replace(/-/g,' ') + '</span>'; }).join('') + '</div></div>' +
+      (s.context_window ? '<div class="aimap-modal-section"><h4>📏 Context Window</h4><p>' + esc(s.context_window) + '</p></div>' : '') +
+      (s.regions && s.regions.length ? '<div class="aimap-modal-section"><h4>🌍 Available Regions</h4><p>' + (s.regions||[]).map(esc).join(', ') + '</p></div>' : '') +
+      (s.sla ? '<div class="aimap-modal-section"><h4>📊 SLA</h4><p>' + esc(s.sla) + '</p></div>' : '') +
+      '<div class="aimap-modal-section"><h4>🏷️ Best For</h4><div class="aimap-card-best">' + (s.best_for||[]).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('') + '</div></div>' +
+      '<div class="aimap-modal-section"><h4>🎯 Use Cases</h4><div class="aimap-card-best">' + (s.use_cases||[]).map(function(u) { return '<span class="aimap-best-tag">' + esc(u.replace(/-/g,' ')) + '</span>'; }).join('') + '</div></div>' +
       altHTML +
       '<div class="aimap-modal-actions">' +
-        '<a href="' + (s.url||'#') + '" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary">Visit ' + s.name + ' →</a>' +
+        '<a href="' + (s.url||'#') + '" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary">Visit ' + esc(s.name) + ' →</a>' +
         (s.docs_url ? '<a href="' + s.docs_url + '" target="_blank" rel="noopener" class="aimap-btn">📄 Documentation</a>' : '') +
       '</div>';
 

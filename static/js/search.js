@@ -9,6 +9,8 @@
 
   if (!modal || !input || !results) return;
 
+  function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
+
   async function loadIndex() {
     if (searchIndex) return;
     try {
@@ -91,12 +93,12 @@
     }
 
     results.innerHTML = matches.map(item => `
-      <a href="${item.url}" class="search-result-item">
-        <span class="search-result-title">${item.title}</span>
+      <a href="${esc(item.url)}" class="search-result-item">
+        <span class="search-result-title">${esc(item.title)}</span>
         <div class="search-result-meta">
-          ${item.card_tag ? `<span class="search-result-badge ${item.tag_class}">${item.card_tag}</span>` : ''}
+          ${item.card_tag ? `<span class="search-result-badge ${esc(item.tag_class)}">${esc(item.card_tag)}</span>` : ''}
           ${item.type && item.type !== 'video' ? `<span class="search-result-badge" style="border-color:var(--neon-magenta);color:var(--neon-magenta)">${item.type === 'section' ? '📂 Section' : '📄 Page'}</span>` : ''}
-          ${item.date ? `<span class="search-result-date">${item.date}</span>` : ''}
+          ${item.date ? `<span class="search-result-date">${esc(item.date)}</span>` : ''}
         </div>
       </a>
     `).join('');

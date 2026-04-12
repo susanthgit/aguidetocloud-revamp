@@ -55,7 +55,7 @@
         <h2>💰 Pricing</h2>
         <p>{{ $s.price_note }}</p>
         {{ if $s.free_tier }}<p style="color:#4ade80">🆓 {{ $s.free_tier_detail }}</p>{{ end }}
-        {{ with $s.pricing_url }}<p><a href="{{ . }}" target="_blank" rel="noopener" class="aimap-btn">View official pricing →</a></p>{{ end }}
+        {{ with $s.pricing_url }}<p><a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="aimap-btn">View official pricing →</a></p>{{ end }}
       </div>
 
       <div class="aimap-modal-section">
@@ -137,8 +137,8 @@
       </div>
 
       <div class="aimap-single-actions">
-        <a href="{{ $s.url }}" target="_blank" rel="noopener" class="aimap-btn aimap-btn-primary" style="width:100%;text-align:center;display:block">Visit {{ $s.name }} →</a>
-        {{ with $s.docs_url }}<a href="{{ . }}" target="_blank" rel="noopener" class="aimap-btn" style="width:100%;text-align:center;display:block;margin-top:0.5rem">📄 Documentation</a>{{ end }}
+        <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer" class="aimap-btn aimap-btn-primary" style="width:100%;text-align:center;display:block">Visit {{ $s.name }} →</a>
+        {{ with $s.docs_url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="aimap-btn" style="width:100%;text-align:center;display:block;margin-top:0.5rem">📄 Documentation</a>{{ end }}
       </div>
     </aside>
   </div>

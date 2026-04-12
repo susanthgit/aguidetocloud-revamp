@@ -34,8 +34,8 @@
 
     {{/* ── QUICK LINKS ── */}}
     <div class="lic-single-links">
-      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener" class="lic-btn lic-btn-primary">📄 Official Microsoft Page</a>{{ end }}
-      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener" class="lic-btn">🗺️ M365 Maps Feature Map</a>{{ end }}
+      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="lic-btn lic-btn-primary">📄 Official Microsoft Page</a>{{ end }}
+      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="lic-btn">🗺️ M365 Maps Feature Map</a>{{ end }}
       <a href="/licensing/" class="lic-btn">📊 Compare All Plans</a>
     </div>
 
@@ -69,12 +69,12 @@
 
     {{/* ── DISCLAIMER ── */}}
     <div class="lic-disclaimer">
-      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
+      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
     </div>
 
     {{/* ── ATTRIBUTION ── */}}
     <div class="lic-attribution">
-      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
+      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
     </div>
 
   </div>

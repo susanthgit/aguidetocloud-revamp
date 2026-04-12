@@ -6,6 +6,13 @@
 (function () {
   'use strict';
 
+  // ─── XSS Prevention ───
+  function esc(s) {
+    var e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   const CACHE_KEY = 'deptime_v1';
   const CACHE_TTL = 10 * 60 * 1000;
   const DATA_URL = '/data/deprecation-timeline/latest.json';
@@ -58,7 +65,7 @@
     const alertText = document.getElementById('deptime-next-text');
     if (upcoming.length > 0) {
       const next = upcoming[0];
-      alertText.innerHTML = `Next deadline: <strong>${next.title}</strong> — ${next.urgency_label} (${next.deadline})`;
+      alertText.innerHTML = `Next deadline: <strong>${esc(next.title)}</strong> — ${esc(next.urgency_label)} (${esc(next.deadline)})`;
       alertEl.style.display = 'flex';
     }
 
@@ -67,7 +74,7 @@
     if (counts.critical > 0 && banner) {
       const critItems = active.filter(i => i.urgency === 'critical');
       let listHtml = critItems.map((i, idx) =>
-        `<li onclick="window.__deptimeShowDetail('${i.id}')">${idx + 1}. <strong>${i.title}</strong> — ${i.urgency_label}</li>`
+        `<li onclick="window.__deptimeShowDetail('${i.id}')">${idx + 1}. <strong>${esc(i.title)}</strong> — ${esc(i.urgency_label)}</li>`
       ).join('');
       banner.innerHTML = `<div class="deptime-banner-header"><span class="deptime-banner-icon">🚨</span> <strong>${counts.critical} critical item${counts.critical > 1 ? 's' : ''} need${counts.critical === 1 ? 's' : ''} immediate attention</strong></div>
         <ol class="deptime-banner-list">${listHtml}</ol>`;
@@ -101,7 +108,7 @@
     } else {
       thisMonthItems.sort((a, b) => a.deadline.localeCompare(b.deadline)).forEach(i => {
         html += `<div class="deptime-month-item deptime-month-item-${i.urgency}" onclick="window.__deptimeShowDetail('${i.id}')">
-          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${i.title}
+          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${esc(i.title)}
         </div>`;
       });
     }
@@ -114,7 +121,7 @@
     } else {
       nextMonthItems.sort((a, b) => a.deadline.localeCompare(b.deadline)).slice(0, 5).forEach(i => {
         html += `<div class="deptime-month-item deptime-month-item-${i.urgency}" onclick="window.__deptimeShowDetail('${i.id}')">
-          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${i.title}
+          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${esc(i.title)}
         </div>`;
       });
       if (nextMonthItems.length > 5) html += `<div class="deptime-month-more">+${nextMonthItems.length - 5} more</div>`;
@@ -141,20 +148,20 @@
           ${item.days_remaining != null && item.days_remaining >= 0 ? `<span class="deptime-countdown-num">${item.days_remaining}</span><span class="deptime-countdown-unit">days</span>` : `<span class="deptime-countdown-num">${urgencyClass === 'passed' ? '✓' : '?'}</span><span class="deptime-countdown-unit">${urgencyClass === 'passed' ? 'passed' : 'TBD'}</span>`}
         </div>
         <div class="deptime-card-info">
-          <div class="deptime-card-title">${item.title}</div>
+          <div class="deptime-card-title">${esc(item.title)}</div>
           <div class="deptime-card-badges">
             <span class="deptime-badge deptime-badge-${urgencyClass}">${urgencyClass.toUpperCase()}</span>
-            <span class="deptime-badge deptime-badge-type">${item.type_emoji || ''} ${item.type_name || ''}</span>
-            <span class="deptime-badge deptime-badge-type">${item.category_emoji || ''} ${item.category_name || ''}</span>
+            <span class="deptime-badge deptime-badge-type">${item.type_emoji || ''} ${esc(item.type_name || '')}</span>
+            <span class="deptime-badge deptime-badge-type">${item.category_emoji || ''} ${esc(item.category_name || '')}</span>
           </div>
         </div>
       </div>
-      <div class="deptime-card-desc">${item.description || ''}</div>
+      <div class="deptime-card-desc">${esc(item.description || '')}</div>
       <div class="deptime-card-meta">
         <span class="deptime-meta-item">📅 ${item.deadline || 'TBD'}</span>
-        ${item.mc_id ? `<span class="deptime-meta-item">📋 ${item.mc_id}</span>` : ''}
-        ${item.impact ? `<span class="deptime-meta-item">Impact: ${item.impact}</span>` : ''}
-        ${item.replacement ? `<span class="deptime-meta-item">➡️ ${item.replacement}</span>` : ''}
+        ${item.mc_id ? `<span class="deptime-meta-item">📋 ${esc(item.mc_id)}</span>` : ''}
+        ${item.impact ? `<span class="deptime-meta-item">Impact: ${esc(item.impact)}</span>` : ''}
+        ${item.replacement ? `<span class="deptime-meta-item">➡️ ${esc(item.replacement)}</span>` : ''}
       </div>
       ${actions.length ? `<div class="deptime-card-actions">${actions.join('')}</div>` : ''}
     </div>`;
@@ -205,7 +212,7 @@
         const day = item.deadline.substring(8, 10);
         html += `<div class="deptime-timeline-item deptime-timeline-item-${item.urgency}" onclick="window.__deptimeShowDetail('${item.id}')">
           <span class="deptime-timeline-date">${label.split(' ')[0]} ${parseInt(day)}</span>
-          <span class="deptime-timeline-title">${item.title}</span>
+          <span class="deptime-timeline-title">${esc(item.title)}</span>
         </div>`;
       });
       html += '</div>';
@@ -312,7 +319,7 @@
   function addChip(container, label, onRemove) {
     const chip = document.createElement('span');
     chip.className = 'deptime-chip';
-    chip.innerHTML = `${label} <span class="deptime-chip-remove" onclick="event.stopPropagation()">✕</span>`;
+    chip.innerHTML = `${esc(label)} <span class="deptime-chip-remove" onclick="event.stopPropagation()">✕</span>`;
     chip.querySelector('.deptime-chip-remove').addEventListener('click', onRemove);
     container.appendChild(chip);
   }
@@ -381,19 +388,19 @@
         <div class="deptime-modal-countdown-number">${item.days_remaining != null ? (item.days_remaining >= 0 ? item.days_remaining : 'PASSED') : 'TBD'}</div>
         <div class="deptime-modal-countdown-label">${item.days_remaining != null && item.days_remaining >= 0 ? 'days remaining' : (item.days_remaining != null ? Math.abs(item.days_remaining) + ' days ago' : 'date to be determined')}</div>
       </div>
-      <div class="deptime-modal-title">${item.title}</div>
+      <div class="deptime-modal-title">${esc(item.title)}</div>
       <div class="deptime-modal-badges">
         <span class="deptime-badge deptime-badge-${urgencyClass}">${urgencyClass.toUpperCase()}</span>
-        <span class="deptime-badge deptime-badge-type">${item.type_emoji} ${item.type_name}</span>
-        <span class="deptime-badge deptime-badge-type">${item.category_emoji} ${item.category_name}</span>
-        ${item.impact ? `<span class="deptime-badge deptime-badge-type">Impact: ${item.impact}</span>` : ''}
-        ${item.mc_id ? `<span class="deptime-badge deptime-badge-type">📋 ${item.mc_id}</span>` : ''}
+        <span class="deptime-badge deptime-badge-type">${item.type_emoji} ${esc(item.type_name)}</span>
+        <span class="deptime-badge deptime-badge-type">${item.category_emoji} ${esc(item.category_name)}</span>
+        ${item.impact ? `<span class="deptime-badge deptime-badge-type">Impact: ${esc(item.impact)}</span>` : ''}
+        ${item.mc_id ? `<span class="deptime-badge deptime-badge-type">📋 ${esc(item.mc_id)}</span>` : ''}
       </div>
-      <div class="deptime-modal-section"><h3>Description</h3><p>${item.description || 'No description available.'}</p></div>
-      <div class="deptime-modal-section"><h3>Deadline</h3><p>📅 ${item.deadline || 'TBD'}${item.announced_date ? ' (Announced: ' + item.announced_date + ')' : ''}</p></div>
-      ${item.migration_path ? `<div class="deptime-modal-section"><h3>Migration Path</h3><p>${item.migration_path}</p></div>` : ''}
-      ${item.replacement ? `<div class="deptime-modal-section"><h3>Replacement</h3><p>➡️ ${item.replacement}</p></div>` : ''}
-      ${item.services && item.services.length ? `<div class="deptime-modal-section"><h3>Affected Services</h3><p>${item.services.join(', ')}</p></div>` : ''}
+      <div class="deptime-modal-section"><h3>Description</h3><p>${esc(item.description || 'No description available.')}</p></div>
+      <div class="deptime-modal-section"><h3>Deadline</h3><p>📅 ${item.deadline || 'TBD'}${item.announced_date ? ' (Announced: ' + esc(item.announced_date) + ')' : ''}</p></div>
+      ${item.migration_path ? `<div class="deptime-modal-section"><h3>Migration Path</h3><p>${esc(item.migration_path)}</p></div>` : ''}
+      ${item.replacement ? `<div class="deptime-modal-section"><h3>Replacement</h3><p>➡️ ${esc(item.replacement)}</p></div>` : ''}
+      ${item.services && item.services.length ? `<div class="deptime-modal-section"><h3>Affected Services</h3><p>${(item.services || []).map(esc).join(', ')}</p></div>` : ''}
       ${linksHtml ? `<div class="deptime-modal-section"><h3>Links</h3><div class="deptime-modal-links">${linksHtml}</div></div>` : ''}`;
 
     modal.style.display = 'block';

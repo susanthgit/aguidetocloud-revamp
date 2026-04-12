@@ -106,11 +106,11 @@
         <h3>Copy & Open in</h3>
         <div class="prompt-open-buttons">
           {{ range $platforms }}
-          {{ if eq . "chatgpt" }}<a href="https://chatgpt.com/" target="_blank" rel="noopener" class="prompt-open-btn">🟢 ChatGPT</a>{{ end }}
-          {{ if eq . "claude" }}<a href="https://claude.ai/new" target="_blank" rel="noopener" class="prompt-open-btn">🟠 Claude</a>{{ end }}
-          {{ if eq . "gemini" }}<a href="https://gemini.google.com/" target="_blank" rel="noopener" class="prompt-open-btn">🔵 Gemini</a>{{ end }}
-          {{ if eq . "perplexity" }}<a href="https://perplexity.ai/" target="_blank" rel="noopener" class="prompt-open-btn">🔍 Perplexity</a>{{ end }}
-          {{ if eq . "notebooklm" }}<a href="https://notebooklm.google.com/" target="_blank" rel="noopener" class="prompt-open-btn">📓 NotebookLM</a>{{ end }}
+          {{ if eq . "chatgpt" }}<a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">🟢 ChatGPT</a>{{ end }}
+          {{ if eq . "claude" }}<a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">🟠 Claude</a>{{ end }}
+          {{ if eq . "gemini" }}<a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">🔵 Gemini</a>{{ end }}
+          {{ if eq . "perplexity" }}<a href="https://perplexity.ai/" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">🔍 Perplexity</a>{{ end }}
+          {{ if eq . "notebooklm" }}<a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">📓 NotebookLM</a>{{ end }}
           {{ end }}
         </div>
         <p class="prompt-open-note">Prompt is copied to your clipboard when you click</p>

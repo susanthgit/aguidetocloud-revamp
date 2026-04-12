@@ -5,6 +5,13 @@
 (function () {
   "use strict";
 
+  // ─── XSS Prevention ───
+  function esc(s) {
+    var e = document.createElement('span');
+    e.textContent = s || '';
+    return e.innerHTML;
+  }
+
   const DATA_URL = "/data/cert-tracker/latest.json";
   const DETAIL_BASE = "/data/cert-tracker/exams/"; // kept for potential future use
   const CACHE_KEY = "cert-tracker-v1";
@@ -83,7 +90,7 @@
     el.innerHTML = chips
       .map(
         (c) =>
-          `<button class="cert-chip${c.value === "all" ? " active" : ""}" data-cat="${c.value}">${c.label}</button>`
+          `<button class="cert-chip${c.value === "all" ? " active" : ""}" data-cat="${c.value}">${esc(c.label)}</button>`
       )
       .join("");
 
@@ -140,7 +147,7 @@
       const cards = groups[cat].map((e) => renderCard(e)).join("");
       return `
         <div class="cert-category-group">
-          <h3 class="cert-category-heading">${catEmoji[cat] || "📋"} ${cat} <span class="cert-category-count">(${groups[cat].length})</span></h3>
+          <h3 class="cert-category-heading">${catEmoji[cat] || "📋"} ${esc(cat)} <span class="cert-category-count">(${groups[cat].length})</span></h3>
           <div class="cert-category-cards">${cards}</div>
         </div>`;
     }).join("");
@@ -156,26 +163,26 @@
     const skillsHtml = (exam.skills_at_a_glance || [])
       .map(
         (s) =>
-          `<div class="cert-skill-item"><span>${s.area}</span><span class="cert-skill-weight">${s.weight}</span></div>`
+          `<div class="cert-skill-item"><span>${esc(s.area)}</span><span class="cert-skill-weight">${s.weight}</span></div>`
       )
       .join("");
 
-    const retireNote = (status === "retiring" && exam.retirement_date) ? `<div class="cert-card-status-note cert-card-status-retiring">⚠️ Retiring ${exam.retirement_date}${exam.replacement ? " → " + exam.replacement : ""}</div>` : "";
-    const retiredNote = (status === "retired") ? `<div class="cert-card-status-note cert-card-status-retired">🚫 Retired${exam.replacement ? " → " + exam.replacement : ""}</div>` : "";
-    const betaNote = (status === "beta") ? `<div class="cert-card-status-note cert-card-status-beta">🧪 Beta${exam.replaces ? " — replaces " + exam.replaces : ""}</div>` : "";
+    const retireNote = (status === "retiring" && exam.retirement_date) ? `<div class="cert-card-status-note cert-card-status-retiring">⚠️ Retiring ${exam.retirement_date}${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
+    const retiredNote = (status === "retired") ? `<div class="cert-card-status-note cert-card-status-retired">🚫 Retired${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
+    const betaNote = (status === "beta") ? `<div class="cert-card-status-note cert-card-status-beta">🧪 Beta${exam.replaces ? " — replaces " + esc(exam.replaces) : ""}</div>` : "";
 
     const examUrl = `/cert-tracker/${exam.code.toLowerCase()}/`;
     const objCount = exam.total_objectives || 0;
     const skillAreas = exam.skill_areas || 0;
 
     return `
-      <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}" aria-label="${exam.code} study guide">
+      <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}" aria-label="${esc(exam.code)} study guide">
         <div class="cert-card-header">
-          <span class="cert-card-code">${exam.code}</span>
-          <span class="cert-card-title">${exam.title}</span>
+          <span class="cert-card-code">${esc(exam.code)}</span>
+          <span class="cert-card-title">${esc(exam.title)}</span>
         </div>
         <div class="cert-card-meta">
-          <span class="cert-badge cert-badge-${exam.level}">${levelLabel[exam.level] || exam.level}</span>
+          <span class="cert-badge cert-badge-${exam.level}">${levelLabel[exam.level] || esc(exam.level)}</span>
           ${statusBadge}
         </div>
         ${retireNote}${retiredNote}${betaNote}

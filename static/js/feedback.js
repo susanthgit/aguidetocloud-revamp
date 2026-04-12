@@ -198,7 +198,7 @@
       d.comments.nodes.forEach(function (c) {
         repliesHtml += '<div class="feedback-reply">' +
           '<div class="feedback-reply-author">💬 ' + esc(c.author && c.author.login || 'Team') + '</div>' +
-          '<div class="feedback-reply-body">' + (c.body || '').replace(/\n/g, '<br>') + '</div></div>';
+          '<div class="feedback-reply-body">' + esc(c.body || '').replace(/\n/g, '<br>') + '</div></div>';
       });
     }
 
