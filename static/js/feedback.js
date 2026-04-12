@@ -8,57 +8,16 @@
 (function () {
   'use strict';
 
-  // ── Category card selection ──
-  const cards = document.querySelectorAll('.feedback-cat-card');
   const categorySelect = document.getElementById('fb-category');
   const toolSelect = document.getElementById('fb-tool');
 
-  function selectCategory(cat, scrollToForm) {
-    cards.forEach(c => {
-      const isActive = c.dataset.category === cat;
-      c.classList.toggle('active', isActive);
-      c.setAttribute('aria-checked', isActive ? 'true' : 'false');
-    });
-    if (categorySelect) {
-      categorySelect.value = cat;
-      // Pulse animation on the dropdown to show it changed
-      categorySelect.classList.remove('feedback-pulse');
-      void categorySelect.offsetWidth; // force reflow
-      categorySelect.classList.add('feedback-pulse');
-    }
-    // Smooth scroll to form when clicking a card
-    if (scrollToForm) {
-      const formSection = document.getElementById('feedback-form-section');
-      if (formSection) {
-        setTimeout(() => formSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
-      }
-    }
-  }
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => selectCategory(card.dataset.category, true));
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        selectCategory(card.dataset.category, true);
-      }
-    });
-  });
-
-  // Sync dropdown → cards (no scroll)
-  if (categorySelect) {
-    categorySelect.addEventListener('change', () => selectCategory(categorySelect.value, false));
-  }
-
-  // ── URL params pre-fill ──
+  // ── URL params pre-fill (from tool page CTA links) ──
   const params = new URLSearchParams(window.location.search);
   const urlCat = params.get('category');
   const urlTool = params.get('tool');
 
-  if (urlCat) selectCategory(urlCat, false);
-  if (urlTool && toolSelect) {
-    toolSelect.value = urlTool;
-  }
+  if (urlCat && categorySelect) categorySelect.value = urlCat;
+  if (urlTool && toolSelect) toolSelect.value = urlTool;
 
   // If coming from a tool page, scroll to form
   if (urlCat || urlTool) {
@@ -84,66 +43,6 @@
   }
   setupCharCounter('fb-subject', 'fb-subject-count', 150);
   setupCharCounter('fb-message', 'fb-message-count', 2000);
-
-  // ── Quick Reactions ──
-  const quickBtns = document.querySelectorAll('.feedback-quick-btn');
-  quickBtns.forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const reaction = btn.dataset.reaction;
-      const cat = btn.dataset.category;
-
-      // Visual feedback — highlight the clicked button
-      quickBtns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-
-      selectCategory(cat, true);
-
-      if (reaction === 'love') {
-        // Auto-submit for "love" reactions
-        btn.classList.add('sending');
-        btn.innerHTML = '✨ Sending…';
-        try {
-          const res = await fetch('/api/feedback', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              category: cat,
-              subject: 'Love the tools!',
-              message: 'Just wanted to say — I love the free tools on this site. Keep up the amazing work! 🎉',
-              name: '', email: '',
-              tool: toolSelect?.value || '',
-            }),
-          });
-          if (res.ok) {
-            btn.innerHTML = '✅ Thank you!';
-            btn.classList.remove('sending');
-            btn.classList.add('sent');
-            setTimeout(() => {
-              btn.innerHTML = `<span class="feedback-quick-emoji">🤩</span><span class="feedback-quick-label">Love the tools!</span>`;
-              btn.classList.remove('sent', 'selected');
-            }, 3000);
-          }
-        } catch (e) {
-          btn.innerHTML = `<span class="feedback-quick-emoji">🤩</span><span class="feedback-quick-label">Love the tools!</span>`;
-          btn.classList.remove('sending', 'selected');
-        }
-      } else {
-        // For idea/video/bug — scroll to form, focus subject, flash the form
-        const formSection = document.getElementById('feedback-form-section');
-        if (formSection) {
-          formSection.classList.remove('feedback-flash');
-          void formSection.offsetWidth;
-          formSection.classList.add('feedback-flash');
-        }
-        setTimeout(() => {
-          const subjectInput = document.getElementById('fb-subject');
-          if (subjectInput) subjectInput.focus();
-        }, 400);
-      }
-        }, 400);
-      }
-    });
-  });
 
   // ── Form submission ──
   const form = document.getElementById('feedback-form');
@@ -211,10 +110,6 @@
           }
 
           form.reset();
-          cards.forEach(c => {
-            c.classList.remove('active');
-            c.setAttribute('aria-checked', 'false');
-          });
           // Reset char counters
           setupCharCounter('fb-subject', 'fb-subject-count', 150);
           setupCharCounter('fb-message', 'fb-message-count', 2000);

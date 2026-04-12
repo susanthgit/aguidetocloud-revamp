@@ -86,10 +86,20 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--fb-text);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.feedback-disclaimer {
+  font-size: 0.8rem;
+  color: var(--fb-text-dim);
+  line-height: 1.5;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 1rem;
+  background: color-mix(in srgb, var(--fb-accent) 5%, var(--fb-bg));
+  border: 1px solid color-mix(in srgb, var(--fb-accent) 12%, transparent);
+  border-radius: 6px;
 }
 .feedback-form-row {
   display: grid;

@@ -18,84 +18,34 @@
     <div class="feedback-how-step">
       <div class="feedback-how-num">1</div>
       <div>
-        <div class="feedback-how-label">Pick a category</div>
-        <div class="feedback-how-desc">Select what your feedback is about</div>
-      </div>
-    </div>
-    <div class="feedback-how-step">
-      <div class="feedback-how-num">2</div>
-      <div>
         <div class="feedback-how-label">Write your message</div>
         <div class="feedback-how-desc">Questions, ideas, bugs — anything helps</div>
       </div>
     </div>
     <div class="feedback-how-step">
-      <div class="feedback-how-num">3</div>
+      <div class="feedback-how-num">2</div>
       <div>
         <div class="feedback-how-label">We respond</div>
         <div class="feedback-how-desc">Every submission gets a personal reply</div>
       </div>
     </div>
-  </div>
-
-  <!-- Category Cards -->
-  <div class="feedback-categories" id="feedback-categories" role="radiogroup" aria-label="Feedback category">
-    <div class="feedback-cat-card" data-category="questions" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">❓</span>
-      <span class="feedback-cat-label">Questions</span>
-    </div>
-    <div class="feedback-cat-card" data-category="feature-requests" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">💡</span>
-      <span class="feedback-cat-label">Feature Requests</span>
-    </div>
-    <div class="feedback-cat-card" data-category="video-requests" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">🎬</span>
-      <span class="feedback-cat-label">Video Requests</span>
-    </div>
-    <div class="feedback-cat-card" data-category="bug-reports" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">🐛</span>
-      <span class="feedback-cat-label">Bug Reports</span>
-    </div>
-    <div class="feedback-cat-card" data-category="tool-feedback" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">🔧</span>
-      <span class="feedback-cat-label">Tool Feedback</span>
-    </div>
-    <div class="feedback-cat-card" data-category="content-ideas" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">📝</span>
-      <span class="feedback-cat-label">Content Ideas</span>
-    </div>
-    <div class="feedback-cat-card" data-category="general" tabindex="0" role="radio" aria-checked="false">
-      <span class="feedback-cat-emoji">💬</span>
-      <span class="feedback-cat-label">General</span>
-    </div>
-  </div>
-
-  <!-- Quick Reactions -->
-  <div class="feedback-quick">
-    <div class="feedback-quick-title">⚡ Quick Feedback</div>
-    <div class="feedback-quick-row">
-      <button class="feedback-quick-btn" data-reaction="love" data-category="general" aria-label="Love it">
-        <span class="feedback-quick-emoji">🤩</span>
-        <span class="feedback-quick-label">Love the tools!</span>
-      </button>
-      <button class="feedback-quick-btn" data-reaction="idea" data-category="feature-requests" aria-label="I have an idea">
-        <span class="feedback-quick-emoji">💡</span>
-        <span class="feedback-quick-label">I have an idea</span>
-      </button>
-      <button class="feedback-quick-btn" data-reaction="video" data-category="video-requests" aria-label="Request a video">
-        <span class="feedback-quick-emoji">🎬</span>
-        <span class="feedback-quick-label">Request a video</span>
-      </button>
-      <button class="feedback-quick-btn" data-reaction="bug" data-category="bug-reports" aria-label="Found a bug">
-        <span class="feedback-quick-emoji">🐛</span>
-        <span class="feedback-quick-label">Found a bug</span>
-      </button>
+    <div class="feedback-how-step">
+      <div class="feedback-how-num">3</div>
+      <div>
+        <div class="feedback-how-label">Everyone benefits</div>
+        <div class="feedback-how-desc">Past Q&As are visible below for everyone</div>
+      </div>
     </div>
   </div>
 
   <!-- Submit Form -->
   <div class="feedback-form-section" id="feedback-form-section">
     <div class="feedback-form-title">📝 Share Your Feedback</div>
+
+    <div class="feedback-disclaimer">
+      🔓 Your submission will be posted publicly so others can benefit from the discussion. Name and email are optional — only use them if you'd like a personal reply.
+    </div>
+
     <form id="feedback-form" novalidate>
       <div class="feedback-form-row">
         <div class="feedback-field">
@@ -176,9 +126,9 @@
     </form>
   </div>
 
-  <!-- Recent Feedback -->
+  <!-- Past Discussions -->
   <div class="feedback-recent" id="feedback-recent">
-    <div class="feedback-recent-title">💬 Recent Community Feedback</div>
+    <div class="feedback-recent-title">💬 Past Questions & Answers</div>
     <div class="feedback-recent-list" id="feedback-recent-list">
       <div class="feedback-empty">
         <div class="feedback-empty-icon">🌱</div>
