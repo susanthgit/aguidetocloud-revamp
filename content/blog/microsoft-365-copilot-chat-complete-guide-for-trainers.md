@@ -1,8 +1,8 @@
 ---
 title: "Microsoft 365 Copilot Chat — The Complete Train-the-Trainer Guide for AI Change Leads"
 description: "Everything AI trainers and change leads need to know about Microsoft 365 Copilot Chat (free). Features, security, prompting tips, agents, Pages, memory, custom instructions, model choice, and how to position it to your organisation. A comprehensive cheat sheet with diagrams, tables, and practical examples."
-date: 2026-04-13
-lastmod: 2026-04-13
+date: 2026-04-12
+lastmod: 2026-04-12
 card_tag: "Copilot"
 tag_class: "ai"
 faq:
