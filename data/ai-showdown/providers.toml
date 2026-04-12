@@ -1,0 +1,182 @@
+# AI SaaS Showdown — Provider Definitions
+# Each provider represents an AI company offering SaaS chatbot/assistant products
+
+[openai]
+name = "OpenAI"
+product = "ChatGPT"
+logo_emoji = "🟢"
+tagline = "The AI that started it all"
+url = "https://chat.openai.com"
+pricing_url = "https://openai.com/chatgpt/pricing"
+docs_url = "https://platform.openai.com/docs"
+description = "The most widely-used AI assistant. ChatGPT offers versatile text, image, voice, and code capabilities with the broadest plugin and tool ecosystem."
+flagship_model = "GPT-5.4"
+context_window = "128K–1M tokens"
+founded = "2015"
+headquarters = "San Francisco, USA"
+parent_company = ""
+open_source = false
+api_available = true
+order = 1
+
+[anthropic]
+name = "Anthropic"
+product = "Claude"
+logo_emoji = "🟤"
+tagline = "The thoughtful AI for serious work"
+url = "https://claude.ai"
+pricing_url = "https://www.anthropic.com/pricing"
+docs_url = "https://docs.anthropic.com"
+description = "Known for exceptional writing quality, nuanced reasoning, and industry-leading document handling. Claude excels at long-form analysis, coding, and following complex instructions."
+flagship_model = "Claude Opus 4.6"
+context_window = "200K–1M tokens"
+founded = "2021"
+headquarters = "San Francisco, USA"
+parent_company = ""
+open_source = false
+api_available = true
+order = 2
+
+[google]
+name = "Google"
+product = "Gemini"
+logo_emoji = "🔵"
+tagline = "AI deeply woven into Google's ecosystem"
+url = "https://gemini.google.com"
+pricing_url = "https://one.google.com/about/ai-premium"
+docs_url = "https://ai.google.dev/docs"
+description = "Tightly integrated with Google Workspace, offering the largest context window and seamless access to Gmail, Docs, Drive, and YouTube. Best value for Google-first organisations."
+flagship_model = "Gemini 3 Pro"
+context_window = "1M–2M tokens"
+founded = "1998"
+headquarters = "Mountain View, USA"
+parent_company = "Alphabet"
+open_source = false
+api_available = true
+order = 3
+
+[xai]
+name = "xAI"
+product = "Grok"
+logo_emoji = "⚡"
+tagline = "Real-time AI with the pulse of X"
+url = "https://grok.x.ai"
+pricing_url = "https://x.ai/grok"
+docs_url = "https://docs.x.ai"
+description = "Elon Musk's AI company offering real-time access to X (Twitter) data, massive context windows, and competitive API pricing. Strongest for research and real-time information."
+flagship_model = "Grok 4"
+context_window = "256K–2M tokens"
+founded = "2023"
+headquarters = "San Francisco, USA"
+parent_company = ""
+open_source = false
+api_available = true
+order = 4
+
+[mistral]
+name = "Mistral AI"
+product = "Le Chat"
+logo_emoji = "🟠"
+tagline = "Europe's open AI champion"
+url = "https://chat.mistral.ai"
+pricing_url = "https://mistral.ai/pricing"
+docs_url = "https://docs.mistral.ai"
+description = "European AI leader with strong privacy focus, GDPR-native data residency, open-weight models for self-hosting, and the most affordable pro plan. Ideal for privacy-conscious organisations."
+flagship_model = "Mistral Large"
+context_window = "128K tokens"
+founded = "2023"
+headquarters = "Paris, France"
+parent_company = ""
+open_source = true
+api_available = true
+order = 5
+
+[deepseek]
+name = "DeepSeek"
+product = "DeepSeek"
+logo_emoji = "🐋"
+tagline = "Ultra-low-cost AI powerhouse"
+url = "https://chat.deepseek.com"
+pricing_url = "https://platform.deepseek.com/api-docs/pricing"
+docs_url = "https://platform.deepseek.com/api-docs"
+description = "Chinese AI lab offering dramatically cheaper API pricing (80-90% less than competitors), open-weight models, and a generous free tier. Best for cost-sensitive high-volume usage."
+flagship_model = "DeepSeek V4"
+context_window = "128K–1M tokens"
+founded = "2023"
+headquarters = "Hangzhou, China"
+parent_company = "High-Flyer Capital"
+open_source = true
+api_available = true
+order = 6
+
+[perplexity]
+name = "Perplexity"
+product = "Perplexity"
+logo_emoji = "🔍"
+tagline = "The answer engine with citations"
+url = "https://www.perplexity.ai"
+pricing_url = "https://www.perplexity.ai/pro"
+docs_url = "https://docs.perplexity.ai"
+description = "AI-powered search engine that provides cited, sourced answers. Uses multiple models (GPT, Claude, Gemini) under the hood. Best for research where accuracy and citations matter."
+flagship_model = "Multi-model (GPT-5, Claude, Gemini)"
+context_window = "Varies by model"
+founded = "2022"
+headquarters = "San Francisco, USA"
+parent_company = ""
+open_source = false
+api_available = true
+order = 7
+
+[microsoft]
+name = "Microsoft"
+product = "Copilot"
+logo_emoji = "Ⓜ️"
+tagline = "AI embedded in the tools you already use"
+url = "https://copilot.microsoft.com"
+pricing_url = "https://www.microsoft.com/microsoft-copilot/pricing"
+docs_url = "https://learn.microsoft.com/copilot"
+description = "AI assistant integrated across Microsoft 365, Windows, Edge, and Bing. Unique access to your work data (emails, files, meetings) through Microsoft Graph. Best for M365 organisations."
+flagship_model = "GPT-5 (via OpenAI partnership)"
+context_window = "128K tokens"
+founded = "1975"
+headquarters = "Redmond, USA"
+parent_company = ""
+open_source = false
+api_available = false
+order = 8
+
+[meta]
+name = "Meta"
+product = "Llama"
+logo_emoji = "🦙"
+tagline = "Open-source AI for everyone"
+url = "https://llama.meta.com"
+pricing_url = "https://llama.meta.com"
+docs_url = "https://llama.meta.com/docs"
+description = "Meta's open-source large language models that anyone can download, modify, and deploy. No SaaS subscription — deploy on your own infrastructure or use via third-party providers."
+flagship_model = "Llama 4 Maverick"
+context_window = "128K–1M tokens"
+founded = "2004"
+headquarters = "Menlo Park, USA"
+parent_company = ""
+open_source = true
+api_available = false
+order = 9
+
+[cohere]
+name = "Cohere"
+product = "Cohere"
+logo_emoji = "🟣"
+tagline = "Enterprise AI for search and language"
+url = "https://cohere.com"
+pricing_url = "https://cohere.com/pricing"
+docs_url = "https://docs.cohere.com"
+description = "Enterprise-focused AI specialising in text understanding, embeddings, search augmentation (RAG), and reranking. Offers private deployment options. Best for search-heavy and NLP workloads."
+flagship_model = "Command R+"
+context_window = "128K tokens"
+founded = "2019"
+headquarters = "Toronto, Canada"
+parent_company = ""
+open_source = false
+api_available = true
+order = 10

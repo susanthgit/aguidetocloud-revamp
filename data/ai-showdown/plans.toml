@@ -1,0 +1,869 @@
+# AI SaaS Showdown — Plan Definitions
+# Each plan represents a specific subscription tier for a provider
+# tier: free | individual | power | team | enterprise | api
+# All prices in USD
+
+# ============================================================
+# OPENAI — ChatGPT Plans
+# ============================================================
+
+[chatgpt-free]
+provider = "openai"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "GPT-4o mini, limited GPT-5"
+context_window = "128K"
+message_limit = "Limited (varies by demand)"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Casual use, trying AI for the first time"
+
+[chatgpt-plus]
+provider = "openai"
+name = "Plus"
+tier = "individual"
+monthly_price = 20
+annual_price_monthly = 16.67
+currency = "USD"
+model_access = "GPT-5.4, GPT-4o, o3, DALL-E 4"
+context_window = "128K–400K"
+message_limit = "5x more than Free"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Most popular"
+best_for = "Regular users wanting full capabilities"
+
+[chatgpt-pro]
+provider = "openai"
+name = "Pro"
+tier = "power"
+monthly_price = 200
+annual_price_monthly = 200
+currency = "USD"
+model_access = "GPT-5.4 Pro, o1 Pro, unlimited GPT-5"
+context_window = "1M"
+message_limit = "Unlimited"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Maximum power"
+best_for = "Researchers, heavy users, professionals"
+
+[chatgpt-team]
+provider = "openai"
+name = "Team"
+tier = "team"
+monthly_price = 30
+annual_price_monthly = 25
+currency = "USD"
+model_access = "GPT-5.4, GPT-4o, o3, DALL-E 4"
+context_window = "128K–400K"
+message_limit = "Higher limits per user"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = true
+sso = false
+data_retention_control = true
+highlight = ""
+best_for = "Small teams collaborating with AI"
+
+[chatgpt-enterprise]
+provider = "openai"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 60
+annual_price_monthly = 60
+currency = "USD"
+model_access = "All models, unlimited usage"
+context_window = "1M"
+message_limit = "Unlimited"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = true
+plugins = true
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = ""
+best_for = "Large organisations needing security and control"
+
+# ============================================================
+# ANTHROPIC — Claude Plans
+# ============================================================
+
+[claude-free]
+provider = "anthropic"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Claude Sonnet 4.6 (limited)"
+context_window = "200K"
+message_limit = "Limited daily allowance"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Trying Claude's writing and analysis quality"
+
+[claude-pro]
+provider = "anthropic"
+name = "Pro"
+tier = "individual"
+monthly_price = 20
+annual_price_monthly = 18
+currency = "USD"
+model_access = "Claude Opus 4.6, Sonnet 4.6, Haiku 4.5"
+context_window = "200K–1M"
+message_limit = "5x more than Free"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Best for writing"
+best_for = "Writers, analysts, professionals"
+
+[claude-max]
+provider = "anthropic"
+name = "Max"
+tier = "power"
+monthly_price = 100
+annual_price_monthly = 100
+currency = "USD"
+model_access = "Claude Opus 4.6 (full access), all models"
+context_window = "1M"
+message_limit = "5-20x Pro usage"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Heavy workflows, long documents, max quality"
+
+[claude-team]
+provider = "anthropic"
+name = "Team"
+tier = "team"
+monthly_price = 30
+annual_price_monthly = 25
+currency = "USD"
+model_access = "Claude Opus 4.6, Sonnet 4.6, Haiku 4.5"
+context_window = "200K–1M"
+message_limit = "Higher team limits"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = true
+sso = false
+data_retention_control = true
+highlight = ""
+best_for = "Teams needing AI for documents and code"
+
+[claude-enterprise]
+provider = "anthropic"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 60
+annual_price_monthly = 60
+currency = "USD"
+model_access = "All models, custom limits"
+context_window = "1M"
+message_limit = "Custom"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = true
+plugins = false
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = ""
+best_for = "Regulated industries, large organisations"
+
+# ============================================================
+# GOOGLE — Gemini Plans
+# ============================================================
+
+[gemini-free]
+provider = "google"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Gemini 3 Flash"
+context_window = "32K"
+message_limit = "Limited"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Quick questions, basic research"
+
+[gemini-advanced]
+provider = "google"
+name = "Advanced (Google One AI Premium)"
+tier = "individual"
+monthly_price = 19.99
+annual_price_monthly = 16.58
+currency = "USD"
+model_access = "Gemini 3 Pro, NotebookLM Plus"
+context_window = "1M"
+message_limit = "Generous limits"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Best for Google users"
+best_for = "Google Workspace users, long documents, research"
+
+[gemini-ultra]
+provider = "google"
+name = "Ultra"
+tier = "power"
+monthly_price = 249
+annual_price_monthly = 249
+currency = "USD"
+model_access = "Gemini 3 Ultra, all models"
+context_window = "2M"
+message_limit = "Unlimited"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = true
+plugins = true
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Enterprise-grade intelligence, max context"
+
+[gemini-business]
+provider = "google"
+name = "Business"
+tier = "team"
+monthly_price = 14
+annual_price_monthly = 14
+currency = "USD"
+model_access = "Gemini Pro in Workspace"
+context_window = "1M"
+message_limit = "Standard business limits"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = true
+priority_access = false
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = "Cheapest team plan"
+best_for = "Google Workspace teams"
+
+[gemini-enterprise]
+provider = "google"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 30
+annual_price_monthly = 30
+currency = "USD"
+model_access = "Gemini Pro, Ultra in Workspace, Vertex AI access"
+context_window = "1M"
+message_limit = "Unlimited in Workspace"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = true
+plugins = true
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = ""
+best_for = "Google-first enterprises"
+
+# ============================================================
+# xAI — Grok Plans
+# ============================================================
+
+[grok-free]
+provider = "xai"
+name = "Free (X Basic)"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Grok (limited)"
+context_window = "32K"
+message_limit = "Very limited"
+file_upload = false
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Basic AI on X/Twitter"
+
+[grok-supergrok]
+provider = "xai"
+name = "SuperGrok"
+tier = "individual"
+monthly_price = 30
+annual_price_monthly = 25
+currency = "USD"
+model_access = "Grok 4, DeepSearch"
+context_window = "2M"
+message_limit = "Generous limits"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Largest context window"
+best_for = "Research, real-time info, X/Twitter power users"
+
+[grok-business]
+provider = "xai"
+name = "Business"
+tier = "team"
+monthly_price = 30
+annual_price_monthly = 25
+currency = "USD"
+model_access = "Grok 4"
+context_window = "2M"
+message_limit = "Team limits"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = true
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Teams using X for business intelligence"
+
+# ============================================================
+# MISTRAL — Le Chat Plans
+# ============================================================
+
+[lechat-free]
+provider = "mistral"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Mistral Medium, Small"
+context_window = "32K"
+message_limit = "25 messages/day"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Privacy-conscious casual users"
+
+[lechat-pro]
+provider = "mistral"
+name = "Pro"
+tier = "individual"
+monthly_price = 14.99
+annual_price_monthly = 12
+currency = "USD"
+model_access = "All models including Mistral Large"
+context_window = "128K"
+message_limit = "150 messages/day"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = true
+highlight = "Cheapest pro plan"
+best_for = "Privacy-focused professionals, EU users"
+
+[lechat-team]
+provider = "mistral"
+name = "Team"
+tier = "team"
+monthly_price = 24.99
+annual_price_monthly = 20
+currency = "USD"
+model_access = "All models, 200 flash answers/day"
+context_window = "128K"
+message_limit = "200 messages/day per user"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = true
+admin_controls = true
+sso = false
+data_retention_control = true
+highlight = ""
+best_for = "European teams, privacy-first organisations"
+
+[lechat-enterprise]
+provider = "mistral"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "All models, custom deployment"
+context_window = "128K"
+message_limit = "Custom"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = true
+plugins = false
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = "EU data residency"
+best_for = "GDPR-regulated enterprises, on-premises AI"
+
+# ============================================================
+# DEEPSEEK
+# ============================================================
+
+[deepseek-free]
+provider = "deepseek"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "DeepSeek V4, R1"
+context_window = "128K"
+message_limit = "1M tokens/month free via API"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = true
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Generous free tier"
+best_for = "Developers, students, budget-conscious users"
+
+[deepseek-api]
+provider = "deepseek"
+name = "API (Pay-per-use)"
+tier = "individual"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "DeepSeek V4, V3.2, R1"
+context_window = "128K–1M"
+message_limit = "Pay per token"
+file_upload = true
+image_generation = false
+web_browsing = false
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = true
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = true
+highlight = "80-90% cheaper than competitors"
+best_for = "High-volume API users, cost-sensitive developers"
+
+# ============================================================
+# PERPLEXITY
+# ============================================================
+
+[perplexity-free]
+provider = "perplexity"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Standard (auto-selected model)"
+context_window = "Varies"
+message_limit = "Limited Pro searches"
+file_upload = true
+image_generation = false
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Quick research with sources"
+
+[perplexity-pro]
+provider = "perplexity"
+name = "Pro"
+tier = "individual"
+monthly_price = 20
+annual_price_monthly = 16.67
+currency = "USD"
+model_access = "GPT-5, Claude, Gemini (multi-model)"
+context_window = "Varies by model"
+message_limit = "Unlimited Pro searches"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = false
+api_access = true
+plugins = false
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = "Multi-model access"
+best_for = "Researchers, journalists, fact-checkers"
+
+[perplexity-enterprise]
+provider = "perplexity"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 40
+annual_price_monthly = 40
+currency = "USD"
+model_access = "All models, internal search"
+context_window = "Varies"
+message_limit = "Unlimited"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = true
+custom_gpts = true
+api_access = true
+plugins = true
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = ""
+best_for = "Organisations needing sourced AI answers"
+
+# ============================================================
+# MICROSOFT — Copilot Plans
+# ============================================================
+
+[copilot-free]
+provider = "microsoft"
+name = "Free"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "GPT-4o (limited)"
+context_window = "32K"
+message_limit = "Limited daily"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = false
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Windows/Edge users wanting basic AI"
+
+[copilot-pro]
+provider = "microsoft"
+name = "Copilot Pro"
+tier = "individual"
+monthly_price = 20
+annual_price_monthly = 20
+currency = "USD"
+model_access = "GPT-5, priority access"
+context_window = "128K"
+message_limit = "Priority access"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = false
+sso = false
+data_retention_control = false
+highlight = ""
+best_for = "Individual M365 subscribers wanting AI in Office apps"
+
+[copilot-m365]
+provider = "microsoft"
+name = "Microsoft 365 Copilot"
+tier = "enterprise"
+monthly_price = 30
+annual_price_monthly = 30
+currency = "USD"
+model_access = "GPT-5 integrated in M365 apps"
+context_window = "128K"
+message_limit = "Unlimited in M365 apps"
+file_upload = true
+image_generation = true
+web_browsing = true
+voice_mode = true
+memory = true
+custom_gpts = true
+api_access = false
+plugins = true
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = "Works in Word, Excel, PowerPoint, Teams, Outlook"
+best_for = "Organisations on M365 wanting AI in every app"
+
+# ============================================================
+# META — Llama (Open Source)
+# ============================================================
+
+[llama-open]
+provider = "meta"
+name = "Open Source (Free)"
+tier = "free"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Llama 4 Maverick, Scout, all previous versions"
+context_window = "128K–1M"
+message_limit = "Unlimited (self-hosted)"
+file_upload = true
+image_generation = false
+web_browsing = false
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = true
+plugins = false
+priority_access = false
+admin_controls = true
+sso = false
+data_retention_control = true
+highlight = "Completely free & open"
+best_for = "Organisations wanting full control, self-hosted AI"
+
+# ============================================================
+# COHERE
+# ============================================================
+
+[cohere-api]
+provider = "cohere"
+name = "API (Pay-per-use)"
+tier = "individual"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "Command R+, Embed, Rerank"
+context_window = "128K"
+message_limit = "Pay per token"
+file_upload = false
+image_generation = false
+web_browsing = false
+voice_mode = false
+memory = false
+custom_gpts = false
+api_access = true
+plugins = false
+priority_access = false
+admin_controls = false
+sso = false
+data_retention_control = true
+highlight = "Best for search & RAG"
+best_for = "Developers building search and retrieval systems"
+
+[cohere-enterprise]
+provider = "cohere"
+name = "Enterprise"
+tier = "enterprise"
+monthly_price = 0
+annual_price_monthly = 0
+currency = "USD"
+model_access = "All models, private deployment"
+context_window = "128K"
+message_limit = "Custom"
+file_upload = true
+image_generation = false
+web_browsing = false
+voice_mode = false
+memory = false
+custom_gpts = true
+api_access = true
+plugins = false
+priority_access = true
+admin_controls = true
+sso = true
+data_retention_control = true
+highlight = "Private deployment"
+best_for = "Enterprise search, RAG, NLP workloads"
