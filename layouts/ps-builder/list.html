@@ -1,0 +1,213 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/ps-builder.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PowerShell Command Builder",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQPage Schema ── */}}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $faq := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="psb-page">
+
+  {{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "Build M365, Azure & Windows admin commands visually. Select a task or cmdlet → fill parameters → get a ready-to-run command. Free, no sign-up, works offline." "accent" "#84CC16") }}
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+  <div class="psb-container">
+
+    {{/* ── TAB NAVIGATION ── */}}
+    <div class="psb-tabs" role="tablist" aria-label="PowerShell Builder sections">
+      <button class="psb-tab active" role="tab" aria-selected="true" aria-controls="psb-panel-recipes" data-tab="recipes">📋 Recipes</button>
+      <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-build" data-tab="build">🔧 Build</button>
+      <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-reference" data-tab="reference">📖 Reference</button>
+    </div>
+
+    {{/* ── RECIPES TAB ── */}}
+    <div class="psb-panel active" id="psb-panel-recipes" role="tabpanel">
+      <div class="psb-recipes-header">
+        <h2 class="psb-section-title">What do you want to do?</h2>
+        <div class="psb-search-wrap">
+          <input type="text" id="psb-recipe-search" class="psb-search" placeholder="Search recipes... (e.g. 'shared mailbox', 'firewall', 'locked account')" aria-label="Search recipes">
+        </div>
+        <div class="psb-filter-pills" id="psb-recipe-filters" role="group" aria-label="Filter by service">
+          <button class="psb-pill active" data-filter="all">All</button>
+          <!-- Populated by JS from module data -->
+        </div>
+        <div class="psb-filter-row">
+          <div class="psb-filter-pills" id="psb-difficulty-filters" role="group" aria-label="Filter by difficulty">
+            <button class="psb-pill-sm active" data-difficulty="all">All Levels</button>
+            <button class="psb-pill-sm" data-difficulty="beginner">🟢 Beginner</button>
+            <button class="psb-pill-sm" data-difficulty="intermediate">🟡 Intermediate</button>
+            <button class="psb-pill-sm" data-difficulty="advanced">🔴 Advanced</button>
+          </div>
+          <span class="psb-recipe-count" id="psb-recipe-count"></span>
+        </div>
+      </div>
+      <div class="psb-recipe-grid" id="psb-recipe-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    {{/* ── BUILD TAB ── */}}
+    <div class="psb-panel" id="psb-panel-build" role="tabpanel" hidden>
+      <h2 class="psb-section-title">Build a Command</h2>
+
+      {{/* Step 1: Module */}}
+      <div class="psb-build-step" id="psb-step-module">
+        <label class="psb-step-label">1. Choose a Module</label>
+        <div class="psb-module-grid" id="psb-module-grid">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="psb-module-info" id="psb-module-info" hidden>
+          <!-- Shows install/connect commands -->
+        </div>
+      </div>
+
+      {{/* Step 2: Cmdlet */}}
+      <div class="psb-build-step" id="psb-step-cmdlet" hidden>
+        <label class="psb-step-label">2. Choose a Cmdlet</label>
+        <div class="psb-cmdlet-search-wrap">
+          <input type="text" id="psb-cmdlet-search" class="psb-search psb-search-sm" placeholder="Search cmdlets..." aria-label="Search cmdlets">
+        </div>
+        <div class="psb-cmdlet-list" id="psb-cmdlet-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      {{/* Step 3: Parameters */}}
+      <div class="psb-build-step" id="psb-step-params" hidden>
+        <label class="psb-step-label">3. Fill Parameters</label>
+        <div class="psb-params-form" id="psb-params-form">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="psb-build-actions">
+          <button class="psb-btn-primary" id="psb-build-btn">⚡ Build Command</button>
+          <button class="psb-btn-secondary" id="psb-reset-btn">↩ Reset</button>
+        </div>
+      </div>
+
+      {{/* Output */}}
+      <div class="psb-output-section" id="psb-output-section" hidden>
+        <label class="psb-step-label">Your Command</label>
+        <div class="psb-output-block">
+          <pre class="psb-output-code" id="psb-output-code"></pre>
+          <div class="psb-output-actions">
+            <button class="psb-btn-copy" id="psb-copy-btn" title="Copy to clipboard">📋 Copy</button>
+            <button class="psb-btn-download" id="psb-download-btn" title="Download as .ps1 file">💾 .ps1</button>
+            <button class="psb-btn-share" id="psb-share-btn" title="Copy shareable link">🔗 Share</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── REFERENCE TAB ── */}}
+    <div class="psb-panel" id="psb-panel-reference" role="tabpanel" hidden>
+      <h2 class="psb-section-title">Cmdlet Reference</h2>
+      <div class="psb-search-wrap">
+        <input type="text" id="psb-ref-search" class="psb-search" placeholder="Search all cmdlets..." aria-label="Search cmdlet reference">
+      </div>
+      <div class="psb-ref-modules" id="psb-ref-modules">
+        <!-- Rendered by JS: accordion per module -->
+      </div>
+    </div>
+
+    {{/* ── HISTORY SIDEBAR ── */}}
+    <div class="psb-history" id="psb-history">
+      <h3 class="psb-history-title">Recent Commands</h3>
+      <div class="psb-history-list" id="psb-history-list">
+        <p class="psb-history-empty">No commands yet. Build or use a recipe to get started.</p>
+      </div>
+      <button class="psb-btn-text" id="psb-clear-history" hidden>Clear History</button>
+    </div>
+
+    {{/* ── FAQ SECTION ── */}}
+    {{ with .Params.faq }}
+    <div class="psb-faq">
+      <h2 class="psb-section-title">Frequently Asked Questions</h2>
+      <div class="psb-faq-list">
+        {{ range $i, $faq := . }}
+        <details class="psb-faq-item"{{ if eq $i 0 }} open{{ end }}>
+          <summary class="psb-faq-q">{{ $faq.question }}</summary>
+          <p class="psb-faq-a">{{ $faq.answer }}</p>
+        </details>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* ── CROSS-LINKS ── */}}
+    <div class="psb-cross-links">
+      <h3>Related Tools</h3>
+      <div class="psb-cross-grid">
+        <a href="/licensing/" class="psb-cross-card">
+          <span class="psb-cross-emoji">💰</span>
+          <span class="psb-cross-name">Licensing Simplifier</span>
+          <span class="psb-cross-desc">Check which licence includes the modules you need</span>
+        </a>
+        <a href="/cert-tracker/" class="psb-cross-card">
+          <span class="psb-cross-emoji">📚</span>
+          <span class="psb-cross-name">Cert Study Guides</span>
+          <span class="psb-cross-desc">Study for MS-102, AZ-104, and more</span>
+        </a>
+        <a href="/prompts/" class="psb-cross-card">
+          <span class="psb-cross-emoji">✨</span>
+          <span class="psb-cross-name">Prompt Library</span>
+          <span class="psb-cross-desc">AI prompts for M365 Copilot and more</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ partial "feedback-cta.html" (dict "tool" "ps-builder" "label" "Prompt Strategy Builder") }}
+
+{{/* ── INJECT TOML DATA AS JSON ── */}}
+<script>
+window.__psBuilderData = {
+  modules: {{ index .Site.Data "ps_builder" "modules" "modules" | jsonify | safeJS }},
+  cmdlets: {{ index .Site.Data "ps_builder" "cmdlets" "cmdlets" | jsonify | safeJS }},
+  recipes: {{ index .Site.Data "ps_builder" "recipes" "recipes" | jsonify | safeJS }}
+};
+</script>
+<script src="/js/ps-builder.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
