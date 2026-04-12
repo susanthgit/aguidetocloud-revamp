@@ -1070,6 +1070,7 @@ a:hover {
 .page-migration-planner .site-nav { --nav-accent: rgba(99, 102, 241, 0.35); }
 .page-ca-builder .site-nav { --nav-accent: rgba(124, 58, 237, 0.4); }
 .page-ps-builder .site-nav { --nav-accent: rgba(74, 222, 128, 0.35); }
+.page-free-tools .site-nav { --nav-accent: rgba(196, 117, 91, 0.4); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;
