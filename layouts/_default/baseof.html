@@ -54,6 +54,9 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  {{ if not (hasPrefix .RelPermalink "/feedback/") }}
+  <a href="/feedback/" class="feedback-fab" aria-label="Share feedback" title="Share feedback">💬</a>
+  {{ end }}
   <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
     <div class="search-modal-inner">
       <button id="search-close" class="search-modal-close" aria-label="Close search">&times;</button>

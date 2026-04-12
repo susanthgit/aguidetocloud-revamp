@@ -1085,6 +1085,46 @@ a:hover {
 .global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .global-btt:hover { background: #fff; box-shadow: 0 4px 25px rgba(102, 255, 255, 0.6); }
 
+/* ── Feedback FAB (floating action button) ── */
+.feedback-fab {
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 9998;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #14B8A6;
+  border: 2px solid rgba(20, 184, 166, 0.5);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgba(20, 184, 166, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.feedback-fab:hover {
+  background: #2DD4BF;
+  box-shadow: 0 4px 25px rgba(20, 184, 166, 0.6);
+  transform: scale(1.1);
+}
+@media (max-width: 640px) {
+  .feedback-fab { bottom: 4.5rem; right: 1rem; width: 40px; height: 40px; font-size: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feedback-fab { transition: none; }
+}
+
+/* ── Nav dropdown divider ── */
+.nav-dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0.3rem 0.5rem;
+  list-style: none;
+}
+
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid rgba(102, 255, 255, 0.2);
