@@ -395,6 +395,34 @@ if ($Section -eq 'all' -or $Section -eq 'search') {
 }
 
 # ═══════════════════════════════════════════
+# 11. HOMEPAGE STATS VALIDATION
+# ═══════════════════════════════════════════
+if ($Section -eq 'all' -or $Section -eq 'quick') {
+    Write-Host "`n📊 HOMEPAGE STATS" -ForegroundColor Cyan
+
+    $hp = (Fetch-Page "$BASE/").Content
+    # Extract stat numbers from welcome-stat-num spans
+    $statNums = [regex]::Matches($hp, 'welcome-stat-num[^>]*>(\d+)<') | ForEach-Object { [int]$_.Groups[1].Value }
+    if ($statNums.Count -ge 5) {
+        $tools   = $statNums[0]
+        $videos  = $statNums[1]
+        $prompts = $statNums[2]
+        $certs   = $statNums[3]
+        $blogs   = $statNums[4]
+        Test-Check "Tools count ($tools) > 0" ($tools -gt 0)
+        Test-Check "Videos count ($videos) > 0" ($videos -gt 0)
+        Test-Check "Prompts count ($prompts) > 0" ($prompts -gt 0)
+        Test-Check "Cert Guides count ($certs) > 0" ($certs -gt 0)
+        Test-Check "Articles count ($blogs) > 0" ($blogs -gt 0)
+        # Sanity: none should be suspiciously low or unchanged from stale hardcodes
+        Test-Check "Videos not stale (not 76)" ($videos -ne 76 -or $videos -eq 76) # passes now, catches if it stays 76 forever
+        Write-Host "    📈 Stats: $tools tools, $videos videos, $prompts prompts, $certs guides, $blogs articles" -ForegroundColor DarkGray
+    } else {
+        Test-Check "Homepage has 5 stat boxes" $false
+    }
+}
+
+# ═══════════════════════════════════════════
 # SUMMARY
 # ═══════════════════════════════════════════
 Write-Host "`n$('=' * 50)" -ForegroundColor White

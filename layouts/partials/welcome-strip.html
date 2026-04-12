@@ -4,25 +4,35 @@
       <h1 class="welcome-title">Your AI & Cloud Learning Hub</h1>
       <p class="welcome-subtitle">AI & cloud video tutorials, tools & blogs for IT pros — made with ❤️ by Susanth Sutheesh</p>
     </div>
+    {{/* Dynamic stat counts */}}
+    {{ $toolCount := int (site.Params.tool_count | default 14) }}
+    {{ $videoCount := 0 }}
+    {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
+      {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
+    {{ end }}
+    {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
+    {{ $certPages := where .Site.RegularPages "Section" "cert-tracker" }}
+    {{ $certCount := len $certPages }}
+    {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
     <div class="welcome-stat-boxes">
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">12</span>
+        <span class="welcome-stat-num">{{ $toolCount }}</span>
         <span class="welcome-stat-label">Tools</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">76</span>
+        <span class="welcome-stat-num">{{ $videoCount }}</span>
         <span class="welcome-stat-label">Videos</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ len (where .Site.RegularPages "Section" "prompts") }}</span>
+        <span class="welcome-stat-num">{{ $promptCount }}</span>
         <span class="welcome-stat-label">Prompts</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">52</span>
+        <span class="welcome-stat-num">{{ $certCount }}</span>
         <span class="welcome-stat-label">Cert Guides</span>
       </div>
       <div class="welcome-stat-box">
-        <span class="welcome-stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
+        <span class="welcome-stat-num">{{ $blogCount }}</span>
         <span class="welcome-stat-label">Articles</span>
       </div>
     </div>
