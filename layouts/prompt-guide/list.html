@@ -18,21 +18,24 @@
 
 <div class="pguide-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Prompt Engineering Guide" "subtitle" "Learn 8 essential techniques with hands-on practice, before/after examples, and a step-by-step Prompt Builder. Free, instant, no sign-up." "accent" "#84CC16") }}
+  <div class="tool-hero" style="--hero-accent: #84CC16">
+    <div class="tool-hero-inner">
+      <h1 class="tool-hero-title">Prompt Engineering Guide</h1>
+      <p class="tool-hero-subtitle">Master 8 techniques to write better AI prompts — with hands-on practice.</p>
+      <div class="pguide-hero-steps">
+        <span class="pguide-hero-step"><b>1.</b> Learn</span>
+        <span class="pguide-hero-sep">→</span>
+        <span class="pguide-hero-step"><b>2.</b> Practice</span>
+        <span class="pguide-hero-sep">→</span>
+        <span class="pguide-hero-step"><b>3.</b> Build</span>
+      </div>
+      <p class="pguide-hero-meta">⏱️ ~30 min · 100% private · no sign-up</p>
+    </div>
+  </div>
 
   <div class="pguide-container">
 
-    {{/* ══ INTRO — How It Works (fix #3, #11) ══ */}}
-    <div class="pguide-intro">
-      <div class="pguide-intro-steps">
-        <div class="pguide-intro-step"><span class="pguide-intro-num">1</span><strong>Learn</strong><p>8 techniques with analogies & examples</p></div>
-        <div class="pguide-intro-step"><span class="pguide-intro-num">2</span><strong>Practice</strong><p>Interactive sandbox with instant feedback</p></div>
-        <div class="pguide-intro-step"><span class="pguide-intro-num">3</span><strong>Build</strong><p>Step-by-step Prompt Builder wizard</p></div>
-      </div>
-      <p class="pguide-intro-time">⏱️ Complete all 8 techniques in ~30 minutes · 100% private · nothing leaves your browser</p>
-    </div>
-
-    {{/* ══ Quick Win Demo (fix #13) ══ */}}
+    {{/* ══ Quick Win Demo ══ */}}
     <div class="pguide-quickwin">
       <h2>⚡ See the Difference One Technique Makes</h2>
       <div class="pguide-ba-cards">
