@@ -5,7 +5,12 @@
       {{ $toolCount := 12 }}
       {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
       {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
-      {{ $videoCount := len (where .Site.RegularPages "Section" "!=" "blog" | where "Section" "!=" "prompts" | where "Section" "!=" "free-tools" | where "Section" "!=" "cert-tracker" | where "Section" "!=" "licensing") }}
+      {{ $nonBlog := where .Site.RegularPages "Section" "!=" "blog" }}
+      {{ $videos := where $nonBlog "Section" "!=" "prompts" }}
+      {{ $videos = where $videos "Section" "!=" "free-tools" }}
+      {{ $videos = where $videos "Section" "!=" "cert-tracker" }}
+      {{ $videos = where $videos "Section" "!=" "licensing" }}
+      {{ $videoCount := len $videos }}
       <div class="welcome-stat-boxes">
         <div class="welcome-stat-box">
           <span class="welcome-stat-num">{{ $toolCount }}</span>
