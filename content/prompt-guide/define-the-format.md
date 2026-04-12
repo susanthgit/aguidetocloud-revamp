@@ -1,5 +1,6 @@
 ---
 title: "📐 Define the Format — Control How AI Responds"
+lastmod: "2026-04-12"
 description: "Learn how to specify output formats in your AI prompts. Master tables, bullet points, JSON, email formats and more with interactive examples."
 type: "prompt-guide"
 weight: 4
@@ -24,6 +25,19 @@ faq:
     answer: "The most useful formats are: bullet points (quick info), tables (comparisons), numbered lists (steps/processes), email format (communications), and JSON/code (developers). Match the format to how you'll USE the output."
   - question: "Can I combine multiple formats in one prompt?"
     answer: "Absolutely! Try: 'Give me a table comparing the tools, then a bullet list of recommendations.' AI handles multi-format outputs well."
+sandbox_answer: "Compare the top 5 project management tools for small IT teams (under 20 people) in a table with these columns: Tool Name, Monthly Cost per User, Best Feature, Biggest Limitation, and Best For. Then add 3 bullet points recommending which tool to use based on team size."
+fix_prompt: "Tell me about the pros and cons of Teams vs Slack"
+fix_issues:
+  - label: "Specifies output format"
+    pattern: "\\b(table|comparison|side.by.side|bullet points|columns|rows)\\b"
+  - label: "Defines comparison criteria"
+    pattern: "\\b(price|features|integrations|security|ease of use|support|compliance|limit)\\b"
+  - label: "Includes a recommendation ask"
+    pattern: "\\b(recommend|suggest|which|best for|verdict|conclusion|pick)\\b"
+best_for:
+  - "Comparisons & tables"
+  - "Structured reports"
+  - "Pasting into other tools"
 ---
 
 ## What Is It?

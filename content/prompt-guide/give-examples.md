@@ -1,5 +1,6 @@
 ---
 title: "💡 Give Examples — Teach AI by Showing Patterns"
+lastmod: "2026-04-12"
 description: "Learn few-shot prompting — the technique of teaching AI what you want by providing examples. Interactive practice with before/after comparisons."
 type: "prompt-guide"
 weight: 5
@@ -24,6 +25,19 @@ faq:
     answer: "2-3 examples is the sweet spot for most tasks. One example shows the pattern, two confirms it, three covers edge cases. More than 5 rarely helps and wastes tokens."
   - question: "What's the difference between zero-shot and few-shot prompting?"
     answer: "Zero-shot = no examples (just instructions). Few-shot = includes examples. Use zero-shot for simple tasks and few-shot when AI needs to learn a specific pattern or format."
+sandbox_answer: "Categorize each support ticket into: Billing, Technical, Access, or Feature Request.\n\nExamples:\n- \"I can't log in\" → Access\n- \"Charged twice\" → Billing\n- \"Dashboard crashes\" → Technical\n\nNow categorize:\n1. \"Can you add dark mode?\"\n2. \"Password reset email never arrived\"\n3. \"CSV export is empty\""
+fix_prompt: "Sort these customer emails into categories"
+fix_issues:
+  - label: "Defines the categories"
+    pattern: "\\b(billing|technical|support|complaint|feature|feedback|urgent|general|access|request)\\b"
+  - label: "Provides at least one example"
+    pattern: "(?:example|for instance|e\\.g\\.|like this|→|->|:)"
+  - label: "Lists the items to categorize"
+    pattern: "(?:\\d+\\.|\\-|\\*|first|second|here are)"
+best_for:
+  - "Classification tasks"
+  - "Consistent formatting"
+  - "Teaching AI patterns"
 ---
 
 ## What Is It?

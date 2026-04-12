@@ -1,5 +1,6 @@
 ---
 title: "🧠 Think Step by Step — Guide AI Reasoning"
+lastmod: "2026-04-12"
 description: "Learn chain-of-thought prompting — make AI show its reasoning for better accuracy. Practice with complex problem-solving scenarios."
 type: "prompt-guide"
 weight: 6
@@ -24,6 +25,19 @@ faq:
     answer: "Use it for complex decisions, multi-step analysis, troubleshooting, math problems, or any task where reasoning matters more than just the final answer. It dramatically reduces errors on complex tasks."
   - question: "Does 'think step by step' actually work?"
     answer: "Yes! Research shows that adding 'think step by step' or 'explain your reasoning' significantly improves accuracy on complex tasks. It forces the AI to reason through each part rather than jumping to conclusions."
+sandbox_answer: "We're considering migrating our on-premises Exchange Server 2019 and file shares (4TB) to Microsoft 365 for 250 users. Walk me through this decision step by step:\n\n1. First, evaluate our current on-prem costs vs M365 E3 licensing\n2. Then, identify the top 5 migration risks for our size\n3. Next, assess our team's readiness (we have 2 IT staff)\n4. Consider our 5-year-old servers and $50K annual IT budget\n5. Finally, give a recommendation with confidence level and suggested timeline"
+fix_prompt: "What's the best cloud platform?"
+fix_issues:
+  - label: "Asks for reasoning process"
+    pattern: "\\b(step.by.step|walk me through|think through|break down|reason|explain your|analyse each)\\b"
+  - label: "Provides specific criteria to evaluate"
+    pattern: "\\b(cost|security|compliance|scalability|performance|team size|industry|integration|support)\\b"
+  - label: "Asks for a conclusion"
+    pattern: "\\b(recommend|conclusion|summary|verdict|which one|best for|final)\\b"
+best_for:
+  - "Complex decisions"
+  - "Troubleshooting"
+  - "Analysis & evaluation"
 ---
 
 ## What Is It?

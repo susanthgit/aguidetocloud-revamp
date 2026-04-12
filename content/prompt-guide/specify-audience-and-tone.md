@@ -1,5 +1,6 @@
 ---
 title: "🗣️ Specify Audience & Tone — Control the Voice"
+lastmod: "2026-04-12"
 description: "Learn how to control AI's writing style by specifying audience and tone. Practice creating audience-aware prompts for different workplace scenarios."
 type: "prompt-guide"
 weight: 8
@@ -24,6 +25,19 @@ faq:
     answer: "The same information needs to be communicated very differently to a CEO (high-level, business impact) versus a technical team (details, root cause, fix). Without audience specification, AI defaults to a generic middle ground that serves no one well."
   - question: "What are the most useful tones for workplace communication?"
     answer: "Professional but friendly (most emails), diplomatic (escalations/bad news), reassuring (incident comms to customers), confident (proposals), and concise (executive updates). Match the tone to the situation."
+sandbox_answer: "Write two versions of the server outage communication:\n\nVersion 1 — For customers (reassuring, non-technical):\nBriefly explain services were disrupted, the issue is resolved, no data was affected. Under 100 words. Tone: calm, empathetic, professional.\n\nVersion 2 — For the IT team (technical, action-focused):\nDetail the root cause (DNS failover timeout), the fix applied, and 3 follow-up preventive actions. Include timeline. Tone: direct, solution-oriented."
+fix_prompt: "Explain the security incident to everyone"
+fix_issues:
+  - label: "Specifies the audience"
+    pattern: "\\b(for (?:the |my )?(?:board|executives|customers|clients|team|managers|non.technical|leadership|staff)|audience)\\b"
+  - label: "Sets the tone"
+    pattern: "\\b(professional|reassuring|calm|diplomatic|urgent|confident|empathetic|friendly|formal)\\b"
+  - label: "Defines what to include/exclude"
+    pattern: "\\b(include|exclude|focus on|don.?t mention|avoid|impact|resolution|action|timeline|next steps)\\b"
+best_for:
+  - "Stakeholder comms"
+  - "Incident responses"
+  - "Multi-audience content"
 ---
 
 ## What Is It?

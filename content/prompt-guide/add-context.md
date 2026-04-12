@@ -1,5 +1,6 @@
 ---
 title: "📋 Add Context — Give AI the Background It Needs"
+lastmod: "2026-04-12"
 description: "Learn why context is the secret ingredient for great AI prompts. Practice adding relevant background information with workplace-focused examples."
 type: "prompt-guide"
 weight: 3
@@ -24,6 +25,19 @@ faq:
     answer: "Include enough that a knowledgeable colleague could complete the task without asking follow-up questions. Key details: who's involved, what's the situation, what's the goal, and any constraints."
   - question: "Can I give too much context?"
     answer: "It's possible but rare. AI handles long context well. The bigger risk is too LITTLE context. When in doubt, include more rather than less — especially for complex tasks."
+sandbox_answer: "Write a weekly status update for my manager about the Microsoft 365 E5 migration project. We're in week 3 of 8. This week we completed Exchange Online mailbox migrations for 200 of 500 users. We hit a delay with shared mailboxes due to permission issues that added 2 days. Next week we're tackling SharePoint site migrations. Format as bullet points."
+fix_prompt: "Summarise the meeting"
+fix_issues:
+  - label: "Specifies which meeting"
+    pattern: "\\b(Monday|Tuesday|Wednesday|Thursday|Friday|today|yesterday|weekly|Q[1-4]|project|standup|board|budget)\\b"
+  - label: "Defines what to include"
+    pattern: "\\b(decisions|action items|key points|takeaways|owners|deadlines|next steps)\\b"
+  - label: "Mentions the audience"
+    pattern: "\\b(for (?:my |the )?(?:team|manager|stakeholders|attendees|board)|who missed)\\b"
+best_for:
+  - "Situation-specific tasks"
+  - "Company internal work"
+  - "Avoiding generic responses"
 ---
 
 ## What Is It?

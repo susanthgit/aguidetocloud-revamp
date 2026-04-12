@@ -1,5 +1,6 @@
 ---
 title: "🎭 Set a Role — Give AI the Right Expertise"
+lastmod: "2026-04-12"
 description: "Learn how role prompting transforms AI responses by assigning expertise. Practice setting roles with before/after examples for M365 Copilot, ChatGPT, Claude, and Gemini."
 type: "prompt-guide"
 weight: 2
@@ -24,6 +25,19 @@ faq:
     answer: "When you set a role, the AI draws on knowledge patterns associated with that expertise. 'You are a senior IT administrator' activates different language, depth, and perspective than a generic response."
   - question: "Can I combine multiple roles?"
     answer: "Yes! Try 'You are a senior IT administrator with 10 years of experience in Microsoft 365 migrations who explains things in simple terms.' The more specific the role, the better."
+sandbox_answer: "You are a senior presentation designer who specialises in executive communications for Fortune 500 companies. Help me restructure my Q2 cloud migration slide deck to make it more compelling for our CTO. Focus on visual storytelling and data-driven insights."
+fix_prompt: "You are an expert. Write me a report about our project."
+fix_issues:
+  - label: "Makes the role specific (not just 'expert')"
+    pattern: "\\b(senior|experienced|specialist|10.year|project manager|analyst|consultant)\\b"
+  - label: "Specifies the type of report"
+    pattern: "\\b(status|progress|executive|quarterly|risk|budget|analysis)\\b"
+  - label: "Names the project or domain"
+    pattern: "\\b(migration|cloud|M365|rollout|implementation|upgrade|deployment)\\b"
+best_for:
+  - "Expert-level responses"
+  - "Changing AI perspective"
+  - "Writing in specific styles"
 ---
 
 ## What Is It?

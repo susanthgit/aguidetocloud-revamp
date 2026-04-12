@@ -1,5 +1,6 @@
 ---
 title: "🎯 Give Clear Instructions — Stop Being Vague with AI"
+lastmod: "2026-04-12"
 description: "Learn why vague prompts get vague answers. Master the art of writing specific, actionable AI instructions with before/after examples and hands-on practice."
 type: "prompt-guide"
 weight: 1
@@ -24,6 +25,19 @@ faq:
     answer: "A clear prompt has a specific action verb (write, create, explain), a detailed subject, and enough context that the AI doesn't have to guess what you want."
   - question: "How long should a good prompt be?"
     answer: "There's no magic number, but effective prompts are typically 2-5 sentences. The goal isn't length — it's specificity. A 20-word specific prompt beats a 100-word vague one."
+sandbox_answer: "Draft a professional follow-up email to a client who hasn't responded to our cloud migration proposal in 2 weeks. Keep it polite but firm, include a soft deadline of next Friday, and limit to 150 words."
+fix_prompt: "Make something good for the meeting tomorrow"
+fix_issues:
+  - label: "Vague action — what kind of 'something'?"
+    pattern: "\\b(create|write|draft|prepare|build|design)\\b"
+  - label: "Specifies the meeting topic"
+    pattern: "\\b(agenda|presentation|summary|brief|notes|report)\\b"
+  - label: "Includes detail about the meeting"
+    pattern: "\\b(Q[1-4]|budget|project|team|review|status|quarterly|client)\\b"
+best_for:
+  - "Every AI interaction"
+  - "Email drafting"
+  - "Getting specific outputs"
 ---
 
 ## What Is It?

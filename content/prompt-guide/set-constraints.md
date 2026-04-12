@@ -1,5 +1,6 @@
 ---
 title: "🚧 Set Constraints — Define the Boundaries"
+lastmod: "2026-04-12"
 description: "Learn constraint prompting — how to set limits, boundaries, and rules that keep AI responses focused and useful. Hands-on practice included."
 type: "prompt-guide"
 weight: 7
@@ -24,6 +25,19 @@ faq:
     answer: "Common constraints include: length (max 200 words), scope (focus only on security), audience (written for non-technical managers), format (no bullet points), content rules (don't use jargon), and tone (professional but friendly)."
   - question: "Can constraints make responses worse?"
     answer: "Overly restrictive constraints can. If you say 'explain quantum computing in 10 words,' quality suffers. Set constraints that help focus without crippling the response."
+sandbox_answer: "Write 3 key benefits of migrating to Microsoft 365 for small businesses with under 50 employees. Maximum 150 words. Use plain English — no technical jargon or acronyms. Don't mention competitors. Focus on: cost predictability, remote work enablement, and built-in security."
+fix_prompt: "Write about cloud computing benefits"
+fix_issues:
+  - label: "Adds a length constraint"
+    pattern: "\\b(maximum|max|under \\d|\\d+ words|\\d+ sentences|\\d+ bullet|brief|concise)\\b"
+  - label: "Narrows the topic scope"
+    pattern: "\\b(focus on|specifically|only|for (?:small|medium|large|enterprise|startup)|in the context of)\\b"
+  - label: "Sets a content rule"
+    pattern: "\\b(don.?t|avoid|no jargon|plain English|without|exclude|skip)\\b"
+best_for:
+  - "Controlling length"
+  - "Keeping focus"
+  - "Audience-appropriate"
 ---
 
 ## What Is It?

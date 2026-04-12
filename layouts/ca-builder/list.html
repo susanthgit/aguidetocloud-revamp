@@ -47,6 +47,18 @@
     {{/* ═══ TEMPLATES TAB ═══ */}}
     <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates">
 
+      {{/* #5: Quick-start onboarding */}}
+      <div class="cab-quickstart" id="cab-quickstart">
+        <div class="cab-quickstart-content">
+          <h2>🚀 Quick Start — Get a Zero Trust Baseline in 1 Click</h2>
+          <p>Microsoft recommends <strong>6 Starting Point policies</strong> as the minimum for every organisation. Add them all instantly, then review and export.</p>
+          <div class="cab-quickstart-actions">
+            <button class="cab-btn cab-btn--primary" onclick="window.__cab.quickStartBaseline()">🟢 Add All Starting Point Policies</button>
+            <span class="cab-quickstart-or">or browse individual templates below ↓</span>
+          </div>
+        </div>
+      </div>
+
       <div class="cab-panel-header">
         <p class="cab-panel-desc">Browse <strong>20 pre-built policy templates</strong> based on Microsoft's Zero Trust framework. Add to your set or customise before adding.</p>
         <div class="cab-filter-row">
@@ -61,9 +73,7 @@
         </div>
       </div>
 
-      <div class="cab-tpl-grid" id="cab-tpl-grid">
-        {{/* JS renders template cards */}}
-      </div>
+      <div class="cab-tpl-grid" id="cab-tpl-grid"></div>
     </div>
 
     {{/* ═══ BUILD TAB ═══ */}}
@@ -75,7 +85,8 @@
 
       <div class="cab-build-layout">
         <div class="cab-wizard" id="cab-wizard">
-          {{/* Wizard steps rendered by JS */}}
+          {{/* #20: Clickable step indicators */}}
+          <div class="cab-wizard-steps" id="cab-wizard-steps"></div>
           <div class="cab-wizard-progress">
             <div class="cab-wizard-bar"><div class="cab-wizard-fill" id="cab-wizard-fill"></div></div>
             <span class="cab-wizard-step-label" id="cab-wizard-step-label">Step 1 of 7</span>
@@ -87,12 +98,20 @@
           </div>
         </div>
 
-        <div class="cab-build-preview">
+        <div class="cab-build-preview cab-build-preview--desktop">
           <h3>📋 Live Preview</h3>
           <div class="cab-policy-card cab-policy-card--preview" id="cab-build-preview-card">
             <p class="cab-preview-empty">Start filling in the wizard to see your policy preview here.</p>
           </div>
         </div>
+      </div>
+      {{/* #17: Mobile preview shown inline below wizard */}}
+      <div class="cab-build-preview cab-build-preview--mobile">
+        <h3>📋 Live Preview</h3>
+        <div class="cab-policy-card cab-policy-card--preview" id="cab-build-preview-card-mobile">
+          <p class="cab-preview-empty">Preview appears as you build.</p>
+        </div>
+      </div>
       </div>
     </div>
 
@@ -146,6 +165,14 @@
           <h3>Your Policies <span class="cab-badge" id="cab-review-count">0</span></h3>
           <div class="cab-review-grid" id="cab-review-grid"></div>
         </div>
+
+        {{/* #15: Compliance Mapping */}}
+        <div id="cab-compliance-section" class="cab-compliance-section"></div>
+
+        {{/* #19: Share button */}}
+        <div class="cab-share-section">
+          <button class="cab-btn cab-btn--secondary" onclick="navigator.clipboard.writeText(window.__cab.getShareURL()).then(() => { const t = document.querySelector('.cab-toast'); if(t){t.textContent='📋 Share link copied!';t.classList.add('cab-toast--show');setTimeout(()=>t.classList.remove('cab-toast--show'),2500)} })">🔗 Copy Shareable Link</button>
+        </div>
       </div>
     </div>
 
@@ -160,6 +187,7 @@
         <div class="cab-review-empty-icon">📤</div>
         <h3>Nothing to export</h3>
         <p>Add policies first, then come back to export.</p>
+        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">📋 Browse Templates</button>
       </div>
 
       <div class="cab-export-dashboard" id="cab-export-dashboard" style="display:none">
