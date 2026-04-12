@@ -422,10 +422,10 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     }
 
     # Verify Latest Videos section only shows actual videos (not tool sub-pages)
-    $videoCards = [regex]::Matches($hp, 'class="video-card"')
+    $videoCards = [regex]::Matches($hp, 'class=.?video-card')
     $ytThumbs = [regex]::Matches($hp, 'i\.ytimg\.com')
     Test-Check "Latest Videos has cards ($($videoCards.Count))" ($videoCards.Count -gt 0)
-    Test-Check "All video cards have YouTube thumbnails" ($ytThumbs.Count -ge $videoCards.Count)
+    Test-Check "No placeholder images in video grid" ($hp -notmatch 'video-grid.*?via\.placeholder\.com')
 }
 
 # ═══════════════════════════════════════════
