@@ -788,35 +788,85 @@ This guide covers **Copilot Chat** — the free tier. Our companion blog post co
 
 ## Frequently Asked Questions
 
-**What is Microsoft 365 Copilot Chat?**
+<div class="trainer-script">
+
+**1. What is Microsoft 365 Copilot Chat?**
+
 Microsoft 365 Copilot Chat is a free, secure AI chat experience included with every Microsoft 365 subscription. It's grounded in web data, protected by Enterprise Data Protection (EDP), and gives users access to features like file upload, Copilot Pages, image generation, agents, and more — all at no extra cost.
 
-**Is Copilot Chat really free?**
+</div>
+
+<div class="trainer-script">
+
+**2. Is Copilot Chat really free?**
+
 Yes. It's included at no additional cost with any Microsoft 365 or Office 365 subscription. Users get standard access to AI chat, file upload, image generation, Pages, and agents. Some agents run on a metered pay-as-you-go basis.
 
-**What is the difference between Copilot Chat and Microsoft 365 Copilot?**
+</div>
+
+<div class="trainer-script">
+
+**3. What is the difference between Copilot Chat and Microsoft 365 Copilot?**
+
 Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence ($30/user/month for enterprise) — it adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, and priority access.
 
-**Does Copilot Chat use my data to train AI models?**
+</div>
+
+<div class="trainer-script">
+
+**4. Does Copilot Chat use my data to train AI models?**
+
 No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data stays within the Microsoft 365 trust boundary.
 
-**What is changing for Copilot Chat on April 15, 2026?**
+</div>
+
+<div class="trainer-script">
+
+**5. What is changing for Copilot Chat on April 15, 2026?**
+
 For organisations with more than 2,000 paid M365 seats, Copilot Chat will be removed from Word, Excel, PowerPoint, and OneNote for unlicensed users. The web chat, Outlook, Teams, and WXP agents remain. For smaller orgs, it stays but under standard access with possible throttling.
 
-**Can Copilot Chat users access agents?**
+</div>
+
+<div class="trainer-script">
+
+**6. Can Copilot Chat users access agents?**
+
 Yes. Free users can use pre-built agents like Prompt Coach and Writing Coach. They can also access pay-as-you-go agents. Creating agents with document or SharePoint grounding requires a billing plan enabled by the organisation.
 
-**What are custom instructions?**
+</div>
+
+<div class="trainer-script">
+
+**7. What are custom instructions?**
+
 Custom instructions let you tell Copilot how you prefer responses — your role, preferred tone, formatting style, and context. They persist across all chats so Copilot tailors every response automatically.
 
-**What model does Copilot Chat use?**
+</div>
+
+<div class="trainer-script">
+
+**8. What model does Copilot Chat use?**
+
 Copilot Chat uses a dynamic model router in Auto mode — GPT-5 for quick questions, deeper reasoning models for complex queries. Users can manually select Quick Response or Think Deeper mode.
 
-**What are Copilot Pages?**
+</div>
+
+<div class="trainer-script">
+
+**9. What are Copilot Pages?**
+
 Pages is a collaborative canvas where you turn any Copilot response into a shareable, editable page. You can collaborate with colleagues in real time and export pages as Word documents or PDFs.
 
-**What features require admin enablement?**
+</div>
+
+<div class="trainer-script">
+
+**10. What features require admin enablement?**
+
 Memory (Enhanced Personalisation toggle), agents (admin controls visibility and creation), Anthropic/Claude (subprocessor toggle), and Copilot Chat pinning in apps. Check with your IT team if features aren't visible.
+
+</div>
 
 ---
 

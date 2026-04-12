@@ -871,35 +871,85 @@ It covers everything about the free Copilot Chat experience — security, EDP, c
 
 ## Frequently Asked Questions
 
-**What is the Microsoft 365 Copilot licence?**
+<div class="trainer-script">
+
+**1. What is the Microsoft 365 Copilot licence?**
+
 It's a paid add-on ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all M365 apps — work data grounding, deep in-app integration, Researcher & Analyst agents, Notebooks, Anthropic model choice, and priority access.
 
-**What does work data grounding mean?**
+</div>
+
+<div class="trainer-script">
+
+**2. What does work data grounding mean?**
+
 Copilot can read and reason over your organisation's data through Microsoft Graph — emails, files, meetings, chats, calendar, and contacts. This means Copilot understands your work context, not just the web.
 
-**Can Copilot access files I don't have permission to see?**
+</div>
+
+<div class="trainer-script">
+
+**3. Can Copilot access files I don't have permission to see?**
+
 No. Copilot strictly respects all existing access controls, sensitivity labels, and compliance policies. If you can't see a document in SharePoint, Copilot can't either.
 
-**Does Copilot use my data to train AI models?**
+</div>
+
+<div class="trainer-script">
+
+**4. Does Copilot use my data to train AI models?**
+
 No. Under Enterprise Data Protection, prompts and responses are never used to train foundation models. This applies to both OpenAI GPT and Anthropic Claude models.
 
-**What about Anthropic Claude — is my data safe?**
+</div>
+
+<div class="trainer-script">
+
+**5. What about Anthropic Claude — is my data safe?**
+
 Anthropic acts as a Microsoft subprocessor. Your data isn't used for Anthropic's training. The Microsoft DPA applies. Note: Claude processing may occur outside the EU Data Boundary. Admins in EU/EFTA/UK must explicitly opt in.
 
-**Which apps support Anthropic Claude model choice?**
+</div>
+
+<div class="trainer-script">
+
+**6. Which apps support Anthropic Claude model choice?**
+
 Claude is available in Copilot Chat (Researcher), Word, Excel (Agent Mode), PowerPoint, and Copilot Studio. Users see a model selector to switch between GPT and Claude. Availability varies by region and admin settings.
 
-**What are the Researcher and Analyst agents?**
+</div>
+
+<div class="trainer-script">
+
+**7. What are the Researcher and Analyst agents?**
+
 Researcher performs deep, multi-step web research with citations — ideal for market analysis and due diligence. Analyst uses Python for data analysis, visualisation, and statistical modelling. Both are exclusive to licensed users.
 
-**What are Copilot Notebooks?**
+</div>
+
+<div class="trainer-script">
+
+**8. What are Copilot Notebooks?**
+
 A secure AI workspace for deep thinking. Unlike chat (transactional), Notebooks maintain context across sessions, support file and communication references, generate audio summaries, and enable collaboration. Licensed users only.
 
-**What features require admin enablement?**
+</div>
+
+<div class="trainer-script">
+
+**9. What features require admin enablement?**
+
 Teams meeting transcription (for recaps), Anthropic subprocessor toggle, agent creation policies, Enhanced Personalisation (for memory), and Copilot pinning in apps. Check with your IT team if features aren't visible.
 
-**How much does the Copilot licence cost?**
+</div>
+
+<div class="trainer-script">
+
+**10. How much does the Copilot licence cost?**
+
 $30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business (under 300 users). Both require annual commitment. Education pricing is discounted.
+
+</div>
 
 ---
 
