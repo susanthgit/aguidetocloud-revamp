@@ -1,0 +1,192 @@
+# AI SaaS Showdown — Strengths, Weaknesses & Capability Scores
+# Scores are 1-5 for radar chart: writing, coding, research, creative, enterprise, value
+
+[openai]
+strengths = [
+  "Most versatile all-rounder — good at everything",
+  "Largest plugin and tool ecosystem (custom GPTs, DALL-E, voice)",
+  "Strongest brand recognition and community",
+  "Excellent multimodal capabilities (text, image, voice, video)",
+  "Persistent memory across conversations"
+]
+weaknesses = [
+  "Pro plan is very expensive ($200/mo)",
+  "Can be verbose and overly cautious in responses",
+  "Enterprise pricing is opaque (custom quotes)",
+  "Rate limits can be frustrating on Plus plan",
+  "Privacy concerns — data used for training unless opted out"
+]
+best_for = ["General-purpose AI assistant", "Creative work and image generation", "Teams wanting an all-in-one AI tool"]
+watch_out = ["Data training opt-out requires manual action", "Plus plan rate limits tighten during peak hours", "Pro plan is $200/mo — evaluate if you need it"]
+scores = { writing = 4, coding = 5, research = 4, creative = 5, enterprise = 4, value = 3 }
+
+[anthropic]
+strengths = [
+  "Best-in-class writing quality — nuanced, thoughtful, accurate",
+  "Industry-leading document analysis (200K–1M context)",
+  "Strongest at following complex, multi-step instructions",
+  "Excellent for coding (Claude Code is top-rated)",
+  "Constitutional AI approach — safety-focused design"
+]
+weaknesses = [
+  "No image generation capabilities",
+  "No voice mode or audio features",
+  "Smaller plugin/tool ecosystem than ChatGPT",
+  "Can be overly cautious (refuses some legitimate requests)",
+  "Max plan pricing is steep ($100-200/mo)"
+]
+best_for = ["Long-form writing and editing", "Document analysis and legal review", "Complex coding projects"]
+watch_out = ["No image gen — you'll need another tool for visuals", "Refusal rates can be higher than competitors", "Enterprise pricing requires sales contact"]
+scores = { writing = 5, coding = 5, research = 5, creative = 3, enterprise = 4, value = 4 }
+
+[google]
+strengths = [
+  "Deepest Google Workspace integration (Gmail, Docs, Drive, Sheets)",
+  "Largest context window in the market (1M–2M tokens)",
+  "Most affordable API pricing for developers",
+  "NotebookLM Plus included with Advanced plan",
+  "YouTube Premium included with AI Premium subscription"
+]
+weaknesses = [
+  "Quality inconsistent compared to ChatGPT and Claude",
+  "Ultra plan is the most expensive at $249/mo",
+  "Less effective outside the Google ecosystem",
+  "Image generation quality trails DALL-E",
+  "Gemini in Workspace is limited without Enterprise plan"
+]
+best_for = ["Google Workspace power users", "Long document processing", "Cost-effective API usage"]
+watch_out = ["Google One AI Premium bundles YouTube Premium — value depends on whether you use it", "Business plan is limited — Enterprise needed for full AI in Workspace", "Context window size ≠ output quality"]
+scores = { writing = 3, coding = 4, research = 4, creative = 3, enterprise = 4, value = 5 }
+
+[xai]
+strengths = [
+  "Real-time access to X/Twitter data and trends",
+  "Largest context window (2M tokens on Grok 4.1)",
+  "Competitive API pricing with batch discounts",
+  "Strong at real-time research and current events",
+  "Less restrictive content policies than competitors"
+]
+weaknesses = [
+  "Smallest developer ecosystem — fewer integrations",
+  "Tightly tied to X/Twitter — limited without it",
+  "Enterprise features are immature compared to others",
+  "No free tier for full Grok capabilities",
+  "Brand perception tied to Elon Musk — polarising for some orgs"
+]
+best_for = ["Real-time news and social media analysis", "X/Twitter power users", "Research requiring latest information"]
+watch_out = ["SuperGrok at $30/mo is pricier than ChatGPT Plus or Claude Pro", "Enterprise SLAs are newer and less proven", "Limited integrations outside the X ecosystem"]
+scores = { writing = 3, coding = 3, research = 5, creative = 2, enterprise = 2, value = 3 }
+
+[mistral]
+strengths = [
+  "Strongest privacy stance — EU data residency, GDPR-native",
+  "Cheapest pro plan ($14.99/mo) among major providers",
+  "Open-weight models available for self-hosting (zero API cost)",
+  "No Telemetry Mode — data never used for training",
+  "European company — ideal for EU regulatory requirements"
+]
+weaknesses = [
+  "Smaller model capabilities compared to GPT-5 or Opus",
+  "No voice, limited image generation",
+  "Smaller community and ecosystem",
+  "Enterprise contracts start at ~$20K/mo for private deployment",
+  "Le Chat interface less polished than ChatGPT or Claude"
+]
+best_for = ["EU organisations with GDPR requirements", "Privacy-first use cases", "Budget-conscious professionals"]
+watch_out = ["Self-hosting requires GPU infrastructure expertise", "Enterprise on-prem starts at ~$20K/mo", "Model quality gap vs frontier models for complex reasoning"]
+scores = { writing = 3, coding = 3, research = 3, creative = 2, enterprise = 3, value = 5 }
+
+[deepseek]
+strengths = [
+  "Dramatically cheaper API pricing (80-90% less than competitors)",
+  "Generous free tier (1M tokens/month)",
+  "Open-weight models for self-hosting",
+  "Strong reasoning capabilities (R1 model)",
+  "Multimodal support in V4 at fraction of the cost"
+]
+weaknesses = [
+  "API hosted in China — major data residency concern",
+  "No polished consumer chatbot (chat.deepseek.com is basic)",
+  "Enterprise SLAs weaker than US-based providers",
+  "Fewer integrations and ecosystem tools",
+  "Censorship concerns for certain topics"
+]
+best_for = ["Cost-sensitive API-heavy workloads", "Developers needing cheap inference", "Self-hosted deployments"]
+watch_out = ["China-hosted API — check your org's data sovereignty policies", "Censorship on politically sensitive topics", "SLA and support maturity behind US providers"]
+scores = { writing = 3, coding = 4, research = 3, creative = 2, enterprise = 1, value = 5 }
+
+[perplexity]
+strengths = [
+  "Best for sourced, cited answers — every response has references",
+  "Uses multiple models (GPT, Claude, Gemini) under the hood",
+  "Excellent for research, fact-checking, and due diligence",
+  "Clean, focused interface designed for search",
+  "API available for building search-powered apps"
+]
+weaknesses = [
+  "Not a general-purpose AI assistant — focused on search",
+  "No image generation, voice, or creative capabilities",
+  "Limited conversation memory and context",
+  "Enterprise plan features are basic compared to ChatGPT/Claude",
+  "Can't compete for coding or long-form writing tasks"
+]
+best_for = ["Research with cited sources", "Fact-checking and due diligence", "Journalists and analysts"]
+watch_out = ["Not a replacement for ChatGPT/Claude for general tasks", "Citations don't guarantee accuracy — still verify", "Enterprise features are limited"]
+scores = { writing = 2, coding = 1, research = 5, creative = 1, enterprise = 2, value = 4 }
+
+[microsoft]
+strengths = [
+  "Only AI deeply integrated into M365 (Word, Excel, PPT, Teams, Outlook)",
+  "Access to YOUR work data — emails, files, meetings via Microsoft Graph",
+  "Enterprise-grade security, compliance, and admin controls",
+  "Works where you already work — no context switching",
+  "Copilot Studio for building custom agents (no-code)"
+]
+weaknesses = [
+  "Requires M365 license as a prerequisite ($30/user/mo is add-on cost)",
+  "Free Copilot is limited compared to ChatGPT Free",
+  "Standalone AI quality trails ChatGPT and Claude",
+  "No API access — only works within Microsoft ecosystem",
+  "Copilot Pro removed from Word/Excel/PPT for non-M365 users (April 2026)"
+]
+best_for = ["M365 organisations wanting AI in every app", "Enterprise IT with existing Microsoft stack", "Teams using Outlook, Teams, SharePoint daily"]
+watch_out = ["M365 Copilot requires E3/E5/Business Premium license + $30/user add-on", "Copilot Pro no longer works in Office apps without M365 subscription", "ROI depends on user adoption — budget for change management"]
+scores = { writing = 3, coding = 2, research = 3, creative = 3, enterprise = 5, value = 3 }
+
+[meta]
+strengths = [
+  "Completely free and open source — download and modify freely",
+  "Full data control — runs on your own infrastructure",
+  "No vendor lock-in — works anywhere",
+  "Llama 4 competitive with frontier commercial models",
+  "Massive community and fine-tuning ecosystem"
+]
+weaknesses = [
+  "No consumer SaaS product — must self-host or use third-party",
+  "Requires significant technical expertise to deploy",
+  "No official support, SLA, or enterprise contract",
+  "No built-in safety guardrails (you build your own)",
+  "Compute costs for self-hosting can be substantial"
+]
+best_for = ["Organisations wanting full AI sovereignty", "Developers building custom AI products", "Research and academic use"]
+watch_out = ["Self-hosting costs (GPU compute) can exceed API pricing for small-scale use", "You're responsible for safety, moderation, and compliance", "No official enterprise support — community only"]
+scores = { writing = 3, coding = 3, research = 3, creative = 2, enterprise = 2, value = 5 }
+
+[cohere]
+strengths = [
+  "Best-in-class embeddings and reranking for search/RAG",
+  "Private deployment options for sensitive data",
+  "Focused product — excellent at text understanding tasks",
+  "Strong enterprise security and compliance",
+  "Competitive API pricing for NLP workloads"
+]
+weaknesses = [
+  "No consumer chatbot product — API-only",
+  "Limited general-purpose capabilities (not for creative/coding)",
+  "Smaller model size compared to frontier LLMs",
+  "Less community awareness than major competitors",
+  "No image, voice, or multimodal features"
+]
+best_for = ["Enterprise search and retrieval (RAG)", "Text classification and understanding", "Building search-powered applications"]
+watch_out = ["Not a general AI assistant — focused on NLP/search", "Enterprise contracts required for private deployment", "Niche use case — won't replace ChatGPT/Claude for general tasks"]
+scores = { writing = 2, coding = 1, research = 3, creative = 0, enterprise = 4, value = 3 }

@@ -1,0 +1,200 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/showdown.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI SaaS Showdown — Compare AI Chatbots, Plans & Pricing",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── Hero ── */}}
+{{ partial "tool-hero.html" (dict "title" "🥊 AI SaaS Showdown" "subtitle" "Compare ChatGPT, Claude, Gemini, Grok & more — plans, pricing, features, and enterprise readiness" "accent" "#84CC16") }}
+
+{{/* ── Back Nav ── */}}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+{{/* ── Tab Navigation ── */}}
+<div class="showdown-container">
+  <div class="showdown-tabs" role="tablist">
+    <button class="showdown-tab active" role="tab" data-tab="overview" aria-selected="true">🏠 Overview</button>
+    <button class="showdown-tab" role="tab" data-tab="compare">🆚 Compare</button>
+    <button class="showdown-tab" role="tab" data-tab="pricing">💰 Pricing</button>
+    <button class="showdown-tab" role="tab" data-tab="strengths">💪 Strengths</button>
+    <button class="showdown-tab" role="tab" data-tab="quiz">🧭 Which AI?</button>
+    <button class="showdown-tab" role="tab" data-tab="enterprise">🏢 Enterprise</button>
+    <button class="showdown-tab" role="tab" data-tab="changelog">📰 What Changed</button>
+  </div>
+
+  {{/* ── Stats Bar ── */}}
+  <div class="showdown-stats">
+    <span class="showdown-stat">🏢 <strong id="providerCount">0</strong> Providers</span>
+    <span class="showdown-stat">📋 <strong id="planCount">0</strong> Plans</span>
+    <span class="showdown-stat">🔄 Updated <strong>April 2026</strong></span>
+  </div>
+
+  {{/* ── Tab Panels ── */}}
+
+  {{/* TAB 1: Overview */}}
+  <div class="showdown-panel active" id="panel-overview" role="tabpanel">
+    <div class="showdown-filters">
+      <input type="text" class="showdown-search" id="overviewSearch" placeholder="Search providers..." aria-label="Search providers">
+    </div>
+    <div class="showdown-provider-grid" id="providerGrid">
+      <!-- JS renders provider cards -->
+    </div>
+  </div>
+
+  {{/* TAB 2: Compare */}}
+  <div class="showdown-panel" id="panel-compare" role="tabpanel">
+    <p class="showdown-compare-intro">Select 2–4 providers to compare side-by-side.</p>
+    <div class="showdown-compare-presets">
+      <button class="showdown-preset active" data-preset="big3">🏆 The Big 3</button>
+      <button class="showdown-preset" data-preset="budget">💸 Budget Picks</button>
+      <button class="showdown-preset" data-preset="enterprise">🏢 Enterprise</button>
+      <button class="showdown-preset" data-preset="coding">💻 Coding</button>
+      <button class="showdown-preset" data-preset="research">🔍 Research</button>
+    </div>
+    <div class="showdown-compare-selector" id="compareSelector">
+      <!-- JS renders checkboxes -->
+    </div>
+    <div class="showdown-compare-grid" id="compareGrid">
+      <!-- JS renders comparison -->
+    </div>
+  </div>
+
+  {{/* TAB 3: Pricing */}}
+  <div class="showdown-panel" id="panel-pricing" role="tabpanel">
+    <div class="showdown-pricing-filters">
+      <select id="pricingTier" class="showdown-select" aria-label="Filter by tier">
+        <option value="all">All Tiers</option>
+        <option value="free">Free Plans</option>
+        <option value="individual">Individual ($15-30/mo)</option>
+        <option value="power">Power User ($100-300/mo)</option>
+        <option value="team">Team Plans</option>
+        <option value="enterprise">Enterprise Plans</option>
+      </select>
+      <select id="pricingSort" class="showdown-select" aria-label="Sort by">
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="provider">By Provider</option>
+      </select>
+    </div>
+    <div class="showdown-pricing-table-wrap">
+      <table class="showdown-pricing-table" id="pricingTable">
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Plan</th>
+            <th>Monthly</th>
+            <th>Annual (per mo)</th>
+            <th>Key Limits</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody id="pricingBody">
+          <!-- JS renders rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {{/* TAB 4: Strengths & Weaknesses */}}
+  <div class="showdown-panel" id="panel-strengths" role="tabpanel">
+    <div class="showdown-filters">
+      <input type="text" class="showdown-search" id="strengthsSearch" placeholder="Search providers..." aria-label="Search providers">
+    </div>
+    <div class="showdown-strengths-grid" id="strengthsGrid">
+      <!-- JS renders strength cards -->
+    </div>
+  </div>
+
+  {{/* TAB 5: Quiz */}}
+  <div class="showdown-panel" id="panel-quiz" role="tabpanel">
+    <div class="showdown-quiz-container" id="quizContainer">
+      <div class="showdown-quiz-progress">
+        <div class="showdown-quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <div class="showdown-quiz-question" id="quizQuestion">
+        <!-- JS renders questions -->
+      </div>
+      <div class="showdown-quiz-nav">
+        <button class="showdown-btn showdown-btn-secondary" id="quizPrev" disabled>← Previous</button>
+        <span class="showdown-quiz-counter" id="quizCounter"></span>
+        <button class="showdown-btn showdown-btn-primary" id="quizNext">Next →</button>
+      </div>
+    </div>
+    <div class="showdown-quiz-results" id="quizResults" style="display:none">
+      <!-- JS renders results -->
+    </div>
+  </div>
+
+  {{/* TAB 6: Enterprise Readiness */}}
+  <div class="showdown-panel" id="panel-enterprise" role="tabpanel">
+    <p class="showdown-enterprise-intro">Enterprise compliance and security features across all providers. Filter by your requirements.</p>
+    <div class="showdown-enterprise-filters" id="enterpriseFilters">
+      <!-- JS renders requirement checkboxes -->
+    </div>
+    <div class="showdown-enterprise-table-wrap">
+      <table class="showdown-enterprise-table" id="enterpriseTable">
+        <thead id="enterpriseHead">
+          <!-- JS renders -->
+        </thead>
+        <tbody id="enterpriseBody">
+          <!-- JS renders -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {{/* TAB 7: What Changed */}}
+  <div class="showdown-panel" id="panel-changelog" role="tabpanel">
+    <div class="showdown-changelog-filters">
+      <select id="changelogProvider" class="showdown-select" aria-label="Filter by provider">
+        <option value="all">All Providers</option>
+      </select>
+      <select id="changelogType" class="showdown-select" aria-label="Filter by type">
+        <option value="all">All Types</option>
+        <option value="price_change">💰 Price Changes</option>
+        <option value="new_plan">🆕 New Plans</option>
+        <option value="new_model">🤖 New Models</option>
+        <option value="new_feature">✨ New Features</option>
+        <option value="breaking">⚠️ Breaking Changes</option>
+      </select>
+    </div>
+    <div class="showdown-changelog-list" id="changelogList">
+      <!-- JS renders -->
+    </div>
+  </div>
+</div>
+
+{{/* ── Inject TOML Data as JS ── */}}
+<script>
+window.__showdownProviders = {{ (index hugo.Data "ai-showdown").providers | jsonify }};
+window.__showdownPlans = {{ (index hugo.Data "ai-showdown").plans | jsonify }};
+window.__showdownStrengths = {{ (index hugo.Data "ai-showdown").strengths | jsonify }};
+window.__showdownCompliance = {{ (index hugo.Data "ai-showdown").compliance | jsonify }};
+window.__showdownQuiz = {{ (index hugo.Data "ai-showdown").quiz | jsonify }};
+window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | jsonify }};
+</script>
+
+{{ partial "page-search.html" . }}
+
+<script src="/js/showdown.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

@@ -168,7 +168,7 @@ a:hover {
   border: 1px solid var(--border-glow);
   border-radius: 10px;
   padding: 0.5rem 0;
-  min-width: 200px;
+  min-width: 240px;
   list-style: none;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   z-index: 200;

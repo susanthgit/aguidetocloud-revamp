@@ -1,0 +1,172 @@
+# AI SaaS Showdown — Enterprise Compliance Matrix
+# true = certified/supported, false = not available, "partial" = limited support
+
+[openai]
+soc2 = true
+hipaa = true
+gdpr = true
+fedramp = false
+iso27001 = true
+data_residency = ["US", "EU"]
+data_residency_note = "EU data residency available for API; ChatGPT consumer uses US servers"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = false
+private_deployment = false
+sla = "99.9% (Enterprise)"
+zero_data_retention = true
+zero_data_retention_note = "Available on Enterprise; Plus/Pro data may be used for training unless opted out"
+
+[anthropic]
+soc2 = true
+hipaa = true
+gdpr = true
+fedramp = false
+iso27001 = true
+data_residency = ["US"]
+data_residency_note = "US only; no EU data residency option currently"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = false
+private_deployment = false
+sla = "99.9% (Enterprise)"
+zero_data_retention = true
+zero_data_retention_note = "API data not used for training by default; Enterprise has full controls"
+
+[google]
+soc2 = true
+hipaa = true
+gdpr = true
+fedramp = true
+iso27001 = true
+data_residency = ["US", "EU", "UK", "Japan", "Australia", "Singapore", "India"]
+data_residency_note = "Broadest regional coverage through Google Cloud"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = true
+private_deployment = true
+sla = "99.9% (Workspace Enterprise)"
+zero_data_retention = true
+zero_data_retention_note = "Workspace data not used for training; Gemini consumer data may be used"
+
+[xai]
+soc2 = false
+hipaa = false
+gdpr = false
+fedramp = false
+iso27001 = false
+data_residency = ["US"]
+data_residency_note = "US only; limited compliance certifications"
+sso_saml = false
+admin_console = true
+audit_logs = false
+dlp = false
+private_deployment = false
+sla = "Best effort"
+zero_data_retention = false
+zero_data_retention_note = "Enterprise data handling policies still maturing"
+
+[mistral]
+soc2 = true
+hipaa = false
+gdpr = true
+fedramp = false
+iso27001 = true
+data_residency = ["EU", "France"]
+data_residency_note = "EU-native; strongest GDPR compliance among AI providers"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = false
+private_deployment = true
+sla = "Custom (Enterprise)"
+zero_data_retention = true
+zero_data_retention_note = "No Telemetry Mode on Pro+; Enterprise has full private deployment"
+
+[deepseek]
+soc2 = false
+hipaa = false
+gdpr = false
+fedramp = false
+iso27001 = false
+data_residency = ["China"]
+data_residency_note = "API hosted in China; self-hosting available for data sovereignty"
+sso_saml = false
+admin_console = false
+audit_logs = false
+dlp = false
+private_deployment = true
+sla = "Best effort (API)"
+zero_data_retention = true
+zero_data_retention_note = "Zero retention modes available; self-hosting gives full control"
+
+[perplexity]
+soc2 = true
+hipaa = false
+gdpr = true
+fedramp = false
+iso27001 = false
+data_residency = ["US"]
+data_residency_note = "US-hosted; no regional options"
+sso_saml = true
+admin_console = true
+audit_logs = false
+dlp = false
+private_deployment = false
+sla = "99.9% (Enterprise)"
+zero_data_retention = false
+zero_data_retention_note = "Enterprise plan has data controls; consumer data may be used"
+
+[microsoft]
+soc2 = true
+hipaa = true
+gdpr = true
+fedramp = true
+iso27001 = true
+data_residency = ["US", "EU", "UK", "Japan", "Australia", "Canada", "India", "South Korea", "Singapore"]
+data_residency_note = "Broadest data residency with EU Data Boundary; M365 Copilot data stays in tenant"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = true
+private_deployment = false
+sla = "99.9% (M365 SLA)"
+zero_data_retention = true
+zero_data_retention_note = "M365 Copilot data never used for training; stays within Microsoft 365 compliance boundary"
+
+[meta]
+soc2 = false
+hipaa = false
+gdpr = false
+fedramp = false
+iso27001 = false
+data_residency = ["Self-hosted"]
+data_residency_note = "You control everything — deploy anywhere"
+sso_saml = false
+admin_console = false
+audit_logs = false
+dlp = false
+private_deployment = true
+sla = "Self-managed"
+zero_data_retention = true
+zero_data_retention_note = "Full control — your infrastructure, your rules"
+
+[cohere]
+soc2 = true
+hipaa = true
+gdpr = true
+fedramp = false
+iso27001 = true
+data_residency = ["US", "EU", "Canada"]
+data_residency_note = "Private deployment available for any region"
+sso_saml = true
+admin_console = true
+audit_logs = true
+dlp = false
+private_deployment = true
+sla = "Custom (Enterprise)"
+zero_data_retention = true
+zero_data_retention_note = "Enterprise has full private deployment with zero data retention"

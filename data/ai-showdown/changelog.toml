@@ -1,0 +1,92 @@
+# AI SaaS Showdown — What Changed (Changelog)
+# Track pricing changes, new plans, new models, and feature updates
+
+[[entries]]
+date = "2026-04-11"
+provider = "microsoft"
+type = "breaking"
+title = "Copilot Pro removed from Word, Excel, PowerPoint"
+description = "Microsoft removed Copilot Pro access from Word, Excel, and PowerPoint for users without an M365 subscription. Copilot Pro now requires M365 Personal/Family to use AI in Office apps."
+impact = "high"
+source = "https://learn.microsoft.com/microsoft-365/copilot"
+
+[[entries]]
+date = "2026-04-01"
+provider = "openai"
+type = "new_model"
+title = "GPT-5.4 launched for Plus and Pro users"
+description = "OpenAI released GPT-5.4 with improved reasoning, coding, and multimodal capabilities. Available on Plus ($20/mo) and Pro ($200/mo) plans."
+impact = "medium"
+source = "https://openai.com/blog"
+
+[[entries]]
+date = "2026-03-25"
+provider = "deepseek"
+type = "new_model"
+title = "DeepSeek V4 launched — multimodal at ultra-low cost"
+description = "DeepSeek V4 supports 1M context window and multimodal input at just $0.30/M tokens input. The cheapest frontier-class model available."
+impact = "high"
+source = "https://platform.deepseek.com"
+
+[[entries]]
+date = "2026-03-15"
+provider = "anthropic"
+type = "new_plan"
+title = "Claude Max plan introduced ($100-200/mo)"
+description = "Anthropic launched Claude Max, offering 5-20x Pro usage limits and full Opus 4.6 access for power users."
+impact = "medium"
+source = "https://www.anthropic.com/pricing"
+
+[[entries]]
+date = "2026-03-10"
+provider = "xai"
+type = "new_model"
+title = "Grok 4 released with 2M context window"
+description = "xAI launched Grok 4 featuring a 2-million-token context window — the largest in the industry. Available on SuperGrok ($30/mo)."
+impact = "medium"
+source = "https://x.ai/blog"
+
+[[entries]]
+date = "2026-03-01"
+provider = "google"
+type = "price_change"
+title = "Gemini Ultra plan launched at $249/mo"
+description = "Google introduced a new Ultra tier for Gemini at $249/mo, targeting enterprise users needing the most powerful models and maximum context."
+impact = "medium"
+source = "https://one.google.com"
+
+[[entries]]
+date = "2026-02-20"
+provider = "mistral"
+type = "new_feature"
+title = "Mistral adds image generation to Le Chat Pro"
+description = "Le Chat Pro and Team plans now include image generation capabilities, previously unavailable on Mistral's consumer plans."
+impact = "low"
+source = "https://mistral.ai/news"
+
+[[entries]]
+date = "2026-02-15"
+provider = "perplexity"
+type = "new_plan"
+title = "Perplexity Enterprise launched"
+description = "Perplexity launched an Enterprise plan at $40/user/mo with SSO, admin controls, and internal document search capabilities."
+impact = "medium"
+source = "https://www.perplexity.ai/enterprise"
+
+[[entries]]
+date = "2026-02-01"
+provider = "microsoft"
+type = "new_plan"
+title = "Microsoft 365 E7 announced (GA May 2026)"
+description = "Microsoft announced M365 E7 (Frontier Suite) at $99/user/mo, bundling M365 Copilot, Agent 365, and premium AI features. GA expected May 1, 2026."
+impact = "high"
+source = "https://learn.microsoft.com/microsoft-365"
+
+[[entries]]
+date = "2026-01-15"
+provider = "meta"
+type = "new_model"
+title = "Llama 4 Maverick released as open source"
+description = "Meta released Llama 4 Maverick, competitive with GPT-5 and Opus 4.6 on key benchmarks. Completely free and open-weight."
+impact = "high"
+source = "https://llama.meta.com"

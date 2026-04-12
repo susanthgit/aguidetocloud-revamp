@@ -1,0 +1,150 @@
+# AI SaaS Showdown — "Which AI For Me?" Quiz
+# 8 questions with weighted scoring per provider
+
+[meta]
+title = "Which AI Is Right For You?"
+description = "Answer 8 quick questions and we'll recommend the best AI for your needs."
+result_count = 3
+
+[[questions]]
+id = "use_case"
+text = "What will you primarily use AI for?"
+options = [
+  { label = "Writing, editing, and content creation", value = "writing" },
+  { label = "Coding and software development", value = "coding" },
+  { label = "Research and finding information", value = "research" },
+  { label = "Creative work (images, brainstorming)", value = "creative" },
+  { label = "Business tasks (email, presentations, reports)", value = "business" },
+  { label = "Learning and education", value = "education" }
+]
+
+[[questions]]
+id = "budget"
+text = "What's your monthly budget for AI?"
+options = [
+  { label = "Free only — I won't pay", value = "free" },
+  { label = "Under $20/month", value = "budget" },
+  { label = "Up to $30/month", value = "moderate" },
+  { label = "$50+/month — I want the best", value = "premium" },
+  { label = "Enterprise budget (per-user licensing)", value = "enterprise" }
+]
+
+[[questions]]
+id = "privacy"
+text = "How important is data privacy and compliance?"
+options = [
+  { label = "Critical — we're in a regulated industry (healthcare, finance, government)", value = "critical" },
+  { label = "Important — I want control over my data", value = "important" },
+  { label = "Nice to have but not a dealbreaker", value = "moderate" },
+  { label = "Not concerned", value = "low" }
+]
+
+[[questions]]
+id = "team"
+text = "Will you be using this individually or with a team?"
+options = [
+  { label = "Just me", value = "individual" },
+  { label = "Small team (2-20 people)", value = "small_team" },
+  { label = "Department or large team (20-200)", value = "large_team" },
+  { label = "Entire organisation (200+)", value = "org" }
+]
+
+[[questions]]
+id = "ecosystem"
+text = "What ecosystem are you most invested in?"
+options = [
+  { label = "Microsoft 365 (Outlook, Teams, Word, Excel)", value = "microsoft" },
+  { label = "Google Workspace (Gmail, Docs, Drive)", value = "google" },
+  { label = "X/Twitter (social media, news)", value = "x" },
+  { label = "Developer tools (VS Code, GitHub, APIs)", value = "dev" },
+  { label = "No strong preference / mixed", value = "none" }
+]
+
+[[questions]]
+id = "capabilities"
+text = "Which capability matters most to you?"
+options = [
+  { label = "Text quality — writing, analysis, reasoning", value = "text" },
+  { label = "Image generation and visual creativity", value = "image" },
+  { label = "Voice and audio features", value = "voice" },
+  { label = "Web browsing and real-time information", value = "web" },
+  { label = "File upload and document processing", value = "docs" },
+  { label = "API access for building custom apps", value = "api" }
+]
+
+[[questions]]
+id = "technical"
+text = "How would you describe your technical level?"
+options = [
+  { label = "Non-technical — I just want it to work", value = "non_tech" },
+  { label = "Somewhat technical — comfortable with apps and settings", value = "some_tech" },
+  { label = "Technical — I can work with APIs and code", value = "technical" },
+  { label = "Developer — I build software", value = "developer" }
+]
+
+[[questions]]
+id = "region"
+text = "Where are you or your organisation based?"
+options = [
+  { label = "North America", value = "na" },
+  { label = "Europe (EU/UK)", value = "eu" },
+  { label = "Asia Pacific", value = "apac" },
+  { label = "Other / doesn't matter", value = "other" }
+]
+
+# Scoring weights: each answer adds points to relevant providers
+# Format: answer_value = { provider = points }
+
+[scoring.use_case]
+writing = { anthropic = 5, openai = 4, google = 3, microsoft = 3, mistral = 2, perplexity = 1 }
+coding = { anthropic = 5, openai = 5, deepseek = 4, google = 3, mistral = 2 }
+research = { perplexity = 5, openai = 4, google = 4, xai = 4, anthropic = 3 }
+creative = { openai = 5, google = 3, anthropic = 2, xai = 2 }
+business = { microsoft = 5, google = 4, openai = 4, anthropic = 3 }
+education = { openai = 4, google = 4, anthropic = 3, perplexity = 3, deepseek = 3, mistral = 2 }
+
+[scoring.budget]
+free = { deepseek = 5, meta = 5, google = 3, openai = 3, anthropic = 2, perplexity = 2, mistral = 2 }
+budget = { mistral = 5, google = 4, openai = 3, anthropic = 3, perplexity = 3 }
+moderate = { openai = 4, anthropic = 4, google = 4, perplexity = 3, xai = 3, microsoft = 3 }
+premium = { openai = 5, anthropic = 5, google = 4, xai = 3 }
+enterprise = { microsoft = 5, google = 5, openai = 4, anthropic = 4, cohere = 3 }
+
+[scoring.privacy]
+critical = { microsoft = 5, mistral = 5, meta = 4, cohere = 4, google = 3, anthropic = 3 }
+important = { mistral = 4, anthropic = 4, microsoft = 4, cohere = 3, google = 3, openai = 2 }
+moderate = { openai = 3, anthropic = 3, google = 3, microsoft = 3, perplexity = 2 }
+low = { openai = 3, google = 3, xai = 3, perplexity = 3, deepseek = 3 }
+
+[scoring.team]
+individual = { openai = 4, anthropic = 4, perplexity = 3, google = 3, xai = 3, mistral = 3 }
+small_team = { openai = 4, anthropic = 4, google = 3, mistral = 3, microsoft = 3 }
+large_team = { microsoft = 5, google = 5, openai = 4, anthropic = 3 }
+org = { microsoft = 5, google = 5, openai = 4, anthropic = 4, cohere = 3 }
+
+[scoring.ecosystem]
+microsoft = { microsoft = 5, openai = 3 }
+google = { google = 5, openai = 2 }
+x = { xai = 5 }
+dev = { openai = 4, anthropic = 4, deepseek = 4, meta = 3, cohere = 3 }
+none = { openai = 3, anthropic = 3, google = 3 }
+
+[scoring.capabilities]
+text = { anthropic = 5, openai = 4, google = 3, mistral = 3 }
+image = { openai = 5, google = 3, xai = 2 }
+voice = { openai = 5, google = 3, microsoft = 2 }
+web = { perplexity = 5, xai = 4, google = 4, openai = 3 }
+docs = { anthropic = 5, google = 4, openai = 3, microsoft = 3 }
+api = { openai = 4, deepseek = 5, anthropic = 4, meta = 4, cohere = 4 }
+
+[scoring.technical]
+non_tech = { openai = 4, google = 4, microsoft = 4, perplexity = 3 }
+some_tech = { openai = 4, anthropic = 4, google = 3, perplexity = 3, xai = 2 }
+technical = { anthropic = 4, openai = 4, deepseek = 3, mistral = 3, cohere = 3 }
+developer = { anthropic = 5, openai = 4, deepseek = 5, meta = 5, cohere = 4, mistral = 3 }
+
+[scoring.region]
+na = { openai = 3, anthropic = 3, google = 3, microsoft = 3, perplexity = 3 }
+eu = { mistral = 5, microsoft = 4, google = 3, anthropic = 2, openai = 2 }
+apac = { google = 4, microsoft = 4, openai = 3, deepseek = 3 }
+other = { openai = 3, google = 3, anthropic = 3 }
