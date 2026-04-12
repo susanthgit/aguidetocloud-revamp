@@ -36,6 +36,14 @@ This guide is built for **AI Change Leads**, **Digital Champions**, and **Train-
 
 > 📋 **How to use this guide:** Bookmark it. Print it. Share it with your training team. Each section is self-contained — jump to what you need using the table of contents below.
 
+<div class="living-doc-banner">
+
+📌 **This is a living document.** The AI landscape changes fast — features get added, renamed, or retired regularly. Rather than printing this guide, I'd recommend **bookmarking this page** or adding it to your browser's reading list. That way you always have the latest, most accurate version.
+
+If you spot something outdated or think something should be added, please [let me know through the feedback page](/feedback/) — I'll update it so everyone benefits. Think of this as **our** shared resource. 🤝
+
+</div>
+
 ### 📋 Table of Contents
 
 - [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
