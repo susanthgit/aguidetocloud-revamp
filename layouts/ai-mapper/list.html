@@ -13,7 +13,7 @@
 {{ $quiz := index $dataDir "quiz" | default dict }}
 {{ $changelog := index $dataDir "changelog" | default dict }}
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
 {{ partial "tool-hero.html" (dict "title" "AI Service Mapper" "subtitle" "Find the right AI service for your use case — compare 50+ services across every major provider" "accent" "#8B5CF6") }}
 

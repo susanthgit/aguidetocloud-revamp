@@ -1,5 +1,5 @@
 ---
-title: "Free Tools"
-description: "Free tools for IT pros and cloud enthusiasts — AI News, M365 Roadmap tracker, AI Prompt Library, and Licensing Simplifier. All free, updated regularly."
+title: "Cloud & AI Toolkit"
+description: "Professional-grade tools for IT pros — AI News, M365 Roadmap, Copilot Readiness, ROI Calculator, Licensing Simplifier, and more. No sign-up required."
 layout: "free-tools"
 ---
