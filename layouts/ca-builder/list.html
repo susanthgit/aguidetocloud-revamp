@@ -87,6 +87,8 @@
         <div class="cab-wizard" id="cab-wizard">
           {{/* #20: Clickable step indicators */}}
           <div class="cab-wizard-steps" id="cab-wizard-steps"></div>
+          {{/* #6: Mobile step label */}}
+          <div class="cab-wizard-mobile-label" id="cab-wizard-mobile-label"></div>
           <div class="cab-wizard-progress">
             <div class="cab-wizard-bar"><div class="cab-wizard-fill" id="cab-wizard-fill"></div></div>
             <span class="cab-wizard-step-label" id="cab-wizard-step-label">Step 1 of 7</span>
@@ -203,10 +205,41 @@
           <button class="cab-btn cab-btn--secondary" id="cab-export-download">💾 Download</button>
         </div>
         <pre class="cab-export-output" id="cab-export-output"></pre>
+        {{/* #10: What to do next */}}
+        <div id="cab-export-next-steps"></div>
+      </div>
+
+      {{/* #14: Import from JSON */}}
+      <div class="cab-import-section">
+        <details>
+          <summary style="cursor:pointer;color:var(--cab-accent);font-size:0.9rem">📥 Import existing policies from Graph API JSON</summary>
+          <p style="font-size:0.82rem;color:var(--cab-text-dim);margin:0.5rem 0">Paste your exported Graph API JSON array to review existing policies.</p>
+          <textarea class="cab-form-textarea" id="cab-import-input" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]' style="min-height:80px"></textarea>
+          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-top:0.5rem" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">📥 Import</button>
+        </details>
       </div>
     </div>
 
   </div>{{/* .cab-container */}}
+
+  {{/* #8: How many policies helper */}}
+  <div class="cab-how-many">
+    <details>
+      <summary><strong>🤔 How many policies do I need?</strong></summary>
+      <div class="cab-how-many-content">
+        <table class="cab-how-many-table">
+          <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
+          <tbody>
+            <tr><td>🏢 Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
+            <tr><td>🏦 Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
+            <tr><td>🏫 Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
+            <tr><td>🔒 High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.82rem;color:var(--cab-text-dim)">💡 Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
+      </div>
+    </details>
+  </div>
 
   {{/* ── Inline Help ── */}}
   <div class="cab-help-section">
@@ -241,6 +274,11 @@
         </div>
       </div>
     </details>
+  </div>
+
+  {{/* #18: Blog/YouTube CTA */}}
+  <div class="cab-content-cta">
+    <p>📺 <strong>Learn more:</strong> Watch our <a href="/blog/">tutorials</a> on Conditional Access, Zero Trust, and Microsoft Entra ID. Follow <a href="https://youtube.com/susanthsutheesh" target="_blank" rel="noopener">A Guide to Cloud & AI</a> for step-by-step walkthroughs.</p>
   </div>
 
   {{/* ── Disclaimer ── */}}

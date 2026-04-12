@@ -8,6 +8,7 @@ difficulty: "intermediate"
 emoji: "💡"
 academic_name: "Few-shot Prompting"
 read_time: "5 min"
+tldr: "Show AI what you want by providing 2-3 sample inputs and outputs. When words fail, examples succeed."
 technique_id: "give-examples"
 sandbox_starter: "Categorize these support tickets"
 sandbox_criteria:

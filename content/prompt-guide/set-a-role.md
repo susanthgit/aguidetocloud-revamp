@@ -8,6 +8,7 @@ difficulty: "beginner"
 emoji: "🎭"
 academic_name: "Role / Persona Prompting"
 read_time: "4 min"
+tldr: "Tell AI WHO to be — the more specific the expertise, the better the response quality."
 technique_id: "set-a-role"
 sandbox_starter: "Help me with my presentation"
 sandbox_criteria:

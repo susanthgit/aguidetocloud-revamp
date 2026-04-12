@@ -8,6 +8,7 @@ difficulty: "intermediate"
 emoji: "🧠"
 academic_name: "Chain-of-Thought (CoT) Prompting"
 read_time: "5 min"
+tldr: "Ask AI to show its reasoning process. This one phrase can improve accuracy by 40-70% on complex tasks."
 technique_id: "think-step-by-step"
 sandbox_starter: "Should we migrate to the cloud?"
 sandbox_criteria:

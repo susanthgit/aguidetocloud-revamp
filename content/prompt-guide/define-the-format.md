@@ -8,6 +8,7 @@ difficulty: "beginner"
 emoji: "📐"
 academic_name: "Output Formatting"
 read_time: "3 min"
+tldr: "Tell AI exactly HOW to structure the output — table, bullets, email, JSON — based on how you'll USE it."
 technique_id: "define-the-format"
 sandbox_starter: "Tell me about project management tools"
 sandbox_criteria:

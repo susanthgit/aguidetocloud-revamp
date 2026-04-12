@@ -111,6 +111,37 @@
 .cab-quickstart-actions { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .cab-quickstart-or { color: var(--cab-text-dim); font-size: 0.85rem; }
 
+/* Scenario grid (Big Idea) */
+.cab-scenario-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem; margin: 1rem 0;
+}
+.cab-scenario-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+  padding: 1rem; background: rgba(255,255,255,0.05); border: 2px solid var(--cab-border);
+  border-radius: 12px; cursor: pointer; transition: all 0.2s; text-align: center;
+  font-family: inherit; color: #fff;
+}
+.cab-scenario-btn:hover { border-color: var(--cab-accent); background: var(--cab-accent-dim); transform: translateY(-2px); }
+.cab-scenario-icon { font-size: 1.5rem; }
+.cab-scenario-btn strong { font-size: 0.95rem; }
+.cab-scenario-desc { font-size: 0.78rem; color: var(--cab-text-dim); }
+.cab-scenario-count { font-size: 0.8rem; color: var(--cab-accent); font-weight: 600; margin-top: 0.25rem; }
+
+/* Nudge bar */
+.cab-nudge { padding: 0.75rem 1.5rem; text-align: left; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.cab-nudge p { margin: 0; }
+
+/* #13: Popular badge */
+.cab-popular-badge {
+  display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.65rem;
+  font-weight: 700; background: rgba(245,158,11,0.15); color: #F59E0B; margin-right: 4px;
+}
+.cab-card-badges { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
+
+/* #9: Dependency hints */
+.cab-dep-hint { font-size: 0.78rem; color: #F59E0B; margin: 0.25rem 0 0.5rem; }
+
 /* ── Policy Card (shared between templates + review) ── */
 .cab-policy-card {
   background: color-mix(in srgb, var(--cab-accent) 6%, var(--cab-card-bg));

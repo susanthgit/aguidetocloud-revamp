@@ -8,6 +8,7 @@ difficulty: "intermediate"
 emoji: "🗣️"
 academic_name: "Audience / Tone Tuning"
 read_time: "4 min"
+tldr: "Specify WHO reads the output and HOW it should sound. Same info, different audience = completely different communication."
 technique_id: "specify-audience-and-tone"
 sandbox_starter: "Explain what happened with the server outage"
 sandbox_criteria:

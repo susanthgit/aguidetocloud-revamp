@@ -40,6 +40,15 @@
   </div>
 
   <div class="pguide-technique-container">
+
+    {{/* ── TL;DR Box (fix K) ── */}}
+    {{ with .Params.tldr }}
+    <div class="pguide-tldr">
+      <span class="pguide-tldr-label">⚡ TL;DR</span>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
     <div class="pguide-technique-layout">
 
       {{/* ── Main Content ── */}}

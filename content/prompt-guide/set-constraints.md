@@ -8,6 +8,7 @@ difficulty: "intermediate"
 emoji: "🚧"
 academic_name: "Constraint Prompting"
 read_time: "4 min"
+tldr: "Set boundaries — word limits, topic scope, content rules — to get focused, useful output instead of a wall of text."
 technique_id: "set-constraints"
 sandbox_starter: "Write about cloud computing"
 sandbox_criteria:

@@ -8,6 +8,7 @@ difficulty: "beginner"
 emoji: "🎯"
 academic_name: "Zero-shot / Instruction Prompting"
 read_time: "4 min"
+tldr: "Be specific about WHAT you want, HOW you want it, and any constraints. Vague prompts = vague answers."
 technique_id: "give-clear-instructions"
 sandbox_starter: "Write me something about emails"
 sandbox_criteria:

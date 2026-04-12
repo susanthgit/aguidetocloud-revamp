@@ -1111,6 +1111,98 @@
 /* ══ Nav Accent (fix #19) ══ */
 .page-prompt-guide .site-nav { border-bottom-color: #84CC16; }
 
+/* ══ TL;DR Box (fix K) ══ */
+.pguide-tldr {
+  background: linear-gradient(135deg, rgba(132,204,22,0.12), rgba(132,204,22,0.04));
+  border: 1px solid var(--tool-accent);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.pguide-tldr-label {
+  background: var(--tool-accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pguide-tldr p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--text-primary); }
+
+/* ══ Platform Accordion (fix B) ══ */
+.pguide-platform-accordion { margin: 0.5rem 0 1.5rem; }
+.pguide-platform-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.pguide-platform-item summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.pguide-platform-item summary::before { content: '▸ '; color: var(--tool-accent-text); font-size: 0.85rem; }
+.pguide-platform-item[open] summary::before { content: '▾ '; }
+.pguide-platform-body {
+  padding: 0 1rem 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.pguide-platform-body ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+.pguide-platform-body li { margin-bottom: 0.3rem; font-size: 0.9rem; line-height: 1.5; }
+
+/* ══ Section Dividers (fix L) ══ */
+.pguide-technique-content h2.pguide-section-divided {
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.pguide-technique-content h2.pguide-section-divided:first-of-type {
+  border-top: none;
+  margin-top: 0;
+}
+
+/* ══ Quiz Answered State (fix F) ══ */
+.pguide-quiz-q.pguide-quiz-answered {
+  border-color: var(--tool-accent);
+  background: rgba(132,204,22,0.04);
+}
+.pguide-quiz-q.pguide-quiz-answered::after {
+  content: '✅';
+  float: right;
+  font-size: 1.2rem;
+  margin-top: -2rem;
+}
+
+/* ══ Challenge Difficulty Badge (fix G) ══ */
+.pguide-challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.pguide-challenge-header h3 { margin: 0; }
+.pguide-challenge-diff {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--border-subtle);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
 /* ══════════════════════════════════════
    RESPONSIVE — Updated
    ══════════════════════════════════════ */

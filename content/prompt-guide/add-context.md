@@ -8,6 +8,7 @@ difficulty: "beginner"
 emoji: "📋"
 academic_name: "Context Engineering"
 read_time: "4 min"
+tldr: "Give AI the background info it needs — project details, audience, situation — so it doesn't have to guess."
 technique_id: "add-context"
 sandbox_starter: "Write a status update"
 sandbox_criteria:
