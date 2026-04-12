@@ -1,0 +1,159 @@
+name: 🩺 Site Health Check
+
+on:
+  schedule:
+    - cron: '0 5 1,15 * *'  # 1st & 15th of every month at 5 AM UTC (5 PM NZST)
+  workflow_dispatch: # Manual trigger from GitHub UI
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build site
+        id: build
+        run: |
+          set +e
+          OUTPUT=$(hugo --minify 2>&1)
+          EXIT_CODE=$?
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" > /tmp/build-output.txt
+          # Extract page count
+          PAGES=$(echo "$OUTPUT" | grep -oP 'Pages\s+\|\s+\K\d+' || echo "0")
+          echo "pages=$PAGES" >> $GITHUB_OUTPUT
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "build_status=❌ FAILED" >> $GITHUB_OUTPUT
+          else
+            echo "build_status=✅ Passed ($PAGES pages)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check data freshness
+        id: freshness
+        run: |
+          echo "## Data Freshness" > /tmp/freshness.md
+          echo "| Tool | Data File | Last Modified | Days Old | Status |" >> /tmp/freshness.md
+          echo "|------|-----------|---------------|----------|--------|" >> /tmp/freshness.md
+          
+          check_file() {
+            local name="$1" file="$2" warn_days="$3"
+            if [ -f "$file" ]; then
+              local mod_date=$(date -r "$file" +%Y-%m-%d)
+              local days_old=$(( ($(date +%s) - $(date -r "$file" +%s)) / 86400 ))
+              if [ $days_old -gt $warn_days ]; then
+                echo "| $name | \`$file\` | $mod_date | $days_old | ⚠️ Stale (>$warn_days days) |" >> /tmp/freshness.md
+              else
+                echo "| $name | \`$file\` | $mod_date | $days_old | ✅ Fresh |" >> /tmp/freshness.md
+              fi
+            else
+              echo "| $name | \`$file\` | — | — | ❌ Missing |" >> /tmp/freshness.md
+            fi
+          }
+          
+          # Automated pipelines (should be recent)
+          check_file "AI News" "static/data/ainews/latest.json" 2
+          check_file "M365 Roadmap" "static/data/roadmap/latest.json" 3
+          check_file "Service Health" "static/data/service-health/latest.json" 1
+          check_file "Cert Tracker" "static/data/cert-tracker/latest.json" 10
+          
+          # Manual TOML tools (acceptable if < 30 days)
+          check_file "Copilot Feature Matrix" "data/copilot_matrix/features.toml" 30
+          check_file "Licensing Simplifier" "data/licensing/plans.toml" 45
+          check_file "AI Service Mapper" "data/ai-mapper/services.toml" 45
+          check_file "AI SaaS Showdown" "data/ai-showdown/plans.toml" 45
+          check_file "ROI Calculator" "static/js/roi-calculator.js" 60
+          check_file "Readiness Checker" "static/js/readiness.js" 90
+
+      - name: Check tool count consistency
+        id: tools
+        run: |
+          # Count tools on nav, homepage, toolkit page
+          NAV_COUNT=$(grep -c 'nav-cat-label\|class="nav-active"' layouts/partials/nav.html | head -1 || echo "?")
+          NAV_TOOLS=$(grep -c 'dropdown-menu.*href="/' layouts/partials/nav.html || echo "?")
+          HP_TOOLS=$(grep -c 'hp-toolkit-card' layouts/index.html || echo "?")
+          FT_TOOLS=$(grep -c 'free-tool-card' layouts/free-tools/list.html || echo "?")
+          TOML_COUNT=$(grep -oP 'tool_count = \K\d+' hugo.toml || echo "?")
+          
+          echo "nav_tools=$NAV_TOOLS" >> $GITHUB_OUTPUT
+          echo "hp_tools=$HP_TOOLS" >> $GITHUB_OUTPUT
+          echo "ft_tools=$FT_TOOLS" >> $GITHUB_OUTPUT
+          echo "toml_count=$TOML_COUNT" >> $GITHUB_OUTPUT
+          
+          if [ "$HP_TOOLS" = "$FT_TOOLS" ]; then
+            echo "consistency=✅ Consistent" >> $GITHUB_OUTPUT
+          else
+            echo "consistency=⚠️ Mismatch: Homepage=$HP_TOOLS, Toolkit=$FT_TOOLS" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check CSS size
+        id: css
+        run: |
+          CSS_SIZE=$(wc -c < static/css/style.css)
+          CSS_KB=$((CSS_SIZE / 1024))
+          echo "css_size=${CSS_KB}KB" >> $GITHUB_OUTPUT
+          if [ $CSS_SIZE -gt 60000 ]; then
+            echo "css_status=⚠️ Large (${CSS_KB}KB > 60KB)" >> $GITHUB_OUTPUT
+          else
+            echo "css_status=✅ OK (${CSS_KB}KB)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for console.log in JS
+        id: consolelog
+        run: |
+          LOGS=$(grep -rn "console\.log" static/js/ --include="*.js" | grep -v "//.*console" | wc -l)
+          echo "count=$LOGS" >> $GITHUB_OUTPUT
+          if [ "$LOGS" -gt 0 ]; then
+            echo "status=⚠️ Found $LOGS console.log statements" >> $GITHUB_OUTPUT
+          else
+            echo "status=✅ Clean" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create health report issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const freshness = fs.readFileSync('/tmp/freshness.md', 'utf8');
+            const date = new Date().toISOString().split('T')[0];
+            
+            const body = `# 🩺 Site Health Report — ${date}
+
+            ## Build
+            | Check | Result |
+            |-------|--------|
+            | Hugo Build | ${{ steps.build.outputs.build_status }} |
+            | CSS Size | ${{ steps.css.outputs.css_status }} |
+            | Console.log | ${{ steps.consolelog.outputs.status }} |
+            | Tool Count (hugo.toml) | ${{ steps.tools.outputs.toml_count }} |
+            | Homepage Cards | ${{ steps.tools.outputs.hp_tools }} |
+            | Toolkit Page Cards | ${{ steps.tools.outputs.ft_tools }} |
+            | Tool Count Consistency | ${{ steps.tools.outputs.consistency }} |
+
+            ${freshness}
+
+            ## Action Required
+            - Review any ⚠️ items above
+            - If pipeline data is stale, check the pipeline repo for failed workflows
+            - If TOML data is stale, research for updates (see Copilot CLI self-reminders)
+
+            ---
+            *Auto-generated by [Site Health Check](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})*`;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🩺 Site Health Report — ${date}`,
+              body: body,
+              labels: ['health-check']
+            });
