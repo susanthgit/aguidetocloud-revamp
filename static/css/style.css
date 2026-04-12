@@ -58,6 +58,19 @@ body {
   line-height: 1.7;
   min-height: 100vh;
 }
+/* Ambient gradient orbs — gives glass elements something to blur */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(255, 102, 255, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 75%, rgba(102, 255, 255, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(139, 92, 246, 0.02) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
 
 h1, h2, h3, h4, h5, h6,
 .site-logo,
@@ -339,16 +352,18 @@ a:hover {
   padding: 0.7rem 0.9rem;
   text-decoration: none;
   color: inherit;
-  background: color-mix(in srgb, var(--tool-color) 24%, #1a1a2e);
-  border: 1px solid color-mix(in srgb, var(--tool-color) 45%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 18%, rgba(26, 26, 46, 0.7));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 35%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--tool-color) 18%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--tool-color) 14%, transparent);
   transition: all 0.25s;
 }
 .hp-toolkit-card:hover {
-  background: color-mix(in srgb, var(--tool-color) 10%, #1a1a2e);
-  border-color: color-mix(in srgb, var(--tool-color) 18%, transparent);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--tool-color) 6%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 8%, rgba(26, 26, 46, 0.5));
+  border-color: color-mix(in srgb, var(--tool-color) 15%, transparent);
+  box-shadow: 0 0 4px color-mix(in srgb, var(--tool-color) 5%, transparent);
   transform: translateY(-2px);
 }
 .hp-toolkit-card strong {
@@ -439,18 +454,20 @@ a:hover {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.4rem 1.5rem;
-  background: color-mix(in srgb, #ff66ff 8%, var(--bg-card));
-  border: 1px solid color-mix(in srgb, #ff66ff 18%, transparent);
+  background: color-mix(in srgb, #ff66ff 6%, rgba(26, 26, 46, 0.7));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, #ff66ff 15%, transparent);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
   transition: all 0.2s;
 }
 .hp-blog-card:hover {
-  background: color-mix(in srgb, #ff66ff 16%, var(--bg-card));
-  border-color: color-mix(in srgb, #ff66ff 30%, transparent);
+  background: color-mix(in srgb, #ff66ff 14%, rgba(26, 26, 46, 0.8));
+  border-color: color-mix(in srgb, #ff66ff 28%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 0 12px color-mix(in srgb, #ff66ff 8%, transparent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 0 10px color-mix(in srgb, #ff66ff 6%, transparent);
   text-shadow: none;
 }
 .hp-blog-date {
@@ -545,8 +562,10 @@ a:hover {
   gap: 0.8rem;
   width: 100%;
   padding: 0.7rem 1.2rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   cursor: pointer;
   transition: all 0.3s;
@@ -747,8 +766,10 @@ a:hover {
   align-items: center;
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-heading);
   font-weight: 800;
@@ -757,9 +778,9 @@ a:hover {
   transition: all 0.3s;
 }
 .welcome-cta-btn:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.06);
   transform: translateY(-1px);
   color: #fff;
 }
@@ -776,8 +797,10 @@ a:hover {
   flex-direction: column;
   align-items: center;
   padding: 0.7rem 1.2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   flex: 1;
 }
@@ -1034,17 +1057,19 @@ a:hover {
   gap: 1.5rem;
 }
 .video-card {
-  background: var(--bg-card);
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.3s ease;
   position: relative;
 }
 .video-card:hover {
   transform: translateY(-4px);
-  border-color: var(--neon-cyan);
-  box-shadow: var(--shadow-neon);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 .video-card .thumb {
   position: relative;
@@ -1157,6 +1182,8 @@ a:hover {
   padding: 1.5rem;
   border-radius: 8px;
   background: rgba(255, 102, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 102, 255, 0.08);
   transition: all 0.3s ease;
 }
@@ -1321,7 +1348,9 @@ a:hover {
   text-align: center;
   padding: 2.5rem 1.5rem 1rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--hero-accent) 50%, #0f0f1a) 0%, var(--bg-primary) 100%);
+    linear-gradient(180deg, color-mix(in srgb, var(--hero-accent) 35%, rgba(15, 15, 26, 0.8)) 0%, var(--bg-primary) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   margin-bottom: -0.5rem;
 }
 .tool-hero-inner {
