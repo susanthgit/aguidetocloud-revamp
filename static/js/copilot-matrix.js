@@ -411,7 +411,7 @@
 
       const isRecommended = tier.id === 'm365';
 
-      html += `<div class="cpmatrix-tier-card${isRecommended ? ' recommended' : ''}">`;
+      html += `<div class="cpmatrix-tier-card${isRecommended ? ' cpmatrix-recommended' : ''}">`;
       if (isRecommended) html += '<div class="cpmatrix-tier-badge">Most Complete</div>';
       html += `<div class="cpmatrix-tier-emoji">${tier.emoji}</div>`;
       html += `<div class="cpmatrix-tier-name">${tier.name}</div>`;

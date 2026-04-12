@@ -173,11 +173,11 @@
       html += '<td class="aimap-hm-provider">' + s.provider + '</td>';
       caps.forEach(cap => {
         const v = s[cap] || 0;
-        const cls = v >= 4 ? 'hm-high' : v >= 2 ? 'hm-med' : v > 0 ? 'hm-low' : 'hm-none';
+        const cls = v >= 4 ? 'aimap-hm-high' : v >= 2 ? 'aimap-hm-med' : v > 0 ? 'aimap-hm-low' : 'aimap-hm-none';
         html += '<td class="aimap-hm-cell ' + cls + '">' + (v || '—') + '</td>';
       });
-      html += '<td class="aimap-hm-cell ' + (s.free_tier ? 'hm-high' : 'hm-none') + '">' + (s.free_tier ? '✅' : '—') + '</td>';
-      html += '<td class="aimap-hm-cell ' + (s.multimodal ? 'hm-med' : 'hm-none') + '">' + (s.multimodal ? '✅' : '—') + '</td>';
+      html += '<td class="aimap-hm-cell ' + (s.free_tier ? 'aimap-hm-high' : 'aimap-hm-none') + '">' + (s.free_tier ? '✅' : '—') + '</td>';
+      html += '<td class="aimap-hm-cell ' + (s.multimodal ? 'aimap-hm-med' : 'aimap-hm-none') + '">' + (s.multimodal ? '✅' : '—') + '</td>';
       html += '</tr>';
     });
 
@@ -290,10 +290,10 @@
 
     var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + b + '</span>'; }).join('');
 
-    var priceClass = 'paid', priceText = s.price_note || s.pricing_model || '';
-    if (s.free_tier && s.pricing_model === 'free') { priceClass = 'free'; priceText = '🆓 Free'; }
-    else if (s.free_tier) { priceClass = 'free'; priceText = '🆓 Free tier'; }
-    else if (s.pricing_model === 'subscription') { priceClass = 'sub'; }
+    var priceClass = 'aimap-paid', priceText = s.price_note || s.pricing_model || '';
+    if (s.free_tier && s.pricing_model === 'free') { priceClass = 'aimap-free'; priceText = '🆓 Free'; }
+    else if (s.free_tier) { priceClass = 'aimap-free'; priceText = '🆓 Free tier'; }
+    else if (s.pricing_model === 'subscription') { priceClass = 'aimap-sub'; }
 
     // Last updated (#8)
     var updatedHTML = s.last_updated ? '<span class="aimap-card-updated" title="Data last verified">✓ ' + s.last_updated + '</span>' : '';
@@ -642,7 +642,7 @@
     rows.forEach(function(row) {
       var vals = selected.map(function(s) { return row.key(s); });
       var allSame = vals.every(function(v) { return v === vals[0]; });
-      html += '<tr><th>' + row.label + '</th>' + vals.map(function(v) { return '<td' + (allSame ? '' : ' class="diff-highlight"') + '>' + v + '</td>'; }).join('') + '</tr>';
+      html += '<tr><th>' + row.label + '</th>' + vals.map(function(v) { return '<td' + (allSame ? '' : ' class="aimap-diff-highlight"') + '>' + v + '</td>'; }).join('') + '</tr>';
     });
     html += '</tbody></table>';
 
@@ -822,7 +822,7 @@
       data.sort(function(a,b) { return (a.name||'').localeCompare(b.name||''); });
       tbody.innerHTML = data.map(function(s) {
         return '<tr><td><strong>' + s.name + '</strong></td><td>' + s.provider + '</td>' +
-          '<td>' + (s.free_tier ? '<span class="price-free">✅</span>' : '❌') + '</td>' +
+          '<td>' + (s.free_tier ? '<span class="aimap-price-free">✅</span>' : '❌') + '</td>' +
           '<td>' + (s.price_input||'N/A') + '</td><td>' + (s.price_output||'N/A') + '</td>' +
           '<td>' + (s.pricing_model||'N/A') + '</td>' +
           '<td>' + (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener">Pricing →</a>' : '') + '</td></tr>';

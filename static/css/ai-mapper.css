@@ -318,9 +318,9 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
-.aimap-card-price.free { color: #4ade80; }
-.aimap-card-price.paid { color: #fbbf24; }
-.aimap-card-price.sub { color: #f97316; }
+.aimap-card-price.aimap-free { color: #4ade80; }
+.aimap-card-price.aimap-paid { color: #fbbf24; }
+.aimap-card-price.aimap-sub { color: #f97316; }
 
 .aimap-card-link {
   font-size: 0.8rem;
@@ -424,7 +424,7 @@
   font-size: 0.9rem;
   border-bottom: 2px solid var(--aimap-accent-border);
 }
-.aimap-compare-table .diff-highlight {
+.aimap-compare-table .aimap-diff-highlight {
   background: rgba(139,92,246,0.08);
 }
 
@@ -569,7 +569,7 @@
   color: var(--aimap-text);
 }
 .aimap-pricing-table tr:hover td { background: rgba(255,255,255,0.02); }
-.aimap-pricing-table .price-free { color: #4ade80; font-weight: 600; }
+.aimap-pricing-table .aimap-price-free { color: #4ade80; font-weight: 600; }
 .aimap-pricing-table a { color: var(--aimap-accent); text-decoration: none; }
 .aimap-pricing-table a:hover { text-decoration: underline; }
 
@@ -792,10 +792,10 @@ body.page-ai-mapper .site-nav { border-bottom-color: #8B5CF6; }
 .aimap-hm-name { font-weight: 600; color: #fff; white-space: nowrap; padding: 0.4rem 0.6rem; }
 .aimap-hm-provider { color: var(--aimap-text-muted); padding: 0.4rem; white-space: nowrap; }
 .aimap-hm-cell { text-align: center; padding: 0.4rem; font-weight: 600; border-bottom: 1px solid var(--aimap-border); }
-.hm-high { background: rgba(139,92,246,0.2); color: #93c5fd; }
-.hm-med { background: rgba(251,191,36,0.12); color: #fbbf24; }
-.hm-low { background: rgba(255,255,255,0.03); color: #888; }
-.hm-none { color: #444; }
+.aimap-hm-high { background: rgba(139,92,246,0.2); color: #93c5fd; }
+.aimap-hm-med { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.aimap-hm-low { background: rgba(255,255,255,0.03); color: #888; }
+.aimap-hm-none { color: #444; }
 .aimap-heatmap-row:hover td { background: rgba(255,255,255,0.04); }
 
 /* ---- Cost estimator (#13) ---- */

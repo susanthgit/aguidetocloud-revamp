@@ -52,9 +52,9 @@
   font-weight: 700;
   color: var(--sh-text);
 }
-.shealth-summary-value.red { color: var(--sh-red); }
-.shealth-summary-value.green { color: var(--sh-green); }
-.shealth-summary-value.accent { color: var(--sh-accent); }
+.shealth-summary-value.shealth-red { color: var(--sh-red); }
+.shealth-summary-value.shealth-green { color: var(--sh-green); }
+.shealth-summary-value.shealth-accent { color: var(--sh-accent); }
 
 .shealth-all-ok {
   text-align: center;
@@ -565,10 +565,10 @@
   font-weight: 700;
   flex-shrink: 0;
 }
-.shealth-ma-rank.r1 { background: var(--sh-red); color: #fff; }
-.shealth-ma-rank.r2 { background: var(--sh-orange); color: #fff; }
-.shealth-ma-rank.r3 { background: var(--sh-yellow); color: #000; }
-.shealth-ma-rank.r4,.shealth-ma-rank.r5 { background: var(--sh-border); color: var(--sh-text-dim); }
+.shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: #fff; }
+.shealth-ma-rank.shealth-r2 { background: var(--sh-orange); color: #fff; }
+.shealth-ma-rank.shealth-r3 { background: var(--sh-yellow); color: #000; }
+.shealth-ma-rank.shealth-r4,.shealth-ma-rank.shealth-r5 { background: var(--sh-border); color: var(--sh-text-dim); }
 .shealth-ma-name { flex: 1; color: var(--sh-text); }
 .shealth-ma-count { font-weight: 700; color: var(--sh-accent); }
 .shealth-ma-bar-track {

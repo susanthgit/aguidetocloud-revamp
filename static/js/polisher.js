@@ -551,10 +551,10 @@
   }
 
   function totalScoreClass(score) {
-    if (score <= 25) return 'score-low';
-    if (score <= 50) return 'score-med';
-    if (score <= 75) return 'score-good';
-    return 'score-great';
+    if (score <= 25) return 'polisher-score-low';
+    if (score <= 50) return 'polisher-score-med';
+    if (score <= 75) return 'polisher-score-good';
+    return 'polisher-score-great';
   }
 
   let currentPolished = '';
@@ -579,11 +579,11 @@
       // Start bars at 0 width, animate in via CSS transition
       html += `
         <div class="polisher-pillar">
-          <span class="polisher-pillar-name"><span class="craft-icon">${meta.icon}</span> ${meta.label}</span>
+          <span class="polisher-pillar-name"><span class="polisher-craft-icon">${meta.icon}</span> ${meta.label}</span>
           <div class="polisher-pillar-bar">
-            <div class="polisher-pillar-fill fill-${cls}" style="width: 0%" data-target="${Math.round(pct * 100)}"></div>
+            <div class="polisher-pillar-fill polisher-fill-${cls}" style="width: 0%" data-target="${Math.round(pct * 100)}"></div>
           </div>
-          <span class="polisher-pillar-score score-${cls}">${p.score}/${p.max}</span>
+          <span class="polisher-pillar-score polisher-score-${cls}">${p.score}/${p.max}</span>
         </div>`;
     }
     $pillars.innerHTML = html;
@@ -600,7 +600,7 @@
     if ($delta && polishedAnalysis) {
       const diff = polishedAnalysis.total - analysis.total;
       if (diff > 0) {
-        $delta.innerHTML = `<span class="polisher-delta-badge">Original: <strong>${analysis.total}</strong> → Polished: <strong class="score-good">${polishedAnalysis.total}</strong> <span class="polisher-delta-up">+${diff} points</span></span>`;
+        $delta.innerHTML = `<span class="polisher-delta-badge">Original: <strong>${analysis.total}</strong> → Polished: <strong class="polisher-score-good">${polishedAnalysis.total}</strong> <span class="polisher-delta-up">+${diff} points</span></span>`;
         $delta.style.display = '';
       } else {
         $delta.style.display = 'none';

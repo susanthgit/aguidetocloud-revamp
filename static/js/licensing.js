@@ -93,11 +93,11 @@
 
   function renderPlanCard(plan) {
     const priceDisplay = plan.price === 0
-      ? '<span class="price-unit">Free</span>'
-      : `$${plan.price}<span class="price-unit">/user/mo</span>`;
+      ? '<span class="lic-price-unit">Free</span>'
+      : `$${plan.price}<span class="lic-price-unit">/user/mo</span>`;
 
     const noteHtml = plan.price_note
-      ? `<span class="price-note">${plan.price_note}</span>`
+      ? `<span class="lic-price-note">${plan.price_note}</span>`
       : '';
 
     const badgeHtml = plan.badge
@@ -112,7 +112,7 @@
       const extra = resolved.length - show.length;
       featHtml = '<ul class="lic-card-features">';
       show.forEach(feat => {
-        featHtml += `<li><span class="feat-yes">✓</span> ${feat.name}</li>`;
+        featHtml += `<li><span class="lic-feat-yes">✓</span> ${feat.name}</li>`;
       });
       if (extra > 0) {
         featHtml += `<li class="lic-feat-more">+ ${extra} more</li>`;
@@ -198,7 +198,7 @@
         html += `<tr><td>${feat.icon} ${feat.name}</td>`;
         selectedPlans.forEach(p => {
           const has = p.features && p.features.includes(feat.id);
-          html += `<td class="${has ? 'feat-cell-yes' : 'feat-cell-no'}">${has ? '✅' : '—'}</td>`;
+          html += `<td class="${has ? 'lic-feat-cell-yes' : 'lic-feat-cell-no'}">${has ? '✅' : '—'}</td>`;
         });
         html += '</tr>';
       });
@@ -843,8 +843,8 @@
       totalUsers += r.users;
 
       summaryRows += `<div class="lic-calc-summary-row">
-        <span class="plan-name">${plan.name} × ${r.users} users</span>
-        <span class="plan-cost">$${lineCost.toLocaleString()}/mo</span>
+        <span class="lic-plan-name">${plan.name} × ${r.users} users</span>
+        <span class="lic-plan-cost">$${lineCost.toLocaleString()}/mo</span>
       </div>`;
 
       // Update line cost display

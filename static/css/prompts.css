@@ -463,10 +463,10 @@
   text-shadow: none;
   transform: translateY(-1px);
 }
-.prompts-category-card .cat-emoji {
+.prompts-category-card .prompts-cat-emoji {
   font-size: 1.2rem;
 }
-.prompts-category-card .cat-count {
+.prompts-category-card .prompts-cat-count {
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-left: auto;

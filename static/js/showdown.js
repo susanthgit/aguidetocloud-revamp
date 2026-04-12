@@ -344,7 +344,7 @@
         const visible = arr.slice(0, maxShow).map(x => `<li>${x}</li>`).join('');
         const hidden = arr.length > maxShow ? arr.slice(maxShow).map(x => `<li>${x}</li>`).join('') : '';
         const more = arr.length > maxShow ? `<li class="showdown-show-more" style="cursor:pointer;color:var(--showdown-accent);font-weight:600;list-style:none;padding-left:0">+ ${arr.length - maxShow} more...</li>` : '';
-        return `<ul class="showdown-strength-list ${cls}">${visible}<span class="showdown-hidden-items" style="display:none">${hidden}</span>${more}</ul>`;
+        return `<ul class="showdown-strength-list showdown-list-${cls}">${visible}<span class="showdown-hidden-items" style="display:none">${hidden}</span>${more}</ul>`;
       };
 
       html += `
@@ -354,19 +354,19 @@
             <span class="showdown-strength-title">${prov.name} (${prov.product})</span>
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label pros">✅ STRENGTHS</div>
+            <div class="showdown-strength-label showdown-label-pros">✅ STRENGTHS</div>
             ${mkList(s.strengths, 'pros')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label cons">❌ WEAKNESSES</div>
+            <div class="showdown-strength-label showdown-label-cons">❌ WEAKNESSES</div>
             ${mkList(s.weaknesses, 'cons')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label bestfor">🎯 BEST FOR</div>
+            <div class="showdown-strength-label showdown-label-bestfor">🎯 BEST FOR</div>
             ${mkList(s.best_for, 'bestfor')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label watchout">⚠️ WATCH OUT</div>
+            <div class="showdown-strength-label showdown-label-watchout">⚠️ WATCH OUT</div>
             ${mkList(s.watch_out, 'watchout')}
           </div>
         </div>`;
@@ -467,7 +467,7 @@
     quizContainer.style.display = 'none';
     container.style.display = 'block';
 
-    const ranks = ['first', 'second', 'third'];
+    const ranks = ['showdown-rank-first', 'showdown-rank-second', 'showdown-rank-third'];
     const labels = ['🥇 Top Pick', '🥈 Runner Up', '🥉 Also Great'];
     const maxScore = results[0]?.score || 1;
 
@@ -476,7 +476,7 @@
       ${results.map((r, i) => {
         const pct = Math.round((r.score / maxScore) * 100);
         return `
-          <div class="showdown-result-card${i === 0 ? ' top-pick' : ''}">
+          <div class="showdown-result-card${i === 0 ? ' showdown-top-pick' : ''}">
             <div class="showdown-result-rank ${ranks[i]}">${labels[i]}</div>
             <div class="showdown-result-name">${r.provider.logo_emoji} ${r.provider.name} (${r.provider.product})</div>
             <div class="showdown-result-score">Match: ${pct}%</div>

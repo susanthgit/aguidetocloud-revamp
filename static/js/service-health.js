@@ -86,14 +86,14 @@
     if (degradedCount === 0) {
       el.innerHTML = `
         <div class="shealth-all-ok">✅ All ${totalServices} services operational</div>
-        <div class="shealth-summary-item"><span class="shealth-summary-value accent">${totalIssues}</span> incidents tracked</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value shealth-accent">${totalIssues}</span> incidents tracked</div>
       `;
     } else {
       el.innerHTML = `
-        <div class="shealth-summary-item"><span class="shealth-summary-value red">${activeCount}</span> active incidents</div>
-        <div class="shealth-summary-item"><span class="shealth-summary-value red">${degradedCount}</span> services affected</div>
-        <div class="shealth-summary-item"><span class="shealth-summary-value green">${totalServices - degradedCount}</span> operational</div>
-        <div class="shealth-summary-item"><span class="shealth-summary-value accent">${totalIssues}</span> total tracked</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value shealth-red">${activeCount}</span> active incidents</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value shealth-red">${degradedCount}</span> services affected</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value shealth-green">${totalServices - degradedCount}</span> operational</div>
+        <div class="shealth-summary-item"><span class="shealth-summary-value shealth-accent">${totalIssues}</span> total tracked</div>
       `;
     }
 
@@ -440,7 +440,7 @@
       <div class="shealth-ma-title">🏆 Most Affected Services</div>
       ${top5.map((s, i) => `
         <div class="shealth-ma-item">
-          <span class="shealth-ma-rank r${i + 1}">${i + 1}</span>
+          <span class="shealth-ma-rank shealth-r${i + 1}">${i + 1}</span>
           <span class="shealth-ma-name">${s.icon} ${escHtml(s.short_name)}</span>
           <span class="shealth-ma-count">${s.total_incidents}</span>
           <div class="shealth-ma-bar-track"><div class="shealth-ma-bar-fill" style="width:${(s.total_incidents / maxInc) * 100}%"></div></div>

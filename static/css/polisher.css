@@ -310,7 +310,7 @@
   font-size: 0.82rem;
   color: var(--text-secondary);
 }
-.polisher-pillar-name .craft-icon {
+.polisher-pillar-name .polisher-craft-icon {
   margin-right: 0.3rem;
 }
 .polisher-pillar-bar {
@@ -332,14 +332,14 @@
 }
 
 /* Score colours */
-.score-low { color: #ef4444; }
-.score-med { color: #f59e0b; }
-.score-good { color: #22c55e; }
-.score-great { color: #3b82f6; }
-.fill-low { background: #ef4444; }
-.fill-med { background: #f59e0b; }
-.fill-good { background: #22c55e; }
-.fill-great { background: #3b82f6; }
+.polisher-score-low { color: #ef4444; }
+.polisher-score-med { color: #f59e0b; }
+.polisher-score-good { color: #22c55e; }
+.polisher-score-great { color: #3b82f6; }
+.polisher-fill-low { background: #ef4444; }
+.polisher-fill-med { background: #f59e0b; }
+.polisher-fill-good { background: #22c55e; }
+.polisher-fill-great { background: #3b82f6; }
 
 /* ── Tips Section ── */
 .polisher-tips-section {
@@ -421,7 +421,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.polisher-output .added {
+.polisher-output .polisher-added {
   background: rgba(34, 197, 94, 0.15);
   border-radius: 3px;
   padding: 0 2px;
@@ -458,7 +458,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
 }
-.polisher-craft-card .craft-letter {
+.polisher-craft-card .polisher-craft-letter {
   display: inline-block;
   width: 28px;
   height: 28px;

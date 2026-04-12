@@ -412,10 +412,10 @@
   letter-spacing: 0.5px;
   margin-bottom: 0.3rem;
 }
-.showdown-strength-label.pros { color: var(--showdown-green); }
-.showdown-strength-label.cons { color: var(--showdown-red); }
-.showdown-strength-label.bestfor { color: var(--showdown-accent); }
-.showdown-strength-label.watchout { color: var(--showdown-yellow); }
+.showdown-strength-label.showdown-label-pros { color: var(--showdown-green); }
+.showdown-strength-label.showdown-label-cons { color: var(--showdown-red); }
+.showdown-strength-label.showdown-label-bestfor { color: var(--showdown-accent); }
+.showdown-strength-label.showdown-label-watchout { color: var(--showdown-yellow); }
 
 .showdown-strength-list {
   list-style: none;
@@ -435,10 +435,10 @@
   left: 0;
   font-size: 0.75rem;
 }
-.showdown-strength-list.pros li::before { content: "✅"; }
-.showdown-strength-list.cons li::before { content: "❌"; }
-.showdown-strength-list.bestfor li::before { content: "🎯"; }
-.showdown-strength-list.watchout li::before { content: "⚠️"; }
+.showdown-strength-list.showdown-list-pros li::before { content: "✅"; }
+.showdown-strength-list.showdown-list-cons li::before { content: "❌"; }
+.showdown-strength-list.showdown-list-bestfor li::before { content: "🎯"; }
+.showdown-strength-list.showdown-list-watchout li::before { content: "⚠️"; }
 
 /* Radar Chart (canvas) */
 .showdown-radar-wrap {
@@ -558,7 +558,7 @@
   padding: 1.25rem;
   margin-bottom: 1rem;
 }
-.showdown-result-card.top-pick {
+.showdown-result-card.showdown-top-pick {
   border-color: var(--showdown-accent);
   border-width: 2px;
 }
@@ -569,9 +569,9 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-.showdown-result-rank.first { color: var(--showdown-accent); }
-.showdown-result-rank.second { color: var(--showdown-yellow); }
-.showdown-result-rank.third { color: var(--showdown-blue); }
+.showdown-result-rank.showdown-rank-first { color: var(--showdown-accent); }
+.showdown-result-rank.showdown-rank-second { color: var(--showdown-yellow); }
+.showdown-result-rank.showdown-rank-third { color: var(--showdown-blue); }
 .showdown-result-name {
   font-size: 1.2rem;
   font-weight: 700;

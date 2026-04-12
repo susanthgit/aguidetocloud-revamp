@@ -546,9 +546,9 @@
     nav.innerHTML = '';
     PILLARS.forEach((p, i) => {
       const btn = document.createElement('button');
-      btn.className = 'rpn-item';
+      btn.className = 'readiness-rpn-item';
       btn.dataset.pillar = p.id;
-      btn.innerHTML = `<span class="rpn-icon">${p.icon}</span><span class="rpn-score" id="rpn-score-${p.id}"></span>`;
+      btn.innerHTML = `<span class="readiness-rpn-icon">${p.icon}</span><span class="readiness-rpn-score" id="rpn-score-${p.id}"></span>`;
       btn.title = p.name;
       btn.addEventListener('click', () => jumpToPillar(p.id));
       nav.appendChild(btn);
@@ -559,7 +559,7 @@
   function updatePillarNav() {
     PILLARS.forEach(p => {
       const range = PILLAR_RANGES[p.id];
-      const btn = document.querySelector(`.rpn-item[data-pillar="${p.id}"]`);
+      const btn = document.querySelector(`.readiness-rpn-item[data-pillar="${p.id}"]`);
       if (!btn) return;
 
       // Check if all questions in this pillar are answered
@@ -613,13 +613,13 @@
 
     // "Why this matters" expandable context
     const ctxEl = $('readiness-question-context');
-    ctxEl.innerHTML = `<button class="readiness-why-toggle" aria-expanded="false">💡 Why this matters <span class="why-arrow">▸</span></button><div class="readiness-why-detail" hidden>${q.context}</div>`;
+    ctxEl.innerHTML = `<button class="readiness-why-toggle" aria-expanded="false">💡 Why this matters <span class="readiness-why-arrow">▸</span></button><div class="readiness-why-detail" hidden>${q.context}</div>`;
     ctxEl.querySelector('.readiness-why-toggle').addEventListener('click', function() {
       const detail = this.nextElementSibling;
       const expanded = detail.hidden;
       detail.hidden = !expanded;
       this.setAttribute('aria-expanded', expanded);
-      this.querySelector('.why-arrow').textContent = expanded ? '▾' : '▸';
+      this.querySelector('.readiness-why-arrow').textContent = expanded ? '▾' : '▸';
     });
 
     // Options
@@ -738,7 +738,7 @@
     let descHtml = tier.desc;
     if (previousScore !== null && previousScore !== overallScore) {
       const delta = overallScore - previousScore;
-      const deltaClass = delta > 0 ? 'delta-up' : 'delta-down';
+      const deltaClass = delta > 0 ? 'readiness-delta-up' : 'readiness-delta-down';
       const deltaIcon = delta > 0 ? '📈' : '📉';
       descHtml += ` <span class="readiness-delta ${deltaClass}">${deltaIcon} ${delta > 0 ? '+' : ''}${delta} points since last assessment</span>`;
     }
@@ -751,7 +751,7 @@
       benchEl.innerHTML = diff >= 0
         ? `📊 You're <strong>${diff} points above</strong> the typical organisation score of ${BENCHMARKS.overall}`
         : `📊 The typical organisation scores ${BENCHMARKS.overall} — you're <strong>${Math.abs(diff)} points below</strong>. Focus on the red areas below.`;
-      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'bench-above' : 'bench-below');
+      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'readiness-bench-above' : 'readiness-bench-below');
     }
 
     // Confetti on high score
@@ -803,7 +803,7 @@
     // "Investigate" items from "Not sure" answers
     if (investigateItems.length > 0) {
       const header = document.createElement('div');
-      header.className = 'readiness-rec-item priority-investigate';
+      header.className = 'readiness-rec-item readiness-priority-investigate';
       header.innerHTML = `
         <span class="readiness-rec-icon">🔍</span>
         <div class="readiness-rec-content">
@@ -822,7 +822,7 @@
 
   function appendRec(container, priority, icon, title, desc, idx) {
     const item = document.createElement('div');
-    item.className = `readiness-rec-item priority-${priority}`;
+    item.className = `readiness-rec-item readiness-priority-${priority}`;
     item.id = `rec-${idx}`;
     item.innerHTML = `
       <span class="readiness-rec-icon">${icon}</span>
@@ -960,7 +960,7 @@
     const colors = ['#3B82F6', '#22C55E', '#EAB308', '#F97316', '#A78BFA', '#FF6B6B'];
     for (let i = 0; i < 60; i++) {
       const piece = document.createElement('div');
-      piece.className = 'confetti-piece';
+      piece.className = 'readiness-confetti-piece';
       piece.style.left = Math.random() * 100 + '%';
       piece.style.background = colors[Math.floor(Math.random() * colors.length)];
       piece.style.animationDelay = Math.random() * 0.5 + 's';
@@ -1019,7 +1019,7 @@
       benchEl.innerHTML = diff >= 0
         ? `📊 This org is <strong>${diff} points above</strong> the typical score of ${BENCHMARKS.overall}`
         : `📊 This org is <strong>${Math.abs(diff)} points below</strong> the typical score of ${BENCHMARKS.overall}`;
-      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'bench-above' : 'bench-below');
+      benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'readiness-bench-above' : 'readiness-bench-below');
     }
 
     if (score >= 86) setTimeout(launchConfetti, 800);
@@ -1048,7 +1048,7 @@
     });
 
     const recsContainer = $('readiness-recommendations-list');
-    recsContainer.innerHTML = '<div class="readiness-rec-item priority-low"><span class="readiness-rec-icon">ℹ️</span><div class="readiness-rec-content"><div class="readiness-rec-title">Shared results view</div><div class="readiness-rec-desc">This is a shared score. To get personalised recommendations, <a href="/copilot-readiness/">take the full assessment</a>.</div></div></div>';
+    recsContainer.innerHTML = '<div class="readiness-rec-item readiness-priority-low"><span class="readiness-rec-icon">ℹ️</span><div class="readiness-rec-content"><div class="readiness-rec-title">Shared results view</div><div class="readiness-rec-desc">This is a shared score. To get personalised recommendations, <a href="/copilot-readiness/">take the full assessment</a>.</div></div></div>';
 
     // Still render Next Steps for shared view
     renderNextSteps(score);
