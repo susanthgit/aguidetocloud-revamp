@@ -267,19 +267,20 @@
 
   /* ═══════ RECIPES TAB ═══════ */
 
-  // #6 — Recipe count per service pill + A3 export button
+  // Service filter as <select> dropdown instead of pills
   function renderRecipeFilters() {
-    const container = $('#psb-recipe-filters');
+    const select = $('#psb-service-select');
+    if (!select) return;
     const services = [...new Set(D.recipes.map(r => r.service))].sort();
     const counts = {};
     D.recipes.forEach(r => { counts[r.service] = (counts[r.service] || 0) + 1; });
 
     services.forEach(svc => {
       const mod = D.modules.find(m => m.display_name === svc);
-      const btn = el('button', 'psb-pill');
-      btn.dataset.filter = svc;
-      btn.textContent = (mod ? mod.emoji + ' ' : '') + svc + ` (${counts[svc]})`;
-      container.appendChild(btn);
+      const opt = document.createElement('option');
+      opt.value = svc;
+      opt.textContent = (mod ? mod.emoji + ' ' : '') + svc + ` (${counts[svc]})`;
+      select.appendChild(opt);
     });
   }
 
@@ -688,24 +689,9 @@
       const tab = e.target.closest('.psb-tab');
       if (tab) { switchTab(tab.dataset.tab); return; }
 
-      // Recipe service filters
-      const pill = e.target.closest('#psb-recipe-filters .psb-pill');
-      if (pill) {
-        S.recipeFilter = pill.dataset.filter;
-        $$('#psb-recipe-filters .psb-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === S.recipeFilter));
-        renderRecipes();
-        updateURL();
-        return;
-      }
+      // Recipe service filters — now handled by <select> onchange (bound in bindEvents)
 
-      // Difficulty filters
-      const dpill = e.target.closest('#psb-difficulty-filters .psb-pill-sm');
-      if (dpill) {
-        S.difficultyFilter = dpill.dataset.difficulty;
-        $$('#psb-difficulty-filters .psb-pill-sm').forEach(p => p.classList.toggle('active', p.dataset.difficulty === S.difficultyFilter));
-        renderRecipes();
-        return;
-      }
+      // Difficulty filters — now handled by <select> onchange (bound in bindEvents)
 
       // #16 — Module category filters
       const mcatPill = e.target.closest('#psb-module-cats .psb-pill-sm');
@@ -914,8 +900,20 @@
     if (recipeSearch) {
       recipeSearch.addEventListener('input', () => { S.recipeSearch = recipeSearch.value; renderRecipes(); });
       // A2 — Shortcut hint
-      const hint = el('div', 'psb-shortcut-hint', '💡 Press <kbd>/</kbd> to focus search · <kbd>Enter</kbd> to expand recipes');
-      recipeSearch.parentNode.appendChild(hint);
+      const hint = el('div', 'psb-shortcut-hint', '💡 Press <kbd>/</kbd> to search · <kbd>Enter</kbd> to expand');
+      recipeSearch.parentNode.parentNode.appendChild(hint);
+    }
+
+    // Service dropdown
+    const svcSelect = $('#psb-service-select');
+    if (svcSelect) {
+      svcSelect.addEventListener('change', () => { S.recipeFilter = svcSelect.value; renderRecipes(); updateURL(); });
+    }
+
+    // Difficulty dropdown
+    const diffSelect = $('#psb-difficulty-select');
+    if (diffSelect) {
+      diffSelect.addEventListener('change', () => { S.difficultyFilter = diffSelect.value; renderRecipes(); });
     }
 
     const cmdletSearch = $('#psb-cmdlet-search');
@@ -967,7 +965,11 @@
 
     switchTab(S.activeTab);
 
-    if (S.selectedModule) {
+    // Restore filter select values from URL
+    const svcSelect = $('#psb-service-select');
+    if (svcSelect && S.recipeFilter !== 'all') { svcSelect.value = S.recipeFilter; renderRecipes(); }
+    const diffSelect = $('#psb-difficulty-select');
+    if (diffSelect && S.difficultyFilter !== 'all') diffSelect.value = S.difficultyFilter;
       selectModule(S.selectedModule);
       if (S.selectedCmdlet) setTimeout(() => selectCmdlet(S.selectedCmdlet), 50);
     }

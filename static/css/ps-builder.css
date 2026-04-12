@@ -269,14 +269,29 @@
 }
 .psb-toast.show { opacity: 1; }
 
-/* ═══════ #5 STATS BANNER ═══════ */
+/* ═══════ #5 STATS BANNER (inside hero) ═══════ */
 .psb-stats-bar {
-  display: flex; justify-content: center; gap: 2rem; padding: 1rem; margin: -0.5rem auto 1rem;
-  max-width: 600px;
+  display: flex; justify-content: center; gap: 2rem; padding: 0.75rem 0 0.25rem;
 }
 .psb-stat { text-align: center; }
-.psb-stat-num { display: block; font-size: 1.5rem; font-weight: 800; color: var(--psb-accent); }
-.psb-stat-label { font-size: 0.75rem; color: var(--psb-text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+.psb-stat-num { display: block; font-size: 1.5rem; font-weight: 800; color: #fff; }
+.psb-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ═══════ SEARCH + FILTER ROW (dropdowns, not pills) ═══════ */
+.psb-search-filter-row {
+  display: flex; gap: 0.5rem; align-items: stretch; margin-bottom: 0.75rem;
+}
+.psb-search-filter-row .psb-search { flex: 1; min-width: 0; }
+.psb-filter-select {
+  padding: 0.6rem 0.75rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
+  border-radius: 8px; color: var(--psb-text); font-size: 0.85rem; cursor: pointer;
+  min-width: 140px; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.6rem center;
+  padding-right: 2rem;
+}
+.psb-filter-select:focus { outline: none; border-color: var(--psb-accent); box-shadow: 0 0 0 3px var(--psb-accent-dim); }
+.psb-filter-select option { background: var(--psb-surface); color: var(--psb-text); }
 
 /* ═══════ #10 QUICK START ═══════ */
 .psb-quick-start { margin-bottom: 1.5rem; }
@@ -435,12 +450,16 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
   .psb-stats-bar { gap: 1rem; }
   .psb-stat-num { font-size: 1.2rem; }
   .psb-quick-grid { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; }
+  .psb-search-filter-row { flex-direction: column; }
+  .psb-filter-select { min-width: auto; width: 100%; }
 }
 @media (max-width: 480px) {
   .psb-module-grid { grid-template-columns: 1fr 1fr; }
   .psb-tabs { gap: 0; }
   .psb-tab { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
   .psb-recipe-header { flex-wrap: wrap; }
+  .psb-stats-bar { gap: 0.75rem; }
+  .psb-stat-num { font-size: 1rem; }
 }
 
 /* ═══════ #20 PRINT STYLES ═══════ */

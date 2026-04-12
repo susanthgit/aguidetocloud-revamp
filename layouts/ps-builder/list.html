@@ -26,16 +26,18 @@
 
 <div class="psb-page">
 
-  {{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "Build M365, Azure & Windows admin commands visually. Select a task or cmdlet → fill parameters → get a ready-to-run command. Free, no sign-up, works offline." "accent" "#4ADE80") }}
-
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-
-  {{/* ── STATS BANNER ── */}}
-  <div class="psb-stats-bar" id="psb-stats-bar">
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
-    <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
+  {{/* ── HERO with integrated stats ── */}}
+  <div class="tool-hero" style="--hero-accent: #4ADE80">
+    <div class="tool-hero-inner">
+      <h1 class="tool-hero-title">PowerShell Command Builder</h1>
+      <div class="psb-stats-bar" id="psb-stats-bar">
+        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
+        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
+        <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
+        <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
+      </div>
+      <p class="tool-hero-subtitle">Build admin commands for M365, Azure, AD, GPO & Windows — visually. No syntax to memorise. No sign-up. Works offline.</p>
+    </div>
   </div>
 
   <div class="psb-container">
@@ -51,19 +53,23 @@
     <div class="psb-panel active" id="psb-panel-recipes" role="tabpanel">
       <div class="psb-recipes-header">
         <h2 class="psb-section-title">What do you want to do?</h2>
-        <div class="psb-search-wrap">
-          <input type="text" id="psb-recipe-search" class="psb-search" placeholder="Search recipes... (e.g. 'shared mailbox', 'firewall', 'locked account')" aria-label="Search recipes">
+
+        {{/* Search + filters in one row using dropdowns */}}
+        <div class="psb-search-filter-row">
+          <input type="text" id="psb-recipe-search" class="psb-search" placeholder="Search recipes... (e.g. 'shared mailbox', 'firewall')" aria-label="Search recipes">
+          <select id="psb-service-select" class="psb-filter-select" aria-label="Filter by service">
+            <option value="all">All Services</option>
+            {{/* Options populated by JS */}}
+          </select>
+          <select id="psb-difficulty-select" class="psb-filter-select" aria-label="Filter by difficulty">
+            <option value="all">All Levels</option>
+            <option value="beginner">🟢 Beginner</option>
+            <option value="intermediate">🟡 Intermediate</option>
+            <option value="advanced">🔴 Advanced</option>
+          </select>
         </div>
-        <div class="psb-filter-pills" id="psb-recipe-filters" role="group" aria-label="Filter by service">
-          <button class="psb-pill active" data-filter="all">All</button>
-        </div>
+
         <div class="psb-filter-row">
-          <div class="psb-filter-pills" id="psb-difficulty-filters" role="group" aria-label="Filter by difficulty">
-            <button class="psb-pill-sm active" data-difficulty="all">All Levels</button>
-            <button class="psb-pill-sm" data-difficulty="beginner">🟢 Beginner</button>
-            <button class="psb-pill-sm" data-difficulty="intermediate">🟡 Intermediate</button>
-            <button class="psb-pill-sm" data-difficulty="advanced">🔴 Advanced</button>
-          </div>
           <span class="psb-recipe-count" id="psb-recipe-count"></span>
         </div>
       </div>
@@ -189,6 +195,8 @@
 
   </div>
 </div>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
 {{ partial "feedback-cta.html" (dict "Page" . "tool" "ps-builder" "label" "PowerShell Builder") }}
 
