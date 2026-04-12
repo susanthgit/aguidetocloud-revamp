@@ -1679,3 +1679,38 @@ pre.mermaid {
     scroll-behavior: auto !important;
   }
 }
+
+/* ══ Tool Ecosystem Cross-Links (shared) ══ */
+.tool-eco {
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.tool-eco-title { color: #e6edf3; margin-bottom: 1rem; font-size: 1.2rem; }
+.tool-eco-grid { display: grid; gap: 0.75rem; }
+.tool-eco-3 { grid-template-columns: repeat(3, 1fr); }
+.tool-eco-4 { grid-template-columns: repeat(4, 1fr); }
+.tool-eco-2 { grid-template-columns: repeat(2, 1fr); max-width: 400px; margin: 0 auto; }
+.tool-eco-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  text-decoration: none;
+  color: #e6edf3;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
+.tool-eco-card:hover { border-color: var(--eco-accent, #3B82F6); }
+.tool-eco-card.tool-eco-active {
+  border-color: var(--eco-accent, #3B82F6);
+  background: color-mix(in srgb, var(--eco-accent, #3B82F6) 10%, transparent);
+}
+.tool-eco-card span { font-size: 1.3rem; display: block; margin-bottom: 0.4rem; }
+.tool-eco-card strong { display: block; font-size: 0.9rem; margin-bottom: 0.15rem; }
+.tool-eco-card p { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; }
+@media (max-width: 600px) {
+  .tool-eco-4 { grid-template-columns: repeat(2, 1fr); }
+  .tool-eco-3 { grid-template-columns: 1fr; }
+}

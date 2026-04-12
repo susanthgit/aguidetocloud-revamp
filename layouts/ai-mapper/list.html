@@ -310,6 +310,8 @@ window.__aimapData = {
 
 <script src="/js/ai-mapper.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "tool-ecosystem.html" (dict "group" "ai-compare" "active" "mapper") }}
+
 {{ partial "feedback-cta.html" (dict "tool" "ai-mapper" "label" "AI Service Mapper") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 

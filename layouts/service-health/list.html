@@ -125,6 +125,8 @@
 </script>
 <script src="/js/service-health.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "health") }}
+
 {{ partial "feedback-cta.html" (dict "tool" "service-health" "label" "Service Health Tracker") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}

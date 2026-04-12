@@ -563,6 +563,8 @@
 
   </div>{{/* .roi-container */}}
 
+  {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "roi") }}
+
   {{ partial "feedback-cta.html" (dict "tool" "roi-calculator" "label" "ROI Calculator") }}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 

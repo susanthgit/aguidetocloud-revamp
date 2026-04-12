@@ -63,6 +63,8 @@
 </script>
 <script src="/js/cert-tracker.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "certs") }}
+
 {{ partial "feedback-cta.html" (dict "tool" "cert-tracker" "label" "Cert Study Guides") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}
