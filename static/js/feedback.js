@@ -142,10 +142,8 @@
     }
   }
 
-  // ── Fetch recent discussions + stats from GitHub ──
-  const REPO = 'susanthgit/aguidetocloud-feedback';
+  // ── Fetch discussions via our API (server-side auth) ──
   const recentList = document.getElementById('feedback-recent-list');
-  const statsText = document.getElementById('feedback-stats-text');
 
   const TITLE_PREFIX_RE = /^\[([^\]]+)\]\s*/;
 
@@ -161,71 +159,11 @@
 
   async function loadRecent() {
     try {
-      // Use GraphQL to fetch discussions WITH their comments
-      const query = `{
-        repository(owner: "susanthgit", name: "aguidetocloud-feedback") {
-          discussions(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
-            nodes {
-              title url number createdAt
-              category { name }
-              comments(first: 5) {
-                totalCount
-                nodes { body createdAt author { login } }
-              }
-              body
-            }
-          }
-        }
-      }`;
+      const res = await fetch('/api/discussions');
+      if (!res.ok) return;
 
-      const res = await fetch('https://api.github.com/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/vnd.github+json',
-        },
-        body: JSON.stringify({ query }),
-      });
-
-      // GraphQL needs auth for reading — fall back to REST if unauthenticated
-      let discussions = [];
-      if (res.ok) {
-        const data = await res.json();
-        discussions = data.data?.repository?.discussions?.nodes || [];
-      }
-
-      // Fallback to REST API (no comments, but works without auth)
-      if (!discussions.length) {
-        const restRes = await fetch(
-          `https://api.github.com/repos/${REPO}/discussions?per_page=10&sort=created&direction=desc`,
-          { headers: { Accept: 'application/vnd.github+json' } }
-        );
-        if (restRes.ok) {
-          const restData = await restRes.json();
-          discussions = restData.map(d => ({
-            title: d.title,
-            url: d.html_url,
-            number: d.number,
-            createdAt: d.created_at,
-            category: d.category,
-            body: d.body || '',
-            comments: { totalCount: d.comments || 0, nodes: [] },
-          }));
-        }
-      }
-
-      // Stats counter
-      if (statsText) {
-        const count = discussions.length;
-        if (count === 0) {
-          statsText.textContent = 'Share your feedback — be the first!';
-        } else {
-          const answered = discussions.filter(d => d.comments?.totalCount > 0).length;
-          statsText.textContent = `${count} feedback item${count !== 1 ? 's' : ''} shared · ${answered} answered`;
-        }
-      }
-
-      if (!discussions.length) return;
+      const { discussions, totalCount } = await res.json();
+      if (!discussions || !discussions.length) return;
 
       recentList.innerHTML = '';
 
@@ -293,7 +231,7 @@
         recentList.appendChild(item);
       });
     } catch (e) {
-      if (statsText) statsText.textContent = 'Share your feedback below!';
+      // Silently fail — empty state is fine
     }
   }
 

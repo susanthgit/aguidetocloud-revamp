@@ -1,11 +1,11 @@
 /* ──────────────────────────────────────────
    Community Feedback Portal
-   Accent: #14B8A6 (teal)
+   Accent: #FBBF24 (teal)
    Namespace: .feedback-*
    ────────────────────────────────────────── */
 
 :root {
-  --fb-accent: #14B8A6;
+  --fb-accent: #FBBF24;
   --fb-accent-dim: rgba(20, 184, 166, 0.15);
   --fb-accent-hover: #2DD4BF;
   --fb-accent-glow: rgba(20, 184, 166, 0.25);
@@ -92,14 +92,14 @@
   gap: 0.5rem;
 }
 .feedback-disclaimer {
-  font-size: 0.8rem;
-  color: var(--fb-text-dim);
-  line-height: 1.5;
-  padding: 0.6rem 0.85rem;
+  font-size: 0.72rem;
+  color: #6b6577;
+  line-height: 1.4;
+  padding: 0.5rem 0.75rem;
   margin-bottom: 1rem;
-  background: color-mix(in srgb, var(--fb-accent) 5%, var(--fb-bg));
-  border: 1px solid color-mix(in srgb, var(--fb-accent) 12%, transparent);
-  border-radius: 6px;
+  background: none;
+  border: none;
+  border-left: 2px solid #3a3545;
 }
 .feedback-form-row {
   display: grid;
@@ -340,8 +340,8 @@
   flex-wrap: wrap;
   margin: 2rem 0 0.5rem;
   padding: 1rem 1.2rem;
-  background: color-mix(in srgb, #14B8A6 6%, #1e1b24);
-  border: 1px solid color-mix(in srgb, #14B8A6 15%, transparent);
+  background: color-mix(in srgb, #FBBF24 6%, #1e1b24);
+  border: 1px solid color-mix(in srgb, #FBBF24 15%, transparent);
   border-radius: 10px;
 }
 .feedback-cta-text {
@@ -350,7 +350,7 @@
   margin: 0;
 }
 .feedback-cta-btn {
-  background: #14B8A6;
+  background: #FBBF24;
   color: #0f0d13;
   border: none;
   border-radius: 6px;

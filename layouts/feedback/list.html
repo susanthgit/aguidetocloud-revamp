@@ -5,39 +5,6 @@
 
 <div class="feedback-container">
 
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
-
-  <!-- Stats Counter -->
-  <div class="feedback-stats" id="feedback-stats" aria-live="polite">
-    <span class="feedback-stats-icon">💬</span>
-    <span class="feedback-stats-text" id="feedback-stats-text">Loading community feedback…</span>
-  </div>
-
-  <!-- How It Works -->
-  <div class="feedback-how">
-    <div class="feedback-how-step">
-      <div class="feedback-how-num">1</div>
-      <div>
-        <div class="feedback-how-label">Write your message</div>
-        <div class="feedback-how-desc">Questions, ideas, bugs — anything helps</div>
-      </div>
-    </div>
-    <div class="feedback-how-step">
-      <div class="feedback-how-num">2</div>
-      <div>
-        <div class="feedback-how-label">We respond</div>
-        <div class="feedback-how-desc">Every submission gets a personal reply</div>
-      </div>
-    </div>
-    <div class="feedback-how-step">
-      <div class="feedback-how-num">3</div>
-      <div>
-        <div class="feedback-how-label">Everyone benefits</div>
-        <div class="feedback-how-desc">Past Q&As are visible below for everyone</div>
-      </div>
-    </div>
-  </div>
-
   <!-- Submit Form -->
   <div class="feedback-form-section" id="feedback-form-section">
     <div class="feedback-form-title">📝 Share Your Feedback</div>
@@ -135,12 +102,9 @@
         <p>Be the first to share feedback! Your voice shapes our tools and content.</p>
       </div>
     </div>
-    <div class="feedback-github-link">
-      <a href="https://github.com/susanthgit/aguidetocloud-feedback/discussions" target="_blank" rel="noopener">
-        Browse all feedback on GitHub →
-      </a>
-    </div>
   </div>
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 
 </div>
 
