@@ -254,6 +254,11 @@
   font-size: 0.9rem;
   width: 100%;
 }
+.pguide-builder-templates select option,
+#pguide-audience option, #pguide-tone option {
+  background: #1a1a2e;
+  color: #e6edf3;
+}
 
 /* Steps */
 .pguide-step {
