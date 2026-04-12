@@ -562,6 +562,109 @@
   changeFilter.addEventListener('change', renderChangelog);
 
   // ═══════════════════════════════════════════════
+  // TAB: By App — app-focused vertical view (fix E)
+  // ═══════════════════════════════════════════════
+
+  function renderAppGrid() {
+    var grid = document.getElementById('cpmatrix-app-grid');
+    if (!grid) return;
+
+    var html = '';
+    var cats = {};
+    activeApps.forEach(function (a) {
+      if (!cats[a.category]) cats[a.category] = [];
+      cats[a.category].push(a);
+    });
+
+    D.appCategories.forEach(function (cat) {
+      var apps = cats[cat.id];
+      if (!apps || !apps.length) return;
+      html += '<div class="cpmatrix-appgrid-group">';
+      html += '<span class="cpmatrix-appgrid-cat">' + cat.emoji + ' ' + escHtml(cat.name) + '</span>';
+      apps.forEach(function (a) {
+        var count = countFeaturesForApp(a.id);
+        html += '<button class="cpmatrix-appgrid-btn" data-app="' + a.id + '" style="--app-color:' + a.colour + '">';
+        html += '<span class="cpmatrix-appgrid-emoji">' + a.emoji + '</span>';
+        html += '<span class="cpmatrix-appgrid-name">' + escHtml(a.name) + '</span>';
+        html += '<span class="cpmatrix-appgrid-count">' + count + ' features</span>';
+        html += '</button>';
+      });
+      html += '</div>';
+    });
+
+    grid.innerHTML = html;
+
+    grid.addEventListener('click', function (e) {
+      var btn = e.target.closest('.cpmatrix-appgrid-btn');
+      if (!btn) return;
+      document.querySelectorAll('.cpmatrix-appgrid-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderAppDetail(btn.dataset.app);
+    });
+  }
+
+  function renderAppDetail(appId) {
+    var detail = document.getElementById('cpmatrix-app-detail');
+    if (!detail) return;
+
+    var app = appMap[appId];
+    if (!app) return;
+
+    var features = [];
+    D.features.forEach(function (f) {
+      if (!f.availability || !f.availability[appId]) return;
+      var tiers = f.availability[appId];
+      var hasAny = false;
+      TIER_ORDER.forEach(function (tid) {
+        var cell = tiers[tid];
+        if (cell) {
+          var st = typeof cell === 'string' ? cell : cell.state;
+          if (st && st !== 'none') hasAny = true;
+        }
+      });
+      if (hasAny) features.push(f);
+    });
+
+    var stateEmoji = { full: '✅', partial: '⚠️', preview: '🧪', none: '❌' };
+
+    var html = '<div class="cpmatrix-appdetail-header" style="border-color:' + app.colour + '">';
+    html += '<span class="cpmatrix-appdetail-emoji">' + app.emoji + '</span>';
+    html += '<div><h3>' + escHtml(app.name) + '</h3>';
+    html += '<p>' + escHtml(app.description) + ' · <strong>' + features.length + ' Copilot features</strong></p></div>';
+    html += '</div>';
+
+    html += '<div class="cpmatrix-appdetail-list">';
+    html += '<div class="cpmatrix-appdetail-row cpmatrix-appdetail-hdr"><span>Feature</span>';
+    TIER_ORDER.forEach(function (tid) {
+      var t = tierMap[tid];
+      html += '<span style="color:' + t.colour + '">' + t.short_name + '</span>';
+    });
+    html += '</div>';
+
+    features.forEach(function (f) {
+      html += '<div class="cpmatrix-appdetail-row">';
+      html += '<span class="cpmatrix-appdetail-feat"><strong>' + escHtml(f.name) + '</strong><small>' + escHtml(f.description) + '</small></span>';
+      TIER_ORDER.forEach(function (tid) {
+        var cell = f.availability[appId][tid];
+        var st = 'none';
+        var note = '';
+        if (cell) {
+          st = typeof cell === 'string' ? cell : (cell.state || 'none');
+          note = (typeof cell === 'object' && cell.note) ? cell.note : '';
+        }
+        html += '<span class="cpmatrix-appdetail-cell cpmatrix-cell-' + st + '" title="' + escHtml(note) + '">' + (stateEmoji[st] || '❌') + '</span>';
+      });
+      html += '</div>';
+    });
+
+    html += '</div>';
+
+    detail.innerHTML = html;
+    detail.style.display = '';
+    detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ═══════════════════════════════════════════════
   // Quick Start Scenario Buttons (fix B)
   // ═══════════════════════════════════════════════
   document.querySelectorAll('.cpmatrix-qs-btn').forEach(function (btn) {
@@ -614,6 +717,7 @@
 
   renderMatrix();
   renderTiers();
+  renderAppGrid();
   renderChangelog();
   updateQuickFilterCounts();
 

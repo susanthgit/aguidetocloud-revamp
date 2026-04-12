@@ -78,6 +78,9 @@
     <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="changes">
       <span class="cpmatrix-tab-emoji">🕐</span> What Changed
     </button>
+    <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="byapp">
+      <span class="cpmatrix-tab-emoji">📱</span> By App
+    </button>
     <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="matrix">
       <span class="cpmatrix-tab-emoji">📊</span> Feature Matrix
     </button>
@@ -147,6 +150,17 @@
   {{/* ── Tab 1: Compare Tiers (default) ── */}}
   <div class="cpmatrix-panel active" id="panel-compare" role="tabpanel">
     <div id="cpmatrix-tiers" class="cpmatrix-tiers-grid">
+    </div>
+  </div>
+
+  {{/* ── Tab: By App ── */}}
+  <div class="cpmatrix-panel" id="panel-byapp" role="tabpanel" hidden>
+    <p class="cpmatrix-byapp-intro">Click an app to see what Copilot can do there — across all licence tiers.</p>
+    <div class="cpmatrix-app-grid" id="cpmatrix-app-grid">
+      {{/* App icons rendered by JS */}}
+    </div>
+    <div class="cpmatrix-app-detail" id="cpmatrix-app-detail" style="display:none">
+      {{/* Feature list for selected app rendered by JS */}}
     </div>
   </div>
 

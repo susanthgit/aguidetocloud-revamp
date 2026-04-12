@@ -1053,3 +1053,101 @@
   .cpmatrix-compare-header,
   .cpmatrix-compare-row { grid-template-columns: 1fr 60px 60px; }
 }
+
+/* ══════════════════════════════════════
+   By App — App-focused view (fix E)
+   ══════════════════════════════════════ */
+.cpmatrix-byapp-intro { color: var(--cp-text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+.cpmatrix-app-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.cpmatrix-appgrid-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.cpmatrix-appgrid-cat {
+  font-size: 0.75rem;
+  color: var(--cp-text-muted);
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cpmatrix-appgrid-btn {
+  background: var(--cp-card);
+  border: 1px solid var(--cp-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  color: var(--cp-text);
+  min-width: 140px;
+}
+.cpmatrix-appgrid-btn:hover { border-color: var(--app-color, var(--cp-accent)); background: var(--cp-card-hover); }
+.cpmatrix-appgrid-btn.active {
+  border-color: var(--app-color, var(--cp-accent));
+  background: color-mix(in srgb, var(--app-color, var(--cp-accent)) 10%, var(--cp-card));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--app-color) 20%, transparent);
+}
+.cpmatrix-appgrid-emoji { font-size: 1.3rem; }
+.cpmatrix-appgrid-name { font-weight: 600; font-size: 0.85rem; }
+.cpmatrix-appgrid-count { font-size: 0.7rem; color: var(--cp-text-muted); margin-left: auto; }
+
+/* App detail */
+.cpmatrix-appdetail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--cp-card);
+  border-left: 4px solid var(--cp-accent);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.cpmatrix-appdetail-emoji { font-size: 2rem; }
+.cpmatrix-appdetail-header h3 { margin: 0 0 0.25rem; font-size: 1.1rem; color: #fff; }
+.cpmatrix-appdetail-header p { margin: 0; font-size: 0.85rem; color: var(--cp-text-muted); }
+
+.cpmatrix-appdetail-list {
+  border: 1px solid var(--cp-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cpmatrix-appdetail-row {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 60px);
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  align-items: center;
+}
+.cpmatrix-appdetail-row:last-child { border-bottom: none; }
+.cpmatrix-appdetail-row:hover { background: rgba(255,255,255,0.02); }
+.cpmatrix-appdetail-hdr {
+  background: rgba(255,255,255,0.03);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cp-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cpmatrix-appdetail-hdr span:not(:first-child) { text-align: center; }
+.cpmatrix-appdetail-feat { line-height: 1.3; }
+.cpmatrix-appdetail-feat strong { display: block; font-size: 0.85rem; color: var(--cp-text); }
+.cpmatrix-appdetail-feat small { font-size: 0.75rem; color: var(--cp-text-muted); }
+.cpmatrix-appdetail-cell { text-align: center; font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .cpmatrix-appgrid-btn { min-width: 110px; padding: 0.5rem 0.75rem; }
+  .cpmatrix-appdetail-row { grid-template-columns: 1fr repeat(4, 40px); font-size: 0.8rem; }
+}
