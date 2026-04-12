@@ -328,36 +328,41 @@ a:hover {
   margin: 0 0 0.5rem 0.2rem;
 }
 .hp-toolkit-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.6rem;
 }
 .hp-toolkit-card {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.7rem 0.9rem;
   text-decoration: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: inherit;
+  background: color-mix(in srgb, var(--tool-color) 12%, #1a1a2e);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 25%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--tool-color) 8%, transparent);
   transition: all 0.25s;
 }
 .hp-toolkit-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--tool-color) 24%, #1a1a2e);
+  border-color: color-mix(in srgb, var(--tool-color) 45%, transparent);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--tool-color) 20%, transparent);
   transform: translateY(-2px);
 }
-.hp-toolkit-card .hp-tool-emoji { font-size: 1.15rem; }
 .hp-toolkit-card strong {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--tool-color, rgba(255, 255, 255, 0.9));
+  color: var(--tool-color, #fff);
   white-space: nowrap;
+}
+.hp-toolkit-card p {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.35;
+  margin: 0;
 }
 .hp-tools-grid {
   display: grid;
@@ -530,6 +535,10 @@ a:hover {
   max-width: 600px;
   margin: 1.5rem auto 0;
 }
+.welcome-strip .page-search-wrap {
+  max-width: 100%;
+  margin: 0.8rem 0;
+}
 .page-search-box {
   display: flex;
   align-items: center;
@@ -609,6 +618,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .hp-tools-grid { grid-template-columns: 1fr; }
+  .hp-toolkit-grid { grid-template-columns: repeat(2, 1fr); }
   .hp-blog-grid { grid-template-columns: 1fr; }
   .hp-blog-card p { -webkit-line-clamp: 2; }
   .hp-cat-grid .video-card:nth-child(n+3) { display: none; }
@@ -618,6 +628,9 @@ a:hover {
   .welcome-stat-box { padding: 0.35rem 0.4rem; min-width: auto; }
   .welcome-stat-num { font-size: 0.9rem; }
   .welcome-stat-label { font-size: 0.5rem; }
+  .welcome-cta-row { gap: 0.5rem; }
+  .welcome-cta-btn { font-size: 0.72rem; padding: 0.4rem 0.9rem; }
+  .hp-toolkit-card p { display: none; }
 }
 
 /* ── STATS BAR (box format) ──────────────── */
@@ -734,9 +747,9 @@ a:hover {
   align-items: center;
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 102, 255, 0.3);
-  background: rgba(255, 102, 255, 0.06);
-  color: rgba(255, 102, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -744,11 +757,11 @@ a:hover {
   transition: all 0.3s;
 }
 .welcome-cta-btn:hover {
-  border-color: rgba(255, 102, 255, 0.5);
-  background: rgba(255, 102, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(255, 102, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
-  text-shadow: none;
+  color: #fff;
 }
 /* ── HOMEPAGE: HERO STATS BOXES ───────────── */
 .welcome-stat-boxes {
@@ -1976,7 +1989,7 @@ pre.mermaid {
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
   .video-grid .video-card:nth-child(n+5) { display: none; }
-  .hp-toolkit-grid .hp-toolkit-card:nth-child(n+3) { /* show all on mobile */ }
+  .hp-toolkit-grid { grid-template-columns: repeat(2, 1fr); }
   .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
   .ecosystem { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
