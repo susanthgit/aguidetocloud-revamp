@@ -1455,7 +1455,7 @@ a:hover {
 }
 /* About page: magenta gradient top */
 .is-about main {
-  background: linear-gradient(180deg, color-mix(in srgb, #ff66ff 50%, #0f0f1a) 0%, var(--bg-primary) 300px);
+  background: linear-gradient(180deg, color-mix(in srgb, #ff66ff 35%, rgba(15, 15, 26, 0.8)) 0%, transparent 300px);
 }
 .is-about .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
 .page-ainews .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
