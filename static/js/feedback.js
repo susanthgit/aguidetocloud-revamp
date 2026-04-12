@@ -92,52 +92,54 @@
       const reaction = btn.dataset.reaction;
       const cat = btn.dataset.category;
 
-      // Map reaction to a pre-filled message
-      const messages = {
-        love: { subject: 'Love the tools!', message: 'Just wanted to say — I love the free tools on this site. Keep up the amazing work! 🎉' },
-        idea: { subject: '', message: '' },
-        video: { subject: '', message: '' },
-        bug: { subject: '', message: '' },
-      };
+      // Visual feedback — highlight the clicked button
+      quickBtns.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
 
-      const preset = messages[reaction];
       selectCategory(cat, true);
 
-      if (preset && preset.subject) {
+      if (reaction === 'love') {
         // Auto-submit for "love" reactions
         btn.classList.add('sending');
-        btn.textContent = '✨ Sending…';
+        btn.innerHTML = '✨ Sending…';
         try {
           const res = await fetch('/api/feedback', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               category: cat,
-              subject: preset.subject,
-              message: preset.message,
-              name: '',
-              email: '',
+              subject: 'Love the tools!',
+              message: 'Just wanted to say — I love the free tools on this site. Keep up the amazing work! 🎉',
+              name: '', email: '',
               tool: toolSelect?.value || '',
             }),
           });
           if (res.ok) {
-            btn.textContent = '✅ Sent!';
+            btn.innerHTML = '✅ Thank you!';
             btn.classList.remove('sending');
             btn.classList.add('sent');
             setTimeout(() => {
               btn.innerHTML = `<span class="feedback-quick-emoji">🤩</span><span class="feedback-quick-label">Love the tools!</span>`;
-              btn.classList.remove('sent');
+              btn.classList.remove('sent', 'selected');
             }, 3000);
           }
         } catch (e) {
           btn.innerHTML = `<span class="feedback-quick-emoji">🤩</span><span class="feedback-quick-label">Love the tools!</span>`;
-          btn.classList.remove('sending');
+          btn.classList.remove('sending', 'selected');
         }
       } else {
-        // For idea/video/bug — just pre-select category and focus the subject
+        // For idea/video/bug — scroll to form, focus subject, flash the form
+        const formSection = document.getElementById('feedback-form-section');
+        if (formSection) {
+          formSection.classList.remove('feedback-flash');
+          void formSection.offsetWidth;
+          formSection.classList.add('feedback-flash');
+        }
         setTimeout(() => {
           const subjectInput = document.getElementById('fb-subject');
           if (subjectInput) subjectInput.focus();
+        }, 400);
+      }
         }, 400);
       }
     });
@@ -264,17 +266,58 @@
 
   async function loadRecent() {
     try {
-      const res = await fetch(
-        `https://api.github.com/repos/${REPO}/discussions?per_page=10&sort=created&direction=desc`,
-        { headers: { Accept: 'application/vnd.github+json' } }
-      );
+      // Use GraphQL to fetch discussions WITH their comments
+      const query = `{
+        repository(owner: "susanthgit", name: "aguidetocloud-feedback") {
+          discussions(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
+            nodes {
+              title url number createdAt
+              category { name }
+              comments(first: 5) {
+                totalCount
+                nodes { body createdAt author { login } }
+              }
+              body
+            }
+          }
+        }
+      }`;
 
-      if (!res.ok) {
-        if (statsText) statsText.textContent = 'Share your feedback — be the first!';
-        return;
+      const res = await fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/vnd.github+json',
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      // GraphQL needs auth for reading — fall back to REST if unauthenticated
+      let discussions = [];
+      if (res.ok) {
+        const data = await res.json();
+        discussions = data.data?.repository?.discussions?.nodes || [];
       }
 
-      const discussions = await res.json();
+      // Fallback to REST API (no comments, but works without auth)
+      if (!discussions.length) {
+        const restRes = await fetch(
+          `https://api.github.com/repos/${REPO}/discussions?per_page=10&sort=created&direction=desc`,
+          { headers: { Accept: 'application/vnd.github+json' } }
+        );
+        if (restRes.ok) {
+          const restData = await restRes.json();
+          discussions = restData.map(d => ({
+            title: d.title,
+            url: d.html_url,
+            number: d.number,
+            createdAt: d.created_at,
+            category: d.category,
+            body: d.body || '',
+            comments: { totalCount: d.comments || 0, nodes: [] },
+          }));
+        }
+      }
 
       // Stats counter
       if (statsText) {
@@ -282,7 +325,7 @@
         if (count === 0) {
           statsText.textContent = 'Share your feedback — be the first!';
         } else {
-          const answered = discussions.filter(d => d.answer_html_url || d.comments > 0).length;
+          const answered = discussions.filter(d => d.comments?.totalCount > 0).length;
           statsText.textContent = `${count} feedback item${count !== 1 ? 's' : ''} shared · ${answered} answered`;
         }
       }
@@ -296,22 +339,62 @@
         const catLabel = titleMatch ? titleMatch[1] : (d.category?.name || 'General');
         const displayTitle = titleMatch ? d.title.replace(TITLE_PREFIX_RE, '') : d.title;
         const emoji = catLabel.match(/^(\p{Emoji})/u)?.[1] || CATEGORY_EMOJI[d.category?.name] || '💬';
-        const isAnswered = d.answer_html_url || d.comments > 0;
-        const date = new Date(d.created_at).toLocaleDateString('en-NZ', {
+        const hasReplies = d.comments?.totalCount > 0;
+        const date = new Date(d.createdAt).toLocaleDateString('en-NZ', {
           day: 'numeric', month: 'short', year: 'numeric'
         });
 
+        // Build the accordion item
         const item = document.createElement('div');
-        item.className = 'feedback-recent-item';
+        item.className = 'feedback-accordion';
+
+        // Clean the body — remove metadata footer
+        const bodyText = (d.body || '').split('---')[0].trim();
+        const preview = bodyText.length > 120 ? bodyText.substring(0, 120) + '…' : bodyText;
+
+        // Build replies HTML
+        let repliesHtml = '';
+        if (d.comments?.nodes?.length) {
+          repliesHtml = d.comments.nodes.map(c => {
+            const replyBody = (c.body || '').replace(/\n/g, '<br>');
+            return `<div class="feedback-reply">
+              <div class="feedback-reply-header">
+                <span class="feedback-reply-author">💬 ${escapeHtml(c.author?.login || 'Team')}</span>
+              </div>
+              <div class="feedback-reply-body">${replyBody}</div>
+            </div>`;
+          }).join('');
+        }
+
         item.innerHTML = `
-          <a href="${d.html_url}" target="_blank" rel="noopener">
+          <button class="feedback-accordion-header" aria-expanded="false" aria-controls="fb-acc-${d.number}">
             <span class="feedback-recent-cat">${emoji}</span>
             <div class="feedback-recent-body">
               <div class="feedback-recent-body-title">${escapeHtml(displayTitle)}</div>
-              <div class="feedback-recent-meta">${escapeHtml(catLabel)} · ${date}${d.comments ? ' · ' + d.comments + ' replies' : ''}</div>
+              <div class="feedback-recent-meta">${escapeHtml(catLabel)} · ${date}${hasReplies ? ' · ' + d.comments.totalCount + ' repl' + (d.comments.totalCount === 1 ? 'y' : 'ies') : ''}</div>
             </div>
-            <span class="feedback-badge ${isAnswered ? 'answered' : 'open'}">${isAnswered ? 'Answered' : 'Open'}</span>
-          </a>`;
+            <span class="feedback-badge ${hasReplies ? 'answered' : 'open'}">${hasReplies ? 'Answered' : 'Open'}</span>
+            <span class="feedback-accordion-chevron">▼</span>
+          </button>
+          <div class="feedback-accordion-body" id="fb-acc-${d.number}" hidden>
+            <div class="feedback-accordion-question">
+              <p>${escapeHtml(preview)}</p>
+            </div>
+            ${repliesHtml}
+            <a href="${d.url}" target="_blank" rel="noopener" class="feedback-accordion-link">
+              View full thread on GitHub →
+            </a>
+          </div>`;
+
+        // Toggle accordion
+        const headerBtn = item.querySelector('.feedback-accordion-header');
+        const bodyEl = item.querySelector('.feedback-accordion-body');
+        headerBtn.addEventListener('click', () => {
+          const expanded = headerBtn.getAttribute('aria-expanded') === 'true';
+          headerBtn.setAttribute('aria-expanded', !expanded);
+          bodyEl.hidden = expanded;
+        });
+
         recentList.appendChild(item);
       });
     } catch (e) {

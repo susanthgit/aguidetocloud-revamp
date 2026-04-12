@@ -587,3 +587,105 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Quick button selected state ── */
+.feedback-quick-btn.selected {
+  background: color-mix(in srgb, var(--fb-accent) 18%, var(--fb-card));
+  border-color: var(--fb-accent);
+  box-shadow: 0 0 14px var(--fb-accent-glow);
+}
+
+/* ── Form flash animation ── */
+.feedback-flash {
+  animation: fb-flash 0.8s ease;
+}
+@keyframes fb-flash {
+  0%   { border-color: var(--fb-border); }
+  30%  { border-color: var(--fb-accent); box-shadow: 0 0 20px var(--fb-accent-glow); }
+  100% { border-color: var(--fb-border); box-shadow: none; }
+}
+
+/* ── Accordion ── */
+.feedback-accordion {
+  border: 1px solid var(--fb-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.feedback-accordion:hover {
+  border-color: color-mix(in srgb, var(--fb-accent) 25%, transparent);
+}
+.feedback-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--fb-card);
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+}
+.feedback-accordion-header:hover {
+  background: var(--fb-card-hover);
+}
+.feedback-accordion-chevron {
+  font-size: 0.65rem;
+  color: var(--fb-text-dim);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.feedback-accordion-header[aria-expanded="true"] .feedback-accordion-chevron {
+  transform: rotate(180deg);
+}
+.feedback-accordion-body {
+  padding: 0 1rem 1rem;
+  background: color-mix(in srgb, var(--fb-accent) 3%, var(--fb-bg));
+  border-top: 1px solid var(--fb-border);
+}
+.feedback-accordion-question {
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+  color: var(--fb-text-dim);
+  line-height: 1.6;
+}
+.feedback-accordion-question p {
+  margin: 0;
+}
+
+/* ── Reply inside accordion ── */
+.feedback-reply {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: color-mix(in srgb, var(--fb-accent) 6%, var(--fb-card));
+  border: 1px solid color-mix(in srgb, var(--fb-accent) 12%, transparent);
+  border-radius: 8px;
+  border-left: 3px solid var(--fb-accent);
+}
+.feedback-reply-header {
+  margin-bottom: 0.3rem;
+}
+.feedback-reply-author {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fb-accent);
+}
+.feedback-reply-body {
+  font-size: 0.82rem;
+  color: var(--fb-text);
+  line-height: 1.6;
+}
+.feedback-accordion-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fb-accent);
+  text-decoration: none;
+}
+.feedback-accordion-link:hover {
+  text-decoration: underline;
+}
