@@ -92,12 +92,20 @@
 
   <!-- Past Discussions -->
   <div class="feedback-recent" id="feedback-recent">
-    <div class="feedback-recent-title">💬 Past Questions & Answers</div>
+    <div class="feedback-recent-header">
+      <div class="feedback-recent-title">💬 Past Questions & Answers</div>
+      <div class="feedback-search-wrap">
+        <input type="text" class="feedback-search" id="fb-search" placeholder="Search discussions…" aria-label="Search past discussions">
+      </div>
+    </div>
     <div class="feedback-recent-list" id="feedback-recent-list">
       <div class="feedback-empty">
         <div class="feedback-empty-icon">🌱</div>
         <p>Be the first to share feedback! Your voice shapes our tools and content.</p>
       </div>
+    </div>
+    <div class="feedback-no-results" id="fb-no-results" hidden>
+      No discussions match your search.
     </div>
   </div>
 

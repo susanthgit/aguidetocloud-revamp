@@ -236,14 +236,85 @@
 .feedback-recent {
   margin-top: 2rem;
 }
+.feedback-recent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
 .feedback-recent-title {
   font-size: 1rem;
   font-weight: 700;
   color: var(--fb-text);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+}
+
+/* ── Search ── */
+.feedback-search-wrap {
+  flex-shrink: 0;
+}
+.feedback-search {
+  background: var(--fb-bg);
+  border: 1px solid var(--fb-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  color: var(--fb-text);
+  font-size: 0.78rem;
+  font-family: inherit;
+  width: 180px;
+  transition: border-color 0.2s;
+}
+.feedback-search:focus {
+  outline: none;
+  border-color: var(--fb-accent);
+  box-shadow: 0 0 0 2px var(--fb-accent-dim);
+}
+.feedback-search::placeholder {
+  color: var(--fb-text-dim);
+  opacity: 0.5;
+}
+.feedback-no-results {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--fb-text-dim);
+  font-size: 0.85rem;
+}
+
+/* ── Status Labels ── */
+.feedback-status-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.feedback-sl-shipped {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22C55E;
+}
+.feedback-sl-planned {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
+}
+.feedback-sl-in-progress {
+  background: rgba(234, 179, 8, 0.15);
+  color: #EAB308;
+}
+.feedback-sl-wont-fix {
+  background: rgba(107, 101, 119, 0.15);
+  color: #6b6577;
+}
+
+/* ── Pinned items ── */
+.feedback-acc-pinned {
+  border-color: color-mix(in srgb, var(--fb-accent) 25%, transparent);
+}
+.feedback-acc-pinned .feedback-acc-header {
+  background: color-mix(in srgb, var(--fb-accent) 5%, var(--fb-card));
 }
 .feedback-recent-list {
   display: flex;

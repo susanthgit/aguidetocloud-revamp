@@ -20,9 +20,28 @@ module.exports = async function (context) {
           title url number createdAt
           category { name }
           body
+          labels(first: 5) {
+            nodes { name color }
+          }
           comments(first: 5) {
             totalCount
             nodes { body createdAt author { login } }
+          }
+        }
+      }
+      pinnedDiscussions(first: 5) {
+        nodes {
+          discussion {
+            title url number createdAt
+            category { name }
+            body
+            labels(first: 5) {
+              nodes { name color }
+            }
+            comments(first: 5) {
+              totalCount
+              nodes { body createdAt author { login } }
+            }
           }
         }
       }
@@ -33,6 +52,9 @@ module.exports = async function (context) {
     const result = await graphql(pat, query);
     const discussions = result.data?.repository?.discussions?.nodes || [];
     const totalCount = result.data?.repository?.discussions?.totalCount || 0;
+    const pinned = (result.data?.repository?.pinnedDiscussions?.nodes || [])
+      .map(n => n.discussion)
+      .filter(Boolean);
 
     context.res = {
       status: 200,
@@ -40,7 +62,7 @@ module.exports = async function (context) {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, max-age=300',
       },
-      body: { discussions, totalCount },
+      body: { discussions, totalCount, pinned },
     };
   } catch (err) {
     context.log.error('Error fetching discussions:', err.message);
