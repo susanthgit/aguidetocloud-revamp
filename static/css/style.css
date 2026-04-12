@@ -315,7 +315,19 @@ a:hover {
 
 
 
-/* ── HOMEPAGE: FREE TOOLS SHOWCASE ────────── */
+/* ── HOMEPAGE: TOOLKIT SHOWCASE ────────── */
+.hp-toolkit-group {
+  margin-bottom: 1.5rem;
+}
+.hp-toolkit-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem 0.2rem;
+}
 .hp-tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1754,7 +1766,7 @@ pre.mermaid {
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr; }
   .video-grid .video-card:nth-child(n+5) { display: none; }
-  .hp-tools-grid .hp-tool-card:nth-child(n+5) { display: none; }
+  .hp-tools-grid .hp-tool-card:nth-child(n+3) { display: none; }
   .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
   .ecosystem { grid-template-columns: 1fr; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
