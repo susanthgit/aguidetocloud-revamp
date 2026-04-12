@@ -1,9 +1,25 @@
 /* ── FREE TOOLS / TOOLKIT PAGE ────────────── */
+.ft-category {
+  margin-bottom: 2.5rem;
+}
+.ft-cat-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
+  margin: 0 0 0.4rem;
+}
+.ft-cat-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  max-width: 700px;
+}
 .free-tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 3rem;
 }
 .free-tool-card {
   background: color-mix(in srgb, var(--card-accent) 10%, rgba(26, 26, 46, 0.7));
