@@ -226,9 +226,9 @@
 
 {{/* ── Inject TOML data into JS ── */}}
 <script>
-  window.__cabTemplates = {{ (index .Site.Data "ca-builder").templates.templates | jsonify | safeJS }};
-  window.__cabConditions = {{ (index .Site.Data "ca-builder").conditions | jsonify | safeJS }};
-  window.__cabCompliance = {{ (index .Site.Data "ca-builder").compliance.frameworks | jsonify | safeJS }};
+  window.__cabTemplates = {{ (index hugo.Data "ca-builder").templates.templates | jsonify | safeJS }};
+  window.__cabConditions = {{ (index hugo.Data "ca-builder").conditions | jsonify | safeJS }};
+  window.__cabCompliance = {{ (index hugo.Data "ca-builder").compliance.frameworks | jsonify | safeJS }};
 </script>
 <script src="/js/ca-builder.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
