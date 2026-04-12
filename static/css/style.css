@@ -1960,115 +1960,32 @@ pre.mermaid {
 .living-doc-banner a { color: #60A5FA; }
 
 /* ============================================
-   Print Stylesheet — Light theme for PDF/print
+   Print Stylesheet — Force exact screen look
+   Preserves the dark theme for PDF/print.
    Only activates when printing. Zero screen impact.
    ============================================ */
 @media print {
-  /* Base: dark text on white */
-  body, html { background: #fff !important; color: #1a1a1a !important; }
-  * { box-shadow: none !important; text-shadow: none !important; }
+  /* Force browsers to print backgrounds and colors exactly as on screen */
+  *, *::before, *::after {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
 
-  /* Kill dark backgrounds */
-  body::before, body::after,
+  /* Hide non-content elements */
   .site-nav, .global-btt, .feedback-fab,
   .back-nav-link, footer { display: none !important; }
 
-  /* Content area */
+  /* Ensure full width */
   .blog-content, .content, main, article {
-    background: #fff !important;
-    color: #1a1a1a !important;
     max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
   }
 
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 { color: #111 !important; page-break-after: avoid; }
-  h1 { font-size: 1.6rem !important; }
-  h2 { font-size: 1.3rem !important; border-bottom: 2px solid #333; padding-bottom: 0.3rem; }
-  h3 { font-size: 1.1rem !important; }
-
-  /* Text */
-  p, li, td, th, span, div { color: #1a1a1a !important; }
-  strong { color: #000 !important; }
-  em { color: #333 !important; }
-  a { color: #0066cc !important; text-decoration: underline !important; }
-
-  /* Tables — clean borders */
-  table { border-collapse: collapse !important; width: 100% !important; }
-  th { background: #e8e8e8 !important; color: #111 !important; font-weight: bold !important;
-       border: 1px solid #999 !important; padding: 6px 10px !important; }
-  td { border: 1px solid #bbb !important; padding: 6px 10px !important;
-       background: #fff !important; color: #1a1a1a !important; }
-  tr:nth-child(even) td { background: #f5f5f5 !important; }
-
-  /* Blockquotes */
-  blockquote { border-left: 3px solid #666 !important; background: #f0f0f0 !important;
-               color: #1a1a1a !important; padding: 0.8rem 1rem !important;
-               margin: 0.8rem 0 !important; page-break-inside: avoid; }
-  blockquote strong { color: #000 !important; }
-
-  /* Trainer script cards — print with light blue tint */
-  .trainer-script {
-    background: #e8f0fe !important; border: 1px solid #4a86c8 !important;
-    border-left: 4px solid #2563eb !important; color: #1a1a1a !important;
-    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  /* Page break control */
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+  table, .trainer-script, .trainer-tip, .agent-highlight,
+  .living-doc-banner, blockquote, pre.mermaid, .mermaid {
     page-break-inside: avoid;
   }
-  .trainer-script strong { color: #1a56b8 !important; }
-  .trainer-script em { color: #333 !important; }
-
-  /* Trainer tip cards — print with light yellow tint */
-  .trainer-tip {
-    background: #fef9e7 !important; border: 1px solid #d4a017 !important;
-    border-left: 4px solid #d4a017 !important; color: #1a1a1a !important;
-    print-color-adjust: exact; -webkit-print-color-adjust: exact;
-    page-break-inside: avoid;
-  }
-  .trainer-tip strong { color: #92700c !important; }
-
-  /* Agent highlight cards — print with light teal tint */
-  .agent-highlight {
-    background: #e6f7f5 !important; border: 1px solid #0d9488 !important;
-    border-left: 4px solid #0d9488 !important; color: #1a1a1a !important;
-    print-color-adjust: exact; -webkit-print-color-adjust: exact;
-    page-break-inside: avoid;
-  }
-  .agent-highlight strong { color: #0d7d72 !important; }
-
-  /* Mermaid diagrams — force print backgrounds */
-  pre.mermaid, .mermaid {
-    print-color-adjust: exact !important;
-    -webkit-print-color-adjust: exact !important;
-    page-break-inside: avoid;
-  }
-
-  /* Code blocks */
-  pre, code { background: #f4f4f4 !important; color: #1a1a1a !important;
-              border: 1px solid #ddd !important; }
-
-  /* Living document banner — keep visible */
-  .living-doc-banner {
-    background: #fff3e0 !important; border: 2px solid #e67e22 !important;
-    color: #1a1a1a !important;
-    print-color-adjust: exact; -webkit-print-color-adjust: exact;
-    page-break-inside: avoid;
-  }
-  .living-doc-banner strong { color: #c0392b !important; }
-
-  /* Page break helpers */
-  .page-break-before { page-break-before: always; }
-  h2 { page-break-before: auto; }
   img { max-width: 100% !important; page-break-inside: avoid; }
-
-  /* Print URL after external links */
-  article a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.75em;
-    color: #666 !important;
-    word-break: break-all;
-  }
-  /* Don't show URL for internal links or short display text */
-  article a[href^="/"]::after { content: none; }
-  article .toc a::after, article nav a::after { content: none; }
 }
