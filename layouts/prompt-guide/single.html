@@ -1,7 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/prompt-guide.css?v={{ site.Params.cache_version }}">
 
-{{/* ── SEO: JSON-LD HowTo Schema ── */}}
+{{/* ── SEO: HowTo only (FAQPage handled by seo-jsonld.html) ── */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -11,49 +11,13 @@
   "url": "{{ .Permalink }}",
   "totalTime": "PT{{ .Params.read_time | replaceRE "[^0-9]" "" }}M",
   "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Understand the technique",
-      "text": "Learn what {{ .Params.academic_name }} is and when to use it in your prompts."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Study the before and after examples",
-      "text": "Compare a vague prompt with an improved version using this technique."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Practice in the sandbox",
-      "text": "Rewrite the starter prompt using the technique and check your work against the criteria."
-    }
+    {"@type":"HowToStep","name":"Understand the technique","text":"Learn what {{ .Params.academic_name }} is and when to use it."},
+    {"@type":"HowToStep","name":"Study before and after examples","text":"Compare a vague prompt with an improved version."},
+    {"@type":"HowToStep","name":"Practice in the sandbox","text":"Rewrite the starter prompt using the technique."}
   ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "A Guide to Cloud & AI",
-    "url": "{{ .Site.BaseURL }}"
-  }
+  "publisher": {"@type":"Organization","name":"A Guide to Cloud & AI","url":"{{ .Site.BaseURL }}"}
 }
 </script>
-{{ with .Params.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $q := . }}{{ if $i }},{{ end }}
-    {
-      "@type": "Question",
-      "name": {{ $q.question | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ $q.answer | jsonify }}
-      }
-    }
-    {{ end }}
-  ]
-}
-</script>
-{{ end }}
 
 <div class="pguide-page">
 
@@ -82,7 +46,7 @@
       <article class="pguide-technique-content">
         {{ .Content }}
 
-        {{/* ── Interactive Sandbox ── */}}
+        {{/* ══ Interactive Sandbox — MOVED UP (fix #4) ══ */}}
         <div class="pguide-sandbox" id="pguide-sandbox">
           <h2>🧪 Try It Yourself</h2>
           <p>Rewrite this vague prompt using the <strong>{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</strong> technique:</p>
@@ -95,6 +59,9 @@
           <div class="pguide-sandbox-input-wrap">
             <label for="pguide-sandbox-input" class="pguide-sandbox-label">Your improved version:</label>
             <textarea id="pguide-sandbox-input" class="pguide-sandbox-textarea" rows="4" placeholder="Rewrite the prompt above using what you just learned..."></textarea>
+            <div class="pguide-sandbox-actions">
+              <button class="pguide-btn-small" id="pguide-sandbox-reset" title="Clear and start over">🔄 Reset</button>
+            </div>
           </div>
 
           {{/* Criteria Checklist */}}
@@ -109,16 +76,56 @@
           </div>
 
           <div class="pguide-sandbox-feedback" id="pguide-sandbox-feedback"></div>
+
+          {{/* Show answer reveal (fix #8) */}}
+          {{ with .Params.sandbox_answer }}
+          <details class="pguide-sandbox-reveal">
+            <summary>💡 Stuck? Show example answer</summary>
+            <div class="pguide-sandbox-answer">
+              <p>{{ . }}</p>
+              <button class="pguide-copy-small" data-copy="{{ . }}" title="Copy example">📋 Copy</button>
+            </div>
+          </details>
+          {{ end }}
         </div>
+
+        {{/* ══ Fix This Prompt — V2 ══ */}}
+        {{ with .Params.fix_prompt }}
+        <div class="pguide-fix-exercise">
+          <h2>🔧 Fix This Prompt</h2>
+          <p>This prompt is broken. Can you spot what's wrong and fix it?</p>
+          <div class="pguide-sandbox-bad">{{ . }}</div>
+          <textarea id="pguide-fix-input" class="pguide-sandbox-textarea" rows="3" placeholder="Write your fixed version here..."></textarea>
+          <div class="pguide-fix-criteria" id="pguide-fix-criteria">
+            {{ range $.Params.fix_issues }}
+            <div class="pguide-criterion pguide-fix-issue" data-pattern="{{ .pattern }}">
+              <span class="pguide-criterion-icon">⬜</span>
+              <span class="pguide-criterion-label">{{ .label }}</span>
+            </div>
+            {{ end }}
+          </div>
+          <div class="pguide-sandbox-feedback" id="pguide-fix-feedback"></div>
+        </div>
+        {{ end }}
 
       </article>
 
-      {{/* ── Sidebar TOC ── */}}
+      {{/* ── Sidebar ── */}}
       <aside class="pguide-technique-sidebar">
         <nav class="pguide-toc">
           <h3>On this page</h3>
           <ul id="pguide-toc-list"></ul>
         </nav>
+
+        {{/* Technique heatmap — V2 */}}
+        <div class="pguide-heatmap-card">
+          <h3>📊 Best for</h3>
+          {{ with .Params.best_for }}
+          <ul class="pguide-best-for">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+        </div>
 
         {{/* Next technique */}}
         {{ $pages := .Parent.Pages.ByWeight }}
@@ -156,21 +163,9 @@
 
     {{/* ── Cross-tool CTAs ── */}}
     <div class="pguide-cross-cta">
-      <a href="/prompt-polisher/" class="pguide-cta-card">
-        <span>✨</span>
-        <strong>Practice with Prompt Polisher</strong>
-        <p>Score and rewrite your own prompts using CRAFTS</p>
-      </a>
-      <a href="/prompts/" class="pguide-cta-card">
-        <span>💡</span>
-        <strong>Browse Prompt Library</strong>
-        <p>84 ready-to-use prompts across 8 platforms</p>
-      </a>
-      <a href="/prompt-guide/" class="pguide-cta-card">
-        <span>🎓</span>
-        <strong>Back to All Techniques</strong>
-        <p>Explore all 8 prompt engineering techniques</p>
-      </a>
+      <a href="/prompt-polisher/" class="pguide-cta-card"><span>✨</span><strong>Practice with Prompt Polisher</strong><p>Score and rewrite your own prompts</p></a>
+      <a href="/prompts/" class="pguide-cta-card"><span>💡</span><strong>Browse Prompt Library</strong><p>84 ready-to-use prompts</p></a>
+      <a href="/prompt-guide/" class="pguide-cta-card"><span>🎓</span><strong>Back to All Techniques</strong><p>Explore all 8 techniques</p></a>
     </div>
 
   </div>

@@ -683,6 +683,163 @@
   margin-bottom: 1rem;
 }
 
+/* ---- Confidence Badge ---- */
+.migplan-confidence {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.migplan-confidence.high { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-confidence.moderate { background: rgba(234,179,8,0.15); color: #EAB308; }
+.migplan-confidence.low { background: rgba(249,115,22,0.15); color: #F97316; }
+
+/* ---- Decision Status Banner ---- */
+.migplan-decision {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.migplan-decision.go { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10B981; }
+.migplan-decision.go-conditions { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); color: #EAB308; }
+.migplan-decision.conditional { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: #F97316; }
+.migplan-decision.not-recommended { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
+.migplan-decision-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+/* ---- Discovery Import ---- */
+.migplan-discovery {
+  background: rgba(99,102,241,0.04);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.migplan-discovery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.migplan-discovery-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--tool-accent);
+}
+.migplan-discovery-badge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(16,185,129,0.15);
+  color: #10B981;
+  font-weight: 700;
+}
+.migplan-discovery-content {
+  display: none;
+  margin-top: 1rem;
+}
+.migplan-discovery-content.open { display: block; }
+.migplan-discovery-workload {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.migplan-discovery-workload:last-child { border: none; }
+.migplan-discovery-workload h4 {
+  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.migplan-discovery-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+.migplan-discovery-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.migplan-discovery-field label {
+  font-size: 0.75rem;
+  color: #888;
+}
+.migplan-discovery-field input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  color: #fff;
+  font-size: 0.85rem;
+  width: 100%;
+}
+.migplan-discovery-field input:focus {
+  outline: none;
+  border-color: var(--tool-accent);
+}
+.migplan-discovery-field input::placeholder { color: #555; }
+
+/* ---- Recent Plans ---- */
+.migplan-recent {
+  margin-bottom: 1.5rem;
+}
+.migplan-recent-title {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+.migplan-recent-cards {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.migplan-recent-card {
+  background: rgba(99,102,241,0.06);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 150px;
+}
+.migplan-recent-card:hover {
+  border-color: var(--tool-accent);
+  background: rgba(99,102,241,0.12);
+}
+.migplan-recent-card-score {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.migplan-recent-card-label {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* ---- Assumptions List ---- */
+.migplan-assumptions {
+  list-style: none;
+  padding: 0;
+}
+.migplan-assumptions li {
+  font-size: 0.82rem;
+  color: #999;
+  padding: 0.25rem 0;
+}
+.migplan-assumptions li::before {
+  content: "• ";
+  color: var(--tool-accent);
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   .migplan-tabs { gap: 0; }

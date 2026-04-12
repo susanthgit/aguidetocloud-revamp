@@ -405,6 +405,301 @@
   }
 
   /* ════════════════════════════════════════
+     SANDBOX RESET (fix #15)
+     ════════════════════════════════════════ */
+  function initSandboxReset() {
+    const btn = $('#pguide-sandbox-reset');
+    const input = $('#pguide-sandbox-input');
+    if (!btn || !input) return;
+    btn.addEventListener('click', () => {
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+    });
+  }
+
+  /* ════════════════════════════════════════
+     COPY SMALL BUTTONS (fix #10)
+     ════════════════════════════════════════ */
+  function initCopyButtons() {
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.pguide-copy-small');
+      if (!btn) return;
+      const text = btn.dataset.copy || btn.previousElementSibling?.textContent;
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 1500);
+      });
+    });
+  }
+
+  /* ════════════════════════════════════════
+     FIX THIS PROMPT — V2
+     ════════════════════════════════════════ */
+  function initFixExercise() {
+    const input = $('#pguide-fix-input');
+    const criteria = $$('.pguide-fix-issue');
+    const feedback = $('#pguide-fix-feedback');
+    if (!input || !criteria.length) return;
+
+    input.addEventListener('input', () => {
+      const text = input.value.trim();
+      let met = 0;
+      criteria.forEach(el => {
+        const pat = el.dataset.pattern;
+        let ok = false;
+        try { ok = new RegExp(pat, 'i').test(text); } catch {}
+        el.classList.toggle('met', ok);
+        if (ok) met++;
+      });
+      if (!text) { feedback.className = 'pguide-sandbox-feedback'; feedback.textContent = ''; }
+      else if (met === criteria.length) {
+        feedback.className = 'pguide-sandbox-feedback show success';
+        feedback.textContent = '🎉 Excellent fix! You identified and resolved all the issues!';
+      } else if (met > 0) {
+        feedback.className = 'pguide-sandbox-feedback show partial';
+        feedback.textContent = '👍 Getting there! Fixed ' + met + ' of ' + criteria.length + ' issues.';
+      } else { feedback.className = 'pguide-sandbox-feedback'; feedback.textContent = ''; }
+    });
+  }
+
+  /* ════════════════════════════════════════
+     CERTIFICATE — V2
+     ════════════════════════════════════════ */
+  function initCertificate() {
+    const certEl = $('#pguide-certificate');
+    const btn = $('#pguide-cert-btn');
+    const nameInput = $('#pguide-cert-name');
+    const card = $('#pguide-cert-card');
+    const display = $('#pguide-cert-display');
+    const dateEl = $('#pguide-cert-date');
+    const copyBtn = $('#pguide-cert-copy');
+    if (!certEl || !btn) return;
+
+    // Show certificate section when all 8 complete
+    const completed = getCompleted();
+    const cards = $$('.pguide-card');
+    if (completed.length >= (cards.length || 8)) {
+      certEl.style.display = '';
+    }
+
+    btn.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      if (!name) { nameInput.focus(); return; }
+      display.textContent = name;
+      dateEl.textContent = new Date().toLocaleDateString('en-NZ', { year: 'numeric', month: 'long', day: 'numeric' });
+      card.style.display = '';
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const name = display.textContent;
+        const date = dateEl.textContent;
+        const text = `🎓 Prompt Engineering Certificate\n\nAwarded to: ${name}\nDate: ${date}\n\nCompleted all 8 prompt engineering techniques:\n✅ Clear Instructions · Role · Context · Format · Examples · Step-by-Step · Constraints · Audience & Tone\n\nIssued by: A Guide to Cloud & AI\nhttps://www.aguidetocloud.com/prompt-guide/`;
+        navigator.clipboard.writeText(text).then(() => {
+          copyBtn.textContent = '✅ Copied!';
+          setTimeout(() => { copyBtn.textContent = '📋 Copy as Text'; }, 2000);
+        });
+      });
+    }
+  }
+
+  /* ════════════════════════════════════════
+     QUIZ — "Which Technique?" — V2
+     ════════════════════════════════════════ */
+  function initQuiz() {
+    const body = $('#pguide-quiz-body');
+    const results = $('#pguide-quiz-results');
+    if (!body) return;
+
+    const QUESTIONS = [
+      { q: 'What are you trying to do?', opts: [
+        { text: 'Write or draft something', techs: { 'give-clear-instructions': 3, 'set-a-role': 1, 'specify-audience-and-tone': 2 } },
+        { text: 'Analyse or evaluate something', techs: { 'think-step-by-step': 3, 'add-context': 2, 'set-constraints': 1 } },
+        { text: 'Categorise or sort items', techs: { 'give-examples': 3, 'define-the-format': 2, 'give-clear-instructions': 1 } },
+        { text: 'Make a decision', techs: { 'think-step-by-step': 3, 'add-context': 2, 'set-a-role': 1 } }
+      ]},
+      { q: 'Who will read the AI\'s output?', opts: [
+        { text: 'Executives or leadership', techs: { 'specify-audience-and-tone': 3, 'set-constraints': 2, 'define-the-format': 1 } },
+        { text: 'My team or colleagues', techs: { 'specify-audience-and-tone': 2, 'give-clear-instructions': 1 } },
+        { text: 'Customers or clients', techs: { 'specify-audience-and-tone': 3, 'set-a-role': 2, 'set-constraints': 1 } },
+        { text: 'Just me', techs: { 'give-clear-instructions': 2, 'define-the-format': 1 } }
+      ]},
+      { q: 'What\'s your biggest problem right now?', opts: [
+        { text: 'AI responses are too vague', techs: { 'give-clear-instructions': 3, 'add-context': 2 } },
+        { text: 'Wrong tone or style', techs: { 'specify-audience-and-tone': 3, 'set-a-role': 2 } },
+        { text: 'Output format is wrong', techs: { 'define-the-format': 3, 'give-examples': 2 } },
+        { text: 'Reasoning or accuracy issues', techs: { 'think-step-by-step': 3, 'set-constraints': 1 } }
+      ]},
+      { q: 'How complex is the task?', opts: [
+        { text: 'Simple — one clear ask', techs: { 'give-clear-instructions': 2, 'define-the-format': 1 } },
+        { text: 'Medium — needs some context', techs: { 'add-context': 2, 'set-a-role': 1, 'set-constraints': 1 } },
+        { text: 'Complex — multiple factors', techs: { 'think-step-by-step': 3, 'add-context': 2, 'set-constraints': 1 } }
+      ]},
+      { q: 'Do you have examples of what "good" looks like?', opts: [
+        { text: 'Yes, I can show the AI what I want', techs: { 'give-examples': 3 } },
+        { text: 'Not really, I\'ll describe it', techs: { 'give-clear-instructions': 2, 'define-the-format': 2 } },
+        { text: 'I know the pattern but it\'s hard to describe', techs: { 'give-examples': 3, 'define-the-format': 1 } }
+      ]}
+    ];
+
+    const TECH_INFO = {
+      'give-clear-instructions': { emoji: '🎯', name: 'Give Clear Instructions', url: '/prompt-guide/give-clear-instructions/' },
+      'set-a-role': { emoji: '🎭', name: 'Set a Role', url: '/prompt-guide/set-a-role/' },
+      'add-context': { emoji: '📋', name: 'Add Context', url: '/prompt-guide/add-context/' },
+      'define-the-format': { emoji: '📐', name: 'Define the Format', url: '/prompt-guide/define-the-format/' },
+      'give-examples': { emoji: '💡', name: 'Give Examples', url: '/prompt-guide/give-examples/' },
+      'think-step-by-step': { emoji: '🧠', name: 'Think Step by Step', url: '/prompt-guide/think-step-by-step/' },
+      'set-constraints': { emoji: '🚧', name: 'Set Constraints', url: '/prompt-guide/set-constraints/' },
+      'specify-audience-and-tone': { emoji: '🗣️', name: 'Specify Audience & Tone', url: '/prompt-guide/specify-audience-and-tone/' }
+    };
+
+    let answers = [];
+
+    function renderQuiz() {
+      body.innerHTML = QUESTIONS.map((q, i) =>
+        `<div class="pguide-quiz-q" data-qi="${i}">
+          <h3><span class="pguide-quiz-num">Q${i + 1}.</span> ${q.q}</h3>
+          <div class="pguide-quiz-options">
+            ${q.opts.map((o, j) => `<button class="pguide-quiz-opt" data-qi="${i}" data-oi="${j}">${o.text}</button>`).join('')}
+          </div>
+        </div>`
+      ).join('') + `<button class="pguide-btn pguide-btn-primary" id="pguide-quiz-submit" style="margin-top:1rem" disabled>🧭 Get My Recommendations</button>`;
+
+      body.addEventListener('click', e => {
+        const opt = e.target.closest('.pguide-quiz-opt');
+        if (!opt) return;
+        const qi = +opt.dataset.qi;
+        $$(`[data-qi="${qi}"] .pguide-quiz-opt`).forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        answers[qi] = +opt.dataset.oi;
+        const allAnswered = QUESTIONS.every((_, i) => answers[i] !== undefined);
+        const sub = $('#pguide-quiz-submit');
+        if (sub) sub.disabled = !allAnswered;
+      });
+
+      const submitCheck = setInterval(() => {
+        const sub = $('#pguide-quiz-submit');
+        if (!sub) { clearInterval(submitCheck); return; }
+        sub.addEventListener('click', showResults);
+        clearInterval(submitCheck);
+      }, 100);
+    }
+
+    function showResults() {
+      const scores = {};
+      answers.forEach((oi, qi) => {
+        const techs = QUESTIONS[qi].opts[oi]?.techs || {};
+        Object.entries(techs).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v; });
+      });
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]).slice(0, 3);
+      results.style.display = '';
+      results.innerHTML = '<h3>🎯 Your Top Recommended Techniques</h3>' +
+        sorted.map(([id, score], i) => {
+          const t = TECH_INFO[id];
+          return `<div class="pguide-quiz-result-card">
+            <div class="pguide-quiz-result-rank">#${i + 1}</div>
+            <div class="pguide-quiz-result-info">
+              <strong>${t.emoji} ${t.name}</strong>
+              <p>Relevance score: ${score} points</p>
+              <a href="${t.url}">Learn this technique →</a>
+            </div>
+          </div>`;
+        }).join('') +
+        `<button class="pguide-btn pguide-btn-secondary" style="margin-top:1rem" onclick="location.reload()">🔄 Retake Quiz</button>`;
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    renderQuiz();
+  }
+
+  /* ════════════════════════════════════════
+     CHALLENGES — V2
+     ════════════════════════════════════════ */
+  function initChallenges() {
+    const list = $('#pguide-challenge-list');
+    if (!list) return;
+
+    const CHALLENGES = [
+      {
+        title: '📧 The Follow-Up Email',
+        scenario: 'Your client hasn\'t responded to your proposal in 2 weeks. Write a prompt that gets AI to draft the perfect follow-up email — polite but with urgency.',
+        techniques: ['give-clear-instructions', 'set-a-role', 'specify-audience-and-tone', 'set-constraints']
+      },
+      {
+        title: '🔧 The Outage Report',
+        scenario: 'Your company had a 2-hour Teams outage this morning. You need to communicate to both customers AND your IT team. Write a prompt that produces both versions.',
+        techniques: ['specify-audience-and-tone', 'add-context', 'define-the-format', 'set-constraints']
+      },
+      {
+        title: '📊 The Migration Decision',
+        scenario: 'Your boss asks: "Should we move from on-prem Exchange to M365?" Write a prompt that gets AI to give a thorough, well-reasoned analysis.',
+        techniques: ['think-step-by-step', 'add-context', 'set-a-role', 'define-the-format']
+      },
+      {
+        title: '📋 The Ticket Sorter',
+        scenario: 'You have 50 support tickets to categorize. Write a prompt that teaches AI your exact categorization system with examples.',
+        techniques: ['give-examples', 'give-clear-instructions', 'define-the-format']
+      }
+    ];
+
+    const TECH_PATTERNS = {
+      'give-clear-instructions': { label: '🎯 Clear', re: /\b(write|create|draft|compose|generate|summarize|analyse|explain|list)\b/i },
+      'set-a-role': { label: '🎭 Role', re: /(?:you are|act as|as a|your role)/i },
+      'add-context': { label: '📋 Context', re: /(?:\d+|week|month|team|project|company|users?|employees?|budget|\$)/i },
+      'define-the-format': { label: '📐 Format', re: /\b(table|bullet|numbered|email|paragraph|list|heading|column)\b/i },
+      'give-examples': { label: '💡 Examples', re: /(?:example|e\.g\.|for instance|like this|→|->)/i },
+      'think-step-by-step': { label: '🧠 Steps', re: /\b(step.by.step|walk me through|think through|break down|reason|first.*then|1\.|2\.)/i },
+      'set-constraints': { label: '🚧 Constraints', re: /\b(maximum|max|no more|under \d|don.?t|avoid|plain English|without)\b/i },
+      'specify-audience-and-tone': { label: '🗣️ Tone', re: /\b(for (?:my|the|our)|tone|professional|friendly|formal|audience|readers?)\b/i }
+    };
+
+    list.innerHTML = CHALLENGES.map((c, i) =>
+      `<div class="pguide-challenge-card" data-ci="${i}">
+        <h3>${c.title}</h3>
+        <div class="pguide-challenge-scenario">${c.scenario}</div>
+        <textarea class="pguide-sandbox-textarea pguide-challenge-input" data-ci="${i}" rows="4" placeholder="Write your prompt here..."></textarea>
+        <div class="pguide-challenge-score" data-ci="${i}">
+          ${c.techniques.map(t => `<span class="pguide-challenge-tag" data-tech="${t}">${TECH_PATTERNS[t].label}</span>`).join('')}
+        </div>
+        <div class="pguide-challenge-feedback" data-ci="${i}"></div>
+      </div>`
+    ).join('');
+
+    list.addEventListener('input', e => {
+      const ta = e.target.closest('.pguide-challenge-input');
+      if (!ta) return;
+      const ci = ta.dataset.ci;
+      const text = ta.value.trim();
+      const challenge = CHALLENGES[ci];
+      const tags = $$(`.pguide-challenge-score[data-ci="${ci}"] .pguide-challenge-tag`);
+      let detected = 0;
+
+      tags.forEach(tag => {
+        const tech = tag.dataset.tech;
+        const pat = TECH_PATTERNS[tech];
+        const found = pat && pat.re.test(text);
+        tag.classList.toggle('detected', found);
+        if (found) detected++;
+      });
+
+      const fb = $(`.pguide-challenge-feedback[data-ci="${ci}"]`);
+      if (!text) { fb.textContent = ''; fb.style.color = ''; }
+      else if (detected === challenge.techniques.length) {
+        fb.textContent = `🏆 Perfect! You used all ${detected} recommended techniques!`;
+        fb.style.color = '#A3E635';
+      } else if (detected > 0) {
+        fb.textContent = `👍 ${detected}/${challenge.techniques.length} techniques detected — keep going!`;
+        fb.style.color = '#FBBF24';
+      } else {
+        fb.textContent = 'Start writing — we\'ll detect which techniques you use...';
+        fb.style.color = 'rgba(255,255,255,0.4)';
+      }
+    });
+  }
+
+  /* ════════════════════════════════════════
      INIT
      ════════════════════════════════════════ */
   document.addEventListener('DOMContentLoaded', () => {
@@ -413,8 +708,14 @@
     initProgress();
     initMarkComplete();
     initSandbox();
+    initSandboxReset();
     initTOC();
     initBuilder();
     initURLState();
+    initCopyButtons();
+    initFixExercise();
+    initCertificate();
+    initQuiz();
+    initChallenges();
   });
 })();

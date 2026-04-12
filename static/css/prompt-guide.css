@@ -754,10 +754,396 @@
   outline-offset: 2px;
 }
 
-/* ── Print ── */
+/* ══════════════════════════════════════
+   NEW: Intro Section (fix #3)
+   ══════════════════════════════════════ */
+.pguide-intro { margin-bottom: 2rem; text-align: center; }
+.pguide-intro-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.pguide-intro-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+}
+.pguide-intro-num {
+  display: inline-flex;
+  width: 28px; height: 28px;
+  background: var(--tool-accent);
+  color: #000;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+.pguide-intro-step strong { display: block; margin-bottom: 0.25rem; }
+.pguide-intro-step p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+.pguide-intro-time { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* ══ Quick Win Demo (fix #13) ══ */
+.pguide-quickwin {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.pguide-quickwin h2 { margin: 0 0 1rem; font-size: 1.2rem; }
+.pguide-ba-cards {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pguide-ba-card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+}
+.pguide-ba-before {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+.pguide-ba-after {
+  background: rgba(132, 204, 22, 0.08);
+  border: 1px solid rgba(132, 204, 22, 0.25);
+}
+.pguide-ba-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.pguide-ba-before .pguide-ba-label { color: #FCA5A5; }
+.pguide-ba-after .pguide-ba-label { color: var(--tool-accent-text); }
+.pguide-ba-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
+.pguide-ba-arrow {
+  font-size: 1.5rem;
+  color: var(--tool-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.pguide-quickwin-note {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ══ Copy Small Button ══ */
+.pguide-copy-small {
+  background: var(--tool-accent-dim);
+  border: 1px solid var(--tool-accent);
+  color: var(--tool-accent-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+.pguide-copy-small:hover { background: var(--tool-accent-glow); }
+
+/* ══ Card Number Badge (fix #12) ══ */
+.pguide-card-num {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  background: var(--border-subtle);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+/* ══ Path Hint (fix #12) ══ */
+.pguide-path-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--tool-accent-dim);
+  border-radius: 8px;
+  border-left: 3px solid var(--tool-accent);
+}
+
+/* ══ Combine Callout (fix #9) ══ */
+.pguide-combine-callout {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.pguide-combine-callout h3 { margin: 0 0 0.5rem; color: var(--tool-accent-text); }
+.pguide-combine-callout > p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
+.pguide-combine-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.pguide-combine-tag {
+  background: var(--tool-accent-dim);
+  border: 1px solid var(--tool-accent);
+  color: var(--tool-accent-text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.pguide-combine-plus, .pguide-combine-eq { color: var(--text-secondary); font-weight: 700; }
+.pguide-combine-result {
+  background: var(--tool-accent);
+  color: #000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ══ Print Button ══ */
+.pguide-print-btn { margin-top: 1rem; }
+
+/* ══ Sandbox Actions (fix #15) ══ */
+.pguide-sandbox-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.pguide-btn-small {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pguide-btn-small:hover { border-color: var(--tool-accent); color: var(--text-primary); }
+
+/* ══ Show Answer Reveal (fix #8) ══ */
+.pguide-sandbox-reveal {
+  margin-top: 1rem;
+  background: rgba(132, 204, 22, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+.pguide-sandbox-reveal summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--tool-accent-text);
+  font-weight: 600;
+}
+.pguide-sandbox-answer {
+  padding: 0 1rem 1rem;
+}
+.pguide-sandbox-answer p { margin: 0; font-size: 0.9rem; line-height: 1.6; white-space: pre-wrap; }
+
+/* ══ Fix This Prompt — V2 ══ */
+.pguide-fix-exercise {
+  background: rgba(251, 191, 36, 0.06);
+  border: 2px solid #FBBF24;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.pguide-fix-exercise h2 { margin-top: 0; color: #FBBF24; }
+
+/* ══ Heatmap Card — V2 ══ */
+.pguide-heatmap-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.pguide-heatmap-card h3 { margin: 0 0 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+.pguide-best-for { list-style: none; padding: 0; margin: 0; }
+.pguide-best-for li {
+  font-size: 0.8rem;
+  color: var(--tool-accent-text);
+  padding: 0.2rem 0;
+}
+.pguide-best-for li::before { content: '✓ '; }
+
+/* ══ Certificate — V2 ══ */
+.pguide-certificate {
+  background: linear-gradient(135deg, rgba(132,204,22,0.1), rgba(132,204,22,0.02));
+  border: 2px solid var(--tool-accent);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.pguide-cert-badge { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+.pguide-cert-inner h3 { color: var(--tool-accent-text); margin: 0 0 0.5rem; }
+.pguide-cert-form { display: flex; gap: 0.5rem; justify-content: center; margin: 1rem 0; flex-wrap: wrap; }
+.pguide-cert-form .pguide-input { max-width: 250px; text-align: center; }
+.pguide-cert-card {
+  max-width: 500px;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(135deg, #1a2a1a, #0d1117);
+  border: 2px solid var(--tool-accent);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pguide-cert-card-inner { padding: 2rem; }
+.pguide-cert-top { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 0.5rem; }
+.pguide-cert-card h4 { color: var(--tool-accent-text); font-size: 1.3rem; margin: 0 0 1rem; }
+.pguide-cert-name { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 0.75rem; }
+.pguide-cert-detail { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 0.5rem; }
+.pguide-cert-date { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
+
+/* ══ Quiz — V2 ══ */
+.pguide-quiz-container { max-width: 700px; margin: 0 auto; }
+.pguide-quiz-container h2 { margin: 0 0 0.5rem; }
+.pguide-quiz-container > p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.pguide-quiz-q {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.pguide-quiz-q h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.pguide-quiz-q .pguide-quiz-num { color: var(--tool-accent-text); font-size: 0.85rem; }
+.pguide-quiz-options { display: flex; flex-direction: column; gap: 0.4rem; }
+.pguide-quiz-opt {
+  background: rgba(0,0,0,0.15);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all 0.2s;
+}
+.pguide-quiz-opt:hover { border-color: var(--tool-accent); }
+.pguide-quiz-opt.selected {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-text);
+}
+.pguide-quiz-results { max-width: 700px; margin: 0 auto; }
+.pguide-quiz-result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--tool-accent);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pguide-quiz-result-rank {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tool-accent-text);
+  min-width: 40px;
+  text-align: center;
+}
+.pguide-quiz-result-info { flex: 1; }
+.pguide-quiz-result-info strong { display: block; margin-bottom: 0.25rem; }
+.pguide-quiz-result-info p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+.pguide-quiz-result-info a { color: var(--tool-accent-text); font-size: 0.85rem; }
+
+/* ══ Challenges — V2 ══ */
+.pguide-challenge-container { max-width: 800px; margin: 0 auto; }
+.pguide-challenge-container h2 { margin: 0 0 0.5rem; }
+.pguide-challenge-container > p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.pguide-challenge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.pguide-challenge-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.pguide-challenge-scenario {
+  background: rgba(0,0,0,0.2);
+  border-left: 3px solid var(--tool-accent);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.pguide-challenge-input { margin-bottom: 0.75rem; }
+.pguide-challenge-score {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.pguide-challenge-tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+.pguide-challenge-tag.detected {
+  border-color: var(--tool-accent);
+  background: var(--tool-accent-dim);
+  color: var(--tool-accent-text);
+}
+.pguide-challenge-feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ══ Nav Accent (fix #19) ══ */
+.page-prompt-guide .site-nav { border-bottom-color: #84CC16; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Updated
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .pguide-grid { grid-template-columns: 1fr 1fr; }
+  .pguide-builder-layout { grid-template-columns: 1fr; }
+  .pguide-preview-sticky { position: static; margin-top: 2rem; }
+  .pguide-technique-layout { grid-template-columns: 1fr; }
+  .pguide-technique-sidebar { display: none; }
+  .pguide-technique-title { font-size: 1.5rem; }
+  .pguide-cross-cta { grid-template-columns: 1fr; }
+  .pguide-eco-grid { grid-template-columns: 1fr; }
+  .pguide-tone-row { grid-template-columns: 1fr; }
+  .pguide-intro-steps { grid-template-columns: 1fr; }
+  .pguide-ba-arrow { transform: rotate(90deg); }
+  .pguide-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .pguide-tab { white-space: nowrap; font-size: 0.85rem; padding: 0.6rem 0.8rem; }
+}
+@media (max-width: 480px) {
+  .pguide-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Print (fix #18) ── */
 @media print {
-  .pguide-tabs, .pguide-filters, .pguide-progress-wrap,
-  .pguide-mark-complete, .pguide-sandbox, .pguide-cross-cta,
-  .pguide-preview-actions, .pguide-eco-grid { display: none; }
-  .pguide-technique-hero { background: none; color: #000; }
+  .pguide-tabs, .pguide-filters, .pguide-progress-wrap, .pguide-certificate,
+  .pguide-mark-complete, .pguide-sandbox, .pguide-cross-cta, .pguide-fix-exercise,
+  .pguide-preview-actions, .pguide-quickwin, .pguide-print-btn,
+  .pguide-combine-callout, .pguide-intro { display: none; }
+  .pguide-technique-hero { background: none !important; }
+  .pguide-page { color: #000; }
+  .pguide-card { break-inside: avoid; border: 1px solid #ccc; }
+  .pguide-panel { display: block !important; }
+  .pguide-grid { grid-template-columns: 1fr 1fr; }
+  .pguide-card-title, .pguide-technique-title { color: #000; }
+  .pguide-card-desc, .pguide-card-meta { color: #333; }
 }

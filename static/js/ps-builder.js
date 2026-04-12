@@ -17,6 +17,28 @@
     'gpo-backup-all', 'teams-guest-report'
   ];
 
+  // D1 — Favourites
+  const FAV_KEY = 'psb_favs';
+
+  // B3 — "New" badge cutoff (30 days)
+  const NEW_CUTOFF_MS = 30 * 24 * 60 * 60 * 1000;
+
+  // C3 — Common mistakes per recipe (curated)
+  const COMMON_MISTAKES = {
+    'exo-all-mailbox-sizes': 'Forgetting -ResultSize Unlimited returns only 1000 mailboxes by default.',
+    'exo-forwarding-check': 'This only checks ForwardingSmtpAddress — also check inbox rules with Get-InboxRule for hidden forwarding.',
+    'exo-message-trace': 'Message trace only covers the last 10 days. For older emails, use Start-HistoricalSearch.',
+    'graph-all-users': 'Without -All flag, only the first page (~100 users) is returned.',
+    'graph-inactive-users': 'SignInActivity requires Entra ID P1 licence. Returns empty without it.',
+    'graph-signin-failures': 'Audit logs require AuditLog.Read.All permission — not granted by default.',
+    'spo-export-list': 'Field names in Select-Object must match your list column internal names, not display names.',
+    'az-stop-all-vms': 'Stop-AzVM with -Force skips confirmation — double check the resource group name!',
+    'ad-new-user': 'Password must meet domain complexity requirements or the command fails silently.',
+    'gpo-rsop-report': 'WinRM must be enabled on the target computer for remote RSoP.',
+    'win-create-scheduled-task': 'Tasks using -User SYSTEM cannot access network shares or user profiles.',
+    'win-event-log-errors': 'Security log requires "Run as Administrator" — you get an access denied error otherwise.'
+  };
+
   const S = {
     activeTab: 'recipes',
     selectedModule: null,
@@ -81,6 +103,54 @@
     if (mod.connect_command) full += `# ${mod.connect_command}\n\n`;
     full += command;
     return full;
+  }
+
+  // D1 — Favourites helpers
+  function getFavs() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch { return []; }
+  }
+  function toggleFav(id) {
+    let favs = getFavs();
+    if (favs.includes(id)) favs = favs.filter(f => f !== id);
+    else favs.push(id);
+    localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+    renderRecipes();
+  }
+  function isFav(id) { return getFavs().includes(id); }
+
+  // B2 — Search highlight helper
+  function highlightMatch(text, query) {
+    if (!query || !text) return esc(text);
+    const escaped = esc(text);
+    const q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return escaped.replace(new RegExp(`(${q})`, 'gi'), '<mark class="psb-highlight">$1</mark>');
+  }
+
+  // C1 — Pipeline breakdown for multi-step recipes
+  function pipelineBreakdown(command) {
+    if (!command.includes('|')) return '';
+    const stages = command.split(/\s*\|\s*/);
+    if (stages.length < 2) return '';
+    const labels = ['Get the data', 'Process/filter', 'Shape the output', 'Export/save'];
+    return `<div class="psb-pipeline-breakdown">
+      <button class="psb-breakdown-toggle">🔍 Step-by-step breakdown</button>
+      <div class="psb-breakdown-steps" hidden>
+        ${stages.map((s, i) => `<div class="psb-breakdown-step">
+          <span class="psb-breakdown-num">${i + 1}</span>
+          <div class="psb-breakdown-content">
+            <code class="psb-breakdown-code">${highlightPS(s.trim())}</code>
+            <span class="psb-breakdown-label">${labels[i] || 'Next step'}</span>
+          </div>
+          ${i < stages.length - 1 ? '<span class="psb-breakdown-pipe">| →</span>' : ''}
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // B3 — Check if recipe is "new" (added in last 30 days)
+  function isNewRecipe(r) {
+    if (!r.date_added) return false;
+    return (Date.now() - new Date(r.date_added).getTime()) < NEW_CUTOFF_MS;
   }
 
   /* ═══════ STATS BANNER (#5) ═══════ */
