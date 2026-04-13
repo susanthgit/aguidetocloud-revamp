@@ -56,45 +56,73 @@
   font-size: 0.85rem;
   color: var(--text-muted);
 }
-/* ── VENDOR PILLS (horizontal scroll) ── */
-.ainews-pills {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.4rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 0.3rem;
-  mask-image: linear-gradient(to right, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 92%, transparent 100%);
-}
-.ainews-pills::-webkit-scrollbar { display: none; }
-.ainews-pill {
-  padding: 0.35rem 0.9rem;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
-  color: var(--text-secondary);
-  font-size: 0.78rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: var(--font-heading);
-  white-space: nowrap;
+/* ── SMART FILTER DROPDOWN ── */
+.ainews-smart-filter {
+  position: relative;
   flex-shrink: 0;
 }
-.ainews-pill:hover {
-  border-color: var(--pill-color, var(--neon-cyan));
-  color: var(--pill-color, var(--neon-cyan));
+.ainews-filter-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+.ainews-filter-btn:hover, .ainews-filter-btn[aria-expanded="true"] {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+.ainews-filter-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 100;
+  min-width: 240px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(20, 17, 30, 0.97);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  padding: 0.3rem;
+}
+.ainews-filter-option {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+  font-family: var(--font-body);
+}
+.ainews-filter-option:hover {
   background: rgba(255,255,255,0.06);
-}
-.ainews-pill-active {
-  border-color: var(--pill-color, var(--neon-cyan));
   color: #fff;
-  background: color-mix(in srgb, var(--pill-color, var(--neon-cyan)) 25%, transparent);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--pill-color, var(--neon-cyan)) 20%, transparent);
 }
-.ainews-pill:focus-visible, .ainews-tab:focus-visible, .ainews-search:focus-visible, .ainews-show-more:focus-visible {
+.ainews-filter-option-active {
+  background: rgba(102,255,255,0.1);
+  color: var(--neon-cyan);
+  font-weight: 700;
+}
+.ainews-filter-count {
+  opacity: 0.5;
+  font-weight: 400;
+}
+.ainews-filter-btn:focus-visible, .ainews-tab:focus-visible, .ainews-search:focus-visible, .ainews-show-more:focus-visible {
   outline: 2px solid var(--neon-cyan); outline-offset: 2px;
 }
 .ainews-filter-info { font-size: 0.78rem; color: var(--text-muted); padding: 0.3rem 0 0.5rem; }
@@ -569,7 +597,66 @@
   overflow: hidden;
 }
 
-/* (Trending + pill-dots + email CTA removed — replaced by vendor pills) */
+/* (Trending + pill-dots + email CTA removed — replaced by smart filter) */
+
+/* ── READING TIME ────────────────────── */
+.ainews-readtime {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-left: 0.3rem;
+}
+.ainews-readtime::before {
+  content: '·';
+  margin-right: 0.3rem;
+}
+
+/* ── WEEKLY TRENDS ───────────────────── */
+.ainews-trends-section {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+.ainews-trends-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+.ainews-trend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ainews-trend-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  min-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ainews-trend-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ainews-trend-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease-out;
+}
+.ainews-trend-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 28px;
+  text-align: right;
+}
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -836,8 +923,8 @@
   .ainews-compact-title { white-space: normal; }
   .ainews-compact-header { flex-wrap: wrap; }
   .ainews-compact-time { font-size: 0.68rem; }
-  .ainews-pills { gap: 0.3rem; }
-  .ainews-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+  /* Smart filter: full width on mobile */
+  .ainews-filter-dropdown { left: 0; right: 0; min-width: auto; }
 
   .ainews-tabs {
     gap: 0.3rem;
