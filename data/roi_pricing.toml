@@ -1,0 +1,34 @@
+# ROI Calculator — M365 Copilot pricing data
+# Source: https://www.microsoft.com/en-us/microsoft-365/business/compare-all-plans
+# Last verified: 2026-04-13
+# Update when: Microsoft changes M365 pricing (typically July each year)
+
+[plans.bus-std]
+label = "Business Standard + Copilot"
+total = 42.50
+base = 12.50
+copilotRRP = 30.00
+
+[plans.bus-prem]
+label = "Business Premium + Copilot"
+total = 52.00
+base = 22.00
+copilotRRP = 30.00
+
+[plans.e3]
+label = "E3 + Copilot add-on"
+total = 69.00
+base = 39.00
+copilotRRP = 30.00
+
+[plans.e5]
+label = "E5 + Copilot add-on"
+total = 90.00
+base = 60.00
+copilotRRP = 30.00
+
+[plans.e7]
+label = "E7 (Frontier Suite)"
+total = 99.00
+base = 99.00
+copilotRRP = 30.00

@@ -568,5 +568,7 @@
 
 </div>{{/* .roi-page */}}
 
+{{ $roiPricing := (index hugo.Data "roi_pricing").plans }}
+<script>window.__roiPricing = {{ $roiPricing | jsonify | safeJS }};</script>
 <script src="/js/roi-calculator.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

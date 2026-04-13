@@ -5,7 +5,10 @@
       <p class="welcome-subtitle">Microsoft 365, Azure & AI tutorials, tools & blogs for IT pros — made with ❤️ by Susanth Sutheesh</p>
     </div>
     {{/* Dynamic stat counts */}}
-    {{ $toolCount := int (site.Params.tool_count | default 14) }}
+    {{/* Auto-calculate tool count from toolkit_nav.toml, excluding Feedback */}}
+    {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
+    {{ $toolCount := 0 }}
+    {{ range $allNavTools }}{{ if ne .url "/feedback/" }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
     {{ $videoCount := 0 }}
     {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
       {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}

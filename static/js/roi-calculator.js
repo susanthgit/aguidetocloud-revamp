@@ -8,7 +8,9 @@
 
   /* ── CONSTANTS ────────────────────────────────────────────── */
 
-  const PRICING = {
+  // Pricing injected from data/roi_pricing.toml via Hugo template
+  // Falls back to hardcoded values if injection fails
+  const PRICING = window.__roiPricing || {
     'bus-std':  { label: 'Business Standard + Copilot', total: 42.50, base: 12.50, copilotRRP: 30.00 },
     'bus-prem': { label: 'Business Premium + Copilot',  total: 52.00, base: 22.00, copilotRRP: 30.00 },
     'e3':       { label: 'E3 + Copilot add-on',         total: 69.00, base: 39.00, copilotRRP: 30.00 },
