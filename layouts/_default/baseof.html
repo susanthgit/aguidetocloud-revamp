@@ -127,6 +127,6 @@
   <script>
     (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
   </script>
-  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}</script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(e){console.warn('SW:',e)})}</script>
 </body>
 </html>

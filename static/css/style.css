@@ -1746,59 +1746,11 @@ pre.mermaid {
   }
 }
 
-/* ── VIEW TRANSITIONS (progressive enhancement) ────── */
-/* Cross-page navigation fade — Chrome 111+, Edge 111+, Safari 18+ */
-@view-transition {
-  navigation: auto;
-}
-
-/* Decorative body pseudo-elements: no transition (prevents double-fade/flash) */
-body::before,
-body::after {
-  view-transition-name: none;
-}
-
-/* Nav stays stable across pages */
-.site-nav {
-  view-transition-name: site-nav;
-}
-
-/* Main content cross-fades */
-#main-content {
-  view-transition-name: main-content;
-}
-
-/* Footer stays stable */
-.site-footer {
-  view-transition-name: site-footer;
-}
-
-/* Default cross-fade timing */
-::view-transition-old(main-content) {
-  animation: 180ms ease-out both fade-out;
-}
-::view-transition-new(main-content) {
-  animation: 180ms ease-in both fade-in;
-}
-@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
-@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
-
-/* Stable elements: no animation */
-::view-transition-old(site-nav),
-::view-transition-new(site-nav),
-::view-transition-old(site-footer),
-::view-transition-new(site-footer) {
-  animation: none;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  @view-transition { navigation: auto; }
-  ::view-transition-old(main-content),
-  ::view-transition-new(main-content) {
-    animation: none;
-  }
-}
+/* ── VIEW TRANSITIONS ────────────────────
+   REMOVED: @view-transition { navigation: auto } caused perceived
+   slowness on navigation. The 180ms cross-fade delayed every click.
+   Revisit when browser support is wider and timing can be tuned.
+   ────────────────────────────────────────── */
 
 /* ══ Tool Ecosystem Cross-Links (shared) ══ */
 .tool-eco {

@@ -351,15 +351,27 @@
       }
     },
     {
+      "route": "/sw.js",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    },
+    {
+      "route": "/manifest.json",
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      }
+    },
+    {
       "route": "/css/*",
       "headers": {
-        "Cache-Control": "public, max-age=86400"
+        "Cache-Control": "public, max-age=3600"
       }
     },
     {
       "route": "/js/*",
       "headers": {
-        "Cache-Control": "public, max-age=86400"
+        "Cache-Control": "public, max-age=3600"
       }
     },
     {
