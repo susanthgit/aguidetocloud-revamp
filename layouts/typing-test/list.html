@@ -1,0 +1,286 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/typing-test.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Typing Speed Test",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#34D399" "title" "Typing Speed Test" "subtitle" "Test your speed and accuracy with real-time WPM tracking. Practice with quotes, code snippets, or custom text. Track your progress and identify problem keys. 100% free, 100% private.") }}
+
+<div class="typist-page">
+
+  {{/* ── Toolbar: theme + sound ── */}}
+  <div class="typist-toolbar">
+    <button class="typist-tool-btn" id="typist-theme-toggle" title="Toggle retro terminal theme">🖥️ Retro</button>
+    <button class="typist-tool-btn" id="typist-sound-toggle" title="Toggle key click sounds">🔇 Sound Off</button>
+  </div>
+
+  {{/* ── Mobile hint (dismissible) ── */}}
+  <div class="typist-mobile-hint" id="typist-mobile-hint">⌨️ Use a physical keyboard for best results <button class="typist-mobile-dismiss" id="typist-mobile-dismiss" aria-label="Dismiss">✕</button></div>
+
+  {{/* ── Real-time stats bar ── */}}
+  <div class="typist-stats-bar" id="typist-stats-bar">
+    <div class="typist-stat">
+      <span class="typist-stat-val" id="typist-wpm">0</span>
+      <span class="typist-stat-label">WPM</span>
+    </div>
+    <div class="typist-stat">
+      <span class="typist-stat-val" id="typist-acc">100%</span>
+      <span class="typist-stat-label">Accuracy</span>
+    </div>
+    <div class="typist-stat">
+      <span class="typist-stat-val" id="typist-time">60</span>
+      <span class="typist-stat-label">Time</span>
+    </div>
+    <div class="typist-stat">
+      <span class="typist-stat-val" id="typist-chars">0/0</span>
+      <span class="typist-stat-label">Chars</span>
+    </div>
+  </div>
+
+  {{/* ── Main typing area ── */}}
+  <div class="typist-text-area" id="typist-text-area">
+    <div class="typist-text" id="typist-text"></div>
+    <div class="typist-focus-hint" id="typist-focus-hint">Click here or start typing to begin</div>
+    <textarea id="typist-input" class="typist-input-hidden" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus aria-label="Type the displayed text here" rows="1"></textarea>
+  </div>
+
+  {{/* ── Keyboard shortcuts hint ── */}}
+  <div class="typist-hint"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> restart · <kbd>Esc</kbd> end early</div>
+
+  {{/* ── Results overlay ── */}}
+  <div class="typist-results typist-hidden" id="typist-results" role="dialog" aria-modal="true" aria-label="Test results">
+    <div class="typist-results-card" id="typist-results-card">
+      <div class="typist-results-header">
+        <h2 class="typist-results-title">Test Complete</h2>
+        <div class="typist-results-wpm">
+          <span class="typist-results-wpm-num" id="typist-result-wpm">0</span>
+          <span class="typist-results-wpm-label">WPM</span>
+        </div>
+      </div>
+      <div class="typist-results-grid">
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-acc">0%</span>
+          <span class="typist-result-lbl">Accuracy</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-raw">0</span>
+          <span class="typist-result-lbl">Raw WPM</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-consistency">0%</span>
+          <span class="typist-result-lbl">Consistency</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-correct">0</span>
+          <span class="typist-result-lbl">Correct</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-incorrect">0</span>
+          <span class="typist-result-lbl">Incorrect</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-extra">0</span>
+          <span class="typist-result-lbl">Extra</span>
+        </div>
+        <div class="typist-result-item">
+          <span class="typist-result-val" id="typist-result-missed">0</span>
+          <span class="typist-result-lbl">Missed</span>
+        </div>
+      </div>
+      <div class="typist-result-pb typist-hidden" id="typist-result-pb">🎉 New Personal Best!</div>
+      <div class="typist-result-quote typist-hidden" id="typist-result-quote"></div>
+      <div class="typist-error-review typist-hidden" id="typist-error-review">
+        <div class="typist-chart-label">Key Confusion <small style="opacity:0.5">(expected → typed)</small></div>
+        <div class="typist-error-words" id="typist-error-words"></div>
+      </div>
+      <div class="typist-results-chart">
+        <div class="typist-chart-label">WPM over time</div>
+        <canvas id="typist-sparkline" width="500" height="100"></canvas>
+      </div>
+      <div class="typist-results-actions">
+        <button class="typist-btn typist-btn-primary" id="typist-restart">🔄 Try Again</button>
+        <button class="typist-btn" id="typist-next-test">⏭️ Next Test</button>
+        <button class="typist-btn" id="typist-share-btn">📸 Share Result</button>
+      </div>
+      <div class="typist-cheat-warning typist-hidden" id="typist-cheat-warning">⚠️ Unusually high WPM detected — result not saved.</div>
+    </div>
+  </div>
+
+  {{/* ── Tabs ── */}}
+  <div class="typist-tabs" role="tablist">
+    <button class="typist-tab active" role="tab" data-tab="quick" aria-selected="true">⚡ Quick Test</button>
+    <button class="typist-tab" role="tab" data-tab="practice">📝 Practice</button>
+    <button class="typist-tab" role="tab" data-tab="stats">📊 My Stats</button>
+  </div>
+
+  {{/* ══════════════ TAB 1: QUICK TEST ══════════════ */}}
+  <div class="typist-panel active" id="panel-quick" role="tabpanel">
+    <div class="typist-config">
+      <div class="typist-config-row">
+        <span class="typist-config-label">Mode</span>
+        <div class="typist-config-pills" id="typist-test-mode-pills">
+          <button class="typist-pill active" data-tmode="time">⏱️ Time</button>
+          <button class="typist-pill" data-tmode="wordcount">🔤 Words</button>
+        </div>
+      </div>
+      <div class="typist-config-row" id="typist-duration-row">
+        <span class="typist-config-label">Duration</span>
+        <div class="typist-config-pills" id="typist-duration-pills">
+          <button class="typist-pill" data-dur="15">15s</button>
+          <button class="typist-pill" data-dur="30">30s</button>
+          <button class="typist-pill active" data-dur="60">60s</button>
+          <button class="typist-pill" data-dur="120">120s</button>
+        </div>
+      </div>
+      <div class="typist-config-row typist-hidden" id="typist-wordcount-row">
+        <span class="typist-config-label">Words</span>
+        <div class="typist-config-pills" id="typist-wordcount-pills">
+          <button class="typist-pill" data-wc="10">10</button>
+          <button class="typist-pill active" data-wc="25">25</button>
+          <button class="typist-pill" data-wc="50">50</button>
+          <button class="typist-pill" data-wc="100">100</button>
+        </div>
+      </div>
+      <div class="typist-config-row">
+        <span class="typist-config-label">Include</span>
+        <div class="typist-config-pills">
+          <button class="typist-toggle" id="typist-toggle-punct" title="Add punctuation to words">A.b,</button>
+          <button class="typist-toggle" id="typist-toggle-nums" title="Mix in numbers">123</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 2: PRACTICE ══════════════ */}}
+  <div class="typist-panel" id="panel-practice" role="tabpanel">
+    <div class="typist-mode-pills" id="typist-mode-pills">
+      <button class="typist-mode active" data-mode="quote">💬 Quotes</button>
+      <button class="typist-mode" data-mode="code">💻 Code</button>
+      <button class="typist-mode" data-mode="custom">✏️ Custom</button>
+      <button class="typist-mode" data-mode="numbers">🔢 Numbers &amp; Symbols</button>
+    </div>
+
+    {{/* Code language selector */}}
+    <div class="typist-code-lang typist-hidden" id="typist-code-lang">
+      <button class="typist-lang active" data-lang="javascript">JavaScript</button>
+      <button class="typist-lang" data-lang="python">Python</button>
+      <button class="typist-lang" data-lang="powershell">PowerShell</button>
+      <button class="typist-lang" data-lang="html">HTML/CSS</button>
+    </div>
+
+    {{/* Custom text area */}}
+    <div class="typist-custom-wrap typist-hidden" id="typist-custom-wrap">
+      <textarea id="typist-custom-text" class="typist-custom-textarea" placeholder="Paste or type your own text here to practice with..." rows="4"></textarea>
+      <button class="typist-btn typist-btn-primary" id="typist-custom-start">▶ Start with this text</button>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 3: MY STATS ══════════════ */}}
+  <div class="typist-panel" id="panel-stats" role="tabpanel">
+    <div class="typist-stats-overview" id="typist-stats-overview">
+      {{/* Filled by JS */}}
+    </div>
+
+    <div class="typist-stats-section">
+      <h3 class="typist-section-title">📈 WPM Trend</h3>
+      <canvas id="typist-trend-chart" width="600" height="200"></canvas>
+    </div>
+
+    <div class="typist-stats-section">
+      <h3 class="typist-section-title">⌨️ Problem Keys</h3>
+      <p class="typist-stats-hint">Keys coloured by error rate: <span style="color:#34D399">green</span> = accurate, <span style="color:#f87171">red</span> = needs work</p>
+      <div id="typist-keyboard-heatmap"></div>
+    </div>
+
+    <div class="typist-stats-section">
+      <h3 class="typist-section-title">📋 Recent Tests</h3>
+      <div id="typist-history-table"></div>
+    </div>
+
+    <div style="text-align:center; margin-top:1.5rem">
+      <button class="typist-btn typist-btn-danger" id="typist-clear-stats">🗑️ Clear All Stats</button>
+    </div>
+  </div>
+
+  {{/* ── Cross-links ── */}}
+  <div class="tool-eco" style="--eco-accent: #34D399">
+    <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
+    <div class="tool-eco-grid tool-eco-4">
+      <a href="/prompt-polisher/" class="tool-eco-card"><span>✨</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
+      <a href="/world-clock/" class="tool-eco-card"><span>🌍</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
+      <a href="/qr-generator/" class="tool-eco-card"><span>📱</span><strong>QR Code Generator</strong><p>Create beautiful QR codes</p></a>
+      <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
+    </div>
+    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  </div>
+
+  {{/* ── FAQ ── */}}
+  {{ if .Params.faq }}
+  <div class="typist-section" style="margin-top:2rem">
+    <h2 class="typist-section-title">Frequently Asked Questions</h2>
+    <div style="display:flex; flex-direction:column; gap:1rem">
+      {{ range $i, $q := .Params.faq }}
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
+        <strong style="color:#34D399; font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $q.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* ── Back nav ── */}}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+
+  {{/* ── Pagefind ── */}}
+  <div class="typist-searchable" data-pagefind-body>
+    <h2>Typing Speed Test</h2>
+    <p>Free online typing speed test. Measure your WPM, accuracy, and consistency. Practice with famous quotes, real code snippets in JavaScript Python and PowerShell, or custom text. Track your progress with problem key heatmaps and WPM trend charts. Retro terminal theme available. 100% client-side, zero data collection.</p>
+  </div>
+
+</div>
+
+<script src="/js/typing-test.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

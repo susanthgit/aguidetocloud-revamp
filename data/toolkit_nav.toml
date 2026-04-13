@@ -135,6 +135,12 @@ name = "Image Compressor"
 short = "Compress"
 
 [[tools]]
+url = "/typing-test/"
+emoji = "⌨️"
+name = "Typing Speed Test"
+short = "Typing"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

@@ -1,0 +1,895 @@
+/* ═══════════════════════════════════════════════════
+   Typing Speed Test — typing-test.css
+   Accent: #34D399 (Spring Green)
+   Namespace: .typist-*
+   ═══════════════════════════════════════════════════ */
+
+/* ── Page wrapper ── */
+.typist-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* ── Toolbar (theme + sound) ── */
+.typist-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.typist-tool-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.typist-tool-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+}
+.typist-tool-btn.active {
+  background: rgba(52,211,153,0.12);
+  border-color: rgba(52,211,153,0.3);
+  color: #34D399;
+}
+
+/* ── Mobile hint ── */
+.typist-mobile-hint {
+  display: none;
+  text-align: center;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 8px;
+  color: #FBBF24;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.typist-mobile-dismiss {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(251,191,36,0.6);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem;
+}
+@media (max-width: 768px) {
+  .typist-mobile-hint { display: block; }
+}
+
+/* ── Stats bar ── */
+.typist-stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.typist-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.typist-stat-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #34D399;
+  font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+  text-align: center;
+}
+.typist-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── Text display area ── */
+.typist-text-area {
+  position: relative;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 180px;
+  max-height: 220px;
+  overflow: hidden;
+  cursor: text;
+  transition: border-color 0.3s;
+  margin-bottom: 0.5rem;
+}
+.typist-text-area:focus-within {
+  border-color: rgba(52,211,153,0.3);
+}
+.typist-text-area.typist-active {
+  border-color: rgba(52,211,153,0.4);
+  box-shadow: 0 0 20px rgba(52,211,153,0.06);
+}
+.typist-text {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+  font-size: 1.25rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+.typist-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: text;
+  font-size: 16px; /* prevent iOS zoom */
+  resize: none;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+.typist-focus-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.25);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.typist-text-area.typist-active .typist-focus-hint,
+.typist-text-area.typist-has-text .typist-focus-hint {
+  opacity: 0;
+}
+
+/* ── Character states ── */
+.typist-char {
+  color: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  transition: color 0.05s;
+  position: relative;
+}
+.typist-char.typist-correct {
+  color: rgba(255,255,255,0.75);
+}
+.typist-char.typist-incorrect {
+  color: #f87171;
+  background: rgba(248,113,113,0.15);
+  border-radius: 2px;
+}
+.typist-char.typist-extra {
+  color: #ef4444;
+  background: rgba(239,68,68,0.2);
+  border-radius: 2px;
+  text-decoration: line-through;
+}
+.typist-char.typist-current {
+  color: rgba(255,255,255,0.5);
+}
+.typist-char.typist-current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #34D399;
+  animation: typist-blink 1s step-end infinite;
+}
+@keyframes typist-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typist-char.typist-space-error {
+  background: rgba(248,113,113,0.25);
+  min-width: 0.5ch;
+  display: inline-block;
+}
+
+/* ── Shortcuts hint ── */
+.typist-hint {
+  text-align: center;
+  color: rgba(255,255,255,0.2);
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.typist-hint kbd {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px;
+  padding: 0.1rem 0.35rem;
+  font-family: inherit;
+  font-size: 0.7rem;
+}
+
+/* ── Tabs ── */
+.typist-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1.25rem;
+}
+.typist-tab {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.typist-tab:hover {
+  color: rgba(255,255,255,0.7);
+}
+.typist-tab.active {
+  color: #34D399;
+  border-bottom-color: #34D399;
+}
+.typist-panel {
+  display: none;
+}
+.typist-panel.active {
+  display: block;
+}
+
+/* ── Duration pills ── */
+.typist-config {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.typist-config-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.typist-config-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
+  min-width: 60px;
+  text-align: right;
+}
+.typist-config-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.typist-duration-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.typist-pill {
+  padding: 0.45rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.typist-pill:hover {
+  border-color: rgba(52,211,153,0.3);
+  color: rgba(255,255,255,0.8);
+}
+.typist-pill.active {
+  background: rgba(52,211,153,0.15);
+  border-color: #34D399;
+  color: #34D399;
+}
+
+/* ── Practice mode pills ── */
+.typist-mode-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.typist-mode {
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.typist-mode:hover {
+  border-color: rgba(52,211,153,0.3);
+  color: rgba(255,255,255,0.8);
+}
+.typist-mode.active {
+  background: rgba(52,211,153,0.15);
+  border-color: #34D399;
+  color: #34D399;
+}
+
+/* Code language selector */
+.typist-code-lang {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.typist-lang {
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.typist-lang.active {
+  background: rgba(52,211,153,0.1);
+  border-color: rgba(52,211,153,0.2);
+  color: #34D399;
+}
+
+/* Custom text area */
+.typist-custom-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.typist-custom-textarea {
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  color: rgba(255,255,255,0.8);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 0.75rem;
+}
+.typist-custom-textarea:focus {
+  outline: none;
+  border-color: rgba(52,211,153,0.3);
+}
+
+/* ── Buttons ── */
+.typist-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.typist-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+.typist-btn-primary {
+  background: rgba(52,211,153,0.15);
+  border-color: rgba(52,211,153,0.3);
+  color: #34D399;
+}
+.typist-btn-primary:hover {
+  background: rgba(52,211,153,0.25);
+}
+.typist-btn-danger {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.2);
+  color: #f87171;
+}
+.typist-btn-danger:hover {
+  background: rgba(239,68,68,0.2);
+}
+
+/* ── Results overlay ── */
+.typist-results {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: typist-fadeIn 0.3s ease;
+}
+.typist-results.typist-hidden {
+  display: none;
+}
+@keyframes typist-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.typist-results-card {
+  background: rgba(15,23,42,0.95);
+  border: 1px solid rgba(52,211,153,0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: typist-slideUp 0.4s ease;
+}
+@keyframes typist-slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.typist-results-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.typist-results-title {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.typist-results-wpm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.typist-results-wpm-num {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #34D399;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.typist-results-wpm-label {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Results grid */
+.typist-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.typist-result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.typist-result-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  font-variant-numeric: tabular-nums;
+}
+.typist-result-lbl {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Sparkline chart */
+.typist-results-chart {
+  margin-bottom: 1.5rem;
+}
+.typist-chart-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+#typist-sparkline {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Results actions */
+.typist-results-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.typist-cheat-warning {
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 8px;
+  color: #FBBF24;
+  font-size: 0.82rem;
+  margin-top: 1rem;
+}
+
+/* ── Stats page ── */
+.typist-stats-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.typist-overview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+.typist-overview-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #34D399;
+  font-variant-numeric: tabular-nums;
+}
+.typist-overview-lbl {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+}
+
+.typist-stats-section {
+  margin-bottom: 2rem;
+}
+.typist-section-title {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 1rem;
+}
+.typist-stats-hint {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.75rem;
+}
+
+/* Trend chart */
+#typist-trend-chart {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* ── Keyboard heatmap ── */
+.typist-keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.typist-kb-row {
+  display: flex;
+  gap: 4px;
+}
+.typist-key {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.2s;
+  cursor: default;
+}
+.typist-key:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+.typist-key-space {
+  width: 220px;
+}
+
+/* ── History table ── */
+.typist-history-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.typist-history {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+.typist-history th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.3);
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.typist-history td {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-variant-numeric: tabular-nums;
+}
+.typist-history tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+.typist-history .typist-wpm-cell {
+  color: #34D399;
+  font-weight: 700;
+}
+
+/* ── Toast notification ── */
+.typist-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15,23,42,0.95);
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  z-index: 200;
+  animation: typist-toastIn 0.3s ease;
+  pointer-events: none;
+}
+@keyframes typist-toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Hidden utility ── */
+.typist-hidden { display: none !important; }
+.typist-searchable { position: absolute; left: -9999px; }
+
+/* ── Focus-visible for all interactive elements ── */
+.typist-tab:focus-visible,
+.typist-pill:focus-visible,
+.typist-mode:focus-visible,
+.typist-lang:focus-visible,
+.typist-btn:focus-visible,
+.typist-tool-btn:focus-visible {
+  outline: 2px solid #34D399;
+  outline-offset: 2px;
+}
+
+/* ── Newline marker in code mode ── */
+.typist-char.typist-newline {
+  color: rgba(255,255,255,0.12);
+  font-size: 0.85em;
+  margin-right: 2px;
+}
+.typist-char.typist-newline.typist-correct {
+  color: rgba(52,211,153,0.4);
+}
+.typist-char.typist-newline.typist-incorrect {
+  color: rgba(248,113,113,0.6);
+}
+
+/* ── Toggle buttons (punctuation/numbers) ── */
+.typist-toggle {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.typist-toggle:hover {
+  border-color: rgba(52,211,153,0.3);
+  color: rgba(255,255,255,0.7);
+}
+.typist-toggle.active {
+  background: rgba(52,211,153,0.15);
+  border-color: #34D399;
+  color: #34D399;
+}
+
+/* ── PB badge ── */
+.typist-result-pb {
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.25);
+  border-radius: 8px;
+  color: #34D399;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  animation: typist-pbPulse 0.6s ease;
+}
+@keyframes typist-pbPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ── Quote attribution ── */
+.typist-result-quote {
+  text-align: center;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Error word breakdown ── */
+.typist-error-review {
+  margin-bottom: 1rem;
+}
+.typist-error-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.typist-error-word {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.15);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+.typist-error-expected {
+  color: rgba(255,255,255,0.5);
+  text-decoration: line-through;
+}
+.typist-error-actual {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════
+   RETRO TERMINAL THEME
+   ═══════════════════════════════════════ */
+.typist-page.typist-retro .typist-text-area {
+  background: rgba(0,0,0,0.6);
+  border-color: rgba(0,255,70,0.2);
+}
+.typist-page.typist-retro .typist-text-area.typist-active {
+  border-color: rgba(0,255,70,0.4);
+  box-shadow: 0 0 20px rgba(0,255,70,0.08);
+}
+.typist-page.typist-retro .typist-text {
+  font-family: 'Courier New', 'Lucida Console', monospace;
+}
+.typist-page.typist-retro .typist-char {
+  color: rgba(0,255,70,0.25);
+}
+.typist-page.typist-retro .typist-char.typist-correct {
+  color: #00ff46;
+}
+.typist-page.typist-retro .typist-char.typist-current {
+  color: rgba(0,255,70,0.5);
+}
+.typist-page.typist-retro .typist-char.typist-current::after {
+  background: #00ff46;
+}
+.typist-page.typist-retro .typist-stat-val {
+  color: #00ff46;
+}
+.typist-page.typist-retro .typist-tab.active {
+  color: #00ff46;
+  border-bottom-color: #00ff46;
+}
+.typist-page.typist-retro .typist-pill.active,
+.typist-page.typist-retro .typist-mode.active,
+.typist-page.typist-retro .typist-lang.active {
+  background: rgba(0,255,70,0.1);
+  border-color: rgba(0,255,70,0.3);
+  color: #00ff46;
+}
+.typist-page.typist-retro .typist-results-wpm-num {
+  color: #00ff46;
+}
+.typist-page.typist-retro .typist-overview-val {
+  color: #00ff46;
+}
+
+/* Scanline overlay */
+.typist-page.typist-retro .typist-text-area::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.12) 2px,
+    rgba(0,0,0,0.12) 4px
+  );
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* CRT flicker */
+.typist-page.typist-retro .typist-text-area {
+  animation: typist-crt 0.08s infinite;
+}
+@keyframes typist-crt {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .typist-stats-bar { gap: 1rem; padding: 0.5rem; }
+  .typist-stat-val { font-size: 1.1rem; }
+  .typist-text { font-size: 1rem; line-height: 1.8; }
+  .typist-text-area { padding: 1rem; min-height: 150px; }
+  .typist-results-card { padding: 1.25rem; }
+  .typist-results-wpm-num { font-size: 3rem; }
+  .typist-results-grid { grid-template-columns: repeat(2, 1fr); }
+  .typist-key { width: 28px; height: 28px; font-size: 0.65rem; }
+  .typist-key-space { width: 140px; }
+  .typist-duration-pills, .typist-mode-pills { gap: 0.35rem; }
+  .typist-pill, .typist-mode { padding: 0.35rem 0.8rem; font-size: 0.8rem; }
+}
+
+/* ── Print ── */
+@media print {
+  .typist-toolbar, .typist-hint, .typist-tabs, .typist-panel,
+  .typist-results-actions, .typist-tool-btn, .typist-mobile-hint { display: none; }
+  .typist-page { color: #000; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .typist-char.typist-current::after { animation: none; opacity: 1; }
+  .typist-results, .typist-results-card, .typist-toast { animation: none; }
+  .typist-page.typist-retro .typist-text-area { animation: none; }
+}
