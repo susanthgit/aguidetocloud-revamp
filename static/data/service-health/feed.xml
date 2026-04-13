@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 11:38:29 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 14:05:40 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1278714</link>
+      <description>[Exchange Online] Users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1278714</guid>
+      <pubDate>Mon, 13 Apr 2026 13:37:24 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degraded file search results in Microsoft Copilot (Microsoft 365)  </title>
       <link>https://www.aguidetocloud.com/service-health/#CP1277749</link>
@@ -447,16 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1249121</guid>
       <pubDate>Tue, 10 Mar 2026 21:08:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting Australia East, Central US, East US 2</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-8GCS-858</link>
-      <description>[Azure] Between 23:20 UTC on 9 March and 19:32 UTC on 10 March 2026, a platform issue resulted in impact to the Azure OpenAI Service. Impacted customers experienced HTTP 400 and HTTP 429 error responses, specifically for the GPT-5.2 model. All other GPT models were unaffected during this time.
-This incident impacted customer resources and queries in the following regions: Australia East, Central US, East US 2, Korea Central, Norway East, Sweden Central, and UK South.</description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-8GCS-858</guid>
-      <pubDate>Tue, 10 Mar 2026 19:32:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
