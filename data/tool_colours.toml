@@ -1,0 +1,243 @@
+# ============================================================================
+# TOOL COLOUR REGISTRY — Single Source of Truth
+# ============================================================================
+# 🔴 MANDATORY: Before adding a new tool, check this file!
+#
+# RULES:
+# 1. Every tool MUST have a unique accent colour
+# 2. New colours must be ≥30° hue distance from ALL existing colours
+# 3. Within the same CATEGORY, colours must be ≥45° hue distance
+# 4. Avoid pure red (hue 0°) — reserved for Deprecation Timeline (urgency)
+# 5. Avoid pure cyan (hue 180°) — reserved for global site accents
+# 6. Update this file BEFORE writing any CSS for a new tool
+# 7. After adding, bump cache_version in hugo.toml
+#
+# HOW TO CHECK:
+#   - Convert your candidate hex to HSL (use any online tool)
+#   - Compare the hue (H) value against ALL entries below
+#   - Ensure ≥30° gap from every other tool, ≥45° within same category
+#   - If too close, pick a different shade
+#
+# AVAILABLE HUE GAPS (as of 2026-04-13):
+#   95°–140° (yellow-green, between Prompt Guide 84° and PS Builder 142°)
+#   ~105° specifically is wide open
+#
+# ============================================================================
+
+# ── Prompt Tools ──────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Prompt Library"
+slug = "prompts"
+hex = "#A78BFA"
+hue = 263
+name_friendly = "Violet"
+category = "Prompt"
+css_namespace = "prompts-*"
+body_class = "page-prompts"
+
+[[tools]]
+name = "Prompt Polisher"
+slug = "prompt-polisher"
+hex = "#EC4899"
+hue = 330
+name_friendly = "Hot Pink"
+category = "Prompt"
+css_namespace = "polisher-*"
+body_class = "page-polisher"
+
+[[tools]]
+name = "Prompt Engineering Guide"
+slug = "prompt-guide"
+hex = "#84CC16"
+hue = 84
+name_friendly = "Lime"
+category = "Prompt"
+css_namespace = "pguide-*"
+body_class = "page-prompt-guide"
+
+# ── Copilot Tools ─────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Copilot Readiness"
+slug = "copilot-readiness"
+hex = "#3B82F6"
+hue = 217
+name_friendly = "Blue"
+category = "Copilot"
+css_namespace = "readiness-*"
+body_class = "page-readiness"
+
+[[tools]]
+name = "Copilot Feature Matrix"
+slug = "copilot-matrix"
+hex = "#60A5FA"
+hue = 213
+name_friendly = "Electric Blue"
+category = "Copilot"
+css_namespace = "cpmatrix-*"
+body_class = "page-copilot-matrix"
+
+[[tools]]
+name = "Copilot ROI Calculator"
+slug = "roi-calculator"
+hex = "#14B8A6"
+hue = 174
+name_friendly = "Teal"
+category = "Copilot"
+css_namespace = "roi-*"
+body_class = "page-roi-calculator"
+
+# ── Stay Informed ─────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "AI News"
+slug = "ai-news"
+hex = "#ff66ff"
+hue = 300
+name_friendly = "Magenta"
+category = "Stay Informed"
+css_namespace = "ainews-*"
+body_class = "page-ainews"
+
+[[tools]]
+name = "M365 Roadmap"
+slug = "m365-roadmap"
+hex = "#E5A00D"
+hue = 42
+name_friendly = "Gold"
+category = "Stay Informed"
+css_namespace = "rdmap-*"
+body_class = "page-roadmap"
+
+[[tools]]
+name = "Service Health"
+slug = "service-health"
+hex = "#EA580C"
+hue = 16
+name_friendly = "Burnt Orange"
+category = "Stay Informed"
+css_namespace = "shealth-*"
+body_class = "page-service-health"
+
+[[tools]]
+name = "Deprecation Timeline"
+slug = "deprecation-timeline"
+hex = "#DC2626"
+hue = 0
+name_friendly = "Crimson"
+category = "Stay Informed"
+css_namespace = "deptime-*"
+body_class = "page-deptime"
+
+# ── Compare & Evaluate ────────────────────────────────────────────────────────
+
+[[tools]]
+name = "AI Service Mapper"
+slug = "ai-mapper"
+hex = "#38BDF8"
+hue = 198
+name_friendly = "Sky Blue"
+category = "Compare"
+css_namespace = "aimap-*"
+body_class = "page-ai-mapper"
+
+[[tools]]
+name = "AI SaaS Showdown"
+slug = "ai-showdown"
+hex = "#D4A853"
+hue = 38
+name_friendly = "Amber"
+category = "Compare"
+css_namespace = "showdown-*"
+body_class = "page-ai-showdown"
+
+# ── Admin & Security ──────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Licensing Simplifier"
+slug = "licensing"
+hex = "#F43F5E"
+hue = 347
+name_friendly = "Rose"
+category = "Admin"
+css_namespace = "lic-*"
+body_class = "page-licensing"
+
+[[tools]]
+name = "CA Policy Builder"
+slug = "ca-builder"
+hex = "#7C3AED"
+hue = 258
+name_friendly = "Deep Purple"
+category = "Admin"
+css_namespace = "cab-*"
+body_class = "page-ca-builder"
+
+[[tools]]
+name = "PowerShell Builder"
+slug = "ps-builder"
+hex = "#4ADE80"
+hue = 142
+name_friendly = "Green"
+category = "Admin"
+css_namespace = "psb-*"
+body_class = "page-ps-builder"
+
+[[tools]]
+name = "Migration Planner"
+slug = "migration-planner"
+hex = "#6478CC"
+hue = 226
+name_friendly = "Slate Blue"
+category = "Admin"
+css_namespace = "migplan-*"
+body_class = "page-migration-planner"
+
+# ── Learn ─────────────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Cert Study Guides"
+slug = "cert-tracker"
+hex = "#10B981"
+hue = 160
+name_friendly = "Emerald"
+category = "Learn"
+css_namespace = "cert-*"
+body_class = "page-cert-tracker"
+
+# ── Community ─────────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Meeting Planner"
+slug = "world-clock"
+hex = "#0EA5E9"
+hue = 199
+name_friendly = "Ocean Blue"
+category = "Community"
+css_namespace = "wclk-*"
+body_class = "page-world-clock"
+
+# ── Internal ──────────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "Site Analytics"
+slug = "site-analytics"
+hex = "#64748B"
+hue = 215
+name_friendly = "Steel"
+category = "Internal"
+css_namespace = "siteana-*"
+body_class = "page-site-analytics"
+
+# ── Community (non-tool) ──────────────────────────────────────────────────────
+
+[[tools]]
+name = "Community Feedback"
+slug = "feedback"
+hex = "#FBBF24"
+hue = 45
+name_friendly = "Yellow"
+category = "Community"
+css_namespace = "feedback-*"
+body_class = "page-feedback"

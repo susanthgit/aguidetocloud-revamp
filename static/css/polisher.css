@@ -1,10 +1,10 @@
 /* ── Prompt Polisher ──
-   Accent: Coral #FF6B6B
+   Accent: Hot Pink #EC4899
    Namespace: .polisher-*
 */
 
 .polisher-page {
-  --tool-accent: #FF6B6B;
+  --tool-accent: #EC4899;
   --tool-accent-dim: rgba(255, 107, 107, 0.15);
   --tool-accent-glow: rgba(255, 107, 107, 0.25);
 }
@@ -43,7 +43,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--tool-accent, #FF6B6B);
+  background: var(--tool-accent, #EC4899);
   color: #000;
   font-weight: 800;
   font-size: 0.8rem;
@@ -745,8 +745,8 @@
   transition: all 0.2s;
   text-align: center;
 }
-.polisher-eco-card:hover { border-color: #FF6B6B; }
-.polisher-eco-card.polisher-eco-active { border-color: #FF6B6B; background: rgba(255, 107, 107, 0.1); }
+.polisher-eco-card:hover { border-color: #EC4899; }
+.polisher-eco-card.polisher-eco-active { border-color: #EC4899; background: rgba(236, 72, 153, 0.1); }
 .polisher-eco-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
 .polisher-eco-card strong { display: block; margin-bottom: 0.25rem; }
 .polisher-eco-card p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 0; }

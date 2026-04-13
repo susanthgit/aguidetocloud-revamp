@@ -1118,17 +1118,18 @@ a:hover {
 .page-ainews .site-nav { --nav-accent: rgba(255, 102, 255, 0.35); }
 .page-roadmap .site-nav { --nav-accent: rgba(229, 160, 13, 0.35); }
 .page-prompts .site-nav { --nav-accent: rgba(167, 139, 250, 0.35); }
-.page-polisher .site-nav { --nav-accent: rgba(255, 107, 107, 0.35); }
+.page-polisher .site-nav { --nav-accent: rgba(236, 72, 153, 0.35); }
 .page-readiness .site-nav { --nav-accent: rgba(59, 130, 246, 0.35); }
 .page-copilot-matrix .site-nav { --nav-accent: rgba(96, 165, 250, 0.35); }
-.page-ai-mapper .site-nav { --nav-accent: rgba(139, 92, 246, 0.35); }
+.page-ai-mapper .site-nav { --nav-accent: rgba(56, 189, 248, 0.35); }
 .page-roi-calculator .site-nav { --nav-accent: rgba(20, 184, 166, 0.35); }
 .page-deptime .site-nav { --nav-accent: rgba(220, 38, 38, 0.35); }
 .page-feedback .site-nav { --nav-accent: rgba(251, 191, 36, 0.35); }
-.page-migration-planner .site-nav { --nav-accent: rgba(99, 102, 241, 0.35); }
+.page-migration-planner .site-nav { --nav-accent: rgba(100, 120, 204, 0.35); }
 .page-ca-builder .site-nav { --nav-accent: rgba(124, 58, 237, 0.4); }
 .page-ps-builder .site-nav { --nav-accent: rgba(74, 222, 128, 0.35); }
 .page-free-tools .site-nav { --nav-accent: rgba(196, 117, 91, 0.4); }
+.page-qr-generator .site-nav { --nav-accent: rgba(236, 72, 153, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

@@ -12,22 +12,22 @@
     'm365-roadmap':         { name: 'M365 Roadmap',          color: '#E5A00D', emoji: '🗺️' },
     'prompt-library':       { name: 'Prompt Library',        color: '#A78BFA', emoji: '💡' },
     'licensing':            { name: 'Licensing Simplifier',  color: '#F43F5E', emoji: '📜' },
-    'prompt-polisher':      { name: 'Prompt Polisher',       color: '#FF6B6B', emoji: '✨' },
+    'prompt-polisher':      { name: 'Prompt Polisher',       color: '#EC4899', emoji: '✨' },
     'copilot-readiness':    { name: 'Copilot Readiness',     color: '#3B82F6', emoji: '🎯' },
     'copilot-matrix':       { name: 'Copilot Feature Matrix',color: '#60A5FA', emoji: '📊' },
     'deprecation-timeline': { name: 'Deprecation Timeline',  color: '#DC2626', emoji: '⏰' },
-    'service-health':       { name: 'Service Health',        color: '#F97316', emoji: '🏥' },
+    'service-health':       { name: 'Service Health',        color: '#EA580C', emoji: '🏥' },
     'cert-tracker':         { name: 'Cert Study Guides',     color: '#10B981', emoji: '📖' },
     'roi-calculator':       { name: 'ROI Calculator',        color: '#14B8A6', emoji: '💰' },
-    'ai-mapper':            { name: 'AI Service Mapper',     color: '#8B5CF6', emoji: '☁️' },
+    'ai-mapper':            { name: 'AI Service Mapper',     color: '#38BDF8', emoji: '☁️' },
     'ai-showdown':          { name: 'AI SaaS Showdown',      color: '#D4A853', emoji: '🥊' },
     'ps-builder':           { name: 'PowerShell Builder',    color: '#4ADE80', emoji: '⚡' },
-    'migration-planner':    { name: 'Migration Planner',     color: '#6366F1', emoji: '🔄' },
+    'migration-planner':    { name: 'Migration Planner',     color: '#6478CC', emoji: '🔄' },
     'prompt-guide':         { name: 'Prompt Guide',          color: '#84CC16', emoji: '🎓' },
     'ca-builder':           { name: 'CA Policy Builder',     color: '#7C3AED', emoji: '🛡️' },
     'meeting-planner':      { name: 'Meeting Planner',       color: '#0EA5E9', emoji: '🌍' },
     'feedback':             { name: 'Community Feedback',    color: '#FBBF24', emoji: '💬' },
-    'site-analytics':       { name: 'Site Analytics',        color: '#06B6D4', emoji: '📊' }
+    'site-analytics':       { name: 'Site Analytics',        color: '#64748B', emoji: '📊' }
   };
 
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
@@ -40,7 +40,7 @@
   }
 
   function getToolInfo(key) {
-    return TOOLS[key] || { name: key, color: '#06B6D4', emoji: '🔧' };
+    return TOOLS[key] || { name: key, color: '#64748B', emoji: '🔧' };
   }
 
   // Tabs
@@ -142,7 +142,7 @@
           {
             label: 'Views',
             data: trend.map(function(d) { return d.views; }),
-            borderColor: '#06B6D4',
+            borderColor: '#64748B',
             backgroundColor: 'rgba(6,182,212,0.1)',
             fill: true,
             tension: 0.4,
@@ -280,7 +280,7 @@
       var pct = Math.round((item[valueKey] / max) * 100);
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#06B6D4"></div></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span>'
         + '</div>';
     }).join('');
