@@ -293,6 +293,29 @@ function renderNews(data, view) {
   // === BUILD HTML ===
   var html = '';
 
+  // 🔴 BREAKING NEWS BANNER
+  var breakingArticles = articles.filter(function (a) { return a.is_breaking; });
+  if (breakingArticles.length > 0) {
+    html += '<div class="ainews-breaking" style="grid-column:1/-1">';
+    html += '<span class="ainews-breaking-label">🔴 BREAKING</span> ';
+    html += breakingArticles.map(function (a) {
+      return '<a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(a.title) + '</a>';
+    }).join(' · ');
+    html += '</div>';
+  }
+
+  // ⚡ DAILY BRIEFING BOX
+  var briefing = data.briefing;
+  if (briefing && briefing.length > 0) {
+    html += '<div class="ainews-briefing" style="grid-column:1/-1">';
+    html += '<div class="ainews-briefing-header">⚡ Today\'s AI Briefing</div>';
+    html += '<ul class="ainews-briefing-list">';
+    briefing.forEach(function (bullet) {
+      html += '<li>' + escapeHtml(bullet) + '</li>';
+    });
+    html += '</ul></div>';
+  }
+
   // 🔍 SEARCH + SMART FILTER
   html += '<div class="ainews-toolbar" style="grid-column:1/-1">';
   html += '<input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search articles">';
@@ -327,14 +350,29 @@ function renderNews(data, view) {
     html += '</div>';
   }
 
-  // 📋 MORE STORIES (compact list with accordion)
-  var compactItems = deepDives.slice(0, maxCompact);
+  // 📋 MORE STORIES (compact list with accordion + clustering)
+  // Group clustered articles: first article is primary, rest are "more sources"
+  var clusteredIds = {};
+  var compactOrdered = [];
+  deepDives.forEach(function (article) {
+    var cl = article.cluster;
+    if (cl && clusteredIds[cl]) {
+      clusteredIds[cl].related.push(article);
+    } else {
+      var entry = { primary: article, related: [] };
+      if (cl) clusteredIds[cl] = entry;
+      compactOrdered.push(entry);
+    }
+  });
+
+  var compactItems = compactOrdered.slice(0, maxCompact);
   if (compactItems.length > 0) {
     var initialShow = Math.min(compactItems.length, view === 'monthly' ? 50 : 20);
     html += '<div class="ainews-tier-section" id="ainews-compact-section">';
     html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>📋</span> More Stories (' + compactItems.length + ')</div>';
     html += '<div class="ainews-compact-list" id="ainews-compact">';
-    compactItems.forEach(function (article, i) {
+    compactItems.forEach(function (entry, i) {
+      var article = entry.primary;
       var v = getArticleVars(article);
       var isRumour = v.cat.toLowerCase().indexOf('rumour') !== -1;
       var hidden = i >= initialShow ? ' style="display:none"' : '';
@@ -343,6 +381,7 @@ function renderNews(data, view) {
       html += '<span class="ainews-compact-cat" style="--pill-color:' + (CATEGORY_META[v.cat] || {color:'#888'}).color + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
       html += '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-compact-title"' + buildClickAttr(v) + '>';
       html += (v.isNew ? '<span class="ainews-new-badge">NEW</span> ' : '') + escapeHtml(v.title);
+      if (entry.related.length > 0) html += ' <span class="ainews-cluster-badge">+' + entry.related.length + ' source' + (entry.related.length > 1 ? 's' : '') + '</span>';
       html += '</a>';
       html += '<span class="ainews-compact-time">' + v.time + '</span>';
       html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="false">▼</button>';
@@ -350,6 +389,15 @@ function renderNews(data, view) {
       html += '<div class="ainews-compact-detail" hidden>';
       html += '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>';
       if (v.whyMatters) html += '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>';
+      // Show clustered related articles
+      if (entry.related.length > 0) {
+        html += '<div class="ainews-cluster-sources">';
+        html += '<span class="ainews-cluster-label">Also covered by:</span>';
+        entry.related.forEach(function (rel) {
+          html += ' <a href="' + escapeHtml(rel.url || rel.link || '#') + '" target="_blank" rel="noopener noreferrer" class="ainews-cluster-link">' + escapeHtml(rel.source || 'Source') + '</a>';
+        });
+        html += '</div>';
+      }
       html += '<div class="ainews-meta">';
       if (v.favicon) html += '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">';
       html += '<span class="ainews-source">' + escapeHtml(v.source) + '</span>';

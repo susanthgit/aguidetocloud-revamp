@@ -56,6 +56,95 @@
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+/* ── BREAKING NEWS BANNER ── */
+.ainews-breaking {
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  animation: ainews-pulse 2s ease-in-out infinite;
+}
+@keyframes ainews-pulse {
+  0%, 100% { border-color: rgba(220, 38, 38, 0.4); }
+  50% { border-color: rgba(220, 38, 38, 0.8); }
+}
+.ainews-breaking-label {
+  font-weight: 800;
+  color: #ef4444;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+.ainews-breaking a {
+  color: #fca5a5;
+  text-decoration: none;
+  font-weight: 600;
+}
+.ainews-breaking a:hover { color: #fff; text-decoration: underline; }
+
+/* ── DAILY BRIEFING BOX ── */
+.ainews-briefing {
+  background: rgba(102, 255, 255, 0.04);
+  border: 1px solid rgba(102, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+.ainews-briefing-header {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 0.5rem;
+}
+.ainews-briefing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ainews-briefing-list li {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.ainews-briefing-list li:last-child { border-bottom: none; }
+.ainews-briefing-list li::before {
+  content: '→ ';
+  color: var(--neon-cyan);
+  font-weight: 700;
+}
+
+/* ── CLUSTER BADGES ── */
+.ainews-cluster-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,102,255,0.8);
+  background: rgba(255,102,255,0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+  margin-left: 0.3rem;
+  white-space: nowrap;
+}
+.ainews-cluster-sources {
+  margin: 0.4rem 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.ainews-cluster-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.ainews-cluster-link {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+.ainews-cluster-link:hover { text-decoration: underline; }
+.ainews-cluster-link::after { content: ' ·'; color: var(--text-muted); }
+.ainews-cluster-link:last-child::after { content: ''; }
+
 /* ── SMART FILTER DROPDOWN ── */
 .ainews-smart-filter {
   position: relative;
