@@ -141,6 +141,12 @@ name = "Typing Speed Test"
 short = "Typing"
 
 [[tools]]
+url = "/countdown/"
+emoji = "⏳"
+name = "Countdown Timer"
+short = "Countdown"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

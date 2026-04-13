@@ -1,0 +1,280 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/countdown.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Countdown Timer & Event Countdown",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#FB923C" "title" "Countdown Timer & Event Countdown" "subtitle" "Create beautiful flip-clock countdowns for events, deadlines & milestones. Full-screen presentation mode, quick timer with stopwatch, and shareable links. 100% free, no sign-up.") }}
+
+<div class="cdown-page">
+
+  {{/* ── Tabs ── */}}
+  <div class="cdown-tabs" role="tablist">
+    <button class="cdown-tab active" role="tab" data-tab="events" aria-selected="true">⏳ Countdowns</button>
+    <button class="cdown-tab" role="tab" data-tab="timer">⏱️ Quick Timer</button>
+  </div>
+
+  {{/* ══════════════ TAB 1: EVENT COUNTDOWN ══════════════ */}}
+  <div class="cdown-panel active" id="panel-events" role="tabpanel">
+
+    {{/* Quick Start Templates — first */}}
+    <div class="cdown-tpl-section" id="cdown-tpl-section">
+      <div class="cdown-section-title">📋 Quick Start Templates</div>
+      <div class="cdown-tpl-grid" id="cdown-tpl-grid"></div>
+    </div>
+
+    {{/* Create Form — below templates */}}
+    <div class="cdown-create" id="cdown-create" style="margin-top:1.5rem">
+      <div class="cdown-section-title">Create a Countdown</div>
+      <div class="cdown-create-grid">
+        <div class="cdown-field">
+          <label class="cdown-label" for="cdown-name">Event Name</label>
+          <input type="text" class="cdown-input" id="cdown-name" placeholder="e.g. My Birthday" maxlength="60" autocomplete="off">
+        </div>
+        <div class="cdown-field">
+          <label class="cdown-label" for="cdown-date">Date &amp; Time</label>
+          <input type="datetime-local" class="cdown-input" id="cdown-date">
+        </div>
+      </div>
+      <div class="cdown-field">
+        <label class="cdown-label">Category Icon</label>
+        <div class="cdown-icon-grid" id="cdown-icon-grid"></div>
+      </div>
+      <div class="cdown-field">
+        <label class="cdown-label">Theme Colour</label>
+        <div class="cdown-color-grid" id="cdown-color-grid"></div>
+      </div>
+      <div class="cdown-field">
+        <label class="cdown-label">Banner Image <span style="opacity:0.5">(optional — shows in full screen)</span></label>
+        <div class="cdown-banner-upload" id="cdown-banner-upload">
+          <div class="cdown-banner-preview" id="cdown-banner-preview" style="display:none">
+            <img id="cdown-banner-img" alt="Banner preview">
+            <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-banner-remove">✕ Remove</button>
+          </div>
+          <label class="cdown-banner-drop" id="cdown-banner-drop">
+            <span>📷 Click or drag an image (max 200 KB)</span>
+            <input type="file" accept="image/*" id="cdown-banner-file" style="display:none">
+          </label>
+          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">🗜️ Compress it free →</a></div>
+        </div>
+      </div>
+      <div class="cdown-field">
+        <label class="cdown-label" for="cdown-message">Custom Message <span style="opacity:0.5">(optional — shows in full screen)</span></label>
+        <input type="text" class="cdown-input" id="cdown-message" placeholder="e.g. Welcome to our wedding!" maxlength="120">
+      </div>
+      <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">⏳ Create Countdown</button>
+    </div>
+
+    {{/* Sort */}}
+    <div class="cdown-sort" id="cdown-sort" style="display:none">
+      <span class="cdown-sort-label">Sort:</span>
+      <button class="cdown-sort-btn active" data-sort="soonest">Soonest</button>
+      <button class="cdown-sort-btn" data-sort="newest">Newest</button>
+      <button class="cdown-sort-btn" data-sort="name">Name</button>
+    </div>
+
+    {{/* Dashboard */}}
+    <div class="cdown-dashboard" id="cdown-dashboard"></div>
+  </div>
+
+  {{/* ══════════════ TAB 2: QUICK TIMER ══════════════ */}}
+  <div class="cdown-panel" id="panel-timer" role="tabpanel">
+
+    {{/* Mode toggle */}}
+    <div class="cdown-mode-toggle">
+      <button class="cdown-mode-btn active" data-mode="timer" id="cdown-mode-timer">⏱️ Timer</button>
+      <button class="cdown-mode-btn" data-mode="stopwatch" id="cdown-mode-sw">🔄 Stopwatch</button>
+    </div>
+
+    {{/* Timer display */}}
+    <div class="cdown-timer-display" id="cdown-timer-display"></div>
+
+    {{/* Presets (timer mode only) */}}
+    <div class="cdown-presets" id="cdown-presets">
+      <div class="cdown-label">Quick Start</div>
+      <div class="cdown-preset-grid" id="cdown-preset-grid"></div>
+    </div>
+
+    {{/* Custom input (timer mode only) */}}
+    <div class="cdown-custom-time" id="cdown-custom-time">
+      <div class="cdown-label">Custom Time</div>
+      <div class="cdown-custom-row">
+        <input type="number" class="cdown-input cdown-time-input" id="cdown-th" min="0" max="99" value="0" aria-label="Hours">
+        <span class="cdown-time-sep">h</span>
+        <input type="number" class="cdown-input cdown-time-input" id="cdown-tm" min="0" max="59" value="0" aria-label="Minutes">
+        <span class="cdown-time-sep">m</span>
+        <input type="number" class="cdown-input cdown-time-input" id="cdown-ts" min="0" max="59" value="0" aria-label="Seconds">
+        <span class="cdown-time-sep">s</span>
+      </div>
+    </div>
+
+    {{/* Controls */}}
+    <div class="cdown-timer-ctrls">
+      <button class="cdown-btn cdown-btn-primary" id="cdown-start">▶ Start</button>
+      <button class="cdown-btn" id="cdown-pause" disabled>⏸ Pause</button>
+      <button class="cdown-btn" id="cdown-reset">↺ Reset</button>
+      <button class="cdown-btn" id="cdown-plus1">+1 min</button>
+      <button class="cdown-btn" id="cdown-lap">🏁 Lap</button>
+      <button class="cdown-btn" id="cdown-timer-fs">🖥️ Full Screen</button>
+    </div>
+
+    {{/* Timer display name + message for fullscreen */}}
+    <div class="cdown-timer-extras">
+      <div class="cdown-field" style="max-width:400px;margin:0 auto">
+        <label class="cdown-label" for="cdown-timer-label">Display Name <span style="opacity:0.5">(shows in full screen)</span></label>
+        <input type="text" class="cdown-input" id="cdown-timer-label" placeholder="e.g. Presentation Timer" maxlength="60">
+      </div>
+      <div class="cdown-field" style="max-width:400px;margin:0.5rem auto 0">
+        <label class="cdown-label">Banner Image <span style="opacity:0.5">(shows in full screen)</span></label>
+        <div class="cdown-banner-upload">
+          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" style="display:none">
+            <img id="cdown-timer-banner-img" alt="Banner preview">
+            <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-timer-banner-remove">✕ Remove</button>
+          </div>
+          <label class="cdown-banner-drop" id="cdown-timer-banner-drop">
+            <span>📷 Click or drag an image (max 200 KB)</span>
+            <input type="file" accept="image/*" id="cdown-timer-banner-file" style="display:none">
+          </label>
+          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">🗜️ Compress it free →</a></div>
+        </div>
+      </div>
+    </div>
+
+    {{/* Options */}}
+    <div class="cdown-timer-opts">
+      <label class="cdown-check-label"><input type="checkbox" id="cdown-loop"> Loop when finished</label>
+      <label class="cdown-check-label"><input type="checkbox" id="cdown-sound" checked> 🔔 Sound alert</label>
+    </div>
+
+    {{/* Laps */}}
+    <div class="cdown-laps" id="cdown-laps" style="display:none">
+      <div class="cdown-label">Laps</div>
+      <div class="cdown-laps-list" id="cdown-laps-list"></div>
+    </div>
+  </div>
+
+  {{/* ── Cross-links ── */}}
+  <div class="tool-eco" style="--eco-accent: #FB923C">
+    <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
+    <div class="tool-eco-grid tool-eco-4">
+      <a href="/world-clock/" class="tool-eco-card"><span>🌍</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
+      <a href="/prompt-polisher/" class="tool-eco-card"><span>✨</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
+      <a href="/qr-generator/" class="tool-eco-card"><span>📱</span><strong>QR Code Generator</strong><p>Create styled QR codes</p></a>
+      <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
+    </div>
+    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  </div>
+
+  {{/* ── How It Works ── */}}
+  <div class="cdown-section" style="margin-top:2rem">
+    <div class="cdown-section-title">How It Works</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.6">
+      <div><strong style="color:#FB923C; font-size:1.5rem">①</strong><br><strong style="color:#fff">Name your event</strong><br>Enter a name, pick a date and time, choose an icon and colour.</div>
+      <div><strong style="color:#FB923C; font-size:1.5rem">②</strong><br><strong style="color:#fff">Watch it count down</strong><br>A beautiful flip-clock display shows days, hours, minutes and seconds in real time.</div>
+      <div><strong style="color:#FB923C; font-size:1.5rem">③</strong><br><strong style="color:#fff">Share or present</strong><br>Share a link, embed on your site, or go full-screen for events and presentations.</div>
+      <div><strong style="color:#FB923C; font-size:1.5rem">④</strong><br><strong style="color:#fff">Quick timer too</strong><br>Need a quick timer? Preset buttons, custom input, stopwatch mode, and lap tracking.</div>
+    </div>
+  </div>
+
+  {{/* ── Visible FAQ ── */}}
+  {{ if .Params.faq }}
+  <div class="cdown-section" style="margin-top:2rem">
+    <div class="cdown-section-title">Frequently Asked Questions</div>
+    <div style="display:flex; flex-direction:column; gap:1rem">
+      {{ range $i, $q := .Params.faq }}
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
+        <strong style="color:#FB923C; font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $q.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* ── Back nav ── */}}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+
+  {{/* ── Pagefind ── */}}
+  <div class="cdown-sr-only" data-pagefind-body>
+    <h2>Countdown Timer & Event Countdown</h2>
+    <p>Create beautiful countdown timers for events, deadlines, and milestones. Flip-clock animation, full-screen presentation mode, quick timer, stopwatch, and templates. 100% free, runs in your browser.</p>
+  </div>
+
+</div>
+
+{{/* ── Fullscreen overlay ── */}}
+<div class="cdown-fs" id="cdown-fs" style="display:none">
+  <canvas class="cdown-fs-canvas" id="cdown-fs-canvas"></canvas>
+  <div class="cdown-fs-body">
+    <div class="cdown-fs-banner" id="cdown-fs-banner" style="display:none">
+      <img id="cdown-fs-banner-img" alt="">
+    </div>
+    <div class="cdown-fs-icon" id="cdown-fs-icon"></div>
+    <div class="cdown-fs-name" id="cdown-fs-name"></div>
+    <div class="cdown-fs-clock" id="cdown-fs-clock"></div>
+    <div class="cdown-fs-bar-wrap" id="cdown-fs-bar-wrap">
+      <div class="cdown-fs-bar" id="cdown-fs-bar"></div>
+    </div>
+    <div class="cdown-fs-msg" id="cdown-fs-msg"></div>
+    <div class="cdown-fs-tz" id="cdown-fs-tz"></div>
+    {{/* Timer controls in fullscreen */}}
+    <div class="cdown-fs-timer-ctrls" id="cdown-fs-timer-ctrls" style="display:none">
+      <button class="cdown-btn" id="cdown-fs-pause">⏸ Pause</button>
+      <button class="cdown-btn" id="cdown-fs-reset">↺ Reset</button>
+      <button class="cdown-btn" id="cdown-fs-plus1">+1 min</button>
+    </div>
+  </div>
+  <div class="cdown-fs-done" id="cdown-fs-done" style="display:none">
+    <div class="cdown-fs-done-icon">🎉</div>
+    <div class="cdown-fs-done-text">It's time!</div>
+  </div>
+  <button class="cdown-fs-close" id="cdown-fs-close" aria-label="Close fullscreen" title="Close (Esc)">✕</button>
+</div>
+
+{{/* ── Confetti canvas ── */}}
+<canvas id="cdown-confetti" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999;display:none"></canvas>
+
+<script src="/js/countdown.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
