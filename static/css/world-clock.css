@@ -99,14 +99,18 @@
 }
 /* Native date/time picker icon styling for dark theme */
 .wclk-input::-webkit-calendar-picker-indicator {
-  filter: invert(0.8);
+  filter: invert(1) brightness(2);
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
+  opacity: 0.8;
+  width: 20px;
+  height: 20px;
 }
 .wclk-input::-webkit-calendar-picker-indicator:hover {
-  filter: invert(1);
-  background: rgba(14, 165, 233, 0.15);
+  filter: invert(1) brightness(2);
+  opacity: 1;
+  background: rgba(14, 165, 233, 0.2);
 }
 /* Firefox — make entire input clickable */
 .wclk-input[type="date"],
