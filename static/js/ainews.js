@@ -379,14 +379,14 @@ function renderNews(data, view) {
       html += '<div class="ainews-compact-row ainews-loadmore-item' + (isRumour ? ' ainews-compact-rumour' : '') + '" data-category="' + escapeHtml(v.cat) + '"' + hidden + '>';
       html += '<div class="ainews-compact-header">';
       html += '<span class="ainews-compact-cat" style="--pill-color:' + (CATEGORY_META[v.cat] || {color:'#888'}).color + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
-      html += '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-compact-title"' + buildClickAttr(v) + '>';
+      html += '<span class="ainews-compact-title" role="button" tabindex="0">';
       html += (v.isNew ? '<span class="ainews-new-badge">NEW</span> ' : '') + escapeHtml(v.title);
       if (entry.related.length > 0) html += ' <span class="ainews-cluster-badge">+' + entry.related.length + ' source' + (entry.related.length > 1 ? 's' : '') + '</span>';
-      html += '</a>';
+      html += '</span>';
       html += '<span class="ainews-compact-time">' + v.time + '</span>';
-      html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="false">▼</button>';
+      html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="' + (i === 0 ? 'true' : 'false') + '">' + (i === 0 ? '▲' : '▼') + '</button>';
       html += '</div>';
-      html += '<div class="ainews-compact-detail" hidden>';
+      html += '<div class="ainews-compact-detail"' + (i === 0 ? '' : ' hidden') + '>';
       html += '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>';
       if (v.whyMatters) html += '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>';
       // Show clustered related articles
@@ -489,16 +489,18 @@ function renderNews(data, view) {
       syncAinewsUrl(cat, document.getElementById('ainews-search')?.value || '');
       return;
     }
-    // Compact row accordion expand
+    // Compact row accordion expand — title click OR chevron button
     var expandBtn = e.target.closest('.ainews-compact-expand');
-    if (expandBtn) {
+    var titleClick = e.target.closest('.ainews-compact-title');
+    if (expandBtn || titleClick) {
       e.preventDefault();
-      var row = expandBtn.closest('.ainews-compact-row');
+      var row = (expandBtn || titleClick).closest('.ainews-compact-row');
       var detail = row.querySelector('.ainews-compact-detail');
+      var chevron = row.querySelector('.ainews-compact-expand');
       var isOpen = !detail.hidden;
       detail.hidden = isOpen;
-      expandBtn.textContent = isOpen ? '▼' : '▲';
-      expandBtn.setAttribute('aria-expanded', !isOpen);
+      chevron.textContent = isOpen ? '▼' : '▲';
+      chevron.setAttribute('aria-expanded', !isOpen);
       return;
     }
     // Show more
