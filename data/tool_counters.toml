@@ -95,3 +95,43 @@ verb = "techniques practiced"
 url = "/world-clock/"
 base = 200
 verb = "meetings planned"
+
+[[tools]]
+url = "/qr-generator/"
+base = 350
+verb = "QR codes created"
+
+[[tools]]
+url = "/wifi-qr/"
+base = 180
+verb = "WiFi cards generated"
+
+[[tools]]
+url = "/password-generator/"
+base = 280
+verb = "passwords generated"
+
+[[tools]]
+url = "/image-compressor/"
+base = 150
+verb = "images compressed"
+
+[[tools]]
+url = "/typing-test/"
+base = 120
+verb = "typing tests taken"
+
+[[tools]]
+url = "/countdown/"
+base = 90
+verb = "countdowns created"
+
+[[tools]]
+url = "/color-palette/"
+base = 110
+verb = "palettes generated"
+
+[[tools]]
+url = "/pomodoro/"
+base = 100
+verb = "focus sessions started"
