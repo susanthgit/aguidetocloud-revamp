@@ -1,6 +1,6 @@
 ---
-title: "AI News"
-description: "Daily AI news digest — curated headlines, summaries and trends from the world of artificial intelligence, updated every day."
+title: "AI News — Real-Time Updates from Microsoft, OpenAI, Google & More"
+description: "Free AI news tracker updated 4x daily — latest from Microsoft Copilot, OpenAI, Anthropic, Google AI, Meta & more. Curated with 3-tier summaries explaining why each story matters."
 type: "ai-news"
 layout: "ainews"
 sitemap:
