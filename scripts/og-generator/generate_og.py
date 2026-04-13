@@ -114,11 +114,19 @@ def render_html(tool: dict, template: str) -> str:
     return html
 
 
-def generate_images(tools: list[dict], template: str):
+def generate_images(tools: list[dict], template: str, missing_only: bool = False):
     """Use Playwright to screenshot each tool's OG image."""
     from playwright.sync_api import sync_playwright
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Filter to missing images if requested
+    if missing_only:
+        tools = [t for t in tools if not (OUTPUT_DIR / f"{t['slug']}.jpg").exists()]
+        if not tools:
+            print("  ✅ All OG images already exist — nothing to generate.")
+            return
+        print(f"  Found {len(tools)} missing image(s)\n")
 
     with sync_playwright() as p:
         # Launch with a large viewport to avoid scaling issues
@@ -170,6 +178,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate OG images for aguidetocloud.com tools")
     parser.add_argument("--tool", help="Generate for a specific tool slug only")
     parser.add_argument("--list", action="store_true", help="List all tools without generating")
+    parser.add_argument("--missing-only", action="store_true", help="Only generate images that don't exist yet")
     args = parser.parse_args()
 
     # Verify required files exist
@@ -202,7 +211,7 @@ def main():
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
 
     print(f"\n🖼️  Generating {len(tools)} OG images...\n")
-    generate_images(tools, template)
+    generate_images(tools, template, missing_only=args.missing_only)
 
     # Summary
     print(f"\n📂 Output directory: {OUTPUT_DIR}")

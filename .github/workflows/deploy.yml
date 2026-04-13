@@ -21,6 +21,46 @@ jobs:
           hugo-version: "latest"
           extended: true
 
+      - name: Check for missing OG images
+        if: github.event.action != 'closed'
+        id: og-check
+        run: |
+          MISSING=0
+          # Check tool_colours.toml entries
+          for slug in $(grep '^slug = ' data/tool_colours.toml | sed 's/slug = "//;s/"//'); do
+            if [ ! -f "static/images/og/${slug}.jpg" ]; then
+              echo "  Missing: ${slug}"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          # Check community tools (in generator EXTRA_TOOLS)
+          for slug in qr-generator wifi-qr password-generator image-compressor typing-test countdown color-palette pomodoro; do
+            if [ ! -f "static/images/og/${slug}.jpg" ]; then
+              echo "  Missing: ${slug}"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          if [ "$MISSING" -gt 0 ]; then
+            echo "needs_generation=true" >> $GITHUB_OUTPUT
+            echo "⚠️ ${MISSING} missing OG image(s) — will generate"
+          else
+            echo "needs_generation=false" >> $GITHUB_OUTPUT
+            echo "✅ All OG images present"
+          fi
+
+      - name: Setup Python for OG generation
+        if: steps.og-check.outputs.needs_generation == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate missing OG images
+        if: steps.og-check.outputs.needs_generation == 'true'
+        run: |
+          pip install playwright toml --quiet
+          playwright install chromium --with-deps
+          python scripts/og-generator/generate_og.py --missing-only
+
       - name: Build site
         if: github.event.action != 'closed'
         run: hugo --minify
