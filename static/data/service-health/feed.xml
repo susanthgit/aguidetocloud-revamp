@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Apr 2026 20:50:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 09:41:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degraded file search results in Microsoft Copilot (Microsoft 365)  </title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1277749</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience degraded file search results in Microsoft Copilot.  </description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1277749</guid>
+      <pubDate>Fri, 10 Apr 2026 13:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users' responses from Microsoft 365 Copilot Chat are delayed up to seven seconds or longer</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1276339</link>
@@ -448,15 +457,6 @@ This incident impacted customer resources and queries in the following regions: 
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-8GCS-858</guid>
       <pubDate>Tue, 10 Mar 2026 19:32:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users see additional Microsoft 365 Copilot Chat agents available to use</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1247849</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have seen additional Copilot Chat agents available to use.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1247849</guid>
-      <pubDate>Mon, 09 Mar 2026 03:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T20:50:25.415341+00:00",
+  "generated_at": "2026-04-13T09:41:41.005569+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 17,
-      "active_incidents": 1,
+      "total_incidents": 18,
+      "active_incidents": 2,
       "avg_duration_minutes": 6951,
-      "last_incident": "2026-04-07T06:15:00+00:00",
+      "last_incident": "2026-04-10T13:00:00+00:00",
       "classifications": {
-        "advisory": 11,
-        "incident": 6
+        "incident": 7,
+        "advisory": 11
       }
     },
     {
@@ -67,19 +67,6 @@
       }
     },
     {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 11578,
-      "last_incident": "2026-04-10T06:00:00+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 3
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -115,6 +102,19 @@
       "last_incident": "2026-03-19T13:30:00+00:00",
       "classifications": {
         "advisory": 5
+      }
+    },
+    {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 13837,
+      "last_incident": "2026-04-10T06:00:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 2
       }
     },
     {
@@ -206,7 +206,7 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 16,
+      "incident_count": 17,
       "services_affected": 7
     },
     {
@@ -221,8 +221,8 @@
     },
     {
       "month": "2026-01",
-      "incident_count": 5,
-      "services_affected": 3
+      "incident_count": 4,
+      "services_affected": 2
     }
   ]
 }
