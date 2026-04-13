@@ -262,116 +262,185 @@ function renderNews(data, view) {
 
   var grid = document.getElementById('news-grid');
 
-  // Separate by tier (quick links merged into deep dives)
+  // Separate by tier
   var headlines = articles.filter(function (a) { return a.tier === 'headline'; });
   var deepDives = articles.filter(function (a) { return a.tier !== 'headline'; });
 
-  // Sort: articles with images first within each tier
-  var imageFirst = function (a, b) {
-    var aImg = a.image ? 1 : 0;
-    var bImg = b.image ? 1 : 0;
-    return bImg - aImg;
-  };
-  headlines.sort(imageFirst);
-  deepDives.sort(imageFirst);
+  // Sort: articles with images first for headlines
+  headlines.sort(function (a, b) { return (b.image ? 1 : 0) - (a.image ? 1 : 0); });
 
-  // Category filters — merge always-show categories with those that have articles
+  // Display caps
+  var maxHeadlines = 8;
+  var maxCompact = view === 'monthly' ? 100 : view === 'weekly' ? 50 : 20;
+
+  // Category data for pills
   var categories = getOrderedCategories(articles);
   ALWAYS_SHOW_CATS.forEach(function (cat) {
     if (categories.indexOf(cat) === -1) categories.push(cat);
   });
-  // Re-sort by CATEGORY_ORDER
   categories.sort(function (a, b) {
     var idxA = CATEGORY_ORDER.indexOf(a); if (idxA === -1) idxA = 999;
     var idxB = CATEGORY_ORDER.indexOf(b); if (idxB === -1) idxB = 999;
     return idxA - idxB;
   });
 
-  // Build HTML: search bar + category dropdown → articles
+  var catCounts = {};
+  articles.forEach(function (a) {
+    var cat = a.category_name || a.category || 'General';
+    catCounts[cat] = (catCounts[cat] || 0) + 1;
+  });
+
+  // === BUILD HTML ===
   var html = '';
 
-  // 🔍 SEARCH + CATEGORY DROPDOWN (toolbar)
+  // 🔍 SEARCH BAR
   html += '<div class="ainews-toolbar" style="grid-column:1/-1">';
   html += '<input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search articles">';
-  html += '<select id="ainews-cat-select" class="ainews-select" aria-label="Filter by category">';
-  html += '<option value="all">All Categories (' + articles.length + ')</option>';
-  categories.forEach(function (cat) {
-    var count = articles.filter(function (a) { return (a.category_name || a.category || 'General') === cat; }).length;
-    var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
-    html += '<option value="' + escapeHtml(cat) + '">' + (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + ' (' + count + ')</option>';
-  });
-  html += '</select>';
   html += '</div>';
 
-  // 📊 FILTER INFO
+  // 📡 VENDOR PILLS (replaces dropdown)
+  html += '<div class="ainews-pills" id="ainews-pills" style="grid-column:1/-1">';
+  html += '<button class="ainews-pill ainews-pill-active" data-cat="all">All (' + articles.length + ')</button>';
+  categories.forEach(function (cat) {
+    var count = catCounts[cat] || 0;
+    if (count === 0 && ALWAYS_SHOW_CATS.indexOf(cat) === -1) return;
+    var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
+    html += '<button class="ainews-pill" data-cat="' + escapeHtml(cat) + '" style="--pill-color:' + meta.color + '">';
+    html += (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + (count ? ' (' + count + ')' : '');
+    html += '</button>';
+  });
+  html += '</div>';
+
+  // 📊 COUNT INFO
   html += '<div class="ainews-filter-info" id="ainews-filter-info" style="grid-column:1/-1"><span>Showing <b id="ainews-count">' + articles.length + '</b> of ' + articles.length + ' articles</span></div>';
 
-  // 🔥 HEADLINES
-  if (headlines.length > 0) {
-    html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines (' + headlines.length + ')</div>';
+  // 🔥 HEADLINES (large cards, max 8)
+  var visibleHL = headlines.slice(0, maxHeadlines);
+  if (visibleHL.length > 0) {
+    html += '<div class="ainews-tier-section" id="ainews-hl-section">';
+    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines (' + visibleHL.length + ')</div>';
     html += '<div class="ainews-heroes" id="ainews-heroes">';
-    headlines.forEach(function (article, i) {
-      html += '<div class="ainews-loadmore-item"' + (i >= 6 ? ' style="display:none"' : '') + '>' + renderHeroCard(article) + '</div>';
+    visibleHL.forEach(function (article) {
+      html += '<div class="ainews-loadmore-item">' + renderHeroCard(article) + '</div>';
     });
     html += '</div>';
-    if (headlines.length > 6) {
-      html += '<button class="ainews-show-more" data-target="ainews-heroes" data-step="6">Show ' + (headlines.length - 6) + ' more headlines</button>';
+    html += '</div>';
+  }
+
+  // 📋 MORE STORIES (compact list with accordion)
+  var compactItems = deepDives.slice(0, maxCompact);
+  if (compactItems.length > 0) {
+    var initialShow = Math.min(compactItems.length, view === 'monthly' ? 50 : 20);
+    html += '<div class="ainews-tier-section" id="ainews-compact-section">';
+    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>📋</span> More Stories (' + compactItems.length + ')</div>';
+    html += '<div class="ainews-compact-list" id="ainews-compact">';
+    compactItems.forEach(function (article, i) {
+      var v = getArticleVars(article);
+      var isRumour = v.cat.toLowerCase().indexOf('rumour') !== -1;
+      var hidden = i >= initialShow ? ' style="display:none"' : '';
+      html += '<div class="ainews-compact-row ainews-loadmore-item' + (isRumour ? ' ainews-compact-rumour' : '') + '" data-category="' + escapeHtml(v.cat) + '"' + hidden + '>';
+      html += '<div class="ainews-compact-header">';
+      html += '<span class="ainews-compact-cat" style="--pill-color:' + (CATEGORY_META[v.cat] || {color:'#888'}).color + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
+      html += '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-compact-title"' + buildClickAttr(v) + '>';
+      html += (v.isNew ? '<span class="ainews-new-badge">NEW</span> ' : '') + escapeHtml(v.title);
+      html += '</a>';
+      html += '<span class="ainews-compact-time">' + v.time + '</span>';
+      html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="false">▼</button>';
+      html += '</div>';
+      html += '<div class="ainews-compact-detail" hidden>';
+      html += '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>';
+      if (v.whyMatters) html += '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>';
+      html += '<div class="ainews-meta">';
+      if (v.favicon) html += '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">';
+      html += '<span class="ainews-source">' + escapeHtml(v.source) + '</span>';
+      html += '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-compact-readmore">Read full article →</a>';
+      html += '</div></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+    if (compactItems.length > initialShow) {
+      html += '<button class="ainews-show-more" data-target="ainews-compact" data-step="' + initialShow + '">Show ' + (compactItems.length - initialShow) + ' more stories</button>';
     }
     html += '</div>';
   }
 
-  // 🧠 DEEP DIVES
-  if (deepDives.length > 0) {
-    html += '<div class="ainews-tier-section">';
-    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>🧠</span> Deep Dives (' + deepDives.length + ')</div>';
-    html += '<div class="ainews-deepdive-grid" id="ainews-deepdives">';
-    deepDives.forEach(function (article, i) {
-      html += '<div class="ainews-loadmore-item"' + (i >= 12 ? ' style="display:none"' : '') + '>' + renderCard(article) + '</div>';
-    });
-    html += '</div>';
-    if (deepDives.length > 12) {
-      html += '<button class="ainews-show-more" data-target="ainews-deepdives" data-step="12">Show ' + (deepDives.length - 12) + ' more deep dives</button>';
-    }
-    html += '</div>';
-  }
-
-  // Fallback: if no tiers assigned, render all as cards (backward compat)
+  // Fallback
   if (headlines.length === 0 && deepDives.length === 0 && articles.length > 0) {
-    articles.forEach(function (article) {
-      html += renderCard(article);
-    });
+    articles.forEach(function (article) { html += renderCard(article); });
   }
 
   grid.innerHTML = html || '<p class="ainews-loading">No articles found for this period.</p>';
 
-  // Helper: update visible count display
+  // === EVENT DELEGATION (single listener for pills, accordion, show-more) ===
+  grid.addEventListener('click', function (e) {
+    // Vendor pills
+    var pill = e.target.closest('.ainews-pill');
+    if (pill) {
+      e.preventDefault();
+      grid.querySelectorAll('.ainews-pill').forEach(function (p) { p.classList.remove('ainews-pill-active'); });
+      pill.classList.add('ainews-pill-active');
+      var cat = pill.dataset.cat;
+      filterByCategory(cat);
+      syncAinewsUrl(cat, document.getElementById('ainews-search')?.value || '');
+      return;
+    }
+    // Compact row accordion expand
+    var expandBtn = e.target.closest('.ainews-compact-expand');
+    if (expandBtn) {
+      e.preventDefault();
+      var row = expandBtn.closest('.ainews-compact-row');
+      var detail = row.querySelector('.ainews-compact-detail');
+      var isOpen = !detail.hidden;
+      detail.hidden = isOpen;
+      expandBtn.textContent = isOpen ? '▼' : '▲';
+      expandBtn.setAttribute('aria-expanded', !isOpen);
+      return;
+    }
+    // Show more
+    var showMoreBtn = e.target.closest('.ainews-show-more');
+    if (showMoreBtn) {
+      var targetId = showMoreBtn.dataset.target;
+      var step = parseInt(showMoreBtn.dataset.step, 10);
+      var container = document.getElementById(targetId);
+      if (!container) return;
+      var hidden = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]');
+      var count = 0;
+      hidden.forEach(function (el) { if (count < step) { el.style.display = ''; count++; } });
+      var remaining = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]').length;
+      if (remaining === 0) showMoreBtn.style.display = 'none';
+      else showMoreBtn.textContent = 'Show ' + remaining + ' more stories';
+    }
+  });
+
+  // === FILTER BY CATEGORY ===
+  function filterByCategory(cat) {
+    // Filter headlines
+    grid.querySelectorAll('.ainews-card-hero').forEach(function (el) {
+      el.closest('.ainews-loadmore-item').style.display = (cat === 'all' || el.dataset.category === cat) ? '' : 'none';
+    });
+    // Filter compact rows
+    grid.querySelectorAll('.ainews-compact-row').forEach(function (el) {
+      el.style.display = (cat === 'all' || el.dataset.category === cat) ? '' : 'none';
+    });
+    // Hide empty sections
+    grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
+      var hasVisible = sec.querySelectorAll('.ainews-card-hero:not([style*="display: none"]), .ainews-compact-row:not([style*="display: none"])');
+      if (hasVisible.length === 0) hasVisible = sec.querySelectorAll('.ainews-loadmore-item:not([style*="display: none"])');
+      sec.style.display = hasVisible.length > 0 ? '' : 'none';
+    });
+    updateAinewsCount();
+  }
+
+  // === COUNT UPDATE ===
   function updateAinewsCount() {
     var countEl = document.getElementById('ainews-count');
     if (!countEl) return;
-    var visible = grid.querySelectorAll('.ainews-card:not([style*="display: none"]):not([style*="display:none"]), .ainews-card-hero:not([style*="display: none"]):not([style*="display:none"])');
-    countEl.textContent = visible.length;
+    var visible = grid.querySelectorAll('.ainews-card-hero:not([style*="display: none"]):not([style*="display:none"])').length +
+                  grid.querySelectorAll('.ainews-compact-row:not([style*="display: none"]):not([style*="display:none"])').length;
+    countEl.textContent = visible;
   }
 
-  // Wire up category dropdown
-  var catSelect = document.getElementById('ainews-cat-select');
-  if (catSelect) {
-    catSelect.addEventListener('change', function () {
-      var cat = this.value;
-      grid.querySelectorAll('.ainews-card, .ainews-card-hero, .ainews-section-header').forEach(function (el) {
-        if (cat === 'all') { el.style.display = ''; return; }
-        el.style.display = (el.dataset.category === cat) ? '' : 'none';
-      });
-      grid.querySelectorAll('.ainews-tier-section').forEach(function (sec) {
-        var hasVisible = sec.querySelectorAll('.ainews-card:not([style*="display: none"]), .ainews-card-hero:not([style*="display: none"])');
-        sec.style.display = hasVisible.length > 0 ? '' : 'none';
-      });
-      updateAinewsCount();
-      syncAinewsUrl(cat, document.getElementById('ainews-search')?.value || '');
-    });
-  }
-
-  // Search functionality (debounced)
+  // === SEARCH ===
   var searchInput = document.getElementById('ainews-search');
   if (searchInput) {
     var _searchTimer;
@@ -380,44 +449,32 @@ function renderNews(data, view) {
       var input = this;
       _searchTimer = setTimeout(function () {
         var q = input.value.toLowerCase();
-        grid.querySelectorAll('.ainews-card, .ainews-card-hero').forEach(function (el) {
+        // Search headlines
+        grid.querySelectorAll('.ainews-card-hero').forEach(function (el) {
+          var text = el.textContent.toLowerCase();
+          el.closest('.ainews-loadmore-item').style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+        });
+        // Search compact rows (search header + hidden detail text)
+        grid.querySelectorAll('.ainews-compact-row').forEach(function (el) {
           var text = el.textContent.toLowerCase();
           el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
         });
-        // Show all load-more items when searching
+        // Show all hidden items when searching
         if (q) {
-          grid.querySelectorAll('.ainews-loadmore-item').forEach(function (el) { el.style.display = ''; });
+          grid.querySelectorAll('.ainews-loadmore-item[style*="display: none"]').forEach(function (el) {
+            var text = el.textContent.toLowerCase();
+            if (text.indexOf(q) !== -1) el.style.display = '';
+          });
           grid.querySelectorAll('.ainews-show-more').forEach(function (btn) { btn.style.display = 'none'; });
         }
         updateAinewsCount();
-        var activeBtn = document.querySelector('#category-filters .ainews-filter.active');
-        syncAinewsUrl(activeBtn ? activeBtn.dataset.cat : 'all', input.value);
+        var activePill = grid.querySelector('.ainews-pill-active');
+        syncAinewsUrl(activePill ? activePill.dataset.cat : 'all', input.value);
       }, 200);
     });
   }
 
-  // "Show more" buttons
-  grid.querySelectorAll('.ainews-show-more').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var targetId = this.dataset.target;
-      var step = parseInt(this.dataset.step, 10);
-      var container = document.getElementById(targetId);
-      if (!container) return;
-      var hidden = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]');
-      var count = 0;
-      hidden.forEach(function (el) {
-        if (count < step) { el.style.display = ''; count++; }
-      });
-      var remaining = container.querySelectorAll('.ainews-loadmore-item[style*="display: none"], .ainews-loadmore-item[style*="display:none"]').length;
-      if (remaining === 0) {
-        btn.style.display = 'none';
-      } else {
-        btn.textContent = 'Show ' + remaining + ' more';
-      }
-    });
-  });
-
-  // Apply URL state after render (category + search)
+  // Apply URL state
   readAinewsUrl();
 }
 
@@ -435,8 +492,16 @@ function readAinewsUrl() {
   var cat = p.get('cat');
   var q = p.get('q');
   if (cat) {
-    var sel = document.getElementById('ainews-cat-select');
-    if (sel) { sel.value = cat; sel.dispatchEvent(new Event('change')); }
+    // Activate the matching pill
+    var pills = document.querySelectorAll('.ainews-pill');
+    pills.forEach(function (pill) {
+      if (pill.dataset.cat === cat) {
+        pill.classList.add('ainews-pill-active');
+        pill.click();
+      } else if (pill.dataset.cat === 'all') {
+        pill.classList.remove('ainews-pill-active');
+      }
+    });
   }
   if (q) {
     var searchInput = document.getElementById('ainews-search');

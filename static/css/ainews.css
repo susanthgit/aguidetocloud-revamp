@@ -56,42 +56,129 @@
   font-size: 0.85rem;
   color: var(--text-muted);
 }
-.ainews-categories {
+/* ── VENDOR PILLS (horizontal scroll) ── */
+.ainews-pills {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  margin-bottom: 1.5rem;
   padding-bottom: 0.3rem;
-  mask-image: linear-gradient(to right, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 92%, transparent 100%);
 }
-.ainews-categories::-webkit-scrollbar { display: none; }
-.ainews-filter-info { font-size: 0.78rem; color: var(--text-muted); padding: 0.3rem 0 0.5rem; }
-.ainews-filter-info b { color: var(--neon-cyan); }
-.ainews-filter {
-  padding: 0.4rem 1rem;
+.ainews-pills::-webkit-scrollbar { display: none; }
+.ainews-pill {
+  padding: 0.35rem 0.9rem;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.03);
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-family: var(--font-heading);
   white-space: nowrap;
   flex-shrink: 0;
 }
-.ainews-filter:hover, .ainews-filter.active {
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
-  background: rgba(102, 255, 255, 0.06);
+.ainews-pill:hover {
+  border-color: var(--pill-color, var(--neon-cyan));
+  color: var(--pill-color, var(--neon-cyan));
+  background: rgba(255,255,255,0.06);
 }
-.ainews-filter:focus-visible, .ainews-tab:focus-visible, .ainews-search:focus-visible, .ainews-show-more:focus-visible {
+.ainews-pill-active {
+  border-color: var(--pill-color, var(--neon-cyan));
+  color: #fff;
+  background: color-mix(in srgb, var(--pill-color, var(--neon-cyan)) 25%, transparent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pill-color, var(--neon-cyan)) 20%, transparent);
+}
+.ainews-pill:focus-visible, .ainews-tab:focus-visible, .ainews-search:focus-visible, .ainews-show-more:focus-visible {
   outline: 2px solid var(--neon-cyan); outline-offset: 2px;
+}
+.ainews-filter-info { font-size: 0.78rem; color: var(--text-muted); padding: 0.3rem 0 0.5rem; }
+.ainews-filter-info b { color: var(--neon-cyan); }
+
+/* ── COMPACT LIST (accordion rows) ── */
+.ainews-compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ainews-compact-row {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0.6rem 0;
+}
+.ainews-compact-row:last-child { border-bottom: none; }
+.ainews-compact-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 1.8rem;
+}
+.ainews-compact-cat {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--pill-color, #888) 15%, transparent);
+  color: var(--pill-color, #aaa);
+  border: 1px solid color-mix(in srgb, var(--pill-color, #888) 30%, transparent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ainews-compact-title {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e6edf3;
+  text-decoration: none;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ainews-compact-title:hover { color: var(--neon-cyan); }
+.ainews-compact-time {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ainews-compact-expand {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.ainews-compact-expand:hover { color: var(--neon-cyan); }
+.ainews-compact-detail {
+  padding: 0.6rem 0 0.3rem 0;
+  margin-left: 0;
+  border-left: 2px solid rgba(102,255,255,0.15);
+  padding-left: 0.8rem;
+  margin-top: 0.4rem;
+}
+.ainews-compact-detail .ainews-summary { font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 0.4rem; line-height: 1.5; }
+.ainews-compact-detail .ainews-why { font-size: 0.83rem; margin: 0.4rem 0; }
+.ainews-compact-detail .ainews-meta { font-size: 0.78rem; }
+.ainews-compact-readmore {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.78rem;
+  margin-left: auto;
+}
+.ainews-compact-readmore:hover { text-decoration: underline; }
+.ainews-compact-rumour {
+  border-left: 2px dashed rgba(255,102,255,0.3);
+  padding-left: 0.5rem;
 }
 .ainews-grid {
   display: grid;
@@ -440,22 +527,6 @@
 .ainews-search::placeholder {
   color: #504A59;
 }
-.ainews-select {
-  padding: 0.7rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: #1C1924;
-  color: #E8E4ED;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  cursor: pointer;
-  min-width: 180px;
-}
-.ainews-select:focus {
-  outline: none;
-  border-color: var(--neon-cyan);
-}
-
 /* ── STICKY SEARCH + FILTERS ─────────────── */
 .ainews-sticky-bar {
   position: sticky;
@@ -498,35 +569,7 @@
   overflow: hidden;
 }
 
-/* ── TRENDING TOPICS BAR ───────────────── */
-.ainews-trending {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-.ainews-trending-label {
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--neon-cyan);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.ainews-trending-tag {
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(102, 255, 255, 0.08);
-  border: 1px solid rgba(102, 255, 255, 0.15);
-  color: var(--neon-cyan);
-}
-
-/* ── CATEGORY PILL DOTS ────────────────── */
-.ainews-pill-dot {
-  display: inline-block;
+/* (Trending + pill-dots + email CTA removed — replaced by vendor pills) */
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -789,11 +832,13 @@
   .ainews-toolbar {
     flex-direction: column;
   }
-  .ainews-select {
-    min-width: auto;
-  }
+  /* Compact list: title wraps on mobile */
+  .ainews-compact-title { white-space: normal; }
+  .ainews-compact-header { flex-wrap: wrap; }
+  .ainews-compact-time { font-size: 0.68rem; }
+  .ainews-pills { gap: 0.3rem; }
+  .ainews-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
 
-  /* Change 3: Compact tabs + merge stats */
   .ainews-tabs {
     gap: 0.3rem;
     margin-bottom: 0.5rem;
@@ -812,12 +857,6 @@
     font-size: 0.75rem;
   }
 
-  /* Tighten trending section */
-  .ainews-trending {
-    margin-bottom: 0.5rem;
-  }
-
-  /* Existing card tweaks */
   .ainews-card-hero {
     padding: 1.2rem;
   }
@@ -826,13 +865,5 @@
   }
   .ainews-quick-list {
     grid-template-columns: 1fr;
-  }
-
-  /* Hide summaries on deep dive cards (mobile) — titles are enough */
-  .ainews-deepdive-grid .ainews-summary {
-    display: none;
-  }
-  .ainews-deepdive-grid .ainews-why {
-    display: none;
   }
 }
