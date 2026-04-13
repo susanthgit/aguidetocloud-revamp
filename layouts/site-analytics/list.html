@@ -1,0 +1,134 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#06B6D4") }}
+
+<div class="siteana-page">
+
+  <!-- Live Stats Bar -->
+  <div class="siteana-stats-bar">
+    <div class="siteana-stat">
+      <span class="siteana-stat-num" id="sa-total-views">—</span>
+      <span class="siteana-stat-label">Tool Views</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num" id="sa-total-actions">—</span>
+      <span class="siteana-stat-label">Actions Taken</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num" id="sa-today-views">—</span>
+      <span class="siteana-stat-label">Today</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num">{{ site.Params.tool_count }}</span>
+      <span class="siteana-stat-label">Tools</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
+      <span class="siteana-stat-label">Blog Posts</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="siteana-tabs" role="tablist">
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">📊 Overview</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">🏆 Tools</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">🔍 Content</button>
+  </div>
+
+  <!-- Tab: Overview -->
+  <div class="siteana-panel active" id="panel-overview" role="tabpanel">
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">📈 7-Day Trend</h3>
+        <canvas id="sa-trend-chart" height="200"></canvas>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">⚡ Activity Breakdown</h3>
+        <canvas id="sa-activity-chart" height="200"></canvas>
+      </div>
+    </div>
+    <div class="siteana-card siteana-transparency">
+      <h3>🔒 Transparency Note</h3>
+      <p>All data is collected <strong>anonymously</strong>. No cookies, no personal data, no IP addresses stored. Counts are <strong>approximate</strong> — we filter bots and deduplicate events, but some automated traffic may inflate numbers slightly. All displayed numbers are rounded.</p>
+      <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
+    </div>
+  </div>
+
+  <!-- Tab: Tools Leaderboard -->
+  <div class="siteana-panel" id="panel-tools" role="tabpanel">
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">🏆 Tool Popularity</h3>
+      <p class="siteana-hint">Ranked by total views + actions</p>
+      <div id="sa-leaderboard"></div>
+    </div>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">👀 Most Viewed</h3>
+        <div id="sa-most-viewed"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">🎯 Most Used</h3>
+        <p class="siteana-hint">Actions: copies, calculations, completions</p>
+        <div id="sa-most-used"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Content -->
+  <div class="siteana-panel" id="panel-content" role="tabpanel">
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">🔍 Top Search Queries</h3>
+      <p class="siteana-hint">What visitors are searching for on the site</p>
+      <div id="sa-searches"></div>
+    </div>
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">📚 Content Overview</h3>
+      <div class="siteana-content-stats">
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ site.Params.tool_count }}</span>
+          <span>Free Tools</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
+          <span>Blog Posts</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "prompts") }}</span>
+          <span>Prompts</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "cert-tracker") }}</span>
+          <span>Cert Guides</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  {{ with .Params.faq }}
+  <div class="siteana-faq">
+    <h2>Frequently Asked Questions</h2>
+    {{ range $i, $q := . }}
+    <div class="siteana-faq-item">
+      <h3>{{ add $i 1 }}. {{ $q.question }}</h3>
+      <p>{{ $q.answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}
+</div>
+
+<!-- Pagefind: hidden searchable content -->
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h1>Site Analytics — Live Usage Statistics Dashboard</h1>
+  <p>View live, transparent analytics for A Guide to Cloud and AI. See which tools are most popular, daily traffic trends, top search queries, and content statistics. All data collected anonymously with no cookies or personal data.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="/js/site-analytics.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+{{ end }}

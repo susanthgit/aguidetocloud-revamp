@@ -226,6 +226,10 @@
     {
       "route": "/fonts/*",
       "headers": { "Cache-Control": "public, max-age=86400" }
+    },
+    {
+      "route": "/api/stats",
+      "headers": { "Cache-Control": "public, max-age=300" }
     }
   ],
   "responseOverrides": {

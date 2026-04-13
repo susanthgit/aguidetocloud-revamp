@@ -111,6 +111,12 @@ name = "Meeting Planner"
 short = "Planner"
 
 [[tools]]
+url = "/site-analytics/"
+emoji = "📊"
+name = "Site Analytics"
+short = "Analytics"
+
+[[tools]]
 url = "/feedback/"
 emoji = "💬"
 name = "Community Feedback"
