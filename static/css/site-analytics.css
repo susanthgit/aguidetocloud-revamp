@@ -4,6 +4,244 @@
    Namespace: .siteana-*
    =========================================== */
 
+/* ── COMING SOON GATE ──────────────────── */
+.siteana-coming-soon {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.siteana-cs-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 20px rgba(6,182,212,0.4));
+}
+
+.siteana-cs-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #06B6D4;
+  margin: 0 0 0.5rem;
+}
+
+.siteana-cs-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
+.siteana-cs-intro {
+  text-align: left;
+  background: rgba(6,182,212,0.04);
+  border: 1px solid rgba(6,182,212,0.15);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.siteana-cs-intro p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 0.8rem;
+}
+
+.siteana-cs-intro p:last-child { margin-bottom: 0; }
+
+.siteana-cs-intro strong { color: rgba(255,255,255,0.9); }
+
+.siteana-cs-intro code {
+  background: rgba(6,182,212,0.12);
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: #06B6D4;
+}
+
+.siteana-cs-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #06B6D4, transparent);
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+.siteana-cs-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.siteana-cs-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.siteana-cs-feature {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.siteana-cs-feature:hover {
+  border-color: rgba(6,182,212,0.25);
+}
+
+.siteana-cs-emoji {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.siteana-cs-feature h3 {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+.siteana-cs-feature p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.siteana-cs-why {
+  text-align: left;
+  background: rgba(6,182,212,0.06);
+  border-left: 3px solid #06B6D4;
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.siteana-cs-why h3 {
+  font-size: 1rem;
+  color: #06B6D4;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.siteana-cs-why p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+
+.siteana-cs-why p:last-child { margin-bottom: 0; }
+
+.siteana-cs-notify {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.siteana-cs-notify p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+
+.siteana-cs-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.siteana-cs-links a {
+  color: #06B6D4;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.siteana-cs-links a:hover { color: #22D3EE; }
+
+/* Admin gate */
+.siteana-cs-admin {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-cs-admin-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.siteana-cs-admin-btn:hover {
+  color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.siteana-cs-admin-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.siteana-cs-admin-form input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #e6edf3;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  width: 180px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.siteana-cs-admin-form input:focus {
+  border-color: #06B6D4;
+}
+
+.siteana-cs-admin-form button {
+  background: rgba(6,182,212,0.15);
+  border: 1px solid rgba(6,182,212,0.3);
+  color: #06B6D4;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.siteana-cs-admin-form button:hover {
+  background: rgba(6,182,212,0.25);
+}
+
+@media (max-width: 640px) {
+  .siteana-cs-features { grid-template-columns: 1fr; }
+  .siteana-cs-title { font-size: 1.5rem; }
+  .siteana-cs-intro { padding: 1rem 1.25rem; }
+}
+
 .siteana-page {
   max-width: 1100px;
   margin: 0 auto;

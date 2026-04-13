@@ -3,7 +3,72 @@
 
 {{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#06B6D4") }}
 
-<div class="siteana-page">
+<!-- ═══ COMING SOON GATE ═══ -->
+<div class="siteana-page" id="sa-gate">
+  <div class="siteana-coming-soon">
+    <div class="siteana-cs-icon">📊</div>
+    <h2 class="siteana-cs-title">Launching Soon</h2>
+    <p class="siteana-cs-subtitle">A fully transparent analytics dashboard — built for you, not advertisers.</p>
+
+    <div class="siteana-cs-intro">
+      <p>We believe in radical transparency. While most websites keep their numbers locked behind closed doors, we're building something different — a <strong>public, real-time analytics dashboard</strong> that shows exactly how this site and its 18 free tools are being used.</p>
+      <p>No vanity metrics. No inflated numbers. Just honest data — how many people visit, which tools they use most, what they search for, and where they come from. All collected <strong>without cookies or personal data</strong>.</p>
+      <p>This dashboard will combine data from <strong>Google Analytics</strong> (traffic patterns), <strong>Google Search Console</strong> (how people find us), and our own <strong>anonymous event tracking</strong> (which tools get the most use) — all served through a public API at <code>/api/stats</code> that anyone can query.</p>
+    </div>
+
+    <div class="siteana-cs-divider"></div>
+
+    <h3 class="siteana-cs-section-title">What's coming</h3>
+    <div class="siteana-cs-features">
+      <div class="siteana-cs-feature">
+        <span class="siteana-cs-emoji">🏆</span>
+        <h3>Tool Popularity Leaderboard</h3>
+        <p>See which of our 18 free tools gets the most love — ranked by real usage data.</p>
+      </div>
+      <div class="siteana-cs-feature">
+        <span class="siteana-cs-emoji">📈</span>
+        <h3>Live Traffic Trends</h3>
+        <p>Daily visitor trends, top countries, devices, and traffic sources — powered by real Google Analytics data.</p>
+      </div>
+      <div class="siteana-cs-feature">
+        <span class="siteana-cs-emoji">🔍</span>
+        <h3>Search Insights</h3>
+        <p>What people actually search for on Google to find this site — real queries, click rates, and positions.</p>
+      </div>
+      <div class="siteana-cs-feature">
+        <span class="siteana-cs-emoji">🔒</span>
+        <h3>100% Anonymous</h3>
+        <p>No cookies, no personal data, no tracking pixels. Just aggregate counts — because transparency shouldn't cost your privacy.</p>
+      </div>
+    </div>
+
+    <div class="siteana-cs-why">
+      <h3>Why open analytics?</h3>
+      <p>Most websites hide their numbers. We think that's backwards. If you're using our tools, you deserve to see how they're doing. Every number on this dashboard will be real, unfiltered, and open to everyone.</p>
+      <p>We're collecting data now and building the dashboard. Once we have enough meaningful data to show, this page will go live with interactive charts, leaderboards, and insights.</p>
+    </div>
+
+    <div class="siteana-cs-notify">
+      <p>🛠️ <strong>Building in progress</strong> — check back in a few weeks, or follow us for the launch announcement.</p>
+      <div class="siteana-cs-links">
+        <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener">📺 YouTube</a>
+        <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener">💼 LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Admin access -->
+    <div class="siteana-cs-admin">
+      <button id="sa-admin-toggle" class="siteana-cs-admin-btn">🔐 Admin Preview</button>
+      <div id="sa-admin-form" class="siteana-cs-admin-form" style="display:none">
+        <input type="password" id="sa-admin-pass" placeholder="Enter password" autocomplete="off">
+        <button id="sa-admin-submit">Unlock</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ACTUAL DASHBOARD (hidden until unlocked) ═══ -->
+<div class="siteana-page" id="sa-dashboard" style="display:none">
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
@@ -145,6 +210,51 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="/js/site-analytics.js?v={{ site.Params.cache_version }}"></script>
+<script>
+(function(){
+  var PASS_HASH = '0579d11899d8171a96c04302aa2f2f7250adfce591e1a118f332f40c70027be8';
+  var gate = document.getElementById('sa-gate');
+  var dash = document.getElementById('sa-dashboard');
+  var toggleBtn = document.getElementById('sa-admin-toggle');
+  var form = document.getElementById('sa-admin-form');
+  var passInput = document.getElementById('sa-admin-pass');
+  var submitBtn = document.getElementById('sa-admin-submit');
+
+  // Check if already unlocked
+  if (sessionStorage.getItem('sa-unlocked') === '1') { unlock(); }
+
+  if (toggleBtn) toggleBtn.addEventListener('click', function() {
+    form.style.display = form.style.display === 'none' ? 'flex' : 'none';
+    if (form.style.display !== 'none') setTimeout(function(){ passInput.focus(); }, 100);
+  });
+
+  async function hashPass(str) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+  }
+
+  async function tryUnlock() {
+    var hash = await hashPass(passInput.value);
+    if (hash === PASS_HASH) {
+      sessionStorage.setItem('sa-unlocked', '1');
+      unlock();
+    } else {
+      passInput.style.borderColor = '#ff4444';
+      passInput.value = '';
+      passInput.placeholder = 'Wrong password';
+      setTimeout(function(){ passInput.style.borderColor = ''; passInput.placeholder = 'Enter password'; }, 2000);
+    }
+  }
+
+  if (submitBtn) submitBtn.addEventListener('click', tryUnlock);
+  if (passInput) passInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryUnlock(); });
+
+  function unlock() {
+    if (gate) gate.style.display = 'none';
+    if (dash) dash.style.display = 'block';
+  }
+})();
+</script>
 
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}
