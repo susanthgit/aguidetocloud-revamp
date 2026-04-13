@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Password Generator",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Any",
@@ -271,6 +271,12 @@
         <div class="pwgen-section-title">⚠️ Pattern Warnings</div>
         <div class="pwgen-warnings" id="pwgen-warnings"></div>
       </div>
+
+      {{/* Breach check opt-in */}}
+      <label class="pwgen-breach-optin">
+        <input type="checkbox" id="pwgen-breach-toggle"> Check against breach databases
+        <span class="pwgen-breach-optin-info">(sends first 5 chars of SHA-1 hash to <a href="https://haveibeenpwned.com/API/v3#PwnedPasswords" target="_blank" rel="noopener noreferrer">Have I Been Pwned</a>)</span>
+      </label>
 
       {{/* Breach check */}}
       <div class="pwgen-section" id="pwgen-breach-section" style="display:none">

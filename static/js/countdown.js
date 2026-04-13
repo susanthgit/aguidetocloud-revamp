@@ -25,6 +25,10 @@ const COLORS = [
   '#E11D48', '#8B5CF6'
 ];
 
+var VALID_EMOJIS = ICONS.map(function(i){ return i.emoji; });
+function safeIcon(icon) { return VALID_EMOJIS.indexOf(icon) >= 0 ? icon : '📅'; }
+function safeColor(color) { return /^#[0-9A-Fa-f]{6}$/.test(color) ? color : '#FB923C'; }
+
 const TIMER_PRESETS = [
   { label: '1 min', secs: 60 },
   { label: '3 min', secs: 180 },
@@ -107,20 +111,6 @@ function load() {
     if (d) S.events = JSON.parse(d);
   } catch (e) { S.events = []; }
 }
-function saveTpl() {
-  try {
-    var d = localStorage.getItem(LS_TPL);
-    var t = d ? JSON.parse(d) : [];
-    localStorage.setItem(LS_TPL, JSON.stringify(t));
-  } catch (e) { /* ignore */ }
-}
-function loadCustomTpl() {
-  try {
-    var d = localStorage.getItem(LS_TPL);
-    return d ? JSON.parse(d) : [];
-  } catch (e) { return []; }
-}
-
 function calcDiff(targetStr) {
   var target = new Date(targetStr).getTime();
   var now = Date.now();
@@ -551,8 +541,8 @@ function editEvent(id) {
   document.getElementById('cdown-date').value = ev.date;
   var msgEl = document.getElementById('cdown-message');
   if (msgEl) msgEl.value = ev.message || '';
-  S.selIcon = ev.icon || '📅';
-  S.selColor = ev.color || COLORS[0];
+  S.selIcon = safeIcon(ev.icon);
+  S.selColor = safeColor(ev.color);
   S.selBanner = ev.banner || null;
   initPickers();
   // Restore banner preview if exists
@@ -606,7 +596,7 @@ function openFullscreen(id) {
   if (!ev) return;
   S.fsId = id;
   S.fsMode = 'event';
-  showFsOverlay(ev.icon || '⏳', ev.name, ev.banner, ev.message, true);
+  showFsOverlay(safeIcon(ev.icon), ev.name, ev.banner, ev.message, true);
   updateFsDisplay();
 }
 
@@ -735,7 +725,7 @@ function renderDashboard() {
   container.innerHTML = sorted.map(function (ev) {
     var d = calcDiff(ev.date);
     var pct = calcProgress(ev.created, ev.date);
-    var color = ev.color || '#FB923C';
+    var color = safeColor(ev.color);
     var cardContent;
     if (d.done) {
       cardContent = '<div class="cdown-card-done"><div class="cdown-card-done-icon">🎉</div>' +
@@ -749,7 +739,7 @@ function renderDashboard() {
     return '<div class="cdown-card" data-id="' + ev.id + '">' +
       '<div class="cdown-card-accent" style="background:' + color + '"></div>' +
       '<div class="cdown-card-header">' +
-        '<div class="cdown-card-icon">' + (ev.icon || '📅') + '</div>' +
+        '<div class="cdown-card-icon">' + safeIcon(ev.icon) + '</div>' +
         '<div class="cdown-card-name">' + esc(ev.name) + '</div>' +
       '</div>' +
       '<div class="cdown-card-date">' + esc(dateStr) + '</div>' +
@@ -1026,8 +1016,8 @@ function renderTemplates() {
   grid.innerHTML = templates.map(function (t) {
     var d = calcDiff(t.date);
     var away = d.done ? 'Today!' : d.days + ' day' + (d.days !== 1 ? 's' : '') + ' away';
-    return '<div class="cdown-tpl-card" data-tpl-name="' + esc(t.name) + '" data-tpl-date="' + t.date + '" data-tpl-icon="' + t.icon + '">' +
-      '<div class="cdown-tpl-icon">' + t.icon + '</div>' +
+    return '<div class="cdown-tpl-card" data-tpl-name="' + esc(t.name) + '" data-tpl-date="' + t.date + '" data-tpl-icon="' + safeIcon(t.icon) + '">' +
+      '<div class="cdown-tpl-icon">' + safeIcon(t.icon) + '</div>' +
       '<div class="cdown-tpl-info"><div class="cdown-tpl-name">' + esc(t.name) + '</div>' +
       '<div class="cdown-tpl-days">' + away + '</div></div>' +
       '<button class="cdown-tpl-btn">Start →</button>' +
@@ -1039,7 +1029,7 @@ function renderTemplates() {
     if (!card) return;
     var name = card.getAttribute('data-tpl-name');
     var date = card.getAttribute('data-tpl-date');
-    var icon = card.getAttribute('data-tpl-icon');
+    var icon = safeIcon(card.getAttribute('data-tpl-icon'));
     var exists = S.events.some(function (ev) { return ev.name === name; });
     if (exists) { toast('This countdown already exists'); return; }
     S.events.push({
@@ -1063,8 +1053,8 @@ function parseUrlParams() {
 
   var name = params.get('name');
   var date = params.get('date');
-  var icon = params.get('icon') || '📅';
-  var color = params.get('color') || COLORS[0];
+  var icon = safeIcon(params.get('icon'));
+  var color = safeColor(params.get('color'));
   var embed = params.get('embed') === '1';
 
   if (embed) {

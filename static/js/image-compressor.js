@@ -150,6 +150,7 @@
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
       s.src = 'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js';
+      s.crossOrigin = 'anonymous';
       s.onload = function () { heic2anyLoaded = true; resolve(); };
       s.onerror = function () { reject(new Error('Failed to load HEIC converter')); };
       document.head.appendChild(s);
@@ -707,6 +708,12 @@
     document.addEventListener('touchmove', onMove, { passive: false });
     document.addEventListener('mouseup', onEnd);
     document.addEventListener('touchend', onEnd);
+    container._cleanupSlider = function() {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchend', onEnd);
+    };
   }
 
   function toggleCompare(entry) {
@@ -716,6 +723,8 @@
 
     if (!wrap.classList.contains('imgcomp-hidden')) {
       wrap.classList.add('imgcomp-hidden');
+      var sliderContainer = wrap.querySelector('.imgcomp-compare-container');
+      if (sliderContainer && sliderContainer._cleanupSlider) sliderContainer._cleanupSlider();
       wrap.innerHTML = '';
       if (btn) btn.setAttribute('aria-expanded', 'false');
       return;
@@ -948,7 +957,8 @@
     if (jsZipLoaded) return Promise.resolve();
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/jszip@3/dist/jszip.min.js';
+      s.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
+      s.crossOrigin = 'anonymous';
       s.onload = function () { jsZipLoaded = true; resolve(); };
       s.onerror = function () { reject(new Error('Failed to load JSZip')); };
       document.head.appendChild(s);

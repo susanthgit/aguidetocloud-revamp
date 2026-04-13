@@ -167,7 +167,7 @@
       src.start();
       ambientState = { master, sources: [src], oscs: [], intervals: [] };
     } catch (e) {
-      console.warn('Failed to load ambient sound:', e);
+      /* silently ignore ambient load failure */
     }
   }
 
@@ -369,6 +369,14 @@
     S.running = false; if (S.rafId) cancelAnimationFrame(S.rafId); S.rafId = null; renderTimer();
   }
   function resetTimer() { pauseTimer(); S.remainSec = S.totalSec; renderTimer(); updateTitle(); }
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible' && S.running) {
+      S.remainSec = Math.max(0, S.pausedRemain - Math.floor((Date.now() - S.startedAt) / 1000));
+      if (S.remainSec <= 0) { onPhaseEnd(); }
+      else { renderTimer(); updateTitle(); }
+    }
+  });
 
   function onPhaseEnd() {
     pauseTimer(); playAlert();

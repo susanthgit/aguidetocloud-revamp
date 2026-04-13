@@ -16,7 +16,7 @@ faq:
   - question: "Does this typing test work on mobile?"
     answer: "Technically yes, but typing tests are designed for physical keyboards. On-screen keyboards introduce latency and don't measure true typing speed. For accurate results, use a desktop or laptop with a physical keyboard."
   - question: "Is my data saved? Is it private?"
-    answer: "Your test history and personal bests are saved in your browser's localStorage — they never leave your device. No data is sent to any server. Clearing your browser data will reset your stats. 100% private by design."
+    answer: "Your test history and personal bests are saved in your browser's localStorage — they never leave your device. No data is sent to any server. Clearing your browser data will reset your stats. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
   - question: "What is the difference between WPM and CPM?"
     answer: "CPM (Characters Per Minute) counts every individual character typed. WPM (Words Per Minute) divides CPM by 5 (the standard word length). So 300 CPM = 60 WPM. WPM is the more common metric because it's easier to understand and compare."
   - question: "What does Consistency mean in the results?"

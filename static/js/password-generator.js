@@ -828,8 +828,13 @@
       sSec.style.display = 'none';
     }
 
-    // Trigger HIBP breach check (debounced separately)
-    checkHIBP(pw);
+    // Trigger HIBP breach check only if opt-in checkbox is checked
+    if ($('#pwgen-breach-toggle') && $('#pwgen-breach-toggle').checked) {
+      checkHIBP(pw);
+    } else {
+      var bs = $('#pwgen-breach-section');
+      if (bs) bs.style.display = 'none';
+    }
   }
 
   function compBar(label, value, max, color) {
@@ -1189,6 +1194,20 @@
       checkInput.type = S.checkVisible ? 'text' : 'password';
       $('#pwgen-check-eye').textContent = S.checkVisible ? '🔒' : '👁️';
     });
+
+    // ── Breach toggle opt-in ──
+    var breachToggle = $('#pwgen-breach-toggle');
+    if (breachToggle) {
+      breachToggle.addEventListener('change', function () {
+        var pw = $('#pwgen-check-input').value || S.password;
+        if (breachToggle.checked && pw) {
+          checkHIBP(pw);
+        } else {
+          var bs = $('#pwgen-breach-section');
+          if (bs) bs.style.display = 'none';
+        }
+      });
+    }
 
     // ── Passphrase builder tab ──
     $('#pwgen-pp-chips').addEventListener('click', e => {

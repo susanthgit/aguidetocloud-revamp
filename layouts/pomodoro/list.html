@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Pomodoro Focus Timer",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "Any",

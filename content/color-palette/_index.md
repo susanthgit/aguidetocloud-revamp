@@ -18,7 +18,7 @@ faq:
   - question: "Can I export my palette to Tailwind CSS?"
     answer: "Yes! The export menu supports CSS custom properties, SCSS variables, Tailwind config, JSON, PNG swatch images and SVG. Click the export button on the Generate tab to choose your format."
   - question: "Is this colour palette generator really free?"
-    answer: "Completely free, forever. No sign-up, no ads, no watermarks. It runs 100% in your browser so your data never leaves your device. Zero API calls, zero cost."
+    answer: "Completely free, forever. No sign-up, no ads, no watermarks. It runs in your browser so your data never leaves your device. Zero API calls, zero cost. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
   - question: "What are colour harmony rules?"
     answer: "Colour harmony rules are based on the colour wheel. Complementary uses opposite colours for high contrast. Analogous uses neighbouring colours for cohesion. Triadic uses three evenly spaced colours for vibrant balance. Monochromatic uses shades of one hue for elegant simplicity. Split-complementary and tetradic offer more complex but balanced combinations."
 ---

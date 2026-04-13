@@ -14,7 +14,7 @@ faq:
   - question: "Does the Pomodoro Technique work for studying?"
     answer: "Absolutely. The technique is especially effective for studying because it combats procrastination, creates urgency, and forces regular review breaks where your brain consolidates information. Many students report significantly better retention when using timed study sessions with breaks."
   - question: "Is my data saved? Is it private?"
-    answer: "All your data — tasks, settings, and statistics — is saved in your browser's localStorage. Nothing is ever sent to a server. Your data stays on your device, completely private. If you clear your browser data, your stats will be reset."
+    answer: "All your data — tasks, settings, and statistics — is saved in your browser's localStorage. Nothing is ever sent to a server. Your data stays on your device, completely private. If you clear your browser data, your stats will be reset. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
   - question: "Can I customise the timer intervals?"
     answer: "Yes! In the Settings tab you can adjust focus duration (1–90 min), short break (1–30 min), long break (1–60 min), and how many sessions before a long break. You can also toggle auto-start for breaks and focus sessions."
   - question: "What are the ambient sounds?"

@@ -10,7 +10,7 @@ faq:
   - question: "Is this image compressor really free?"
     answer: "Yes — completely free, forever. No sign-up, no watermarks. It runs 100% in your browser using the Canvas API, so there's nothing to pay for — not even server costs. You can compress up to 20 images at once."
   - question: "Are my images uploaded to a server?"
-    answer: "No. Your images never leave your device. All compression, resizing, and conversion happens locally in your browser using the HTML5 Canvas API. This is fundamentally different from tools like TinyPNG that upload your images to remote servers."
+    answer: "No. Your images never leave your device. All compression, resizing, and conversion happens locally in your browser using the HTML5 Canvas API. This is fundamentally different from tools like TinyPNG that upload your images to remote servers. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
   - question: "What image formats are supported?"
     answer: "Input: JPEG, PNG, WebP, GIF, and HEIC/HEIF (iPhone photos). Output: JPEG, PNG, WebP, and AVIF (in supported browsers like Chrome and Edge). You can convert between formats — for example, convert a heavy PNG to a much smaller WebP."
   - question: "How much can it compress my images?"
