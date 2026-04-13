@@ -1,4 +1,11 @@
 {{ define "main" }}
+<!-- Pagefind: hidden searchable content for this JS-rendered page -->
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h1>Microsoft Service Health Tracker — M365 and Azure Outage Dashboard</h1>
+  <p>Monitor Microsoft 365 and Azure service health in real time. 32 services tracked every 2 hours. Incident timeline with severity indicators, duration bars, region badges, and communication updates.</p>
+  <p>Services: Teams, Outlook, SharePoint, OneDrive, Exchange, Intune, Entra ID, Purview, Viva, Power Platform, Azure, Dynamics 365, and more.</p>
+  <p>Features: active incident alerts, historical timeline, search, service and status filters, incident detail with updates, monthly trend chart, most-affected leaderboard, date lookup, CSV export, RSS feed.</p>
+</div>
 <link rel="stylesheet" href="/css/service-health.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="Microsoft Service Health Incidents" href="/data/service-health/feed.xml">
 

@@ -1,4 +1,11 @@
 {{ define "main" }}
+<!-- Pagefind: hidden searchable content for this JS-rendered page -->
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h1>Copilot Feature Matrix — Microsoft 365 Copilot Feature Comparison</h1>
+  <p>Compare Microsoft 365 Copilot features across 4 tiers: Free, Copilot Chat, Copilot Pro, and M365 Copilot. See which features are available in which apps and which licence tier.</p>
+  <p>Apps: Word, Excel, PowerPoint, Outlook, Teams, OneNote, Loop, Whiteboard, Forms, Planner, Stream, Clipchamp, Designer, Sway, Copilot Chat.</p>
+  <p>Features: compare tiers side-by-side, view by app, what changed timeline, full feature matrix grid, search, category and licence filters, consumer vs enterprise split, quick start buttons.</p>
+</div>
 <link rel="stylesheet" href="/css/copilot-matrix.css?v={{ site.Params.cache_version }}">
 
 {{/* ── Inject TOML data as JSON for JS ── */}}

@@ -1,4 +1,10 @@
 {{ define "main" }}
+<!-- Pagefind: hidden searchable content for this JS-rendered page -->
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h1>Community Feedback — Feature Requests, Bug Reports, and Ideas</h1>
+  <p>Share feedback, request features, report bugs, suggest video topics, and share content ideas for A Guide to Cloud &amp; AI tools. No login required.</p>
+  <p>Categories: feature requests, bug reports, video requests, tool feedback, content ideas, general feedback, questions.</p>
+</div>
 <link rel="stylesheet" href="/css/feedback.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "title" "Community Feedback" "subtitle" "Ask questions, suggest features, request videos — help us build better tools for the cloud community" "accent" "#FBBF24") }}
