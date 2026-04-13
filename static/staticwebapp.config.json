@@ -1,61 +1,155 @@
 {
   "routes": [
-    { "route": "/hiking/*", "redirect": "/", "statusCode": 301 },
-    { "route": "/hiking", "redirect": "/", "statusCode": 301 },
-    { "route": "/books/*", "redirect": "/", "statusCode": 301 },
-    { "route": "/books", "redirect": "/", "statusCode": 301 },
-    { "route": "/interview-questions/microsoft-365-interview-questions", "redirect": "/interview-prep/", "statusCode": 301 },
-    { "route": "/interview-questions/azure-interview-qa", "redirect": "/interview-prep/", "statusCode": 301 },
-    { "route": "/interview-questions/avdvsw365-interview-qa", "redirect": "/interview-prep/", "statusCode": 301 },
-    { "route": "/interview-questions/*", "redirect": "/interview-prep/", "statusCode": 301 },
-    { "route": "/interview-questions", "redirect": "/interview-prep/", "statusCode": 301 },
-    { "route": "/study-guides/windows365", "redirect": "/cert-tracker/", "statusCode": 301 },
-    { "route": "/study-guides/azureai", "redirect": "/cert-tracker/ai-900/", "statusCode": 301 },
-    { "route": "/study-guides/azurestudyguide", "redirect": "/cert-tracker/az-900/", "statusCode": 301 },
-    { "route": "/study-guides/m365-copilot", "redirect": "/copilot-matrix/", "statusCode": 301 },
-    { "route": "/study-guides/teams", "redirect": "/cert-tracker/ms-700/", "statusCode": 301 },
-    { "route": "/study-guides/*", "redirect": "/cert-tracker/", "statusCode": 301 },
-    { "route": "/study-guides", "redirect": "/cert-tracker/", "statusCode": 301 },
-    { "route": "/bootcamps/microsoft-purview1", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/bootcamps/microsoft-purview2", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/bootcamps/microsoftsentinel", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/bootcamps/researcher-agent", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/productivity-agents", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/copilot-studio-1", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/copilot-studio2", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/copilo-agent", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/m365-copilot", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/bootcamps/prompt-engineering2", "redirect": "/prompt-guide/", "statusCode": 301 },
-    { "route": "/bootcamps/*", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/bootcamps", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest/intune-epm", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest/w365reporting", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest/copilot-for-security", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest/teams-premium", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest/*", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/guest", "redirect": "/cloud-labs/", "statusCode": 301 },
-    { "route": "/exam-qa/az500-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/az900-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/dp900-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/az-104qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/sc-900-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/az204-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/ms900-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/exam-qa/az305-qa", "redirect": "/exam-qa/", "statusCode": 301 },
-    { "route": "/full-courses/dp-900fulcourse", "redirect": "/certifications/dp-900-full-course-azure-data-fundamentals-certification-training/", "statusCode": 301 },
-    { "route": "/full-courses/ms700fullcourse", "redirect": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification-training/", "statusCode": 301 },
-    { "route": "/full-courses/ai900fullcourse", "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/", "statusCode": 301 },
-    { "route": "/full-courses/az400fullcourse", "redirect": "/certifications/az-400-full-course-microsoft-devops-engineer-certification-training/", "statusCode": 301 },
-    { "route": "/full-courses/*", "redirect": "/certifications/", "statusCode": 301 },
-    { "route": "/full-courses", "redirect": "/certifications/", "statusCode": 301 },
-    { "route": "/courses/ms-100", "redirect": "/certifications/", "statusCode": 301 },
-    { "route": "/ai-hub/v/*", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/ai-hub/ai-security", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/ai-hub/azure-ai", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/ai-hub/m365-copilot", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/ai-hub/prompt-engineering", "redirect": "/prompt-guide/", "statusCode": 301 },
-    { "route": "/ai-hub/whats-new-in-m365-copilot", "redirect": "/ai-hub/", "statusCode": 301 },
-    { "route": "/ai-hub/copilot-studio", "redirect": "/ai-hub/", "statusCode": 301 },
+    {
+      "route": "/hiking/*",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/hiking",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/books/*",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/books",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/interview-questions/*",
+      "redirect": "/interview-prep/",
+      "statusCode": 301
+    },
+    {
+      "route": "/interview-questions",
+      "redirect": "/interview-prep/",
+      "statusCode": 301
+    },
+    {
+      "route": "/study-guides/*",
+      "redirect": "/cert-tracker/",
+      "statusCode": 301
+    },
+    {
+      "route": "/study-guides",
+      "redirect": "/cert-tracker/",
+      "statusCode": 301
+    },
+    {
+      "route": "/bootcamps/*",
+      "redirect": "/cloud-labs/",
+      "statusCode": 301
+    },
+    {
+      "route": "/bootcamps",
+      "redirect": "/cloud-labs/",
+      "statusCode": 301
+    },
+    {
+      "route": "/guest/*",
+      "redirect": "/cloud-labs/",
+      "statusCode": 301
+    },
+    {
+      "route": "/guest",
+      "redirect": "/cloud-labs/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/az500-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/az900-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/dp900-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/az-104qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/sc-900-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/az204-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/ms900-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/exam-qa/az305-qa",
+      "redirect": "/exam-qa/",
+      "statusCode": 301
+    },
+    {
+      "route": "/full-courses/*",
+      "redirect": "/certifications/",
+      "statusCode": 301
+    },
+    {
+      "route": "/full-courses",
+      "redirect": "/certifications/",
+      "statusCode": 301
+    },
+    {
+      "route": "/courses/ms-100",
+      "redirect": "/certifications/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/v/*",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/ai-security",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/azure-ai",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/m365-copilot",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/prompt-engineering",
+      "redirect": "/prompt-guide/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/whats-new-in-m365-copilot",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/copilot-studio",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
     {
       "route": "/courses/az-900",
       "redirect": "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/",
@@ -197,150 +291,88 @@
       "statusCode": 301
     },
     {
-      "route": "/full-courses/az900fullcourse",
-      "redirect": "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-104-fullcourse",
-      "redirect": "/certifications/az-104-full-course-microsoft-azure-administrator-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-204-fullcourse",
-      "redirect": "/certifications/az-204-full-course-azure-developer-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-303-fullcourse",
-      "redirect": "/certifications/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-304-fullcourse",
-      "redirect": "/certifications/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-400-fullcourse",
-      "redirect": "/certifications/az-400-full-course-microsoft-devops-engineer-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/az-500-fullcourse",
-      "redirect": "/certifications/az-500-full-course-microsoft-azure-security-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/ms-100-fullcourse",
-      "redirect": "/certifications/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/ms-500-fullcourse",
-      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/ms-700-fullcourse",
-      "redirect": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/ms-900-fullcourse",
-      "redirect": "/certifications/ms-900-full-course-microsoft-365-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/sc-900-fullcourse",
-      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/pl-900-fullcourse",
-      "redirect": "/certifications/pl-900-full-course-power-platform-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/dp-900-fullcourse",
-      "redirect": "/certifications/dp-900-full-course-azure-data-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/full-courses/ai-900-fullcourse",
-      "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/bootcamps/azure-migrate",
-      "redirect": "/cloud-labs/",
-      "statusCode": 301
-    },
-    {
-      "route": "/bootcamps/azure-firewall",
-      "redirect": "/cloud-labs/",
-      "statusCode": 301
-    },
-    {
-      "route": "/bootcamps/azure-networking",
-      "redirect": "/cloud-labs/",
-      "statusCode": 301
-    },
-    {
       "route": "/data/ainews/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=1800"
+      }
     },
     {
       "route": "/data/roadmap/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=1800"
+      }
     },
     {
       "route": "/data/cert-tracker/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=3600"
+      }
     },
     {
       "route": "/data/service-health/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=1800"
+      }
     },
     {
       "route": "/data/deprecation-timeline/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=1800" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=1800"
+      }
     },
     {
       "route": "/data/copilot-matrix/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=3600"
+      }
     },
     {
       "route": "/data/ai-mapper/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=3600"
+      }
     },
     {
       "route": "/data/ai-showdown/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=3600"
+      }
     },
     {
       "route": "/data/roi-calculator/*",
-      "headers": { "Cache-Control": "public, must-revalidate, max-age=3600" }
+      "headers": {
+        "Cache-Control": "public, must-revalidate, max-age=3600"
+      }
     },
     {
       "route": "/css/*",
-      "headers": { "Cache-Control": "public, max-age=86400" }
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
     },
     {
       "route": "/js/*",
-      "headers": { "Cache-Control": "public, max-age=86400" }
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
     },
     {
       "route": "/images/*",
-      "headers": { "Cache-Control": "public, max-age=86400" }
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
     },
     {
       "route": "/fonts/*",
-      "headers": { "Cache-Control": "public, max-age=86400" }
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
     },
     {
       "route": "/api/stats",
-      "headers": { "Cache-Control": "public, max-age=300" }
+      "headers": {
+        "Cache-Control": "public, max-age=300"
+      }
     }
   ],
   "responseOverrides": {
