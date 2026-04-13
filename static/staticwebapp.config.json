@@ -1,5 +1,11 @@
 {
   "routes": [
+    { "route": "/Technical", "redirect": "/", "statusCode": 301 },
+    { "route": "/Technical/*", "redirect": "/", "statusCode": 301 },
+    { "route": "/cart", "redirect": "/", "statusCode": 301 },
+    { "route": "/music/lofi", "redirect": "/music/", "statusCode": 301 },
+    { "route": "/music/edm", "redirect": "/music/", "statusCode": 301 },
+    { "route": "/music/rain*", "redirect": "/music/", "statusCode": 301 },
     {
       "route": "/hiking/*",
       "redirect": "/",
