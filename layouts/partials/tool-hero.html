@@ -8,18 +8,21 @@
   <div class="tool-hero-inner">
     <h1 class="tool-hero-title">{{ .title }}</h1>
     {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
-    {{/* Auto-detect counter from data file */}}
+    {{/* Counter + Ko-fi row */}}
     {{ $url := $p.RelPermalink }}
     {{ $counters := site.Data.tool_counters.tools }}
-    {{ range $counters }}
-      {{ if eq .url $url }}
-    <div class="tool-counter" data-base="{{ .base }}" aria-hidden="true">
-      <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 .base }}</span>
-      <span class="tool-counter-verb">{{ .verb }}</span>
-    </div>
-    <span class="sr-only">{{ lang.FormatNumberCustom 0 .base }} {{ .verb }}</span>
+    <div class="tool-hero-badges">
+      {{ range $counters }}
+        {{ if eq .url $url }}
+      <div class="tool-counter" data-base="{{ .base }}" aria-hidden="true">
+        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 .base }}</span>
+        <span class="tool-counter-verb">{{ .verb }}</span>
+      </div>
+      <span class="sr-only">{{ lang.FormatNumberCustom 0 .base }} {{ .verb }}</span>
+        {{ end }}
       {{ end }}
-    {{ end }}
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support on Ko-fi</a>
+    </div>
     {{ partial "tool-prev-next.html" $p }}
   </div>
 </div>

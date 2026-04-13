@@ -1020,9 +1020,17 @@ a:hover {
 }
 
 /* ── TOOL USAGE COUNTER (social proof) ── */
-.tool-counter {
-  display: inline-block;
+.tool-hero-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   margin: 1rem auto 0;
+}
+.tool-counter {
+  display: inline-flex;
+  align-items: center;
   padding: 0.5rem 1.4rem;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.85);
@@ -1046,6 +1054,48 @@ a:hover {
 .tool-counter-verb {
   opacity: 0.8;
   margin-left: 0.15em;
+}
+
+/* ── KO-FI SUPPORT BUTTON ────────────── */
+.kofi-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 94, 91, 0.15);
+  border: 1px solid rgba(255, 94, 91, 0.5);
+  border-radius: 999px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(255, 94, 91, 0.15);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.kofi-btn:hover {
+  background: rgba(255, 94, 91, 0.3);
+  border-color: rgba(255, 94, 91, 0.8);
+  box-shadow: 0 0 20px rgba(255, 94, 91, 0.3);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Footer Ko-fi line */
+.footer-kofi {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.3rem 0 0.8rem;
+}
+.footer-kofi .kofi-link {
+  color: #FF5E5B;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-kofi .kofi-link:hover {
+  color: #ff8785;
+  text-decoration: underline;
 }
 
 /* ── TOOL PREV/NEXT NAV ────────────────── */
