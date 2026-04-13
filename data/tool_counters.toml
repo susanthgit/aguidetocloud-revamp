@@ -135,3 +135,13 @@ verb = "palettes generated"
 url = "/pomodoro/"
 base = 100
 verb = "focus sessions started"
+
+[[tools]]
+url = "/site-analytics/"
+base = 60
+verb = "analytics views"
+
+[[tools]]
+url = "/feedback/"
+base = 240
+verb = "feedback submissions"
