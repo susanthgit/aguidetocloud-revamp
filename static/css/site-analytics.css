@@ -105,6 +105,12 @@
   padding: 1.5rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+}
+
+.siteana-card canvas {
+  max-height: 220px;
+  width: 100% !important;
 }
 
 .siteana-card-title {

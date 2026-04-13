@@ -57,12 +57,20 @@
 
   // Fetch and render
   fetch(API).then(function(r) { return r.json(); }).then(render).catch(function() {
-    document.querySelectorAll('.siteana-panel').forEach(function(p) {
-      if (!p.querySelector('.siteana-empty')) {
-        p.innerHTML += '<div class="siteana-empty">📊 No analytics data yet. Data will appear once the tracking is live.</div>';
-      }
-    });
+    showEmptyState();
   });
+
+  function showEmptyState() {
+    ['sa-leaderboard', 'sa-most-viewed', 'sa-most-used', 'sa-searches'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && !el.innerHTML.trim()) el.innerHTML = '<div class="siteana-empty">📊 No data yet — check back after a few days of traffic.</div>';
+    });
+    // Hide chart canvases when empty
+    ['sa-trend-chart', 'sa-activity-chart'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.parentElement.innerHTML = '<div class="siteana-empty">📈 Charts will appear once data starts flowing.</div>';
+    });
+  }
 
   function render(data) {
     // Stats bar
@@ -74,11 +82,17 @@
     el = document.getElementById('sa-today-views');
     if (el) el.textContent = roundDisplay((data.today.views || 0) + (data.today.actions || 0));
 
-    renderTrendChart(data.trend);
-    renderActivityChart(data.leaderboard);
-    renderLeaderboard(data.leaderboard);
-    renderTopList('sa-most-viewed', data.leaderboard, 'views');
-    renderTopList('sa-most-used', data.leaderboard, 'actions');
+    var hasData = data.leaderboard && data.leaderboard.length > 0;
+
+    if (hasData) {
+      renderTrendChart(data.trend);
+      renderActivityChart(data.leaderboard);
+      renderLeaderboard(data.leaderboard);
+      renderTopList('sa-most-viewed', data.leaderboard, 'views');
+      renderTopList('sa-most-used', data.leaderboard, 'actions');
+    } else {
+      showEmptyState();
+    }
     renderSearches(data.top_searches);
   }
 
