@@ -696,6 +696,11 @@
 .wclk-timeline-hour.period-evening { background: rgba(249, 115, 22, 0.2); }
 .wclk-timeline-hour.period-night { background: rgba(139, 92, 246, 0.15); }
 .wclk-timeline-hour.golden { box-shadow: inset 0 0 0 2px var(--wclk-green); }
+.wclk-timeline-hour.slider-active {
+  box-shadow: inset 0 0 0 2px var(--wclk);
+  z-index: 2;
+  position: relative;
+}
 
 .wclk-timeline-remove {
   background: none;

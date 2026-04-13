@@ -60,12 +60,14 @@
   <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
     <div class="search-modal-inner">
       <button id="search-close" class="search-modal-close" aria-label="Close search">&times;</button>
-      <input id="search-input" class="search-input" type="text" placeholder="Search videos... (Ctrl+K)" autocomplete="off" aria-label="Search videos">
-      <div id="search-results" class="search-results"></div>
+      <div id="pagefind-container"></div>
     </div>
   </div>
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+  <link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}">
+  <script src="/pagefind/pagefind-ui.js" defer></script>
   <script src="/js/switcher.js" defer></script>
-  <script src="/js/search.js" defer></script>
+  <script src="/js/search-init.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>

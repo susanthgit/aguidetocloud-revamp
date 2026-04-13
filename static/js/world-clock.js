@@ -364,6 +364,15 @@ function setupSearch(inputId, resultsId, onSelect, excludeFn) {
 
 function initWorldClock() {
   loadState();
+  // URL params override localStorage cities (for shareable links)
+  const urlCities = new URLSearchParams(window.location.search).get('cities');
+  if (urlCities) {
+    S.clocks = [];
+    urlCities.split(',').forEach(name => {
+      const c = findCity(name.trim());
+      if (c && !S.clocks.find(x => x.city === c.city)) S.clocks.push(c);
+    });
+  }
 
   // Format toggle
   const toggle = document.getElementById('wclk-format-toggle');
@@ -732,12 +741,27 @@ function renderSliderResults() {
   const container = document.getElementById('wclk-slider-results');
   if (!slider || !container) return;
 
-  const halfHourIdx = parseInt(slider.value);
-  const hour = Math.floor(halfHourIdx / 2);
-  const minute = (halfHourIdx % 2) * 30;
-  const localTimeStr = formatHourAmPm(hour) + (minute === 30 ? ':30' : '');
+  const quarterIdx = parseInt(slider.value); // 0-95 = 15-min slots
+  const hour = Math.floor(quarterIdx / 4);
+  const minute = (quarterIdx % 4) * 15;
+  const minStr = minute > 0 ? ':' + String(minute).padStart(2, '0') : '';
+  const localTimeStr = formatHourAmPm(hour) + minStr;
 
   if (label) label.textContent = localTimeStr;
+
+  // Sync vertical highlight line on timeline
+  const timelineBar = document.querySelector('.wclk-timeline-bar');
+  document.querySelectorAll('.wclk-timeline-hour.slider-active').forEach(el => el.classList.remove('slider-active'));
+  if (timelineBar) {
+    const highlightHour = hour;
+    document.querySelectorAll(`.wclk-timeline-hour`).forEach(el => {
+      // Each bar has 24 children — find the Nth child matching this hour
+      const parent = el.parentElement;
+      if (!parent || !parent.classList.contains('wclk-timeline-bar')) return;
+      const idx = Array.from(parent.children).indexOf(el);
+      if (idx === highlightHour) el.classList.add('slider-active');
+    });
+  }
 
   if (S.clocks.length === 0) {
     container.innerHTML = '<div class="wclk-hint" style="padding:0.5rem 0">👆 Add cities above — their times will appear here as you drag</div>';
@@ -761,6 +785,7 @@ function renderSliderResults() {
       <span class="wclk-sc-period ${period.cls}">${period.label}</span>
     </div>`;
   }).join('');
+  saveUrlState();
 }
 
 function scoreHour(h, baseDate, participants) {
@@ -950,9 +975,9 @@ function renderMeetingTimeline() {
     }
   }
 
-  // Copy summary button
+  // Copy + Share buttons
   if (summaryContainer && S.clocks.length >= 2) {
-    summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">📋 Copy Meeting Summary</button>`;
+    summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">📋 Copy Summary</button> <button class="wclk-copy-btn" id="wclk-share-link">🔗 Share Link</button>`;
     document.getElementById('wclk-copy-meeting').addEventListener('click', () => {
       let text = `Meeting Time Comparison (${dateInput.value}, ${S.duration} min):\n`;
       const bestHour = goldenHours.length > 0 ? goldenHours[0] : (hourScores.sort((a,b) => b.score - a.score)[0] || { hour: 9 }).hour;
@@ -966,12 +991,23 @@ function renderMeetingTimeline() {
         const icon = cls === 'biz' ? '✅' : cls === 'ext' ? '⚠️' : '🔴';
         text += `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)} ${icon} (${getUtcOffset(p.tz, baseDate)})\n`;
       });
+      text += `\n🔗 ${window.location.href}`;
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('wclk-copy-meeting');
         btn.textContent = '✅ Copied!';
-        setTimeout(() => { btn.textContent = '📋 Copy Meeting Summary'; }, 2000);
+        setTimeout(() => { btn.textContent = '📋 Copy Summary'; }, 2000);
       }).catch(() => {
         prompt('Copy this meeting summary:', text);
+      });
+    });
+    document.getElementById('wclk-share-link').addEventListener('click', () => {
+      saveUrlState();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = document.getElementById('wclk-share-link');
+        btn.textContent = '✅ Link Copied!';
+        setTimeout(() => { btn.textContent = '🔗 Share Link'; }, 2000);
+      }).catch(() => {
+        prompt('Copy this link:', window.location.href);
       });
     });
   } else if (summaryContainer) {
@@ -980,6 +1016,7 @@ function renderMeetingTimeline() {
 
   // Also update slider results when timeline changes
   renderSliderResults();
+  saveUrlState();
 }
 
 /* ═══════════════════════════════════
@@ -1042,6 +1079,39 @@ function showDstInfo(city) {
 }
 
 /* ═══════════════════════════════════
+   URL STATE — shareable links
+   ═══════════════════════════════════ */
+
+function saveUrlState() {
+  const params = new URLSearchParams();
+  if (S.clocks.length > 0) params.set('cities', S.clocks.map(c => c.city).join(','));
+  const dateInput = document.getElementById('wclk-meeting-date');
+  if (dateInput && dateInput.value) params.set('date', dateInput.value);
+  const slider = document.getElementById('wclk-time-slider');
+  if (slider) params.set('t', slider.value);
+  if (S.duration !== 60) params.set('dur', S.duration);
+  if (!S.use24h) params.set('fmt', '12');
+  const hash = window.location.hash;
+  const qs = params.toString();
+  history.replaceState(null, '', qs ? '?' + qs + hash : window.location.pathname + hash);
+}
+
+function loadUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('cities')) {
+    const names = params.get('cities').split(',');
+    S.clocks = [];
+    names.forEach(name => {
+      const c = findCity(name.trim());
+      if (c) S.clocks.push(c);
+    });
+  }
+  if (params.has('dur')) S.duration = parseInt(params.get('dur')) || 60;
+  if (params.has('fmt') && params.get('fmt') === '12') S.use24h = false;
+  return params;
+}
+
+/* ═══════════════════════════════════
    INIT
    ═══════════════════════════════════ */
 
@@ -1051,6 +1121,28 @@ document.addEventListener('DOMContentLoaded', () => {
   initConvert();
   initMeetingPlanner();
   initDstGuide();
+
+  // Restore URL state for date and slider after init
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('date')) {
+    const dateInput = document.getElementById('wclk-meeting-date');
+    if (dateInput) dateInput.value = urlParams.get('date');
+  }
+  if (urlParams.has('t')) {
+    const slider = document.getElementById('wclk-time-slider');
+    if (slider) slider.value = urlParams.get('t');
+  }
+  if (urlParams.has('dur')) {
+    const durSelect = document.getElementById('wclk-duration');
+    if (durSelect) durSelect.value = urlParams.get('dur');
+  }
+  // Re-render if URL had state
+  if (urlParams.has('cities')) {
+    renderClocks();
+    updateQuickButtons();
+    renderMeetingTimeline();
+    renderSliderResults();
+  }
 });
 
 })();
