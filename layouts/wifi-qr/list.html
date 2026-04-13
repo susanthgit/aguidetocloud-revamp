@@ -1,0 +1,149 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/wifi-qr.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WiFi QR Code Generator",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $q.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#22D3EE" "title" "WiFi QR Code Generator" "subtitle" "Create a beautiful printable WiFi card your guests scan to connect instantly. Perfect for homes, cafés, hotels & offices. Free, private, no sign-up.") }}
+
+<div class="wifiqr-page">
+
+  <div class="wifiqr-form-section">
+
+    {{/* ── Left: Form ── */}}
+    <div>
+      <div class="wifiqr-form">
+        <div class="wifiqr-section-title">📶 Your WiFi Details</div>
+
+        <div class="wifiqr-field">
+          <label class="wifiqr-label" for="wifiqr-ssid">Network Name (SSID)</label>
+          <input type="text" class="wifiqr-input" id="wifiqr-ssid" placeholder="MyWiFiNetwork">
+        </div>
+
+        <div class="wifiqr-field">
+          <label class="wifiqr-label" for="wifiqr-pass">Password</label>
+          <div class="wifiqr-pass-wrap">
+            <input type="password" class="wifiqr-input" id="wifiqr-pass" placeholder="Enter password" style="padding-right:2.5rem">
+            <button type="button" class="wifiqr-pass-toggle" id="wifiqr-pass-toggle" title="Show password" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="wifiqr-row">
+          <div class="wifiqr-field">
+            <label class="wifiqr-label" for="wifiqr-enc">Encryption</label>
+            <select class="wifiqr-select" id="wifiqr-enc">
+              <option value="WPA">WPA/WPA2</option>
+              <option value="SAE">WPA3</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">None (Open)</option>
+            </select>
+          </div>
+          <div class="wifiqr-field" style="justify-content:flex-end">
+            <div class="wifiqr-check-row">
+              <input type="checkbox" id="wifiqr-hidden">
+              <label for="wifiqr-hidden">Hidden network</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{/* ── Card Template Picker ── */}}
+      <div class="wifiqr-form" style="margin-top:1rem">
+        <div class="wifiqr-section-title">🎨 Card Design</div>
+        <div class="wifiqr-templates">
+          <div class="wifiqr-template-grid" id="wifiqr-templates">
+            <button class="wifiqr-template-btn active" data-theme="home">🏠 Home</button>
+            <button class="wifiqr-template-btn" data-theme="cafe">☕ Café</button>
+            <button class="wifiqr-template-btn" data-theme="hotel">🏨 Hotel</button>
+            <button class="wifiqr-template-btn" data-theme="office">🏢 Office</button>
+          </div>
+        </div>
+        <div class="wifiqr-field">
+          <label class="wifiqr-label" for="wifiqr-custom-heading">Custom Heading (optional)</label>
+          <input type="text" class="wifiqr-input" id="wifiqr-custom-heading" placeholder="e.g. Welcome to Our Home!">
+        </div>
+      </div>
+
+      {{/* ── Cross-link ── */}}
+      <div class="wifiqr-upsell">
+        Need more than WiFi? Try our <a href="/qr-generator/">full QR Code Generator</a> — URLs, email, phone, vCards, batch mode & custom styling.
+      </div>
+    </div>
+
+    {{/* ── Right: Preview Card ── */}}
+    <div class="wifiqr-preview-wrap">
+      <div class="wifiqr-card theme-home" id="wifiqr-card">
+        <div class="wifiqr-card-icon" id="wifiqr-card-icon">📶</div>
+        <div class="wifiqr-card-heading" id="wifiqr-card-heading">Scan to Connect</div>
+        <div class="wifiqr-card-instruction">Point your phone camera at the QR code to join the WiFi network</div>
+        <div class="wifiqr-card-qr" id="wifiqr-card-qr">
+          <div style="color:rgba(255,255,255,0.3); font-size:0.85rem; padding:2rem">Enter your WiFi details</div>
+        </div>
+        <div class="wifiqr-card-network" id="wifiqr-card-network">Network: <strong>—</strong></div>
+        <div class="wifiqr-card-footer">Generated at aguidetocloud.com/wifi-qr</div>
+      </div>
+
+      <div class="wifiqr-actions">
+        <button class="wifiqr-btn-primary wifiqr-btn" id="wifiqr-print">🖨️ Print Card</button>
+        <button class="wifiqr-btn" id="wifiqr-download">⬇ Download PNG</button>
+        <button class="wifiqr-btn" id="wifiqr-share">🔗 Share</button>
+      </div>
+    </div>
+
+  </div>
+
+  {{/* ── Visible FAQ ── */}}
+  {{ if .Params.faq }}
+  <div class="wifiqr-form" style="margin-top:2.5rem">
+    <div class="wifiqr-section-title">Frequently Asked Questions</div>
+    <div style="display:flex; flex-direction:column; gap:1rem">
+      {{ range $i, $q := .Params.faq }}
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
+        <strong style="color:#22D3EE; font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $q.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* ── Back nav ── */}}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+
+  {{/* ── Pagefind ── */}}
+  <div class="wifiqr-searchable" data-pagefind-body>
+    <h2>WiFi QR Code Generator</h2>
+    <p>Create printable WiFi QR codes for homes, cafes, hotels and offices. Guests scan to connect instantly. Beautiful card designs. Free, private, no sign-up.</p>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+<script src="/js/wifi-qr.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

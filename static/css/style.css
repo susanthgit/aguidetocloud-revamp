@@ -1142,6 +1142,7 @@ a:hover {
 .page-ps-builder .site-nav { --nav-accent: rgba(74, 222, 128, 0.35); }
 .page-free-tools .site-nav { --nav-accent: rgba(196, 117, 91, 0.4); }
 .page-qr-generator .site-nav { --nav-accent: rgba(236, 72, 153, 0.35); }
+.page-wifi-qr .site-nav { --nav-accent: rgba(34, 211, 238, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

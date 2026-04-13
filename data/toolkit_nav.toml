@@ -117,6 +117,12 @@ name = "QR Code Generator"
 short = "QR Code"
 
 [[tools]]
+url = "/wifi-qr/"
+emoji = "📶"
+name = "WiFi QR Cards"
+short = "WiFi QR"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

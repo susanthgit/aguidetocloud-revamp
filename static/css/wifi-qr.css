@@ -1,0 +1,373 @@
+/* ══════════════════════════════════════════════════════════
+   WiFi QR Code Generator — Aqua #22D3EE
+   CSS namespace: .wifiqr-*
+   ══════════════════════════════════════════════════════════ */
+
+.wifiqr-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+/* ── Form Section ── */
+.wifiqr-form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .wifiqr-form-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wifiqr-form {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wifiqr-section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #22D3EE;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.wifiqr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.wifiqr-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.wifiqr-input,
+.wifiqr-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.wifiqr-input:focus,
+.wifiqr-select:focus {
+  outline: none;
+  border-color: #22D3EE;
+}
+
+.wifiqr-input::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.wifiqr-select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.wifiqr-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.wifiqr-check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wifiqr-check-row input[type="checkbox"] {
+  width: auto;
+}
+
+.wifiqr-check-row label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Password field with toggle ── */
+.wifiqr-pass-wrap {
+  position: relative;
+}
+
+.wifiqr-pass-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.wifiqr-pass-toggle:hover {
+  opacity: 1;
+}
+
+/* ── Card Templates ── */
+.wifiqr-templates {
+  margin-bottom: 1rem;
+}
+
+.wifiqr-template-grid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.wifiqr-template-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wifiqr-template-btn:hover {
+  background: rgba(34,211,238,0.1);
+  border-color: rgba(34,211,238,0.3);
+}
+
+.wifiqr-template-btn.active {
+  background: rgba(34,211,238,0.15);
+  border-color: #22D3EE;
+  color: #22D3EE;
+}
+
+/* ── Preview Card ── */
+.wifiqr-preview-wrap {
+  position: sticky;
+  top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .wifiqr-preview-wrap {
+    position: static;
+  }
+}
+
+/* ── The WiFi Card (the thing people print) ── */
+.wifiqr-card {
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+.wifiqr-card-icon {
+  font-size: 2.5rem;
+}
+
+.wifiqr-card-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.wifiqr-card-instruction {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  max-width: 240px;
+}
+
+.wifiqr-card-qr {
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: inline-flex;
+}
+
+.wifiqr-card-qr canvas,
+.wifiqr-card-qr svg {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wifiqr-card-network {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.wifiqr-card-network strong {
+  opacity: 1;
+}
+
+.wifiqr-card-footer {
+  font-size: 0.65rem;
+  opacity: 0.4;
+  margin-top: 0.5rem;
+}
+
+/* ── Card Themes ── */
+.wifiqr-card.theme-home {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.wifiqr-card.theme-home .wifiqr-card-qr {
+  background: rgba(255,255,255,0.95);
+}
+
+.wifiqr-card.theme-cafe {
+  background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+  color: #fef3c7;
+  border: 1px solid rgba(254,243,199,0.15);
+}
+.wifiqr-card.theme-cafe .wifiqr-card-qr {
+  background: rgba(254,243,199,0.95);
+}
+
+.wifiqr-card.theme-hotel {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  color: #e0e7ff;
+  border: 1px solid rgba(224,231,255,0.12);
+}
+.wifiqr-card.theme-hotel .wifiqr-card-qr {
+  background: rgba(255,255,255,0.95);
+}
+
+.wifiqr-card.theme-office {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1e293b;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.wifiqr-card.theme-office .wifiqr-card-qr {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Action Buttons ── */
+.wifiqr-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.wifiqr-btn {
+  background: rgba(34,211,238,0.15);
+  border: 1px solid rgba(34,211,238,0.3);
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  color: #22D3EE;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wifiqr-btn:hover {
+  background: rgba(34,211,238,0.25);
+  border-color: #22D3EE;
+}
+
+.wifiqr-btn-primary {
+  background: #22D3EE;
+  color: #0f172a;
+  border-color: #22D3EE;
+  font-weight: 600;
+}
+
+.wifiqr-btn-primary:hover {
+  background: #06b6d4;
+  border-color: #06b6d4;
+}
+
+/* ── Cross-link to full QR generator ── */
+.wifiqr-upsell {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.88rem;
+}
+
+.wifiqr-upsell a {
+  color: #22D3EE;
+  text-decoration: none;
+}
+
+.wifiqr-upsell a:hover {
+  text-decoration: underline;
+}
+
+/* ── Pagefind hidden block ── */
+.wifiqr-searchable {
+  display: none;
+}
+
+/* ── Print ── */
+@media print {
+  body * { visibility: hidden !important; }
+  .wifiqr-card, .wifiqr-card * { visibility: visible !important; }
+  .wifiqr-card {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .wifiqr-card.theme-office {
+    border: 2px solid #cbd5e1 !important;
+  }
+}
+
+/* ── Animation ── */
+@keyframes wifiqr-scaleIn {
+  from { transform: scale(0.92); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.wifiqr-card-qr canvas,
+.wifiqr-card-qr svg {
+  animation: wifiqr-scaleIn 0.25s ease-out;
+}
