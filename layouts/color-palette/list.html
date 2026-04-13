@@ -1,0 +1,318 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/color-palette.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Colour Palette Generator",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#F472B6" "title" "Colour Palette Generator" "subtitle" "Generate beautiful palettes with colour theory, extract from images, check WCAG contrast & simulate colour blindness. Press spacebar to create. 100% free, no sign-up.") }}
+
+<div class="palette-page">
+
+  {{/* ── Tabs ── */}}
+  <div class="palette-tabs" role="tablist">
+    <button class="palette-tab active" role="tab" data-tab="explore" aria-selected="true">✨ Explore</button>
+    <button class="palette-tab" role="tab" data-tab="generate">🎨 Generate</button>
+    <button class="palette-tab" role="tab" data-tab="blindness">👁️ Blindness</button>
+    <button class="palette-tab" role="tab" data-tab="contrast">🔍 Contrast</button>
+    <button class="palette-tab" role="tab" data-tab="extract">🖼️ Extract</button>
+  </div>
+
+  {{/* ══════════════ TAB 2: GENERATE ══════════════ */}}
+  <div class="palette-panel" id="panel-generate" role="tabpanel">
+
+    {{/* Harmony mode selector + Generate button */}}
+    <div class="palette-harmony-bar">
+      <button class="palette-btn palette-btn-primary palette-generate-btn" id="palette-generate-btn">🎲 Generate</button>
+      <label class="palette-harmony-label">Harmony</label>
+      <div class="palette-harmony-pills" id="palette-harmony-pills">
+        <button class="palette-pill active" data-mode="random">🎲 Random</button>
+        <button class="palette-pill" data-mode="complementary">↔️ Complementary</button>
+        <button class="palette-pill" data-mode="analogous">🌈 Analogous</button>
+        <button class="palette-pill" data-mode="triadic">△ Triadic</button>
+        <button class="palette-pill" data-mode="split">⋈ Split-Comp</button>
+        <button class="palette-pill" data-mode="monochromatic">◐ Mono</button>
+        <button class="palette-pill" data-mode="tetradic">◇ Tetradic</button>
+      </div>
+    </div>
+
+    {{/* Main swatch area */}}
+    <div class="palette-swatches" id="palette-swatches">
+      {{/* JS renders 5 vertical swatch bars here */}}
+    </div>
+
+    {{/* Spacebar hint — only shown on Generate tab */}}
+    <div class="palette-hint" id="palette-hint">
+      <kbd>Space</kbd> generate &nbsp;·&nbsp; <kbd>L</kbd> lock &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> navigate &nbsp;·&nbsp; <kbd>C</kbd> copy
+    </div>
+
+    {{/* Action bar */}}
+    <div class="palette-actions">
+      <button class="palette-btn" id="palette-add-swatch" title="Add swatch">＋ Add</button>
+      <button class="palette-btn" id="palette-remove-swatch" title="Remove swatch">− Remove</button>
+      <button class="palette-btn" id="palette-copy-all" title="Copy all hex codes">📋 Copy All</button>
+      <div class="palette-actions-spacer"></div>
+      <button class="palette-btn" id="palette-save-fav">⭐ Save</button>
+      <button class="palette-btn" id="palette-share">🔗 Share</button>
+      <div class="palette-export-wrap">
+        <button class="palette-btn palette-btn-primary" id="palette-export-btn">📥 Export ▾</button>
+        <div class="palette-export-menu" id="palette-export-menu">
+          <button data-fmt="css">CSS Variables</button>
+          <button data-fmt="scss">SCSS Variables</button>
+          <button data-fmt="tailwind">Tailwind Config</button>
+          <button data-fmt="json">JSON</button>
+          <button data-fmt="png">PNG Swatch</button>
+          <button data-fmt="svg">SVG</button>
+        </div>
+      </div>
+      <button class="palette-btn" id="palette-print" title="Print palette">🖨️</button>
+    </div>
+
+    {{/* Expanded colour detail (hidden by default, shown on swatch click) */}}
+    <div class="palette-detail" id="palette-detail">
+      <div class="palette-detail-header">
+        <span class="palette-detail-swatch" id="palette-detail-swatch"></span>
+        <span class="palette-detail-name" id="palette-detail-name"></span>
+        <button class="palette-detail-close" id="palette-detail-close" aria-label="Close">✕</button>
+      </div>
+      <div class="palette-detail-formats">
+        <div class="palette-detail-row">
+          <label>HEX</label>
+          <input type="text" id="palette-detail-hex" class="palette-input palette-mono" readonly>
+          <button class="palette-copy-btn" data-target="palette-detail-hex">Copy</button>
+        </div>
+        <div class="palette-detail-row">
+          <label>RGB</label>
+          <input type="text" id="palette-detail-rgb" class="palette-input palette-mono" readonly>
+          <button class="palette-copy-btn" data-target="palette-detail-rgb">Copy</button>
+        </div>
+        <div class="palette-detail-row">
+          <label>HSL</label>
+          <input type="text" id="palette-detail-hsl" class="palette-input palette-mono" readonly>
+          <button class="palette-copy-btn" data-target="palette-detail-hsl">Copy</button>
+        </div>
+      </div>
+      <div class="palette-detail-adjust">
+        <div class="palette-picker-area">
+          <canvas id="palette-picker-sv" class="palette-picker-sv" width="220" height="160"></canvas>
+          <canvas id="palette-picker-hue" class="palette-picker-hue" width="280" height="16"></canvas>
+        </div>
+        <div class="palette-picker-sliders">
+          <label>Hue <input type="range" id="palette-adj-h" min="0" max="360" class="palette-slider"></label>
+          <label>Sat <input type="range" id="palette-adj-s" min="0" max="100" class="palette-slider"></label>
+          <label>Light <input type="range" id="palette-adj-l" min="0" max="100" class="palette-slider"></label>
+        </div>
+      </div>
+    </div>
+
+    {{/* Save favourite modal */}}
+    <div class="palette-modal-overlay" id="palette-save-modal" role="dialog" aria-modal="true" aria-label="Save palette">
+      <div class="palette-modal">
+        <h3>Save Palette</h3>
+        <input type="text" id="palette-fav-name" class="palette-input" placeholder="My beautiful palette" maxlength="40">
+        <div class="palette-modal-actions">
+          <button class="palette-btn" id="palette-save-cancel">Cancel</button>
+          <button class="palette-btn palette-btn-primary" id="palette-save-confirm">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 5: EXTRACT FROM IMAGE ══════════════ */}}
+  <div class="palette-panel" id="panel-extract" role="tabpanel">
+    <div class="palette-extract-layout">
+      <div class="palette-extract-upload" id="palette-drop-zone">
+        <div class="palette-extract-icon">🖼️</div>
+        <p class="palette-extract-text">Drop an image here or click to upload</p>
+        <p class="palette-extract-sub">JPEG, PNG, WebP supported</p>
+        <input type="file" id="palette-image-input" accept="image/jpeg,image/png,image/webp" hidden>
+      </div>
+
+      <div class="palette-extract-controls palette-hidden" id="palette-extract-controls">
+        <div class="palette-extract-preview-wrap">
+          <canvas id="palette-extract-canvas" class="palette-extract-canvas"></canvas>
+        </div>
+        <div class="palette-extract-settings">
+          <label class="palette-label">Colours to extract</label>
+          <div class="palette-extract-count-row">
+            <input type="range" id="palette-extract-count" min="2" max="10" value="5" class="palette-slider">
+            <span id="palette-extract-count-val">5</span>
+          </div>
+          <button class="palette-btn palette-btn-primary" id="palette-extract-again">Re-extract</button>
+        </div>
+      </div>
+
+      <div class="palette-extract-results palette-hidden" id="palette-extract-results">
+        <h3 class="palette-section-title">Extracted Colours</h3>
+        <div class="palette-extract-swatches" id="palette-extract-swatches"></div>
+        <button class="palette-btn" id="palette-extract-use">Use This Palette →</button>
+      </div>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 4: CONTRAST CHECKER ══════════════ */}}
+  <div class="palette-panel" id="panel-contrast" role="tabpanel">
+    <div class="palette-contrast-layout">
+      <div class="palette-contrast-pickers">
+        <div class="palette-contrast-picker-card">
+          <label class="palette-section-title">Foreground (Text)</label>
+          <div class="palette-color-input-row">
+            <input type="color" id="palette-fg-picker" value="#FFFFFF" class="palette-color-swatch-input">
+            <input type="text" id="palette-fg-hex" value="#FFFFFF" class="palette-input palette-mono" maxlength="7">
+          </div>
+          <div class="palette-contrast-import">
+            <label class="palette-label">Import from palette</label>
+            <select id="palette-fg-import" class="palette-select"><option value="">— select —</option></select>
+          </div>
+        </div>
+        <div class="palette-contrast-swap">
+          <button class="palette-btn" id="palette-contrast-swap" title="Swap colours">⇄</button>
+        </div>
+        <div class="palette-contrast-picker-card">
+          <label class="palette-section-title">Background</label>
+          <div class="palette-color-input-row">
+            <input type="color" id="palette-bg-picker" value="#1E1E2E" class="palette-color-swatch-input">
+            <input type="text" id="palette-bg-hex" value="#1E1E2E" class="palette-input palette-mono" maxlength="7">
+          </div>
+          <div class="palette-contrast-import">
+            <label class="palette-label">Import from palette</label>
+            <select id="palette-bg-import" class="palette-select"><option value="">— select —</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="palette-contrast-result" id="palette-contrast-result">
+        <div class="palette-contrast-ratio">
+          <span class="palette-contrast-ratio-num" id="palette-contrast-ratio">21.0</span>
+          <span class="palette-contrast-ratio-label">: 1</span>
+        </div>
+        <div class="palette-contrast-badges" id="palette-contrast-badges">
+          <div class="palette-badge" data-level="aa-normal"><span class="palette-badge-label">AA Normal</span><span class="palette-badge-status">✓ Pass</span></div>
+          <div class="palette-badge" data-level="aa-large"><span class="palette-badge-label">AA Large</span><span class="palette-badge-status">✓ Pass</span></div>
+          <div class="palette-badge" data-level="aaa-normal"><span class="palette-badge-label">AAA Normal</span><span class="palette-badge-status">✓ Pass</span></div>
+          <div class="palette-badge" data-level="aaa-large"><span class="palette-badge-label">AAA Large</span><span class="palette-badge-status">✓ Pass</span></div>
+        </div>
+        <button class="palette-btn" id="palette-suggest-fix">💡 Suggest Fix</button>
+      </div>
+
+      <div class="palette-contrast-preview" id="palette-contrast-preview">
+        <h2 style="margin-bottom:0.5rem">Heading Preview</h2>
+        <p>This is a paragraph of body text. Check how readable this looks against the background colour you've chosen. Good contrast is essential for accessibility.</p>
+        <button class="palette-contrast-preview-btn">Sample Button</button>
+      </div>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 3: COLOUR BLINDNESS ══════════════ */}}
+  <div class="palette-panel" id="panel-blindness" role="tabpanel">
+    <div class="palette-blindness-intro">
+      <p>See how your palette appears to people with colour vision deficiency. Uses clinically accurate Brettel/Viénot/Mollon simulation matrices.</p>
+    </div>
+    <div class="palette-blindness-grid" id="palette-blindness-grid">
+      {{/* JS renders simulation cards here */}}
+    </div>
+    <div class="palette-blindness-summary" id="palette-blindness-summary">
+      {{/* JS renders accessibility warnings */}}
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 1: EXPLORE ══════════════ */}}
+  <div class="palette-panel active" id="panel-explore" role="tabpanel">
+    <div class="palette-explore-controls">
+      <input type="text" id="palette-explore-search" class="palette-input" placeholder="Search palettes...">
+      <div class="palette-explore-cats" id="palette-explore-cats">
+        <button class="palette-pill active" data-cat="all">All</button>
+        <button class="palette-pill" data-cat="nature">🌿 Nature</button>
+        <button class="palette-pill" data-cat="sunset">🌅 Sunset</button>
+        <button class="palette-pill" data-cat="ocean">🌊 Ocean</button>
+        <button class="palette-pill" data-cat="neon">💜 Neon</button>
+        <button class="palette-pill" data-cat="pastel">🍬 Pastel</button>
+        <button class="palette-pill" data-cat="retro">📻 Retro</button>
+        <button class="palette-pill" data-cat="corporate">💼 Corporate</button>
+        <button class="palette-pill" data-cat="dark">🌙 Dark Mode</button>
+        <button class="palette-pill" data-cat="warm">🔥 Warm</button>
+        <button class="palette-pill" data-cat="cool">❄️ Cool</button>
+        <button class="palette-pill" data-cat="teams">💬 Teams</button>
+        <button class="palette-pill" data-cat="dashboard">📊 Dashboard</button>
+      </div>
+    </div>
+
+    <div class="palette-explore-grid" id="palette-explore-grid">
+      {{/* JS renders curated palette cards */}}
+    </div>
+
+    <h3 class="palette-section-title" style="margin-top:2.5rem">⭐ Saved Favourites</h3>
+    <div class="palette-explore-grid" id="palette-fav-grid">
+      <p class="palette-muted">No saved palettes yet. Use ⭐ Save on the Generate tab!</p>
+    </div>
+
+    <h3 class="palette-section-title" style="margin-top:2.5rem">🕑 Recent Palettes</h3>
+    <div class="palette-history-grid" id="palette-history-grid">
+      <p class="palette-muted">No palettes generated yet. Press spacebar on the Generate tab!</p>
+    </div>
+  </div>
+
+  {{/* ── FAQ Section ── */}}
+  {{ if .Params.faq }}
+  <div class="palette-faq">
+    <h2 class="palette-faq-title">Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <details class="palette-faq-item">
+      <summary>{{ $q.question }}</summary>
+      <p>{{ $q.answer }}</p>
+    </details>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Pagefind searchable ── */}}
+  <div data-pagefind-body style="display:none">
+    <p>Colour palette generator. Generate colour palettes with harmony modes. Extract colours from images. WCAG contrast checker. Colour blindness simulator. Export to CSS Tailwind SCSS. Free online colour tool.</p>
+  </div>
+
+  {{ partial "back-nav" . }}
+</div>
+
+<script src="/js/color-palette.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
