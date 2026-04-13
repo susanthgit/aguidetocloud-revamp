@@ -1711,6 +1711,7 @@ a:hover {
    inside a 900px blog container). Applies site-wide (blog + licensing). */
 pre.mermaid svg,
 .content-body .mermaid svg {
+  width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
 }
