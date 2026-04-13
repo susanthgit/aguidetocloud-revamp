@@ -1,8 +1,7 @@
 /**
  * Tool Usage Counter — animated social proof numbers
  * Reads base count from data attribute, animates on scroll into view.
- * Listens for tool_interact events to increment.
- * ~1.5KB minified.
+ * ~1KB minified.
  */
 (function() {
   'use strict';
@@ -12,11 +11,8 @@
 
   var base = parseInt(el.dataset.base, 10) || 0;
   var numEl = el.querySelector('.tool-counter-num');
-  if (!numEl) return;
+  if (!numEl || !base) return;
 
-  // Add small random offset so repeat visitors see slightly different numbers
-  var offset = Math.floor(Math.random() * Math.ceil(base * 0.03));
-  var target = base + offset;
   var animated = false;
 
   function formatNum(n) {
@@ -27,7 +23,9 @@
     if (animated) return;
     animated = true;
 
-    var start = 0;
+    // Respect reduced motion — already shows base from server render
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     var duration = 1800;
     var startTime = null;
 
@@ -36,19 +34,14 @@
       var progress = Math.min((ts - startTime) / duration, 1);
       // Ease-out cubic
       var eased = 1 - Math.pow(1 - progress, 3);
-      var current = Math.round(start + (target - start) * eased);
-      numEl.textContent = formatNum(current);
+      numEl.textContent = formatNum(Math.round(base * eased));
       if (progress < 1) {
         requestAnimationFrame(step);
       }
     }
 
-    // Respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      numEl.textContent = formatNum(target);
-      return;
-    }
-
+    // Briefly reset to 0 then animate up
+    numEl.textContent = '0';
     requestAnimationFrame(step);
   }
 
@@ -62,13 +55,6 @@
     }, { threshold: 0.5 });
     obs.observe(el);
   } else {
-    // Fallback: animate immediately
-    animateCount();
+    // Fallback: no animation, base already rendered server-side
   }
-
-  // Listen for tool interactions to bump counter +1
-  window.addEventListener('tool-counter-increment', function() {
-    target++;
-    numEl.textContent = formatNum(target);
-  });
 })();

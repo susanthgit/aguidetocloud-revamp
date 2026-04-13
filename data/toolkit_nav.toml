@@ -111,6 +111,12 @@ name = "Meeting Planner"
 short = "Planner"
 
 [[tools]]
+url = "/qr-generator/"
+emoji = "🔲"
+name = "QR Code Generator"
+short = "QR Code"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

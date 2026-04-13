@@ -1022,18 +1022,18 @@ a:hover {
 /* ── TOOL USAGE COUNTER (social proof) ── */
 .tool-counter {
   margin: 0.6rem auto 0;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
   letter-spacing: 0.02em;
 }
 .tool-counter-num {
   font-weight: 700;
-  color: var(--hero-accent, rgba(255, 255, 255, 0.8));
+  color: var(--hero-accent, rgba(255, 255, 255, 0.85));
   font-variant-numeric: tabular-nums;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
 }
 .tool-counter-verb {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* ── TOOL PREV/NEXT NAV ────────────────── */

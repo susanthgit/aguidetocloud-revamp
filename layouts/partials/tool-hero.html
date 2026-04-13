@@ -3,20 +3,23 @@
      All tools get the same structure, just different accent color.
      Counter auto-detected from data/tool_counters.toml by page URL.
 */}}
+{{ $p := .page | default page }}
 <div class="tool-hero" style="--hero-accent: {{ .accent }}">
   <div class="tool-hero-inner">
     <h1 class="tool-hero-title">{{ .title }}</h1>
     {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
     {{/* Auto-detect counter from data file */}}
-    {{ $url := page.RelPermalink }}
+    {{ $url := $p.RelPermalink }}
     {{ $counters := site.Data.tool_counters.tools }}
     {{ range $counters }}
       {{ if eq .url $url }}
-    <div class="tool-counter" data-base="{{ .base }}" data-verb="{{ .verb }}" aria-live="polite">
-      <span class="tool-counter-num">0</span> <span class="tool-counter-verb">{{ .verb }}</span>
+    <div class="tool-counter" data-base="{{ .base }}">
+      <span class="tool-counter-num" aria-hidden="true">{{ lang.FormatNumberCustom 0 .base }}</span>
+      <span class="tool-counter-verb">{{ .verb }}</span>
+      <span class="sr-only">{{ lang.FormatNumberCustom 0 .base }} {{ .verb }}</span>
     </div>
       {{ end }}
     {{ end }}
-    {{ partial "tool-prev-next.html" page }}
+    {{ partial "tool-prev-next.html" $p }}
   </div>
 </div>

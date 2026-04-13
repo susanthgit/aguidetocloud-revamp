@@ -1,0 +1,349 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/qr-generator.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR Code Generator",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#EC4899" "title" "QR Code Generator" "subtitle" "Create beautiful, fully customisable QR codes for URLs, WiFi, email & more. Style with custom colours, dot patterns & logos. Batch generate or scan existing codes. 100% free, no sign-up.") }}
+
+<div class="qrgen-page">
+
+  {{/* ── Tabs ── */}}
+  <div class="qrgen-tabs" role="tablist">
+    <button class="qrgen-tab active" role="tab" data-tab="create" aria-selected="true">🎨 Create</button>
+    <button class="qrgen-tab" role="tab" data-tab="batch">📦 Batch</button>
+    <button class="qrgen-tab" role="tab" data-tab="scan">📷 Scan</button>
+  </div>
+
+  {{/* ══════════════ TAB 1: CREATE ══════════════ */}}
+  <div class="qrgen-panel active" id="panel-create" role="tabpanel">
+    <div class="qrgen-create-layout">
+
+      {{/* ── Left: Controls ── */}}
+      <div class="qrgen-controls">
+
+        {{/* Content Type */}}
+        <div class="qrgen-section">
+          <div class="qrgen-section-title">Content Type</div>
+          <div class="qrgen-type-pills" id="qrgen-type-pills">
+            <button class="qrgen-type-pill active" data-type="url">🔗 URL</button>
+            <button class="qrgen-type-pill" data-type="text">📝 Text</button>
+            <button class="qrgen-type-pill" data-type="wifi">📶 WiFi</button>
+            <button class="qrgen-type-pill" data-type="email">✉️ Email</button>
+            <button class="qrgen-type-pill" data-type="phone">📞 Phone</button>
+          </div>
+
+          {{/* URL form */}}
+          <div class="qrgen-form" id="qrgen-form-url">
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-url">Website URL</label>
+              <input type="url" class="qrgen-input" id="qrgen-url" placeholder="https://www.example.com" value="https://www.aguidetocloud.com">
+            </div>
+          </div>
+
+          {{/* Text form */}}
+          <div class="qrgen-form qrgen-hidden" id="qrgen-form-text">
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-text">Text Content</label>
+              <textarea class="qrgen-textarea" id="qrgen-text" placeholder="Enter any text..."></textarea>
+            </div>
+          </div>
+
+          {{/* WiFi form */}}
+          <div class="qrgen-form qrgen-hidden" id="qrgen-form-wifi">
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-wifi-ssid">Network Name (SSID)</label>
+              <input type="text" class="qrgen-input" id="qrgen-wifi-ssid" placeholder="MyWiFiNetwork">
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-wifi-pass">Password</label>
+              <input type="password" class="qrgen-input" id="qrgen-wifi-pass" placeholder="Enter password">
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-wifi-enc">Encryption</label>
+              <select class="qrgen-select" id="qrgen-wifi-enc">
+                <option value="WPA">WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">None (Open)</option>
+              </select>
+            </div>
+            <div class="qrgen-field" style="flex-direction:row; align-items:center; gap:0.5rem;">
+              <input type="checkbox" id="qrgen-wifi-hidden" style="width:auto;">
+              <label for="qrgen-wifi-hidden" style="font-size:0.85rem; color:rgba(255,255,255,0.6); text-transform:none; letter-spacing:0;">Hidden network</label>
+            </div>
+          </div>
+
+          {{/* Email form */}}
+          <div class="qrgen-form qrgen-hidden" id="qrgen-form-email">
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-email-to">Email Address</label>
+              <input type="email" class="qrgen-input" id="qrgen-email-to" placeholder="hello@example.com">
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-email-subject">Subject (optional)</label>
+              <input type="text" class="qrgen-input" id="qrgen-email-subject" placeholder="Hello from QR code">
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-email-body">Body (optional)</label>
+              <textarea class="qrgen-textarea" id="qrgen-email-body" placeholder="Pre-filled message..."></textarea>
+            </div>
+          </div>
+
+          {{/* Phone form */}}
+          <div class="qrgen-form qrgen-hidden" id="qrgen-form-phone">
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-phone">Phone Number</label>
+              <input type="tel" class="qrgen-input" id="qrgen-phone" placeholder="+1234567890">
+            </div>
+          </div>
+        </div>
+
+        {{/* Style Section — Collapsible */}}
+        <div class="qrgen-section">
+          <button class="qrgen-style-toggle" id="qrgen-style-toggle" aria-expanded="false" aria-controls="qrgen-style-body">
+            <span>🎨</span> <span>Customise Style</span> <span id="qrgen-style-chevron">▶</span>
+          </button>
+
+          <div class="qrgen-style-body" id="qrgen-style-body">
+
+            {{/* Presets */}}
+            <div>
+              <div class="qrgen-label" style="margin-bottom:0.5rem">Quick Presets</div>
+              <div class="qrgen-presets" id="qrgen-presets">
+                <button class="qrgen-preset active" data-preset="classic">Classic</button>
+                <button class="qrgen-preset" data-preset="neon">Neon</button>
+                <button class="qrgen-preset" data-preset="gradient">Gradient</button>
+                <button class="qrgen-preset" data-preset="minimal">Minimal</button>
+              </div>
+            </div>
+
+            {{/* Dot + Corner styles */}}
+            <div class="qrgen-style-grid">
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-dot-style">Dot Style</label>
+                <select class="qrgen-select" id="qrgen-dot-style">
+                  <option value="square">Square</option>
+                  <option value="dots">Dots</option>
+                  <option value="rounded" selected>Rounded</option>
+                  <option value="classy">Classy</option>
+                  <option value="classy-rounded">Classy Rounded</option>
+                  <option value="extra-rounded">Extra Rounded</option>
+                </select>
+              </div>
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-corner-style">Corner Style</label>
+                <select class="qrgen-select" id="qrgen-corner-style">
+                  <option value="square">Square</option>
+                  <option value="dot">Dot</option>
+                  <option value="extra-rounded" selected>Extra Rounded</option>
+                </select>
+              </div>
+            </div>
+
+            {{/* Colours */}}
+            <div class="qrgen-style-grid">
+              <div class="qrgen-field">
+                <label class="qrgen-label">Foreground</label>
+                <div class="qrgen-color-row">
+                  <input type="color" class="qrgen-color-input" id="qrgen-fg-color" value="#EC4899">
+                  <input type="text" class="qrgen-color-hex" id="qrgen-fg-hex" value="#EC4899" maxlength="7">
+                </div>
+              </div>
+              <div class="qrgen-field">
+                <label class="qrgen-label">Background</label>
+                <div class="qrgen-color-row">
+                  <input type="color" class="qrgen-color-input" id="qrgen-bg-color" value="#1a1a2e">
+                  <input type="text" class="qrgen-color-hex" id="qrgen-bg-hex" value="#1a1a2e" maxlength="7">
+                </div>
+              </div>
+            </div>
+
+            {{/* Logo upload */}}
+            <div class="qrgen-field">
+              <label class="qrgen-label">Centre Logo (optional)</label>
+              <div class="qrgen-logo-area" id="qrgen-logo-area" tabindex="0" role="button" aria-label="Upload a logo image">
+                <div id="qrgen-logo-content">
+                  <div class="qrgen-logo-hint">📎 Drop an image here or click to upload</div>
+                </div>
+                <input type="file" id="qrgen-logo-input" accept="image/png,image/jpeg,image/webp,image/gif" style="display:none">
+              </div>
+            </div>
+
+            {{/* Logo size slider */}}
+            <div class="qrgen-field qrgen-hidden" id="qrgen-logo-size-wrap">
+              <div class="qrgen-slider-wrap">
+                <div class="qrgen-slider-label">
+                  <span>Logo Size</span>
+                  <span id="qrgen-logo-size-val">30%</span>
+                </div>
+                <input type="range" class="qrgen-slider" id="qrgen-logo-size" min="10" max="45" value="30" step="1">
+              </div>
+            </div>
+
+            {{/* Error Correction */}}
+            <div class="qrgen-field">
+              <label class="qrgen-label">Error Correction</label>
+              <div class="qrgen-ec-pills" id="qrgen-ec-pills">
+                <button class="qrgen-ec-pill" data-ec="L">L<small>7%</small></button>
+                <button class="qrgen-ec-pill" data-ec="M">M<small>15%</small></button>
+                <button class="qrgen-ec-pill active" data-ec="Q">Q<small>25%</small></button>
+                <button class="qrgen-ec-pill" data-ec="H">H<small>30%</small></button>
+              </div>
+            </div>
+
+            {{/* Size */}}
+            <div class="qrgen-field">
+              <div class="qrgen-slider-wrap">
+                <div class="qrgen-slider-label">
+                  <span>Size</span>
+                  <span id="qrgen-size-val">400px</span>
+                </div>
+                <input type="range" class="qrgen-slider" id="qrgen-size" min="200" max="2000" value="400" step="50">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      {{/* ── Right: Preview ── */}}
+      <div class="qrgen-preview-panel">
+        <div class="qrgen-preview-card">
+          <div class="qrgen-warning" id="qrgen-warning">
+            <span>⚠️</span>
+            <span id="qrgen-warning-text">Warning text</span>
+          </div>
+          <div class="qrgen-preview-box" id="qrgen-preview-box">
+            <div class="qrgen-preview-placeholder">Your QR code will appear here</div>
+          </div>
+          <div class="qrgen-actions">
+            <button class="qrgen-btn-primary qrgen-btn" id="qrgen-download-png">⬇ PNG</button>
+            <button class="qrgen-btn" id="qrgen-download-svg">⬇ SVG</button>
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-copy-img" title="Copy image to clipboard">📋 Copy</button>
+          </div>
+          <div class="qrgen-share-row">
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-share" title="Copy shareable link">🔗 Share</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 2: BATCH ══════════════ */}}
+  <div class="qrgen-panel" id="panel-batch" role="tabpanel">
+    <div class="qrgen-section">
+      <div class="qrgen-section-title">Batch Generate QR Codes</div>
+      <p class="qrgen-batch-intro">
+        Generate multiple QR codes at once. Paste CSV data below — one row per QR code. Format: <code>data,type,label</code> where type is <code>url</code>, <code>text</code>, <code>wifi</code>, <code>email</code>, or <code>phone</code>. Label is optional.
+      </p>
+      <div class="qrgen-batch-area">
+        <textarea class="qrgen-batch-textarea" id="qrgen-batch-input" placeholder="https://www.example.com,url,Example Site
+https://www.google.com,url,Google
+Hello World,text,Greeting
++1234567890,phone,Support Line"></textarea>
+        <div class="qrgen-batch-actions">
+          <button class="qrgen-btn-primary qrgen-btn" id="qrgen-batch-generate">🔄 Generate All</button>
+          <button class="qrgen-btn" id="qrgen-batch-download-zip">📦 Download ZIP</button>
+          <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-template">📄 Download Template CSV</button>
+          <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-clear">🗑️ Clear</button>
+          <input type="file" id="qrgen-batch-file" accept=".csv,.txt" style="display:none">
+          <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-upload">📁 Upload CSV</button>
+        </div>
+        <div class="qrgen-batch-progress" id="qrgen-batch-progress">
+          <div class="qrgen-batch-progress-bar" id="qrgen-batch-progress-bar"></div>
+        </div>
+        <div class="qrgen-batch-preview" id="qrgen-batch-preview"></div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ══════════════ TAB 3: SCAN ══════════════ */}}
+  <div class="qrgen-panel" id="panel-scan" role="tabpanel">
+    <div class="qrgen-scan-area">
+      <div class="qrgen-section">
+        <div class="qrgen-section-title">Scan a QR Code</div>
+        <div class="qrgen-scan-drop" id="qrgen-scan-drop" tabindex="0" role="button" aria-label="Upload an image to scan for QR codes">
+          <div class="qrgen-scan-icon">📷</div>
+          <div class="qrgen-scan-text">Drop an image here, click to upload, or paste from clipboard</div>
+          <div class="qrgen-scan-subtext">Supports PNG, JPG, GIF, WebP</div>
+          <input type="file" id="qrgen-scan-file" accept="image/*" style="display:none">
+        </div>
+
+        <div class="qrgen-scan-result" id="qrgen-scan-result">
+          <div class="qrgen-scan-result-label">Scanned Content</div>
+          <div class="qrgen-scan-result-text" id="qrgen-scan-result-text"></div>
+          <div class="qrgen-scan-result-actions">
+            <button class="qrgen-btn-primary qrgen-btn" id="qrgen-scan-copy">📋 Copy</button>
+            <button class="qrgen-btn" id="qrgen-scan-open" style="display:none">🔗 Open URL</button>
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-scan-create">🎨 Create QR from this</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Cross-links ── */}}
+  {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "qr-generator") }}
+
+  {{/* ── Back nav ── */}}
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Back to Cloud & AI Toolkit") }}
+
+  {{/* ── Pagefind searchable content ── */}}
+  <div class="qrgen-searchable" data-pagefind-body>
+    <h2>QR Code Generator</h2>
+    <p>Generate beautiful QR codes for URLs, WiFi networks, email addresses, phone numbers and text. Customise with colours, dot styles, logos. Batch generate multiple QR codes. Scan QR codes from images. Free, no sign-up, 100% client-side.</p>
+  </div>
+
+</div>
+
+{{/* ── CDN Libraries ── */}}
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+
+<script src="/js/qr-generator.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
