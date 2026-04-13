@@ -70,6 +70,37 @@
             <button class="wifiqr-template-btn" data-theme="office">🏢 Office</button>
           </div>
         </div>
+
+        {{/* Layout + Border */}}
+        <div class="wifiqr-row">
+          <div class="wifiqr-field">
+            <label class="wifiqr-label" for="wifiqr-layout">Card Layout</label>
+            <select class="wifiqr-select" id="wifiqr-layout">
+              <option value="portrait" selected>📱 Portrait</option>
+              <option value="landscape">🖥️ Landscape</option>
+            </select>
+          </div>
+          <div class="wifiqr-field">
+            <label class="wifiqr-label" for="wifiqr-border">Border Style</label>
+            <select class="wifiqr-select" id="wifiqr-border">
+              <option value="rounded" selected>Rounded</option>
+              <option value="sharp">Sharp corners</option>
+              <option value="shadow">Drop shadow</option>
+              <option value="none">No border</option>
+            </select>
+          </div>
+        </div>
+
+        {{/* Custom colour */}}
+        <div class="wifiqr-field">
+          <label class="wifiqr-label">Custom Background Colour (overrides theme)</label>
+          <div class="wifiqr-color-row">
+            <input type="checkbox" id="wifiqr-custom-bg-enable" style="width:auto">
+            <input type="color" class="wifiqr-color-input" id="wifiqr-custom-bg" value="#1e293b" disabled>
+            <input type="text" class="wifiqr-color-hex" id="wifiqr-custom-bg-hex" value="#1e293b" maxlength="7" disabled>
+          </div>
+        </div>
+
         <div class="wifiqr-field">
           <label class="wifiqr-label" for="wifiqr-custom-heading">Custom Heading (optional)</label>
           <input type="text" class="wifiqr-input" id="wifiqr-custom-heading" placeholder="e.g. Welcome to Our Home!">
@@ -95,18 +126,20 @@
       </div>
 
       {{/* ── Card options ── */}}
-      <div style="display:flex; gap:0.75rem; align-items:center; justify-content:center; margin-top:0.75rem; flex-wrap:wrap">
-        <label style="font-size:0.8rem; color:rgba(255,255,255,0.5); display:flex; align-items:center; gap:0.35rem; cursor:pointer">
+      <div class="wifiqr-card-options">
+        <label class="wifiqr-option-label">
           <input type="checkbox" id="wifiqr-show-pass-on-card" checked style="width:auto"> Show password on card
         </label>
-        <span style="font-size:0.75rem; color:rgba(255,255,255,0.3)">💡 Prints well on A5 or A6 paper</span>
       </div>
 
       <div class="wifiqr-actions">
         <button class="wifiqr-btn-primary wifiqr-btn" id="wifiqr-print">🖨️ Print Card</button>
-        <button class="wifiqr-btn" id="wifiqr-download">⬇ Download QR</button>
+        <button class="wifiqr-btn" id="wifiqr-print-multi" title="Print 4 cards per A4 page">🖨️ Print 4-up</button>
+        <button class="wifiqr-btn" id="wifiqr-download-card">⬇ Download Card</button>
+        <button class="wifiqr-btn" id="wifiqr-download">⬇ QR Only</button>
         <button class="wifiqr-btn" id="wifiqr-share">🔗 Share</button>
       </div>
+      <div class="wifiqr-hint">💡 "Download Card" saves the full styled card as PNG. "Print 4-up" prints 4 copies on one A4 sheet.</div>
     </div>
 
   </div>
@@ -138,5 +171,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="/js/wifi-qr.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

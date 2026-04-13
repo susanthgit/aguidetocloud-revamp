@@ -343,7 +343,113 @@
   text-decoration: underline;
 }
 
-/* ── Pagefind hidden block ── */
+/* ── Card options row ── */
+.wifiqr-card-options {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.wifiqr-option-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.wifiqr-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 0.5rem;
+}
+
+/* ── Custom colour picker ── */
+.wifiqr-color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wifiqr-color-input {
+  width: 40px;
+  height: 36px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  padding: 2px;
+}
+
+.wifiqr-color-input::-webkit-color-swatch-wrapper { padding: 0; }
+.wifiqr-color-input::-webkit-color-swatch { border: none; border-radius: 5px; }
+
+.wifiqr-color-hex {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  color: #fff;
+  font-family: monospace;
+  font-size: 0.85rem;
+  width: 90px;
+}
+
+.wifiqr-color-input:disabled,
+.wifiqr-color-hex:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Landscape card ── */
+.wifiqr-card.landscape {
+  flex-direction: row;
+  text-align: left;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  min-height: auto;
+}
+
+.wifiqr-card.landscape .wifiqr-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.wifiqr-card.landscape .wifiqr-card-qr {
+  flex-shrink: 0;
+}
+
+/* ── Border styles ── */
+.wifiqr-card.border-sharp {
+  border-radius: 0 !important;
+}
+
+.wifiqr-card.border-shadow {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.wifiqr-card.border-none {
+  border: none !important;
+}
+
+/* ── Print 4-up ── */
+@media print {
+  .wifiqr-print-multi-page .wifiqr-card {
+    width: 45% !important;
+    height: auto !important;
+    min-height: auto !important;
+    page-break-inside: avoid;
+  }
+}
 .wifiqr-searchable {
   display: none;
 }

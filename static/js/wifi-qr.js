@@ -27,13 +27,22 @@
       $$('.wifiqr-template-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentTheme = btn.dataset.theme;
-      const card = $('#wifiqr-card');
-      if (card) {
-        card.className = 'wifiqr-card theme-' + currentTheme;
-      }
+      applyCardClasses();
       updateCard();
     });
   });
+
+  /* ── Apply all card classes (theme + layout + border) ── */
+  function applyCardClasses() {
+    const card = $('#wifiqr-card');
+    if (!card) return;
+    const layout = ($('#wifiqr-layout') || {}).value || 'portrait';
+    const border = ($('#wifiqr-border') || {}).value || 'rounded';
+    let cls = `wifiqr-card theme-${currentTheme}`;
+    if (layout === 'landscape') cls += ' landscape';
+    if (border !== 'rounded') cls += ` border-${border}`;
+    card.className = cls;
+  }
 
   /* ── Password toggle ── */
   const passToggle = $('#wifiqr-pass-toggle');
@@ -70,6 +79,17 @@
     const theme = THEMES[currentTheme] || THEMES.home;
     const customHeading = ($('#wifiqr-custom-heading') || {}).value || '';
     const showPassOnCard = ($('#wifiqr-show-pass-on-card') || {}).checked !== false;
+    const customBgEnabled = ($('#wifiqr-custom-bg-enable') || {}).checked;
+    const customBg = ($('#wifiqr-custom-bg') || {}).value || '#1e293b';
+
+    // Apply card classes (layout + border + theme)
+    applyCardClasses();
+
+    // Custom background override
+    const card = $('#wifiqr-card');
+    if (card) {
+      card.style.background = customBgEnabled ? customBg : '';
+    }
 
     // Update card text
     const iconEl = $('#wifiqr-card-icon');
@@ -107,7 +127,7 @@
     qrInstance = new QRCodeStyling({
       width: 180,
       height: 180,
-      type: 'svg',
+      type: 'canvas',
       data: data,
       dotsOptions: { color: theme.qrFg, type: 'rounded' },
       cornersSquareOptions: { color: theme.qrFg, type: 'extra-rounded' },
@@ -129,10 +149,29 @@
     const el = $(sel);
     if (el) el.addEventListener('input', debouncedUpdate);
   });
-  ['#wifiqr-enc', '#wifiqr-hidden', '#wifiqr-show-pass-on-card'].forEach(sel => {
+  ['#wifiqr-enc', '#wifiqr-hidden', '#wifiqr-show-pass-on-card', '#wifiqr-layout', '#wifiqr-border'].forEach(sel => {
     const el = $(sel);
     if (el) el.addEventListener('change', debouncedUpdate);
   });
+
+  /* ── Custom background colour ── */
+  const bgEnable = $('#wifiqr-custom-bg-enable');
+  const bgPicker = $('#wifiqr-custom-bg');
+  const bgHex = $('#wifiqr-custom-bg-hex');
+  if (bgEnable) {
+    bgEnable.addEventListener('change', () => {
+      const on = bgEnable.checked;
+      if (bgPicker) bgPicker.disabled = !on;
+      if (bgHex) bgHex.disabled = !on;
+      debouncedUpdate();
+    });
+  }
+  if (bgPicker && bgHex) {
+    bgPicker.addEventListener('input', () => { bgHex.value = bgPicker.value; debouncedUpdate(); });
+    bgHex.addEventListener('input', () => {
+      if (/^#[0-9a-fA-F]{6}$/.test(bgHex.value)) { bgPicker.value = bgHex.value; debouncedUpdate(); }
+    });
+  }
 
   /* ── Print ── */
   $('#wifiqr-print')?.addEventListener('click', () => {
@@ -140,11 +179,64 @@
     window.print();
   });
 
-  /* ── Download PNG ── */
+  /* ── Print 4-up ── */
+  $('#wifiqr-print-multi')?.addEventListener('click', () => {
+    if (!getWifiData()) { toast('Enter WiFi details first'); return; }
+    const card = $('#wifiqr-card');
+    if (!card) return;
+    // Create print window with 4 copies
+    const w = window.open('', '_blank');
+    const cardHtml = card.outerHTML;
+    const styles = document.querySelector('link[href*="wifi-qr.css"]');
+    const styleHref = styles ? styles.href : '';
+    w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>WiFi Cards — 4-up Print</title>
+      <link rel="stylesheet" href="${styleHref}">
+      <style>
+        body { margin: 0; padding: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: #fff; }
+        .wifiqr-card { break-inside: avoid; min-height: auto !important; }
+        @media print {
+          body { padding: 0.5cm; gap: 0.5cm; }
+          .wifiqr-card, .wifiqr-card * { visibility: visible !important; }
+          * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+      </style></head><body>
+      ${cardHtml}${cardHtml}${cardHtml}${cardHtml}
+    </body></html>`);
+    w.document.close();
+    setTimeout(() => { w.print(); }, 500);
+  });
+
+  /* ── Download full card as PNG via html2canvas ── */
+  $('#wifiqr-download-card')?.addEventListener('click', async () => {
+    if (!getWifiData()) { toast('Enter WiFi details first'); return; }
+    const card = $('#wifiqr-card');
+    if (!card || typeof html2canvas === 'undefined') {
+      toast('Card capture not available — downloading QR only');
+      if (qrInstance) qrInstance.download({ name: 'wifi-qr-code', extension: 'png' });
+      return;
+    }
+    toast('Capturing card...');
+    try {
+      const canvas = await html2canvas(card, {
+        backgroundColor: null,
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL('image/png');
+      a.download = 'wifi-card.png';
+      a.click();
+      toast('Card downloaded!');
+    } catch (e) {
+      toast('Capture failed — downloading QR only');
+      if (qrInstance) qrInstance.download({ name: 'wifi-qr-code', extension: 'png' });
+    }
+  });
+
+  /* ── Download QR only ── */
   $('#wifiqr-download')?.addEventListener('click', async () => {
     if (!qrInstance) { toast('Enter WiFi details first'); return; }
-    // Use html2canvas-style approach: capture the card via canvas
-    // Fallback: download just the QR
     qrInstance.download({ name: 'wifi-qr-code', extension: 'png' });
     toast('QR code downloaded!');
   });
