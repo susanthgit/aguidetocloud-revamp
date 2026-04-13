@@ -1,0 +1,239 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/image-compressor.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Compressor",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#818CF8" "title" "🖼️ Image Compressor" "subtitle" "Compress, resize & convert JPEG, PNG, WebP, GIF, HEIC & AVIF images — up to 90% smaller. Smart presets, batch processing, target file size, before/after comparison. 100% free, 100% private.") }}
+
+<div class="imgcomp-page">
+
+  {{/* ── Privacy Badge ── */}}
+  <div class="imgcomp-privacy-badge">
+    <span class="imgcomp-privacy-icon">🔒</span>
+    <span>Your images never leave your browser — all processing happens locally on your device</span>
+  </div>
+
+  {{/* ══════════════ UPLOAD AREA ══════════════ */}}
+  <div class="imgcomp-upload-zone" id="imgcomp-drop" tabindex="0" role="button" aria-label="Drop images here or click to upload">
+    <div class="imgcomp-upload-icon">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    </div>
+    <div class="imgcomp-upload-text">
+      <strong>Drop images here</strong> or <span class="imgcomp-upload-link">click to upload</span>
+    </div>
+    <div class="imgcomp-upload-hint">JPEG, PNG, WebP, GIF, HEIC — up to 20 images · <span class="imgcomp-desktop-only">Ctrl+V to paste · </span>Drag & drop or tap to browse</div>
+    <input type="file" id="imgcomp-file-input" accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.heic,.heif" multiple hidden>
+  </div>
+
+  {{/* ══════════════ SMART PRESETS ══════════════ */}}
+  <div class="imgcomp-presets imgcomp-hidden" id="imgcomp-presets">
+    <div class="imgcomp-presets-label">⚡ Quick Presets</div>
+    <div class="imgcomp-presets-row">
+      <button class="imgcomp-preset-btn" data-preset="web" title="Optimised for websites: WebP, max 1920px, quality 82%">
+        <span class="imgcomp-preset-icon">🌐</span>
+        <span class="imgcomp-preset-name">Web</span>
+        <span class="imgcomp-preset-desc">WebP · 1920px · q82</span>
+      </button>
+      <button class="imgcomp-preset-btn" data-preset="email" title="Small enough for email: JPEG, max 1200px, quality 70%">
+        <span class="imgcomp-preset-icon">✉️</span>
+        <span class="imgcomp-preset-name">Email</span>
+        <span class="imgcomp-preset-desc">JPEG · 1200px · q70</span>
+      </button>
+      <button class="imgcomp-preset-btn" data-preset="social" title="Social media ready: JPEG, max 1080px, quality 85%">
+        <span class="imgcomp-preset-icon">📱</span>
+        <span class="imgcomp-preset-name">Social</span>
+        <span class="imgcomp-preset-desc">JPEG · 1080px · q85</span>
+      </button>
+      <button class="imgcomp-preset-btn" data-preset="thumbnail" title="Tiny thumbnails: WebP, max 400px, quality 75%">
+        <span class="imgcomp-preset-icon">🖼️</span>
+        <span class="imgcomp-preset-name">Thumbnail</span>
+        <span class="imgcomp-preset-desc">WebP · 400px · q75</span>
+      </button>
+      <button class="imgcomp-preset-btn" data-preset="print" title="High quality for printing: PNG, max 4096px, quality 95%">
+        <span class="imgcomp-preset-icon">🖨️</span>
+        <span class="imgcomp-preset-name">Print</span>
+        <span class="imgcomp-preset-desc">PNG · 4096px · q95</span>
+      </button>
+      <button class="imgcomp-preset-btn" data-preset="max" title="Maximum compression: WebP, max 1600px, quality 60%">
+        <span class="imgcomp-preset-icon">🗜️</span>
+        <span class="imgcomp-preset-name">Max Shrink</span>
+        <span class="imgcomp-preset-desc">WebP · 1600px · q60</span>
+      </button>
+    </div>
+  </div>
+
+  {{/* ══════════════ BATCH CONTROLS (hidden until images added) ══════════════ */}}
+  <div class="imgcomp-batch-controls imgcomp-hidden" id="imgcomp-batch">
+    <div class="imgcomp-batch-header">
+      <div class="imgcomp-batch-stats" id="imgcomp-batch-stats"></div>
+      <div class="imgcomp-batch-actions">
+        <button class="imgcomp-btn imgcomp-btn-accent" id="imgcomp-download-zip" title="Download all as ZIP">⬇ Download All (ZIP)</button>
+        <button class="imgcomp-btn imgcomp-btn-ghost" id="imgcomp-download-all" title="Download all individually">⬇ Download Each</button>
+        <button class="imgcomp-btn imgcomp-btn-danger" id="imgcomp-clear-all" title="Remove all images">✕ Clear All</button>
+      </div>
+    </div>
+
+    {{/* ── Apply to All ── */}}
+    <details class="imgcomp-apply-all" id="imgcomp-apply-all">
+      <summary class="imgcomp-apply-all-toggle">⚙️ Apply to All Images</summary>
+      <div class="imgcomp-apply-all-body">
+        <div class="imgcomp-apply-row">
+          <div class="imgcomp-apply-field">
+            <label class="imgcomp-label">Quality</label>
+            <div class="imgcomp-slider-row">
+              <input type="range" id="imgcomp-global-quality" min="1" max="100" value="80" class="imgcomp-range">
+              <span class="imgcomp-range-val" id="imgcomp-global-quality-val">80%</span>
+            </div>
+          </div>
+          <div class="imgcomp-apply-field">
+            <label class="imgcomp-label">Output Format</label>
+            <select id="imgcomp-global-format" class="imgcomp-select">
+              <option value="">Same as original</option>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp">WebP</option>
+              <option value="image/avif" id="imgcomp-avif-opt" disabled>AVIF (checking…)</option>
+            </select>
+          </div>
+          <div class="imgcomp-apply-field">
+            <label class="imgcomp-label">Resize</label>
+            <select id="imgcomp-global-resize" class="imgcomp-select">
+              <option value="">No resize</option>
+              <option value="3840">4K (3840px)</option>
+              <option value="1920">Full HD (1920px)</option>
+              <option value="1280">HD (1280px)</option>
+              <option value="1080">Social (1080px)</option>
+              <option value="800">Blog (800px)</option>
+              <option value="400">Thumbnail (400px)</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+          <div class="imgcomp-apply-field imgcomp-custom-resize imgcomp-hidden" id="imgcomp-custom-resize">
+            <label class="imgcomp-label">Max Width (px)</label>
+            <input type="number" id="imgcomp-global-maxw" class="imgcomp-input" placeholder="e.g. 1920">
+          </div>
+          <div class="imgcomp-apply-field imgcomp-custom-resize imgcomp-hidden" id="imgcomp-custom-resize-h">
+            <label class="imgcomp-label">Max Height (px)</label>
+            <input type="number" id="imgcomp-global-maxh" class="imgcomp-input" placeholder="e.g. 1080">
+          </div>
+        </div>
+        <div class="imgcomp-apply-row">
+          <div class="imgcomp-apply-field">
+            <label class="imgcomp-label">🎯 Target File Size</label>
+            <div class="imgcomp-target-row">
+              <input type="number" id="imgcomp-global-target" class="imgcomp-input imgcomp-input-sm" placeholder="e.g. 200" min="10">
+              <span class="imgcomp-target-unit">KB</span>
+            </div>
+            <div class="imgcomp-hint">Auto-adjusts quality per image to meet target</div>
+          </div>
+          <div class="imgcomp-apply-field imgcomp-apply-actions">
+            <button class="imgcomp-btn imgcomp-btn-accent" id="imgcomp-apply-btn">Apply to All</button>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    {{/* ── Advanced Options ── */}}
+    <details class="imgcomp-advanced" id="imgcomp-advanced">
+      <summary class="imgcomp-apply-all-toggle">🔧 Advanced Options</summary>
+      <div class="imgcomp-apply-all-body">
+        <div class="imgcomp-apply-row">
+          <label class="imgcomp-toggle-label imgcomp-toggle-info">
+            <span>🔒 EXIF metadata (GPS, camera info) is automatically removed during compression</span>
+          </label>
+          <label class="imgcomp-toggle-label">
+            <input type="checkbox" id="imgcomp-preserve-alpha" checked>
+            <span>Preserve transparency (PNG/WebP → keeps alpha channel; off → white background)</span>
+          </label>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  {{/* ══════════════ IMAGE LIST ══════════════ */}}
+  <div class="imgcomp-list" id="imgcomp-list"></div>
+
+  {{/* ══════════════ FAQ SECTION ══════════════ */}}
+  {{ if .Params.faq }}
+  <div class="imgcomp-faq" id="faq">
+    <h2 class="imgcomp-faq-title">Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <div class="imgcomp-faq-item">
+      <div class="imgcomp-faq-q">{{ add $i 1 }}. {{ $q.question }}</div>
+      <div class="imgcomp-faq-a">{{ $q.answer }}</div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Large file warning ── */}}
+  <div class="imgcomp-hint imgcomp-large-hint">💡 Very large files (>50 MB) may be slow to process in-browser. For best performance, keep individual images under 20 MB.</div>
+
+  {{/* ── Pagefind hidden block ── */}}
+  <div data-pagefind-body style="display:none">
+    <h1>Image Compressor</h1>
+    <p>Free online image compressor. Compress JPEG, PNG, WebP, AVIF, GIF, HEIC images. Batch compression, resize, convert formats, strip EXIF metadata. Smart presets for web, email, social media, thumbnails. Before/after comparison. Privacy-first — images never leave your browser.</p>
+  </div>
+
+  {{/* ── Fullscreen Compare Modal ── */}}
+  <div class="imgcomp-modal imgcomp-hidden" id="imgcomp-modal" role="dialog" aria-modal="true" aria-label="Full-size image comparison">
+    <div class="imgcomp-modal-header">
+      <span class="imgcomp-modal-title" id="imgcomp-modal-title"></span>
+      <div class="imgcomp-modal-controls">
+        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-in" aria-label="Zoom in">🔍+</button>
+        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-out" aria-label="Zoom out">🔍−</button>
+        <span class="imgcomp-modal-zoom-val" id="imgcomp-modal-zoom-val">100%</span>
+        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-close" aria-label="Close comparison">✕ Close</button>
+      </div>
+    </div>
+    <div class="imgcomp-modal-body" id="imgcomp-modal-body"></div>
+  </div>
+
+  {{ partial "back-nav" . }}
+</div>
+
+<script src="/js/image-compressor.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

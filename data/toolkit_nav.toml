@@ -129,6 +129,12 @@ name = "Password Generator"
 short = "Passwords"
 
 [[tools]]
+url = "/image-compressor/"
+emoji = "🖼️"
+name = "Image Compressor"
+short = "Compress"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"
