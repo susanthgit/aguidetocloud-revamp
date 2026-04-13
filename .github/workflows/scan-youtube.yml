@@ -1,7 +1,9 @@
 name: Scan YouTube for New Videos
 
 on:
-  workflow_dispatch: # Manual trigger only — click "Run workflow" in GitHub Actions
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly Monday 6 AM UTC (6 PM NZST)
+  workflow_dispatch: # Manual trigger — click "Run workflow" in GitHub Actions
 
 jobs:
   scan-and-update:
