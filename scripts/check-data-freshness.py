@@ -69,32 +69,28 @@ def check_m365_pricing():
 
 
 def check_copilot_features():
-    """Check for new Copilot features from release notes."""
+    """Check for new Copilot features from release notes — only alert if current month has entries."""
     print("Checking Copilot release notes...")
     try:
         url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
         resp = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
         soup = BeautifulSoup(resp.text, 'html.parser')
 
-        # Count recent items (h2/h3 with dates)
+        # Look for current month in headings
+        now = datetime.now(timezone.utc)
+        current_month = now.strftime("%B %Y")  # e.g. "April 2026"
         headers = soup.find_all(['h2', 'h3'])
-        recent_dates = []
-        for h in headers:
-            text = h.get_text()
-            # Look for date patterns like "April 2026" or "2026-04"
-            date_match = re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}', text)
-            if date_match:
-                recent_dates.append(date_match.group())
+        has_current_month = any(current_month.lower() in h.get_text().lower() for h in headers)
 
         # Load current features count
         features_toml = (ROOT / "data" / "copilot_matrix" / "features.toml").read_text()
         feature_count = features_toml.count('[[features]]')
 
         print(f"  Current features in TOML: {feature_count}")
-        print(f"  Release note sections found: {len(recent_dates)}")
+        print(f"  Current month ({current_month}) in release notes: {has_current_month}")
 
-        if recent_dates:
-            ISSUES.append(f"📊 **Copilot Feature Matrix** — Release notes has sections for: {', '.join(recent_dates[:3])}. Verify `features.toml` ({feature_count} features) is up to date.")
+        if has_current_month:
+            ISSUES.append(f"📊 **Copilot Feature Matrix** — {current_month} release notes found. Verify `features.toml` ({feature_count} features) is up to date.")
 
     except Exception as e:
         print(f"  Warning: Could not check Copilot features: {e}")

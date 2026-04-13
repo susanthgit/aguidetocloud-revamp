@@ -1074,7 +1074,7 @@ a:hover {
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.kofi-btn:hover {
+.kofi-btn:hover, .kofi-btn:focus-visible {
   background: rgba(255, 94, 91, 0.3);
   border-color: rgba(255, 94, 91, 0.8);
   box-shadow: 0 0 20px rgba(255, 94, 91, 0.3);

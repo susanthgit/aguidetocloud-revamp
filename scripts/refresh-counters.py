@@ -77,7 +77,7 @@ def fetch_page_views(client):
         dimensions=[Dimension(name='pagePath')],
         metrics=[Metric(name='screenPageViews')],
         order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name='screenPageViews'), desc=True)],
-        limit=500
+        limit=10000
     )
 
     response = client.run_report(request)
@@ -87,6 +87,7 @@ def fetch_page_views(client):
         views = int(row.metric_values[0].value)
         results[path] = views
 
+    print(f"  GA4 returned {len(response.rows)} page paths")
     return results
 
 
@@ -95,12 +96,46 @@ def match_views_to_tools(ga4_data):
     tool_views = {}
     for tool_path in TOOL_PATHS:
         total = 0
+        # Normalize: match with and without trailing slash
+        norm = tool_path.rstrip('/')
         for ga_path, views in ga4_data.items():
-            # Match exact path or sub-pages (e.g., /cert-tracker/az-900/)
-            if ga_path == tool_path or ga_path.startswith(tool_path):
+            ga_norm = ga_path.rstrip('/')
+            if ga_norm == norm or ga_norm.startswith(norm + '/'):
                 total += views
         tool_views[tool_path] = total
     return tool_views
+
+
+def validate_results(tool_views, toml_path):
+    """Validate GA4 results before overwriting TOML. Returns True if safe to write."""
+    total_views = sum(tool_views.values())
+    tools_with_data = sum(1 for v in tool_views.values() if v > 0)
+
+    print(f"\n  Validation:")
+    print(f"    Total views across all tools: {total_views:,}")
+    print(f"    Tools with >0 views: {tools_with_data}/{len(tool_views)}")
+
+    # Abort if results look implausible
+    if total_views < 100:
+        print("  ❌ ABORT: Total views < 100 — GA4 likely returned partial/empty data")
+        return False
+
+    if tools_with_data < 5:
+        print("  ❌ ABORT: Fewer than 5 tools have data — GA4 likely returned partial data")
+        return False
+
+    # Check for major drops vs existing file
+    if os.path.exists(toml_path):
+        old_content = open(toml_path).read()
+        import re as _re
+        old_bases = [int(m) for m in _re.findall(r'base\s*=\s*(\d+)', old_content)]
+        old_total = sum(old_bases) if old_bases else 0
+        if old_total > 0 and total_views < old_total * 0.5:
+            print(f"  ❌ ABORT: New total ({total_views:,}) is <50% of old ({old_total:,}) — suspicious drop")
+            return False
+
+    print("  ✅ Validation passed")
+    return True
 
 
 def generate_toml(tool_views):
@@ -144,8 +179,13 @@ def main():
     # Generate TOML
     toml_content = generate_toml(tool_views)
 
-    # Write to file
+    # Validate before writing
     toml_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'tool_counters.toml')
+    if not validate_results(tool_views, toml_path):
+        print("\n⚠️ Aborting — data validation failed. TOML not updated.")
+        return 1
+
+    # Write to file
     with open(toml_path, 'w', encoding='utf-8') as f:
         f.write(toml_content)
     print(f"\n✅ Written to {toml_path}")

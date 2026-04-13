@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: refresh-counters
+  cancel-in-progress: true
+
 jobs:
   refresh-counters:
     runs-on: ubuntu-latest
@@ -36,4 +40,5 @@ jobs:
           git diff --cached --quiet || git commit -m "📊 Counter refresh from GA4 — $(date -u +%Y-%m-%d)
 
           Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
-          git push || true
+          git pull --rebase || true
+          git push
