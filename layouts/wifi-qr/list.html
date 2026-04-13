@@ -16,20 +16,6 @@
 }
 </script>
 
-{{ if .Params.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": {{ $q.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} } }
-    {{ end }}
-  ]
-}
-</script>
-{{ end }}
-
 {{ partial "tool-hero.html" (dict "page" page "accent" "#22D3EE" "title" "WiFi QR Code Generator" "subtitle" "Create a beautiful printable WiFi card your guests scan to connect instantly. Perfect for homes, cafés, hotels & offices. Free, private, no sign-up.") }}
 
 <div class="wifiqr-page">
@@ -100,18 +86,25 @@
     <div class="wifiqr-preview-wrap">
       <div class="wifiqr-card theme-home" id="wifiqr-card">
         <div class="wifiqr-card-icon" id="wifiqr-card-icon">📶</div>
-        <div class="wifiqr-card-heading" id="wifiqr-card-heading">Scan to Connect</div>
-        <div class="wifiqr-card-instruction">Point your phone camera at the QR code to join the WiFi network</div>
-        <div class="wifiqr-card-qr" id="wifiqr-card-qr">
-          <div style="color:rgba(255,255,255,0.3); font-size:0.85rem; padding:2rem">Enter your WiFi details</div>
-        </div>
-        <div class="wifiqr-card-network" id="wifiqr-card-network">Network: <strong>—</strong></div>
-        <div class="wifiqr-card-footer">Generated at aguidetocloud.com/wifi-qr</div>
+        <div class="wifiqr-card-heading" id="wifiqr-card-heading">WiFi Password</div>
+        <div class="wifiqr-card-instruction" id="wifiqr-card-instruction">Point your phone camera at the QR code to connect</div>
+        <div class="wifiqr-card-qr" id="wifiqr-card-qr"></div>
+        <div class="wifiqr-card-network" id="wifiqr-card-network">Network: <strong>MyWiFi</strong></div>
+        <div class="wifiqr-card-password" id="wifiqr-card-password">Password: <strong>••••••••</strong></div>
+        <div class="wifiqr-card-footer">aguidetocloud.com/wifi-qr</div>
+      </div>
+
+      {{/* ── Card options ── */}}
+      <div style="display:flex; gap:0.75rem; align-items:center; justify-content:center; margin-top:0.75rem; flex-wrap:wrap">
+        <label style="font-size:0.8rem; color:rgba(255,255,255,0.5); display:flex; align-items:center; gap:0.35rem; cursor:pointer">
+          <input type="checkbox" id="wifiqr-show-pass-on-card" checked style="width:auto"> Show password on card
+        </label>
+        <span style="font-size:0.75rem; color:rgba(255,255,255,0.3)">💡 Prints well on A5 or A6 paper</span>
       </div>
 
       <div class="wifiqr-actions">
         <button class="wifiqr-btn-primary wifiqr-btn" id="wifiqr-print">🖨️ Print Card</button>
-        <button class="wifiqr-btn" id="wifiqr-download">⬇ Download PNG</button>
+        <button class="wifiqr-btn" id="wifiqr-download">⬇ Download QR</button>
         <button class="wifiqr-btn" id="wifiqr-share">🔗 Share</button>
       </div>
     </div>

@@ -227,8 +227,14 @@
   opacity: 0.6;
 }
 
-.wifiqr-card-network strong {
+.wifiqr-card-network strong,
+.wifiqr-card-password strong {
   opacity: 1;
+}
+
+.wifiqr-card-password {
+  font-size: 0.85rem;
+  opacity: 0.6;
 }
 
 .wifiqr-card-footer {

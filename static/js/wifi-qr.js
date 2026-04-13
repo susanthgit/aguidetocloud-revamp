@@ -12,10 +12,10 @@
 
   /* ── Card themes ── */
   const THEMES = {
-    home:   { icon: '📶', heading: 'WiFi Password', qrFg: '#1e293b', qrBg: '#ffffff' },
-    cafe:   { icon: '☕', heading: 'Free WiFi', qrFg: '#451a03', qrBg: '#fef3c7' },
-    hotel:  { icon: '🏨', heading: 'Guest WiFi', qrFg: '#312e81', qrBg: '#ffffff' },
-    office: { icon: '🏢', heading: 'Office WiFi', qrFg: '#1e293b', qrBg: '#ffffff' }
+    home:   { icon: '📶', heading: 'WiFi Password', instruction: 'Point your phone camera at the QR code to connect', qrFg: '#1e293b', qrBg: '#ffffff' },
+    cafe:   { icon: '☕', heading: 'Free WiFi', instruction: 'Scan with your phone camera — enjoy free WiFi!', qrFg: '#451a03', qrBg: '#fef3c7' },
+    hotel:  { icon: '🏨', heading: 'Guest WiFi', instruction: 'Welcome! Scan to connect to our WiFi network', qrFg: '#312e81', qrBg: '#ffffff' },
+    office: { icon: '🏢', heading: 'Office WiFi', instruction: 'Scan with your phone to join the network', qrFg: '#1e293b', qrBg: '#ffffff' }
   };
 
   let currentTheme = 'home';
@@ -66,16 +66,32 @@
   function updateCard() {
     const data = getWifiData();
     const ssid = ($('#wifiqr-ssid') || {}).value || '';
+    const pass = ($('#wifiqr-pass') || {}).value || '';
     const theme = THEMES[currentTheme] || THEMES.home;
     const customHeading = ($('#wifiqr-custom-heading') || {}).value || '';
+    const showPassOnCard = ($('#wifiqr-show-pass-on-card') || {}).checked !== false;
 
     // Update card text
     const iconEl = $('#wifiqr-card-icon');
     const headingEl = $('#wifiqr-card-heading');
+    const instrEl = $('#wifiqr-card-instruction');
     const networkEl = $('#wifiqr-card-network');
+    const passEl = $('#wifiqr-card-password');
     if (iconEl) iconEl.textContent = theme.icon;
     if (headingEl) headingEl.textContent = customHeading || theme.heading;
+    if (instrEl) instrEl.textContent = theme.instruction;
     if (networkEl) networkEl.innerHTML = ssid ? `Network: <strong>${esc(ssid)}</strong>` : 'Network: <strong>—</strong>';
+    if (passEl) {
+      if (pass && showPassOnCard) {
+        passEl.innerHTML = `Password: <strong>${esc(pass)}</strong>`;
+        passEl.style.display = '';
+      } else if (pass && !showPassOnCard) {
+        passEl.innerHTML = 'Password: <strong>••••••••</strong>';
+        passEl.style.display = '';
+      } else {
+        passEl.style.display = 'none';
+      }
+    }
 
     // Generate QR
     const qrBox = $('#wifiqr-card-qr');
@@ -113,7 +129,7 @@
     const el = $(sel);
     if (el) el.addEventListener('input', debouncedUpdate);
   });
-  ['#wifiqr-enc', '#wifiqr-hidden'].forEach(sel => {
+  ['#wifiqr-enc', '#wifiqr-hidden', '#wifiqr-show-pass-on-card'].forEach(sel => {
     const el = $(sel);
     if (el) el.addEventListener('change', debouncedUpdate);
   });
@@ -175,6 +191,12 @@
 
   /* ── Init ── */
   loadFromURL();
+  // Pre-fill example so users see a beautiful card immediately
+  const p = new URLSearchParams(window.location.search);
+  if (!p.has('ssid')) {
+    if ($('#wifiqr-ssid') && !$('#wifiqr-ssid').value) $('#wifiqr-ssid').value = 'MyWiFi';
+    if ($('#wifiqr-pass') && !$('#wifiqr-pass').value) $('#wifiqr-pass').value = 'MyPassword123';
+  }
   updateCard();
 
 })();
