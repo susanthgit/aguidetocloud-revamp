@@ -2,6 +2,7 @@
      Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "subtitle" "..." "accent" "#00e5ff") }}
      All tools get the same structure, just different accent color.
      Counter auto-detected from data/tool_counters.toml by page URL.
+     Freshness badge auto-detected for pipeline tools with data files.
 */}}
 {{ $p := .page | default page }}
 <div class="tool-hero" style="--hero-accent: {{ .accent }}">
@@ -21,6 +22,8 @@
       <span class="sr-only">{{ lang.FormatNumberCustom 0 .base }} {{ .verb }}</span>
         {{ end }}
       {{ end }}
+      {{/* Freshness badge for pipeline tools */}}
+      {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
       <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support on Ko-fi</a>
     </div>
     {{ partial "tool-prev-next.html" $p }}

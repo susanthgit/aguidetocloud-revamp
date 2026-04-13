@@ -8,7 +8,7 @@
 </div>
 <link rel="stylesheet" href="/css/roadmap.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
-{{ partial "tool-hero.html" (dict "title" "M365 Roadmap Tracker" "subtitle" "Tracking all M365 features across 11 products — AI summarised, updated daily" "accent" "#E5A00D") }}
+{{ partial "tool-hero.html" (dict "title" "M365 Roadmap Tracker" "subtitle" "Tracking all M365 features across 11 products — AI summarised, updated daily" "accent" "#E5A00D" "freshness" "/data/roadmap/latest.json") }}
 <div class="rdmap-container">
   <div class="rdmap-controls" id="rdmap-controls">
     <label for="rdmap-search" class="sr-only">Search roadmap items</label>

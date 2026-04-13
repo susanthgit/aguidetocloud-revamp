@@ -1,0 +1,38 @@
+name: 🔍 Monthly Data Freshness Check
+
+on:
+  schedule:
+    - cron: '0 4 1,15 * *'  # 1st & 15th at 4 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install dependencies
+        run: pip install requests beautifulsoup4 --quiet
+
+      - name: 🔍 Check all data sources
+        id: check
+        run: python scripts/check-data-freshness.py
+
+      - name: 📝 Create issue if stale data found
+        if: steps.check.outputs.issues_found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "🔍 Data freshness alert — $(date -u +%Y-%m-%d)" \
+            --body-file freshness-report.md

@@ -1,0 +1,39 @@
+name: 📊 Monthly Counter Refresh
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'  # 1st of every month at 3 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-counters:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install dependencies
+        run: pip install google-analytics-data google-auth --quiet
+
+      - name: 📊 Fetch GA4 data and update counters
+        run: python scripts/refresh-counters.py
+
+      - name: 💾 Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/tool_counters.toml
+          git diff --cached --quiet || git commit -m "📊 Counter refresh from GA4 — $(date -u +%Y-%m-%d)
+
+          Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git push || true

@@ -27,7 +27,7 @@
   }
 }
 </script>
-{{ partial "tool-hero.html" (dict "title" .Title "subtitle" "Daily AI digest across 20 vendor categories — AI summaries, updated 4× daily" "accent" "#ff66ff") }}
+{{ partial "tool-hero.html" (dict "title" .Title "subtitle" "Daily AI digest across 20 vendor categories — AI summaries, updated 4× daily" "accent" "#ff66ff" "freshness" "/data/ainews/latest.json") }}
 <div class="container">
   <div class="ainews-tabs" role="tablist" aria-label="Time period">
     <button class="ainews-tab active" data-view="daily" role="tab" aria-selected="true">📅 Today</button>

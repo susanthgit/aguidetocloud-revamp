@@ -1088,6 +1088,21 @@ a:hover {
   margin: 0.5rem 0 1rem;
 }
 
+/* ── FRESHNESS BADGE (pipeline tools) ── */
+.tool-freshness {
+  display: none;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+.tool-freshness-loaded {
+  display: inline-flex;
+}
+
 /* ── TOOL PREV/NEXT NAV ────────────────── */
 .tool-pn {
   display: flex;
