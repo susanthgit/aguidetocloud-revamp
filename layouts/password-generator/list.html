@@ -1,0 +1,373 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/password-generator.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Password Generator",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+
+{{/* FAQ Schema emitted by baseof seo-jsonld.html partial — no duplicate needed */}}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#D946EF" "title" "Password Generator" "subtitle" "Generate unbreakable passwords, passphrases & PINs. Real-time strength analysis with crack-time estimates. 100% private — runs entirely in your browser.") }}
+
+<div class="pwgen-page">
+
+  {{/* ── Tabs ── */}}
+  <div class="pwgen-tabs" role="tablist">
+    <button class="pwgen-tab active" role="tab" data-tab="generate" aria-selected="true" id="tab-generate" aria-controls="panel-generate">🔐 Generate</button>
+    <button class="pwgen-tab" role="tab" data-tab="check" aria-selected="false" id="tab-check" aria-controls="panel-check">🔍 Check My Password</button>
+    <button class="pwgen-tab" role="tab" data-tab="passphrase" aria-selected="false" id="tab-passphrase" aria-controls="panel-passphrase">🧩 Word Builder</button>
+  </div>
+
+  {{/* ══════════════ TAB 1: GENERATE ══════════════ */}}
+  <div class="pwgen-panel active" id="panel-generate" role="tabpanel" aria-labelledby="tab-generate">
+
+    {{/* ── Quick Start ── */}}
+    <div class="pwgen-quickstart">
+      <div class="pwgen-quickstart-grid" id="pwgen-quickstart">
+        <button class="pwgen-qs-card" data-preset="banking"><span class="pwgen-qs-icon">🏦</span><span class="pwgen-qs-name">Strong for banking</span></button>
+        <button class="pwgen-qs-card" data-preset="pin"><span class="pwgen-qs-icon">📱</span><span class="pwgen-qs-name">Phone PIN</span></button>
+        <button class="pwgen-qs-card" data-preset="memorable"><span class="pwgen-qs-icon">🧠</span><span class="pwgen-qs-name">Easy to remember</span></button>
+        <button class="pwgen-qs-card" data-preset="wifi"><span class="pwgen-qs-icon">📶</span><span class="pwgen-qs-name">Wi-Fi password</span></button>
+      </div>
+    </div>
+
+    {{/* ── Mode selector ── */}}
+    <div class="pwgen-section">
+      <div class="pwgen-section-title">Mode</div>
+      <div class="pwgen-mode-pills" id="pwgen-mode-pills">
+        <button class="pwgen-pill active" data-mode="random">🎲 Random</button>
+        <button class="pwgen-pill" data-mode="passphrase">📖 Passphrase</button>
+        <button class="pwgen-pill" data-mode="pin">🔢 PIN</button>
+        <button class="pwgen-pill" data-mode="pronounceable">🗣️ Pronounceable</button>
+        <button class="pwgen-pill" data-mode="recipe">🧾 Recipe</button>
+      </div>
+    </div>
+
+    {{/* ── Password Display ── */}}
+    <div class="pwgen-display-card" id="pwgen-display-card">
+      <div class="pwgen-preview-toggle">
+        <button class="pwgen-bg-btn active" data-bg="dark" title="Dark background">🌙</button>
+        <button class="pwgen-bg-btn" data-bg="light" title="Light background">☀️</button>
+      </div>
+      <div class="pwgen-password-wrap" id="pwgen-password-wrap">
+        <div class="pwgen-password" id="pwgen-password" aria-live="polite" aria-label="Generated password">••••••••••••</div>
+        <button class="pwgen-eye-btn" id="pwgen-eye-btn" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+      </div>
+      <div class="pwgen-strength-bar-wrap">
+        <div class="pwgen-strength-bar" id="pwgen-strength-bar"></div>
+      </div>
+      <div class="pwgen-strength-row">
+        <span class="pwgen-strength-label" id="pwgen-strength-label">Generating…</span>
+        <span class="pwgen-strength-percentile" id="pwgen-strength-percentile"></span>
+        <span class="pwgen-crack-time" id="pwgen-crack-time"></span>
+      </div>
+      <div class="pwgen-display-actions">
+        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-copy-btn" aria-label="Copy password">📋 Copy</button>
+        <button class="pwgen-btn" id="pwgen-regen-btn" aria-label="Generate new password">🎲 Regenerate</button>
+        <button class="pwgen-btn" id="pwgen-bulk-btn" aria-label="Generate multiple passwords">📦 Generate 10</button>
+        <button class="pwgen-btn" id="pwgen-qr-btn" aria-label="Create QR code of password">📱 QR Code</button>
+      </div>
+      <div class="pwgen-kbd-hint">Press <kbd>Enter</kbd> to regenerate · <kbd>Ctrl+C</kbd> after selecting</div>
+      <div class="pwgen-tip" id="pwgen-tip">✅ Now store this in your password manager — <strong>never reuse passwords</strong></div>
+    </div>
+
+    {{/* ── Controls ── */}}
+    <div class="pwgen-controls-grid">
+
+      {{/* Random mode controls */}}
+      <div class="pwgen-section pwgen-mode-controls" id="pwgen-ctrl-random">
+        <div class="pwgen-section-title">Length</div>
+        <div class="pwgen-slider-wrap">
+          <input type="range" class="pwgen-slider" id="pwgen-length" min="8" max="128" value="20" aria-label="Password length">
+          <div class="pwgen-slider-labels">
+            <span>8</span>
+            <span class="pwgen-slider-val" id="pwgen-length-val">20</span>
+            <span>128</span>
+          </div>
+        </div>
+        <div class="pwgen-section-title" style="margin-top:1rem">Characters</div>
+        <div class="pwgen-toggles">
+          <label class="pwgen-toggle"><input type="checkbox" id="pwgen-upper" checked><span class="pwgen-toggle-slider"></span><span>Uppercase (A-Z)</span></label>
+          <label class="pwgen-toggle"><input type="checkbox" id="pwgen-lower" checked><span class="pwgen-toggle-slider"></span><span>Lowercase (a-z)</span></label>
+          <label class="pwgen-toggle"><input type="checkbox" id="pwgen-numbers" checked><span class="pwgen-toggle-slider"></span><span>Numbers (0-9)</span></label>
+          <label class="pwgen-toggle"><input type="checkbox" id="pwgen-symbols" checked><span class="pwgen-toggle-slider"></span><span>Symbols (!@#$…)</span></label>
+          <label class="pwgen-toggle"><input type="checkbox" id="pwgen-ambiguous"><span class="pwgen-toggle-slider"></span><span>Exclude ambiguous (0O l1I)</span></label>
+        </div>
+        <div class="pwgen-field" style="margin-top:0.75rem">
+          <label class="pwgen-label" for="pwgen-exclude">Custom exclude characters</label>
+          <input type="text" class="pwgen-input" id="pwgen-exclude" placeholder="e.g. {}[]<>">
+        </div>
+      </div>
+
+      {{/* Passphrase mode controls */}}
+      <div class="pwgen-section pwgen-mode-controls pwgen-hidden" id="pwgen-ctrl-passphrase">
+        <div class="pwgen-section-title">Word Count</div>
+        <div class="pwgen-slider-wrap">
+          <input type="range" class="pwgen-slider" id="pwgen-words" min="3" max="10" value="5" aria-label="Word count">
+          <div class="pwgen-slider-labels">
+            <span>3</span>
+            <span class="pwgen-slider-val" id="pwgen-words-val">5</span>
+            <span>10</span>
+          </div>
+        </div>
+        <div class="pwgen-word-hint" id="pwgen-word-hint">💡 5+ words recommended for strong security</div>
+        <div class="pwgen-section-title" style="margin-top:1rem">Options</div>
+        <div class="pwgen-field">
+          <label class="pwgen-label" for="pwgen-separator">Word Separator</label>
+          <select class="pwgen-select" id="pwgen-separator">
+            <option value="-">Hyphen (-)</option>
+            <option value=" ">Space</option>
+            <option value=".">Dot (.)</option>
+            <option value="_">Underscore (_)</option>
+            <option value="">None</option>
+          </select>
+        </div>
+        <label class="pwgen-toggle" style="margin-top:0.5rem"><input type="checkbox" id="pwgen-capitalize" checked><span class="pwgen-toggle-slider"></span><span>Capitalise words</span></label>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-number"><span class="pwgen-toggle-slider"></span><span>Add random number</span></label>
+      </div>
+
+      {{/* PIN mode controls */}}
+      <div class="pwgen-section pwgen-mode-controls pwgen-hidden" id="pwgen-ctrl-pin">
+        <div class="pwgen-section-title">PIN Length</div>
+        <div class="pwgen-slider-wrap">
+          <input type="range" class="pwgen-slider" id="pwgen-pin-length" min="4" max="12" value="6" aria-label="PIN length">
+          <div class="pwgen-slider-labels">
+            <span>4</span>
+            <span class="pwgen-slider-val" id="pwgen-pin-length-val">6</span>
+            <span>12</span>
+          </div>
+        </div>
+      </div>
+
+      {{/* Pronounceable mode controls */}}
+      <div class="pwgen-section pwgen-mode-controls pwgen-hidden" id="pwgen-ctrl-pronounceable">
+        <div class="pwgen-section-title">Length</div>
+        <div class="pwgen-slider-wrap">
+          <input type="range" class="pwgen-slider" id="pwgen-pron-length" min="8" max="32" value="14" aria-label="Pronounceable password length">
+          <div class="pwgen-slider-labels">
+            <span>8</span>
+            <span class="pwgen-slider-val" id="pwgen-pron-length-val">14</span>
+            <span>32</span>
+          </div>
+        </div>
+        <div class="pwgen-section-title" style="margin-top:1rem">Options</div>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pron-numbers"><span class="pwgen-toggle-slider"></span><span>Include numbers</span></label>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pron-caps"><span class="pwgen-toggle-slider"></span><span>Mixed case</span></label>
+      </div>
+
+      {{/* Recipe mode controls */}}
+      <div class="pwgen-section pwgen-mode-controls pwgen-hidden" id="pwgen-ctrl-recipe">
+        <div class="pwgen-section-title">Pattern Template</div>
+        <p class="pwgen-recipe-help">Define a pattern using tokens. Click a preset or type your own.</p>
+        <div class="pwgen-recipe-presets" id="pwgen-recipe-presets">
+          <button class="pwgen-pill active" data-recipe="Word-0000-Word-!">Word-NUM-Word-SYM</button>
+          <button class="pwgen-pill" data-recipe="Word!Word0000">WordSymWordNums</button>
+          <button class="pwgen-pill" data-recipe="Word-Word-Word-00">Words-with-Nums</button>
+          <button class="pwgen-pill" data-recipe="Cvcc0-Cvcc0-Cvcc0!">Syllables</button>
+        </div>
+        <div class="pwgen-field" style="margin-top:0.75rem">
+          <label class="pwgen-label" for="pwgen-recipe-input">Custom Pattern</label>
+          <input type="text" class="pwgen-input pwgen-recipe-input" id="pwgen-recipe-input" value="Word-0000-Word-!" spellcheck="false">
+        </div>
+        <div class="pwgen-recipe-legend">
+          <span><strong>Word</strong> = random word</span>
+          <span><strong>0</strong> = digit</span>
+          <span><strong>!</strong> = symbol</span>
+          <span><strong>A</strong> = uppercase letter</span>
+          <span><strong>a</strong> = lowercase letter</span>
+          <span><strong>C/c</strong> = consonant</span>
+          <span><strong>V/v</strong> = vowel</span>
+          <span>Other chars = literal</span>
+        </div>
+      </div>
+
+    </div>
+
+    {{/* ── Bulk generate results ── */}}
+    <div class="pwgen-bulk-results pwgen-hidden" id="pwgen-bulk-results">
+      <div class="pwgen-section">
+        <div class="pwgen-section-title">Bulk Generated Passwords</div>
+        <div class="pwgen-bulk-list" id="pwgen-bulk-list"></div>
+        <div class="pwgen-bulk-actions">
+          <button class="pwgen-btn" id="pwgen-bulk-copy-all">📋 Copy All</button>
+          <button class="pwgen-btn" id="pwgen-bulk-download">⬇ Download .txt</button>
+          <button class="pwgen-btn" id="pwgen-bulk-close">✕ Close</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ── History ── */}}
+    <div class="pwgen-section pwgen-history-section">
+      <div class="pwgen-section-title-row">
+        <span class="pwgen-section-title" style="margin-bottom:0">History</span>
+        <button class="pwgen-btn pwgen-btn-small" id="pwgen-clear-history">🗑️ Clear</button>
+      </div>
+      <div class="pwgen-history" id="pwgen-history">
+        <p class="pwgen-muted">No passwords generated yet</p>
+      </div>
+    </div>
+
+  </div>{{/* end panel-generate */}}
+
+  {{/* ══════════════ TAB 2: CHECK MY PASSWORD ══════════════ */}}
+  <div class="pwgen-panel" id="panel-check" role="tabpanel" aria-labelledby="tab-check">
+
+    <div class="pwgen-check-card">
+      <div class="pwgen-section-title">Enter a password to analyse</div>
+      <div class="pwgen-password-input-wrap">
+        <input type="password" class="pwgen-input pwgen-check-input" id="pwgen-check-input" placeholder="Type or paste a password…" autocomplete="off" spellcheck="false" aria-label="Password to check">
+        <button class="pwgen-eye-btn" id="pwgen-check-eye" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+      </div>
+      <div class="pwgen-privacy-badge">
+        <span>🛡️</span> Your password is analysed locally — <strong>never sent to our servers</strong>
+      </div>
+    </div>
+
+    <div class="pwgen-check-results pwgen-hidden" id="pwgen-check-results">
+
+      {{/* Score + strength */}}
+      <div class="pwgen-check-score-card" id="pwgen-check-score-card">
+        <div class="pwgen-check-score-ring">
+          <svg viewBox="0 0 120 120" class="pwgen-score-svg">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#D946EF" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="327" stroke-linecap="round" transform="rotate(-90 60 60)" id="pwgen-score-ring"/>
+          </svg>
+          <div class="pwgen-check-score-num" id="pwgen-check-score-num">0</div>
+        </div>
+        <div class="pwgen-check-score-info">
+          <div class="pwgen-check-score-label" id="pwgen-check-score-label">—</div>
+          <div class="pwgen-check-percentile" id="pwgen-check-percentile" style="display:none"></div>
+          <div class="pwgen-check-crack-times" id="pwgen-check-crack-times"></div>
+        </div>
+      </div>
+
+      {{/* Composition */}}
+      <div class="pwgen-section">
+        <div class="pwgen-section-title">Character Composition</div>
+        <div class="pwgen-composition" id="pwgen-composition"></div>
+      </div>
+
+      {{/* Warnings */}}
+      <div class="pwgen-section" id="pwgen-warnings-section" style="display:none">
+        <div class="pwgen-section-title">⚠️ Pattern Warnings</div>
+        <div class="pwgen-warnings" id="pwgen-warnings"></div>
+      </div>
+
+      {{/* Breach check */}}
+      <div class="pwgen-section" id="pwgen-breach-section" style="display:none">
+        <div class="pwgen-section-title">🔓 Breach Database Check</div>
+        <div class="pwgen-breach-result" id="pwgen-breach-result"></div>
+      </div>
+
+      {{/* Suggestions */}}
+      <div class="pwgen-section" id="pwgen-suggestions-section" style="display:none">
+        <div class="pwgen-section-title">💡 Suggestions</div>
+        <div class="pwgen-suggestions" id="pwgen-suggestions"></div>
+      </div>
+
+    </div>
+
+  </div>{{/* end panel-check */}}
+
+  {{/* ══════════════ TAB 3: PASSPHRASE BUILDER ══════════════ */}}
+  <div class="pwgen-panel" id="panel-passphrase" role="tabpanel" aria-labelledby="tab-passphrase">
+
+    <div class="pwgen-pp-intro">
+      <p>Craft your passphrase word by word. Click any chip to reroll just that word — keep the ones you like, swap the rest. Each word from the <strong>EFF Diceware</strong> list adds ~12.9 bits of entropy.</p>
+    </div>
+
+    {{/* Word chips area */}}
+    <div class="pwgen-pp-display-card">
+      <div class="pwgen-pp-chips" id="pwgen-pp-chips" aria-label="Passphrase words"></div>
+      <div class="pwgen-pp-full" id="pwgen-pp-full" aria-live="polite"></div>
+      <div class="pwgen-pp-entropy" id="pwgen-pp-entropy"></div>
+      <div class="pwgen-word-hint" id="pwgen-pp-word-hint">💡 5+ words recommended for strong security</div>
+      <div class="pwgen-pp-actions">
+        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-pp-copy">📋 Copy Passphrase</button>
+        <button class="pwgen-btn" id="pwgen-pp-reroll">🎲 Reroll All</button>
+        <button class="pwgen-btn" id="pwgen-pp-add-word">+ Add Word</button>
+        <button class="pwgen-btn" id="pwgen-pp-remove-word">− Remove Word</button>
+      </div>
+    </div>
+
+    {{/* Passphrase options */}}
+    <div class="pwgen-section">
+      <div class="pwgen-section-title">Options</div>
+      <div class="pwgen-field">
+        <label class="pwgen-label" for="pwgen-pp-sep">Separator</label>
+        <select class="pwgen-select" id="pwgen-pp-sep">
+          <option value="-">Hyphen (-)</option>
+          <option value=" ">Space</option>
+          <option value=".">Dot (.)</option>
+          <option value="_">Underscore (_)</option>
+          <option value="">None</option>
+        </select>
+      </div>
+      <label class="pwgen-toggle" style="margin-top:0.5rem"><input type="checkbox" id="pwgen-pp-cap" checked><span class="pwgen-toggle-slider"></span><span>Capitalise each word</span></label>
+      <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-num"><span class="pwgen-toggle-slider"></span><span>Append random number</span></label>
+      <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-symbol"><span class="pwgen-toggle-slider"></span><span>Add random symbol at end</span></label>
+    </div>
+
+    {{/* Strength breakdown */}}
+    <div class="pwgen-section">
+      <div class="pwgen-section-title">Strength Breakdown</div>
+      <div class="pwgen-pp-strength" id="pwgen-pp-strength"></div>
+    </div>
+
+  </div>{{/* end panel-passphrase */}}
+
+  {{/* ── FAQ Section ── */}}
+  {{ if .Params.faq }}
+  <div class="pwgen-faq-section">
+    <h2 class="pwgen-faq-title">Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <details class="pwgen-faq-item">
+      <summary class="pwgen-faq-q">{{ $q.question }}</summary>
+      <div class="pwgen-faq-a">{{ $q.answer }}</div>
+    </details>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Cross-links ── */}}
+  <div class="pwgen-crosslinks">
+    <h2 class="pwgen-crosslinks-title">🔧 Related Tools</h2>
+    <div class="pwgen-crosslinks-grid">
+      <a href="/qr-generator/" class="pwgen-crosslink-card"><span>📱</span><strong>QR Code Generator</strong><p>Share passwords as scannable codes</p></a>
+      <a href="/wifi-qr/" class="pwgen-crosslink-card"><span>📶</span><strong>WiFi QR Cards</strong><p>Generate printable WiFi cards</p></a>
+      <a href="/prompts/" class="pwgen-crosslink-card"><span>✨</span><strong>AI Prompt Library</strong><p>84 prompts for M365 Copilot & more</p></a>
+    </div>
+    <p class="pwgen-feedback-line">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  </div>
+
+  {{ partial "back-nav" . }}
+
+  {{/* ── Pagefind searchable block ── */}}
+  <div class="pwgen-searchable" data-pagefind-body style="display:none">
+    <h1>Password Generator</h1>
+    <p>Generate strong secure passwords passphrases PINs. Free online password generator with strength meter, crack time estimates, and passphrase builder. Privacy-first, 100% client-side, no data sent to servers. EFF diceware word list. Pronounceable passwords.</p>
+  </div>
+
+</div>
+
+<script src="/js/password-generator.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

@@ -123,6 +123,12 @@ name = "WiFi QR Cards"
 short = "WiFi QR"
 
 [[tools]]
+url = "/password-generator/"
+emoji = "🔐"
+name = "Password Generator"
+short = "Passwords"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"
