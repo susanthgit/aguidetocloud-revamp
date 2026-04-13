@@ -48,10 +48,26 @@
         <canvas id="sa-activity-chart" height="200"></canvas>
       </div>
     </div>
-    <div class="siteana-card siteana-transparency">
-      <h3>🔒 Transparency Note</h3>
-      <p>All data is collected <strong>anonymously</strong>. No cookies, no personal data, no IP addresses stored. Counts are <strong>approximate</strong> — we filter bots and deduplicate events, but some automated traffic may inflate numbers slightly. All displayed numbers are rounded.</p>
-      <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">🌍 Top Countries</h3>
+        <div id="sa-countries"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">🔗 Traffic Sources</h3>
+        <div id="sa-sources"></div>
+      </div>
+    </div>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">📱 Devices</h3>
+        <div id="sa-devices"></div>
+      </div>
+      <div class="siteana-card siteana-transparency">
+        <h3>🔒 Transparency Note</h3>
+        <p>Traffic data from Google Analytics (30-day window). Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
+        <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
+      </div>
     </div>
   </div>
 

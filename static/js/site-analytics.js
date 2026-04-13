@@ -73,27 +73,62 @@
   }
 
   function render(data) {
-    // Stats bar
+    // Stats bar — use GA4 data if available
+    var ga4 = data.ga4;
+    var gsc = data.gsc;
+    var custom = data.custom;
     var el;
-    el = document.getElementById('sa-total-views');
-    if (el) el.textContent = roundDisplay(data.totals.views);
-    el = document.getElementById('sa-total-actions');
-    if (el) el.textContent = roundDisplay(data.totals.actions);
-    el = document.getElementById('sa-today-views');
-    if (el) el.textContent = roundDisplay((data.today.views || 0) + (data.today.actions || 0));
 
-    var hasData = data.leaderboard && data.leaderboard.length > 0;
+    if (ga4) {
+      el = document.getElementById('sa-total-views');
+      if (el) el.textContent = roundDisplay(ga4.totals.views);
+      el = document.getElementById('sa-total-actions');
+      if (el) el.textContent = roundDisplay(ga4.totals.users);
+      el = document.getElementById('sa-today-views');
+      if (el) el.textContent = roundDisplay(ga4.today.views);
+      var actionLabel = document.querySelectorAll('.siteana-stat-label')[1];
+      if (actionLabel) actionLabel.textContent = 'Unique Users';
+    } else {
+      el = document.getElementById('sa-total-views');
+      if (el) el.textContent = '—';
+      el = document.getElementById('sa-total-actions');
+      if (el) el.textContent = '—';
+      el = document.getElementById('sa-today-views');
+      if (el) el.textContent = '—';
+    }
+
+    var leaderboard = ga4 ? ga4.leaderboard : (custom && custom.leaderboard ? custom.leaderboard.map(function(t) {
+      return { tool: t.tool, views: t.views, users: t.actions, total: t.views + t.actions };
+    }) : []);
+
+    var hasData = leaderboard && leaderboard.length > 0;
 
     if (hasData) {
-      renderTrendChart(data.trend);
-      renderActivityChart(data.leaderboard);
-      renderLeaderboard(data.leaderboard);
-      renderTopList('sa-most-viewed', data.leaderboard, 'views');
-      renderTopList('sa-most-used', data.leaderboard, 'actions');
+      renderTrendChart(ga4 ? ga4.trend : null);
+      renderActivityChart(leaderboard);
+      renderLeaderboard(leaderboard);
+      renderTopList('sa-most-viewed', leaderboard, 'views');
+      renderTopList('sa-most-used', leaderboard, 'users');
     } else {
       showEmptyState();
     }
-    renderSearches(data.top_searches);
+
+    // GA4 extras
+    if (ga4) {
+      renderExtraSection('sa-countries', ga4.countries, 'country', 'users', '🌍 Top Countries');
+      renderExtraSection('sa-devices', ga4.devices, 'device', 'users', '📱 Devices');
+      renderExtraSection('sa-sources', ga4.sources, 'source', 'sessions', '🔗 Traffic Sources');
+    }
+
+    // Search queries — prefer GSC
+    if (gsc && gsc.queries && gsc.queries.length > 0) {
+      renderGSCQueries(gsc.queries);
+    } else if (custom && custom.top_searches && custom.top_searches.length > 0) {
+      renderSearches(custom.top_searches);
+    } else {
+      var sc = document.getElementById('sa-searches');
+      if (sc) sc.innerHTML = '<div class="siteana-empty">🔍 Search data will appear once Google indexes the site more deeply.</div>';
+    }
   }
 
   function renderTrendChart(trend) {
@@ -216,6 +251,37 @@
       return '<div class="siteana-search-item">'
         + '<span class="siteana-search-query">"' + esc(s.query) + '"</span>'
         + '<span class="siteana-search-count">' + s.count + '×</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderGSCQueries(queries) {
+    var container = document.getElementById('sa-searches');
+    if (!container || !queries.length) return;
+    // Update title to indicate this is real Google Search data
+    var title = container.parentElement.querySelector('.siteana-card-title');
+    if (title) title.textContent = '🔍 Google Search Queries';
+    var hint = container.parentElement.querySelector('.siteana-hint');
+    if (hint) hint.textContent = 'What people search on Google to find this site (last 30 days)';
+
+    container.innerHTML = queries.map(function(q) {
+      return '<div class="siteana-search-item">'
+        + '<span class="siteana-search-query">"' + esc(q.query) + '"</span>'
+        + '<span class="siteana-search-count">' + q.clicks + ' clicks · ' + q.impressions + ' imp · ' + q.ctr + '% CTR</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderExtraSection(containerId, items, labelKey, valueKey, title) {
+    var container = document.getElementById(containerId);
+    if (!container || !items || !items.length) return;
+    var max = items[0][valueKey] || 1;
+    container.innerHTML = items.map(function(item) {
+      var pct = Math.round((item[valueKey] / max) * 100);
+      return '<div class="siteana-lb-item">'
+        + '<span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#06B6D4"></div></div>'
+        + '<span class="siteana-lb-total">' + item[valueKey] + '</span>'
         + '</div>';
     }).join('');
   }
