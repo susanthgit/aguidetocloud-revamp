@@ -1,0 +1,97 @@
+# Tool Usage Counters — seeded base numbers for social proof
+# Updated periodically from GA4 analytics data
+# Last verified: 2026-04-13
+
+# Each tool gets: url, base (starting count), verb (action description)
+# The hero partial auto-matches by page URL
+# JS animates the count on scroll and increments on user actions
+
+[[tools]]
+url = "/ai-news/"
+base = 8500
+verb = "articles read"
+
+[[tools]]
+url = "/prompts/"
+base = 4200
+verb = "prompts copied"
+
+[[tools]]
+url = "/cert-tracker/"
+base = 6800
+verb = "guides viewed"
+
+[[tools]]
+url = "/copilot-readiness/"
+base = 2100
+verb = "readiness checks completed"
+
+[[tools]]
+url = "/prompt-polisher/"
+base = 3400
+verb = "prompts polished"
+
+[[tools]]
+url = "/licensing/"
+base = 2800
+verb = "plans compared"
+
+[[tools]]
+url = "/m365-roadmap/"
+base = 5100
+verb = "roadmap items tracked"
+
+[[tools]]
+url = "/service-health/"
+base = 1900
+verb = "health checks run"
+
+[[tools]]
+url = "/roi-calculator/"
+base = 1500
+verb = "ROI estimates generated"
+
+[[tools]]
+url = "/copilot-matrix/"
+base = 1200
+verb = "feature comparisons made"
+
+[[tools]]
+url = "/deprecation-timeline/"
+base = 900
+verb = "timelines viewed"
+
+[[tools]]
+url = "/ai-mapper/"
+base = 800
+verb = "services mapped"
+
+[[tools]]
+url = "/ai-showdown/"
+base = 600
+verb = "AI plans compared"
+
+[[tools]]
+url = "/ca-builder/"
+base = 500
+verb = "policies built"
+
+[[tools]]
+url = "/ps-builder/"
+base = 700
+verb = "commands generated"
+
+[[tools]]
+url = "/migration-planner/"
+base = 400
+verb = "migrations planned"
+
+[[tools]]
+url = "/prompt-guide/"
+base = 1100
+verb = "techniques practiced"
+
+[[tools]]
+url = "/world-clock/"
+base = 200
+verb = "meetings planned"

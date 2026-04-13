@@ -37,6 +37,8 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f0f1a">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
   <link rel="alternate" type="application/rss+xml" title="AI News Feed" href="{{ .Site.BaseURL }}data/ainews/feed.xml">
   <meta name="author" content="{{ .Site.Params.author }}">
@@ -69,6 +71,7 @@
   <script src="/js/switcher.js" defer></script>
   <script src="/js/search-init.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if hugo.IsProduction }}<script src="/js/analytics-track.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
+  <script src="/js/tool-counter.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>
@@ -124,5 +127,6 @@
   <script>
     (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
   </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}</script>
 </body>
 </html>

@@ -1,11 +1,22 @@
 {{/* Tool Hero — Shared hero section for all Cloud & AI Toolkit tools
      Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "subtitle" "..." "accent" "#00e5ff") }}
      All tools get the same structure, just different accent color.
+     Counter auto-detected from data/tool_counters.toml by page URL.
 */}}
 <div class="tool-hero" style="--hero-accent: {{ .accent }}">
   <div class="tool-hero-inner">
     <h1 class="tool-hero-title">{{ .title }}</h1>
     {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+    {{/* Auto-detect counter from data file */}}
+    {{ $url := page.RelPermalink }}
+    {{ $counters := site.Data.tool_counters.tools }}
+    {{ range $counters }}
+      {{ if eq .url $url }}
+    <div class="tool-counter" data-base="{{ .base }}" data-verb="{{ .verb }}" aria-live="polite">
+      <span class="tool-counter-num">0</span> <span class="tool-counter-verb">{{ .verb }}</span>
+    </div>
+      {{ end }}
+    {{ end }}
     {{ partial "tool-prev-next.html" page }}
   </div>
 </div>

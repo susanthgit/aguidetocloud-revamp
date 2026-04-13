@@ -1019,6 +1019,23 @@ a:hover {
   .tool-hero-title { font-size: 1.5rem; }
 }
 
+/* ── TOOL USAGE COUNTER (social proof) ── */
+.tool-counter {
+  margin: 0.6rem auto 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+}
+.tool-counter-num {
+  font-weight: 700;
+  color: var(--hero-accent, rgba(255, 255, 255, 0.8));
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+}
+.tool-counter-verb {
+  opacity: 0.8;
+}
+
 /* ── TOOL PREV/NEXT NAV ────────────────── */
 .tool-pn {
   display: flex;
@@ -1726,6 +1743,60 @@ pre.mermaid {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ── VIEW TRANSITIONS (progressive enhancement) ────── */
+/* Cross-page navigation fade — Chrome 111+, Edge 111+, Safari 18+ */
+@view-transition {
+  navigation: auto;
+}
+
+/* Decorative body pseudo-elements: no transition (prevents double-fade/flash) */
+body::before,
+body::after {
+  view-transition-name: none;
+}
+
+/* Nav stays stable across pages */
+.site-nav {
+  view-transition-name: site-nav;
+}
+
+/* Main content cross-fades */
+#main-content {
+  view-transition-name: main-content;
+}
+
+/* Footer stays stable */
+.site-footer {
+  view-transition-name: site-footer;
+}
+
+/* Default cross-fade timing */
+::view-transition-old(main-content) {
+  animation: 180ms ease-out both fade-out;
+}
+::view-transition-new(main-content) {
+  animation: 180ms ease-in both fade-in;
+}
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
+
+/* Stable elements: no animation */
+::view-transition-old(site-nav),
+::view-transition-new(site-nav),
+::view-transition-old(site-footer),
+::view-transition-new(site-footer) {
+  animation: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(main-content),
+  ::view-transition-new(main-content) {
+    animation: none;
   }
 }
 
