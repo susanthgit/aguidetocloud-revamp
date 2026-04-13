@@ -38,7 +38,7 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-// Fetch: cache-first for static assets, network-only for everything else
+// Fetch: cache-first for versioned static assets, network-only for everything else
 self.addEventListener('fetch', function(event) {
   var url = new URL(event.request.url);
 
@@ -52,8 +52,8 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  // Cache-first for versioned static assets (CSS, JS, fonts, images)
-  if (isStaticAsset(url.pathname)) {
+  // Only cache assets with explicit version param (?v=...) to avoid stale content
+  if (isStaticAsset(url.pathname) && url.search.includes('v=')) {
     event.respondWith(
       caches.match(event.request).then(function(cached) {
         if (cached) return cached;
@@ -71,8 +71,7 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  // Everything else (HTML, Pagefind): network-first, no caching
-  // This avoids stale pages and ensures search always works fresh
+  // Everything else (HTML, unversioned assets, Pagefind): network-only
 });
 
 function isStaticAsset(pathname) {
