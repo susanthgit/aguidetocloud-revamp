@@ -25,7 +25,7 @@ faq:
   - question: "Does Copilot in Outlook change on April 15?"
     answer: "No. Copilot Chat in Outlook remains available for all users — licensed and unlicensed, regardless of tenant size."
   - question: "Will all tenants be affected on exactly April 15?"
-    answer: "Not necessarily. Microsoft has confirmed the change may occur 30 days after the Message Center communication was received by each tenant. Some organisations may not see the change until mid-May 2026. Check your Message Center for the exact notification date."
+    answer: "Not necessarily. Based on Microsoft's standard Message Center rollout practices, changes typically take effect based on when each tenant received the notification. Some organisations may see the change later than April 15. Check your Message Center for the exact notification date."
   - question: "How much does a Microsoft 365 Copilot licence cost?"
     answer: "For enterprises (over 300 users): $30 USD per user per month. For businesses (under 300 users): $21 USD per user per month. Both require an annual commitment as add-on licences."
 ---
@@ -38,13 +38,11 @@ Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNot
 
 🆕 **Last-Minute Update — April 14, 2026**
 
-Three important clarifications confirmed ahead of tomorrow's go-live:
+Two clarifications as we approach go-live:
 
-1. **Soft rollout, not a hard switch-off.** The change may not apply to all tenants on April 15. Microsoft has confirmed it may occur **30 days after the Message Center communication was received** by each tenant — giving every organisation the same lead time. This means some tenants could see the change as late as mid-May.
+1. **Rollout may be gradual.** Based on Microsoft's standard Message Center rollout practices, the change may not apply to all tenants simultaneously on April 15. Organisations that received the MC notification later may see the change take effect on a different date. Check your [Message Center](https://admin.microsoft.com/#/MessageCenter) for your specific notification timing.
 
-2. **"Standard vs Priority Access" is now official.** Paid Microsoft 365 Copilot users get **Priority Access** — faster, more consistent availability. Copilot Chat (Basic) users get **Standard Access** — which may include feature throttling, queue-based reasoning workloads, and in-product upgrade prompts.
-
-3. **Product positioning is now explicit.** Microsoft is drawing a clear line: **Copilot Chat = secure AI chat**. **Microsoft 365 Copilot = full orchestration across apps, data, and agents.** This separation is deliberate — ahead of the Agent 365 and Copilot Cowork launches in May.
+2. **Product positioning is now explicit.** Microsoft is drawing a clear line: **Copilot Chat = secure AI chat**. **Microsoft 365 Copilot = full orchestration across apps, data, and agents.** This separation is deliberate — ahead of the [Agent 365](https://www.microsoft.com/en-us/microsoft-365/copilot/agent-365) and Copilot Cowork launches in May.
 
 </div>
 
@@ -350,4 +348,4 @@ For enterprises (>300 users): **$30 USD per user per month**. For businesses (<3
 
 > **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
 
-*Published: April 9, 2026 · Last updated: April 14, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), Microsoft internal field enablement*
+*Published: April 9, 2026 · Last updated: April 14, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), community analysis*
