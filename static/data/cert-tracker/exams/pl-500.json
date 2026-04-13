@@ -9,7 +9,6 @@
     "power-automate"
   ],
   "category": "Power Platform",
-  "status": "retiring",
   "updated_at": "2026-03-31 22:46:00+00:00",
   "skills_date": "July 8, 2024",
   "skills_at_a_glance": [
@@ -256,29 +255,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "PL-400",
-      "title": "Microsoft Power Platform Developer",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Power Platform"
-    },
-    {
-      "code": "PL-200",
-      "title": "Microsoft Power Platform Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Power Platform"
-    },
-    {
-      "code": "PL-900",
-      "title": "Microsoft Power Platform Fundamentals",
-      "level": "beginner",
-      "status": "active",
-      "category": "Power Platform"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/practice/assessment?assessment-type=practice"

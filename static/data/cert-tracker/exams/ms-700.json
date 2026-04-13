@@ -10,7 +10,6 @@
     "teams"
   ],
   "category": "Microsoft 365",
-  "status": "active",
   "updated_at": "2026-03-27 23:35:00+00:00",
   "skills_date": "April 28, 2026",
   "skills_at_a_glance": [
@@ -164,22 +163,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "MS-102",
-      "title": "Microsoft 365 Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    },
-    {
-      "code": "MS-721",
-      "title": "Collaboration Communications Systems Engineer",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-700",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/practice/assessment?assessment-type=practice"

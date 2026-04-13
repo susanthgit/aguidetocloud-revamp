@@ -10,7 +10,6 @@
     "entra-id"
   ],
   "category": "Security",
-  "status": "active",
   "updated_at": "2026-03-27 23:35:00+00:00",
   "skills_date": "April 27, 2026",
   "skills_at_a_glance": [
@@ -173,29 +172,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "SC-200",
-      "title": "Microsoft Security Operations Analyst",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Security"
-    },
-    {
-      "code": "SC-100",
-      "title": "Microsoft Cybersecurity Architect",
-      "level": "advanced",
-      "status": "active",
-      "category": "Security"
-    },
-    {
-      "code": "MS-102",
-      "title": "Microsoft 365 Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-300",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/practice/assessment?assessment-type=practice"

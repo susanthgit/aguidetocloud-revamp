@@ -9,7 +9,6 @@
     "dynamics-365"
   ],
   "category": "Dynamics 365",
-  "status": "active",
   "updated_at": "2024-09-30 17:14:00+00:00",
   "skills_date": "April 19, 2024",
   "skills_at_a_glance": [
@@ -233,29 +232,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "MB-220",
-      "title": "Microsoft Dynamics 365 Customer Insights (Journeys) Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    },
-    {
-      "code": "PL-200",
-      "title": "Microsoft Power Platform Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Power Platform"
-    },
-    {
-      "code": "MB-230",
-      "title": "Microsoft Dynamics 365 Customer Service Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-210",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/practice/assessment?assessment-type=practice"

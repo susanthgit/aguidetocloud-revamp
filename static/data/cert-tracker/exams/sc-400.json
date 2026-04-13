@@ -9,7 +9,6 @@
     "m365"
   ],
   "category": "Security",
-  "status": "active",
   "updated_at": "2025-08-08 14:53:00+00:00",
   "skills_date": "August 22, 2023",
   "skills_at_a_glance": [],
@@ -248,29 +247,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "SC-300",
-      "title": "Microsoft Identity and Access Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Security"
-    },
-    {
-      "code": "MS-102",
-      "title": "Microsoft 365 Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    },
-    {
-      "code": "SC-200",
-      "title": "Microsoft Security Operations Analyst",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Security"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-400/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-400",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-400/practice/assessment?assessment-type=practice"

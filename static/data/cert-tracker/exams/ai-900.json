@@ -10,7 +10,6 @@
     "azure"
   ],
   "category": "AI",
-  "status": "retiring",
   "updated_at": "2026-03-16 02:02:00+00:00",
   "skills_date": "May 2, 2025",
   "skills_at_a_glance": [
@@ -111,29 +110,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "AI-102",
-      "title": "Designing and Implementing a Microsoft Azure AI Solution",
-      "level": "intermediate",
-      "status": "retiring",
-      "category": "AI"
-    },
-    {
-      "code": "AZ-900",
-      "title": "Microsoft Azure Fundamentals",
-      "level": "beginner",
-      "status": "active",
-      "category": "Azure"
-    },
-    {
-      "code": "DP-900",
-      "title": "Microsoft Azure Data Fundamentals",
-      "level": "beginner",
-      "status": "active",
-      "category": "Data"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/practice/assessment?assessment-type=practice"

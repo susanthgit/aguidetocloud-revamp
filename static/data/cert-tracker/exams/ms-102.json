@@ -9,7 +9,6 @@
     "m365"
   ],
   "category": "Microsoft 365",
-  "status": "active",
   "updated_at": "2026-03-27 23:35:00+00:00",
   "skills_date": "April 28, 2026",
   "skills_at_a_glance": [
@@ -120,29 +119,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "SC-300",
-      "title": "Microsoft Identity and Access Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Security"
-    },
-    {
-      "code": "MD-102",
-      "title": "Microsoft 365 Endpoint Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    },
-    {
-      "code": "MS-700",
-      "title": "Managing Microsoft Teams",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Microsoft 365"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-102",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/practice/assessment?assessment-type=practice"

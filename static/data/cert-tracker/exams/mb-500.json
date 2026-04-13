@@ -9,7 +9,6 @@
     "dynamics-365"
   ],
   "category": "Dynamics 365",
-  "status": "active",
   "updated_at": "2025-12-31 16:52:00+00:00",
   "skills_date": "January 30, 2026",
   "skills_at_a_glance": [
@@ -191,29 +190,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "MB-310",
-      "title": "Microsoft Dynamics 365 Finance Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    },
-    {
-      "code": "MB-330",
-      "title": "Microsoft Dynamics 365 Supply Chain Management Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    },
-    {
-      "code": "PL-400",
-      "title": "Microsoft Power Platform Developer",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Power Platform"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-500/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-500",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-500/practice/assessment?assessment-type=practice"

@@ -9,7 +9,6 @@
     "azure"
   ],
   "category": "Azure",
-  "status": "active",
   "updated_at": "2026-03-26 06:04:00+00:00",
   "skills_date": "April 24, 2026",
   "skills_at_a_glance": [
@@ -216,22 +215,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "AZ-104",
-      "title": "Microsoft Azure Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Azure"
-    },
-    {
-      "code": "AZ-305",
-      "title": "Designing Microsoft Azure Infrastructure Solutions",
-      "level": "advanced",
-      "status": "active",
-      "category": "Azure"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-700",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/practice/assessment?assessment-type=practice"

@@ -9,7 +9,6 @@
     "azure"
   ],
   "category": "Data",
-  "status": "retiring",
   "updated_at": "2026-03-16 07:23:00+00:00",
   "skills_date": "April 11, 2025",
   "skills_at_a_glance": [
@@ -134,29 +133,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "DP-900",
-      "title": "Microsoft Azure Data Fundamentals",
-      "level": "beginner",
-      "status": "active",
-      "category": "Data"
-    },
-    {
-      "code": "AI-900",
-      "title": "Microsoft Azure AI Fundamentals",
-      "level": "beginner",
-      "status": "retiring",
-      "category": "AI"
-    },
-    {
-      "code": "AI-300",
-      "title": "Machine Learning Operations (MLOps) Engineer Associate",
-      "level": "intermediate",
-      "status": "beta",
-      "category": "AI"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/practice/assessment?assessment-type=practice"

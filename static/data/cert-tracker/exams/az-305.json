@@ -9,7 +9,6 @@
     "azure"
   ],
   "category": "Azure",
-  "status": "active",
   "updated_at": "2026-03-19 18:11:00+00:00",
   "skills_date": "April 17, 2026",
   "skills_at_a_glance": [
@@ -115,36 +114,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "AZ-104",
-      "title": "Microsoft Azure Administrator",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Azure"
-    },
-    {
-      "code": "AZ-400",
-      "title": "Designing and Implementing Microsoft DevOps Solutions",
-      "level": "advanced",
-      "status": "active",
-      "category": "Azure"
-    },
-    {
-      "code": "AZ-700",
-      "title": "Designing and Implementing Microsoft Azure Networking Solutions",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Azure"
-    },
-    {
-      "code": "SC-100",
-      "title": "Microsoft Cybersecurity Architect",
-      "level": "advanced",
-      "status": "active",
-      "category": "Security"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-305/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-305",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-305/practice/assessment?assessment-type=practice"

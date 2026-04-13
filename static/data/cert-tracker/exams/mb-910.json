@@ -9,7 +9,6 @@
     "dynamics-365"
   ],
   "category": "Dynamics 365",
-  "status": "retired",
   "updated_at": "2025-12-31 16:52:00+00:00",
   "skills_date": "December 17, 2024",
   "skills_at_a_glance": [
@@ -121,29 +120,6 @@
   },
   "change_log_official": [],
   "change_history": [],
-  "related_exams": [
-    {
-      "code": "MB-210",
-      "title": "Microsoft Dynamics 365 Sales Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    },
-    {
-      "code": "MB-230",
-      "title": "Microsoft Dynamics 365 Customer Service Functional Consultant",
-      "level": "intermediate",
-      "status": "active",
-      "category": "Dynamics 365"
-    },
-    {
-      "code": "PL-900",
-      "title": "Microsoft Power Platform Fundamentals",
-      "level": "beginner",
-      "status": "active",
-      "category": "Power Platform"
-    }
-  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-910/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-910",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-910/practice/assessment?assessment-type=practice"
