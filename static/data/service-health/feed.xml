@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 19:37:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 21:07:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1279031</link>
+      <description>[Microsoft Intune] Users' newly enrolled devices in Microsoft Intune may be unable to access company resources.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1279031</guid>
+      <pubDate>Mon, 13 Apr 2026 19:42:25 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1278714</link>
@@ -170,15 +179,6 @@
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Defender XDR] Admins may notice excessive memory usage on their Windows Server 2016 machines</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1266872</link>
-      <description>[Microsoft Defender XDR] Admins may notice excessive memory usage on their Windows Server 2016 machines.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1266872</guid>
-      <pubDate>Tue, 31 Mar 2026 21:18:23 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Most users’ prompts in GPT 5.4 Think Deeper mode in Microsoft 365 Copilot may return a failure response</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1266855</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users’ prompts in GPT 5.4 Think Deeper mode in Microsoft 365 Copilot may have returned a failure response.</description>
@@ -192,7 +192,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MP1266046</link>
       <description>[Microsoft Purview] If not addressed, collection and Data Loss Prevention policies for user data uploads to unmanaged apps may not work.</description>
       <category>Microsoft Purview</category>
-      <category>investigating</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1266046</guid>
       <pubDate>Mon, 30 Mar 2026 22:21:33 +0000</pubDate>
     </item>
@@ -249,6 +249,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1260428</guid>
       <pubDate>Tue, 24 Mar 2026 05:40:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Admins may notice excessive memory usage on their Windows Server 2016 machines</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1266872</link>
+      <description>[Microsoft Defender XDR] Admins may have noticed excessive memory usage on their Windows Server 2016 machines.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1266872</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may be unable to edit SharePoint Online sites using the SharePoint Designer 2013 tool</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1256020</guid>
       <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may not get email notifications for shared Power BI reports and dashboards or Microsoft Fabric artifacts</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1249121</link>
-      <description>[Power BI] Users may not have gotten email notifications for shared Power BI reports and dashboards or Microsoft Fabric artifacts.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1249121</guid>
-      <pubDate>Tue, 10 Mar 2026 21:08:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
