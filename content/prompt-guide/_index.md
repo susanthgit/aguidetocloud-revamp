@@ -15,4 +15,5 @@ faq:
     answer: "Start with the 4 beginner techniques: Give Clear Instructions, Set a Role, Add Context, and Define the Format. These alone will dramatically improve your AI results."
   - question: "How is this different from the Prompt Library and Prompt Polisher?"
     answer: "The Prompt Library gives you 84 ready-to-use prompts. The Prompt Polisher scores and rewrites your prompts. This Guide teaches you the WHY — the techniques behind great prompts, so you can write your own from scratch."
+images: ["images/og/prompt-guide.jpg"]
 ---

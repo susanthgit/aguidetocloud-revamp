@@ -6,4 +6,5 @@ layout: "list"
 sitemap:
   priority: 0.9
   changefreq: monthly
+images: ["images/og/copilot-readiness.jpg"]
 ---

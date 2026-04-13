@@ -6,6 +6,5 @@ layout: "ainews"
 sitemap:
   priority: 0.9
   changefreq: "daily"
-images:
-  - "/images/ainews-og.webp"
+images: ["images/og/ai-news.jpg"]
 ---

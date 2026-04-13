@@ -6,6 +6,5 @@ layout: "service-health"
 sitemap:
   priority: 0.8
   changefreq: "daily"
-images:
-  - "/images/service-health-og.webp"
+images: ["images/og/service-health.jpg"]
 ---

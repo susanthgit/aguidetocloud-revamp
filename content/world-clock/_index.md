@@ -17,4 +17,5 @@ faq:
     answer: "Yes — click the work hours (e.g. '9-17') under any city in the timeline to change them. Great for teams with flexible schedules or different local norms."
   - question: "Is this tool free to use?"
     answer: "Completely free, forever. No sign-up, no ads, no tracking. It runs 100% in your browser — your data never leaves your device."
+images: ["images/og/world-clock.jpg"]
 ---

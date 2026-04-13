@@ -17,4 +17,5 @@ faq:
     answer: "Numbers are approximate. We use rate limiting and bot filtering, but some automated traffic may inflate counts slightly. All displayed numbers are rounded."
   - question: "Can I access the raw data?"
     answer: "The stats API is public at /api/stats — you can fetch it programmatically. It returns tool leaderboards, daily trends, and top search queries in JSON format."
+images: ["images/og/site-analytics.jpg"]
 ---

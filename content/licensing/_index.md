@@ -5,4 +5,5 @@ type: "licensing"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+images: ["images/og/licensing.jpg"]
 ---

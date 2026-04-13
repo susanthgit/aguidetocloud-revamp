@@ -5,4 +5,5 @@ type: "cert-tracker"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+images: ["images/og/cert-tracker.jpg"]
 ---

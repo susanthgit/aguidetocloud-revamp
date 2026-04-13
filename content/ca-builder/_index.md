@@ -23,4 +23,5 @@ faq:
     a: "Conditional Access requires Microsoft Entra ID P1 (included in Microsoft 365 E3/E5, Business Premium, A3/A5). Risk-based policies require Entra ID P2 (included in E5). Some features require additional licences like Intune or Defender for Cloud Apps."
   - q: "How is this different from other CA tools?"
     a: "This tool uniquely combines a template library, custom builder, policy-SET linting (not just single-policy), Zero Trust baseline scoring, rollout safety checks, and deploy-ready export — all in one free, offline tool. No other tool offers all of these together without requiring a tenant connection."
+images: ["images/og/ca-builder.jpg"]
 ---

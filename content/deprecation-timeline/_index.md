@@ -6,6 +6,5 @@ layout: "deprecation-timeline"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
-images:
-  - /images/tools/deprecation-timeline-og.png
+images: ["images/og/deprecation-timeline.jpg"]
 ---

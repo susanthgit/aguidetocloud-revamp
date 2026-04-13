@@ -1,0 +1,88 @@
+# Taglines for each tool's OG image
+# Format: slug → tagline (one-liner for the OG image)
+
+[tools]
+
+[tools.prompts]
+tagline = "84 curated AI prompts across 8 platforms. Copy, customise, create."
+
+[tools.prompt-polisher]
+tagline = "Paste any prompt. Get a CRAFTS score 0–100. Auto-rewrite weak elements."
+
+[tools.prompt-guide]
+tagline = "8 prompt engineering techniques. Hands-on practice. Zero jargon."
+
+[tools.copilot-readiness]
+tagline = "Score your M365 environment across 7 pillars. Get actionable next steps."
+
+[tools.copilot-matrix]
+tagline = "Compare Copilot features across Free, Chat, Pro & M365 tiers."
+
+[tools.roi-calculator]
+tagline = "Estimate M365 Copilot ROI by role. Realistic adoption curves. CFO-ready."
+
+[tools.ai-news]
+tagline = "Real-time AI news from 33 sources, 20 categories. Updated 4× daily."
+
+[tools.m365-roadmap]
+tagline = "Track every Microsoft 365 feature update. AI summaries. Daily refresh."
+
+[tools.service-health]
+tagline = "Live M365 & Azure service status. Incident timelines. Region tracking."
+
+[tools.deprecation-timeline]
+tagline = "Track every M365 retirement and end-of-support date. Never miss a deadline."
+
+[tools.ai-mapper]
+tagline = "Compare 25 AI services across 8 providers. Find the right platform to build on."
+
+[tools.ai-showdown]
+tagline = "Compare 30+ AI subscriptions side-by-side. Find the best AI for your needs."
+
+[tools.licensing]
+tagline = "Compare 59 M365 plans side-by-side. Build your stack. Find add-ons."
+
+[tools.ca-builder]
+tagline = "Design Conditional Access policies visually. Zero Trust templates. Export-ready."
+
+[tools.ps-builder]
+tagline = "68 ready-made recipes. Build commands visually. Zero scripting needed."
+
+[tools.migration-planner]
+tagline = "Plan your M365 migration. Adaptive wizard. Executive-ready reports."
+
+[tools.cert-tracker]
+tagline = "Free study guides for 52 Microsoft cert exams. Track your progress."
+
+[tools.world-clock]
+tagline = "Find the perfect meeting time across any time zone. Golden window detection."
+
+[tools.qr-generator]
+tagline = "Create styled QR codes for URLs, WiFi, vCards & more. Batch support."
+
+[tools.wifi-qr]
+tagline = "Beautiful printable WiFi QR cards. 4 themes. Print-ready in seconds."
+
+[tools.password-generator]
+tagline = "Generate strong passwords & passphrases. HIBP breach check. 100% private."
+
+[tools.image-compressor]
+tagline = "Compress images privately in your browser. JPEG, PNG, WebP, AVIF, HEIC."
+
+[tools.typing-test]
+tagline = "Test your typing speed & accuracy. Code mode. Problem key heatmap."
+
+[tools.countdown]
+tagline = "Beautiful flip-clock countdowns. Fullscreen mode. Stopwatch. Templates."
+
+[tools.color-palette]
+tagline = "Generate colour palettes. Harmony modes. Image extraction. WCAG checker."
+
+[tools.pomodoro]
+tagline = "Focus timer with ambient sounds. Task tracking. Stats & streaks."
+
+[tools.site-analytics]
+tagline = "Site performance dashboard. Traffic, search, and engagement metrics."
+
+[tools.feedback]
+tagline = "Share ideas, report bugs, request features. Your voice shapes the toolkit."

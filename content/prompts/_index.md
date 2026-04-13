@@ -5,4 +5,5 @@ type: "prompts"
 sitemap:
   priority: 0.8
   changefreq: "weekly"
+images: ["images/og/prompts.jpg"]
 ---

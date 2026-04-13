@@ -23,4 +23,5 @@ faq:
     answer: "Consistency measures how stable your typing speed was throughout the test. A high consistency (90%+) means you maintained a steady pace. Low consistency means your speed varied a lot — perhaps fast bursts followed by slow sections. Consistent typing is generally better than erratic fast typing."
   - question: "Can I practice typing code?"
     answer: "Yes! The Practice Modes tab has a Code Mode with real JavaScript, Python, and PowerShell snippets. This helps you practice special characters like brackets, semicolons, and indentation that are essential for programming."
+images: ["images/og/typing-test.jpg"]
 ---

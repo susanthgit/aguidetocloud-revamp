@@ -6,6 +6,5 @@ layout: "roadmap"
 sitemap:
   priority: 0.9
   changefreq: "daily"
-images:
-  - "/images/roadmap-og.webp"
+images: ["images/og/m365-roadmap.jpg"]
 ---

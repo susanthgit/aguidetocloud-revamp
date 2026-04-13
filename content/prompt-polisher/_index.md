@@ -6,4 +6,5 @@ layout: "list"
 sitemap:
   priority: 0.8
   changefreq: "monthly"
+images: ["images/og/prompt-polisher.jpg"]
 ---

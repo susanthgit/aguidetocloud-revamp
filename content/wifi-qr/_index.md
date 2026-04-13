@@ -19,4 +19,5 @@ faq:
     answer: "WPA/WPA2 (most common), WPA3, WEP (legacy), and open networks with no password."
   - question: "Is my WiFi password safe?"
     answer: "Yes — everything runs in your browser. Your password is encoded directly into the QR code image and is never sent to any server. We don't store, log, or transmit anything."
+images: ["images/og/wifi-qr.jpg"]
 ---

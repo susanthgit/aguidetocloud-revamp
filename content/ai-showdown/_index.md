@@ -7,4 +7,5 @@ url: /ai-showdown/
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+images: ["images/og/ai-showdown.jpg"]
 ---
