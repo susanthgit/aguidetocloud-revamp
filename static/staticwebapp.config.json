@@ -49,7 +49,6 @@
     { "route": "/full-courses/*", "redirect": "/certifications/", "statusCode": 301 },
     { "route": "/full-courses", "redirect": "/certifications/", "statusCode": 301 },
     { "route": "/courses/ms-100", "redirect": "/certifications/", "statusCode": 301 },
-    { "route": "/courses", "redirect": "/certifications/", "statusCode": 301 },
     { "route": "/ai-hub/v/*", "redirect": "/ai-hub/", "statusCode": 301 },
     { "route": "/ai-hub/ai-security", "redirect": "/ai-hub/", "statusCode": 301 },
     { "route": "/ai-hub/azure-ai", "redirect": "/ai-hub/", "statusCode": 301 },
@@ -90,11 +89,6 @@
     {
       "route": "/courses/az-500",
       "redirect": "/certifications/az-500-full-course-microsoft-azure-security-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/courses/ms-100",
-      "redirect": "/certifications/",
       "statusCode": 301
     },
     {
@@ -275,16 +269,6 @@
     {
       "route": "/full-courses/ai-900-fullcourse",
       "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/",
-      "statusCode": 301
-    },
-    {
-      "route": "/bootcamps/copilot-studio-1",
-      "redirect": "/ai-hub/",
-      "statusCode": 301
-    },
-    {
-      "route": "/bootcamps/copilot-studio2",
-      "redirect": "/ai-hub/",
       "statusCode": 301
     },
     {
