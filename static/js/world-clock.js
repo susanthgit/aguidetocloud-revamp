@@ -673,7 +673,11 @@ function initPresets() {
   const saveBtn = document.getElementById('wclk-save-preset');
   if (saveBtn) {
     saveBtn.addEventListener('click', () => {
-      if (S.clocks.length < 2) return;
+      if (S.clocks.length < 2) {
+        saveBtn.textContent = '⚠️ Add 2+ cities first';
+        setTimeout(() => { saveBtn.textContent = '💾 Save Team'; }, 2000);
+        return;
+      }
       const name = prompt('Name this team preset:');
       if (!name || !name.trim()) return;
       S.teamPresets.push({ name: name.trim(), cities: S.clocks.map(p => p.city) });
@@ -736,7 +740,7 @@ function renderSliderResults() {
   if (label) label.textContent = localTimeStr;
 
   if (S.clocks.length === 0) {
-    container.innerHTML = '';
+    container.innerHTML = '<div class="wclk-hint" style="padding:0.5rem 0">👆 Add cities above — their times will appear here as you drag</div>';
     return;
   }
 
