@@ -25,7 +25,7 @@ faq:
   - question: "What are custom instructions in Copilot Chat?"
     answer: "Custom instructions let you tell Copilot how you prefer responses — your role, preferred tone, formatting style, and other context. These instructions persist across all your chats, so Copilot automatically tailors every response to your preferences without you repeating yourself."
   - question: "Does Copilot Chat use my data to train AI models?"
-    answer: "No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data stays within the Microsoft 365 trust boundary and is protected by the same commitments that cover your emails and files."
+    answer: "No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data is protected by the same Microsoft enterprise terms that cover your emails and files."
 ---
 
 Whether you're rolling out Copilot Chat to 500 people or 50,000, you need your AI trainers to **deeply understand** what they're teaching — not just the buttons, but the value, the nuances, and the "why" behind every feature.
@@ -215,7 +215,7 @@ flowchart LR
 
 🗣️ **Say this to your users:**
 
-*"When you see the green shield 🛡️ in Copilot Chat, it means your conversation is protected by the same enterprise security that protects your emails and files. Nothing you type leaves Microsoft's trust boundary, and nothing is used to train AI models. It's the same security your IT team already trusts."*
+*"When you see the green shield 🛡️ in Copilot Chat, it means your conversation is protected by the same enterprise security that protects your emails and files. Your data is covered by Microsoft's enterprise terms — it's not used to train AI models, and the same compliance controls your IT team already trusts apply automatically."*
 
 </div>
 
@@ -658,7 +658,7 @@ Free Copilot Chat users get **standard access** to these capabilities. This mean
 - ⚠️ During high-demand periods, quality or speed may vary
 - ⚠️ Users may occasionally see "service is busy" messages
 
-Paid M365 Copilot users get **priority access** — guaranteed capacity, best performance, and no throttling.
+Paid M365 Copilot users get **priority access** — faster, more consistent availability during peak periods, best performance, and access to the latest models.
 
 ---
 
@@ -770,7 +770,7 @@ I build free, open tools to make Copilot adoption easier for everyone — traine
 
 ---
 
-## Coming Next: The Full Microsoft 365 Copilot Guide
+## Also Read: The Licensed Microsoft 365 Copilot Guide
 
 This guide covers **Copilot Chat** — the free tier. Our companion blog post covers **everything** about the **paid Microsoft 365 Copilot** experience:
 
@@ -816,7 +816,7 @@ Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Co
 
 **4. Does Copilot Chat use my data to train AI models?**
 
-No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data stays within the Microsoft 365 trust boundary.
+No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data is protected by the same Microsoft enterprise terms that cover your emails and files.
 
 </div>
 
@@ -865,6 +865,14 @@ Pages is a collaborative canvas where you turn any Copilot response into a share
 **10. What features require admin enablement?**
 
 Memory (Enhanced Personalisation toggle), agents (admin controls visibility and creation), Anthropic/Claude (subprocessor toggle), and Copilot Chat pinning in apps. Check with your IT team if features aren't visible.
+
+</div>
+
+<div class="trainer-script">
+
+**11. Can admins or compliance teams see my Copilot prompts and responses?**
+
+Copilot interactions are logged and can be subject to audit, eDiscovery, and retention policies depending on your organisation's Microsoft 365 subscription and compliance configuration. Metadata is always logged. Prompt and response content may be discoverable through Microsoft Purview depending on your setup. Check with your IT team for your organisation's specific policies.
 
 </div>
 

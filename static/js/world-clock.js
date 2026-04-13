@@ -90,10 +90,9 @@ const QUICK_CITIES = ['London', 'New York', 'Tokyo', 'Sydney', 'Auckland', 'Duba
    ═══════════════════════════════════ */
 
 const S = {
-  clocks: [],          // Tab 1
+  clocks: [],          // Tab 1 — shared city list for clocks + meeting planner
   use24h: true,
   targets: [],         // Tab 2
-  participants: [],    // Tab 3
   participantHours: {}, // { "Auckland": { start: 9, end: 17 } }
   duration: 60,        // meeting duration in minutes
   teamPresets: [],     // [{ name: "APAC Team", cities: ["Auckland","London","Mumbai"] }]
@@ -375,6 +374,7 @@ function initWorldClock() {
       saveState();
       renderClocks();
       updateQuickButtons();
+      renderMeetingTimeline();
     });
   }
 
@@ -393,6 +393,7 @@ function initWorldClock() {
           saveState();
           renderClocks();
           updateQuickButtons();
+          renderMeetingTimeline();
         }
       });
       quickContainer.appendChild(btn);
@@ -406,6 +407,7 @@ function initWorldClock() {
       saveState();
       renderClocks();
       updateQuickButtons();
+      renderMeetingTimeline();
     }
   }, (c) => S.clocks.some(x => x.city === c.city));
 
@@ -462,6 +464,7 @@ function renderClocks() {
       saveState();
       renderClocks();
       updateQuickButtons();
+      renderMeetingTimeline();
     });
   });
 }
@@ -609,7 +612,8 @@ function renderConvertResults() {
 }
 
 /* ═══════════════════════════════════
-   TAB 3: MEETING PLANNER (V2)
+   TAB 3: MEETING PLANNER (V2) — integrated into World Clock
+   Uses S.clocks as participants (shared city list)
    ═══════════════════════════════════ */
 
 function getWorkHours(city) {
@@ -635,19 +639,6 @@ function initMeetingPlanner() {
     });
   }
 
-  // Add local user as first participant
-  const localCity = CITIES.find(c => c.tz === S.localTz);
-  if (localCity && !S.participants.find(p => p.tz === S.localTz)) {
-    S.participants.push(localCity);
-  }
-
-  setupSearch('wclk-participant-search', 'wclk-participant-results', (city) => {
-    if (!S.participants.find(p => p.city === city.city)) {
-      S.participants.push(city);
-      renderMeetingTimeline();
-    }
-  }, (c) => S.participants.some(p => p.city === c.city));
-
   // Preset buttons
   initPresets();
 
@@ -660,10 +651,10 @@ function initPresets() {
   const saveBtn = document.getElementById('wclk-save-preset');
   if (saveBtn) {
     saveBtn.addEventListener('click', () => {
-      if (S.participants.length < 2) return;
+      if (S.clocks.length < 2) return;
       const name = prompt('Name this team preset:');
       if (!name || !name.trim()) return;
-      S.teamPresets.push({ name: name.trim(), cities: S.participants.map(p => p.city) });
+      S.teamPresets.push({ name: name.trim(), cities: S.clocks.map(p => p.city) });
       saveState();
       renderPresetButtons();
     });
@@ -685,11 +676,14 @@ function renderPresetButtons() {
     btn.addEventListener('click', () => {
       const preset = S.teamPresets[parseInt(btn.dataset.presetIdx)];
       if (!preset) return;
-      S.participants = [];
+      S.clocks = [];
       preset.cities.forEach(name => {
         const c = findCity(name);
-        if (c) S.participants.push(c);
+        if (c) S.clocks.push(c);
       });
+      saveState();
+      renderClocks();
+      updateQuickButtons();
       renderMeetingTimeline();
     });
   });
@@ -723,20 +717,21 @@ function scoreHour(h, baseDate, participants) {
 }
 
 function renderMeetingTimeline() {
+  const section = document.getElementById('wclk-meeting-section');
   const container = document.getElementById('wclk-meeting-timeline');
   const goldenContainer = document.getElementById('wclk-meeting-golden');
   const summaryContainer = document.getElementById('wclk-meeting-summary');
-  const hint = document.getElementById('wclk-meeting-hint');
   if (!container) return;
 
-  if (S.participants.length === 0) {
+  // Show meeting section only when 2+ clocks added
+  if (section) section.style.display = S.clocks.length >= 2 ? '' : 'none';
+
+  if (S.clocks.length < 2) {
     container.innerHTML = '';
     if (goldenContainer) goldenContainer.innerHTML = '';
     if (summaryContainer) summaryContainer.innerHTML = '';
-    if (hint) hint.style.display = '';
     return;
   }
-  if (hint) hint.style.display = 'none';
 
   const dateInput = document.getElementById('wclk-meeting-date');
   const baseDate = new Date(dateInput.value + 'T00:00:00');
@@ -746,7 +741,7 @@ function renderMeetingTimeline() {
   const hourScores = [];
   const goldenHours = [];
   for (let h = 0; h <= 24 - durationHours; h++) {
-    const result = scoreHour(h, baseDate, S.participants);
+    const result = scoreHour(h, baseDate, S.clocks);
     hourScores.push(result);
     if (result.allBiz) goldenHours.push(h);
   }
@@ -757,7 +752,7 @@ function renderMeetingTimeline() {
   html += '</div>';
 
   // Legend — show custom hours info
-  const hasCustom = S.participants.some(p => {
+  const hasCustom = S.clocks.some(p => {
     const wh = getWorkHours(p.city);
     return wh.start !== 9 || wh.end !== 17;
   });
@@ -769,7 +764,7 @@ function renderMeetingTimeline() {
   </div>`;
 
   // Timeline rows with custom work hours controls
-  S.participants.forEach((p, i) => {
+  S.clocks.forEach((p, i) => {
     const wh = getWorkHours(p.city);
     html += `<div class="wclk-timeline-row">
       <div class="wclk-timeline-label">
@@ -814,7 +809,10 @@ function renderMeetingTimeline() {
   // Remove buttons
   container.querySelectorAll('.wclk-timeline-remove').forEach(btn => {
     btn.addEventListener('click', () => {
-      S.participants.splice(parseInt(btn.dataset.idx), 1);
+      S.clocks.splice(parseInt(btn.dataset.idx), 1);
+      saveState();
+      renderClocks();
+      updateQuickButtons();
       renderMeetingTimeline();
     });
   });
@@ -836,7 +834,7 @@ function renderMeetingTimeline() {
       ranges.push({ start, end: prev + 1 });
 
       const bestRange = ranges.reduce((a, b) => (b.end - b.start) > (a.end - a.start) ? b : a);
-      let details = S.participants.map(p => {
+      let details = S.clocks.map(p => {
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(bestRange.start, 0, 0, 0);
         return `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)}`;
@@ -850,7 +848,7 @@ function renderMeetingTimeline() {
         <div class="wclk-golden-time">${rangeText}</div>
         <div class="wclk-golden-details">${totalHours} slot${totalHours > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
       </div>`;
-    } else if (S.participants.length >= 2) {
+    } else if (S.clocks.length >= 2) {
       // Best compromise — rank top 3 slots
       const sorted = hourScores.filter(s => s.hour + durationHours <= 24).sort((a, b) => b.score - a.score);
       const top3 = sorted.slice(0, 3);
@@ -862,7 +860,7 @@ function renderMeetingTimeline() {
         let whoAffected = [];
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(slot.hour, 0, 0, 0);
-        S.participants.forEach(p => {
+        S.clocks.forEach(p => {
           const pHour = getHourInTz(testDate, p.tz);
           const wh = getWorkHours(p.city);
           const cls = getBizClass(pHour, wh.start, wh.end);
@@ -887,13 +885,13 @@ function renderMeetingTimeline() {
   }
 
   // Copy summary button
-  if (summaryContainer && S.participants.length >= 2) {
+  if (summaryContainer && S.clocks.length >= 2) {
     summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">📋 Copy Meeting Summary</button>`;
     document.getElementById('wclk-copy-meeting').addEventListener('click', () => {
       let text = `Meeting Time Comparison (${dateInput.value}, ${S.duration} min):\n`;
       const bestHour = goldenHours.length > 0 ? goldenHours[0] : (hourScores.sort((a,b) => b.score - a.score)[0] || { hour: 9 }).hour;
-      text += `\n${goldenHours.length > 0 ? '✅ Best' : '⚠️ Least painful'}: ${bestHour}:00 – ${bestHour + Math.ceil(S.duration/60)}:00 (${S.participants[0].city} time)\n`;
-      S.participants.forEach(p => {
+      text += `\n${goldenHours.length > 0 ? '✅ Best' : '⚠️ Least painful'}: ${bestHour}:00 – ${bestHour + Math.ceil(S.duration/60)}:00 (${S.clocks[0].city} time)\n`;
+      S.clocks.forEach(p => {
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(bestHour, 0, 0, 0);
         const pHour = getHourInTz(testDate, p.tz);

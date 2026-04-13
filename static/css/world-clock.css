@@ -236,11 +236,11 @@
 
 .wclk-local {
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  background: var(--wclk-dim);
-  border: 1px solid rgba(14, 165, 233, 0.15);
-  border-radius: 12px;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--wclk-border);
+  border-radius: 10px;
 }
 .wclk-local-label {
   font-size: 0.8rem;
@@ -252,7 +252,7 @@
 }
 .wclk-local-time {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 900;
   color: #fff;
   line-height: 1.1;
@@ -441,6 +441,56 @@
   gap: 1rem;
   margin-bottom: 1rem;
   align-items: flex-end;
+}
+
+/* ── Step headers ── */
+.wclk-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.wclk-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--wclk);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.wclk-step-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Meeting section divider */
+.wclk-section-divider {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  position: relative;
+}
+.wclk-section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--wclk-border);
+}
+.wclk-section-divider span {
+  position: relative;
+  background: var(--wclk-bg);
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--wclk);
 }
 
 /* Presets bar */

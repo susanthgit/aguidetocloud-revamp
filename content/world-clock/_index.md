@@ -1,20 +1,20 @@
 ---
-title: "World Clock & Time Zone Converter"
-description: "Free world clock with live multi-city times, instant time zone converter, visual meeting planner, and DST guide. 100% client-side — no sign-up, no ads, no tracking."
+title: "Global Meeting Planner & World Clock"
+description: "Find the perfect meeting time across time zones. See who's in business hours, get the best overlap, copy to your calendar. Free, instant, no sign-up — 100% client-side."
 type: "world-clock"
 layout: "list"
 sitemap:
   priority: 0.8
   changefreq: "monthly"
 faq:
-  - question: "How does the time zone converter work?"
-    answer: "It uses your browser's built-in Intl.DateTimeFormat API to convert times between any of the 400+ IANA time zones. Everything runs in your browser — no data is sent to any server."
+  - question: "How does the meeting planner find the best time?"
+    answer: "It checks every hour of the day and scores each one based on how many participants are in business hours. The 'golden window' is when everyone is in 9-5 hours. If there's no perfect overlap, it ranks the top 3 least painful options."
   - question: "Does it handle daylight saving time automatically?"
-    answer: "Yes! The browser's timezone database automatically accounts for DST transitions. The tool also warns you when a DST change is happening near your selected date."
-  - question: "Can I plan meetings across multiple time zones?"
-    answer: "Yes — the Meeting Planner tab lets you add participants from different time zones and shows a visual timeline highlighting when everyone is in business hours."
+    answer: "Yes! The browser's timezone database automatically accounts for DST transitions. The tool also shows date-aware UTC offsets so you see the correct offset for your meeting date, not today."
+  - question: "Can I save my regular team for quick access?"
+    answer: "Yes — add your team cities, then click 'Save Team' to create a named preset. Next time, one click loads them all back."
+  - question: "Can I set custom work hours for different cities?"
+    answer: "Yes — click the work hours (e.g. '9-17') under any city in the timeline to change them. Great for teams with flexible schedules or different local norms."
   - question: "Is this tool free to use?"
-    answer: "Completely free, forever. No sign-up, no ads, no tracking. It runs 100% in your browser."
-  - question: "What time zones are supported?"
-    answer: "All 400+ IANA time zones are supported, including cities like Auckland, London, New York, Tokyo, Dubai, Sydney, and many more."
+    answer: "Completely free, forever. No sign-up, no ads, no tracking. It runs 100% in your browser — your data never leaves your device."
 ---

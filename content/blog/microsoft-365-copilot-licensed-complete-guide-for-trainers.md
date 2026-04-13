@@ -25,7 +25,7 @@ faq:
   - question: "Which apps support Anthropic Claude model choice?"
     answer: "Claude models are available in Microsoft 365 Copilot Chat (Researcher), Word, Excel (Agent Mode), PowerPoint, and Copilot Studio. Users see a model selector in the UI to switch between OpenAI GPT and Claude. Availability varies by region and admin settings."
   - question: "What is priority access in Microsoft 365 Copilot?"
-    answer: "Licensed Copilot users get priority access to all capabilities — guaranteed capacity, best performance, latest models, and no throttling during peak times. Free Copilot Chat users get standard access which may experience reduced speed or temporary unavailability during high-demand periods."
+    answer: "Licensed Copilot users get priority access to all capabilities — faster, more consistent availability during peak periods, best performance, and access to the latest models. Free Copilot Chat users get standard access which may experience reduced speed or temporary unavailability during high-demand periods."
 ---
 
 This is the companion guide to our [Copilot Chat (Free) Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/). If your users don't have a paid Copilot licence yet, start there — everything in that guide still applies to licensed users too.
@@ -65,6 +65,7 @@ If you spot something outdated or think something should be added, please [let m
 - [🎯 Training Tomorrow? Start Here](#-training-tomorrow-start-here)
 - [Positioning for Different Audiences](#positioning-copilot--for-ai-change-leads)
 - [Pricing & Licensing](#pricing--licensing)
+- [Who Should Get Licensed First?](#who-should-get-licensed-first)
 - [Official Microsoft Resources](#official-microsoft-resources)
 - [Tools to Help Your Journey](#tools-i-built-to-help-your-copilot-journey)
 - [FAQ](#frequently-asked-questions)
@@ -159,7 +160,7 @@ Licensed users benefit from these extra controls beyond what Copilot Chat provid
 
 🗣️ **Say this to your users:**
 
-*"When you see the green shield 🛡️ in Copilot, it means your conversation is protected by the same enterprise security that protects your emails and files. Nothing you type leaves Microsoft's trust boundary, and nothing is used to train AI models. When Copilot accesses your work data — emails, files, meetings — it only sees what you already have access to. No boundaries are broken."*
+*"When you see the green shield 🛡️ in Copilot, it means your conversation is protected by the same enterprise terms that protect your emails and files. Your data isn't used to train AI models, and your existing compliance controls apply automatically. When Copilot accesses your work data — emails, files, meetings — it only sees what you already have access to. If Anthropic/Claude is enabled, some processing occurs via Anthropic as a Microsoft subprocessor under the same enterprise terms."*
 
 </div>
 
@@ -402,7 +403,7 @@ Copilot in Outlook helps users stay on top of their inbox, craft better emails, 
 
 ## Copilot in Teams
 
-Copilot in Teams is where many users experience the **most immediate time savings**. Meeting recaps alone can save 15-30 minutes per meeting.
+Copilot in Teams is where many users experience the **most immediate time savings**. Based on [Microsoft's Work Trend Index research](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), users report significant time savings on meeting follow-ups and catch-ups.
 
 ### What Licensed Users Can Do
 
@@ -633,7 +634,7 @@ Microsoft 365 Copilot now offers **model choice** — users can select between *
 | App / Feature | Claude Available? | Notes |
 |:--|:--|:--|
 | **Copilot Chat (Researcher)** | ✅ | Select Claude from model picker |
-| **Word** | ✅ | Available since late 2025 |
+| **Word** | ✅ | Admin-controlled; user may see model indicator |
 | **Excel (Agent Mode)** | ✅ | Select Claude from model picker |
 | **PowerPoint** | ✅ | Available for content generation |
 | **Copilot Studio** | ✅ | Creators select model during agent creation |
@@ -792,7 +793,7 @@ Running your first M365 Copilot (licensed) training session? Here's your quick-s
 
 🗣️ **Say this to executives:**
 
-*"Microsoft 365 Copilot is the AI layer across your entire productivity stack. It reads your organisation's data — emails, files, meetings, chats — and turns it into instant insights, drafts, and actions. Early adopters are reporting 30-40% time savings on routine tasks. It's not just a chat tool — it's AI that does your team's busywork so they can focus on strategy."*
+*"Microsoft 365 Copilot is the AI layer across your entire productivity stack. It reads your organisation's data — emails, files, meetings, chats — and turns it into instant insights, drafts, and actions. According to [Forrester's Total Economic Impact study](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), organisations are seeing meaningful productivity gains across roles. It's not just a chat tool — it's AI that handles routine work so your team can focus on strategy."*
 
 </div>
 
@@ -819,6 +820,49 @@ Running your first M365 Copilot (licensed) training session? Here's your quick-s
 > 🔧 **Need help understanding licensing?** Use our interactive [Microsoft Licensing Simplifier](/licensing/) to compare all M365 plans side-by-side.
 
 > 💰 **Want to calculate the ROI?** Try our [Copilot ROI Calculator](/roi-calculator/) — estimate time savings, cost recovery, and break-even timeline for your organisation.
+
+---
+
+## Who Should Get Licensed First?
+
+This is the question every AI Change Lead and IT decision-maker needs to answer. Not every user needs the full Copilot licence on day one. Here's a decision framework.
+
+### Licence Priority Matrix
+
+| Priority | Who | Why |
+|:--|:--|:--|
+| **🥇 First wave** | Executive assistants, senior leaders, project managers | Highest meeting load, most email, biggest time-savings impact |
+| **🥇 First wave** | Sales & customer-facing roles | Revenue-generating — ROI is easiest to measure |
+| **🥈 Second wave** | Marketing, HR, finance analysts | Strong use cases across Word, Excel, PowerPoint |
+| **🥈 Second wave** | IT helpdesk & support teams | Copilot in Teams + Outlook for ticket triage and knowledge lookup |
+| **🥉 Third wave** | General knowledge workers | After first/second wave proves value and builds internal champions |
+| **🆓 Copilot Chat only** | Frontline workers, light M365 users | Web chat + agents may be sufficient for their needs |
+
+### When Free Copilot Chat Is Enough
+
+Not every user needs the paid licence. **Copilot Chat (free) is sufficient** when users:
+- Primarily need AI for brainstorming, research, or writing assistance
+- Don't rely heavily on organisational data (emails, meetings, files) in their AI workflows
+- Work in roles where in-app Copilot (Word/Excel/PPT) isn't critical
+- Are in early AI adoption — building AI fluency before upgrading
+
+### Pilot Plan Recommendations
+
+| Phase | Duration | Focus |
+|:--|:--|:--|
+| **Pilot** | 4-6 weeks | 50-100 users from first wave. Measure time savings, satisfaction, and adoption. |
+| **Expand** | 6-8 weeks | Scale to second wave based on pilot learnings. Refine training materials. |
+| **Broad rollout** | Ongoing | Third wave + new hires. Establish champions network. |
+
+### Success Metrics to Track
+
+- **Adoption rate** — % of licensed users actively using Copilot weekly
+- **Time saved** — Self-reported via surveys (Microsoft provides templates in the [Copilot Success Kit](https://adoption.microsoft.com/copilot/success-kit/))
+- **Meeting efficiency** — Reduction in follow-up emails after meetings with Copilot recaps
+- **Content velocity** — Time to produce first drafts of documents, presentations, emails
+- **User sentiment** — NPS scores from Copilot users vs non-users
+
+> 📖 **Official adoption resources:** [Copilot Success Kit](https://adoption.microsoft.com/copilot/success-kit/) · [Copilot Scenarios Library](https://adoption.microsoft.com/copilot/scenarios/) · [Copilot Analytics dashboard](https://learn.microsoft.com/en-us/viva/insights/advanced/analyst/templates/copilot-dashboard)
 
 ---
 

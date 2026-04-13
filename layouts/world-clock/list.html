@@ -6,7 +6,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "World Clock & Time Zone Converter",
+  "name": "Global Meeting Planner & World Clock",
   "description": "{{ .Description }}",
   "url": "{{ .Permalink }}",
   "applicationCategory": "UtilityApplication",
@@ -46,29 +46,26 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "page" page "accent" "#0EA5E9" "title" "World Clock & Time Zone Converter" "subtitle" "Live multi-city clocks, instant conversions, visual meeting planner & DST guide — 100% free, runs in your browser") }}
+{{ partial "tool-hero.html" (dict "page" page "accent" "#0EA5E9" "title" "Global Meeting Planner & World Clock" "subtitle" "Find the perfect meeting time across time zones — see who's in business hours, get the best overlap, and copy it to your calendar. Free, instant, no sign-up.") }}
 
 <div class="wclk-page">
 
   {{/* ── Tabs ── */}}
   <div class="wclk-tabs" role="tablist">
-    <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">🕐 World Clock</button>
-    <button class="wclk-tab" role="tab" data-tab="convert">🔄 Convert</button>
-    <button class="wclk-tab" role="tab" data-tab="meeting">📅 Meeting Planner</button>
+    <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">📅 Meeting Planner</button>
+    <button class="wclk-tab" role="tab" data-tab="convert">🔄 Convert Time</button>
     <button class="wclk-tab" role="tab" data-tab="dst">🌞 DST Guide</button>
   </div>
 
-  {{/* ══════════════ TAB 1: WORLD CLOCK ══════════════ */}}
+  {{/* ══════════════ TAB 1: MEETING PLANNER (hero) + WORLD CLOCK (context) ══════════════ */}}
   <div class="wclk-panel active" id="panel-clock" role="tabpanel">
 
-    {{/* Local time hero */}}
-    <div class="wclk-local">
-      <div class="wclk-local-label">Your Local Time</div>
-      <div class="wclk-local-time" id="wclk-local-time">--:--:--</div>
-      <div class="wclk-local-details" id="wclk-local-details"></div>
+    {{/* Step 1: Add your team */}}
+    <div class="wclk-step-header">
+      <span class="wclk-step-num">1</span>
+      <span class="wclk-step-text">Add your team's cities</span>
     </div>
 
-    {{/* Controls */}}
     <div class="wclk-controls">
       <div class="wclk-search-wrap">
         <input type="text" class="wclk-search" id="wclk-city-search" placeholder="Search city or time zone..." autocomplete="off" aria-label="Search cities">
@@ -79,16 +76,57 @@
           <span class="wclk-quick-label">Quick add:</span>
         </div>
         <div class="wclk-toggles">
-          <button class="wclk-toggle" id="wclk-clear-all" title="Remove all clocks">Clear all</button>
+          <button class="wclk-toggle" id="wclk-clear-all" title="Remove all">Clear all</button>
           <button class="wclk-toggle" id="wclk-format-toggle" title="Toggle 12h/24h">24h</button>
         </div>
       </div>
     </div>
 
-    {{/* Clock grid */}}
+    <div class="wclk-presets-bar">
+      <div class="wclk-presets-list" id="wclk-presets-list"></div>
+      <button class="wclk-preset" id="wclk-save-preset" title="Save current cities as a team preset">💾 Save Team</button>
+    </div>
+
+    {{/* Clock cards — show current times for added cities */}}
     <div class="wclk-grid" id="wclk-grid"></div>
 
-    <p class="wclk-hint" id="wclk-empty-hint">👆 Search for a city above or use the quick-add buttons to get started</p>
+    <p class="wclk-hint" id="wclk-empty-hint">👆 Add 2 or more cities to see the meeting planner — use search or the quick-add buttons above</p>
+
+    {{/* Step 2: Find the best meeting time */}}
+    <div class="wclk-meeting-section" id="wclk-meeting-section" style="display:none">
+      <div class="wclk-step-header">
+        <span class="wclk-step-num">2</span>
+        <span class="wclk-step-text">Find the best meeting time</span>
+      </div>
+
+      <div class="wclk-meeting-controls">
+        <div class="wclk-field">
+          <label class="wclk-label" for="wclk-meeting-date">Meeting Date</label>
+          <input type="date" class="wclk-input" id="wclk-meeting-date">
+        </div>
+        <div class="wclk-field">
+          <label class="wclk-label" for="wclk-duration">Duration</label>
+          <select class="wclk-select" id="wclk-duration">
+            <option value="30">30 min</option>
+            <option value="60" selected>1 hour</option>
+            <option value="90">1.5 hours</option>
+            <option value="120">2 hours</option>
+            <option value="180">3 hours</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="wclk-meeting-timeline" id="wclk-meeting-timeline"></div>
+      <div class="wclk-meeting-golden" id="wclk-meeting-golden"></div>
+      <div class="wclk-meeting-summary" id="wclk-meeting-summary"></div>
+    </div>
+
+    {{/* Your local time — compact, at the bottom */}}
+    <div class="wclk-local">
+      <div class="wclk-local-label">Your Local Time</div>
+      <div class="wclk-local-time" id="wclk-local-time">--:--:--</div>
+      <div class="wclk-local-details" id="wclk-local-details"></div>
+    </div>
   </div>
 
   {{/* ══════════════ TAB 2: CONVERT ══════════════ */}}
@@ -124,46 +162,7 @@
     <p class="wclk-hint" id="wclk-convert-hint">👆 Pick a date/time and add target time zones to see conversions</p>
   </div>
 
-  {{/* ══════════════ TAB 3: MEETING PLANNER ══════════════ */}}
-  <div class="wclk-panel" id="panel-meeting" role="tabpanel">
-
-    <div class="wclk-meeting-controls">
-      <div class="wclk-field">
-        <label class="wclk-label" for="wclk-meeting-date">Meeting Date</label>
-        <input type="date" class="wclk-input" id="wclk-meeting-date">
-      </div>
-      <div class="wclk-field">
-        <label class="wclk-label" for="wclk-duration">Duration</label>
-        <select class="wclk-select" id="wclk-duration">
-          <option value="30">30 min</option>
-          <option value="60" selected>1 hour</option>
-          <option value="90">1.5 hours</option>
-          <option value="120">2 hours</option>
-          <option value="180">3 hours</option>
-        </select>
-      </div>
-      <div class="wclk-field wclk-field-grow">
-        <label class="wclk-label">Add Participant</label>
-        <div class="wclk-target-search-wrap">
-          <input type="text" class="wclk-search" id="wclk-participant-search" placeholder="Search city or time zone..." autocomplete="off">
-          <div class="wclk-search-results" id="wclk-participant-results"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wclk-presets-bar">
-      <div class="wclk-presets-list" id="wclk-presets-list"></div>
-      <button class="wclk-preset" id="wclk-save-preset" title="Save current participants as a team preset">💾 Save Team</button>
-    </div>
-
-    <div class="wclk-meeting-timeline" id="wclk-meeting-timeline"></div>
-    <div class="wclk-meeting-golden" id="wclk-meeting-golden"></div>
-    <div class="wclk-meeting-summary" id="wclk-meeting-summary"></div>
-
-    <p class="wclk-hint" id="wclk-meeting-hint">👆 Pick a date and add participants from different time zones to find the best meeting time</p>
-  </div>
-
-  {{/* ══════════════ TAB 4: DST GUIDE ══════════════ */}}
+  {{/* ══════════════ TAB 3: DST GUIDE ══════════════ */}}
   <div class="wclk-panel" id="panel-dst" role="tabpanel">
     <div class="wclk-dst-content">
 
