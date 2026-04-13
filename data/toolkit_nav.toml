@@ -153,6 +153,12 @@ name = "Colour Palette Generator"
 short = "Palette"
 
 [[tools]]
+url = "/pomodoro/"
+emoji = "🍅"
+name = "Pomodoro Focus Timer"
+short = "Pomodoro"
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

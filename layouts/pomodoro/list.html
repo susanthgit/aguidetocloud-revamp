@@ -1,0 +1,326 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/pomodoro.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pomodoro Focus Timer",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+
+{{/* ── FAQ Schema ── */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "page" page "accent" "#EF4444" "title" "Pomodoro Focus Timer" "subtitle" "A beautiful productivity timer with ambient sounds, task tracking & detailed stats. 100% free, private, no sign-up.") }}
+
+<div class="pomo-page">
+
+  {{/* ═══════════════════════════════════════
+       TIMER — always visible, the hero
+       ═══════════════════════════════════════ */}}
+  <div class="pomo-timer-card" id="pomo-timer-card">
+
+    {{/* Duration presets */}}
+    <div class="pomo-presets" id="pomo-presets">
+      <button class="pomo-preset active" data-w="25" data-s="5" data-l="15">25 / 5</button>
+      <button class="pomo-preset" data-w="50" data-s="10" data-l="30">50 / 10</button>
+      <button class="pomo-preset" data-w="90" data-s="15" data-l="30">90 / 15</button>
+      <button class="pomo-preset" data-w="0">⚙️ Custom</button>
+    </div>
+
+    {{/* Phase indicator */}}
+    <div class="pomo-phase" id="pomo-phase">Focus</div>
+
+    {{/* Timer ring */}}
+    <div class="pomo-timer-wrap" id="pomo-timer-wrap">
+      <svg class="pomo-ring" viewBox="0 0 260 260" id="pomo-ring-svg">
+        <circle class="pomo-ring-bg" cx="130" cy="130" r="120" />
+        <circle class="pomo-ring-progress" id="pomo-ring-progress" cx="130" cy="130" r="120" />
+      </svg>
+      <div class="pomo-time" id="pomo-time">25:00</div>
+    </div>
+
+    {{/* Session dots */}}
+    <div class="pomo-sessions" id="pomo-sessions"></div>
+
+    {{/* Controls */}}
+    <div class="pomo-controls">
+      <button class="pomo-btn pomo-btn-secondary" id="pomo-reset" title="Reset (R)">↺</button>
+      <button class="pomo-btn pomo-btn-primary pomo-btn-big" id="pomo-start" title="Start / Pause (Space)">▶ Start</button>
+      <button class="pomo-btn pomo-btn-secondary" id="pomo-skip" title="Skip (S)">⏭</button>
+    </div>
+
+    {{/* Current task — inline */}}
+    <div class="pomo-focus-task" id="pomo-focus-task">
+      <div class="pomo-focus-task-display" id="pomo-focus-task-display">
+        <span class="pomo-focus-label">🎯</span>
+        <span class="pomo-focus-name" id="pomo-focus-name">Click to add a task…</span>
+      </div>
+      <div class="pomo-focus-task-input" id="pomo-focus-task-input" style="display:none">
+        <input type="text" class="pomo-input" id="pomo-quick-task" placeholder="What are you working on?" maxlength="200">
+        <button class="pomo-btn-xs" id="pomo-quick-task-ok">✓</button>
+      </div>
+    </div>
+
+    {{/* Ambient sounds — synthetic only, bold colourful pills */}}
+    <div class="pomo-ambient-section">
+      <div class="pomo-ambient-pills" id="pomo-ambient-pills">
+        <button class="pomo-ambient-pill" data-ambient="s-focus" style="--pill-color:#EF4444">Focus</button>
+        <button class="pomo-ambient-pill" data-ambient="s-calm" style="--pill-color:#34D399">Calm</button>
+        <button class="pomo-ambient-pill" data-ambient="s-bright" style="--pill-color:#FBBF24">Bright</button>
+        <button class="pomo-ambient-pill" data-ambient="s-deep" style="--pill-color:#3B82F6">Deep</button>
+        <button class="pomo-ambient-pill" data-ambient="s-static" style="--pill-color:#A78BFA">Static</button>
+        <button class="pomo-ambient-pill" data-ambient="s-warm" style="--pill-color:#F97316">Warm</button>
+      </div>
+      <input type="range" class="pomo-vol-slider" id="pomo-ambient-vol-quick" min="0" max="100" value="50" title="Ambient volume">
+    </div>
+
+    {{/* Bottom row: actions + today count */}}
+    <div class="pomo-timer-bottom">
+      <div class="pomo-today-count">🍅 <strong id="pomo-today-num">0</strong> today</div>
+      <div class="pomo-timer-actions">
+        <label class="pomo-auto-label"><input type="checkbox" id="pomo-auto-start"> Auto</label>
+        <button class="pomo-icon-btn" id="pomo-mute-btn" title="Mute (M)">🔊</button>
+        <button class="pomo-icon-btn" id="pomo-fullscreen" title="Fullscreen (F)">⛶</button>
+        <button class="pomo-icon-btn" id="pomo-settings-btn" title="Settings">⚙️</button>
+      </div>
+    </div>
+
+    {{/* Motivational quote (shown during breaks) */}}
+    <div class="pomo-quote" id="pomo-quote" style="display:none">
+      <p id="pomo-quote-text"></p>
+      <span id="pomo-quote-author"></span>
+    </div>
+
+    {{/* Keyboard shortcuts hint */}}
+    <div class="pomo-shortcuts">
+      <span>Space</span> Start/Pause &nbsp;
+      <span>R</span> Reset &nbsp;
+      <span>S</span> Skip &nbsp;
+      <span>F</span> Fullscreen &nbsp;
+      <span>M</span> Mute
+    </div>
+  </div>
+
+  {{/* ═══════════════════════════════════════
+       TABS — Tasks & Stats
+       ═══════════════════════════════════════ */}}
+  <div class="pomo-tabs" role="tablist">
+    <button class="pomo-tab active" role="tab" data-tab="tasks" aria-selected="true">📝 Tasks</button>
+    <button class="pomo-tab" role="tab" data-tab="stats">📊 Stats</button>
+  </div>
+
+  {{/* ── TASKS TAB ── */}}
+  <div class="pomo-panel active" id="panel-tasks" role="tabpanel">
+    <div class="pomo-tasks-header">
+      <span class="pomo-task-count" id="pomo-task-count">0 tasks</span>
+      <button class="pomo-btn-sm" id="pomo-clear-done">Clear completed</button>
+    </div>
+
+    <div class="pomo-task-input-row">
+      <input type="text" class="pomo-input" id="pomo-task-input" placeholder="Add a task and press Enter…" maxlength="200" aria-label="New task">
+      <input type="number" class="pomo-input pomo-est-input" id="pomo-task-est" min="1" max="99" value="1" title="Estimated 🍅" aria-label="Estimated pomodoros">
+      <button class="pomo-btn pomo-btn-primary pomo-btn-sm" id="pomo-task-add">Add</button>
+    </div>
+
+    <div class="pomo-task-list" id="pomo-task-list"></div>
+    <p class="pomo-task-hint" id="pomo-task-hint">Click a task to set it as your focus. Drag to reorder.</p>
+  </div>
+
+  {{/* ── STATS TAB ── */}}
+  <div class="pomo-panel" id="panel-stats" role="tabpanel">
+
+    <h2 class="pomo-section-title">📊 Today</h2>
+    <div class="pomo-stats-cards">
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-focus">0 min</div>
+        <div class="pomo-stat-label">Focus time</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-sessions">0</div>
+        <div class="pomo-stat-label">Sessions</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-tasks">0</div>
+        <div class="pomo-stat-label">Tasks done</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-streak">0</div>
+        <div class="pomo-stat-label">Day streak</div>
+      </div>
+    </div>
+
+    <h2 class="pomo-section-title">📈 This Week</h2>
+    <div class="pomo-chart-wrap">
+      <canvas id="pomo-week-chart" height="180"></canvas>
+    </div>
+
+    <h2 class="pomo-section-title">🏆 All Time</h2>
+    <div class="pomo-stats-cards">
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-total-hrs">0 hrs</div>
+        <div class="pomo-stat-label">Total focus</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-total-sessions">0</div>
+        <div class="pomo-stat-label">Total sessions</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-longest">0</div>
+        <div class="pomo-stat-label">Longest streak</div>
+      </div>
+      <div class="pomo-stat-card">
+        <div class="pomo-stat-num" id="pomo-stat-avg">0 min</div>
+        <div class="pomo-stat-label">Avg daily focus</div>
+      </div>
+    </div>
+
+    <h2 class="pomo-section-title">🗓️ Focus Heatmap</h2>
+    <div class="pomo-heatmap-wrap">
+      <div class="pomo-heatmap" id="pomo-heatmap"></div>
+      <div class="pomo-heatmap-legend">
+        <span>Less</span>
+        <span class="pomo-heat-box" data-level="0"></span>
+        <span class="pomo-heat-box" data-level="1"></span>
+        <span class="pomo-heat-box" data-level="2"></span>
+        <span class="pomo-heat-box" data-level="3"></span>
+        <span class="pomo-heat-box" data-level="4"></span>
+        <span>More</span>
+      </div>
+    </div>
+
+    <div class="pomo-stats-actions">
+      <button class="pomo-btn pomo-btn-secondary pomo-btn-sm" id="pomo-export-csv">⬇ Export CSV</button>
+      <button class="pomo-btn pomo-btn-danger pomo-btn-sm" id="pomo-clear-data">🗑️ Clear All Data</button>
+    </div>
+  </div>
+
+  {{/* ═══════════════════════════════════════
+       SETTINGS MODAL
+       ═══════════════════════════════════════ */}}
+  <div class="pomo-modal-overlay" id="pomo-modal-overlay" style="display:none">
+    <div class="pomo-modal" id="pomo-modal">
+      <div class="pomo-modal-header">
+        <h2>⚙️ Settings</h2>
+        <button class="pomo-modal-close" id="pomo-modal-close">&times;</button>
+      </div>
+      <div class="pomo-modal-body">
+
+        <h3 class="pomo-section-title">⏱️ Timer Durations</h3>
+        <div class="pomo-settings-grid">
+          <div class="pomo-setting">
+            <label>Focus Duration</label>
+            <div class="pomo-slider-row">
+              <input type="range" class="pomo-slider" id="pomo-set-work" min="1" max="90" value="25">
+              <span class="pomo-slider-val" id="pomo-set-work-val">25 min</span>
+            </div>
+          </div>
+          <div class="pomo-setting">
+            <label>Short Break</label>
+            <div class="pomo-slider-row">
+              <input type="range" class="pomo-slider" id="pomo-set-short" min="1" max="30" value="5">
+              <span class="pomo-slider-val" id="pomo-set-short-val">5 min</span>
+            </div>
+          </div>
+          <div class="pomo-setting">
+            <label>Long Break</label>
+            <div class="pomo-slider-row">
+              <input type="range" class="pomo-slider" id="pomo-set-long" min="1" max="60" value="15">
+              <span class="pomo-slider-val" id="pomo-set-long-val">15 min</span>
+            </div>
+          </div>
+          <div class="pomo-setting">
+            <label>Long Break Every</label>
+            <div class="pomo-slider-row">
+              <input type="range" class="pomo-slider" id="pomo-set-interval" min="2" max="8" value="4">
+              <span class="pomo-slider-val" id="pomo-set-interval-val">4 sessions</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="pomo-section-title">🔁 Automation</h3>
+        <div class="pomo-settings-toggles">
+          <label class="pomo-toggle-row"><input type="checkbox" id="pomo-set-auto-break"> Auto-start breaks</label>
+          <label class="pomo-toggle-row"><input type="checkbox" id="pomo-set-auto-focus"> Auto-start focus sessions</label>
+          <label class="pomo-toggle-row"><input type="checkbox" id="pomo-set-notif"> Browser notifications <button class="pomo-btn-xs" id="pomo-notif-test">Test</button></label>
+        </div>
+
+        <h3 class="pomo-section-title">🔔 Alert Sound</h3>
+        <div class="pomo-settings-grid">
+          <div class="pomo-setting">
+            <label>Sound Type</label>
+            <div class="pomo-sound-pills" id="pomo-sound-pills">
+              <button class="pomo-pill active" data-sound="chime">🔔 Chime</button>
+              <button class="pomo-pill" data-sound="bell">🛎️ Bell</button>
+              <button class="pomo-pill" data-sound="digital">📟 Digital</button>
+              <button class="pomo-pill" data-sound="none">🔇 None</button>
+            </div>
+          </div>
+          <div class="pomo-setting">
+            <label>Alert Volume</label>
+            <div class="pomo-slider-row">
+              <input type="range" class="pomo-slider" id="pomo-set-vol" min="0" max="100" value="70">
+              <span class="pomo-slider-val" id="pomo-set-vol-val">70%</span>
+              <button class="pomo-btn-xs" id="pomo-vol-preview">▶</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem; text-align:center;">
+          <button class="pomo-btn pomo-btn-secondary" id="pomo-reset-settings">↺ Reset to Defaults</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Pagefind hidden block ── */}}
+  <div data-pagefind-body style="display:none">
+    <p>Pomodoro Focus Timer — free productivity timer with ambient sounds, task tracking, and focus statistics. Customise work sessions, short breaks, long breaks. Rain, café, forest, ocean, white noise, lo-fi ambient sounds. Track your daily focus time with heatmap and weekly charts.</p>
+  </div>
+
+  {{/* ── FAQ Section ── */}}
+  {{ if .Params.faq }}
+  <div class="pomo-faq">
+    <h2 class="pomo-section-title">❓ Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <div class="pomo-faq-item">
+      <h3 class="pomo-faq-q">{{ add $i 1 }}. {{ $q.question }}</h3>
+      <p class="pomo-faq-a">{{ $q.answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ partial "back-nav" . }}
+
+</div>
+
+<script src="/js/pomodoro.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}
