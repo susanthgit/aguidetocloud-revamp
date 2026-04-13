@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 17:18:03 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 19:37:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1278714</link>
-      <description>[Exchange Online] Users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises.</description>
+      <description>[Exchange Online] Users may have been unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1278714</guid>
       <pubDate>Fri, 10 Apr 2026 17:30:00 +0000</pubDate>
     </item>
@@ -33,15 +33,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1276339</guid>
       <pubDate>Fri, 10 Apr 2026 06:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Some admins may be unable to access Activity Explorer in the Microsoft Purview portal</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1274841</link>
-      <description>[Microsoft Purview] Admins may be unable to access Activity Explorer in the Microsoft Purview portal.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MP1274841</guid>
-      <pubDate>Thu, 09 Apr 2026 06:15:29 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may experience issues accessing or using multiple Microsoft 365 services, including Microsoft Teams and Outlook</title>
@@ -168,6 +159,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1269743</guid>
       <pubDate>Thu, 02 Apr 2026 02:37:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Some admins may be unable to access Activity Explorer in the Microsoft Purview portal</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1274841</link>
+      <description>[Microsoft Purview] Admins may have been unable to access Activity Explorer in the Microsoft Purview portal.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MP1274841</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may notice excessive memory usage on their Windows Server 2016 machines</title>
