@@ -1082,20 +1082,10 @@ a:hover {
   transform: translateY(-1px);
 }
 
-/* Footer Ko-fi line */
+/* Footer Ko-fi button */
 .footer-kofi {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0.3rem 0 0.8rem;
-}
-.footer-kofi .kofi-link {
-  color: #FF5E5B;
-  text-decoration: none;
-  font-weight: 600;
-}
-.footer-kofi .kofi-link:hover {
-  color: #ff8785;
-  text-decoration: underline;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
 }
 
 /* ── TOOL PREV/NEXT NAV ────────────────── */
