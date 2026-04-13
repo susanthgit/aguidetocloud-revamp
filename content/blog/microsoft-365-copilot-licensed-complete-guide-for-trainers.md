@@ -995,6 +995,22 @@ $30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business 
 
 </div>
 
+<div class="trainer-script">
+
+**11. Can admins or compliance teams see my Copilot prompts and responses?**
+
+Copilot interactions are logged and can be subject to audit, eDiscovery, and retention policies depending on your Microsoft 365 subscription and compliance configuration. Metadata (who used Copilot, when, which app) is always logged. Prompt and response content may be discoverable through Microsoft Purview depending on your setup. Check with your IT/compliance team for your organisation's specific policies.
+
+</div>
+
+<div class="trainer-script">
+
+**12. Who should get Microsoft 365 Copilot licences first?**
+
+Start with roles that have the highest meeting load, email volume, and content creation needs — executive assistants, senior leaders, sales teams, and project managers. Then expand to analysts, HR, marketing, and finance. Use free Copilot Chat for light M365 users and frontline workers. See the [Who Should Get Licensed First?](#who-should-get-licensed-first) section for a detailed priority matrix.
+
+</div>
+
 ---
 
 > **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. I work at Microsoft as a Copilot Solution Engineer, but this guide is based on my own research, experience, and publicly available documentation. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date and accurate information.
