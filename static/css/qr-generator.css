@@ -428,14 +428,8 @@
   align-items: center;
   justify-content: center;
   min-height: 280px;
-  margin-bottom: 1.5rem;
-}
-
-.qrgen-preview-box canvas,
-.qrgen-preview-box svg {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s;
 }
 
 .qrgen-preview-placeholder {
@@ -726,7 +720,8 @@
 @media print {
   .qrgen-tabs, .qrgen-controls, .qrgen-actions,
   .qrgen-share-row, .qrgen-warning, .tool-hero,
-  .qrgen-style-toggle { display: none !important; }
+  .qrgen-style-toggle, .qrgen-mobile-preview,
+  .qrgen-preview-bg-toggle, .qrgen-try-cards { display: none !important; }
   .qrgen-preview-card { border: none; background: #fff; }
   .qrgen-preview-box { min-height: auto; }
 }
@@ -743,4 +738,161 @@
     font-size: 0.85rem;
     padding: 0.6rem 0.85rem;
   }
+  /* Hide main preview card on mobile — use sticky mini instead */
+  .qrgen-preview-card {
+    display: none;
+  }
+  .qrgen-mobile-preview {
+    display: flex !important;
+  }
+}
+
+/* ── WiFi password toggle ── */
+.qrgen-pass-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.qrgen-pass-toggle:hover {
+  opacity: 1;
+}
+
+/* ── Try-it cards ── */
+.qrgen-try-cards {
+  margin-top: 0.5rem;
+}
+
+.qrgen-try-grid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.qrgen-try-card {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(236,72,153,0.06);
+  border: 1px solid rgba(236,72,153,0.15);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.qrgen-try-card:hover {
+  background: rgba(236,72,153,0.15);
+  border-color: rgba(236,72,153,0.4);
+  color: #EC4899;
+}
+
+.qrgen-try-icon { font-size: 1rem; }
+.qrgen-try-name { white-space: nowrap; }
+
+/* ── Preview background toggle ── */
+.qrgen-preview-bg-toggle {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.qrgen-bg-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.qrgen-bg-btn:hover {
+  border-color: rgba(236,72,153,0.3);
+}
+
+.qrgen-bg-btn.active {
+  border-color: #EC4899;
+  background: rgba(236,72,153,0.1);
+}
+
+.qrgen-preview-box.bg-light {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.qrgen-preview-box.bg-transparent {
+  background: repeating-conic-gradient(rgba(255,255,255,0.06) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* ── Size info ── */
+.qrgen-size-info {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1rem;
+  font-family: monospace;
+}
+
+/* ── QR entrance animation ── */
+@keyframes qrgen-scaleIn {
+  from { transform: scale(0.92); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.qrgen-preview-box canvas,
+.qrgen-preview-box svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  animation: qrgen-scaleIn 0.25s ease-out;
+}
+
+/* ── Mobile sticky preview ── */
+.qrgen-mobile-preview {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  z-index: 90;
+  background: rgba(15,15,26,0.9);
+  border: 2px solid rgba(236,72,153,0.3);
+  border-radius: 14px;
+  padding: 0.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.qrgen-mobile-preview-box {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrgen-mobile-preview-box canvas,
+.qrgen-mobile-preview-box svg {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
 }

@@ -140,6 +140,7 @@
     sizeSlider.addEventListener('input', () => {
       S.size = parseInt(sizeSlider.value);
       sizeVal.textContent = S.size + 'px';
+      updateSizeInfo();
       debouncedGenerate();
     });
   }
@@ -236,6 +237,24 @@
         return mailto;
       }
       case 'phone': return `tel:${($('#qrgen-phone') || {}).value || ''}`;
+      case 'vcard': {
+        const fn = ($('#qrgen-vcard-fn') || {}).value || '';
+        const ln = ($('#qrgen-vcard-ln') || {}).value || '';
+        const org = ($('#qrgen-vcard-org') || {}).value || '';
+        const title = ($('#qrgen-vcard-title') || {}).value || '';
+        const phone = ($('#qrgen-vcard-phone') || {}).value || '';
+        const email = ($('#qrgen-vcard-email') || {}).value || '';
+        const url = ($('#qrgen-vcard-url') || {}).value || '';
+        if (!fn && !ln) return '';
+        let v = `BEGIN:VCARD\nVERSION:3.0\nN:${ln};${fn}\nFN:${fn} ${ln}`.trim();
+        if (org) v += `\nORG:${org}`;
+        if (title) v += `\nTITLE:${title}`;
+        if (phone) v += `\nTEL:${phone}`;
+        if (email) v += `\nEMAIL:${email}`;
+        if (url) v += `\nURL:${url}`;
+        v += `\nEND:VCARD`;
+        return v;
+      }
       default: return '';
     }
   }
@@ -319,6 +338,8 @@
     try {
       S.qr = new QRCodeStyling(opts);
       S.qr.append(box);
+      updateSizeInfo();
+      updateMobilePreview();
     } catch (e) {
       box.innerHTML = '<div class="qrgen-preview-placeholder">⚠️ Error generating QR code</div>';
     }
@@ -387,7 +408,7 @@
     if (!p.has('type')) return;
 
     const type = p.get('type');
-    if (['url', 'text', 'wifi', 'email', 'phone'].includes(type)) {
+    if (['url', 'text', 'wifi', 'email', 'phone', 'vcard'].includes(type)) {
       // Activate type pill
       $$('.qrgen-type-pill').forEach(pill => pill.classList.remove('active'));
       const pill = $(`.qrgen-type-pill[data-type="${type}"]`);
@@ -441,7 +462,9 @@
 
   /* ── Listen to all inputs for live preview ── */
   ['#qrgen-url', '#qrgen-text', '#qrgen-wifi-ssid', '#qrgen-wifi-pass',
-   '#qrgen-email-to', '#qrgen-email-subject', '#qrgen-email-body', '#qrgen-phone'
+   '#qrgen-email-to', '#qrgen-email-subject', '#qrgen-email-body', '#qrgen-phone',
+   '#qrgen-vcard-fn', '#qrgen-vcard-ln', '#qrgen-vcard-org', '#qrgen-vcard-title',
+   '#qrgen-vcard-phone', '#qrgen-vcard-email', '#qrgen-vcard-url'
   ].forEach(sel => {
     const el = $(sel);
     if (el) el.addEventListener('input', debouncedGenerate);
@@ -449,6 +472,94 @@
   ['#qrgen-wifi-enc', '#qrgen-wifi-hidden'].forEach(sel => {
     const el = $(sel);
     if (el) el.addEventListener('change', debouncedGenerate);
+  });
+
+  /* ── WiFi password show/hide toggle ── */
+  const passToggle = $('#qrgen-wifi-pass-toggle');
+  const passInput = $('#qrgen-wifi-pass');
+  if (passToggle && passInput) {
+    passToggle.addEventListener('click', () => {
+      const showing = passInput.type === 'text';
+      passInput.type = showing ? 'password' : 'text';
+      passToggle.textContent = showing ? '👁️' : '🙈';
+      passToggle.title = showing ? 'Show password' : 'Hide password';
+    });
+  }
+
+  /* ── Try-it Quick Start cards ── */
+  const TRY_DATA = {
+    website: { type: 'url', data: { '#qrgen-url': 'https://www.example.com' } },
+    wifi: { type: 'wifi', data: { '#qrgen-wifi-ssid': 'MyHomeWiFi', '#qrgen-wifi-pass': 'SecurePassword123' } },
+    vcard: { type: 'vcard', data: { '#qrgen-vcard-fn': 'John', '#qrgen-vcard-ln': 'Doe', '#qrgen-vcard-org': 'Acme Corp', '#qrgen-vcard-title': 'Software Engineer', '#qrgen-vcard-phone': '+1234567890', '#qrgen-vcard-email': 'john@example.com', '#qrgen-vcard-url': 'https://www.example.com' } }
+  };
+
+  $$('.qrgen-try-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const tryKey = card.dataset.try;
+      const cfg = TRY_DATA[tryKey];
+      if (!cfg) return;
+      // Switch type
+      S.type = cfg.type;
+      $$('.qrgen-type-pill').forEach(p => p.classList.remove('active'));
+      $(`.qrgen-type-pill[data-type="${cfg.type}"]`)?.classList.add('active');
+      $$('[id^="qrgen-form-"]').forEach(f => f.classList.add('qrgen-hidden'));
+      $(`#qrgen-form-${cfg.type}`)?.classList.remove('qrgen-hidden');
+      // Fill data
+      for (const [sel, val] of Object.entries(cfg.data)) {
+        const el = $(sel);
+        if (el) el.value = val;
+      }
+      debouncedGenerate();
+      showToast(`Loaded "${card.querySelector('.qrgen-try-name').textContent}" example`);
+    });
+  });
+
+  /* ── Preview background toggle (dark/light/transparent) ── */
+  $$('.qrgen-bg-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.qrgen-bg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const box = $('#qrgen-preview-box');
+      if (!box) return;
+      box.classList.remove('bg-light', 'bg-transparent');
+      if (btn.dataset.bg === 'light') box.classList.add('bg-light');
+      else if (btn.dataset.bg === 'transparent') box.classList.add('bg-transparent');
+    });
+  });
+
+  /* ── Size info display ── */
+  function updateSizeInfo() {
+    const info = $('#qrgen-size-info');
+    if (info) info.textContent = `${S.size} × ${S.size} px`;
+  }
+
+  /* ── Mobile mini-preview ── */
+  function updateMobilePreview() {
+    const mobileBox = $('#qrgen-mobile-preview-box');
+    if (!mobileBox || !S.qr) return;
+    // Only update on mobile
+    if (window.innerWidth > 640) return;
+    mobileBox.innerHTML = '';
+    const miniQR = new QRCodeStyling({
+      width: 80, height: 80, type: 'svg', data: getQRData(),
+      dotsOptions: { color: S.fgColor, type: S.dotType },
+      cornersSquareOptions: { color: S.fgColor, type: S.cornerSquareType },
+      cornersDotOptions: { color: S.fgColor, type: 'dot' },
+      backgroundOptions: { color: S.bgColor },
+      qrOptions: { errorCorrectionLevel: S.ec }
+    });
+    miniQR.append(mobileBox);
+  }
+
+  // Tap mobile preview to scroll to full preview
+  $('#qrgen-mobile-preview')?.addEventListener('click', () => {
+    // On mobile, show the full preview card temporarily
+    const card = $('.qrgen-preview-card');
+    if (card) {
+      card.style.display = 'block';
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => { if (window.innerWidth <= 640) card.style.display = ''; }, 5000);
+    }
   });
 
   /* ══════════════════════════════════════════════════════════
@@ -460,8 +571,9 @@
     switch ((type || '').toLowerCase()) {
       case 'email': return `mailto:${data}`;
       case 'phone': return `tel:${data}`;
-      case 'wifi': return data; // WiFi should be provided in WIFI: format in CSV
-      default: return data; // url, text, or unknown
+      case 'wifi': return data;
+      case 'vcard': return data;
+      default: return data;
     }
   }
 

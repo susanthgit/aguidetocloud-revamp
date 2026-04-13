@@ -73,6 +73,7 @@
             <button class="qrgen-type-pill" data-type="wifi">📶 WiFi</button>
             <button class="qrgen-type-pill" data-type="email">✉️ Email</button>
             <button class="qrgen-type-pill" data-type="phone">📞 Phone</button>
+            <button class="qrgen-type-pill" data-type="vcard">👤 vCard</button>
           </div>
 
           {{/* URL form */}}
@@ -99,7 +100,10 @@
             </div>
             <div class="qrgen-field">
               <label class="qrgen-label" for="qrgen-wifi-pass">Password</label>
-              <input type="password" class="qrgen-input" id="qrgen-wifi-pass" placeholder="Enter password">
+              <div style="position:relative">
+                <input type="password" class="qrgen-input" id="qrgen-wifi-pass" placeholder="Enter password" style="padding-right:2.5rem">
+                <button type="button" class="qrgen-pass-toggle" id="qrgen-wifi-pass-toggle" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+              </div>
             </div>
             <div class="qrgen-field">
               <label class="qrgen-label" for="qrgen-wifi-enc">Encryption</label>
@@ -136,6 +140,61 @@
             <div class="qrgen-field">
               <label class="qrgen-label" for="qrgen-phone">Phone Number</label>
               <input type="tel" class="qrgen-input" id="qrgen-phone" placeholder="+1234567890">
+            </div>
+          </div>
+
+          {{/* vCard form */}}
+          <div class="qrgen-form qrgen-hidden" id="qrgen-form-vcard">
+            <div class="qrgen-row">
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-vcard-fn">First Name</label>
+                <input type="text" class="qrgen-input" id="qrgen-vcard-fn" placeholder="John">
+              </div>
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-vcard-ln">Last Name</label>
+                <input type="text" class="qrgen-input" id="qrgen-vcard-ln" placeholder="Doe">
+              </div>
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-vcard-org">Company / Organisation</label>
+              <input type="text" class="qrgen-input" id="qrgen-vcard-org" placeholder="Acme Corp">
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-vcard-title">Job Title</label>
+              <input type="text" class="qrgen-input" id="qrgen-vcard-title" placeholder="Software Engineer">
+            </div>
+            <div class="qrgen-row">
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-vcard-phone">Phone</label>
+                <input type="tel" class="qrgen-input" id="qrgen-vcard-phone" placeholder="+1234567890">
+              </div>
+              <div class="qrgen-field">
+                <label class="qrgen-label" for="qrgen-vcard-email">Email</label>
+                <input type="email" class="qrgen-input" id="qrgen-vcard-email" placeholder="john@example.com">
+              </div>
+            </div>
+            <div class="qrgen-field">
+              <label class="qrgen-label" for="qrgen-vcard-url">Website (optional)</label>
+              <input type="url" class="qrgen-input" id="qrgen-vcard-url" placeholder="https://www.example.com">
+            </div>
+          </div>
+
+          {{/* ── Try It: Quick Start Examples ── */}}
+          <div class="qrgen-try-cards" id="qrgen-try-cards">
+            <span class="qrgen-label" style="margin-bottom:0.25rem">⚡ Quick Start</span>
+            <div class="qrgen-try-grid">
+              <button class="qrgen-try-card" data-try="website">
+                <span class="qrgen-try-icon">🌐</span>
+                <span class="qrgen-try-name">My Website</span>
+              </button>
+              <button class="qrgen-try-card" data-try="wifi">
+                <span class="qrgen-try-icon">📶</span>
+                <span class="qrgen-try-name">Share WiFi</span>
+              </button>
+              <button class="qrgen-try-card" data-try="vcard">
+                <span class="qrgen-try-icon">👤</span>
+                <span class="qrgen-try-name">Business Card</span>
+              </button>
             </div>
           </div>
         </div>
@@ -256,9 +315,16 @@
             <span>⚠️</span>
             <span id="qrgen-warning-text">Warning text</span>
           </div>
+          {{/* Dark/Light preview toggle */}}
+          <div class="qrgen-preview-bg-toggle">
+            <button class="qrgen-bg-btn active" data-bg="dark" title="Dark background">🌙</button>
+            <button class="qrgen-bg-btn" data-bg="light" title="Light background (print preview)">☀️</button>
+            <button class="qrgen-bg-btn" data-bg="transparent" title="Transparent (checkerboard)">🔲</button>
+          </div>
           <div class="qrgen-preview-box" id="qrgen-preview-box">
             <div class="qrgen-preview-placeholder">Your QR code will appear here</div>
           </div>
+          <div class="qrgen-size-info" id="qrgen-size-info">400 × 400 px</div>
           <div class="qrgen-actions">
             <button class="qrgen-btn-primary qrgen-btn" id="qrgen-download-png">⬇ PNG</button>
             <button class="qrgen-btn" id="qrgen-download-svg">⬇ SVG</button>
@@ -267,6 +333,11 @@
           <div class="qrgen-share-row">
             <button class="qrgen-btn-small qrgen-btn" id="qrgen-share" title="Copy shareable link">🔗 Share</button>
           </div>
+        </div>
+
+        {{/* Mobile sticky preview — only visible on small screens */}}
+        <div class="qrgen-mobile-preview" id="qrgen-mobile-preview">
+          <div class="qrgen-mobile-preview-box" id="qrgen-mobile-preview-box"></div>
         </div>
       </div>
 

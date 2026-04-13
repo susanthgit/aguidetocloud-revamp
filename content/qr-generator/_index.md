@@ -12,7 +12,7 @@ faq:
   - question: "Can I add my logo to the QR code?"
     answer: "Yes! Upload any image (PNG, JPG, SVG) and it will be centred in the QR code. The tool automatically increases error correction to keep the code scannable with a logo."
   - question: "What content types can I encode?"
-    answer: "URLs, plain text, WiFi network details (auto-connect when scanned), email addresses (pre-filled compose), and phone numbers (tap to call). More types coming soon."
+    answer: "URLs, plain text, WiFi network details (auto-connect when scanned), email addresses (pre-filled compose), phone numbers (tap to call), and vCards (digital business cards that save straight to contacts)."
   - question: "Will styled QR codes still scan reliably?"
     answer: "Yes — the tool includes a scanability checker that warns you about low contrast, oversized logos, or other issues that might affect scanning. We recommend testing with your phone camera before printing."
   - question: "Can I generate multiple QR codes at once?"
