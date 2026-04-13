@@ -76,6 +76,76 @@
       "statusCode": 301
     },
     {
+      "route": "/certifications/ai-900-full-course-microsoft-azure-ai-fundamentals-certification-training/",
+      "redirect": "/certifications/ai-900-full-course-azure-ai-fundamentals-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/sc-900-full-course-microsoft-security-fundamentals-certification-training/",
+      "redirect": "/certifications/sc-900-full-course-microsoft-security-compliance-identity-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/dp-900-full-course-microsoft-azure-data-fundamentals-certification-training/",
+      "redirect": "/certifications/dp-900-full-course-azure-data-fundamentals-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/pl-900-full-course-microsoft-power-platform-fundamentals-certification-training/",
+      "redirect": "/certifications/pl-900-full-course-power-platform-fundamentals-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification/",
+      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification/",
+      "redirect": "/certifications/ms-700-full-course-microsoft-teams-administrator-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/az-305/",
+      "redirect": "/cert-tracker/az-305/",
+      "statusCode": 301
+    },
+    {
+      "route": "/certifications/sc-300/",
+      "redirect": "/cert-tracker/sc-300/",
+      "statusCode": 301
+    },
+    {
+      "route": "/about-us/",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/contact/",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/azure-openai-complete-guide/",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/microsoft-copilot-studio-beginners-guide/",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/ai-hub/copilot-studio-complete-guide/",
+      "redirect": "/ai-hub/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-ai-fundamentals/",
+      "redirect": "/blog/",
+      "statusCode": 301
+    },
+    {
       "route": "/full-courses/az900fullcourse",
       "redirect": "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/",
       "statusCode": 301
