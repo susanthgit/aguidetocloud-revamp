@@ -92,8 +92,8 @@
 
     <p class="wclk-hint" id="wclk-empty-hint">👆 Add 2 or more cities to see the meeting planner — use search or the quick-add buttons above</p>
 
-    {{/* Step 2: Find the best meeting time */}}
-    <div class="wclk-meeting-section" id="wclk-meeting-section" style="display:none">
+    {{/* Step 2: Find the best meeting time — always visible */}}
+    <div class="wclk-meeting-section" id="wclk-meeting-section">
       <div class="wclk-step-header">
         <span class="wclk-step-num">2</span>
         <span class="wclk-step-text">Find the best meeting time</span>
@@ -116,9 +116,28 @@
         </div>
       </div>
 
+      {{/* Time slider */}}
+      <div class="wclk-slider-wrap" id="wclk-slider-wrap">
+        <label class="wclk-label">Drag to explore times <span class="wclk-slider-time" id="wclk-slider-label">12:00 PM</span></label>
+        <input type="range" class="wclk-slider" id="wclk-time-slider" min="0" max="47" value="18" step="1">
+        <div class="wclk-slider-endpoints">
+          <span>12 AM</span>
+          <span>6 AM</span>
+          <span>12 PM</span>
+          <span>6 PM</span>
+          <span>12 AM</span>
+        </div>
+      </div>
+
+      {{/* Slider result cards — shows each city's time at the selected hour */}}
+      <div class="wclk-slider-results" id="wclk-slider-results"></div>
+
+      {{/* Timeline */}}
       <div class="wclk-meeting-timeline" id="wclk-meeting-timeline"></div>
       <div class="wclk-meeting-golden" id="wclk-meeting-golden"></div>
       <div class="wclk-meeting-summary" id="wclk-meeting-summary"></div>
+
+      <p class="wclk-hint" id="wclk-meeting-hint">👆 Add 2 or more cities above, then drag the slider to explore meeting times</p>
     </div>
 
     {{/* Your local time — compact, at the bottom */}}

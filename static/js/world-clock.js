@@ -224,6 +224,20 @@ function findCity(name) {
   return CITIES.find(c => c.city === name);
 }
 
+function getPeriod(hour) {
+  if (hour >= 6 && hour < 9) return { label: '🌅 Morning', cls: 'morning', period: 'morning' };
+  if (hour >= 9 && hour < 17) return { label: '☀️ Daytime', cls: 'day', period: 'day' };
+  if (hour >= 17 && hour < 21) return { label: '🌆 Evening', cls: 'evening', period: 'evening' };
+  return { label: '🌙 Night', cls: 'night', period: 'night' };
+}
+
+function formatHourAmPm(hour) {
+  if (hour === 0 || hour === 24) return '12 AM';
+  if (hour === 12) return '12 PM';
+  if (hour < 12) return hour + ' AM';
+  return (hour - 12) + ' PM';
+}
+
 function searchCities(query) {
   if (!query || query.length < 2) return [];
   const q = query.toLowerCase();
@@ -636,13 +650,21 @@ function initMeetingPlanner() {
       S.duration = parseInt(durSelect.value) || 60;
       saveState();
       renderMeetingTimeline();
+      renderSliderResults();
     });
+  }
+
+  // Time slider
+  const slider = document.getElementById('wclk-time-slider');
+  if (slider) {
+    slider.addEventListener('input', () => renderSliderResults());
+    renderSliderResults();
   }
 
   // Preset buttons
   initPresets();
 
-  dateInput.addEventListener('change', renderMeetingTimeline);
+  dateInput.addEventListener('change', () => { renderMeetingTimeline(); renderSliderResults(); });
   renderMeetingTimeline();
 }
 
@@ -696,6 +718,47 @@ function renderPresetButtons() {
   });
 }
 
+/* ═══════════════════════════════════
+   TIME SLIDER — shows each city's time at the selected hour
+   ═══════════════════════════════════ */
+
+function renderSliderResults() {
+  const slider = document.getElementById('wclk-time-slider');
+  const label = document.getElementById('wclk-slider-label');
+  const container = document.getElementById('wclk-slider-results');
+  if (!slider || !container) return;
+
+  const halfHourIdx = parseInt(slider.value);
+  const hour = Math.floor(halfHourIdx / 2);
+  const minute = (halfHourIdx % 2) * 30;
+  const localTimeStr = formatHourAmPm(hour) + (minute === 30 ? ':30' : '');
+
+  if (label) label.textContent = localTimeStr;
+
+  if (S.clocks.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const dateInput = document.getElementById('wclk-meeting-date');
+  const baseDate = new Date((dateInput ? dateInput.value : toLocalISOString(new Date()).split('T')[0]) + 'T00:00:00');
+  baseDate.setHours(hour, minute, 0, 0);
+
+  container.innerHTML = S.clocks.map(c => {
+    const pHour = getHourInTz(baseDate, c.tz);
+    const period = getPeriod(pHour);
+    const timeStr = formatTimeShort(baseDate, c.tz, S.use24h);
+    return `<div class="wclk-slider-card period-${period.period}">
+      <span class="wclk-sc-flag">${c.flag}</span>
+      <div class="wclk-sc-info">
+        <div class="wclk-sc-city">${esc(c.city)}</div>
+        <div class="wclk-sc-time">${timeStr}</div>
+      </div>
+      <span class="wclk-sc-period ${period.cls}">${period.label}</span>
+    </div>`;
+  }).join('');
+}
+
 function scoreHour(h, baseDate, participants) {
   // Score: 3 = business, 2 = extended, 1 = off. Higher = better.
   const durationHours = Math.ceil(S.duration / 60);
@@ -717,21 +780,20 @@ function scoreHour(h, baseDate, participants) {
 }
 
 function renderMeetingTimeline() {
-  const section = document.getElementById('wclk-meeting-section');
   const container = document.getElementById('wclk-meeting-timeline');
   const goldenContainer = document.getElementById('wclk-meeting-golden');
   const summaryContainer = document.getElementById('wclk-meeting-summary');
+  const hint = document.getElementById('wclk-meeting-hint');
   if (!container) return;
-
-  // Show meeting section only when 2+ clocks added
-  if (section) section.style.display = S.clocks.length >= 2 ? '' : 'none';
 
   if (S.clocks.length < 2) {
     container.innerHTML = '';
     if (goldenContainer) goldenContainer.innerHTML = '';
     if (summaryContainer) summaryContainer.innerHTML = '';
+    if (hint) hint.style.display = '';
     return;
   }
+  if (hint) hint.style.display = 'none';
 
   const dateInput = document.getElementById('wclk-meeting-date');
   const baseDate = new Date(dateInput.value + 'T00:00:00');
@@ -746,24 +808,24 @@ function renderMeetingTimeline() {
     if (result.allBiz) goldenHours.push(h);
   }
 
-  // Hour labels
+  // Hour labels — AM/PM format
   let html = '<div class="wclk-timeline-hours">';
-  for (let h = 0; h < 24; h++) html += `<span>${h}</span>`;
+  for (let h = 0; h < 24; h++) {
+    const label = h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? h + 'a' : (h-12) + 'p';
+    html += `<span>${h % 3 === 0 ? label : ''}</span>`;
+  }
   html += '</div>';
 
-  // Legend — show custom hours info
-  const hasCustom = S.clocks.some(p => {
-    const wh = getWorkHours(p.city);
-    return wh.start !== 9 || wh.end !== 17;
-  });
+  // Legend — period-based
   html += `<div class="wclk-timeline-legend">
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch biz"></div> Business hours</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch ext"></div> Extended hours</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch off"></div> Off hours</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(34,197,94,0.5)"></div> ☀️ Daytime (9-5)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(251,191,36,0.35)"></div> 🌅 Morning (6-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(249,115,22,0.3)"></div> 🌆 Evening (5-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(139,92,246,0.25)"></div> 🌙 Night</div>
     ${S.duration !== 60 ? `<div class="wclk-legend-item">⏱️ ${S.duration} min meeting</div>` : ''}
   </div>`;
 
-  // Timeline rows with custom work hours controls
+  // Timeline rows
   S.clocks.forEach((p, i) => {
     const wh = getWorkHours(p.city);
     html += `<div class="wclk-timeline-row">
@@ -778,9 +840,9 @@ function renderMeetingTimeline() {
       const testDate = new Date(baseDate.getTime());
       testDate.setHours(h, 0, 0, 0);
       const pHour = getHourInTz(testDate, p.tz);
-      const cls = getBizClass(pHour, wh.start, wh.end);
+      const period = getPeriod(pHour);
       const isGolden = goldenHours.includes(h);
-      html += `<div class="wclk-timeline-hour ${cls}${isGolden ? ' golden' : ''}" title="${pHour}:00 in ${esc(p.city)}"></div>`;
+      html += `<div class="wclk-timeline-hour period-${period.period}${isGolden ? ' golden' : ''}" title="${formatHourAmPm(pHour)} in ${esc(p.city)} — ${period.label}"></div>`;
     }
 
     html += `</div><button class="wclk-timeline-remove" data-idx="${i}" title="Remove">✕</button></div>`;
@@ -911,6 +973,9 @@ function renderMeetingTimeline() {
   } else if (summaryContainer) {
     summaryContainer.innerHTML = '';
   }
+
+  // Also update slider results when timeline changes
+  renderSliderResults();
 }
 
 /* ═══════════════════════════════════
