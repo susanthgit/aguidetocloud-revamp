@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot Chat Changes April 15, 2026 — What Every IT Admin Needs to Know"
 description: "Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNote for unlicensed users on April 15, 2026. Full breakdown of MC1253858, MC1253863, Copilot Chat Basic vs Premium, WXP agents, and the Anthropic Claude dependency."
 date: 2026-04-09
-lastmod: 2026-04-10
+lastmod: 2026-04-14
 card_tag: "Copilot"
 tag_class: "ai"
 faq:
@@ -24,6 +24,8 @@ faq:
     answer: "In non-EU commercial tenants, yes — enabled by default since January 7, 2026. In EU/EFTA/UK tenants, disabled by default and admins must opt in. In government clouds (GCC, GCC High, DoD), not available."
   - question: "Does Copilot in Outlook change on April 15?"
     answer: "No. Copilot Chat in Outlook remains available for all users — licensed and unlicensed, regardless of tenant size."
+  - question: "Will all tenants be affected on exactly April 15?"
+    answer: "Not necessarily. Microsoft has confirmed the change may occur 30 days after the Message Center communication was received by each tenant. Some organisations may not see the change until mid-May 2026. Check your Message Center for the exact notification date."
   - question: "How much does a Microsoft 365 Copilot licence cost?"
     answer: "For enterprises (over 300 users): $30 USD per user per month. For businesses (under 300 users): $21 USD per user per month. Both require an annual commitment as add-on licences."
 ---
@@ -31,6 +33,20 @@ faq:
 Microsoft is removing free Copilot Chat from Word, Excel, PowerPoint, and OneNote for millions of Microsoft 365 users on **April 15, 2026**. The changes were announced via Message Center posts [MC1253858](#mc1253858--organisations-with-more-than-2000-users) and [MC1253863](#mc1253863--organisations-with-fewer-than-2000-users) on March 17, 2026. Whether you're affected — and how severely — depends on your tenant size. This guide covers everything: what's changing, what stays, the WXP agent loophole most people don't know about, and the Anthropic Claude dependency that controls it all.
 
 **Quick links:** [Who's affected?](#who-is-affected-and-how) · [Basic vs Premium labels](#new-labels-basic-vs-premium) · [WXP agents surprise](#the-wxp-agent-surprise-most-people-miss) · [Anthropic dependency](#the-anthropic-dependency-you-need-to-know-about) · [Pricing](#what-does-the-paid-copilot-licence-cost) · [Admin checklist](#what-should-you-do-now) · [FAQ](#frequently-asked-questions)
+
+<div class="living-doc-banner">
+
+🆕 **Last-Minute Update — April 14, 2026**
+
+Three important clarifications confirmed ahead of tomorrow's go-live:
+
+1. **Soft rollout, not a hard switch-off.** The change may not apply to all tenants on April 15. Microsoft has confirmed it may occur **30 days after the Message Center communication was received** by each tenant — giving every organisation the same lead time. This means some tenants could see the change as late as mid-May.
+
+2. **"Standard vs Priority Access" is now official.** Paid Microsoft 365 Copilot users get **Priority Access** — faster, more consistent availability. Copilot Chat (Basic) users get **Standard Access** — which may include feature throttling, queue-based reasoning workloads, and in-product upgrade prompts.
+
+3. **Product positioning is now explicit.** Microsoft is drawing a clear line: **Copilot Chat = secure AI chat**. **Microsoft 365 Copilot = full orchestration across apps, data, and agents.** This separation is deliberate — ahead of the Agent 365 and Copilot Cowork launches in May.
+
+</div>
 
 ### How We Got Here
 
@@ -334,4 +350,4 @@ For enterprises (>300 users): **$30 USD per user per month**. For businesses (<3
 
 > **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
 
-*Published: April 9, 2026 · Last updated: April 10, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), community analysis*
+*Published: April 9, 2026 · Last updated: April 14, 2026 · Author: [Sutheesh](https://www.aguidetocloud.com/about/) · Sources: [Microsoft Learn](https://learn.microsoft.com/copilot/manage), [Microsoft 365 Message Center](https://admin.microsoft.com/#/MessageCenter), Microsoft internal field enablement*
