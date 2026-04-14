@@ -602,6 +602,30 @@ a:hover {
   transform: translateY(-1px);
   color: #fff;
 }
+/* Primary CTA — magenta (warm, inviting) */
+.welcome-cta-primary {
+  background: rgba(255, 102, 255, 0.12);
+  border-color: rgba(255, 102, 255, 0.3);
+  color: #ff99ff;
+}
+.welcome-cta-primary:hover {
+  background: rgba(255, 102, 255, 0.2);
+  border-color: rgba(255, 102, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.15);
+  color: #fff;
+}
+/* Secondary CTA — cyan */
+.welcome-cta-secondary {
+  background: rgba(102, 255, 255, 0.08);
+  border-color: rgba(102, 255, 255, 0.25);
+  color: rgba(102, 255, 255, 0.85);
+}
+.welcome-cta-secondary:hover {
+  background: rgba(102, 255, 255, 0.15);
+  border-color: rgba(102, 255, 255, 0.45);
+  box-shadow: 0 4px 20px rgba(102, 255, 255, 0.1);
+  color: #fff;
+}
 /* ── HOMEPAGE: HERO STATS BOXES ───────────── */
 .welcome-stat-boxes {
   display: flex;
@@ -615,19 +639,23 @@ a:hover {
   flex-direction: column;
   align-items: center;
   padding: 0.7rem 1.2rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: color-mix(in srgb, var(--stat-accent, #fff) 5%, rgba(255, 255, 255, 0.02));
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid color-mix(in srgb, var(--stat-accent, #fff) 15%, transparent);
   border-radius: var(--radius);
   flex: 1;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.welcome-stat-box:hover {
+  border-color: color-mix(in srgb, var(--stat-accent, #fff) 35%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--stat-accent, #fff) 12%, transparent);
 }
 .welcome-stat-num {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--stat-accent, rgba(255, 255, 255, 0.8));
   line-height: 1;
 }
 .welcome-stat-label {
@@ -705,20 +733,19 @@ a:hover {
   gap: 1.5rem;
 }
 .video-card {
-  background: rgba(26, 26, 46, 0.7);
+  background: color-mix(in srgb, #A78BFA 4%, rgba(26, 26, 46, 0.7));
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid color-mix(in srgb, #A78BFA 10%, transparent);
   transition: all 0.3s ease;
   position: relative;
 }
 .video-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: color-mix(in srgb, #A78BFA 25%, transparent);
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.1);
 }
 .video-card .thumb {
   position: relative;
@@ -1168,7 +1195,7 @@ a:hover {
   text-align: center;
   padding: 2.5rem 1.5rem 1.5rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, #C4755B 50%, #0f0f1a) 0%, var(--bg-primary) 100%);
+    linear-gradient(180deg, color-mix(in srgb, var(--hero-tint, #9333EA) 35%, #0f0f1a) 0%, var(--bg-primary) 100%);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   margin-bottom: 1.5rem;
@@ -1192,6 +1219,25 @@ a:hover {
   .page-hero { padding: 1.8rem 1rem 0.8rem; }
   .page-hero h1 { font-size: 1.5rem; }
 }
+
+/* ── Per-section hero gradient tints ── */
+.page-ai-hub        { --hero-tint: #C026D3; }  /* fuchsia/magenta — AI content */
+.page-cloud-labs     { --hero-tint: #3B82F6; }  /* blue — hands-on labs */
+.page-certifications { --hero-tint: #10B981; }  /* emerald — learning/growth */
+.page-exam-qa        { --hero-tint: #8B5CF6; }  /* violet — study/prep */
+.page-interview-prep { --hero-tint: #A78BFA; }  /* lavender — career */
+.page-music          { --hero-tint: #EC4899; }  /* pink — creative/music */
+.page-blog           { --hero-tint: #0EA5E9; }  /* sky blue — content */
+.page-free-tools     { --hero-tint: #C4755B; }  /* terracotta — kept for toolkit */
+
+/* Per-section nav accents */
+.page-ai-hub .site-nav        { --nav-accent: rgba(192, 38, 211, 0.35); }
+.page-cloud-labs .site-nav     { --nav-accent: rgba(59, 130, 246, 0.35); }
+.page-certifications .site-nav { --nav-accent: rgba(16, 185, 129, 0.35); }
+.page-exam-qa .site-nav        { --nav-accent: rgba(139, 92, 246, 0.35); }
+.page-interview-prep .site-nav { --nav-accent: rgba(167, 139, 250, 0.35); }
+.page-music .site-nav          { --nav-accent: rgba(236, 72, 153, 0.35); }
+.page-blog .site-nav           { --nav-accent: rgba(14, 165, 233, 0.35); }
 
 /* ── SINGLE PAGE ────────────────────────── */
 .single-content {
@@ -1624,7 +1670,7 @@ a:hover {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--bg);
+  background: var(--bg-primary);
   border: 2px solid var(--neon-cyan);
   transition: all 0.2s;
   z-index: 1;
