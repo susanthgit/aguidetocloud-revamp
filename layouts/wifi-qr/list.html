@@ -20,6 +20,13 @@
 
 <div class="wifiqr-page">
 
+  {{/* ── Tabs ── */}}
+  <div class="wifiqr-tabs" role="tablist">
+    <button class="wifiqr-tab active" role="tab" aria-selected="true" data-tab="create">📶 Create WiFi Card</button>
+    <button class="wifiqr-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+  </div>
+
+  <div class="wifiqr-panel active" id="panel-create" role="tabpanel">
   <div class="wifiqr-form-section">
 
     {{/* ── Left: Form ── */}}
@@ -143,10 +150,12 @@
     </div>
 
   </div>
+  </div>
 
-  {{/* ── Visible FAQ ── */}}
+  {{/* ── Tab 2: FAQ ── */}}
+  <div class="wifiqr-panel" id="panel-faq" role="tabpanel" hidden>
   {{ if .Params.faq }}
-  <div class="wifiqr-form" style="margin-top:2.5rem">
+  <div class="wifiqr-form">
     <div class="wifiqr-section-title">Frequently Asked Questions</div>
     <div style="display:flex; flex-direction:column; gap:1rem">
       {{ range $i, $q := .Params.faq }}
@@ -158,6 +167,7 @@
     </div>
   </div>
   {{ end }}
+  </div>
 
   {{/* ── Back nav ── */}}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
@@ -173,4 +183,15 @@
 <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" crossorigin="anonymous"></script>
 <script src="/js/wifi-qr.js?v={{ site.Params.cache_version }}"></script>
+<script>
+document.querySelectorAll('.wifiqr-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.wifiqr-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.wifiqr-panel').forEach(function(p) { p.classList.remove('active'); p.hidden = true; });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    var panel = document.getElementById('panel-' + tab.dataset.tab);
+    if (panel) { panel.classList.add('active'); panel.hidden = false; }
+  });
+});
+</script>
 {{ end }}

@@ -9,6 +9,40 @@
   padding: 0 1.25rem 3rem;
 }
 
+/* ── Tabs ── */
+.wifiqr-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+.wifiqr-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.wifiqr-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.wifiqr-tab.active {
+  color: #000;
+  background: #22D3EE;
+  border-color: #22D3EE;
+  box-shadow: 0 2px 8px rgba(34, 211, 238, 0.3);
+}
+.wifiqr-panel { display: none; }
+.wifiqr-panel.active { display: block; }
+
 /* ── Form Section ── */
 .wifiqr-form-section {
   display: grid;
