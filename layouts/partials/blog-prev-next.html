@@ -3,7 +3,9 @@
   Uses Hugo's built-in page ordering (by date, newest first).
   Automatically includes new blogs — no manual config needed.
 
-  Circular: newest post's "next" links to oldest, oldest post's "prev" links to newest.
+  Latest blog: prev → /start/ (Start Here page), next → oldest blog
+  Oldest blog: prev → second oldest, next → newest blog
+  All others: prev → newer post, next → older post
 
   Usage: {{ partial "blog-prev-next.html" . }}
 */}}
@@ -13,7 +15,6 @@
 {{ $count := len $pages }}
 
 {{ if gt $count 1 }}
-  {{/* Find current page index */}}
   {{ $idx := -1 }}
   {{ range $i, $p := $pages }}
     {{ if eq $p.RelPermalink $.RelPermalink }}
@@ -22,23 +23,42 @@
   {{ end }}
 
   {{ if ge $idx 0 }}
-    {{/* Circular: wrap around */}}
-    {{ $prevIdx := cond (eq $idx 0) (sub $count 1) (sub $idx 1) }}
-    {{ $nextIdx := cond (eq $idx (sub $count 1)) 0 (add $idx 1) }}
-    {{ $prev := index $pages $prevIdx }}
-    {{ $next := index $pages $nextIdx }}
+    {{ $isNewest := eq $idx 0 }}
+    {{ $isOldest := eq $idx (sub $count 1) }}
 
     <nav class="blog-pn" aria-label="Browse blog posts">
-      <a href="{{ $prev.RelPermalink }}" class="blog-pn-link blog-pn-prev" title="{{ $prev.Title }}">
-        <span class="blog-pn-arrow">←</span>
-        <span class="blog-pn-label">Newer</span>
-        <span class="blog-pn-title">{{ $prev.Title | truncate 45 }}</span>
-      </a>
-      <a href="{{ $next.RelPermalink }}" class="blog-pn-link blog-pn-next" title="{{ $next.Title }}">
-        <span class="blog-pn-title">{{ $next.Title | truncate 45 }}</span>
-        <span class="blog-pn-label">Older</span>
-        <span class="blog-pn-arrow">→</span>
-      </a>
+      {{ if $isNewest }}
+        {{/* Latest blog: prev → Start Here */}}
+        <a href="/start/" class="blog-pn-link blog-pn-prev" title="Start Here">
+          <span class="blog-pn-arrow">←</span>
+          <span class="blog-pn-label">Start</span>
+          <span class="blog-pn-title">Start Here</span>
+        </a>
+      {{ else }}
+        {{ $prev := index $pages (sub $idx 1) }}
+        <a href="{{ $prev.RelPermalink }}" class="blog-pn-link blog-pn-prev" title="{{ $prev.Title }}">
+          <span class="blog-pn-arrow">←</span>
+          <span class="blog-pn-label">Newer</span>
+          <span class="blog-pn-title">{{ $prev.Title | truncate 45 }}</span>
+        </a>
+      {{ end }}
+
+      {{ if $isOldest }}
+        {{/* Oldest blog: next → newest blog */}}
+        {{ $newest := index $pages 0 }}
+        <a href="{{ $newest.RelPermalink }}" class="blog-pn-link blog-pn-next" title="{{ $newest.Title }}">
+          <span class="blog-pn-title">{{ $newest.Title | truncate 45 }}</span>
+          <span class="blog-pn-label">Latest</span>
+          <span class="blog-pn-arrow">→</span>
+        </a>
+      {{ else }}
+        {{ $next := index $pages (add $idx 1) }}
+        <a href="{{ $next.RelPermalink }}" class="blog-pn-link blog-pn-next" title="{{ $next.Title }}">
+          <span class="blog-pn-title">{{ $next.Title | truncate 45 }}</span>
+          <span class="blog-pn-label">Older</span>
+          <span class="blog-pn-arrow">→</span>
+        </a>
+      {{ end }}
     </nav>
   {{ end }}
 {{ end }}
