@@ -530,12 +530,11 @@ a:hover {
   .hp-toolkit-grid { grid-template-columns: repeat(2, 1fr); }
   .hp-blog-grid { grid-template-columns: 1fr; }
   .hp-blog-card p { -webkit-line-clamp: 2; }
-  .welcome-cta-row { display: none; }
+  .welcome-cta-row .welcome-cta-btn:not(:first-child) { display: none; }
   .welcome-stat-boxes { gap: 0.25rem; }
   .welcome-stat-box { padding: 0.35rem 0.4rem; min-width: auto; }
   .welcome-stat-num { font-size: 0.9rem; }
   .welcome-stat-label { font-size: 0.5rem; }
-  .welcome-cta-row { display: none; }
   .hp-toolkit-card p { display: none; }
 }
 
