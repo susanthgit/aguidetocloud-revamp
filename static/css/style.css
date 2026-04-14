@@ -1567,9 +1567,11 @@ a:hover {
 .blog-tl-search {
   flex: 1;
   padding: 0.5rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: var(--bg-card);
+  border-radius: var(--glass-radius-button);
+  border: var(--glass-border);
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   color: #fff;
   font-size: 0.85rem;
   font-family: var(--font-heading);
@@ -1629,15 +1631,17 @@ a:hover {
 
 /* Card on the timeline */
 .blog-tl-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
   border-radius: var(--radius);
   padding: 1.3rem 1.5rem;
   transition: all 0.25s ease;
 }
 .blog-tl-item:hover .blog-tl-card {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 12px rgba(102, 255, 255, 0.12);
+  border-color: rgba(102, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(102, 255, 255, 0.1);
   transform: translateX(4px);
 }
 .blog-tl-top {
@@ -1648,13 +1652,16 @@ a:hover {
 }
 .blog-tl-tag {
   padding: 0.12rem 0.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 0.62rem;
   font-weight: 700;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: rgba(102, 255, 255, 0.1);
+  background: rgba(102, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(102, 255, 255, 0.15);
   color: var(--neon-cyan);
 }
 .blog-tl-tag.cert { background: rgba(57, 255, 20, 0.1); color: #39ff14; }

@@ -26,7 +26,7 @@
   </div>
 
   {{ if .Params.resources }}
-  <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border-glow);">
+  <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(26, 26, 46, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.08);">
     <h2 style="color: var(--neon-cyan); margin-bottom: 1rem;">📥 Resources</h2>
     <ul>
       {{ range .Params.resources }}
