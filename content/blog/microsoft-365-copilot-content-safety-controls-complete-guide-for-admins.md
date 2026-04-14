@@ -44,6 +44,18 @@ Microsoft 365 Copilot includes multiple layers of content safety controls — bu
 - [Best practices](#best-practices-for-it-admins)
 - [FAQ](#frequently-asked-questions)
 
+<div class="trainer-tip">
+
+💡 **Trainer tip:** Position Copilot Chat as **"your organisation's approved AI"** — it replaces the need for users to go to consumer AI tools like ChatGPT, Google Gemini, or Claude. Same AI power, but with enterprise data protection built in. This is the **Shadow AI story** — give users a better, safer alternative and they'll stop using unapproved tools.
+
+</div>
+
+<div class="living-doc-banner">
+
+🔄 **This is a living document.** The AI world changes every day — features ship, settings move, and guidance evolves. If you spot anything that's out of date or needs updating, please [send me feedback](/feedback/) and I'll update it. Last verified against Microsoft documentation: April 2026.
+
+</div>
+
 > ⚠️ **Government cloud note:** Content safety features are available in commercial tenants. GCC, GCC High, and DoD availability and timelines may differ — verify with your Microsoft account team before planning rollouts.
 
 ---
