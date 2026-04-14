@@ -11,6 +11,14 @@
 
 <div class="feedback-container">
 
+  {{/* ── Tabs ── */}}
+  <div class="feedback-tabs" role="tablist">
+    <button class="feedback-tab active" role="tab" aria-selected="true" data-tab="submit">💬 Submit Feedback</button>
+    <button class="feedback-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+  </div>
+
+  <div class="feedback-panel active" id="panel-submit" role="tabpanel">
+
   <!-- Submit Form -->
   <div class="feedback-form-section" id="feedback-form-section">
     <form id="feedback-form" novalidate>
@@ -115,6 +123,45 @@
     </div>
   </div>
 
+  </div>
+
+  {{/* ── FAQ Tab ── */}}
+  <div class="feedback-panel" id="panel-faq" role="tabpanel" hidden>
+    <div class="feedback-faq">
+      <h2 style="color:#FBBF24;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+
+      <div class="feedback-faq-item">
+        <strong>1. Who reads my feedback?</strong>
+        <p>Susanth (the site creator) personally reads every submission. Feedback is posted publicly as a GitHub Discussion so the community can upvote and comment.</p>
+      </div>
+
+      <div class="feedback-faq-item">
+        <strong>2. Do I need to sign up or log in?</strong>
+        <p>No. You can submit feedback completely anonymously — name and email are optional. No account required.</p>
+      </div>
+
+      <div class="feedback-faq-item">
+        <strong>3. What kind of feedback can I submit?</strong>
+        <p>Anything! Feature requests, bug reports, video requests, content ideas, tool suggestions, or general questions about Microsoft 365, Azure, and AI.</p>
+      </div>
+
+      <div class="feedback-faq-item">
+        <strong>4. Will I get a reply?</strong>
+        <p>If you provide your email, you'll be notified when there's a response on your discussion. Otherwise, check back on this page — all discussions are public.</p>
+      </div>
+
+      <div class="feedback-faq-item">
+        <strong>5. How are feature requests prioritised?</strong>
+        <p>Community upvotes matter! Popular requests get built first. Items marked "Planned" or "In Progress" are actively being worked on.</p>
+      </div>
+
+      <div class="feedback-faq-item">
+        <strong>6. Is my data private?</strong>
+        <p>Your feedback text is posted publicly on GitHub Discussions. Name and email are optional — if you want to stay anonymous, just leave them blank.</p>
+      </div>
+    </div>
+  </div>
+
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
 </div>
@@ -139,4 +186,15 @@
 </script>
 
 <script src="/js/feedback.js?v={{ site.Params.cache_version }}"></script>
+<script>
+document.querySelectorAll('.feedback-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.feedback-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.feedback-panel').forEach(function(p) { p.classList.remove('active'); p.hidden = true; });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    var panel = document.getElementById('panel-' + tab.dataset.tab);
+    if (panel) { panel.classList.add('active'); panel.hidden = false; }
+  });
+});
+</script>
 {{ end }}
