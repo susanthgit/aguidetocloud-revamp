@@ -1368,6 +1368,26 @@ a:hover {
 .error-404-note p { margin: 0 0 0.6rem; }
 .error-404-note p:last-child { margin-bottom: 0; }
 .error-404-note strong { color: rgba(255, 255, 255, 0.9); }
+.error-404-start-pill {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(139, 92, 246, 0.12));
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: #00e5ff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.15);
+}
+.error-404-start-pill:hover {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(139, 92, 246, 0.2));
+  border-color: rgba(0, 229, 255, 0.45);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.3);
+  transform: scale(1.03);
+}
 .error-404-all-tools {
   display: inline-block;
   color: #FF8A80;

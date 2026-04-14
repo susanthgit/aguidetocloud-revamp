@@ -148,6 +148,7 @@ Azure Solutions Architect Expert · M365 Enterprise Administrator · M365 Securi
 
 ## 🙌 Join the Journey
 
+- 🚀 [New to this site? Start here](/start/) — find the right resource in 30 seconds
 - 📺 [YouTube — A Guide to Cloud & AI](https://www.youtube.com/susanthsutheesh) (full tutorials & masterclasses)
 - 📺 [YouTube — Bites](https://www.youtube.com/aguidetocloud) (quick 10–20 min lessons)
 - 💼 [LinkedIn](https://www.linkedin.com/in/susanthsutheesh/)

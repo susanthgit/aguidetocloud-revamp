@@ -1,0 +1,556 @@
+/* ─────────────────────────────────────────────
+   Start Here — .sh-* namespace
+   Concierge page for new visitors
+   ───────────────────────────────────────────── */
+
+/* ── Hero ── */
+.sh-hero {
+  text-align: center;
+  padding: 2rem 1.5rem 1.2rem;
+  background: linear-gradient(160deg, rgba(0, 229, 255, 0.08) 0%, rgba(139, 92, 246, 0.05) 40%, rgba(15, 13, 19, 0.98) 70%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sh-hero h1 {
+  font-size: 1.7rem;
+  color: #fff;
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+}
+
+.sh-hero h1 .sh-hero-accent {
+  color: var(--neon-cyan, #00e5ff);
+}
+
+.sh-hero-sub {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sh-hero-stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.sh-hero-stat {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.sh-hero-stat strong {
+  color: var(--neon-cyan, #00e5ff);
+  font-size: 0.95rem;
+}
+
+.sh-credit {
+  color: rgba(255, 255, 255, 0.22);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+.sh-credit a {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+}
+
+.sh-credit a:hover {
+  color: var(--neon-cyan, #00e5ff);
+}
+
+/* ── Quick-Jump Pills ── */
+.sh-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.sh-jump-pill {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sh-jump-pill:hover {
+  background: color-mix(in srgb, var(--sh-accent) 20%, transparent);
+  border-color: var(--sh-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Popular Badge ── */
+.sh-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  background: rgba(255, 215, 0, 0.15);
+  color: #fbbf24;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ── Not Sure Fallback ── */
+.sh-fallback {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.sh-fallback p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+.sh-fallback a {
+  color: var(--neon-cyan, #00e5ff);
+  text-decoration: none;
+}
+
+.sh-fallback a:hover {
+  color: #fff;
+}
+
+/* ── Content ── */
+.sh-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ── Paths Grid ── */
+.sh-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sh-path {
+  background: color-mix(in srgb, var(--sh-accent) 6%, rgba(255, 255, 255, 0.02));
+  border: 1px solid color-mix(in srgb, var(--sh-accent) 20%, rgba(255, 255, 255, 0.06));
+  border-left: 4px solid var(--sh-accent, #00e5ff);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sh-path::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--sh-accent) 8%, transparent) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sh-path:hover {
+  border-color: color-mix(in srgb, var(--sh-accent) 40%, rgba(255, 255, 255, 0.1));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--sh-accent) 10%, transparent);
+}
+
+.sh-path-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.sh-path-emoji {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sh-path-head h2 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+}
+
+.sh-path-head p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.88rem;
+  margin: 0.2rem 0 0;
+}
+
+/* ── Resource Links ── */
+.sh-path-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.sh-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.sh-link:hover {
+  background: color-mix(in srgb, var(--sh-accent) 10%, rgba(255, 255, 255, 0.04));
+  border-color: color-mix(in srgb, var(--sh-accent) 30%, rgba(255, 255, 255, 0.1));
+  transform: translateY(-1px);
+}
+
+.sh-link-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.sh-link strong {
+  display: block;
+  color: #fff;
+  font-size: 0.88rem;
+  margin-bottom: 0.15rem;
+  transition: color 0.2s;
+}
+
+.sh-link:hover strong {
+  color: var(--sh-accent, #00e5ff);
+}
+
+.sh-link span {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+/* ── Stats Strip ── */
+.sh-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sh-stat {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+}
+
+.sh-stat strong {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Hero CTA Buttons ── */
+.sh-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.sh-cta-primary {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+}
+
+.sh-cta-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4);
+}
+
+.sh-cta-secondary {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sh-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ── Featured Path Card ── */
+.sh-path-featured {
+  border-width: 1px 1px 1px 4px;
+  padding: 1.8rem;
+  background: color-mix(in srgb, var(--sh-accent) 10%, rgba(255, 255, 255, 0.03));
+  position: relative;
+}
+
+.sh-path-featured::before {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--sh-accent) 12%, transparent) 0%, transparent 70%);
+}
+
+.sh-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 0.7rem;
+  background: rgba(139, 92, 246, 0.2);
+  color: #A78BFA;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ── Primary Link (bold CTA per path) ── */
+.sh-primary-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--sh-accent) 10%, rgba(255, 255, 255, 0.03));
+  border: 1px solid color-mix(in srgb, var(--sh-accent) 25%, rgba(255, 255, 255, 0.08));
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: all 0.25s;
+}
+
+.sh-primary-link:hover {
+  background: color-mix(in srgb, var(--sh-accent) 16%, rgba(255, 255, 255, 0.04));
+  border-color: var(--sh-accent);
+  transform: translateX(4px);
+}
+
+.sh-primary-link .sh-link-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sh-primary-link strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.sh-primary-link span {
+  display: block;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* ── Secondary Links (glowing pills) ── */
+.sh-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sh-secondary-links a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--sh-accent) 6%, rgba(255, 255, 255, 0.02));
+  border: 1px solid color-mix(in srgb, var(--sh-accent) 15%, rgba(255, 255, 255, 0.06));
+  transition: all 0.25s;
+}
+
+.sh-secondary-links a:hover {
+  color: #fff;
+  background: color-mix(in srgb, var(--sh-accent) 15%, rgba(255, 255, 255, 0.04));
+  border-color: var(--sh-accent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sh-accent) 20%, transparent);
+}
+
+/* ── Also Explore Section ── */
+.sh-also {
+  margin-top: 2rem;
+}
+
+.sh-also h2 {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1rem;
+}
+
+.sh-also-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.sh-also-single {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+}
+
+.sh-also-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.2s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.sh-also-card:hover {
+  border-color: color-mix(in srgb, var(--sh-accent) 35%, rgba(255, 255, 255, 0.1));
+  transform: translateY(-2px);
+}
+
+.sh-also-card > span:first-child {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.sh-also-card strong {
+  display: block;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.sh-also-card div span {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+/* (Community tools section removed — diluted professional feel) */
+
+/* ── Community Tools Section ── */
+.sh-community {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.sh-community h2 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0 0.3rem;
+}
+
+.sh-community > p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+.sh-community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.sh-tool-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: border-color 0.25s, transform 0.2s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.sh-tool-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.sh-tool-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.sh-tool-card strong {
+  display: block;
+  color: #fff;
+  font-size: 0.82rem;
+  margin-bottom: 0.15rem;
+}
+
+.sh-tool-card span {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sh-hero { padding: 1.5rem 1rem 1rem; }
+  .sh-hero h1 { font-size: 1.35rem; }
+  .sh-hero-sub { display: block; margin-top: 0.2rem; font-size: 0.82rem; }
+  .sh-path-head { gap: 0.7rem; }
+  .sh-path-emoji { font-size: 1.5rem; }
+  .sh-path-head h2 { font-size: 1rem; }
+  .sh-also-grid { grid-template-columns: 1fr; }
+  .sh-hero-stats { gap: 0.8rem; }
+  .sh-hero-ctas { gap: 0.4rem; }
+  .sh-cta-primary { font-size: 0.8rem; padding: 0.45rem 1rem; }
+  .sh-cta-secondary { font-size: 0.78rem; padding: 0.4rem 0.8rem; }
+  .sh-ribbon { position: static; display: inline-block; margin-bottom: 0.5rem; }
+  .sh-community-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .sh-also-grid { grid-template-columns: 1fr; }
+  .sh-hero-stats { gap: 0.8rem; }
+  .sh-hero-stat { font-size: 0.78rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-path, .sh-link { transition: none !important; }
+}
+
+@media print {
+  .sh-hero { background: none !important; }
+  .sh-path { break-inside: avoid; border-left-width: 2px !important; }
+}
