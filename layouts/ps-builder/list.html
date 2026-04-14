@@ -24,16 +24,9 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "Build admin commands for M365, Azure, AD, GPO & Windows — visually. No syntax to memorise. No sign-up. Works offline." "accent" "#4ADE80") }}
+{{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "subtitle" "60+ recipes · 65 cmdlets · 8 modules · Build admin commands for M365, Azure, AD, GPO & Windows — visually. $0, works offline." "accent" "#4ADE80") }}
 
 <div class="psb-page">
-
-  <div class="psb-stats-bar" id="psb-stats-bar">
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-recipes">0</span><span class="psb-stat-label">Recipes</span></div>
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-cmdlets">0</span><span class="psb-stat-label">Cmdlets</span></div>
-    <div class="psb-stat"><span class="psb-stat-num" id="psb-stat-modules">0</span><span class="psb-stat-label">Modules</span></div>
-    <div class="psb-stat"><span class="psb-stat-num">$0</span><span class="psb-stat-label">Cost</span></div>
-  </div>
 
   <div class="psb-container">
 
@@ -47,11 +40,14 @@
     {{/* ── RECIPES TAB ── */}}
     <div class="psb-panel active" id="psb-panel-recipes" role="tabpanel">
       <div class="psb-recipes-header">
-        <h2 class="psb-section-title">What do you want to do?</h2>
 
-        {{/* Search + filters in one row using dropdowns */}}
+        {{/* Search + filters + quick-start in one row using dropdowns */}}
         <div class="psb-search-filter-row">
           <input type="text" id="psb-recipe-search" class="psb-search" placeholder="Search recipes... (e.g. 'shared mailbox', 'firewall')" aria-label="Search recipes">
+          <select id="psb-quick-select" class="psb-filter-select" aria-label="Most common tasks">
+            <option value="">🔥 Common Tasks</option>
+            {{/* Options populated by JS */}}
+          </select>
           <select id="psb-service-select" class="psb-filter-select" aria-label="Filter by service">
             <option value="all">All Services</option>
             {{/* Options populated by JS */}}
@@ -68,9 +64,6 @@
           <span class="psb-recipe-count" id="psb-recipe-count"></span>
         </div>
       </div>
-
-      {{/* Quick Start — populated by JS */}}
-      <div class="psb-quick-start" id="psb-quick-start"></div>
 
       <div class="psb-recipe-grid" id="psb-recipe-grid"></div>
 

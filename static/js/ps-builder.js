@@ -230,39 +230,43 @@
   /* ═══════ QUICK START + FAVOURITES + RANDOM ═══════ */
   function renderQuickStart() {
     const container = $('#psb-quick-start');
-    if (!container) return;
+    const quickSelect = $('#psb-quick-select');
 
     const favs = getFavs();
     const favRecipes = favs.map(id => recipeById(id)).filter(Boolean);
     const popular = POPULAR_IDS.map(id => recipeById(id)).filter(Boolean);
 
-    let html = '';
-
-    // D1 — Favourites section
-    if (favRecipes.length) {
-      html += `<div class="psb-quick-header">⭐ My Favourites</div>
-      <div class="psb-quick-grid">${favRecipes.map(r => {
+    // Populate quick-select dropdown
+    if (quickSelect) {
+      const allQuick = [...favRecipes.map(r => ({ ...r, fav: true })), ...popular.filter(r => !favs.includes(r.id))];
+      allQuick.forEach(r => {
         const mod = moduleById(r.module);
-        return `<button class="psb-quick-item psb-quick-fav" data-recipe="${r.id}" tabindex="0">
-          <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
-          <span class="psb-quick-label">${esc(r.title)}</span>
-        </button>`;
-      }).join('')}</div>`;
+        const opt = document.createElement('option');
+        opt.value = r.id;
+        opt.textContent = (mod ? mod.emoji + ' ' : '') + r.title + (r.fav ? ' ⭐' : '');
+        quickSelect.appendChild(opt);
+      });
+      // Add surprise option
+      const surpriseOpt = document.createElement('option');
+      surpriseOpt.value = '__random__';
+      surpriseOpt.textContent = '🎲 Surprise Me';
+      quickSelect.appendChild(surpriseOpt);
+
+      quickSelect.addEventListener('change', function () {
+        if (this.value === '__random__') {
+          const all = D.recipes;
+          const random = all[Math.floor(Math.random() * all.length)];
+          if (random) expandRecipe(random.id);
+          this.value = '';
+        } else if (this.value) {
+          expandRecipe(this.value);
+          this.value = '';
+        }
+      });
     }
 
-    // Popular tasks
-    html += `<div class="psb-quick-header">${favRecipes.length ? '' : '🔥 '}Most Common Tasks
-      <button class="psb-random-btn" id="psb-random-btn" title="Show a random recipe">🎲 Surprise Me</button>
-    </div>
-    <div class="psb-quick-grid">${popular.map(r => {
-      const mod = moduleById(r.module);
-      return `<button class="psb-quick-item" data-recipe="${r.id}" tabindex="0">
-        <span class="psb-quick-emoji">${mod ? mod.emoji : '📋'}</span>
-        <span class="psb-quick-label">${esc(r.title)}</span>
-      </button>`;
-    }).join('')}</div>`;
-
-    container.innerHTML = html;
+    // Keep old container for backwards compat (hidden)
+    if (container) container.style.display = 'none';
   }
 
   /* ═══════ RECIPES TAB ═══════ */
@@ -285,7 +289,16 @@
   }
 
   // B4 — View toggle state
-  let recipeViewMode = 'list'; // 'list' or 'grouped'
+  let recipeViewMode = 'grouped'; // 'list' or 'grouped'
+
+  function expandRecipe(id) {
+    S.expandedRecipe = id;
+    renderRecipes();
+    setTimeout(() => {
+      const card = document.querySelector(`.psb-recipe-card[data-recipe="${id}"]`);
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  }
 
   // Full recipe render — all A-D features
   function renderRecipes() {
@@ -899,9 +912,6 @@
     const recipeSearch = $('#psb-recipe-search');
     if (recipeSearch) {
       recipeSearch.addEventListener('input', () => { S.recipeSearch = recipeSearch.value; renderRecipes(); });
-      // A2 — Shortcut hint
-      const hint = el('div', 'psb-shortcut-hint', '💡 Press <kbd>/</kbd> to search · <kbd>Enter</kbd> to expand');
-      recipeSearch.parentNode.parentNode.appendChild(hint);
     }
 
     // Service dropdown
