@@ -1962,6 +1962,11 @@ a:hover {
 .content-body tr:hover {
   background: rgba(102, 255, 255, 0.04);
 }
+/* FAQ question styling — bold numbered questions get cyan colour for depth */
+.blog-faq p > strong:first-child:last-child {
+  color: var(--neon-cyan);
+  font-size: 1rem;
+}
 .content-body .mermaid {
   margin: 2rem 0;
   padding: 1.5rem;

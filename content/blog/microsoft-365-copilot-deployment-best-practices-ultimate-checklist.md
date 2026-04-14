@@ -128,6 +128,20 @@ flowchart LR
 
 ## Phase 1: Plan & Assess
 
+### Who Owns What — The Deployment Roles
+
+Copilot deployment spans multiple teams. Define ownership upfront or execution will stall:
+
+| Role | Responsible For |
+|------|----------------|
+| **M365 Admin** | Licensing, Copilot settings, service readiness |
+| **SharePoint Admin** | Permissions audit, SAM policies, site remediation |
+| **Purview / Compliance Admin** | Sensitivity labels, DLP, audit logging, retention |
+| **Entra ID / Intune Admin** | Conditional Access, MFA, device compliance |
+| **Copilot / Power Platform Admin** | Agent governance, Copilot Studio policies |
+| **Adoption Lead** | Champions program, training, communications, feedback |
+| **Executive Sponsor** | Visibility, budget, behaviour change authority |
+
 ### Run the Optimization Assessment
 
 Before anything else, run Microsoft's free **[Copilot Optimization Assessment](https://www.microsoft.com/solutionassessments/)**. It evaluates:
@@ -196,6 +210,19 @@ Copilot surfaces **any data a user has permission to access** — even if they'v
 | **Microsoft Purview Data Access Governance** | Identify overshared content across your tenant |
 
 > 💡 **The oversharing test:** Before deploying Copilot, ask a pilot user: "Search for 'salary' or 'confidential' in Copilot Chat." If they find documents they shouldn't see — fix permissions first.
+
+### 2.1b Use SharePoint Advanced Management (SAM) to Reduce Oversharing
+
+SAM is your most powerful tool for Copilot governance. Use these controls in order:
+
+1. **Find ownerless and inactive sites** — Sites without active owners accumulate stale permissions. Use SAM's inactive site policy to identify and remediate
+2. **Run site access reviews** — Require site owners to review and confirm who should have access. Schedule recurring reviews for high-risk sites
+3. **Enable Restricted Content Discovery** — Immediately prevent Copilot from surfacing content from specific sites while you remediate permissions (containment control)
+4. **Apply Restricted Access Control** — For business-critical sites, enforce strict access control policies that override broad sharing
+5. **Review data access governance reports** — Use SAM's reporting to find sites with excessive external sharing or broad internal access
+6. **Re-test with Copilot** — After remediation, run the oversharing test again before expanding rollout
+
+> 📚 **Official reference:** [Get ready for Copilot with SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management) · [Site access review](https://learn.microsoft.com/en-us/sharepoint/site-access-review) · [Restricted content discovery](https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery) · [Restricted access control](https://learn.microsoft.com/en-us/sharepoint/restricted-access-control)
 
 ### 2.2 Deploy Sensitivity Labels
 
@@ -300,7 +327,19 @@ In the **Microsoft 365 Admin Centre** → Copilot:
   - Optional connected experiences
 - [ ] Configure **agent policies** (who can create/share agents)
 
-### 3.4 Pilot Validation
+### 3.4 Agent Governance — Decide Before You Deploy
+
+Agents are one of Copilot's most powerful features — and one of the easiest to lose control of. Set these policies before your pilot:
+
+- **Who can create agents?** Decide if agent creation is open to all Copilot users or restricted to specific groups (IT, power users, approved builders)
+- **Who can share agents org-wide?** Restrict org-wide sharing to approved users — prevent untested agents from reaching the entire organisation
+- **What approval process exists?** Define whether shared agents need admin review before deployment (available in the Copilot Control System in M365 Admin Centre)
+- **Agent Builder vs Copilot Studio** — Agent Builder agents are simpler (M365 Copilot licence). Copilot Studio agents are more powerful (separate licence). Govern them separately
+- **Review existing agents** — Before broad rollout, audit any agents already created during pilot. Remove or restrict any that access sensitive data inappropriately
+
+> 📚 **Official reference:** [Manage agents in M365 Admin Centre](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps) · [Microsoft 365 agents deployment checklist](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-checklist) · [Share and manage agents](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-shared-agents)
+
+### 3.5 Pilot Validation
 
 Before scaling beyond the pilot:
 
@@ -436,6 +475,9 @@ flowchart TD
 - [ ] Review and set content safety policies (web search, harmful content toggle)
 - [ ] Clean up stale/inactive SharePoint sites
 - [ ] Archive redundant, obsolete, or trivial content (ROT)
+- [ ] Run SAM inactive site policy and remediate ownerless sites
+- [ ] Enable SAM Restricted Content Discovery for high-risk sites
+- [ ] Run SAM site access reviews on sensitive sites
 
 ### Phase 3: Configure & Deploy
 
@@ -452,6 +494,20 @@ flowchart TD
 - [ ] Validate: DLP and sensitivity labels working correctly
 - [ ] Validate: Run oversharing test with pilot users
 - [ ] Collect pilot feedback after 2 weeks
+- [ ] Define agent creation and sharing policies
+- [ ] Restrict org-wide agent sharing to approved groups
+- [ ] Audit any agents created during pilot
+
+### Pilot Exit Criteria — Go/No-Go Before Scaling
+
+Before expanding beyond the pilot, all of these must be true:
+
+- [ ] No unresolved oversharing findings from the oversharing test
+- [ ] DLP policies and sensitivity labels validated and working
+- [ ] Helpdesk volume is manageable (not trending up)
+- [ ] Weekly active usage is above your target threshold
+- [ ] Agent governance policy is documented and in place
+- [ ] Executive sponsor approves the next wave of deployment
 
 ### Phase 4: Adopt & Train
 
@@ -514,6 +570,8 @@ flowchart TD
 
 ## Frequently Asked Questions
 
+<div class="blog-faq">
+
 **1. What is the minimum licence needed to deploy Microsoft 365 Copilot?**
 
 You need an eligible base Microsoft 365 licence (E3, E5, Business Premium, F1/F3, or other qualifying plans) plus the Microsoft 365 Copilot add-on. Copilot cannot run as a standalone licence. See the [full licensing list](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing).
@@ -553,6 +611,8 @@ Copilot interactions (prompts and responses) can be audited, searched, and retai
 **10. What if users report Copilot is surfacing data they shouldn't see?**
 
 This is an oversharing issue, not a Copilot bug. Copilot respects existing permissions. Fix the root cause: review and tighten SharePoint/OneDrive permissions, use sensitivity labels, and consider SharePoint Advanced Management for site-level access policies.
+
+</div>
 
 ---
 

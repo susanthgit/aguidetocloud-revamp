@@ -470,4 +470,52 @@ Content safety is just one piece of a secure Copilot deployment. These additiona
 
 ---
 
+## Frequently Asked Questions
+
+<div class="blog-faq">
+
+**1. Can I completely disable all Copilot content filters?**
+
+No. Core responsible AI protections — prompt injection defence, copyright safeguards, biosecurity measures, and image safety filters — are always enforced and cannot be turned off. The harmful content protection toggle only affects text responses in Copilot Chat.
+
+**2. Does the harmful content toggle affect Copilot in Word, Excel, or Teams?**
+
+No. The toggle applies only to Copilot Chat text responses. It does not affect Copilot in Word, Excel, PowerPoint, Teams, Outlook, or any other app. It also does not affect AI-generated images or agents.
+
+**3. What licence do users need for the harmful content toggle?**
+
+Users need a Microsoft 365 Copilot licence. The toggle only appears if the admin has assigned the "Adjust responsible AI protections" policy to the user's security group via Cloud Policy.
+
+**4. Can a user keep harmful content protection off permanently?**
+
+No. The toggle resets at the start of every new conversation. Users must disable it again each time they need to work with sensitive content.
+
+**5. What is the difference between content safety and sensitivity labels?**
+
+Content safety controls what topics Copilot will discuss (violence, sexual content, etc.). Sensitivity labels control what data Copilot can access — they are completely separate systems.
+
+**6. Is the harmful content toggle available in government clouds?**
+
+Check with your Microsoft account team for GCC, GCC High, and DoD availability. Rollout timelines for government clouds typically differ from commercial tenants.
+
+**7. Can I audit who uses the harmful content toggle?**
+
+You can track which users are in the security group with access. Copilot interactions are available through Microsoft Purview audit logs, eDiscovery, and Content Search — subject to your Purview configuration and licensing.
+
+**8. What about DLP — can I stop Copilot from processing sensitive data?**
+
+Yes. Microsoft Purview DLP policies can detect and act on sensitive information in Copilot prompts and responses. This is separate from the harmful content toggle — DLP protects your data, while the content toggle controls what topics Copilot discusses.
+
+**9. What is the biggest security risk with Copilot that most admins miss?**
+
+Oversharing. Copilot surfaces any data a user has access to. If your SharePoint and OneDrive permissions are too broad, Copilot may surface documents users technically can access but shouldn't see. Fix permissions and deploy sensitivity labels before scaling Copilot.
+
+**10. What happens if a user shares a conversation where harmful content protection was disabled?**
+
+The content follows the same data handling as any other Copilot Chat content — it is stored, auditable, and subject to your retention and DLP policies. However, it may include sensitive or offensive material, so organisations should have clear usage policies.
+
+</div>
+
+---
+
 > **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. This article is not legal, compliance, or product-commitment advice. All information was sourced from official Microsoft documentation at the time of writing — features, settings, and availability are subject to change and may vary by cloud environment, tenant, and licensing. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
