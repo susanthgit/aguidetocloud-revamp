@@ -34,35 +34,44 @@
 /* ── Tabs ── */
 .cpmatrix-tabs {
   display: flex;
-  gap: 0.25rem;
-  border-bottom: 2px solid var(--cp-border);
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .cpmatrix-tab {
-  background: transparent;
-  border: none;
+  background: none;
+  border: 1px solid transparent;
   color: var(--cp-text-muted);
-  padding: 0.75rem 1.25rem;
-  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .cpmatrix-tab:hover {
   color: var(--cp-text);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .cpmatrix-tab.active {
-  color: var(--cp-accent);
-  border-bottom-color: var(--cp-accent);
+  color: #000;
+  background: var(--cp-accent);
+  border-color: var(--cp-accent);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
 }
 
 .cpmatrix-tab-emoji {
@@ -930,12 +939,12 @@
   padding: 1.5rem;
 }
 .cpmatrix-tier-consumer {
-  background: rgba(167, 139, 250, 0.04);
-  border: 1px solid rgba(167, 139, 250, 0.15);
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
 }
 .cpmatrix-tier-enterprise {
-  background: rgba(59, 130, 246, 0.04);
-  border: 1px solid rgba(59, 130, 246, 0.15);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
 }
 .cpmatrix-tier-section-label {
   font-size: 1rem;
@@ -1068,35 +1077,23 @@
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
-.cpmatrix-appgrid-group {
+.cpmatrix-app-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  width: 100%;
-}
-.cpmatrix-appgrid-cat {
-  font-size: 0.75rem;
-  color: var(--cp-text-muted);
-  font-weight: 700;
-  width: 100%;
-  margin-bottom: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
 }
 .cpmatrix-appgrid-btn {
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
   border-radius: 10px;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   transition: all 0.2s;
   color: var(--cp-text);
-  min-width: 140px;
 }
 .cpmatrix-appgrid-btn:hover { border-color: var(--app-color, var(--cp-accent)); background: var(--cp-card-hover); }
 .cpmatrix-appgrid-btn.active {
@@ -1104,9 +1101,9 @@
   background: color-mix(in srgb, var(--app-color, var(--cp-accent)) 10%, var(--cp-card));
   box-shadow: 0 0 12px color-mix(in srgb, var(--app-color) 20%, transparent);
 }
-.cpmatrix-appgrid-emoji { font-size: 1.3rem; }
-.cpmatrix-appgrid-name { font-weight: 600; font-size: 0.85rem; }
-.cpmatrix-appgrid-count { font-size: 0.7rem; color: var(--cp-text-muted); margin-left: auto; }
+.cpmatrix-appgrid-emoji { font-size: 1.1rem; flex-shrink: 0; }
+.cpmatrix-appgrid-name { font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
+.cpmatrix-appgrid-count { font-size: 0.68rem; color: var(--cp-text-muted); white-space: nowrap; }
 
 /* App detail */
 .cpmatrix-appdetail-header {

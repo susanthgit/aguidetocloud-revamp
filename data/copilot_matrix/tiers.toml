@@ -24,7 +24,7 @@ licensing_url = ""
 [[tiers]]
 id = "chat"
 name = "Copilot Chat"
-short_name = "Chat"
+short_name = "Copilot Basic"
 emoji = "💬"
 price = "Included"
 price_note = "Included with any M365 subscription (E3, E5, Business Standard, etc.)"

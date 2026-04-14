@@ -570,26 +570,13 @@
     if (!grid) return;
 
     var html = '';
-    var cats = {};
     activeApps.forEach(function (a) {
-      if (!cats[a.category]) cats[a.category] = [];
-      cats[a.category].push(a);
-    });
-
-    D.appCategories.forEach(function (cat) {
-      var apps = cats[cat.id];
-      if (!apps || !apps.length) return;
-      html += '<div class="cpmatrix-appgrid-group">';
-      html += '<span class="cpmatrix-appgrid-cat">' + cat.emoji + ' ' + escHtml(cat.name) + '</span>';
-      apps.forEach(function (a) {
-        var count = countFeaturesForApp(a.id);
-        html += '<button class="cpmatrix-appgrid-btn" data-app="' + a.id + '" style="--app-color:' + a.colour + '">';
-        html += '<span class="cpmatrix-appgrid-emoji">' + a.emoji + '</span>';
-        html += '<span class="cpmatrix-appgrid-name">' + escHtml(a.name) + '</span>';
-        html += '<span class="cpmatrix-appgrid-count">' + count + ' features</span>';
-        html += '</button>';
-      });
-      html += '</div>';
+      var count = countFeaturesForApp(a.id);
+      html += '<button class="cpmatrix-appgrid-btn" data-app="' + a.id + '" style="--app-color:' + a.colour + '">';
+      html += '<span class="cpmatrix-appgrid-emoji">' + a.emoji + '</span>';
+      html += '<span class="cpmatrix-appgrid-name">' + escHtml(a.name) + '</span>';
+      html += '<span class="cpmatrix-appgrid-count">(' + count + ')</span>';
+      html += '</button>';
     });
 
     grid.innerHTML = html;
@@ -601,6 +588,10 @@
       btn.classList.add('active');
       renderAppDetail(btn.dataset.app);
     });
+
+    // Auto-select Teams by default
+    var teamsBtn = grid.querySelector('.cpmatrix-appgrid-btn[data-app="teams"]');
+    if (teamsBtn) { teamsBtn.classList.add('active'); renderAppDetail('teams'); }
   }
 
   function renderAppDetail(appId) {
