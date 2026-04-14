@@ -29,17 +29,24 @@
 
 /* ═══════ TABS ═══════ */
 .psb-tabs {
-  display: flex; gap: 0; border-bottom: 2px solid var(--psb-border);
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem; overflow-x: auto;
 }
 .psb-tab {
-  padding: 0.75rem 1.25rem; background: none; border: none; border-bottom: 3px solid transparent;
-  color: var(--psb-text-dim); font-size: 0.95rem; font-weight: 600; cursor: pointer;
-  white-space: nowrap; transition: all 0.2s;
+  padding: 0.6rem 1.1rem; background: none; border: 1px solid transparent;
+  color: var(--psb-text-dim); font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; border-radius: 8px; transition: all 0.2s ease;
+  flex: 1; text-align: center;
 }
-.psb-tab:hover { color: var(--psb-text); }
-.psb-tab.active { color: var(--psb-accent); border-bottom-color: var(--psb-accent); }
-.psb-tab:focus-visible { outline: 2px solid var(--psb-accent); outline-offset: -2px; }
+.psb-tab:hover { color: var(--psb-text); background: rgba(255, 255, 255, 0.06); }
+.psb-tab.active {
+  color: #000; background: var(--psb-accent); border-color: var(--psb-accent);
+  box-shadow: 0 2px 8px rgba(74, 222, 128, 0.3);
+}
+.psb-tab:focus-visible { outline: 2px solid var(--psb-accent); outline-offset: -2px; border-radius: 8px; }
 .psb-panel { display: none; }
 .psb-panel.active { display: block; }
 
