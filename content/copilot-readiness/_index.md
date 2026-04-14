@@ -7,4 +7,17 @@ sitemap:
   priority: 0.9
   changefreq: monthly
 images: ["images/og/copilot-readiness.jpg"]
+faq:
+  - question: "How accurate is the readiness score?"
+    answer: "The score is based on Microsoft's official Copilot deployment prerequisites. It provides a directional assessment — not a technical audit. Use it to identify gaps before engaging your IT team for a detailed review."
+  - question: "Do you store my answers?"
+    answer: "No. All answers stay in your browser (localStorage). Nothing is sent to any server. You can share results via a URL that encodes your score but not individual answers."
+  - question: "What does each pillar measure?"
+    answer: "The 7 pillars cover: Licensing & Subscription (correct plans), Identity & Access (Entra ID, MFA, CA policies), Data Governance (sensitivity labels, DLP), Security & Compliance (Defender, audit logs), Network & Apps (bandwidth, app compatibility), Change Management (champions, training), and Monitoring & Optimisation (usage analytics, feedback loops)."
+  - question: "We scored low — what should we do first?"
+    answer: "Focus on the pillar with the lowest score. The tool provides specific Next Steps organised into 5 phases: Get Ready, Deploy, Adopt, Govern, and Training — each with links to Microsoft Learn resources."
+  - question: "Can I share my results with my team?"
+    answer: "Yes! Click the Share button to generate a URL that includes your overall score and pillar breakdown. The shared view shows scores and recommendations but not your individual answers."
+  - question: "Is this tool endorsed by Microsoft?"
+    answer: "No. This is a community tool built by a Microsoft employee for educational purposes. It follows Microsoft's public documentation but is not an official Microsoft product."
 ---

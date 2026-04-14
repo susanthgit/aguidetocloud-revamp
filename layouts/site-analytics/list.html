@@ -101,6 +101,7 @@
     <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">📊 Overview</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">🏆 Tools</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">🔍 Content</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
   </div>
 
   <!-- Tab: Overview -->
@@ -189,7 +190,8 @@
     </div>
   </div>
 
-  <!-- FAQ -->
+  <!-- FAQ Tab -->
+  <div class="siteana-panel" id="panel-faq" role="tabpanel">
   {{ with .Params.faq }}
   <div class="siteana-faq">
     <h2>Frequently Asked Questions</h2>
@@ -201,6 +203,7 @@
     {{ end }}
   </div>
   {{ end }}
+  </div>
 
   {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}
 </div>
