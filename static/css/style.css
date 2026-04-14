@@ -25,7 +25,18 @@
   --font-heading: 'Montserrat', 'Inter', sans-serif;
   --font-mono: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
   --max-width: 1280px;
-  --radius: 12px;
+  --radius: 16px;
+  /* Glassmorphism Design Tokens */
+  --glass-blur-card: 12px;
+  --glass-blur-overlay: 20px;
+  --glass-blur-subtle: 8px;
+  --glass-bg-card: rgba(255, 255, 255, 0.04);
+  --glass-bg-overlay: rgba(15, 15, 26, 0.72);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-radius-card: 16px;
+  --glass-radius-pill: 20px;
+  --glass-radius-button: 12px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -192,11 +203,11 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   padding-top: 0.5rem;
-  background: rgba(16, 16, 40, 0.98);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border-glow);
-  border-radius: 10px;
+  background: rgba(16, 16, 40, 0.82);
+  -webkit-backdrop-filter: blur(var(--glass-blur-overlay));
+  backdrop-filter: blur(var(--glass-blur-overlay));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   padding: 0.5rem 0;
   min-width: 240px;
   list-style: none;
@@ -892,15 +903,17 @@ a:hover {
 .global-btt {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
   width: 44px; height: 44px; border-radius: 50%;
-  background: #14B8A6; color: #0a0a1a; border: 2px solid rgba(20, 184, 166, 0.5);
+  background: rgba(20, 184, 166, 0.15); color: #14B8A6; border: 1px solid rgba(20, 184, 166, 0.3);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.3rem; font-weight: 900; cursor: pointer;
-  box-shadow: 0 3px 15px rgba(20, 184, 166, 0.35);
+  box-shadow: 0 3px 15px rgba(20, 184, 166, 0.2);
   opacity: 0; transform: translateY(20px); transition: all 0.3s;
   pointer-events: none;
   display: flex; align-items: center; justify-content: center;
 }
 .global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.global-btt:hover { background: #2DD4BF; box-shadow: 0 4px 25px rgba(20, 184, 166, 0.6); }
+.global-btt:hover { background: rgba(20, 184, 166, 0.25); box-shadow: 0 4px 25px rgba(20, 184, 166, 0.4); border-color: rgba(20, 184, 166, 0.5); }
 
 /* ── Feedback FAB (floating action button) ── */
 .feedback-fab {
@@ -911,11 +924,13 @@ a:hover {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ff66ff;
-  border: 2px solid rgba(255, 102, 255, 0.5);
+  background: rgba(255, 102, 255, 0.15);
+  border: 1px solid rgba(255, 102, 255, 0.3);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 3px 15px rgba(255, 102, 255, 0.35);
+  box-shadow: 0 3px 15px rgba(255, 102, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -923,8 +938,9 @@ a:hover {
   transition: all 0.3s;
 }
 .feedback-fab:hover {
-  background: #ff99ff;
-  box-shadow: 0 4px 25px rgba(255, 102, 255, 0.6);
+  background: rgba(255, 102, 255, 0.25);
+  box-shadow: 0 4px 25px rgba(255, 102, 255, 0.4);
+  border-color: rgba(255, 102, 255, 0.5);
   transform: scale(1.1);
 }
 @media (max-width: 640px) {
@@ -944,10 +960,12 @@ a:hover {
 
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
-  border-top: 1px solid rgba(102, 255, 255, 0.2);
+  border-top: var(--glass-border);
   padding: 3rem 2rem;
   text-align: center;
-  background: #0a0a14;
+  background: rgba(10, 10, 20, 0.65);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
 }
 .footer-links {
   display: flex;
