@@ -35,6 +35,7 @@
     <button class="pwgen-tab active" role="tab" data-tab="generate" aria-selected="true" id="tab-generate" aria-controls="panel-generate">🔐 Generate</button>
     <button class="pwgen-tab" role="tab" data-tab="check" aria-selected="false" id="tab-check" aria-controls="panel-check">🔍 Check My Password</button>
     <button class="pwgen-tab" role="tab" data-tab="passphrase" aria-selected="false" id="tab-passphrase" aria-controls="panel-passphrase">🧩 Word Builder</button>
+    <button class="pwgen-tab" role="tab" data-tab="faq" aria-selected="false" id="tab-faq" aria-controls="panel-faq">❓ FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 1: GENERATE ══════════════ */}}
@@ -341,7 +342,8 @@
 
   </div>{{/* end panel-passphrase */}}
 
-  {{/* ── FAQ Section ── */}}
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="pwgen-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
   {{ if .Params.faq }}
   <div class="pwgen-faq-section">
     <h2 class="pwgen-faq-title">Frequently Asked Questions</h2>
@@ -353,6 +355,7 @@
     {{ end }}
   </div>
   {{ end }}
+  </div>
 
   {{/* ── Cross-links ── */}}
   <div class="pwgen-crosslinks">
