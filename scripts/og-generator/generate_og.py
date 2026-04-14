@@ -7,6 +7,8 @@ Usage:
     python generate_og.py              # Generate all tool OG images
     python generate_og.py --tool ai-news  # Generate one specific tool
     python generate_og.py --list       # List all tools that will be generated
+    python generate_og.py --stale      # Only regenerate images with changed data
+    python generate_og.py --check      # Just report which images are missing/stale
 
 Output: static/images/og/{slug}.jpg
 """
@@ -14,6 +16,7 @@ Output: static/images/og/{slug}.jpg
 import os
 import sys
 import json
+import hashlib
 import argparse
 from pathlib import Path
 
@@ -33,6 +36,49 @@ TAGLINES_PATH = SCRIPT_DIR / "taglines.toml"
 LOGO_PATH = SITE_ROOT / "static" / "images" / "logo_agtc_dark_1.webp"
 COLOURS_PATH = DATA_DIR / "tool_colours.toml"
 NAV_PATH = DATA_DIR / "toolkit_nav.toml"
+HASH_PATH = SCRIPT_DIR / "og_hashes.json"  # tracks data used for each generated image
+
+
+def compute_tool_hash(tool: dict) -> str:
+    """Hash the data fields that affect the OG image appearance."""
+    # Include template version so changing the template invalidates all
+    template_hash = hashlib.md5(TEMPLATE_PATH.read_bytes()).hexdigest()[:8]
+    data = f"{tool['name']}|{tool['hex']}|{tool['emoji']}|{tool['tagline']}|{tool['category']}|{template_hash}"
+    return hashlib.md5(data.encode()).hexdigest()[:12]
+
+
+def load_hashes() -> dict:
+    """Load the stored hashes from the last generation."""
+    if HASH_PATH.exists():
+        try:
+            return json.loads(HASH_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, KeyError):
+            return {}
+    return {}
+
+
+def save_hashes(hashes: dict):
+    """Save current hashes after generation."""
+    HASH_PATH.write_text(json.dumps(hashes, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def find_stale_tools(tools: list[dict]) -> list[dict]:
+    """Find tools whose OG image is missing or has stale data."""
+    stored = load_hashes()
+    stale = []
+    for t in tools:
+        slug = t["slug"]
+        current_hash = compute_tool_hash(t)
+        image_exists = (OUTPUT_DIR / f"{slug}.jpg").exists()
+        stored_hash = stored.get(slug)
+
+        if not image_exists:
+            t["_reason"] = "missing"
+            stale.append(t)
+        elif stored_hash != current_hash:
+            t["_reason"] = "data changed"
+            stale.append(t)
+    return stale
 
 
 def hex_to_rgba(hex_color: str, alpha: float) -> str:
@@ -114,14 +160,23 @@ def render_html(tool: dict, template: str) -> str:
     return html
 
 
-def generate_images(tools: list[dict], template: str, missing_only: bool = False):
+def generate_images(tools: list[dict], template: str, stale_only: bool = False, missing_only: bool = False):
     """Use Playwright to screenshot each tool's OG image."""
     from playwright.sync_api import sync_playwright
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    hashes = load_hashes()
 
-    # Filter to missing images if requested
-    if missing_only:
+    # Filter based on mode
+    if stale_only:
+        tools = find_stale_tools(tools)
+        if not tools:
+            print("  ✅ All OG images are up-to-date — nothing to regenerate.")
+            return
+        for t in tools:
+            print(f"  → {t['slug']}: {t.get('_reason', 'unknown')}")
+        print()
+    elif missing_only:
         tools = [t for t in tools if not (OUTPUT_DIR / f"{t['slug']}.jpg").exists()]
         if not tools:
             print("  ✅ All OG images already exist — nothing to generate.")
@@ -169,8 +224,13 @@ def generate_images(tools: list[dict], template: str, missing_only: bool = False
             file_size = output_path.stat().st_size / 1024
             print(f"✅ ({file_size:.0f} KB)")
 
+            # Update hash for this tool
+            hashes[slug] = compute_tool_hash(tool)
+
         browser.close()
 
+    # Save all hashes
+    save_hashes(hashes)
     print(f"\n🎉 Done! {len(tools)} OG images saved to: {OUTPUT_DIR}")
 
 
@@ -179,6 +239,8 @@ def main():
     parser.add_argument("--tool", help="Generate for a specific tool slug only")
     parser.add_argument("--list", action="store_true", help="List all tools without generating")
     parser.add_argument("--missing-only", action="store_true", help="Only generate images that don't exist yet")
+    parser.add_argument("--stale", action="store_true", help="Regenerate missing + data-changed images (recommended for CI)")
+    parser.add_argument("--check", action="store_true", help="Report missing/stale images without generating")
     args = parser.parse_args()
 
     # Verify required files exist
@@ -202,16 +264,27 @@ def main():
             print(f"  {t['emoji']}  {t['name']:30s}  {t['hex']}  ({t['category']})")
         return
 
+    if args.check:
+        stale = find_stale_tools(tools)
+        if not stale:
+            print("✅ All OG images are up-to-date.")
+            sys.exit(0)
+        else:
+            print(f"⚠️  {len(stale)} image(s) need regeneration:\n")
+            for t in stale:
+                print(f"  {t['emoji']}  {t['name']:30s}  → {t['_reason']}")
+            sys.exit(1)  # non-zero exit = needs generation
+
     if args.tool:
         tools = [t for t in tools if t["slug"] == args.tool]
         if not tools:
-            print(f"ERROR: Tool '{args.tool}' not found in tool_colours.toml")
+            print(f"ERROR: Tool '{args.tool}' not found")
             sys.exit(1)
 
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
 
-    print(f"\n🖼️  Generating {len(tools)} OG images...\n")
-    generate_images(tools, template, missing_only=args.missing_only)
+    print(f"\n🖼️  Generating OG images...\n")
+    generate_images(tools, template, stale_only=args.stale, missing_only=args.missing_only)
 
     # Summary
     print(f"\n📂 Output directory: {OUTPUT_DIR}")
