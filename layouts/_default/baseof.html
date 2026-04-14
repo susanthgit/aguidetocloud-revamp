@@ -73,15 +73,17 @@
       <div id="pagefind-container"></div>
     </div>
   </div>
-  <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-  <link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/pagefind/pagefind-ui.css"></noscript>
+  <link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}"></noscript>
   <script src="/pagefind/pagefind-ui.js" defer></script>
   <script src="/js/switcher.js" defer></script>
   <script src="/js/search-init.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if hugo.IsProduction }}<script src="/js/analytics-track.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
   <script src="/js/tool-counter.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js" crossorigin="anonymous"></script>
   <script>
     mermaid.initialize({
       startOnLoad: true,

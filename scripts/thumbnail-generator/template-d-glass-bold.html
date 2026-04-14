@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: {{BG_BASE}};
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
+  /* ─── PROMINENT GRADIENT ORBS ─── */
+  .orb {
+    position: absolute; border-radius: 50%; z-index: 1;
+    filter: blur(60px);
+  }
+  /* Large accent orb — top right */
+  .orb-1 {
+    width: 500px; height: 500px;
+    top: -140px; right: -100px;
+    background: {{ORB_ACCENT}};
+  }
+  /* Secondary orb — bottom left */
+  .orb-2 {
+    width: 420px; height: 420px;
+    bottom: -120px; left: -80px;
+    background: {{ORB_SECONDARY}};
+  }
+  /* Subtle tertiary — centre */
+  .orb-3 {
+    width: 350px; height: 350px;
+    top: 50%; left: 45%;
+    transform: translate(-50%, -50%);
+    background: {{ORB_TERTIARY}};
+  }
+
+  /* Soft dot grid overlay */
+  .grid-dots {
+    position: absolute; inset: 0; z-index: 2;
+    background-image:
+      radial-gradient(circle 1.2px at center, rgba(0,0,0,0.03) 0%, transparent 100%);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  /* ─── GLASSMORPHISM CARD ─── */
+  .glass-card {
+    position: absolute;
+    top: 32px; left: 32px; right: 32px; bottom: 32px;
+    z-index: 5;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 8px 40px rgba(0,0,0,0.05),
+      0 1px 3px rgba(0,0,0,0.03),
+      inset 0 1px 0 rgba(255,255,255,0.85);
+    overflow: hidden;
+  }
+
+  /* Gradient border glow on card */
+  .glass-card::before {
+    content: ''; position: absolute; inset: -1.5px;
+    border-radius: 28px; padding: 2px;
+    background: linear-gradient(
+      135deg,
+      {{ACCENT}} 0%,
+      transparent 30%,
+      transparent 70%,
+      {{ACCENT_LIGHT}} 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Accent strip — left edge inside card */
+  .accent-strip {
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 7px;
+    background: linear-gradient(180deg, {{ACCENT}}, {{ACCENT_LIGHT}});
+    z-index: 2;
+    border-radius: 28px 0 0 28px;
+  }
+
+  /* ─── CONTENT ─── */
+  .content {
+    position: absolute;
+    top: 32px; left: 32px; right: 32px; bottom: 32px;
+    z-index: 10;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 52px 72px;
+    border-radius: 28px;
+  }
+
+  /* Category pill — solid filled for visibility */
+  .pill {
+    display: inline-flex; align-self: flex-start;
+    padding: 8px 24px;
+    border-radius: 22px;
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #fff;
+    background: {{ACCENT}};
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px {{ACCENT_SHADOW}};
+  }
+
+  /* MASSIVE title */
+  .title {
+    font-size: 72px; font-weight: 900;
+    letter-spacing: -3px; line-height: 1.0;
+    color: {{TEXT_DARK}};
+    margin: 0 0 16px;
+    max-width: 950px;
+  }
+  .title.title-sm { font-size: 58px; letter-spacing: -2px; }
+  .title.title-xs { font-size: 48px; letter-spacing: -1.5px; }
+
+  /* Subtitle — improved contrast */
+  .subtitle {
+    font-size: 26px; font-weight: 500;
+    color: {{SUBTITLE_COLOR}};
+    margin: 0; line-height: 1.3;
+    max-width: 800px;
+  }
+
+  /* ─── EMOJI FLOATER ─── top right, partially behind glass */
+  .emoji-float {
+    position: absolute;
+    top: 56px; right: 72px;
+    z-index: 12;
+    width: 110px; height: 110px;
+    filter: drop-shadow(0 8px 24px {{ACCENT_SHADOW}});
+    opacity: 0.80;
+  }
+  .emoji-float img { width: 100%; height: 100%; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    position: absolute;
+    bottom: 48px; left: 72px; right: 72px;
+    z-index: 15;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .logo-row { display: flex; align-items: center; gap: 14px; }
+  .logo-circle {
+    width: 44px; height: 44px; border-radius: 50%; overflow: hidden;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .channel-name { font-size: 17px; font-weight: 600; color: {{CHANNEL_NAME_COLOR}}; }
+
+  /* "Bites" badge — top right (avoids YouTube timestamp in bottom-right) */
+  .bites-badge {
+    position: absolute;
+    top: 48px; right: 52px;
+    z-index: 20;
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 20px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255,255,255,0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .bites-badge .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: {{ACCENT}};
+    box-shadow: 0 0 8px {{ACCENT_SHADOW}};
+  }
+  .bites-badge span {
+    font-size: 14px; font-weight: 800; color: {{TEXT_DARK}};
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+
+  /* Series indicator — top left, inside the card */
+  .series {
+    position: absolute;
+    top: 48px; left: 52px;
+    z-index: 20;
+    padding: 8px 20px;
+    border-radius: 22px;
+    background: {{ACCENT}};
+    color: #fff;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px {{ACCENT_SHADOW}};
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <!-- Gradient orbs — visible behind the frosted card -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-dots"></div>
+
+    <!-- Frosted glassmorphism card -->
+    <div class="glass-card">
+      <div class="accent-strip"></div>
+    </div>
+
+    <!-- Bites badge — top right -->
+    <div class="bites-badge">
+      <div class="dot"></div>
+      <span>Bites</span>
+    </div>
+
+    <!-- Series indicator (optional) -->
+    {{SERIES_HTML}}
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="pill">{{CATEGORY}}</div>
+      <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+      <p class="subtitle">{{SUBTITLE}}</p>
+    </div>
+
+    <!-- Emoji floater -->
+    <div class="emoji-float"><img src="{{EMOJI_PATH}}" alt=""></div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="logo-row">
+        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+        <span class="channel-name">A Guide to Cloud & AI</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

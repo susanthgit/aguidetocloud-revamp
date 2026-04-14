@@ -7,3 +7,13 @@ api/_data/
 credentials.json
 tokens.json
 *.secret
+
+# Python cache
+scripts/__pycache__/
+
+# Thumbnail generator outputs (keep the .py scripts and .html templates)
+scripts/thumbnail-generator/output/
+scripts/thumbnail-generator/mockups/
+scripts/thumbnail-generator/fonts/
+scripts/thumbnail-generator/badges/
+scripts/thumbnail-generator/*.json

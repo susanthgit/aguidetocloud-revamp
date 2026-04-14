@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f6ff 0%, {{BG_MID}} 50%, #f0f4ff 100%);
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; display: flex; }
+
+  /* Soft ambient orbs */
+  .orbs {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 400px 350px at 5% 30%, {{ORB_1}}, transparent 70%),
+      radial-gradient(ellipse 500px 400px at 95% 70%, {{ORB_2}}, transparent 70%);
+  }
+
+  /* Left panel — accent-tinted text area */
+  .left-panel {
+    width: 800px; height: 720px; position: relative; z-index: 10;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 56px 56px 56px 64px;
+  }
+
+  /* Category pill */
+  .pill {
+    display: inline-flex; align-self: flex-start;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: {{TEXT_DARK}};
+    border: 1.5px solid {{ACCENT}};
+    background: {{ACCENT_BG}};
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 56px; font-weight: 800;
+    letter-spacing: -2px; line-height: 1.08;
+    color: {{TEXT_DARK}};
+    margin: 0 0 16px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .title.title-sm { font-size: 46px; }
+  .title.title-xs { font-size: 38px; }
+
+  .subtitle {
+    font-size: 22px; font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    margin: 0 0 24px; line-height: 1.4;
+    max-width: 600px;
+  }
+
+  /* Channel footer within left panel */
+  .channel-row {
+    display: flex; align-items: center; gap: 12px; margin-top: auto;
+    padding-top: 20px;
+  }
+  .logo-circle {
+    width: 36px; height: 36px; border-radius: 50%; overflow: hidden;
+    background: rgba(255,255,255,0.7); border: 1.5px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .channel-name { font-size: 15px; font-weight: 600; color: rgba(0,0,0,0.4); }
+
+  /* Right panel — accent icon showcase */
+  .right-panel {
+    width: 480px; height: 720px; position: relative; z-index: 10;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: linear-gradient(135deg, {{ACCENT_BG_STRONG}}, {{ACCENT_BG}});
+    border-left: 2px solid {{ACCENT_BORDER}};
+  }
+
+  /* Large emoji in glass circle */
+  .icon-showcase {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(255,255,255,0.8);
+    box-shadow:
+      0 12px 40px {{ACCENT_SHADOW}},
+      0 4px 12px rgba(0,0,0,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon-showcase img {
+    width: 110px; height: 110px;
+    filter: drop-shadow(0 4px 16px {{ACCENT_SHADOW}});
+  }
+
+  /* Decorative rings */
+  .ring {
+    position: absolute; border-radius: 50%;
+    border: 1.5px solid {{ACCENT_RING}};
+    z-index: 5;
+  }
+  .ring-1 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .ring-2 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.5; }
+
+  /* "Bites" badge — top right */
+  .bites-badge {
+    position: absolute; top: 24px; right: 32px; z-index: 20;
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .bites-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: {{ACCENT}}; }
+  .bites-badge span { font-size: 13px; font-weight: 700; color: rgba(0,0,0,0.55); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Series indicator */
+  .series {
+    position: absolute; top: 24px; left: 32px; z-index: 20;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: {{ACCENT}};
+    color: #fff;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px {{ACCENT_SHADOW}};
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="orbs"></div>
+
+    <!-- Bites badge -->
+    <div class="bites-badge">
+      <div class="dot"></div>
+      <span>Bites</span>
+    </div>
+
+    {{SERIES_HTML}}
+
+    <!-- Left: Text content -->
+    <div class="left-panel">
+      <div class="pill">{{CATEGORY}}</div>
+      <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+      <p class="subtitle">{{SUBTITLE}}</p>
+      <div class="channel-row">
+        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+        <span class="channel-name">A Guide to Cloud & AI</span>
+      </div>
+    </div>
+
+    <!-- Right: Visual accent with icon -->
+    <div class="right-panel">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="icon-showcase">
+        <img src="{{EMOJI_PATH}}" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: {{BG_BASE}};
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
+  .bg-frost {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(135deg, {{BG_BASE}} 0%, {{BG_TINT}} 50%, {{BG_BASE}} 100%);
+  }
+
+  .orb { position: absolute; border-radius: 50%; z-index: 2; filter: blur(90px); }
+  .orb-1 { width: 700px; height: 700px; top: -200px; right: -100px; background: {{ORB_ACCENT}}; }
+  .orb-2 { width: 600px; height: 600px; bottom: -180px; left: -140px; background: {{ORB_SECONDARY}}; }
+  .orb-3 { width: 450px; height: 450px; top: 30%; left: 30%; transform: translate(-50%, -50%); background: {{ORB_TERTIARY}}; }
+
+  .grid-dots {
+    position: absolute; inset: 0; z-index: 3;
+    background-image: radial-gradient(circle 1.5px at center, rgba(255,255,255,0.06) 0%, transparent 100%);
+    background-size: 36px 36px;
+  }
+
+  .glass-panel {
+    position: absolute;
+    top: 48px; left: 48px; bottom: 48px; width: 740px;
+    z-index: 5; border-radius: 28px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(36px); -webkit-backdrop-filter: blur(36px);
+    border: 1.5px solid rgba(255, 255, 255, 0.50);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.50);
+    overflow: hidden;
+  }
+  .glass-panel::before {
+    content: ''; position: absolute; inset: -1.5px;
+    border-radius: 28px; padding: 2px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.60) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.30) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+  }
+  .accent-strip {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 7px;
+    background: linear-gradient(180deg, {{ACCENT}}, {{ACCENT_LIGHT}});
+    z-index: 2; border-radius: 28px 0 0 28px;
+  }
+
+  .text-content {
+    position: absolute;
+    top: 48px; left: 48px; bottom: 48px; width: 740px;
+    z-index: 10;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 40px 48px; border-radius: 28px;
+  }
+
+  .pill {
+    display: inline-flex; align-self: flex-start;
+    padding: 8px 22px; border-radius: 22px;
+    font-size: 16px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #fff; background: {{ACCENT}};
+    margin-bottom: 14px; box-shadow: 0 4px 16px {{ACCENT_SHADOW}};
+  }
+
+  .title {
+    font-size: 120px; font-weight: 900;
+    letter-spacing: -5px; line-height: 0.90;
+    color: {{TEXT_DARK}}; margin: 0 0 16px;
+    word-wrap: break-word; overflow-wrap: break-word;
+  }
+  .title.title-md { font-size: 84px; letter-spacing: -3.5px; line-height: 0.95; }
+  .title.title-sm { font-size: 64px; letter-spacing: -2.5px; line-height: 0.98; }
+
+  .subtitle {
+    font-size: 34px; font-weight: 700;
+    color: {{SUBTITLE_COLOR}}; margin: 0; line-height: 1.25;
+  }
+
+  /* ─── CIRCULAR AI LOGOS ─── */
+  .visual-area {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; width: 480px;
+    z-index: 8;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .logo-circle-group {
+    position: relative;
+    width: 320px; height: 320px;
+  }
+
+  /* Central logo — biggest */
+  .central-logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.90);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 3px solid rgba(255,255,255,0.95);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    z-index: 5;
+  }
+  .central-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* Orbiting logos */
+  .orbit-logo {
+    position: absolute;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(255,255,255,0.90);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    display: flex; align-items: center; justify-content: center;
+    padding: 14px;
+    z-index: 4;
+  }
+  .orbit-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* Position orbiting logos in a circle */
+  .orbit-1 { top: 0; left: 50%; transform: translateX(-50%); }           /* top */
+  .orbit-2 { top: 50%; right: 0; transform: translateY(-50%); }          /* right */
+  .orbit-3 { bottom: 0; left: 50%; transform: translateX(-50%); }        /* bottom */
+  .orbit-4 { top: 50%; left: 0; transform: translateY(-50%); }           /* left */
+
+  /* Connecting ring */
+  .orbit-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255,255,255,0.25);
+    z-index: 3;
+  }
+
+  .footer {
+    position: absolute; bottom: 64px; left: 96px;
+    z-index: 15;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .logo-circle {
+    width: 42px; height: 42px; border-radius: 50%; overflow: hidden;
+    background: {{ACCENT}};
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px {{ACCENT_SHADOW}};
+  }
+  .logo-circle img { width: 80%; height: 80%; object-fit: contain; display: block; }
+  .channel-name { font-size: 17px; font-weight: 700; color: {{CHANNEL_NAME_COLOR}}; }
+
+  .series {
+    position: absolute; top: 64px; left: 68px; z-index: 20;
+    padding: 12px 28px; border-radius: 26px;
+    background: {{TEXT_DARK}}; color: #fff;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="bg-frost"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-dots"></div>
+
+    <div class="glass-panel"><div class="accent-strip"></div></div>
+
+    {{SERIES_HTML}}
+
+    <div class="text-content">
+      <div class="pill">{{CATEGORY}}</div>
+      <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+      <p class="subtitle">{{SUBTITLE}}</p>
+    </div>
+
+    <!-- Circular AI logos -->
+    <div class="visual-area">
+      <div class="logo-circle-group">
+        <div class="orbit-ring"></div>
+        <div class="central-logo"><img src="{{HERO_PATH}}" alt=""></div>
+        <div class="orbit-logo orbit-1"><img src="{{ORBIT1_PATH}}" alt=""></div>
+        <div class="orbit-logo orbit-2"><img src="{{ORBIT2_PATH}}" alt=""></div>
+        <div class="orbit-logo orbit-3"><img src="{{ORBIT3_PATH}}" alt=""></div>
+        <div class="orbit-logo orbit-4"><img src="{{ORBIT4_PATH}}" alt=""></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+      <span class="channel-name">A Guide to Cloud & AI</span>
+    </div>
+  </div>
+</body>
+</html>

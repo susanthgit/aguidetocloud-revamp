@@ -26,6 +26,27 @@
   ]
 }
 </script>
+{{ $toolNav := (index hugo.Data "toolkit_nav").tools }}
+{{ if $toolNav }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Cloud & AI Toolkit — Free Tools for IT Pros",
+  "description": "Professional-grade free tools for IT administrators, cloud learners, and AI practitioners.",
+  "numberOfItems": {{ len $toolNav }},
+  "itemListElement": [
+    {{ range $i, $tool := $toolNav }}{{ if $i }},{{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add $i 1 }},
+      "name": {{ .name | jsonify }},
+      "url": "{{ site.BaseURL }}{{ strings.TrimPrefix "/" .url | strings.TrimSuffix "/" }}/"
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
 {{ else if .Params.youtube_id }}
 <script type="application/ld+json">
 {

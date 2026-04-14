@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('file:///C:/ssClawy/aguidetocloud-revamp/scripts/thumbnail-generator/fonts/InterVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #78350F;
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
+  /* ─── BOLD, SATURATED BACKGROUND ─── */
+  /* The entire background is a strong frosted colour field */
+  .bg-frost {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      135deg,
+      #78350F 0%,
+      #D97706 50%,
+      #78350F 100%
+    );
+  }
+
+  .orb {
+    position: absolute; border-radius: 50%; z-index: 2;
+    filter: blur(90px);
+  }
+  .orb-1 {
+    width: 700px; height: 700px;
+    top: -200px; right: -100px;
+    background: rgba(217,119,6,0.60);
+  }
+  .orb-2 {
+    width: 600px; height: 600px;
+    bottom: -180px; left: -140px;
+    background: rgba(251,191,36,0.50);
+  }
+  .orb-3 {
+    width: 450px; height: 450px;
+    top: 30%; left: 30%;
+    transform: translate(-50%, -50%);
+    background: rgba(245,158,11,0.30);
+  }
+
+  /* Dot grid — more visible on coloured bg */
+  .grid-dots {
+    position: absolute; inset: 0; z-index: 3;
+    background-image:
+      radial-gradient(circle 1.5px at center, rgba(255,255,255,0.06) 0%, transparent 100%);
+    background-size: 36px 36px;
+  }
+
+  /* ─── TRANSLUCENT GLASS PANEL — text area only ─── */
+  /* This sits on the left ~65%, leaving the right for the hero to float on colour */
+  .glass-panel {
+    position: absolute;
+    top: 48px; left: 48px; bottom: 48px;
+    width: 740px;
+    z-index: 5;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: blur(36px);
+    border: 1.5px solid rgba(255, 255, 255, 0.50);
+    box-shadow:
+      0 8px 40px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.50);
+    overflow: hidden;
+  }
+
+  .glass-panel::before {
+    content: ''; position: absolute; inset: -1.5px;
+    border-radius: 28px; padding: 2px;
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.60) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(255,255,255,0.30) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .accent-strip {
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 7px;
+    background: linear-gradient(180deg, #D97706, #FBBF24);
+    z-index: 2;
+    border-radius: 28px 0 0 28px;
+  }
+
+  /* ─── TEXT CONTENT inside glass panel ─── */
+  .text-content {
+    position: absolute;
+    top: 48px; left: 48px; bottom: 48px;
+    width: 740px;
+    z-index: 10;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 40px 48px;
+    border-radius: 28px;
+  }
+
+  .pill {
+    display: inline-flex; align-self: flex-start;
+    padding: 8px 22px;
+    border-radius: 22px;
+    font-size: 16px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #fff;
+    background: #D97706;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 16px rgba(217,119,6,0.40);
+  }
+
+  .title {
+    font-size: 120px; font-weight: 900;
+    letter-spacing: -5px; line-height: 0.90;
+    color: #78350F;
+    margin: 0 0 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .title.title-md { font-size: 84px; letter-spacing: -3.5px; line-height: 0.95; }
+  .title.title-sm { font-size: 64px; letter-spacing: -2.5px; line-height: 0.98; }
+
+  .subtitle {
+    font-size: 34px; font-weight: 700;
+    color: rgba(120,53,15,0.70);
+    margin: 0; line-height: 1.25;
+  }
+
+  /* ─── HERO VISUAL — floating on the coloured background ─── */
+  .visual-area {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 480px;
+    z-index: 8;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-visual {
+    width: 260px; height: 260px;
+    filter: drop-shadow(0 16px 40px rgba(217,119,6,0.40));
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-visual img { width: 100%; height: 100%; object-fit: contain; }
+
+  .product-badge {
+    position: absolute;
+    bottom: -10px; right: -10px;
+    width: 85px; height: 85px;
+    z-index: 3;
+    background: rgba(255,255,255,0.80);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.85);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    display: flex; align-items: center; justify-content: center;
+    padding: 13px;
+  }
+  .product-badge img { width: 100%; height: 100%; object-fit: contain; }
+  .product-badge.hidden { display: none; }
+
+  .glow-ring {
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.40);
+    z-index: 1;
+  }
+  .glow-ring-2 {
+    position: absolute;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.20);
+    z-index: 1;
+  }
+
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 64px; left: 96px;
+    z-index: 15;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .logo-circle {
+    width: 42px; height: 42px; border-radius: 50%; overflow: hidden;
+    background: #D97706;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(217,119,6,0.40);
+  }
+  .logo-circle img { width: 80%; height: 80%; object-fit: contain; display: block; }
+  .channel-name { font-size: 17px; font-weight: 700; color: rgba(120,53,15,0.55); }
+
+  .series {
+    position: absolute;
+    top: 64px; left: 68px;
+    z-index: 20;
+    padding: 12px 28px;
+    border-radius: 26px;
+    background: #78350F;
+    color: #fff;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="bg-frost"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-dots"></div>
+
+    <!-- Glass panel — text area only (left side) -->
+    <div class="glass-panel">
+      <div class="accent-strip"></div>
+    </div>
+
+    <div class="series">Part 15 of 15</div>
+
+    <!-- Text content -->
+    <div class="text-content">
+      <div class="pill">WINDOWS 365</div>
+      <h1 class="title ">Windows<br>365</h1>
+      <p class="subtitle">AVD Configuration and Lab</p>
+    </div>
+
+    <!-- Hero visual — floating on the coloured bg (right side) -->
+    <div class="visual-area">
+      <div class="glow-ring"></div>
+      <div class="glow-ring-2"></div>
+      <div class="hero-visual">
+        <img src="file:///C:/ssClawy/aguidetocloud-revamp/scripts/thumbnail-generator/badges/windows-365-logo.svg" alt="">
+        <div class="product-badge "><img src="file:///C:/ssClawy/aguidetocloud-revamp/scripts/og-generator/emoji/1f4bb.svg" alt=""></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="logo-circle"><img src="file:///C:/ssClawy/aguidetocloud-revamp/static/images/logo_agtc_dark_2.webp" alt=""></div>
+      <span class="channel-name">A Guide to Cloud & AI</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    /* Light pastel base — soft warm grey with hint of accent */
+    background: linear-gradient(135deg, #f8f6ff 0%, {{BG_MID}} 50%, #f0f4ff 100%);
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
+  /* Soft ambient orbs — pastel, not dark */
+  .orbs {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 500px 400px at 10% 20%, {{ORB_1}}, transparent 70%),
+      radial-gradient(ellipse 600px 500px at 90% 75%, {{ORB_2}}, transparent 70%),
+      radial-gradient(ellipse 400px 300px at 50% 10%, rgba(255,255,255,0.6), transparent 70%);
+  }
+
+  /* Subtle dot grid instead of wireframe */
+  .grid {
+    position: absolute; inset: 0; z-index: 2;
+    background-image:
+      radial-gradient(circle 1.5px at center, rgba(0,0,0,0.04) 0%, transparent 100%);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .content {
+    position: absolute; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 40px 64px;
+  }
+
+  /* Frosted glass card — light theme */
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    padding: 44px 56px 40px;
+    text-align: center;
+    max-width: 1000px; width: 100%;
+    position: relative;
+    box-shadow:
+      0 8px 32px rgba(0,0,0,0.06),
+      0 1px 4px rgba(0,0,0,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+
+  /* Accent gradient border */
+  .glass::before {
+    content: ''; position: absolute; inset: -1px; border-radius: 28px; padding: 2px;
+    background: linear-gradient(135deg, {{ACCENT}} 0%, transparent 40%, transparent 60%, {{ACCENT_LIGHT}} 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+
+  /* Category pill */
+  .pill {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: {{TEXT_DARK}};
+    border: 1.5px solid {{ACCENT}};
+    background: {{ACCENT_BG}};
+    margin-bottom: 16px;
+  }
+
+  .emoji {
+    width: 52px; height: 52px;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 4px 12px {{ACCENT_SHADOW}});
+  }
+  .emoji img { width: 100%; height: 100%; display: block; }
+
+  /* Title — dark text on light bg for max contrast */
+  .title {
+    font-size: 54px; font-weight: 800;
+    letter-spacing: -1.5px; line-height: 1.12;
+    color: {{TEXT_DARK}};
+    margin: 0 0 12px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .title.title-sm { font-size: 44px; }
+  .title.title-xs { font-size: 36px; }
+
+  /* Accent divider */
+  .line {
+    width: 80px; height: 4px;
+    background: linear-gradient(90deg, {{ACCENT}}, {{ACCENT_LIGHT}});
+    border-radius: 2px;
+    margin: 12px auto;
+  }
+
+  /* Subtitle */
+  .subtitle {
+    font-size: 22px; font-weight: 400;
+    color: rgba(0,0,0,0.45);
+    margin: 0; line-height: 1.4;
+  }
+
+  /* Footer bar */
+  .footer {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 48px;
+    background: linear-gradient(to top, rgba(255,255,255,0.5), transparent);
+  }
+
+  .logo-pill { display: flex; align-items: center; gap: 12px; }
+  .logo-circle {
+    width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .channel-name {
+    font-size: 16px; font-weight: 600; color: rgba(0,0,0,0.5);
+    letter-spacing: 0.3px;
+  }
+
+  /* "Bites" badge — top right corner */
+  .bites-badge {
+    position: absolute; top: 24px; right: 32px; z-index: 20;
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .bites-badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: {{ACCENT}};
+  }
+  .bites-badge span {
+    font-size: 13px; font-weight: 700; color: rgba(0,0,0,0.55);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* Series indicator */
+  .series {
+    position: absolute; top: 24px; left: 32px; z-index: 20;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: {{ACCENT}};
+    color: #fff;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px {{ACCENT_SHADOW}};
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="orbs"></div>
+    <div class="grid"></div>
+
+    <!-- Bites badge — always visible -->
+    <div class="bites-badge">
+      <div class="dot"></div>
+      <span>Bites</span>
+    </div>
+
+    <!-- Series indicator (optional — hidden if empty) -->
+    {{SERIES_HTML}}
+
+    <div class="content">
+      <div class="glass">
+        <div class="pill">{{CATEGORY}}</div>
+        <div class="emoji"><img src="{{EMOJI_PATH}}" alt=""></div>
+        <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+        <div class="line"></div>
+        <p class="subtitle">{{SUBTITLE}}</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="logo-pill">
+        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+        <span class="channel-name">A Guide to Cloud & AI</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

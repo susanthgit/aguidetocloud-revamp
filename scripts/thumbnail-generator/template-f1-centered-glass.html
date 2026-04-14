@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: {{BG_BASE}};
+  }
+
+  .frame { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
+  /* ─── VERY PROMINENT GRADIENT ORBS ─── */
+  .orb {
+    position: absolute; border-radius: 50%; z-index: 1;
+    filter: blur(80px);
+  }
+  .orb-1 {
+    width: 650px; height: 650px;
+    top: -180px; right: -80px;
+    background: {{ORB_ACCENT}};
+  }
+  .orb-2 {
+    width: 550px; height: 550px;
+    bottom: -160px; left: -120px;
+    background: {{ORB_SECONDARY}};
+  }
+  .orb-3 {
+    width: 400px; height: 400px;
+    top: 35%; left: 40%;
+    transform: translate(-50%, -50%);
+    background: {{ORB_TERTIARY}};
+  }
+
+  /* Dark vignette overlay — darkens the OUTER area around the glass */
+  .vignette {
+    position: absolute; inset: 0; z-index: 2;
+    background: radial-gradient(
+      ellipse 72% 75% at 50% 50%,
+      transparent 0%,
+      rgba(0,0,0,0.12) 70%,
+      rgba(0,0,0,0.30) 100%
+    );
+  }
+
+  /* Dot grid */
+  .grid-dots {
+    position: absolute; inset: 0; z-index: 3;
+    background-image:
+      radial-gradient(circle 1.2px at center, rgba(0,0,0,0.04) 0%, transparent 100%);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  /* ─── CENTERED FROSTED GLASS CARD ─── */
+  .glass-card {
+    position: absolute;
+    top: 60px; left: 80px; right: 80px; bottom: 60px;
+    z-index: 5;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 12px 48px rgba(0,0,0,0.10),
+      0 2px 6px rgba(0,0,0,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.90);
+    overflow: hidden;
+  }
+
+  /* Gradient border glow */
+  .glass-card::before {
+    content: ''; position: absolute; inset: -2px;
+    border-radius: 32px; padding: 3px;
+    background: linear-gradient(
+      135deg,
+      {{ACCENT}} 0%,
+      transparent 25%,
+      transparent 75%,
+      {{ACCENT_LIGHT}} 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Accent strip */
+  .accent-strip {
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 8px;
+    background: linear-gradient(180deg, {{ACCENT}}, {{ACCENT_LIGHT}});
+    z-index: 2;
+    border-radius: 32px 0 0 32px;
+  }
+
+  /* ─── TWO-COLUMN LAYOUT inside the card ─── */
+  .content {
+    position: absolute;
+    top: 60px; left: 80px; right: 80px; bottom: 60px;
+    z-index: 10;
+    display: flex; align-items: center;
+    padding: 40px 48px;
+    border-radius: 32px;
+    gap: 24px;
+  }
+
+  .text-col {
+    flex: 1 1 60%;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .visual-col {
+    flex: 0 0 280px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+
+  .hero-visual {
+    width: 220px; height: 220px;
+    filter: drop-shadow(0 12px 32px {{ACCENT_SHADOW}});
+    opacity: 0.90;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-visual img { width: 100%; height: 100%; object-fit: contain; }
+
+  .product-badge {
+    position: absolute;
+    bottom: -8px; right: -8px;
+    width: 80px; height: 80px;
+    z-index: 3;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.9);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px;
+  }
+  .product-badge img { width: 100%; height: 100%; object-fit: contain; }
+  .product-badge.hidden { display: none; }
+
+  .glow-ring {
+    position: absolute;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    border: 3px solid {{ACCENT_LIGHT}};
+    opacity: 0.35;
+    z-index: 1;
+  }
+  .glow-ring-2 {
+    position: absolute;
+    width: 310px; height: 310px;
+    border-radius: 50%;
+    border: 2px solid {{ACCENT_LIGHT}};
+    opacity: 0.18;
+    z-index: 1;
+  }
+
+  .pill {
+    display: inline-flex; align-self: flex-start;
+    padding: 8px 22px;
+    border-radius: 22px;
+    font-size: 16px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #fff;
+    background: {{ACCENT}};
+    margin-bottom: 14px;
+    box-shadow: 0 4px 16px {{ACCENT_SHADOW}};
+  }
+
+  .title {
+    font-size: 80px; font-weight: 900;
+    letter-spacing: -3.5px; line-height: 0.95;
+    color: {{TEXT_DARK}};
+    margin: 0 0 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .title.title-md { font-size: 64px; letter-spacing: -3px; line-height: 0.98; }
+  .title.title-sm { font-size: 52px; letter-spacing: -2px; line-height: 1.0; }
+
+  .subtitle {
+    font-size: 26px; font-weight: 600;
+    color: {{SUBTITLE_COLOR}};
+    margin: 0; line-height: 1.3;
+  }
+
+  /* Footer — inside the card, bottom */
+  .footer {
+    position: absolute;
+    bottom: 76px; left: 128px;
+    z-index: 15;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .logo-circle {
+    width: 42px; height: 42px; border-radius: 50%; overflow: hidden;
+    background: {{ACCENT}};
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px {{ACCENT_SHADOW}};
+  }
+  .logo-circle img { width: 80%; height: 80%; object-fit: contain; display: block; }
+  .channel-name { font-size: 17px; font-weight: 700; color: {{CHANNEL_NAME_COLOR}}; }
+
+  .series {
+    position: absolute;
+    top: 76px; left: 100px;
+    z-index: 20;
+    padding: 12px 28px;
+    border-radius: 26px;
+    background: {{TEXT_DARK}};
+    color: #fff;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="vignette"></div>
+    <div class="grid-dots"></div>
+
+    <div class="glass-card">
+      <div class="accent-strip"></div>
+    </div>
+
+    {{SERIES_HTML}}
+
+    <div class="content">
+      <div class="text-col">
+        <div class="pill">{{CATEGORY}}</div>
+        <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+        <p class="subtitle">{{SUBTITLE}}</p>
+      </div>
+      <div class="visual-col">
+        <div class="glow-ring"></div>
+        <div class="glow-ring-2"></div>
+        <div class="hero-visual">
+          <img src="{{HERO_PATH}}" alt="">
+          <div class="product-badge {{BADGE_HIDDEN}}"><img src="{{BADGE_PATH}}" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+      <span class="channel-name">A Guide to Cloud & AI</span>
+    </div>
+  </div>
+</body>
+</html>
