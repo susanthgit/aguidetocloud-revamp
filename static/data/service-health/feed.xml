@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 23:00:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 03:38:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1279031</link>
       <description>[Microsoft Intune] Users' newly enrolled devices in Microsoft Intune may be unable to access company resources.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">IT1279031</guid>
       <pubDate>Mon, 13 Apr 2026 19:42:25 +0000</pubDate>
     </item>
