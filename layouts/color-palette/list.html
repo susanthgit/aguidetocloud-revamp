@@ -57,6 +57,7 @@
     <button class="palette-tab" role="tab" data-tab="blindness">👁️ Blindness</button>
     <button class="palette-tab" role="tab" data-tab="contrast">🔍 Contrast</button>
     <button class="palette-tab" role="tab" data-tab="extract">🖼️ Extract</button>
+    <button class="palette-tab" role="tab" data-tab="faq">❓ FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 2: GENERATE ══════════════ */}}
@@ -293,7 +294,8 @@
     </div>
   </div>
 
-  {{/* ── FAQ Section ── */}}
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="palette-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="palette-faq">
     <h2 class="palette-faq-title">Frequently Asked Questions</h2>
@@ -305,6 +307,7 @@
     {{ end }}
   </div>
   {{ end }}
+  </div>
 
   {{/* ── Pagefind searchable ── */}}
   <div data-pagefind-body style="display:none" aria-hidden="true">

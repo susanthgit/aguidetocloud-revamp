@@ -135,6 +135,7 @@
   <div class="pomo-tabs" role="tablist">
     <button class="pomo-tab active" role="tab" data-tab="tasks" aria-selected="true">📝 Tasks</button>
     <button class="pomo-tab" role="tab" data-tab="stats">📊 Stats</button>
+    <button class="pomo-tab" role="tab" data-tab="faq">❓ FAQ</button>
   </div>
 
   {{/* ── TASKS TAB ── */}}
@@ -305,7 +306,8 @@
     <p>Pomodoro Focus Timer — free productivity timer with ambient sounds, task tracking, and focus statistics. Customise work sessions, short breaks, long breaks. Rain, café, forest, ocean, white noise, lo-fi ambient sounds. Track your daily focus time with heatmap and weekly charts.</p>
   </div>
 
-  {{/* ── FAQ Section ── */}}
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="pomo-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="pomo-faq">
     <h2 class="pomo-section-title">❓ Frequently Asked Questions</h2>
@@ -317,6 +319,7 @@
     {{ end }}
   </div>
   {{ end }}
+  </div>
 
   {{ partial "back-nav" . }}
 

@@ -26,9 +26,12 @@
 /* ── Tabs ── */
 .palette-tabs {
   display: flex;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -37,20 +40,25 @@
 
 .palette-tab {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--palette-text-dim);
-  font-size: 0.95rem;
-  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   white-space: nowrap;
   font-family: inherit;
+  flex: 1;
+  text-align: center;
 }
-.palette-tab:hover { color: rgba(255,255,255,0.8); }
+.palette-tab:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); }
 .palette-tab.active {
-  color: var(--palette-accent);
-  border-bottom-color: var(--palette-accent);
+  color: #000;
+  background: var(--palette-accent);
+  border-color: var(--palette-accent);
+  box-shadow: 0 2px 8px rgba(244, 114, 182, 0.3);
 }
 
 .palette-panel { display: none; }

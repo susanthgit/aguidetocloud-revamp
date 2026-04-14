@@ -237,19 +237,25 @@
    TABS (Tasks & Stats only)
    ═══════════════════════════════════════════ */
 .pomo-tabs {
-  display: flex; gap: 0.25rem;
-  border-bottom: 1px solid var(--pomo-border);
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1rem; overflow-x: auto;
   -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .pomo-tabs::-webkit-scrollbar { display: none; }
 .pomo-tab {
-  background: none; border: none; color: var(--pomo-text-dim);
-  padding: 0.65rem 1rem; font-size: 0.88rem; cursor: pointer;
-  white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s;
+  background: none; border: 1px solid transparent; color: var(--pomo-text-dim);
+  padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; border-radius: 8px; transition: all 0.2s ease;
+  flex: 1; text-align: center;
 }
-.pomo-tab:hover { color: var(--pomo-text); }
-.pomo-tab.active { color: var(--pomo); border-bottom-color: var(--pomo); font-weight: 600; }
+.pomo-tab:hover { color: var(--pomo-text); background: rgba(255,255,255,0.06); }
+.pomo-tab.active {
+  color: #fff; background: var(--pomo); border-color: var(--pomo);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3); font-weight: 600;
+}
 .pomo-panel { display: none; }
 .pomo-panel.active { display: block; }
 
