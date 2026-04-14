@@ -257,13 +257,16 @@
 }
 .migplan-workload-card {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   padding: 1.25rem;
   transition: border-color 0.2s;
 }
 .migplan-workload-card:hover {
   border-color: rgba(100, 120, 204, 0.3);
+  box-shadow: 0 0 20px rgba(100, 120, 204, 0.1);
 }
 .migplan-workload-header {
   display: flex;

@@ -93,9 +93,11 @@
 .cpmatrix-search {
   width: 100%;
   padding: 0.6rem 1rem;
-  background: var(--cp-card);
-  border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-button);
   color: var(--cp-text);
   font-size: 0.9rem;
   outline: none;
@@ -282,17 +284,19 @@
 }
 
 .cpmatrix-tier-card {
-  background: var(--cp-card);
-  border: 1px solid var(--cp-border);
-  border-radius: 12px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   padding: 1.5rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   position: relative;
 }
 
 .cpmatrix-tier-card:hover {
-  border-color: var(--cp-accent-border);
-  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.2);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.1);
 }
 
 .cpmatrix-tier-card.cpmatrix-recommended {

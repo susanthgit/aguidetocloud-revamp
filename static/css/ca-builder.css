@@ -145,8 +145,10 @@
 /* ── Policy Card (shared between templates + review) ── */
 .cab-policy-card {
   background: color-mix(in srgb, var(--cab-accent) 6%, var(--cab-card-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid color-mix(in srgb, var(--cab-accent) 18%, transparent);
-  border-radius: 12px; padding: 1.25rem; transition: all 0.2s;
+  border-radius: var(--glass-radius-card); padding: 1.25rem; transition: all 0.2s;
 }
 .cab-policy-card:hover {
   border-color: color-mix(in srgb, var(--cab-accent) 35%, transparent);

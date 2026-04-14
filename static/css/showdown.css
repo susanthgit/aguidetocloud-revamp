@@ -70,8 +70,8 @@
 
 .showdown-tab {
   padding: 0.6rem 1rem;
-  background: transparent;
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: none;
   border-radius: 8px 8px 0 0;
   color: var(--showdown-text-dim);
@@ -84,11 +84,12 @@
 .showdown-tab:hover {
   color: var(--showdown-accent);
   background: var(--showdown-accent-dim);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 .showdown-tab.active {
   color: var(--showdown-accent);
-  background: var(--showdown-accent-dim);
-  border-color: var(--showdown-accent-mid);
+  background: color-mix(in srgb, var(--showdown-accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--showdown-accent) 30%, transparent);
   font-weight: 600;
 }
 
@@ -169,17 +170,18 @@
 
 .showdown-provider-card {
   background: color-mix(in srgb, var(--showdown-accent) 8%, var(--showdown-card-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid var(--showdown-card-border);
-  border-radius: 12px;
+  border-radius: var(--glass-radius-card);
   padding: 1.25rem;
   transition: all 0.2s;
   cursor: pointer;
 }
 .showdown-provider-card:hover {
-  border-color: var(--showdown-accent);
-  background: color-mix(in srgb, var(--showdown-accent) 15%, var(--showdown-card-bg));
+  border-color: color-mix(in srgb, var(--showdown-accent) 35%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px var(--showdown-accent-dim);
+  box-shadow: 0 0 20px var(--showdown-accent-dim);
 }
 
 .showdown-provider-header {

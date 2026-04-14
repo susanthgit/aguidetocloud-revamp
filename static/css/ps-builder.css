@@ -75,10 +75,13 @@
 .psb-recipe-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
 
 .psb-recipe-card {
-  background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px;
+  background: var(--psb-surface); 
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border); border-radius: var(--glass-radius-card);
   overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; cursor: pointer;
 }
-.psb-recipe-card:hover { border-color: var(--psb-accent-muted); box-shadow: 0 2px 12px var(--psb-accent-dim); }
+.psb-recipe-card:hover { border-color: var(--psb-accent-muted); box-shadow: 0 0 20px var(--psb-accent-dim); }
 .psb-recipe-header { padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
 .psb-recipe-title { font-weight: 600; color: var(--psb-text); flex: 1; font-size: 0.95rem; }
 .psb-recipe-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }

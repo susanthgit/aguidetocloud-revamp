@@ -73,9 +73,11 @@
 .prompts-search {
   flex: 1;
   padding: 0.6rem 1rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-button);
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -91,9 +93,11 @@
 }
 .prompts-select {
   padding: 0.6rem 0.8rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-button);
   color: var(--text-secondary);
   font-family: var(--font-heading);
   font-size: 0.82rem;
@@ -210,15 +214,17 @@
 /* ── PROMPT ROW (collapsed state) ───────────── */
 
 .prompt-row {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   margin-bottom: 0.5rem;
   transition: all 0.2s ease;
 }
 .prompt-row:hover {
-  border-color: rgba(167, 139, 250, 0.25);
-  background: var(--bg-card-hover);
+  border-color: rgba(167, 139, 250, 0.2);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.08);
 }
 
 .prompt-row-header {
@@ -444,9 +450,11 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   color: var(--text-secondary);
   font-family: var(--font-heading);
   font-size: 0.82rem;

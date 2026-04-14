@@ -76,9 +76,11 @@
 .lic-search {
   width: 100%;
   padding: 0.8rem 1rem 0.8rem 2.5rem;
-  border-radius: 12px;
-  border: 1px solid #334155;
-  background: #1e293b;
+  border-radius: var(--glass-radius-card);
+  border: var(--glass-border);
+  background: rgba(30, 41, 59, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   color: #e2e8f0;
   font-size: 1rem;
   outline: none;
@@ -380,8 +382,10 @@
 .lic-tab {
   padding: 0.6rem 1.4rem;
   border-radius: 99px;
-  border: 1px solid #334155;
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   color: #94a3b8;
   font-size: 0.95rem;
   font-weight: 500;
@@ -393,9 +397,9 @@
   color: #e2e8f0;
 }
 .lic-tab.active {
-  background: var(--lic-accent);
-  border-color: var(--lic-accent);
-  color: #000;
+  background: color-mix(in srgb, var(--lic-accent) 15%, transparent);
+  border-color: color-mix(in srgb, var(--lic-accent) 40%, transparent);
+  color: var(--lic-accent);
   font-weight: 600;
 }
 
@@ -458,17 +462,19 @@
 }
 
 .lic-card {
-  background: #1e293b;
-  border: 1px solid #334155;
+  background: rgba(30, 41, 59, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
   border-top: 2px solid var(--cat-accent, var(--lic-accent));
-  border-radius: 12px;
+  border-radius: var(--glass-radius-card);
   padding: 1.4rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   position: relative;
 }
 .lic-card:hover {
-  border-color: var(--cat-accent, var(--lic-accent-border));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--cat-accent, var(--lic-accent)) 20%, transparent);
+  border-color: color-mix(in srgb, var(--cat-accent, var(--lic-accent)) 30%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--cat-accent, var(--lic-accent)) 15%, transparent);
 }
 .lic-card.highlighted {
   border-color: var(--lic-accent);

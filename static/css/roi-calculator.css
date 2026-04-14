@@ -80,8 +80,10 @@
 /* ── Cards ── */
 .roi-input-card, .roi-results-card {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   padding: 1.5rem;
 }
 .roi-results-card {

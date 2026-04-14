@@ -36,9 +36,11 @@
   flex: 1;
   min-width: 200px;
   padding: 0.6rem 1rem;
-  background: var(--cert-card);
-  border: 1px solid var(--cert-border);
-  border-radius: 8px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-button);
   color: var(--cert-text);
   font-size: 0.95rem;
 }
@@ -89,9 +91,11 @@
 }
 .cert-chip {
   padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  border: 1px solid var(--cert-border);
-  background: transparent;
+  border-radius: var(--glass-radius-pill);
+  border: var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   color: var(--cert-text-dim);
   font-size: 0.82rem;
   cursor: pointer;
@@ -141,18 +145,20 @@
 .cert-card {
   display: block;
   text-decoration: none;
-  background: var(--cert-card);
-  border: 1px solid var(--cert-border);
-  border-radius: 12px;
+  background: rgba(26, 26, 46, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   padding: 1.25rem;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   position: relative;
   color: inherit;
 }
 .cert-card:hover {
-  border-color: var(--cert-accent);
+  border-color: rgba(16, 185, 129, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
 }
 
 .cert-card-header {
@@ -268,9 +274,11 @@
 
 .cert-modal-content {
   position: relative;
-  background: var(--cert-bg);
-  border: 1px solid var(--cert-border);
-  border-radius: 16px;
+  background: rgba(20, 20, 37, 0.88);
+  -webkit-backdrop-filter: blur(var(--glass-blur-overlay));
+  backdrop-filter: blur(var(--glass-blur-overlay));
+  border: var(--glass-border);
+  border-radius: var(--glass-radius-card);
   width: 90%;
   max-width: 800px;
   max-height: 85vh;
