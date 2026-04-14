@@ -13,90 +13,95 @@
 
 <div class="shealth-container">
 
-  <!-- Summary Banner -->
-  <div class="shealth-summary" id="shealth-summary"></div>
-
-  <!-- Service Status Cards -->
-  <div class="shealth-grid-header">
-    <span class="shealth-grid-label">Service Status</span>
-    <span class="shealth-grid-hint">Click a service to filter incidents</span>
-  </div>
-  <div class="shealth-status-grid" id="shealth-status-grid" aria-label="Current service status">
-    <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
+  <!-- Tab Navigation -->
+  <div class="shealth-tabs" role="tablist" aria-label="Service Health views">
+    <button class="shealth-tab active" role="tab" aria-selected="true" data-tab="status">🟢 Service Status</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="incidents">🔴 Active Incidents</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="insights">📊 Reliability Insights</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="lookup">📅 Date Lookup</button>
   </div>
 
-  <!-- Active Incidents Section -->
-  <div class="shealth-active-section" id="shealth-active-section" style="display:none">
-    <div class="shealth-section-header shealth-section-active">
-      <span>🔴 Active Incidents</span>
-      <span class="shealth-active-count" id="shealth-active-count"></span>
+  <!-- Tab 1: Service Status -->
+  <div class="shealth-panel active" id="panel-status" role="tabpanel">
+    <!-- Summary Banner -->
+    <div class="shealth-summary" id="shealth-summary"></div>
+    <div class="shealth-grid-header">
+      <span class="shealth-grid-label">Service Status</span>
+      <span class="shealth-grid-hint">Click a service to filter incidents</span>
     </div>
-    <div class="shealth-active-list" id="shealth-active-list"></div>
+    <div class="shealth-status-grid" id="shealth-status-grid" aria-label="Current service status">
+      <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
+    </div>
+
+    <!-- Incident History (inside Status tab) -->
+    <div class="shealth-section-header" style="margin-top:2rem">
+      <span>📋 Incident History</span>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <button class="shealth-clear-btn" id="shealth-csv-btn">📥 Export CSV</button>
+        <button class="shealth-clear-btn" id="shealth-clear-btn" style="display:none">✕ Clear filters</button>
+      </div>
+    </div>
+    <div class="shealth-controls" id="shealth-controls">
+      <label for="shealth-search" class="sr-only">Search incidents</label>
+      <input type="text" id="shealth-search" class="shealth-search" placeholder="Search incidents (e.g. Teams, Exchange, unable to send)..." autocomplete="off">
+      <label for="shealth-service-filter" class="sr-only">Filter by service</label>
+      <select id="shealth-service-filter" class="shealth-select">
+        <option value="all" selected>All Services</option>
+      </select>
+      <label for="shealth-status-filter" class="sr-only">Filter by status</label>
+      <select id="shealth-status-filter" class="shealth-select">
+        <option value="all" selected>All Statuses</option>
+        <option value="active">🔴 Active Only</option>
+        <option value="resolved">✅ Resolved Only</option>
+        <option value="advisory">ℹ️ Advisories Only</option>
+        <option value="incident">⚠️ Incidents Only</option>
+      </select>
+    </div>
+    <div class="shealth-meta" id="shealth-meta" aria-live="polite"></div>
+    <div class="shealth-timeline" id="shealth-timeline" aria-live="polite">
+      <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
+    </div>
+    <div class="shealth-load-more" id="shealth-load-more" style="display:none">
+      <button class="shealth-load-btn" id="shealth-load-btn">Load More Incidents</button>
+    </div>
   </div>
 
-  <!-- Analytics Section -->
-  <div class="shealth-analytics" id="shealth-analytics">
+  <!-- Tab 2: Active Incidents -->
+  <div class="shealth-panel" id="panel-incidents" role="tabpanel" hidden>
+    <div class="shealth-active-section" id="shealth-active-section">
+      <div class="shealth-section-header shealth-section-active">
+        <span>🔴 Active Incidents</span>
+        <span class="shealth-active-count" id="shealth-active-count"></span>
+      </div>
+      <div class="shealth-active-list" id="shealth-active-list"></div>
+      <p class="shealth-no-active" id="shealth-no-active" style="display:none;text-align:center;color:rgba(255,255,255,0.4);padding:2rem">✅ No active incidents — all services operational</p>
+    </div>
+  </div>
+
+  <!-- Tab 3: Reliability Insights -->
+  <div class="shealth-panel" id="panel-insights" role="tabpanel" hidden>
+    <div class="shealth-analytics" id="shealth-analytics">
+      <div class="shealth-trend" id="shealth-trend"></div>
+      <div class="shealth-insights-grid">
+        <div class="shealth-most-affected" id="shealth-most-affected"></div>
+        <div class="shealth-scorecard" id="shealth-scorecard"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Date Lookup -->
+  <div class="shealth-panel" id="panel-lookup" role="tabpanel" hidden>
     <div class="shealth-section-header">
-      <span>📊 Service Reliability Insights</span>
+      <span>📅 Was a service down on a specific date?</span>
     </div>
-
-    <!-- Monthly Trend Chart -->
-    <div class="shealth-trend" id="shealth-trend"></div>
-
-    <!-- Most Affected + Scorecard -->
-    <div class="shealth-insights-grid">
-      <div class="shealth-most-affected" id="shealth-most-affected"></div>
-      <div class="shealth-scorecard" id="shealth-scorecard"></div>
+    <div class="shealth-date-lookup" id="shealth-date-lookup">
+      <input type="date" id="shealth-date-picker" class="shealth-search" aria-label="Select date to check">
+      <select id="shealth-date-service" class="shealth-select" aria-label="Service for date lookup">
+        <option value="all">Any Service</option>
+      </select>
+      <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
     </div>
-  </div>
-
-  <!-- Date Lookup -->
-  <div class="shealth-section-header">
-    <span>📅 Was a service down on a specific date?</span>
-  </div>
-  <div class="shealth-date-lookup" id="shealth-date-lookup">
-    <input type="date" id="shealth-date-picker" class="shealth-search" aria-label="Select date to check">
-    <select id="shealth-date-service" class="shealth-select" aria-label="Service for date lookup">
-      <option value="all">Any Service</option>
-    </select>
-    <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
-  </div>
-  <div class="shealth-date-result" id="shealth-date-result"></div>
-
-  <!-- Controls -->
-  <div class="shealth-section-header">
-    <span>📋 Incident History</span>
-    <div style="display:flex;gap:0.5rem;align-items:center">
-      <button class="shealth-clear-btn" id="shealth-csv-btn">📥 Export CSV</button>
-      <button class="shealth-clear-btn" id="shealth-clear-btn" style="display:none">✕ Clear filters</button>
-    </div>
-  </div>
-  <div class="shealth-controls" id="shealth-controls">
-    <label for="shealth-search" class="sr-only">Search incidents</label>
-    <input type="text" id="shealth-search" class="shealth-search" placeholder="Search incidents (e.g. Teams, Exchange, unable to send)..." autocomplete="off">
-    <label for="shealth-service-filter" class="sr-only">Filter by service</label>
-    <select id="shealth-service-filter" class="shealth-select">
-      <option value="all" selected>All Services</option>
-    </select>
-    <label for="shealth-status-filter" class="sr-only">Filter by status</label>
-    <select id="shealth-status-filter" class="shealth-select">
-      <option value="all" selected>All Statuses</option>
-      <option value="active">🔴 Active Only</option>
-      <option value="resolved">✅ Resolved Only</option>
-      <option value="advisory">ℹ️ Advisories Only</option>
-      <option value="incident">⚠️ Incidents Only</option>
-    </select>
-  </div>
-
-  <!-- Incident Timeline -->
-  <div class="shealth-meta" id="shealth-meta" aria-live="polite"></div>
-  <div class="shealth-timeline" id="shealth-timeline" aria-live="polite">
-    <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
-  </div>
-
-  <!-- Load More -->
-  <div class="shealth-load-more" id="shealth-load-more" style="display:none">
-    <button class="shealth-load-btn" id="shealth-load-btn">Load More Incidents</button>
+    <div class="shealth-date-result" id="shealth-date-result"></div>
   </div>
 
   <!-- Footer -->

@@ -120,10 +120,15 @@
     const active = allIssues.filter(i => !i.is_resolved);
 
     if (active.length === 0) {
-      section.style.display = 'none';
+      list.innerHTML = '';
+      if (countEl) countEl.textContent = '0';
+      var noActive = document.getElementById('shealth-no-active');
+      if (noActive) noActive.style.display = '';
       return;
     }
 
+    var noActive2 = document.getElementById('shealth-no-active');
+    if (noActive2) noActive2.style.display = 'none';
     section.style.display = '';
     if (countEl) countEl.textContent = active.length;
     list.innerHTML = active.map(renderIncident).join('');
@@ -564,6 +569,20 @@
 
   // ── Init ──
   async function init() {
+    // Tab switching
+    var shTabs = document.querySelectorAll('.shealth-tab');
+    var shPanels = document.querySelectorAll('.shealth-panel');
+    shTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        shTabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        shPanels.forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        var panel = document.getElementById('panel-' + tab.dataset.tab);
+        if (panel) { panel.classList.add('active'); panel.hidden = false; }
+      });
+    });
+
     try {
       const data = await loadData();
 
