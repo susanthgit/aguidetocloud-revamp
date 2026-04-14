@@ -23,8 +23,11 @@
 /* ── Tab Navigation ── */
 .roi-tabs {
   display: flex;
-  gap: 0.25rem;
-  border-bottom: 2px solid rgba(255,255,255,0.08);
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 2rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -34,28 +37,33 @@
 
 .roi-tab {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-muted);
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 0.75rem 1.25rem;
+  padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-  position: relative;
-  top: 2px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
 }
-.roi-tab:hover { color: var(--text-primary); }
+.roi-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
 .roi-tab-active {
-  color: var(--tool-accent-bright);
-  border-bottom-color: var(--tool-accent);
+  color: #000;
+  background: var(--tool-accent);
+  border-color: var(--tool-accent);
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
 }
 .roi-tab:focus-visible {
   outline: 2px solid var(--tool-accent);
   outline-offset: -2px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 /* ── Panels ── */
