@@ -161,7 +161,7 @@
     lastSample: -1,
     startTime: null,
     theme: 'modern',
-    sound: false,
+    sound: true,
     keyErrors: {},
     keyAttempts: {},
     confusionPairs: [],
@@ -171,7 +171,7 @@
     originalTitle: document.title
   };
   try { S.theme = localStorage.getItem('typist_theme') || 'modern'; } catch {}
-  try { S.sound = localStorage.getItem('typist_sound') === 'true'; } catch {}
+  try { var sv = localStorage.getItem('typist_sound'); if (sv !== null) S.sound = sv === 'true'; } catch {}
 
   let inputEl, textEl, textArea, focusHint, statsBar;
   let audioCtx = null;

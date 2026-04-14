@@ -50,6 +50,14 @@
 
 <div class="imgcomp-page">
 
+  {{/* ── Tabs ── */}}
+  <div class="imgcomp-tabs" role="tablist">
+    <button class="imgcomp-tab active" role="tab" aria-selected="true" data-tab="compress">🖼️ Compress Images</button>
+    <button class="imgcomp-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+  </div>
+
+  <div class="imgcomp-panel active" id="panel-compress" role="tabpanel">
+
   {{/* ── Privacy Badge ── */}}
   <div class="imgcomp-privacy-badge">
     <span class="imgcomp-privacy-icon">🔒</span>
@@ -196,7 +204,12 @@
   {{/* ══════════════ IMAGE LIST ══════════════ */}}
   <div class="imgcomp-list" id="imgcomp-list"></div>
 
-  {{/* ══════════════ FAQ SECTION ══════════════ */}}
+  {{/* ── Large file warning ── */}}
+  <div class="imgcomp-hint imgcomp-large-hint">💡 Very large files (>50 MB) may be slow to process in-browser. For best performance, keep individual images under 20 MB.</div>
+  </div>
+
+  {{/* ══════════════ FAQ TAB ══════════════ */}}
+  <div class="imgcomp-panel" id="panel-faq" role="tabpanel" hidden>
   {{ if .Params.faq }}
   <div class="imgcomp-faq" id="faq">
     <h2 class="imgcomp-faq-title">Frequently Asked Questions</h2>
@@ -208,9 +221,7 @@
     {{ end }}
   </div>
   {{ end }}
-
-  {{/* ── Large file warning ── */}}
-  <div class="imgcomp-hint imgcomp-large-hint">💡 Very large files (>50 MB) may be slow to process in-browser. For best performance, keep individual images under 20 MB.</div>
+  </div>
 
   {{/* ── Pagefind hidden block ── */}}
   <div data-pagefind-body style="display:none" aria-hidden="true">
@@ -236,4 +247,15 @@
 </div>
 
 <script src="/js/image-compressor.js?v={{ site.Params.cache_version }}"></script>
+<script>
+document.querySelectorAll('.imgcomp-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.imgcomp-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.imgcomp-panel').forEach(function(p) { p.classList.remove('active'); p.hidden = true; });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    var panel = document.getElementById('panel-' + tab.dataset.tab);
+    if (panel) { panel.classList.add('active'); panel.hidden = false; }
+  });
+});
+</script>
 {{ end }}

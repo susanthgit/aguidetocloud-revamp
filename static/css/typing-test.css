@@ -225,27 +225,36 @@
 /* ── Tabs ── */
 .typist-tabs {
   display: flex;
-  gap: 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.25rem;
 }
 .typist-tab {
   flex: 1;
-  padding: 0.65rem 1rem;
+  padding: 0.6rem 1rem;
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: rgba(255,255,255,0.4);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  text-align: center;
+  white-space: nowrap;
 }
 .typist-tab:hover {
   color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
 }
 .typist-tab.active {
-  color: #34D399;
-  border-bottom-color: #34D399;
+  color: #000;
+  background: #34D399;
+  border-color: #34D399;
+  box-shadow: 0 2px 8px rgba(52, 211, 153, 0.3);
 }
 .typist-panel {
   display: none;

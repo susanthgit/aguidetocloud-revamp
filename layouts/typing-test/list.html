@@ -153,6 +153,7 @@
     <button class="typist-tab active" role="tab" data-tab="quick" aria-selected="true">⚡ Quick Test</button>
     <button class="typist-tab" role="tab" data-tab="practice">📝 Practice</button>
     <button class="typist-tab" role="tab" data-tab="stats">📊 My Stats</button>
+    <button class="typist-tab" role="tab" data-tab="faq">❓ FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 1: QUICK TEST ══════════════ */}}
@@ -256,9 +257,10 @@
     <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
-  {{/* ── FAQ ── */}}
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="typist-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
-  <div class="typist-section" style="margin-top:2rem">
+  <div class="typist-section">
     <h2 class="typist-section-title">Frequently Asked Questions</h2>
     <div style="display:flex; flex-direction:column; gap:1rem">
       {{ range $i, $q := .Params.faq }}
@@ -270,6 +272,7 @@
     </div>
   </div>
   {{ end }}
+  </div>
 
   {{/* ── Back nav ── */}}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
