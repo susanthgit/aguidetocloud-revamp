@@ -75,7 +75,7 @@
           <h3>Congratulations! You've explored all 8 techniques!</h3>
           <p>You now understand the core prompt engineering skills. Generate your certificate:</p>
           <div class="pguide-cert-form">
-            <input type="text" id="pguide-cert-name" class="pguide-input" placeholder="Your name" maxlength="50">
+            <input type="text" id="pguide-cert-name" class="pguide-input" placeholder="Your name" maxlength="50" aria-label="Your name for certificate">
             <button class="pguide-btn pguide-btn-primary" id="pguide-cert-btn">🏆 Generate Certificate</button>
           </div>
           <div class="pguide-cert-card" id="pguide-cert-card" style="display:none">
@@ -161,7 +161,7 @@
           <p class="pguide-builder-intro">Fill in each section. Your prompt builds in real time. Skip optional steps.</p>
           <div class="pguide-builder-templates">
             <label>Start with a template:</label>
-            <select id="pguide-template-select">
+            <select id="pguide-template-select" aria-label="Prompt template">
               <option value="">— Choose a template —</option>
               <option value="email">📧 Professional Email</option>
               <option value="summary">📋 Meeting Summary</option>
@@ -236,7 +236,7 @@
               <a href="/prompt-guide/specify-audience-and-tone/" class="pguide-step-technique">🗣️ Learn this →</a>
             </div>
             <div class="pguide-tone-row">
-              <select id="pguide-audience">
+              <select id="pguide-audience" aria-label="Target audience">
                 <option value="">Audience...</option>
                 <option value="my manager">My manager</option>
                 <option value="executive leadership">Executives</option>
@@ -245,7 +245,7 @@
                 <option value="non-technical stakeholders">Non-technical</option>
                 <option value="developers">Developers</option>
               </select>
-              <select id="pguide-tone">
+              <select id="pguide-tone" aria-label="Writing tone">
                 <option value="">Tone...</option>
                 <option value="professional">Professional</option>
                 <option value="friendly">Friendly</option>

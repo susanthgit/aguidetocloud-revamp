@@ -11,7 +11,8 @@
     <p class="siteana-cs-subtitle">A fully transparent analytics dashboard — built for you, not advertisers.</p>
 
     <div class="siteana-cs-intro">
-      <p>We believe in radical transparency. While most websites keep their numbers locked behind closed doors, we're building something different — a <strong>public, real-time analytics dashboard</strong> that shows exactly how this site and its 18 free tools are being used.</p>
+      {{ $toolNav := (index hugo.Data "toolkit_nav").tools }}{{ $tc := sub (len $toolNav) 1 }}
+      <p>We believe in radical transparency. While most websites keep their numbers locked behind closed doors, we're building something different — a <strong>public, real-time analytics dashboard</strong> that shows exactly how this site and its {{ $tc }} free tools are being used.</p>
       <p>No vanity metrics. No inflated numbers. Just honest data — how many people visit, which tools they use most, what they search for, and where they come from. All collected <strong>without cookies or personal data</strong>.</p>
       <p>This dashboard will combine data from <strong>Google Analytics</strong> (traffic patterns), <strong>Google Search Console</strong> (how people find us), and our own <strong>anonymous event tracking</strong> (which tools get the most use) — all served through a public API at <code>/api/stats</code> that anyone can query.</p>
     </div>
@@ -23,7 +24,7 @@
       <div class="siteana-cs-feature">
         <span class="siteana-cs-emoji">🏆</span>
         <h3>Tool Popularity Leaderboard</h3>
-        <p>See which of our 18 free tools gets the most love — ranked by real usage data.</p>
+        <p>See which of our {{ $tc }} free tools gets the most love — ranked by real usage data.</p>
       </div>
       <div class="siteana-cs-feature">
         <span class="siteana-cs-emoji">📈</span>
@@ -51,8 +52,8 @@
     <div class="siteana-cs-notify">
       <p>🛠️ <strong>Building in progress</strong> — check back in a few weeks, or follow us for the launch announcement.</p>
       <div class="siteana-cs-links">
-        <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener">📺 YouTube</a>
-        <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+        <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
       </div>
     </div>
 
@@ -60,7 +61,7 @@
     <div class="siteana-cs-admin">
       <button id="sa-admin-toggle" class="siteana-cs-admin-btn">🔐 Admin Preview</button>
       <div id="sa-admin-form" class="siteana-cs-admin-form" style="display:none">
-        <input type="password" id="sa-admin-pass" placeholder="Enter password" autocomplete="off">
+        <input type="password" id="sa-admin-pass" placeholder="Enter password" autocomplete="off" aria-label="Admin password">
         <button id="sa-admin-submit">Unlock</button>
       </div>
     </div>
