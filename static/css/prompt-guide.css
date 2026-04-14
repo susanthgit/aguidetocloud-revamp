@@ -25,27 +25,36 @@
 /* ── Tabs ── */
 .pguide-tabs {
   display: flex;
-  gap: 0;
-  border-bottom: 2px solid var(--border-subtle);
+  gap: 0.5rem;
   margin-bottom: 2rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
 }
 .pguide-tab {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-secondary);
   font-family: var(--font-heading, 'Inter', sans-serif);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  transition: color 0.2s, border-color 0.2s;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
 }
-.pguide-tab:hover { color: var(--text-primary); }
+.pguide-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
 .pguide-tab.active {
-  color: var(--tool-accent-text);
-  border-bottom-color: var(--tool-accent);
+  color: #000;
+  background: var(--tool-accent);
+  border-color: var(--tool-accent);
+  box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
 }
 .pguide-panel { display: none; }
 .pguide-panel.active { display: block; }
@@ -742,8 +751,8 @@
 }
 @media (max-width: 480px) {
   .pguide-grid { grid-template-columns: 1fr; }
-  .pguide-tabs { gap: 0; }
-  .pguide-tab { font-size: 0.9rem; padding: 0.6rem 1rem; }
+  .pguide-tabs { gap: 0.3rem; flex-wrap: wrap; }
+  .pguide-tab { font-size: 0.8rem; padding: 0.5rem 0.6rem; flex: 0 1 auto; }
 }
 
 /* ── Accessibility ── */
@@ -1078,6 +1087,50 @@
   margin-bottom: 1.25rem;
 }
 .pguide-challenge-card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.pguide-challenge-hero-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: rgba(132, 204, 22, 0.08);
+  border: 1px solid rgba(132, 204, 22, 0.25);
+  border-radius: 12px;
+}
+.pguide-challenge-hero-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+.pguide-challenge-hero-callout strong {
+  color: #84CC16;
+  font-size: 0.95rem;
+}
+.pguide-challenge-hero-callout p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.pguide-challenge-input-wrap {
+  position: relative;
+}
+.pguide-challenge-live-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(132, 204, 22, 0.15);
+  color: #84CC16;
+  border: 1px solid rgba(132, 204, 22, 0.3);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
 .pguide-challenge-scenario {
   background: rgba(0,0,0,0.2);
   border-left: 3px solid var(--tool-accent);
@@ -1222,8 +1275,8 @@
   .pguide-tone-row { grid-template-columns: 1fr; }
   .pguide-intro-steps { grid-template-columns: 1fr; }
   .pguide-ba-arrow { transform: rotate(90deg); }
-  .pguide-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .pguide-tab { white-space: nowrap; font-size: 0.85rem; padding: 0.6rem 0.8rem; }
+  .pguide-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; }
+  .pguide-tab { white-space: nowrap; font-size: 0.82rem; padding: 0.5rem 0.8rem; flex: 0 0 auto; }
 }
 @media (max-width: 480px) {
   .pguide-grid { grid-template-columns: 1fr; }

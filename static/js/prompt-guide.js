@@ -31,7 +31,7 @@
 
     // Restore from URL
     const params = new URLSearchParams(location.search);
-    const activeTab = params.get('tab') || 'learn';
+    const activeTab = params.get('tab') || 'builder';
 
     function switchTab(name) {
       tabs.forEach(t => {
@@ -390,6 +390,29 @@
         });
       });
     }
+
+    // Polish It → send prompt to Prompt Polisher
+    const polishBtn = $('#pguide-polish-btn');
+    if (polishBtn) {
+      polishBtn.addEventListener('click', () => {
+        const text = preview.textContent;
+        if (!text || text.includes('Start filling')) {
+          window.location.href = '/prompt-polisher/';
+          return;
+        }
+        window.location.href = '/prompt-polisher/?text=' + encodeURIComponent(text);
+      });
+    }
+
+    // Find Similar → search Prompt Library by keywords
+    const similarBtn = $('#pguide-similar-btn');
+    if (similarBtn) {
+      similarBtn.addEventListener('click', () => {
+        const goal = (fields.goal && fields.goal.value || '').trim();
+        const keywords = goal.split(/\s+/).filter(w => w.length > 3).slice(0, 4).join(' ');
+        window.location.href = '/prompts/' + (keywords ? '?q=' + encodeURIComponent(keywords) : '');
+      });
+    }
   }
 
   /* ════════════════════════════════════════
@@ -673,7 +696,10 @@
           <span class="pguide-challenge-diff">Uses ${c.techniques.length} techniques</span>
         </div>
         <div class="pguide-challenge-scenario">${c.scenario}</div>
-        <textarea class="pguide-sandbox-textarea pguide-challenge-input" data-ci="${i}" rows="4" placeholder="Write your prompt here..."></textarea>
+        <div class="pguide-challenge-input-wrap">
+          <span class="pguide-challenge-live-badge">⚡ Live scoring — start typing</span>
+          <textarea class="pguide-sandbox-textarea pguide-challenge-input" data-ci="${i}" rows="5" placeholder="Start typing your prompt here — we detect techniques in real time as you write..."></textarea>
+        </div>
         <div class="pguide-challenge-score" data-ci="${i}">
           ${c.techniques.map(t => `<span class="pguide-challenge-tag" data-tech="${t}">${TECH_PATTERNS[t].label}</span>`).join('')}
         </div>

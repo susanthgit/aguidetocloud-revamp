@@ -20,47 +20,20 @@
 
 <div class="pguide-page">
 
-  <div class="pguide-hero-steps">
-    <span class="pguide-hero-step"><b>1.</b> Learn</span>
-    <span class="pguide-hero-sep">→</span>
-    <span class="pguide-hero-step"><b>2.</b> Practice</span>
-    <span class="pguide-hero-sep">→</span>
-    <span class="pguide-hero-step"><b>3.</b> Build</span>
-  </div>
-  <p class="pguide-hero-meta">⏱️ ~30 min · 100% private · no sign-up</p>
-
   <div class="pguide-container">
 
-    {{/* ── Tab Navigation FIRST (fix I — above quick-win) ── */}}
+    {{/* ── Tab Navigation ── */}}
     <div class="pguide-tabs" role="tablist">
-      <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="builder" id="tab-builder" aria-controls="panel-builder">🔧 Builder</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="quiz" id="tab-quiz" aria-controls="panel-quiz">🧭 Which Technique?</button>
+      <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="builder" id="tab-builder" aria-controls="panel-builder">🔧 Builder</button>
       <button class="pguide-tab" role="tab" aria-selected="false" data-tab="challenges" id="tab-challenges" aria-controls="panel-challenges">🏆 Challenges</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="quiz" id="tab-quiz" aria-controls="panel-quiz">🧭 Which Technique?</button>
     </div>
 
     {{/* ══════════════════════════════════════════
          TAB 1: LEARN TECHNIQUES
          ══════════════════════════════════════════ */}}
-    <div class="pguide-panel active" id="panel-learn" role="tabpanel" aria-labelledby="tab-learn">
-
-      {{/* ══ Quick Win Demo (inside Learn tab) ══ */}}
-      <div class="pguide-quickwin">
-        <h2>⚡ See the Difference One Technique Makes</h2>
-        <div class="pguide-ba-cards">
-          <div class="pguide-ba-card pguide-ba-before">
-            <span class="pguide-ba-label">❌ Before</span>
-            <p>Help me with my presentation</p>
-          </div>
-          <div class="pguide-ba-arrow">→</div>
-          <div class="pguide-ba-card pguide-ba-after">
-            <span class="pguide-ba-label">✅ After (using 3 techniques)</span>
-            <p>You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides.</p>
-            <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">📋</button>
-          </div>
-        </div>
-        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>🎯 Instructions</strong> + <strong>🚧 Constraints</strong>. Learn all 8 below 👇</p>
-      </div>
+    <div class="pguide-panel" id="panel-learn" role="tabpanel" aria-labelledby="tab-learn">
 
       {{/* Progress + Certificate trigger */}}
       <div class="pguide-progress-wrap">
@@ -154,7 +127,26 @@
     {{/* ══════════════════════════════════════════
          TAB 2: PROMPT BUILDER (fix #7: linked labels)
          ══════════════════════════════════════════ */}}
-    <div class="pguide-panel" id="panel-builder" role="tabpanel" aria-labelledby="tab-builder">
+    <div class="pguide-panel active" id="panel-builder" role="tabpanel" aria-labelledby="tab-builder">
+
+      {{/* ══ Quick Win Demo (shows value immediately) ══ */}}
+      <div class="pguide-quickwin">
+        <h2>⚡ See the Difference One Technique Makes</h2>
+        <div class="pguide-ba-cards">
+          <div class="pguide-ba-card pguide-ba-before">
+            <span class="pguide-ba-label">❌ Before</span>
+            <p>Help me with my presentation</p>
+          </div>
+          <div class="pguide-ba-arrow">→</div>
+          <div class="pguide-ba-card pguide-ba-after">
+            <span class="pguide-ba-label">✅ After (using 3 techniques)</span>
+            <p>You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides.</p>
+            <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">📋</button>
+          </div>
+        </div>
+        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>🎯 Instructions</strong> + <strong>🚧 Constraints</strong>. Try building your own below 👇</p>
+      </div>
+
       <div class="pguide-builder-layout">
         <div class="pguide-builder-steps">
           <h2>Build Your Prompt Step by Step</h2>
@@ -179,7 +171,7 @@
               <label for="pguide-goal">What's your goal?</label>
               <a href="/prompt-guide/give-clear-instructions/" class="pguide-step-technique">🎯 Learn this →</a>
             </div>
-            <textarea id="pguide-goal" class="pguide-input" rows="2" placeholder="e.g. Draft a follow-up email to a client who hasn't responded to our proposal in 2 weeks"></textarea>
+            <textarea id="pguide-goal" class="pguide-input" rows="4" placeholder="e.g. Draft a follow-up email to a client who hasn't responded to our proposal in 2 weeks"></textarea>
           </div>
           {{/* Step 2 */}}
           <div class="pguide-step">
@@ -188,7 +180,7 @@
               <label for="pguide-role">Set a role <span class="pguide-optional">(optional)</span></label>
               <a href="/prompt-guide/set-a-role/" class="pguide-step-technique">🎭 Learn this →</a>
             </div>
-            <textarea id="pguide-role" class="pguide-input" rows="1" placeholder="e.g. You are a senior account manager with 10 years of client relations experience"></textarea>
+            <textarea id="pguide-role" class="pguide-input" rows="3" placeholder="e.g. You are a senior account manager with 10 years of client relations experience"></textarea>
           </div>
           {{/* Step 3 */}}
           <div class="pguide-step">
@@ -197,7 +189,7 @@
               <label for="pguide-context">Add context <span class="pguide-optional">(optional)</span></label>
               <a href="/prompt-guide/add-context/" class="pguide-step-technique">📋 Learn this →</a>
             </div>
-            <textarea id="pguide-context" class="pguide-input" rows="2" placeholder="e.g. The client is a mid-sized logistics company. We proposed a $45K cloud migration project."></textarea>
+            <textarea id="pguide-context" class="pguide-input" rows="4" placeholder="e.g. The client is a mid-sized logistics company. We proposed a $45K cloud migration project."></textarea>
           </div>
           {{/* Step 4 */}}
           <div class="pguide-step">
@@ -268,8 +260,8 @@
             </div>
             <div class="pguide-preview-actions">
               <button class="pguide-btn pguide-btn-primary" id="pguide-copy-btn">📋 Copy Prompt</button>
-              <a href="/prompt-polisher/" class="pguide-btn pguide-btn-secondary">✨ Polish It →</a>
-              <a href="/prompts/" class="pguide-btn pguide-btn-secondary">💡 Find Similar →</a>
+              <button class="pguide-btn pguide-btn-secondary" id="pguide-polish-btn">✨ Polish It →</button>
+              <button class="pguide-btn pguide-btn-secondary" id="pguide-similar-btn">💡 Find Similar →</button>
             </div>
             <div class="pguide-preview-stats">
               <span>Techniques used: <strong id="pguide-tech-count">0</strong>/6</span>
@@ -302,7 +294,13 @@
     <div class="pguide-panel" id="panel-challenges" role="tabpanel" aria-labelledby="tab-challenges">
       <div class="pguide-challenge-container">
         <h2>🏆 Prompt Challenges</h2>
-        <p>Real workplace scenarios — write the best prompt you can. We'll score which techniques you used.</p>
+        <div class="pguide-challenge-hero-callout">
+          <span class="pguide-challenge-hero-icon">⚡</span>
+          <div>
+            <strong>Real-time AI technique detection</strong>
+            <p>Type your prompt and watch us detect which techniques you're using — scored live as you type. No button to press, no waiting.</p>
+          </div>
+        </div>
         <div class="pguide-challenge-list" id="pguide-challenge-list">
           {{/* Challenges injected by JS */}}
         </div>

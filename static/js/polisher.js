@@ -925,9 +925,18 @@
     // Load history on init
     renderHistory();
 
-    // Auto-demo: show the email example polished on first visit
-    if (!$input.value.trim()) {
-      $input.value = EXAMPLES[3].text; // "write an email to my boss about the project delay"
+    // Check for ?text= param (from Prompt Guide Builder)
+    var urlText = new URLSearchParams(location.search).get('text');
+    if (urlText && urlText.trim()) {
+      $input.value = urlText.trim();
+      $charCount.textContent = $input.value.length + ' characters';
+      $btn.disabled = false;
+      polish();
+      // Clean URL
+      history.replaceState(null, '', location.pathname);
+    } else if (!$input.value.trim()) {
+      // Auto-demo: show the email example polished on first visit
+      $input.value = EXAMPLES[3].text;
       $charCount.textContent = $input.value.length + ' characters';
       $btn.disabled = false;
       polish();
