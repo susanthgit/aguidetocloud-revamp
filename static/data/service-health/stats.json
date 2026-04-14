@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T09:47:35.782808+00:00",
+  "generated_at": "2026-04-14T21:06:10.137856+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -7,12 +7,25 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 22,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5586,
+      "active_incidents": 1,
+      "avg_duration_minutes": 4799,
       "last_incident": "2026-04-08T14:38:00+00:00",
       "classifications": {
-        "incident": 13,
-        "advisory": 9
+        "advisory": 9,
+        "incident": 13
+      }
+    },
+    {
+      "service": "Exchange Online",
+      "short_name": "Exchange",
+      "icon": "📧",
+      "total_incidents": 18,
+      "active_incidents": 3,
+      "avg_duration_minutes": 18283,
+      "last_incident": "2026-04-10T17:30:00+00:00",
+      "classifications": {
+        "advisory": 13,
+        "incident": 5
       }
     },
     {
@@ -20,25 +33,12 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 18,
-      "active_incidents": 2,
-      "avg_duration_minutes": 6951,
+      "active_incidents": 1,
+      "avg_duration_minutes": 6857,
       "last_incident": "2026-04-10T13:00:00+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 11
-      }
-    },
-    {
-      "service": "Exchange Online",
-      "short_name": "Exchange",
-      "icon": "📧",
-      "total_incidents": 17,
-      "active_incidents": 3,
-      "avg_duration_minutes": 17394,
-      "last_incident": "2026-04-10T17:30:00+00:00",
-      "classifications": {
-        "advisory": 12,
-        "incident": 5
+        "advisory": 11,
+        "incident": 7
       }
     },
     {
@@ -110,8 +110,8 @@
       "short_name": "Intune",
       "icon": "📱",
       "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 8978,
+      "active_incidents": 0,
+      "avg_duration_minutes": 9508,
       "last_incident": "2026-04-13T19:42:25+00:00",
       "classifications": {
         "advisory": 4
@@ -121,12 +121,12 @@
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
-      "total_incidents": 4,
-      "active_incidents": 1,
+      "total_incidents": 3,
+      "active_incidents": 0,
       "avg_duration_minutes": 28763,
       "last_incident": "2026-03-19T13:30:00+00:00",
       "classifications": {
-        "advisory": 4
+        "advisory": 3
       }
     },
     {
@@ -206,7 +206,7 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 19,
+      "incident_count": 21,
       "services_affected": 7
     },
     {
@@ -218,11 +218,6 @@
       "month": "2026-02",
       "incident_count": 42,
       "services_affected": 16
-    },
-    {
-      "month": "2026-01",
-      "incident_count": 2,
-      "services_affected": 2
     }
   ]
 }

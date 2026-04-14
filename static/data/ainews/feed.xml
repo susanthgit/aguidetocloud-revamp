@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 06:25:34 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 18:04:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>ADK Go 1.0 Arrives!</title>
-      <link>https://developers.googleblog.com/adk-go-10-arrives/</link>
-      <description>The launch of ADK Go 1.0 introduces production-ready AI services with features like OpenTelemetry integration and a new plugin system for enhanced safety and performance. This shift allows developers to create more reliable and extensible AI applications.</description>
+      <title>Build Better AI Agents: 5 Developer Tips from the Agent Bake-Off</title>
+      <link>https://developers.googleblog.com/build-better-ai-agents-5-developer-tips-from-the-agent-bake-off/</link>
+      <description>The Google Cloud AI Agent Bake-Off emphasizes the need for a modular, multi-agent architecture in AI development. It provides five tips for developers to enhance AI agents, focusing on specialized sub-agents and deterministic code to improve reliability.</description>
       <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/adk-go-10-arrives/</guid>
+      <pubDate>Tue, 14 Apr 2026 18:02:30 +0000</pubDate>
+      <guid>https://developers.googleblog.com/build-better-ai-agents-5-developer-tips-from-the-agent-bake-off/</guid>
     </item>
     <item>
-      <title>Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText</title>
-      <link>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</link>
-      <description>Continuous checkpointing in Orbax and MaxText optimizes model training by improving reliability and performance, addressing limitations of traditional fixed-frequency methods. This innovation allows for better I/O bandwidth and reduced failure risks during training.</description>
+      <title>Get ready for Google I/O: Livestream schedule revealed</title>
+      <link>https://developers.googleblog.com/get-ready-for-google-io-livestream-schedule-revealed/</link>
+      <description>Google I/O is set for May 19-20, featuring major updates in AI and other technologies. The event will include a keynote on the 'agentic era' and showcase new tools for automating workflows.</description>
       <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</guid>
+      <pubDate>Tue, 14 Apr 2026 18:02:30 +0000</pubDate>
+      <guid>https://developers.googleblog.com/get-ready-for-google-io-livestream-schedule-revealed/</guid>
     </item>
     <item>
-      <title>Developer’s Guide to Building ADK Agents with Skills</title>
-      <link>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</link>
-      <description>The ADK SkillToolset introduces a modular architecture for AI agents, allowing them to load expertise dynamically and reduce token usage significantly. This approach enhances the efficiency and flexibility of AI applications.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</guid>
-    </item>
-    <item>
-      <title>Supporting Google Account username change in your app</title>
-      <link>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</link>
-      <description>Google now allows U.S. users to change their @gmail.com usernames while retaining their account data, impacting app developers who rely on email for user identification. Developers are advised to transition to using 'subject ID' for better account management.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</guid>
-    </item>
-    <item>
-      <title>Bring state-of-the-art agentic skills to the edge with Gemma 4</title>
-      <link>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</link>
-      <description>Google DeepMind's Gemma 4 introduces advanced models for on-device multi-step planning and autonomous workflows, along with a new AI Edge Gallery for experimentation. This release supports over 140 languages and various hardware, enhancing accessibility for developers.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</guid>
-    </item>
-    <item>
-      <title>TorchTPU: Running PyTorch Natively on TPUs at Google Scale</title>
-      <link>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</link>
-      <description>TorchTPU offers a native high-performance environment for running PyTorch on Google’s TPU infrastructure, aiming to simplify code changes and optimize distributed training. Future plans include reducing compilation overhead and enhancing scalability.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 06:24:05 +0000</pubDate>
-      <guid>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</guid>
-    </item>
-    <item>
-      <title>Japanese rocket part came unglued, leading to mission failure</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/jaxa_rocket_failure_faulty_adhesive/</link>
-      <description>A manufacturing flaw involving adhesive quality led to the failure of Japan's H3 rocket launch, highlighting the importance of material considerations in aerospace engineering. This incident emphasizes the need for rigorous testing and quality control.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 14 Apr 2026 03:07:54 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/jaxa_rocket_failure_faulty_adhesive/</guid>
-    </item>
-    <item>
-      <title>I carried this Bluetooth tracker card in my backpack for a week - and it withstood my clumsiness</title>
-      <link>https://www.zdnet.com/article/uag-metropolis-wallet-tracker-ios-android-review/</link>
-      <description>The UAG Metropolis tracker card proved durable during a week of testing, showcasing its functionality as a reliable alternative to AirTags. Its resilience against everyday wear and tear makes it a practical choice for users.</description>
+      <title>I tested every 'allergy-friendly' smart home gadget - these 6 actually keep the pollen out</title>
+      <link>https://www.zdnet.com/article/smart-home-tips-devices-for-spring-allergies/</link>
+      <description>A review of allergy-friendly smart home gadgets reveals six effective devices that help combat pollen during spring. The author shares personal experiences of how these gadgets improved their home environment.</description>
       <category>Industry</category>
-      <pubDate>Tue, 14 Apr 2026 02:00:53 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/uag-metropolis-wallet-tracker-ios-android-review/</guid>
+      <pubDate>Tue, 14 Apr 2026 18:00:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/smart-home-tips-devices-for-spring-allergies/</guid>
     </item>
     <item>
-      <title>I tested ChatGPT Plus vs. Gemini Pro to see which is better - and if it's worth switching</title>
-      <link>https://www.zdnet.com/article/chatgpt-plus-vs-gemini-pro/</link>
-      <description>A comparison between ChatGPT Plus and Gemini Pro reveals performance differences across ten tasks, helping users decide if switching is worthwhile. The results provide insights into the strengths of each AI tool.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 02:00:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/chatgpt-plus-vs-gemini-pro/</guid>
-    </item>
-    <item>
-      <title>I followed the 'Plus 5' rule for wireless charging, and it fixed my iPhone's charge speeds</title>
-      <link>https://www.zdnet.com/article/plus-five-wireless-charging-rule-iphone-android-faster-speeds/</link>
-      <description>Implementing the 'Plus 5' rule for wireless charging improved an iPhone's charging speeds, offering practical tips for users to maximize their device's performance. This advice can help enhance user experience with wireless technology.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 14 Apr 2026 01:00:41 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/plus-five-wireless-charging-rule-iphone-android-faster-speeds/</guid>
-    </item>
-    <item>
-      <title>OpenAI has bought AI personal finance startup Hiro</title>
-      <link>https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/</link>
-      <description>OpenAI has acquired Hiro, an AI personal finance startup, enhancing ChatGPT's capabilities in financial planning. This move signifies OpenAI's expansion into practical financial applications.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 00:23:33 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/</guid>
-    </item>
-    <item>
-      <title>The votes are in: AI will hurt elections and relationships</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/ai_report_2026_stanford_hai/</link>
-      <description>A Stanford report reveals that AI's rapid adoption has led to increased anxiety and unsafe practices, particularly affecting elections and personal relationships. The findings highlight the urgent need for responsible AI usage.</description>
+      <title>Oracle taps Bloom for 2.8 GW of fuel cells to keep datacenter binge going</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/oracle_bloom_fuel_cells/</link>
+      <description>Oracle has expanded its partnership with Bloom Energy to provide up to 2.8 GW of fuel cell systems for its datacenter expansion. This move addresses energy needs amid slow grid connections and limited turbine availability.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 14 Apr 2026 00:05:13 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/ai_report_2026_stanford_hai/</guid>
+      <pubDate>Tue, 14 Apr 2026 17:57:12 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/oracle_bloom_fuel_cells/</guid>
     </item>
     <item>
-      <title>You Can Soon Buy a $4,370 Humanoid Robot on AliExpress</title>
-      <link>https://www.wired.com/story/unitree-r1-humanoid-robot-for-sale-on-aliexpress/</link>
-      <description>Unitree is set to sell its R1 humanoid robot on AliExpress for $4,370, featuring aerobatic capabilities. However, its practical applications remain uncertain.</description>
+      <title>California ghost-gun bill wants 3D printers to play cop, EFF says</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/eff_california_3dprinted_firearms/</link>
+      <description>A proposed California bill aims to hold 3D printer manufacturers accountable for preventing the production of ghost guns, raising concerns among digital rights activists about potential restrictions on open-source tools.</description>
       <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 23:37:38 +0000</pubDate>
-      <guid>https://www.wired.com/story/unitree-r1-humanoid-robot-for-sale-on-aliexpress/</guid>
+      <pubDate>Tue, 14 Apr 2026 17:25:36 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/eff_california_3dprinted_firearms/</guid>
     </item>
     <item>
-      <title>Daniel Moreno-Gama is facing federal charges for attacking Sam Altman&amp;#8217;s home and OpenAI’s HQ</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/911423/openai-sam-altman-attack</link>
-      <description>Daniel Moreno-Gama faces federal charges for an attack on OpenAI CEO Sam Altman, including throwing a Molotov cocktail at his home and attempting to break into the company's headquarters.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 13 Apr 2026 20:02:38 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/911423/openai-sam-altman-attack</guid>
-    </item>
-    <item>
-      <title>The Internet's Most Powerful Archiving Tool Is in Peril</title>
-      <link>https://www.wired.com/story/the-internets-most-powerful-archiving-tool-is-in-mortal-peril/</link>
-      <description>The Internet Archive's Wayback Machine faces challenges as major news outlets restrict access, prompting a rally from journalists and advocacy groups to protect its resources.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/the-internets-most-powerful-archiving-tool-is-in-mortal-peril/</guid>
-    </item>
-    <item>
-      <title>Rockstar Games gets a taste of grand theft data</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/13/shinyhunters_rockstar_breach/</link>
-      <description>ShinyHunters claims to have accessed Rockstar Games' data through a third-party tool, raising concerns about data security and vulnerabilities in the gaming industry.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 10:41:08 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/13/shinyhunters_rockstar_breach/</guid>
-    </item>
-    <item>
-      <title>Digital sovereignty isn't just a buzzword – it's the future</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/13/digital_sovereignty/</link>
-      <description>The Linux Foundation Europe's leader predicts a shift towards digital sovereignty in the EU, distancing from US tech dominance as European entities seek greater control over their digital futures.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 10:00:07 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/13/digital_sovereignty/</guid>
-    </item>
-    <item>
-      <title>AI Agents Are Coming for Your Dating Life</title>
-      <link>https://www.wired.com/story/ai-agents-are-coming-for-your-dating-life-next/</link>
-      <description>Developers of Pixel Societies are creating AI agents to enhance social interactions, aiming to improve the process of forming relationships and connections in various contexts.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/ai-agents-are-coming-for-your-dating-life-next/</guid>
-    </item>
-    <item>
-      <title>Job titles of the future: Wildlife first responder</title>
-      <link>https://www.technologyreview.com/2026/04/13/1135156/job-titles-wildlife-first-responder-wesley-sarmento/</link>
-      <description>Montana has introduced a new job title, wildlife first responder, due to the increasing grizzly bear population, highlighting the intersection of wildlife management and human expansion.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/13/1135156/job-titles-wildlife-first-responder-wesley-sarmento/</guid>
-    </item>
-    <item>
-      <title>You have no choice in reading this article—maybe</title>
-      <link>https://www.technologyreview.com/2026/04/13/1135162/uri-maoz-does-free-will-exist/</link>
-      <description>Uri Maoz reflects on his research in computational neuroscience, exploring how the brain controls movement, and the unexpected challenges of teaching undergraduates.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/13/1135162/uri-maoz-does-free-will-exist/</guid>
-    </item>
-    <item>
-      <title>Mark Zuckerberg is reportedly building an AI clone to replace him in meetings</title>
-      <link>https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone</link>
-      <description>Meta CEO Mark Zuckerberg is reportedly developing an AI clone of himself to interact with employees, trained on his voice and mannerisms. This innovation could transform internal communications at Meta.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 13 Apr 2026 09:40:03 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone</guid>
-    </item>
-    <item>
-      <title>pip-boy added to PyPI</title>
-      <link>https://pypi.org/project/pip-boy/</link>
-      <description>A new personal assistant agent named pip-boy has been added to PyPI, featuring persistent memory and a configurable persona. This tool aims to enhance user interaction and personalization.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 13 Apr 2026 06:23:29 +0000</pubDate>
-      <guid>https://pypi.org/project/pip-boy/</guid>
-    </item>
-    <item>
-      <title>orbigpu 0.0.1</title>
-      <link>https://pypi.org/project/orbigpu/0.0.1/</link>
-      <description>OrbiGPU, a unified API gateway compatible with OpenAI for over 100 LLM models, has been released. An official SDK is expected in version 0.1.0.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:21:45 +0000</pubDate>
-      <guid>https://pypi.org/project/orbigpu/0.0.1/</guid>
-    </item>
-    <item>
-      <title>orbigpu added to PyPI</title>
-      <link>https://pypi.org/project/orbigpu/</link>
-      <description>The OrbiGPU has been added to PyPI, providing a unified API gateway for 100+ LLM models. This release aims to streamline AI model integration.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:21:45 +0000</pubDate>
-      <guid>https://pypi.org/project/orbigpu/</guid>
-    </item>
-    <item>
-      <title>geny-executor 0.5.0</title>
-      <link>https://pypi.org/project/geny-executor/0.5.0/</link>
-      <description>The geny-executor 0.5.0 has been released, featuring a dual-abstraction architecture for agent pipelines built on the Anthropic API. This update enhances the capabilities of AI agents.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 13 Apr 2026 06:20:50 +0000</pubDate>
-      <guid>https://pypi.org/project/geny-executor/0.5.0/</guid>
-    </item>
-    <item>
-      <title>Zoonova AI Launches Alpha AI, Bringing Quant-Driven Analytics to Everyday Investors</title>
-      <link>https://www.globenewswire.com/news-release/2026/04/13/3272208/0/en/Zoonova-AI-Launches-Alpha-AI-Bringing-Quant-Driven-Analytics-to-Everyday-Investors.html</link>
-      <description>Zoonova AI has launched Alpha AI, a new investment platform that uses AI to provide market intelligence in a user-friendly format. This aims to democratize access to advanced analytics for everyday investors.</description>
-      <category>Google</category>
-      <pubDate>Mon, 13 Apr 2026 06:19:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/04/13/3272208/0/en/Zoonova-AI-Launches-Alpha-AI-Bringing-Quant-Driven-Analytics-to-Everyday-Investors.html</guid>
-    </item>
-    <item>
-      <title>sagan-xai added to PyPI</title>
-      <link>https://pypi.org/project/sagan-xai/</link>
-      <description>Sagan-xai has been added to PyPI, offering an explainable probabilistic ensemble for mean-reversion trading. This tool combines various AI techniques for enhanced trading strategies.</description>
-      <category>xAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:15:59 +0000</pubDate>
-      <guid>https://pypi.org/project/sagan-xai/</guid>
-    </item>
-    <item>
-      <title>sagan-xai 0.1.1</title>
-      <link>https://pypi.org/project/sagan-xai/0.1.1/</link>
-      <description>The sagan-xai 0.1.1 has been released, providing an explainable probabilistic ensemble for trading using advanced AI methods. This version aims to improve trading performance and transparency.</description>
-      <category>xAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:15:59 +0000</pubDate>
-      <guid>https://pypi.org/project/sagan-xai/0.1.1/</guid>
-    </item>
-    <item>
-      <title>mind-mem 2.0.0a2</title>
-      <link>https://pypi.org/project/mind-mem/2.0.0a2/</link>
-      <description>Mind-mem 2.0.0a2 has been released, offering a drop-in memory solution for various AI agents. This tool enhances memory capabilities for compatible systems.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 13 Apr 2026 06:15:37 +0000</pubDate>
-      <guid>https://pypi.org/project/mind-mem/2.0.0a2/</guid>
-    </item>
-    <item>
-      <title>Go West! US datacentres head for available and cheap energy</title>
-      <link>https://www.computerweekly.com/news/366641660/Go-West-US-datacentres-head-for-available-and-cheap-energy</link>
-      <description>US datacentres are shifting towards regions with cheaper energy, with Texas emerging as a key location. This trend could reshape the datacentre landscape in the US.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:15:00 +0000</pubDate>
-      <guid>https://www.computerweekly.com/news/366641660/Go-West-US-datacentres-head-for-available-and-cheap-energy</guid>
-    </item>
-    <item>
-      <title>AvenuesAI plans entry into Turnkey AI Solutions market, bets big on PrivateGPT- an on-Premise SLM platform for corporates and organisations</title>
-      <link>https://www.aninews.in/news/business/avenuesai-plans-entry-into-turnkey-ai-solutions-market-bets-big-on-privategpt-an-on-premise-slm-platform-for-corporates-and-organisations20260413114019</link>
-      <description>AvenuesAI is entering the Turnkey AI Solutions market with PrivateGPT, an on-premise AI platform designed for corporate data sovereignty. This move addresses growing concerns about data security and geopolitical risks in AI deployment.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 13 Apr 2026 06:14:30 +0000</pubDate>
-      <guid>https://www.aninews.in/news/business/avenuesai-plans-entry-into-turnkey-ai-solutions-market-bets-big-on-privategpt-an-on-premise-slm-platform-for-corporates-and-organisations20260413114019</guid>
-    </item>
-    <item>
-      <title>akritrim-colab 0.1.17</title>
-      <link>https://pypi.org/project/akritrim-colab/0.1.17/</link>
-      <description>The akritrim-colab 0.1.17 update introduces a three-party collaboration involving TUI, Codex, and Claude, enhancing AI capabilities. This collaboration aims to streamline AI interactions and improve user experience.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 13 Apr 2026 06:12:15 +0000</pubDate>
-      <guid>https://pypi.org/project/akritrim-colab/0.1.17/</guid>
-    </item>
-    <item>
-      <title>opentelemetry-instrumentation-mistralai 0.59.0</title>
-      <link>https://pypi.org/project/opentelemetry-instrumentation-mistralai/0.59.0/</link>
-      <description>The OpenTelemetry Mistral AI instrumentation version 0.59.0 has been released, providing tools for better monitoring and observability of Mistral AI applications. This update is significant for developers seeking to enhance performance tracking.</description>
-      <category>Mistral</category>
-      <pubDate>Mon, 13 Apr 2026 05:58:13 +0000</pubDate>
-      <guid>https://pypi.org/project/opentelemetry-instrumentation-mistralai/0.59.0/</guid>
-    </item>
-    <item>
-      <title>opentelemetry-instrumentation-anthropic 0.59.0</title>
-      <link>https://pypi.org/project/opentelemetry-instrumentation-anthropic/0.59.0/</link>
-      <description>OpenTelemetry has also released version 0.59.0 for Anthropic instrumentation, enhancing the ability to monitor AI systems built on Anthropic's models. This is crucial for developers focusing on performance and reliability.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 13 Apr 2026 05:57:54 +0000</pubDate>
-      <guid>https://pypi.org/project/opentelemetry-instrumentation-anthropic/0.59.0/</guid>
-    </item>
-    <item>
-      <title>Cotypist – AI Autocomplete for Mac | Type Faster, Write Better</title>
-      <link>https://cotypist.app/</link>
-      <description>Cotypist is an AI autocomplete tool for Mac that aims to improve typing speed and reduce errors across applications. This tool is designed to enhance productivity for users who rely on fast and accurate typing.</description>
+      <title>Secret scanning pattern updates and product improvements</title>
+      <link>https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</link>
+      <description>GitHub announced updates to its secret scanning features, enhancing detection coverage and developer experience. These improvements aim to strengthen security measures for developers.</description>
       <category>GitHub Copilot</category>
-      <pubDate>Mon, 13 Apr 2026 05:47:01 +0000</pubDate>
-      <guid>https://cotypist.app/</guid>
+      <pubDate>Tue, 14 Apr 2026 17:17:45 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</guid>
     </item>
     <item>
-      <title>YouTube’s AI avatar tool for Shorts raises questions around India’s deepfake rules, personality rights</title>
-      <link>https://www.medianama.com/2026/04/223-youtube-ai-avatar-tool-shorts-concerns-deepfake-rules-personality-rights/</link>
-      <description>YouTube's new AI avatar tool for Shorts raises significant questions about deepfake regulations and personality rights in India. This development could impact how creators use AI and the legal frameworks surrounding it.</description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 13 Apr 2026 05:41:35 +0000</pubDate>
-      <guid>https://www.medianama.com/2026/04/223-youtube-ai-avatar-tool-shorts-concerns-deepfake-rules-personality-rights/</guid>
+      <title>Max Hodak’s Science Corp. is preparing to place its first sensor in a human brain</title>
+      <link>https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/</link>
+      <description>Max Hodak’s Science Corp. is preparing to implant its first sensor in a human brain, potentially aiding in the treatment of neurological conditions through electrical stimulation.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 17:13:03 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/</guid>
     </item>
     <item>
-      <title>Apple reportedly testing out four different styles for its smart glasses that will rival Meta Ray-Bans - Engadget</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181666104</link>
-      <description>Apple is reportedly testing four styles of smart glasses to compete with Meta's Ray-Bans, indicating a significant push into augmented reality. This could reshape the competitive landscape in wearable technology.</description>
-      <category>Apple</category>
-      <pubDate>Mon, 13 Apr 2026 05:32:20 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181666104</guid>
+      <title>GitHub invokes spirit of Phabricator with preview of Stacked PRs</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/github_stacked_prs/</link>
+      <description>GitHub has introduced Stacked PRs, a feature that allows developers to break large code changes into smaller, manageable pull requests, improving the review process.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 17:03:19 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/github_stacked_prs/</guid>
     </item>
     <item>
-      <title>An ElevenLabs exec says he's planning to double his team size — and he warns candidates about the 'huge amount of hours'</title>
-      <link>https://www.businessinsider.com/elevenlabs-sales-executive-warns-candidates-about-long-hours-high-expectations-2026-4</link>
-      <description>An executive at ElevenLabs plans to double the team size, emphasizing the need for high commitment and long hours from potential hires. This reflects the demanding nature of the AI startup environment.</description>
+      <title>Chrome's new 'Skills' update lets you save AI prompts now - for one-click reuse</title>
+      <link>https://www.zdnet.com/article/google-chrome-save-reuse-ai-prompts-skills/</link>
+      <description>Google's new 'Skills' update for Chrome allows users to save and reuse AI prompts for common tasks, streamlining user interactions across websites.</description>
       <category>Industry</category>
-      <pubDate>Mon, 13 Apr 2026 05:25:16 +0000</pubDate>
-      <guid>https://www.businessinsider.com/elevenlabs-sales-executive-warns-candidates-about-long-hours-high-expectations-2026-4</guid>
+      <pubDate>Tue, 14 Apr 2026 17:00:03 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-chrome-save-reuse-ai-prompts-skills/</guid>
     </item>
     <item>
-      <title>Running Local AI with LlamaSharp in .NET: A Developer's Guide</title>
-      <link>https://www.c-sharpcorner.com/article/running-local-ai-with-llamasharp-in-net-a-developers-guide/</link>
-      <description>The guide on running local AI with LlamaSharp in .NET provides developers with insights on setup, model selection, and GPU acceleration, facilitating local AI deployment. This resource is valuable for those looking to leverage AI in .NET applications.</description>
+      <title>Google adds AI Skills to Chrome to help you save favorite workflows</title>
+      <link>https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/</link>
+      <description>The 'Skills' feature in Chrome enables users to save their favorite AI prompts for easy reuse, building on the browser's integration with Gemini.</description>
+      <category>Google</category>
+      <pubDate>Tue, 14 Apr 2026 17:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/</guid>
+    </item>
+    <item>
+      <title>How to Use Google Chrome’s New AI-Powered ‘Skills’</title>
+      <link>https://www.wired.com/story/how-to-use-google-chrome-ai-powered-skills/</link>
+      <description>Google Chrome has introduced AI-powered 'Skills' in its Gemini sidebar, allowing users to optimize recipes and summarize YouTube videos. This feature enhances user experience by integrating AI tools directly into the browser.</description>
+      <category>Google</category>
+      <pubDate>Tue, 14 Apr 2026 17:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/how-to-use-google-chrome-ai-powered-skills/</guid>
+    </item>
+    <item>
+      <title>Turn your best AI prompts into one-click tools in Chrome</title>
+      <link>https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/</link>
+      <description>A video demonstration showcases how to turn AI prompts into one-click tools in Chrome, highlighting the ease of use and functionality of the new Skills feature. This visual guide aims to help users leverage AI capabilities efficiently.</description>
+      <category>Google</category>
+      <pubDate>Tue, 14 Apr 2026 17:00:00 +0000</pubDate>
+      <guid>https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/</guid>
+    </item>
+    <item>
+      <title>How to share audio from your Android phone to multiple earbuds (and why it's genius)</title>
+      <link>https://www.zdnet.com/article/how-to-share-audio-from-android-phone-to-multiple-earbuds/</link>
+      <description>Android's audio sharing feature allows two users to listen to audio through separate earbuds, enhancing the listening experience for shared content. This feature is particularly useful for couples or friends sharing media.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 14 Apr 2026 16:32:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-share-audio-from-android-phone-to-multiple-earbuds/</guid>
+    </item>
+    <item>
+      <title>Physicist reckons two-button calculator can do all elementary math</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/two_button_calculator/</link>
+      <description>A physicist proposes that a two-button calculator could perform all elementary math operations, suggesting a simpler approach to complex calculations. This idea challenges conventional methods and could simplify educational tools.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 16:06:30 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/two_button_calculator/</guid>
+    </item>
+    <item>
+      <title>SBOM exports are now computed asynchronously</title>
+      <link>https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</link>
+      <description>GitHub has updated its Software Bill of Materials (SBOM) exports to operate asynchronously, improving efficiency when exporting dependency graphs. This change enhances the user experience for developers managing software dependencies.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 14 Apr 2026 16:00:14 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</guid>
+    </item>
+    <item>
+      <title>How to use Google Messages' new Trash feature to recover texts you accidentally deleted</title>
+      <link>https://www.zdnet.com/article/google-messages-finally-has-a-trash-feature-and-its-about-time/</link>
+      <description>Google Messages has introduced a new Trash feature that allows users to recover accidentally deleted texts, adding a layer of data protection and user convenience. This feature aims to enhance user satisfaction with messaging.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 14 Apr 2026 16:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-messages-finally-has-a-trash-feature-and-its-about-time/</guid>
+    </item>
+    <item>
+      <title>Amazon pays $11.5B to satisfy satellite-envy while cowering in Musk's shadow</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/amazon_globalstar_satellite_envy/</link>
+      <description>Amazon has acquired Globalstar for $11.5 billion to expand its satellite capabilities, aiming to compete with Elon Musk's Starlink. This deal includes operational satellites and technology that could enhance Amazon's connectivity services.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 15:58:18 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/amazon_globalstar_satellite_envy/</guid>
+    </item>
+    <item>
+      <title>In just a couple weeks, StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together</title>
+      <link>https://techcrunch.com/2026/04/14/join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder/</link>
+      <description>StrictlyVC San Francisco is set to host industry leaders from TDK Ventures and Replit, providing networking opportunities and insights into current tech trends. The event is scheduled for April 30, with tickets still available.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 15:30:49 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/14/join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder/</guid>
+    </item>
+    <item>
+      <title>Why the Apple Watch's 20-minute calibration test is worth your time - especially if you're data curious</title>
+      <link>https://www.zdnet.com/article/how-to-calibrate-your-apple-watch/</link>
+      <description>Calibrating the Apple Watch for 20 minutes can significantly improve the accuracy of health data during workouts. This process is recommended for users seeking personalized fitness insights.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 14 Apr 2026 15:30:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-calibrate-your-apple-watch/</guid>
+    </item>
+    <item>
+      <title>Model selection for Claude and Codex agents on github.com</title>
+      <link>https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</link>
+      <description>GitHub now allows users to select models for Claude and Codex coding agents, similar to the Copilot cloud agent. This feature provides developers with more control over their coding assistance tools.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 14 Apr 2026 15:21:52 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</guid>
+    </item>
+    <item>
+      <title>Anthropic Opposes the Extreme AI Liability Bill That OpenAI Backed</title>
+      <link>https://www.wired.com/story/anthropic-opposes-the-extreme-ai-liability-bill-that-openai-backed/</link>
+      <description>Anthropic has publicly opposed an Illinois bill that would protect AI labs from liability in cases of mass deaths and financial disasters, a stance that contrasts with OpenAI's support for the bill. This disagreement highlights the ongoing debate about accountability in AI development.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 14 Apr 2026 15:21:44 +0000</pubDate>
+      <guid>https://www.wired.com/story/anthropic-opposes-the-extreme-ai-liability-bill-that-openai-backed/</guid>
+    </item>
+    <item>
+      <title>How exposed is your code? Find out in minutes—for free</title>
+      <link>https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/</link>
+      <description>GitHub has launched a free Code Security Risk Assessment tool that allows organizations to quickly identify vulnerabilities in their code. This initiative aims to enhance security awareness and proactive measures in software development.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 14 Apr 2026 15:00:00 +0000</pubDate>
+      <guid>https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/</guid>
+    </item>
+    <item>
+      <title>Google brings its Gemini Personal Intelligence feature to India</title>
+      <link>https://techcrunch.com/2026/04/14/google-brings-its-gemini-personal-intelligence-feature-to-india/</link>
+      <description>Google has introduced its Gemini Personal Intelligence feature in India, enabling users to link their Google accounts for personalized responses. This feature aims to enhance user experience by providing tailored information.</description>
+      <category>Google</category>
+      <pubDate>Tue, 14 Apr 2026 14:48:34 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/14/google-brings-its-gemini-personal-intelligence-feature-to-india/</guid>
+    </item>
+    <item>
+      <title>I'm ready for a foldable iPhone, but only if Apple does this right</title>
+      <link>https://www.zdnet.com/article/foldable-iphone-only-if-apple-does-this-right/</link>
+      <description>A tech enthusiast discusses the potential for a foldable iPhone, emphasizing the need for improved multitasking capabilities to ensure its success. The article reflects on current limitations and user expectations.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 14 Apr 2026 14:46:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/foldable-iphone-only-if-apple-does-this-right/</guid>
+    </item>
+    <item>
+      <title>How vibe-coding app Anything is rebuilding after getting booted from the App Store twice</title>
+      <link>https://techcrunch.com/2026/04/14/how-vibe-coding-app-anything-is-rebuilding-after-getting-booted-from-the-app-store-twice/</link>
+      <description>After facing two removals from the App Store, the vibe-coding app Anything is planning to launch a desktop companion app to support mobile development. This move aims to enhance user experience and functionality.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 14:22:44 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/14/how-vibe-coding-app-anything-is-rebuilding-after-getting-booted-from-the-app-store-twice/</guid>
+    </item>
+    <item>
+      <title>Meta is selling refurbished Ray-Bans for as low as $197 right now - but they're going fast</title>
+      <link>https://www.zdnet.com/article/meta-ray-ban-refurbished-smart-glasses-selling-fast/</link>
+      <description>Meta is currently selling refurbished Ray-Ban smart glasses at discounted prices, with models including Wayfarer and Headliner. These glasses come with a one-year warranty, appealing to budget-conscious consumers.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 14 Apr 2026 14:18:12 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/meta-ray-ban-refurbished-smart-glasses-selling-fast/</guid>
+    </item>
+    <item>
+      <title>AWS and Hopkins Engineering announce groundbreaking database for AI/ML antibody design</title>
+      <link>https://www.amazon.science/news/aws-gray-lab-johns-hopkins-announce-groundbreaking-database-for-ai-ml-antibody-design</link>
+      <description>AWS and Johns Hopkins Engineering have developed a new database for AI and machine learning focused on antibody design. This resource leverages a diverse dataset to improve the evaluation of AI-guided antibody development.</description>
+      <category>Amazon</category>
+      <pubDate>Tue, 14 Apr 2026 14:00:00 +0000</pubDate>
+      <guid>https://www.amazon.science/news/aws-gray-lab-johns-hopkins-announce-groundbreaking-database-for-ai-ml-antibody-design</guid>
+    </item>
+    <item>
+      <title>Chrome now lets you turn AI prompts into repeatable &amp;#8216;Skills&amp;#8217;</title>
+      <link>https://www.theverge.com/tech/911658/google-chrome-gemini-ai-skills-availability-launch</link>
+      <description>Google's Chrome browser now allows users to save AI prompts as 'Skills' for repeated use across multiple tabs. This feature aims to streamline workflows and enhance productivity for users engaging with AI.</description>
+      <category>Google</category>
+      <pubDate>Tue, 14 Apr 2026 13:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/911658/google-chrome-gemini-ai-skills-availability-launch</guid>
+    </item>
+    <item>
+      <title>No honor among thieves as 0APT threatens rival ransomware gang Krybit</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/14/0apt_krybit_spat/</link>
+      <description>The ransomware gang 0APT has threatened to expose members of rival gang Krybit, indicating internal conflicts within the cybercrime community. This rivalry showcases the chaotic dynamics of the ransomware landscape.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 12:56:13 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/14/0apt_krybit_spat/</guid>
+    </item>
+    <item>
+      <title>Spring AI SDK for Amazon Bedrock AgentCore is now Generally Available</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/</link>
+      <description>Amazon has made its Spring AI SDK for Bedrock AgentCore generally available, allowing developers to create production-ready AI agents. This open-source library enhances the capabilities of AI applications within the Spring framework.</description>
+      <category>Amazon</category>
+      <pubDate>Tue, 14 Apr 2026 12:40:47 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/</guid>
+    </item>
+    <item>
+      <title>The Download: the state of AI, and protecting bears with drones</title>
+      <link>https://www.technologyreview.com/2026/04/14/1135847/the-download-state-of-ai-drones-protecting-bears/</link>
+      <description>The Download newsletter discusses the current chaotic state of AI, highlighting contrasting views on its impact and potential. It reflects the ongoing debate about AI's role in society and the economy.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 14 Apr 2026 12:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/14/1135847/the-download-state-of-ai-drones-protecting-bears/</guid>
+    </item>
+    <item>
+      <title>GitHub Code Quality: Improvements to standard findings in public preview</title>
+      <link>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</link>
+      <description>GitHub has improved its Code Quality feature, making it easier for users to navigate and address findings in their repositories. This update aims to enhance reliability and performance in coding projects.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 14 Apr 2026 11:31:43 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</guid>
+    </item>
+    <item>
+      <title>The Evolution of Artificial Intelligence: From Handwritten Rules to Generative and Agentic Machines</title>
+      <link>https://wccftech.com/evolution-of-artificial-intelligence-handwritten-rules-to-generative-and-agentic-machines/</link>
+      <description>This article explores the evolution of AI from its early rule-based systems to today's generative and agentic machines. It emphasizes the rich history of AI beyond the current buzzword culture.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 18:02:01 +0000</pubDate>
+      <guid>https://wccftech.com/evolution-of-artificial-intelligence-handwritten-rules-to-generative-and-agentic-machines/</guid>
+    </item>
+    <item>
+      <title>Anthropic says its $20M donation to Public First Action can't be "used to influence federal elections" and is to educate the public on AI policy (Veronica Irwin/Transformer)</title>
+      <link>https://www.techmeme.com/260413/p26</link>
+      <description>Anthropic has donated $20 million to Public First Action, clarifying that the funds cannot be used for influencing federal elections but are intended for public education on AI policy.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 13 Apr 2026 18:00:33 +0000</pubDate>
+      <guid>https://www.techmeme.com/260413/p26</guid>
+    </item>
+    <item>
+      <title>Oracle pops 11%, leading bounce back rally in software stocks</title>
+      <link>https://www.cnbc.com/2026/04/13/oracle-orcl-stock-rally-software-ai-risk.html</link>
+      <description>Oracle's stock has rebounded by 11% following a significant decline due to concerns over AI disruption. This rally reflects investor confidence in the software sector's recovery.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 17:58:02 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/04/13/oracle-orcl-stock-rally-software-ai-risk.html</guid>
+    </item>
+    <item>
+      <title>A Netflix accessory app keeps hitting No. 1 in the App Store, beating out ChatGPT</title>
+      <link>https://www.businessinsider.com/netflix-game-controller-tops-apple-app-store-chatgpt-2026-4</link>
+      <description>A Netflix Game Controller app has surged to the top of the App Store, outperforming ChatGPT. This trend suggests a growing interest in gaming as part of Netflix's strategy.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 17:56:44 +0000</pubDate>
+      <guid>https://www.businessinsider.com/netflix-game-controller-tops-apple-app-store-chatgpt-2026-4</guid>
+    </item>
+    <item>
+      <title>Someone Bought 30 WordPress Plugins and Planted a Backdoor in All of Them</title>
+      <link>https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/</link>
+      <description>A supply chain attack was discovered in 30 WordPress plugins, where a backdoor was planted by a new owner of a trusted plugin. This raises concerns about security in widely used software.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 13 Apr 2026 17:54:39 +0000</pubDate>
+      <guid>https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/</guid>
+    </item>
+    <item>
+      <title>Roblox Will Roll Out Age-Based Accounts Amid Child-Safety Push</title>
+      <link>https://www.cnet.com/tech/gaming/roblox-age-based-accounts-amid-child-safety-push/</link>
+      <description>Roblox is implementing age-based accounts to enhance child safety, introducing three age tiers and improved parental controls. This move aims to create a safer gaming environment for children.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 17:50:00 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/gaming/roblox-age-based-accounts-amid-child-safety-push/</guid>
+    </item>
+    <item>
+      <title>orz.http.server 0.1.0</title>
+      <link>https://pypi.org/project/orz.http.server/</link>
+      <description>A new minimal HTTP server version 0.1.0 has been released, featuring Cross-Origin isolation headers for high-resolution timers. This update is aimed at developers needing enhanced performance.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 13 Apr 2026 17:48:42 +0000</pubDate>
+      <guid>https://pypi.org/project/orz.http.server/</guid>
+    </item>
+    <item>
+      <title>Anthropic Claude Mythos: Serious Threat or Overhyped? AI Security Institute Weighs In</title>
+      <link>https://decrypt.co/364141/anthropic-claude-mythos-serious-threat-overhyped-ai-security-institute</link>
+      <description>The AI Security Institute has raised concerns about Claude Mythos, suggesting it could pose a significant cybersecurity threat based on early testing results. This highlights the need for vigilance in AI security.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 13 Apr 2026 17:45:50 +0000</pubDate>
+      <guid>https://decrypt.co/364141/anthropic-claude-mythos-serious-threat-overhyped-ai-security-institute</guid>
+    </item>
+    <item>
+      <title>Motorola Razr Ultra reportedly gets a bigger battery, but the same chip as last year</title>
+      <link>http://9to5google.com/2026/04/13/motorola-razr-ultra-2026-specs-snapdragon-rumor/</link>
+      <description>The Motorola Razr Ultra is set to launch with a larger battery but will use the same chip as its predecessor, indicating minimal upgrades. This suggests Motorola is focusing on battery life rather than performance enhancements.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Mon, 13 Apr 2026 17:45:00 +0000</pubDate>
+      <guid>http://9to5google.com/2026/04/13/motorola-razr-ultra-2026-specs-snapdragon-rumor/</guid>
+    </item>
+    <item>
+      <title>rein-harness added to PyPI</title>
+      <link>https://pypi.org/project/rein-harness/</link>
+      <description>ReIN, an open-source agentic coding runtime, has been added to the Python Package Index (PyPI), allowing developers to harness their code more effectively. This addition aims to enhance coding efficiency and flexibility.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 17:40:40 +0000</pubDate>
+      <guid>https://pypi.org/project/rein-harness/</guid>
+    </item>
+    <item>
+      <title>OpenAI rotates macOS certs after Axios attack hit code-signing workflow</title>
+      <link>https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/</link>
+      <description>OpenAI is rotating its potentially compromised macOS code-signing certificates following a supply chain attack that exploited a malicious Axios package. This move aims to secure their development environment and prevent further vulnerabilities.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 13 Apr 2026 17:39:10 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/</guid>
+    </item>
+    <item>
+      <title>Mario Adorf Dead: 'Tin Drum,' 'Winnetou' Actor Was 95</title>
+      <link>http://www.hollywoodreporter.com/movies/movie-news/mario-adorf-dead-tin-drum-winnetou-1236562624/</link>
+      <description>Mario Adorf, a celebrated actor known for his roles in 'Tin Drum' and 'Winnetou,' has passed away at the age of 95. His contributions to European cinema have left a lasting legacy.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 13 Apr 2026 17:32:12 +0000</pubDate>
+      <guid>http://www.hollywoodreporter.com/movies/movie-news/mario-adorf-dead-tin-drum-winnetou-1236562624/</guid>
+    </item>
+    <item>
+      <title>Amazon Deals of the Day: Get Your Pool Ready With a Record Low on the Aiper Scuba S1 Robotic Pool Cleaner</title>
+      <link>https://www.cnet.com/deals/amazon-deals-of-the-day-4-13-26/</link>
+      <description>Amazon is offering significant discounts on various products, including a record low on the Aiper Scuba S1 robotic pool cleaner and discounts on Ray-Ban Meta glasses and Blink security cameras. These deals aim to attract consumers preparing for summer.</description>
+      <category>Meta</category>
+      <pubDate>Mon, 13 Apr 2026 17:32:00 +0000</pubDate>
+      <guid>https://www.cnet.com/deals/amazon-deals-of-the-day-4-13-26/</guid>
+    </item>
+    <item>
+      <title>Motorola Razr 70 Ultra surfaces in new leak following Razr Fold release</title>
+      <link>https://www.notebookcheck.net/Motorola-Razr-70-Ultra-surfaces-in-new-leak-following-Razr-Fold-release.1272811.0.html</link>
+      <description>Leaks about the Motorola Razr 70 Ultra reveal improved specifications, including better battery life, as it prepares for launch later this year. This follows the recent release of the Razr Fold.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Mon, 13 Apr 2026 17:31:00 +0000</pubDate>
+      <guid>https://www.notebookcheck.net/Motorola-Razr-70-Ultra-surfaces-in-new-leak-following-Razr-Fold-release.1272811.0.html</guid>
+    </item>
+    <item>
+      <title>tensor-optix 1.2.5</title>
+      <link>https://pypi.org/project/tensor-optix/1.2.5/</link>
+      <description>Tensor-optix 1.2.5 has been released, providing an autonomous training loop for sequential learning models with built-in algorithms for TensorFlow and PyTorch. This update aims to simplify the training process for developers.</description>
+      <category>Meta</category>
+      <pubDate>Mon, 13 Apr 2026 17:28:55 +0000</pubDate>
+      <guid>https://pypi.org/project/tensor-optix/1.2.5/</guid>
+    </item>
+    <item>
+      <title>Nvidia’s New PC Strategy Is Bigger Than a Single Acquisition</title>
+      <link>https://www.gadgetreview.com/nvidias-new-pc-strategy-is-bigger-than-a-single-acquisition</link>
+      <description>Nvidia is focusing on strategic partnerships and licensing deals rather than acquisitions to strengthen its position in the PC market. Collaborations with Groq, Intel, and MediaTek are central to this strategy.</description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 13 Apr 2026 17:24:31 +0000</pubDate>
+      <guid>https://www.gadgetreview.com/nvidias-new-pc-strategy-is-bigger-than-a-single-acquisition</guid>
+    </item>
+    <item>
+      <title>Building an Autonomous Travel Assistant with Copilot Studio</title>
+      <link>https://www.c-sharpcorner.com/article/building-an-autonomous-travel-assistant-with-copilot-studio/</link>
+      <description>A new project using Copilot Studio allows users to build an autonomous travel assistant that can answer questions, provide safety advice, and plan trips. This no-code solution aims to make travel planning more accessible.</description>
       <category>Microsoft</category>
-      <pubDate>Mon, 13 Apr 2026 05:07:02 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/running-local-ai-with-llamasharp-in-net-a-developers-guide/</guid>
+      <pubDate>Mon, 13 Apr 2026 17:13:28 +0000</pubDate>
+      <guid>https://www.c-sharpcorner.com/article/building-an-autonomous-travel-assistant-with-copilot-studio/</guid>
     </item>
     <item>
-      <title>temporal-straightening-pytorch 0.1.3</title>
-      <link>https://pypi.org/project/temporal-straightening-pytorch/0.1.3/</link>
-      <description>The release of Temporal Straightening for Latent Planning in PyTorch version 0.1.3 offers new tools for AI model planning. This update is relevant for researchers and developers working on advanced AI planning techniques.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 13 Apr 2026 05:02:03 +0000</pubDate>
-      <guid>https://pypi.org/project/temporal-straightening-pytorch/0.1.3/</guid>
-    </item>
-    <item>
-      <title>guaardvark added to PyPI</title>
-      <link>https://pypi.org/project/guaardvark/</link>
-      <description>Guaardvark CLI has been added to PyPI, offering a full-stack AI platform that includes RAG, image and video generation, and agents. This addition enhances the accessibility of AI tools for developers.</description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 13 Apr 2026 04:59:10 +0000</pubDate>
-      <guid>https://pypi.org/project/guaardvark/</guid>
-    </item>
-    <item>
-      <title>guaardvark 2.6.0</title>
-      <link>https://pypi.org/project/guaardvark/2.6.0/</link>
-      <description>Guaardvark version 2.6.0 has been released, featuring improvements to its full-stack AI capabilities, including RAG and multimedia generation. This update signifies ongoing enhancements in AI tool functionality.</description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 13 Apr 2026 04:59:10 +0000</pubDate>
-      <guid>https://pypi.org/project/guaardvark/2.6.0/</guid>
-    </item>
-    <item>
-      <title>torch-fourier-filter 0.6.3rc3</title>
-      <link>https://pypi.org/project/torch-fourier-filter/0.6.3rc3/</link>
-      <description>The torch-fourier-filter 0.6.3rc3 has been released, providing new filters for images and volumes in PyTorch. This release supports advanced image processing tasks.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 13 Apr 2026 04:52:53 +0000</pubDate>
-      <guid>https://pypi.org/project/torch-fourier-filter/0.6.3rc3/</guid>
-    </item>
-    <item>
-      <title>torch-2dtm 0.6.3rc3</title>
-      <link>https://pypi.org/project/torch-2dtm/0.6.3rc3/</link>
-      <description>The torch-2dtm 0.6.3rc3 introduces 2D template matching functionality in PyTorch, facilitating more efficient image analysis. This feature is significant for developers working on computer vision projects.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 13 Apr 2026 04:51:19 +0000</pubDate>
-      <guid>https://pypi.org/project/torch-2dtm/0.6.3rc3/</guid>
-    </item>
-    <item>
-      <title>torch-2dtm added to PyPI</title>
-      <link>https://pypi.org/project/torch-2dtm/</link>
-      <description>The torch-2dtm has been added to PyPI, providing a new resource for 2D template matching in PyTorch. This addition supports developers in implementing template matching techniques.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 13 Apr 2026 04:51:00 +0000</pubDate>
-      <guid>https://pypi.org/project/torch-2dtm/</guid>
-    </item>
-    <item>
-      <title>soothe 0.2.11</title>
-      <link>https://pypi.org/project/soothe/0.2.11/</link>
-      <description>Soothe 0.2.11 has been released, offering a multi-agent harness built on deepagents and langchain/langgraph. This tool aims to streamline the development of multi-agent systems.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 13 Apr 2026 04:45:39 +0000</pubDate>
-      <guid>https://pypi.org/project/soothe/0.2.11/</guid>
-    </item>
-    <item>
-      <title>llama-cpp-py-sync 0.8771</title>
-      <link>https://pypi.org/project/llama-cpp-py-sync/0.8771/</link>
-      <description>Llama-cpp-py-sync 0.8771 provides auto-synchronized Python bindings for llama.cpp using CFFI ABI mode, enhancing compatibility and ease of use for developers.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 13 Apr 2026 04:42:43 +0000</pubDate>
-      <guid>https://pypi.org/project/llama-cpp-py-sync/0.8771/</guid>
-    </item>
-    <item>
-      <title>In Graphic Detail: New data shows publishers face growing AI bot, third-party scraper activity</title>
-      <link>http://digiday.com/media/in-graphic-detail-new-data-shows-publishers-face-growing-ai-bot-third-party-scraper-activity/</link>
-      <description>New data reveals that publishers are increasingly facing challenges from AI bots and third-party scrapers that harvest content without compensation. This trend raises concerns about content ownership and monetization.</description>
-      <category>Perplexity</category>
-      <pubDate>Mon, 13 Apr 2026 04:01:00 +0000</pubDate>
-      <guid>http://digiday.com/media/in-graphic-detail-new-data-shows-publishers-face-growing-ai-bot-third-party-scraper-activity/</guid>
-    </item>
-    <item>
-      <title>agentmesh_platform 3.1.0</title>
-      <link>https://pypi.org/project/agentmesh_platform/</link>
-      <description>Agentmesh_platform 3.1.0 has entered public preview, introducing a secure framework for cloud-native agent ecosystems focused on identity, trust, and governance. This platform aims to enhance security in AI systems.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 13 Apr 2026 04:00:20 +0000</pubDate>
-      <guid>https://pypi.org/project/agentmesh_platform/</guid>
-    </item>
-    <item>
-      <title>agent_sre 3.1.0</title>
-      <link>https://pypi.org/project/agent_sre/</link>
-      <description>Agent_sre 3.1.0 is now in public preview, focusing on reliability engineering for AI agent systems. This release emphasizes the importance of stability and performance in AI applications.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 13 Apr 2026 03:59:59 +0000</pubDate>
-      <guid>https://pypi.org/project/agent_sre/</guid>
+      <title>Save $50 Off the Latest Apple AirPods Pro 3 Noise Canceling Earbuds at Amazon</title>
+      <link>https://www.ign.com/articles/new-apple-airpods-pro-3-deal-for-april-2026</link>
+      <description>Amazon is offering a $50 discount on the latest Apple AirPods Pro 3, known for their noise-canceling features. This promotion highlights the popularity of high-quality audio products among consumers.</description>
+      <category>Apple</category>
+      <pubDate>Mon, 13 Apr 2026 17:10:00 +0000</pubDate>
+      <guid>https://www.ign.com/articles/new-apple-airpods-pro-3-deal-for-april-2026</guid>
     </item>
   </channel>
 </rss>
