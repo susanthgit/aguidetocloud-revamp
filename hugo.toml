@@ -12,11 +12,11 @@ enableRobotsTXT = true
   lastmod = [":git", "lastmod", "date"]
 
 [params]
-  description = "Your AI & Cloud Learning Hub — 26 free tools (AI News, M365 Roadmap, Copilot Readiness, ROI Calculator, Licensing Simplifier, QR Code Generator & more), video tutorials, 52 cert study guides & blog for Microsoft 365, Azure & AI"
+  description = "Free cloud, AI & Microsoft 365 tools, tutorials and cert study guides for IT pros. 27 interactive tools including AI News, Copilot Readiness, ROI Calculator, Licensing Simplifier & more."
   author = "Susanth Sutheesh"
-  tagline = "Your AI & Cloud Skills Hub"
+  tagline = "Free Cloud, AI & Microsoft 365 Tools for IT Pros"
   subtitle = "Hands-on tutorials for beginners — by Susanth Sutheesh"
-  cache_version = "2026041407"
+  cache_version = "2026041408"
   youtube_channel = "https://www.youtube.com/susanthsutheesh"
   youtube_bites = "https://www.youtube.com/aguidetocloud"
   linkedin = "https://www.linkedin.com/in/susanthsutheesh/"
