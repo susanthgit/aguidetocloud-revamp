@@ -31,7 +31,18 @@ faq:
 
 Microsoft 365 Copilot includes multiple layers of content safety controls — but most IT admins only know about one or two of them. With the introduction of the **harmful content protection toggle**, admins now have more granular control than ever over what Copilot can discuss. This guide covers every content safety lever available to you, when to use each one, and how to configure them step by step.
 
-**Quick links:** [TL;DR — The 4 controls](#tldr--the-4-controls-you-need-to-know) · [The 4 safety layers](#the-4-layers-of-copilot-content-safety) · [What licence do you need?](#what-licence-do-you-need) · [Harmful content toggle](#layer-2-harmful-content-protection-toggle) · [How to configure](#step-by-step-configuration) · [Data access controls](#layer-3-data-access-controls-permissions--sensitivity-labels) · [Web search controls](#layer-4-web-search-controls) · [Real-world scenarios](#real-world-scenarios) · [Best practices](#best-practices-for-it-admins) · [FAQ](#frequently-asked-questions)
+**Quick links:**
+
+- [TL;DR — The 4 controls](#tldr--the-4-controls-you-need-to-know)
+- [The 4 safety layers](#the-4-layers-of-copilot-content-safety)
+- [What licence do you need?](#what-licence-do-you-need)
+- [Harmful content toggle](#layer-2-harmful-content-protection-toggle)
+- [How to configure](#step-by-step-configuration)
+- [Data access controls](#layer-3-data-access-controls-permissions--sensitivity-labels)
+- [Web search controls](#layer-4-web-search-controls)
+- [Real-world scenarios](#real-world-scenarios)
+- [Best practices](#best-practices-for-it-admins)
+- [FAQ](#frequently-asked-questions)
 
 > ⚠️ **Government cloud note:** Content safety features are available in commercial tenants. GCC, GCC High, and DoD availability and timelines may differ — verify with your Microsoft account team before planning rollouts.
 
@@ -57,7 +68,11 @@ You can run **two different content safety postures in the same organisation** �
 
 Both groups are **fully auditable** — all Copilot interactions (prompts and responses) can be searched, audited, and retained via Microsoft Purview, regardless of whether harmful content protection was on or off during that conversation.
 
-> **Do these 3 things today:** (1) Audit your SharePoint permissions for oversharing, (2) Deploy sensitivity labels if you haven't, (3) Decide if any roles need the harmful content toggle — and create a dedicated security group for them.
+> **Do these 3 things today:**
+>
+> 1. Audit your SharePoint permissions for oversharing
+> 2. Deploy sensitivity labels if you haven't already
+> 3. Decide if any roles need the harmful content toggle — and create a dedicated security group for them
 
 ---
 
