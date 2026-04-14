@@ -941,6 +941,8 @@
       $btn.disabled = false;
       polish();
     }
+    // Keep page at top after auto-demo renders results
+    requestAnimationFrame(function() { window.scrollTo(0, 0); });
   }
 
   // Run when DOM is ready
