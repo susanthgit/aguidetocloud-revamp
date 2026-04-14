@@ -374,39 +374,54 @@
 
 .lic-tabs {
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin: 1.5rem 0 2rem;
   flex-wrap: wrap;
 }
 .lic-tab {
-  padding: 0.6rem 1.4rem;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.03);
-  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
-  backdrop-filter: blur(var(--glass-blur-subtle));
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: none;
   color: #94a3b8;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 .lic-tab:hover {
-  border-color: var(--lic-accent-border);
   color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
 }
 .lic-tab.active {
-  background: color-mix(in srgb, var(--lic-accent) 15%, transparent);
-  border-color: color-mix(in srgb, var(--lic-accent) 40%, transparent);
-  color: var(--lic-accent);
-  font-weight: 600;
+  color: #fff;
+  background: var(--lic-accent);
+  border-color: var(--lic-accent);
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.3);
 }
 
 /* ── TAB PANELS ────────────────────────────── */
 
 .lic-panel { display: none; }
 .lic-panel.active { display: block; }
+
+.lic-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+.lic-presets-grid .lic-preset-btn {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
 
 /* ── CATEGORY SECTIONS ─────────────────────── */
 

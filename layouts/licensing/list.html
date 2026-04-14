@@ -72,28 +72,9 @@
 <div class="lic-page">
 
   {{/* ── HERO ── */}}
-  {{ partial "tool-hero.html" (dict "title" "Microsoft Licensing Simplifier" "subtitle" "Compare 55+ plans in plain English · Find your ideal licence · Track what changed" "accent" "#F43F5E") }}
-  <div class="lic-hero-info">
-    <p class="lic-hero-stats">{{ len (hugo.Data.licensing.plans.plans) }} plans · {{ len (hugo.Data.licensing.plans.categories) }} categories · Updated April 2026</p>
-    <p class="lic-hero-meta">Prices in USD · <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">Official Microsoft Pricing →</a></p>
-  </div>
+  {{ partial "tool-hero.html" (dict "title" "Microsoft Licensing Simplifier" "subtitle" (printf "%d plans · %d categories · Prices in USD · Updated April 2026" (len (hugo.Data.licensing.plans.plans)) (len (hugo.Data.licensing.plans.categories))) "accent" "#F43F5E") }}
 
-  {{/* ── SEARCH BAR ── */}}
-  <div class="lic-search-wrap">
-    <input type="text" id="lic-search" class="lic-search" placeholder="Search plans... (e.g. E5, Power BI, Business Central, Copilot)" autocomplete="off" aria-label="Search licensing plans">
-    <span class="lic-search-icon">🔍</span>
-    <div class="lic-search-results" id="lic-search-results"></div>
-  </div>
-
-  {{/* ── QUICK COMPARE SHORTCUTS ── */}}
-  <div class="lic-presets">
-    <span class="lic-presets-label">Quick Compare:</span>
-    <button class="lic-preset-btn" data-plans="m365-e3,m365-e5">E3 vs E5</button>
-    <button class="lic-preset-btn" data-plans="m365-e5,m365-e7">E5 vs E7</button>
-    <button class="lic-preset-btn" data-plans="biz-standard,biz-premium">Business Standard vs Premium</button>
-    <button class="lic-preset-btn" data-plans="powerbi-pro,powerbi-ppu">Power BI Pro vs Premium</button>
-    <button class="lic-preset-btn" data-plans="d365-bc-essentials,d365-bc-premium">Business Central: Essentials vs Premium</button>
-  </div>
+  <div class="lic-container">
 
   {{/* ── TABS ── */}}
   <div class="lic-tabs" role="tablist">
@@ -104,10 +85,13 @@
     <button class="lic-tab" data-tab="changelog" role="tab" aria-selected="false">📰 What Changed?</button>
   </div>
 
-  <div class="lic-container">
-
     {{/* ══════════════ TAB: COMPARE ══════════════ */}}
     <div class="lic-panel active" id="panel-compare">
+      <div class="lic-search-wrap">
+        <input type="text" id="lic-search" class="lic-search" placeholder="Search plans... (e.g. E5, Power BI, Business Central, Copilot)" autocomplete="off" aria-label="Search licensing plans">
+        <span class="lic-search-icon">🔍</span>
+        <div class="lic-search-results" id="lic-search-results"></div>
+      </div>
       <div id="lic-compare-content">
         {{/* JS renders category sections + plan cards here */}}
       </div>
