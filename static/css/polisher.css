@@ -16,19 +16,22 @@
   padding: 0 1.5rem 4rem;
 }
 
-/* ── How It Works ── */
-.polisher-how {
+/* ── Hero Steps (1-2-3 flow in hero area) ── */
+.polisher-hero-steps {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.2rem 1.5rem;
-  background: rgba(255, 107, 107, 0.06);
-  border: 1px solid rgba(255, 107, 107, 0.2);
-  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(236, 72, 153, 0.08);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  border-radius: var(--glass-radius-card, 16px);
 }
-.polisher-how-step {
+.polisher-hero-step {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,39 +39,39 @@
   gap: 0.2rem;
   flex: 1;
 }
-.polisher-how-num {
+.polisher-hero-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--tool-accent, #EC4899);
+  background: #EC4899;
   color: #000;
   font-weight: 800;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-family: var(--font-heading);
   margin-bottom: 0.15rem;
 }
-.polisher-how-step strong {
+.polisher-hero-step strong {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   color: #fff;
 }
-.polisher-how-desc {
+.polisher-hero-desc {
   font-size: 0.72rem;
-  color: var(--text-secondary, rgba(255,255,255,0.5));
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.3;
 }
-.polisher-how-arrow {
-  color: rgba(255, 107, 107, 0.5);
+.polisher-hero-arrow {
+  color: rgba(236, 72, 153, 0.5);
   font-size: 1.2rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 @media (max-width: 520px) {
-  .polisher-how { flex-direction: column; gap: 0.5rem; padding: 1rem; }
-  .polisher-how-arrow { transform: rotate(90deg); font-size: 0.9rem; }
+  .polisher-hero-steps { flex-direction: column; gap: 0.5rem; padding: 0.8rem 1rem; }
+  .polisher-hero-arrow { transform: rotate(90deg); font-size: 0.9rem; }
 }
 
 /* ── Input Section ── */

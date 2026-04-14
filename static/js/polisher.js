@@ -924,6 +924,14 @@
 
     // Load history on init
     renderHistory();
+
+    // Auto-demo: show the email example polished on first visit
+    if (!$input.value.trim()) {
+      $input.value = EXAMPLES[3].text; // "write an email to my boss about the project delay"
+      $charCount.textContent = $input.value.length + ' characters';
+      $btn.disabled = false;
+      polish();
+    }
   }
 
   // Run when DOM is ready

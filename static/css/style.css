@@ -203,9 +203,9 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   padding-top: 0.5rem;
-  background: rgba(16, 16, 40, 0.82);
-  -webkit-backdrop-filter: blur(var(--glass-blur-overlay));
-  backdrop-filter: blur(var(--glass-blur-overlay));
+  background: rgba(12, 12, 30, 0.96);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   border: var(--glass-border);
   border-radius: var(--glass-radius-card);
   padding: 0.5rem 0;
@@ -235,7 +235,106 @@ a:hover {
   padding-left: 1.5rem;
 }
 
-/* Coming Soon badges in dropdown */
+/* ── Mega-menu (Toolkit dropdown) ── */
+.mega-menu {
+  width: 520px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 !important;
+}
+.mega-header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mega-header a {
+  display: block;
+  padding: 0.35rem 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-primary) !important;
+  border: none !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+}
+.mega-header a:hover {
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff99ff !important;
+  box-shadow: none;
+}
+.mega-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.mega-col {
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.mega-col:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+.mega-label {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  margin: 0.35rem 0.3rem 0.15rem;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mega-accent, rgba(255, 255, 255, 0.5));
+  background: color-mix(in srgb, var(--mega-accent, #fff) 10%, transparent);
+  border-left: 2px solid var(--mega-accent, rgba(255, 255, 255, 0.3));
+  border-radius: 0 6px 6px 0;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+.mega-label:first-child {
+  margin-top: 0.1rem;
+}
+.mega-col a {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border: none !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.mega-col a:hover {
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff99ff;
+  box-shadow: none;
+  padding-left: 0.85rem;
+}
+.mega-col a.nav-active {
+  color: #ff99ff;
+  background: rgba(255, 102, 255, 0.06);
+}
+.mega-footer {
+  padding: 0.35rem 1rem 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mega-footer a {
+  display: block;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border: none !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.mega-footer a:hover {
+  background: rgba(255, 102, 255, 0.08);
+  color: #ff99ff;
+  box-shadow: none;
+}
+
+/* Legacy dropdown labels (Videos dropdown) */
 .nav-cat-label {
   padding: 0.5rem 1.2rem 0.2rem;
   font-family: var(--font-heading);
@@ -250,25 +349,6 @@ a:hover {
 }
 .nav-cat-label:first-child {
   padding-top: 0.3rem;
-}
-.dropdown-menu li a.coming-soon {
-  opacity: 0.5;
-}
-.dropdown-menu li a.coming-soon:hover {
-  opacity: 0.7;
-}
-.badge-soon {
-  display: inline-block;
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(255, 102, 255, 0.15);
-  color: #ff66ff;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  margin-left: 0.4rem;
-  vertical-align: middle;
 }
 
 /* ── HERO ───────────────────────────────── */
@@ -1177,6 +1257,49 @@ a:hover {
   .tool-pn-link { font-size: 0.72rem; padding: 0.35rem 0.65rem; }
 }
 
+/* ── Section prev/next circular nav ── */
+.section-pn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0.8rem auto 0;
+  padding: 0;
+  gap: 0.75rem;
+}
+.section-pn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  max-width: 48%;
+}
+.section-pn-link:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: rgba(255, 255, 255, 0.04);
+}
+.section-pn-prev { margin-right: auto; }
+.section-pn-next { margin-left: auto; }
+.section-pn-arrow { font-size: 0.85rem; opacity: 0.7; }
+.section-pn-emoji { font-size: 0.85rem; }
+.section-pn-short { display: none; }
+@media (max-width: 640px) {
+  .section-pn-name { display: none; }
+  .section-pn-short { display: inline; }
+  .section-pn-link { font-size: 0.72rem; padding: 0.35rem 0.65rem; }
+  .section-pn { padding: 0 1rem; }
+}
+
 .page-hero {
   text-align: center;
   padding: 2.5rem 1.5rem 1.5rem;
@@ -1879,6 +2002,54 @@ pre.mermaid {
   .nav-dropdown .dropdown-menu li { border-bottom: none; }
   .nav-dropdown .dropdown-menu li a {
     padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  /* Mega-menu mobile: single column, no fixed width */
+  .mega-menu {
+    width: auto !important;
+    position: static !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    padding: 0 0 0 0.5rem !important;
+  }
+  .mega-header {
+    border-bottom: none;
+    padding: 0.3rem 0;
+  }
+  .mega-header a {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .mega-columns {
+    grid-template-columns: 1fr;
+  }
+  .mega-col {
+    padding: 0;
+  }
+  .mega-col:first-child {
+    border-right: none;
+  }
+  .mega-label {
+    padding: 0.5rem 0 0.1rem;
+    font-size: 0.6rem;
+  }
+  .mega-col a {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+  .mega-col a:hover {
+    padding-left: 0.3rem;
+  }
+  .mega-footer {
+    border-top: none;
+    padding: 0.2rem 0 0.5rem;
+  }
+  .mega-footer a {
+    padding: 0.4rem 0;
     font-size: 0.9rem;
   }
 }

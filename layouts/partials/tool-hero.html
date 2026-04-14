@@ -27,5 +27,6 @@
       <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support on Ko-fi</a>
     </div>
     {{ partial "tool-prev-next.html" $p }}
+    {{ with $.extra_html }}{{ . | safeHTML }}{{ end }}
   </div>
 </div>

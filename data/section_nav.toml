@@ -1,0 +1,62 @@
+# Section circular navigation — order for prev/next between main site sections.
+# Tools have their own circular nav (toolkit_nav.toml) and are NOT included here.
+
+[[sections]]
+url = "/start/"
+emoji = "🚀"
+name = "Start Here"
+short = "Start"
+
+[[sections]]
+url = "/ai-hub/"
+emoji = "🤖"
+name = "AI Hub"
+short = "AI Hub"
+
+[[sections]]
+url = "/cloud-labs/"
+emoji = "☁️"
+name = "Cloud Labs"
+short = "Labs"
+
+[[sections]]
+url = "/certifications/"
+emoji = "📜"
+name = "Certifications"
+short = "Certs"
+
+[[sections]]
+url = "/exam-qa/"
+emoji = "📝"
+name = "Exam Q&A"
+short = "Q&A"
+
+[[sections]]
+url = "/interview-prep/"
+emoji = "💼"
+name = "Interview Prep"
+short = "Interview"
+
+[[sections]]
+url = "/music/"
+emoji = "🎵"
+name = "Study Music"
+short = "Music"
+
+[[sections]]
+url = "/free-tools/"
+emoji = "🧰"
+name = "Free Tools"
+short = "Tools"
+
+[[sections]]
+url = "/blog/"
+emoji = "📝"
+name = "Blog"
+short = "Blog"
+
+[[sections]]
+url = "/about/"
+emoji = "👋"
+name = "About"
+short = "About"

@@ -1,0 +1,43 @@
+{{/*
+  section-prev-next.html — Circular prev/next navigation between main site sections.
+  Reads section order from data/section_nav.toml.
+  Auto-detects current page from .RelPermalink.
+
+  Usage: {{ partial "section-prev-next.html" . }}
+  Add new sections by editing data/section_nav.toml — no template changes needed.
+*/}}
+
+{{ $sections := (index hugo.Data "section_nav").sections }}
+{{ $current := .RelPermalink }}
+{{ $count := len $sections }}
+{{ $idx := -1 }}
+
+{{/* Find index of current page */}}
+{{ range $i, $s := $sections }}
+  {{ if eq $current $s.url }}
+    {{ $idx = $i }}
+  {{ end }}
+{{ end }}
+
+{{/* Only render if current page is a known section */}}
+{{ if ge $idx 0 }}
+  {{ $prevIdx := cond (eq $idx 0) (sub $count 1) (sub $idx 1) }}
+  {{ $nextIdx := cond (eq $idx (sub $count 1)) 0 (add $idx 1) }}
+  {{ $prev := index $sections $prevIdx }}
+  {{ $next := index $sections $nextIdx }}
+
+  <nav class="section-pn" aria-label="Browse sections">
+    <a href="{{ $prev.url }}" class="section-pn-link section-pn-prev" title="{{ $prev.name }}">
+      <span class="section-pn-arrow">←</span>
+      <span class="section-pn-emoji">{{ $prev.emoji }}</span>
+      <span class="section-pn-name">{{ $prev.name }}</span>
+      <span class="section-pn-short">{{ $prev.short }}</span>
+    </a>
+    <a href="{{ $next.url }}" class="section-pn-link section-pn-next" title="{{ $next.name }}">
+      <span class="section-pn-name">{{ $next.name }}</span>
+      <span class="section-pn-short">{{ $next.short }}</span>
+      <span class="section-pn-emoji">{{ $next.emoji }}</span>
+      <span class="section-pn-arrow">→</span>
+    </a>
+  </nav>
+{{ end }}
