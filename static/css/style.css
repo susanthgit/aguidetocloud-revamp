@@ -817,8 +817,10 @@ a:hover {
 
 /* ── ECOSYSTEM BANNER ───────────────────── */
 .ecosystem {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-glow);
+  background: rgba(20, 20, 37, 0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  border: var(--glass-border);
   border-radius: var(--radius);
   padding: 2rem;
   margin: 2rem 0;
@@ -1167,6 +1169,8 @@ a:hover {
   padding: 2.5rem 1.5rem 1.5rem;
   background:
     linear-gradient(180deg, color-mix(in srgb, #C4755B 50%, #0f0f1a) 0%, var(--bg-primary) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
   margin-bottom: 1.5rem;
 }
 .page-hero h1 {
@@ -1222,7 +1226,8 @@ a:hover {
   height: 0;
   overflow: hidden;
   border-radius: var(--radius);
-  border: 1px solid var(--border-glow);
+  border: var(--glass-border);
+  box-shadow: 0 0 20px rgba(102, 255, 255, 0.08);
   margin-bottom: 2rem;
 }
 .video-embed iframe {
@@ -1948,10 +1953,12 @@ pre.mermaid {
 
 /* Trainer Script Card — dark blue bg with light text */
 .trainer-script {
-  background: linear-gradient(135deg, #0d1b2a 0%, #1b2a4a 100%);
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.7) 0%, rgba(27, 42, 74, 0.7) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid rgba(96, 165, 250, 0.3);
   border-left: 4px solid #60A5FA;
-  border-radius: 10px;
+  border-radius: var(--glass-radius-card);
   padding: 1.2rem 1.5rem;
   margin: 1rem 0 1.5rem;
   color: rgba(255,255,255,0.92);
@@ -1961,10 +1968,12 @@ pre.mermaid {
 
 /* Trainer Tip Card — warm yellow glow */
 .trainer-tip {
-  background: linear-gradient(135deg, #2a2200 0%, #3a3010 100%);
+  background: linear-gradient(135deg, rgba(42, 34, 0, 0.7) 0%, rgba(58, 48, 16, 0.7) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid rgba(251, 191, 36, 0.35);
   border-left: 4px solid #FBBF24;
-  border-radius: 10px;
+  border-radius: var(--glass-radius-card);
   padding: 1.2rem 1.5rem;
   margin: 1rem 0 1.5rem;
   color: rgba(255,255,255,0.92);
@@ -1973,10 +1982,12 @@ pre.mermaid {
 
 /* Agent Highlight Card */
 .agent-highlight {
-  background: linear-gradient(135deg, #0a1a2a 0%, #112240 100%);
+  background: linear-gradient(135deg, rgba(10, 26, 42, 0.7) 0%, rgba(17, 34, 64, 0.7) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid rgba(20, 184, 166, 0.3);
   border-left: 4px solid #14B8A6;
-  border-radius: 10px;
+  border-radius: var(--glass-radius-card);
   padding: 1.2rem 1.5rem;
   margin: 0.8rem 0;
   color: rgba(255,255,255,0.92);
@@ -1985,10 +1996,12 @@ pre.mermaid {
 
 /* Living Document Banner — warm orange/amber glow */
 .living-doc-banner {
-  background: linear-gradient(135deg, #2a1a00 0%, #3a2a10 100%);
+  background: linear-gradient(135deg, rgba(42, 26, 0, 0.7) 0%, rgba(58, 42, 16, 0.7) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid rgba(245, 158, 11, 0.4);
   border-left: 4px solid #F59E0B;
-  border-radius: 10px;
+  border-radius: var(--glass-radius-card);
   padding: 1.2rem 1.5rem;
   margin: 1rem 0 1.5rem;
   color: rgba(255,255,255,0.92);
@@ -1998,10 +2011,12 @@ pre.mermaid {
 
 /* Prompt Example Card — purple accent */
 .prompt-example {
-  background: linear-gradient(135deg, #1a0a2e 0%, #2a1a3a 100%);
+  background: linear-gradient(135deg, rgba(26, 10, 46, 0.7) 0%, rgba(42, 26, 58, 0.7) 100%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid rgba(167, 139, 250, 0.3);
   border-left: 4px solid #A78BFA;
-  border-radius: 10px;
+  border-radius: var(--glass-radius-card);
   padding: 1.2rem 1.5rem;
   margin: 0.8rem 0;
   color: rgba(255,255,255,0.92);
