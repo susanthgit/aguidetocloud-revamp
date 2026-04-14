@@ -602,30 +602,6 @@ a:hover {
   transform: translateY(-1px);
   color: #fff;
 }
-/* Primary CTA — magenta (warm, inviting) */
-.welcome-cta-primary {
-  background: rgba(255, 102, 255, 0.12);
-  border-color: rgba(255, 102, 255, 0.3);
-  color: #ff99ff;
-}
-.welcome-cta-primary:hover {
-  background: rgba(255, 102, 255, 0.2);
-  border-color: rgba(255, 102, 255, 0.5);
-  box-shadow: 0 4px 20px rgba(255, 102, 255, 0.15);
-  color: #fff;
-}
-/* Secondary CTA — cyan */
-.welcome-cta-secondary {
-  background: rgba(102, 255, 255, 0.08);
-  border-color: rgba(102, 255, 255, 0.25);
-  color: rgba(102, 255, 255, 0.85);
-}
-.welcome-cta-secondary:hover {
-  background: rgba(102, 255, 255, 0.15);
-  border-color: rgba(102, 255, 255, 0.45);
-  box-shadow: 0 4px 20px rgba(102, 255, 255, 0.1);
-  color: #fff;
-}
 /* ── HOMEPAGE: HERO STATS BOXES ───────────── */
 .welcome-stat-boxes {
   display: flex;
@@ -639,30 +615,30 @@ a:hover {
   flex-direction: column;
   align-items: center;
   padding: 0.7rem 1.2rem;
-  background: color-mix(in srgb, var(--stat-accent, #fff) 5%, rgba(255, 255, 255, 0.02));
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid color-mix(in srgb, var(--stat-accent, #fff) 15%, transparent);
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border);
   border-radius: var(--radius);
   flex: 1;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .welcome-stat-box:hover {
-  border-color: color-mix(in srgb, var(--stat-accent, #fff) 35%, transparent);
-  box-shadow: 0 0 16px color-mix(in srgb, var(--stat-accent, #fff) 12%, transparent);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
 }
 .welcome-stat-num {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--stat-accent, rgba(255, 255, 255, 0.8));
+  color: #fff;
   line-height: 1;
 }
 .welcome-stat-label {
   font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 0.25rem;

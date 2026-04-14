@@ -18,31 +18,31 @@
     {{ $certCount := len $certPages }}
     {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
     <div class="welcome-stat-boxes">
-      <div class="welcome-stat-box" style="--stat-accent: #66ffff">
+      <div class="welcome-stat-box">
         <span class="welcome-stat-num">{{ $toolCount }}</span>
         <span class="welcome-stat-label">Tools</span>
       </div>
-      <div class="welcome-stat-box" style="--stat-accent: #ff66ff">
+      <div class="welcome-stat-box">
         <span class="welcome-stat-num">{{ $videoCount }}</span>
         <span class="welcome-stat-label">Videos</span>
       </div>
-      <div class="welcome-stat-box" style="--stat-accent: #A78BFA">
+      <div class="welcome-stat-box">
         <span class="welcome-stat-num">{{ $promptCount }}</span>
         <span class="welcome-stat-label">Prompts</span>
       </div>
-      <div class="welcome-stat-box" style="--stat-accent: #10B981">
+      <div class="welcome-stat-box">
         <span class="welcome-stat-num">{{ $certCount }}</span>
         <span class="welcome-stat-label">Cert Guides</span>
       </div>
-      <div class="welcome-stat-box" style="--stat-accent: #F59E0B">
+      <div class="welcome-stat-box">
         <span class="welcome-stat-num">{{ $blogCount }}</span>
         <span class="welcome-stat-label">Articles</span>
       </div>
     </div>
     {{ partial "page-search.html" . }}
     <div class="welcome-cta-row">
-      <a href="/start/" class="welcome-cta-btn welcome-cta-primary">🚀 New Here? Start Here →</a>
-      <a href="/free-tools/" class="welcome-cta-btn welcome-cta-secondary">Explore Cloud & AI Toolkit →</a>
+      <a href="/start/" class="welcome-cta-btn">🚀 New Here? Start Here →</a>
+      <a href="/free-tools/" class="welcome-cta-btn">Explore Cloud & AI Toolkit →</a>
       <a href="/ai-hub/" class="welcome-cta-btn">Explore AI Hub Videos →</a>
     </div>
   </div>
