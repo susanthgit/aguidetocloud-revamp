@@ -100,6 +100,9 @@
     setupViewToggle();
     setupModal();
     setupPresets();
+    // Auto-load Big 3 LLMs preset in Compare tab
+    var big3 = PRESETS['big3-llm'];
+    if (big3) { compareSet.clear(); big3.forEach(function(id) { compareSet.add(id); }); updateCompareBtn(); renderCompareTable(); }
     setupCostEstimator();
     renderFavBar();
     restoreFromURL();

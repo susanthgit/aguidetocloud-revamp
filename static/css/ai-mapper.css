@@ -24,8 +24,11 @@
 /* ---- Tabs ---- */
 .aimap-tabs {
   display: flex;
-  gap: 0.25rem;
-  border-bottom: 2px solid var(--aimap-border);
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -35,20 +38,28 @@
 
 .aimap-tab {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--aimap-text-muted);
-  padding: 0.75rem 1.25rem;
-  font-size: 0.95rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   font-family: inherit;
+  flex: 1;
+  text-align: center;
 }
-.aimap-tab:hover { color: #fff; }
+.aimap-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
 .aimap-tab.active {
-  color: var(--aimap-accent);
-  border-bottom-color: var(--aimap-accent);
+  color: #000;
+  background: var(--aimap-accent);
+  border-color: var(--aimap-accent);
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
   font-weight: 600;
 }
 
