@@ -316,24 +316,6 @@ function renderNews(data, view) {
     html += '</ul></div>';
   }
 
-  // 🔍 SEARCH + SMART FILTER
-  html += '<div class="ainews-toolbar" style="grid-column:1/-1">';
-  html += '<input type="text" id="ainews-search" class="ainews-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search articles">';
-  html += '<div class="ainews-smart-filter" id="ainews-smart-filter">';
-  html += '<button class="ainews-filter-btn" id="ainews-filter-btn" aria-expanded="false" aria-haspopup="listbox">🏷️ All Categories (' + articles.length + ') ▾</button>';
-  html += '<div class="ainews-filter-dropdown" id="ainews-filter-dropdown" role="listbox" hidden>';
-  html += '<button class="ainews-filter-option ainews-filter-option-active" data-cat="all" role="option">All Categories (' + articles.length + ')</button>';
-  categories.forEach(function (cat) {
-    var count = catCounts[cat] || 0;
-    if (count === 0 && ALWAYS_SHOW_CATS.indexOf(cat) === -1) return;
-    var meta = CATEGORY_META[cat] || { emoji: '', color: '#888' };
-    html += '<button class="ainews-filter-option" data-cat="' + escapeHtml(cat) + '" role="option" style="--pill-color:' + meta.color + '">';
-    html += (meta.emoji ? meta.emoji + ' ' : '') + escapeHtml(cat) + (count ? ' <span class="ainews-filter-count">(' + count + ')</span>' : '');
-    html += '</button>';
-  });
-  html += '</div></div>';
-  html += '</div>';
-
   // 📊 COUNT INFO
   html += '<div class="ainews-filter-info" id="ainews-filter-info" style="grid-column:1/-1"><span>Showing <b id="ainews-count">' + articles.length + '</b> of ' + articles.length + ' articles</span></div>';
 
