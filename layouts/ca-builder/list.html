@@ -30,7 +30,7 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "CA Policy Builder" "subtitle" "Design, lint, and export Conditional Access policies for Microsoft Entra ID. Browse 20+ Zero Trust templates, build custom policies, check for safety risks, and get deploy-ready PowerShell & JSON — 100% offline, no login." "accent" "#7C3AED") }}
+{{ partial "tool-hero.html" (dict "title" "Conditional Access Policy Builder" "subtitle" "Design and export Microsoft Entra ID Conditional Access policies — Zero Trust aligned, deploy-ready" "accent" "#7C3AED") }}
 
 <div class="cab-page">
 
@@ -38,14 +38,14 @@
 
     {{/* ── Tab Navigation ── */}}
     <div class="cab-tabs" role="tablist" aria-label="CA Policy Builder sections">
-      <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="templates" id="tab-templates" aria-controls="panel-templates">📋 Templates</button>
-      <button class="cab-tab" role="tab" aria-selected="false" data-tab="build" id="tab-build" aria-controls="panel-build">🔨 Build</button>
+      <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="build" id="tab-build" aria-controls="panel-build">🔨 Build</button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="review" id="tab-review" aria-controls="panel-review">🔍 Review <span class="cab-badge" id="cab-policy-count" style="display:none">0</span></button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="export" id="tab-export" aria-controls="panel-export">📤 Export</button>
+      <button class="cab-tab" role="tab" aria-selected="false" data-tab="templates" id="tab-templates" aria-controls="panel-templates">📋 Templates</button>
     </div>
 
     {{/* ═══ TEMPLATES TAB ═══ */}}
-    <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates">
+    <div class="cab-panel" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates" hidden>
 
       {{/* #5: Quick-start onboarding */}}
       <div class="cab-quickstart" id="cab-quickstart">
@@ -77,7 +77,7 @@
     </div>
 
     {{/* ═══ BUILD TAB ═══ */}}
-    <div class="cab-panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build" hidden>
+    <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
 
       <div class="cab-panel-header">
         <p class="cab-panel-desc">Build a custom Conditional Access policy step by step. The preview updates live as you make selections.</p>
@@ -220,31 +220,29 @@
       </div>
     </div>
 
-  </div>{{/* .cab-container */}}
+    {{/* #8: How many policies helper */}}
+    <div class="cab-how-many">
+      <details>
+        <summary><strong>🤔 How many policies do I need?</strong></summary>
+        <div class="cab-how-many-content">
+          <table class="cab-how-many-table">
+            <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
+            <tbody>
+              <tr><td>🏢 Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
+              <tr><td>🏦 Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
+              <tr><td>🏫 Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
+              <tr><td>🔒 High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.82rem;color:var(--cab-text-dim)">💡 Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
+        </div>
+      </details>
+    </div>
 
-  {{/* #8: How many policies helper */}}
-  <div class="cab-how-many">
-    <details>
-      <summary><strong>🤔 How many policies do I need?</strong></summary>
-      <div class="cab-how-many-content">
-        <table class="cab-how-many-table">
-          <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
-          <tbody>
-            <tr><td>🏢 Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
-            <tr><td>🏦 Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
-            <tr><td>🏫 Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
-            <tr><td>🔒 High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size:0.82rem;color:var(--cab-text-dim)">💡 Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
-      </div>
-    </details>
-  </div>
-
-  {{/* ── Inline Help ── */}}
-  <div class="cab-help-section">
-    <details class="cab-help-details">
-      <summary><strong>📚 Conditional Access Quick Reference</strong></summary>
+    {{/* ── Inline Help ── */}}
+    <div class="cab-help-section">
+      <details class="cab-help-details">
+        <summary><strong>📚 Conditional Access Quick Reference</strong></summary>
       <div class="cab-help-content">
         <div class="cab-help-grid">
           <div class="cab-help-card">
@@ -288,7 +286,7 @@
 
   {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "ca-builder") }}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
-</div>
+  </div>{{/* .cab-container */}}
 
 {{/* ── Inject TOML data into JS ── */}}
 <script>

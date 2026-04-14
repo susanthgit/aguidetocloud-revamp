@@ -27,18 +27,22 @@
 
 /* ── Tabs ── */
 .cab-tabs {
-  display: flex; gap: 0; border-bottom: 2px solid var(--cab-border);
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem; overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
 .cab-tab {
-  padding: 0.75rem 1.25rem; background: none; border: none; color: var(--cab-text-dim);
-  font-size: 0.95rem; font-weight: 500; cursor: pointer; white-space: nowrap;
-  border-bottom: 3px solid transparent; transition: all 0.2s;
-  font-family: inherit; position: relative;
+  padding: 0.6rem 1.1rem; background: none; border: 1px solid transparent; color: var(--cab-text-dim);
+  font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  border-radius: 8px; transition: all 0.2s ease;
+  font-family: inherit; position: relative; flex: 1; text-align: center;
 }
-.cab-tab:hover { color: #fff; background: var(--cab-accent-glow); }
+.cab-tab:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
 .cab-tab--active, .cab-tab[aria-selected="true"] {
-  color: var(--cab-accent); border-bottom-color: var(--cab-accent);
+  color: #fff; background: var(--cab-accent); border-color: var(--cab-accent);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
 }
 .cab-badge {
   display: inline-flex; align-items: center; justify-content: center;
