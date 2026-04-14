@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0f0f1a;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .frame { width: 1200px; height: 630px; position: relative; overflow: hidden; }
+
+  .orbs {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 700px 500px at 25% 30%, var(--orb1), transparent 60%),
+      radial-gradient(ellipse 600px 450px at 75% 55%, rgba(102,255,255,0.15), transparent 60%),
+      radial-gradient(ellipse 500px 400px at 50% 85%, rgba(138,43,226,0.10), transparent 65%);
+  }
+
+  .grid {
+    position: absolute; inset: 0; z-index: 2;
+    background-image:
+      linear-gradient(rgba(102,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(102,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  .content {
+    position: absolute; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 48px 72px;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.035);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 24px;
+    padding: 44px 64px;
+    text-align: center;
+    max-width: 900px; width: 100%;
+    position: relative;
+  }
+
+  .glass::before {
+    content: ''; position: absolute; inset: -1px; border-radius: 24px; padding: 1.5px;
+    background: linear-gradient(135deg, var(--accent) 0%, transparent 35%, transparent 65%, rgba(102,255,255,0.25) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+
+  .pill {
+    display: inline-block; padding: 5px 18px; border-radius: 16px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    margin-bottom: 16px;
+  }
+
+  .icon { width: 56px; height: 56px; margin: 0 auto 8px; }
+  .icon img { width: 100%; height: 100%; }
+
+  .title {
+    font-size: 50px; font-weight: 800; color: #fff; margin: 0 0 8px;
+    letter-spacing: -1px; text-shadow: 0 0 50px var(--glow);
+  }
+
+  .line {
+    width: 100px; height: 3px; margin: 14px auto;
+    background: linear-gradient(90deg, var(--accent), rgba(102,255,255,0.5));
+    border-radius: 2px;
+  }
+
+  .tagline {
+    font-size: 20px; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.4;
+  }
+
+  /* Optional pills row */
+  .info-pills { display: flex; gap: 14px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+  .info-pill {
+    padding: 6px 18px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 48px;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  }
+  .footer-left { display: flex; align-items: center; gap: 12px; }
+  .logo-circle {
+    width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .url { font-size: 15px; color: rgba(102,255,255,0.45); font-weight: 500; }
+  .brand { font-size: 14px; color: rgba(255,255,255,0.35); font-weight: 600; }
+  .brand span { color: rgba(255,102,255,0.6); }
+</style>
+</head>
+<body>
+  <div class="frame" style="--accent: {{ACCENT}}; --glow: {{GLOW}}; --orb1: {{ORB1}};">
+    <div class="orbs"></div>
+    <div class="grid"></div>
+    <div class="content">
+      <div class="glass">
+        <div class="pill">{{PILL}}</div>
+        <div class="icon"><img src="{{ICON_PATH}}" alt=""></div>
+        <h1 class="title">{{TITLE}}</h1>
+        <div class="line"></div>
+        <p class="tagline">{{TAGLINE}}</p>
+        {{PILLS_HTML}}
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-left">
+        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+        <span class="url">aguidetocloud.com</span>
+      </div>
+      <span class="brand">A Guide to <span>Cloud & AI</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 ---
 title: "Microsoft Event Calendar"
 description: "Never miss a Microsoft event — Ignite, Build, community calls, webinars, and local user groups in one searchable calendar with iCal export."
+images: ["images/og/sections/events.jpg"]
 ---
 
 <div class="coming-soon-page">

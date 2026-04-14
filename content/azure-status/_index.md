@@ -1,6 +1,7 @@
 ---
 title: "Azure Outage Timeline"
 description: "Track Azure service incidents and outages in a clean, searchable timeline — never miss an outage that affects your region or services."
+images: ["images/og/sections/azure-status.jpg"]
 ---
 
 <div class="coming-soon-page">

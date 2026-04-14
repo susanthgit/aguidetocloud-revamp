@@ -1,6 +1,7 @@
 ---
 title: "One-Click Azure Labs"
 description: "Deploy pre-built Azure lab environments with a single click — perfect for learning, demos, and hands-on practice with real cloud resources."
+images: ["images/og/sections/labs.jpg"]
 ---
 
 <div class="coming-soon-page">
