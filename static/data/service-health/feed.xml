@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 15:23:36 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 17:21:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
@@ -28,9 +28,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degraded file search results in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1277749</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may experience degraded file search results in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have experienced degraded file search results in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1277749</guid>
       <pubDate>Fri, 10 Apr 2026 13:00:00 +0000</pubDate>
     </item>
@@ -51,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1274150</guid>
       <pubDate>Wed, 08 Apr 2026 14:38:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1279825</link>
+      <description>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1279825</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users in the United States may have been unable to access multiple Microsoft 365 services</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1249914</guid>
       <pubDate>Thu, 12 Mar 2026 12:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be intermittently unable to access their Exchange Online mailboxes in some connection methods</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1256020</link>
-      <description>[Exchange Online] Users may have been intermittently unable to access their Exchange Online mailboxes in some connection methods.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1256020</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
