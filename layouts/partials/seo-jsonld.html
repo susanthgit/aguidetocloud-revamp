@@ -3,12 +3,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ .Site.BaseURL }}",
-  "description": "{{ .Site.Params.description }}",
+  "name": {{ .Site.Title | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "description": {{ .Site.Params.description | jsonify }},
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Params.author }}"
+    "name": {{ .Site.Params.author | jsonify }}
   }
 }
 </script>
@@ -16,13 +16,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ .Site.BaseURL }}",
-  "logo": "{{ .Site.BaseURL }}images/og-default.jpg",
+  "name": {{ .Site.Title | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "logo": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }},
   "sameAs": [
-    "{{ .Site.Params.youtube_channel }}",
-    "{{ .Site.Params.linkedin }}",
-    "{{ .Site.Params.github }}"
+    {{ .Site.Params.youtube_channel | jsonify }},
+    {{ .Site.Params.linkedin | jsonify }},
+    {{ .Site.Params.github | jsonify }}
   ]
 }
 </script>
@@ -32,7 +32,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Cloud & AI Toolkit — Free Tools for IT Pros",
+  "name": "Cloud & AI Toolkit \u2014 Free Tools for IT Pros",
   "description": "Professional-grade free tools for IT administrators, cloud learners, and AI practitioners.",
   "numberOfItems": {{ len $toolNav }},
   "itemListElement": [
@@ -41,7 +41,7 @@
       "@type": "ListItem",
       "position": {{ add $i 1 }},
       "name": {{ .name | jsonify }},
-      "url": "{{ site.BaseURL }}{{ strings.TrimPrefix "/" .url | strings.TrimSuffix "/" }}/"
+      "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify }}
     }{{ end }}
   ]
 }
@@ -52,12 +52,12 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "{{ .Title }}",
-  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
-  "thumbnailUrl": "https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg",
+  "name": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ $.Site.Params.description | jsonify }}{{ end }},
+  "thumbnailUrl": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify }},
   "uploadDate": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  "embedUrl":"https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}",
-  "contentUrl": "https://www.youtube.com/watch?v={{ .Params.youtube_id }}"
+  "embedUrl": {{ printf "https://www.youtube-nocookie.com/embed/%s" .Params.youtube_id | jsonify }},
+  "contentUrl": {{ printf "https://www.youtube.com/watch?v=%s" .Params.youtube_id | jsonify }}
 }
 </script>
 {{ end }}
@@ -66,28 +66,28 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "{{ .Title }}",
-  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ $.Site.Params.description | jsonify }}{{ end }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ with .Params.lastmod }}{{ (time .).Format "2006-01-02T15:04:05Z07:00" }}{{ else }}{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}{{ end }}",
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Params.author }}",
-    "url": "{{ .Site.BaseURL }}about/"
+    "name": {{ .Site.Params.author | jsonify }},
+    "url": {{ printf "%sabout/" .Site.BaseURL | jsonify }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": "{{ .Site.Title }}",
+    "name": {{ .Site.Title | jsonify }},
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ .Site.BaseURL }}images/og-default.jpg"
+      "url": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }}
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
+    "@id": {{ .Permalink | jsonify }}
   },
-  {{ if .Params.youtube_id }}"image": "https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg"{{ else if .Params.images }}"image": "{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}"{{ else }}"image": "{{ .Site.BaseURL }}images/og-default.jpg"{{ end }},
+  {{ if .Params.youtube_id }}"image": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify }}{{ else if .Params.images }}"image": {{ printf "%s%s" .Site.BaseURL (index .Params.images 0 | strings.TrimPrefix "/") | jsonify }}{{ else }}"image": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }}{{ end }},
   "wordCount": "{{ .WordCount }}"
 }
 </script>
@@ -101,10 +101,10 @@
     {{ range $i, $item := .Params.faq }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": "{{ .question }}",
+      "name": {{ .question | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ .answer }}"
+        "text": {{ .answer | jsonify }}
       }
     }{{ end }}
   ]
@@ -124,7 +124,7 @@
   },
   "url": "https://www.aguidetocloud.com/about/",
   "image": "https://www.aguidetocloud.com/images/about/headshot.webp",
-  "description": "Sr AI Solution Engineer at Microsoft New Zealand. Creator of A Guide to Cloud & AI — free YouTube tutorials on Microsoft 365 Copilot, Azure, AI Agents, and cloud certifications.",
+  "description": "Sr AI Solution Engineer at Microsoft New Zealand. Creator of A Guide to Cloud & AI \u2014 free YouTube tutorials on Microsoft 365 Copilot, Azure, AI Agents, and cloud certifications.",
   "sameAs": [
     "https://www.linkedin.com/in/susanthsutheesh/",
     "https://www.youtube.com/susanthsutheesh",
@@ -155,23 +155,23 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "{{ .Site.BaseURL }}"
+      "item": {{ .Site.BaseURL | jsonify }}
     }{{ if and .Parent (not .Parent.IsHome) }},
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ .Parent.Title }}",
-      "item": "{{ .Parent.Permalink }}"
+      "name": {{ .Parent.Title | jsonify }},
+      "item": {{ .Parent.Permalink | jsonify }}
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "{{ .Title }}"
+      "name": {{ .Title | jsonify }}
     }{{ else }},
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ .Title }}"
+      "name": {{ .Title | jsonify }}
     }{{ end }}
   ]
 }

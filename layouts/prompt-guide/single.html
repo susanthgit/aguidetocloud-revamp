@@ -11,7 +11,7 @@
   "url": "{{ .Permalink }}",
   "totalTime": "PT{{ .Params.read_time | replaceRE "[^0-9]" "" }}M",
   "step": [
-    {"@type":"HowToStep","name":"Understand the technique","text":"Learn what {{ .Params.academic_name }} is and when to use it."},
+    {"@type":"HowToStep","name":"Understand the technique","text":{{ printf "Learn what %s is and when to use it." .Params.academic_name | jsonify }}},
     {"@type":"HowToStep","name":"Study before and after examples","text":"Compare a vague prompt with an improved version."},
     {"@type":"HowToStep","name":"Practice in the sandbox","text":"Rewrite the starter prompt using the technique."}
   ],
@@ -104,7 +104,7 @@
           <h2>🔧 Fix This Prompt</h2>
           <p>This prompt is broken. Can you spot what's wrong and fix it?</p>
           <div class="pguide-sandbox-bad">{{ . }}</div>
-          <textarea id="pguide-fix-input" class="pguide-sandbox-textarea" rows="3" placeholder="Write your fixed version here..."></textarea>
+          <textarea id="pguide-fix-input" class="pguide-sandbox-textarea" rows="3" placeholder="Write your fixed version here..." aria-label="Write your fixed prompt version"></textarea>
           <div class="pguide-fix-criteria" id="pguide-fix-criteria">
             {{ range $.Params.fix_issues }}
             <div class="pguide-criterion pguide-fix-issue" data-pattern="{{ .pattern }}">

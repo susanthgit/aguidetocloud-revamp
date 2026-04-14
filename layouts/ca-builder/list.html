@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "CA Policy Builder — Conditional Access Policy Designer",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Any",
@@ -23,7 +23,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {{ range $i, $f := .Params.faq }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": "{{ $f.q }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ $f.a }}" } }
+    { "@type": "Question", "name": {{ $f.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | jsonify }} } }
     {{ end }}
   ]
 }
@@ -214,7 +214,7 @@
         <details>
           <summary style="cursor:pointer;color:var(--cab-accent);font-size:0.9rem">📥 Import existing policies from Graph API JSON</summary>
           <p style="font-size:0.82rem;color:var(--cab-text-dim);margin:0.5rem 0">Paste your exported Graph API JSON array to review existing policies.</p>
-          <textarea class="cab-form-textarea" id="cab-import-input" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]' style="min-height:80px"></textarea>
+          <textarea class="cab-form-textarea" id="cab-import-input" aria-label="Paste Graph API JSON" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]' style="min-height:80px"></textarea>
           <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-top:0.5rem" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">📥 Import</button>
         </details>
       </div>

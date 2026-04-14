@@ -28,8 +28,8 @@ OUTPUT_DIR = SCRIPT_DIR / "output"
 UPLOADED_FILE = SCRIPT_DIR / "uploaded_ids.json"
 CREDENTIALS_DIR = Path.home() / "AppData" / "Roaming" / "npm" / "node_modules" / "youtube-channel-mcp"
 
-DAILY_LIMIT = 45  # stay under YouTube's ~50/day thumbnail limit
-DELAY_BETWEEN = 1.5  # seconds between uploads
+DAILY_LIMIT = 700  # all remaining
+DELAY_BETWEEN = 18  # 18 seconds between uploads — realistic gap to avoid burst rate limit
 
 
 def load_uploaded():
@@ -99,7 +99,7 @@ def main():
     uploaded = load_uploaded()
     pending = [vid for vid in sorted(all_ids) if vid not in uploaded and (OUTPUT_DIR / f"{vid}.png").exists()]
 
-    print(f"\n📊 Thumbnail Upload Status")
+    print(f"\nThumbnail Upload Status")
     print(f"   Total rendered:  {len(all_ids)}")
     print(f"   Already uploaded: {len(uploaded)}")
     print(f"   Pending:          {len(pending)}")
@@ -107,13 +107,13 @@ def main():
     print()
 
     if not pending:
-        print("✅ All thumbnails are uploaded! Nothing to do.")
+        print("All thumbnails are uploaded! Nothing to do.")
         return
 
     batch = pending[:args.limit]
 
     if args.dry_run:
-        print(f"🔍 DRY RUN — would upload {len(batch)} thumbnails:")
+        print(f"DRY RUN -- would upload {len(batch)} thumbnails:")
         for vid in batch:
             print(f"   {vid}.png")
         return
@@ -133,7 +133,7 @@ def main():
             uploaded.add(vid)
 
             if ok % 10 == 0:
-                print(f"  ✅ {ok}/{len(batch)} uploaded...")
+                print(f"  OK {ok}/{len(batch)} uploaded...")
                 save_uploaded(uploaded)  # checkpoint every 10
 
             time.sleep(DELAY_BETWEEN)
@@ -141,11 +141,11 @@ def main():
         except Exception as e:
             err = str(e)
             if "too many thumbnails" in err.lower():
-                print(f"\n⚠️ Rate limit hit at {ok} uploads. Saving progress and stopping.")
+                print(f"\nRate limit hit at {ok} uploads. Saving progress and stopping.")
                 rate_limited = True
                 break
             else:
-                print(f"  ❌ {vid}: {err[:100]}")
+                print(f"  FAIL {vid}: {err[:100]}")
                 fail += 1
 
     # Final save
@@ -155,12 +155,11 @@ def main():
     days_left = (remaining // DAILY_LIMIT) + (1 if remaining % DAILY_LIMIT else 0)
 
     print(f"\n{'='*50}")
-    print(f"✅ Uploaded:    {ok}")
-    print(f"❌ Failed:      {fail}")
-    print(f"⏳ Remaining:   {remaining}")
-    print(f"📅 Days left:   ~{days_left} (at {DAILY_LIMIT}/day)")
+    print(f"Uploaded:    {ok}")
+    print(f"Failed:      {fail}")
+    print(f"Remaining:   {remaining}")
     if rate_limited:
-        print(f"⚠️ Rate limited — run again tomorrow")
+        print(f"Rate limited -- run again later")
     print(f"{'='*50}")
 
 

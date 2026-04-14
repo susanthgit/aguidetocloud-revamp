@@ -489,8 +489,8 @@
             <div class="showdown-result-score">Match: ${pct}%</div>
             <div class="showdown-result-reason">${esc(r.provider.description)}</div>
             <div class="showdown-result-actions">
-              <a href="${r.provider.url}" target="_blank" class="showdown-btn showdown-btn-primary" style="text-decoration:none">Try ${esc(r.provider.product)} →</a>
-              <a href="${r.provider.pricing_url}" target="_blank" class="showdown-btn showdown-btn-secondary" style="text-decoration:none">See Pricing</a>
+              <a href="${r.provider.url}" target="_blank" rel="noopener noreferrer" class="showdown-btn showdown-btn-primary" style="text-decoration:none">Try ${esc(r.provider.product)} →</a>
+              <a href="${r.provider.pricing_url}" target="_blank" rel="noopener noreferrer" class="showdown-btn showdown-btn-secondary" style="text-decoration:none">See Pricing</a>
             </div>
           </div>`;
       }).join('')}

@@ -150,11 +150,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "{{ $s.name }}",
-  "description": "{{ $s.description }}",
+  "name": {{ $s.name | jsonify }},
+  "description": {{ $s.description | jsonify }},
   "url": "{{ .Permalink }}",
-  "brand": { "@type": "Brand", "name": "{{ $s.provider }}" },
-  "category": "{{ $cat.name }}"
+  "brand": { "@type": "Brand", "name": {{ $s.provider | jsonify }} },
+  "category": {{ $cat.name | jsonify }}
 }
 </script>
 

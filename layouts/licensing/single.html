@@ -87,7 +87,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "{{ .Params.plan_name }}",
+  "name": {{ .Params.plan_name | jsonify }},
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "brand": {

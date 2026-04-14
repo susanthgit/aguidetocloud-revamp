@@ -11,7 +11,7 @@
     {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
     {{/* Counter + Ko-fi row */}}
     {{ $url := $p.RelPermalink }}
-    {{ $counters := site.Data.tool_counters.tools }}
+    {{ $counters := (index hugo.Data "tool_counters").tools }}
     <div class="tool-hero-badges">
       {{ range $counters }}
         {{ if eq .url $url }}

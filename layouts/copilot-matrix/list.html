@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Microsoft Copilot Feature Matrix",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",

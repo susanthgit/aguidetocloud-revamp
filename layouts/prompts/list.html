@@ -18,7 +18,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "AI Prompt Library — Tested Prompts for M365 Copilot, ChatGPT, Claude & More",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $allPrompts }},
   "publisher": {
@@ -40,8 +40,8 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "{{ .Title }} — AI Prompts for M365 Copilot, ChatGPT & More",
-  "description": "{{ .Description }}",
+  "name": {{ printf "%s — AI Prompts for M365 Copilot, ChatGPT & More" .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $pagePrompts }},
   "isPartOf": {
@@ -54,7 +54,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
       {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
-      {"@type": "ListItem", "position": 3, "name": "{{ .Title }}"}
+      {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}}
     ]
   }
 }

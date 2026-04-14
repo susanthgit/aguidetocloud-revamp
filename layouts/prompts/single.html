@@ -13,8 +13,8 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "{{ .Title }}",
-  "description": "{{ .Description }}",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "step": [
     {
@@ -26,7 +26,7 @@
     {{ range $i, $p := $platforms }}{{ if $i }},{{ end }}
     {
       "@type": "HowToTool",
-      "name": "{{ with (index hugo.Data.platforms $p) }}{{ .name }}{{ else }}{{ $p }}{{ end }}"
+      "name": {{ with (index hugo.Data.platforms $p) }}{{ .name | jsonify }}{{ else }}{{ $p | jsonify }}{{ end }}
     }
     {{ end }}
   ],
@@ -36,10 +36,10 @@
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
       {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
       {{ with .Parent }}{{ if ne .RelPermalink "/prompts/" }}
-      {"@type": "ListItem", "position": 3, "name": "{{ .Title }}", "item": "{{ .Permalink }}"},
-      {"@type": "ListItem", "position": 4, "name": "{{ $.Title }}"}
+      {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": "{{ .Permalink }}"},
+      {"@type": "ListItem", "position": 4, "name": {{ $.Title | jsonify }}}
       {{ else }}
-      {"@type": "ListItem", "position": 3, "name": "{{ $.Title }}"}
+      {"@type": "ListItem", "position": 3, "name": {{ $.Title | jsonify }}}
       {{ end }}{{ end }}
     ]
   },
@@ -87,7 +87,7 @@
       <!-- Platforms -->
       {{ if $platforms }}
       <div class="prompt-single-platforms">
-        <h3>Works on</h3>
+        <h2>Works on</h2>
         <div class="prompt-single-platform-list">
           {{ range $platforms }}
             {{ $pdata := index hugo.Data.platforms . }}
@@ -103,7 +103,7 @@
 
       <!-- Open in Platform (copy + launch) -->
       <div class="prompt-open-in">
-        <h3>Copy & Open in</h3>
+        <h2>Copy & Open in</h2>
         <div class="prompt-open-buttons">
           {{ range $platforms }}
           {{ if eq . "chatgpt" }}<a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="prompt-open-btn">🟢 ChatGPT</a>{{ end }}

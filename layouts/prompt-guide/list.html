@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Prompt Engineering Guide — Learn to Write Better AI Prompts",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",

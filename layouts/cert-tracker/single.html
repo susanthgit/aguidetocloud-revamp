@@ -102,7 +102,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "{{ .Params.exam_code }}: {{ .Params.exam_title }}",
+  "name": {{ printf "%s: %s" .Params.exam_code .Params.exam_title | jsonify }},
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "provider": {
@@ -110,7 +110,7 @@
     "name": "Microsoft",
     "url": "https://learn.microsoft.com"
   },
-  "educationalLevel": "{{ .Params.exam_level }}",
+  "educationalLevel": {{ .Params.exam_level | jsonify }},
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online"

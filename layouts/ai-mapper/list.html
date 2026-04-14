@@ -291,7 +291,7 @@ window.__aimapData = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "AI Service Mapper",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Web Browser",

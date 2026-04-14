@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "WiFi QR Code Generator",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -95,9 +95,9 @@
         <div class="wifiqr-field">
           <label class="wifiqr-label">Custom Background Colour (overrides theme)</label>
           <div class="wifiqr-color-row">
-            <input type="checkbox" id="wifiqr-custom-bg-enable" style="width:auto">
-            <input type="color" class="wifiqr-color-input" id="wifiqr-custom-bg" value="#1e293b" disabled>
-            <input type="text" class="wifiqr-color-hex" id="wifiqr-custom-bg-hex" value="#1e293b" maxlength="7" disabled>
+            <input type="checkbox" id="wifiqr-custom-bg-enable" style="width:auto" aria-label="Enable custom background colour">
+            <input type="color" class="wifiqr-color-input" id="wifiqr-custom-bg" value="#1e293b" disabled aria-label="Custom background colour">
+            <input type="text" class="wifiqr-color-hex" id="wifiqr-custom-bg-hex" value="#1e293b" maxlength="7" disabled aria-label="Custom background hex">
           </div>
         </div>
 

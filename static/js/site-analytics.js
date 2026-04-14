@@ -5,6 +5,8 @@
 (function() {
   'use strict';
   var API = '/api/stats';
+  var _trendChart = null;
+  var _activityChart = null;
 
   // Tool display names and colours (matches Tool Registry)
   var TOOLS = {
@@ -134,8 +136,8 @@
   function renderTrendChart(trend) {
     var ctx = document.getElementById('sa-trend-chart');
     if (!ctx || !trend || !trend.length) return;
-    new Chart(ctx, {
-      type: 'line',
+    if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
+    _trendChart = new Chart(ctx, {
       data: {
         labels: trend.map(function(d) { return d.date.slice(5); }), // MM-DD
         datasets: [
@@ -175,8 +177,8 @@
     var ctx = document.getElementById('sa-activity-chart');
     if (!ctx || !leaderboard || !leaderboard.length) return;
     var top8 = leaderboard.slice(0, 8);
-    new Chart(ctx, {
-      type: 'doughnut',
+    if (_activityChart) { _activityChart.destroy(); _activityChart = null; }
+    _activityChart = new Chart(ctx, {
       data: {
         labels: top8.map(function(t) { return getToolInfo(t.tool).name; }),
         datasets: [{

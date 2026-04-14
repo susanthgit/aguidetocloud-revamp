@@ -339,10 +339,16 @@
   }
 
   // ── Modal ──
+  let _modalController = null;
   async function openModal(issueId) {
     const overlay = document.getElementById('shealth-modal-overlay');
     const body = document.getElementById('shealth-modal-body');
     if (!overlay || !body) return;
+
+    // Cancel any in-flight modal fetch
+    if (_modalController) _modalController.abort();
+    _modalController = new AbortController();
+    const signal = _modalController.signal;
 
     // Find in current data first
     const issue = allIssues.find(i => i.id === issueId);
@@ -359,9 +365,9 @@
     // Try to load per-incident detail (has update posts)
     let detail = null;
     try {
-      const resp = await fetch(INCIDENTS_URL + issueId + '.json');
+      const resp = await fetch(INCIDENTS_URL + issueId + '.json', { signal });
       if (resp.ok) detail = await resp.json();
-    } catch (e) { /* fallback to summary */ }
+    } catch (e) { if (e.name === 'AbortError') return; /* fallback to summary */ }
 
     const d = detail || issue;
     const updates = d.updates || [];

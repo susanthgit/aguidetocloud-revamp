@@ -150,7 +150,7 @@
     <div class="palette-modal-overlay" id="palette-save-modal" role="dialog" aria-modal="true" aria-label="Save palette">
       <div class="palette-modal">
         <h3>Save Palette</h3>
-        <input type="text" id="palette-fav-name" class="palette-input" placeholder="My beautiful palette" maxlength="40">
+        <input type="text" id="palette-fav-name" class="palette-input" placeholder="My beautiful palette" maxlength="40" aria-label="Palette name">
         <div class="palette-modal-actions">
           <button class="palette-btn" id="palette-save-cancel">Cancel</button>
           <button class="palette-btn palette-btn-primary" id="palette-save-confirm">Save</button>
@@ -198,8 +198,8 @@
         <div class="palette-contrast-picker-card">
           <label class="palette-section-title">Foreground (Text)</label>
           <div class="palette-color-input-row">
-            <input type="color" id="palette-fg-picker" value="#FFFFFF" class="palette-color-swatch-input">
-            <input type="text" id="palette-fg-hex" value="#FFFFFF" class="palette-input palette-mono" maxlength="7">
+            <input type="color" id="palette-fg-picker" value="#FFFFFF" class="palette-color-swatch-input" aria-label="Foreground colour">
+            <input type="text" id="palette-fg-hex" value="#FFFFFF" class="palette-input palette-mono" maxlength="7" aria-label="Foreground hex colour">
           </div>
           <div class="palette-contrast-import">
             <label class="palette-label">Import from palette</label>
@@ -212,8 +212,8 @@
         <div class="palette-contrast-picker-card">
           <label class="palette-section-title">Background</label>
           <div class="palette-color-input-row">
-            <input type="color" id="palette-bg-picker" value="#1E1E2E" class="palette-color-swatch-input">
-            <input type="text" id="palette-bg-hex" value="#1E1E2E" class="palette-input palette-mono" maxlength="7">
+            <input type="color" id="palette-bg-picker" value="#1E1E2E" class="palette-color-swatch-input" aria-label="Background colour">
+            <input type="text" id="palette-bg-hex" value="#1E1E2E" class="palette-input palette-mono" maxlength="7" aria-label="Background hex colour">
           </div>
           <div class="palette-contrast-import">
             <label class="palette-label">Import from palette</label>
@@ -260,7 +260,7 @@
   {{/* ══════════════ TAB 1: EXPLORE ══════════════ */}}
   <div class="palette-panel active" id="panel-explore" role="tabpanel">
     <div class="palette-explore-controls">
-      <input type="text" id="palette-explore-search" class="palette-input" placeholder="Search palettes...">
+      <input type="text" id="palette-explore-search" class="palette-input" placeholder="Search palettes..." aria-label="Search palettes">
       <div class="palette-explore-cats" id="palette-explore-cats">
         <button class="palette-pill active" data-cat="all">All</button>
         <button class="palette-pill" data-cat="nature">🌿 Nature</button>
@@ -307,7 +307,7 @@
   {{ end }}
 
   {{/* ── Pagefind searchable ── */}}
-  <div data-pagefind-body style="display:none">
+  <div data-pagefind-body style="display:none" aria-hidden="true">
     <p>Colour palette generator. Generate colour palettes with harmony modes. Extract colours from images. WCAG contrast checker. Colour blindness simulator. Export to CSS Tailwind SCSS. Free online colour tool.</p>
   </div>
 

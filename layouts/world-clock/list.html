@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Global Meeting Planner & World Clock",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -102,11 +102,11 @@
       <div class="wclk-meeting-controls">
         <div class="wclk-field">
           <label class="wclk-label" for="wclk-meeting-date">Meeting Date</label>
-          <input type="date" class="wclk-input" id="wclk-meeting-date">
+          <input type="date" class="wclk-input" id="wclk-meeting-date" aria-label="Meeting date">
         </div>
         <div class="wclk-field">
           <label class="wclk-label" for="wclk-duration">Duration</label>
-          <select class="wclk-select" id="wclk-duration">
+          <select class="wclk-select" id="wclk-duration" aria-label="Meeting duration">
             <option value="30">30 min</option>
             <option value="60" selected>1 hour</option>
             <option value="90">1.5 hours</option>
@@ -119,7 +119,7 @@
       {{/* Time slider */}}
       <div class="wclk-slider-wrap" id="wclk-slider-wrap">
         <label class="wclk-label">Drag to explore times <span class="wclk-slider-time" id="wclk-slider-label">9 AM</span></label>
-        <input type="range" class="wclk-slider" id="wclk-time-slider" min="0" max="95" value="36" step="1">
+        <input type="range" class="wclk-slider" id="wclk-time-slider" min="0" max="95" value="36" step="1" aria-label="Meeting time">
         <div class="wclk-slider-endpoints">
           <span>12 AM</span>
           <span>6 AM</span>
@@ -155,11 +155,11 @@
       <div class="wclk-convert-row">
         <div class="wclk-field">
           <label class="wclk-label" for="wclk-conv-datetime">Date & Time</label>
-          <input type="datetime-local" class="wclk-input" id="wclk-conv-datetime">
+          <input type="datetime-local" class="wclk-input" id="wclk-conv-datetime" aria-label="Date and time to convert">
         </div>
         <div class="wclk-field">
           <label class="wclk-label" for="wclk-conv-source">From Time Zone</label>
-          <select class="wclk-select" id="wclk-conv-source"></select>
+          <select class="wclk-select" id="wclk-conv-source" aria-label="Source time zone"></select>
         </div>
       </div>
       <div class="wclk-convert-presets">
@@ -171,7 +171,7 @@
       <div class="wclk-field">
         <label class="wclk-label">Convert to</label>
         <div class="wclk-target-search-wrap">
-          <input type="text" class="wclk-search" id="wclk-target-search" placeholder="Add a target time zone..." autocomplete="off">
+          <input type="text" class="wclk-search" id="wclk-target-search" placeholder="Add a target time zone..." autocomplete="off" aria-label="Add target time zone">
           <div class="wclk-search-results" id="wclk-target-results"></div>
         </div>
       </div>
@@ -218,7 +218,7 @@
       <div class="wclk-dst-section">
         <h3>🔍 Check DST for Any Time Zone</h3>
         <div class="wclk-field">
-          <input type="text" class="wclk-search" id="wclk-dst-search" placeholder="Search a city or time zone..." autocomplete="off">
+          <input type="text" class="wclk-search" id="wclk-dst-search" placeholder="Search a city or time zone..." autocomplete="off" aria-label="Search DST info">
           <div class="wclk-search-results" id="wclk-dst-results"></div>
         </div>
         <div id="wclk-dst-info" class="wclk-dst-info"></div>

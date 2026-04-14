@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "M365 Migration Planner — Free Interactive Microsoft 365 Migration Tool",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",

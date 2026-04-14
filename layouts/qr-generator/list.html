@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "QR Code Generator",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -246,7 +246,7 @@
               <div class="qrgen-field">
                 <label class="qrgen-label">Foreground</label>
                 <div class="qrgen-color-row">
-                  <input type="color" class="qrgen-color-input" id="qrgen-fg-color" value="#EC4899">
+                  <input type="color" class="qrgen-color-input" id="qrgen-fg-color" value="#EC4899" aria-label="QR foreground colour">
                   <input type="text" class="qrgen-color-hex" id="qrgen-fg-hex" value="#EC4899" maxlength="7">
                 </div>
               </div>

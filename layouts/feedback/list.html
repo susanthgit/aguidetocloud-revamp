@@ -125,7 +125,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "A Guide to Cloud — Community Feedback",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "Feedback",
   "operatingSystem": "Web",

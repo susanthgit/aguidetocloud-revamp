@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Copilot Readiness Checker — Is Your Org Ready for Microsoft 365 Copilot?",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",

@@ -89,6 +89,7 @@
       {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if ne .url "/feedback/" }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
       <span class="siteana-stat-num">{{ $tc }}</span>
       <span class="siteana-stat-label">Tools</span>
+    </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
       <span class="siteana-stat-label">Blog Posts</span>

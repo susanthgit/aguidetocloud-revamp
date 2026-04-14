@@ -41,9 +41,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "{{ .Title | plainify }}",
+  "name": {{ .Title | plainify | jsonify }},
   "url": "{{ .Permalink }}",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },

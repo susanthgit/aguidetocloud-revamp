@@ -84,7 +84,7 @@
         <span class="pomo-focus-name" id="pomo-focus-name">Click to add a task…</span>
       </div>
       <div class="pomo-focus-task-input" id="pomo-focus-task-input" style="display:none">
-        <input type="text" class="pomo-input" id="pomo-quick-task" placeholder="What are you working on?" maxlength="200">
+        <input type="text" class="pomo-input" id="pomo-quick-task" placeholder="What are you working on?" maxlength="200" aria-label="Current task">
         <button class="pomo-btn-xs" id="pomo-quick-task-ok">✓</button>
       </div>
     </div>
@@ -99,7 +99,7 @@
         <button class="pomo-ambient-pill" data-ambient="s-static" style="--pill-color:#A78BFA">Static</button>
         <button class="pomo-ambient-pill" data-ambient="s-warm" style="--pill-color:#F97316">Warm</button>
       </div>
-      <input type="range" class="pomo-vol-slider" id="pomo-ambient-vol-quick" min="0" max="100" value="50" title="Ambient volume">
+      <input type="range" class="pomo-vol-slider" id="pomo-ambient-vol-quick" min="0" max="100" value="50" title="Ambient volume" aria-label="Ambient volume">
     </div>
 
     {{/* Bottom row: actions + today count */}}
@@ -301,7 +301,7 @@
   </div>
 
   {{/* ── Pagefind hidden block ── */}}
-  <div data-pagefind-body style="display:none">
+  <div data-pagefind-body style="display:none" aria-hidden="true">
     <p>Pomodoro Focus Timer — free productivity timer with ambient sounds, task tracking, and focus statistics. Customise work sessions, short breaks, long breaks. Rain, café, forest, ocean, white noise, lo-fi ambient sounds. Track your daily focus time with heatmap and weekly charts.</p>
   </div>
 

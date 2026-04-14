@@ -55,8 +55,8 @@
     <span>📅 Was a service down on a specific date?</span>
   </div>
   <div class="shealth-date-lookup" id="shealth-date-lookup">
-    <input type="date" id="shealth-date-picker" class="shealth-search">
-    <select id="shealth-date-service" class="shealth-select">
+    <input type="date" id="shealth-date-picker" class="shealth-search" aria-label="Select date to check">
+    <select id="shealth-date-service" class="shealth-select" aria-label="Service for date lookup">
       <option value="all">Any Service</option>
     </select>
     <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
@@ -123,7 +123,7 @@
   "@type": "WebApplication",
   "name": "Microsoft Service Health Tracker",
   "url": "{{ .Permalink }}",
-  "description": "{{ .Description }}",
+  "description": {{ .Description | jsonify }},
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
