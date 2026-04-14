@@ -48,7 +48,16 @@ If your boss asks "what safety controls do we have in Copilot?" — here's the a
 | 🔒 **Data access controls** | Permissions + sensitivity labels control what data Copilot surfaces | Yes — via Purview + SharePoint permissions | Audit SharePoint permissions NOW |
 | 🌐 **Web search** | Controls whether Copilot uses web data | Yes — org or per-group via Cloud Policy | Decide your org's web search policy |
 
-> **Do these 3 things today:** (1) Audit your SharePoint permissions for oversharing, (2) Deploy sensitivity labels if you haven't, (3) Decide if any roles need the harmful content toggle.
+### 🎯 The Key Takeaway Most Admins Miss
+
+You can run **two different content safety postures in the same organisation** — side by side:
+
+- **Group A (99% of users):** Full harmful content protection ON → Copilot blocks sensitive topics → standard safe experience
+- **Group B (selected roles):** Admin assigns a Cloud Policy to their Entra ID security group → they get a per-conversation toggle to disable harmful content filtering → they can review violent, sexual, or otherwise sensitive material as part of their job
+
+Both groups are **fully auditable** — all Copilot interactions (prompts and responses) can be searched, audited, and retained via Microsoft Purview, regardless of whether harmful content protection was on or off during that conversation.
+
+> **Do these 3 things today:** (1) Audit your SharePoint permissions for oversharing, (2) Deploy sensitivity labels if you haven't, (3) Decide if any roles need the harmful content toggle — and create a dedicated security group for them.
 
 ---
 
@@ -162,6 +171,33 @@ This feature is designed for roles that **must** work with sensitive content as 
 | **Policy/publication reviewers** | Reviewing publications or media for restricted or harmful content |
 | **HR investigators** | Analysing complaints involving sensitive behaviour |
 | **Journalism/media** | Fact-checking or summarising sensitive news stories |
+
+### How Targeted Rollout Works — Two Postures, One Tenant
+
+This is what makes this feature powerful for enterprises — you're not choosing between "safe for everyone" or "open for everyone." You run both:
+
+```mermaid
+flowchart TD
+    A["🏢 Your Organisation"] --> B["👥 Group A: All other users<br/><i>Full harmful content protection ON</i><br/>Standard safe Copilot experience"]
+    A --> C["🔓 Group B: Security group<br/><i>Legal, compliance, moderation staff</i><br/>Toggle available per conversation"]
+    
+    B --> D["🛡️ Copilot blocks<br/>sensitive topics"]
+    C --> E["⚠️ Copilot responds to<br/>sensitive queries when toggled"]
+    
+    D --> F["📋 All interactions auditable<br/>via Microsoft Purview"]
+    E --> F
+    
+    style B fill:#1a1a2e,stroke:#10B981,color:#fff
+    style C fill:#1a1a2e,stroke:#F59E0B,color:#fff
+    style F fill:#1a1a2e,stroke:#3B82F6,color:#fff
+```
+
+**Key points:**
+
+- **Not tenant-wide** — the policy targets an Entra ID security group only. Everyone outside the group has no idea the toggle exists
+- **Not permanent** — users must actively disable protection each conversation. It resets automatically
+- **Fully auditable** — both Group A and Group B interactions are captured in Microsoft Purview. Admins can search, audit, and apply retention/eDiscovery to all Copilot conversations, regardless of the toggle state
+- **Reversible instantly** — remove a user from the security group and the toggle disappears on their next session
 
 ---
 
