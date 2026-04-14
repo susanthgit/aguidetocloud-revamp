@@ -53,47 +53,56 @@
   {{/* ── Tabs ── */}}
   <div class="wclk-tabs" role="tablist">
     <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">📅 Meeting Planner</button>
-    <button class="wclk-tab" role="tab" data-tab="convert">🔄 Convert Time</button>
-    <button class="wclk-tab" role="tab" data-tab="dst">🌞 DST Guide</button>
+    <button class="wclk-tab" role="tab" data-tab="worldclock" aria-selected="false">🌍 World Clock</button>
+    <button class="wclk-tab" role="tab" data-tab="convert" aria-selected="false">🔄 Convert Time</button>
+    <button class="wclk-tab" role="tab" data-tab="dst" aria-selected="false">🌞 DST Guide</button>
   </div>
 
   {{/* ══════════════ TAB 1: MEETING PLANNER (hero) + WORLD CLOCK (context) ══════════════ */}}
   <div class="wclk-panel active" id="panel-clock" role="tabpanel">
 
-    {{/* Step 1: Add your team */}}
-    <div class="wclk-step-header">
-      <span class="wclk-step-num">1</span>
-      <span class="wclk-step-text">Add your team's cities</span>
+    {{/* Your local time — at the top */}}
+    <div class="wclk-local">
+      <div class="wclk-local-label">Your Local Time</div>
+      <div class="wclk-local-time" id="wclk-local-time">--:--:--</div>
+      <div class="wclk-local-details" id="wclk-local-details"></div>
     </div>
 
-    <div class="wclk-controls">
-      <div class="wclk-search-wrap">
-        <input type="text" class="wclk-search" id="wclk-city-search" placeholder="Search city or time zone..." autocomplete="off" aria-label="Search cities">
-        <div class="wclk-search-results" id="wclk-search-results"></div>
+    {{/* Step 1: Add cities */}}
+    <div class="wclk-section-box">
+      <div class="wclk-step-header">
+        <span class="wclk-step-num">1</span>
+        <span class="wclk-step-text">Search and add cities to compare time zones</span>
       </div>
-      <div class="wclk-control-row">
-        <div class="wclk-quick-adds" id="wclk-quick-adds">
-          <span class="wclk-quick-label">Quick add:</span>
+
+      <div class="wclk-controls">
+        <div class="wclk-search-wrap">
+          <input type="text" class="wclk-search" id="wclk-city-search" placeholder="Search city or time zone..." autocomplete="off" aria-label="Search cities">
+          <div class="wclk-search-results" id="wclk-search-results"></div>
         </div>
-        <div class="wclk-toggles">
-          <button class="wclk-toggle" id="wclk-clear-all" title="Remove all">Clear all</button>
-          <button class="wclk-toggle" id="wclk-format-toggle" title="Toggle 12h/24h">24h</button>
+        <div class="wclk-control-row">
+          <div class="wclk-quick-adds" id="wclk-quick-adds">
+            <span class="wclk-quick-label">Quick add:</span>
+          </div>
+          <div class="wclk-toggles">
+            <button class="wclk-toggle" id="wclk-clear-all" title="Remove all">Clear all</button>
+            <button class="wclk-toggle" id="wclk-format-toggle" title="Toggle 12h/24h">24h</button>
+          </div>
         </div>
       </div>
+
+      <div class="wclk-presets-bar">
+        <div class="wclk-presets-list" id="wclk-presets-list"></div>
+        <button class="wclk-preset" id="wclk-save-preset" title="Save current cities as a team preset">💾 Save Team</button>
+      </div>
+
+      {{/* Clock cards */}}
+      <div class="wclk-grid" id="wclk-grid"></div>
+      <p class="wclk-hint" id="wclk-empty-hint">👆 Add 2 or more cities to see the meeting planner — use search or the quick-add buttons above</p>
     </div>
 
-    <div class="wclk-presets-bar">
-      <div class="wclk-presets-list" id="wclk-presets-list"></div>
-      <button class="wclk-preset" id="wclk-save-preset" title="Save current cities as a team preset">💾 Save Team</button>
-    </div>
-
-    {{/* Clock cards — show current times for added cities */}}
-    <div class="wclk-grid" id="wclk-grid"></div>
-
-    <p class="wclk-hint" id="wclk-empty-hint">👆 Add 2 or more cities to see the meeting planner — use search or the quick-add buttons above</p>
-
-    {{/* Step 2: Find the best meeting time — always visible */}}
-    <div class="wclk-meeting-section" id="wclk-meeting-section">
+    {{/* Step 2: Find the best meeting time */}}
+    <div class="wclk-section-box">
       <div class="wclk-step-header">
         <span class="wclk-step-num">2</span>
         <span class="wclk-step-text">Find the best meeting time</span>
@@ -139,12 +148,34 @@
 
       <p class="wclk-hint" id="wclk-meeting-hint">👆 Add 2 or more cities above, then drag the slider to explore meeting times</p>
     </div>
+    </div>
+  </div>
 
-    {{/* Your local time — compact, at the bottom */}}
-    <div class="wclk-local">
+  {{/* ══════════════ TAB: WORLD CLOCK ══════════════ */}}
+  <div class="wclk-panel" id="panel-worldclock" role="tabpanel" hidden>
+    <div class="wclk-local" style="margin-bottom:1rem">
       <div class="wclk-local-label">Your Local Time</div>
-      <div class="wclk-local-time" id="wclk-local-time">--:--:--</div>
-      <div class="wclk-local-details" id="wclk-local-details"></div>
+      <div class="wclk-local-time" id="wclk-local-time-2">--:--:--</div>
+      <div class="wclk-local-details" id="wclk-local-details-2"></div>
+    </div>
+
+    <div class="wclk-section-box">
+      <div class="wclk-controls">
+        <div class="wclk-search-wrap">
+          <input type="text" class="wclk-search" id="wclk-wc-search" placeholder="Search city to add a clock..." autocomplete="off" aria-label="Search cities for world clock">
+          <div class="wclk-search-results" id="wclk-wc-results"></div>
+        </div>
+        <div class="wclk-control-row">
+          <div class="wclk-quick-adds" id="wclk-wc-quick">
+            <span class="wclk-quick-label">Quick add:</span>
+          </div>
+          <div class="wclk-toggles">
+            <button class="wclk-toggle" id="wclk-wc-clear" title="Remove all clocks">Clear all</button>
+          </div>
+        </div>
+      </div>
+      <div class="wclk-grid" id="wclk-wc-grid"></div>
+      <p class="wclk-hint" id="wclk-wc-hint">👆 Search and add cities to see their live clocks</p>
     </div>
   </div>
 

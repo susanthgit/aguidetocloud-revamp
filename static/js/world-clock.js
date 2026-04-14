@@ -505,6 +505,15 @@ function startTicking() {
       const dst = isDstActive(S.localTz);
       localDet.textContent = `${formatDate(now, S.localTz)} · ${getUtcOffset(S.localTz)}${dst !== null ? (dst ? ' · 🌞 DST Active' : ' · ⏰ Standard Time') : ''}`;
     }
+    // Mirror to World Clock tab
+    const localEl2 = document.getElementById('wclk-local-time-2');
+    const localDet2 = document.getElementById('wclk-local-details-2');
+    if (localEl2) localEl2.textContent = localEl ? localEl.textContent : '';
+    if (localDet2) localDet2.textContent = localDet ? localDet.textContent : '';
+    // Update World Clock tab cards
+    document.querySelectorAll('#wclk-wc-grid .wclk-card-time[data-tz]').forEach(el => {
+      el.textContent = formatTime(now, el.dataset.tz, S.use24h);
+    });
     // Clock cards — update time every second
     document.querySelectorAll('.wclk-card-time[data-tz]').forEach(el => {
       el.textContent = formatTime(now, el.dataset.tz, S.use24h);
@@ -700,7 +709,7 @@ function renderPresetButtons() {
   const container = document.getElementById('wclk-presets-list');
   if (!container) return;
   if (S.teamPresets.length === 0) {
-    container.innerHTML = '<span class="wclk-text-dim" style="font-size:0.78rem">No saved teams yet</span>';
+    container.innerHTML = '';
     return;
   }
   container.innerHTML = S.teamPresets.map((p, i) =>
@@ -776,11 +785,13 @@ function renderSliderResults() {
     const pHour = getHourInTz(baseDate, c.tz);
     const period = getPeriod(pHour);
     const timeStr = formatTimeShort(baseDate, c.tz, S.use24h);
+    const dateStr = formatDate(baseDate, c.tz);
     return `<div class="wclk-slider-card period-${period.period}">
       <span class="wclk-sc-flag">${c.flag}</span>
       <div class="wclk-sc-info">
         <div class="wclk-sc-city">${esc(c.city)}</div>
         <div class="wclk-sc-time">${timeStr}</div>
+        <div class="wclk-sc-date">${dateStr}</div>
       </div>
       <span class="wclk-sc-period ${period.cls}">${period.label}</span>
     </div>`;
@@ -1112,12 +1123,101 @@ function loadUrlState() {
 }
 
 /* ═══════════════════════════════════
+   WORLD CLOCK TAB (standalone)
+   ═══════════════════════════════════ */
+
+const wcClocks = [];
+
+function initWorldClockTab() {
+  const search = document.getElementById('wclk-wc-search');
+  const results = document.getElementById('wclk-wc-results');
+  const grid = document.getElementById('wclk-wc-grid');
+  const hint = document.getElementById('wclk-wc-hint');
+  const clearBtn = document.getElementById('wclk-wc-clear');
+  const quickWrap = document.getElementById('wclk-wc-quick');
+  if (!search || !grid) return;
+
+  // Quick add buttons
+  const quickCities = ['London', 'New York', 'Tokyo', 'Sydney', 'Dubai', 'Singapore'];
+  quickCities.forEach(name => {
+    const city = CITIES.find(c => c.city === name);
+    if (!city) return;
+    const btn = document.createElement('button');
+    btn.className = 'wclk-quick-btn';
+    btn.textContent = city.flag + ' ' + city.city;
+    btn.addEventListener('click', () => addWcCity(city));
+    quickWrap.appendChild(btn);
+  });
+
+  function addWcCity(city) {
+    if (wcClocks.find(c => c.tz === city.tz)) return;
+    wcClocks.push(city);
+    renderWcGrid();
+  }
+
+  function removeWcCity(tz) {
+    const idx = wcClocks.findIndex(c => c.tz === tz);
+    if (idx !== -1) wcClocks.splice(idx, 1);
+    renderWcGrid();
+  }
+
+  function renderWcGrid() {
+    if (wcClocks.length === 0) {
+      grid.innerHTML = '';
+      if (hint) hint.style.display = '';
+      return;
+    }
+    if (hint) hint.style.display = 'none';
+    const now = new Date();
+    grid.innerHTML = wcClocks.map(c => {
+      const time = formatTime(now, c.tz, S.use24h);
+      const date = formatDate(now, c.tz);
+      const offset = getUtcOffset(c.tz);
+      return `<div class="wclk-card">
+        <div class="wclk-card-top">
+          <span class="wclk-card-flag">${c.flag}</span>
+          <span class="wclk-card-name">${c.city}</span>
+          <button class="wclk-card-remove" data-tz="${c.tz}" title="Remove">✕</button>
+        </div>
+        <div class="wclk-card-time" data-tz="${c.tz}">${time}</div>
+        <div class="wclk-card-meta">${date} · ${offset}</div>
+      </div>`;
+    }).join('');
+
+    grid.querySelectorAll('.wclk-card-remove').forEach(btn => {
+      btn.addEventListener('click', () => removeWcCity(btn.dataset.tz));
+    });
+  }
+
+  // Search
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    if (q.length < 2) { results.innerHTML = ''; results.hidden = true; return; }
+    const matches = CITIES.filter(c => c.city.toLowerCase().includes(q) || c.country.toLowerCase().includes(q) || c.tz.toLowerCase().includes(q)).slice(0, 8);
+    results.innerHTML = matches.map(c => `<button class="wclk-search-item" data-tz="${c.tz}">${c.flag} ${c.city} <span style="color:var(--wclk-text-dim);font-size:0.75rem">${getUtcOffset(c.tz)}</span></button>`).join('');
+    results.hidden = false;
+    results.querySelectorAll('.wclk-search-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const city = CITIES.find(c => c.tz === btn.dataset.tz);
+        if (city) addWcCity(city);
+        search.value = '';
+        results.innerHTML = '';
+        results.hidden = true;
+      });
+    });
+  });
+
+  if (clearBtn) clearBtn.addEventListener('click', () => { wcClocks.length = 0; renderWcGrid(); });
+}
+
+/* ═══════════════════════════════════
    INIT
    ═══════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initWorldClock();
+  initWorldClockTab();
   initConvert();
   initMeetingPlanner();
   initDstGuide();
