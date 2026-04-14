@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function debounce(fn, ms) { var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); }; }
 
   var currentData = null, currentFiltered = [], renderedCount = 0;
-  var activeProductFilter = 'all', activeStatusFilter = 'all';
+  var activeProductFilter = 'copilot', activeStatusFilter = 'all';
 
   var CATEGORY_META = {
     'copilot': { name: 'Copilot', emoji: '\u{1F916}', color: '#7B68EE' },
