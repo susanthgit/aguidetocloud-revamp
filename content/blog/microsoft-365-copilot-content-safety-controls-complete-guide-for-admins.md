@@ -31,7 +31,26 @@ faq:
 
 Microsoft 365 Copilot includes multiple layers of content safety controls — but most IT admins only know about one or two of them. With the introduction of the **harmful content protection toggle**, admins now have more granular control than ever over what Copilot can discuss. This guide covers every content safety lever available to you, when to use each one, and how to configure them step by step.
 
-**Quick links:** [The 4 safety layers](#the-4-layers-of-copilot-content-safety) · [Harmful content toggle](#layer-2-harmful-content-protection-toggle) · [How to configure](#step-by-step-configuration) · [Sensitivity labels vs content safety](#sensitivity-labels-vs-content-safety--the-confusion-explained) · [Real-world scenarios](#real-world-scenarios) · [Best practices](#best-practices-for-it-admins) · [FAQ](#frequently-asked-questions)
+**Quick links:** [What licence do you need?](#what-licence-do-you-need) · [The 4 safety layers](#the-4-layers-of-copilot-content-safety) · [Harmful content toggle](#layer-2-harmful-content-protection-toggle) · [How to configure](#step-by-step-configuration) · [Sensitivity labels vs content safety](#sensitivity-labels-vs-content-safety--the-confusion-explained) · [Real-world scenarios](#real-world-scenarios) · [Best practices](#best-practices-for-it-admins) · [FAQ](#frequently-asked-questions)
+
+---
+
+## What Licence Do You Need?
+
+Not every content safety control is available on every licence tier. Here's what you get at each level:
+
+| Control | Free Copilot Chat (Basic) | M365 Copilot (Paid) | Copilot Studio |
+|---------|:---:|:---:|:---:|
+| **Core RAI protections** (prompt injection, copyright, biosecurity) | ✅ Always on | ✅ Always on | ✅ Always on |
+| **Harmful content filter** (default — blocks violence, sexual, etc.) | ✅ Always on | ✅ Always on | ✅ Always on |
+| **Harmful content protection toggle** (admin-adjustable per user) | ❌ Not available | ✅ Available | N/A |
+| **Sensitivity labels** (data classification via Purview) | ❌ Requires E3/E5 | ✅ Requires E3/E5 base | N/A |
+| **Web search controls** (admin on/off) | ✅ Admin configurable | ✅ Admin configurable | N/A |
+| **DLP for Copilot prompts** | ❌ Requires Purview | ✅ Requires Purview | N/A |
+| **Audit logging for Copilot** | ❌ Limited | ✅ Full (with Purview) | ✅ Available |
+| **Custom content safety via agents** | ❌ | ❌ | ✅ Custom guardrails |
+
+> 💡 **Bottom line:** The harmful content protection toggle — the main feature in this guide — requires a **paid Microsoft 365 Copilot licence** ($30/user/month enterprise, $21/user/month business). Free Copilot Chat users get the default safety filters but cannot adjust them.
 
 ---
 
