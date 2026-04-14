@@ -101,7 +101,7 @@
       // Rows
       rows.forEach(function(row) {
         var g = grid[row.key];
-        html += '<div class="kanban-lane-label"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';
+        html += '<div class="kanban-lane-label" style="--lane-color:' + row.color + '"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';
         ["fund", "assoc", "expert"].forEach(function(lev) {
           html += '<div class="kanban-cell ' + row.css + '">';
           if (g[lev].length) {

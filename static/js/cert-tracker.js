@@ -21,6 +21,22 @@
 
   // ── Init ──
   async function init() {
+    // Tab switching
+    var cTabs = document.querySelectorAll('.cert-tab');
+    var cPanels = document.querySelectorAll('.cert-panel');
+    cTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        cTabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        cPanels.forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        var panel = document.getElementById('panel-' + tab.dataset.tab);
+        if (panel) { panel.classList.add('active'); panel.hidden = false; }
+        // When switching to By Category, clone the grid if needed
+        if (tab.dataset.tab === 'category') renderCategoryGrid();
+      });
+    });
+
     try {
       const data = await fetchData();
       allExams = data.exams || [];
@@ -60,13 +76,14 @@
   // ── Render ──
   function renderStats(data) {
     const el = document.getElementById("cert-stats");
+    if (!el) return;
     const statusCounts = { active: 0, retiring: 0, beta: 0, retired: 0 };
     (data.exams || []).forEach((e) => { statusCounts[e.status || "active"]++; });
     el.innerHTML = `
-      <div>📖 <span>${data.exam_count}</span> study guides</div>
-      <div>✅ <span>${statusCounts.active}</span> active</div>
-      <div>⚠️ <span>${statusCounts.retiring}</span> retiring</div>
-      <div>🧪 <span>${statusCounts.beta}</span> beta</div>
+      <div class="cert-stat-box" style="--stat-color:#10B981"><span class="cert-stat-num">${data.exam_count}</span><span class="cert-stat-label">📖 Study Guides</span></div>
+      <div class="cert-stat-box" style="--stat-color:#22C55E"><span class="cert-stat-num">${statusCounts.active}</span><span class="cert-stat-label">✅ Active</span></div>
+      <div class="cert-stat-box" style="--stat-color:#F59E0B"><span class="cert-stat-num">${statusCounts.retiring}</span><span class="cert-stat-label">⚠️ Retiring</span></div>
+      <div class="cert-stat-box" style="--stat-color:#8B5CF6"><span class="cert-stat-num">${statusCounts.beta}</span><span class="cert-stat-label">🧪 Beta</span></div>
     `;
   }
 
@@ -80,6 +97,7 @@
 
   function renderCategoryChips() {
     const el = document.getElementById("cert-chips");
+    if (!el) return;
     const chips = [{ label: "All", value: "all" }];
     const catEmoji = {
       Azure: "☁️", AI: "🤖", Data: "📊", Security: "🔒",
@@ -98,11 +116,18 @@
       btn.addEventListener("click", () => {
         el.querySelectorAll(".cert-chip").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-        // Sync dropdown
-        document.getElementById("cert-category-filter").value = btn.dataset.cat;
-        applyFilters();
+        renderCategoryGrid();
       });
     });
+  }
+
+  function renderCategoryGrid() {
+    const grid = document.getElementById("cert-grid-cat");
+    if (!grid) return;
+    const activeChip = document.querySelector(".cert-chip.active");
+    const cat = activeChip ? activeChip.dataset.cat : "all";
+    const filtered = cat === "all" ? allExams : allExams.filter(e => e.category === cat);
+    grid.innerHTML = filtered.map(renderCard).join("") || '<div class="cert-no-results">No exams in this category.</div>';
   }
 
   function renderGrid(exams) {
