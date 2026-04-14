@@ -480,6 +480,20 @@
 
   /* ─── Init ─── */
   async function init() {
+    // Tab switching
+    var dtTabs = document.querySelectorAll('.deptime-tab');
+    var dtPanels = document.querySelectorAll('.deptime-panel');
+    dtTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        dtTabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        dtPanels.forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        var panel = document.getElementById('panel-' + tab.dataset.tab);
+        if (panel) { panel.classList.add('active'); panel.hidden = false; }
+      });
+    });
+
     try {
       const data = await loadData();
       allItems = data.items || [];
@@ -488,6 +502,25 @@
       populateCategories(allItems);
       loadFromURL();
       applyFilters();
+
+      // Render Action Required tab
+      var actionList = document.getElementById('deptime-action-list');
+      if (actionList) {
+        var actionItems = allItems.filter(function (i) { return i.action_required && i.urgency !== 'passed'; });
+        actionItems.sort(function (a, b) { return new Date(a.deadline) - new Date(b.deadline); });
+        if (actionItems.length === 0) {
+          actionList.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem">✅ No action required items at this time</p>';
+        } else {
+          actionList.innerHTML = '<p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">⚡ ' + actionItems.length + ' items require your attention — sorted by deadline</p>' + actionItems.map(renderCard).join('');
+          actionList.querySelectorAll('.deptime-card').forEach(function (c) {
+            c.addEventListener('click', function () { openModal(c.dataset.id); });
+          });
+        }
+      }
+
+      // Export CSV from tab
+      var csvTabBtn = document.getElementById('deptime-export-csv-tab');
+      if (csvTabBtn) csvTabBtn.addEventListener('click', exportCSV);
 
       // Standard filter listeners
       document.getElementById('deptime-search').addEventListener('input', debounce(applyFilters, 300));
