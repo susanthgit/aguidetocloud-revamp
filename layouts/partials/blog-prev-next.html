@@ -1,0 +1,44 @@
+{{/*
+  blog-prev-next.html — Circular prev/next navigation between blog posts.
+  Uses Hugo's built-in page ordering (by date, newest first).
+  Automatically includes new blogs — no manual config needed.
+
+  Circular: newest post's "next" links to oldest, oldest post's "prev" links to newest.
+
+  Usage: {{ partial "blog-prev-next.html" . }}
+*/}}
+
+{{ $section := .CurrentSection }}
+{{ $pages := $section.Pages.ByDate.Reverse }}
+{{ $count := len $pages }}
+
+{{ if gt $count 1 }}
+  {{/* Find current page index */}}
+  {{ $idx := -1 }}
+  {{ range $i, $p := $pages }}
+    {{ if eq $p.RelPermalink $.RelPermalink }}
+      {{ $idx = $i }}
+    {{ end }}
+  {{ end }}
+
+  {{ if ge $idx 0 }}
+    {{/* Circular: wrap around */}}
+    {{ $prevIdx := cond (eq $idx 0) (sub $count 1) (sub $idx 1) }}
+    {{ $nextIdx := cond (eq $idx (sub $count 1)) 0 (add $idx 1) }}
+    {{ $prev := index $pages $prevIdx }}
+    {{ $next := index $pages $nextIdx }}
+
+    <nav class="blog-pn" aria-label="Browse blog posts">
+      <a href="{{ $prev.RelPermalink }}" class="blog-pn-link blog-pn-prev" title="{{ $prev.Title }}">
+        <span class="blog-pn-arrow">←</span>
+        <span class="blog-pn-label">Newer</span>
+        <span class="blog-pn-title">{{ $prev.Title | truncate 45 }}</span>
+      </a>
+      <a href="{{ $next.RelPermalink }}" class="blog-pn-link blog-pn-next" title="{{ $next.Title }}">
+        <span class="blog-pn-title">{{ $next.Title | truncate 45 }}</span>
+        <span class="blog-pn-label">Older</span>
+        <span class="blog-pn-arrow">→</span>
+      </a>
+    </nav>
+  {{ end }}
+{{ end }}
