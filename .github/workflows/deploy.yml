@@ -48,7 +48,7 @@ jobs:
       - name: Generate stale OG images
         if: steps.og-check.outputs.needs_generation == 'true'
         run: |
-          pip install playwright --quiet
+          pip install playwright==1.58.0 toml --quiet
           playwright install chromium --with-deps
           python scripts/og-generator/generate_og.py --stale
 

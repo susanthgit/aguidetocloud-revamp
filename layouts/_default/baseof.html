@@ -12,12 +12,20 @@
   <meta property="og:site_name" content="{{ .Site.Title }}">
   {{ if .Params.youtube_id }}
   <meta property="og:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
   {{ else if .Params.images }}
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   {{ else if eq .RelPermalink "/about/" }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/about/og-about.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   {{ end }}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
@@ -49,7 +57,7 @@
   {{ partial "seo-jsonld.html" . }}
   {{ partial "analytics.html" . }}
 </head>
-<body{{ if .IsHome }} class="is-home"{{ else if eq .RelPermalink "/about/" }} class="is-about"{{ else if hasPrefix .RelPermalink "/ai-news/" }} class="page-ainews"{{ else if hasPrefix .RelPermalink "/m365-roadmap/" }} class="page-roadmap"{{ else if hasPrefix .RelPermalink "/prompts/" }} class="page-prompts"{{ else if hasPrefix .RelPermalink "/licensing/" }} class="page-licensing"{{ else if hasPrefix .RelPermalink "/prompt-polisher/" }} class="page-polisher"{{ else if hasPrefix .RelPermalink "/copilot-readiness/" }} class="page-readiness"{{ else if hasPrefix .RelPermalink "/copilot-matrix/" }} class="page-copilot-matrix"{{ else if hasPrefix .RelPermalink "/deprecation-timeline/" }} class="page-deptime"{{ else if hasPrefix .RelPermalink "/feedback/" }} class="page-feedback"{{ else if hasPrefix .RelPermalink "/roi-calculator/" }} class="page-roi-calculator"{{ else if hasPrefix .RelPermalink "/ai-mapper/" }} class="page-ai-mapper"{{ else if hasPrefix .RelPermalink "/ai-showdown/" }} class="page-ai-showdown"{{ else if hasPrefix .RelPermalink "/ps-builder/" }} class="page-ps-builder"{{ else if hasPrefix .RelPermalink "/migration-planner/" }} class="page-migration-planner"{{ else if hasPrefix .RelPermalink "/prompt-guide/" }} class="page-prompt-guide"{{ else if hasPrefix .RelPermalink "/ca-builder/" }} class="page-ca-builder"{{ else if hasPrefix .RelPermalink "/site-analytics/" }} class="page-site-analytics"{{ else if hasPrefix .RelPermalink "/qr-generator/" }} class="page-qr-generator"{{ else if hasPrefix .RelPermalink "/wifi-qr/" }} class="page-wifi-qr"{{ else if hasPrefix .RelPermalink "/password-generator/" }} class="page-password-generator"{{ else if hasPrefix .RelPermalink "/image-compressor/" }} class="page-image-compressor"{{ else if hasPrefix .RelPermalink "/typing-test/" }} class="page-typing-test"{{ else if hasPrefix .RelPermalink "/countdown/" }} class="page-countdown"{{ else if hasPrefix .RelPermalink "/color-palette/" }} class="page-color-palette"{{ else if hasPrefix .RelPermalink "/pomodoro/" }} class="page-pomodoro"{{ else if eq .RelPermalink "/free-tools/" }} class="page-free-tools"{{ end }}>
+<body{{ if .IsHome }} class="is-home"{{ else if eq .RelPermalink "/about/" }} class="is-about"{{ else if hasPrefix .RelPermalink "/ai-news/" }} class="page-ainews"{{ else if hasPrefix .RelPermalink "/m365-roadmap/" }} class="page-roadmap"{{ else if hasPrefix .RelPermalink "/prompts/" }} class="page-prompts"{{ else if hasPrefix .RelPermalink "/licensing/" }} class="page-licensing"{{ else if hasPrefix .RelPermalink "/prompt-polisher/" }} class="page-polisher"{{ else if hasPrefix .RelPermalink "/copilot-readiness/" }} class="page-readiness"{{ else if hasPrefix .RelPermalink "/copilot-matrix/" }} class="page-copilot-matrix"{{ else if hasPrefix .RelPermalink "/deprecation-timeline/" }} class="page-deptime"{{ else if hasPrefix .RelPermalink "/feedback/" }} class="page-feedback"{{ else if hasPrefix .RelPermalink "/roi-calculator/" }} class="page-roi-calculator"{{ else if hasPrefix .RelPermalink "/ai-mapper/" }} class="page-ai-mapper"{{ else if hasPrefix .RelPermalink "/ai-showdown/" }} class="page-ai-showdown"{{ else if hasPrefix .RelPermalink "/ps-builder/" }} class="page-ps-builder"{{ else if hasPrefix .RelPermalink "/migration-planner/" }} class="page-migration-planner"{{ else if hasPrefix .RelPermalink "/prompt-guide/" }} class="page-prompt-guide"{{ else if hasPrefix .RelPermalink "/ca-builder/" }} class="page-ca-builder"{{ else if hasPrefix .RelPermalink "/site-analytics/" }} class="page-site-analytics"{{ else if hasPrefix .RelPermalink "/qr-generator/" }} class="page-qr-generator"{{ else if hasPrefix .RelPermalink "/wifi-qr/" }} class="page-wifi-qr"{{ else if hasPrefix .RelPermalink "/password-generator/" }} class="page-password-generator"{{ else if hasPrefix .RelPermalink "/image-compressor/" }} class="page-image-compressor"{{ else if hasPrefix .RelPermalink "/typing-test/" }} class="page-typing-test"{{ else if hasPrefix .RelPermalink "/countdown/" }} class="page-countdown"{{ else if hasPrefix .RelPermalink "/color-palette/" }} class="page-color-palette"{{ else if hasPrefix .RelPermalink "/pomodoro/" }} class="page-pomodoro"{{ else if hasPrefix .RelPermalink "/start/" }} class="page-start"{{ else if eq .RelPermalink "/free-tools/" }} class="page-free-tools"{{ end }}>
   <a href="#main-content" class="skip-link">Skip to content</a>
   {{ partial "nav.html" . }}
   <main id="main-content" data-pagefind-body>
