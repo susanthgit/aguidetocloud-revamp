@@ -54,6 +54,7 @@
   <div class="cdown-tabs" role="tablist">
     <button class="cdown-tab active" role="tab" data-tab="events" aria-selected="true">⏳ Countdowns</button>
     <button class="cdown-tab" role="tab" data-tab="timer">⏱️ Quick Timer</button>
+    <button class="cdown-tab" role="tab" data-tab="faq">❓ FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 1: EVENT COUNTDOWN ══════════════ */}}
@@ -218,9 +219,10 @@
     </div>
   </div>
 
-  {{/* ── Visible FAQ ── */}}
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="cdown-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
-  <div class="cdown-section" style="margin-top:2rem">
+  <div class="cdown-section">
     <div class="cdown-section-title">Frequently Asked Questions</div>
     <div style="display:flex; flex-direction:column; gap:1rem">
       {{ range $i, $q := .Params.faq }}
@@ -232,6 +234,7 @@
     </div>
   </div>
   {{ end }}
+  </div>
 
   {{/* ── Back nav ── */}}
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}

@@ -28,8 +28,11 @@
 /* ── Tabs ── */
 .cdown-tabs {
   display: flex;
-  gap: 0.25rem;
-  border-bottom: 1px solid var(--cdown-border);
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -38,19 +41,24 @@
 .cdown-tabs::-webkit-scrollbar { display: none; }
 .cdown-tab {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--cdown-text-dim);
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
+  border-radius: 8px;
   transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
 }
-.cdown-tab:hover { color: var(--cdown-text); }
+.cdown-tab:hover { color: var(--cdown-text); background: rgba(255,255,255,0.06); }
 .cdown-tab.active {
-  color: var(--cdown);
-  border-bottom-color: var(--cdown);
+  color: #000;
+  background: var(--cdown);
+  border-color: var(--cdown);
+  box-shadow: 0 2px 8px rgba(251, 146, 60, 0.3);
   font-weight: 600;
 }
 
