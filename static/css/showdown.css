@@ -58,11 +58,13 @@
 /* ── Tabs ── */
 .showdown-tabs {
   display: flex;
-  gap: 0.25rem;
-  overflow-x: auto;
-  padding: 1rem 0 0.5rem;
-  border-bottom: 2px solid rgba(132, 204, 22, 0.2);
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -70,27 +72,27 @@
 
 .showdown-tab {
   padding: 0.6rem 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: none;
-  border-radius: 8px 8px 0 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: var(--showdown-text-dim);
   cursor: pointer;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
 }
 .showdown-tab:hover {
-  color: var(--showdown-accent);
-  background: var(--showdown-accent-dim);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
 }
 .showdown-tab.active {
-  color: var(--showdown-accent);
-  background: color-mix(in srgb, var(--showdown-accent) 12%, transparent);
-  border-color: color-mix(in srgb, var(--showdown-accent) 30%, transparent);
-  font-weight: 600;
+  color: #000;
+  background: var(--showdown-accent);
+  border-color: var(--showdown-accent);
+  box-shadow: 0 2px 8px rgba(212, 168, 83, 0.35);
 }
 
 /* ── Stats Bar ── */
