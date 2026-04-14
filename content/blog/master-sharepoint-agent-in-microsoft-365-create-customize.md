@@ -5,6 +5,7 @@ date: 2025-08-26
 youtube_id: "CPbJ1u-6uBU"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/master-sharepoint-agent-in-microsoft-365-create-customize.jpg"]
 ---
 
 ## What Is a SharePoint Agent?

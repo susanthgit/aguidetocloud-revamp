@@ -5,6 +5,7 @@ date: 2022-03-24
 youtube_id: "TOZZ0iWdrO0"
 card_tag: "AI-900"
 tag_class: "cert"
+images: ["images/og/blog/ai-900-full-course-azure-ai-fundamentals-certification.jpg"]
 ---
 
 ## What You'll Learn

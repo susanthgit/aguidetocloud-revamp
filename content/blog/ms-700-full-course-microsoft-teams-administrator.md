@@ -5,6 +5,7 @@ date: 2022-01-03
 youtube_id: "-Gs3dmS-jnE"
 card_tag: "MS-700"
 tag_class: "cert"
+images: ["images/og/blog/ms-700-full-course-microsoft-teams-administrator.jpg"]
 ---
 
 ## What You'll Learn

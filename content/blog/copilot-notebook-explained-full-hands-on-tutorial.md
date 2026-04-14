@@ -5,6 +5,7 @@ date: 2025-10-14
 youtube_id: "1WAPZoxtPjU"
 card_tag: "M365 Copilot"
 tag_class: "ai"
+images: ["images/og/blog/copilot-notebook-explained-full-hands-on-tutorial.jpg"]
 ---
 
 ## What Is Copilot Notebook?

@@ -5,6 +5,7 @@ date: 2022-05-24
 youtube_id: "95ixLf5194Q"
 card_tag: "AZ--500"
 tag_class: "cert"
+images: ["images/og/blog/az-500-mock-exam-microsoft-azure-security-certification.jpg"]
 ---
 
 ## What You'll Learn

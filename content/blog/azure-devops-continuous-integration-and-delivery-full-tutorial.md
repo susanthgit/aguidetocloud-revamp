@@ -5,6 +5,7 @@ date: 2025-07-22
 youtube_id: "Z5Md_I4ZEnQ"
 card_tag: "DevOps"
 tag_class: "cloud"
+images: ["images/og/blog/azure-devops-continuous-integration-and-delivery-full-tutorial.jpg"]
 ---
 
 ## What You'll Learn

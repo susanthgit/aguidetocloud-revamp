@@ -5,6 +5,7 @@ date: 2025-03-20
 youtube_id: "kHm8lL3Wd8g"
 card_tag: "Virtual Desktop"
 tag_class: "cloud"
+images: ["images/og/blog/windows-365-deep-dive-masterclass-full-setup-configuration.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2022-04-29
 youtube_id: "Y8-E-mVAEsI"
 card_tag: "Azure"
 tag_class: "cloud"
+images: ["images/og/blog/request-azure-quota-increase-step-by-step-for.jpg"]
 ---
 
 ## What You'll Learn

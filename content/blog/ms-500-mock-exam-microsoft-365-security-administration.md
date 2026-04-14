@@ -5,6 +5,7 @@ date: 2022-06-14
 youtube_id: "aStLYYNkW7o"
 card_tag: "MS--500"
 tag_class: "cert"
+images: ["images/og/blog/ms-500-mock-exam-microsoft-365-security-administration.jpg"]
 ---
 
 ## What You'll Learn

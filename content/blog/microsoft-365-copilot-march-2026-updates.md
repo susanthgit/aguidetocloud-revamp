@@ -5,6 +5,7 @@ date: 2026-03-17
 youtube_id: "FHD3Sez_MeU"
 card_tag: "What's New"
 tag_class: "ai"
+images: ["images/og/blog/microsoft-365-copilot-march-2026-updates.jpg"]
 ---
 
 March 2026 brings **25 new updates** to Microsoft 365 Copilot, designed to make work smarter, faster, and more efficient.

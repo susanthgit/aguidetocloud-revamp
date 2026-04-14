@@ -5,6 +5,7 @@ date: 2025-09-02
 youtube_id: "wHoLEr7tjP0"
 card_tag: "Security"
 tag_class: "cloud"
+images: ["images/og/blog/microsoft-purview-masterclass-part-2-insider-risk-dlp.jpg"]
 ---
 
 ## What You'll Learn

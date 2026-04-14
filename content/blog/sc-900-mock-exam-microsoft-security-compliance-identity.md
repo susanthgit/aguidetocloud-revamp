@@ -5,6 +5,7 @@ date: 2024-03-26
 youtube_id: "JtIP-WGeiA4"
 card_tag: "SC--900"
 tag_class: "cert"
+images: ["images/og/blog/sc-900-mock-exam-microsoft-security-compliance-identity.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2022-05-10
 youtube_id: "anef67apIEA"
 card_tag: "AZ-204"
 tag_class: "cert"
+images: ["images/og/blog/az-204-full-course-azure-developer-certification.jpg"]
 ---
 
 ## What You'll Learn

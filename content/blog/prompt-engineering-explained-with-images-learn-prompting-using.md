@@ -5,6 +5,7 @@ date: 2025-05-13
 youtube_id: "F1z6PesK1Nc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
+images: ["images/og/blog/prompt-engineering-explained-with-images-learn-prompting-using.jpg"]
 ---
 
 ## What You'll Learn

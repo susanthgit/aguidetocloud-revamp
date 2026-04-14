@@ -5,6 +5,7 @@ date: 2025-05-27
 youtube_id: "LgAe1khJ5eY"
 card_tag: "Interview Prep"
 tag_class: "cloud"
+images: ["images/og/blog/100-azure-interview-questions-and-answers-beginner-to.jpg"]
 ---
 
 ## What You'll Learn

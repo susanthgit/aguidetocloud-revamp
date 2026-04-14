@@ -5,6 +5,7 @@ date: 2022-02-14
 youtube_id: "m1VWSWlrJa8"
 card_tag: "AZ-500"
 tag_class: "cert"
+images: ["images/og/blog/az-500-full-course-azure-security-certification.jpg"]
 ---
 
 ## What You'll Learn

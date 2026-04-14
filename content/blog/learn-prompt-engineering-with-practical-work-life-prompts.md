@@ -5,6 +5,7 @@ date: 2025-07-08
 youtube_id: "MBZ6RCR4VPc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
+images: ["images/og/blog/learn-prompt-engineering-with-practical-work-life-prompts.jpg"]
 ---
 
 ## What You'll Learn

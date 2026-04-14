@@ -5,6 +5,7 @@ date: 2022-07-05
 youtube_id: "rEjddntRnZk"
 card_tag: "Virtual Desktop"
 tag_class: "cloud"
+images: ["images/og/blog/azure-virtual-desktop-tutorial-complete-beginner-to-pro.jpg"]
 ---
 
 ## What You'll Learn

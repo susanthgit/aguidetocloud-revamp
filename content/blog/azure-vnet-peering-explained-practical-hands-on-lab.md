@@ -5,6 +5,7 @@ date: 2022-04-26
 youtube_id: "bcEx6w14Mew"
 card_tag: "Azure"
 tag_class: "cloud"
+images: ["images/og/blog/azure-vnet-peering-explained-practical-hands-on-lab.jpg"]
 ---
 
 ## What You'll Learn

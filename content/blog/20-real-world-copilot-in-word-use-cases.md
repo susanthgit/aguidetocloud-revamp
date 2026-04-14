@@ -5,6 +5,7 @@ date: 2025-08-05
 youtube_id: "S823oKDnGWU"
 card_tag: "M365 Copilot"
 tag_class: "ai"
+images: ["images/og/blog/20-real-world-copilot-in-word-use-cases.jpg"]
 ---
 
 ## What You'll Learn

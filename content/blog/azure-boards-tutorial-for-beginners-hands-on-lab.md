@@ -5,6 +5,7 @@ date: 2022-05-17
 youtube_id: "lJBNTI_KVwc"
 card_tag: "DevOps"
 tag_class: "cloud"
+images: ["images/og/blog/azure-boards-tutorial-for-beginners-hands-on-lab.jpg"]
 ---
 
 ## What You'll Learn

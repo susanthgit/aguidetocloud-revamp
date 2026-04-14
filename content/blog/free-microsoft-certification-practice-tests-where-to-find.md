@@ -5,6 +5,7 @@ date: 2022-02-21
 youtube_id: "LeeSPd_0HOI"
 card_tag: "Exam Tips"
 tag_class: "cert"
+images: ["images/og/blog/free-microsoft-certification-practice-tests-where-to-find.jpg"]
 ---
 
 ## What You'll Learn

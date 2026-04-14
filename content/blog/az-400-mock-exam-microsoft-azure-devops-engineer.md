@@ -5,6 +5,7 @@ date: 2024-03-26
 youtube_id: "OgFT-VhS2XA"
 card_tag: "AZ--400"
 tag_class: "cert"
+images: ["images/og/blog/az-400-mock-exam-microsoft-azure-devops-engineer.jpg"]
 ---
 
 ## What You'll Learn

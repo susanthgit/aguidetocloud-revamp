@@ -5,6 +5,7 @@ date: 2021-12-08
 youtube_id: "kGhw7z0sQC4"
 card_tag: "MS-900"
 tag_class: "cert"
+images: ["images/og/blog/ms-900-full-course-microsoft-365-fundamentals.jpg"]
 ---
 
 ## What You'll Learn

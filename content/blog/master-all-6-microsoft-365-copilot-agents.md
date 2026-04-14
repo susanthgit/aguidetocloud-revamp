@@ -5,6 +5,7 @@ date: 2025-05-20
 youtube_id: "Kqq1kBPgYoY"
 card_tag: "M365 Copilot"
 tag_class: "ai"
+images: ["images/og/blog/master-all-6-microsoft-365-copilot-agents.jpg"]
 ---
 
 ## What You'll Learn

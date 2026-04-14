@@ -5,6 +5,7 @@ date: 2026-01-18
 youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"
 tag_class: "ai"
+images: ["images/og/blog/microsoft-365-copilot-january-2026-updates.jpg"]
 ---
 
 As we kick off 2026, M365 Copilot is rolling out over **27 new updates** designed to make your work smarter, faster, and more efficient. These changes are already available or on their way, covering everything from better integrations to more powerful automation.

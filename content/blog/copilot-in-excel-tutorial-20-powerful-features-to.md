@@ -5,6 +5,7 @@ date: 2025-08-19
 youtube_id: "7NTgtKzmEnY"
 card_tag: "M365 Copilot"
 tag_class: "ai"
+images: ["images/og/blog/copilot-in-excel-tutorial-20-powerful-features-to.jpg"]
 ---
 
 ## What You'll Learn

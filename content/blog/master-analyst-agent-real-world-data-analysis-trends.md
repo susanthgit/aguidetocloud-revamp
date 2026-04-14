@@ -5,6 +5,7 @@ date: 2025-10-07
 youtube_id: "kuPLfYr2YZU"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/master-analyst-agent-real-world-data-analysis-trends.jpg"]
 ---
 
 ## What Is the Analyst Agent?

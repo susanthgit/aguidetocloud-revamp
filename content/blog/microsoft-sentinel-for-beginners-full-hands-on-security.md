@@ -5,6 +5,7 @@ date: 2022-06-21
 youtube_id: "NJlaqBaqahc"
 card_tag: "Security"
 tag_class: "cloud"
+images: ["images/og/blog/microsoft-sentinel-for-beginners-full-hands-on-security.jpg"]
 ---
 
 ## What You'll Learn

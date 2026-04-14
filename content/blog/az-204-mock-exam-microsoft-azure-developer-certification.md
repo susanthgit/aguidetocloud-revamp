@@ -5,6 +5,7 @@ date: 2024-03-26
 youtube_id: "z2EsgHL86lM"
 card_tag: "AZ--204"
 tag_class: "cert"
+images: ["images/og/blog/az-204-mock-exam-microsoft-azure-developer-certification.jpg"]
 ---
 
 ## What You'll Learn

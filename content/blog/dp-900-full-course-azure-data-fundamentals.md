@@ -5,6 +5,7 @@ date: 2022-03-01
 youtube_id: "XbV0Di5ggvY"
 card_tag: "DP-900"
 tag_class: "cert"
+images: ["images/og/blog/dp-900-full-course-azure-data-fundamentals.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2022-04-15
 youtube_id: "hiIWd3upOEE"
 card_tag: "Migration"
 tag_class: "cloud"
+images: ["images/og/blog/azure-migrate-tutorial-for-beginners-full-hands-on.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2025-06-17
 youtube_id: "0oVan90eufg"
 card_tag: "Security"
 tag_class: "cloud"
+images: ["images/og/blog/microsoft-purview-masterclass-for-beginners-hands-on-lab.jpg"]
 ---
 
 ## What You'll Learn

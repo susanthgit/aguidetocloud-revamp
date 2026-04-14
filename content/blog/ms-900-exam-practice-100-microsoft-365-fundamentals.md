@@ -5,6 +5,7 @@ date: 2025-09-09
 youtube_id: "ojUp3AjGLZM"
 card_tag: "MS--900"
 tag_class: "cert"
+images: ["images/og/blog/ms-900-exam-practice-100-microsoft-365-fundamentals.jpg"]
 ---
 
 ## What You'll Learn

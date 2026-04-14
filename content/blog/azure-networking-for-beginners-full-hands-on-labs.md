@@ -5,6 +5,7 @@ date: 2022-07-13
 youtube_id: "DFdOi0QVso4"
 card_tag: "Networking"
 tag_class: "cloud"
+images: ["images/og/blog/azure-networking-for-beginners-full-hands-on-labs.jpg"]
 ---
 
 ## What You'll Learn

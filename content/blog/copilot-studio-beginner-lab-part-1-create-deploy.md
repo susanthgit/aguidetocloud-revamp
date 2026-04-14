@@ -5,6 +5,7 @@ date: 2025-07-01
 youtube_id: "u3IuLm8UuoI"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/copilot-studio-beginner-lab-part-1-create-deploy.jpg"]
 ---
 
 ## What You'll Learn

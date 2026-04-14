@@ -5,6 +5,7 @@ date: 2025-06-03
 youtube_id: "ke1M1k1aMVI"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/master-researcher-agent-save-time-with-ai-powered.jpg"]
 ---
 
 ## What Is the Researcher Agent?

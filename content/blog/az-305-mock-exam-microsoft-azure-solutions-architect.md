@@ -5,6 +5,7 @@ date: 2022-05-03
 youtube_id: "PPJYQeh26Tg"
 card_tag: "AZ--305"
 tag_class: "cert"
+images: ["images/og/blog/az-305-mock-exam-microsoft-azure-solutions-architect.jpg"]
 ---
 
 ## What You'll Learn

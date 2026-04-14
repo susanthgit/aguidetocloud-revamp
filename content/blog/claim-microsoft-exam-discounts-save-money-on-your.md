@@ -5,6 +5,7 @@ date: 2022-01-12
 youtube_id: "4FCDkZEBkf8"
 card_tag: "Exam Tips"
 tag_class: "cert"
+images: ["images/og/blog/claim-microsoft-exam-discounts-save-money-on-your.jpg"]
 ---
 
 ## What You'll Learn

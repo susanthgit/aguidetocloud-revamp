@@ -5,6 +5,7 @@ date: 2025-08-12
 youtube_id: "OxwcKJcIE40"
 card_tag: "AI--900"
 tag_class: "cert"
+images: ["images/og/blog/100-ai-900-azure-ai-fundamentals-practice-questions.jpg"]
 ---
 
 ## What You'll Learn

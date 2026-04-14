@@ -5,6 +5,7 @@ date: 2025-06-10
 youtube_id: "U1qBB6k-BnE"
 card_tag: "Migration"
 tag_class: "cloud"
+images: ["images/og/blog/azure-app-service-migration-lab-step-by-step.jpg"]
 ---
 
 ## What You'll Learn

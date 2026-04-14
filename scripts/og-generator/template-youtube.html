@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0f0f1a;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .frame { width: 1200px; height: 630px; position: relative; overflow: hidden; }
+
+  .orbs {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      radial-gradient(ellipse 600px 400px at 15% 30%, rgba(255,68,68,0.06), transparent 70%),
+      radial-gradient(ellipse 500px 350px at 85% 60%, var(--accent-glow-bg), transparent 70%),
+      radial-gradient(ellipse 400px 300px at 50% 80%, rgba(138,43,226,0.06), transparent 70%);
+  }
+
+  .grid {
+    position: absolute; inset: 0; z-index: 2;
+    background-image:
+      linear-gradient(rgba(102,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(102,255,255,0.035) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  .stripe {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    background: linear-gradient(180deg, #ff4444, #ff66ff); z-index: 10;
+  }
+
+  .content {
+    position: absolute; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 48px 72px;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.035);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 40px 56px;
+    text-align: center;
+    max-width: 900px; width: 100%;
+    position: relative;
+  }
+
+  .glass::before {
+    content: ''; position: absolute; inset: -1px; border-radius: 20px; padding: 1.5px;
+    background: linear-gradient(135deg, var(--accent) 0%, transparent 35%, transparent 65%, rgba(102,255,255,0.25) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+
+  .meta { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
+
+  .tag-pill {
+    padding: 4px 14px; border-radius: 14px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
+  }
+
+  .yt-pill {
+    padding: 4px 14px; border-radius: 14px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: #ff4444; background: rgba(255,68,68,0.08); border: 1px solid rgba(255,68,68,0.2);
+  }
+
+  .play-icon {
+    width: 56px; height: 56px; margin: 0 auto 12px;
+    border-radius: 50%;
+    background: rgba(255,68,68,0.12);
+    border: 2px solid rgba(255,68,68,0.35);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 30px rgba(255,68,68,0.15);
+  }
+  .play-icon::after {
+    content: '';
+    width: 0; height: 0;
+    border-left: 16px solid rgba(255,68,68,0.75);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-left: 4px;
+  }
+
+  .title {
+    font-size: 40px; font-weight: 800; color: #fff; margin: 0;
+    letter-spacing: -0.5px; line-height: 1.15;
+    text-shadow: 0 0 40px var(--accent-glow-bg);
+  }
+  .title.title-sm { font-size: 34px; }
+
+  .line {
+    width: 80px; height: 3px; margin: 14px auto;
+    background: linear-gradient(90deg, var(--accent), rgba(102,255,255,0.4));
+    border-radius: 2px;
+  }
+
+  .subtitle {
+    font-size: 18px; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4;
+  }
+
+  .footer {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 56px;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  }
+
+  .logo-pill { display: flex; align-items: center; gap: 12px; }
+  .logo-circle {
+    width: 36px; height: 36px; border-radius: 50%; overflow: hidden;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .url { font-size: 14px; color: rgba(102,255,255,0.4); font-weight: 500; }
+  .brand { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 600; }
+  .brand span { color: rgba(102,255,255,0.5); }
+</style>
+</head>
+<body>
+  <div class="frame" style="--accent: {{ACCENT}}; --accent-glow-bg: {{ACCENT_GLOW_BG}};">
+    <div class="orbs"></div>
+    <div class="grid"></div>
+    <div class="stripe"></div>
+    <div class="content">
+      <div class="glass">
+        <div class="meta">
+          <span class="tag-pill">{{CATEGORY}}</span>
+          <span class="yt-pill">▶ YouTube</span>
+        </div>
+        <div class="play-icon"></div>
+        <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
+        <div class="line"></div>
+        <p class="subtitle">{{SUBTITLE}}</p>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="logo-pill">
+        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
+        <span class="url">aguidetocloud.com</span>
+      </div>
+      <span class="brand">A Guide to <span>Cloud & AI</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -5,6 +5,7 @@ date: 2025-05-07
 youtube_id: "WbTdbOrNSxs"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/agent-builder-microsoft-365-copilot-create-ai-agent.jpg"]
 ---
 
 ## What Is Agent Builder?

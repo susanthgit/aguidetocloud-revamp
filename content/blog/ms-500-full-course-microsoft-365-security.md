@@ -5,6 +5,7 @@ date: 2022-01-31
 youtube_id: "cG00gMyvwfo"
 card_tag: "MS-500"
 tag_class: "cert"
+images: ["images/og/blog/ms-500-full-course-microsoft-365-security.jpg"]
 ---
 
 ## What You'll Learn

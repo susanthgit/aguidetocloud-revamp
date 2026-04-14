@@ -5,6 +5,7 @@ date: 2022-06-03
 youtube_id: "Sp_rWGaQ2Eg"
 card_tag: "PL--900"
 tag_class: "cert"
+images: ["images/og/blog/pl-900-mock-exam-microsoft-power-platform-fundamentals.jpg"]
 ---
 
 ## What You'll Learn

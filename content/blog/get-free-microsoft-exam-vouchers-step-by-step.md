@@ -5,6 +5,7 @@ date: 2022-02-07
 youtube_id: "sLIaWJC0NJE"
 card_tag: "Exam Tips"
 tag_class: "cert"
+images: ["images/og/blog/get-free-microsoft-exam-vouchers-step-by-step.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2022-05-20
 youtube_id: "Xb-FGrAx31Y"
 card_tag: "Azure"
 tag_class: "cloud"
+images: ["images/og/blog/how-to-claim-your-free-azure-pass-practice.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2022-03-29
 youtube_id: "2HlRaIPo4W8"
 card_tag: "AZ-400"
 tag_class: "cert"
+images: ["images/og/blog/az-400-full-course-microsoft-devops-engineer-certification.jpg"]
 ---
 
 ## What You'll Learn

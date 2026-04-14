@@ -5,6 +5,7 @@ date: 2021-12-21
 youtube_id: "j26eNpUU0zM"
 card_tag: "AZ-900"
 tag_class: "cert"
+images: ["images/og/blog/az-900-full-course-azure-fundamentals-certification.jpg"]
 ---
 
 ## What You'll Learn

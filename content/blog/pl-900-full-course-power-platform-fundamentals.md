@@ -5,6 +5,7 @@ date: 2022-03-15
 youtube_id: "lpsre6vWzCc"
 card_tag: "PL-900"
 tag_class: "cert"
+images: ["images/og/blog/pl-900-full-course-power-platform-fundamentals.jpg"]
 ---
 
 ## What You'll Learn

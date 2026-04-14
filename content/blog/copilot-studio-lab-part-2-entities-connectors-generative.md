@@ -5,6 +5,7 @@ date: 2025-07-15
 youtube_id: "H5H0ufslAls"
 card_tag: "Agentic AI"
 tag_class: "ai"
+images: ["images/og/blog/copilot-studio-lab-part-2-entities-connectors-generative.jpg"]
 ---
 
 ## What You'll Learn

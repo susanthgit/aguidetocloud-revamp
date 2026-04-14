@@ -5,6 +5,7 @@ date: 2022-04-12
 youtube_id: "rr74T-HgqzI"
 card_tag: "AZ--104"
 tag_class: "cert"
+images: ["images/og/blog/az-104-mock-exam-microsoft-azure-administrator-certification.jpg"]
 ---
 
 ## What You'll Learn

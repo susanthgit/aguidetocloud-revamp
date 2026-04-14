@@ -5,6 +5,7 @@ date: 2022-05-06
 youtube_id: "KzTEJ_hen3c"
 card_tag: "Azure"
 tag_class: "cloud"
+images: ["images/og/blog/azure-fundamentals-hands-on-labs-complete-beginner-masterclass.jpg"]
 ---
 
 ## What You'll Learn

@@ -5,6 +5,7 @@ date: 2025-04-22
 youtube_id: "1beYHq8aMyE"
 card_tag: "M365 Copilot"
 tag_class: "ai"
+images: ["images/og/blog/microsoft-365-copilot-full-tutorial-word-excel-teams.jpg"]
 ---
 
 ## What You'll Learn
