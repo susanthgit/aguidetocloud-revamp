@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 17:21:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 19:40:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
@@ -42,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1276339</guid>
       <pubDate>Fri, 10 Apr 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1275040</link>
+      <description>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1275040</guid>
+      <pubDate>Thu, 09 Apr 2026 11:48:48 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may experience issues accessing or using multiple Microsoft 365 services, including Microsoft Teams and Outlook</title>
@@ -163,9 +172,9 @@
     <item>
       <title>[Microsoft Intune] Users may be unable to install user targeted apps that have been made available in the Intune Company Portal</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1272653</link>
-      <description>[Microsoft Intune] Users may be unable to install user targeted apps that have been made available in the Intune Company Portal.</description>
+      <description>[Microsoft Intune] Users may have been unable to install user targeted apps that have been made available in the Intune Company Portal.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1272653</guid>
       <pubDate>Thu, 02 Apr 2026 03:30:00 +0000</pubDate>
     </item>
@@ -246,9 +255,9 @@
       <link>https://www.aguidetocloud.com/service-health/#EX1260260</link>
       <description>[Exchange Online] Users may be unable to access archived email messages in Outlook on the web. </description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">EX1260260</guid>
-      <pubDate>Tue, 24 Mar 2026 11:08:01 +0000</pubDate>
+      <pubDate>Tue, 24 Mar 2026 09:37:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may have been unable to access their Exchange Online mailboxes using the Outlook desktop client</title>
@@ -447,15 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1254044</guid>
       <pubDate>Thu, 12 Mar 2026 12:36:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users may be unable to view the device timeline in Microsoft Defender for Endpoint</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1249914</link>
-      <description>[Microsoft Defender XDR] Users may have been unable to view the device timeline in Microsoft Defender for Endpoint.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1249914</guid>
-      <pubDate>Thu, 12 Mar 2026 12:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
