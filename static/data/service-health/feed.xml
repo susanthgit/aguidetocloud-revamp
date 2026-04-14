@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 08:02:15 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 09:47:36 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
@@ -26,9 +26,9 @@
       <pubDate>Fri, 10 Apr 2026 17:30:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degraded file search results in Microsoft Copilot (Microsoft 365)  </title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degraded file search results in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1277749</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may experience degraded file search results in Microsoft Copilot.  </description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience degraded file search results in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1277749</guid>
