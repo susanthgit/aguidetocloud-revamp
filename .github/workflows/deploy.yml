@@ -32,10 +32,17 @@ jobs:
         id: og-check
         run: |
           pip install toml --quiet
-          if python scripts/og-generator/generate_og.py --check; then
+          set +e
+          python scripts/og-generator/generate_og.py --check
+          EXIT_CODE=$?
+          set -e
+          if [ "$EXIT_CODE" -eq 0 ]; then
             echo "needs_generation=false" >> $GITHUB_OUTPUT
-          else
+          elif [ "$EXIT_CODE" -eq 1 ]; then
             echo "needs_generation=true" >> $GITHUB_OUTPUT
+          else
+            echo "ERROR: OG check failed with exit code $EXIT_CODE"
+            exit $EXIT_CODE
           fi
 
       - name: Generate stale OG images

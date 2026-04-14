@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  /* Local Inter variable font — no external CDN dependency */
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -12,7 +19,7 @@
     height: 630px;
     overflow: hidden;
     background: #0f0f1a;
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   .frame {
@@ -128,9 +135,16 @@
   }
 
   .emoji {
-    font-size: 56px;
-    margin-bottom: 8px;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 8px;
     filter: drop-shadow(0 0 20px var(--accent-glow));
+  }
+
+  .emoji img {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .title {
@@ -225,7 +239,7 @@
     <div class="content">
       <div class="glass">
         <div class="pill">Free Tool — {{CATEGORY}}</div>
-        <div class="emoji">{{EMOJI}}</div>
+        <div class="emoji"><img src="{{EMOJI_PATH}}" alt=""></div>
         <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
         <div class="line"></div>
         <p class="tagline">{{TAGLINE}}</p>

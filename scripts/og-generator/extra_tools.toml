@@ -1,0 +1,51 @@
+# Extra tools not yet in data/tool_colours.toml
+# These are community tools built 2026-04-13 that haven't been fully integrated.
+# When a tool is added to tool_colours.toml, remove it from here.
+
+[[tools]]
+slug = "qr-generator"
+name = "QR Code Generator"
+hex = "#EC4899"
+category = "Community"
+
+[[tools]]
+slug = "wifi-qr"
+name = "WiFi QR Cards"
+hex = "#22D3EE"
+category = "Community"
+
+[[tools]]
+slug = "password-generator"
+name = "Password Generator"
+hex = "#D946EF"
+category = "Community"
+
+[[tools]]
+slug = "image-compressor"
+name = "Image Compressor"
+hex = "#818CF8"
+category = "Community"
+
+[[tools]]
+slug = "typing-test"
+name = "Typing Speed Test"
+hex = "#34D399"
+category = "Community"
+
+[[tools]]
+slug = "countdown"
+name = "Countdown Timer"
+hex = "#FB923C"
+category = "Community"
+
+[[tools]]
+slug = "color-palette"
+name = "Colour Palette Generator"
+hex = "#F472B6"
+category = "Community"
+
+[[tools]]
+slug = "pomodoro"
+name = "Pomodoro Focus Timer"
+hex = "#EF4444"
+category = "Community"
