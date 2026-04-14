@@ -942,7 +942,13 @@
       polish();
     }
     // Keep page at top after auto-demo renders results
-    requestAnimationFrame(function() { window.scrollTo(0, 0); });
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function() {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(function() { window.scrollTo(0, 0); });
+    });
+    setTimeout(function() { window.scrollTo(0, 0); }, 100);
+    setTimeout(function() { window.scrollTo(0, 0); }, 300);
   }
 
   // Run when DOM is ready
