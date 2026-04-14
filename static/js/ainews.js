@@ -316,9 +316,6 @@ function renderNews(data, view) {
     html += '</ul></div>';
   }
 
-  // 📊 COUNT INFO
-  html += '<div class="ainews-filter-info" id="ainews-filter-info" style="grid-column:1/-1"><span>Showing <b id="ainews-count">' + articles.length + '</b> of ' + articles.length + ' articles</span></div>';
-
   // 🔥 HEADLINES (large cards, max 8)
   var visibleHL = headlines.slice(0, maxHeadlines);
   if (visibleHL.length > 0) {
