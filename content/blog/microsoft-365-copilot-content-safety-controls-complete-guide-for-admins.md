@@ -31,26 +31,24 @@ faq:
 
 Microsoft 365 Copilot includes multiple layers of content safety controls — but most IT admins only know about one or two of them. With the introduction of the **harmful content protection toggle**, admins now have more granular control than ever over what Copilot can discuss. This guide covers every content safety lever available to you, when to use each one, and how to configure them step by step.
 
-**Quick links:** [What licence do you need?](#what-licence-do-you-need) · [The 4 safety layers](#the-4-layers-of-copilot-content-safety) · [Harmful content toggle](#layer-2-harmful-content-protection-toggle) · [How to configure](#step-by-step-configuration) · [Sensitivity labels vs content safety](#sensitivity-labels-vs-content-safety--the-confusion-explained) · [Real-world scenarios](#real-world-scenarios) · [Best practices](#best-practices-for-it-admins) · [FAQ](#frequently-asked-questions)
+**Quick links:** [TL;DR — The 4 controls](#tldr--the-4-controls-you-need-to-know) · [The 4 safety layers](#the-4-layers-of-copilot-content-safety) · [What licence do you need?](#what-licence-do-you-need) · [Harmful content toggle](#layer-2-harmful-content-protection-toggle) · [How to configure](#step-by-step-configuration) · [Data access controls](#layer-3-data-access-controls-permissions--sensitivity-labels) · [Web search controls](#layer-4-web-search-controls) · [Real-world scenarios](#real-world-scenarios) · [Best practices](#best-practices-for-it-admins) · [FAQ](#frequently-asked-questions)
+
+> ⚠️ **Government cloud note:** Content safety features are available in commercial tenants. GCC, GCC High, and DoD availability and timelines may differ — verify with your Microsoft account team before planning rollouts.
 
 ---
 
-## What Licence Do You Need?
+## TL;DR — The 4 Controls You Need to Know
 
-Not every content safety control is available on every licence tier. Here's what you get at each level:
+If your boss asks "what safety controls do we have in Copilot?" — here's the answer in 30 seconds:
 
-| Control | Free Copilot Chat (Basic) | M365 Copilot (Paid) | Copilot Studio |
-|---------|:---:|:---:|:---:|
-| **Core RAI protections** (prompt injection, copyright, biosecurity) | ✅ Always on | ✅ Always on | ✅ Always on |
-| **Harmful content filter** (default — blocks violence, sexual, etc.) | ✅ Always on | ✅ Always on | ✅ Always on |
-| **Harmful content protection toggle** (admin-adjustable per user) | ❌ Not available | ✅ Available | N/A |
-| **Sensitivity labels** (data classification via Purview) | ❌ Requires E3/E5 | ✅ Requires E3/E5 base | N/A |
-| **Web search controls** (admin on/off) | ✅ Admin configurable | ✅ Admin configurable | N/A |
-| **DLP for Copilot prompts** | ❌ Requires Purview | ✅ Requires Purview | N/A |
-| **Audit logging for Copilot** | ❌ Limited | ✅ Full (with Purview) | ✅ Available |
-| **Custom content safety via agents** | ❌ | ❌ | ✅ Custom guardrails |
+| Control | What It Does | Can You Change It? | Your First Action |
+|---------|-------------|-------------------|-------------------|
+| 🔴 **Core RAI protections** | Blocks prompt injection, copyright theft, biosecurity threats | No — always enforced | Nothing needed — it's automatic |
+| 🟡 **Harmful content filter** | Blocks violence, sexual content, hate speech, self-harm | Yes — per-user toggle via Cloud Policy | Decide if any roles need the toggle |
+| 🔒 **Data access controls** | Permissions + sensitivity labels control what data Copilot surfaces | Yes — via Purview + SharePoint permissions | Audit SharePoint permissions NOW |
+| 🌐 **Web search** | Controls whether Copilot uses web data | Yes — org or per-group via Cloud Policy | Decide your org's web search policy |
 
-> 💡 **Bottom line:** The harmful content protection toggle — the main feature in this guide — requires a **paid Microsoft 365 Copilot licence** ($30/user/month enterprise, $21/user/month business). Free Copilot Chat users get the default safety filters but cannot adjust them.
+> **Do these 3 things today:** (1) Audit your SharePoint permissions for oversharing, (2) Deploy sensitivity labels if you haven't, (3) Decide if any roles need the harmful content toggle.
 
 ---
 
@@ -61,7 +59,7 @@ Microsoft 365 Copilot doesn't have just one safety system — it has **four dist
 ```mermaid
 flowchart TD
     A["🛡️ Layer 1: Core RAI Protections<br/><i>Always on — cannot be disabled</i>"] --> B["⚠️ Layer 2: Harmful Content Filter<br/><i>Adjustable per user via admin policy</i>"]
-    B --> C["🔒 Layer 3: Sensitivity Labels<br/><i>Controls what DATA Copilot can access</i>"]
+    B --> C["🔒 Layer 3: Data Access Controls<br/><i>Permissions + sensitivity labels</i>"]
     C --> D["🌐 Layer 4: Web Search Controls<br/><i>Controls external web grounding</i>"]
     
     style A fill:#1a1a2e,stroke:#EF4444,color:#fff
@@ -74,8 +72,26 @@ flowchart TD
 |-------|-----------------|-----------------|-----------------|
 | **1. Core RAI Protections** | Prompt injection, copyright, biosecurity, image safety | ❌ Never | Built into the platform |
 | **2. Harmful Content Filter** | Violence, sexual content, hate speech, self-harm, fairness | ⚠️ Per-user toggle | Cloud Policy → Security group |
-| **3. Sensitivity Labels** | What organisational data Copilot can access and surface | N/A (data classification) | Microsoft Purview |
+| **3. Data Access Controls** | What data Copilot can surface (permissions + sensitivity labels) | N/A (configure per your governance) | SharePoint + Microsoft Purview |
 | **4. Web Search Controls** | Whether Copilot can use web data in responses | ✅ On/off per org or user | Cloud Policy |
+
+---
+
+## What Licence Do You Need?
+
+Not every control is available on every licence tier. Here's a quick reference:
+
+| Control | Free Copilot Chat (Basic) | M365 Copilot (Paid) | Copilot Studio |
+|---------|:---:|:---:|:---:|
+| **Core RAI protections** | ✅ Always on | ✅ Always on | ✅ Always on |
+| **Harmful content filter** (default) | ✅ Always on | ✅ Always on | ✅ Always on |
+| **Harmful content toggle** (adjustable) | ❌ Not available | ✅ Available | N/A |
+| **Sensitivity labels** | ❌ Requires E3/E5 | ✅ Requires E3/E5 base | N/A |
+| **Web search controls** | ✅ Admin configurable | ✅ Admin configurable | N/A |
+| **DLP for Copilot prompts** | ❌ Requires Purview | ✅ Requires Purview | N/A |
+| **Audit logging** | ❌ Limited | ✅ Available (with Purview capabilities and licences) | ✅ Available |
+
+> 💡 **Bottom line:** The harmful content protection toggle requires a **paid Microsoft 365 Copilot licence** ($30/user/month enterprise, $21/user/month business). Free Copilot Chat users get the default safety filters but cannot adjust them. Purview capabilities (DLP, audit, eDiscovery) have their own licensing requirements — check your specific SKU coverage.
 
 ---
 
@@ -194,39 +210,43 @@ This feature is designed for roles that **must** work with sensitive content as 
 
 ---
 
-## Sensitivity Labels vs Content Safety — The Confusion Explained
+## Layer 3: Data Access Controls (Permissions + Sensitivity Labels)
 
-These two features both include the word "sensitivity" and both relate to Copilot, but they do completely different things. This is the most common source of confusion.
+Copilot can only surface data that a user already has permission to access. **Permissions are the primary control** — sensitivity labels add an additional layer of classification and protection on top.
+
+This is the most common source of confusion with "content safety" — these controls have nothing to do with what *topics* Copilot discusses. They control what *data* it can find and include in responses.
 
 ```mermaid
 flowchart TD
     A["🏢 Organisation's<br/>Copilot Controls"] --> B["🛡️ Content Safety<br/><i>What TOPICS can<br/>Copilot discuss?</i>"]
-    A --> C["🔒 Sensitivity Labels<br/><i>What DATA can<br/>Copilot access?</i>"]
+    A --> C["🔒 Data Access<br/><i>What DATA can<br/>Copilot surface?</i>"]
     
     B --> D["Violence ✅/❌<br/>Sexual content ✅/❌<br/>Hate speech ✅/❌"]
-    C --> E["Confidential docs 🔒<br/>Internal only 🔒<br/>Public ✅"]
+    C --> E["SharePoint permissions 🔑<br/>Sensitivity labels 🏷️<br/>Encryption 🔐"]
     
     style B fill:#1a1a2e,stroke:#F59E0B,color:#fff
     style C fill:#1a1a2e,stroke:#3B82F6,color:#fff
 ```
 
-| | Content Safety (Harmful Content Toggle) | Sensitivity Labels (Microsoft Purview) |
+| | Content Safety (Harmful Content Toggle) | Data Access (Permissions + Sensitivity Labels) |
 |---|---|---|
-| **What it controls** | What **topics** Copilot will talk about | What **data** Copilot can access — honours existing permissions, encryption, and label-based restrictions |
+| **What it controls** | What **topics** Copilot will talk about | What **data** Copilot can find and surface |
 | **Example problem** | "Copilot refuses to summarise a violent incident report" | "Copilot showed a confidential HR document to someone" |
-| **Configured in** | Cloud Policy → per user/security group | Microsoft Purview → applied to documents, emails, sites |
+| **Primary mechanism** | AI content classifiers | SharePoint/OneDrive permissions, Purview sensitivity labels, encryption |
+| **Configured in** | Cloud Policy → per user/security group | SharePoint Admin Centre + Microsoft Purview |
 | **Scope** | Copilot Chat text responses only | All Copilot interactions across all apps |
-| **Licence needed** | M365 Copilot | M365 E3/E5 (Purview included) |
-| **When to use** | Legal, law enforcement, content moderation scenarios | Always — should be deployed across your entire environment |
+| **Licence needed** | M365 Copilot | M365 E3/E5 (Purview included for labels) |
 
 ### Do You Need Both?
 
-**Almost certainly yes**, especially for government and regulated organisations. Here's the relationship:
+**Almost certainly yes**, especially for government and regulated organisations:
 
-- **Sensitivity labels** add classification and protection — Copilot honours existing permissions, encryption, and label-based restrictions when deciding what data to surface
-- **Content safety toggle** ensures authorised staff can review sensitive material without Copilot refusing
+- **Permissions + sensitivity labels** control what data Copilot can find — if a user shouldn't see a document, Copilot shouldn't surface it either
+- **Content safety toggle** controls whether Copilot can discuss sensitive *topics* — separate from data access entirely
 
-> 💡 **Best practice:** Deploy sensitivity labels **first** as your data governance foundation. Then enable the harmful content toggle **only** for the small group of users who need it.
+> 💡 **Best practice:** Fix SharePoint permissions and deploy sensitivity labels **first** as your data governance foundation. Then enable the harmful content toggle **only** for the small group of users who need it.
+
+> **📚 Official reference:** [Data, Privacy, and Security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Microsoft Purview sensitivity labels](https://learn.microsoft.com/en-us/purview/sensitivity-labels)
 
 ---
 
@@ -247,6 +267,20 @@ The next admin-configurable safety layer controls whether Copilot can use web da
 ### Government Cloud Default
 
 For **GCC and DoD tenants**, web search is **off by default**. Admins must explicitly enable it via Cloud Policy.
+
+### ⚠️ Regulated Workload Note — Web Search Privacy Boundaries
+
+For government, financial services, and other regulated organisations, be aware that web search has **different privacy and compliance boundaries** than other Copilot data handling:
+
+- When web search is enabled, Copilot sends **generated search queries** (not the full prompt) to the **Bing search service**
+- These queries are handled under the [Microsoft Services Agreement](https://www.microsoft.com/servicesagreement) and [Microsoft Privacy Statement](https://www.microsoft.com/privacy/privacystatement), **not** the Data Protection Addendum (DPA)
+- **HIPAA compliance** and **EU Data Boundary** do **not** apply to generated web search queries
+- Microsoft acts as a **data controller** (not processor) for these web queries
+- The queries are **not used** to train AI models, improve Bing, create ad profiles, or track users
+
+> **📚 Official reference:** [Data, privacy, and security for web search in Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access)
+
+> 💡 **Admin action:** If your compliance framework requires data processor commitments for all AI interactions, consider **disabling web search** for regulated user groups via Cloud Policy.
 
 ---
 
@@ -324,36 +358,6 @@ For **GCC and DoD tenants**, web search is **off by default**. Admins must expli
 
 ---
 
-## What Copilot Blocks — The Content Categories
-
-Copilot has two distinct sets of safety controls. It's important to understand which ones can be adjusted and which cannot.
-
-### Harmful Content Filter Categories (Adjustable via Toggle)
-
-These are the categories controlled by the harmful content protection toggle. When the toggle is **on** (default), Copilot blocks or limits these. When an authorised user turns it **off**, Copilot can respond to queries in these areas:
-
-| Category | Examples |
-|----------|---------|
-| **Sexual content** | Explicit descriptions, suggestive material |
-| **Violence** | Graphic injury, weapons, harm |
-| **Hate speech** | Content targeting race, religion, gender, etc. |
-| **Self-harm** | Suicide, self-injury promotion |
-| **Fairness** | Discriminatory or biased content |
-
-### Always-On Safeguards (Cannot Be Disabled)
-
-These protections are separate from the harmful content filter. They remain enforced at all times, regardless of the toggle setting:
-
-| Safeguard | What It Prevents |
-|-----------|-----------------|
-| **Prompt injection / jailbreak defence** | Attempts to manipulate Copilot into ignoring safety rules |
-| **Protected material detection** | Reproducing copyrighted content verbatim |
-| **Biosecurity protections** | Content related to creating biological threats |
-| **Image safety filters** | Harmful, explicit, or violent AI-generated imagery |
-| **Agent safety guardrails** | Agents/bots bypassing safety boundaries |
-
----
-
 ## Complete Admin Checklist
 
 Use this checklist when configuring content safety for your organisation:
@@ -396,7 +400,7 @@ Content safety is just one piece of a secure Copilot deployment. These additiona
 |---------|-------------|-------------------|-------|---------|
 | **Core RAI protections** | Blocks prompt injection, copyright, biosecurity | N/A (always on) | All Copilot | Always ON |
 | **Harmful content filter** | Blocks violence, sexual, hate, self-harm | Cloud Policy → per security group | Copilot Chat text only | ON (toggle for approved users) |
-| **Sensitivity labels** | Adds classification and protection to data | Microsoft Purview | All Copilot + all M365 | Off until deployed |
+| **Data access controls** | Permissions + sensitivity labels control what data Copilot surfaces | SharePoint + Microsoft Purview | All Copilot + all M365 | Permissions always active; labels off until deployed |
 | **Web search** | Controls web grounding in responses | Cloud Policy → org or per group | Copilot Chat + Work mode | ON (OFF for GCC/DoD) |
 | **DLP policies** | Prevents sensitive data in prompts/responses | Microsoft Purview | All Copilot | Off until configured |
 | **Optional connected experiences** | Master switch for many Copilot features | Group Policy / Cloud Policy | All M365 apps | ON |
