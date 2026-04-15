@@ -211,13 +211,13 @@
   {{/* ══════════════ FAQ TAB ══════════════ */}}
   <div class="imgcomp-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
-  <div class="imgcomp-faq" id="faq">
-    <h2 class="imgcomp-faq-title">Frequently Asked Questions</h2>
+  <div style="max-width:800px;margin:0 auto;padding:0 1rem" id="faq">
+    <h2 style="color:#818CF8;margin-bottom:1.5rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <div class="imgcomp-faq-item">
-      <div class="imgcomp-faq-q">{{ add $i 1 }}. {{ $q.question }}</div>
-      <div class="imgcomp-faq-a">{{ $q.answer }}</div>
-    </div>
+    <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+      <summary style="color:#818CF8;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+    </details>
     {{ end }}
   </div>
   {{ end }}

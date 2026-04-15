@@ -245,6 +245,21 @@
     </div>
   </div>
 
+  {{/* ── FAQ Tab Panel ── */}}
+  <div class="typist-panel" id="panel-faq" role="tabpanel">
+  {{ if .Params.faq }}
+  <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+    <h2 style="color:#34D399;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+      <summary style="color:#34D399;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+    </details>
+    {{ end }}
+  </div>
+  {{ end }}
+  </div>
+
   {{/* ── Cross-links ── */}}
   <div class="tool-eco" style="--eco-accent: #34D399">
     <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
@@ -255,23 +270,6 @@
       <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
     </div>
     <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
-  </div>
-
-  {{/* ── FAQ Tab Panel ── */}}
-  <div class="typist-panel" id="panel-faq" role="tabpanel">
-  {{ if .Params.faq }}
-  <div class="typist-section">
-    <h2 class="typist-section-title">Frequently Asked Questions</h2>
-    <div style="display:flex; flex-direction:column; gap:1rem">
-      {{ range $i, $q := .Params.faq }}
-      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
-        <strong style="color:#34D399; font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
-        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $q.answer }}</p>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
   </div>
 
   {{/* ── Back nav ── */}}

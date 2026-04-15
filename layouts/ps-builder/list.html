@@ -143,11 +143,11 @@
     {{/* ── FAQ TAB ── */}}
     <div class="psb-panel" id="psb-panel-faq" role="tabpanel" hidden>
       {{ with .Params.faq }}
-      <div class="psb-faq">
+      <div style="max-width:800px;margin:0 auto;padding:0 1rem">
         <h2 class="psb-section-title">Frequently Asked Questions</h2>
         <div class="psb-faq-list">
           {{ range $i, $faq := . }}
-          <details class="psb-faq-item"{{ if eq $i 0 }} open{{ end }}>
+          <details class="psb-faq-item" open>
             <summary class="psb-faq-q">{{ $faq.question }}</summary>
             <p class="psb-faq-a">{{ $faq.answer }}</p>
           </details>

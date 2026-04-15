@@ -278,15 +278,13 @@
   {{/* ═══ FAQ TAB ═══ */}}
   <div class="cab-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
     {{ with .Params.faq }}
-    <div class="cab-panel-header">
-      <h2 style="color:#7C3AED;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:1rem">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <h2 style="color:#7C3AED;margin-bottom:1.5rem">❓ Frequently Asked Questions</h2>
       {{ range $i, $f := . }}
-      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
-        <strong style="color:#7C3AED; font-size:0.95rem">{{ add $i 1 }}. {{ $f.q }}</strong>
-        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $f.a }}</p>
-      </div>
+      <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+        <summary style="color:#7C3AED;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $f.q }}</summary>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $f.a }}</p>
+      </details>
       {{ end }}
     </div>
     {{ end }}

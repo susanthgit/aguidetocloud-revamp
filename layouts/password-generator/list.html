@@ -345,10 +345,10 @@
   {{/* ── FAQ Tab Panel ── */}}
   <div class="pwgen-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
   {{ if .Params.faq }}
-  <div class="pwgen-faq-section">
+  <div style="max-width:800px;margin:0 auto;padding:0 1rem">
     <h2 class="pwgen-faq-title">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details class="pwgen-faq-item">
+    <details open class="pwgen-faq-item">
       <summary class="pwgen-faq-q">{{ $q.question }}</summary>
       <div class="pwgen-faq-a">{{ $q.answer }}</div>
     </details>

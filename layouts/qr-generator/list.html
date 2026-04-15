@@ -398,6 +398,21 @@ Hello World,text,Greeting
     </div>
   </div>
 
+  {{/* ══════════════ TAB: FAQ ══════════════ */}}
+  <div class="qrgen-panel" id="panel-faq" role="tabpanel">
+    {{ if .Params.faq }}
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <h2 style="color:#EC4899;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+        {{ range $i, $q := .Params.faq }}
+        <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+          <summary style="color:#EC4899;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+        </details>
+        {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
   {{/* ── Cross-links — Community Tools ── */}}
   <div class="tool-eco" style="--eco-accent: #EC4899">
     <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
@@ -408,34 +423,6 @@ Hello World,text,Greeting
       <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
     </div>
     <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
-  </div>
-
-  {{/* ── How It Works — brief intro for new users + SEO ── */}}
-  <div class="qrgen-section" style="margin-top:2rem">
-    <div class="qrgen-section-title">How It Works</div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.6">
-      <div><strong style="color:#EC4899; font-size:1.5rem">①</strong><br><strong style="color:#fff">Choose content type</strong><br>URL, text, WiFi, email, or phone — pick what you want to encode.</div>
-      <div><strong style="color:#EC4899; font-size:1.5rem">②</strong><br><strong style="color:#fff">Enter your data</strong><br>Type or paste your content. The QR code updates live as you type.</div>
-      <div><strong style="color:#EC4899; font-size:1.5rem">③</strong><br><strong style="color:#fff">Style it (optional)</strong><br>Pick a preset or customise colours, dot patterns, and add your logo.</div>
-      <div><strong style="color:#EC4899; font-size:1.5rem">④</strong><br><strong style="color:#fff">Download or share</strong><br>Get your QR as PNG or SVG. Copy it, or share a link to recreate it.</div>
-    </div>
-  </div>
-
-  {{/* ══════════════ TAB: FAQ ══════════════ */}}
-  <div class="qrgen-panel" id="panel-faq" role="tabpanel">
-    {{ if .Params.faq }}
-    <div class="qrgen-section">
-      <div class="qrgen-section-title">Frequently Asked Questions</div>
-      <div style="display:flex; flex-direction:column; gap:1rem">
-        {{ range $i, $q := .Params.faq }}
-        <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
-          <strong style="color:#EC4899; font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
-          <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $q.answer }}</p>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
   </div>
 
   {{/* ── Back nav ── */}}
