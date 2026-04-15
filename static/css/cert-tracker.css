@@ -97,7 +97,7 @@
   flex: 1;
   min-width: 200px;
   padding: 0.6rem 1rem;
-  background: rgba(26, 26, 46, 0.55);
+  background: rgba(6, 6, 12, 0.55);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   border: var(--glass-border);
@@ -229,7 +229,7 @@
 .cert-card {
   display: block;
   text-decoration: none;
-  background: rgba(26, 26, 46, 0.55);
+  background: rgba(6, 6, 12, 0.55);
   -webkit-backdrop-filter: blur(var(--glass-blur-card));
   backdrop-filter: blur(var(--glass-blur-card));
   border: var(--glass-border);
@@ -358,7 +358,7 @@
 
 .cert-modal-content {
   position: relative;
-  background: rgba(20, 20, 37, 0.88);
+  background: rgba(6, 6, 12, 0.88);
   -webkit-backdrop-filter: blur(var(--glass-blur-overlay));
   backdrop-filter: blur(var(--glass-blur-overlay));
   border: var(--glass-border);

@@ -19,7 +19,7 @@
 }
 
 .siteana-cs-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
   color: #64748B;
@@ -72,7 +72,7 @@
 }
 
 .siteana-cs-section-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   color: rgba(255,255,255,0.9);
   margin: 0 0 1.5rem;
@@ -271,7 +271,7 @@
 }
 
 .siteana-stat-num {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 700;
   color: #64748B;
@@ -360,7 +360,7 @@
 }
 
 .siteana-card-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   color: rgba(255,255,255,0.9);
   margin: 0 0 1rem;
@@ -384,7 +384,7 @@
 .siteana-lb-item:last-child { border-bottom: none; }
 
 .siteana-lb-rank {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
   color: rgba(255,255,255,0.3);
@@ -425,7 +425,7 @@
 }
 
 .siteana-lb-total {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
   color: #64748B;
@@ -473,7 +473,7 @@
 }
 
 .siteana-content-num {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
   color: #64748B;
@@ -507,7 +507,7 @@
   margin-top: 2rem;
 }
 .siteana-faq h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   color: #64748B;
   margin-bottom: 1rem;

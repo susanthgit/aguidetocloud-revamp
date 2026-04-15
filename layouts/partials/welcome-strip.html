@@ -2,13 +2,13 @@
   <div class="welcome-inner">
     <div class="welcome-text-block">
       <h1 class="welcome-title">Your AI & Cloud Learning Hub</h1>
-      <p class="welcome-subtitle">Microsoft 365, Azure & AI tutorials, tools & blogs for IT pros — made with ❤️ by Susanth Sutheesh</p>
+      <p class="welcome-subtitle">Built for IT pros, cloud architects & Copilot champions. Free tools and step-by-step guides for Microsoft 365 administration, Azure infrastructure, AI deployment & certification prep — by a Microsoft engineer who uses these daily.</p>
     </div>
     {{/* Dynamic stat counts */}}
-    {{/* Auto-calculate tool count from toolkit_nav.toml, excluding Feedback */}}
+    {{/* Auto-calculate tool count from toolkit_nav.toml using is_tool flag */}}
     {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
     {{ $toolCount := 0 }}
-    {{ range $allNavTools }}{{ if ne .url "/feedback/" }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
+    {{ range $allNavTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
     {{ $videoCount := 0 }}
     {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
       {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
@@ -41,7 +41,7 @@
     </div>
     {{ partial "page-search.html" . }}
     <div class="welcome-cta-row">
-      <a href="/start/" class="welcome-cta-btn">🚀 New Here? Start Here →</a>
+      <a href="/start/" class="welcome-cta-btn border-beam">🚀 New Here? Start Here →</a>
       <a href="/free-tools/" class="welcome-cta-btn">Explore Cloud & AI Toolkit →</a>
       <a href="/ai-hub/" class="welcome-cta-btn">Explore AI Hub Videos →</a>
     </div>

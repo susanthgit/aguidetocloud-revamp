@@ -12,13 +12,13 @@
   --tool-accent: #4ADE80;
   --tool-accent-dim: rgba(74, 222, 128, 0.15);
   --tool-accent-glow: rgba(74, 222, 128, 0.25);
-  --psb-bg: #141425;
-  --psb-surface: #1a1a2e;
-  --psb-surface-hover: #22223a;
+  --psb-bg: #060610;
+  --psb-surface: #0a0a14;
+  --psb-surface-hover: #10101e;
   --psb-border: #2a2a4a;
   --psb-text: #e2e8f0;
   --psb-text-dim: #94a3b8;
-  --psb-code-bg: #0d1117;
+  --psb-code-bg: #050510;
   --psb-danger: #ef4444;
   --psb-success: #22c55e;
 }

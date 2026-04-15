@@ -218,6 +218,86 @@ category = "Community"
 css_namespace = "wclk-*"
 body_class = "page-world-clock"
 
+[[tools]]
+name = "QR Code Generator"
+slug = "qr-generator"
+hex = "#EC4899"
+hue = 330
+name_friendly = "Electric Pink"
+category = "Community"
+css_namespace = "qrgen-*"
+body_class = "page-qr-generator"
+
+[[tools]]
+name = "WiFi QR Cards"
+slug = "wifi-qr"
+hex = "#22D3EE"
+hue = 187
+name_friendly = "Aqua"
+category = "Community"
+css_namespace = "wifiqr-*"
+body_class = "page-wifi-qr"
+
+[[tools]]
+name = "Password Generator"
+slug = "password-generator"
+hex = "#D946EF"
+hue = 292
+name_friendly = "Fuchsia"
+category = "Community"
+css_namespace = "pwgen-*"
+body_class = "page-password-generator"
+
+[[tools]]
+name = "Image Compressor"
+slug = "image-compressor"
+hex = "#818CF8"
+hue = 234
+name_friendly = "Periwinkle"
+category = "Community"
+css_namespace = "imgcomp-*"
+body_class = "page-image-compressor"
+
+[[tools]]
+name = "Typing Speed Test"
+slug = "typing-test"
+hex = "#34D399"
+hue = 158
+name_friendly = "Spring Green"
+category = "Community"
+css_namespace = "typist-*"
+body_class = "page-typing-test"
+
+[[tools]]
+name = "Countdown Timer"
+slug = "countdown"
+hex = "#FB923C"
+hue = 30
+name_friendly = "Tangerine"
+category = "Community"
+css_namespace = "cdown-*"
+body_class = "page-countdown"
+
+[[tools]]
+name = "Colour Palette Generator"
+slug = "color-palette"
+hex = "#F472B6"
+hue = 340
+name_friendly = "Hot Pink"
+category = "Community"
+css_namespace = "palette-*"
+body_class = "page-color-palette"
+
+[[tools]]
+name = "Pomodoro Focus Timer"
+slug = "pomodoro"
+hex = "#EF4444"
+hue = 0
+name_friendly = "Tomato Red"
+category = "Community"
+css_namespace = "pomo-*"
+body_class = "page-pomodoro"
+
 # ── Internal ──────────────────────────────────────────────────────────────────
 
 [[tools]]

@@ -54,7 +54,7 @@
   z-index: 1;
   text-align: center;
   padding: 2.5rem 1.5rem;
-  background: rgba(10, 10, 26, 0.6);
+  background: rgba(3, 3, 8, 0.6);
   width: 100%;
 }
 .ainews-hero-overlay h1 {
@@ -670,7 +670,7 @@
   position: sticky;
   top: 64px;
   z-index: 50;
-  background: rgba(10, 10, 26, 0.95);
+  background: rgba(3, 3, 8, 0.95);
   backdrop-filter: blur(12px);
   padding: 0.6rem 0;
   margin: 0 -1rem;

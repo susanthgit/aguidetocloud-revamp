@@ -184,7 +184,7 @@
   box-shadow: 0 0 0 3px var(--tool-accent-dim);
 }
 .roi-select-sm { width: auto; }
-.roi-select option { background: #1a1a2e; color: #fff; }
+.roi-select option { background: #0a0a14; color: #fff; }
 
 /* ── Radio Group ── */
 .roi-radio-group {
@@ -479,7 +479,7 @@
   color: var(--text-primary);
   font-size: 0.85rem;
 }
-.roi-roles-table select option { background: #1a1a2e; }
+.roi-roles-table select option { background: #0a0a14; }
 .roi-role-remove {
   background: none;
   border: none;

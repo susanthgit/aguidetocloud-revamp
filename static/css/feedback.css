@@ -121,7 +121,7 @@
 
 /* ── Form ── */
 .feedback-form-section {
-  background: rgba(26, 26, 46, 0.55);
+  background: rgba(6, 6, 12, 0.55);
   -webkit-backdrop-filter: blur(var(--glass-blur-card));
   backdrop-filter: blur(var(--glass-blur-card));
   border: var(--glass-border);
@@ -369,7 +369,7 @@
   gap: 0.6rem;
 }
 .feedback-recent-item {
-  background: rgba(26, 26, 46, 0.55);
+  background: rgba(6, 6, 12, 0.55);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   border: var(--glass-border);

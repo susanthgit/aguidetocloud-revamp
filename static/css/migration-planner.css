@@ -361,7 +361,7 @@
   height: 12px;
   border-radius: 50%;
   background: var(--tool-accent);
-  border: 2px solid #141425;
+  border: 2px solid #060610;
 }
 .migplan-phase-header {
   display: flex;

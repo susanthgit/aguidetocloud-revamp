@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 2560px; height: 1440px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: {{BG_BASE}};
+  }
+
+  .frame { width: 2560px; height: 1440px; position: relative; overflow: hidden; }
+
+  /* Background gradient */
+  .bg-frost {
+    position: absolute; inset: 0; z-index: 1;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, {{BG_TINT}} 0%, {{BG_BASE}} 100%);
+  }
+
+  /* Gradient orbs */
+  .orb { position: absolute; border-radius: 50%; z-index: 2; filter: blur(120px); }
+  .orb-1 { width: 900px; height: 900px; top: -200px; right: 200px; background: {{ORB1}}; }
+  .orb-2 { width: 800px; height: 800px; bottom: -200px; left: 200px; background: {{ORB2}}; }
+  .orb-3 { width: 600px; height: 600px; top: 40%; left: 50%; transform: translate(-50%, -50%); background: {{ORB3}}; }
+
+  /* Dot grid */
+  .grid-dots {
+    position: absolute; inset: 0; z-index: 3;
+    background-image: radial-gradient(circle 1.5px at center, rgba(255,255,255,0.04) 0%, transparent 100%);
+    background-size: 40px 40px;
+  }
+
+  /* Safe zone indicator (invisible in final, helps with layout) */
+  .safe-zone {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1546px; height: 423px;
+    z-index: 10;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 20px;
+  }
+
+  /* Frosted glass card — centred in safe zone */
+  .glass-card {
+    padding: 48px 80px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 12px 48px rgba(0,0,0,0.20),
+      inset 0 1px 0 rgba(255,255,255,0.15);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 72px; font-weight: 800;
+    letter-spacing: -2px; line-height: 1.1;
+    color: #ffffff;
+  }
+
+  .sub-text {
+    font-size: 28px; font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="bg-frost"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-dots"></div>
+
+    <div class="safe-zone">
+      <div class="glass-card">
+        <div class="hero-text">{{HERO_TEXT}}</div>
+        <div class="sub-text">{{SUB_TEXT}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

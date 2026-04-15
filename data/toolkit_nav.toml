@@ -1,171 +1,338 @@
-# Toolkit Navigation — Ordered list for prev/next circular nav.
-# When adding a new tool, insert an entry in the desired position.
-# The partial `tool-prev-next.html` reads this automatically.
+# ═══════════════════════════════════════════════════════════════════════════
+# TOOLKIT MASTER REGISTRY — Single Source of Truth
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# This file drives EVERYTHING:
+#   - Homepage toolkit cards (carousel)
+#   - Tool count in stats bar
+#   - "Browse all X tools" link
+#   - Prev/next circular navigation
+#   - Colour lookups (homepage + free-tools)
+#
+# WHEN ADDING A NEW TOOL:
+#   1. Add entry here with ALL fields
+#   2. Check tool_colours.toml for hue distance (≥30° from all, ≥45° in category)
+#   3. Add entry to tool_colours.toml (validation/reference)
+#   4. Create CSS file, template, content
+#   5. Run `hugo server` — everything else auto-updates
+#
+# FIELDS:
+#   url       — URL path (with trailing slash)
+#   emoji     — Display emoji
+#   name      — Full display name
+#   short     — Short name for mobile nav
+#   desc      — One-liner description (homepage + free-tools cards)
+#   color     — Accent hex color
+#   category  — Filter category: learning, copilot, informed, compare, admin, community
+#   visual    — SVG abstract art type: lines, bars, grid, gauge, timeline, wave, blocks, scatter, circles, keys
+#   is_tool   — true = counted as a tool, false = excluded from count (feedback, analytics)
+#
+# ═══════════════════════════════════════════════════════════════════════════
 
 [[tools]]
 url = "/prompts/"
 emoji = "💡"
 name = "Prompt Library"
 short = "Prompts"
+desc = "Tested prompts for Copilot, ChatGPT, Claude & more"
+color = "#A78BFA"
+category = "learning"
+visual = "lines"
+is_tool = true
 
 [[tools]]
 url = "/prompt-polisher/"
 emoji = "✨"
 name = "Prompt Polisher"
 short = "Polisher"
+desc = "Score & rewrite any prompt with the CRAFTS framework"
+color = "#EC4899"
+category = "learning"
+visual = "gauge"
+is_tool = true
 
 [[tools]]
 url = "/prompt-guide/"
 emoji = "📖"
 name = "Prompt Guide"
 short = "Prompt Guide"
+desc = "Learn 8 techniques with hands-on practice"
+color = "#84CC16"
+category = "learning"
+visual = "blocks"
+is_tool = true
 
 [[tools]]
 url = "/copilot-readiness/"
 emoji = "🎯"
 name = "Copilot Readiness"
 short = "Readiness"
+desc = "Score your org across 7 pillars — 0 to 100"
+color = "#3B82F6"
+category = "copilot"
+visual = "gauge"
+is_tool = true
 
 [[tools]]
 url = "/copilot-matrix/"
 emoji = "📊"
 name = "Copilot Features"
 short = "Features"
+desc = "Feature comparison across every app & licence tier"
+color = "#60A5FA"
+category = "copilot"
+visual = "grid"
+is_tool = true
 
 [[tools]]
 url = "/roi-calculator/"
 emoji = "💰"
 name = "ROI Calculator"
 short = "ROI"
+desc = "Estimate ROI by role with realistic adoption curves"
+color = "#14B8A6"
+category = "copilot"
+visual = "bars"
+is_tool = true
 
 [[tools]]
 url = "/ai-news/"
 emoji = "📰"
 name = "AI News"
 short = "AI News"
+desc = "Daily AI digest across 20 categories — updated 4× daily"
+color = "#ff66ff"
+category = "informed"
+visual = "lines"
+is_tool = true
 
 [[tools]]
 url = "/m365-roadmap/"
 emoji = "📋"
 name = "M365 Roadmap"
 short = "Roadmap"
+desc = "Track every M365 feature with change detection & alerts"
+color = "#E5A00D"
+category = "informed"
+visual = "timeline"
+is_tool = true
 
 [[tools]]
 url = "/service-health/"
 emoji = "🏥"
 name = "Service Health"
 short = "Health"
+desc = "32 M365 + Azure services tracked every 2 hours"
+color = "#EA580C"
+category = "informed"
+visual = "wave"
+is_tool = true
 
 [[tools]]
 url = "/deprecation-timeline/"
 emoji = "⏰"
 name = "Deprecation Timeline"
 short = "Deprecations"
+desc = "Urgency-scored retirements with countdown timers"
+color = "#DC2626"
+category = "informed"
+visual = "timeline"
+is_tool = true
 
 [[tools]]
 url = "/ai-mapper/"
 emoji = "🗺️"
 name = "AI Service Mapper"
 short = "AI Mapper"
+desc = "Compare 25+ AI services — pricing & capabilities"
+color = "#38BDF8"
+category = "compare"
+visual = "grid"
+is_tool = true
 
 [[tools]]
 url = "/ai-showdown/"
 emoji = "🥊"
 name = "AI SaaS Showdown"
 short = "Showdown"
+desc = "Head-to-head AI platform comparison & quiz"
+color = "#D4A853"
+category = "compare"
+visual = "bars"
+is_tool = true
 
 [[tools]]
 url = "/licensing/"
 emoji = "📜"
 name = "Licensing Simplifier"
 short = "Licensing"
+desc = "Compare M365 plans in plain English with pricing"
+color = "#F43F5E"
+category = "compare"
+visual = "blocks"
+is_tool = true
 
 [[tools]]
 url = "/ca-builder/"
 emoji = "🛡️"
 name = "CA Policy Builder"
 short = "CA Builder"
+desc = "Design Entra ID Conditional Access policies visually"
+color = "#7C3AED"
+category = "admin"
+visual = "blocks"
+is_tool = true
 
 [[tools]]
 url = "/ps-builder/"
 emoji = "⚡"
 name = "PowerShell Builder"
 short = "PS Builder"
+desc = "Build M365 & Azure admin commands — 68 recipes"
+color = "#4ADE80"
+category = "admin"
+visual = "lines"
+is_tool = true
 
 [[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
 name = "Migration Planner"
 short = "Migration"
+desc = "Plan your M365 migration with risk scoring"
+color = "#6478CC"
+category = "admin"
+visual = "timeline"
+is_tool = true
 
 [[tools]]
 url = "/cert-tracker/"
-emoji = "📖"
+emoji = "🎓"
 name = "Cert Study Guides"
 short = "Cert Guides"
+desc = "Every Microsoft cert — objectives deep-linked to Learn"
+color = "#10B981"
+category = "learning"
+visual = "blocks"
+is_tool = true
 
 [[tools]]
 url = "/world-clock/"
 emoji = "🌍"
 name = "Meeting Planner"
 short = "Planner"
+desc = "Find the best meeting time across time zones"
+color = "#0EA5E9"
+category = "community"
+visual = "circles"
+is_tool = true
 
 [[tools]]
 url = "/qr-generator/"
 emoji = "🔲"
 name = "QR Code Generator"
 short = "QR Code"
+desc = "Beautiful QR codes with custom colours & logos"
+color = "#EC4899"
+category = "community"
+visual = "grid"
+is_tool = true
 
 [[tools]]
 url = "/wifi-qr/"
 emoji = "📶"
 name = "WiFi QR Cards"
 short = "WiFi QR"
+desc = "Printable WiFi cards — guests scan to connect"
+color = "#22D3EE"
+category = "community"
+visual = "wave"
+is_tool = true
 
 [[tools]]
 url = "/password-generator/"
 emoji = "🔐"
 name = "Password Generator"
 short = "Passwords"
+desc = "Unbreakable passwords & strength analyser"
+color = "#D946EF"
+category = "community"
+visual = "scatter"
+is_tool = true
 
 [[tools]]
 url = "/image-compressor/"
 emoji = "🖼️"
 name = "Image Compressor"
 short = "Compress"
+desc = "Compress, resize & convert — 100% in your browser"
+color = "#818CF8"
+category = "community"
+visual = "blocks"
+is_tool = true
 
 [[tools]]
 url = "/typing-test/"
 emoji = "⌨️"
 name = "Typing Speed Test"
 short = "Typing"
+desc = "Test WPM & accuracy — quotes, code & tracking"
+color = "#34D399"
+category = "community"
+visual = "keys"
+is_tool = true
 
 [[tools]]
 url = "/countdown/"
 emoji = "⏳"
 name = "Countdown Timer"
 short = "Countdown"
+desc = "Flip-clock countdowns & full-screen mode"
+color = "#FB923C"
+category = "community"
+visual = "circles"
+is_tool = true
 
 [[tools]]
 url = "/color-palette/"
 emoji = "🎨"
 name = "Colour Palette Generator"
 short = "Palette"
+desc = "Generate palettes, extract & check contrast"
+color = "#F472B6"
+category = "community"
+visual = "scatter"
+is_tool = true
 
 [[tools]]
 url = "/pomodoro/"
 emoji = "🍅"
 name = "Pomodoro Focus Timer"
 short = "Pomodoro"
+desc = "Focus timer with ambient sounds & stats"
+color = "#EF4444"
+category = "community"
+visual = "circles"
+is_tool = true
 
 [[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"
 short = "Analytics"
+desc = "Live transparent usage stats — tool leaderboard & trends"
+color = "#64748B"
+category = "community"
+visual = "bars"
+is_tool = false
 
 [[tools]]
 url = "/feedback/"
 emoji = "💬"
 name = "Community Feedback"
 short = "Feedback"
+desc = "Shape what we build next — ideas, questions, bugs"
+color = "#FBBF24"
+category = "community"
+visual = "lines"
+is_tool = false

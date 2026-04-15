@@ -265,7 +265,7 @@
 }
 .pguide-builder-templates select option,
 #pguide-audience option, #pguide-tone option {
-  background: #1a1a2e;
+  background: #0a0a14;
   color: #e6edf3;
 }
 
@@ -438,7 +438,7 @@
    TECHNIQUE SINGLE PAGE
    ══════════════════════════════════════ */
 .pguide-technique-hero {
-  background: linear-gradient(180deg, color-mix(in srgb, #84CC16 15%, #141425) 0%, #141425 100%);
+  background: linear-gradient(180deg, color-mix(in srgb, #84CC16 15%, #060610) 0%, #060610 100%);
   padding: 3rem 1.5rem 2rem;
 }
 .pguide-technique-hero-inner {
@@ -1009,7 +1009,7 @@
 .pguide-cert-card {
   max-width: 500px;
   margin: 1.5rem auto 0;
-  background: linear-gradient(135deg, #1a2a1a, #0d1117);
+  background: linear-gradient(135deg, #1a2a1a, #050510);
   border: 2px solid var(--tool-accent);
   border-radius: 12px;
   overflow: hidden;

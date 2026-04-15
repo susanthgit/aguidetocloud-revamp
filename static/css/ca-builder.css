@@ -7,8 +7,8 @@
   --cab-accent: #7C3AED;
   --cab-accent-dim: rgba(124, 58, 237, 0.15);
   --cab-accent-glow: rgba(124, 58, 237, 0.08);
-  --cab-bg: #141425;
-  --cab-card-bg: #1a1a2e;
+  --cab-bg: #060610;
+  --cab-card-bg: #0a0a14;
   --cab-border: rgba(255,255,255,0.08);
   --cab-text: #e0e0e0;
   --cab-text-dim: #999;
@@ -211,7 +211,7 @@
 
 /* ── Preview card in build ── */
 .cab-policy-card--preview {
-  position: sticky; top: 1rem; background: color-mix(in srgb, var(--cab-accent) 8%, #1a1a2e);
+  position: sticky; top: 1rem; background: color-mix(in srgb, var(--cab-accent) 8%, #0a0a14);
 }
 .cab-preview-empty { color: var(--cab-text-dim); font-style: italic; text-align: center; padding: 2rem 0; }
 

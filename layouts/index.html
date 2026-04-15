@@ -4,158 +4,65 @@
 
 <div class="container">
 
-  <!-- 🧰 CLOUD & AI TOOLKIT SHOWCASE -->
-  <section class="section">
+  <!-- 🧰 RAYCAST-STYLE TOOLKIT SHOWCASE -->
+  <section class="section hp-ray-section">
     <div class="section-header">
       <h2 class="section-title">🧰 Toolkit</h2>
       <a href="/free-tools/" class="section-link">View all →</a>
       <p class="section-desc">Professional-grade tools for IT pros — intelligence dashboards, decision support & productivity boosters.</p>
     </div>
 
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">🚀 For AI & Cloud Learners</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/cert-tracker/" class="hp-toolkit-card" style="--tool-color: #10B981">
-          <strong>Cert Study Guides</strong>
-          <p>Every Microsoft cert — objectives deep-linked to Learn</p>
-        </a>
-        <a href="/prompts/" class="hp-toolkit-card" style="--tool-color: #A78BFA">
-          <strong>Prompt Library</strong>
-          <p>Tested prompts for Copilot, ChatGPT, Claude & more</p>
-        </a>
-        <a href="/prompt-polisher/" class="hp-toolkit-card" style="--tool-color: #EC4899">
-          <strong>Prompt Polisher</strong>
-          <p>Score & rewrite any prompt with the CRAFTS framework</p>
-        </a>
-        <a href="/prompt-guide/" class="hp-toolkit-card" style="--tool-color: #84CC16">
-          <strong>Prompt Engineering Guide</strong>
-          <p>Learn 8 techniques with hands-on practice</p>
-        </a>
-      </div>
+    <div class="hp-ray-filters" role="toolbar" aria-label="Filter tools by category">
+      <button class="hp-ray-pill active" data-cat="all" aria-pressed="true">All</button>
+      <button class="hp-ray-pill" data-cat="learning" aria-pressed="false">📚 Learning</button>
+      <button class="hp-ray-pill" data-cat="copilot" aria-pressed="false">🎯 Copilot</button>
+      <button class="hp-ray-pill" data-cat="informed" aria-pressed="false">📡 Informed</button>
+      <button class="hp-ray-pill" data-cat="compare" aria-pressed="false">⚖️ Compare</button>
+      <button class="hp-ray-pill" data-cat="admin" aria-pressed="false">🔧 Admin</button>
+      <button class="hp-ray-pill" data-cat="community" aria-pressed="false">❤️ Community</button>
     </div>
 
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">🎯 For Copilot Decision Makers</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/copilot-readiness/" class="hp-toolkit-card" style="--tool-color: #3B82F6">
-          <strong>Copilot Readiness</strong>
-          <p>Score your org across 7 pillars — 0 to 100</p>
-        </a>
-        <a href="/copilot-matrix/" class="hp-toolkit-card" style="--tool-color: #60A5FA">
-          <strong>Copilot Features</strong>
-          <p>Feature comparison across every app & licence tier</p>
-        </a>
-        <a href="/roi-calculator/" class="hp-toolkit-card" style="--tool-color: #14B8A6">
-          <strong>Copilot ROI Calculator</strong>
-          <p>Estimate ROI by role with adoption curves</p>
-        </a>
-      </div>
-    </div>
+    {{/* ── SVG illustration library — dramatic contrast (bright highlights + dim background) ── */}}
+    {{ $vis := dict "lines" "<svg viewBox='0 0 200 80' fill='none'><rect x='0' y='4' width='150' height='7' rx='3.5' fill='currentColor' opacity='0.6'/><rect x='0' y='22' width='110' height='7' rx='3.5' fill='currentColor' opacity='0.1'/><rect x='0' y='40' width='170' height='7' rx='3.5' fill='currentColor' opacity='0.5'/><rect x='0' y='58' width='90' height='7' rx='3.5' fill='currentColor' opacity='0.08'/><rect x='0' y='70' width='130' height='7' rx='3.5' fill='currentColor' opacity='0.12'/></svg>" }}
+    {{ $vis = merge $vis (dict "bars" "<svg viewBox='0 0 200 100' fill='none'><rect x='15' y='65' width='24' height='35' rx='4' fill='currentColor' opacity='0.1'/><rect x='50' y='45' width='24' height='55' rx='4' fill='currentColor' opacity='0.15'/><rect x='85' y='25' width='24' height='75' rx='4' fill='currentColor' opacity='0.22'/><rect x='120' y='10' width='24' height='90' rx='4' fill='currentColor' opacity='0.6'/><rect x='155' y='30' width='24' height='70' rx='4' fill='currentColor' opacity='0.12'/></svg>") }}
+    {{ $vis = merge $vis (dict "grid" "<svg viewBox='0 0 200 100' fill='none'><rect x='10' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='38' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.55'/><rect x='66' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.1'/><rect x='94' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='10' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.12'/><rect x='38' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='66' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.5'/><rect x='94' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.12'/><rect x='10' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.45'/><rect x='38' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='66' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.1'/><rect x='94' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/></svg>") }}
+    {{ $vis = merge $vis (dict "gauge" "<svg viewBox='0 0 200 110' fill='none'><path d='M30 95 A70 70 0 0 1 170 95' stroke='currentColor' stroke-width='8' opacity='0.08' stroke-linecap='round' fill='none'/><path d='M30 95 A70 70 0 0 1 145 40' stroke='currentColor' stroke-width='8' opacity='0.5' stroke-linecap='round' fill='none'/><circle cx='145' cy='40' r='7' fill='currentColor' opacity='0.8'/></svg>") }}
+    {{ $vis = merge $vis (dict "timeline" "<svg viewBox='0 0 200 60' fill='none'><line x1='15' y1='30' x2='185' y2='30' stroke='currentColor' stroke-width='2' opacity='0.06'/><circle cx='15' cy='30' r='9' fill='currentColor' opacity='0.6'/><circle cx='70' cy='30' r='7' fill='currentColor' opacity='0.25'/><circle cx='125' cy='30' r='6' fill='currentColor' opacity='0.12'/><circle cx='175' cy='30' r='5' fill='currentColor' opacity='0.06'/></svg>") }}
+    {{ $vis = merge $vis (dict "wave" "<svg viewBox='0 0 200 80' fill='none'><polyline points='0,40 25,40 40,15 55,65 70,25 85,55 100,40 130,40 145,20 160,60 175,35 200,40' stroke='currentColor' stroke-width='2.5' opacity='0.15' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='40' cy='15' r='4' fill='currentColor' opacity='0.7'/><circle cx='70' cy='25' r='3' fill='currentColor' opacity='0.5'/><circle cx='145' cy='20' r='3.5' fill='currentColor' opacity='0.6'/></svg>") }}
+    {{ $vis = merge $vis (dict "blocks" "<svg viewBox='0 0 200 90' fill='none'><rect x='20' y='55' width='165' height='30' rx='6' fill='currentColor' opacity='0.06'/><rect x='10' y='30' width='165' height='30' rx='6' fill='currentColor' opacity='0.12'/><rect x='0' y='5' width='165' height='30' rx='6' fill='currentColor' opacity='0.55'/></svg>") }}
+    {{ $vis = merge $vis (dict "scatter" "<svg viewBox='0 0 200 100' fill='none'><circle cx='30' cy='25' r='18' fill='currentColor' opacity='0.08'/><circle cx='100' cy='18' r='14' fill='currentColor' opacity='0.55'/><circle cx='165' cy='38' r='22' fill='currentColor' opacity='0.06'/><circle cx='55' cy='72' r='12' fill='currentColor' opacity='0.1'/><circle cx='140' cy='78' r='10' fill='currentColor' opacity='0.45'/></svg>") }}
+    {{ $vis = merge $vis (dict "circles" "<svg viewBox='0 0 200 120' fill='none'><circle cx='100' cy='60' r='52' stroke='currentColor' stroke-width='2' opacity='0.05'/><circle cx='100' cy='60' r='36' stroke='currentColor' stroke-width='2.5' opacity='0.1'/><circle cx='100' cy='60' r='20' stroke='currentColor' stroke-width='3' opacity='0.5'/><circle cx='100' cy='60' r='6' fill='currentColor' opacity='0.75'/></svg>") }}
+    {{ $vis = merge $vis (dict "keys" "<svg viewBox='0 0 200 100' fill='none'><rect x='5' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.08'/><rect x='40' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.5'/><rect x='75' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.1'/><rect x='110' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.06'/><rect x='15' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.1'/><rect x='50' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.08'/><rect x='85' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.45'/><rect x='35' y='68' width='70' height='22' rx='4' fill='currentColor' opacity='0.2'/></svg>") }}
 
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">📡 For IT Pros Who Need to Stay Ahead</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/ai-news/" class="hp-toolkit-card" style="--tool-color: #ff66ff">
-          <strong>AI News</strong>
-          <p>Daily AI digest across 20 categories, updated 4× daily</p>
-        </a>
-        <a href="/m365-roadmap/" class="hp-toolkit-card" style="--tool-color: #E5A00D">
-          <strong>M365 Roadmap</strong>
-          <p>Track every M365 feature with change detection & alerts</p>
-        </a>
-        <a href="/service-health/" class="hp-toolkit-card" style="--tool-color: #EA580C">
-          <strong>Service Health</strong>
-          <p>32 M365 + Azure services tracked every 2 hours</p>
-        </a>
-        <a href="/deprecation-timeline/" class="hp-toolkit-card" style="--tool-color: #DC2626">
-          <strong>Deprecation Timeline</strong>
-          <p>Urgency-scored retirements with countdown timers</p>
-        </a>
-      </div>
-    </div>
+    {{/* Read tools from single source of truth: toolkit_nav.toml */}}
+    {{ $allTools := (index hugo.Data "toolkit_nav").tools }}
+    {{ $toolCount := 0 }}
+    {{ range $allTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
 
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">⚖️ For AI & Licensing Planners</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/ai-mapper/" class="hp-toolkit-card" style="--tool-color: #38BDF8">
-          <strong>AI Service Mapper</strong>
-          <p>Compare 25+ AI services — pricing & capabilities</p>
-        </a>
-        <a href="/ai-showdown/" class="hp-toolkit-card" style="--tool-color: #D4A853">
-          <strong>AI SaaS Showdown</strong>
-          <p>Head-to-head AI platform comparison & quiz</p>
-        </a>
-        <a href="/licensing/" class="hp-toolkit-card" style="--tool-color: #F43F5E">
-          <strong>Licensing Simplifier</strong>
-          <p>Compare M365 plans in plain English with pricing</p>
-        </a>
+    <div class="hp-ray-wrapper">
+      <button class="hp-ray-nav hp-ray-nav-left" aria-label="Scroll left" disabled>‹</button>
+      <div class="hp-ray-grid" id="hp-ray-grid">
+        {{ range $allTools }}
+          {{ if .is_tool }}
+          {{ $slug := strings.TrimPrefix "/" .url | strings.TrimSuffix "/" }}
+          <a href="{{ .url }}" class="hp-ray-card" data-cat="{{ .category }}" style="--ray-color: {{ .color }}">
+            <div class="hp-ray-head">
+              <span class="hp-ray-emoji">{{ .emoji }}</span>
+              <span class="hp-ray-name">{{ .name }}</span>
+              <span class="hp-ray-arrow">→</span>
+            </div>
+            <p class="hp-ray-desc">{{ .desc }}</p>
+            <div class="hp-ray-visual" aria-hidden="true">
+              <img class="hp-ray-preview" src="/images/tool-previews/{{ $slug }}.jpg" alt="" loading="lazy" decoding="async">
+            </div>
+            {{ with index $vis .visual }}<div class="hp-ray-abstract" aria-hidden="true">{{ . | safeHTML }}</div>{{ end }}
+          </a>
+          {{ end }}
+        {{ end }}
       </div>
+      <button class="hp-ray-nav hp-ray-nav-right" aria-label="Scroll right">›</button>
     </div>
-
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">🔧 For IT Admins & Security</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/ca-builder/" class="hp-toolkit-card" style="--tool-color: #7C3AED">
-          <strong>CA Policy Builder</strong>
-          <p>Design Entra ID Conditional Access policies visually</p>
-        </a>
-        <a href="/ps-builder/" class="hp-toolkit-card" style="--tool-color: #4ADE80">
-          <strong>PowerShell Builder</strong>
-          <p>Build M365 & Azure admin commands — 68 recipes</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="hp-toolkit-group">
-      <h3 class="hp-toolkit-label">❤️ Community Tools, Made with Love</h3>
-      <div class="hp-toolkit-grid">
-        <a href="/world-clock/" class="hp-toolkit-card" style="--tool-color: #0EA5E9">
-          <strong>Meeting Planner</strong>
-          <p>Live multi-city clocks, converter & meeting planner</p>
-        </a>
-        <a href="/qr-generator/" class="hp-toolkit-card" style="--tool-color: #EC4899">
-          <strong>QR Code Generator</strong>
-          <p>Beautiful QR codes with custom colours, logos & batch mode</p>
-        </a>
-        <a href="/wifi-qr/" class="hp-toolkit-card" style="--tool-color: #22D3EE">
-          <strong>WiFi QR Cards</strong>
-          <p>Printable WiFi cards — guests scan to connect instantly</p>
-        </a>
-        <a href="/password-generator/" class="hp-toolkit-card" style="--tool-color: #D946EF">
-          <strong>Password Generator</strong>
-          <p>Unbreakable passwords, passphrases & strength analyser</p>
-        </a>
-        <a href="/image-compressor/" class="hp-toolkit-card" style="--tool-color: #818CF8">
-          <strong>Image Compressor</strong>
-          <p>Compress, resize & convert images — 100% in your browser</p>
-        </a>
-        <a href="/typing-test/" class="hp-toolkit-card" style="--tool-color: #34D399">
-          <strong>Typing Speed Test</strong>
-          <p>Test WPM & accuracy — quotes, code & progress tracking</p>
-        </a>
-        <a href="/countdown/" class="hp-toolkit-card" style="--tool-color: #FB923C">
-          <strong>Countdown Timer</strong>
-          <p>Flip-clock countdowns, quick timer & full-screen mode</p>
-        </a>
-        <a href="/color-palette/" class="hp-toolkit-card" style="--tool-color: #F472B6">
-          <strong>Colour Palette</strong>
-          <p>Generate palettes, extract from images & check contrast</p>
-        </a>
-        <a href="/pomodoro/" class="hp-toolkit-card" style="--tool-color: #EF4444">
-          <strong>Pomodoro Timer</strong>
-          <p>Focus timer with ambient sounds, tasks & stats</p>
-        </a>
-        <a href="/feedback/"class="hp-toolkit-card" style="--tool-color: #FBBF24">
-          <strong>Community Feedback</strong>
-          <p>Shape what we build next — ideas, questions, bugs</p>
-        </a>
-        <a href="/site-analytics/" class="hp-toolkit-card" style="--tool-color: #64748B">
-          <strong>Site Analytics</strong>
-          <p>Live transparent usage stats — tool leaderboard & trends</p>
-        </a>
-      </div>
-    </div>
-
+    <a href="/free-tools/" class="hp-ray-browse">Browse all {{ $toolCount }} tools →</a>
   </section>
 
   <!-- 🤖 AI HUB VIDEOS -->
