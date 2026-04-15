@@ -75,6 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var rayGrid = document.getElementById('hp-ray-grid');
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (filterBar && rayGrid) {
+    // One-time entrance animation
+    if (!prefersReduced) rayGrid.classList.add('hp-ray-animate');
+    rayGrid.addEventListener('animationend', function() {
+      rayGrid.classList.remove('hp-ray-animate');
+    }, { once: true });
     var indicator = document.createElement('div');
     indicator.className = 'hp-ray-indicator';
     filterBar.appendChild(indicator);
@@ -138,8 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateNavButtons() {
       if (!btnLeft || !btnRight) return;
-      btnLeft.disabled = rayGrid.scrollLeft <= 5;
-      btnRight.disabled = rayGrid.scrollLeft + rayGrid.clientWidth >= rayGrid.scrollWidth - 5;
+      var canScroll = rayGrid.scrollWidth > rayGrid.clientWidth + 5;
+      btnLeft.style.display = canScroll ? '' : 'none';
+      btnRight.style.display = canScroll ? '' : 'none';
+      if (canScroll) {
+        btnLeft.disabled = rayGrid.scrollLeft <= 5;
+        btnRight.disabled = rayGrid.scrollLeft + rayGrid.clientWidth >= rayGrid.scrollWidth - 5;
+      }
     }
 
     updateNavButtons();

@@ -705,23 +705,21 @@ a:hover {
 .hp-ray-card[data-hidden="true"] {
   display: none;
 }
-/* Staggered entrance animation */
+/* Staggered entrance animation — one-time only */
 @keyframes hp-ray-enter {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.hp-ray-card {
+.hp-ray-grid.hp-ray-animate .hp-ray-card {
   animation: hp-ray-enter 0.4s ease both;
 }
-.hp-ray-card:nth-child(1)  { animation-delay: 0s; }
-.hp-ray-card:nth-child(2)  { animation-delay: 0.04s; }
-.hp-ray-card:nth-child(3)  { animation-delay: 0.08s; }
-.hp-ray-card:nth-child(4)  { animation-delay: 0.12s; }
-.hp-ray-card:nth-child(5)  { animation-delay: 0.16s; }
-.hp-ray-card:nth-child(6)  { animation-delay: 0.2s; }
-.hp-ray-card:nth-child(7)  { animation-delay: 0.24s; }
-.hp-ray-card:nth-child(8)  { animation-delay: 0.28s; }
-.hp-ray-card:nth-child(n+9) { animation-delay: 0.32s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(1)  { animation-delay: 0s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(2)  { animation-delay: 0.04s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(3)  { animation-delay: 0.04s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(4)  { animation-delay: 0.08s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(5)  { animation-delay: 0.08s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(6)  { animation-delay: 0.12s; }
+.hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(n+7) { animation-delay: 0.16s; }
 
 /* ── OLD TOOLKIT (legacy, keep for non-home pages) ── */
 .hp-toolkit-group {
@@ -1763,6 +1761,20 @@ a.welcome-stat-link:hover {
 .page-free-tools .site-nav { --nav-accent: rgba(196, 117, 91, 0.4); }
 .page-qr-generator .site-nav { --nav-accent: rgba(236, 72, 153, 0.35); }
 .page-wifi-qr .site-nav { --nav-accent: rgba(34, 211, 238, 0.35); }
+.page-start .site-nav { --nav-accent: rgba(139, 92, 246, 0.35); }
+.page-prompt-guide .site-nav { --nav-accent: rgba(132, 204, 22, 0.35); }
+.page-service-health .site-nav { --nav-accent: rgba(234, 88, 12, 0.35); }
+.page-licensing .site-nav { --nav-accent: rgba(244, 63, 94, 0.35); }
+.page-ai-showdown .site-nav { --nav-accent: rgba(212, 168, 83, 0.35); }
+.page-cert-tracker .site-nav { --nav-accent: rgba(16, 185, 129, 0.35); }
+.page-site-analytics .site-nav { --nav-accent: rgba(100, 116, 139, 0.35); }
+.page-password-generator .site-nav { --nav-accent: rgba(217, 70, 239, 0.35); }
+.page-image-compressor .site-nav { --nav-accent: rgba(129, 140, 248, 0.35); }
+.page-typing-test .site-nav { --nav-accent: rgba(52, 211, 153, 0.35); }
+.page-countdown .site-nav { --nav-accent: rgba(251, 146, 60, 0.35); }
+.page-color-palette .site-nav { --nav-accent: rgba(244, 114, 182, 0.35); }
+.page-pomodoro .site-nav { --nav-accent: rgba(239, 68, 68, 0.35); }
+.page-world-clock .site-nav { --nav-accent: rgba(14, 165, 233, 0.35); }
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;

@@ -30,9 +30,21 @@
 <script>
 document.getElementById('blog-search').addEventListener('input', function() {
   var q = this.value.toLowerCase();
+  var visible = 0;
   document.querySelectorAll('.blog-tl-item').forEach(function(el) {
-    el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+    var show = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+    el.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
+  var noResults = document.getElementById('blog-no-results');
+  if (!noResults) {
+    noResults = document.createElement('p');
+    noResults.id = 'blog-no-results';
+    noResults.style.cssText = 'text-align:center;color:rgba(255,255,255,0.35);padding:2rem 0;font-size:0.9rem;';
+    noResults.textContent = 'No posts found — try a different search term';
+    document.querySelector('.blog-timeline').after(noResults);
+  }
+  noResults.style.display = (q && visible === 0) ? '' : 'none';
 });
 </script>
 
