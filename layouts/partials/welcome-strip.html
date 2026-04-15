@@ -18,26 +18,26 @@
     {{ $certCount := len $certPages }}
     {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
     <div class="welcome-stat-boxes">
-      <div class="welcome-stat-box">
+      <a href="/free-tools/" class="welcome-stat-box welcome-stat-link">
         <span class="welcome-stat-num">{{ $toolCount }}</span>
         <span class="welcome-stat-label">Tools</span>
-      </div>
-      <div class="welcome-stat-box">
+      </a>
+      <a href="/ai-hub/" class="welcome-stat-box welcome-stat-link">
         <span class="welcome-stat-num">{{ $videoCount }}</span>
         <span class="welcome-stat-label">Videos</span>
-      </div>
-      <div class="welcome-stat-box">
+      </a>
+      <a href="/prompts/" class="welcome-stat-box welcome-stat-link">
         <span class="welcome-stat-num">{{ $promptCount }}</span>
         <span class="welcome-stat-label">Prompts</span>
-      </div>
-      <div class="welcome-stat-box">
+      </a>
+      <a href="/cert-tracker/" class="welcome-stat-box welcome-stat-link">
         <span class="welcome-stat-num">{{ $certCount }}</span>
         <span class="welcome-stat-label">Cert Guides</span>
-      </div>
-      <div class="welcome-stat-box">
+      </a>
+      <a href="/blog/" class="welcome-stat-box welcome-stat-link">
         <span class="welcome-stat-num">{{ $blogCount }}</span>
         <span class="welcome-stat-label">Articles</span>
-      </div>
+      </a>
     </div>
     {{ partial "page-search.html" . }}
     <div class="welcome-cta-row">

@@ -706,6 +706,15 @@ a:hover {
   border-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
 }
+a.welcome-stat-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a.welcome-stat-link:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.08);
+}
 .welcome-stat-num {
   font-family: var(--font-heading);
   font-size: 1.2rem;
