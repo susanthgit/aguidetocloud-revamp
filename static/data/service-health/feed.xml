@@ -5,16 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 23:01:44 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 03:37:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Intune] Some users' newly enrolled devices in Microsoft Intune may be unable to access company resources</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1279031</link>
-      <description>[Microsoft Intune] Users' newly enrolled devices in Microsoft Intune may be unable to access company resources.</description>
-      <category>Microsoft Intune</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">IT1279031</guid>
-      <pubDate>Mon, 13 Apr 2026 19:42:25 +0000</pubDate>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1280167</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delays when accessing Copilot Suggested Notebooks.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1280167</guid>
+      <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1280216</link>
+      <description>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1280216</guid>
+      <pubDate>Mon, 13 Apr 2026 22:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
@@ -42,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1276339</guid>
       <pubDate>Fri, 10 Apr 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins may see delays occur with several reports in the Microsoft 365 Admin Center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1280165</link>
+      <description>[Microsoft 365 suite] Admins may see delays occur with several reports in the Microsoft 365 Admin Center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1280165</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1255397</guid>
       <pubDate>Thu, 12 Mar 2026 22:04:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to access custom add-ins through any Exchange Online connection method</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1259460</link>
-      <description>[Exchange Online] Users may have been unable to access custom add-ins through any Exchange Online connection method.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1259460</guid>
-      <pubDate>Thu, 12 Mar 2026 22:04:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to use classic Outlook when the Teams Meeting Add-in is enabled</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1254044</link>
-      <description>[Exchange Online] Users may be unable to use classic Outlook when the Teams Meeting Add-in is enabled.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1254044</guid>
-      <pubDate>Thu, 12 Mar 2026 12:36:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
