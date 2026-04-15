@@ -127,9 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
           card.setAttribute('data-hidden', 'true');
         }
       });
-      // Dynamic rows: 1 row if ≤4 visible, 2 rows otherwise
+      // Dynamic rows: mobile = always 1 row; desktop = 1 row if ≤4 visible, 2 rows otherwise
       var visibleCount = rayGrid.querySelectorAll('.hp-ray-card:not([data-hidden="true"])').length;
-      rayGrid.style.gridTemplateRows = visibleCount <= 4 ? '1fr' : 'repeat(2, auto)';
+      var isMobile = window.innerWidth <= 768;
+      rayGrid.style.gridTemplateRows = (isMobile || visibleCount <= 4) ? '1fr' : 'repeat(2, auto)';
       rayGrid.scrollLeft = 0;
       updateNavButtons();
     });
@@ -161,5 +162,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnRight) btnRight.addEventListener('click', function() {
       rayGrid.scrollBy({ left: rayGrid.clientWidth * 0.8, behavior: prefersReduced ? 'instant' : 'smooth' });
     });
+  }
+
+  // ── Cursor glow effect (homepage only, desktop only) ──
+  if (document.body.classList.contains('is-home') && window.innerWidth > 768 && !prefersReduced) {
+    var glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+    document.addEventListener('mousemove', function(e) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }, { passive: true });
   }
 });
