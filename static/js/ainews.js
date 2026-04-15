@@ -297,11 +297,12 @@ function renderNews(data, view) {
   var breakingArticles = articles.filter(function (a) { return a.is_breaking; });
   if (breakingArticles.length > 0) {
     html += '<div class="ainews-breaking" style="grid-column:1/-1">';
-    html += '<span class="ainews-breaking-label">🔴 BREAKING</span> ';
+    html += '<span class="ainews-breaking-label">🔴 BREAKING</span>';
+    html += '<ul class="ainews-breaking-list">';
     html += breakingArticles.map(function (a) {
-      return '<a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(a.title) + '</a>';
-    }).join(' · ');
-    html += '</div>';
+      return '<li><a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(a.title) + '</a></li>';
+    }).join('');
+    html += '</ul></div>';
   }
 
   // ⚡ DAILY BRIEFING BOX
