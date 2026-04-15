@@ -15,6 +15,27 @@
    Design: Minimal, data-first, no clutter
    ══════════════════════════════════════════════ */
 
+/* ── Glass Pill Tabs (top-level) ── */
+.rdmap-top-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.rdmap-top-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.rdmap-top-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.rdmap-top-tab.active {
+  color: #000; background: #E5A00D; border-color: #E5A00D;
+  box-shadow: 0 2px 8px rgba(229,160,13, 0.3);
+}
+.rdmap-top-panel { display: none; }
+.rdmap-top-panel.active { display: block; }
+
 .rdmap-hero {
   background: linear-gradient(180deg, #1a1510 0%, #141118 100%);
   padding: 2.5rem 1rem 1.8rem; text-align: center;

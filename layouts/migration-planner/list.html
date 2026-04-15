@@ -75,6 +75,7 @@
       <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-risks" id="tab-risks" data-tab="risks">⚠️ Risks</button>
       <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools" data-tab="tools">🔧 Tools</button>
       <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-summary" id="tab-summary" data-tab="summary">📄 Summary</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">❓ FAQ</button>
     </div>
 
     {{/* ── Panel: Wizard ── */}}
@@ -139,18 +140,20 @@
       </div>
     </div>
 
-    {{/* ── FAQ Section (visible, for SEO) ── */}}
-    {{ with $faqFile.faq }}
-    <div class="migplan-faq" style="margin-top:3rem;">
-      <h2 class="migplan-section-title">❓ Frequently Asked Questions</h2>
-      {{ range $i, $q := . }}
-      <details style="margin-bottom:0.75rem;background:rgba(99,102,241,0.04);border:1px solid rgba(99,102,241,0.12);border-radius:10px;padding:0.75rem 1rem;">
-        <summary style="font-weight:700;color:#fff;font-size:0.9rem;cursor:pointer;">{{ index $q "question" }}</summary>
-        <p style="font-size:0.85rem;color:#bbb;line-height:1.6;margin-top:0.5rem;">{{ index $q "answer" }}</p>
-      </details>
+    {{/* ── Panel: FAQ ── */}}
+    <div class="migplan-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
+      {{ with $faqFile.faq }}
+      <div style="max-width:800px">
+        <h2 style="color:#6478CC;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+        {{ range $i, $q := . }}
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+          <strong style="color:#6478CC;font-size:0.95rem">{{ add $i 1 }}. {{ index $q "question" }}</strong>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ index $q "answer" }}</p>
+        </div>
+        {{ end }}
+      </div>
       {{ end }}
     </div>
-    {{ end }}
 
     {{/* ── Cross-tool Links ── */}}
     <div style="margin-top:2.5rem;text-align:center;">

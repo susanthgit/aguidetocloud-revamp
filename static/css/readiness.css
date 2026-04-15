@@ -15,6 +15,27 @@
   --score-star: #3B82F6;
 }
 
+/* ── Glass Pill Tabs ── */
+.readiness-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.readiness-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.readiness-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.readiness-tab.active {
+  color: #000; background: #3B82F6; border-color: #3B82F6;
+  box-shadow: 0 2px 8px rgba(59,130,246, 0.3);
+}
+.readiness-panel { display: none; }
+.readiness-panel.active { display: block; }
+
 /* ── Container ── */
 .readiness-container {
   max-width: 800px;

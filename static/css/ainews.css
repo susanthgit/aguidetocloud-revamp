@@ -10,6 +10,27 @@
   --tool-accent-glow: rgba(255, 102, 255, 0.25);
 }
 
+/* ── Glass Pill Tabs (top-level) ── */
+.ainews-top-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.ainews-top-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.ainews-top-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.ainews-top-tab.active {
+  color: #000; background: #ff66ff; border-color: #ff66ff;
+  box-shadow: 0 2px 8px rgba(255,102,255, 0.3);
+}
+.ainews-top-panel { display: none; }
+.ainews-top-panel.active { display: block; }
+
 /* ── AI NEWS PAGE ───────────────────────── */
 .ainews-hero-banner {
   position: relative;

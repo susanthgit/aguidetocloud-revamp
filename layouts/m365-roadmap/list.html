@@ -10,6 +10,13 @@
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
 {{ partial "tool-hero.html" (dict "title" "M365 Roadmap Tracker" "subtitle" "Tracking all M365 features across 11 products — AI summarised, updated daily" "accent" "#E5A00D" "freshness" "/data/roadmap/latest.json") }}
 <div class="rdmap-container">
+  {{/* ── Glass Pill Tabs (top-level) ── */}}
+  <div class="rdmap-top-tabs" role="tablist" aria-label="Roadmap Tracker sections">
+    <button class="rdmap-top-tab active" data-tab="main" role="tab" aria-selected="true">🗺️ Roadmap</button>
+    <button class="rdmap-top-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+  </div>
+
+  <div class="rdmap-top-panel active" id="panel-main" role="tabpanel">
   <div class="rdmap-controls" id="rdmap-controls">
     <label for="rdmap-search" class="sr-only">Search roadmap items</label>
     <input type="text" id="rdmap-search" class="rdmap-search" placeholder="Search roadmap items..." autocomplete="off">
@@ -44,6 +51,23 @@
     <div class="rdmap-browse" id="rdmap-browse"></div>
     <div class="rdmap-freshness" id="rdmap-freshness"></div>
   </div>
+  </div>{{/* end panel-main */}}
+
+  {{/* ── FAQ Panel ── */}}
+  <div class="rdmap-top-panel" id="panel-faq" role="tabpanel" hidden>
+  {{ if .Params.faq }}
+  <div style="max-width:800px">
+    <h2 style="color:#E5A00D;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+      <strong style="color:#E5A00D;font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ $q.answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  </div>
+
 </div>
 
 
@@ -64,6 +88,17 @@
 }
 </script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
+<script>
+document.querySelectorAll('.rdmap-top-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.rdmap-top-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.rdmap-top-panel').forEach(function(p) { p.classList.remove('active'); p.hidden = true; });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    var panel = document.getElementById('panel-' + tab.dataset.tab);
+    if (panel) { panel.classList.add('active'); panel.hidden = false; }
+  });
+});
+</script>
 
 {{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "roadmap") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
