@@ -35,6 +35,7 @@
       <button class="psb-tab active" role="tab" aria-selected="true" aria-controls="psb-panel-recipes" data-tab="recipes">📋 Recipes</button>
       <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-build" data-tab="build">🔧 Build</button>
       <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-reference" data-tab="reference">📖 Reference</button>
+      <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-faq" data-tab="faq">❓ FAQ</button>
     </div>
 
     {{/* ── RECIPES TAB ── */}}
@@ -139,20 +140,22 @@
       <button class="psb-btn-text" id="psb-clear-history" hidden>Clear History</button>
     </details>
 
-    {{/* ── FAQ SECTION ── */}}
-    {{ with .Params.faq }}
-    <div class="psb-faq">
-      <h2 class="psb-section-title">Frequently Asked Questions</h2>
-      <div class="psb-faq-list">
-        {{ range $i, $faq := . }}
-        <details class="psb-faq-item"{{ if eq $i 0 }} open{{ end }}>
-          <summary class="psb-faq-q">{{ $faq.question }}</summary>
-          <p class="psb-faq-a">{{ $faq.answer }}</p>
-        </details>
-        {{ end }}
+    {{/* ── FAQ TAB ── */}}
+    <div class="psb-panel" id="psb-panel-faq" role="tabpanel" hidden>
+      {{ with .Params.faq }}
+      <div class="psb-faq">
+        <h2 class="psb-section-title">Frequently Asked Questions</h2>
+        <div class="psb-faq-list">
+          {{ range $i, $faq := . }}
+          <details class="psb-faq-item"{{ if eq $i 0 }} open{{ end }}>
+            <summary class="psb-faq-q">{{ $faq.question }}</summary>
+            <p class="psb-faq-a">{{ $faq.answer }}</p>
+          </details>
+          {{ end }}
+        </div>
       </div>
+      {{ end }}
     </div>
-    {{ end }}
 
     {{/* ── CROSS-LINKS ── */}}
     <div class="psb-cross-links">

@@ -28,6 +28,7 @@
       <button class="pguide-tab" role="tab" aria-selected="false" data-tab="challenges" id="tab-challenges" aria-controls="panel-challenges">🏆 Challenges</button>
       <button class="pguide-tab" role="tab" aria-selected="false" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn</button>
       <button class="pguide-tab" role="tab" aria-selected="false" data-tab="quiz" id="tab-quiz" aria-controls="panel-quiz">🧭 Which Technique?</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">❓ FAQ</button>
     </div>
 
     {{/* ══════════════════════════════════════════
@@ -307,18 +308,20 @@
       </div>
     </div>
 
-    {{/* ── FAQ Section (rendered, SEO handled by seo-jsonld.html) ── */}}
-    {{ with .Params.faq }}
-    <div class="pguide-faq">
-      <h2>❓ Frequently Asked Questions</h2>
-      {{ range . }}
-      <details class="pguide-faq-item">
-        <summary>{{ .question }}</summary>
-        <p>{{ .answer }}</p>
-      </details>
+    {{/* ── FAQ Tab Panel ── */}}
+    <div class="pguide-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
+      {{ with .Params.faq }}
+      <div class="pguide-faq">
+        <h2>❓ Frequently Asked Questions</h2>
+        {{ range . }}
+        <details class="pguide-faq-item">
+          <summary>{{ .question }}</summary>
+          <p>{{ .answer }}</p>
+        </details>
+        {{ end }}
+      </div>
       {{ end }}
     </div>
-    {{ end }}
 
   </div>
 </div>
