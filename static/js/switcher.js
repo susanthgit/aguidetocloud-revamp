@@ -116,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!e.target.closest('.nav-dropdown')) {
       document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
         dd.classList.remove('open');
+        var toggle = dd.querySelector('.dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
       });
     }
   });

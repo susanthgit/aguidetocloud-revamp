@@ -2113,6 +2113,8 @@ a.welcome-stat-link:hover {
   line-height: 1.7;
   font-family: var(--font-body);
   font-size: 1.05rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 /* Constrain prose elements to comfortable reading width */
 .single-content .content-body p,
@@ -2126,6 +2128,13 @@ a.welcome-stat-link:hover {
 .single-content .content-body blockquote,
 .single-content .content-body > hr {
   max-width: 720px;
+  margin-inline: auto;
+}
+/* Prevent anchor jumps from hiding headings behind sticky nav */
+.single-content .content-body h2,
+.single-content .content-body h3,
+.single-content .content-body h4 {
+  scroll-margin-top: 5rem;
 }
 .single-content .content-body p {
   margin-bottom: 1.25em;
@@ -2742,6 +2751,8 @@ pre.mermaid {
   .single-content .content-body pre {
     padding: 1rem;
     border-radius: 10px;
+  }
+  .single-content .content-body pre code {
     font-size: 0.82rem;
   }
   .content-body .mermaid {
