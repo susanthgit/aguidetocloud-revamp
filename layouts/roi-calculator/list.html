@@ -78,6 +78,7 @@
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-costs" id="tab-btn-costs" data-tab="costs">💳 Cost Breakdown</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" id="tab-btn-scenarios" data-tab="scenarios">📊 Scenarios</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-summary" id="tab-btn-summary" data-tab="summary">📄 Executive Summary</button>
+      <button class="roi-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
@@ -559,6 +560,20 @@
         <div class="roi-history-list" id="roi-history-list"></div>
         <button class="roi-btn-danger" id="roi-clear-history">Clear History</button>
       </div>
+    </div>
+
+    <div class="roi-panel" id="panel-faq" role="tabpanel" hidden>
+    {{ if .Params.faq }}
+    <div style="max-width:800px">
+      <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      {{ range $i, $q := .Params.faq }}
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+        <strong style="color:var(--tool-accent, #fff);font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ $q.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
     </div>
 
   </div>{{/* .roi-container */}}

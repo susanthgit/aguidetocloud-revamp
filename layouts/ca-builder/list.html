@@ -275,6 +275,23 @@
     </details>
   </div>
 
+  {{/* ═══ FAQ TAB ═══ */}}
+  <div class="cab-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq" hidden>
+    {{ with .Params.faq }}
+    <div class="cab-panel-header">
+      <h2 style="color:#7C3AED;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1rem">
+      {{ range $i, $f := . }}
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.25rem">
+        <strong style="color:#7C3AED; font-size:0.95rem">{{ add $i 1 }}. {{ $f.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.6; margin:0.5rem 0 0">{{ $f.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
   {{/* #18: Blog/YouTube CTA */}}
   <div class="cab-content-cta">
     <p>📺 <strong>Learn more:</strong> Watch our <a href="/blog/">tutorials</a> on Conditional Access, Zero Trust, and Microsoft Entra ID. Follow <a href="https://youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">A Guide to Cloud & AI</a> for step-by-step walkthroughs.</p>

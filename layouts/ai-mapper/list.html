@@ -31,6 +31,7 @@
     <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">🧭 Which AI?</button>
     <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">💰 Pricing</button>
     <button class="aimap-tab" data-tab="glossary" role="tab" aria-selected="false">📚 Glossary</button>
+    <button class="aimap-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
   </div>
 
   {{/* ============ TAB 1: EXPLORE ============ */}}
@@ -266,6 +267,20 @@
   </div>
 
   {{/* ============ TAB 6: CHANGELOG (#12) ============ */}}
+
+  <div class="aimap-panel" id="panel-faq" role="tabpanel" hidden>
+  {{ if .Params.faq }}
+  <div style="max-width:800px">
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+      <strong style="color:var(--tool-accent, #fff);font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ $q.answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  </div>
 
 </div>
 

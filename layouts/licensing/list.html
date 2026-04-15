@@ -83,6 +83,7 @@
     <button class="lic-tab" data-tab="addons" role="tab" aria-selected="false">🧩 Add-ons Advisor</button>
     <button class="lic-tab" data-tab="quiz" role="tab" aria-selected="false">🧠 Which M365 Plan?</button>
     <button class="lic-tab" data-tab="changelog" role="tab" aria-selected="false">📰 What Changed?</button>
+    <button class="lic-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
   </div>
 
     {{/* ══════════════ TAB: COMPARE ══════════════ */}}
@@ -180,6 +181,20 @@
       <div class="lic-changelog" id="lic-changelog-content">
         {{/* JS renders timeline here */}}
       </div>
+    </div>
+
+    <div class="lic-panel" id="panel-faq" role="tabpanel" hidden>
+    {{ if .Params.faq }}
+    <div style="max-width:800px">
+      <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      {{ range $i, $q := .Params.faq }}
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+        <strong style="color:var(--tool-accent, #fff);font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ $q.answer }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
     </div>
 
     {{/* ── DISCLAIMER ── */}}

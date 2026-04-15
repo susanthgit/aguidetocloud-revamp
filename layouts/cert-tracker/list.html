@@ -16,6 +16,7 @@
     <button class="cert-tab active" role="tab" aria-selected="true" data-tab="updates">🗺️ Certification Roadmap</button>
     <button class="cert-tab" role="tab" aria-selected="false" data-tab="guides">📚 All Guides</button>
     <button class="cert-tab" role="tab" aria-selected="false" data-tab="category">🏷️ By Category</button>
+    <button class="cert-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
   </div>
 
   {{/* ── Tab 1: Certification Roadmap (default) ── */}}
@@ -87,6 +88,20 @@
     <div class="cert-stats" id="cert-stats"></div>
     <div class="cert-chips" id="cert-chips" role="group" aria-label="Category filters"></div>
     <div class="cert-grid cert-grid-cat" id="cert-grid-cat" aria-live="polite"></div>
+  </div>
+
+  <div class="cert-panel" id="panel-faq" role="tabpanel" hidden>
+  {{ if .Params.faq }}
+  <div style="max-width:800px">
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    {{ range $i, $q := .Params.faq }}
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+      <strong style="color:var(--tool-accent, #fff);font-size:0.95rem">{{ add $i 1 }}. {{ $q.question }}</strong>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;margin:0.5rem 0 0">{{ $q.answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
   </div>
 
   <div class="cert-footer">
