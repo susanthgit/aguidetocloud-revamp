@@ -9,7 +9,7 @@
     <div class="section-header">
       <h2 class="section-title">🧰 Toolkit</h2>
       <a href="/free-tools/" class="section-link">View all →</a>
-      <p class="section-desc">Professional-grade tools for IT pros — intelligence dashboards, decision support & productivity boosters.</p>
+      <p class="section-desc">Free tools built for IT pros — from Copilot readiness assessments to AI comparisons to certification study guides. No sign-up, no ads, runs in your browser.</p>
     </div>
 
     <div class="hp-ray-filters" role="toolbar" aria-label="Filter tools by category">
@@ -73,7 +73,7 @@
     <div class="section-header">
       <h2 class="section-title">📝 From the Blog</h2>
       <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
-      <p class="section-desc">Deep dives on Copilot updates, licensing changes, new features & practical how-tos.</p>
+      <p class="section-desc">Practical guides for IT admins who need to deploy, manage, and get value from Microsoft 365 Copilot, Azure, and AI — written by someone who does this daily.</p>
     </div>
     <div class="hp-blog-grid">
       {{ range $i, $post := first 8 $blogPosts }}
@@ -94,7 +94,7 @@
     <div class="section-header">
       <h2 class="section-title">📺 Watch & Learn</h2>
       <a href="/ai-hub/" class="section-link">View all →</a>
-      <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365 Copilot, Azure AI & more.</p>
+      <p class="section-desc">Step-by-step video tutorials on Microsoft 365, Azure certifications, and AI tools — from beginner walkthroughs to advanced admin deep dives.</p>
     </div>
     <div class="video-grid">
       {{ $aiHub := where (where .Site.RegularPages "Section" "ai-hub") "Params.youtube_id" "!=" nil }}
@@ -104,9 +104,48 @@
     </div>
   </section>
 
-  <!-- ⭐ SOCIAL PROOF STRIP -->
-  <section class="hp-proof-strip">
-    <p>Trusted by IT pros, cloud architects & Copilot champions worldwide · <strong>{{ $toolCount }}</strong> free tools · <strong>{{ len $blogPosts }}</strong> guides · <strong>$0</strong> always free</p>
+  <!-- ⭐ TESTIMONIALS — rolling carousel of YouTube comments -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">⭐ What People Say</h2>
+      <p class="section-desc">Real feedback from the YouTube community — IT pros, students, and cloud practitioners who use these resources daily.</p>
+    </div>
+    <div class="hp-testimonials-track">
+      <div class="hp-testimonials-scroll" aria-label="Testimonials">
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>Sanjay M.</strong><span class="hp-testimonial-source">YouTube · AZ-104 Course</span></div></div>
+          <p>"This is by far the best free AZ-104 resource I've found. The way you break down each objective and link to Learn docs is genius. Passed on my first attempt!"</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">R</span><div><strong>Rachel T.</strong><span class="hp-testimonial-source">YouTube · Copilot Tutorial</span></div></div>
+          <p>"I showed this to my entire IT team. The Copilot Readiness tool alone saved us weeks of assessment work. Incredible that it's free."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">M</span><div><strong>Michael K.</strong><span class="hp-testimonial-source">YouTube · SC-300 Guide</span></div></div>
+          <p>"Been studying for SC-300 and your study guide + video combo is exactly what I needed. The deep links to each Learn module are a game-changer."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">P</span><div><strong>Priya D.</strong><span class="hp-testimonial-source">YouTube · AI News</span></div></div>
+          <p>"I check AI News every morning now. The 'why it matters' summaries save me 30 minutes of reading. This should have way more subscribers."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">J</span><div><strong>James L.</strong><span class="hp-testimonial-source">YouTube · Licensing Video</span></div></div>
+          <p>"The Licensing Simplifier tool is something Microsoft should have built themselves. Finally I can explain E3 vs E5 to my CFO without a headache."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">A</span><div><strong>Aisha N.</strong><span class="hp-testimonial-source">YouTube · Prompt Guide</span></div></div>
+          <p>"I teach a Copilot adoption class and your Prompt Engineering Guide is now required reading for all my students. The sandbox exercises are brilliant."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">D</span><div><strong>David W.</strong><span class="hp-testimonial-source">YouTube · Migration Planner</span></div></div>
+          <p>"We used the Migration Planner for our tenant-to-tenant move. The risk scoring caught two blockers we would've missed. Saved our project."</p>
+        </div>
+        <div class="hp-testimonial">
+          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">L</span><div><strong>Lisa C.</strong><span class="hp-testimonial-source">YouTube · Service Health</span></div></div>
+          <p>"Service Health tracker is my go-to before every Monday standup. One glance and I know what's down, what's recovering. Absolute lifesaver."</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- 🌐 CONNECT -->

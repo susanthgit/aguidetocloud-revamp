@@ -167,6 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ── Testimonials infinite scroll (clone cards for seamless loop) ──
+  var testimonialScroll = document.querySelector('.hp-testimonials-scroll');
+  if (testimonialScroll) {
+    var items = testimonialScroll.innerHTML;
+    testimonialScroll.innerHTML = items + items;
+  }
+
   // ── Cursor glow effect (homepage only, desktop only) ──
   if (document.body.classList.contains('is-home') && window.innerWidth > 768 && !prefersReduced) {
     var glow = document.createElement('div');
