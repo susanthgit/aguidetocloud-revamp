@@ -6,6 +6,10 @@ youtube_id: "Bx94L5jZxTo"
 card_tag: "Security"
 tag_class: "cloud"
 images: ["images/og/blog/azure-firewall-tutorial-beginners-hands-on-lab-with.jpg"]
+tags:
+  - azure
+  - security
+  - tutorial
 ---
 
 ## What You'll Learn

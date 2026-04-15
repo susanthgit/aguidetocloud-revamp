@@ -6,6 +6,11 @@ youtube_id: "S823oKDnGWU"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 images: ["images/og/blog/20-real-world-copilot-in-word-use-cases.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What You'll Learn

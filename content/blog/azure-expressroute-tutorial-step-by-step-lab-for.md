@@ -6,6 +6,9 @@ youtube_id: "XjlGJ2AjyII"
 card_tag: "Networking"
 tag_class: "cloud"
 images: ["images/og/blog/azure-expressroute-tutorial-step-by-step-lab-for.jpg"]
+tags:
+  - azure
+  - tutorial
 ---
 
 ## What You'll Learn

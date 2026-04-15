@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.getElementById('hamburger-btn');
   const navLinks = document.getElementById('nav-links');
   if (hamburger && navLinks) {
+    hamburger.setAttribute('aria-controls', 'nav-links');
     hamburger.addEventListener('click', function() {
-      const isOpen = navLinks.classList.toggle('open');
+      var isOpen = navLinks.classList.toggle('open');
       hamburger.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isOpen);
       document.body.classList.toggle('nav-open', isOpen);
+      if (isOpen) {
+        var firstLink = navLinks.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
     });
     navLinks.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
       link.addEventListener('click', function() {
@@ -23,6 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('nav-open');
+      }
+    });
+    // Escape key closes mobile menu
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+        hamburger.focus();
+      }
+    });
+    // Focus trap within mobile menu
+    navLinks.addEventListener('keydown', function(e) {
+      if (e.key !== 'Tab' || !navLinks.classList.contains('open')) return;
+      var focusable = navLinks.querySelectorAll('a, button');
+      if (focusable.length === 0) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
   }
@@ -116,8 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!e.target.closest('.nav-dropdown')) {
       document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
         dd.classList.remove('open');
-        var toggle = dd.querySelector('.dropdown-toggle');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
       });
     }
   });

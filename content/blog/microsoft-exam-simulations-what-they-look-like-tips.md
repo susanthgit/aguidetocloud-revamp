@@ -6,6 +6,10 @@ youtube_id: "n7FD6L9dWpk"
 card_tag: "Exam Tips"
 tag_class: "cert"
 images: ["images/og/blog/microsoft-exam-simulations-what-they-look-like-tips.jpg"]
+tags:
+  - certification
+  - study-guide
+  - training
 ---
 
 ## What You'll Learn

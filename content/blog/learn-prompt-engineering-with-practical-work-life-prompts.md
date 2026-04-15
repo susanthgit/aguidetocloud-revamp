@@ -6,6 +6,11 @@ youtube_id: "MBZ6RCR4VPc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 images: ["images/og/blog/learn-prompt-engineering-with-practical-work-life-prompts.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What You'll Learn

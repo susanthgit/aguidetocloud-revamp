@@ -6,6 +6,11 @@ youtube_id: "Kqq1kBPgYoY"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 images: ["images/og/blog/master-all-6-microsoft-365-copilot-agents.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What You'll Learn

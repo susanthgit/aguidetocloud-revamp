@@ -6,6 +6,10 @@ youtube_id: "anef67apIEA"
 card_tag: "AZ-204"
 tag_class: "cert"
 images: ["images/og/blog/az-204-full-course-azure-developer-certification.jpg"]
+tags:
+  - azure
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

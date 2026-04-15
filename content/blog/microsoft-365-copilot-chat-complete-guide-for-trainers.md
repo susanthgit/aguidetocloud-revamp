@@ -27,6 +27,11 @@ faq:
   - question: "Does Copilot Chat use my data to train AI models?"
     answer: "No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data is protected by the same Microsoft enterprise terms that cover your emails and files."
 images: ["images/og/blog/microsoft-365-copilot-chat-complete-guide-for-trainers.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - training
+  - guide
 ---
 
 Whether you're rolling out Copilot Chat to 500 people or 50,000, you need your AI trainers to **deeply understand** what they're teaching — not just the buttons, but the value, the nuances, and the "why" behind every feature.

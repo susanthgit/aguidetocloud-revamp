@@ -1942,7 +1942,7 @@ a.welcome-stat-link:hover {
 .blog-pn-prev { margin-right: auto; }
 .blog-pn-next { margin-left: auto; text-align: right; }
 .blog-pn-arrow { font-size: 0.8rem; opacity: 0.7; flex-shrink: 0; }
-.blog-pn-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.5; flex-shrink: 0; }
+.blog-pn-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.65; flex-shrink: 0; }
 .blog-pn-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 640px) {
   .blog-pn-title { display: none; }
@@ -2734,6 +2734,8 @@ pre.mermaid {
   .single-content .content-body pre {
     padding: 1rem;
     border-radius: 10px;
+  }
+  .single-content .content-body pre code {
     font-size: 0.82rem;
   }
   .content-body .mermaid {
@@ -2748,6 +2750,159 @@ pre.mermaid {
   .content-body th, .content-body td {
     padding: 0.5rem 0.6rem;
   }
+  .blog-end-links {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── BLOG: Reading progress bar ──────────── */
+.blog-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--neon-cyan);
+  z-index: 9999;
+  transition: width 50ms linear;
+  pointer-events: none;
+}
+
+/* ── BLOG: Updated date ──────────────────── */
+.meta-updated {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+/* ── BLOG: Share button ──────────────────── */
+.blog-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.blog-share-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.blog-share-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* ── BLOG: End-of-post CTA ───────────────── */
+.blog-end-cta {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.blog-end-cta h2 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+.blog-end-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.blog-end-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.blog-end-link:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+.blog-end-link-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neon-cyan);
+}
+.blog-end-link-title {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.blog-end-subscribe {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.blog-end-sub-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.blog-end-sub-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* ── BLOG: Code copy button ──────────────── */
+.code-copy-wrap {
+  position: relative;
+}
+.code-copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.5);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+.code-copy-wrap:hover .code-copy-btn {
+  opacity: 1;
+}
+.code-copy-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* ── BLOG: Image styling ─────────────────── */
+.content-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+.content-body figure {
+  margin: 1.5rem 0;
+}
+.content-body figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
 }
 
 

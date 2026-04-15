@@ -6,6 +6,10 @@ youtube_id: "8tHh6wJEqo8"
 card_tag: "Interview Prep"
 tag_class: "cloud"
 images: ["images/og/blog/microsoft-365-interview-questions-for-beginners-and-experienced.jpg"]
+tags:
+  - microsoft-365
+  - training
+  - study-guide
 ---
 
 ## What You'll Learn

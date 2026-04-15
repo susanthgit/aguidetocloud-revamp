@@ -6,6 +6,11 @@ youtube_id: "7aEIP0h00PA"
 card_tag: "SC-900"
 tag_class: "cert"
 images: ["images/og/blog/sc-900-full-course-microsoft-security-compliance-identity.jpg"]
+tags:
+  - security
+  - entra-id
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

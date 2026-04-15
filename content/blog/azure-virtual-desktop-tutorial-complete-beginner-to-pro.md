@@ -6,6 +6,10 @@ youtube_id: "rEjddntRnZk"
 card_tag: "Virtual Desktop"
 tag_class: "cloud"
 images: ["images/og/blog/azure-virtual-desktop-tutorial-complete-beginner-to-pro.jpg"]
+tags:
+  - azure
+  - windows
+  - tutorial
 ---
 
 ## What You'll Learn

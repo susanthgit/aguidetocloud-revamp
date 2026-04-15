@@ -6,6 +6,11 @@ youtube_id: "WbTdbOrNSxs"
 card_tag: "Agentic AI"
 tag_class: "ai"
 images: ["images/og/blog/agent-builder-microsoft-365-copilot-create-ai-agent.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What Is Agent Builder?

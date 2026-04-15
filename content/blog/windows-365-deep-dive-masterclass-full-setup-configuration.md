@@ -6,6 +6,11 @@ youtube_id: "kHm8lL3Wd8g"
 card_tag: "Virtual Desktop"
 tag_class: "cloud"
 images: ["images/og/blog/windows-365-deep-dive-masterclass-full-setup-configuration.jpg"]
+tags:
+  - windows
+  - azure
+  - deployment
+  - deep-dive
 ---
 
 ## What You'll Learn

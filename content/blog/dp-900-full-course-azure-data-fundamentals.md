@@ -6,6 +6,10 @@ youtube_id: "XbV0Di5ggvY"
 card_tag: "DP-900"
 tag_class: "cert"
 images: ["images/og/blog/dp-900-full-course-azure-data-fundamentals.jpg"]
+tags:
+  - azure
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

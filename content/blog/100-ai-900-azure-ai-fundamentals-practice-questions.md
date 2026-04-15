@@ -6,6 +6,11 @@ youtube_id: "OxwcKJcIE40"
 card_tag: "AI--900"
 tag_class: "cert"
 images: ["images/og/blog/100-ai-900-azure-ai-fundamentals-practice-questions.jpg"]
+tags:
+  - azure
+  - ai
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

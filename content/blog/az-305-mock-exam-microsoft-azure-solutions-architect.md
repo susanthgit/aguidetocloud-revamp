@@ -6,6 +6,10 @@ youtube_id: "PPJYQeh26Tg"
 card_tag: "AZ--305"
 tag_class: "cert"
 images: ["images/og/blog/az-305-mock-exam-microsoft-azure-solutions-architect.jpg"]
+tags:
+  - azure
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

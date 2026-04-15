@@ -6,6 +6,10 @@ youtube_id: "aI5iAMQu2yQ"
 card_tag: "Azure"
 tag_class: "cloud"
 images: ["images/og/blog/5-tips-to-start-learning-azure-even-if.jpg"]
+tags:
+  - azure
+  - training
+  - tutorial
 ---
 
 ## What You'll Learn

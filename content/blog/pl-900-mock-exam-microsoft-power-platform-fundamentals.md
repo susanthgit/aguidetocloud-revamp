@@ -6,6 +6,10 @@ youtube_id: "Sp_rWGaQ2Eg"
 card_tag: "PL--900"
 tag_class: "cert"
 images: ["images/og/blog/pl-900-mock-exam-microsoft-power-platform-fundamentals.jpg"]
+tags:
+  - power-platform
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

@@ -6,6 +6,10 @@ youtube_id: "U1qBB6k-BnE"
 card_tag: "Migration"
 tag_class: "cloud"
 images: ["images/og/blog/azure-app-service-migration-lab-step-by-step.jpg"]
+tags:
+  - azure
+  - migration
+  - tutorial
 ---
 
 ## What You'll Learn

@@ -6,6 +6,10 @@ youtube_id: "lpsre6vWzCc"
 card_tag: "PL-900"
 tag_class: "cert"
 images: ["images/og/blog/pl-900-full-course-power-platform-fundamentals.jpg"]
+tags:
+  - power-platform
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

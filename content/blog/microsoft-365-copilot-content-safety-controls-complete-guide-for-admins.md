@@ -27,6 +27,11 @@ faq:
     answer: "Yes. Microsoft Purview DLP policies can be configured to detect and act on sensitive information in Copilot prompts and responses. This is separate from the harmful content toggle — DLP protects your data, while the content toggle controls what topics Copilot discusses."
   - question: "What is the biggest security risk with Copilot that most admins miss?"
     answer: "Oversharing. Copilot surfaces any data a user has access to. If your SharePoint and OneDrive permissions are too broad, Copilot may surface documents users technically can access but shouldn't see. Fix permissions and deploy sensitivity labels before scaling Copilot."
+tags:
+  - microsoft-365
+  - copilot
+  - content-safety
+  - governance
 ---
 
 Microsoft 365 Copilot includes multiple layers of content safety controls — but most IT admins only know about one or two of them. With the introduction of the **harmful content protection toggle**, admins now have more granular control than ever over what Copilot can discuss. This guide covers every content safety lever available to you, when to use each one, and how to configure them step by step.

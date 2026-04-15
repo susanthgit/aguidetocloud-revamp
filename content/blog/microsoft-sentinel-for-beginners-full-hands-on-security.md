@@ -6,6 +6,10 @@ youtube_id: "NJlaqBaqahc"
 card_tag: "Security"
 tag_class: "cloud"
 images: ["images/og/blog/microsoft-sentinel-for-beginners-full-hands-on-security.jpg"]
+tags:
+  - azure
+  - security
+  - tutorial
 ---
 
 ## What You'll Learn

@@ -6,6 +6,10 @@ youtube_id: "7_DiwgQGeig"
 card_tag: "Interview Prep"
 tag_class: "cloud"
 images: ["images/og/blog/18-key-questions-azure-virtual-desktop-vs-windows.jpg"]
+tags:
+  - azure
+  - windows
+  - comparison
 ---
 
 ## What You'll Learn

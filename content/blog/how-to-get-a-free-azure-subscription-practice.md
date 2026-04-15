@@ -6,6 +6,10 @@ youtube_id: "A9EWlyd3dco"
 card_tag: "Azure"
 tag_class: "cloud"
 images: ["images/og/blog/how-to-get-a-free-azure-subscription-practice.jpg"]
+tags:
+  - azure
+  - training
+  - tutorial
 ---
 
 ## What You'll Learn

@@ -6,6 +6,10 @@ youtube_id: "kn6sE_7r40E"
 card_tag: "DP--900"
 tag_class: "cert"
 images: ["images/og/blog/dp-900-mock-exam-microsoft-azure-data-fundamentals.jpg"]
+tags:
+  - azure
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

@@ -6,6 +6,11 @@ youtube_id: "1beYHq8aMyE"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-full-tutorial-word-excel-teams.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - teams
+  - tutorial
 ---
 
 ## What You'll Learn

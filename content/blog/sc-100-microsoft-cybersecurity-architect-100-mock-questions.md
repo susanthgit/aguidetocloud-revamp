@@ -6,6 +6,10 @@ youtube_id: "GC1xKIsQbCY"
 card_tag: "SC--100"
 tag_class: "cert"
 images: ["images/og/blog/sc-100-microsoft-cybersecurity-architect-100-mock-questions.jpg"]
+tags:
+  - security
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

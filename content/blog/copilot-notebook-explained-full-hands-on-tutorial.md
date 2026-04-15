@@ -6,6 +6,11 @@ youtube_id: "1WAPZoxtPjU"
 card_tag: "M365 Copilot"
 tag_class: "ai"
 images: ["images/og/blog/copilot-notebook-explained-full-hands-on-tutorial.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What Is Copilot Notebook?

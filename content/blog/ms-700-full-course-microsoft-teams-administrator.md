@@ -6,6 +6,11 @@ youtube_id: "-Gs3dmS-jnE"
 card_tag: "MS-700"
 tag_class: "cert"
 images: ["images/og/blog/ms-700-full-course-microsoft-teams-administrator.jpg"]
+tags:
+  - microsoft-365
+  - teams
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

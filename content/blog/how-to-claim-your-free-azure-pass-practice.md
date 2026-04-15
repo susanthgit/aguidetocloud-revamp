@@ -6,6 +6,10 @@ youtube_id: "Xb-FGrAx31Y"
 card_tag: "Azure"
 tag_class: "cloud"
 images: ["images/og/blog/how-to-claim-your-free-azure-pass-practice.jpg"]
+tags:
+  - azure
+  - training
+  - tutorial
 ---
 
 ## What You'll Learn

@@ -6,6 +6,10 @@ youtube_id: "KzTEJ_hen3c"
 card_tag: "Azure"
 tag_class: "cloud"
 images: ["images/og/blog/azure-fundamentals-hands-on-labs-complete-beginner-masterclass.jpg"]
+tags:
+  - azure
+  - training
+  - tutorial
 ---
 
 ## What You'll Learn

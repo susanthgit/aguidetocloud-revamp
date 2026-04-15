@@ -6,6 +6,11 @@ youtube_id: "2HlRaIPo4W8"
 card_tag: "AZ-400"
 tag_class: "cert"
 images: ["images/og/blog/az-400-full-course-microsoft-devops-engineer-certification.jpg"]
+tags:
+  - azure
+  - deployment
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

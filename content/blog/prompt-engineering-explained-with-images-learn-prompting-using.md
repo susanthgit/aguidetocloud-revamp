@@ -6,6 +6,11 @@ youtube_id: "F1z6PesK1Nc"
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 images: ["images/og/blog/prompt-engineering-explained-with-images-learn-prompting-using.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What You'll Learn

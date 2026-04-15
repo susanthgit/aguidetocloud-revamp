@@ -6,6 +6,11 @@ youtube_id: "Z5Md_I4ZEnQ"
 card_tag: "DevOps"
 tag_class: "cloud"
 images: ["images/og/blog/azure-devops-continuous-integration-and-delivery-full-tutorial.jpg"]
+tags:
+  - azure
+  - deployment
+  - tutorial
+  - deep-dive
 ---
 
 ## What You'll Learn

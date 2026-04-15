@@ -6,6 +6,11 @@ youtube_id: "aStLYYNkW7o"
 card_tag: "MS--500"
 tag_class: "cert"
 images: ["images/og/blog/ms-500-mock-exam-microsoft-365-security-administration.jpg"]
+tags:
+  - microsoft-365
+  - security
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

@@ -27,6 +27,11 @@ faq:
   - question: "What is Work IQ?"
     answer: "Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents broader context about organisational data, workflows, and work patterns — improving AI relevance and safety."
 images: ["images/og/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - licensing
+  - security
 ---
 
 Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — codenamed the **"Frontier Suite"** — is a brand-new top-tier plan that bundles E5, Copilot, the Entra Suite, and the entirely new **Agent 365** platform into a single $99/user/month SKU. It goes GA on **May 1, 2026**.

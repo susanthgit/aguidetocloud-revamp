@@ -6,6 +6,11 @@ youtube_id: "TOZZ0iWdrO0"
 card_tag: "AI-900"
 tag_class: "cert"
 images: ["images/og/blog/ai-900-full-course-azure-ai-fundamentals-certification.jpg"]
+tags:
+  - azure
+  - ai
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

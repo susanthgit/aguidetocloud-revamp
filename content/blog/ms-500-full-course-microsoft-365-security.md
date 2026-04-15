@@ -6,6 +6,11 @@ youtube_id: "cG00gMyvwfo"
 card_tag: "MS-500"
 tag_class: "cert"
 images: ["images/og/blog/ms-500-full-course-microsoft-365-security.jpg"]
+tags:
+  - microsoft-365
+  - security
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

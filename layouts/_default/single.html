@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{ $isBlog := eq .Section "blog" }}
+{{ $wordCount := .WordCount }}
+{{ $readTime := div (add $wordCount 200) 250 }}
 <div class="single-content">
   {{ if .Params.youtube_id }}
   <div class="video-embed">
@@ -13,7 +16,6 @@
   </div>
   {{ end }}
 
-  {{ $isBlog := eq .Section "blog" }}
   {{ if $isBlog }}<article>{{ end }}
   <h1>{{ .Title }}</h1>
   {{ partial "blog-prev-next.html" . }}
@@ -22,12 +24,49 @@
   <p class="meta">
     {{ if .Params.card_tag }}<span class="card-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span> · {{ end }}
     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> · by <a href="/about/" style="color: var(--neon-cyan);">{{ .Site.Params.author }}</a>
+    {{ if $isBlog }} · {{ $readTime }} min read{{ end }}
   </p>
+  {{ end }}
+  {{ if $isBlog }}
+  {{ with .Lastmod }}
+  {{ if ne ($.Date.Format "2006-01-02") (.Format "2006-01-02") }}
+  <p class="meta-updated">Updated <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time></p>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+
+  {{ if $isBlog }}
+  <div class="blog-actions">
+    <button class="blog-share-btn" aria-label="Share this article" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(()=>{this.textContent='✅ Copied!';setTimeout(()=>{this.textContent='🔗 Share'},2000)})}">🔗 Share</button>
+  </div>
   {{ end }}
 
   <div class="content-body">
     {{ .Content }}
   </div>
+
+  {{ if $isBlog }}
+  <div class="blog-end-cta">
+    <div class="blog-end-cta-inner">
+      <h2>Keep Reading</h2>
+      <div class="blog-end-links">
+        {{ $related := first 3 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
+        {{ range $related }}
+        <a href="{{ .Permalink }}" class="blog-end-link">
+          <span class="blog-end-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+          <span class="blog-end-link-title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+      </div>
+      <div class="blog-end-subscribe">
+        <a href="/index.xml" class="blog-end-sub-btn">📡 RSS Feed</a>
+        <a href="{{ .Site.Params.youtube_channel }}" class="blog-end-sub-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+        <a href="/free-tools/" class="blog-end-sub-btn">🧰 Free Tools</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   {{ if $isBlog }}</article>{{ end }}
 
   {{ if .Params.resources }}
@@ -43,4 +82,5 @@
 
   {{ partial "back-nav" . }}
 </div>
+{{ if $isBlog }}<div class="blog-progress-bar" aria-hidden="true"></div>{{ end }}
 {{ end }}

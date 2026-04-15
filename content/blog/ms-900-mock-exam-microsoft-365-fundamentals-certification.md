@@ -6,6 +6,10 @@ youtube_id: "6wC3YOw32vU"
 card_tag: "MS--900"
 tag_class: "cert"
 images: ["images/og/blog/ms-900-mock-exam-microsoft-365-fundamentals-certification.jpg"]
+tags:
+  - microsoft-365
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

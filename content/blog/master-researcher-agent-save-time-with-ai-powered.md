@@ -6,6 +6,11 @@ youtube_id: "ke1M1k1aMVI"
 card_tag: "Agentic AI"
 tag_class: "ai"
 images: ["images/og/blog/master-researcher-agent-save-time-with-ai-powered.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - ai
+  - tutorial
 ---
 
 ## What Is the Researcher Agent?

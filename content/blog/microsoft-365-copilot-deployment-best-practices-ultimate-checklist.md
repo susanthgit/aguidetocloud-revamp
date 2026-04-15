@@ -27,6 +27,11 @@ faq:
   - question: "What should I do if users report Copilot is surfacing data they shouldn't see?"
     answer: "This is an oversharing issue, not a Copilot bug. Copilot respects existing permissions — if a user can access a document, Copilot can surface it. Fix the root cause: review and tighten SharePoint/OneDrive permissions, use sensitivity labels, and consider SharePoint Advanced Management for site-level access policies."
 images: ["images/og/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist.jpg"]
+tags:
+  - microsoft-365
+  - copilot
+  - deployment
+  - checklist
 ---
 
 Deploying Microsoft 365 Copilot is not just "assign licences and go." In our experience, deployments that struggle typically trace the problem back to one of three gaps: **permissions weren't audited**, **governance wasn't in place**, or **users weren't prepared**. This guide gives you the complete, phased checklist — from planning through optimisation — so your deployment succeeds the first time.

@@ -6,6 +6,11 @@ youtube_id: "I1zvntPHNMk"
 card_tag: "AZ-104"
 tag_class: "cert"
 images: ["images/og/blog/az-104-full-course-azure-administrator-certification.jpg"]
+tags:
+  - azure
+  - administration
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

@@ -6,6 +6,9 @@ youtube_id: "LeeSPd_0HOI"
 card_tag: "Exam Tips"
 tag_class: "cert"
 images: ["images/og/blog/free-microsoft-certification-practice-tests-where-to-find.jpg"]
+tags:
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn

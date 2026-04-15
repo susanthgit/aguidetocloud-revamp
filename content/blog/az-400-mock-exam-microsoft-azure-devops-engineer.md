@@ -6,6 +6,11 @@ youtube_id: "OgFT-VhS2XA"
 card_tag: "AZ--400"
 tag_class: "cert"
 images: ["images/og/blog/az-400-mock-exam-microsoft-azure-devops-engineer.jpg"]
+tags:
+  - azure
+  - deployment
+  - certification
+  - study-guide
 ---
 
 ## What You'll Learn
