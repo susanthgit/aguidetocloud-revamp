@@ -108,7 +108,7 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     Test-Check "CSS has blog-timeline" ($allCss.Contains('blog-timeline') -or $allCss.Contains('blog-card'))
 
     # Check JS files
-    foreach ($jsFile in @('ainews.js', 'search.js', 'switcher.js')) {
+    foreach ($jsFile in @('ainews.js', 'search-init.js', 'switcher.js')) {
         $js = Fetch-Head "$BASE/js/$jsFile"
         Test-Check "JS: $jsFile loads" ($null -ne $js -and $js.StatusCode -eq 200)
     }
@@ -390,8 +390,8 @@ if ($Section -eq 'all' -or $Section -eq 'search') {
         Test-Check "Search index has entries ($($searchData.Count))" ($searchData.Count -gt 50)
     }
 
-    $searchJs = (Fetch-Page "$BASE/js/search.js?v=$bust").Content
-    Test-Check "search.js has modal logic" ($searchJs.Contains('search') -and $searchJs.Length -gt 500)
+    $searchJs = (Fetch-Page "$BASE/js/search-init.js?v=$bust").Content
+    Test-Check "search-init.js has modal logic" ($searchJs.Contains('search') -and $searchJs.Length -gt 500)
 }
 
 # ═══════════════════════════════════════════
@@ -401,24 +401,25 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     Write-Host "`n📊 HOMEPAGE STATS" -ForegroundColor Cyan
 
     $hp = (Fetch-Page "$BASE/").Content
-    # Extract stat numbers from welcome-stat-num spans
-    $statNums = [regex]::Matches($hp, 'welcome-stat-num[^>]*>(\d+)<') | ForEach-Object { [int]$_.Groups[1].Value }
-    if ($statNums.Count -ge 5) {
-        $tools   = $statNums[0]
-        $videos  = $statNums[1]
-        $prompts = $statNums[2]
-        $certs   = $statNums[3]
-        $blogs   = $statNums[4]
-        Test-Check "Tools count ($tools) > 0" ($tools -gt 0)
-        Test-Check "Videos count ($videos) > 0" ($videos -gt 0)
-        Test-Check "Prompts count ($prompts) > 0" ($prompts -gt 0)
-        Test-Check "Cert Guides count ($certs) > 0" ($certs -gt 0)
-        Test-Check "Articles count ($blogs) > 0" ($blogs -gt 0)
-        # Sanity: none should be suspiciously low or unchanged from stale hardcodes
-        Test-Check "Videos not stale (not 76)" ($videos -ne 76 -or $videos -eq 76) # passes now, catches if it stays 76 forever
-        Write-Host "    📈 Stats: $tools tools, $videos videos, $prompts prompts, $certs guides, $blogs articles" -ForegroundColor DarkGray
+    # V3 redesign: stats are in a single inline line (hp-proof-stats-inline)
+    $statsLine = [regex]::Match($hp, 'hp-proof-stats-inline[^>]*>(.+?)</div>')
+    if ($statsLine.Success) {
+        $nums = [regex]::Matches($statsLine.Groups[1].Value, '<strong>(\d+)</strong>') | ForEach-Object { [int]$_.Groups[1].Value }
+        if ($nums.Count -ge 4) {
+            $tools   = $nums[0]
+            $videos  = $nums[1]
+            $prompts = $nums[2]
+            $certs   = $nums[3]
+            Test-Check "Tools count ($tools) > 0" ($tools -gt 0)
+            Test-Check "Videos count ($videos) > 0" ($videos -gt 0)
+            Test-Check "Prompts count ($prompts) > 0" ($prompts -gt 0)
+            Test-Check "Cert Guides count ($certs) > 0" ($certs -gt 0)
+            Write-Host "    📈 Stats: $tools tools, $videos videos, $prompts prompts, $certs guides" -ForegroundColor DarkGray
+        } else {
+            Test-Check "Homepage has stats inline" $false
+        }
     } else {
-        Test-Check "Homepage has 5 stat boxes" $false
+        Test-Check "Homepage has stats inline" $false
     }
 
     # Verify Latest Videos section only shows actual videos (not tool sub-pages)
