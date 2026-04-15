@@ -159,10 +159,29 @@ a:hover {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 20px color-mix(in srgb, var(--nav-accent, rgba(102, 255, 255, 0.1)) 30%, transparent);
 }
 .site-logo {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.site-logo-img-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.site-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .site-logo span {
   color: #ff66ff;
@@ -1045,7 +1064,7 @@ a:hover {
       var(--neon-magenta) 60%,
       transparent 70%
     ) border-box;
-  animation: border-beam-rotate 4s linear infinite;
+  animation: border-beam-rotate 8s linear infinite;
 }
 .border-beam:hover {
   background:
@@ -1059,6 +1078,20 @@ a:hover {
       transparent 75%
     ) border-box;
   box-shadow: 0 0 20px rgba(102, 255, 255, 0.15), 0 0 40px rgba(255, 102, 255, 0.1);
+}
+.border-beam-circle {
+  --border-angle: 0deg;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgba(3, 3, 8, 1), rgba(3, 3, 8, 1)) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      transparent 50%,
+      var(--neon-cyan) 60%,
+      var(--neon-magenta) 70%,
+      transparent 80%
+    ) border-box;
+  animation: border-beam-rotate 8s linear infinite;
 }
 @keyframes border-beam-rotate {
   to { --border-angle: 360deg; }
