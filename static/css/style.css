@@ -1176,10 +1176,6 @@ a:hover {
   .welcome-cta-row .page-search-wrap { width: 100%; }
   .hp-trust-bar { font-size: 0.72rem; }
   .hp-final-cta h2 { font-size: 1.5rem; }
-  .hp-toolkit-grid { grid-template-columns: repeat(2, 1fr); }
-  .hp-blog-grid { grid-template-columns: 1fr; }
-  .hp-blog-grid .hp-blog-card:nth-child(n+5) { display: none; }
-  .hp-blog-card p { -webkit-line-clamp: 2; }
   .hp-toolkit-card p { display: none; }
   .video-grid { grid-template-columns: repeat(2, 1fr); }
   .video-grid .video-card:nth-child(n+5) { display: none; }
@@ -2114,18 +2110,77 @@ a.welcome-stat-link:hover {
 }
 .single-content .content-body {
   color: var(--text-secondary);
-  line-height: 1.9;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+}
+/* Constrain prose elements to comfortable reading width */
+.single-content .content-body p,
+.single-content .content-body h2,
+.single-content .content-body h3,
+.single-content .content-body h4,
+.single-content .content-body h5,
+.single-content .content-body h6,
+.single-content .content-body ul,
+.single-content .content-body ol,
+.single-content .content-body blockquote,
+.single-content .content-body > hr {
+  max-width: 720px;
+}
+.single-content .content-body p {
+  margin-bottom: 1.25em;
 }
 .single-content .content-body h2 {
   color: #fff;
-  margin-top: 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
+}
+.single-content .content-body h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.single-content .content-body h4 {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .single-content .content-body ul {
   margin-left: 1.5rem;
   margin-bottom: 1rem;
+}
+/* Inline code */
+.single-content .content-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(102, 255, 255, 0.06);
+  border: 1px solid rgba(102, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.15em 0.4em;
+}
+/* Code blocks — stay at full container width (900px) */
+.single-content .content-body pre {
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid rgba(102, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.single-content .content-body pre code {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 /* ── HAMBURGER MENU ─────────────────────── */
@@ -2570,18 +2625,20 @@ a.welcome-stat-link:hover {
   .blog-timeline { padding-left: 2rem; }
   .blog-tl-dot { left: -1.68rem; }
 }
-/* Blog content body styles */
+/* Blog content body heading overrides (generic .content-body context) */
 .content-body h2 {
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.8rem;
   font-family: var(--font-heading);
+  font-size: 1.5rem;
 }
 .content-body h3 {
   color: rgba(255, 255, 255, 0.9);
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   font-family: var(--font-heading);
+  font-size: 1.25rem;
 }
 .content-body a {
   color: var(--neon-cyan);
@@ -2640,6 +2697,8 @@ a.welcome-stat-link:hover {
   border-radius: 16px;
   text-align: center;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: none;
 }
 /* Override Mermaid v11 inline max-width on SVG — prevents diagrams
    from rendering at their small natural width inside the larger container.
@@ -2659,11 +2718,44 @@ pre.mermaid {
 }
 .content-body ul, .content-body ol {
   padding-left: 1.5rem;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 .content-body li {
-  margin-bottom: 0.3rem;
-  line-height: 1.6;
+  margin-bottom: 0.4rem;
+  line-height: 1.7;
+}
+
+/* ── BLOG MOBILE RESPONSIVENESS ─────────── */
+@media (max-width: 768px) {
+  .single-content {
+    padding: 2rem 1.2rem;
+  }
+  .single-content h1 {
+    font-size: 1.6rem;
+  }
+  .single-content .content-body h2 {
+    font-size: 1.3rem;
+  }
+  .single-content .content-body h3 {
+    font-size: 1.15rem;
+  }
+  .single-content .content-body pre {
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+  }
+  .content-body .mermaid {
+    padding: 0.5rem;
+  }
+  .content-body table {
+    font-size: 0.82rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .content-body th, .content-body td {
+    padding: 0.5rem 0.6rem;
+  }
 }
 
 
@@ -2903,6 +2995,16 @@ pre.mermaid {
   }
 }
 
+/* ── ACCESSIBILITY: Global focus-visible ─ */
+:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+/* Suppress default outline when not keyboard-navigating */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* ── VIEW TRANSITIONS — fast 100ms cross-fade ── */
 @view-transition { navigation: auto; }
 ::view-transition-old(root) {
@@ -3020,7 +3122,7 @@ pre.mermaid {
 .footer-feedback {
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   margin: 0 0 1.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);

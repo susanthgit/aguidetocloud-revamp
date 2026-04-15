@@ -27,9 +27,13 @@
     });
   }
 
+  var openerEl = null;
+
   function openSearch() {
     initPagefind();
+    openerEl = document.activeElement;
     modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
     setTimeout(function() {
       var input = container.querySelector('.pagefind-ui__search-input');
       if (input) { input.value = ''; input.focus(); }
@@ -38,7 +42,23 @@
 
   function closeSearch() {
     modal.classList.remove('active');
+    document.body.style.overflow = '';
+    if (openerEl && openerEl.focus) openerEl.focus();
   }
+
+  // Focus trap within search modal
+  modal.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab') return;
+    var focusable = modal.querySelectorAll('input, button, a[href], [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
 
   if (openBtn) openBtn.addEventListener('click', openSearch);
   if (closeBtn) closeBtn.addEventListener('click', closeSearch);

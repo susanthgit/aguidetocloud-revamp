@@ -13,19 +13,22 @@
   </div>
   {{ end }}
 
+  {{ $isBlog := eq .Section "blog" }}
+  {{ if $isBlog }}<article>{{ end }}
   <h1>{{ .Title }}</h1>
   {{ partial "blog-prev-next.html" . }}
   {{ partial "section-prev-next.html" . }}
   {{ if not .Date.IsZero }}
   <p class="meta">
     {{ if .Params.card_tag }}<span class="card-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span> · {{ end }}
-    {{ .Date.Format "2 January 2006" }} · by <a href="/about/" style="color: var(--neon-cyan);">{{ .Site.Params.author }}</a>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> · by <a href="/about/" style="color: var(--neon-cyan);">{{ .Site.Params.author }}</a>
   </p>
   {{ end }}
 
   <div class="content-body">
     {{ .Content }}
   </div>
+  {{ if $isBlog }}</article>{{ end }}
 
   {{ if .Params.resources }}
   <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(26, 26, 46, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.08);">
