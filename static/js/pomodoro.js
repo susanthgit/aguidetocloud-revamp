@@ -629,8 +629,8 @@
     $('pomo-ring-progress').style.strokeDasharray = CIRC;
     initTimer(); initTabs(); applySettingsUI(); bindSettings(); renderTasks(); renderStats(); initKeys();
 
-    // Timer controls
-    $('pomo-start').addEventListener('click', () => { S.running ? pauseTimer() : startTimer(); });
+    // Timer controls — init AudioContext on first user gesture (required for mobile)
+    $('pomo-start').addEventListener('click', () => { getCtx(); S.running ? pauseTimer() : startTimer(); });
     $('pomo-reset').addEventListener('click', resetTimer);
     $('pomo-skip').addEventListener('click', skipPhase);
     $('pomo-fullscreen').addEventListener('click', toggleFS);
@@ -649,6 +649,7 @@
 
     // Ambient pills — both groups
     $$('.pomo-ambient-pill').forEach(b => b.addEventListener('click', () => {
+      getCtx(); // init AudioContext on user gesture (mobile requirement)
       if (S.settings.ambient === b.dataset.ambient) { S.settings.ambient = null; stopAmbient(); }
       else { S.settings.ambient = b.dataset.ambient; startAmbient(S.settings.ambient); }
       saveSettings(); applySettingsUI();
