@@ -119,7 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
       pill.classList.add('active');
       pill.setAttribute('aria-pressed', 'true');
       moveIndicator(pill);
-      pill.scrollIntoView({ behavior: prefersReduced ? 'instant' : 'smooth', inline: 'center', block: 'nearest' });
+      // Only scrollIntoView the pill on desktop — on mobile it fights with touch scrolling
+      if (window.innerWidth > 768) {
+        pill.scrollIntoView({ behavior: prefersReduced ? 'instant' : 'smooth', inline: 'center', block: 'nearest' });
+      }
       rayGrid.querySelectorAll('.hp-ray-card').forEach(function(card) {
         if (cat === 'all' || card.dataset.cat === cat) {
           card.setAttribute('data-hidden', 'false');
