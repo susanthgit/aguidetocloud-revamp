@@ -890,6 +890,35 @@ a:hover {
   transition: opacity 0.2s;
 }
 .hp-blog-card:hover .hp-blog-read { opacity: 1; }
+.hp-blog-badge-new {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38BDF8;
+  margin-bottom: 0.2rem;
+}
+
+/* ── SOCIAL PROOF STRIP ──────────────────── */
+.hp-proof-strip {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.hp-proof-strip p {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  margin: 0;
+}
+.hp-proof-strip strong {
+  color: rgba(255, 255, 255, 0.55);
+}
 
 /* ── HOMEPAGE: SEARCH BOX ────────────────── */
 /* ── SHARED: IN-PAGE SEARCH BOX ─────────── */

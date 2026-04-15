@@ -66,10 +66,33 @@
     <a href="/free-tools/" class="hp-ray-browse">Browse all {{ $toolCount }} tools →</a>
   </section>
 
-  <!-- 🤖 AI HUB VIDEOS -->
+  <!-- 📝 FROM THE BLOG — moved up for SEO dwell time -->
+  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+  {{ if gt (len $blogPosts) 0 }}
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">🤖 Latest from AI Hub</h2>
+      <h2 class="section-title">📝 From the Blog</h2>
+      <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
+      <p class="section-desc">Deep dives on Copilot updates, licensing changes, new features & practical how-tos.</p>
+    </div>
+    <div class="hp-blog-grid">
+      {{ range $i, $post := first 8 $blogPosts }}
+      <a href="{{ $post.RelPermalink }}" class="hp-blog-card">
+        {{ if eq $i 0 }}<span class="hp-blog-badge-new">What's New</span>{{ end }}
+        <time class="hp-blog-date">{{ $post.Date.Format "Jan 2, 2006" }}</time>
+        <h3>{{ $post.Title }}</h3>
+        {{ with $post.Description }}<p>{{ . | truncate 160 }}</p>{{ end }}
+        <span class="hp-blog-read">Read more →</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 📺 WATCH & LEARN — videos after blog to keep visitors on-site first -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">📺 Watch & Learn</h2>
       <a href="/ai-hub/" class="section-link">View all →</a>
       <p class="section-desc">Hands-on tutorials and walkthroughs for Microsoft 365 Copilot, Azure AI & more.</p>
     </div>
@@ -81,27 +104,10 @@
     </div>
   </section>
 
-  <!-- 📝 FROM THE BLOG (card style, no thumbnails) -->
-  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-  {{ if gt (len $blogPosts) 0 }}
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">📝 From the Blog</h2>
-      <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
-      <p class="section-desc">Deep dives on Copilot updates, licensing changes, new features & practical how-tos.</p>
-    </div>
-    <div class="hp-blog-grid">
-      {{ range first 6 $blogPosts }}
-      <a href="{{ .RelPermalink }}" class="hp-blog-card">
-        <time class="hp-blog-date">{{ .Date.Format "Jan 2, 2006" }}</time>
-        <h3>{{ .Title }}</h3>
-        {{ with .Description }}<p>{{ . | truncate 160 }}</p>{{ end }}
-        <span class="hp-blog-read">Read more →</span>
-      </a>
-      {{ end }}
-    </div>
+  <!-- ⭐ SOCIAL PROOF STRIP -->
+  <section class="hp-proof-strip">
+    <p>Trusted by IT pros, cloud architects & Copilot champions worldwide · <strong>{{ $toolCount }}</strong> free tools · <strong>{{ len $blogPosts }}</strong> guides · <strong>$0</strong> always free</p>
   </section>
-  {{ end }}
 
   <!-- 🌐 CONNECT -->
   <section class="section">
