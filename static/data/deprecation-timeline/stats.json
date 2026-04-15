@@ -1,32 +1,32 @@
 {
-  "generated": "2026-04-14T07:05:20.051266+00:00",
+  "generated": "2026-04-15T07:07:11.001448+00:00",
   "total": 52,
-  "active": 41,
-  "passed": 11,
-  "action_required": 40,
+  "active": 40,
+  "passed": 12,
+  "action_required": 39,
   "urgency": {
-    "critical": 6,
+    "critical": 5,
     "warning": 24,
     "watch": 10,
     "future": 1
   },
   "categories": {
-    "azure": 20,
     "teams": 1,
     "office-apps": 7,
+    "azure": 19,
     "sharepoint": 4,
     "windows": 6,
     "exchange": 2,
     "entra": 1
   },
   "types": {
-    "end-of-support": 21,
     "retirement": 19,
-    "breaking-change": 1
+    "breaking-change": 1,
+    "end-of-support": 20
   },
   "next_deadline": {
-    "title": "Dynamics NAV 2016 End of Support",
-    "deadline": "2026-04-14",
+    "title": "Viva Engage Live Events (Teams Live Events) Deprecation",
+    "deadline": "2026-04-15",
     "days_remaining": 0,
     "urgency": "critical"
   },
