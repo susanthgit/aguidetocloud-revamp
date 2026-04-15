@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-04-15T14:02:48.107746+00:00",
+  "generated_at": "2026-04-15T15:20:53.129926+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 23,
+      "total_incidents": 22,
       "active_incidents": 2,
-      "avg_duration_minutes": 4799,
+      "avg_duration_minutes": 4895,
       "last_incident": "2026-04-10T00:00:00+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 9,
         "incident": 13
       }
     },
@@ -19,12 +19,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 19,
-      "active_incidents": 4,
+      "total_incidents": 20,
+      "active_incidents": 5,
       "avg_duration_minutes": 18283,
-      "last_incident": "2026-04-13T22:00:00+00:00",
+      "last_incident": "2026-04-14T19:04:35+00:00",
       "classifications": {
-        "advisory": 14,
+        "advisory": 15,
         "incident": 5
       }
     },
@@ -70,12 +70,12 @@
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 5,
-      "active_incidents": 1,
+      "total_incidents": 6,
+      "active_incidents": 2,
       "avg_duration_minutes": 10966,
-      "last_incident": "2026-03-27T04:39:00+00:00",
+      "last_incident": "2026-04-15T10:12:40+00:00",
       "classifications": {
-        "advisory": 4,
+        "advisory": 5,
         "incident": 1
       }
     },
@@ -145,13 +145,12 @@
       "service": "Planner",
       "short_name": "Planner",
       "icon": "📋",
-      "total_incidents": 2,
+      "total_incidents": 1,
       "active_incidents": 0,
-      "avg_duration_minutes": 23645,
+      "avg_duration_minutes": 610,
       "last_incident": "2026-03-02T07:15:00+00:00",
       "classifications": {
-        "incident": 1,
-        "advisory": 1
+        "incident": 1
       }
     },
     {
@@ -194,8 +193,8 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 23,
-      "services_affected": 7
+      "incident_count": 25,
+      "services_affected": 8
     },
     {
       "month": "2026-03",
@@ -204,8 +203,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 40,
-      "services_affected": 15
+      "incident_count": 38,
+      "services_affected": 14
     }
   ]
 }
