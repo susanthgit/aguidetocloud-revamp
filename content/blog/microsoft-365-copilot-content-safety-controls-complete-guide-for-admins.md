@@ -438,6 +438,8 @@ Use this checklist when configuring content safety for your organisation:
 - [ ] **Set a quarterly review** for the security group membership
 - [ ] **Train authorised users** on the toggle, its scope, and their responsibilities
 
+> 💡 **Related tools:** [Copilot Readiness Checker](/copilot-readiness/) — scored assessment across 7 security pillars · [CA Policy Builder](/ca-builder/) — design Conditional Access policies for Copilot users · [Copilot Feature Matrix](/copilot-matrix/) — see which features are available per app and licence tier
+
 ---
 
 ## Beyond Content Safety — Other Critical Admin Controls

@@ -122,7 +122,9 @@ flowchart LR
 | Agents (Agent Builder, Studio) | ❌ | ✅ |
 | Admin controls (harmful content, web search) | Limited | ✅ Full |
 
-> 📚 **Official reference:** [Microsoft 365 Copilot licensing plans](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing)
+> 📚 **Official reference:** [Microsoft 365 Copilot licensing plans](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing) · Confused by Microsoft licensing? Try our [Licensing Simplifier](/licensing/) to compare 59 plans side by side.
+>
+> 🔍 Want to see exactly which Copilot features are available in each app and licence tier? Check our [Copilot Feature Matrix](/copilot-matrix/) — interactive comparison across 15 apps and 4 tiers.
 
 ---
 
@@ -151,7 +153,7 @@ Before anything else, run Microsoft's free **[Copilot Optimization Assessment](h
 - Identity configuration
 - SharePoint/OneDrive readiness
 
-This gives you a baseline and highlights gaps before you start.
+This gives you a baseline and highlights gaps before you start. You can also try our free [Copilot Readiness Checker](/copilot-readiness/) for an instant scored assessment across 7 pillars.
 
 ### Define Your Pilot Group
 
@@ -276,6 +278,8 @@ Ensure Copilot is only accessed from trusted devices and locations:
 
 **Where to configure:** Microsoft Entra ID → Conditional Access → Policies
 
+> 💡 Need help designing your CA policies? Try our [CA Policy Builder](/ca-builder/) — it has 20 pre-built Zero Trust templates with deploy-ready PowerShell and Graph API exports.
+
 ### 2.6 Review Content Safety Controls
 
 Configure how Copilot handles sensitive topics and web content:
@@ -315,6 +319,8 @@ Before assigning a single licence, verify:
 ```powershell
 Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq 'COPILOT_SKU_ID')" | Select DisplayName, UserPrincipalName
 ```
+
+> 💡 New to PowerShell for M365 admin? Our [PowerShell Command Builder](/ps-builder/) has 68 ready-made recipes for Exchange, Teams, Graph, and more — with copy-paste scripts and beginner-friendly "How to Run This" guides.
 
 ### 3.3 Configure Copilot Settings
 
@@ -406,9 +412,9 @@ Don't train on "how to use Copilot." Train on **"how to do YOUR job faster with 
 
 Most users underperform with Copilot because they write bad prompts. Invest in prompt training:
 
-- **Teach the CRAFT formula:** Context, Role, Action, Format, Tone
-- **Provide a prompt library** with tested, role-specific prompts
-- **Show before/after examples** — generic prompt vs. specific prompt
+- **Teach the CRAFT formula:** Context, Role, Action, Format, Tone — our [Prompt Engineering Guide](/prompt-guide/) teaches 8 techniques with hands-on exercises
+- **Provide a prompt library** with tested, role-specific prompts — see our [AI Prompt Library](/prompts/) with 84 prompts across 8 platforms
+- **Show before/after examples** — try the [Prompt Polisher](/prompt-polisher/) to instantly improve any prompt with a CRAFTS score
 
 > 📚 **Official reference:** [Welcome end users to Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-enable-users) · [Microsoft Adoption Success Kit](https://adoption.microsoft.com/copilot)
 
@@ -435,6 +441,8 @@ Most users underperform with Copilot because they write bad prompts. Invest in p
 | **Time savings** | >2 hours/user/week | Viva Insights + self-report |
 | **Oversharing incidents** | Zero | Purview alerts + user reports |
 | **Support tickets** | Declining trend | IT ticketing system |
+
+> 💡 Need to build a business case? Our [Copilot ROI Calculator](/roi-calculator/) estimates savings by role with realistic adoption curves — includes a printable executive summary.
 
 ### 5.3 Continuous Improvement Loop
 
