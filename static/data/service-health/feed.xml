@@ -5,16 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 15:20:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 17:17:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[SharePoint Online] Some users may be missing options to open files using custom file handlers in SharePoint Online and Microsoft OneDrive</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1280824</link>
-      <description>[SharePoint Online] Users may be missing options to open files using custom file handlers in SharePoint Online and OneDrive.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1280824</guid>
-      <pubDate>Wed, 15 Apr 2026 10:12:40 +0000</pubDate>
+      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
+      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1281119</guid>
+      <pubDate>Wed, 15 Apr 2026 16:44:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1281088</link>
+      <description>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
+      <category>Microsoft Intune</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">IT1281088</guid>
+      <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
@@ -260,6 +269,24 @@
       <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft OneDrive] Some users may be missing options to open files using custom file handlers in Microsoft OneDrive</title>
+      <link>https://www.aguidetocloud.com/service-health/#OD1281099</link>
+      <description>[Microsoft OneDrive] Users may be missing options to open files using custom file handlers in OneDrive.</description>
+      <category>Microsoft OneDrive</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OD1281099</guid>
+      <pubDate>Sun, 29 Mar 2026 23:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users may be missing options to open files using custom file handlers in SharePoint Online </title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1280824</link>
+      <description>[SharePoint Online] Some users may be missing options to open files using custom file handlers in SharePoint Online </description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1280824</guid>
+      <pubDate>Sun, 29 Mar 2026 23:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Admins may see stale or delayed data in ProPlusUsage reports within the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1263631</link>
       <description>[Microsoft 365 suite] Admins may have seen stale or delayed data in ProPlusUsage reports within the Microsoft 365 admin center.</description>
@@ -429,33 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1253788</guid>
       <pubDate>Mon, 16 Mar 2026 09:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to save their personalization settings within Microsoft Copilot Chat and encounter an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1255304</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to save their personalization settings within Copilot Chat and encountered an error.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1255304</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users see incomplete device assignments for Windows feature updates in Microsoft Intune and Windows Autopatch</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1257131</link>
-      <description>[Microsoft 365 suite] Users saw incomplete device assignments for Windows feature updates in Microsoft Intune and Windows Autopatch.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1257131</guid>
-      <pubDate>Sat, 14 Mar 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may encounter errors when interacting with the Microsoft Copilot Facilitator bot within any Microsoft Teams client</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1257280</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have encountered errors when interacting with the Copilot Facilitator bot within any Microsoft Teams client.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1257280</guid>
-      <pubDate>Fri, 13 Mar 2026 21:02:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
