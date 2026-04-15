@@ -729,6 +729,26 @@ a:hover {
 .hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(6)  { animation-delay: 0.12s; }
 .hp-ray-grid.hp-ray-animate .hp-ray-card:nth-child(n+7) { animation-delay: 0.16s; }
 
+.hp-ray-badge-new {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(57, 255, 20, 0.15);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  color: #39ff14;
+  animation: new-badge-glow 2s ease-in-out infinite;
+}
+@keyframes new-badge-glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(57, 255, 20, 0.15); }
+  50% { box-shadow: 0 0 14px rgba(57, 255, 20, 0.3); }
+}
+
 /* ── OLD TOOLKIT (legacy, keep for non-home pages) ── */
 .hp-toolkit-group {
   margin-bottom: 1.2rem;
@@ -1172,18 +1192,18 @@ a.welcome-stat-link:hover {
 }
 .video-card {
   background:
-    radial-gradient(ellipse at 20% -15%, rgba(167, 139, 250, 0.08) 0%, transparent 55%),
-    rgba(0, 0, 0, 0.6);
-  border-radius: 18px;
+    radial-gradient(ellipse at 20% -15%, rgba(167, 139, 250, 0.12) 0%, transparent 55%),
+    rgba(0, 0, 0, 0.65);
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(167, 139, 250, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 .video-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) perspective(800px) rotateX(1deg);
   border-color: rgba(167, 139, 250, 0.3);
-  box-shadow: 0 12px 32px rgba(167, 139, 250, 0.1);
+  box-shadow: 0 12px 32px rgba(167, 139, 250, 0.12);
 }
 .video-card .thumb {
   position: relative;
@@ -2550,6 +2570,44 @@ pre.mermaid {
   .hp-ray-pill { padding: 0.4rem 0.7rem; font-size: 0.72rem; }
 }
 
+
+/* ── SKELETON LOADING — animated placeholders ── */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.skeleton-line {
+  height: 12px;
+  margin-bottom: 0.6rem;
+  border-radius: 6px;
+}
+.skeleton-line:nth-child(1) { width: 80%; }
+.skeleton-line:nth-child(2) { width: 60%; }
+.skeleton-line:nth-child(3) { width: 70%; }
+.skeleton-line:nth-child(4) { width: 50%; }
+.skeleton-card {
+  height: 160px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
 
 /* ── CURSOR GLOW — subtle follow on homepage ── */
 .cursor-glow {

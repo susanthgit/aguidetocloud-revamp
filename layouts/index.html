@@ -46,6 +46,7 @@
           {{ if .is_tool }}
           {{ $slug := strings.TrimPrefix "/" .url | strings.TrimSuffix "/" }}
           <a href="{{ .url }}" class="hp-ray-card" data-cat="{{ .category }}" style="--ray-color: {{ .color }}">
+            {{ with .date_added }}{{ if gt (time .).Unix (now.AddDate 0 0 -30).Unix }}<span class="hp-ray-badge-new">New</span>{{ end }}{{ end }}
             <div class="hp-ray-head">
               <span class="hp-ray-emoji">{{ .emoji }}</span>
               <span class="hp-ray-name">{{ .name }}</span>
