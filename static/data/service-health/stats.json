@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:42:06.646034+00:00",
+  "generated_at": "2026-04-15T21:04:28.783039+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -97,8 +97,8 @@
       "short_name": "Intune",
       "icon": "📱",
       "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 12593,
+      "active_incidents": 0,
+      "avg_duration_minutes": 9524,
       "last_incident": "2026-04-15T14:43:06+00:00",
       "classifications": {
         "incident": 1,
