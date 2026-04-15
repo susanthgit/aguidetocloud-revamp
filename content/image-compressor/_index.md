@@ -23,5 +23,7 @@ faq:
     answer: "JPEG is best for photos (lossy, small files). PNG is best for graphics, screenshots, and images with transparency (lossless, larger files). WebP is a modern format that combines the best of both — smaller than JPEG with optional transparency. AVIF is even newer and more efficient, but not all browsers support it yet."
   - question: "What does 'Target file size' mode do?"
     answer: "It automatically finds the right quality level to get each image under your specified file size (e.g., under 200KB). It uses binary search to dial in the optimal quality — something most other tools can't do client-side. If the target can't be reached, the tool explains why and suggests alternatives."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/image-compressor.jpg"]
 ---

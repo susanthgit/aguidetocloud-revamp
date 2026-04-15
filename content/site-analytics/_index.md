@@ -17,5 +17,7 @@ faq:
     answer: "Numbers are approximate. We use rate limiting and bot filtering, but some automated traffic may inflate counts slightly. All displayed numbers are rounded."
   - question: "Can I access the raw data?"
     answer: "The stats API is public at /api/stats — you can fetch it programmatically. It returns tool leaderboards, daily trends, and top search queries in JSON format."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/site-analytics.jpg"]
 ---

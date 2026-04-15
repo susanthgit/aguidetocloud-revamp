@@ -20,5 +20,7 @@ faq:
     answer: "Completely free, forever. No sign-up, no premium tier, no ads. Built as a community resource for IT admins."
   - question: "How are Recipes different from the Build tab?"
     answer: "Recipes are pre-built, tested PowerShell commands for common admin tasks like 'Create a Shared Mailbox' or 'Find Locked-Out Accounts.' The Build tab lets you construct custom commands by choosing any cmdlet and filling in parameters yourself. Recipes are faster for common tasks; Build is for custom needs."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/ps-builder.jpg"]
 ---

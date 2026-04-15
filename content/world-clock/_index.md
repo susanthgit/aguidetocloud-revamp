@@ -17,5 +17,7 @@ faq:
     answer: "Yes — click the work hours (e.g. '9-17') under any city in the timeline to change them. Great for teams with flexible schedules or different local norms."
   - question: "Is this tool free to use?"
     answer: "Completely free, forever. No sign-up, no ads, no tracking. It runs 100% in your browser — your data never leaves your device."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/world-clock.jpg"]
 ---

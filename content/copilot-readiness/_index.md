@@ -20,4 +20,6 @@ faq:
     answer: "Yes! Click the Share button to generate a URL that includes your overall score and pillar breakdown. The shared view shows scores and recommendations but not your individual answers."
   - question: "Is this tool endorsed by Microsoft?"
     answer: "No. This is a community tool built by a Microsoft employee for educational purposes. It follows Microsoft's public documentation but is not an official Microsoft product."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 ---

@@ -23,5 +23,7 @@ faq:
     answer: "Yes! Full-screen mode creates a stunning, presentation-quality display with large flip-clock numbers and subtle particle animations — perfect for events, classrooms, and weddings."
   - question: "Is my data private?"
     answer: "Completely. Everything runs in your browser — no data is sent to any server. Your countdowns are stored only in your browser's localStorage. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/countdown.jpg"]
 ---

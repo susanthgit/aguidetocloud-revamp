@@ -20,11 +20,12 @@
     <span class="sh-hero-stat"><strong>$0</strong> always free</span>
   </div>
   <div class="sh-hero-ctas">
-    <a href="#path-copilot" class="sh-cta-primary">🚀 I'm new to Copilot</a>
-    <a href="#path-certs" class="sh-cta-secondary">📜 Cert prep</a>
+    <a href="#path-certs" class="sh-cta-primary">📜 Cert prep</a>
+    <a href="#path-copilot" class="sh-cta-secondary">🚀 New to Copilot</a>
     <a href="#path-admin" class="sh-cta-secondary">🔧 IT Admin</a>
-    <a href="#path-compare" class="sh-cta-secondary">⚖️ Comparing options</a>
     <a href="#path-prompts" class="sh-cta-secondary">✍️ Prompts</a>
+    <a href="#path-compare" class="sh-cta-secondary">⚖️ Compare</a>
+    <a href="#path-informed" class="sh-cta-secondary">📡 Stay Informed</a>
   </div>
   <p class="sh-credit">Built by <a href="/about/">Susanth Sutheesh</a> · Microsoft Copilot Solution Engineer</p>
   {{ partial "section-prev-next.html" . }}
@@ -34,9 +35,32 @@
 
   <div class="sh-paths">
 
-    {{/* ── Path 1: New to Copilot (FEATURED) ── */}}
-    <div class="sh-path sh-path-featured" id="path-copilot" style="--sh-accent: #8B5CF6">
-      <span class="sh-ribbon">✨ Recommended Starting Point</span>
+    {{/* ── Path 1: Certification Prep (FEATURED) ── */}}
+    <div class="sh-path sh-path-featured" id="path-certs" style="--sh-accent: #10B981">
+      <span class="sh-ribbon">⭐ Most Popular</span>
+      <div class="sh-path-head">
+        <span class="sh-path-emoji">📜</span>
+        <div>
+          <h2>I'm Preparing for a Certification</h2>
+          <p>Free study guides, full courses, and practice exams for 52 Microsoft certs</p>
+        </div>
+      </div>
+      <a href="/cert-tracker/" class="sh-primary-link">
+        <span class="sh-link-icon">📚</span>
+        <div>
+          <strong>Start with Cert Study Guides →</strong>
+          <span>Pick your exam, track progress, get a study plan · 52 exams covered</span>
+        </div>
+      </a>
+      <div class="sh-secondary-links">
+        <a href="/cert-tracker/roadmap/">🗺️ See the certification roadmap</a>
+        <a href="/exam-qa/">📝 Practice with 100-question mock exams</a>
+        <a href="/certifications/">🎓 Watch full course videos</a>
+      </div>
+    </div>
+
+    {{/* ── Path 2: New to Copilot ── */}}
+    <div class="sh-path" id="path-copilot" style="--sh-accent: #8B5CF6">
       <div class="sh-path-head">
         <span class="sh-path-emoji">🚀</span>
         <div>
@@ -55,29 +79,6 @@
         <a href="/copilot-matrix/">📊 Compare plans side-by-side</a>
         <a href="/roi-calculator/">💰 Build a business case for your CFO</a>
         <a href="/ai-hub/">📺 Watch Copilot tutorials</a>
-      </div>
-    </div>
-
-    {{/* ── Path 2: Certification Prep ── */}}
-    <div class="sh-path" id="path-certs" style="--sh-accent: #10B981">
-      <div class="sh-path-head">
-        <span class="sh-path-emoji">📜</span>
-        <div>
-          <h2>I'm Preparing for a Certification <span class="sh-badge">⭐ Popular</span></h2>
-          <p>Free study guides, full courses, and practice exams for 52 Microsoft certs</p>
-        </div>
-      </div>
-      <a href="/cert-tracker/" class="sh-primary-link">
-        <span class="sh-link-icon">📚</span>
-        <div>
-          <strong>Start with Cert Study Guides →</strong>
-          <span>Pick your exam, track progress, get a study plan · 52 exams covered</span>
-        </div>
-      </a>
-      <div class="sh-secondary-links">
-        <a href="/cert-tracker/roadmap/">🗺️ See the certification roadmap</a>
-        <a href="/exam-qa/">📝 Practice with 100-question mock exams</a>
-        <a href="/certifications/">🎓 Watch full course videos</a>
       </div>
     </div>
 
@@ -102,10 +103,33 @@
         <a href="/deprecation-timeline/">⏰ See what's retiring</a>
         <a href="/ca-builder/">🛡️ Build Conditional Access policies</a>
         <a href="/ps-builder/">⚡ 68 PowerShell recipes</a>
+        <a href="/blog/">📝 Read Copilot admin guides</a>
       </div>
     </div>
 
-    {{/* ── Path 4: Comparing ── */}}
+    {{/* ── Path 4: Better Prompts ── */}}
+    <div class="sh-path" id="path-prompts" style="--sh-accent: #EC4899">
+      <div class="sh-path-head">
+        <span class="sh-path-emoji">✍️</span>
+        <div>
+          <h2>I Want to Write Better AI Prompts</h2>
+          <p>Learn prompt engineering, browse ready-to-use prompts, and polish your own</p>
+        </div>
+      </div>
+      <a href="/prompt-guide/" class="sh-primary-link">
+        <span class="sh-link-icon">🎓</span>
+        <div>
+          <strong>Start with the Prompt Engineering Guide →</strong>
+          <span>8 techniques with hands-on practice · Earn a completion certificate</span>
+        </div>
+      </a>
+      <div class="sh-secondary-links">
+        <a href="/prompts/">📚 Browse 84 ready-to-use prompts across 8 platforms</a>
+        <a href="/prompt-polisher/">✨ Paste any prompt → get a score and improved version</a>
+      </div>
+    </div>
+
+    {{/* ── Path 5: Comparing ── */}}
     <div class="sh-path" id="path-compare" style="--sh-accent: #D4A853">
       <div class="sh-path-head">
         <span class="sh-path-emoji">⚖️</span>
@@ -128,73 +152,76 @@
       </div>
     </div>
 
-    {{/* ── Path 5: Better Prompts ── */}}
-    <div class="sh-path" id="path-prompts" style="--sh-accent: #EC4899">
+    {{/* ── Path 6: Stay Informed ── */}}
+    <div class="sh-path" id="path-informed" style="--sh-accent: #ff66ff">
       <div class="sh-path-head">
-        <span class="sh-path-emoji">✍️</span>
+        <span class="sh-path-emoji">📡</span>
         <div>
-          <h2>I Want to Write Better AI Prompts</h2>
-          <p>Learn prompt engineering, browse ready-to-use prompts, and polish your own</p>
+          <h2>I Want to Stay Informed on AI & Cloud</h2>
+          <p>Real-time AI news, M365 roadmap tracking, deprecation alerts, and in-depth blog posts</p>
         </div>
       </div>
-      <a href="/prompt-guide/" class="sh-primary-link">
-        <span class="sh-link-icon">🎓</span>
+      <a href="/ai-news/" class="sh-primary-link">
+        <span class="sh-link-icon">📰</span>
         <div>
-          <strong>Start with the Prompt Engineering Guide →</strong>
-          <span>8 techniques with hands-on practice · Earn a completion certificate</span>
+          <strong>Start with AI News →</strong>
+          <span>Curated from 33 RSS feeds · Updated 4x daily · Clustered by topic</span>
         </div>
       </a>
       <div class="sh-secondary-links">
-        <a href="/prompts/">📚 Browse 84 ready-to-use prompts across 8 platforms</a>
-        <a href="/prompt-polisher/">✨ Paste any prompt → get a score and improved version</a>
+        <a href="/m365-roadmap/">🗓️ Track 1,800+ M365 features shipping</a>
+        <a href="/deprecation-timeline/">⏰ What's retiring and when</a>
+        <a href="/blog/">📝 Read the blog — Copilot guides, tutorials, deep dives</a>
       </div>
     </div>
 
   </div>{{/* .sh-paths */}}
 
-  {{/* ══════════════════ ALSO EXPLORE ══════════════════ */}}
-  <section class="sh-also">
-    <h2>Also Explore</h2>
-    <div class="sh-also-grid sh-also-single">
-      <a href="/ai-news/" class="sh-also-card" id="path-news" style="--sh-accent: #ff66ff">
-        <span>📰</span>
-        <div>
-          <strong>Stay Informed</strong>
-          <span>AI news from 33 feeds, M365 roadmap tracker, and in-depth blog</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
   {{/* ── Fallback ── */}}
   <div class="sh-fallback">
-    <p>🤔 Still not sure? <a href="/copilot-readiness/">Start with the most popular tool</a> or <a href="/free-tools/">browse all {{ $toolCount }} tools</a>.</p>
+    <p>🤔 Still not sure? <a href="/cert-tracker/">Start with the most popular section</a> or <a href="/free-tools/">browse all {{ $toolCount }} tools</a>.</p>
   </div>
 
   {{/* ══════════════════ COMMUNITY TOOLS ══════════════════ */}}
   <section class="sh-community">
     <h2>❤️ Just Browsing? Try These</h2>
     <p>Free tools anyone can use — no cloud knowledge needed</p>
+
+    <h3 class="sh-community-label">🚀 Productivity</h3>
     <div class="sh-community-grid">
-      <a href="/prompts/" class="sh-tool-card">
-        <span class="sh-tool-icon">✍️</span>
-        <strong>AI Prompt Tools</strong>
-        <span>84 prompts · Prompt Polisher · Prompt Engineering Guide</span>
-      </a>
       <a href="/world-clock/" class="sh-tool-card">
         <span class="sh-tool-icon">🌍</span>
         <strong>Meeting Planner</strong>
         <span>Time zone finder · Team presets · Shareable links</span>
       </a>
+      <a href="/pomodoro/" class="sh-tool-card">
+        <span class="sh-tool-icon">🍅</span>
+        <strong>Pomodoro Timer</strong>
+        <span>Focus sessions · Ambient sounds · Stats heatmap</span>
+      </a>
+      <a href="/countdown/" class="sh-tool-card">
+        <span class="sh-tool-icon">⏳</span>
+        <strong>Countdown Timer</strong>
+        <span>Event countdowns · Flip clock · Fullscreen mode</span>
+      </a>
+      <a href="/typing-test/" class="sh-tool-card">
+        <span class="sh-tool-icon">⌨️</span>
+        <strong>Typing Speed Test</strong>
+        <span>WPM tracker · Code mode · Problem key heatmap</span>
+      </a>
+    </div>
+
+    <h3 class="sh-community-label">🎨 Creative & Utility</h3>
+    <div class="sh-community-grid">
       <a href="/qr-generator/" class="sh-tool-card">
         <span class="sh-tool-icon">📱</span>
         <strong>QR Code Generator</strong>
-        <span>Styled QR codes · Batch export · WiFi QR Cards</span>
+        <span>Styled QR codes · Batch export · Logo upload</span>
       </a>
-      <a href="/password-generator/" class="sh-tool-card">
-        <span class="sh-tool-icon">🔐</span>
-        <strong>Password Generator</strong>
-        <span>Passphrases · Breach checker · Pronounceable mode</span>
+      <a href="/wifi-qr/" class="sh-tool-card">
+        <span class="sh-tool-icon">📶</span>
+        <strong>WiFi QR Cards</strong>
+        <span>Printable cards · 4 themes · Guest-ready</span>
       </a>
       <a href="/image-compressor/" class="sh-tool-card">
         <span class="sh-tool-icon">🖼️</span>
@@ -206,10 +233,10 @@
         <strong>Colour Palette</strong>
         <span>Harmony modes · WCAG contrast · Image extraction</span>
       </a>
-      <a href="/typing-test/" class="sh-tool-card">
-        <span class="sh-tool-icon">⌨️</span>
-        <strong>Typing Speed Test</strong>
-        <span>WPM tracker · Code mode · Problem key heatmap</span>
+      <a href="/password-generator/" class="sh-tool-card">
+        <span class="sh-tool-icon">🔐</span>
+        <strong>Password Generator</strong>
+        <span>Passphrases · Breach checker · Pronounceable mode</span>
       </a>
     </div>
   </section>

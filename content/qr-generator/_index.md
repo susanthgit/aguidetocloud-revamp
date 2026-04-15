@@ -23,5 +23,7 @@ faq:
     answer: "PNG (raster, great for web and print) and SVG (vector, scales to any size without losing quality — perfect for banners and billboards)."
   - question: "Is my data private?"
     answer: "Absolutely. Everything runs in your browser — no data is sent to any server. WiFi passwords are never stored in history or shared URLs."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/qr-generator.jpg"]
 ---

@@ -23,5 +23,7 @@ faq:
     answer: "We calculate how long it would take to try every possible combination at different attack speeds: online attacks (1,000 guesses/sec with rate limiting), offline attacks against fast hashes like MD5 (100 billion/sec), and GPU cluster attacks (1 trillion/sec). The estimate assumes brute force — real attacks using dictionaries or patterns would be faster for weak passwords."
   - question: "What word list does the passphrase generator use?"
     answer: "We use the EFF (Electronic Frontier Foundation) Diceware long word list containing 7,776 carefully selected English words. Each word adds approximately 12.9 bits of entropy. The list was designed specifically for generating secure, memorable passphrases."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/password-generator.jpg"]
 ---

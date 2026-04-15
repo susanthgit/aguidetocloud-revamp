@@ -23,5 +23,7 @@ faq:
     answer: "Yes. The timer uses timestamp-based tracking, so it remains accurate even if the browser throttles the tab. You'll also see the countdown in your browser tab title, and receive a notification when the timer ends (if you've enabled notifications)."
   - question: "Can I track tasks alongside the timer?"
     answer: "Yes — the Tasks tab lets you create a task list, set estimated pomodoros per task, mark a task as your current focus, and track actual pomodoros completed. Tasks persist in localStorage between sessions."
+  - question: "Is this tool still being improved?"
+    answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 images: ["images/og/pomodoro.jpg"]
 ---
