@@ -4,10 +4,21 @@
 
 <div class="container">
 
-  <!-- 🧰 RAYCAST-STYLE TOOLKIT SHOWCASE -->
+  <!-- Trust bar -->
+  <div class="hp-trust-bar">
+    <span>Built by a <strong>Microsoft Engineer</strong></span>
+    <span class="hp-trust-dot">·</span>
+    <span>100% Free</span>
+    <span class="hp-trust-dot">·</span>
+    <span>No Sign-up Required</span>
+    <span class="hp-trust-dot">·</span>
+    <span>Runs in Your Browser</span>
+  </div>
+
+  <!-- RAYCAST-STYLE TOOLKIT SHOWCASE -->
   <section class="section hp-ray-section">
     <div class="section-header">
-      <h2 class="section-title">🧰 Toolkit</h2>
+      <h2 class="section-title">Toolkit</h2>
       <a href="/free-tools/" class="section-link">View all →</a>
       <p class="section-desc">Free tools built for IT pros — from Copilot readiness assessments to AI comparisons to certification study guides. No sign-up, no ads, runs in your browser.</p>
     </div>
@@ -56,7 +67,6 @@
             <div class="hp-ray-visual" aria-hidden="true">
               <img class="hp-ray-preview" src="/images/tool-previews/{{ $slug }}.jpg" alt="" loading="lazy" decoding="async">
             </div>
-            {{ with index $vis .visual }}<div class="hp-ray-abstract" aria-hidden="true">{{ . | safeHTML }}</div>{{ end }}
           </a>
           {{ end }}
         {{ end }}
@@ -66,12 +76,12 @@
     <a href="/free-tools/" class="hp-ray-browse">Browse all {{ $toolCount }} tools →</a>
   </section>
 
-  <!-- 📝 FROM THE BLOG — moved up for SEO dwell time -->
+  <!-- From the Blog — moved up for SEO dwell time -->
   {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
   {{ if gt (len $blogPosts) 0 }}
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">📝 From the Blog</h2>
+      <h2 class="section-title">From the Blog</h2>
       <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
       <p class="section-desc">Practical guides for IT admins who need to deploy, manage, and get value from Microsoft 365 Copilot, Azure, and AI — written by someone who does this daily.</p>
     </div>
@@ -89,10 +99,10 @@
   </section>
   {{ end }}
 
-  <!-- 📺 WATCH & LEARN — videos after blog to keep visitors on-site first -->
+  <!-- Watch & Learn — videos after blog to keep visitors on-site first -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">📺 Watch & Learn</h2>
+      <h2 class="section-title">Watch & Learn</h2>
       <a href="/ai-hub/" class="section-link">View all →</a>
       <p class="section-desc">Step-by-step video tutorials on Microsoft 365, Azure certifications, and AI tools — from beginner walkthroughs to advanced admin deep dives.</p>
     </div>
@@ -104,11 +114,24 @@
     </div>
   </section>
 
-  <!-- ⭐ TESTIMONIALS — rolling carousel of YouTube comments -->
+  <!-- ⭐ SOCIAL PROOF — stats + testimonials -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">⭐ What People Say</h2>
+      <h2 class="section-title">What People Say</h2>
       <p class="section-desc">Real feedback from the YouTube community — IT pros, students, and cloud practitioners who use these resources daily.</p>
+    </div>
+    {{/* Dynamic stat counts */}}
+    {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
+    {{ $toolCount2 := 0 }}
+    {{ range $allNavTools }}{{ if .is_tool }}{{ $toolCount2 = add $toolCount2 1 }}{{ end }}{{ end }}
+    {{ $videoCount := 0 }}
+    {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
+      {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
+    {{ end }}
+    {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
+    {{ $certCount := len (where .Site.RegularPages "Section" "cert-tracker") }}
+    <div class="hp-proof-stats-inline">
+      <strong>{{ $toolCount2 }}</strong> free tools · <strong>{{ $videoCount }}</strong> tutorials · <strong>{{ $promptCount }}</strong> prompts · <strong>{{ $certCount }}</strong> cert guides
     </div>
     <div class="hp-testimonials-track">
       <div class="hp-testimonials-scroll" aria-label="Testimonials">
@@ -148,10 +171,20 @@
     </div>
   </section>
 
-  <!-- 🌐 CONNECT -->
+  <!-- Final CTA -->
+  <section class="hp-final-cta">
+    <h2>Ready to level up?</h2>
+    <p>Pick a tool and start building, learning, or planning — it takes 30 seconds.</p>
+    <div class="hp-final-cta-row">
+      <a href="/start/" class="hp-final-btn hp-final-primary">Start Here →</a>
+      <a href="/free-tools/" class="hp-final-btn hp-final-secondary">Browse All Tools</a>
+    </div>
+  </section>
+
+  <!-- Connect -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">🌐 Connect</h2>
+      <h2 class="section-title">Connect</h2>
     </div>
     <div class="ecosystem">
       <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">

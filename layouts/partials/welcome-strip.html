@@ -1,47 +1,12 @@
 <div class="welcome-strip">
   <div class="welcome-inner">
     <div class="welcome-text-block">
-      <h1 class="welcome-title">Your AI & Cloud Learning Hub</h1>
-      <p class="welcome-subtitle">Built for IT pros, cloud architects & Copilot champions. Free tools and step-by-step guides for Microsoft 365 administration, Azure infrastructure, AI deployment & certification prep — by a Microsoft engineer who uses these daily.</p>
+      <h1 class="welcome-title">Your AI & Cloud<br>Learning Hub</h1>
+      <p class="welcome-subtitle">Free tools and step-by-step guides for Microsoft 365 administration, Azure infrastructure, AI deployment & certification prep — by a Microsoft engineer who uses these daily.</p>
     </div>
-    {{/* Dynamic stat counts */}}
-    {{/* Auto-calculate tool count from toolkit_nav.toml using is_tool flag */}}
-    {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
-    {{ $toolCount := 0 }}
-    {{ range $allNavTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
-    {{ $videoCount := 0 }}
-    {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
-      {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
-    {{ end }}
-    {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
-    {{ $certPages := where .Site.RegularPages "Section" "cert-tracker" }}
-    {{ $certCount := len $certPages }}
-    {{ $blogCount := len (where .Site.RegularPages "Section" "blog") }}
-    <div class="welcome-stat-boxes">
-      <a href="/free-tools/" class="welcome-stat-box welcome-stat-link">
-        <span class="welcome-stat-num">{{ $toolCount }}</span>
-        <span class="welcome-stat-label">Tools</span>
-      </a>
-      <a href="/ai-hub/" class="welcome-stat-box welcome-stat-link">
-        <span class="welcome-stat-num">{{ $videoCount }}</span>
-        <span class="welcome-stat-label">Videos</span>
-      </a>
-      <a href="/prompts/" class="welcome-stat-box welcome-stat-link">
-        <span class="welcome-stat-num">{{ $promptCount }}</span>
-        <span class="welcome-stat-label">Prompts</span>
-      </a>
-      <a href="/cert-tracker/" class="welcome-stat-box welcome-stat-link">
-        <span class="welcome-stat-num">{{ $certCount }}</span>
-        <span class="welcome-stat-label">Cert Guides</span>
-      </a>
-      <a href="/blog/" class="welcome-stat-box welcome-stat-link">
-        <span class="welcome-stat-num">{{ $blogCount }}</span>
-        <span class="welcome-stat-label">Articles</span>
-      </a>
-    </div>
-    {{ partial "page-search.html" . }}
     <div class="welcome-cta-row">
       <a href="/start/" class="welcome-cta-btn border-beam">New Here? Start Here →</a>
     </div>
+    {{ partial "page-search.html" . }}
   </div>
 </div>
