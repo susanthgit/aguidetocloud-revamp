@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 17:17:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 19:42:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience intermittent failures with requests in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
-      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Some users may experience intermittent failures with requests in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1281119</guid>
       <pubDate>Wed, 15 Apr 2026 16:44:18 +0000</pubDate>
     </item>
@@ -341,15 +341,6 @@
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[SharePoint Online] Users may be unable to edit SharePoint Online sites using the SharePoint Designer 2013 tool</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1256716</link>
-      <description>[SharePoint Online] Users may be unable to edit SharePoint Online sites using the SharePoint Designer 2013 tool.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1256716</guid>
-      <pubDate>Fri, 20 Mar 2026 09:56:15 +0000</pubDate>
-    </item>
-    <item>
       <title>[Exchange Online] Admins may be unable to create shared mailboxes in Exchange Online </title>
       <link>https://www.aguidetocloud.com/service-health/#EX1256744</link>
       <description>[Exchange Online] Admins may have been unable to create shared mailboxes in Exchange Online.</description>
@@ -357,6 +348,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1256744</guid>
       <pubDate>Fri, 20 Mar 2026 06:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to edit SharePoint Online sites using the SharePoint Designer 2013 tool</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1256716</link>
+      <description>[SharePoint Online] Users may have been unable to edit SharePoint Online sites using the SharePoint Designer 2013 tool.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1256716</guid>
+      <pubDate>Thu, 19 Mar 2026 16:49:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to summarize report content using Copilot for Microsoft Fabric</title>
