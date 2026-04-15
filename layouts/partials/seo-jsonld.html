@@ -111,6 +111,32 @@
 }
 </script>
 {{ end }}
+{{/* SoftwareApplication schema for tool pages — reads from toolkit_nav.toml */}}
+{{ $navTools := (index hugo.Data "toolkit_nav").tools }}
+{{ range $navTools }}
+{{ if and .is_tool (eq $.RelPermalink .url) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": {{ .name | jsonify }},
+  "description": {{ .desc | jsonify }},
+  "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify }},
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": {{ site.Params.author | jsonify }}
+  }
+}
+</script>
+{{ end }}
+{{ end }}
 {{ if eq .RelPermalink "/about/" }}
 <script type="application/ld+json">
 {

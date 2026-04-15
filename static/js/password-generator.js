@@ -1125,7 +1125,7 @@
           wrap.style.background = '#f5f5f5';
           wrap.style.borderRadius = '8px';
           wrap.style.padding = '0.75rem';
-          pwEl.style.color = '#1a1a2e';
+          pwEl.style.color = '#0a0a14';
         } else {
           wrap.style.background = '';
           wrap.style.borderRadius = '';

@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
    Typing Speed Test — typing-test.js  v2
    100% client-side, zero API calls
    ═══════════════════════════════════════════════════ */
@@ -99,7 +99,7 @@
     ],
     html: [
       '<nav class="navbar">\n  <a href="/" class="logo">Brand</a>\n  <ul class="nav-links">\n    <li><a href="/about">About</a></li>\n    <li><a href="/blog">Blog</a></li>\n    <li><a href="/contact">Contact</a></li>\n  </ul>\n</nav>',
-      '.card {\n  display: flex;\n  flex-direction: column;\n  background: #1a1a2e;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.3);\n  transition: transform 0.2s ease;\n}',
+      '.card {\n  display: flex;\n  flex-direction: column;\n  background: #0a0a14;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.3);\n  transition: transform 0.2s ease;\n}',
       '<form id="contact-form">\n  <label for="name">Name</label>\n  <input type="text" id="name" required>\n  <label for="email">Email</label>\n  <input type="email" id="email" required>\n  <textarea id="message" rows="4"></textarea>\n  <button type="submit">Send</button>\n</form>',
       '@media (max-width: 768px) {\n  .grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n    padding: 0 1rem;\n  }\n  .sidebar { display: none; }\n  .main { width: 100%; }\n}',
       '<div class="hero">\n  <h1>Welcome to Our Site</h1>\n  <p>Build something amazing today</p>\n  <a href="/start" class="btn">Get Started</a>\n</div>'

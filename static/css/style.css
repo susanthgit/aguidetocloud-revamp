@@ -1117,6 +1117,21 @@ a.welcome-stat-link:hover {
   height: 1px;
   background: linear-gradient(90deg, var(--border-glow), transparent);
   margin-left: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.section-title::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  animation: shimmer-line 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer-line {
+  0%, 100% { transform: translateX(-60px); opacity: 0; }
+  50% { transform: translateX(200px); opacity: 1; }
 }
 .section-desc {
   width: 100%;
@@ -1461,8 +1476,12 @@ a.welcome-stat-link:hover {
     linear-gradient(180deg, color-mix(in srgb, var(--hero-accent) 35%, rgba(3, 3, 8, 0.8)) 0%, var(--bg-primary) 100%);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   margin-bottom: 1.5rem;
+  animation: hero-entrance 0.5s ease both;
+}
+@keyframes hero-entrance {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .tool-hero-inner {
   max-width: var(--max-width);
@@ -1712,6 +1731,7 @@ a.welcome-stat-link:hover {
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   margin-bottom: 1.5rem;
+  animation: hero-entrance 0.5s ease both;
 }
 .page-hero h1 {
   font-family: var(--font-heading);
@@ -2572,11 +2592,19 @@ pre.mermaid {
   }
 }
 
-/* ── VIEW TRANSITIONS ────────────────────
-   REMOVED: @view-transition { navigation: auto } caused perceived
-   slowness on navigation. The 180ms cross-fade delayed every click.
-   Revisit when browser support is wider and timing can be tuned.
-   ────────────────────────────────────────── */
+/* ── VIEW TRANSITIONS — fast 100ms cross-fade ── */
+@view-transition { navigation: auto; }
+::view-transition-old(root) {
+  animation: vt-fade-out 100ms ease-out;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 100ms ease-in;
+}
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
 
 /* ══ Tool Ecosystem Cross-Links (shared) ══ */
 .tool-eco {
