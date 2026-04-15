@@ -506,13 +506,16 @@ a:hover {
   gap: 0.25rem;
   padding: 5px;
   margin-bottom: 1.8rem;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   position: relative;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 .hp-ray-filters::-webkit-scrollbar { display: none; }
 .hp-ray-indicator {
@@ -521,8 +524,9 @@ a:hover {
   left: 0;
   height: calc(100% - 10px);
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   pointer-events: none;
   z-index: 0;
 }
@@ -537,7 +541,7 @@ a:hover {
   border-radius: 50px;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.55);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.88rem;
@@ -638,7 +642,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1.4rem 1.2rem;
-  min-height: 360px;
+  min-height: 300px;
   text-decoration: none;
   color: inherit;
   border-radius: 20px;
@@ -709,25 +713,77 @@ a:hover {
   position: relative;
   margin-top: 0.8rem;
   pointer-events: none;
-  overflow: hidden;
-  border-radius: 16px;
+  overflow: visible;
   flex: 1;
+  perspective: 500px;
+  padding-top: 16px;
+}
+.hp-ray-visual-inner {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ray-color) 25%, transparent);
+  transition: border-color 0.3s, transform 0.4s;
+  transform: rotateX(6deg) rotateY(-3deg);
+  transform-origin: center bottom;
+  z-index: 3;
+}
+.hp-ray-card:hover .hp-ray-visual-inner {
+  border-color: color-mix(in srgb, var(--ray-color) 50%, transparent);
+  transform: rotateX(3deg) rotateY(-1.5deg);
+}
+/* Layer 1 — closest behind */
+.hp-ray-visual-inner::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 12px; right: 12px;
+  height: 12px;
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--ray-color) 15%, rgba(255,255,255,0.05));
+  border: 1px solid color-mix(in srgb, var(--ray-color) 20%, transparent);
+  border-bottom: none;
+  z-index: 2;
+}
+/* Layer 2 — furthest back */
+.hp-ray-visual::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 22px; right: 22px;
+  height: 10px;
+  border-radius: 8px 8px 0 0;
+  background: color-mix(in srgb, var(--ray-color) 8%, rgba(255,255,255,0.03));
+  border: 1px solid color-mix(in srgb, var(--ray-color) 12%, transparent);
+  border-bottom: none;
+  z-index: 1;
+  transform: rotateX(6deg) rotateY(-3deg);
+  transform-origin: center bottom;
+}
+.hp-ray-visual-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(to top, #000 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 4;
 }
 .hp-ray-preview {
   width: 100%;
   height: 100%;
-  min-height: 140px;
+  min-height: 160px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 16px;
+  border-radius: 9px;
   opacity: 0.55;
-  filter: brightness(0.95) saturate(0.85);
-  transition: opacity 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.9) saturate(0.85);
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
   display: block;
+  transform: scale(1.02);
 }
 .hp-ray-card:hover .hp-ray-preview {
-  opacity: 0.75;
+  opacity: 0.85;
   filter: brightness(1) saturate(1);
+  transform: scale(1.06);
 }
 .hp-ray-abstract {
   margin-top: auto;

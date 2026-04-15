@@ -65,7 +65,9 @@
             </div>
             <p class="hp-ray-desc">{{ .desc }}</p>
             <div class="hp-ray-visual" aria-hidden="true">
-              <img class="hp-ray-preview" src="/images/tool-previews/{{ $slug }}.jpg" alt="" loading="lazy" decoding="async">
+              <div class="hp-ray-visual-inner">
+                <img class="hp-ray-preview" src="/images/tool-previews/{{ $slug }}.jpg" alt="" loading="lazy" decoding="async">
+              </div>
             </div>
           </a>
           {{ end }}

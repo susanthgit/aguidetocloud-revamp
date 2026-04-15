@@ -41,10 +41,10 @@ TOOLS = [
 ]
 
 WIDTH = 1280
-HEIGHT = 900
-# Crop: skip the hero area (top ~200px), capture the tool content below
-CROP_TOP = 200
-CROP_HEIGHT = 400
+HEIGHT = 1200
+# Crop: skip hero + tabs area (~420px), capture the actual tool content
+CROP_TOP = 420
+CROP_HEIGHT = 500
 
 def main():
     with sync_playwright() as p:
