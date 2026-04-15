@@ -16,7 +16,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .wifiqr-tab {
@@ -27,7 +27,7 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -60,7 +60,7 @@
 .wifiqr-form {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -95,7 +95,7 @@
 .wifiqr-select {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.65rem 0.85rem;
   color: #fff;
   font-size: 0.9rem;
@@ -176,7 +176,7 @@
 .wifiqr-template-btn {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem 1rem;
   color: rgba(255,255,255,0.7);
   cursor: pointer;
@@ -244,7 +244,7 @@
 }
 
 .wifiqr-card-qr {
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 0.75rem;
   display: inline-flex;
 }
@@ -253,7 +253,7 @@
 .wifiqr-card-qr svg {
   max-width: 180px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .wifiqr-card-network {
@@ -327,7 +327,7 @@
 .wifiqr-btn {
   background: rgba(34,211,238,0.15);
   border: 1px solid rgba(34,211,238,0.3);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.6rem 1.25rem;
   color: #22D3EE;
   cursor: pointer;
@@ -363,7 +363,7 @@
   padding: 1.25rem;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
   color: rgba(255,255,255,0.5);
   font-size: 0.88rem;
 }
@@ -414,7 +414,7 @@
   width: 40px;
   height: 36px;
   border: 2px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   background: none;
   padding: 2px;

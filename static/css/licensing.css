@@ -142,7 +142,7 @@
   padding: 0.8rem 1rem;
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid #1e293b;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .lic-presets-label {
   color: var(--lic-accent);
@@ -210,7 +210,7 @@
   margin-bottom: 0.5rem;
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 10px;
+  border-radius: 16px;
   transition: border-color 0.2s;
 }
 .lic-calc-row:hover { border-color: var(--lic-accent-border); }
@@ -218,7 +218,7 @@
 .lic-calc-select {
   background: #0f172a;
   border: 1px solid #334155;
-  border-radius: 8px;
+  border-radius: 14px;
   color: #e2e8f0;
   padding: 0.5rem 0.8rem;
   font-size: 0.88rem;
@@ -230,7 +230,7 @@
 .lic-calc-users {
   background: #0f172a;
   border: 1px solid #334155;
-  border-radius: 8px;
+  border-radius: 14px;
   color: #e2e8f0;
   padding: 0.5rem 0.6rem;
   font-size: 0.9rem;
@@ -275,7 +275,7 @@
 .lic-calc-totals {
   background: #1e293b;
   border: 2px solid var(--lic-accent-border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -312,7 +312,7 @@
   padding: 1rem;
   background: rgba(244, 63, 94, 0.08);
   border: 1px solid var(--lic-accent-border);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.88rem;
 }
 .lic-calc-impact-title {
@@ -366,7 +366,7 @@
   padding: 0.8rem 1rem;
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid #334155;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 .lic-quiz-scope strong { color: var(--lic-accent); }
 
@@ -378,13 +378,13 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin: 1.5rem 0 2rem;
   flex-wrap: wrap;
 }
 .lic-tab {
   padding: 0.5rem 0.9rem;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid transparent;
   background: none;
   color: #94a3b8;
@@ -594,7 +594,7 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
@@ -707,7 +707,7 @@
 .lic-quiz-question {
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -733,7 +733,7 @@
   gap: 0.6rem;
   padding: 0.7rem 1rem;
   border: 1px solid #334155;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.2s;
   color: #cbd5e1;
@@ -782,7 +782,7 @@
 .lic-result-card {
   background: #1e293b;
   border: 2px solid var(--lic-accent-border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -1037,7 +1037,7 @@
 .lic-single-content pre.mermaid {
   background: transparent;
   border: 1px solid #1e293b;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem;
   margin: 1.5rem 0;
   overflow-x: auto;
@@ -1061,7 +1061,7 @@
   padding: 0.7rem 1rem;
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 8px;
+  border-radius: 14px;
   text-decoration: none;
   transition: border-color 0.2s;
 }
@@ -1076,7 +1076,7 @@
   padding: 1.5rem;
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid #334155;
-  border-radius: 12px;
+  border-radius: 16px;
   color: #64748b;
   font-size: 0.82rem;
   line-height: 1.6;

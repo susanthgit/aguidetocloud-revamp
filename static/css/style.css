@@ -427,7 +427,7 @@ a:hover {
   background: var(--neon-cyan);
   color: var(--bg-primary);
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 1rem;
   transition: all 0.3s ease;
   border: none;
@@ -445,7 +445,7 @@ a:hover {
   background: transparent;
   color: var(--neon-cyan);
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 1rem;
   border: 2px solid var(--neon-cyan);
   transition: all 0.3s ease;
@@ -710,7 +710,7 @@ a:hover {
   margin-top: 0.8rem;
   pointer-events: none;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 16px;
   flex: 1;
 }
 .hp-ray-preview {
@@ -719,7 +719,7 @@ a:hover {
   min-height: 140px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 10px;
+  border-radius: 16px;
   opacity: 0.55;
   filter: brightness(0.95) saturate(0.85);
   transition: opacity 0.4s ease, filter 0.4s ease;
@@ -1571,7 +1571,7 @@ a.welcome-stat-link:hover {
   align-items: center;
   padding: 0.5rem 1.1rem;
   border: 1px solid var(--neon-cyan);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--neon-cyan);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -1588,17 +1588,17 @@ a.welcome-stat-link:hover {
 .global-btt {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
   width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(20, 184, 166, 0.15); color: #14B8A6; border: 1px solid rgba(20, 184, 166, 0.3);
+  background: rgba(255, 255, 255, 0.06); color: rgba(255, 255, 255, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.3rem; font-weight: 900; cursor: pointer;
-  box-shadow: 0 3px 15px rgba(20, 184, 166, 0.2);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
   opacity: 0; transform: translateY(20px); transition: all 0.3s;
   pointer-events: none;
   display: flex; align-items: center; justify-content: center;
 }
 .global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.global-btt:hover { background: rgba(20, 184, 166, 0.25); box-shadow: 0 4px 25px rgba(20, 184, 166, 0.4); border-color: rgba(20, 184, 166, 0.5); }
+.global-btt:hover { background: rgba(255, 255, 255, 0.12); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
 
 /* ── Feedback FAB (floating action button) ── */
 .feedback-fab {
@@ -1609,8 +1609,8 @@ a.welcome-stat-link:hover {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 102, 255, 0.15);
-  border: 1px solid rgba(255, 102, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.2rem;
@@ -1825,7 +1825,7 @@ a.welcome-stat-link:hover {
   gap: 0.35rem;
   padding: 0.4rem 0.85rem;
   border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   color: rgba(255,255,255,0.5);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -1867,7 +1867,7 @@ a.welcome-stat-link:hover {
   gap: 0.35rem;
   padding: 0.4rem 0.85rem;
   border: 1px solid rgba(0, 229, 255, 0.2);
-  border-radius: 8px;
+  border-radius: 14px;
   color: rgba(255,255,255,0.55);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -1913,7 +1913,7 @@ a.welcome-stat-link:hover {
   gap: 0.35rem;
   padding: 0.4rem 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
+  border-radius: 14px;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -2063,7 +2063,7 @@ a.welcome-stat-link:hover {
   font-size: 0.9rem;
 }
 .single-content .content-body h2 {
-  color: var(--neon-cyan);
+  color: #fff;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -2189,7 +2189,7 @@ a.welcome-stat-link:hover {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 3px solid #FF8A80;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 2.5rem;
   max-width: 680px;
@@ -2255,7 +2255,7 @@ a.welcome-stat-link:hover {
   padding: 0.6rem 0.8rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-secondary);
   font-size: 0.82rem;
   text-decoration: none;
@@ -2283,7 +2283,7 @@ a.welcome-stat-link:hover {
   color: var(--text-secondary);
   padding: 0.5rem 1rem;
   border: 1px solid var(--border-glow);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.88rem;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -2300,7 +2300,7 @@ a.welcome-stat-link:hover {
 .error-404-help {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(251, 191, 36, 0.15);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem 2rem;
   max-width: 600px;
   width: 100%;
@@ -2319,7 +2319,7 @@ a.welcome-stat-link:hover {
   padding: 0.7rem 1.5rem;
   background: rgba(251, 191, 36, 0.12);
   border: 1px solid rgba(251, 191, 36, 0.3);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #FBBF24;
   font-size: 0.95rem;
   font-weight: 600;
@@ -2516,13 +2516,13 @@ a.welcome-stat-link:hover {
 }
 /* Blog content body styles */
 .content-body h2 {
-  color: var(--neon-cyan);
+  color: #fff;
   margin-top: 2rem;
   margin-bottom: 0.8rem;
   font-family: var(--font-heading);
 }
 .content-body h3 {
-  color: var(--neon-pink, #ff00ff);
+  color: rgba(255, 255, 255, 0.9);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-family: var(--font-heading);
@@ -2548,7 +2548,7 @@ a.welcome-stat-link:hover {
   border-collapse: collapse;
   margin: 1.5rem 0;
   border: 1px solid rgba(102, 255, 255, 0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .content-body th {
@@ -2581,7 +2581,7 @@ a.welcome-stat-link:hover {
   padding: 1.5rem;
   background: rgba(13, 17, 23, 0.6);
   border: 1px solid rgba(102, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
   overflow-x: auto;
 }
@@ -2760,7 +2760,7 @@ pre.mermaid {
   position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .skeleton::after {
   content: '';
@@ -2927,7 +2927,7 @@ pre.mermaid {
 .tool-eco-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem 0.75rem;
   text-decoration: none;
   color: #e6edf3;

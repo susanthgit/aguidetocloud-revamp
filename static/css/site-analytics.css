@@ -91,7 +91,7 @@
 .siteana-cs-feature {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
   transition: border-color 0.2s;
 }
@@ -148,7 +148,7 @@
 .siteana-cs-notify {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -188,7 +188,7 @@
   color: rgba(255,255,255,0.3);
   font-size: 0.8rem;
   padding: 0.4rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -208,7 +208,7 @@
 .siteana-cs-admin-form input {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #e6edf3;
   padding: 0.5rem 0.75rem;
   font-size: 0.85rem;
@@ -225,7 +225,7 @@
   background: rgba(6,182,212,0.15);
   border: 1px solid rgba(6,182,212,0.3);
   color: #64748B;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   cursor: pointer;
@@ -264,7 +264,7 @@
   padding: 1rem 1.5rem;
   background: rgba(6,182,212,0.06);
   border: 1px solid rgba(6,182,212,0.15);
-  border-radius: 12px;
+  border-radius: 16px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   min-width: 100px;
@@ -293,7 +293,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
@@ -306,7 +306,7 @@
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   padding: 0.6rem 1.1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
   flex: 1;
@@ -347,7 +347,7 @@
 .siteana-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -368,7 +368,7 @@
 
 .siteana-hint {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
   margin: -0.5rem 0 1rem;
 }
 
@@ -406,7 +406,7 @@
 
 .siteana-lb-count {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
 }
 
 .siteana-lb-bar-wrap {
@@ -515,7 +515,7 @@
 .siteana-faq-item {
   background: rgba(6,182,212,0.04);
   border: 1px solid rgba(6,182,212,0.12);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
 }
@@ -535,7 +535,7 @@
 /* Empty/loading states */
 .siteana-empty {
   text-align: center;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
   padding: 2rem;
   font-size: 0.95rem;
 }

@@ -30,7 +30,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .pguide-tab {
   background: none;
@@ -41,7 +41,7 @@
   font-weight: 600;
   padding: 0.6rem 1.2rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -120,7 +120,7 @@
 .pguide-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -182,7 +182,7 @@
 .pguide-badge {
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
-  border-radius: 12px;
+  border-radius: 16px;
   font-weight: 600;
 }
 .pguide-badge-beginner {
@@ -211,7 +211,7 @@
 .pguide-eco-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -259,7 +259,7 @@
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.9rem;
   width: 100%;
 }
@@ -275,7 +275,7 @@
   padding: 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .pguide-step-header {
   display: flex;
@@ -317,7 +317,7 @@
   width: 100%;
   background: rgba(0,0,0,0.2);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-primary);
   padding: 0.6rem 0.75rem;
   font-size: 0.9rem;
@@ -390,7 +390,7 @@
 .pguide-preview-box {
   background: rgba(0,0,0,0.3);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem;
   min-height: 200px;
   font-size: 0.9rem;
@@ -407,7 +407,7 @@
 }
 .pguide-btn {
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -477,7 +477,7 @@
   border: 1px solid var(--tool-accent);
   color: var(--tool-accent-text);
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -545,7 +545,7 @@
 .pguide-toc {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -580,7 +580,7 @@
   gap: 0.75rem;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -594,7 +594,7 @@
 .pguide-sandbox {
   background: var(--bg-card);
   border: 2px solid var(--tool-accent);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin: 2rem 0;
 }
@@ -610,7 +610,7 @@
   border: 1px solid rgba(220, 38, 38, 0.3);
   color: #FCA5A5;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -618,7 +618,7 @@
   width: 100%;
   background: rgba(0,0,0,0.2);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-primary);
   padding: 0.75rem;
   font-size: 0.95rem;
@@ -664,7 +664,7 @@
 .pguide-sandbox-feedback {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.9rem;
   font-weight: 600;
   display: none;
@@ -691,7 +691,7 @@
 .pguide-faq-item {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 0.75rem;
 }
 .pguide-faq-item summary {
@@ -723,7 +723,7 @@
 .pguide-cta-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -803,7 +803,7 @@
 .pguide-quickwin {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -821,7 +821,7 @@
   min-width: 200px;
   max-width: 400px;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 16px;
   text-align: left;
   position: relative;
 }
@@ -885,7 +885,7 @@
   margin: 0 0 1rem;
   padding: 0.5rem 0.75rem;
   background: var(--tool-accent-dim);
-  border-radius: 8px;
+  border-radius: 14px;
   border-left: 3px solid var(--tool-accent);
 }
 
@@ -893,7 +893,7 @@
 .pguide-combine-callout {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -952,7 +952,7 @@
   margin-top: 1rem;
   background: rgba(132, 204, 22, 0.05);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 14px;
 }
 .pguide-sandbox-reveal summary {
   padding: 0.75rem 1rem;
@@ -970,7 +970,7 @@
 .pguide-fix-exercise {
   background: rgba(251, 191, 36, 0.06);
   border: 2px solid #FBBF24;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin: 2rem 0;
 }
@@ -980,7 +980,7 @@
 .pguide-heatmap-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -1011,7 +1011,7 @@
   margin: 1.5rem auto 0;
   background: linear-gradient(135deg, #1a2a1a, #050510);
   border: 2px solid var(--tool-accent);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
 }
 .pguide-cert-card-inner { padding: 2rem; }
@@ -1028,7 +1028,7 @@
 .pguide-quiz-q {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 1rem;
 }
@@ -1040,7 +1040,7 @@
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 0.9rem;
   text-align: left;
@@ -1056,7 +1056,7 @@
 .pguide-quiz-result-card {
   background: var(--bg-card);
   border: 1px solid var(--tool-accent);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 0.75rem;
   display: flex;
@@ -1082,7 +1082,7 @@
 .pguide-challenge-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.25rem;
 }
@@ -1095,7 +1095,7 @@
   margin-bottom: 1.5rem;
   background: rgba(132, 204, 22, 0.08);
   border: 1px solid rgba(132, 204, 22, 0.25);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .pguide-challenge-hero-icon {
   font-size: 1.5rem;
@@ -1172,7 +1172,7 @@
 .pguide-tldr {
   background: linear-gradient(135deg, rgba(132,204,22,0.12), rgba(132,204,22,0.04));
   border: 1px solid var(--tool-accent);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 2rem;
   display: flex;
@@ -1196,7 +1196,7 @@
 .pguide-platform-item {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 0.5rem;
   overflow: hidden;
 }

@@ -20,12 +20,12 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  border-radius: 16px; margin-bottom: 1.5rem;
 }
 .rdmap-top-tab {
   background: none; border: 1px solid transparent;
   color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
   transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .rdmap-top-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
@@ -66,13 +66,13 @@
 /* Controls — search + two dropdowns, one clean row */
 .rdmap-controls { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
 .rdmap-search {
-  flex: 2; min-width: 200px; padding: 0.6rem 1rem; border-radius: 8px;
+  flex: 2; min-width: 200px; padding: 0.6rem 1rem; border-radius: 14px;
   border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.9rem;
 }
 .rdmap-search:focus { outline: none; border-color: #E5A00D; box-shadow: 0 0 0 2px rgba(229,160,13,0.12); }
 .rdmap-search::placeholder { color: #504A59; }
 .rdmap-select {
-  flex: 1; min-width: 130px; padding: 0.6rem 0.8rem; border-radius: 8px;
+  flex: 1; min-width: 130px; padding: 0.6rem 0.8rem; border-radius: 14px;
   border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.84rem; cursor: pointer;
 }
 .rdmap-select:focus { outline: none; border-color: #E5A00D; }
@@ -112,7 +112,7 @@
 .rdmap-row {
   display: grid; grid-template-columns: 100px 1fr auto;
   padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
-  background: #1C1924; border: 1px solid #2A2533; border-radius: 10px;
+  background: #1C1924; border: 1px solid #2A2533; border-radius: 16px;
   border-left: 3px solid transparent; transition: all 0.15s;
   text-decoration: none; color: inherit; cursor: pointer; text-shadow: none;
 }
@@ -133,7 +133,7 @@
 /* Load more */
 .rdmap-load-more {
   display: block; width: 100%; padding: 0.7rem; margin-top: 0.6rem;
-  background: #1C1924; border: 1px dashed #3D3648; border-radius: 10px;
+  background: #1C1924; border: 1px dashed #3D3648; border-radius: 16px;
   color: #8B8594; font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
 }
 .rdmap-load-more:hover { border-color: #E5A00D; color: #E5A00D; background: #211E29; }
@@ -154,7 +154,7 @@
 .rdmap-empty { color: #6B6575; text-align: center; padding: 3rem; }
 .rdmap-skeleton { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-skeleton-row {
-  height: 70px; border-radius: 10px;
+  height: 70px; border-radius: 16px;
   background: linear-gradient(110deg, #1C1924 40%, #2A2533 50%, #1C1924 60%);
   background-size: 200% 100%; animation: rdmap-shimmer 1.5s infinite;
 }

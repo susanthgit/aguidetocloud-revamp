@@ -32,13 +32,13 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem; overflow-x: auto;
 }
 .psb-tab {
   padding: 0.6rem 1.1rem; background: none; border: 1px solid transparent;
   color: var(--psb-text-dim); font-size: 0.85rem; font-weight: 600; cursor: pointer;
-  white-space: nowrap; border-radius: 8px; transition: all 0.2s ease;
+  white-space: nowrap; border-radius: 14px; transition: all 0.2s ease;
   flex: 1; text-align: center;
 }
 .psb-tab:hover { color: var(--psb-text); background: rgba(255, 255, 255, 0.06); }
@@ -46,7 +46,7 @@
   color: #000; background: var(--psb-accent); border-color: var(--psb-accent);
   box-shadow: 0 2px 8px rgba(74, 222, 128, 0.3);
 }
-.psb-tab:focus-visible { outline: 2px solid var(--psb-accent); outline-offset: -2px; border-radius: 8px; }
+.psb-tab:focus-visible { outline: 2px solid var(--psb-accent); outline-offset: -2px; border-radius: 14px; }
 .psb-panel { display: none; }
 .psb-panel.active { display: block; }
 
@@ -57,7 +57,7 @@
 .psb-search-wrap { margin-bottom: 1rem; }
 .psb-search {
   width: 100%; padding: 0.75rem 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
-  border-radius: 8px; color: var(--psb-text); font-size: 0.95rem; transition: border-color 0.2s;
+  border-radius: 14px; color: var(--psb-text); font-size: 0.95rem; transition: border-color 0.2s;
 }
 .psb-search:focus { outline: none; border-color: var(--psb-accent); box-shadow: 0 0 0 3px var(--psb-accent-dim); }
 .psb-search-sm { max-width: 400px; }
@@ -93,7 +93,7 @@
 .psb-recipe-title { font-weight: 600; color: var(--psb-text); flex: 1; font-size: 0.95rem; }
 .psb-recipe-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }
 .psb-badge {
-  padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;
+  padding: 0.15rem 0.5rem; border-radius: 16px; font-size: 0.7rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.3px;
 }
 .psb-badge-service { background: var(--psb-accent-dim); color: var(--psb-accent); }
@@ -114,7 +114,7 @@
 .psb-module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
 .psb-module-card {
   padding: 1rem; background: var(--psb-surface); border: 2px solid var(--psb-border);
-  border-radius: 10px; cursor: pointer; transition: all 0.2s; text-align: center;
+  border-radius: 16px; cursor: pointer; transition: all 0.2s; text-align: center;
 }
 .psb-module-card:hover { border-color: var(--psb-accent-muted); background: var(--psb-surface-hover); }
 .psb-module-card.active { border-color: var(--psb-accent); background: var(--psb-accent-dim); }
@@ -123,7 +123,7 @@
 .psb-module-desc { font-size: 0.75rem; color: var(--psb-text-dim); margin-top: 0.3rem; }
 
 .psb-module-info {
-  background: var(--psb-code-bg); border: 1px solid var(--psb-border); border-radius: 8px;
+  background: var(--psb-code-bg); border: 1px solid var(--psb-border); border-radius: 14px;
   padding: 1rem 1.25rem; margin-bottom: 1.5rem;
 }
 .psb-module-info-title { font-weight: 700; color: var(--psb-accent); margin-bottom: 0.5rem; }
@@ -149,7 +149,7 @@
 .psb-build-step { margin-bottom: 1.5rem; }
 .psb-step-label { display: block; font-weight: 700; color: var(--psb-text); font-size: 1rem; margin-bottom: 0.75rem; }
 .psb-params-form { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-.psb-param-group { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 8px; padding: 0.75rem 1rem; }
+.psb-param-group { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 14px; padding: 0.75rem 1rem; }
 .psb-param-group.required { border-left: 3px solid var(--psb-accent); }
 .psb-param-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
 .psb-param-name { font-weight: 600; color: var(--psb-text); font-family: 'Consolas', monospace; font-size: 0.9rem; }
@@ -173,12 +173,12 @@
 /* ═══════ BUTTONS ═══════ */
 .psb-btn-primary {
   padding: 0.65rem 1.5rem; background: var(--psb-accent); color: #000; border: none;
-  border-radius: 8px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+  border-radius: 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
 }
 .psb-btn-primary:hover { background: var(--psb-accent-hover); box-shadow: 0 4px 15px var(--psb-accent-glow); }
 .psb-btn-secondary {
   padding: 0.65rem 1.5rem; background: transparent; color: var(--psb-text-dim);
-  border: 1px solid var(--psb-border); border-radius: 8px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+  border: 1px solid var(--psb-border); border-radius: 14px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
 }
 .psb-btn-secondary:hover { border-color: var(--psb-accent); color: var(--psb-text); }
 .psb-btn-copy, .psb-btn-download, .psb-btn-share {
@@ -192,7 +192,7 @@
 /* ═══════ OUTPUT ═══════ */
 .psb-output-section { margin-top: 1.5rem; }
 .psb-output-block {
-  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-muted); border-radius: 10px;
+  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-muted); border-radius: 16px;
   overflow: hidden;
 }
 .psb-output-code {
@@ -211,7 +211,7 @@
 
 /* ═══════ REFERENCE ═══════ */
 .psb-ref-modules { display: grid; gap: 0.75rem; }
-.psb-ref-module { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; overflow: hidden; }
+.psb-ref-module { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 16px; overflow: hidden; }
 .psb-ref-module-header {
   padding: 1rem 1.25rem; cursor: pointer; display: flex; align-items: center; gap: 0.75rem;
   transition: background 0.2s;
@@ -235,7 +235,7 @@
 .psb-ref-learn-link:hover { color: var(--psb-accent); }
 
 /* ═══════ HISTORY ═══════ */
-.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; padding: 1.25rem; }
+.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 16px; padding: 1.25rem; }
 .psb-history-title { font-size: 0.95rem; font-weight: 700; color: var(--psb-text); margin-bottom: 0.75rem; }
 .psb-history-list { max-height: 300px; overflow-y: auto; }
 .psb-history-empty { color: var(--psb-text-dim); font-size: 0.85rem; }
@@ -251,7 +251,7 @@
 /* ═══════ FAQ ═══════ */
 .psb-faq { margin-top: 3rem; }
 .psb-faq-list { display: grid; gap: 0.5rem; }
-.psb-faq-item { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 8px; overflow: hidden; }
+.psb-faq-item { background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 14px; overflow: hidden; }
 .psb-faq-q { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; color: var(--psb-accent); font-size: 0.95rem; list-style: none; }
 .psb-faq-q::-webkit-details-marker { display: none; }
 .psb-faq-q::before { content: '▸ '; }
@@ -263,7 +263,7 @@
 .psb-cross-links h3 { font-size: 1.1rem; color: var(--psb-text); margin-bottom: 1rem; }
 .psb-cross-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; }
 .psb-cross-card {
-  padding: 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px;
+  padding: 1rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 16px;
   text-decoration: none; display: flex; gap: 0.75rem; align-items: flex-start; transition: all 0.2s;
 }
 .psb-cross-card:hover { border-color: var(--psb-accent); box-shadow: 0 2px 10px var(--psb-accent-dim); }
@@ -274,7 +274,7 @@
 /* ═══════ TOAST ═══════ */
 .psb-toast {
   position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); padding: 0.6rem 1.5rem;
-  background: var(--psb-accent); color: #000; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+  background: var(--psb-accent); color: #000; border-radius: 14px; font-weight: 600; font-size: 0.85rem;
   z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none;
 }
 .psb-toast.show { opacity: 1; }
@@ -294,7 +294,7 @@
 .psb-search-filter-row .psb-search { flex: 1; min-width: 0; }
 .psb-filter-select {
   padding: 0.6rem 0.75rem; background: var(--psb-surface); border: 1px solid var(--psb-border);
-  border-radius: 8px; color: var(--psb-text); font-size: 0.85rem; cursor: pointer;
+  border-radius: 14px; color: var(--psb-text); font-size: 0.85rem; cursor: pointer;
   min-width: 140px; appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 0.6rem center;
@@ -307,7 +307,7 @@
 .psb-quick-details {
   margin-bottom: 1.5rem;
   border: 1px solid var(--psb-border);
-  border-radius: 10px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
 }
 .psb-quick-summary {
@@ -364,7 +364,7 @@
 }
 
 /* ═══════ #7 HISTORY AS COLLAPSIBLE ═══════ */
-details.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 10px; }
+details.psb-history { margin-top: 2rem; background: var(--psb-surface); border: 1px solid var(--psb-border); border-radius: 16px; }
 details.psb-history > summary {
   padding: 1rem 1.25rem; cursor: pointer; font-weight: 700; color: var(--psb-text);
   font-size: 0.95rem; list-style: none; display: flex; align-items: center; gap: 0.5rem;
@@ -389,7 +389,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 
 /* ═══════ B1 TAGS ═══════ */
 .psb-recipe-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0 1.25rem 0.5rem; }
-.psb-tag { font-size: 0.7rem; color: var(--psb-accent-muted); background: var(--psb-accent-dim); padding: 0.1rem 0.5rem; border-radius: 10px; }
+.psb-tag { font-size: 0.7rem; color: var(--psb-accent-muted); background: var(--psb-accent-dim); padding: 0.1rem 0.5rem; border-radius: 16px; }
 
 /* ═══════ B2 SEARCH HIGHLIGHT ═══════ */
 .psb-highlight { background: rgba(74, 222, 128, 0.3); color: #fff; padding: 0 2px; border-radius: 2px; }
@@ -408,7 +408,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 
 /* ═══════ A1 HOW TO RUN GUIDE ═══════ */
 .psb-how-to-run {
-  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-glow); border-radius: 8px;
+  background: var(--psb-code-bg); border: 1px solid var(--psb-accent-glow); border-radius: 14px;
   margin-bottom: 1rem; overflow: hidden;
 }
 .psb-how-to-run summary {

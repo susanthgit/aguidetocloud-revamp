@@ -33,7 +33,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .feedback-tab {
@@ -44,7 +44,7 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -62,7 +62,7 @@
 .feedback-faq-item {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 1rem;
 }
@@ -180,7 +180,7 @@
 .feedback-textarea {
   background: var(--fb-bg);
   border: 1px solid var(--fb-border);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.65rem 0.85rem;
   color: var(--fb-text);
   font-size: 0.88rem;
@@ -226,7 +226,7 @@
   background: var(--fb-accent);
   color: #0f0d13;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.7rem 1.8rem;
   font-size: 0.9rem;
   font-weight: 700;
@@ -261,7 +261,7 @@
 .feedback-status {
   display: none;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-top: 1rem;
   font-size: 0.88rem;
   line-height: 1.5;
@@ -471,7 +471,7 @@
   padding: 1rem 1.2rem;
   background: color-mix(in srgb, #FBBF24 6%, #1e1b24);
   border: 1px solid color-mix(in srgb, #FBBF24 15%, transparent);
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .feedback-cta-text {
   color: var(--fb-text-dim, #9e98a8);
@@ -605,7 +605,7 @@
   margin-bottom: 1.5rem;
   background: color-mix(in srgb, var(--fb-accent) 6%, var(--fb-card));
   border: 1px solid color-mix(in srgb, var(--fb-accent) 12%, transparent);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.82rem;
   color: var(--fb-text-dim);
 }
@@ -637,7 +637,7 @@
   padding: 0.8rem 0.5rem;
   background: var(--fb-card);
   border: 1px solid var(--fb-border);
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   color: var(--fb-text);
@@ -700,7 +700,7 @@
   padding: 0.85rem 1rem;
   background: rgba(34, 197, 94, 0.06);
   border: 1px solid rgba(34, 197, 94, 0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.82rem;
   color: var(--fb-text-dim);
   line-height: 1.5;
@@ -747,7 +747,7 @@
 /* ── Accordion (Prompts-style pattern) ── */
 .feedback-acc {
   border: 1px solid var(--fb-border);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   margin-bottom: 0.5rem;
   transition: border-color 0.2s;

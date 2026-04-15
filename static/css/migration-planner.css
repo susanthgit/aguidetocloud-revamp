@@ -24,7 +24,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 2rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -41,7 +41,7 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -56,7 +56,7 @@
 .migplan-tab:focus-visible {
   outline: 2px solid var(--tool-accent);
   outline-offset: -2px;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 /* ---- Tab Panels ---- */
@@ -121,7 +121,7 @@
 .migplan-option {
   background: rgba(100, 120, 204, 0.06);
   border: 1.5px solid rgba(100, 120, 204, 0.18);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   color: #ccc;
   font-size: 0.9rem;
@@ -171,7 +171,7 @@
 }
 .migplan-btn {
   padding: 0.6rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -424,7 +424,7 @@
   padding: 1.5rem;
   background: rgba(100, 120, 204, 0.08);
   border: 1px solid rgba(100, 120, 204, 0.2);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-top: 1.5rem;
 }
 .migplan-timeline-total-label {
@@ -456,7 +456,7 @@
 }
 .migplan-risk-card {
   background: rgba(255,255,255,0.03);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
   border-left: 4px solid;
   transition: transform 0.15s;
@@ -496,7 +496,7 @@
   color: #bbb;
   background: rgba(100, 120, 204, 0.06);
   padding: 0.6rem 0.8rem;
-  border-radius: 8px;
+  border-radius: 14px;
   line-height: 1.5;
 }
 .migplan-risk-mitigation strong {
@@ -549,7 +549,7 @@
 .migplan-tool-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
 }
 .migplan-tool-header {
@@ -627,7 +627,7 @@
 }
 .migplan-summary-stat {
   background: rgba(100, 120, 204, 0.06);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   text-align: center;
 }
@@ -708,7 +708,7 @@
 /* ---- Decision Status Banner ---- */
 .migplan-decision {
   padding: 1rem 1.25rem;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   font-weight: 700;
   font-size: 0.95rem;
@@ -729,7 +729,7 @@
 .migplan-discovery {
   background: rgba(100,120,204,0.04);
   border: 1px solid rgba(100,120,204,0.15);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -747,7 +747,7 @@
 .migplan-discovery-badge {
   font-size: 0.72rem;
   padding: 0.2rem 0.5rem;
-  border-radius: 10px;
+  border-radius: 16px;
   background: rgba(16,185,129,0.15);
   color: #10B981;
   font-weight: 700;
@@ -814,7 +814,7 @@
 .migplan-recent-card {
   background: rgba(100,120,204,0.06);
   border: 1px solid rgba(100,120,204,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   transition: all 0.2s;

@@ -20,12 +20,12 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  border-radius: 16px; margin-bottom: 1.5rem;
 }
 .readiness-tab {
   background: none; border: 1px solid transparent;
   color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
   transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .readiness-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }

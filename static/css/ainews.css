@@ -15,12 +15,12 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  border-radius: 16px; margin-bottom: 1.5rem;
 }
 .ainews-top-tab {
   background: none; border: 1px solid transparent;
   color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
   transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .ainews-top-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
@@ -81,7 +81,7 @@
 .ainews-breaking {
   background: rgba(220, 38, 38, 0.12);
   border: 1px solid rgba(220, 38, 38, 0.4);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.8rem 1.2rem;
   font-size: 0.85rem;
   color: #fca5a5;
@@ -130,7 +130,7 @@
 .ainews-briefing {
   background: rgba(102, 255, 255, 0.04);
   border: 1px solid rgba(102, 255, 255, 0.15);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem 1.2rem;
 }
 .ainews-briefing-header {
@@ -166,7 +166,7 @@
   color: rgba(255,102,255,0.8);
   background: rgba(255,102,255,0.1);
   padding: 0.1rem 0.4rem;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-left: 0.3rem;
   white-space: nowrap;
 }
@@ -195,7 +195,7 @@
 }
 .ainews-filter-btn {
   padding: 0.55rem 1rem;
-  border-radius: 10px;
+  border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.04);
   color: var(--text-secondary);
@@ -220,7 +220,7 @@
   overflow-y: auto;
   background: rgba(20, 17, 30, 0.97);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
@@ -237,7 +237,7 @@
   font-weight: 500;
   text-align: left;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: background 0.15s;
   font-family: var(--font-body);
 }
@@ -281,7 +281,7 @@
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.15rem 0.5rem;
-  border-radius: 10px;
+  border-radius: 16px;
   background: color-mix(in srgb, var(--pill-color, #888) 15%, transparent);
   color: var(--pill-color, #aaa);
   border: 1px solid color-mix(in srgb, var(--pill-color, #888) 30%, transparent);
@@ -430,7 +430,7 @@
 .ainews-fresh-dot.ainews-old { background: #ff4444; box-shadow: 0 0 6px #ff4444; }
 .ainews-tab {
   padding: 0.5rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.03);
   color: var(--text-secondary);
@@ -671,7 +671,7 @@
 .ainews-search {
   flex: 1;
   padding: 0.7rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
   background: #1C1924;
   color: #E8E4ED;
@@ -749,7 +749,7 @@
   padding: 1.2rem;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .ainews-trends-bars {
   display: flex;
@@ -865,7 +865,7 @@
   width: 48px;
   height: 48px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 14px;
   filter: brightness(0.9);
   transition: filter 0.2s;
 }
@@ -958,7 +958,7 @@
 .ainews-email-btn {
   margin-left: auto;
   padding: 0.5rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid var(--neon-cyan);
   background: rgba(102, 255, 255, 0.08);
   color: var(--neon-cyan);

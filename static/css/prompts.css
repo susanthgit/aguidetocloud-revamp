@@ -20,12 +20,12 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  border-radius: 16px; margin-bottom: 1.5rem;
 }
 .prompts-tab-btn {
   background: none; border: 1px solid transparent;
   color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
   transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .prompts-tab-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
@@ -393,7 +393,7 @@
 .prompt-platform-badge {
   font-size: 0.68rem;
   padding: 0.12rem 0.45rem;
-  border-radius: 10px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   font-family: var(--font-heading);
@@ -412,7 +412,7 @@
   border: 1px solid var(--prompt-accent-border);
   color: var(--prompt-accent);
   padding: 0.4rem 0.9rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.82rem;
   font-family: var(--font-heading);
   font-weight: 700;
@@ -588,7 +588,7 @@
   background: var(--bg-card);
   border: 1px solid var(--prompt-accent-border);
   border-left: 4px solid var(--prompt-accent);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 1.2rem 1.4rem;
   padding-right: 4rem;
   white-space: pre-wrap;
@@ -641,7 +641,7 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.3rem 0.7rem;
-  border-radius: 8px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   font-size: 0.82rem;
@@ -728,7 +728,7 @@
   text-decoration: none;
   padding: 0.3rem 0.7rem;
   border: 1px solid var(--prompt-accent-border);
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
 }
 .prompts-back-nav a:hover {
@@ -761,7 +761,7 @@
   padding: 0.4rem 0.8rem;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-secondary);
   font-size: 0.82rem;
   font-family: var(--font-heading);
@@ -880,7 +880,7 @@
 .prompts-eco-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: #e6edf3;

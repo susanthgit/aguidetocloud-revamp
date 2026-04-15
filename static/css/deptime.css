@@ -35,7 +35,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -51,7 +51,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -80,7 +80,7 @@
 .deptime-stat-card {
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   text-align: center;
   display: flex;
@@ -111,7 +111,7 @@
 .deptime-next-alert {
   background: color-mix(in srgb, var(--dt-critical) 12%, var(--dt-card));
   border: 1px solid color-mix(in srgb, var(--dt-critical) 30%, transparent);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.8rem 1.2rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -138,7 +138,7 @@
   padding: 0.7rem 1rem;
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #fff;
   font-size: 0.9rem;
   outline: none;
@@ -161,7 +161,7 @@
   padding: 0.5rem 0.75rem;
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #fff;
   font-size: 0.8rem;
   cursor: pointer;
@@ -264,7 +264,7 @@
 .deptime-card {
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.2rem;
   transition: all 0.2s;
   cursor: pointer;
@@ -367,7 +367,7 @@
 .deptime-card-countdown {
   padding: 0.5rem 0.75rem;
   margin-left: 0.5rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -495,7 +495,7 @@
   padding: 0.6rem 2rem;
   background: var(--dt-accent-dim);
   border: 1px solid var(--dt-accent);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #fff;
   font-size: 0.85rem;
   cursor: pointer;
@@ -582,7 +582,7 @@
 .deptime-modal-countdown {
   text-align: center;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-bottom: 1rem;
 }
 
@@ -604,7 +604,7 @@
 
 .deptime-modal-link {
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   text-decoration: none;
   border: 1px solid var(--dt-card-border);
@@ -654,7 +654,7 @@
 .deptime-critical-banner {
   background: linear-gradient(135deg, rgba(220,38,38,0.2), rgba(220,38,38,0.08));
   border: 1px solid rgba(220,38,38,0.4);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.8rem 1.2rem;
   margin-bottom: 1rem;
   display: flex;
@@ -695,7 +695,7 @@
 .deptime-month-summary {
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem 1.2rem;
   margin-bottom: 1.2rem;
 }
@@ -709,7 +709,7 @@
 }
 .deptime-month-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .deptime-month-col-title { font-size: 0.8rem; font-weight: 600; color: var(--dt-accent); margin-bottom: 0.4rem; }
-.deptime-month-count { background: var(--dt-accent-dim); padding: 0.1rem 0.4rem; border-radius: 10px; font-size: 0.7rem; }
+.deptime-month-count { background: var(--dt-accent-dim); padding: 0.1rem 0.4rem; border-radius: 16px; font-size: 0.7rem; }
 .deptime-month-item {
   font-size: 0.75rem;
   padding: 0.3rem 0.5rem;
@@ -748,7 +748,7 @@
   min-width: 60px;
   text-align: center;
   padding: 0.4rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 14px;
   flex-shrink: 0;
 }
 .deptime-countdown-num { display: block; font-size: 1.4rem; font-weight: 800; line-height: 1; }
@@ -762,7 +762,7 @@
   padding: 0.6rem;
   background: var(--dt-card);
   border: 1px solid var(--dt-card-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: #fff;
   font-size: 0.85rem;
   cursor: pointer;

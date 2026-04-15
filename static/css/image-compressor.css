@@ -17,7 +17,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .imgcomp-tab {
@@ -28,7 +28,7 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -51,7 +51,7 @@
   gap: 0.6rem;
   background: rgba(129,140,248,0.08);
   border: 1px solid rgba(129,140,248,0.2);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.65rem 1.1rem;
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
@@ -112,7 +112,7 @@
 
 .imgcomp-upload-hint {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
 }
 
 /* ── Batch Controls ── */
@@ -147,7 +147,7 @@
 /* ── Buttons ── */
 .imgcomp-btn {
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   cursor: pointer;
   border: 1px solid transparent;
@@ -210,7 +210,7 @@
 .imgcomp-advanced {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 0.75rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -282,7 +282,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 100%;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.55rem 0.75rem;
   color: #fff;
   font-size: 0.85rem;
@@ -315,7 +315,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-hint {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.5);
   margin-top: 0.25rem;
 }
 
@@ -323,7 +323,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   text-align: center;
   margin-top: 2rem;
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: 14px;
   background: rgba(255,255,255,0.02);
 }
 
@@ -432,7 +432,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-thumb-wrap {
   width: 140px;
   height: 100px;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   background: rgba(0,0,0,0.3);
   display: flex;
@@ -509,7 +509,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-time {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.5);
 }
 
 /* ── Card actions (top-right) ── */
@@ -563,7 +563,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 100%;
   max-width: 600px;
   margin: 0.75rem auto 0;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   user-select: none;
   touch-action: none;
@@ -688,7 +688,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   background: rgba(239,68,68,0.95);
   color: #fff;
   padding: 0.65rem 1.25rem;
-  border-radius: 10px;
+  border-radius: 16px;
   font-size: 0.85rem;
   z-index: 9999;
   backdrop-filter: blur(12px);
@@ -724,7 +724,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-faq-item {
   background: rgba(129,140,248,0.04);
   border: 1px solid rgba(129,140,248,0.1);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
 }
@@ -882,7 +882,7 @@ body.page-image-compressor .site-nav {
   padding: 0.7rem 0.5rem;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   font-family: inherit;
@@ -915,7 +915,7 @@ body.page-image-compressor .site-nav {
 
 .imgcomp-preset-desc {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
 }
 
 /* ── Custom resize toggle ── */

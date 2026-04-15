@@ -14,12 +14,12 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  border-radius: 16px; margin-bottom: 1.5rem;
 }
 .polisher-tab {
   background: none; border: 1px solid transparent;
   color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
   transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .polisher-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
@@ -762,7 +762,7 @@
 .polisher-eco-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: #e6edf3;

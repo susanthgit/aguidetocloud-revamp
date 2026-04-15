@@ -8,7 +8,7 @@
       <span class="hamburger-icon"></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">🔍</button></li>
+      <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">⌘K</button></li>
       <li><a href="/start/"{{ if hasPrefix $.RelPermalink "/start/" }} aria-current="page" class="nav-active"{{ end }}>Start Here</a></li>
       <li class="nav-dropdown{{ if or (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} nav-dropdown-active{{ end }}">
         <a href="/ai-hub/" class="dropdown-toggle">Videos ▾</a>

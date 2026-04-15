@@ -12,8 +12,8 @@
   --pagefind-ui-border: rgba(255,255,255,0.1);
   --pagefind-ui-tag: rgba(0,229,255,0.15);
   --pagefind-ui-border-width: 1px;
-  --pagefind-ui-border-radius: 12px;
-  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-border-radius: 16px;
+  --pagefind-ui-image-border-radius: 14px;
   --pagefind-ui-image-size: 0px;
   --pagefind-ui-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -22,7 +22,7 @@
 .pagefind-ui__search-input {
   background: rgba(255,255,255,0.05) !important;
   border: 1px solid rgba(255,255,255,0.15) !important;
-  border-radius: 12px !important;
+  border-radius: 16px !important;
   color: #e6edf3 !important;
   font-size: 1rem !important;
   padding: 0.85rem 1rem 0.85rem 2.8rem !important;
@@ -38,12 +38,12 @@
 }
 
 .pagefind-ui__search-input::placeholder {
-  color: rgba(255,255,255,0.4) !important;
+  color: rgba(255,255,255,0.5) !important;
 }
 
 /* Search icon */
 .pagefind-ui__search-icon {
-  color: rgba(255,255,255,0.4) !important;
+  color: rgba(255,255,255,0.5) !important;
 }
 
 /* Clear button */
@@ -73,7 +73,7 @@
   padding: 1rem !important;
   margin-bottom: 0.5rem !important;
   border: 1px solid rgba(255,255,255,0.08) !important;
-  border-radius: 10px !important;
+  border-radius: 16px !important;
   background: rgba(255,255,255,0.03) !important;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -146,7 +146,7 @@ mark {
   background: rgba(0,229,255,0.1) !important;
   color: #00e5ff !important;
   border: 1px solid rgba(0,229,255,0.3) !important;
-  border-radius: 8px !important;
+  border-radius: 14px !important;
   padding: 0.6rem 1.5rem !important;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -230,7 +230,7 @@ mark {
   }
   .search-modal-inner {
     max-height: 85vh;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 1rem;
   }
 }

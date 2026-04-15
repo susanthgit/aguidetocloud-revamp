@@ -31,7 +31,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -47,7 +47,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -71,7 +71,7 @@
   padding: 0.7rem 1.25rem;
   background: var(--cert-accent-dim);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--cert-accent-hover);
   text-decoration: none;
   font-weight: 600;
@@ -116,7 +116,7 @@
   padding: 0.6rem 0.75rem;
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--cert-text);
   font-size: 0.9rem;
   cursor: pointer;
@@ -136,7 +136,7 @@
 .cert-stat-box {
   background: color-mix(in srgb, var(--stat-color) 8%, var(--cert-card));
   border: 1px solid color-mix(in srgb, var(--stat-color) 25%, transparent);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem 1rem;
   text-align: center;
   display: flex;
@@ -275,7 +275,7 @@
 .cert-badge {
   display: inline-block;
   padding: 0.15rem 0.55rem;
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -418,7 +418,7 @@
   display: inline-block;
   padding: 0.4rem 0.85rem;
   border: 1px solid var(--cert-accent);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--cert-accent);
   text-decoration: none;
   font-size: 0.85rem;
@@ -493,7 +493,7 @@
 .cert-change-entry {
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 1rem;
   margin-bottom: 0.75rem;
 }
@@ -515,7 +515,7 @@
   height: 180px;
   background: linear-gradient(90deg, var(--cert-card) 25%, var(--cert-card-hover) 50%, var(--cert-card) 75%);
   background-size: 200% 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   animation: cert-shimmer 1.5s infinite;
   margin-bottom: 1rem;
 }
@@ -578,7 +578,7 @@
 .cert-toc {
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.75rem 1rem;
   margin-bottom: 1.5rem;
   font-size: 0.82rem;
@@ -621,7 +621,7 @@
 .cert-print-btn {
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.4rem 0.85rem;
   color: var(--cert-text);
   font-size: 0.82rem;
@@ -634,7 +634,7 @@
 .cert-progress-wrap {
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
 }
@@ -675,7 +675,7 @@
 .cert-planner {
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 10px;
+  border-radius: 16px;
   margin-bottom: 1rem;
 }
 .cert-planner-toggle {
@@ -730,7 +730,7 @@
   margin-bottom: 0.75rem;
   padding: 0.6rem 0.75rem;
   background: rgba(16, 185, 129, 0.05);
-  border-radius: 8px;
+  border-radius: 14px;
   border-left: 3px solid var(--cert-accent);
 }
 .cert-plan-week ul { margin: 0.3rem 0 0; padding-left: 1.25rem; }
@@ -787,7 +787,7 @@
 
 .cert-status-banner {
   padding: 0.85rem 1.25rem;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -920,7 +920,7 @@
   margin-bottom: 0.5rem;
   background: var(--cert-card);
   border: 1px solid var(--cert-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: inherit;
   text-decoration: none;
   transition: border-color 0.2s;
@@ -952,7 +952,7 @@
 .roadmap-legend {
   display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;
   padding: 0.6rem 1rem; background: var(--cert-card); border: 1px solid var(--cert-border);
-  border-radius: 10px; font-size: 0.82rem; color: var(--cert-text-dim); align-items: center;
+  border-radius: 16px; font-size: 0.82rem; color: var(--cert-text-dim); align-items: center;
 }
 .roadmap-legend-item { display: flex; align-items: center; gap: 0.3rem; }
 .roadmap-legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }

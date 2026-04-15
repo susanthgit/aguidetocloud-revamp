@@ -17,7 +17,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -31,7 +31,7 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   white-space: nowrap;
   font-family: inherit;
@@ -84,7 +84,7 @@
 .qrgen-section {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -110,7 +110,7 @@
 .qrgen-type-pill {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem 1rem;
   color: rgba(255,255,255,0.7);
   cursor: pointer;
@@ -156,7 +156,7 @@
 .qrgen-textarea {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.65rem 0.85rem;
   color: #fff;
   font-size: 0.9rem;
@@ -209,7 +209,7 @@
 .qrgen-preset {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.4rem 0.85rem;
   color: rgba(255,255,255,0.7);
   cursor: pointer;
@@ -240,7 +240,7 @@
   width: 40px;
   height: 36px;
   border: 2px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   background: none;
   padding: 2px;
@@ -287,7 +287,7 @@
 /* ── Logo upload ── */
 .qrgen-logo-area {
   border: 2px dashed rgba(255,255,255,0.12);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   text-align: center;
   cursor: pointer;
@@ -306,7 +306,7 @@
 }
 
 .qrgen-logo-hint {
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
   font-size: 0.85rem;
 }
 
@@ -390,7 +390,7 @@
   text-align: center;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem;
   color: rgba(255,255,255,0.6);
   cursor: pointer;
@@ -412,7 +412,7 @@
 .qrgen-ec-pill small {
   display: block;
   font-size: 0.65rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.5);
   margin-top: 0.15rem;
 }
 
@@ -450,7 +450,7 @@
 .qrgen-warning {
   background: rgba(251,191,36,0.1);
   border: 1px solid rgba(251,191,36,0.3);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.6rem 0.85rem;
   color: #FBBF24;
   font-size: 0.8rem;
@@ -475,7 +475,7 @@
 .qrgen-btn {
   background: rgba(236,72,153,0.15);
   border: 1px solid rgba(236,72,153,0.3);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.6rem 1.25rem;
   color: #EC4899;
   cursor: pointer;
@@ -536,7 +536,7 @@
 .qrgen-batch-textarea {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   color: #fff;
   font-family: 'Consolas', 'Monaco', monospace;
@@ -567,7 +567,7 @@
 .qrgen-batch-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   text-align: center;
 }
@@ -652,7 +652,7 @@
 .qrgen-scan-result {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   display: none;
 }
@@ -671,7 +671,7 @@
 
 .qrgen-scan-result-text {
   background: rgba(255,255,255,0.05);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.85rem;
   color: #fff;
   word-break: break-all;
@@ -792,7 +792,7 @@
   gap: 0.4rem;
   background: rgba(236,72,153,0.06);
   border: 1px solid rgba(236,72,153,0.15);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.45rem 0.85rem;
   color: rgba(255,255,255,0.7);
   cursor: pointer;
@@ -839,13 +839,13 @@
 
 .qrgen-preview-box.bg-light {
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem;
 }
 
 .qrgen-preview-box.bg-transparent {
   background: repeating-conic-gradient(rgba(255,255,255,0.06) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem;
 }
 
@@ -853,7 +853,7 @@
 .qrgen-size-info {
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.5);
   margin-bottom: 1rem;
   font-family: monospace;
 }
@@ -868,7 +868,7 @@
 .qrgen-preview-box svg {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 14px;
   animation: qrgen-scaleIn 0.25s ease-out;
 }
 

@@ -39,7 +39,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -53,7 +53,7 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -125,7 +125,7 @@
   padding: 0.6rem 0.75rem;
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--cp-text);
   font-size: 0.85rem;
   cursor: pointer;
@@ -252,7 +252,7 @@
   transform: translateX(-50%);
   background: #1e1e36;
   border: 1px solid var(--cp-accent-border);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 0.5rem 0.75rem;
   font-size: 0.78rem;
   color: var(--cp-text);
@@ -471,7 +471,7 @@
   padding: 1rem 1.25rem;
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
-  border-radius: 10px;
+  border-radius: 16px;
   transition: border-color 0.2s;
 }
 
@@ -564,7 +564,7 @@
   padding: 1rem 1.25rem;
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   color: var(--cp-text-muted);
   line-height: 1.5;
@@ -701,7 +701,7 @@
 .cpmatrix-stats-filter {
   background: var(--cp-accent-dim);
   padding: 0.1rem 0.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   color: var(--cp-accent);
   font-size: 0.75rem;
 }
@@ -791,7 +791,7 @@
   font-size: 0.6rem;
   font-weight: 700;
   padding: 0.1rem 0.35rem;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-left: 0.3rem;
   vertical-align: middle;
 }
@@ -847,7 +847,7 @@
 .cpmatrix-tldr {
   background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(96,165,250,0.03));
   border: 1px solid var(--cp-accent-border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   display: flex;
   align-items: baseline;
@@ -907,7 +907,7 @@
   border: 1px solid var(--cp-border);
   color: var(--cp-text);
   padding: 0.4rem 0.75rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -935,7 +935,7 @@
    ══════════════════════════════════════ */
 .cpmatrix-tier-section {
   margin-bottom: 2.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
 }
 .cpmatrix-tier-consumer {
@@ -982,7 +982,7 @@
   flex: 1;
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1.25rem;
   text-align: center;
   position: relative;
@@ -1024,7 +1024,7 @@
 /* Comparison table */
 .cpmatrix-compare-table {
   border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .cpmatrix-compare-header {
@@ -1086,7 +1086,7 @@
 .cpmatrix-appgrid-btn {
   background: var(--cp-card);
   border: 1px solid var(--cp-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.6rem 1rem;
   cursor: pointer;
   display: flex;
@@ -1113,7 +1113,7 @@
   padding: 1rem;
   background: var(--cp-card);
   border-left: 4px solid var(--cp-accent);
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 1rem;
 }
 .cpmatrix-appdetail-emoji { font-size: 2rem; }
@@ -1122,7 +1122,7 @@
 
 .cpmatrix-appdetail-list {
   border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .cpmatrix-appdetail-row {

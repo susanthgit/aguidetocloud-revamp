@@ -35,7 +35,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -51,7 +51,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -79,7 +79,7 @@
   margin-bottom: 1rem;
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   font-size: 0.82rem;
   color: var(--sh-text-dim);
 }
@@ -141,7 +141,7 @@
   background: var(--sh-red);
   color: #fff;
   padding: 0.1rem 0.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   font-weight: 700;
 }
 
@@ -203,7 +203,7 @@
 .shealth-svc-card {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.65rem 0.6rem;
   text-align: center;
   transition: border-color 0.2s, transform 0.15s;
@@ -247,7 +247,7 @@
   padding: 0.6rem 1rem;
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--sh-text);
   font-size: 0.9rem;
 }
@@ -264,7 +264,7 @@
   padding: 0.6rem 0.75rem;
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--sh-text);
   font-size: 0.84rem;
   cursor: pointer;
@@ -294,7 +294,7 @@
 .shealth-incident {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 0.85rem 1rem;
   transition: border-color 0.2s;
   cursor: pointer;
@@ -384,7 +384,7 @@
   background: transparent;
   border: 1px solid var(--sh-accent);
   color: var(--sh-accent);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
@@ -473,7 +473,7 @@
   margin-bottom: 1.2rem;
   padding: 0.75rem;
   background: rgba(249, 115, 22, 0.06);
-  border-radius: 8px;
+  border-radius: 14px;
   border-left: 3px solid var(--sh-accent);
 }
 
@@ -507,7 +507,7 @@
   background: linear-gradient(90deg, var(--sh-card) 25%, var(--sh-card-hover) 50%, var(--sh-card) 75%);
   background-size: 200% 100%;
   animation: shealth-shimmer 1.5s infinite;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 @keyframes shealth-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
@@ -518,7 +518,7 @@
 .shealth-trend {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
   margin-bottom: 0.75rem;
 }
@@ -577,7 +577,7 @@
 .shealth-most-affected {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
 }
 .shealth-ma-title {
@@ -630,7 +630,7 @@
 .shealth-scorecard {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
 }
 .shealth-sc-title {
@@ -669,7 +669,7 @@
 }
 .shealth-date-result-msg {
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   line-height: 1.5;
 }

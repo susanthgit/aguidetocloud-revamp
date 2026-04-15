@@ -27,7 +27,7 @@
   padding: 0.35rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 2rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -45,7 +45,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.2s ease;
   flex: 1;
   text-align: center;
@@ -63,7 +63,7 @@
 .roi-tab:focus-visible {
   outline: 2px solid var(--tool-accent);
   outline-offset: -2px;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 /* ── Panels ── */
@@ -154,7 +154,7 @@
   padding: 0.5rem 0.75rem;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-primary);
   font-size: 0.9rem;
   font-weight: 600;
@@ -173,7 +173,7 @@
   padding: 0.5rem 0.75rem;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
+  border-radius: 14px;
   color: var(--text-primary);
   font-size: 0.85rem;
   cursor: pointer;
@@ -266,7 +266,7 @@
   text-align: center;
   padding: 1rem 0.5rem;
   background: rgba(255,255,255,0.03);
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.06);
 }
 .roi-metric-label {
@@ -292,7 +292,7 @@
   display: inline-block;
   font-size: 0.65rem;
   padding: 0.15rem 0.5rem;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-top: 0.3rem;
   font-weight: 700;
 }
@@ -306,7 +306,7 @@
   padding: 1.25rem;
   background: linear-gradient(135deg, rgba(20,184,166,0.08), rgba(20,184,166,0.02));
   border: 1px solid rgba(20,184,166,0.2);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .roi-big-label {
@@ -398,7 +398,7 @@
   background: var(--tool-accent);
   color: #000;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -412,7 +412,7 @@
   background: rgba(255,255,255,0.06);
   color: var(--text-secondary);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -425,7 +425,7 @@
   background: rgba(239,68,68,0.1);
   color: #ef4444;
   border: 1px solid rgba(239,68,68,0.2);
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -500,7 +500,7 @@
 .roi-top-roles {
   background: rgba(20,184,166,0.06);
   border: 1px solid rgba(20,184,166,0.15);
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -519,7 +519,7 @@
   flex-direction: column;
   padding: 0.5rem 1rem;
   background: rgba(255,255,255,0.04);
-  border-radius: 8px;
+  border-radius: 14px;
   min-width: 140px;
 }
 .roi-top-role-name {
@@ -642,7 +642,7 @@
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   background: rgba(20,184,166,0.08);
-  border-radius: 8px;
+  border-radius: 14px;
   margin: 1rem 0;
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -701,7 +701,7 @@
 .roi-scenario-col {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.25rem;
   text-align: center;
 }
@@ -737,7 +737,7 @@
 .roi-custom-scenario {
   background: rgba(255,255,255,0.03);
   border: 1px dashed rgba(255,255,255,0.12);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -781,7 +781,7 @@
 .roi-summary-page {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2rem;
 }
 .roi-summary-header {
@@ -829,7 +829,7 @@
   text-align: center;
   padding: 1rem;
   background: rgba(20,184,166,0.06);
-  border-radius: 10px;
+  border-radius: 16px;
   border: 1px solid rgba(20,184,166,0.12);
 }
 .roi-summary-metric-label {
@@ -1013,7 +1013,7 @@
 
 /* ── Benchmark Comparison ── */
 .roi-benchmark {
-  padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.82rem;
+  padding: 0.6rem 1rem; border-radius: 14px; font-size: 0.82rem;
   margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
 }
 .roi-bench-above {
@@ -1055,5 +1055,5 @@
 .roi-roles-net {
   font-size: 0.85rem; color: var(--text-secondary);
   padding: 0.75rem 1rem; background: rgba(255,255,255,0.03);
-  border-radius: 8px; margin-bottom: 1rem;
+  border-radius: 14px; margin-bottom: 1rem;
 }
