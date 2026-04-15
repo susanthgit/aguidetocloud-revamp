@@ -483,9 +483,19 @@
 
 .sh-community-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.8rem;
 }
+.sh-community-label {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sh-community-label:first-of-type { margin-top: 0.5rem; }
 
 .sh-tool-card {
   background: rgba(255, 255, 255, 0.03);

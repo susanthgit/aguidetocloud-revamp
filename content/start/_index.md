@@ -8,7 +8,7 @@ sitemap:
   changefreq: monthly
 faq:
   - question: "What is A Guide to Cloud & AI?"
-    answer: "A free learning hub with 27 interactive tools, 77 video tutorials, 52 certification study guides, and a blog — all focused on Microsoft 365, Azure, and AI."
+    answer: "A free learning hub with 27 interactive tools, 78 video tutorials, 53 certification study guides, and a blog — all focused on Microsoft 365, Azure, and AI."
   - question: "Is everything really free?"
     answer: "Yes. All tools, tutorials, and study guides are completely free. We also offer optional paid study guide PDFs on our Ko-fi shop."
   - question: "Who is this site for?"
