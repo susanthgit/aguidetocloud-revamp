@@ -111,6 +111,17 @@
         </div>
       </div>
 
+      {{/* ── Section: Import (V11) ── */}}
+      <div class="pvs-custom-section">
+        <h2 class="pvs-custom-section-title">Import Existing Labels</h2>
+        <p class="pvs-panel-desc" style="margin-bottom:0.5rem">Already have labels? Paste output from <code>Get-Label | Select DisplayName, Priority</code> to see what you have.</p>
+        <div class="pvs-import-row">
+          <textarea id="pvs-import-input" class="pvs-import-textarea" rows="3" placeholder="Paste Get-Label output here..." aria-label="Paste label output"></textarea>
+          <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-import-parse">Parse Labels</button>
+        </div>
+        <div id="pvs-import-result"></div>
+      </div>
+
       {{/* ── Section: DLP Scenarios ── */}}
       <div class="pvs-custom-section">
         <h2 class="pvs-custom-section-title">DLP Scenarios</h2>
@@ -264,6 +275,20 @@
           <div class="pvs-licence-table" id="pvs-licence-table"></div>
         </div>
 
+        {{/* Compliance mapping (V9) */}}
+        <div class="pvs-deploy-section">
+          <h3>Compliance Coverage</h3>
+          <p class="pvs-deploy-note">How your plan maps to common compliance frameworks.</p>
+          <div id="pvs-compliance"></div>
+        </div>
+
+        {{/* What-if analyser (V10) */}}
+        <div class="pvs-deploy-section">
+          <h3>What If I Downgrade?</h3>
+          <p class="pvs-deploy-note">See what happens if you only have E3 instead of E5.</p>
+          <div id="pvs-whatif"></div>
+        </div>
+
         {{/* Cross-tool links */}}
         <div class="pvs-deploy-section">
           <h3>Next Steps</h3>
@@ -323,13 +348,15 @@
 {{ $steps := (index hugo.Data "purview-starter").deploy_steps.steps }}
 {{ $emails := (index hugo.Data "purview-starter").emails.emails }}
 {{ $scenarios := (index hugo.Data "purview-starter").dlp_scenarios.scenarios }}
+{{ $compliance := (index hugo.Data "purview-starter").compliance.frameworks }}
 <script>
   window.__pvs = {
     kits: {{ $kits | jsonify | safeJS }},
     licensing: {{ $licensing | jsonify | safeJS }},
     steps: {{ $steps | jsonify | safeJS }},
     emails: {{ $emails | jsonify | safeJS }},
-    scenarios: {{ $scenarios | jsonify | safeJS }}
+    scenarios: {{ $scenarios | jsonify | safeJS }},
+    compliance: {{ $compliance | jsonify | safeJS }}
   };
 </script>
 <script src="/js/purview-starter.js?v={{ site.Params.cache_version }}" defer></script>

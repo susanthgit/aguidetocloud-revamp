@@ -1092,6 +1092,12 @@
   .pvs-lb-card--child {
     margin-left: 0.75rem;
   }
+  .pvs-whatif-grid {
+    grid-template-columns: 1fr;
+  }
+  .pvs-import-row {
+    flex-direction: column;
+  }
 }
 
 /* ── Nav accent override ── */
@@ -1213,6 +1219,102 @@
 }
 .pvs-compare td:first-child { text-align: left; }
 .pvs-compare td { color: rgba(255,255,255,0.65); }
+
+/* ── Compliance mapping (V9) ── */
+.pvs-compliance-fw {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.pvs-compliance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.pvs-compliance-score { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.pvs-compliance-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.pvs-compliance-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.pvs-compliance-controls { display: flex; flex-direction: column; gap: 0.25rem; }
+.pvs-compliance-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  padding: 0.2rem 0;
+}
+.pvs-cc-met { color: rgba(255,255,255,0.7); }
+
+/* ── What-if analyser (V10) ── */
+.pvs-whatif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.pvs-whatif-col {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.pvs-whatif-col h4 { color: #fff; font-size: 0.9rem; margin: 0 0 0.5rem; }
+.pvs-whatif-lost { border-color: rgba(239,68,68,0.2); }
+.pvs-whatif-kept { border-color: rgba(var(--pvs-accent-rgb), 0.2); }
+.pvs-whatif-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.pvs-whatif-reason { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+
+/* ── Import labels (V11) ── */
+.pvs-import-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.pvs-import-textarea {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-family: 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  resize: vertical;
+}
+.pvs-import-textarea:focus { outline: none; border-color: var(--pvs-accent); }
+.pvs-import-found {
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.pvs-import-label {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
 
 /* ═══ PRINT ═══ */
 @media print {

@@ -274,6 +274,8 @@
     renderPowerShell(plan);
     renderEmails(plan);
     renderLicenceTable(plan);
+    renderCompliance(plan);
+    renderWhatIf(plan);
   }
 
   /* ── PowerShell Generation ── */
@@ -876,6 +878,155 @@
     el.innerHTML = html;
   }
 
+    el.innerHTML = html;
+  }
+
+  /* ═══ V9: COMPLIANCE MAPPING ═══ */
+  const COMPLIANCE = D.compliance || [];
+
+  function getPlanCapabilities(plan) {
+    const caps = new Set();
+    if ((plan.labels || []).length) caps.add('labels');
+    if ((plan.labels || []).some(l => l.encrypt)) caps.add('encryption');
+    if ((plan.labels || []).some(l => l.mark)) caps.add('marking');
+    if ((plan.labels || []).some(l => l.auto_apply)) caps.add('auto-label');
+    const wls = new Set();
+    (plan.dlpRules || []).forEach(r => (r.workloads || []).forEach(w => wls.add(w)));
+    if (wls.has('exchange')) caps.add('dlp-email');
+    if (wls.has('sharepoint') || wls.has('onedrive')) caps.add('dlp-sharing');
+    if (wls.has('teams')) caps.add('dlp-teams');
+    if (wls.has('endpoint')) caps.add('dlp-endpoint');
+    return caps;
+  }
+
+  function renderCompliance(plan) {
+    const el = $('pvs-compliance');
+    if (!el || !COMPLIANCE.length) return;
+    const caps = getPlanCapabilities(plan);
+
+    el.innerHTML = COMPLIANCE.map(fw => {
+      const met = fw.controls.filter(c => (c.requires || []).every(r => caps.has(r)));
+      const total = fw.controls.length;
+      const pct = total ? Math.round((met.length / total) * 100) : 0;
+      return '<div class="pvs-compliance-fw">' +
+        '<div class="pvs-compliance-header">' +
+          '<strong style="color:' + esc(fw.colour) + '">' + esc(fw.name) + '</strong>' +
+          '<span class="pvs-compliance-score">' + met.length + '/' + total + ' controls (' + pct + '%)</span>' +
+        '</div>' +
+        '<div class="pvs-compliance-bar"><div class="pvs-compliance-fill" style="width:' + pct + '%;background:' + esc(fw.colour) + '"></div></div>' +
+        '<div class="pvs-compliance-controls">' +
+          fw.controls.map(c => {
+            const ok = (c.requires || []).every(r => caps.has(r));
+            return '<div class="pvs-compliance-control' + (ok ? ' pvs-cc-met' : '') + '">' +
+              '<span>' + (ok ? '✅' : '⬜') + '</span>' +
+              '<span><strong>' + esc(c.id) + '</strong> — ' + esc(c.name) + '</span>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ═══ V10: WHAT-IF ANALYSER ═══ */
+  function renderWhatIf(plan) {
+    const el = $('pvs-whatif');
+    if (!el) return;
+    if (plan.licence === 'e3') {
+      el.innerHTML = '<p style="color:rgba(255,255,255,0.5);font-size:0.88rem">Your plan already works with E3 — nothing to downgrade.</p>';
+      return;
+    }
+    const lost = [];
+    const kept = [];
+    (plan.labels || []).forEach(l => {
+      if (l.auto_apply) lost.push({ name: 'Auto-labeling: ' + l.name, reason: 'Requires E5' });
+    });
+    (plan.dlpRules || []).forEach(r => {
+      const lic = r.licence || 'e3';
+      if (lic !== 'e3') {
+        lost.push({ name: r.name, reason: lic === 'e5' ? 'Requires E5' : 'Requires E5 Compliance' });
+      } else {
+        kept.push(r.name);
+      }
+    });
+    // Labels/encryption/marking are E3
+    (plan.labels || []).forEach(l => {
+      kept.push('Label: ' + l.name + (l.encrypt ? ' (encryption stays)' : ''));
+    });
+
+    let html = '<div class="pvs-whatif-grid">';
+    html += '<div class="pvs-whatif-col pvs-whatif-lost"><h4>❌ Lost with E3 only (' + lost.length + ')</h4>';
+    if (lost.length) {
+      lost.forEach(l => { html += '<div class="pvs-whatif-item"><span>' + esc(l.name) + '</span><span class="pvs-whatif-reason">' + esc(l.reason) + '</span></div>'; });
+    } else {
+      html += '<p>Nothing lost!</p>';
+    }
+    html += '</div>';
+    html += '<div class="pvs-whatif-col pvs-whatif-kept"><h4>✅ Kept with E3 (' + kept.length + ')</h4>';
+    kept.forEach(k => { html += '<div class="pvs-whatif-item"><span>' + esc(k) + '</span></div>'; });
+    html += '</div></div>';
+    el.innerHTML = html;
+  }
+
+  /* ═══ V11: IMPORT EXISTING LABELS ═══ */
+  function initImport() {
+    const btn = $('pvs-import-parse');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const input = $('pvs-import-input');
+      const result = $('pvs-import-result');
+      if (!input || !result) return;
+      const text = input.value.trim();
+      if (!text) { result.innerHTML = '<p style="color:#F87171;font-size:0.85rem">Paste some output first.</p>'; return; }
+      const parsed = parseGetLabelOutput(text);
+      if (!parsed.length) { result.innerHTML = '<p style="color:#F87171;font-size:0.85rem">Could not parse any labels. Expected format: DisplayName and Priority columns.</p>'; return; }
+
+      let html = '<div class="pvs-import-found">';
+      html += '<p style="color:var(--pvs-accent);font-weight:600;margin-bottom:0.5rem">Found ' + parsed.length + ' existing label' + (parsed.length !== 1 ? 's' : '') + ':</p>';
+      parsed.forEach(l => { html += '<div class="pvs-import-label">' + esc(l.name) + (l.priority !== undefined ? ' <span style="color:rgba(255,255,255,0.4)">(priority ' + l.priority + ')</span>' : '') + '</div>'; });
+
+      // Gap analysis against kits
+      html += '<div style="margin-top:1rem"><strong style="color:#fff">Gap analysis vs Enterprise kit:</strong></div>';
+      const entKit = getKit('enterprise');
+      if (entKit && entKit.labels) {
+        const existingNames = parsed.map(p => p.name.toLowerCase());
+        const missing = entKit.labels.filter(l => !existingNames.includes(l.name.toLowerCase()));
+        const already = entKit.labels.filter(l => existingNames.includes(l.name.toLowerCase()));
+        if (already.length) {
+          html += '<p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.3rem">✅ You already have: ' + already.map(l => esc(l.name)).join(', ') + '</p>';
+        }
+        if (missing.length) {
+          html += '<p style="color:#FBBF24;font-size:0.82rem;margin-top:0.3rem">➕ Enterprise kit would add: ' + missing.map(l => esc(l.name)).join(', ') + '</p>';
+        }
+        if (!missing.length) {
+          html += '<p style="color:var(--pvs-accent);font-size:0.82rem;margin-top:0.3rem">🎉 You already cover the Enterprise baseline!</p>';
+        }
+      }
+      html += '</div>';
+      result.innerHTML = html;
+    });
+  }
+
+  function parseGetLabelOutput(text) {
+    const labels = [];
+    const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+    // Try table format: DisplayName  Priority
+    lines.forEach(line => {
+      // Skip header/separator lines
+      if (line.startsWith('---') || line.startsWith('DisplayName') || line.startsWith('===')) return;
+      // Try space-separated: "Confidential    2"
+      const match = line.match(/^(.+?)\s{2,}(\d+)$/);
+      if (match) {
+        labels.push({ name: match[1].trim(), priority: parseInt(match[2]) });
+        return;
+      }
+      // Try just names (one per line)
+      if (line.length > 1 && line.length < 80 && !line.includes('|') && !line.includes(':')) {
+        labels.push({ name: line });
+      }
+    });
+    return labels;
+  }
+
   /* ═══ INIT ═══ */
   const VALID_TABS = ['kits', 'custom', 'deploy', 'faq'];
   const VALID_KITS = KITS.map(k => k.id);
@@ -969,6 +1120,7 @@
 
     renderLabelTemplates(); initLabelBuilder(); initLabelTree(); renderLabelTree(); renderLabelPreview();
     renderDLPScenarios(); initDLPScenarios();
+    initImport();
     updateCustomCTA();
 
     const customDeployBtn = $('pvs-custom-to-deploy');

@@ -48,7 +48,7 @@
 {{/* ═══ MAIN TOOL (hidden until unlocked) ═══ */}}
 <div class="agplan-page" id="agplan-dashboard" style="display:none">
 
-  {{ partial "tool-hero.html" (dict "accent" "#4CCE3B" "emoji" "🤖" "title" "Agent 365 Planner" "subtitle" "Plan your AI agent governance, registry, and deployment strategy — all in one place." "page" page) }}
+  {{ partial "tool-hero.html" (dict "accent" "#7DD3FC" "emoji" "🤖" "title" "Agent 365 Planner" "subtitle" "Plan your AI agent governance, registry, and deployment strategy — all in one place." "page" page) }}
 
   <div class="agplan-container">
 
@@ -373,10 +373,10 @@
     <div class="agplan-panel" id="panel-faq" role="tabpanel">
       {{ if .Params.faq }}
       <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-        <h2 style="color:#4CCE3B;margin-bottom:1rem">Frequently Asked Questions</h2>
+        <h2 style="color:#7DD3FC;margin-bottom:1rem">Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
         <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
-          <summary style="color:#4CCE3B;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
+          <summary style="color:#7DD3FC;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
           <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
         </details>
         {{ end }}
@@ -407,7 +407,7 @@
       </a>
     </div>
     <p style="text-align:center;margin-top:1rem;color:rgba(255,255,255,0.4);font-size:0.82rem">
-      💬 Got feedback? <a href="/feedback/" style="color:#4CCE3B">Share it here →</a>
+      💬 Got feedback? <a href="/feedback/" style="color:#7DD3FC">Share it here →</a>
     </p>
   </div>
 

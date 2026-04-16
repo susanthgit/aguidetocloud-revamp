@@ -5,9 +5,9 @@
    ════════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --agplan-accent: #4CCE3B;
-  --agplan-accent-dim: rgba(76, 206, 59, 0.15);
-  --agplan-accent-glow: rgba(76, 206, 59, 0.3);
+  --agplan-accent: #7DD3FC;
+  --agplan-accent-dim: rgba(125, 211, 252, 0.15);
+  --agplan-accent-glow: rgba(125, 211, 252, 0.3);
 }
 
 /* ── Page Container ────────────────────────────────────────────────────── */
