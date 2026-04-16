@@ -458,12 +458,85 @@ module.exports = async function (context, req) {
         recs.push({ icon: '\uD83D\uDC65', text: 'Net subscribers (28d): +' + (totalSubsGained - totalSubsLost) + ' (' + totalSubsGained + ' gained, ' + totalSubsLost + ' lost)' });
       }
 
+      // Title Scorecards — score each video title
+      const POWER_WORDS = ['free','complete','ultimate','step','how','why','what','best','top','new','secret','easy','fast','2026','2025','guide','tutorial','learn','master','beginner','advanced','pro','hack','trick','mistake','review','comparison','explained','simple','powerful'];
+      const titleScores = mainEnriched.map(v => {
+        let score = 50;
+        const t = v.title.toLowerCase();
+        const words = t.replace(/[^\w\s]/g, '').split(/\s+/);
+        // Length: 40-65 chars is optimal
+        if (v.title.length >= 40 && v.title.length <= 65) score += 15;
+        else if (v.title.length >= 30 && v.title.length <= 75) score += 8;
+        else score -= 5;
+        // Power words
+        const pwCount = words.filter(w => POWER_WORDS.includes(w)).length;
+        score += Math.min(pwCount * 8, 20);
+        // Number in title (specificity)
+        if (/\d/.test(v.title)) score += 5;
+        // Pipes/dashes (common in SEO titles)
+        if (/[|—–]/.test(v.title)) score += 3;
+        // Curiosity gap (questions)
+        if (/\?|how |why |what |can you/i.test(v.title)) score += 7;
+        // Too long = penalty
+        if (v.title.length > 80) score -= 10;
+        // All caps words = clickbait penalty
+        if (/[A-Z]{5,}/.test(v.title)) score -= 5;
+        score = Math.max(0, Math.min(100, score));
+        const issues = [];
+        if (v.title.length < 30) issues.push('Too short — aim for 40-65 chars');
+        if (v.title.length > 75) issues.push('Too long — trim to 65 chars');
+        if (pwCount === 0) issues.push('No power words — add: complete, guide, free, step-by-step');
+        if (!/\d/.test(v.title)) issues.push('No numbers — add specificity (year, count, steps)');
+        if (!/[|—–]/.test(v.title)) issues.push('No separator — use | or — to structure title');
+        return { id: v.id, title: v.title, score, issues, views: v.views, engagement: v.engagement };
+      }).sort((a, b) => a.score - b.score);
+
+      // Subscriber Milestone Projector
+      let milestoneProjections = null;
+      const currentSubs = (channels[MAIN_CH]?.subscribers || 0) + (channels[BITES_CH]?.subscribers || 0);
+      if (ytAnalytics && !ytAnalytics.error && ytAnalytics.daily && ytAnalytics.daily.length > 7) {
+        const subsGained28 = ytAnalytics.daily.reduce((s, d) => s + (d.subsGained || 0), 0);
+        const subsLost28 = ytAnalytics.daily.reduce((s, d) => s + (d.subsLost || 0), 0);
+        const netPerDay = (subsGained28 - subsLost28) / ytAnalytics.daily.length;
+        const targets = [100000, 250000, 500000, 1000000];
+        milestoneProjections = {
+          currentTotal: currentSubs,
+          netPerDay: Math.round(netPerDay * 10) / 10,
+          netPerMonth: Math.round(netPerDay * 30),
+          targets: targets.filter(t => t > currentSubs).map(t => {
+            const daysNeeded = netPerDay > 0 ? Math.ceil((t - currentSubs) / netPerDay) : null;
+            const date = daysNeeded ? new Date(Date.now() + daysNeeded * 86400000).toISOString().split('T')[0] : null;
+            return { target: t, daysNeeded, date, reachable: daysNeeded !== null && daysNeeded < 3650 };
+          })
+        };
+      }
+
+      // Weekly Content Scorecard (last 7 days vs prior 7)
+      let weeklyScorecard = null;
+      if (ytAnalytics && !ytAnalytics.error && ytAnalytics.daily && ytAnalytics.daily.length >= 14) {
+        const d = ytAnalytics.daily;
+        const thisWeek = d.slice(-7);
+        const lastWeek = d.slice(-14, -7);
+        const sum = (arr, key) => arr.reduce((s, r) => s + (r[key] || 0), 0);
+        const tw = { views: sum(thisWeek, 'views'), watch: sum(thisWeek, 'watchMinutes'), subs: sum(thisWeek, 'subsGained') - sum(thisWeek, 'subsLost'), impressions: sum(thisWeek, 'impressions'), avgCtr: thisWeek.reduce((s, r) => s + r.ctr, 0) / 7 };
+        const lw = { views: sum(lastWeek, 'views'), watch: sum(lastWeek, 'watchMinutes'), subs: sum(lastWeek, 'subsGained') - sum(lastWeek, 'subsLost'), impressions: sum(lastWeek, 'impressions'), avgCtr: lastWeek.reduce((s, r) => s + r.ctr, 0) / 7 };
+        const pct = (a, b) => b > 0 ? Math.round(((a - b) / b) * 100) : 0;
+        // Grade: A+ (everything up >20%), A (most up), B (mixed), C (mostly down), D (everything down)
+        const changes = [pct(tw.views, lw.views), pct(tw.watch, lw.watch), pct(tw.subs, lw.subs), pct(tw.impressions, lw.impressions)];
+        const upCount = changes.filter(c => c > 5).length;
+        const grade = upCount >= 4 ? 'A+' : upCount >= 3 ? 'A' : upCount >= 2 ? 'B' : upCount >= 1 ? 'C' : 'D';
+        weeklyScorecard = { thisWeek: tw, lastWeek: lw, changes: { views: pct(tw.views, lw.views), watch: pct(tw.watch, lw.watch), subs: pct(tw.subs, lw.subs), impressions: pct(tw.impressions, lw.impressions), ctr: Math.round((tw.avgCtr - lw.avgCtr) * 100) / 100 }, grade };
+      }
+
       const ytResponse = {
         main: channels[MAIN_CH] || null, bites: channels[BITES_CH] || null,
         mainVideos: mainEnriched, bitesVideos: bitesEnriched.slice(0, 20),
         mainAnalysis, bitesAnalysis,
         analytics: ytAnalytics,
         recommendations: recs,
+        titleScores: titleScores.slice(0, 20),
+        milestoneProjections,
+        weeklyScorecard,
         uploadFrequency: {
           mainPerMonth: Math.round((channels[MAIN_CH]?.videoCount || 0) / Math.max(1, Math.round((Date.now() - new Date('2021-12-01').getTime()) / 2592000000))),
           bitesPerMonth: Math.round((channels[BITES_CH]?.videoCount || 0) / Math.max(1, Math.round((Date.now() - new Date('2021-12-01').getTime()) / 2592000000))),

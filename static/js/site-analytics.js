@@ -1383,6 +1383,12 @@
     renderYTTopics(yt.mainAnalysis);
     // Underperformers
     renderYTUnderperformers(yt.mainAnalysis);
+    // Weekly Scorecard
+    renderYTScorecard(yt.weeklyScorecard);
+    // Milestone Projector
+    renderYTMilestones(yt.milestoneProjections);
+    // Title Scorecards
+    renderYTTitles(yt.titleScores);
     // Bites top
     renderYTBitesTop(yt.bitesVideos);
   }
@@ -1522,6 +1528,74 @@
         + '<div class="siteana-opp-query"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:none">' + esc(v.title) + '</a></div>'
         + '<div class="siteana-opp-stats">' + numFmt(v.views) + ' views \u00B7 ' + v.viewsPerDay + ' views/day \u00B7 ' + v.daysSince + ' days old</div>'
         + '<div class="siteana-opp-uplift">Consider: update title/thumbnail, create a follow-up, or reshare</div>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── WEEKLY SCORECARD ──
+  function renderYTScorecard(sc) {
+    var card = document.getElementById('sa-yt-scorecard-card');
+    var el = document.getElementById('sa-yt-scorecard');
+    if (!card || !el || !sc) { if (card) card.style.display = 'none'; return; }
+    card.style.display = '';
+    var gradeColor = sc.grade === 'A+' || sc.grade === 'A' ? '#10B981' : sc.grade === 'B' ? '#FBBF24' : '#EF4444';
+    var metrics = [
+      { label: 'Views', tw: sc.thisWeek.views, lw: sc.lastWeek.views, chg: sc.changes.views },
+      { label: 'Watch Time', tw: sc.thisWeek.watch + 'm', lw: sc.lastWeek.watch + 'm', chg: sc.changes.watch },
+      { label: 'Net Subs', tw: sc.thisWeek.subs, lw: sc.lastWeek.subs, chg: sc.changes.subs },
+      { label: 'Impressions', tw: numFmt(sc.thisWeek.impressions), lw: numFmt(sc.lastWeek.impressions), chg: sc.changes.impressions },
+      { label: 'Avg CTR', tw: sc.thisWeek.avgCtr.toFixed(1) + '%', lw: sc.lastWeek.avgCtr.toFixed(1) + '%', chg: null }
+    ];
+    el.innerHTML = '<div class="siteana-scorecard-grade" style="color:' + gradeColor + '">Grade: ' + sc.grade + '</div>'
+      + '<div class="siteana-ba-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">'
+      + '<div class="siteana-ba-header"><span></span><span>This Week</span><span>Last Week</span><span>Change</span></div>'
+      + metrics.map(function(m) {
+        var cls = m.chg > 0 ? 'siteana-change-up' : m.chg < 0 ? 'siteana-change-down' : '';
+        var chgStr = m.chg !== null ? (m.chg >= 0 ? '+' : '') + m.chg + '%' : '\u2014';
+        return '<div class="siteana-ba-row"><span class="siteana-ba-label">' + m.label + '</span><span>' + m.tw + '</span><span>' + m.lw + '</span><span class="' + cls + '">' + chgStr + '</span></div>';
+      }).join('') + '</div>';
+  }
+
+  // ── SUBSCRIBER MILESTONE PROJECTOR ──
+  function renderYTMilestones(proj) {
+    var card = document.getElementById('sa-yt-milestones-card');
+    var el = document.getElementById('sa-yt-milestones');
+    if (!card || !el || !proj) { if (card) card.style.display = 'none'; return; }
+    card.style.display = '';
+    var html = '<div class="siteana-cumulative" style="margin-bottom:1rem;padding:1rem;border-radius:12px">'
+      + '<span class="siteana-cumul-num" style="font-size:2rem">' + numFmt(proj.currentTotal) + '</span>'
+      + '<span class="siteana-cumul-label">combined subscribers \u00B7 ' + (proj.netPerDay >= 0 ? '+' : '') + proj.netPerDay + '/day \u00B7 ' + (proj.netPerMonth >= 0 ? '+' : '') + numFmt(proj.netPerMonth) + '/month</span>'
+      + '</div>';
+    if (proj.targets && proj.targets.length) {
+      html += proj.targets.map(function(t) {
+        var label = t.target >= 1000000 ? (t.target / 1000000) + 'M' : (t.target / 1000) + 'K';
+        var pct = Math.min(100, Math.round((proj.currentTotal / t.target) * 100));
+        var timeStr = t.reachable ? t.daysNeeded + ' days (' + t.date + ')' : 'Not reachable at current rate';
+        var barColor = pct >= 80 ? '#10B981' : pct >= 50 ? '#FBBF24' : '#64748B';
+        return '<div class="siteana-goal">'
+          + '<div class="siteana-goal-header"><span class="siteana-goal-label">' + label + ' subscribers</span><span class="siteana-goal-pct">' + pct + '%</span></div>'
+          + '<div class="siteana-goal-track"><div class="siteana-goal-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>'
+          + '<div class="siteana-goal-meta"><span>' + numFmt(proj.currentTotal) + ' / ' + numFmt(t.target) + '</span><span>' + timeStr + '</span></div>'
+          + '</div>';
+      }).join('');
+    }
+    el.innerHTML = html;
+  }
+
+  // ── TITLE SCORECARDS ──
+  function renderYTTitles(scores) {
+    var el = document.getElementById('sa-yt-titles');
+    if (!el || !scores || !scores.length) return;
+    el.innerHTML = scores.map(function(s) {
+      var scoreColor = s.score >= 75 ? '#10B981' : s.score >= 55 ? '#FBBF24' : s.score >= 35 ? '#FB923C' : '#EF4444';
+      var issueHtml = s.issues && s.issues.length ? '<div class="siteana-title-issues">' + s.issues.map(function(i) { return '<span class="siteana-title-issue">' + esc(i) + '</span>'; }).join('') + '</div>' : '';
+      return '<div class="siteana-title-card">'
+        + '<div class="siteana-title-header">'
+        + '<span class="siteana-title-score" style="background:' + scoreColor + '">' + s.score + '</span>'
+        + '<a class="siteana-title-name" href="https://youtube.com/watch?v=' + esc(s.id) + '" target="_blank" rel="noopener">' + esc(s.title) + '</a>'
+        + '</div>'
+        + '<div class="siteana-title-meta">' + numFmt(s.views) + ' views \u00B7 ' + s.engagement + '% engagement</div>'
+        + issueHtml
         + '</div>';
     }).join('');
   }
