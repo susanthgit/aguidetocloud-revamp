@@ -81,7 +81,7 @@ This is a living document. Bookmark this page rather than printing it — the AI
 The paid licence transforms Copilot from a **web-grounded chat tool** into an **AI assistant that understands your work** — your emails, files, meetings, chats, and organisational context.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["💳 M365 Copilot Licence"] --> B["📊 Work Data\nvia Microsoft Graph"]
     A --> C["📱 Deep App\nIntegration"]
     A --> D["🔬 Researcher\n& Analyst"]
@@ -189,7 +189,7 @@ Licensed users benefit from these extra controls beyond what Copilot Chat provid
 This is the diagram I always show in training sessions. It helps people understand what happens between "I typed a prompt" and "I got a response" — and where their data is protected at each step.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["👤 User sends\na prompt"] --> B["🔒 EDP Layer\nIdentity + Permissions\n+ Sensitivity Labels"]
     B --> C["🧠 Microsoft 365\nCopilot Orchestrator"]
     C --> D["📊 Microsoft Graph\n(Emails, Files,\nMeetings, Chats)"]
@@ -234,7 +234,7 @@ flowchart LR
 This is the **single biggest difference** between Copilot Chat and the paid licence. With work data grounding, Copilot doesn't just search the web — it reads your **organisational data** through **Microsoft Graph**.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["👤 User Prompt"] --> B["🧠 Microsoft 365\nCopilot"]
     B --> C["🌐 Web Data"]
     B --> D["📊 Microsoft Graph"]
@@ -301,7 +301,7 @@ Copilot in Word transforms document creation from a blank page into an AI-assist
 | **Voice prompts** | Dictate instructions on mobile | Speak: *"Add a conclusion paragraph that summarises the key recommendations"* |
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["📝 Copilot\nin Word"] --> B["✍️ Draft"]
     A --> C["🔄 Rewrite"]
     A --> D["📋 Summarise"]
@@ -421,7 +421,7 @@ Copilot in Teams is where many users experience the **most immediate time saving
 | **Follow-up questions** | After meetings | Copilot suggests follow-up questions to ask |
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["👥 Copilot\nin Teams"] --> B["📋 Meeting\nRecaps"]
     A --> C["✅ Action\nItems"]
     A --> D["💬 Chat\nSummaries"]
@@ -647,7 +647,7 @@ Microsoft 365 Copilot now offers **model choice** — users can select between *
 ### How to Enable Anthropic Claude (Admin Steps)
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🔐 Admin Centre"] --> B["Copilot → Settings\n→ View All"]
     B --> C["AI providers operating\nas Microsoft subprocessors"]
     C --> D{"Anthropic\ntoggle"}

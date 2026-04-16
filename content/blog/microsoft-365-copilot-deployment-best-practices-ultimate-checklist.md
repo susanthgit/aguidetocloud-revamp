@@ -66,7 +66,7 @@ This is a living document. The AI world changes every day — features ship, set
 Back to the moving house analogy. Here are your five phases — and what goes wrong if you skip any of them:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["📋 Phase 1<br/>Plan & Assess"] --> B["🔒 Phase 2<br/>Secure & Govern"]
     B --> C["⚙️ Phase 3<br/>Configure & Deploy"]
     C --> D["🎓 Phase 4<br/>Adopt & Train"]

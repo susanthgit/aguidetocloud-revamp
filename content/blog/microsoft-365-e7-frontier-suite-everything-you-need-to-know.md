@@ -51,7 +51,7 @@ Think of E7 like upgrading from a hotel room to the penthouse floor. You still g
 Four major products, one SKU:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🏢 Microsoft 365 E7\n$99/user/month"] --> B["📦 Microsoft 365 E5\nProductivity + Security"]
     A --> C["🤖 Microsoft 365 Copilot\nAI Assistant"]
     A --> D["🔐 Microsoft Entra Suite\nIdentity + Zero Trust"]
@@ -131,7 +131,7 @@ Here's how the three enterprise tiers stack up:
 ### The Simple Way to Think About It
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["E3\n$39/mo"] -->|"+$21"| B["E5\n$60/mo"]
     B -->|"+$39"| C["E7\n$99/mo"]
     A2["Secure\nProductivity"] ---|"is"| A
@@ -233,7 +233,7 @@ Microsoft is offering introductory CSP discounts:
 ## Timeline & Availability
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["📢 March 9, 2026\nPublic announcement"] -->|"23 days"| B["💰 April 1, 2026\nEA/EAS price list\navailable"]
     B -->|"30 days"| C["🚀 May 1, 2026\nGA — E7 + Agent 365\ntransactable"]
     style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
@@ -262,7 +262,7 @@ Available through:
 Here's my honest take — not every organisation needs E7 right now.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A{"Already on E5\n+ Copilot?"} -->|"Yes"| B{"Deploying AI\nagents at scale?"}
     A -->|"No"| C["Probably not\nready for E7 yet"]
     B -->|"Yes"| D["✅ E7 makes\nfinancial + strategic\nsense"]

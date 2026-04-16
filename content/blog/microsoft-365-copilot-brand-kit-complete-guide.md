@@ -261,7 +261,7 @@ When generating images, banners, and posters through the Create tab, Copilot use
 - Brand tone and messaging
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["📊 PowerPoint<br/>★★★★★<br/>PowerPoint Agent, Narrative Builder,<br/>Brand Checker, Templates"] --> E["🎨 Brand Kit"]
     B["📝 Word<br/>★★★☆☆<br/>Word Agent +<br/>Templates + Copilot side panel"] --> E
     C["📗 Excel<br/>★★☆☆☆<br/>Template-level<br/>branding only"] --> E

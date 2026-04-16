@@ -171,7 +171,7 @@ By default, Copilot Chat will block or limit responses about:
 Here's the important part — this isn't a permanent switch. It works more like a hotel's "Do Not Disturb" sign. The guest puts it on for their current stay, and the hotel resets it for the next guest.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["User opens<br/>Copilot Chat"] --> B["Clicks More menu<br/>Toggles OFF"]
     B --> C["Copilot responds to<br/>sensitive queries"]
     C --> D["Conversation ends<br/>Toggle resets ON"]

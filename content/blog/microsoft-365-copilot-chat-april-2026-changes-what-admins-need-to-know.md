@@ -61,7 +61,7 @@ Two things to know as we approach go-live:
 Think of it like a free trial on your phone. Microsoft gave everyone free access to a premium app feature in September 2025, hoping people would get hooked and upgrade. Six months later, only about 3% of customers actually paid. So the free trial is ending.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Sept 2025\nCopilot Chat made\nFREE in Office apps"] -->|"6 months later"| B["March 17, 2026\nMC1253858 & MC1253863\nannounce rollback"]
     B -->|"30 days notice"| C["April 15, 2026\nFree Copilot removed\nor degraded"]
     style A fill:#1a4a2a,stroke:#66ff99,color:#ffffff
@@ -76,7 +76,7 @@ flowchart LR
 This is the question I get asked most. The answer depends on one thing: **how many users are in your tenant**.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Your Org"] --> B{"Tenant size?"}
     B -->|"> 2,000 users"| C["MC1253858\nCopilot REMOVED\nfrom Word, Excel,\nPPT, OneNote"]
     B -->|"< 2,000 users"| D["MC1253863\nStandard access\nin Word, Excel, PPT\nOneNote removed"]
@@ -147,7 +147,7 @@ The key thing: **they're not the same as the Copilot side panel inside Office ap
 Think of it this way — it's like losing the in-store assistant at a shop, but you still have the personal shopper who delivers to your door. Different experience, but you still get what you need.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Copilot Side Panel\nINSIDE Word/Excel/PPT"] ---|"April 15"| B["Removed or\nDegraded"]
     C["WXP Agents\nIN the Copilot App"] ---|"April 15"| D["Still available\nfor all users"]
     style B fill:#5c1a1a,stroke:#ff6666,color:#ffffff
@@ -180,7 +180,7 @@ From the [official documentation](https://learn.microsoft.com/en-us/copilot/micr
 If your admin has disabled Anthropic as a subprocessor, the WXP agents are **completely hidden**. Your users won't even know they exist.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A{"Anthropic\nenabled?"} -->|"Yes"| B["WXP Agents visible\n& functional"]
     A -->|"No"| C["WXP Agents\ncompletely HIDDEN"]
     style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff

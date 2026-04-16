@@ -120,7 +120,7 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 **Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and completely free.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🆓 Copilot Chat\n(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat"]
     A --> C["📄 File Upload"]
     A --> D["🖼️ Create"]
@@ -137,7 +137,7 @@ flowchart LR
 ```
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["💳 M365 Copilot\n($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
     B --> C["📊 Work Data via Graph"]
     B --> D["📱 Deep App Integration"]
@@ -193,7 +193,7 @@ Here's how to answer that confidently.
 Think of it like your phone's encryption — it protects everything automatically, you don't have to turn it on. Enterprise Data Protection means Copilot Chat is covered by the **same security commitments** that protect your emails in Exchange and your files in SharePoint. Every user signed in with a work account gets this automatically.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["👤 User sends\na prompt"] --> B["🔒 Enterprise Data\nProtection (EDP)"]
     B --> C["🧠 AI processes\nthe request"]
     C --> D["🔒 Response protected\nby EDP"]
@@ -248,7 +248,7 @@ Microsoft is pulling back free Copilot Chat from some Office apps on April 15. W
 > 📖 **Full details:** [Copilot Chat Changes April 15 — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/)
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🏢 Your Org Size"] --> B{"≥ 2,000 paid\nM365 seats?"}
     B -->|"Yes"| C["🔴 Copilot removed from\nWord, Excel, PPT, OneNote\nfor unlicensed users"]
     B -->|"No"| D["🟡 Copilot stays but\nunder standard access\n(possible throttling)"]
@@ -296,7 +296,7 @@ For large organisations, frame it as:
 Now let's get into the features your users can use **today**. Even as a free tool, Copilot Chat is surprisingly powerful. Here's how to teach each feature effectively.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🆓 Copilot Chat\nFeatures"] --> B["💬 Chat"]
     A --> C["📄 File Upload"]
     A --> D["💡 Suggested Prompts"]
@@ -614,7 +614,7 @@ Helps users improve their writing quality. Great for emails, reports, and docume
 The ability to **create** agents depends on your organisation's decisions:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["🤖 Agent Creation\nfor Free Users"] --> B{"What grounding\ndoes the agent need?"}
     B -->|"Web only"| C["✅ Possible\n(if admin allows)"]
     B -->|"Documents /\nSharePoint"| D["💰 Requires\nbilling plan"]
