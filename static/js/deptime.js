@@ -474,7 +474,7 @@
 
     toggleBtn.addEventListener('click', () => {
       const open = drawer.classList.toggle('deptime-drawer-open');
-      toggleBtn.textContent = open ? '✕ Close Filters' : '⚙️ Filters';
+      toggleBtn.textContent = open ? '✕ Close Filters' : 'Filters';
     });
   }
 
@@ -503,24 +503,7 @@
       loadFromURL();
       applyFilters();
 
-      // Render Action Required tab
-      var actionList = document.getElementById('deptime-action-list');
-      if (actionList) {
-        var actionItems = allItems.filter(function (i) { return i.action_required && i.urgency !== 'passed'; });
-        actionItems.sort(function (a, b) { return new Date(a.deadline) - new Date(b.deadline); });
-        if (actionItems.length === 0) {
-          actionList.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem">✅ No action required items at this time</p>';
-        } else {
-          actionList.innerHTML = '<p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">⚡ ' + actionItems.length + ' items require your attention — sorted by deadline</p>' + actionItems.map(renderCard).join('');
-          actionList.querySelectorAll('.deptime-card').forEach(function (c) {
-            c.addEventListener('click', function () { openModal(c.dataset.id); });
-          });
-        }
-      }
-
-      // Export CSV from tab
-      var csvTabBtn = document.getElementById('deptime-export-csv-tab');
-      if (csvTabBtn) csvTabBtn.addEventListener('click', exportCSV);
+      // Action Required tab removed in V2 — action filter toggle handles it
 
       // Standard filter listeners
       document.getElementById('deptime-search').addEventListener('input', debounce(applyFilters, 300));

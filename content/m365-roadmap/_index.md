@@ -6,6 +6,7 @@ layout: "roadmap"
 sitemap:
   priority: 0.9
   changefreq: "daily"
+lastmod: 2026-04-16
 images: ["images/og/m365-roadmap.jpg"]
 faq:
   - question: "How do I use the M365 Roadmap Tracker?"

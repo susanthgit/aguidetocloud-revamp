@@ -15,11 +15,10 @@
 
   <!-- Tab Navigation -->
   <div class="shealth-tabs" role="tablist" aria-label="Service Health views">
-    <button class="shealth-tab active" role="tab" aria-selected="true" data-tab="status">🟢 Service Status</button>
-    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="incidents">🔴 Active Incidents</button>
-    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="insights">📊 Reliability Insights</button>
-    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="lookup">📅 Date Lookup</button>
-    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+    <button class="shealth-tab active" role="tab" aria-selected="true" data-tab="status">Service Status</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="incidents">Active Incidents</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="insights">Reliability Insights</button>
+    <button class="shealth-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
   <!-- Tab 1: Service Status -->
@@ -28,7 +27,6 @@
     <div class="shealth-summary" id="shealth-summary"></div>
     <div class="shealth-grid-header">
       <span class="shealth-grid-label">Service Status</span>
-      <span class="shealth-grid-hint">Click a service to filter incidents</span>
     </div>
     <div class="shealth-status-grid" id="shealth-status-grid" aria-label="Current service status">
       <div class="shealth-skeleton"><div class="shealth-skeleton-row"></div><div class="shealth-skeleton-row"></div></div>
@@ -36,9 +34,9 @@
 
     <!-- Incident History (inside Status tab) -->
     <div class="shealth-section-header" style="margin-top:2rem">
-      <span>📋 Incident History</span>
+      <span>Incident History</span>
       <div style="display:flex;gap:0.5rem;align-items:center">
-        <button class="shealth-clear-btn" id="shealth-csv-btn">📥 Export CSV</button>
+        <button class="shealth-clear-btn" id="shealth-csv-btn">Export CSV</button>
         <button class="shealth-clear-btn" id="shealth-clear-btn" style="display:none">✕ Clear filters</button>
       </div>
     </div>
@@ -52,10 +50,10 @@
       <label for="shealth-status-filter" class="sr-only">Filter by status</label>
       <select id="shealth-status-filter" class="shealth-select">
         <option value="all" selected>All Statuses</option>
-        <option value="active">🔴 Active Only</option>
-        <option value="resolved">✅ Resolved Only</option>
-        <option value="advisory">ℹ️ Advisories Only</option>
-        <option value="incident">⚠️ Incidents Only</option>
+        <option value="active">Active Only</option>
+        <option value="resolved">Resolved Only</option>
+        <option value="advisory">Advisories Only</option>
+        <option value="incident">Incidents Only</option>
       </select>
     </div>
     <div class="shealth-meta" id="shealth-meta" aria-live="polite"></div>
@@ -65,13 +63,26 @@
     <div class="shealth-load-more" id="shealth-load-more" style="display:none">
       <button class="shealth-load-btn" id="shealth-load-btn">Load More Incidents</button>
     </div>
+
+    <!-- Date Lookup (merged from standalone tab) -->
+    <div class="shealth-section-header" style="margin-top:2rem">
+      <span>Was a service down on a specific date?</span>
+    </div>
+    <div class="shealth-date-lookup" id="shealth-date-lookup">
+      <input type="date" id="shealth-date-picker" class="shealth-search" aria-label="Select date to check">
+      <select id="shealth-date-service" class="shealth-select" aria-label="Service for date lookup">
+        <option value="all">Any Service</option>
+      </select>
+      <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
+    </div>
+    <div class="shealth-date-result" id="shealth-date-result"></div>
   </div>
 
   <!-- Tab 2: Active Incidents -->
   <div class="shealth-panel" id="panel-incidents" role="tabpanel" hidden>
     <div class="shealth-active-section" id="shealth-active-section">
       <div class="shealth-section-header shealth-section-active">
-        <span>🔴 Active Incidents</span>
+        <span>Active Incidents</span>
         <span class="shealth-active-count" id="shealth-active-count"></span>
       </div>
       <div class="shealth-active-list" id="shealth-active-list"></div>
@@ -90,25 +101,10 @@
     </div>
   </div>
 
-  <!-- Tab 4: Date Lookup -->
-  <div class="shealth-panel" id="panel-lookup" role="tabpanel" hidden>
-    <div class="shealth-section-header">
-      <span>📅 Was a service down on a specific date?</span>
-    </div>
-    <div class="shealth-date-lookup" id="shealth-date-lookup">
-      <input type="date" id="shealth-date-picker" class="shealth-search" aria-label="Select date to check">
-      <select id="shealth-date-service" class="shealth-select" aria-label="Service for date lookup">
-        <option value="all">Any Service</option>
-      </select>
-      <button class="shealth-load-btn" id="shealth-date-btn">Look Up</button>
-    </div>
-    <div class="shealth-date-result" id="shealth-date-result"></div>
-  </div>
-
   <div class="shealth-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
       <summary style="color:var(--tool-accent, #fff);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
@@ -122,8 +118,8 @@
   <!-- Footer -->
   <div class="shealth-footer">
     <div class="shealth-footer-links">
-      <a href="/data/service-health/feed.xml" target="_blank" rel="noopener noreferrer">📡 RSS Feed</a>
-      <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener noreferrer">🔗 M365 Admin Center</a>
+      <a href="/data/service-health/feed.xml" target="_blank" rel="noopener noreferrer">RSS Feed</a>
+      <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener noreferrer">M365 Admin Center</a>
     </div>
     <div class="shealth-freshness" id="shealth-freshness"></div>
   </div>

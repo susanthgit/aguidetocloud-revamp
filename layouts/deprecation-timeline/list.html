@@ -21,15 +21,12 @@
 
   <!-- Tab Navigation -->
   <div class="deptime-tabs" role="tablist" aria-label="Deprecation Timeline views">
-    <button class="deptime-tab active" role="tab" aria-selected="true" data-tab="dashboard">📊 Dashboard</button>
-    <button class="deptime-tab" role="tab" aria-selected="false" data-tab="browse">📋 Deprecation Timeline</button>
-    <button class="deptime-tab" role="tab" aria-selected="false" data-tab="action">🔴 Action Required</button>
-    <button class="deptime-tab" role="tab" aria-selected="false" data-tab="export">📡 Export</button>
-    <button class="deptime-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+    <button class="deptime-tab active" role="tab" aria-selected="true" data-tab="timeline">Timeline</button>
+    <button class="deptime-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
-  <!-- Tab 1: Dashboard -->
-  <div class="deptime-panel active" id="panel-dashboard" role="tabpanel">
+  <!-- Tab 1: Timeline (merged Dashboard + Browse) -->
+  <div class="deptime-panel active" id="panel-timeline" role="tabpanel">
     <!-- Critical Banner -->
     <div class="deptime-critical-banner" id="deptime-critical-banner" style="display:none;"></div>
 
@@ -37,23 +34,23 @@
     <div class="deptime-stats" id="deptime-stats">
       <div class="deptime-stat-card deptime-stat-critical" role="button" tabindex="0" aria-label="Filter critical items">
         <span class="deptime-stat-number" id="stat-critical">—</span>
-        <span class="deptime-stat-label">🔴 Critical</span>
+        <span class="deptime-stat-label">Critical</span>
       </div>
       <div class="deptime-stat-card deptime-stat-warning" role="button" tabindex="0" aria-label="Filter warning items">
         <span class="deptime-stat-number" id="stat-warning">—</span>
-        <span class="deptime-stat-label">🟠 Warning</span>
+        <span class="deptime-stat-label">Warning</span>
       </div>
       <div class="deptime-stat-card deptime-stat-watch" role="button" tabindex="0" aria-label="Filter watch items">
         <span class="deptime-stat-number" id="stat-watch">—</span>
-        <span class="deptime-stat-label">🟡 Watch</span>
+        <span class="deptime-stat-label">Watch</span>
       </div>
       <div class="deptime-stat-card deptime-stat-future" role="button" tabindex="0" aria-label="Filter future items">
         <span class="deptime-stat-number" id="stat-future">—</span>
-        <span class="deptime-stat-label">🟢 Future</span>
+        <span class="deptime-stat-label">Future</span>
       </div>
       <div class="deptime-stat-card deptime-stat-total" role="button" tabindex="0" aria-label="Show all items">
         <span class="deptime-stat-number" id="stat-total">—</span>
-        <span class="deptime-stat-label">📊 Total Active</span>
+        <span class="deptime-stat-label">Total Active</span>
       </div>
     </div>
 
@@ -65,17 +62,14 @@
       <span class="deptime-next-icon">⏰</span>
       <span class="deptime-next-text" id="deptime-next-text"></span>
     </div>
-  </div>
 
-  <!-- Tab 2: Browse All -->
-  <div class="deptime-panel" id="panel-browse" role="tabpanel" hidden>
     <!-- Mobile Filter Toggle -->
-    <button class="deptime-filter-toggle" id="deptime-filter-toggle">⚙️ Filters</button>
+    <button class="deptime-filter-toggle" id="deptime-filter-toggle">Filters</button>
 
     <!-- Controls Row -->
     <div class="deptime-controls deptime-filter-drawer" id="deptime-filter-drawer">
       <div class="deptime-search-wrap">
-        <input type="text" id="deptime-search" class="deptime-search" placeholder="Search deprecations, MC IDs, services... (press /)" aria-label="Search deprecations">
+        <input type="text" id="deptime-search" class="deptime-search" placeholder="Search deprecations, MC IDs, services..." aria-label="Search deprecations">
       </div>
       <div class="deptime-filter-row">
         <select id="deptime-category-filter" class="deptime-select" aria-label="Filter by category">
@@ -83,25 +77,25 @@
         </select>
         <select id="deptime-urgency-filter" class="deptime-select" aria-label="Filter by urgency">
           <option value="">All Urgency Levels</option>
-          <option value="critical">🔴 Critical (&lt;30 days)</option>
-          <option value="warning">🟠 Warning (30-90 days)</option>
-          <option value="watch">🟡 Watch (90-180 days)</option>
-          <option value="future">🟢 Future (180+ days)</option>
-          <option value="passed">⚫ Passed</option>
+          <option value="critical">Critical (&lt;30 days)</option>
+          <option value="warning">Warning (30-90 days)</option>
+          <option value="watch">Watch (90-180 days)</option>
+          <option value="future">Future (180+ days)</option>
+          <option value="passed">Passed</option>
         </select>
         <select id="deptime-type-filter" class="deptime-select" aria-label="Filter by type">
           <option value="">All Types</option>
-          <option value="retirement">⛔ Retirement</option>
-          <option value="end-of-support">📅 End of Support</option>
-          <option value="breaking-change">💥 Breaking Change</option>
-          <option value="deprecation">⚠️ Deprecation</option>
-          <option value="api-sunset">🔌 API Sunset</option>
+          <option value="retirement">Retirement</option>
+          <option value="end-of-support">End of Support</option>
+          <option value="breaking-change">Breaking Change</option>
+          <option value="deprecation">Deprecation</option>
+          <option value="api-sunset">API Sunset</option>
         </select>
         <select id="deptime-impact-filter" class="deptime-select" aria-label="Filter by impact">
           <option value="">All Impact</option>
-          <option value="high">🔴 High Impact</option>
-          <option value="medium">🟠 Medium Impact</option>
-          <option value="low">🟢 Low Impact</option>
+          <option value="high">High Impact</option>
+          <option value="medium">Medium Impact</option>
+          <option value="low">Low Impact</option>
         </select>
         <select id="deptime-sort" class="deptime-select" aria-label="Sort by">
           <option value="deadline">Sort: Deadline ↑</option>
@@ -111,7 +105,8 @@
         </select>
       </div>
       <div class="deptime-quick-toggles">
-        <button class="deptime-toggle-pill" id="deptime-passed-toggle">👁️ Show Passed Items</button>
+        <button class="deptime-toggle-pill" id="deptime-action-toggle">Action Required</button>
+        <button class="deptime-toggle-pill" id="deptime-passed-toggle">Show Passed Items</button>
       </div>
     </div>
 
@@ -127,9 +122,8 @@
 
     <!-- View Toggle -->
     <div class="deptime-view-toggle">
-      <button class="deptime-view-btn" id="deptime-view-grid" aria-label="Grid view">▦ Grid</button>
-      <button class="deptime-view-btn active" id="deptime-view-timeline" aria-label="Timeline view">━ Timeline</button>
-      <span class="deptime-kbd-hint">Keyboard: <kbd>/</kbd> search · <kbd>c</kbd> critical · <kbd>w</kbd> warning · <kbd>g</kbd> grid · <kbd>t</kbd> timeline</span>
+      <button class="deptime-view-btn" id="deptime-view-grid" aria-label="Grid view">Grid</button>
+      <button class="deptime-view-btn active" id="deptime-view-timeline" aria-label="Timeline view">Timeline</button>
     </div>
 
     <!-- Timeline View (default) -->
@@ -155,30 +149,10 @@
     </div>
   </div>
 
-  <!-- Tab 3: Action Required -->
-  <div class="deptime-panel" id="panel-action" role="tabpanel" hidden>
-    <div class="deptime-action-list" id="deptime-action-list">
-      <p style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem">Loading action items...</p>
-    </div>
-  </div>
-
-  <!-- Tab 4: Export -->
-  <div class="deptime-panel" id="panel-export" role="tabpanel" hidden>
-    <div class="deptime-export-section">
-      <h2 style="margin-bottom:1rem">📡 Export & Subscribe</h2>
-      <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem">Stay up to date with deprecation changes via RSS or download the full dataset as CSV.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="/data/deprecation-timeline/feed.xml" target="_blank" rel="noopener noreferrer" class="deptime-load-btn" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem">📡 RSS Feed</a>
-        <button class="deptime-load-btn" id="deptime-export-csv-tab">📥 Export CSV</button>
-      </div>
-      <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-top:1.5rem">Data sourced from Microsoft Learn Lifecycle, Azure Updates, Message Center, and community trackers. Updated daily.</p>
-    </div>
-  </div>
-
   <div class="deptime-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem"><summary style="color:var(--tool-accent, #fff);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p></details>
     {{ end }}
@@ -190,8 +164,8 @@
   <div class="deptime-footer">
     <p>Data sourced from Microsoft Learn Lifecycle, Azure Updates, Message Center, and community trackers. Updated daily.</p>
     <div class="deptime-footer-links">
-      <a href="/data/deprecation-timeline/feed.xml" class="deptime-footer-link">📡 RSS Feed</a>
-      <button class="deptime-footer-link" id="deptime-export-csv">📥 Export CSV</button>
+      <a href="/data/deprecation-timeline/feed.xml" class="deptime-footer-link">RSS Feed</a>
+      <button class="deptime-footer-link" id="deptime-export-csv">Export CSV</button>
     </div>
   </div>
 

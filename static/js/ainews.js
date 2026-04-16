@@ -106,9 +106,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   } else {
     // Main AI News page — load daily view
     await loadView('daily');
-
-    // Pre-fetch tab counts for weekly/monthly
-    updateTabCounts();
   }
 
   // Tab switching — only on main page (tabs don't exist on category pages)
@@ -309,7 +306,7 @@ function renderNews(data, view) {
   var briefing = data.briefing;
   if (briefing && briefing.length > 0) {
     html += '<div class="ainews-briefing" style="grid-column:1/-1">';
-    html += '<div class="ainews-briefing-header">⚡ Today\'s AI Briefing</div>';
+    html += '<div class="ainews-briefing-header">Today\'s AI Briefing</div>';
     html += '<ul class="ainews-briefing-list">';
     briefing.forEach(function (bullet) {
       html += '<li>' + escapeHtml(bullet) + '</li>';
@@ -321,7 +318,7 @@ function renderNews(data, view) {
   var visibleHL = headlines.slice(0, maxHeadlines);
   if (visibleHL.length > 0) {
     html += '<div class="ainews-tier-section" id="ainews-hl-section">';
-    html += '<div class="ainews-tier-header ainews-tier-headlines"><span>🔥</span> Headlines (' + visibleHL.length + ')</div>';
+    html += '<div class="ainews-tier-header ainews-tier-headlines">Headlines</div>';
     html += '<div class="ainews-heroes" id="ainews-heroes">';
     visibleHL.forEach(function (article) {
       html += '<div class="ainews-loadmore-item">' + renderHeroCard(article) + '</div>';
@@ -349,7 +346,7 @@ function renderNews(data, view) {
   if (compactItems.length > 0) {
     var initialShow = Math.min(compactItems.length, view === 'monthly' ? 50 : 20);
     html += '<div class="ainews-tier-section" id="ainews-compact-section">';
-    html += '<div class="ainews-tier-header ainews-tier-deepdives"><span>📋</span> More Stories (' + compactItems.length + ')</div>';
+    html += '<div class="ainews-tier-header ainews-tier-deepdives">More Stories</div>';
     html += '<div class="ainews-compact-list" id="ainews-compact">';
     compactItems.forEach(function (entry, i) {
       var article = entry.primary;
@@ -423,7 +420,7 @@ function renderNews(data, view) {
     if (!trendsEl) return;
 
     var thtml = '<div class="ainews-trends-section">';
-    thtml += '<div class="ainews-tier-header"><span>📊</span> This Week\'s Coverage</div>';
+    thtml += '<div class="ainews-tier-header">This Week\'s Coverage</div>';
     thtml += '<div class="ainews-trends-bars">';
     top8.forEach(function (pair) {
       var cat = pair[0], count = pair[1];
@@ -729,24 +726,7 @@ function getOrderedCategories(articles) {
 }
 
 // === TAB COUNTS ===
-async function updateTabCounts() {
-  // Fetch monthly count
-  try {
-    var cached = sessionStorage.getItem('ainews_/data/ainews/monthly.json');
-    var raw = cached ? JSON.parse(cached) : await fetch('/data/ainews/monthly.json').then(function (r) { return r.ok ? r.json() : null; });
-    if (raw) {
-      var articles = (raw.articles || []).filter(isAiRelated);
-      var tab = document.querySelector('.ainews-tab[data-view="monthly"]');
-      if (tab) tab.textContent = '📈 This Month (' + articles.length + ')';
-    }
-  } catch (e) { /* ignore */ }
-  // Update daily count from already loaded data
-  if (window.__ainewsData) {
-    var dailyArticles = (window.__ainewsData.articles || []).filter(isAiRelated);
-    var dailyTab = document.querySelector('.ainews-tab[data-view="daily"]');
-    if (dailyTab) dailyTab.textContent = '📅 Today (' + dailyArticles.length + ')';
-  }
-}
+// Removed in V2 audit — tab counts are noise per V3 design principles
 
 // === "NEW" BADGES ===
 function isNewSinceLastVisit(publishedStr) {

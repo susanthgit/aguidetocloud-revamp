@@ -6,6 +6,7 @@ layout: "service-health"
 sitemap:
   priority: 0.8
   changefreq: "daily"
+lastmod: 2026-04-16
 images: ["images/og/service-health.jpg"]
 faq:
   - question: "How do I use the Service Health Tracker?"

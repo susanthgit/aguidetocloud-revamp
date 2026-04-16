@@ -12,8 +12,8 @@
 <div class="rdmap-container">
   {{/* ── Glass Pill Tabs (top-level) ── */}}
   <div class="rdmap-top-tabs" role="tablist" aria-label="Roadmap Tracker sections">
-    <button class="rdmap-top-tab active" data-tab="main" role="tab" aria-selected="true">🗺️ Roadmap</button>
-    <button class="rdmap-top-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+    <button class="rdmap-top-tab active" data-tab="main" role="tab" aria-selected="true">Roadmap</button>
+    <button class="rdmap-top-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
   <div class="rdmap-top-panel active" id="panel-main" role="tabpanel">
@@ -28,10 +28,6 @@
       <option value="In development">In Development</option>
       <option value="Launched">Launched</option>
       <option value="Cancelled">Cancelled</option>
-    </select>
-    <label for="rdmap-product-filter" class="sr-only">Filter by product</label>
-    <select id="rdmap-product-filter" class="rdmap-select">
-      <option value="all">All Products</option>
     </select>
   </div>
 
@@ -57,7 +53,7 @@
   <div class="rdmap-top-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:#E5A00D;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:#E5A00D;margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
       <summary style="color:#E5A00D;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
@@ -77,7 +73,7 @@
   "@type": "WebApplication",
   "name": "M365 Roadmap Tracker",
   "url": "https://www.aguidetocloud.com/m365-roadmap/",
-  "description": "Track every Microsoft 365 feature change with AI summaries, change detection, and smart filtering. Updated daily from the official Microsoft 365 Roadmap.",
+  "description": {{ .Description | jsonify }},
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },

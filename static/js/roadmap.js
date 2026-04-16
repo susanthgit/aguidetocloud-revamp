@@ -52,21 +52,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  function populateProductFilter(cats) { var sel = document.getElementById('rdmap-product-filter'), v = sel.value; sel.innerHTML = '<option value="all">All Products</option>'; cats.forEach(function (c) { if (c.count > 0) { var o = document.createElement('option'); o.value = c.id; o.textContent = c.name + ' (' + c.count + ')'; sel.appendChild(o); } }); sel.value = v || 'all'; }
+  function populateProductFilter() { /* Dropdown removed in V2 audit — chips are the primary filter */ }
 
-  // ── CHIPS (dynamic counts) ──
+  // ── CHIPS ──
   function renderChips(data) {
     var el = document.getElementById('rdmap-chips');
-    var items = data.items || []; var cats = data.product_categories || [];
-    var counts = {}; items.forEach(function (i) {
-      if (activeStatusFilter === 'all' || (activeStatusFilter === 'active' && i.status !== 'Launched' && i.status !== 'Cancelled') || i.status === activeStatusFilter) {
-        (i.all_categories || [i.product_category]).forEach(function (c) { counts[c] = (counts[c] || 0) + 1; });
-      }
-    });
+    var cats = data.product_categories || [];
     var html = '<button class="rdmap-chip' + (activeProductFilter === 'all' ? ' active' : '') + '" data-cat="all" aria-pressed="' + (activeProductFilter === 'all') + '">All</button>';
-    cats.forEach(function (c) { var cnt = counts[c.id] || 0; var m = CATEGORY_META[c.id] || {}; var isActive = activeProductFilter === c.id; html += '<button class="rdmap-chip' + (isActive ? ' active' : '') + '" data-cat="' + c.id + '" aria-pressed="' + isActive + '" style="--chip-c:' + (m.color || '#888') + '">' + (m.emoji || '') + ' ' + esc(c.name) + ' <span>' + cnt + '</span></button>'; });
+    cats.forEach(function (c) { var m = CATEGORY_META[c.id] || {}; var isActive = activeProductFilter === c.id; html += '<button class="rdmap-chip' + (isActive ? ' active' : '') + '" data-cat="' + c.id + '" aria-pressed="' + isActive + '" style="--chip-c:' + (m.color || '#888') + '">' + (m.emoji || '') + ' ' + esc(c.name) + '</button>'; });
     el.innerHTML = html;
-    el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.addEventListener('click', function () { el.querySelectorAll('.rdmap-chip').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); }); this.classList.add('active'); this.setAttribute('aria-pressed', 'true'); activeProductFilter = this.dataset.cat; document.getElementById('rdmap-product-filter').value = activeProductFilter; applyFilters(); }); });
+    el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.addEventListener('click', function () { el.querySelectorAll('.rdmap-chip').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); }); this.classList.add('active'); this.setAttribute('aria-pressed', 'true'); activeProductFilter = this.dataset.cat; applyFilters(); }); });
   }
 
   // ── FILTER ──
@@ -151,7 +146,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     activeProductFilter = 'all'; activeStatusFilter = 'all';
     document.getElementById('rdmap-search').value = '';
     document.getElementById('rdmap-status-filter').value = 'all';
-    document.getElementById('rdmap-product-filter').value = 'all';
     applyFilters();
   }
 
@@ -190,7 +184,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // Events
   document.getElementById('rdmap-status-filter').addEventListener('change', function () { activeStatusFilter = this.value; applyFilters(); });
-  document.getElementById('rdmap-product-filter').addEventListener('change', function () { activeProductFilter = this.value; document.querySelectorAll('.rdmap-chip').forEach(function (c) { c.classList.toggle('active', c.dataset.cat === activeProductFilter); }); applyFilters(); });
   document.getElementById('rdmap-search').addEventListener('input', debounce(applyFilters, 250));
 
   // Favourite clicks (delegated)

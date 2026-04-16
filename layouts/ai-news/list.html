@@ -3,13 +3,13 @@
 <div data-pagefind-body style="display:none" aria-hidden="true">
   <h1>AI News — Real-Time AI Industry Updates</h1>
   <p>Track the latest AI news from Microsoft, OpenAI, Google, Anthropic, Meta, DeepSeek, NVIDIA, Apple, Amazon, and more. Updated 4 times daily with curated articles across 20 categories.</p>
-  <p>Features: daily, weekly, and monthly news views. Category filtering by vendor. Full-text search. RSS feed. CSV export. Breaking news detection. 3-tier TLDR summaries explaining why each story matters.</p>
+  <p>Features: daily and monthly news views. Category filtering by vendor. Full-text search. RSS feed. CSV export. Breaking news detection. 3-tier TLDR summaries explaining why each story matters.</p>
   <p>Categories: Microsoft Copilot, Azure AI, GitHub Copilot, Copilot Studio, AI Foundry, OpenAI, Anthropic, Google AI, Meta AI, DeepSeek, NVIDIA, Apple AI, Amazon AI, Mistral, Perplexity, xAI.</p>
 </div>
 <link rel="stylesheet" href="/css/ainews.css?v={{ site.Params.cache_version }}">
 <link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="AI News — A Guide to Cloud & AI" href="/data/ainews/feed.xml">
-<meta name="theme-color" content="#6264A7">
+<meta name="theme-color" content="#ff66ff">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,14 +31,14 @@
 <div class="container">
   {{/* ── Glass Pill Tabs (top-level) ── */}}
   <div class="ainews-top-tabs" role="tablist" aria-label="AI News sections">
-    <button class="ainews-top-tab active" data-tab="main" role="tab" aria-selected="true">📰 News Feed</button>
-    <button class="ainews-top-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+    <button class="ainews-top-tab active" data-tab="main" role="tab" aria-selected="true">News Feed</button>
+    <button class="ainews-top-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
   <div class="ainews-top-panel active" id="panel-main" role="tabpanel">
   <div class="ainews-tabs" role="tablist" aria-label="Time period">
-    <button class="ainews-tab active" data-view="daily" role="tab" aria-selected="true">📅 Today</button>
-    <button class="ainews-tab" data-view="monthly" role="tab" aria-selected="false">📈 This Month</button>
+    <button class="ainews-tab active" data-view="daily" role="tab" aria-selected="true">Today</button>
+    <button class="ainews-tab" data-view="monthly" role="tab" aria-selected="false">This Month</button>
   </div>
 
   <div class="ainews-grid" id="news-grid">
@@ -53,8 +53,8 @@
   </div>
 
   <div class="ainews-footer">
-    <a href="/data/ainews/feed.xml" target="_blank" rel="noopener noreferrer">📡 RSS Feed</a>
-    <button id="ainews-csv" class="ainews-footer-btn">📥 Download CSV</button>
+    <a href="/data/ainews/feed.xml" target="_blank" rel="noopener noreferrer">RSS Feed</a>
+    <button id="ainews-csv" class="ainews-footer-btn">Download CSV</button>
   </div>
   </div>{{/* end panel-main */}}
 
@@ -62,7 +62,7 @@
   <div class="ainews-top-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:#ff66ff;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:#ff66ff;margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem"><summary style="color:#ff66ff;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p></details>
     {{ end }}
@@ -71,6 +71,9 @@
   </div>
 
 </div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "ainews") }}
+
 <script>
 window.__ainewsCategoryConfig = {
   {{ range $key, $val := hugo.Data.ainews_categories }}

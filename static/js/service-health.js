@@ -392,7 +392,7 @@
       </div>
       ${d.impact ? `<div class="shealth-modal-impact">${esc(stripHtml(d.impact))}</div>` : ''}
       ${updates.length > 0 ? `
-        <div class="shealth-updates-title">📋 Communication Timeline (${updates.length} update${updates.length !== 1 ? 's' : ''})</div>
+        <div class="shealth-updates-title">Communication Timeline (${updates.length} update${updates.length !== 1 ? 's' : ''})</div>
         ${updates.map(u => `
           <div class="shealth-update">
             <div class="shealth-update-time">${formatDate(u.timestamp)}</div>
@@ -430,7 +430,7 @@
     const maxCount = Math.max(...months.map(m => m.incident_count), 1);
 
     el.innerHTML = `
-      <div class="shealth-trend-title">📈 Monthly Incident Trend</div>
+      <div class="shealth-trend-title">Monthly Incident Trend</div>
       <div class="shealth-trend-bars">
         ${months.map(m => {
           const pct = Math.max((m.incident_count / maxCount) * 100, 3);
@@ -454,7 +454,7 @@
     const maxInc = top5[0]?.total_incidents || 1;
 
     el.innerHTML = `
-      <div class="shealth-ma-title">🏆 Most Affected Services</div>
+      <div class="shealth-ma-title">Most Affected Services</div>
       ${top5.map((s, i) => `
         <div class="shealth-ma-item">
           <span class="shealth-ma-rank shealth-r${i + 1}">${i + 1}</span>
@@ -481,7 +481,7 @@
     const trend = thisMonth.incident_count > lastMonth.incident_count ? '📈 Up' : thisMonth.incident_count < lastMonth.incident_count ? '📉 Down' : '➡️ Same';
 
     el.innerHTML = `
-      <div class="shealth-sc-title">📋 Quick Stats</div>
+      <div class="shealth-sc-title">Quick Stats</div>
       <div class="shealth-sc-item"><span class="shealth-sc-label">Total incidents tracked</span><span class="shealth-sc-value">${total}</span></div>
       <div class="shealth-sc-item"><span class="shealth-sc-label">Services with issues</span><span class="shealth-sc-value">${services.length}</span></div>
       <div class="shealth-sc-item"><span class="shealth-sc-label">Avg resolution time</span><span class="shealth-sc-value">${avgResStr}</span></div>
