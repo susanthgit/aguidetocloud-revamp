@@ -863,6 +863,24 @@
   .siteana-yt-thumb { width: 80px; height: 45px; }
 }
 
+/* ── TOPIC PILLS ───────────────────── */
+.siteana-topic-pill {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 20px;
+  color: rgba(255,255,255,0.75);
+  margin: 0.25rem 0.15rem;
+  white-space: nowrap;
+}
+
+.siteana-topic-pill small {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.7em;
+  margin-left: 0.2rem;
+}
+
 /* ── BIGGEST MOVERS ────────────────── */
 .siteana-movers {
   display: flex;

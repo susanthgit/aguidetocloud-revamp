@@ -310,6 +310,14 @@
 
   <!-- Tab: YouTube -->
   <div class="siteana-panel" id="panel-youtube" role="tabpanel">
+    <!-- YouTube Brief -->
+    <div class="siteana-brief" id="sa-yt-brief" style="display:none"></div>
+    <!-- Recommendations -->
+    <div class="siteana-card" id="sa-yt-recs-card" style="display:none">
+      <h3 class="siteana-card-title">Content Strategy Recommendations</h3>
+      <div id="sa-yt-recs"></div>
+    </div>
+    <!-- Channel Stats -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
         <h3 class="siteana-card-title">Main Channel</h3>
@@ -322,19 +330,45 @@
         <div id="sa-yt-bites"></div>
       </div>
     </div>
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Recent Uploads</h3>
-      <div id="sa-yt-recent"></div>
-    </div>
+    <!-- Analytics Charts (from YouTube Analytics API) -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Top Performers</h3>
-        <div id="sa-yt-top"></div>
+        <h3 class="siteana-card-title">Views &amp; Watch Time (28d)</h3>
+        <canvas id="sa-yt-analytics-chart" height="220"></canvas>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Upload Frequency</h3>
-        <div id="sa-yt-frequency"></div>
+        <h3 class="siteana-card-title">Traffic Sources</h3>
+        <canvas id="sa-yt-traffic-chart" height="220"></canvas>
       </div>
+    </div>
+    <!-- Performance Leaderboard -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Performance Leaderboard</h3>
+      <p class="siteana-hint">All main channel videos ranked by views/day velocity</p>
+      <div id="sa-yt-leaderboard"></div>
+    </div>
+    <!-- Content Analysis -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Best Publish Day</h3>
+        <canvas id="sa-yt-day-chart" height="180"></canvas>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Hot Topics</h3>
+        <p class="siteana-hint">Most common words in your top-performing titles</p>
+        <div id="sa-yt-topics"></div>
+      </div>
+    </div>
+    <!-- Underperformers -->
+    <div class="siteana-card" id="sa-yt-under-card" style="display:none">
+      <h3 class="siteana-card-title">Needs Attention</h3>
+      <p class="siteana-hint">Videos underperforming relative to your average</p>
+      <div id="sa-yt-underperformers"></div>
+    </div>
+    <!-- Bites Top Performers -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Bites — Top Performers</h3>
+      <div id="sa-yt-bites-top"></div>
     </div>
   </div>
 

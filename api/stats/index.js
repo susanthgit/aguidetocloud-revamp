@@ -286,42 +286,189 @@ module.exports = async function (context, req) {
     return;
   }
 
-  // YouTube data (30-min cache)
+  // YouTube Intelligence (6-hour cache, OAuth2 for analytics)
   if (req.query.youtube === '1') {
-    const ytCacheKey = 'youtube';
-    if (cacheStore[ytCacheKey] && now - cacheStore[ytCacheKey].time < 1800000) {
+    const ytCacheKey = 'youtube_v2';
+    if (cacheStore[ytCacheKey] && now - cacheStore[ytCacheKey].time < 21600000) {
       context.res = { status: 200, headers, body: JSON.stringify(cacheStore[ytCacheKey].data) };
       return;
     }
     const ytApiKey = process.env.YOUTUBE_API_KEY;
+    const ytClientId = process.env.YOUTUBE_OAUTH_CLIENT_ID;
+    const ytClientSecret = process.env.YOUTUBE_OAUTH_CLIENT_SECRET;
+    const ytRefreshToken = process.env.YOUTUBE_OAUTH_REFRESH_TOKEN;
     if (!ytApiKey) { context.res = { status: 200, headers, body: '{"error":"No YouTube API key"}' }; return; }
     try {
       const youtube = google.youtube({ version: 'v3' });
       const MAIN_CH = 'UCYN12Rlv9hgZlWJa1XPfdyg';
       const BITES_CH = 'UCg8OCdG1yeiSPFDyqQDxHnw';
+
+      // Channel stats (1 API unit)
       const chRes = await youtube.channels.list({ id: [MAIN_CH, BITES_CH].join(','), part: ['statistics', 'snippet'], key: ytApiKey });
       const channels = {};
       for (const ch of (chRes.data.items || [])) {
         const s = ch.statistics || {};
         channels[ch.id] = { name: ch.snippet?.title || '', subscribers: parseInt(s.subscriberCount) || 0, totalViews: parseInt(s.viewCount) || 0, videoCount: parseInt(s.videoCount) || 0 };
       }
-      const searchRes = await youtube.search.list({ channelId: MAIN_CH, order: 'date', type: ['video'], maxResults: 10, part: ['id', 'snippet'], key: ytApiKey });
-      const videoIds = (searchRes.data.items || []).map(i => i.id?.videoId).filter(Boolean);
-      let recentVideos = [];
-      if (videoIds.length) {
-        const vidRes = await youtube.videos.list({ id: videoIds.join(','), part: ['statistics', 'snippet'], key: ytApiKey });
-        recentVideos = (vidRes.data.items || []).map(v => ({
-          id: v.id, title: v.snippet?.title || '', thumbnail: v.snippet?.thumbnails?.medium?.url || '',
-          views: parseInt(v.statistics?.viewCount) || 0, likes: parseInt(v.statistics?.likeCount) || 0,
-          published: v.snippet?.publishedAt?.slice(0, 10) || ''
-        }));
+
+      // Main channel: ALL videos by date (2 search + 2 videos.list calls = ~204 units)
+      let allMainIds = [];
+      let nextPage = null;
+      do {
+        const sr = await youtube.search.list({ channelId: MAIN_CH, order: 'date', type: ['video'], maxResults: 50, part: ['id'], key: ytApiKey, pageToken: nextPage || undefined });
+        allMainIds = allMainIds.concat((sr.data.items || []).map(i => i.id?.videoId).filter(Boolean));
+        nextPage = sr.data.nextPageToken;
+      } while (nextPage && allMainIds.length < 100);
+
+      // Bites: top 50 by views (100 + 1 units)
+      const bitesSr = await youtube.search.list({ channelId: BITES_CH, order: 'viewCount', type: ['video'], maxResults: 50, part: ['id'], key: ytApiKey });
+      const bitesIds = (bitesSr.data.items || []).map(i => i.id?.videoId).filter(Boolean);
+
+      // Fetch full stats for all videos
+      async function fetchVideoDetails(ids) {
+        if (!ids.length) return [];
+        const results = [];
+        for (let i = 0; i < ids.length; i += 50) {
+          const batch = ids.slice(i, i + 50);
+          const vr = await youtube.videos.list({ id: batch.join(','), part: ['statistics', 'snippet', 'contentDetails'], key: ytApiKey });
+          results.push(...(vr.data.items || []));
+        }
+        return results;
       }
-      const topVideos = recentVideos.slice().sort((a, b) => b.views - a.views).slice(0, 5);
-      const totalVids = (channels[MAIN_CH]?.videoCount || 0) + (channels[BITES_CH]?.videoCount || 0);
+
+      const mainVideos = await fetchVideoDetails(allMainIds);
+      const bitesVideos = await fetchVideoDetails(bitesIds);
+
+      // Enrich with computed metrics
+      function enrichVideos(videos) {
+        const n = Date.now();
+        return videos.map(v => {
+          const pub = new Date(v.snippet?.publishedAt || 0).getTime();
+          const days = Math.max(1, (n - pub) / 86400000);
+          const views = parseInt(v.statistics?.viewCount) || 0;
+          const likes = parseInt(v.statistics?.likeCount) || 0;
+          const comments = parseInt(v.statistics?.commentCount) || 0;
+          return {
+            id: v.id, title: v.snippet?.title || '', published: (v.snippet?.publishedAt || '').slice(0, 10),
+            publishDay: new Date(v.snippet?.publishedAt || 0).getUTCDay(),
+            thumbnail: v.snippet?.thumbnails?.medium?.url || '',
+            views, likes, comments,
+            viewsPerDay: Math.round(views / days * 10) / 10,
+            engagement: views > 0 ? Math.round((likes + comments) / views * 10000) / 100 : 0,
+            daysSince: Math.round(days)
+          };
+        }).sort((a, b) => b.views - a.views);
+      }
+
+      const mainEnriched = enrichVideos(mainVideos);
+      const bitesEnriched = enrichVideos(bitesVideos);
+
+      // Analytics: best publish day, word patterns, underperformers
+      function analyzeVideos(vids) {
+        if (!vids.length) return {};
+        const dayDist = [0,0,0,0,0,0,0];
+        const wordFreq = {};
+        vids.forEach(v => {
+          dayDist[v.publishDay]++;
+          v.title.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/).forEach(w => {
+            if (w.length > 3 && !['guide','2024','2025','2026','from','with','your','what','this','that','will','have','about'].includes(w))
+              wordFreq[w] = (wordFreq[w] || 0) + 1;
+          });
+        });
+        const avgViews = Math.round(vids.reduce((s, v) => s + v.views, 0) / vids.length);
+        const avgEng = Math.round(vids.reduce((s, v) => s + v.engagement, 0) / vids.length * 100) / 100;
+        const topByVelocity = vids.slice().sort((a, b) => b.viewsPerDay - a.viewsPerDay).slice(0, 10);
+        const underperformers = vids.filter(v => v.daysSince > 30 && v.viewsPerDay < (avgViews / vids[0].daysSince) * 0.3).slice(0, 5);
+        const topWords = Object.entries(wordFreq).sort((a, b) => b[1] - a[1]).slice(0, 15).map(e => ({ word: e[0], count: e[1] }));
+        const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const bestDay = dayDist.indexOf(Math.max(...dayDist));
+        return { dayDist, bestDay: dayNames[bestDay], avgViews, avgEng, topByVelocity, underperformers, topWords };
+      }
+
+      const mainAnalysis = analyzeVideos(mainEnriched);
+      const bitesAnalysis = analyzeVideos(bitesEnriched);
+
+      // YouTube Analytics API (OAuth2) — watch time, CTR, impressions (last 28 days)
+      let ytAnalytics = null;
+      if (ytClientId && ytClientSecret && ytRefreshToken) {
+        try {
+          const oauth2Client = new google.auth.OAuth2(ytClientId, ytClientSecret);
+          oauth2Client.setCredentials({ refresh_token: ytRefreshToken });
+          const youtubeAnalytics = google.youtubeAnalytics({ version: 'v2', auth: oauth2Client });
+          const endDate = new Date().toISOString().split('T')[0];
+          const startDate = new Date(Date.now() - 28 * 86400000).toISOString().split('T')[0];
+          // Channel-level analytics (last 28 days)
+          const aRes = await youtubeAnalytics.reports.query({
+            ids: 'channel==MINE',
+            startDate, endDate,
+            metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained,subscribersLost,impressions,impressionClickThroughRate',
+            dimensions: 'day',
+            sort: 'day'
+          });
+          // Per-video analytics (top 20 by views, last 28 days)
+          const vRes = await youtubeAnalytics.reports.query({
+            ids: 'channel==MINE',
+            startDate, endDate,
+            metrics: 'views,estimatedMinutesWatched,averageViewDuration,impressions,impressionClickThroughRate,likes,subscribersGained',
+            dimensions: 'video',
+            sort: '-views',
+            maxResults: 20
+          });
+          // Traffic sources
+          const tRes = await youtubeAnalytics.reports.query({
+            ids: 'channel==MINE',
+            startDate, endDate,
+            metrics: 'views,estimatedMinutesWatched',
+            dimensions: 'insightTrafficSourceType',
+            sort: '-views'
+          });
+          ytAnalytics = {
+            daily: (aRes.data.rows || []).map(r => ({
+              date: r[0], views: r[1], watchMinutes: Math.round(r[2]), avgDuration: Math.round(r[3]),
+              likes: r[4], subsGained: r[5], subsLost: r[6], impressions: r[7], ctr: Math.round(r[8] * 10000) / 100
+            })),
+            topVideos: (vRes.data.rows || []).map(r => ({
+              videoId: r[0], views: r[1], watchMinutes: Math.round(r[2]), avgDuration: Math.round(r[3]),
+              impressions: r[4], ctr: Math.round(r[5] * 10000) / 100, likes: r[6], subsGained: r[7]
+            })),
+            trafficSources: (tRes.data.rows || []).map(r => ({
+              source: r[0], views: r[1], watchMinutes: Math.round(r[2])
+            }))
+          };
+        } catch(e) {
+          ytAnalytics = { error: e.message };
+        }
+      }
+
+      // Recommendations engine
+      const recs = [];
+      if (mainAnalysis.bestDay) recs.push({ icon: '\uD83D\uDCC5', text: 'Your best publish day is ' + mainAnalysis.bestDay + ' — schedule uploads accordingly' });
+      if (mainAnalysis.topWords && mainAnalysis.topWords.length) {
+        const hot = mainAnalysis.topWords.slice(0, 3).map(w => w.word).join(', ');
+        recs.push({ icon: '\uD83D\uDD25', text: 'Top-performing topics: ' + hot + ' — create more content around these' });
+      }
+      if (mainAnalysis.underperformers && mainAnalysis.underperformers.length) {
+        recs.push({ icon: '\uD83D\uDCA1', text: mainAnalysis.underperformers.length + ' video(s) underperforming — consider updating titles/thumbnails' });
+      }
+      if (ytAnalytics && !ytAnalytics.error && ytAnalytics.daily && ytAnalytics.daily.length) {
+        const avgCtr = ytAnalytics.daily.reduce((s, d) => s + d.ctr, 0) / ytAnalytics.daily.length;
+        if (avgCtr < 5) recs.push({ icon: '\uD83C\uDFA8', text: 'Avg CTR is ' + avgCtr.toFixed(1) + '% — thumbnails and titles need improvement (aim for 5-10%)' });
+        const totalSubsGained = ytAnalytics.daily.reduce((s, d) => s + d.subsGained, 0);
+        const totalSubsLost = ytAnalytics.daily.reduce((s, d) => s + d.subsLost, 0);
+        recs.push({ icon: '\uD83D\uDC65', text: 'Net subscribers (28d): +' + (totalSubsGained - totalSubsLost) + ' (' + totalSubsGained + ' gained, ' + totalSubsLost + ' lost)' });
+      }
+
       const ytResponse = {
         main: channels[MAIN_CH] || null, bites: channels[BITES_CH] || null,
-        recentVideos, topVideos,
-        uploadFrequency: { mainPerMonth: Math.round((channels[MAIN_CH]?.videoCount || 0) / 12), bitesPerMonth: Math.round((channels[BITES_CH]?.videoCount || 0) / 12), totalVideos: totalVids }
+        mainVideos: mainEnriched, bitesVideos: bitesEnriched.slice(0, 20),
+        mainAnalysis, bitesAnalysis,
+        analytics: ytAnalytics,
+        recommendations: recs,
+        uploadFrequency: {
+          mainPerMonth: Math.round((channels[MAIN_CH]?.videoCount || 0) / Math.max(1, Math.round((Date.now() - new Date('2021-12-01').getTime()) / 2592000000))),
+          bitesPerMonth: Math.round((channels[BITES_CH]?.videoCount || 0) / Math.max(1, Math.round((Date.now() - new Date('2021-12-01').getTime()) / 2592000000))),
+          totalVideos: (channels[MAIN_CH]?.videoCount || 0) + (channels[BITES_CH]?.videoCount || 0)
+        }
       };
       cacheStore[ytCacheKey] = { data: ytResponse, time: now };
       context.res = { status: 200, headers, body: JSON.stringify(ytResponse) };

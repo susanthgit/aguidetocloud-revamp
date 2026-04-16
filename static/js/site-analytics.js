@@ -1331,63 +1331,210 @@
     }).join('');
   }
 
-  // ── YOUTUBE TAB ──
+  // ── YOUTUBE INTELLIGENCE TAB ──
+  var _ytAnalyticsChart = null;
+  var _ytTrafficChart = null;
+  var _ytDayChart = null;
   var ytDataCache = null;
+
   function fetchYouTubeData() {
     if (ytDataCache) { renderYouTubeTab(ytDataCache); return; }
+    var el = document.getElementById('panel-youtube');
+    if (el && !el.querySelector('.siteana-empty')) {
+      el.insertAdjacentHTML('afterbegin', '<div class="siteana-empty" id="sa-yt-loading">Loading YouTube data...</div>');
+    }
     fetch(API + '?youtube=1').then(function(r) { return r.json(); }).then(function(yt) {
-      if (yt && (yt.main || yt.bites)) {
-        ytDataCache = yt;
-        renderYouTubeTab(yt);
+      var ldg = document.getElementById('sa-yt-loading'); if (ldg) ldg.remove();
+      if (yt && !yt.error) { ytDataCache = yt; renderYouTubeTab(yt); }
+      else {
+        var p = document.getElementById('panel-youtube');
+        if (p) p.innerHTML = '<div class="siteana-empty">YouTube: ' + esc(yt.error || 'No data') + '</div>';
       }
-    }).catch(function() {});
+    }).catch(function(e) {
+      var ldg = document.getElementById('sa-yt-loading'); if (ldg) ldg.remove();
+    });
   }
 
   function renderYouTubeTab(yt) {
+    // Brief
+    renderYouTubeBrief(yt);
+    // Recommendations
+    var recsCard = document.getElementById('sa-yt-recs-card');
+    var recsEl = document.getElementById('sa-yt-recs');
+    if (recsCard && recsEl && yt.recommendations && yt.recommendations.length) {
+      recsCard.style.display = '';
+      recsEl.innerHTML = yt.recommendations.map(function(r) {
+        return '<div class="siteana-action siteana-action-medium"><span class="siteana-action-icon">' + r.icon + '</span><div class="siteana-action-body"><div class="siteana-action-text">' + esc(r.text) + '</div></div></div>';
+      }).join('');
+    }
     // Channel stats
     if (yt.main) renderChannelCard('sa-yt-main', yt.main);
     if (yt.bites) renderChannelCard('sa-yt-bites', yt.bites);
-    // Recent uploads
-    var recentEl = document.getElementById('sa-yt-recent');
-    if (recentEl && yt.recentVideos && yt.recentVideos.length) {
-      recentEl.innerHTML = yt.recentVideos.map(function(v) {
-        return '<div class="siteana-yt-video">'
-          + '<img class="siteana-yt-thumb" src="' + esc(v.thumbnail) + '" alt="" loading="lazy">'
-          + '<div class="siteana-yt-info">'
-          + '<a class="siteana-yt-title" href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener">' + esc(v.title) + '</a>'
-          + '<span class="siteana-yt-meta">' + numFmt(v.views || 0) + ' views \u00B7 ' + esc(v.published || '') + '</span>'
-          + '</div></div>';
-      }).join('');
+    // Analytics charts (from OAuth2 YouTube Analytics)
+    if (yt.analytics && !yt.analytics.error && yt.analytics.daily) {
+      renderYTAnalyticsChart(yt.analytics.daily);
+      if (yt.analytics.trafficSources) renderYTTrafficChart(yt.analytics.trafficSources);
     }
-    // Top performers
-    var topEl = document.getElementById('sa-yt-top');
-    if (topEl && yt.topVideos && yt.topVideos.length) {
-      topEl.innerHTML = yt.topVideos.map(function(v, i) {
-        return '<div class="siteana-lb-item">'
-          + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-          + '<span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title) + '</a></span>'
-          + '<span class="siteana-lb-total">' + roundDisplay(v.views || 0) + '</span></div>';
-      }).join('');
+    // Leaderboard (main channel, sorted by velocity)
+    renderYTLeaderboard(yt.mainVideos, yt.mainAnalysis);
+    // Publish day chart
+    if (yt.mainAnalysis && yt.mainAnalysis.dayDist) renderYTDayChart(yt.mainAnalysis.dayDist);
+    // Hot topics
+    renderYTTopics(yt.mainAnalysis);
+    // Underperformers
+    renderYTUnderperformers(yt.mainAnalysis);
+    // Bites top
+    renderYTBitesTop(yt.bitesVideos);
+  }
+
+  function renderYouTubeBrief(yt) {
+    var el = document.getElementById('sa-yt-brief');
+    if (!el) return;
+    var parts = [];
+    if (yt.main) parts.push('Main: <strong>' + roundDisplay(yt.main.subscribers) + ' subs</strong>, ' + roundDisplay(yt.main.totalViews) + ' lifetime views, ' + yt.main.videoCount + ' videos.');
+    if (yt.bites) parts.push('Bites: <strong>' + roundDisplay(yt.bites.subscribers) + ' subs</strong>, ' + roundDisplay(yt.bites.totalViews) + ' lifetime views.');
+    if (yt.analytics && !yt.analytics.error && yt.analytics.daily && yt.analytics.daily.length) {
+      var d = yt.analytics.daily;
+      var totalViews28 = d.reduce(function(s, r) { return s + r.views; }, 0);
+      var totalWatch = d.reduce(function(s, r) { return s + r.watchMinutes; }, 0);
+      var avgCtr = d.reduce(function(s, r) { return s + r.ctr; }, 0) / d.length;
+      parts.push('Last 28 days: <strong>' + numFmt(totalViews28) + ' views</strong>, ' + numFmt(totalWatch) + ' min watched, ' + avgCtr.toFixed(1) + '% avg CTR.');
     }
-    // Frequency
-    var freqEl = document.getElementById('sa-yt-frequency');
-    if (freqEl && yt.uploadFrequency) {
-      freqEl.innerHTML = '<div class="siteana-yt-freq">'
-        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (yt.uploadFrequency.mainPerMonth || 0) + '</span><span class="siteana-stat-label">Main/month</span></div>'
-        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (yt.uploadFrequency.bitesPerMonth || 0) + '</span><span class="siteana-stat-label">Bites/month</span></div>'
-        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + numFmt(yt.uploadFrequency.totalVideos || 0) + '</span><span class="siteana-stat-label">Total videos</span></div>'
-        + '</div>';
+    if (yt.mainAnalysis && yt.mainAnalysis.topByVelocity && yt.mainAnalysis.topByVelocity.length) {
+      var top = yt.mainAnalysis.topByVelocity[0];
+      parts.push('Fastest growing: "' + top.title.slice(0, 50) + '..." at ' + top.viewsPerDay + ' views/day.');
     }
+    if (!parts.length) { el.style.display = 'none'; return; }
+    el.style.display = '';
+    el.innerHTML = '<div class="siteana-brief-inner" style="border-color:rgba(239,68,68,0.25);background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(239,68,68,0.02))">\uD83C\uDFAC ' + parts.join(' ') + '</div>';
   }
 
   function renderChannelCard(containerId, ch) {
     var el = document.getElementById(containerId);
     if (!el || !ch) return;
     el.innerHTML = '<div class="siteana-yt-stats">'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.subscribers || 0) + '</span><span class="siteana-stat-label">Subscribers</span></div>'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.totalViews || 0) + '</span><span class="siteana-stat-label">Total Views</span></div>'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (ch.videoCount || 0) + '</span><span class="siteana-stat-label">Videos</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.subscribers) + '</span><span class="siteana-stat-label">Subscribers</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.totalViews) + '</span><span class="siteana-stat-label">Total Views</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + ch.videoCount + '</span><span class="siteana-stat-label">Videos</span></div>'
       + '</div>';
+  }
+
+  function renderYTAnalyticsChart(daily) {
+    var ctx = document.getElementById('sa-yt-analytics-chart');
+    if (!ctx || !daily.length) return;
+    if (_ytAnalyticsChart) { _ytAnalyticsChart.destroy(); _ytAnalyticsChart = null; }
+    _ytAnalyticsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: daily.map(function(d) { return d.date.slice(5); }),
+        datasets: [
+          { label: 'Views', data: daily.map(function(d) { return d.views; }), borderColor: '#EF4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true, tension: 0.4, pointRadius: 2, yAxisID: 'y' },
+          { label: 'Watch (min)', data: daily.map(function(d) { return d.watchMinutes; }), borderColor: '#FBBF24', backgroundColor: 'rgba(251,191,36,0.1)', fill: false, tension: 0.4, pointRadius: 2, yAxisID: 'y1' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: 'rgba(255,255,255,0.6)' } } },
+        scales: {
+          x: { ticks: { color: 'rgba(255,255,255,0.4)', maxTicksLimit: 8 }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { beginAtZero: true, position: 'left', ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' }, title: { display: true, text: 'Views', color: 'rgba(255,255,255,0.4)' } },
+          y1: { beginAtZero: true, position: 'right', ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { display: false }, title: { display: true, text: 'Watch min', color: 'rgba(255,255,255,0.4)' } }
+        }
+      }
+    });
+  }
+
+  function renderYTTrafficChart(sources) {
+    var ctx = document.getElementById('sa-yt-traffic-chart');
+    if (!ctx || !sources.length) return;
+    if (_ytTrafficChart) { _ytTrafficChart.destroy(); _ytTrafficChart = null; }
+    var colors = ['#EF4444','#FBBF24','#10B981','#3B82F6','#8B5CF6','#EC4899','#FB923C','#14B8A6'];
+    _ytTrafficChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: sources.map(function(s) { return s.source.replace('_', ' '); }),
+        datasets: [{ data: sources.map(function(s) { return s.views; }), backgroundColor: colors.slice(0, sources.length), borderWidth: 0 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'right', labels: { color: 'rgba(255,255,255,0.6)', font: { size: 10 }, padding: 6 } } }
+      }
+    });
+  }
+
+  function renderYTLeaderboard(videos, analysis) {
+    var el = document.getElementById('sa-yt-leaderboard');
+    if (!el || !videos || !videos.length) return;
+    var sorted = videos.slice().sort(function(a, b) { return b.viewsPerDay - a.viewsPerDay; });
+    var maxVpd = sorted[0].viewsPerDay || 1;
+    el.innerHTML = sorted.slice(0, 20).map(function(v, i) {
+      var pct = Math.round((v.viewsPerDay / maxVpd) * 100);
+      var engBadge = v.engagement > 5 ? 'siteana-pos-top3' : v.engagement > 3 ? 'siteana-pos-top10' : v.engagement > 1 ? 'siteana-pos-top20' : 'siteana-pos-deep';
+      return '<div class="siteana-lb-item" style="cursor:default">'
+        + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<div class="siteana-lb-info"><a class="siteana-lb-name" href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:none">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a>'
+        + '<span class="siteana-lb-count">' + numFmt(v.views) + ' views \u00B7 ' + v.viewsPerDay + '/day \u00B7 ' + v.daysSince + 'd old</span></div>'
+        + '<span class="siteana-pos-badge ' + engBadge + '">' + v.engagement + '%</span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#EF4444"></div></div>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderYTDayChart(dayDist) {
+    var ctx = document.getElementById('sa-yt-day-chart');
+    if (!ctx) return;
+    if (_ytDayChart) { _ytDayChart.destroy(); _ytDayChart = null; }
+    var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var maxDay = Math.max.apply(null, dayDist);
+    _ytDayChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: days,
+        datasets: [{ data: dayDist, backgroundColor: dayDist.map(function(v) { return v === maxDay ? '#EF4444' : 'rgba(239,68,68,0.3)'; }), borderWidth: 0, borderRadius: 6 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { color: 'rgba(255,255,255,0.6)' }, grid: { display: false } },
+          y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)', stepSize: 1 }, grid: { color: 'rgba(255,255,255,0.05)' } }
+        }
+      }
+    });
+  }
+
+  function renderYTTopics(analysis) {
+    var el = document.getElementById('sa-yt-topics');
+    if (!el || !analysis || !analysis.topWords || !analysis.topWords.length) return;
+    el.innerHTML = analysis.topWords.map(function(w) {
+      var size = Math.max(0.75, Math.min(1.4, 0.75 + (w.count / analysis.topWords[0].count) * 0.65));
+      return '<span class="siteana-topic-pill" style="font-size:' + size + 'rem">' + esc(w.word) + ' <small>' + w.count + '</small></span>';
+    }).join(' ');
+  }
+
+  function renderYTUnderperformers(analysis) {
+    var card = document.getElementById('sa-yt-under-card');
+    var el = document.getElementById('sa-yt-underperformers');
+    if (!card || !el || !analysis || !analysis.underperformers || !analysis.underperformers.length) { if (card) card.style.display = 'none'; return; }
+    card.style.display = '';
+    el.innerHTML = analysis.underperformers.map(function(v) {
+      return '<div class="siteana-opp-item">'
+        + '<div class="siteana-opp-query"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:none">' + esc(v.title) + '</a></div>'
+        + '<div class="siteana-opp-stats">' + numFmt(v.views) + ' views \u00B7 ' + v.viewsPerDay + ' views/day \u00B7 ' + v.daysSince + ' days old</div>'
+        + '<div class="siteana-opp-uplift">Consider: update title/thumbnail, create a follow-up, or reshare</div>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderYTBitesTop(videos) {
+    var el = document.getElementById('sa-yt-bites-top');
+    if (!el || !videos || !videos.length) return;
+    el.innerHTML = videos.slice(0, 10).map(function(v, i) {
+      return '<div class="siteana-lb-item" style="cursor:default">'
+        + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a></span>'
+        + '<span class="siteana-lb-total">' + roundDisplay(v.views) + '</span></div>';
+    }).join('');
   }
 
   // Wire YouTube tab lazy-load
