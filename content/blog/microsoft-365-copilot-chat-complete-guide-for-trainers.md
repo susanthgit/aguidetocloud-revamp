@@ -121,7 +121,7 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 
 ```mermaid
 flowchart TD
-    A["🆓 Copilot Chat\n(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat"]
+    A["🆓 Copilot Chat<br/>(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat"]
     A --> C["📄 File Upload"]
     A --> D["🖼️ Create"]
     A --> E["📝 Pages"]
@@ -138,7 +138,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["💳 M365 Copilot\n($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
+    A["💳 M365 Copilot<br/>($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
     B --> C["📊 Work Data via Graph"]
     B --> D["📱 Deep App Integration"]
     B --> E["🔬 Researcher & Analyst"]
@@ -194,10 +194,10 @@ Think of it like your phone's encryption — it protects everything automaticall
 
 ```mermaid
 flowchart TD
-    A["👤 User sends\na prompt"] --> B["🔒 Enterprise Data\nProtection (EDP)"]
-    B --> C["🧠 AI processes\nthe request"]
-    C --> D["🔒 Response protected\nby EDP"]
-    D --> E["👤 User receives\nsecure response"]
+    A["👤 User sends<br/>a prompt"] --> B["🔒 Enterprise Data<br/>Protection (EDP)"]
+    B --> C["🧠 AI processes<br/>the request"]
+    C --> D["🔒 Response protected<br/>by EDP"]
+    D --> E["👤 User receives<br/>secure response"]
     style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
     style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
     style C fill:#2a2a3a,stroke:#A78BFA,color:#ffffff
@@ -249,11 +249,11 @@ Microsoft is pulling back free Copilot Chat from some Office apps on April 15. W
 
 ```mermaid
 flowchart TD
-    A["🏢 Your Org Size"] --> B{"≥ 2,000 paid\nM365 seats?"}
-    B -->|"Yes"| C["🔴 Copilot removed from\nWord, Excel, PPT, OneNote\nfor unlicensed users"]
-    B -->|"No"| D["🟡 Copilot stays but\nunder standard access\n(possible throttling)"]
-    C --> E["✅ Keeps: Web chat,\nOutlook, Teams, WXP agents"]
-    D --> F["✅ Keeps: Everything,\nbut may see upgrade prompts"]
+    A["🏢 Your Org Size"] --> B{"≥ 2,000 paid<br/>M365 seats?"}
+    B -->|"Yes"| C["🔴 Copilot removed from<br/>Word, Excel, PPT, OneNote<br/>for unlicensed users"]
+    B -->|"No"| D["🟡 Copilot stays but<br/>under standard access<br/>(possible throttling)"]
+    C --> E["✅ Keeps: Web chat,<br/>Outlook, Teams, WXP agents"]
+    D --> F["✅ Keeps: Everything,<br/>but may see upgrade prompts"]
     style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
     style B fill:#3a3a1a,stroke:#ffaa00,color:#ffffff
     style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
@@ -297,7 +297,7 @@ Now let's get into the features your users can use **today**. Even as a free too
 
 ```mermaid
 flowchart TD
-    A["🆓 Copilot Chat\nFeatures"] --> B["💬 Chat"]
+    A["🆓 Copilot Chat<br/>Features"] --> B["💬 Chat"]
     A --> C["📄 File Upload"]
     A --> D["💡 Suggested Prompts"]
     A --> E["⭐ Save Prompts"]
@@ -615,10 +615,10 @@ The ability to **create** agents depends on your organisation's decisions:
 
 ```mermaid
 flowchart TD
-    A["🤖 Agent Creation\nfor Free Users"] --> B{"What grounding\ndoes the agent need?"}
-    B -->|"Web only"| C["✅ Possible\n(if admin allows)"]
-    B -->|"Documents /\nSharePoint"| D["💰 Requires\nbilling plan"]
-    D --> E["Pay-as-you-go\nor\nCopilot credits"]
+    A["🤖 Agent Creation<br/>for Free Users"] --> B{"What grounding<br/>does the agent need?"}
+    B -->|"Web only"| C["✅ Possible<br/>(if admin allows)"]
+    B -->|"Documents /<br/>SharePoint"| D["💰 Requires<br/>billing plan"]
+    D --> E["Pay-as-you-go<br/>or<br/>Copilot credits"]
     style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
     style B fill:#3a3a1a,stroke:#ffaa00,color:#ffffff
     style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff

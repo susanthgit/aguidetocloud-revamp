@@ -62,8 +62,8 @@ Think of it like a free trial on your phone. Microsoft gave everyone free access
 
 ```mermaid
 flowchart TD
-    A["Sept 2025\nCopilot Chat made\nFREE in Office apps"] -->|"6 months later"| B["March 17, 2026\nMC1253858 & MC1253863\nannounce rollback"]
-    B -->|"30 days notice"| C["April 15, 2026\nFree Copilot removed\nor degraded"]
+    A["Sept 2025<br/>Copilot Chat made<br/>FREE in Office apps"] -->|"6 months later"| B["March 17, 2026<br/>MC1253858 & MC1253863<br/>announce rollback"]
+    B -->|"30 days notice"| C["April 15, 2026<br/>Free Copilot removed<br/>or degraded"]
     style A fill:#1a4a2a,stroke:#66ff99,color:#ffffff
     style B fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
     style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
@@ -78,8 +78,8 @@ This is the question I get asked most. The answer depends on one thing: **how ma
 ```mermaid
 flowchart TD
     A["Your Org"] --> B{"Tenant size?"}
-    B -->|"> 2,000 users"| C["MC1253858\nCopilot REMOVED\nfrom Word, Excel,\nPPT, OneNote"]
-    B -->|"< 2,000 users"| D["MC1253863\nStandard access\nin Word, Excel, PPT\nOneNote removed"]
+    B -->|"> 2,000 users"| C["MC1253858<br/>Copilot REMOVED<br/>from Word, Excel,<br/>PPT, OneNote"]
+    B -->|"< 2,000 users"| D["MC1253863<br/>Standard access<br/>in Word, Excel, PPT<br/>OneNote removed"]
     style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
     style D fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
 ```
@@ -148,8 +148,8 @@ Think of it this way — it's like losing the in-store assistant at a shop, but 
 
 ```mermaid
 flowchart TD
-    A["Copilot Side Panel\nINSIDE Word/Excel/PPT"] ---|"April 15"| B["Removed or\nDegraded"]
-    C["WXP Agents\nIN the Copilot App"] ---|"April 15"| D["Still available\nfor all users"]
+    A["Copilot Side Panel<br/>INSIDE Word/Excel/PPT"] ---|"April 15"| B["Removed or<br/>Degraded"]
+    C["WXP Agents<br/>IN the Copilot App"] ---|"April 15"| D["Still available<br/>for all users"]
     style B fill:#5c1a1a,stroke:#ff6666,color:#ffffff
     style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
 ```
@@ -181,8 +181,8 @@ If your admin has disabled Anthropic as a subprocessor, the WXP agents are **com
 
 ```mermaid
 flowchart TD
-    A{"Anthropic\nenabled?"} -->|"Yes"| B["WXP Agents visible\n& functional"]
-    A -->|"No"| C["WXP Agents\ncompletely HIDDEN"]
+    A{"Anthropic<br/>enabled?"} -->|"Yes"| B["WXP Agents visible<br/>& functional"]
+    A -->|"No"| C["WXP Agents<br/>completely HIDDEN"]
     style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
     style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
 ```

@@ -52,10 +52,10 @@ Four major products, one SKU:
 
 ```mermaid
 flowchart TD
-    A["🏢 Microsoft 365 E7\n$99/user/month"] --> B["📦 Microsoft 365 E5\nProductivity + Security"]
-    A --> C["🤖 Microsoft 365 Copilot\nAI Assistant"]
-    A --> D["🔐 Microsoft Entra Suite\nIdentity + Zero Trust"]
-    A --> E["🧠 Agent 365\nAI Governance Platform"]
+    A["🏢 Microsoft 365 E7<br/>$99/user/month"] --> B["📦 Microsoft 365 E5<br/>Productivity + Security"]
+    A --> C["🤖 Microsoft 365 Copilot<br/>AI Assistant"]
+    A --> D["🔐 Microsoft Entra Suite<br/>Identity + Zero Trust"]
+    A --> E["🧠 Agent 365<br/>AI Governance Platform"]
     style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
     style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff
@@ -132,11 +132,8 @@ Here's how the three enterprise tiers stack up:
 
 ```mermaid
 flowchart TD
-    A["E3\n$39/mo"] -->|"+$21"| B["E5\n$60/mo"]
-    B -->|"+$39"| C["E7\n$99/mo"]
-    A2["Secure\nProductivity"] ---|"is"| A
-    B2["Advanced\nSecurity +\nAnalytics"] ---|"is"| B
-    C2["AI-Powered\nEnterprise +\nAgent Governance"] ---|"is"| C
+    A["E3 — $39/mo<br/>Secure Productivity"] -->|"+$21"| B["E5 — $60/mo<br/>Advanced Security + Analytics"]
+    B -->|"+$39"| C["E7 — $99/mo<br/>AI-Powered Enterprise +<br/>Agent Governance"]
     style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style B fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style C fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
@@ -234,8 +231,8 @@ Microsoft is offering introductory CSP discounts:
 
 ```mermaid
 flowchart TD
-    A["📢 March 9, 2026\nPublic announcement"] -->|"23 days"| B["💰 April 1, 2026\nEA/EAS price list\navailable"]
-    B -->|"30 days"| C["🚀 May 1, 2026\nGA — E7 + Agent 365\ntransactable"]
+    A["📢 March 9, 2026<br/>Public announcement"] -->|"23 days"| B["💰 April 1, 2026<br/>EA/EAS price list<br/>available"]
+    B -->|"30 days"| C["🚀 May 1, 2026<br/>GA — E7 + Agent 365<br/>transactable"]
     style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style B fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
     style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff
@@ -263,10 +260,10 @@ Here's my honest take — not every organisation needs E7 right now.
 
 ```mermaid
 flowchart TD
-    A{"Already on E5\n+ Copilot?"} -->|"Yes"| B{"Deploying AI\nagents at scale?"}
-    A -->|"No"| C["Probably not\nready for E7 yet"]
-    B -->|"Yes"| D["✅ E7 makes\nfinancial + strategic\nsense"]
-    B -->|"Not yet"| E["⏳ Wait — revisit\nwhen agent adoption\ngrows"]
+    A{"Already on E5<br/>+ Copilot?"} -->|"Yes"| B{"Deploying AI<br/>agents at scale?"}
+    A -->|"No"| C["Probably not<br/>ready for E7 yet"]
+    B -->|"Yes"| D["✅ E7 makes<br/>financial + strategic<br/>sense"]
+    B -->|"Not yet"| E["⏳ Wait — revisit<br/>when agent adoption<br/>grows"]
     style C fill:#1e3a5f,stroke:#66ffff,color:#ffffff
     style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
     style E fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
