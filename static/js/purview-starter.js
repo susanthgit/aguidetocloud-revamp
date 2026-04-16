@@ -15,6 +15,7 @@
 
   /* ── Utility ── */
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function psEsc(s) { return String(s || '').replace(/'/g, "''"); }
   function $(id) { return document.getElementById(id); }
   function toast(msg) {
     const t = document.querySelector('.pvs-toast');
@@ -129,13 +130,15 @@
           </div>
         </div>`;
     }).join('');
+  }
 
-    // Card click to expand
+  function initKitGrid() {
+    const grid = $('pvs-kits-grid');
+    if (!grid) return;
     grid.addEventListener('click', e => {
       const card = e.target.closest('.pvs-kit-card');
       if (!card) return;
 
-      // If clicking the select button
       const selectBtn = e.target.closest('.pvs-select-kit');
       if (selectBtn) {
         e.stopPropagation();
@@ -145,20 +148,13 @@
         renderKits();
         renderDeploy();
         updateDeployBadge();
-        if (S.selectedKit === kitId) {
-          switchTab('deploy');
-          toast(getKit(kitId).name + ' kit selected — here\'s your deploy plan');
-        }
+        switchTab('deploy');
+        toast(getKit(kitId).name + ' kit selected — here\'s your deploy plan');
         return;
       }
 
-      // Toggle expand
       const kitId = card.dataset.kit;
-      if (S.expandedKit === kitId) {
-        S.expandedKit = null;
-      } else {
-        S.expandedKit = kitId;
-      }
+      S.expandedKit = S.expandedKit === kitId ? null : kitId;
       renderKits();
     });
   }
@@ -293,11 +289,11 @@
 
     // Step 2: Publish labels
     ps += '\n# ── Step 2: Publish Labels ──\n\n';
-    const labelNames = (kit.labels || []).filter(l => !l.parent_id).map(l => '"' + l.name + '"').join(',');
-    ps += 'New-LabelPolicy -Name "' + kit.name + ' Label Policy" `\n';
+    const labelNames = (kit.labels || []).filter(l => !l.parent_id).map(l => "'" + psEsc(l.name) + "'").join(',');
+    ps += "New-LabelPolicy -Name '" + psEsc(kit.name) + " Label Policy' `\n";
     ps += '  -Labels @(' + labelNames + ') `\n';
-    ps += '  -ExchangeLocation "All" `\n';
-    ps += '  -Comment "Published by Purview Starter Kit"\n\n';
+    ps += "  -ExchangeLocation 'All' `\n";
+    ps += "  -Comment 'Published by Purview Starter Kit'\n\n";
     ps += '# NOTE: Labels take up to 24 hours to appear in Office apps\n\n';
 
     // Step 3: Create DLP policies (test mode)
@@ -322,38 +318,38 @@
   function generateLabelPS(label, kit) {
     let ps = '# Label: ' + label.name + '\n';
     ps += 'New-Label `\n';
-    ps += '  -DisplayName "' + label.name + '" `\n';
-    ps += '  -Name "' + label.id + '" `\n';
-    ps += '  -Tooltip "' + (label.tooltip || '') + '" `\n';
+    ps += "  -DisplayName '" + psEsc(label.name) + "' `\n";
+    ps += "  -Name '" + psEsc(label.id) + "' `\n";
+    ps += "  -Tooltip '" + psEsc(label.tooltip || '') + "' `\n";
 
     if (label.parent_id) {
-      ps += '  -ParentId (Get-Label -Identity "' + label.parent_id + '").Guid `\n';
+      ps += "  -ParentId (Get-Label -Identity '" + psEsc(label.parent_id) + "').Guid `\n";
     }
 
     if (label.mark && label.mark_header) {
       ps += '  -ApplyContentMarkingHeaderEnabled $true `\n';
-      ps += '  -ApplyContentMarkingHeaderText "' + label.mark_header + '" `\n';
+      ps += "  -ApplyContentMarkingHeaderText '" + psEsc(label.mark_header) + "' `\n";
     }
     if (label.mark && label.mark_footer) {
       ps += '  -ApplyContentMarkingFooterEnabled $true `\n';
-      ps += '  -ApplyContentMarkingFooterText "' + label.mark_footer + '" `\n';
+      ps += "  -ApplyContentMarkingFooterText '" + psEsc(label.mark_footer) + "' `\n";
     }
     if (label.mark && label.mark_watermark) {
       ps += '  -ApplyWaterMarkingEnabled $true `\n';
-      ps += '  -ApplyWaterMarkingText "' + label.mark_watermark + '" `\n';
+      ps += "  -ApplyWaterMarkingText '" + psEsc(label.mark_watermark) + "' `\n";
     }
     if (label.encrypt) {
       ps += '  -EncryptionEnabled $true `\n';
       if (label.encrypt_scope === 'org-only') {
-        ps += '  -EncryptionProtectionType "Template" `\n';
+        ps += "  -EncryptionProtectionType 'Template' `\n";
         ps += '  # TODO: Set EncryptionRightsDefinitions for org-only access\n';
       } else {
-        ps += '  -EncryptionProtectionType "UserDefined" `\n';
+        ps += "  -EncryptionProtectionType 'UserDefined' `\n";
         ps += '  # TODO: Configure user-defined encryption permissions\n';
       }
     }
 
-    ps += '  -Comment "Created by Purview Starter Kit"\n\n';
+    ps += "  -Comment 'Created by Purview Starter Kit'\n\n";
     return ps;
   }
 
@@ -361,54 +357,62 @@
     let ps = '# DLP: ' + rule.name + '\n';
     ps += '# ' + rule.description + '\n';
     ps += 'New-DlpCompliancePolicy `\n';
-    ps += '  -Name "' + rule.name + '" `\n';
-    ps += '  -Mode "TestWithNotifications" `\n';
+    ps += "  -Name '" + psEsc(rule.name) + "' `\n";
+    ps += "  -Mode 'TestWithNotifications' `\n";
 
     const locs = (rule.workloads || []);
-    if (locs.includes('exchange')) ps += '  -ExchangeLocation "All" `\n';
-    if (locs.includes('sharepoint')) ps += '  -SharePointLocation "All" `\n';
-    if (locs.includes('onedrive')) ps += '  -OneDriveLocation "All" `\n';
-    if (locs.includes('teams')) ps += '  -TeamsLocation "All" `\n';
-    if (locs.includes('endpoint')) ps += '  -EndpointDlpLocation "All" `\n';
+    if (locs.includes('exchange')) ps += "  -ExchangeLocation 'All' `\n";
+    if (locs.includes('sharepoint')) ps += "  -SharePointLocation 'All' `\n";
+    if (locs.includes('onedrive')) ps += "  -OneDriveLocation 'All' `\n";
+    if (locs.includes('teams')) ps += "  -TeamsLocation 'All' `\n";
+    if (locs.includes('endpoint')) ps += "  -EndpointDlpLocation 'All' `\n";
 
-    ps += '  -Comment "Created by Purview Starter Kit"\n\n';
+    ps += "  -Comment 'Created by Purview Starter Kit'\n\n";
 
     ps += 'New-DlpComplianceRule `\n';
-    ps += '  -Name "' + rule.name + ' Rule" `\n';
-    ps += '  -Policy "' + rule.name + '" `\n';
+    ps += "  -Name '" + psEsc(rule.name) + " Rule' `\n";
+    ps += "  -Policy '" + psEsc(rule.name) + "' `\n";
 
     if (rule.action === 'block') {
       ps += '  -BlockAccess $true `\n';
     } else if (rule.action === 'warn') {
-      ps += '  -NotifyUser "SiteAdmin" `\n';
+      ps += "  -NotifyUser 'SiteAdmin' `\n";
     }
 
     ps += '  # TODO: Add conditions — ' + (rule.condition_summary || '') + '\n';
-    ps += '  -Comment "Created by Purview Starter Kit"\n\n';
+    ps += "  -Comment 'Created by Purview Starter Kit'\n\n";
     return ps;
   }
 
   /* ── Render Emails ── */
+  function renderEmailBody(email, kit) {
+    let body = email.body || '';
+    const replacements = {
+      '{kit_name}': kit.name,
+      '{policy_name}': kit.name + ' Label Policy',
+      '{label_summary}': (kit.labels || []).map(l => '- ' + l.name + (l.encrypt ? ' (encrypted)' : '')).join('\n'),
+      '{dlp_summary}': (kit.dlp_rules || []).map(r => '- ' + r.name + ' [' + r.action.toUpperCase() + ']').join('\n')
+    };
+    for (const [k, v] of Object.entries(replacements)) {
+      body = body.split(k).join(v);
+    }
+    return body;
+  }
+
   function renderEmails(kit) {
     const el = $('pvs-emails');
     if (!el || !EMAILS.length) return;
 
     el.innerHTML = EMAILS.map(email => {
-      let body = email.body || '';
-      // Replace placeholders
-      body = body.replace('{kit_name}', kit.name);
-      body = body.replace('{policy_name}', kit.name + ' Label Policy');
-      body = body.replace('{label_summary}', (kit.labels || []).map(l => '- ' + l.name + (l.encrypt ? ' (encrypted)' : '')).join('\n'));
-      body = body.replace('{dlp_summary}', (kit.dlp_rules || []).map(r => '- ' + r.name + ' [' + r.action.toUpperCase() + ']').join('\n'));
-
+      const body = renderEmailBody(email, kit);
       return `<div class="pvs-email-card">
-        <div class="pvs-email-header" onclick="this.parentElement.classList.toggle('pvs-email-expanded')">
+        <button class="pvs-email-header" aria-expanded="false">
           <div class="pvs-email-title">
             <span class="pvs-email-name">${esc(email.name)}</span>
             <span class="pvs-email-audience">For: ${esc(email.audience)}</span>
           </div>
           <span class="pvs-email-chevron">▼</span>
-        </div>
+        </button>
         <div class="pvs-email-body">
           <div class="pvs-email-subject">Subject: ${esc(email.subject)}</div>
           <div class="pvs-email-content">${esc(body)}</div>
@@ -419,6 +423,15 @@
       </div>`;
     }).join('');
 
+    // Accordion toggle
+    el.querySelectorAll('.pvs-email-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.pvs-email-card');
+        const expanded = card.classList.toggle('pvs-email-expanded');
+        btn.setAttribute('aria-expanded', expanded);
+      });
+    });
+
     // Copy handlers
     el.querySelectorAll('.pvs-copy-email').forEach(btn => {
       btn.addEventListener('click', e => {
@@ -426,11 +439,7 @@
         const emailId = btn.dataset.emailId;
         const email = EMAILS.find(em => em.id === emailId);
         if (!email) return;
-        let body = email.body || '';
-        body = body.replace('{kit_name}', kit.name);
-        body = body.replace('{policy_name}', kit.name + ' Label Policy');
-        body = body.replace('{label_summary}', (kit.labels || []).map(l => '- ' + l.name).join('\n'));
-        body = body.replace('{dlp_summary}', (kit.dlp_rules || []).map(r => '- ' + r.name).join('\n'));
+        const body = renderEmailBody(email, kit);
         copyText('Subject: ' + email.subject + '\n\n' + body);
       });
     });
@@ -494,6 +503,9 @@
   }
 
   /* ── Init ── */
+  const VALID_TABS = ['kits', 'labels', 'dlp', 'deploy', 'faq'];
+  const VALID_KITS = KITS.map(k => k.id);
+
   function init() {
     // Add toast element
     if (!document.querySelector('.pvs-toast')) {
@@ -507,16 +519,26 @@
     loadState();
     readURL();
 
+    // Validate state
+    if (!VALID_TABS.includes(S.tab)) S.tab = 'kits';
+    if (S.selectedKit && !VALID_KITS.includes(S.selectedKit)) S.selectedKit = null;
+
     // Tab switching
     document.querySelectorAll('.pvs-tab').forEach(tab => {
       tab.addEventListener('click', () => switchTab(tab.dataset.tab));
     });
 
+    initKitGrid();
     renderKits();
     renderDeploy();
     updateDeployBadge();
     initCopyButtons();
     initChangeKit();
+
+    // "Go to kits" buttons (placeholders + empty states)
+    document.querySelectorAll('.pvs-goto-kits').forEach(btn => {
+      btn.addEventListener('click', () => switchTab('kits'));
+    });
 
     // Set initial tab from state
     if (S.tab !== 'kits') switchTab(S.tab);
