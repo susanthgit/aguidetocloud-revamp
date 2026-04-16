@@ -66,7 +66,7 @@
       <span class="cpmatrix-tab-emoji">🕐</span> What Changed
     </button>
     <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="matrix">
-      <span class="cpmatrix-tab-emoji">📊</span> Feature Matrix
+      <span class="cpmatrix-tab-emoji">📊</span> All Features
     </button>
     <button class="cpmatrix-tab" role="tab" aria-selected="false" data-tab="faq">
       <span class="cpmatrix-tab-emoji">❓</span> FAQ
@@ -165,7 +165,7 @@
   <div class="cpmatrix-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem"><summary style="color:var(--tool-accent, #fff);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p></details>
     {{ end }}
@@ -173,6 +173,27 @@
   {{ end }}
   </div>
 
+</div>
+
+{{/* ── Copilot Journey Cross-Links ── */}}
+<div class="cpmatrix-container" style="margin-top:2rem">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;max-width:900px;margin:0 auto">
+    <a href="/copilot-readiness/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(59,130,246,0.2);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
+      <span style="font-size:1.3rem">🎯</span>
+      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Copilot Readiness Checker</span>
+      <small style="font-size:0.75rem;color:#9ca3af">Score your org's readiness across 7 pillars</small>
+    </a>
+    <a href="/roi-calculator/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(20,184,166,0.2);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
+      <span style="font-size:1.3rem">💰</span>
+      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Copilot ROI Calculator</span>
+      <small style="font-size:0.75rem;color:#9ca3af">Estimate savings by role with adoption curves</small>
+    </a>
+    <a href="/licensing/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
+      <span style="font-size:1.3rem">📜</span>
+      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Licensing Simplifier</span>
+      <small style="font-size:0.75rem;color:#9ca3af">Compare M365 plans & find the right licence</small>
+    </a>
+  </div>
 </div>
 
 {{/* ── Disclaimer ── */}}
