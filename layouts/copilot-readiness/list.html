@@ -26,49 +26,21 @@
 
 <div class="readiness-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Copilot Readiness Checker" "subtitle" "Answer 30 questions across 7 pillars → get a 0–100 readiness score with per-pillar breakdown and actionable recommendations. Free, instant, no sign-up." "accent" "#3B82F6") }}
+  {{ partial "tool-hero.html" (dict "title" "Copilot Readiness Checker" "subtitle" "Score your Copilot readiness across 7 pillars — Licensing, Identity, Data Governance, Security, Network, Change Management & Monitoring. 30 questions, instant results, no sign-up." "accent" "#3B82F6") }}
 
   <div class="readiness-container">
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="readiness-tabs" role="tablist" aria-label="Copilot Readiness sections">
       <button class="readiness-tab active" data-tab="main" role="tab" aria-selected="true">📋 Assessment</button>
+      <button class="readiness-tab" data-tab="resources" role="tab" aria-selected="false">📖 Resources</button>
       <button class="readiness-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
     </div>
 
     <div class="readiness-panel active" id="panel-main" role="tabpanel">
 
-    {{/* ── INTRO (visible before assessment starts) ── */}}
-    <div id="readiness-intro" class="readiness-intro">
-      <div class="readiness-why">
-        <h2>🎯 Why Use This Checker?</h2>
-        <p>Every IT admin's first question about Copilot: <strong>"Is my org ready?"</strong> This tool scores your readiness across the 7 areas Microsoft recommends — and gives you a prioritised action plan.</p>
-      </div>
-
-      <div class="readiness-pillars-preview">
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">🔑</span> Licensing</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">🛡️</span> Identity & Access</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">📂</span> Data Governance</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">🔒</span> Security</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">🌐</span> Network & Apps</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">👥</span> Change Management</div>
-        <div class="readiness-pillar-preview-item"><span class="readiness-pillar-icon">📊</span> Monitoring</div>
-      </div>
-
-      <div class="readiness-how-it-works">
-        <div class="readiness-step"><span class="readiness-step-num">1</span> Answer 30 quick questions</div>
-        <div class="readiness-step"><span class="readiness-step-num">2</span> Get scored across 7 pillars</div>
-        <div class="readiness-step"><span class="readiness-step-num">3</span> Receive actionable recommendations</div>
-      </div>
-
-      <div class="readiness-start-wrap">
-        <button id="readiness-start-btn" class="readiness-btn-primary">🚀 Start Assessment</button>
-        <p class="readiness-time-hint">⏱️ Takes about 5 minutes · 100% private · nothing leaves your browser</p>
-      </div>
-    </div>
-
-    {{/* ── ASSESSMENT (hidden until started) ── */}}
-    <div id="readiness-assessment" class="readiness-assessment" hidden>
+    {{/* ── ASSESSMENT (starts immediately — no intro gate) ── */}}
+    <div id="readiness-assessment" class="readiness-assessment">
       {{/* Pillar skip-to nav */}}
       <div class="readiness-pillar-nav" id="readiness-pillar-nav"></div>
 
@@ -126,27 +98,37 @@
 
       {{/* Pillar breakdown */}}
       <div class="readiness-breakdown">
-        <h2>📊 Pillar Breakdown</h2>
+        <h2>Pillar Breakdown</h2>
         <div id="readiness-pillar-bars" class="readiness-pillar-bars"></div>
       </div>
 
       {{/* Recommendations */}}
       <div class="readiness-recommendations">
-        <h2>📋 Recommended Actions</h2>
+        <h2>Recommended Actions</h2>
         <div id="readiness-recommendations-list" class="readiness-recs-list"></div>
       </div>
 
       {{/* Next Steps — Curated Microsoft Learn Resources */}}
       <div class="readiness-next-steps-wrap">
-        <h2>📖 Your Next Steps — Microsoft Learn Resources</h2>
+        <h2>Your Next Steps — Microsoft Learn Resources</h2>
         <p class="readiness-ns-intro">Follow these phases in order. Each links to official Microsoft documentation and tools.</p>
         <div id="readiness-next-steps"></div>
       </div>
 
-      {{/* Cross-links to our tools */}}
+      {{/* Cross-links — Copilot journey first, then other tools */}}
       <div class="readiness-crosslinks">
-        <h2>🔗 More from the Toolkit</h2>
+        <h2>Continue Your Copilot Journey</h2>
         <div class="readiness-links-grid">
+          <a href="/copilot-matrix/" class="readiness-link-card readiness-link-featured">
+            <span class="readiness-link-icon">📊</span>
+            <span>Copilot Feature Matrix</span>
+            <small>See exactly what Copilot can do across every app and licence tier</small>
+          </a>
+          <a href="/roi-calculator/" class="readiness-link-card readiness-link-featured">
+            <span class="readiness-link-icon">💰</span>
+            <span>Copilot ROI Calculator</span>
+            <small>Estimate your savings by role with realistic adoption curves</small>
+          </a>
           <a href="/licensing/" class="readiness-link-card">
             <span class="readiness-link-icon">📜</span>
             <span>Licensing Simplifier</span>
@@ -156,16 +138,6 @@
             <span class="readiness-link-icon">💡</span>
             <span>AI Prompt Library</span>
             <small>84 tested prompts to kickstart Copilot training</small>
-          </a>
-          <a href="/m365-roadmap/" class="readiness-link-card">
-            <span class="readiness-link-icon">📋</span>
-            <span>M365 Roadmap Tracker</span>
-            <small>Track upcoming Copilot features & releases</small>
-          </a>
-          <a href="/service-health/" class="readiness-link-card">
-            <span class="readiness-link-icon">🏥</span>
-            <span>Service Health</span>
-            <small>Check M365 service status before rollout</small>
           </a>
         </div>
       </div>
@@ -180,6 +152,20 @@
     </div>
 
     </div>{{/* end panel-main */}}
+
+    {{/* ── Resources Panel — accessible without completing assessment ── */}}
+    <div class="readiness-panel" id="panel-resources" role="tabpanel">
+      <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+        <h2 style="color:#3B82F6;margin-bottom:0.5rem">Microsoft Learn Resources for Copilot Deployment</h2>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.88rem;margin-bottom:2rem">Curated official resources organised by deployment phase. No assessment needed — jump straight to what you need.</p>
+        <div id="readiness-resources-steps"></div>
+
+        <div style="margin-top:2.5rem;padding:1.5rem;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);border-radius:12px;text-align:center">
+          <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin:0 0 1rem">Want to know exactly where your org stands?</p>
+          <button class="readiness-btn-primary readiness-start-from-resources" onclick="document.querySelector('.readiness-tab[data-tab=&quot;main&quot;]').click()">Take the Assessment →</button>
+        </div>
+      </div>
+    </div>
 
     {{/* ── FAQ Panel ── */}}
     <div class="readiness-panel" id="panel-faq" role="tabpanel">

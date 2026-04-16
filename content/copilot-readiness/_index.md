@@ -6,6 +6,7 @@ layout: "list"
 sitemap:
   priority: 0.9
   changefreq: monthly
+lastmod: 2026-04-16
 images: ["images/og/copilot-readiness.jpg"]
 faq:
   - question: "How accurate is the readiness score?"

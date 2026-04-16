@@ -497,8 +497,13 @@
         }
       } catch (e) { /* ignore */ }
     }
+    // Auto-start assessment (no intro gate)
+    renderPillarNav();
+    renderQuestion();
 
-    $('readiness-start-btn').addEventListener('click', startAssessment);
+    // Populate Resources tab
+    renderResourcesTab();
+
     $('readiness-prev-btn').addEventListener('click', prevQuestion);
     $('readiness-next-btn').addEventListener('click', nextQuestion);
     $('readiness-share-btn').addEventListener('click', shareResults);
@@ -532,11 +537,36 @@
     }
   }
 
-  function startAssessment() {
-    $('readiness-intro').hidden = true;
-    $('readiness-assessment').hidden = false;
-    renderPillarNav();
-    renderQuestion();
+  // ─── Populate Resources Tab (reuses NEXT_STEPS data) ───
+  function renderResourcesTab() {
+    const container = $('readiness-resources-steps');
+    if (!container) return;
+    container.innerHTML = '';
+    NEXT_STEPS.forEach(phase => {
+      const section = document.createElement('div');
+      section.className = 'readiness-ns-phase';
+      section.innerHTML = `<h3>${phase.phase}</h3><p class="readiness-ns-desc">${phase.desc}</p>`;
+      const grid = document.createElement('div');
+      grid.className = 'readiness-ns-grid';
+      phase.items.forEach(item => {
+        const isExternal = item.url.startsWith('http');
+        const card = document.createElement('a');
+        card.href = item.url;
+        card.className = 'readiness-ns-card';
+        if (isExternal) { card.target = '_blank'; card.rel = 'noopener'; }
+        card.innerHTML = `
+          <span class="readiness-ns-icon">${item.icon}</span>
+          <div class="readiness-ns-text">
+            <strong>${item.title}</strong>
+            <small>${item.desc}</small>
+          </div>
+          ${isExternal ? '<span class="readiness-ns-ext">↗</span>' : ''}
+        `;
+        grid.appendChild(card);
+      });
+      section.appendChild(grid);
+      container.appendChild(section);
+    });
   }
 
   // ─── Pillar Nav (skip-to-pillar) ───
@@ -628,20 +658,10 @@
     q.options.forEach((opt, i) => {
       const btn = document.createElement('button');
       btn.className = 'readiness-option' + (answers[currentQuestion] === i ? ' selected' : '');
-      const numHint = `<span class="readiness-opt-num">${i + 1}</span>`;
-      btn.innerHTML = `<span class="readiness-option-radio"></span>${numHint}<span>${opt.label}</span>`;
+      btn.innerHTML = `<span class="readiness-option-radio"></span><span>${opt.label}</span>`;
       btn.addEventListener('click', () => selectOption(i));
       optContainer.appendChild(btn);
     });
-
-    // Keyboard hint
-    let hintEl = document.querySelector('.readiness-kbd-hint');
-    if (!hintEl) {
-      hintEl = document.createElement('p');
-      hintEl.className = 'readiness-kbd-hint';
-      hintEl.innerHTML = '<kbd>1</kbd>–<kbd>' + q.options.length + '</kbd> to select · <kbd>←</kbd><kbd>→</kbd> to navigate · swipe on mobile';
-      $('readiness-options').after(hintEl);
-    }
 
     // Nav buttons
     $('readiness-prev-btn').disabled = currentQuestion === 0;
@@ -993,7 +1013,7 @@
     const pillarPcts = (params.get('pillars') || '').split(',').map(Number);
     if (isNaN(score)) return;
 
-    $('readiness-intro').hidden = true;
+    $('readiness-assessment').hidden = true;
     $('readiness-results').hidden = false;
 
     const tier = TIERS.find(t => score >= t.min && score <= t.max) || TIERS[0];
@@ -1068,8 +1088,9 @@
     localStorage.removeItem(STORAGE_KEY);
 
     $('readiness-results').hidden = true;
-    $('readiness-assessment').hidden = true;
-    $('readiness-intro').hidden = false;
+    $('readiness-assessment').hidden = false;
+    renderPillarNav();
+    renderQuestion();
 
     if (window.location.search) history.replaceState(null, '', window.location.pathname);
   }
