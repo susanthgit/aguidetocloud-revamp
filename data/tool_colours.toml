@@ -207,6 +207,17 @@ body_class = "page-purview-starter"
 # NOTE: Same hex as Prompt Guide — accepted compromise, different categories (Admin vs Prompt)
 
 [[tools]]
+name = "M365 Security Toolkit"
+slug = "security-toolkit"
+hex = "#41A235"
+hue = 113
+name_friendly = "Shield Green"
+category = "Admin"
+css_namespace = "sectool-*"
+body_class = "page-security-toolkit"
+# NOTE: 29° from Purview (84°) and PS Builder (142°) — mathematical optimum, colour space exhausted at 30+ tools
+
+[[tools]]
 name = "Agent 365 Planner"
 slug = "agent-365-planner"
 hex = "#00A4EF"

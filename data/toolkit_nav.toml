@@ -217,6 +217,17 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
+url = "/security-toolkit/"
+emoji = "🛡️"
+name = "M365 Security Toolkit"
+short = "Security"
+desc = "CIS-aligned security assessment, email DNS generator & remediation scripts"
+color = "#41A235"
+category = "admin"
+visual = "grid"
+is_tool = true
+
+[[tools]]
 url = "/agent-365-planner/"
 emoji = "🤖"
 name = "Agent 365 Planner"

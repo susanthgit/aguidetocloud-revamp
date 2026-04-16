@@ -260,6 +260,7 @@ module.exports = async function (context, req) {
 
   // Parse range
   const range = req.query.range || '30d';
+  const now = Date.now();
 
   // Quick realtime-only response (no cache, lightweight)
   if (req.query.realtime === '1') {
@@ -333,7 +334,6 @@ module.exports = async function (context, req) {
   const cacheKey = getCacheKey(range, req.query.start, req.query.end);
 
   // Return cached response if fresh
-  const now = Date.now();
   if (cacheStore[cacheKey] && now - cacheStore[cacheKey].time < CACHE_TTL) {
     context.res = { status: 200, headers, body: JSON.stringify(cacheStore[cacheKey].data) };
     return;
