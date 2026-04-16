@@ -397,9 +397,10 @@ module.exports = async function (context, req) {
           const youtubeAnalytics = google.youtubeAnalytics({ version: 'v2', auth: oauth2Client });
           const endDate = new Date().toISOString().split('T')[0];
           const startDate = new Date(Date.now() - 28 * 86400000).toISOString().split('T')[0];
+          const channelId = 'channel==' + MAIN_CH;
           // Channel-level analytics (last 28 days)
           const aRes = await youtubeAnalytics.reports.query({
-            ids: 'channel==MINE',
+            ids: channelId,
             startDate, endDate,
             metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained,subscribersLost',
             dimensions: 'day',
@@ -407,7 +408,7 @@ module.exports = async function (context, req) {
           });
           // Per-video analytics (top 20 by views, last 28 days)
           const vRes = await youtubeAnalytics.reports.query({
-            ids: 'channel==MINE',
+            ids: channelId,
             startDate, endDate,
             metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained',
             dimensions: 'video',
@@ -416,7 +417,7 @@ module.exports = async function (context, req) {
           });
           // Traffic sources
           const tRes = await youtubeAnalytics.reports.query({
-            ids: 'channel==MINE',
+            ids: channelId,
             startDate, endDate,
             metrics: 'views,estimatedMinutesWatched',
             dimensions: 'insightTrafficSourceType',
