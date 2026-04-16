@@ -288,7 +288,7 @@ module.exports = async function (context, req) {
 
   // YouTube Intelligence (6-hour cache, OAuth2 for analytics)
   if (req.query.youtube === '1') {
-    const ytCacheKey = 'youtube_v2';
+    const ytCacheKey = 'youtube_v3';
     if (cacheStore[ytCacheKey] && now - cacheStore[ytCacheKey].time < 21600000) {
       context.res = { status: 200, headers, body: JSON.stringify(cacheStore[ytCacheKey].data) };
       return;
