@@ -42,18 +42,30 @@ async function fetchGA4Data(auth) {
         dimensions: [{ name: 'pagePath' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
         orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
-        limit: 30
+        limit: 50
       }
     });
 
-    // Last 7 days daily trend
+    // Last 30 days daily trend
     const trendRes = await analyticsdata.properties.runReport({
       property: `properties/${GA4_PROPERTY}`,
       requestBody: {
-        dateRanges: [{ startDate: '7daysAgo', endDate: 'today' }],
+        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
         dimensions: [{ name: 'date' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
         orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }]
+      }
+    });
+
+    // Week-over-week comparison
+    const wowRes = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [
+          { startDate: '7daysAgo', endDate: 'today', name: 'thisWeek' },
+          { startDate: '14daysAgo', endDate: '8daysAgo', name: 'lastWeek' }
+        ],
+        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }]
       }
     });
 
@@ -109,7 +121,7 @@ async function fetchGA4Data(auth) {
       }
     });
 
-    return { pagesRes, trendRes, todayRes, summaryRes, geoRes, deviceRes, sourceRes };
+    return { pagesRes, trendRes, todayRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes };
   } catch (e) {
     console.error('GA4 error:', e.message);
     return null;
@@ -159,7 +171,11 @@ const TOOL_PATHS = {
   '/ai-mapper/': 'ai-mapper', '/ai-showdown/': 'ai-showdown', '/ps-builder/': 'ps-builder',
   '/migration-planner/': 'migration-planner', '/prompt-guide/': 'prompt-guide',
   '/ca-builder/': 'ca-builder', '/world-clock/': 'meeting-planner', '/feedback/': 'feedback',
-  '/site-analytics/': 'site-analytics'
+  '/site-analytics/': 'site-analytics',
+  '/qr-generator/': 'qr-generator', '/wifi-qr/': 'wifi-qr',
+  '/password-generator/': 'password-generator', '/image-compressor/': 'image-compressor',
+  '/typing-test/': 'typing-test', '/countdown/': 'countdown',
+  '/color-palette/': 'color-palette', '/pomodoro/': 'pomodoro'
 };
 
 function loadCustomStats() {
@@ -247,6 +263,22 @@ module.exports = async function (context, req) {
     const sourceRows = parseRows(ga4.sourceRes);
     const sources = sourceRows.map(r => ({ source: r.dimensions[0], sessions: r.metrics[0] }));
 
+    // Week-over-week comparison
+    const wowRows = parseRows(ga4.wowRes);
+    let wow = null;
+    if (wowRows.length >= 1) {
+      const thisWeek = { views: wowRows[0]?.metrics[0] || 0, users: wowRows[0]?.metrics[1] || 0, sessions: wowRows[0]?.metrics[2] || 0 };
+      const lastWeek = { views: wowRows[1]?.metrics[0] || 0, users: wowRows[1]?.metrics[1] || 0, sessions: wowRows[1]?.metrics[2] || 0 };
+      const pct = (curr, prev) => prev > 0 ? Math.round(((curr - prev) / prev) * 100) : (curr > 0 ? 100 : 0);
+      wow = {
+        thisWeek, lastWeek,
+        change: { views: pct(thisWeek.views, lastWeek.views), users: pct(thisWeek.users, lastWeek.users), sessions: pct(thisWeek.sessions, lastWeek.sessions) }
+      };
+    }
+
+    // Blog pages (filter from top pages)
+    const blogPages = topPages.filter(p => p.path.startsWith('/blog/')).slice(0, 15);
+
     response.ga4 = {
       totals: {
         views: summaryRows[0]?.metrics[0] || 0,
@@ -259,10 +291,12 @@ module.exports = async function (context, req) {
       },
       leaderboard,
       trend,
-      top_pages: topPages.slice(0, 20),
+      top_pages: topPages.slice(0, 30),
+      blog_pages: blogPages,
       countries,
       devices,
-      sources
+      sources,
+      wow
     };
   }
 

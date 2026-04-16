@@ -27,54 +27,58 @@
   <div class="siteana-stats-bar">
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-views">—</span>
-      <span class="siteana-stat-label">Tool Views</span>
+      <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
+      <span class="siteana-stat-label">Page Views (30d)</span>
     </div>
     <div class="siteana-stat">
-      <span class="siteana-stat-num" id="sa-total-actions">—</span>
-      <span class="siteana-stat-label">Actions Taken</span>
+      <span class="siteana-stat-num" id="sa-total-users">—</span>
+      <span class="siteana-wow" id="sa-wow-users" style="display:none"></span>
+      <span class="siteana-stat-label">Unique Users</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num" id="sa-total-sessions">—</span>
+      <span class="siteana-wow" id="sa-wow-sessions" style="display:none"></span>
+      <span class="siteana-stat-label">Sessions</span>
     </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-today-views">—</span>
       <span class="siteana-stat-label">Today</span>
     </div>
     <div class="siteana-stat">
-      {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if ne .url "/feedback/" }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
+      {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
       <span class="siteana-stat-num">{{ $tc }}</span>
       <span class="siteana-stat-label">Tools</span>
-    </div>
-    <div class="siteana-stat">
-      <span class="siteana-stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
-      <span class="siteana-stat-label">Blog Posts</span>
     </div>
   </div>
 
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
-    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">📊 Overview</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">🏆 Tools</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">🔍 Content</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">Search & Content</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
   <!-- Tab: Overview -->
   <div class="siteana-panel active" id="panel-overview" role="tabpanel">
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">📈 7-Day Trend</h3>
+        <h3 class="siteana-card-title">30-Day Trend</h3>
         <canvas id="sa-trend-chart" height="200"></canvas>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">⚡ Activity Breakdown</h3>
+        <h3 class="siteana-card-title">Activity Breakdown</h3>
         <canvas id="sa-activity-chart" height="200"></canvas>
       </div>
     </div>
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">🌍 Top Countries</h3>
+        <h3 class="siteana-card-title">Top Countries</h3>
         <div id="sa-countries"></div>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">🔗 Traffic Sources</h3>
+        <h3 class="siteana-card-title">Traffic Sources</h3>
         <div id="sa-sources"></div>
       </div>
     </div>
@@ -114,15 +118,15 @@
   <!-- Tab: Content -->
   <div class="siteana-panel" id="panel-content" role="tabpanel">
     <div class="siteana-card">
-      <h3 class="siteana-card-title">🔍 Top Search Queries</h3>
-      <p class="siteana-hint">What visitors are searching for on the site</p>
+      <h3 class="siteana-card-title">Google Search Queries</h3>
+      <p class="siteana-hint">What people search on Google to find this site (last 30 days)</p>
       <div id="sa-searches"></div>
     </div>
     <div class="siteana-card">
-      <h3 class="siteana-card-title">📚 Content Overview</h3>
+      <h3 class="siteana-card-title">Content Overview</h3>
       <div class="siteana-content-stats">
         <div class="siteana-content-item">
-          {{ $navTools2 := (index hugo.Data "toolkit_nav").tools }}{{ $tc2 := 0 }}{{ range $navTools2 }}{{ if ne .url "/feedback/" }}{{ $tc2 = add $tc2 1 }}{{ end }}{{ end }}
+          {{ $navTools2 := (index hugo.Data "toolkit_nav").tools }}{{ $tc2 := 0 }}{{ range $navTools2 }}{{ if .is_tool }}{{ $tc2 = add $tc2 1 }}{{ end }}{{ end }}
           <span class="siteana-content-num">{{ $tc2 }}</span>
           <span>Free Tools</span>
         </div>
@@ -139,6 +143,20 @@
           <span>Cert Guides</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Tab: Pages -->
+  <div class="siteana-panel" id="panel-pages" role="tabpanel">
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Pages (30 days)</h3>
+      <p class="siteana-hint">Most visited pages across the entire site</p>
+      <div id="sa-top-pages"></div>
+    </div>
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Blog Posts</h3>
+      <p class="siteana-hint">Most read blog articles in the last 30 days</p>
+      <div id="sa-blog-pages"></div>
     </div>
   </div>
 

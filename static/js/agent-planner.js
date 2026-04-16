@@ -96,40 +96,25 @@
     if (tab) tab.click();
   }
 
-  // ── Tab 1: Quick Start — Persona Selector ──────────────────────────────
-  var PERSONA_PATHS = {
-    admin: { label: 'Your path: Readiness Assessment → Governance Builder → Agent Designer', highlights: ['overview', 'admin-controls', 'raci', 'glossary'] },
-    security: { label: 'Your path: Readiness Assessment (Data & Monitoring pillars) → Governance Builder', highlights: ['overview', 'admin-controls', 'raci'] },
-    'decision-maker': { label: 'Your path: Quick Start (licensing & RACI) → Readiness Assessment', highlights: ['overview', 'raci'] },
-    builder: { label: 'Your path: Agent Designer → Quick Start (Blueprint concept)', highlights: ['blueprint', 'agent-types'] }
-  };
-
+  // ── Tab 1: Overview — Persona Selector (now NAVIGATES to tabs) ───────
   function initPersonaSelector() {
     var cards = document.querySelectorAll('.agplan-persona-card');
-    var pathEl = $('agplan-persona-path');
-    var saved = lsGet('agplan_persona');
-    if (saved) applyPersona(saved);
-
     cards.forEach(function (card) {
       card.addEventListener('click', function () {
-        var p = card.dataset.persona;
-        cards.forEach(function (c) { c.classList.remove('active'); });
-        card.classList.add('active');
-        applyPersona(p);
-        lsSet('agplan_persona', p);
+        var goto = card.dataset.goto;
+        if (goto) {
+          cards.forEach(function (c) { c.classList.remove('active'); });
+          card.classList.add('active');
+          lsSet('agplan_persona', card.dataset.persona);
+          // Navigate to the target tab
+          setTimeout(function () { switchToTab(goto); }, 200);
+        }
       });
     });
-
-    function applyPersona(p) {
-      var info = PERSONA_PATHS[p];
-      if (!info) return;
-      cards.forEach(function (c) { c.classList.toggle('active', c.dataset.persona === p); });
-      if (pathEl) pathEl.textContent = info.label;
-      // Highlight relevant sections
-      document.querySelectorAll('.agplan-qs-section').forEach(function (s) {
-        var sec = s.dataset.qsSection;
-        s.classList.toggle('highlighted', info.highlights.indexOf(sec) !== -1);
-      });
+    // Highlight saved persona (but don't navigate)
+    var saved = lsGet('agplan_persona');
+    if (saved) {
+      cards.forEach(function (c) { c.classList.toggle('active', c.dataset.persona === saved); });
     }
 
     // "Go to assessment" CTA

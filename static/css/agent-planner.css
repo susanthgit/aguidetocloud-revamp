@@ -199,7 +199,16 @@
   font-size: 1.5rem; color: var(--agplan-accent); font-weight: 700;
 }
 
-/* Admin control cards */
+/* Static control cards (Overview tab — non-expandable) */
+.agplan-control-card-static {
+  padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+.agplan-control-card-static strong { display: block; color: #fff; font-size: 0.88rem; margin-bottom: 0.15rem; }
+.agplan-control-card-static span { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+/* Admin control cards (Reference tab — expandable) */
 .agplan-control-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;
 }
@@ -514,12 +523,6 @@
 .agplan-crosslink-icon { font-size: 1.5rem; }
 .agplan-crosslink-card strong { color: #fff; font-size: 0.9rem; }
 .agplan-crosslink-card span { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
-
-/* ── Persona Highlighting ──────────────────────────────────────────────── */
-.agplan-qs-section { transition: opacity 0.3s, box-shadow 0.3s; border-radius: 12px; padding: 0.5rem; }
-.agplan-qs-section.highlighted {
-  box-shadow: inset 0 0 0 1px var(--agplan-accent-dim), 0 0 20px var(--agplan-accent-dim);
-}
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {

@@ -276,17 +276,6 @@
     renderLicenceTable(plan);
   }
 
-  function renderDeploySteps() {
-    const el = $('pvs-deploy-steps');
-    if (!el || !STEPS.length) return;
-    el.innerHTML = STEPS.map(step =>
-      '<div class="pvs-step-card"><div class="pvs-step-num">' + step.order + '</div>' +
-      '<div class="pvs-step-content"><div class="pvs-step-title">' + esc(step.title) + '</div>' +
-      '<div class="pvs-step-desc">' + esc(step.description) + '</div>' +
-      '<div class="pvs-step-duration">⏱️ ' + esc(step.duration) + '</div></div></div>'
-    ).join('');
-  }
-
   /* ── PowerShell Generation ── */
   function renderPowerShell(plan) {
     const el = $('pvs-ps-output');
@@ -728,6 +717,165 @@
     if (el) el.textContent = n + ' scenario' + (n !== 1 ? 's' : '') + ' selected';
   }
 
+  /* ═══ V5: DEPLOYMENT DOCUMENT EXPORT ═══ */
+  function exportDeployDoc() {
+    const plan = getResolvedPlan();
+    if (!plan.labels.length && !plan.dlpRules.length) return;
+    let doc = '# Purview Deployment Plan: ' + plan.name + '\n';
+    doc += 'Generated: ' + new Date().toLocaleDateString() + '\n';
+    doc += 'Source: aguidetocloud.com/purview-starter/\n\n';
+    doc += '## Sensitivity Labels\n\n';
+    doc += '| Label | Colour | Encrypted | Marked | Auto-apply |\n';
+    doc += '|-------|--------|-----------|--------|------------|\n';
+    (plan.labels || []).forEach(l => {
+      doc += '| ' + l.name + ' | ' + (l.colour || '-') + ' | ' + (l.encrypt ? 'Yes (' + (l.encrypt_scope || 'org') + ')' : 'No') + ' | ' + (l.mark ? 'Yes' : 'No') + ' | ' + (l.auto_apply ? l.auto_pattern : 'No') + ' |\n';
+    });
+    doc += '\n## DLP Rules\n\n';
+    doc += '| Rule | Action | Workloads | Licence |\n';
+    doc += '|------|--------|-----------|----------|\n';
+    (plan.dlpRules || []).forEach(r => {
+      doc += '| ' + r.name + ' | ' + (r.action || '-') + ' | ' + (r.workloads || []).join(', ') + ' | ' + (r.licence || 'E3') + ' |\n';
+    });
+    doc += '\n## Rollout Timeline\n\n';
+    STEPS.forEach(s => { doc += s.order + '. **' + s.title + '** (' + s.duration + ')\n   ' + s.description + '\n\n'; });
+    doc += '## Licence Requirement\n\nMinimum: ' + (plan.licence || 'E3').toUpperCase() + '\n';
+    const blob = new Blob([doc], { type: 'text/markdown' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'purview-deployment-plan.md';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    toast('Downloaded deployment document');
+  }
+
+  /* ═══ V6: INTERACTIVE CHECKLIST ═══ */
+  const CL_KEY = 'pvs_checklist';
+  function getChecklist() {
+    try { return JSON.parse(localStorage.getItem(CL_KEY)) || {}; } catch(e) { return {}; }
+  }
+  function saveChecklist(cl) {
+    try { localStorage.setItem(CL_KEY, JSON.stringify(cl)); } catch(e) {}
+  }
+
+  function renderDeploySteps() {
+    const el = $('pvs-deploy-steps');
+    if (!el || !STEPS.length) return;
+    const cl = getChecklist();
+    el.innerHTML = STEPS.map(step => {
+      const checked = cl[step.order];
+      return '<div class="pvs-step-card' + (checked ? ' pvs-step-done' : '') + '">' +
+        '<label class="pvs-step-check"><input type="checkbox" class="pvs-step-checkbox" data-step="' + step.order + '"' + (checked ? ' checked' : '') + ' aria-label="Mark step ' + step.order + ' complete"></label>' +
+        '<div class="pvs-step-num">' + step.order + '</div>' +
+        '<div class="pvs-step-content"><div class="pvs-step-title">' + esc(step.title) + '</div>' +
+        '<div class="pvs-step-desc">' + esc(step.description) + '</div>' +
+        '<div class="pvs-step-duration">⏱️ ' + esc(step.duration) + '</div></div></div>';
+    }).join('');
+    updateChecklistProgress();
+  }
+
+  function initChecklist() {
+    const el = $('pvs-deploy-steps');
+    if (!el) return;
+    el.addEventListener('change', e => {
+      const cb = e.target.closest('.pvs-step-checkbox');
+      if (!cb) return;
+      const cl = getChecklist();
+      const step = cb.dataset.step;
+      if (cb.checked) cl[step] = true; else delete cl[step];
+      saveChecklist(cl);
+      const card = cb.closest('.pvs-step-card');
+      if (card) card.classList.toggle('pvs-step-done', cb.checked);
+      updateChecklistProgress();
+    });
+  }
+
+  function updateChecklistProgress() {
+    const el = $('pvs-checklist-progress');
+    if (!el) return;
+    const cl = getChecklist();
+    const done = STEPS.filter(s => cl[s.order]).length;
+    const pct = Math.round((done / STEPS.length) * 100);
+    el.textContent = done + '/' + STEPS.length + ' complete' + (pct === 100 ? ' ✓' : '');
+    el.style.color = pct === 100 ? 'var(--pvs-accent)' : 'rgba(255,255,255,0.5)';
+  }
+
+  /* ═══ V7: GRAPH API JSON EXPORT ═══ */
+  let currentFormat = 'ps';
+
+  function renderGraphJSON(plan) {
+    let json = '// Graph API — Sensitivity Labels & DLP\n';
+    json += '// POST https://graph.microsoft.com/v1.0/security/labels/sensitivityLabels\n\n';
+    if (plan.labels && plan.labels.length) {
+      plan.labels.filter(l => !l.parent_id).forEach(label => {
+        json += '// Label: ' + label.name + '\n';
+        const obj = {
+          displayName: label.name,
+          description: label.tooltip || '',
+          color: label.colour || 'blue',
+          isActive: true,
+          contentFormats: ['file', 'email']
+        };
+        if (label.parent_id) obj.parent = { '@odata.id': 'sensitivityLabels(\'' + label.parent_id + '\')' };
+        json += JSON.stringify(obj, null, 2) + '\n\n';
+        plan.labels.filter(l => l.parent_id === label.id).forEach(child => {
+          json += '// Sublabel: ' + child.name + '\n';
+          const cObj = { displayName: child.name, description: child.tooltip || '', color: child.colour || 'blue', isActive: true, parent: { displayName: label.name } };
+          json += JSON.stringify(cObj, null, 2) + '\n\n';
+        });
+      });
+    }
+    if (plan.dlpRules && plan.dlpRules.length) {
+      json += '// DLP Policies — use Security & Compliance PowerShell\n';
+      json += '// Graph API DLP support is limited; PowerShell recommended\n\n';
+      plan.dlpRules.forEach(r => {
+        json += '// DLP: ' + r.name + ' [' + (r.action || '') + ']\n';
+      });
+    }
+    return json;
+  }
+
+  function switchExportFormat(fmt) {
+    currentFormat = fmt;
+    document.querySelectorAll('.pvs-export-tab').forEach(t => t.classList.toggle('active', t.dataset.format === fmt));
+    const langEl = $('pvs-code-lang');
+    if (langEl) langEl.textContent = fmt === 'ps' ? 'PowerShell — Security & Compliance' : 'Graph API — JSON';
+    const plan = getResolvedPlan();
+    const el = $('pvs-ps-output');
+    if (!el) return;
+    if (fmt === 'graph') {
+      el.textContent = renderGraphJSON(plan);
+    } else {
+      renderPowerShell(plan);
+    }
+  }
+
+  /* ═══ V8: COMPARE KITS ═══ */
+  function renderCompare() {
+    const el = $('pvs-compare-table');
+    if (!el) return;
+    let html = '<table class="pvs-compare"><thead><tr><th></th>';
+    KITS.forEach(k => { html += '<th>' + esc(k.emoji) + ' ' + esc(k.name) + '</th>'; });
+    html += '</tr></thead><tbody>';
+    const rows = [
+      ['Target', k => k.target],
+      ['Labels', k => (k.labels ? k.labels.length : k.label_count) + ''],
+      ['DLP Rules', k => (k.dlp_rules ? k.dlp_rules.length : k.dlp_count) + ''],
+      ['Licence', k => k.licence === 'e3' ? 'E3' : k.licence === 'e5' ? 'E5' : 'E5 Compliance'],
+      ['Encryption', k => (k.labels || []).some(l => l.encrypt) ? '✅' : '❌'],
+      ['Auto-labeling', k => (k.labels || []).some(l => l.auto_apply) ? '✅' : '❌'],
+      ['Endpoint DLP', k => (k.dlp_rules || []).some(r => (r.workloads || []).includes('endpoint')) ? '✅' : '❌'],
+      ['Teams DLP', k => (k.dlp_rules || []).some(r => (r.workloads || []).includes('teams')) ? '✅' : '❌'],
+      ['Content Marking', k => (k.labels || []).some(l => l.mark) ? '✅' : '❌'],
+    ];
+    rows.forEach(([label, fn]) => {
+      html += '<tr><td><strong>' + esc(label) + '</strong></td>';
+      KITS.forEach(k => { html += '<td>' + esc(fn(k)) + '</td>'; });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    el.innerHTML = html;
+  }
+
   /* ═══ INIT ═══ */
   const VALID_TABS = ['kits', 'custom', 'deploy', 'faq'];
   const VALID_KITS = KITS.map(k => k.id);
@@ -787,15 +935,37 @@
     if (downloadBtn) downloadBtn.addEventListener('click', () => {
       const el = $('pvs-ps-output');
       if (!el || !el.textContent.trim()) return;
+      const ext = currentFormat === 'graph' ? '.json' : '.ps1';
       const blob = new Blob([el.textContent], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
-      a.download = 'purview-starter-kit.ps1';
+      a.href = URL.createObjectURL(blob);
+      a.download = 'purview-starter-kit' + ext;
       a.click();
-      URL.revokeObjectURL(url);
-      toast('Downloaded purview-starter-kit.ps1');
+      URL.revokeObjectURL(a.href);
+      toast('Downloaded purview-starter-kit' + ext);
     });
+
+    // V5: Export deployment document
+    const exportDocBtn = $('pvs-export-doc');
+    if (exportDocBtn) exportDocBtn.addEventListener('click', exportDeployDoc);
+
+    // V6: Interactive checklist
+    initChecklist();
+
+    // V7: Export format tabs
+    document.querySelectorAll('.pvs-export-tab').forEach(tab => {
+      tab.addEventListener('click', () => switchExportFormat(tab.dataset.format));
+    });
+
+    // V8: Compare kits
+    const compareBtn = $('pvs-compare-kits');
+    const compareModal = $('pvs-compare-modal');
+    const compareClose = $('pvs-compare-close');
+    if (compareBtn && compareModal) {
+      compareBtn.addEventListener('click', () => { renderCompare(); compareModal.style.display = ''; });
+      if (compareClose) compareClose.addEventListener('click', () => { compareModal.style.display = 'none'; });
+      compareModal.addEventListener('click', e => { if (e.target === compareModal) compareModal.style.display = 'none'; });
+    }
 
     renderLabelTemplates(); initLabelBuilder(); initLabelTree(); renderLabelTree(); renderLabelPreview();
     renderDLPScenarios(); initDLPScenarios();

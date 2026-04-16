@@ -52,6 +52,21 @@
         </label>
       </div>
       <div class="pvs-kits-grid" id="pvs-kits-grid"></div>
+      <div style="text-align:center;margin-top:1rem">
+        <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-compare-kits">Compare All Kits Side-by-Side</button>
+      </div>
+      {{/* Compare modal */}}
+      <div class="pvs-modal-overlay" id="pvs-compare-modal" style="display:none">
+        <div class="pvs-modal pvs-modal--wide" role="dialog" aria-modal="true" aria-label="Compare kits">
+          <div class="pvs-modal-header">
+            <h3>Compare Starter Kits</h3>
+            <button class="pvs-modal-close" id="pvs-compare-close" aria-label="Close">✕</button>
+          </div>
+          <div class="pvs-modal-body" style="overflow-x:auto">
+            <div id="pvs-compare-table"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     {{/* ═══ BUILD YOUR OWN TAB (merged Labels + DLP) ═══ */}}
@@ -207,19 +222,29 @@
           </div>
         </div>
 
-        {{/* Deployment steps */}}
-        <div class="pvs-deploy-steps" id="pvs-deploy-steps"></div>
-
-        {{/* PowerShell export */}}
+        {{/* Deployment steps — interactive checklist */}}
         <div class="pvs-deploy-section">
-          <h3>PowerShell Commands</h3>
-          <p class="pvs-deploy-note">Starter scaffold — review and customise before running in production. Connect to Security & Compliance PowerShell first.</p>
+          <div class="pvs-checklist-header">
+            <h3>Rollout Steps</h3>
+            <span class="pvs-checklist-progress" id="pvs-checklist-progress"></span>
+          </div>
+          <div class="pvs-deploy-steps" id="pvs-deploy-steps"></div>
+        </div>
+
+        {{/* PowerShell / Graph API export */}}
+        <div class="pvs-deploy-section">
+          <div class="pvs-export-tabs">
+            <button class="pvs-export-tab active" data-format="ps">PowerShell</button>
+            <button class="pvs-export-tab" data-format="graph">Graph API JSON</button>
+          </div>
+          <p class="pvs-deploy-note">Starter scaffold — review and customise before running in production.</p>
           <div class="pvs-code-block">
             <div class="pvs-code-header">
-              <span>PowerShell — Security & Compliance</span>
+              <span id="pvs-code-lang">PowerShell — Security &amp; Compliance</span>
               <div style="display:flex;gap:0.3rem">
-                <button class="pvs-btn pvs-btn--sm pvs-copy-btn" data-copy="pvs-ps-output" aria-label="Copy PowerShell">Copy All</button>
-                <button class="pvs-btn pvs-btn--sm pvs-btn--secondary" id="pvs-download-ps" aria-label="Download .ps1 file">Download .ps1</button>
+                <button class="pvs-btn pvs-btn--sm pvs-copy-btn" data-copy="pvs-ps-output" aria-label="Copy code">Copy All</button>
+                <button class="pvs-btn pvs-btn--sm pvs-btn--secondary" id="pvs-download-ps" aria-label="Download file">Download</button>
+                <button class="pvs-btn pvs-btn--sm pvs-btn--secondary" id="pvs-export-doc" aria-label="Export deployment document">Export Doc</button>
               </div>
             </div>
             <pre class="pvs-code" id="pvs-ps-output"></pre>

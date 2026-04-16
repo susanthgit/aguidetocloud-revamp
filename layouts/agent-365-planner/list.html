@@ -54,215 +54,105 @@
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="agplan-tabs" role="tablist" aria-label="Agent 365 Planner sections">
-      <button class="agplan-tab active" data-tab="quickstart" role="tab" aria-selected="true">Quick Start</button>
-      <button class="agplan-tab" data-tab="assessment" role="tab" aria-selected="false">Readiness</button>
-      <button class="agplan-tab" data-tab="governance" role="tab" aria-selected="false">Governance</button>
-      <button class="agplan-tab" data-tab="designer" role="tab" aria-selected="false">Agent Designer</button>
+      <button class="agplan-tab active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+      <button class="agplan-tab" data-tab="assessment" role="tab" aria-selected="false">Assessment</button>
+      <button class="agplan-tab" data-tab="checklist" role="tab" aria-selected="false">Checklist</button>
+      <button class="agplan-tab" data-tab="reference" role="tab" aria-selected="false">Reference</button>
+      <button class="agplan-tab" data-tab="decider" role="tab" aria-selected="false">Agent Decider</button>
       <button class="agplan-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════════
-         TAB 1: QUICK START
+         TAB 1: OVERVIEW (slim — persona nav + analogy + controls + CTA)
          ════════════════════════════════════════════════════════════════════ */}}
-    <div class="agplan-panel active" id="panel-quickstart" role="tabpanel">
+    <div class="agplan-panel active" id="panel-overview" role="tabpanel">
 
-      {{/* Persona selector */}}
+      {{/* Persona selector — clicks NAVIGATE to the right tab */}}
       <div class="agplan-personas">
         <h2 class="agplan-section-title">What describes you best?</h2>
         <div class="agplan-persona-grid">
-          <button class="agplan-persona-card" data-persona="admin">
+          <button class="agplan-persona-card" data-persona="admin" data-goto="assessment">
             <span class="agplan-persona-icon">🛡️</span>
             <strong>IT Admin</strong>
-            <span>I need to set up and govern agents</span>
+            <span>Score your readiness and build your governance checklist</span>
           </button>
-          <button class="agplan-persona-card" data-persona="security">
+          <button class="agplan-persona-card" data-persona="security" data-goto="checklist">
             <span class="agplan-persona-icon">🔒</span>
             <strong>Security / Compliance</strong>
-            <span>I need to secure agent data access</span>
+            <span>Review data access and monitoring best practices</span>
           </button>
-          <button class="agplan-persona-card" data-persona="decision-maker">
+          <button class="agplan-persona-card" data-persona="decision-maker" data-goto="reference">
             <span class="agplan-persona-icon">📊</span>
             <strong>Decision Maker</strong>
-            <span>I need to understand the business case</span>
+            <span>Understand licensing, roles, and what agents can do</span>
           </button>
-          <button class="agplan-persona-card" data-persona="builder">
+          <button class="agplan-persona-card" data-persona="builder" data-goto="decider">
             <span class="agplan-persona-icon">🔨</span>
             <strong>Agent Builder</strong>
-            <span>I want to create agents the right way</span>
+            <span>Find out what type of agent to build and how</span>
           </button>
         </div>
-        <div class="agplan-persona-path" id="agplan-persona-path"></div>
       </div>
 
-      {{/* Section 1: What Is Agent 365? */}}
-      <div class="agplan-qs-section" data-qs-section="overview">
-        <h2 class="agplan-section-title">What Is Agent 365?</h2>
-        <p class="agplan-section-text">Agent 365 is Microsoft's control plane for AI agents. It extends Entra ID, Defender, and Purview to agents — treating them like a <strong>digital workforce</strong> alongside your human workforce. Every agent gets its own identity, permissions, lifecycle, and compliance controls.</p>
+      {{/* What Is Agent 365 — compact */}}
+      <h2 class="agplan-section-title">What Is Agent 365?</h2>
+      <p class="agplan-section-text">Agent 365 is Microsoft's control plane for AI agents. It extends Entra ID, Defender, and Purview to agents — treating them like a <strong>digital workforce</strong> alongside your human workforce.</p>
 
-        <div class="agplan-analogy-card">
-          <div class="agplan-analogy-row">
-            <div class="agplan-analogy-col">
-              <span class="agplan-analogy-icon">👥</span>
-              <strong>Users</strong>
-              <span>Human Workforce</span>
-            </div>
-            <div class="agplan-analogy-divider">+</div>
-            <div class="agplan-analogy-col">
-              <span class="agplan-analogy-icon">🤖</span>
-              <strong>Agents</strong>
-              <span>Digital Workforce</span>
-            </div>
-            <div class="agplan-analogy-divider">=</div>
-            <div class="agplan-analogy-col">
-              <span class="agplan-analogy-icon">🏢</span>
-              <strong>Agent 365</strong>
-              <span>HR Department for Agents</span>
-            </div>
+      <div class="agplan-analogy-card">
+        <div class="agplan-analogy-row">
+          <div class="agplan-analogy-col">
+            <span class="agplan-analogy-icon">👥</span>
+            <strong>Users</strong>
+            <span>Human Workforce</span>
           </div>
-        </div>
-
-        <div class="agplan-licence-pill">
-          <span><strong>$15</strong>/user/month standalone</span>
-          <span class="agplan-licence-divider">|</span>
-          <span>Included in <strong>M365 E7</strong> ($99/user/month)</span>
-        </div>
-      </div>
-
-      {{/* Section 2: 4 Agent Types */}}
-      <div class="agplan-qs-section" data-qs-section="agent-types">
-        <h2 class="agplan-section-title">4 Agent Types</h2>
-        <div class="agplan-type-cards">
-          <details class="agplan-type-card" open>
-            <summary><span class="agplan-type-icon">Ⓜ️</span> <strong>Microsoft Agents</strong> — Built and maintained by Microsoft</summary>
-            <p>Pre-built agents like Researcher, Planner, and Interpreter. Available to all licensed users. IT can pin, block, or restrict these via the Agent Registry.</p>
-          </details>
-          <details class="agplan-type-card">
-            <summary><span class="agplan-type-icon">🤝</span> <strong>Partner Agents</strong> — Built by trusted ISVs and partners</summary>
-            <p>Agents from ServiceNow, SAP, Workday, and other partners. Available through the Agent Store. IT controls which partner agents are allowed in the tenant.</p>
-          </details>
-          <details class="agplan-type-card">
-            <summary><span class="agplan-type-icon">🏢</span> <strong>Org-Published Agents</strong> — Custom agents approved by your IT</summary>
-            <p>Agents built by your organisation's developers or power users, reviewed and published through your approval workflow. These are your custom knowledge bots, process agents, and department helpers.</p>
-          </details>
-          <details class="agplan-type-card">
-            <summary><span class="agplan-type-icon">👤</span> <strong>User-Shared Agents</strong> — Created and shared by individuals</summary>
-            <p>Personal agents that users create for their own productivity and optionally share with colleagues. Lowest governance overhead but highest sprawl risk without controls.</p>
-          </details>
-        </div>
-      </div>
-
-      {{/* Section 3: Blueprint → Instance */}}
-      <div class="agplan-qs-section" data-qs-section="blueprint">
-        <h2 class="agplan-section-title">Blueprint → Instance</h2>
-        <p class="agplan-section-text">Every agent starts as a <strong>Blueprint</strong> (the template) and becomes an <strong>Instance</strong> (deployed in your tenant). Blueprints define what an agent can do; instances are managed by IT.</p>
-        <div class="agplan-blueprint-diagram">
-          <div class="agplan-bp-box agplan-bp-blueprint">
-            <strong>Agent Blueprint</strong>
-            <span>(Template)</span>
-            <ul>
-              <li>Capabilities defined</li>
-              <li>Permission model</li>
-              <li>Behaviour rules</li>
-              <li>Created by developers</li>
-            </ul>
+          <div class="agplan-analogy-divider">+</div>
+          <div class="agplan-analogy-col">
+            <span class="agplan-analogy-icon">🤖</span>
+            <strong>Agents</strong>
+            <span>Digital Workforce</span>
           </div>
-          <div class="agplan-bp-arrow">→</div>
-          <div class="agplan-bp-box agplan-bp-instance">
-            <strong>Agent Instance</strong>
-            <span>(Tenant-specific)</span>
-            <ul>
-              <li>Own Entra Agent ID</li>
-              <li>Tenant configuration</li>
-              <li>Inherited permissions</li>
-              <li>Managed by IT</li>
-            </ul>
+          <div class="agplan-analogy-divider">=</div>
+          <div class="agplan-analogy-col">
+            <span class="agplan-analogy-icon">🏢</span>
+            <strong>Agent 365</strong>
+            <span>HR Department for Agents</span>
           </div>
         </div>
       </div>
 
-      {{/* Section 4: What Admins Can Control */}}
-      <div class="agplan-qs-section" data-qs-section="admin-controls">
-        <h2 class="agplan-section-title">What Admins Can Control</h2>
-        <div class="agplan-control-grid">
-          <details class="agplan-control-card">
-            <summary><strong>Agent Registry</strong></summary>
-            <p>Unified inventory of all agents in your tenant. Search, filter, export, and manage every agent from one place in the M365 Admin Centre.</p>
-          </details>
-          <details class="agplan-control-card">
-            <summary><strong>Agent Lifecycle</strong></summary>
-            <p>Publish, activate, deploy, pin for users, block, remove, delete, and reassign agents. Full control over every stage of an agent's life.</p>
-          </details>
-          <details class="agplan-control-card">
-            <summary><strong>Access Policies</strong></summary>
-            <p>Scope agent access to specific users and groups. Apply Conditional Access policies. Control who can use which agents.</p>
-          </details>
-          <details class="agplan-control-card">
-            <summary><strong>Data Governance</strong></summary>
-            <p>Sensitivity labels on embedded content. Purview integration for data classification. Information Barriers between departments.</p>
-          </details>
-          <details class="agplan-control-card">
-            <summary><strong>Monitoring</strong></summary>
-            <p>Audit trails for every agent interaction. Usage metrics and adoption reports. Security alerts via Microsoft Defender.</p>
-          </details>
-        </div>
+      <div class="agplan-licence-pill">
+        <span><strong>$15</strong>/user/month standalone</span>
+        <span class="agplan-licence-divider">|</span>
+        <span>Included in <strong>M365 E7</strong> ($99/user/month)</span>
       </div>
 
-      {{/* Section 5: Who Owns What (RACI) */}}
-      <div class="agplan-qs-section" data-qs-section="raci">
-        <h2 class="agplan-section-title">Who Owns What?</h2>
-        <div class="agplan-table-wrap">
-          <table class="agplan-table">
-            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
-            <tbody>
-              <tr><td><strong>AI Administrator</strong></td><td>Agent Registry access, publish/block/remove agents, approval workflows</td></tr>
-              <tr><td><strong>AI Reader</strong></td><td>View-only access to Agent Registry (least privilege for reporting)</td></tr>
-              <tr><td><strong>Global Admin</strong></td><td>Full tenant control, delegates to AI Admin for day-to-day operations</td></tr>
-              <tr><td><strong>Security Admin</strong></td><td>Defender monitoring, Conditional Access for agents, incident response</td></tr>
-              <tr><td><strong>Compliance Admin</strong></td><td>Purview policies, sensitivity labels, Information Barriers</td></tr>
-              <tr><td><strong>Agent Owner</strong></td><td>Lifecycle of their specific agent — reviews, updates, retirement</td></tr>
-              <tr><td><strong>Business Sponsor</strong></td><td>Business case justification, success metrics, budget approval</td></tr>
-            </tbody>
-          </table>
+      {{/* 5 Things Admins Can Control — compact cards */}}
+      <h2 class="agplan-section-title">5 Things You Can Control</h2>
+      <div class="agplan-control-grid">
+        <div class="agplan-control-card-static">
+          <strong>Agent Registry</strong>
+          <span>Unified inventory of all agents. Search, filter, manage.</span>
         </div>
-      </div>
-
-      {{/* Section 6: Key Terms */}}
-      <div class="agplan-qs-section" data-qs-section="glossary">
-        <h2 class="agplan-section-title">Key Terms</h2>
-        <div class="agplan-glossary-grid">
-          <div class="agplan-glossary-item">
-            <strong>Entra Agent ID</strong>
-            <span>Unique identity for each agent — like a user account but for AI</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Agent Blueprint</strong>
-            <span>Template that defines what an agent can do — created by developers</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Agent Instance</strong>
-            <span>Tenant-specific deployment of a blueprint — managed by IT</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Agent Registry</strong>
-            <span>Central inventory of all agents in M365 Admin Centre</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Agent Store</strong>
-            <span>Marketplace for discovering and installing agents</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Agent Skills</strong>
-            <span>Packaged capabilities distributed through Agent Store or app catalog</span>
-          </div>
-          <div class="agplan-glossary-item">
-            <strong>Shadow Agents</strong>
-            <span>Unregistered AI tools operating without IT visibility</span>
-          </div>
+        <div class="agplan-control-card-static">
+          <strong>Lifecycle</strong>
+          <span>Publish, pin, block, remove, delete, reassign.</span>
+        </div>
+        <div class="agplan-control-card-static">
+          <strong>Access Policies</strong>
+          <span>Scope to users/groups. Conditional Access.</span>
+        </div>
+        <div class="agplan-control-card-static">
+          <strong>Data Governance</strong>
+          <span>Sensitivity labels. Purview. Information Barriers.</span>
+        </div>
+        <div class="agplan-control-card-static">
+          <strong>Monitoring</strong>
+          <span>Audit trails. Usage metrics. Defender alerts.</span>
         </div>
       </div>
 
       <div class="agplan-qs-cta">
-        <button class="agplan-btn-primary" id="agplan-goto-assessment">Ready to check if your org is prepared? →</button>
+        <button class="agplan-btn-primary" id="agplan-goto-assessment">Score your Agent 365 readiness →</button>
       </div>
     </div>
 
@@ -356,7 +246,7 @@
     {{/* ════════════════════════════════════════════════════════════════════
          TAB 3: GOVERNANCE BUILDER (Phase 1: Checklist only)
          ════════════════════════════════════════════════════════════════════ */}}
-    <div class="agplan-panel" id="panel-governance" role="tabpanel">
+    <div class="agplan-panel" id="panel-checklist" role="tabpanel">
 
       <div class="agplan-gov-header">
         <h2 class="agplan-section-title">Best Practices Checklist</h2>
@@ -376,11 +266,90 @@
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════════
-         TAB 4: AGENT DESIGNER (Phase 1: Decision Tree only)
+         TAB 4: REFERENCE (educational content — agent types, blueprint, RACI, glossary)
          ════════════════════════════════════════════════════════════════════ */}}
-    <div class="agplan-panel" id="panel-designer" role="tabpanel">
+    <div class="agplan-panel" id="panel-reference" role="tabpanel">
 
-      <h2 class="agplan-section-title">Should This Be an Agent?</h2>
+      <h2 class="agplan-section-title">4 Agent Types</h2>
+      <div class="agplan-type-cards">
+        <details class="agplan-type-card" open>
+          <summary><span class="agplan-type-icon">Ⓜ️</span> <strong>Microsoft Agents</strong> — Built and maintained by Microsoft</summary>
+          <p>Pre-built agents like Researcher, Planner, and Interpreter. Available to all licensed users. IT can pin, block, or restrict these via the Agent Registry.</p>
+        </details>
+        <details class="agplan-type-card">
+          <summary><span class="agplan-type-icon">🤝</span> <strong>Partner Agents</strong> — Built by trusted ISVs and partners</summary>
+          <p>Agents from ServiceNow, SAP, Workday, and other partners. Available through the Agent Store. IT controls which partner agents are allowed in the tenant.</p>
+        </details>
+        <details class="agplan-type-card">
+          <summary><span class="agplan-type-icon">🏢</span> <strong>Org-Published Agents</strong> — Custom agents approved by your IT</summary>
+          <p>Agents built by your organisation's developers or power users, reviewed and published through your approval workflow. These are your custom knowledge bots, process agents, and department helpers.</p>
+        </details>
+        <details class="agplan-type-card">
+          <summary><span class="agplan-type-icon">👤</span> <strong>User-Shared Agents</strong> — Created and shared by individuals</summary>
+          <p>Personal agents that users create for their own productivity and optionally share with colleagues. Lowest governance overhead but highest sprawl risk without controls.</p>
+        </details>
+      </div>
+
+      <h2 class="agplan-section-title" style="margin-top:2rem">Blueprint → Instance</h2>
+      <p class="agplan-section-text">Every agent starts as a <strong>Blueprint</strong> (the template) and becomes an <strong>Instance</strong> (deployed in your tenant). Blueprints define what an agent can do; instances are managed by IT.</p>
+      <div class="agplan-blueprint-diagram">
+        <div class="agplan-bp-box agplan-bp-blueprint">
+          <strong>Agent Blueprint</strong>
+          <span>(Template)</span>
+          <ul>
+            <li>Capabilities defined</li>
+            <li>Permission model</li>
+            <li>Behaviour rules</li>
+            <li>Created by developers</li>
+          </ul>
+        </div>
+        <div class="agplan-bp-arrow">→</div>
+        <div class="agplan-bp-box agplan-bp-instance">
+          <strong>Agent Instance</strong>
+          <span>(Tenant-specific)</span>
+          <ul>
+            <li>Own Entra Agent ID</li>
+            <li>Tenant configuration</li>
+            <li>Inherited permissions</li>
+            <li>Managed by IT</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="agplan-section-title" style="margin-top:2rem">Who Owns What?</h2>
+      <div class="agplan-table-wrap">
+        <table class="agplan-table">
+          <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+          <tbody>
+            <tr><td><strong>AI Administrator</strong></td><td>Agent Registry access, publish/block/remove agents, approval workflows</td></tr>
+            <tr><td><strong>AI Reader</strong></td><td>View-only access to Agent Registry (least privilege for reporting)</td></tr>
+            <tr><td><strong>Global Admin</strong></td><td>Full tenant control, delegates to AI Admin for day-to-day operations</td></tr>
+            <tr><td><strong>Security Admin</strong></td><td>Defender monitoring, Conditional Access for agents, incident response</td></tr>
+            <tr><td><strong>Compliance Admin</strong></td><td>Purview policies, sensitivity labels, Information Barriers</td></tr>
+            <tr><td><strong>Agent Owner</strong></td><td>Lifecycle of their specific agent — reviews, updates, retirement</td></tr>
+            <tr><td><strong>Business Sponsor</strong></td><td>Business case justification, success metrics, budget approval</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="agplan-section-title" style="margin-top:2rem">Key Terms</h2>
+      <div class="agplan-glossary-grid">
+        <div class="agplan-glossary-item"><strong>Entra Agent ID</strong><span>Unique identity for each agent — like a user account but for AI</span></div>
+        <div class="agplan-glossary-item"><strong>Agent Blueprint</strong><span>Template that defines what an agent can do — created by developers</span></div>
+        <div class="agplan-glossary-item"><strong>Agent Instance</strong><span>Tenant-specific deployment of a blueprint — managed by IT</span></div>
+        <div class="agplan-glossary-item"><strong>Agent Registry</strong><span>Central inventory of all agents in M365 Admin Centre</span></div>
+        <div class="agplan-glossary-item"><strong>Agent Store</strong><span>Marketplace for discovering and installing agents</span></div>
+        <div class="agplan-glossary-item"><strong>Agent Skills</strong><span>Packaged capabilities distributed through Agent Store or app catalog</span></div>
+        <div class="agplan-glossary-item"><strong>Shadow Agents</strong><span>Unregistered AI tools operating without IT visibility</span></div>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 5: AGENT DECIDER (decision tree)
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel" id="panel-decider" role="tabpanel">
+
+      <h2 class="agplan-section-title">Do I Need an Agent?</h2>
       <p class="agplan-section-text">Answer a few questions to find the right approach for your use case.</p>
 
       <div id="agplan-tree-container">

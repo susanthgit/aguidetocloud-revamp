@@ -1144,6 +1144,76 @@
   margin-top: 0.25rem;
 }
 
+/* ── Checklist ── */
+.pvs-checklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.pvs-checklist-header h3 { color: #fff; font-size: 1.1rem; margin: 0; }
+.pvs-checklist-progress { font-size: 0.82rem; font-weight: 600; }
+.pvs-step-check {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.pvs-step-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--pvs-accent);
+  cursor: pointer;
+}
+.pvs-step-done {
+  opacity: 0.55;
+}
+.pvs-step-done .pvs-step-title {
+  text-decoration: line-through;
+}
+
+/* ── Export format tabs ── */
+.pvs-export-tabs {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+.pvs-export-tab {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.pvs-export-tab:hover { color: #fff; }
+.pvs-export-tab.active {
+  background: var(--pvs-accent);
+  color: #000;
+  border-color: var(--pvs-accent);
+}
+
+/* ── Compare modal ── */
+.pvs-modal--wide { max-width: 900px; }
+.pvs-compare { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.pvs-compare th, .pvs-compare td {
+  padding: 0.5rem 0.65rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pvs-compare th {
+  color: #fff;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.pvs-compare td:first-child { text-align: left; }
+.pvs-compare td { color: rgba(255,255,255,0.65); }
+
 /* ═══ PRINT ═══ */
 @media print {
   body { background: #fff !important; color: #000 !important; }

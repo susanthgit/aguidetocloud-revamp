@@ -10,26 +10,34 @@
 
   // Tool display names and colours (matches Tool Registry)
   var TOOLS = {
-    'ai-news':              { name: 'AI News',               color: '#ff66ff', emoji: '📰' },
-    'm365-roadmap':         { name: 'M365 Roadmap',          color: '#E5A00D', emoji: '🗺️' },
-    'prompt-library':       { name: 'Prompt Library',        color: '#A78BFA', emoji: '💡' },
-    'licensing':            { name: 'Licensing Simplifier',  color: '#F43F5E', emoji: '📜' },
-    'prompt-polisher':      { name: 'Prompt Polisher',       color: '#EC4899', emoji: '✨' },
-    'copilot-readiness':    { name: 'Copilot Readiness',     color: '#3B82F6', emoji: '🎯' },
-    'copilot-matrix':       { name: 'Copilot Feature Matrix',color: '#60A5FA', emoji: '📊' },
-    'deprecation-timeline': { name: 'Deprecation Timeline',  color: '#DC2626', emoji: '⏰' },
-    'service-health':       { name: 'Service Health',        color: '#EA580C', emoji: '🏥' },
-    'cert-tracker':         { name: 'Cert Study Guides',     color: '#10B981', emoji: '📖' },
-    'roi-calculator':       { name: 'ROI Calculator',        color: '#14B8A6', emoji: '💰' },
-    'ai-mapper':            { name: 'AI Service Mapper',     color: '#38BDF8', emoji: '☁️' },
-    'ai-showdown':          { name: 'AI SaaS Showdown',      color: '#D4A853', emoji: '🥊' },
-    'ps-builder':           { name: 'PowerShell Builder',    color: '#4ADE80', emoji: '⚡' },
-    'migration-planner':    { name: 'Migration Planner',     color: '#6478CC', emoji: '🔄' },
-    'prompt-guide':         { name: 'Prompt Guide',          color: '#84CC16', emoji: '🎓' },
-    'ca-builder':           { name: 'CA Policy Builder',     color: '#7C3AED', emoji: '🛡️' },
-    'meeting-planner':      { name: 'Meeting Planner',       color: '#0EA5E9', emoji: '🌍' },
-    'feedback':             { name: 'Community Feedback',    color: '#FBBF24', emoji: '💬' },
-    'site-analytics':       { name: 'Site Analytics',        color: '#64748B', emoji: '📊' }
+    'ai-news':              { name: 'AI News',               color: '#ff66ff' },
+    'm365-roadmap':         { name: 'M365 Roadmap',          color: '#E5A00D' },
+    'prompt-library':       { name: 'Prompt Library',        color: '#A78BFA' },
+    'licensing':            { name: 'Licensing Simplifier',  color: '#F43F5E' },
+    'prompt-polisher':      { name: 'Prompt Polisher',       color: '#EC4899' },
+    'copilot-readiness':    { name: 'Copilot Readiness',     color: '#3B82F6' },
+    'copilot-matrix':       { name: 'Copilot Feature Matrix',color: '#60A5FA' },
+    'deprecation-timeline': { name: 'Deprecation Timeline',  color: '#DC2626' },
+    'service-health':       { name: 'Service Health',        color: '#EA580C' },
+    'cert-tracker':         { name: 'Cert Study Guides',     color: '#10B981' },
+    'roi-calculator':       { name: 'ROI Calculator',        color: '#14B8A6' },
+    'ai-mapper':            { name: 'AI Service Mapper',     color: '#38BDF8' },
+    'ai-showdown':          { name: 'AI SaaS Showdown',      color: '#D4A853' },
+    'ps-builder':           { name: 'PowerShell Builder',    color: '#4ADE80' },
+    'migration-planner':    { name: 'Migration Planner',     color: '#6478CC' },
+    'prompt-guide':         { name: 'Prompt Guide',          color: '#84CC16' },
+    'ca-builder':           { name: 'CA Policy Builder',     color: '#7C3AED' },
+    'meeting-planner':      { name: 'Meeting Planner',       color: '#0EA5E9' },
+    'feedback':             { name: 'Community Feedback',    color: '#FBBF24' },
+    'site-analytics':       { name: 'Site Analytics',        color: '#64748B' },
+    'qr-generator':         { name: 'QR Code Generator',    color: '#EC4899' },
+    'wifi-qr':              { name: 'WiFi QR Cards',         color: '#22D3EE' },
+    'password-generator':   { name: 'Password Generator',   color: '#D946EF' },
+    'image-compressor':     { name: 'Image Compressor',     color: '#818CF8' },
+    'typing-test':          { name: 'Typing Speed Test',    color: '#34D399' },
+    'countdown':            { name: 'Countdown Timer',      color: '#FB923C' },
+    'color-palette':        { name: 'Colour Palette',       color: '#F472B6' },
+    'pomodoro':             { name: 'Pomodoro Timer',        color: '#EF4444' }
   };
 
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
@@ -75,7 +83,6 @@
   }
 
   function render(data) {
-    // Stats bar — use GA4 data if available
     var ga4 = data.ga4;
     var gsc = data.gsc;
     var custom = data.custom;
@@ -84,19 +91,23 @@
     if (ga4) {
       el = document.getElementById('sa-total-views');
       if (el) el.textContent = roundDisplay(ga4.totals.views);
-      el = document.getElementById('sa-total-actions');
+      el = document.getElementById('sa-total-users');
       if (el) el.textContent = roundDisplay(ga4.totals.users);
+      el = document.getElementById('sa-total-sessions');
+      if (el) el.textContent = roundDisplay(ga4.totals.sessions);
       el = document.getElementById('sa-today-views');
       if (el) el.textContent = roundDisplay(ga4.today.views);
-      var actionLabel = document.querySelectorAll('.siteana-stat-label')[1];
-      if (actionLabel) actionLabel.textContent = 'Unique Users';
+
+      // Week-over-week badges
+      if (ga4.wow && ga4.wow.change) {
+        renderWoWBadge('sa-wow-views', ga4.wow.change.views);
+        renderWoWBadge('sa-wow-users', ga4.wow.change.users);
+        renderWoWBadge('sa-wow-sessions', ga4.wow.change.sessions);
+      }
     } else {
-      el = document.getElementById('sa-total-views');
-      if (el) el.textContent = '—';
-      el = document.getElementById('sa-total-actions');
-      if (el) el.textContent = '—';
-      el = document.getElementById('sa-today-views');
-      if (el) el.textContent = '—';
+      ['sa-total-views','sa-total-users','sa-total-sessions','sa-today-views'].forEach(function(id) {
+        el = document.getElementById(id); if (el) el.textContent = '—';
+      });
     }
 
     var leaderboard = ga4 ? ga4.leaderboard : (custom && custom.leaderboard ? custom.leaderboard.map(function(t) {
@@ -117,9 +128,11 @@
 
     // GA4 extras
     if (ga4) {
-      renderExtraSection('sa-countries', ga4.countries, 'country', 'users', '🌍 Top Countries');
-      renderExtraSection('sa-devices', ga4.devices, 'device', 'users', '📱 Devices');
-      renderExtraSection('sa-sources', ga4.sources, 'source', 'sessions', '🔗 Traffic Sources');
+      renderExtraSection('sa-countries', ga4.countries, 'country', 'users');
+      renderExtraSection('sa-devices', ga4.devices, 'device', 'users');
+      renderExtraSection('sa-sources', ga4.sources, 'source', 'sessions');
+      if (ga4.top_pages) renderTopPages(ga4.top_pages);
+      if (ga4.blog_pages) renderBlogPages(ga4.blog_pages);
     }
 
     // Search queries — prefer GSC
@@ -129,7 +142,7 @@
       renderSearches(custom.top_searches);
     } else {
       var sc = document.getElementById('sa-searches');
-      if (sc) sc.innerHTML = '<div class="siteana-empty">🔍 Search data will appear once Google indexes the site more deeply.</div>';
+      if (sc) sc.innerHTML = '<div class="siteana-empty">Search data will appear once Google indexes the site more deeply.</div>';
     }
   }
 
@@ -151,8 +164,8 @@
             pointRadius: 3
           },
           {
-            label: 'Actions',
-            data: trend.map(function(d) { return d.actions; }),
+            label: 'Users',
+            data: trend.map(function(d) { return d.users; }),
             borderColor: '#ff66ff',
             backgroundColor: 'rgba(255,102,255,0.1)',
             fill: true,
@@ -214,8 +227,8 @@
       var rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank ' + rankClass + '">' + (i + 1) + '</span>'
-        + '<div class="siteana-lb-info"><span class="siteana-lb-name">' + esc(info.emoji + ' ' + info.name) + '</span>'
-        + '<span class="siteana-lb-count">' + esc(roundDisplay(item.views)) + ' views · ' + esc(roundDisplay(item.actions)) + ' actions</span></div>'
+        + '<div class="siteana-lb-info"><span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span>'
+        + '<span class="siteana-lb-count">' + esc(roundDisplay(item.views)) + ' views · ' + esc(roundDisplay(item.users)) + ' users</span></div>'
         + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + info.color + '"></div></div>'
         + '<span class="siteana-lb-total">' + esc(roundDisplay(item.total)) + '</span>'
         + '</div>';
@@ -236,7 +249,7 @@
       var info = getToolInfo(item.tool);
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name">' + esc(info.emoji + ' ' + info.name) + '</span>'
+        + '<span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span>'
         + '<span class="siteana-lb-total">' + esc(roundDisplay(item[field])) + '</span>'
         + '</div>';
     }).join('');
@@ -274,7 +287,7 @@
     }).join('');
   }
 
-  function renderExtraSection(containerId, items, labelKey, valueKey, title) {
+  function renderExtraSection(containerId, items, labelKey, valueKey) {
     var container = document.getElementById(containerId);
     if (!container || !items || !items.length) return;
     var max = items[0][valueKey] || 1;
@@ -286,6 +299,51 @@
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span>'
         + '</div>';
     }).join('');
+  }
+
+  function renderWoWBadge(containerId, pct) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var arrow = pct > 0 ? '↑' : pct < 0 ? '↓' : '→';
+    var cls = pct > 0 ? 'siteana-wow-up' : pct < 0 ? 'siteana-wow-down' : 'siteana-wow-flat';
+    el.className = 'siteana-wow ' + cls;
+    el.textContent = arrow + ' ' + Math.abs(pct) + '%';
+    el.style.display = 'inline-block';
+  }
+
+  function renderTopPages(pages) {
+    var container = document.getElementById('sa-top-pages');
+    if (!container || !pages || !pages.length) return;
+    var max = pages[0].views || 1;
+    container.innerHTML = pages.slice(0, 20).map(function(p, i) {
+      var pct = Math.round((p.views / max) * 100);
+      var name = p.path === '/' ? 'Homepage' : p.path.replace(/\//g, ' ').trim();
+      return '<div class="siteana-lb-item">'
+        + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
+        + '<span class="siteana-lb-total">' + roundDisplay(p.views) + '</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  function renderBlogPages(pages) {
+    var container = document.getElementById('sa-blog-pages');
+    if (!container || !pages || !pages.length) return;
+    var max = pages[0].views || 1;
+    container.innerHTML = pages.map(function(p, i) {
+      var pct = Math.round((p.views / max) * 100);
+      var slug = p.path.replace('/blog/', '').replace(/\//g, '');
+      var name = slug.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+      if (name.length > 60) name = name.slice(0, 57) + '...';
+      return '<div class="siteana-lb-item">'
+        + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#0EA5E9"></div></div>'
+        + '<span class="siteana-lb-total">' + roundDisplay(p.views) + '</span>'
+        + '</div>';
+    }).join('');
+    if (!pages.length) container.innerHTML = '<div class="siteana-empty">No blog traffic data yet.</div>';
   }
 
   // Auto-refresh every 5 minutes
