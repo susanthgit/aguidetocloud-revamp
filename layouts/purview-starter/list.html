@@ -195,7 +195,10 @@
 
         <div class="pvs-deploy-header">
           <h2>Deployment Plan: <span id="pvs-deploy-kit-name"></span></h2>
-          <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-change-kit">Change Kit</button>
+          <div class="pvs-deploy-header-actions">
+            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-change-kit">Change Kit</button>
+            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-reset-plan" style="color:#F87171">Reset Plan</button>
+          </div>
         </div>
 
         {{/* Deployment steps */}}
@@ -208,7 +211,10 @@
           <div class="pvs-code-block">
             <div class="pvs-code-header">
               <span>PowerShell — Security & Compliance</span>
-              <button class="pvs-btn pvs-btn--sm pvs-copy-btn" data-copy="pvs-ps-output" aria-label="Copy PowerShell">Copy All</button>
+              <div style="display:flex;gap:0.3rem">
+                <button class="pvs-btn pvs-btn--sm pvs-copy-btn" data-copy="pvs-ps-output" aria-label="Copy PowerShell">Copy All</button>
+                <button class="pvs-btn pvs-btn--sm pvs-btn--secondary" id="pvs-download-ps" aria-label="Download .ps1 file">Download .ps1</button>
+              </div>
             </div>
             <pre class="pvs-code" id="pvs-ps-output"></pre>
           </div>

@@ -1,0 +1,391 @@
+# ============================================================================
+# Agent 365 Planner — Readiness Assessment
+# 25 questions across 5 pillars, 0–2 points each (max 50, scaled to 0–100)
+# Source: Public Microsoft Learn docs + community best practices
+# Last verified: 2026-04-16
+# ============================================================================
+
+max_raw_score = 50
+scale_to = 100
+
+# ── Score Tiers ──────────────────────────────────────────────────────────────
+
+[[tiers]]
+id = "not-ready"
+label = "Not Ready"
+emoji = "🔴"
+min = 0
+max = 25
+description = "Significant gaps before enabling Agent 365. Start with the Pre-Deployment checklist in the Governance tab."
+
+[[tiers]]
+id = "early-stage"
+label = "Early Stage"
+emoji = "🟠"
+min = 26
+max = 45
+description = "Foundation work needed. Focus on data access policies and agent creation controls before rollout."
+
+[[tiers]]
+id = "getting-ready"
+label = "Getting Ready"
+emoji = "🟡"
+min = 46
+max = 65
+description = "Some governance in place but gaps to address. Review your weakest pillars and prioritise quick wins."
+
+[[tiers]]
+id = "well-prepared"
+label = "Well Prepared"
+emoji = "🟢"
+min = 66
+max = 85
+description = "Strong foundation for Agent 365. Fine-tune monitoring and lifecycle management for production readiness."
+
+[[tiers]]
+id = "agent-ready"
+label = "Agent Ready"
+emoji = "🌟"
+min = 86
+max = 100
+description = "Comprehensive governance in place. Proceed with confidence — your org is ready for AI agents at scale."
+
+# ── Pillar 1: Agent Creation Policies ────────────────────────────────────────
+
+[[pillars]]
+id = "creation-policies"
+name = "Agent Creation Policies"
+icon = "🏗️"
+description = "Who can create agents and how they're approved"
+
+[[pillars.questions]]
+id = "cp-q1"
+text = "Have you decided who can create agents in your org?"
+options = [
+  { label = "Not decided yet", value = 0 },
+  { label = "General direction but not enforced", value = 1 },
+  { label = "Defined and enforced policy", value = 2 },
+]
+recommendation_low = "Define agent creation policies before enabling Agent 365. Key decision: everyone with a licence, specific groups only, or IT-only."
+recommendation_high = "Your creation policies are clear. Ensure they're documented and communicated to all stakeholders."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "cp-q2"
+text = "Do you have an approval workflow for new agents before they go live?"
+options = [
+  { label = "No approval process", value = 0 },
+  { label = "Informal review exists", value = 1 },
+  { label = "Formal approval workflow defined", value = 2 },
+]
+recommendation_low = "Establish an agent approval workflow. Without one, anyone with creation rights can publish agents to your entire org."
+recommendation_high = "Approval workflow in place. Consider automating with Power Automate for scalability."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "cp-q3"
+text = "Have you defined which agent types are allowed in your tenant?"
+options = [
+  { label = "No restrictions considered", value = 0 },
+  { label = "Some awareness of agent types", value = 1 },
+  { label = "Defined policy on allowed agent types", value = 2 },
+]
+recommendation_low = "Understand the four agent types (Microsoft, Partner, Org-Published, User-Shared) and decide which to allow. Start restrictive — you can always open up later."
+recommendation_high = "Agent type policy defined. Review it quarterly as the Agent Store ecosystem grows."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/agent-essentials/m365-agents-admin-guide"
+
+[[pillars.questions]]
+id = "cp-q4"
+text = "Do you have naming conventions for agents?"
+options = [
+  { label = "No standard exists", value = 0 },
+  { label = "Informal guidelines", value = 1 },
+  { label = "Enforced naming standard", value = 2 },
+]
+recommendation_low = "Create a naming convention before agents proliferate. Use the Governance Builder tab to generate one. Without it, you'll end up with 'Test Agent 3' and 'Johns Bot v2'."
+recommendation_high = "Naming convention in place. Ensure it's included in agent creation documentation and enforced in reviews."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "cp-q5"
+text = "Is there a process to prevent duplicate or overlapping agents?"
+options = [
+  { label = "Nothing in place", value = 0 },
+  { label = "Ad-hoc review when noticed", value = 1 },
+  { label = "Formal review before creation", value = 2 },
+]
+recommendation_low = "Without dedup governance, you'll get 5 different 'HR FAQ' agents. Include a registry search step in your approval workflow."
+recommendation_high = "Deduplication process exists. Use the Agent Registry to regularly audit for overlapping agents."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+
+# ── Pillar 2: Data Access & Permissions ──────────────────────────────────────
+
+[[pillars]]
+id = "data-access"
+name = "Data Access & Permissions"
+icon = "🔐"
+description = "How agents access your organisation's data"
+
+[[pillars.questions]]
+id = "da-q1"
+text = "Have you audited SharePoint and OneDrive permissions before enabling agents?"
+options = [
+  { label = "Not done", value = 0 },
+  { label = "Partial audit", value = 1 },
+  { label = "Full audit completed", value = 2 },
+]
+recommendation_low = "Critical: Agents surface whatever users can access. Weak permissions mean instant data exposure through agents. Audit before enabling."
+recommendation_high = "Permissions audited. Schedule regular re-audits — permissions drift over time."
+learn_url = "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"
+
+[[pillars.questions]]
+id = "da-q2"
+text = "Are sensitivity labels applied to your key data?"
+options = [
+  { label = "Minimal or none", value = 0 },
+  { label = "Applied to some areas", value = 1 },
+  { label = "Broadly applied across key sites", value = 2 },
+]
+recommendation_low = "Sensitivity labels are your best defence against agent data leakage. Start with your most sensitive document libraries."
+recommendation_high = "Good label coverage. Ensure labels are applied to any content that agents will reference."
+learn_url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+
+[[pillars.questions]]
+id = "da-q3"
+text = "Do you have a plan for scoping agent data access to least privilege?"
+options = [
+  { label = "No plan", value = 0 },
+  { label = "General intent to restrict", value = 1 },
+  { label = "Defined least-privilege plan", value = 2 },
+]
+recommendation_low = "Define which data sources each agent type can access. Agents should only see what they need — not everything users can access."
+recommendation_high = "Least-privilege plan defined. Document per-agent data access scope in your registry metadata."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/agent-essentials/m365-agents-admin-guide"
+
+[[pillars.questions]]
+id = "da-q4"
+text = "Have you configured Information Barriers for sensitive teams or departments?"
+options = [
+  { label = "Not configured", value = 0 },
+  { label = "Partially configured", value = 1 },
+  { label = "Configured where needed", value = 2 },
+]
+recommendation_low = "Information Barriers prevent agents from bridging data between departments that shouldn't share. Critical for regulated industries."
+recommendation_high = "Information Barriers configured. Verify they apply correctly to agent-accessed data."
+learn_url = "https://learn.microsoft.com/en-us/purview/information-barriers"
+
+[[pillars.questions]]
+id = "da-q5"
+text = "Do you understand how embedded file content in agents inherits sensitivity labels?"
+options = [
+  { label = "Not aware of this", value = 0 },
+  { label = "Somewhat understand", value = 1 },
+  { label = "Fully understand the inheritance model", value = 2 },
+]
+recommendation_low = "When files are embedded in an agent's knowledge base, the sensitivity label of the source file applies. Understand this before uploading content."
+recommendation_high = "You understand label inheritance. Ensure agent creators are trained on this too."
+learn_url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+
+# ── Pillar 3: Agent Lifecycle Management ─────────────────────────────────────
+
+[[pillars]]
+id = "lifecycle"
+name = "Agent Lifecycle Management"
+icon = "🔄"
+description = "Creation, maintenance, and retirement of agents"
+
+[[pillars.questions]]
+id = "lc-q1"
+text = "Have you assigned clear ownership for each agent type?"
+options = [
+  { label = "No ownership model", value = 0 },
+  { label = "Some agents have owners", value = 1 },
+  { label = "All agents have assigned owners", value = 2 },
+]
+recommendation_low = "Every agent needs an owner responsible for its content accuracy, data access, and lifecycle. Define ownership as part of the creation process."
+recommendation_high = "Ownership model in place. Use the Agent Registry to track and verify ownership."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "lc-q2"
+text = "Do you have a process for decommissioning unused agents?"
+options = [
+  { label = "Nothing in place", value = 0 },
+  { label = "Manual review when noticed", value = 1 },
+  { label = "Automated review schedule", value = 2 },
+]
+recommendation_low = "Stale agents are a security risk — they keep data access permissions even when nobody uses them. Set up quarterly usage reviews."
+recommendation_high = "Decommissioning process exists. Consider automating with usage thresholds."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "lc-q3"
+text = "Is there a review cadence for agent permissions and data access?"
+options = [
+  { label = "No review scheduled", value = 0 },
+  { label = "Annual review planned", value = 1 },
+  { label = "Quarterly or more frequent reviews", value = 2 },
+]
+recommendation_low = "Agent permissions can drift just like user permissions. Schedule quarterly access reviews using the Agent Registry."
+recommendation_high = "Regular reviews scheduled. Document findings and actions taken."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "lc-q4"
+text = "Have you planned for ownerless agent scenarios when an owner leaves the org?"
+options = [
+  { label = "Not considered", value = 0 },
+  { label = "Aware of the risk", value = 1 },
+  { label = "Policy defined for ownership transfer", value = 2 },
+]
+recommendation_low = "When an agent owner leaves, the agent becomes orphaned but keeps running with its permissions. Define a transfer or retirement policy."
+recommendation_high = "Ownerless agent policy defined. Use the 'Manage Ownerless Agents' feature in M365 Admin Centre."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "lc-q5"
+text = "Do you have version control or change approval for agent updates?"
+options = [
+  { label = "No process", value = 0 },
+  { label = "Informal review", value = 1 },
+  { label = "Formal change approval process", value = 2 },
+]
+recommendation_low = "Agent updates can change data access scope and behaviour. Require approval for updates to org-published agents."
+recommendation_high = "Change approval in place. Ensure audit trails capture who changed what and when."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+# ── Pillar 4: Monitoring & Audit ─────────────────────────────────────────────
+
+[[pillars]]
+id = "monitoring"
+name = "Monitoring & Audit"
+icon = "📊"
+description = "Visibility into agent activity and security"
+
+[[pillars.questions]]
+id = "ma-q1"
+text = "Are you using Microsoft Purview for AI activity monitoring?"
+options = [
+  { label = "Not using Purview for AI", value = 0 },
+  { label = "Planning to configure", value = 1 },
+  { label = "Configured and active", value = 2 },
+]
+recommendation_low = "Purview provides audit trails and compliance controls for AI agent interactions. Configure it before enabling agents at scale."
+recommendation_high = "Purview configured. Review the AI activity reports regularly and set up alerts for anomalies."
+learn_url = "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview"
+
+[[pillars.questions]]
+id = "ma-q2"
+text = "Do you have alert policies for anomalous agent behaviour?"
+options = [
+  { label = "No alerts configured", value = 0 },
+  { label = "Planning alert setup", value = 1 },
+  { label = "Active alerts in place", value = 2 },
+]
+recommendation_low = "Set up Microsoft Defender alerts for unusual agent activity — high volume data access, after-hours activity, access to sensitive content."
+recommendation_high = "Alert policies active. Review alert thresholds quarterly and tune for false positive reduction."
+learn_url = "https://learn.microsoft.com/en-us/defender-for-cloud-apps/anomaly-detection-policy"
+
+[[pillars.questions]]
+id = "ma-q3"
+text = "Can you generate agent usage reports for leadership?"
+options = [
+  { label = "Not possible yet", value = 0 },
+  { label = "Manual report creation", value = 1 },
+  { label = "Automated reporting in place", value = 2 },
+]
+recommendation_low = "Leadership will ask 'how are agents being used?' — have an answer ready. Start with the Agent Registry usage metrics."
+recommendation_high = "Reporting capabilities in place. Consider adding ROI metrics alongside usage data."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+
+[[pillars.questions]]
+id = "ma-q4"
+text = "Are you monitoring for shadow agents (unregistered AI tools)?"
+options = [
+  { label = "No monitoring", value = 0 },
+  { label = "General awareness", value = 1 },
+  { label = "Active shadow AI discovery", value = 2 },
+]
+recommendation_low = "Shadow agents are AI tools used without IT visibility. Use Microsoft Defender for Cloud Apps to discover unsanctioned AI usage."
+recommendation_high = "Shadow agent monitoring active. Regularly review findings and either register or block discovered agents."
+learn_url = "https://learn.microsoft.com/en-us/defender-for-cloud-apps/investigate-risky-oauth"
+
+[[pillars.questions]]
+id = "ma-q5"
+text = "Do you have an incident response plan for agent-related issues?"
+options = [
+  { label = "No plan", value = 0 },
+  { label = "Informal response approach", value = 1 },
+  { label = "Documented IR plan for agent incidents", value = 2 },
+]
+recommendation_low = "What happens when an agent leaks data or behaves unexpectedly? Define response steps: isolate (block agent), investigate (audit logs), remediate, communicate."
+recommendation_high = "IR plan documented. Test it with a tabletop exercise before going live."
+learn_url = "https://learn.microsoft.com/en-us/security/operations/incident-response-overview"
+
+# ── Pillar 5: Change Management & Training ───────────────────────────────────
+
+[[pillars]]
+id = "change-management"
+name = "Change Management & Training"
+icon = "👥"
+description = "Preparing people for AI agents"
+
+[[pillars.questions]]
+id = "cm-q1"
+text = "Have admins been trained on Agent 365 admin controls?"
+options = [
+  { label = "Not yet", value = 0 },
+  { label = "Self-study or awareness only", value = 1 },
+  { label = "Formal training completed", value = 2 },
+]
+recommendation_low = "Admin training is critical — untrained admins can't govern what they don't understand. Start with the Agent Registry and governance settings."
+recommendation_high = "Admins trained. Schedule refresher training as Agent 365 features evolve."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+
+[[pillars.questions]]
+id = "cm-q2"
+text = "Is there user guidance on when and how to request an agent?"
+options = [
+  { label = "Nothing published", value = 0 },
+  { label = "Draft or informal guidance", value = 1 },
+  { label = "Published guidelines available", value = 2 },
+]
+recommendation_low = "Without guidance, users will create agents ad-hoc. Publish a 'When to request an agent' guide with your approval process."
+recommendation_high = "User guidance published. Keep it updated as agent capabilities expand."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/agent-essentials/m365-agents-admin-guide"
+
+[[pillars.questions]]
+id = "cm-q3"
+text = "Do you have a communication plan for Agent 365 rollout?"
+options = [
+  { label = "No plan", value = 0 },
+  { label = "General awareness approach", value = 1 },
+  { label = "Phased communication plan", value = 2 },
+]
+recommendation_low = "A phased rollout with clear communications prevents confusion and shadow agents. Start with IT team, then pilot group, then broader org."
+recommendation_high = "Communication plan ready. Ensure it covers what agents can/can't do and how to get help."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+
+[[pillars.questions]]
+id = "cm-q4"
+text = "Is there a feedback mechanism for agent users?"
+options = [
+  { label = "Nothing in place", value = 0 },
+  { label = "Ad-hoc feedback collection", value = 1 },
+  { label = "Formal feedback channel", value = 2 },
+]
+recommendation_low = "User feedback drives agent improvement and identifies governance issues early. Set up a Teams channel or form for agent feedback."
+recommendation_high = "Feedback channel active. Review feedback regularly and action top issues."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+
+[[pillars.questions]]
+id = "cm-q5"
+text = "Have you identified agent champions or a governance council?"
+options = [
+  { label = "Not considered", value = 0 },
+  { label = "Planning to establish", value = 1 },
+  { label = "Established and active", value = 2 },
+]
+recommendation_low = "A governance council (IT + Security + Business) ensures agents serve the org, not just individual teams. Identify champions in each department."
+recommendation_high = "Governance council active. Ensure regular meeting cadence and decision authority."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"

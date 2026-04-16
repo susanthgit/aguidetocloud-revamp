@@ -1,0 +1,102 @@
+# ============================================================================
+# Agent 365 Planner — Naming Convention Generator
+# Tokens, presets, separators for building agent naming standards
+# Last verified: 2026-04-16
+# ============================================================================
+
+# ── Available Tokens ─────────────────────────────────────────────────────────
+
+[[tokens]]
+id = "function"
+label = "Function"
+description = "What the agent does"
+examples = ["HelpDesk", "Approvals", "InvoiceEntry", "MeetingPrep", "OnboardGuide", "PolicyLookup", "ITSupport", "ExpenseReview"]
+required = true
+
+[[tokens]]
+id = "department"
+label = "Department"
+description = "Which department owns or uses this agent"
+examples = ["HR", "Finance", "IT", "Sales", "Marketing", "Engineering", "Legal", "Ops"]
+required = false
+
+[[tokens]]
+id = "environment"
+label = "Environment"
+description = "Deployment stage"
+examples = ["Prod", "Test", "Dev", "Pilot"]
+required = false
+
+[[tokens]]
+id = "type"
+label = "Type"
+description = "Agent type abbreviation"
+examples = ["DA", "CE", "MS", "PTR"]
+legend = "DA = Declarative Agent, CE = Custom Engine, MS = Microsoft, PTR = Partner"
+required = false
+
+[[tokens]]
+id = "serial"
+label = "Serial"
+description = "Unique identifier or date-based version"
+examples = ["001", "002", "2026Q2", "v1"]
+required = false
+
+[[tokens]]
+id = "owner"
+label = "Owner Initials"
+description = "Initials of the agent owner"
+examples = ["JS", "AK", "PM"]
+required = false
+
+# ── Separators ───────────────────────────────────────────────────────────────
+
+[[separators]]
+char = "-"
+label = "Hyphen"
+recommended = true
+
+[[separators]]
+char = "_"
+label = "Underscore"
+recommended = false
+
+[[separators]]
+char = "."
+label = "Period"
+recommended = false
+
+# ── Presets ──────────────────────────────────────────────────────────────────
+
+[[presets]]
+id = "small-org"
+name = "Small Organisation"
+description = "Simple and readable — just the essentials"
+pattern = ["function", "environment"]
+separator = "-"
+examples = ["HelpDesk-Prod", "Approvals-Test", "MeetingPrep-Prod"]
+
+[[presets]]
+id = "enterprise"
+name = "Enterprise"
+description = "Department context for large organisations"
+pattern = ["function", "department", "environment", "serial"]
+separator = "-"
+examples = ["Approvals-HR-Prod-001", "ITSupport-IT-Prod-002", "ExpenseReview-Finance-Test-001"]
+
+[[presets]]
+id = "regulated"
+name = "Regulated Industry"
+description = "Full traceability for compliance-heavy environments"
+pattern = ["type", "function", "department", "environment", "serial", "owner"]
+separator = "-"
+examples = ["DA-Approvals-HR-Prod-001-JS", "CE-ClaimsBot-Finance-Prod-003-AK", "MS-Researcher-IT-Prod-001-PM"]
+
+# ── Validation Rules ─────────────────────────────────────────────────────────
+
+[validation]
+max_length = 64
+min_length = 3
+allowed_chars = "Letters, numbers, hyphens, underscores, periods"
+disallowed = ["spaces", "special characters (!@#$%^&*)", "emoji"]
+note = "Agent names should be globally unique within your tenant"

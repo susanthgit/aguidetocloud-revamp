@@ -1,0 +1,461 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/agent-planner.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $q.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{/* ═══ PASSWORD GATE ═══ */}}
+<div class="agplan-page" id="agplan-gate">
+  <div class="agplan-gate-card">
+    <div class="agplan-gate-lock">🔒</div>
+    <h2 class="agplan-gate-title">Agent 365 Planner</h2>
+    <p class="agplan-gate-subtitle">Private Preview</p>
+    <p class="agplan-gate-desc">This tool is launching May 1, 2026 with Agent 365 GA.<br>Enter the access code to preview.</p>
+    <div class="agplan-gate-form">
+      <input type="password" id="agplan-gate-pass" placeholder="Enter access code" autocomplete="off" aria-label="Access code">
+      <button id="agplan-gate-submit">Unlock</button>
+      <p class="agplan-gate-error" id="agplan-gate-error">Incorrect access code. This tool is in private preview.</p>
+    </div>
+    <p class="agplan-gate-footer">Public launch: May 1, 2026</p>
+  </div>
+</div>
+
+{{/* ═══ MAIN TOOL (hidden until unlocked) ═══ */}}
+<div class="agplan-page" id="agplan-dashboard" style="display:none">
+
+  {{ partial "tool-hero.html" (dict "accent" "#4CCE3B" "emoji" "🤖" "title" "Agent 365 Planner" "subtitle" "Plan your AI agent governance, registry, and deployment strategy — all in one place." "page" page) }}
+
+  <div class="agplan-container">
+
+    {{/* ── Glass Pill Tabs ── */}}
+    <div class="agplan-tabs" role="tablist" aria-label="Agent 365 Planner sections">
+      <button class="agplan-tab active" data-tab="quickstart" role="tab" aria-selected="true">Quick Start</button>
+      <button class="agplan-tab" data-tab="assessment" role="tab" aria-selected="false">Readiness</button>
+      <button class="agplan-tab" data-tab="governance" role="tab" aria-selected="false">Governance</button>
+      <button class="agplan-tab" data-tab="designer" role="tab" aria-selected="false">Agent Designer</button>
+      <button class="agplan-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 1: QUICK START
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel active" id="panel-quickstart" role="tabpanel">
+
+      {{/* Persona selector */}}
+      <div class="agplan-personas">
+        <h2 class="agplan-section-title">What describes you best?</h2>
+        <div class="agplan-persona-grid">
+          <button class="agplan-persona-card" data-persona="admin">
+            <span class="agplan-persona-icon">🛡️</span>
+            <strong>IT Admin</strong>
+            <span>I need to set up and govern agents</span>
+          </button>
+          <button class="agplan-persona-card" data-persona="security">
+            <span class="agplan-persona-icon">🔒</span>
+            <strong>Security / Compliance</strong>
+            <span>I need to secure agent data access</span>
+          </button>
+          <button class="agplan-persona-card" data-persona="decision-maker">
+            <span class="agplan-persona-icon">📊</span>
+            <strong>Decision Maker</strong>
+            <span>I need to understand the business case</span>
+          </button>
+          <button class="agplan-persona-card" data-persona="builder">
+            <span class="agplan-persona-icon">🔨</span>
+            <strong>Agent Builder</strong>
+            <span>I want to create agents the right way</span>
+          </button>
+        </div>
+        <div class="agplan-persona-path" id="agplan-persona-path"></div>
+      </div>
+
+      {{/* Section 1: What Is Agent 365? */}}
+      <div class="agplan-qs-section" data-qs-section="overview">
+        <h2 class="agplan-section-title">What Is Agent 365?</h2>
+        <p class="agplan-section-text">Agent 365 is Microsoft's control plane for AI agents. It extends Entra ID, Defender, and Purview to agents — treating them like a <strong>digital workforce</strong> alongside your human workforce. Every agent gets its own identity, permissions, lifecycle, and compliance controls.</p>
+
+        <div class="agplan-analogy-card">
+          <div class="agplan-analogy-row">
+            <div class="agplan-analogy-col">
+              <span class="agplan-analogy-icon">👥</span>
+              <strong>Users</strong>
+              <span>Human Workforce</span>
+            </div>
+            <div class="agplan-analogy-divider">+</div>
+            <div class="agplan-analogy-col">
+              <span class="agplan-analogy-icon">🤖</span>
+              <strong>Agents</strong>
+              <span>Digital Workforce</span>
+            </div>
+            <div class="agplan-analogy-divider">=</div>
+            <div class="agplan-analogy-col">
+              <span class="agplan-analogy-icon">🏢</span>
+              <strong>Agent 365</strong>
+              <span>HR Department for Agents</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agplan-licence-pill">
+          <span><strong>$15</strong>/user/month standalone</span>
+          <span class="agplan-licence-divider">|</span>
+          <span>Included in <strong>M365 E7</strong> ($99/user/month)</span>
+        </div>
+      </div>
+
+      {{/* Section 2: 4 Agent Types */}}
+      <div class="agplan-qs-section" data-qs-section="agent-types">
+        <h2 class="agplan-section-title">4 Agent Types</h2>
+        <div class="agplan-type-cards">
+          <details class="agplan-type-card" open>
+            <summary><span class="agplan-type-icon">Ⓜ️</span> <strong>Microsoft Agents</strong> — Built and maintained by Microsoft</summary>
+            <p>Pre-built agents like Researcher, Planner, and Interpreter. Available to all licensed users. IT can pin, block, or restrict these via the Agent Registry.</p>
+          </details>
+          <details class="agplan-type-card">
+            <summary><span class="agplan-type-icon">🤝</span> <strong>Partner Agents</strong> — Built by trusted ISVs and partners</summary>
+            <p>Agents from ServiceNow, SAP, Workday, and other partners. Available through the Agent Store. IT controls which partner agents are allowed in the tenant.</p>
+          </details>
+          <details class="agplan-type-card">
+            <summary><span class="agplan-type-icon">🏢</span> <strong>Org-Published Agents</strong> — Custom agents approved by your IT</summary>
+            <p>Agents built by your organisation's developers or power users, reviewed and published through your approval workflow. These are your custom knowledge bots, process agents, and department helpers.</p>
+          </details>
+          <details class="agplan-type-card">
+            <summary><span class="agplan-type-icon">👤</span> <strong>User-Shared Agents</strong> — Created and shared by individuals</summary>
+            <p>Personal agents that users create for their own productivity and optionally share with colleagues. Lowest governance overhead but highest sprawl risk without controls.</p>
+          </details>
+        </div>
+      </div>
+
+      {{/* Section 3: Blueprint → Instance */}}
+      <div class="agplan-qs-section" data-qs-section="blueprint">
+        <h2 class="agplan-section-title">Blueprint → Instance</h2>
+        <p class="agplan-section-text">Every agent starts as a <strong>Blueprint</strong> (the template) and becomes an <strong>Instance</strong> (deployed in your tenant). Blueprints define what an agent can do; instances are managed by IT.</p>
+        <div class="agplan-blueprint-diagram">
+          <div class="agplan-bp-box agplan-bp-blueprint">
+            <strong>Agent Blueprint</strong>
+            <span>(Template)</span>
+            <ul>
+              <li>Capabilities defined</li>
+              <li>Permission model</li>
+              <li>Behaviour rules</li>
+              <li>Created by developers</li>
+            </ul>
+          </div>
+          <div class="agplan-bp-arrow">→</div>
+          <div class="agplan-bp-box agplan-bp-instance">
+            <strong>Agent Instance</strong>
+            <span>(Tenant-specific)</span>
+            <ul>
+              <li>Own Entra Agent ID</li>
+              <li>Tenant configuration</li>
+              <li>Inherited permissions</li>
+              <li>Managed by IT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {{/* Section 4: What Admins Can Control */}}
+      <div class="agplan-qs-section" data-qs-section="admin-controls">
+        <h2 class="agplan-section-title">What Admins Can Control</h2>
+        <div class="agplan-control-grid">
+          <details class="agplan-control-card">
+            <summary><strong>Agent Registry</strong></summary>
+            <p>Unified inventory of all agents in your tenant. Search, filter, export, and manage every agent from one place in the M365 Admin Centre.</p>
+          </details>
+          <details class="agplan-control-card">
+            <summary><strong>Agent Lifecycle</strong></summary>
+            <p>Publish, activate, deploy, pin for users, block, remove, delete, and reassign agents. Full control over every stage of an agent's life.</p>
+          </details>
+          <details class="agplan-control-card">
+            <summary><strong>Access Policies</strong></summary>
+            <p>Scope agent access to specific users and groups. Apply Conditional Access policies. Control who can use which agents.</p>
+          </details>
+          <details class="agplan-control-card">
+            <summary><strong>Data Governance</strong></summary>
+            <p>Sensitivity labels on embedded content. Purview integration for data classification. Information Barriers between departments.</p>
+          </details>
+          <details class="agplan-control-card">
+            <summary><strong>Monitoring</strong></summary>
+            <p>Audit trails for every agent interaction. Usage metrics and adoption reports. Security alerts via Microsoft Defender.</p>
+          </details>
+        </div>
+      </div>
+
+      {{/* Section 5: Who Owns What (RACI) */}}
+      <div class="agplan-qs-section" data-qs-section="raci">
+        <h2 class="agplan-section-title">Who Owns What?</h2>
+        <div class="agplan-table-wrap">
+          <table class="agplan-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+              <tr><td><strong>AI Administrator</strong></td><td>Agent Registry access, publish/block/remove agents, approval workflows</td></tr>
+              <tr><td><strong>AI Reader</strong></td><td>View-only access to Agent Registry (least privilege for reporting)</td></tr>
+              <tr><td><strong>Global Admin</strong></td><td>Full tenant control, delegates to AI Admin for day-to-day operations</td></tr>
+              <tr><td><strong>Security Admin</strong></td><td>Defender monitoring, Conditional Access for agents, incident response</td></tr>
+              <tr><td><strong>Compliance Admin</strong></td><td>Purview policies, sensitivity labels, Information Barriers</td></tr>
+              <tr><td><strong>Agent Owner</strong></td><td>Lifecycle of their specific agent — reviews, updates, retirement</td></tr>
+              <tr><td><strong>Business Sponsor</strong></td><td>Business case justification, success metrics, budget approval</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{/* Section 6: Key Terms */}}
+      <div class="agplan-qs-section" data-qs-section="glossary">
+        <h2 class="agplan-section-title">Key Terms</h2>
+        <div class="agplan-glossary-grid">
+          <div class="agplan-glossary-item">
+            <strong>Entra Agent ID</strong>
+            <span>Unique identity for each agent — like a user account but for AI</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Agent Blueprint</strong>
+            <span>Template that defines what an agent can do — created by developers</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Agent Instance</strong>
+            <span>Tenant-specific deployment of a blueprint — managed by IT</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Agent Registry</strong>
+            <span>Central inventory of all agents in M365 Admin Centre</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Agent Store</strong>
+            <span>Marketplace for discovering and installing agents</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Agent Skills</strong>
+            <span>Packaged capabilities distributed through Agent Store or app catalog</span>
+          </div>
+          <div class="agplan-glossary-item">
+            <strong>Shadow Agents</strong>
+            <span>Unregistered AI tools operating without IT visibility</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agplan-qs-cta">
+        <button class="agplan-btn-primary" id="agplan-goto-assessment">Ready to check if your org is prepared? →</button>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 2: READINESS ASSESSMENT
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel" id="panel-assessment" role="tabpanel">
+
+      {{/* Assessment UI */}}
+      <div id="agplan-assess-ui">
+        <div class="agplan-assess-progress">
+          <div class="agplan-assess-progress-bar"><div class="agplan-assess-progress-fill" id="agplan-progress-fill"></div></div>
+          <span class="agplan-assess-progress-text" id="agplan-progress-text">Question 1 of 25</span>
+        </div>
+
+        <div class="agplan-assess-pillar-indicator" id="agplan-pillar-indicator">
+          <span id="agplan-pillar-icon">🏗️</span>
+          <span id="agplan-pillar-name">Agent Creation Policies</span>
+        </div>
+
+        <div class="agplan-assess-question" id="agplan-question-card">
+          <h3 id="agplan-question-text"></h3>
+          <div id="agplan-options"></div>
+        </div>
+
+        <div class="agplan-assess-nav">
+          <button id="agplan-prev-btn" class="agplan-btn-secondary" disabled>← Previous</button>
+          <button id="agplan-next-btn" class="agplan-btn-primary" disabled>Next →</button>
+        </div>
+      </div>
+
+      {{/* Results (hidden until complete) */}}
+      <div id="agplan-assess-results" hidden>
+
+        <div class="agplan-score-section">
+          <div class="agplan-score-header">
+            <div class="agplan-score-ring">
+              <svg viewBox="0 0 120 120" class="agplan-score-svg">
+                <circle class="agplan-ring-bg" cx="60" cy="60" r="52"/>
+                <circle class="agplan-ring-fg" id="agplan-ring-fg" cx="60" cy="60" r="52"/>
+              </svg>
+              <div class="agplan-score-inner">
+                <span class="agplan-score-number" id="agplan-score-number">0</span>
+                <span class="agplan-score-max">/100</span>
+              </div>
+            </div>
+            <div class="agplan-score-label">
+              <h2 id="agplan-score-label">Calculating...</h2>
+              <p id="agplan-score-desc"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="agplan-pillar-bars">
+          <h2>Pillar Breakdown</h2>
+          <div id="agplan-pillar-bars-list"></div>
+        </div>
+
+        <div class="agplan-recommendations">
+          <h2>Recommended Actions</h2>
+          <div id="agplan-recs-list"></div>
+        </div>
+
+        <div class="agplan-result-actions">
+          <button id="agplan-download-plan" class="agplan-btn-primary">Download Governance Plan</button>
+          <button id="agplan-share-btn" class="agplan-btn-secondary">Copy Shareable Link</button>
+          <button id="agplan-restart-btn" class="agplan-btn-secondary">Retake Assessment</button>
+        </div>
+
+        {{/* Cross-tool CTAs in results */}}
+        <div class="agplan-result-crosslinks">
+          <a href="/copilot-readiness/" class="agplan-crosslink-card">
+            <span class="agplan-crosslink-icon">📋</span>
+            <strong>Check Copilot Readiness</strong>
+            <span>Score your org across 7 Copilot deployment pillars</span>
+          </a>
+          <a href="/ca-builder/" class="agplan-crosslink-card">
+            <span class="agplan-crosslink-icon">🔐</span>
+            <strong>Plan Conditional Access</strong>
+            <span>Build CA policies for agent governance</span>
+          </a>
+          <a href="/licensing/" class="agplan-crosslink-card">
+            <span class="agplan-crosslink-icon">📜</span>
+            <strong>Understand Licensing</strong>
+            <span>Compare M365 plans including Agent 365 and E7</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 3: GOVERNANCE BUILDER (Phase 1: Checklist only)
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel" id="panel-governance" role="tabpanel">
+
+      <div class="agplan-gov-header">
+        <h2 class="agplan-section-title">Best Practices Checklist</h2>
+        <p class="agplan-section-text">Track your governance progress. Each item can be marked as Done, Partial, or Not Done.</p>
+        <div class="agplan-gov-score-bar">
+          <div class="agplan-gov-score-fill" id="agplan-gov-score-fill"></div>
+        </div>
+        <span class="agplan-gov-score-text" id="agplan-gov-score-text">0% complete</span>
+      </div>
+
+      <div id="agplan-checklist"></div>
+
+      <div class="agplan-gov-actions">
+        <button id="agplan-export-checklist" class="agplan-btn-secondary">Export as CSV</button>
+        <button id="agplan-reset-checklist" class="agplan-btn-secondary">Reset Checklist</button>
+      </div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 4: AGENT DESIGNER (Phase 1: Decision Tree only)
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel" id="panel-designer" role="tabpanel">
+
+      <h2 class="agplan-section-title">Should This Be an Agent?</h2>
+      <p class="agplan-section-text">Answer a few questions to find the right approach for your use case.</p>
+
+      <div id="agplan-tree-container">
+        <div class="agplan-tree-card" id="agplan-tree-card">
+          <p class="agplan-tree-question" id="agplan-tree-question"></p>
+          <div class="agplan-tree-buttons" id="agplan-tree-buttons"></div>
+        </div>
+      </div>
+
+      <div id="agplan-tree-result" hidden>
+        <div class="agplan-tree-result-card" id="agplan-tree-result-card"></div>
+        <button class="agplan-btn-secondary" id="agplan-tree-restart">Start Over</button>
+      </div>
+
+      <div class="agplan-tree-history" id="agplan-tree-history"></div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════════
+         TAB 5: FAQ
+         ════════════════════════════════════════════════════════════════════ */}}
+    <div class="agplan-panel" id="panel-faq" role="tabpanel">
+      {{ if .Params.faq }}
+      <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+        <h2 style="color:#4CCE3B;margin-bottom:1rem">Frequently Asked Questions</h2>
+        {{ range $i, $q := .Params.faq }}
+        <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+          <summary style="color:#4CCE3B;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+        </details>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+  </div>{{/* end agplan-container */}}
+
+  {{/* ── Cross-Tool CTA Cards (AFTER all tab panels) ── */}}
+  <div class="agplan-crosslinks-section">
+    <h2 class="agplan-crosslinks-heading">Continue Your Journey</h2>
+    <div class="agplan-crosslinks-grid">
+      <a href="/copilot-readiness/" class="agplan-crosslink-card">
+        <span class="agplan-crosslink-icon">📋</span>
+        <strong>Check Your Copilot Readiness</strong>
+        <span>Score your org across 7 Copilot deployment pillars</span>
+      </a>
+      <a href="/ca-builder/" class="agplan-crosslink-card">
+        <span class="agplan-crosslink-icon">🔐</span>
+        <strong>Plan Conditional Access</strong>
+        <span>Build Zero Trust policies for agents and users</span>
+      </a>
+      <a href="/licensing/" class="agplan-crosslink-card">
+        <span class="agplan-crosslink-icon">📜</span>
+        <strong>Understand M365 Licensing</strong>
+        <span>Compare plans including Agent 365 and M365 E7</span>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:1rem;color:rgba(255,255,255,0.4);font-size:0.82rem">
+      💬 Got feedback? <a href="/feedback/" style="color:#4CCE3B">Share it here →</a>
+    </p>
+  </div>
+
+  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+
+</div>{{/* end agplan-dashboard */}}
+
+{{/* ── Inject TOML data for JS ── */}}
+{{ $ap := index hugo.Data "agent_planner" }}
+<script>
+window.__agplanData = {
+  assessment: {{ $ap.assessment | jsonify | safeJS }},
+  bestPractices: {{ $ap.best_practices | jsonify | safeJS }},
+  naming: {{ $ap.naming | jsonify | safeJS }},
+  decisionTree: {{ $ap.decision_tree | jsonify | safeJS }},
+  metadataFields: {{ $ap.metadata_fields | jsonify | safeJS }}
+};
+</script>
+<script src="/js/agent-planner.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

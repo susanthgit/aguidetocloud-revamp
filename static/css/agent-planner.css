@@ -1,0 +1,560 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   Agent 365 Planner — CSS
+   Namespace: .agplan-*
+   Accent: #4CCE3B (Vivid Green, hue 113°)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --agplan-accent: #4CCE3B;
+  --agplan-accent-dim: rgba(76, 206, 59, 0.15);
+  --agplan-accent-glow: rgba(76, 206, 59, 0.3);
+}
+
+/* ── Page Container ────────────────────────────────────────────────────── */
+.agplan-page { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+.agplan-container { max-width: 1000px; margin: 0 auto; }
+
+/* ── Password Gate ─────────────────────────────────────────────────────── */
+.agplan-gate-card {
+  max-width: 420px; margin: 4rem auto; padding: 2.5rem 2rem; text-align: center;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.agplan-gate-lock { font-size: 3rem; margin-bottom: 0.75rem; }
+.agplan-gate-title {
+  font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 0.25rem;
+}
+.agplan-gate-subtitle {
+  font-size: 1rem; color: var(--agplan-accent); font-weight: 600; margin: 0 0 0.75rem;
+}
+.agplan-gate-desc {
+  font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin: 0 0 1.5rem;
+}
+.agplan-gate-form { display: flex; flex-direction: column; gap: 0.75rem; }
+.agplan-gate-form input {
+  width: 100%; padding: 0.85rem 1rem; font-size: 1rem; text-align: center;
+  background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 10px; color: #fff; outline: none; transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.agplan-gate-form input:focus {
+  border-color: var(--agplan-accent);
+  box-shadow: 0 0 0 3px var(--agplan-accent-dim);
+}
+.agplan-gate-form button {
+  padding: 0.85rem; font-size: 1rem; font-weight: 700; border: none;
+  border-radius: 10px; cursor: pointer; transition: all 0.2s;
+  background: var(--agplan-accent); color: #000;
+}
+.agplan-gate-form button:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.agplan-gate-error {
+  display: none; color: #f87171; font-size: 0.82rem; margin: 0; padding: 0;
+}
+.agplan-gate-footer {
+  margin-top: 1.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.3);
+}
+
+/* ── Glass Pill Tabs ───────────────────────────────────────────────────── */
+.agplan-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem; overflow-x: auto; scrollbar-width: none;
+}
+.agplan-tabs::-webkit-scrollbar { display: none; }
+.agplan-tab {
+  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
+  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+  white-space: nowrap;
+}
+.agplan-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.agplan-tab.active {
+  color: #000; background: var(--agplan-accent); border-color: var(--agplan-accent);
+  box-shadow: 0 2px 8px var(--agplan-accent-glow);
+}
+.agplan-panel { display: none; }
+.agplan-panel.active { display: block; }
+
+/* ── Shared Elements ───────────────────────────────────────────────────── */
+.agplan-section-title {
+  font-size: 1.25rem; font-weight: 700; color: #fff; margin: 2rem 0 0.75rem;
+}
+.agplan-section-title:first-child { margin-top: 0; }
+.agplan-section-text {
+  font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 1.25rem;
+}
+.agplan-btn-primary {
+  padding: 0.7rem 1.5rem; font-size: 0.9rem; font-weight: 700; border: none;
+  border-radius: 10px; cursor: pointer; background: var(--agplan-accent); color: #000;
+  transition: all 0.2s;
+}
+.agplan-btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.agplan-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; filter: none; }
+.agplan-btn-secondary {
+  padding: 0.7rem 1.5rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  border-radius: 10px; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+}
+.agplan-btn-secondary:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.agplan-btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Tab 1: Quick Start ────────────────────────────────────────────────── */
+
+/* Persona selector */
+.agplan-persona-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.agplan-persona-card {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  padding: 1.25rem 1rem; text-align: center;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; cursor: pointer; transition: all 0.2s;
+  color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.4;
+}
+.agplan-persona-card:hover {
+  background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15);
+}
+.agplan-persona-card.active {
+  border-color: var(--agplan-accent); background: var(--agplan-accent-dim);
+  box-shadow: 0 0 16px var(--agplan-accent-dim);
+}
+.agplan-persona-card.active strong { color: var(--agplan-accent); }
+.agplan-persona-icon { font-size: 1.8rem; }
+.agplan-persona-card strong { font-size: 0.92rem; color: #fff; }
+.agplan-persona-path {
+  text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.45);
+  min-height: 1.5rem; margin-bottom: 1rem; transition: opacity 0.3s;
+}
+
+/* Analogy card */
+.agplan-analogy-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.25rem; margin-bottom: 1.25rem;
+}
+.agplan-analogy-row {
+  display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
+}
+.agplan-analogy-col {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  min-width: 100px; text-align: center;
+}
+.agplan-analogy-icon { font-size: 2rem; }
+.agplan-analogy-col strong { color: #fff; font-size: 0.9rem; }
+.agplan-analogy-col span { color: rgba(255,255,255,0.5); font-size: 0.78rem; }
+.agplan-analogy-divider {
+  font-size: 1.5rem; color: var(--agplan-accent); font-weight: 700;
+}
+
+/* Licence pill */
+.agplan-licence-pill {
+  display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  padding: 0.75rem 1.25rem; border-radius: 50px; font-size: 0.85rem;
+  background: var(--agplan-accent-dim); border: 1px solid rgba(76,206,59,0.2);
+  color: rgba(255,255,255,0.8); flex-wrap: wrap;
+}
+.agplan-licence-pill strong { color: var(--agplan-accent); }
+.agplan-licence-divider { color: rgba(255,255,255,0.2); }
+
+/* Agent type cards */
+.agplan-type-cards { display: flex; flex-direction: column; gap: 0.5rem; }
+.agplan-type-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; overflow: hidden;
+}
+.agplan-type-card summary {
+  padding: 0.85rem 1.1rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.85); font-size: 0.9rem; list-style: none;
+}
+.agplan-type-card summary::-webkit-details-marker { display: none; }
+.agplan-type-card summary::before {
+  content: '▸'; color: var(--agplan-accent); font-size: 0.75rem; transition: transform 0.2s;
+}
+.agplan-type-card[open] summary::before { transform: rotate(90deg); }
+.agplan-type-icon { font-size: 1.1rem; }
+.agplan-type-card p {
+  padding: 0 1.1rem 0.85rem; margin: 0; font-size: 0.82rem;
+  color: rgba(255,255,255,0.55); line-height: 1.5;
+}
+
+/* Blueprint diagram */
+.agplan-blueprint-diagram {
+  display: flex; align-items: stretch; gap: 0; justify-content: center;
+  margin: 1.25rem 0; flex-wrap: wrap;
+}
+.agplan-bp-box {
+  flex: 1; min-width: 200px; max-width: 300px; padding: 1.25rem;
+  border-radius: 12px; background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.agplan-bp-box strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 0.15rem; }
+.agplan-bp-box > span { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; }
+.agplan-bp-box ul { margin: 0; padding-left: 1.1rem; }
+.agplan-bp-box li { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 0.35rem; }
+.agplan-bp-blueprint { border-color: rgba(76,206,59,0.2); }
+.agplan-bp-instance { border-color: rgba(59,130,246,0.2); }
+.agplan-bp-arrow {
+  display: flex; align-items: center; padding: 0 0.75rem;
+  font-size: 1.5rem; color: var(--agplan-accent); font-weight: 700;
+}
+
+/* Admin control cards */
+.agplan-control-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;
+}
+.agplan-control-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+.agplan-control-card summary {
+  padding: 0.85rem 1rem; cursor: pointer; color: rgba(255,255,255,0.85);
+  font-size: 0.9rem; list-style: none;
+}
+.agplan-control-card summary::-webkit-details-marker { display: none; }
+.agplan-control-card summary::before {
+  content: '▸ '; color: var(--agplan-accent); font-size: 0.75rem;
+}
+.agplan-control-card[open] summary::before { content: '▾ '; }
+.agplan-control-card p {
+  padding: 0 1rem 0.85rem; margin: 0; font-size: 0.82rem;
+  color: rgba(255,255,255,0.55); line-height: 1.5;
+}
+
+/* RACI table */
+.agplan-table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+.agplan-table {
+  width: 100%; border-collapse: collapse; font-size: 0.85rem;
+}
+.agplan-table th {
+  text-align: left; padding: 0.7rem 0.85rem; color: var(--agplan-accent);
+  font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.agplan-table td {
+  padding: 0.6rem 0.85rem; color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.agplan-table td strong { color: #fff; }
+
+/* Glossary */
+.agplan-glossary-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.5rem;
+}
+.agplan-glossary-item {
+  padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+.agplan-glossary-item strong { display: block; color: #fff; font-size: 0.88rem; margin-bottom: 0.25rem; }
+.agplan-glossary-item span { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+/* CTA button */
+.agplan-qs-cta { text-align: center; margin-top: 2rem; }
+
+/* ── Tab 2: Assessment ─────────────────────────────────────────────────── */
+.agplan-assess-progress { margin-bottom: 1.25rem; }
+.agplan-assess-progress-bar {
+  height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden;
+}
+.agplan-assess-progress-fill {
+  height: 100%; width: 0; background: var(--agplan-accent); border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.agplan-assess-progress-text {
+  display: block; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.4);
+  margin-top: 0.35rem;
+}
+.agplan-assess-pillar-indicator {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;
+  font-size: 0.9rem; color: rgba(255,255,255,0.6);
+}
+.agplan-assess-pillar-indicator span:first-child { font-size: 1.2rem; }
+
+.agplan-assess-question {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem;
+}
+.agplan-assess-question h3 {
+  font-size: 1.05rem; font-weight: 600; color: #fff; margin: 0 0 1rem; line-height: 1.4;
+}
+.agplan-option {
+  display: block; width: 100%; text-align: left; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; color: rgba(255,255,255,0.75); font-size: 0.88rem;
+  cursor: pointer; transition: all 0.15s;
+}
+.agplan-option:hover {
+  background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15);
+}
+.agplan-option.selected {
+  background: var(--agplan-accent-dim); border-color: var(--agplan-accent);
+  color: #fff;
+}
+.agplan-assess-nav { display: flex; gap: 0.75rem; justify-content: space-between; }
+
+/* Score ring */
+.agplan-score-section { margin-bottom: 2rem; }
+.agplan-score-header {
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  justify-content: center; text-align: center;
+}
+.agplan-score-ring { position: relative; width: 130px; height: 130px; flex-shrink: 0; }
+.agplan-score-svg { width: 100%; height: 100%; }
+.agplan-ring-bg { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 8; }
+.agplan-ring-fg {
+  fill: none; stroke: var(--agplan-accent); stroke-width: 8;
+  stroke-linecap: round; stroke-dasharray: 327; stroke-dashoffset: 327;
+  transform: rotate(-90deg); transform-origin: center;
+  transition: stroke-dashoffset 1.2s ease;
+}
+.agplan-score-inner {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.agplan-score-number { font-size: 2.2rem; font-weight: 800; color: #fff; }
+.agplan-score-max { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+.agplan-score-label h2 { font-size: 1.3rem; color: #fff; margin: 0 0 0.25rem; }
+.agplan-score-label p { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin: 0; max-width: 400px; }
+
+/* Pillar bars */
+.agplan-pillar-bars { margin-bottom: 2rem; }
+.agplan-pillar-bars h2 { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+.agplan-pillar-bar-row {
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;
+}
+.agplan-pillar-bar-label {
+  width: 180px; font-size: 0.82rem; color: rgba(255,255,255,0.7); flex-shrink: 0;
+}
+.agplan-pillar-bar-track {
+  flex: 1; height: 10px; background: rgba(255,255,255,0.06); border-radius: 5px;
+  overflow: hidden;
+}
+.agplan-pillar-bar-fill {
+  height: 100%; border-radius: 5px; background: var(--agplan-accent);
+  transition: width 0.8s ease; width: 0;
+}
+.agplan-pillar-bar-pct {
+  width: 40px; text-align: right; font-size: 0.82rem; font-weight: 600;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Recommendations */
+.agplan-recommendations { margin-bottom: 2rem; }
+.agplan-recommendations h2 { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+.agplan-rec-item {
+  padding: 0.85rem 1rem; margin-bottom: 0.5rem;
+  background: rgba(255,255,255,0.02); border-left: 3px solid var(--agplan-accent);
+  border-radius: 0 8px 8px 0; font-size: 0.85rem; color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.agplan-rec-item strong { color: #fff; }
+.agplan-rec-item a { color: var(--agplan-accent); text-decoration: none; }
+.agplan-rec-item a:hover { text-decoration: underline; }
+
+/* Result actions */
+.agplan-result-actions {
+  display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center;
+}
+
+/* Result cross-links */
+.agplan-result-crosslinks {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Tab 3: Governance Builder ─────────────────────────────────────────── */
+.agplan-gov-header { margin-bottom: 1.5rem; }
+.agplan-gov-score-bar {
+  height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px;
+  overflow: hidden; margin-top: 0.75rem;
+}
+.agplan-gov-score-fill {
+  height: 100%; width: 0; background: var(--agplan-accent); border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.agplan-gov-score-text {
+  display: block; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.5);
+  margin-top: 0.35rem;
+}
+.agplan-checklist-category {
+  margin-bottom: 2rem;
+}
+.agplan-checklist-cat-title {
+  font-size: 1rem; font-weight: 700; color: var(--agplan-accent); margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid rgba(76,206,59,0.15);
+}
+.agplan-checklist-cat-desc {
+  font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 0.75rem;
+}
+.agplan-checklist-item {
+  display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.65rem 0.75rem;
+  margin-bottom: 0.35rem; border-radius: 8px; transition: background 0.15s;
+}
+.agplan-checklist-item:hover { background: rgba(255,255,255,0.02); }
+.agplan-checklist-toggle {
+  flex-shrink: 0; width: 32px; height: 24px; border-radius: 6px; cursor: pointer;
+  font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 24px;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.4); transition: all 0.15s; user-select: none;
+}
+.agplan-checklist-toggle[data-state="done"] {
+  background: rgba(76,206,59,0.15); border-color: var(--agplan-accent); color: var(--agplan-accent);
+}
+.agplan-checklist-toggle[data-state="partial"] {
+  background: rgba(251,191,36,0.15); border-color: #FBBF24; color: #FBBF24;
+}
+.agplan-checklist-toggle[data-state="not-done"] {
+  background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+}
+.agplan-checklist-text { flex: 1; }
+.agplan-checklist-text strong {
+  display: block; font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 500;
+}
+.agplan-checklist-text span {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.4;
+}
+.agplan-checklist-severity {
+  flex-shrink: 0; font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  padding: 0.15rem 0.4rem; border-radius: 4px; letter-spacing: 0.03em;
+}
+.agplan-severity-critical { background: rgba(239,68,68,0.15); color: #f87171; }
+.agplan-severity-high { background: rgba(251,191,36,0.15); color: #FBBF24; }
+.agplan-severity-medium { background: rgba(96,165,250,0.15); color: #60A5FA; }
+
+.agplan-gov-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+/* ── Tab 4: Decision Tree ──────────────────────────────────────────────── */
+.agplan-tree-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.75rem; text-align: center; max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.agplan-tree-question {
+  font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 1.25rem; line-height: 1.4;
+}
+.agplan-tree-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.agplan-tree-btn {
+  padding: 0.65rem 2rem; font-size: 0.9rem; font-weight: 600; border-radius: 10px;
+  cursor: pointer; transition: all 0.15s; border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.8);
+}
+.agplan-tree-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+.agplan-tree-btn.agplan-tree-yes { border-color: rgba(76,206,59,0.3); }
+.agplan-tree-btn.agplan-tree-yes:hover { background: var(--agplan-accent-dim); }
+.agplan-tree-btn.agplan-tree-no { border-color: rgba(248,113,113,0.3); }
+.agplan-tree-btn.agplan-tree-no:hover { background: rgba(248,113,113,0.1); }
+
+.agplan-tree-result-card {
+  max-width: 600px; margin: 0 auto 1rem; padding: 1.5rem;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--agplan-accent);
+  border-radius: 14px; text-align: center;
+}
+.agplan-tree-result-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.agplan-tree-result-title {
+  font-size: 1.2rem; font-weight: 700; color: var(--agplan-accent); margin-bottom: 0.5rem;
+}
+.agplan-tree-result-desc {
+  font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.5; margin-bottom: 1rem;
+}
+.agplan-tree-result-meta {
+  display: flex; flex-direction: column; gap: 0.35rem; text-align: left;
+  padding: 0.85rem; background: rgba(255,255,255,0.02); border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.agplan-tree-result-meta span {
+  font-size: 0.82rem; color: rgba(255,255,255,0.55);
+}
+.agplan-tree-result-meta strong { color: rgba(255,255,255,0.8); }
+.agplan-tree-result-steps {
+  text-align: left; padding-left: 1rem;
+}
+.agplan-tree-result-steps li {
+  font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 0.35rem; line-height: 1.4;
+}
+.agplan-tree-result-link {
+  display: inline-block; margin-top: 0.75rem; padding: 0.5rem 1.25rem;
+  font-size: 0.85rem; font-weight: 600; color: #000; background: var(--agplan-accent);
+  border-radius: 8px; text-decoration: none; transition: all 0.2s;
+}
+.agplan-tree-result-link:hover { filter: brightness(1.1); }
+
+.agplan-tree-history {
+  max-width: 600px; margin: 0 auto;
+}
+.agplan-tree-history-item {
+  display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0;
+  font-size: 0.8rem; color: rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.agplan-tree-history-q { flex: 1; }
+.agplan-tree-history-a { font-weight: 600; color: var(--agplan-accent); }
+
+#agplan-tree-restart { display: block; margin: 0 auto; }
+
+/* ── Cross-tool CTAs ───────────────────────────────────────────────────── */
+.agplan-crosslinks-section {
+  max-width: 1000px; margin: 2.5rem auto 0; padding: 0 1.25rem;
+}
+.agplan-crosslinks-heading {
+  font-size: 1.1rem; color: #fff; text-align: center; margin-bottom: 1rem;
+}
+.agplan-crosslinks-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;
+}
+.agplan-crosslink-card {
+  display: flex; flex-direction: column; gap: 0.25rem; padding: 1rem 1.1rem;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; text-decoration: none; transition: all 0.2s;
+}
+.agplan-crosslink-card:hover {
+  background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.agplan-crosslink-icon { font-size: 1.5rem; }
+.agplan-crosslink-card strong { color: #fff; font-size: 0.9rem; }
+.agplan-crosslink-card span { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+/* ── Persona Highlighting ──────────────────────────────────────────────── */
+.agplan-qs-section { transition: opacity 0.3s, box-shadow 0.3s; border-radius: 12px; padding: 0.5rem; }
+.agplan-qs-section.highlighted {
+  box-shadow: inset 0 0 0 1px var(--agplan-accent-dim), 0 0 20px var(--agplan-accent-dim);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .agplan-persona-grid { grid-template-columns: 1fr 1fr; }
+  .agplan-tabs { gap: 0.25rem; padding: 0.25rem; }
+  .agplan-tab { font-size: 0.78rem; padding: 0.5rem 0.6rem; }
+  .agplan-bp-arrow { transform: rotate(90deg); padding: 0.5rem 0; }
+  .agplan-blueprint-diagram { flex-direction: column; align-items: center; }
+  .agplan-bp-box { max-width: 100%; }
+  .agplan-pillar-bar-label { width: 120px; font-size: 0.75rem; }
+  .agplan-score-header { flex-direction: column; }
+  .agplan-gate-card { margin: 2rem 0.5rem; }
+  .agplan-control-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .agplan-assess-progress-fill,
+  .agplan-gov-score-fill,
+  .agplan-pillar-bar-fill,
+  .agplan-ring-fg { transition: none; }
+  .agplan-persona-card,
+  .agplan-crosslink-card,
+  .agplan-btn-primary { transition: none; }
+}
+
+/* ── Print ─────────────────────────────────────────────────────────────── */
+@media print {
+  .agplan-gate-card,
+  .agplan-tabs,
+  .agplan-assess-nav,
+  .agplan-result-actions,
+  .agplan-gov-actions,
+  .agplan-crosslinks-section,
+  .agplan-tree-buttons { display: none !important; }
+  .agplan-panel { display: block !important; }
+  .agplan-page { max-width: 100%; padding: 0; }
+}

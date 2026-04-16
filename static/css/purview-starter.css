@@ -375,6 +375,10 @@
 .pvs-deploy-header h2 span {
   color: var(--pvs-accent);
 }
+.pvs-deploy-header-actions {
+  display: flex;
+  gap: 0.3rem;
+}
 .pvs-deploy-source-toggle {
   display: flex;
   gap: 0.3rem;
@@ -973,6 +977,17 @@
   gap: 0.4rem;
   flex-wrap: wrap;
   align-items: center;
+}
+.pvs-dlp-kit-badge {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(var(--pvs-accent-rgb), 0.15);
+  color: var(--pvs-accent);
+  vertical-align: middle;
+  margin-left: 0.3rem;
 }
 
 /* ── Toast ── */

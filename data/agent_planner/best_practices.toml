@@ -1,0 +1,209 @@
+# ============================================================================
+# Agent 365 Planner — Best Practices Checklist
+# 3 categories, ~10 items each. Scored: Done (2) / Partial (1) / Not Done (0)
+# Source: Public Microsoft Learn docs + community best practices
+# Last verified: 2026-04-16
+# ============================================================================
+
+# ── Pre-Deployment ───────────────────────────────────────────────────────────
+
+[[categories]]
+id = "pre-deployment"
+name = "Pre-Deployment"
+description = "Complete before enabling Agent 365"
+
+[[categories.items]]
+id = "bp-pd-01"
+text = "Audited SharePoint and OneDrive sharing permissions"
+detail = "Agents surface whatever users can access. Weak permissions equal instant data exposure through agents."
+learn_url = "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"
+severity = "critical"
+
+[[categories.items]]
+id = "bp-pd-02"
+text = "Applied sensitivity labels to key document libraries"
+detail = "Sensitivity labels protect data even when agents access it. Prioritise your most sensitive content first."
+learn_url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+severity = "critical"
+
+[[categories.items]]
+id = "bp-pd-03"
+text = "Reviewed and tightened external sharing policies"
+detail = "Agents can't share externally directly, but they surface content that users might then share. Tighten sharing limits."
+learn_url = "https://learn.microsoft.com/en-us/sharepoint/external-sharing-overview"
+severity = "high"
+
+[[categories.items]]
+id = "bp-pd-04"
+text = "Defined agent creation policy (who can create agents)"
+detail = "Key decision: everyone with a licence, specific security groups, or IT-only. Start restrictive — you can always open up."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/agent-essentials/m365-agents-admin-guide"
+severity = "critical"
+
+[[categories.items]]
+id = "bp-pd-05"
+text = "Established naming convention standard"
+detail = "Without naming conventions, you get 'Test Bot 3' and 'Johns Helper'. Use the Governance Builder to generate a standard."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "high"
+
+[[categories.items]]
+id = "bp-pd-06"
+text = "Created agent governance council or assigned governance owner"
+detail = "Someone must own agent governance. A council (IT + Security + Business) works best for large orgs."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+severity = "high"
+
+[[categories.items]]
+id = "bp-pd-07"
+text = "Documented agent approval workflow"
+detail = "Define who approves new agents, what criteria they check, and how long approval takes."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "high"
+
+[[categories.items]]
+id = "bp-pd-08"
+text = "Tested Agent Registry access with AI Administrator role"
+detail = "Verify the AI Administrator role can see and manage agents before go-live. Don't rely on Global Admin for day-to-day operations."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-pd-09"
+text = "Communicated rollout plan to IT team"
+detail = "Your IT team needs to know what's coming, when, and what their role will be in agent governance."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-pd-10"
+text = "Reviewed licensing requirements (Agent 365 standalone or M365 E7)"
+detail = "Agent 365 is $15/user/month standalone or included in M365 E7 ($99/user/month). The M365 Copilot licence alone does NOT include Agent 365 governance features."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+severity = "high"
+
+# ── Day-1 Configuration ──────────────────────────────────────────────────────
+
+[[categories]]
+id = "day-1"
+name = "Day-1 Configuration"
+description = "Configure on the day you enable Agent 365"
+
+[[categories.items]]
+id = "bp-d1-01"
+text = "Configured agent creation permissions in Admin Centre"
+detail = "Set who can create agents: restrict to IT initially, then expand to specific groups as governance matures."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/agent-essentials/m365-agents-admin-guide"
+severity = "critical"
+
+[[categories.items]]
+id = "bp-d1-02"
+text = "Set up agent publishing approval workflow"
+detail = "Require approval before agents are published to the org. This prevents untested agents reaching production."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "critical"
+
+[[categories.items]]
+id = "bp-d1-03"
+text = "Scoped initial agent deployment to pilot group"
+detail = "Start with a small pilot group (10-50 users). Collect feedback, validate governance, then expand."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+severity = "high"
+
+[[categories.items]]
+id = "bp-d1-04"
+text = "Configured Purview policies for agent data access"
+detail = "Set up Purview to monitor and audit agent interactions with sensitive data."
+learn_url = "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview"
+severity = "high"
+
+[[categories.items]]
+id = "bp-d1-05"
+text = "Set up Microsoft Defender monitoring for agents"
+detail = "Enable Defender alerts for anomalous agent behaviour — unusual data access patterns, high volume queries, after-hours activity."
+learn_url = "https://learn.microsoft.com/en-us/defender-for-cloud-apps/anomaly-detection-policy"
+severity = "high"
+
+[[categories.items]]
+id = "bp-d1-06"
+text = "Pinned key Microsoft agents for pilot users"
+detail = "Pin helpful Microsoft agents (Researcher, Planner) for your pilot group so they have a curated starting experience."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-d1-07"
+text = "Blocked any unnecessary partner agents"
+detail = "Review available partner agents and block any that don't meet your data governance or compliance requirements."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-d1-08"
+text = "Verified Agent Registry shows all expected agents"
+detail = "After enabling, verify the Agent Registry displays all Microsoft, partner, and org agents correctly."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+severity = "medium"
+
+# ── Ongoing Governance ───────────────────────────────────────────────────────
+
+[[categories]]
+id = "ongoing"
+name = "Ongoing Governance"
+description = "Monthly and quarterly governance tasks"
+
+[[categories.items]]
+id = "bp-og-01"
+text = "Reviewed agent inventory for unused or stale agents"
+detail = "Stale agents keep data access permissions even when nobody uses them. Quarterly review minimum."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "high"
+
+[[categories.items]]
+id = "bp-og-02"
+text = "Audited agent permissions for scope creep"
+detail = "Agent permissions can drift as data sources change. Check that each agent still follows least-privilege."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "high"
+
+[[categories.items]]
+id = "bp-og-03"
+text = "Checked for ownerless agents and reassigned"
+detail = "When owners leave the org, their agents become orphaned. Use 'Manage Ownerless Agents' in Admin Centre."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "high"
+
+[[categories.items]]
+id = "bp-og-04"
+text = "Reviewed shadow agent discovery alerts"
+detail = "Check Defender for Cloud Apps for unsanctioned AI tool usage. Either register them or block them."
+learn_url = "https://learn.microsoft.com/en-us/defender-for-cloud-apps/investigate-risky-oauth"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-og-05"
+text = "Updated governance documentation"
+detail = "Governance policies should evolve with your agent estate. Update docs at least quarterly."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-og-06"
+text = "Collected user feedback on agent effectiveness"
+detail = "User feedback identifies agents that aren't working well or that access data they shouldn't."
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-adoption"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-og-07"
+text = "Reported agent usage metrics to leadership"
+detail = "Show ROI: which agents are used, how often, by whom, and what time they save."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-og-08"
+text = "Reviewed and updated naming convention compliance"
+detail = "Audit agent names against your naming standard. Rename non-compliant agents."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
+severity = "medium"

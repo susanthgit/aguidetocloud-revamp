@@ -1,0 +1,158 @@
+# ============================================================================
+# Agent 365 Planner — Registry Metadata Fields
+# Field definitions for agent inventory tracking
+# Last verified: 2026-04-16
+# ============================================================================
+
+# ── Required Fields (always included) ────────────────────────────────────────
+
+[[fields]]
+id = "agent-name"
+label = "Agent Name"
+required = true
+recommended = true
+description = "Using your organisation's naming convention"
+type = "text"
+example = "Approvals-HR-Prod-001"
+
+[[fields]]
+id = "agent-type"
+label = "Agent Type"
+required = true
+recommended = true
+description = "Microsoft, Partner, Org-Published, or User-Shared"
+type = "select"
+options = ["Microsoft Agent", "Partner Agent", "Org-Published Agent", "User-Shared Agent"]
+example = "Org-Published Agent"
+
+[[fields]]
+id = "owner"
+label = "Owner"
+required = true
+recommended = true
+description = "Person responsible for the agent's lifecycle, accuracy, and compliance"
+type = "text"
+example = "Jane Smith (jane@contoso.com)"
+
+[[fields]]
+id = "business-purpose"
+label = "Business Purpose"
+required = true
+recommended = true
+description = "One-line description of what the agent does and why it exists"
+type = "text"
+example = "Answers HR policy questions for NZ employees using the HR SharePoint site"
+
+[[fields]]
+id = "status"
+label = "Status"
+required = true
+recommended = true
+description = "Current lifecycle state of the agent"
+type = "select"
+options = ["Active", "Under Review", "Pilot", "Deprecated", "Retired", "Blocked"]
+example = "Active"
+
+# ── Recommended Fields (toggle on/off) ───────────────────────────────────────
+
+[[fields]]
+id = "department"
+label = "Department / Business Unit"
+required = false
+recommended = true
+description = "Which department owns or primarily uses this agent"
+type = "text"
+example = "Human Resources"
+
+[[fields]]
+id = "risk-classification"
+label = "Risk Classification"
+required = false
+recommended = true
+description = "Low: internal info only. Medium: sensitive data. High: regulated data. Critical: PII/financial."
+type = "select"
+options = ["Low", "Medium", "High", "Critical"]
+example = "Medium"
+
+[[fields]]
+id = "data-sources"
+label = "Data Sources"
+required = false
+recommended = true
+description = "Which SharePoint sites, connectors, or APIs the agent accesses"
+type = "text"
+example = "HR Policies SP site, Employee Handbook OneDrive folder"
+
+[[fields]]
+id = "user-audience"
+label = "User Audience"
+required = false
+recommended = true
+description = "Who can use this agent — specific security group or entire org"
+type = "text"
+example = "SG-NZ-AllStaff"
+
+[[fields]]
+id = "review-date"
+label = "Next Review Date"
+required = false
+recommended = true
+description = "When this agent's permissions and purpose should next be reviewed"
+type = "date"
+example = "2026-07-01"
+
+[[fields]]
+id = "creation-date"
+label = "Creation Date"
+required = false
+recommended = false
+description = "When the agent was first created and registered"
+type = "date"
+example = "2026-05-15"
+
+[[fields]]
+id = "last-modified"
+label = "Last Modified Date"
+required = false
+recommended = false
+description = "When the agent was last updated (instructions, knowledge, permissions)"
+type = "date"
+example = "2026-06-10"
+
+[[fields]]
+id = "permissions-summary"
+label = "Permissions Summary"
+required = false
+recommended = true
+description = "Brief summary of what the agent can read, write, or execute"
+type = "text"
+example = "Read-only access to HR Policies SP site"
+
+[[fields]]
+id = "compliance-tags"
+label = "Compliance Tags"
+required = false
+recommended = false
+description = "Regulatory frameworks this agent must comply with"
+type = "multiselect"
+options = ["GDPR", "HIPAA", "SOX", "PCI-DSS", "ISO 27001", "NZ Privacy Act", "None"]
+example = "GDPR, NZ Privacy Act"
+
+[[fields]]
+id = "blueprint-reference"
+label = "Blueprint Reference"
+required = false
+recommended = false
+description = "Which agent blueprint this instance was created from"
+type = "text"
+example = "HR-FAQ-Blueprint-v2"
+
+[[fields]]
+id = "store-listing"
+label = "Listed in Agent Store"
+required = false
+recommended = false
+description = "Whether this agent is discoverable in the organisational Agent Store"
+type = "select"
+options = ["Yes", "No"]
+example = "Yes"

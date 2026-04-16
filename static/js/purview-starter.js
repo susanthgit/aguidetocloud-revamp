@@ -40,12 +40,13 @@
   };
 
   function genLabelId() {
-    // Collision-resistant: use max existing + timestamp suffix
+    // Collision-resistant: use timestamp + counter
+    const ts = Date.now().toString(36);
     const maxNum = S.customLabels.reduce((m, l) => {
-      const n = parseInt((l.id || '').replace('custom-', ''), 10);
+      const n = parseInt((l.id || '').split('-').pop(), 10);
       return isNaN(n) ? m : Math.max(m, n);
     }, 0);
-    return 'custom-' + (maxNum + 1);
+    return 'cl-' + ts + '-' + (maxNum + 1);
   }
 
   function saveState() {
@@ -452,9 +453,15 @@
   function renderLabelTemplates() {
     const el = $('pvs-lb-templates');
     if (!el) return;
-    el.innerHTML = KITS.map(kit =>
+    const selectedKit = S.selectedKit ? getKit(S.selectedKit) : null;
+    let html = '';
+    if (selectedKit && S.customLabels.length === 0) {
+      html += '<button class="pvs-lb-tpl-btn" data-kit="' + esc(selectedKit.id) + '" style="background:rgba(var(--pvs-accent-rgb),0.15);border-color:rgba(var(--pvs-accent-rgb),0.3);color:var(--pvs-accent)">' + esc(selectedKit.emoji) + ' Start from ' + esc(selectedKit.name) + ' (selected)</button>';
+    }
+    html += KITS.map(kit =>
       '<button class="pvs-lb-tpl-btn" data-kit="' + esc(kit.id) + '">' + esc(kit.emoji) + ' ' + esc(kit.name) + '</button>'
     ).join('');
+    el.innerHTML = html;
   }
 
   function initLabelBuilder() {
@@ -465,12 +472,15 @@
         if (!btn) return;
         const kit = getKit(btn.dataset.kit);
         if (!kit || !kit.labels) return;
-        S.customLabels = kit.labels.map(l => ({ ...l, id: genLabelId(), parent_id: '' }));
+        // Build new labels with unique IDs using a local counter
+        let counter = Date.now();
+        const newLabels = kit.labels.map(l => ({ ...l, id: 'cl-' + (counter++), parent_id: '' }));
         const idMap = {};
-        kit.labels.forEach((orig, i) => { idMap[orig.id] = S.customLabels[i].id; });
-        S.customLabels.forEach((l, i) => {
+        kit.labels.forEach((orig, i) => { idMap[orig.id] = newLabels[i].id; });
+        newLabels.forEach((l, i) => {
           if (kit.labels[i].parent_id && idMap[kit.labels[i].parent_id]) l.parent_id = idMap[kit.labels[i].parent_id];
         });
+        S.customLabels = newLabels;
         saveState(); renderLabelTree(); renderLabelPreview(); updateCustomCTA();
         toast(kit.name + ' labels loaded');
       });
@@ -659,15 +669,22 @@
   function renderDLPScenarios() {
     const el = $('pvs-dlp-scenarios');
     if (!el || !SCENARIOS.length) return;
+    // Determine which scenarios are covered by the selected kit
+    const kit = S.selectedKit ? getKit(S.selectedKit) : null;
+    const kitDLPNames = kit ? (kit.dlp_rules || []).map(r => r.name.toLowerCase()) : [];
+
     el.innerHTML = DLP_CATS.map(cat => {
       const items = SCENARIOS.filter(s => s.category === cat.id);
       if (!items.length) return '';
       return '<div class="pvs-dlp-cat"><div class="pvs-dlp-cat-title">' + esc(cat.emoji + ' ' + cat.name) + '</div><div class="pvs-dlp-cat-grid">' +
         items.map(s => {
           const on = S.enabledScenarios.includes(s.id);
+          const inKit = kitDLPNames.some(n => s.name.toLowerCase().includes(n.split(' ').slice(0,3).join(' ')) || n.includes(s.name.toLowerCase().split(' ').slice(0,3).join(' ')));
           return '<div class="pvs-dlp-scenario-card' + (on ? ' pvs-dlp-enabled' : '') + '" data-scenario="' + esc(s.id) + '">' +
             '<div class="pvs-dlp-scenario-toggle"><input type="checkbox" class="pvs-toggle pvs-dlp-toggle" data-scenario="' + esc(s.id) + '"' + (on ? ' checked' : '') + ' aria-label="' + esc(s.name) + '"></div>' +
-            '<div class="pvs-dlp-scenario-body"><div class="pvs-dlp-scenario-name">' + esc(s.name) + '</div>' +
+            '<div class="pvs-dlp-scenario-body"><div class="pvs-dlp-scenario-name">' + esc(s.name) +
+            (inKit ? ' <span class="pvs-dlp-kit-badge">Included in ' + esc(kit.name) + '</span>' : '') +
+            '</div>' +
             '<div class="pvs-dlp-scenario-desc">' + esc(s.description) + '</div>' +
             '<div class="pvs-dlp-scenario-meta"><span class="pvs-dlp-action pvs-dlp-action--' + esc(s.action) + '">' + esc(s.action) + '</span>' +
             (s.workloads || []).map(wlBadge).join('') + licBadge(s.licence) + '</div></div></div>';
@@ -726,12 +743,45 @@
 
     initKitGrid(); renderKits(); updateDeployBadge();
 
+    // Auto-expand first kit if nothing selected yet
+    if (!S.selectedKit && KITS.length > 0 && !S.expandedKit) {
+      S.expandedKit = KITS[0].id;
+      renderKits();
+    }
+
     document.querySelectorAll('.pvs-copy-btn').forEach(btn => {
       btn.addEventListener('click', () => { const el = $(btn.dataset.copy); if (el) copyText(el.textContent); });
     });
 
     const changeBtn = $('pvs-change-kit');
     if (changeBtn) changeBtn.addEventListener('click', () => switchTab('kits'));
+
+    const resetBtn = $('pvs-reset-plan');
+    if (resetBtn) resetBtn.addEventListener('click', () => {
+      S.selectedKit = null;
+      S.customLabels = [];
+      S.enabledScenarios = [];
+      S.expandedKit = null;
+      saveState();
+      renderKits(); renderLabelTree(); renderLabelPreview();
+      renderDLPScenarios(); updateCustomCTA(); updateDeployBadge();
+      renderDeploy();
+      toast('Plan reset');
+    });
+
+    const downloadBtn = $('pvs-download-ps');
+    if (downloadBtn) downloadBtn.addEventListener('click', () => {
+      const el = $('pvs-ps-output');
+      if (!el || !el.textContent.trim()) return;
+      const blob = new Blob([el.textContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'purview-starter-kit.ps1';
+      a.click();
+      URL.revokeObjectURL(url);
+      toast('Downloaded purview-starter-kit.ps1');
+    });
 
     renderLabelTemplates(); initLabelBuilder(); initLabelTree(); renderLabelTree(); renderLabelPreview();
     renderDLPScenarios(); initDLPScenarios();

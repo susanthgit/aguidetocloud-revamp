@@ -1,0 +1,147 @@
+# ============================================================================
+# Agent 365 Planner — Decision Tree
+# "Should this be an agent?" interactive flowchart
+# Source: Public Microsoft Learn docs + community best practices
+# Last verified: 2026-04-16
+# ============================================================================
+
+# ── Question Nodes ───────────────────────────────────────────────────────────
+
+[[nodes]]
+id = "q1"
+type = "question"
+text = "Does this task involve answering questions using company data?"
+yes = "q2"
+no = "q1b"
+
+[[nodes]]
+id = "q1b"
+type = "question"
+text = "Does it involve automating a repetitive workflow?"
+yes = "result-power-automate"
+no = "q1c"
+
+[[nodes]]
+id = "q1c"
+type = "question"
+text = "Is it a one-off analysis or creative task?"
+yes = "result-copilot-chat"
+no = "result-no-ai"
+
+[[nodes]]
+id = "q2"
+type = "question"
+text = "Does it need to reference specific documents, sites, or data sources?"
+yes = "q3"
+no = "result-prompt"
+
+[[nodes]]
+id = "q3"
+type = "question"
+text = "Will multiple users need this repeatedly?"
+yes = "q4"
+no = "result-personal"
+
+[[nodes]]
+id = "q4"
+type = "question"
+text = "Does it need external APIs, custom logic, or multi-step workflows?"
+yes = "result-custom-engine"
+no = "q5"
+
+[[nodes]]
+id = "q5"
+type = "question"
+text = "Does it only need Microsoft 365 data (SharePoint, OneDrive, email, calendar)?"
+yes = "result-declarative"
+no = "result-custom-connectors"
+
+# ── Result Nodes ─────────────────────────────────────────────────────────────
+
+[[nodes]]
+id = "result-declarative"
+type = "result"
+title = "Declarative Agent"
+icon = "🤖"
+description = "A declarative agent connects to your M365 data without custom code. Build it in Agent Builder or Teams Toolkit."
+build_location = "Agent Builder in M365 Copilot"
+licence = "M365 Copilot licence ($30/user/month)"
+next_steps = ["Define knowledge sources (SharePoint sites, files)", "Set agent instructions and behaviour", "Test with pilot users before publishing", "Register in Agent Registry with proper metadata"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build"
+
+[[nodes]]
+id = "result-custom-engine"
+type = "result"
+title = "Custom Engine Agent"
+icon = "⚙️"
+description = "A custom engine agent handles complex logic, external APIs, and multi-step workflows. Build in Copilot Studio or with the Teams AI Library SDK."
+build_location = "Copilot Studio or Teams AI Library SDK"
+licence = "Copilot Studio licence (pay-per-use or included in some plans)"
+next_steps = ["Map out the conversation flow and API integrations", "Choose Copilot Studio (low-code) or SDK (pro-code)", "Implement authentication for external services", "Plan testing strategy including edge cases"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio"
+
+[[nodes]]
+id = "result-custom-connectors"
+type = "result"
+title = "Custom Engine Agent with Connectors"
+icon = "🔌"
+description = "You need a custom engine agent with connectors to non-M365 data sources. Build in Copilot Studio with custom connectors or Graph Connectors."
+build_location = "Copilot Studio with custom connectors"
+licence = "Copilot Studio licence + connector costs"
+next_steps = ["Identify which external data sources are needed", "Check if Graph Connectors exist for your sources", "Build custom connectors for unsupported sources", "Define data refresh schedules and caching strategy"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio"
+
+[[nodes]]
+id = "result-personal"
+type = "result"
+title = "Personal Agent"
+icon = "👤"
+description = "A personal agent for individual use — no IT approval needed. Build it directly in Agent Builder for your own productivity."
+build_location = "Agent Builder in M365 Copilot"
+licence = "M365 Copilot licence ($30/user/month)"
+next_steps = ["Open Agent Builder from M365 Copilot", "Define your knowledge sources and instructions", "Test it yourself before sharing", "If others want it later, work with IT to publish as org agent"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder-build"
+
+[[nodes]]
+id = "result-prompt"
+type = "result"
+title = "No Agent Needed — Use a Copilot Prompt"
+icon = "💡"
+description = "A well-crafted Copilot prompt can handle this without building an agent. Save the prompt in the Prompt Library for reuse."
+build_location = "M365 Copilot Chat"
+licence = "M365 Copilot licence ($30/user/month)"
+next_steps = ["Write a clear, specific prompt with context", "Test with different phrasings to optimise results", "Save as a reusable prompt for your team", "If the prompt needs specific data sources, reconsider an agent"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365-copilot/use-copilot-chat"
+
+[[nodes]]
+id = "result-power-automate"
+type = "result"
+title = "Consider Power Automate Instead"
+icon = "⚡"
+description = "For repetitive workflows without AI reasoning, Power Automate is more appropriate than an agent. It's designed for automation, not conversation."
+build_location = "Power Automate"
+licence = "Included in most M365 plans (premium connectors extra)"
+next_steps = ["Map out the workflow triggers and actions", "Check if Power Automate connectors exist for your services", "Build and test the flow with sample data", "If AI reasoning IS needed, reconsider a custom engine agent"]
+learn_url = "https://learn.microsoft.com/en-us/power-automate/getting-started"
+
+[[nodes]]
+id = "result-copilot-chat"
+type = "result"
+title = "Use Copilot Chat Directly"
+icon = "💬"
+description = "For one-off tasks, just use Copilot Chat. No agent needed — Copilot can help with analysis, writing, summarisation, and creative tasks on demand."
+build_location = "M365 Copilot Chat"
+licence = "M365 Copilot licence ($30/user/month) or free Copilot Chat"
+next_steps = ["Open Copilot Chat in Teams, Edge, or microsoft365.com", "Describe your task clearly with context", "Iterate on the output by refining your prompt", "If you find yourself doing this repeatedly, consider building an agent"]
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365-copilot/use-copilot-chat"
+
+[[nodes]]
+id = "result-no-ai"
+type = "result"
+title = "This May Not Need AI"
+icon = "🚫"
+description = "Not every problem needs AI. If the task is purely mechanical or doesn't involve language understanding, traditional tools may be better."
+build_location = "N/A"
+licence = "N/A"
+next_steps = ["Evaluate if existing tools (Excel, SharePoint lists, Power Apps) can solve this", "Check if a simple template or form would work", "If the task evolves to need AI reasoning, revisit this decision tree"]
+learn_url = ""
