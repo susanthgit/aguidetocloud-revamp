@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T11:18:50.959388+00:00",
+  "generated_at": "2026-04-16T14:10:03.705086+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -7,12 +7,12 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 23,
-      "active_incidents": 3,
-      "avg_duration_minutes": 4895,
-      "last_incident": "2026-04-16T07:47:37+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 4710,
+      "last_incident": "2026-04-15T19:00:00+00:00",
       "classifications": {
-        "incident": 14,
-        "advisory": 9
+        "advisory": 9,
+        "incident": 14
       }
     },
     {
@@ -33,9 +33,9 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 18,
-      "active_incidents": 5,
-      "avg_duration_minutes": 20178,
-      "last_incident": "2026-04-14T19:04:35+00:00",
+      "active_incidents": 4,
+      "avg_duration_minutes": 19549,
+      "last_incident": "2026-04-13T22:00:00+00:00",
       "classifications": {
         "advisory": 14,
         "incident": 4

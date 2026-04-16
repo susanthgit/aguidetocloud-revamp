@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2026 11:18:51 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 14:10:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to access Microsoft 365 web-based services correctly when using Google Chrome and Mozilla Firefox</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
-      <description>[Microsoft 365 suite] Users may be unable to access Microsoft 365 web-based services correctly when using Google Chrome and Mozilla Firefox.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1281730</guid>
-      <pubDate>Thu, 16 Apr 2026 07:47:37 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1281212</link>
@@ -24,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">IT1281212</guid>
       <pubDate>Wed, 15 Apr 2026 19:32:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
+      <description>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1281730</guid>
+      <pubDate>Wed, 15 Apr 2026 19:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience intermittent failures with requests in Microsoft 365 Copilot</title>
@@ -51,15 +51,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1280167</guid>
       <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1279879</link>
-      <description>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1279879</guid>
-      <pubDate>Tue, 14 Apr 2026 19:04:35 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online</title>
@@ -123,6 +114,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1274150</guid>
       <pubDate>Wed, 08 Apr 2026 14:38:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1279879</link>
+      <description>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">EX1279879</guid>
+      <pubDate>Wed, 08 Apr 2026 14:07:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center</title>
