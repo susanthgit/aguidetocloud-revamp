@@ -94,6 +94,7 @@
       var panel = document.getElementById('panel-' + tab.dataset.tab);
       if (panel) panel.classList.add('active');
       if (tab.dataset.tab === 'growth') fetchGrowthData();
+      if (tab.dataset.tab === 'command') renderCommandCentre();
     });
   });
 
@@ -162,11 +163,15 @@
 
     renderMorningBrief(data);
     renderSinceLastVisit(data);
-    renderHealthScore(data);
+    renderHealthScoreInline(data);
     renderInsights(generateInsights(data));
     renderMovers(data);
     renderActionQueue(data);
     renderRefreshTime(data);
+
+    // Command Centre auto-renders if active
+    var cmdPanel = document.getElementById('panel-command');
+    if (cmdPanel && cmdPanel.classList.contains('active')) renderCommandCentre();
 
     if (gsc && gsc.queries && gsc.queries.length) {
       renderGSCQueries(gsc.queries);
@@ -1615,6 +1620,198 @@
       tab.addEventListener('click', fetchYouTubeData);
     }
   });
+
+  // ── HEALTH SCORE INLINE (stats bar) ──
+  function renderHealthScoreInline(data) {
+    var el = document.getElementById('sa-health-stat');
+    var numEl = document.getElementById('sa-health-num-inline');
+    if (!el || !numEl) return;
+    var ga4 = data.ga4; var gsc = data.gsc;
+    if (!ga4 || !ga4.totals) { el.style.display = 'none'; return; }
+    var score = 0;
+    var growth = 12;
+    if (ga4.wow && ga4.wow.change) { var wv = ga4.wow.change.views; growth = wv > 50 ? 25 : wv > 20 ? 20 : wv > 0 ? 15 : wv > -10 ? 10 : 5; }
+    score += growth;
+    var seo = 10;
+    if (gsc && gsc.queries && gsc.queries.length) { var avgPos = gsc.queries.reduce(function(s, q) { return s + q.position; }, 0) / gsc.queries.length; seo = avgPos < 5 ? 20 : avgPos < 10 ? 15 : avgPos < 20 ? 10 : 5; var avgCtr = gsc.queries.reduce(function(s, q) { return s + q.ctr; }, 0) / gsc.queries.length; if (avgCtr > 10) seo += 5; }
+    score += seo;
+    var eng = 12; if (ga4.totals.views > 0) { var ratio = ga4.totals.users / ga4.totals.views; eng = ratio > 0.5 ? 25 : ratio > 0.35 ? 20 : ratio > 0.25 ? 15 : ratio > 0.15 ? 10 : 5; }
+    score += eng;
+    var reach = 12; if (ga4.totals.views > 5000) reach = 25; else if (ga4.totals.views > 2000) reach = 20; else if (ga4.totals.views > 500) reach = 15; else if (ga4.totals.views > 100) reach = 10; else reach = 5;
+    score += reach;
+    var color = score >= 80 ? '#10B981' : score >= 60 ? '#FBBF24' : score >= 40 ? '#FB923C' : '#EF4444';
+    numEl.textContent = score;
+    numEl.style.color = color;
+    el.style.display = '';
+    el.style.borderColor = color + '40';
+    el.style.background = color + '10';
+    // Store for Command Centre
+    currentData._healthScore = score;
+    currentData._healthColor = color;
+  }
+
+  // ── SEO QUERY FILTER ──
+  var SEO_IGNORE = ['karamatura','marawhara','hiking','track','trail','mount donald','tramping','walk'];
+  var seoFilterEl = document.getElementById('sa-seo-hide-legacy');
+  if (seoFilterEl) {
+    seoFilterEl.addEventListener('change', function() {
+      if (currentData && currentData.gsc && currentData.gsc.queries) {
+        var filtered = seoFilterEl.checked ? currentData.gsc.queries.filter(function(q) { return !SEO_IGNORE.some(function(w) { return q.query.toLowerCase().indexOf(w) > -1; }); }) : currentData.gsc.queries;
+        renderGSCQueries(filtered);
+        renderPositionDistribution(filtered);
+        renderSEOOpportunities(filtered);
+      }
+    });
+  }
+
+  // ── COMMAND CENTRE ──
+  var _cmdPulseChart = null;
+
+  function renderCommandCentre() {
+    if (!currentData || !currentData.ga4) return;
+    var ga4 = currentData.ga4;
+    var gsc = currentData.gsc;
+
+    // Daily Briefing (merged Brief + Since Last Visit)
+    var briefEl = document.getElementById('sa-cmd-brief');
+    if (briefEl) {
+      var parts = [];
+      // Since last visit
+      var prev; try { prev = JSON.parse(localStorage.getItem('siteana_last_visit')); } catch(e) {}
+      if (prev && prev.time) {
+        var ago = Date.now() - prev.time;
+        var agoStr = ago < 3600000 ? Math.round(ago / 60000) + 'm' : ago < 86400000 ? Math.round(ago / 3600000) + 'h' : Math.round(ago / 86400000) + 'd';
+        var dv = ga4.totals.views - (prev.views || 0);
+        if (dv > 0) parts.push('Since ' + agoStr + ' ago: <strong>+' + numFmt(dv) + ' views</strong>.');
+      }
+      // Today
+      if (ga4.today) parts.push('Today: <strong>' + numFmt(ga4.today.views) + ' views</strong>.');
+      // WoW
+      if (ga4.wow && ga4.wow.change) parts.push('WoW: ' + (ga4.wow.change.views >= 0 ? '+' : '') + ga4.wow.change.views + '% views.');
+      // Top tool
+      if (ga4.leaderboard && ga4.leaderboard.length) parts.push(getToolInfo(ga4.leaderboard[0].tool).name + ' leads.');
+      // YouTube (if loaded)
+      if (ytDataCache && ytDataCache.main) parts.push('YouTube: ' + roundDisplay(ytDataCache.main.subscribers) + ' subs.');
+      // Health
+      if (currentData._healthScore) parts.push('Health: <strong>' + currentData._healthScore + '/100</strong>.');
+      briefEl.style.display = parts.length ? '' : 'none';
+      briefEl.innerHTML = '<div class="siteana-cmd-brief-inner">' + parts.join(' ') + '</div>';
+    }
+
+    // Vital Signs
+    var vitalsEl = document.getElementById('sa-cmd-vitals');
+    if (vitalsEl) {
+      var vitals = [
+        { num: numFmt(ga4.today.views), label: 'Site Today', color: '#64748B' },
+        { num: roundDisplay(ga4.totals.views), label: 'Period Views', color: '#64748B' }
+      ];
+      if (ytDataCache && ytDataCache.analytics && !ytDataCache.analytics.error && ytDataCache.analytics.daily && ytDataCache.analytics.daily.length) {
+        var ytToday = ytDataCache.analytics.daily[ytDataCache.analytics.daily.length - 1];
+        vitals.push({ num: numFmt(ytToday ? ytToday.views : 0), label: 'YT Today', color: '#EF4444' });
+      }
+      var rtEl = document.getElementById('sa-live-count');
+      vitals.push({ num: rtEl ? rtEl.textContent : '0', label: 'Live Now', color: '#EF4444' });
+      if (currentData._healthScore) vitals.push({ num: currentData._healthScore, label: 'Health', color: currentData._healthColor || '#64748B' });
+      if (ytDataCache && ytDataCache.weeklyScorecard) vitals.push({ num: ytDataCache.weeklyScorecard.grade, label: 'YT Grade', color: ytDataCache.weeklyScorecard.grade.charAt(0) === 'A' ? '#10B981' : ytDataCache.weeklyScorecard.grade === 'B' ? '#FBBF24' : '#EF4444' });
+      vitalsEl.innerHTML = vitals.map(function(v) {
+        return '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + v.color + '">' + v.num + '</span><span class="siteana-stat-label">' + v.label + '</span></div>';
+      }).join('');
+    }
+
+    // Top Site Tools (by momentum)
+    var toolsEl = document.getElementById('sa-cmd-top-tools');
+    if (toolsEl && ga4.leaderboard) {
+      var top5 = ga4.leaderboard.slice(0, 5);
+      toolsEl.innerHTML = top5.map(function(t, i) {
+        var info = getToolInfo(t.tool);
+        return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span><span class="siteana-lb-total">' + roundDisplay(t.views) + '</span></div>';
+      }).join('');
+    }
+
+    // Top YouTube Videos
+    var ytEl = document.getElementById('sa-cmd-top-yt');
+    if (ytEl) {
+      if (ytDataCache && ytDataCache.mainAnalysis && ytDataCache.mainAnalysis.topByVelocity) {
+        var topYt = ytDataCache.mainAnalysis.topByVelocity.slice(0, 5);
+        ytEl.innerHTML = topYt.map(function(v, i) {
+          return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title.length > 45 ? v.title.slice(0, 42) + '...' : v.title) + '</a></span><span class="siteana-lb-total">' + v.viewsPerDay + '/d</span></div>';
+        }).join('');
+      } else {
+        ytEl.innerHTML = '<p class="siteana-hint">Click YouTube tab first to load data</p>';
+      }
+    }
+
+    // Growth Pulse (site + YouTube on same chart)
+    var pulseCtx = document.getElementById('sa-cmd-pulse-chart');
+    if (pulseCtx && ga4.trend && ga4.trend.length) {
+      if (_cmdPulseChart) { _cmdPulseChart.destroy(); _cmdPulseChart = null; }
+      var labels = ga4.trend.map(function(d) { return d.date.slice(5); });
+      var datasets = [{ type: 'line', label: 'Site Views', data: ga4.trend.map(function(d) { return d.views; }), borderColor: '#64748B', backgroundColor: 'rgba(100,116,139,0.1)', fill: true, tension: 0.4, pointRadius: 2 }];
+      if (ytDataCache && ytDataCache.analytics && !ytDataCache.analytics.error && ytDataCache.analytics.daily) {
+        var ytDaily = ytDataCache.analytics.daily;
+        var ytMap = {};
+        ytDaily.forEach(function(d) { ytMap[d.date.slice(5)] = d.views; });
+        datasets.push({ type: 'line', label: 'YouTube Views', data: labels.map(function(l) { return ytMap[l] || 0; }), borderColor: '#EF4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true, tension: 0.4, pointRadius: 2 });
+      }
+      _cmdPulseChart = new Chart(pulseCtx, {
+        data: { labels: labels, datasets: datasets },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: 'rgba(255,255,255,0.6)' } } }, scales: { x: { ticks: { color: 'rgba(255,255,255,0.4)', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } }, y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } } } }
+      });
+    }
+
+    // Priority Actions (combined site + YouTube)
+    var fixCard = document.getElementById('sa-cmd-fix-card');
+    var fixEl = document.getElementById('sa-cmd-fixes');
+    if (fixCard && fixEl) {
+      var fixes = [];
+      // SEO opportunities
+      if (gsc && gsc.queries) {
+        var opps = gsc.queries.filter(function(q) { return q.position < 10 && q.ctr < 8 && q.impressions > 15 && !SEO_IGNORE.some(function(w) { return q.query.toLowerCase().indexOf(w) > -1; }); });
+        opps.slice(0, 2).forEach(function(q) { fixes.push({ priority: 'high', text: 'SEO: Improve title for "' + q.query + '" (pos ' + q.position + ', ' + q.ctr + '% CTR)' }); });
+      }
+      // YouTube title scores
+      if (ytDataCache && ytDataCache.titleScores) {
+        var weak = ytDataCache.titleScores.filter(function(t) { return t.score < 50; });
+        if (weak.length) fixes.push({ priority: 'medium', text: 'YouTube: ' + weak.length + ' video titles scoring below 50 — rewrite for better CTR' });
+      }
+      // Low-traffic tools
+      if (ga4.leaderboard) {
+        var low = ga4.leaderboard.filter(function(t) { return t.views < 10 && t.tool !== 'site-analytics' && t.tool !== 'feedback'; });
+        if (low.length) fixes.push({ priority: 'low', text: 'Site: ' + low.length + ' tools with <10 views — share on social or cross-link' });
+      }
+      fixCard.style.display = fixes.length ? '' : 'none';
+      fixEl.innerHTML = fixes.map(function(f) {
+        return '<div class="siteana-action siteana-action-' + f.priority + '"><div class="siteana-action-body"><div class="siteana-action-text">' + esc(f.text) + '</div></div></div>';
+      }).join('');
+    }
+
+    // Site Audience
+    var siteAudEl = document.getElementById('sa-cmd-site-audience');
+    if (siteAudEl && ga4.countries && ga4.sources) {
+      var topCountries = ga4.countries.slice(0, 3).map(function(c) { return c.country; }).join(', ');
+      var topSource = ga4.sources.length ? ga4.sources[0].source : 'unknown';
+      siteAudEl.innerHTML = '<p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.6">Top countries: <strong>' + esc(topCountries) + '</strong><br>Primary source: <strong>' + esc(topSource) + '</strong> (' + (ga4.sources.length ? ga4.sources[0].sessions : 0) + ' sessions)<br>Devices: ' + (ga4.devices || []).map(function(d) { return d.device + ' ' + d.users; }).join(', ') + '</p>';
+    }
+
+    // YouTube Audience
+    var ytAudEl = document.getElementById('sa-cmd-yt-audience');
+    if (ytAudEl) {
+      if (ytDataCache && ytDataCache.analytics && ytDataCache.analytics.trafficSources && ytDataCache.analytics.trafficSources.length) {
+        var sources = ytDataCache.analytics.trafficSources.slice(0, 5);
+        ytAudEl.innerHTML = sources.map(function(s) {
+          return '<div class="siteana-lb-item"><span class="siteana-lb-name">' + esc(s.source.replace(/_/g, ' ')) + '</span><span class="siteana-lb-total">' + numFmt(s.views) + '</span></div>';
+        }).join('');
+      } else {
+        ytAudEl.innerHTML = '<p class="siteana-hint">Click YouTube tab first to load analytics</p>';
+      }
+    }
+  }
+
+  // Auto-render Command Centre on first load
+  setTimeout(function() {
+    var cmdPanel = document.getElementById('panel-command');
+    if (cmdPanel && cmdPanel.classList.contains('active') && currentData) renderCommandCentre();
+  }, 2000);
 
   // ── INIT ──
   fetchData(currentRange);

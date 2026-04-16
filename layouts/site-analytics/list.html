@@ -53,6 +53,11 @@
       <span class="siteana-stat-num">{{ $tc }}</span>
       <span class="siteana-stat-label">Tools</span>
     </div>
+    <!-- Health Score inline in stats bar -->
+    <div class="siteana-stat siteana-health-inline" id="sa-health-stat" style="display:none">
+      <span class="siteana-stat-num" id="sa-health-num-inline">—</span>
+      <span class="siteana-stat-label">Health</span>
+    </div>
   </div>
   <div class="siteana-refreshed" id="sa-refreshed"></div>
 
@@ -66,7 +71,8 @@
 
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
-    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="command">Command Centre</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="overview">Overview</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="growth">Growth</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
@@ -75,26 +81,58 @@
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
-  <!-- Tab: Overview -->
-  <div class="siteana-panel active" id="panel-overview" role="tabpanel">
-    <!-- Morning Brief -->
-    <div class="siteana-brief" id="sa-brief" style="display:none"></div>
-    <!-- Since Last Visit -->
-    <div class="siteana-since" id="sa-since" style="display:none"></div>
-    <!-- Health Score + Charts row -->
-    <div class="siteana-grid-health">
-      <div class="siteana-health-card" id="sa-health" style="display:none">
-        <canvas id="sa-health-ring" width="140" height="140"></canvas>
-        <div class="siteana-health-info">
-          <span class="siteana-health-score" id="sa-health-num">—</span>
-          <span class="siteana-health-label">Site Health</span>
-          <span class="siteana-health-sub" id="sa-health-sub"></span>
-        </div>
+  <!-- Tab: Command Centre -->
+  <div class="siteana-panel active" id="panel-command" role="tabpanel">
+    <!-- Daily Briefing (merged Brief + Since Last Visit) -->
+    <div class="siteana-cmd-brief" id="sa-cmd-brief" style="display:none"></div>
+    <!-- Vital Signs -->
+    <div class="siteana-cmd-vitals" id="sa-cmd-vitals"></div>
+    <!-- What's Working -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Top Site Tools</h3>
+        <p class="siteana-hint">By momentum (views/day)</p>
+        <div id="sa-cmd-top-tools"></div>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Traffic Trend</h3>
-        <canvas id="sa-trend-chart" height="220"></canvas>
+        <h3 class="siteana-card-title">Top YouTube Videos</h3>
+        <p class="siteana-hint">By velocity (views/day)</p>
+        <div id="sa-cmd-top-yt"></div>
       </div>
+    </div>
+    <!-- Growth Pulse -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Growth Pulse</h3>
+      <p class="siteana-hint">Site views + YouTube views on the same timeline</p>
+      <canvas id="sa-cmd-pulse-chart" height="220"></canvas>
+    </div>
+    <!-- What Needs Fixing -->
+    <div class="siteana-card" id="sa-cmd-fix-card" style="display:none">
+      <h3 class="siteana-card-title">Priority Actions</h3>
+      <div id="sa-cmd-fixes"></div>
+    </div>
+    <!-- Audience Map -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Site Audience</h3>
+        <div id="sa-cmd-site-audience"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">YouTube Audience</h3>
+        <div id="sa-cmd-yt-audience"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Overview -->
+  <div class="siteana-panel" id="panel-overview" role="tabpanel">
+    <!-- Morning Brief + Since Last Visit merged -->
+    <div class="siteana-brief" id="sa-brief" style="display:none"></div>
+    <div class="siteana-since" id="sa-since" style="display:none"></div>
+    <!-- Charts (Health Score moved to stats bar) -->
+    <div class="siteana-card" style="margin-bottom:1.5rem">
+      <h3 class="siteana-card-title">Traffic Trend</h3>
+      <canvas id="sa-trend-chart" height="220"></canvas>
     </div>
     <div class="siteana-card" style="margin-bottom:1.5rem">
       <h3 class="siteana-card-title">Activity Breakdown</h3>
@@ -148,6 +186,20 @@
 
   <!-- Tab: Tools -->
   <div class="siteana-panel" id="panel-tools" role="tabpanel">
+    <!-- 2x2 Tool Performance Matrix (moved up) -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Performance Matrix</h3>
+      <p class="siteana-hint">Popularity (views) vs Engagement (users/views ratio)</p>
+      <div class="siteana-matrix-wrap">
+        <canvas id="sa-matrix-chart" height="320"></canvas>
+        <div class="siteana-matrix-labels">
+          <span class="siteana-matrix-label" data-pos="tl">Hidden Gems</span>
+          <span class="siteana-matrix-label" data-pos="tr">Stars</span>
+          <span class="siteana-matrix-label" data-pos="bl">Needs Work</span>
+          <span class="siteana-matrix-label" data-pos="br">Traffic Magnets</span>
+        </div>
+      </div>
+    </div>
     <div class="siteana-card">
       <h3 class="siteana-card-title">Tool Leaderboard</h3>
       <p class="siteana-hint">Ranked by total page views</p>
@@ -162,20 +214,6 @@
         <h3 class="siteana-card-title">Most Active Users</h3>
         <p class="siteana-hint">Unique users per tool</p>
         <div id="sa-most-used"></div>
-      </div>
-    </div>
-    <!-- 2x2 Tool Performance Matrix -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Performance Matrix</h3>
-      <p class="siteana-hint">Popularity (views) vs Engagement (users/views ratio)</p>
-      <div class="siteana-matrix-wrap">
-        <canvas id="sa-matrix-chart" height="320"></canvas>
-        <div class="siteana-matrix-labels">
-          <span class="siteana-matrix-label" data-pos="tl">Hidden Gems</span>
-          <span class="siteana-matrix-label" data-pos="tr">Stars</span>
-          <span class="siteana-matrix-label" data-pos="bl">Needs Work</span>
-          <span class="siteana-matrix-label" data-pos="br">Traffic Magnets</span>
-        </div>
       </div>
     </div>
   </div>
@@ -266,6 +304,7 @@
     <div class="siteana-card">
       <h3 class="siteana-card-title">Google Search Queries</h3>
       <p class="siteana-hint">What people search on Google to find this site</p>
+      <label class="siteana-seo-filter"><input type="checkbox" id="sa-seo-hide-legacy"> Hide non-relevant queries (hiking, trails)</label>
       <div id="sa-searches"></div>
     </div>
     <div class="siteana-grid-2">

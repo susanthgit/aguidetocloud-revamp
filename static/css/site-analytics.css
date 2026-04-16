@@ -863,6 +863,48 @@
   .siteana-yt-thumb { width: 80px; height: 45px; }
 }
 
+/* ── COMMAND CENTRE ────────────────── */
+.siteana-cmd-brief-inner {
+  background: linear-gradient(135deg, rgba(100,116,139,0.15), rgba(100,116,139,0.04));
+  border: 1px solid rgba(100,116,139,0.3);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+}
+
+.siteana-cmd-brief-inner strong { color: #fff; }
+
+.siteana-cmd-vitals {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* ── HEALTH INLINE ────────────────── */
+.siteana-health-inline {
+  transition: all 0.3s;
+}
+
+/* ── SEO FILTER ───────────────────── */
+.siteana-seo-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.siteana-seo-filter input { cursor: pointer; }
+
 /* ── SCORECARD GRADE ───────────────── */
 .siteana-scorecard-grade {
   font-family: var(--font-heading);
