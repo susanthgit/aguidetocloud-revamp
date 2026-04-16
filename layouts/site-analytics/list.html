@@ -3,36 +3,14 @@
 
 {{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#64748B") }}
 
-<!-- PASSWORD GATE -->
-<div class="siteana-page" id="sa-gate">
-  <div class="siteana-gate-card">
-    <div class="siteana-gate-lock">🔒</div>
-    <h2 class="siteana-gate-title">Site Analytics</h2>
-    <p class="siteana-gate-subtitle">This dashboard is password-protected.<br>Enter the access code to continue.</p>
-    <div class="siteana-gate-form">
-      <input type="password" id="sa-admin-pass" placeholder="Enter access code" autocomplete="off" aria-label="Access code">
-      <button id="sa-admin-submit">Unlock Dashboard</button>
-      <p class="siteana-gate-error" id="sa-gate-error" style="display:none">Incorrect access code. Please try again.</p>
-    </div>
-    <p class="siteana-gate-hint">Live usage statistics — transparent, anonymous, and open.</p>
-  </div>
-</div>
-
-<!-- DASHBOARD (hidden until unlocked) -->
-<div class="siteana-page" id="sa-dashboard" style="display:none">
+<div class="siteana-page">
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
-    <!-- Heartbeat -->
-    <div class="siteana-stat siteana-heartbeat-stat" id="sa-heartbeat" style="display:none">
-      <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
-      <span class="siteana-stat-num" id="sa-live-count">0</span>
-      <span class="siteana-stat-label">Live Now</span>
-    </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-views">—</span>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
-      <span class="siteana-stat-label" id="sa-views-label">Page Views (30d)</span>
+      <span class="siteana-stat-label">Page Views (30d)</span>
     </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-users">—</span>
@@ -51,272 +29,57 @@
     <div class="siteana-stat">
       {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
       <span class="siteana-stat-num">{{ $tc }}</span>
-      <span class="siteana-stat-label">Tools</span>
+      <span class="siteana-stat-label">Free Tools</span>
     </div>
-    <!-- Health Score inline in stats bar -->
-    <div class="siteana-stat siteana-health-inline" id="sa-health-stat" style="display:none">
-      <span class="siteana-stat-num" id="sa-health-num-inline">—</span>
-      <span class="siteana-stat-label">Health</span>
-    </div>
-  </div>
-  <div class="siteana-refreshed" id="sa-refreshed"></div>
-
-  <!-- Date Range Selector -->
-  <div class="siteana-range-bar" role="group" aria-label="Date range selector">
-    <button class="siteana-range-btn active" data-range="30d" aria-label="Last 30 days">30 Days</button>
-    <button class="siteana-range-btn" data-range="7d" aria-label="Last 7 days">7 Days</button>
-    <button class="siteana-range-btn" data-range="90d" aria-label="Last 90 days">90 Days</button>
-    <button class="siteana-range-btn" data-range="all" aria-label="All time since launch">All Time</button>
   </div>
 
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
-    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="command">Command Centre</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="overview">Overview</button>
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="growth">Growth</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="seo">SEO</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="youtube">YouTube</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
-  <!-- Tab: Command Centre -->
-  <div class="siteana-panel active" id="panel-command" role="tabpanel">
-    <!-- Daily Briefing (merged Brief + Since Last Visit) -->
-    <div class="siteana-cmd-brief" id="sa-cmd-brief" style="display:none"></div>
-    <!-- Vital Signs -->
-    <div class="siteana-cmd-vitals" id="sa-cmd-vitals"></div>
-    <!-- What's Working -->
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Top Site Tools</h3>
-        <p class="siteana-hint">By momentum (views/day)</p>
-        <div id="sa-cmd-top-tools"></div>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Top YouTube Videos</h3>
-        <p class="siteana-hint">By velocity (views/day)</p>
-        <div id="sa-cmd-top-yt"></div>
-      </div>
-    </div>
-    <!-- Growth Pulse -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Growth Pulse</h3>
-      <p class="siteana-hint">Site views + YouTube views on the same timeline</p>
-      <canvas id="sa-cmd-pulse-chart" height="220"></canvas>
-    </div>
-    <!-- What Needs Fixing -->
-    <div class="siteana-card" id="sa-cmd-fix-card" style="display:none">
-      <h3 class="siteana-card-title">Priority Actions</h3>
-      <div id="sa-cmd-fixes"></div>
-    </div>
-    <!-- Audience Map -->
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Site Audience</h3>
-        <div id="sa-cmd-site-audience"></div>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">YouTube Audience</h3>
-        <div id="sa-cmd-yt-audience"></div>
-      </div>
-    </div>
-  </div>
-
   <!-- Tab: Overview -->
-  <div class="siteana-panel" id="panel-overview" role="tabpanel">
-    <!-- Morning Brief + Since Last Visit merged -->
-    <div class="siteana-brief" id="sa-brief" style="display:none"></div>
-    <div class="siteana-since" id="sa-since" style="display:none"></div>
-    <!-- Charts (Health Score moved to stats bar) -->
-    <div class="siteana-card" style="margin-bottom:1.5rem">
-      <h3 class="siteana-card-title">Traffic Trend</h3>
+  <div class="siteana-panel active" id="panel-overview" role="tabpanel">
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
       <canvas id="sa-trend-chart" height="220"></canvas>
     </div>
-    <div class="siteana-card" style="margin-bottom:1.5rem">
-      <h3 class="siteana-card-title">Activity Breakdown</h3>
-      <canvas id="sa-activity-chart" height="220"></canvas>
-    </div>
-    <!-- Biggest Movers -->
-    <div class="siteana-card" id="sa-movers-card" style="display:none">
-      <h3 class="siteana-card-title">Biggest Movers</h3>
-      <p class="siteana-hint">Day-over-day tool changes</p>
-      <div class="siteana-movers" id="sa-movers"></div>
-    </div>
-    <!-- Auto-Insights -->
-    <div class="siteana-card" id="sa-insights-card" style="display:none">
-      <h3 class="siteana-card-title">Insights</h3>
-      <div class="siteana-insights" id="sa-insights"></div>
-    </div>
-    <!-- Action Queue -->
-    <div class="siteana-card" id="sa-actions-card" style="display:none">
-      <div class="siteana-card-header">
-        <h3 class="siteana-card-title" style="margin:0">Do This Next</h3>
-        <button class="siteana-export-btn" id="sa-export" aria-label="Export report">Export</button>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Top Countries</h3>
+        <div id="sa-countries"></div>
       </div>
-      <div id="sa-actions"></div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Traffic Sources</h3>
+        <div id="sa-sources"></div>
+      </div>
     </div>
-    <!-- Collapsible: Audience & Sources -->
-    <details class="siteana-details" open>
-      <summary class="siteana-details-title">Audience &amp; Sources</summary>
-      <div class="siteana-grid-2">
-        <div class="siteana-card">
-          <h3 class="siteana-card-title">Top Countries</h3>
-          <div id="sa-countries"></div>
-        </div>
-        <div class="siteana-card">
-          <h3 class="siteana-card-title">Traffic Sources</h3>
-          <div id="sa-sources"></div>
-        </div>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Devices</h3>
+        <div id="sa-devices"></div>
       </div>
-      <div class="siteana-grid-2">
-        <div class="siteana-card">
-          <h3 class="siteana-card-title">Devices</h3>
-          <div id="sa-devices"></div>
-        </div>
-        <div class="siteana-card siteana-transparency">
-          <h3>Transparency Note</h3>
-          <p>Traffic data from Google Analytics. Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
-          <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
-        </div>
+      <div class="siteana-card siteana-transparency">
+        <h3>Transparency Note</h3>
+        <p>Traffic data from Google Analytics (30-day window). All counts are approximate and anonymous — no cookies, no personal data, no IP addresses stored.</p>
+        <p>This data is real and unfiltered. We believe in building in public.</p>
       </div>
-    </details>
+    </div>
   </div>
 
   <!-- Tab: Tools -->
   <div class="siteana-panel" id="panel-tools" role="tabpanel">
-    <!-- 2x2 Tool Performance Matrix (moved up) -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Performance Matrix</h3>
-      <p class="siteana-hint">Popularity (views) vs Engagement (users/views ratio)</p>
-      <div class="siteana-matrix-wrap">
-        <canvas id="sa-matrix-chart" height="320"></canvas>
-        <div class="siteana-matrix-labels">
-          <span class="siteana-matrix-label" data-pos="tl">Hidden Gems</span>
-          <span class="siteana-matrix-label" data-pos="tr">Stars</span>
-          <span class="siteana-matrix-label" data-pos="bl">Needs Work</span>
-          <span class="siteana-matrix-label" data-pos="br">Traffic Magnets</span>
-        </div>
-      </div>
-    </div>
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Tool Leaderboard</h3>
-      <p class="siteana-hint">Ranked by total page views</p>
+      <h3 class="siteana-card-title">Tool Popularity</h3>
+      <p class="siteana-hint">All {{ $tc }} free tools ranked by page views</p>
       <div id="sa-leaderboard"></div>
     </div>
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Most Viewed</h3>
-        <div id="sa-most-viewed"></div>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Most Active Users</h3>
-        <p class="siteana-hint">Unique users per tool</p>
-        <div id="sa-most-used"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab: Growth -->
-  <div class="siteana-panel" id="panel-growth" role="tabpanel">
-    <!-- Smart Alerts -->
-    <div id="sa-alerts" style="display:none"></div>
-    <!-- Cumulative Counter -->
-    <div class="siteana-cumulative" id="sa-cumulative">
-      <span class="siteana-cumul-num" id="sa-cumul-count">—</span>
-      <span class="siteana-cumul-label">users served since March 30, 2026</span>
-    </div>
-    <!-- Full Timeline -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Growth Since Launch</h3>
-      <canvas id="sa-growth-chart" height="280"></canvas>
-    </div>
-    <!-- Milestone Timeline -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Milestones</h3>
-      <div class="siteana-milestone-timeline" id="sa-milestones"></div>
-    </div>
-    <!-- Activity Heatmap -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Activity Heatmap</h3>
-      <div id="sa-heatmap"></div>
-    </div>
-    <!-- Weekly Breakdown -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Weekly Breakdown</h3>
-      <div class="siteana-table-wrap" id="sa-weekly-table"></div>
-    </div>
-    <!-- Before/After Comparison -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Milestone Impact</h3>
-      <p class="siteana-hint">Compare 7 days before vs after each milestone</p>
-      <div class="siteana-ba-select">
-        <select id="sa-ba-milestone" aria-label="Select milestone to compare">
-          <option value="">Choose a milestone...</option>
-        </select>
-      </div>
-      <div id="sa-before-after"></div>
-    </div>
-    <!-- Goals -->
-    <div class="siteana-card">
-      <div class="siteana-card-header">
-        <h3 class="siteana-card-title" style="margin:0">Goals</h3>
-        <button class="siteana-edit-btn" id="sa-goals-edit" aria-label="Edit goals">Edit</button>
-      </div>
-      <div id="sa-goals"></div>
-    </div>
-    <!-- Goal Edit Modal -->
-    <div class="siteana-modal-overlay" id="sa-goal-modal" style="display:none" role="dialog" aria-modal="true" aria-label="Edit goals">
-      <div class="siteana-modal">
-        <div class="siteana-modal-header">
-          <h3>Edit Goals</h3>
-          <button class="siteana-modal-close" id="sa-goal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="siteana-modal-body" id="sa-goal-form"></div>
-        <div class="siteana-modal-footer">
-          <button class="siteana-btn-secondary" id="sa-goal-add">+ Add Goal</button>
-          <div>
-            <button class="siteana-btn-secondary" id="sa-goal-reset">Reset Defaults</button>
-            <button class="siteana-btn-primary" id="sa-goal-save">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab: Pages -->
-  <div class="siteana-panel" id="panel-pages" role="tabpanel">
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Pages</h3>
-      <p class="siteana-hint">Most visited pages across the entire site</p>
-      <div id="sa-top-pages"></div>
-    </div>
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Blog Posts</h3>
-      <p class="siteana-hint">Most read blog articles</p>
-      <div id="sa-blog-pages"></div>
-    </div>
-  </div>
-
-  <!-- Tab: SEO -->
-  <div class="siteana-panel" id="panel-seo" role="tabpanel">
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Google Search Queries</h3>
-      <p class="siteana-hint">What people search on Google to find this site</p>
-      <label class="siteana-seo-filter"><input type="checkbox" id="sa-seo-hide-legacy"> Hide non-relevant queries (hiking, trails)</label>
-      <div id="sa-searches"></div>
-    </div>
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Position Distribution</h3>
-        <canvas id="sa-position-chart" height="180"></canvas>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">SEO Opportunities</h3>
-        <p class="siteana-hint">Queries ranking well but getting few clicks</p>
-        <div id="sa-seo-opps"></div>
-      </div>
+      <h3 class="siteana-card-title">Activity Breakdown</h3>
+      <canvas id="sa-activity-chart" height="220"></canvas>
     </div>
     <div class="siteana-card">
       <h3 class="siteana-card-title">Content Overview</h3>
@@ -340,91 +103,19 @@
         </div>
       </div>
     </div>
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Content Gaps</h3>
-      <p class="siteana-hint">Tool categories with search demand but no ranking queries</p>
-      <div id="sa-content-gaps"></div>
-    </div>
   </div>
 
-  <!-- Tab: YouTube -->
-  <div class="siteana-panel" id="panel-youtube" role="tabpanel">
-    <!-- YouTube Brief -->
-    <div class="siteana-brief" id="sa-yt-brief" style="display:none"></div>
-    <!-- Recommendations -->
-    <div class="siteana-card" id="sa-yt-recs-card" style="display:none">
-      <h3 class="siteana-card-title">Content Strategy Recommendations</h3>
-      <div id="sa-yt-recs"></div>
-    </div>
-    <!-- Channel Stats -->
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Main Channel</h3>
-        <p class="siteana-hint">A Guide to Cloud &amp; AI</p>
-        <div id="sa-yt-main"></div>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Bites Channel</h3>
-        <p class="siteana-hint">A Guide to Cloud &amp; AI — Bites</p>
-        <div id="sa-yt-bites"></div>
-      </div>
-    </div>
-    <!-- Analytics Charts (from YouTube Analytics API) -->
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Views &amp; Watch Time (28d)</h3>
-        <canvas id="sa-yt-analytics-chart" height="220"></canvas>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Traffic Sources</h3>
-        <canvas id="sa-yt-traffic-chart" height="220"></canvas>
-      </div>
-    </div>
-    <!-- Performance Leaderboard -->
+  <!-- Tab: Pages -->
+  <div class="siteana-panel" id="panel-pages" role="tabpanel">
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Performance Leaderboard</h3>
-      <p class="siteana-hint">All main channel videos ranked by views/day velocity</p>
-      <div id="sa-yt-leaderboard"></div>
+      <h3 class="siteana-card-title">Top Pages</h3>
+      <p class="siteana-hint">Most visited pages across the entire site</p>
+      <div id="sa-top-pages"></div>
     </div>
-    <!-- Content Analysis -->
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Best Publish Day</h3>
-        <canvas id="sa-yt-day-chart" height="180"></canvas>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Hot Topics</h3>
-        <p class="siteana-hint">Most common words in your top-performing titles</p>
-        <div id="sa-yt-topics"></div>
-      </div>
-    </div>
-    <!-- Underperformers -->
-    <div class="siteana-card" id="sa-yt-under-card" style="display:none">
-      <h3 class="siteana-card-title">Needs Attention</h3>
-      <p class="siteana-hint">Videos underperforming relative to your average</p>
-      <div id="sa-yt-underperformers"></div>
-    </div>
-    <!-- Weekly Scorecard -->
-    <div class="siteana-card" id="sa-yt-scorecard-card" style="display:none">
-      <h3 class="siteana-card-title">Weekly Scorecard</h3>
-      <p class="siteana-hint">This week vs last week — how are you trending?</p>
-      <div id="sa-yt-scorecard"></div>
-    </div>
-    <!-- Subscriber Milestone Projector -->
-    <div class="siteana-card" id="sa-yt-milestones-card" style="display:none">
-      <h3 class="siteana-card-title">Subscriber Milestone Projector</h3>
-      <div id="sa-yt-milestones"></div>
-    </div>
-    <!-- Title Scorecards -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Title Scorecards</h3>
-      <p class="siteana-hint">Weakest titles first — fix these to improve CTR</p>
-      <div id="sa-yt-titles"></div>
-    </div>
-    <!-- Bites Top Performers -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Bites — Top Performers</h3>
-      <div id="sa-yt-bites-top"></div>
+      <h3 class="siteana-card-title">Top Blog Posts</h3>
+      <p class="siteana-hint">Most read blog articles</p>
+      <div id="sa-blog-pages"></div>
     </div>
   </div>
 
@@ -443,20 +134,6 @@
   {{ end }}
   </div>
 
-  <!-- Tool Deep-Dive Modal -->
-  <div class="siteana-modal-overlay" id="sa-tool-modal" style="display:none" role="dialog" aria-modal="true" aria-label="Tool details">
-    <div class="siteana-modal" style="max-width:700px">
-      <div class="siteana-modal-header">
-        <h3 id="sa-tool-detail-title"></h3>
-        <button class="siteana-modal-close" id="sa-tool-close" aria-label="Close">&times;</button>
-      </div>
-      <div class="siteana-modal-body">
-        <canvas id="sa-tool-detail-chart" height="200"></canvas>
-        <div id="sa-tool-detail-stats" style="margin-top:1rem"></div>
-      </div>
-    </div>
-  </div>
-
   {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}
 </div>
 
@@ -467,45 +144,166 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js" crossorigin="anonymous"></script>
-<script src="/js/site-analytics.js?v={{ site.Params.cache_version }}"></script>
 <script>
-(function(){
-  var PASS_HASH = '0579d11899d8171a96c04302aa2f2f7250adfce591e1a118f332f40c70027be8';
-  var gate = document.getElementById('sa-gate');
-  var dash = document.getElementById('sa-dashboard');
-  var passInput = document.getElementById('sa-admin-pass');
-  var submitBtn = document.getElementById('sa-admin-submit');
-  var errorEl = document.getElementById('sa-gate-error');
+(function() {
+  'use strict';
+  var API = '/api/stats';
+  var _trendChart = null;
+  var _activityChart = null;
 
-  if (sessionStorage.getItem('sa-unlocked') === '1') { unlock(); }
-  else if (passInput) { setTimeout(function(){ passInput.focus(); }, 300); }
+  var TOOLS = {
+    'ai-news':'AI News','m365-roadmap':'M365 Roadmap','prompt-library':'Prompt Library',
+    'licensing':'Licensing Simplifier','prompt-polisher':'Prompt Polisher','copilot-readiness':'Copilot Readiness',
+    'copilot-matrix':'Copilot Feature Matrix','deprecation-timeline':'Deprecation Timeline',
+    'service-health':'Service Health','cert-tracker':'Cert Study Guides','roi-calculator':'ROI Calculator',
+    'ai-mapper':'AI Service Mapper','ai-showdown':'AI SaaS Showdown','ps-builder':'PowerShell Builder',
+    'migration-planner':'Migration Planner','prompt-guide':'Prompt Guide',
+    'ca-builder':'CA Policy Builder','meeting-planner':'Meeting Planner','feedback':'Community Feedback',
+    'site-analytics':'Site Analytics','qr-generator':'QR Generator','wifi-qr':'WiFi QR Cards',
+    'password-generator':'Password Generator','image-compressor':'Image Compressor',
+    'typing-test':'Typing Speed Test','countdown':'Countdown Timer','color-palette':'Colour Palette','pomodoro':'Pomodoro Timer'
+  };
+  var COLORS = {
+    'ai-news':'#ff66ff','m365-roadmap':'#E5A00D','prompt-library':'#A78BFA','licensing':'#F43F5E',
+    'prompt-polisher':'#EC4899','copilot-readiness':'#3B82F6','copilot-matrix':'#60A5FA',
+    'deprecation-timeline':'#DC2626','service-health':'#EA580C','cert-tracker':'#10B981',
+    'roi-calculator':'#14B8A6','ai-mapper':'#38BDF8','ai-showdown':'#D4A853','ps-builder':'#4ADE80',
+    'migration-planner':'#6478CC','prompt-guide':'#84CC16','ca-builder':'#7C3AED',
+    'meeting-planner':'#0EA5E9','feedback':'#FBBF24','site-analytics':'#64748B',
+    'qr-generator':'#EC4899','wifi-qr':'#22D3EE','password-generator':'#D946EF',
+    'image-compressor':'#818CF8','typing-test':'#34D399','countdown':'#FB923C',
+    'color-palette':'#F472B6','pomodoro':'#EF4444'
+  };
 
-  async function hashPass(str) {
-    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-    return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+  function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
+  function roundK(n) { if (!n || n < 100) return String(n||0); if (n<1000) return String(Math.round(n/10)*10); if (n<10000) return (n/1000).toFixed(1)+'K'; return Math.round(n/1000)+'K+'; }
+
+  // Tabs
+  document.querySelectorAll('.siteana-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.siteana-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.siteana-panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+      var panel = document.getElementById('panel-' + tab.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // Fetch and render
+  fetch(API + '?range=30d').then(function(r) { return r.json(); }).then(render).catch(function() {});
+
+  function render(data) {
+    var ga4 = data.ga4;
+    if (!ga4) return;
+    var el;
+    el = document.getElementById('sa-total-views'); if (el) el.textContent = roundK(ga4.totals.views);
+    el = document.getElementById('sa-total-users'); if (el) el.textContent = roundK(ga4.totals.users);
+    el = document.getElementById('sa-total-sessions'); if (el) el.textContent = roundK(ga4.totals.sessions);
+    el = document.getElementById('sa-today-views'); if (el) el.textContent = roundK(ga4.today.views);
+    if (ga4.wow && ga4.wow.change) { wow('sa-wow-views', ga4.wow.change.views); wow('sa-wow-users', ga4.wow.change.users); wow('sa-wow-sessions', ga4.wow.change.sessions); }
+    if (ga4.trend) renderTrend(ga4.trend);
+    if (ga4.leaderboard) renderLeaderboard(ga4.leaderboard, ga4.tool_trends);
+    if (ga4.leaderboard) renderActivity(ga4.leaderboard);
+    renderList('sa-countries', ga4.countries, 'country', 'users');
+    renderList('sa-sources', ga4.sources, 'source', 'sessions');
+    renderList('sa-devices', ga4.devices, 'device', 'users');
+    if (ga4.top_pages) renderPages('sa-top-pages', ga4.top_pages, 20);
+    if (ga4.blog_pages) renderPages('sa-blog-pages', ga4.blog_pages, 15);
   }
 
-  async function tryUnlock() {
-    var hash = await hashPass(passInput.value);
-    if (hash === PASS_HASH) {
-      sessionStorage.setItem('sa-unlocked', '1');
-      unlock();
-    } else {
-      passInput.style.borderColor = '#ff4444';
-      passInput.value = '';
-      if (errorEl) errorEl.style.display = 'block';
-      setTimeout(function(){ passInput.style.borderColor = ''; if (errorEl) errorEl.style.display = 'none'; }, 3000);
-    }
+  function wow(id, pct) {
+    var el = document.getElementById(id); if (!el) return;
+    el.className = 'siteana-wow ' + (pct > 0 ? 'siteana-wow-up' : pct < 0 ? 'siteana-wow-down' : 'siteana-wow-flat');
+    el.textContent = (pct > 0 ? '\u2191' : pct < 0 ? '\u2193' : '\u2192') + ' ' + Math.abs(pct) + '%';
+    el.style.display = 'inline-block';
   }
 
-  if (submitBtn) submitBtn.addEventListener('click', tryUnlock);
-  if (passInput) passInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryUnlock(); });
-
-  function unlock() {
-    if (gate) gate.style.display = 'none';
-    if (dash) dash.style.display = 'block';
+  function renderTrend(trend) {
+    var ctx = document.getElementById('sa-trend-chart'); if (!ctx || !trend.length) return;
+    if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
+    _trendChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: trend.map(function(d){return d.date.slice(5);}), datasets: [
+        { label: 'Views', data: trend.map(function(d){return d.views;}), borderColor: '#64748B', backgroundColor: 'rgba(100,116,139,0.1)', fill: true, tension: 0.4, pointRadius: 3 },
+        { label: 'Users', data: trend.map(function(d){return d.users;}), borderColor: '#ff66ff', backgroundColor: 'rgba(255,102,255,0.1)', fill: true, tension: 0.4, pointRadius: 3 }
+      ]},
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter' } } } },
+        scales: { x: { ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } }, y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } } }
+      }
+    });
   }
+
+  function renderActivity(lb) {
+    var ctx = document.getElementById('sa-activity-chart'); if (!ctx || !lb.length) return;
+    var top8 = lb.slice(0, 8);
+    if (_activityChart) { _activityChart.destroy(); _activityChart = null; }
+    _activityChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: { labels: top8.map(function(t){return TOOLS[t.tool]||t.tool;}), datasets: [{ data: top8.map(function(t){return t.total;}), backgroundColor: top8.map(function(t){return COLORS[t.tool]||'#64748B';}), borderWidth: 0 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 8 } } } }
+    });
+  }
+
+  function renderLeaderboard(lb, trends) {
+    var el = document.getElementById('sa-leaderboard'); if (!el || !lb.length) return;
+    var max = lb[0].total || 1;
+    el.innerHTML = lb.map(function(t, i) {
+      var name = TOOLS[t.tool] || t.tool;
+      var color = COLORS[t.tool] || '#64748B';
+      var pct = Math.round((t.total / max) * 100);
+      var rank = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+      var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
+      return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
+        + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</span>' + spark + '</div>'
+        + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+        + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
+    }).join('');
+    if (trends) lb.forEach(function(t) {
+      if (trends[t.tool]) drawSparkline(document.getElementById('sp-' + t.tool), trends[t.tool], COLORS[t.tool] || '#64748B');
+    });
+  }
+
+  function drawSparkline(c, data, color) {
+    if (!c || !data || data.length < 2) return;
+    var w=60,h=20,dpr=window.devicePixelRatio||1;
+    c.width=w*dpr; c.height=h*dpr; c.style.width=w+'px'; c.style.height=h+'px';
+    var ctx=c.getContext('2d'); if (!ctx) return; ctx.scale(dpr,dpr);
+    var max=Math.max.apply(null,data),min=Math.min.apply(null,data),range=max-min||1;
+    ctx.beginPath(); ctx.strokeStyle=color; ctx.lineWidth=1.5; ctx.lineJoin='round';
+    for (var i=0;i<data.length;i++) { var x=(i/(data.length-1))*w, y=h-((data[i]-min)/range)*(h-4)-2; if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y); }
+    ctx.stroke(); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath(); ctx.globalAlpha=0.15; ctx.fillStyle=color; ctx.fill(); ctx.globalAlpha=1;
+  }
+
+  function renderList(id, items, labelKey, valueKey) {
+    var el = document.getElementById(id); if (!el || !items || !items.length) return;
+    var max = items[0][valueKey] || 1;
+    el.innerHTML = items.map(function(item) {
+      var pct = Math.round((item[valueKey] / max) * 100);
+      return '<div class="siteana-lb-item"><span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
+        + '<span class="siteana-lb-total">' + item[valueKey] + '</span></div>';
+    }).join('');
+  }
+
+  function renderPages(id, pages, limit) {
+    var el = document.getElementById(id); if (!el || !pages.length) return;
+    var max = pages[0].views || 1;
+    el.innerHTML = pages.slice(0, limit).map(function(p, i) {
+      var pct = Math.round((p.views / max) * 100);
+      var name = p.path === '/' ? 'Homepage' : p.path.replace(/\//g, ' ').trim();
+      if (name.length > 60) name = name.slice(0,57) + '...';
+      var barColor = p.path.startsWith('/blog/') ? '#0EA5E9' : '#64748B';
+      return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i+1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + barColor + '"></div></div>'
+        + '<span class="siteana-lb-total">' + roundK(p.views) + '</span></div>';
+    }).join('');
+  }
+
+  // Auto-refresh every 5 min
+  setInterval(function() { fetch(API + '?range=30d').then(function(r){return r.json();}).then(render).catch(function(){}); }, 300000);
 })();
 </script>
 
