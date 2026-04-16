@@ -1,33 +1,30 @@
 {
-  "generated": "2026-04-15T07:07:11.001448+00:00",
+  "generated": "2026-04-16T07:08:18.187907+00:00",
   "total": 52,
-  "active": 40,
-  "passed": 12,
-  "action_required": 39,
+  "active": 38,
+  "passed": 14,
+  "action_required": 37,
   "urgency": {
-    "critical": 5,
-    "warning": 24,
-    "watch": 10,
-    "future": 1
+    "critical": 3,
+    "warning": 29,
+    "watch": 6
   },
   "categories": {
-    "teams": 1,
-    "office-apps": 7,
     "azure": 19,
     "sharepoint": 4,
     "windows": 6,
+    "office-apps": 6,
     "exchange": 2,
     "entra": 1
   },
   "types": {
-    "retirement": 19,
-    "breaking-change": 1,
+    "retirement": 18,
     "end-of-support": 20
   },
   "next_deadline": {
-    "title": "Viva Engage Live Events (Teams Live Events) Deprecation",
-    "deadline": "2026-04-15",
-    "days_remaining": 0,
+    "title": "Azure Application Gateway V1 Retirement",
+    "deadline": "2026-04-28",
+    "days_remaining": 12,
     "urgency": "critical"
   },
   "category_meta": {
