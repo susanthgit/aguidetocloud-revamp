@@ -138,15 +138,15 @@
     renderStats(ga4);
 
     if (ga4) {
-      renderTrendChart(ga4.trend);
-      renderActivityChart(ga4.leaderboard);
+      try { renderTrendChart(ga4.trend); } catch(e) { console.error('Trend chart:', e); }
+      try { renderActivityChart(ga4.leaderboard); } catch(e) { console.error('Activity chart:', e); }
       renderExtraSection('sa-countries', ga4.countries, 'country', 'users');
       renderExtraSection('sa-devices', ga4.devices, 'device', 'users');
       renderExtraSection('sa-sources', ga4.sources, 'source', 'sessions');
       renderLeaderboard(ga4.leaderboard, ga4.tool_trends);
       renderTopList('sa-most-viewed', ga4.leaderboard, 'views');
       renderTopList('sa-most-used', ga4.leaderboard, 'users');
-      renderToolMatrix(ga4.leaderboard);
+      try { renderToolMatrix(ga4.leaderboard); } catch(e) { console.error('Matrix:', e); }
       if (ga4.top_pages) renderTopPages(ga4.top_pages);
       if (ga4.blog_pages) renderBlogPages(ga4.blog_pages);
     } else {
@@ -239,6 +239,7 @@
     if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
     var labels = trend.map(function(d) { return d.date.slice(5); });
     _trendChart = new Chart(ctx, {
+      type: 'line',
       data: {
         labels: labels,
         datasets: [
@@ -266,6 +267,7 @@
     var top8 = leaderboard.slice(0, 8);
     if (_activityChart) { _activityChart.destroy(); _activityChart = null; }
     _activityChart = new Chart(ctx, {
+      type: 'doughnut',
       data: {
         labels: top8.map(function(t) { return getToolInfo(t.tool).name; }),
         datasets: [{ data: top8.map(function(t) { return t.total; }), backgroundColor: top8.map(function(t) { return getToolInfo(t.tool).color; }), borderWidth: 0 }]
