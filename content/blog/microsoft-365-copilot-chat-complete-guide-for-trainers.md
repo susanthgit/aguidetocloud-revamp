@@ -34,23 +34,21 @@ tags:
   - guide
 ---
 
-Whether you're rolling out Copilot Chat to 500 people or 50,000, you need your AI trainers to **deeply understand** what they're teaching — not just the buttons, but the value, the nuances, and the "why" behind every feature.
+If you're training people on Copilot Chat tomorrow and you're wondering "what exactly am I teaching?" — this guide is for you.
 
-This guide is built for **AI Change Leads**, **Digital Champions**, and **Train-the-Trainer** facilitators. It covers everything about **Microsoft 365 Copilot Chat** (the free tier included with your Microsoft 365 subscription) — from security and data protection to every feature your users can tap into today.
+I wrote this for **AI Change Leads**, **Digital Champions**, and anyone running a **Train-the-Trainer** session. It covers everything about **Copilot Chat** (the free tier included with your Microsoft 365 subscription) — not just what buttons to click, but how to explain the value, handle the tough questions, and actually get people excited about using it.
 
-> 📖 **Companion guide:** Looking for the paid Microsoft 365 Copilot experience? See our [Microsoft 365 Copilot (Licensed) — Complete Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) for everything about the full Copilot licence.
+> 📖 **Looking for the paid Copilot guide?** See our [Microsoft 365 Copilot (Licensed) — Complete Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) for everything about the full $30/month experience.
 
-> 📋 **How to use this guide:** Bookmark it. Print it. Share it with your training team. Each section is self-contained — jump to what you need using the table of contents below.
+> 📋 **How to use this guide:** Bookmark it. Share it with your training team. Each section is self-contained — jump to what you need.
 
 <div class="living-doc-banner">
 
-📌 **This is a living document.** The AI landscape changes fast — features get added, renamed, or retired regularly. Rather than printing this guide, I'd recommend **bookmarking this page** or adding it to your browser's reading list. That way you always have the latest, most accurate version.
-
-If you spot something outdated or think something should be added, please [let me know through the feedback page](/feedback/) — I'll update it so everyone benefits. Think of this as **our** shared resource. 🤝
+This is a living document. The AI landscape changes fast — features get added, renamed, or retired. Bookmark this page rather than printing it, so you always have the latest version. If you spot something outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
 
-### 📋 Table of Contents
+### Table of Contents
 
 - [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)
@@ -186,11 +184,13 @@ flowchart LR
 
 ## Security & Enterprise Data Protection
 
-This is the **most important section** for AI trainers to understand. Before teaching any feature, your users need to trust the tool. Here's how you build that trust.
+This is the section that matters most when you're standing in front of a room of sceptical users. Before you teach them a single feature, they need to trust the tool. And the #1 question they'll ask is: **"Is my data safe?"**
 
-### What Is Enterprise Data Protection (EDP)?
+Here's how to answer that confidently.
 
-Enterprise Data Protection means that **Copilot Chat is covered by the exact same security, privacy, and compliance commitments** that protect your emails in Exchange and your files in SharePoint. This isn't a separate tier — it's included for every user signed in with a Microsoft Entra (Azure AD) work or school account.
+### What Is Enterprise Data Protection?
+
+Think of it like your phone's encryption — it protects everything automatically, you don't have to turn it on. Enterprise Data Protection means Copilot Chat is covered by the **same security commitments** that protect your emails in Exchange and your files in SharePoint. Every user signed in with a work account gets this automatically.
 
 ```mermaid
 flowchart LR
@@ -239,11 +239,13 @@ A common question your users will ask. The answer is clear:
 
 ---
 
-## ⚠️ Upcoming Changes (April 15, 2026)
+## Upcoming Changes (April 15, 2026)
 
-> **This section is critical for trainers to understand and communicate.** The changes are effective **April 15, 2026** and depend on your organisation's size. Make sure you know which category your organisation falls into before your training session.
+If you're training people this month, you need to know about this — because your trainees will ask.
 
-> 📖 **Full breakdown:** We've written a detailed analysis of these changes in our blog post: [Microsoft 365 Copilot Chat Changes April 15 — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/).
+Microsoft is pulling back free Copilot Chat from some Office apps on April 15. What happens depends on your organisation's size. Know which category you fall into before you step into the training room.
+
+> 📖 **Full details:** [Copilot Chat Changes April 15 — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/)
 
 ```mermaid
 flowchart LR
@@ -670,7 +672,7 @@ Paid M365 Copilot users get **priority access** — faster, more consistent avai
 
 ## Copilot Chat Inside Microsoft 365 Apps
 
-Beyond the dedicated chat experience, Copilot Chat also appears as a **side pane** inside Microsoft 365 apps. Here's what free users get:
+Here's something your trainees might not realise — Copilot Chat doesn't just live in the Copilot app. It also shows up as a **side panel** inside some Microsoft 365 apps. What free users get depends on the app:
 
 ### Outlook — ✅ Available for All Users
 
