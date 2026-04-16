@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2026 17:41:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 19:36:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
@@ -113,7 +113,7 @@
       <category>Exchange Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1275040</guid>
-      <pubDate>Thu, 09 Apr 2026 11:48:48 +0000</pubDate>
+      <pubDate>Thu, 09 Apr 2026 04:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may experience issues accessing or using multiple Microsoft 365 services, including Microsoft Teams and Outlook</title>
@@ -136,9 +136,9 @@
     <item>
       <title>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1279825</link>
-      <description>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins saw delays with some reports in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1279825</guid>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
     </item>
@@ -204,15 +204,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1268972</guid>
       <pubDate>Thu, 02 Apr 2026 20:40:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be intermittently unable to access their Exchange Online mailboxes in some connection methods.</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1268771</link>
-      <description>[Exchange Online] Users may have been intermittently unable to access their Exchange Online mailboxes in some connection methods.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1268771</guid>
-      <pubDate>Thu, 02 Apr 2026 19:14:14 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Central US admins may be unable to access or experience delays accessing the Microsoft 365 admin center</title>
@@ -429,6 +420,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1261545</guid>
       <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be intermittently unable to access their Exchange Online mailboxes in some connection methods.</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1268771</link>
+      <description>[Exchange Online] Users may have been intermittently unable to access their Exchange Online mailboxes in some connection methods.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1268771</guid>
+      <pubDate>Tue, 17 Mar 2026 14:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may have been unable to access Office.com or the Microsoft 365 Copilot web sign‑in page</title>
