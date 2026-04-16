@@ -80,32 +80,50 @@
         <canvas id="sa-activity-chart" height="220"></canvas>
       </div>
     </div>
+    <!-- Biggest Movers -->
+    <div class="siteana-card" id="sa-movers-card" style="display:none">
+      <h3 class="siteana-card-title">Biggest Movers</h3>
+      <p class="siteana-hint">Day-over-day tool changes</p>
+      <div class="siteana-movers" id="sa-movers"></div>
+    </div>
     <!-- Auto-Insights -->
     <div class="siteana-card" id="sa-insights-card" style="display:none">
       <h3 class="siteana-card-title">Insights</h3>
       <div class="siteana-insights" id="sa-insights"></div>
     </div>
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Top Countries</h3>
-        <div id="sa-countries"></div>
+    <!-- Action Queue -->
+    <div class="siteana-card" id="sa-actions-card" style="display:none">
+      <div class="siteana-card-header">
+        <h3 class="siteana-card-title" style="margin:0">Do This Next</h3>
+        <button class="siteana-export-btn" id="sa-export" aria-label="Export report">Export</button>
       </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Traffic Sources</h3>
-        <div id="sa-sources"></div>
-      </div>
+      <div id="sa-actions"></div>
     </div>
-    <div class="siteana-grid-2">
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Devices</h3>
-        <div id="sa-devices"></div>
+    <!-- Collapsible: Audience & Sources -->
+    <details class="siteana-details" open>
+      <summary class="siteana-details-title">Audience &amp; Sources</summary>
+      <div class="siteana-grid-2">
+        <div class="siteana-card">
+          <h3 class="siteana-card-title">Top Countries</h3>
+          <div id="sa-countries"></div>
+        </div>
+        <div class="siteana-card">
+          <h3 class="siteana-card-title">Traffic Sources</h3>
+          <div id="sa-sources"></div>
+        </div>
       </div>
-      <div class="siteana-card siteana-transparency">
-        <h3>Transparency Note</h3>
-        <p>Traffic data from Google Analytics. Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
-        <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
+      <div class="siteana-grid-2">
+        <div class="siteana-card">
+          <h3 class="siteana-card-title">Devices</h3>
+          <div id="sa-devices"></div>
+        </div>
+        <div class="siteana-card siteana-transparency">
+          <h3>Transparency Note</h3>
+          <p>Traffic data from Google Analytics. Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
+          <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
+        </div>
       </div>
-    </div>
+    </details>
   </div>
 
   <!-- Tab: Tools -->
@@ -271,6 +289,20 @@
     {{ end }}
   </div>
   {{ end }}
+  </div>
+
+  <!-- Tool Deep-Dive Modal -->
+  <div class="siteana-modal-overlay" id="sa-tool-modal" style="display:none" role="dialog" aria-modal="true" aria-label="Tool details">
+    <div class="siteana-modal" style="max-width:700px">
+      <div class="siteana-modal-header">
+        <h3 id="sa-tool-detail-title"></h3>
+        <button class="siteana-modal-close" id="sa-tool-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="siteana-modal-body">
+        <canvas id="sa-tool-detail-chart" height="200"></canvas>
+        <div id="sa-tool-detail-stats" style="margin-top:1rem"></div>
+      </div>
+    </div>
   </div>
 
   {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}

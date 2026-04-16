@@ -39,12 +39,15 @@
   };
 
   var MILESTONES = [
-    { date: '2026-03-30', label: 'GA4 Started',            color: '#64748B' },
-    { date: '2026-04-09', label: 'Soft Launch',             color: '#10B981' },
-    { date: '2026-04-10', label: 'AI News v3 + Roadmap',   color: '#ff66ff' },
-    { date: '2026-04-13', label: '8 New Tools',             color: '#EC4899' },
-    { date: '2026-04-14', label: 'Glassmorphism Redesign',  color: '#38BDF8' },
-    { date: '2026-04-16', label: 'V2 Audit Complete',       color: '#14B8A6' }
+    { date: '2026-03-30', label: 'GA4 Started',            color: '#64748B', type: 'tech' },
+    { date: '2026-04-09', label: 'Soft Launch',             color: '#10B981', type: 'launch' },
+    { date: '2026-04-10', label: 'AI News v3 + Roadmap',   color: '#ff66ff', type: 'launch' },
+    { date: '2026-04-10', label: 'AI News Launch Post',     color: '#0EA5E9', type: 'blog' },
+    { date: '2026-04-13', label: '8 New Tools',             color: '#EC4899', type: 'launch' },
+    { date: '2026-04-13', label: 'Train-the-Trainer Blog',  color: '#0EA5E9', type: 'blog' },
+    { date: '2026-04-14', label: 'Glassmorphism Redesign',  color: '#38BDF8', type: 'tech' },
+    { date: '2026-04-15', label: 'Copilot Chat Blog',       color: '#0EA5E9', type: 'blog' },
+    { date: '2026-04-16', label: 'V2 Audit Complete',       color: '#14B8A6', type: 'tech' }
   ];
 
   var GOALS_DEFAULT = [
@@ -62,6 +65,7 @@
   var _growthChart = null;
   var _matrixChart = null;
   var _positionChart = null;
+  var _toolDetailChart = null;
 
   // ── UTILITIES ──
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
@@ -157,6 +161,8 @@
     }
 
     renderInsights(generateInsights(data));
+    renderMovers(data);
+    renderActionQueue(data);
     renderRefreshTime(data);
 
     if (gsc && gsc.queries && gsc.queries.length) {
@@ -211,13 +217,14 @@
     MILESTONES.forEach(function(ms, i) {
       var lbl = ms.date.slice(5);
       if (labels.indexOf(lbl) > -1) {
+        var isBlog = ms.type === 'blog';
         anns['ms' + i] = {
           type: 'line', xMin: lbl, xMax: lbl,
-          borderColor: ms.color, borderWidth: 1, borderDash: [4, 4],
+          borderColor: ms.color, borderWidth: isBlog ? 1 : 1, borderDash: isBlog ? [2, 3] : [4, 4],
           label: {
-            display: true, content: ms.label, position: 'start',
+            display: true, content: (isBlog ? '\u270E ' : '') + ms.label, position: 'start',
             backgroundColor: ms.color, color: '#fff',
-            font: { size: 9, family: 'Inter' },
+            font: { size: 9, family: 'Inter', style: isBlog ? 'italic' : 'normal' },
             padding: { top: 2, bottom: 2, left: 4, right: 4 }, borderRadius: 3
           }
         };
@@ -827,13 +834,241 @@
     renderGoalForm(JSON.parse(JSON.stringify(GOALS_DEFAULT)));
   });
 
-  // ── REFRESH TIMESTAMP ──
+  // ── BIGGEST MOVERS (#1) ──
+  function renderMovers(data) {
+    var card = document.getElementById('sa-movers-card');
+    var container = document.getElementById('sa-movers');
+    if (!card || !container) return;
+    var ga4 = data.ga4;
+    if (!ga4 || !ga4.tool_trends || !ga4.trend || ga4.trend.length < 2) { card.style.display = 'none'; return; }
+    var movers = [];
+    var len = ga4.trend.length;
+    Object.keys(ga4.tool_trends).forEach(function(tid) {
+      var arr = ga4.tool_trends[tid];
+      if (!arr || arr.length < 2) return;
+      var today = arr[arr.length - 1] || 0;
+      var yesterday = arr[arr.length - 2] || 0;
+      var diff = today - yesterday;
+      var pct = yesterday > 0 ? Math.round((diff / yesterday) * 100) : (today > 0 ? 100 : 0);
+      if (diff !== 0) movers.push({ tool: tid, diff: diff, pct: pct, today: today });
+    });
+    movers.sort(function(a, b) { return Math.abs(b.diff) - Math.abs(a.diff); });
+    var top = movers.slice(0, 6);
+    if (!top.length) { card.style.display = 'none'; return; }
+    card.style.display = '';
+    container.innerHTML = top.map(function(m) {
+      var info = getToolInfo(m.tool);
+      var cls = m.diff > 0 ? 'siteana-mover-up' : 'siteana-mover-down';
+      var arrow = m.diff > 0 ? '\u2191' : '\u2193';
+      return '<div class="siteana-mover ' + cls + '">'
+        + '<span class="siteana-mover-name" style="color:' + info.color + '">' + esc(info.name) + '</span>'
+        + '<span class="siteana-mover-diff">' + arrow + ' ' + Math.abs(m.diff) + ' views</span>'
+        + '<span class="siteana-mover-pct">' + (m.pct >= 0 ? '+' : '') + m.pct + '%</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── ACTION QUEUE (#4) ──
+  function renderActionQueue(data) {
+    var card = document.getElementById('sa-actions-card');
+    var container = document.getElementById('sa-actions');
+    if (!card || !container) return;
+    var actions = [];
+    var ga4 = data.ga4;
+    var gsc = data.gsc;
+    // Low-CTR queries worth fixing
+    if (gsc && gsc.queries) {
+      var lowCtr = gsc.queries.filter(function(q) { return q.position < 10 && q.ctr < 8 && q.impressions > 15; }).slice(0, 2);
+      lowCtr.forEach(function(q) {
+        actions.push({ icon: '\uD83D\uDD0D', priority: 'high', text: 'Improve title/desc for "' + q.query + '" \u2014 pos ' + q.position + ' but only ' + q.ctr + '% CTR', action: 'Update meta tags in content file' });
+      });
+    }
+    // Underperforming tools
+    if (ga4 && ga4.leaderboard) {
+      var low = ga4.leaderboard.filter(function(t) { return t.views < 10 && t.tool !== 'site-analytics' && t.tool !== 'feedback'; });
+      if (low.length > 0) {
+        var names = low.slice(0, 3).map(function(t) { return getToolInfo(t.tool).name; }).join(', ');
+        actions.push({ icon: '\uD83D\uDCE3', priority: 'medium', text: 'Promote ' + names + ' \u2014 fewer than 10 views each', action: 'Share on social or cross-link from blog' });
+      }
+    }
+    // Blog content opportunity
+    if (ga4 && ga4.blog_pages && ga4.totals) {
+      var bv = ga4.blog_pages.reduce(function(s, p) { return s + p.views; }, 0);
+      var bp = ga4.totals.views > 0 ? Math.round((bv / ga4.totals.views) * 100) : 0;
+      if (bp > 40) actions.push({ icon: '\uD83D\uDCDD', priority: 'medium', text: 'Blog drives ' + bp + '% of traffic \u2014 publish more content on trending topics', action: 'Check SEO opportunities for post ideas' });
+      if (bp < 15) actions.push({ icon: '\uD83D\uDCDD', priority: 'medium', text: 'Blog only ' + bp + '% of traffic \u2014 consider writing about your most popular tools', action: 'Write a blog post about your top 3 tools' });
+    }
+    // WoW decline warning
+    if (ga4 && ga4.wow && ga4.wow.change && ga4.wow.change.views < -15) {
+      actions.push({ icon: '\u26A0\uFE0F', priority: 'high', text: 'Traffic down ' + Math.abs(ga4.wow.change.views) + '% week-over-week \u2014 investigate cause', action: 'Check if a content update or external link was lost' });
+    }
+    // New milestone suggestion
+    if (ga4 && ga4.trend && ga4.trend.length > 3) {
+      var last3 = ga4.trend.slice(-3);
+      var avg3 = last3.reduce(function(s, d) { return s + d.views; }, 0) / 3;
+      var allAvg = ga4.trend.reduce(function(s, d) { return s + d.views; }, 0) / ga4.trend.length;
+      if (avg3 > allAvg * 1.5) actions.push({ icon: '\uD83C\uDF1F', priority: 'low', text: 'Last 3 days averaged ' + Math.round(avg3) + ' views \u2014 50%+ above normal!', action: 'Consider adding this as a milestone' });
+    }
+    if (!actions.length) { card.style.display = 'none'; return; }
+    card.style.display = '';
+    container.innerHTML = actions.map(function(a) {
+      return '<div class="siteana-action siteana-action-' + a.priority + '">'
+        + '<span class="siteana-action-icon">' + a.icon + '</span>'
+        + '<div class="siteana-action-body">'
+        + '<div class="siteana-action-text">' + esc(a.text) + '</div>'
+        + '<div class="siteana-action-how">' + esc(a.action) + '</div>'
+        + '</div></div>';
+    }).join('');
+  }
+
+  // ── TOOL DEEP-DIVE (#5) ──
+  function setupToolDeepDive() {
+    var lb = document.getElementById('sa-leaderboard');
+    if (!lb) return;
+    lb.addEventListener('click', function(e) {
+      var item = e.target.closest('.siteana-lb-item');
+      if (!item) return;
+      var nameEl = item.querySelector('.siteana-lb-name');
+      if (!nameEl) return;
+      var toolName = nameEl.textContent;
+      var toolId = '';
+      Object.keys(TOOLS).forEach(function(k) { if (TOOLS[k].name === toolName) toolId = k; });
+      if (!toolId || !currentData || !currentData.ga4) return;
+      openToolDetail(toolId);
+    });
+
+    var closeBtn = document.getElementById('sa-tool-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeToolDetail);
+    var overlay = document.getElementById('sa-tool-modal');
+    if (overlay) overlay.addEventListener('click', function(e) { if (e.target === overlay) closeToolDetail(); });
+  }
+
+  function openToolDetail(toolId) {
+    var modal = document.getElementById('sa-tool-modal');
+    var title = document.getElementById('sa-tool-detail-title');
+    var statsEl = document.getElementById('sa-tool-detail-stats');
+    if (!modal || !title || !statsEl) return;
+    var info = getToolInfo(toolId);
+    var ga4 = currentData.ga4;
+    title.textContent = info.name;
+    title.style.color = info.color;
+    // Find tool in leaderboard
+    var toolData = null;
+    if (ga4.leaderboard) ga4.leaderboard.forEach(function(t) { if (t.tool === toolId) toolData = t; });
+    // Stats
+    var statsHtml = '<div class="siteana-grid-2" style="gap:1rem">';
+    if (toolData) {
+      statsHtml += '<div class="siteana-stat" style="background:rgba(255,255,255,0.03)"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.views) + '</span><span class="siteana-stat-label">Views</span></div>';
+      statsHtml += '<div class="siteana-stat" style="background:rgba(255,255,255,0.03)"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.users) + '</span><span class="siteana-stat-label">Users</span></div>';
+    }
+    statsHtml += '</div>';
+    // Rank
+    if (ga4.leaderboard && toolData) {
+      var rank = ga4.leaderboard.indexOf(toolData) + 1;
+      var engagement = toolData.views > 0 ? Math.round((toolData.users / toolData.views) * 100) : 0;
+      statsHtml += '<p class="siteana-hint" style="margin-top:1rem">Rank #' + rank + ' of ' + ga4.leaderboard.length + ' tools \u00B7 ' + engagement + '% engagement ratio</p>';
+    }
+    // Link
+    var pathMap = {}; Object.keys(TOOLS).forEach(function(k) { pathMap[k] = '/' + k.replace('prompt-library', 'prompts').replace('licensing', 'licensing').replace('meeting-planner', 'world-clock') + '/'; });
+    statsHtml += '<a href="' + (pathMap[toolId] || '/' + toolId + '/') + '" style="color:' + info.color + ';font-size:0.88rem;font-weight:600" target="_blank" rel="noopener">Visit tool \u2192</a>';
+    statsEl.innerHTML = statsHtml;
+    // Chart
+    var ctx = document.getElementById('sa-tool-detail-chart');
+    if (ctx && ga4.tool_trends && ga4.tool_trends[toolId] && ga4.trend) {
+      if (_toolDetailChart) { _toolDetailChart.destroy(); _toolDetailChart = null; }
+      var trendData = ga4.tool_trends[toolId];
+      var labels = ga4.trend.slice(0, trendData.length).map(function(d) { return d.date.slice(5); });
+      _toolDetailChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{ label: 'Daily Views', data: trendData, backgroundColor: info.color + '80', borderColor: info.color, borderWidth: 1, borderRadius: 3 }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: 'rgba(255,255,255,0.4)', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } },
+            y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+          }
+        }
+      });
+    }
+    modal.style.display = 'flex';
+  }
+
+  function closeToolDetail() {
+    var modal = document.getElementById('sa-tool-modal');
+    if (modal) modal.style.display = 'none';
+    if (_toolDetailChart) { _toolDetailChart.destroy(); _toolDetailChart = null; }
+  }
+
+  setupToolDeepDive();
+
+  // ── EXPORT REPORT (#8) ──
+  function exportReport() {
+    if (!currentData || !currentData.ga4) return;
+    var ga4 = currentData.ga4;
+    var gsc = currentData.gsc;
+    var lines = [];
+    lines.push('SITE ANALYTICS REPORT');
+    lines.push('Generated: ' + new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    lines.push('Range: ' + currentRange);
+    lines.push('');
+    lines.push('SUMMARY');
+    lines.push('  Views:    ' + numFmt(ga4.totals.views));
+    lines.push('  Users:    ' + numFmt(ga4.totals.users));
+    lines.push('  Sessions: ' + numFmt(ga4.totals.sessions));
+    if (ga4.wow && ga4.wow.change) {
+      lines.push('  WoW:      Views ' + (ga4.wow.change.views >= 0 ? '+' : '') + ga4.wow.change.views + '%, Users ' + (ga4.wow.change.users >= 0 ? '+' : '') + ga4.wow.change.users + '%');
+    }
+    lines.push('');
+    lines.push('TOP 10 TOOLS');
+    if (ga4.leaderboard) ga4.leaderboard.slice(0, 10).forEach(function(t, i) {
+      lines.push('  ' + (i + 1) + '. ' + getToolInfo(t.tool).name + ' — ' + numFmt(t.views) + ' views, ' + numFmt(t.users) + ' users');
+    });
+    lines.push('');
+    lines.push('TOP 5 PAGES');
+    if (ga4.top_pages) ga4.top_pages.slice(0, 5).forEach(function(p, i) {
+      lines.push('  ' + (i + 1) + '. ' + p.path + ' — ' + numFmt(p.views) + ' views');
+    });
+    if (gsc && gsc.queries) {
+      lines.push('');
+      lines.push('TOP SEARCH QUERIES');
+      gsc.queries.slice(0, 10).forEach(function(q, i) {
+        lines.push('  ' + (i + 1) + '. "' + q.query + '" — ' + q.clicks + ' clicks, pos ' + q.position);
+      });
+    }
+    lines.push('');
+    lines.push('TOP COUNTRIES');
+    if (ga4.countries) ga4.countries.slice(0, 5).forEach(function(c) {
+      lines.push('  ' + c.country + ': ' + numFmt(c.users) + ' users');
+    });
+    var text = lines.join('\n');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('sa-export');
+        if (btn) { var orig = btn.textContent; btn.textContent = 'Copied!'; setTimeout(function() { btn.textContent = orig; }, 2000); }
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    }
+  }
+
+  var exportBtn = document.getElementById('sa-export');
+  if (exportBtn) exportBtn.addEventListener('click', exportReport);
+
+  // ── ENHANCED REFRESH (#3) ──
   function renderRefreshTime(data) {
     var el = document.getElementById('sa-refreshed');
     if (!el || !data.updated) return;
     var d = new Date(data.updated);
-    var timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    el.innerHTML = 'Data refreshed ' + timeStr + ' \u00B7 <button class="siteana-refresh-btn" id="sa-refresh-now" aria-label="Refresh now">Refresh</button>';
+    var ago = Math.round((Date.now() - d.getTime()) / 60000);
+    var agoStr = ago < 1 ? 'just now' : ago + 'm ago';
+    // GSC data typically lags 2-3 days
+    var gscNote = data.gsc && data.gsc.queries && data.gsc.queries.length > 0 ? 'GSC: ~2 day lag' : 'GSC: no data';
+    el.innerHTML = 'GA4: ' + agoStr + ' \u00B7 ' + gscNote + ' \u00B7 <button class="siteana-refresh-btn" id="sa-refresh-now" aria-label="Refresh now">Refresh</button>';
     var rb = document.getElementById('sa-refresh-now');
     if (rb) rb.addEventListener('click', function() {
       el.innerHTML = 'Refreshing...';

@@ -599,6 +599,142 @@
 /* Nav accent */
 .page-site-analytics .site-nav { border-bottom-color: #64748B; }
 
+/* ── BIGGEST MOVERS ────────────────── */
+.siteana-movers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.siteana-mover {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+.siteana-mover-up { border-color: rgba(16,185,129,0.2); }
+.siteana-mover-down { border-color: rgba(239,68,68,0.2); }
+
+.siteana-mover-name { font-weight: 600; }
+
+.siteana-mover-diff {
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.siteana-mover-up .siteana-mover-diff { color: #10B981; }
+.siteana-mover-down .siteana-mover-diff { color: #EF4444; }
+
+.siteana-mover-pct {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── ACTION QUEUE ─────────────────── */
+.siteana-action {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+  border-left: 3px solid transparent;
+}
+
+.siteana-action:last-child { margin-bottom: 0; }
+
+.siteana-action-high {
+  background: rgba(239,68,68,0.06);
+  border-left-color: #EF4444;
+}
+
+.siteana-action-medium {
+  background: rgba(251,191,36,0.06);
+  border-left-color: #FBBF24;
+}
+
+.siteana-action-low {
+  background: rgba(16,185,129,0.06);
+  border-left-color: #10B981;
+}
+
+.siteana-action-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.siteana-action-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.siteana-action-how {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.78rem;
+  margin-top: 0.15rem;
+}
+
+/* ── COLLAPSIBLE DETAILS ──────────── */
+.siteana-details {
+  margin-bottom: 1.5rem;
+}
+
+.siteana-details-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 0.6rem 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 1rem;
+}
+
+.siteana-details-title::before {
+  content: '\25BC';
+  font-size: 0.6rem;
+  transition: transform 0.2s;
+}
+
+.siteana-details:not([open]) .siteana-details-title::before {
+  transform: rotate(-90deg);
+}
+
+.siteana-details-title::-webkit-details-marker { display: none; }
+
+/* ── EXPORT BUTTON ────────────────── */
+.siteana-export-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.siteana-export-btn:hover { color: #fff; border-color: #64748B; }
+
+/* ── TOOL DEEP-DIVE ───────────────── */
+#sa-leaderboard .siteana-lb-item { cursor: pointer; transition: background 0.15s; }
+#sa-leaderboard .siteana-lb-item:hover { background: rgba(255,255,255,0.03); border-radius: 8px; }
+
 /* ── CARD HEADER WITH EDIT ─────────── */
 .siteana-card-header {
   display: flex;
