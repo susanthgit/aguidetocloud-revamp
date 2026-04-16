@@ -6,6 +6,7 @@ layout: "list"
 sitemap:
   priority: 0.8
   changefreq: "monthly"
+lastmod: 2026-04-16
 images: ["images/og/prompt-polisher.jpg"]
 faq:
   - question: "How do I use Prompt Polisher?"

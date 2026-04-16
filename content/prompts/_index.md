@@ -5,6 +5,7 @@ type: "prompts"
 sitemap:
   priority: 0.8
   changefreq: "weekly"
+lastmod: 2026-04-16
 images: ["images/og/prompts.jpg"]
 faq:
   - question: "What AI platforms do these prompts work with?"

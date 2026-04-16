@@ -644,7 +644,7 @@
     el.innerHTML = `
       ${recentPlansHtml}
       <div class="migplan-wizard-progress">
-        <span class="migplan-wizard-step-label">Question ${S.wizardStep + 1} of ${total}${S.wizardStep === 0 ? ' · ⏱️ Takes ~2 minutes' : ''}</span>
+        <span class="migplan-wizard-step-label">Question ${S.wizardStep + 1} of ${total}</span>
         <div class="migplan-wizard-progress-bar">
           <div class="migplan-wizard-progress-fill" style="width:${progress}%"></div>
         </div>

@@ -25,5 +25,6 @@ faq:
     answer: "We use the EFF (Electronic Frontier Foundation) Diceware long word list containing 7,776 carefully selected English words. Each word adds approximately 12.9 bits of entropy. The list was designed specifically for generating secure, memorable passphrases."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/password-generator.jpg"]
 ---

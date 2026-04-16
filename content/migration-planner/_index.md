@@ -4,6 +4,7 @@ description: "Plan your Microsoft 365 migration for free. Interactive wizard cov
 type: "migration-planner"
 layout: "list"
 url: "/migration-planner/"
+lastmod: 2026-04-16
 images: ["images/og/migration-planner.jpg"]
 faq:
   - question: "How do I use the Migration Planner?"

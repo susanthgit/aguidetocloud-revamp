@@ -52,12 +52,12 @@
 
   {{/* ── Tabs ── */}}
   <div class="palette-tabs" role="tablist">
-    <button class="palette-tab active" role="tab" data-tab="explore" aria-selected="true">✨ Explore</button>
-    <button class="palette-tab" role="tab" data-tab="generate">🎨 Generate</button>
-    <button class="palette-tab" role="tab" data-tab="blindness">👁️ Blindness</button>
-    <button class="palette-tab" role="tab" data-tab="contrast">🔍 Contrast</button>
-    <button class="palette-tab" role="tab" data-tab="extract">🖼️ Extract</button>
-    <button class="palette-tab" role="tab" data-tab="faq">❓ FAQ</button>
+    <button class="palette-tab active" role="tab" data-tab="explore" aria-selected="true">Explore</button>
+    <button class="palette-tab" role="tab" data-tab="generate">Generate</button>
+    <button class="palette-tab" role="tab" data-tab="blindness">Blindness</button>
+    <button class="palette-tab" role="tab" data-tab="contrast">Contrast</button>
+    <button class="palette-tab" role="tab" data-tab="extract">Extract</button>
+    <button class="palette-tab" role="tab" data-tab="faq">FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 2: GENERATE ══════════════ */}}
@@ -83,10 +83,7 @@
       {{/* JS renders 5 vertical swatch bars here */}}
     </div>
 
-    {{/* Spacebar hint — only shown on Generate tab */}}
-    <div class="palette-hint" id="palette-hint">
-      <kbd>Space</kbd> generate &nbsp;·&nbsp; <kbd>L</kbd> lock &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> navigate &nbsp;·&nbsp; <kbd>C</kbd> copy
-    </div>
+    {{/* Spacebar hint removed in V2 audit */}}
 
     {{/* Action bar */}}
     <div class="palette-actions">

@@ -17,5 +17,6 @@ faq:
     answer: "The Prompt Library gives you 84 ready-to-use prompts. The Prompt Polisher scores and rewrites your prompts. This Guide teaches you the WHY — the techniques behind great prompts, so you can write your own from scratch."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/prompt-guide.jpg"]
 ---

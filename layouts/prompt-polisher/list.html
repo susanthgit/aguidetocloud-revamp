@@ -32,8 +32,8 @@
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="polisher-tabs" role="tablist" aria-label="Prompt Polisher sections">
-      <button class="polisher-tab active" data-tab="main" role="tab" aria-selected="true">✨ Polisher</button>
-      <button class="polisher-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+      <button class="polisher-tab active" data-tab="main" role="tab" aria-selected="true">Polisher</button>
+      <button class="polisher-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
     </div>
 
     <div class="polisher-panel active" id="panel-main" role="tabpanel">
@@ -66,7 +66,6 @@
           </div>
         </div>
       </div>
-      <p class="polisher-shortcut-hint">Tip: Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to polish instantly</p>
     </div>
 
     {{/* ── RESULTS (hidden until analysis) ── */}}
@@ -93,7 +92,7 @@
       {{/* ── POLISHED OUTPUT ── */}}
       <div class="polisher-output-section" id="polisher-output-section">
         <div class="polisher-output-header">
-          <h2 class="polisher-section-title">✨ Your Polished Prompt — Ready to Copy</h2>
+          <h2 class="polisher-section-title">Your Polished Prompt — Ready to Copy</h2>
           <div class="polisher-output-actions">
             <div class="polisher-view-toggle" id="polisher-view-toggle">
               <button class="polisher-toggle-btn active" data-view="polished">✨ Polished</button>
@@ -126,7 +125,7 @@
 
       {{/* ── TIPS ── */}}
       <div class="polisher-tips-section" id="polisher-tips-section">
-        <h2 class="polisher-section-title">💡 How to improve</h2>
+        <h2 class="polisher-section-title">How to improve</h2>
         <div class="polisher-tips" id="polisher-tips">
           {{/* Rendered by JS */}}
         </div>
@@ -134,7 +133,7 @@
 
       {{/* ── RELATED PROMPTS ── */}}
       <div class="polisher-related-section" id="polisher-related" style="display:none">
-        <h2 class="polisher-section-title">📚 Related prompts from our library</h2>
+        <h2 class="polisher-section-title">Related prompts from our library</h2>
         <div class="polisher-related-list" id="polisher-related-list">
           {{/* Rendered by JS */}}
         </div>
@@ -195,7 +194,7 @@
     <div class="polisher-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-      <h2 style="color:#EC4899;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      <h2 style="color:#EC4899;margin-bottom:1rem">Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
       <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
         <summary style="color:#EC4899;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>

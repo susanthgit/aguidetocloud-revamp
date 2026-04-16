@@ -25,5 +25,6 @@ faq:
     answer: "Yes — the Tasks tab lets you create a task list, set estimated pomodoros per task, mark a task as your current focus, and track actual pomodoros completed. Tasks persist in localStorage between sessions."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/pomodoro.jpg"]
 ---

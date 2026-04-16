@@ -25,5 +25,6 @@ faq:
     answer: "Absolutely. Everything runs in your browser — no data is sent to any server. WiFi passwords are never stored in history or shared URLs."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/qr-generator.jpg"]
 ---

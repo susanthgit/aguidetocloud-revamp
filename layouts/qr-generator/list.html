@@ -52,10 +52,10 @@
 
   {{/* ── Tabs ── */}}
   <div class="qrgen-tabs" role="tablist">
-    <button class="qrgen-tab active" role="tab" data-tab="create" aria-selected="true">🎨 Create</button>
-    <button class="qrgen-tab" role="tab" data-tab="batch">📦 Batch</button>
-    <button class="qrgen-tab" role="tab" data-tab="scan">📷 Scan</button>
-    <button class="qrgen-tab" role="tab" data-tab="faq">❓ FAQ</button>
+    <button class="qrgen-tab active" role="tab" data-tab="create" aria-selected="true">Create</button>
+    <button class="qrgen-tab" role="tab" data-tab="batch">Batch</button>
+    <button class="qrgen-tab" role="tab" data-tab="scan">Scan</button>
+    <button class="qrgen-tab" role="tab" data-tab="faq">FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 1: CREATE ══════════════ */}}
@@ -402,7 +402,7 @@ Hello World,text,Greeting
   <div class="qrgen-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-      <h2 style="color:#EC4899;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      <h2 style="color:#EC4899;margin-bottom:1rem">Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
         <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
           <summary style="color:#EC4899;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>

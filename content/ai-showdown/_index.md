@@ -7,6 +7,7 @@ url: /ai-showdown/
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+lastmod: 2026-04-16
 images: ["images/og/ai-showdown.jpg"]
 faq:
   - question: "How do I use the AI SaaS Showdown?"

@@ -25,5 +25,6 @@ faq:
     a: "This tool uniquely combines a template library, custom builder, policy-SET linting (not just single-policy), Zero Trust baseline scoring, rollout safety checks, and deploy-ready export — all in one free, offline tool. No other tool offers all of these together without requiring a tenant connection."
   - q: "Is this tool still being improved?"
     a: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/ca-builder.jpg"]
 ---

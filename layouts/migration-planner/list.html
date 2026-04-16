@@ -69,13 +69,13 @@
 
     {{/* ── Tab Bar ── */}}
     <div class="migplan-tabs" role="tablist" aria-label="Migration Planner sections">
-      <button class="migplan-tab" role="tab" aria-selected="true" aria-controls="panel-wizard" id="tab-wizard" data-tab="wizard">🧙‍♂️ Wizard</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-workloads" id="tab-workloads" data-tab="workloads">📊 Workloads</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-timeline" id="tab-timeline" data-tab="timeline">📅 Timeline</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-risks" id="tab-risks" data-tab="risks">⚠️ Risks</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools" data-tab="tools">🔧 Tools</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-summary" id="tab-summary" data-tab="summary">📄 Summary</button>
-      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">❓ FAQ</button>
+      <button class="migplan-tab" role="tab" aria-selected="true" aria-controls="panel-wizard" id="tab-wizard" data-tab="wizard">Wizard</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-workloads" id="tab-workloads" data-tab="workloads">Workloads</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-timeline" id="tab-timeline" data-tab="timeline">Timeline</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-risks" id="tab-risks" data-tab="risks">Risks</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools" data-tab="tools">Tools</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-summary" id="tab-summary" data-tab="summary">Summary</button>
+      <button class="migplan-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">FAQ</button>
     </div>
 
     {{/* ── Panel: Wizard ── */}}
@@ -144,7 +144,7 @@
     <div class="migplan-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
       {{ with $faqFile.faq }}
       <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-        <h2 style="color:#6478CC;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+        <h2 style="color:#6478CC;margin-bottom:1rem">Frequently Asked Questions</h2>
         {{ range $i, $q := . }}
         <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
           <summary style="color:#6478CC;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ index $q "question" }}</summary>

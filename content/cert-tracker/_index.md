@@ -5,6 +5,7 @@ type: "cert-tracker"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+lastmod: 2026-04-16
 images: ["images/og/cert-tracker.jpg"]
 faq:
   - question: "How do I use the Cert Study Guides?"

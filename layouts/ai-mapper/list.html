@@ -26,12 +26,12 @@
 
   {{/* Tabs */}}
   <div class="aimap-tabs" role="tablist">
-    <button class="aimap-tab active" data-tab="explore" role="tab" aria-selected="true">🗺️ Explore</button>
-    <button class="aimap-tab" data-tab="compare" role="tab" aria-selected="false">⚖️ Compare</button>
-    <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">🧭 Which AI?</button>
-    <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">💰 Pricing</button>
-    <button class="aimap-tab" data-tab="glossary" role="tab" aria-selected="false">📚 Glossary</button>
-    <button class="aimap-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+    <button class="aimap-tab active" data-tab="explore" role="tab" aria-selected="true">Explore</button>
+    <button class="aimap-tab" data-tab="compare" role="tab" aria-selected="false">Compare</button>
+    <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">Which AI?</button>
+    <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">Pricing</button>
+    <button class="aimap-tab" data-tab="glossary" role="tab" aria-selected="false">Glossary</button>
+    <button class="aimap-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
   {{/* ============ TAB 1: EXPLORE ============ */}}
@@ -271,7 +271,7 @@
   <div class="aimap-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem"><summary style="color:var(--tool-accent, #fff);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p></details>
     {{ end }}

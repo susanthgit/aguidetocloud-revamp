@@ -6,6 +6,7 @@ layout: "list"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+lastmod: 2026-04-16
 images: ["images/og/ai-mapper.jpg"]
 faq:
   - question: "How do I use the AI Service Mapper?"

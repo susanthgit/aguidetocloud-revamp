@@ -25,5 +25,6 @@ faq:
     answer: "It automatically finds the right quality level to get each image under your specified file size (e.g., under 200KB). It uses binary search to dial in the optimal quality — something most other tools can't do client-side. If the target can't be reached, the tool explains why and suggests alternatives."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
+lastmod: 2026-04-16
 images: ["images/og/image-compressor.jpg"]
 ---

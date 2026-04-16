@@ -5,6 +5,7 @@ type: "licensing"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
+lastmod: 2026-04-16
 images: ["images/og/licensing.jpg"]
 faq:
   - question: "How do I use the Licensing Simplifier?"

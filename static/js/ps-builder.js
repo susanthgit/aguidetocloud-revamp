@@ -133,7 +133,7 @@
     if (stages.length < 2) return '';
     const labels = ['Get the data', 'Process/filter', 'Shape the output', 'Export/save'];
     return `<div class="psb-pipeline-breakdown">
-      <button class="psb-breakdown-toggle">🔍 Step-by-step breakdown</button>
+      <button class="psb-breakdown-toggle">Step-by-step breakdown</button>
       <div class="psb-breakdown-steps" hidden>
         ${stages.map((s, i) => `<div class="psb-breakdown-step">
           <span class="psb-breakdown-num">${i + 1}</span>
@@ -333,8 +333,8 @@
 
     // B4 — View toggle
     const viewToggle = `<span class="psb-view-toggle">
-      <button class="psb-pill-sm${recipeViewMode === 'list' ? ' active' : ''}" data-view="list">📋 List</button>
-      <button class="psb-pill-sm${recipeViewMode === 'grouped' ? ' active' : ''}" data-view="grouped">📂 Grouped</button>
+      <button class="psb-pill-sm${recipeViewMode === 'list' ? ' active' : ''}" data-view="list">List</button>
+      <button class="psb-pill-sm${recipeViewMode === 'grouped' ? ' active' : ''}" data-view="grouped">Grouped</button>
     </span>`;
 
     countEl.innerHTML = `${filtered.length} recipe${filtered.length !== 1 ? 's' : ''}${exportBtnHTML} ${viewToggle}`;
@@ -393,7 +393,7 @@
 
     // A1 — How to run guide (shown in expanded view)
     const howToRun = mod ? `<details class="psb-how-to-run">
-      <summary>📋 How to run this command</summary>
+      <summary>How to run this command</summary>
       <ol class="psb-run-steps">
         <li>Open <strong>PowerShell</strong>${mod.requires_admin ? ' as <strong>Administrator</strong>' : ''}</li>
         ${mod.install_command ? `<li>Install the module (one-time):<br><code>${esc(mod.install_command)}</code></li>` : '<li>No module install needed — built into Windows</li>'}
@@ -760,7 +760,7 @@
       if (breakdownToggle) {
         const steps = breakdownToggle.nextElementSibling;
         if (steps) steps.hidden = !steps.hidden;
-        breakdownToggle.textContent = steps.hidden ? '🔍 Step-by-step breakdown' : '🔍 Hide breakdown';
+        breakdownToggle.textContent = steps.hidden ? 'Step-by-step breakdown' : 'Hide breakdown';
         return;
       }
 

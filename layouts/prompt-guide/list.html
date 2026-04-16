@@ -24,11 +24,11 @@
 
     {{/* ── Tab Navigation ── */}}
     <div class="pguide-tabs" role="tablist">
-      <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="builder" id="tab-builder" aria-controls="panel-builder">🔧 Builder</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="challenges" id="tab-challenges" aria-controls="panel-challenges">🏆 Challenges</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="learn" id="tab-learn" aria-controls="panel-learn">🎓 Learn</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="quiz" id="tab-quiz" aria-controls="panel-quiz">🧭 Which Technique?</button>
-      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">❓ FAQ</button>
+      <button class="pguide-tab active" role="tab" aria-selected="true" data-tab="builder" id="tab-builder" aria-controls="panel-builder">Builder</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="challenges" id="tab-challenges" aria-controls="panel-challenges">Challenges</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="learn" id="tab-learn" aria-controls="panel-learn">Learn</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="quiz" id="tab-quiz" aria-controls="panel-quiz">Which Technique?</button>
+      <button class="pguide-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">FAQ</button>
     </div>
 
     {{/* ══════════════════════════════════════════
@@ -312,7 +312,7 @@
     <div class="pguide-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
       {{ with .Params.faq }}
       <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-        <h2>❓ Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         {{ range . }}
         <details open class="pguide-faq-item">
           <summary>{{ .question }}</summary>

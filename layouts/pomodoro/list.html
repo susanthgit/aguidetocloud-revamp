@@ -118,24 +118,15 @@
       <p id="pomo-quote-text"></p>
       <span id="pomo-quote-author"></span>
     </div>
-
-    {{/* Keyboard shortcuts hint */}}
-    <div class="pomo-shortcuts">
-      <span>Space</span> Start/Pause &nbsp;
-      <span>R</span> Reset &nbsp;
-      <span>S</span> Skip &nbsp;
-      <span>F</span> Fullscreen &nbsp;
-      <span>M</span> Mute
-    </div>
   </div>
 
   {{/* ═══════════════════════════════════════
        TABS — Tasks & Stats
        ═══════════════════════════════════════ */}}
   <div class="pomo-tabs" role="tablist">
-    <button class="pomo-tab active" role="tab" data-tab="tasks" aria-selected="true">📝 Tasks</button>
-    <button class="pomo-tab" role="tab" data-tab="stats">📊 Stats</button>
-    <button class="pomo-tab" role="tab" data-tab="faq">❓ FAQ</button>
+    <button class="pomo-tab active" role="tab" data-tab="tasks" aria-selected="true">Tasks</button>
+    <button class="pomo-tab" role="tab" data-tab="stats">Stats</button>
+    <button class="pomo-tab" role="tab" data-tab="faq">FAQ</button>
   </div>
 
   {{/* ── TASKS TAB ── */}}
@@ -310,7 +301,7 @@
   <div class="pomo-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:#EF4444;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:#EF4444;margin-bottom:1rem">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
       <summary style="color:#EF4444;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>

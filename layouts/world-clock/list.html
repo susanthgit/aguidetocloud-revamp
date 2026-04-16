@@ -52,11 +52,11 @@
 
   {{/* ── Tabs ── */}}
   <div class="wclk-tabs" role="tablist">
-    <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">📅 Meeting Planner</button>
-    <button class="wclk-tab" role="tab" data-tab="worldclock" aria-selected="false">🌍 World Clock</button>
-    <button class="wclk-tab" role="tab" data-tab="convert" aria-selected="false">🔄 Convert Time</button>
-    <button class="wclk-tab" role="tab" data-tab="dst" aria-selected="false">🌞 DST Guide</button>
-    <button class="wclk-tab" role="tab" data-tab="faq" aria-selected="false">❓ FAQ</button>
+    <button class="wclk-tab active" role="tab" data-tab="clock" aria-selected="true">Meeting Planner</button>
+    <button class="wclk-tab" role="tab" data-tab="worldclock" aria-selected="false">World Clock</button>
+    <button class="wclk-tab" role="tab" data-tab="convert" aria-selected="false">Convert Time</button>
+    <button class="wclk-tab" role="tab" data-tab="dst" aria-selected="false">DST Guide</button>
+    <button class="wclk-tab" role="tab" data-tab="faq" aria-selected="false">FAQ</button>
   </div>
 
   {{/* ══════════════ TAB 1: MEETING PLANNER (hero) + WORLD CLOCK (context) ══════════════ */}}
@@ -277,7 +277,7 @@
   <div class="wclk-panel" id="panel-faq" role="tabpanel">
     {{ with .Params.faq }}
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:#0EA5E9;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+    <h2 style="color:#0EA5E9;margin-bottom:1rem">Frequently Asked Questions</h2>
       {{ range $i, $q := . }}
       <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
         <summary style="color:#0EA5E9;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
