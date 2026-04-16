@@ -1049,6 +1049,7 @@
 .cert-video-grid.cert-video-single {
   grid-template-columns: 1fr;
   max-width: 480px;
+  margin: 0 auto;
 }
 a.cert-video-card {
   display: block;
