@@ -80,15 +80,16 @@
 
   {{/* Video Resources — rendered from front matter cert_video_id / qa_video_id */}}
   {{ if or .Params.cert_video_id .Params.qa_video_id }}
+  {{ $videoCount := 0 }}{{ with .Params.cert_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}{{ with .Params.qa_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}
   <div class="cert-video-section">
     <h2 class="cert-video-heading">Watch & Learn</h2>
     <p class="cert-video-intro">I made these videos to help you prepare — watch the full course to learn, then test yourself with mock exam questions.</p>
-    <div class="cert-video-grid">
+    <div class="cert-video-grid{{ if eq $videoCount 1 }} cert-video-single{{ end }}">
       {{ with .Params.cert_video_id }}
-      <div class="cert-video-card" data-yt="{{ . }}">
+      <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Full Course video">
         <div class="cert-video-thumb">
-          <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" alt="{{ $.Params.exam_code }} Full Course thumbnail" loading="lazy" width="480" height="270">
-          <div class="cert-video-play" aria-label="Play video">
+          <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Full Course thumbnail" loading="lazy" decoding="async" width="480" height="270">
+          <div class="cert-video-play" aria-hidden="true">
             <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
           </div>
           <span class="cert-video-badge cert-video-badge-course">Full Course</span>
@@ -96,13 +97,13 @@
         <div class="cert-video-info">
           <span class="cert-video-title">{{ $.Params.exam_code }} Full Course — Certification Training</span>
         </div>
-      </div>
+      </a>
       {{ end }}
       {{ with .Params.qa_video_id }}
-      <div class="cert-video-card" data-yt="{{ . }}">
+      <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Mock Exam Questions video">
         <div class="cert-video-thumb">
-          <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" alt="{{ $.Params.exam_code }} Mock Exam Questions thumbnail" loading="lazy" width="480" height="270">
-          <div class="cert-video-play" aria-label="Play video">
+          <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Mock Exam Questions thumbnail" loading="lazy" decoding="async" width="480" height="270">
+          <div class="cert-video-play" aria-hidden="true">
             <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
           </div>
           <span class="cert-video-badge cert-video-badge-qa">Mock Exam</span>
@@ -110,7 +111,7 @@
         <div class="cert-video-info">
           <span class="cert-video-title">{{ $.Params.exam_code }} Mock Exam — Practice Questions with Answers</span>
         </div>
-      </div>
+      </a>
       {{ end }}
     </div>
   </div>
@@ -322,12 +323,19 @@
     });
   }
 
-  // ── Video card click-to-play ──
+  // ── Video card click-to-play (progressive enhancement) ──
   document.querySelectorAll(".cert-video-card[data-yt]").forEach(function(card) {
-    card.addEventListener("click", function() {
+    card.addEventListener("click", function(e) {
+      e.preventDefault();
       var yt = card.dataset.yt;
+      if (!/^[\w-]{11}$/.test(yt)) return;
       var thumb = card.querySelector(".cert-video-thumb");
       if (!thumb || thumb.querySelector("iframe")) return;
+      // Stop any other playing video in the grid
+      var grid = card.closest(".cert-video-grid");
+      if (grid) {
+        grid.querySelectorAll("iframe").forEach(function(f) { f.parentNode.innerHTML = ""; });
+      }
       var iframe = document.createElement("iframe");
       iframe.src = "https://www.youtube-nocookie.com/embed/" + yt + "?autoplay=1&rel=0";
       iframe.setAttribute("allow", "autoplay; encrypted-media");
@@ -335,6 +343,7 @@
       iframe.setAttribute("title", card.querySelector(".cert-video-title").textContent);
       thumb.innerHTML = "";
       thumb.appendChild(iframe);
+      iframe.focus();
     });
   });
 
