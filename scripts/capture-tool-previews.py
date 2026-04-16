@@ -39,6 +39,7 @@ TOOLS = [
     ("color-palette", "/color-palette/"),
     ("pomodoro", "/pomodoro/"),
     ("purview-starter", "/purview-starter/"),
+    ("agent-365-planner", "/agent-365-planner/"),
 ]
 
 WIDTH = 1280
