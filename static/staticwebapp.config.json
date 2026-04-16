@@ -1,7 +1,6 @@
 {
   "routes": [
     { "route": "/bio/", "redirect": "/links/", "statusCode": 301 },
-    { "route": "/me", "redirect": "/links/", "statusCode": 301 },
     { "route": "/me/", "redirect": "/links/", "statusCode": 301 },
     { "route": "/Technical", "redirect": "/", "statusCode": 301 },
     { "route": "/Technical/*", "redirect": "/", "statusCode": 301 },
