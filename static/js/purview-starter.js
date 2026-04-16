@@ -26,7 +26,11 @@
     setTimeout(() => t.classList.remove('pvs-toast--show'), 2800);
   }
   function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => toast('Copied to clipboard!')).catch(() => {});
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => toast('Copied to clipboard!')).catch(() => toast('Copy failed — select text manually'));
+    } else {
+      toast('Copy not available — select text manually');
+    }
   }
 
   /* ── State ── */
@@ -230,15 +234,16 @@
   }
 
   function getResolvedPlan() {
-    // Single resolved plan: kit provides base, custom labels/DLP are additive
     const kit = S.selectedKit ? getKit(S.selectedKit) : null;
     const labels = S.customLabels.length > 0 ? S.customLabels : (kit ? kit.labels || [] : []);
     const kitDLP = kit ? (kit.dlp_rules || []) : [];
     const customDLP = S.enabledScenarios.map(id => SCENARIOS.find(s => s.id === id)).filter(Boolean);
 
-    // If user has custom labels, use those. Otherwise kit labels.
-    // DLP: merge kit DLP + custom scenarios (additive)
-    const allDLP = S.customLabels.length > 0 ? customDLP : [...kitDLP, ...customDLP.filter(cd => !kitDLP.some(kr => kr.name === cd.name))];
+    // Always merge: kit DLP + custom DLP (additive, dedup by ID)
+    const seenIds = new Set();
+    const allDLP = [];
+    kitDLP.forEach(r => { if (!seenIds.has(r.id)) { seenIds.add(r.id); allDLP.push(r); } });
+    customDLP.forEach(r => { if (!seenIds.has(r.id)) { seenIds.add(r.id); allDLP.push(r); } });
 
     let name = 'Plan';
     const parts = [];
@@ -247,7 +252,16 @@
     if (customDLP.length > 0) parts.push(customDLP.length + ' extra DLP scenarios');
     name = parts.join(' + ') || 'Plan';
 
-    const highestLic = kit ? kit.licence : (allDLP.some(r => (r.licence || 'e3').includes('compliance')) ? 'e5-compliance' : allDLP.some(r => r.licence === 'e5') ? 'e5' : 'e3');
+    // Derive licence from ALL labels + ALL DLP (not just kit)
+    let highestLic = 'e3';
+    if (labels.some(l => l.auto_apply)) highestLic = 'e5';
+    allDLP.forEach(r => {
+      const lic = r.licence || 'e3';
+      if (lic === 'e5-compliance') highestLic = 'e5-compliance';
+      else if (lic === 'e5' && highestLic !== 'e5-compliance') highestLic = 'e5';
+    });
+    if (kit && kit.licence === 'e5-compliance') highestLic = 'e5-compliance';
+    else if (kit && kit.licence === 'e5' && highestLic === 'e3') highestLic = 'e5';
 
     return { name, labels, dlpRules: allDLP, licence: highestLic, kit };
   }
@@ -667,9 +681,8 @@
   function renderDLPScenarios() {
     const el = $('pvs-dlp-scenarios');
     if (!el || !SCENARIOS.length) return;
-    // Determine which scenarios are covered by the selected kit
-    const kit = S.selectedKit ? getKit(S.selectedKit) : null;
-    const kitDLPNames = kit ? (kit.dlp_rules || []).map(r => r.name.toLowerCase()) : [];
+    // Show which scenarios the selected kit already covers (by ID overlap in workload+action)
+    const kitDLPSigs = kit ? (kit.dlp_rules || []).map(r => (r.workloads || []).sort().join(',') + ':' + r.action) : [];
 
     el.innerHTML = DLP_CATS.map(cat => {
       const items = SCENARIOS.filter(s => s.category === cat.id);
@@ -677,11 +690,12 @@
       return '<div class="pvs-dlp-cat"><div class="pvs-dlp-cat-title">' + esc(cat.emoji + ' ' + cat.name) + '</div><div class="pvs-dlp-cat-grid">' +
         items.map(s => {
           const on = S.enabledScenarios.includes(s.id);
-          const inKit = kitDLPNames.some(n => s.name.toLowerCase().includes(n.split(' ').slice(0,3).join(' ')) || n.includes(s.name.toLowerCase().split(' ').slice(0,3).join(' ')));
+          const sig = (s.workloads || []).sort().join(',') + ':' + s.action;
+          const coveredByKit = kitDLPSigs.includes(sig);
           return '<div class="pvs-dlp-scenario-card' + (on ? ' pvs-dlp-enabled' : '') + '" data-scenario="' + esc(s.id) + '">' +
             '<div class="pvs-dlp-scenario-toggle"><input type="checkbox" class="pvs-toggle pvs-dlp-toggle" data-scenario="' + esc(s.id) + '"' + (on ? ' checked' : '') + ' aria-label="' + esc(s.name) + '"></div>' +
             '<div class="pvs-dlp-scenario-body"><div class="pvs-dlp-scenario-name">' + esc(s.name) +
-            (inKit ? ' <span class="pvs-dlp-kit-badge">Included in ' + esc(kit.name) + '</span>' : '') +
+            (coveredByKit ? ' <span class="pvs-dlp-kit-badge">Similar rule in ' + esc(kit.name) + '</span>' : '') +
             '</div>' +
             '<div class="pvs-dlp-scenario-desc">' + esc(s.description) + '</div>' +
             '<div class="pvs-dlp-scenario-meta"><span class="pvs-dlp-action pvs-dlp-action--' + esc(s.action) + '">' + esc(s.action) + '</span>' +
@@ -875,9 +889,6 @@
       html += '</tr>';
     });
     html += '</tbody></table>';
-    el.innerHTML = html;
-  }
-
     el.innerHTML = html;
   }
 
@@ -1076,6 +1087,7 @@
       S.enabledScenarios = [];
       S.expandedKit = null;
       saveState();
+      try { localStorage.removeItem(CL_KEY); } catch(e) {}
       renderKits(); renderLabelTree(); renderLabelPreview();
       renderDLPScenarios(); updateCustomCTA(); updateDeployBadge();
       renderDeploy();
@@ -1116,6 +1128,7 @@
       compareBtn.addEventListener('click', () => { renderCompare(); compareModal.style.display = ''; });
       if (compareClose) compareClose.addEventListener('click', () => { compareModal.style.display = 'none'; });
       compareModal.addEventListener('click', e => { if (e.target === compareModal) compareModal.style.display = 'none'; });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && compareModal.style.display !== 'none') compareModal.style.display = 'none'; });
     }
 
     renderLabelTemplates(); initLabelBuilder(); initLabelTree(); renderLabelTree(); renderLabelPreview();

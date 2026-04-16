@@ -6,7 +6,6 @@
   'use strict';
 
   var D = window.__agplanData || {};
-  var PASS_HASH = 'a0f4bce166a10c8e88d29f5b4a8d4d tried';
 
   // ── Utils ──────────────────────────────────────────────────────────────
   function esc(s) {
@@ -24,57 +23,6 @@
   }
 
   function $(id) { return document.getElementById(id); }
-
-  // ── Password Gate ──────────────────────────────────────────────────────
-  var GATE_KEY = 'agplan_auth_ts';
-  var GATE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
-
-  function sha256(str) {
-    var buf = new TextEncoder().encode(str);
-    return crypto.subtle.digest('SHA-256', buf).then(function (h) {
-      return Array.from(new Uint8Array(h)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
-    });
-  }
-
-  function unlockDashboard() {
-    var gate = $('agplan-gate');
-    var dash = $('agplan-dashboard');
-    if (gate) gate.style.display = 'none';
-    if (dash) dash.style.display = '';
-    initTool();
-  }
-
-  function checkAuth() {
-    var ts = lsGet(GATE_KEY);
-    if (ts && Date.now() - ts < GATE_TTL) {
-      unlockDashboard();
-      return;
-    }
-    // Show gate
-    var submit = $('agplan-gate-submit');
-    var input = $('agplan-gate-pass');
-    var error = $('agplan-gate-error');
-    if (!submit || !input) return;
-
-    function tryUnlock() {
-      var val = input.value;
-      sha256(val).then(function (hash) {
-        if (hash === '0579d11899d8171a96c04302aa2f2f7250adfce591e1a118f332f40c70027be8') {
-          lsSet(GATE_KEY, Date.now());
-          if (error) error.style.display = 'none';
-          unlockDashboard();
-        } else {
-          if (error) error.style.display = 'block';
-          input.value = '';
-          input.focus();
-        }
-      });
-    }
-
-    submit.addEventListener('click', tryUnlock);
-    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryUnlock(); });
-    input.focus();
-  }
 
   // ── Tab Switching ──────────────────────────────────────────────────────
   function initTabs() {
@@ -681,8 +629,8 @@
 
   // ── Entry Point ────────────────────────────────────────────────────────
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkAuth);
+    document.addEventListener('DOMContentLoaded', initTool);
   } else {
-    checkAuth();
+    initTool();
   }
 })();

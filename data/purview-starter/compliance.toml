@@ -70,22 +70,16 @@ short = "E8"
 colour = "#FBBF24"
 
   [[frameworks.controls]]
-  id = "E8-AppControl"
-  name = "Application control"
-  description = "Prevent execution of unapproved programs"
+  id = "E8-DataBackup"
+  name = "Regular backups"
+  description = "Regular backups of important data, software and configuration settings"
+  requires = ["labels"]
+
+  [[frameworks.controls]]
+  id = "E8-UserApp"
+  name = "User application hardening"
+  description = "Configure applications to block or disable unneeded features"
   requires = ["dlp-endpoint"]
-
-  [[frameworks.controls]]
-  id = "E8-Restrict"
-  name = "Restrict admin privileges"
-  description = "Restrict administrative privileges to operating systems and applications"
-  requires = ["encryption"]
-
-  [[frameworks.controls]]
-  id = "E8-MFA"
-  name = "Multi-factor authentication"
-  description = "MFA for access to sensitive information"
-  requires = ["encryption"]
 
 [[frameworks]]
 id = "gdpr"

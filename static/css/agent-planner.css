@@ -5,54 +5,14 @@
    ════════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --agplan-accent: #7DD3FC;
-  --agplan-accent-dim: rgba(125, 211, 252, 0.15);
-  --agplan-accent-glow: rgba(125, 211, 252, 0.3);
+  --agplan-accent: #00A4EF;
+  --agplan-accent-dim: rgba(0, 164, 239, 0.15);
+  --agplan-accent-glow: rgba(0, 164, 239, 0.3);
 }
 
 /* ── Page Container ────────────────────────────────────────────────────── */
 .agplan-page { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 3rem; }
 .agplan-container { max-width: 1000px; margin: 0 auto; }
-
-/* ── Password Gate ─────────────────────────────────────────────────────── */
-.agplan-gate-card {
-  max-width: 420px; margin: 4rem auto; padding: 2.5rem 2rem; text-align: center;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-}
-.agplan-gate-lock { font-size: 3rem; margin-bottom: 0.75rem; }
-.agplan-gate-title {
-  font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 0.25rem;
-}
-.agplan-gate-subtitle {
-  font-size: 1rem; color: var(--agplan-accent); font-weight: 600; margin: 0 0 0.75rem;
-}
-.agplan-gate-desc {
-  font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin: 0 0 1.5rem;
-}
-.agplan-gate-form { display: flex; flex-direction: column; gap: 0.75rem; }
-.agplan-gate-form input {
-  width: 100%; padding: 0.85rem 1rem; font-size: 1rem; text-align: center;
-  background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.12);
-  border-radius: 10px; color: #fff; outline: none; transition: border-color 0.2s;
-  box-sizing: border-box;
-}
-.agplan-gate-form input:focus {
-  border-color: var(--agplan-accent);
-  box-shadow: 0 0 0 3px var(--agplan-accent-dim);
-}
-.agplan-gate-form button {
-  padding: 0.85rem; font-size: 1rem; font-weight: 700; border: none;
-  border-radius: 10px; cursor: pointer; transition: all 0.2s;
-  background: var(--agplan-accent); color: #000;
-}
-.agplan-gate-form button:hover { filter: brightness(1.1); transform: translateY(-1px); }
-.agplan-gate-error {
-  display: none; color: #f87171; font-size: 0.82rem; margin: 0; padding: 0;
-}
-.agplan-gate-footer {
-  margin-top: 1.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.3);
-}
 
 /* ── Glass Pill Tabs ───────────────────────────────────────────────────── */
 .agplan-tabs {
@@ -69,7 +29,7 @@
 }
 .agplan-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
 .agplan-tab.active {
-  color: #000; background: var(--agplan-accent); border-color: var(--agplan-accent);
+  color: #fff; background: var(--agplan-accent); border-color: var(--agplan-accent);
   box-shadow: 0 2px 8px var(--agplan-accent-glow);
 }
 .agplan-panel { display: none; }
@@ -85,7 +45,7 @@
 }
 .agplan-btn-primary {
   padding: 0.7rem 1.5rem; font-size: 0.9rem; font-weight: 700; border: none;
-  border-radius: 10px; cursor: pointer; background: var(--agplan-accent); color: #000;
+  border-radius: 10px; cursor: pointer; background: var(--agplan-accent); color: #fff;
   transition: all 0.2s;
 }
 .agplan-btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
@@ -483,7 +443,7 @@
 }
 .agplan-tree-result-link {
   display: inline-block; margin-top: 0.75rem; padding: 0.5rem 1.25rem;
-  font-size: 0.85rem; font-weight: 600; color: #000; background: var(--agplan-accent);
+  font-size: 0.85rem; font-weight: 600; color: #fff; background: var(--agplan-accent);
   border-radius: 8px; text-decoration: none; transition: all 0.2s;
 }
 .agplan-tree-result-link:hover { filter: brightness(1.1); }

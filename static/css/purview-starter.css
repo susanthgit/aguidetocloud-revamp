@@ -1322,6 +1322,8 @@
   .site-nav, .pvs-tabs, .tool-hero, .tool-eco, .pvs-cross-links,
   .pvs-deploy-header-actions, .pvs-copy-btn, #pvs-download-ps,
   .pvs-email-actions, .pvs-goto-kits, .global-btt, .feedback-fab,
+  .pvs-export-tabs, #pvs-export-doc, .pvs-step-check,
+  .pvs-checklist-progress, .pvs-e3-filter, #pvs-compare-kits,
   [data-pagefind-body] { display: none !important; }
   .pvs-page { max-width: 100%; padding: 0; }
   .pvs-panel { display: none !important; }
