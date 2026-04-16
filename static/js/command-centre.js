@@ -58,7 +58,15 @@
   function fetchYT() {
     if (ytData) { renderYouTube(ytData); return; }
     fetch(API + '?youtube=1').then(function(r) { return r.json(); }).then(function(data) {
-      if (!data.error) { ytData = data; renderYouTube(data); updateDashboardWithYT(); }
+      if (data.error) {
+        // Show error in YouTube view
+        ['cc-yt-velocity','cc-yt-titles','cc-yt-projections','cc-yt-scorecard'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && !el.innerHTML.trim()) el.innerHTML = '<p style="color:var(--cc-amber);font-size:0.82rem">YouTube API: ' + esc(data.error.replace(/<[^>]*>/g, '').slice(0, 80)) + '</p>';
+        });
+        return;
+      }
+      ytData = data; renderYouTube(data); updateDashboardWithYT();
     }).catch(function() {});
   }
 
