@@ -2047,6 +2047,102 @@ a.welcome-stat-link:hover {
   margin: 0 auto;
   padding: 3rem 2rem;
 }
+
+/* ── BLOG DESIGN SYSTEM v2 ─────────────── */
+/* Color-coded heading hierarchy for visual scanning */
+.single-content .content-body {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Heading Hierarchy: Color-Coded Chapters ── */
+/* h2: Magenta — Major sections. Brand color. Chapter breaks. */
+.single-content .content-body h2 {
+  color: var(--neon-magenta);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 102, 255, 0.15);
+  scroll-margin-top: 5rem;
+  letter-spacing: -0.01em;
+}
+
+/* h3: Matrix Green — Subsections. Bold, distinctive. */
+.single-content .content-body h3 {
+  color: #39ff14;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2.8rem;
+  margin-bottom: 0.8rem;
+  scroll-margin-top: 5rem;
+}
+
+/* h4: Warm Amber — Detail points, before-the-elaboration markers. */
+.single-content .content-body h4 {
+  color: #FBBF24;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  scroll-margin-top: 5rem;
+}
+
+/* h5/h6: Muted supporting levels */
+.single-content .content-body h5 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Prose Rhythm: Generous breathing room ── */
+.single-content .content-body p {
+  margin-bottom: 1.4em;
+}
+
+/* Strong text in paragraphs gets subtle emphasis */
+.single-content .content-body p > strong:first-child,
+.single-content .content-body li > strong:first-child {
+  color: #e0e0f0;
+}
+
+/* Lists: spacious, scannable */
+.single-content .content-body ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.single-content .content-body ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.single-content .content-body li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+/* Nested lists tighter */
+.single-content .content-body li > ul,
+.single-content .content-body li > ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Horizontal rules as chapter dividers ── */
+.single-content .content-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102, 255, 255, 0.2), transparent);
+  margin: 3rem 0;
+}
 /* About page: magenta gradient top */
 .is-about main {
   background: linear-gradient(180deg, color-mix(in srgb, #ff66ff 35%, rgba(3, 3, 8, 0.8)) 0%, transparent 300px);
@@ -2100,52 +2196,15 @@ a.welcome-stat-link:hover {
   height: 100%;
 }
 .single-content h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #fff;
   margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 .single-content .meta {
   color: var(--text-muted);
   margin-bottom: 2rem;
-}
-.single-content .content-body {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-.single-content .content-body p {
-  margin-bottom: 1.25em;
-}
-.single-content .content-body h2 {
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  scroll-margin-top: 5rem;
-}
-.single-content .content-body h3 {
-  color: rgba(255, 255, 255, 0.9);
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  scroll-margin-top: 5rem;
-}
-.single-content .content-body h4 {
-  color: rgba(255, 255, 255, 0.85);
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  scroll-margin-top: 5rem;
-}
-.single-content .content-body ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
 }
 /* Inline code */
 .single-content .content-body code {
@@ -2617,41 +2676,38 @@ a.welcome-stat-link:hover {
   .blog-timeline { padding-left: 2rem; }
   .blog-tl-dot { left: -1.68rem; }
 }
-/* Blog content body heading overrides (generic .content-body context) */
-.content-body h2 {
-  color: #fff;
-  margin-top: 2.5rem;
-  margin-bottom: 0.8rem;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-}
-.content-body h3 {
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-}
+/* Blog content body links — purple, subtle and elegant */
 .content-body a {
-  color: var(--neon-cyan);
+  color: #a78bfa;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(167, 139, 250, 0.35);
+  transition: color 0.2s, text-decoration-color 0.2s;
 }
 .content-body a:hover {
   color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+.content-body a:visited {
+  color: #c4b5fd;
 }
 .content-body blockquote {
-  border-left: 3px solid var(--neon-cyan);
-  padding: 0.8rem 1rem;
-  margin: 1rem 0;
+  border-left: 4px solid var(--neon-cyan);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
   background: rgba(102, 255, 255, 0.04);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 12px 12px 0;
   color: var(--text-secondary);
+  font-size: 1rem;
+}
+.content-body blockquote p:last-child {
+  margin-bottom: 0;
 }
 .content-body table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   border: 1px solid rgba(102, 255, 255, 0.15);
   border-radius: 14px;
   overflow: hidden;
@@ -2676,10 +2732,104 @@ a.welcome-stat-link:hover {
 .content-body tr:hover {
   background: rgba(102, 255, 255, 0.04);
 }
-/* FAQ question styling — bold numbered questions get cyan colour for depth */
+.content-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SEMANTIC CALLOUT CARDS ──────────────── */
+/* Base callout styles (shared) */
+.content-body blockquote.callout {
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+/* 💡 Tip / Insight — green */
+.content-body blockquote.callout-tip {
+  border-left: 4px solid #39ff14;
+  background: linear-gradient(135deg, rgba(10, 40, 10, 0.5) 0%, rgba(20, 50, 20, 0.4) 100%);
+  border-color: rgba(57, 255, 20, 0.2);
+  border-left-color: #39ff14;
+}
+.content-body blockquote.callout-tip strong { color: #39ff14; }
+
+/* ⚠️ Warning / Note — amber */
+.content-body blockquote.callout-warn {
+  border-left: 4px solid #FBBF24;
+  background: linear-gradient(135deg, rgba(42, 34, 0, 0.5) 0%, rgba(58, 48, 16, 0.4) 100%);
+  border-color: rgba(251, 191, 36, 0.2);
+  border-left-color: #FBBF24;
+}
+.content-body blockquote.callout-warn strong { color: #FBBF24; }
+
+/* 📚🔍 Reference / Official docs — blue */
+.content-body blockquote.callout-ref {
+  border-left: 4px solid #60A5FA;
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.5) 0%, rgba(27, 42, 74, 0.4) 100%);
+  border-color: rgba(96, 165, 250, 0.2);
+  border-left-color: #60A5FA;
+}
+.content-body blockquote.callout-ref strong { color: #60A5FA; }
+
+/* 📌 Action / Do this — magenta */
+.content-body blockquote.callout-action {
+  border-left: 4px solid var(--neon-magenta);
+  background: linear-gradient(135deg, rgba(40, 10, 40, 0.5) 0%, rgba(50, 20, 50, 0.4) 100%);
+  border-color: rgba(255, 102, 255, 0.2);
+  border-left-color: var(--neon-magenta);
+}
+.content-body blockquote.callout-action strong { color: var(--neon-magenta); }
+
+/* 💬 Scenario — teal */
+.content-body blockquote.callout-scenario {
+  border-left: 4px solid #14B8A6;
+  background: linear-gradient(135deg, rgba(10, 26, 30, 0.5) 0%, rgba(17, 34, 40, 0.4) 100%);
+  border-color: rgba(20, 184, 166, 0.2);
+  border-left-color: #14B8A6;
+}
+.content-body blockquote.callout-scenario strong { color: #14B8A6; }
+
+/* Disclaimer — muted gray */
+.content-body blockquote.callout-disclaimer {
+  border-left: 4px solid #6B7280;
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.5) 0%, rgba(30, 30, 40, 0.4) 100%);
+  border-color: rgba(107, 114, 128, 0.2);
+  border-left-color: #6B7280;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.content-body blockquote.callout-disclaimer strong { color: #9CA3AF; }
+
+/* ── FAQ SECTION STYLING ──────────────────── */
+/* blog-faq wraps all Q&A pairs — style each pair distinctly */
+.blog-faq {
+  margin: 2rem 0;
+}
+/* Questions: magenta, bold, clear separator */
 .blog-faq p > strong:first-child:last-child {
-  color: var(--neon-cyan);
-  font-size: 1rem;
+  color: var(--neon-magenta);
+  font-size: 1.05rem;
+  display: block;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* First question doesn't need top border */
+.blog-faq p:first-child > strong:first-child:last-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+/* Answers: slightly indented, softer color */
+.blog-faq p + p:not(:has(> strong:first-child:last-child)) {
+  padding-left: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* trainer-script used as FAQ cards — make them lighter weight */
+.blog-faq .trainer-script,
+.content-body > .trainer-script:has(strong:first-child) {
+  margin: 0.5rem 0;
 }
 .content-body .mermaid {
   margin: 2rem 0;
@@ -2708,14 +2858,6 @@ pre.mermaid {
   color: transparent;
   width: 100%;
 }
-.content-body ul, .content-body ol {
-  padding-left: 1.5rem;
-  margin: 0.75rem 0;
-}
-.content-body li {
-  margin-bottom: 0.4rem;
-  line-height: 1.7;
-}
 
 /* ── BLOG MOBILE RESPONSIVENESS ─────────── */
 @media (max-width: 768px) {
@@ -2723,13 +2865,18 @@ pre.mermaid {
     padding: 2rem 1.2rem;
   }
   .single-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   .single-content .content-body h2 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    margin-top: 2.5rem;
   }
   .single-content .content-body h3 {
     font-size: 1.15rem;
+    margin-top: 2rem;
+  }
+  .single-content .content-body h4 {
+    font-size: 1.05rem;
   }
   .single-content .content-body pre {
     padding: 1rem;

@@ -1,4 +1,4 @@
-// Blog enhancements: progress bar + code copy buttons
+// Blog enhancements: progress bar + code copy buttons + semantic callout cards
 (function() {
   // Reading progress bar
   var bar = document.querySelector('.blog-progress-bar');
@@ -36,5 +36,32 @@
       });
     });
     wrap.appendChild(btn);
+  });
+
+  // Semantic callout cards — auto-classify blockquotes by emoji/keyword, then strip emoji
+  var calloutMap = [
+    { pattern: /^[\s]*💡/, cls: 'callout-tip' },
+    { pattern: /^[\s]*⚠️/, cls: 'callout-warn' },
+    { pattern: /^[\s]*📚/, cls: 'callout-ref' },
+    { pattern: /^[\s]*📖/, cls: 'callout-ref' },
+    { pattern: /^[\s]*📌/, cls: 'callout-action' },
+    { pattern: /^[\s]*📋/, cls: 'callout-action' },
+    { pattern: /^[\s]*🔍/, cls: 'callout-ref' },
+    { pattern: /^[\s]*(Situation:|Scenario:)/, cls: 'callout-scenario' },
+    { pattern: /^[\s]*Disclaimer:/, cls: 'callout-disclaimer' },
+  ];
+  document.querySelectorAll('.content-body blockquote').forEach(function(bq) {
+    var text = bq.textContent.trim();
+    for (var i = 0; i < calloutMap.length; i++) {
+      if (calloutMap[i].pattern.test(text)) {
+        bq.classList.add('callout', calloutMap[i].cls);
+        // Strip leading emoji from first paragraph
+        var firstP = bq.querySelector('p');
+        if (firstP) {
+          firstP.innerHTML = firstP.innerHTML.replace(/^[\s]*(💡|⚠️|📚|📌|🔍|💬|📖|📋)\s*/g, '');
+        }
+        break;
+      }
+    }
   });
 })();
