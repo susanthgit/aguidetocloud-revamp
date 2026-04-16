@@ -368,10 +368,7 @@ desc = "Live transparent usage stats — tool leaderboard & trends"
 color = "#64748B"
 category = "community"
 visual = "bars"
-is_tool = false
-
-[[tools]]
-url = "/feedback/"
+is_tool = true
 emoji = "💬"
 name = "Community Feedback"
 short = "Feedback"
@@ -379,4 +376,15 @@ desc = "Shape what we build next — ideas, questions, bugs"
 color = "#FBBF24"
 category = "community"
 visual = "lines"
+is_tool = false
+
+[[tools]]
+url = "/feedback/"
+emoji = "💬"
+name = "Community Feedback"
+short = "Feedback"
+desc = "Share ideas, report bugs, request features"
+color = "#FBBF24"
+category = "community"
+visual = "circles"
 is_tool = false
