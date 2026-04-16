@@ -1021,7 +1021,10 @@
       banking:    { mode: 'random', length: 20, upper: true, lower: true, numbers: true, symbols: true },
       pin:        { mode: 'pin', pinLength: 6 },
       memorable:  { mode: 'passphrase', words: 4 },
-      wifi:       { mode: 'random', length: 12, upper: true, lower: true, numbers: true, symbols: false }
+      wifi:       { mode: 'random', length: 12, upper: true, lower: true, numbers: true, symbols: false },
+      entra:      { mode: 'random', length: 16, upper: true, lower: true, numbers: true, symbols: true },
+      m365admin:  { mode: 'random', length: 24, upper: true, lower: true, numbers: true, symbols: true },
+      service:    { mode: 'random', length: 32, upper: true, lower: true, numbers: true, symbols: true }
     };
 
     $$('.pwgen-qs-card').forEach(card => {

@@ -399,6 +399,8 @@
   background: var(--dt-accent-dim);
   color: #fff;
 }
+.deptime-watch-btn { color: rgba(255,255,255,0.3); }
+.deptime-watch-btn.deptime-watched { color: #FBBF24; text-shadow: 0 0 6px rgba(251,191,36,0.4); }
 
 /* Timeline View */
 .deptime-timeline-view {

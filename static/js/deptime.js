@@ -25,8 +25,25 @@
   let showPassed = false;
   let currentSort = 'deadline'; // [#4] sort options
   let actionOnlyFilter = false; // [#3] action required toggle
+  let watchlistFilter = false;
 
   const categoryOverride = window.__deptimeCategoryFilter || null;
+
+  // ─── Watchlist (localStorage) ───
+  const _watchKey = 'deptime_watchlist';
+  let _watchlist = {};
+  try { _watchlist = JSON.parse(localStorage.getItem(_watchKey) || '{}'); } catch(e) { _watchlist = {}; }
+  function isWatched(id) { return !!_watchlist[id]; }
+  function toggleWatch(id) {
+    if (_watchlist[id]) { delete _watchlist[id]; } else { _watchlist[id] = true; }
+    try { localStorage.setItem(_watchKey, JSON.stringify(_watchlist)); } catch(e) {}
+  }
+  function updateWatchlistCount() {
+    const btn = document.getElementById('deptime-watch-toggle');
+    if (!btn) return;
+    const count = Object.keys(_watchlist).length;
+    btn.textContent = count > 0 ? `My Watchlist (${count})` : 'My Watchlist';
+  }
 
   /* ─── Data Loading ─── */
   async function loadData() {
@@ -139,7 +156,9 @@
     if (item.official_url) actions.push(`<a href="${item.official_url}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🔗 Source</a>`);
 
     // [#5] Deep-link copy
-    actions.push(`<button class="deptime-action-link deptime-share-btn" onclick="event.stopPropagation();window.__deptimeCopyLink('${item.id}')" title="Copy shareable link">🔗 Share</button>`);
+    actions.push(`<button class="deptime-action-link deptime-share-btn" onclick="event.stopPropagation();window.__deptimeCopyLink('${item.id}')" title="Copy shareable link">Share</button>`);
+    const watchClass = isWatched(item.id) ? ' deptime-watched' : '';
+    actions.push(`<button class="deptime-action-link deptime-watch-btn${watchClass}" onclick="event.stopPropagation();window.__deptimeToggleWatch('${item.id}',this)" title="Add to watchlist">★</button>`);
 
     return `<div class="deptime-card" data-id="${item.id}" onclick="window.__deptimeShowDetail('${item.id}')">
       <div class="deptime-card-urgency deptime-card-urgency-${urgencyClass}"></div>
@@ -250,6 +269,8 @@
       if (f.impact && item.impact !== f.impact) return false;
       // [#3] Action required toggle
       if (actionOnlyFilter && !item.action_required) return false;
+      // Watchlist toggle
+      if (watchlistFilter && !isWatched(item.id)) return false;
       if (f.search) {
         const haystack = [
           item.title, item.description, item.mc_id,
@@ -365,6 +386,14 @@
       const btn = document.querySelector(`[data-id="${id}"] .deptime-share-btn`);
       if (btn) { const orig = btn.textContent; btn.textContent = '✓ Copied!'; setTimeout(() => { btn.textContent = orig; }, 1500); }
     });
+  };
+
+  /* Watchlist toggle */
+  window.__deptimeToggleWatch = function (id, btn) {
+    toggleWatch(id);
+    if (btn) btn.classList.toggle('deptime-watched', isWatched(id));
+    updateWatchlistCount();
+    if (watchlistFilter) applyFilters();
   };
 
   /* ─── Detail Modal ─── */
@@ -535,6 +564,17 @@
           applyFilters();
         });
       }
+
+      // Watchlist toggle
+      const watchBtn = document.getElementById('deptime-watch-toggle');
+      if (watchBtn) {
+        watchBtn.addEventListener('click', () => {
+          watchlistFilter = !watchlistFilter;
+          watchBtn.classList.toggle('active', watchlistFilter);
+          applyFilters();
+        });
+      }
+      updateWatchlistCount();
 
       // [#1] Clickable stat cards
       document.getElementById('stat-critical').closest('.deptime-stat-card').addEventListener('click', () => setStatFilter('critical'));
