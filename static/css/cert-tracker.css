@@ -1020,3 +1020,115 @@
   .kanban-card-title { display: none; }
   .kanban-lane-label { font-size: 0.75rem; }
 }
+
+/* ── Video Cards ── */
+.cert-video-section {
+  margin: 2rem 0 1.5rem;
+  padding: 1.5rem;
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 16px;
+}
+.cert-video-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cert-accent);
+  margin: 0 0 0.3rem;
+}
+.cert-video-intro {
+  font-size: 0.85rem;
+  color: var(--cert-text-dim);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.cert-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.cert-video-card {
+  background: var(--cert-card);
+  border: 1px solid var(--cert-border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.cert-video-card:hover {
+  border-color: var(--cert-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+.cert-video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+}
+.cert-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+.cert-video-card:hover .cert-video-thumb img {
+  opacity: 0.85;
+}
+.cert-video-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.cert-video-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.2s;
+}
+.cert-video-card:hover .cert-video-play {
+  transform: scale(1.1);
+}
+.cert-video-play svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  opacity: 0.9;
+}
+.cert-video-card:hover .cert-video-play svg {
+  opacity: 1;
+}
+.cert-video-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+.cert-video-badge-course {
+  background: rgba(16, 185, 129, 0.9);
+  color: #000;
+}
+.cert-video-badge-qa {
+  background: rgba(59, 130, 246, 0.9);
+  color: #fff;
+}
+.cert-video-info {
+  padding: 0.7rem 0.85rem;
+}
+.cert-video-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cert-text);
+  line-height: 1.4;
+}
+@media (max-width: 640px) {
+  .cert-video-grid { grid-template-columns: 1fr; }
+}
