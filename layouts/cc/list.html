@@ -1,0 +1,161 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/command-centre.css?v={{ site.Params.cache_version }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- PASSWORD GATE -->
+<div id="cc-gate" style="display:flex;align-items:center;justify-content:center;min-height:80vh">
+  <div class="cc-gate-card">
+    <div class="cc-gate-icon">&#9881;</div>
+    <h2>Command Centre</h2>
+    <p>Private operations dashboard</p>
+    <div class="cc-gate-form">
+      <input type="password" id="cc-pass" placeholder="Access code" autocomplete="off" aria-label="Access code">
+      <button id="cc-submit">Unlock</button>
+    </div>
+    <p class="cc-gate-error" id="cc-error" style="display:none">Wrong code</p>
+  </div>
+</div>
+
+<!-- COMMAND CENTRE -->
+<div id="cc-main" style="display:none">
+  <!-- Header bar -->
+  <div class="cc-header">
+    <div class="cc-header-left">
+      <span class="cc-logo">&#9881; CC</span>
+      <span class="cc-live" id="cc-live" style="display:none"><span class="cc-live-dot"></span><span id="cc-live-num">0</span> live</span>
+    </div>
+    <div class="cc-header-right">
+      <span class="cc-health" id="cc-health-badge"></span>
+      <span class="cc-updated" id="cc-updated"></span>
+    </div>
+  </div>
+
+  <!-- Status strip -->
+  <div class="cc-status" id="cc-status"></div>
+
+  <!-- View switcher -->
+  <div class="cc-views">
+    <button class="cc-view active" data-view="dashboard">Dashboard</button>
+    <button class="cc-view" data-view="youtube">YouTube</button>
+    <button class="cc-view" data-view="seo">SEO</button>
+  </div>
+
+  <!-- VIEW: Dashboard -->
+  <div class="cc-panel active" id="cc-dashboard">
+    <!-- Priority Actions -->
+    <section class="cc-section">
+      <h2 class="cc-section-title">Do Today</h2>
+      <div id="cc-actions"></div>
+    </section>
+
+    <!-- Dual Pulse -->
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">Site (30d)</h3>
+          <canvas id="cc-site-pulse" height="120"></canvas>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">YouTube (28d)</h3>
+          <canvas id="cc-yt-pulse" height="120"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Working / What Needs Fixing -->
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label cc-label-green">Working</h3>
+          <div id="cc-working"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label cc-label-red">Needs Fixing</h3>
+          <div id="cc-fixing"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Bet Engine -->
+    <section class="cc-section">
+      <h2 class="cc-section-title">Next Content Bets</h2>
+      <div id="cc-bets"></div>
+    </section>
+
+    <!-- Growth Trajectory -->
+    <section class="cc-section">
+      <h2 class="cc-section-title">Growth</h2>
+      <canvas id="cc-growth-chart" height="180"></canvas>
+      <div id="cc-growth-stats" class="cc-metrics-row"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: YouTube -->
+  <div class="cc-panel" id="cc-youtube">
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">Main Channel</h3>
+          <div id="cc-yt-main" class="cc-metrics-row"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">Bites Channel</h3>
+          <div id="cc-yt-bites" class="cc-metrics-row"></div>
+        </div>
+      </div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Weekly Scorecard</h2>
+      <div id="cc-yt-scorecard"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Velocity Leaderboard</h2>
+      <p class="cc-hint">Ranked by views/day — what's growing NOW</p>
+      <div id="cc-yt-velocity"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Title Scorecards</h2>
+      <p class="cc-hint">Weakest first — fix these for better CTR</p>
+      <div id="cc-yt-titles"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Subscriber Projections</h2>
+      <div id="cc-yt-projections"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: SEO -->
+  <div class="cc-panel" id="cc-seo">
+    <section class="cc-section">
+      <h2 class="cc-section-title">Opportunities</h2>
+      <p class="cc-hint">Ranking well but under-clicked — fix titles/descriptions</p>
+      <div id="cc-seo-opps"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">All Queries</h2>
+      <label class="cc-filter"><input type="checkbox" id="cc-seo-filter" checked> Hide legacy (hiking/trails)</label>
+      <div id="cc-seo-queries"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Content Gaps</h2>
+      <div id="cc-seo-gaps"></div>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="/js/command-centre.js?v={{ site.Params.cache_version }}"></script>
+<script>
+(function(){
+  var H='0579d11899d8171a96c04302aa2f2f7250adfce591e1a118f332f40c70027be8';
+  var g=document.getElementById('cc-gate'),m=document.getElementById('cc-main'),p=document.getElementById('cc-pass'),b=document.getElementById('cc-submit'),e=document.getElementById('cc-error');
+  if(sessionStorage.getItem('cc-ok')==='1'){unlock();}else if(p){setTimeout(function(){p.focus();},200);}
+  async function hash(s){var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');}
+  async function tryUnlock(){var h=await hash(p.value);if(h===H){sessionStorage.setItem('cc-ok','1');unlock();}else{p.value='';if(e)e.style.display='block';setTimeout(function(){if(e)e.style.display='none';},2000);}}
+  if(b)b.addEventListener('click',tryUnlock);
+  if(p)p.addEventListener('keydown',function(ev){if(ev.key==='Enter')tryUnlock();});
+  function unlock(){if(g)g.style.display='none';if(m)m.style.display='block';}
+})();
+</script>
+{{ end }}
