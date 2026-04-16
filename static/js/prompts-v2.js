@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
         copyBtn.textContent = '✅ Copied!';
         copyBtn.classList.add('copied');
         if (window.clarity) window.clarity('event', 'prompt_copy');
-        setTimeout(function () { copyBtn.textContent = '📋 Copy'; copyBtn.classList.remove('copied'); }, 2000);
+        setTimeout(function () { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';
         document.body.appendChild(ta); ta.select();
         document.execCommand('copy'); document.body.removeChild(ta);
         copyBtn.textContent = '✅ Copied!';
-        setTimeout(function () { copyBtn.textContent = '📋 Copy'; }, 2000);
+        setTimeout(function () { copyBtn.textContent = 'Copy'; }, 2000);
       });
       return;
     }

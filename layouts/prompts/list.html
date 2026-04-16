@@ -143,7 +143,8 @@
                   {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
                 {{ end }}
               </div>
-              <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+              <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">Copy</button>
+              <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Open in Prompt Polisher">Polish</a>
             </div>
 
             <div class="prompt-row-body"{{ if not $isFirst }} hidden{{ end }}>
@@ -182,7 +183,8 @@
               {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
             {{ end }}
           </div>
-          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">📋 Copy</button>
+          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">Copy</button>
+          <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Open in Prompt Polisher">Polish</a>
         </div>
 
         <div class="prompt-row-body" hidden>

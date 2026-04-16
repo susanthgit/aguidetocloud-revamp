@@ -431,6 +431,26 @@
   border-color: var(--neon-green);
   color: var(--bg-primary);
 }
+.prompt-polish-btn {
+  background: rgba(236,72,153,0.08);
+  border: 1px solid rgba(236,72,153,0.2);
+  color: #EC4899;
+  padding: 0.4rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.prompt-polish-btn:hover {
+  background: #EC4899;
+  color: var(--bg-primary);
+  box-shadow: 0 0 15px rgba(236,72,153,0.3);
+}
 
 /* ── EMPTY / NO RESULTS STATE ───────────────── */
 

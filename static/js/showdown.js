@@ -167,6 +167,7 @@
         }
         renderCompareSelector();
         renderCompareGrid();
+        syncCompareUrl();
       });
     });
   }
@@ -257,11 +258,16 @@
       selectedProviders = [...PRESETS[btn.dataset.preset]];
       renderCompareSelector();
       renderCompareGrid();
+      syncCompareUrl();
     });
   });
 
   renderCompareSelector();
   renderCompareGrid();
+
+  function syncCompareUrl() {
+    history.replaceState(null, '', updateParam('compare', selectedProviders.length ? selectedProviders.join(',') : null));
+  }
 
   // ══════════════════════════════════════════
   // TAB 3: PRICING
@@ -675,5 +681,16 @@
   // ── Restore tab from URL ──
   const initTab = getParam('tab');
   if (initTab) switchTab(initTab);
+
+  // ── Restore compare state from URL ──
+  const initCompare = getParam('compare');
+  if (initCompare) {
+    const keys = initCompare.split(',').filter(k => PROVIDERS[k]);
+    if (keys.length >= 2) {
+      selectedProviders = keys.slice(0, 4);
+      renderCompareSelector();
+      renderCompareGrid();
+    }
+  }
 
 })();

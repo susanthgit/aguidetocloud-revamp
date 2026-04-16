@@ -119,6 +119,16 @@
 
     const active = allIssues.filter(i => !i.is_resolved);
 
+    // Update tab badge with active count
+    const incTab = document.querySelector('.shealth-tab[data-tab="incidents"]');
+    if (incTab) {
+      let badge = incTab.querySelector('.shealth-tab-badge');
+      if (active.length > 0) {
+        if (!badge) { badge = document.createElement('span'); badge.className = 'shealth-tab-badge'; incTab.appendChild(badge); }
+        badge.textContent = active.length;
+      } else if (badge) { badge.remove(); }
+    }
+
     if (active.length === 0) {
       list.innerHTML = '';
       if (countEl) countEl.textContent = '0';
