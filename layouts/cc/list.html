@@ -19,6 +19,62 @@
 
 <!-- COMMAND CENTRE -->
 <div id="cc-main" style="display:none">
+  <!-- Welcome Overlay (first visit only) -->
+  <div class="cc-welcome" id="cc-welcome" style="display:none">
+    <div class="cc-welcome-card">
+      <h2>Welcome to your Command Centre</h2>
+      <p>Everything you need to grow — in one place. Here's how it works:</p>
+      <div class="cc-welcome-grid">
+        <div class="cc-welcome-item"><span class="cc-welcome-key">D</span><strong>Dashboard</strong><br>Your morning check — what happened, what to do today</div>
+        <div class="cc-welcome-item"><span class="cc-welcome-key">Y</span><strong>YouTube</strong><br>Channel intelligence — what's growing, what needs fixing</div>
+        <div class="cc-welcome-item"><span class="cc-welcome-key">S</span><strong>SEO</strong><br>Search growth — which queries to target, where to improve</div>
+        <div class="cc-welcome-item"><span class="cc-welcome-key">T</span><strong>Strategy</strong><br>Plan ahead — topic clusters, content calendar, predictions</div>
+      </div>
+      <p class="cc-welcome-tip">Press <kbd>?</kbd> anytime for help. Press <kbd>R</kbd> to refresh data.</p>
+      <button class="cc-welcome-btn" id="cc-welcome-dismiss">Got it — let's go</button>
+    </div>
+  </div>
+
+  <!-- Help Modal (press ?) -->
+  <div class="cc-help-overlay" id="cc-help" style="display:none">
+    <div class="cc-help-card">
+      <div class="cc-help-header"><h3>Command Centre Reference</h3><button class="cc-help-close" id="cc-help-close">&times;</button></div>
+      <div class="cc-help-body">
+        <h4>Keyboard Shortcuts</h4>
+        <div class="cc-help-keys"><span><kbd>D</kbd> Dashboard</span><span><kbd>Y</kbd> YouTube</span><span><kbd>S</kbd> SEO</span><span><kbd>T</kbd> Strategy</span><span><kbd>R</kbd> Refresh</span><span><kbd>?</kbd> This help</span></div>
+        <h4>What the Numbers Mean</h4>
+        <div class="cc-help-defs">
+          <p><strong>WoW</strong> — Week-over-Week. Compares this week to last week.</p>
+          <p><strong>Health Score</strong> — 0-100 composite: growth (25) + SEO (25) + engagement (25) + reach (25).</p>
+          <p><strong>Velocity</strong> — Views per day since publish. Shows what's growing NOW, not just old hits.</p>
+          <p><strong>Engagement</strong> — (Likes + Comments) / Views. How much your audience interacts.</p>
+          <p><strong>Title Score</strong> — 0-100 rating: power words, length, specificity, curiosity gap.</p>
+          <p><strong>Quick Wins</strong> — SEO queries at position 8-20. One content push could reach page 1.</p>
+          <p><strong>Content Bets</strong> — Suggested next content based on search demand + what's working.</p>
+          <p><strong>Topic Clusters</strong> — All content grouped by theme. Shows which topics drive growth.</p>
+          <p><strong>Portfolio Score</strong> — Health of your entire content portfolio: blogs + tools + videos + SEO.</p>
+        </div>
+        <h4>Data Sources</h4>
+        <div class="cc-help-defs">
+          <p><strong>GA4</strong> — Site traffic, page views, users, countries, devices. Refreshes every 5 min.</p>
+          <p><strong>GSC</strong> — Google Search Console. Queries, positions, CTR. Lags ~2 days.</p>
+          <p><strong>YouTube</strong> — Channel stats + video data. Refreshes every 6 hours.</p>
+          <p><strong>Realtime</strong> — Live visitor count. Updates every 30 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Morning Routine Guide -->
+  <div class="cc-routine" id="cc-routine" style="display:none">
+    <div class="cc-routine-bar">
+      <span class="cc-routine-step" id="cc-routine-label">Step 1/5</span>
+      <span class="cc-routine-text" id="cc-routine-text"></span>
+      <button class="cc-routine-next" id="cc-routine-next">Next &rarr;</button>
+      <button class="cc-routine-skip" id="cc-routine-skip">&times;</button>
+    </div>
+  </div>
+
   <!-- Header bar -->
   <div class="cc-header">
     <div class="cc-header-left">
@@ -28,6 +84,8 @@
     <div class="cc-header-right">
       <span class="cc-health" id="cc-health-badge"></span>
       <span class="cc-updated" id="cc-updated"></span>
+      <button class="cc-header-btn" id="cc-morning-btn" title="Start morning routine">&#9728;</button>
+      <button class="cc-header-btn" id="cc-help-btn" title="Help (?)">?</button>
     </div>
   </div>
 
@@ -51,7 +109,7 @@
 
     <!-- Priority Actions -->
     <section class="cc-section">
-      <div class="cc-section-head"><h2 class="cc-section-title">Do Today</h2><button class="cc-export-btn" id="cc-copy-report" title="Copy weekly report">Copy Report</button></div>
+      <div class="cc-section-head"><h2 class="cc-section-title">Do Today</h2><span class="cc-tip" data-tip="Your top priority actions based on real data. Fix these first.">?</span><button class="cc-export-btn" id="cc-copy-report" title="Copy weekly report">Copy Report</button></div>
       <div id="cc-actions"></div>
     </section>
 

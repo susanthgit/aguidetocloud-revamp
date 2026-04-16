@@ -481,6 +481,7 @@
     else if (key === 's') switchView('seo');
     else if (key === 't') switchView('strategy');
     else if (key === 'r') { e.preventDefault(); location.reload(); }
+    else if (e.key === '?') toggleHelp();
   });
   function switchView(name) {
     document.querySelectorAll('.cc-view').forEach(function(b) { b.classList.remove('active'); if (b.dataset.view === name) b.classList.add('active'); });
@@ -756,6 +757,96 @@
     }
     requestAnimationFrame(tick);
   }
+
+  // ── UX: WELCOME OVERLAY ──
+  (function() {
+    var welcomed = false;
+    try { welcomed = localStorage.getItem('cc_welcomed') === '1'; } catch(e) {}
+    if (!welcomed) {
+      var wel = document.getElementById('cc-welcome');
+      if (wel) wel.style.display = 'flex';
+      var btn = document.getElementById('cc-welcome-dismiss');
+      if (btn) btn.addEventListener('click', function() {
+        wel.style.display = 'none';
+        try { localStorage.setItem('cc_welcomed', '1'); } catch(e) {}
+      });
+    }
+  })();
+
+  // ── UX: HELP MODAL ──
+  function toggleHelp() {
+    var el = document.getElementById('cc-help');
+    if (el) el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+  }
+  var helpBtn = document.getElementById('cc-help-btn');
+  if (helpBtn) helpBtn.addEventListener('click', toggleHelp);
+  var helpClose = document.getElementById('cc-help-close');
+  if (helpClose) helpClose.addEventListener('click', toggleHelp);
+  var helpOverlay = document.getElementById('cc-help');
+  if (helpOverlay) helpOverlay.addEventListener('click', function(e) { if (e.target === helpOverlay) toggleHelp(); });
+
+  // ── UX: SECTION TIPS ──
+  document.querySelectorAll('.cc-tip').forEach(function(tip) {
+    tip.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var existing = document.querySelector('.cc-tip-popup');
+      if (existing) existing.remove();
+      var popup = document.createElement('div');
+      popup.className = 'cc-tip-popup';
+      popup.textContent = tip.dataset.tip;
+      tip.parentElement.appendChild(popup);
+      setTimeout(function() { popup.remove(); }, 4000);
+    });
+  });
+
+  // ── UX: MORNING ROUTINE ──
+  var ROUTINE_STEPS = [
+    { text: 'Read the status strip \u2014 how are views today vs average?', section: 'cc-status' },
+    { text: 'Check Do Today actions \u2014 fix the highest-priority item first', section: 'cc-actions' },
+    { text: 'Look at Biggest Movers \u2014 which tools gained or lost traffic?', section: 'cc-working' },
+    { text: 'Review Content Bets \u2014 what should you create next?', section: 'cc-bets' },
+    { text: 'Done! Open Strategy (T) to plan your week ahead.', section: null }
+  ];
+  var routineStep = 0;
+
+  function startRoutine() {
+    routineStep = 0;
+    switchView('dashboard');
+    showRoutineStep();
+    var bar = document.getElementById('cc-routine');
+    if (bar) bar.style.display = '';
+  }
+
+  function showRoutineStep() {
+    var label = document.getElementById('cc-routine-label');
+    var text = document.getElementById('cc-routine-text');
+    if (!label || !text) return;
+    var step = ROUTINE_STEPS[routineStep];
+    label.textContent = 'Step ' + (routineStep + 1) + '/' + ROUTINE_STEPS.length;
+    text.textContent = step.text;
+    // Highlight section
+    document.querySelectorAll('.cc-routine-highlight').forEach(function(el) { el.classList.remove('cc-routine-highlight'); });
+    if (step.section) {
+      var target = document.getElementById(step.section);
+      if (target) { target.classList.add('cc-routine-highlight'); target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    }
+  }
+
+  var nextBtn = document.getElementById('cc-routine-next');
+  if (nextBtn) nextBtn.addEventListener('click', function() {
+    routineStep++;
+    if (routineStep >= ROUTINE_STEPS.length) {
+      document.getElementById('cc-routine').style.display = 'none';
+      document.querySelectorAll('.cc-routine-highlight').forEach(function(el) { el.classList.remove('cc-routine-highlight'); });
+    } else { showRoutineStep(); }
+  });
+  var skipBtn = document.getElementById('cc-routine-skip');
+  if (skipBtn) skipBtn.addEventListener('click', function() {
+    document.getElementById('cc-routine').style.display = 'none';
+    document.querySelectorAll('.cc-routine-highlight').forEach(function(el) { el.classList.remove('cc-routine-highlight'); });
+  });
+  var morningBtn = document.getElementById('cc-morning-btn');
+  if (morningBtn) morningBtn.addEventListener('click', startRoutine);
 
   // ── INIT ──
   init();

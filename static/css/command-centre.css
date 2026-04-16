@@ -225,6 +225,98 @@ body { background: var(--cc-bg) !important; }
   .cc-status { font-size: 0.75rem; }
 }
 
+/* UX: Welcome Overlay */
+.cc-welcome {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+}
+.cc-welcome-card {
+  background: var(--cc-surface); border: 1px solid var(--cc-border); border-radius: 16px;
+  padding: 2.5rem; max-width: 560px; width: 90%; text-align: center;
+}
+.cc-welcome-card h2 { color: #fff; font-family: var(--cc-mono); font-size: 1.3rem; margin: 0 0 0.5rem; }
+.cc-welcome-card > p { color: var(--cc-muted); font-size: 0.88rem; margin: 0 0 1.5rem; }
+.cc-welcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; text-align: left; margin-bottom: 1.5rem; }
+.cc-welcome-item {
+  background: rgba(255,255,255,0.03); border: 1px solid var(--cc-border); border-radius: 10px;
+  padding: 0.85rem; font-size: 0.82rem; color: var(--cc-text); line-height: 1.5;
+}
+.cc-welcome-item strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+.cc-welcome-key {
+  display: inline-block; font-family: var(--cc-mono); font-weight: 700; font-size: 0.72rem;
+  background: var(--cc-green); color: #000; width: 22px; height: 22px; line-height: 22px;
+  text-align: center; border-radius: 4px; margin-right: 0.4rem; vertical-align: middle;
+}
+.cc-welcome-tip { color: var(--cc-muted); font-size: 0.78rem; margin: 0 0 1.25rem; }
+.cc-welcome-tip kbd { background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 3px; font-family: var(--cc-mono); }
+.cc-welcome-btn {
+  background: var(--cc-green); border: none; color: #000; font-weight: 700; font-family: var(--cc-mono);
+  font-size: 0.88rem; padding: 0.75rem 2rem; border-radius: 8px; cursor: pointer;
+}
+
+/* UX: Help Modal */
+.cc-help-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9998;
+  display: flex; align-items: center; justify-content: center;
+}
+.cc-help-card {
+  background: var(--cc-bg); border: 1px solid var(--cc-border); border-radius: 14px;
+  max-width: 580px; width: 90%; max-height: 80vh; overflow-y: auto;
+}
+.cc-help-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--cc-border); }
+.cc-help-header h3 { color: #fff; font-family: var(--cc-mono); font-size: 1rem; margin: 0; }
+.cc-help-close { background: none; border: none; color: var(--cc-muted); font-size: 1.5rem; cursor: pointer; }
+.cc-help-body { padding: 1.25rem; }
+.cc-help-body h4 { color: var(--cc-green); font-family: var(--cc-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 1rem 0 0.5rem; }
+.cc-help-body h4:first-child { margin-top: 0; }
+.cc-help-keys { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cc-help-keys span { font-size: 0.82rem; color: var(--cc-text); }
+.cc-help-keys kbd { background: rgba(255,255,255,0.08); padding: 0.15rem 0.45rem; border-radius: 4px; font-family: var(--cc-mono); font-weight: 700; font-size: 0.78rem; margin-right: 0.25rem; }
+.cc-help-defs p { font-size: 0.82rem; color: var(--cc-text); line-height: 1.6; margin: 0.35rem 0; }
+.cc-help-defs strong { color: var(--cc-green); }
+
+/* UX: Section Tips */
+.cc-tip {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%; font-size: 0.65rem; font-weight: 700;
+  background: rgba(255,255,255,0.06); color: var(--cc-muted); cursor: pointer;
+  margin-left: 0.4rem; vertical-align: middle; border: 1px solid var(--cc-border);
+}
+.cc-tip:hover { color: var(--cc-green); border-color: var(--cc-green); }
+.cc-tip-popup {
+  position: absolute; top: 100%; left: 0; margin-top: 0.3rem; z-index: 100;
+  background: var(--cc-surface); border: 1px solid var(--cc-green); border-radius: 8px;
+  padding: 0.5rem 0.75rem; font-size: 0.78rem; color: var(--cc-text); max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* UX: Morning Routine */
+.cc-routine { position: sticky; top: 0; z-index: 50; margin-bottom: 0.75rem; }
+.cc-routine-bar {
+  display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1rem;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+  border-radius: 8px; font-size: 0.85rem;
+}
+.cc-routine-step { font-family: var(--cc-mono); font-weight: 700; color: var(--cc-green); font-size: 0.78rem; white-space: nowrap; }
+.cc-routine-text { flex: 1; color: var(--cc-text); }
+.cc-routine-next {
+  background: var(--cc-green); border: none; color: #000; font-weight: 700; font-family: var(--cc-mono);
+  font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 5px; cursor: pointer; white-space: nowrap;
+}
+.cc-routine-skip { background: none; border: none; color: var(--cc-muted); font-size: 1.1rem; cursor: pointer; padding: 0; }
+.cc-routine-highlight { outline: 2px solid var(--cc-green); outline-offset: 4px; border-radius: 8px; transition: outline 0.3s; }
+
+/* UX: Header buttons */
+.cc-header-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid var(--cc-border);
+  color: var(--cc-muted); width: 28px; height: 28px; border-radius: 6px;
+  font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: var(--cc-mono);
+  display: flex; align-items: center; justify-content: center;
+}
+.cc-header-btn:hover { color: var(--cc-green); border-color: var(--cc-green); }
+
+@media (max-width: 640px) { .cc-welcome-grid { grid-template-columns: 1fr; } }
+
 /* V3: Topic Clusters */
 .cc-cluster { padding: 0.6rem 0; border-bottom: 1px solid var(--cc-border); }
 .cc-cluster:last-child { border-bottom: none; }
