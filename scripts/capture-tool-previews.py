@@ -38,6 +38,7 @@ TOOLS = [
     ("countdown", "/countdown/"),
     ("color-palette", "/color-palette/"),
     ("pomodoro", "/pomodoro/"),
+    ("purview-starter", "/purview-starter/"),
 ]
 
 WIDTH = 1280

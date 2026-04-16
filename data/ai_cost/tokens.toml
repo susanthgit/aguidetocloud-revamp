@@ -1,0 +1,243 @@
+# ============================================================================
+# AI Cost Calculator — Token Pricing per Model per Provider
+# ============================================================================
+# All prices per 1 MILLION tokens (input/output) in USD
+# last_verified: 2026-04-16
+# Sources: Official pricing pages
+# ============================================================================
+
+[meta]
+last_verified = "2026-04-16"
+notes = "Prices in USD per 1M tokens. Updated from official pricing pages."
+
+# ── OpenAI ──────────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "OpenAI"
+model = "GPT-4o"
+input_per_1m = 2.50
+output_per_1m = 10.00
+cached_input_per_1m = 1.25
+context_window = 128000
+tier = "flagship"
+source_url = "https://openai.com/api/pricing/"
+
+[[models]]
+provider = "OpenAI"
+model = "GPT-4o mini"
+input_per_1m = 0.15
+output_per_1m = 0.60
+cached_input_per_1m = 0.075
+context_window = 128000
+tier = "budget"
+source_url = "https://openai.com/api/pricing/"
+
+[[models]]
+provider = "OpenAI"
+model = "GPT-5"
+input_per_1m = 1.75
+output_per_1m = 14.00
+cached_input_per_1m = 0.875
+context_window = 1000000
+tier = "premium"
+source_url = "https://openai.com/api/pricing/"
+
+[[models]]
+provider = "OpenAI"
+model = "o3"
+input_per_1m = 10.00
+output_per_1m = 40.00
+cached_input_per_1m = 2.50
+context_window = 200000
+tier = "reasoning"
+source_url = "https://openai.com/api/pricing/"
+notes = "Reasoning model — higher cost but fewer calls needed"
+
+[[models]]
+provider = "OpenAI"
+model = "o4-mini"
+input_per_1m = 1.10
+output_per_1m = 4.40
+cached_input_per_1m = 0.275
+context_window = 200000
+tier = "reasoning-budget"
+source_url = "https://openai.com/api/pricing/"
+
+# ── Anthropic ───────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "Anthropic"
+model = "Claude Sonnet 4.6"
+input_per_1m = 3.00
+output_per_1m = 15.00
+cached_input_per_1m = 0.30
+context_window = 200000
+tier = "flagship"
+source_url = "https://www.anthropic.com/pricing"
+
+[[models]]
+provider = "Anthropic"
+model = "Claude Haiku 4.5"
+input_per_1m = 1.00
+output_per_1m = 5.00
+cached_input_per_1m = 0.10
+context_window = 200000
+tier = "budget"
+source_url = "https://www.anthropic.com/pricing"
+
+[[models]]
+provider = "Anthropic"
+model = "Claude Opus 4.6"
+input_per_1m = 5.00
+output_per_1m = 25.00
+cached_input_per_1m = 0.50
+context_window = 1000000
+tier = "premium"
+source_url = "https://www.anthropic.com/pricing"
+
+# ── Google ──────────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "Google"
+model = "Gemini 2.5 Pro"
+input_per_1m = 1.25
+output_per_1m = 10.00
+cached_input_per_1m = 0.315
+context_window = 1000000
+tier = "flagship"
+source_url = "https://ai.google.dev/pricing"
+
+[[models]]
+provider = "Google"
+model = "Gemini 2.5 Flash"
+input_per_1m = 0.15
+output_per_1m = 0.60
+cached_input_per_1m = 0.0375
+context_window = 1000000
+tier = "budget"
+source_url = "https://ai.google.dev/pricing"
+
+[[models]]
+provider = "Google"
+model = "Gemini 2.0 Flash"
+input_per_1m = 0.10
+output_per_1m = 0.40
+cached_input_per_1m = 0.025
+context_window = 1000000
+tier = "budget"
+source_url = "https://ai.google.dev/pricing"
+
+# ── DeepSeek ────────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "DeepSeek"
+model = "DeepSeek V3"
+input_per_1m = 0.27
+output_per_1m = 1.10
+cached_input_per_1m = 0.07
+context_window = 128000
+tier = "budget"
+source_url = "https://platform.deepseek.com/api-docs/pricing"
+
+[[models]]
+provider = "DeepSeek"
+model = "DeepSeek R1"
+input_per_1m = 0.55
+output_per_1m = 2.19
+cached_input_per_1m = 0.14
+context_window = 128000
+tier = "reasoning"
+source_url = "https://platform.deepseek.com/api-docs/pricing"
+
+# ── Azure OpenAI ────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "Azure OpenAI"
+model = "GPT-4o (Azure)"
+input_per_1m = 2.50
+output_per_1m = 10.00
+cached_input_per_1m = 1.25
+context_window = 128000
+tier = "flagship"
+source_url = "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/"
+notes = "Same rates as OpenAI, consumed via Azure billing"
+
+[[models]]
+provider = "Azure OpenAI"
+model = "GPT-4o mini (Azure)"
+input_per_1m = 0.15
+output_per_1m = 0.60
+cached_input_per_1m = 0.075
+context_window = 128000
+tier = "budget"
+source_url = "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/"
+
+# ── Mistral ─────────────────────────────────────────────────────────────────
+
+[[models]]
+provider = "Mistral"
+model = "Mistral Large"
+input_per_1m = 2.00
+output_per_1m = 6.00
+cached_input_per_1m = 1.00
+context_window = 128000
+tier = "flagship"
+source_url = "https://mistral.ai/products/la-plateforme#pricing"
+
+[[models]]
+provider = "Mistral"
+model = "Mistral Small"
+input_per_1m = 0.10
+output_per_1m = 0.30
+cached_input_per_1m = 0.05
+context_window = 128000
+tier = "budget"
+source_url = "https://mistral.ai/products/la-plateforme#pricing"
+
+# ── Use Case Presets ────────────────────────────────────────────────────────
+
+[[use_cases]]
+id = "chatbot"
+name = "Chatbot"
+icon = "💬"
+queries_per_day = 500
+avg_input_tokens = 500
+avg_output_tokens = 500
+description = "Customer support or internal Q&A bot"
+
+[[use_cases]]
+id = "content-writer"
+name = "Content Writer"
+icon = "📝"
+queries_per_day = 50
+avg_input_tokens = 200
+avg_output_tokens = 2000
+description = "Blog posts, reports, marketing copy"
+
+[[use_cases]]
+id = "data-analyst"
+name = "Data Analyst"
+icon = "📊"
+queries_per_day = 200
+avg_input_tokens = 2000
+avg_output_tokens = 500
+description = "Data analysis, chart generation, insights"
+
+[[use_cases]]
+id = "search-rag"
+name = "Search / RAG"
+icon = "🔍"
+queries_per_day = 1000
+avg_input_tokens = 2000
+avg_output_tokens = 200
+description = "Document retrieval and question answering"
+
+[[use_cases]]
+id = "agent-loops"
+name = "Agent Loops"
+icon = "🤖"
+queries_per_day = 100
+avg_input_tokens = 4000
+avg_output_tokens = 2000
+multiplier = 5
+description = "Multi-turn agent with reasoning — ~5 API calls per interaction"

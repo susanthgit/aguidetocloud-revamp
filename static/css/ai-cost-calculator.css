@@ -1,0 +1,888 @@
+/* ── AI Cost Calculator ──
+   Accent: Money Green #66C559
+   Namespace: .aicost-*
+*/
+
+.aicost-page {
+  --tool-accent: #66C559;
+  --tool-accent-dim: rgba(102, 197, 89, 0.15);
+  --tool-accent-glow: rgba(102, 197, 89, 0.25);
+  --tool-accent-bright: #7dd570;
+  --aicost-blue: #60A5FA;
+  --aicost-orange: #FB923C;
+  --aicost-purple: #A78BFA;
+  --aicost-grey: #94A3B8;
+  --aicost-red: #EF4444;
+  --aicost-green: #22C55E;
+  --aicost-amber: #F59E0B;
+  --aicost-teal: #14B8A6;
+}
+
+/* ── Container ── */
+.aicost-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Tab Navigation (Glass Pill) ── */
+.aicost-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.aicost-tabs::-webkit-scrollbar { display: none; }
+
+.aicost-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading, Inter, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+.aicost-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+.aicost-tab.active {
+  color: #000;
+  background: var(--tool-accent);
+  border-color: var(--tool-accent);
+  box-shadow: 0 2px 8px var(--tool-accent-glow);
+}
+.aicost-tab:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: -2px;
+  border-radius: 14px;
+}
+
+/* ── Panels ── */
+.aicost-panel { display: none; }
+.aicost-panel.active { display: block; animation: aicostFadeIn 0.25s ease-out; }
+@keyframes aicostFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .aicost-panel.active { animation: none; }
+}
+
+/* ── Glass Card ── */
+.aicost-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 1.5rem;
+}
+.aicost-card-title {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+.aicost-card-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+/* ── Quick Layout: 2 column ── */
+.aicost-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ── Form Elements ── */
+.aicost-field {
+  margin-bottom: 1.2rem;
+}
+.aicost-field > label {
+  display: block;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.aicost-field-hint {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.aicost-select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: auto;
+}
+.aicost-select:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: -1px;
+}
+
+.aicost-range-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.aicost-range-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--tool-accent);
+  height: 6px;
+}
+.aicost-num-input {
+  width: 90px;
+  padding: 0.5rem 0.6rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-family: inherit;
+  text-align: right;
+}
+.aicost-num-input:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: -1px;
+}
+
+/* Radio group */
+.aicost-radio-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.aicost-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.aicost-radio:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+.aicost-radio.selected {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-bright);
+}
+.aicost-radio input[type="radio"] { accent-color: var(--tool-accent); }
+
+/* Checkboxes */
+.aicost-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.aicost-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.aicost-check:hover { background: rgba(255, 255, 255, 0.05); }
+.aicost-check.checked {
+  background: var(--tool-accent-dim);
+  border-color: rgba(102, 197, 89, 0.3);
+  color: #fff;
+}
+.aicost-check input[type="checkbox"] { accent-color: var(--tool-accent); flex-shrink: 0; }
+.aicost-check-price {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.aicost-check.checked .aicost-check-price { color: var(--tool-accent); }
+.aicost-check-included {
+  margin-left: auto;
+  color: var(--aicost-green);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Custom cost input (inline) */
+.aicost-custom-row {
+  margin-top: 0.4rem;
+  padding-left: 1.5rem;
+}
+.aicost-custom-row input {
+  width: 80px;
+}
+
+/* ── Hero Metrics Row ── */
+.aicost-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.aicost-metric {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.aicost-metric-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+.aicost-metric-value {
+  display: block;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.aicost-metric-highlight .aicost-metric-value,
+.aicost-metric.highlight .aicost-metric-value {
+  color: var(--tool-accent-bright);
+}
+
+/* ── Chart Container ── */
+.aicost-chart-wrap {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+}
+.aicost-chart-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.aicost-chart-center-label .value {
+  display: block;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.aicost-chart-center-label .label {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+}
+
+/* ── Narrative ── */
+.aicost-narrative {
+  background: rgba(102, 197, 89, 0.06);
+  border: 1px solid rgba(102, 197, 89, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+.aicost-narrative strong { color: var(--tool-accent-bright); }
+
+/* ── Expandable Categories (Detailed Breakdown) ── */
+.aicost-category {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.aicost-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+.aicost-category-header:hover { background: rgba(255, 255, 255, 0.03); }
+.aicost-category-name {
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.aicost-category-total {
+  color: var(--tool-accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.aicost-category-chevron {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+}
+.aicost-category.open .aicost-category-chevron { transform: rotate(180deg); }
+.aicost-category-body {
+  display: none;
+  padding: 0 1.25rem 1rem;
+}
+.aicost-category.open .aicost-category-body { display: block; }
+
+/* ── Tables ── */
+.aicost-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.aicost-table th {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.aicost-table th.right,
+.aicost-table td.right { text-align: right; }
+.aicost-table td {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.aicost-table tr:last-child td { border-bottom: none; }
+.aicost-table .included {
+  color: var(--aicost-green);
+  font-style: italic;
+}
+.aicost-table .strikethrough {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Token table highlights */
+.aicost-table tr.cheapest td { color: var(--aicost-green); }
+.aicost-table tr.expensive td { color: var(--aicost-amber); }
+.aicost-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.aicost-badge-green { background: rgba(34, 197, 94, 0.15); color: var(--aicost-green); }
+.aicost-badge-amber { background: rgba(245, 158, 11, 0.15); color: var(--aicost-amber); }
+.aicost-badge-red { background: rgba(239, 68, 68, 0.15); color: var(--aicost-red); }
+
+/* ── Scenario Columns ── */
+.aicost-scenarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.aicost-scenario {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.aicost-scenario.recommended {
+  border-color: var(--tool-accent);
+  box-shadow: 0 0 16px var(--tool-accent-dim);
+}
+.aicost-scenario-title {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.aicost-scenario-desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.aicost-scenario-price {
+  color: var(--tool-accent-bright);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.aicost-scenario-price-sub {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+}
+
+/* ── Comparison Table (Compare & Export) ── */
+.aicost-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-bottom: 1.5rem;
+}
+.aicost-compare-table th {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.78rem;
+}
+.aicost-compare-table th:first-child { text-align: left; }
+.aicost-compare-table td {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.aicost-compare-table td:first-child {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+.aicost-compare-table .best {
+  color: var(--aicost-green);
+  font-weight: 700;
+}
+
+/* ── Licence Optimizer ── */
+.aicost-bundle-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.aicost-bundle-card.best-deal {
+  border-color: var(--tool-accent);
+  background: var(--tool-accent-dim);
+}
+.aicost-bundle-name {
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.aicost-bundle-price {
+  color: var(--tool-accent-bright);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.aicost-bundle-savings {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.aicost-bundle-savings.positive { color: var(--aicost-green); }
+.aicost-bundle-savings.negative { color: var(--aicost-red); }
+.aicost-recommendation {
+  background: rgba(102, 197, 89, 0.08);
+  border-left: 3px solid var(--tool-accent);
+  border-radius: 0 10px 10px 0;
+  padding: 0.8rem 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Timeline Chart ── */
+.aicost-timeline-chart {
+  position: relative;
+  height: 350px;
+  margin-bottom: 1.5rem;
+}
+
+/* Rollout preset buttons */
+.aicost-presets {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.aicost-preset-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.aicost-preset-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+.aicost-preset-btn.active {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-bright);
+}
+
+/* ── Cost Per Action Cards ── */
+.aicost-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.aicost-action-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.aicost-action-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+.aicost-action-name {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.aicost-action-tokens {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.72rem;
+  margin-bottom: 0.4rem;
+}
+.aicost-action-costs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.aicost-action-cost-pill {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.6);
+}
+.aicost-action-cost-pill.cheapest {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--aicost-green);
+}
+
+/* ── Crossover Chart (Is Copilot Worth It?) ── */
+.aicost-crossover-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.aicost-crossover-chart {
+  position: relative;
+  height: 280px;
+  margin-bottom: 1rem;
+}
+.aicost-crossover-result {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+.aicost-crossover-result .verdict {
+  color: var(--tool-accent-bright);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ── Executive Summary (Print-friendly) ── */
+.aicost-summary-doc {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.aicost-summary-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.aicost-summary-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+.aicost-summary-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+.aicost-summary-section {
+  margin-bottom: 1.5rem;
+}
+.aicost-summary-section h3 {
+  color: var(--tool-accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.aicost-summary-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ── Buttons ── */
+.aicost-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.aicost-btn-accent {
+  background: var(--tool-accent);
+  color: #000;
+  border-color: var(--tool-accent);
+}
+.aicost-btn-accent:hover { background: var(--tool-accent-bright); }
+.aicost-btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.aicost-btn-secondary:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.aicost-btn:focus-visible { outline: 2px solid var(--tool-accent); outline-offset: 2px; }
+
+/* ── Use Case Preset Buttons (Token Tab) ── */
+.aicost-usecase-presets {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.aicost-usecase-btn {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.aicost-usecase-btn:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+.aicost-usecase-btn.active {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-bright);
+}
+
+/* ── Text area (paste text) ── */
+.aicost-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+}
+.aicost-textarea:focus-visible {
+  outline: 2px solid var(--tool-accent);
+  outline-offset: -1px;
+}
+.aicost-token-count {
+  color: var(--tool-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* ── Org name input (exec summary) ── */
+.aicost-org-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+.aicost-org-input:focus-visible {
+  outline: 2px solid var(--tool-accent);
+}
+
+/* ── Cross-tool CTAs ── */
+.aicost-cross-tools {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.aicost-cross-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.aicost-cross-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-bright);
+}
+
+/* ── Disclaimer ── */
+.aicost-disclaimer {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+.aicost-disclaimer a { color: rgba(255, 255, 255, 0.5); }
+
+/* ── Totals Summary (bottom of detailed breakdown) ── */
+.aicost-totals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.aicost-total-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.aicost-total-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.aicost-total-value {
+  display: block;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.aicost-total-card.total-highlight {
+  border-color: var(--tool-accent);
+  background: var(--tool-accent-dim);
+}
+.aicost-total-card.total-highlight .aicost-total-value {
+  color: var(--tool-accent-bright);
+}
+
+/* ── Print Styles ── */
+@media print {
+  .aicost-tabs, .aicost-cross-tools, .aicost-summary-actions,
+  .tool-hero, .back-nav-wrap, .tool-eco-wrap, .feedback-fab,
+  .site-nav, .site-footer, .global-btt { display: none !important; }
+  .aicost-page { background: #fff !important; color: #000 !important; }
+  .aicost-panel { display: none !important; }
+  .aicost-panel[id="panel-export"] { display: block !important; }
+  .aicost-summary-doc {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    color: #000 !important;
+  }
+  .aicost-summary-doc * { color: #000 !important; }
+  .aicost-summary-doc h3 { color: #228B22 !important; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .aicost-quick-grid {
+    grid-template-columns: 1fr;
+  }
+  .aicost-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aicost-scenarios {
+    grid-template-columns: 1fr;
+  }
+  .aicost-totals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aicost-action-grid {
+    grid-template-columns: 1fr;
+  }
+  .aicost-container {
+    padding: 0 1rem 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .aicost-tabs {
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+  .aicost-tab {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.6rem;
+  }
+  .aicost-metric-value {
+    font-size: 1.2rem;
+  }
+}

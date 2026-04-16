@@ -1,0 +1,137 @@
+# ============================================================================
+# AI Cost Calculator — Platform Pricing Data
+# ============================================================================
+# All prices in USD per month unless noted.
+# last_verified and source_url for staleness checks.
+# Update: run bi-weekly toolkit data freshness check.
+# ============================================================================
+
+[meta]
+last_verified = "2026-04-16"
+currency = "USD"
+disclaimer = "List prices as of April 2026. EA/CSP pricing varies."
+
+# ── AI Platform Pricing ─────────────────────────────────────────────────────
+
+[[platforms]]
+id = "m365-copilot"
+name = "Microsoft 365 Copilot"
+type = "per-user"
+price_per_user = 30.00
+requires = "M365 E3/E5/E7 or Business Standard/Premium"
+included_in = ["e7"]
+source_url = "https://www.microsoft.com/en-us/microsoft-365/copilot/compare-plans"
+notes = "Enterprise rate. SMB may differ."
+
+[[platforms]]
+id = "copilot-studio"
+name = "Copilot Studio"
+type = "per-tenant"
+base_price = 200.00
+message_credits = 25000
+overage_per_credit = 0.01
+included_in = []
+source_url = "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio"
+notes = "Base includes 25K messages/month. Buy more packs as needed."
+
+[[platforms]]
+id = "agent-365"
+name = "Agent 365"
+type = "per-user"
+price_per_user = 15.00
+included_in = ["e7"]
+source_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e7"
+notes = "Agent governance, registry, lifecycle management."
+
+[[platforms]]
+id = "chatgpt-team"
+name = "ChatGPT Team"
+type = "per-user"
+price_per_user = 25.00
+source_url = "https://openai.com/chatgpt/team/"
+notes = "Billed annually. Monthly billing is $30/user."
+
+[[platforms]]
+id = "claude-team"
+name = "Claude Team"
+type = "per-user"
+price_per_user = 30.00
+source_url = "https://www.anthropic.com/pricing"
+notes = "Billed annually."
+
+[[platforms]]
+id = "gemini-business"
+name = "Gemini for Workspace"
+type = "per-user"
+price_per_user = 20.00
+source_url = "https://workspace.google.com/pricing"
+notes = "Business tier. Enterprise is $30/user."
+
+[[platforms]]
+id = "azure-openai"
+name = "Azure OpenAI"
+type = "token-based"
+estimated_monthly_per_user = 15.00
+source_url = "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/"
+notes = "Highly variable. Estimate based on ~50 queries/user/day at GPT-4o mini rates."
+
+# ── M365 Base Plans (for bundling calculations) ─────────────────────────────
+
+[[base_plans]]
+id = "none"
+name = "No M365 plan"
+price = 0.00
+includes_features = []
+
+[[base_plans]]
+id = "business-basic"
+name = "Business Basic"
+price = 6.00
+includes_features = []
+
+[[base_plans]]
+id = "business-standard"
+name = "Business Standard"
+price = 12.50
+includes_features = []
+
+[[base_plans]]
+id = "business-premium"
+name = "Business Premium"
+price = 22.00
+includes_features = ["basic-purview"]
+
+[[base_plans]]
+id = "e3"
+name = "Microsoft 365 E3"
+price = 39.00
+includes_features = ["basic-purview"]
+
+[[base_plans]]
+id = "e5"
+name = "Microsoft 365 E5"
+price = 60.00
+includes_features = ["purview-p2", "defender-p2", "advanced-compliance"]
+
+[[base_plans]]
+id = "e7"
+name = "Microsoft 365 E7"
+price = 99.00
+includes_features = ["purview-p2", "defender-p2", "advanced-compliance", "m365-copilot", "agent-365"]
+notes = "Bundles E5 + Copilot + Agent 365"
+
+# ── Governance Add-ons ──────────────────────────────────────────────────────
+
+[[addons]]
+id = "sharepoint-advanced-mgmt"
+name = "SharePoint Advanced Management"
+price_per_user = 3.00
+recommended_for = "Copilot deployments"
+source_url = "https://learn.microsoft.com/en-us/sharepoint/advanced-management"
+
+[[addons]]
+id = "purview-compliance"
+name = "Purview Compliance Add-on"
+price_per_user = 5.00
+included_in = ["e5", "e7"]
+source_url = "https://www.microsoft.com/en-us/security/business/microsoft-purview-pricing"
