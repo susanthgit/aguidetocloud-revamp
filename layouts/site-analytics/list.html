@@ -3,24 +3,22 @@
 
 {{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#64748B") }}
 
-<!-- ═══ PASSWORD GATE ═══ -->
+<!-- PASSWORD GATE -->
 <div class="siteana-page" id="sa-gate">
   <div class="siteana-gate-card">
     <div class="siteana-gate-lock">🔒</div>
     <h2 class="siteana-gate-title">Site Analytics</h2>
     <p class="siteana-gate-subtitle">This dashboard is password-protected.<br>Enter the access code to continue.</p>
-
     <div class="siteana-gate-form">
       <input type="password" id="sa-admin-pass" placeholder="Enter access code" autocomplete="off" aria-label="Access code">
       <button id="sa-admin-submit">Unlock Dashboard</button>
       <p class="siteana-gate-error" id="sa-gate-error" style="display:none">Incorrect access code. Please try again.</p>
     </div>
-
     <p class="siteana-gate-hint">Live usage statistics — transparent, anonymous, and open.</p>
   </div>
 </div>
 
-<!-- ═══ ACTUAL DASHBOARD (hidden until unlocked) ═══ -->
+<!-- DASHBOARD (hidden until unlocked) -->
 <div class="siteana-page" id="sa-dashboard" style="display:none">
 
   <!-- Live Stats Bar -->
@@ -28,7 +26,7 @@
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-views">—</span>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
-      <span class="siteana-stat-label">Page Views (30d)</span>
+      <span class="siteana-stat-label" id="sa-views-label">Page Views (30d)</span>
     </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-users">—</span>
@@ -51,12 +49,21 @@
     </div>
   </div>
 
+  <!-- Date Range Selector -->
+  <div class="siteana-range-bar" role="group" aria-label="Date range selector">
+    <button class="siteana-range-btn active" data-range="30d" aria-label="Last 30 days">30 Days</button>
+    <button class="siteana-range-btn" data-range="7d" aria-label="Last 7 days">7 Days</button>
+    <button class="siteana-range-btn" data-range="90d" aria-label="Last 90 days">90 Days</button>
+    <button class="siteana-range-btn" data-range="all" aria-label="All time since launch">All Time</button>
+  </div>
+
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
     <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="growth">Growth</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">Search & Content</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="seo">SEO</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
@@ -64,13 +71,18 @@
   <div class="siteana-panel active" id="panel-overview" role="tabpanel">
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">30-Day Trend</h3>
-        <canvas id="sa-trend-chart" height="200"></canvas>
+        <h3 class="siteana-card-title">Traffic Trend</h3>
+        <canvas id="sa-trend-chart" height="220"></canvas>
       </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Activity Breakdown</h3>
-        <canvas id="sa-activity-chart" height="200"></canvas>
+        <canvas id="sa-activity-chart" height="220"></canvas>
       </div>
+    </div>
+    <!-- Auto-Insights -->
+    <div class="siteana-card" id="sa-insights-card" style="display:none">
+      <h3 class="siteana-card-title">Insights</h3>
+      <div class="siteana-insights" id="sa-insights"></div>
     </div>
     <div class="siteana-grid-2">
       <div class="siteana-card">
@@ -89,17 +101,17 @@
       </div>
       <div class="siteana-card siteana-transparency">
         <h3>Transparency Note</h3>
-        <p>Traffic data from Google Analytics (30-day window). Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
+        <p>Traffic data from Google Analytics. Tool events tracked anonymously — no cookies, no personal data, no IP addresses stored. All counts are approximate.</p>
         <p>The stats API is public: <code><a href="/api/stats" target="_blank" rel="noopener">/api/stats</a></code></p>
       </div>
     </div>
   </div>
 
-  <!-- Tab: Tools Leaderboard -->
+  <!-- Tab: Tools -->
   <div class="siteana-panel" id="panel-tools" role="tabpanel">
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Tool Popularity</h3>
-      <p class="siteana-hint">Ranked by total views + actions</p>
+      <h3 class="siteana-card-title">Tool Leaderboard</h3>
+      <p class="siteana-hint">Ranked by total page views</p>
       <div id="sa-leaderboard"></div>
     </div>
     <div class="siteana-grid-2">
@@ -109,18 +121,97 @@
       </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Most Active Users</h3>
-        <p class="siteana-hint">Actions: copies, calculations, completions</p>
+        <p class="siteana-hint">Unique users per tool</p>
         <div id="sa-most-used"></div>
+      </div>
+    </div>
+    <!-- 2x2 Tool Performance Matrix -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Performance Matrix</h3>
+      <p class="siteana-hint">Popularity (views) vs Engagement (users/views ratio)</p>
+      <div class="siteana-matrix-wrap">
+        <canvas id="sa-matrix-chart" height="320"></canvas>
+        <div class="siteana-matrix-labels">
+          <span class="siteana-matrix-label" data-pos="tl">Hidden Gems</span>
+          <span class="siteana-matrix-label" data-pos="tr">Stars</span>
+          <span class="siteana-matrix-label" data-pos="bl">Needs Work</span>
+          <span class="siteana-matrix-label" data-pos="br">Traffic Magnets</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Tab: Content -->
-  <div class="siteana-panel" id="panel-content" role="tabpanel">
+  <!-- Tab: Growth -->
+  <div class="siteana-panel" id="panel-growth" role="tabpanel">
+    <!-- Cumulative Counter -->
+    <div class="siteana-cumulative" id="sa-cumulative">
+      <span class="siteana-cumul-num" id="sa-cumul-count">—</span>
+      <span class="siteana-cumul-label">users served since March 30, 2026</span>
+    </div>
+    <!-- Full Timeline -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Growth Since Launch</h3>
+      <canvas id="sa-growth-chart" height="280"></canvas>
+    </div>
+    <!-- Milestone Timeline -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Milestones</h3>
+      <div class="siteana-milestone-timeline" id="sa-milestones"></div>
+    </div>
+    <!-- Weekly Breakdown -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Weekly Breakdown</h3>
+      <div class="siteana-table-wrap" id="sa-weekly-table"></div>
+    </div>
+    <!-- Before/After Comparison -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Milestone Impact</h3>
+      <p class="siteana-hint">Compare 7 days before vs after each milestone</p>
+      <div class="siteana-ba-select">
+        <select id="sa-ba-milestone" aria-label="Select milestone to compare">
+          <option value="">Choose a milestone...</option>
+        </select>
+      </div>
+      <div id="sa-before-after"></div>
+    </div>
+    <!-- Goals -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Goals</h3>
+      <div id="sa-goals"></div>
+    </div>
+  </div>
+
+  <!-- Tab: Pages -->
+  <div class="siteana-panel" id="panel-pages" role="tabpanel">
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Pages</h3>
+      <p class="siteana-hint">Most visited pages across the entire site</p>
+      <div id="sa-top-pages"></div>
+    </div>
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Blog Posts</h3>
+      <p class="siteana-hint">Most read blog articles</p>
+      <div id="sa-blog-pages"></div>
+    </div>
+  </div>
+
+  <!-- Tab: SEO -->
+  <div class="siteana-panel" id="panel-seo" role="tabpanel">
     <div class="siteana-card">
       <h3 class="siteana-card-title">Google Search Queries</h3>
-      <p class="siteana-hint">What people search on Google to find this site (last 30 days)</p>
+      <p class="siteana-hint">What people search on Google to find this site</p>
       <div id="sa-searches"></div>
+    </div>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Position Distribution</h3>
+        <canvas id="sa-position-chart" height="180"></canvas>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">SEO Opportunities</h3>
+        <p class="siteana-hint">Queries ranking well but getting few clicks</p>
+        <div id="sa-seo-opps"></div>
+      </div>
     </div>
     <div class="siteana-card">
       <h3 class="siteana-card-title">Content Overview</h3>
@@ -146,21 +237,7 @@
     </div>
   </div>
 
-  <!-- Tab: Pages -->
-  <div class="siteana-panel" id="panel-pages" role="tabpanel">
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Pages (30 days)</h3>
-      <p class="siteana-hint">Most visited pages across the entire site</p>
-      <div id="sa-top-pages"></div>
-    </div>
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Blog Posts</h3>
-      <p class="siteana-hint">Most read blog articles in the last 30 days</p>
-      <div id="sa-blog-pages"></div>
-    </div>
-  </div>
-
-  <!-- FAQ Tab -->
+  <!-- Tab: FAQ -->
   <div class="siteana-panel" id="panel-faq" role="tabpanel">
   {{ with .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
@@ -185,6 +262,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js" crossorigin="anonymous"></script>
 <script src="/js/site-analytics.js?v={{ site.Params.cache_version }}"></script>
 <script>
 (function(){

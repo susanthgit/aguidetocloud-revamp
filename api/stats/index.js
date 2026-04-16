@@ -1,7 +1,8 @@
 /**
- * GET /api/stats — Public analytics stats endpoint
- * Merges data from: GA4 (traffic), Google Search Console (queries), and custom tracking (tool events).
- * Cached for 5 minutes.
+ * GET /api/stats — Analytics intelligence endpoint
+ * Supports date ranges: ?range=7d|30d|90d|all|custom&start=YYYY-MM-DD&end=YYYY-MM-DD
+ * Includes: GA4 traffic, GSC queries, per-tool sparklines, weekly aggregation
+ * Cached per range for 5 minutes.
  */
 
 const fs = require('fs');
@@ -11,11 +12,65 @@ const { google } = require('googleapis');
 const STATS_FILE = path.join(__dirname, '..', '_data', 'analytics.json');
 const GA4_PROPERTY = process.env.GA4_PROPERTY_ID || '530486519';
 const GSC_SITE = process.env.GSC_SITE_URL || 'https://www.aguidetocloud.com/';
+const INCEPTION_DATE = '2026-03-30';
 
-// Full response cache (5 min)
-let fullCache = null;
-let fullCacheTime = 0;
+// Per-range response cache (5 min TTL)
+const cacheStore = {};
 const CACHE_TTL = 300000;
+
+function getRangeDates(range, start, end) {
+  if (range === 'custom' && start && end) return { startDate: start, endDate: end };
+  if (range === 'all') return { startDate: INCEPTION_DATE, endDate: 'today' };
+  if (range === '7d') return { startDate: '7daysAgo', endDate: 'today' };
+  if (range === '90d') return { startDate: '90daysAgo', endDate: 'today' };
+  return { startDate: '30daysAgo', endDate: 'today' };
+}
+
+function getCacheKey(range, start, end) {
+  if (range === 'custom') return 'custom_' + start + '_' + end;
+  return range || '30d';
+}
+
+function resolveDate(dateStr) {
+  if (dateStr === 'today') return formatDate(0);
+  if (dateStr === 'yesterday') return formatDate(1);
+  var m = dateStr.match(/^(\d+)daysAgo$/);
+  if (m) return formatDate(parseInt(m[1]));
+  return dateStr;
+}
+
+function formatDate(daysAgo) {
+  const d = new Date();
+  d.setDate(d.getDate() - daysAgo);
+  return d.toISOString().split('T')[0];
+}
+
+function getMonday(d) {
+  d = new Date(d);
+  const day = d.getUTCDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setUTCDate(d.getUTCDate() + diff);
+  return d;
+}
+
+function aggregateWeekly(trend) {
+  const weeks = {};
+  for (const day of trend) {
+    const d = new Date(day.date + 'T12:00:00Z');
+    const monday = getMonday(d);
+    const weekKey = monday.toISOString().split('T')[0];
+    if (!weeks[weekKey]) {
+      const sunday = new Date(monday);
+      sunday.setUTCDate(monday.getUTCDate() + 6);
+      weeks[weekKey] = { start: weekKey, end: sunday.toISOString().split('T')[0], views: 0, users: 0, sessions: 0, days: 0 };
+    }
+    weeks[weekKey].views += day.views;
+    weeks[weekKey].users += day.users;
+    weeks[weekKey].sessions += day.sessions || 0;
+    weeks[weekKey].days++;
+  }
+  return Object.values(weeks).sort((a, b) => a.start.localeCompare(b.start));
+}
 
 function getAuthClient() {
   const b64 = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
@@ -30,15 +85,17 @@ function getAuthClient() {
   });
 }
 
-async function fetchGA4Data(auth) {
+async function fetchGA4Data(auth, dateRange) {
   try {
     const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
+    const sd = dateRange.startDate;
+    const ed = dateRange.endDate;
 
-    // Last 30 days top pages
+    // Range-dependent queries
     const pagesRes = await analyticsdata.properties.runReport({
       property: `properties/${GA4_PROPERTY}`,
       requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
+        dateRanges: [{ startDate: sd, endDate: ed }],
         dimensions: [{ name: 'pagePath' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
         orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
@@ -46,18 +103,56 @@ async function fetchGA4Data(auth) {
       }
     });
 
-    // Last 30 days daily trend
     const trendRes = await analyticsdata.properties.runReport({
       property: `properties/${GA4_PROPERTY}`,
       requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
+        dateRanges: [{ startDate: sd, endDate: ed }],
         dimensions: [{ name: 'date' }],
-        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
+        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }],
         orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }]
       }
     });
 
-    // Week-over-week comparison
+    const summaryRes = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [{ startDate: sd, endDate: ed }],
+        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }]
+      }
+    });
+
+    const geoRes = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [{ startDate: sd, endDate: ed }],
+        dimensions: [{ name: 'country' }],
+        metrics: [{ name: 'activeUsers' }],
+        orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }],
+        limit: 15
+      }
+    });
+
+    const deviceRes = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [{ startDate: sd, endDate: ed }],
+        dimensions: [{ name: 'deviceCategory' }],
+        metrics: [{ name: 'activeUsers' }]
+      }
+    });
+
+    const sourceRes = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [{ startDate: sd, endDate: ed }],
+        dimensions: [{ name: 'sessionDefaultChannelGroup' }],
+        metrics: [{ name: 'sessions' }],
+        orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+        limit: 10
+      }
+    });
+
+    // Fixed-date queries (always current)
     const wowRes = await analyticsdata.properties.runReport({
       property: `properties/${GA4_PROPERTY}`,
       requestBody: {
@@ -69,55 +164,11 @@ async function fetchGA4Data(auth) {
       }
     });
 
-    // Today's totals
     const todayRes = await analyticsdata.properties.runReport({
       property: `properties/${GA4_PROPERTY}`,
       requestBody: {
         dateRanges: [{ startDate: 'today', endDate: 'today' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }]
-      }
-    });
-
-    // Total 30-day summary
-    const summaryRes = await analyticsdata.properties.runReport({
-      property: `properties/${GA4_PROPERTY}`,
-      requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
-        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }]
-      }
-    });
-
-    // Country breakdown
-    const geoRes = await analyticsdata.properties.runReport({
-      property: `properties/${GA4_PROPERTY}`,
-      requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
-        dimensions: [{ name: 'country' }],
-        metrics: [{ name: 'activeUsers' }],
-        orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }],
-        limit: 15
-      }
-    });
-
-    // Device category
-    const deviceRes = await analyticsdata.properties.runReport({
-      property: `properties/${GA4_PROPERTY}`,
-      requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
-        dimensions: [{ name: 'deviceCategory' }],
-        metrics: [{ name: 'activeUsers' }]
-      }
-    });
-
-    // Traffic sources
-    const sourceRes = await analyticsdata.properties.runReport({
-      property: `properties/${GA4_PROPERTY}`,
-      requestBody: {
-        dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
-        dimensions: [{ name: 'sessionDefaultChannelGroup' }],
-        metrics: [{ name: 'sessions' }],
-        orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
-        limit: 10
       }
     });
 
@@ -128,16 +179,36 @@ async function fetchGA4Data(auth) {
   }
 }
 
-async function fetchGSCData(auth) {
+async function fetchToolTrends(auth, dateRange) {
+  try {
+    const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
+    const res = await analyticsdata.properties.runReport({
+      property: `properties/${GA4_PROPERTY}`,
+      requestBody: {
+        dateRanges: [{ startDate: dateRange.startDate, endDate: dateRange.endDate }],
+        dimensions: [{ name: 'pagePath' }, { name: 'date' }],
+        metrics: [{ name: 'screenPageViews' }],
+        orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }],
+        limit: 10000
+      }
+    });
+    return res;
+  } catch (e) {
+    console.error('Tool trends error:', e.message);
+    return null;
+  }
+}
+
+async function fetchGSCData(auth, dateRange) {
   try {
     const searchconsole = google.searchconsole({ version: 'v1', auth });
     const res = await searchconsole.searchanalytics.query({
       siteUrl: GSC_SITE,
       requestBody: {
-        startDate: formatDate(30),
-        endDate: formatDate(0),
+        startDate: resolveDate(dateRange.startDate),
+        endDate: resolveDate(dateRange.endDate),
         dimensions: ['query'],
-        rowLimit: 25,
+        rowLimit: 50,
         type: 'web'
       }
     });
@@ -148,12 +219,6 @@ async function fetchGSCData(auth) {
   }
 }
 
-function formatDate(daysAgo) {
-  const d = new Date();
-  d.setDate(d.getDate() - daysAgo);
-  return d.toISOString().split('T')[0];
-}
-
 function parseRows(res) {
   if (!res?.data?.rows) return [];
   return res.data.rows.map(r => ({
@@ -162,7 +227,6 @@ function parseRows(res) {
   }));
 }
 
-// Tool path mapping
 const TOOL_PATHS = {
   '/ai-news/': 'ai-news', '/m365-roadmap/': 'm365-roadmap', '/prompts/': 'prompt-library',
   '/licensing/': 'licensing', '/prompt-polisher/': 'prompt-polisher', '/copilot-readiness/': 'copilot-readiness',
@@ -194,31 +258,36 @@ module.exports = async function (context, req) {
     'Cache-Control': 'public, max-age=300'
   };
 
+  // Parse range
+  const range = req.query.range || '30d';
+  const dateRange = getRangeDates(range, req.query.start, req.query.end);
+  const cacheKey = getCacheKey(range, req.query.start, req.query.end);
+
   // Return cached response if fresh
   const now = Date.now();
-  if (fullCache && now - fullCacheTime < CACHE_TTL) {
-    context.res = { status: 200, headers, body: JSON.stringify(fullCache) };
+  if (cacheStore[cacheKey] && now - cacheStore[cacheKey].time < CACHE_TTL) {
+    context.res = { status: 200, headers, body: JSON.stringify(cacheStore[cacheKey].data) };
     return;
   }
 
   const auth = getAuthClient();
-  let ga4 = null, gscRows = [];
+  let ga4 = null, gscRows = [], toolTrendRes = null;
 
   if (auth) {
-    [ga4, gscRows] = await Promise.all([fetchGA4Data(auth), fetchGSCData(auth)]);
+    [ga4, gscRows, toolTrendRes] = await Promise.all([
+      fetchGA4Data(auth, dateRange),
+      fetchGSCData(auth, dateRange),
+      fetchToolTrends(auth, dateRange)
+    ]);
   }
 
   const custom = loadCustomStats();
+  const response = { ga4: null, gsc: null, custom: null, range: range, updated: new Date().toISOString() };
 
-  // Build response
-  const response = { ga4: null, gsc: null, custom: null, updated: new Date().toISOString() };
-
-  // --- GA4 data ---
   if (ga4) {
     const summaryRows = parseRows(ga4.summaryRes);
     const todayRows = parseRows(ga4.todayRes);
 
-    // Top pages → tool leaderboard
     const pageRows = parseRows(ga4.pagesRes);
     const toolStats = {};
     const topPages = [];
@@ -227,8 +296,6 @@ module.exports = async function (context, req) {
       const views = r.metrics[0];
       const users = r.metrics[1];
       topPages.push({ path: pagePath, views, users });
-
-      // Match to tool
       for (const [prefix, toolId] of Object.entries(TOOL_PATHS)) {
         if (pagePath === prefix || pagePath.startsWith(prefix)) {
           if (!toolStats[toolId]) toolStats[toolId] = { views: 0, users: 0 };
@@ -243,64 +310,76 @@ module.exports = async function (context, req) {
       .map(([tool, d]) => ({ tool, views: d.views, users: d.users, total: d.views }))
       .sort((a, b) => b.total - a.total);
 
-    // Daily trend
+    // Daily trend (now includes sessions)
     const trendRows = parseRows(ga4.trendRes);
     const trend = trendRows.map(r => {
-      const raw = r.dimensions[0]; // YYYYMMDD
+      const raw = r.dimensions[0];
       const date = `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
-      return { date, views: r.metrics[0], users: r.metrics[1] };
+      return { date, views: r.metrics[0], users: r.metrics[1], sessions: r.metrics[2] || 0 };
     });
 
-    // Geography
+    // Weekly aggregation
+    const weekly = aggregateWeekly(trend);
+
+    // Geography, devices, sources
     const geoRows = parseRows(ga4.geoRes);
     const countries = geoRows.map(r => ({ country: r.dimensions[0], users: r.metrics[0] }));
-
-    // Devices
     const deviceRows = parseRows(ga4.deviceRes);
     const devices = deviceRows.map(r => ({ device: r.dimensions[0], users: r.metrics[0] }));
-
-    // Sources
     const sourceRows = parseRows(ga4.sourceRes);
     const sources = sourceRows.map(r => ({ source: r.dimensions[0], sessions: r.metrics[0] }));
 
-    // Week-over-week comparison
+    // Week-over-week
     const wowRows = parseRows(ga4.wowRes);
     let wow = null;
     if (wowRows.length >= 1) {
       const thisWeek = { views: wowRows[0]?.metrics[0] || 0, users: wowRows[0]?.metrics[1] || 0, sessions: wowRows[0]?.metrics[2] || 0 };
       const lastWeek = { views: wowRows[1]?.metrics[0] || 0, users: wowRows[1]?.metrics[1] || 0, sessions: wowRows[1]?.metrics[2] || 0 };
       const pct = (curr, prev) => prev > 0 ? Math.round(((curr - prev) / prev) * 100) : (curr > 0 ? 100 : 0);
-      wow = {
-        thisWeek, lastWeek,
-        change: { views: pct(thisWeek.views, lastWeek.views), users: pct(thisWeek.users, lastWeek.users), sessions: pct(thisWeek.sessions, lastWeek.sessions) }
-      };
+      wow = { thisWeek, lastWeek, change: { views: pct(thisWeek.views, lastWeek.views), users: pct(thisWeek.users, lastWeek.users), sessions: pct(thisWeek.sessions, lastWeek.sessions) } };
     }
 
-    // Blog pages (filter from top pages)
+    // Blog pages
     const blogPages = topPages.filter(p => p.path.startsWith('/blog/')).slice(0, 15);
 
+    // Tool sparklines (top 10 from leaderboard)
+    const toolTrends = {};
+    if (toolTrendRes) {
+      const ttRows = parseRows(toolTrendRes);
+      for (const r of ttRows) {
+        const pagePath = r.dimensions[0];
+        const rawDate = r.dimensions[1];
+        const views = r.metrics[0];
+        const date = `${rawDate.slice(0,4)}-${rawDate.slice(4,6)}-${rawDate.slice(6,8)}`;
+        for (const [prefix, toolId] of Object.entries(TOOL_PATHS)) {
+          if (pagePath === prefix || pagePath.startsWith(prefix)) {
+            if (!toolTrends[toolId]) toolTrends[toolId] = {};
+            if (!toolTrends[toolId][date]) toolTrends[toolId][date] = 0;
+            toolTrends[toolId][date] += views;
+            break;
+          }
+        }
+      }
+    }
+    const top10 = leaderboard.slice(0, 10).map(t => t.tool);
+    const tool_trends = {};
+    for (const toolId of top10) {
+      if (toolTrends[toolId]) {
+        const sorted = Object.keys(toolTrends[toolId]).sort();
+        tool_trends[toolId] = sorted.map(d => toolTrends[toolId][d]);
+      }
+    }
+
     response.ga4 = {
-      totals: {
-        views: summaryRows[0]?.metrics[0] || 0,
-        users: summaryRows[0]?.metrics[1] || 0,
-        sessions: summaryRows[0]?.metrics[2] || 0
-      },
-      today: {
-        views: todayRows[0]?.metrics[0] || 0,
-        users: todayRows[0]?.metrics[1] || 0
-      },
-      leaderboard,
-      trend,
+      totals: { views: summaryRows[0]?.metrics[0] || 0, users: summaryRows[0]?.metrics[1] || 0, sessions: summaryRows[0]?.metrics[2] || 0 },
+      today: { views: todayRows[0]?.metrics[0] || 0, users: todayRows[0]?.metrics[1] || 0 },
+      leaderboard, trend, weekly, tool_trends,
       top_pages: topPages.slice(0, 30),
       blog_pages: blogPages,
-      countries,
-      devices,
-      sources,
-      wow
+      countries, devices, sources, wow
     };
   }
 
-  // --- GSC data ---
   if (gscRows.length > 0) {
     response.gsc = {
       queries: gscRows.map(r => ({
@@ -313,7 +392,6 @@ module.exports = async function (context, req) {
     };
   }
 
-  // --- Custom tracking data ---
   const customLeaderboard = Object.entries(custom.tools || {})
     .map(([tool, d]) => ({ tool, views: d.views || 0, actions: d.actions || 0 }))
     .sort((a, b) => (b.views + b.actions) - (a.views + a.actions));
@@ -325,10 +403,6 @@ module.exports = async function (context, req) {
       .map(([query, count]) => ({ query, count }))
   };
 
-  // Cache
-  fullCache = response;
-  fullCacheTime = now;
-
+  cacheStore[cacheKey] = { data: response, time: now };
   context.res = { status: 200, headers, body: JSON.stringify(response) };
 };
-

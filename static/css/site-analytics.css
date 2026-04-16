@@ -599,8 +599,427 @@
 /* Nav accent */
 .page-site-analytics .site-nav { border-bottom-color: #64748B; }
 
+/* ── DATE RANGE BAR ────────────────── */
+.siteana-range-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.3rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.siteana-range-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.siteana-range-btn:hover {
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.06);
+}
+
+.siteana-range-btn.active {
+  color: #fff;
+  background: #64748B;
+  border-color: #64748B;
+  box-shadow: 0 2px 6px rgba(100,116,139,0.3);
+}
+
+/* ── INSIGHTS ─────────────────────── */
+.siteana-insights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.siteana-insight-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.siteana-insight-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ── SPARKLINES ───────────────────── */
+.siteana-sparkline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.siteana-lb-name-row {
+  display: flex;
+  align-items: center;
+}
+
+/* ── CUMULATIVE COUNTER ───────────── */
+.siteana-cumulative {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(100,116,139,0.08);
+  border: 1px solid rgba(100,116,139,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.siteana-cumul-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #64748B;
+  line-height: 1.2;
+}
+
+.siteana-cumul-label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.25rem;
+}
+
+/* ── MILESTONE TIMELINE ───────────── */
+.siteana-ms-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.siteana-ms-track::-webkit-scrollbar { display: none; }
+
+.siteana-ms-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 80px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.siteana-ms-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  cursor: default;
+}
+
+.siteana-ms-dot:hover { transform: scale(1.3); }
+
+.siteana-ms-date {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Fira Code', monospace;
+}
+
+.siteana-ms-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── WEEKLY TABLE ─────────────────── */
+.siteana-table-wrap { overflow-x: auto; }
+
+.siteana-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.siteana-table th {
+  text-align: left;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.siteana-table td {
+  padding: 0.6rem 0.75rem;
+  color: rgba(255,255,255,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.siteana-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+.siteana-row-highlight {
+  background: rgba(100,116,139,0.12) !important;
+}
+
+.siteana-row-highlight td { color: #fff; font-weight: 600; }
+
+.siteana-change-up { color: #10B981; font-weight: 600; }
+.siteana-change-down { color: #EF4444; font-weight: 600; }
+
+/* ── BEFORE/AFTER ─────────────────── */
+.siteana-ba-select {
+  margin-bottom: 1rem;
+}
+
+.siteana-ba-select select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #e6edf3;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  cursor: pointer;
+}
+
+.siteana-ba-select select:focus {
+  border-color: #64748B;
+  box-shadow: 0 0 8px rgba(100,116,139,0.25);
+}
+
+.siteana-ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.siteana-ba-header {
+  display: contents;
+}
+
+.siteana-ba-header > span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.siteana-ba-row {
+  display: contents;
+}
+
+.siteana-ba-row > span {
+  padding: 0.65rem 0.75rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.88rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.siteana-ba-label { font-weight: 600; color: rgba(255,255,255,0.9) !important; }
+
+/* ── GOALS ────────────────────────── */
+.siteana-goal {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-goal:last-child { border-bottom: none; }
+
+.siteana-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.siteana-goal-label {
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+}
+
+.siteana-goal-pct {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #64748B;
+  font-size: 0.95rem;
+}
+
+.siteana-goal-track {
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.siteana-goal-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.siteana-goal-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── TOOL MATRIX ──────────────────── */
+.siteana-matrix-wrap {
+  position: relative;
+}
+
+.siteana-matrix-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.siteana-matrix-label {
+  position: absolute;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.siteana-matrix-label[data-pos="tl"] { top: 8px; left: 60px; }
+.siteana-matrix-label[data-pos="tr"] { top: 8px; right: 16px; }
+.siteana-matrix-label[data-pos="bl"] { bottom: 36px; left: 60px; }
+.siteana-matrix-label[data-pos="br"] { bottom: 36px; right: 16px; }
+
+/* ── SEO: POSITION BADGES ─────────── */
+.siteana-pos-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  min-width: 2rem;
+}
+
+.siteana-pos-top3 { background: rgba(16,185,129,0.15); color: #10B981; border: 1px solid rgba(16,185,129,0.3); }
+.siteana-pos-top10 { background: rgba(251,191,36,0.15); color: #FBBF24; border: 1px solid rgba(251,191,36,0.3); }
+.siteana-pos-top20 { background: rgba(251,146,60,0.15); color: #FB923C; border: 1px solid rgba(251,146,60,0.3); }
+.siteana-pos-deep { background: rgba(239,68,68,0.15); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+
+/* ── SEO: CTR BAR ─────────────────── */
+.siteana-ctr-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 80px;
+}
+
+.siteana-ctr-bar {
+  height: 6px;
+  background: #64748B;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.siteana-ctr-bar-wrap span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+/* ── SEO: OPPORTUNITIES ───────────── */
+.siteana-opp-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-opp-item:last-child { border-bottom: none; }
+
+.siteana-opp-query {
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.siteana-opp-stats {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.siteana-opp-uplift {
+  font-size: 0.82rem;
+  color: #10B981;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* ── SEO TABLE ────────────────────── */
+.siteana-seo-table {
+  font-size: 0.82rem;
+}
+
+.siteana-seo-query {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── RESPONSIVE ───────────────────── */
+@media (max-width: 768px) {
+  .siteana-insights { flex-direction: column; }
+  .siteana-ba-grid { grid-template-columns: 1fr 1fr 1fr 1fr; font-size: 0.8rem; }
+  .siteana-ba-header > span, .siteana-ba-row > span { padding: 0.4rem 0.35rem; }
+  .siteana-cumul-num { font-size: 2.2rem; }
+  .siteana-matrix-label { font-size: 0.65rem; }
+}
+
+@media (max-width: 480px) {
+  .siteana-range-bar { flex-wrap: wrap; }
+  .siteana-ms-item { min-width: 70px; }
+  .siteana-seo-query { max-width: 150px; }
+  .siteana-ba-grid { grid-template-columns: 1fr 1fr; }
+  .siteana-ba-header > span:nth-child(1),
+  .siteana-ba-row > span:nth-child(1) { grid-column: 1 / -1; }
+}
+
 /* Print */
 @media print {
-  .siteana-tabs, .siteana-transparency { display: none; }
+  .siteana-tabs, .siteana-transparency, .siteana-range-bar { display: none; }
   .siteana-panel { display: block !important; page-break-inside: avoid; }
 }
