@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2026 14:10:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 15:53:22 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
@@ -42,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1281088</guid>
       <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Admins are unable to progress mailbox migrations in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1280763</link>
+      <description>[Exchange Online] Admins are unable to progress mailbox migrations in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1280763</guid>
+      <pubDate>Wed, 15 Apr 2026 08:36:58 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1253428</guid>
       <pubDate>Mon, 16 Mar 2026 13:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may experience issues when accessing their Exchange Online mailbox via one or more connection method</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1253275</link>
-      <description>[Exchange Online] Users may have experienced errors when accessing their mailbox via multiple Exchange Online connection methods.</description>
-      <category>Exchange Online</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">EX1253275</guid>
-      <pubDate>Mon, 16 Mar 2026 09:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
