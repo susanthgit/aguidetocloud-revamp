@@ -34,14 +34,16 @@ tags:
   - checklist
 ---
 
-Deploying Microsoft 365 Copilot is not just "assign licences and go." In our experience, deployments that struggle typically trace the problem back to one of three gaps: **permissions weren't audited**, **governance wasn't in place**, or **users weren't prepared**. This guide gives you the complete, phased checklist — from planning through optimisation — so your deployment succeeds the first time.
+Deploying Copilot is like moving house. You wouldn't throw everything in a truck and hope for the best — you'd sort through your stuff first, label the boxes, and unpack room by room. The organisations that rush past the "sorting" phase are the ones that end up with Copilot surfacing confidential HR documents to people who shouldn't see them.
+
+This guide gives you the complete, phased checklist — from planning through optimisation — so your deployment succeeds the first time.
 
 **Quick links:**
 
-- [TL;DR — The 5-phase deployment framework](#tldr--the-5-phase-deployment-framework)
+- [The 5-phase framework](#tldr--the-5-phase-deployment-framework)
 - [What licence do you need?](#what-licence-do-you-need)
 - [Phase 1: Plan & assess](#phase-1-plan--assess)
-- [Phase 2: Secure & govern](#phase-2-secure--govern)
+- [Phase 2: Secure & govern (the critical one)](#phase-2-secure--govern)
 - [Phase 3: Configure & deploy](#phase-3-configure--deploy)
 - [Phase 4: Adopt & train](#phase-4-adopt--train)
 - [Phase 5: Monitor & optimise](#phase-5-monitor--optimise)
@@ -49,25 +51,19 @@ Deploying Microsoft 365 Copilot is not just "assign licences and go." In our exp
 - [Common mistakes](#common-mistakes-we-see-in-every-deployment)
 - [FAQ](#frequently-asked-questions)
 
-<div class="trainer-tip">
-
-💡 **Trainer tip:** Position Copilot Chat as **"your organisation's approved AI"** — it replaces the need for users to go to consumer AI tools like ChatGPT, Google Gemini, or Claude. Same AI power, but with enterprise data protection built in. This is the **Shadow AI story** — give users a better, safer alternative and they'll stop using unapproved tools.
-
-</div>
-
 <div class="living-doc-banner">
 
-🔄 **This is a living document.** The AI world changes every day — features ship, settings move, and guidance evolves. If you spot anything that's out of date or needs updating, please [send me feedback](/feedback/) and I'll update it. Last verified against Microsoft documentation: April 2026.
+This is a living document. The AI world changes every day — features ship, settings move, and guidance evolves. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: April 2026.
 
 </div>
 
-> ⚠️ **Government cloud note:** This guide applies to commercial Microsoft 365 tenants. GCC, GCC High, and DoD tenants may have different feature availability, timelines, and compliance requirements. Verify with your Microsoft account team.
+> ⚠️ **Government cloud note:** This guide covers commercial tenants. GCC, GCC High, and DoD may differ — check with your Microsoft account team.
 
 ---
 
 ## TL;DR — The 5-Phase Deployment Framework
 
-If you only have 60 seconds, here's the framework:
+Back to the moving house analogy. Here are your five phases — and what goes wrong if you skip any of them:
 
 ```mermaid
 flowchart LR
@@ -135,9 +131,9 @@ flowchart LR
 
 ## Phase 1: Plan & Assess
 
-### Who Owns What — The Deployment Roles
+This is the "house inspection before you buy" phase. You're figuring out what you've got, who's responsible for what, and where the gaps are.
 
-Copilot deployment spans multiple teams. Define ownership upfront or execution will stall:
+### Who Owns What
 
 | Role | Responsible For |
 |------|----------------|
@@ -192,11 +188,13 @@ Define what "success" means before deployment:
 
 ## Phase 2: Secure & Govern
 
-> ⚠️ **This is the most critical phase.** The majority of deployment issues we see trace back to governance gaps. Spend the time here.
+This is the "sorting through your stuff before packing" phase — and it's the one most organisations rush past. Don't.
+
+> ⚠️ **This is the most critical phase.** Most Copilot issues trace back to governance gaps that existed before Copilot arrived. Fix them now or fix them in a crisis later.
 
 ### 2.1 Audit SharePoint & OneDrive Permissions
 
-Copilot surfaces **any data a user has permission to access** — even if they've never seen it before. This is the #1 source of "Copilot showed me something it shouldn't have" complaints.
+Here's the thing most people miss: Copilot doesn't create new permissions. It surfaces **anything a user already has access to** — even files they've never opened. Every organisation has that one SharePoint site where permissions got weird years ago and nobody fixed it. Copilot will find it.
 
 **What to audit:**
 
@@ -299,7 +297,9 @@ Configure how Copilot handles sensitive topics and web content:
 
 ## Phase 3: Configure & Deploy
 
-### 3.1 Technical Prerequisites Checklist
+Now you're actually "moving in." The boxes are sorted (Phase 2), and it's time to start unpacking — room by room, not all at once.
+
+### 3.1 Technical Prerequisites
 
 Before assigning a single licence, verify:
 
@@ -367,6 +367,8 @@ Before scaling beyond the pilot:
 
 ## Phase 4: Adopt & Train
 
+This is the "getting to know the neighbourhood" phase. You've moved in, but if nobody knows where anything is, what's the point?
+
 > Deploying Copilot without adoption planning is like buying a gym membership and never going. The licence cost is wasted if users don't know how to use it.
 
 ### 4.1 Build a Champions Network
@@ -426,6 +428,8 @@ Most users underperform with Copilot because they write bad prompts. Invest in p
 ---
 
 ## Phase 5: Monitor & Optimise
+
+You've moved in, unpacked, and everyone knows where the kitchen is. Now you track what's working and what isn't.
 
 ### 5.1 Usage Dashboards
 
