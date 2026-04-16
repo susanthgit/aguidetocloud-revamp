@@ -315,6 +315,33 @@
   margin-top: 0.25rem;
 }
 
+/* Week-over-week change badges */
+.siteana-wow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 0.25rem;
+}
+
+.siteana-wow-up {
+  background: rgba(16,185,129,0.15);
+  color: #10B981;
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.siteana-wow-down {
+  background: rgba(239,68,68,0.15);
+  color: #EF4444;
+  border: 1px solid rgba(239,68,68,0.3);
+}
+
+.siteana-wow-flat {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* Tabs */
 .siteana-tabs {
   display: flex;
