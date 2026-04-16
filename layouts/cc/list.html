@@ -39,6 +39,7 @@
     <button class="cc-view active" data-view="dashboard">Dashboard</button>
     <button class="cc-view" data-view="youtube">YouTube</button>
     <button class="cc-view" data-view="seo">SEO</button>
+    <button class="cc-view" data-view="strategy">Strategy</button>
   </div>
 
   <!-- VIEW: Dashboard -->
@@ -157,7 +158,32 @@
       <div id="cc-seo-gaps"></div>
     </section>
   </div>
-</div>
+
+  <!-- VIEW: Strategy -->
+  <div class="cc-panel" id="cc-strategy">
+    <section class="cc-section">
+      <h2 class="cc-section-title">Topic Clusters</h2>
+      <p class="cc-hint">Content grouped by topic — which clusters drive growth?</p>
+      <div id="cc-clusters"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head"><h2 class="cc-section-title">Content Calendar</h2><button class="cc-export-btn" id="cc-cal-add">+ Add</button></div>
+      <div id="cc-calendar"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Growth Predictions</h2>
+      <p class="cc-hint">What happens if you change your output?</p>
+      <div id="cc-predictions"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head"><h2 class="cc-section-title">Competitor Watch</h2><button class="cc-export-btn" id="cc-comp-add">+ Add Channel</button></div>
+      <div id="cc-competitors"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Portfolio Health</h2>
+      <div id="cc-portfolio"></div>
+    </section>
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
 <script src="/js/command-centre.js?v={{ site.Params.cache_version }}"></script>

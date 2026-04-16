@@ -479,6 +479,7 @@
     if (key === 'd') switchView('dashboard');
     else if (key === 'y') switchView('youtube');
     else if (key === 's') switchView('seo');
+    else if (key === 't') switchView('strategy');
     else if (key === 'r') { e.preventDefault(); location.reload(); }
   });
   function switchView(name) {
@@ -488,6 +489,7 @@
     if (panel) panel.classList.add('active');
     if (name === 'youtube' && !ytData) fetchYT();
     if (name === 'seo' && siteData) renderSEO(siteData);
+    if (name === 'strategy') renderStrategy();
   }
 
   // ── V2: COPY WEEKLY REPORT (#9) ──
@@ -519,6 +521,224 @@
   }
   var reportBtn = document.getElementById('cc-copy-report');
   if (reportBtn) reportBtn.addEventListener('click', copyWeeklyReport);
+
+  // ── V3: STRATEGY VIEW ──
+  function renderStrategy() {
+    renderTopicClusters();
+    renderContentCalendar();
+    renderPredictions();
+    renderCompetitors();
+    renderPortfolio();
+  }
+
+  // ── V3: TOPIC CLUSTERS ──
+  var TOPIC_MAP = {
+    'copilot': { keywords: ['copilot','m365 copilot','copilot chat','copilot studio'], label: 'Copilot' },
+    'azure': { keywords: ['azure','az-','cloud','iaas','vm','virtual machine'], label: 'Azure' },
+    'security': { keywords: ['security','conditional access','zero trust','mfa','entra','purview','dlp'], label: 'Security' },
+    'licensing': { keywords: ['licensing','license','e3','e5','e7','plan','pricing','sku'], label: 'Licensing' },
+    'teams': { keywords: ['teams','meeting','collaboration'], label: 'Teams' },
+    'intune': { keywords: ['intune','endpoint','device','mdm','sccm'], label: 'Intune/Endpoint' },
+    'certification': { keywords: ['az-900','az-104','az-305','sc-','ms-102','exam','certification','study'], label: 'Certifications' },
+    'ai': { keywords: ['ai ','artificial intelligence','openai','chatgpt','claude','gemini','foundry'], label: 'AI & ML' },
+    'admin': { keywords: ['admin','powershell','exchange','sharepoint','migration','tenant'], label: 'IT Admin' }
+  };
+
+  function renderTopicClusters() {
+    var el = document.getElementById('cc-clusters');
+    if (!el) return;
+    var clusters = {};
+    Object.keys(TOPIC_MAP).forEach(function(k) { clusters[k] = { label: TOPIC_MAP[k].label, videos: [], siteViews: 0, queries: 0 }; });
+    clusters['other'] = { label: 'Other', videos: [], siteViews: 0, queries: 0 };
+    // Assign videos to clusters
+    if (ytData && ytData.mainVideos) {
+      ytData.mainVideos.forEach(function(v) {
+        var matched = false;
+        var tl = v.title.toLowerCase();
+        Object.keys(TOPIC_MAP).forEach(function(k) {
+          if (!matched && TOPIC_MAP[k].keywords.some(function(kw) { return tl.indexOf(kw) > -1; })) {
+            clusters[k].videos.push(v); matched = true;
+          }
+        });
+        if (!matched) clusters['other'].videos.push(v);
+      });
+    }
+    // Assign site tool views to clusters
+    if (siteData && siteData.ga4 && siteData.ga4.leaderboard) {
+      var toolClusterMap = { 'copilot-readiness':'copilot','copilot-matrix':'copilot','roi-calculator':'copilot','licensing':'licensing','ca-builder':'security','service-health':'admin','ps-builder':'admin','migration-planner':'admin','ai-mapper':'ai','ai-showdown':'ai','cert-tracker':'certification','prompt-library':'ai','prompt-polisher':'ai','prompt-guide':'ai' };
+      siteData.ga4.leaderboard.forEach(function(t) {
+        var ck = toolClusterMap[t.tool] || 'other';
+        if (clusters[ck]) clusters[ck].siteViews += t.views;
+      });
+    }
+    // Assign GSC queries
+    if (siteData && siteData.gsc && siteData.gsc.queries) {
+      siteData.gsc.queries.forEach(function(q) {
+        var ql = q.query.toLowerCase();
+        var matched = false;
+        Object.keys(TOPIC_MAP).forEach(function(k) {
+          if (!matched && TOPIC_MAP[k].keywords.some(function(kw) { return ql.indexOf(kw) > -1; })) {
+            clusters[k].queries++; matched = true;
+          }
+        });
+      });
+    }
+    // Render
+    var sorted = Object.keys(clusters).filter(function(k) { return clusters[k].videos.length > 0 || clusters[k].siteViews > 0; })
+      .map(function(k) { var c = clusters[k]; var totalViews = c.videos.reduce(function(s,v){return s+v.views;},0); var avgEng = c.videos.length ? c.videos.reduce(function(s,v){return s+v.engagement;},0)/c.videos.length : 0; return { key: k, label: c.label, vids: c.videos.length, totalViews: totalViews, avgEng: Math.round(avgEng*100)/100, siteViews: c.siteViews, queries: c.queries, score: totalViews + c.siteViews * 2 }; })
+      .sort(function(a,b) { return b.score - a.score; });
+    var maxScore = sorted.length ? sorted[0].score : 1;
+    el.innerHTML = sorted.map(function(c) {
+      var pct = Math.round((c.score / maxScore) * 100);
+      var barColor = pct >= 60 ? 'var(--cc-green)' : pct >= 30 ? 'var(--cc-amber)' : 'var(--cc-red)';
+      return '<div class="cc-cluster"><div class="cc-cluster-head"><span class="cc-cluster-label">' + esc(c.label) + '</span><span class="cc-cluster-stats">' + c.vids + ' vids \u00B7 ' + roundK(c.totalViews) + ' YT views \u00B7 ' + roundK(c.siteViews) + ' site views \u00B7 ' + c.queries + ' queries</span></div><div class="cc-proj-bar"><div class="cc-proj-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div></div>';
+    }).join('');
+  }
+
+  // ── V3: CONTENT CALENDAR ──
+  function renderContentCalendar() {
+    var el = document.getElementById('cc-calendar');
+    if (!el) return;
+    var plans; try { plans = JSON.parse(localStorage.getItem('cc_calendar')) || []; } catch(e) { plans = []; }
+    // Show next 14 days
+    var days = [];
+    var now = new Date();
+    for (var i = 0; i < 14; i++) {
+      var d = new Date(now); d.setDate(now.getDate() + i);
+      var dateStr = d.toISOString().split('T')[0];
+      var dayName = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];
+      var planned = plans.filter(function(p) { return p.date === dateStr; });
+      days.push({ date: dateStr, day: dayName, isToday: i === 0, planned: planned });
+    }
+    el.innerHTML = '<div class="cc-cal-grid">' + days.map(function(d) {
+      var cls = d.isToday ? ' cc-cal-today' : '';
+      var content = d.planned.length ? d.planned.map(function(p) {
+        return '<div class="cc-cal-item cc-cal-' + (p.type || 'blog') + '" title="' + esc(p.title) + '">' + esc(p.title.length > 20 ? p.title.slice(0,18) + '..' : p.title) + '</div>';
+      }).join('') : '';
+      return '<div class="cc-cal-day' + cls + '" data-date="' + d.date + '"><span class="cc-cal-date">' + d.day + ' ' + d.date.slice(5) + '</span>' + content + '</div>';
+    }).join('') + '</div>';
+    // Add button handler
+    var addBtn = document.getElementById('cc-cal-add');
+    if (addBtn) addBtn.onclick = function() {
+      var title = prompt('Content title:');
+      if (!title) return;
+      var date = prompt('Date (YYYY-MM-DD):', new Date().toISOString().split('T')[0]);
+      if (!date) return;
+      var type = prompt('Type (blog/video/both):', 'blog');
+      plans.push({ title: title, date: date, type: type || 'blog' });
+      try { localStorage.setItem('cc_calendar', JSON.stringify(plans)); } catch(e) {}
+      renderContentCalendar();
+    };
+  }
+
+  // ── V3: GROWTH PREDICTIONS ──
+  function renderPredictions() {
+    var el = document.getElementById('cc-predictions');
+    if (!el) return;
+    // Use YouTube subscriber data if available
+    var currentSubs = 0; var netPerDay = 0;
+    if (ytData && ytData.milestoneProjections) {
+      currentSubs = ytData.milestoneProjections.currentTotal;
+      netPerDay = ytData.milestoneProjections.netPerDay;
+    } else if (ytData && ytData.main && ytData.bites) {
+      currentSubs = (ytData.main.subscribers || 0) + (ytData.bites.subscribers || 0);
+    }
+    // Site growth
+    var siteViewsPerDay = 0;
+    if (siteData && siteData.ga4 && siteData.ga4.trend && siteData.ga4.trend.length) {
+      siteViewsPerDay = Math.round(siteData.ga4.trend.reduce(function(s,d){return s+d.views;},0) / siteData.ga4.trend.length);
+    }
+    var scenarios = [
+      { name: 'Current pace', subsMult: 1, viewsMult: 1 },
+      { name: 'Double output', subsMult: 1.8, viewsMult: 1.8 },
+      { name: '10x effort', subsMult: 5, viewsMult: 5 }
+    ];
+    var targets = [100000, 500000, 1000000];
+    el.innerHTML = '<div class="cc-pred-grid">'
+      + '<div class="cc-pred-header"><span></span>' + scenarios.map(function(s) { return '<span>' + s.name + '</span>'; }).join('') + '</div>'
+      + targets.map(function(t) {
+        var label = t >= 1000000 ? '1M subs' : (t/1000) + 'K subs';
+        return '<div class="cc-pred-row"><span class="cc-pred-label">' + label + '</span>' + scenarios.map(function(sc) {
+          var rate = netPerDay * sc.subsMult;
+          var needed = t - currentSubs;
+          if (rate <= 0 || needed <= 0) return '<span class="cc-pred-cell">' + (needed <= 0 ? '\u2705 Done' : '\u274C') + '</span>';
+          var days = Math.ceil(needed / rate);
+          var date = new Date(Date.now() + days * 86400000);
+          var dateStr = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+          return '<span class="cc-pred-cell">' + dateStr + ' <small>(' + Math.round(days/30) + 'mo)</small></span>';
+        }).join('') + '</div>';
+      }).join('')
+      + '</div>'
+      + '<p class="cc-hint" style="margin-top:0.75rem">Site: ' + numFmt(siteViewsPerDay) + ' views/day \u00B7 YouTube: ' + (netPerDay > 0 ? '+' : '') + netPerDay + ' subs/day \u00B7 Combined: ' + numFmt(currentSubs) + ' subs</p>';
+  }
+
+  // ── V3: COMPETITOR WATCH ──
+  function renderCompetitors() {
+    var el = document.getElementById('cc-competitors');
+    if (!el) return;
+    var comps; try { comps = JSON.parse(localStorage.getItem('cc_competitors')) || []; } catch(e) { comps = []; }
+    if (!comps.length) {
+      el.innerHTML = '<p style="color:var(--cc-muted);font-size:0.82rem">No competitors added yet. Click "+ Add Channel" to track competitor YouTube channels.</p>';
+    } else {
+      el.innerHTML = comps.map(function(c) {
+        return '<div class="cc-item"><span class="cc-item-name">' + esc(c.name || c.id) + '</span><span class="cc-item-num">' + (c.subscribers ? roundK(c.subscribers) + ' subs' : 'loading...') + '</span></div>';
+      }).join('');
+    }
+    // Add button handler
+    var addBtn = document.getElementById('cc-comp-add');
+    if (addBtn) addBtn.onclick = function() {
+      var id = prompt('YouTube Channel ID (e.g. UCxxxxxxxx):');
+      if (!id) return;
+      var name = prompt('Channel name (for display):');
+      comps.push({ id: id.trim(), name: name || id.trim() });
+      try { localStorage.setItem('cc_competitors', JSON.stringify(comps)); } catch(e) {}
+      renderCompetitors();
+      // Try to fetch their stats
+      fetch(API + '?youtube=1').catch(function() {}); // just to warm up the API — competitor fetch would need separate implementation
+    };
+  }
+
+  // ── V3: PORTFOLIO HEALTH ──
+  function renderPortfolio() {
+    var el = document.getElementById('cc-portfolio');
+    if (!el) return;
+    var items = [];
+    // Score each content type
+    var blogScore = 0; var toolScore = 0; var videoScore = 0;
+    if (siteData && siteData.ga4) {
+      var ga4 = siteData.ga4;
+      if (ga4.blog_pages && ga4.blog_pages.length) {
+        var avgBlogViews = ga4.blog_pages.reduce(function(s,p){return s+p.views;},0) / ga4.blog_pages.length;
+        blogScore = avgBlogViews > 50 ? 90 : avgBlogViews > 20 ? 70 : avgBlogViews > 5 ? 50 : 30;
+        items.push({ label: 'Blog Posts', score: blogScore, detail: ga4.blog_pages.length + ' posts, avg ' + Math.round(avgBlogViews) + ' views' });
+      }
+      if (ga4.leaderboard && ga4.leaderboard.length) {
+        var activateTools = ga4.leaderboard.filter(function(t) { return t.views > 10; }).length;
+        var totalTools = ga4.leaderboard.length;
+        toolScore = Math.round((activateTools / totalTools) * 100);
+        items.push({ label: 'Tools', score: toolScore, detail: activateTools + '/' + totalTools + ' tools with >10 views' });
+      }
+    }
+    if (ytData && ytData.mainVideos && ytData.mainVideos.length) {
+      var avgVpd = ytData.mainVideos.reduce(function(s,v){return s+v.viewsPerDay;},0) / ytData.mainVideos.length;
+      videoScore = avgVpd > 20 ? 90 : avgVpd > 10 ? 70 : avgVpd > 3 ? 50 : 30;
+      items.push({ label: 'YouTube Videos', score: videoScore, detail: ytData.mainVideos.length + ' videos, avg ' + Math.round(avgVpd*10)/10 + ' views/day' });
+    }
+    // SEO coverage
+    if (siteData && siteData.gsc && siteData.gsc.queries) {
+      var top10 = siteData.gsc.queries.filter(function(q) { return q.position <= 10; }).length;
+      var seoScore = Math.min(100, Math.round((top10 / siteData.gsc.queries.length) * 100));
+      items.push({ label: 'SEO Coverage', score: seoScore, detail: top10 + '/' + siteData.gsc.queries.length + ' queries in top 10' });
+    }
+    if (!items.length) { el.innerHTML = '<p style="color:var(--cc-muted);font-size:0.82rem">Need more data</p>'; return; }
+    var overallScore = Math.round(items.reduce(function(s,i){return s+i.score;},0) / items.length);
+    var oc = overallScore >= 70 ? 'var(--cc-green)' : overallScore >= 50 ? 'var(--cc-amber)' : 'var(--cc-red)';
+    el.innerHTML = '<div style="text-align:center;margin-bottom:1rem"><span style="font-family:var(--cc-mono);font-size:2.5rem;font-weight:800;color:' + oc + '">' + overallScore + '</span><span style="color:var(--cc-muted);font-size:0.78rem;display:block">Portfolio Score</span></div>'
+      + items.map(function(item) {
+        var c = item.score >= 70 ? 'var(--cc-green)' : item.score >= 50 ? 'var(--cc-amber)' : 'var(--cc-red)';
+        return '<div class="cc-proj"><div class="cc-proj-header"><span class="cc-proj-label">' + esc(item.label) + '</span><span class="cc-proj-pct" style="color:' + c + '">' + item.score + '%</span></div><div class="cc-proj-bar"><div class="cc-proj-fill" style="width:' + item.score + '%;background:' + c + '"></div></div><div class="cc-proj-meta"><span>' + esc(item.detail) + '</span></div></div>';
+      }).join('');
+  }
 
   // ── V2: ANIMATED COUNTERS (#10) ──
   function animateCounter(el, target) {

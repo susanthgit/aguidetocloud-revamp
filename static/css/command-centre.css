@@ -225,6 +225,43 @@ body { background: var(--cc-bg) !important; }
   .cc-status { font-size: 0.75rem; }
 }
 
+/* V3: Topic Clusters */
+.cc-cluster { padding: 0.6rem 0; border-bottom: 1px solid var(--cc-border); }
+.cc-cluster:last-child { border-bottom: none; }
+.cc-cluster-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; flex-wrap: wrap; gap: 0.3rem; }
+.cc-cluster-label { font-weight: 700; color: #fff; font-size: 0.9rem; }
+.cc-cluster-stats { font-family: var(--cc-mono); font-size: 0.72rem; color: var(--cc-muted); }
+
+/* V3: Content Calendar */
+.cc-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cc-cal-day {
+  background: var(--cc-surface); border: 1px solid var(--cc-border); border-radius: 6px;
+  padding: 0.35rem; min-height: 60px; font-size: 0.72rem;
+}
+.cc-cal-today { border-color: var(--cc-green); background: rgba(34,197,94,0.04); }
+.cc-cal-date { color: var(--cc-muted); font-family: var(--cc-mono); font-size: 0.65rem; display: block; margin-bottom: 0.2rem; }
+.cc-cal-item {
+  font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.3rem; border-radius: 3px;
+  margin-top: 0.15rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.cc-cal-blog { background: rgba(59,130,246,0.2); color: var(--cc-blue); }
+.cc-cal-video { background: rgba(239,68,68,0.2); color: var(--cc-red); }
+.cc-cal-both { background: rgba(168,85,247,0.2); color: #a855f7; }
+
+/* V3: Predictions Grid */
+.cc-pred-grid { font-family: var(--cc-mono); font-size: 0.82rem; }
+.cc-pred-header { display: grid; grid-template-columns: 100px repeat(3, 1fr); gap: 0; }
+.cc-pred-header > span { padding: 0.4rem 0.6rem; font-size: 0.7rem; color: var(--cc-muted); text-transform: uppercase; font-weight: 600; border-bottom: 1px solid var(--cc-border); }
+.cc-pred-row { display: grid; grid-template-columns: 100px repeat(3, 1fr); gap: 0; }
+.cc-pred-label { padding: 0.5rem 0.6rem; font-weight: 700; color: var(--cc-text); border-bottom: 1px solid var(--cc-border); }
+.cc-pred-cell { padding: 0.5rem 0.6rem; color: var(--cc-text); border-bottom: 1px solid var(--cc-border); }
+.cc-pred-cell small { color: var(--cc-muted); }
+
+@media (max-width: 640px) {
+  .cc-cal-grid { grid-template-columns: repeat(4, 1fr); }
+  .cc-pred-header, .cc-pred-row { grid-template-columns: 80px repeat(3, 1fr); font-size: 0.72rem; }
+}
+
 /* V2: WoW Comparison Row */
 .cc-wow-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .cc-wow-item {
@@ -262,7 +299,7 @@ body { background: var(--cc-bg) !important; }
 
 /* V2: Keyboard hint */
 .cc-views::after {
-  content: 'D / Y / S / R';
+  content: 'D / Y / S / T / R';
   font-family: var(--cc-mono); font-size: 0.6rem; color: rgba(255,255,255,0.15);
   margin-left: 0.75rem; align-self: center; letter-spacing: 0.1em;
 }
