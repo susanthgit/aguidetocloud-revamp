@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 18:05:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 23:40:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>New enhancements for merchant initiated transactions with the Google Pay API</title>
-      <link>https://developers.googleblog.com/new-enhancements-for-merchant-initiated-transactions-with-the-google-pay-api/</link>
-      <description>Google has enhanced its Pay API to improve merchant-initiated transactions, allowing better management of subscriptions and payments. This update aims to increase transparency and reduce transaction declines.</description>
-      <category>Google</category>
-      <pubDate>Wed, 15 Apr 2026 18:03:24 +0000</pubDate>
-      <guid>https://developers.googleblog.com/new-enhancements-for-merchant-initiated-transactions-with-the-google-pay-api/</guid>
-    </item>
-    <item>
-      <title>Subagents have arrived in Gemini CLI</title>
-      <link>https://developers.googleblog.com/subagents-have-arrived-in-gemini-cli/</link>
-      <description>Gemini CLI has launched subagents, which are specialized agents designed to handle complex tasks without slowing down the main session. This feature allows for parallel task execution and better organization of multi-step processes.</description>
-      <category>Google</category>
-      <pubDate>Wed, 15 Apr 2026 18:03:24 +0000</pubDate>
-      <guid>https://developers.googleblog.com/subagents-have-arrived-in-gemini-cli/</guid>
-    </item>
-    <item>
-      <title>Microsoft's Windows 11 laptop deal for students comes with a $500 bonus - what's included</title>
-      <link>https://www.zdnet.com/article/microsoft-back-to-school-laptop-deal/</link>
-      <description>Microsoft is offering college students over $500 in subscriptions and perks with its Windows 11 laptop deal. This back-to-school promotion aims to attract students to its ecosystem.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 18:00:46 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/microsoft-back-to-school-laptop-deal/</guid>
-    </item>
-    <item>
-      <title>AI Could Democratize One of Tech's Most Valuable Resources</title>
-      <link>https://www.wired.com/story/ai-could-democratize-one-of-techs-most-valuable-resources/</link>
-      <description>AI is revolutionizing chip design and software optimization, making it more accessible for startups. This shift could democratize access to one of tech's most valuable resources.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 18:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/ai-could-democratize-one-of-techs-most-valuable-resources/</guid>
-    </item>
-    <item>
-      <title>The musician-turned-biotech-founder waiting to fundraise</title>
-      <link>https://techcrunch.com/podcast/the-musician-turned-biotech-founder-waiting-to-fundraise/</link>
-      <description>Musician Aloe Blacc is navigating the complexities of biotech fundraising after his COVID experience. He is now working on a cancer drug platform but faces regulatory challenges.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 17:58:28 +0000</pubDate>
-      <guid>https://techcrunch.com/podcast/the-musician-turned-biotech-founder-waiting-to-fundraise/</guid>
-    </item>
-    <item>
-      <title>Patch these critical Fortinet sandbox bugs that let attackers bypass login, run commands over HTTP</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/critical_fortinet_sandbox_bugs/</link>
-      <description>Two critical vulnerabilities in Fortinet's sandbox could allow attackers to bypass authentication and execute unauthorized commands. Users are urged to patch these bugs promptly.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 17:52:31 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/critical_fortinet_sandbox_bugs/</guid>
-    </item>
-    <item>
-      <title>India’s vibe-coding startup Emergent enters OpenClaw-like AI agent space</title>
-      <link>https://techcrunch.com/2026/04/15/indias-vibe-coding-startup-emergent-enters-openclaw-like-ai-agent-space/</link>
-      <description>Emergent's new AI agent, Wingman, allows users to manage and automate tasks via chat on platforms like WhatsApp and Telegram. This innovation aims to streamline task management.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 17:24:18 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/15/indias-vibe-coding-startup-emergent-enters-openclaw-like-ai-agent-space/</guid>
-    </item>
-    <item>
-      <title>Best Buy will give you a free LG TV when you buy the B5 OLED at 50% off - seriously</title>
-      <link>https://www.zdnet.com/article/lg-b5-oled-tv-deal-best-buy/</link>
-      <description>Best Buy is offering a free LG TV with the purchase of the discounted B5 OLED model. This promotion highlights the competitive pricing strategies in the electronics market.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 17:16:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/lg-b5-oled-tv-deal-best-buy/</guid>
-    </item>
-    <item>
-      <title>Decades-old Linux UI bug fixed by dev younger than the window manager</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/enlightenment_e16_bug_patched/</link>
-      <description>A developer has fixed a 20-year-old bug in the Enlightenment E16 Linux window manager, showcasing dedication to older software. This fix reflects a commitment to maintaining legacy systems.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 17:09:55 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/enlightenment_e16_bug_patched/</guid>
-    </item>
-    <item>
-      <title>Why Zorin OS 18.1 is simply the best Linux distro - for anyone</title>
-      <link>https://www.zdnet.com/article/zorin-os-18-1-release-is-best-linux-distro-for-anyone/</link>
-      <description>Zorin OS 18.1 has been released, improving upon its predecessors with notable enhancements. This version aims to provide a better user experience for Linux enthusiasts.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 17:00:45 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/zorin-os-18-1-release-is-best-linux-distro-for-anyone/</guid>
-    </item>
-    <item>
-      <title>Build a personal organization command center with GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</link>
-      <description>A GitHub engineer developed a personal organization tool using GitHub Copilot CLI, showcasing how AI can enhance productivity in software development.</description>
+      <title>CodeQL 2.25.2 adds Kotlin 2.3.20 support and other updates</title>
+      <link>https://github.blog/changelog/2026-04-15-codeql-2-25-2-adds-kotlin-2-3-20-support-and-other-updates</link>
+      <description>CodeQL 2.25.2 has been released, adding support for Kotlin 2.3.20 and other updates to enhance GitHub's static analysis capabilities for security issues. This update is significant as it improves developers' ability to identify vulnerabilities in their code.</description>
       <category>GitHub Copilot</category>
-      <pubDate>Wed, 15 Apr 2026 17:00:00 +0000</pubDate>
-      <guid>https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</guid>
+      <pubDate>Wed, 15 Apr 2026 22:05:52 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-15-codeql-2-25-2-adds-kotlin-2-3-20-support-and-other-updates</guid>
     </item>
     <item>
-      <title>Why Netgear just got the first FCC router ban exemption in the US</title>
-      <link>https://www.zdnet.com/article/netgear-is-first-to-win-exemption-from-fcc-router-ban/</link>
-      <description>Netgear has received the first FCC router ban exemption in the US, allowing continued sales of its routers amid regulatory scrutiny.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 16:58:24 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/netgear-is-first-to-win-exemption-from-fcc-router-ban/</guid>
-    </item>
-    <item>
-      <title>Bad teacher bots can leave hidden marks on model students</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/llms_inherit_bad_traits/</link>
-      <description>A study reveals that biases from large language models (LLMs) can be unintentionally passed to other models, raising concerns about AI training practices.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 16:46:12 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/llms_inherit_bad_traits/</guid>
-    </item>
-    <item>
-      <title>Microsoft's latest Windows update now confirms if your PC is Secure Boot-protected - how it works</title>
-      <link>https://www.zdnet.com/article/secure-boot-microsoft-april-windows-update/</link>
-      <description>Microsoft's latest Windows update includes a feature that confirms if a PC is Secure Boot-protected, alongside various security fixes.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 16:20:47 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/secure-boot-microsoft-april-windows-update/</guid>
-    </item>
-    <item>
-      <title>Automotive data biz Autovista blames ransomware for service disruption</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/automotive_data_biz_autovista_ransomware/</link>
-      <description>Autovista reported a ransomware attack that disrupted services in Europe and Australia, prompting customers to block emails from the provider.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 16:18:18 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/automotive_data_biz_autovista_ransomware/</guid>
-    </item>
-    <item>
-      <title>Customized Amazon Nova models improve molecular-property prediction in drug discovery</title>
-      <link>https://www.amazon.science/blog/customized-amazon-nova-models-improve-molecular-property-prediction-in-drug-discovery</link>
-      <description>Amazon's Nova models streamline molecular-property predictions for drug discovery, replacing multiple models with a single optimized LLM.</description>
-      <category>Amazon</category>
-      <pubDate>Wed, 15 Apr 2026 16:10:55 +0000</pubDate>
-      <guid>https://www.amazon.science/blog/customized-amazon-nova-models-improve-molecular-property-prediction-in-drug-discovery</guid>
-    </item>
-    <item>
-      <title>Can this $70 Linux app make up for the lack of Photoshop? I tried it to find out</title>
-      <link>https://www.zdnet.com/article/fogpanther-image-editor-linux-gimp-competitor/</link>
-      <description>A review explores a $70 Linux app that could serve as a Photoshop alternative, assessing its capabilities against established software.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 15:59:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/fogpanther-image-editor-linux-gimp-competitor/</guid>
-    </item>
-    <item>
-      <title>Not all networks can handle AI traffic – and experts are sounding alarms</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/networks_not_ready_for_ai_challenges/</link>
-      <description>Experts warn that many networks are unprepared for the data demands of AI, highlighting a potential infrastructure crisis as AI adoption grows.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 15:40:11 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/networks_not_ready_for_ai_challenges/</guid>
-    </item>
-    <item>
-      <title>Create rich, custom tooltips in Amazon Quick Sight</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/</link>
-      <description>Amazon Quick Sight now allows users to create rich, custom tooltips for dashboards, enhancing data visualization and interactivity.</description>
-      <category>Amazon</category>
-      <pubDate>Wed, 15 Apr 2026 15:22:53 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/</guid>
-    </item>
-    <item>
-      <title>Accelerating decode-heavy LLM inference with speculative decoding on AWS Trainium and vLLM</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/accelerating-decode-heavy-llm-inference-with-speculative-decoding-on-aws-trainium-and-vllm/</link>
-      <description>The article discusses how speculative decoding can accelerate LLM inference on AWS Trainium, reducing costs per generated token.</description>
-      <category>Amazon</category>
-      <pubDate>Wed, 15 Apr 2026 15:20:58 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/accelerating-decode-heavy-llm-inference-with-speculative-decoding-on-aws-trainium-and-vllm/</guid>
-    </item>
-    <item>
-      <title>You can use Linux 7.0 on these 7 distros today - here's what to expect</title>
-      <link>https://www.zdnet.com/article/try-new-linux-7-0-kernel-on-these-distributions/</link>
-      <description>The latest Linux 7.0 kernel introduces full Rust support and an enhanced scheduler, improving performance for both work and gaming across various distributions.</description>
-      <category>Industry</category>
-      <pubDate>Wed, 15 Apr 2026 15:19:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/try-new-linux-7-0-kernel-on-these-distributions/</guid>
-    </item>
-    <item>
-      <title>Rede Mater Dei de Saúde: Monitoring AI agents in the revenue cycle with Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/rede-mater-dei-de-saude-monitoring-ai-agents-in-the-revenue-cycle-with-amazon-bedrock-agentcore/</link>
-      <description>Rede Mater Dei de Saúde discusses the impact of AI agents on healthcare revenue cycles, emphasizing their role in decision-making and operational efficiency.</description>
-      <category>Amazon</category>
-      <pubDate>Wed, 15 Apr 2026 15:15:23 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/rede-mater-dei-de-saude-monitoring-ai-agents-in-the-revenue-cycle-with-amazon-bedrock-agentcore/</guid>
-    </item>
-    <item>
-      <title>Windows takes a crash dump after one McDonald's order too many</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/windows_mcdonalds_bork/</link>
-      <description>A McDonald's in California experienced a humorous incident where a Windows system displayed a Blue Screen of Death, showcasing the OS's notorious reliability issues.</description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 15:14:21 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/windows_mcdonalds_bork/</guid>
-    </item>
-    <item>
-      <title>Rethinking AI TCO: Why Cost per Token Is the Only Metric That Matters</title>
-      <link>https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/</link>
-      <description>The article argues that in the age of generative AI, the cost per token has become the key metric for evaluating AI infrastructure economics.</description>
-      <category>NVIDIA</category>
-      <pubDate>Wed, 15 Apr 2026 15:00:26 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/</guid>
-    </item>
-    <item>
-      <title>Developer policy update: Intermediary liability, copyright, and transparency</title>
-      <link>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</link>
-      <description>GitHub updates developers on policy changes regarding intermediary liability, copyright, and transparency, providing insights for the upcoming year.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
-      <guid>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</guid>
-    </item>
-    <item>
-      <title>Gemini 3.1 Flash TTS: the next generation of expressive AI speech</title>
-      <link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</link>
-      <description>Gemini 3.1 Flash TTS introduces a new generation of AI speech technology, enhancing expressiveness and realism in voice synthesis.</description>
+      <title>I tried Google's new desktop app for Windows, and I'll never search the old way again</title>
+      <link>https://www.zdnet.com/article/i-tried-googles-new-desktop-app/</link>
+      <description>Google's new desktop app for Windows offers a faster way to access tools like Gemini, Lens, and Search, promising a more efficient user experience. This release could change how users interact with Google's services on their desktops.</description>
       <category>Google</category>
-      <pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
-      <guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</guid>
+      <pubDate>Wed, 15 Apr 2026 22:02:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/i-tried-googles-new-desktop-app/</guid>
     </item>
     <item>
-      <title>Allbirds Is Pivoting to AI Compute. Sure, Why Not</title>
-      <link>https://www.wired.com/story/allbirds-is-pivoting-to-ai-compute-sure-why-not/</link>
-      <description>Allbirds, once a leading apparel brand, is pivoting to AI by rebranding as NewBird AI, focusing on GPU-as-a-Service offerings.</description>
+      <title>Anthropic's Project Glasswing CVE tally is still anyone's guess</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/project_glasswing_cves/</link>
+      <description>Anthropic's Project Glasswing allows select companies to test its new model, Mythos, for finding vulnerabilities, but the actual number of discovered issues remains unclear. This initiative raises questions about the model's safety and effectiveness.</description>
+      <category>Anthropic</category>
+      <pubDate>Wed, 15 Apr 2026 21:33:35 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/project_glasswing_cves/</guid>
+    </item>
+    <item>
+      <title>Don't let the bot play doctor! AI gets early diagnoses wrong 80% of the time</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/ai_gets_early_medical_diagnosis/</link>
+      <description>Research indicates that AI models, including LLMs, are inaccurate in early diagnostic reasoning, getting it wrong 80% of the time. This raises concerns about the reliability of AI in medical contexts.</description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 15 Apr 2026 21:07:21 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/ai_gets_early_medical_diagnosis/</guid>
+    </item>
+    <item>
+      <title>Customers revolt as GitHub Copilot 'fixes' rate limits</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/github_copilot_rate_limiting_bug/</link>
+      <description>GitHub Copilot users are facing issues due to a bug that miscalculated token usage, leading to rapid exhaustion of their subscription allowances. This has sparked customer dissatisfaction and concerns about the service's reliability.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 15 Apr 2026 20:25:58 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/github_copilot_rate_limiting_bug/</guid>
+    </item>
+    <item>
+      <title>Shoe company says it's getting into AI infrastructure and yes this is the top</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/allbirds_ai_longislandicedtea_blockchain_lolol/</link>
+      <description>A shoe company is venturing into AI infrastructure, drawing parallels to past branding shifts in unrelated industries. This trend reflects a growing interest in AI across diverse sectors.</description>
       <category>Top Stories</category>
-      <pubDate>Wed, 15 Apr 2026 14:58:08 +0000</pubDate>
-      <guid>https://www.wired.com/story/allbirds-is-pivoting-to-ai-compute-sure-why-not/</guid>
+      <pubDate>Wed, 15 Apr 2026 20:06:13 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/allbirds_ai_longislandicedtea_blockchain_lolol/</guid>
     </item>
     <item>
-      <title>New Adobe Premiere Color Grading Mode Accelerated on NVIDIA GPUs</title>
-      <link>https://blogs.nvidia.com/blog/rtx-ai-garage-nab-adobe-premiere-color-mode/</link>
-      <description>Adobe Premiere is set to unveil a new color grading mode optimized for NVIDIA GPUs at the upcoming NAB Show, enhancing video editing capabilities.</description>
-      <category>NVIDIA</category>
-      <pubDate>Wed, 15 Apr 2026 13:00:38 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/rtx-ai-garage-nab-adobe-premiere-color-mode/</guid>
+      <title>OpenAI updates its Agents SDK to help enterprises build safer, more capable agents</title>
+      <link>https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/</link>
+      <description>OpenAI has updated its Agents SDK to enhance the development of safer and more capable AI agents for enterprises. This update reflects the increasing demand for robust AI solutions in business environments.</description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 15 Apr 2026 19:28:36 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/</guid>
     </item>
     <item>
-      <title>Inside VAKRA: Reasoning, Tool Use, and Failure Modes of Agents</title>
-      <link>https://huggingface.co/blog/ibm-research/vakra-benchmark-analysis</link>
-      <description>The article explores VAKRA's reasoning, tool use, and failure modes of agents, providing insights into their operational dynamics.</description>
+      <title>Hightouch reaches $100M ARR fueled by marketing tools powered by AI</title>
+      <link>https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/</link>
+      <description>Hightouch has achieved $100 million in annual recurring revenue, driven by its AI-powered marketing tools, showcasing rapid growth in the AI marketing sector. This highlights the increasing reliance on AI for business efficiency.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 18:55:12 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/</guid>
+    </item>
+    <item>
+      <title>LinkedIn data shows AI isn’t to blame for hiring decline… yet</title>
+      <link>https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/</link>
+      <description>LinkedIn reports a 20% decline in hiring since 2022, attributing it to higher interest rates rather than AI. This insight suggests that economic factors are currently more influential than technological ones in job markets.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 18:51:54 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/</guid>
+    </item>
+    <item>
+      <title>AI learning app Gizmo levels up with 13M users and a $22M investment</title>
+      <link>https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/</link>
+      <description>Gizmo, an AI learning app, has reached 13 million users and secured $22 million in Series A funding, indicating strong market interest in AI-driven educational tools. This growth reflects the increasing demand for innovative learning solutions.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 18:38:10 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/</guid>
+    </item>
+    <item>
+      <title>Can AI judge journalism? A Thiel-backed startup says yes, even if it risks chilling whistleblowers</title>
+      <link>https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/</link>
+      <description>Objection, a startup backed by Peter Thiel, plans to use AI to evaluate journalism, allowing users to challenge stories. Critics argue this could deter whistleblowers and alter media accountability.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 18:33:20 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/</guid>
+    </item>
+    <item>
+      <title>Enable Copilot cloud agent via custom properties</title>
+      <link>https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</link>
+      <description>GitHub now allows enterprise admins to enable the Copilot cloud agent on a per-organization basis, enhancing control over its deployment.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 15 Apr 2026 18:30:28 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</guid>
+    </item>
+    <item>
+      <title>Google rolls out a native Gemini app for Mac</title>
+      <link>https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/</link>
+      <description>Google has launched a native Gemini app for Mac, enabling users to share their screen and receive real-time assistance from the AI.</description>
+      <category>Google</category>
+      <pubDate>Wed, 15 Apr 2026 18:22:13 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/</guid>
+    </item>
+    <item>
+      <title>Trump’s posting even more AI-generated Trump-Jesus fan art</title>
+      <link>https://www.theverge.com/column/912627/trump-jesus-ai-whcd-penguin-meme</link>
+      <description>Donald Trump is increasingly sharing AI-generated fan art depicting himself as Jesus, reflecting the intersection of politics and AI-generated content.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 15:50:31 -0400</pubDate>
+      <guid>https://www.theverge.com/column/912627/trump-jesus-ai-whcd-penguin-meme</guid>
+    </item>
+    <item>
+      <title>'Like handing out the blueprint to a bank vault': Why AI led one company to abandon open source</title>
+      <link>https://www.zdnet.com/article/ai-security-worries-force-company-to-abandon-open-source/</link>
+      <description>Cal has shifted its flagship open-source program to a proprietary model due to concerns over AI exploiting its open code.</description>
+      <category>Industry</category>
+      <pubDate>Wed, 15 Apr 2026 15:00:39 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/ai-security-worries-force-company-to-abandon-open-source/</guid>
+    </item>
+    <item>
+      <title>iPhone charging slowly? 6 quick fixes to try before blaming your battery</title>
+      <link>https://www.zdnet.com/article/iphone-charging-slow-how-to-fix-speed-it-up/</link>
+      <description>If your iPhone is charging slowly, there are several troubleshooting tips to try before assuming a battery issue, including checking your setup.</description>
+      <category>Industry</category>
+      <pubDate>Wed, 15 Apr 2026 14:55:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/iphone-charging-slow-how-to-fix-speed-it-up/</guid>
+    </item>
+    <item>
+      <title>Roku TV vs. Fire Stick: Why I'm looking beyond streaming resolution when comparing the two</title>
+      <link>https://www.zdnet.com/article/roku-tv-vs-fire-stick/</link>
+      <description>Roku and Amazon have released new versions of their streaming sticks, prompting a comparison beyond just streaming resolution.</description>
+      <category>Industry</category>
+      <pubDate>Wed, 15 Apr 2026 14:37:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/roku-tv-vs-fire-stick/</guid>
+    </item>
+    <item>
+      <title>After sale of its shoe business, Allbirds pivots to AI</title>
+      <link>https://techcrunch.com/2026/04/15/after-sale-of-its-shoe-business-allbirds-pivots-to-ai/</link>
+      <description>After selling its shoe business, Allbirds is pivoting to AI, rebranding as NewBird AI and securing $50 million in financing.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 14:24:31 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/after-sale-of-its-shoe-business-allbirds-pivots-to-ai/</guid>
+    </item>
+    <item>
+      <title>Google launches a Gemini AI app on Mac</title>
+      <link>https://www.theverge.com/tech/912638/google-gemini-mac-app</link>
+      <description>Google's Gemini AI app for Mac allows users to interact with the assistant seamlessly while working on other tasks, enhancing productivity.</description>
+      <category>Google</category>
+      <pubDate>Wed, 15 Apr 2026 14:10:15 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/912638/google-gemini-mac-app</guid>
+    </item>
+    <item>
+      <title>French cops free mother and son after 20-hour crypto kidnap ordeal</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/15/crypto_kidnap_france/</link>
+      <description>French police rescued a mother and her son after a 20-hour kidnapping related to a crypto extortion case, highlighting ongoing security concerns.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 13:29:08 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/15/crypto_kidnap_france/</guid>
+    </item>
+    <item>
+      <title>Reid Hoffman weighs in on the ‘tokenmaxxing’ debate</title>
+      <link>https://techcrunch.com/2026/04/15/reid-hoffman-weighs-in-on-the-tokenmaxxing-debate/</link>
+      <description>Reid Hoffman discusses the 'tokenmaxxing' debate, suggesting that while tracking AI token usage can indicate adoption, it should not be seen as a direct measure of productivity without context.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 13:06:54 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/reid-hoffman-weighs-in-on-the-tokenmaxxing-debate/</guid>
+    </item>
+    <item>
+      <title>Adobe’s new Firefly AI assistant can use Creative Cloud apps to complete tasks</title>
+      <link>https://techcrunch.com/2026/04/15/adobes-new-firefly-ai-assistant-can-use-creative-cloud-apps-to-complete-tasks/</link>
+      <description>Adobe has launched Firefly, an AI assistant that integrates with its Creative Cloud apps to automate tasks, enhancing user productivity across various platforms.</description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 15 Apr 2026 13:01:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/15/adobes-new-firefly-ai-assistant-can-use-creative-cloud-apps-to-complete-tasks/</guid>
+    </item>
+    <item>
+      <title>Why your TV wowed you in the store but looks unnatural at home - and how to fix it ASAP</title>
+      <link>https://www.zdnet.com/article/how-to-disable-tv-store-mode/</link>
+      <description>Many TVs appear overly bright and unnatural at home due to store settings; adjusting these settings can improve viewing experience significantly.</description>
+      <category>Industry</category>
+      <pubDate>Wed, 15 Apr 2026 12:31:30 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-disable-tv-store-mode/</guid>
+    </item>
+    <item>
+      <title>AI is getting better at your job, but you have time to adjust, according to MIT</title>
+      <link>https://www.zdnet.com/article/new-mit-jobs-work-report-ai-impacts-2026/</link>
+      <description>MIT research suggests that AI could be 'minimally sufficient' for certain job tasks by 2029, urging workers to prepare for this shift.</description>
+      <category>Industry</category>
+      <pubDate>Wed, 15 Apr 2026 12:23:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/new-mit-jobs-work-report-ai-impacts-2026/</guid>
+    </item>
+    <item>
+      <title>langchain-mixpeek added to PyPI</title>
+      <link>https://pypi.org/project/langchain-mixpeek/</link>
+      <description>LangChain has integrated Mixpeek into PyPI, enhancing AI agents with a multimodal retriever tool for improved functionality.</description>
       <category>Open Source</category>
-      <pubDate>Wed, 15 Apr 2026 12:07:25 +0000</pubDate>
-      <guid>https://huggingface.co/blog/ibm-research/vakra-benchmark-analysis</guid>
+      <pubDate>Tue, 14 Apr 2026 23:38:29 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-mixpeek/</guid>
     </item>
     <item>
-      <title>The next evolution of the Agents SDK</title>
-      <link>https://openai.com/index/the-next-evolution-of-the-agents-sdk</link>
-      <description>OpenAI has updated its Agents SDK to include native sandbox execution and a model-native harness, enhancing security and functionality for developers.</description>
+      <title>pollinations-claude-code 0.2.1</title>
+      <link>https://pypi.org/project/pollinations-claude-code/0.2.1/</link>
+      <description>The Claude Code CLI plugin for Pollinations.ai allows users to generate various media types, utilizing over 50 models for creative tasks.</description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 14 Apr 2026 23:38:24 +0000</pubDate>
+      <guid>https://pypi.org/project/pollinations-claude-code/0.2.1/</guid>
+    </item>
+    <item>
+      <title>The $100B Marketer Trust Challenge: Advertising in Conversational AI</title>
+      <link>https://www.adweek.com/adweek-wire/ai-advertising-trust-challenge/</link>
+      <description>As advertising in conversational AI platforms grows, marketers are pushing for new standards of trust and verification to ensure ad effectiveness.</description>
       <category>OpenAI</category>
-      <pubDate>Wed, 15 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/the-next-evolution-of-the-agents-sdk</guid>
+      <pubDate>Tue, 14 Apr 2026 23:37:13 +0000</pubDate>
+      <guid>https://www.adweek.com/adweek-wire/ai-advertising-trust-challenge/</guid>
     </item>
     <item>
-      <title>broccoli-ml 22.0.2</title>
-      <link>https://pypi.org/project/broccoli-ml/22.0.2/</link>
-      <description>The release of broccoli-ml 22.0.2 introduces new Pytorch models aimed at enhancing machine learning capabilities, anticipated for use in 2025. This update signifies ongoing advancements in AI tools.</description>
+      <title>VCs are flooding Anthropic with offers to invest at up to an $800 billion valuation</title>
+      <link>https://www.businessinsider.com/anthropic-with-offers-to-invest-at-up-to-800-billion-2026-4</link>
+      <description>Anthropic is attracting significant investment offers, with valuations reaching up to $800 billion, indicating strong confidence in its future potential.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:32:31 +0000</pubDate>
+      <guid>https://www.businessinsider.com/anthropic-with-offers-to-invest-at-up-to-800-billion-2026-4</guid>
+    </item>
+    <item>
+      <title>sage-ai-cli 1.13.12</title>
+      <link>https://pypi.org/project/sage-ai-cli/1.13.12/</link>
+      <description>The latest update of Sage introduces a local-first AI coding CLI, similar to Claude Code, utilizing free and open models for coding tasks.</description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 14 Apr 2026 23:32:25 +0000</pubDate>
+      <guid>https://pypi.org/project/sage-ai-cli/1.13.12/</guid>
+    </item>
+    <item>
+      <title>UBS Analysts Say AI Models May Replace Some Software Incumbents</title>
+      <link>https://www.pymnts.com/artificial-intelligence-2/2026/ubs-analysts-say-ai-models-may-replace-some-software-incumbents/</link>
+      <description>UBS analysts warn that new AI models from companies like Anthropic and OpenAI could disrupt traditional enterprise software markets.</description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 14 Apr 2026 23:31:48 +0000</pubDate>
+      <guid>https://www.pymnts.com/artificial-intelligence-2/2026/ubs-analysts-say-ai-models-may-replace-some-software-incumbents/</guid>
+    </item>
+    <item>
+      <title>Vibhor Kumar: AI-Ready PostgreSQL 18 Is Out: Why AI Applications Win or Lose at the Seams</title>
+      <link>https://vibhorkumar.wordpress.com/2026/04/14/ai-ready-postgresql-18-is-out-why-ai-applications-win-or-lose-at-the-seams/</link>
+      <description>Vibhor Kumar discusses the challenges AI projects face, emphasizing that failures often stem from issues surrounding data governance and production realities rather than weak models. This highlights the importance of robust infrastructure for successful AI deployment.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:29:24 +0000</pubDate>
+      <guid>https://vibhorkumar.wordpress.com/2026/04/14/ai-ready-postgresql-18-is-out-why-ai-applications-win-or-lose-at-the-seams/</guid>
+    </item>
+    <item>
+      <title>JUST NOW: JD Vance announces FBI Director Kash Patel is SURGING resources to prosecute the leftists FEDERALLY who assaulted TPUSA journalist Savanah Hernandez in Minnesota</title>
+      <link>https://freerepublic.com/focus/f-bloggers/4374939/posts</link>
+      <description>JD Vance announced that FBI Director Kash Patel is allocating more resources to prosecute individuals involved in the assault of a journalist in Minnesota. This move signals a federal response to political violence.</description>
+      <category>xAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:20:13 +0000</pubDate>
+      <guid>https://freerepublic.com/focus/f-bloggers/4374939/posts</guid>
+    </item>
+    <item>
+      <title>mimir-observe 0.4.2</title>
+      <link>https://pypi.org/project/mimir-observe/0.4.2/</link>
+      <description>The release of mimir-observe 0.4.2 introduces auto-instrumentation and visibility features for AI agents, enhancing the OpenAI Agents SDK and Claude SDK. This update aims to improve the monitoring and management of AI systems.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:19:40 +0000</pubDate>
+      <guid>https://pypi.org/project/mimir-observe/0.4.2/</guid>
+    </item>
+    <item>
+      <title>torch-tk added to PyPI</title>
+      <link>https://pypi.org/project/torch-tk/</link>
+      <description>The addition of torch-tk to PyPI simplifies the training, checkpoint management, and diagnostics of PyTorch models. This tool aims to enhance the user experience for developers working with PyTorch.</description>
       <category>Meta</category>
-      <pubDate>Tue, 14 Apr 2026 18:01:47 +0000</pubDate>
-      <guid>https://pypi.org/project/broccoli-ml/22.0.2/</guid>
+      <pubDate>Tue, 14 Apr 2026 23:16:51 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-tk/</guid>
     </item>
     <item>
-      <title>What is Google Chrome Skills feature? #tech</title>
-      <link>https://alltoc.com/tech/what-is-google-chrome-skills-feature</link>
-      <description>Google has launched the Skills feature in Chrome, allowing users to create reusable AI prompts for efficient workflow management. This innovation aims to streamline repetitive tasks for users.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 18:01:46 +0000</pubDate>
-      <guid>https://alltoc.com/tech/what-is-google-chrome-skills-feature</guid>
+      <title>Apple App Store threatened to remove Grok over deepfakes: letter</title>
+      <link>https://www.nbcnews.com/tech/tech-news/apple-threat-remove-grok-app-store-deepfake-letter-musk-x-ai-rcna331677</link>
+      <description>Apple threatened to remove Grok from the App Store over its involvement in generating sexualized deepfakes, as detailed in a letter to senators. This raises concerns about the regulation of deepfake technology.</description>
+      <category>xAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:14:30 +0000</pubDate>
+      <guid>https://www.nbcnews.com/tech/tech-news/apple-threat-remove-grok-app-store-deepfake-letter-musk-x-ai-rcna331677</guid>
     </item>
     <item>
-      <title>How does Anthropic's Claude Code routines work? #tech</title>
-      <link>https://alltoc.com/tech/how-does-anthropic-s-claude-code-routines-work</link>
-      <description>Anthropic has introduced repeatable routines for Claude Code, enabling developers to automate and schedule software development tasks. This feature is currently in research preview.</description>
+      <title>OpenAI Releases Cyber Model to Limited Group in Race With Mythos - Bloomberg.com</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181712522</link>
+      <description>OpenAI has released a new cyber model, GPT-5.4-Cyber, to a limited group, following a competitive announcement from Anthropic's Mythos. This development indicates a race in advancing AI capabilities for cybersecurity.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 14 Apr 2026 23:13:12 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181712522</guid>
+    </item>
+    <item>
+      <title>beatscore added to PyPI</title>
+      <link>https://pypi.org/project/beatscore/</link>
+      <description>The beatscore tool has been added to PyPI, allowing users to convert text into music, showcasing the creative applications of AI. It was developed during a hackathon using ElevenLabs technology.</description>
       <category>Anthropic</category>
-      <pubDate>Tue, 14 Apr 2026 18:01:46 +0000</pubDate>
-      <guid>https://alltoc.com/tech/how-does-anthropic-s-claude-code-routines-work</guid>
+      <pubDate>Tue, 14 Apr 2026 23:10:05 +0000</pubDate>
+      <guid>https://pypi.org/project/beatscore/</guid>
     </item>
     <item>
-      <title>You can now get Google’s AI search on Windows without ever opening a browser</title>
-      <link>https://www.xda-developers.com/you-can-now-get-googles-ai-search-on-windows-without-ever-opening-a-browser/</link>
-      <description>Google's AI search feature is now available on Windows, allowing users to access it without needing to open a browser. This rollout is part of Google's efforts to integrate AI more deeply into everyday tools.</description>
-      <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 18:01:09 +0000</pubDate>
-      <guid>https://www.xda-developers.com/you-can-now-get-googles-ai-search-on-windows-without-ever-opening-a-browser/</guid>
+      <title>perplexityai 0.32.0</title>
+      <link>https://pypi.org/project/perplexityai/0.32.0/</link>
+      <description>Perplexityai 0.32.0 is the official Python library for the perplexity API, enhancing accessibility for developers. This update aims to streamline integration with AI applications.</description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 14 Apr 2026 23:07:41 +0000</pubDate>
+      <guid>https://pypi.org/project/perplexityai/0.32.0/</guid>
     </item>
     <item>
-      <title>ouroboros-ai 0.28.6.dev4</title>
-      <link>https://pypi.org/project/ouroboros-ai/0.28.6.dev4/</link>
-      <description>The ouroboros-ai 0.28.6.dev4 version introduces a specification-first workflow engine designed for AI coding agents, compatible with Claude Code and Codex CLI. This update aims to improve coding efficiency.</description>
+      <title>stele-context 1.1.1</title>
+      <link>https://pypi.org/project/stele-context/1.1.1/</link>
+      <description>Stele-context 1.1.1 introduces persistent memory for AI coding agents, allowing them to retain information across conversations. This update aims to improve the efficiency of coding assistants.</description>
       <category>Anthropic</category>
-      <pubDate>Tue, 14 Apr 2026 18:01:03 +0000</pubDate>
-      <guid>https://pypi.org/project/ouroboros-ai/0.28.6.dev4/</guid>
+      <pubDate>Tue, 14 Apr 2026 23:03:44 +0000</pubDate>
+      <guid>https://pypi.org/project/stele-context/1.1.1/</guid>
     </item>
     <item>
-      <title>OpenAI Engineer Helps Companies Attract Buyers and Boost Sales</title>
-      <link>https://spectrum.ieee.org/openai-engineer-sarang-gupta</link>
-      <description>OpenAI engineer Sarang Gupta is helping companies enhance their sales strategies through innovative engineering projects. His work reflects the potential of AI to improve everyday business operations.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 18:00:01 +0000</pubDate>
-      <guid>https://spectrum.ieee.org/openai-engineer-sarang-gupta</guid>
+      <title>Secure AI agent access patterns to AWS resources using Model Context Protocol</title>
+      <link>https://aws.amazon.com/blogs/security/secure-ai-agent-access-patterns-to-aws-resources-using-model-context-protocol/</link>
+      <description>The Model Context Protocol (MCP) allows AI agents to access AWS resources dynamically, adapting their interactions based on context. This represents a shift from traditional deterministic coding approaches.</description>
+      <category>Amazon</category>
+      <pubDate>Tue, 14 Apr 2026 22:52:51 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/security/secure-ai-agent-access-patterns-to-aws-resources-using-model-context-protocol/</guid>
     </item>
     <item>
-      <title>Media VC Deal Activity Falls by More Than Half to $50 Million in March Amid AI Uncertainty | Charts</title>
-      <link>https://www.thewrap.com/industry-news/business/the-funding-file-venture-capital-investment-mergers-acquisitions-march-2026-update/</link>
-      <description>Venture capital activity in the media sector has dropped significantly, with investments falling to $50 million in March due to uncertainties surrounding AI. This trend signals caution among investors.</description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 14 Apr 2026 18:00:00 +0000</pubDate>
-      <guid>https://www.thewrap.com/industry-news/business/the-funding-file-venture-capital-investment-mergers-acquisitions-march-2026-update/</guid>
+      <title>llama-index-workflows 2.19.0</title>
+      <link>https://pypi.org/project/llama-index-workflows/2.19.0/</link>
+      <description>LlamaIndex Workflows 2.19.0 introduces an event-driven, async-first approach to manage AI application execution flows, enhancing control over Agents. This update is significant for developers looking to streamline AI processes.</description>
+      <category>Meta</category>
+      <pubDate>Tue, 14 Apr 2026 22:52:10 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-index-workflows/2.19.0/</guid>
     </item>
     <item>
-      <title>Google expands Gemini’s Personal Intelligence to India</title>
-      <link>https://www.notebookcheck.net/Google-expands-Gemini-s-Personal-Intelligence-to-India.1274073.0.html</link>
-      <description>Google's Personal Intelligence feature for Gemini is now being rolled out in India, expanding its availability beyond the initial launch country. More countries are expected to follow.</description>
+      <title>llama-agents-client 0.3.5</title>
+      <link>https://pypi.org/project/llama-agents-client/0.3.5/</link>
+      <description>Llama Agents Client 0.3.5 is an HTTP client designed for connecting to LlamaIndex workflow servers, facilitating interaction with AI workflows. This tool is crucial for developers needing efficient communication with their AI applications.</description>
+      <category>Meta</category>
+      <pubDate>Tue, 14 Apr 2026 22:52:09 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-agents-client/0.3.5/</guid>
+    </item>
+    <item>
+      <title>llama-agents-server 0.4.5</title>
+      <link>https://pypi.org/project/llama-agents-server/0.4.5/</link>
+      <description>Llama Agents Server 0.4.5 serves as an HTTP server for deploying LlamaIndex workflows as web services, allowing for easier accessibility and integration. This is important for developers looking to deploy AI solutions seamlessly.</description>
+      <category>Meta</category>
+      <pubDate>Tue, 14 Apr 2026 22:52:04 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-agents-server/0.4.5/</guid>
+    </item>
+    <item>
+      <title>rqmd 0.2.6</title>
+      <link>https://pypi.org/project/rqmd/0.2.6/</link>
+      <description>RQMD 0.2.6 is a CLI tool for managing Requirements Markdown, featuring GitHub Copilot AI integration through a VS Code extension. This tool enhances productivity for developers managing project requirements.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 14 Apr 2026 22:50:54 +0000</pubDate>
+      <guid>https://pypi.org/project/rqmd/0.2.6/</guid>
+    </item>
+    <item>
+      <title>language-model-common 2.0.17</title>
+      <link>https://pypi.org/project/language-model-common/2.0.17/</link>
+      <description>Language Model Common 2.0.17 provides a framework to enhance LangChain and manage loading configurations, improving the functionality of language models. This update is significant for developers working with complex AI systems.</description>
+      <category>Open Source</category>
+      <pubDate>Tue, 14 Apr 2026 22:47:44 +0000</pubDate>
+      <guid>https://pypi.org/project/language-model-common/2.0.17/</guid>
+    </item>
+    <item>
+      <title>langchain-openterms added to PyPI</title>
+      <link>https://pypi.org/project/langchain-openterms/</link>
+      <description>LangChain has integrated the OpenTerms protocol, enabling permission-aware AI agents. This integration is crucial for developers focusing on ethical AI usage and compliance.</description>
+      <category>Open Source</category>
+      <pubDate>Tue, 14 Apr 2026 22:28:43 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-openterms/</guid>
+    </item>
+    <item>
+      <title>aidebate 0.4.0</title>
+      <link>https://pypi.org/project/aidebate/0.4.0/</link>
+      <description>Aidebate 0.4.0 is a multi-agent AI debate orchestrator that runs structured debates with various AI agents and features a web UI. This tool is significant for researchers and developers interested in AI interactions.</description>
       <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 17:58:00 +0000</pubDate>
-      <guid>https://www.notebookcheck.net/Google-expands-Gemini-s-Personal-Intelligence-to-India.1274073.0.html</guid>
+      <pubDate>Tue, 14 Apr 2026 22:27:06 +0000</pubDate>
+      <guid>https://pypi.org/project/aidebate/0.4.0/</guid>
     </item>
     <item>
-      <title>Suspect in Molotov attack at Sam Altman's California home set to appear in court</title>
-      <link>https://economictimes.indiatimes.com/tech/technology/suspect-in-molotov-attack-at-sam-altmans-california-home-set-to-appear-in-court/articleshow/130266005.cms</link>
-      <description>The suspect accused of a Molotov cocktail attack on OpenAI CEO Sam Altman's home is scheduled to appear in court. This incident raises concerns about safety in the tech industry.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 17:57:02 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/technology/suspect-in-molotov-attack-at-sam-altmans-california-home-set-to-appear-in-court/articleshow/130266005.cms</guid>
+      <title>copilot-image-gen-mcp added to PyPI</title>
+      <link>https://pypi.org/project/copilot-image-gen-mcp/</link>
+      <description>Copilot Image Gen MCP has been added to PyPI, enabling AI image generation through Microsoft Copilot. This addition is important for developers looking to integrate image generation capabilities into their applications.</description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 14 Apr 2026 22:26:17 +0000</pubDate>
+      <guid>https://pypi.org/project/copilot-image-gen-mcp/</guid>
     </item>
     <item>
-      <title>Keep Humans in the Loop</title>
-      <link>http://foreignpolicy.com/2026/04/14/ai-targeting-iran-school-airstrikes-pentagon-anthropic/</link>
-      <description>The article discusses the necessity of keeping humans involved in military targeting processes when using AI, emphasizing the importance of safeguards to prevent misuse.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 17:57:01 +0000</pubDate>
-      <guid>http://foreignpolicy.com/2026/04/14/ai-targeting-iran-school-airstrikes-pentagon-anthropic/</guid>
-    </item>
-    <item>
-      <title>LinkedIn CEO says AI is boosting the value of these 4 'soft skills'</title>
-      <link>https://www.businessinsider.com/linkedin-ceo-ai-soft-skills-2026-4</link>
-      <description>LinkedIn CEO Ryan Roslansky highlights that AI is enhancing the importance of soft skills as it automates routine tasks, benefiting personality-driven hiring. This shift emphasizes the growing value of interpersonal skills in the workplace.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 17:56:28 +0000</pubDate>
-      <guid>https://www.businessinsider.com/linkedin-ceo-ai-soft-skills-2026-4</guid>
-    </item>
-    <item>
-      <title>Inside a Retail Store Run Entirely by AI</title>
-      <link>https://www.pymnts.com/artificial-intelligence-2/2026/inside-a-retail-store-run-entirely-by-ai/</link>
-      <description>A San Francisco retail store is fully operated by an AI agent named Luna, which manages inventory and staff without human intervention. This represents a significant step towards automation in retail environments.</description>
+      <title>vision-agents-plugins-gemini 0.5.3</title>
+      <link>https://pypi.org/project/vision-agents-plugins-gemini/0.5.3/</link>
+      <description>Vision Agents Plugins Gemini 0.5.3 integrates Google Gemini LLM with Vision Agents, enhancing AI capabilities in visual tasks. This integration is significant for developers working on AI-driven visual applications.</description>
       <category>Google</category>
-      <pubDate>Tue, 14 Apr 2026 17:55:14 +0000</pubDate>
-      <guid>https://www.pymnts.com/artificial-intelligence-2/2026/inside-a-retail-store-run-entirely-by-ai/</guid>
+      <pubDate>Tue, 14 Apr 2026 22:25:04 +0000</pubDate>
+      <guid>https://pypi.org/project/vision-agents-plugins-gemini/0.5.3/</guid>
     </item>
     <item>
-      <title>Anthropic’s Mythos reveals a growing security gap: AI finds flaws far faster than companies can patch them</title>
-      <link>https://fortune.com/2026/04/14/anthropic-mythos-reveals-security-gap-ai-finds-flaws-far-faster-than-companies-can-patch-them/</link>
-      <description>Anthropic’s new model, Mythos, reveals a critical issue where AI can identify software vulnerabilities faster than organizations can address them. This raises concerns about cybersecurity and the pace of technological advancement.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 17:54:08 +0000</pubDate>
-      <guid>https://fortune.com/2026/04/14/anthropic-mythos-reveals-security-gap-ai-finds-flaws-far-faster-than-companies-can-patch-them/</guid>
-    </item>
-    <item>
-      <title>Jamie Dimon says Anthropic's Mythos reveals 'a lot more vulnerabilities' for cyberattacks - CNBC</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181710438</link>
-      <description>Jamie Dimon comments on Anthropic’s Mythos, indicating it exposes numerous vulnerabilities that could be exploited in cyberattacks. This underscores the model's implications for cybersecurity strategies.</description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 14 Apr 2026 17:53:11 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181710438</guid>
-    </item>
-    <item>
-      <title>Microsoft’s April 2026 Patch Tuesday Addresses 163 CVEs (CVE-2026-32201)</title>
-      <link>https://www.tenable.com/blog/microsofts-april-2026-patch-tuesday-addresses-163-cves-cve-2026-32201</link>
-      <description>Microsoft's April 2026 Patch Tuesday addresses 163 Common Vulnerabilities and Exposures (CVEs), including two critical zero-day vulnerabilities. This highlights the ongoing need for robust software security.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 14 Apr 2026 17:52:08 +0000</pubDate>
-      <guid>https://www.tenable.com/blog/microsofts-april-2026-patch-tuesday-addresses-163-cves-cve-2026-32201</guid>
-    </item>
-    <item>
-      <title>Show HN: MCP server for persistent context and safety in Claude Code</title>
-      <link>https://github.com/AxmeAI/axme-code/</link>
-      <description>A new MCP server for Claude Code aims to enhance persistent context and safety in AI applications. This development could improve the reliability of AI systems.</description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 14 Apr 2026 17:51:38 +0000</pubDate>
-      <guid>https://github.com/AxmeAI/axme-code/</guid>
-    </item>
-    <item>
-      <title>WATCH: BTS gets 8 Rolling Stone magazine covers</title>
-      <link>https://abcnews.com/video/132035931/</link>
-      <description>BTS is set to feature on eight different covers of Rolling Stone magazine, celebrating their recent reunion. This highlights the band's ongoing cultural impact.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 14 Apr 2026 17:51:32 +0000</pubDate>
-      <guid>https://abcnews.com/video/132035931/</guid>
-    </item>
-    <item>
-      <title>Microsoft Patch Tuesday April 2026., (Tue, Apr 14th)</title>
-      <link>https://isc.sans.edu/diary/32898</link>
-      <description>The April 2026 Microsoft Patch Tuesday is noted for its extensive updates, but further analysis is needed to understand the implications of these fixes. This indicates a proactive approach to software security.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 14 Apr 2026 17:46:09 +0000</pubDate>
-      <guid>https://isc.sans.edu/diary/32898</guid>
-    </item>
-    <item>
-      <title>Anthropic Mythos: Separating Signal from Hype</title>
-      <link>https://www.imperva.com/blog/anthropic-mythos-separating-signal-from-hype/</link>
-      <description>Anthropic's Mythos model is generating buzz for its capabilities in automated reasoning and vulnerability discovery in codebases. The excitement reflects its potential impact on AI security.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 14 Apr 2026 17:43:27 +0000</pubDate>
-      <guid>https://www.imperva.com/blog/anthropic-mythos-separating-signal-from-hype/</guid>
-    </item>
-    <item>
-      <title>Microsoft April 2026 Patch Tuesday fixes 167 flaws, 2 zero-days</title>
-      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/</link>
-      <description>Microsoft's April 2026 Patch Tuesday includes fixes for 167 flaws, addressing two zero-day vulnerabilities. This highlights the ongoing challenges in cybersecurity.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 14 Apr 2026 17:41:13 +0000</pubDate>
-      <guid>https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/</guid>
+      <title>vision-agents-plugins-xai 0.5.3</title>
+      <link>https://pypi.org/project/vision-agents-plugins-xai/0.5.3/</link>
+      <description>Vision Agents Plugins XAI 0.5.3 introduces explainable AI features for stream agents, promoting transparency in AI decision-making. This is crucial for developers focused on ethical AI practices.</description>
+      <category>xAI</category>
+      <pubDate>Tue, 14 Apr 2026 22:24:56 +0000</pubDate>
+      <guid>https://pypi.org/project/vision-agents-plugins-xai/0.5.3/</guid>
     </item>
   </channel>
 </rss>
