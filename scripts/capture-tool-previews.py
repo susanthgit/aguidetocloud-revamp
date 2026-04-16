@@ -47,6 +47,9 @@ CROP_TOP = 420
 CROP_HEIGHT = 500
 
 def main():
+    from PIL import Image
+    import io
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(viewport={"width": WIDTH, "height": HEIGHT})
@@ -57,30 +60,16 @@ def main():
             print(f"  Capturing {slug}...", end=" ", flush=True)
             try:
                 page.goto(url, wait_until="networkidle", timeout=15000)
-                page.wait_for_timeout(800)  # let JS render
+                page.wait_for_timeout(800)
 
-                # Take full-page screenshot, then crop
-                raw = page.screenshot(type="png")
-
-                # Use Pillow-free approach: clip via Playwright
-                page.screenshot(
-                    path=out_path,
-                    type="jpeg",
-                    quality=60,
-                    clip={
-                        "x": 0,
-                        "y": CROP_TOP,
-                        "width": WIDTH,
-                        "height": CROP_HEIGHT,
-                    },
+                # Screenshot cropped region as PNG bytes, then convert to WebP via PIL
+                png_bytes = page.screenshot(
+                    type="png",
+                    clip={"x": 0, "y": CROP_TOP, "width": WIDTH, "height": CROP_HEIGHT},
                 )
-                # Convert to WebP with lower quality for small file size
-                # Playwright doesn't support webp, so we use jpeg and rename
-                # Actually let's just use jpeg — universal browser support
-                jpeg_path = os.path.join(OUT_DIR, f"{slug}.jpg")
-                if os.path.exists(out_path):
-                    os.replace(out_path, jpeg_path)
-                size_kb = os.path.getsize(jpeg_path) / 1024
+                img = Image.open(io.BytesIO(png_bytes))
+                img.save(out_path, "WEBP", quality=82, method=6)
+                size_kb = os.path.getsize(out_path) / 1024
                 print(f"✓ ({size_kb:.0f}KB)")
             except Exception as e:
                 print(f"✗ {e}")
