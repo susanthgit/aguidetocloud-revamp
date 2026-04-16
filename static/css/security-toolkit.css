@@ -478,6 +478,74 @@
 }
 
 /* ══════════════════════════════════════════════════════════════ */
+/* SCAN MODE TOGGLE                                              */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-scan-toggle {
+  display: flex; gap: 0.4rem; padding: 0.3rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; margin-bottom: 1.25rem;
+}
+.sectool-scan-btn {
+  flex: 1; background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.8rem; font-weight: 600;
+  padding: 0.5rem 0.8rem; border-radius: 8px; cursor: pointer;
+  transition: all 0.2s; text-align: center;
+}
+.sectool-scan-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.sectool-scan-btn.active {
+  color: #fff; background: var(--sectool-accent); border-color: var(--sectool-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════ */
+/* SPF TOGGLE                                                    */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-spf-toggle {
+  display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap;
+}
+.sectool-toggle-label {
+  font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.5);
+}
+.sectool-enforcement-btn {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5); padding: 0.35rem 0.8rem; border-radius: 6px;
+  font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.sectool-enforcement-btn:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
+.sectool-enforcement-btn.active { background: var(--sectool-accent-dim); border-color: var(--sectool-accent); color: #fff; }
+
+/* ══════════════════════════════════════════════════════════════ */
+/* COPY ALL / ORG SIZE                                           */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-copy-all { margin-top: 1rem; width: 100%; }
+
+.sectool-orgsize-wrap { margin-bottom: 1.5rem; text-align: center; }
+.sectool-orgsize-label {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-right: 0.5rem;
+}
+.sectool-orgsize-select {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  color: #fff; padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.82rem;
+  font-family: inherit;
+}
+.sectool-orgsize-select option { background: #1a1a2e; }
+
+/* ══════════════════════════════════════════════════════════════ */
+/* EXPORT                                                        */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-export-form { max-width: 600px; margin: 0 auto 1.5rem; }
+.sectool-export-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+.sectool-export-preview {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem;
+}
+.sectool-scorecard { max-width: 700px; margin: 0 auto; }
+.sectool-export-actions-row { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+
+/* ══════════════════════════════════════════════════════════════ */
 /* RESPONSIVE                                                    */
 /* ══════════════════════════════════════════════════════════════ */
 

@@ -6,6 +6,7 @@ layout: "list"
 url: "/ai-cost-calculator/"
 date: 2026-04-15
 lastmod: 2026-04-16
+images: ["images/og/ai-cost-calculator.jpg"]
 sitemap:
   priority: 0.85
   changefreq: monthly

@@ -282,10 +282,14 @@
     var prevBtn = $('sectool-prev-btn');
     var nextBtn = $('sectool-next-btn');
     if (prevBtn) prevBtn.addEventListener('click', function () {
-      if (S.currentQ > 0) { S.currentQ--; renderQuestion(); }
+      var indices = activeIndices();
+      var pos = indices.indexOf(S.currentQ);
+      if (pos > 0) { S.currentQ = indices[pos - 1]; renderQuestion(); }
     });
     if (nextBtn) nextBtn.addEventListener('click', function () {
-      if (S.currentQ < TOTAL_Q - 1) { S.currentQ++; renderQuestion(); }
+      var indices = activeIndices();
+      var pos = indices.indexOf(S.currentQ);
+      if (pos < indices.length - 1) { S.currentQ = indices[pos + 1]; renderQuestion(); }
       else showResults();
     });
 
@@ -300,11 +304,42 @@
       }
     });
 
+    // Scan mode toggle
+    document.querySelectorAll('.sectool-scan-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.sectool-scan-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        S.scanMode = btn.dataset.mode;
+        var indices = activeIndices();
+        S.currentQ = indices[0] || 0;
+        S.completed = false;
+        $('sectool-assessment').hidden = false;
+        $('sectool-results').hidden = true;
+        var timeEst = $('sectool-time-estimate');
+        if (timeEst) timeEst.textContent = S.scanMode === 'quick'
+          ? '~3 minutes · ' + indices.length + ' critical questions · saves automatically'
+          : '~8 minutes · 50 questions · saves automatically';
+        renderQuestion();
+      });
+    });
+
+    // Org size selector
+    var orgSel = $('sectool-orgsize');
+    if (orgSel) orgSel.addEventListener('change', function () {
+      S.orgSizeMultiplier = parseFloat(orgSel.value) || 1.0;
+      if (S.completed) {
+        var scores = computeScores();
+        renderRiskSummary(scores);
+        renderActions(scores);
+      }
+    });
+
     // Restart button
     var restartBtn = $('sectool-restart-btn');
     if (restartBtn) restartBtn.addEventListener('click', function () {
       S.answers = new Array(TOTAL_Q).fill(-1);
-      S.currentQ = 0;
+      var indices = activeIndices();
+      S.currentQ = indices[0] || 0;
       S.completed = false;
       saveState();
       $('sectool-assessment').hidden = false;
@@ -681,7 +716,8 @@
       });
     }
 
-    var spfRecord = 'v=spf1 ' + spfIncludes.join(' ') + ' ~all';
+    var spfSuffix = S.spfEnforcement === 'hard' ? '-all' : '~all';
+    var spfRecord = 'v=spf1 ' + spfIncludes.join(' ') + ' ' + spfSuffix;
     var lookupCount = spfIncludes.filter(function (i) { return i.startsWith('include:'); }).length;
 
     // SPF lookup warning
@@ -991,7 +1027,7 @@
         });
       });
       if (hasGap) {
-        var ale = (rc.sle || 0) * (rc.aro_medium || 0.05);
+        var ale = (rc.sle || 0) * (rc.aro_medium || 0.05) * S.orgSizeMultiplier;
         totalALE += ale;
         topRisks.push({ title: rc.title, ale: ale, mitigation: rc.mitigation_summary });
       }
@@ -1051,6 +1087,224 @@
   }
 
   // ══════════════════════════════════════════════════════════════
+  // SPF ENFORCEMENT TOGGLE
+  // ══════════════════════════════════════════════════════════════
+
+  function initSpfToggle() {
+    document.querySelectorAll('.sectool-enforcement-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.sectool-enforcement-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        S.spfEnforcement = btn.dataset.spf;
+        generateEmailRecords();
+      });
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // COPY ALL RECORDS
+  // ══════════════════════════════════════════════════════════════
+
+  function initCopyAll() {
+    var btn = $('sectool-copy-all-btn');
+    if (btn) btn.addEventListener('click', function () {
+      var spf = ($('sectool-spf-value') || {}).textContent || '';
+      var dmarc = ($('sectool-dmarc-value') || {}).textContent || '';
+      var domain = ($('sectool-domain') || {}).value || 'yourdomain.com';
+
+      var dkimText = '';
+      document.querySelectorAll('.sectool-dkim-record code').forEach(function (c) {
+        dkimText += c.textContent + '\n';
+      });
+
+      var allRecords = '== DNS RECORDS FOR ' + domain.toUpperCase() + ' ==\n\n'
+        + '--- SPF (TXT record on @ / root) ---\n' + spf + '\n\n'
+        + '--- DKIM (CNAME records) ---\n' + dkimText + '\n'
+        + '--- DMARC (TXT record on _dmarc) ---\n' + dmarc + '\n';
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(allRecords).then(function () {
+          btn.textContent = 'All Records Copied!';
+          setTimeout(function () { btn.textContent = 'Copy All Records'; }, 2500);
+        });
+      }
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // EXPORT SCORECARD
+  // ══════════════════════════════════════════════════════════════
+
+  function initExport() {
+    // Gate check
+    function updateExportGate() {
+      var gate = $('sectool-export-gate');
+      var content = $('sectool-export-content');
+      if (gate && content) {
+        gate.hidden = S.completed;
+        content.hidden = !S.completed;
+      }
+    }
+
+    // Observe tab clicks to refresh gate
+    document.querySelector('.sectool-tab[data-tab="export"]')
+      && document.querySelector('.sectool-tab[data-tab="export"]').addEventListener('click', updateExportGate);
+
+    var scorecardBtn = $('sectool-export-scorecard');
+    if (scorecardBtn) scorecardBtn.addEventListener('click', generateScorecard);
+
+    var actionsBtn = $('sectool-export-actions');
+    if (actionsBtn) actionsBtn.addEventListener('click', exportActionsMarkdown);
+
+    var emailBtn = $('sectool-export-email');
+    if (emailBtn) emailBtn.addEventListener('click', exportEmailRecords);
+
+    var printBtn = $('sectool-print-report');
+    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+
+    var copyBtn = $('sectool-copy-report');
+    if (copyBtn) copyBtn.addEventListener('click', function () {
+      var preview = $('sectool-export-preview');
+      if (preview && navigator.clipboard) {
+        navigator.clipboard.writeText(preview.innerText).then(function () {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(function () { copyBtn.textContent = 'Copy to Clipboard'; }, 2000);
+        });
+      }
+    });
+  }
+
+  function generateScorecard() {
+    if (!S.completed) return;
+    var scores = computeScores();
+    var tier = getTier(scores.overall);
+    var orgName = ($('sectool-org-name') || {}).value || 'Organisation';
+    var date = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    var html = '<div class="sectool-scorecard">'
+      + '<h2 style="color:#fff;margin:0 0 0.25rem">M365 Security Assessment — ' + esc(orgName) + '</h2>'
+      + '<p style="color:rgba(255,255,255,0.4);font-size:0.82rem;margin:0 0 1.5rem">Generated ' + date + ' via aguidetocloud.com/security-toolkit</p>';
+
+    // Score summary
+    html += '<div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap">'
+      + '<div style="font-size:3rem;font-weight:800;color:' + tier.color + '">' + scores.overall + '<span style="font-size:1rem;color:rgba(255,255,255,0.4)">/100</span></div>'
+      + '<div><div style="font-size:1.1rem;font-weight:700;color:' + tier.color + '">' + tier.emoji + ' ' + tier.label + '</div>'
+      + '<div style="color:rgba(255,255,255,0.5);font-size:0.85rem;max-width:400px">' + esc(tier.desc) + '</div></div></div>';
+
+    // Category breakdown
+    html += '<h3 style="color:#fff;font-size:0.95rem;margin:1.5rem 0 0.75rem">Category Scores</h3>';
+    html += '<table style="width:100%;border-collapse:collapse;font-size:0.82rem">'
+      + '<tr style="border-bottom:1px solid rgba(255,255,255,0.1)"><th style="text-align:left;padding:0.5rem;color:rgba(255,255,255,0.5)">Category</th><th style="text-align:right;padding:0.5rem;color:rgba(255,255,255,0.5)">Score</th><th style="text-align:left;padding:0.5rem;color:rgba(255,255,255,0.5)">Status</th></tr>';
+    CATEGORIES.forEach(function (cat) {
+      var cs = scores.categories[cat.id];
+      var status = cs.pct >= 80 ? '✅ Good' : cs.pct >= 60 ? '🟡 Needs work' : cs.pct >= 40 ? '🟠 At risk' : '🔴 Critical';
+      var color = cs.pct >= 80 ? '#22C55E' : cs.pct >= 60 ? '#EAB308' : cs.pct >= 40 ? '#F97316' : '#EF4444';
+      html += '<tr style="border-bottom:1px solid rgba(255,255,255,0.04)"><td style="padding:0.5rem;color:rgba(255,255,255,0.7)">'
+        + cat.icon + ' ' + esc(cat.name) + '</td><td style="text-align:right;padding:0.5rem;font-weight:700;color:' + color + '">'
+        + cs.pct + '%</td><td style="padding:0.5rem;color:rgba(255,255,255,0.5)">' + status + '</td></tr>';
+    });
+    html += '</table>';
+
+    // Top 5 priority actions
+    var findings = getFindings();
+    if (findings.length > 0) {
+      html += '<h3 style="color:#fff;font-size:0.95rem;margin:1.5rem 0 0.75rem">Top 5 Priority Actions</h3><ol style="color:rgba(255,255,255,0.7);font-size:0.82rem;padding-left:1.5rem;line-height:1.8">';
+      findings.slice(0, 5).forEach(function (f) {
+        html += '<li><strong>' + esc(f.q.remediation_title || f.q.text) + '</strong> — '
+          + esc(f.severity) + ' impact, ' + esc(f.effortKey === 'quick' ? 'quick win' : f.effortKey === 'halfday' ? 'half-day' : 'project') + '</li>';
+      });
+      html += '</ol>';
+    }
+
+    // Compliance coverage
+    html += '<h3 style="color:#fff;font-size:0.95rem;margin:1.5rem 0 0.75rem">Compliance Framework Coverage</h3>';
+    var frameworks = { CIS: 0, NIST: 0, ISO: 0, E8: 0, CIS_total: 0, NIST_total: 0, ISO_total: 0, E8_total: 0 };
+    QUESTIONS.forEach(function (q, qi) {
+      if (q.cis_ref) { frameworks.CIS_total++; if (S.answers[qi] >= 0 && (q.options[S.answers[qi]] || {}).value >= 1) frameworks.CIS++; }
+      if (q.nist_ref) { frameworks.NIST_total++; if (S.answers[qi] >= 0 && (q.options[S.answers[qi]] || {}).value >= 1) frameworks.NIST++; }
+      if (q.iso_ref) { frameworks.ISO_total++; if (S.answers[qi] >= 0 && (q.options[S.answers[qi]] || {}).value >= 1) frameworks.ISO++; }
+      if (q.e8_ref) { frameworks.E8_total++; if (S.answers[qi] >= 0 && (q.options[S.answers[qi]] || {}).value >= 1) frameworks.E8++; }
+    });
+    html += '<p style="color:rgba(255,255,255,0.6);font-size:0.82rem;line-height:1.8">'
+      + 'CIS M365 Benchmark: ' + frameworks.CIS + '/' + frameworks.CIS_total + ' controls addressed<br>'
+      + 'NIST 800-53: ' + frameworks.NIST + '/' + frameworks.NIST_total + ' controls addressed<br>'
+      + 'ISO 27001: ' + frameworks.ISO + '/' + frameworks.ISO_total + ' controls addressed<br>'
+      + 'Essential Eight: ' + frameworks.E8 + '/' + frameworks.E8_total + ' controls addressed</p>';
+
+    html += '<p style="color:rgba(255,255,255,0.3);font-size:0.72rem;font-style:italic;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.06);padding-top:1rem">'
+      + 'Self-assessment based on reported configuration. Verify findings with automated scanning tools (Microsoft Secure Score, ScubaGear). '
+      + 'Risk estimates are directional, based on IBM Cost of Data Breach 2024 and Verizon DBIR 2024 benchmarks.</p>';
+    html += '</div>';
+
+    var preview = $('sectool-export-preview');
+    if (preview) { preview.innerHTML = html; preview.hidden = false; }
+    var actionsRow = $('sectool-export-actions-row');
+    if (actionsRow) actionsRow.hidden = false;
+  }
+
+  function getFindings() {
+    var findings = [];
+    QUESTIONS.forEach(function (q, qi) {
+      var opts = q.options || [];
+      var maxVal = 0;
+      opts.forEach(function (o) { if (o.value > maxVal) maxVal = o.value; });
+      var chosen = S.answers[qi] >= 0 && S.answers[qi] < opts.length ? opts[S.answers[qi]].value : 0;
+      if (chosen < maxVal) {
+        var riskScore = q.risk_score || 1;
+        var effortKey = q.remediation_effort || 'halfday';
+        var effortScore = effortKey === 'quick' ? 1 : effortKey === 'halfday' ? 3 : 7;
+        var severity = riskScore >= 9 ? 'critical' : riskScore >= 7 ? 'high' : riskScore >= 4 ? 'medium' : 'low';
+        var severityOrder = severity === 'critical' ? 0 : severity === 'high' ? 1 : severity === 'medium' ? 2 : 3;
+        findings.push({ q: q, severity: severity, severityOrder: severityOrder, effortKey: effortKey, quickWinRatio: riskScore / effortScore });
+      }
+    });
+    findings.sort(function (a, b) {
+      if (a.severityOrder !== b.severityOrder) return a.severityOrder - b.severityOrder;
+      return b.quickWinRatio - a.quickWinRatio;
+    });
+    return findings;
+  }
+
+  function exportActionsMarkdown() {
+    var findings = getFindings();
+    if (findings.length === 0) return;
+    var md = '# M365 Security — Remediation Actions\n\n';
+    md += 'Generated ' + new Date().toISOString().split('T')[0] + ' via aguidetocloud.com/security-toolkit\n\n';
+    findings.forEach(function (f, i) {
+      md += '## ' + (i + 1) + '. ' + (f.q.remediation_title || f.q.text) + '\n';
+      md += '- **Severity:** ' + f.severity + '\n';
+      md += '- **Effort:** ' + f.effortKey + '\n';
+      if (f.q.remediation_path) md += '- **Admin path:** ' + f.q.remediation_path + '\n';
+      if (f.q.cis_ref) md += '- **CIS:** ' + f.q.cis_ref + '\n';
+      if (f.q.remediation_script) md += '\n```powershell\n' + f.q.remediation_script + '\n```\n';
+      md += '\n';
+    });
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(md).then(function () {
+        var btn = $('sectool-export-actions');
+        if (btn) { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Export Actions as Markdown'; }, 2000); }
+      });
+    }
+  }
+
+  function exportEmailRecords() {
+    var spf = ($('sectool-spf-value') || {}).textContent || '';
+    var dmarc = ($('sectool-dmarc-value') || {}).textContent || '';
+    var domain = ($('sectool-domain') || {}).value || '';
+    var dkimText = '';
+    document.querySelectorAll('.sectool-dkim-record code').forEach(function (c) {
+      dkimText += c.textContent + '\n';
+    });
+    var txt = 'Email Security Records for ' + domain + '\n\nSPF:\n' + spf + '\n\nDKIM:\n' + dkimText + '\nDMARC:\n' + dmarc;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(txt).then(function () {
+        var btn = $('sectool-export-email');
+        if (btn) { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Export Email Records'; }, 2000); }
+      });
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════════
   // INIT
   // ══════════════════════════════════════════════════════════════
 
@@ -1058,6 +1312,18 @@
     initAssessment();
     initEmailSecurity();
     initCopyButtons();
+    initSpfToggle();
+    initCopyAll();
+    initExport();
+
+    // Show Copy All when email results are visible
+    var observer = new MutationObserver(function () {
+      var results = $('sectool-email-results');
+      var copyAll = $('sectool-copy-all-btn');
+      if (results && copyAll) copyAll.hidden = results.hidden;
+    });
+    var emailResults = $('sectool-email-results');
+    if (emailResults) observer.observe(emailResults, { attributes: true, attributeFilter: ['hidden'] });
   }
 
   if (document.readyState === 'loading') {

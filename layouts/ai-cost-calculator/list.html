@@ -535,6 +535,12 @@
 
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
+  {{/* Hidden block for Pagefind search indexing */}}
+  <div data-pagefind-body aria-hidden="true" style="display:none">
+    <h1>AI Cost Calculator</h1>
+    <p>Calculate the total cost of AI adoption. Licensing, implementation, training, governance, operations. Token pricing across GPT, Claude, Gemini, DeepSeek. Licence optimizer for M365 E3 E5 E7 bundles. Budget timeline with phased rollout. Executive summary for CFOs. Cost per action breakdown. Copilot vs API break-even analysis. 5 currencies: USD GBP EUR AUD NZD.</p>
+  </div>
+
 </div>{{/* .aicost-page */}}
 
 {{/* ── Data Injection from TOML ── */}}
