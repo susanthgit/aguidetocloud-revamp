@@ -10,8 +10,9 @@
   const STEPS = D.steps || [];
   const EMAILS = D.emails || [];
   const LICENSING = D.licensing || {};
+  const SCENARIOS = D.scenarios || [];
   const LS_KEY = 'pvs_state';
-  const LS_VER = 1;
+  const LS_VER = 2;
 
   /* ── Utility ── */
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
@@ -32,19 +33,35 @@
   let S = {
     tab: 'kits',
     selectedKit: null,
-    expandedKit: null
+    expandedKit: null,
+    customLabels: [],
+    enabledScenarios: [],
+    editingLabelIdx: -1,
+    deploySource: 'kit'
   };
 
+  let _nextLabelId = 1;
+  function genLabelId() { return 'custom-' + (_nextLabelId++); }
+
   function saveState() {
-    try { localStorage.setItem(LS_KEY, JSON.stringify({ v: LS_VER, tab: S.tab, selectedKit: S.selectedKit })); } catch(e) {}
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify({
+        v: LS_VER, tab: S.tab, selectedKit: S.selectedKit,
+        customLabels: S.customLabels, enabledScenarios: S.enabledScenarios,
+        deploySource: S.deploySource
+      }));
+    } catch(e) {}
   }
   function loadState() {
     try {
       const raw = localStorage.getItem(LS_KEY);
       if (!raw) return;
       const d = JSON.parse(raw);
-      if (d.v !== LS_VER) return;
+      if (d.v !== LS_VER) { localStorage.removeItem(LS_KEY); return; }
       if (d.selectedKit) S.selectedKit = d.selectedKit;
+      if (d.deploySource) S.deploySource = d.deploySource;
+      if (Array.isArray(d.customLabels)) S.customLabels = d.customLabels;
+      if (Array.isArray(d.enabledScenarios)) S.enabledScenarios = d.enabledScenarios;
     } catch(e) {}
   }
 
@@ -212,7 +229,8 @@
   function updateDeployBadge() {
     const badge = $('pvs-deploy-badge');
     if (!badge) return;
-    badge.style.display = S.selectedKit ? 'inline-flex' : 'none';
+    const hasContent = S.selectedKit || S.customLabels.length > 0 || S.enabledScenarios.length > 0;
+    badge.style.display = hasContent ? 'inline-flex' : 'none';
     badge.textContent = '✓';
   }
 
@@ -222,23 +240,54 @@
     const dash = $('pvs-deploy-dashboard');
     if (!empty || !dash) return;
 
-    if (!S.selectedKit) {
+    const hasKit = S.selectedKit && getKit(S.selectedKit);
+    const hasCustom = S.customLabels.length > 0 || S.enabledScenarios.length > 0;
+
+    if (!hasKit && !hasCustom) {
       empty.style.display = '';
       dash.style.display = 'none';
       return;
     }
 
-    const kit = getKit(S.selectedKit);
-    if (!kit) return;
-
     empty.style.display = 'none';
     dash.style.display = '';
 
-    $('pvs-deploy-kit-name').textContent = kit.name;
+    // Determine source
+    const useCustom = S.deploySource === 'custom' && hasCustom;
+    const kit = useCustom ? null : getKit(S.selectedKit);
+    const labels = useCustom ? S.customLabels : (kit ? kit.labels : []);
+    const dlpRules = useCustom ? S.enabledScenarios.map(id => SCENARIOS.find(s => s.id === id)).filter(Boolean) : (kit ? kit.dlp_rules : []);
+    const planName = useCustom ? 'Custom Plan' : (kit ? kit.name : 'Plan');
+
+    $('pvs-deploy-kit-name').textContent = planName;
+
+    // Source toggle if both available
+    const header = $('pvs-deploy-kit-name').parentElement;
+    let toggleEl = header.querySelector('.pvs-deploy-source-toggle');
+    if (hasKit && hasCustom) {
+      if (!toggleEl) {
+        toggleEl = document.createElement('div');
+        toggleEl.className = 'pvs-deploy-source-toggle';
+        header.insertBefore(toggleEl, header.querySelector('.pvs-btn'));
+      }
+      toggleEl.innerHTML =
+        '<button class="pvs-btn pvs-btn--sm ' + (!useCustom ? 'pvs-btn--primary' : 'pvs-btn--secondary') + '" data-source="kit">Kit: ' + esc(getKit(S.selectedKit).name) + '</button>' +
+        '<button class="pvs-btn pvs-btn--sm ' + (useCustom ? 'pvs-btn--primary' : 'pvs-btn--secondary') + '" data-source="custom">Custom Plan</button>';
+      toggleEl.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', () => {
+          S.deploySource = b.dataset.source;
+          saveState();
+          renderDeploy();
+        });
+      });
+    } else if (toggleEl) {
+      toggleEl.remove();
+    }
+
     renderDeploySteps();
-    renderPowerShell(kit);
-    renderEmails(kit);
-    renderLicenceTable(kit);
+    renderPowerShell({ name: planName, labels: labels || [], dlp_rules: dlpRules || [], licence: kit ? kit.licence : 'e5' });
+    renderEmails({ name: planName, labels: labels || [], dlp_rules: dlpRules || [] });
+    renderLicenceTable({ labels: labels || [], dlp_rules: dlpRules || [], licence: kit ? kit.licence : 'e5' });
   }
 
   function renderDeploySteps() {
@@ -300,7 +349,15 @@
     ps += '# ── Step 3: Create DLP Policies (Test Mode) ──\n\n';
     if (kit.dlp_rules) {
       kit.dlp_rules.forEach(rule => {
-        ps += generateDLPPS(rule, kit);
+        // Handle both kit dlp_rules and DLP scenarios (different shapes)
+        const r = {
+          name: rule.name,
+          description: rule.description || '',
+          workloads: rule.workloads || [],
+          action: rule.action || 'log',
+          condition_summary: rule.condition_summary || rule.description || ''
+        };
+        ps += generateDLPPS(r, kit);
       });
     }
 
@@ -502,6 +559,363 @@
     }
   }
 
+  /* ═══ LABEL BUILDER (Phase 2) ═══ */
+
+  function renderLabelTemplates() {
+    const el = $('pvs-lb-templates');
+    if (!el) return;
+    el.innerHTML = KITS.map(kit =>
+      '<button class="pvs-lb-tpl-btn" data-kit="' + esc(kit.id) + '">' + esc(kit.emoji) + ' ' + esc(kit.name) + '</button>'
+    ).join('');
+  }
+
+  function initLabelBuilder() {
+    const tplContainer = $('pvs-lb-templates');
+    const addBtn = $('pvs-lb-add');
+    const clearBtn = $('pvs-lb-clear');
+    const toDeployBtn = $('pvs-lb-to-deploy');
+
+    if (tplContainer) {
+      tplContainer.addEventListener('click', e => {
+        const btn = e.target.closest('.pvs-lb-tpl-btn');
+        if (!btn) return;
+        const kit = getKit(btn.dataset.kit);
+        if (!kit || !kit.labels) return;
+        S.customLabels = kit.labels.map(l => ({ ...l, id: genLabelId(), parent_id: '' }));
+        // Re-link parent IDs for sublabels
+        const idMap = {};
+        kit.labels.forEach((orig, i) => { idMap[orig.id] = S.customLabels[i].id; });
+        S.customLabels.forEach((l, i) => {
+          if (kit.labels[i].parent_id && idMap[kit.labels[i].parent_id]) {
+            l.parent_id = idMap[kit.labels[i].parent_id];
+          }
+        });
+        saveState();
+        renderLabelTree();
+        renderLabelPreview();
+        toast(kit.name + ' labels loaded — customise below');
+      });
+    }
+
+    if (addBtn) addBtn.addEventListener('click', () => openLabelModal(-1));
+    if (clearBtn) clearBtn.addEventListener('click', () => {
+      if (!S.customLabels.length) return;
+      S.customLabels = [];
+      saveState();
+      renderLabelTree();
+      renderLabelPreview();
+      toast('Labels cleared');
+    });
+    if (toDeployBtn) toDeployBtn.addEventListener('click', () => {
+      S.deploySource = 'custom';
+      saveState();
+      renderDeploy();
+      updateDeployBadge();
+      switchTab('deploy');
+      toast('Custom labels ready for deploy');
+    });
+
+    initLabelModal();
+  }
+
+  function renderLabelTree() {
+    const tree = $('pvs-lb-tree');
+    const empty = $('pvs-lb-empty');
+    const cta = $('pvs-lb-deploy-cta');
+    if (!tree) return;
+
+    if (!S.customLabels.length) {
+      if (empty) empty.style.display = '';
+      if (cta) cta.style.display = 'none';
+      // Clear except the empty msg
+      tree.querySelectorAll('.pvs-lb-card').forEach(c => c.remove());
+      return;
+    }
+    if (empty) empty.style.display = 'none';
+    if (cta) cta.style.display = '';
+
+    const parents = S.customLabels.filter(l => !l.parent_id);
+    let html = '';
+    parents.forEach(label => {
+      html += renderLBCard(label, false);
+      S.customLabels.filter(l => l.parent_id === label.id).forEach(child => {
+        html += renderLBCard(child, true);
+      });
+    });
+    // Remove old cards, keep empty div
+    tree.querySelectorAll('.pvs-lb-card').forEach(c => c.remove());
+    tree.insertAdjacentHTML('beforeend', html);
+  }
+
+  function renderLBCard(label, isChild) {
+    const idx = S.customLabels.indexOf(label);
+    const badges = [];
+    if (label.encrypt) badges.push('<span class="pvs-label-badge pvs-label-badge--encrypt">🔒</span>');
+    if (label.mark) badges.push('<span class="pvs-label-badge pvs-label-badge--mark">📝</span>');
+    if (label.auto_apply) badges.push('<span class="pvs-label-badge pvs-label-badge--auto">⚡</span>');
+    return '<div class="pvs-lb-card' + (isChild ? ' pvs-lb-card--child' : '') + ' pvs-label-colour-' + esc(label.colour) + '" data-idx="' + idx + '">' +
+      '<span class="pvs-lb-card-name">' + (isChild ? '└ ' : '') + esc(label.name || 'Untitled') + '</span>' +
+      '<div class="pvs-lb-card-badges">' + badges.join('') + '</div>' +
+      '<div class="pvs-lb-card-actions">' +
+        '<button class="pvs-lb-card-btn pvs-lb-edit" data-idx="' + idx + '" aria-label="Edit label" title="Edit">✎</button>' +
+        '<button class="pvs-lb-card-btn pvs-lb-move-up" data-idx="' + idx + '" aria-label="Move up" title="Move up">▲</button>' +
+        '<button class="pvs-lb-card-btn pvs-lb-move-down" data-idx="' + idx + '" aria-label="Move down" title="Move down">▼</button>' +
+        '<button class="pvs-lb-card-btn pvs-lb-card-btn--del pvs-lb-del" data-idx="' + idx + '" aria-label="Delete label" title="Delete">✕</button>' +
+      '</div></div>';
+  }
+
+  function initLabelTree() {
+    const tree = $('pvs-lb-tree');
+    if (!tree) return;
+    tree.addEventListener('click', e => {
+      const editBtn = e.target.closest('.pvs-lb-edit');
+      if (editBtn) { openLabelModal(+editBtn.dataset.idx); return; }
+      const delBtn = e.target.closest('.pvs-lb-del');
+      if (delBtn) {
+        const idx = +delBtn.dataset.idx;
+        const label = S.customLabels[idx];
+        if (!label) return;
+        // Remove children first, then the label itself
+        S.customLabels = S.customLabels.filter(l => l.parent_id !== label.id && l !== label);
+        saveState(); renderLabelTree(); renderLabelPreview();
+        return;
+      }
+      const upBtn = e.target.closest('.pvs-lb-move-up');
+      if (upBtn) { moveLabel(+upBtn.dataset.idx, -1); return; }
+      const downBtn = e.target.closest('.pvs-lb-move-down');
+      if (downBtn) { moveLabel(+downBtn.dataset.idx, 1); return; }
+      // Click card to edit
+      const card = e.target.closest('.pvs-lb-card');
+      if (card && !e.target.closest('.pvs-lb-card-actions')) {
+        openLabelModal(+card.dataset.idx);
+      }
+    });
+  }
+
+  function moveLabel(idx, dir) {
+    const newIdx = idx + dir;
+    if (newIdx < 0 || newIdx >= S.customLabels.length) return;
+    [S.customLabels[idx], S.customLabels[newIdx]] = [S.customLabels[newIdx], S.customLabels[idx]];
+    saveState(); renderLabelTree(); renderLabelPreview();
+  }
+
+  function renderLabelPreview() {
+    const dropdown = $('pvs-lb-ribbon-dropdown');
+    if (!dropdown) return;
+    if (!S.customLabels.length) {
+      dropdown.innerHTML = '<div class="pvs-lb-ribbon-item" style="color:rgba(255,255,255,0.3);font-style:italic">No labels yet</div>';
+      return;
+    }
+    const parents = S.customLabels.filter(l => !l.parent_id);
+    let html = '';
+    parents.forEach(label => {
+      html += '<div class="pvs-lb-ribbon-item"><span class="pvs-lb-ribbon-dot pvs-lb-ribbon-dot--' + esc(label.colour) + '"></span>' + esc(label.name || 'Untitled') + '</div>';
+      S.customLabels.filter(l => l.parent_id === label.id).forEach(child => {
+        html += '<div class="pvs-lb-ribbon-item pvs-lb-ribbon-item--child"><span class="pvs-lb-ribbon-dot pvs-lb-ribbon-dot--' + esc(child.colour) + '"></span>' + esc(child.name || 'Untitled') + '</div>';
+      });
+    });
+    dropdown.innerHTML = html;
+  }
+
+  /* ── Label Modal ── */
+  function openLabelModal(idx) {
+    S.editingLabelIdx = idx;
+    const modal = $('pvs-lb-modal');
+    if (!modal) return;
+    const isEdit = idx >= 0 && S.customLabels[idx];
+    const label = isEdit ? S.customLabels[idx] : { name: '', colour: 'blue', encrypt: false, encrypt_scope: 'org-only', mark: false, mark_header: '', mark_footer: '', mark_watermark: '', auto_apply: false, auto_pattern: 'pii', parent_id: '', tooltip: '' };
+
+    $('pvs-lb-modal-title').textContent = isEdit ? 'Edit Label' : 'Add Label';
+    $('pvs-lb-name').value = label.name || '';
+    // Set colour
+    document.querySelectorAll('.pvs-lb-colour-btn').forEach(b => b.classList.toggle('active', b.dataset.colour === label.colour));
+    $('pvs-lb-encrypt').checked = !!label.encrypt;
+    $('pvs-lb-encrypt-scope').value = label.encrypt_scope || 'org-only';
+    $('pvs-lb-encrypt-scope').style.display = label.encrypt ? '' : 'none';
+    $('pvs-lb-mark').checked = !!label.mark;
+    $('pvs-lb-mark-fields').style.display = label.mark ? '' : 'none';
+    $('pvs-lb-mark-header').value = label.mark_header || '';
+    $('pvs-lb-mark-footer').value = label.mark_footer || '';
+    $('pvs-lb-mark-watermark').value = label.mark_watermark || '';
+    $('pvs-lb-auto').checked = !!label.auto_apply;
+    $('pvs-lb-auto-pattern').value = label.auto_pattern || 'pii';
+    $('pvs-lb-auto-pattern').style.display = label.auto_apply ? '' : 'none';
+
+    // Parent selector
+    const parentSelect = $('pvs-lb-parent');
+    parentSelect.innerHTML = '<option value="">None — top-level label</option>';
+    S.customLabels.forEach((l, i) => {
+      if (i === idx || l.parent_id) return;
+      parentSelect.innerHTML += '<option value="' + esc(l.id) + '"' + (label.parent_id === l.id ? ' selected' : '') + '>' + esc(l.name || 'Untitled') + '</option>';
+    });
+
+    modal.style.display = '';
+    $('pvs-lb-name').focus();
+  }
+
+  function closeLabelModal() {
+    const modal = $('pvs-lb-modal');
+    if (modal) modal.style.display = 'none';
+    S.editingLabelIdx = -1;
+  }
+
+  function saveLabelFromModal() {
+    const name = $('pvs-lb-name').value.trim();
+    if (!name) { $('pvs-lb-name').focus(); return; }
+    const activeColour = document.querySelector('.pvs-lb-colour-btn.active');
+    const label = {
+      id: S.editingLabelIdx >= 0 ? S.customLabels[S.editingLabelIdx].id : genLabelId(),
+      name: name,
+      colour: activeColour ? activeColour.dataset.colour : 'blue',
+      tooltip: name,
+      encrypt: $('pvs-lb-encrypt').checked,
+      encrypt_scope: $('pvs-lb-encrypt-scope').value,
+      mark: $('pvs-lb-mark').checked,
+      mark_header: $('pvs-lb-mark-header').value.trim(),
+      mark_footer: $('pvs-lb-mark-footer').value.trim(),
+      mark_watermark: $('pvs-lb-mark-watermark').value.trim(),
+      auto_apply: $('pvs-lb-auto').checked,
+      auto_pattern: $('pvs-lb-auto-pattern').value,
+      parent_id: $('pvs-lb-parent').value
+    };
+    if (S.editingLabelIdx >= 0) {
+      S.customLabels[S.editingLabelIdx] = label;
+    } else {
+      S.customLabels.push(label);
+    }
+    saveState();
+    closeLabelModal();
+    renderLabelTree();
+    renderLabelPreview();
+  }
+
+  function initLabelModal() {
+    const modal = $('pvs-lb-modal');
+    if (!modal) return;
+    $('pvs-lb-modal-close').addEventListener('click', closeLabelModal);
+    $('pvs-lb-modal-cancel').addEventListener('click', closeLabelModal);
+    $('pvs-lb-modal-save').addEventListener('click', saveLabelFromModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeLabelModal(); });
+
+    // Colour buttons
+    document.querySelectorAll('.pvs-lb-colour-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pvs-lb-colour-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Toggle visibility
+    $('pvs-lb-encrypt').addEventListener('change', function() {
+      $('pvs-lb-encrypt-scope').style.display = this.checked ? '' : 'none';
+    });
+    $('pvs-lb-mark').addEventListener('change', function() {
+      $('pvs-lb-mark-fields').style.display = this.checked ? '' : 'none';
+    });
+    $('pvs-lb-auto').addEventListener('change', function() {
+      $('pvs-lb-auto-pattern').style.display = this.checked ? '' : 'none';
+    });
+
+    // Enter to save
+    $('pvs-lb-name').addEventListener('keydown', e => {
+      if (e.key === 'Enter') saveLabelFromModal();
+    });
+    // Escape to close
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.style.display !== 'none') closeLabelModal();
+    });
+  }
+
+  /* ═══ DLP SCENARIOS (Phase 2) ═══ */
+  const DLP_CATEGORIES = [
+    { id: 'protect', name: 'Protect Sensitive Data', emoji: '🔒' },
+    { id: 'sharing', name: 'Control File Sharing', emoji: '📁' },
+    { id: 'collaboration', name: 'Secure Collaboration', emoji: '💬' },
+    { id: 'endpoint', name: 'Endpoint Protection', emoji: '💻' }
+  ];
+
+  function renderDLPScenarios() {
+    const el = $('pvs-dlp-scenarios');
+    if (!el || !SCENARIOS.length) return;
+
+    el.innerHTML = DLP_CATEGORIES.map(cat => {
+      const items = SCENARIOS.filter(s => s.category === cat.id);
+      if (!items.length) return '';
+      return '<div class="pvs-dlp-cat">' +
+        '<div class="pvs-dlp-cat-title">' + esc(cat.emoji + ' ' + cat.name) + '</div>' +
+        '<div class="pvs-dlp-cat-grid">' +
+        items.map(s => {
+          const enabled = S.enabledScenarios.includes(s.id);
+          return '<div class="pvs-dlp-scenario-card' + (enabled ? ' pvs-dlp-enabled' : '') + '" data-scenario="' + esc(s.id) + '">' +
+            '<div class="pvs-dlp-scenario-toggle">' +
+              '<input type="checkbox" class="pvs-toggle pvs-dlp-toggle" data-scenario="' + esc(s.id) + '"' + (enabled ? ' checked' : '') + ' aria-label="' + esc(s.name) + '">' +
+            '</div>' +
+            '<div class="pvs-dlp-scenario-body">' +
+              '<div class="pvs-dlp-scenario-name">' + esc(s.name) + '</div>' +
+              '<div class="pvs-dlp-scenario-desc">' + esc(s.description) + '</div>' +
+              '<div class="pvs-dlp-scenario-meta">' +
+                '<span class="pvs-dlp-action pvs-dlp-action--' + esc(s.action) + '">' + esc(s.action) + '</span>' +
+                (s.workloads || []).map(wlBadge).join('') +
+                licBadge(s.licence) +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+        '</div></div>';
+    }).join('');
+
+    updateDLPSummary();
+  }
+
+  function initDLPScenarios() {
+    const el = $('pvs-dlp-scenarios');
+    if (!el) return;
+    el.addEventListener('change', e => {
+      const toggle = e.target.closest('.pvs-dlp-toggle');
+      if (!toggle) return;
+      const id = toggle.dataset.scenario;
+      const card = toggle.closest('.pvs-dlp-scenario-card');
+      if (toggle.checked) {
+        if (!S.enabledScenarios.includes(id)) S.enabledScenarios.push(id);
+        if (card) card.classList.add('pvs-dlp-enabled');
+      } else {
+        S.enabledScenarios = S.enabledScenarios.filter(s => s !== id);
+        if (card) card.classList.remove('pvs-dlp-enabled');
+      }
+      saveState();
+      updateDLPSummary();
+    });
+
+    // Click card to toggle
+    el.addEventListener('click', e => {
+      if (e.target.closest('.pvs-dlp-scenario-toggle')) return;
+      const card = e.target.closest('.pvs-dlp-scenario-card');
+      if (!card) return;
+      const toggle = card.querySelector('.pvs-dlp-toggle');
+      if (toggle) { toggle.checked = !toggle.checked; toggle.dispatchEvent(new Event('change', { bubbles: true })); }
+    });
+
+    const toDeployBtn = $('pvs-dlp-to-deploy');
+    if (toDeployBtn) {
+      toDeployBtn.addEventListener('click', () => {
+        S.deploySource = 'custom';
+        saveState();
+        renderDeploy();
+        updateDeployBadge();
+        switchTab('deploy');
+        toast('DLP scenarios ready for deploy');
+      });
+    }
+  }
+
+  function updateDLPSummary() {
+    const countEl = $('pvs-dlp-summary-count');
+    const btn = $('pvs-dlp-to-deploy');
+    const n = S.enabledScenarios.length;
+    if (countEl) countEl.textContent = n + ' scenario' + (n !== 1 ? 's' : '') + ' selected';
+    if (btn) btn.style.display = n > 0 ? '' : 'none';
+  }
+
   /* ── Init ── */
   const VALID_TABS = ['kits', 'labels', 'dlp', 'deploy', 'faq'];
   const VALID_KITS = KITS.map(k => k.id);
@@ -534,6 +948,17 @@
     updateDeployBadge();
     initCopyButtons();
     initChangeKit();
+
+    // Phase 2: Label Builder
+    renderLabelTemplates();
+    initLabelBuilder();
+    initLabelTree();
+    renderLabelTree();
+    renderLabelPreview();
+
+    // Phase 2: DLP Scenarios
+    renderDLPScenarios();
+    initDLPScenarios();
 
     // "Go to kits" buttons (placeholders + empty states)
     document.querySelectorAll('.pvs-goto-kits').forEach(btn => {

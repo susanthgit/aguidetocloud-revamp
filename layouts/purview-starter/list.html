@@ -49,26 +49,128 @@
       <div class="pvs-kits-grid" id="pvs-kits-grid"></div>
     </div>
 
-    {{/* ═══ LABEL BUILDER TAB (Phase 2 placeholder) ═══ */}}
+    {{/* ═══ LABEL BUILDER TAB ═══ */}}
     <div class="pvs-panel" role="tabpanel" id="panel-labels" aria-labelledby="tab-labels">
-      <div class="pvs-coming-soon">
-        <div class="pvs-coming-icon">🏷️</div>
-        <h2>Label Builder — Coming Soon</h2>
-        <p>Design custom sensitivity labels visually with just 5 decisions per label. Drag to reorder, add sublabels, and preview what users see in Office apps.</p>
-        <p>In the meantime, pick a <strong>Starter Kit</strong> to get pre-built labels instantly.</p>
-        <button class="pvs-btn pvs-btn--primary pvs-goto-kits">Browse Starter Kits</button>
+      <p class="pvs-panel-desc">Design your own sensitivity labels. Each label has <strong>5 decisions</strong> — we handle the rest. Start from a template or build from scratch.</p>
+
+      <div class="pvs-lb-templates">
+        <span class="pvs-lb-templates-label">Start from:</span>
+        <div class="pvs-lb-templates-btns" id="pvs-lb-templates"></div>
+      </div>
+
+      <div class="pvs-lb-layout">
+        <div class="pvs-lb-tree-col">
+          <div class="pvs-lb-toolbar">
+            <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-lb-add">+ Add Label</button>
+            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-lb-clear">Clear All</button>
+          </div>
+          <div class="pvs-lb-tree" id="pvs-lb-tree">
+            <div class="pvs-lb-empty" id="pvs-lb-empty">
+              <p>No labels yet. Add one above or start from a template.</p>
+            </div>
+          </div>
+          <div class="pvs-lb-deploy-cta" id="pvs-lb-deploy-cta" style="display:none">
+            <button class="pvs-btn pvs-btn--primary" id="pvs-lb-to-deploy">Use These Labels in Deploy →</button>
+          </div>
+        </div>
+
+        <div class="pvs-lb-preview-col" id="pvs-lb-preview-col">
+          <div class="pvs-lb-preview-card">
+            <h3>What Users See in Office</h3>
+            <div class="pvs-lb-ribbon">
+              <div class="pvs-lb-ribbon-bar">
+                <span class="pvs-lb-ribbon-icon">🏷️</span>
+                <span class="pvs-lb-ribbon-text">Sensitivity</span>
+                <span class="pvs-lb-ribbon-arrow">▾</span>
+              </div>
+              <div class="pvs-lb-ribbon-dropdown" id="pvs-lb-ribbon-dropdown"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{/* Label editor modal */}}
+      <div class="pvs-modal-overlay" id="pvs-lb-modal" style="display:none">
+        <div class="pvs-modal" role="dialog" aria-modal="true" aria-label="Edit label">
+          <div class="pvs-modal-header">
+            <h3 id="pvs-lb-modal-title">Add Label</h3>
+            <button class="pvs-modal-close" id="pvs-lb-modal-close" aria-label="Close">✕</button>
+          </div>
+          <div class="pvs-modal-body">
+            <div class="pvs-lb-field">
+              <label for="pvs-lb-name">1. Name</label>
+              <input type="text" id="pvs-lb-name" placeholder="e.g. Confidential" maxlength="64" aria-label="Label name">
+            </div>
+            <div class="pvs-lb-field">
+              <label>2. Colour</label>
+              <div class="pvs-lb-colours" id="pvs-lb-colours">
+                <button class="pvs-lb-colour-btn" data-colour="green" style="background:#4ADE80" aria-label="Green"></button>
+                <button class="pvs-lb-colour-btn" data-colour="blue" style="background:#60A5FA" aria-label="Blue"></button>
+                <button class="pvs-lb-colour-btn" data-colour="yellow" style="background:#FBBF24" aria-label="Yellow"></button>
+                <button class="pvs-lb-colour-btn" data-colour="orange" style="background:#FB923C" aria-label="Orange"></button>
+                <button class="pvs-lb-colour-btn" data-colour="red" style="background:#F87171" aria-label="Red"></button>
+                <button class="pvs-lb-colour-btn" data-colour="purple" style="background:#C084FC" aria-label="Purple"></button>
+              </div>
+            </div>
+            <div class="pvs-lb-field">
+              <label for="pvs-lb-encrypt">3. Encrypt?</label>
+              <div class="pvs-lb-toggle-row">
+                <input type="checkbox" id="pvs-lb-encrypt" class="pvs-toggle">
+                <select id="pvs-lb-encrypt-scope" class="pvs-select" style="display:none" aria-label="Encryption scope">
+                  <option value="org-only">Only people in my org</option>
+                  <option value="specific-people">Specific people</option>
+                </select>
+              </div>
+            </div>
+            <div class="pvs-lb-field">
+              <label for="pvs-lb-mark">4. Mark content?</label>
+              <div class="pvs-lb-toggle-row">
+                <input type="checkbox" id="pvs-lb-mark" class="pvs-toggle">
+              </div>
+              <div id="pvs-lb-mark-fields" style="display:none">
+                <input type="text" id="pvs-lb-mark-header" placeholder="Header text" aria-label="Header text" maxlength="128">
+                <input type="text" id="pvs-lb-mark-footer" placeholder="Footer text (optional)" aria-label="Footer text" maxlength="128">
+                <input type="text" id="pvs-lb-mark-watermark" placeholder="Watermark (optional)" aria-label="Watermark text" maxlength="64">
+              </div>
+            </div>
+            <div class="pvs-lb-field">
+              <label for="pvs-lb-auto">5. Auto-apply?</label>
+              <div class="pvs-lb-toggle-row">
+                <input type="checkbox" id="pvs-lb-auto" class="pvs-toggle">
+                <select id="pvs-lb-auto-pattern" class="pvs-select" style="display:none" aria-label="Auto-apply pattern">
+                  <option value="pii">Contains PII (names, addresses, IDs)</option>
+                  <option value="financial">Contains financial data (credit cards, bank accounts)</option>
+                  <option value="health">Contains health information (HIPAA)</option>
+                  <option value="credentials">Contains credentials (passwords, keys)</option>
+                  <option value="legal">Contains legal terms</option>
+                </select>
+              </div>
+            </div>
+            <div class="pvs-lb-field">
+              <label for="pvs-lb-parent">Parent label (optional)</label>
+              <select id="pvs-lb-parent" class="pvs-select" aria-label="Parent label">
+                <option value="">None — top-level label</option>
+              </select>
+            </div>
+          </div>
+          <div class="pvs-modal-footer">
+            <button class="pvs-btn pvs-btn--secondary" id="pvs-lb-modal-cancel">Cancel</button>
+            <button class="pvs-btn pvs-btn--primary" id="pvs-lb-modal-save">Save Label</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    {{/* ═══ DLP SCENARIOS TAB (Phase 2 placeholder) ═══ */}}
+    {{/* ═══ DLP SCENARIOS TAB ═══ */}}
     <div class="pvs-panel" role="tabpanel" id="panel-dlp" aria-labelledby="tab-dlp">
-      <div class="pvs-coming-soon">
-        <div class="pvs-coming-icon">🛡️</div>
-        <h2>DLP Scenarios — Coming Soon</h2>
-        <p>Toggle on the protection scenarios that matter to your org. 20 scenarios across 4 categories — no complex rule configuration needed.</p>
-        <p>For now, each <strong>Starter Kit</strong> includes curated DLP rules ready to deploy.</p>
-        <button class="pvs-btn pvs-btn--primary pvs-goto-kits">Browse Starter Kits</button>
+      <p class="pvs-panel-desc">What do you want to protect? <strong>Toggle on the scenarios</strong> that matter to your org. Each one becomes a DLP rule in your deploy plan.</p>
+
+      <div class="pvs-dlp-summary" id="pvs-dlp-summary">
+        <span id="pvs-dlp-summary-count">0 scenarios selected</span>
+        <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-dlp-to-deploy" style="display:none">Use in Deploy →</button>
       </div>
+
+      <div class="pvs-dlp-scenarios" id="pvs-dlp-scenarios"></div>
     </div>
 
     {{/* ═══ DEPLOY TAB ═══ */}}
@@ -177,12 +279,14 @@
 {{ $licensing := (index hugo.Data "purview-starter").licensing }}
 {{ $steps := (index hugo.Data "purview-starter").deploy_steps.steps }}
 {{ $emails := (index hugo.Data "purview-starter").emails.emails }}
+{{ $scenarios := (index hugo.Data "purview-starter").dlp_scenarios.scenarios }}
 <script>
   window.__pvs = {
     kits: {{ $kits | jsonify | safeJS }},
     licensing: {{ $licensing | jsonify | safeJS }},
     steps: {{ $steps | jsonify | safeJS }},
-    emails: {{ $emails | jsonify | safeJS }}
+    emails: {{ $emails | jsonify | safeJS }},
+    scenarios: {{ $scenarios | jsonify | safeJS }}
   };
 </script>
 <script src="/js/purview-starter.js?v={{ site.Params.cache_version }}" defer></script>
