@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  /* Local Inter variable font — no external CDN dependency */
+  /* V3 — Raycast-inspired OG template (April 2026 redesign) */
   @font-face {
     font-family: 'Inter';
     src: url('{{FONT_PATH}}') format('woff2');
@@ -18,7 +18,7 @@
     width: 1200px;
     height: 630px;
     overflow: hidden;
-    background: #0f0f1a;
+    background: #030308;
     font-family: 'Inter', sans-serif;
   }
 
@@ -29,88 +29,57 @@
     overflow: hidden;
   }
 
-  /* Ambient gradient orbs */
-  .orbs {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 600px 400px at 15% 30%, rgba(255,102,255,0.12), transparent 70%),
-      radial-gradient(ellipse 500px 350px at 85% 60%, var(--accent-glow-bg), transparent 70%),
-      radial-gradient(ellipse 400px 300px at 50% 80%, rgba(138,43,226,0.06), transparent 70%);
-    z-index: 1;
+  /* L1: Ambient accent gradient wash */
+  .ambient {
+    position: absolute; inset: 0; z-index: 1;
   }
 
-  /* Wireframe grid */
-  .grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(102,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(102,255,255,0.035) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
-    z-index: 2;
+  /* L2: SVG abstract art pattern — per category */
+  .art-layer {
+    position: absolute; inset: 0; z-index: 2;
+    opacity: {{PATTERN_OPACITY}};
+  }
+  .art-layer svg { width: 100%; height: 100%; }
+
+  /* L3: Vignette fade — softens pattern edges */
+  .fade-overlay {
+    position: absolute; inset: 0; z-index: 3;
+    background: radial-gradient(ellipse 110% 90% at 50% 50%, transparent 40%, #030308 90%);
   }
 
-  /* Accent orbs */
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 3;
-  }
-  .orb-1 {
-    width: 300px; height: 300px;
-    top: -80px; right: -60px;
-    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-    opacity: 0.18;
-  }
-  .orb-2 {
-    width: 250px; height: 250px;
-    bottom: -80px; left: -60px;
-    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-    opacity: 0.10;
-  }
-
-  /* Content */
+  /* L4: Frosted glass card */
   .content {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 48px 72px;
+    position: absolute; inset: 0; z-index: 10;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 36px 56px;
   }
 
-  /* Glass card */
   .glass {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8,8,20,0.55);
+    backdrop-filter: blur(72px);
+    -webkit-backdrop-filter: blur(72px);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
-    padding: 44px 64px;
+    padding: 48px 64px;
     text-align: center;
-    max-width: 900px;
+    max-width: 860px;
     width: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
     position: relative;
   }
 
-  /* Gradient border */
+  /* Gradient border — accent glow at top-left corner */
   .glass::before {
     content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 24px;
-    padding: 1.5px;
+    position: absolute; inset: -1px;
+    border-radius: 24px; padding: 1.5px;
     background: linear-gradient(
       135deg,
-      var(--accent) 0%,
-      transparent 40%,
-      transparent 60%,
-      rgba(102,255,255,0.3) 100%
+      color-mix(in srgb, var(--accent) 55%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 12%, transparent) 25%,
+      transparent 50%
     );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -119,141 +88,88 @@
     pointer-events: none;
   }
 
-  /* Category pill */
-  .pill {
-    display: inline-block;
-    padding: 5px 18px;
-    border-radius: 16px;
-    font-size: 12px;
+  /* Inner accent glow */
+  .glass::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%; height: 50%;
+    border-radius: 24px 0 0 0;
+    background: radial-gradient(ellipse at 0% 0%, var(--accent-glow), transparent 70%);
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .category {
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-    background: color-mix(in srgb, var(--accent) 6%, transparent);
-    margin-bottom: 16px;
-  }
-
-  .emoji {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 8px;
-    filter: drop-shadow(0 0 20px var(--accent-glow));
-  }
-
-  .emoji img {
-    width: 100%;
-    height: 100%;
-    display: block;
+    margin-bottom: 22px;
+    opacity: 0.9;
   }
 
   .title {
-    font-size: 50px;
+    font-size: 76px;
     font-weight: 800;
-    letter-spacing: -1px;
     color: #ffffff;
-    margin: 0 0 8px;
-    text-shadow: 0 0 50px var(--accent-glow);
-    line-height: 1.1;
+    margin: 0 0 18px;
+    letter-spacing: -2px;
+    line-height: 1.02;
+    text-shadow: 0 0 80px var(--accent-glow);
   }
 
-  /* Auto-shrink for long titles */
-  .title.title-sm { font-size: 42px; }
+  .title.title-sm { font-size: 62px; }
+  .title.title-xs { font-size: 52px; }
 
-  .line {
-    width: 100px;
+  .separator {
+    width: 56px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent), rgba(102,255,255,0.5));
+    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 30%, transparent));
     border-radius: 2px;
-    margin: 14px auto;
+    margin: 0 auto 20px;
   }
 
   .tagline {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255,255,255,0.55);
     margin: 0;
     line-height: 1.4;
+    max-width: 720px;
   }
-
-  /* Footer */
-  .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 48px;
-    background: linear-gradient(to top, rgba(0,0,0,0.35), transparent);
-  }
-
-  .logo-pill {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .logo-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.10);
-    flex-shrink: 0;
-  }
-
-  .logo-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .url {
-    font-size: 17px;
-    font-weight: 500;
-    color: rgba(102,255,255,0.55);
-    letter-spacing: 0.5px;
-  }
-
-  .brand {
-    font-size: 15px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.4);
-  }
-  .brand span { color: rgba(102,255,255,0.6); }
 </style>
 </head>
 <body>
-  <div class="frame" style="--accent: {{ACCENT}}; --accent-glow: {{ACCENT_GLOW}}; --accent-glow-bg: {{ACCENT_GLOW_BG}};">
-    <div class="orbs"></div>
-    <div class="grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+  <div class="frame" style="--accent: {{ACCENT}}; --accent-glow: {{ACCENT_GLOW}};">
+
+    <!-- L1: Ambient gradient -->
+    <div class="ambient" style="background:
+      radial-gradient(ellipse 800px 600px at 20% 25%, {{AMBIENT_PRIMARY}}, transparent 70%),
+      radial-gradient(ellipse 500px 400px at 80% 70%, {{AMBIENT_SECONDARY}}, transparent 70%),
+      radial-gradient(ellipse 400px 300px at 50% 50%, rgba(138,43,226,0.04), transparent 70%);">
+    </div>
+
+    <!-- L2: Category SVG art -->
+    <div class="art-layer">
+      {{PATTERN_SVG}}
+    </div>
+
+    <!-- L3: Vignette -->
+    <div class="fade-overlay"></div>
+
+    <!-- L4: Glass card + content -->
     <div class="content">
       <div class="glass">
-        <div class="pill">Free Tool — {{CATEGORY}}</div>
-        <div class="emoji"><img src="{{EMOJI_PATH}}" alt=""></div>
+        <div class="category">{{CATEGORY}} · Free Tool</div>
         <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
-        <div class="line"></div>
+        <div class="separator"></div>
         <p class="tagline">{{TAGLINE}}</p>
       </div>
     </div>
-    <div class="footer">
-      <div class="logo-pill">
-        <div class="logo-circle">
-          <img src="{{LOGO_PATH}}" alt="">
-        </div>
-        <span class="url">aguidetocloud.com</span>
-      </div>
-      <span class="brand">A Guide to <span>Cloud & AI</span></span>
-    </div>
+
   </div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
+  /* V3 — Homepage OG template (April 2026 redesign) */
   @font-face {
     font-family: 'Inter';
     src: url('{{FONT_PATH}}') format('woff2');
@@ -14,115 +15,196 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    width: 1200px; height: 630px; overflow: hidden;
-    background: #0f0f1a;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #030308;
     font-family: 'Inter', sans-serif;
   }
 
   .frame { width: 1200px; height: 630px; position: relative; overflow: hidden; }
 
-  .orbs {
+  /* L1: Dual-colour ambient — magenta + cyan brand colours */
+  .ambient {
     position: absolute; inset: 0; z-index: 1;
     background:
-      radial-gradient(ellipse 700px 500px at 20% 25%, rgba(255,102,255,0.30), transparent 60%),
-      radial-gradient(ellipse 600px 450px at 80% 50%, rgba(102,255,255,0.25), transparent 60%),
-      radial-gradient(ellipse 500px 400px at 50% 85%, rgba(138,43,226,0.18), transparent 65%),
-      radial-gradient(ellipse 350px 300px at 5% 65%, rgba(59,130,246,0.14), transparent 65%),
-      radial-gradient(ellipse 350px 280px at 95% 15%, rgba(255,102,255,0.10), transparent 65%),
-      radial-gradient(ellipse 250px 250px at 40% 10%, rgba(102,255,255,0.08), transparent 70%);
+      radial-gradient(ellipse 800px 600px at 15% 20%, rgba(255,102,255,0.18), transparent 70%),
+      radial-gradient(ellipse 700px 500px at 85% 60%, rgba(102,255,255,0.14), transparent 70%),
+      radial-gradient(ellipse 500px 400px at 50% 85%, rgba(138,43,226,0.08), transparent 70%);
   }
 
-  .grid {
+  /* L2: Hub Network art layer */
+  .art-layer {
     position: absolute; inset: 0; z-index: 2;
-    background-image:
-      linear-gradient(rgba(102,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(102,255,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+    opacity: 0.45;
+  }
+  .art-layer svg { width: 100%; height: 100%; }
+
+  /* L3: Vignette */
+  .fade-overlay {
+    position: absolute; inset: 0; z-index: 3;
+    background: radial-gradient(ellipse 110% 90% at 50% 50%, transparent 40%, #030308 90%);
   }
 
+  /* L4: Content */
   .content {
     position: absolute; inset: 0; z-index: 10;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 48px 72px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 36px 56px;
   }
 
   .glass {
-    background: rgba(255,255,255,0.035);
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(8,8,20,0.55);
+    backdrop-filter: blur(72px); -webkit-backdrop-filter: blur(72px);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
-    padding: 44px 64px;
+    padding: 52px 72px;
     text-align: center;
-    max-width: 900px; width: 100%;
+    max-width: 860px; width: 100%;
     position: relative;
   }
 
+  /* Gradient border — magenta to cyan */
   .glass::before {
-    content: ''; position: absolute; inset: -1px; border-radius: 24px; padding: 1.5px;
-    background: linear-gradient(135deg, #66ffff 0%, transparent 35%, transparent 65%, rgba(255,102,255,0.35) 100%);
+    content: '';
+    position: absolute; inset: -1px;
+    border-radius: 24px; padding: 1.5px;
+    background: linear-gradient(135deg, rgba(255,102,255,0.45) 0%, rgba(102,255,255,0.12) 25%, transparent 50%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
   }
 
-  .logo-circle {
-    width: 88px; height: 88px;
-    border-radius: 50%; overflow: hidden;
-    margin: 0 auto 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.10);
-    box-shadow: 0 0 40px rgba(255,102,255,0.20), 0 0 80px rgba(255,102,255,0.08);
+  .subtitle {
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #ff66ff; margin-bottom: 24px;
+    opacity: 0.9;
   }
-  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .site-name {
-    font-size: 46px; font-weight: 800; color: #fff; margin: 0; letter-spacing: -0.5px;
+    font-size: 72px; font-weight: 800;
+    color: #fff; margin: 0 0 18px;
+    letter-spacing: -2.5px; line-height: 1.0;
   }
-  .site-name .mag { color: #ff66ff; }
 
-  .line {
-    width: 100px; height: 3px; margin: 14px auto;
-    background: linear-gradient(90deg, #66ffff, #ff66ff); border-radius: 2px;
+  .site-name .gradient {
+    background: linear-gradient(135deg, #66ffff, #ff66ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .separator {
+    width: 56px; height: 3px;
+    background: linear-gradient(90deg, #ff66ff, #66ffff);
+    border-radius: 2px;
+    margin: 0 auto 22px;
   }
 
   .tagline {
-    font-size: 20px; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.4;
+    font-size: 24px; font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    margin: 0; line-height: 1.4;
   }
-
-  .pills { display: flex; gap: 14px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
-  .pill {
-    padding: 6px 18px; border-radius: 20px;
-    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.65);
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .footer {
-    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
-    display: flex; justify-content: center; padding: 18px;
-  }
-  .footer-url { font-size: 15px; color: rgba(102,255,255,0.35); font-weight: 500; }
 </style>
 </head>
 <body>
   <div class="frame">
-    <div class="orbs"></div>
-    <div class="grid"></div>
+    <div class="ambient"></div>
+
+    <!-- Hub Network pattern — fragments from all tool categories -->
+    <div class="art-layer">
+      <svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circuit fragments (Copilot — blue) -->
+        <line x1="60" y1="90" x2="260" y2="90" stroke="#3B82F6" stroke-width="1"/>
+        <line x1="160" y1="0" x2="160" y2="180" stroke="#3B82F6" stroke-width="0.8"/>
+        <circle cx="160" cy="90" r="5" fill="#3B82F6"/>
+        <circle cx="60" cy="90" r="3" fill="#3B82F6"/>
+        <circle cx="260" cy="90" r="4" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+        <rect x="130" y="60" width="60" height="60" rx="5" fill="none" stroke="#3B82F6" stroke-width="0.8"/>
+
+        <!-- Wave fragments (Stay Informed — magenta) -->
+        <path d="M0 250 Q80 200,160 250 T320 250 T480 250" stroke="#ff66ff" stroke-width="1.2" fill="none"/>
+        <path d="M0 290 Q80 240,160 290 T320 290 T480 290" stroke="#ff66ff" stroke-width="0.8" fill="none"/>
+        <circle cx="240" cy="250" r="4" fill="#ff66ff"/>
+        <circle cx="240" cy="250" r="10" fill="none" stroke="#ff66ff" stroke-width="0.6" opacity="0.5"/>
+
+        <!-- Terminal fragments (Admin — green) -->
+        <rect x="900" y="40" width="250" height="160" rx="6" fill="none" stroke="#4ADE80" stroke-width="1.2"/>
+        <line x1="900" y1="65" x2="1150" y2="65" stroke="#4ADE80" stroke-width="0.8"/>
+        <circle cx="918" cy="53" r="3.5" fill="#4ADE80"/>
+        <circle cx="930" cy="53" r="3.5" fill="none" stroke="#4ADE80" stroke-width="1"/>
+        <circle cx="942" cy="53" r="3.5" fill="none" stroke="#4ADE80" stroke-width="1"/>
+        <rect x="916" y="80" width="140" height="3" rx="1.5" fill="#4ADE80"/>
+        <rect x="916" y="94" width="100" height="3" rx="1.5" fill="#4ADE80"/>
+        <rect x="916" y="108" width="160" height="3" rx="1.5" fill="#4ADE80"/>
+        <rect x="916" y="122" width="80" height="3" rx="1.5" fill="#4ADE80"/>
+        <rect x="916" y="140" width="6" height="12" rx="1" fill="#4ADE80"/>
+
+        <!-- Text lines (Prompt — violet) -->
+        <rect x="60" y="430" width="180" height="4" rx="2" fill="#A78BFA"/>
+        <rect x="60" y="448" width="140" height="3" rx="2" fill="#A78BFA"/>
+        <rect x="60" y="462" width="200" height="3" rx="2" fill="#A78BFA"/>
+        <rect x="60" y="476" width="120" height="3" rx="2" fill="#A78BFA"/>
+        <rect x="60" y="494" width="3" height="16" rx="1" fill="#A78BFA"/>
+
+        <!-- Scatter constellation (Compare — sky blue) -->
+        <circle cx="800" cy="400" r="5" fill="#38BDF8"/>
+        <circle cx="900" cy="470" r="4" fill="#38BDF8"/>
+        <circle cx="1050" cy="380" r="6" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+        <circle cx="1120" cy="500" r="3" fill="#38BDF8"/>
+        <circle cx="950" cy="550" r="4" fill="#38BDF8"/>
+        <line x1="800" y1="400" x2="900" y2="470" stroke="#38BDF8" stroke-width="0.8"/>
+        <line x1="900" y1="470" x2="1050" y2="380" stroke="#38BDF8" stroke-width="0.5"/>
+        <line x1="1050" y1="380" x2="1120" y2="500" stroke="#38BDF8" stroke-width="0.8"/>
+        <line x1="1120" y1="500" x2="950" y2="550" stroke="#38BDF8" stroke-width="0.5"/>
+
+        <!-- Stacked pages (Learn — emerald) -->
+        <rect x="520" y="440" width="120" height="160" rx="4" fill="none" stroke="#10B981" stroke-width="0.8"/>
+        <rect x="535" y="425" width="120" height="160" rx="4" fill="none" stroke="#10B981" stroke-width="1"/>
+        <rect x="550" y="410" width="120" height="160" rx="4" fill="none" stroke="#10B981" stroke-width="1.2"/>
+        <rect x="565" y="430" width="80" height="3" rx="1.5" fill="#10B981"/>
+        <rect x="565" y="442" width="60" height="2" rx="1" fill="#10B981"/>
+        <rect x="565" y="452" width="90" height="2" rx="1" fill="#10B981"/>
+
+        <!-- Clock face (Community — ocean blue) -->
+        <circle cx="460" cy="100" r="50" fill="none" stroke="#0EA5E9" stroke-width="1"/>
+        <line x1="460" y1="55" x2="460" y2="62" stroke="#0EA5E9" stroke-width="1.5"/>
+        <line x1="505" y1="100" x2="498" y2="100" stroke="#0EA5E9" stroke-width="1.5"/>
+        <line x1="460" y1="145" x2="460" y2="138" stroke="#0EA5E9" stroke-width="1.5"/>
+        <line x1="415" y1="100" x2="422" y2="100" stroke="#0EA5E9" stroke-width="1.5"/>
+        <line x1="460" y1="100" x2="460" y2="70" stroke="#0EA5E9" stroke-width="1.5"/>
+        <line x1="460" y1="100" x2="485" y2="90" stroke="#0EA5E9" stroke-width="1"/>
+        <circle cx="460" cy="100" r="3" fill="#0EA5E9"/>
+
+        <!-- Data bars (Admin — rose) -->
+        <rect x="680" y="200" width="12" height="80" rx="2" fill="#F43F5E"/>
+        <rect x="704" y="160" width="12" height="120" rx="2" fill="#F43F5E"/>
+        <rect x="728" y="220" width="12" height="60" rx="2" fill="#F43F5E"/>
+        <rect x="752" y="180" width="12" height="100" rx="2" fill="#F43F5E"/>
+        <rect x="776" y="240" width="12" height="40" rx="2" fill="#F43F5E"/>
+        <line x1="668" y1="280" x2="800" y2="280" stroke="#F43F5E" stroke-width="0.8"/>
+
+        <!-- Connecting threads (cyan) -->
+        <line x1="260" y1="90" x2="410" y2="100" stroke="rgba(102,255,255,0.3)" stroke-width="0.5" stroke-dasharray="3,6"/>
+        <line x1="480" y1="250" x2="680" y2="240" stroke="rgba(102,255,255,0.3)" stroke-width="0.5" stroke-dasharray="3,6"/>
+        <line x1="260" y1="460" x2="520" y2="460" stroke="rgba(102,255,255,0.3)" stroke-width="0.5" stroke-dasharray="3,6"/>
+        <line x1="800" y1="280" x2="800" y2="400" stroke="rgba(102,255,255,0.3)" stroke-width="0.5" stroke-dasharray="3,6"/>
+      </svg>
+    </div>
+
+    <div class="fade-overlay"></div>
+
     <div class="content">
       <div class="glass">
-        <div class="logo-circle">
-          <img src="{{LOGO_PATH}}" alt="">
-        </div>
-        <h1 class="site-name">A Guide to <span class="mag">Cloud & AI</span></h1>
-        <div class="line"></div>
+        <div class="subtitle">{{PILL}}</div>
+        <h1 class="site-name">A Guide to<br><span class="gradient">Cloud & AI</span></h1>
+        <div class="separator"></div>
         <p class="tagline">{{TAGLINE}}</p>
-        <div class="pills">{{PILLS_HTML}}</div>
       </div>
-    </div>
-    <div class="footer">
-      <span class="footer-url">aguidetocloud.com</span>
     </div>
   </div>
 </body>

@@ -204,8 +204,7 @@ def load_blog_posts():
 def compute_hash(post):
     tmpl = YT_TEMPLATE if post["is_youtube"] else BLOG_TEMPLATE
     tmpl_h = hashlib.md5(tmpl.read_bytes()).hexdigest()[:8]
-    logo_h = hashlib.md5(LOGO_PATH.read_bytes()).hexdigest()[:8]
-    data = f"{post['title']}|{post['subtitle']}|{post['category']}|{post['colour']}|{post['date']}|{post['is_youtube']}|{tmpl_h}|{logo_h}"
+    data = f"{post['title']}|{post['subtitle']}|{post['category']}|{post['colour']}|{post['date']}|{post['is_youtube']}|{tmpl_h}"
     return hashlib.md5(data.encode()).hexdigest()[:12]
 
 
@@ -237,18 +236,25 @@ def find_stale(posts):
 
 def render_html(post, template):
     accent = post["colour"]
-    title_class = "title-sm" if len(post["title"]) > 45 else ""
+    title_len = len(post["title"])
+    if title_len > 65:
+        title_class = "title-xs"
+    elif title_len > 45:
+        title_class = "title-sm"
+    else:
+        title_class = ""
 
     return (template
+        .replace("{{FONT_PATH}}", FONT_PATH.as_uri())
         .replace("{{ACCENT}}", esc(accent))
-        .replace("{{ACCENT_GLOW_BG}}", hex_to_rgba(accent, 0.10))
+        .replace("{{AMBIENT_PRIMARY}}", hex_to_rgba(accent, 0.18))
+        .replace("{{AMBIENT_SECONDARY}}", hex_to_rgba(accent, 0.08))
+        .replace("{{PCOLOR}}", esc(accent))
         .replace("{{CATEGORY}}", esc(post["category"]))
+        .replace("{{DATE}}", esc(post["date"]))
         .replace("{{TITLE}}", esc(post["title"]))
         .replace("{{TITLE_CLASS}}", title_class)
-        .replace("{{SUBTITLE}}", esc(post["subtitle"]))
-        .replace("{{DATE}}", esc(post["date"]))
-        .replace("{{LOGO_PATH}}", LOGO_PATH.as_uri())
-        .replace("{{FONT_PATH}}", FONT_PATH.as_uri()))
+        .replace("{{SUBTITLE}}", esc(post["subtitle"])))
 
 
 def generate_images(posts, stale_only=False):
@@ -314,7 +320,7 @@ def main():
     args = ap.parse_args()
 
     for path, label in [(BLOG_TEMPLATE, "blog template"), (YT_TEMPLATE, "youtube template"),
-                         (LOGO_PATH, "logo"), (FONT_PATH, "Inter font")]:
+                         (FONT_PATH, "Inter font")]:
         if not path.exists():
             print(f"ERROR: Missing {label} at {path}")
             sys.exit(EXIT_ERROR)

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
+  /* V3 — YouTube Blog OG template (April 2026 redesign) */
   @font-face {
     font-family: 'Inter';
     src: url('{{FONT_PATH}}') format('woff2');
@@ -15,151 +16,149 @@
 
   body {
     width: 1200px; height: 630px; overflow: hidden;
-    background: #0f0f1a;
+    background: #030308;
     font-family: 'Inter', sans-serif;
   }
 
   .frame { width: 1200px; height: 630px; position: relative; overflow: hidden; }
 
-  .orbs {
-    position: absolute; inset: 0; z-index: 1;
-    background:
-      radial-gradient(ellipse 600px 400px at 15% 30%, rgba(255,68,68,0.06), transparent 70%),
-      radial-gradient(ellipse 500px 350px at 85% 60%, var(--accent-glow-bg), transparent 70%),
-      radial-gradient(ellipse 400px 300px at 50% 80%, rgba(138,43,226,0.06), transparent 70%);
-  }
+  .ambient { position: absolute; inset: 0; z-index: 1; }
 
-  .grid {
-    position: absolute; inset: 0; z-index: 2;
-    background-image:
-      linear-gradient(rgba(102,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(102,255,255,0.035) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
-  }
+  .art-layer { position: absolute; inset: 0; z-index: 2; opacity: 0.45; }
+  .art-layer svg { width: 100%; height: 100%; }
 
-  .stripe {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
-    background: linear-gradient(180deg, #ff4444, #ff66ff); z-index: 10;
+  .fade-overlay {
+    position: absolute; inset: 0; z-index: 3;
+    background: radial-gradient(ellipse 110% 90% at 50% 50%, transparent 40%, #030308 90%);
   }
 
   .content {
     position: absolute; inset: 0; z-index: 10;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 48px 72px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 16px 56px;
   }
 
   .glass {
-    background: rgba(255,255,255,0.035);
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 20px;
-    padding: 40px 56px;
-    text-align: center;
-    max-width: 900px; width: 100%;
+    background: rgba(8,8,20,0.55);
+    backdrop-filter: blur(72px); -webkit-backdrop-filter: blur(72px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 44px 64px;
+    text-align: left;
+    max-width: 920px; width: 100%;
     position: relative;
   }
 
   .glass::before {
-    content: ''; position: absolute; inset: -1px; border-radius: 20px; padding: 1.5px;
-    background: linear-gradient(135deg, var(--accent) 0%, transparent 35%, transparent 65%, rgba(102,255,255,0.25) 100%);
+    content: '';
+    position: absolute; inset: -1px;
+    border-radius: 24px; padding: 1.5px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 50%, transparent) 0%, color-mix(in srgb, var(--accent) 10%, transparent) 25%, transparent 50%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
   }
 
-  .meta { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
-
-  .tag-pill {
-    padding: 4px 14px; border-radius: 14px;
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-    background: color-mix(in srgb, var(--accent) 5%, transparent);
-  }
+  .meta { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .meta-cat { font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); opacity: 0.9; }
+  .meta-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+  .meta-date { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.3); }
 
   .yt-pill {
-    padding: 4px 14px; border-radius: 14px;
-    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    color: #ff4444; background: rgba(255,68,68,0.08); border: 1px solid rgba(255,68,68,0.2);
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #ff4444;
   }
-
-  .play-icon {
-    width: 56px; height: 56px; margin: 0 auto 12px;
-    border-radius: 50%;
-    background: rgba(255,68,68,0.12);
-    border: 2px solid rgba(255,68,68,0.35);
+  .yt-icon {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: rgba(255,68,68,0.15); border: 1px solid rgba(255,68,68,0.4);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 0 30px rgba(255,68,68,0.15);
+    position: relative;
   }
-  .play-icon::after {
+  .yt-icon::after {
     content: '';
     width: 0; height: 0;
-    border-left: 16px solid rgba(255,68,68,0.75);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    margin-left: 4px;
+    border-left: 5px solid #ff4444;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    margin-left: 1px;
   }
 
   .title {
-    font-size: 40px; font-weight: 800; color: #fff; margin: 0;
-    letter-spacing: -0.5px; line-height: 1.15;
-    text-shadow: 0 0 40px var(--accent-glow-bg);
+    font-size: 64px; font-weight: 800; color: #fff;
+    margin: 0 0 16px; letter-spacing: -1.5px; line-height: 1.06;
+    max-width: 780px;
   }
-  .title.title-sm { font-size: 34px; }
+  .title.title-sm { font-size: 54px; }
+  .title.title-xs { font-size: 46px; }
 
-  .line {
-    width: 80px; height: 3px; margin: 14px auto;
-    background: linear-gradient(90deg, var(--accent), rgba(102,255,255,0.4));
-    border-radius: 2px;
+  .separator {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 30%, transparent));
+    border-radius: 2px; margin-bottom: 18px;
   }
 
   .subtitle {
-    font-size: 18px; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4;
+    font-size: 24px; font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    margin: 0; line-height: 1.4; max-width: 700px;
   }
-
-  .footer {
-    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 16px 56px;
-    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-  }
-
-  .logo-pill { display: flex; align-items: center; gap: 12px; }
-  .logo-circle {
-    width: 36px; height: 36px; border-radius: 50%; overflow: hidden;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-  }
-  .logo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .url { font-size: 14px; color: rgba(102,255,255,0.4); font-weight: 500; }
-  .brand { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 600; }
-  .brand span { color: rgba(102,255,255,0.5); }
 </style>
 </head>
 <body>
-  <div class="frame" style="--accent: {{ACCENT}}; --accent-glow-bg: {{ACCENT_GLOW_BG}};">
-    <div class="orbs"></div>
-    <div class="grid"></div>
-    <div class="stripe"></div>
+  <div class="frame" style="--accent: {{ACCENT}};">
+    <div class="ambient" style="background:
+      radial-gradient(ellipse 800px 600px at 15% 20%, {{AMBIENT_PRIMARY}}, transparent 70%),
+      radial-gradient(ellipse 500px 400px at 85% 70%, {{AMBIENT_SECONDARY}}, transparent 70%);">
+    </div>
+    <div class="art-layer">
+      <svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="60" width="280" height="4" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="78" width="220" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="94" width="260" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="110" width="180" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="126" width="240" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="142" width="200" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="158" width="260" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="200" width="250" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="216" width="190" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="60" y="232" width="270" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="380" width="260" height="4" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="398" width="200" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="414" width="240" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="430" width="180" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="446" width="260" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="462" width="220" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="478" width="240" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="880" y="494" width="160" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <line x1="60" y1="260" x2="340" y2="260" stroke="{{PCOLOR}}" stroke-width="1" stroke-dasharray="6,4"/>
+        <line x1="880" y1="360" x2="1140" y2="360" stroke="{{PCOLOR}}" stroke-width="1" stroke-dasharray="6,4"/>
+        <!-- Play symbol in background -->
+        <polygon points="1050,120 1050,260 1140,190" fill="none" stroke="{{PCOLOR}}" stroke-width="2"/>
+        <circle cx="1080" cy="190" r="80" fill="none" stroke="{{PCOLOR}}" stroke-width="1.2"/>
+        <circle cx="500" cy="500" r="3" fill="{{PCOLOR}}"/>
+        <circle cx="400" cy="400" r="3" fill="{{PCOLOR}}"/>
+        <rect x="60" y="430" width="200" height="140" rx="6" fill="none" stroke="{{PCOLOR}}" stroke-width="1"/>
+        <rect x="60" y="430" width="200" height="30" rx="6" fill="{{PCOLOR}}" opacity="0.08"/>
+        <rect x="78" y="478" width="120" height="3" rx="2" fill="{{PCOLOR}}"/>
+        <rect x="78" y="492" width="80" height="3" rx="2" fill="{{PCOLOR}}"/>
+      </svg>
+    </div>
+    <div class="fade-overlay"></div>
     <div class="content">
       <div class="glass">
         <div class="meta">
-          <span class="tag-pill">{{CATEGORY}}</span>
-          <span class="yt-pill">▶ YouTube</span>
+          <span class="meta-cat">{{CATEGORY}}</span>
+          <span class="meta-dot"></span>
+          <span class="yt-pill"><span class="yt-icon"></span> Video</span>
+          <span class="meta-dot"></span>
+          <span class="meta-date">{{DATE}}</span>
         </div>
-        <div class="play-icon"></div>
         <h1 class="title {{TITLE_CLASS}}">{{TITLE}}</h1>
-        <div class="line"></div>
+        <div class="separator"></div>
         <p class="subtitle">{{SUBTITLE}}</p>
       </div>
-    </div>
-    <div class="footer">
-      <div class="logo-pill">
-        <div class="logo-circle"><img src="{{LOGO_PATH}}" alt=""></div>
-        <span class="url">aguidetocloud.com</span>
-      </div>
-      <span class="brand">A Guide to <span>Cloud & AI</span></span>
     </div>
   </div>
 </body>

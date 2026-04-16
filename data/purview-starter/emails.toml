@@ -1,0 +1,103 @@
+# ═══════════════════════════════════════════════════════════════
+# CHANGE MANAGEMENT EMAIL TEMPLATES
+# ═══════════════════════════════════════════════════════════════
+
+[[emails]]
+id = "user-labels"
+name = "Sensitivity Labels Rollout"
+audience = "All users"
+subject = "New: Sensitivity labels are coming to your Office apps"
+body = """Hi team,
+
+Starting next week, you'll see a new "Sensitivity" button in Word, Excel, PowerPoint, and Outlook. This is part of our organisation's information protection rollout.
+
+**What's changing?**
+- A new label bar appears in your Office apps
+- You'll be asked to classify documents and emails (e.g., Public, Internal, Confidential)
+- Some labels automatically add encryption or visual markings
+
+**What do you need to do?**
+1. Look for the Sensitivity button in your Office ribbon
+2. Choose the label that best matches your content
+3. When in doubt, choose "Internal" — you can always change it later
+
+**What stays the same?**
+- Your existing files aren't affected until you edit them
+- You can still share documents with colleagues as normal
+- Labels don't delete or move your files
+
+If you have questions, reach out to the IT helpdesk.
+
+Best regards,
+IT Team"""
+
+[[emails]]
+id = "user-dlp"
+name = "DLP Policies Active"
+audience = "All users"
+subject = "Important: New data protection policies are now active"
+body = """Hi team,
+
+Our organisation has activated new data loss prevention (DLP) policies to protect sensitive information. Here's what you need to know.
+
+**What's changing?**
+- The system now scans emails and shared files for sensitive data (credit card numbers, personal IDs, health information)
+- If sensitive data is detected, you may see a warning or be blocked from sending/sharing
+
+**What might you see?**
+- A policy tip saying "This message contains sensitive information"
+- A warning asking you to review before sending
+- In some cases, the action may be blocked entirely
+
+**What should you do?**
+1. Review the policy tip — it tells you exactly what was detected
+2. If the sharing is legitimate, check with your manager or compliance team
+3. For blocked actions, use the "Override" option if available and provide a business justification
+
+**This is NOT monitoring your personal activity.** DLP only scans for specific data patterns (like credit card formats) in work content.
+
+Questions? Contact the IT helpdesk.
+
+Best regards,
+IT Team"""
+
+[[emails]]
+id = "admin-brief"
+name = "Admin Brief"
+audience = "IT team / admins"
+subject = "Admin Brief: Information Protection deployment summary"
+body = """Hi team,
+
+This is a summary of the information protection changes deployed using Microsoft Purview.
+
+**Sensitivity Labels Deployed:**
+{label_summary}
+
+**DLP Policies Deployed:**
+{dlp_summary}
+
+**Key Configuration Details:**
+- Labels published to: All Users (modify in Purview portal if phased rollout needed)
+- DLP mode: Test (simulation) — switch to enforce after 2 weeks of monitoring
+- Label policy name: {policy_name}
+
+**Monitoring Checklist:**
+- [ ] Review DLP alerts daily in compliance.microsoft.com
+- [ ] Check for false positives in the first week
+- [ ] Adjust thresholds if alert volume is too high
+- [ ] Get stakeholder sign-off before enabling enforcement
+- [ ] Document any business process exceptions
+
+**Useful Links:**
+- Purview portal: https://compliance.microsoft.com
+- DLP alerts: https://compliance.microsoft.com/datalossprevention
+- Label activity: https://compliance.microsoft.com/informationprotection
+
+**Next Steps:**
+1. Monitor test mode for 2 weeks
+2. Review alerts with compliance team
+3. Switch to enforce mode (one policy at a time)
+4. Communicate enforcement timeline to users
+
+Best regards,
+IT Team"""

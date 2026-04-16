@@ -1,0 +1,189 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/purview-starter.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $f.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ partial "tool-hero.html" (dict "title" "Purview Starter Kit" "subtitle" "Plan sensitivity labels & DLP policies with pre-built packages — deploy-ready PowerShell in minutes" "accent" "#84CC16") }}
+
+<div class="pvs-page">
+  <div class="pvs-container">
+
+    {{/* ── Tab Navigation ── */}}
+    <div class="pvs-tabs" role="tablist" aria-label="Purview Starter Kit sections">
+      <button class="pvs-tab active" role="tab" aria-selected="true" data-tab="kits" id="tab-kits" aria-controls="panel-kits">Starter Kits</button>
+      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="labels" id="tab-labels" aria-controls="panel-labels">Label Builder</button>
+      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="dlp" id="tab-dlp" aria-controls="panel-dlp">DLP Scenarios</button>
+      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="deploy" id="tab-deploy" aria-controls="panel-deploy">Deploy <span class="pvs-badge" id="pvs-deploy-badge" style="display:none">!</span></button>
+      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">FAQ</button>
+    </div>
+
+    {{/* ═══ STARTER KITS TAB ═══ */}}
+    <div class="pvs-panel active" role="tabpanel" id="panel-kits" aria-labelledby="tab-kits">
+      <p class="pvs-panel-desc">Pick a starter package that matches your organisation. Each kit bundles sensitivity labels + DLP rules + a deployment plan. <strong>One click to get started.</strong></p>
+      <div class="pvs-kits-grid" id="pvs-kits-grid"></div>
+    </div>
+
+    {{/* ═══ LABEL BUILDER TAB (Phase 2 placeholder) ═══ */}}
+    <div class="pvs-panel" role="tabpanel" id="panel-labels" aria-labelledby="tab-labels">
+      <div class="pvs-coming-soon">
+        <div class="pvs-coming-icon">🏷️</div>
+        <h2>Label Builder — Coming Soon</h2>
+        <p>Design custom sensitivity labels visually with just 5 decisions per label. Drag to reorder, add sublabels, and preview what users see in Office apps.</p>
+        <p>In the meantime, pick a <strong>Starter Kit</strong> to get pre-built labels instantly.</p>
+        <button class="pvs-btn pvs-btn--primary" onclick="document.querySelector('[data-tab=kits]').click()">Browse Starter Kits</button>
+      </div>
+    </div>
+
+    {{/* ═══ DLP SCENARIOS TAB (Phase 2 placeholder) ═══ */}}
+    <div class="pvs-panel" role="tabpanel" id="panel-dlp" aria-labelledby="tab-dlp">
+      <div class="pvs-coming-soon">
+        <div class="pvs-coming-icon">🛡️</div>
+        <h2>DLP Scenarios — Coming Soon</h2>
+        <p>Toggle on the protection scenarios that matter to your org. 20 scenarios across 4 categories — no complex rule configuration needed.</p>
+        <p>For now, each <strong>Starter Kit</strong> includes curated DLP rules ready to deploy.</p>
+        <button class="pvs-btn pvs-btn--primary" onclick="document.querySelector('[data-tab=kits]').click()">Browse Starter Kits</button>
+      </div>
+    </div>
+
+    {{/* ═══ DEPLOY TAB ═══ */}}
+    <div class="pvs-panel" role="tabpanel" id="panel-deploy" aria-labelledby="tab-deploy">
+
+      {{/* Empty state */}}
+      <div class="pvs-deploy-empty" id="pvs-deploy-empty">
+        <div class="pvs-coming-icon">📦</div>
+        <h2>No kit selected yet</h2>
+        <p>Choose a starter kit first, then come back here for your deployment plan, PowerShell commands, and change management emails.</p>
+        <button class="pvs-btn pvs-btn--primary" onclick="document.querySelector('[data-tab=kits]').click()">Choose a Starter Kit</button>
+      </div>
+
+      {{/* Deploy dashboard (hidden until kit selected) */}}
+      <div class="pvs-deploy-dashboard" id="pvs-deploy-dashboard" style="display:none">
+
+        <div class="pvs-deploy-header">
+          <h2>Deployment Plan: <span id="pvs-deploy-kit-name"></span></h2>
+          <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-change-kit">Change Kit</button>
+        </div>
+
+        {{/* Deployment steps */}}
+        <div class="pvs-deploy-steps" id="pvs-deploy-steps"></div>
+
+        {{/* PowerShell export */}}
+        <div class="pvs-deploy-section">
+          <h3>PowerShell Commands</h3>
+          <p class="pvs-deploy-note">Starter scaffold — review and customise before running in production. Connect to Security & Compliance PowerShell first.</p>
+          <div class="pvs-code-block">
+            <div class="pvs-code-header">
+              <span>PowerShell — Security & Compliance</span>
+              <button class="pvs-btn pvs-btn--sm pvs-copy-btn" data-copy="pvs-ps-output" aria-label="Copy PowerShell">Copy All</button>
+            </div>
+            <pre class="pvs-code" id="pvs-ps-output"></pre>
+          </div>
+        </div>
+
+        {{/* Change management emails */}}
+        <div class="pvs-deploy-section">
+          <h3>Change Management Emails</h3>
+          <p class="pvs-deploy-note">Pre-written email templates — customise the placeholders and send to your users.</p>
+          <div class="pvs-emails" id="pvs-emails"></div>
+        </div>
+
+        {{/* Licence check */}}
+        <div class="pvs-deploy-section">
+          <h3>Licence Requirements</h3>
+          <div class="pvs-licence-table" id="pvs-licence-table"></div>
+        </div>
+
+        {{/* Cross-tool links */}}
+        <div class="pvs-deploy-section">
+          <h3>Next Steps</h3>
+          <div class="pvs-cross-links">
+            <a href="/ca-builder/" class="pvs-cross-card">
+              <span class="pvs-cross-icon">🛡️</span>
+              <strong>Protect with Conditional Access</strong>
+              <p>Add label-aware CA policies to block unmanaged device access to labelled content</p>
+            </a>
+            <a href="/licensing/" class="pvs-cross-card">
+              <span class="pvs-cross-icon">📜</span>
+              <strong>Check Licensing</strong>
+              <p>Compare M365 plans to find which includes the Purview features you need</p>
+            </a>
+            <a href="/copilot-readiness/" class="pvs-cross-card">
+              <span class="pvs-cross-icon">🎯</span>
+              <strong>Copilot Readiness</strong>
+              <p>Labels are a key Copilot prerequisite — check your readiness score</p>
+            </a>
+            <a href="/copilot-matrix/" class="pvs-cross-card">
+              <span class="pvs-cross-icon">📊</span>
+              <strong>Copilot Features</strong>
+              <p>See which Copilot features respect sensitivity labels</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* ═══ FAQ TAB ═══ */}}
+    <div class="pvs-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
+      <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+        {{ range $i, $f := .Params.faq }}
+        <details open>
+          <summary><strong>{{ $f.question }}</strong></summary>
+          <p>{{ $f.answer | markdownify }}</p>
+        </details>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{/* ── Ecosystem Cross-links (after all panels) ── */}}
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "purview") }}
+
+{{/* ── Pagefind SEO block ── */}}
+<div data-pagefind-body aria-hidden="true" style="display:none">
+  <h1>Purview Starter Kit</h1>
+  <p>Plan Microsoft Purview sensitivity labels and DLP policies. Pre-built starter kits for Small Business, Enterprise, Regulated, Zero Trust, and Copilot-Ready organisations. Deploy-ready PowerShell, change management emails, and licence check.</p>
+</div>
+
+{{/* ── Data injection ── */}}
+{{ $kits := (index hugo.Data "purview-starter").kits.kits }}
+{{ $licensing := (index hugo.Data "purview-starter").licensing }}
+{{ $steps := (index hugo.Data "purview-starter").deploy_steps.steps }}
+{{ $emails := (index hugo.Data "purview-starter").emails.emails }}
+<script>
+  window.__pvs = {
+    kits: {{ $kits | jsonify | safeJS }},
+    licensing: {{ $licensing | jsonify | safeJS }},
+    steps: {{ $steps | jsonify | safeJS }},
+    emails: {{ $emails | jsonify | safeJS }}
+  };
+</script>
+<script src="/js/purview-starter.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}

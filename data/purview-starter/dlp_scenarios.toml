@@ -1,0 +1,193 @@
+# ═══════════════════════════════════════════════════════════════
+# DLP SCENARIOS — 20 toggle-based scenarios for Phase 2
+# ═══════════════════════════════════════════════════════════════
+# Used in Tab 3 (DLP Scenarios) — Phase 2 implementation
+# Each scenario is a plain-English toggle card
+
+# ── Protect Sensitive Data ────────────────────────────────────
+
+[[scenarios]]
+id = "dlp-cc-external"
+name = "Block credit card numbers in external email"
+category = "protect"
+description = "Prevents emails containing credit card numbers from being sent to recipients outside your organisation."
+workloads = ["exchange"]
+action = "block"
+licence = "e3"
+
+[[scenarios]]
+id = "dlp-ssn-external"
+name = "Block national IDs in external sharing"
+category = "protect"
+description = "Blocks sharing of documents or emails containing social security numbers, passport numbers, or national ID numbers with external recipients."
+workloads = ["exchange", "sharepoint", "onedrive"]
+action = "block"
+licence = "e3"
+
+[[scenarios]]
+id = "dlp-bulk-pii"
+name = "Warn on bulk PII sharing"
+category = "protect"
+description = "Shows a warning when a document with more than 10 personally identifiable items is shared externally. Users can override with justification."
+workloads = ["exchange", "sharepoint", "onedrive"]
+action = "warn"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-hipaa"
+name = "Block health records in external email"
+category = "protect"
+description = "Prevents emails containing patient health information, diagnosis codes, or medical record numbers from being sent externally. HIPAA compliance."
+workloads = ["exchange"]
+action = "block"
+licence = "e5-compliance"
+
+[[scenarios]]
+id = "dlp-gdpr-eu"
+name = "Warn on EU personal data sharing"
+category = "protect"
+description = "Warns when documents with EU personal data (passport, tax ID, national ID) are shared with recipients outside the EU."
+workloads = ["exchange", "sharepoint", "onedrive"]
+action = "warn"
+licence = "e5-compliance"
+
+# ── Control File Sharing ──────────────────────────────────────
+
+[[scenarios]]
+id = "dlp-label-ext-block"
+name = "Block external sharing of Confidential+ files"
+category = "sharing"
+description = "Prevents files labelled Confidential or higher from being shared with anyone outside your organisation."
+workloads = ["sharepoint", "onedrive", "exchange"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-label-ext-warn"
+name = "Warn when sharing Internal files externally"
+category = "sharing"
+description = "Shows a policy tip when users try to share Internal-labelled content externally. Users can proceed with justification."
+workloads = ["sharepoint", "onedrive"]
+action = "warn"
+licence = "e3"
+
+[[scenarios]]
+id = "dlp-personal-cloud"
+name = "Block upload to personal cloud storage"
+category = "sharing"
+description = "Prevents uploading sensitive or labelled files to personal cloud storage services (Google Drive, Dropbox, etc.) from managed devices."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-print-block"
+name = "Block printing of Highly Confidential files"
+category = "sharing"
+description = "Prevents users from printing documents labelled Highly Confidential. Protects against physical data leakage."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-browser-upload"
+name = "Block browser upload of sensitive files"
+category = "sharing"
+description = "Prevents uploading sensitive files through web browsers to unapproved cloud services."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+# ── Secure Collaboration ─────────────────────────────────────
+
+[[scenarios]]
+id = "dlp-teams-financial"
+name = "Monitor Teams chat for financial data"
+category = "collaboration"
+description = "Logs when credit card numbers or bank account details are shared in Teams messages. No blocking — awareness only."
+workloads = ["teams"]
+action = "log"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-teams-guest"
+name = "Block sensitive data in guest channels"
+category = "collaboration"
+description = "Blocks messages containing sensitive information in Teams channels that have external guest members."
+workloads = ["teams"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-copilot-boundary"
+name = "Warn on sensitive content in Copilot context"
+category = "collaboration"
+description = "Uses sensitivity labels to ensure Copilot only surfaces content users are authorised to see. Warns when oversharing risk is detected."
+workloads = ["sharepoint", "onedrive"]
+action = "warn"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-email-attachment"
+name = "Warn on large attachment with PII"
+category = "collaboration"
+description = "Warns when an email attachment over 5MB contains personally identifiable information."
+workloads = ["exchange"]
+action = "warn"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-powerbi"
+name = "Monitor Power BI for sensitive data"
+category = "collaboration"
+description = "Detects and labels sensitive data in Power BI datasets. Prevents reports with sensitive data from being shared broadly."
+workloads = ["powerbi"]
+action = "log"
+licence = "e5"
+
+# ── Endpoint Protection ───────────────────────────────────────
+
+[[scenarios]]
+id = "dlp-usb-block"
+name = "Block USB copy of Confidential+ files"
+category = "endpoint"
+description = "Prevents copying files labelled Confidential or higher to USB drives and removable storage devices."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-screen-capture"
+name = "Block screen capture of encrypted documents"
+category = "endpoint"
+description = "Prevents taking screenshots of documents protected by sensitivity label encryption."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-clipboard"
+name = "Monitor clipboard for sensitive data"
+category = "endpoint"
+description = "Logs when users copy sensitive information from protected applications to clipboard. Useful for detecting data exfiltration attempts."
+workloads = ["endpoint"]
+action = "log"
+licence = "e5-compliance"
+
+[[scenarios]]
+id = "dlp-rdp-block"
+name = "Block Remote Desktop file transfer"
+category = "endpoint"
+description = "Prevents transferring sensitive files via Remote Desktop sessions. Stops clipboard and drive redirection for labelled content."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"
+
+[[scenarios]]
+id = "dlp-bluetooth"
+name = "Block Bluetooth file sharing"
+category = "endpoint"
+description = "Prevents sharing sensitive or labelled files via Bluetooth connections."
+workloads = ["endpoint"]
+action = "block"
+licence = "e5"

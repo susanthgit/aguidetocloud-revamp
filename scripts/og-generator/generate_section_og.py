@@ -1,6 +1,6 @@
 """
-Section Page OG Image Generator
-================================
+Section Page OG Image Generator (V3)
+=====================================
 Generates OG images for homepage + section pages (about, free-tools, blog, etc.)
 
 Usage:
@@ -27,69 +27,102 @@ SITE_ROOT = SCRIPT_DIR.parent.parent
 OUTPUT_DIR = SITE_ROOT / "static" / "images" / "og" / "sections"
 TEMPLATE_PATH = SCRIPT_DIR / "template-section.html"
 HOMEPAGE_TEMPLATE_PATH = SCRIPT_DIR / "template-homepage.html"
-LOGO_PATH = SITE_ROOT / "static" / "images" / "logo_agtc_dark_1.webp"
 FONT_PATH = SCRIPT_DIR / "fonts" / "InterVariable.woff2"
-EMOJI_DIR = SCRIPT_DIR / "emoji"
 HASH_PATH = SCRIPT_DIR / "og_section_hashes.json"
+
+# Default section background pattern (grid-dots + card outlines)
+SECTION_PATTERN_SVG = """<svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="80" r="2.5" fill="{{PCOLOR}}"/><circle cx="140" cy="80" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="200" cy="80" r="2.5" fill="{{PCOLOR}}"/><circle cx="260" cy="80" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="80" cy="140" r="2.5" fill="{{PCOLOR}}"/><circle cx="140" cy="140" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="200" cy="140" r="2.5" fill="{{PCOLOR}}"/><circle cx="260" cy="140" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="80" cy="200" r="2.5" fill="{{PCOLOR}}"/><circle cx="140" cy="200" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="200" cy="200" r="2.5" fill="{{PCOLOR}}"/><circle cx="260" cy="200" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="80" cy="260" r="2.5" fill="{{PCOLOR}}"/><circle cx="140" cy="260" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="200" cy="260" r="2.5" fill="{{PCOLOR}}"/><circle cx="260" cy="260" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="940" cy="370" r="2.5" fill="{{PCOLOR}}"/><circle cx="1000" cy="370" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="1060" cy="370" r="2.5" fill="{{PCOLOR}}"/><circle cx="1120" cy="370" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="940" cy="430" r="2.5" fill="{{PCOLOR}}"/><circle cx="1000" cy="430" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="1060" cy="430" r="2.5" fill="{{PCOLOR}}"/><circle cx="1120" cy="430" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="940" cy="490" r="2.5" fill="{{PCOLOR}}"/><circle cx="1000" cy="490" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="1060" cy="490" r="2.5" fill="{{PCOLOR}}"/><circle cx="1120" cy="490" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="940" cy="550" r="2.5" fill="{{PCOLOR}}"/><circle cx="1000" cy="550" r="2.5" fill="{{PCOLOR}}"/>
+  <circle cx="1060" cy="550" r="2.5" fill="{{PCOLOR}}"/><circle cx="1120" cy="550" r="2.5" fill="{{PCOLOR}}"/>
+  <rect x="60" y="400" width="100" height="130" rx="6" fill="none" stroke="{{PCOLOR}}" stroke-width="1.2"/>
+  <rect x="60" y="400" width="100" height="24" rx="6" fill="{{PCOLOR}}" opacity="0.1"/>
+  <rect x="75" y="440" width="60" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <rect x="75" y="454" width="45" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <rect x="180" y="420" width="100" height="130" rx="6" fill="none" stroke="{{PCOLOR}}" stroke-width="1"/>
+  <rect x="180" y="420" width="100" height="24" rx="6" fill="{{PCOLOR}}" opacity="0.08"/>
+  <rect x="195" y="460" width="60" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <rect x="900" y="60" width="100" height="130" rx="6" fill="none" stroke="{{PCOLOR}}" stroke-width="1.2"/>
+  <rect x="900" y="60" width="100" height="24" rx="6" fill="{{PCOLOR}}" opacity="0.1"/>
+  <rect x="915" y="100" width="60" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <rect x="915" y="114" width="45" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <rect x="1020" y="80" width="100" height="130" rx="6" fill="none" stroke="{{PCOLOR}}" stroke-width="1"/>
+  <rect x="1020" y="80" width="100" height="24" rx="6" fill="{{PCOLOR}}" opacity="0.08"/>
+  <rect x="1035" y="120" width="60" height="3" rx="2" fill="{{PCOLOR}}"/>
+  <line x1="160" y1="465" x2="180" y2="480" stroke="{{PCOLOR}}" stroke-width="0.6" stroke-dasharray="3,5"/>
+  <line x1="1000" y1="125" x2="1020" y2="140" stroke="{{PCOLOR}}" stroke-width="0.6" stroke-dasharray="3,5"/>
+</svg>"""
 
 # All section pages with their config
 PAGES = [
     {"slug": "homepage", "title": "A Guide to Cloud & AI", "pill": "Home",
      "tagline": "Free tools, study guides & tutorials for Microsoft 365, Azure & AI",
-     "accent": "#ff66ff", "icon": None,  # homepage uses special template
-     "pills": ["Cloud & AI Tools", "Cert Study Guides", "AI Prompts", "Video Tutorials"]},
+     "accent": "#ff66ff"},
 
     {"slug": "about", "title": "About This Site", "pill": "About",
      "tagline": "Free cloud & AI learning resources built by a Microsoft engineer in New Zealand",
-     "accent": "#ff66ff", "icon": "1f30d"},
+     "accent": "#ff66ff"},
 
     {"slug": "free-tools", "title": "Cloud & AI Toolkit", "pill": "Free Tools",
      "tagline": "Free tools for IT pros, cloud learners & AI enthusiasts",
-     "accent": "#66ffff", "icon": "1f9f0"},
+     "accent": "#66ffff"},
 
     {"slug": "blog", "title": "Blog", "pill": "Blog",
      "tagline": "Deep dives on Microsoft 365, Azure, Copilot & cloud technology",
-     "accent": "#EC4899", "icon": "1f4d6"},
+     "accent": "#EC4899"},
 
     {"slug": "ai-hub", "title": "AI Hub", "pill": "Video Series",
      "tagline": "Copilot, AI agents & prompt engineering tutorials",
-     "accent": "#A78BFA", "icon": "1f9f0"},
+     "accent": "#A78BFA"},
 
     {"slug": "cloud-labs", "title": "Cloud Labs", "pill": "Video Series",
      "tagline": "Hands-on Azure & Microsoft 365 lab walkthroughs",
-     "accent": "#0EA5E9", "icon": "1f30d"},
+     "accent": "#0EA5E9"},
 
     {"slug": "certifications", "title": "Certifications", "pill": "Video Series",
      "tagline": "Full Microsoft certification courses & exam prep",
-     "accent": "#10B981", "icon": "1f3af"},
+     "accent": "#10B981"},
 
     {"slug": "exam-qa", "title": "Exam Q&A", "pill": "Video Series",
      "tagline": "Practice questions & mock exams for Microsoft certifications",
-     "accent": "#E5A00D", "icon": "1f4cb"},
+     "accent": "#E5A00D"},
 
     {"slug": "interview-prep", "title": "Interview Prep", "pill": "Video Series",
      "tagline": "Azure & Microsoft 365 interview questions & answers",
-     "accent": "#D4A853", "icon": "1f4ac"},
+     "accent": "#D4A853"},
 
     {"slug": "music", "title": "Study Music", "pill": "Music",
      "tagline": "Lo-fi beats & ambient playlists for focused study sessions",
-     "accent": "#F472B6", "icon": "1f3a8"},
+     "accent": "#F472B6"},
 
     {"slug": "events", "title": "Microsoft Events", "pill": "Events",
      "tagline": "Upcoming Microsoft conferences, webinars & community events",
-     "accent": "#60A5FA", "icon": "1f4ca"},
+     "accent": "#60A5FA"},
 
     {"slug": "labs", "title": "One-Click Azure Labs", "pill": "Labs",
      "tagline": "Deploy Azure lab environments with one click",
-     "accent": "#14B8A6", "icon": "26a1"},
+     "accent": "#14B8A6"},
 
     {"slug": "start", "title": "Start Here", "pill": "Welcome",
      "tagline": "New to the site? Here's everything you need to get started",
-     "accent": "#66ffff", "icon": "1f680"},
+     "accent": "#66ffff"},
 
     {"slug": "azure-status", "title": "Azure Outage Timeline", "pill": "Status",
      "tagline": "Track Azure outages, incidents & service disruptions",
-     "accent": "#EA580C", "icon": "23f0"},
+     "accent": "#EA580C"},
 ]
 
 
@@ -106,9 +139,7 @@ def esc(text):
 def compute_hash(page):
     tmpl = HOMEPAGE_TEMPLATE_PATH if page["slug"] == "homepage" else TEMPLATE_PATH
     tmpl_h = hashlib.md5(tmpl.read_bytes()).hexdigest()[:8]
-    logo_h = hashlib.md5(LOGO_PATH.read_bytes()).hexdigest()[:8]
-    pills = "|".join(page.get("pills", []))
-    data = f"{page['title']}|{page['tagline']}|{page['accent']}|{page['pill']}|{pills}|{tmpl_h}|{logo_h}"
+    data = f"{page['title']}|{page['tagline']}|{page['accent']}|{page['pill']}|{tmpl_h}"
     return hashlib.md5(data.encode()).hexdigest()[:12]
 
 
@@ -140,40 +171,26 @@ def find_stale(pages):
 
 def render_section(page, template):
     accent = page["accent"]
-    icon_path = EMOJI_DIR / f"{page.get('icon', '')}.svg" if page.get("icon") else None
-    icon_uri = icon_path.as_uri() if icon_path and icon_path.exists() else ""
-
-    # Build pills HTML if present
-    pills_html = ""
-    if page.get("pills"):
-        items = "".join(f'<span class="info-pill">{esc(p)}</span>' for p in page["pills"])
-        pills_html = f'<div class="info-pills">{items}</div>'
+    title_class = "title-sm" if len(page["title"]) > 14 else ""
+    pattern_svg = SECTION_PATTERN_SVG.replace("{{PCOLOR}}", esc(accent))
 
     return (template
+        .replace("{{FONT_PATH}}", FONT_PATH.as_uri())
         .replace("{{ACCENT}}", esc(accent))
-        .replace("{{GLOW}}", hex_to_rgba(accent, 0.25))
-        .replace("{{ORB1}}", hex_to_rgba(accent, 0.22))
+        .replace("{{AMBIENT_PRIMARY}}", hex_to_rgba(accent, 0.18))
+        .replace("{{AMBIENT_SECONDARY}}", hex_to_rgba(accent, 0.08))
+        .replace("{{PATTERN_SVG}}", pattern_svg)
         .replace("{{PILL}}", esc(page["pill"]))
-        .replace("{{ICON_PATH}}", icon_uri)
         .replace("{{TITLE}}", esc(page["title"]))
-        .replace("{{TAGLINE}}", esc(page["tagline"]))
-        .replace("{{PILLS_HTML}}", pills_html)
-        .replace("{{LOGO_PATH}}", LOGO_PATH.as_uri())
-        .replace("{{FONT_PATH}}", FONT_PATH.as_uri()))
+        .replace("{{TITLE_CLASS}}", title_class)
+        .replace("{{TAGLINE}}", esc(page["tagline"])))
 
 
 def render_homepage(page, template):
-    accent = page["accent"]
-    pills_html = ""
-    if page.get("pills"):
-        items = "".join(f'<span class="pill">{esc(p)}</span>' for p in page["pills"])
-        pills_html = items
-
     return (template
-        .replace("{{PILLS_HTML}}", pills_html)
-        .replace("{{TAGLINE}}", esc(page["tagline"]))
-        .replace("{{LOGO_PATH}}", LOGO_PATH.as_uri())
-        .replace("{{FONT_PATH}}", FONT_PATH.as_uri()))
+        .replace("{{FONT_PATH}}", FONT_PATH.as_uri())
+        .replace("{{PILL}}", esc(page["pill"]))
+        .replace("{{TAGLINE}}", esc(page["tagline"])))
 
 
 def generate_images(pages, stale_only=False):
@@ -239,7 +256,7 @@ def main():
     args = ap.parse_args()
 
     for path, label in [(TEMPLATE_PATH, "section template"), (HOMEPAGE_TEMPLATE_PATH, "homepage template"),
-                         (LOGO_PATH, "logo"), (FONT_PATH, "Inter font")]:
+                         (FONT_PATH, "Inter font")]:
         if not path.exists():
             print(f"ERROR: Missing {label} at {path}")
             sys.exit(EXIT_ERROR)

@@ -195,6 +195,17 @@ visual = "lines"
 is_tool = true
 
 [[tools]]
+url = "/purview-starter/"
+emoji = "🔐"
+name = "Purview Starter Kit"
+short = "Purview"
+desc = "Plan sensitivity labels & DLP with pre-built kits"
+color = "#84CC16"
+category = "admin"
+visual = "blocks"
+is_tool = true
+
+[[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
 name = "Migration Planner"

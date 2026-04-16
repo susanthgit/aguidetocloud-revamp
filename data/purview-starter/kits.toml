@@ -1,0 +1,926 @@
+# ═══════════════════════════════════════════════════════════════
+# PURVIEW STARTER KITS — 5 pre-built packages
+# ═══════════════════════════════════════════════════════════════
+# Each kit bundles sensitivity labels + DLP rules + publishing config.
+# Designed for "show value in zero clicks" — user picks a kit, 
+# gets a complete plan with PowerShell scaffold.
+
+# ── Small Business ────────────────────────────────────────────
+[[kits]]
+id = "small-business"
+name = "Small Business"
+emoji = "🏪"
+target = "Under 50 users, basic protection"
+description = "Simple 3-label structure with essential DLP. Perfect for small orgs getting started with information protection."
+licence = "e3"
+label_count = 3
+dlp_count = 2
+
+  [[kits.labels]]
+  id = "sb-public"
+  name = "Public"
+  colour = "green"
+  tooltip = "Information approved for public sharing"
+  encrypt = false
+  mark = false
+  mark_header = ""
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 0
+  scope = "all"
+
+  [[kits.labels]]
+  id = "sb-internal"
+  name = "Internal"
+  colour = "blue"
+  tooltip = "For internal use — do not share externally"
+  encrypt = false
+  mark = true
+  mark_header = "Internal Use Only"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 1
+  scope = "all"
+
+  [[kits.labels]]
+  id = "sb-confidential"
+  name = "Confidential"
+  colour = "red"
+  tooltip = "Sensitive business information — restricted sharing"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "CONFIDENTIAL"
+  mark_footer = "Do not distribute outside the organisation"
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 2
+  scope = "all"
+
+  [[kits.dlp_rules]]
+  id = "sb-dlp-cc"
+  name = "Block credit cards externally"
+  description = "Blocks emails containing credit card numbers from being sent to external recipients"
+  workloads = ["exchange"]
+  action = "block"
+  condition_summary = "Credit card number detected in email body or attachment"
+  condition_type = "sit"
+  sit_type = "Credit Card Number"
+  min_count = 1
+  licence = "e3"
+
+  [[kits.dlp_rules]]
+  id = "sb-dlp-ext-share"
+  name = "Block Confidential external sharing"
+  description = "Prevents files labelled Confidential from being shared with external users"
+  workloads = ["sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "File has Confidential sensitivity label + shared externally"
+  condition_type = "label"
+  label_ref = "sb-confidential"
+  licence = "e3"
+
+
+# ── Enterprise ────────────────────────────────────────────────
+[[kits]]
+id = "enterprise"
+name = "Enterprise"
+emoji = "🏢"
+target = "Standard organisations, 50-5000 users"
+description = "5 labels with sublabels, encryption on Highly Confidential, and 5 DLP rules covering PII, financial data, and external sharing."
+licence = "e5"
+label_count = 8
+dlp_count = 5
+
+  [[kits.labels]]
+  id = "ent-public"
+  name = "Public"
+  colour = "green"
+  tooltip = "Approved for public sharing"
+  encrypt = false
+  mark = false
+  mark_header = ""
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 0
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-general"
+  name = "General"
+  colour = "blue"
+  tooltip = "Standard business content — no special restrictions"
+  encrypt = false
+  mark = false
+  mark_header = ""
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 1
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-confidential"
+  name = "Confidential"
+  colour = "yellow"
+  tooltip = "Business-sensitive — limit distribution"
+  encrypt = false
+  mark = true
+  mark_header = "Confidential"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 2
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-conf-internal"
+  name = "Internal Only"
+  colour = "yellow"
+  tooltip = "Confidential — only for employees"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "Confidential — Internal Only"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "ent-confidential"
+  priority = 3
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-conf-partner"
+  name = "Trusted Partners"
+  colour = "yellow"
+  tooltip = "Confidential — shareable with approved partners"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "Confidential — Trusted Partners"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "ent-confidential"
+  priority = 4
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-highly-conf"
+  name = "Highly Confidential"
+  colour = "red"
+  tooltip = "Most sensitive — encryption enforced"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "HIGHLY CONFIDENTIAL"
+  mark_footer = "Do not distribute"
+  mark_watermark = "HIGHLY CONFIDENTIAL"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 5
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-hc-exec"
+  name = "Executive Only"
+  colour = "red"
+  tooltip = "Restricted to executive leadership"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "HIGHLY CONFIDENTIAL — EXECUTIVE ONLY"
+  mark_footer = ""
+  mark_watermark = "EXECUTIVE"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "ent-highly-conf"
+  priority = 6
+  scope = "all"
+
+  [[kits.labels]]
+  id = "ent-hc-project"
+  name = "Project Confidential"
+  colour = "red"
+  tooltip = "Restricted to specific project team"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "HIGHLY CONFIDENTIAL — PROJECT"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "ent-highly-conf"
+  priority = 7
+  scope = "all"
+
+  [[kits.dlp_rules]]
+  id = "ent-dlp-pii"
+  name = "Block PII in external email"
+  description = "Prevents personally identifiable information from being emailed externally"
+  workloads = ["exchange"]
+  action = "block"
+  condition_summary = "National ID, passport, or driver licence number detected"
+  condition_type = "sit"
+  sit_type = "National ID"
+  min_count = 1
+  licence = "e3"
+
+  [[kits.dlp_rules]]
+  id = "ent-dlp-financial"
+  name = "Warn on financial data sharing"
+  description = "Warns users when sharing documents containing financial data externally"
+  workloads = ["sharepoint", "onedrive", "exchange"]
+  action = "warn"
+  condition_summary = "Bank account or credit card numbers detected"
+  condition_type = "sit"
+  sit_type = "Financial"
+  min_count = 3
+  licence = "e3"
+
+  [[kits.dlp_rules]]
+  id = "ent-dlp-ext-block"
+  name = "Block Highly Confidential external"
+  description = "Blocks any externally-shared file labelled Highly Confidential"
+  workloads = ["sharepoint", "onedrive", "exchange"]
+  action = "block"
+  condition_summary = "Highly Confidential label + external sharing detected"
+  condition_type = "label"
+  label_ref = "ent-highly-conf"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "ent-dlp-teams"
+  name = "Monitor Teams for sensitive data"
+  description = "Logs when sensitive information types are shared in Teams channels"
+  workloads = ["teams"]
+  action = "log"
+  condition_summary = "Credit card, national ID, or financial data in Teams messages"
+  condition_type = "sit"
+  sit_type = "Multiple"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "ent-dlp-endpoint"
+  name = "Block USB copy of Confidential+"
+  description = "Prevents copying Confidential or Highly Confidential files to USB drives"
+  workloads = ["endpoint"]
+  action = "block"
+  condition_summary = "File with Confidential+ label copied to removable storage"
+  condition_type = "label"
+  label_ref = "ent-confidential"
+  licence = "e5"
+
+
+# ── Regulated ─────────────────────────────────────────────────
+[[kits]]
+id = "regulated"
+name = "Regulated Industry"
+emoji = "🏛️"
+target = "Healthcare, finance, government"
+description = "7 labels with auto-labeling, mandatory labeling, and 10 DLP rules covering HIPAA, PCI-DSS, and GDPR patterns."
+licence = "e5-compliance"
+label_count = 7
+dlp_count = 10
+
+  [[kits.labels]]
+  id = "reg-public"
+  name = "Public"
+  colour = "green"
+  tooltip = "Cleared for public distribution"
+  encrypt = false
+  mark = false
+  mark_header = ""
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 0
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-general"
+  name = "General"
+  colour = "blue"
+  tooltip = "Standard business content"
+  encrypt = false
+  mark = true
+  mark_header = "General"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 1
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-confidential"
+  name = "Confidential"
+  colour = "yellow"
+  tooltip = "Restricted distribution — encryption enforced"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "CONFIDENTIAL"
+  mark_footer = "Restricted — do not distribute"
+  mark_watermark = ""
+  auto_apply = true
+  auto_pattern = "pii"
+  parent_id = ""
+  priority = 2
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-phi"
+  name = "Protected Health Information"
+  colour = "orange"
+  tooltip = "HIPAA-regulated health data"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "PHI — PROTECTED HEALTH INFORMATION"
+  mark_footer = "HIPAA-regulated — authorised personnel only"
+  mark_watermark = "PHI"
+  auto_apply = true
+  auto_pattern = "health"
+  parent_id = ""
+  priority = 3
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-pci"
+  name = "PCI Restricted"
+  colour = "orange"
+  tooltip = "Payment card data — PCI-DSS controlled"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "PCI RESTRICTED"
+  mark_footer = "PCI-DSS regulated — restricted access"
+  mark_watermark = ""
+  auto_apply = true
+  auto_pattern = "financial"
+  parent_id = ""
+  priority = 4
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-highly-conf"
+  name = "Highly Confidential"
+  colour = "red"
+  tooltip = "Most sensitive — maximum protection"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "HIGHLY CONFIDENTIAL"
+  mark_footer = "Do not distribute — encryption enforced"
+  mark_watermark = "HIGHLY CONFIDENTIAL"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 5
+  scope = "all"
+
+  [[kits.labels]]
+  id = "reg-legal"
+  name = "Legal Privilege"
+  colour = "purple"
+  tooltip = "Attorney-client privileged — legal department only"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "LEGALLY PRIVILEGED"
+  mark_footer = "Attorney-client privilege — do not disclose"
+  mark_watermark = "PRIVILEGED"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 6
+  scope = "all"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-hipaa-email"
+  name = "Block health records externally"
+  description = "Blocks emails containing patient health information from external delivery"
+  workloads = ["exchange"]
+  action = "block"
+  condition_summary = "Health/medical terms, patient IDs, or diagnosis codes detected"
+  condition_type = "sit"
+  sit_type = "HIPAA"
+  min_count = 1
+  licence = "e5-compliance"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-hipaa-share"
+  name = "Block PHI external sharing"
+  description = "Prevents sharing PHI-labelled files with anyone outside the organisation"
+  workloads = ["sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "PHI label + external sharing"
+  condition_type = "label"
+  label_ref = "reg-phi"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-pci-email"
+  name = "Block credit cards externally"
+  description = "Blocks emails with credit card numbers to external recipients"
+  workloads = ["exchange"]
+  action = "block"
+  condition_summary = "Credit card number pattern (16 digits, Luhn check)"
+  condition_type = "sit"
+  sit_type = "Credit Card Number"
+  min_count = 1
+  licence = "e3"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-pci-share"
+  name = "Block PCI data in SharePoint"
+  description = "Prevents storage of unprotected credit card data in SharePoint"
+  workloads = ["sharepoint"]
+  action = "block"
+  condition_summary = "Credit card patterns in documents without PCI label"
+  condition_type = "sit"
+  sit_type = "Credit Card Number"
+  min_count = 5
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-gdpr-pii"
+  name = "Warn on EU PII sharing"
+  description = "Warns when documents with EU personal data are shared externally"
+  workloads = ["exchange", "sharepoint", "onedrive"]
+  action = "warn"
+  condition_summary = "EU passport, national ID, or tax number detected"
+  condition_type = "sit"
+  sit_type = "EU PII"
+  min_count = 1
+  licence = "e5-compliance"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-bulk-pii"
+  name = "Block bulk PII sharing"
+  description = "Blocks external sharing when more than 10 PII items detected in a single document"
+  workloads = ["exchange", "sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "More than 10 PII instances (any type) in one document"
+  condition_type = "sit"
+  sit_type = "Multiple PII"
+  min_count = 10
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-teams-financial"
+  name = "Monitor Teams for financial data"
+  description = "Logs and warns when financial data is shared in Teams channels with external guests"
+  workloads = ["teams"]
+  action = "warn"
+  condition_summary = "Financial SITs in channels with guest access"
+  condition_type = "sit"
+  sit_type = "Financial"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-endpoint-usb"
+  name = "Block USB for Confidential+"
+  description = "Prevents copying any Confidential or higher labelled files to USB storage"
+  workloads = ["endpoint"]
+  action = "block"
+  condition_summary = "Confidential+ label copied to removable media"
+  condition_type = "label"
+  label_ref = "reg-confidential"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-endpoint-print"
+  name = "Block printing Highly Confidential"
+  description = "Prevents printing documents labelled Highly Confidential"
+  workloads = ["endpoint"]
+  action = "block"
+  condition_summary = "Highly Confidential label + print action"
+  condition_type = "label"
+  label_ref = "reg-highly-conf"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "reg-dlp-mandatory"
+  name = "Require labeling on all documents"
+  description = "Forces users to apply a sensitivity label before saving or sending any document"
+  workloads = ["exchange", "sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "Document has no sensitivity label applied"
+  condition_type = "no-label"
+  licence = "e5"
+
+
+# ── Zero Trust ────────────────────────────────────────────────
+[[kits]]
+id = "zero-trust"
+name = "Zero Trust"
+emoji = "🔒"
+target = "Maximum security posture"
+description = "Full label hierarchy with encryption above Internal. 15+ DLP rules including endpoint and browser protection. Everything verified, nothing trusted."
+licence = "e5-compliance"
+label_count = 8
+dlp_count = 8
+
+  [[kits.labels]]
+  id = "zt-public"
+  name = "Public"
+  colour = "green"
+  tooltip = "Verified for public release"
+  encrypt = false
+  mark = true
+  mark_header = "PUBLIC"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 0
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-internal"
+  name = "Internal"
+  colour = "blue"
+  tooltip = "Organisation employees only"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "INTERNAL"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 1
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-confidential"
+  name = "Confidential"
+  colour = "yellow"
+  tooltip = "Business-sensitive — encrypted"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "CONFIDENTIAL"
+  mark_footer = "Encrypted — organisation only"
+  mark_watermark = ""
+  auto_apply = true
+  auto_pattern = "pii"
+  parent_id = ""
+  priority = 2
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-conf-internal"
+  name = "Internal Only"
+  colour = "yellow"
+  tooltip = "Confidential — no external sharing"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "CONFIDENTIAL — INTERNAL ONLY"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "zt-confidential"
+  priority = 3
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-conf-partner"
+  name = "Trusted Partners"
+  colour = "yellow"
+  tooltip = "Confidential — specific external partners"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "CONFIDENTIAL — PARTNERS"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "zt-confidential"
+  priority = 4
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-highly-conf"
+  name = "Highly Confidential"
+  colour = "red"
+  tooltip = "Maximum sensitivity — all protections enforced"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "HIGHLY CONFIDENTIAL"
+  mark_footer = "Maximum protection — do not distribute"
+  mark_watermark = "HIGHLY CONFIDENTIAL"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 5
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-hc-exec"
+  name = "Board & Executive"
+  colour = "red"
+  tooltip = "Board-level — executive team only"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "BOARD & EXECUTIVE — RESTRICTED"
+  mark_footer = ""
+  mark_watermark = "EXECUTIVE"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = "zt-highly-conf"
+  priority = 6
+  scope = "all"
+
+  [[kits.labels]]
+  id = "zt-hc-regulated"
+  name = "Regulated Data"
+  colour = "red"
+  tooltip = "Subject to regulatory compliance"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "REGULATED — COMPLIANCE CONTROLLED"
+  mark_footer = "Subject to regulatory requirements"
+  mark_watermark = "REGULATED"
+  auto_apply = true
+  auto_pattern = "health"
+  parent_id = "zt-highly-conf"
+  priority = 7
+  scope = "all"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-pii"
+  name = "Block all PII externally"
+  description = "Blocks any personally identifiable information from leaving the organisation"
+  workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+  action = "block"
+  condition_summary = "Any PII SIT detected in external-facing content"
+  condition_type = "sit"
+  sit_type = "All PII"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-financial"
+  name = "Block financial data externally"
+  description = "Blocks credit cards, bank accounts, and financial data from external sharing"
+  workloads = ["exchange", "sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "Credit card, bank account, or SWIFT code detected"
+  condition_type = "sit"
+  sit_type = "Financial"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-label-block"
+  name = "Block Confidential+ external"
+  description = "Prevents any Confidential or higher labelled content from leaving the org"
+  workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+  action = "block"
+  condition_summary = "Confidential+ label + external recipient/sharing"
+  condition_type = "label"
+  label_ref = "zt-confidential"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-teams-guest"
+  name = "Block sensitive data in guest channels"
+  description = "Blocks sensitive data in Teams channels that have external guest members"
+  workloads = ["teams"]
+  action = "block"
+  condition_summary = "Any SIT in Teams channel with guest members"
+  condition_type = "sit"
+  sit_type = "Multiple"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-usb"
+  name = "Block all USB for Internal+"
+  description = "Prevents copying any Internal or higher labelled files to USB drives"
+  workloads = ["endpoint"]
+  action = "block"
+  condition_summary = "Internal+ label + removable storage"
+  condition_type = "label"
+  label_ref = "zt-internal"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-print"
+  name = "Block printing Confidential+"
+  description = "Prevents printing any Confidential or higher labelled documents"
+  workloads = ["endpoint"]
+  action = "block"
+  condition_summary = "Confidential+ label + print action"
+  condition_type = "label"
+  label_ref = "zt-confidential"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-clipboard"
+  name = "Monitor clipboard for sensitive data"
+  description = "Logs when users copy sensitive data to clipboard from protected applications"
+  workloads = ["endpoint"]
+  action = "log"
+  condition_summary = "Sensitive data copied to clipboard"
+  condition_type = "sit"
+  sit_type = "All PII"
+  min_count = 1
+  licence = "e5-compliance"
+
+  [[kits.dlp_rules]]
+  id = "zt-dlp-mandatory"
+  name = "Mandatory labeling"
+  description = "Forces users to apply a sensitivity label before saving or sending any content"
+  workloads = ["exchange", "sharepoint", "onedrive"]
+  action = "block"
+  condition_summary = "Content has no sensitivity label"
+  condition_type = "no-label"
+  licence = "e5"
+
+
+# ── Copilot-Ready ─────────────────────────────────────────────
+[[kits]]
+id = "copilot-ready"
+name = "Copilot-Ready"
+emoji = "🤖"
+target = "Organisations deploying M365 Copilot"
+description = "Labels optimised for AI oversharing prevention. DLP rules create data boundaries so Copilot only surfaces content users should see."
+licence = "e5"
+label_count = 5
+dlp_count = 5
+
+  [[kits.labels]]
+  id = "cop-public"
+  name = "Public"
+  colour = "green"
+  tooltip = "Safe for Copilot to surface to anyone"
+  encrypt = false
+  mark = false
+  mark_header = ""
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 0
+  scope = "all"
+
+  [[kits.labels]]
+  id = "cop-general"
+  name = "General — All Employees"
+  colour = "blue"
+  tooltip = "Copilot can surface to all employees"
+  encrypt = false
+  mark = true
+  mark_header = "General"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 1
+  scope = "all"
+
+  [[kits.labels]]
+  id = "cop-confidential"
+  name = "Confidential — Team Only"
+  colour = "yellow"
+  tooltip = "Copilot respects permissions — only team members see this"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "Confidential — Team Only"
+  mark_footer = ""
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 2
+  scope = "all"
+
+  [[kits.labels]]
+  id = "cop-restricted"
+  name = "Restricted — Named Users"
+  colour = "red"
+  tooltip = "Encryption prevents Copilot from surfacing to unauthorised users"
+  encrypt = true
+  encrypt_scope = "specific-people"
+  mark = true
+  mark_header = "RESTRICTED"
+  mark_footer = "Encrypted — only named recipients can access"
+  mark_watermark = ""
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 3
+  scope = "all"
+
+  [[kits.labels]]
+  id = "cop-no-copilot"
+  name = "No AI Processing"
+  colour = "purple"
+  tooltip = "Excluded from all AI processing including Copilot"
+  encrypt = true
+  encrypt_scope = "org-only"
+  mark = true
+  mark_header = "NO AI PROCESSING"
+  mark_footer = "This content must not be processed by AI systems"
+  mark_watermark = "NO AI"
+  auto_apply = false
+  auto_pattern = ""
+  parent_id = ""
+  priority = 4
+  scope = "all"
+
+  [[kits.dlp_rules]]
+  id = "cop-dlp-overshare"
+  name = "Warn on broad sharing of Confidential"
+  description = "Warns when Confidential content is shared with large groups (potential Copilot oversharing)"
+  workloads = ["sharepoint", "onedrive"]
+  action = "warn"
+  condition_summary = "Confidential label + shared with 'Everyone' or large group"
+  condition_type = "label"
+  label_ref = "cop-confidential"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "cop-dlp-restricted-ext"
+  name = "Block Restricted external sharing"
+  description = "Prevents any Restricted content from being shared externally"
+  workloads = ["exchange", "sharepoint", "onedrive", "teams"]
+  action = "block"
+  condition_summary = "Restricted label + external recipient"
+  condition_type = "label"
+  label_ref = "cop-restricted"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "cop-dlp-teams-copilot"
+  name = "Monitor Copilot in Teams"
+  description = "Logs when Copilot references are used in Teams channels with external guests"
+  workloads = ["teams"]
+  action = "log"
+  condition_summary = "Teams channel with guests + sensitive content"
+  condition_type = "sit"
+  sit_type = "Multiple"
+  min_count = 1
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "cop-dlp-noai-enforce"
+  name = "Block No AI Processing external"
+  description = "Ensures No AI Processing content never leaves the organisation boundary"
+  workloads = ["exchange", "sharepoint", "onedrive", "teams", "endpoint"]
+  action = "block"
+  condition_summary = "No AI Processing label + any external action"
+  condition_type = "label"
+  label_ref = "cop-no-copilot"
+  licence = "e5"
+
+  [[kits.dlp_rules]]
+  id = "cop-dlp-pii-copilot"
+  name = "Auto-label PII for Copilot protection"
+  description = "Automatically applies Confidential label to documents with PII so Copilot respects the boundary"
+  workloads = ["sharepoint", "onedrive"]
+  action = "label"
+  condition_summary = "PII detected → auto-apply Confidential label"
+  condition_type = "sit"
+  sit_type = "All PII"
+  min_count = 5
+  licence = "e5"

@@ -1,0 +1,83 @@
+# ═══════════════════════════════════════════════════════════════
+# PURVIEW DEPLOY STEPS — 5-step deployment scaffold
+# ═══════════════════════════════════════════════════════════════
+
+[[steps]]
+order = 1
+title = "Create sensitivity labels"
+description = "Create your labels in the Microsoft Purview compliance portal using PowerShell. This defines the label names, tooltips, colours, encryption, and content markings."
+duration = "30 minutes"
+ps_template = """# Connect to Security & Compliance PowerShell
+Connect-IPPSSession -UserPrincipalName admin@yourdomain.com
+
+# TODO: Replace 'admin@yourdomain.com' with your Global Admin or Compliance Admin UPN
+"""
+ps_per_label = true
+notes = "Run from a machine with the ExchangeOnlineManagement module installed. Requires Global Admin or Compliance Administrator role."
+
+[[steps]]
+order = 2
+title = "Publish labels to users"
+description = "Create a label policy that publishes your labels to all users (or specific groups). This makes labels visible in Office apps, Outlook, and SharePoint."
+duration = "15 minutes"
+ps_template = """# Publish labels to all users
+# TODO: Replace label names with your actual label names from Step 1
+# TODO: Replace 'All Users' with a security group if doing phased rollout
+
+New-LabelPolicy -Name "{kit_name} Label Policy" `
+  -Labels @({label_names}) `
+  -ExchangeLocation "All" `
+  -Comment "Published by Purview Starter Kit"
+
+# Optional: Set a default label (recommended)
+# Set-LabelPolicy -Identity "{kit_name} Label Policy" -AdvancedSettings @{DefaultLabelId="{default_label_guid}"}
+
+# Optional: Require mandatory labeling
+# Set-LabelPolicy -Identity "{kit_name} Label Policy" -AdvancedSettings @{MandatoryLabelingEnabled="true"}
+"""
+ps_per_label = false
+notes = "Labels take up to 24 hours to appear in Office apps after publishing. Plan accordingly."
+
+[[steps]]
+order = 3
+title = "Create DLP policies in test mode"
+description = "Deploy DLP rules in simulation (test) mode first. This lets you see what WOULD be blocked without actually blocking anything. Critical for avoiding business disruption."
+duration = "45 minutes"
+ps_template = """# Create DLP policy in TEST mode (simulation)
+# TODO: Review and adjust SIT types, thresholds, and locations for your org
+"""
+ps_per_rule = true
+notes = "Always start in test mode. Review DLP alerts in the Purview portal for at least 2 weeks before enforcing."
+
+[[steps]]
+order = 4
+title = "Monitor for 2 weeks"
+description = "Review DLP test mode alerts in the Microsoft Purview portal. Look for false positives, adjust thresholds, and exclude legitimate business processes before enforcing."
+duration = "2 weeks"
+ps_template = """# Check DLP policy test results
+# Navigate to: compliance.microsoft.com → Data loss prevention → Alerts
+# Or use PowerShell:
+
+Get-DlpCompliancePolicy | Select-Object Name, Mode, Enabled | Format-Table -AutoSize
+
+# Review recent DLP incidents
+# Get-DlpDetailReport -StartDate (Get-Date).AddDays(-14) -EndDate (Get-Date)
+"""
+ps_per_rule = false
+notes = "This is the most important step. Rushing past test mode is the #1 cause of business disruption with DLP. Review with stakeholders before proceeding."
+
+[[steps]]
+order = 5
+title = "Switch DLP to enforce mode"
+description = "After successful testing, switch DLP policies from simulation to enforcement. Block actions will now actually prevent users from sharing or sending protected content."
+duration = "15 minutes"
+ps_template = """# Switch from Test to Enforce mode
+# TODO: Only do this after reviewing 2+ weeks of test mode data
+
+# Get-DlpCompliancePolicy | Where-Object {$_.Mode -eq "TestWithNotifications"} | Set-DlpCompliancePolicy -Mode "Enable"
+
+# Or enable one policy at a time (recommended):
+# Set-DlpCompliancePolicy -Identity "Policy Name" -Mode "Enable"
+"""
+ps_per_rule = false
+notes = "Enable policies one at a time, not all at once. Monitor the DLP alerts dashboard closely for the first 48 hours after enforcement."

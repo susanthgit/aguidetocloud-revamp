@@ -1,0 +1,132 @@
+# ═══════════════════════════════════════════════════════════════
+# PURVIEW LICENSING — Feature to licence tier mapping
+# ═══════════════════════════════════════════════════════════════
+
+[[tiers]]
+id = "e3"
+name = "Microsoft 365 E3"
+short = "E3"
+colour = "#4ADE80"
+description = "Basic sensitivity labels, manual DLP for Exchange/SharePoint/OneDrive"
+pricing_note = "Included in M365 E3 licence"
+
+[[tiers]]
+id = "e5"
+name = "Microsoft 365 E5"
+short = "E5"
+colour = "#60A5FA"
+description = "Auto-labeling, endpoint DLP, Teams DLP, advanced classifiers"
+pricing_note = "Included in M365 E5 licence"
+
+[[tiers]]
+id = "e5-compliance"
+name = "Microsoft 365 E5 Compliance"
+short = "E5 Compliance"
+colour = "#C084FC"
+description = "Full Purview suite — all DLP, all auto-labeling, insider risk, eDiscovery"
+pricing_note = "E5 Compliance add-on or full E5"
+
+[[tiers]]
+id = "e5-security"
+name = "Microsoft 365 E5 Security"
+short = "E5 Security"
+colour = "#F472B6"
+description = "Includes information protection + Defender features"
+pricing_note = "E5 Security add-on"
+
+# Feature → Licence mapping
+[[features]]
+name = "Manual sensitivity labels"
+description = "Users manually apply labels in Office apps"
+tier = "e3"
+category = "labels"
+
+[[features]]
+name = "Label content marking"
+description = "Headers, footers, and watermarks on labelled documents"
+tier = "e3"
+category = "labels"
+
+[[features]]
+name = "Label encryption (Azure RMS)"
+description = "Encrypt documents and emails based on label"
+tier = "e3"
+category = "labels"
+
+[[features]]
+name = "Label policies (publishing)"
+description = "Publish labels to users and groups, set default label"
+tier = "e3"
+category = "labels"
+
+[[features]]
+name = "Mandatory labeling"
+description = "Require users to apply a label before saving/sending"
+tier = "e5"
+category = "labels"
+
+[[features]]
+name = "Auto-labeling (client-side)"
+description = "Recommend or auto-apply labels in Office apps based on content"
+tier = "e5"
+category = "labels"
+
+[[features]]
+name = "Auto-labeling (service-side)"
+description = "Auto-apply labels to content at rest in SharePoint/OneDrive/Exchange"
+tier = "e5-compliance"
+category = "labels"
+
+[[features]]
+name = "Trainable classifiers"
+description = "ML-based content classification for auto-labeling"
+tier = "e5-compliance"
+category = "labels"
+
+[[features]]
+name = "DLP for Exchange Online"
+description = "DLP policies for email (block, warn, encrypt)"
+tier = "e3"
+category = "dlp"
+
+[[features]]
+name = "DLP for SharePoint & OneDrive"
+description = "DLP policies for file sharing and storage"
+tier = "e3"
+category = "dlp"
+
+[[features]]
+name = "DLP for Teams"
+description = "DLP policies for Teams chat and channel messages"
+tier = "e5"
+category = "dlp"
+
+[[features]]
+name = "Endpoint DLP"
+description = "DLP on Windows/macOS devices (USB, print, clipboard, browser)"
+tier = "e5"
+category = "dlp"
+
+[[features]]
+name = "DLP for Power BI"
+description = "DLP policies for Power BI datasets and reports"
+tier = "e5"
+category = "dlp"
+
+[[features]]
+name = "DLP alerts dashboard"
+description = "Centralised DLP alert management in Purview portal"
+tier = "e5"
+category = "dlp"
+
+[[features]]
+name = "Advanced DLP rules"
+description = "Complex conditions, exceptions, and chained rules"
+tier = "e5-compliance"
+category = "dlp"
+
+[[features]]
+name = "Exact data match (EDM)"
+description = "DLP based on exact values from your database (employee IDs, patient numbers)"
+tier = "e5-compliance"
+category = "dlp"

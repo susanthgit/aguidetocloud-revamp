@@ -185,6 +185,17 @@ css_namespace = "psb-*"
 body_class = "page-ps-builder"
 
 [[tools]]
+name = "Purview Starter Kit"
+slug = "purview-starter"
+hex = "#84CC16"
+hue = 84
+name_friendly = "Lime"
+category = "Admin"
+css_namespace = "pvs-*"
+body_class = "page-purview-starter"
+# NOTE: Same hex as Prompt Guide — accepted compromise, different categories (Admin vs Prompt)
+
+[[tools]]
 name = "Migration Planner"
 slug = "migration-planner"
 hex = "#6478CC"

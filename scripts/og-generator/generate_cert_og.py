@@ -1,7 +1,7 @@
 """
-Cert Study Guide OG Image Generator
-====================================
-Generates 1200x630 OG images for all 52 cert study guide pages.
+Cert Study Guide OG Image Generator (V3)
+=========================================
+Generates 1200x630 OG images for all cert study guide pages.
 
 Usage:
     python generate_cert_og.py              # Generate all
@@ -27,9 +27,7 @@ SCRIPT_DIR = Path(__file__).parent
 SITE_ROOT = SCRIPT_DIR.parent.parent
 OUTPUT_DIR = SITE_ROOT / "static" / "images" / "og" / "certs"
 TEMPLATE_PATH = SCRIPT_DIR / "template-cert.html"
-LOGO_PATH = SITE_ROOT / "static" / "images" / "logo_agtc_dark_1.webp"
 FONT_PATH = SCRIPT_DIR / "fonts" / "InterVariable.woff2"
-EMOJI_DIR = SCRIPT_DIR / "emoji"
 DATA_PATH = SITE_ROOT / "static" / "data" / "cert-tracker" / "latest.json"
 HASH_PATH = SCRIPT_DIR / "og_cert_hashes.json"
 
@@ -57,17 +55,6 @@ LEVEL_LABELS = {
     "advanced":     "Expert",
 }
 
-# Category → Twemoji icon codepoint
-CAT_ICONS = {
-    "Azure":            "1f4d6",  # 📖
-    "AI":               "1f9f0",  # 🧰
-    "Data":             "1f4ca",  # 📊
-    "Security":         "1f6e1",  # 🛡️
-    "Microsoft 365":    "1f4cb",  # 📋
-    "Power Platform":   "26a1",   # ⚡
-    "Dynamics 365":     "1f4b0",  # 💰
-}
-
 
 def hex_to_rgba(hx, alpha):
     h = hx.lstrip("#")
@@ -85,7 +72,6 @@ def load_exams():
     for e in data["exams"]:
         code = e["code"]
         slug = code.lower()
-        # Check that a content page exists
         page = SITE_ROOT / "content" / "cert-tracker" / f"{slug}.md"
         if not page.exists():
             continue
@@ -110,15 +96,13 @@ def load_exams():
             "cat_color": CAT_COLOURS.get(cat, "#66ffff"),
             "level_color": LEVEL_COLOURS.get(level, "#E5A00D"),
             "level_label": LEVEL_LABELS.get(level, "Associate"),
-            "icon": CAT_ICONS.get(cat, "1f4d6"),
         })
     return exams
 
 
 def compute_hash(exam):
     tmpl_h = hashlib.md5(TEMPLATE_PATH.read_bytes()).hexdigest()[:8]
-    logo_h = hashlib.md5(LOGO_PATH.read_bytes()).hexdigest()[:8]
-    data = f"{exam['code']}|{exam['title']}|{exam['category']}|{exam['level']}|{tmpl_h}|{logo_h}"
+    data = f"{exam['code']}|{exam['title']}|{exam['category']}|{exam['level']}|{tmpl_h}"
     return hashlib.md5(data.encode()).hexdigest()[:12]
 
 
@@ -150,22 +134,21 @@ def find_stale(exams):
 
 def render_html(exam, template):
     cat_color = exam["cat_color"]
-    icon_path = EMOJI_DIR / f"{exam['icon']}.svg"
-    icon_uri = icon_path.as_uri() if icon_path.exists() else ""
-    name_class = "name-sm" if len(exam["title"]) > 55 else ""
+    name_class = "name-sm" if len(exam["title"]) > 40 else ""
 
     return (template
+        .replace("{{FONT_PATH}}", FONT_PATH.as_uri())
         .replace("{{CAT_COLOR}}", esc(cat_color))
-        .replace("{{CAT_GLOW}}", hex_to_rgba(cat_color, 0.10))
+        .replace("{{CAT_GLOW}}", hex_to_rgba(cat_color, 0.35))
         .replace("{{LEVEL_COLOR}}", esc(exam["level_color"]))
+        .replace("{{AMBIENT_PRIMARY}}", hex_to_rgba(cat_color, 0.18))
+        .replace("{{AMBIENT_SECONDARY}}", hex_to_rgba(cat_color, 0.08))
+        .replace("{{PCOLOR}}", esc(cat_color))
         .replace("{{CATEGORY}}", esc(exam["category"]))
         .replace("{{LEVEL}}", esc(exam["level_label"]))
-        .replace("{{ICON_PATH}}", icon_uri)
         .replace("{{EXAM_CODE}}", esc(exam["code"]))
         .replace("{{EXAM_NAME}}", esc(exam["title"]))
-        .replace("{{NAME_CLASS}}", name_class)
-        .replace("{{LOGO_PATH}}", LOGO_PATH.as_uri())
-        .replace("{{FONT_PATH}}", FONT_PATH.as_uri()))
+        .replace("{{NAME_CLASS}}", name_class))
 
 
 def generate_images(exams, stale_only=False):
@@ -224,7 +207,7 @@ def main():
     ap.add_argument("--check", action="store_true", help="Exit 0=ok, 1=stale, 2=error")
     args = ap.parse_args()
 
-    for path, label in [(TEMPLATE_PATH, "cert template"), (LOGO_PATH, "logo"),
+    for path, label in [(TEMPLATE_PATH, "cert template"),
                          (FONT_PATH, "Inter font"), (DATA_PATH, "cert data")]:
         if not path.exists():
             print(f"ERROR: Missing {label} at {path}")
