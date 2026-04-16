@@ -34,21 +34,19 @@ tags:
   - training
 ---
 
-This is the companion guide to our [Copilot Chat (Free) Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/). If your users don't have a paid Copilot licence yet, start there — everything in that guide still applies to licensed users too.
+This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the $30/month upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch.
 
-This guide covers **everything that the paid Microsoft 365 Copilot licence unlocks** — the features that transform Copilot from a chat tool into an **AI assistant embedded in every app your users touch, every day**.
+If your users don't have the paid licence yet, start with our [Copilot Chat (Free) Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — everything there still applies to licensed users too. This guide covers what the licence **adds on top**.
 
-> 📖 **Companion guide:** Start with our [Copilot Chat (Free) Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) for the foundations — security, EDP, chat features, Pages, memory, and custom instructions. Everything there applies here too.
+> 📖 **Start here first:** Our [Copilot Chat (Free) Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) covers the foundations — security, EDP, chat features, Pages, memory, and custom instructions.
 
 <div class="living-doc-banner">
 
-📌 **This is a living document.** The AI landscape changes fast — features get added, renamed, or retired regularly. Rather than printing this guide, I'd recommend **bookmarking this page** or adding it to your browser's reading list. That way you always have the latest, most accurate version.
-
-If you spot something outdated or think something should be added, please [let me know through the feedback page](/feedback/) — I'll update it so everyone benefits. Think of this as **our** shared resource. 🤝
+This is a living document. Bookmark this page rather than printing it — the AI landscape changes fast. If you spot something outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
 
-### 📋 Table of Contents
+### Table of Contents
 
 - [What Does the Copilot Licence Unlock?](#what-does-the-microsoft-365-copilot-licence-unlock)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)
@@ -133,13 +131,11 @@ flowchart LR
 
 ## Security & Enterprise Data Protection
 
-Before teaching any feature, your users need to **trust** the tool. This section gives you everything you need to address security concerns confidently. Microsoft 365 Copilot (licensed) inherits **all** the Enterprise Data Protection guarantees of Copilot Chat — plus additional controls.
+Same rule as with the free tier — before you teach a single feature, your users need to trust the tool. Here's the good news: licensed Copilot inherits **all** the security guarantees of Copilot Chat, plus you get additional admin controls.
 
-### What Is Enterprise Data Protection (EDP)?
+The #1 question every trainer gets is: **"Is my data safe?"** Here's your confident answer.
 
-Enterprise Data Protection means that **all Copilot interactions are covered by the exact same security, privacy, and compliance commitments** that protect your emails in Exchange and your files in SharePoint. This applies to both Copilot Chat (free) and licensed Copilot.
-
-### The Five EDP Promises
+### The Five Promises
 
 | # | Promise | What It Means | Why It Matters for Your Org |
 |:--|:--|:--|:--|
@@ -190,7 +186,7 @@ Licensed users benefit from these extra controls beyond what Copilot Chat provid
 
 ## Copilot Data Flow — How It Works
 
-Understanding how data flows through Copilot helps trainers explain the security story visually. Here's the simplified end-to-end flow.
+This is the diagram I always show in training sessions. It helps people understand what happens between "I typed a prompt" and "I got a response" — and where their data is protected at each step.
 
 ```mermaid
 flowchart LR
@@ -700,7 +696,7 @@ In supported apps, users see a **model selector** in the UI — typically at the
 
 ## AI-Powered Enterprise Search
 
-For licensed users, **Search** transforms from basic web search into an AI-powered enterprise knowledge finder.
+This is one of those features that sounds boring until you see it in action. For licensed users, search stops being "find a document" and becomes "find the answer" — across your entire organisation's data.
 
 ### What Enterprise Search Can Find
 
