@@ -142,8 +142,10 @@
     questions: [],
     answers: {},
     currentIdx: 0,
-    pillars: []
+    pillars: [],
+    advanceTimer: null
   };
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function flattenAssessment() {
     if (!D.assessment || !D.assessment.pillars) return;
@@ -202,21 +204,29 @@
         optWrap.querySelectorAll('.agplan-option').forEach(function (b) { b.classList.remove('selected'); });
         btn.classList.add('selected');
         $('agplan-next-btn').disabled = false;
-        // Auto-advance after short delay
-        setTimeout(function () {
-          if (assess.currentIdx < assess.questions.length - 1) {
-            assess.currentIdx++;
-            renderAssessQuestion();
-          } else {
-            showAssessResults();
-          }
-        }, 300);
+        // Auto-advance after short delay (skip if reduced motion)
+        if (assess.advanceTimer) clearTimeout(assess.advanceTimer);
+        if (!prefersReducedMotion) {
+          assess.advanceTimer = setTimeout(function () {
+            assess.advanceTimer = null;
+            advanceAssessment();
+          }, 400);
+        }
       });
       optWrap.appendChild(btn);
     });
 
     $('agplan-prev-btn').disabled = assess.currentIdx === 0;
     $('agplan-next-btn').disabled = assess.answers[q.id] === undefined;
+  }
+
+  function advanceAssessment() {
+    if (assess.currentIdx < assess.questions.length - 1) {
+      assess.currentIdx++;
+      renderAssessQuestion();
+    } else {
+      showAssessResults();
+    }
   }
 
   function showAssessResults() {
@@ -311,26 +321,12 @@
       var ps = pillarScores[p.id];
       return ps.max > 0 ? Math.round((ps.earned / ps.max) * 100) : 0;
     });
-    var shareParams = '?score=' + scaledScore + '&pillars=' + pillarPcts.join(',');
-    var shareBtn = $('agplan-share-btn');
-    if (shareBtn) {
-      shareBtn.addEventListener('click', function () {
-        var url = window.location.origin + window.location.pathname + shareParams;
-        navigator.clipboard.writeText(url).then(function () {
-          shareBtn.textContent = '✓ Link Copied!';
-          setTimeout(function () { shareBtn.textContent = 'Copy Shareable Link'; }, 2000);
-        });
-      });
-    }
-
-    // Download governance plan
-    var downloadBtn = $('agplan-download-plan');
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', function () { generateGovernancePlan(scaledScore, tier, pillarScores); });
-    }
+    assess._lastShareParams = '?score=' + scaledScore + '&pillars=' + pillarPcts.join(',');
+    assess._lastPlanData = { score: scaledScore, tier: tier, pillarScores: pillarScores };
   }
 
   function animateNumber(el, from, to, duration) {
+    if (prefersReducedMotion) { el.textContent = to; return; }
     var start = performance.now();
     function step(ts) {
       var progress = Math.min((ts - start) / duration, 1);
@@ -392,10 +388,26 @@
     if (!assess.questions.length) return;
     renderAssessQuestion();
 
+    // Bind result action handlers ONCE (not per-results-render)
+    var shareBtn = $('agplan-share-btn');
+    if (shareBtn) shareBtn.addEventListener('click', function () {
+      var url = window.location.origin + window.location.pathname + (assess._lastShareParams || '');
+      navigator.clipboard.writeText(url).then(function () {
+        shareBtn.textContent = '✓ Link Copied!';
+        setTimeout(function () { shareBtn.textContent = 'Copy Shareable Link'; }, 2000);
+      });
+    });
+    var downloadBtn = $('agplan-download-plan');
+    if (downloadBtn) downloadBtn.addEventListener('click', function () {
+      var d = assess._lastPlanData;
+      if (d) generateGovernancePlan(d.score, d.tier, d.pillarScores);
+    });
+
     var prevBtn = $('agplan-prev-btn');
     var nextBtn = $('agplan-next-btn');
 
     if (prevBtn) prevBtn.addEventListener('click', function () {
+      if (assess.advanceTimer) { clearTimeout(assess.advanceTimer); assess.advanceTimer = null; }
       if (assess.currentIdx > 0) {
         assess.currentIdx--;
         renderAssessQuestion();
@@ -403,12 +415,8 @@
     });
 
     if (nextBtn) nextBtn.addEventListener('click', function () {
-      if (assess.currentIdx < assess.questions.length - 1) {
-        assess.currentIdx++;
-        renderAssessQuestion();
-      } else {
-        showAssessResults();
-      }
+      if (assess.advanceTimer) { clearTimeout(assess.advanceTimer); assess.advanceTimer = null; }
+      advanceAssessment();
     });
 
     var restartBtn = $('agplan-restart-btn');
@@ -427,8 +435,7 @@
     var params = new URLSearchParams(window.location.search);
     if (params.has('score')) {
       switchToTab('assessment');
-      // Display shared results without assessment data
-      var sharedScore = parseInt(params.get('score'), 10) || 0;
+      var sharedScore = Math.max(0, Math.min(100, parseInt(params.get('score'), 10) || 0));
       var tiers = (D.assessment && D.assessment.tiers) || [];
       var tier = tiers.find(function (t) { return sharedScore >= t.min && sharedScore <= t.max; }) || {};
       var ui = $('agplan-assess-ui');
@@ -449,7 +456,7 @@
       if (scoreDesc) scoreDesc.textContent = tier.description || '';
 
       // Pillar bars from URL
-      var pillarPcts = (params.get('pillars') || '').split(',').map(Number);
+      var pillarPcts = (params.get('pillars') || '').split(',').map(function (v) { return Math.max(0, Math.min(100, Number(v) || 0)); });
       var barsList = $('agplan-pillar-bars-list');
       if (barsList && assess.pillars.length) {
         barsList.innerHTML = '';
