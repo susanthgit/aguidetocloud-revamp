@@ -175,65 +175,94 @@
 
 .siteana-cs-links a:hover { color: #22D3EE; }
 
-/* Admin gate */
-.siteana-cs-admin {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.siteana-cs-admin-btn {
-  background: transparent;
+/* Password gate — centered, prominent */
+.siteana-gate-card {
+  max-width: 480px;
+  margin: 4rem auto 2rem;
+  padding: 2.5rem 2rem;
+  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.3);
-  font-size: 0.8rem;
-  padding: 0.4rem 1rem;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
 }
 
-.siteana-cs-admin-btn:hover {
-  color: rgba(255,255,255,0.5);
-  border-color: rgba(255,255,255,0.2);
+.siteana-gate-lock {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px rgba(100,116,139,0.4));
 }
 
-.siteana-cs-admin-form {
+.siteana-gate-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.siteana-gate-subtitle {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.siteana-gate-form {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.siteana-cs-admin-form input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
+.siteana-gate-form input {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(255,255,255,0.15);
   border-radius: 14px;
   color: #e6edf3;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  width: 180px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  text-align: center;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.siteana-cs-admin-form input:focus {
+.siteana-gate-form input:focus {
   border-color: #64748B;
+  box-shadow: 0 0 16px rgba(100,116,139,0.25);
 }
 
-.siteana-cs-admin-form button {
-  background: rgba(6,182,212,0.15);
-  border: 1px solid rgba(6,182,212,0.3);
-  color: #64748B;
+.siteana-gate-form button {
+  width: 100%;
+  max-width: 320px;
+  background: #64748B;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
   border-radius: 14px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.85rem 1.5rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.siteana-cs-admin-form button:hover {
-  background: rgba(6,182,212,0.25);
+.siteana-gate-form button:hover {
+  background: #7c8da0;
+  box-shadow: 0 4px 16px rgba(100,116,139,0.3);
+}
+
+.siteana-gate-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.siteana-gate-hint {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.82rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 640px) {
