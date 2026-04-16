@@ -146,15 +146,29 @@
       if (ga4.top_pages) renderTopPages(ga4.top_pages);
       if (ga4.blog_pages) renderBlogPages(ga4.blog_pages);
     } else {
+      // Clear stale data from previous range
+      if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
+      if (_activityChart) { _activityChart.destroy(); _activityChart = null; }
+      if (_matrixChart) { _matrixChart.destroy(); _matrixChart = null; }
+      ['sa-countries','sa-devices','sa-sources','sa-leaderboard','sa-most-viewed','sa-most-used','sa-top-pages','sa-blog-pages'].forEach(function(id) {
+        var el = document.getElementById(id); if (el) el.innerHTML = '';
+      });
       showEmptyState();
     }
 
     renderInsights(generateInsights(data));
+    renderRefreshTime(data);
 
     if (gsc && gsc.queries && gsc.queries.length) {
       renderGSCQueries(gsc.queries);
       renderPositionDistribution(gsc.queries);
       renderSEOOpportunities(gsc.queries);
+    } else {
+      var sc = document.getElementById('sa-searches');
+      if (sc) sc.innerHTML = '<div class="siteana-empty">Search data will appear once Google indexes the site more deeply.</div>';
+      if (_positionChart) { _positionChart.destroy(); _positionChart = null; }
+      var oppEl = document.getElementById('sa-seo-opps');
+      if (oppEl) oppEl.innerHTML = '';
     }
 
     var growthPanel = document.getElementById('panel-growth');
@@ -587,7 +601,13 @@
     var latestWeek = 0, totalUsers = 0;
     if (ga4) {
       totalUsers = ga4.totals.users || 0;
-      if (ga4.weekly && ga4.weekly.length) latestWeek = ga4.weekly[ga4.weekly.length - 1].users;
+      if (ga4.weekly && ga4.weekly.length) {
+        // Use last COMPLETE week (7 days) for goal tracking, not partial current week
+        for (var wi = ga4.weekly.length - 1; wi >= 0; wi--) {
+          if (ga4.weekly[wi].days >= 7) { latestWeek = ga4.weekly[wi].users; break; }
+        }
+        if (!latestWeek && ga4.weekly.length) latestWeek = ga4.weekly[ga4.weekly.length - 1].users;
+      }
     }
     container.innerHTML = goals.map(function(g) {
       var current = g.metric === 'weekly_users' ? latestWeek : g.metric === 'total_users' ? totalUsers : 0;
@@ -703,6 +723,122 @@
         + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span></div>';
     }).join('');
+  }
+
+  // ── GOAL EDITING MODAL ──
+  function openGoalModal() {
+    var modal = document.getElementById('sa-goal-modal');
+    if (!modal) return;
+    var goals;
+    try { goals = JSON.parse(localStorage.getItem('siteana_goals')); } catch(e) {}
+    if (!goals || !goals.length) goals = JSON.parse(JSON.stringify(GOALS_DEFAULT));
+    renderGoalForm(goals);
+    modal.style.display = 'flex';
+  }
+
+  function closeGoalModal() {
+    var modal = document.getElementById('sa-goal-modal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function renderGoalForm(goals) {
+    var form = document.getElementById('sa-goal-form');
+    if (!form) return;
+    form.innerHTML = goals.map(function(g, i) {
+      return '<div class="siteana-goal-row" data-idx="' + i + '">'
+        + '<input type="text" value="' + esc(g.label) + '" placeholder="Label" class="siteana-ginput siteana-ginput-label" aria-label="Goal label">'
+        + '<select class="siteana-ginput siteana-ginput-metric" aria-label="Metric type">'
+        + '<option value="weekly_users"' + (g.metric === 'weekly_users' ? ' selected' : '') + '>Weekly Users</option>'
+        + '<option value="total_users"' + (g.metric === 'total_users' ? ' selected' : '') + '>Total Users</option>'
+        + '</select>'
+        + '<input type="number" value="' + g.target + '" placeholder="Target" class="siteana-ginput siteana-ginput-target" min="1" aria-label="Target value">'
+        + '<input type="date" value="' + g.deadline + '" class="siteana-ginput siteana-ginput-date" aria-label="Deadline">'
+        + '<button class="siteana-goal-remove" data-idx="' + i + '" aria-label="Remove goal">\u00D7</button>'
+        + '</div>';
+    }).join('');
+    form.querySelectorAll('.siteana-goal-remove').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var row = btn.closest('.siteana-goal-row');
+        if (row) row.remove();
+      });
+    });
+  }
+
+  function readGoalsFromForm() {
+    var rows = document.querySelectorAll('.siteana-goal-row');
+    var goals = [];
+    rows.forEach(function(row) {
+      var label = row.querySelector('.siteana-ginput-label');
+      var metric = row.querySelector('.siteana-ginput-metric');
+      var target = row.querySelector('.siteana-ginput-target');
+      var deadline = row.querySelector('.siteana-ginput-date');
+      if (label && metric && target && deadline && target.value) {
+        goals.push({
+          label: label.value || 'Goal',
+          metric: metric.value,
+          target: parseInt(target.value) || 100,
+          deadline: deadline.value || '2026-12-31'
+        });
+      }
+    });
+    return goals;
+  }
+
+  // Wire up modal buttons
+  var editBtn = document.getElementById('sa-goals-edit');
+  if (editBtn) editBtn.addEventListener('click', openGoalModal);
+
+  var closeBtn = document.getElementById('sa-goal-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeGoalModal);
+
+  var modalOverlay = document.getElementById('sa-goal-modal');
+  if (modalOverlay) modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) closeGoalModal();
+  });
+
+  var saveBtn = document.getElementById('sa-goal-save');
+  if (saveBtn) saveBtn.addEventListener('click', function() {
+    var goals = readGoalsFromForm();
+    try { localStorage.setItem('siteana_goals', JSON.stringify(goals)); } catch(e) {}
+    closeGoalModal();
+    if (allTimeData) renderGoals(allTimeData);
+  });
+
+  var addBtn = document.getElementById('sa-goal-add');
+  if (addBtn) addBtn.addEventListener('click', function() {
+    var form = document.getElementById('sa-goal-form');
+    if (!form) return;
+    var idx = form.children.length;
+    var row = document.createElement('div');
+    row.className = 'siteana-goal-row';
+    row.dataset.idx = idx;
+    row.innerHTML = '<input type="text" value="" placeholder="Label" class="siteana-ginput siteana-ginput-label" aria-label="Goal label">'
+      + '<select class="siteana-ginput siteana-ginput-metric" aria-label="Metric type"><option value="weekly_users">Weekly Users</option><option value="total_users">Total Users</option></select>'
+      + '<input type="number" value="100" placeholder="Target" class="siteana-ginput siteana-ginput-target" min="1" aria-label="Target value">'
+      + '<input type="date" value="2026-12-31" class="siteana-ginput siteana-ginput-date" aria-label="Deadline">'
+      + '<button class="siteana-goal-remove" aria-label="Remove goal">\u00D7</button>';
+    row.querySelector('.siteana-goal-remove').addEventListener('click', function() { row.remove(); });
+    form.appendChild(row);
+  });
+
+  var resetBtn = document.getElementById('sa-goal-reset');
+  if (resetBtn) resetBtn.addEventListener('click', function() {
+    try { localStorage.removeItem('siteana_goals'); } catch(e) {}
+    renderGoalForm(JSON.parse(JSON.stringify(GOALS_DEFAULT)));
+  });
+
+  // ── REFRESH TIMESTAMP ──
+  function renderRefreshTime(data) {
+    var el = document.getElementById('sa-refreshed');
+    if (!el || !data.updated) return;
+    var d = new Date(data.updated);
+    var timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    el.innerHTML = 'Data refreshed ' + timeStr + ' \u00B7 <button class="siteana-refresh-btn" id="sa-refresh-now" aria-label="Refresh now">Refresh</button>';
+    var rb = document.getElementById('sa-refresh-now');
+    if (rb) rb.addEventListener('click', function() {
+      el.innerHTML = 'Refreshing...';
+      fetchData(currentRange);
+    });
   }
 
   // ── INIT ──
