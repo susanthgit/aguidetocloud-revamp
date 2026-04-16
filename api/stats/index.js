@@ -9,7 +9,7 @@ const path = require('path');
 const { google } = require('googleapis');
 
 const STATS_FILE = path.join(__dirname, '..', '_data', 'analytics.json');
-const GA4_PROPERTY = process.env.GA4_PROPERTY_ID || '270121818';
+const GA4_PROPERTY = process.env.GA4_PROPERTY_ID || '530486519';
 const GSC_SITE = process.env.GSC_SITE_URL || 'https://www.aguidetocloud.com/';
 
 // Full response cache (5 min)
