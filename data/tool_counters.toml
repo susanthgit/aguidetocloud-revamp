@@ -27,6 +27,11 @@ base = 2100
 verb = "readiness checks completed"
 
 [[tools]]
+url = "/agent-365-planner/"
+base = 0
+verb = "governance plans created"
+
+[[tools]]
 url = "/prompt-polisher/"
 base = 3400
 verb = "prompts polished"

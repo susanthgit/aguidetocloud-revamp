@@ -43,7 +43,7 @@ severity = "critical"
 [[categories.items]]
 id = "bp-pd-05"
 text = "Established naming convention standard"
-detail = "Without naming conventions, you get 'Test Bot 3' and 'Johns Helper'. Use the Governance Builder to generate a standard."
+detail = "Without naming conventions, you get 'Test Bot 3' and 'Johns Helper'. Define a standard before agents proliferate."
 learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
 severity = "high"
 

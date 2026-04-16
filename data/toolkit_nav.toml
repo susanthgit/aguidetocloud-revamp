@@ -206,6 +206,17 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
+url = "/agent-365-planner/"
+emoji = "🤖"
+name = "Agent 365 Planner"
+short = "Agent 365"
+desc = "Plan your AI agent governance, registry, and deployment strategy"
+color = "#00A4EF"
+category = "admin"
+visual = "grid"
+is_tool = true
+
+[[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
 name = "Migration Planner"

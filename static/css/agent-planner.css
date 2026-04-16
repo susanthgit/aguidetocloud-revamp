@@ -487,15 +487,21 @@
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .agplan-persona-grid { grid-template-columns: 1fr 1fr; }
-  .agplan-tabs { gap: 0.25rem; padding: 0.25rem; }
+  .agplan-tabs {
+    gap: 0.25rem; padding: 0.25rem;
+    /* Fade hint for scroll */
+    mask-image: linear-gradient(to right, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent);
+  }
   .agplan-tab { font-size: 0.78rem; padding: 0.5rem 0.6rem; }
   .agplan-bp-arrow { transform: rotate(90deg); padding: 0.5rem 0; }
   .agplan-blueprint-diagram { flex-direction: column; align-items: center; }
   .agplan-bp-box { max-width: 100%; }
   .agplan-pillar-bar-label { width: 120px; font-size: 0.75rem; }
   .agplan-score-header { flex-direction: column; }
-  .agplan-gate-card { margin: 2rem 0.5rem; }
   .agplan-control-grid { grid-template-columns: 1fr; }
+  /* Bigger checklist touch targets on mobile */
+  .agplan-checklist-toggle { width: 44px; height: 44px; line-height: 44px; font-size: 1rem; border-radius: 10px; }
 }
 
 /* ── Reduced Motion ────────────────────────────────────────────────────── */

@@ -102,7 +102,7 @@ options = [
   { label = "Informal guidelines", value = 1 },
   { label = "Enforced naming standard", value = 2 },
 ]
-recommendation_low = "Create a naming convention before agents proliferate. Use the Governance Builder tab to generate one. Without it, you'll end up with 'Test Agent 3' and 'Johns Bot v2'."
+recommendation_low = "Create a naming convention before agents proliferate. Use the Checklist tab to track this. Without it, you get 'Test Agent 3' and 'Johns Bot v2'."
 recommendation_high = "Naming convention in place. Ensure it's included in agent creation documentation and enforced in reviews."
 learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-agents-in-agent-registry"
 
@@ -114,7 +114,7 @@ options = [
   { label = "Ad-hoc review when noticed", value = 1 },
   { label = "Formal review before creation", value = 2 },
 ]
-recommendation_low = "Without dedup governance, you'll get 5 different 'HR FAQ' agents. Include a registry search step in your approval workflow."
+recommendation_low = "Without dedup governance, you get 5 different 'HR FAQ' agents. Include a registry search step in your approval workflow."
 recommendation_high = "Deduplication process exists. Use the Agent Registry to regularly audit for overlapping agents."
 learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
 

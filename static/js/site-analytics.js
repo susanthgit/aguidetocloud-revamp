@@ -431,7 +431,7 @@
     var ga4 = data.ga4;
     renderGrowthChart(ga4.trend);
     renderCumulative(ga4.totals);
-    renderWeeklyTable(ga4.weekly);
+    renderWeeklyTable(ga4.weekly, ga4.trend, ga4.tool_trends);
     renderMilestoneTimeline();
     renderBeforeAfter(ga4.trend);
     renderGoals(data);
@@ -482,27 +482,47 @@
     requestAnimationFrame(animate);
   }
 
-  function renderWeeklyTable(weekly) {
+  function renderWeeklyTable(weekly, trend, toolTrends) {
     var container = document.getElementById('sa-weekly-table');
     if (!container || !weekly || !weekly.length) return;
     var maxGrowthIdx = -1;
     var maxGrowth = -Infinity;
+
+    // Build date→index map from trend for top tool lookup
+    var dateIdx = {};
+    if (trend) trend.forEach(function(d, i) { dateIdx[d.date] = i; });
+
     var rows = weekly.map(function(w, i) {
       var change = null;
       if (i > 0 && weekly[i - 1].views > 0) {
         change = Math.round(((w.views - weekly[i - 1].views) / weekly[i - 1].views) * 100);
         if (change > maxGrowth) { maxGrowth = change; maxGrowthIdx = i; }
       }
-      return { w: w, change: change, idx: i };
+      // Find top tool for this week
+      var topTool = '';
+      if (toolTrends && trend) {
+        var bestTool = ''; var bestViews = 0;
+        Object.keys(toolTrends).forEach(function(tid) {
+          var arr = toolTrends[tid];
+          var sum = 0;
+          // Sum views for days in this week's range
+          trend.forEach(function(d, idx) {
+            if (d.date >= w.start && d.date <= w.end && arr[idx] !== undefined) sum += arr[idx];
+          });
+          if (sum > bestViews) { bestViews = sum; bestTool = tid; }
+        });
+        if (bestTool) topTool = getToolInfo(bestTool).name;
+      }
+      return { w: w, change: change, idx: i, topTool: topTool };
     });
-    var html = '<table class="siteana-table"><thead><tr><th>Week</th><th>Dates</th><th>Views</th><th>Users</th><th>Sessions</th><th>Change</th></tr></thead><tbody>';
+    var html = '<table class="siteana-table"><thead><tr><th>Week</th><th>Dates</th><th>Views</th><th>Users</th><th>Top Tool</th><th>Change</th></tr></thead><tbody>';
     rows.forEach(function(r) {
       var w = r.w;
       var partial = w.days < 7;
       var hl = r.idx === maxGrowthIdx ? ' class="siteana-row-highlight"' : '';
       var cs = r.change === null ? '\u2014' : (r.change >= 0 ? '+' : '') + r.change + '%' + (partial ? ' *' : '');
       var cc = r.change > 0 ? 'siteana-change-up' : r.change < 0 ? 'siteana-change-down' : '';
-      html += '<tr' + hl + '><td>W' + (r.idx + 1) + '</td><td>' + w.start.slice(5) + ' \u2013 ' + w.end.slice(5) + '</td><td>' + numFmt(w.views) + '</td><td>' + numFmt(w.users) + '</td><td>' + numFmt(w.sessions) + '</td><td class="' + cc + '">' + cs + '</td></tr>';
+      html += '<tr' + hl + '><td>W' + (r.idx + 1) + '</td><td>' + w.start.slice(5) + ' \u2013 ' + w.end.slice(5) + '</td><td>' + numFmt(w.views) + '</td><td>' + numFmt(w.users) + '</td><td class="siteana-top-tool">' + esc(r.topTool || '\u2014') + '</td><td class="' + cc + '">' + cs + '</td></tr>';
     });
     html += '</tbody></table>';
     if (weekly.some(function(w) { return w.days < 7; })) html += '<p class="siteana-hint">* Partial week</p>';

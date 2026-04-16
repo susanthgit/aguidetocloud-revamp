@@ -16,7 +16,7 @@ faq:
   - question: "What's the difference between Agent 365 and Copilot Studio?"
     answer: "Copilot Studio is where you BUILD agents. Agent 365 is where you GOVERN them — identity, access, compliance, and lifecycle management. Think of Copilot Studio as the workshop and Agent 365 as the HR department."
   - question: "Can I use this tool without Agent 365 licences?"
-    answer: "Absolutely! This planner helps you prepare BEFORE you buy. Use the Readiness Assessment and Governance Builder to create your framework, naming conventions, and policies in advance."
+    answer: "Absolutely! This planner helps you prepare BEFORE you buy. Use the Readiness Assessment and Checklist to create your framework and policies in advance."
   - question: "What is agent sprawl and why should I worry about it?"
     answer: "Agent sprawl happens when users create dozens of agents without governance — no naming convention, no ownership, uncertain data access, overlapping functionality. The best time to prevent it is BEFORE you enable Agent 365."
   - question: "How do I handle agents when the owner leaves the organisation?"

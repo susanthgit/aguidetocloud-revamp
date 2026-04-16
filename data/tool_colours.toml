@@ -196,6 +196,17 @@ body_class = "page-purview-starter"
 # NOTE: Same hex as Prompt Guide — accepted compromise, different categories (Admin vs Prompt)
 
 [[tools]]
+name = "Agent 365 Planner"
+slug = "agent-365-planner"
+hex = "#00A4EF"
+hue = 199
+name_friendly = "M365 Blue"
+category = "Admin"
+css_namespace = "agplan-*"
+body_class = "page-agent-365-planner"
+# NOTE: Hue 199° overlaps Meeting Planner (199°) and AI Mapper (198°) — accepted compromise for Microsoft Agent 365 brand matching
+
+[[tools]]
 name = "Migration Planner"
 slug = "migration-planner"
 hex = "#6478CC"

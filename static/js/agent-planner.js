@@ -35,8 +35,15 @@
         tab.setAttribute('aria-selected', 'true');
         var panel = $('panel-' + tab.dataset.tab);
         if (panel) panel.classList.add('active');
+        lsSet('agplan_last_tab', tab.dataset.tab);
       });
     });
+    // Restore last tab (unless URL has params)
+    var params = new URLSearchParams(window.location.search);
+    if (!params.has('score')) {
+      var lastTab = lsGet('agplan_last_tab');
+      if (lastTab && lastTab !== 'overview') switchToTab(lastTab);
+    }
   }
 
   function switchToTab(tabName) {
@@ -404,6 +411,11 @@
           setTimeout(function () { row.querySelector('.agplan-pillar-bar-fill').style.width = pct + '%'; }, 200);
         });
       }
+      // Hide features that don't work on shared links
+      var dlBtn = $('agplan-download-plan');
+      if (dlBtn) dlBtn.style.display = 'none';
+      var recsDiv = document.querySelector('.agplan-recommendations');
+      if (recsDiv) recsDiv.innerHTML = '<p style="color:rgba(255,255,255,0.5);font-size:0.88rem;text-align:center;padding:1rem">This is a shared summary. <button class="agplan-btn-primary" style="margin-left:0.5rem;padding:0.4rem 1rem;font-size:0.85rem" onclick="location.href=location.pathname">Take the full assessment →</button></p>';
     }
   }
 

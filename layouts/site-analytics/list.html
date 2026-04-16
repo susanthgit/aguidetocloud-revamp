@@ -48,6 +48,7 @@
       <span class="siteana-stat-label">Tools</span>
     </div>
   </div>
+  <div class="siteana-refreshed" id="sa-refreshed"></div>
 
   <!-- Date Range Selector -->
   <div class="siteana-range-bar" role="group" aria-label="Date range selector">
@@ -176,8 +177,28 @@
     </div>
     <!-- Goals -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">Goals</h3>
+      <div class="siteana-card-header">
+        <h3 class="siteana-card-title" style="margin:0">Goals</h3>
+        <button class="siteana-edit-btn" id="sa-goals-edit" aria-label="Edit goals">Edit</button>
+      </div>
       <div id="sa-goals"></div>
+    </div>
+    <!-- Goal Edit Modal -->
+    <div class="siteana-modal-overlay" id="sa-goal-modal" style="display:none" role="dialog" aria-modal="true" aria-label="Edit goals">
+      <div class="siteana-modal">
+        <div class="siteana-modal-header">
+          <h3>Edit Goals</h3>
+          <button class="siteana-modal-close" id="sa-goal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="siteana-modal-body" id="sa-goal-form"></div>
+        <div class="siteana-modal-footer">
+          <button class="siteana-btn-secondary" id="sa-goal-add">+ Add Goal</button>
+          <div>
+            <button class="siteana-btn-secondary" id="sa-goal-reset">Reset Defaults</button>
+            <button class="siteana-btn-primary" id="sa-goal-save">Save</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
