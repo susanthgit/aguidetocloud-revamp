@@ -36,7 +36,8 @@
     expandedKit: null,
     customLabels: [],
     enabledScenarios: [],
-    editingLabelIdx: -1
+    editingLabelIdx: -1,
+    e3Filter: false
   };
 
   function genLabelId() {
@@ -74,11 +75,13 @@
     const p = new URLSearchParams(window.location.search);
     if (p.get('kit')) S.selectedKit = p.get('kit');
     if (p.get('tab')) S.tab = p.get('tab');
+    if (p.get('dlp')) S.enabledScenarios = p.get('dlp').split(',').filter(Boolean);
   }
   function writeURL() {
     const p = new URLSearchParams();
     if (S.selectedKit) p.set('kit', S.selectedKit);
     if (S.tab !== 'kits') p.set('tab', S.tab);
+    if (S.enabledScenarios.length) p.set('dlp', S.enabledScenarios.join(','));
     const qs = p.toString();
     history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : ''));
   }
@@ -125,7 +128,10 @@
     grid.innerHTML = KITS.map(kit => {
       const isSelected = S.selectedKit === kit.id;
       const isExpanded = S.expandedKit === kit.id;
-      return '<div class="pvs-kit-card' + (isSelected ? ' pvs-kit-selected' : '') + (isExpanded ? ' pvs-kit-expanded' : '') + '" data-kit="' + esc(kit.id) + '">' +
+      const isRecommended = kit.id === 'enterprise';
+      const e3Only = S.e3Filter && kit.licence !== 'e3';
+      return '<div class="pvs-kit-card' + (isSelected ? ' pvs-kit-selected' : '') + (isExpanded ? ' pvs-kit-expanded' : '') + (e3Only ? ' pvs-kit-dimmed' : '') + '" data-kit="' + esc(kit.id) + '">' +
+        (isRecommended ? '<span class="pvs-kit-recommended">Most Popular</span>' : '') +
         '<div class="pvs-kit-header">' +
           '<span class="pvs-kit-emoji">' + esc(kit.emoji) + '</span>' +
           '<div><div class="pvs-kit-title">' + esc(kit.name) + '</div>' +
@@ -137,6 +143,7 @@
           '<span class="pvs-kit-stat pvs-kit-stat--dlp">🛡️ ' + (kit.dlp_rules ? kit.dlp_rules.length : kit.dlp_count) + ' DLP rules</span>' +
           licBadge(kit.licence) +
         '</div>' +
+        (e3Only ? '<div class="pvs-kit-e3-note">Requires ' + esc(kit.licence === 'e5' ? 'E5' : 'E5 Compliance') + ' licence</div>' : '') +
         '<div class="pvs-kit-actions">' +
           '<button class="pvs-btn pvs-btn--primary pvs-btn--sm pvs-select-kit" data-kit="' + esc(kit.id) + '">' + (isSelected ? '✓ Selected' : 'Use This Kit') + '</button>' +
           '<button class="pvs-btn pvs-btn--secondary pvs-btn--sm pvs-expand-kit" data-kit="' + esc(kit.id) + '">' + (isExpanded ? 'Hide Details' : 'See What\'s Included') + '</button>' +
@@ -742,6 +749,13 @@
     });
 
     initKitGrid(); renderKits(); updateDeployBadge();
+
+    // E3 filter toggle
+    const e3Toggle = $('pvs-e3-toggle');
+    if (e3Toggle) e3Toggle.addEventListener('change', function() {
+      S.e3Filter = this.checked;
+      renderKits();
+    });
 
     // Auto-expand first kit if nothing selected yet
     if (!S.selectedKit && KITS.length > 0 && !S.expandedKit) {

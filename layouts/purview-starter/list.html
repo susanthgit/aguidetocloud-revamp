@@ -44,7 +44,13 @@
 
     {{/* ═══ STARTER KITS TAB ═══ */}}
     <div class="pvs-panel active" role="tabpanel" id="panel-kits" aria-labelledby="tab-kits">
-      <p class="pvs-panel-desc">Pick a starter package that matches your organisation. Each kit bundles sensitivity labels + DLP rules + a deployment plan. <strong>One click to get started.</strong></p>
+      <div class="pvs-kits-header">
+        <p class="pvs-panel-desc">Pick a starter package that matches your organisation. Each kit bundles sensitivity labels + DLP rules + a deployment plan. <strong>One click to get started.</strong></p>
+        <label class="pvs-e3-filter" id="pvs-e3-filter">
+          <input type="checkbox" class="pvs-toggle" id="pvs-e3-toggle" aria-label="Show only E3-compatible kits">
+          <span>I only have E3</span>
+        </label>
+      </div>
       <div class="pvs-kits-grid" id="pvs-kits-grid"></div>
     </div>
 
