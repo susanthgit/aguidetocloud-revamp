@@ -1,0 +1,382 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/security-toolkit.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="sectool-page">
+
+  {{ partial "tool-hero.html" (dict "title" "M365 Security Toolkit" "subtitle" "Score your tenant security, generate email DNS records, plan admin roles, and get prioritised remediation scripts — no PowerShell, no tenant access needed." "accent" "#41A235") }}
+
+  <div class="sectool-container">
+
+    {{/* ── Glass Pill Tabs (only functional tabs shown) ── */}}
+    <div class="sectool-tabs" role="tablist" aria-label="Security Toolkit sections">
+      <button class="sectool-tab active" data-tab="assessment" role="tab" aria-selected="true">Assessment</button>
+      <button class="sectool-tab" data-tab="email" role="tab" aria-selected="false">Email Security</button>
+      <button class="sectool-tab" data-tab="actions" role="tab" aria-selected="false">Actions & Scripts</button>
+      <button class="sectool-tab" data-tab="export" role="tab" aria-selected="false">Export</button>
+      <button class="sectool-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
+    </div>
+
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    {{/* TAB 1: Assessment (Phase 1 — fully functional)        */}}
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    <div class="sectool-panel active" id="panel-assessment" role="tabpanel">
+
+      {{/* Assessment UI — starts immediately, no intro gate */}}
+      <div id="sectool-assessment" class="sectool-assessment">
+
+        {{/* Quick vs Full scan toggle */}}
+        <div class="sectool-scan-toggle">
+          <button class="sectool-scan-btn active" data-mode="quick" id="sectool-scan-quick">Quick Scan (15 critical questions)</button>
+          <button class="sectool-scan-btn" data-mode="full" id="sectool-scan-full">Full Assessment (50 questions)</button>
+        </div>
+
+        <div class="sectool-cat-nav" id="sectool-cat-nav"></div>
+
+        <div class="sectool-progress-wrap">
+          <div class="sectool-progress-bar">
+            <div class="sectool-progress-fill" id="sectool-progress-fill"></div>
+          </div>
+          <span class="sectool-progress-text" id="sectool-progress-text">Question 1 of 50</span>
+          <span class="sectool-time-estimate">~8 minutes · 50 questions · saves automatically</span>
+        </div>
+
+        <div class="sectool-cat-indicator" id="sectool-cat-indicator">
+          <span class="sectool-cat-icon" id="sectool-current-cat-icon">🔐</span>
+          <span class="sectool-cat-name" id="sectool-current-cat-name">Identity & Authentication</span>
+        </div>
+
+        <div class="sectool-question-card" id="sectool-question-card">
+          <h3 class="sectool-question-text" id="sectool-question-text"></h3>
+          <p class="sectool-question-context" id="sectool-question-context"></p>
+          <div class="sectool-compliance-refs" id="sectool-compliance-refs"></div>
+          <div class="sectool-options" id="sectool-options"></div>
+        </div>
+
+        <div class="sectool-nav">
+          <button id="sectool-prev-btn" class="sectool-btn-secondary" disabled>Previous</button>
+          <button id="sectool-next-btn" class="sectool-btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      {{/* Results (hidden until assessment complete) */}}
+      <div id="sectool-results" class="sectool-results" hidden aria-live="polite">
+        <div class="sectool-score-section">
+          <div class="sectool-score-header">
+            <div class="sectool-score-ring" id="sectool-score-ring">
+              <svg viewBox="0 0 120 120" class="sectool-score-svg">
+                <circle class="sectool-ring-bg" cx="60" cy="60" r="52" />
+                <circle class="sectool-ring-fg" id="sectool-ring-fg" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="sectool-score-inner">
+                <span class="sectool-score-number" id="sectool-score-number">0</span>
+                <span class="sectool-score-max">/100</span>
+              </div>
+            </div>
+            <div class="sectool-score-label">
+              <h2 id="sectool-score-label">Calculating...</h2>
+              <p id="sectool-score-desc"></p>
+            </div>
+          </div>
+          <div class="sectool-delta" id="sectool-delta"></div>
+        </div>
+
+        <div class="sectool-breakdown">
+          <h2>Category Breakdown</h2>
+          <div id="sectool-cat-bars" class="sectool-cat-bars"></div>
+        </div>
+
+        <div class="sectool-priority-banner" id="sectool-priority-banner"></div>
+
+        <div class="sectool-risk-summary" id="sectool-risk-summary"></div>
+
+        <div class="sectool-orgsize-wrap" id="sectool-orgsize-wrap">
+          <label for="sectool-orgsize" class="sectool-orgsize-label">Your organisation size (adjusts risk estimates):</label>
+          <select id="sectool-orgsize" class="sectool-orgsize-select">
+            <option value="0.3">Small (1–50 users)</option>
+            <option value="0.6">Medium (51–250 users)</option>
+            <option value="1.0" selected>Large (251–1,000 users)</option>
+            <option value="1.8">Enterprise (1,000+ users)</option>
+          </select>
+        </div>
+
+        <div class="sectool-result-crosslinks">
+          <h2>What To Do Next</h2>
+          <div class="sectool-links-grid">
+            <a href="/ca-builder/" class="sectool-link-card">
+              <span class="sectool-link-icon">🔐</span>
+              <span>Build CA Policies</span>
+              <small>Create Conditional Access policies for your identified gaps</small>
+            </a>
+            <a href="/ps-builder/" class="sectool-link-card">
+              <span class="sectool-link-icon">💻</span>
+              <span>PowerShell Scripts</span>
+              <small>Find ready-made remediation scripts for M365 admin tasks</small>
+            </a>
+            <a href="/copilot-readiness/" class="sectool-link-card">
+              <span class="sectool-link-icon">🤖</span>
+              <span>Copilot Readiness</span>
+              <small>Hardened your tenant? Now check if you are ready for Copilot</small>
+            </a>
+            <a href="/licensing/" class="sectool-link-card">
+              <span class="sectool-link-icon">📜</span>
+              <span>Licensing Simplifier</span>
+              <small>Understand which security features your licence includes</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="sectool-result-actions">
+          <button id="sectool-share-btn" class="sectool-btn-primary">Copy Shareable Link</button>
+          <button id="sectool-actions-btn" class="sectool-btn-primary">View Remediation Actions</button>
+          <button id="sectool-restart-btn" class="sectool-btn-secondary">Retake Assessment</button>
+        </div>
+      </div>
+
+    </div>{{/* end panel-assessment */}}
+
+
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    {{/* TAB 2: Email Security Generator (Phase 1)             */}}
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    <div class="sectool-panel" id="panel-email" role="tabpanel">
+      <div class="sectool-email-section">
+        <h2 class="sectool-section-title">Email Security Record Generator</h2>
+        <p class="sectool-section-desc">Generate SPF, DKIM, and DMARC DNS records for your domain in under 2 minutes. No DNS lookups — we generate the records, you add them to your DNS.</p>
+
+        <div class="sectool-email-form">
+          <div class="sectool-form-group">
+            <label for="sectool-domain">Your domain</label>
+            <input type="text" id="sectool-domain" placeholder="contoso.com" aria-label="Your email domain" autocomplete="off" spellcheck="false">
+            <span class="sectool-validation-msg" id="sectool-domain-validation" hidden></span>
+          </div>
+          <div class="sectool-form-group">
+            <label for="sectool-provider">Primary email provider</label>
+            <select id="sectool-provider" aria-label="Primary email provider">
+              <option value="microsoft365">Microsoft 365</option>
+              <option value="google">Google Workspace</option>
+              <option value="both">Both (M365 + Google)</option>
+              <option value="other">Other / Custom</option>
+            </select>
+          </div>
+          <div class="sectool-form-group" id="sectool-tenant-group">
+            <label for="sectool-tenant">M365 tenant name</label>
+            <input type="text" id="sectool-tenant" placeholder="contoso (from contoso.onmicrosoft.com)" aria-label="Microsoft 365 tenant name" autocomplete="off" spellcheck="false">
+            <small class="sectool-form-hint">Find yours at: M365 admin centre → Settings → Domains. Look for your .onmicrosoft.com domain.</small>
+          </div>
+          <div class="sectool-form-group">
+            <label>Additional sending services</label>
+            <div class="sectool-checkbox-grid" id="sectool-extra-providers"></div>
+          </div>
+          <div class="sectool-form-group">
+            <label for="sectool-custom-include">Custom SPF include or IP</label>
+            <input type="text" id="sectool-custom-include" placeholder="include:custom.example.com or ip4:203.0.113.0/24" aria-label="Custom SPF include">
+          </div>
+          <button id="sectool-generate-btn" class="sectool-btn-primary">Generate Records</button>
+          <div class="sectool-spf-toggle">
+            <label class="sectool-toggle-label">SPF enforcement:</label>
+            <button class="sectool-enforcement-btn active" data-spf="soft" id="sectool-spf-soft">~all (Soft Fail)</button>
+            <button class="sectool-enforcement-btn" data-spf="hard" id="sectool-spf-hard">-all (Hard Fail)</button>
+          </div>
+        </div>
+
+        <div id="sectool-spf-lookup-warning" class="sectool-warning" hidden></div>
+
+        {{/* Generated records */}}
+        <div id="sectool-email-results" class="sectool-email-results" hidden>
+          <div class="sectool-record-card" id="sectool-spf-card">
+            <div class="sectool-record-header">
+              <h3>SPF Record</h3>
+              <span class="sectool-record-type">TXT</span>
+            </div>
+            <div class="sectool-record-host">Host: <code>@</code> (your domain root)</div>
+            <pre class="sectool-record-value" id="sectool-spf-value"></pre>
+            <button class="sectool-copy-btn" data-target="sectool-spf-value">Copy</button>
+            <div class="sectool-record-explain" id="sectool-spf-explain"></div>
+          </div>
+
+          <div class="sectool-record-card" id="sectool-dkim-card">
+            <div class="sectool-record-header">
+              <h3>DKIM Records</h3>
+              <span class="sectool-record-type">CNAME</span>
+            </div>
+            <div id="sectool-dkim-records"></div>
+          </div>
+
+          <div class="sectool-record-card" id="sectool-dmarc-card">
+            <div class="sectool-record-header">
+              <h3>DMARC Record</h3>
+              <span class="sectool-record-type">TXT</span>
+            </div>
+            <div class="sectool-record-host">Host: <code>_dmarc</code></div>
+            <pre class="sectool-record-value" id="sectool-dmarc-value"></pre>
+            <button class="sectool-copy-btn" data-target="sectool-dmarc-value">Copy</button>
+            <div class="sectool-record-explain" id="sectool-dmarc-explain"></div>
+            <div class="sectool-dmarc-timeline" id="sectool-dmarc-timeline"></div>
+          </div>
+        </div>
+        <button id="sectool-copy-all-btn" class="sectool-btn-primary sectool-copy-all" hidden>Copy All Records</button>
+      </div>
+    </div>{{/* end panel-email */}}
+
+
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    {{/* TAB 3: Actions & Scripts (Phase 1)                    */}}
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    <div class="sectool-panel" id="panel-actions" role="tabpanel">
+      <div id="sectool-actions-gate" class="sectool-actions-gate">
+        <span class="sectool-gate-icon">📋</span>
+        <h2>Prioritised Remediation Actions</h2>
+        <p>Complete the security assessment first to generate your personalised action plan with priority rankings, remediation scripts, and compliance mappings.</p>
+        <button class="sectool-btn-primary sectool-goto-assessment">Start Assessment</button>
+      </div>
+      <div id="sectool-actions-content" hidden>
+        <h2 class="sectool-section-title">Your Priority Actions</h2>
+        <p class="sectool-section-desc">Sorted by severity band, then quick-win ratio. Fix the top items first for maximum risk reduction.</p>
+        <div id="sectool-actions-list" class="sectool-actions-list"></div>
+        <div id="sectool-risk-quantifier" class="sectool-risk-quantifier"></div>
+      </div>
+    </div>
+
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    {{/* TAB 4: Export Scorecard                                */}}
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    <div class="sectool-panel" id="panel-export" role="tabpanel">
+      <div id="sectool-export-gate" class="sectool-actions-gate">
+        <span class="sectool-gate-icon">📄</span>
+        <h2>Export Security Scorecard</h2>
+        <p>Complete the assessment to generate a printable security scorecard with your score, category breakdown, top priority actions, and compliance coverage.</p>
+        <button class="sectool-btn-primary sectool-goto-assessment">Start Assessment</button>
+      </div>
+      <div id="sectool-export-content" hidden>
+        <div class="sectool-export-form">
+          <div class="sectool-form-group">
+            <label for="sectool-org-name">Organisation name (for the report header)</label>
+            <input type="text" id="sectool-org-name" placeholder="Contoso Ltd" aria-label="Organisation name">
+          </div>
+          <div class="sectool-export-buttons">
+            <button id="sectool-export-scorecard" class="sectool-btn-primary">Generate Scorecard</button>
+            <button id="sectool-export-actions" class="sectool-btn-secondary">Export Actions as Markdown</button>
+            <button id="sectool-export-email" class="sectool-btn-secondary">Export Email Records</button>
+          </div>
+        </div>
+        <div id="sectool-export-preview" class="sectool-export-preview" hidden></div>
+        <div class="sectool-export-actions-row" id="sectool-export-actions-row" hidden>
+          <button id="sectool-print-report" class="sectool-btn-primary">Print / Save as PDF</button>
+          <button id="sectool-copy-report" class="sectool-btn-secondary">Copy to Clipboard</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    {{/* TAB 5: FAQ                                            */}}
+    {{/* ═══════════════════════════════════════════════════════ */}}
+    <div class="sectool-panel" id="panel-faq" role="tabpanel">
+    {{ if .Params.faq }}
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <h2 style="color:var(--sectool-accent);margin-bottom:1rem">Frequently Asked Questions</h2>
+      {{ range $i, $q := .Params.faq }}
+      <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem"><summary style="color:var(--sectool-accent);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p></details>
+      {{ end }}
+    </div>
+    {{ end }}
+    </div>
+
+  </div>{{/* end sectool-container */}}
+</div>{{/* end sectool-page */}}
+
+{{/* ── Cross-tool ecosystem links ── */}}
+<div style="max-width:900px;margin:2rem auto;padding:0 1.5rem">
+  <h2 style="color:rgba(255,255,255,0.7);font-size:1.1rem;text-align:center;margin-bottom:1.5rem">More Security & Admin Tools</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+    <a href="/ca-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🔐</span><span style="color:#fff;font-weight:600;font-size:0.9rem">CA Policy Builder</span><br><small style="color:rgba(255,255,255,0.5)">Design Conditional Access policies</small></a>
+    <a href="/ps-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">💻</span><span style="color:#fff;font-weight:600;font-size:0.9rem">PowerShell Builder</span><br><small style="color:rgba(255,255,255,0.5)">Generate M365 admin scripts</small></a>
+    <a href="/purview-starter/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🏷️</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Purview Starter Kit</span><br><small style="color:rgba(255,255,255,0.5)">Plan sensitivity labels & DLP</small></a>
+    <a href="/copilot-readiness/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🤖</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Copilot Readiness</span><br><small style="color:rgba(255,255,255,0.5)">Check Copilot deployment readiness</small></a>
+  </div>
+  <p style="text-align:center;margin-top:1.5rem;color:rgba(255,255,255,0.4);font-size:0.85rem">💬 Got feedback? <a href="/feedback/" style="color:var(--sectool-accent)">Share it here →</a></p>
+</div>
+
+{{ partial "back-nav" . }}
+
+{{/* ── Pagefind searchable block ── */}}
+<div data-pagefind-body aria-hidden="true" style="display:none">
+  <h1>M365 Security Toolkit</h1>
+  <p>Free M365 security assessment tool aligned to CIS benchmarks. Generate SPF DKIM DMARC email DNS records. Plan admin roles. Get prioritised remediation scripts with PowerShell. Map to CIS NIST ISO 27001 Essential Eight compliance frameworks. No tenant access no admin credentials needed. Security hardening self-assessment for Microsoft 365 tenants.</p>
+</div>
+
+{{/* ── Data injection ── */}}
+<script>
+window.__secToolData = {
+  assessment: {{ (index hugo.Data "security_toolkit").assessment | jsonify | safeJS }},
+  emailSecurity: {{ (index hugo.Data "security_toolkit").email_security | jsonify | safeJS }},
+  risk: {{ (index hugo.Data "security_toolkit").risk | jsonify | safeJS }}
+};
+</script>
+
+<script src="/js/security-toolkit.js?v={{ site.Params.cache_version }}"></script>
+
+{{/* ── Tab switching ── */}}
+<script>
+document.querySelectorAll('.sectool-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.sectool-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.sectool-panel').forEach(function(p) { p.classList.remove('active'); });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    var panel = document.getElementById('panel-' + tab.dataset.tab);
+    if (panel) { panel.classList.add('active'); }
+    history.replaceState(null, '', '#' + tab.dataset.tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+(function() {
+  var h = location.hash.replace('#','');
+  if (h) {
+    var t = document.querySelector('.sectool-tab[data-tab="' + h + '"]');
+    if (t) t.click();
+  }
+})();
+</script>
+{{ end }}

@@ -1,0 +1,1027 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 SECURITY TOOLKIT — Assessment Questions (50 questions)
+# ═══════════════════════════════════════════════════════════════
+# 8 categories, CIS M365 Benchmark aligned, with NIST/ISO/E8 mappings.
+# Each question scores 0 (not done), 1 (partial), 2 (fully done).
+# "Don't know" = 0 (treated as a gap).
+
+# ── Score Tiers ───────────────────────────────────────────────
+[[tiers]]
+min = 0
+max = 20
+label = "Critical Risk"
+emoji = "🔴"
+color = "#EF4444"
+desc = "Major security gaps detected. Immediate action needed on identity, email, and data protection basics."
+
+[[tiers]]
+min = 21
+max = 40
+label = "High Risk"
+emoji = "🟠"
+color = "#F97316"
+desc = "Significant improvements needed. Foundational controls are missing or incomplete."
+
+[[tiers]]
+min = 41
+max = 60
+label = "Moderate"
+emoji = "🟡"
+color = "#EAB308"
+desc = "Baseline protections are in place but gaps remain. Focus on the priority actions below."
+
+[[tiers]]
+min = 61
+max = 80
+label = "Good"
+emoji = "🟢"
+color = "#22C55E"
+desc = "Solid security posture. Fine-tune the remaining gaps and maintain regular reviews."
+
+[[tiers]]
+min = 81
+max = 100
+label = "Excellent"
+emoji = "🌟"
+color = "#41A235"
+desc = "Comprehensive hardening in place. Maintain, monitor, and stay current with new threats."
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 1: Identity & Authentication (7 questions, weight 1.5)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "identity"
+name = "Identity & Authentication"
+icon = "🔐"
+weight = 1.5
+
+  [[categories.questions]]
+  id = "mfa-all"
+  text = "Is MFA enforced for ALL users (not just admins)?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Admins only", value = 1 },
+    { label = "All users", value = 2 }
+  ]
+  cis_ref = "1.1.1"
+  nist_ref = "IA-2(1)"
+  iso_ref = "A.8.5"
+  e8_ref = "MFA"
+  risk_score = 10
+  remediation_title = "Enable MFA for all users"
+  remediation_path = "Entra ID → Security → Authentication methods → MFA"
+  remediation_effort = "quick"
+  remediation_script = "# Create Conditional Access policy requiring MFA for all users\nConnect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'\n$params = @{\n  DisplayName = 'Require MFA for All Users'\n  State = 'enabledForReportingButNotEnforced'\n  Conditions = @{\n    Users = @{ IncludeUsers = @('All') }\n    Applications = @{ IncludeApplications = @('All') }\n  }\n  GrantControls = @{\n    BuiltInControls = @('mfa')\n    Operator = 'OR'\n  }\n}\nNew-MgIdentityConditionalAccessPolicy @params"
+
+  [[categories.questions]]
+  id = "legacy-auth"
+  text = "Have you disabled legacy authentication protocols?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Partially blocked", value = 1 },
+    { label = "Fully blocked via CA policy", value = 2 }
+  ]
+  cis_ref = "1.1.2"
+  nist_ref = "IA-2(6)"
+  iso_ref = "A.8.5"
+  e8_ref = "MFA"
+  risk_score = 9
+  remediation_title = "Block legacy authentication"
+  remediation_path = "Entra ID → Security → Conditional Access → New policy"
+  remediation_effort = "quick"
+  remediation_script = "# Block legacy authentication via Conditional Access\nConnect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'\n$params = @{\n  DisplayName = 'Block Legacy Authentication'\n  State = 'enabled'\n  Conditions = @{\n    Users = @{ IncludeUsers = @('All') }\n    Applications = @{ IncludeApplications = @('All') }\n    ClientAppTypes = @('exchangeActiveSync','other')\n  }\n  GrantControls = @{\n    BuiltInControls = @('block')\n    Operator = 'OR'\n  }\n}\nNew-MgIdentityConditionalAccessPolicy @params"
+
+  [[categories.questions]]
+  id = "conditional-access"
+  text = "Do you use Conditional Access policies?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Basic (1-3 policies)", value = 1 },
+    { label = "Comprehensive (5+ policies)", value = 2 }
+  ]
+  cis_ref = "1.1.3"
+  nist_ref = "AC-2(12)"
+  iso_ref = "A.8.2"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Deploy Conditional Access policies"
+  remediation_path = "Entra ID → Security → Conditional Access"
+  remediation_effort = "halfday"
+  remediation_script = "# List existing Conditional Access policies\nConnect-MgGraph -Scopes 'Policy.Read.All'\nGet-MgIdentityConditionalAccessPolicy | Select-Object DisplayName, State, CreatedDateTime | Format-Table -AutoSize"
+
+  [[categories.questions]]
+  id = "pim"
+  text = "Is Privileged Identity Management (PIM) enabled for admin roles?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Aware of it but not configured", value = 1 },
+    { label = "Active for all admin roles", value = 2 }
+  ]
+  cis_ref = "1.1.4"
+  nist_ref = "AC-6(1)"
+  iso_ref = "A.8.2"
+  e8_ref = "Restrict admin privileges"
+  risk_score = 7
+  remediation_title = "Enable PIM for just-in-time admin access"
+  remediation_path = "Entra ID → Identity Governance → Privileged Identity Management"
+  remediation_effort = "halfday"
+  remediation_script = "# List current PIM-eligible role assignments\nConnect-MgGraph -Scopes 'RoleManagement.Read.Directory'\nGet-MgRoleManagementDirectoryRoleEligibilitySchedule | Select-Object PrincipalId, RoleDefinitionId, StartDateTime | Format-Table"
+
+  [[categories.questions]]
+  id = "break-glass"
+  text = "Do you have break-glass emergency access accounts?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Yes, but untested", value = 1 },
+    { label = "Yes, tested quarterly", value = 2 }
+  ]
+  cis_ref = "1.1.5"
+  nist_ref = "AC-2(2)"
+  iso_ref = "A.5.18"
+  e8_ref = "Restrict admin privileges"
+  risk_score = 8
+  remediation_title = "Create break-glass emergency access accounts"
+  remediation_path = "Entra ID → Users → New user (cloud-only, no MFA, monitored)"
+  remediation_effort = "quick"
+  remediation_script = "# Create a break-glass account (manual steps recommended)\n# 1. Create a cloud-only account (not synced from AD)\n# 2. Assign Global Administrator permanently\n# 3. Exclude from ALL Conditional Access policies\n# 4. Use a strong 20+ character password stored in a safe\n# 5. Monitor sign-ins with an alert policy\n# See: https://learn.microsoft.com/entra/identity/role-based-access-control/security-emergency-access"
+
+  [[categories.questions]]
+  id = "separate-admin"
+  text = "Are admin accounts separate from daily-use accounts?"
+  options = [
+    { label = "No, admins use their regular accounts", value = 0 },
+    { label = "Some admins have separate accounts", value = 1 },
+    { label = "All admins have dedicated admin accounts", value = 2 }
+  ]
+  cis_ref = "1.1.6"
+  nist_ref = "AC-6(2)"
+  iso_ref = "A.8.2"
+  e8_ref = "Restrict admin privileges"
+  risk_score = 7
+  remediation_title = "Create dedicated admin accounts"
+  remediation_path = "Entra ID → Users → New user (admin-only, no email, MFA required)"
+  remediation_effort = "halfday"
+  remediation_script = "# List users with admin role assignments\nConnect-MgGraph -Scopes 'RoleManagement.Read.Directory'\nGet-MgDirectoryRole | ForEach-Object {\n  $role = $_\n  Get-MgDirectoryRoleMember -DirectoryRoleId $_.Id | ForEach-Object {\n    [PSCustomObject]@{\n      Role = $role.DisplayName\n      User = $_.AdditionalProperties.userPrincipalName\n    }\n  }\n} | Format-Table -AutoSize"
+
+  [[categories.questions]]
+  id = "sspr-mfa"
+  text = "Is self-service password reset enabled with MFA verification?"
+  options = [
+    { label = "No SSPR configured", value = 0 },
+    { label = "SSPR enabled without MFA", value = 1 },
+    { label = "SSPR enabled with MFA verification", value = 2 }
+  ]
+  cis_ref = "1.1.7"
+  nist_ref = "IA-5(1)"
+  iso_ref = "A.8.5"
+  e8_ref = "MFA"
+  risk_score = 5
+  remediation_title = "Configure SSPR with MFA verification"
+  remediation_path = "Entra ID → Password reset → Properties → All users"
+  remediation_effort = "quick"
+  remediation_script = "# Check SSPR configuration\nConnect-MgGraph -Scopes 'Policy.Read.All'\nGet-MgPolicyAuthorizationPolicy | Select-Object -ExpandProperty DefaultUserRolePermissions"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 2: Email Protection (6 questions, weight 1.2)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "email"
+name = "Email Protection"
+icon = "📧"
+weight = 1.2
+
+  [[categories.questions]]
+  id = "spf-record"
+  text = "Does your domain have a valid SPF record?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "Yes, basic (~all)", value = 1 },
+    { label = "Yes, strict (-all)", value = 2 }
+  ]
+  cis_ref = "4.1.1"
+  nist_ref = "SI-8"
+  iso_ref = "A.8.23"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Configure SPF record for your domain"
+  remediation_path = "DNS provider → Add TXT record for your domain"
+  remediation_effort = "quick"
+  remediation_script = "# Verify current SPF record\nResolve-DnsName -Name 'yourdomain.com' -Type TXT | Where-Object { $_.Strings -like '*spf*' } | Select-Object -ExpandProperty Strings"
+
+  [[categories.questions]]
+  id = "dkim-enabled"
+  text = "Is DKIM signing enabled for your domain?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "No", value = 0 },
+    { label = "Yes", value = 2 }
+  ]
+  cis_ref = "4.1.2"
+  nist_ref = "SI-8"
+  iso_ref = "A.8.23"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Enable DKIM signing"
+  remediation_path = "Microsoft Defender → Email authentication → DKIM"
+  remediation_effort = "quick"
+  remediation_script = "# Check DKIM configuration\nConnect-ExchangeOnline\nGet-DkimSigningConfig | Select-Object Domain, Enabled, Status | Format-Table -AutoSize\n\n# Enable DKIM for a domain\n# Set-DkimSigningConfig -Identity 'yourdomain.com' -Enabled $true"
+
+  [[categories.questions]]
+  id = "dmarc-policy"
+  text = "Do you have a DMARC policy?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "Monitor only (p=none)", value = 1 },
+    { label = "Quarantine or reject", value = 2 }
+  ]
+  cis_ref = "4.1.3"
+  nist_ref = "SI-8"
+  iso_ref = "A.8.23"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Deploy DMARC policy"
+  remediation_path = "DNS provider → Add TXT record: _dmarc.yourdomain.com"
+  remediation_effort = "quick"
+  remediation_script = "# Check current DMARC record\nResolve-DnsName -Name '_dmarc.yourdomain.com' -Type TXT | Select-Object -ExpandProperty Strings\n\n# Recommended DMARC record (start with p=none):\n# v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com; pct=100"
+
+  [[categories.questions]]
+  id = "safe-links-attachments"
+  text = "Are Safe Links and Safe Attachments enabled?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Partial coverage", value = 1 },
+    { label = "Full coverage for all users", value = 2 }
+  ]
+  cis_ref = "4.2.1"
+  nist_ref = "SI-3"
+  iso_ref = "A.8.7"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Enable Safe Links and Safe Attachments"
+  remediation_path = "Microsoft Defender → Policies → Threat policies → Safe Links / Safe Attachments"
+  remediation_effort = "quick"
+  remediation_script = "# Check Safe Links policies\nConnect-ExchangeOnline\nGet-SafeLinksPolicy | Select-Object Name, IsEnabled, EnableSafeLinksForEmail | Format-Table\n\n# Check Safe Attachments policies\nGet-SafeAttachmentPolicy | Select-Object Name, Enable, Action | Format-Table"
+
+  [[categories.questions]]
+  id = "anti-phishing"
+  text = "Is anti-phishing protection configured in Defender?"
+  options = [
+    { label = "Default settings only", value = 0 },
+    { label = "Custom basic policies", value = 1 },
+    { label = "Advanced anti-phishing with impersonation protection", value = 2 }
+  ]
+  cis_ref = "4.2.2"
+  nist_ref = "SI-8(2)"
+  iso_ref = "A.8.7"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Configure advanced anti-phishing protection"
+  remediation_path = "Microsoft Defender → Policies → Anti-phishing"
+  remediation_effort = "halfday"
+  remediation_script = "# Check anti-phishing policies\nConnect-ExchangeOnline\nGet-AntiPhishPolicy | Select-Object Name, Enabled, EnableMailboxIntelligenceProtection, EnableOrganizationDomainsProtection | Format-Table"
+
+  [[categories.questions]]
+  id = "outbound-monitoring"
+  text = "Do you monitor outbound email for anomalies?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Basic alerts configured", value = 1 },
+    { label = "Active monitoring with alerts and response", value = 2 }
+  ]
+  cis_ref = "4.3.1"
+  nist_ref = "SI-4(4)"
+  iso_ref = "A.8.16"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Set up outbound email monitoring"
+  remediation_path = "Microsoft Defender → Policies → Alert policies"
+  remediation_effort = "quick"
+  remediation_script = "# Check outbound spam policies\nConnect-ExchangeOnline\nGet-HostedOutboundSpamFilterPolicy | Select-Object Name, NotifyOutboundSpam, NotifyOutboundSpamRecipients | Format-Table"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 3: Data Protection (7 questions, weight 1.3)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "data"
+name = "Data Protection"
+icon = "📂"
+weight = 1.3
+
+  [[categories.questions]]
+  id = "sensitivity-labels"
+  text = "Are sensitivity labels deployed?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Created but not broadly applied", value = 1 },
+    { label = "Broadly applied across the organisation", value = 2 }
+  ]
+  cis_ref = "3.1.1"
+  nist_ref = "AC-16"
+  iso_ref = "A.5.12"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Deploy sensitivity labels"
+  remediation_path = "Purview → Information protection → Labels"
+  remediation_effort = "project"
+  remediation_script = "# List existing sensitivity labels\nConnect-IPPSSession\nGet-Label | Select-Object DisplayName, Priority, ContentType, Disabled | Format-Table -AutoSize"
+
+  [[categories.questions]]
+  id = "dlp-policies"
+  text = "Do you have DLP policies for sensitive data?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Basic policies for common data types", value = 1 },
+    { label = "Comprehensive DLP across email, SharePoint, Teams, endpoints", value = 2 }
+  ]
+  cis_ref = "3.1.2"
+  nist_ref = "SC-7(10)"
+  iso_ref = "A.5.14"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Configure DLP policies"
+  remediation_path = "Purview → Data loss prevention → Policies"
+  remediation_effort = "project"
+  remediation_script = "# List existing DLP policies\nConnect-IPPSSession\nGet-DlpCompliancePolicy | Select-Object Name, Mode, Enabled, Workload | Format-Table -AutoSize"
+
+  [[categories.questions]]
+  id = "email-forwarding"
+  text = "Is external email forwarding restricted?"
+  options = [
+    { label = "No restriction", value = 0 },
+    { label = "Alerts configured but not blocked", value = 1 },
+    { label = "Blocked via transport rule or CA policy", value = 2 }
+  ]
+  cis_ref = "3.2.1"
+  nist_ref = "SC-7"
+  iso_ref = "A.8.12"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Block external email auto-forwarding"
+  remediation_path = "Exchange admin centre → Mail flow → Rules"
+  remediation_effort = "quick"
+  remediation_script = "# Block auto-forwarding to external domains\nConnect-ExchangeOnline\nNew-TransportRule -Name 'Block External Auto-Forward' `\n  -FromScope InOrganization `\n  -MessageTypeMatches AutoForward `\n  -SentToScope NotInOrganization `\n  -RejectMessageReasonText 'External auto-forwarding is not permitted' `\n  -RejectMessageEnhancedStatusCode '5.7.1'"
+
+  [[categories.questions]]
+  id = "auto-labelling"
+  text = "Are auto-labelling policies configured?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Testing / simulation mode", value = 1 },
+    { label = "Active auto-labelling in production", value = 2 }
+  ]
+  cis_ref = "3.1.3"
+  nist_ref = "AC-16(3)"
+  iso_ref = "A.5.12"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Configure auto-labelling policies"
+  remediation_path = "Purview → Information protection → Auto-labelling"
+  remediation_effort = "project"
+  remediation_script = "# List auto-labelling policies\nConnect-IPPSSession\nGet-AutoSensitivityLabelPolicy | Select-Object Name, Mode, Enabled | Format-Table"
+
+  [[categories.questions]]
+  id = "irm-documents"
+  text = "Is information rights management used for documents?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Used in some areas", value = 1 },
+    { label = "Standard practice with encryption labels", value = 2 }
+  ]
+  cis_ref = "3.1.4"
+  nist_ref = "SC-28"
+  iso_ref = "A.8.24"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Enable information rights management"
+  remediation_path = "SharePoint admin centre → Settings → IRM"
+  remediation_effort = "halfday"
+  remediation_script = "# Check IRM status on SharePoint\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object IRMEnabled"
+
+  [[categories.questions]]
+  id = "email-encryption"
+  text = "Do you encrypt emails containing sensitive data?"
+  options = [
+    { label = "No encryption", value = 0 },
+    { label = "Manual encryption available", value = 1 },
+    { label = "Policy-enforced encryption via transport rules or labels", value = 2 }
+  ]
+  cis_ref = "3.2.2"
+  nist_ref = "SC-8(1)"
+  iso_ref = "A.8.24"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Configure email encryption policies"
+  remediation_path = "Exchange admin centre → Mail flow → Rules → Apply encryption"
+  remediation_effort = "halfday"
+  remediation_script = "# Create transport rule for encrypting sensitive emails\nConnect-ExchangeOnline\nNew-TransportRule -Name 'Encrypt Confidential Emails' `\n  -ApplyRightsProtectionTemplate 'Encrypt' `\n  -SentToScope NotInOrganization `\n  -HeaderContainsMessageHeader 'msip_labels' `\n  -HeaderContainsWords 'Confidential'"
+
+  [[categories.questions]]
+  id = "retention-policies"
+  text = "Are retention policies configured?"
+  options = [
+    { label = "No retention policies", value = 0 },
+    { label = "Basic retention in some areas", value = 1 },
+    { label = "Comprehensive lifecycle retention across all workloads", value = 2 }
+  ]
+  cis_ref = "3.3.1"
+  nist_ref = "AU-11"
+  iso_ref = "A.5.33"
+  e8_ref = "Regular backups"
+  risk_score = 5
+  remediation_title = "Configure retention policies"
+  remediation_path = "Purview → Data lifecycle management → Retention policies"
+  remediation_effort = "project"
+  remediation_script = "# List existing retention policies\nConnect-IPPSSession\nGet-RetentionCompliancePolicy | Select-Object Name, Enabled, Mode | Format-Table"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 4: Teams & Collaboration (6 questions, weight 1.0)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "teams"
+name = "Teams & Collaboration"
+icon = "💬"
+weight = 1.0
+
+  [[categories.questions]]
+  id = "guest-access"
+  text = "Is guest access in Teams restricted?"
+  options = [
+    { label = "Open to everyone", value = 0 },
+    { label = "Domain-limited allowlist", value = 1 },
+    { label = "Approval-required with domain restrictions", value = 2 }
+  ]
+  cis_ref = "2.1.1"
+  nist_ref = "AC-17"
+  iso_ref = "A.5.19"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Restrict Teams guest access"
+  remediation_path = "Teams admin centre → Users → Guest access"
+  remediation_effort = "quick"
+  remediation_script = "# Check guest access settings\nConnect-MicrosoftTeams\nGet-CsTeamsGuestCallingConfiguration\nGet-CsTeamsGuestMeetingConfiguration\nGet-CsTeamsGuestMessagingConfiguration"
+
+  [[categories.questions]]
+  id = "meeting-recording"
+  text = "Are Teams meeting recording and transcription policies configured?"
+  options = [
+    { label = "Default settings (everyone can record)", value = 0 },
+    { label = "Restricted to specific roles", value = 1 },
+    { label = "Policy-managed with retention", value = 2 }
+  ]
+  cis_ref = "2.1.2"
+  nist_ref = "AU-12"
+  iso_ref = "A.5.33"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Configure meeting recording policies"
+  remediation_path = "Teams admin centre → Meetings → Meeting policies"
+  remediation_effort = "quick"
+  remediation_script = "# Check meeting recording policy\nConnect-MicrosoftTeams\nGet-CsTeamsMeetingPolicy -Identity Global | Select-Object AllowCloudRecording, AllowRecordingStorageOutsideRegion, RecordingStorageMode"
+
+  [[categories.questions]]
+  id = "teams-apps"
+  text = "Is Teams app installation restricted?"
+  options = [
+    { label = "Users can install any app", value = 0 },
+    { label = "Admin-approved apps only", value = 1 },
+    { label = "Specific apps blocked, rest admin-approved", value = 2 }
+  ]
+  cis_ref = "2.2.1"
+  nist_ref = "CM-7(5)"
+  iso_ref = "A.8.19"
+  e8_ref = "Application control"
+  risk_score = 5
+  remediation_title = "Manage Teams app permissions"
+  remediation_path = "Teams admin centre → Teams apps → Permission policies"
+  remediation_effort = "halfday"
+  remediation_script = "# Check app permission policies\nConnect-MicrosoftTeams\nGet-CsTeamsAppPermissionPolicy | Select-Object Identity, DefaultCatalogAppsType, GlobalCatalogAppsType | Format-Table"
+
+  [[categories.questions]]
+  id = "external-federation"
+  text = "Are external chat and federation settings reviewed?"
+  options = [
+    { label = "Default (open federation)", value = 0 },
+    { label = "Restricted to specific domains", value = 1 },
+    { label = "Disabled or tightly controlled", value = 2 }
+  ]
+  cis_ref = "2.1.3"
+  nist_ref = "AC-20"
+  iso_ref = "A.5.19"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Review external federation settings"
+  remediation_path = "Teams admin centre → Users → External access"
+  remediation_effort = "quick"
+  remediation_script = "# Check external access settings\nConnect-MicrosoftTeams\nGet-CsTenantFederationConfiguration | Select-Object AllowFederatedUsers, AllowTeamsConsumer, AllowedDomains"
+
+  [[categories.questions]]
+  id = "teams-creation"
+  text = "Do you restrict who can create Teams?"
+  options = [
+    { label = "Everyone can create teams", value = 0 },
+    { label = "Restricted to a security group", value = 1 },
+    { label = "Admin only with naming policy", value = 2 }
+  ]
+  cis_ref = "2.2.2"
+  nist_ref = "CM-5"
+  iso_ref = "A.8.19"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Restrict Teams creation permissions"
+  remediation_path = "Entra ID → Groups → General → Users can create groups = No"
+  remediation_effort = "quick"
+  remediation_script = "# Restrict M365 Group creation to a security group\nConnect-MgGraph -Scopes 'Directory.ReadWrite.All'\n# Create security group for team creators\n# Then set GroupCreationAllowedGroupId in directory settings\nGet-MgDirectorySetting | Where-Object { $_.DisplayName -eq 'Group.Unified' }"
+
+  [[categories.questions]]
+  id = "teams-file-sharing"
+  text = "Is file sharing in Teams channels managed?"
+  options = [
+    { label = "Default settings", value = 0 },
+    { label = "Restricted external sharing", value = 1 },
+    { label = "DLP-enforced with sensitivity labels", value = 2 }
+  ]
+  cis_ref = "2.2.3"
+  nist_ref = "AC-4"
+  iso_ref = "A.5.14"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Manage Teams file sharing settings"
+  remediation_path = "SharePoint admin centre → Policies → Sharing"
+  remediation_effort = "halfday"
+  remediation_script = "# Check SharePoint sharing settings (Teams files are stored in SharePoint)\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object SharingCapability, DefaultSharingLinkType, PreventExternalUsersFromResharing"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 5: SharePoint & OneDrive (6 questions, weight 1.0)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "sharepoint"
+name = "SharePoint & OneDrive"
+icon = "📁"
+weight = 1.0
+
+  [[categories.questions]]
+  id = "external-sharing"
+  text = "What is external sharing set to in SharePoint?"
+  options = [
+    { label = "Anyone links (anonymous)", value = 0 },
+    { label = "New and existing guests", value = 1 },
+    { label = "Existing guests only or disabled", value = 2 }
+  ]
+  cis_ref = "3.4.1"
+  nist_ref = "AC-3"
+  iso_ref = "A.5.15"
+  e8_ref = ""
+  risk_score = 8
+  remediation_title = "Restrict SharePoint external sharing"
+  remediation_path = "SharePoint admin centre → Policies → Sharing"
+  remediation_effort = "quick"
+  remediation_script = "# Check and set external sharing level\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object SharingCapability\n\n# Set to ExistingExternalUserSharingOnly:\n# Set-SPOTenant -SharingCapability ExistingExternalUserSharingOnly"
+
+  [[categories.questions]]
+  id = "site-creation"
+  text = "Is SharePoint site creation restricted?"
+  options = [
+    { label = "Everyone can create sites", value = 0 },
+    { label = "Self-service with guardrails", value = 1 },
+    { label = "Admin only with governance process", value = 2 }
+  ]
+  cis_ref = "3.4.2"
+  nist_ref = "CM-5"
+  iso_ref = "A.8.19"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Restrict site creation"
+  remediation_path = "SharePoint admin centre → Settings → Site creation"
+  remediation_effort = "quick"
+  remediation_script = "# Check site creation settings\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object SelfServiceSiteCreationDisabled"
+
+  [[categories.questions]]
+  id = "access-requests"
+  text = "Are access request policies configured?"
+  options = [
+    { label = "No formal process", value = 0 },
+    { label = "Basic access request flow", value = 1 },
+    { label = "Managed approval workflow", value = 2 }
+  ]
+  cis_ref = "3.4.3"
+  nist_ref = "AC-2(1)"
+  iso_ref = "A.5.18"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Configure access request policies"
+  remediation_path = "SharePoint admin centre → Access control → Access requests"
+  remediation_effort = "halfday"
+  remediation_script = "# Check access request settings per site\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOSite -Limit All | Select-Object Title, Url, RequestAccessEmail | Where-Object { $_.RequestAccessEmail } | Format-Table"
+
+  [[categories.questions]]
+  id = "versioning"
+  text = "Is versioning enabled on all document libraries?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "Enabled on some libraries", value = 1 },
+    { label = "Enabled on all libraries with limits", value = 2 }
+  ]
+  cis_ref = "3.4.4"
+  nist_ref = "CP-9"
+  iso_ref = "A.8.13"
+  e8_ref = "Regular backups"
+  risk_score = 3
+  remediation_title = "Enable versioning across document libraries"
+  remediation_path = "SharePoint admin centre → Settings → Default versioning"
+  remediation_effort = "quick"
+  remediation_script = "# Check default versioning settings\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object EnableAutoExpirationVersionTrim, MajorVersionLimit"
+
+  [[categories.questions]]
+  id = "idle-session"
+  text = "Are idle session timeout policies configured?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "For admin accounts only", value = 1 },
+    { label = "For all users on unmanaged devices", value = 2 }
+  ]
+  cis_ref = "3.4.5"
+  nist_ref = "AC-12"
+  iso_ref = "A.8.1"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Configure idle session timeout"
+  remediation_path = "Entra ID → Conditional Access → Session controls"
+  remediation_effort = "quick"
+  remediation_script = "# Configure idle session timeout via Conditional Access\n# Add session control: Sign-in frequency = 1 hour for unmanaged devices\n# Use Conditional Access policy builder at /ca-builder/"
+
+  [[categories.questions]]
+  id = "sp-advanced-mgmt"
+  text = "Do you use SharePoint Advanced Management?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Aware of it but not configured", value = 1 },
+    { label = "Active with data access governance reports", value = 2 }
+  ]
+  cis_ref = "3.4.6"
+  nist_ref = "AC-6"
+  iso_ref = "A.5.15"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Enable SharePoint Advanced Management"
+  remediation_path = "SharePoint admin centre → Data access governance"
+  remediation_effort = "halfday"
+  remediation_script = "# Check SAM features\nConnect-SPOService -Url 'https://yourtenant-admin.sharepoint.com'\nGet-SPOTenant | Select-Object IsDataAccessInSiteAnalyticsEnabled"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 6: Device Management (5 questions, weight 1.0)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "devices"
+name = "Device Management"
+icon = "💻"
+weight = 1.0
+
+  [[categories.questions]]
+  id = "intune-enrolled"
+  text = "Is Intune enrolled for device management?"
+  options = [
+    { label = "No device management", value = 0 },
+    { label = "Partial enrollment", value = 1 },
+    { label = "Full MDM enrollment for all devices", value = 2 }
+  ]
+  cis_ref = "5.1.1"
+  nist_ref = "CM-2"
+  iso_ref = "A.8.1"
+  e8_ref = "Patch operating systems"
+  risk_score = 7
+  remediation_title = "Enroll devices in Intune"
+  remediation_path = "Intune admin centre → Devices → Enrollment"
+  remediation_effort = "project"
+  remediation_script = "# Check enrolled device count\nConnect-MgGraph -Scopes 'DeviceManagementManagedDevices.Read.All'\nGet-MgDeviceManagementManagedDevice | Group-Object OperatingSystem | Select-Object Name, Count | Format-Table"
+
+  [[categories.questions]]
+  id = "compliance-policies"
+  text = "Are compliance policies blocking non-compliant devices?"
+  options = [
+    { label = "No compliance policies", value = 0 },
+    { label = "Monitor only (not blocking)", value = 1 },
+    { label = "Blocking non-compliant devices from accessing data", value = 2 }
+  ]
+  cis_ref = "5.1.2"
+  nist_ref = "CM-6"
+  iso_ref = "A.8.1"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Enable device compliance policies"
+  remediation_path = "Intune admin centre → Devices → Compliance policies"
+  remediation_effort = "halfday"
+  remediation_script = "# List compliance policies\nConnect-MgGraph -Scopes 'DeviceManagementConfiguration.Read.All'\nGet-MgDeviceManagementDeviceCompliancePolicy | Select-Object DisplayName, LastModifiedDateTime | Format-Table"
+
+  [[categories.questions]]
+  id = "bitlocker"
+  text = "Is BitLocker encryption required?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Recommended but not enforced", value = 1 },
+    { label = "Enforced via Intune policy", value = 2 }
+  ]
+  cis_ref = "5.1.3"
+  nist_ref = "SC-28(1)"
+  iso_ref = "A.8.24"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Enforce BitLocker encryption"
+  remediation_path = "Intune admin centre → Endpoint security → Disk encryption"
+  remediation_effort = "halfday"
+  remediation_script = "# Check BitLocker status across managed devices\nConnect-MgGraph -Scopes 'DeviceManagementManagedDevices.Read.All'\nGet-MgDeviceManagementManagedDevice | Select-Object DeviceName, IsEncrypted, ComplianceState | Format-Table"
+
+  [[categories.questions]]
+  id = "app-protection"
+  text = "Are app protection policies configured for mobile?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Basic policies", value = 1 },
+    { label = "Comprehensive MAM with data protection", value = 2 }
+  ]
+  cis_ref = "5.1.4"
+  nist_ref = "AC-19"
+  iso_ref = "A.8.1"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Configure app protection policies"
+  remediation_path = "Intune admin centre → Apps → App protection policies"
+  remediation_effort = "halfday"
+  remediation_script = "# List app protection policies\nConnect-MgGraph -Scopes 'DeviceManagementApps.Read.All'\nGet-MgDeviceAppManagementManagedAppPolicy | Select-Object DisplayName, LastModifiedDateTime | Format-Table"
+
+  [[categories.questions]]
+  id = "ca-device-compliance"
+  text = "Is Conditional Access restricting access by device compliance?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "For some apps", value = 1 },
+    { label = "For all cloud apps", value = 2 }
+  ]
+  cis_ref = "5.1.5"
+  nist_ref = "AC-3(13)"
+  iso_ref = "A.8.2"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Require compliant devices via Conditional Access"
+  remediation_path = "Entra ID → Conditional Access → Grant → Require compliant device"
+  remediation_effort = "halfday"
+  remediation_script = "# Check CA policies with device compliance requirements\nConnect-MgGraph -Scopes 'Policy.Read.All'\nGet-MgIdentityConditionalAccessPolicy | Where-Object {\n  $_.GrantControls.BuiltInControls -contains 'compliantDevice'\n} | Select-Object DisplayName, State"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 7: Monitoring & Logging (6 questions, weight 1.2)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "monitoring"
+name = "Monitoring & Logging"
+icon = "📊"
+weight = 1.2
+
+  [[categories.questions]]
+  id = "audit-logging"
+  text = "Is unified audit logging enabled?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "No", value = 0 },
+    { label = "Yes, enabled and retained", value = 2 }
+  ]
+  cis_ref = "6.1.1"
+  nist_ref = "AU-2"
+  iso_ref = "A.8.15"
+  e8_ref = ""
+  risk_score = 9
+  remediation_title = "Enable unified audit logging"
+  remediation_path = "Purview → Audit → Start recording user and admin activity"
+  remediation_effort = "quick"
+  remediation_script = "# Check if audit logging is enabled\nConnect-ExchangeOnline\nGet-AdminAuditLogConfig | Select-Object UnifiedAuditLogIngestionEnabled\n\n# Enable if disabled:\n# Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true"
+
+  [[categories.questions]]
+  id = "alert-policies"
+  text = "Are alert policies configured for suspicious activity?"
+  options = [
+    { label = "Default alerts only", value = 0 },
+    { label = "Custom basic alerts added", value = 1 },
+    { label = "Comprehensive alert coverage with response procedures", value = 2 }
+  ]
+  cis_ref = "6.1.2"
+  nist_ref = "SI-4"
+  iso_ref = "A.8.16"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Configure alert policies"
+  remediation_path = "Purview → Alert policies → Create custom alerts"
+  remediation_effort = "halfday"
+  remediation_script = "# List existing alert policies\nConnect-IPPSSession\nGet-ProtectionAlert | Select-Object Name, Category, Severity, IsEnabled | Format-Table -AutoSize"
+
+  [[categories.questions]]
+  id = "defender-plan"
+  text = "Is Microsoft Defender for Office 365 active?"
+  options = [
+    { label = "No (or don't know)", value = 0 },
+    { label = "Plan 1 (Safe Links, Safe Attachments)", value = 1 },
+    { label = "Plan 2 (includes Threat Explorer, AIR, Attack Simulation)", value = 2 }
+  ]
+  cis_ref = "6.2.1"
+  nist_ref = "SI-3(10)"
+  iso_ref = "A.8.7"
+  e8_ref = ""
+  risk_score = 7
+  remediation_title = "Upgrade to Defender for Office 365"
+  remediation_path = "Microsoft 365 admin centre → Marketplace → Defender for Office 365"
+  remediation_effort = "project"
+  remediation_script = "# Check Defender for Office 365 licensing\nConnect-MgGraph -Scopes 'Organization.Read.All'\nGet-MgSubscribedSku | Where-Object { $_.SkuPartNumber -like '*ATP*' -or $_.SkuPartNumber -like '*DEFENDER*' } | Select-Object SkuPartNumber, ConsumedUnits"
+
+  [[categories.questions]]
+  id = "sign-in-review"
+  text = "Do you review sign-in logs regularly?"
+  options = [
+    { label = "Never", value = 0 },
+    { label = "Monthly or ad-hoc", value = 1 },
+    { label = "Weekly or automated with alerts", value = 2 }
+  ]
+  cis_ref = "6.1.3"
+  nist_ref = "AU-6"
+  iso_ref = "A.8.15"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Set up regular sign-in log review"
+  remediation_path = "Entra ID → Monitoring → Sign-in logs (filter for failures, risky sign-ins)"
+  remediation_effort = "quick"
+  remediation_script = "# Get recent risky sign-ins\nConnect-MgGraph -Scopes 'AuditLog.Read.All'\nGet-MgAuditLogSignIn -Filter \"riskLevelDuringSignIn ne 'none'\" -Top 20 | Select-Object UserDisplayName, RiskLevelDuringSignIn, CreatedDateTime, IPAddress | Format-Table"
+
+  [[categories.questions]]
+  id = "dlp-alerts"
+  text = "Are DLP alerts monitored?"
+  options = [
+    { label = "No DLP or no monitoring", value = 0 },
+    { label = "Passive (alerts generated but rarely reviewed)", value = 1 },
+    { label = "Active response with escalation process", value = 2 }
+  ]
+  cis_ref = "6.1.4"
+  nist_ref = "IR-4"
+  iso_ref = "A.5.25"
+  e8_ref = ""
+  risk_score = 5
+  remediation_title = "Set up DLP alert monitoring"
+  remediation_path = "Purview → Data loss prevention → Alerts"
+  remediation_effort = "halfday"
+  remediation_script = "# Check DLP alert configuration\nConnect-IPPSSession\nGet-DlpCompliancePolicy | Select-Object Name, Mode | Format-Table\nGet-DlpComplianceRule | Select-Object Name, NotifySender, GenerateIncidentReport | Format-Table"
+
+  [[categories.questions]]
+  id = "purview-usage"
+  text = "Is the Purview compliance portal actively used?"
+  options = [
+    { label = "No", value = 0 },
+    { label = "Occasionally for specific tasks", value = 1 },
+    { label = "Regular process with assigned compliance admin", value = 2 }
+  ]
+  cis_ref = "6.1.5"
+  nist_ref = "AU-1"
+  iso_ref = "A.5.36"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Establish regular Purview compliance reviews"
+  remediation_path = "Purview portal → Compliance Manager → Assessments"
+  remediation_effort = "halfday"
+  remediation_script = "# Access Purview Compliance Manager for score\n# Navigate to: https://compliance.microsoft.com/compliancemanager\n# Review compliance score and improvement actions"
+
+
+# ═══════════════════════════════════════════════════════════════
+# CATEGORY 8: Admin & Configuration (7 questions, weight 1.0)
+# ═══════════════════════════════════════════════════════════════
+[[categories]]
+id = "admin"
+name = "Admin & Configuration"
+icon = "⚙️"
+weight = 1.0
+
+  [[categories.questions]]
+  id = "global-admin-count"
+  text = "How many Global Administrators do you have?"
+  options = [
+    { label = "More than 5", value = 0 },
+    { label = "3 to 5", value = 1 },
+    { label = "2 or fewer (break-glass only)", value = 2 }
+  ]
+  cis_ref = "1.2.1"
+  nist_ref = "AC-6(5)"
+  iso_ref = "A.8.2"
+  e8_ref = "Restrict admin privileges"
+  risk_score = 8
+  remediation_title = "Reduce Global Administrator count"
+  remediation_path = "Entra ID → Roles → Global Administrator → Review members"
+  remediation_effort = "halfday"
+  remediation_script = "# List all Global Administrators\nConnect-MgGraph -Scopes 'RoleManagement.Read.Directory'\n$gaRole = Get-MgDirectoryRole -Filter \"displayName eq 'Global Administrator'\"\nGet-MgDirectoryRoleMember -DirectoryRoleId $gaRole.Id | ForEach-Object {\n  $_.AdditionalProperties.userPrincipalName\n}"
+
+  [[categories.questions]]
+  id = "role-review"
+  text = "Are admin role assignments reviewed regularly?"
+  options = [
+    { label = "Never reviewed", value = 0 },
+    { label = "Annually", value = 1 },
+    { label = "Quarterly or more frequently", value = 2 }
+  ]
+  cis_ref = "1.2.2"
+  nist_ref = "AC-2(3)"
+  iso_ref = "A.5.18"
+  e8_ref = "Restrict admin privileges"
+  risk_score = 6
+  remediation_title = "Establish regular admin role reviews"
+  remediation_path = "Entra ID → Identity Governance → Access reviews"
+  remediation_effort = "halfday"
+  remediation_script = "# List all directory role assignments\nConnect-MgGraph -Scopes 'RoleManagement.Read.Directory'\nGet-MgDirectoryRole | ForEach-Object {\n  $role = $_\n  $members = Get-MgDirectoryRoleMember -DirectoryRoleId $_.Id\n  [PSCustomObject]@{\n    Role = $role.DisplayName\n    MemberCount = $members.Count\n  }\n} | Where-Object { $_.MemberCount -gt 0 } | Sort-Object MemberCount -Descending | Format-Table"
+
+  [[categories.questions]]
+  id = "aad-connect"
+  text = "Is Entra Connect secured (if hybrid)?"
+  options = [
+    { label = "N/A (cloud-only)", value = 2 },
+    { label = "Basic setup", value = 1 },
+    { label = "Hardened server with monitoring", value = 2 }
+  ]
+  cis_ref = "1.3.1"
+  nist_ref = "SC-7"
+  iso_ref = "A.8.20"
+  e8_ref = ""
+  risk_score = 6
+  remediation_title = "Harden Entra Connect server"
+  remediation_path = "On-premises Entra Connect server → Security hardening guide"
+  remediation_effort = "project"
+  remediation_script = "# Check Entra Connect sync status\nConnect-MgGraph -Scopes 'Organization.Read.All'\nGet-MgOrganization | Select-Object -ExpandProperty OnPremisesSyncEnabled"
+
+  [[categories.questions]]
+  id = "licence-cleanup"
+  text = "Are unused or trial licences cleaned up?"
+  options = [
+    { label = "Never audited", value = 0 },
+    { label = "Occasionally cleaned up", value = 1 },
+    { label = "Regular quarterly audit", value = 2 }
+  ]
+  cis_ref = "1.2.3"
+  nist_ref = "CM-8(3)"
+  iso_ref = "A.5.9"
+  e8_ref = ""
+  risk_score = 3
+  remediation_title = "Audit and clean up unused licences"
+  remediation_path = "M365 admin centre → Billing → Licences → Usage"
+  remediation_effort = "halfday"
+  remediation_script = "# List all subscribed SKUs with usage\nConnect-MgGraph -Scopes 'Organization.Read.All'\nGet-MgSubscribedSku | Select-Object SkuPartNumber, ConsumedUnits, @{N='Total';E={$_.PrepaidUnits.Enabled}} | Format-Table"
+
+  [[categories.questions]]
+  id = "password-policy"
+  text = "Is password expiration set appropriately?"
+  options = [
+    { label = "Legacy 90-day expiration", value = 0 },
+    { label = "Custom policy (180+ days)", value = 1 },
+    { label = "Disabled per NIST guidance (no expiry, strong passwords, MFA)", value = 2 }
+  ]
+  cis_ref = "1.1.8"
+  nist_ref = "IA-5(1)"
+  iso_ref = "A.8.5"
+  e8_ref = ""
+  risk_score = 4
+  remediation_title = "Update password expiration policy"
+  remediation_path = "M365 admin centre → Settings → Security & privacy → Password expiration"
+  remediation_effort = "quick"
+  remediation_script = "# Check password expiration policy\nConnect-MgGraph -Scopes 'Domain.Read.All'\nGet-MgDomain | Select-Object Id, PasswordValidityPeriodInDays, PasswordNotificationWindowInDays | Format-Table"
+
+  [[categories.questions]]
+  id = "security-defaults"
+  text = "Are Security Defaults enabled (if no Conditional Access)?"
+  options = [
+    { label = "Don't know", value = 0 },
+    { label = "No (and no CA policies either)", value = 0 },
+    { label = "Yes, or using Conditional Access instead", value = 2 }
+  ]
+  cis_ref = "1.1.9"
+  nist_ref = "AC-2"
+  iso_ref = "A.8.2"
+  e8_ref = "MFA"
+  risk_score = 7
+  remediation_title = "Enable Security Defaults or deploy CA"
+  remediation_path = "Entra ID → Properties → Manage Security defaults"
+  remediation_effort = "quick"
+  remediation_script = "# Check Security Defaults status\nConnect-MgGraph -Scopes 'Policy.Read.All'\nGet-MgPolicyIdentitySecurityDefaultEnforcementPolicy | Select-Object IsEnabled"
+
+  [[categories.questions]]
+  id = "org-branding"
+  text = "Is organisational branding configured (to help users spot phishing)?"
+  options = [
+    { label = "No branding", value = 0 },
+    { label = "Basic logo only", value = 1 },
+    { label = "Full branding with sign-in page customisation", value = 2 }
+  ]
+  cis_ref = "1.4.1"
+  nist_ref = "AT-2"
+  iso_ref = "A.6.3"
+  e8_ref = ""
+  risk_score = 3
+  remediation_title = "Configure organisational branding"
+  remediation_path = "Entra ID → Company branding → Configure"
+  remediation_effort = "quick"
+  remediation_script = "# Check organisation branding\nConnect-MgGraph -Scopes 'Organization.Read.All'\nGet-MgOrganizationBranding | Select-Object Id, SignInPageText, BackgroundColor"

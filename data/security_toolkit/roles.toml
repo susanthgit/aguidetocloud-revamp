@@ -1,0 +1,160 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 SECURITY TOOLKIT — Admin Roles Data (Phase 2)
+# ═══════════════════════════════════════════════════════════════
+
+[[roles]]
+id = "global-admin"
+name = "Global Administrator"
+icon = "👑"
+description = "Full access to all admin features. Use for break-glass accounts only."
+recommended_count_small = "2 (break-glass only)"
+recommended_count_medium = "2 (break-glass only)"
+recommended_count_large = "2 (break-glass only)"
+best_practice = "MFA + PIM + phishing-resistant auth. Never use for daily work."
+entra_role_id = "62e90394-69f5-4237-9190-012177145e10"
+risk_level = "critical"
+
+[[roles]]
+id = "exchange-admin"
+name = "Exchange Administrator"
+icon = "📧"
+description = "Email management, transport rules, quarantine, mailbox policies."
+recommended_count_small = "1"
+recommended_count_medium = "1-2"
+recommended_count_large = "2-3"
+best_practice = "Separate from Global Admin. Handles mail flow, anti-spam, and mailbox permissions."
+entra_role_id = "29232cdf-9323-42fd-ade2-1d097af3e4de"
+risk_level = "high"
+
+[[roles]]
+id = "sharepoint-admin"
+name = "SharePoint Administrator"
+icon = "📁"
+description = "Site management, sharing policies, storage, and site lifecycle."
+recommended_count_small = "1"
+recommended_count_medium = "1-2"
+recommended_count_large = "2-3"
+best_practice = "Separate from Global Admin. Can overlap with Teams Admin in small orgs."
+entra_role_id = "f28a1f50-f6e7-4571-818b-6a12f2af6b6c"
+risk_level = "high"
+
+[[roles]]
+id = "teams-admin"
+name = "Teams Administrator"
+icon = "💬"
+description = "Teams policies, voice, meetings, messaging, and app management."
+recommended_count_small = "1"
+recommended_count_medium = "1"
+recommended_count_large = "1-2"
+best_practice = "Can overlap with SharePoint Admin in small orgs. Handles meeting policies and calling."
+entra_role_id = "69091246-20e8-4a56-aa4d-066075b2a7a8"
+risk_level = "medium"
+
+[[roles]]
+id = "security-admin"
+name = "Security Administrator"
+icon = "🛡️"
+description = "Defender configuration, threat management, security investigations."
+recommended_count_small = "1"
+recommended_count_medium = "1-2"
+recommended_count_large = "2-3"
+best_practice = "Must NOT also hold Global Admin. Handles Defender, Secure Score, threat hunting."
+entra_role_id = "194ae4cb-b126-40b2-bd5b-6091b380977d"
+risk_level = "high"
+
+[[roles]]
+id = "compliance-admin"
+name = "Compliance Administrator"
+icon = "📋"
+description = "Purview, DLP, retention, eDiscovery, information protection."
+recommended_count_small = "0-1"
+recommended_count_medium = "1"
+recommended_count_large = "1-2"
+best_practice = "Separate from Security Admin for separation of duties. Critical in regulated industries."
+entra_role_id = "17315797-102d-40b4-93e0-432062caca18"
+risk_level = "medium"
+
+[[roles]]
+id = "user-admin"
+name = "User Administrator"
+icon = "👤"
+description = "User lifecycle, password resets, licence assignment, group management."
+recommended_count_small = "1"
+recommended_count_medium = "1-2"
+recommended_count_large = "2-3"
+best_practice = "Most delegated role. Handles day-to-day user management without Global Admin."
+entra_role_id = "fe930be7-5e62-47db-91af-98c3a49a38b1"
+risk_level = "medium"
+
+[[roles]]
+id = "helpdesk-admin"
+name = "Helpdesk Administrator"
+icon = "🎧"
+description = "Password resets and basic user support. Cannot modify admin accounts."
+recommended_count_small = "1"
+recommended_count_medium = "2-3"
+recommended_count_large = "3-5"
+best_practice = "Lowest privilege for L1 support. Cannot reset passwords for admins."
+entra_role_id = "729827e3-9c14-49f7-bb1b-9608f156bbb8"
+risk_level = "low"
+
+
+# ── Org Size Recommendations ──────────────────────────────────
+[[org_sizes]]
+id = "small"
+label = "Small (under 100 users)"
+min_users = 1
+max_users = 99
+total_admins = "3-5 people total"
+overlap_ok = true
+notes = "Some role overlap is acceptable. Combine SharePoint + Teams Admin. One person can cover Security + Compliance."
+
+[[org_sizes]]
+id = "medium"
+label = "Medium (100-500 users)"
+min_users = 100
+max_users = 500
+total_admins = "5-8 people"
+overlap_ok = false
+notes = "Dedicated roles recommended. Separate Security from Compliance. Enable PIM for all admin roles."
+
+[[org_sizes]]
+id = "large"
+label = "Large (500+ users)"
+min_users = 501
+max_users = 99999
+total_admins = "8-15 people"
+overlap_ok = false
+notes = "Full separation of duties. PIM mandatory. Consider Administrative Units for delegated management. Regular access reviews."
+
+
+# ── Industry-Specific Recommendations ─────────────────────────
+[[industries]]
+id = "general"
+name = "General Business"
+extra_roles = []
+notes = "Standard role structure above is sufficient."
+
+[[industries]]
+id = "financial"
+name = "Financial Services"
+extra_roles = ["compliance-admin"]
+notes = "Add a dedicated Compliance Admin even at small org size. Regulatory requirements demand separation of duties."
+
+[[industries]]
+id = "healthcare"
+name = "Healthcare"
+extra_roles = ["compliance-admin"]
+notes = "HIPAA requirements mandate strict access controls. Compliance Admin role is essential. Audit logging non-negotiable."
+
+[[industries]]
+id = "government"
+name = "Government"
+extra_roles = ["compliance-admin", "security-admin"]
+notes = "Zero Trust architecture. All admin roles via PIM. Phishing-resistant MFA mandatory. Consider FedRAMP alignment."
+
+[[industries]]
+id = "education"
+name = "Education"
+extra_roles = []
+notes = "Student vs staff admin separation. Guest access for parents and external partners. Teams meeting policies for online learning."

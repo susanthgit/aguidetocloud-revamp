@@ -599,6 +599,270 @@
 /* Nav accent */
 .page-site-analytics .site-nav { border-bottom-color: #64748B; }
 
+/* ── MORNING BRIEF ─────────────────── */
+.siteana-brief {
+  margin-bottom: 1.5rem;
+}
+
+.siteana-brief-inner {
+  background: linear-gradient(135deg, rgba(100,116,139,0.12), rgba(100,116,139,0.04));
+  border: 1px solid rgba(100,116,139,0.25);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.siteana-brief-inner strong { color: #fff; }
+
+/* ── SINCE LAST VISIT ─────────────── */
+.siteana-since { margin-bottom: 1.25rem; }
+
+.siteana-since-inner {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.siteana-since-inner strong { color: #10B981; }
+
+/* ── HEALTH SCORE ─────────────────── */
+.siteana-grid-health {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.siteana-health-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.siteana-health-info { margin-top: 0.5rem; }
+
+.siteana-health-score {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.siteana-health-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.siteana-health-sub {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.35);
+  display: block;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .siteana-grid-health { grid-template-columns: 1fr; }
+  .siteana-health-card { flex-direction: row; gap: 1rem; padding: 1rem; }
+}
+
+/* ── HEATMAP CALENDAR ─────────────── */
+.siteana-heatmap-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.siteana-hm-cell {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  position: relative;
+}
+
+.siteana-hm-label {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+}
+
+.siteana-hm-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.siteana-hm-legend-cell {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── HEARTBEAT PULSE ──────────────── */
+.siteana-heartbeat-stat {
+  border-color: rgba(239,68,68,0.3) !important;
+  background: rgba(239,68,68,0.06) !important;
+}
+
+.siteana-pulse-wrap {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-bottom: 0.25rem;
+}
+
+.siteana-pulse-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #EF4444;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.siteana-pulse-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid #EF4444;
+  border-radius: 50%;
+  animation: siteana-pulse 1.5s ease-out infinite;
+}
+
+@keyframes siteana-pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── SMART ALERTS ─────────────────── */
+.siteana-alert {
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.siteana-alert-warn {
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.2);
+  color: #FBBF24;
+}
+
+.siteana-alert-info {
+  background: rgba(100,116,139,0.08);
+  border: 1px solid rgba(100,116,139,0.2);
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── CONTENT GAPS ─────────────────── */
+.siteana-gap-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.siteana-gap-item:last-child { border-bottom: none; }
+
+.siteana-gap-cat {
+  font-weight: 700;
+  color: #FB923C;
+  text-transform: capitalize;
+  font-size: 0.88rem;
+}
+
+.siteana-gap-hint {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── YOUTUBE TAB ──────────────────── */
+.siteana-yt-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.siteana-yt-video {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: center;
+}
+
+.siteana-yt-video:last-child { border-bottom: none; }
+
+.siteana-yt-thumb {
+  width: 120px;
+  height: 68px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.siteana-yt-info { flex: 1; min-width: 0; }
+
+.siteana-yt-title {
+  display: block;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siteana-yt-title:hover { color: #EF4444; }
+
+.siteana-yt-meta {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.2rem;
+}
+
+.siteana-yt-freq {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .siteana-yt-thumb { width: 80px; height: 45px; }
+}
+
 /* ── BIGGEST MOVERS ────────────────── */
 .siteana-movers {
   display: flex;

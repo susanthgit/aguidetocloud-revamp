@@ -23,6 +23,12 @@
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
+    <!-- Heartbeat -->
+    <div class="siteana-stat siteana-heartbeat-stat" id="sa-heartbeat" style="display:none">
+      <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
+      <span class="siteana-stat-num" id="sa-live-count">0</span>
+      <span class="siteana-stat-label">Live Now</span>
+    </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-views">—</span>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
@@ -65,20 +71,34 @@
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="growth">Growth</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="seo">SEO</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="youtube">YouTube</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
   <!-- Tab: Overview -->
   <div class="siteana-panel active" id="panel-overview" role="tabpanel">
-    <div class="siteana-grid-2">
+    <!-- Morning Brief -->
+    <div class="siteana-brief" id="sa-brief" style="display:none"></div>
+    <!-- Since Last Visit -->
+    <div class="siteana-since" id="sa-since" style="display:none"></div>
+    <!-- Health Score + Charts row -->
+    <div class="siteana-grid-health">
+      <div class="siteana-health-card" id="sa-health" style="display:none">
+        <canvas id="sa-health-ring" width="140" height="140"></canvas>
+        <div class="siteana-health-info">
+          <span class="siteana-health-score" id="sa-health-num">—</span>
+          <span class="siteana-health-label">Site Health</span>
+          <span class="siteana-health-sub" id="sa-health-sub"></span>
+        </div>
+      </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Traffic Trend</h3>
         <canvas id="sa-trend-chart" height="220"></canvas>
       </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Activity Breakdown</h3>
-        <canvas id="sa-activity-chart" height="220"></canvas>
-      </div>
+    </div>
+    <div class="siteana-card" style="margin-bottom:1.5rem">
+      <h3 class="siteana-card-title">Activity Breakdown</h3>
+      <canvas id="sa-activity-chart" height="220"></canvas>
     </div>
     <!-- Biggest Movers -->
     <div class="siteana-card" id="sa-movers-card" style="display:none">
@@ -162,6 +182,8 @@
 
   <!-- Tab: Growth -->
   <div class="siteana-panel" id="panel-growth" role="tabpanel">
+    <!-- Smart Alerts -->
+    <div id="sa-alerts" style="display:none"></div>
     <!-- Cumulative Counter -->
     <div class="siteana-cumulative" id="sa-cumulative">
       <span class="siteana-cumul-num" id="sa-cumul-count">—</span>
@@ -176,6 +198,11 @@
     <div class="siteana-card">
       <h3 class="siteana-card-title">Milestones</h3>
       <div class="siteana-milestone-timeline" id="sa-milestones"></div>
+    </div>
+    <!-- Activity Heatmap -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Activity Heatmap</h3>
+      <div id="sa-heatmap"></div>
     </div>
     <!-- Weekly Breakdown -->
     <div class="siteana-card">
@@ -272,6 +299,41 @@
           <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "cert-tracker") }}</span>
           <span>Cert Guides</span>
         </div>
+      </div>
+    </div>
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Content Gaps</h3>
+      <p class="siteana-hint">Tool categories with search demand but no ranking queries</p>
+      <div id="sa-content-gaps"></div>
+    </div>
+  </div>
+
+  <!-- Tab: YouTube -->
+  <div class="siteana-panel" id="panel-youtube" role="tabpanel">
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Main Channel</h3>
+        <p class="siteana-hint">A Guide to Cloud &amp; AI</p>
+        <div id="sa-yt-main"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Bites Channel</h3>
+        <p class="siteana-hint">A Guide to Cloud &amp; AI — Bites</p>
+        <div id="sa-yt-bites"></div>
+      </div>
+    </div>
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Recent Uploads</h3>
+      <div id="sa-yt-recent"></div>
+    </div>
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Top Performers</h3>
+        <div id="sa-yt-top"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Upload Frequency</h3>
+        <div id="sa-yt-frequency"></div>
       </div>
     </div>
   </div>

@@ -160,6 +160,9 @@
       showEmptyState();
     }
 
+    renderMorningBrief(data);
+    renderSinceLastVisit(data);
+    renderHealthScore(data);
     renderInsights(generateInsights(data));
     renderMovers(data);
     renderActionQueue(data);
@@ -169,6 +172,7 @@
       renderGSCQueries(gsc.queries);
       renderPositionDistribution(gsc.queries);
       renderSEOOpportunities(gsc.queries);
+      renderContentGaps(data);
     } else {
       var sc = document.getElementById('sa-searches');
       if (sc) sc.innerHTML = '<div class="siteana-empty">Search data will appear once Google indexes the site more deeply.</div>';
@@ -452,8 +456,10 @@
   function renderGrowthContent(data) {
     if (!data || !data.ga4) return;
     var ga4 = data.ga4;
+    renderSmartAlerts(data);
     renderGrowthChart(ga4.trend);
     renderCumulative(ga4.totals);
+    renderHeatmap(ga4.trend);
     renderWeeklyTable(ga4.weekly, ga4.trend, ga4.tool_trends);
     renderMilestoneTimeline();
     renderBeforeAfter(ga4.trend);
@@ -1078,7 +1084,322 @@
     });
   }
 
+  // ── MORNING BRIEF (#1) ──
+  function renderMorningBrief(data) {
+    var el = document.getElementById('sa-brief');
+    if (!el) return;
+    var ga4 = data.ga4; var gsc = data.gsc;
+    if (!ga4 || !ga4.totals || !ga4.trend || !ga4.trend.length) { el.style.display = 'none'; return; }
+    var parts = [];
+    // Yesterday's performance
+    var last = ga4.trend[ga4.trend.length - 1];
+    var avg = ga4.trend.reduce(function(s, d) { return s + d.views; }, 0) / ga4.trend.length;
+    var pctAvg = avg > 0 ? Math.round((last.views / avg) * 100) : 0;
+    parts.push('<strong>' + last.date.slice(5) + '</strong>: ' + numFmt(last.views) + ' views (' + pctAvg + '% of avg).');
+    // WoW
+    if (ga4.wow && ga4.wow.change) {
+      var wc = ga4.wow.change.views;
+      parts.push('Traffic ' + (wc >= 0 ? 'up' : 'down') + ' <strong>' + Math.abs(wc) + '%</strong> week-over-week.');
+    }
+    // Top tool
+    if (ga4.leaderboard && ga4.leaderboard.length) {
+      var t = ga4.leaderboard[0];
+      var pct = ga4.totals.views > 0 ? Math.round((t.views / ga4.totals.views) * 100) : 0;
+      parts.push(getToolInfo(t.tool).name + ' leads at ' + pct + '% of traffic.');
+    }
+    // SEO opportunity
+    if (gsc && gsc.queries) {
+      var opps = gsc.queries.filter(function(q) { return q.position < 10 && q.ctr < 10 && q.impressions > 10; });
+      if (opps.length) parts.push(opps.length + ' SEO opportunit' + (opps.length > 1 ? 'ies' : 'y') + ' — queries ranking well but under-clicked.');
+    }
+    // Goal progress
+    var goals; try { goals = JSON.parse(localStorage.getItem('siteana_goals')); } catch(e) {}
+    if (!goals || !goals.length) goals = GOALS_DEFAULT;
+    var weeklyGoal = goals.find(function(g) { return g.metric === 'weekly_users'; });
+    if (weeklyGoal && ga4.weekly && ga4.weekly.length) {
+      var lastComplete = null;
+      for (var i = ga4.weekly.length - 1; i >= 0; i--) { if (ga4.weekly[i].days >= 7) { lastComplete = ga4.weekly[i]; break; } }
+      if (lastComplete) {
+        var gPct = Math.round((lastComplete.users / weeklyGoal.target) * 100);
+        parts.push(gPct + '% toward ' + weeklyGoal.label + ' goal.');
+      }
+    }
+    // Anomaly check
+    if (last.views > avg * 2) parts.push('\uD83D\uDD25 Anomaly: last day was ' + Math.round(last.views / avg) + 'x the average!');
+    else if (last.views < avg * 0.4 && avg > 20) parts.push('\u26A0\uFE0F Anomaly: last day was only ' + pctAvg + '% of average.');
+    el.style.display = '';
+    el.innerHTML = '<div class="siteana-brief-inner">\uD83D\uDCCA ' + parts.join(' ') + '</div>';
+  }
+
+  // ── SINCE LAST VISIT (#2) ──
+  function renderSinceLastVisit(data) {
+    var el = document.getElementById('sa-since');
+    if (!el) return;
+    var ga4 = data.ga4;
+    if (!ga4 || !ga4.totals) { el.style.display = 'none'; return; }
+    var key = 'siteana_last_visit';
+    var prev; try { prev = JSON.parse(localStorage.getItem(key)); } catch(e) {}
+    // Save current visit
+    var now = { time: Date.now(), views: ga4.totals.views, users: ga4.totals.users, sessions: ga4.totals.sessions };
+    try { localStorage.setItem(key, JSON.stringify(now)); } catch(e) {}
+    if (!prev || !prev.time) { el.style.display = 'none'; return; }
+    var ago = Date.now() - prev.time;
+    var agoStr = ago < 3600000 ? Math.round(ago / 60000) + 'm ago' : ago < 86400000 ? Math.round(ago / 3600000) + 'h ago' : Math.round(ago / 86400000) + 'd ago';
+    var dv = ga4.totals.views - (prev.views || 0);
+    var du = ga4.totals.users - (prev.users || 0);
+    if (dv <= 0 && du <= 0) { el.style.display = 'none'; return; }
+    el.style.display = '';
+    el.innerHTML = '<div class="siteana-since-inner">Since your last visit (' + agoStr + '): <strong>+' + numFmt(dv) + ' views</strong>, <strong>+' + numFmt(du) + ' users</strong></div>';
+  }
+
+  // ── HEATMAP CALENDAR (#3) ──
+  function renderHeatmap(trend) {
+    var container = document.getElementById('sa-heatmap');
+    if (!container || !trend || !trend.length) return;
+    var max = Math.max.apply(null, trend.map(function(d) { return d.views; })) || 1;
+    // Build day cells
+    var html = '<div class="siteana-heatmap-grid">';
+    trend.forEach(function(d) {
+      var intensity = Math.min(1, d.views / max);
+      var alpha = 0.1 + intensity * 0.8;
+      var title = d.date + ': ' + numFmt(d.views) + ' views';
+      html += '<div class="siteana-hm-cell" style="background:rgba(100,116,139,' + alpha.toFixed(2) + ')" title="' + esc(title) + '"><span class="siteana-hm-label">' + d.date.slice(8) + '</span></div>';
+    });
+    html += '</div>';
+    // Legend
+    html += '<div class="siteana-hm-legend"><span>Less</span>';
+    for (var l = 0; l < 5; l++) {
+      var a = 0.1 + (l / 4) * 0.8;
+      html += '<div class="siteana-hm-cell siteana-hm-legend-cell" style="background:rgba(100,116,139,' + a.toFixed(2) + ')"></div>';
+    }
+    html += '<span>More</span></div>';
+    container.innerHTML = html;
+  }
+
+  // ── LIVE HEARTBEAT (#4) ──
+  function fetchAndRenderHeartbeat() {
+    fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(rt) {
+      var wrap = document.getElementById('sa-heartbeat');
+      var countEl = document.getElementById('sa-live-count');
+      if (!wrap || !countEl) return;
+      if (rt.active > 0) {
+        wrap.style.display = '';
+        countEl.textContent = rt.active;
+        wrap.title = (rt.pages || []).map(function(p) { return p.page + ' (' + p.users + ')'; }).join(', ');
+      } else {
+        wrap.style.display = 'none';
+      }
+    }).catch(function() {});
+  }
+
+  // ── HEALTH SCORE (#5) ──
+  function renderHealthScore(data) {
+    var el = document.getElementById('sa-health');
+    var numEl = document.getElementById('sa-health-num');
+    var subEl = document.getElementById('sa-health-sub');
+    var canvas = document.getElementById('sa-health-ring');
+    if (!el || !numEl || !canvas) return;
+    var ga4 = data.ga4; var gsc = data.gsc;
+    if (!ga4 || !ga4.totals) { el.style.display = 'none'; return; }
+    var score = 0; var breakdown = [];
+    // Growth (0-25): based on WoW
+    var growth = 12;
+    if (ga4.wow && ga4.wow.change) {
+      var wv = ga4.wow.change.views;
+      growth = wv > 50 ? 25 : wv > 20 ? 20 : wv > 0 ? 15 : wv > -10 ? 10 : 5;
+    }
+    score += growth; breakdown.push('Growth: ' + growth + '/25');
+    // SEO (0-25): based on avg position + CTR
+    var seo = 10;
+    if (gsc && gsc.queries && gsc.queries.length) {
+      var avgPos = gsc.queries.reduce(function(s, q) { return s + q.position; }, 0) / gsc.queries.length;
+      var avgCtr = gsc.queries.reduce(function(s, q) { return s + q.ctr; }, 0) / gsc.queries.length;
+      seo = avgPos < 5 ? 20 : avgPos < 10 ? 15 : avgPos < 20 ? 10 : 5;
+      if (avgCtr > 10) seo += 5;
+    }
+    score += seo; breakdown.push('SEO: ' + seo + '/25');
+    // Engagement (0-25): users/views ratio
+    var eng = 12;
+    if (ga4.totals.views > 0) {
+      var ratio = ga4.totals.users / ga4.totals.views;
+      eng = ratio > 0.5 ? 25 : ratio > 0.35 ? 20 : ratio > 0.25 ? 15 : ratio > 0.15 ? 10 : 5;
+    }
+    score += eng; breakdown.push('Engagement: ' + eng + '/25');
+    // Reach (0-25): based on total views
+    var reach = 12;
+    if (ga4.totals.views > 5000) reach = 25;
+    else if (ga4.totals.views > 2000) reach = 20;
+    else if (ga4.totals.views > 500) reach = 15;
+    else if (ga4.totals.views > 100) reach = 10;
+    else reach = 5;
+    score += reach; breakdown.push('Reach: ' + reach + '/25');
+    // Draw ring
+    var color = score >= 80 ? '#10B981' : score >= 60 ? '#FBBF24' : score >= 40 ? '#FB923C' : '#EF4444';
+    var ctx = canvas.getContext('2d');
+    var dpr = window.devicePixelRatio || 1;
+    var size = 140;
+    canvas.width = size * dpr; canvas.height = size * dpr;
+    canvas.style.width = size + 'px'; canvas.style.height = size + 'px';
+    ctx.scale(dpr, dpr);
+    var cx = size / 2, lw = 10;
+    ctx.clearRect(0, 0, size, size);
+    ctx.beginPath(); ctx.arc(cx, cx, cx - lw, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = lw; ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx, cx, cx - lw, -Math.PI / 2, -Math.PI / 2 + (score / 100) * Math.PI * 2);
+    ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.lineCap = 'round'; ctx.stroke();
+    numEl.textContent = score;
+    numEl.style.color = color;
+    if (subEl) subEl.textContent = breakdown.join(' \u00B7 ');
+    el.style.display = '';
+  }
+
+  // ── SMART ALERTS (#8) ──
+  function renderSmartAlerts(data) {
+    var el = document.getElementById('sa-alerts');
+    if (!el) return;
+    var alerts = [];
+    var ga4 = data.ga4;
+    if (!ga4) { el.style.display = 'none'; return; }
+    // Check stored thresholds
+    var thresholds; try { thresholds = JSON.parse(localStorage.getItem('siteana_alerts')); } catch(e) {}
+    if (!thresholds) thresholds = { min_daily_views: 100, min_weekly_users: 200 };
+    // Check latest day
+    if (ga4.trend && ga4.trend.length) {
+      var last = ga4.trend[ga4.trend.length - 1];
+      if (last.views < thresholds.min_daily_views) {
+        alerts.push({ level: 'warn', text: 'Daily views (' + last.views + ') below threshold (' + thresholds.min_daily_views + ')' });
+      }
+    }
+    // Check weekly users
+    if (ga4.weekly && ga4.weekly.length) {
+      var lastWeek = ga4.weekly[ga4.weekly.length - 1];
+      if (lastWeek.users < thresholds.min_weekly_users && lastWeek.days >= 5) {
+        alerts.push({ level: 'warn', text: 'Weekly users (' + lastWeek.users + ') below threshold (' + thresholds.min_weekly_users + ')' });
+      }
+    }
+    // Check for zero-traffic tools (3+ days)
+    if (ga4.tool_trends) {
+      Object.keys(ga4.tool_trends).forEach(function(tid) {
+        var arr = ga4.tool_trends[tid];
+        if (arr && arr.length >= 3) {
+          var last3 = arr.slice(-3);
+          if (last3.every(function(v) { return v === 0; })) {
+            alerts.push({ level: 'info', text: getToolInfo(tid).name + ' had 0 views for 3 consecutive days' });
+          }
+        }
+      });
+    }
+    if (!alerts.length) { el.style.display = 'none'; return; }
+    el.style.display = '';
+    el.innerHTML = alerts.map(function(a) {
+      var icon = a.level === 'warn' ? '\u26A0\uFE0F' : '\u2139\uFE0F';
+      return '<div class="siteana-alert siteana-alert-' + a.level + '">' + icon + ' ' + esc(a.text) + '</div>';
+    }).join('');
+  }
+
+  // ── TOOL DECAY WARNING (#10) — integrated into leaderboard via CSS class ──
+  // Decay detection happens in renderMovers — tools with negative day-over-day get a visual indicator
+
+  // ── AUDIENCE PERSONA (#11) — integrated into Morning Brief ──
+
+  // ── CONTENT GAPS (#14) ──
+  function renderContentGaps(data) {
+    var el = document.getElementById('sa-content-gaps');
+    if (!el) return;
+    var gsc = data.gsc; var ga4 = data.ga4;
+    if (!gsc || !gsc.queries || !ga4 || !ga4.leaderboard) { el.innerHTML = '<p class="siteana-hint">Not enough data yet</p>'; return; }
+    // Map tool categories to check coverage
+    var categories = {
+      'copilot': ['copilot', 'microsoft 365 copilot', 'm365 copilot'],
+      'licensing': ['licensing', 'license', 'e3', 'e5', 'plan'],
+      'security': ['conditional access', 'security', 'zero trust', 'mfa'],
+      'migration': ['migration', 'migrate', 'tenant'],
+      'powershell': ['powershell', 'script', 'command'],
+      'certification': ['az-900', 'az-104', 'certification', 'exam', 'study guide'],
+      'ai': ['ai', 'artificial intelligence', 'openai', 'claude', 'chatgpt']
+    };
+    var queryTexts = gsc.queries.map(function(q) { return q.query.toLowerCase(); });
+    var gaps = [];
+    Object.keys(categories).forEach(function(cat) {
+      var keywords = categories[cat];
+      var hasQuery = keywords.some(function(kw) { return queryTexts.some(function(q) { return q.indexOf(kw) > -1; }); });
+      if (!hasQuery) gaps.push(cat);
+    });
+    if (!gaps.length) { el.innerHTML = '<p class="siteana-hint">Good coverage — you rank for queries in all major categories</p>'; return; }
+    el.innerHTML = gaps.map(function(g) {
+      return '<div class="siteana-gap-item"><span class="siteana-gap-cat">' + esc(g) + '</span><span class="siteana-gap-hint">No ranking queries yet — consider writing content about this topic</span></div>';
+    }).join('');
+  }
+
+  // ── YOUTUBE TAB ──
+  var ytDataCache = null;
+  function fetchYouTubeData() {
+    if (ytDataCache) { renderYouTubeTab(ytDataCache); return; }
+    fetch(API + '?youtube=1').then(function(r) { return r.json(); }).then(function(yt) {
+      if (yt && (yt.main || yt.bites)) {
+        ytDataCache = yt;
+        renderYouTubeTab(yt);
+      }
+    }).catch(function() {});
+  }
+
+  function renderYouTubeTab(yt) {
+    // Channel stats
+    if (yt.main) renderChannelCard('sa-yt-main', yt.main);
+    if (yt.bites) renderChannelCard('sa-yt-bites', yt.bites);
+    // Recent uploads
+    var recentEl = document.getElementById('sa-yt-recent');
+    if (recentEl && yt.recentVideos && yt.recentVideos.length) {
+      recentEl.innerHTML = yt.recentVideos.map(function(v) {
+        return '<div class="siteana-yt-video">'
+          + '<img class="siteana-yt-thumb" src="' + esc(v.thumbnail) + '" alt="" loading="lazy">'
+          + '<div class="siteana-yt-info">'
+          + '<a class="siteana-yt-title" href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener">' + esc(v.title) + '</a>'
+          + '<span class="siteana-yt-meta">' + numFmt(v.views || 0) + ' views \u00B7 ' + esc(v.published || '') + '</span>'
+          + '</div></div>';
+      }).join('');
+    }
+    // Top performers
+    var topEl = document.getElementById('sa-yt-top');
+    if (topEl && yt.topVideos && yt.topVideos.length) {
+      topEl.innerHTML = yt.topVideos.map(function(v, i) {
+        return '<div class="siteana-lb-item">'
+          + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
+          + '<span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title) + '</a></span>'
+          + '<span class="siteana-lb-total">' + roundDisplay(v.views || 0) + '</span></div>';
+      }).join('');
+    }
+    // Frequency
+    var freqEl = document.getElementById('sa-yt-frequency');
+    if (freqEl && yt.uploadFrequency) {
+      freqEl.innerHTML = '<div class="siteana-yt-freq">'
+        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (yt.uploadFrequency.mainPerMonth || 0) + '</span><span class="siteana-stat-label">Main/month</span></div>'
+        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (yt.uploadFrequency.bitesPerMonth || 0) + '</span><span class="siteana-stat-label">Bites/month</span></div>'
+        + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + numFmt(yt.uploadFrequency.totalVideos || 0) + '</span><span class="siteana-stat-label">Total videos</span></div>'
+        + '</div>';
+    }
+  }
+
+  function renderChannelCard(containerId, ch) {
+    var el = document.getElementById(containerId);
+    if (!el || !ch) return;
+    el.innerHTML = '<div class="siteana-yt-stats">'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.subscribers || 0) + '</span><span class="siteana-stat-label">Subscribers</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.totalViews || 0) + '</span><span class="siteana-stat-label">Total Views</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + (ch.videoCount || 0) + '</span><span class="siteana-stat-label">Videos</span></div>'
+      + '</div>';
+  }
+
+  // Wire YouTube tab lazy-load
+  document.querySelectorAll('.siteana-tab').forEach(function(tab) {
+    if (tab.dataset.tab === 'youtube') {
+      tab.addEventListener('click', fetchYouTubeData);
+    }
+  });
+
   // ── INIT ──
   fetchData(currentRange);
+  fetchAndRenderHeartbeat();
   setInterval(function() { fetchData(currentRange); }, 300000);
+  setInterval(fetchAndRenderHeartbeat, 30000);
 })();

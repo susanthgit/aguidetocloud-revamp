@@ -1,0 +1,514 @@
+/* ── M365 Security Toolkit ──
+   Accent: Shield Green #41A235
+   Namespace: .sectool-*
+*/
+
+.sectool-page {
+  --sectool-accent: #41A235;
+  --sectool-accent-dim: rgba(65, 162, 53, 0.15);
+  --sectool-accent-glow: rgba(65, 162, 53, 0.25);
+  --sectool-accent-bright: #5BC44A;
+  --score-red: #EF4444;
+  --score-orange: #F97316;
+  --score-yellow: #EAB308;
+  --score-green: #22C55E;
+  --score-star: #41A235;
+}
+
+/* ── Glass Pill Tabs ── */
+.sectool-tabs {
+  display: flex; gap: 0.4rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; margin-bottom: 1.5rem;
+  overflow-x: auto; scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sectool-tabs::-webkit-scrollbar { display: none; }
+.sectool-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.8rem; font-weight: 600;
+  padding: 0.55rem 0.9rem; cursor: pointer; border-radius: 12px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.sectool-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.sectool-tab.active {
+  color: #fff; background: var(--sectool-accent); border-color: var(--sectool-accent);
+  box-shadow: 0 2px 8px var(--sectool-accent-glow);
+}
+.sectool-panel { display: none; }
+.sectool-panel.active { display: block; }
+
+/* ── Container ── */
+.sectool-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Section Headers ── */
+.sectool-section-title {
+  font-family: var(--font-heading, Inter, sans-serif);
+  font-size: 1.3rem; color: #fff; margin: 0 0 0.5rem;
+}
+.sectool-section-desc {
+  color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem;
+}
+
+/* ══════════════════════════════════════════════════════════════ */
+/* ASSESSMENT                                                    */
+/* ══════════════════════════════════════════════════════════════ */
+
+/* Category skip-to nav */
+.sectool-cat-nav {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; justify-content: center;
+}
+.sectool-cat-nav-btn {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.75rem; font-weight: 600;
+  color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 0.3rem;
+}
+.sectool-cat-nav-btn:hover { border-color: var(--sectool-accent); color: #fff; }
+.sectool-cat-nav-btn.active { background: var(--sectool-accent-dim); border-color: var(--sectool-accent); color: #fff; }
+.sectool-cat-nav-btn .sectool-cat-nav-score {
+  font-size: 0.65rem; opacity: 0.7; margin-left: 0.2rem;
+}
+
+/* Progress bar */
+.sectool-progress-wrap { margin-bottom: 1.5rem; }
+.sectool-progress-bar {
+  height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;
+}
+.sectool-progress-fill {
+  height: 100%; background: var(--sectool-accent); border-radius: 3px;
+  transition: width 0.3s ease; width: 0%;
+}
+.sectool-progress-text {
+  display: block; text-align: center; margin-top: 0.5rem;
+  font-size: 0.78rem; color: rgba(255,255,255,0.4);
+}
+
+/* Category indicator */
+.sectool-cat-indicator {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1rem; padding: 0.5rem 0;
+}
+.sectool-cat-icon { font-size: 1.3rem; }
+.sectool-cat-name { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+
+/* Question card */
+.sectool-question-card {
+  background: rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem;
+}
+.sectool-question-text {
+  font-size: 1.05rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem; line-height: 1.5;
+}
+.sectool-question-context {
+  font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.5;
+  margin: 0 0 0.75rem; font-style: italic;
+}
+.sectool-time-estimate {
+  display: block; text-align: center; font-size: 0.72rem;
+  color: rgba(255,255,255,0.3); margin-top: 0.25rem;
+}
+.sectool-compliance-refs {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;
+}
+.sectool-ref-badge {
+  font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.5rem;
+  border-radius: 4px; background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+}
+
+/* Options */
+.sectool-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.sectool-option {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0.85rem 1rem; cursor: pointer;
+  transition: all 0.2s ease; color: rgba(255,255,255,0.7); font-size: 0.9rem;
+}
+.sectool-option:hover {
+  border-color: var(--sectool-accent); background: var(--sectool-accent-dim); color: #fff;
+}
+.sectool-option.selected {
+  border-color: var(--sectool-accent); background: var(--sectool-accent-dim); color: #fff;
+  box-shadow: 0 0 0 2px var(--sectool-accent-glow);
+}
+
+/* Navigation buttons */
+.sectool-nav { display: flex; gap: 0.75rem; justify-content: center; margin-top: 0.5rem; }
+.sectool-btn-primary {
+  background: var(--sectool-accent); color: #fff; border: none;
+  padding: 0.7rem 1.5rem; border-radius: 10px; font-weight: 600;
+  font-size: 0.88rem; cursor: pointer; transition: all 0.2s;
+}
+.sectool-btn-primary:hover { filter: brightness(1.1); box-shadow: 0 4px 12px var(--sectool-accent-glow); }
+.sectool-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; filter: none; box-shadow: none; }
+.sectool-btn-secondary {
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.7rem 1.5rem; border-radius: 10px; font-weight: 600;
+  font-size: 0.88rem; cursor: pointer; transition: all 0.2s;
+}
+.sectool-btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
+.sectool-btn-secondary:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* ══════════════════════════════════════════════════════════════ */
+/* RESULTS                                                       */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-score-section { text-align: center; margin-bottom: 2rem; }
+.sectool-score-header { display: flex; align-items: center; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.sectool-score-ring { position: relative; width: 130px; height: 130px; }
+.sectool-score-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.sectool-ring-bg { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 8; }
+.sectool-ring-fg {
+  fill: none; stroke: var(--sectool-accent); stroke-width: 8;
+  stroke-linecap: round; stroke-dasharray: 327; stroke-dashoffset: 327;
+  transition: stroke-dashoffset 1.5s ease, stroke 0.3s;
+}
+.sectool-score-inner {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.sectool-score-number { font-size: 2.2rem; font-weight: 800; color: #fff; }
+.sectool-score-max { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+.sectool-score-label { text-align: left; }
+.sectool-score-label h2 { font-size: 1.3rem; margin: 0 0 0.3rem; }
+.sectool-score-label p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.5; max-width: 320px; }
+.sectool-delta {
+  font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 0.75rem;
+}
+.sectool-delta .up { color: #22C55E; }
+.sectool-delta .down { color: #EF4444; }
+
+/* Category bars */
+.sectool-breakdown { margin-bottom: 2rem; }
+.sectool-breakdown h2 { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+.sectool-cat-bars { display: flex; flex-direction: column; gap: 0.6rem; }
+.sectool-cat-bar-row { display: flex; align-items: center; gap: 0.75rem; }
+.sectool-cat-bar-label {
+  width: 180px; font-size: 0.8rem; color: rgba(255,255,255,0.7);
+  text-align: right; flex-shrink: 0;
+}
+.sectool-cat-bar-track {
+  flex: 1; height: 18px; background: rgba(255,255,255,0.06);
+  border-radius: 9px; overflow: hidden; position: relative;
+}
+.sectool-cat-bar-fill {
+  height: 100%; border-radius: 9px; transition: width 1s ease;
+  min-width: 2px;
+}
+.sectool-cat-bar-pct {
+  width: 40px; font-size: 0.78rem; font-weight: 700;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Priority banner */
+.sectool-priority-banner {
+  background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+  font-size: 0.9rem; color: rgba(255,255,255,0.8);
+}
+.sectool-priority-banner strong { color: #EF4444; }
+
+/* Risk summary */
+.sectool-risk-summary {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
+}
+.sectool-risk-summary h3 { font-size: 0.95rem; color: #fff; margin: 0 0 0.5rem; }
+.sectool-risk-summary p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0.3rem 0; }
+.sectool-risk-amount { font-size: 1.2rem; font-weight: 700; color: var(--score-orange); }
+
+/* Result crosslinks */
+.sectool-result-crosslinks { margin-bottom: 2rem; }
+.sectool-result-crosslinks h2 { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+.sectool-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
+.sectool-link-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; text-decoration: none; transition: border-color 0.2s;
+}
+.sectool-link-card:hover { border-color: var(--sectool-accent); }
+.sectool-link-icon { font-size: 1.3rem; display: block; margin-bottom: 0.4rem; }
+.sectool-link-card span:not(.sectool-link-icon) { color: #fff; font-weight: 600; font-size: 0.85rem; }
+.sectool-link-card small { color: rgba(255,255,255,0.45); font-size: 0.75rem; display: block; margin-top: 0.3rem; line-height: 1.4; }
+
+/* Result action buttons */
+.sectool-result-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+/* ══════════════════════════════════════════════════════════════ */
+/* EMAIL SECURITY                                                */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-email-section { max-width: 800px; margin: 0 auto; }
+.sectool-email-form { margin-bottom: 1.5rem; }
+.sectool-form-group { margin-bottom: 1rem; }
+.sectool-form-group label {
+  display: block; font-size: 0.82rem; font-weight: 600;
+  color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;
+}
+.sectool-form-group input,
+.sectool-form-group select {
+  width: 100%; padding: 0.7rem 1rem; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+  color: #fff; font-size: 0.9rem; transition: border-color 0.2s;
+  font-family: inherit;
+}
+.sectool-form-group input:focus,
+.sectool-form-group select:focus {
+  outline: none; border-color: var(--sectool-accent);
+  box-shadow: 0 0 0 3px var(--sectool-accent-dim);
+}
+.sectool-form-group select option { background: #1a1a2e; color: #fff; }
+.sectool-input-error { border-color: #EF4444 !important; }
+.sectool-validation-msg {
+  display: block; font-size: 0.75rem; color: #EF4444;
+  margin-top: 0.3rem;
+}
+.sectool-form-hint {
+  display: block; font-size: 0.72rem; color: rgba(255,255,255,0.35);
+  margin-top: 0.3rem; line-height: 1.4;
+}
+
+.sectool-checkbox-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.sectool-checkbox-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 0.4rem 0.8rem; cursor: pointer;
+  transition: all 0.2s; font-size: 0.82rem; color: rgba(255,255,255,0.6);
+}
+.sectool-checkbox-item:hover { border-color: var(--sectool-accent); color: #fff; }
+.sectool-checkbox-item.checked { background: var(--sectool-accent-dim); border-color: var(--sectool-accent); color: #fff; }
+.sectool-checkbox-item input { display: none; }
+
+/* Warning banner */
+.sectool-warning {
+  background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.sectool-warning strong { color: #EAB308; }
+
+/* Record cards */
+.sectool-email-results { display: flex; flex-direction: column; gap: 1rem; }
+.sectool-record-card {
+  background: rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 1.25rem; position: relative;
+}
+.sectool-record-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.sectool-record-header h3 { font-size: 1rem; color: #fff; margin: 0; }
+.sectool-record-type {
+  font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem;
+  background: var(--sectool-accent-dim); color: var(--sectool-accent);
+  border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.sectool-record-host {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;
+}
+.sectool-record-host code {
+  background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem;
+  border-radius: 4px; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.78rem;
+}
+.sectool-record-value {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; padding: 0.75rem 1rem; margin: 0.5rem 0;
+  font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.82rem;
+  color: var(--sectool-accent-bright); overflow-x: auto; white-space: pre-wrap;
+  word-break: break-all; line-height: 1.5;
+}
+.sectool-copy-btn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.6); border-radius: 6px; padding: 0.3rem 0.7rem;
+  font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.sectool-copy-btn:hover { background: var(--sectool-accent); color: #fff; border-color: var(--sectool-accent); }
+.sectool-record-explain {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-top: 0.75rem;
+}
+.sectool-dkim-record {
+  margin-bottom: 0.75rem; padding: 0.75rem; background: rgba(0,0,0,0.2);
+  border-radius: 8px; border-left: 3px solid var(--sectool-accent);
+}
+.sectool-dkim-record code {
+  display: block; font-size: 0.78rem; color: var(--sectool-accent-bright);
+  font-family: 'Fira Code', 'Consolas', monospace; margin: 0.3rem 0;
+  word-break: break-all;
+}
+.sectool-dkim-record small { color: rgba(255,255,255,0.4); font-size: 0.75rem; }
+
+/* DMARC timeline */
+.sectool-dmarc-timeline {
+  margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem;
+}
+.sectool-dmarc-step {
+  display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem;
+}
+.sectool-dmarc-week {
+  width: 70px; flex-shrink: 0; font-size: 0.75rem; font-weight: 700;
+  color: var(--sectool-accent); text-align: right;
+}
+.sectool-dmarc-policy-badge {
+  font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem;
+  border-radius: 4px; flex-shrink: 0;
+}
+.sectool-dmarc-policy-badge.none { background: rgba(234,179,8,0.15); color: #EAB308; }
+.sectool-dmarc-policy-badge.quarantine { background: rgba(249,115,22,0.15); color: #F97316; }
+.sectool-dmarc-policy-badge.reject { background: rgba(34,197,94,0.15); color: #22C55E; }
+.sectool-dmarc-action { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+/* ══════════════════════════════════════════════════════════════ */
+/* ACTIONS & SCRIPTS                                             */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-actions-gate {
+  text-align: center; padding: 3rem 1rem;
+}
+.sectool-gate-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+.sectool-actions-gate h2 { color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem; }
+.sectool-actions-gate p { color: rgba(255,255,255,0.5); font-size: 0.88rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+.sectool-actions-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.sectool-action-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.25rem; border-left: 4px solid;
+}
+.sectool-action-card.critical { border-left-color: #EF4444; }
+.sectool-action-card.high { border-left-color: #F97316; }
+.sectool-action-card.medium { border-left-color: #EAB308; }
+.sectool-action-card.low { border-left-color: #22C55E; }
+
+.sectool-action-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.sectool-action-title { font-size: 0.95rem; font-weight: 700; color: #fff; flex: 1; }
+.sectool-action-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.sectool-badge {
+  font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem;
+  border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.sectool-badge-impact { background: rgba(239,68,68,0.12); color: #EF4444; }
+.sectool-badge-impact.high { background: rgba(249,115,22,0.12); color: #F97316; }
+.sectool-badge-impact.medium { background: rgba(234,179,8,0.12); color: #EAB308; }
+.sectool-badge-impact.low { background: rgba(34,197,94,0.12); color: #22C55E; }
+.sectool-badge-effort { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); }
+
+.sectool-action-why {
+  font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; margin-bottom: 0.5rem;
+}
+.sectool-action-path {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 0.5rem;
+}
+.sectool-action-path code {
+  background: rgba(255,255,255,0.06); padding: 0.15rem 0.4rem;
+  border-radius: 4px; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+.sectool-action-compliance {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.75rem;
+}
+
+/* Expandable script block */
+.sectool-script-toggle {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 0.5rem 0.8rem; cursor: pointer;
+  font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5);
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.sectool-script-toggle:hover { border-color: var(--sectool-accent); color: #fff; }
+.sectool-script-block {
+  margin-top: 0.75rem; background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 1rem; position: relative; display: none;
+}
+.sectool-script-block.open { display: block; }
+.sectool-script-block pre {
+  margin: 0; font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.78rem; color: var(--sectool-accent-bright);
+  white-space: pre-wrap; word-break: break-word; line-height: 1.5;
+}
+
+/* Risk quantifier */
+.sectool-risk-quantifier {
+  background: rgba(249,115,22,0.06); border: 1px solid rgba(249,115,22,0.15);
+  border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem;
+}
+.sectool-risk-quantifier h3 {
+  font-size: 1rem; color: #fff; margin: 0 0 0.75rem;
+}
+.sectool-risk-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.sectool-risk-row:last-child { border: none; }
+.sectool-risk-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+.sectool-risk-value { font-size: 0.88rem; font-weight: 700; color: var(--score-orange); }
+.sectool-risk-disclaimer {
+  font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 1rem;
+  font-style: italic; line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════════════════════════ */
+/* COMING SOON STUBS                                             */
+/* ══════════════════════════════════════════════════════════════ */
+
+.sectool-coming-soon {
+  text-align: center; padding: 4rem 1rem;
+}
+.sectool-coming-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.sectool-coming-soon h2 { color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem; }
+.sectool-coming-soon p {
+  color: rgba(255,255,255,0.5); font-size: 0.88rem; max-width: 500px;
+  margin: 0 auto 1.5rem; line-height: 1.6;
+}
+.sectool-coming-badge {
+  display: inline-block; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
+  padding: 0.4rem 1.2rem; font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ══════════════════════════════════════════════════════════════ */
+/* RESPONSIVE                                                    */
+/* ══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .sectool-container { padding: 0 1rem 3rem; }
+  .sectool-tab { font-size: 0.72rem; padding: 0.45rem 0.6rem; }
+  .sectool-score-header { flex-direction: column; }
+  .sectool-score-label { text-align: center; }
+  .sectool-cat-bar-label { width: 100px; font-size: 0.72rem; }
+  .sectool-action-header { flex-direction: column; }
+  .sectool-links-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .sectool-links-grid { grid-template-columns: 1fr; }
+  .sectool-cat-nav-btn { font-size: 0.68rem; padding: 0.3rem 0.5rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════ */
+/* PRINT                                                         */
+/* ══════════════════════════════════════════════════════════════ */
+
+@media print {
+  .sectool-tabs, .sectool-nav, .sectool-result-actions,
+  .sectool-copy-btn, .sectool-script-toggle, .sectool-cat-nav,
+  .sectool-coming-soon, .sectool-actions-gate { display: none !important; }
+  .sectool-page { color: #000; }
+  .sectool-question-card, .sectool-record-card, .sectool-action-card {
+    border: 1px solid #ccc; background: #fff; -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sectool-score-number { color: #000; }
+  .sectool-question-text, .sectool-record-header h3, .sectool-action-title { color: #000; }
+}

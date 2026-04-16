@@ -162,6 +162,17 @@ visual = "bars"
 is_tool = true
 
 [[tools]]
+url = "/ai-cost-calculator/"
+emoji = "💰"
+name = "AI Cost Calculator"
+short = "AI Cost"
+desc = "Total AI adoption cost — licensing, tokens, training, governance, budget timelines"
+color = "#66C559"
+category = "compare"
+visual = "gauge"
+is_tool = true
+
+[[tools]]
 url = "/licensing/"
 emoji = "📜"
 name = "Licensing Simplifier"

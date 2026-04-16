@@ -79,6 +79,156 @@
   .aicost-panel.active { animation: none; }
 }
 
+/* ── Global Settings Bar ── */
+.aicost-global-bar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+.aicost-global-item label {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+.aicost-select-sm {
+  width: auto;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+/* ── Confidence Toggle ── */
+.aicost-confidence {
+  display: flex;
+  gap: 0.25rem;
+}
+.aicost-conf-btn {
+  padding: 0.4rem 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.aicost-conf-btn:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+.aicost-conf-btn.active {
+  background: var(--tool-accent-dim);
+  border-color: var(--tool-accent);
+  color: var(--tool-accent-bright);
+}
+
+/* ── Warning Cards ── */
+.aicost-warning {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-left: 3px solid #F59E0B;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+.aicost-warning-icon { flex-shrink: 0; font-size: 1rem; }
+
+/* ── Assumptions Drawer ── */
+.aicost-assumptions {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+.aicost-assumptions-trigger {
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.aicost-assumptions-trigger::-webkit-details-marker { display: none; }
+.aicost-assumptions-trigger::before { content: '▸ '; }
+.aicost-assumptions[open] .aicost-assumptions-trigger::before { content: '▾ '; }
+.aicost-assumptions-body {
+  padding: 0 1rem 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.aicost-assumptions-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.aicost-assumptions-body td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.aicost-assumptions-body td:first-child { color: rgba(255, 255, 255, 0.6); }
+
+/* ── Board-Ready Bullets ── */
+.aicost-board-bullet {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+.aicost-board-bullet .num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tool-accent-dim);
+  border-radius: 50%;
+  color: var(--tool-accent-bright);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.aicost-board-bullet strong { color: var(--tool-accent-bright); }
+
+/* ── History Delta ── */
+.aicost-delta {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+.aicost-delta-title {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.aicost-delta-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+}
+.aicost-delta-up { color: var(--aicost-red); }
+.aicost-delta-down { color: var(--aicost-green); }
+.aicost-delta-same { color: rgba(255, 255, 255, 0.4); }
+
 /* ── Glass Card ── */
 .aicost-card {
   background: rgba(255, 255, 255, 0.03);
@@ -138,6 +288,11 @@
   font-family: inherit;
   cursor: pointer;
   appearance: auto;
+  color-scheme: dark;
+}
+.aicost-select option {
+  background: #0a0a14;
+  color: #fff;
 }
 .aicost-select:focus-visible {
   outline: 2px solid var(--tool-accent);
@@ -872,6 +1027,16 @@
   .aicost-container {
     padding: 0 1rem 3rem;
   }
+  /* Tab scroll hint — fade on right edge */
+  .aicost-tabs {
+    position: relative;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .aicost-tabs.scrolled-end {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 @media (max-width: 480px) {
   .aicost-tabs {
@@ -885,4 +1050,64 @@
   .aicost-metric-value {
     font-size: 1.2rem;
   }
+}
+
+/* ── Include Base Plan Toggle ── */
+.aicost-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+.aicost-toggle-label input[type="checkbox"] {
+  accent-color: var(--tool-accent);
+}
+
+/* ── History Section ── */
+.aicost-history {
+  margin-top: 1.5rem;
+}
+.aicost-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+.aicost-history-item .label {
+  color: rgba(255, 255, 255, 0.6);
+}
+.aicost-history-item .value {
+  color: var(--tool-accent-bright);
+  font-weight: 700;
+}
+.aicost-history-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+.aicost-history-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+.aicost-history-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
+
+/* ── Crossover break-even marker ── */
+.aicost-breakeven-marker {
+  color: var(--aicost-amber);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.75rem;
 }

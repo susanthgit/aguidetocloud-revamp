@@ -1,0 +1,122 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 SECURITY TOOLKIT — Sharing Settings Data (Phase 2)
+# ═══════════════════════════════════════════════════════════════
+
+# ── Sharing Settings Definitions ──────────────────────────────
+[[settings]]
+id = "sp-external"
+name = "SharePoint external sharing"
+admin_path = "SharePoint admin centre → Policies → Sharing → External sharing"
+options = ["Anyone", "New and existing guests", "Existing guests only", "Only people in your organisation"]
+
+[[settings]]
+id = "od-external"
+name = "OneDrive external sharing"
+admin_path = "SharePoint admin centre → Policies → Sharing → OneDrive"
+options = ["Anyone", "New and existing guests", "Existing guests only", "Only people in your organisation"]
+note = "OneDrive sharing must be equal to or more restrictive than SharePoint."
+
+[[settings]]
+id = "teams-guest"
+name = "Teams guest access"
+admin_path = "Teams admin centre → Users → Guest access"
+options = ["Enabled (open)", "Enabled with domain allowlist", "Disabled"]
+
+[[settings]]
+id = "anyone-links"
+name = "Anyone links (anonymous)"
+admin_path = "SharePoint admin centre → Policies → Sharing → Anyone links"
+options = ["Enabled", "Disabled"]
+
+[[settings]]
+id = "default-link-type"
+name = "Default sharing link type"
+admin_path = "SharePoint admin centre → Policies → Sharing → Default link type"
+options = ["Anyone", "People in your organisation", "Specific people"]
+
+[[settings]]
+id = "guest-expiration"
+name = "Guest access expiration"
+admin_path = "Entra ID → External Identities → External collaboration settings"
+options = ["No expiration", "30 days", "60 days", "90 days"]
+
+[[settings]]
+id = "org-links"
+name = "People in your org links"
+admin_path = "SharePoint admin centre → Policies → Sharing"
+options = ["Enabled", "Disabled"]
+
+
+# ── Wizard Questions ──────────────────────────────────────────
+[[wizard_questions]]
+id = "external-frequency"
+text = "Do you share files with people outside your organisation?"
+options = [
+  { label = "Never", value = "never" },
+  { label = "Occasionally (a few times a month)", value = "occasional" },
+  { label = "Frequently (daily/weekly)", value = "frequent" }
+]
+
+[[wizard_questions]]
+id = "partner-type"
+text = "What type of external partners do you work with?"
+options = [
+  { label = "Known partners only (vendors, clients)", value = "known" },
+  { label = "Suppliers + customers (broader set)", value = "broader" },
+  { label = "Public or anyone (events, open collaboration)", value = "public" }
+]
+
+[[wizard_questions]]
+id = "regulated-data"
+text = "Do you handle regulated data (HIPAA, financial, government)?"
+options = [
+  { label = "No regulated data", value = "none" },
+  { label = "Some regulated data", value = "some" },
+  { label = "Heavily regulated (HIPAA, financial, government)", value = "heavy" }
+]
+
+[[wizard_questions]]
+id = "risk-tolerance"
+text = "What is your risk tolerance for external collaboration?"
+options = [
+  { label = "Conservative (minimise risk)", value = "conservative" },
+  { label = "Balanced (some sharing, controlled)", value = "balanced" },
+  { label = "Open collaboration (maximise collaboration)", value = "open" }
+]
+
+
+# ── Industry Presets ──────────────────────────────────────────
+[[presets]]
+id = "general"
+name = "General Business"
+emoji = "🏢"
+description = "Balanced approach for most organisations"
+settings = { sp_external = "New and existing guests", od_external = "Existing guests only", teams_guest = "Enabled with domain allowlist", anyone_links = "Disabled", default_link = "Specific people", guest_expiry = "90 days", org_links = "Enabled" }
+
+[[presets]]
+id = "financial"
+name = "Financial Services"
+emoji = "🏦"
+description = "Restrictive settings for regulatory compliance"
+settings = { sp_external = "Existing guests only", od_external = "Existing guests only", teams_guest = "Enabled with domain allowlist", anyone_links = "Disabled", default_link = "Specific people", guest_expiry = "30 days", org_links = "Enabled" }
+
+[[presets]]
+id = "healthcare"
+name = "Healthcare"
+emoji = "🏥"
+description = "Very restrictive for HIPAA and patient data"
+settings = { sp_external = "Existing guests only", od_external = "Only people in your organisation", teams_guest = "Disabled", anyone_links = "Disabled", default_link = "Specific people", guest_expiry = "30 days", org_links = "Enabled" }
+
+[[presets]]
+id = "government"
+name = "Government"
+emoji = "🏛️"
+description = "Locked down with exception-based sharing only"
+settings = { sp_external = "Only people in your organisation", od_external = "Only people in your organisation", teams_guest = "Disabled", anyone_links = "Disabled", default_link = "Specific people", guest_expiry = "No expiration", org_links = "Enabled" }
+
+[[presets]]
+id = "education"
+name = "Education"
+emoji = "🎓"
+description = "Permissive for collaboration, with guardrails"
+settings = { sp_external = "New and existing guests", od_external = "New and existing guests", teams_guest = "Enabled (open)", anyone_links = "Enabled", default_link = "People in your organisation", guest_expiry = "90 days", org_links = "Enabled" }

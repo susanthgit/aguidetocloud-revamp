@@ -152,6 +152,17 @@ category = "Compare"
 css_namespace = "showdown-*"
 body_class = "page-ai-showdown"
 
+[[tools]]
+name = "AI Cost Calculator"
+slug = "ai-cost-calculator"
+hex = "#66C559"
+hue = 113
+name_friendly = "Money Green"
+category = "Compare"
+css_namespace = "aicost-*"
+body_class = "page-ai-cost-calculator"
+# NOTE: Hue 113° is 29° from Prompt Guide (84°) and PS Builder (142°) — accepted compromise, max equidistant in largest gap
+
 # ── Admin & Security ──────────────────────────────────────────────────────────
 
 [[tools]]

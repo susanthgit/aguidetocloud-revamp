@@ -260,6 +260,75 @@ module.exports = async function (context, req) {
 
   // Parse range
   const range = req.query.range || '30d';
+
+  // Quick realtime-only response (no cache, lightweight)
+  if (req.query.realtime === '1') {
+    const auth = getAuthClient();
+    if (!auth) { context.res = { status: 200, headers: { ...headers, 'Cache-Control': 'no-cache' }, body: '{"active":0,"pages":[]}' }; return; }
+    try {
+      const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
+      const res = await analyticsdata.properties.runRealtimeReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dimensions: [{ name: 'unifiedScreenName' }],
+          metrics: [{ name: 'activeUsers' }],
+          limit: 10
+        }
+      });
+      const rows = res?.data?.rows || [];
+      const pages = rows.map(r => ({ page: r.dimensionValues?.[0]?.value || '', users: parseInt(r.metricValues?.[0]?.value) || 0 }));
+      const total = pages.reduce((s, p) => s + p.users, 0);
+      context.res = { status: 200, headers: { ...headers, 'Cache-Control': 'no-cache' }, body: JSON.stringify({ active: total, pages }) };
+    } catch(e) {
+      context.res = { status: 200, headers: { ...headers, 'Cache-Control': 'no-cache' }, body: JSON.stringify({ active: 0, pages: [] }) };
+    }
+    return;
+  }
+
+  // YouTube data (30-min cache)
+  if (req.query.youtube === '1') {
+    const ytCacheKey = 'youtube';
+    if (cacheStore[ytCacheKey] && now - cacheStore[ytCacheKey].time < 1800000) {
+      context.res = { status: 200, headers, body: JSON.stringify(cacheStore[ytCacheKey].data) };
+      return;
+    }
+    const ytApiKey = process.env.YOUTUBE_API_KEY;
+    if (!ytApiKey) { context.res = { status: 200, headers, body: '{"error":"No YouTube API key"}' }; return; }
+    try {
+      const youtube = google.youtube({ version: 'v3' });
+      const MAIN_CH = 'UCYN12Rlv9hgZlWJa1XPfdyg';
+      const BITES_CH = 'UCg8OCdG1yeiSPFDyqQDxHnw';
+      const chRes = await youtube.channels.list({ id: [MAIN_CH, BITES_CH].join(','), part: ['statistics', 'snippet'], key: ytApiKey });
+      const channels = {};
+      for (const ch of (chRes.data.items || [])) {
+        const s = ch.statistics || {};
+        channels[ch.id] = { name: ch.snippet?.title || '', subscribers: parseInt(s.subscriberCount) || 0, totalViews: parseInt(s.viewCount) || 0, videoCount: parseInt(s.videoCount) || 0 };
+      }
+      const searchRes = await youtube.search.list({ channelId: MAIN_CH, order: 'date', type: ['video'], maxResults: 10, part: ['id', 'snippet'], key: ytApiKey });
+      const videoIds = (searchRes.data.items || []).map(i => i.id?.videoId).filter(Boolean);
+      let recentVideos = [];
+      if (videoIds.length) {
+        const vidRes = await youtube.videos.list({ id: videoIds.join(','), part: ['statistics', 'snippet'], key: ytApiKey });
+        recentVideos = (vidRes.data.items || []).map(v => ({
+          id: v.id, title: v.snippet?.title || '', thumbnail: v.snippet?.thumbnails?.medium?.url || '',
+          views: parseInt(v.statistics?.viewCount) || 0, likes: parseInt(v.statistics?.likeCount) || 0,
+          published: v.snippet?.publishedAt?.slice(0, 10) || ''
+        }));
+      }
+      const topVideos = recentVideos.slice().sort((a, b) => b.views - a.views).slice(0, 5);
+      const totalVids = (channels[MAIN_CH]?.videoCount || 0) + (channels[BITES_CH]?.videoCount || 0);
+      const ytResponse = {
+        main: channels[MAIN_CH] || null, bites: channels[BITES_CH] || null,
+        recentVideos, topVideos,
+        uploadFrequency: { mainPerMonth: Math.round((channels[MAIN_CH]?.videoCount || 0) / 12), bitesPerMonth: Math.round((channels[BITES_CH]?.videoCount || 0) / 12), totalVideos: totalVids }
+      };
+      cacheStore[ytCacheKey] = { data: ytResponse, time: now };
+      context.res = { status: 200, headers, body: JSON.stringify(ytResponse) };
+    } catch(e) {
+      context.res = { status: 200, headers, body: JSON.stringify({ error: e.message }) };
+    }
+    return;
+  }
   const dateRange = getRangeDates(range, req.query.start, req.query.end);
   const cacheKey = getCacheKey(range, req.query.start, req.query.end);
 

@@ -1,0 +1,171 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 SECURITY TOOLKIT — Email Security Provider Templates
+# ═══════════════════════════════════════════════════════════════
+# SPF, DKIM, DMARC record templates for common email providers.
+# Used by the Email Security Generator tab.
+
+# ── Primary Email Providers ───────────────────────────────────
+[[providers]]
+id = "microsoft365"
+name = "Microsoft 365"
+type = "primary"
+spf_include = "include:spf.protection.outlook.com"
+dkim_type = "cname"
+dkim_selector1 = "selector1._domainkey.{domain} → selector1-{domain_dash}._domainkey.{tenant}.onmicrosoft.com"
+dkim_selector2 = "selector2._domainkey.{domain} → selector2-{domain_dash}._domainkey.{tenant}.onmicrosoft.com"
+dkim_instructions = "Add these 2 CNAME records in your DNS provider, then enable DKIM in Microsoft Defender → Email authentication → DKIM → Select your domain → Enable."
+setup_url = "https://learn.microsoft.com/microsoft-365/security/office-365-security/email-authentication-dkim-configure"
+
+[[providers]]
+id = "google"
+name = "Google Workspace"
+type = "primary"
+spf_include = "include:_spf.google.com"
+dkim_type = "txt"
+dkim_selector1 = "google._domainkey.{domain} → (generated in Google Admin Console)"
+dkim_selector2 = ""
+dkim_instructions = "Go to Google Admin → Apps → Google Workspace → Gmail → Authenticate email → Generate new record → Add the TXT record to your DNS."
+setup_url = "https://support.google.com/a/answer/174124"
+
+# ── Third-Party Sending Services ──────────────────────────────
+[[providers]]
+id = "mailchimp"
+name = "Mailchimp"
+type = "sending"
+spf_include = "include:servers.mcsv.net"
+dkim_type = "cname"
+dkim_selector1 = "k1._domainkey.{domain} → dkim.mcsv.net"
+dkim_selector2 = ""
+dkim_instructions = "In Mailchimp → Settings → Verified domains → Authenticate. Add the CNAME record shown."
+setup_url = "https://mailchimp.com/help/set-up-email-domain-authentication/"
+
+[[providers]]
+id = "sendgrid"
+name = "SendGrid"
+type = "sending"
+spf_include = "include:sendgrid.net"
+dkim_type = "cname"
+dkim_selector1 = "s1._domainkey.{domain} → s1.domainkey.u{user_id}.wl{sender_id}.sendgrid.net"
+dkim_selector2 = "s2._domainkey.{domain} → s2.domainkey.u{user_id}.wl{sender_id}.sendgrid.net"
+dkim_instructions = "In SendGrid → Settings → Sender Authentication → Authenticate Your Domain. Add the CNAME records shown."
+setup_url = "https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication"
+
+[[providers]]
+id = "salesforce"
+name = "Salesforce"
+type = "sending"
+spf_include = "include:_spf.salesforce.com"
+dkim_type = "cname"
+dkim_selector1 = "(generated in Salesforce Setup)"
+dkim_selector2 = ""
+dkim_instructions = "In Salesforce → Setup → DKIM Keys → Create New Key. Add the CNAME record shown."
+setup_url = "https://help.salesforce.com/s/articleView?id=sf.emailadmin_create_secure_dkim.htm"
+
+[[providers]]
+id = "hubspot"
+name = "HubSpot"
+type = "sending"
+spf_include = "include:servers.hubspot.net"
+dkim_type = "cname"
+dkim_selector1 = "hs1._domainkey.{domain} → (generated in HubSpot)"
+dkim_selector2 = "hs2._domainkey.{domain} → (generated in HubSpot)"
+dkim_instructions = "In HubSpot → Settings → Website → Domains & URLs → Connect a domain for email sending. Add the CNAME records shown."
+setup_url = "https://knowledge.hubspot.com/domains-and-urls/connect-an-email-sending-domain"
+
+[[providers]]
+id = "zendesk"
+name = "Zendesk"
+type = "sending"
+spf_include = "include:mail.zendesk.com"
+dkim_type = "cname"
+dkim_selector1 = "zendesk1._domainkey.{domain} → zendesk1._domainkey.zendesk.com"
+dkim_selector2 = "zendesk2._domainkey.{domain} → zendesk2._domainkey.zendesk.com"
+dkim_instructions = "In Zendesk → Admin → Channels → Email → SPF and DKIM. Add the records shown."
+setup_url = "https://support.zendesk.com/hc/en-us/articles/4408832655258"
+
+[[providers]]
+id = "freshdesk"
+name = "Freshdesk"
+type = "sending"
+spf_include = "include:email.freshdesk.com"
+dkim_type = "cname"
+dkim_selector1 = "(generated in Freshdesk admin)"
+dkim_selector2 = ""
+dkim_instructions = "In Freshdesk → Admin → Email → Configure SPF and DKIM. Add the records shown."
+setup_url = "https://support.freshdesk.com/en/support/solutions/articles/37579"
+
+[[providers]]
+id = "custom"
+name = "Custom IP or Include"
+type = "custom"
+spf_include = ""
+dkim_type = "manual"
+dkim_selector1 = ""
+dkim_selector2 = ""
+dkim_instructions = "Add the SPF include or IP as specified by your email service provider."
+setup_url = ""
+
+
+# ── DMARC Policy Templates ───────────────────────────────────
+[[dmarc_policies]]
+id = "none"
+label = "Monitor (p=none)"
+policy = "none"
+description = "Collects DMARC reports without affecting email delivery. Start here."
+recommendation = "Start with p=none for 2-4 weeks to collect reports and identify all legitimate senders."
+
+[[dmarc_policies]]
+id = "quarantine"
+label = "Quarantine (p=quarantine)"
+policy = "quarantine"
+description = "Failing emails go to spam/junk. Legitimate senders must pass SPF or DKIM."
+recommendation = "Move to quarantine after 2-4 weeks of clean monitoring. Start with pct=25, increase gradually."
+
+[[dmarc_policies]]
+id = "reject"
+label = "Reject (p=reject)"
+policy = "reject"
+description = "Failing emails are blocked entirely. Maximum protection against spoofing."
+recommendation = "Move to reject after 4-8 weeks of quarantine with no legitimate failures. This is the goal."
+
+
+# ── DMARC Progression Timeline ────────────────────────────────
+[[dmarc_timeline]]
+week_start = 1
+week_end = 4
+policy = "none"
+pct = 100
+action = "Monitor reports. Identify all legitimate sending services. Fix SPF/DKIM for each."
+
+[[dmarc_timeline]]
+week_start = 5
+week_end = 6
+policy = "quarantine"
+pct = 25
+action = "Quarantine 25% of failing email. Watch for legitimate email going to spam."
+
+[[dmarc_timeline]]
+week_start = 7
+week_end = 8
+policy = "quarantine"
+pct = 100
+action = "Quarantine 100% of failing email. Confirm no legitimate impact."
+
+[[dmarc_timeline]]
+week_start = 9
+week_end = 12
+policy = "reject"
+pct = 100
+action = "Full reject. Maximum protection. Continue monitoring RUA reports."
+
+
+# ── SPF Mechanism Reference ───────────────────────────────────
+[spf_reference]
+soft_fail = "~all"
+soft_fail_desc = "Soft fail — emails from unlisted servers are accepted but marked. Safer default while building your SPF."
+hard_fail = "-all"
+hard_fail_desc = "Hard fail — emails from unlisted servers are rejected. Use after you've confirmed all senders are listed."
+neutral = "?all"
+neutral_desc = "Neutral — no assertion about unlisted servers. Not recommended."
+max_lookups = 10
+max_lookups_note = "SPF allows a maximum of 10 DNS lookups. Each 'include:' counts as one. If you exceed 10, SPF will fail. Use SPF flattening tools if needed."

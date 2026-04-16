@@ -54,6 +54,28 @@
          ════════════════════════════════════════════════════════════════ */}}
     <div class="aicost-panel active" role="tabpanel" id="panel-total" aria-labelledby="tab-btn-total">
 
+      {{/* ── Global Settings Bar ── */}}
+      <div class="aicost-global-bar">
+        <div class="aicost-global-item">
+          <label for="in-currency">Currency</label>
+          <select id="in-currency" class="aicost-select aicost-select-sm" aria-label="Display currency">
+            <option value="USD" selected>$ USD</option>
+            <option value="GBP">£ GBP</option>
+            <option value="EUR">€ EUR</option>
+            <option value="AUD">A$ AUD</option>
+            <option value="NZD">NZ$ NZD</option>
+          </select>
+        </div>
+        <div class="aicost-global-item">
+          <label>Confidence</label>
+          <div class="aicost-confidence" role="radiogroup" aria-label="Estimate confidence level">
+            <button class="aicost-conf-btn" data-conf="conservative">Conservative</button>
+            <button class="aicost-conf-btn active" data-conf="expected">Expected</button>
+            <button class="aicost-conf-btn" data-conf="optimistic">Optimistic</button>
+          </div>
+        </div>
+      </div>
+
       <div class="aicost-metrics" id="aicost-hero-metrics">
         <div class="aicost-metric highlight">
           <span class="aicost-metric-label">Monthly Cost</span>
@@ -98,6 +120,16 @@
               <option value="e5">Microsoft 365 E5 — $60/user/mo</option>
               <option value="e7">Microsoft 365 E7 — $99/user/mo (incl. Copilot + Agent 365)</option>
             </select>
+          </div>
+
+          <div class="aicost-field">
+            <label for="in-discount-range">EA/CSP Discount</label>
+            <div class="aicost-range-row">
+              <input type="range" id="in-discount-range" min="0" max="30" value="0" step="1" aria-hidden="true">
+              <input type="number" id="in-discount" min="0" max="50" value="0" class="aicost-num-input" aria-label="Negotiated discount percentage" style="width:60px">
+              <span style="color:rgba(255,255,255,0.5);font-size:0.85rem">%</span>
+            </div>
+            <span class="aicost-field-hint">Negotiated volume discount off list price (0% = list price)</span>
           </div>
 
           <div class="aicost-field">
@@ -165,6 +197,17 @@
           </div>
 
           <div class="aicost-field">
+            <label for="in-profile">User Profile</label>
+            <select id="in-profile" class="aicost-select" aria-label="User profile mix">
+              <option value="knowledge" selected>Mostly knowledge workers</option>
+              <option value="executive">Executive-heavy organisation</option>
+              <option value="technical">Technical / developer teams</option>
+              <option value="mixed">Mixed enterprise</option>
+            </select>
+            <span class="aicost-field-hint">Affects training intensity and operational overhead</span>
+          </div>
+
+          <div class="aicost-field">
             <label>Training Approach</label>
             <div class="aicost-radio-group" role="radiogroup" aria-label="Training approach">
               <label class="aicost-radio"><input type="radio" name="training" value="self_serve"> Self-serve</label>
@@ -180,6 +223,23 @@
               <label class="aicost-radio"><input type="radio" name="support" value="light_consulting"> Light consulting</label>
               <label class="aicost-radio"><input type="radio" name="support" value="full_partner"> Full partner</label>
             </div>
+          </div>
+
+          <div class="aicost-field">
+            <label class="aicost-toggle-label">
+              <input type="checkbox" id="in-include-base"> Include base M365 plan cost in totals
+            </label>
+            <span class="aicost-field-hint">When checked, your M365 base plan cost is added to the total — useful for seeing the full per-user AI spend.</span>
+          </div>
+
+          <div class="aicost-field">
+            <label for="in-hours-range">Hours saved per user per week (for ROI)</label>
+            <div class="aicost-range-row">
+              <input type="range" id="in-hours-range" min="0.5" max="6" value="2" step="0.5" aria-hidden="true">
+              <input type="number" id="in-hours" min="0" max="10" value="2" step="0.5" class="aicost-num-input" aria-label="Hours saved per user per week" style="width:60px">
+              <span style="color:rgba(255,255,255,0.5);font-size:0.82rem">hrs/wk</span>
+            </div>
+            <span class="aicost-field-hint">UK Gov trial: 2.2 hrs/wk, Microsoft Research: 2.5 hrs/wk</span>
           </div>
         </div>
 
@@ -198,8 +258,21 @@
           <div class="aicost-narrative" id="smart-narrative" aria-live="polite">
             Adjust your inputs to see a cost estimate.
           </div>
+
+          {{/* ROI quick view */}}
+          <div class="aicost-card" id="roi-quick-view" style="margin-top:0.75rem">
+            <h2 class="aicost-card-title">ROI Quick View</h2>
+            <div class="aicost-metrics" style="grid-template-columns:repeat(3,1fr);margin-bottom:0">
+              <div class="aicost-metric"><span class="aicost-metric-label">Annual Savings</span><span class="aicost-metric-value" id="roi-savings">$0</span></div>
+              <div class="aicost-metric"><span class="aicost-metric-label">Net Benefit (Yr 1)</span><span class="aicost-metric-value" id="roi-net">$0</span></div>
+              <div class="aicost-metric"><span class="aicost-metric-label">Payback</span><span class="aicost-metric-value" id="roi-payback">—</span></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {{/* ── Smart Warnings ── */}}
+      <div id="cost-warnings"></div>
 
       {{/* ── Detailed Breakdown ── */}}
       <h2 class="aicost-card-title" style="margin-top:2rem">Detailed Cost Breakdown</h2>
@@ -233,6 +306,12 @@
         <div class="aicost-total-card"><span class="aicost-total-label">Year 3</span><span class="aicost-total-value" id="total-y3">$0</span></div>
         <div class="aicost-total-card total-highlight"><span class="aicost-total-label">3-Year Total</span><span class="aicost-total-value" id="total-3yr">$0</span></div>
       </div>
+
+      {{/* Assumptions drawer */}}
+      <details class="aicost-assumptions" id="assumptions-drawer">
+        <summary class="aicost-assumptions-trigger">View all assumptions and sources</summary>
+        <div class="aicost-assumptions-body" id="assumptions-body"></div>
+      </details>
 
       <p class="aicost-disclaimer">All estimates based on published list prices as of April 2026. Actual costs vary based on EA/CSP agreements, regional pricing, and implementation complexity. All calculations run in your browser — your data never leaves this page.</p>
     </div>
@@ -277,6 +356,7 @@
               <option value="100">Short (~100 tokens)</option>
               <option value="500" selected>Medium (~500 tokens)</option>
               <option value="2000">Long (~2,000 tokens)</option>
+              <option value="8000">Very Long (~8,000 tokens)</option>
             </select>
           </div>
         </div>
@@ -343,6 +423,15 @@
           <button class="aicost-preset-btn" data-preset="conservative">Conservative</button>
         </div>
         <span class="aicost-field-hint" id="rollout-desc">Pilot → Wave 2 → Full over 6 months</span>
+
+        <div class="aicost-field" style="margin-top:1rem">
+          <label>Training Timing</label>
+          <div class="aicost-radio-group" role="radiogroup" aria-label="Training timing relative to rollout">
+            <label class="aicost-radio selected"><input type="radio" name="train-timing" value="before" checked> Before rollout</label>
+            <label class="aicost-radio"><input type="radio" name="train-timing" value="during"> During rollout</label>
+            <label class="aicost-radio"><input type="radio" name="train-timing" value="after"> After rollout</label>
+          </div>
+        </div>
       </div>
       <div class="aicost-card">
         <h2 class="aicost-card-title">12-Month Budget Timeline</h2>
@@ -392,11 +481,26 @@
         <label for="org-name">Organisation name (for the report)</label>
         <input type="text" id="org-name" class="aicost-org-input" placeholder="Your Company Name" aria-label="Organisation name">
       </div>
+
+      {{/* Board-ready 3-bullet summary */}}
+      <div class="aicost-card" id="board-bullets" style="margin-bottom:1rem">
+        <h3 class="aicost-card-title" style="font-size:0.92rem">Board-Ready Summary (copy & paste)</h3>
+        <div id="board-bullets-content"></div>
+        <button class="aicost-btn aicost-btn-secondary" id="btn-copy-bullets" style="margin-top:0.5rem">Copy 3 Bullets</button>
+      </div>
+
       <div class="aicost-summary-doc" id="exec-summary"></div>
       <div class="aicost-summary-actions">
         <button class="aicost-btn aicost-btn-accent" id="btn-copy-summary">Copy as Markdown</button>
         <button class="aicost-btn aicost-btn-secondary" id="btn-print">Print</button>
         <button class="aicost-btn aicost-btn-secondary" id="btn-share">Share Link</button>
+        <button class="aicost-btn aicost-btn-secondary" id="btn-save-history">Save to History</button>
+      </div>
+      <div class="aicost-history" id="calc-history" style="display:none">
+        <h3 class="aicost-card-title" style="font-size:0.92rem">Saved Calculations</h3>
+        <div id="history-list"></div>
+        <div id="history-delta"></div>
+        <button class="aicost-btn aicost-btn-secondary" id="btn-clear-history" style="margin-top:0.5rem;font-size:0.78rem">Clear History</button>
       </div>
     </div>
 

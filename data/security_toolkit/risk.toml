@@ -1,0 +1,135 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 SECURITY TOOLKIT — Risk Quantifier Data
+# ═══════════════════════════════════════════════════════════════
+# Industry benchmarks, ALE formula data, and risk categories.
+# Sources: IBM Cost of Data Breach 2024, Verizon DBIR 2024.
+
+[benchmarks]
+avg_breach_cost_usd = 4880000
+avg_breach_cost_source = "IBM Cost of Data Breach Report 2024"
+avg_records_per_breach = 25575
+cost_per_record = 165
+cost_per_record_source = "IBM Cost of Data Breach Report 2024"
+median_days_to_identify = 194
+median_days_to_contain = 64
+credential_theft_pct = 0.49
+phishing_pct = 0.16
+business_email_compromise_cost = 50600
+ransomware_avg_cost = 1850000
+regulatory_fine_range = "50000-2000000"
+
+# ── Risk Categories ───────────────────────────────────────────
+# Each category maps to assessment findings.
+# ALE = SLE × ARO (Annual Loss Expectancy = Single Loss Expectancy × Annual Rate of Occurrence)
+
+[[risk_categories]]
+id = "account_compromise"
+title = "Account Compromise"
+description = "Unauthorised access via stolen credentials or phishing"
+sle = 150000
+aro_high = 0.15
+aro_medium = 0.05
+aro_low = 0.005
+related_questions = ["mfa-all", "legacy-auth", "conditional-access", "break-glass", "separate-admin"]
+mitigation_summary = "MFA alone reduces account compromise risk by 99.9%"
+
+[[risk_categories]]
+id = "email_spoofing"
+title = "Email Spoofing & Phishing"
+description = "Domain impersonation, business email compromise, and phishing attacks"
+sle = 125000
+aro_high = 0.20
+aro_medium = 0.08
+aro_low = 0.02
+related_questions = ["spf-record", "dkim-enabled", "dmarc-policy", "anti-phishing", "safe-links-attachments"]
+mitigation_summary = "SPF + DKIM + DMARC at reject blocks domain spoofing entirely"
+
+[[risk_categories]]
+id = "data_exfiltration"
+title = "Data Exfiltration"
+description = "Sensitive data leaked externally via email, sharing, or compromised accounts"
+sle = 200000
+aro_high = 0.12
+aro_medium = 0.04
+aro_low = 0.01
+related_questions = ["sensitivity-labels", "dlp-policies", "email-forwarding", "external-sharing", "email-encryption"]
+mitigation_summary = "DLP + sensitivity labels + sharing controls create layered data protection"
+
+[[risk_categories]]
+id = "compliance_failure"
+title = "Compliance & Regulatory Failure"
+description = "Audit findings, regulatory fines, or failed compliance assessments"
+sle = 300000
+aro_high = 0.10
+aro_medium = 0.03
+aro_low = 0.005
+related_questions = ["audit-logging", "retention-policies", "purview-usage", "dlp-alerts"]
+mitigation_summary = "Audit logging + retention policies + DLP monitoring form the compliance foundation"
+
+[[risk_categories]]
+id = "unmanaged_devices"
+title = "Unmanaged Device Access"
+description = "Data access from compromised, lost, or non-compliant devices"
+sle = 100000
+aro_high = 0.08
+aro_medium = 0.03
+aro_low = 0.005
+related_questions = ["intune-enrolled", "compliance-policies", "bitlocker", "app-protection", "ca-device-compliance"]
+mitigation_summary = "Intune + compliance policies + Conditional Access ensure only healthy devices access data"
+
+[[risk_categories]]
+id = "privilege_abuse"
+title = "Admin Privilege Abuse"
+description = "Excessive admin permissions exploited by attackers or insiders"
+sle = 175000
+aro_high = 0.06
+aro_medium = 0.02
+aro_low = 0.003
+related_questions = ["global-admin-count", "role-review", "pim", "separate-admin"]
+mitigation_summary = "PIM + least privilege + regular reviews eliminate standing admin access risk"
+
+[[risk_categories]]
+id = "collaboration_leak"
+title = "Collaboration Data Leak"
+description = "Oversharing via Teams, SharePoint, or guest access leading to data exposure"
+sle = 75000
+aro_high = 0.15
+aro_medium = 0.06
+aro_low = 0.01
+related_questions = ["guest-access", "external-federation", "teams-file-sharing", "external-sharing", "site-creation"]
+mitigation_summary = "Guest restrictions + sharing policies + DLP prevent accidental data exposure"
+
+
+# ── Effort Definitions ────────────────────────────────────────
+[effort_levels]
+quick = { label = "Quick Win", time = "Under 30 minutes", score = 1, emoji = "⚡" }
+halfday = { label = "Half-Day Project", time = "2-4 hours", score = 3, emoji = "🔧" }
+project = { label = "Multi-Day Project", time = "1-2 weeks", score = 7, emoji = "📋" }
+
+# ── Impact Definitions ────────────────────────────────────────
+[impact_levels]
+critical = { label = "Critical", score = 10, color = "#EF4444" }
+high = { label = "High", score = 7, color = "#F97316" }
+medium = { label = "Medium", score = 4, color = "#EAB308" }
+low = { label = "Low", score = 2, color = "#22C55E" }
+
+# ── Org Size Multipliers (for risk scaling) ───────────────────
+[[org_sizes]]
+label = "Small (1-50 users)"
+multiplier = 0.3
+avg_annual_revenue = 2000000
+
+[[org_sizes]]
+label = "Medium (51-250 users)"
+multiplier = 0.6
+avg_annual_revenue = 15000000
+
+[[org_sizes]]
+label = "Large (251-1000 users)"
+multiplier = 1.0
+avg_annual_revenue = 75000000
+
+[[org_sizes]]
+label = "Enterprise (1000+ users)"
+multiplier = 1.8
+avg_annual_revenue = 500000000
