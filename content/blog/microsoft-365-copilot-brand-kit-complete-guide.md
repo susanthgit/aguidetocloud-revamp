@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot Brand Kit — The Complete Guide for IT Admins and Brand Managers"
 description: "Everything you need to know about Microsoft 365 Copilot Brand Kit — what it is, where it works (PowerPoint, Word, Excel, Create tab), how to set it up, how to create Copilot-optimised templates, and the Brand Checker. A practical guide for IT admins and brand managers."
 date: 2026-04-15
-lastmod: 2026-04-15
+lastmod: 2026-04-16
 card_tag: "Copilot"
 tag_class: "ai"
 faq:
@@ -11,7 +11,7 @@ faq:
   - question: "Do I need a paid licence to use Brand Kit?"
     answer: "Yes. Creating, managing, and using Brand Kits requires a Microsoft 365 Copilot licence ($30/user/month). Users without a Copilot licence can only open templates from Brand Kits — they cannot create kits, use brand styling, or access the Brand Checker."
   - question: "Where does Brand Kit work in Microsoft 365?"
-    answer: "Brand Kit has the deepest integration in PowerPoint (Agent Mode, Narrative Builder, Brand Checker). It also works in Word through templates, in the Create tab on microsoft365.com for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting."
+    answer: "Brand Kit has the deepest integration in PowerPoint (PowerPoint Agent, Narrative Builder, Brand Checker). It also works in Word through templates and the Word Agent, in the Create tab on microsoft365.com for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting."
   - question: "What is the Brand Checker in PowerPoint?"
     answer: "Brand Checker scans your entire presentation against your Brand Kit and flags issues — incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It offers one-click fixes to bring everything back on brand automatically."
   - question: "How do I set up Brand Kit as an IT admin?"
@@ -24,8 +24,8 @@ faq:
     answer: "Use Slide Master with theme colours and fonts (not manual styling), include 12+ representative slide layouts showing content density, visual style, and data visualisation, use placeholders instead of text boxes, and avoid overlapping elements. Upload as .potx or .pptx to your Brand Kit."
   - question: "Can I have multiple Brand Kits for different brands or departments?"
     answer: "Yes. You can create and maintain multiple Brand Kits — for example, Corporate, Product, and Regional brands. Users can switch between them when creating content. Each kit has its own templates, colours, fonts, and assets."
-  - question: "Is Agent Mode in PowerPoint generally available?"
-    answer: "As of April 2026, Agent Mode (including Brand Kit) is available in PowerPoint for Windows within the Insiders Beta Channel and is rolling out more broadly. Check the Microsoft 365 Roadmap for the latest availability in your channel."
+  - question: "Are the PowerPoint, Word, and Excel Agents generally available?"
+    answer: "As of April 2026, the PowerPoint Agent (including Brand Kit) is available in PowerPoint for Windows within the Insiders Beta Channel and is rolling out more broadly. These agents are powered by Anthropic Claude models and represent a new way of creating content directly from within the M365 Copilot app. Check the Microsoft 365 Roadmap for the latest availability in your channel."
 images: ["images/og/blog/microsoft-365-copilot-brand-kit-complete-guide.jpg"]
 tags:
   - microsoft-365
@@ -105,11 +105,13 @@ Here's how it maps:
 Without a Brand Kit, asking Copilot to "create a customer proposal" gives you generic content. With a Brand Kit, Copilot knows your colours, your logo, your tone of voice, and your template layouts — so the proposal comes out looking like *your* organisation created it.
 
 ```mermaid
-flowchart LR
-    A["🏢 Admin<br/>Brand Manager policy +<br/>Optional OAL setup"] --> B["👔 Brand Manager<br/>Creates & publishes<br/>Brand Kit"]
-    B --> C["🎨 Copilot<br/>Reads Brand Kit<br/>when generating content"]
-    C --> D["📊 On-Brand<br/>Presentations, documents,<br/>images, posters"]
-    D --> E["🔍 Brand Checker<br/>Scans & fixes<br/>any issues"]
+flowchart TD
+    A["🏢 Admin<br/>Brand Manager policy +<br/>Optional OAL setup"]
+    B["👔 Brand Manager<br/>Creates & publishes<br/>Brand Kit"]
+    C["🎨 Copilot<br/>Reads Brand Kit<br/>when generating content"]
+    D["📊 On-Brand<br/>Presentations, documents,<br/>images, posters"]
+    E["🔍 Brand Checker<br/>Scans & fixes<br/>any issues"]
+    A --> B --> C --> D --> E
     style A fill:#3B82F6,color:#ffffff
     style B fill:#8B5CF6,color:#ffffff
     style C fill:#14B8A6,color:#ffffff
@@ -145,7 +147,7 @@ A Brand Kit is more than just a logo and a colour code. Here's everything you ca
 
 | Format | File Type | Used By |
 |--------|-----------|---------|
-| PowerPoint | `.potx` or `.pptx` | Agent Mode, Narrative Builder |
+| PowerPoint | `.potx` or `.pptx` | PowerPoint Agent, Narrative Builder |
 | Word | `.dotx` | Document generation |
 | Excel | `.xltx` | Spreadsheet templates |
 | Designer | Various | Images, banners, posters |
@@ -162,11 +164,11 @@ This is the question everyone asks first. Here's the clear answer:
 | Edit or publish Brand Kits | ✅ Yes | Brand manager role required |
 | Use Brand Kit styling when creating content | ✅ Yes | Colours, fonts, voice applied automatically |
 | Use Brand Checker in PowerPoint | ✅ Yes | Scans and fixes off-brand slides |
-| Use Agent Mode in PowerPoint | ✅ Yes | Currently Insiders Beta Channel |
+| Use PowerPoint/Word/Excel Agents | ✅ Yes | Powered by Anthropic Claude models |
 | Open templates from Brand Kits | ❌ No | Templates are accessible to everyone |
 | Use OAL templates in Office apps | ❌ No | Standard Office licence sufficient |
 
-> ⚠️ **Key distinction:** Templates uploaded to a Brand Kit are accessible to **all users** in your tenant — even without a Copilot licence. But the AI-powered features (automatic brand styling, Brand Checker, brand voice, Agent Mode) require the paid Microsoft 365 Copilot licence.
+> ⚠️ **Key distinction:** Templates uploaded to a Brand Kit are accessible to **all users** in your tenant — even without a Copilot licence. But the AI-powered features (automatic brand styling, Brand Checker, brand voice, PowerPoint/Word/Excel Agents) require the paid Microsoft 365 Copilot licence.
 
 Want to understand how Copilot licensing works across your organisation? Check our [Licensing Simplifier](/licensing/) for a clear breakdown of every plan and what's included.
 
@@ -178,30 +180,35 @@ This is where it gets practical. Brand Kit doesn't work the same way in every ap
 
 ### PowerPoint — The Star of the Show
 
-PowerPoint has the richest Brand Kit integration by far. There are two main ways to use it:
+PowerPoint has the richest Brand Kit integration by far. There are two distinct approaches — a **new way** and a **traditional way**:
 
-#### Method 1: Agent Mode (Recommended)
+#### The New Way: PowerPoint Agent (in M365 Copilot Chat)
 
-Agent Mode in PowerPoint is the most powerful way to generate on-brand presentations. When you give it a prompt, it analyses three sources:
+This is the new agentic approach to creating presentations. Instead of opening PowerPoint first, you start in the **Microsoft 365 Copilot app** (or Copilot Chat) and use the **PowerPoint Agent** — powered by **Anthropic Claude models** — to create entire presentations end-to-end through conversation.
 
-1. **Your template layouts** — slide types and structures from your Brand Kit
-2. **Brand assets** — logos, colours, fonts, imagery, icons from your kit and OAL
-3. **Your prompt** — your specific instructions
+When you give the PowerPoint Agent a prompt, it:
 
-It synthesises all of this to create slides that look like your organisation created them. This isn't just applying a theme — it's understanding and replicating your brand's entire presentation approach.
+1. **Analyses your Brand Kit** — template layouts, colours, fonts, imagery, icons
+2. **Pulls from your OAL** — brand images and approved assets from SharePoint
+3. **Follows your instructions** — your specific prompt and any clarifying questions it asks
+4. **Generates a complete deck** — with speaker notes, visuals, and on-brand formatting
 
-> ⚠️ **Availability note:** As of April 2026, Agent Mode (including Brand Kit) is available in PowerPoint for Windows within the [Insiders Beta Channel](https://support.microsoft.com/topic/join-the-microsoft-365-insider-program-3c7dda4f-4d05-0783-3a9a-182b50acb8a9). Check the [M365 Roadmap](/m365-roadmap/) for broader rollout status.
+This isn't just applying a theme — the agent understands and replicates your brand's entire presentation approach. It's a multi-turn conversation: the agent asks clarifying questions, iterates based on your feedback, and produces polished slides.
 
-#### Method 2: Narrative Builder + Template Selection
+> 💡 **Key difference:** The PowerPoint Agent lives inside the **M365 Copilot app** — you don't need to open PowerPoint first. The agent creates the deck for you, and you can then open it in PowerPoint to refine. Similarly, there's a **Word Agent** and **Excel Agent** for creating documents and spreadsheets from Copilot Chat.
 
-This is available in the Current Channel today:
+> ⚠️ **Availability note:** As of April 2026, the PowerPoint Agent with Brand Kit support is available in PowerPoint for Windows within the [Insiders Beta Channel](https://support.microsoft.com/topic/join-the-microsoft-365-insider-program-3c7dda4f-4d05-0783-3a9a-182b50acb8a9) and rolling out more broadly. Check the [M365 Roadmap](/m365-roadmap/) for the latest status.
+
+#### The Traditional Way: Narrative Builder (in the PowerPoint App)
+
+This is the approach you're probably already familiar with — opening the PowerPoint desktop app and using Copilot inside it:
 
 1. Open PowerPoint → Copilot → Narrative Builder
 2. Give Copilot your prompt and adjust the outline
 3. **Choose your organisation's template** from the template picker
 4. Copilot generates slides following your template's layouts, fonts, and colours
 
-The templates come from your SharePoint Organizational Asset Library (OAL) or your Brand Kit.
+The templates come from your SharePoint Organizational Asset Library (OAL) or your Brand Kit. This is available in the Current Channel today.
 
 #### Method 3: Start from Template
 
@@ -209,24 +216,24 @@ The templates come from your SharePoint Organizational Asset Library (OAL) or yo
 2. Use the Copilot side panel to generate or edit slides
 3. Copilot respects the template's layout, fonts, and branding while replacing content
 
-### Word — Templates Plus Copilot
+### Word — Templates Plus Copilot (and Word Agent)
 
-Brand Kit in Word works through templates:
+Brand Kit in Word works through **two paths**:
 
-1. Start with an organisation template (from Brand Kit or OAL)
-2. Use Copilot in the side panel to generate or edit content
-3. Copilot updates sections, titles, and text while keeping your template's styling and brand formatting
+**Word Agent (new way):** From M365 Copilot Chat, the Word Agent can create documents end-to-end using your Brand Kit's templates and voice guidelines. Like the PowerPoint Agent, it uses Anthropic Claude models and works through multi-turn conversation.
 
-This is effective for proposals, reports, memos, and any document that follows a standard format. Copilot respects heading styles, page layouts, and brand fonts defined in the template.
+**Traditional way:** Start with an organisation template (from Brand Kit or OAL), then use Copilot in the Word side panel to generate or edit content. Copilot updates sections, titles, and text while keeping your template's styling and brand formatting.
 
-### Excel — Template-Level Branding
+Both approaches are effective for proposals, reports, memos, and any document that follows a standard format.
 
-Excel's Brand Kit integration is more limited than PowerPoint:
+### Excel — Template-Level Branding (and Excel Agent)
+
+Excel's Brand Kit integration is more limited than PowerPoint, but growing:
 
 - ✅ You **can** upload Excel templates (`.xltx`) to your Brand Kit
 - ✅ Users can start from branded Excel templates via the Create tab
 - ✅ Templates maintain brand colours, fonts, chart styles, and layouts
-- ⚠️ Copilot in Excel respects the template formatting when working within a branded workbook
+- ✅ The **Excel Agent** (from Copilot Chat) can create workbooks using branded templates
 - ⚠️ There is no "Brand Checker" equivalent for Excel — it's template-level, not AI-enforced
 
 > 💡 **Practical tip:** If consistent Excel branding matters to your org, invest in well-designed `.xltx` templates with pre-built chart styles, branded colour schemes, and formatted headers. Upload these to your Brand Kit so users start from a consistent base.
@@ -255,8 +262,8 @@ When generating images, banners, and posters through the Create tab, Copilot use
 
 ```mermaid
 flowchart LR
-    A["📊 PowerPoint<br/>★★★★★<br/>Agent Mode, Narrative Builder,<br/>Brand Checker, Templates"] --> E["🎨 Brand Kit"]
-    B["📝 Word<br/>★★★☆☆<br/>Templates +<br/>Copilot side panel"] --> E
+    A["📊 PowerPoint<br/>★★★★★<br/>PowerPoint Agent, Narrative Builder,<br/>Brand Checker, Templates"] --> E["🎨 Brand Kit"]
+    B["📝 Word<br/>★★★☆☆<br/>Word Agent +<br/>Templates + Copilot side panel"] --> E
     C["📗 Excel<br/>★★☆☆☆<br/>Template-level<br/>branding only"] --> E
     D["✨ Create Tab<br/>★★★★☆<br/>Images, banners, posters,<br/>templates hub"] --> E
     style A fill:#ED7D31,color:#ffffff
@@ -325,7 +332,7 @@ Once the policy is active, your designated brand managers can create the kit:
 
 ### Step 3: Set Up a SharePoint Organizational Asset Library (Recommended)
 
-While Brand Kit works with directly uploaded assets, setting up a SharePoint OAL unlocks additional benefits — especially for PowerPoint's Narrative Builder and Agent Mode, which can pull templates and brand images directly from your library.
+While Brand Kit works with directly uploaded assets, setting up a SharePoint OAL unlocks additional benefits — especially for PowerPoint's Narrative Builder and the PowerPoint Agent, which can pull templates and brand images directly from your library.
 
 **What you need:**
 - A SharePoint site (communication site or team site)
@@ -472,8 +479,8 @@ I want to be honest about what's still evolving. As of April 2026:
 
 | Scenario | Status | Notes |
 |----------|--------|-------|
-| Agent Mode in PowerPoint (Brand Kit) | ⚠️ Insiders Beta (Windows) | Rolling out more broadly |
-| Brand Checker in PowerPoint | ⚠️ Insiders Beta (Windows) | Same rollout as Agent Mode |
+| PowerPoint Agent with Brand Kit | ⚠️ Insiders Beta (Windows) | Rolling out more broadly, uses Anthropic Claude |
+| Brand Checker in PowerPoint | ⚠️ Insiders Beta (Windows) | Part of the PowerPoint Agent experience |
 | Select org template in Narrative Builder | ✅ Available | Current Channel |
 | Start from Brand Kit template | ✅ Available | Current Channel |
 | Brand Kit in Create tab (images, banners) | ✅ Available | Web |
@@ -543,7 +550,7 @@ Use this as your implementation checklist:
 - [ ] Enable the Enterprise Brand Manager policy at [config.office.com](https://config.office.com)
 - [ ] Wait 24 hours and verify brand managers have access
 - [ ] Verify Copilot licences are assigned to brand managers and target users
-- [ ] Check the update channel for your users (Insiders Beta for Agent Mode)
+- [ ] Check the update channel for your users (Insiders Beta for PowerPoint Agent)
 - [ ] (Recommended) Create a SharePoint site for brand assets
 - [ ] (Recommended) Set up an Image Asset Library (OAL) with `Add-SPOOrgAssetsLibrary`
 - [ ] (Recommended) Set up a Template Library (OAL) with `Add-SPOOrgAssetsLibrary -OrgAssetType OfficeTemplateLibrary`
@@ -588,7 +595,7 @@ Yes. Creating, managing, and using Brand Kits requires a Microsoft 365 Copilot l
 
 **3. Where does Brand Kit work?**
 
-Brand Kit has the deepest integration in PowerPoint (Agent Mode, Narrative Builder, Brand Checker). It also works in Word through templates, in the Create tab for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting.
+Brand Kit has the deepest integration in PowerPoint (PowerPoint Agent, Narrative Builder, Brand Checker). It also works in Word through the Word Agent and templates, in the Create tab for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting.
 
 **4. What is the Brand Checker?**
 
@@ -614,9 +621,9 @@ Use Slide Master with theme colours and fonts (not manual styling), include 12+ 
 
 Yes. You can create and maintain multiple Brand Kits — for example, Corporate, Product, and Regional brands. Users can switch between them. Each kit has its own templates, colours, fonts, and assets.
 
-**10. Is Agent Mode in PowerPoint generally available?**
+**10. Are the PowerPoint, Word, and Excel Agents generally available?**
 
-As of April 2026, Agent Mode (including Brand Kit) is available in PowerPoint for Windows within the Insiders Beta Channel and is rolling out more broadly. Check the [M365 Roadmap](/m365-roadmap/) for the latest availability.
+As of April 2026, the PowerPoint Agent (including Brand Kit) is available in PowerPoint for Windows within the Insiders Beta Channel and is rolling out more broadly. These agents are powered by Anthropic Claude models and represent a new way of creating content directly from within the M365 Copilot app. Check the [M365 Roadmap](/m365-roadmap/) for the latest availability.
 
 ---
 
@@ -631,4 +638,4 @@ As of April 2026, Agent Mode (including Brand Kit) is available in PowerPoint fo
 
 ---
 
-> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. Feature availability and rollout timelines may change — always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information. Agent Mode availability varies by update channel and platform.
+> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. Feature availability and rollout timelines may change — always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information. PowerPoint/Word/Excel Agent availability varies by update channel and platform.
