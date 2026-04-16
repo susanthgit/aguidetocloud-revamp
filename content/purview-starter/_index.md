@@ -22,5 +22,5 @@ faq:
   - question: "What licence do I need for these features?"
     answer: "Basic sensitivity labels and email DLP are included in Microsoft 365 E3. Teams DLP, endpoint DLP, and auto-labeling require E5 or E5 Compliance. Each starter kit shows the licence requirement, and the Deploy tab includes a full licence check table."
   - question: "Is this tool still being improved?"
-    answer: "Yes! The Label Builder (design custom labels visually) and DLP Scenarios (toggle-based policy selection) are coming in Phase 2. We'd love your feedback — visit our feedback page to share ideas and suggestions."
+    answer: "Yes! We're always refining the starter kits and adding new DLP scenarios based on feedback. Visit our feedback page to share ideas and suggestions."
 ---

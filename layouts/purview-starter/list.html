@@ -37,8 +37,7 @@
     {{/* ── Tab Navigation ── */}}
     <div class="pvs-tabs" role="tablist" aria-label="Purview Starter Kit sections">
       <button class="pvs-tab active" role="tab" aria-selected="true" data-tab="kits" id="tab-kits" aria-controls="panel-kits">Starter Kits</button>
-      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="labels" id="tab-labels" aria-controls="panel-labels">Label Builder</button>
-      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="dlp" id="tab-dlp" aria-controls="panel-dlp">DLP Scenarios</button>
+      <button class="pvs-tab" role="tab" aria-selected="false" data-tab="custom" id="tab-custom" aria-controls="panel-custom">Build Your Own</button>
       <button class="pvs-tab" role="tab" aria-selected="false" data-tab="deploy" id="tab-deploy" aria-controls="panel-deploy">Deploy <span class="pvs-badge" id="pvs-deploy-badge" style="display:none">!</span></button>
       <button class="pvs-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">FAQ</button>
     </div>
@@ -49,44 +48,63 @@
       <div class="pvs-kits-grid" id="pvs-kits-grid"></div>
     </div>
 
-    {{/* ═══ LABEL BUILDER TAB ═══ */}}
-    <div class="pvs-panel" role="tabpanel" id="panel-labels" aria-labelledby="tab-labels">
-      <p class="pvs-panel-desc">Design your own sensitivity labels. Each label has <strong>5 decisions</strong> — we handle the rest. Start from a template or build from scratch.</p>
+    {{/* ═══ BUILD YOUR OWN TAB (merged Labels + DLP) ═══ */}}
+    <div class="pvs-panel" role="tabpanel" id="panel-custom" aria-labelledby="tab-custom">
+      <p class="pvs-panel-desc">Design your own plan. Build labels, toggle DLP scenarios, then export everything from the Deploy tab.</p>
 
-      <div class="pvs-lb-templates">
-        <span class="pvs-lb-templates-label">Start from:</span>
-        <div class="pvs-lb-templates-btns" id="pvs-lb-templates"></div>
+      {{/* ── Section: Labels ── */}}
+      <div class="pvs-custom-section">
+        <h2 class="pvs-custom-section-title">Sensitivity Labels</h2>
+
+        <div class="pvs-lb-templates">
+          <span class="pvs-lb-templates-label">Start from:</span>
+          <div class="pvs-lb-templates-btns" id="pvs-lb-templates"></div>
+        </div>
+
+        <div class="pvs-lb-layout">
+          <div class="pvs-lb-tree-col">
+            <div class="pvs-lb-toolbar">
+              <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-lb-add">+ Add Label</button>
+              <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-lb-clear">Clear All</button>
+            </div>
+            <div class="pvs-lb-tree" id="pvs-lb-tree">
+              <div class="pvs-lb-empty" id="pvs-lb-empty">
+                <p>No labels yet. Add one above or start from a template.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pvs-lb-preview-col" id="pvs-lb-preview-col">
+            <div class="pvs-lb-preview-card">
+              <h3>What Users See in Office</h3>
+              <div class="pvs-lb-ribbon">
+                <div class="pvs-lb-ribbon-bar">
+                  <span class="pvs-lb-ribbon-icon">🏷️</span>
+                  <span class="pvs-lb-ribbon-text">Sensitivity</span>
+                  <span class="pvs-lb-ribbon-arrow">▾</span>
+                </div>
+                <div class="pvs-lb-ribbon-dropdown" id="pvs-lb-ribbon-dropdown"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="pvs-lb-layout">
-        <div class="pvs-lb-tree-col">
-          <div class="pvs-lb-toolbar">
-            <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-lb-add">+ Add Label</button>
-            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-lb-clear">Clear All</button>
-          </div>
-          <div class="pvs-lb-tree" id="pvs-lb-tree">
-            <div class="pvs-lb-empty" id="pvs-lb-empty">
-              <p>No labels yet. Add one above or start from a template.</p>
-            </div>
-          </div>
-          <div class="pvs-lb-deploy-cta" id="pvs-lb-deploy-cta" style="display:none">
-            <button class="pvs-btn pvs-btn--primary" id="pvs-lb-to-deploy">Use These Labels in Deploy →</button>
-          </div>
+      {{/* ── Section: DLP Scenarios ── */}}
+      <div class="pvs-custom-section">
+        <h2 class="pvs-custom-section-title">DLP Scenarios</h2>
+        <p class="pvs-panel-desc" style="margin-bottom:0.75rem">Toggle on the scenarios that matter to your org.</p>
+
+        <div class="pvs-dlp-summary" id="pvs-dlp-summary">
+          <span id="pvs-dlp-summary-count">0 scenarios selected</span>
         </div>
 
-        <div class="pvs-lb-preview-col" id="pvs-lb-preview-col">
-          <div class="pvs-lb-preview-card">
-            <h3>What Users See in Office</h3>
-            <div class="pvs-lb-ribbon">
-              <div class="pvs-lb-ribbon-bar">
-                <span class="pvs-lb-ribbon-icon">🏷️</span>
-                <span class="pvs-lb-ribbon-text">Sensitivity</span>
-                <span class="pvs-lb-ribbon-arrow">▾</span>
-              </div>
-              <div class="pvs-lb-ribbon-dropdown" id="pvs-lb-ribbon-dropdown"></div>
-            </div>
-          </div>
-        </div>
+        <div class="pvs-dlp-scenarios" id="pvs-dlp-scenarios"></div>
+      </div>
+
+      {{/* CTA to deploy */}}
+      <div class="pvs-custom-deploy-cta" id="pvs-custom-deploy-cta" style="display:none">
+        <button class="pvs-btn pvs-btn--primary" id="pvs-custom-to-deploy">View Deployment Plan →</button>
       </div>
 
       {{/* Label editor modal */}}
@@ -159,18 +177,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    {{/* ═══ DLP SCENARIOS TAB ═══ */}}
-    <div class="pvs-panel" role="tabpanel" id="panel-dlp" aria-labelledby="tab-dlp">
-      <p class="pvs-panel-desc">What do you want to protect? <strong>Toggle on the scenarios</strong> that matter to your org. Each one becomes a DLP rule in your deploy plan.</p>
-
-      <div class="pvs-dlp-summary" id="pvs-dlp-summary">
-        <span id="pvs-dlp-summary-count">0 scenarios selected</span>
-        <button class="pvs-btn pvs-btn--primary pvs-btn--sm" id="pvs-dlp-to-deploy" style="display:none">Use in Deploy →</button>
-      </div>
-
-      <div class="pvs-dlp-scenarios" id="pvs-dlp-scenarios"></div>
     </div>
 
     {{/* ═══ DEPLOY TAB ═══ */}}

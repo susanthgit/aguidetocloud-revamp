@@ -224,7 +224,15 @@
   font-size: 0.75rem;
   font-weight: 600;
 }
-.pvs-licence-e3 { background: rgba(74,222,128,0.15); color: #4ADE80; }
+
+/* Kit card actions (visible on collapsed card) */
+.pvs-kit-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.pvs-licence-e3{ background: rgba(74,222,128,0.15); color: #4ADE80; }
 .pvs-licence-e5 { background: rgba(96,165,250,0.15); color: #60A5FA; }
 .pvs-licence-e5-compliance { background: rgba(192,132,252,0.15); color: #C084FC; }
 
@@ -597,6 +605,24 @@
   font-size: 0.8rem;
   line-height: 1.4;
   margin: 0;
+}
+
+/* ═══ BUILD YOUR OWN ═══ */
+.pvs-custom-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pvs-custom-section:last-of-type { border-bottom: none; }
+.pvs-custom-section-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.pvs-custom-deploy-cta {
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 /* ═══ LABEL BUILDER (Phase 2) ═══ */
