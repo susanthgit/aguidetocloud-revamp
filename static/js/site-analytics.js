@@ -1403,8 +1403,7 @@
       var d = yt.analytics.daily;
       var totalViews28 = d.reduce(function(s, r) { return s + r.views; }, 0);
       var totalWatch = d.reduce(function(s, r) { return s + r.watchMinutes; }, 0);
-      var avgCtr = d.reduce(function(s, r) { return s + r.ctr; }, 0) / d.length;
-      parts.push('Last 28 days: <strong>' + numFmt(totalViews28) + ' views</strong>, ' + numFmt(totalWatch) + ' min watched, ' + avgCtr.toFixed(1) + '% avg CTR.');
+      parts.push('Last 28 days: <strong>' + numFmt(totalViews28) + ' views</strong>, ' + numFmt(totalWatch) + ' min watched.');
     }
     if (yt.mainAnalysis && yt.mainAnalysis.topByVelocity && yt.mainAnalysis.topByVelocity.length) {
       var top = yt.mainAnalysis.topByVelocity[0];
@@ -1540,11 +1539,10 @@
     card.style.display = '';
     var gradeColor = sc.grade === 'A+' || sc.grade === 'A' ? '#10B981' : sc.grade === 'B' ? '#FBBF24' : '#EF4444';
     var metrics = [
-      { label: 'Views', tw: sc.thisWeek.views, lw: sc.lastWeek.views, chg: sc.changes.views },
-      { label: 'Watch Time', tw: sc.thisWeek.watch + 'm', lw: sc.lastWeek.watch + 'm', chg: sc.changes.watch },
+      { label: 'Views', tw: numFmt(sc.thisWeek.views), lw: numFmt(sc.lastWeek.views), chg: sc.changes.views },
+      { label: 'Watch Time', tw: numFmt(sc.thisWeek.watch) + 'm', lw: numFmt(sc.lastWeek.watch) + 'm', chg: sc.changes.watch },
       { label: 'Net Subs', tw: sc.thisWeek.subs, lw: sc.lastWeek.subs, chg: sc.changes.subs },
-      { label: 'Impressions', tw: numFmt(sc.thisWeek.impressions), lw: numFmt(sc.lastWeek.impressions), chg: sc.changes.impressions },
-      { label: 'Avg CTR', tw: sc.thisWeek.avgCtr.toFixed(1) + '%', lw: sc.lastWeek.avgCtr.toFixed(1) + '%', chg: null }
+      { label: 'Likes', tw: numFmt(sc.thisWeek.likes), lw: numFmt(sc.lastWeek.likes), chg: sc.changes.likes }
     ];
     el.innerHTML = '<div class="siteana-scorecard-grade" style="color:' + gradeColor + '">Grade: ' + sc.grade + '</div>'
       + '<div class="siteana-ba-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">'

@@ -401,7 +401,7 @@ module.exports = async function (context, req) {
           const aRes = await youtubeAnalytics.reports.query({
             ids: 'channel==MINE',
             startDate, endDate,
-            metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained,subscribersLost,impressions,impressionClickThroughRate',
+            metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained,subscribersLost',
             dimensions: 'day',
             sort: 'day'
           });
@@ -409,7 +409,7 @@ module.exports = async function (context, req) {
           const vRes = await youtubeAnalytics.reports.query({
             ids: 'channel==MINE',
             startDate, endDate,
-            metrics: 'views,estimatedMinutesWatched,averageViewDuration,impressions,impressionClickThroughRate,likes,subscribersGained',
+            metrics: 'views,estimatedMinutesWatched,averageViewDuration,likes,subscribersGained',
             dimensions: 'video',
             sort: '-views',
             maxResults: 20
@@ -425,11 +425,11 @@ module.exports = async function (context, req) {
           ytAnalytics = {
             daily: (aRes.data.rows || []).map(r => ({
               date: r[0], views: r[1], watchMinutes: Math.round(r[2]), avgDuration: Math.round(r[3]),
-              likes: r[4], subsGained: r[5], subsLost: r[6], impressions: r[7], ctr: Math.round(r[8] * 10000) / 100
+              likes: r[4], subsGained: r[5], subsLost: r[6]
             })),
             topVideos: (vRes.data.rows || []).map(r => ({
               videoId: r[0], views: r[1], watchMinutes: Math.round(r[2]), avgDuration: Math.round(r[3]),
-              impressions: r[4], ctr: Math.round(r[5] * 10000) / 100, likes: r[6], subsGained: r[7]
+              likes: r[4], subsGained: r[5]
             })),
             trafficSources: (tRes.data.rows || []).map(r => ({
               source: r[0], views: r[1], watchMinutes: Math.round(r[2])
@@ -451,11 +451,12 @@ module.exports = async function (context, req) {
         recs.push({ icon: '\uD83D\uDCA1', text: mainAnalysis.underperformers.length + ' video(s) underperforming — consider updating titles/thumbnails' });
       }
       if (ytAnalytics && !ytAnalytics.error && ytAnalytics.daily && ytAnalytics.daily.length) {
-        const avgCtr = ytAnalytics.daily.reduce((s, d) => s + d.ctr, 0) / ytAnalytics.daily.length;
-        if (avgCtr < 5) recs.push({ icon: '\uD83C\uDFA8', text: 'Avg CTR is ' + avgCtr.toFixed(1) + '% — thumbnails and titles need improvement (aim for 5-10%)' });
-        const totalSubsGained = ytAnalytics.daily.reduce((s, d) => s + d.subsGained, 0);
-        const totalSubsLost = ytAnalytics.daily.reduce((s, d) => s + d.subsLost, 0);
+        const totalSubsGained = ytAnalytics.daily.reduce((s, d) => s + (d.subsGained || 0), 0);
+        const totalSubsLost = ytAnalytics.daily.reduce((s, d) => s + (d.subsLost || 0), 0);
         recs.push({ icon: '\uD83D\uDC65', text: 'Net subscribers (28d): +' + (totalSubsGained - totalSubsLost) + ' (' + totalSubsGained + ' gained, ' + totalSubsLost + ' lost)' });
+        const totalWatch = ytAnalytics.daily.reduce((s, d) => s + d.watchMinutes, 0);
+        const avgWatch = Math.round(totalWatch / ytAnalytics.daily.length);
+        recs.push({ icon: '\u23F1', text: 'Avg ' + avgWatch + ' min/day watch time (' + numFmt(totalWatch) + ' total in 28d)' });
       }
 
       // Title Scorecards — score each video title
@@ -518,14 +519,13 @@ module.exports = async function (context, req) {
         const thisWeek = d.slice(-7);
         const lastWeek = d.slice(-14, -7);
         const sum = (arr, key) => arr.reduce((s, r) => s + (r[key] || 0), 0);
-        const tw = { views: sum(thisWeek, 'views'), watch: sum(thisWeek, 'watchMinutes'), subs: sum(thisWeek, 'subsGained') - sum(thisWeek, 'subsLost'), impressions: sum(thisWeek, 'impressions'), avgCtr: thisWeek.reduce((s, r) => s + r.ctr, 0) / 7 };
-        const lw = { views: sum(lastWeek, 'views'), watch: sum(lastWeek, 'watchMinutes'), subs: sum(lastWeek, 'subsGained') - sum(lastWeek, 'subsLost'), impressions: sum(lastWeek, 'impressions'), avgCtr: lastWeek.reduce((s, r) => s + r.ctr, 0) / 7 };
+        const tw = { views: sum(thisWeek, 'views'), watch: sum(thisWeek, 'watchMinutes'), subs: sum(thisWeek, 'subsGained') - sum(thisWeek, 'subsLost'), likes: sum(thisWeek, 'likes') };
+        const lw = { views: sum(lastWeek, 'views'), watch: sum(lastWeek, 'watchMinutes'), subs: sum(lastWeek, 'subsGained') - sum(lastWeek, 'subsLost'), likes: sum(lastWeek, 'likes') };
         const pct = (a, b) => b > 0 ? Math.round(((a - b) / b) * 100) : 0;
-        // Grade: A+ (everything up >20%), A (most up), B (mixed), C (mostly down), D (everything down)
-        const changes = [pct(tw.views, lw.views), pct(tw.watch, lw.watch), pct(tw.subs, lw.subs), pct(tw.impressions, lw.impressions)];
+        const changes = [pct(tw.views, lw.views), pct(tw.watch, lw.watch), pct(tw.subs, lw.subs), pct(tw.likes, lw.likes)];
         const upCount = changes.filter(c => c > 5).length;
         const grade = upCount >= 4 ? 'A+' : upCount >= 3 ? 'A' : upCount >= 2 ? 'B' : upCount >= 1 ? 'C' : 'D';
-        weeklyScorecard = { thisWeek: tw, lastWeek: lw, changes: { views: pct(tw.views, lw.views), watch: pct(tw.watch, lw.watch), subs: pct(tw.subs, lw.subs), impressions: pct(tw.impressions, lw.impressions), ctr: Math.round((tw.avgCtr - lw.avgCtr) * 100) / 100 }, grade };
+        weeklyScorecard = { thisWeek: tw, lastWeek: lw, changes: { views: pct(tw.views, lw.views), watch: pct(tw.watch, lw.watch), subs: pct(tw.subs, lw.subs), likes: pct(tw.likes, lw.likes) }, grade };
       }
 
       const ytResponse = {
