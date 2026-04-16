@@ -225,4 +225,51 @@ body { background: var(--cc-bg) !important; }
   .cc-status { font-size: 0.75rem; }
 }
 
+/* V2: WoW Comparison Row */
+.cc-wow-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.cc-wow-item {
+  flex: 1; min-width: 120px; padding: 0.65rem 0.85rem; border-radius: 8px; text-align: center;
+  background: var(--cc-surface); border: 1px solid var(--cc-border);
+}
+.cc-wow-up { border-color: rgba(34,197,94,0.2); }
+.cc-wow-down { border-color: rgba(239,68,68,0.2); }
+.cc-wow-val { font-family: var(--cc-mono); font-size: 1.3rem; font-weight: 700; color: #fff; display: block; }
+.cc-wow-label { font-size: 0.68rem; color: var(--cc-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.cc-wow-chg { font-family: var(--cc-mono); font-size: 0.72rem; display: block; margin-top: 0.15rem; }
+.cc-wow-up .cc-wow-chg { color: var(--cc-green); }
+.cc-wow-down .cc-wow-chg { color: var(--cc-red); }
+.cc-wow-flat .cc-wow-chg { color: var(--cc-muted); }
+
+/* V2: Section header with button */
+.cc-section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--cc-border); }
+.cc-section-head .cc-section-title { margin: 0; border: none; padding: 0; }
+
+/* V2: Export button */
+.cc-export-btn {
+  background: var(--cc-surface); border: 1px solid var(--cc-border); color: var(--cc-muted);
+  font-family: var(--cc-mono); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.6rem;
+  border-radius: 5px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.cc-export-btn:hover { color: var(--cc-green); border-color: var(--cc-green); }
+
+/* V2: Publish Streak */
+.cc-streak-bar {
+  font-family: var(--cc-mono); font-size: 0.82rem; color: var(--cc-text);
+  padding: 0.5rem 0.75rem; background: var(--cc-surface); border: 1px solid var(--cc-border);
+  border-radius: 8px; text-align: center;
+}
+.cc-amber-text { color: var(--cc-amber); }
+
+/* V2: Keyboard hint */
+.cc-views::after {
+  content: 'D / Y / S / R';
+  font-family: var(--cc-mono); font-size: 0.6rem; color: rgba(255,255,255,0.15);
+  margin-left: 0.75rem; align-self: center; letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .cc-wow-row { flex-direction: column; }
+  .cc-views::after { display: none; }
+}
+
 @media print { #cc-gate { display: none !important; } .cc-views { display: none; } .cc-panel { display: block !important; } }

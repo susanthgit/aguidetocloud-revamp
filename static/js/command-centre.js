@@ -59,14 +59,16 @@
     if (ytData) { renderYouTube(ytData); return; }
     fetch(API + '?youtube=1').then(function(r) { return r.json(); }).then(function(data) {
       if (data.error) {
-        // Show error in YouTube view
+        // Try localStorage cache as fallback
+        var cached = getCachedYT();
+        if (cached) { ytData = cached; renderYouTube(cached); updateDashboardWithYT(); renderStreak(); return; }
         ['cc-yt-velocity','cc-yt-titles','cc-yt-projections','cc-yt-scorecard'].forEach(function(id) {
           var el = document.getElementById(id);
           if (el && !el.innerHTML.trim()) el.innerHTML = '<p style="color:var(--cc-amber);font-size:0.82rem">YouTube API: ' + esc(data.error.replace(/<[^>]*>/g, '').slice(0, 80)) + '</p>';
         });
         return;
       }
-      ytData = data; renderYouTube(data); updateDashboardWithYT();
+      ytData = data; cacheYTData(data); renderYouTube(data); updateDashboardWithYT(); renderStreak();
     }).catch(function() {});
   }
 
@@ -102,7 +104,7 @@
     var statusEl = document.getElementById('cc-status');
     if (statusEl) {
       var parts = [];
-      parts.push('<strong>' + numFmt(ga4.today.views) + '</strong> views today');
+      parts.push('<strong>' + numFmt(ga4.today.views) + '</strong> views today' + getTimeContext(ga4.today.views, ga4.trend));
       parts.push('<strong>' + numFmt(ga4.totals.views) + '</strong> total (30d)');
       if (ga4.wow && ga4.wow.change) {
         var wc = ga4.wow.change.views;
@@ -119,7 +121,9 @@
     }
 
     // Actions
+    renderWoWRow(ga4);
     renderActions(ga4, gsc);
+    renderStreak();
 
     // Site pulse chart
     if (ga4.trend && ga4.trend.length) {
@@ -378,6 +382,159 @@
     if (filter) {
       filter.onchange = function() { renderSEO(siteData); };
     }
+    renderSEOQuickWins(queries);
+  }
+
+  // ── V2: TIME CONTEXT (#1) ──
+  function getTimeContext(todayViews, trend) {
+    if (!trend || trend.length < 7) return '';
+    var hour = new Date().getHours();
+    var dayAvg = trend.reduce(function(s, d) { return s + d.views; }, 0) / trend.length;
+    // Estimate daily total based on current hour (assuming uniform distribution)
+    var projected = hour > 0 ? Math.round(todayViews * (24 / hour)) : 0;
+    var paceStr = projected > 0 ? ' (on track for ~' + numFmt(projected) + ' today)' : '';
+    var vsAvg = dayAvg > 0 ? Math.round((todayViews / (dayAvg * hour / 24)) * 100) : 100;
+    var paceClass = vsAvg >= 120 ? 'cc-up' : vsAvg < 80 ? 'cc-down' : '';
+    return paceStr + (paceClass ? ' <span class="' + paceClass + '">' + vsAvg + '% of typical pace</span>' : '');
+  }
+
+  // ── V2: WOW COMPARISON ROW (#5) ──
+  function renderWoWRow(ga4) {
+    var el = document.getElementById('cc-wow-row');
+    if (!el || !ga4.wow) return;
+    var ch = ga4.wow.change;
+    var tw = ga4.wow.thisWeek;
+    var lw = ga4.wow.lastWeek;
+    var items = [
+      { label: 'Views', tw: tw.views, lw: lw.views, chg: ch.views },
+      { label: 'Users', tw: tw.users, lw: lw.users, chg: ch.users },
+      { label: 'Sessions', tw: tw.sessions, lw: lw.sessions, chg: ch.sessions }
+    ];
+    el.innerHTML = items.map(function(m) {
+      var cls = m.chg > 0 ? 'cc-wow-up' : m.chg < 0 ? 'cc-wow-down' : 'cc-wow-flat';
+      var arrow = m.chg > 0 ? '\u2191' : m.chg < 0 ? '\u2193' : '\u2192';
+      return '<div class="cc-wow-item ' + cls + '"><span class="cc-wow-val">' + numFmt(m.tw) + '</span><span class="cc-wow-label">' + m.label + '</span><span class="cc-wow-chg">' + arrow + ' ' + Math.abs(m.chg) + '% vs ' + numFmt(m.lw) + '</span></div>';
+    }).join('');
+  }
+
+  // ── V2: PUBLISH STREAK (#3) ──
+  function renderStreak() {
+    var section = document.getElementById('cc-streak-section');
+    var el = document.getElementById('cc-streak');
+    if (!el || !section) return;
+    // Compute from YouTube data if available
+    var lastVideo = null;
+    if (ytData && ytData.mainVideos && ytData.mainVideos.length) {
+      var sorted = ytData.mainVideos.slice().sort(function(a, b) { return b.published > a.published ? 1 : -1; });
+      lastVideo = sorted[0];
+    }
+    var parts = [];
+    if (lastVideo) {
+      var daysSince = Math.round((Date.now() - new Date(lastVideo.published + 'T12:00:00Z').getTime()) / 86400000);
+      var cls = daysSince <= 3 ? 'cc-up' : daysSince <= 7 ? 'cc-amber-text' : 'cc-down';
+      parts.push('Last video: <span class="' + cls + '">' + daysSince + ' days ago</span>');
+    }
+    if (siteData && siteData.ga4 && siteData.ga4.blog_pages && siteData.ga4.blog_pages.length) {
+      parts.push(siteData.ga4.blog_pages.length + ' blog posts getting traffic');
+    }
+    if (!parts.length) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    el.innerHTML = '<div class="cc-streak-bar">' + parts.join(' \u00B7 ') + '</div>';
+  }
+
+  // ── V2: YT LOCALSTORAGE CACHE (#4) ──
+  function cacheYTData(data) {
+    try { localStorage.setItem('cc_yt_cache', JSON.stringify({ data: data, time: Date.now() })); } catch(e) {}
+  }
+  function getCachedYT() {
+    try {
+      var cached = JSON.parse(localStorage.getItem('cc_yt_cache'));
+      if (cached && cached.data && Date.now() - cached.time < 86400000) return cached.data;
+    } catch(e) {}
+    return null;
+  }
+
+  // ── V2: GOAL PACE LINE (#6) ──
+  // Integrated into growth chart — adds dashed target line
+
+  // ── V2: SEO QUICK WINS (#7) ──
+  function renderSEOQuickWins(queries) {
+    var el = document.getElementById('cc-seo-quickwins');
+    if (!el) return;
+    // Queries at position 8-20 with decent impressions — one push to page 1
+    var wins = queries.filter(function(q) {
+      return q.position > 7 && q.position <= 20 && q.impressions > 10 && !SEO_IGNORE.some(function(w) { return q.query.indexOf(w) > -1; });
+    }).sort(function(a, b) { return a.position - b.position; }).slice(0, 5);
+    if (!wins.length) { el.innerHTML = '<p style="color:var(--cc-muted);font-size:0.82rem">All your key queries are already on page 1</p>'; return; }
+    el.innerHTML = wins.map(function(q) {
+      var gap = Math.round(q.position - 10);
+      return '<div class="cc-opp"><div class="cc-opp-query">' + esc(q.query) + '</div><div class="cc-opp-meta">pos ' + q.position + ' \u00B7 ' + q.impressions + ' imp \u00B7 needs to move ' + Math.abs(gap) + ' positions</div><div class="cc-opp-uplift">Add internal links + update content to push to page 1</div></div>';
+    }).join('');
+  }
+
+  // ── V2: KEYBOARD SHORTCUTS (#8) ──
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    var key = e.key.toLowerCase();
+    if (key === 'd') switchView('dashboard');
+    else if (key === 'y') switchView('youtube');
+    else if (key === 's') switchView('seo');
+    else if (key === 'r') { e.preventDefault(); location.reload(); }
+  });
+  function switchView(name) {
+    document.querySelectorAll('.cc-view').forEach(function(b) { b.classList.remove('active'); if (b.dataset.view === name) b.classList.add('active'); });
+    document.querySelectorAll('.cc-panel').forEach(function(p) { p.classList.remove('active'); });
+    var panel = document.getElementById('cc-' + name);
+    if (panel) panel.classList.add('active');
+    if (name === 'youtube' && !ytData) fetchYT();
+    if (name === 'seo' && siteData) renderSEO(siteData);
+  }
+
+  // ── V2: COPY WEEKLY REPORT (#9) ──
+  function copyWeeklyReport() {
+    if (!siteData || !siteData.ga4) return;
+    var ga4 = siteData.ga4;
+    var lines = ['WEEKLY REPORT \u2014 ' + new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), ''];
+    lines.push('SITE: ' + numFmt(ga4.totals.views) + ' views, ' + numFmt(ga4.totals.users) + ' users (30d)');
+    if (ga4.wow) lines.push('WoW: views ' + (ga4.wow.change.views >= 0 ? '+' : '') + ga4.wow.change.views + '%, users ' + (ga4.wow.change.users >= 0 ? '+' : '') + ga4.wow.change.users + '%');
+    lines.push('');
+    lines.push('TOP TOOLS:');
+    if (ga4.leaderboard) ga4.leaderboard.slice(0, 5).forEach(function(t, i) { lines.push('  ' + (i+1) + '. ' + (TOOLS[t.tool] || t.tool) + ': ' + numFmt(t.views) + ' views'); });
+    if (ytData && ytData.main) {
+      lines.push('');
+      lines.push('YOUTUBE: ' + roundK(ytData.main.subscribers) + ' subs, ' + roundK(ytData.main.totalViews) + ' views');
+      if (ytData.weeklyScorecard) lines.push('Grade: ' + ytData.weeklyScorecard.grade);
+    }
+    if (siteData.gsc && siteData.gsc.queries) {
+      lines.push('');
+      lines.push('SEO: ' + siteData.gsc.queries.length + ' ranking queries');
+    }
+    var text = lines.join('\n');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('cc-copy-report');
+        if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.textContent = 'Copy Report'; }, 2000); }
+      });
+    }
+  }
+  var reportBtn = document.getElementById('cc-copy-report');
+  if (reportBtn) reportBtn.addEventListener('click', copyWeeklyReport);
+
+  // ── V2: ANIMATED COUNTERS (#10) ──
+  function animateCounter(el, target) {
+    if (!el) return;
+    var start = parseInt(el.textContent.replace(/,/g, '')) || 0;
+    if (start === target) return;
+    var dur = 800;
+    var t0 = null;
+    function tick(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = numFmt(Math.round(start + (target - start) * ease));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   // ── INIT ──

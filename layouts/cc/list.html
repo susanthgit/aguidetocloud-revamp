@@ -43,10 +43,20 @@
 
   <!-- VIEW: Dashboard -->
   <div class="cc-panel active" id="cc-dashboard">
+    <!-- WoW Comparison Row -->
+    <section class="cc-section">
+      <div class="cc-wow-row" id="cc-wow-row"></div>
+    </section>
+
     <!-- Priority Actions -->
     <section class="cc-section">
-      <h2 class="cc-section-title">Do Today</h2>
+      <div class="cc-section-head"><h2 class="cc-section-title">Do Today</h2><button class="cc-export-btn" id="cc-copy-report" title="Copy weekly report">Copy Report</button></div>
       <div id="cc-actions"></div>
+    </section>
+
+    <!-- Publish Streak -->
+    <section class="cc-section" id="cc-streak-section" style="display:none">
+      <div id="cc-streak"></div>
     </section>
 
     <!-- Dual Pulse -->
@@ -127,6 +137,11 @@
 
   <!-- VIEW: SEO -->
   <div class="cc-panel" id="cc-seo">
+    <section class="cc-section">
+      <h2 class="cc-section-title">Quick Wins</h2>
+      <p class="cc-hint">Closest to page 1 — one small push needed</p>
+      <div id="cc-seo-quickwins"></div>
+    </section>
     <section class="cc-section">
       <h2 class="cc-section-title">Opportunities</h2>
       <p class="cc-hint">Ranking well but under-clicked — fix titles/descriptions</p>
