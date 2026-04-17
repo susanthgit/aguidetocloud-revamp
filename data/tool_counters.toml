@@ -200,3 +200,33 @@ verb = "starter kits deployed"
 url = "/security-toolkit/"
 base = 200
 verb = "security assessments"
+
+[[tools]]
+url = "/sla-calculator/"
+base = 40
+verb = "SLA calculations"
+
+[[tools]]
+url = "/admin-badges/"
+base = 30
+verb = "badges earned"
+
+[[tools]]
+url = "/policy-tester/"
+base = 50
+verb = "policies tested"
+
+[[tools]]
+url = "/incident-comms/"
+base = 60
+verb = "comms generated"
+
+[[tools]]
+url = "/cli-quiz/"
+base = 45
+verb = "quizzes played"
+
+[[tools]]
+url = "/it-day-sim/"
+base = 35
+verb = "days survived"

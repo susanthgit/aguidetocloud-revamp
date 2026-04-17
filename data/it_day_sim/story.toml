@@ -1,0 +1,170 @@
+[[scenarios]]
+id = "morning-tickets"
+text = "It's 8 AM. You open your laptop and see 47 unread tickets. Your coffee is getting cold."
+choices = [
+  { text = "Coffee first — the tickets can wait 5 minutes", next = "coffee-spill", score = 5, tag = "self-care" },
+  { text = "Triage immediately — sort by severity", next = "triage-win", score = 10, tag = "discipline" },
+  { text = "Close the laptop and pretend you didn't see them", next = "ignore-backlog", score = -5, tag = "avoidance" }
+]
+
+[[scenarios]]
+id = "coffee-spill"
+text = "While enjoying your coffee, you get a Teams call. You fumble and spill coffee on your keyboard."
+choices = [
+  { text = "Switch to the backup keyboard you keep in your drawer", next = "ceo-projector", score = 10, tag = "prepared" },
+  { text = "Type with sticky keys for the rest of the day", next = "ceo-projector", score = 0, tag = "stubborn" }
+]
+
+[[scenarios]]
+id = "triage-win"
+text = "Great call! You find 3 P1 tickets hidden in the noise. One is a failed MFA rollout affecting 200 users."
+choices = [
+  { text = "Escalate to the identity team immediately", next = "mfa-fix", score = 10, tag = "escalation" },
+  { text = "Try to fix it yourself — how hard can conditional access be?", next = "ca-disaster", score = -5, tag = "overconfidence" }
+]
+
+[[scenarios]]
+id = "ignore-backlog"
+text = "You reopen 30 minutes later. The ticket count is now 63. Your manager is asking where you are in Teams."
+choices = [
+  { text = "Say you were in a 'planning session'", next = "ceo-projector", score = -5, tag = "creative-truth" },
+  { text = "Apologise and start triaging now", next = "triage-win", score = 5, tag = "recovery" }
+]
+
+[[scenarios]]
+id = "ceo-projector"
+text = "CEO's laptop won't connect to the projector. Board meeting starts in 5 minutes. Everyone is staring at you."
+choices = [
+  { text = "Check the HDMI cable and display settings calmly", next = "phishing-alert", score = 10, tag = "calm" },
+  { text = "Grab your own laptop and mirror the presentation", next = "phishing-alert", score = 8, tag = "resourceful" },
+  { text = "Blame the projector vendor and call facilities", next = "lunch-decision", score = -3, tag = "deflection" }
+]
+
+[[scenarios]]
+id = "mfa-fix"
+text = "The identity team finds a misconfigured Conditional Access policy. They fix it in 10 minutes. You're the hero."
+choices = [
+  { text = "Document the incident for the knowledge base", next = "phishing-alert", score = 10, tag = "documentation" },
+  { text = "Celebrate quietly and move on", next = "phishing-alert", score = 5, tag = "humble" }
+]
+
+[[scenarios]]
+id = "ca-disaster"
+text = "You accidentally locked out every admin including yourself. The entire tenant is inaccessible."
+choices = [
+  { text = "Use the break-glass account (you set one up, right?)", next = "phishing-alert", score = 10, tag = "prepared" },
+  { text = "Call Microsoft Support and pray", next = "phishing-alert", score = 0, tag = "learning-moment" }
+]
+
+[[scenarios]]
+id = "phishing-alert"
+text = "Security alert: A user clicked a phishing link and entered their credentials. The attacker is already in."
+choices = [
+  { text = "Revoke sessions, reset password, check sign-in logs", next = "admin-request", score = 15, tag = "incident-response" },
+  { text = "Send a company-wide email warning about phishing", next = "admin-request", score = 5, tag = "awareness" },
+  { text = "It's probably fine — the antivirus will catch it", next = "admin-request", score = -10, tag = "negligence" }
+]
+
+[[scenarios]]
+id = "admin-request"
+text = "A department head asks you to 'just give them Global Admin access for 5 minutes' to check something."
+choices = [
+  { text = "Politely decline and offer to help with a scoped role", next = "lunch-decision", score = 15, tag = "security" },
+  { text = "Give them a time-limited PIM elevation", next = "lunch-decision", score = 10, tag = "compromise" },
+  { text = "Give them the access — it's only 5 minutes", next = "lunch-decision", score = -10, tag = "weak" }
+]
+
+[[scenarios]]
+id = "lunch-decision"
+text = "It's noon. You haven't eaten. A P2 ticket just came in — SharePoint search is broken for one department."
+choices = [
+  { text = "Lunch first — P2 can wait 30 minutes", next = "copilot-broken", score = 5, tag = "self-care" },
+  { text = "Quick sandwich at desk while investigating", next = "copilot-broken", score = 8, tag = "multitask" },
+  { text = "Skip lunch — this might escalate", next = "copilot-broken", score = 0, tag = "burnout-risk" }
+]
+
+[[scenarios]]
+id = "copilot-broken"
+text = "Three executives report that Copilot isn't generating responses. Your CTO asks for an update within the hour."
+choices = [
+  { text = "Check M365 Service Health dashboard first", next = "friday-sev1", score = 10, tag = "methodology" },
+  { text = "Restart everything and hope for the best", next = "friday-sev1", score = -5, tag = "panic" },
+  { text = "Blame Microsoft — 'it's a known issue'", next = "friday-sev1", score = 0, tag = "deflection" }
+]
+
+[[scenarios]]
+id = "friday-sev1"
+text = "It's Friday at 4:55 PM. A Sev1 alert fires — email delivery is failing company-wide."
+choices = [
+  { text = "Stay late and fix it — email is critical", next = "password-reset", score = 15, tag = "dedication" },
+  { text = "Acknowledge the alert and call the on-call team", next = "password-reset", score = 10, tag = "process" },
+  { text = "Pretend you didn't see it until Monday", next = "password-reset", score = -15, tag = "negligence" }
+]
+
+[[scenarios]]
+id = "password-reset"
+text = "A user calls in a panic — they're locked out of everything before a client presentation in 10 minutes."
+choices = [
+  { text = "Reset their password and walk them through MFA re-enrollment", next = "reply-all", score = 10, tag = "service" },
+  { text = "Tell them to submit a ticket and wait in the queue", next = "reply-all", score = -5, tag = "bureaucracy" }
+]
+
+[[scenarios]]
+id = "reply-all"
+text = "Someone hit Reply All on a company-wide email. The replies are cascading. 847 emails and counting."
+choices = [
+  { text = "Create a transport rule to block further replies", next = "shadow-it", score = 15, tag = "expertise" },
+  { text = "Send your own Reply All saying 'please stop replying all'", next = "shadow-it", score = -10, tag = "irony" },
+  { text = "Grab popcorn and watch the chaos unfold", next = "shadow-it", score = 0, tag = "entertainment" }
+]
+
+[[scenarios]]
+id = "shadow-it"
+text = "You discover 14 employees are using an unauthorized AI tool that processes company data through a Chinese server."
+choices = [
+  { text = "Block the app immediately and report to security", next = "end-of-day", score = 15, tag = "governance" },
+  { text = "Research the tool first, then propose a sanctioned alternative", next = "end-of-day", score = 10, tag = "pragmatic" },
+  { text = "Ignore it — people will just find another tool anyway", next = "end-of-day", score = -10, tag = "negligence" }
+]
+
+[[scenarios]]
+id = "end-of-day"
+text = "It's 5:30 PM. You're about to leave when a user reports their laptop was stolen from a taxi."
+choices = [
+  { text = "Initiate remote wipe immediately from Intune", next = "final", score = 15, tag = "security" },
+  { text = "Tell them to report it to police first and you'll handle it tomorrow", next = "final", score = 0, tag = "deferred" },
+  { text = "Check if BitLocker is enabled and remotely lock it", next = "final", score = 12, tag = "measured" }
+]
+
+[[scenarios]]
+id = "final"
+text = "Another day survived. You close your laptop and reflect on what just happened."
+choices = []
+
+[[score_tiers]]
+min = 0
+max = 30
+title = "Chaos Agent"
+emoji = "💥"
+desc = "The tickets won. The users won. Even the projector won. But hey — tomorrow is a new day."
+
+[[score_tiers]]
+min = 31
+max = 50
+title = "Survived"
+emoji = "😅"
+desc = "You made it through with only minor damage. A few users might not trust you, but the lights are still on."
+
+[[score_tiers]]
+min = 51
+max = 70
+title = "Solid Admin"
+emoji = "💪"
+desc = "Professional, composed, and effective. Your users are lucky to have you. Now go home and rest."
+
+[[score_tiers]]
+min = 71
+max = 100
+title = "Legendary Admin"
+emoji = "👑"
+desc = "Break-glass accounts, documented incidents, blocked shadow IT, and still had lunch. You are the admin others aspire to be."

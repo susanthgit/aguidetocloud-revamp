@@ -1,0 +1,149 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "sla_calculator") }}
+{{ $tiers := $data.slas.tiers }}
+{{ $m365 := $data.slas.m365_slas }}
+<link rel="stylesheet" href="/css/sla-calculator.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "SLA Uptime Calculator" "subtitle" "See your exact downtime budget — per year, month, week, or day" "accent" "#4ECDC4") }}
+
+<div class="slacalc-page">
+  <div class="slacalc-tabs" role="tablist">
+    <button class="slacalc-tab active" role="tab" aria-selected="true" data-tab="calc">Calculator</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="m365">M365 SLAs</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- Calculator Panel -->
+  <div class="slacalc-panel active" id="panel-calc">
+    <div class="slacalc-mode-toggle">
+      <button class="slacalc-mode active" data-mode="forward">SLA % → Downtime</button>
+      <button class="slacalc-mode" data-mode="reverse">Downtime → SLA %</button>
+      <button class="slacalc-mode" data-mode="incident">Incident Impact</button>
+    </div>
+
+    <!-- Forward Mode -->
+    <div class="slacalc-section" id="mode-forward">
+      <div class="slacalc-input-group">
+        <label for="sla-input">SLA Target (%)</label>
+        <input type="number" id="sla-input" value="99.9" min="0" max="100" step="0.001" aria-label="SLA percentage">
+        <input type="range" id="sla-slider" min="99" max="99.9999" step="0.0001" value="99.9" aria-label="SLA percentage slider">
+      </div>
+      <div class="slacalc-presets">
+        <button class="slacalc-preset" data-val="99">99%</button>
+        <button class="slacalc-preset" data-val="99.5">99.5%</button>
+        <button class="slacalc-preset active" data-val="99.9">99.9%</button>
+        <button class="slacalc-preset" data-val="99.95">99.95%</button>
+        <button class="slacalc-preset" data-val="99.99">99.99%</button>
+        <button class="slacalc-preset" data-val="99.999">99.999%</button>
+      </div>
+      <div class="slacalc-results" id="forward-results"></div>
+    </div>
+
+    <!-- Reverse Mode -->
+    <div class="slacalc-section" id="mode-reverse" style="display:none">
+      <div class="slacalc-input-row">
+        <div class="slacalc-input-group">
+          <label for="rev-hours">Hours down</label>
+          <input type="number" id="rev-hours" value="0" min="0" aria-label="Hours of downtime">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="rev-mins">Minutes</label>
+          <input type="number" id="rev-mins" value="43" min="0" max="59" aria-label="Minutes of downtime">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="rev-period">Over period</label>
+          <select id="rev-period" aria-label="Time period">
+            <option value="year">Year</option>
+            <option value="month" selected>Month</option>
+            <option value="week">Week</option>
+          </select>
+        </div>
+      </div>
+      <div class="slacalc-results" id="reverse-results"></div>
+    </div>
+
+    <!-- Incident Impact Mode -->
+    <div class="slacalc-section" id="mode-incident" style="display:none">
+      <div class="slacalc-input-row">
+        <div class="slacalc-input-group">
+          <label for="inc-hours">Outage hours</label>
+          <input type="number" id="inc-hours" value="0" min="0" aria-label="Outage hours">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="inc-mins">Minutes</label>
+          <input type="number" id="inc-mins" value="30" min="0" max="59" aria-label="Outage minutes">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="inc-period">In period</label>
+          <select id="inc-period" aria-label="Time period">
+            <option value="year">This year</option>
+            <option value="month" selected>This month</option>
+          </select>
+        </div>
+      </div>
+      <div class="slacalc-results" id="incident-results"></div>
+    </div>
+  </div>
+
+  <!-- Compare Panel -->
+  <div class="slacalc-panel" id="panel-compare">
+    <div class="slacalc-table-wrap">
+      <table class="slacalc-table" id="compare-table">
+        <thead>
+          <tr>
+            <th>SLA</th>
+            <th>Name</th>
+            <th>Downtime / Year</th>
+            <th>Downtime / Month</th>
+            <th>Downtime / Week</th>
+            <th>Typical Use</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- M365 SLAs Panel -->
+  <div class="slacalc-panel" id="panel-m365">
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem">Microsoft's contractual SLA commitments. Click a row to calculate its downtime budget.</p>
+    <div class="slacalc-table-wrap">
+      <table class="slacalc-table" id="m365-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>SLA %</th>
+            <th>Downtime / Year</th>
+            <th>Downtime / Month</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:1rem">Source: <a href="https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5)">Microsoft SLA for Online Services</a>. Check for updates periodically.</p>
+  </div>
+
+  <!-- FAQ Panel -->
+  <div class="slacalc-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "sla-calculator") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__slaTiers = {{ $tiers | jsonify | safeJS }};
+window.__m365Slas = {{ $m365 | jsonify | safeJS }};
+</script>
+<script defer src="/js/sla-calculator.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

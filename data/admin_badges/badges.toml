@@ -1,0 +1,415 @@
+[[badges]]
+id = "sev1-survivor"
+name = "Sev1 Survivor"
+emoji = "🔥"
+desc = "Survived a critical outage on a Friday evening"
+category = "survival"
+rarity = "common"
+
+[[badges]]
+id = "reply-all-survivor"
+name = "Reply All Survivor"
+emoji = "💀"
+desc = "Survived a company-wide Reply All storm"
+category = "survival"
+rarity = "common"
+
+[[badges]]
+id = "weekend-warrior"
+name = "Weekend Warrior"
+emoji = "⚔️"
+desc = "Fixed a production issue on a Saturday"
+category = "survival"
+rarity = "common"
+
+[[badges]]
+id = "midnight-deploy"
+name = "Midnight Deployer"
+emoji = "🌙"
+desc = "Completed a change window after midnight"
+category = "survival"
+rarity = "uncommon"
+
+[[badges]]
+id = "printer-whisperer"
+name = "Printer Whisperer"
+emoji = "🖨️"
+desc = "Fixed a printer issue that had defeated 3 other techs"
+category = "survival"
+rarity = "uncommon"
+
+[[badges]]
+id = "cable-hero"
+name = "Cable Hero"
+emoji = "🔌"
+desc = "Solved a critical issue that was just a loose cable"
+category = "survival"
+rarity = "common"
+
+[[badges]]
+id = "vpn-ninja"
+name = "VPN Ninja"
+emoji = "🥷"
+desc = "Troubleshot a VPN issue while on the VPN"
+category = "survival"
+rarity = "uncommon"
+
+[[badges]]
+id = "outage-prophet"
+name = "Outage Prophet"
+emoji = "🔮"
+desc = "Predicted an outage before it happened"
+category = "survival"
+rarity = "rare"
+
+[[badges]]
+id = "mfa-champion"
+name = "MFA Champion"
+emoji = "🛡️"
+desc = "Deployed MFA to 1000+ users without a single complaint"
+category = "security"
+rarity = "rare"
+
+[[badges]]
+id = "phish-catcher"
+name = "Phish Catcher"
+emoji = "🎣"
+desc = "Caught a phishing campaign before anyone clicked"
+category = "security"
+rarity = "uncommon"
+
+[[badges]]
+id = "zero-trust-architect"
+name = "Zero Trust Architect"
+emoji = "🏛️"
+desc = "Implemented a Zero Trust framework from scratch"
+category = "security"
+rarity = "rare"
+
+[[badges]]
+id = "shadow-it-hunter"
+name = "Shadow IT Hunter"
+emoji = "🧹"
+desc = "Discovered and remediated unauthorized SaaS"
+category = "security"
+rarity = "uncommon"
+
+[[badges]]
+id = "breach-responder"
+name = "Breach Responder"
+emoji = "🚨"
+desc = "Led incident response for a real security breach"
+category = "security"
+rarity = "rare"
+
+[[badges]]
+id = "password-liberator"
+name = "Password Liberator"
+emoji = "🗝️"
+desc = "Removed forced password expiry and implemented passwordless"
+category = "security"
+rarity = "uncommon"
+
+[[badges]]
+id = "patch-tuesday-hero"
+name = "Patch Tuesday Hero"
+emoji = "🩹"
+desc = "Patched 500+ devices within 48 hours of Patch Tuesday"
+category = "security"
+rarity = "uncommon"
+
+[[badges]]
+id = "dlp-guardian"
+name = "DLP Guardian"
+emoji = "🔒"
+desc = "Prevented a data leak using DLP policies"
+category = "security"
+rarity = "uncommon"
+
+[[badges]]
+id = "cloud-migrator"
+name = "Cloud Migrator"
+emoji = "🚀"
+desc = "Migrated from on-prem to Microsoft 365"
+category = "migration"
+rarity = "uncommon"
+
+[[badges]]
+id = "tenant-merger"
+name = "Tenant Merger"
+emoji = "🔗"
+desc = "Successfully merged two M365 tenants"
+category = "migration"
+rarity = "rare"
+
+[[badges]]
+id = "exchange-escapee"
+name = "Exchange Escapee"
+emoji = "📬"
+desc = "Migrated off on-prem Exchange for the last time"
+category = "migration"
+rarity = "uncommon"
+
+[[badges]]
+id = "zero-data-loss"
+name = "Zero Data Loss"
+emoji = "💎"
+desc = "Completed a major migration with zero data loss"
+category = "migration"
+rarity = "rare"
+
+[[badges]]
+id = "hybrid-master"
+name = "Hybrid Master"
+emoji = "🌉"
+desc = "Managed a hybrid environment (on-prem + cloud) for 2+ years"
+category = "migration"
+rarity = "uncommon"
+
+[[badges]]
+id = "google-to-m365"
+name = "Google Refugee"
+emoji = "📧"
+desc = "Migrated an org from Google Workspace to Microsoft 365"
+category = "migration"
+rarity = "uncommon"
+
+[[badges]]
+id = "compliance-hero"
+name = "Compliance Hero"
+emoji = "📋"
+desc = "Passed an external compliance audit on the first try"
+category = "governance"
+rarity = "rare"
+
+[[badges]]
+id = "policy-architect"
+name = "Policy Architect"
+emoji = "📝"
+desc = "Wrote a comprehensive IT governance policy from scratch"
+category = "governance"
+rarity = "uncommon"
+
+[[badges]]
+id = "gdpr-ready"
+name = "GDPR Ready"
+emoji = "🇪🇺"
+desc = "Achieved GDPR compliance for your organisation"
+category = "governance"
+rarity = "uncommon"
+
+[[badges]]
+id = "license-optimizer"
+name = "Licence Optimizer"
+emoji = "💰"
+desc = "Saved the company $50K+ by optimising M365 licences"
+category = "governance"
+rarity = "rare"
+
+[[badges]]
+id = "label-master"
+name = "Label Master"
+emoji = "🏷️"
+desc = "Deployed sensitivity labels across the entire org"
+category = "governance"
+rarity = "uncommon"
+
+[[badges]]
+id = "audit-ace"
+name = "Audit Ace"
+emoji = "🎯"
+desc = "Maintained clean audit logs for a full year"
+category = "governance"
+rarity = "uncommon"
+
+[[badges]]
+id = "documentation-hero"
+name = "Documentation Hero"
+emoji = "📝"
+desc = "Wrote documentation nobody will read (but you did it anyway)"
+category = "teaching"
+rarity = "common"
+
+[[badges]]
+id = "training-champion"
+name = "Training Champion"
+emoji = "🎓"
+desc = "Trained 100+ end users on a new system"
+category = "teaching"
+rarity = "uncommon"
+
+[[badges]]
+id = "cert-collector"
+name = "Cert Collector"
+emoji = "🎓"
+desc = "Passed 3+ Microsoft certifications"
+category = "teaching"
+rarity = "uncommon"
+
+[[badges]]
+id = "mentor"
+name = "Mentor"
+emoji = "🧭"
+desc = "Mentored a junior admin into a senior role"
+category = "teaching"
+rarity = "rare"
+
+[[badges]]
+id = "knowledge-base-builder"
+name = "Knowledge Base Builder"
+emoji = "📚"
+desc = "Built an internal knowledge base with 100+ articles"
+category = "teaching"
+rarity = "uncommon"
+
+[[badges]]
+id = "copilot-evangelist"
+name = "Copilot Evangelist"
+emoji = "🤖"
+desc = "Led a successful Copilot rollout and training programme"
+category = "teaching"
+rarity = "uncommon"
+
+[[badges]]
+id = "runbook-writer"
+name = "Runbook Writer"
+emoji = "📖"
+desc = "Created runbooks that let someone else handle the 3 AM call"
+category = "teaching"
+rarity = "uncommon"
+
+[[badges]]
+id = "ai-whisperer"
+name = "AI Whisperer"
+emoji = "🤖"
+desc = "Successfully deployed Copilot and users actually use it"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "rename-tracker"
+name = "Rename Tracker"
+emoji = "🔄"
+desc = "Can remember what Azure AD is called this week"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "coffee-driven"
+name = "Coffee-Driven Development"
+emoji = "☕"
+desc = "Fixed a P1 fuelled entirely by caffeine"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "the-fixer"
+name = "The Fixer"
+emoji = "🔧"
+desc = "Became the person everyone calls when nothing else works"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "invisible-admin"
+name = "Invisible Admin"
+emoji = "👻"
+desc = "Everything just worked — nobody knew you existed"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "no-downtime"
+name = "Zero Downtime"
+emoji = "⏰"
+desc = "Maintained 100% uptime for a full calendar year"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "budget-magician"
+name = "Budget Magician"
+emoji = "🎩"
+desc = "Delivered a major project under budget"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "last-one-standing"
+name = "Last One Standing"
+emoji = "🏆"
+desc = "The only IT person left during a mass resignation"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "change-management-pro"
+name = "Change Management Pro"
+emoji = "📊"
+desc = "Rolled out a major change with zero helpdesk tickets"
+category = "legendary"
+rarity = "legendary"
+
+[[badges]]
+id = "script-wizard"
+name = "Script Wizard"
+emoji = "⚡"
+desc = "Automated a 4-hour manual process into a 30-second script"
+category = "legendary"
+rarity = "legendary"
+
+[[categories]]
+id = "survival"
+name = "Survival Stories"
+emoji = "🔥"
+color = "#EF4444"
+
+[[categories]]
+id = "security"
+name = "Security Champion"
+emoji = "🛡️"
+color = "#3B82F6"
+
+[[categories]]
+id = "migration"
+name = "Cloud Migration"
+emoji = "🚀"
+color = "#8B5CF6"
+
+[[categories]]
+id = "governance"
+name = "Governance & Compliance"
+emoji = "📋"
+color = "#10B981"
+
+[[categories]]
+id = "teaching"
+name = "Teaching & Learning"
+emoji = "🎓"
+color = "#F59E0B"
+
+[[categories]]
+id = "legendary"
+name = "Legendary Achievements"
+emoji = "👑"
+color = "#FFD54F"
+
+[[rarities]]
+id = "common"
+label = "Common"
+color = "#9CA3AF"
+
+[[rarities]]
+id = "uncommon"
+label = "Uncommon"
+color = "#10B981"
+
+[[rarities]]
+id = "rare"
+label = "Rare"
+color = "#3B82F6"
+
+[[rarities]]
+id = "legendary"
+label = "Legendary"
+color = "#FFD54F"

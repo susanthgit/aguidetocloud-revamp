@@ -1,0 +1,329 @@
+[[commands]]
+id = "get-inactive-users"
+task = "List all users who haven't signed in for 90 days"
+command = "Get-MgUser -All -Property SignInActivity | Where-Object { $_.SignInActivity.LastSignInDateTime -lt (Get-Date).AddDays(-90) }"
+accepted_commands = ["Get-MgUser", "Get-MgBetaUser"]
+category = "graph"
+difficulty = 2
+module = "Microsoft.Graph"
+explanation = "Uses the Graph PowerShell SDK to query sign-in activity timestamps and filter for stale accounts."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguser"
+
+[[commands]]
+id = "block-user-signin"
+task = "Block a specific user from signing in"
+command = "Update-MgUser -UserId user@contoso.com -AccountEnabled:$false"
+accepted_commands = ["Update-MgUser", "Set-MgUser"]
+category = "graph"
+difficulty = 1
+module = "Microsoft.Graph"
+explanation = "Disables the user account in Entra ID, preventing all sign-ins across M365 services."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/update-mguser"
+
+[[commands]]
+id = "export-mfa-status"
+task = "Export all users and their MFA registration status"
+command = "Get-MgReportAuthenticationMethodUserRegistrationDetail -All | Select-Object UserPrincipalName, IsMfaRegistered, DefaultMfaMethod"
+accepted_commands = ["Get-MgReportAuthenticationMethodUserRegistrationDetail"]
+category = "graph"
+difficulty = 2
+module = "Microsoft.Graph"
+explanation = "Retrieves the authentication method registration details including MFA status for all users."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.reports/get-mgreportauthenticationmethoduserregistrationdetail"
+
+[[commands]]
+id = "get-shared-mailboxes"
+task = "List all shared mailboxes and their size"
+command = "Get-EXOMailbox -RecipientTypeDetails SharedMailbox -ResultSize Unlimited | Get-EXOMailboxStatistics | Select-Object DisplayName, TotalItemSize"
+accepted_commands = ["Get-EXOMailbox", "Get-Mailbox"]
+category = "exchange"
+difficulty = 2
+module = "ExchangeOnlineManagement"
+explanation = "Retrieves all shared mailboxes and pipes to Get-EXOMailboxStatistics for size information."
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-exomailbox"
+
+[[commands]]
+id = "set-mailbox-forwarding"
+task = "Set up email forwarding for a user's mailbox"
+command = "Set-Mailbox -Identity user@contoso.com -ForwardingSmtpAddress forward@contoso.com -DeliverToMailboxAndForward $true"
+accepted_commands = ["Set-Mailbox"]
+category = "exchange"
+difficulty = 1
+module = "ExchangeOnlineManagement"
+explanation = "Configures SMTP forwarding while keeping a copy in the original mailbox."
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/set-mailbox"
+
+[[commands]]
+id = "get-teams-policies"
+task = "List all Teams meeting policies in the tenant"
+command = "Get-CsTeamsMeetingPolicy | Select-Object Identity, AllowTranscription, AllowRecording"
+accepted_commands = ["Get-CsTeamsMeetingPolicy"]
+category = "teams"
+difficulty = 1
+module = "MicrosoftTeams"
+explanation = "Returns all configured Teams meeting policies with their key settings."
+learn_url = "https://learn.microsoft.com/powershell/module/teams/get-csteamsmeetingpolicy"
+
+[[commands]]
+id = "create-teams-team"
+task = "Create a new Microsoft Team with a specific template"
+command = "New-Team -DisplayName 'Project Alpha' -Description 'Project collaboration space' -Visibility Private"
+accepted_commands = ["New-Team"]
+category = "teams"
+difficulty = 1
+module = "MicrosoftTeams"
+explanation = "Creates a new Microsoft Team with specified name, description, and visibility settings."
+learn_url = "https://learn.microsoft.com/powershell/module/teams/new-team"
+
+[[commands]]
+id = "get-azure-vms"
+task = "List all virtual machines in the current Azure subscription"
+command = "Get-AzVM | Select-Object Name, ResourceGroupName, Location, @{N='Size';E={$_.HardwareProfile.VmSize}}"
+accepted_commands = ["Get-AzVM", "az vm list"]
+category = "azure"
+difficulty = 1
+module = "Az.Compute"
+explanation = "Lists all VMs with their name, resource group, location, and size."
+learn_url = "https://learn.microsoft.com/powershell/module/az.compute/get-azvm"
+
+[[commands]]
+id = "create-azure-rg"
+task = "Create a new resource group in Azure"
+command = "New-AzResourceGroup -Name 'rg-production-eus' -Location 'eastus' -Tag @{Environment='Production'}"
+accepted_commands = ["New-AzResourceGroup", "az group create"]
+category = "azure"
+difficulty = 1
+module = "Az.Resources"
+explanation = "Creates a new resource group with a descriptive name, location, and environment tag."
+learn_url = "https://learn.microsoft.com/powershell/module/az.resources/new-azresourcegroup"
+
+[[commands]]
+id = "get-disk-space"
+task = "Check free disk space on all drives"
+command = "Get-PSDrive -PSProvider FileSystem | Select-Object Name, @{N='Free(GB)';E={[math]::Round($_.Free/1GB,2)}}, @{N='Used(GB)';E={[math]::Round($_.Used/1GB,2)}}"
+accepted_commands = ["Get-PSDrive", "Get-Volume", "Get-WmiObject Win32_LogicalDisk"]
+category = "windows"
+difficulty = 1
+module = "Built-in"
+explanation = "Uses the FileSystem provider to list all drives with free and used space in GB."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-psdrive"
+
+[[commands]]
+id = "find-large-files"
+task = "Find all files larger than 1GB in a directory tree"
+command = "Get-ChildItem -Path C:\\ -Recurse -File -ErrorAction SilentlyContinue | Where-Object { $_.Length -gt 1GB } | Sort-Object Length -Descending"
+accepted_commands = ["Get-ChildItem", "gci", "dir"]
+category = "windows"
+difficulty = 2
+module = "Built-in"
+explanation = "Recursively scans for large files, suppressing access denied errors, sorted by size descending."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem"
+
+[[commands]]
+id = "export-group-members"
+task = "Export all members of a specific Entra ID security group"
+command = "Get-MgGroupMember -GroupId (Get-MgGroup -Filter \"displayName eq 'IT Admins'\").Id -All | Select-Object @{N='Name';E={$_.AdditionalProperties.displayName}}"
+accepted_commands = ["Get-MgGroupMember"]
+category = "graph"
+difficulty = 3
+module = "Microsoft.Graph"
+explanation = "Chains Get-MgGroup for lookup, then retrieves all members. Uses AdditionalProperties for the display name."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.groups/get-mggroupmember"
+
+[[commands]]
+id = "add-spf-record"
+task = "Check if a domain has a valid SPF record"
+command = "Resolve-DnsName -Name contoso.com -Type TXT | Where-Object { $_.Strings -match 'v=spf1' }"
+accepted_commands = ["Resolve-DnsName", "nslookup"]
+category = "windows"
+difficulty = 2
+module = "DnsClient"
+explanation = "Queries TXT records and filters for SPF. Works directly from PowerShell without extra modules."
+learn_url = "https://learn.microsoft.com/powershell/module/dnsclient/resolve-dnsname"
+
+[[commands]]
+id = "get-conditional-access"
+task = "List all Conditional Access policies and their state"
+command = "Get-MgIdentityConditionalAccessPolicy -All | Select-Object DisplayName, State, CreatedDateTime"
+accepted_commands = ["Get-MgIdentityConditionalAccessPolicy"]
+category = "graph"
+difficulty = 2
+module = "Microsoft.Graph"
+explanation = "Retrieves all Conditional Access policies with their name, enabled/disabled/report-only state, and creation date."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccesspolicy"
+
+[[commands]]
+id = "reset-user-password"
+task = "Reset a user's password and force change at next login"
+command = "Update-MgUser -UserId user@contoso.com -PasswordProfile @{ForceChangePasswordNextSignIn=$true; Password='TempP@ss123!'}"
+accepted_commands = ["Update-MgUser", "Reset-MgUserPassword"]
+category = "graph"
+difficulty = 2
+module = "Microsoft.Graph"
+explanation = "Sets a temporary password and forces the user to change it at their next sign-in."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users/update-mguser"
+
+[[commands]]
+id = "get-mailbox-permissions"
+task = "List all users who have Full Access to a shared mailbox"
+command = "Get-EXOMailboxPermission -Identity shared@contoso.com | Where-Object { $_.AccessRights -contains 'FullAccess' -and $_.User -ne 'NT AUTHORITY\\SELF' }"
+accepted_commands = ["Get-EXOMailboxPermission", "Get-MailboxPermission"]
+category = "exchange"
+difficulty = 2
+module = "ExchangeOnlineManagement"
+explanation = "Shows who has Full Access permission, filtering out the default SELF permission."
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/get-exomailboxpermission"
+
+[[commands]]
+id = "install-graph-module"
+task = "Install the Microsoft Graph PowerShell SDK"
+command = "Install-Module Microsoft.Graph -Scope CurrentUser -Force"
+accepted_commands = ["Install-Module Microsoft.Graph", "Install-PSResource Microsoft.Graph"]
+category = "powershell"
+difficulty = 1
+module = "PowerShellGet"
+explanation = "Installs the Graph SDK for the current user without requiring admin elevation."
+learn_url = "https://learn.microsoft.com/powershell/microsoftgraph/installation"
+
+[[commands]]
+id = "connect-exchange"
+task = "Connect to Exchange Online PowerShell"
+command = "Connect-ExchangeOnline -UserPrincipalName admin@contoso.com"
+accepted_commands = ["Connect-ExchangeOnline"]
+category = "exchange"
+difficulty = 1
+module = "ExchangeOnlineManagement"
+explanation = "Authenticates to Exchange Online. Supports modern auth and MFA automatically."
+learn_url = "https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell"
+
+[[commands]]
+id = "get-service-status"
+task = "Check current Microsoft 365 service health status"
+command = "Get-MgServiceAnnouncementHealthOverview -All | Select-Object Service, Status"
+accepted_commands = ["Get-MgServiceAnnouncementHealthOverview"]
+category = "graph"
+difficulty = 2
+module = "Microsoft.Graph"
+explanation = "Queries the Service Communications API for current health status of all M365 services."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.devices.serviceannouncement/get-mgserviceannouncementhealthoverview"
+
+[[commands]]
+id = "set-oof-message"
+task = "Set an Out of Office automatic reply for a user"
+command = "Set-MailboxAutoReplyConfiguration -Identity user@contoso.com -AutoReplyState Enabled -InternalMessage 'I am currently out of office.' -ExternalMessage 'I am out of office.'"
+accepted_commands = ["Set-MailboxAutoReplyConfiguration"]
+category = "exchange"
+difficulty = 2
+module = "ExchangeOnlineManagement"
+explanation = "Configures automatic replies with separate internal and external messages."
+learn_url = "https://learn.microsoft.com/powershell/module/exchange/set-mailboxautoreplyconfiguration"
+
+[[commands]]
+id = "get-azure-costs"
+task = "Get Azure cost summary for the current billing period"
+command = "az cost management query --type ActualCost --timeframe MonthToDate --dataset-aggregation '{\"totalCost\":{\"name\":\"Cost\",\"function\":\"Sum\"}}'"
+accepted_commands = ["az cost management query", "az costmanagement"]
+category = "azure"
+difficulty = 3
+module = "Azure CLI"
+explanation = "Uses Azure CLI to query Cost Management for the current month's spend."
+learn_url = "https://learn.microsoft.com/cli/azure/cost-management"
+
+[[commands]]
+id = "export-sign-in-logs"
+task = "Export the last 7 days of sign-in logs"
+command = "Get-MgAuditLogSignIn -Filter \"createdDateTime ge $(Get-Date (Get-Date).AddDays(-7) -Format 'yyyy-MM-ddTHH:mm:ssZ')\" -All | Export-Csv signin-logs.csv -NoTypeInformation"
+accepted_commands = ["Get-MgAuditLogSignIn"]
+category = "graph"
+difficulty = 3
+module = "Microsoft.Graph"
+explanation = "Queries Entra ID audit logs for sign-ins within the last 7 days and exports to CSV."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.reports/get-mgauditlogsignin"
+
+[[commands]]
+id = "restart-remote-pc"
+task = "Restart a remote computer"
+command = "Restart-Computer -ComputerName SERVER01 -Force -Wait"
+accepted_commands = ["Restart-Computer"]
+category = "windows"
+difficulty = 1
+module = "Built-in"
+explanation = "Sends a restart command to a remote computer. -Force closes apps without prompting. -Wait pauses until reboot completes."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer"
+
+[[commands]]
+id = "get-app-registrations"
+task = "List all Entra ID app registrations and their expiring credentials"
+command = "Get-MgApplication -All | Select-Object DisplayName, AppId, @{N='Expiry';E={($_.PasswordCredentials | Sort-Object EndDateTime | Select-Object -Last 1).EndDateTime}}"
+accepted_commands = ["Get-MgApplication"]
+category = "graph"
+difficulty = 3
+module = "Microsoft.Graph"
+explanation = "Lists all app registrations with the latest credential expiry date — critical for preventing auth failures."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.applications/get-mgapplication"
+
+[[commands]]
+id = "disable-teams-guest"
+task = "Disable guest access for Microsoft Teams"
+command = "Set-CsTeamsClientConfiguration -AllowGuestUser $false"
+accepted_commands = ["Set-CsTeamsClientConfiguration"]
+category = "teams"
+difficulty = 1
+module = "MicrosoftTeams"
+explanation = "Disables the ability for external guests to access your Teams environment."
+learn_url = "https://learn.microsoft.com/powershell/module/teams/set-csteamsclientconfiguration"
+
+[[commands]]
+id = "get-storage-usage"
+task = "Check SharePoint Online storage usage for the tenant"
+command = "Get-SPOTenant | Select-Object StorageQuota, StorageQuotaAllocated, @{N='Used(TB)';E={[math]::Round($_.StorageQuotaAllocated/1024/1024,2)}}"
+accepted_commands = ["Get-SPOTenant"]
+category = "exchange"
+difficulty = 2
+module = "Microsoft.Online.SharePoint.PowerShell"
+explanation = "Retrieves overall SharePoint Online tenant storage quota and usage."
+learn_url = "https://learn.microsoft.com/powershell/module/sharepoint-online/get-spotenant"
+
+[[commands]]
+id = "create-scheduled-task"
+task = "Create a Windows scheduled task to run a script daily"
+command = "Register-ScheduledTask -TaskName 'DailyBackup' -Trigger (New-ScheduledTaskTrigger -Daily -At 2am) -Action (New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-File C:\\scripts\\backup.ps1')"
+accepted_commands = ["Register-ScheduledTask"]
+category = "windows"
+difficulty = 2
+module = "ScheduledTasks"
+explanation = "Creates a scheduled task that runs a PowerShell backup script every day at 2 AM."
+learn_url = "https://learn.microsoft.com/powershell/module/scheduledtasks/register-scheduledtask"
+
+[[commands]]
+id = "get-bitlocker-status"
+task = "Check BitLocker encryption status of all drives"
+command = "Get-BitLockerVolume | Select-Object MountPoint, VolumeStatus, EncryptionPercentage, ProtectionStatus"
+accepted_commands = ["Get-BitLockerVolume", "manage-bde -status"]
+category = "windows"
+difficulty = 1
+module = "BitLocker"
+explanation = "Returns encryption status for all volumes — essential for compliance reporting."
+learn_url = "https://learn.microsoft.com/powershell/module/bitlocker/get-bitlockervolume"
+
+[[commands]]
+id = "send-graph-email"
+task = "Send an email using Microsoft Graph"
+command = "Send-MgUserMail -UserId admin@contoso.com -Message @{Subject='Test';Body=@{ContentType='Text';Content='Hello'};ToRecipients=@(@{EmailAddress=@{Address='user@contoso.com'}})}"
+accepted_commands = ["Send-MgUserMail"]
+category = "graph"
+difficulty = 3
+module = "Microsoft.Graph"
+explanation = "Sends email through Graph API — requires Mail.Send permission. Useful for automated notifications."
+learn_url = "https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions/send-mgusermail"
+
+[[commands]]
+id = "get-windows-updates"
+task = "Check for available Windows updates"
+command = "Get-WindowsUpdate -MicrosoftUpdate | Select-Object Title, KB, Size, IsDownloaded"
+accepted_commands = ["Get-WindowsUpdate", "Install-Module PSWindowsUpdate"]
+category = "windows"
+difficulty = 2
+module = "PSWindowsUpdate"
+explanation = "Uses the PSWindowsUpdate module to list available updates from Microsoft Update. Install module first if needed."
+learn_url = "https://www.powershellgallery.com/packages/PSWindowsUpdate"

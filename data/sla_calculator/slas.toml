@@ -1,0 +1,95 @@
+[[tiers]]
+name = "99%"
+pct = 99.0
+label = "Two Nines"
+typical = "Basic SaaS, non-critical systems"
+
+[[tiers]]
+name = "99.5%"
+pct = 99.5
+label = "Two-and-a-Half Nines"
+typical = "Standard business apps"
+
+[[tiers]]
+name = "99.9%"
+pct = 99.9
+label = "Three Nines"
+typical = "Most cloud services, Microsoft 365"
+
+[[tiers]]
+name = "99.95%"
+pct = 99.95
+label = "Three-and-a-Half Nines"
+typical = "Azure VMs (Availability Zones)"
+
+[[tiers]]
+name = "99.99%"
+pct = 99.99
+label = "Four Nines"
+typical = "Enterprise databases, financial systems"
+
+[[tiers]]
+name = "99.999%"
+pct = 99.999
+label = "Five Nines"
+typical = "Carrier-grade telecom, critical infra"
+
+[[m365_slas]]
+service = "Exchange Online"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "Microsoft Teams"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "SharePoint Online"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "OneDrive for Business"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "Microsoft Entra ID"
+sla_pct = 99.99
+notes = "Premium tier"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "Azure Virtual Machines"
+sla_pct = 99.99
+notes = "Availability Zones"
+url = "https://azure.microsoft.com/support/legal/sla/virtual-machines/"
+
+[[m365_slas]]
+service = "Azure SQL Database"
+sla_pct = 99.995
+notes = "Business Critical tier with zone redundancy"
+url = "https://azure.microsoft.com/support/legal/sla/azure-sql-database/"
+
+[[m365_slas]]
+service = "Microsoft Intune"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "Microsoft Defender for Endpoint"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"
+
+[[m365_slas]]
+service = "Power BI"
+sla_pct = 99.9
+notes = "Per Microsoft SLA docs"
+url = "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services"

@@ -1,0 +1,223 @@
+/* ============================================
+   IT Admin Badges — .badges-* namespace
+   Accent: Soft Gold #FFD54F
+   ============================================ */
+
+:root {
+  --badges-accent: #FFD54F;
+}
+
+/* Layout */
+.badges-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Glass Pill Tabs */
+.badges-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.badges-tabs::-webkit-scrollbar { display: none; }
+
+.badges-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.badges-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.badges-tab.active {
+  color: #000;
+  background: var(--badges-accent);
+  border-color: var(--badges-accent);
+  box-shadow: 0 2px 8px rgba(255,213,79,0.3);
+}
+
+.badges-panel { display: none; }
+.badges-panel.active { display: block; }
+
+/* Glass Card */
+.badges-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+.badges-card:hover {
+  transform: scale(1.02);
+}
+.badges-card .badges-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.badges-card .badges-name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+.badges-card .badges-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+
+/* States */
+.badges-card.earned {
+  border-color: var(--badges-accent);
+  opacity: 1;
+}
+.badges-card.locked {
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+/* Grid */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+/* Wall (compact) */
+.badges-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8rem;
+}
+
+/* Counter */
+.badges-counter {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.badges-counter .badges-big-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--badges-accent);
+  line-height: 1.1;
+}
+.badges-counter .badges-counter-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.3rem;
+}
+
+/* Filter Bar */
+.badges-filter-bar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.badges-filter {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.badges-filter:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+.badges-filter.active {
+  background: var(--badges-accent);
+  color: #000;
+  border-color: var(--badges-accent);
+}
+
+/* Rarity Badge */
+.badges-rarity-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badges-rarity-badge.common { background: rgba(160,160,160,0.15); color: #a0a0a0; }
+.badges-rarity-badge.uncommon { background: rgba(76,175,80,0.15); color: #4CAF50; }
+.badges-rarity-badge.rare { background: rgba(33,150,243,0.15); color: #2196F3; }
+.badges-rarity-badge.epic { background: rgba(156,39,176,0.15); color: #9C27B0; }
+.badges-rarity-badge.legendary { background: rgba(255,213,79,0.15); color: var(--badges-accent); }
+
+/* Download Button */
+.badges-download-btn {
+  background: var(--badges-accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.badges-download-btn:hover { opacity: 0.85; }
+
+/* Secondary Button */
+.badges-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.badges-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .badges-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .badges-filter-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .badges-filter-bar::-webkit-scrollbar { display: none; }
+  .badges-counter .badges-big-number {
+    font-size: 2rem;
+  }
+}

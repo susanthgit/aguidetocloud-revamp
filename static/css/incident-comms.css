@@ -1,0 +1,287 @@
+/* ============================================
+   Incident Comms Generator — .icomms-* namespace
+   Accent: Peach #FF8F66
+   ============================================ */
+
+:root {
+  --icomms-accent: #FF8F66;
+}
+
+/* Layout */
+.icomms-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Glass Pill Tabs */
+.icomms-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.icomms-tabs::-webkit-scrollbar { display: none; }
+
+.icomms-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.icomms-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.icomms-tab.active {
+  color: #000;
+  background: var(--icomms-accent);
+  border-color: var(--icomms-accent);
+  box-shadow: 0 2px 8px rgba(255,143,102,0.3);
+}
+
+.icomms-panel { display: none; }
+.icomms-panel.active { display: block; }
+
+/* Glass Card */
+.icomms-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+/* Buttons */
+.icomms-btn-primary {
+  background: var(--icomms-accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.icomms-btn-primary:hover { opacity: 0.85; }
+
+.icomms-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.icomms-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Form */
+.icomms-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.icomms-select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.88rem;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  padding-right: 2.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.icomms-select:focus {
+  border-color: var(--icomms-accent);
+}
+.icomms-select option {
+  background: #141420;
+  color: #fff;
+}
+
+/* Toggle */
+.icomms-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.icomms-toggle-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+.icomms-toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.icomms-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.icomms-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.icomms-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.icomms-toggle-switch input:checked + .icomms-toggle-slider {
+  background: var(--icomms-accent);
+}
+.icomms-toggle-switch input:checked + .icomms-toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* Tone Slider */
+.icomms-tone-slider {
+  accent-color: var(--icomms-accent);
+  width: 100%;
+}
+
+/* Output */
+.icomms-output {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.icomms-output-block {
+  margin-bottom: 1.5rem;
+}
+.icomms-output-block:last-child {
+  margin-bottom: 0;
+}
+.icomms-output-block .phase-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.icomms-output-block .message {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.icomms-subject {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+/* Creative Mode */
+.icomms-creative .icomms-output {
+  border-image: linear-gradient(135deg, var(--icomms-accent), #FF6B9D, var(--icomms-accent)) 1;
+  border-width: 1px;
+  border-style: solid;
+  background: rgba(255,143,102,0.03);
+}
+
+/* Actions */
+.icomms-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Gallery */
+.icomms-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.icomms-gallery-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.icomms-gallery-card:hover {
+  border-color: rgba(255,143,102,0.3);
+  background: rgba(255,255,255,0.06);
+}
+.icomms-gallery-card .icomms-gallery-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.icomms-gallery-card .icomms-gallery-type {
+  font-size: 0.78rem;
+  color: var(--icomms-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+.icomms-gallery-card .icomms-gallery-preview {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .icomms-actions {
+    flex-direction: column;
+  }
+  .icomms-actions .icomms-btn-primary,
+  .icomms-actions .icomms-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  .icomms-form {
+    padding: 1rem;
+  }
+}
+

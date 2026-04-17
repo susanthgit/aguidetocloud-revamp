@@ -1,0 +1,95 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "incident_comms") }}
+{{ $templates := $data.templates.templates }}
+
+<link rel="stylesheet" href="/css/incident-comms.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Incident Comms Generator" "subtitle" "Generate professional incident communications in seconds — from P1 war rooms to all-staff updates" "accent" "#FF8F66") }}
+
+<div class="icomms-page">
+  <div class="icomms-tabs" role="tablist" aria-label="Incident Comms Generator tabs">
+    <button class="icomms-tab active" role="tab" aria-selected="true" aria-controls="panel-generate" id="tab-generate" data-tab="generate">Generate</button>
+    <button class="icomms-tab" role="tab" aria-selected="false" aria-controls="panel-gallery" id="tab-gallery" data-tab="gallery">Templates Gallery</button>
+    <button class="icomms-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- Generate Panel -->
+  <div class="icomms-panel active" id="panel-generate" role="tabpanel" aria-labelledby="tab-generate">
+    <form id="comms-form" class="icomms-form" aria-label="Incident communication generator form">
+      <div class="icomms-form-grid">
+        <div class="icomms-field">
+          <label for="incident-type">Incident Type</label>
+          <select id="incident-type" name="type" aria-label="Select incident type">
+            <option value="">Choose type...</option>
+          </select>
+        </div>
+
+        <div class="icomms-field">
+          <label for="incident-severity">Severity</label>
+          <select id="incident-severity" name="severity" aria-label="Select severity level">
+            <option value="P1">P1 — Critical</option>
+            <option value="P2">P2 — High</option>
+            <option value="P3">P3 — Medium</option>
+            <option value="P4">P4 — Low</option>
+          </select>
+        </div>
+
+        <div class="icomms-field">
+          <label for="incident-audience">Audience</label>
+          <select id="incident-audience" name="audience" aria-label="Select target audience">
+            <option value="internal-it">Internal IT</option>
+            <option value="all-staff">All Staff</option>
+            <option value="executive">Executive</option>
+            <option value="external">External</option>
+          </select>
+        </div>
+
+        <div class="icomms-field">
+          <label for="tone-slider">Tone: <output id="tone-label">Balanced</output></label>
+          <input type="range" id="tone-slider" name="tone" min="0" max="100" value="50" aria-label="Adjust communication tone from formal to friendly">
+        </div>
+
+        <div class="icomms-field icomms-field--checkbox">
+          <label for="creative-mode">
+            <input type="checkbox" id="creative-mode" name="creative_mode">
+            Creative Mode
+          </label>
+        </div>
+      </div>
+
+      <button type="button" id="generate-btn" class="icomms-generate-btn">Generate Communication</button>
+    </form>
+
+    <div id="comms-output"></div>
+    <div class="icomms-output-actions" id="output-actions" style="display:none">
+      <button id="copy-comms-btn" class="icomms-action-btn" aria-label="Copy communication to clipboard">Copy</button>
+      <button id="mailto-comms-btn" class="icomms-action-btn" aria-label="Open in email client">Open in Email</button>
+    </div>
+  </div>
+
+  <!-- Templates Gallery Panel -->
+  <div class="icomms-panel" id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery">
+    <div id="templates-gallery"></div>
+  </div>
+
+  <!-- FAQ Panel -->
+  <div class="icomms-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <div>{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "incident-comms") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__incidentTemplates = {{ $templates | jsonify | safeJS }};
+</script>
+<script defer src="/js/incident-comms.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

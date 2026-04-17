@@ -1,0 +1,324 @@
+/* ============================================
+   Policy Tester — .ptester-* namespace
+   Accent: Muted Teal #26A69A
+   ============================================ */
+
+:root {
+  --ptester-accent: #26A69A;
+}
+
+/* Layout */
+.ptester-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Glass Pill Tabs */
+.ptester-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ptester-tabs::-webkit-scrollbar { display: none; }
+
+.ptester-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.ptester-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.ptester-tab.active {
+  color: #fff;
+  background: var(--ptester-accent);
+  border-color: var(--ptester-accent);
+  box-shadow: 0 2px 8px rgba(38,166,154,0.3);
+}
+
+.ptester-panel { display: none; }
+.ptester-panel.active { display: block; }
+
+/* Glass Card */
+.ptester-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+/* Buttons */
+.ptester-btn-primary {
+  background: var(--ptester-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.ptester-btn-primary:hover { opacity: 0.85; }
+
+.ptester-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ptester-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Form */
+.ptester-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.ptester-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ptester-input-group label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.ptester-input-group input[type="text"],
+.ptester-input-group select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.ptester-input-group input[type="text"]:focus,
+.ptester-input-group select:focus {
+  border-color: var(--ptester-accent);
+}
+.ptester-input-group input[type="range"] {
+  accent-color: var(--ptester-accent);
+  width: 100%;
+}
+
+/* Toggle Switch */
+.ptester-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.ptester-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.ptester-checkbox .ptester-slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.ptester-checkbox .ptester-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.ptester-checkbox input:checked + .ptester-slider {
+  background: var(--ptester-accent);
+}
+.ptester-checkbox input:checked + .ptester-slider::before {
+  transform: translateX(20px);
+}
+
+/* Score Ring */
+.ptester-score-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 1.5rem auto;
+  position: relative;
+}
+.ptester-score-value {
+  position: absolute;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+.ptester-score-label {
+  position: absolute;
+  top: 62%;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Category Bars */
+.ptester-category-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.ptester-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.ptester-bar-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.ptester-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.ptester-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--ptester-accent), rgba(38,166,154,0.6));
+  transition: width 0.3s ease;
+}
+.ptester-bar-score {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ptester-accent);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Recommendations */
+.ptester-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.ptester-rec-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.ptester-rec-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.ptester-rec-text {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+
+/* Compare Table */
+.ptester-compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.85rem;
+}
+.ptester-compare-table th,
+.ptester-compare-table td {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ptester-compare-table th {
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.ptester-cell-pass {
+  background: rgba(76,175,80,0.15);
+  color: #66BB6A;
+  border-radius: 4px;
+}
+.ptester-cell-partial {
+  background: rgba(255,183,77,0.15);
+  color: #FFB74D;
+  border-radius: 4px;
+}
+.ptester-cell-fail {
+  background: rgba(239,83,80,0.15);
+  color: #EF5350;
+  border-radius: 4px;
+}
+.ptester-standard-header {
+  font-weight: 700;
+  color: var(--ptester-accent);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .ptester-form {
+    grid-template-columns: 1fr;
+  }
+  .ptester-bar-row {
+    flex-wrap: wrap;
+  }
+  .ptester-bar-label {
+    min-width: 100%;
+  }
+  .ptester-compare-table {
+    font-size: 0.78rem;
+  }
+  .ptester-compare-table th,
+  .ptester-compare-table td {
+    padding: 0.5rem 0.5rem;
+  }
+}
+

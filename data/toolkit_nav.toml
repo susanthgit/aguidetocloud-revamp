@@ -448,6 +448,72 @@ visual = "bars"
 is_tool = true
 
 [[tools]]
+url = "/sla-calculator/"
+emoji = "📐"
+name = "SLA Calculator"
+short = "SLA Calc"
+desc = "Enter SLA % — see exact downtime budget per year, month, week, day"
+color = "#4ECDC4"
+category = "admin"
+visual = "bars"
+is_tool = true
+
+[[tools]]
+url = "/admin-badges/"
+emoji = "🏅"
+name = "IT Admin Badges"
+short = "Badges"
+desc = "Unlock 50 achievement badges for real IT admin milestones"
+color = "#FFD54F"
+category = "community"
+visual = "grid"
+is_tool = true
+
+[[tools]]
+url = "/policy-tester/"
+emoji = "🔑"
+name = "Password Policy Tester"
+short = "Policy Test"
+desc = "Score your password policy against NIST, CIS & Microsoft"
+color = "#26A69A"
+category = "admin"
+visual = "gauge"
+is_tool = true
+
+[[tools]]
+url = "/incident-comms/"
+emoji = "📢"
+name = "Incident Comms"
+short = "Incident"
+desc = "Generate professional outage updates in seconds"
+color = "#FF8F66"
+category = "admin"
+visual = "lines"
+is_tool = true
+
+[[tools]]
+url = "/cli-quiz/"
+emoji = "💻"
+name = "CLI Command Quiz"
+short = "CLI Quiz"
+desc = "Guess the PowerShell command — timed quiz with mastery tracking"
+color = "#7E57C2"
+category = "community"
+visual = "keys"
+is_tool = true
+
+[[tools]]
+url = "/it-day-sim/"
+emoji = "🎮"
+name = "My IT Day"
+short = "IT Day"
+desc = "Choose-your-adventure as an IT admin — every choice has consequences"
+color = "#C27BA0"
+category = "community"
+visual = "blocks"
+is_tool = true
+
+[[tools]]
 url = "/feedback/"
 emoji = "💬"
 name = "Community Feedback"

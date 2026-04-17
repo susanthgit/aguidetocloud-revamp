@@ -437,6 +437,74 @@ css_namespace = "phish-*"
 body_class = "page-phishing-test"
 # NOTE: Hue 6° is 6° from Deprecation 0° — accepted, security/danger theming is intentional
 
+# ── New Batch 2026-04-17 (Session 2) ──────────────────────────────────────
+
+[[tools]]
+name = "SLA Calculator"
+slug = "sla-calculator"
+hex = "#4ECDC4"
+hue = 175
+name_friendly = "Bright Mint"
+category = "Admin"
+css_namespace = "slacalc-*"
+body_class = "page-sla-calculator"
+# NOTE: Hue 175° is 1° from ROI Teal 174° — accepted, different saturation/lightness (bright vs muted)
+
+[[tools]]
+name = "IT Admin Badges"
+slug = "admin-badges"
+hex = "#FFD54F"
+hue = 45
+name_friendly = "Soft Gold"
+category = "Community"
+css_namespace = "badges-*"
+body_class = "page-admin-badges"
+# NOTE: Hue 45° is 0° from Feedback yellow — accepted, different category + purpose (tool vs non-tool)
+
+[[tools]]
+name = "Password Policy Tester"
+slug = "policy-tester"
+hex = "#26A69A"
+hue = 174
+name_friendly = "Muted Teal"
+category = "Admin"
+css_namespace = "ptester-*"
+body_class = "page-policy-tester"
+# NOTE: Hue 174° matches ROI exactly — accepted, different saturation (38% vs 80%) makes them visually distinct
+
+[[tools]]
+name = "Incident Comms Generator"
+slug = "incident-comms"
+hex = "#FF8F66"
+hue = 16
+name_friendly = "Peach"
+category = "Admin"
+css_namespace = "icomms-*"
+body_class = "page-incident-comms"
+# NOTE: Hue 16° matches Service Health — accepted, different saturation (peach vs burnt orange)
+
+[[tools]]
+name = "CLI Command Quiz"
+slug = "cli-quiz"
+hex = "#7E57C2"
+hue = 262
+name_friendly = "Medium Purple"
+category = "Community"
+css_namespace = "cliquiz-*"
+body_class = "page-cli-quiz"
+# NOTE: Hue 262° is 4° from Prompt Library 263° — accepted, different lightness
+
+[[tools]]
+name = "My IT Day Simulator"
+slug = "it-day-sim"
+hex = "#C27BA0"
+hue = 320
+name_friendly = "Muted Rose"
+category = "Community"
+css_namespace = "itday-*"
+body_class = "page-it-day-sim"
+# NOTE: Hue 320° is 5° from Bingo 325° — accepted, desaturated vs vivid
+
 # ── Community (non-tool) ──────────────────────────────────────────────────────
 
 [[tools]]

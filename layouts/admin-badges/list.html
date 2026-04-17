@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "admin_badges") }}
+{{ $badges := $data.badges.badges }}
+{{ $categories := $data.badges.categories }}
+{{ $rarities := $data.badges.rarities }}
+
+<link rel="stylesheet" href="/css/admin-badges.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "IT Admin Badges" "subtitle" "Collect achievement badges for every IT admin milestone — from surviving a P1 to deploying Copilot" "accent" "#FFD54F") }}
+
+<div class="badges-page">
+  <div class="badges-tabs" role="tablist" aria-label="IT Admin Badges tabs">
+    <button class="badges-tab active" role="tab" aria-selected="true" aria-controls="panel-my-badges" id="tab-my-badges" data-tab="my-badges">My Badges</button>
+    <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-all-badges" id="tab-all-badges" data-tab="all-badges">All Badges</button>
+    <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- My Badges Panel -->
+  <div class="badges-panel active" id="panel-my-badges" role="tabpanel" aria-labelledby="tab-my-badges">
+    <div class="badges-my-header">
+      <div id="badge-counter" class="badges-counter"></div>
+      <button id="badge-download-btn" class="badges-download-btn" aria-label="Download badge wall as image">Download Badge Wall</button>
+    </div>
+    <div id="badge-wall"></div>
+  </div>
+
+  <!-- All Badges Panel -->
+  <div class="badges-panel" id="panel-all-badges" role="tabpanel" aria-labelledby="tab-all-badges">
+    <div id="badge-category-filters" class="badges-category-filters"></div>
+    <div id="all-badges-grid"></div>
+  </div>
+
+  <!-- FAQ Panel -->
+  <div class="badges-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <div>{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "admin-badges") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__badges = {{ $badges | jsonify | safeJS }};
+window.__badgeCategories = {{ $categories | jsonify | safeJS }};
+window.__badgeRarities = {{ $rarities | jsonify | safeJS }};
+</script>
+<script defer src="/js/admin-badges.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

@@ -1,0 +1,89 @@
+[[templates]]
+id = "email-outage"
+type = "Email / Exchange"
+icon = "📧"
+
+  [[templates.blocks]]
+  severity = "P1"
+  audience = "all-staff"
+  tone = "formal"
+  subject = "Service Disruption — Email Services"
+  initial = "We are currently experiencing a disruption to email services affecting all users. Our team has been engaged and is actively investigating. We will provide updates every 30 minutes. Please use Microsoft Teams for urgent communications in the meantime."
+  investigating = "Investigation is ongoing. We have identified the affected component and our engineering team is working on a resolution. Current estimated time to resolution: {eta}. We apologise for the inconvenience."
+  resolved = "Email services have been fully restored as of {time}. Root cause was {cause}. A full post-incident review will be shared within 48 hours. Thank you for your patience."
+  creative = "🚨 Plot twist: Outlook has decided to take an unscheduled holiday. Your emails are not lost — they're just on a spiritual journey. Use Teams for now. We're bribing the servers with coffee."
+
+[[templates]]
+id = "teams-outage"
+type = "Teams / Meetings"
+icon = "💬"
+
+  [[templates.blocks]]
+  severity = "P1"
+  audience = "all-staff"
+  tone = "formal"
+  subject = "Service Disruption — Microsoft Teams"
+  initial = "We are aware of issues affecting Microsoft Teams including messaging, calls, and meetings. Our team is engaged with Microsoft support to resolve this. Please use email for urgent communications."
+  investigating = "We have confirmed the issue is on Microsoft's side. Microsoft has acknowledged the outage and is working on a fix. ETA: {eta}. We will update you as soon as service is restored."
+  resolved = "Microsoft Teams is now fully operational. The outage lasted approximately {duration} and affected messaging and meeting functionality. Thank you for your patience during this disruption."
+  creative = "Teams is down. Yes, we know. No, we can't fix Microsoft. Yes, we've already checked. The irony of not being able to message about the messaging outage is not lost on us. Email works. ☕"
+
+[[templates]]
+id = "network-outage"
+type = "Network / VPN"
+icon = "🌐"
+
+  [[templates.blocks]]
+  severity = "P2"
+  audience = "all-staff"
+  tone = "formal"
+  subject = "Network Connectivity Issue"
+  initial = "We are investigating reports of intermittent network connectivity issues affecting some users. If you are experiencing problems, please try disconnecting and reconnecting to VPN. Our network team is investigating."
+  investigating = "We have identified the cause as {cause}. Our network team is implementing a fix. Users on the {location} network may experience brief interruptions during the remediation."
+  resolved = "Network connectivity has been fully restored. The issue was caused by {cause} and has been permanently resolved. If you continue to experience issues, please restart your VPN client."
+  creative = "The internet is doing that thing again where it pretends it doesn't know us. VPN users: try the ancient ritual of disconnect-reconnect. Network team is performing CPR on the router."
+
+[[templates]]
+id = "auth-outage"
+type = "Authentication / SSO"
+icon = "🔐"
+
+  [[templates.blocks]]
+  severity = "P1"
+  audience = "all-staff"
+  tone = "formal"
+  subject = "Authentication Service Disruption"
+  initial = "We are aware that some users are unable to sign in to company applications. Our identity team is investigating the issue with highest priority. If you are currently signed in, please do not sign out."
+  investigating = "The issue has been traced to {cause}. Our team is working with Microsoft to restore authentication services. Estimated resolution: {eta}. Users already authenticated should remain signed in."
+  resolved = "Authentication services are fully restored. All users should now be able to sign in normally. If you encounter issues, please clear your browser cache and try again. We apologise for the disruption."
+  creative = "MFA is having an identity crisis — it's forgotten who everyone is. If you're signed in, STAY SIGNED IN like your job depends on it (because right now it kind of does). Fix incoming."
+
+[[templates]]
+id = "cloud-outage"
+type = "Cloud / Azure"
+icon = "☁️"
+
+  [[templates.blocks]]
+  severity = "P2"
+  audience = "internal-it"
+  tone = "formal"
+  subject = "Azure Service Degradation"
+  initial = "We are monitoring degraded performance in Azure {region} affecting hosted applications. Azure status page has been updated. Our cloud team is assessing the impact on our workloads."
+  investigating = "Azure has confirmed the issue affects {services}. Impact to our environment: {impact}. Failover to secondary region is being evaluated. Current Azure ETA: {eta}."
+  resolved = "Azure services in {region} have been restored to full capacity. Our hosted applications are operating normally. Total impact duration: {duration}. Post-incident review to follow."
+  creative = "The cloud is cloudy today. Azure is having a moment. Our apps are fine... mostly... okay some of them are napping. The on-call engineer is on their third coffee."
+
+[[templates]]
+id = "security-incident"
+type = "Security Incident"
+icon = "🛡️"
+
+  [[templates.blocks]]
+  severity = "P1"
+  audience = "executive"
+  tone = "formal"
+  subject = "Security Incident Notification"
+  initial = "Our security team has identified a potential security incident requiring immediate attention. Investigation is underway. We are following our incident response playbook and will provide an executive briefing within 2 hours."
+  investigating = "Investigation update: The incident involves {scope}. Containment measures have been implemented. No evidence of data exfiltration at this time. Next update: {next_update}."
+  resolved = "The security incident has been contained and resolved. Impact assessment: {impact}. Remediation actions completed. A detailed post-incident report will be provided within 5 business days."
+  creative = "🚨 Someone clicked the thing. You know, THE thing. The one we said not to click. Anyway, containment is in progress, passwords are being reset, and the security team is stress-eating."

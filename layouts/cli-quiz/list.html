@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "cli_quiz") }}
+{{ $commands := $data.commands.commands }}
+
+<link rel="stylesheet" href="/css/cli-quiz.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "CLI Command Quiz" "subtitle" "Test your PowerShell, Graph, Exchange, Teams, Azure & Windows CLI knowledge" "accent" "#7E57C2") }}
+
+<div class="cliquiz-page">
+  <div class="cliquiz-tabs" role="tablist">
+    <button class="cliquiz-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
+    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="stats">Stats</button>
+    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  {{/* ── Play Panel ── */}}
+  <div class="cliquiz-panel active" id="panel-play">
+    <div class="cliquiz-modes">
+      <button class="cliquiz-mode-btn" data-mode="quick">Quick 10</button>
+      <button class="cliquiz-mode-btn" data-mode="category">Category Focus</button>
+      <button class="cliquiz-mode-btn" data-mode="daily">Daily Challenge</button>
+      <button class="cliquiz-mode-btn" data-mode="hard">Hard Mode</button>
+    </div>
+    <div class="cliquiz-categories">
+      <button class="cliquiz-chip active" data-category="all">All</button>
+      <button class="cliquiz-chip" data-category="powershell">PowerShell</button>
+      <button class="cliquiz-chip" data-category="graph">Graph</button>
+      <button class="cliquiz-chip" data-category="exchange">Exchange</button>
+      <button class="cliquiz-chip" data-category="teams">Teams</button>
+      <button class="cliquiz-chip" data-category="azure">Azure</button>
+      <button class="cliquiz-chip" data-category="windows">Windows</button>
+    </div>
+    <div id="quiz-area"></div>
+    <div id="quiz-score"></div>
+  </div>
+
+  {{/* ── Stats Panel ── */}}
+  <div class="cliquiz-panel" id="panel-stats">
+    <div id="quiz-stats"></div>
+    <div id="category-mastery"></div>
+    <div id="quiz-history"></div>
+  </div>
+
+  {{/* ── FAQ Panel ── */}}
+  <div class="cliquiz-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "cli-quiz") }}
+{{ partial "back-nav" . }}
+
+<script>window.__cliCommands = {{ $commands | jsonify | safeJS }};</script>
+<script defer src="/js/cli-quiz.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

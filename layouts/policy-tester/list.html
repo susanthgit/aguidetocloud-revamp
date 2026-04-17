@@ -1,0 +1,94 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "policy_tester") }}
+{{ $standards := $data.standards.standards }}
+{{ $scoringRules := $data.standards.scoring_rules }}
+
+<link rel="stylesheet" href="/css/policy-tester.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Password Policy Tester" "subtitle" "Score your password policy against NIST, CIS, and Microsoft best practices — get actionable recommendations" "accent" "#26A69A") }}
+
+<div class="ptester-page">
+  <div class="ptester-tabs" role="tablist" aria-label="Password Policy Tester tabs">
+    <button class="ptester-tab active" role="tab" aria-selected="true" aria-controls="panel-assess" id="tab-assess" data-tab="assess">Assess</button>
+    <button class="ptester-tab" role="tab" aria-selected="false" aria-controls="panel-compare" id="tab-compare" data-tab="compare">Compare Standards</button>
+    <button class="ptester-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- Assess Panel -->
+  <div class="ptester-panel active" id="panel-assess" role="tabpanel" aria-labelledby="tab-assess">
+    <form id="policy-form" class="ptester-form" aria-label="Password policy assessment form">
+      <div class="ptester-form-grid">
+        <div class="ptester-field">
+          <label for="min-length">Minimum Password Length</label>
+          <input type="range" id="min-length" name="min_length" min="4" max="64" value="8" aria-label="Minimum password length">
+          <output for="min-length" id="min-length-value">8</output>
+        </div>
+
+        <div class="ptester-field ptester-field--checkbox">
+          <label for="complexity">
+            <input type="checkbox" id="complexity" name="complexity" checked>
+            Complexity Requirements
+          </label>
+        </div>
+
+        <div class="ptester-field">
+          <label for="expiry-days">Password Expiry (days, 0 = never)</label>
+          <input type="range" id="expiry-days" name="expiry_days" min="0" max="365" value="90" aria-label="Password expiry in days">
+          <output for="expiry-days" id="expiry-days-value">90</output>
+        </div>
+
+        <div class="ptester-field">
+          <label for="lockout-threshold">Account Lockout Threshold (0 = disabled)</label>
+          <input type="range" id="lockout-threshold" name="lockout_threshold" min="0" max="100" value="5" aria-label="Account lockout threshold">
+          <output for="lockout-threshold" id="lockout-threshold-value">5</output>
+        </div>
+
+        <div class="ptester-field ptester-field--checkbox">
+          <label for="mfa-required">
+            <input type="checkbox" id="mfa-required" name="mfa_required">
+            MFA Required
+          </label>
+        </div>
+
+        <div class="ptester-field">
+          <label for="history-count">Password History Count</label>
+          <input type="range" id="history-count" name="history_count" min="0" max="24" value="5" aria-label="Password history count">
+          <output for="history-count" id="history-count-value">5</output>
+        </div>
+      </div>
+
+      <button type="button" id="assess-btn" class="ptester-assess-btn">Assess Policy</button>
+    </form>
+
+    <div id="policy-score"></div>
+    <div id="category-breakdown"></div>
+    <div id="recommendations"></div>
+  </div>
+
+  <!-- Compare Standards Panel -->
+  <div class="ptester-panel" id="panel-compare" role="tabpanel" aria-labelledby="tab-compare">
+    <div id="compare-standards"></div>
+  </div>
+
+  <!-- FAQ Panel -->
+  <div class="ptester-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <div>{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "policy-tester") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__policyStandards = {{ $standards | jsonify | safeJS }};
+window.__scoringRules = {{ $scoringRules | jsonify | safeJS }};
+</script>
+<script defer src="/js/policy-tester.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

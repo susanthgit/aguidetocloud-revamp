@@ -1,0 +1,382 @@
+/* ============================================
+   CLI Quiz — .cliquiz-* namespace
+   Accent: Medium Purple #7E57C2
+   ============================================ */
+
+:root {
+  --cliquiz-accent: #7E57C2;
+}
+
+/* Layout */
+.cliquiz-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Glass Pill Tabs */
+.cliquiz-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.cliquiz-tabs::-webkit-scrollbar { display: none; }
+
+.cliquiz-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.cliquiz-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.cliquiz-tab.active {
+  color: #fff;
+  background: var(--cliquiz-accent);
+  border-color: var(--cliquiz-accent);
+  box-shadow: 0 2px 8px rgba(126,87,194,0.3);
+}
+
+.cliquiz-panel { display: none; }
+.cliquiz-panel.active { display: block; }
+
+/* Glass Card */
+.cliquiz-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+/* Buttons */
+.cliquiz-btn-primary {
+  background: var(--cliquiz-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.cliquiz-btn-primary:hover { opacity: 0.85; }
+
+.cliquiz-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cliquiz-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Mode Bar */
+.cliquiz-mode-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+.cliquiz-mode-btn {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cliquiz-mode-btn:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+.cliquiz-mode-btn.active {
+  background: var(--cliquiz-accent);
+  color: #fff;
+  border-color: var(--cliquiz-accent);
+}
+
+/* Category Chips */
+.cliquiz-category-chips {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.cliquiz-chip {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cliquiz-chip:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.2);
+}
+.cliquiz-chip.active {
+  background: var(--cliquiz-accent);
+  color: #fff;
+  border-color: var(--cliquiz-accent);
+}
+
+/* Question Card */
+.cliquiz-question-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.cliquiz-question-card .cliquiz-task {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Timer Bar */
+.cliquiz-timer-bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--cliquiz-accent);
+  margin-bottom: 1.2rem;
+  transition: width 0.1s linear;
+  transform-origin: left;
+}
+
+/* Choices */
+.cliquiz-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.cliquiz-choice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.88rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+.cliquiz-choice:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+.cliquiz-choice.selected {
+  border-color: var(--cliquiz-accent);
+  background: rgba(126,87,194,0.1);
+}
+.cliquiz-choice.correct {
+  border-color: #4CAF50;
+  background: rgba(76,175,80,0.12);
+  color: #81C784;
+}
+.cliquiz-choice.wrong {
+  border-color: #EF5350;
+  background: rgba(239,83,80,0.12);
+  color: #EF9A9A;
+}
+
+/* Explanation */
+.cliquiz-explanation {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.cliquiz-explanation a {
+  color: var(--cliquiz-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cliquiz-explanation a:hover {
+  color: #fff;
+}
+
+/* Score Card */
+.cliquiz-score-card {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.cliquiz-score-card .cliquiz-big-score {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--cliquiz-accent);
+  line-height: 1.1;
+}
+.cliquiz-score-card .cliquiz-score-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.3rem;
+}
+
+/* Mastery Grid */
+.cliquiz-mastery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.cliquiz-mastery-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.cliquiz-mastery-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.cliquiz-mastery-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.cliquiz-mastery-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cliquiz-accent), rgba(126,87,194,0.6));
+  transition: width 0.3s ease;
+}
+.cliquiz-mastery-pct {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cliquiz-accent);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* History */
+.cliquiz-history-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+.cliquiz-history-item:last-child { border-bottom: none; }
+.cliquiz-history-date {
+  color: rgba(255,255,255,0.4);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+.cliquiz-history-score {
+  color: var(--cliquiz-accent);
+  font-weight: 700;
+  min-width: 50px;
+}
+.cliquiz-history-mode {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Hard Mode Input */
+.cliquiz-hard-input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.cliquiz-hard-input:focus {
+  border-color: var(--cliquiz-accent);
+}
+
+/* Result Overlay */
+.cliquiz-result-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.cliquiz-result-content {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .cliquiz-choices {
+    grid-template-columns: 1fr;
+  }
+  .cliquiz-mode-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .cliquiz-mode-bar::-webkit-scrollbar { display: none; }
+  .cliquiz-mastery-row {
+    flex-wrap: wrap;
+  }
+  .cliquiz-mastery-label {
+    min-width: 100%;
+  }
+  .cliquiz-question-card {
+    padding: 1.5rem 1rem;
+  }
+  .cliquiz-question-card .cliquiz-task {
+    font-size: 1rem;
+  }
+  .cliquiz-score-card .cliquiz-big-score {
+    font-size: 2.5rem;
+  }
+}

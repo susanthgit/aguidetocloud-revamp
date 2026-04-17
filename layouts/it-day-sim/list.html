@@ -1,0 +1,54 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "it_day_sim") }}
+{{ $scenarios := $data.story.scenarios }}
+{{ $scoreTiers := $data.story.score_tiers }}
+
+<link rel="stylesheet" href="/css/it-day-sim.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "My IT Day Simulator" "subtitle" "Survive a day as an IT admin — make choices, face consequences, earn your score" "accent" "#C27BA0") }}
+
+<div class="itday-page">
+  <div class="itday-tabs" role="tablist">
+    <button class="itday-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
+    <button class="itday-tab" role="tab" aria-selected="false" data-tab="history">Results History</button>
+    <button class="itday-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  {{/* ── Play Panel ── */}}
+  <div class="itday-panel active" id="panel-play">
+    <div class="itday-start-screen" id="start-screen">
+      <button class="itday-start-btn" data-mode="random">Start Your Day</button>
+      <button class="itday-start-btn" data-mode="daily">Daily Challenge</button>
+    </div>
+    <div id="story-area"></div>
+    <div id="story-progress"></div>
+  </div>
+
+  {{/* ── Results History Panel ── */}}
+  <div class="itday-panel" id="panel-history">
+    <div id="results-history"></div>
+    <div id="results-share"></div>
+  </div>
+
+  {{/* ── FAQ Panel ── */}}
+  <div class="itday-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "it-day-sim") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__scenarios = {{ $scenarios | jsonify | safeJS }};
+window.__scoreTiers = {{ $scoreTiers | jsonify | safeJS }};
+</script>
+<script defer src="/js/it-day-sim.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

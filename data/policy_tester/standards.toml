@@ -1,0 +1,107 @@
+[[standards]]
+id = "nist"
+name = "NIST 800-63B"
+org = "National Institute of Standards and Technology"
+url = "https://pages.nist.gov/800-63-3/sp800-63b.html"
+min_length = 8
+recommended_length = 15
+max_length = 64
+complexity_required = false
+expiry_days = 0
+history_count = 0
+lockout_threshold = 100
+mfa_required = true
+notes = "NIST recommends AGAINST forced complexity and expiry. Focus on length and MFA instead."
+
+[[standards]]
+id = "cis"
+name = "CIS Controls v8"
+org = "Center for Internet Security"
+url = "https://www.cisecurity.org/controls"
+min_length = 14
+recommended_length = 14
+max_length = 0
+complexity_required = true
+expiry_days = 365
+history_count = 24
+lockout_threshold = 5
+mfa_required = true
+notes = "CIS requires 14+ characters with complexity. Annual expiry. Account lockout after 5 failed attempts."
+
+[[standards]]
+id = "microsoft"
+name = "Microsoft Recommendations"
+org = "Microsoft"
+url = "https://learn.microsoft.com/entra/identity/authentication/concept-password-ban-bad"
+min_length = 14
+recommended_length = 16
+max_length = 256
+complexity_required = false
+expiry_days = 0
+history_count = 0
+lockout_threshold = 10
+mfa_required = true
+notes = "Microsoft recommends disabling expiry, banning common passwords, and enforcing MFA. Use Entra ID Password Protection."
+
+[[standards]]
+id = "e8"
+name = "Essential Eight (ACSC)"
+org = "Australian Cyber Security Centre"
+url = "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight"
+min_length = 14
+recommended_length = 16
+max_length = 0
+complexity_required = false
+expiry_days = 0
+history_count = 0
+lockout_threshold = 5
+mfa_required = true
+notes = "Essential Eight ML3 requires 14+ characters, MFA for all users, and accounts locked after 5 failed attempts."
+
+[[scoring_rules]]
+category = "length"
+weight = 30
+checks = [
+  { condition = "min_length >= 14", points = 30, label = "14+ characters" },
+  { condition = "min_length >= 12", points = 20, label = "12+ characters" },
+  { condition = "min_length >= 8", points = 10, label = "8+ characters" },
+  { condition = "min_length < 8", points = 0, label = "Below minimum" }
+]
+
+[[scoring_rules]]
+category = "complexity"
+weight = 10
+checks = [
+  { condition = "complexity_required == false AND min_length >= 14", points = 10, label = "Length over complexity (modern)" },
+  { condition = "complexity_required == true AND min_length >= 12", points = 8, label = "Complexity with good length" },
+  { condition = "complexity_required == true AND min_length < 12", points = 5, label = "Complexity alone is insufficient" },
+  { condition = "complexity_required == false AND min_length < 14", points = 3, label = "No complexity, short length" }
+]
+
+[[scoring_rules]]
+category = "expiry"
+weight = 20
+checks = [
+  { condition = "expiry_days == 0", points = 20, label = "No forced expiry (modern best practice)" },
+  { condition = "expiry_days >= 365", points = 12, label = "Annual expiry" },
+  { condition = "expiry_days >= 90", points = 5, label = "Quarterly expiry (outdated)" },
+  { condition = "expiry_days > 0 AND expiry_days < 90", points = 2, label = "Frequent expiry (harmful)" }
+]
+
+[[scoring_rules]]
+category = "lockout"
+weight = 15
+checks = [
+  { condition = "lockout_threshold > 0 AND lockout_threshold <= 10", points = 15, label = "Reasonable lockout threshold" },
+  { condition = "lockout_threshold > 10 AND lockout_threshold <= 50", points = 10, label = "High threshold" },
+  { condition = "lockout_threshold > 50", points = 5, label = "Very high threshold" },
+  { condition = "lockout_threshold == 0", points = 0, label = "No lockout (dangerous)" }
+]
+
+[[scoring_rules]]
+category = "mfa"
+weight = 25
+checks = [
+  { condition = "mfa_required == true", points = 25, label = "MFA enforced for all users" },
+  { condition = "mfa_required == false", points = 0, label = "No MFA requirement" }
+]

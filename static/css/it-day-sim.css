@@ -1,0 +1,344 @@
+/* ============================================
+   IT Day Simulator — .itday-* namespace
+   Accent: Muted Rose #C27BA0
+   ============================================ */
+
+:root {
+  --itday-accent: #C27BA0;
+}
+
+/* Layout */
+.itday-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Glass Pill Tabs */
+.itday-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.itday-tabs::-webkit-scrollbar { display: none; }
+
+.itday-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.itday-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.itday-tab.active {
+  color: #000;
+  background: var(--itday-accent);
+  border-color: var(--itday-accent);
+  box-shadow: 0 2px 8px rgba(194,123,160,0.3);
+}
+
+.itday-panel { display: none; }
+.itday-panel.active { display: block; }
+
+/* Glass Card */
+.itday-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+/* Buttons */
+.itday-btn-primary {
+  background: var(--itday-accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.itday-btn-primary:hover { opacity: 0.85; }
+
+.itday-btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.itday-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Start Screen */
+.itday-start-screen {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  max-width: 540px;
+  margin: 2rem auto;
+}
+.itday-start-screen .itday-start-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+.itday-start-screen .itday-start-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.itday-start-screen .itday-start-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Scenario Card */
+.itday-scenario-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.8rem 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.itday-scenario-card .itday-scenario-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Choices */
+.itday-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.itday-choice-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  line-height: 1.5;
+}
+.itday-choice-btn:hover {
+  border-color: rgba(194,123,160,0.4);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+/* Choice Result */
+.itday-choice-result {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Score Change Pill */
+.itday-score-change {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.itday-score-change.positive {
+  background: rgba(76,175,80,0.15);
+  color: #66BB6A;
+}
+.itday-score-change.negative {
+  background: rgba(239,83,80,0.15);
+  color: #EF5350;
+}
+
+/* Score Tracker */
+.itday-score-tracker {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.itday-score-tracker .itday-current-score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--itday-accent);
+}
+.itday-score-tracker .itday-scenario-count {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Progress Bar */
+.itday-progress {
+  margin-bottom: 1rem;
+}
+.itday-progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.itday-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--itday-accent);
+  transition: width 0.3s ease;
+}
+
+/* Result Screen */
+.itday-result-screen {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.itday-result-screen .itday-tier-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 0.8rem;
+}
+.itday-result-screen .itday-result-score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--itday-accent);
+  line-height: 1.1;
+}
+.itday-result-screen .itday-tier-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.itday-result-screen .itday-tier-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  max-width: 460px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Result Card (downloadable) */
+.itday-result-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+/* Choices Summary */
+.itday-choices-summary {
+  text-align: left;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+.itday-summary-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.itday-summary-item .itday-summary-scenario {
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.3rem;
+}
+
+/* History */
+.itday-history-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+.itday-history-item:last-child { border-bottom: none; }
+.itday-history-date {
+  color: rgba(255,255,255,0.4);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+.itday-history-score {
+  color: var(--itday-accent);
+  font-weight: 700;
+  min-width: 50px;
+}
+.itday-history-tier {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .itday-choices {
+    gap: 0.6rem;
+  }
+  .itday-choice-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+  }
+  .itday-start-screen {
+    padding: 1.5rem 1rem;
+  }
+  .itday-start-screen .itday-start-title {
+    font-size: 1.3rem;
+  }
+  .itday-result-screen .itday-result-score {
+    font-size: 2.5rem;
+  }
+  .itday-result-screen .itday-tier-emoji {
+    font-size: 2.5rem;
+  }
+  .itday-score-tracker {
+    padding: 0.5rem 0.8rem;
+  }
+}

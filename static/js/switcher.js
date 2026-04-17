@@ -349,6 +349,12 @@ document.addEventListener('DOMContentLoaded', function() {
     {name:'Pomodoro Timer',url:'/pomodoro/'},
     {name:'IT Admin Bingo',url:'/admin-bingo/'},
     {name:'Acronym Battle',url:'/acronym-battle/'},
+    {name:'SLA Calculator',url:'/sla-calculator/'},
+    {name:'IT Admin Badges',url:'/admin-badges/'},
+    {name:'Password Policy Tester',url:'/policy-tester/'},
+    {name:'Incident Comms',url:'/incident-comms/'},
+    {name:'CLI Command Quiz',url:'/cli-quiz/'},
+    {name:'My IT Day',url:'/it-day-sim/'},
     {name:'Site Analytics',url:'/site-analytics/'}
   ];
   const RECENT_KEY = 'nav_recent_tools';
