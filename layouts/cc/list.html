@@ -98,6 +98,7 @@
     <button class="cc-view" data-view="youtube">YouTube</button>
     <button class="cc-view" data-view="seo">SEO</button>
     <button class="cc-view" data-view="strategy">Strategy</button>
+    <button class="cc-view" data-view="biolinks">Bio Links</button>
   </div>
 
   <!-- VIEW: Dashboard -->
@@ -240,6 +241,33 @@
     <section class="cc-section">
       <h2 class="cc-section-title">Portfolio Health</h2>
       <div id="cc-portfolio"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Bio Links -->
+  <div class="cc-panel" id="cc-biolinks">
+    <section class="cc-section">
+      <div class="cc-bio-stats" id="cc-bio-stats"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Click Trend (30d)</h2>
+      <canvas id="cc-bio-trend" height="160"></canvas>
+    </section>
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">By Link</h3>
+          <div id="cc-bio-links"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">By Section</h3>
+          <div id="cc-bio-sections"></div>
+        </div>
+      </div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Insights</h2>
+      <div id="cc-bio-insights"></div>
     </section>
   </div>
 

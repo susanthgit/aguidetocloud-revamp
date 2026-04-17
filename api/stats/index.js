@@ -286,6 +286,123 @@ module.exports = async function (context, req) {
     return;
   }
 
+  // Bio Links Analytics (5-min cache)
+  if (req.query.biolinks === '1') {
+    const bioCacheKey = 'biolinks_v1';
+    if (cacheStore[bioCacheKey] && now - cacheStore[bioCacheKey].time < CACHE_TTL) {
+      context.res = { status: 200, headers, body: JSON.stringify(cacheStore[bioCacheKey].data) };
+      return;
+    }
+    const auth = getAuthClient();
+    if (!auth) { context.res = { status: 200, headers, body: '{"error":"No auth"}' }; return; }
+    try {
+      const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
+
+      // Total bio link clicks by link_id (all time)
+      const clicksRes = await analyticsdata.properties.runReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dateRanges: [{ startDate: INCEPTION_DATE, endDate: 'today' }],
+          dimensions: [{ name: 'customEvent:link_id' }],
+          metrics: [{ name: 'eventCount' }],
+          dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'bio_link_click' } } },
+          orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+          limit: 50
+        }
+      });
+
+      // Clicks by section
+      const sectionRes = await analyticsdata.properties.runReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dateRanges: [{ startDate: INCEPTION_DATE, endDate: 'today' }],
+          dimensions: [{ name: 'customEvent:link_section' }],
+          metrics: [{ name: 'eventCount' }],
+          dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'bio_link_click' } } },
+          orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }]
+        }
+      });
+
+      // Daily trend (last 30 days)
+      const trendRes = await analyticsdata.properties.runReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
+          dimensions: [{ name: 'date' }],
+          metrics: [{ name: 'eventCount' }],
+          dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'bio_link_click' } } },
+          orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }]
+        }
+      });
+
+      // /links/ page views + users (all time + 30d)
+      const pageRes = await analyticsdata.properties.runReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dateRanges: [
+            { startDate: INCEPTION_DATE, endDate: 'today' },
+            { startDate: '30daysAgo', endDate: 'today' }
+          ],
+          dimensions: [{ name: 'pagePath' }],
+          metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
+          dimensionFilter: { filter: { fieldName: 'pagePath', stringFilter: { matchType: 'BEGINS_WITH', value: '/links' } } }
+        }
+      });
+
+      // 7-day vs prior 7-day comparison
+      const wowRes = await analyticsdata.properties.runReport({
+        property: `properties/${GA4_PROPERTY}`,
+        requestBody: {
+          dateRanges: [
+            { startDate: '7daysAgo', endDate: 'today' },
+            { startDate: '14daysAgo', endDate: '8daysAgo' }
+          ],
+          metrics: [{ name: 'eventCount' }],
+          dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'bio_link_click' } } }
+        }
+      });
+
+      const clicks = parseRows(clicksRes).map(r => ({ link_id: r.dimensions[0], clicks: r.metrics[0] }));
+      const sections = parseRows(sectionRes).map(r => ({ section: r.dimensions[0], clicks: r.metrics[0] }));
+      const trend = parseRows(trendRes).map(r => {
+        const raw = r.dimensions[0];
+        return { date: `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`, clicks: r.metrics[0] };
+      });
+      const totalClicks = clicks.reduce((s, c) => s + c.clicks, 0);
+
+      // Page views
+      const pgRows = pageRes?.data?.rows || [];
+      let pageViews = 0, pageUsers = 0, pageViews30 = 0;
+      for (const r of pgRows) {
+        pageViews += parseInt(r.metricValues?.[0]?.value) || 0;
+        pageUsers += parseInt(r.metricValues?.[1]?.value) || 0;
+        if (r.metricValues?.[2]) pageViews30 += parseInt(r.metricValues?.[2]?.value) || 0;
+      }
+
+      // WoW
+      const wowData = wowRes?.data?.rows || [];
+      const thisWeekClicks = parseInt(wowData[0]?.metricValues?.[0]?.value) || 0;
+      const lastWeekClicks = parseInt(wowData[0]?.metricValues?.[1]?.value) || 0;
+      const wowPct = lastWeekClicks > 0 ? Math.round(((thisWeekClicks - lastWeekClicks) / lastWeekClicks) * 100) : (thisWeekClicks > 0 ? 100 : 0);
+
+      // CTR (clicks / page views)
+      const ctr = pageViews > 0 ? Math.round((totalClicks / pageViews) * 1000) / 10 : 0;
+
+      const bioResponse = {
+        totalClicks, ctr,
+        pageViews, pageUsers,
+        clicks, sections, trend,
+        wow: { thisWeek: thisWeekClicks, lastWeek: lastWeekClicks, change: wowPct },
+        updated: new Date().toISOString()
+      };
+      cacheStore[bioCacheKey] = { data: bioResponse, time: now };
+      context.res = { status: 200, headers, body: JSON.stringify(bioResponse) };
+    } catch(e) {
+      context.res = { status: 200, headers, body: JSON.stringify({ error: e.message }) };
+    }
+    return;
+  }
+
   // YouTube Intelligence (6-hour cache, OAuth2 for analytics)
   if (req.query.youtube === '1') {
     const ytCacheKey = 'youtube_v3';

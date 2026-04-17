@@ -39,6 +39,7 @@
       if (panel) panel.classList.add('active');
       if (btn.dataset.view === 'youtube' && !ytData) fetchYT();
       if (btn.dataset.view === 'seo' && siteData) renderSEO(siteData);
+      if (btn.dataset.view === 'biolinks' && !bioData) fetchBioLinks();
     });
   });
 
@@ -847,6 +848,136 @@
   });
   var morningBtn = document.getElementById('cc-morning-btn');
   if (morningBtn) morningBtn.addEventListener('click', startRoutine);
+
+  // ── BIO LINKS ──
+  var LINK_LABELS = {
+    free_tools: 'Free Tools', ai_news: 'AI News', cert_guides: 'Cert Guides', blog: 'Blog',
+    youtube_main: 'YouTube Main', youtube_bites: 'YouTube Bites',
+    kofi_shop: 'Downloads', whatsapp: 'WhatsApp Community', donate: 'Ko-fi Donate',
+    social_youtube: 'Social: YouTube', social_linkedin: 'Social: LinkedIn',
+    social_github: 'Social: GitHub', social_kofi: 'Social: Ko-fi', share: 'Share Button'
+  };
+  var LINK_COLORS = {
+    free_tools: '#66ffff', ai_news: '#ff66ff', cert_guides: '#10B981', blog: '#0EA5E9',
+    youtube_main: '#ff4444', youtube_bites: '#ff4444',
+    kofi_shop: '#FBBF24', whatsapp: '#25D366', donate: '#FF5E5B',
+    social_youtube: '#ff4444', social_linkedin: '#0077B5', social_github: '#fff', social_kofi: '#FF5E5B', share: '#64748B'
+  };
+
+  function fetchBioLinks() {
+    fetch(API + '?biolinks=1').then(function(r) { return r.json(); }).then(function(d) {
+      if (d.error) { document.getElementById('cc-bio-stats').innerHTML = '<p class="cc-empty">Error: ' + esc(d.error) + '</p>'; return; }
+      bioData = d;
+      renderBioLinks(d);
+    }).catch(function(e) {
+      document.getElementById('cc-bio-stats').innerHTML = '<p class="cc-empty">Failed to load bio link data</p>';
+    });
+  }
+
+  function renderBioLinks(d) {
+    // Stats row
+    var wowClass = d.wow.change >= 0 ? 'cc-up' : 'cc-down';
+    var wowSign = d.wow.change >= 0 ? '+' : '';
+    var statsEl = document.getElementById('cc-bio-stats');
+    statsEl.innerHTML =
+      '<div class="cc-bio-stat-row">' +
+        '<div class="cc-bio-stat"><span class="cc-bio-num">' + numFmt(d.totalClicks) + '</span><span class="cc-bio-lbl">Total Clicks</span></div>' +
+        '<div class="cc-bio-stat"><span class="cc-bio-num">' + numFmt(d.pageViews) + '</span><span class="cc-bio-lbl">Page Views</span></div>' +
+        '<div class="cc-bio-stat"><span class="cc-bio-num">' + d.ctr + '%</span><span class="cc-bio-lbl">Click-Through</span></div>' +
+        '<div class="cc-bio-stat"><span class="cc-bio-num">' + numFmt(d.pageUsers) + '</span><span class="cc-bio-lbl">Unique Visitors</span></div>' +
+        '<div class="cc-bio-stat"><span class="cc-bio-num ' + wowClass + '">' + wowSign + d.wow.change + '%</span><span class="cc-bio-lbl">WoW Clicks</span></div>' +
+      '</div>';
+
+    // Trend chart
+    if (d.trend && d.trend.length) {
+      var ctx = document.getElementById('cc-bio-trend');
+      if (ctx) {
+        if (_bioTrend) _bioTrend.destroy();
+        _bioTrend = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: d.trend.map(function(t) { return t.date.slice(5); }),
+            datasets: [{
+              data: d.trend.map(function(t) { return t.clicks; }),
+              backgroundColor: 'rgba(102,255,255,0.3)',
+              borderColor: '#66ffff', borderWidth: 1, borderRadius: 3
+            }]
+          },
+          options: {
+            responsive: true, plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: 'rgba(255,255,255,0.3)', maxRotation: 0, maxTicksLimit: 10 }, grid: { display: false } },
+              y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.3)', precision: 0 }, grid: { color: 'rgba(255,255,255,0.05)' } }
+            }
+          }
+        });
+      }
+    }
+
+    // By Link leaderboard
+    var linksEl = document.getElementById('cc-bio-links');
+    if (d.clicks && d.clicks.length) {
+      var maxClicks = d.clicks[0].clicks || 1;
+      linksEl.innerHTML = d.clicks.map(function(c) {
+        var label = LINK_LABELS[c.link_id] || c.link_id;
+        var color = LINK_COLORS[c.link_id] || '#66ffff';
+        var pct = Math.round((c.clicks / maxClicks) * 100);
+        var share = d.totalClicks > 0 ? Math.round((c.clicks / d.totalClicks) * 1000) / 10 : 0;
+        return '<div class="cc-bio-row">' +
+          '<div class="cc-bio-bar-bg"><div class="cc-bio-bar" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+          '<span class="cc-bio-row-label">' + esc(label) + '</span>' +
+          '<span class="cc-bio-row-val">' + numFmt(c.clicks) + ' <span class="cc-bio-pct">(' + share + '%)</span></span>' +
+        '</div>';
+      }).join('');
+    } else {
+      linksEl.innerHTML = '<p class="cc-empty">No click data yet — share your /links/ page!</p>';
+    }
+
+    // By Section
+    var secEl = document.getElementById('cc-bio-sections');
+    var secColors = { primary: '#66ffff', watch: '#ff4444', connect: '#25D366', social: '#a78bfa', footer: '#64748B' };
+    if (d.sections && d.sections.length) {
+      secEl.innerHTML = d.sections.map(function(s) {
+        var color = secColors[s.section] || '#66ffff';
+        var share = d.totalClicks > 0 ? Math.round((s.clicks / d.totalClicks) * 1000) / 10 : 0;
+        return '<div class="cc-bio-section-card" style="border-left:3px solid ' + color + '">' +
+          '<span class="cc-bio-sec-name">' + esc(s.section) + '</span>' +
+          '<span class="cc-bio-sec-num">' + numFmt(s.clicks) + ' clicks (' + share + '%)</span>' +
+        '</div>';
+      }).join('');
+    } else {
+      secEl.innerHTML = '<p class="cc-empty">No section data yet</p>';
+    }
+
+    // Insights
+    var insEl = document.getElementById('cc-bio-insights');
+    var insights = [];
+    if (d.clicks && d.clicks.length) {
+      var top = d.clicks[0];
+      insights.push({ icon: '\uD83C\uDFC6', text: 'Top link: <strong>' + esc(LINK_LABELS[top.link_id] || top.link_id) + '</strong> with ' + numFmt(top.clicks) + ' clicks' });
+    }
+    if (d.ctr > 0) {
+      var ctrMsg = d.ctr > 50 ? 'Excellent CTR' : d.ctr > 30 ? 'Good CTR — room to improve link ordering' : 'Low CTR — consider reordering links or reducing options';
+      insights.push({ icon: '\uD83D\uDCCA', text: ctrMsg + ' (' + d.ctr + '% of visitors click a link)' });
+    }
+    if (d.wow.change !== 0) {
+      var dir = d.wow.change > 0 ? 'up' : 'down';
+      insights.push({ icon: d.wow.change > 0 ? '\uD83D\uDCC8' : '\uD83D\uDCC9', text: 'Clicks ' + dir + ' ' + Math.abs(d.wow.change) + '% vs last week (' + numFmt(d.wow.thisWeek) + ' vs ' + numFmt(d.wow.lastWeek) + ')' });
+    }
+    if (d.clicks && d.clicks.length > 1) {
+      var bottom = d.clicks[d.clicks.length - 1];
+      if (bottom.clicks < 3) insights.push({ icon: '\uD83D\uDCA1', text: 'Least clicked: ' + esc(LINK_LABELS[bottom.link_id] || bottom.link_id) + ' — consider removing or repositioning' });
+    }
+    if (d.totalClicks === 0) {
+      insights.push({ icon: '\uD83D\uDE80', text: 'No clicks yet! Add your /links/ URL to your YouTube descriptions, LinkedIn bio, and email signature' });
+    }
+    insEl.innerHTML = insights.length ? insights.map(function(i) {
+      return '<div class="cc-bio-insight">' + i.icon + ' ' + i.text + '</div>';
+    }).join('') : '<p class="cc-empty">Share your /links/ page to start collecting data</p>';
+  }
+
+  var bioData = null;
+  var _bioTrend = null;
 
   // ── INIT ──
   init();

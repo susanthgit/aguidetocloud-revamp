@@ -399,6 +399,38 @@ body { background: var(--cc-bg) !important; }
 @media (max-width: 768px) {
   .cc-wow-row { flex-direction: column; }
   .cc-views::after { display: none; }
+  .cc-bio-stat-row { flex-wrap: wrap; }
+  .cc-bio-stat { min-width: 45%; }
 }
+
+/* ─── Bio Links Tab ─── */
+.cc-bio-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.cc-bio-stat {
+  flex: 1; min-width: 100px; padding: 14px 16px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; text-align: center;
+}
+.cc-bio-num { display: block; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #fff; }
+.cc-bio-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); }
+.cc-bio-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.cc-bio-row:last-child { border-bottom: none; }
+.cc-bio-bar-bg { width: 100px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; flex-shrink: 0; }
+.cc-bio-bar { height: 100%; border-radius: 3px; transition: width 0.3s ease; }
+.cc-bio-row-label { flex: 1; font-size: 13px; color: rgba(255,255,255,0.7); }
+.cc-bio-row-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; white-space: nowrap; }
+.cc-bio-pct { color: rgba(255,255,255,0.35); font-size: 11px; }
+.cc-bio-section-card {
+  padding: 10px 14px; margin-bottom: 8px;
+  background: rgba(255,255,255,0.03); border-radius: 6px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cc-bio-sec-name { font-size: 13px; color: rgba(255,255,255,0.7); text-transform: capitalize; }
+.cc-bio-sec-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.5); }
+.cc-bio-insight {
+  padding: 10px 14px; margin-bottom: 6px;
+  background: rgba(255,255,255,0.03); border-radius: 6px;
+  font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5;
+}
+.cc-bio-insight strong { color: #fff; }
 
 @media print { #cc-gate { display: none !important; } .cc-views { display: none; } .cc-panel { display: block !important; } }
