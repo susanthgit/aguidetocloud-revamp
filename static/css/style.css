@@ -1819,12 +1819,10 @@ a.welcome-stat-link:hover {
 .tool-hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  background: rgba(255,255,255,0.035);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: color-mix(in srgb, var(--hero-accent, #66ffff) 5%, rgba(255,255,255,0.04));
+  border: 1px solid color-mix(in srgb, var(--hero-accent, #66ffff) 15%, rgba(255,255,255,0.06));
   border-radius: 16px;
   padding: 0.6rem 1.5rem 0.45rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .tool-hero-title {
