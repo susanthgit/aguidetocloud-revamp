@@ -386,9 +386,9 @@ Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents 
 ## Related Articles
 
 - [Microsoft 365 Copilot Chat April 2026 Changes — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/)
-- [Master All 6 Microsoft 365 Copilot Agents](/blog/master-all-6-microsoft-365-copilot-agents/)
+- [Master All 6 Microsoft 365 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/)
-- [Agent Builder in Microsoft 365 Copilot — Create AI Agents Without Code](/blog/agent-builder-microsoft-365-copilot-create-ai-agent/)
+- [Agent Builder in Microsoft 365 Copilot — Create AI Agents Without Code](/ai-hub/m365-copilot-studio-lite-or-agent-builder-hands-on-lab-create-your-own-ai-agent-/)
 
 ---
 

@@ -10,6 +10,10 @@
     <span class="blog-tl-count">{{ len .Pages }} articles</span>
   </div>
 
+  <div class="blog-video-cta">
+    <p>📺 Looking for video tutorials? Browse <a href="/ai-hub/">AI Hub</a> · <a href="/cloud-labs/">Cloud Labs</a> · <a href="/certifications/">Full Courses</a> · <a href="/exam-qa/">Mock Exams</a></p>
+  </div>
+
   <div class="blog-timeline" id="blog-list">
     {{ range .Pages.ByDate.Reverse }}
     <a href="{{ .RelPermalink }}" class="blog-tl-item">

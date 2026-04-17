@@ -185,8 +185,8 @@ Copilot uses chat history for more relevant responses. Updated settings for view
 
 - [January 2026 Copilot Updates](/blog/microsoft-365-copilot-january-2026-updates/)
 - [March 2026 Copilot Updates](/blog/microsoft-365-copilot-march-2026-updates/)
-- [M365 Copilot Full Tutorial](/blog/microsoft-365-copilot-full-tutorial-word-excel-teams/)
-- [Master All 6 Copilot Agents](/blog/master-all-6-microsoft-365-copilot-agents/)
+- [M365 Copilot Full Tutorial](/ai-hub/microsoft-365-copilot-full-tutorial-word-excel-teams-outlook-more-beginners-guid/)
+- [Master All 6 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Browse all AI tutorials](/ai-hub/)
 - [Daily AI News](/ai-news/)
 

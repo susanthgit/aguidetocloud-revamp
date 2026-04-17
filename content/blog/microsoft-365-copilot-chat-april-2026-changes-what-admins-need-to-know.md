@@ -323,11 +323,11 @@ Enterprise (>300 users): **$30/user/month**. Business (<300 users): **$21/user/m
 
 ## Related Articles
 
-- [Master All 6 Microsoft 365 Copilot Agents](/blog/master-all-6-microsoft-365-copilot-agents/)
+- [Master All 6 Microsoft 365 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/)
 - [Microsoft 365 Copilot Content Safety Controls for IT Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
-- [Agent Builder in Microsoft 365 Copilot — Create AI Agents Without Code](/blog/agent-builder-microsoft-365-copilot-create-ai-agent/)
-- [Learn Prompt Engineering with Practical Work-Life Prompts](/blog/learn-prompt-engineering-with-practical-work-life-prompts/)
+- [Agent Builder in Microsoft 365 Copilot — Create AI Agents Without Code](/ai-hub/m365-copilot-studio-lite-or-agent-builder-hands-on-lab-create-your-own-ai-agent-/)
+- [Learn Prompt Engineering with Practical Work-Life Prompts](/ai-hub/learn-prompt-engineering-with-practical-work-life-prompts-beginner-friendly-ai-s/)
 
 ---
 

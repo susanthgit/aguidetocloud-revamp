@@ -147,9 +147,9 @@ Get relevant answers and insights about your **open YouTube videos** in Copilot 
 
 - [January 2026 Copilot Updates](/blog/microsoft-365-copilot-january-2026-updates/)
 - [February 2026 Copilot Updates](/blog/microsoft-365-copilot-february-2026-updates/)
-- [M365 Copilot Full Tutorial](/blog/microsoft-365-copilot-full-tutorial-word-excel-teams/)
-- [Master All 6 Copilot Agents](/blog/master-all-6-microsoft-365-copilot-agents/)
-- [Copilot Studio Beginner Lab](/blog/copilot-studio-beginner-lab-part-1-create-deploy/)
+- [M365 Copilot Full Tutorial](/ai-hub/microsoft-365-copilot-full-tutorial-word-excel-teams-outlook-more-beginners-guid/)
+- [Master All 6 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
+- [Copilot Studio Beginner Lab](/ai-hub/copilot-studio-beginner-lab-part-1-create-deploy-your-first-ai-agent-topics-deep/)
 - [Browse all AI tutorials](/ai-hub/)
 - [Daily AI News](/ai-news/)
 

@@ -1,13 +1,45 @@
 {
   "routes": [
-    { "route": "/bio/", "redirect": "/links/", "statusCode": 301 },
-    { "route": "/me/", "redirect": "/links/", "statusCode": 301 },
-    { "route": "/Technical", "redirect": "/", "statusCode": 301 },
-    { "route": "/Technical/*", "redirect": "/", "statusCode": 301 },
-    { "route": "/cart", "redirect": "/", "statusCode": 301 },
-    { "route": "/music/lofi", "redirect": "/music/", "statusCode": 301 },
-    { "route": "/music/edm", "redirect": "/music/", "statusCode": 301 },
-    { "route": "/music/rain*", "redirect": "/music/", "statusCode": 301 },
+    {
+      "route": "/bio/",
+      "redirect": "/links/",
+      "statusCode": 301
+    },
+    {
+      "route": "/me/",
+      "redirect": "/links/",
+      "statusCode": 301
+    },
+    {
+      "route": "/Technical",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/Technical/*",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cart",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/music/lofi",
+      "redirect": "/music/",
+      "statusCode": 301
+    },
+    {
+      "route": "/music/edm",
+      "redirect": "/music/",
+      "statusCode": 301
+    },
+    {
+      "route": "/music/rain*",
+      "redirect": "/music/",
+      "statusCode": 301
+    },
     {
       "route": "/hiking/*",
       "redirect": "/",
@@ -296,6 +328,326 @@
     {
       "route": "/blog/azure-ai-fundamentals/",
       "redirect": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ai-900-full-course-azure-ai-fundamentals-certification/",
+      "redirect": "/cert-tracker/ai-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-104-full-course-azure-administrator-certification/",
+      "redirect": "/cert-tracker/az-104/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-204-full-course-azure-developer-certification/",
+      "redirect": "/cert-tracker/az-204/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-400-full-course-microsoft-devops-engineer-certification/",
+      "redirect": "/cert-tracker/az-400/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-500-full-course-azure-security-certification/",
+      "redirect": "/cert-tracker/az-500/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-900-full-course-azure-fundamentals-certification/",
+      "redirect": "/cert-tracker/az-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/dp-900-full-course-azure-data-fundamentals/",
+      "redirect": "/cert-tracker/dp-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-700-full-course-microsoft-teams-administrator/",
+      "redirect": "/cert-tracker/ms-700/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-900-full-course-microsoft-365-fundamentals/",
+      "redirect": "/cert-tracker/ms-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/pl-900-full-course-power-platform-fundamentals/",
+      "redirect": "/cert-tracker/pl-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/sc-900-full-course-microsoft-security-compliance-identity/",
+      "redirect": "/cert-tracker/sc-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/100-ai-900-azure-ai-fundamentals-practice-questions/",
+      "redirect": "/cert-tracker/ai-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-104-mock-exam-microsoft-azure-administrator-certification/",
+      "redirect": "/cert-tracker/az-104/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-204-mock-exam-microsoft-azure-developer-certification/",
+      "redirect": "/cert-tracker/az-204/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-305-mock-exam-microsoft-azure-solutions-architect/",
+      "redirect": "/cert-tracker/az-305/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-400-mock-exam-microsoft-azure-devops-engineer/",
+      "redirect": "/cert-tracker/az-400/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-500-mock-exam-microsoft-azure-security-certification/",
+      "redirect": "/cert-tracker/az-500/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/az-900-mock-exam-microsoft-azure-fundamentals-certification/",
+      "redirect": "/cert-tracker/az-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/dp-900-mock-exam-microsoft-azure-data-fundamentals/",
+      "redirect": "/cert-tracker/dp-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-900-exam-practice-100-microsoft-365-fundamentals/",
+      "redirect": "/cert-tracker/ms-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-900-mock-exam-microsoft-365-fundamentals-certification/",
+      "redirect": "/cert-tracker/ms-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/pl-900-mock-exam-microsoft-power-platform-fundamentals/",
+      "redirect": "/cert-tracker/pl-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/sc-100-microsoft-cybersecurity-architect-100-mock-questions/",
+      "redirect": "/cert-tracker/sc-100/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/sc-900-mock-exam-microsoft-security-compliance-identity/",
+      "redirect": "/cert-tracker/sc-900/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-500-full-course-microsoft-365-security/",
+      "redirect": "/certifications/ms-500-full-course-microsoft-365-security-administrator-certification-training/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/ms-500-mock-exam-microsoft-365-security-administration/",
+      "redirect": "/exam-qa/ms-500-mock-exam-microsoft-365-security-administration-certification-questions/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/agent-builder-microsoft-365-copilot-create-ai-agent/",
+      "redirect": "/ai-hub/m365-copilot-studio-lite-or-agent-builder-hands-on-lab-create-your-own-ai-agent-/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/master-all-6-microsoft-365-copilot-agents/",
+      "redirect": "/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-365-copilot-full-tutorial-word-excel-teams/",
+      "redirect": "/ai-hub/microsoft-365-copilot-full-tutorial-word-excel-teams-outlook-more-beginners-guid/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/master-sharepoint-agent-in-microsoft-365-create-customize/",
+      "redirect": "/ai-hub/master-sharepoint-agent-in-microsoft-365-create-customize-use-in-teams-full-begi/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/master-researcher-agent-save-time-with-ai-powered/",
+      "redirect": "/ai-hub/master-researcher-agent-save-time-with-ai-powered-research-briefing-generator/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/master-analyst-agent-real-world-data-analysis-trends/",
+      "redirect": "/ai-hub/master-analyst-agent-real-world-data-analysis-trends-insights-using-microsoft-36/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/copilot-notebook-explained-full-hands-on-tutorial/",
+      "redirect": "/ai-hub/copilot-notebook-explained-full-hands-on-tutorial-podcasts-docs-pdfs-audio-custo/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/copilot-in-excel-tutorial-20-powerful-features-to/",
+      "redirect": "/ai-hub/copilot-in-excel-tutorial-20-powerful-features-to-boost-your-productivity-with-a/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/20-real-world-copilot-in-word-use-cases/",
+      "redirect": "/ai-hub/20-real-world-copilot-in-word-use-cases-master-ai-writing-editing-with-microsoft/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/copilot-studio-beginner-lab-part-1-create-deploy/",
+      "redirect": "/ai-hub/copilot-studio-beginner-lab-part-1-create-deploy-your-first-ai-agent-topics-deep/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/copilot-studio-lab-part-2-entities-connectors-generative/",
+      "redirect": "/ai-hub/copilot-studio-lab-part-2-entities-connectors-generative-ai-power-automate-flow-/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/learn-prompt-engineering-with-practical-work-life-prompts/",
+      "redirect": "/ai-hub/learn-prompt-engineering-with-practical-work-life-prompts-beginner-friendly-ai-s/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/prompt-engineering-explained-with-images-learn-prompting-using/",
+      "redirect": "/ai-hub/prompt-engineering-explained-with-images-learn-prompting-using-a-cute-dog-theme/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-app-service-migration-lab-step-by-step/",
+      "redirect": "/cloud-labs/azure-app-service-migration-lab-step-by-step-hands-on-walkthrough/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-boards-tutorial-for-beginners-hands-on-lab/",
+      "redirect": "/cloud-labs/azure-boards-tutorial-for-beginners-hands-on-lab-to-track-work-in-azure-devops/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-devops-continuous-integration-and-delivery-full-tutorial/",
+      "redirect": "/cloud-labs/azure-devops-continuous-integration-and-delivery-full-tutorial-for-beginners-end/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-expressroute-tutorial-step-by-step-lab-for/",
+      "redirect": "/cloud-labs/azure-expressroute-tutorial-step-by-step-lab-for-beginners/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-firewall-tutorial-beginners-hands-on-lab-with/",
+      "redirect": "/cloud-labs/azure-firewall-tutorial-beginners-hands-on-lab-with-step-by-step-setup/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-fundamentals-hands-on-labs-complete-beginner-masterclass/",
+      "redirect": "/cloud-labs/azure-fundamentals-hands-on-labs-complete-beginner-masterclass/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-migrate-tutorial-for-beginners-full-hands-on/",
+      "redirect": "/cloud-labs/azure-migrate-tutorial-for-beginners-full-hands-on-lab-3-labs-and-12-exercises/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-networking-for-beginners-full-hands-on-labs/",
+      "redirect": "/cloud-labs/azure-networking-for-beginners-full-hands-on-labs-masterclass/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-virtual-desktop-tutorial-complete-beginner-to-pro/",
+      "redirect": "/cloud-labs/azure-virtual-desktop-tutorial-complete-beginner-to-pro-masterclass/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/azure-vnet-peering-explained-practical-hands-on-lab/",
+      "redirect": "/cloud-labs/azure-vnet-peering-explained-practical-hands-on-lab-for-beginners/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-purview-masterclass-for-beginners-hands-on-lab/",
+      "redirect": "/cloud-labs/microsoft-purview-masterclass-for-beginners-hands-on-lab-for-information-protect/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-purview-masterclass-part-2-insider-risk-dlp/",
+      "redirect": "/cloud-labs/microsoft-purview-masterclass-part-2-insider-risk-dlp-audit-logs-ai-compliance/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-sentinel-for-beginners-full-hands-on-security/",
+      "redirect": "/cloud-labs/microsoft-sentinel-for-beginners-full-hands-on-security-masterclass/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/request-azure-quota-increase-step-by-step-for/",
+      "redirect": "/cloud-labs/request-azure-quota-increase-step-by-step-for-beginners/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/windows-365-deep-dive-masterclass-full-setup-configuration/",
+      "redirect": "/cloud-labs/windows-365-deep-dive-masterclass-full-setup-configuration-and-management-beginn/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/5-tips-to-start-learning-azure-even-if/",
+      "redirect": "/cloud-labs/5-tips-to-start-learning-azure-even-if-youre-a-beginner/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/how-to-claim-your-free-azure-pass-practice/",
+      "redirect": "/cloud-labs/how-to-claim-your-free-azure-pass-practice-labs-for-beginners/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/how-to-get-a-free-azure-subscription-practice/",
+      "redirect": "/cloud-labs/how-to-get-a-free-azure-subscription-practice-labs-without-paying/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/claim-microsoft-exam-discounts-save-money-on-your/",
+      "redirect": "/exam-qa/claim-microsoft-exam-discounts-save-money-on-your-certification/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/free-microsoft-certification-practice-tests-where-to-find/",
+      "redirect": "/exam-qa/free-microsoft-certification-practice-tests-where-to-find-them/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/get-free-microsoft-exam-vouchers-step-by-step/",
+      "redirect": "/exam-qa/get-free-microsoft-exam-vouchers-step-by-step-guide-for-beginners/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-exam-simulations-what-they-look-like-tips/",
+      "redirect": "/exam-qa/microsoft-exam-simulations-what-they-look-like-tips/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/100-azure-interview-questions-and-answers-beginner-to/",
+      "redirect": "/interview-prep/100-azure-interview-questions-and-answers-beginner-to-advanced-guide-for-landing/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/18-key-questions-azure-virtual-desktop-vs-windows/",
+      "redirect": "/interview-prep/18-key-questions-azure-virtual-desktop-vs-windows-365-desktop-virtualization-job/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/microsoft-365-interview-questions-for-beginners-and-experienced/",
+      "redirect": "/interview-prep/microsoft-365-interview-questions-for-beginners-and-experienced-professionals/",
       "statusCode": 301
     },
     {

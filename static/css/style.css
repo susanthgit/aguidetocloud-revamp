@@ -2577,6 +2577,29 @@ a.welcome-stat-link:hover {
   white-space: nowrap;
 }
 
+.blog-video-cta {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--glass-radius-button);
+  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
+  backdrop-filter: blur(var(--glass-blur-subtle));
+  text-align: center;
+}
+.blog-video-cta p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.blog-video-cta a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-weight: 600;
+}
+.blog-video-cta a:hover { text-decoration: underline; }
+
 /* Timeline container */
 .blog-timeline {
   position: relative;

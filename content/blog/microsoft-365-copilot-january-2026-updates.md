@@ -169,10 +169,10 @@ When grounding your prompts in Copilot Chat, you can now use ContextIQ to scope 
 
 ## 🔗 Related Content on This Site
 
-- [M365 Copilot Full Tutorial — Beginner's Guide](/blog/microsoft-365-copilot-full-tutorial-word-excel-teams/)
+- [M365 Copilot Full Tutorial — Beginner's Guide](/ai-hub/microsoft-365-copilot-full-tutorial-word-excel-teams-outlook-more-beginners-guid/)
 - [February 2026 Copilot Updates](/blog/microsoft-365-copilot-february-2026-updates/)
 - [March 2026 Copilot Updates](/blog/microsoft-365-copilot-march-2026-updates/)
-- [Master All 6 Copilot Agents](/blog/master-all-6-microsoft-365-copilot-agents/)
+- [Master All 6 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Browse all AI tutorials](/ai-hub/)
 - [Daily AI News](/ai-news/)
 
