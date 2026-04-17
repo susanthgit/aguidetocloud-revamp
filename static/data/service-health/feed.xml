@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 11:11:18 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 13:56:44 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Microsoft Copilot usage reports in the Microsoft 365 admin center</title>
@@ -141,15 +141,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1274150</guid>
       <pubDate>Wed, 08 Apr 2026 14:38:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1279879</link>
-      <description>[Exchange Online] Users may be unable to respond directly to specific encrypted email messages from a shared mailbox in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">EX1279879</guid>
-      <pubDate>Wed, 08 Apr 2026 14:07:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may see delays with some reports in the Microsoft 365 admin center</title>
@@ -456,6 +447,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1254319</guid>
       <pubDate>Tue, 17 Mar 2026 11:42:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' Sales add-in may not appear on Outlook mobile and Outlook for Mac clients</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1253444</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' Sales add-in may not appear on Outlook mobile and Outlook for Mac clients.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1253444</guid>
+      <pubDate>Mon, 16 Mar 2026 15:11:25 +0000</pubDate>
     </item>
   </channel>
 </rss>
