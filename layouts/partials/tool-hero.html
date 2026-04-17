@@ -1,44 +1,45 @@
-{{/* Tool Hero — Compact header for all Cloud & AI Toolkit tools
+{{/* Tool Hero — Stacked header for all Cloud & AI Toolkit tools
      Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "subtitle" "..." "accent" "#00e5ff") }}
      All tools get the same structure, just different accent color.
      Counter auto-detected from data/tool_counters.toml by page URL.
      Freshness badge auto-detected for pipeline tools with data files.
+     Live visitor count fetched client-side from /api/stats?realtime=1.
 */}}
 {{ $p := .page | default page }}
 <div class="tool-hero" style="--hero-accent: {{ .accent }}">
   <div class="tool-hero-inner">
-    <div class="tool-hero-row">
-      <h1 class="tool-hero-title">{{ .title }}</h1>
-      {{ with .subtitle }}<span class="tool-hero-sep">·</span><span class="tool-hero-subtitle">{{ . }}</span>{{ end }}
-      {{/* Counter + Ko-fi + Freshness inline */}}
-      {{ $url := $p.RelPermalink }}
-      {{ $counters := (index hugo.Data "tool_counters").tools }}
-      {{ $counterBase := 0 }}
-      {{ $counterVerb := "" }}
-      {{ range $counters }}
-        {{ if eq .url $url }}
-          {{ $counterBase = .base }}
-          {{ $counterVerb = .verb }}
-        {{ end }}
+    <h1 class="tool-hero-title">{{ .title }}</h1>
+    {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+    {{/* Badges row — live indicator, counter, freshness, Ko-fi */}}
+    {{ $url := $p.RelPermalink }}
+    {{ $counters := (index hugo.Data "tool_counters").tools }}
+    {{ $counterBase := 0 }}
+    {{ $counterVerb := "" }}
+    {{ range $counters }}
+      {{ if eq .url $url }}
+        {{ $counterBase = .base }}
+        {{ $counterVerb = .verb }}
       {{ end }}
-      {{/* Dict-based counter override (for pages without TOML entries, e.g. cert guides) */}}
-      {{ if and (eq $counterBase 0) $.counter_base }}
-        {{ $counterBase = $.counter_base }}
-        {{ $counterVerb = $.counter_verb }}
-      {{ end }}
-      <span class="tool-hero-sep">·</span>
-      <div class="tool-hero-badges">
-        {{ if gt $counterBase 0 }}
-        <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
-          <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
-          <span class="tool-counter-verb">{{ $counterVerb }}</span>
-        </div>
-        <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
-        {{ end }}
-        {{/* Freshness badge for pipeline tools */}}
-        {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
-        <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+    {{ end }}
+    {{/* Dict-based counter override (for pages without TOML entries, e.g. cert guides) */}}
+    {{ if and (eq $counterBase 0) $.counter_base }}
+      {{ $counterBase = $.counter_base }}
+      {{ $counterVerb = $.counter_verb }}
+    {{ end }}
+    <div class="tool-hero-badges">
+      <span class="tool-hero-live" id="th-live" style="display:none" aria-hidden="true">
+        <span class="tool-hero-live-dot"></span>
+        <span id="th-live-num">0</span> live
+      </span>
+      {{ if gt $counterBase 0 }}
+      <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
+        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
+        <span class="tool-counter-verb">{{ $counterVerb }}</span>
       </div>
+      <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
+      {{ end }}
+      {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
     </div>
     {{ with $.extra_html }}{{ . | safeHTML }}{{ end }}
     {{ partial "tool-prev-next.html" $p }}

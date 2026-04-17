@@ -261,6 +261,17 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
+url = "/cert-compass/"
+emoji = "🧭"
+name = "Cert Compass"
+short = "Compass"
+desc = "Navigate certs across Azure, AWS & Google Cloud"
+color = "#6366F1"
+category = "learning"
+visual = "scatter"
+is_tool = true
+
+[[tools]]
 url = "/world-clock/"
 emoji = "🌍"
 name = "Meeting Planner"

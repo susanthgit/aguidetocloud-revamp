@@ -58,4 +58,39 @@
       })
       .catch(function() {});
   }
+
+  // === LIVE VISITOR COUNT ===
+  var liveEl = document.getElementById('th-live');
+  var liveNum = document.getElementById('th-live-num');
+  if (liveEl && liveNum) {
+    var CACHE_KEY = 'th_live_cache';
+    var CACHE_TTL = 60000; // 60s
+    var _liveTimer = null;
+
+    function showLive(count) {
+      if (count > 0) { liveEl.style.display = ''; liveNum.textContent = count; }
+      else { liveEl.style.display = 'none'; }
+    }
+
+    function fetchLive() {
+      // Check sessionStorage cache first
+      try {
+        var cached = JSON.parse(sessionStorage.getItem(CACHE_KEY));
+        if (cached && (Date.now() - cached.ts) < CACHE_TTL) { showLive(cached.n); return; }
+      } catch (e) {}
+      fetch('/api/stats?realtime=1')
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          var n = d.active || 0;
+          showLive(n);
+          try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ n: n, ts: Date.now() })); } catch (e) {}
+        })
+        .catch(function() {});
+    }
+
+    function startLive() { fetchLive(); _liveTimer = setInterval(fetchLive, 60000); }
+    function stopLive() { if (_liveTimer) { clearInterval(_liveTimer); _liveTimer = null; } }
+    if (!document.hidden) startLive();
+    document.addEventListener('visibilitychange', function() { document.hidden ? stopLive() : startLive(); });
+  }
 })();

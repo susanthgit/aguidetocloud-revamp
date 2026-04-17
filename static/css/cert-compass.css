@@ -1,0 +1,241 @@
+/* ============================================================================
+   CERT COMPASS — Multi-Cloud Certification Navigator
+   Accent: #6366F1 (Indigo)
+   Namespace: .compass-*
+   ============================================================================ */
+
+:root { --compass-accent: #6366F1; --compass-accent-rgb: 99,102,241; }
+
+.compass-page { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+/* ── Tabs ──────────────────────────────────────────────────────────────── */
+.compass-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+  overflow-x: auto; scrollbar-width: none;
+}
+.compass-tabs::-webkit-scrollbar { display: none; }
+.compass-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  font-family: inherit;
+}
+.compass-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.compass-tab.active {
+  color: #fff; background: var(--compass-accent);
+  border-color: var(--compass-accent);
+  box-shadow: 0 2px 8px rgba(var(--compass-accent-rgb), 0.3);
+}
+.compass-panel { display: none; }
+.compass-panel.active { display: block; }
+
+/* ── Filters ──────────────────────────────────────────────────────────── */
+.compass-filters { margin-bottom: 1rem; }
+.compass-search {
+  width: 100%; padding: 0.7rem 1rem; border-radius: 10px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; font-size: 0.9rem; margin-bottom: 0.75rem;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  font-family: inherit;
+}
+.compass-search::placeholder { color: rgba(255,255,255,0.35); }
+.compass-search:focus { outline: none; border-color: var(--compass-accent); box-shadow: 0 0 0 2px rgba(var(--compass-accent-rgb), 0.2); }
+.compass-filter-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+.compass-pill-group { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.compass-pill {
+  padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.compass-pill:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.compass-pill.active { color: #fff; background: var(--compass-accent); border-color: var(--compass-accent); }
+.compass-pill[data-provider].active { background: var(--pill-accent, var(--compass-accent)); border-color: var(--pill-accent, var(--compass-accent)); }
+.compass-select {
+  padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.8rem;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; cursor: pointer; font-family: inherit;
+}
+.compass-select option { background: #1a1a2e; color: #fff; }
+.compass-count { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+
+/* ── Card Grid ────────────────────────────────────────────────────────── */
+.compass-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+.compass-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; overflow: hidden; transition: all 0.25s;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.compass-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.compass-card-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 1.1rem; cursor: pointer;
+}
+.compass-card-provider {
+  width: 6px; height: 40px; border-radius: 3px; flex-shrink: 0;
+}
+.compass-card-info { flex: 1; min-width: 0; }
+.compass-card-name { font-size: 0.95rem; font-weight: 700; color: #fff; }
+.compass-card-code { font-size: 0.75rem; color: rgba(255,255,255,0.4); font-family: 'JetBrains Mono', monospace; }
+.compass-card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.compass-badge {
+  font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 6px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.compass-badge-level {
+  background: rgba(var(--compass-accent-rgb), 0.15);
+  color: rgb(var(--compass-accent-rgb));
+  border: 1px solid rgba(var(--compass-accent-rgb), 0.3);
+}
+.compass-badge-fee { background: rgba(16,185,129,0.12); color: #10B981; border: 1px solid rgba(16,185,129,0.25); }
+.compass-badge-diff { background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25); }
+.compass-card-expand {
+  color: rgba(255,255,255,0.3); transition: transform 0.2s; flex-shrink: 0; font-size: 0.8rem;
+}
+.compass-card.open .compass-card-expand { transform: rotate(180deg); }
+.compass-card-body { display: none; padding: 0 1.1rem 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.compass-card.open .compass-card-body { display: block; }
+.compass-card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5; margin: 0.75rem 0; }
+.compass-card-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.compass-card-meta strong { color: rgba(255,255,255,0.8); }
+.compass-card-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+.compass-btn {
+  padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+  border: none; cursor: pointer; transition: all 0.2s; font-family: inherit; text-decoration: none;
+}
+.compass-btn-primary { background: var(--compass-accent); color: #fff; }
+.compass-btn-primary:hover { filter: brightness(1.15); }
+.compass-btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+.compass-btn-outline:hover { border-color: var(--compass-accent); color: #fff; }
+.compass-btn-ms { background: rgba(0,120,212,0.15); color: #60A5FA; border: 1px solid rgba(0,120,212,0.3); }
+
+/* ── Matches ──────────────────────────────────────────────────────────── */
+.compass-disclaimer {
+  font-size: 0.82rem; color: rgba(255,255,255,0.45); padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--compass-accent);
+  margin-bottom: 1.5rem;
+}
+.compass-subtitle { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+.compass-matches-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+.compass-match-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.25rem; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.compass-match-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.compass-match-icon { font-size: 1.5rem; }
+.compass-match-title { font-size: 1.05rem; font-weight: 700; color: #fff; }
+.compass-match-badges { display: flex; gap: 0.4rem; margin-left: auto; }
+.compass-badge-role { background: rgba(16,185,129,0.12); color: #10B981; border: 1px solid rgba(16,185,129,0.25); }
+.compass-badge-mixed { background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25); }
+.compass-match-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+.compass-match-cert {
+  padding: 0.85rem; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02);
+}
+.compass-match-cert-provider { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.compass-match-cert-name { font-size: 0.88rem; font-weight: 600; color: #fff; }
+.compass-match-cert-code { font-size: 0.72rem; color: rgba(255,255,255,0.4); font-family: 'JetBrains Mono', monospace; }
+.compass-match-cert-stats { display: flex; gap: 0.6rem; margin-top: 0.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+.compass-match-notes { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.85rem; line-height: 1.5; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.compass-match-rec { font-size: 0.8rem; color: var(--compass-accent); margin-top: 0.5rem; font-weight: 600; }
+.compass-match-cta { margin-top: 0.75rem; }
+
+/* ── Career Paths ─────────────────────────────────────────────────────── */
+.compass-careers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.compass-career-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.2rem; cursor: pointer; transition: all 0.25s;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.compass-career-card:hover { border-color: var(--compass-accent); transform: translateY(-2px); }
+.compass-career-card.active { border-color: var(--compass-accent); box-shadow: 0 0 16px rgba(var(--compass-accent-rgb), 0.15); }
+.compass-career-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.compass-career-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.compass-career-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+.compass-career-demand { font-size: 0.7rem; font-weight: 600; margin-top: 0.5rem; padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; background: rgba(var(--compass-accent-rgb), 0.12); color: rgb(var(--compass-accent-rgb)); }
+.compass-career-detail { margin-top: 1.5rem; }
+.compass-career-back { cursor: pointer; color: var(--compass-accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; background: none; border: none; font-family: inherit; }
+.compass-career-back:hover { text-decoration: underline; }
+.compass-career-provider {
+  margin-bottom: 1rem; padding: 1rem;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+}
+.compass-career-provider-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.6rem; }
+.compass-career-steps { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.compass-career-step {
+  padding: 0.5rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+}
+.compass-career-arrow { color: rgba(255,255,255,0.25); font-size: 0.9rem; }
+.compass-career-tip {
+  margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 10px;
+  background: rgba(var(--compass-accent-rgb), 0.08); border-left: 3px solid var(--compass-accent);
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.compass-career-tip strong { color: var(--compass-accent); }
+
+/* ── Compare ──────────────────────────────────────────────────────────── */
+.compass-compare-controls { margin-bottom: 1.5rem; }
+.compass-compare-presets { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.compass-preset {
+  padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.compass-preset:hover { color: #fff; border-color: var(--compass-accent); }
+.compass-preset.active { background: var(--compass-accent); color: #fff; border-color: var(--compass-accent); }
+.compass-compare-select {
+  display: flex; gap: 0.4rem; flex-wrap: wrap; padding: 0.75rem;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.compass-chip {
+  padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+  cursor: pointer; transition: all 0.15s; border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5);
+}
+.compass-chip:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
+.compass-chip.selected { color: #fff; border-color: var(--chip-accent, var(--compass-accent)); background: rgba(var(--compass-accent-rgb), 0.15); }
+.compass-compare-table-wrap { overflow-x: auto; }
+.compass-compare-table {
+  width: 100%; border-collapse: collapse; font-size: 0.82rem;
+}
+.compass-compare-table th, .compass-compare-table td {
+  padding: 0.65rem 0.85rem; text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.compass-compare-table th { color: rgba(255,255,255,0.45); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.compass-compare-table th:first-child { position: sticky; left: 0; background: rgba(3,3,8,0.95); z-index: 1; }
+.compass-compare-table td:first-child { position: sticky; left: 0; background: rgba(3,3,8,0.95); z-index: 1; color: rgba(255,255,255,0.6); font-weight: 600; }
+.compass-compare-table td { color: rgba(255,255,255,0.8); }
+.compass-compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+.compass-compare-header-cell { text-align: center; }
+.compass-compare-header-cell .compass-card-code { display: block; margin-top: 0.2rem; }
+
+/* ── FAQ ──────────────────────────────────────────────────────────────── */
+#panel-faq details {
+  margin-bottom: 0.75rem; padding: 0.85rem 1rem; border-radius: 10px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+}
+#panel-faq details[open] { border-color: rgba(var(--compass-accent-rgb), 0.2); }
+#panel-faq summary { cursor: pointer; color: #fff; font-size: 0.9rem; list-style: none; }
+#panel-faq summary::-webkit-details-marker { display: none; }
+#panel-faq summary::before { content: '▸ '; color: var(--compass-accent); }
+#panel-faq details[open] summary::before { content: '▾ '; }
+#panel-faq p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-top: 0.5rem; }
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .compass-grid { grid-template-columns: 1fr; }
+  .compass-careers-grid { grid-template-columns: 1fr 1fr; }
+  .compass-match-cols { grid-template-columns: 1fr; }
+  .compass-filter-row { flex-direction: column; }
+  .compass-career-steps { flex-direction: column; align-items: flex-start; }
+  .compass-career-arrow { transform: rotate(90deg); }
+}
+@media (max-width: 480px) {
+  .compass-careers-grid { grid-template-columns: 1fr; }
+  .compass-page { padding: 0 1rem 2rem; }
+}
