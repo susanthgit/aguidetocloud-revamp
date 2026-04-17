@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 11:54:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 17:49:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>NASA gets the ball rolling on its part in Europe's jinxed Mars rover mission</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/nasa_rosalind_franklin/</link>
-      <description>NASA is proceeding with its role in the delayed Rosalind Franklin Mars rover mission despite potential budget cuts from the Trump administration. This development is crucial for the collaboration with the European Space Agency and the mission's future.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 11:39:13 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/nasa_rosalind_franklin/</guid>
-    </item>
-    <item>
-      <title>I tried the new Gemini app for Mac - it has one major advantage over the web version</title>
-      <link>https://www.zdnet.com/article/google-gemini-app-mac/</link>
-      <description>The new Gemini app for Mac offers a significant advantage over its web version by allowing users to access and analyze content from any shared window on their desktop. This feature enhances user convenience and productivity.</description>
+      <title>A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI</title>
+      <link>https://developers.googleblog.com/a2ui-v0-9-generative-ui/</link>
+      <description>A2UI v0.9 has been released, providing a framework-agnostic standard for AI-generated UI widgets, enhancing developer experience with new tools and support for popular renderers. This update allows for real-time, tailored interfaces across platforms, improving efficiency in app development.</description>
       <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 11:01:03 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/google-gemini-app-mac/</guid>
+      <pubDate>Fri, 17 Apr 2026 17:47:15 +0000</pubDate>
+      <guid>https://developers.googleblog.com/a2ui-v0-9-generative-ui/</guid>
     </item>
     <item>
-      <title>The best WordPress hosting services of 2026: Expert tested and reviewed</title>
-      <link>https://www.zdnet.com/article/best-wordpress-hosting/</link>
-      <description>This article reviews the best WordPress hosting services available in 2026, highlighting options that simplify website management for users without coding skills. It aims to guide users in selecting the right hosting solution.</description>
+      <title>Nova Forge SDK series part 2: Practical guide to fine-tune Nova models using data mixing capabilities</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/nova-forge-sdk-series-part-2-practical-guide-to-fine-tune-nova-models-using-data-mixing-capabilities/</link>
+      <description>The second part of the Nova Forge SDK series offers a detailed guide on fine-tuning Amazon Nova models using data mixing, providing a comprehensive playbook for developers. This guide builds on previous content, enhancing customization capabilities for users.</description>
+      <category>Amazon</category>
+      <pubDate>Fri, 17 Apr 2026 17:27:40 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/nova-forge-sdk-series-part-2-practical-guide-to-fine-tune-nova-models-using-data-mixing-capabilities/</guid>
+    </item>
+    <item>
+      <title>Verizon will give you a free iPad or Apple Watch with your next iPhone - how the deal works</title>
+      <link>https://www.zdnet.com/article/verizon-ipad-apple-watch-deal/</link>
+      <description>Verizon is offering a free iPad or Apple Watch with select Unlimited mobile plans, incentivizing customers to upgrade their devices. This promotion aims to attract new customers and retain existing ones by enhancing the value of their mobile plans.</description>
       <category>Industry</category>
-      <pubDate>Fri, 17 Apr 2026 11:00:46 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-wordpress-hosting/</guid>
+      <pubDate>Fri, 17 Apr 2026 17:22:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/verizon-ipad-apple-watch-deal/</guid>
     </item>
     <item>
-      <title>Attention data hoarders: Alexa loses its Plex appeal as voice feature gets canned</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/alexa_loses_its_plex_appeal/</link>
-      <description>Plex has announced it will discontinue its Alexa integration, frustrating users who relied on voice commands for managing their media libraries. This decision impacts the functionality and convenience for Alexa users.</description>
+      <title>Gazing Into Sam Altman’s Orb Now Proves You’re Human on Tinder</title>
+      <link>https://www.wired.com/story/gazing-into-sam-altmans-orb-now-proves-youre-human-on-tinder/</link>
+      <description>A new feature on Tinder allows users to verify their humanity by gazing into Sam Altman's orb, adding a playful twist to user verification. This approach aims to enhance user experience and authenticity on the platform.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 17 Apr 2026 17:14:51 +0000</pubDate>
+      <guid>https://www.wired.com/story/gazing-into-sam-altmans-orb-now-proves-youre-human-on-tinder/</guid>
+    </item>
+    <item>
+      <title>From hours to minutes: How Agentic AI gave marketers time back for what matters</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/from-hours-to-minutes-how-agentic-ai-gave-marketers-time-back-for-what-matters/</link>
+      <description>AWS Marketing's TAA team collaborated with Gradial to create an agentic AI solution on Amazon Bedrock, significantly speeding up content publishing workflows. This development allows marketers to focus more on strategic tasks rather than time-consuming processes.</description>
+      <category>Amazon</category>
+      <pubDate>Fri, 17 Apr 2026 17:12:10 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/from-hours-to-minutes-how-agentic-ai-gave-marketers-time-back-for-what-matters/</guid>
+    </item>
+    <item>
+      <title>CISA tells feds to patch 13-year-old Apache ActiveMQ bug under active attack</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/cisa_tells_feds_to_patch/</link>
+      <description>CISA has alerted federal agencies to patch a long-standing Apache ActiveMQ vulnerability that is now being actively exploited. This critical security measure aims to protect sensitive data and systems from potential attacks.</description>
       <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 10:45:12 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/alexa_loses_its_plex_appeal/</guid>
+      <pubDate>Fri, 17 Apr 2026 17:09:51 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/cisa_tells_feds_to_patch/</guid>
     </item>
     <item>
-      <title>The best Apple Watch of 2026: Expert tested and reviewed</title>
-      <link>https://www.zdnet.com/article/best-apple-watch/</link>
-      <description>This article evaluates various Apple Watch models available in 2026, providing expert recommendations to help consumers choose the best one for their needs. It serves as a guide for potential buyers.</description>
+      <title>The best laptops of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-laptop/</link>
+      <description>A review of the best laptops of 2026 highlights top-performing models across various categories, based on extensive testing. This guide serves as a resource for consumers looking to make informed purchasing decisions.</description>
       <category>Industry</category>
-      <pubDate>Fri, 17 Apr 2026 10:00:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-apple-watch/</guid>
+      <pubDate>Fri, 17 Apr 2026 17:00:39 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-laptop/</guid>
     </item>
     <item>
-      <title>Locked-out iPhone user tells The Reg that Apple is scrambling to fix character flaw passcode bug</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/iphone_keyboard_error_fix/</link>
-      <description>Apple is reportedly working to fix a passcode bug that has locked some iPhone users out of their devices for months. This issue has prompted some users to consider switching to Android.</description>
+      <title>Opsec oopsie: Dutch navy frigate location outed by mailing it a Bluetooth tracker</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/dutch_navy_frigate_tracked/</link>
+      <description>A security breach occurred when a Bluetooth tracker was mailed to the Dutch navy, revealing the location of a frigate. This incident underscores the vulnerabilities in military operational security and the need for improved practices.</description>
       <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 10:00:08 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/iphone_keyboard_error_fix/</guid>
+      <pubDate>Fri, 17 Apr 2026 16:31:32 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/dutch_navy_frigate_tracked/</guid>
     </item>
     <item>
-      <title>The case for fixing everything</title>
-      <link>https://www.technologyreview.com/2026/04/17/1135408/book-review-stewart-brand-fixing-everything-maintenance/</link>
-      <description>Stewart Brand's new book, 'Maintenance: Of Everything, Part One,' explores the importance of maintenance in civilization. It aims to provide a comprehensive overview of this often-overlooked aspect of technology and culture.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/17/1135408/book-review-stewart-brand-fixing-everything-maintenance/</guid>
-    </item>
-    <item>
-      <title>How robots learn: A brief, contemporary history</title>
-      <link>https://www.technologyreview.com/2026/04/17/1135416/how-robots-learn-brief-contemporary-history/</link>
-      <description>This article traces the evolution of robotics, highlighting the gap between ambitious dreams and practical achievements in the field. It reflects on the challenges faced by roboticists in creating complex machines.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/17/1135416/how-robots-learn-brief-contemporary-history/</guid>
-    </item>
-    <item>
-      <title>The best TV screen cleaners of 2026: Expert recommended</title>
-      <link>https://www.zdnet.com/article/best-tv-screen-cleaner/</link>
-      <description>The article reviews the best TV screen cleaners of 2026, recommending effective solutions for maintaining electronics without causing damage. It aims to help consumers keep their devices in top condition.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 17 Apr 2026 09:30:43 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-tv-screen-cleaner/</guid>
-    </item>
-    <item>
-      <title>Would you like fries with that terminal?</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/bork_jack_in_the_box/</link>
-      <description>A humorous account of a drive-through mishap at a Jack in the Box highlights the quirks of fast food ordering systems. The incident showcases the occasional glitches in technology used in everyday scenarios.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 09:15:12 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/bork_jack_in_the_box/</guid>
-    </item>
-    <item>
-      <title>The best 50-inch TVs of 2026: Expert tested</title>
-      <link>https://www.zdnet.com/article/best-50-inch-tv/</link>
-      <description>This article reviews the best 50-inch TVs of 2026, highlighting top performers from brands like Sony and Hisense, including options for outdoor use. It aims to assist consumers in selecting the right TV for smaller spaces.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 17 Apr 2026 09:00:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-50-inch-tv/</guid>
-    </item>
-    <item>
-      <title>Capita won disastrous UK pensions gig after acing performance checks</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/capita_csps/</link>
-      <description>The UK government awarded Capita a £239 million contract for the Civil Service Pension Scheme despite previous performance issues that left retirees waiting for payments. A senior civil servant defended the decision based on quality and value assessments.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 08:30:13 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/capita_csps/</guid>
-    </item>
-    <item>
-      <title>Support tech caught by 'Technician Aura': the bug that only hides when you're watching</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/on_call/</link>
-      <description>This article discusses a tech support bug known as 'Technician Aura,' which only appears when not being observed. It shares humorous reader-contributed stories about unpredictable tech issues.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 07:29:07 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/on_call/</guid>
-    </item>
-    <item>
-      <title>Claude Opus wrote a Chrome exploit for $2,283</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/claude_opus_wrote_chrome_exploit/</link>
-      <description>Anthropic's Claude Opus developed a Chrome exploit for $2,283, raising concerns about the potential misuse of AI models that can find software vulnerabilities. The company withheld its Mythos model to prevent exploitation.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 07:02:09 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/claude_opus_wrote_chrome_exploit/</guid>
-    </item>
-    <item>
-      <title>Musk v. Altman Is a Battle for OpenAI’s Soul</title>
-      <link>https://www.wired.com/story/musk-v-altman-trial-openai-xai/</link>
-      <description>A jury will soon decide if OpenAI has deviated from its original mission to ensure AGI benefits humanity in the case of Musk v. Altman. This legal battle could have significant implications for the future of AI governance.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 18:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/musk-v-altman-trial-openai-xai/</guid>
-    </item>
-    <item>
-      <title>concinno 2.1.0</title>
-      <link>https://pypi.org/project/concinno/2.1.0/</link>
-      <description>The article introduces concinno 2.1.0, which focuses on AI behavior governance for Claude Code, featuring over 55 safeguards and a zero-dependency core. It aims to enhance safety and reliability in AI interactions.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 16 Apr 2026 11:51:26 +0000</pubDate>
-      <guid>https://pypi.org/project/concinno/2.1.0/</guid>
-    </item>
-    <item>
-      <title>Public use of a generalist LLM chatbot for health queries</title>
-      <link>https://www.nature.com/articles/s44360-026-00117-x</link>
-      <description>An early report analyzed 500,000 conversations between users and Microsoft Copilot regarding health queries, revealing key topics and interaction trends. This data sheds light on public engagement with AI in healthcare.</description>
-      <category>Microsoft</category>
-      <pubDate>Thu, 16 Apr 2026 11:44:23 +0000</pubDate>
-      <guid>https://www.nature.com/articles/s44360-026-00117-x</guid>
-    </item>
-    <item>
-      <title>RRAEsTorch 0.1.10</title>
-      <link>https://pypi.org/project/rraestorch/0.1.10/</link>
-      <description>RRAEsTorch 0.1.10 is introduced as a repository for RRAEs in PyTorch, aimed at developers working with AI models. It provides tools for implementing and testing AI algorithms.</description>
-      <category>Meta</category>
-      <pubDate>Thu, 16 Apr 2026 11:44:20 +0000</pubDate>
-      <guid>https://pypi.org/project/rraestorch/0.1.10/</guid>
-    </item>
-    <item>
-      <title>ChatGPT maker OpenAI shifts its focus to business users amid Anthropic pressure</title>
-      <link>https://abcnews.com/Technology/wireStory/chatgpt-maker-openai-shifts-focus-business-users-amid-132087739</link>
-      <description>OpenAI is shifting its focus to business users, planning to launch a new AI model tailored for high-value professional work in response to competition from Anthropic. This strategy aims to attract corporate customers.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:42:03 +0000</pubDate>
-      <guid>https://abcnews.com/Technology/wireStory/chatgpt-maker-openai-shifts-focus-business-users-amid-132087739</guid>
-    </item>
-    <item>
-      <title>Interview: Bernard Seiser, vice-president of digital, data and IT, AOP Health</title>
-      <link>https://www.computerweekly.com/news/366641240/Interview-Bernard-Seiser-vice-president-of-digital-data-and-IT-AOP-Health</link>
-      <description>In an interview, Bernard Seiser, AOP Health's vice-president of digital, discusses leveraging technology and data insights to enhance operations in the life sciences sector. His leadership aims to drive innovation within the company.</description>
-      <category>Microsoft</category>
-      <pubDate>Thu, 16 Apr 2026 11:42:00 +0000</pubDate>
-      <guid>https://www.computerweekly.com/news/366641240/Interview-Bernard-Seiser-vice-president-of-digital-data-and-IT-AOP-Health</guid>
-    </item>
-    <item>
-      <title>Forget Taking Notes — These 5 Genuis Tools Do It Better Than Your Brain Ever Could</title>
-      <link>https://www.yankodesign.com/2026/04/16/forget-taking-notes-these-5-genuis-tools-do-it-better-than-your-brain-ever-could/</link>
-      <description>Five innovative tools are highlighted that can enhance note-taking efficiency beyond traditional methods, helping users retain and organize information better. This shift could significantly improve productivity in professional settings.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:40:33 +0000</pubDate>
-      <guid>https://www.yankodesign.com/2026/04/16/forget-taking-notes-these-5-genuis-tools-do-it-better-than-your-brain-ever-could/</guid>
-    </item>
-    <item>
-      <title>Show HN: Claudectl-local LLM brain that learns to auto-pilot ClaudeCode sessions</title>
-      <link>https://mercurialsolo.github.io/claudectl/</link>
-      <description>Claudectl-local is a new tool that allows users to manage multiple Claude Code sessions from a single terminal dashboard, streamlining workflows and improving efficiency. This development is significant for developers looking to optimize their coding processes.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 16 Apr 2026 11:40:20 +0000</pubDate>
-      <guid>https://mercurialsolo.github.io/claudectl/</guid>
-    </item>
-    <item>
-      <title>Ottawa Senators end regular season with win over Toronto</title>
-      <link>https://www.cbc.ca/news/canada/ottawa/ottawa-senators-toronto-maple-leafs-2026-playoffs-9.7165670</link>
-      <description>The Ottawa Senators concluded their regular season with a 3-1 victory over the Toronto Maple Leafs, setting them up for a playoff matchup against the Hurricanes. This win is crucial as it builds momentum heading into the playoffs.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 16 Apr 2026 11:37:53 +0000</pubDate>
-      <guid>https://www.cbc.ca/news/canada/ottawa/ottawa-senators-toronto-maple-leafs-2026-playoffs-9.7165670</guid>
-    </item>
-    <item>
-      <title>gemcode 0.3.87</title>
-      <link>https://pypi.org/project/gemcode/0.3.87/</link>
-      <description>The release of gemcode 0.3.87 introduces a local-first coding agent designed for use with Google Gemini and ADK, enhancing coding capabilities. This update reflects ongoing advancements in AI-assisted coding tools.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:36:58 +0000</pubDate>
-      <guid>https://pypi.org/project/gemcode/0.3.87/</guid>
-    </item>
-    <item>
-      <title>4-Hour Workweek Success Story, Brian Dean — From Dad’s Basement to Selling Two Companies (#861)</title>
-      <link>https://tim.blog/2026/04/16/brian-dean-backlinko-case-study/</link>
-      <description>An interview with Brian Dean discusses his journey from humble beginnings to successfully selling two companies, providing insights into entrepreneurship and personal growth. His story serves as inspiration for aspiring entrepreneurs.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:36:34 +0000</pubDate>
-      <guid>https://tim.blog/2026/04/16/brian-dean-backlinko-case-study/</guid>
-    </item>
-    <item>
-      <title>Show HN: Kilroy – Knowledge base for teams using Claude Code</title>
-      <link>https://github.com/kilroy-sh/kilroy/</link>
-      <description>Kilroy is introduced as a knowledge base tool for teams using Claude Code, aimed at centralizing and managing accumulated knowledge effectively. This tool could significantly enhance collaboration and decision-making in teams.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 16 Apr 2026 11:32:43 +0000</pubDate>
-      <guid>https://github.com/kilroy-sh/kilroy/</guid>
-    </item>
-    <item>
-      <title>Walmart is updating its 4K streaming box with Gemini and Matter support - The Verge</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181726986</link>
-      <description>Walmart is updating its 4K streaming box to include support for Gemini and Matter, enhancing its functionality and appeal in the competitive streaming market. This update reflects Walmart's commitment to integrating advanced technologies.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:32:26 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181726986</guid>
-    </item>
-    <item>
-      <title>YouTube Premium now costs half with this Google AI plan</title>
-      <link>https://www.cultofmac.com/news/youtube-premium-now-costs-half-with-this-google-ai-plan</link>
-      <description>A new promotion allows Google One AI Premium subscribers to receive a 50% discount on YouTube Premium for the first year, making the service more accessible. This move could attract more users to both platforms.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:31:37 +0000</pubDate>
-      <guid>https://www.cultofmac.com/news/youtube-premium-now-costs-half-with-this-google-ai-plan</guid>
-    </item>
-    <item>
-      <title>eToro's AI investing companion Tori gets real-time X intelligence, powered by Grok 4.2</title>
-      <link>https://www.globenewswire.com/news-release/2026/04/16/3275232/0/en/eToro-s-AI-investing-companion-Tori-gets-real-time-X-intelligence-powered-by-Grok-4-2.html</link>
-      <description>eToro's AI investing companion, Tori, now features real-time intelligence powered by Grok 4.2, enhancing its capabilities for investors. This improvement could significantly impact investment strategies and decision-making.</description>
-      <category>xAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:30:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/04/16/3275232/0/en/eToro-s-AI-investing-companion-Tori-gets-real-time-X-intelligence-powered-by-Grok-4-2.html</guid>
-    </item>
-    <item>
-      <title>llm-memex added to PyPI</title>
-      <link>https://pypi.org/project/llm-memex/</link>
-      <description>The addition of llm-memex to PyPI offers a personal conversation knowledge base that allows users to import, search, and analyze conversations from various AI platforms. This tool could improve personal knowledge management.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:28:44 +0000</pubDate>
-      <guid>https://pypi.org/project/llm-memex/</guid>
-    </item>
-    <item>
-      <title>gemcode 0.3.86</title>
-      <link>https://pypi.org/project/gemcode/0.3.86/</link>
-      <description>Gemcode 0.3.86 is a local-first coding agent designed for Google Gemini and ADK, enhancing coding efficiency and collaboration. This update signifies a step towards more integrated AI tools in development environments.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:28:42 +0000</pubDate>
-      <guid>https://pypi.org/project/gemcode/0.3.86/</guid>
-    </item>
-    <item>
-      <title>We’re Chinamaxxing our way through the death of the west</title>
-      <link>https://www.dazeddigital.com/life-culture/article/70095/1/china-death-of-west-amy-ireland-vincent-garton-machine-decision-ishowspeed?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=we-re-chinamaxxing-our-way-through-the-death-of-the-west</link>
-      <description>The article explores a trend among young Westerners who aspire to adopt aspects of Chinese culture, questioning whether this fascination is genuine or merely a fantasy. It raises important discussions about cultural identity and globalization.</description>
-      <category>DeepSeek</category>
-      <pubDate>Thu, 16 Apr 2026 11:27:00 +0000</pubDate>
-      <guid>https://www.dazeddigital.com/life-culture/article/70095/1/china-death-of-west-amy-ireland-vincent-garton-machine-decision-ishowspeed?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=we-re-chinamaxxing-our-way-through-the-death-of-the-west</guid>
-    </item>
-    <item>
-      <title>'They have ghost cities, they have ghost data centers too': Nvidia CEO Jensen Huang warns of "enormous" China compute capacity - but says 'we want the United States to win'</title>
-      <link>https://www.techradar.com/pro/they-have-ghost-cities-they-have-ghost-data-centers-too-nvidia-ceo-jensen-huang-warns-of-enormous-china-compute-capacity-but-says-we-want-the-united-states-to-win</link>
-      <description>Nvidia CEO Jensen Huang warns about China's significant computing capacity and its implications for global tech competition, emphasizing the need for collaboration to ensure equitable computing resources. This highlights the geopolitical stakes in AI development.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:25:00 +0000</pubDate>
-      <guid>https://www.techradar.com/pro/they-have-ghost-cities-they-have-ghost-data-centers-too-nvidia-ceo-jensen-huang-warns-of-enormous-china-compute-capacity-but-says-we-want-the-united-states-to-win</guid>
-    </item>
-    <item>
-      <title>Opera Browser Connector Lets ChatGPT and Claude Read Your Open Tabs</title>
-      <link>https://slashdot.org/submission/17346506/opera-browser-connector-lets-chatgpt-and-claude-read-your-open-tabs</link>
-      <description>Opera has launched a Browser Connector feature that allows AI assistants like ChatGPT and Claude to access and read users' browser tabs. This innovation aims to enhance user experience by integrating AI more closely with web browsing.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:21:13 +0000</pubDate>
-      <guid>https://slashdot.org/submission/17346506/opera-browser-connector-lets-chatgpt-and-claude-read-your-open-tabs</guid>
-    </item>
-    <item>
-      <title>Which Zodiac Sign Pushes You To Be The Best Version Of Yourself</title>
-      <link>https://thoughtcatalog.com/nicole-garbanzos/2026/04/which-zodiac-sign-pushes-you-to-be-the-best-version-of-yourself/</link>
-      <description>This article discusses the compatibility of Aries and Libra zodiac signs, suggesting that Libras can help Aries become their best selves through their balanced nature. It explores the dynamics of astrological relationships.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:20:00 +0000</pubDate>
-      <guid>https://thoughtcatalog.com/nicole-garbanzos/2026/04/which-zodiac-sign-pushes-you-to-be-the-best-version-of-yourself/</guid>
-    </item>
-    <item>
-      <title>team-harness added to PyPI</title>
-      <link>https://pypi.org/project/team-harness/</link>
-      <description>The 'team-harness' has been added to PyPI, allowing for a lightweight, model-agnostic orchestration of multi-agent systems. This tool enables a coordinator LLM to manage external worker CLIs effectively.</description>
-      <category>Google</category>
-      <pubDate>Thu, 16 Apr 2026 11:19:31 +0000</pubDate>
-      <guid>https://pypi.org/project/team-harness/</guid>
-    </item>
-    <item>
-      <title>bernstein 1.8.1</title>
-      <link>https://pypi.org/project/bernstein/1.8.1/</link>
-      <description>Bernstein 1.8.1 introduces a declarative agent orchestration tool aimed at engineering teams, streamlining the management of complex workflows. This update is significant for improving team collaboration and productivity.</description>
-      <category>Copilot Studio</category>
-      <pubDate>Thu, 16 Apr 2026 11:14:02 +0000</pubDate>
-      <guid>https://pypi.org/project/bernstein/1.8.1/</guid>
-    </item>
-    <item>
-      <title>4 New Apple Intelligence Features Found in Apple Code, Likely in iOS 27</title>
-      <link>https://www.macrumors.com/2026/04/16/4-new-apple-intelligence-features-ios-27/</link>
-      <description>New features in iOS 27, discovered in backend code, indicate Apple is enhancing its intelligence capabilities within system apps. This could lead to improved user experiences and functionality in future Apple devices.</description>
+      <title>I retested Apple AirTags after 5 years - how they compare to Bluetooth tracker rivals</title>
+      <link>https://www.zdnet.com/article/retested-apple-airtags-after-five-years-how-they-compare/</link>
+      <description>Five years after their launch, Apple AirTags have been retested to evaluate their performance against rival Bluetooth trackers. The findings provide insights into their longevity and effectiveness in locating lost items.</description>
       <category>Apple</category>
-      <pubDate>Thu, 16 Apr 2026 11:13:25 +0000</pubDate>
-      <guid>https://www.macrumors.com/2026/04/16/4-new-apple-intelligence-features-ios-27/</guid>
+      <pubDate>Fri, 17 Apr 2026 16:30:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/retested-apple-airtags-after-five-years-how-they-compare/</guid>
     </item>
     <item>
-      <title>Stock Market Highlights: Sensex, Nifty settle marginally lower; Sensex closes down 122 points at 77,988, Nifty50 dips 34 points to 24,196</title>
-      <link>https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-highlights-16-april-2026/article70865685.ece</link>
-      <description>The stock market saw minor declines, with the Sensex falling by 122 points and Nifty 50 dipping by 34 points. This reflects ongoing market volatility and investor sentiment.</description>
-      <category>AI Foundry</category>
-      <pubDate>Thu, 16 Apr 2026 11:11:42 +0000</pubDate>
-      <guid>https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-highlights-16-april-2026/article70865685.ece</guid>
-    </item>
-    <item>
-      <title>Dew Drop – April 16, 2026 (#4648)</title>
-      <link>https://www.alvinashcraft.com/2026/04/16/dew-drop-april-16-2026-4648/</link>
-      <description>The Dew Drop article highlights various resources for developers, including a new Visual Studio Debugger Agent and GitHub Copilot CLI, emphasizing AI's impact on developer workflows. It serves as a roundup of useful tools and insights.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 16 Apr 2026 11:07:01 +0000</pubDate>
-      <guid>https://www.alvinashcraft.com/2026/04/16/dew-drop-april-16-2026-4648/</guid>
-    </item>
-    <item>
-      <title>Creating Baby Geniuses to Thwart the AI Threat? (Yes, Really.)</title>
-      <link>https://www.motherjones.com/politics/2026/04/gene-editing-optimization-thiel-altman-armstrong-andreessen-ai-iq/</link>
-      <description>The article discusses the concept of creating exceptionally intelligent children as a response to perceived threats from AI, reflecting societal concerns about technology's impact. This notion highlights the ongoing debate about AI's influence on future generations and education. </description>
-      <category>DeepSeek</category>
-      <pubDate>Thu, 16 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.motherjones.com/politics/2026/04/gene-editing-optimization-thiel-altman-armstrong-andreessen-ai-iq/</guid>
-    </item>
-    <item>
-      <title>How the American Oligarchy Went Hyperscale</title>
-      <link>https://www.motherjones.com/politics/2026/04/american-oligarchy-hyperscale-data-centers-meta-openai-oracle-x-musk-altman-zuckerberg-bezos/</link>
-      <description>This piece examines the growth of the American oligarchy, particularly among tech leaders, and how their influence has intensified over the past two years. It underscores the implications of concentrated power in the tech industry on society and democracy.</description>
-      <category>xAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.motherjones.com/politics/2026/04/american-oligarchy-hyperscale-data-centers-meta-openai-oracle-x-musk-altman-zuckerberg-bezos/</guid>
-    </item>
-    <item>
-      <title>Geek Tragedy</title>
-      <link>https://www.motherjones.com/politics/2026/04/geek-tragedy-altman-musk-bezos-zuckerberg/</link>
-      <description>Similar to the previous articles, this one reflects on the entrenched nature of the American oligarchy, focusing on the tech titans' quest for wealth and influence. It raises questions about the sustainability of this power structure.</description>
-      <category>xAI</category>
-      <pubDate>Thu, 16 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.motherjones.com/politics/2026/04/geek-tragedy-altman-musk-bezos-zuckerberg/</guid>
-    </item>
-    <item>
-      <title>The Identity Crisis Coming for News SEO</title>
-      <link>https://www.cjr.org/tow_center/the-identity-crisis-coming-for-news-seo-google-rewrite-repackage-headlines-publishers-lawsuit-antitrust.php</link>
-      <description>The article discusses the challenges news publishers face due to Google's evolving role in the news ecosystem, suggesting that many view Google as a competitor rather than a partner. This shift could reshape the future of news distribution.</description>
-      <category>Perplexity</category>
-      <pubDate>Thu, 16 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.cjr.org/tow_center/the-identity-crisis-coming-for-news-seo-google-rewrite-repackage-headlines-publishers-lawsuit-antitrust.php</guid>
-    </item>
-    <item>
-      <title>pipecat-firered-vad added to PyPI</title>
-      <link>https://pypi.org/project/pipecat-firered-vad/</link>
-      <description>FireRedVAD has been added to PyPI, offering state-of-the-art streaming Voice Activity Detection that supports over 100 languages. This integration enhances the capabilities of Pipecat for developers working with voice technology.</description>
+      <title>Building a Fast Multilingual OCR Model with Synthetic Data</title>
+      <link>https://huggingface.co/blog/nvidia/nemotron-ocr-v2</link>
+      <description>The article discusses the development of a fast multilingual OCR model utilizing synthetic data, focusing on its potential applications and efficiency. This advancement could significantly enhance text recognition capabilities across languages.</description>
       <category>Open Source</category>
-      <pubDate>Thu, 16 Apr 2026 10:56:26 +0000</pubDate>
-      <guid>https://pypi.org/project/pipecat-firered-vad/</guid>
+      <pubDate>Fri, 17 Apr 2026 16:17:55 +0000</pubDate>
+      <guid>https://huggingface.co/blog/nvidia/nemotron-ocr-v2</guid>
     </item>
     <item>
-      <title>Show HN: Memorable – On-device AI search for iPhone photos, videos, screenshots</title>
-      <link>https://apps.apple.com/us/app/memorable-ai-photo-search/id6762152034</link>
-      <description>Memorable is an on-device AI search application for iPhone, designed to help users quickly find photos, videos, and screenshots. This tool aims to improve user experience by leveraging AI for better organization and retrieval of media.</description>
-      <category>Perplexity</category>
-      <pubDate>Thu, 16 Apr 2026 10:46:02 +0000</pubDate>
-      <guid>https://apps.apple.com/us/app/memorable-ai-photo-search/id6762152034</guid>
-    </item>
-    <item>
-      <title>molecule-ai-sdk added to PyPI</title>
-      <link>https://pypi.org/project/molecule-ai-sdk/</link>
-      <description>The Molecule AI SDK has been added to PyPI, allowing developers to build plugins and remote agents that can integrate with Molecule AI organizations. This SDK aims to enhance collaborative AI development.</description>
-      <category>Open Source</category>
-      <pubDate>Thu, 16 Apr 2026 10:45:37 +0000</pubDate>
-      <guid>https://pypi.org/project/molecule-ai-sdk/</guid>
-    </item>
-    <item>
-      <title>Google's Gemini App Is Now on Mac, and It Finally Feels Like a Desktop Tool</title>
-      <link>https://www.hongkiat.com/blog/?p=74358</link>
-      <description>Google has launched a native Mac app for its Gemini tool, enhancing its functionality with desktop features like shortcuts and window sharing. This update aims to improve user experience by making Gemini feel more like a dedicated application.</description>
-      <category>xAI</category>
-      <pubDate>Thu, 16 Apr 2026 10:44:23 +0000</pubDate>
-      <guid>https://www.hongkiat.com/blog/?p=74358</guid>
-    </item>
-    <item>
-      <title>codegraph-tools added to PyPI</title>
-      <link>https://pypi.org/project/codegraph-tools/</link>
-      <description>The codegraph-tools have been added to PyPI, providing an AI coding assistant that can create a queryable knowledge graph from various code and document formats. This tool aims to streamline coding processes and enhance knowledge management.</description>
+      <title>Bringing more transparency to GitHub’s status page</title>
+      <link>https://github.blog/news-insights/company-news/bringing-more-transparency-to-githubs-status-page/</link>
+      <description>GitHub is enhancing its status page to provide more detailed information about platform health, aiming to improve user transparency and trust. This change is significant for developers relying on GitHub's services.</description>
       <category>GitHub Copilot</category>
-      <pubDate>Thu, 16 Apr 2026 10:43:24 +0000</pubDate>
-      <guid>https://pypi.org/project/codegraph-tools/</guid>
+      <pubDate>Fri, 17 Apr 2026 16:00:00 +0000</pubDate>
+      <guid>https://github.blog/news-insights/company-news/bringing-more-transparency-to-githubs-status-page/</guid>
     </item>
     <item>
-      <title>AI Native Market Research and Forecast Report 2026-2032 with Deep Dives Into Cursor/Anysphere, Lovable, Replit, Tessl, Windsurf, and the Hyperscale Plays from Microsoft, Google, and AWS</title>
-      <link>https://www.globenewswire.com/news-release/2026/04/16/3275150/28124/en/AI-Native-Market-Research-and-Forecast-Report-2026-2032-with-Deep-Dives-Into-Cursor-Anysphere-Lovable-Replit-Tessl-Windsurf-and-the-Hyperscale-Plays-from-Microsoft-Google-and-AWS.html</link>
-      <description>A market research report forecasts opportunities in AI-native development platforms from 2026 to 2032, emphasizing the need for innovation in software engineering through AI-augmented systems. It highlights key players like Microsoft and Google.</description>
+      <title>Tokenmaxxing, OpenAI’s shopping spree, and the AI Anxiety Gap</title>
+      <link>https://techcrunch.com/podcast/tokenmaxxing-openais-shopping-spree-and-the-ai-anxiety-gap/</link>
+      <description>The divide between AI insiders and the general public is growing, highlighted by OpenAI's aggressive acquisitions and Anthropic's cautious approach to releasing powerful models. This trend reflects increasing anxiety and complexity surrounding AI advancements.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 17 Apr 2026 15:57:40 +0000</pubDate>
+      <guid>https://techcrunch.com/podcast/tokenmaxxing-openais-shopping-spree-and-the-ai-anxiety-gap/</guid>
+    </item>
+    <item>
+      <title>I ditched my iPhone's hotspot for this 5G travel router - and I'm never going back</title>
+      <link>https://www.zdnet.com/article/acer-connect-m6e-mobile-hotspot-review/</link>
+      <description>A user shares their positive experience with the Acer Connect M6E mobile hotspot, claiming it outperforms the iPhone's hotspot in various aspects. This suggests a shift in preferences for portable internet solutions.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 17 Apr 2026 15:47:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/acer-connect-m6e-mobile-hotspot-review/</guid>
+    </item>
+    <item>
+      <title>AI Drafting My Stories? Over My Dead Body</title>
+      <link>https://www.wired.com/story/backchannel-the-problem-with-letting-ai-do-the-writing/</link>
+      <description>Concerns are rising over the increasing use of AI in newsrooms, as it may compromise the integrity and creativity of journalism. This debate underscores the potential risks of prioritizing efficiency over quality.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 15:46:06 +0000</pubDate>
+      <guid>https://www.wired.com/story/backchannel-the-problem-with-letting-ai-do-the-writing/</guid>
+    </item>
+    <item>
+      <title>The best Kindles in 2026: Expert recommended</title>
+      <link>https://www.zdnet.com/article/best-kindle/</link>
+      <description>A guide to the best Kindle devices for 2026 highlights their convenience and portability for readers. This reflects ongoing innovations in e-reading technology.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 17 Apr 2026 15:35:29 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-kindle/</guid>
+    </item>
+    <item>
+      <title>Anthropic launches Claude Design, a new product for creating quick visuals</title>
+      <link>https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/</link>
+      <description>Anthropic has launched Claude Design, a tool aimed at helping non-designers create visuals easily. This product is significant for entrepreneurs and managers looking to communicate ideas effectively.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 17 Apr 2026 15:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/</guid>
+    </item>
+    <item>
+      <title>Users complain that UK Azure is having capacity problems</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/users_complain_of_uk_azure/</link>
+      <description>UK users are reporting significant capacity issues with Microsoft Azure, indicating a resurgence of problems that could affect cloud service reliability. This situation raises concerns for businesses relying on Azure.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 14:56:26 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/users_complain_of_uk_azure/</guid>
+    </item>
+    <item>
+      <title>Does Best Buy price match? Everything to know about matching prices online and in-store</title>
+      <link>https://www.zdnet.com/article/does-best-buy-price-match-faq/</link>
+      <description>Best Buy's price-matching policy is explained, detailing how customers can save money both online and in-store. This information is useful for savvy shoppers looking to maximize their purchases.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 17 Apr 2026 14:42:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/does-best-buy-price-match-faq/</guid>
+    </item>
+    <item>
+      <title>Pie Day 2026</title>
+      <link>https://www.technologyreview.com/2026/04/17/1136121/pie-day-links/</link>
+      <description>A blog post details the organization of a Pi Day event featuring the baking of 30 pies, showcasing community engagement and creativity. This reflects the fun side of academic traditions.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 14:07:41 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/17/1136121/pie-day-links/</guid>
+    </item>
+    <item>
+      <title>7 ways to travel smarter this summer, with help from Google</title>
+      <link>https://blog.google/products-and-platforms/products/search/summer-travel-tips-google-search-ai/</link>
+      <description>Google shares seven tips for smarter summer travel, utilizing its technology to enhance the travel experience. This advice aims to help travelers make the most of their trips.</description>
+      <category>Google</category>
+      <pubDate>Fri, 17 Apr 2026 14:00:00 +0000</pubDate>
+      <guid>https://blog.google/products-and-platforms/products/search/summer-travel-tips-google-search-ai/</guid>
+    </item>
+    <item>
+      <title>This charming gadget writes bad AI poetry</title>
+      <link>https://www.theverge.com/gadgets/913981/poetry-camera-ai-hands-on</link>
+      <description>The Poetry Camera is a whimsical gadget that generates amusing AI poetry, blending charm with frustration. Its playful design makes it appealing, though its functionality may leave users wanting more.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 13:30:00 -0400</pubDate>
+      <guid>https://www.theverge.com/gadgets/913981/poetry-camera-ai-hands-on</guid>
+    </item>
+    <item>
+      <title>Are we tokenmaxxing our way to nowhere?</title>
+      <link>https://techcrunch.com/video/are-we-tokenmaxxing-our-way-to-nowhere/</link>
+      <description>The article discusses the widening gap between AI insiders and the general public, fueled by new spending and vocabulary in the AI sector. It highlights concerns over transparency and the implications of powerful AI models being kept private.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 17 Apr 2026 13:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/video/are-we-tokenmaxxing-our-way-to-nowhere/</guid>
+    </item>
+    <item>
+      <title>Isabelle/HOL: The proof assistant behind the Nitro Isolation Engine</title>
+      <link>https://www.amazon.science/blog/isabelle-hol-the-proof-assistant-behind-the-nitro-isolation-engine</link>
+      <description>Isabelle/HOL has been instrumental in creating the first formally verified cloud hypervisor, showcasing its capabilities in expressiveness, automation, and scalability. This achievement marks a significant milestone in cloud technology.</description>
+      <category>Amazon</category>
+      <pubDate>Fri, 17 Apr 2026 13:00:00 +0000</pubDate>
+      <guid>https://www.amazon.science/blog/isabelle-hol-the-proof-assistant-behind-the-nitro-isolation-engine</guid>
+    </item>
+    <item>
+      <title>Microsoft closes book on rogue Windows Server 2025 upgrades</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/17/microsoft_windows_server_2025/</link>
+      <description>Microsoft has resolved an issue where a security update unexpectedly upgraded Windows Server to 2025, causing disruptions for administrators. The company has now closed the book on this incident.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 12:29:09 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/17/microsoft_windows_server_2025/</guid>
+    </item>
+    <item>
+      <title>The Download: bad news for inner Neanderthals, and AI warfare’s human illusion</title>
+      <link>https://www.technologyreview.com/2026/04/17/1136112/the-download-inner-neanderthal-ai-war-human-in-the-loop/</link>
+      <description>The Download newsletter covers various tech topics, including the intriguing theory of humans having 'inner Neanderthals' and the complexities of AI warfare. It provides a snapshot of current discussions in technology.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 12:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/17/1136112/the-download-inner-neanderthal-ai-war-human-in-the-loop/</guid>
+    </item>
+    <item>
+      <title>Dairy Queen is putting an AI chatbot in its drive-thrus</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/913928/dairy-queen-ai-drive-thru-presto</link>
+      <description>Dairy Queen is implementing an AI chatbot in its drive-thrus to enhance service speed and encourage larger orders. This move reflects the growing trend of AI integration in the fast-food industry.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 11:46:37 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/913928/dairy-queen-ai-drive-thru-presto</guid>
+    </item>
+    <item>
+      <title>Recent advances push Big Tech closer to the Q-Day danger zone</title>
+      <link>https://arstechnica.com/security/2026/04/while-some-big-tech-players-accelerate-pqc-readiness-others-stay-the-course/</link>
+      <description>The article discusses recent advancements in technology that bring Big Tech closer to the risks associated with post-quantum cryptography. It highlights the competitive landscape as companies prepare for potential quantum threats.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 17 Apr 2026 11:00:50 +0000</pubDate>
+      <guid>https://arstechnica.com/security/2026/04/while-some-big-tech-players-accelerate-pqc-readiness-others-stay-the-course/</guid>
+    </item>
+    <item>
+      <title>International Conference on Learning Representations (ICLR) 2026</title>
+      <link>https://machinelearning.apple.com/updates/apple-at-iclr-2026</link>
+      <description>Apple is set to present new research at the ICLR 2026 conference in Rio de Janeiro, showcasing its commitment to deep learning and collaboration with the research community.</description>
+      <category>Apple</category>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/updates/apple-at-iclr-2026</guid>
+    </item>
+    <item>
+      <title>AWS launches AI-driven tool to speed up early-stage antibody discovery</title>
+      <link>https://www.techtarget.com/pharmalifesciences/news/366641915/AWS-launches-AI-driven-tool-to-speed-up-early-stage-antibody-discovery</link>
+      <description>Amazon Web Services has launched Amazon Bio Discovery, an AI-driven tool aimed at accelerating antibody drug discovery. This innovation could significantly impact the speed of developing new therapies.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 16 Apr 2026 17:47:00 +0000</pubDate>
+      <guid>https://www.techtarget.com/pharmalifesciences/news/366641915/AWS-launches-AI-driven-tool-to-speed-up-early-stage-antibody-discovery</guid>
+    </item>
+    <item>
+      <title>Perplexity Releases Personal Computer for Mac</title>
+      <link>https://www.thurrott.com/a-i/335024/perplexity-releases-personal-computer-for-mac</link>
+      <description>Perplexity has released a new version of its Personal Computer for Mac, expanding its offerings in the tech market. This update reflects the company's growth and innovation.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 16 Apr 2026 17:46:49 +0000</pubDate>
+      <guid>https://www.thurrott.com/a-i/335024/perplexity-releases-personal-computer-for-mac</guid>
+    </item>
+    <item>
+      <title>These Four iOS 27 Apple Intelligence Features Just Leaked</title>
+      <link>https://www.redmondpie.com/these-four-ios-27-apple-intelligence-features-just-leaked/</link>
+      <description>A leak has revealed four new features for Apple's upcoming iOS 27, focusing on enhanced intelligence capabilities. These features could significantly improve user experience and device functionality.</description>
+      <category>Apple</category>
+      <pubDate>Thu, 16 Apr 2026 17:45:03 +0000</pubDate>
+      <guid>https://www.redmondpie.com/these-four-ios-27-apple-intelligence-features-just-leaked/</guid>
+    </item>
+    <item>
+      <title>piighost 0.7.0</title>
+      <link>https://pypi.org/project/piighost/0.7.0/</link>
+      <description>The release of piighost 0.7.0 introduces middleware for anonymizing personally identifiable information in AI conversations, utilizing LangChain integration. This is crucial for privacy in AI applications.</description>
+      <category>Open Source</category>
+      <pubDate>Thu, 16 Apr 2026 17:44:55 +0000</pubDate>
+      <guid>https://pypi.org/project/piighost/0.7.0/</guid>
+    </item>
+    <item>
+      <title>Show HN: MemPalace Agent that sits in front of any LLM endpoint and gives memory</title>
+      <link>https://github.com/skorotkiewicz/mempalace/tree/agent/agent</link>
+      <description>The MemPalace Agent is a new tool designed to enhance memory capabilities for any LLM endpoint. This could improve how AI models retain and utilize information.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 16 Apr 2026 17:42:55 +0000</pubDate>
+      <guid>https://github.com/skorotkiewicz/mempalace/tree/agent/agent</guid>
+    </item>
+    <item>
+      <title>Claude is requiring some of its users to verify their identity. Here's Anthropic's explanation.</title>
+      <link>https://www.businessinsider.com/claude-identity-verification-id-passport-anthropic-2026-4</link>
+      <description>Anthropic has implemented ID verification for some Claude users to combat potential fraudulent or abusive behavior. This move aims to enhance security and trust in the platform.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 16 Apr 2026 17:42:49 +0000</pubDate>
+      <guid>https://www.businessinsider.com/claude-identity-verification-id-passport-anthropic-2026-4</guid>
+    </item>
+    <item>
+      <title>Claude Opus 4.7 Is Here: Anthropic’s Latest Model Delivers, But It’s a Token Eating Machine</title>
+      <link>https://decrypt.co/364621/claude-opus-47-review-benchmarks-coding-test</link>
+      <description>Claude Opus 4.7, Anthropic's latest AI model, has surpassed benchmarks but is noted for its high token consumption. This raises questions about efficiency versus performance in AI models.</description>
       <category>Microsoft</category>
-      <pubDate>Thu, 16 Apr 2026 10:36:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/04/16/3275150/28124/en/AI-Native-Market-Research-and-Forecast-Report-2026-2032-with-Deep-Dives-Into-Cursor-Anysphere-Lovable-Replit-Tessl-Windsurf-and-the-Hyperscale-Plays-from-Microsoft-Google-and-AWS.html</guid>
+      <pubDate>Thu, 16 Apr 2026 17:42:43 +0000</pubDate>
+      <guid>https://decrypt.co/364621/claude-opus-47-review-benchmarks-coding-test</guid>
+    </item>
+    <item>
+      <title>What went wrong? Erika Kirk’s ‘humiliating’ reason for skipping JD Vance TPUSA event</title>
+      <link>https://economictimes.indiatimes.com/news/international/us/what-went-wrong-erika-kirks-humiliating-reason-for-skipping-jd-vance-tpusa-event/articleshow/130313991.cms</link>
+      <description>Erika Kirk withdrew from a JD Vance event due to online backlash and a viral mocking video, revealing the impact of social media on public figures. This incident underscores the pressures of public perception.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 16 Apr 2026 17:40:15 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/news/international/us/what-went-wrong-erika-kirks-humiliating-reason-for-skipping-jd-vance-tpusa-event/articleshow/130313991.cms</guid>
+    </item>
+    <item>
+      <title>Sutton's predictions v boxer Molly McCann &amp; the Boo Radleys</title>
+      <link>https://www.bbc.com/sport/football/articles/c78lxvzl3d4o?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D</link>
+      <description>Chris Sutton shares predictions for Premier League fixtures, engaging with AI and readers. This reflects the growing intersection of sports analysis and AI technology.</description>
+      <category>Microsoft</category>
+      <pubDate>Thu, 16 Apr 2026 17:40:11 +0000</pubDate>
+      <guid>https://www.bbc.com/sport/football/articles/c78lxvzl3d4o?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D</guid>
+    </item>
+    <item>
+      <title>Hope of the American Dream is still alive — but optimism greatly differs by demographic: survey</title>
+      <link>https://swns.live/stories/190314/</link>
+      <description>A survey reveals that while over half of Americans believe in the American Dream, optimism varies significantly across different demographics. This highlights societal divides in perceptions of success.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 16 Apr 2026 17:38:00 +0000</pubDate>
+      <guid>https://swns.live/stories/190314/</guid>
+    </item>
+    <item>
+      <title>Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7</title>
+      <link>https://simonwillison.net/2026/Apr/16/qwen-beats-opus/</link>
+      <description>A comparison of outputs from Qwen3.6-35B-A3B and Claude Opus 4.7 shows that Qwen produced a superior image of a pelican, raising questions about model performance in creative tasks.</description>
+      <category>Google</category>
+      <pubDate>Thu, 16 Apr 2026 17:37:20 +0000</pubDate>
+      <guid>https://simonwillison.net/2026/Apr/16/qwen-beats-opus/</guid>
+    </item>
+    <item>
+      <title>langchain-agentoracle 0.2.0</title>
+      <link>https://pypi.org/project/langchain-agentoracle/0.2.0/</link>
+      <description>The release of langchain-agentoracle 0.2.0 introduces trust verification tools for AI agents, enhancing the reliability of AI interactions. This is a step forward in ensuring ethical AI use.</description>
+      <category>Open Source</category>
+      <pubDate>Thu, 16 Apr 2026 17:36:16 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-agentoracle/0.2.0/</guid>
+    </item>
+    <item>
+      <title>Anthropic's Mythos AI tool could spark 'systemic financial market disruption,' a trade group warns</title>
+      <link>https://www.businessinsider.com/anthropic-mythos-ai-cybersecurity-financial-system-risks-retail-investor-data-2026-4</link>
+      <description>A trade group warned that Anthropic's Mythos AI tool could disrupt financial markets, potentially threatening economic stability. This raises concerns about the implications of AI in finance.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 16 Apr 2026 17:36:03 +0000</pubDate>
+      <guid>https://www.businessinsider.com/anthropic-mythos-ai-cybersecurity-financial-system-risks-retail-investor-data-2026-4</guid>
+    </item>
+    <item>
+      <title>Summer Is Coming. I Let AI Fill My Calendar With Fitness, Fun and Music</title>
+      <link>https://www.cnet.com/tech/services-and-software/summer-is-coming-i-let-ai-fill-my-calendar-with-fitness-fun-and-music/</link>
+      <description>An article discusses using AI to efficiently fill a summer calendar with activities, making it easier to plan fitness and fun without stress. This showcases AI's role in personal organization.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 16 Apr 2026 17:35:48 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/services-and-software/summer-is-coming-i-let-ai-fill-my-calendar-with-fitness-fun-and-music/</guid>
+    </item>
+    <item>
+      <title>Industries Most Exposed to AI Are Not Only Seeing Productivity Gains but Jobs and Wage Growth Too</title>
+      <link>https://singularityhub.com/2026/04/16/industries-most-exposed-to-ai-are-not-only-seeing-productivity-gains-but-jobs-and-wage-growth-too/#article</link>
+      <description>Industries heavily exposed to AI are experiencing not only productivity gains but also job and wage growth, countering fears of widespread job loss. This suggests a more nuanced impact of AI on the workforce.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 16 Apr 2026 17:33:34 +0000</pubDate>
+      <guid>https://singularityhub.com/2026/04/16/industries-most-exposed-to-ai-are-not-only-seeing-productivity-gains-but-jobs-and-wage-growth-too/#article</guid>
+    </item>
+    <item>
+      <title>Gemini’s smartest feature almost expands globally - Android Police</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181730246</link>
+      <description>Google's Gemini is expanding its image generation feature globally, now utilizing Nano Banana technology to create personalized images from user photos. This enhances user engagement with AI.</description>
+      <category>Google</category>
+      <pubDate>Thu, 16 Apr 2026 17:32:44 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181730246</guid>
+    </item>
+    <item>
+      <title>Gemini can now create personalized AI images by digging around in Google Photos</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181730244</link>
+      <description>Gemini can now generate personalized AI images by accessing Google Photos, making it easier for users to create custom visuals. This integration simplifies the image generation process.</description>
+      <category>Google</category>
+      <pubDate>Thu, 16 Apr 2026 17:32:33 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181730244</guid>
+    </item>
+    <item>
+      <title>aidebate 0.4.3</title>
+      <link>https://pypi.org/project/aidebate/0.4.3/</link>
+      <description>Aidebate 0.4.3 is a multi-agent AI debate orchestrator that enables structured debates among various AI agents, offering a web UI and archive browser. This tool showcases advancements in AI collaboration.</description>
+      <category>Google</category>
+      <pubDate>Thu, 16 Apr 2026 17:30:01 +0000</pubDate>
+      <guid>https://pypi.org/project/aidebate/0.4.3/</guid>
+    </item>
+    <item>
+      <title>cyllama-vulkan 0.2.9</title>
+      <link>https://pypi.org/project/cyllama-vulkan/0.2.9/</link>
+      <description>Cyllama-vulkan 0.2.9 is a Python library designed for local AI inference, supporting various AI models without dependencies. This tool aims to simplify local AI development.</description>
+      <category>Meta</category>
+      <pubDate>Thu, 16 Apr 2026 17:29:45 +0000</pubDate>
+      <guid>https://pypi.org/project/cyllama-vulkan/0.2.9/</guid>
+    </item>
+    <item>
+      <title>cyllama-sycl 0.2.9</title>
+      <link>https://pypi.org/project/cyllama-sycl/0.2.9/</link>
+      <description>Cyllama-sycl 0.2.9 is another iteration of the Python library for local AI inference, emphasizing zero-dependencies and support for popular AI models. This enhances local AI implementation.</description>
+      <category>Meta</category>
+      <pubDate>Thu, 16 Apr 2026 17:27:44 +0000</pubDate>
+      <guid>https://pypi.org/project/cyllama-sycl/0.2.9/</guid>
+    </item>
+    <item>
+      <title>gemcode 0.3.104</title>
+      <link>https://pypi.org/project/gemcode/0.3.104/</link>
+      <description>Gemcode 0.3.104 is a local-first coding agent integrated with Google Gemini, focusing on enhancing coding efficiency. This reflects ongoing innovations in AI-assisted programming.</description>
+      <category>Google</category>
+      <pubDate>Thu, 16 Apr 2026 17:26:20 +0000</pubDate>
+      <guid>https://pypi.org/project/gemcode/0.3.104/</guid>
+    </item>
+    <item>
+      <title>New Apple Intelligence features for iOS 27 found in hidden code</title>
+      <link>https://www.macworld.com/article/3116520/new-apple-intelligence-features-for-ios-27-found-in-hidden-code.html</link>
+      <description>Hidden code discovered in iOS 27 reveals new Apple Intelligence features, indicating ongoing enhancements in Apple's AI capabilities. This could impact user experience significantly.</description>
+      <category>Apple</category>
+      <pubDate>Thu, 16 Apr 2026 17:25:27 +0000</pubDate>
+      <guid>https://www.macworld.com/article/3116520/new-apple-intelligence-features-for-ios-27-found-in-hidden-code.html</guid>
     </item>
   </channel>
 </rss>
