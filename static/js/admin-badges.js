@@ -259,21 +259,15 @@
   /* ── Badge card HTML ────────────────────────────────────── */
   function badgeCard(b, earned) {
     var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
-    var cat = catMap[b.category] || { name: '?', emoji: '❓', color: '#666' };
     var cls = 'badges-card' + (earned ? ' earned' : ' locked');
     var shareHtml = earned ? '<button class="badges-share-btn" data-id="' + esc(b.id) + '" aria-label="Share badge">\uD83D\uDCE4</button>' : '';
     return '<div class="' + cls + '" data-id="' + esc(b.id) + '" role="button" tabindex="0"' +
-      ' aria-label="' + esc(b.name) + (earned ? ' (earned)' : ' (locked)') + '">' +
+      ' aria-label="' + esc(b.name) + (earned ? ' (earned)' : ' (locked)') + '"' +
+      ' style="border-top:3px solid ' + esc(rar.color) + '">' +
       shareHtml +
       '<span class="badges-emoji">' + esc(b.emoji) + '</span>' +
       '<strong class="badges-name">' + esc(b.name) + '</strong>' +
       '<small class="badges-desc">' + esc(b.desc) + '</small>' +
-      '<div class="badges-card-meta">' +
-        '<span class="badges-rarity-badge" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span>' +
-        '<span class="badges-cat-pill" style="border-color:' + esc(cat.color) + '">' +
-          esc(cat.emoji) + ' ' + esc(cat.name) +
-        '</span>' +
-      '</div>' +
     '</div>';
   }
 
@@ -288,20 +282,57 @@
       return activeFilter === 'all' || b.category === activeFilter;
     });
 
-    // Sort: earned first, then by category
-    filtered.sort(function (a, b) {
-      var aE = earned.indexOf(a.id) !== -1 ? 0 : 1;
-      var bE = earned.indexOf(b.id) !== -1 ? 0 : 1;
-      if (aE !== bE) return aE - bE;
-      if (a.category < b.category) return -1;
-      if (a.category > b.category) return 1;
-      return 0;
-    });
+    // Total progress bar
+    var totalEarned = earned.length;
+    var totalPct = badges.length > 0 ? Math.round(totalEarned / badges.length * 100) : 0;
+    var progressHtml =
+      '<div class="badges-total-progress">' +
+        '<span class="badges-total-count">' + totalEarned + ' / ' + badges.length + '</span>' +
+        '<div class="badges-total-bar"><div class="badges-total-bar-fill" style="width:' + totalPct + '%"></div></div>' +
+        '<span class="badges-total-label">' + totalPct + '% complete</span>' +
+      '</div>';
 
-    var html = '';
-    filtered.forEach(function (b) {
-      html += badgeCard(b, earned.indexOf(b.id) !== -1);
-    });
+    var html = progressHtml;
+
+    if (activeFilter === 'all') {
+      // Group by category with headers
+      categories.forEach(function (cat) {
+        var catBadges = filtered.filter(function (b) { return b.category === cat.id; });
+        if (!catBadges.length) return;
+        var catEarned = catBadges.filter(function (b) { return earned.indexOf(b.id) !== -1; }).length;
+        var catPct = catBadges.length > 0 ? Math.round(catEarned / catBadges.length * 100) : 0;
+
+        html += '<div class="badges-category-group">';
+        html += '<div class="badges-cat-header">';
+        html += '<span class="badges-cat-header-name">' + esc(cat.emoji) + ' ' + esc(cat.name) + '</span>';
+        html += '<span class="badges-cat-header-count">' + catEarned + ' / ' + catBadges.length + '</span>';
+        html += '<div class="badges-cat-progress"><div class="badges-cat-progress-fill" style="width:' + catPct + '%"></div></div>';
+        html += '</div>';
+        html += '<div class="badges-grid">';
+        // Sort: earned first within category
+        catBadges.sort(function (a, b) {
+          var aE = earned.indexOf(a.id) !== -1 ? 0 : 1;
+          var bE = earned.indexOf(b.id) !== -1 ? 0 : 1;
+          return aE - bE;
+        });
+        catBadges.forEach(function (b) {
+          html += badgeCard(b, earned.indexOf(b.id) !== -1);
+        });
+        html += '</div></div>';
+      });
+    } else {
+      // Single category — flat grid
+      filtered.sort(function (a, b) {
+        var aE = earned.indexOf(a.id) !== -1 ? 0 : 1;
+        var bE = earned.indexOf(b.id) !== -1 ? 0 : 1;
+        return aE - bE;
+      });
+      html += '<div class="badges-grid">';
+      filtered.forEach(function (b) {
+        html += badgeCard(b, earned.indexOf(b.id) !== -1);
+      });
+      html += '</div>';
+    }
 
     if (!filtered.length) {
       html = '<p class="badges-empty">No badges in this category.</p>';
