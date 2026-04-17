@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T15:13:10.257849+00:00",
+  "generated_at": "2026-04-17T17:05:07.097758+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -21,11 +21,11 @@
       "icon": "🤖",
       "total_incidents": 18,
       "active_incidents": 3,
-      "avg_duration_minutes": 4144,
-      "last_incident": "2026-04-17T00:00:00+00:00",
+      "avg_duration_minutes": 3122,
+      "last_incident": "2026-04-17T15:07:37+00:00",
       "classifications": {
-        "advisory": 11,
-        "incident": 7
+        "advisory": 10,
+        "incident": 8
       }
     },
     {
@@ -206,7 +206,7 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 29,
+      "incident_count": 30,
       "services_affected": 7
     },
     {
@@ -216,7 +216,7 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 31,
+      "incident_count": 30,
       "services_affected": 14
     }
   ]
