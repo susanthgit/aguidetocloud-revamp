@@ -139,7 +139,7 @@ export async function onRequestPost(context) {
 
     if (result.errors) {
       console.error('GitHub API errors:', JSON.stringify(result.errors));
-      return new Response(JSON.stringify({ error: 'Failed to create discussion', debug: result.errors }), { status: 500 });
+      return new Response(JSON.stringify({ error: 'Failed to create discussion' }), { status: 500 });
     }
 
     return new Response(JSON.stringify({
