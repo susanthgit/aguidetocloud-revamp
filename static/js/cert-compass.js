@@ -16,6 +16,33 @@
 
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
+  // ── My Certs (localStorage) ───────────────────────────────────────────
+  const MYCERTS_KEY = 'compass_mycerts_v1';
+  let myCerts = new Set();
+  try { const s = localStorage.getItem(MYCERTS_KEY); if (s) myCerts = new Set(JSON.parse(s)); } catch (e) {}
+
+  function saveMyCerts() { try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...myCerts])); } catch (e) {} renderMyCertsBar(); }
+
+  function toggleMyCert(id) {
+    if (myCerts.has(id)) myCerts.delete(id); else myCerts.add(id);
+    saveMyCerts();
+    filterCerts(); // re-render to update button states
+  }
+
+  function renderMyCertsBar() {
+    const bar = document.getElementById('mycerts-bar');
+    const list = document.getElementById('mycerts-list');
+    if (!myCerts.size) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    list.innerHTML = [...myCerts].map(id => {
+      const c = certMap[id];
+      if (!c) return '';
+      return `<span class="compass-mycerts-chip" style="background:${providerColor(c.provider)}22;border-color:${providerColor(c.provider)}">${esc(c.exam_code)}</span>`;
+    }).join('');
+  }
+
+  document.getElementById('mycerts-clear').addEventListener('click', () => { myCerts.clear(); saveMyCerts(); filterCerts(); });
+
   function diffDots(n) {
     let s = '';
     for (let i = 1; i <= 5; i++) s += `<span style="color:${i <= n ? '#FBBF24' : 'rgba(255,255,255,0.15)'}">●</span>`;
@@ -75,6 +102,8 @@
       const pc = providerColor(c.provider);
       const validity = c.validity_override || (c.validity_years + ' year' + (c.validity_years !== 1 ? 's' : ''));
       const tracker = c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms">Study Guide</a>` : '';
+      const haveClass = myCerts.has(c.id) ? ' owned' : '';
+      const haveLabel = myCerts.has(c.id) ? '✓ I Have This' : '+ I Have This';
       return `<div class="compass-card" data-id="${esc(c.id)}">
         <div class="compass-card-header">
           <div class="compass-card-provider" style="background:${pc}"></div>
@@ -100,7 +129,8 @@
           <div class="compass-card-actions">
             <a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary">Official Page</a>
             ${tracker}
-            ${c.match_group ? `<button class="compass-btn compass-btn-outline" onclick="window.__compassShowMatch('${esc(c.match_group)}')">Cross-Cloud Matches</button>` : ''}
+            <button class="compass-btn compass-btn-have${haveClass}" onclick="event.stopPropagation();window.__compassToggleCert('${esc(c.id)}')">${haveLabel}</button>
+            ${c.match_group ? `<button class="compass-btn compass-btn-outline" onclick="event.stopPropagation();window.__compassShowMatch('${esc(c.match_group)}')">Cross-Cloud Matches</button>` : ''}
           </div>
         </div>
       </div>`;
@@ -177,6 +207,37 @@
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
   };
+
+  window.__compassToggleCert = function (id) { toggleMyCert(id); };
+
+  // ── Provider Stats ────────────────────────────────────────────────────
+  function renderProviderStats() {
+    PROVIDERS.forEach(p => {
+      const count = CERTS.filter(c => c.provider === p.id).length;
+      const el = document.querySelector(`.compass-pcard-stat[data-provider="${p.id}"]`);
+      if (el) el.textContent = count + ' certifications';
+    });
+  }
+
+  // ── Quick Start Scenarios ─────────────────────────────────────────────
+  const SCENARIOS = {
+    beginner: { level: 'foundational', provider: 'all', domain: 'all' },
+    'azure-to-aws': { provider: 'aws', level: 'all', domain: 'all' },
+    security: { domain: 'security', provider: 'all', level: 'all' },
+    ai: { domain: 'ai-ml', provider: 'all', level: 'all' }
+  };
+
+  document.getElementById('quick-start').addEventListener('click', e => {
+    const btn = e.target.closest('.compass-quick-btn');
+    if (!btn) return;
+    const s = SCENARIOS[btn.dataset.scenario];
+    if (!s) return;
+    if (s.provider) { activeProvider = s.provider; document.querySelectorAll('#provider-filter .compass-pill').forEach(p => p.classList.toggle('active', p.dataset.provider === s.provider)); }
+    if (s.level) levelFilter.value = s.level;
+    if (s.domain) domainFilter.value = s.domain;
+    switchTab('explore');
+    filterCerts();
+  });
 
   // ── Career Paths Tab ──────────────────────────────────────────────────
   const careersGrid = document.getElementById('careers-grid');
@@ -338,6 +399,8 @@
 
   // ── Init ──────────────────────────────────────────────────────────────
   function init() {
+    renderProviderStats();
+    renderMyCertsBar();
     filterCerts();
     renderMatches();
     renderCareers();

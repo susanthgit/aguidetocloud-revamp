@@ -320,6 +320,38 @@
 }
 .ptester-preset:hover { color: #fff; border-color: var(--ptester-accent); }
 
+/* Fix Section */
+.ptester-fix-section { margin-top: 1.5rem; }
+.ptester-fix-section h4 { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 0.6rem; }
+.ptester-fix-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.ptester-fix-btn {
+  padding: 0.4rem 0.8rem; font-size: 0.8rem; font-weight: 600;
+  background: rgba(38,166,154,0.1); border: 1px solid rgba(38,166,154,0.3);
+  border-radius: 6px; color: var(--ptester-accent); cursor: pointer;
+  transition: all 0.2s;
+}
+.ptester-fix-btn:hover { background: var(--ptester-accent); color: #000; }
+
+/* Delta Card */
+.ptester-delta-card {
+  text-align: center; padding: 1rem; margin: 1rem 0;
+  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 10px;
+}
+.ptester-delta-card .before { color: rgba(255,255,255,0.5); }
+.ptester-delta-card .arrow { color: var(--ptester-accent); font-size: 1.2rem; margin: 0 0.5rem; }
+.ptester-delta-card .after { color: #4ade80; font-weight: 700; font-size: 1.3rem; }
+.ptester-delta-card .gain { color: #4ade80; font-weight: 600; }
+
+/* Export Button */
+.ptester-export-btn {
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+  padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.82rem;
+  margin-top: 0.8rem; transition: all 0.2s;
+}
+.ptester-export-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
 /* Mobile */
 @media (max-width: 640px) {
   .ptester-form-grid {

@@ -2,7 +2,7 @@
 {{ $data := (index hugo.Data "compliance_passport") }}
 <link rel="stylesheet" href="/css/compliance-passport.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "Page" . "title" "Compliance Passport" "subtitle" "Which compliance frameworks apply to your org?" "accent" "#2ECC71") }}
+{{ partial "tool-hero.html" (dict "title" "Compliance Passport" "accent" "#2ECC71") }}
 
 <div class="passport-page">
   <div class="passport-tabs" role="tablist">

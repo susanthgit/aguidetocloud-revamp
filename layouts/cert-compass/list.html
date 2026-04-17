@@ -5,20 +5,45 @@
 {{- $groups := $data.equivalents.groups -}}
 {{- $paths := $data.career_paths.paths -}}
 
-{{ partial "tool-hero.html" (dict "Page" . "title" .Title "subtitle" "Navigate certifications across Azure, AWS & Google Cloud" "accent" "#6366F1") }}
+{{ partial "tool-hero.html" (dict "title" .Title "accent" "#6366F1" "counter_base" (len $certs) "counter_verb" "Certifications") }}
 
 <div class="compass-page">
+  <!-- My Certs banner -->
+  <div class="compass-mycerts-bar" id="mycerts-bar" style="display:none">
+    <span class="compass-mycerts-label">My Certs:</span>
+    <span class="compass-mycerts-list" id="mycerts-list"></span>
+    <button class="compass-mycerts-clear" id="mycerts-clear" aria-label="Clear my certs">Clear</button>
+  </div>
+
   <!-- Tabs -->
   <div class="compass-tabs" role="tablist">
-    <button class="compass-tab active" role="tab" aria-selected="true" data-tab="explore">Explore</button>
-    <button class="compass-tab" role="tab" aria-selected="false" data-tab="matches">Closest Matches</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="explore">Explore</button>
+    <button class="compass-tab active" role="tab" aria-selected="true" data-tab="matches">Closest Matches</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="careers">Career Paths</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
   <!-- ═══ EXPLORE TAB ═══ -->
-  <div class="compass-panel active" id="panel-explore">
+  <div class="compass-panel" id="panel-explore">
+    <!-- Provider summary cards -->
+    <div class="compass-provider-cards">
+      {{ range $providers }}
+      <div class="compass-pcard" style="--pcard-accent: {{ .hex }}">
+        <span class="compass-pcard-emoji">{{ .emoji }}</span>
+        <strong class="compass-pcard-name">{{ .name }}</strong>
+        <span class="compass-pcard-stat" data-provider="{{ .id }}"></span>
+        <span class="compass-pcard-price">${{ .fee_fundamentals | default .fee_foundational }}–${{ .fee_expert | default .fee_professional | default .fee_specialty }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <!-- Quick scenarios -->
+    <div class="compass-quick" id="quick-start">
+      <button class="compass-quick-btn" data-scenario="beginner">New to Cloud</button>
+      <button class="compass-quick-btn" data-scenario="azure-to-aws">I know Azure → Show AWS</button>
+      <button class="compass-quick-btn" data-scenario="security">Security Certs</button>
+      <button class="compass-quick-btn" data-scenario="ai">AI & ML Certs</button>
+    </div>
     <div class="compass-filters">
       <input type="text" class="compass-search" id="compass-search" placeholder="Search certifications..." aria-label="Search certifications">
       <div class="compass-filter-row">
@@ -55,7 +80,7 @@
   </div>
 
   <!-- ═══ CLOSEST MATCHES TAB ═══ -->
-  <div class="compass-panel" id="panel-matches">
+  <div class="compass-panel active" id="panel-matches">
     <p class="compass-disclaimer">These are closest role/level matches — not official cross-vendor equivalencies. Match confidence badges show how close the alignment is.</p>
     <div class="compass-matches-grid" id="matches-grid"></div>
   </div>
@@ -98,7 +123,7 @@
 </div>
 
 {{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "cert-compass") }}
-{{ partial "back-nav" . }}
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
 
 <!-- Pagefind searchable block -->
 <div data-pagefind-body aria-hidden="true" style="display:none">

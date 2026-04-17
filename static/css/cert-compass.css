@@ -226,6 +226,56 @@
 #panel-faq details[open] summary::before { content: '▾ '; }
 #panel-faq p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-top: 0.5rem; }
 
+/* ── My Certs Bar ─────────────────────────────────────────────────────── */
+.compass-mycerts-bar {
+  display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem;
+  background: rgba(var(--compass-accent-rgb), 0.08); border: 1px solid rgba(var(--compass-accent-rgb), 0.2);
+  border-radius: 10px; margin-bottom: 1rem; flex-wrap: wrap;
+}
+.compass-mycerts-label { font-size: 0.78rem; font-weight: 700; color: var(--compass-accent); }
+.compass-mycerts-list { display: flex; gap: 0.3rem; flex-wrap: wrap; flex: 1; }
+.compass-mycerts-chip {
+  font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 6px;
+  font-weight: 600; border: 1px solid rgba(255,255,255,0.15); color: #fff;
+}
+.compass-mycerts-clear {
+  font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 6px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5); cursor: pointer; font-family: inherit;
+}
+.compass-mycerts-clear:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+/* ── Provider Cards ──────────────────────────────────────────────────── */
+.compass-provider-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+.compass-pcard {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  padding: 0.85rem; border-radius: 12px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-top: 3px solid var(--pcard-accent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.compass-pcard-emoji { font-size: 1.3rem; }
+.compass-pcard-name { font-size: 0.85rem; color: var(--pcard-accent); }
+.compass-pcard-stat { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.compass-pcard-price { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+
+/* ── Quick Scenarios ─────────────────────────────────────────────────── */
+.compass-quick { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.compass-quick-btn {
+  padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+  background: rgba(var(--compass-accent-rgb), 0.08); border: 1px solid rgba(var(--compass-accent-rgb), 0.2);
+  color: var(--compass-accent); cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.compass-quick-btn:hover { background: rgba(var(--compass-accent-rgb), 0.15); }
+
+/* ── "I Have This" Button ────────────────────────────────────────────── */
+.compass-btn-have {
+  background: transparent; border: 1px solid rgba(16,185,129,0.3); color: rgba(16,185,129,0.7);
+  font-size: 0.72rem; padding: 0.3rem 0.65rem;
+}
+.compass-btn-have:hover { background: rgba(16,185,129,0.1); color: #10B981; }
+.compass-btn-have.owned { background: rgba(16,185,129,0.15); color: #10B981; border-color: #10B981; }
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .compass-grid { grid-template-columns: 1fr; }
@@ -234,6 +284,8 @@
   .compass-filter-row { flex-direction: column; }
   .compass-career-steps { flex-direction: column; align-items: flex-start; }
   .compass-career-arrow { transform: rotate(90deg); }
+  .compass-provider-cards { grid-template-columns: 1fr; }
+  .compass-quick { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
 }
 @media (max-width: 480px) {
   .compass-careers-grid { grid-template-columns: 1fr; }

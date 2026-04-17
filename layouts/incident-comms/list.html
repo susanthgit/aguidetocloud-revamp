@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="/css/incident-comms.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "Page" . "title" "Incident Comms Generator" "subtitle" "Generate professional incident communications in seconds — from P1 war rooms to all-staff updates" "accent" "#FF8F66") }}
+{{ partial "tool-hero.html" (dict "title" "Incident Comms Generator" "accent" "#FF8F66") }}
 
 <div class="icomms-page">
   <div class="icomms-tabs" role="tablist" aria-label="Incident Comms Generator tabs">
@@ -48,6 +48,13 @@
           <label for="creative-toggle">
             <input type="checkbox" id="creative-toggle" name="creative_toggle">
             Creative Mode
+          </label>
+        </div>
+
+        <div class="icomms-field icomms-field--checkbox">
+          <label for="slack-format">
+            <input type="checkbox" id="slack-format" name="slack_format">
+            Teams/Slack Format
           </label>
         </div>
       </div>

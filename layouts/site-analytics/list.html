@@ -1,7 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Your data powers this site — nothing hidden" "accent" "#64748B") }}
+{{ partial "tool-hero.html" (dict "title" "Site Analytics" "accent" "#64748B") }}
 
 {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
 

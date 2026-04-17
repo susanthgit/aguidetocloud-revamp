@@ -35,7 +35,29 @@
     return out;
   }
 
-  /* ── Tab switching ────────────────────────────────────── */
+  function fillTokensHtml(str) {
+    if (!str) return '';
+    var out = esc(str);
+    Object.keys(TOKEN_MAP).forEach(function (tok) {
+      out = out.split(tok).join(
+        '<span contenteditable="true" class="icomms-editable">' + esc(TOKEN_MAP[tok]) + '</span>'
+      );
+    });
+    return out;
+  }
+
+  function applySlackFormat(str) {
+    if (!str) return str;
+    var out = str;
+    Object.keys(TOKEN_MAP).forEach(function (tok) {
+      var val = TOKEN_MAP[tok];
+      out = out.split(val).join('**' + val + '**');
+    });
+    out = out.replace(/RESOLVED/g, '**✅ RESOLVED**');
+    return out;
+  }
+
+  /* ── Tab switching────────────────────────────────────── */
   function initTabs(ns) {
     var tabs = document.querySelectorAll('.' + ns + '-tab');
     tabs.forEach(function (tab) {
@@ -126,6 +148,9 @@
   function sectionCard(phase, subject, body) {
     var subjectLine = subject ? fillTokens(subject) : '';
     var bodyText = fillTokens(body);
+    var slackOn = (document.getElementById('slack-format') || {}).checked;
+    var copyBody = slackOn ? applySlackFormat(bodyText) : bodyText;
+    var bodyHtml = fillTokensHtml(body);
     var subjectHtml = subjectLine
       ? '<div class="icomms-section-subject"><strong>Subject:</strong> ' + esc(subjectLine) + '</div>'
       : '';
@@ -133,11 +158,11 @@
       '<div class="icomms-section-card">' +
         '<div class="icomms-section-phase">' + esc(phase) + '</div>' +
         subjectHtml +
-        '<pre class="icomms-section-body">' + esc(bodyText) + '</pre>' +
+        '<div class="icomms-section-body">' + bodyHtml + '</div>' +
         '<div class="icomms-section-actions">' +
-          '<button class="icomms-copy-btn" data-text="' + esc(bodyText) + '" aria-label="Copy ' + esc(phase) + '">📋 Copy</button>' +
+          '<button class="icomms-copy-btn" data-text="' + esc(copyBody) + '" aria-label="Copy ' + esc(phase) + '">📋 Copy</button>' +
           (subjectLine
-            ? '<button class="icomms-mailto-btn" data-subject="' + esc(subjectLine) + '" data-body="' + esc(bodyText) + '" aria-label="Email ' + esc(phase) + '">✉️ Email</button>'
+            ? '<button class="icomms-mailto-btn" data-subject="' + esc(subjectLine) + '" data-body="' + esc(copyBody) + '" aria-label="Email ' + esc(phase) + '">✉️ Email</button>'
             : '') +
         '</div>' +
       '</div>'
@@ -189,7 +214,22 @@
       html += sectionCard('🎨 Creative Communication', block.subject || '', block.creative);
     }
 
+    html += '<div class="icomms-copy-all"><button class="icomms-copy-all-btn" id="copy-all-btn">📋 Copy All Phases</button></div>';
+
     out.innerHTML = html;
+
+    var copyAllBtn = document.getElementById('copy-all-btn');
+    if (copyAllBtn) {
+      copyAllBtn.addEventListener('click', function () {
+        var bodies = out.querySelectorAll('.icomms-section-body');
+        var phases = out.querySelectorAll('.icomms-section-phase');
+        var all = [];
+        for (var i = 0; i < bodies.length; i++) {
+          all.push((phases[i] ? phases[i].textContent + '\n' : '') + bodies[i].textContent);
+        }
+        copyText(all.join('\n\n---\n\n'));
+      });
+    }
   }
 
   /* ── Gallery rendering ─────────────────────────────────── */
@@ -261,7 +301,7 @@
 
   /* ── Form change listeners ─────────────────────────────── */
   function bindForm() {
-    var ids = ['incident-type', 'incident-severity', 'incident-audience', 'creative-toggle'];
+    var ids = ['incident-type', 'incident-severity', 'incident-audience', 'creative-toggle', 'slack-format'];
     ids.forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.addEventListener('change', generateComms);

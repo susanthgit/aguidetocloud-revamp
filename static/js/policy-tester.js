@@ -471,6 +471,128 @@
   function setCheck(id, v) { var el = $(id); if (el) el.checked = v; }
   function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
+  /* ── Fix buttons + delta card ────────────────────────────────── */
+
+  var _previousScore = null;
+
+  function renderFixButtons(result) {
+    var container = $('ptester-fix-area');
+    if (!container) return;
+
+    var stds = getStandards();
+    if (!stds.length) { container.innerHTML = ''; return; }
+
+    var btnsHtml = '';
+    stds.forEach(function (st) {
+      btnsHtml += '<button class="ptester-fix-btn" data-std="' + esc(st.id) + '">Apply ' + esc(st.name) + '</button>';
+    });
+
+    var deltaHtml = '';
+    if (_previousScore !== null && _previousScore !== result.total) {
+      var gain = result.total - _previousScore;
+      var sign = gain > 0 ? '+' : '';
+      deltaHtml =
+        '<div class="ptester-delta-card">' +
+          '<span class="before">' + _previousScore + '/100</span>' +
+          '<span class="arrow">\u2192</span>' +
+          '<span class="after">' + result.total + '/100</span>' +
+          '<div class="gain" style="margin-top:0.4rem">' + sign + gain + ' points</div>' +
+        '</div>';
+      _previousScore = null;
+    }
+
+    container.innerHTML =
+      deltaHtml +
+      '<div class="ptester-fix-section">' +
+        '<h4>Quick Fix \u2014 Apply a Standard</h4>' +
+        '<div class="ptester-fix-buttons">' + btnsHtml + '</div>' +
+      '</div>';
+  }
+
+  function applyStandard(stdId) {
+    var st = findStandard(stdId);
+    if (!st) return;
+    var currentResult = scorePolicy(getPolicy());
+    _previousScore = currentResult.total;
+
+    setVal('min-length',        clamp(st.min_length || 8, 4, 64));
+    setCheck('complexity',      !!st.complexity_required);
+    setVal('expiry-days',       clamp(st.expiry_days != null ? st.expiry_days : 0, 0, 365));
+    setVal('lockout-threshold', clamp(st.lockout_threshold || 0, 0, 100));
+    setCheck('mfa-required',    !!st.mfa_required);
+    setVal('history-count',     clamp(st.history_count || 0, 0, 24));
+    syncDisplays();
+    update();
+  }
+
+  /* ── Export assessment ──────────────────────────────────────── */
+
+  function exportAssessment() {
+    var policy = getPolicy();
+    var result = scorePolicy(policy);
+    var stds = getStandards();
+    var today = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+    var md = '# Password Policy Assessment \u2014 ' + today + '\n\n';
+    md += '## Current Settings\n\n';
+    md += '| Setting | Value |\n|---|---|\n';
+    md += '| Min Length | ' + policy.min_length + ' |\n';
+    md += '| Complexity Required | ' + (policy.complexity_required ? 'Yes' : 'No') + ' |\n';
+    md += '| Expiry (days) | ' + (policy.expiry_days === 0 ? 'No expiry' : policy.expiry_days) + ' |\n';
+    md += '| Lockout Threshold | ' + (policy.lockout_threshold === 0 ? 'None' : policy.lockout_threshold) + ' |\n';
+    md += '| MFA Required | ' + (policy.mfa_required ? 'Yes' : 'No') + ' |\n';
+    md += '| History Count | ' + policy.history_count + ' |\n\n';
+
+    md += '## Score: ' + result.total + '/100\n\n';
+    md += '### Category Breakdown\n\n';
+    md += '| Category | Score |\n|---|---|\n';
+    result.categories.forEach(function (c) {
+      md += '| ' + c.name + ' | ' + c.label + ' |\n';
+    });
+    md += '\n';
+
+    if (result.recommendations.length) {
+      md += '### Recommendations\n\n';
+      result.recommendations.forEach(function (r) {
+        var icon = r.severity === 'critical' ? '\uD83D\uDD34' : r.severity === 'warning' ? '\uD83D\uDFE0' : r.severity === 'success' ? '\uD83D\uDFE2' : '\uD83D\uDD35';
+        md += '- ' + icon + ' ' + r.text + '\n';
+      });
+      md += '\n';
+    }
+
+    if (stds.length) {
+      md += '### Standards Comparison\n\n';
+      var hdr = '| Setting | Your Policy |';
+      var sep = '|---|---|';
+      stds.forEach(function (st) { hdr += ' ' + st.name + ' |'; sep += '---|'; });
+      md += hdr + '\n' + sep + '\n';
+      var fields = [
+        { label: 'Min Length', key: 'min_length' },
+        { label: 'Complexity', key: 'complexity_required', fmt: function (v) { return v ? 'Yes' : 'No'; } },
+        { label: 'Expiry', key: 'expiry_days', fmt: function (v) { return v === 0 ? 'No expiry' : v + ' days'; } },
+        { label: 'Lockout', key: 'lockout_threshold', fmt: function (v) { return v === 0 ? 'None' : String(v); } },
+        { label: 'MFA', key: 'mfa_required', fmt: function (v) { return v ? 'Yes' : 'No'; } },
+        { label: 'History', key: 'history_count' }
+      ];
+      fields.forEach(function (f) {
+        var row = '| ' + f.label + ' | ' + (f.fmt ? f.fmt(policy[f.key]) : policy[f.key]) + ' |';
+        stds.forEach(function (st) {
+          row += ' ' + (f.fmt ? f.fmt(st[f.key]) : (st[f.key] != null ? st[f.key] : '\u2014')) + ' |';
+        });
+        md += row + '\n';
+      });
+    }
+
+    md += '\n---\n*Generated by Password Policy Tester — aguidetocloud.com/policy-tester/*\n';
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(md).then(function () {
+        var btn = $('ptester-export-btn');
+        if (btn) { var orig = btn.textContent; btn.textContent = '\u2705 Copied!'; setTimeout(function () { btn.textContent = orig; }, 2000); }
+      });
+    }
+  }
+
   /* ── Main update cycle ──────────────────────────────────────── */
 
   function update() {
@@ -478,6 +600,7 @@
     var policy = getPolicy();
     var result = scorePolicy(policy);
     renderScore(result);
+    renderFixButtons(result);
     renderCompare(policy);
     encodeURL(policy);
     safeSet('ptester_policy', policy);
@@ -530,7 +653,10 @@
       'ad-default': { min_length: 7, complexity: true, expiry: 42, lockout: 0, mfa: false, history: 24 },
       'entra-default': { min_length: 8, complexity: true, expiry: 0, lockout: 10, mfa: false, history: 0 },
       'nist': { min_length: 15, complexity: false, expiry: 0, lockout: 100, mfa: true, history: 0 },
-      'modern': { min_length: 14, complexity: false, expiry: 0, lockout: 10, mfa: true, history: 0 }
+      'modern': { min_length: 14, complexity: false, expiry: 0, lockout: 10, mfa: true, history: 0 },
+      'healthcare': { min_length: 14, complexity: true, expiry: 0, lockout: 5, mfa: true, history: 12 },
+      'finance': { min_length: 16, complexity: true, expiry: 0, lockout: 3, mfa: true, history: 24 },
+      'government': { min_length: 14, complexity: false, expiry: 0, lockout: 5, mfa: true, history: 0 }
     };
     document.querySelectorAll('.ptester-preset').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -542,6 +668,16 @@
         syncDisplays(); update();
       });
     });
+
+    // Fix buttons — event delegation
+    var assessPanel = $('panel-assess');
+    if (assessPanel) {
+      assessPanel.addEventListener('click', function (e) {
+        var fixBtn = e.target.closest('.ptester-fix-btn');
+        if (fixBtn) { applyStandard(fixBtn.dataset.std); return; }
+        if (e.target.id === 'ptester-export-btn') { exportAssessment(); }
+      });
+    }
 
     update();
   }

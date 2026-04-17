@@ -88,6 +88,15 @@ var scenarioMap = new Map();
 var lastResult = { score: 0, tier: null };
 var choosing = false; // guard against double-clicks
 
+var tagColors = {
+  'security': '#3b82f6', 'discipline': '#10b981', 'self-care': '#a78bfa',
+  'prepared': '#14b8a6', 'escalation': '#0ea5e9', 'incident-response': '#ef4444',
+  'governance': '#8b5cf6', 'expertise': '#f59e0b', 'methodology': '#60a5fa',
+  'documentation': '#34d399', 'recovery': '#fb923c', 'service': '#ec4899',
+  'process': '#22d3ee', 'dedication': '#f472b6', 'pragmatic': '#d4a853',
+  'measured': '#4ecdc4'
+};
+
 /* ═══════════════════════════════════════════════════
    BUILD MAP
    ═══════════════════════════════════════════════════ */
@@ -224,6 +233,16 @@ function makeChoice(idx) {
         pop.style.transform = 'translateY(-80%) scale(1.4)';
       });
     });
+
+    // Tag badge
+    if (choice.tag) {
+      var tagColor = tagColors[choice.tag] || 'rgba(255,255,255,0.3)';
+      var tagBadge = document.createElement('span');
+      tagBadge.className = 'itday-tag-badge';
+      tagBadge.textContent = choice.tag;
+      tagBadge.style.cssText = 'display:inline-block;margin-left:0.5rem;padding:0.15rem 0.5rem;border-radius:10px;font-size:0.7rem;font-weight:600;background:' + tagColor + '20;color:' + tagColor + ';border:1px solid ' + tagColor + '40;';
+      btn.appendChild(tagBadge);
+    }
   }
 
   /* expert tip: find the best choice for this scenario */
@@ -266,6 +285,22 @@ function endGame() {
   if (hist.length > 50) hist = hist.slice(-50);
   safeSet('itday_history', hist);
 
+  /* tally traits */
+  var traits = {};
+  G.history.forEach(function(h) {
+    if (h.tag) traits[h.tag] = (traits[h.tag] || 0) + 1;
+  });
+  var traitList = Object.entries(traits).sort(function(a, b) { return b[1] - a[1]; });
+  var traitHtml = '';
+  if (traitList.length) {
+    traitHtml = '<div class="itday-traits"><h4>Your Admin Traits</h4><div class="itday-trait-list">';
+    traitList.forEach(function(t) {
+      var color = tagColors[t[0]] || 'rgba(255,255,255,0.5)';
+      traitHtml += '<span class="itday-trait-pill" style="background:' + color + '15;color:' + color + ';border:1px solid ' + color + '30;">' + esc(t[0]) + ' \u00D7' + t[1] + '</span>';
+    });
+    traitHtml += '</div></div>';
+  }
+
   /* build result html */
   var html =
     '<div style="text-align:center;padding:1.5rem 0.5rem 1rem;">' +
@@ -273,6 +308,7 @@ function endGame() {
       '<h2 style="margin:0.5rem 0 0.25rem;font-size:1.5rem;">' + esc(tier.title) + '</h2>' +
       '<div style="font-size:2.2rem;font-weight:700;color:#60a5fa;margin:0.25rem 0;">' + clamped + '<span style="font-size:1rem;opacity:0.5;">/100</span></div>' +
       '<p style="max-width:400px;margin:0.5rem auto 1.5rem;opacity:0.7;line-height:1.6;">' + esc(tier.desc) + '</p>' +
+      traitHtml +
     '</div>' +
 
     /* timeline */

@@ -443,6 +443,22 @@
   border-color: var(--icomms-accent);
 }
 
+/* Copy All Phases */
+.icomms-copy-all { margin: 1rem 0; text-align: right; }
+.icomms-copy-all-btn {
+  background: var(--icomms-accent); color: #000; border: none; border-radius: 8px;
+  padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.85rem;
+}
+.icomms-copy-all-btn:hover { opacity: 0.85; }
+
+/* Editable inline tokens */
+.icomms-editable {
+  background: rgba(255,143,102,0.12); border-bottom: 1px dashed rgba(255,143,102,0.5);
+  padding: 0 0.2rem; cursor: text; color: var(--icomms-accent); outline: none;
+  border-radius: 2px;
+}
+.icomms-editable:focus { background: rgba(255,143,102,0.2); border-bottom-style: solid; }
+
 /* Output actions row (template-level) */
 .icomms-output-actions {
   display: flex;

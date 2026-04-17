@@ -113,7 +113,9 @@
     timerStart: 0,
     answered: false,
     choices: [],
-    hardInput: ''
+    hardInput: '',
+    streak: 0,
+    bestStreak: 0
   };
 
   var TIMER_DURATION = 10000; // 10 seconds
@@ -155,6 +157,7 @@
 
   function handleTimeout() {
     G.answered = true;
+    G.streak = 0;
     stopTimer();
     var q = G.questions[G.current];
     revealAnswer(q, -1);
@@ -167,6 +170,8 @@
     G.current = 0;
     G.score = 0;
     G.answered = false;
+    G.streak = 0;
+    G.bestStreak = 0;
 
     var pool = DATA.slice();
     if (G.category !== 'all') {
@@ -233,13 +238,16 @@
     }
 
     // Question
+    var diffStars = '';
+    var qDiff = q.difficulty || 1;
+    for (var ds = 0; ds < qDiff; ds++) diffStars += '\u2B50';
+
     qEl.innerHTML =
       '<div class="cliquiz-q-meta">' +
         '<span class="cliquiz-badge cliquiz-badge--cat">' + esc(q.category) + '</span>' +
-        '<span class="cliquiz-badge cliquiz-badge--diff" title="Difficulty ' + (q.difficulty || 1) + '/5">' +
-          difficultyStars(q.difficulty || 1) +
-        '</span>' +
+        '<span class="cliquiz-badge cliquiz-badge--diff"><span class="cliquiz-difficulty">' + diffStars + '</span></span>' +
         (q.module ? '<span class="cliquiz-badge cliquiz-badge--mod">' + esc(q.module) + '</span>' : '') +
+        (G.streak > 0 ? '<span class="cliquiz-streak">\uD83D\uDD25 Streak: ' + G.streak + '</span>' : '') +
       '</div>' +
       '<p class="cliquiz-task">' + esc(q.task) + '</p>';
 
@@ -350,11 +358,15 @@
     }
 
     if (isCorrect) {
-      G.score++;
+      G.score += (q.difficulty || 1) * 10;
+      G.streak++;
+      if (G.streak > G.bestStreak) G.bestStreak = G.streak;
       inp.classList.add('cliquiz-input--correct');
     } else if (isClose) {
+      G.streak = 0;
       inp.classList.add('cliquiz-input--close');
     } else {
+      G.streak = 0;
       inp.classList.add('cliquiz-input--wrong');
     }
 
@@ -378,7 +390,13 @@
     var chosen = G.choices[idx];
     var isCorrect = chosen.toLowerCase() === correct.toLowerCase();
 
-    if (isCorrect) G.score++;
+    if (isCorrect) {
+      G.score += (q.difficulty || 1) * 10;
+      G.streak++;
+      if (G.streak > G.bestStreak) G.bestStreak = G.streak;
+    } else {
+      G.streak = 0;
+    }
 
     // Highlight choices
     var buttons = document.querySelectorAll('.cliquiz-choice');
@@ -427,12 +445,14 @@
   function showFeedback(q, cls, label) {
     var fbEl = $('cliquiz-feedback');
     if (!fbEl) return;
+    var cmdSlug = primaryCmdlet(q.command).toLowerCase();
     fbEl.innerHTML =
       '<div class="cliquiz-feedback cliquiz-feedback--' + cls + '">' +
         '<div class="cliquiz-feedback-label">' + esc(label) + '</div>' +
         '<div class="cliquiz-feedback-cmd"><code>' + esc(q.command) + '</code></div>' +
         (q.explanation ? '<p class="cliquiz-feedback-explain">' + esc(q.explanation) + '</p>' : '') +
         (q.learn_url ? '<a href="' + esc(q.learn_url) + '" target="_blank" rel="noopener noreferrer" class="cliquiz-learn-link">Learn more \u2192</a>' : '') +
+        '<a href="/ps-builder/?recipe=' + esc(cmdSlug) + '" class="cliquiz-try-link" target="_blank" rel="noopener noreferrer">\u26A1 Try in PowerShell Builder \u2192</a>' +
       '</div>';
   }
 
@@ -458,10 +478,11 @@
   function updateScore() {
     var el = $('quiz-score');
     if (!el) return;
+    var maxScore = G.questions.reduce(function (s, q) { return s + (q.difficulty || 1) * 10; }, 0);
     el.innerHTML =
       '<span class="cliquiz-score-num">' + G.score + '</span>' +
       '<span class="cliquiz-score-sep">/</span>' +
-      '<span class="cliquiz-score-den">' + G.total + '</span>';
+      '<span class="cliquiz-score-den">' + maxScore + '</span>';
   }
 
   /* ── Mastery tracking ────────────────────────────────────── */
@@ -479,7 +500,8 @@
     var area = $('quiz-area');
     if (!area) return;
 
-    var percentage = pct(G.score, G.total);
+    var maxScore = G.questions.reduce(function (s, q) { return s + (q.difficulty || 1) * 10; }, 0);
+    var percentage = maxScore > 0 ? Math.round((G.score / maxScore) * 100) : 0;
     var emoji = percentage >= 90 ? '\uD83C\uDF1F' :
                 percentage >= 70 ? '\uD83C\uDF89' :
                 percentage >= 50 ? '\uD83D\uDC4D' : '\uD83D\uDCAA';
@@ -508,8 +530,9 @@
     area.innerHTML =
       '<div class="cliquiz-results">' +
         '<div class="cliquiz-results-emoji">' + emoji + '</div>' +
-        '<div class="cliquiz-results-score">' + G.score + ' / ' + G.total + '</div>' +
+        '<div class="cliquiz-results-score">' + G.score + ' / ' + maxScore + '</div>' +
         '<div class="cliquiz-results-pct">' + percentage + '%</div>' +
+        (G.bestStreak > 1 ? '<div style="margin-top:0.5rem"><span class="cliquiz-streak">\uD83D\uDD25 Best Streak: ' + G.bestStreak + '</span></div>' : '') +
         '<p class="cliquiz-results-msg">' + resultMessage(percentage) + '</p>' +
         breakdownHtml +
         '<div class="cliquiz-results-actions">' +

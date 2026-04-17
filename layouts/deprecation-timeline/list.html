@@ -7,12 +7,7 @@
   <p>Features: urgency scoring (critical, warning, watch, future), timeline and grid views, action required filter, search by title or Message Center ID, detail modal with migration steps, CSV export, RSS feed, keyboard shortcuts.</p>
 </div>
 
-{{ partial "tool-hero" (dict
-  "accent" "#DC2626"
-  "title" "M365 Deprecation Timeline"
-  "subtitle" "Every Microsoft 365 deprecation, retirement, and end-of-support date — urgency-scored with countdown timers and migration guidance."
-  "freshness" "/data/deprecation-timeline/latest.json"
-) }}
+{{ partial "tool-hero.html" (dict "accent" "#DC2626" "title" "M365 Deprecation Timeline" "freshness" "/data/deprecation-timeline/latest.json") }}
 
 <link rel="stylesheet" href="/css/deptime.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Deprecation Timeline RSS" href="/data/deprecation-timeline/feed.xml">

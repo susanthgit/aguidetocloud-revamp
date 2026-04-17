@@ -4,13 +4,14 @@
 {{ $m365 := $data.slas.m365_slas }}
 <link rel="stylesheet" href="/css/sla-calculator.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "Page" . "title" "SLA Uptime Calculator" "subtitle" "See your exact downtime budget — per year, month, week, or day" "accent" "#4ECDC4") }}
+{{ partial "tool-hero.html" (dict "title" "SLA Uptime Calculator" "accent" "#4ECDC4") }}
 
 <div class="slacalc-page">
   <div class="slacalc-tabs" role="tablist">
     <button class="slacalc-tab active" role="tab" aria-selected="true" id="tab-calc" aria-controls="panel-calc" data-tab="calc">Calculator</button>
     <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-compare" aria-controls="panel-compare" data-tab="compare">Compare</button>
     <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-m365" aria-controls="panel-m365" data-tab="m365">M365 SLAs</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-log" aria-controls="panel-log" data-tab="log">Incident Log</button>
     <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-faq" aria-controls="panel-faq" data-tab="faq">FAQ</button>
   </div>
 
@@ -123,6 +124,30 @@
       </table>
     </div>
     <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:1rem">Source: <a href="https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.5)">Microsoft SLA for Online Services</a>. Check for updates periodically.</p>
+  </div>
+
+  <!-- Incident Log Panel -->
+  <div class="slacalc-panel" id="panel-log" role="tabpanel" aria-labelledby="tab-log">
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:1rem">Track actual outages and see your real SLA performance.</p>
+    <div class="slacalc-log-form">
+      <div class="slacalc-input-row">
+        <div class="slacalc-input-group">
+          <label for="log-date">Date</label>
+          <input type="date" id="log-date" aria-label="Incident date">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="log-duration">Duration (minutes)</label>
+          <input type="number" id="log-duration" min="1" value="15" aria-label="Outage duration in minutes">
+        </div>
+        <div class="slacalc-input-group">
+          <label for="log-service">Service</label>
+          <input type="text" id="log-service" placeholder="e.g. Exchange" aria-label="Affected service">
+        </div>
+      </div>
+      <button class="slacalc-preset" id="add-incident" style="margin-top:0.5rem">+ Add Incident</button>
+    </div>
+    <div id="sla-log-summary"></div>
+    <div id="sla-log-list"></div>
   </div>
 
   <!-- FAQ Panel -->

@@ -428,6 +428,25 @@
 }
 .cliquiz-learn-link:hover { color: #fff; }
 
+/* Difficulty Stars */
+.cliquiz-difficulty { display: flex; gap: 0.15rem; font-size: 0.8rem; }
+
+/* Streak Badge */
+.cliquiz-streak {
+  background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);
+  border-radius: 20px; padding: 0.2rem 0.7rem; font-size: 0.8rem;
+  color: #fb923c; font-weight: 600;
+}
+
+/* Try in PS Builder Link */
+.cliquiz-try-link {
+  display: inline-block; margin-top: 0.6rem; padding: 0.4rem 0.8rem;
+  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 6px; color: #4ade80; font-size: 0.82rem; font-weight: 600;
+  text-decoration: none;
+}
+.cliquiz-try-link:hover { background: rgba(74,222,128,0.15); }
+
 /* Timer States */
 .cliquiz-timer-warn {
   background: #fbbf24 !important;

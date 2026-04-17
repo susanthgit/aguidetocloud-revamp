@@ -317,6 +317,14 @@
   color: rgba(255,255,255,0.5);
 }
 
+/* Traits */
+.itday-traits { margin-top: 1.5rem; }
+.itday-traits h4 { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 0.6rem; }
+.itday-trait-list { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+.itday-trait-pill {
+  padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .itday-choices {

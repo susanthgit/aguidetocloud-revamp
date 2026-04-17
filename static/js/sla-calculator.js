@@ -31,6 +31,15 @@
     return (h ? h + ' hr ' : '') + (m ? m + ' min ' : '') + s + ' sec';
   }
 
+  /* ── localStorage helpers ── */
+  function safeGet(key, fallback) {
+    try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
+    catch(_) { return fallback; }
+  }
+  function safeSet(key, val) {
+    try { localStorage.setItem(key, JSON.stringify(val)); } catch(_) {}
+  }
+
   function ninesLabel(pct) {
     if (pct >= 99.999) return 'Five Nines';
     if (pct >= 99.99) return 'Four Nines';
@@ -206,6 +215,106 @@
     });
   }
 
+  /* ── Incident Log ── */
+  function addIncident() {
+    const dateEl = document.getElementById('log-date');
+    const durEl = document.getElementById('log-duration');
+    const svcEl = document.getElementById('log-service');
+    if (!dateEl || !durEl) return;
+    const date = dateEl.value;
+    const dur = parseInt(durEl.value, 10);
+    const svc = (svcEl ? svcEl.value : '').trim() || 'Unknown';
+    if (!date || isNaN(dur) || dur < 1) return;
+    const incidents = safeGet('sla_incidents', []);
+    incidents.push({ date, duration: dur, service: svc });
+    incidents.sort((a, b) => b.date.localeCompare(a.date));
+    safeSet('sla_incidents', incidents);
+    durEl.value = 15;
+    svcEl.value = '';
+    renderLog();
+  }
+
+  function deleteIncident(idx) {
+    const incidents = safeGet('sla_incidents', []);
+    incidents.splice(idx, 1);
+    safeSet('sla_incidents', incidents);
+    renderLog();
+  }
+
+  function renderLog() {
+    const summary = document.getElementById('sla-log-summary');
+    const list = document.getElementById('sla-log-list');
+    if (!summary || !list) return;
+    const incidents = safeGet('sla_incidents', []);
+    const slaTarget = parseFloat((document.getElementById('sla-input') || {}).value) || 99.9;
+    const now = new Date();
+    const ym = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+    const monthIncidents = incidents.filter(inc => inc.date.slice(0, 7) === ym);
+    let usedMins = 0;
+    monthIncidents.forEach(inc => { usedMins += inc.duration; });
+    const budgetMins = downtimeMins(slaTarget, MINS_MONTH);
+    const remaining = Math.max(0, budgetMins - usedMins);
+    const pctUsed = budgetMins > 0 ? Math.min(100, (usedMins / budgetMins) * 100) : 0;
+    const barClass = pctUsed > 80 ? 'danger' : pctUsed > 50 ? 'warning' : 'safe';
+    const realSla = MINS_MONTH > 0 ? ((1 - usedMins / MINS_MONTH) * 100) : 100;
+    const statusColor = pctUsed > 80 ? '#ef4444' : pctUsed > 50 ? '#fbbf24' : '#4ade80';
+
+    summary.innerHTML =
+      '<div class="slacalc-burndown">' +
+        '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.85rem">' +
+          '<span>SLA Target: <strong style="color:var(--slacalc-accent)">' + esc(slaTarget + '%') + '</strong></span>' +
+          '<span>Budget: <strong>' + esc(fmtDuration(budgetMins)) + '</strong>/mo</span>' +
+          '<span>Used: <strong style="color:' + statusColor + '">' + esc(fmtDuration(usedMins)) + '</strong></span>' +
+          '<span>Remaining: <strong>' + esc(fmtDuration(remaining)) + '</strong></span>' +
+        '</div>' +
+        '<div class="slacalc-burndown-bar"><div class="slacalc-burndown-fill ' + barClass + '" style="width:' + pctUsed + '%"></div></div>' +
+        '<div style="text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.5)">Real SLA this month: <strong style="color:' + (realSla < slaTarget ? '#ef4444' : '#4ade80') + '">' + esc(realSla.toFixed(4) + '%') + '</strong></div>' +
+      '</div>';
+
+    if (!incidents.length) {
+      list.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.4);padding:1.5rem">No incidents logged yet. Add one above to start tracking.</p>';
+      return;
+    }
+    let html = '';
+    incidents.forEach((inc, i) => {
+      html += '<div class="slacalc-log-entry">' +
+        '<span class="date">' + esc(inc.date) + '</span>' +
+        '<span class="dur">' + esc(inc.duration + 'm') + '</span>' +
+        '<span class="svc">' + esc(inc.service) + '</span>' +
+        '<button class="del" data-idx="' + i + '" aria-label="Delete incident">✕</button>' +
+      '</div>';
+    });
+    html += '<button class="slacalc-export-btn" id="export-log">Export CSV</button>';
+    list.innerHTML = html;
+  }
+
+  function bindLog() {
+    const addBtn = document.getElementById('add-incident');
+    if (addBtn) addBtn.addEventListener('click', addIncident);
+    const list = document.getElementById('sla-log-list');
+    if (list) {
+      list.addEventListener('click', e => {
+        const del = e.target.closest('.del');
+        if (del) { deleteIncident(parseInt(del.dataset.idx, 10)); return; }
+        if (e.target.id === 'export-log') {
+          const incidents = safeGet('sla_incidents', []);
+          let csv = 'Date,Duration (min),Service\n';
+          incidents.forEach(inc => {
+            csv += inc.date + ',' + inc.duration + ',"' + inc.service.replace(/"/g, '""') + '"\n';
+          });
+          const blob = new Blob([csv], { type: 'text/csv' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'sla-incidents.csv';
+          a.click();
+          URL.revokeObjectURL(a.href);
+        }
+      });
+    }
+    const logDate = document.getElementById('log-date');
+    if (logDate) logDate.value = new Date().toISOString().split('T')[0];
+  }
+
   /* ── Init ── */
   function init() {
     initTabs();
@@ -238,6 +347,11 @@
     calcForward();
     calcReverse();
     calcIncident();
+    bindLog();
+    renderLog();
+    if (document.getElementById('sla-input')) {
+      document.getElementById('sla-input').addEventListener('input', renderLog);
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

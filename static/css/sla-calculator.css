@@ -44,6 +44,8 @@
   margin-bottom: 0.3rem; font-weight: 600;
 }
 .slacalc-input-group input[type="number"],
+.slacalc-input-group input[type="date"],
+.slacalc-input-group input[type="text"],
 .slacalc-input-group select {
   width: 100%; padding: 0.6rem 0.8rem; font-size: 1.2rem; font-weight: 700;
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
@@ -148,6 +150,40 @@
 .slacalc-table tr:hover { background: rgba(255,255,255,0.03); }
 .slacalc-table .clickable { cursor: pointer; }
 .slacalc-table .clickable:hover { background: rgba(78,205,196,0.08); }
+
+/* Incident Log */
+.slacalc-log-form { margin-bottom: 1.5rem; }
+.slacalc-burndown {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem;
+}
+.slacalc-burndown-bar {
+  height: 10px; border-radius: 5px; background: rgba(255,255,255,0.1);
+  overflow: hidden; margin: 0.8rem 0;
+}
+.slacalc-burndown-fill {
+  height: 100%; border-radius: 5px; transition: width 0.3s;
+}
+.slacalc-burndown-fill.safe { background: #4ade80; }
+.slacalc-burndown-fill.warning { background: #fbbf24; }
+.slacalc-burndown-fill.danger { background: #ef4444; }
+.slacalc-log-entry {
+  display: flex; align-items: center; gap: 1rem; padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem;
+}
+.slacalc-log-entry .date { color: rgba(255,255,255,0.5); min-width: 90px; }
+.slacalc-log-entry .dur { font-weight: 700; color: var(--slacalc-accent); min-width: 60px; }
+.slacalc-log-entry .svc { flex: 1; }
+.slacalc-log-entry .del {
+  background: none; border: none; color: rgba(255,255,255,0.3);
+  cursor: pointer; font-size: 0.9rem;
+}
+.slacalc-log-entry .del:hover { color: #ef4444; }
+.slacalc-export-btn {
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+  padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.82rem; margin-top: 1rem;
+}
 
 @media (max-width: 640px) {
   .slacalc-input-row { grid-template-columns: 1fr; }

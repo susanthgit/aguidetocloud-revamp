@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/css/policy-tester.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "Page" . "title" "Password Policy Tester" "subtitle" "Score your password policy against NIST, CIS, and Microsoft best practices — get actionable recommendations" "accent" "#26A69A") }}
+{{ partial "tool-hero.html" (dict "title" "Password Policy Tester" "accent" "#26A69A") }}
 
 <div class="ptester-page">
   <div class="ptester-tabs" role="tablist" aria-label="Password Policy Tester tabs">
@@ -65,12 +65,17 @@
         <button type="button" class="ptester-preset" data-preset="entra-default">Entra ID Default</button>
         <button type="button" class="ptester-preset" data-preset="nist">NIST Compliant</button>
         <button type="button" class="ptester-preset" data-preset="modern">Modern Best Practice</button>
+        <button type="button" class="ptester-preset" data-preset="healthcare">Healthcare</button>
+        <button type="button" class="ptester-preset" data-preset="finance">Finance</button>
+        <button type="button" class="ptester-preset" data-preset="government">Government</button>
       </div>
     </form>
 
     <div id="policy-score"></div>
     <div id="category-breakdown"></div>
     <div id="recommendations"></div>
+    <div id="ptester-fix-area"></div>
+    <button type="button" id="ptester-export-btn" class="ptester-export-btn">📄 Export Assessment</button>
   </div>
 
   <!-- Compare Standards Panel -->

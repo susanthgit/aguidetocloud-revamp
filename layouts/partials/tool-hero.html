@@ -1,17 +1,23 @@
 {{/* Tool Hero — Stacked header for all Cloud & AI Toolkit tools
-     Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "subtitle" "..." "accent" "#00e5ff") }}
-     All tools get the same structure, just different accent color.
-     Counter auto-detected from data/tool_counters.toml by page URL.
-     Freshness badge auto-detected for pipeline tools with data files.
-     Live visitor count fetched client-side from /api/stats?realtime=1.
+     Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "accent" "#00e5ff") }}
+     subtitle: optional — auto-reads from toolkit_nav.toml desc if omitted.
+     freshness: optional — data file path for pipeline tools.
+     counter_base/counter_verb: optional dict overrides (e.g. cert guides).
 */}}
 {{ $p := .page | default page }}
+{{ $url := $p.RelPermalink }}
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+{{/* Auto-lookup subtitle from toolkit_nav.toml if not passed */}}
+{{ $toolDesc := "" }}
+{{ range $tools }}
+  {{ if eq .url $url }}{{ $toolDesc = .desc }}{{ end }}
+{{ end }}
+{{ $subtitle := .subtitle | default $toolDesc | default "" }}
 <div class="tool-hero" style="--hero-accent: {{ .accent }}">
   <div class="tool-hero-inner">
     <h1 class="tool-hero-title">{{ .title }}</h1>
-    {{ with .subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
-    {{/* Badges row — live indicator, counter, freshness, Ko-fi */}}
-    {{ $url := $p.RelPermalink }}
+    {{ with $subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+    {{/* Badges row */}}
     {{ $counters := (index hugo.Data "tool_counters").tools }}
     {{ $counterBase := 0 }}
     {{ $counterVerb := "" }}
@@ -21,7 +27,6 @@
         {{ $counterVerb = .verb }}
       {{ end }}
     {{ end }}
-    {{/* Dict-based counter override (for pages without TOML entries, e.g. cert guides) */}}
     {{ if and (eq $counterBase 0) $.counter_base }}
       {{ $counterBase = $.counter_base }}
       {{ $counterVerb = $.counter_verb }}

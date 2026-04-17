@@ -43,6 +43,7 @@
   rarities.forEach(function (r) { rarMap[r.id] = r; });
 
   var STORE_KEY = 'badges_earned';
+  var STORIES_KEY = 'badges_stories';
   var activeFilter = 'all';
 
   /* ── Earned state helpers ───────────────────────────────── */
@@ -132,13 +133,138 @@
     }
   }
 
+  /* ── Share individual badge as PNG ────────────────────────── */
+  function shareBadge(id) {
+    var b = badges.find(function(x) { return x.id === id; });
+    if (!b) return;
+    var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
+
+    var W = 600, H = 400;
+    var canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    ctx.fillStyle = '#030308';
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(16, 16, W - 32, H - 32);
+
+    ctx.textAlign = 'center';
+    ctx.font = '80px serif';
+    ctx.fillText(b.emoji, W / 2, 120);
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 24px Inter, system-ui, sans-serif';
+    ctx.fillText(b.name, W / 2, 175);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.font = '16px Inter, system-ui, sans-serif';
+    var desc = b.desc.length > 60 ? b.desc.slice(0, 57) + '\u2026' : b.desc;
+    ctx.fillText(desc, W / 2, 210);
+
+    // Rarity pill
+    ctx.fillStyle = rar.color;
+    ctx.font = 'bold 14px Inter, system-ui, sans-serif';
+    var rarText = rar.label.toUpperCase();
+    var tw = ctx.measureText(rarText).width;
+    var px = W / 2 - tw / 2 - 12;
+    ctx.beginPath();
+    ctx.roundRect(px, 230, tw + 24, 28, 14);
+    ctx.fill();
+    ctx.fillStyle = '#000';
+    ctx.fillText(rarText, W / 2, 250);
+
+    // Earned by
+    var stories = safeGet(STORIES_KEY, {});
+    var username = stories._username || 'an IT Admin';
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = '14px Inter, system-ui, sans-serif';
+    ctx.fillText('Earned by ' + username, W / 2, 300);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.25)';
+    ctx.font = '12px Inter, system-ui, sans-serif';
+    ctx.fillText('aguidetocloud.com/admin-badges', W / 2, H - 24);
+
+    canvas.toBlob(function(blob) {
+      if (!blob) return;
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'badge-' + id + '.png';
+      a.click();
+      setTimeout(function() { URL.revokeObjectURL(url); }, 5000);
+    }, 'image/png');
+  }
+
+  /* ── Suggested next badge ──────────────────────────────── */
+  function getSuggestedBadge() {
+    var earned = getEarned();
+    if (earned.length >= badges.length) return null;
+
+    // Count earned per category
+    var catCount = {};
+    earned.forEach(function(id) {
+      var b = badges.find(function(x) { return x.id === id; });
+      if (b) catCount[b.category] = (catCount[b.category] || 0) + 1;
+    });
+
+    // Sort categories by most earned
+    var catsSorted = Object.keys(catCount).sort(function(a, b) { return catCount[b] - catCount[a]; });
+
+    // Rarity order
+    var rarOrder = ['common', 'uncommon', 'rare', 'epic', 'legendary'];
+
+    // Try each category (most earned first), find lowest rarity un-earned
+    for (var c = 0; c < catsSorted.length; c++) {
+      var unearned = badges.filter(function(b) {
+        return b.category === catsSorted[c] && earned.indexOf(b.id) === -1;
+      });
+      if (!unearned.length) continue;
+      unearned.sort(function(a, b) {
+        return rarOrder.indexOf(a.rarity) - rarOrder.indexOf(b.rarity);
+      });
+      return unearned[0];
+    }
+
+    // Fallback: any un-earned badge, lowest rarity
+    var all = badges.filter(function(b) { return earned.indexOf(b.id) === -1; });
+    all.sort(function(a, b) { return rarOrder.indexOf(a.rarity) - rarOrder.indexOf(b.rarity); });
+    return all[0] || null;
+  }
+
+  function renderSuggested() {
+    var slot = document.getElementById('badges-suggested-slot');
+    if (!slot) {
+      var filterBar = document.querySelector('.badges-filter-bar');
+      if (filterBar) {
+        slot = document.createElement('div');
+        slot.id = 'badges-suggested-slot';
+        filterBar.parentNode.insertBefore(slot, filterBar);
+      }
+    }
+    if (!slot) return;
+
+    var badge = getSuggestedBadge();
+    if (!badge) { slot.innerHTML = ''; return; }
+    var rar = rarMap[badge.rarity] || { label: '?', color: '#888' };
+    slot.innerHTML = '<div class="badges-suggested">' +
+      '\uD83C\uDFAF <strong>Next up:</strong> ' + esc(badge.emoji) + ' ' + esc(badge.name) +
+      ' \u2014 ' + esc(badge.desc) +
+      ' <span class="badges-rarity-badge" style="background:' + esc(rar.color) + ';margin-left:0.5rem;">' + esc(rar.label) + '</span>' +
+    '</div>';
+  }
+
   /* ── Badge card HTML ────────────────────────────────────── */
   function badgeCard(b, earned) {
     var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
     var cat = catMap[b.category] || { name: '?', emoji: '❓', color: '#666' };
     var cls = 'badges-card' + (earned ? ' earned' : ' locked');
+    var shareHtml = earned ? '<button class="badges-share-btn" data-id="' + esc(b.id) + '" aria-label="Share badge">\uD83D\uDCE4</button>' : '';
     return '<div class="' + cls + '" data-id="' + esc(b.id) + '" role="button" tabindex="0"' +
       ' aria-label="' + esc(b.name) + (earned ? ' (earned)' : ' (locked)') + '">' +
+      shareHtml +
       '<span class="badges-emoji">' + esc(b.emoji) + '</span>' +
       '<strong class="badges-name">' + esc(b.name) + '</strong>' +
       '<small class="badges-desc">' + esc(b.desc) + '</small>' +
@@ -182,6 +308,7 @@
     }
 
     grid.innerHTML = html;
+    renderSuggested();
 
     // Update filter button active states
     document.querySelectorAll('.badges-filter').forEach(function (btn) {
@@ -214,11 +341,14 @@
       return;
     }
 
+    var stories = safeGet(STORIES_KEY, {});
     var html = '';
     earnedBadges.forEach(function (b) {
+      var story = stories[b.id] || '';
       html += '<div class="badges-wall-item" title="' + esc(b.name) + '">' +
         '<span class="badges-wall-emoji">' + esc(b.emoji) + '</span>' +
         '<span class="badges-wall-name">' + esc(b.name) + '</span>' +
+        '<div class="badges-story" contenteditable="true" data-id="' + esc(b.id) + '" placeholder="How did you earn this?">' + esc(story) + '</div>' +
       '</div>';
     });
     wall.innerHTML = html;
@@ -315,6 +445,13 @@
 
   /* ── Event delegation for badge cards ───────────────────── */
   function handleCardClick(e) {
+    var shareBtn = e.target.closest('.badges-share-btn');
+    if (shareBtn) {
+      e.stopPropagation();
+      var sid = shareBtn.getAttribute('data-id');
+      if (sid) shareBadge(sid);
+      return;
+    }
     var card = e.target.closest('.badges-card');
     if (!card) return;
     var id = card.getAttribute('data-id');
@@ -361,6 +498,20 @@
     // Daily challenge
     var dailySlot = document.getElementById('daily-challenge');
     if (dailySlot) renderDailyChallenge(dailySlot);
+
+    // Story blur delegation (badge wall)
+    var wall = document.getElementById('badge-wall');
+    if (wall) {
+      wall.addEventListener('focusout', function (e) {
+        if (!e.target.classList.contains('badges-story')) return;
+        var bid = e.target.getAttribute('data-id');
+        if (!bid) return;
+        var stories = safeGet(STORIES_KEY, {});
+        var text = (e.target.textContent || '').trim();
+        if (text) { stories[bid] = text; } else { delete stories[bid]; }
+        safeSet(STORIES_KEY, stories);
+      });
+    }
 
     // Initial renders
     renderAllBadges('all');
