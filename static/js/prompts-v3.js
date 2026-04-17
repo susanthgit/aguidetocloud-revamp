@@ -38,7 +38,6 @@
     platform: '',
     difficulty: '',
     role: '',
-    category: '',       // active category filter (empty = show category grid)
     view: 'list',
     tab: 'browse',
     favorites: []
@@ -50,12 +49,8 @@
     D.search = document.getElementById('prompts-search');
     D.count = document.getElementById('prompts-count');
     D.clear = document.getElementById('prompts-clear');
-    D.catGrid = document.getElementById('prompts-categories');
-    D.listWrapper = document.getElementById('prompts-list-wrapper');
     D.listView = document.getElementById('prompts-list-view');
-    D.gridView = document.getElementById('prompts-grid-view');
     D.empty = document.getElementById('prompts-empty');
-    D.viewBtn = document.getElementById('view-toggle');
     D.potd = document.getElementById('prompts-potd');
     D.favBadge = document.getElementById('fav-badge');
     D.myPrompts = document.getElementById('my-prompts-content');
@@ -69,8 +64,6 @@
     D.filterPlatform = document.getElementById('filter-platform');
     D.filterDifficulty = document.getElementById('filter-difficulty');
     D.filterRole = document.getElementById('filter-role');
-    D.backToCats = document.getElementById('back-to-cats');
-    D.activeCat = document.getElementById('prompts-active-cat');
     D.rows = document.querySelectorAll('#prompts-list-view .prompt-row');
     D.groups = document.querySelectorAll('#prompts-list-view .prompts-category-group');
   }
@@ -114,53 +107,11 @@
         var txt = (p.title + ' ' + p.description + ' ' + p.prompt + ' ' + (p.tags || []).join(' ')).toLowerCase();
         if (txt.indexOf(q) === -1) return false;
       }
-      if (S.category && p.category !== S.category) return false;
       if (S.platform && (p.platforms || []).indexOf(S.platform) === -1) return false;
       if (S.difficulty && p.difficulty !== S.difficulty) return false;
-      if (S.role) {
-        if ((p.roles || []).indexOf(S.role) === -1) return false;
-      }
+      if (S.role && (p.roles || []).indexOf(S.role) === -1) return false;
       return true;
     });
-  }
-
-  // === CATEGORY NAVIGATION ===
-  function showCategoryGrid() {
-    S.category = '';
-    if (D.catGrid) D.catGrid.hidden = false;
-    if (D.listWrapper) D.listWrapper.hidden = true;
-    syncUrl();
-  }
-
-  function showCategory(catSlug) {
-    S.category = catSlug;
-    if (D.catGrid) D.catGrid.hidden = true;
-    if (D.listWrapper) D.listWrapper.hidden = false;
-    // Find category title
-    var catTitle = catSlug;
-    for (var i = 0; i < PROMPTS.length; i++) {
-      if (PROMPTS[i].category === catSlug) { catTitle = PROMPTS[i].categoryEmoji + ' ' + PROMPTS[i].categoryTitle; break; }
-    }
-    if (D.activeCat) D.activeCat.textContent = catTitle;
-    applyFilters();
-    // Open first row in the selected category
-    var firstRow = D.listView && D.listView.querySelector('.prompts-category-group[data-category="' + catSlug + '"] .prompt-row');
-    if (firstRow) {
-      var body = firstRow.querySelector('.prompt-row-body');
-      var arrow = firstRow.querySelector('.prompt-row-arrow');
-      var header = firstRow.querySelector('.prompt-row-header');
-      if (body) body.hidden = false;
-      if (arrow) arrow.textContent = '▾';
-      if (header) header.setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  function showAllPrompts() {
-    S.category = '';
-    if (D.catGrid) D.catGrid.hidden = true;
-    if (D.listWrapper) D.listWrapper.hidden = false;
-    if (D.activeCat) D.activeCat.textContent = 'Search results';
-    applyFilters();
   }
 
   function applyFilters() {
@@ -188,50 +139,11 @@
     // Update grid view
     if (S.view === 'grid') renderGridView(filtered);
 
-    // Count + empty state
-    if (D.count) D.count.textContent = filtered.length;
-    if (D.empty) D.empty.hidden = filtered.length > 0;
-
     // Clear button
     var hasFilters = S.search || S.platform || S.difficulty || S.role;
     if (D.clear) D.clear.hidden = !hasFilters;
 
     syncUrl();
-  }
-
-  // === GRID VIEW ===
-  function renderGridView(prompts) {
-    if (!D.gridView) return;
-    var html = '';
-    for (var i = 0; i < prompts.length; i++) {
-      var p = prompts[i];
-      var isFav = S.favorites.indexOf(p.id) !== -1;
-      var hasVars = /\[[A-Z]/.test(p.prompt);
-      html += '<div class="prompts-card" data-pid="' + esc(p.id) + '">' +
-        '<div class="prompts-card-top">' +
-          '<button class="prompt-fav-btn' + (isFav ? ' active' : '') + '" data-pid="' + esc(p.id) + '" aria-label="Toggle favorite" aria-pressed="' + isFav + '">' + (isFav ? '★' : '☆') + '</button>' +
-          '<span class="prompt-diff-badge" data-level="' + esc(p.difficulty) + '">' + esc(humanize(p.difficulty)) + '</span>' +
-        '</div>' +
-        '<h3 class="prompts-card-title"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a></h3>' +
-        '<p class="prompts-card-desc">' + esc(p.description) + '</p>' +
-        '<div class="prompts-card-actions">' +
-          (hasVars ? '<button class="prompt-customize-btn" data-pid="' + esc(p.id) + '">Customize</button>' : '') +
-          '<button class="prompt-copy-btn" data-pid="' + esc(p.id) + '">Copy</button>' +
-          '<a class="prompt-polish-btn" href="/prompt-polisher/?text=' + encodeURIComponent(p.prompt) + '">Polish</a>' +
-        '</div>' +
-      '</div>';
-    }
-    D.gridView.innerHTML = html;
-  }
-
-  // === VIEW TOGGLE ===
-  function setView(mode) {
-    S.view = mode;
-    if (D.listView) D.listView.hidden = mode !== 'list';
-    if (D.gridView) D.gridView.hidden = mode !== 'grid';
-    if (D.viewBtn) D.viewBtn.innerHTML = mode === 'list' ? '☰ List' : '⊞ Grid';
-    if (mode === 'grid') renderGridView(getFilteredPrompts());
-    saveState();
   }
 
   // === FAVORITES ===
@@ -525,11 +437,9 @@
   function syncUrl() {
     var p = new URLSearchParams();
     if (S.search) p.set('q', S.search);
-    if (S.category) p.set('cat', S.category);
     if (S.platform) p.set('platform', S.platform);
     if (S.difficulty) p.set('difficulty', S.difficulty);
     if (S.role) p.set('role', S.role);
-    if (S.view !== 'list') p.set('view', S.view);
     if (S.tab !== 'browse') p.set('tab', S.tab);
     var str = p.toString();
     history.replaceState(null, '', str ? '?' + str : location.pathname);
@@ -538,65 +448,35 @@
   function readUrl() {
     var p = new URLSearchParams(location.search);
     if (p.get('q') && D.search) { S.search = p.get('q'); D.search.value = S.search; }
-    if (p.get('cat')) S.category = p.get('cat');
     if (p.get('platform')) { S.platform = p.get('platform'); if (D.filterPlatform) D.filterPlatform.value = S.platform; }
     if (p.get('difficulty')) { S.difficulty = p.get('difficulty'); if (D.filterDifficulty) D.filterDifficulty.value = S.difficulty; }
     if (p.get('role')) { S.role = p.get('role'); if (D.filterRole) D.filterRole.value = S.role; }
-    if (p.get('view')) S.view = p.get('view');
     if (p.get('tab')) S.tab = p.get('tab');
   }
 
   // === EVENT BINDING ===
   function bindEvents() {
-    // Search (debounced) — switches to prompt view on type
+    // Search (debounced)
     var searchTimer;
     if (D.search) {
       D.search.addEventListener('input', function () {
         clearTimeout(searchTimer);
         searchTimer = setTimeout(function () {
           S.search = D.search.value.trim();
-          if (S.search) {
-            showAllPrompts();
-          } else if (!S.category) {
-            showCategoryGrid();
-          } else {
-            applyFilters();
-          }
+          applyFilters();
         }, 200);
       });
     }
 
-    // Dropdown filters — switch to prompt view when used
+    // Dropdown filters
     if (D.filterPlatform) D.filterPlatform.addEventListener('change', function () {
-      S.platform = this.value;
-      if (S.platform && !S.category && !S.search) showAllPrompts();
-      else applyFilters();
+      S.platform = this.value; applyFilters();
     });
     if (D.filterDifficulty) D.filterDifficulty.addEventListener('change', function () {
-      S.difficulty = this.value;
-      if (S.difficulty && !S.category && !S.search) showAllPrompts();
-      else applyFilters();
+      S.difficulty = this.value; applyFilters();
     });
     if (D.filterRole) D.filterRole.addEventListener('change', function () {
-      S.role = this.value;
-      if (S.role && !S.category && !S.search) showAllPrompts();
-      else applyFilters();
-    });
-
-    // Back to categories
-    if (D.backToCats) D.backToCats.addEventListener('click', function () {
-      S.search = ''; S.platform = ''; S.difficulty = ''; S.role = '';
-      if (D.search) D.search.value = '';
-      if (D.filterPlatform) D.filterPlatform.value = '';
-      if (D.filterDifficulty) D.filterDifficulty.value = '';
-      if (D.filterRole) D.filterRole.value = '';
-      showCategoryGrid();
-    });
-
-    // Category card clicks
-    if (D.catGrid) D.catGrid.addEventListener('click', function (e) {
-      var card = e.target.closest('.prompts-cat-card');
-      if (card) showCategory(card.dataset.category);
+      S.role = this.value; applyFilters();
     });
 
     // Clear filters
@@ -714,14 +594,7 @@
     renderPOTD();
     readUrl();
     if (S.tab !== 'browse') switchTab(S.tab);
-    // If URL has a category or search, show prompts; otherwise show category grid
-    if (S.category) {
-      showCategory(S.category);
-    } else if (S.search || S.platform || S.difficulty || S.role) {
-      showAllPrompts();
-    }
-    // else: category grid is already visible by default
-    setView(S.view);
+    applyFilters();
     updateFavButtons();
     updateFavBadge();
     bindEvents();

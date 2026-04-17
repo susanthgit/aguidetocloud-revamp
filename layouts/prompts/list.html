@@ -90,95 +90,74 @@
         <select id="filter-role" class="prompts-select" aria-label="Filter by role"></select>
       </div>
 
-      {{/* ── Level 1: Category Cards (default view) ── */}}
-      <div id="prompts-categories" class="prompts-cat-grid">
+      {{/* Results bar */}}
+      <div class="prompts-results-bar">
+        <span>Showing <b id="prompts-count">{{ len $allPrompts }}</b> of {{ len $allPrompts }} prompts</span>
+        <div class="prompts-results-actions">
+          <button class="prompts-clear-btn" id="prompts-clear" hidden>Clear filters</button>
+        </div>
+      </div>
+
+      {{/* Accordion List */}}
+      <div id="prompts-list-view">
+        {{ $firstPrompt := true }}
         {{ range .Sections.ByWeight }}
+          {{ $cat := .File.ContentBaseName }}
           {{ $sectionPrompts := .RegularPages }}
           {{ if gt (len $sectionPrompts) 0 }}
-          <button class="prompts-cat-card" data-category="{{ .File.ContentBaseName }}">
-            <span class="prompts-cat-card-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
-            <span class="prompts-cat-card-name">{{ .Title }}</span>
-            <span class="prompts-cat-card-count">{{ len $sectionPrompts }} prompts</span>
-          </button>
+          <div class="prompts-category-group" data-category="{{ $cat }}">
+            <h2 class="prompts-category-heading">
+              <span class="prompts-category-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
+              {{ .Title }}
+              <span class="prompts-category-count"></span>
+            </h2>
+            {{ range $sectionPrompts }}
+            {{ $prompt := .Params.prompt | default "" }}
+            {{ $platforms := .Params.platforms | default (slice) }}
+            {{ $bestOn := .Params.best_on | default "" }}
+            {{ $difficulty := .Params.difficulty | default "beginner" }}
+            {{ $roles := .Params.roles | default (slice) }}
+            {{ $pid := printf "%s/%s" $cat .File.ContentBaseName }}
+            {{ $hasVars := findRE `\[[A-Z]` $prompt }}
+            <div class="prompt-row"
+                 data-pid="{{ $pid }}"
+                 data-platforms="{{ delimit $platforms " " }}"
+                 data-difficulty="{{ $difficulty }}"
+                 data-roles="{{ delimit $roles " " }}"
+                 data-category="{{ $cat }}"
+                 data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower (.Description | default "") }}">
+              <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="{{ if $firstPrompt }}true{{ else }}false{{ end }}">
+                <button class="prompt-fav-btn" data-pid="{{ $pid }}" aria-label="Toggle favorite" aria-pressed="false">☆</button>
+                <span class="prompt-row-arrow">{{ if $firstPrompt }}▾{{ else }}▸{{ end }}</span>
+                <div class="prompt-row-info">
+                  <span class="prompt-row-title">
+                    {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </span>
+                  {{ with .Description }}<span class="prompt-row-desc">{{ . }}</span>{{ end }}
+                </div>
+                <span class="prompt-diff-badge" data-level="{{ $difficulty }}">{{ $difficulty | title }}</span>
+                <div class="prompt-row-actions">
+                  {{ if $hasVars }}<button class="prompt-customize-btn" data-pid="{{ $pid }}">Customize</button>{{ end }}
+                  <button class="prompt-copy-btn" data-pid="{{ $pid }}">Copy</button>
+                  <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Polish this prompt">Polish</a>
+                </div>
+              </div>
+              <div class="prompt-row-body"{{ if not $firstPrompt }} hidden{{ end }}>
+                <div class="prompt-text">{{ $prompt }}</div>
+              </div>
+            </div>
+            {{ $firstPrompt = false }}
+            {{ end }}
+          </div>
           {{ end }}
         {{ end }}
       </div>
 
-      {{/* ── Level 2: Prompt List (hidden until category selected or search) ── */}}
-      <div id="prompts-list-wrapper" hidden>
-        <div class="prompts-results-bar">
-          <div class="prompts-results-left">
-            <button class="prompts-back-cats" id="back-to-cats">← All Categories</button>
-            <span id="prompts-active-cat" class="prompts-active-cat"></span>
-            <span>· <b id="prompts-count">0</b> prompts</span>
-          </div>
-          <div class="prompts-results-actions">
-            <button class="prompts-view-btn" id="view-toggle" aria-label="Toggle grid view" title="Switch view">☰ List</button>
-            <button class="prompts-clear-btn" id="prompts-clear" hidden>Clear filters</button>
-          </div>
-        </div>
-
-        {{/* List View (server-rendered accordion) */}}
-        <div id="prompts-list-view">
-          {{ range .Sections.ByWeight }}
-            {{ $cat := .File.ContentBaseName }}
-            {{ $sectionPrompts := .RegularPages }}
-            {{ if gt (len $sectionPrompts) 0 }}
-            <div class="prompts-category-group" data-category="{{ $cat }}">
-              <h2 class="prompts-category-heading">
-                <span class="prompts-category-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
-                {{ .Title }}
-                <span class="prompts-category-count"></span>
-              </h2>
-              {{ range $sectionPrompts }}
-              {{ $prompt := .Params.prompt | default "" }}
-              {{ $platforms := .Params.platforms | default (slice) }}
-              {{ $bestOn := .Params.best_on | default "" }}
-              {{ $difficulty := .Params.difficulty | default "beginner" }}
-              {{ $roles := .Params.roles | default (slice) }}
-              {{ $pid := printf "%s/%s" $cat .File.ContentBaseName }}
-              {{ $hasVars := findRE `\[[A-Z]` $prompt }}
-              <div class="prompt-row"
-                   data-pid="{{ $pid }}"
-                   data-platforms="{{ delimit $platforms " " }}"
-                   data-difficulty="{{ $difficulty }}"
-                   data-roles="{{ delimit $roles " " }}"
-                   data-category="{{ $cat }}"
-                   data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower (.Description | default "") }}">
-                <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
-                  <button class="prompt-fav-btn" data-pid="{{ $pid }}" aria-label="Toggle favorite" aria-pressed="false">☆</button>
-                  <span class="prompt-row-arrow">▸</span>
-                  <div class="prompt-row-info">
-                    <span class="prompt-row-title">
-                      {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
-                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </span>
-                    {{ with .Description }}<span class="prompt-row-desc">{{ . }}</span>{{ end }}
-                  </div>
-                  <span class="prompt-diff-badge" data-level="{{ $difficulty }}">{{ $difficulty | title }}</span>
-                  <div class="prompt-row-actions">
-                    {{ if $hasVars }}<button class="prompt-customize-btn" data-pid="{{ $pid }}">Customize</button>{{ end }}
-                    <button class="prompt-copy-btn" data-pid="{{ $pid }}">Copy</button>
-                    <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Polish this prompt">Polish</a>
-                  </div>
-                </div>
-                <div class="prompt-row-body" hidden>
-                  <div class="prompt-text">{{ $prompt }}</div>
-                </div>
-              </div>
-              {{ end }}
-            </div>
-            {{ end }}
-          {{ end }}
-        </div>
-
-        {{/* Grid View (JS-rendered cards) */}}
-        <div id="prompts-grid-view" class="prompts-grid" hidden></div>
-
-        {{/* Empty state */}}
-        <div id="prompts-empty" class="prompts-empty" hidden>
-          <p>No prompts match your filters. Try clearing a filter or different search terms.</p>
-        </div>
+      {{/* Empty state */}}
+      <div id="prompts-empty" class="prompts-empty" hidden>
+        <p>No prompts match your filters. Try clearing a filter or different search terms.</p>
+      </div>
       </div>
     </div>
 
