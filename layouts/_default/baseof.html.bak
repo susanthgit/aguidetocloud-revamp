@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Free Cloud, AI & Microsoft 365 Tools for IT Pros{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ if .Params.images }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {{ else if .Params.youtube_id }}
+  <meta property="og:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  {{ else if eq .RelPermalink "/about/" }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/og/sections/about.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ if .Params.images }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ index .Params.images 0 | strings.TrimPrefix "/" }}">
+  {{ else if .Params.youtube_id }}
+  <meta name="twitter:image" content="https://img.youtube.com/vi/{{ .Params.youtube_id }}/maxresdefault.jpg">
+  {{ else if eq .RelPermalink "/about/" }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og/sections/about.jpg">
+  {{ else }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
+  {{ end }}
+  <meta property="og:locale" content="en_NZ">
+  <meta name="twitter:site" content="@aguidetocloud">
+  <meta name="twitter:creator" content="@susaborealcloud">
+  {{ $ogAlt := printf "%s — %s" (.Title | default .Site.Title) .Site.Title }}
+  <meta property="og:image:alt" content="{{ $ogAlt }}">
+  {{ if .IsPage }}
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
+  {{ with .Section }}<meta property="article:section" content="{{ . | title }}">{{ end }}
+  {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}">{{ end }}
+  {{ end }}
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#030308">
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
+  <link rel="alternate" type="application/rss+xml" title="AI News Feed" href="{{ .Site.BaseURL }}data/ainews/feed.xml">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://i.ytimg.com">
+  {{ partial "seo-jsonld.html" . }}
+  {{ partial "analytics.html" . }}
+</head>
+<body{{ if .IsHome }} class="is-home"{{ else if eq .RelPermalink "/about/" }} class="is-about"{{ else if hasPrefix .RelPermalink "/ai-hub/" }} class="page-ai-hub"{{ else if hasPrefix .RelPermalink "/cloud-labs/" }} class="page-cloud-labs"{{ else if hasPrefix .RelPermalink "/certifications/" }} class="page-certifications"{{ else if hasPrefix .RelPermalink "/exam-qa/" }} class="page-exam-qa"{{ else if hasPrefix .RelPermalink "/interview-prep/" }} class="page-interview-prep"{{ else if hasPrefix .RelPermalink "/music/" }} class="page-music"{{ else if hasPrefix .RelPermalink "/blog/" }} class="page-blog"{{ else if hasPrefix .RelPermalink "/ai-news/" }} class="page-ainews"{{ else if hasPrefix .RelPermalink "/m365-roadmap/" }} class="page-roadmap"{{ else if hasPrefix .RelPermalink "/prompts/" }} class="page-prompts"{{ else if hasPrefix .RelPermalink "/licensing/" }} class="page-licensing"{{ else if hasPrefix .RelPermalink "/prompt-polisher/" }} class="page-polisher"{{ else if hasPrefix .RelPermalink "/copilot-readiness/" }} class="page-readiness"{{ else if hasPrefix .RelPermalink "/copilot-matrix/" }} class="page-copilot-matrix"{{ else if hasPrefix .RelPermalink "/deprecation-timeline/" }} class="page-deptime"{{ else if hasPrefix .RelPermalink "/feedback/" }} class="page-feedback"{{ else if hasPrefix .RelPermalink "/roi-calculator/" }} class="page-roi-calculator"{{ else if hasPrefix .RelPermalink "/ai-mapper/" }} class="page-ai-mapper"{{ else if hasPrefix .RelPermalink "/ai-showdown/" }} class="page-ai-showdown"{{ else if hasPrefix .RelPermalink "/ai-cost-calculator/" }} class="page-ai-cost-calculator"{{ else if hasPrefix .RelPermalink "/ps-builder/" }} class="page-ps-builder"{{ else if hasPrefix .RelPermalink "/migration-planner/" }} class="page-migration-planner"{{ else if hasPrefix .RelPermalink "/prompt-guide/" }} class="page-prompt-guide"{{ else if hasPrefix .RelPermalink "/prompt-lab/" }} class="page-prompt-lab"{{ else if hasPrefix .RelPermalink "/ca-builder/" }} class="page-ca-builder"{{ else if hasPrefix .RelPermalink "/purview-starter/" }} class="page-purview-starter"{{ else if hasPrefix .RelPermalink "/security-toolkit/" }} class="page-security-toolkit"{{ else if hasPrefix .RelPermalink "/agent-365-planner/" }} class="page-agent-365-planner"{{ else if hasPrefix .RelPermalink "/site-analytics/" }} class="page-site-analytics"{{ else if hasPrefix .RelPermalink "/qr-generator/" }} class="page-qr-generator"{{ else if hasPrefix .RelPermalink "/wifi-qr/" }} class="page-wifi-qr"{{ else if hasPrefix .RelPermalink "/password-generator/" }} class="page-password-generator"{{ else if hasPrefix .RelPermalink "/image-compressor/" }} class="page-image-compressor"{{ else if hasPrefix .RelPermalink "/typing-test/" }} class="page-typing-test"{{ else if hasPrefix .RelPermalink "/countdown/" }} class="page-countdown"{{ else if hasPrefix .RelPermalink "/color-palette/" }} class="page-color-palette"{{ else if hasPrefix .RelPermalink "/pomodoro/" }} class="page-pomodoro"{{ else if hasPrefix .RelPermalink "/world-clock/" }} class="page-world-clock"{{ else if hasPrefix .RelPermalink "/admin-bingo/" }} class="page-admin-bingo"{{ else if hasPrefix .RelPermalink "/acronym-battle/" }} class="page-acronym-battle"{{ else if hasPrefix .RelPermalink "/feature-roulette/" }} class="page-feature-roulette"{{ else if hasPrefix .RelPermalink "/rename-tracker/" }} class="page-rename-tracker"{{ else if hasPrefix .RelPermalink "/admin-comms/" }} class="page-admin-comms"{{ else if hasPrefix .RelPermalink "/compliance-passport/" }} class="page-compliance-passport"{{ else if hasPrefix .RelPermalink "/phishing-test/" }} class="page-phishing-test"{{ else if hasPrefix .RelPermalink "/sla-calculator/" }} class="page-sla-calculator"{{ else if hasPrefix .RelPermalink "/admin-badges/" }} class="page-admin-badges"{{ else if hasPrefix .RelPermalink "/policy-tester/" }} class="page-policy-tester"{{ else if hasPrefix .RelPermalink "/incident-comms/" }} class="page-incident-comms"{{ else if hasPrefix .RelPermalink "/cli-quiz/" }} class="page-cli-quiz"{{ else if hasPrefix .RelPermalink "/it-day-sim/" }} class="page-it-day-sim"{{ else if hasPrefix .RelPermalink "/service-health/" }} class="page-service-health"{{ else if hasPrefix .RelPermalink "/cert-compass/" }} class="page-cert-compass"{{ else if hasPrefix .RelPermalink "/cert-tracker/" }} class="page-cert-tracker"{{ else if hasPrefix .RelPermalink "/agent-instructions/" }} class="page-agent-instructions"{{ else if hasPrefix .RelPermalink "/start/" }} class="page-start"{{ else if eq .RelPermalink "/free-tools/" }} class="page-free-tools"{{ end }}>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  {{ partial "nav.html" . }}
+  <main id="main-content" data-pagefind-body>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ if not (hasPrefix .RelPermalink "/feedback/") }}
+  <a href="/feedback/" class="feedback-fab" aria-label="Share feedback" title="Share feedback">💬</a>
+  {{ end }}
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-modal-inner">
+      <button id="search-close" class="search-modal-close" aria-label="Close search">&times;</button>
+      <div id="pagefind-container"></div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/pagefind/pagefind-ui.css"></noscript>
+  <link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/search-overrides.css?v={{ site.Params.cache_version }}"></noscript>
+  <script src="/pagefind/pagefind-ui.js" defer></script>
+  <script src="/js/switcher.js" defer></script>
+  <script src="/js/search-init.js?v={{ site.Params.cache_version }}" defer></script>
+
+  <script src="/js/tool-counter.js?v={{ site.Params.cache_version }}" defer></script>
+  {{ if eq .Section "blog" }}<script src="/js/blog-enhance.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
+  {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js" crossorigin="anonymous" integrity="sha384-rbtjAdnIQE/aQJGEgXrVUlMibdfTSa4PQju4HDhN3sR2PmaKFzhEafuePsl9H/9I"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        darkMode: true,
+        background: 'transparent',
+        fontFamily: '"Inter", sans-serif',
+        fontSize: '14px',
+        primaryColor: '#1e3a5f',
+        primaryTextColor: '#ffffff',
+        primaryBorderColor: '#66ffff',
+        secondaryColor: '#2d1b4e',
+        secondaryTextColor: '#ffffff',
+        secondaryBorderColor: '#b388ff',
+        tertiaryColor: '#1a3a2a',
+        tertiaryTextColor: '#ffffff',
+        tertiaryBorderColor: '#66ff99',
+        lineColor: '#66ffff',
+        textColor: '#e6edf3',
+        mainBkg: '#1e3a5f',
+        nodeBorder: '#66ffff',
+        nodeTextColor: '#ffffff',
+        clusterBkg: '#0d1117',
+        clusterBorder: '#66ffff',
+        titleColor: '#66ffff',
+        edgeLabelBackground: '#0d1117',
+        actorTextColor: '#ffffff',
+        actorBkg: '#1e3a5f',
+        actorBorder: '#66ffff',
+        labelBoxBkgColor: '#1e3a5f',
+        labelBoxBorderColor: '#66ffff',
+        labelTextColor: '#ffffff',
+        noteBkgColor: '#2d1b4e',
+        noteTextColor: '#ffffff',
+        noteBorderColor: '#b388ff',
+        activationBkgColor: '#1e3a5f',
+        activationBorderColor: '#66ffff',
+        cScale0: '#1e3a5f',
+        cScale1: '#2d1b4e',
+        cScale2: '#1a3a2a',
+        cScaleLabel0: '#ffffff',
+        cScaleLabel1: '#ffffff',
+        cScaleLabel2: '#ffffff'
+      },
+      flowchart: { curve: 'basis', padding: 15 }
+    });
+  </script>
+  {{ end }}
+  <button class="global-btt" id="global-btt" aria-label="Back to top">↑</button>
+  <script>
+    (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+  </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(e){console.warn('SW:',e)})}</script>
+</body>
+</html>
