@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "compliance_passport") }}
+<link rel="stylesheet" href="/css/compliance-passport.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Compliance Passport" "subtitle" "Which compliance frameworks apply to your org?" "accent" "#2ECC71") }}
+
+<div class="passport-page">
+  <div class="passport-tabs" role="tablist">
+    <button class="passport-tab active" role="tab" aria-selected="true" data-tab="quiz">Assessment</button>
+    <button class="passport-tab" role="tab" aria-selected="false" data-tab="passport">My Passport</button>
+    <button class="passport-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="passport-panel active" id="panel-quiz">
+    <div class="passport-disclaimer">
+      ⚠️ This tool provides <strong>general guidance only</strong> — not legal advice. Always consult your legal and compliance teams.
+    </div>
+    <div class="passport-presets">
+      <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-right:0.5rem">Quick start:</span>
+      <button class="passport-preset" data-preset="healthcare">Healthcare</button>
+      <button class="passport-preset" data-preset="financial">Financial</button>
+      <button class="passport-preset" data-preset="education">Education</button>
+      <button class="passport-preset" data-preset="government">Government</button>
+      <button class="passport-preset" data-preset="anz_enterprise">ANZ Enterprise</button>
+    </div>
+    <div class="passport-quiz" id="passport-quiz"></div>
+    <div class="passport-quiz-actions" id="quiz-actions" style="display:none">
+      <button class="passport-btn passport-btn-primary" id="btn-generate">Generate My Passport</button>
+    </div>
+  </div>
+
+  <div class="passport-panel" id="panel-passport">
+    <div class="passport-result" id="passport-result">
+      <p style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem">Complete the assessment first to see your compliance passport.</p>
+    </div>
+  </div>
+
+  <div class="passport-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "compliance-passport") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__passportData = {
+  frameworks: {{ $data.frameworks | jsonify | safeJS }},
+  questions: {{ $data.questions | jsonify | safeJS }}
+};
+</script>
+<script defer src="/js/compliance-passport.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

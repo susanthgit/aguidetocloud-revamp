@@ -1,0 +1,149 @@
+/* ============================================================================
+   Tech Acronym Battle — .acro-* namespace
+   Accent: #9B59B6 (Amethyst)
+   ============================================================================ */
+:root { --acro-accent: #9B59B6; }
+
+.acro-page { max-width: 650px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+.acro-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.acro-tab {
+  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
+  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+}
+.acro-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.acro-tab.active {
+  color: #fff; background: var(--acro-accent); border-color: var(--acro-accent);
+  box-shadow: 0 2px 8px rgba(155,89,182,0.3);
+}
+.acro-panel { display: none; }
+.acro-panel.active { display: block; }
+
+/* ── Mode bar ─────────────────────────────────────────────────────────────── */
+.acro-mode-bar {
+  display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center;
+}
+.acro-mode {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6); padding: 0.45rem 0.9rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: all 0.2s;
+}
+.acro-mode:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.acro-mode.active { color: #fff; background: var(--acro-accent); border-color: var(--acro-accent); }
+.acro-cat-select {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7); padding: 0.45rem; border-radius: 8px; font-size: 0.8rem;
+  margin-left: auto;
+}
+.acro-cat-select option { background: #0a0a14; color: #fff; }
+
+/* ── Start screen ─────────────────────────────────────────────────────────── */
+.acro-start { text-align: center; padding: 2rem 0; }
+.acro-start-text { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 1rem; }
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.acro-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8); padding: 0.6rem 1.2rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;
+}
+.acro-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.acro-btn-primary {
+  background: var(--acro-accent); color: #fff; border-color: var(--acro-accent); font-weight: 600;
+}
+.acro-btn-primary:hover { box-shadow: 0 2px 12px rgba(155,89,182,0.4); }
+
+/* ── HUD ──────────────────────────────────────────────────────────────────── */
+.acro-hud {
+  display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.6); font-size: 0.9rem;
+}
+.acro-hud strong { color: var(--acro-accent); }
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.acro-card {
+  text-align: center; padding: 2rem; margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.acro-acronym {
+  font-size: 3rem; font-weight: 800; color: #fff; letter-spacing: 4px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+.acro-category-badge {
+  margin-top: 0.5rem; display: inline-block; padding: 0.2rem 0.7rem;
+  background: rgba(155,89,182,0.15); border: 1px solid rgba(155,89,182,0.3);
+  border-radius: 20px; font-size: 0.75rem; color: var(--acro-accent); text-transform: uppercase;
+}
+
+/* ── Options ──────────────────────────────────────────────────────────────── */
+.acro-timer-bar {
+  height: 4px; width: 100%; border-radius: 2px;
+  background: rgba(255,255,255,0.1); margin-bottom: 1rem; overflow: hidden;
+}
+.acro-timer-fill {
+  height: 100%; width: 100%; border-radius: 2px;
+  background: linear-gradient(90deg, var(--acro-accent), #E74C3C);
+}
+.acro-learn-answer {
+  text-align: center; padding: 1.5rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+.acro-options { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+.acro-option {
+  padding: 0.8rem 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+  color: rgba(255,255,255,0.8); cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s; text-align: left;
+}
+.acro-option:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff; }
+.acro-option.correct { background: rgba(46,204,113,0.2); border-color: #2ECC71; color: #2ECC71; }
+.acro-option.wrong { background: rgba(231,76,60,0.2); border-color: #E74C3C; color: #E74C3C; }
+.acro-option.disabled { pointer-events: none; opacity: 0.5; }
+
+/* ── Feedback ─────────────────────────────────────────────────────────────── */
+.acro-feedback {
+  text-align: center; padding: 1rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-top: 1rem;
+}
+.acro-feedback-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.acro-feedback-answer { color: #fff; font-weight: 600; margin-bottom: 0.3rem; }
+.acro-feedback-explanation { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 0.8rem; }
+
+/* ── Results ──────────────────────────────────────────────────────────────── */
+.acro-results { text-align: center; padding: 2rem 0; }
+.acro-results-score { font-size: 2.5rem; font-weight: 800; color: var(--acro-accent); margin-bottom: 0.5rem; }
+.acro-results-detail { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.8; }
+.acro-results-actions { display: flex; gap: 0.5rem; justify-content: center; }
+
+/* ── Stats ────────────────────────────────────────────────────────────────── */
+.acro-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+.acro-stat-card {
+  text-align: center; padding: 1.2rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+}
+.acro-stat-num { font-size: 1.8rem; font-weight: 700; color: var(--acro-accent); }
+.acro-stat-label { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 0.3rem; }
+
+/* ── FAQ ──────────────────────────────────────────────────────────────────── */
+.acro-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.acro-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.acro-panel details p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
+@media (max-width: 480px) {
+  .acro-acronym { font-size: 2.2rem; }
+  .acro-mode-bar { justify-content: center; }
+  .acro-cat-select { margin-left: 0; width: 100%; }
+}

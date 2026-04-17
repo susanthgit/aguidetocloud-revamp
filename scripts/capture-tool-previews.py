@@ -40,6 +40,16 @@ TOOLS = [
     ("pomodoro", "/pomodoro/"),
     ("purview-starter", "/purview-starter/"),
     ("agent-365-planner", "/agent-365-planner/"),
+    ("admin-bingo", "/admin-bingo/"),
+    ("acronym-battle", "/acronym-battle/"),
+    ("feature-roulette", "/feature-roulette/"),
+    ("rename-tracker", "/rename-tracker/"),
+    ("admin-comms", "/admin-comms/"),
+    ("compliance-passport", "/compliance-passport/"),
+    ("phishing-test", "/phishing-test/"),
+    ("ai-cost-calculator", "/ai-cost-calculator/"),
+    ("security-toolkit", "/security-toolkit/"),
+    ("site-analytics", "/site-analytics/"),
 ]
 
 WIDTH = 1280

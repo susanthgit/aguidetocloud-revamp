@@ -1,0 +1,90 @@
+/* ============================================================================
+   M365 Feature Roulette — .roulette-* namespace
+   Accent: #F39C12 (Marigold)
+   ============================================================================ */
+:root { --roulette-accent: #F39C12; }
+
+.roulette-page { max-width: 650px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+.roulette-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.roulette-tab {
+  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
+  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+}
+.roulette-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.roulette-tab.active {
+  color: #000; background: var(--roulette-accent); border-color: var(--roulette-accent);
+  box-shadow: 0 2px 8px rgba(243,156,18,0.3);
+}
+.roulette-panel { display: none; }
+.roulette-panel.active { display: block; }
+
+.roulette-controls {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; align-items: center;
+}
+.roulette-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8); padding: 0.55rem 1rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;
+}
+.roulette-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.roulette-btn-primary {
+  background: var(--roulette-accent); color: #000; border-color: var(--roulette-accent); font-weight: 700;
+}
+.roulette-btn-primary:hover { box-shadow: 0 2px 12px rgba(243,156,18,0.4); }
+.roulette-btn-knew { border-color: #2ECC71; color: #2ECC71; }
+.roulette-btn-knew:hover { background: rgba(46,204,113,0.15); }
+.roulette-btn-new { border-color: var(--roulette-accent); color: var(--roulette-accent); }
+.roulette-btn-new:hover { background: rgba(243,156,18,0.15); }
+.roulette-select {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7); padding: 0.55rem; border-radius: 8px; font-size: 0.85rem;
+}
+.roulette-select option { background: #0a0a14; color: #fff; }
+.roulette-score-pill {
+  margin-left: auto; padding: 0.4rem 0.8rem; border-radius: 20px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.8rem; color: rgba(255,255,255,0.5);
+}
+.roulette-score-pill span { color: var(--roulette-accent); font-weight: 600; }
+
+.roulette-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 1.5rem; text-align: center;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  animation: roulette-fadein 0.3s ease;
+}
+@keyframes roulette-fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.roulette-card-product {
+  display: inline-block; padding: 0.2rem 0.7rem; border-radius: 20px;
+  background: rgba(243,156,18,0.15); border: 1px solid rgba(243,156,18,0.3);
+  font-size: 0.75rem; color: var(--roulette-accent); text-transform: uppercase;
+  margin-bottom: 0.8rem; font-weight: 600;
+}
+.roulette-card-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; line-height: 1.4; }
+.roulette-card-desc { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
+.roulette-card-meta { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.roulette-meta-badge {
+  padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+}
+.roulette-card-actions { display: flex; gap: 0.5rem; justify-content: center; }
+
+.roulette-empty { text-align: center; padding: 3rem 1rem; color: rgba(255,255,255,0.4); }
+.roulette-empty-sub { font-size: 0.8rem; margin-top: 0.5rem; }
+
+.roulette-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.roulette-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.roulette-panel details p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
+@media (max-width: 480px) {
+  .roulette-score-pill { margin-left: 0; width: 100%; text-align: center; }
+}

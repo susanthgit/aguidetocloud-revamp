@@ -1,0 +1,90 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "phishing_test") }}
+{{ $scenarios := $data.scenarios }}
+<link rel="stylesheet" href="/css/phishing-test.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Is This Phishing?" "subtitle" "Can you spot the fakes? Test your skills." "accent" "#E74C3C") }}
+
+<div class="phish-page">
+  <div class="phish-tabs" role="tablist">
+    <button class="phish-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
+    <button class="phish-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="phish-panel active" id="panel-play">
+    <!-- Start -->
+    <div class="phish-start" id="phish-start">
+      <p class="phish-start-text">You'll see realistic email scenarios. Decide: <strong>Phishing</strong>, <strong>Legit</strong>, or <strong>Verify</strong>.</p>
+      <div class="phish-diff-bar">
+        <button class="phish-diff active" data-diff="all">All Levels</button>
+        <button class="phish-diff" data-diff="1">Easy</button>
+        <button class="phish-diff" data-diff="2">Medium</button>
+        <button class="phish-diff" data-diff="3">Expert</button>
+      </div>
+      <button class="phish-btn phish-btn-primary" id="btn-start">Start Test</button>
+      <button class="phish-btn" id="btn-daily">📅 Daily Challenge</button>
+    </div>
+
+    <!-- Game -->
+    <div class="phish-game" id="phish-game" style="display:none">
+      <div class="phish-hud">
+        <span>Score: <strong id="hud-score">0</strong></span>
+        <span>Q: <strong id="hud-progress">1/10</strong></span>
+        <span>Streak: <strong id="hud-streak">0</strong>🔥</span>
+      </div>
+
+      <div class="phish-email" id="phish-email">
+        <div class="phish-email-header">
+          <div class="phish-email-from"><span class="phish-label">From:</span> <span id="email-from"></span></div>
+          <div class="phish-email-addr"><span id="email-addr"></span></div>
+          <div class="phish-email-subject"><span class="phish-label">Subject:</span> <span id="email-subject"></span></div>
+        </div>
+        <div class="phish-email-body" id="email-body"></div>
+      </div>
+
+      <div class="phish-choices" id="phish-choices">
+        <button class="phish-choice phish-choice-phishing" data-answer="phishing">🎣 Phishing</button>
+        <button class="phish-choice phish-choice-legit" data-answer="legit">✅ Legit</button>
+        <button class="phish-choice phish-choice-verify" data-answer="verify">🔍 Verify</button>
+      </div>
+
+      <div class="phish-feedback" id="phish-feedback" style="display:none">
+        <div class="phish-feedback-verdict" id="feedback-verdict"></div>
+        <div class="phish-feedback-explanation" id="feedback-explanation"></div>
+        <div class="phish-feedback-flags" id="feedback-flags"></div>
+        <button class="phish-btn phish-btn-primary" id="btn-next">Next →</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="phish-results" id="phish-results" style="display:none">
+      <div class="phish-results-score" id="results-score"></div>
+      <div class="phish-results-detail" id="results-detail"></div>
+      <div class="phish-results-actions">
+        <button class="phish-btn phish-btn-primary" id="btn-retry">Try Again</button>
+        <button class="phish-btn" id="btn-share">Share Score</button>
+        <button class="phish-btn" id="btn-share-card">📸 Download Card</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="phish-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "phishing-test") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__phishScenarios = {{ $scenarios | jsonify | safeJS }};
+</script>
+<script defer src="/js/phishing-test.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

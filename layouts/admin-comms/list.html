@@ -1,0 +1,66 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "admin_comms") }}
+{{ $templates := $data.templates }}
+<link rel="stylesheet" href="/css/admin-comms.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "IT Admin Comms Templates" "subtitle" "Professional emails in seconds, not hours" "accent" "#5B9BD5") }}
+
+<div class="comms-page">
+  <div class="comms-tabs" role="tablist">
+    <button class="comms-tab active" role="tab" aria-selected="true" data-tab="templates">Templates</button>
+    <button class="comms-tab" role="tab" aria-selected="false" data-tab="editor">Editor</button>
+    <button class="comms-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="comms-panel active" id="panel-templates">
+    <div class="comms-filter-row">
+      <select class="comms-select" id="cat-filter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="maintenance">Maintenance</option>
+        <option value="security">Security</option>
+        <option value="changes">Changes</option>
+        <option value="incidents">Incidents</option>
+        <option value="onboarding">Onboarding</option>
+        <option value="helpdesk">Helpdesk</option>
+      </select>
+    </div>
+    <div class="comms-grid" id="comms-grid"></div>
+  </div>
+
+  <div class="comms-panel" id="panel-editor">
+    <div class="comms-editor-wrap">
+      <div class="comms-editor-header">
+        <h3 id="editor-title" style="color:#fff;margin:0">Select a template first</h3>
+        <span class="comms-editor-cat" id="editor-cat"></span>
+      </div>
+      <p class="comms-editor-hint" id="editor-hint"></p>
+      <div class="comms-placeholders" id="editor-placeholders"></div>
+      <div class="comms-preview" id="editor-preview"></div>
+      <div class="comms-copy-row">
+        <button class="comms-btn comms-btn-primary" id="btn-copy-plain">Copy Plain Text</button>
+        <button class="comms-btn" id="btn-copy-md">Copy Markdown</button>
+        <button class="comms-btn" id="btn-outlook">📧 Open in Outlook</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="comms-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "admin-comms") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__commsTemplates = {{ $templates | jsonify | safeJS }};
+</script>
+<script defer src="/js/admin-comms.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

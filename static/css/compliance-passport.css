@@ -1,0 +1,110 @@
+/* ============================================================================
+   Compliance Passport — .passport-* namespace
+   Accent: #2ECC71 (Emerald Green)
+   ============================================================================ */
+:root { --passport-accent: #2ECC71; }
+.passport-page { max-width: 700px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+.passport-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.passport-tab {
+  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
+  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+}
+.passport-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.passport-tab.active {
+  color: #000; background: var(--passport-accent); border-color: var(--passport-accent);
+  box-shadow: 0 2px 8px rgba(46,204,113,0.3);
+}
+.passport-panel { display: none; }
+.passport-panel.active { display: block; }
+
+.passport-disclaimer {
+  background: rgba(243,156,18,0.1); border: 1px solid rgba(243,156,18,0.3);
+  border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1rem;
+  color: rgba(255,255,255,0.7); font-size: 0.85rem;
+}
+.passport-presets {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.passport-preset {
+  background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.25);
+  color: var(--passport-accent); padding: 0.35rem 0.7rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: all 0.2s;
+}
+.passport-preset:hover {
+  background: rgba(46,204,113,0.2); border-color: var(--passport-accent);
+}
+
+.passport-q-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; margin-bottom: 0.8rem;
+}
+.passport-q-text { color: #fff; font-weight: 600; margin-bottom: 0.6rem; font-size: 0.95rem; }
+.passport-q-num { color: var(--passport-accent); font-size: 0.75rem; margin-bottom: 0.3rem; }
+.passport-q-options { display: flex; flex-direction: column; gap: 0.4rem; }
+.passport-q-opt {
+  display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; cursor: pointer; transition: all 0.2s;
+  color: rgba(255,255,255,0.7); font-size: 0.85rem;
+}
+.passport-q-opt:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.passport-q-opt.selected { background: rgba(46,204,113,0.15); border-color: var(--passport-accent); color: #fff; }
+.passport-q-opt input { display: none; }
+
+.passport-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8); padding: 0.6rem 1.2rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+}
+.passport-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.passport-btn-primary { background: var(--passport-accent); color: #000; border-color: var(--passport-accent); font-weight: 700; }
+.passport-btn-primary:hover { box-shadow: 0 2px 12px rgba(46,204,113,0.4); }
+
+.passport-quiz-actions { text-align: center; margin-top: 1rem; }
+
+/* Result cards */
+.passport-card {
+  background: rgba(255,255,255,0.04); border-radius: 12px; padding: 1.2rem;
+  margin-bottom: 0.8rem; border-left: 3px solid rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.passport-card.likely { border-left-color: var(--passport-accent); }
+.passport-card.possibly { border-left-color: #F39C12; }
+.passport-card.unlikely { border-left-color: rgba(255,255,255,0.15); }
+.passport-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.passport-card-name { font-weight: 700; color: #fff; font-size: 1rem; }
+.passport-card-badge {
+  padding: 0.15rem 0.5rem; border-radius: 10px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+}
+.passport-card-badge.likely { background: rgba(46,204,113,0.2); color: var(--passport-accent); }
+.passport-card-badge.possibly { background: rgba(243,156,18,0.2); color: #F39C12; }
+.passport-card-badge.unlikely { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4); }
+.passport-card-region { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-bottom: 0.3rem; }
+.passport-card-desc { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 0.6rem; }
+.passport-card-features { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.passport-feature-pill {
+  padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.7rem;
+  background: rgba(46,204,113,0.1); color: rgba(46,204,113,0.8);
+  text-decoration: none; transition: all 0.2s; cursor: pointer;
+}
+.passport-feature-pill:hover {
+  background: rgba(46,204,113,0.2); color: #2ECC71; text-decoration: underline;
+}
+.passport-card-link { color: var(--passport-accent); font-size: 0.8rem; text-decoration: none; display: inline-block; margin-top: 0.4rem; }
+.passport-card-link:hover { text-decoration: underline; }
+
+.passport-result-actions { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1.5rem; }
+
+.passport-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.passport-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.passport-panel details p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }

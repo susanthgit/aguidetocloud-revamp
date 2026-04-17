@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "rename_tracker") }}
+{{ $products := $data.products }}
+<link rel="stylesheet" href="/css/rename-tracker.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "What Did They Call It Now?" "subtitle" "Track every Microsoft product rename in one place" "accent" "#B07D4F") }}
+
+<div class="rename-page">
+  <div class="rename-tabs" role="tablist">
+    <button class="rename-tab active" role="tab" aria-selected="true" data-tab="search">Search</button>
+    <button class="rename-tab" role="tab" aria-selected="false" data-tab="leaderboard">Most Renamed</button>
+    <button class="rename-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="rename-panel active" id="panel-search">
+    <div class="rename-search-box">
+      <input type="text" id="rename-search" class="rename-input" placeholder="Search any product name (old or new)..." aria-label="Search product names">
+      <select class="rename-select" id="cat-filter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="identity">Identity</option>
+        <option value="security">Security</option>
+        <option value="compliance">Compliance</option>
+        <option value="productivity">Productivity</option>
+        <option value="management">Management</option>
+        <option value="ai">AI</option>
+        <option value="data">Data</option>
+        <option value="platform">Platform</option>
+      </select>
+    </div>
+    <div class="rename-count" id="rename-count"></div>
+    <div class="rename-results" id="rename-results"></div>
+  </div>
+
+  <div class="rename-panel" id="panel-leaderboard">
+    <div class="rename-leaderboard" id="rename-leaderboard"></div>
+  </div>
+
+  <div class="rename-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "rename-tracker") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__renameProducts = {{ $products | jsonify | safeJS }};
+</script>
+<script defer src="/js/rename-tracker.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

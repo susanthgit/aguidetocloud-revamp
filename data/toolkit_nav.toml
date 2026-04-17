@@ -360,6 +360,83 @@ visual = "circles"
 is_tool = true
 
 [[tools]]
+url = "/admin-bingo/"
+emoji = "🎯"
+name = "IT Admin Bingo"
+short = "Bingo"
+desc = "Relatable IT admin scenario bingo — daily cards, print & share"
+color = "#E91E8E"
+category = "community"
+visual = "blocks"
+is_tool = true
+
+[[tools]]
+url = "/acronym-battle/"
+emoji = "🧠"
+name = "Tech Acronym Battle"
+short = "Acronyms"
+desc = "Test your IT acronym knowledge — timed quiz with streaks"
+color = "#9B59B6"
+category = "community"
+visual = "scatter"
+is_tool = true
+
+[[tools]]
+url = "/feature-roulette/"
+emoji = "🎰"
+name = "M365 Feature Roulette"
+short = "Roulette"
+desc = "Discover M365 features you never knew existed"
+color = "#F39C12"
+category = "informed"
+visual = "timeline"
+is_tool = true
+
+[[tools]]
+url = "/rename-tracker/"
+emoji = "🔄"
+name = "Rename Tracker"
+short = "Renames"
+desc = "Track every Microsoft product rename in one place"
+color = "#B07D4F"
+category = "informed"
+visual = "timeline"
+is_tool = true
+
+[[tools]]
+url = "/admin-comms/"
+emoji = "📧"
+name = "IT Admin Comms"
+short = "Comms"
+desc = "Ready-made email templates for M365 admins"
+color = "#5B9BD5"
+category = "admin"
+visual = "lines"
+is_tool = true
+
+[[tools]]
+url = "/compliance-passport/"
+emoji = "📋"
+name = "Compliance Passport"
+short = "Compliance"
+desc = "Which compliance frameworks apply to your org?"
+color = "#2ECC71"
+category = "admin"
+visual = "grid"
+is_tool = true
+
+[[tools]]
+url = "/phishing-test/"
+emoji = "🎣"
+name = "Phishing Simulator"
+short = "Phishing"
+desc = "Spot the fakes — 30 realistic email scenarios"
+color = "#E74C3C"
+category = "admin"
+visual = "blocks"
+is_tool = true
+
+[[tools]]
 url = "/site-analytics/"
 emoji = "📊"
 name = "Site Analytics"

@@ -1,0 +1,385 @@
+# ============================================================================
+# IT Admin Bingo — Scenario Squares
+# ============================================================================
+# 75 squares across 5 tags. Bingo card picks 24 random + 1 FREE center.
+# Each square has a stable ID for seeded/shareable cards.
+
+[[squares]]
+id = "pwd-reset-5"
+text = "Someone asks to reset their password for the 5th time today"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "vpn-wfh"
+text = "VPN stops working right when everyone goes remote"
+tags = ["network"]
+
+[[squares]]
+id = "ceo-phish"
+text = "CEO clicks a phishing link"
+tags = ["security"]
+
+[[squares]]
+id = "teams-cache"
+text = "Fix a Teams issue by clearing the cache"
+tags = ["m365"]
+
+[[squares]]
+id = "mfa-lockout"
+text = "User locks themselves out of MFA"
+tags = ["security"]
+
+[[squares]]
+id = "rename-again"
+text = "Microsoft renames a product... again"
+tags = ["m365"]
+
+[[squares]]
+id = "printer-fire"
+text = "Printer spontaneously stops working on a Monday"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "sev1-friday"
+text = "Critical outage at 4:55 PM on a Friday"
+tags = ["incidents"]
+
+[[squares]]
+id = "reply-all"
+text = "Company-wide Reply All storm"
+tags = ["m365"]
+
+[[squares]]
+id = "shared-mbx"
+text = "Someone wants access to a shared mailbox... of someone who left 3 years ago"
+tags = ["m365"]
+
+[[squares]]
+id = "not-my-job"
+text = "\"That's not an IT issue\" (it absolutely is)"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "copilot-hallucinate"
+text = "Copilot confidently makes up a feature that doesn't exist"
+tags = ["ai"]
+
+[[squares]]
+id = "wifi-password"
+text = "Guest asks for the WiFi password you just emailed them"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "onedrive-full"
+text = "User's OneDrive is full of personal photos"
+tags = ["m365"]
+
+[[squares]]
+id = "admin-portal-5"
+text = "You need 5 different admin portals to complete one task"
+tags = ["m365"]
+
+[[squares]]
+id = "update-breaks"
+text = "A Microsoft update breaks something that was working fine"
+tags = ["incidents"]
+
+[[squares]]
+id = "msg-center-100"
+text = "100+ unread Message Center notifications"
+tags = ["m365"]
+
+[[squares]]
+id = "cant-print"
+text = "\"I can't print\" — it's not plugged in"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "sharepoint-perm"
+text = "SharePoint permissions make no sense to anyone"
+tags = ["m365"]
+
+[[squares]]
+id = "licence-audit"
+text = "Licence audit reveals 50+ unused Copilot seats"
+tags = ["m365"]
+
+[[squares]]
+id = "sticky-note-pwd"
+text = "Find a password written on a sticky note"
+tags = ["security"]
+
+[[squares]]
+id = "teams-meeting-echo"
+text = "Audio echo in a Teams meeting nobody can fix"
+tags = ["m365"]
+
+[[squares]]
+id = "ca-lockout"
+text = "Conditional Access policy locks out the entire company"
+tags = ["security"]
+
+[[squares]]
+id = "usb-found"
+text = "Someone plugs in a random USB they found in the car park"
+tags = ["security"]
+
+[[squares]]
+id = "midnight-deploy"
+text = "\"We'll do the migration over the weekend\" — it takes until Wednesday"
+tags = ["incidents"]
+
+[[squares]]
+id = "vendor-blame"
+text = "Vendor blames Microsoft, Microsoft blames the vendor"
+tags = ["incidents"]
+
+[[squares]]
+id = "ciso-panic"
+text = "CISO asks about a vulnerability they saw on LinkedIn"
+tags = ["security"]
+
+[[squares]]
+id = "test-prod"
+text = "Someone deploys to production instead of test"
+tags = ["incidents"]
+
+[[squares]]
+id = "teams-down"
+text = "Teams goes down during a board meeting"
+tags = ["incidents"]
+
+[[squares]]
+id = "personal-email"
+text = "User forwards company data to their personal Gmail"
+tags = ["security"]
+
+[[squares]]
+id = "outlook-rules"
+text = "Mailbox has 47 rules and nobody knows what they do"
+tags = ["m365"]
+
+[[squares]]
+id = "group-everyone"
+text = "Someone adds 'Everyone' to a SharePoint site"
+tags = ["security"]
+
+[[squares]]
+id = "new-starter-no-ticket"
+text = "New starter arrives on Monday — IT finds out on Monday"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "vpn-split"
+text = "\"Can I use VPN and Netflix at the same time?\""
+tags = ["network"]
+
+[[squares]]
+id = "dlp-block"
+text = "DLP policy blocks a legitimate business email"
+tags = ["security"]
+
+[[squares]]
+id = "retention-panic"
+text = "Someone deletes a file and expects IT to recover it from 6 months ago"
+tags = ["m365"]
+
+[[squares]]
+id = "byod-malware"
+text = "Personal device on corporate WiFi has malware"
+tags = ["security"]
+
+[[squares]]
+id = "azure-bill"
+text = "Azure bill is 3x higher than expected"
+tags = ["incidents"]
+
+[[squares]]
+id = "phish-report"
+text = "User reports a real Microsoft email as phishing"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "browser-tabs-200"
+text = "User has 200+ browser tabs and wonders why their laptop is slow"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "teams-channel-1000"
+text = "Team has 40+ channels and nobody can find anything"
+tags = ["m365"]
+
+[[squares]]
+id = "copilot-prompt-lazy"
+text = "User's Copilot prompt is just \"do the thing\""
+tags = ["ai"]
+
+[[squares]]
+id = "power-automate-loop"
+text = "Power Automate flow creates an infinite email loop"
+tags = ["incidents"]
+
+[[squares]]
+id = "sensitivity-label"
+text = "User marks everything as 'Highly Confidential' including lunch menus"
+tags = ["security"]
+
+[[squares]]
+id = "guest-access"
+text = "External guest has more access than internal staff"
+tags = ["security"]
+
+[[squares]]
+id = "expired-cert"
+text = "SSL certificate expires and nobody noticed"
+tags = ["incidents"]
+
+[[squares]]
+id = "global-admin"
+text = "Someone who doesn't need it has Global Admin"
+tags = ["security"]
+
+[[squares]]
+id = "reboot-fix"
+text = "\"Have you tried turning it off and on again?\" — it actually works"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "migration-delay"
+text = "Migration timeline slips by 3 months"
+tags = ["incidents"]
+
+[[squares]]
+id = "copilot-meeting"
+text = "Copilot meeting recap attributes the wrong quote to the CEO"
+tags = ["ai"]
+
+[[squares]]
+id = "intune-compliant"
+text = "Device is non-compliant but user insists they changed nothing"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "sp-classic"
+text = "Classic SharePoint site discovered that nobody owns"
+tags = ["m365"]
+
+[[squares]]
+id = "teams-gif"
+text = "Important message buried under 47 GIF reactions"
+tags = ["m365"]
+
+[[squares]]
+id = "entra-rename"
+text = "You forget it's called Entra now and say Azure AD"
+tags = ["m365"]
+
+[[squares]]
+id = "ai-replace"
+text = "\"Will AI replace the IT team?\" — asked at every meeting"
+tags = ["ai"]
+
+[[squares]]
+id = "offboard-miss"
+text = "Former employee still has access 3 months after leaving"
+tags = ["security"]
+
+[[squares]]
+id = "macro-blocked"
+text = "User can't open a macro-enabled Excel file from 2009"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "copilot-budget"
+text = "CFO asks for Copilot ROI after 2 weeks"
+tags = ["ai"]
+
+[[squares]]
+id = "onprem-legacy"
+text = "Critical business process runs on a server from 2012"
+tags = ["incidents"]
+
+[[squares]]
+id = "powershell-fear"
+text = "Someone is scared to run a PowerShell command because it looks like hacking"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "change-mgmt"
+text = "Users revolt against a change that was communicated 6 months ago"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "bandwidth-zoom"
+text = "Bandwidth drops because half the office is in different video calls"
+tags = ["network"]
+
+[[squares]]
+id = "backup-test"
+text = "Backup exists but nobody tested the restore"
+tags = ["incidents"]
+
+[[squares]]
+id = "copilot-agent-sprawl"
+text = "50 Copilot agents created in a week with zero governance"
+tags = ["ai"]
+
+[[squares]]
+id = "audit-log-gone"
+text = "Audit log retention expired the day before you need it"
+tags = ["security"]
+
+[[squares]]
+id = "sso-break"
+text = "SSO breaks and every app goes down at once"
+tags = ["incidents"]
+
+[[squares]]
+id = "shadow-it"
+text = "Department secretly signed up for their own SaaS tool"
+tags = ["security"]
+
+[[squares]]
+id = "ceo-ipad"
+text = "Executive demands IT support for their personal iPad"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "purview-label"
+text = "Sensitivity labels prevent someone from sharing their own document"
+tags = ["m365"]
+
+[[squares]]
+id = "teams-private"
+text = "Private Teams channel used to gossip about management"
+tags = ["m365"]
+
+[[squares]]
+id = "outlook-search"
+text = "\"Outlook search doesn't work\" — it never has"
+tags = ["m365"]
+
+[[squares]]
+id = "copilot-wrong-doc"
+text = "Copilot references a confidential document in a summary it shouldn't"
+tags = ["ai"]
+
+[[squares]]
+id = "mfa-new-phone"
+text = "User got a new phone and didn't transfer their authenticator"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "ticket-urgent"
+text = "Every ticket is marked URGENT"
+tags = ["helpdesk"]
+
+[[squares]]
+id = "dns-always"
+text = "It's always DNS"
+tags = ["network"]
+
+[[squares]]
+id = "service-health-lie"
+text = "Service Health says 'Healthy' while everything is on fire"
+tags = ["incidents"]

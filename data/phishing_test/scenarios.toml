@@ -1,0 +1,365 @@
+# ============================================================================
+# Phishing Simulator — 30 email scenarios
+# ============================================================================
+# verdict: phishing | legit | verify
+# difficulty: 1 (obvious) | 2 (moderate) | 3 (expert)
+
+[[scenarios]]
+id = "ceo-wire"
+difficulty = 1
+verdict = "phishing"
+sender_name = "John Smith (CEO)"
+sender_email = "john.smith@c0ntoso.com"
+subject = "URGENT: Wire Transfer Needed Today"
+preview = "I need you to process an urgent wire transfer. This is confidential..."
+body = "Hi,\n\nI'm in a meeting and can't talk right now. I need you to urgently process a wire transfer of $47,500 to a new vendor. I'll explain later.\n\nPlease keep this confidential — don't discuss with anyone else until it's done.\n\nThanks,\nJohn Smith\nCEO"
+red_flags = ["Urgency pressure ('URGENT', 'today')", "Confidentiality pressure ('don't discuss with anyone')", "CEO impersonation from misspelled domain (c0ntoso vs contoso)", "Unusual request — CEO asking for wire transfers directly", "No details about the vendor or invoice"]
+explanation = "This is a classic Business Email Compromise (BEC) attack. The attacker spoofs the CEO's name but uses a lookalike domain (c0ntoso with a zero). The urgency and confidentiality pressure are designed to bypass normal approval processes."
+
+[[scenarios]]
+id = "ms-password"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Microsoft 365 Team"
+sender_email = "security@microsoft-365-alert.com"
+subject = "Your password expires in 24 hours"
+preview = "Your Microsoft 365 password will expire soon. Click here to update..."
+body = "Dear User,\n\nYour Microsoft 365 password will expire in 24 hours. To avoid losing access to your email and files, please update your password immediately.\n\n[Update Password Now]\nhttps://microsoft-365-login.security-update.com/reset\n\nIf you did not request this, please ignore this email.\n\nMicrosoft 365 Security Team"
+red_flags = ["Fake domain (microsoft-365-alert.com is not microsoft.com)", "Fake link destination (security-update.com is not microsoft.com)", "Generic greeting ('Dear User' instead of your name)", "Urgency tactic (24-hour deadline)", "Microsoft never asks you to click a link to reset passwords via email"]
+explanation = "Credential harvesting attack. The email looks official but both the sender domain and link destination are fake. Microsoft password reset emails come from microsoft.com and direct you to account.microsoft.com."
+
+[[scenarios]]
+id = "real-ms-security"
+difficulty = 2
+verdict = "legit"
+sender_name = "Microsoft account team"
+sender_email = "account-security-noreply@accountprotection.microsoft.com"
+subject = "Microsoft account security info was added"
+preview = "Security info was recently added to your Microsoft account..."
+body = "Microsoft account\nSecurity info was added\n\nAn alternate email address was added to your Microsoft account su****@outlook.com.\n\nIf this was you, you can safely ignore this email.\n\nIf this wasn't you, your account may be compromised. Please review your security info: https://account.live.com/SecurityInfo\n\nThanks,\nThe Microsoft account team"
+red_flags = []
+explanation = "This is a legitimate Microsoft notification. The sender domain accountprotection.microsoft.com is a real Microsoft domain. The link goes to account.live.com which is a real Microsoft property. The email partially masks your address (su****@outlook.com) for privacy."
+
+[[scenarios]]
+id = "sharepoint-share"
+difficulty = 2
+verdict = "verify"
+sender_name = "Sarah Chen"
+sender_email = "sarah.chen@contoso.com"
+subject = "Sarah Chen shared 'Q4 Budget Review' with you"
+preview = "Sarah Chen has shared a file with you. Click to open in SharePoint..."
+body = "Sarah Chen shared a file with you\n\nQ4 Budget Review.xlsx\n\n[Open]\nhttps://contoso.sharepoint.com/sites/finance/Q4-Budget-Review.xlsx\n\nNote: This link will expire in 7 days."
+red_flags = ["Could be legitimate OR a phishing email using a real colleague's name", "Verify: Do you know Sarah Chen? Were you expecting this file?", "The link LOOKS correct (contoso.sharepoint.com) but could be a display-text trick"]
+explanation = "This could go either way. The email format matches real SharePoint sharing notifications. If you know Sarah Chen and were expecting a budget file, it's likely legitimate. If not, verify by contacting Sarah directly through Teams or phone — not by replying to the email."
+
+[[scenarios]]
+id = "it-mfa"
+difficulty = 1
+verdict = "phishing"
+sender_name = "IT Department"
+sender_email = "it-helpdesk@contoso-support.net"
+subject = "MFA Update Required — Action Needed"
+preview = "We are updating our MFA system. Please re-register your device..."
+body = "Dear Employee,\n\nAs part of our security upgrade, all employees must re-register their MFA devices by Friday.\n\nPlease click the link below to complete re-registration:\nhttps://mfa-update.contoso-support.net/register\n\nFailure to complete this by Friday will result in account lockout.\n\nThank you,\nIT Help Desk\nContoso Support"
+red_flags = ["External domain (contoso-support.net is NOT contoso.com)", "Threat of account lockout creates urgency", "Generic greeting ('Dear Employee')", "IT departments use internal portals (aka.ms/mysecurityinfo), not external links", "No specific person's name signed"]
+explanation = "AiTM (Adversary-in-the-Middle) phishing. The attacker creates a fake MFA registration page to capture your credentials AND your MFA token in real-time. Your IT team would use https://aka.ms/mysecurityinfo for MFA changes."
+
+[[scenarios]]
+id = "real-teams-invite"
+difficulty = 2
+verdict = "legit"
+sender_name = "Microsoft Teams"
+sender_email = "noreply@email.teams.microsoft.com"
+subject = "You have been added to the team 'Project Alpha'"
+preview = "Alex Johnson added you to the team Project Alpha in Microsoft Teams..."
+body = "You have been added to a team in Microsoft Teams\n\nAlex Johnson added you to:\nProject Alpha\n\n[Open Microsoft Teams]\nhttps://teams.microsoft.com/l/team/...\n\nWant to change your notification settings?\nhttps://teams.microsoft.com/settings"
+red_flags = []
+explanation = "This is a legitimate Teams notification. The sender domain email.teams.microsoft.com is a real Microsoft email domain. The links go to teams.microsoft.com. This is a standard notification when someone adds you to a team."
+
+[[scenarios]]
+id = "docusign-fake"
+difficulty = 2
+verdict = "phishing"
+sender_name = "DocuSign via noreply@docusign.net"
+sender_email = "docusign-notify@mail-docusign.net"
+subject = "Complete your DocuSign: Annual Employee Agreement"
+preview = "Please review and sign the attached document..."
+body = "DocuSign\n\nHi,\n\nPlease review and electronically sign:\nAnnual Employee Agreement 2026\n\n[REVIEW DOCUMENT]\nhttps://na1.mail-docusign.net/signing/review?id=abc123\n\nThis document is from your HR department and requires your signature by end of business today.\n\nDo not share this email."
+red_flags = ["Domain mismatch: real DocuSign uses docusign.net, not mail-docusign.net", "Urgency ('by end of business today')", "Vague document name", "Generic greeting (no employee name)", "'Do not share' instruction prevents verification"]
+explanation = "Fake DocuSign phishing. Real DocuSign emails come from @docusign.net or @docusign.com. This uses mail-docusign.net — a lookalike domain. Always access DocuSign documents through docusign.com directly."
+
+[[scenarios]]
+id = "invoice-attach"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Accounts Payable"
+sender_email = "accounts@quickb00ks-invoice.com"
+subject = "Invoice #INV-2026-4847 — Payment Overdue"
+preview = "Please find attached your overdue invoice. Payment is required immediately..."
+body = "Dear Customer,\n\nPlease find attached your overdue invoice #INV-2026-4847 for $3,250.00.\n\nPayment was due on 01/04/2026. Please remit payment immediately to avoid service disruption.\n\n[View Invoice (PDF)]\n\nThank you,\nAccounts Payable Department"
+red_flags = ["Misspelled domain (quickb00ks with zeros instead of 'o')", "Urgency and threat ('immediately', 'service disruption')", "Generic greeting ('Dear Customer')", "Unexpected invoice — do you have an account with this company?", "Attachment could contain malware"]
+explanation = "Invoice phishing with malware attachment. The domain uses 'quickb00ks' (with zeros) to impersonate QuickBooks. The 'PDF' attachment is likely a malware dropper. Never open unexpected invoice attachments."
+
+[[scenarios]]
+id = "real-password-expiry"
+difficulty = 3
+verdict = "legit"
+sender_name = "IT Notifications"
+sender_email = "notifications@contoso.com"
+subject = "Password Expiry Reminder — 14 days remaining"
+preview = "Your network password will expire in 14 days. Please change it via..."
+body = "Hi John,\n\nThis is a reminder that your network password will expire in 14 days (May 1, 2026).\n\nTo change your password:\n1. Press Ctrl+Alt+Delete\n2. Click 'Change a password'\n3. Follow the prompts\n\nOr visit: https://contoso.com/password-reset\n\nIf you need assistance, contact the IT Help Desk at ext. 4500 or helpdesk@contoso.com.\n\nIT Notifications\nContoso Ltd"
+red_flags = []
+explanation = "This is likely a legitimate internal notification. Key indicators: sent from your company's actual domain, addresses you by name, provides internal methods (Ctrl+Alt+Del), links to your company's own domain, and includes a specific internal extension number."
+
+[[scenarios]]
+id = "linkedin-fake"
+difficulty = 2
+verdict = "phishing"
+sender_name = "LinkedIn"
+sender_email = "security@linkedln-mail.com"
+subject = "Someone viewed your profile — 23 new views this week"
+preview = "Your profile is trending! See who's been looking..."
+body = "LinkedIn\n\n23 people viewed your profile this week!\n\nSee your viewers and find out who's interested:\n\n[See All Views]\nhttps://linkedln-mail.com/feed/profile-views\n\nTop viewer industries: Technology, Finance, Healthcare\n\nLinkedIn Corporation, 1000 W Maude Ave, Sunnyvale, CA 94085"
+red_flags = ["Fake domain: linkedln-mail.com (lowercase L looks like I — it's 'linkedln' not 'linkedin')", "Real LinkedIn uses linkedin.com or e.linkedin.com for emails", "Link destination is the fake domain", "Designed to exploit curiosity ('who viewed my profile')"]
+explanation = "Credential harvesting using LinkedIn impersonation. The domain uses 'linkedln' (with an L that looks like an I) instead of 'linkedin'. This is a classic homograph attack. Real LinkedIn emails come from @linkedin.com."
+
+[[scenarios]]
+id = "voicemail-phish"
+difficulty = 2
+verdict = "phishing"
+sender_name = "Voicemail Service"
+sender_email = "voicemail@contoso-pbx.com"
+subject = "New Voicemail from +64 9 555 1234 (0:47)"
+preview = "You have a new voicemail. Click to listen..."
+body = "You have received a new voicemail message\n\nFrom: +64 9 555 1234\nDuration: 0:47\nDate: April 17, 2026 2:34 PM\n\n[Play Voicemail]\n\nThis message was automatically generated by your phone system."
+red_flags = ["External domain (contoso-pbx.com is NOT your company's domain)", "Voicemail-to-email typically comes from your internal phone system", "Link likely leads to credential harvesting page", "No preview of caller identity beyond a phone number"]
+explanation = "Voicemail phishing — increasingly common. The attacker hopes you'll click to 'listen' to the voicemail, which actually loads a fake login page. Real voicemail notifications come from your internal phone system (Microsoft Teams, Cisco, etc.)."
+
+[[scenarios]]
+id = "delivery-phish"
+difficulty = 1
+verdict = "phishing"
+sender_name = "DHL Express"
+sender_email = "tracking@dhl-express-delivery.com"
+subject = "Your package is waiting — delivery attempt failed"
+preview = "We attempted to deliver your package but no one was available..."
+body = "DHL Express\n\nDelivery Notification\n\nWe attempted to deliver your package today but no one was available to sign.\n\nTracking number: DHL4728391NZ\n\n[Reschedule Delivery]\nhttps://dhl-express-delivery.com/reschedule?id=DHL4728391NZ\n\nIf not rescheduled within 48 hours, your package will be returned to sender.\n\nDHL Express Customer Service"
+red_flags = ["Fake domain (dhl-express-delivery.com is not dhl.com)", "Urgency tactic (48-hour deadline)", "Generic — doesn't mention what the package is or who sent it", "Are you expecting a DHL delivery?"]
+explanation = "Package delivery phishing. Very common during holiday seasons. Real DHL notifications come from @dhl.com. Always track packages directly on the courier's official website."
+
+[[scenarios]]
+id = "dropbox-share"
+difficulty = 2
+verdict = "phishing"
+sender_name = "Dropbox"
+sender_email = "no-reply@dropbox-share-file.com"
+subject = "Alex Turner shared 'Contract_Final_v3.pdf' with you"
+preview = "Alex Turner has shared a document with you via Dropbox..."
+body = "Dropbox\n\nAlex Turner shared a file with you\n\nContract_Final_v3.pdf (2.4 MB)\n\n[View Document]\nhttps://dropbox-share-file.com/view/contract\n\nThis link expires in 3 days.\n\nDropbox, Inc."
+red_flags = ["Fake domain (dropbox-share-file.com is NOT dropbox.com)", "Real Dropbox uses @dropbox.com for notifications", "Link goes to fake domain", "Urgency via expiry date"]
+explanation = "File sharing impersonation. Real Dropbox notifications come from @dropbox.com and link to dropbox.com. This uses a lookalike domain."
+
+[[scenarios]]
+id = "real-azure-alert"
+difficulty = 3
+verdict = "legit"
+sender_name = "Microsoft Azure"
+sender_email = "azure-noreply@microsoft.com"
+subject = "Action required: Your Azure subscription needs attention"
+preview = "Your Azure subscription Visual Studio Enterprise has a billing issue..."
+body = "Microsoft Azure\n\nHi Sutheesh,\n\nYour Azure subscription 'Visual Studio Enterprise' (ID: xxxx-xxxx-xxxx-1234) has a payment method issue.\n\nPlease update your payment method to avoid service interruption:\nhttps://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade\n\nIf you believe this is an error, contact Azure Support.\n\nMicrosoft Azure Team"
+red_flags = []
+explanation = "This is a legitimate Azure billing notification. Key indicators: sent from microsoft.com, addresses you by name, includes specific subscription details (name + partial ID), links to the real Azure portal (portal.azure.com), and suggests contacting Azure Support."
+
+[[scenarios]]
+id = "hr-survey"
+difficulty = 2
+verdict = "phishing"
+sender_name = "HR Department"
+sender_email = "hr-survey@contoso-hr-portal.com"
+subject = "Mandatory: Annual Employee Satisfaction Survey"
+preview = "Please complete your annual employee satisfaction survey by Friday..."
+body = "Dear Employee,\n\nPlease complete your annual satisfaction survey by this Friday. This is mandatory for all staff.\n\n[Start Survey]\nhttps://contoso-hr-portal.com/survey/2026\n\nThe survey takes approximately 10 minutes. Your responses are confidential.\n\nHR Department\nContoso Ltd"
+red_flags = ["External domain (contoso-hr-portal.com is NOT your company domain)", "Generic greeting ('Dear Employee')", "Urgency ('mandatory', 'by Friday')", "HR surveys typically use internal platforms (SharePoint, Viva Pulse)"]
+explanation = "Credential harvesting disguised as an HR survey. Internal surveys use company-owned platforms, not external domains. Always check the sender domain matches your organisation."
+
+[[scenarios]]
+id = "real-github-2fa"
+difficulty = 3
+verdict = "legit"
+sender_name = "GitHub"
+sender_email = "noreply@github.com"
+subject = "[GitHub] A new device has signed in to your account"
+preview = "A sign-in from a new device was detected on your GitHub account..."
+body = "Hey susanthgit,\n\nA sign-in to your account was made from a new device.\n\nDevice: Windows (Chrome)\nLocation: Auckland, New Zealand\nIP: 103.xxx.xxx.xx\nTime: April 17, 2026 at 3:45 PM (NZST)\n\nIf this was you, you can ignore this message.\n\nIf this wasn't you, please secure your account:\nhttps://github.com/settings/security\n\nThanks,\nThe GitHub Team"
+red_flags = []
+explanation = "Legitimate GitHub security notification. Key indicators: sent from github.com, uses your actual username, includes specific device/location/time details, links to github.com/settings. GitHub always sends these for new device sign-ins."
+
+[[scenarios]]
+id = "crypto-scam"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Bitcoin Rewards"
+sender_email = "claim@bitcoin-rewards-2026.net"
+subject = "Congratulations! You've received 0.5 BTC ($35,000)"
+preview = "You've been selected to receive a cryptocurrency reward..."
+body = "CONGRATULATIONS!\n\nYou have been randomly selected to receive 0.5 BTC (approximately $35,000 USD)!\n\nTo claim your reward, verify your identity:\n\n[CLAIM MY BITCOIN]\nhttps://bitcoin-rewards-2026.net/claim\n\nThis offer expires in 24 hours. Act now!\n\nBitcoin Rewards Program"
+red_flags = ["Too good to be true — free money is always a scam", "Random selection claim with no context", "Urgency ('24 hours')", "Unknown sender domain", "No legitimate organisation gives away cryptocurrency via email"]
+explanation = "Classic advance-fee / crypto scam. Nobody gives away $35,000 in Bitcoin via email. This leads to a fake site that steals credentials or asks for a 'processing fee'."
+
+[[scenarios]]
+id = "zoom-invite"
+difficulty = 2
+verdict = "verify"
+sender_name = "James Wilson"
+sender_email = "james.wilson@contoso.com"
+subject = "Quick call? Need to discuss Project Phoenix"
+preview = "Hi, can you jump on a quick Zoom call? Link below..."
+body = "Hi,\n\nCan you jump on a quick call? Need to discuss the Project Phoenix timeline.\n\nJoin Zoom Meeting:\nhttps://zoom.us/j/12345678901?pwd=abc123\n\nThanks,\nJames"
+red_flags = ["Could be legitimate — from your company domain", "But: no prior context about Project Phoenix", "Using Zoom instead of your organisation's standard Teams", "Verify: contact James via Teams to confirm before joining"]
+explanation = "This could be legitimate OR a compromised account. The sender domain is correct, but the use of Zoom (instead of Teams) and lack of context are unusual. Best practice: message James on Teams to verify before clicking."
+
+[[scenarios]]
+id = "apple-id"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Apple Support"
+sender_email = "support@apple-id-verify.com"
+subject = "Your Apple ID has been locked for security reasons"
+preview = "Your Apple ID has been temporarily locked. Verify your identity..."
+body = "Apple ID\n\nYour Apple ID has been locked\n\nWe detected unusual activity on your Apple ID. For your protection, we have temporarily locked your account.\n\nTo unlock your account, verify your identity:\n\n[Verify Now]\nhttps://apple-id-verify.com/unlock\n\nIf you don't verify within 48 hours, your account will be permanently disabled.\n\nApple Support"
+red_flags = ["Fake domain (apple-id-verify.com is NOT apple.com)", "Urgency ('48 hours', 'permanently disabled')", "Fear tactic ('locked', 'unusual activity')", "Real Apple uses @apple.com and links to appleid.apple.com"]
+explanation = "Apple ID phishing — one of the most common attacks globally. Real Apple security emails come from @apple.com and link to appleid.apple.com or iforgot.apple.com."
+
+[[scenarios]]
+id = "payroll-update"
+difficulty = 3
+verdict = "phishing"
+sender_name = "Finance Team"
+sender_email = "payroll@contoso.com"
+subject = "Update Required: Verify Your Bank Details for Next Pay Run"
+preview = "Please verify your bank account details before the next pay cycle..."
+body = "Hi,\n\nAs part of our annual payroll audit, we need all employees to verify their bank account details.\n\nPlease click below to confirm your details by Friday:\n\n[Verify Bank Details]\nhttps://contoso-payroll-verify.com/employee\n\nIf your details are unchanged, you still need to confirm.\n\nFinance Team\nContoso Ltd"
+red_flags = ["The sender email looks right (contoso.com) but the LINK goes to contoso-payroll-verify.com", "Display email vs actual sender may differ", "Payroll changes should be done through official HR systems, not email links", "Banks never ask you to 'verify' details via email links", "'All employees' blanket request is suspicious"]
+explanation = "Sophisticated BEC attack. The sender APPEARS to be from your company (spoofed or compromised), but the link goes to an external lookalike domain. Payroll verification always happens through your HR/payroll system directly, never via email links. This is how bank details get stolen."
+
+[[scenarios]]
+id = "real-ms-license"
+difficulty = 3
+verdict = "legit"
+sender_name = "Microsoft 365"
+sender_email = "no-reply@sharepointonline.com"
+subject = "Action needed: Your Microsoft 365 subscription is expiring"
+preview = "Your organisation's Microsoft 365 E5 subscription expires in 30 days..."
+body = "Microsoft 365 Admin\n\nHi Admin,\n\nYour organisation's Microsoft 365 E5 subscription will expire on May 17, 2026.\n\nTo avoid service disruption, renew your subscription:\nhttps://admin.microsoft.com/AdminPortal/Home#/subscriptions\n\nIf you've already renewed, you can ignore this message.\n\nThe Microsoft 365 Team"
+red_flags = []
+explanation = "This is a legitimate Microsoft notification. Key indicators: sharepointonline.com is a real Microsoft domain (part of M365 infrastructure), it references a specific subscription name (E5) and date, and links to the real admin portal (admin.microsoft.com). Microsoft does send subscription reminders from this domain."
+
+[[scenarios]]
+id = "usps-delivery"
+difficulty = 1
+verdict = "phishing"
+sender_name = "NZ Post"
+sender_email = "delivery@nzpost-tracking.com"
+subject = "Your parcel requires a customs payment of $4.50"
+preview = "Your international parcel has been held at customs..."
+body = "NZ Post\n\nYour parcel has been held at customs\n\nAn international parcel addressed to you requires a customs duty payment of $4.50 NZD.\n\nTracking: NZ7283915\n\n[Pay Customs Fee]\nhttps://nzpost-tracking.com/customs/pay\n\nIf not paid within 5 days, your parcel will be returned to sender.\n\nNZ Post Customer Service"
+red_flags = ["Fake domain (nzpost-tracking.com is NOT nzpost.co.nz)", "Small payment amount ($4.50) designed to seem harmless", "Real NZ Post customs fees are collected at delivery or via nzpost.co.nz", "Urgency tactic (5-day deadline)"]
+explanation = "Customs fee phishing — very common in NZ/Australia. The small amount ($4.50) is designed to seem too trivial to question. Real customs fees are handled through nzpost.co.nz or collected at delivery."
+
+[[scenarios]]
+id = "ms-forms-survey"
+difficulty = 2
+verdict = "verify"
+sender_name = "Sarah Chen via Microsoft Forms"
+sender_email = "no-reply@forms.office.com"
+subject = "Sarah Chen invited you to fill out a form"
+preview = "IT Equipment Satisfaction Survey — Please share your feedback..."
+body = "Sarah Chen has invited you to fill out a form.\n\nIT Equipment Satisfaction Survey\n\nPlease take a moment to share your feedback about your work equipment.\n\n[Fill out form]\nhttps://forms.office.com/r/abc123xyz\n\nThis form is from someone inside your organisation.\n\nMicrosoft Forms"
+red_flags = ["Sent from real Microsoft domain (forms.office.com)", "But: anyone can create a Microsoft Form that collects data", "Verify: Do you know Sarah Chen? Is this survey expected?", "Forms can be used for credential harvesting even from real Microsoft domains"]
+explanation = "This is tricky — it's from a real Microsoft domain. However, phishing can happen through legitimate Microsoft Forms. If you recognise Sarah and the survey makes sense, it's likely safe. If not, verify with Sarah directly. Microsoft Forms can be weaponised by compromised accounts."
+
+[[scenarios]]
+id = "sextortion"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Private Investigator"
+sender_email = "anonymous-tip@protonmail.com"
+subject = "I have access to your webcam recordings"
+preview = "I installed malware on your device and recorded you..."
+body = "Hello,\n\nI am a hacker who has access to your operating system. I also have full access to your account.\n\nI've been watching you for a few months now. I installed malware on a site you visited and recorded you through your webcam.\n\nI have a video of you doing embarrassing things. If you don't send $2,000 in Bitcoin to the address below within 48 hours, I'll send the video to all your contacts.\n\nBitcoin address: bc1q...\n\nDon't try to contact the police. The timer starts now."
+red_flags = ["Classic sextortion scam — mass-sent to millions", "Vague claims with no proof ('embarrassing things')", "Bitcoin payment demand", "Urgency and fear tactics ('48 hours', 'police')", "If they really had evidence, they would show a screenshot — they never do"]
+explanation = "Sextortion email — one of the most common spam campaigns. These are mass-sent to millions of people and are NOT targeted. The attacker has NO video, NO webcam access, and NO malware. Delete immediately. If concerned, cover your webcam and change passwords."
+
+[[scenarios]]
+id = "real-intune-compliance"
+difficulty = 3
+verdict = "legit"
+sender_name = "Microsoft Intune"
+sender_email = "intune-noreply@microsoft.com"
+subject = "Your device is not compliant — action required"
+preview = "Your device 'DESKTOP-ABC123' is no longer compliant with your org's policies..."
+body = "Microsoft Intune\n\nDevice compliance alert\n\nYour device 'DESKTOP-ABC123' is no longer compliant with Contoso's device policies.\n\nIssue: Operating system update required\nPolicy: Windows Update compliance (90 days)\n\nTo fix this:\n1. Go to Settings > Windows Update\n2. Install all available updates\n3. Restart your device\n\nIf your device doesn't become compliant within 7 days, access to company resources may be restricted.\n\nContact IT if you need help: helpdesk@contoso.com\n\nMicrosoft Intune"
+red_flags = []
+explanation = "Legitimate Intune compliance notification. Key indicators: sent from microsoft.com, references your specific device name, provides clear fix steps (Settings > Windows Update — not a link), mentions your company by name, and gives a real internal helpdesk email. Intune always sends these for non-compliant devices."
+
+[[scenarios]]
+id = "qr-phish"
+difficulty = 2
+verdict = "phishing"
+sender_name = "IT Security"
+sender_email = "security@contoso-itsec.com"
+subject = "Scan QR Code to Update Your Security Settings"
+preview = "Please scan the QR code below to update your MFA settings..."
+body = "IT Security Update\n\nDear Employee,\n\nDue to a recent security upgrade, all employees must update their MFA settings.\n\nPlease scan the QR code below with your phone's camera to proceed:\n\n[QR CODE IMAGE]\n\nIf you're unable to scan, click here:\nhttps://contoso-itsec.com/mfa-update\n\nThis must be completed by end of business today.\n\nIT Security Team"
+red_flags = ["External domain (contoso-itsec.com is NOT your company)", "QR codes in emails are a major red flag — they bypass email link scanning", "Urgency ('end of business today')", "Generic greeting", "IT teams use internal portals for MFA, not email QR codes"]
+explanation = "QR code phishing ('quishing') — a growing attack vector. QR codes bypass email security scanners because they're images, not clickable links. The QR code leads to a credential harvesting page. Never scan QR codes from unexpected emails."
+
+[[scenarios]]
+id = "real-slack-invite"
+difficulty = 2
+verdict = "verify"
+sender_name = "Slack"
+sender_email = "feedback@slack.com"
+subject = "You've been invited to join Contoso AI Project on Slack"
+preview = "John Smith has invited you to join the Contoso AI Project workspace..."
+body = "Slack\n\nJohn Smith has invited you to join\nContoso AI Project\n\n[Join Now]\nhttps://join.slack.com/t/contoso-ai/shared_invite/abc123\n\nSlack Technologies, LLC\n500 Howard Street, San Francisco, CA 94105"
+red_flags = ["Real Slack domain (slack.com)", "But: Do you use Slack at your org? Most M365 shops use Teams", "Verify: Check with John Smith if this is expected", "Could be a competitor workspace or shadow IT"]
+explanation = "This is from the real Slack domain, making it technically legitimate. But if your organisation uses Microsoft Teams, an unexpected Slack invite could be shadow IT, a mistake, or social engineering. Verify with the person who invited you before joining."
+
+[[scenarios]]
+id = "gift-card"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Mark Thompson (VP Operations)"
+sender_email = "m.thompson@contoso-exec.com"
+subject = "Quick favour needed — confidential"
+preview = "I need you to purchase some gift cards for a client meeting..."
+body = "Hi,\n\nAre you available? I need a quick favour.\n\nI'm in a meeting and can't make a call. Could you purchase 5x $100 Amazon gift cards for a client appreciation event? I'll reimburse you.\n\nPlease buy them and send me the card numbers and PINs by email.\n\nKeep this between us for now — it's a surprise.\n\nThanks,\nMark Thompson\nVP Operations"
+red_flags = ["Lookalike domain (contoso-exec.com is NOT contoso.com)", "Gift card request — the #1 BEC attack type", "'Confidential' / 'keep this between us' prevents verification", "Executive impersonation", "Asks for card numbers via email (no legitimate process works this way)", "Urgency ('I'm in a meeting')"]
+explanation = "Gift card scam — the most common Business Email Compromise type. The FBI reports billions in losses from this attack. No legitimate executive asks employees to buy gift cards and email the codes. Always verify through a separate channel (call, Teams)."
+
+[[scenarios]]
+id = "ms-onedrive-share"
+difficulty = 3
+verdict = "legit"
+sender_name = "OneDrive"
+sender_email = "no-reply@onedrive.com"
+subject = "Storage almost full — 95% of your OneDrive is used"
+preview = "You're running low on OneDrive storage. Manage your files..."
+body = "OneDrive\n\nYour storage is almost full\n\nYou're using 95 GB of your 100 GB OneDrive storage.\n\nTo free up space:\n- Delete files you no longer need\n- Empty your recycle bin\n- Move large files to a shared library\n\n[Manage your storage]\nhttps://onedrive.live.com/manage/storage\n\nNeed more space? Contact your IT admin about upgrading your plan.\n\nMicrosoft OneDrive"
+red_flags = []
+explanation = "Legitimate OneDrive notification. Key indicators: sent from onedrive.com (real Microsoft domain), references specific storage numbers (95/100 GB), provides practical steps (not just a link), and links to the real OneDrive management page."
+
+[[scenarios]]
+id = "tax-refund"
+difficulty = 1
+verdict = "phishing"
+sender_name = "Inland Revenue"
+sender_email = "refunds@ird-nz-refund.com"
+subject = "You are eligible for a tax refund of $1,847.50"
+preview = "Our records indicate you have been overcharged. Claim your refund..."
+body = "Inland Revenue\n\nTax Refund Notification\n\nDear Taxpayer,\n\nAfter reviewing your tax records for the 2025-2026 year, we have determined that you are eligible for a refund of $1,847.50 NZD.\n\nTo claim your refund, please verify your details:\n\n[Claim Refund]\nhttps://ird-nz-refund.com/claim\n\nPlease note: If you do not claim within 14 days, your refund will be forfeited.\n\nInland Revenue Department\nNew Zealand Government"
+red_flags = ["Fake domain (ird-nz-refund.com is NOT ird.govt.nz)", "IRD uses myIR (myir.ird.govt.nz) for all refunds — never email links", "Generic greeting ('Dear Taxpayer')", "Urgency ('14 days', 'forfeited')", "Specific dollar amount designed to seem legitimate"]
+explanation = "Government impersonation phishing — extremely common in NZ. The real IRD uses myir.ird.govt.nz and never emails links to claim refunds. Tax refunds are processed automatically through your myIR account."

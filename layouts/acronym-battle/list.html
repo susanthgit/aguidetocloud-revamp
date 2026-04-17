@@ -1,0 +1,113 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "acronym_battle") }}
+{{ $acronyms := $data.acronyms }}
+<link rel="stylesheet" href="/css/acronym-battle.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Tech Acronym Battle" "subtitle" "How many tech acronyms can you decode?" "accent" "#9B59B6") }}
+
+<div class="acro-page">
+  <div class="acro-tabs" role="tablist">
+    <button class="acro-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
+    <button class="acro-tab" role="tab" aria-selected="false" data-tab="stats">Stats</button>
+    <button class="acro-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- PLAY TAB -->
+  <div class="acro-panel active" id="panel-play">
+    <div class="acro-mode-bar">
+      <button class="acro-mode active" data-mode="quick">Quick 10</button>
+      <button class="acro-mode" data-mode="marathon">Marathon</button>
+      <button class="acro-mode" data-mode="daily">Daily 10</button>
+      <button class="acro-mode" data-mode="learn">Learn</button>
+      <select class="acro-cat-select" id="cat-filter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="security">Security</option>
+        <option value="networking">Networking</option>
+        <option value="m365">M365</option>
+        <option value="azure">Azure</option>
+        <option value="ai">AI</option>
+        <option value="general">General</option>
+      </select>
+    </div>
+
+    <!-- Pre-game -->
+    <div class="acro-start" id="acro-start">
+      <p class="acro-start-text">Test your IT acronym knowledge. Pick a mode and hit Start!</p>
+      <button class="acro-btn acro-btn-primary" id="btn-start">Start Game</button>
+    </div>
+
+    <!-- In-game -->
+    <div class="acro-game" id="acro-game" style="display:none">
+      <div class="acro-hud">
+        <span class="acro-hud-item">Score: <strong id="hud-score">0</strong></span>
+        <span class="acro-hud-item">Streak: <strong id="hud-streak">0</strong>🔥</span>
+        <span class="acro-hud-item" id="hud-progress-wrap">Q: <strong id="hud-progress">1/10</strong></span>
+      </div>
+
+      <div class="acro-card">
+        <div class="acro-acronym" id="acro-acronym"></div>
+        <div class="acro-category-badge" id="acro-category"></div>
+      </div>
+
+      <div class="acro-timer-bar" id="acro-timer-bar" style="display:none">
+        <div class="acro-timer-fill"></div>
+      </div>
+
+      <div class="acro-options" id="acro-options"></div>
+
+      <div class="acro-feedback" id="acro-feedback" style="display:none">
+        <div class="acro-feedback-icon" id="feedback-icon"></div>
+        <div class="acro-feedback-answer" id="feedback-answer"></div>
+        <div class="acro-feedback-explanation" id="feedback-explanation"></div>
+        <div id="feedback-learn" style="margin-bottom:0.5rem"></div>
+        <button class="acro-btn acro-btn-primary" id="btn-next">Next →</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="acro-results" id="acro-results" style="display:none">
+      <div class="acro-results-score" id="results-score"></div>
+      <div class="acro-results-detail" id="results-detail"></div>
+      <div class="acro-results-actions">
+        <button class="acro-btn acro-btn-primary" id="btn-play-again">Play Again</button>
+        <button class="acro-btn" id="btn-share-score">Share Score</button>
+        <button class="acro-btn" id="btn-share-card">📸 Download Card</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS TAB -->
+  <div class="acro-panel" id="panel-stats">
+    <div style="max-width:600px;margin:0 auto;padding:0 1rem">
+      <div class="acro-stats-grid" id="stats-grid">
+        <div class="acro-stat-card"><div class="acro-stat-num" id="stat-played">0</div><div class="acro-stat-label">Games Played</div></div>
+        <div class="acro-stat-card"><div class="acro-stat-num" id="stat-best">0</div><div class="acro-stat-label">Best Score</div></div>
+        <div class="acro-stat-card"><div class="acro-stat-num" id="stat-streak">0</div><div class="acro-stat-label">Best Streak</div></div>
+        <div class="acro-stat-card"><div class="acro-stat-num" id="stat-accuracy">0%</div><div class="acro-stat-label">Accuracy</div></div>
+      </div>
+      <button class="acro-btn" id="btn-clear-stats" style="margin-top:1rem">Clear Stats</button>
+      <div id="category-mastery" style="margin-top:1.5rem"></div>
+    </div>
+  </div>
+
+  <!-- FAQ TAB -->
+  <div class="acro-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "acronym-battle") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__acronyms = {{ $acronyms | jsonify | safeJS }};
+</script>
+<script defer src="/js/acronym-battle.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

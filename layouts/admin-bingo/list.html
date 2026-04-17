@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "admin_bingo") }}
+{{ $squares := $data.squares }}
+<link rel="stylesheet" href="/css/admin-bingo.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "IT Admin Bingo" "subtitle" "How many of these have happened to you today?" "accent" "#E91E8E") }}
+
+<div class="bingo-page">
+  <div class="bingo-tabs" role="tablist">
+    <button class="bingo-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
+    <button class="bingo-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="bingo-panel active" id="panel-play">
+    <div class="bingo-controls">
+      <button class="bingo-btn bingo-btn-primary" id="btn-new-game" aria-label="Generate new random bingo card">🎲 New Game</button>
+      <button class="bingo-btn" id="btn-daily" aria-label="Get today's daily challenge card">📅 Daily</button>
+      <button class="bingo-btn" id="btn-weekly" aria-label="Get this week's challenge card">📆 Weekly</button>
+      <button class="bingo-btn" id="btn-share" aria-label="Share this card">🔗 Share</button>
+      <button class="bingo-btn" id="btn-print" aria-label="Print this card" onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <div class="bingo-theme-bar">
+      <button class="bingo-theme active" data-theme="all">All</button>
+      <button class="bingo-theme" data-theme="meetings">Meeting Madness</button>
+      <button class="bingo-theme" data-theme="security">Security Nightmare</button>
+      <button class="bingo-theme" data-theme="copilot">Copilot Chaos</button>
+      <button class="bingo-theme" data-theme="outage">Outage Bingo</button>
+    </div>
+    <select class="bingo-select" id="tag-filter" aria-label="Filter by category" style="display:none">
+      <option value="all">All</option>
+    </select>
+
+    <div class="bingo-status" id="bingo-status" aria-live="polite"></div>
+
+    <div class="bingo-board" id="bingo-board" role="grid" aria-label="Bingo card"></div>
+
+    <div class="bingo-score">
+      <span id="score-marked">0</span> marked · <span id="score-remaining">24</span> remaining
+    </div>
+  </div>
+
+  <div class="bingo-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "admin-bingo") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__bingoSquares = {{ $squares | jsonify | safeJS }};
+</script>
+<script defer src="/js/admin-bingo.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

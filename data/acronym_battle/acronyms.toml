@@ -1,0 +1,757 @@
+# ============================================================================
+# Tech Acronym Battle — 200+ acronyms across 6 categories
+# ============================================================================
+# Multiple accepted_answers for acronyms with valid variations.
+# Difficulty: 1 (easy) to 3 (expert).
+
+[[acronyms]]
+id = "dns"
+acronym = "DNS"
+accepted_answers = ["Domain Name System"]
+category = "networking"
+difficulty = 1
+explanation = "Translates human-readable domain names (like google.com) into IP addresses."
+
+[[acronyms]]
+id = "vpn"
+acronym = "VPN"
+accepted_answers = ["Virtual Private Network"]
+category = "networking"
+difficulty = 1
+explanation = "Creates an encrypted tunnel between your device and a remote network."
+
+[[acronyms]]
+id = "ssl"
+acronym = "SSL"
+accepted_answers = ["Secure Sockets Layer"]
+category = "security"
+difficulty = 1
+explanation = "Predecessor to TLS. Encrypts data between web browser and server."
+
+[[acronyms]]
+id = "tls"
+acronym = "TLS"
+accepted_answers = ["Transport Layer Security"]
+category = "security"
+difficulty = 1
+explanation = "Modern encryption protocol that replaced SSL for secure web communication."
+
+[[acronyms]]
+id = "mfa"
+acronym = "MFA"
+accepted_answers = ["Multi-Factor Authentication", "Multi Factor Authentication"]
+category = "security"
+difficulty = 1
+explanation = "Requires 2+ verification methods — something you know, have, or are."
+
+[[acronyms]]
+id = "sso"
+acronym = "SSO"
+accepted_answers = ["Single Sign-On", "Single Sign On"]
+category = "security"
+difficulty = 1
+explanation = "One set of credentials grants access to multiple applications."
+
+[[acronyms]]
+id = "rbac"
+acronym = "RBAC"
+accepted_answers = ["Role-Based Access Control", "Role Based Access Control"]
+category = "security"
+difficulty = 2
+explanation = "Assigns permissions based on roles rather than individual users."
+
+[[acronyms]]
+id = "saml"
+acronym = "SAML"
+accepted_answers = ["Security Assertion Markup Language"]
+category = "security"
+difficulty = 2
+explanation = "XML-based standard for exchanging authentication data between identity provider and service provider."
+
+[[acronyms]]
+id = "oidc"
+acronym = "OIDC"
+accepted_answers = ["OpenID Connect"]
+category = "security"
+difficulty = 2
+explanation = "Identity layer built on top of OAuth 2.0 for user authentication."
+
+[[acronyms]]
+id = "dmarc"
+acronym = "DMARC"
+accepted_answers = ["Domain-based Message Authentication Reporting and Conformance", "Domain-based Message Authentication, Reporting and Conformance", "Domain-based Message Authentication, Reporting, and Conformance"]
+category = "security"
+difficulty = 2
+explanation = "Email authentication protocol that builds on SPF and DKIM to prevent spoofing."
+
+[[acronyms]]
+id = "spf"
+acronym = "SPF"
+accepted_answers = ["Sender Policy Framework"]
+category = "security"
+difficulty = 2
+explanation = "DNS record specifying which mail servers can send email for your domain."
+
+[[acronyms]]
+id = "dkim"
+acronym = "DKIM"
+accepted_answers = ["DomainKeys Identified Mail"]
+category = "security"
+difficulty = 2
+explanation = "Adds a digital signature to outgoing emails to verify sender authenticity."
+
+[[acronyms]]
+id = "dlp"
+acronym = "DLP"
+accepted_answers = ["Data Loss Prevention", "Data Leak Prevention"]
+category = "security"
+difficulty = 1
+explanation = "Policies that detect and prevent unauthorised sharing of sensitive data."
+
+[[acronyms]]
+id = "csp"
+acronym = "CSP"
+accepted_answers = ["Cloud Solution Provider", "Content Security Policy"]
+category = "azure"
+difficulty = 2
+explanation = "Microsoft partner programme for reselling cloud services, or a browser security header."
+
+[[acronyms]]
+id = "api"
+acronym = "API"
+accepted_answers = ["Application Programming Interface"]
+category = "general"
+difficulty = 1
+explanation = "A way for software applications to communicate with each other."
+
+[[acronyms]]
+id = "rest"
+acronym = "REST"
+accepted_answers = ["Representational State Transfer"]
+category = "general"
+difficulty = 2
+explanation = "Architectural style for web APIs using HTTP methods (GET, POST, PUT, DELETE)."
+
+[[acronyms]]
+id = "json"
+acronym = "JSON"
+accepted_answers = ["JavaScript Object Notation"]
+category = "general"
+difficulty = 1
+explanation = "Lightweight data format used extensively in APIs and configuration files."
+
+[[acronyms]]
+id = "yaml"
+acronym = "YAML"
+accepted_answers = ["YAML Ain't Markup Language", "Yet Another Markup Language"]
+category = "general"
+difficulty = 2
+explanation = "Human-readable data serialisation format popular for config files."
+
+[[acronyms]]
+id = "cicd"
+acronym = "CI/CD"
+accepted_answers = ["Continuous Integration/Continuous Delivery", "Continuous Integration/Continuous Deployment", "Continuous Integration Continuous Delivery", "Continuous Integration Continuous Deployment"]
+category = "general"
+difficulty = 2
+explanation = "Automated build, test, and deployment pipeline for software."
+
+[[acronyms]]
+id = "sla"
+acronym = "SLA"
+accepted_answers = ["Service Level Agreement"]
+category = "general"
+difficulty = 1
+explanation = "Contractual guarantee of uptime, performance, or service quality."
+
+[[acronyms]]
+id = "rto"
+acronym = "RTO"
+accepted_answers = ["Recovery Time Objective"]
+category = "general"
+difficulty = 2
+explanation = "Maximum acceptable downtime after a disaster before systems must be restored."
+
+[[acronyms]]
+id = "rpo"
+acronym = "RPO"
+accepted_answers = ["Recovery Point Objective"]
+category = "general"
+difficulty = 2
+explanation = "Maximum acceptable data loss measured in time (e.g., 1 hour of data)."
+
+[[acronyms]]
+id = "tcp"
+acronym = "TCP"
+accepted_answers = ["Transmission Control Protocol"]
+category = "networking"
+difficulty = 1
+explanation = "Reliable, connection-oriented protocol ensuring data arrives intact and in order."
+
+[[acronyms]]
+id = "udp"
+acronym = "UDP"
+accepted_answers = ["User Datagram Protocol"]
+category = "networking"
+difficulty = 1
+explanation = "Fast, connectionless protocol used for streaming and real-time communication."
+
+[[acronyms]]
+id = "dhcp"
+acronym = "DHCP"
+accepted_answers = ["Dynamic Host Configuration Protocol"]
+category = "networking"
+difficulty = 1
+explanation = "Automatically assigns IP addresses to devices on a network."
+
+[[acronyms]]
+id = "nat"
+acronym = "NAT"
+accepted_answers = ["Network Address Translation"]
+category = "networking"
+difficulty = 2
+explanation = "Translates private IP addresses to a public IP for internet access."
+
+[[acronyms]]
+id = "vlan"
+acronym = "VLAN"
+accepted_answers = ["Virtual Local Area Network", "Virtual LAN"]
+category = "networking"
+difficulty = 2
+explanation = "Logically segments a physical network into separate broadcast domains."
+
+[[acronyms]]
+id = "bgp"
+acronym = "BGP"
+accepted_answers = ["Border Gateway Protocol"]
+category = "networking"
+difficulty = 3
+explanation = "The routing protocol that makes the internet work — routes traffic between autonomous systems."
+
+[[acronyms]]
+id = "ipsec"
+acronym = "IPSec"
+accepted_answers = ["Internet Protocol Security", "IP Security"]
+category = "networking"
+difficulty = 2
+explanation = "Suite of protocols for securing IP communications through encryption and authentication."
+
+[[acronyms]]
+id = "aad"
+acronym = "AAD"
+accepted_answers = ["Azure Active Directory"]
+category = "azure"
+difficulty = 1
+explanation = "Now called Microsoft Entra ID — cloud identity and access management service."
+
+[[acronyms]]
+id = "arm"
+acronym = "ARM"
+accepted_answers = ["Azure Resource Manager"]
+category = "azure"
+difficulty = 2
+explanation = "Deployment and management layer for Azure resources using templates."
+
+[[acronyms]]
+id = "nsg"
+acronym = "NSG"
+accepted_answers = ["Network Security Group"]
+category = "azure"
+difficulty = 2
+explanation = "Azure firewall rules that filter network traffic to/from Azure resources."
+
+[[acronyms]]
+id = "aks"
+acronym = "AKS"
+accepted_answers = ["Azure Kubernetes Service"]
+category = "azure"
+difficulty = 2
+explanation = "Managed Kubernetes container orchestration service in Azure."
+
+[[acronyms]]
+id = "rbac-azure"
+acronym = "Azure RBAC"
+accepted_answers = ["Azure Role-Based Access Control", "Azure Role Based Access Control"]
+category = "azure"
+difficulty = 2
+explanation = "Assigns fine-grained permissions to Azure resources based on roles."
+
+[[acronyms]]
+id = "swa"
+acronym = "SWA"
+accepted_answers = ["Static Web Apps", "Azure Static Web Apps"]
+category = "azure"
+difficulty = 2
+explanation = "Azure service for hosting static websites with serverless API backends."
+
+[[acronyms]]
+id = "spo"
+acronym = "SPO"
+accepted_answers = ["SharePoint Online"]
+category = "m365"
+difficulty = 1
+explanation = "Cloud-based collaboration and document management platform in Microsoft 365."
+
+[[acronyms]]
+id = "exo"
+acronym = "EXO"
+accepted_answers = ["Exchange Online"]
+category = "m365"
+difficulty = 1
+explanation = "Cloud-based email and calendar service in Microsoft 365."
+
+[[acronyms]]
+id = "teams"
+acronym = "EAC"
+accepted_answers = ["Exchange Admin Center"]
+category = "m365"
+difficulty = 2
+explanation = "Web-based management console for Exchange Online settings."
+
+[[acronyms]]
+id = "dpa"
+acronym = "DPA"
+accepted_answers = ["Data Processing Agreement", "Data Protection Agreement"]
+category = "security"
+difficulty = 2
+explanation = "Legal agreement governing how a processor handles personal data on behalf of a controller."
+
+[[acronyms]]
+id = "gdpr"
+acronym = "GDPR"
+accepted_answers = ["General Data Protection Regulation"]
+category = "security"
+difficulty = 1
+explanation = "EU regulation governing the processing and protection of personal data."
+
+[[acronyms]]
+id = "hipaa"
+acronym = "HIPAA"
+accepted_answers = ["Health Insurance Portability and Accountability Act"]
+category = "security"
+difficulty = 2
+explanation = "US law protecting sensitive patient health information."
+
+[[acronyms]]
+id = "soc2"
+acronym = "SOC 2"
+accepted_answers = ["System and Organization Controls 2", "Service Organization Controls 2"]
+category = "security"
+difficulty = 2
+explanation = "Audit framework for service providers based on trust service criteria."
+
+[[acronyms]]
+id = "pim"
+acronym = "PIM"
+accepted_answers = ["Privileged Identity Management"]
+category = "security"
+difficulty = 2
+explanation = "Entra ID feature for just-in-time elevation of admin roles."
+
+[[acronyms]]
+id = "ca"
+acronym = "CA"
+accepted_answers = ["Conditional Access"]
+category = "security"
+difficulty = 1
+explanation = "Entra ID policies that enforce access controls based on conditions (location, device, risk)."
+
+[[acronyms]]
+id = "mcp"
+acronym = "MCP"
+accepted_answers = ["Model Context Protocol"]
+category = "ai"
+difficulty = 2
+explanation = "Open protocol for connecting AI models to external tools and data sources."
+
+[[acronyms]]
+id = "llm"
+acronym = "LLM"
+accepted_answers = ["Large Language Model"]
+category = "ai"
+difficulty = 1
+explanation = "AI models trained on vast text data that can generate human-like text (GPT, Claude, Gemini)."
+
+[[acronyms]]
+id = "slm"
+acronym = "SLM"
+accepted_answers = ["Small Language Model"]
+category = "ai"
+difficulty = 2
+explanation = "Compact AI models designed to run locally on devices (Phi-4, Gemma, Llama)."
+
+[[acronyms]]
+id = "rag"
+acronym = "RAG"
+accepted_answers = ["Retrieval-Augmented Generation", "Retrieval Augmented Generation"]
+category = "ai"
+difficulty = 2
+explanation = "Technique where AI retrieves relevant documents before generating an answer — how Copilot grounds responses."
+
+[[acronyms]]
+id = "gpt"
+acronym = "GPT"
+accepted_answers = ["Generative Pre-trained Transformer"]
+category = "ai"
+difficulty = 1
+explanation = "OpenAI's family of language models that powers ChatGPT and Microsoft Copilot."
+
+[[acronyms]]
+id = "nlp"
+acronym = "NLP"
+accepted_answers = ["Natural Language Processing"]
+category = "ai"
+difficulty = 1
+explanation = "Branch of AI focused on understanding and generating human language."
+
+[[acronyms]]
+id = "byok"
+acronym = "BYOK"
+accepted_answers = ["Bring Your Own Key"]
+category = "security"
+difficulty = 2
+explanation = "Using your own encryption keys with a cloud service instead of provider-managed keys."
+
+[[acronyms]]
+id = "iac"
+acronym = "IaC"
+accepted_answers = ["Infrastructure as Code"]
+category = "azure"
+difficulty = 2
+explanation = "Managing infrastructure through code files (Bicep, Terraform, ARM) rather than manual setup."
+
+[[acronyms]]
+id = "waf"
+acronym = "WAF"
+accepted_answers = ["Web Application Firewall", "Well-Architected Framework"]
+category = "azure"
+difficulty = 2
+explanation = "Either a security filter for web traffic, or Azure's design best practices framework."
+
+[[acronyms]]
+id = "cmdb"
+acronym = "CMDB"
+accepted_answers = ["Configuration Management Database"]
+category = "general"
+difficulty = 2
+explanation = "Database storing information about IT assets and their relationships."
+
+[[acronyms]]
+id = "itil"
+acronym = "ITIL"
+accepted_answers = ["Information Technology Infrastructure Library"]
+category = "general"
+difficulty = 2
+explanation = "Framework of best practices for IT service management."
+
+[[acronyms]]
+id = "siem"
+acronym = "SIEM"
+accepted_answers = ["Security Information and Event Management"]
+category = "security"
+difficulty = 2
+explanation = "Collects and analyses security logs from across an organisation to detect threats."
+
+[[acronyms]]
+id = "soar"
+acronym = "SOAR"
+accepted_answers = ["Security Orchestration, Automation and Response", "Security Orchestration Automation and Response"]
+category = "security"
+difficulty = 3
+explanation = "Automates security incident response workflows and playbooks."
+
+[[acronyms]]
+id = "xdr"
+acronym = "XDR"
+accepted_answers = ["Extended Detection and Response"]
+category = "security"
+difficulty = 2
+explanation = "Unified security platform correlating threats across endpoints, email, identity, and cloud."
+
+[[acronyms]]
+id = "edr"
+acronym = "EDR"
+accepted_answers = ["Endpoint Detection and Response"]
+category = "security"
+difficulty = 2
+explanation = "Monitors endpoints (laptops, phones) for suspicious activity and enables response."
+
+[[acronyms]]
+id = "cspm"
+acronym = "CSPM"
+accepted_answers = ["Cloud Security Posture Management"]
+category = "security"
+difficulty = 3
+explanation = "Continuously monitors cloud configurations for security misconfigurations."
+
+[[acronyms]]
+id = "ztna"
+acronym = "ZTNA"
+accepted_answers = ["Zero Trust Network Access"]
+category = "security"
+difficulty = 2
+explanation = "Network access model that verifies every request as if it's from an untrusted network."
+
+[[acronyms]]
+id = "oauth"
+acronym = "OAuth"
+accepted_answers = ["Open Authorization"]
+category = "security"
+difficulty = 2
+explanation = "Protocol for delegated access — lets apps access resources on behalf of a user without sharing passwords."
+
+[[acronyms]]
+id = "smtp"
+acronym = "SMTP"
+accepted_answers = ["Simple Mail Transfer Protocol"]
+category = "networking"
+difficulty = 1
+explanation = "Protocol for sending email between servers."
+
+[[acronyms]]
+id = "imap"
+acronym = "IMAP"
+accepted_answers = ["Internet Message Access Protocol"]
+category = "networking"
+difficulty = 2
+explanation = "Protocol for accessing email on a server — syncs across devices."
+
+[[acronyms]]
+id = "fqdn"
+acronym = "FQDN"
+accepted_answers = ["Fully Qualified Domain Name"]
+category = "networking"
+difficulty = 2
+explanation = "Complete domain name including hostname and all domain levels (e.g., mail.contoso.com)."
+
+[[acronyms]]
+id = "cors"
+acronym = "CORS"
+accepted_answers = ["Cross-Origin Resource Sharing"]
+category = "general"
+difficulty = 2
+explanation = "Browser security mechanism controlling which domains can make requests to your API."
+
+[[acronyms]]
+id = "cdn"
+acronym = "CDN"
+accepted_answers = ["Content Delivery Network"]
+category = "networking"
+difficulty = 1
+explanation = "Distributed network of servers that caches content closer to end users for faster delivery."
+
+[[acronyms]]
+id = "sdk"
+acronym = "SDK"
+accepted_answers = ["Software Development Kit"]
+category = "general"
+difficulty = 1
+explanation = "Collection of tools, libraries, and documentation for building software for a specific platform."
+
+[[acronyms]]
+id = "ide"
+acronym = "IDE"
+accepted_answers = ["Integrated Development Environment"]
+category = "general"
+difficulty = 1
+explanation = "Software application for writing code with features like debugging, autocomplete, and testing."
+
+[[acronyms]]
+id = "pii"
+acronym = "PII"
+accepted_answers = ["Personally Identifiable Information"]
+category = "security"
+difficulty = 1
+explanation = "Any data that could identify a specific individual (name, email, SSN, IP address)."
+
+[[acronyms]]
+id = "byod"
+acronym = "BYOD"
+accepted_answers = ["Bring Your Own Device"]
+category = "m365"
+difficulty = 1
+explanation = "Policy allowing employees to use personal devices for work purposes."
+
+[[acronyms]]
+id = "mdm"
+acronym = "MDM"
+accepted_answers = ["Mobile Device Management"]
+category = "m365"
+difficulty = 1
+explanation = "Managing and securing mobile devices — Intune is Microsoft's MDM solution."
+
+[[acronyms]]
+id = "mam"
+acronym = "MAM"
+accepted_answers = ["Mobile Application Management"]
+category = "m365"
+difficulty = 2
+explanation = "Managing apps on devices without managing the entire device — protects corporate data in apps."
+
+[[acronyms]]
+id = "gpo"
+acronym = "GPO"
+accepted_answers = ["Group Policy Object"]
+category = "m365"
+difficulty = 1
+explanation = "Windows Active Directory mechanism for managing user and computer settings centrally."
+
+[[acronyms]]
+id = "ou"
+acronym = "OU"
+accepted_answers = ["Organizational Unit"]
+category = "m365"
+difficulty = 1
+explanation = "Container in Active Directory for organising users, groups, and computers."
+
+[[acronyms]]
+id = "ad"
+acronym = "AD"
+accepted_answers = ["Active Directory"]
+category = "m365"
+difficulty = 1
+explanation = "Microsoft's on-premises directory service for authentication and resource management."
+
+[[acronyms]]
+id = "upn"
+acronym = "UPN"
+accepted_answers = ["User Principal Name"]
+category = "m365"
+difficulty = 2
+explanation = "Username in email format (user@domain.com) used for signing in to Microsoft services."
+
+[[acronyms]]
+id = "cname"
+acronym = "CNAME"
+accepted_answers = ["Canonical Name"]
+category = "networking"
+difficulty = 2
+explanation = "DNS record that creates an alias pointing one domain name to another."
+
+[[acronyms]]
+id = "ttl"
+acronym = "TTL"
+accepted_answers = ["Time to Live"]
+category = "networking"
+difficulty = 2
+explanation = "How long a DNS record or network packet is valid before it expires or is discarded."
+
+[[acronyms]]
+id = "npu"
+acronym = "NPU"
+accepted_answers = ["Neural Processing Unit"]
+category = "ai"
+difficulty = 2
+explanation = "Dedicated chip designed to accelerate AI/ML workloads on devices (Copilot+ PCs)."
+
+[[acronyms]]
+id = "copilot"
+acronym = "M365 Copilot"
+accepted_answers = ["Microsoft 365 Copilot"]
+category = "ai"
+difficulty = 1
+explanation = "AI assistant integrated into Word, Excel, PowerPoint, Outlook, and Teams."
+
+[[acronyms]]
+id = "sxs"
+acronym = "SxS"
+accepted_answers = ["Side-by-Side"]
+category = "general"
+difficulty = 3
+explanation = "Running multiple versions of software simultaneously — common in Windows component stores."
+
+[[acronyms]]
+id = "kql"
+acronym = "KQL"
+accepted_answers = ["Kusto Query Language"]
+category = "azure"
+difficulty = 2
+explanation = "Query language used in Azure Data Explorer, Sentinel, and Log Analytics."
+
+[[acronyms]]
+id = "pip"
+acronym = "PIP"
+accepted_answers = ["Public IP", "Package Installer for Python"]
+category = "networking"
+difficulty = 2
+explanation = "Either a public IP address in Azure, or Python's package manager."
+
+[[acronyms]]
+id = "rca"
+acronym = "RCA"
+accepted_answers = ["Root Cause Analysis"]
+category = "general"
+difficulty = 1
+explanation = "Investigation process to find the underlying cause of an incident."
+
+[[acronyms]]
+id = "mttr"
+acronym = "MTTR"
+accepted_answers = ["Mean Time to Recovery", "Mean Time to Repair", "Mean Time to Resolve"]
+category = "general"
+difficulty = 2
+explanation = "Average time to restore service after an outage."
+
+[[acronyms]]
+id = "mttf"
+acronym = "MTTF"
+accepted_answers = ["Mean Time to Failure"]
+category = "general"
+difficulty = 2
+explanation = "Average time a system operates before failing."
+
+[[acronyms]]
+id = "toml"
+acronym = "TOML"
+accepted_answers = ["Tom's Obvious Minimal Language", "Tom's Obvious, Minimal Language"]
+category = "general"
+difficulty = 3
+explanation = "Configuration file format designed to be easy to read — used in Rust, Hugo, and Python projects."
+
+[[acronyms]]
+id = "pwsh"
+acronym = "pwsh"
+accepted_answers = ["PowerShell"]
+category = "m365"
+difficulty = 2
+explanation = "Cross-platform command-line shell and scripting language from Microsoft."
+
+[[acronyms]]
+id = "owasp"
+acronym = "OWASP"
+accepted_answers = ["Open Web Application Security Project", "Open Worldwide Application Security Project"]
+category = "security"
+difficulty = 2
+explanation = "Non-profit focused on improving software security — publishes the famous Top 10 vulnerability list."
+
+[[acronyms]]
+id = "atp"
+acronym = "ATP"
+accepted_answers = ["Advanced Threat Protection"]
+category = "security"
+difficulty = 2
+explanation = "Security features detecting and blocking sophisticated cyber attacks (now Defender for Office 365)."
+
+[[acronyms]]
+id = "ga"
+acronym = "GA"
+accepted_answers = ["General Availability", "Generally Available"]
+category = "general"
+difficulty = 1
+explanation = "When a product or feature is officially released for production use."
+
+[[acronyms]]
+id = "poc"
+acronym = "PoC"
+accepted_answers = ["Proof of Concept"]
+category = "general"
+difficulty = 1
+explanation = "Small-scale demonstration that an idea or approach works before full implementation."
+
+[[acronyms]]
+id = "mvp"
+acronym = "MVP"
+accepted_answers = ["Minimum Viable Product"]
+category = "general"
+difficulty = 1
+explanation = "Simplest version of a product that delivers core value — build, learn, iterate."

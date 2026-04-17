@@ -1,0 +1,582 @@
+# ============================================================================
+# IT Admin Comms Templates — 20 email templates
+# ============================================================================
+
+[[templates]]
+id = "planned-maintenance"
+title = "Planned Maintenance Notice"
+category = "maintenance"
+subject = "Planned Maintenance: {{SERVICE}} — {{DATE}}"
+when_to_use = "Send 5-7 days before planned maintenance or upgrades"
+body = """Dear team,
+
+We will be performing planned maintenance on {{SERVICE}} on {{DATE}} from {{START_TIME}} to {{END_TIME}} ({{TIMEZONE}}).
+
+**What's happening:** {{DESCRIPTION}}
+
+**Expected impact:** {{IMPACT}}
+
+**What you need to do:** {{ACTION}}
+
+If you experience any issues after the maintenance window, please contact the IT Help Desk at {{HELPDESK_EMAIL}}.
+
+Thank you for your patience.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["SERVICE", "DATE", "START_TIME", "END_TIME", "TIMEZONE", "DESCRIPTION", "IMPACT", "ACTION", "HELPDESK_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "mfa-enforcement"
+title = "MFA Enforcement Notice"
+category = "security"
+subject = "Action Required: Multi-Factor Authentication Now Required"
+when_to_use = "Send 2 weeks before enforcing MFA"
+body = """Dear {{RECIPIENT}},
+
+Starting {{DATE}}, Multi-Factor Authentication (MFA) will be required for all {{ORG_NAME}} accounts.
+
+**Why are we doing this?** MFA blocks 99.9% of account attacks. It's one of the most effective security measures available.
+
+**What you need to do before {{DATE}}:**
+1. Install the Microsoft Authenticator app on your phone
+2. Sign in to https://aka.ms/mysecurityinfo
+3. Add your phone as a second factor
+
+**Need help?** Visit our setup guide at {{GUIDE_URL}} or contact IT at {{HELPDESK_EMAIL}}.
+
+If you've already set up MFA — thank you! No action needed.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["RECIPIENT", "DATE", "ORG_NAME", "GUIDE_URL", "HELPDESK_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "service-incident"
+title = "Service Incident Alert"
+category = "incidents"
+subject = "⚠️ Service Issue: {{SERVICE}} — Currently Impacted"
+when_to_use = "Send immediately when a service outage is detected"
+body = """Dear team,
+
+We are currently experiencing issues with {{SERVICE}}.
+
+**Status:** {{STATUS}}
+**Started:** {{START_TIME}}
+**Impact:** {{IMPACT}}
+**Affected users:** {{AFFECTED}}
+
+**What we're doing:** {{ACTIONS}}
+
+We will provide updates every {{UPDATE_INTERVAL}}. For urgent issues, contact {{HELPDESK_EMAIL}}.
+
+{{SENDER_NAME}}
+IT Operations"""
+placeholders = ["SERVICE", "STATUS", "START_TIME", "IMPACT", "AFFECTED", "ACTIONS", "UPDATE_INTERVAL", "HELPDESK_EMAIL", "SENDER_NAME"]
+
+[[templates]]
+id = "incident-resolved"
+title = "Incident Resolved"
+category = "incidents"
+subject = "✅ Resolved: {{SERVICE}} — Service Restored"
+when_to_use = "Send when a service incident is fully resolved"
+body = """Dear team,
+
+The {{SERVICE}} issue reported earlier has been resolved.
+
+**Resolved at:** {{RESOLVED_TIME}}
+**Duration:** {{DURATION}}
+**Root cause:** {{ROOT_CAUSE}}
+**What we've done to prevent recurrence:** {{PREVENTION}}
+
+If you're still experiencing issues, please contact {{HELPDESK_EMAIL}}.
+
+Thank you for your patience.
+
+{{SENDER_NAME}}
+IT Operations"""
+placeholders = ["SERVICE", "RESOLVED_TIME", "DURATION", "ROOT_CAUSE", "PREVENTION", "HELPDESK_EMAIL", "SENDER_NAME"]
+
+[[templates]]
+id = "new-tool-rollout"
+title = "New Tool Rollout"
+category = "changes"
+subject = "🚀 New Tool Available: {{TOOL_NAME}}"
+when_to_use = "Send when deploying a new tool or feature to users"
+body = """Hi team,
+
+We're excited to introduce {{TOOL_NAME}} — {{TOOL_DESCRIPTION}}.
+
+**Available from:** {{DATE}}
+**Who gets it:** {{AUDIENCE}}
+
+**Key benefits:**
+- {{BENEFIT_1}}
+- {{BENEFIT_2}}
+- {{BENEFIT_3}}
+
+**How to get started:** {{GETTING_STARTED}}
+
+**Training resources:** {{TRAINING_URL}}
+
+Questions? Reply to this email or contact {{HELPDESK_EMAIL}}.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["TOOL_NAME", "TOOL_DESCRIPTION", "DATE", "AUDIENCE", "BENEFIT_1", "BENEFIT_2", "BENEFIT_3", "GETTING_STARTED", "TRAINING_URL", "HELPDESK_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "password-reset-guide"
+title = "Password Reset Instructions"
+category = "helpdesk"
+subject = "How to Reset Your Password"
+when_to_use = "Send to users who need password reset guidance"
+body = """Hi {{RECIPIENT}},
+
+Here's how to reset your {{ORG_NAME}} password:
+
+**Option 1: Self-Service (recommended)**
+1. Go to https://aka.ms/sspr
+2. Enter your email address
+3. Complete the verification (phone or authenticator)
+4. Choose a new password
+
+**Option 2: Contact IT**
+Email: {{HELPDESK_EMAIL}}
+Phone: {{HELPDESK_PHONE}}
+
+**Password requirements:**
+- At least {{MIN_LENGTH}} characters
+- Mix of uppercase, lowercase, numbers, and symbols
+- Cannot reuse your last {{HISTORY_COUNT}} passwords
+
+{{SENDER_NAME}}
+IT Help Desk"""
+placeholders = ["RECIPIENT", "ORG_NAME", "HELPDESK_EMAIL", "HELPDESK_PHONE", "MIN_LENGTH", "HISTORY_COUNT", "SENDER_NAME"]
+
+[[templates]]
+id = "phishing-warning"
+title = "Phishing Alert Warning"
+category = "security"
+subject = "🔴 Security Alert: Phishing Emails Targeting {{ORG_NAME}}"
+when_to_use = "Send when a phishing campaign targets your organisation"
+body = """URGENT: Phishing Alert
+
+We've detected phishing emails targeting {{ORG_NAME}} employees.
+
+**What to look for:**
+- Subject line: "{{PHISHING_SUBJECT}}"
+- Sender appears to be: {{FAKE_SENDER}}
+- Contains a link to: {{FAKE_URL}}
+
+**If you received this email:**
+1. DO NOT click any links
+2. DO NOT download attachments
+3. Report it: click the "Report Phishing" button in Outlook
+4. Delete the email
+
+**If you already clicked the link:**
+1. Change your password immediately at https://aka.ms/sspr
+2. Contact IT at {{HELPDESK_EMAIL}}
+3. Check your Sent Items for unauthorised emails
+
+Stay vigilant. When in doubt, verify directly with the sender.
+
+{{SENDER_NAME}}
+IT Security Team"""
+placeholders = ["ORG_NAME", "PHISHING_SUBJECT", "FAKE_SENDER", "FAKE_URL", "HELPDESK_EMAIL", "SENDER_NAME"]
+
+[[templates]]
+id = "copilot-rollout"
+title = "Copilot Rollout Announcement"
+category = "changes"
+subject = "🤖 Microsoft 365 Copilot is Coming to {{ORG_NAME}}"
+when_to_use = "Send when rolling out M365 Copilot to users"
+body = """Hi team,
+
+Great news! Microsoft 365 Copilot is being rolled out to {{AUDIENCE}} starting {{DATE}}.
+
+**What is Copilot?** An AI assistant built into Word, Excel, PowerPoint, Outlook, and Teams that helps you draft, summarise, analyse, and create.
+
+**What you'll be able to do:**
+- Draft emails and documents in seconds
+- Summarise long email threads and meetings
+- Analyse data in Excel with natural language
+- Create presentations from a simple prompt
+
+**Important to know:**
+- Copilot respects your existing file permissions
+- Your prompts are not used to train the AI model
+- All data stays within {{ORG_NAME}}'s Microsoft 365 boundary
+
+**Getting started:** {{GETTING_STARTED_URL}}
+
+**Training session:** {{TRAINING_DATE}} at {{TRAINING_TIME}} — {{TRAINING_LINK}}
+
+Questions? Contact {{HELPDESK_EMAIL}}.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["ORG_NAME", "AUDIENCE", "DATE", "GETTING_STARTED_URL", "TRAINING_DATE", "TRAINING_TIME", "TRAINING_LINK", "HELPDESK_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "welcome-new-starter"
+title = "Welcome Email — New Starter"
+category = "onboarding"
+subject = "Welcome to {{ORG_NAME}} — Your IT Setup Guide"
+when_to_use = "Send to new employees on their first day"
+body = """Welcome to {{ORG_NAME}}, {{RECIPIENT}}! 🎉
+
+Here's everything you need to get started with your IT setup.
+
+**Your credentials:**
+- Username: {{USERNAME}}
+- Temporary password: Set via the link sent to your personal email
+- Email: {{WORK_EMAIL}}
+
+**First steps:**
+1. Sign in at https://portal.office.com
+2. Set up MFA (Multi-Factor Authentication) — {{MFA_GUIDE_URL}}
+3. Install Microsoft Teams — {{TEAMS_URL}}
+4. Set up OneDrive sync — {{ONEDRIVE_GUIDE_URL}}
+
+**Key resources:**
+- IT Help Desk: {{HELPDESK_EMAIL}} / {{HELPDESK_PHONE}}
+- Self-service password reset: https://aka.ms/sspr
+- Company intranet: {{INTRANET_URL}}
+
+If you need any help, don't hesitate to reach out!
+
+{{SENDER_NAME}}
+IT Team"""
+placeholders = ["ORG_NAME", "RECIPIENT", "USERNAME", "WORK_EMAIL", "MFA_GUIDE_URL", "TEAMS_URL", "ONEDRIVE_GUIDE_URL", "HELPDESK_EMAIL", "HELPDESK_PHONE", "INTRANET_URL", "SENDER_NAME"]
+
+[[templates]]
+id = "offboarding-checklist"
+title = "Offboarding IT Checklist"
+category = "onboarding"
+subject = "IT Offboarding: {{EMPLOYEE_NAME}} — {{LAST_DAY}}"
+when_to_use = "Send to IT team when an employee is leaving"
+body = """IT Offboarding Checklist
+
+**Employee:** {{EMPLOYEE_NAME}}
+**Last working day:** {{LAST_DAY}}
+**Manager:** {{MANAGER_NAME}}
+
+**Before last day:**
+☐ Backup user's OneDrive to {{BACKUP_LOCATION}}
+☐ Transfer shared mailbox ownership
+☐ Reassign Teams channels/groups ownership
+☐ Transfer ownership of Power Automate flows
+☐ Export/archive any critical data
+
+**On last day:**
+☐ Disable the user account in Entra ID
+☐ Revoke all active sessions
+☐ Reset password
+☐ Remove from all security/distribution groups
+☐ Set out-of-office with forwarding to {{FORWARD_TO}}
+☐ Block mobile device access (Intune wipe if BYOD)
+☐ Reclaim hardware (laptop, phone, accessories)
+☐ Remove from Conditional Access exclusions
+
+**After 30 days:**
+☐ Convert to shared mailbox (if needed)
+☐ Delete user account
+☐ Reclaim licence
+
+Completed by: _______________
+Date: _______________"""
+placeholders = ["EMPLOYEE_NAME", "LAST_DAY", "MANAGER_NAME", "BACKUP_LOCATION", "FORWARD_TO"]
+
+[[templates]]
+id = "licence-change"
+title = "Licence Change Notification"
+category = "changes"
+subject = "📋 Licence Update: Changes to Your Microsoft 365 Plan"
+when_to_use = "Send when changing user licences (upgrade, downgrade, or add-on)"
+body = """Hi {{RECIPIENT}},
+
+We're making changes to your Microsoft 365 licence.
+
+**Current plan:** {{CURRENT_PLAN}}
+**New plan:** {{NEW_PLAN}}
+**Effective date:** {{DATE}}
+
+**What's changing:**
+{{CHANGES}}
+
+**What you need to do:** {{ACTION}}
+
+**What stays the same:** Your email, OneDrive files, and Teams data are unaffected.
+
+Questions? Contact {{HELPDESK_EMAIL}}.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["RECIPIENT", "CURRENT_PLAN", "NEW_PLAN", "DATE", "CHANGES", "ACTION", "HELPDESK_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "teams-policy"
+title = "Teams Policy Change"
+category = "changes"
+subject = "📢 Update: Changes to Microsoft Teams Settings"
+when_to_use = "Send when changing Teams policies (guest access, app permissions, etc.)"
+body = """Hi team,
+
+We're updating Microsoft Teams settings at {{ORG_NAME}}.
+
+**What's changing:** {{CHANGE_DESCRIPTION}}
+**When:** {{DATE}}
+**Why:** {{REASON}}
+
+**Impact on you:**
+{{IMPACT}}
+
+**What you need to do:** {{ACTION}}
+
+These changes help us {{BENEFIT}}.
+
+Questions? Contact {{HELPDESK_EMAIL}}.
+
+{{SENDER_NAME}}
+IT Team"""
+placeholders = ["ORG_NAME", "CHANGE_DESCRIPTION", "DATE", "REASON", "IMPACT", "ACTION", "BENEFIT", "HELPDESK_EMAIL", "SENDER_NAME"]
+
+[[templates]]
+id = "eol-migration"
+title = "End-of-Support Migration Notice"
+category = "maintenance"
+subject = "⚠️ Action Required: {{PRODUCT}} End of Support — {{DATE}}"
+when_to_use = "Send when a product is reaching end of support"
+body = """Dear team,
+
+{{PRODUCT}} will reach end of support on {{DATE}}.
+
+**What this means:** After {{DATE}}, {{PRODUCT}} will no longer receive security updates, bug fixes, or technical support from Microsoft.
+
+**What's replacing it:** {{REPLACEMENT}}
+
+**Migration timeline:**
+- {{MILESTONE_1}}
+- {{MILESTONE_2}}
+- {{MILESTONE_3}}
+
+**What you need to do:** {{ACTION}}
+
+**Need help migrating?** Contact {{HELPDESK_EMAIL}} or join our migration support session on {{SUPPORT_DATE}}.
+
+{{SENDER_NAME}}
+IT Team"""
+placeholders = ["PRODUCT", "DATE", "REPLACEMENT", "MILESTONE_1", "MILESTONE_2", "MILESTONE_3", "ACTION", "HELPDESK_EMAIL", "SUPPORT_DATE", "SENDER_NAME"]
+
+[[templates]]
+id = "budget-request"
+title = "IT Budget Request"
+category = "changes"
+subject = "Budget Request: {{PROJECT_NAME}} — {{AMOUNT}}"
+when_to_use = "Send to finance/leadership when requesting budget for IT projects"
+body = """Hi {{RECIPIENT}},
+
+I'd like to request budget approval for {{PROJECT_NAME}}.
+
+**Estimated cost:** {{AMOUNT}}
+**Timeline:** {{TIMELINE}}
+**Business justification:**
+{{JUSTIFICATION}}
+
+**Expected benefits:**
+- {{BENEFIT_1}}
+- {{BENEFIT_2}}
+- {{BENEFIT_3}}
+
+**Alternatives considered:** {{ALTERNATIVES}}
+
+I'm happy to provide additional details or join a call to discuss.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["RECIPIENT", "PROJECT_NAME", "AMOUNT", "TIMELINE", "JUSTIFICATION", "BENEFIT_1", "BENEFIT_2", "BENEFIT_3", "ALTERNATIVES", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "data-breach-notify"
+title = "Data Breach Notification"
+category = "incidents"
+subject = "🔴 Security Notice: Data Incident at {{ORG_NAME}}"
+when_to_use = "Send when a data breach or security incident requires user notification"
+body = """Dear {{RECIPIENT}},
+
+We are writing to inform you of a security incident at {{ORG_NAME}}.
+
+**What happened:** {{INCIDENT_DESCRIPTION}}
+**When:** {{INCIDENT_DATE}}
+**What data was involved:** {{DATA_AFFECTED}}
+
+**What we've done:**
+- {{ACTION_1}}
+- {{ACTION_2}}
+- {{ACTION_3}}
+
+**What you should do:**
+1. Change your password at https://aka.ms/sspr
+2. Review your account for suspicious activity
+3. Enable MFA if you haven't already
+
+**Who to contact:** {{CONTACT_EMAIL}} or {{CONTACT_PHONE}}
+
+We take data security seriously and are committed to preventing future incidents.
+
+{{SENDER_NAME}}
+IT Security Team"""
+placeholders = ["RECIPIENT", "ORG_NAME", "INCIDENT_DESCRIPTION", "INCIDENT_DATE", "DATA_AFFECTED", "ACTION_1", "ACTION_2", "ACTION_3", "CONTACT_EMAIL", "CONTACT_PHONE", "SENDER_NAME"]
+
+[[templates]]
+id = "training-invite"
+title = "IT Training Session Invite"
+category = "changes"
+subject = "📚 Training: {{TRAINING_TOPIC}} — {{DATE}}"
+when_to_use = "Invite users to IT training sessions"
+body = """Hi team,
+
+You're invited to a training session on {{TRAINING_TOPIC}}.
+
+**When:** {{DATE}} at {{TIME}} ({{TIMEZONE}})
+**Duration:** {{DURATION}}
+**Where:** {{LOCATION}}
+**Who should attend:** {{AUDIENCE}}
+
+**What you'll learn:**
+- {{TOPIC_1}}
+- {{TOPIC_2}}
+- {{TOPIC_3}}
+
+**Preparation:** {{PREP_INSTRUCTIONS}}
+
+Please confirm your attendance by replying to this email.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}"""
+placeholders = ["TRAINING_TOPIC", "DATE", "TIME", "TIMEZONE", "DURATION", "LOCATION", "AUDIENCE", "TOPIC_1", "TOPIC_2", "TOPIC_3", "PREP_INSTRUCTIONS", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "change-freeze"
+title = "IT Change Freeze Notice"
+category = "maintenance"
+subject = "❄️ IT Change Freeze: {{START_DATE}} to {{END_DATE}}"
+when_to_use = "Announce a change freeze period (e.g., end of financial year, major events)"
+body = """Dear IT team and stakeholders,
+
+We are implementing an IT change freeze from {{START_DATE}} to {{END_DATE}}.
+
+**Reason:** {{REASON}}
+
+**What this means:**
+- No production deployments or infrastructure changes
+- No new software installations or upgrades
+- No firewall or network configuration changes
+- Emergency fixes only (with {{APPROVER}} approval)
+
+**Exceptions process:** Contact {{APPROVER}} with justification for emergency changes.
+
+**What should be completed BEFORE the freeze:**
+- {{PRE_TASK_1}}
+- {{PRE_TASK_2}}
+
+Normal change procedures resume on {{RESUME_DATE}}.
+
+{{SENDER_NAME}}
+IT Operations"""
+placeholders = ["START_DATE", "END_DATE", "REASON", "APPROVER", "PRE_TASK_1", "PRE_TASK_2", "RESUME_DATE", "SENDER_NAME"]
+
+[[templates]]
+id = "vendor-notification"
+title = "Vendor/Partner Notification"
+category = "changes"
+subject = "Notice: Changes to {{SYSTEM_NAME}} at {{ORG_NAME}}"
+when_to_use = "Notify external vendors or partners about upcoming IT changes"
+body = """Dear {{VENDOR_NAME}},
+
+We are writing to inform you of upcoming changes to {{SYSTEM_NAME}} at {{ORG_NAME}}.
+
+**What's changing:** {{CHANGE_DESCRIPTION}}
+**When:** {{DATE}}
+**Expected downtime:** {{DOWNTIME}}
+
+**Impact on your integration:**
+{{IMPACT}}
+
+**Action required from your side:**
+{{VENDOR_ACTION}}
+
+If you have concerns or need to discuss, please contact {{CONTACT_EMAIL}}.
+
+{{SENDER_NAME}}
+{{SENDER_TITLE}}
+{{ORG_NAME}}"""
+placeholders = ["VENDOR_NAME", "SYSTEM_NAME", "ORG_NAME", "CHANGE_DESCRIPTION", "DATE", "DOWNTIME", "IMPACT", "VENDOR_ACTION", "CONTACT_EMAIL", "SENDER_NAME", "SENDER_TITLE"]
+
+[[templates]]
+id = "feedback-survey"
+title = "IT Satisfaction Survey"
+category = "helpdesk"
+subject = "📊 Quick Survey: How is IT doing? (2 minutes)"
+when_to_use = "Send quarterly IT satisfaction surveys to measure service quality"
+body = """Hi {{RECIPIENT}},
+
+We'd love your feedback on IT services at {{ORG_NAME}}.
+
+This anonymous survey takes about 2 minutes and helps us improve.
+
+**Survey link:** {{SURVEY_URL}}
+**Closes:** {{CLOSE_DATE}}
+
+**What we're measuring:**
+- Help desk response times
+- Tool and system reliability
+- Communication quality
+- Training and support resources
+
+Your honest feedback — positive or critical — helps us prioritise what matters to you.
+
+Last survey's top action: {{LAST_ACTION}}
+
+Thank you,
+{{SENDER_NAME}}
+IT Team"""
+placeholders = ["RECIPIENT", "ORG_NAME", "SURVEY_URL", "CLOSE_DATE", "LAST_ACTION", "SENDER_NAME"]
+
+[[templates]]
+id = "policy-exception"
+title = "IT Policy Exception Request"
+category = "security"
+subject = "Policy Exception Request: {{POLICY_NAME}} — {{REQUESTER}}"
+when_to_use = "Document and submit IT policy exception requests"
+body = """IT Policy Exception Request
+
+**Requester:** {{REQUESTER}}
+**Department:** {{DEPARTMENT}}
+**Policy:** {{POLICY_NAME}}
+**Date:** {{DATE}}
+
+**What exception is needed:**
+{{EXCEPTION_DESCRIPTION}}
+
+**Business justification:**
+{{JUSTIFICATION}}
+
+**Duration:** {{DURATION}} (temporary / permanent)
+
+**Risk assessment:**
+- Risk if exception is granted: {{RISK_GRANTED}}
+- Risk if exception is denied: {{RISK_DENIED}}
+
+**Compensating controls:**
+{{COMPENSATING_CONTROLS}}
+
+**Approvals required:**
+☐ IT Security — {{SECURITY_APPROVER}}
+☐ IT Manager — {{IT_APPROVER}}
+☐ Business Owner — {{BIZ_APPROVER}}
+
+Submitted by: {{SENDER_NAME}}"""
+placeholders = ["REQUESTER", "DEPARTMENT", "POLICY_NAME", "DATE", "EXCEPTION_DESCRIPTION", "JUSTIFICATION", "DURATION", "RISK_GRANTED", "RISK_DENIED", "COMPENSATING_CONTROLS", "SECURITY_APPROVER", "IT_APPROVER", "BIZ_APPROVER", "SENDER_NAME"]

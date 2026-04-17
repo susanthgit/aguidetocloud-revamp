@@ -1,0 +1,97 @@
+/* ============================================================================
+   IT Admin Comms — .comms-* namespace
+   Accent: #5B9BD5 (Corporate Blue)
+   ============================================================================ */
+:root { --comms-accent: #5B9BD5; }
+.comms-page { max-width: 800px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+.comms-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+}
+.comms-tab {
+  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
+  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+}
+.comms-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.comms-tab.active {
+  color: #fff; background: var(--comms-accent); border-color: var(--comms-accent);
+  box-shadow: 0 2px 8px rgba(91,155,213,0.3);
+}
+.comms-panel { display: none; }
+.comms-panel.active { display: block; }
+
+.comms-filter-row { margin-bottom: 1rem; }
+.comms-select {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 8px; font-size: 0.85rem;
+}
+.comms-select option { background: #0a0a14; color: #fff; }
+
+.comms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.8rem; }
+.comms-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; cursor: pointer; transition: all 0.2s;
+  border-left: 3px solid var(--comms-accent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.comms-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.comms-card-title { font-weight: 600; color: #fff; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.comms-card-cat {
+  display: inline-block; padding: 0.15rem 0.5rem; border-radius: 10px;
+  background: rgba(91,155,213,0.15); color: var(--comms-accent);
+  font-size: 0.65rem; text-transform: uppercase; margin-bottom: 0.3rem;
+}
+.comms-card-hint { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+.comms-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8); padding: 0.5rem 1rem; border-radius: 8px;
+  cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;
+}
+.comms-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.comms-btn-primary { background: var(--comms-accent); color: #fff; border-color: var(--comms-accent); font-weight: 600; }
+.comms-btn-primary:hover { box-shadow: 0 2px 12px rgba(91,155,213,0.4); }
+
+.comms-editor-wrap {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.5rem;
+}
+.comms-editor-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.comms-editor-cat {
+  padding: 0.15rem 0.5rem; border-radius: 10px; background: rgba(91,155,213,0.15);
+  color: var(--comms-accent); font-size: 0.65rem; text-transform: uppercase;
+}
+.comms-editor-hint { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-bottom: 1rem; font-style: italic; }
+
+.comms-placeholders { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+.comms-field { display: flex; flex-direction: column; gap: 0.2rem; }
+.comms-field label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+.comms-field input {
+  padding: 0.5rem; border-radius: 8px; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.85rem;
+}
+.comms-field input:focus { border-color: var(--comms-accent); outline: none; box-shadow: 0 0 0 2px rgba(91,155,213,0.2); }
+
+.comms-preview {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 1rem; margin-bottom: 1rem;
+  font-family: 'Segoe UI', sans-serif; font-size: 0.85rem;
+  color: rgba(255,255,255,0.8); white-space: pre-wrap; line-height: 1.6;
+  max-height: 400px; overflow-y: auto;
+}
+.comms-copy-row { display: flex; gap: 0.5rem; }
+
+.comms-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.comms-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.comms-panel details p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
+@media (max-width: 480px) {
+  .comms-grid { grid-template-columns: 1fr; }
+  .comms-placeholders { grid-template-columns: 1fr; }
+}

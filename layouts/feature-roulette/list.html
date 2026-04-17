@@ -1,0 +1,60 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/feature-roulette.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "M365 Feature Roulette" "subtitle" "Discover features you never knew existed" "accent" "#F39C12") }}
+
+<div class="roulette-page">
+  <div class="roulette-tabs" role="tablist">
+    <button class="roulette-tab active" role="tab" aria-selected="true" data-tab="play">Discover</button>
+    <button class="roulette-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <div class="roulette-panel active" id="panel-play">
+    <div class="roulette-controls">
+      <button class="roulette-btn roulette-btn-primary" id="btn-spin" aria-label="Show random feature">🎰 Spin</button>
+      <select class="roulette-select" id="product-filter" aria-label="Filter by product">
+        <option value="all">All Products</option>
+      </select>
+      <div class="roulette-score-pill" id="score-pill">
+        <span id="known-count">0</span> known · <span id="new-count">0</span> new
+      </div>
+    </div>
+
+    <div class="roulette-card" id="roulette-card" style="display:none">
+      <div class="roulette-card-product" id="card-product"></div>
+      <div class="roulette-card-title" id="card-title"></div>
+      <div class="roulette-card-desc" id="card-desc"></div>
+      <div class="roulette-card-meta">
+        <span class="roulette-meta-badge" id="card-status"></span>
+        <span class="roulette-meta-badge" id="card-date"></span>
+      </div>
+      <div class="roulette-card-actions">
+        <button class="roulette-btn roulette-btn-knew" id="btn-knew" aria-label="I knew this">✅ Knew it</button>
+        <button class="roulette-btn roulette-btn-new" id="btn-new" aria-label="New to me">💡 New to me</button>
+        <a class="roulette-btn" id="card-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;text-decoration:none">📖 Roadmap ↗</a>
+      </div>
+    </div>
+
+    <div class="roulette-empty" id="roulette-empty">
+      <p>Hit <strong>Spin</strong> to discover a random M365 feature!</p>
+      <p class="roulette-empty-sub">Data from the official Microsoft 365 Roadmap · Updated daily</p>
+    </div>
+  </div>
+
+  <div class="roulette-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "feature-roulette") }}
+{{ partial "back-nav" . }}
+
+<script defer src="/js/feature-roulette.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

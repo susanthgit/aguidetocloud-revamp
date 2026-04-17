@@ -1,0 +1,655 @@
+# ============================================================================
+# M365 Rename Tracker — Product rename history
+# ============================================================================
+# Entity model: each product has current_name + rename events.
+# Products can rename multiple times, split, or merge.
+
+[[products]]
+id = "entra-id"
+current_name = "Microsoft Entra ID"
+category = "identity"
+description = "Cloud identity and access management service"
+url = "https://learn.microsoft.com/entra/identity/"
+
+  [[products.renames]]
+  date = "2023-07-11"
+  from = "Azure Active Directory"
+  to = "Microsoft Entra ID"
+  note = "Part of Microsoft Entra family rebrand"
+
+  [[products.renames]]
+  date = "2020-01-01"
+  from = "Azure AD"
+  to = "Azure Active Directory"
+  note = "Informal abbreviation formalised"
+
+[[products]]
+id = "defender-office"
+current_name = "Microsoft Defender for Office 365"
+category = "security"
+description = "Email and collaboration security (anti-phishing, safe links, safe attachments)"
+url = "https://learn.microsoft.com/defender-office-365/"
+
+  [[products.renames]]
+  date = "2020-10-01"
+  from = "Office 365 Advanced Threat Protection"
+  to = "Microsoft Defender for Office 365"
+  note = "Unified Defender branding"
+
+  [[products.renames]]
+  date = "2017-01-01"
+  from = "Exchange Online Advanced Threat Protection"
+  to = "Office 365 Advanced Threat Protection"
+  note = "Broadened beyond Exchange"
+
+[[products]]
+id = "defender-endpoint"
+current_name = "Microsoft Defender for Endpoint"
+category = "security"
+description = "Endpoint detection and response (EDR) platform"
+url = "https://learn.microsoft.com/defender-endpoint/"
+
+  [[products.renames]]
+  date = "2020-10-01"
+  from = "Microsoft Defender Advanced Threat Protection"
+  to = "Microsoft Defender for Endpoint"
+  note = "Unified Defender branding"
+
+  [[products.renames]]
+  date = "2019-03-01"
+  from = "Windows Defender Advanced Threat Protection"
+  to = "Microsoft Defender Advanced Threat Protection"
+  note = "Cross-platform expansion beyond Windows"
+
+[[products]]
+id = "defender-identity"
+current_name = "Microsoft Defender for Identity"
+category = "security"
+description = "Cloud-based security solution for on-premises Active Directory signals"
+url = "https://learn.microsoft.com/defender-for-identity/"
+
+  [[products.renames]]
+  date = "2020-10-01"
+  from = "Azure Advanced Threat Protection"
+  to = "Microsoft Defender for Identity"
+  note = "Unified Defender branding"
+
+  [[products.renames]]
+  date = "2018-09-01"
+  from = "Azure ATP"
+  to = "Azure Advanced Threat Protection"
+  note = "Name formalisation"
+
+[[products]]
+id = "defender-cloud-apps"
+current_name = "Microsoft Defender for Cloud Apps"
+category = "security"
+description = "Cloud Access Security Broker (CASB) for SaaS app visibility and control"
+url = "https://learn.microsoft.com/defender-cloud-apps/"
+
+  [[products.renames]]
+  date = "2022-05-01"
+  from = "Microsoft Cloud App Security"
+  to = "Microsoft Defender for Cloud Apps"
+  note = "Unified Defender branding"
+
+  [[products.renames]]
+  date = "2018-06-01"
+  from = "Adallom"
+  to = "Microsoft Cloud App Security"
+  note = "Acquired 2015, rebranded"
+
+[[products]]
+id = "purview"
+current_name = "Microsoft Purview"
+category = "compliance"
+description = "Unified data governance, risk, and compliance platform"
+url = "https://learn.microsoft.com/purview/"
+
+  [[products.renames]]
+  date = "2022-04-01"
+  from = "Microsoft 365 Compliance"
+  to = "Microsoft Purview"
+  note = "Merged compliance + Azure Purview into one brand"
+
+  [[products.renames]]
+  date = "2020-10-01"
+  from = "Office 365 Security & Compliance Center"
+  to = "Microsoft 365 Compliance"
+  note = "Separated from Security"
+
+[[products]]
+id = "m365"
+current_name = "Microsoft 365"
+category = "productivity"
+description = "Bundled productivity, security, and device management"
+url = "https://learn.microsoft.com/microsoft-365/"
+
+  [[products.renames]]
+  date = "2020-04-21"
+  from = "Office 365"
+  to = "Microsoft 365"
+  note = "Some plans renamed — E3/E5 became M365 E3/E5"
+
+[[products]]
+id = "teams"
+current_name = "Microsoft Teams"
+category = "productivity"
+description = "Chat, meetings, calling, and collaboration hub"
+url = "https://learn.microsoft.com/microsoftteams/"
+
+  [[products.renames]]
+  date = "2023-10-05"
+  from = "Microsoft Teams (classic)"
+  to = "Microsoft Teams (new)"
+  note = "Complete client rewrite — WebView2, 2x faster, 50% less memory"
+
+[[products]]
+id = "intune"
+current_name = "Microsoft Intune"
+category = "management"
+description = "Cloud-based endpoint management (MDM + MAM)"
+url = "https://learn.microsoft.com/mem/intune/"
+
+  [[products.renames]]
+  date = "2023-03-01"
+  from = "Microsoft Endpoint Manager (Intune)"
+  to = "Microsoft Intune"
+  note = "MEM brand retired — back to standalone Intune brand"
+
+  [[products.renames]]
+  date = "2019-10-01"
+  from = "Microsoft Intune"
+  to = "Microsoft Endpoint Manager (Intune)"
+  note = "Merged with SCCM under MEM umbrella"
+
+  [[products.renames]]
+  date = "2014-01-01"
+  from = "Windows Intune"
+  to = "Microsoft Intune"
+  note = "Cross-platform expansion"
+
+[[products]]
+id = "copilot-m365"
+current_name = "Microsoft 365 Copilot"
+category = "ai"
+description = "AI assistant integrated across Word, Excel, PowerPoint, Outlook, Teams"
+url = "https://learn.microsoft.com/microsoft-365-copilot/"
+
+  [[products.renames]]
+  date = "2025-04-15"
+  from = "Microsoft Copilot for Microsoft 365"
+  to = "Microsoft 365 Copilot"
+  note = "Simplified naming — dropped 'for'"
+
+  [[products.renames]]
+  date = "2024-11-01"
+  from = "Microsoft 365 Copilot"
+  to = "Microsoft Copilot for Microsoft 365"
+  note = "Brief period with 'for' prefix for disambiguation"
+
+[[products]]
+id = "copilot-chat"
+current_name = "Microsoft 365 Copilot Chat"
+category = "ai"
+description = "Free/pay-per-use AI chat for work (formerly Copilot with commercial data protection)"
+url = "https://learn.microsoft.com/microsoft-365-copilot/microsoft-365-copilot-chat/"
+
+  [[products.renames]]
+  date = "2025-01-15"
+  from = "Microsoft Copilot"
+  to = "Microsoft 365 Copilot Chat"
+  note = "Repositioned under M365 brand with new free tier"
+
+  [[products.renames]]
+  date = "2024-01-15"
+  from = "Bing Chat Enterprise"
+  to = "Microsoft Copilot"
+  note = "Dropped Bing branding"
+
+  [[products.renames]]
+  date = "2023-07-18"
+  from = "Bing Chat for Enterprise"
+  to = "Bing Chat Enterprise"
+  note = "Shortened name"
+
+[[products]]
+id = "entra-p1"
+current_name = "Microsoft Entra ID P1"
+category = "identity"
+description = "Premium identity features — Conditional Access, MFA, SSPR"
+
+  [[products.renames]]
+  date = "2023-07-11"
+  from = "Azure AD Premium P1"
+  to = "Microsoft Entra ID P1"
+  note = "Entra rebrand"
+
+[[products]]
+id = "entra-p2"
+current_name = "Microsoft Entra ID P2"
+category = "identity"
+description = "Premium+ identity — PIM, Identity Protection, access reviews"
+
+  [[products.renames]]
+  date = "2023-07-11"
+  from = "Azure AD Premium P2"
+  to = "Microsoft Entra ID P2"
+  note = "Entra rebrand"
+
+[[products]]
+id = "sentinel"
+current_name = "Microsoft Sentinel"
+category = "security"
+description = "Cloud-native SIEM and SOAR platform"
+url = "https://learn.microsoft.com/azure/sentinel/"
+
+  [[products.renames]]
+  date = "2021-11-02"
+  from = "Azure Sentinel"
+  to = "Microsoft Sentinel"
+  note = "Dropped Azure prefix — works across multi-cloud"
+
+[[products]]
+id = "defender-cloud"
+current_name = "Microsoft Defender for Cloud"
+category = "security"
+description = "Cloud security posture management (CSPM) and workload protection"
+
+  [[products.renames]]
+  date = "2021-11-02"
+  from = "Azure Security Center"
+  to = "Microsoft Defender for Cloud"
+  note = "Merged Azure Security Center + Azure Defender"
+
+  [[products.renames]]
+  date = "2020-09-01"
+  from = "Azure Security Center"
+  to = "Azure Security Center + Azure Defender"
+  note = "Split free (CSPM) and paid (CWP) tiers"
+
+[[products]]
+id = "viva"
+current_name = "Microsoft Viva"
+category = "productivity"
+description = "Employee experience platform — learning, insights, connections, goals"
+
+  [[products.renames]]
+  date = "2021-02-04"
+  from = "Project Cortex + MyAnalytics + Workplace Analytics"
+  to = "Microsoft Viva"
+  note = "Unified employee experience brand"
+
+[[products]]
+id = "loop"
+current_name = "Microsoft Loop"
+category = "productivity"
+description = "Collaborative canvas with portable components"
+
+  [[products.renames]]
+  date = "2023-03-22"
+  from = "Microsoft Loop (Preview)"
+  to = "Microsoft Loop"
+  note = "GA release — was Fluid Framework internally"
+
+[[products]]
+id = "planner"
+current_name = "Microsoft Planner"
+category = "productivity"
+description = "Task management — merged Planner, To Do, and Project into one app"
+
+  [[products.renames]]
+  date = "2024-04-01"
+  from = "Microsoft Planner + Microsoft To Do + Project for the web"
+  to = "Microsoft Planner (New)"
+  note = "Unified task management — 3 tools merged into 1"
+
+[[products]]
+id = "stream"
+current_name = "Microsoft Stream (on SharePoint)"
+category = "productivity"
+description = "Enterprise video platform built on SharePoint"
+
+  [[products.renames]]
+  date = "2023-10-15"
+  from = "Microsoft Stream (Classic)"
+  to = "Microsoft Stream (on SharePoint)"
+  note = "Complete rebuild — videos now stored in OneDrive/SharePoint"
+
+[[products]]
+id = "fabric"
+current_name = "Microsoft Fabric"
+category = "data"
+description = "Unified data analytics platform (lakehouse, warehouse, real-time, AI)"
+
+  [[products.renames]]
+  date = "2023-05-23"
+  from = "Azure Synapse Analytics + Power BI + Data Factory"
+  to = "Microsoft Fabric"
+  note = "Unified under new brand — still includes Synapse, PBI, ADF capabilities"
+
+[[products]]
+id = "azure-openai"
+current_name = "Azure OpenAI Service"
+category = "ai"
+description = "Azure-hosted OpenAI models (GPT-4, DALL-E, Whisper) with enterprise controls"
+
+  [[products.renames]]
+  date = "2023-01-16"
+  from = "Azure OpenAI Service (Preview)"
+  to = "Azure OpenAI Service"
+  note = "GA release"
+
+[[products]]
+id = "sccm"
+current_name = "Microsoft Configuration Manager"
+category = "management"
+description = "On-premises endpoint and application management"
+
+  [[products.renames]]
+  date = "2019-10-01"
+  from = "System Center Configuration Manager"
+  to = "Microsoft Endpoint Configuration Manager"
+  note = "MEM umbrella brand"
+
+  [[products.renames]]
+  date = "2023-03-01"
+  from = "Microsoft Endpoint Configuration Manager"
+  to = "Microsoft Configuration Manager"
+  note = "MEM brand retired — simplified"
+
+  [[products.renames]]
+  date = "2012-01-01"
+  from = "System Center Configuration Manager 2012"
+  to = "System Center Configuration Manager"
+  note = "SCCM → ConfigMgr"
+
+  [[products.renames]]
+  date = "2007-01-01"
+  from = "Systems Management Server"
+  to = "System Center Configuration Manager"
+  note = "SMS → SCCM"
+
+[[products]]
+id = "entra-connect"
+current_name = "Microsoft Entra Connect"
+category = "identity"
+description = "Hybrid identity — syncs on-prem AD to Entra ID"
+
+  [[products.renames]]
+  date = "2023-07-11"
+  from = "Azure AD Connect"
+  to = "Microsoft Entra Connect"
+  note = "Entra rebrand"
+
+  [[products.renames]]
+  date = "2015-06-01"
+  from = "DirSync / Azure AD Sync"
+  to = "Azure AD Connect"
+  note = "Unified sync tool"
+
+[[products]]
+id = "sharepoint"
+current_name = "SharePoint in Microsoft 365"
+category = "productivity"
+description = "Document management and collaboration platform"
+
+  [[products.renames]]
+  date = "2020-04-21"
+  from = "SharePoint Online"
+  to = "SharePoint in Microsoft 365"
+  note = "M365 rebrand"
+
+  [[products.renames]]
+  date = "2013-01-01"
+  from = "SharePoint"
+  to = "SharePoint Online"
+  note = "Cloud version distinguished from on-prem"
+
+[[products]]
+id = "power-platform"
+current_name = "Microsoft Power Platform"
+category = "platform"
+description = "Low-code app development — Power Apps, Power Automate, Power BI, Copilot Studio"
+
+  [[products.renames]]
+  date = "2023-11-15"
+  from = "Power Virtual Agents"
+  to = "Microsoft Copilot Studio"
+  note = "PVA merged into Copilot Studio"
+
+[[products]]
+id = "copilot-studio"
+current_name = "Microsoft Copilot Studio"
+category = "ai"
+description = "No-code/low-code platform for building custom Copilot agents"
+
+  [[products.renames]]
+  date = "2023-11-15"
+  from = "Power Virtual Agents"
+  to = "Microsoft Copilot Studio"
+  note = "Complete rebrand and capability expansion"
+
+[[products]]
+id = "windows-365"
+current_name = "Windows 365"
+category = "management"
+description = "Cloud PC — Windows desktop streamed from Azure"
+
+  [[products.renames]]
+  date = "2021-07-14"
+  from = "Project Deschutes (internal)"
+  to = "Windows 365"
+  note = "New product launch — no rename, but notable internal codename"
+
+[[products]]
+id = "exchange"
+current_name = "Exchange Online"
+category = "productivity"
+description = "Cloud-based email and calendar service"
+
+  [[products.renames]]
+  date = "2011-06-28"
+  from = "Exchange Server (cloud)"
+  to = "Exchange Online"
+  note = "Office 365 launch"
+
+[[products]]
+id = "onedrive"
+current_name = "OneDrive for Business"
+category = "productivity"
+description = "Cloud file storage and sync for enterprise"
+
+  [[products.renames]]
+  date = "2014-01-27"
+  from = "SkyDrive Pro"
+  to = "OneDrive for Business"
+  note = "SkyDrive → OneDrive due to BSkyB trademark"
+
+  [[products.renames]]
+  date = "2012-04-23"
+  from = "Office 365 SharePoint MySite"
+  to = "SkyDrive Pro"
+  note = "Distinct personal storage brand"
+
+[[products]]
+id = "agent-365"
+current_name = "Agent 365"
+category = "ai"
+description = "Enterprise agent management dashboard — build, govern, and monitor AI agents"
+
+  [[products.renames]]
+  date = "2026-01-01"
+  from = "Copilot Agent Management"
+  to = "Agent 365"
+  note = "GA May 2026 — standalone brand for agent governance"
+
+[[products]]
+id = "yammer"
+current_name = "Viva Engage"
+category = "productivity"
+description = "Enterprise social networking and community platform"
+url = "https://learn.microsoft.com/viva/engage/"
+
+  [[products.renames]]
+  date = "2023-02-14"
+  from = "Yammer"
+  to = "Viva Engage"
+  note = "Merged into Microsoft Viva family"
+
+[[products]]
+id = "power-bi"
+current_name = "Microsoft Power BI"
+category = "data"
+description = "Business intelligence and data visualisation platform"
+url = "https://learn.microsoft.com/power-bi/"
+
+  [[products.renames]]
+  date = "2015-07-24"
+  from = "Power BI for Office 365"
+  to = "Microsoft Power BI"
+  note = "Standalone product launch"
+
+[[products]]
+id = "windows-defender"
+current_name = "Microsoft Defender Antivirus"
+category = "security"
+description = "Built-in antivirus and threat protection for Windows"
+
+  [[products.renames]]
+  date = "2020-05-01"
+  from = "Windows Defender Antivirus"
+  to = "Microsoft Defender Antivirus"
+  note = "Unified Defender branding — dropped Windows prefix"
+
+  [[products.renames]]
+  date = "2015-07-29"
+  from = "Windows Defender"
+  to = "Windows Defender Antivirus"
+  note = "Clarified as antivirus component"
+
+  [[products.renames]]
+  date = "2006-10-01"
+  from = "Microsoft AntiSpyware"
+  to = "Windows Defender"
+  note = "Rebranded and built into Windows Vista"
+
+[[products]]
+id = "dynamics-ce"
+current_name = "Dynamics 365 Customer Engagement"
+category = "platform"
+description = "CRM platform — Sales, Service, Marketing, Field Service"
+
+  [[products.renames]]
+  date = "2018-10-01"
+  from = "Dynamics CRM Online"
+  to = "Dynamics 365 Customer Engagement"
+  note = "Unified under Dynamics 365 brand"
+
+  [[products.renames]]
+  date = "2016-11-01"
+  from = "Dynamics CRM"
+  to = "Dynamics CRM Online"
+  note = "Cloud-first emphasis"
+
+[[products]]
+id = "azure-monitor"
+current_name = "Azure Monitor"
+category = "management"
+description = "Full-stack monitoring service for Azure and hybrid environments"
+
+  [[products.renames]]
+  date = "2018-09-24"
+  from = "Log Analytics + Application Insights + Azure Diagnostics"
+  to = "Azure Monitor"
+  note = "Unified monitoring brand — merged 3 tools"
+
+[[products]]
+id = "edge"
+current_name = "Microsoft Edge"
+category = "productivity"
+description = "Chromium-based web browser with enterprise management features"
+
+  [[products.renames]]
+  date = "2020-01-15"
+  from = "Microsoft Edge (Legacy/EdgeHTML)"
+  to = "Microsoft Edge (Chromium)"
+  note = "Complete rebuild on Chromium engine"
+
+  [[products.renames]]
+  date = "2015-07-29"
+  from = "Project Spartan"
+  to = "Microsoft Edge"
+  note = "Windows 10 launch — replaced Internet Explorer"
+
+[[products]]
+id = "ie"
+current_name = "Internet Explorer (Retired)"
+category = "productivity"
+description = "Legacy web browser — retired June 2022"
+
+  [[products.renames]]
+  date = "2022-06-15"
+  from = "Internet Explorer 11"
+  to = "Internet Explorer (Retired)"
+  note = "End of support — replaced by Microsoft Edge with IE Mode"
+
+[[products]]
+id = "kaizala"
+current_name = "Kaizala (Retired)"
+category = "productivity"
+description = "Mobile messaging app for frontline workers — retired into Teams"
+
+  [[products.renames]]
+  date = "2023-08-31"
+  from = "Microsoft Kaizala"
+  to = "Kaizala (Retired)"
+  note = "Capabilities merged into Microsoft Teams"
+
+[[products]]
+id = "azure-devops"
+current_name = "Azure DevOps"
+category = "platform"
+description = "Developer collaboration platform — repos, pipelines, boards, artifacts"
+
+  [[products.renames]]
+  date = "2018-09-10"
+  from = "Visual Studio Team Services (VSTS)"
+  to = "Azure DevOps"
+  note = "Rebranded under Azure umbrella"
+
+  [[products.renames]]
+  date = "2015-11-01"
+  from = "Visual Studio Online"
+  to = "Visual Studio Team Services"
+  note = "Name change for clarity"
+
+  [[products.renames]]
+  date = "2013-06-01"
+  from = "Team Foundation Service"
+  to = "Visual Studio Online"
+  note = "Cloud version of TFS"
+
+[[products]]
+id = "bookings"
+current_name = "Microsoft Bookings"
+category = "productivity"
+description = "Appointment scheduling tool integrated with Outlook and Teams"
+
+  [[products.renames]]
+  date = "2024-03-01"
+  from = "Microsoft Bookings"
+  to = "Microsoft Bookings (in Outlook)"
+  note = "Deeper integration into Outlook — becoming native feature"
+
+[[products]]
+id = "power-automate"
+current_name = "Power Automate"
+category = "platform"
+description = "Workflow automation platform — cloud flows, desktop flows, AI flows"
+
+  [[products.renames]]
+  date = "2019-11-04"
+  from = "Microsoft Flow"
+  to = "Power Automate"
+  note = "Rebranded as part of Power Platform family"

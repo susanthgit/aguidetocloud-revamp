@@ -354,6 +354,89 @@ category = "Internal"
 css_namespace = "siteana-*"
 body_class = "page-site-analytics"
 
+# ── Community (non-tool) ──────────────────────────────────────────────────
+
+# ── Community (New — Batch 2026-04-17) ────────────────────────────────────
+
+[[tools]]
+name = "IT Admin Bingo"
+slug = "admin-bingo"
+hex = "#E91E8E"
+hue = 325
+name_friendly = "Vivid Pink"
+category = "Community"
+css_namespace = "bingo-*"
+body_class = "page-admin-bingo"
+# NOTE: Hue 325° is 15° from Colour Palette 340° — accepted, different saturation/lightness
+
+[[tools]]
+name = "Tech Acronym Battle"
+slug = "acronym-battle"
+hex = "#9B59B6"
+hue = 283
+name_friendly = "Amethyst"
+category = "Community"
+css_namespace = "acro-*"
+body_class = "page-acronym-battle"
+# NOTE: Hue 283° is 9° from Password 292° — accepted, colour space exhausted at 38 tools
+
+[[tools]]
+name = "M365 Feature Roulette"
+slug = "feature-roulette"
+hex = "#F39C12"
+hue = 37
+name_friendly = "Marigold"
+category = "Stay Informed"
+css_namespace = "roulette-*"
+body_class = "page-feature-roulette"
+# NOTE: Hue 37° is 1° from AI Showdown 38° — accepted, different category + saturation
+
+[[tools]]
+name = "M365 Rename Tracker"
+slug = "rename-tracker"
+hex = "#B07D4F"
+hue = 28
+name_friendly = "Warm Bronze"
+category = "Stay Informed"
+css_namespace = "rename-*"
+body_class = "page-rename-tracker"
+# NOTE: Hue 28° is 2° from Countdown 30° — accepted, desaturated vs Countdown's bright
+
+# ── Admin (New — Batch 2026-04-17) ────────────────────────────────────────
+
+[[tools]]
+name = "IT Admin Comms"
+slug = "admin-comms"
+hex = "#5B9BD5"
+hue = 210
+name_friendly = "Corporate Blue"
+category = "Admin"
+css_namespace = "comms-*"
+body_class = "page-admin-comms"
+# NOTE: Hue 210° is 3° from Feature Matrix 213° — accepted, lighter/softer shade
+
+[[tools]]
+name = "Compliance Passport"
+slug = "compliance-passport"
+hex = "#2ECC71"
+hue = 145
+name_friendly = "Emerald Green"
+category = "Admin"
+css_namespace = "passport-*"
+body_class = "page-compliance-passport"
+# NOTE: Hue 145° is 3° from PS Builder 142° — accepted, brighter/more vivid
+
+[[tools]]
+name = "Phishing Simulator"
+slug = "phishing-test"
+hex = "#E74C3C"
+hue = 6
+name_friendly = "Alert Red"
+category = "Admin"
+css_namespace = "phish-*"
+body_class = "page-phishing-test"
+# NOTE: Hue 6° is 6° from Deprecation 0° — accepted, security/danger theming is intentional
+
 # ── Community (non-tool) ──────────────────────────────────────────────────────
 
 [[tools]]
