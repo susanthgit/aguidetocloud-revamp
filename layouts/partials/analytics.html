@@ -50,27 +50,31 @@
 
   // Build banner (only if no choice made yet)
   if (!consent) {
-    var banner = document.createElement('div');
-    banner.id = 'consent-banner';
-    banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie consent');
-    banner.innerHTML = '<div class="consent-inner">'
-      + '<p>We use cookies for anonymous analytics (Google Analytics & Microsoft Clarity) to improve this site. No personal data is collected. <a href="/privacy/">Privacy Policy</a></p>'
-      + '<div class="consent-buttons">'
-      + '<button id="consent-accept" class="consent-btn consent-btn-accept">Accept</button>'
-      + '<button id="consent-reject" class="consent-btn consent-btn-reject">Reject</button>'
-      + '</div></div>';
-    document.body.appendChild(banner);
+    function showBanner() {
+      var banner = document.createElement('div');
+      banner.id = 'consent-banner';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-label', 'Cookie consent');
+      banner.innerHTML = '<div class="consent-inner">'
+        + '<p>We use cookies for anonymous analytics (Google Analytics & Microsoft Clarity) to improve this site. No personal data is collected. <a href="/privacy/">Privacy Policy</a></p>'
+        + '<div class="consent-buttons">'
+        + '<button id="consent-accept" class="consent-btn consent-btn-accept">Accept</button>'
+        + '<button id="consent-reject" class="consent-btn consent-btn-reject">Reject</button>'
+        + '</div></div>';
+      document.body.appendChild(banner);
 
-    document.getElementById('consent-accept').addEventListener('click', function() {
-      localStorage.setItem(CONSENT_KEY, 'granted');
-      grantConsent();
-      banner.remove();
-    });
-    document.getElementById('consent-reject').addEventListener('click', function() {
-      localStorage.setItem(CONSENT_KEY, 'denied');
-      banner.remove();
-    });
+      document.getElementById('consent-accept').addEventListener('click', function() {
+        localStorage.setItem(CONSENT_KEY, 'granted');
+        grantConsent();
+        banner.remove();
+      });
+      document.getElementById('consent-reject').addEventListener('click', function() {
+        localStorage.setItem(CONSENT_KEY, 'denied');
+        banner.remove();
+      });
+    }
+    if (document.body) showBanner();
+    else document.addEventListener('DOMContentLoaded', showBanner);
   }
 })();
 </script>
