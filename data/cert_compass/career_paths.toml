@@ -1,0 +1,123 @@
+# ============================================================================
+# CAREER PATHS — Role-based certification roadmaps across 3 providers
+# ============================================================================
+
+[[paths]]
+id = "cloud-admin"
+name = "Cloud Administrator"
+icon = "⚙️"
+description = "Manage cloud infrastructure day-to-day — compute, storage, networking, identities, and cost."
+demand = "Very High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-az-900", "ms-az-104"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-sysops-assoc"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-associate-cloud-engineer"] }
+]
+if_only_one = "ms-az-104"
+if_only_one_reason = "Most organisations run Azure for admin workloads. AZ-104 has the broadest job market."
+related_groups = ["cloud-admin", "cloud-fundamentals"]
+
+[[paths]]
+id = "solutions-architect"
+name = "Solutions Architect"
+icon = "🏗️"
+description = "Design scalable, secure, and cost-effective cloud solutions. The most popular cloud career path."
+demand = "Very High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-az-900", "ms-az-104", "ms-az-305"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-solutions-architect-assoc", "aws-solutions-architect-pro"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-associate-cloud-engineer", "gcp-prof-cloud-architect"] }
+]
+if_only_one = "aws-solutions-architect-assoc"
+if_only_one_reason = "AWS SAA is the single most popular and recognised cloud certification globally. Opens the most doors."
+related_groups = ["cloud-fundamentals", "cloud-admin", "architect"]
+
+[[paths]]
+id = "developer"
+name = "Cloud Developer"
+icon = "💻"
+description = "Build cloud-native applications — serverless, containers, APIs, and microservices."
+demand = "High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-az-900", "ms-az-204"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-developer-assoc"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-developer"] }
+]
+if_only_one = "aws-developer-assoc"
+if_only_one_reason = "AWS DVA covers the broadest set of cloud dev patterns and has strong job market demand."
+related_groups = ["cloud-fundamentals", "developer"]
+
+[[paths]]
+id = "security-engineer"
+name = "Cloud Security Engineer"
+icon = "🛡️"
+description = "Secure cloud workloads — identity, access control, data protection, compliance, and threat response."
+demand = "Very High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-sc-900", "ms-az-500", "ms-sc-200"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-security-specialty"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-security", "gcp-prof-secops-engineer"] }
+]
+if_only_one = "ms-az-500"
+if_only_one_reason = "Most enterprises use Azure AD/Entra for identity. AZ-500 covers the most in-demand security skills."
+related_groups = ["security-fundamentals", "cloud-security", "security-operations"]
+
+[[paths]]
+id = "data-engineer"
+name = "Data Engineer"
+icon = "📊"
+description = "Build data pipelines, manage data lakes, and enable analytics and ML at scale."
+demand = "High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-dp-900", "ms-dp-203"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-data-engineer-assoc"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-data-engineer"] }
+]
+if_only_one = "gcp-prof-data-engineer"
+if_only_one_reason = "Google PDE is the gold standard for data engineering certs. BigQuery skills are highly transferable."
+related_groups = ["data-fundamentals", "data-engineering", "database"]
+
+[[paths]]
+id = "devops-engineer"
+name = "DevOps Engineer"
+icon = "🔄"
+description = "Automate infrastructure, build CI/CD pipelines, monitor services, and manage incidents."
+demand = "High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-az-900", "ms-az-104", "ms-az-400"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-developer-assoc", "aws-devops-pro"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-associate-cloud-engineer", "gcp-prof-cloud-devops"] }
+]
+if_only_one = "ms-az-400"
+if_only_one_reason = "Azure DevOps is the most used enterprise DevOps platform. AZ-400 covers the full pipeline lifecycle."
+related_groups = ["cloud-fundamentals", "cloud-admin", "devops"]
+
+[[paths]]
+id = "ai-ml-engineer"
+name = "AI / ML Engineer"
+icon = "🧠"
+description = "Build, train, deploy, and monitor machine learning models in production."
+demand = "Very High"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-ai-900", "ms-ai-102"] },
+  { provider = "aws", certs = ["aws-ai-practitioner", "aws-ml-engineer-assoc", "aws-ml-specialty"] },
+  { provider = "gcp", certs = ["gcp-genai-leader", "gcp-prof-ml-engineer"] }
+]
+if_only_one = "gcp-prof-ml-engineer"
+if_only_one_reason = "Google PMLE is the most respected ML certification in the industry. TensorFlow and Vertex AI are industry standards."
+related_groups = ["ai-fundamentals", "ai-engineering"]
+
+[[paths]]
+id = "network-engineer"
+name = "Network Engineer"
+icon = "🌐"
+description = "Design and manage cloud networking — VPCs, load balancers, DNS, VPNs, and hybrid connectivity."
+demand = "Moderate"
+recommended_order = [
+  { provider = "microsoft", certs = ["ms-az-900", "ms-az-700"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-solutions-architect-assoc", "aws-networking-specialty"] },
+  { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-network-engineer"] }
+]
+if_only_one = "ms-az-700"
+if_only_one_reason = "Azure networking is the most common enterprise setup. AZ-700 at $165 is the most affordable networking cert."
+related_groups = ["cloud-fundamentals", "networking"]

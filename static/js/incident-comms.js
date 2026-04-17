@@ -106,11 +106,12 @@
   function populateTypes() {
     var sel = document.getElementById('incident-type');
     if (!sel) return;
-    sel.innerHTML = '<option value="">— Choose incident type —</option>';
-    templates.forEach(function (t) {
+    sel.innerHTML = '';
+    templates.forEach(function (t, i) {
       var opt = document.createElement('option');
       opt.value = t.id;
       opt.textContent = (t.icon || '') + ' ' + t.type;
+      if (i === 0) opt.selected = true;
       sel.appendChild(opt);
     });
   }

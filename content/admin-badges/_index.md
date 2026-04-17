@@ -1,6 +1,6 @@
 ---
 title: "IT Admin Achievement Badges — Gamify Your Career"
-description: "Unlock 50 achievement badges for real IT admin accomplishments. Track your career milestones, share your badge wall, and celebrate the wins. Free, fun, private."
+description: "Unlock 45 achievement badges for real IT admin accomplishments. Track your career milestones, share your badge wall, and celebrate the wins. Free, fun, private."
 type: "admin-badges"
 layout: "list"
 lastmod: 2026-04-17
@@ -11,7 +11,7 @@ images:
   - "images/og/admin-badges.jpg"
 faq:
   - question: "How do IT Admin Badges work?"
-    answer: "Browse 50 achievement badges across 6 categories — from 'Sev1 Survivor' to 'AI Whisperer'. Click any badge you've earned to add it to your personal wall. Your progress is saved in your browser."
+    answer: "Browse 45 achievement badges across 6 categories — from 'Sev1 Survivor' to 'AI Whisperer'. Click any badge you've earned to add it to your personal wall. Your progress is saved in your browser."
   - question: "Are these real certifications?"
     answer: "No — these are fun, self-claimed achievement badges that celebrate real IT admin experiences. They're for morale and team building, not formal certification."
   - question: "Can I share my badge wall?"

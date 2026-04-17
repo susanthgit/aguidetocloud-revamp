@@ -618,7 +618,23 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 0.3rem;
+}
+.cliquiz-start-sub {
+  font-size: 0.85rem; color: rgba(255,255,255,0.5);
   margin-bottom: 1.2rem;
+}
+.cliquiz-sample {
+  margin-top: 1.2rem; padding: 1rem;
+  background: rgba(126,87,194,0.08); border: 1px solid rgba(126,87,194,0.2);
+  border-radius: 10px; text-align: left;
+}
+.cliquiz-sample-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4); margin-bottom: 0.4rem;
+}
+.cliquiz-sample-task {
+  font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 600;
 }
 
 /* Mode Grid */

@@ -1,0 +1,137 @@
+# ============================================================================
+# CLOSEST MATCHES — Cross-cloud certification equivalency groups
+# ============================================================================
+# These are NOT official equivalencies. They represent the closest
+# role/level matches across providers based on exam scope and job outcomes.
+
+[[groups]]
+id = "cloud-fundamentals"
+name = "Cloud Fundamentals"
+description = "Entry-level cloud literacy. Proves you understand what cloud is, core services, and pricing models."
+icon = "☁️"
+role_match = "strong"
+level_match = "strong"
+cert_ids = ["ms-az-900", "aws-cloud-practitioner", "gcp-cloud-digital-leader"]
+comparison_notes = "All three cover similar ground. Microsoft and Google are $99; AWS is $100. Microsoft's never expires. AWS is easiest to pass. Google is most business-strategy focused."
+recommendation = "Start with whichever provider your employer uses. If unsure, AZ-900 has the broadest recognition."
+
+[[groups]]
+id = "ai-fundamentals"
+name = "AI & ML Fundamentals"
+description = "Entry-level AI/ML literacy. Proves you understand AI concepts, responsible AI, and cloud AI services."
+icon = "🤖"
+role_match = "strong"
+level_match = "moderate"
+cert_ids = ["ms-ai-900", "aws-ai-practitioner", "gcp-genai-leader"]
+comparison_notes = "Microsoft covers traditional AI + Azure services. AWS is broader AI/ML practitioner scope. Google is specifically GenAI and business-strategy focused. Scope differs but all target foundational understanding."
+recommendation = "AI-900 if you work with Microsoft tools. AWS AIF if you want broader ML coverage."
+
+[[groups]]
+id = "cloud-admin"
+name = "Cloud Administrator"
+description = "Day-to-day cloud operations — managing resources, identities, storage, compute, and networking."
+icon = "⚙️"
+role_match = "strong"
+level_match = "strong"
+cert_ids = ["ms-az-104", "aws-sysops-assoc", "gcp-associate-cloud-engineer"]
+comparison_notes = "Very close equivalents. All target the 'hands-on admin' role. Microsoft is cheapest ($165 vs $200 GCP). AWS has 3-year validity vs Microsoft's annual free renewal. Google's ACE is the most popular GCP cert."
+recommendation = "Get the cert for the cloud you administer daily. Multi-cloud? Start with your primary, then branch out."
+
+[[groups]]
+id = "architect"
+name = "Solutions Architect"
+description = "Designing cloud solutions — high availability, scalability, security, and cost optimisation."
+icon = "🏗️"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-az-305", "aws-solutions-architect-assoc", "gcp-prof-cloud-architect"]
+comparison_notes = "Role match is strong but levels differ. Microsoft AZ-305 is Expert-track (requires AZ-104 prerequisite). AWS SAA is Associate-level. Google PCA is Professional. AWS SAA is the most popular cloud cert globally."
+recommendation = "For architects: AWS SAA is the fastest win. AZ-305 is the deepest. GCP PCA is the hardest."
+
+[[groups]]
+id = "developer"
+name = "Cloud Developer"
+description = "Building, deploying, and debugging cloud-native applications and serverless solutions."
+icon = "💻"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-az-204", "aws-developer-assoc", "gcp-prof-cloud-developer"]
+comparison_notes = "Role alignment is strong. Microsoft and AWS are Associate-level; Google is Professional (harder). All emphasise serverless, containers, and CI/CD. Google's is the most architecture-oriented."
+recommendation = "AWS DVA or Azure AZ-204 first (associate level), then Google PCD for multi-cloud breadth."
+
+[[groups]]
+id = "devops"
+name = "DevOps Engineer"
+description = "CI/CD pipelines, automation, monitoring, incident response, and infrastructure as code."
+icon = "🔄"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-az-400", "aws-devops-pro", "gcp-prof-cloud-devops"]
+comparison_notes = "Microsoft AZ-400 is Expert-track. AWS DOP is Professional (hardest — $300). Google PCDE is Professional. All cover similar CI/CD and automation ground but at different depths. AWS DOP is widely considered the hardest DevOps cert."
+recommendation = "Start with Azure AZ-400 or Google PCDE. AWS DOP is the capstone — tackle it last."
+
+[[groups]]
+id = "cloud-security"
+name = "Cloud Security Engineer"
+description = "Designing and implementing security controls, identity management, data protection, and compliance."
+icon = "🛡️"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-az-500", "aws-security-specialty", "gcp-prof-cloud-security"]
+comparison_notes = "Good role alignment. Microsoft AZ-500 is Associate-level, focused on Azure security controls. AWS SCS is Specialty ($300, broader scope). Google PCSE is Professional. AWS is the most expensive and broadest."
+recommendation = "AZ-500 for Microsoft shops. AWS SCS if you need deep cloud security credentials. All are highly valued."
+
+[[groups]]
+id = "networking"
+name = "Network Engineer"
+description = "Designing and managing cloud networking — VPCs, load balancing, DNS, hybrid connectivity."
+icon = "🌐"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-az-700", "aws-networking-specialty", "gcp-prof-network-engineer"]
+comparison_notes = "Microsoft AZ-700 is Associate-level. AWS ANS is Specialty ($300, very deep). Google PCNE is Professional. AWS networking specialty is considered one of the hardest AWS exams."
+recommendation = "Start with AZ-700 or GCP PCNE. AWS ANS is the deep-dive — only if networking is your primary role."
+
+[[groups]]
+id = "data-engineering"
+name = "Data Engineer"
+description = "Designing data pipelines, managing data stores, and building analytics solutions in the cloud."
+icon = "📊"
+role_match = "strong"
+level_match = "moderate"
+cert_ids = ["ms-dp-203", "aws-data-engineer-assoc", "gcp-prof-data-engineer"]
+comparison_notes = "Good alignment. Microsoft and AWS are Associate-level. Google PDE is Professional (harder, more ML-integrated). Google PDE is one of the oldest and most respected GCP certs."
+recommendation = "AWS DEA is the newest and most modern. GCP PDE has the strongest industry reputation in data."
+
+[[groups]]
+id = "database"
+name = "Database Specialist"
+description = "Managing, optimising, and troubleshooting cloud database solutions."
+icon = "🗄️"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-dp-300", "aws-database-specialty", "gcp-prof-database-engineer"]
+comparison_notes = "Microsoft DP-300 is Associate-level, SQL-focused. AWS DBS is Specialty ($300, covers all AWS DB services). Google PDBE is Professional. AWS covers the broadest range of database types."
+recommendation = "DP-300 if you're a SQL admin. AWS DBS for polyglot database skills."
+
+[[groups]]
+id = "ai-engineering"
+name = "AI / ML Engineer"
+description = "Building, training, deploying, and monitoring AI/ML models in production."
+icon = "🧠"
+role_match = "strong"
+level_match = "mixed"
+cert_ids = ["ms-ai-102", "aws-ml-engineer-assoc", "gcp-prof-ml-engineer"]
+comparison_notes = "Microsoft AI-102 is Associate-level, focused on Azure AI services integration. AWS MLA is Associate-level (newer exam). Google PMLE is Professional (hardest). Google's is the most respected ML cert in the industry."
+recommendation = "AI-102 for Microsoft AI services. AWS MLA for broader ML engineering. Google PMLE is the gold standard."
+
+[[groups]]
+id = "security-operations"
+name = "Security Operations / SOC"
+description = "Threat detection, incident response, and security monitoring using cloud-native SIEM/SOAR tools."
+icon = "🔍"
+role_match = "moderate"
+level_match = "moderate"
+cert_ids = ["ms-sc-200", "gcp-prof-secops-engineer"]
+comparison_notes = "Microsoft SC-200 focuses on Sentinel and Defender. Google PSOE focuses on Chronicle and GCP security ops. AWS doesn't have a dedicated SecOps cert — the Security Specialty covers some of this ground. These are vendor-specific SOC skills, less portable than general cloud security."
+recommendation = "Get the cert for your SIEM platform. SC-200 for Microsoft Sentinel shops, PSOE for Chronicle users."

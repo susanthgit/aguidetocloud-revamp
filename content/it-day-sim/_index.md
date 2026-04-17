@@ -15,7 +15,7 @@ faq:
   - question: "Are the scenarios realistic?"
     answer: "Painfully so. Every scenario is based on real IT admin experiences — from CEO laptop emergencies to Friday afternoon Sev1 alerts. If you've been in IT, you'll recognise these moments."
   - question: "What is the Daily Challenge?"
-    answer: "The Daily Challenge uses a date-based seed so everyone gets the same set of 10 questions for that day. Compare your score with colleagues to see who knows their CLI best."
+    answer: "The Daily Challenge starts everyone on the same path for that date. Compare your final score with colleagues to see who made better decisions under pressure."
   - question: "Can I share my results?"
     answer: "Yes! At the end, you can download a shareable PNG scorecard showing your final score, tier, and choices made."
   - question: "Can I replay with different choices?"

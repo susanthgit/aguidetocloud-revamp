@@ -1,0 +1,147 @@
+{{ define "main" }}
+{{- $data := index hugo.Data "cert_compass" -}}
+{{- $providers := $data.providers.providers -}}
+{{- $certs := $data.certifications.certs -}}
+{{- $groups := $data.equivalents.groups -}}
+{{- $paths := $data.career_paths.paths -}}
+
+{{ partial "tool-hero.html" (dict "Page" . "title" .Title "subtitle" "Navigate certifications across Azure, AWS & Google Cloud" "accent" "#6366F1") }}
+
+<div class="compass-page">
+  <!-- Tabs -->
+  <div class="compass-tabs" role="tablist">
+    <button class="compass-tab active" role="tab" aria-selected="true" data-tab="explore">Explore</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="matches">Closest Matches</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="careers">Career Paths</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- ═══ EXPLORE TAB ═══ -->
+  <div class="compass-panel active" id="panel-explore">
+    <div class="compass-filters">
+      <input type="text" class="compass-search" id="compass-search" placeholder="Search certifications..." aria-label="Search certifications">
+      <div class="compass-filter-row">
+        <div class="compass-pill-group" id="provider-filter" role="group" aria-label="Filter by provider">
+          <button class="compass-pill active" data-provider="all">All</button>
+          {{ range $providers }}
+          <button class="compass-pill" data-provider="{{ .id }}" style="--pill-accent: {{ .hex }}">{{ .emoji }} {{ .short }}</button>
+          {{ end }}
+        </div>
+        <select class="compass-select" id="level-filter" aria-label="Filter by level">
+          <option value="all">All Levels</option>
+          <option value="foundational">Foundational</option>
+          <option value="associate">Associate</option>
+          <option value="professional">Professional</option>
+          <option value="expert">Expert</option>
+          <option value="specialty">Specialty</option>
+        </select>
+        <select class="compass-select" id="domain-filter" aria-label="Filter by focus area">
+          <option value="all">All Domains</option>
+          <option value="cloud-fundamentals">Cloud Fundamentals</option>
+          <option value="architecture">Architecture</option>
+          <option value="admin">Administration</option>
+          <option value="developer">Development</option>
+          <option value="security">Security</option>
+          <option value="networking">Networking</option>
+          <option value="data-engineering">Data Engineering</option>
+          <option value="ai-ml">AI & ML</option>
+          <option value="devops">DevOps</option>
+        </select>
+      </div>
+    </div>
+    <div class="compass-count" id="cert-count"></div>
+    <div class="compass-grid" id="cert-grid"></div>
+  </div>
+
+  <!-- ═══ CLOSEST MATCHES TAB ═══ -->
+  <div class="compass-panel" id="panel-matches">
+    <p class="compass-disclaimer">These are closest role/level matches — not official cross-vendor equivalencies. Match confidence badges show how close the alignment is.</p>
+    <div class="compass-matches-grid" id="matches-grid"></div>
+  </div>
+
+  <!-- ═══ CAREER PATHS TAB ═══ -->
+  <div class="compass-panel" id="panel-careers">
+    <p class="compass-subtitle">Choose your role to see the recommended certification path across all three providers.</p>
+    <div class="compass-careers-grid" id="careers-grid"></div>
+    <div class="compass-career-detail" id="career-detail" style="display:none"></div>
+  </div>
+
+  <!-- ═══ COMPARE TAB ═══ -->
+  <div class="compass-panel" id="panel-compare">
+    <div class="compass-compare-controls">
+      <p class="compass-subtitle">Select 2–4 certifications to compare side by side.</p>
+      <div class="compass-compare-presets" id="compare-presets">
+        <button class="compass-preset" data-preset="fundamentals">Cloud Fundamentals</button>
+        <button class="compass-preset" data-preset="architect">Architecture</button>
+        <button class="compass-preset" data-preset="security">Security</button>
+        <button class="compass-preset" data-preset="data">Data Engineering</button>
+        <button class="compass-preset" data-preset="devops">DevOps</button>
+      </div>
+      <div class="compass-compare-select" id="compare-select"></div>
+    </div>
+    <div class="compass-compare-table-wrap" id="compare-table-wrap"></div>
+  </div>
+
+  <!-- ═══ FAQ TAB ═══ -->
+  <div class="compass-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "cert-compass") }}
+{{ partial "back-nav" . }}
+
+<!-- Pagefind searchable block -->
+<div data-pagefind-body aria-hidden="true" style="display:none">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Description }}</p>
+  <p>Multi-cloud certification comparison tool. Find equivalent certs across Microsoft Azure, AWS, and Google Cloud. Career paths for cloud admin, architect, developer, security, data, DevOps, AI/ML, and networking roles. Compare exam fees, study hours, difficulty, and renewal policies.</p>
+</div>
+
+<!-- Inject data into JS -->
+<script>
+window.__compassProviders = {{ $providers | jsonify | safeJS }};
+window.__compassCerts = {{ $certs | jsonify | safeJS }};
+window.__compassGroups = {{ $groups | jsonify | safeJS }};
+window.__compassPaths = {{ $paths | jsonify | safeJS }};
+</script>
+
+<link rel="stylesheet" href="/css/cert-compass.css?v={{ site.Params.cache_version }}">
+<script defer src="/js/cert-compass.js?v={{ site.Params.cache_version }}"></script>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $f.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ end }}

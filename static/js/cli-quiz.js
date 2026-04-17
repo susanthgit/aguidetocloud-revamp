@@ -652,6 +652,7 @@
     area.innerHTML =
       '<div class="cliquiz-start-screen">' +
         '<h3 class="cliquiz-start-title">Choose your challenge</h3>' +
+        '<p class="cliquiz-start-sub">' + commands.length + ' real IT admin tasks across ' + CATEGORIES.length + ' categories</p>' +
         '<div class="cliquiz-mode-grid">' +
           modeCard('quick10', '\u26A1', 'Quick 10', '10 random commands, multiple choice') +
           modeCard('category', '\uD83D\uDCC2', 'By Category', 'Focus on a specific module') +
@@ -661,6 +662,10 @@
         '<div class="cliquiz-cat-filter" id="cliquiz-cat-filter">' +
           '<label class="cliquiz-filter-label">Filter by category:</label>' +
           '<div class="cliquiz-chip-row">' + catChips + '</div>' +
+        '</div>' +
+        '<div class="cliquiz-sample">' +
+          '<div class="cliquiz-sample-label">Sample question:</div>' +
+          '<div class="cliquiz-sample-task">' + esc(commands[0] ? commands[0].task : '') + '</div>' +
         '</div>' +
       '</div>';
 

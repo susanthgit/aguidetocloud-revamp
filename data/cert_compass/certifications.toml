@@ -1,0 +1,869 @@
+# ============================================================================
+# CERTIFICATIONS — All certs across 3 providers
+# ============================================================================
+# IDs are stable slugs. Exam codes are mutable (version bumps).
+# Fields: id, name, provider, exam_code, level, normalized_level,
+#         focus_areas[], fee_usd, study_hours_min, study_hours_max,
+#         difficulty (1-5), validity_years, validity_override,
+#         prerequisites[], description, official_url, match_group,
+#         tracker_slug (Microsoft only — links to /cert-tracker/),
+#         status, last_verified
+#
+# normalized_level values: foundational, associate, professional, expert, specialty
+# focus_areas = normalized cross-cloud taxonomy
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# MICROSOFT AZURE (15 key certs that have cross-cloud relevance)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[[certs]]
+id = "ms-az-900"
+name = "Azure Fundamentals"
+provider = "microsoft"
+exam_code = "AZ-900"
+level = "Fundamentals"
+normalized_level = "foundational"
+focus_areas = ["cloud-fundamentals", "architecture"]
+fee_usd = 99
+study_hours_min = 15
+study_hours_max = 30
+difficulty = 1
+validity_years = 0
+validity_override = "Never expires"
+prerequisites = []
+description = "Foundational understanding of cloud concepts, Azure services, security, privacy, compliance, and pricing."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/"
+match_group = "cloud-fundamentals"
+tracker_slug = "az-900"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-ai-900"
+name = "Azure AI Fundamentals"
+provider = "microsoft"
+exam_code = "AI-900"
+level = "Fundamentals"
+normalized_level = "foundational"
+focus_areas = ["ai-ml", "cloud-fundamentals"]
+fee_usd = 99
+study_hours_min = 12
+study_hours_max = 25
+difficulty = 1
+validity_years = 0
+validity_override = "Never expires"
+prerequisites = []
+description = "Foundational knowledge of AI and machine learning concepts and related Azure services."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+match_group = "ai-fundamentals"
+tracker_slug = "ai-900"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-dp-900"
+name = "Azure Data Fundamentals"
+provider = "microsoft"
+exam_code = "DP-900"
+level = "Fundamentals"
+normalized_level = "foundational"
+focus_areas = ["data-engineering", "cloud-fundamentals"]
+fee_usd = 99
+study_hours_min = 12
+study_hours_max = 25
+difficulty = 1
+validity_years = 0
+validity_override = "Never expires"
+prerequisites = []
+description = "Foundational knowledge of core data concepts and Azure data services."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-fundamentals/"
+match_group = "data-fundamentals"
+tracker_slug = "dp-900"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-sc-900"
+name = "Security, Compliance, and Identity Fundamentals"
+provider = "microsoft"
+exam_code = "SC-900"
+level = "Fundamentals"
+normalized_level = "foundational"
+focus_areas = ["security", "cloud-fundamentals"]
+fee_usd = 99
+study_hours_min = 12
+study_hours_max = 25
+difficulty = 1
+validity_years = 0
+validity_override = "Never expires"
+prerequisites = []
+description = "Foundational knowledge of security, compliance, and identity concepts across Microsoft services."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/"
+match_group = "security-fundamentals"
+tracker_slug = "sc-900"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-104"
+name = "Azure Administrator"
+provider = "microsoft"
+exam_code = "AZ-104"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["admin", "architecture"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Managing Azure identities, governance, storage, compute, and virtual networks."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/"
+match_group = "cloud-admin"
+tracker_slug = "az-104"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-204"
+name = "Azure Developer"
+provider = "microsoft"
+exam_code = "AZ-204"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["developer"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Designing, building, testing, and maintaining cloud applications on Azure."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/"
+match_group = "developer"
+tracker_slug = "az-204"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-500"
+name = "Azure Security Engineer"
+provider = "microsoft"
+exam_code = "AZ-500"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["security"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Implementing security controls, managing identity and access, and protecting data and applications in Azure."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/"
+match_group = "cloud-security"
+tracker_slug = "az-500"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-700"
+name = "Azure Network Engineer"
+provider = "microsoft"
+exam_code = "AZ-700"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["networking"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Designing, implementing, and managing Azure networking solutions."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-network-engineer-associate/"
+match_group = "networking"
+tracker_slug = "az-700"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-dp-203"
+name = "Azure Data Engineer"
+provider = "microsoft"
+exam_code = "DP-203"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["data-engineering"]
+fee_usd = 165
+study_hours_min = 50
+study_hours_max = 100
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Designing and implementing data storage, processing, and security on Azure."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/"
+match_group = "data-engineering"
+tracker_slug = "dp-203"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-dp-300"
+name = "Azure Database Administrator"
+provider = "microsoft"
+exam_code = "DP-300"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["data-engineering", "admin"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Planning, implementing, and managing Azure SQL and relational database solutions."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-database-administrator-associate/"
+match_group = "database"
+tracker_slug = "dp-300"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-ai-102"
+name = "Azure AI Engineer"
+provider = "microsoft"
+exam_code = "AI-102"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["ai-ml", "developer"]
+fee_usd = 165
+study_hours_min = 50
+study_hours_max = 100
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Designing and implementing AI solutions using Azure AI services, Cognitive Services, and Azure AI."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/"
+match_group = "ai-engineering"
+tracker_slug = "ai-102"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-305"
+name = "Azure Solutions Architect Expert"
+provider = "microsoft"
+exam_code = "AZ-305"
+level = "Expert"
+normalized_level = "expert"
+focus_areas = ["architecture"]
+fee_usd = 165
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 1
+prerequisites = ["ms-az-104"]
+description = "Designing infrastructure, data, security, and business continuity solutions on Azure."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/"
+match_group = "architect"
+tracker_slug = "az-305"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-az-400"
+name = "Azure DevOps Engineer Expert"
+provider = "microsoft"
+exam_code = "AZ-400"
+level = "Expert"
+normalized_level = "expert"
+focus_areas = ["devops", "developer"]
+fee_usd = 165
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 1
+prerequisites = ["ms-az-104"]
+description = "Designing and implementing DevOps practices for version control, compliance, CI/CD, and monitoring on Azure."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/devops-engineer/"
+match_group = "devops"
+tracker_slug = "az-400"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-sc-200"
+name = "Microsoft Security Operations Analyst"
+provider = "microsoft"
+exam_code = "SC-200"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["security"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Investigating, responding to, and hunting for threats using Microsoft Sentinel, Defender, and related tools."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/"
+match_group = "security-operations"
+tracker_slug = "sc-200"
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-sc-300"
+name = "Microsoft Identity and Access Administrator"
+provider = "microsoft"
+exam_code = "SC-300"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["security", "admin"]
+fee_usd = 165
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 1
+prerequisites = []
+description = "Designing and implementing identity management using Microsoft Entra ID."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/identity-and-access-administrator/"
+match_group = ""
+tracker_slug = "sc-300"
+status = "active"
+last_verified = "2026-04-17"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AWS (13 certifications)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[[certs]]
+id = "aws-cloud-practitioner"
+name = "Cloud Practitioner"
+provider = "aws"
+exam_code = "CLF-C02"
+level = "Foundational"
+normalized_level = "foundational"
+focus_areas = ["cloud-fundamentals"]
+fee_usd = 100
+study_hours_min = 20
+study_hours_max = 35
+difficulty = 1
+validity_years = 3
+prerequisites = []
+description = "Foundational understanding of AWS Cloud concepts, services, security, architecture, pricing, and support."
+official_url = "https://aws.amazon.com/certification/certified-cloud-practitioner/"
+match_group = "cloud-fundamentals"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-ai-practitioner"
+name = "AI Practitioner"
+provider = "aws"
+exam_code = "AIF-C01"
+level = "Foundational"
+normalized_level = "foundational"
+focus_areas = ["ai-ml", "cloud-fundamentals"]
+fee_usd = 100
+study_hours_min = 20
+study_hours_max = 40
+difficulty = 1
+validity_years = 3
+prerequisites = []
+description = "Foundational knowledge of AI/ML concepts, generative AI, and responsible AI on AWS."
+official_url = "https://aws.amazon.com/certification/certified-ai-practitioner/"
+match_group = "ai-fundamentals"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-solutions-architect-assoc"
+name = "Solutions Architect – Associate"
+provider = "aws"
+exam_code = "SAA-C03"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["architecture"]
+fee_usd = 150
+study_hours_min = 40
+study_hours_max = 100
+difficulty = 3
+validity_years = 3
+prerequisites = []
+description = "Designing secure, resilient, high-performing, and cost-optimised architectures on AWS."
+official_url = "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+match_group = "architect"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-developer-assoc"
+name = "Developer – Associate"
+provider = "aws"
+exam_code = "DVA-C02"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["developer"]
+fee_usd = 150
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 3
+prerequisites = []
+description = "Developing, deploying, and debugging cloud-based applications on AWS."
+official_url = "https://aws.amazon.com/certification/certified-developer-associate/"
+match_group = "developer"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-sysops-assoc"
+name = "SysOps Administrator – Associate"
+provider = "aws"
+exam_code = "SOA-C02"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["admin"]
+fee_usd = 150
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 3
+prerequisites = []
+description = "Deploying, managing, and operating workloads on AWS including monitoring, security, and automation."
+official_url = "https://aws.amazon.com/certification/certified-sysops-admin-associate/"
+match_group = "cloud-admin"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-data-engineer-assoc"
+name = "Data Engineer – Associate"
+provider = "aws"
+exam_code = "DEA-C01"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["data-engineering"]
+fee_usd = 150
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 3
+prerequisites = []
+description = "Implementing data pipelines, designing data stores, and managing data lifecycle on AWS."
+official_url = "https://aws.amazon.com/certification/certified-data-engineer-associate/"
+match_group = "data-engineering"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-ml-engineer-assoc"
+name = "Machine Learning Engineer – Associate"
+provider = "aws"
+exam_code = "MLA-C01"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["ai-ml"]
+fee_usd = 150
+study_hours_min = 50
+study_hours_max = 100
+difficulty = 3
+validity_years = 3
+prerequisites = []
+description = "Building, training, tuning, and deploying ML models using AWS services."
+official_url = "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/"
+match_group = "ai-engineering"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-solutions-architect-pro"
+name = "Solutions Architect – Professional"
+provider = "aws"
+exam_code = "SAP-C02"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["architecture"]
+fee_usd = 300
+study_hours_min = 80
+study_hours_max = 160
+difficulty = 5
+validity_years = 3
+prerequisites = ["aws-solutions-architect-assoc"]
+description = "Advanced architectural design, cost optimisation, migration, and multi-account strategies on AWS."
+official_url = "https://aws.amazon.com/certification/certified-solutions-architect-professional/"
+match_group = "architect-advanced"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-devops-pro"
+name = "DevOps Engineer – Professional"
+provider = "aws"
+exam_code = "DOP-C02"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["devops"]
+fee_usd = 300
+study_hours_min = 80
+study_hours_max = 150
+difficulty = 5
+validity_years = 3
+prerequisites = ["aws-developer-assoc"]
+description = "CI/CD pipelines, monitoring, logging, automation, and incident response on AWS."
+official_url = "https://aws.amazon.com/certification/certified-devops-engineer-professional/"
+match_group = "devops"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-security-specialty"
+name = "Security – Specialty"
+provider = "aws"
+exam_code = "SCS-C02"
+level = "Specialty"
+normalized_level = "specialty"
+focus_areas = ["security"]
+fee_usd = 300
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 3
+prerequisites = []
+description = "Specialised knowledge in securing AWS workloads, data protection, incident response, and logging."
+official_url = "https://aws.amazon.com/certification/certified-security-specialty/"
+match_group = "cloud-security"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-networking-specialty"
+name = "Advanced Networking – Specialty"
+provider = "aws"
+exam_code = "ANS-C01"
+level = "Specialty"
+normalized_level = "specialty"
+focus_areas = ["networking"]
+fee_usd = 300
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 3
+prerequisites = []
+description = "Complex networking architectures, hybrid connectivity, and network automation on AWS."
+official_url = "https://aws.amazon.com/certification/certified-advanced-networking-specialty/"
+match_group = "networking"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-database-specialty"
+name = "Database – Specialty"
+provider = "aws"
+exam_code = "DBS-C01"
+level = "Specialty"
+normalized_level = "specialty"
+focus_areas = ["data-engineering"]
+fee_usd = 300
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 3
+prerequisites = []
+description = "Designing, deploying, and managing database solutions on AWS including migration and optimisation."
+official_url = "https://aws.amazon.com/certification/certified-database-specialty/"
+match_group = "database"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "aws-ml-specialty"
+name = "Machine Learning – Specialty"
+provider = "aws"
+exam_code = "MLS-C01"
+level = "Specialty"
+normalized_level = "specialty"
+focus_areas = ["ai-ml"]
+fee_usd = 300
+study_hours_min = 80
+study_hours_max = 150
+difficulty = 5
+validity_years = 3
+prerequisites = []
+description = "Advanced ML model design, training, tuning, and deployment with production-grade pipelines on AWS."
+official_url = "https://aws.amazon.com/certification/certified-machine-learning-specialty/"
+match_group = "ai-engineering-advanced"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# GOOGLE CLOUD (12 certifications)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[[certs]]
+id = "gcp-cloud-digital-leader"
+name = "Cloud Digital Leader"
+provider = "gcp"
+exam_code = "CDL"
+level = "Foundational"
+normalized_level = "foundational"
+focus_areas = ["cloud-fundamentals"]
+fee_usd = 99
+study_hours_min = 15
+study_hours_max = 30
+difficulty = 1
+validity_years = 3
+prerequisites = []
+description = "Foundational knowledge of cloud concepts, Google Cloud products, and digital transformation."
+official_url = "https://cloud.google.com/learn/certification/cloud-digital-leader"
+match_group = "cloud-fundamentals"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-genai-leader"
+name = "Generative AI Leader"
+provider = "gcp"
+exam_code = "GAI-Leader"
+level = "Foundational"
+normalized_level = "foundational"
+focus_areas = ["ai-ml", "cloud-fundamentals"]
+fee_usd = 99
+study_hours_min = 15
+study_hours_max = 30
+difficulty = 1
+validity_years = 2
+prerequisites = []
+description = "Understanding of generative AI concepts, responsible AI, and Google Cloud AI capabilities for business leaders."
+official_url = "https://cloud.google.com/learn/certification/generative-ai-leader"
+match_group = "ai-fundamentals"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-associate-cloud-engineer"
+name = "Associate Cloud Engineer"
+provider = "gcp"
+exam_code = "ACE"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["admin", "architecture"]
+fee_usd = 200
+study_hours_min = 40
+study_hours_max = 80
+difficulty = 3
+validity_years = 2
+prerequisites = []
+description = "Deploying and managing applications, configuring access, and monitoring Google Cloud projects."
+official_url = "https://cloud.google.com/learn/certification/cloud-engineer"
+match_group = "cloud-admin"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-cloud-architect"
+name = "Professional Cloud Architect"
+provider = "gcp"
+exam_code = "PCA"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["architecture"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Designing, developing, and managing robust, secure, and dynamic solutions on Google Cloud."
+official_url = "https://cloud.google.com/learn/certification/cloud-architect"
+match_group = "architect"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-data-engineer"
+name = "Professional Data Engineer"
+provider = "gcp"
+exam_code = "PDE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["data-engineering"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Designing data processing systems, building data pipelines, and managing machine learning models on GCP."
+official_url = "https://cloud.google.com/learn/certification/data-engineer"
+match_group = "data-engineering"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-cloud-developer"
+name = "Professional Cloud Developer"
+provider = "gcp"
+exam_code = "PCD"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["developer"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Building scalable and highly available applications using Google Cloud recommended practices."
+official_url = "https://cloud.google.com/learn/certification/cloud-developer"
+match_group = "developer"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-cloud-devops"
+name = "Professional Cloud DevOps Engineer"
+provider = "gcp"
+exam_code = "PCDE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["devops"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Building software delivery pipelines, deploying and monitoring services, and managing incidents on GCP."
+official_url = "https://cloud.google.com/learn/certification/cloud-devops-engineer"
+match_group = "devops"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-cloud-security"
+name = "Professional Cloud Security Engineer"
+provider = "gcp"
+exam_code = "PCSE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["security"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Configuring access, managing network security, and ensuring data protection on Google Cloud."
+official_url = "https://cloud.google.com/learn/certification/cloud-security-engineer"
+match_group = "cloud-security"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-network-engineer"
+name = "Professional Cloud Network Engineer"
+provider = "gcp"
+exam_code = "PCNE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["networking"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Designing, implementing, and managing network architectures on Google Cloud."
+official_url = "https://cloud.google.com/learn/certification/cloud-network-engineer"
+match_group = "networking"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-ml-engineer"
+name = "Professional Machine Learning Engineer"
+provider = "gcp"
+exam_code = "PMLE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["ai-ml"]
+fee_usd = 200
+study_hours_min = 80
+study_hours_max = 150
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Designing, building, and productionising ML models to solve business challenges using Google Cloud."
+official_url = "https://cloud.google.com/learn/certification/machine-learning-engineer"
+match_group = "ai-engineering"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-database-engineer"
+name = "Professional Cloud Database Engineer"
+provider = "gcp"
+exam_code = "PDBE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["data-engineering"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Designing, managing, and troubleshooting Google Cloud database solutions including Spanner and Cloud SQL."
+official_url = "https://cloud.google.com/learn/certification/cloud-database-engineer"
+match_group = "database"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"
+
+[[certs]]
+id = "gcp-prof-secops-engineer"
+name = "Professional Security Operations Engineer"
+provider = "gcp"
+exam_code = "PSOE"
+level = "Professional"
+normalized_level = "professional"
+focus_areas = ["security"]
+fee_usd = 200
+study_hours_min = 60
+study_hours_max = 120
+difficulty = 4
+validity_years = 2
+prerequisites = []
+description = "Detecting, investigating, and responding to security threats using Google Cloud security tools."
+official_url = "https://cloud.google.com/learn/certification/security-operations-engineer"
+match_group = "security-operations"
+tracker_slug = ""
+status = "active"
+last_verified = "2026-04-17"

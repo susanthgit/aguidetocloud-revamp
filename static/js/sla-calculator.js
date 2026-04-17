@@ -79,14 +79,29 @@
     const day = downtimeMins(pct, MINS_DAY);
 
     const el = document.getElementById('forward-results');
-    el.innerHTML = (label ? '<div class="slacalc-nines-label"><strong>' + esc(pct + '%') + '</strong> — ' + esc(label) + '</div>' : '') +
+    el.innerHTML =
+      (label ? '<div class="slacalc-nines-label"><strong>' + esc(pct + '%') + '</strong> — ' + esc(label) + '</div>' : '') +
       '<div class="slacalc-result-grid">' +
       card('Per Year', fmtDuration(year), fmtPrecise(year)) +
       card('Per Month', fmtDuration(month), fmtPrecise(month)) +
       card('Per Week', fmtDuration(week), fmtPrecise(week)) +
       card('Per Day', fmtDuration(day), fmtPrecise(day)) +
-      '</div>';
+      '</div>' +
+      '<div class="slacalc-plain-english">' + plainEnglish(pct, month) + '</div>';
     syncURL('sla', pct);
+  }
+
+  function plainEnglish(pct, monthMins) {
+    const outages = Math.floor(monthMins / 15) || 0;
+    let msg = '';
+    if (pct >= 99.999) msg = 'Practically zero tolerance — even a router reboot could breach this SLA.';
+    else if (pct >= 99.99) msg = 'You can afford roughly <strong>1 brief outage per month</strong> (under 5 minutes). Planned maintenance windows must be surgical.';
+    else if (pct >= 99.95) msg = 'Room for about <strong>1 short outage</strong> (~22 min/month). Most Azure Availability Zone SLAs sit here.';
+    else if (pct >= 99.9) msg = 'The most common cloud SLA. You get about <strong>' + esc(fmtDuration(monthMins)) + ' per month</strong> — roughly one 43-minute outage or a few shorter ones.';
+    else if (pct >= 99.5) msg = 'About <strong>' + esc(fmtDuration(monthMins)) + ' downtime per month</strong>. Acceptable for non-critical internal tools.';
+    else if (pct >= 99) msg = 'Nearly <strong>7.5 hours per month</strong> of allowed downtime. Only appropriate for best-effort services.';
+    else msg = 'This SLA allows significant downtime. Consider whether this meets your business requirements.';
+    return '<div class="slacalc-context-card"><span class="slacalc-context-icon">💡</span><div>' + msg + '</div></div>';
   }
 
   function card(period, value, detail) {

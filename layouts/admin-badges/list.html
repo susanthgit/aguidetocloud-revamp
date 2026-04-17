@@ -10,13 +10,13 @@
 
 <div class="badges-page">
   <div class="badges-tabs" role="tablist" aria-label="IT Admin Badges tabs">
-    <button class="badges-tab active" role="tab" aria-selected="true" aria-controls="panel-my-badges" id="tab-my-badges" data-tab="my-badges">My Badges</button>
-    <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-all-badges" id="tab-all-badges" data-tab="all-badges">All Badges</button>
+    <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-my-badges" id="tab-my-badges" data-tab="my-badges">My Badges</button>
+    <button class="badges-tab active" role="tab" aria-selected="true" aria-controls="panel-all-badges" id="tab-all-badges" data-tab="all-badges">All Badges</button>
     <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq" data-tab="faq">FAQ</button>
   </div>
 
   <!-- My Badges Panel -->
-  <div class="badges-panel active" id="panel-my-badges" role="tabpanel" aria-labelledby="tab-my-badges">
+  <div class="badges-panel" id="panel-my-badges" role="tabpanel" aria-labelledby="tab-my-badges">
     <div class="badges-my-header">
       <div id="badge-counter" class="badges-counter"></div>
       <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
@@ -28,7 +28,7 @@
   </div>
 
   <!-- All Badges Panel -->
-  <div class="badges-panel" id="panel-all-badges" role="tabpanel" aria-labelledby="tab-all-badges">
+  <div class="badges-panel active" id="panel-all-badges" role="tabpanel" aria-labelledby="tab-all-badges">
     <div id="daily-challenge"></div>
     <div id="badge-category-filters" class="badges-filter-bar">
       <button class="badges-filter active" data-cat="all">All</button>

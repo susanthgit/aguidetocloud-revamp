@@ -151,13 +151,17 @@ function renderScenario() {
   var pct = Math.min(Math.round(G.scenarioIndex / G.totalScenarios * 100), 100);
   var scoreColor = G.score >= 0 ? '#4ade80' : '#f87171';
 
+  // Time of day based on scenario index
+  var TIMES = ['8:00 AM','8:30 AM','9:15 AM','10:00 AM','10:45 AM','11:30 AM','12:00 PM','1:30 PM','2:15 PM','3:00 PM','3:45 PM','4:15 PM','4:55 PM','5:15 PM','5:30 PM'];
+  var timeLabel = TIMES[Math.min(G.scenarioIndex, TIMES.length - 1)] || '5:30 PM';
+
   var html =
-    /* header: score + progress */
+    /* header: time + score + step */
     '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">' +
+      '<div style="font-size:0.85rem;color:rgba(255,255,255,0.5);">\u23F0 ' + timeLabel + '</div>' +
       '<div style="background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:0.35rem 1rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;">' +
         '<span style="opacity:0.6;">Score</span> <span id="itday-live-score" style="font-weight:700;color:' + scoreColor + ';">' + G.score + '</span>' +
       '</div>' +
-      '<span style="font-size:0.8rem;opacity:0.5;">Step ' + (G.scenarioIndex + 1) + '</span>' +
     '</div>' +
 
     /* progress bar */
@@ -222,6 +226,16 @@ function makeChoice(idx) {
     });
   }
 
+  /* expert tip: find the best choice for this scenario */
+  var bestChoice = scenario.choices.reduce(function (a, b) { return b.score > a.score ? b : a; }, scenario.choices[0]);
+  if (bestChoice && bestChoice.text !== choice.text) {
+    var tipEl = document.createElement('div');
+    tipEl.style.cssText = 'margin-top:0.8rem;padding:0.7rem 1rem;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:10px;font-size:0.82rem;color:rgba(255,255,255,0.7);';
+    tipEl.innerHTML = '<strong style="color:#60a5fa;">\uD83D\uDCA1 Expert tip:</strong> The best move was "<em>' + esc(bestChoice.text) + '</em>" (+' + bestChoice.score + ' pts)';
+    var choices = document.querySelector('.itday-choices');
+    if (choices) choices.parentNode.insertBefore(tipEl, choices.nextSibling);
+  }
+
   /* update live score */
   var scoreEl = document.getElementById('itday-live-score');
   if (scoreEl) {
@@ -232,7 +246,7 @@ function makeChoice(idx) {
   G.currentId = choice.next;
   G.scenarioIndex++;
 
-  setTimeout(function () { renderScenario(); }, 600);
+  setTimeout(function () { renderScenario(); }, 1200);
 }
 
 /* ═══════════════════════════════════════════════════

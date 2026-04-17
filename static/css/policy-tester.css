@@ -304,6 +304,22 @@
   font-weight: 600;
 }
 
+/* Presets */
+.ptester-presets {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.ptester-presets-label {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4); font-weight: 600;
+}
+.ptester-preset {
+  padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 600;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; color: rgba(255,255,255,0.6); cursor: pointer;
+  transition: all 0.2s;
+}
+.ptester-preset:hover { color: #fff; border-color: var(--ptester-accent); }
+
 /* Mobile */
 @media (max-width: 640px) {
   .ptester-form-grid {

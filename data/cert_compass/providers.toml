@@ -1,0 +1,50 @@
+# ============================================================================
+# PROVIDERS — Cloud certification providers
+# ============================================================================
+
+[[providers]]
+id = "microsoft"
+name = "Microsoft"
+short = "Azure"
+hex = "#0078D4"
+emoji = "🔷"
+cert_page = "https://learn.microsoft.com/en-us/credentials/"
+training_page = "https://learn.microsoft.com/en-us/training/"
+renewal_policy = "Annual free renewal assessment on Microsoft Learn (no fee). Fundamentals never expire."
+validity_default = 1
+validity_note = "Renewed annually via free online assessment. Fundamentals = lifetime."
+fee_fundamentals = 99
+fee_associate = 165
+fee_expert = 165
+fee_specialty = 165
+
+[[providers]]
+id = "aws"
+name = "AWS"
+short = "AWS"
+hex = "#FF9900"
+emoji = "🟠"
+cert_page = "https://aws.amazon.com/certification/"
+training_page = "https://explore.skillbuilder.aws/"
+renewal_policy = "Recertify by retaking the exam (or passing a higher-level exam) before 3-year expiry."
+validity_default = 3
+validity_note = "3 years from pass date. Must retake exam to renew."
+fee_foundational = 100
+fee_associate = 150
+fee_professional = 300
+fee_specialty = 300
+
+[[providers]]
+id = "gcp"
+name = "Google Cloud"
+short = "GCP"
+hex = "#4285F4"
+emoji = "🔵"
+cert_page = "https://cloud.google.com/learn/certification"
+training_page = "https://www.cloudskillsboost.google/"
+renewal_policy = "Recertify by retaking the exam before 2-year expiry."
+validity_default = 2
+validity_note = "2 years from pass date. Must retake full exam to renew."
+fee_foundational = 99
+fee_associate = 200
+fee_professional = 200

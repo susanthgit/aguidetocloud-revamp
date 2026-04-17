@@ -524,6 +524,25 @@
     wireInputs();
     var btn = $('assess-btn');
     if (btn) btn.addEventListener('click', update);
+
+    // Presets
+    var PRESETS = {
+      'ad-default': { min_length: 7, complexity: true, expiry: 42, lockout: 0, mfa: false, history: 24 },
+      'entra-default': { min_length: 8, complexity: true, expiry: 0, lockout: 10, mfa: false, history: 0 },
+      'nist': { min_length: 15, complexity: false, expiry: 0, lockout: 100, mfa: true, history: 0 },
+      'modern': { min_length: 14, complexity: false, expiry: 0, lockout: 10, mfa: true, history: 0 }
+    };
+    document.querySelectorAll('.ptester-preset').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var p = PRESETS[b.dataset.preset];
+        if (!p) return;
+        setVal('min-length', p.min_length); setCheck('complexity', p.complexity);
+        setVal('expiry-days', p.expiry); setVal('lockout-threshold', p.lockout);
+        setCheck('mfa-required', p.mfa); setVal('history-count', p.history);
+        syncDisplays(); update();
+      });
+    });
+
     update();
   }
 
