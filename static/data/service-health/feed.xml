@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 03:42:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 06:12:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Microsoft Copilot usage reports in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1282908</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Copilot usage reports in the Microsoft 365 admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1282908</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may see a delay in certain reports in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1282907</link>
+      <description>[Microsoft 365 suite] Users may see a delay in certain reports in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1282907</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1254319</guid>
       <pubDate>Tue, 17 Mar 2026 11:42:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users' Sales add-in may not appear on Outlook mobile and Outlook for Mac clients</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1253444</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users' Sales add-in may not appear on Outlook mobile and Outlook for Mac clients.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1253444</guid>
-      <pubDate>Mon, 16 Mar 2026 15:11:25 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may be unable to access Office.com or the Microsoft 365 Copilot web sign‑in page</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1253428</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access Office.com or the Microsoft 365 Copilot web sign‑in page.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1253428</guid>
-      <pubDate>Mon, 16 Mar 2026 13:05:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
