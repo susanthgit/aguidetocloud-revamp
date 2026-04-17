@@ -15,21 +15,6 @@
 
   {{/* ── Play Panel ── */}}
   <div class="cliquiz-panel active" id="panel-play">
-    <div class="cliquiz-modes">
-      <button class="cliquiz-mode-btn" data-mode="quick">Quick 10</button>
-      <button class="cliquiz-mode-btn" data-mode="category">Category Focus</button>
-      <button class="cliquiz-mode-btn" data-mode="daily">Daily Challenge</button>
-      <button class="cliquiz-mode-btn" data-mode="hard">Hard Mode</button>
-    </div>
-    <div class="cliquiz-categories">
-      <button class="cliquiz-chip active" data-category="all">All</button>
-      <button class="cliquiz-chip" data-category="powershell">PowerShell</button>
-      <button class="cliquiz-chip" data-category="graph">Graph</button>
-      <button class="cliquiz-chip" data-category="exchange">Exchange</button>
-      <button class="cliquiz-chip" data-category="teams">Teams</button>
-      <button class="cliquiz-chip" data-category="azure">Azure</button>
-      <button class="cliquiz-chip" data-category="windows">Windows</button>
-    </div>
     <div id="quiz-area"></div>
     <div id="quiz-score"></div>
   </div>
@@ -47,7 +32,7 @@
       {{ range .Params.faq }}
       <details open>
         <summary>{{ .question }}</summary>
-        <p>{{ .answer | markdownify }}</p>
+        <div>{{ .answer | markdownify }}</div>
       </details>
       {{ end }}
     </div>
@@ -60,3 +45,4 @@
 <script>window.__cliCommands = {{ $commands | jsonify | safeJS }};</script>
 <script defer src="/js/cli-quiz.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
+

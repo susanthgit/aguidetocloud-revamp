@@ -18,8 +18,8 @@ faq:
     answer: "Yes! The templates include placeholder tokens like {eta} and {cause} that you replace with your specific details. Copy, customise, and send."
   - question: "What audiences are supported?"
     answer: "Internal IT team, all staff, executive leadership, and external stakeholders. Each audience gets appropriately formal language and relevant detail levels."
-  - question: "Can I open the message directly in Outlook?"
-    answer: "Yes! Click the 'Open in Outlook' button to create a new email with the subject and body pre-filled using a mailto link."
+  - question: "Can I open the message directly in email?"
+    answer: "Yes! Click the email button to create a new email with the subject and body pre-filled using a mailto link. Works with Outlook, Gmail, and any default email client."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is V1 and we'd love your feedback. Visit our [feedback page](/feedback/) to suggest new templates or features."
 ---

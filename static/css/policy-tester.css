@@ -98,80 +98,65 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   padding: 1.5rem;
+}
+.ptester-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
 }
-
-.ptester-input-group {
+.ptester-field {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-.ptester-input-group label {
+.ptester-field label {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.5);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.ptester-input-group input[type="text"],
-.ptester-input-group select {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  color: #fff;
-  padding: 0.55rem 0.8rem;
-  font-size: 0.88rem;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-.ptester-input-group input[type="text"]:focus,
-.ptester-input-group select:focus {
-  border-color: var(--ptester-accent);
-}
-.ptester-input-group input[type="range"] {
+.ptester-field input[type="range"] {
   accent-color: var(--ptester-accent);
   width: 100%;
 }
-
-/* Toggle Switch */
-.ptester-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
+.ptester-field output {
+  font-size: 0.85rem;
+  color: var(--ptester-accent);
+  font-weight: 700;
+  text-align: center;
 }
-.ptester-checkbox input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.ptester-checkbox .ptester-slider {
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.1);
-  border-radius: 24px;
+.ptester-field--checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  text-transform: none;
 }
-.ptester-checkbox .ptester-slider::before {
-  content: '';
-  position: absolute;
+.ptester-field--checkbox input[type="checkbox"] {
+  accent-color: var(--ptester-accent);
   width: 18px;
   height: 18px;
-  left: 3px;
-  bottom: 3px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
 }
-.ptester-checkbox input:checked + .ptester-slider {
+.ptester-assess-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.2rem;
   background: var(--ptester-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
-.ptester-checkbox input:checked + .ptester-slider::before {
-  transform: translateX(20px);
-}
+.ptester-assess-btn:hover { opacity: 0.85; }
+
+/* (toggle switch removed — template uses native checkboxes) */
 
 /* Score Ring */
 .ptester-score-ring {
@@ -261,6 +246,10 @@
   color: rgba(255,255,255,0.8);
   line-height: 1.5;
 }
+.ptester-rec-critical { border-left: 3px solid #ef4444; }
+.ptester-rec-warning  { border-left: 3px solid #fb923c; }
+.ptester-rec-info     { border-left: 3px solid #3b82f6; }
+.ptester-rec-success  { border-left: 3px solid #4ade80; }
 
 /* Compare Table */
 .ptester-compare-table {
@@ -301,10 +290,23 @@
   font-weight: 700;
   color: var(--ptester-accent);
 }
+.ptester-tbl-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+.ptester-tbl-setting {
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+.ptester-tbl-user {
+  color: var(--ptester-accent);
+  font-weight: 600;
+}
 
 /* Mobile */
 @media (max-width: 640px) {
-  .ptester-form {
+  .ptester-form-grid {
     grid-template-columns: 1fr;
   }
   .ptester-bar-row {

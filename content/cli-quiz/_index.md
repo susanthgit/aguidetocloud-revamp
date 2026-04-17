@@ -15,7 +15,7 @@ faq:
   - question: "What categories are covered?"
     answer: "Microsoft Graph, Exchange Online, Teams, Azure CLI, Windows PowerShell, and general PowerShell commands — 30 real-world admin tasks."
   - question: "What is Hard Mode?"
-    answer: "Instead of multiple choice, you type the command yourself. The tool uses fuzzy matching — you don't need the exact syntax, just the right cmdlet name."
+    answer: "Instead of multiple choice, you type the command yourself. You need to enter the correct cmdlet name — the tool accepts the primary command and common alternatives."
   - question: "Is there a daily challenge?"
     answer: "Yes! The Daily Challenge gives everyone the same 10 questions for that date, so you can compare scores with colleagues."
   - question: "How does category mastery work?"

@@ -256,7 +256,7 @@
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
-.icomms-gallery-card .icomms-gallery-type {
+.icomms-gallery-card .icomms-gallery-name {
   font-size: 0.78rem;
   color: var(--icomms-accent);
   font-weight: 600;
@@ -283,5 +283,185 @@
   .icomms-form {
     padding: 1rem;
   }
+  .icomms-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .icomms-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Grid */
+.icomms-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Generate Button */
+.icomms-generate-btn {
+  background: var(--icomms-accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  width: 100%;
+  margin-top: 0.3rem;
+}
+.icomms-generate-btn:hover { opacity: 0.85; }
+
+/* Output meta pills */
+.icomms-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.icomms-meta-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+.icomms-sev-p1 { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: #f87171; }
+.icomms-sev-p2 { background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.3); color: #fb923c; }
+.icomms-sev-p3 { background: rgba(250,204,21,0.15); border-color: rgba(250,204,21,0.3); color: #facc15; }
+.icomms-sev-p4 { background: rgba(74,222,128,0.15); border-color: rgba(74,222,128,0.3); color: #4ade80; }
+
+/* Section Cards (generated per phase) */
+.icomms-section-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+.icomms-section-phase {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.icomms-section-subject {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.icomms-section-body {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.85);
+  white-space: pre-wrap;
+  line-height: 1.7;
+  margin: 0;
+}
+.icomms-section-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+/* Copy / Mailto Buttons */
+.icomms-copy-btn,
+.icomms-mailto-btn {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.icomms-copy-btn:hover,
+.icomms-mailto-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Creative Divider */
+.icomms-creative-divider {
+  text-align: center;
+  padding: 0.8rem 0;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--icomms-accent);
+  border-top: 1px solid rgba(255,143,102,0.2);
+}
+
+/* Placeholder text */
+.icomms-placeholder {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+/* Gallery Extras */
+.icomms-gallery-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(255,143,102,0.12);
+  color: var(--icomms-accent);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.icomms-gallery-use {
+  display: inline-block;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+.icomms-gallery-use:hover {
+  background: var(--icomms-accent);
+  color: #000;
+  border-color: var(--icomms-accent);
+}
+
+/* Output actions row (template-level) */
+.icomms-output-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.icomms-action-btn {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.icomms-action-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
 }
 

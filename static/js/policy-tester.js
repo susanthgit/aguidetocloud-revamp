@@ -64,12 +64,12 @@
 
   function getPolicy() {
     return {
-      min_length:          parseInt(($('input-min-length') || {}).value, 10) || 8,
-      complexity_required: !!($('input-complexity') || {}).checked,
-      expiry_days:         parseInt(($('input-expiry') || {}).value, 10) || 0,
-      lockout_threshold:   parseInt(($('input-lockout') || {}).value, 10) || 0,
-      mfa_required:        !!($('input-mfa') || {}).checked,
-      history_count:       parseInt(($('input-history') || {}).value, 10) || 0
+      min_length:          parseInt(($('min-length') || {}).value, 10) || 8,
+      complexity_required: !!($('complexity') || {}).checked,
+      expiry_days:         parseInt(($('expiry-days') || {}).value, 10) || 0,
+      lockout_threshold:   parseInt(($('lockout-threshold') || {}).value, 10) || 0,
+      mfa_required:        !!($('mfa-required') || {}).checked,
+      history_count:       parseInt(($('history-count') || {}).value, 10) || 0
     };
   }
 
@@ -275,7 +275,7 @@
     var r = 80, circ = 2 * Math.PI * r;
     var offset = circ - (circ * s / 100);
     scoreEl.innerHTML =
-      '<div class="ptester-ring-wrap">' +
+      '<div class="ptester-score-ring">' +
         '<svg width="200" height="200" viewBox="0 0 200 200">' +
           '<circle cx="100" cy="100" r="' + r + '" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>' +
           '<circle cx="100" cy="100" r="' + r + '" fill="none" stroke="' + esc(color) + '" stroke-width="12" ' +
@@ -293,15 +293,15 @@
       var pct = c.max > 0 ? Math.round((c.score / c.max) * 100) : 0;
       var barColor = pct >= 80 ? '#4ade80' : pct >= 50 ? '#facc15' : '#ef4444';
       catHtml +=
-        '<div class="ptester-cat-row">' +
-          '<span class="ptester-cat-name">' + esc(c.name) + '</span>' +
-          '<div class="ptester-cat-track">' +
-            '<div class="ptester-cat-fill" style="width:' + pct + '%;background:' + barColor + '"></div>' +
+        '<div class="ptester-bar-row">' +
+          '<span class="ptester-bar-label">' + esc(c.name) + '</span>' +
+          '<div class="ptester-bar">' +
+            '<div class="ptester-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div>' +
           '</div>' +
-          '<span class="ptester-cat-pts">' + esc(c.label) + '</span>' +
+          '<span class="ptester-bar-score">' + esc(c.label) + '</span>' +
         '</div>';
     });
-    catEl.innerHTML = catHtml;
+    catEl.innerHTML = '<div class="ptester-category-bars">' + catHtml + '</div>';
 
     // Recommendations
     var recHtml = '';
@@ -313,7 +313,9 @@
           '<span class="ptester-rec-text">' + esc(r.text) + '</span>' +
         '</div>';
     });
-    recEl.innerHTML = recHtml || '<p style="opacity:0.5">No recommendations — your policy looks great.</p>';
+    recEl.innerHTML = recHtml
+      ? '<div class="ptester-recommendations">' + recHtml + '</div>'
+      : '<p style="opacity:0.5">No recommendations — your policy looks great.</p>';
   }
 
   /* ── Render: comparison table ───────────────────────────────── */
@@ -341,6 +343,7 @@
       { label: 'History',     key: 'history_count',     fmt: fmtNum,  cmp: cmpGte }
     ];
 
+    var cellMap = {green:'ptester-cell-pass', amber:'ptester-cell-partial', red:'ptester-cell-fail'};
     var body = '';
     rows.forEach(function (row) {
       var userVal = policy[row.key];
@@ -349,14 +352,14 @@
       stds.forEach(function (st) {
         var stdVal = st[row.key];
         var cls = row.cmp(userVal, stdVal, row.key);
-        body += '<td class="ptester-tbl-' + cls + '">' + row.fmt(stdVal) + '</td>';
+        body += '<td class="' + (cellMap[cls] || '') + '">' + row.fmt(stdVal) + '</td>';
       });
       body += '</tr>';
     });
 
     el.innerHTML =
       '<div class="ptester-tbl-scroll">' +
-        '<table class="ptester-tbl">' +
+        '<table class="ptester-compare-table">' +
           '<thead>' + hdr + '</thead>' +
           '<tbody>' + body + '</tbody>' +
         '</table>' +
@@ -423,10 +426,10 @@
 
   function syncDisplays() {
     var pairs = [
-      ['input-min-length',  'val-min-length',  null],
-      ['input-expiry',      'val-expiry',       function (v) { return v === '0' ? 'No expiry' : v + ' days'; }],
-      ['input-lockout',     'val-lockout',      function (v) { return v === '0' ? 'None' : v + ' attempts'; }],
-      ['input-history',     'val-history',      function (v) { return v === '0' ? 'None' : v + ' passwords'; }]
+      ['min-length',        'min-length-value',        null],
+      ['expiry-days',       'expiry-days-value',        function (v) { return v === '0' ? 'No expiry' : v + ' days'; }],
+      ['lockout-threshold', 'lockout-threshold-value',  function (v) { return v === '0' ? 'None' : v + ' attempts'; }],
+      ['history-count',     'history-count-value',      function (v) { return v === '0' ? 'None' : v + ' passwords'; }]
     ];
     pairs.forEach(function (p) {
       var inp = $(p[0]), disp = $(p[1]);
@@ -455,12 +458,12 @@
     var params = new URLSearchParams(location.search);
     if (!params.has('ml')) return false;
 
-    setVal('input-min-length',  clamp(parseInt(params.get('ml'), 10) || 8, 4, 64));
-    setCheck('input-complexity', params.get('cx') === '1');
-    setVal('input-expiry',      clamp(parseInt(params.get('ex'), 10) || 0, 0, 365));
-    setVal('input-lockout',     clamp(parseInt(params.get('lo'), 10) || 0, 0, 100));
-    setCheck('input-mfa',       params.get('mf') === '1');
-    setVal('input-history',     clamp(parseInt(params.get('hi'), 10) || 0, 0, 24));
+    setVal('min-length',        clamp(parseInt(params.get('ml'), 10) || 8, 4, 64));
+    setCheck('complexity',      params.get('cx') === '1');
+    setVal('expiry-days',       clamp(parseInt(params.get('ex'), 10) || 0, 0, 365));
+    setVal('lockout-threshold', clamp(parseInt(params.get('lo'), 10) || 0, 0, 100));
+    setCheck('mfa-required',    params.get('mf') === '1');
+    setVal('history-count',     clamp(parseInt(params.get('hi'), 10) || 0, 0, 24));
     return true;
   }
 
@@ -484,8 +487,8 @@
 
   function wireInputs() {
     var ids = [
-      'input-min-length', 'input-complexity', 'input-expiry',
-      'input-lockout',    'input-mfa',        'input-history'
+      'min-length',        'complexity',        'expiry-days',
+      'lockout-threshold', 'mfa-required',      'history-count'
     ];
     ids.forEach(function (id) {
       var el = $(id);
@@ -503,12 +506,12 @@
 
     var saved = safeGet('ptester_policy');
     if (saved) {
-      setVal('input-min-length',  clamp(saved.min_length || 8, 4, 64));
-      setCheck('input-complexity', !!saved.complexity_required);
-      setVal('input-expiry',      clamp(saved.expiry_days || 90, 0, 365));
-      setVal('input-lockout',     clamp(saved.lockout_threshold || 5, 0, 100));
-      setCheck('input-mfa',       !!saved.mfa_required);
-      setVal('input-history',     clamp(saved.history_count || 0, 0, 24));
+      setVal('min-length',        clamp(saved.min_length || 8, 4, 64));
+      setCheck('complexity',      !!saved.complexity_required);
+      setVal('expiry-days',       clamp(saved.expiry_days || 90, 0, 365));
+      setVal('lockout-threshold', clamp(saved.lockout_threshold || 5, 0, 100));
+      setCheck('mfa-required',    !!saved.mfa_required);
+      setVal('history-count',     clamp(saved.history_count || 0, 0, 24));
     }
     // Form defaults from HTML cover the remaining case
   }
@@ -519,6 +522,8 @@
     initTabs('ptester');
     restoreDefaults();
     wireInputs();
+    var btn = $('assess-btn');
+    if (btn) btn.addEventListener('click', update);
     update();
   }
 

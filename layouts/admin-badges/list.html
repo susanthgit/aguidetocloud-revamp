@@ -19,15 +19,23 @@
   <div class="badges-panel active" id="panel-my-badges" role="tabpanel" aria-labelledby="tab-my-badges">
     <div class="badges-my-header">
       <div id="badge-counter" class="badges-counter"></div>
-      <button id="badge-download-btn" class="badges-download-btn" aria-label="Download badge wall as image">Download Badge Wall</button>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+        <button id="btn-download-wall" class="badges-download-btn" aria-label="Download badge wall as image">Download Badge Wall</button>
+        <button id="btn-clear-all" class="badges-btn-secondary" aria-label="Clear all earned badges">Clear All</button>
+      </div>
     </div>
     <div id="badge-wall"></div>
   </div>
 
   <!-- All Badges Panel -->
   <div class="badges-panel" id="panel-all-badges" role="tabpanel" aria-labelledby="tab-all-badges">
-    <div id="badge-category-filters" class="badges-category-filters"></div>
-    <div id="all-badges-grid"></div>
+    <div id="daily-challenge"></div>
+    <div id="badge-category-filters" class="badges-filter-bar">
+      <button class="badges-filter active" data-cat="all">All</button>
+      {{ range $categories }}<button class="badges-filter" data-cat="{{ .id }}">{{ .emoji }} {{ .name }}</button>
+      {{ end }}
+    </div>
+    <div id="all-badges-grid" class="badges-grid"></div>
   </div>
 
   <!-- FAQ Panel -->

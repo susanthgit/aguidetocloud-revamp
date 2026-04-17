@@ -59,7 +59,25 @@
     <a href="/ca-builder/" class="tool-eco-card{{ if eq $active "ca-builder" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>CA Policies</strong><p>Conditional Access</p></a>
     <a href="/purview-starter/" class="tool-eco-card{{ if eq $active "purview" }} tool-eco-active{{ end }}"><span>🔐</span><strong>Purview</strong><p>Labels & DLP</p></a>
     <a href="/ps-builder/" class="tool-eco-card{{ if eq $active "ps-builder" }} tool-eco-active{{ end }}"><span>⚡</span><strong>PowerShell</strong><p>Script builder</p></a>
+    <a href="/security-toolkit/" class="tool-eco-card{{ if eq $active "security-toolkit" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>Security</strong><p>CIS assessment</p></a>
+    <a href="/sla-calculator/" class="tool-eco-card{{ if eq $active "sla-calculator" }} tool-eco-active{{ end }}"><span>📐</span><strong>SLA Calc</strong><p>Uptime budget</p></a>
+    <a href="/policy-tester/" class="tool-eco-card{{ if eq $active "policy-tester" }} tool-eco-active{{ end }}"><span>🔑</span><strong>Policy Tester</strong><p>Score your policy</p></a>
+    <a href="/incident-comms/" class="tool-eco-card{{ if eq $active "incident-comms" }} tool-eco-active{{ end }}"><span>📢</span><strong>Incident Comms</strong><p>Status updates</p></a>
     <a href="/migration-planner/" class="tool-eco-card{{ if eq $active "migration" }} tool-eco-active{{ end }}"><span>🚀</span><strong>Migration</strong><p>Plan your move</p></a>
+  </div>
+  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+</div>
+
+{{ else if eq $group "community" }}
+<div class="tool-eco" style="--eco-accent: #C27BA0">
+  <h2 class="tool-eco-title">More Fun Tools</h2>
+  <div class="tool-eco-grid tool-eco-4">
+    <a href="/admin-bingo/" class="tool-eco-card{{ if eq $active "admin-bingo" }} tool-eco-active{{ end }}"><span>🎯</span><strong>IT Bingo</strong><p>Relatable admin moments</p></a>
+    <a href="/acronym-battle/" class="tool-eco-card{{ if eq $active "acronym-battle" }} tool-eco-active{{ end }}"><span>🧠</span><strong>Acronym Battle</strong><p>Test your knowledge</p></a>
+    <a href="/cli-quiz/" class="tool-eco-card{{ if eq $active "cli-quiz" }} tool-eco-active{{ end }}"><span>💻</span><strong>CLI Quiz</strong><p>Guess the command</p></a>
+    <a href="/it-day-sim/" class="tool-eco-card{{ if eq $active "it-day-sim" }} tool-eco-active{{ end }}"><span>🎮</span><strong>My IT Day</strong><p>Choose your adventure</p></a>
+    <a href="/admin-badges/" class="tool-eco-card{{ if eq $active "admin-badges" }} tool-eco-active{{ end }}"><span>🏅</span><strong>Admin Badges</strong><p>Claim achievements</p></a>
+    <a href="/phishing-test/" class="tool-eco-card{{ if eq $active "phishing-test" }} tool-eco-active{{ end }}"><span>🎣</span><strong>Phishing Test</strong><p>Spot the fakes</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>

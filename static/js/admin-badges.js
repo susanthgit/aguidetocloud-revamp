@@ -116,7 +116,7 @@
           '<div class="badges-daily-info">' +
             '<strong>' + esc(challenge.name) + '</strong>' +
             '<small>' + esc(challenge.desc) + '</small>' +
-            '<span class="badges-rarity" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span> ' +
+            '<span class="badges-rarity-badge" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span> ' +
             '<span class="badges-cat-label">' + esc(cat.emoji) + ' ' + esc(cat.name) + '</span>' +
           '</div>' +
           '<button class="badges-earn-btn" data-id="' + esc(challenge.id) + '">Earn it</button>' +
@@ -136,14 +136,14 @@
   function badgeCard(b, earned) {
     var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
     var cat = catMap[b.category] || { name: '?', emoji: '❓', color: '#666' };
-    var cls = 'badges-card' + (earned ? ' badges-card--earned' : ' badges-card--locked');
+    var cls = 'badges-card' + (earned ? ' earned' : ' locked');
     return '<div class="' + cls + '" data-id="' + esc(b.id) + '" role="button" tabindex="0"' +
       ' aria-label="' + esc(b.name) + (earned ? ' (earned)' : ' (locked)') + '">' +
-      '<span class="badges-card-emoji">' + esc(b.emoji) + '</span>' +
-      '<strong class="badges-card-name">' + esc(b.name) + '</strong>' +
-      '<small class="badges-card-desc">' + esc(b.desc) + '</small>' +
+      '<span class="badges-emoji">' + esc(b.emoji) + '</span>' +
+      '<strong class="badges-name">' + esc(b.name) + '</strong>' +
+      '<small class="badges-desc">' + esc(b.desc) + '</small>' +
       '<div class="badges-card-meta">' +
-        '<span class="badges-rarity" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span>' +
+        '<span class="badges-rarity-badge" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span>' +
         '<span class="badges-cat-pill" style="border-color:' + esc(cat.color) + '">' +
           esc(cat.emoji) + ' ' + esc(cat.name) +
         '</span>' +

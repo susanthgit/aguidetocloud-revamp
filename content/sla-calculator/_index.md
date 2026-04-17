@@ -19,7 +19,7 @@ faq:
   - question: "What does 'five nines' mean?"
     answer: "Five nines (99.999%) means less than 5 minutes and 15 seconds of downtime per year. Each additional 'nine' dramatically reduces the allowed outage window."
   - question: "Can I share my calculation?"
-    answer: "Yes! Your inputs are encoded in the URL — just copy and share the link. The recipient sees the exact same calculation."
+    answer: "Yes! Your forward calculator SLA percentage is encoded in the URL — just copy and share the link. The recipient sees the same calculation."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is V1 and we'd love your feedback. Visit our [feedback page](/feedback/) to suggest features or improvements."
 ---

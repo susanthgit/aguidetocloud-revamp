@@ -45,7 +45,7 @@
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
         document.querySelectorAll('.' + ns + '-panel').forEach(function (p) { p.classList.remove('active'); });
-        var panel = document.getElementById(target);
+        var panel = document.getElementById('panel-' + target);
         if (panel) panel.classList.add('active');
       });
     });
@@ -252,7 +252,7 @@
       var sel = document.getElementById('incident-type');
       if (sel) { sel.value = typeId; }
       // Switch to generate tab
-      var genTab = document.querySelector('.icomms-tab[data-tab="panel-generate"]');
+      var genTab = document.querySelector('.icomms-tab[data-tab="generate"]');
       if (genTab) genTab.click();
       generateComms();
     });
@@ -265,6 +265,8 @@
       var el = document.getElementById(id);
       if (el) el.addEventListener('change', generateComms);
     });
+    var genBtn = document.getElementById('generate-btn');
+    if (genBtn) genBtn.addEventListener('click', generateComms);
   }
 
   /* ── Init ──────────────────────────────────────────────── */

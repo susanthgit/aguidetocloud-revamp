@@ -16,12 +16,7 @@
 
   {{/* ── Play Panel ── */}}
   <div class="itday-panel active" id="panel-play">
-    <div class="itday-start-screen" id="start-screen">
-      <button class="itday-start-btn" data-mode="random">Start Your Day</button>
-      <button class="itday-start-btn" data-mode="daily">Daily Challenge</button>
-    </div>
     <div id="story-area"></div>
-    <div id="story-progress"></div>
   </div>
 
   {{/* ── Results History Panel ── */}}
@@ -36,7 +31,7 @@
       {{ range .Params.faq }}
       <details open>
         <summary>{{ .question }}</summary>
-        <p>{{ .answer | markdownify }}</p>
+        <div>{{ .answer | markdownify }}</div>
       </details>
       {{ end }}
     </div>
@@ -52,3 +47,4 @@ window.__scoreTiers = {{ $scoreTiers | jsonify | safeJS }};
 </script>
 <script defer src="/js/it-day-sim.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
+

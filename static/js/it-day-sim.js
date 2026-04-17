@@ -6,95 +6,10 @@
 'use strict';
 
 /* ═══════════════════════════════════════════════════
-   DATA — 20 scenarios + 4 score tiers
+   DATA — loaded from TOML via template
    ═══════════════════════════════════════════════════ */
-window.__scenarios = [
-  {id:'morning-tickets',text:"It\u2019s 8:01 AM. You open your laptop to find 47 unread tickets, a missed call from the CEO, and the VPN is apparently \u2018on fire.\u2019 Your coffee isn\u2019t even brewed yet. What do you tackle first?",choices:[
-    {text:"Rush to the CEO \u2014 they sign the cheques",next:'ceo-laptop',score:0,tag:'politics'},
-    {text:"Fix the VPN \u2014 127 remote workers are stuck",next:'vpn-outage',score:5,tag:'triage'},
-    {text:"Knock out the 12 password resets \u2014 quick wins",next:'password-reset',score:5,tag:'efficiency'}
-  ]},
-  {id:'ceo-laptop',text:"The CEO corners you in the hallway: \u2018My laptop is DEAD. Board meeting in 20 minutes!\u2019 You notice the power cable isn\u2019t plugged in.",choices:[
-    {text:"Quietly plug it in and say you \u2018ran diagnostics\u2019",next:'phishing-email',score:10,tag:'diplomatic'},
-    {text:"Drop everything and hand-deliver a loaner laptop",next:'printer-fire',score:-5,tag:'pushover'}
-  ]},
-  {id:'vpn-outage',text:"Remote workers are flooding Teams: \u2018VPN IS DOWN!\u2019 The concentrator shows 100 % CPU. 127 people are waiting.",choices:[
-    {text:"Check the firewall rules \u2014 something changed last night",next:'firewall-alert',score:10,tag:'methodical'},
-    {text:"Reboot the VPN concentrator and pray",next:'teams-down',score:5,tag:'quick-fix'}
-  ]},
-  {id:'password-reset',text:"12 password-reset tickets. Three are marked \u2018URGENT \u2014 CEO\u2019S PA.\u2019 The self-service portal exists but nobody uses it.",choices:[
-    {text:"Send a self-service guide and only help the stuck ones",next:'shadow-it',score:15,tag:'enabler'},
-    {text:"Reset them all manually \u2014 it\u2019s just faster",next:'new-hire',score:-5,tag:'manual'}
-  ]},
-  {id:'phishing-email',text:"Alert! Someone in Finance clicked a \u2018Your parcel is waiting\u2019 link. The URL leads to a fake Microsoft login page. Three people entered credentials.",choices:[
-    {text:"Isolate machines, force password resets, check logs",next:'ransomware-scare',score:15,tag:'security-pro'},
-    {text:"Just run antivirus and move on \u2014 probably fine",next:'server-room',score:-10,tag:'careless'}
-  ]},
-  {id:'printer-fire',text:"Floor 3\u2019s printer is grinding and smells like burning. Karen from Accounts says she \u2018needs it NOW for month-end reports.\u2019",choices:[
-    {text:"Unplug it, slap an Out of Order sign, log a vendor ticket",next:'coffee-machine',score:5,tag:'pragmatic'},
-    {text:"Open it up and try to fix it yourself",next:'server-room',score:-10,tag:'hero-complex'}
-  ]},
-  {id:'firewall-alert',text:"You found it \u2014 someone pushed a firewall rule at 2 AM blocking the VPN subnet. The change log says \u2018security improvement\u2019 by the new analyst.",choices:[
-    {text:"Revert the rule, document it, notify the analyst politely",next:'server-room',score:10,tag:'thorough'},
-    {text:"Disable the firewall temporarily to get people working",next:'ransomware-scare',score:-15,tag:'reckless'}
-  ]},
-  {id:'teams-down',text:"The VPN reboot cascaded into\u2026 Teams going down company-wide. The CTO is trying to host an all-hands. Your phone won\u2019t stop ringing.",choices:[
-    {text:"Check Microsoft Service Health \u2014 might not be your problem",next:'backup-failure',score:10,tag:'informed'},
-    {text:"Restart Teams on every machine via remote script",next:'intern-mistake',score:-5,tag:'overkill'}
-  ]},
-  {id:'shadow-it',text:"While investigating you discover Marketing has been using an unapproved AI tool. 200 GB of company data uploaded. No DLP. No contract.",choices:[
-    {text:"Document the risk, brief your manager, propose a policy",next:'vendor-call',score:10,tag:'governance'},
-    {text:"Block it immediately without warning anyone",next:'ransomware-scare',score:-5,tag:'heavy-handed'}
-  ]},
-  {id:'new-hire',text:"Surprise \u2014 five new hires are starting TODAY. Nobody told IT. They\u2019re sitting at empty desks with no accounts, no laptops, no badges.",choices:[
-    {text:"Script the account creation and image spare laptops",next:'intern-mistake',score:10,tag:'automation'},
-    {text:"Create each account manually while they watch you type",next:'coffee-machine',score:-5,tag:'slow'}
-  ]},
-  {id:'ransomware-scare',text:"CRITICAL ALERT: A workstation is encrypting files. The screen shows \u2018Your files have been encrypted. Pay 2 BTC.\u2019 The user is in tears.",choices:[
-    {text:"Network-isolate, preserve evidence, activate the IR plan",next:'intern-mistake',score:15,tag:'security-hero'},
-    {text:"Panic and consider paying \u2014 they need those files",next:'lunch-break',score:-20,tag:'panic'}
-  ]},
-  {id:'server-room',text:"The server-room temperature alarm triggers \u2014 32 \u00b0C and climbing. One AC unit has failed. Database servers are thermal-throttling.",choices:[
-    {text:"Prop doors open for airflow, call HVAC emergency line",next:'backup-failure',score:10,tag:'proactive'},
-    {text:"It\u2019s fine \u2014 servers can handle the heat",next:'lunch-break',score:-10,tag:'negligent'}
-  ]},
-  {id:'coffee-machine',text:"The office coffee machine has stopped working. You receive four tickets. One says \u2018CRITICAL PRIORITY \u2014 TEAM CANNOT FUNCTION.\u2019",choices:[
-    {text:"Redirect to Facilities with a polite auto-reply",next:'vendor-call',score:5,tag:'boundaries'},
-    {text:"Fix it because morale matters (and you want coffee too)",next:'lunch-break',score:0,tag:'people-pleaser'}
-  ]},
-  {id:'vendor-call',text:"Your phone buzzes: \u2018Urgent meeting \u2014 CloudVendor Corp contract renewal.\u2019 They want to discuss a 40 % price increase, effective next month.",choices:[
-    {text:"Schedule for next week, prepare competitive quotes first",next:'lunch-break',score:5,tag:'strategic'},
-    {text:"Take the call now and skip lunch to deal with it",next:'after-lunch',score:-5,tag:'reactive'}
-  ]},
-  {id:'backup-failure',text:"Your monitoring shows last night\u2019s backup failed. The backup server disk is at 99 %. It\u2019s been silently failing for three days.",choices:[
-    {text:"Clear old snapshots, run a manual backup, set up alerts",next:'lunch-break',score:10,tag:'diligent'},
-    {text:"It\u2019ll probably work tonight \u2014 worry about it later",next:'after-lunch',score:-10,tag:'gambler'}
-  ]},
-  {id:'intern-mistake',text:"The intern just ran Remove-Item -Recurse on the shared Finance drive. 2 TB of data. The colour has drained from their face.",choices:[
-    {text:"Restore from backup, use it as a teaching moment",next:'lunch-break',score:10,tag:'mentor'},
-    {text:"Escalate to HR \u2014 this is a fireable offence",next:'after-lunch',score:-15,tag:'harsh'}
-  ]},
-  {id:'lunch-break',text:"It\u2019s 1 PM. Your stomach is growling. You haven\u2019t eaten. The ticket queue is still at 34. But there\u2019s leftover pizza in the kitchen.",choices:[
-    {text:"Take 30 minutes \u2014 you\u2019ll be sharper after food",next:'after-lunch',score:10,tag:'self-care'},
-    {text:"Eat at your desk while clearing tickets",next:'after-lunch',score:-5,tag:'martyr'}
-  ]},
-  {id:'after-lunch',text:"The afternoon hits. 15 new tickets, a complaint from HR about \u2018system slowness,\u2019 and someone asks if you can fix the lift. Three hours left.",choices:[
-    {text:"Triage, prioritize, delegate what you can",next:'end-of-day',score:10,tag:'leader'},
-    {text:"Try to do everything yourself at maximum speed",next:'end-of-day',score:-5,tag:'burnout'}
-  ]},
-  {id:'end-of-day',text:"It\u2019s 5 PM. You survived. 23 tickets closed, 12 still open. Your inbox has 89 unread emails. Tomorrow\u2019s a new day\u2026 probably.",choices:[
-    {text:"Document your day, update on-call notes, hand off cleanly",next:'final',score:10,tag:'professional'},
-    {text:"Slam the laptop shut and speed-walk to the exit",next:'final',score:-5,tag:'survivor'}
-  ]},
-  {id:'final',text:'',choices:[]}
-];
-
-window.__scoreTiers = [
-  {min:0,max:30,title:'Chaos Agent',emoji:'\uD83D\uDD25',desc:'Your IT department is on fire \u2014 literally and figuratively. Maybe consider a career change?'},
-  {min:31,max:50,title:'Survived',emoji:'\uD83D\uDE05',desc:'You made it to 5 PM, barely. Tomorrow will be better. Probably. Hopefully.'},
-  {min:51,max:70,title:'Solid Admin',emoji:'\uD83D\uDCAA',desc:'Professional, composed, and only mildly caffeinated. Your users are lucky to have you.'},
-  {min:71,max:100,title:'Legendary',emoji:'\uD83C\uDFC6',desc:'The mythical IT admin who handles everything with grace. Are you even real?'}
-];
+var scenarios = window.__scenarios || [];
+var scoreTiers = window.__scoreTiers || [];
 
 /* ═══════════════════════════════════════════════════
    HELPERS
@@ -128,11 +43,10 @@ function formatId(id) {
 
 function findTier(score) {
   var s = Math.max(0, Math.min(100, score));
-  var tiers = window.__scoreTiers;
-  for (var i = 0; i < tiers.length; i++) {
-    if (s >= tiers[i].min && s <= tiers[i].max) return tiers[i];
+  for (var i = 0; i < scoreTiers.length; i++) {
+    if (s >= scoreTiers[i].min && s <= scoreTiers[i].max) return scoreTiers[i];
   }
-  return tiers[tiers.length - 1];
+  return scoreTiers[scoreTiers.length - 1];
 }
 
 /* ═══════════════════════════════════════════════════
@@ -178,7 +92,7 @@ var choosing = false; // guard against double-clicks
    BUILD MAP
    ═══════════════════════════════════════════════════ */
 function buildScenarioMap() {
-  var arr = window.__scenarios || [];
+  var arr = scenarios;
   scenarioMap = new Map();
   for (var i = 0; i < arr.length; i++) scenarioMap.set(arr[i].id, arr[i]);
 }

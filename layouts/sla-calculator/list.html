@@ -8,14 +8,14 @@
 
 <div class="slacalc-page">
   <div class="slacalc-tabs" role="tablist">
-    <button class="slacalc-tab active" role="tab" aria-selected="true" data-tab="calc">Calculator</button>
-    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
-    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="m365">M365 SLAs</button>
-    <button class="slacalc-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+    <button class="slacalc-tab active" role="tab" aria-selected="true" id="tab-calc" aria-controls="panel-calc" data-tab="calc">Calculator</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-compare" aria-controls="panel-compare" data-tab="compare">Compare</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-m365" aria-controls="panel-m365" data-tab="m365">M365 SLAs</button>
+    <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-faq" aria-controls="panel-faq" data-tab="faq">FAQ</button>
   </div>
 
   <!-- Calculator Panel -->
-  <div class="slacalc-panel active" id="panel-calc">
+  <div class="slacalc-panel active" id="panel-calc" role="tabpanel" aria-labelledby="tab-calc">
     <div class="slacalc-mode-toggle">
       <button class="slacalc-mode active" data-mode="forward">SLA % → Downtime</button>
       <button class="slacalc-mode" data-mode="reverse">Downtime → SLA %</button>
@@ -87,7 +87,7 @@
   </div>
 
   <!-- Compare Panel -->
-  <div class="slacalc-panel" id="panel-compare">
+  <div class="slacalc-panel" id="panel-compare" role="tabpanel" aria-labelledby="tab-compare">
     <div class="slacalc-table-wrap">
       <table class="slacalc-table" id="compare-table">
         <thead>
@@ -106,7 +106,7 @@
   </div>
 
   <!-- M365 SLAs Panel -->
-  <div class="slacalc-panel" id="panel-m365">
+  <div class="slacalc-panel" id="panel-m365" role="tabpanel" aria-labelledby="tab-m365">
     <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem">Microsoft's contractual SLA commitments. Click a row to calculate its downtime budget.</p>
     <div class="slacalc-table-wrap">
       <table class="slacalc-table" id="m365-table">
@@ -126,12 +126,12 @@
   </div>
 
   <!-- FAQ Panel -->
-  <div class="slacalc-panel" id="panel-faq">
+  <div class="slacalc-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
       {{ range .Params.faq }}
       <details open>
         <summary><strong>{{ .question }}</strong></summary>
-        <p>{{ .answer | markdownify }}</p>
+        <div>{{ .answer | markdownify }}</div>
       </details>
       {{ end }}
     </div>
@@ -147,3 +147,4 @@ window.__m365Slas = {{ $m365 | jsonify | safeJS }};
 </script>
 <script defer src="/js/sla-calculator.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
+

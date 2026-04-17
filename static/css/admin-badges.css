@@ -221,3 +221,39 @@
     font-size: 2rem;
   }
 }
+
+/* Daily Challenge */
+.badges-daily { margin-bottom: 1.5rem; }
+.badges-daily-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4); margin-bottom: 0.5rem;
+}
+.badges-daily-card {
+  background: rgba(255,213,79,0.06); border: 1px solid rgba(255,213,79,0.2);
+  border-radius: 12px; padding: 1rem; display: flex; align-items: center; gap: 1rem;
+}
+.badges-daily-card.badges-daily--done { opacity: 0.5; }
+.badges-daily-emoji { font-size: 2rem; }
+.badges-daily-info { flex: 1; }
+.badges-daily-info strong { display: block; color: #fff; }
+.badges-daily-info p { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin: 0.2rem 0 0; }
+
+/* Badge Wall Items */
+.badges-wall-item { text-align: center; }
+.badges-wall-emoji { font-size: 1.6rem; }
+.badges-wall-name { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+.badges-empty, .badges-empty-wall {
+  text-align: center; padding: 2rem; color: rgba(255,255,255,0.4);
+}
+
+/* Card extras */
+.badges-card-meta { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+.badges-cat-label, .badges-cat-pill {
+  font-size: 0.7rem; color: rgba(255,255,255,0.4);
+}
+.badges-earn-btn {
+  display: inline-block; margin-top: 0.6rem; padding: 0.3rem 0.8rem;
+  background: var(--badges-accent); color: #000; border: none; border-radius: 6px;
+  font-size: 0.75rem; font-weight: 600; cursor: pointer;
+}
+.badges-earn-btn:hover { opacity: 0.85; }
