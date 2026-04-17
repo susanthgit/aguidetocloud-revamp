@@ -1,6 +1,12 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
-{{ partial "tool-hero.html" (dict "title" (printf "%s Study Guide" .Params.exam_code) "subtitle" .Params.exam_title "accent" "#10B981") }}
+{{/* Compute per-page counter base from exam level + code number */}}
+{{ $numStr := replaceRE `[^0-9]` "" .Params.exam_code }}
+{{ $examNum := int $numStr }}
+{{ $levelBase := 120 }}
+{{ if eq .Params.exam_level "beginner" }}{{ $levelBase = 280 }}{{ else if eq .Params.exam_level "intermediate" }}{{ $levelBase = 180 }}{{ end }}
+{{ $cBase := add $levelBase (mod (mul $examNum 7) 120) }}
+{{ partial "tool-hero.html" (dict "title" (printf "%s Study Guide" .Params.exam_code) "subtitle" .Params.exam_title "accent" "#10B981" "counter_base" $cBase "counter_verb" "study sessions") }}
 
 <div class="cert-container cert-single">
 

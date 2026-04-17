@@ -12,21 +12,33 @@
     {{/* Counter + Ko-fi row */}}
     {{ $url := $p.RelPermalink }}
     {{ $counters := (index hugo.Data "tool_counters").tools }}
+    {{ $counterBase := 0 }}
+    {{ $counterVerb := "" }}
+    {{ range $counters }}
+      {{ if eq .url $url }}
+        {{ $counterBase = .base }}
+        {{ $counterVerb = .verb }}
+      {{ end }}
+    {{ end }}
+    {{/* Dict-based counter override (for pages without TOML entries, e.g. cert guides) */}}
+    {{ if and (eq $counterBase 0) $.counter_base }}
+      {{ $counterBase = $.counter_base }}
+      {{ $counterVerb = $.counter_verb }}
+    {{ end }}
     <div class="tool-hero-badges">
-      {{ range $counters }}
-        {{ if eq .url $url }}
-      <div class="tool-counter" data-base="{{ .base }}" aria-hidden="true">
-        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 .base }}</span>
-        <span class="tool-counter-verb">{{ .verb }}</span>
+      {{ if gt $counterBase 0 }}
+      <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
+        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
+        <span class="tool-counter-verb">{{ $counterVerb }}</span>
       </div>
-      <span class="sr-only">{{ lang.FormatNumberCustom 0 .base }} {{ .verb }}</span>
-        {{ end }}
+      <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
       {{ end }}
       {{/* Freshness badge for pipeline tools */}}
       {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
       <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support on Ko-fi</a>
     </div>
     {{ partial "tool-prev-next.html" $p }}
+    {{ partial "cert-prev-next.html" $p }}
     {{ with $.extra_html }}{{ . | safeHTML }}{{ end }}
   </div>
 </div>

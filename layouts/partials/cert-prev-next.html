@@ -1,0 +1,43 @@
+{{/*
+  cert-prev-next.html — Circular prev/next navigation between cert study guide pages.
+  Auto-builds ordered list from cert-tracker section pages sorted by exam_code.
+  Only renders on cert-tracker single pages.
+
+  Usage: {{ partial "cert-prev-next.html" . }}
+*/}}
+
+{{ $section := site.GetPage "/cert-tracker" }}
+{{ if $section }}
+{{ $pages := sort $section.Pages ".Params.exam_code" }}
+{{ $current := .RelPermalink }}
+{{ $count := len $pages }}
+{{ $idx := -1 }}
+
+{{/* Find index of current page */}}
+{{ range $i, $p := $pages }}
+  {{ if eq $current $p.RelPermalink }}
+    {{ $idx = $i }}
+  {{ end }}
+{{ end }}
+
+{{/* Only render if current page is a known cert guide */}}
+{{ if ge $idx 0 }}
+  {{ $prevIdx := cond (eq $idx 0) (sub $count 1) (sub $idx 1) }}
+  {{ $nextIdx := cond (eq $idx (sub $count 1)) 0 (add $idx 1) }}
+  {{ $prev := index $pages $prevIdx }}
+  {{ $next := index $pages $nextIdx }}
+
+  <nav class="cert-pn" aria-label="Browse study guides">
+    <a href="{{ $prev.RelPermalink }}" class="cert-pn-link cert-pn-prev" title="{{ $prev.Params.exam_code }}: {{ $prev.Params.exam_title }}">
+      <span class="cert-pn-arrow">←</span>
+      <span class="cert-pn-code">{{ $prev.Params.exam_code }}</span>
+      <span class="cert-pn-title">{{ $prev.Params.exam_title | truncate 35 }}</span>
+    </a>
+    <a href="{{ $next.RelPermalink }}" class="cert-pn-link cert-pn-next" title="{{ $next.Params.exam_code }}: {{ $next.Params.exam_title }}">
+      <span class="cert-pn-title">{{ $next.Params.exam_title | truncate 35 }}</span>
+      <span class="cert-pn-code">{{ $next.Params.exam_code }}</span>
+      <span class="cert-pn-arrow">→</span>
+    </a>
+  </nav>
+{{ end }}
+{{ end }}

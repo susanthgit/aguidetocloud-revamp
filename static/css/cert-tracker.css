@@ -24,6 +24,58 @@
   padding: 1.5rem 1rem 3rem;
 }
 
+/* ── Compact hero for cert study guide pages ── */
+.tool-hero { padding: 0.8rem 1rem 0.5rem; }
+.tool-hero-title { font-size: 1.2rem; margin-bottom: 0.15rem; }
+.tool-hero-subtitle { font-size: 0.78rem; }
+.tool-hero-badges { margin-top: 0.3rem; gap: 0.5rem; }
+.cert-pn { margin-top: 0.5rem; padding-top: 0.4rem; }
+@media (max-width: 640px) {
+  .tool-hero { padding: 0.5rem 0.75rem 0.3rem; }
+  .tool-hero-title { font-size: 1rem; }
+}
+
+/* ── Cert Prev/Next Circular Nav ── */
+.cert-pn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  gap: 0.75rem;
+}
+.cert-pn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  max-width: 48%;
+  overflow: hidden;
+}
+.cert-pn-link:hover {
+  border-color: var(--cert-accent);
+  color: var(--cert-accent);
+  background: rgba(255,255,255,0.04);
+}
+.cert-pn-prev { margin-right: auto; }
+.cert-pn-next { margin-left: auto; }
+.cert-pn-arrow { font-size: 0.85rem; opacity: 0.7; }
+.cert-pn-code { font-weight: 700; color: var(--cert-accent); font-size: 0.82rem; }
+.cert-pn-title { opacity: 0.7; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 640px) {
+  .cert-pn-title { display: none; }
+  .cert-pn-link { font-size: 0.72rem; padding: 0.35rem 0.65rem; }
+}
+
 /* ── Tabs ── */
 .cert-tabs {
   display: flex;
