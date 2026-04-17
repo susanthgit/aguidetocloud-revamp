@@ -1,15 +1,5 @@
 {{ define "main" }}
-{{ $data := (index hugo.Data "copilot_studio") }}
-{{ $decision := $data.decision }}
-{{ $knowledge := $data.knowledge }}
-{{ $models := $data.models }}
-{{ $agents := $data.agents }}
-{{ $quotas := $data.quotas }}
-{{ $caps := $data.capabilities }}
-{{ $roles := $data.roles }}
-{{ $licensing := $data.licensing }}
-{{ $integration := $data.integration }}
-{{ $readiness := $data.readiness }}
+{{ $cs := (index hugo.Data "copilot_studio") }}
 <link rel="stylesheet" href="/css/copilot-studio.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "title" "Copilot Studio Companion" "accent" "#9055E3") }}
@@ -44,21 +34,11 @@
       <button class="cstudio-subtab" data-sub="quotas">Quotas & Limits</button>
       <button class="cstudio-subtab" data-sub="capabilities">All Capabilities</button>
     </div>
-    <div class="cstudio-subpanel active" id="sub-knowledge">
-      <div id="knowledge-grid"></div>
-    </div>
-    <div class="cstudio-subpanel" id="sub-models">
-      <div id="models-grid"></div>
-    </div>
-    <div class="cstudio-subpanel" id="sub-agents">
-      <div id="agents-grid"></div>
-    </div>
-    <div class="cstudio-subpanel" id="sub-quotas">
-      <div id="quotas-grid"></div>
-    </div>
-    <div class="cstudio-subpanel" id="sub-capabilities">
-      <div id="capabilities-grid"></div>
-    </div>
+    <div class="cstudio-subpanel active" id="sub-knowledge"><div id="knowledge-grid"></div></div>
+    <div class="cstudio-subpanel" id="sub-models"><div id="models-grid"></div></div>
+    <div class="cstudio-subpanel" id="sub-agents"><div id="agents-grid"></div></div>
+    <div class="cstudio-subpanel" id="sub-quotas"><div id="quotas-grid"></div></div>
+    <div class="cstudio-subpanel" id="sub-capabilities"><div id="capabilities-grid"></div></div>
   </div>
 
   <!-- TAB 3: PLAN -->
@@ -111,20 +91,22 @@
 <div data-pagefind-body aria-hidden="true" style="position:absolute;left:-9999px">
   <h1>Copilot Studio Companion</h1>
   <p>{{ .Description }}</p>
-  <p>Plan and design Microsoft Copilot Studio agents. Interactive feature comparison between Agent Builder, Copilot Studio, and Azure AI Foundry. Knowledge source limits, AI model availability, multi-agent architecture patterns, Copilot Credits estimator, and build readiness assessment.</p>
+  <p>Plan and design Microsoft Copilot Studio agents. Interactive feature comparison, knowledge source limits, AI model availability, multi-agent architecture, Copilot Credits estimator, and build readiness assessment.</p>
 </div>
 
 <script>
-window.__cstudioDecision = {{ $decision | jsonify | safeJS }};
-window.__cstudioKnowledge = {{ $knowledge | jsonify | safeJS }};
-window.__cstudioModels = {{ $models | jsonify | safeJS }};
-window.__cstudioAgents = {{ $agents | jsonify | safeJS }};
-window.__cstudioQuotas = {{ $quotas | jsonify | safeJS }};
-window.__cstudioCaps = {{ $caps | jsonify | safeJS }};
-window.__cstudioRoles = {{ $roles | jsonify | safeJS }};
-window.__cstudioLicensing = {{ $licensing | jsonify | safeJS }};
-window.__cstudioIntegration = {{ $integration | jsonify | safeJS }};
-window.__cstudioReadiness = {{ $readiness | jsonify | safeJS }};
+window.__cstudioData = {
+  decision: {{ $cs.decision | jsonify | safeJS }},
+  knowledge: {{ $cs.knowledge | jsonify | safeJS }},
+  models: {{ $cs.models | jsonify | safeJS }},
+  agents: {{ $cs.agents | jsonify | safeJS }},
+  quotas: {{ $cs.quotas | jsonify | safeJS }},
+  capabilities: {{ $cs.capabilities | jsonify | safeJS }},
+  roles: {{ $cs.roles | jsonify | safeJS }},
+  licensing: {{ $cs.licensing | jsonify | safeJS }},
+  integration: {{ $cs.integration | jsonify | safeJS }},
+  readiness: {{ $cs.readiness | jsonify | safeJS }}
+};
 </script>
 <script defer src="/js/copilot-studio.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

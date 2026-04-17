@@ -2,11 +2,6 @@
 title: "Privacy Policy"
 layout: single
 description: "How aguidetocloud.com handles your data — anonymous analytics, no personal data collection, and full transparency."
-date: 2026-04-18
-lastmod: 2026-04-18
-sitemap:
-  priority: 0.3
-  changefreq: yearly
 ---
 
 ## What This Site Does

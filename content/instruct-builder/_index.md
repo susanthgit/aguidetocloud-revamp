@@ -1,7 +1,7 @@
 ---
 title: "Agent Instruction Builder"
 description: "Build AI agent instructions for M365 Agent Builder, ChatGPT, Claude, and Copilot Studio."
-type: "agent-instructions"
+type: "instruct-builder"
 layout: "list"
 lastmod: 2026-04-18
 sitemap:
