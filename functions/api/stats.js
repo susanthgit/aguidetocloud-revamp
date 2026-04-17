@@ -241,7 +241,8 @@ async function handleLatestVideo(env) {
       thumbnail: item.snippet?.thumbnails?.high?.url || '' };
     cacheStore.latestvideo = { data, time: now };
     return jsonRes(data);
-  } catch (e) { console.error('Latest video error:', e.message); return jsonRes({ error: 'Failed to fetch video' }); }──────────────────────────────────────────
+  } catch (e) { console.error('Latest video error:', e.message); return jsonRes({ error: 'Failed to fetch video' }); }
+}
 
 async function handleBioLinks(env) {
   const now = Date.now();
@@ -294,7 +295,8 @@ async function handleBioLinks(env) {
       updated: new Date().toISOString() };
     cacheStore.biolinks = { data, time: now };
     return jsonRes(data);
-  } catch (e) { console.error('Bio links error:', e.message); return jsonRes({ error: 'Failed to fetch bio data' }); }───────────────────────────────
+  } catch (e) { console.error('Bio links error:', e.message); return jsonRes({ error: 'Failed to fetch bio data' }); }
+}
 
 async function handleYouTube(env) {
   const now = Date.now();
