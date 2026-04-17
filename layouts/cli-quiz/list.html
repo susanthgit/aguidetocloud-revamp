@@ -14,20 +14,20 @@
   </div>
 
   {{/* ── Play Panel ── */}}
-  <div class="cliquiz-panel active" id="panel-play">
+  <div class="cliquiz-panel active" id="panel-play" role="tabpanel">
     <div id="quiz-area"></div>
     <div id="quiz-score"></div>
   </div>
 
   {{/* ── Stats Panel ── */}}
-  <div class="cliquiz-panel" id="panel-stats">
+  <div class="cliquiz-panel" id="panel-stats" role="tabpanel">
     <div id="quiz-stats"></div>
     <div id="category-mastery"></div>
     <div id="quiz-history"></div>
   </div>
 
   {{/* ── FAQ Panel ── */}}
-  <div class="cliquiz-panel" id="panel-faq">
+  <div class="cliquiz-panel" id="panel-faq" role="tabpanel">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
       {{ range .Params.faq }}
       <details open>

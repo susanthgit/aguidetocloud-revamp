@@ -1,0 +1,89 @@
+{{ define "main" }}
+{{- $data := index hugo.Data "cert_compass" -}}
+{{- $certs := $data.certifications.certs -}}
+{{- $groups := $data.equivalents.groups -}}
+{{- $signals := $data.market_signals.signals -}}
+{{- $certId := .Params.cert_id -}}
+{{- $cert := false -}}
+{{- range $certs }}{{ if eq .id $certId }}{{ $cert = . }}{{ end }}{{ end -}}
+{{- $signal := false -}}
+{{- range $signals }}{{ if eq .cert_id $certId }}{{ $signal = . }}{{ end }}{{ end -}}
+{{- $providers := $data.providers.providers -}}
+{{- $provider := false -}}
+{{- if $cert }}{{ range $providers }}{{ if eq .id $cert.provider }}{{ $provider = . }}{{ end }}{{ end }}{{ end -}}
+
+{{ if $cert }}
+{{ partial "tool-hero.html" (dict "Page" . "title" (printf "%s (%s)" $cert.name $cert.exam_code) "subtitle" (printf "%s · %s · $%d" (cond (eq $cert.provider "microsoft") "Microsoft Azure" (cond (eq $cert.provider "aws") "AWS" "Google Cloud")) $cert.level $cert.fee_usd) "accent" (cond (ne $provider false) $provider.hex "#6366F1")) }}
+
+<div class="compass-page">
+  <div style="max-width:800px;margin:0 auto">
+    <!-- Cert detail card -->
+    <div class="compass-match-cert" style="border-left:3px solid {{ if $provider }}{{ $provider.hex }}{{ else }}#6366F1{{ end }};padding:1.25rem;margin-bottom:1.5rem">
+      <p class="compass-card-desc">{{ $cert.description }}</p>
+      <div class="compass-card-meta">
+        <span><strong>Exam Code:</strong> {{ $cert.exam_code }}</span>
+        <span><strong>Fee:</strong> ${{ $cert.fee_usd }}</span>
+        <span><strong>Study:</strong> {{ $cert.study_hours_min }}–{{ $cert.study_hours_max }} hours</span>
+        <span><strong>Difficulty:</strong> {{ $cert.difficulty }}/5</span>
+        <span><strong>Validity:</strong> {{ with $cert.validity_override }}{{ . }}{{ else }}{{ $cert.validity_years }} year{{ if ne $cert.validity_years 1 }}s{{ end }}{{ end }}</span>
+        <span><strong>Focus:</strong> {{ delimit $cert.focus_areas ", " }}</span>
+        {{ if $signal }}<span><strong>Demand:</strong> {{ $signal.demand_score }}/100 {{ if eq $signal.trending "up" }}↑{{ end }}</span>{{ end }}
+        {{ if $signal }}<span><strong>Salary Premium:</strong> +${{ div $signal.salary_premium 1000 }}K/yr (est.)</span>{{ end }}
+      </div>
+      <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+        <a href="{{ $cert.official_url }}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary">Official Exam Page →</a>
+        {{ if $cert.tracker_slug }}<a href="/cert-tracker/{{ $cert.tracker_slug }}/" class="compass-btn compass-btn-ms">Microsoft Study Guide →</a>{{ end }}
+      </div>
+    </div>
+
+    <!-- Cross-cloud matches -->
+    {{ if $cert.match_group }}
+    <h2 style="color:var(--compass-accent);font-size:1.1rem;margin-bottom:0.75rem">Cross-Cloud Closest Matches</h2>
+    {{ range $groups }}{{ if eq .id $cert.match_group }}
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem">{{ .description }}</p>
+    <div class="compass-match-cols" style="margin-bottom:1.5rem">
+      {{ range .cert_ids }}
+        {{ $mc := false }}{{ range $certs }}{{ if eq .id (index $.Params "cert_id" | default "") }}{{ end }}{{ end }}
+        {{/* Render each cert in the group */}}
+      {{ end }}
+    </div>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.5)">{{ .comparison_notes }}</p>
+    <p style="color:var(--compass-accent);font-size:0.82rem;font-weight:600;margin-top:0.5rem">💡 {{ .recommendation }}</p>
+    {{ end }}{{ end }}
+    <a href="/cert-compass/?tab=matches" class="compass-btn compass-btn-outline" style="margin-top:0.75rem">See All Matches →</a>
+    {{ end }}
+
+    <!-- Provider info -->
+    {{ if $provider }}
+    <h2 style="color:var(--compass-accent);font-size:1.1rem;margin:1.5rem 0 0.75rem">{{ $provider.name }} Certification Programme</h2>
+    <div class="compass-card-meta">
+      <span><strong>Renewal:</strong> {{ $provider.renewal_policy }}</span>
+      <span><strong>Training:</strong> <a href="{{ $provider.training_page }}" target="_blank" rel="noopener noreferrer" style="color:var(--compass-accent)">Official Training →</a></span>
+      <span><strong>All Certs:</strong> <a href="{{ $provider.cert_page }}" target="_blank" rel="noopener noreferrer" style="color:var(--compass-accent)">Certification Page →</a></span>
+    </div>
+    {{ end }}
+
+    <div style="margin-top:2rem">
+      <a href="/cert-compass/" class="compass-btn compass-btn-outline">← Back to Cert Compass</a>
+      <a href="/cert-compass/?tab=compare&compare={{ $certId }}" class="compass-btn compass-btn-primary" style="margin-left:0.5rem">Compare This Cert</a>
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "cert-compass") }}
+{{ partial "back-nav" (dict "Page" . "URL" "/cert-compass/" "Label" "Cert Compass") }}
+
+<link rel="stylesheet" href="/css/cert-compass.css?v={{ site.Params.cache_version }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ printf "%s (%s)" $cert.name $cert.exam_code | jsonify }},
+  "description": {{ $cert.description | jsonify }},
+  "provider": { "@type": "Organization", "name": {{ if $provider }}{{ $provider.name | jsonify }}{{ else }}"Cloud Provider"{{ end }} },
+  "offers": { "@type": "Offer", "price": "{{ $cert.fee_usd }}", "priceCurrency": "USD" }
+}
+</script>
+{{ end }}
+{{ end }}

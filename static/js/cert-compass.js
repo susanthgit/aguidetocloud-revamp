@@ -16,6 +16,14 @@
   const certMap = {};
   CERTS.forEach(c => { certMap[c.id] = c; });
 
+  // Merge market signals into certs
+  const signalMap = {};
+  SIGNALS.forEach(s => { signalMap[s.cert_id] = s; });
+  CERTS.forEach(c => {
+    const s = signalMap[c.id];
+    if (s) { c.demand_score = s.demand_score; c.trending = s.trending; c.salary_premium = s.salary_premium; }
+  });
+
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
   // ── My Certs (localStorage) ───────────────────────────────────────────
@@ -23,7 +31,7 @@
   let myCerts = new Set();
   try { const s = localStorage.getItem(MYCERTS_KEY); if (s) myCerts = new Set(JSON.parse(s)); } catch (e) {}
 
-  function saveMyCerts() { try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...myCerts])); } catch (e) {} renderMyCertsBar(); }
+  function saveMyCerts() { try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...myCerts])); } catch (e) {} renderMyCertsBar(); renderDashboard(); }
 
   function toggleMyCert(id) {
     if (myCerts.has(id)) myCerts.delete(id); else myCerts.add(id);
@@ -106,6 +114,9 @@
       const tracker = c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms">Study Guide</a>` : '';
       const haveClass = myCerts.has(c.id) ? ' owned' : '';
       const haveLabel = myCerts.has(c.id) ? '✓ I Have This' : '+ I Have This';
+      const trendIcon = c.trending === 'up' ? '↑' : c.trending === 'down' ? '↓' : '';
+      const demandBadge = c.demand_score ? `<span class="compass-badge compass-badge-demand">${c.demand_score} ${trendIcon}</span>` : '';
+      const salaryBadge = c.salary_premium ? `<span class="compass-badge compass-badge-salary">+$${(c.salary_premium/1000).toFixed(0)}K</span>` : '';
       return `<div class="compass-card" data-id="${esc(c.id)}">
         <div class="compass-card-header">
           <div class="compass-card-provider" style="background:${pc}"></div>
@@ -116,6 +127,7 @@
               <span class="compass-badge compass-badge-level">${esc(c.normalized_level)}</span>
               <span class="compass-badge compass-badge-fee">$${c.fee_usd}</span>
               <span class="compass-badge compass-badge-diff">${diffDots(c.difficulty)}</span>
+              ${demandBadge}${salaryBadge}
             </div>
           </div>
           <span class="compass-card-expand">▼</span>
@@ -256,6 +268,99 @@
     `).join('');
   }
 
+  window.__compassSwitchTab = switchTab;
+
+  // ── Dashboard ─────────────────────────────────────────────────────────
+  function renderDashboard() {
+    const empty = document.getElementById('dashboard-empty');
+    const content = document.getElementById('dashboard-content');
+    if (!myCerts.size) { empty.style.display = ''; content.style.display = 'none'; return; }
+    empty.style.display = 'none'; content.style.display = '';
+
+    const owned = [...myCerts].map(id => certMap[id]).filter(Boolean);
+    const totalCost = owned.reduce((s, c) => s + (c.fee_usd || 0), 0);
+    const totalHours = owned.reduce((s, c) => s + ((c.study_hours_min + c.study_hours_max) / 2), 0);
+
+    // Stats bar
+    document.getElementById('dash-stats').innerHTML = `
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">${owned.length}</span><span class="compass-dash-stat-label">Certs Held</span></div>
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">${new Set(owned.map(c=>c.provider)).size}</span><span class="compass-dash-stat-label">Providers</span></div>
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">$${totalCost}</span><span class="compass-dash-stat-label">Invested</span></div>
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">~${Math.round(totalHours)}h</span><span class="compass-dash-stat-label">Studied</span></div>
+    `;
+
+    // Progress rings per provider
+    document.getElementById('dash-rings').innerHTML = PROVIDERS.map(p => {
+      const total = CERTS.filter(c => c.provider === p.id).length;
+      const have = owned.filter(c => c.provider === p.id).length;
+      const pct = Math.round((have / total) * 100);
+      const r = 40, circ = 2 * Math.PI * r, offset = circ - (circ * pct / 100);
+      return `<div class="compass-dash-ring-card">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="${r}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="${r}" fill="none" stroke="${p.hex}" stroke-width="8" stroke-dasharray="${circ}" stroke-dashoffset="${offset}" transform="rotate(-90 50 50)" stroke-linecap="round"/>
+          <text x="50" y="48" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">${pct}%</text>
+          <text x="50" y="64" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">${have}/${total}</text>
+        </svg>
+        <span style="color:${p.hex};font-weight:600;font-size:0.82rem">${p.emoji} ${p.name}</span>
+      </div>`;
+    }).join('');
+
+    // Gaps — find equivalent certs the user is missing
+    const ownedIds = new Set(myCerts);
+    const gaps = [];
+    GROUPS.forEach(g => {
+      const groupCerts = (g.cert_ids || []).map(id => certMap[id]).filter(Boolean);
+      const have = groupCerts.filter(c => ownedIds.has(c.id));
+      const missing = groupCerts.filter(c => !ownedIds.has(c.id));
+      if (have.length > 0 && missing.length > 0) {
+        gaps.push({ group: g, have, missing });
+      }
+    });
+    document.getElementById('dash-gaps').innerHTML = gaps.length ? gaps.map(g => `
+      <div class="compass-dash-gap">
+        <strong>${g.group.icon} ${esc(g.group.name)}</strong>
+        <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">You have: ${g.have.map(c => `<span style="color:${providerColor(c.provider)}">${esc(c.exam_code)}</span>`).join(', ')}</span>
+        <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">Missing: ${g.missing.map(c => `<span style="color:${providerColor(c.provider)}">${esc(c.exam_code)} ($${c.fee_usd})</span>`).join(', ')}</span>
+      </div>
+    `).join('') : '<p style="color:rgba(255,255,255,0.4)">No cross-cloud gaps detected. Nice coverage!</p>';
+
+    // Recommended next
+    const notOwned = CERTS.filter(c => !ownedIds.has(c.id));
+    const scored = notOwned.map(c => {
+      let score = c.demand_score || 50;
+      if (c.trending === 'up') score += 10;
+      // Boost certs in same groups as owned
+      const inGroup = GROUPS.find(g => g.cert_ids && g.cert_ids.includes(c.id) && g.cert_ids.some(id => ownedIds.has(id)));
+      if (inGroup) score += 15;
+      // Boost associate over foundational if user has foundational
+      const hasFoundational = owned.some(o => o.normalized_level === 'foundational' && o.provider === c.provider);
+      if (hasFoundational && c.normalized_level === 'associate') score += 10;
+      return { cert: c, score };
+    }).sort((a, b) => b.score - a.score).slice(0, 3);
+
+    document.getElementById('dash-recommended').innerHTML = scored.map(s => {
+      const c = s.cert;
+      return `<div class="compass-dash-rec-card" style="border-left:3px solid ${providerColor(c.provider)}">
+        <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.3rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100${c.trending === 'up' ? ' ↑' : ''}</div>
+        ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA;font-size:0.75rem">Study guide available →</a>` : ''}
+      </div>`;
+    }).join('');
+
+    // Investment
+    const salaryBoost = owned.reduce((s, c) => s + (c.salary_premium || 0), 0);
+    document.getElementById('dash-investment').innerHTML = `
+      <div class="compass-dash-invest-grid">
+        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">$${totalCost}</span><span>Exam Fees Spent</span></div>
+        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">~${Math.round(totalHours)}h</span><span>Study Hours</span></div>
+        <div class="compass-dash-invest-card" style="border-color:rgba(16,185,129,0.3)"><span class="compass-dash-stat-num" style="color:#10B981">+$${(salaryBoost/1000).toFixed(0)}K</span><span>Est. Salary Premium</span></div>
+        <div class="compass-dash-invest-card" style="border-color:rgba(16,185,129,0.3)"><span class="compass-dash-stat-num" style="color:#10B981">${salaryBoost > 0 ? ((salaryBoost / totalCost) * 100).toFixed(0) + '×' : '—'}</span><span>ROI (premium ÷ cost)</span></div>
+      </div>
+    `;
+  }
+
+  // ── Plan My Journey Calculator ────────────────────────────────────────
   function showCareerDetail(pathId) {
     const path = PATHS.find(p => p.id === pathId);
     if (!path) return;
@@ -266,6 +371,33 @@
 
     let html = `<button class="compass-career-back" onclick="document.getElementById('career-detail').style.display='none'">← Back to all roles</button>`;
     html += `<h3 style="color:#fff;font-size:1.1rem;margin-bottom:1rem">${path.icon} ${esc(path.name)} — Certification Path</h3>`;
+
+    // Cost/time comparison table
+    const providerCosts = (path.recommended_order || []).map(po => {
+      const prov = providerMap[po.provider];
+      if (!prov) return null;
+      const certs = (po.certs || []).map(cid => certMap[cid]).filter(Boolean);
+      const totalFee = certs.reduce((s, c) => s + c.fee_usd, 0);
+      const totalHoursMin = certs.reduce((s, c) => s + c.study_hours_min, 0);
+      const totalHoursMax = certs.reduce((s, c) => s + c.study_hours_max, 0);
+      const renewalYearly = certs.reduce((s, c) => {
+        if (c.provider === 'microsoft') return s; // free renewal
+        return s + (c.fee_usd / (c.validity_years || 3));
+      }, 0);
+      const threeYearCost = totalFee + Math.round(renewalYearly * 2); // initial + 2 renewal cycles
+      return { prov, certs, totalFee, totalHoursMin, totalHoursMax, renewalYearly: Math.round(renewalYearly), threeYearCost };
+    }).filter(Boolean);
+
+    html += `<div class="compass-cost-compare"><table class="compass-compare-table">
+      <thead><tr><th></th>${providerCosts.map(pc => `<th style="color:${pc.prov.hex}">${pc.prov.emoji} ${esc(pc.prov.name)}</th>`).join('')}</tr></thead>
+      <tbody>
+        <tr><td>Exams</td>${providerCosts.map(pc => `<td>${pc.certs.length}</td>`).join('')}</tr>
+        <tr><td>Exam Fees</td>${providerCosts.map(pc => `<td>$${pc.totalFee}</td>`).join('')}</tr>
+        <tr><td>Study Hours</td>${providerCosts.map(pc => `<td>${pc.totalHoursMin}–${pc.totalHoursMax}h</td>`).join('')}</tr>
+        <tr><td>Yearly Renewal</td>${providerCosts.map(pc => `<td>${pc.renewalYearly === 0 ? 'Free' : '$' + pc.renewalYearly + '/yr'}</td>`).join('')}</tr>
+        <tr style="font-weight:700"><td>3-Year Total</td>${providerCosts.map(pc => `<td style="color:#10B981">$${pc.threeYearCost}</td>`).join('')}</tr>
+      </tbody>
+    </table></div>`;
 
     (path.recommended_order || []).forEach(po => {
       const prov = providerMap[po.provider];
@@ -386,6 +518,125 @@
     document.querySelectorAll('.compass-preset').forEach(b => b.classList.toggle('active', b === btn));
   });
 
+  // ── Quiz: Which Cert Next? ─────────────────────────────────────────────
+  let quizAnswers = {};
+
+  function renderQuiz() {
+    const container = document.getElementById('quiz-container');
+    const results = document.getElementById('quiz-results');
+    results.style.display = 'none';
+
+    container.innerHTML = QUIZ_Q.map((q, i) => `
+      <div class="compass-quiz-q" data-qid="${esc(q.id)}">
+        <div class="compass-quiz-num">${i + 1} / ${QUIZ_Q.length}</div>
+        <div class="compass-quiz-text">${esc(q.text)}</div>
+        <div class="compass-quiz-options">
+          ${(q.options || []).map(o => `<button class="compass-quiz-opt" data-qid="${esc(q.id)}" data-val="${esc(o.value)}">${esc(o.label)}</button>`).join('')}
+        </div>
+      </div>
+    `).join('') + `<button class="compass-btn compass-btn-primary compass-quiz-submit" id="quiz-submit" style="margin-top:1rem" disabled>Get Recommendations</button>`;
+  }
+
+  document.getElementById('quiz-container').addEventListener('click', e => {
+    const opt = e.target.closest('.compass-quiz-opt');
+    if (!opt) return;
+    const qid = opt.dataset.qid;
+    quizAnswers[qid] = opt.dataset.val;
+    // Highlight selected
+    opt.closest('.compass-quiz-options').querySelectorAll('.compass-quiz-opt').forEach(b => b.classList.toggle('selected', b === opt));
+    // Enable submit if all answered
+    const btn = document.getElementById('quiz-submit');
+    if (btn) btn.disabled = Object.keys(quizAnswers).length < QUIZ_Q.length;
+  });
+
+  document.getElementById('quiz-container').addEventListener('click', e => {
+    if (e.target.id !== 'quiz-submit') return;
+    scoreQuiz();
+  });
+
+  function scoreQuiz() {
+    const role = quizAnswers['current-role'] || 'admin';
+    const exp = quizAnswers['experience'] || 'beginner';
+    const cloud = quizAnswers['cloud-preference'] || 'multi';
+    const goal = quizAnswers['goal'] || 'skills';
+    const time = quizAnswers['time'] || 'moderate';
+    const budget = quizAnswers['budget'] || 'medium';
+    const existing = quizAnswers['existing-certs'] || 'none';
+
+    const maxHours = time === 'minimal' ? 40 : time === 'moderate' ? 100 : 300;
+    const maxUsd = budget === 'low' ? 150 : budget === 'medium' ? 300 : budget === 'high' ? 1000 : 9999;
+
+    // Score each cert
+    const scored = CERTS.filter(c => !myCerts.has(c.id)).map(c => {
+      let score = c.demand_score || 50;
+
+      // Provider preference
+      if (cloud === c.provider) score += 25;
+      else if (cloud === 'multi') score += 5;
+
+      // Role match
+      const roleMap = { admin: ['admin','architecture'], developer: ['developer'], architect: ['architecture'], security: ['security'], data: ['data-engineering'], devops: ['devops'], manager: ['cloud-fundamentals','architecture'], 'career-switch': ['cloud-fundamentals'] };
+      if ((roleMap[role] || []).some(f => (c.focus_areas || []).includes(f))) score += 20;
+
+      // Experience → level match
+      const levelMap = { none: 'foundational', beginner: 'foundational', intermediate: 'associate', advanced: 'professional' };
+      if (c.normalized_level === levelMap[exp]) score += 15;
+      if (existing === 'none' && c.normalized_level === 'foundational') score += 10;
+      if (existing === 'fundamentals' && c.normalized_level === 'associate') score += 10;
+      if (existing === 'associate' && (c.normalized_level === 'professional' || c.normalized_level === 'expert')) score += 10;
+
+      // Budget/time fit
+      if (c.fee_usd <= maxUsd) score += 5;
+      if (c.study_hours_max <= maxHours) score += 10;
+
+      // Trending bonus
+      if (c.trending === 'up') score += 5;
+
+      // Multi-cloud goal bonus for non-primary providers
+      if (goal === 'multi-cloud' && cloud !== c.provider && cloud !== 'multi') score += 15;
+
+      // Study guide bonus (Microsoft advantage)
+      if (c.tracker_slug) score += 3;
+
+      return { cert: c, score };
+    }).sort((a, b) => b.score - a.score).slice(0, 3);
+
+    // Render results
+    const results = document.getElementById('quiz-results');
+    results.style.display = '';
+    results.innerHTML = `<h3 style="color:var(--compass-accent);margin-bottom:1rem">Your Top 3 Recommendations</h3>` +
+      scored.map((s, i) => {
+        const c = s.cert;
+        const medal = ['🥇', '🥈', '🥉'][i];
+        return `<div class="compass-dash-rec-card" style="border-left:3px solid ${providerColor(c.provider)}">
+          <div style="display:flex;align-items:center;gap:0.5rem">
+            <span style="font-size:1.5rem">${medal}</span>
+            <div>
+              <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.2rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100</div>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0.5rem 0 0">${esc(c.description)}</p>
+          <div style="margin-top:0.5rem;display:flex;gap:0.4rem">
+            <a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary" style="font-size:0.75rem">Official Page</a>
+            ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms" style="font-size:0.75rem">Study Guide</a>` : ''}
+            <button class="compass-btn compass-btn-outline" style="font-size:0.75rem" onclick="window.__compassCompare('${scored.map(x=>x.cert.id).join(',')}')">Compare All 3</button>
+          </div>
+        </div>`;
+      }).join('') +
+      `<button class="compass-btn compass-btn-outline" style="margin-top:1rem" onclick="quizAnswers={};renderQuiz()">Retake Quiz</button>`;
+
+    results.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── Keyboard Shortcuts ────────────────────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === '/') { e.preventDefault(); const s = document.getElementById('compass-search'); if (s) { switchTab('explore'); s.focus(); } }
+    const tabKeys = { '1': 'explore', '2': 'matches', '3': 'careers', '4': 'compare', '5': 'dashboard', '6': 'quiz', '7': 'faq' };
+    if (tabKeys[e.key]) switchTab(tabKeys[e.key]);
+  });
+
   // ── URL State Restore ─────────────────────────────────────────────────
   function restoreState() {
     const params = new URLSearchParams(location.search);
@@ -408,6 +659,8 @@
     renderCareers();
     renderCompareSelect();
     renderCompareTable();
+    renderDashboard();
+    renderQuiz();
     restoreState();
   }
 

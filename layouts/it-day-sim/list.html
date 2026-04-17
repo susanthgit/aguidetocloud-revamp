@@ -15,18 +15,18 @@
   </div>
 
   {{/* ── Play Panel ── */}}
-  <div class="itday-panel active" id="panel-play">
+  <div class="itday-panel active" id="panel-play" role="tabpanel">
     <div id="story-area"></div>
   </div>
 
   {{/* ── Results History Panel ── */}}
-  <div class="itday-panel" id="panel-history">
+  <div class="itday-panel" id="panel-history" role="tabpanel">
     <div id="results-history"></div>
     <div id="results-share"></div>
   </div>
 
   {{/* ── FAQ Panel ── */}}
-  <div class="itday-panel" id="panel-faq">
+  <div class="itday-panel" id="panel-faq" role="tabpanel">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
       {{ range .Params.faq }}
       <details open>

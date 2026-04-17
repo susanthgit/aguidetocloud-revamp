@@ -618,7 +618,7 @@
               '<div class="cliquiz-mastery-bar-wrap">' +
                 '<div class="cliquiz-mastery-bar" style="width:' + p + '%"></div>' +
               '</div>' +
-              '<span class="cliquiz-mastery-val">' + m.correct + '/' + m.total + ' (' + p + '%)</span>' +
+              '<span class="cliquiz-mastery-val">' + esc(m.correct + '/' + m.total + ' (' + p + '%)') + '</span>' +
             '</div>';
         });
         html += '</div>';
@@ -642,8 +642,8 @@
             '<tr>' +
               '<td>' + fmtDate(h.date) + '</td>' +
               '<td>' + modeLbl + '</td>' +
-              '<td>' + h.score + '/' + h.total + '</td>' +
-              '<td>' + (h.pct || 0) + '%</td>' +
+              '<td>' + esc(String(h.score)) + '/' + esc(String(h.total)) + '</td>' +
+              '<td>' + esc(String(h.pct || 0)) + '%</td>' +
             '</tr>';
         });
         histEl.innerHTML =
