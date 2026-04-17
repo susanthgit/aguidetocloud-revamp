@@ -286,9 +286,39 @@ module.exports = async function (context, req) {
     return;
   }
 
+  // Latest video (lightweight, 6h cache)
+  if (req.query.latestvideo === '1') {
+    var lvCacheKey = 'latestvideo_v1';
+    if (cacheStore[lvCacheKey] && now - cacheStore[lvCacheKey].time < 21600000) {
+      context.res = { status: 200, headers, body: JSON.stringify(cacheStore[lvCacheKey].data) };
+      return;
+    }
+    var ytApiKey = process.env.YOUTUBE_API_KEY;
+    if (!ytApiKey) { context.res = { status: 200, headers, body: '{"error":"No API key"}' }; return; }
+    try {
+      var youtube = google.youtube({ version: 'v3' });
+      var sr = await youtube.search.list({
+        channelId: 'UCYN12Rlv9hgZlWJa1XPfdyg', order: 'date', type: ['video'],
+        maxResults: 1, part: ['snippet'], key: ytApiKey
+      });
+      var item = (sr.data.items || [])[0];
+      if (!item) { context.res = { status: 200, headers, body: '{"error":"No videos"}' }; return; }
+      var lvData = {
+        id: item.id?.videoId || '',
+        title: item.snippet?.title || '',
+        published: (item.snippet?.publishedAt || '').slice(0, 10),
+        thumbnail: item.snippet?.thumbnails?.high?.url || ''
+      };
+      cacheStore[lvCacheKey] = { data: lvData, time: now };
+      context.res = { status: 200, headers, body: JSON.stringify(lvData) };
+    } catch(e) {
+      context.res = { status: 200, headers, body: JSON.stringify({ error: e.message }) };
+    }
+    return;
+  }
+
   // Bio Links Analytics (5-min cache)
-  if (req.query.biolinks === '1') {
-    const bioCacheKey = 'biolinks_v1';
+  if (req.query.biolinks === '1') {const bioCacheKey = 'biolinks_v1';
     if (cacheStore[bioCacheKey] && now - cacheStore[bioCacheKey].time < CACHE_TTL) {
       context.res = { status: 200, headers, body: JSON.stringify(cacheStore[bioCacheKey].data) };
       return;

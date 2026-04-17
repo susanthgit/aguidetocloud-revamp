@@ -49,13 +49,19 @@
       overflow-x: hidden;
     }
 
-    /* ─── Ambient orbs ─── */
+    /* ─── Ambient orbs (animated) ─── */
     .ambient {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
         radial-gradient(ellipse 500px 400px at 20% 15%, rgba(255,102,255,0.12), transparent 70%),
         radial-gradient(ellipse 400px 350px at 80% 60%, rgba(102,255,255,0.08), transparent 70%),
         radial-gradient(ellipse 350px 300px at 50% 90%, rgba(138,43,226,0.05), transparent 70%);
+      animation: ambientShift 20s ease-in-out infinite alternate;
+    }
+    @keyframes ambientShift {
+      0% { filter: hue-rotate(0deg); opacity: 1; }
+      50% { filter: hue-rotate(15deg); opacity: 0.85; }
+      100% { filter: hue-rotate(-10deg); opacity: 1; }
     }
 
     /* ─── SVG background pattern ─── */
@@ -190,7 +196,7 @@
       outline-offset: 2px;
     }
 
-    .link-btn:active { transform: translateY(0); }
+    .link-btn:active { transform: translateY(0) scale(0.97); }
 
     /* Accent glow on left edge */
     .link-btn::before {
@@ -343,6 +349,123 @@
     .share-btn svg { width: 14px; height: 14px; fill: currentColor; }
     .share-btn.copied { color: #66ffff; border-color: rgba(102,255,255,0.3); }
 
+    /* ─── What's New banner ─── */
+    .whats-new {
+      text-align: center;
+      padding: 8px 16px;
+      margin-bottom: 20px;
+      background: rgba(255,102,255,0.08);
+      border: 1px solid rgba(255,102,255,0.15);
+      border-radius: 10px;
+      font-size: 12px; font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      animation: fadeSlideUp 0.4s ease 0.1s forwards;
+    }
+    .whats-new a {
+      color: #ff99ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .whats-new a:hover { text-decoration: underline; }
+    .whats-new-item { display: none; }
+    .whats-new-item.active { display: block; }
+
+    /* ─── Live counter ─── */
+    .live-counter {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+    .live-counter.visible { display: flex; }
+    .live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: livePulse 2s ease-in-out infinite;
+    }
+    @keyframes livePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      50% { box-shadow: 0 0 0 4px rgba(74,222,128,0); }
+    }
+
+    /* ─── Testimonial ─── */
+    .testimonial {
+      text-align: center;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeSlideUp 0.4s ease 0.15s forwards;
+    }
+    .testimonial-author { font-style: normal; color: rgba(255,255,255,0.25); margin-top: 4px; }
+
+    /* ─── Latest Video ─── */
+    .latest-video {
+      margin-top: 24px;
+      opacity: 0;
+      animation: fadeSlideUp 0.4s ease 0.45s forwards;
+    }
+    .latest-video-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 12px;
+      padding: 12px 4px 0;
+      border-top: 1px solid transparent;
+      background-image: linear-gradient(#030308, #030308),
+                        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%);
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+    }
+    .video-card {
+      display: block;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.25s ease;
+    }
+    .video-card:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,68,68,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 25px rgba(255,68,68,0.15);
+    }
+    .video-card:active { transform: scale(0.97); }
+    .video-card:focus-visible { outline: 2px solid #66ffff; outline-offset: 2px; }
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #111;
+    }
+    .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .video-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px; height: 48px;
+      background: rgba(255,0,0,0.85);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .video-play svg { width: 20px; height: 20px; fill: #fff; margin-left: 2px; }
+    .video-info { padding: 12px 16px; }
+    .video-title { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
+    .video-meta { font-size: 11px; color: rgba(255,255,255,0.4); }
+
     /* ─── Footer ─── */
     .footer-note {
       text-align: center;
@@ -360,11 +483,12 @@
 
     /* ─── Reduced Motion ─── */
     @media (prefers-reduced-motion: reduce) {
-      .link-btn, .social-icon, .share-btn { transition: none; }
-      .link-btn:hover, .social-icon:hover { transform: none; }
-      .avatar-ring::before, .avatar-ring::after { animation: none; }
-      .badge-new, .badge-new::before { animation: none; opacity: 1; }
-      .link-btn, .socials, .share-row, .footer-note {
+      .link-btn, .social-icon, .share-btn, .video-card { transition: none; }
+      .link-btn:hover, .social-icon:hover, .video-card:hover { transform: none; }
+      .link-btn:active, .video-card:active { transform: none; }
+      .badge-new, .badge-new::before, .live-dot { animation: none; opacity: 1; }
+      .ambient { animation: none; }
+      .link-btn, .socials, .share-row, .footer-note, .whats-new, .testimonial, .latest-video {
         opacity: 1; transform: none; animation: none;
       }
     }
@@ -372,6 +496,26 @@
 
   <!-- GA4 -->
   {{ partial "analytics.html" . }}
+
+  <!-- Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Susanth Sutheesh",
+    "url": "https://www.aguidetocloud.com",
+    "image": "https://www.aguidetocloud.com/images/about/headshot.webp",
+    "jobTitle": "Cloud & AI Educator",
+    "description": {{ .Description | jsonify }},
+    "sameAs": [
+      "https://www.youtube.com/@SusanthSutheesh",
+      "https://www.youtube.com/@AGuideToCloud",
+      "https://www.linkedin.com/in/intuneguru/",
+      "https://github.com/susanthgit",
+      "https://ko-fi.com/aguidetocloud"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="ambient"></div>
@@ -411,6 +555,23 @@
         <span class="stat-dot" aria-hidden="true"></span>
         <span>50+ guides</span>
       </div>
+      <div class="live-counter" id="live-counter">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span><span id="live-num">0</span> people here now</span>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial" id="testimonial">
+      <div>"Best free cloud resources I've found — wish I had this when I started studying"</div>
+      <div class="testimonial-author">— YouTube viewer</div>
+    </div>
+
+    <!-- What's New -->
+    <div class="whats-new" id="whats-new">
+      <div class="whats-new-item active">🔥 New: <a href="/security-toolkit/" data-link-id="banner_security" data-link-section="banner">M365 Security Toolkit</a> just launched</div>
+      <div class="whats-new-item">💬 Just launched: <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" data-link-id="banner_whatsapp" data-link-section="banner" target="_blank" rel="noopener noreferrer">WhatsApp Community</a> — join the conversation</div>
+      <div class="whats-new-item">📰 <a href="/ai-news/" data-link-id="banner_ainews" data-link-section="banner">AI News</a> — updated 4× daily from 33 sources</div>
     </div>
 
     <!-- Primary Links -->
@@ -464,7 +625,7 @@
       <span class="link-icon">🎬</span>
       <span class="link-text">
         <span class="label">YouTube — Full Courses</span>
-        <span class="meta">Azure, M365, Copilot & Security certifications</span>
+        <span class="meta">74 videos · Azure, M365, Copilot & Security</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
@@ -474,7 +635,7 @@
       <span class="link-icon">⚡</span>
       <span class="link-text">
         <span class="label">YouTube — Quick Bites</span>
-        <span class="meta">700+ short exam prep clips</span>
+        <span class="meta">730+ short exam prep clips</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
@@ -511,6 +672,22 @@
       </span>
       <span class="link-arrow">↗</span>
     </a>
+
+    <!-- Latest Video -->
+    <div class="latest-video" id="latest-video" style="display:none">
+      <div class="latest-video-label">Latest Video</div>
+      <a id="video-link" class="video-card" target="_blank" rel="noopener noreferrer"
+         data-link-id="latest_video" data-link-section="watch">
+        <div class="video-thumb">
+          <img id="video-img" src="" alt="" loading="lazy" width="480" height="270">
+          <div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title" id="video-title"></div>
+          <div class="video-meta" id="video-meta"></div>
+        </div>
+      </a>
+    </div>
 
     <!-- Social Icons -->
     <div class="socials">
@@ -582,6 +759,66 @@
         }
       });
     }
+
+    /* Live visitor count */
+    (function() {
+      fetch('/api/stats?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
+        if (d.active > 0) {
+          document.getElementById('live-num').textContent = d.active;
+          document.getElementById('live-counter').classList.add('visible');
+        }
+      }).catch(function(){});
+    })();
+
+    /* What's New banner rotation */
+    (function() {
+      var items = document.querySelectorAll('.whats-new-item');
+      if (items.length < 2) return;
+      var idx = 0;
+      setInterval(function() {
+        items[idx].classList.remove('active');
+        idx = (idx + 1) % items.length;
+        items[idx].classList.add('active');
+      }, 5000);
+    })();
+
+    /* Testimonial rotation */
+    (function() {
+      var quotes = [
+        { text: '"Best free cloud resources I\'ve found — wish I had this when I started studying"', author: '— YouTube viewer' },
+        { text: '"Passed AZ-900 first try using your study guide and practice questions!"', author: '— Ko-fi customer' },
+        { text: '"The AI News page is my morning briefing now — saves me 30 min every day"', author: '— Blog reader' }
+      ];
+      var el = document.getElementById('testimonial');
+      if (!el) return;
+      var idx = 0;
+      setInterval(function() {
+        idx = (idx + 1) % quotes.length;
+        el.style.opacity = '0';
+        setTimeout(function() {
+          el.innerHTML = '<div>' + quotes[idx].text + '</div><div class="testimonial-author">' + quotes[idx].author + '</div>';
+          el.style.opacity = '';
+        }, 300);
+      }, 8000);
+    })();
+
+    /* Latest video (lightweight fetch from YouTube API) */
+    (function() {
+      fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) {
+        if (d.error || !d.id) return;
+        var wrap = document.getElementById('latest-video');
+        var link = document.getElementById('video-link');
+        var img = document.getElementById('video-img');
+        var title = document.getElementById('video-title');
+        var meta = document.getElementById('video-meta');
+        link.href = 'https://www.youtube.com/watch?v=' + d.id;
+        img.src = 'https://i.ytimg.com/vi/' + d.id + '/hqdefault.jpg';
+        img.alt = d.title || 'Latest video';
+        title.textContent = d.title || '';
+        meta.textContent = d.published || '';
+        wrap.style.display = '';
+      }).catch(function(){});
+    })();
   </script>
 </body>
 </html>
