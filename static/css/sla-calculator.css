@@ -185,7 +185,15 @@
   padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.82rem; margin-top: 1rem;
 }
 
-@media (max-width: 640px) {
+/* FAQ */
+.slacalc-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.slacalc-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.slacalc-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
+@media(max-width: 640px) {
   .slacalc-input-row { grid-template-columns: 1fr; }
   .slacalc-result-grid { grid-template-columns: 1fr 1fr; }
   .slacalc-mode-toggle { flex-direction: column; }

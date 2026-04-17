@@ -788,6 +788,14 @@
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+/* FAQ */
+.cliquiz-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.cliquiz-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.cliquiz-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
 /* Mobile */
 @media (max-width: 640px) {
   .cliquiz-choices {

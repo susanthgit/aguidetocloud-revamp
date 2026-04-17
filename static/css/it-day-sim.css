@@ -325,6 +325,81 @@
   padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;
 }
 
+/* Lobby */
+.itday-lobby { text-align: center; padding: 0.5rem 0; }
+.itday-lobby-visual {
+  display: flex; justify-content: center; align-items: center; gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.itday-lobby-icon {
+  width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; animation: itday-pulse 3s ease-in-out infinite;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.itday-lobby-icon:nth-child(3) { animation-delay: 1s; }
+.itday-lobby-icon:nth-child(5) { animation-delay: 2s; }
+@keyframes itday-pulse {
+  0%, 100% { transform: scale(1); border-color: rgba(255,255,255,0.1); }
+  50% { transform: scale(1.06); border-color: rgba(194,123,160,0.35); box-shadow: 0 0 16px rgba(194,123,160,0.1); }
+}
+.itday-lobby-arrow { color: rgba(255,255,255,0.2); font-size: 1.2rem; }
+.itday-lobby-stats {
+  display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem; background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+}
+.itday-lstat { text-align: center; min-width: 55px; }
+.itday-lstat-num { display: block; font-size: 1rem; font-weight: 700; color: #C27BA0; }
+.itday-lstat-label { display: block; font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; }
+.itday-lobby-heading { font-size: 0.88rem; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; font-weight: 500; }
+.itday-lobby-modes {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.2rem;
+}
+.itday-lobby-card {
+  position: relative; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.2rem 0.8rem; cursor: pointer; text-align: center;
+  transition: all 0.25s ease; overflow: hidden; color: #fff;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  animation: itday-card-in 0.4s ease backwards;
+}
+.itday-lobby-card:nth-child(2) { animation-delay: 0.08s; }
+@keyframes itday-card-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.itday-lobby-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(194,123,160,0.15), transparent 70%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.itday-lobby-card:hover::before { opacity: 1; }
+.itday-lobby-card:hover {
+  border-color: rgba(194,123,160,0.4); transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(194,123,160,0.12);
+}
+.itday-lobby-card:active { transform: translateY(0); }
+.itday-lobby-card:focus-visible { outline: 2px solid #C27BA0; outline-offset: 2px; }
+.itday-lc-icon { font-size: 1.8rem; margin-bottom: 0.4rem; position: relative; }
+.itday-lc-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; position: relative; }
+.itday-lc-desc { font-size: 0.73rem; color: rgba(255,255,255,0.5); line-height: 1.4; position: relative; }
+.itday-lc-time { margin-top: 0.4rem; font-size: 0.68rem; color: #C27BA0; font-weight: 600; position: relative; }
+.itday-lc-featured { border-color: rgba(194,123,160,0.25); }
+.itday-lc-badge {
+  position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.58rem; font-weight: 700;
+  text-transform: uppercase; background: #C27BA0; color: #fff;
+  padding: 0.15rem 0.5rem; border-radius: 20px; letter-spacing: 0.5px; z-index: 1;
+}
+.itday-lobby-source { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+
+/* FAQ */
+.itday-panel details {
+  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.itday-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
+.itday-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+
 /* Mobile */
 @media (max-width: 640px) {
   .itday-choices {
@@ -340,6 +415,10 @@
   .itday-start-screen .itday-start-title {
     font-size: 1.3rem;
   }
+  .itday-lobby-modes { grid-template-columns: 1fr; }
+  .itday-lobby-stats { flex-wrap: wrap; gap: 0.6rem; }
+  .itday-lstat { flex: 0 0 40%; }
+  .itday-lobby-icon { width: 52px; height: 52px; font-size: 1.5rem; }
   .itday-result-screen .itday-result-score {
     font-size: 2.5rem;
   }

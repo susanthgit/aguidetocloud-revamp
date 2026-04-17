@@ -30,7 +30,7 @@
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
       {{ range .Params.faq }}
       <details open>
-        <summary>{{ .question }}</summary>
+        <summary><strong>{{ .question }}</strong></summary>
         <div>{{ .answer | markdownify }}</div>
       </details>
       {{ end }}

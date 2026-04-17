@@ -112,17 +112,53 @@ function buildScenarioMap() {
 function renderStartScreen() {
   var el = document.getElementById('story-area');
   if (!el) return;
+
+  var hist = safeGet('itday_history', []);
+  var statsHtml = '';
+  if (hist.length > 0) {
+    var best = 0; var totalScore = 0;
+    for (var i = 0; i < hist.length; i++) {
+      if (hist[i].score > best) best = hist[i].score;
+      totalScore += hist[i].score;
+    }
+    var avg = Math.round(totalScore / hist.length);
+    statsHtml =
+      '<div class="itday-lobby-stats">' +
+        '<div class="itday-lstat"><span class="itday-lstat-num">' + hist.length + '</span><span class="itday-lstat-label">Games</span></div>' +
+        '<div class="itday-lstat"><span class="itday-lstat-num">' + best + '</span><span class="itday-lstat-label">Best Score</span></div>' +
+        '<div class="itday-lstat"><span class="itday-lstat-num">' + avg + '</span><span class="itday-lstat-label">Avg Score</span></div>' +
+        '<div class="itday-lstat"><span class="itday-lstat-num">' + (hist[0].tier || '—') + '</span><span class="itday-lstat-label">Last Tier</span></div>' +
+      '</div>';
+  }
+
+  var scenarioCount = scenarios.length || 17;
   var html =
-    '<div style="text-align:center;padding:2rem 1rem;">' +
-      '<div style="font-size:4rem;margin-bottom:0.5rem;">\uD83D\uDDA5\uFE0F</div>' +
-      '<h2 style="margin:0 0 0.5rem;font-size:1.6rem;">IT Day Simulator</h2>' +
-      '<p style="max-width:440px;margin:0 auto 2rem;opacity:0.7;line-height:1.6;">' +
-        'Survive a full day in the life of an IT admin. Every choice matters. Can you make it to 5\u202FPM with your sanity intact?' +
-      '</p>' +
-      '<div style="display:flex;flex-direction:column;gap:0.75rem;max-width:320px;margin:0 auto;">' +
-        '<button class="itday-choice-btn" data-action="start" style="padding:0.9rem 1.5rem;font-size:1rem;font-weight:700;border-radius:12px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:#fff;cursor:pointer;">\u25B6\uFE0F  Start Game</button>' +
-        '<button class="itday-choice-btn" data-action="daily" style="padding:0.9rem 1.5rem;font-size:1rem;font-weight:700;border-radius:12px;border:1px solid rgba(251,191,36,0.3);background:rgba(251,191,36,0.08);color:#fbbf24;cursor:pointer;">\uD83D\uDCC5  Daily Challenge</button>' +
+    '<div class="itday-lobby">' +
+      '<div class="itday-lobby-visual" aria-hidden="true">' +
+        '<span class="itday-lobby-icon">🕗</span>' +
+        '<span class="itday-lobby-arrow">→</span>' +
+        '<span class="itday-lobby-icon">🖥️</span>' +
+        '<span class="itday-lobby-arrow">→</span>' +
+        '<span class="itday-lobby-icon">🕔</span>' +
       '</div>' +
+      statsHtml +
+      '<p class="itday-lobby-heading">Survive a full day as an IT admin. Every choice matters.</p>' +
+      '<div class="itday-lobby-modes">' +
+        '<button class="itday-lobby-card" data-action="start">' +
+          '<div class="itday-lc-icon">▶️</div>' +
+          '<div class="itday-lc-title">Start Game</div>' +
+          '<div class="itday-lc-desc">Random path through ' + scenarioCount + ' scenarios</div>' +
+          '<div class="itday-lc-time">~5 min</div>' +
+        '</button>' +
+        '<button class="itday-lobby-card itday-lc-featured" data-action="daily">' +
+          '<div class="itday-lc-badge">Today</div>' +
+          '<div class="itday-lc-icon">📅</div>' +
+          '<div class="itday-lc-title">Daily Challenge</div>' +
+          '<div class="itday-lc-desc">Same path for everyone today</div>' +
+          '<div class="itday-lc-time">~5 min</div>' +
+        '</button>' +
+      '</div>' +
+      '<p class="itday-lobby-source">8 AM — 5:30 PM · 4 score tiers · Canvas shareable scorecard</p>' +
     '</div>';
   el.innerHTML = html;
 }
