@@ -409,3 +409,49 @@
   color: rgba(255,255,255,0.5); font-size: 0.8rem; font-style: italic;
   margin: 0.3rem 0 0.5rem; line-height: 1.4;
 }
+
+/* Legendary glow */
+.badges-card.earned[data-rarity="legendary"] {
+  animation: badges-legendary-glow 3s ease-in-out infinite;
+}
+@keyframes badges-legendary-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,213,79,0.15); }
+  50% { box-shadow: 0 0 20px rgba(255,213,79,0.3), 0 0 40px rgba(255,213,79,0.1); }
+}
+
+/* Master badge cards */
+.badges-master-card {
+  background: rgba(255,213,79,0.06) !important;
+  border-color: var(--badges-accent) !important;
+  animation: badges-legendary-glow 3s ease-in-out infinite;
+}
+
+/* Skills radar */
+.badges-radar-svg { max-width: 260px; margin: 1rem auto; display: block; }
+
+/* Share section */
+.badges-share-section { text-align: center; margin-top: 1.5rem; }
+.badges-share-profile-btn {
+  background: var(--badges-accent); color: #000; border: none; border-radius: 8px;
+  padding: 0.6rem 1.5rem; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.badges-share-profile-btn:hover { box-shadow: 0 4px 16px rgba(255,213,79,0.3); }
+
+/* Shared profile banner */
+.badges-shared-banner {
+  margin-top: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;
+  background: rgba(255,213,79,0.08); border: 1px solid rgba(255,213,79,0.15);
+  font-size: 0.8rem; color: rgba(255,255,255,0.6);
+}
+
+/* Tool link in modal */
+.badges-modal-tool {
+  display: inline-block; margin: 0.5rem 0; padding: 0.4rem 0.8rem;
+  font-size: 0.78rem; color: var(--badges-accent); text-decoration: none;
+  border: 1px solid rgba(255,213,79,0.2); border-radius: 8px;
+  transition: all 0.2s;
+}
+.badges-modal-tool:hover {
+  background: rgba(255,213,79,0.08); border-color: rgba(255,213,79,0.4);
+}

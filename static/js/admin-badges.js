@@ -18,6 +18,57 @@
   function safeGet(key, fb) { try { var r = localStorage.getItem(key); return r ? JSON.parse(r) : fb; } catch (_) { return fb; } }
   function safeSet(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (_) {} }
 
+  /* ── Confetti burst ─────────────────────────────────────── */
+  function fireConfetti() {
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;inset:0;z-index:2000;pointer-events:none';
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d');
+    if (!ctx) { document.body.removeChild(canvas); return; }
+    var colors = ['#FFD54F','#FF6B6B','#4ECDC4','#45B7D1','#96CEB4','#FFEAA7','#DDA0DD','#FF9FF3'];
+    var particles = [];
+    for (var i = 0; i < 100; i++) {
+      particles.push({
+        x: canvas.width / 2, y: canvas.height / 2,
+        vx: (Math.random() - 0.5) * 14, vy: (Math.random() - 0.5) * 14 - 5,
+        size: Math.random() * 7 + 3, color: colors[Math.floor(Math.random() * colors.length)],
+        life: 1, decay: 0.012 + Math.random() * 0.008, rot: Math.random() * 360
+      });
+    }
+    function tick() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var alive = false;
+      particles.forEach(function (p) {
+        if (p.life <= 0) return;
+        alive = true;
+        p.x += p.vx; p.y += p.vy; p.vy += 0.18; p.life -= p.decay; p.rot += 4;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI / 180);
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        ctx.restore();
+      });
+      if (alive) requestAnimationFrame(tick);
+      else { try { document.body.removeChild(canvas); } catch (_) {} }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* ── Cross-tool badge links ─────────────────────────────── */
+  var toolLinks = {
+    'phish-catcher': { url: '/phishing-test/', label: 'Try the Phishing Simulator' },
+    'cert-collector': { url: '/cert-tracker/', label: 'Browse Cert Study Guides' },
+    'script-wizard': { url: '/ps-builder/', label: 'Try PowerShell Builder' },
+    'rename-tracker': { url: '/rename-tracker/', label: 'Check M365 Rename Tracker' },
+    'copilot-evangelist': { url: '/copilot-readiness/', label: 'Try Copilot Readiness Checker' },
+    'mfa-champion': { url: '/ca-builder/', label: 'Try CA Policy Builder' },
+    'dlp-guardian': { url: '/purview-starter/', label: 'Try Purview Starter Kit' },
+    'license-optimizer': { url: '/licensing/', label: 'Try Licensing Simplifier' },
+    'ai-whisperer': { url: '/copilot-matrix/', label: 'Explore Copilot Feature Matrix' },
+    'cloud-migrator': { url: '/migration-planner/', label: 'Try Migration Planner' }
+  };
+
   var badges = window.__badges || [];
   var categories = window.__badgeCategories || [];
   var rarities = window.__badgeRarities || [];
@@ -56,6 +107,74 @@
     return { points: pts, tier: tier, nextTier: nextTier };
   }
 
+  /* ── Category Master badges (computed) ──────────────────── */
+  function getMasterBadges() {
+    var earned = getEarned();
+    var masters = [];
+    categories.forEach(function (cat) {
+      var catBadges = badges.filter(function (b) { return b.category === cat.id; });
+      var catEarned = catBadges.filter(function (b) { return earned.indexOf(b.id) !== -1; });
+      if (catEarned.length === catBadges.length && catBadges.length > 0) {
+        masters.push({ id: 'master-' + cat.id, name: cat.name + ' Master', emoji: '\uD83C\uDFC5', catEmoji: cat.emoji, color: cat.color });
+      }
+    });
+    return masters;
+  }
+
+  /* ── Skills Radar Chart (SVG) ───────────────────────────── */
+  function renderRadarChart() {
+    var earned = getEarned();
+    var data = categories.map(function (cat) {
+      var total = badges.filter(function (b) { return b.category === cat.id; }).length;
+      var got = badges.filter(function (b) { return b.category === cat.id && earned.indexOf(b.id) !== -1; }).length;
+      return { name: cat.name.split(' ')[0], emoji: cat.emoji, pct: total > 0 ? got / total : 0 };
+    });
+    var cx = 140, cy = 140, R = 90, n = data.length;
+    function pt(i, r) {
+      var a = (Math.PI * 2 * i / n) - Math.PI / 2;
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    }
+    var svg = '<svg viewBox="0 0 280 280" class="badges-radar-svg">';
+    [0.25, 0.5, 0.75, 1].forEach(function (f) {
+      var pts = [];
+      for (var i = 0; i < n; i++) { var p = pt(i, R * f); pts.push(p[0] + ',' + p[1]); }
+      svg += '<polygon points="' + pts.join(' ') + '" fill="none" stroke="rgba(255,255,255,0.06)" />';
+    });
+    for (var i = 0; i < n; i++) {
+      var p = pt(i, R);
+      svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0] + '" y2="' + p[1] + '" stroke="rgba(255,255,255,0.05)" />';
+    }
+    var dataPts = [];
+    for (var j = 0; j < n; j++) {
+      var dp = pt(j, R * Math.max(data[j].pct, 0.05));
+      dataPts.push(dp[0] + ',' + dp[1]);
+    }
+    svg += '<polygon points="' + dataPts.join(' ') + '" fill="rgba(255,213,79,0.15)" stroke="#FFD54F" stroke-width="2" />';
+    for (var k = 0; k < n; k++) {
+      var lp = pt(k, R + 22);
+      svg += '<text x="' + lp[0] + '" y="' + lp[1] + '" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.6)" font-size="14">' + data[k].emoji + '</text>';
+      var lp2 = pt(k, R + 38);
+      svg += '<text x="' + lp2[0] + '" y="' + lp2[1] + '" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.3)" font-size="9">' + esc(data[k].name) + '</text>';
+    }
+    svg += '</svg>';
+    return svg;
+  }
+
+  /* ── Shareable profile URL ──────────────────────────────── */
+  function getShareUrl() {
+    var earned = getEarned();
+    if (!earned.length) return null;
+    try { return window.location.origin + '/admin-badges/?profile=' + btoa(earned.join(',')); }
+    catch (_) { return null; }
+  }
+  function loadSharedProfile() {
+    var params = new URLSearchParams(window.location.search);
+    var profile = params.get('profile');
+    if (!profile) return null;
+    try { return atob(profile).split(',').filter(function (s) { return s; }); }
+    catch (_) { return null; }
+  }
+
   /* ── Earn Modal ─────────────────────────────────────────── */
   function showEarnModal(id) {
     var b = badges.find(function (x) { return x.id === id; });
@@ -64,6 +183,8 @@
     var st = stories[id] || {};
     var storyText = st.story || b.desc;
     var confirmText = st.confirm || ('I have earned: ' + b.name);
+    var tl = toolLinks[id];
+    var toolHtml = tl ? '<a href="' + esc(tl.url) + '" class="badges-modal-tool">' + esc(tl.label) + ' \u2192</a>' : '';
 
     var overlay = document.getElementById('badges-modal');
     var content = document.getElementById('badges-modal-content');
@@ -74,6 +195,7 @@
       '<div class="badges-modal-rarity" style="color:' + esc(rar.color) + '">' + esc(rar.label) + '</div>' +
       '<div class="badges-modal-story">' + esc(storyText) + '</div>' +
       '<div class="badges-modal-confirm">' + esc(confirmText) + '</div>' +
+      toolHtml +
       '<div class="badges-modal-actions">' +
         '<button class="badges-modal-earn" id="modal-earn">Yes, I earned this! \uD83C\uDFC6</button>' +
         '<button class="badges-modal-skip" id="modal-skip">Not yet \uD83D\uDE05</button>' +
@@ -103,6 +225,7 @@
     var earned = getEarned();
     if (earned.indexOf(id) === -1) earned.push(id);
     setEarned(earned);
+    fireConfetti();
     renderAllBadges(activeFilter);
     renderBadgeWall();
   }
@@ -215,7 +338,7 @@
     var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
     var cls = 'badges-card' + (earned ? ' earned' : ' locked');
     var shareHtml = earned ? '<button class="badges-share-btn" data-id="' + esc(b.id) + '" aria-label="Share badge">\uD83D\uDCE4</button>' : '';
-    return '<div class="' + cls + '" data-id="' + esc(b.id) + '" role="button" tabindex="0"' +
+    return '<div class="' + cls + '" data-id="' + esc(b.id) + '" data-rarity="' + esc(b.rarity) + '" role="button" tabindex="0"' +
       ' aria-label="' + esc(b.name) + (earned ? ' (earned)' : ' (locked)') + '"' +
       ' style="border-top:3px solid ' + esc(rar.color) + '">' +
       shareHtml +
@@ -284,6 +407,23 @@
     }
 
     if (!filtered.length) html = '<p class="badges-empty">No badges in this category.</p>';
+
+    var masters = getMasterBadges();
+    if (masters.length > 0) {
+      html += '<div class="badges-category-group"><div class="badges-cat-header">' +
+        '<span class="badges-cat-header-name">\uD83C\uDFC5 Category Masters</span>' +
+        '<span class="badges-cat-header-count">' + masters.length + ' / ' + categories.length + '</span>' +
+        '</div><div class="badges-grid">';
+      masters.forEach(function (m) {
+        html += '<div class="badges-card earned badges-master-card" style="border-top:3px solid ' + esc(m.color) + '">' +
+          '<span class="badges-emoji">' + m.catEmoji + '\uD83C\uDFC5</span>' +
+          '<strong class="badges-name">' + esc(m.name) + '</strong>' +
+          '<small class="badges-desc">All badges earned in this category!</small>' +
+        '</div>';
+      });
+      html += '</div></div>';
+    }
+
     grid.innerHTML = html;
 
     document.querySelectorAll('.badges-filter').forEach(function (btn) {
@@ -320,7 +460,8 @@
       return;
     }
 
-    var html = '<div class="badges-wall">';
+    var html = renderRadarChart();
+    html += '<div class="badges-wall">';
     earnedBadges.forEach(function (b) {
       html += '<div class="badges-wall-item" title="' + esc(b.name) + ': ' + esc(b.desc) + '">' +
         '<span class="badges-wall-emoji">' + esc(b.emoji) + '</span>' +
@@ -328,7 +469,28 @@
       '</div>';
     });
     html += '</div>';
+
+    var shareUrl = getShareUrl();
+    if (shareUrl) {
+      html += '<div class="badges-share-section">' +
+        '<button class="badges-share-profile-btn" id="btn-share-profile">Share My Profile</button>' +
+      '</div>';
+    }
+
     wall.innerHTML = html;
+
+    var shareBtn = document.getElementById('btn-share-profile');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function () {
+        var url = getShareUrl();
+        if (!url) return;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(function () { shareBtn.textContent = 'Copied!'; setTimeout(function () { shareBtn.textContent = 'Share My Profile'; }, 2000); });
+        } else {
+          prompt('Copy this URL:', url);
+        }
+      });
+    }
   }
 
   /* ── Download badge wall PNG ────────────────────────────── */
@@ -435,6 +597,27 @@
 
     renderAllBadges('all');
     renderBadgeWall();
+
+    var sharedProfile = loadSharedProfile();
+    if (sharedProfile) {
+      setEarned(sharedProfile);
+      renderAllBadges('all');
+      renderBadgeWall();
+      document.querySelector('[data-tab="my-badges"]').click();
+      var counter = document.getElementById('badge-counter');
+      if (counter) {
+        counter.insertAdjacentHTML('beforeend',
+          '<div class="badges-shared-banner">Viewing a shared profile \u00b7 <button id="btn-start-own" style="color:var(--badges-accent);background:none;border:none;cursor:pointer;text-decoration:underline;font-size:inherit">Start your own collection</button></div>');
+        var ownBtn = document.getElementById('btn-start-own');
+        if (ownBtn) ownBtn.addEventListener('click', function () {
+          setEarned([]);
+          try { history.replaceState(null, '', window.location.pathname); } catch (_) {}
+          renderAllBadges('all'); renderBadgeWall();
+          document.querySelector('[data-tab="all-badges"]').click();
+        });
+      }
+      try { history.replaceState(null, '', window.location.pathname); } catch (_) {}
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
