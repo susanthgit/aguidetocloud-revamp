@@ -1,34 +1,26 @@
-name: Build & Deploy to Azure Static Web Apps
+name: Build & OG Image Check
+
+# Cloudflare Pages handles deployment automatically on push.
+# This workflow only runs OG image staleness checks and generation.
 
 on:
   push:
     branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [main]
-  workflow_dispatch: # Allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  og-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "latest"
-          extended: true
-
-      - name: Setup Python for OG check
-        if: github.event.action != 'closed'
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Check for stale OG images
-        if: github.event.action != 'closed'
         id: og-check
         run: |
           pip install toml --quiet
@@ -52,19 +44,11 @@ jobs:
           playwright install chromium --with-deps
           python scripts/og-generator/generate_og.py --stale
 
-      - name: Build site
-        if: github.event.action != 'closed'
-        run: hugo --minify
-
-      - name: Build search index
-        if: github.event.action != 'closed'
-        run: npx pagefind@latest --site public
-
-      - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: ${{ github.event.action == 'closed' && 'close' || 'upload' }}
-          skip_app_build: true
-          app_location: "public"
-          api_location: "api"
+      - name: Commit generated OG images
+        if: steps.og-check.outputs.needs_generation == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/images/og/ scripts/og-generator/og_hashes.json
+          git diff --cached --quiet || git commit -m "🖼️ Auto-generate stale OG images"
+          git push
