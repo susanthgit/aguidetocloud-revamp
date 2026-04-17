@@ -1,0 +1,251 @@
+# ============================================================================
+# MARKET SIGNALS — Demand scores, salary data, trending
+# ============================================================================
+# demand_score: 1-100 based on job posting frequency (curated estimate)
+# trending: "up", "stable", "down"
+# salary_premium: estimated annual salary premium for cert holders (USD)
+# Source: Community consensus, job board analysis, April 2026
+
+[[signals]]
+cert_id = "ms-az-900"
+demand_score = 72
+trending = "stable"
+salary_premium = 5000
+
+[[signals]]
+cert_id = "ms-ai-900"
+demand_score = 68
+trending = "up"
+salary_premium = 5000
+
+[[signals]]
+cert_id = "ms-dp-900"
+demand_score = 58
+trending = "stable"
+salary_premium = 4000
+
+[[signals]]
+cert_id = "ms-sc-900"
+demand_score = 62
+trending = "up"
+salary_premium = 5000
+
+[[signals]]
+cert_id = "ms-az-104"
+demand_score = 88
+trending = "stable"
+salary_premium = 12000
+
+[[signals]]
+cert_id = "ms-az-204"
+demand_score = 78
+trending = "stable"
+salary_premium = 11000
+
+[[signals]]
+cert_id = "ms-az-500"
+demand_score = 82
+trending = "up"
+salary_premium = 14000
+
+[[signals]]
+cert_id = "ms-az-700"
+demand_score = 65
+trending = "stable"
+salary_premium = 13000
+
+[[signals]]
+cert_id = "ms-dp-203"
+demand_score = 75
+trending = "up"
+salary_premium = 13000
+
+[[signals]]
+cert_id = "ms-dp-300"
+demand_score = 62
+trending = "stable"
+salary_premium = 10000
+
+[[signals]]
+cert_id = "ms-ai-102"
+demand_score = 74
+trending = "up"
+salary_premium = 15000
+
+[[signals]]
+cert_id = "ms-az-305"
+demand_score = 90
+trending = "stable"
+salary_premium = 18000
+
+[[signals]]
+cert_id = "ms-az-400"
+demand_score = 80
+trending = "stable"
+salary_premium = 15000
+
+[[signals]]
+cert_id = "ms-sc-200"
+demand_score = 76
+trending = "up"
+salary_premium = 13000
+
+[[signals]]
+cert_id = "ms-sc-300"
+demand_score = 70
+trending = "stable"
+salary_premium = 12000
+
+# ── AWS ──────────────────────────────────────────────────────────────────
+
+[[signals]]
+cert_id = "aws-cloud-practitioner"
+demand_score = 75
+trending = "stable"
+salary_premium = 5000
+
+[[signals]]
+cert_id = "aws-ai-practitioner"
+demand_score = 65
+trending = "up"
+salary_premium = 6000
+
+[[signals]]
+cert_id = "aws-solutions-architect-assoc"
+demand_score = 95
+trending = "stable"
+salary_premium = 16000
+
+[[signals]]
+cert_id = "aws-developer-assoc"
+demand_score = 80
+trending = "stable"
+salary_premium = 12000
+
+[[signals]]
+cert_id = "aws-sysops-assoc"
+demand_score = 72
+trending = "stable"
+salary_premium = 10000
+
+[[signals]]
+cert_id = "aws-data-engineer-assoc"
+demand_score = 78
+trending = "up"
+salary_premium = 14000
+
+[[signals]]
+cert_id = "aws-ml-engineer-assoc"
+demand_score = 70
+trending = "up"
+salary_premium = 15000
+
+[[signals]]
+cert_id = "aws-solutions-architect-pro"
+demand_score = 92
+trending = "stable"
+salary_premium = 22000
+
+[[signals]]
+cert_id = "aws-devops-pro"
+demand_score = 82
+trending = "stable"
+salary_premium = 18000
+
+[[signals]]
+cert_id = "aws-security-specialty"
+demand_score = 85
+trending = "up"
+salary_premium = 18000
+
+[[signals]]
+cert_id = "aws-networking-specialty"
+demand_score = 60
+trending = "stable"
+salary_premium = 15000
+
+[[signals]]
+cert_id = "aws-database-specialty"
+demand_score = 58
+trending = "down"
+salary_premium = 12000
+
+[[signals]]
+cert_id = "aws-ml-specialty"
+demand_score = 75
+trending = "up"
+salary_premium = 20000
+
+# ── Google Cloud ─────────────────────────────────────────────────────────
+
+[[signals]]
+cert_id = "gcp-cloud-digital-leader"
+demand_score = 55
+trending = "up"
+salary_premium = 4000
+
+[[signals]]
+cert_id = "gcp-genai-leader"
+demand_score = 60
+trending = "up"
+salary_premium = 5000
+
+[[signals]]
+cert_id = "gcp-associate-cloud-engineer"
+demand_score = 78
+trending = "up"
+salary_premium = 12000
+
+[[signals]]
+cert_id = "gcp-prof-cloud-architect"
+demand_score = 88
+trending = "up"
+salary_premium = 20000
+
+[[signals]]
+cert_id = "gcp-prof-data-engineer"
+demand_score = 85
+trending = "stable"
+salary_premium = 18000
+
+[[signals]]
+cert_id = "gcp-prof-cloud-developer"
+demand_score = 68
+trending = "stable"
+salary_premium = 13000
+
+[[signals]]
+cert_id = "gcp-prof-cloud-devops"
+demand_score = 70
+trending = "stable"
+salary_premium = 14000
+
+[[signals]]
+cert_id = "gcp-prof-cloud-security"
+demand_score = 75
+trending = "up"
+salary_premium = 16000
+
+[[signals]]
+cert_id = "gcp-prof-network-engineer"
+demand_score = 55
+trending = "stable"
+salary_premium = 14000
+
+[[signals]]
+cert_id = "gcp-prof-ml-engineer"
+demand_score = 82
+trending = "up"
+salary_premium = 22000
+
+[[signals]]
+cert_id = "gcp-prof-database-engineer"
+demand_score = 58
+trending = "stable"
+salary_premium = 13000
+
+[[signals]]
+cert_id = "gcp-prof-secops-engineer"
+demand_score = 62
+trending = "up"
+salary_premium = 14000

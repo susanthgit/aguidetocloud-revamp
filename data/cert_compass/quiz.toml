@@ -1,0 +1,142 @@
+# ============================================================================
+# QUIZ — "Which Cert Next?" decision tree
+# ============================================================================
+
+[[questions]]
+id = "current-role"
+text = "What's your current role?"
+type = "single"
+options = [
+  { value = "admin", label = "IT Admin / Systems Admin" },
+  { value = "developer", label = "Developer / Software Engineer" },
+  { value = "architect", label = "Solutions Architect" },
+  { value = "security", label = "Security / Compliance" },
+  { value = "data", label = "Data / Analytics" },
+  { value = "devops", label = "DevOps / SRE" },
+  { value = "manager", label = "IT Manager / Leadership" },
+  { value = "career-switch", label = "Switching into Cloud" }
+]
+
+[[questions]]
+id = "experience"
+text = "How much cloud experience do you have?"
+type = "single"
+options = [
+  { value = "none", label = "Brand new to cloud", weight_level = "foundational" },
+  { value = "beginner", label = "Less than 1 year", weight_level = "foundational" },
+  { value = "intermediate", label = "1–3 years", weight_level = "associate" },
+  { value = "advanced", label = "3+ years", weight_level = "professional" }
+]
+
+[[questions]]
+id = "cloud-preference"
+text = "Which cloud platform does your employer primarily use?"
+type = "single"
+options = [
+  { value = "microsoft", label = "Microsoft Azure" },
+  { value = "aws", label = "AWS" },
+  { value = "gcp", label = "Google Cloud" },
+  { value = "multi", label = "Multi-cloud / No preference" },
+  { value = "none", label = "Not sure yet" }
+]
+
+[[questions]]
+id = "goal"
+text = "What's your primary goal?"
+type = "single"
+options = [
+  { value = "job", label = "Get a new job / promotion" },
+  { value = "skills", label = "Prove my skills to my employer" },
+  { value = "multi-cloud", label = "Expand into multi-cloud" },
+  { value = "specialise", label = "Deep-dive into a specialty" },
+  { value = "leadership", label = "Move into cloud leadership" }
+]
+
+[[questions]]
+id = "time"
+text = "How much time can you dedicate to studying?"
+type = "single"
+options = [
+  { value = "minimal", label = "A few hours/week (1–2 months)", max_hours = 40 },
+  { value = "moderate", label = "5–10 hours/week (2–4 months)", max_hours = 100 },
+  { value = "intensive", label = "10+ hours/week (go all in)", max_hours = 300 }
+]
+
+[[questions]]
+id = "budget"
+text = "What's your exam budget?"
+type = "single"
+options = [
+  { value = "low", label = "Under $150 (one foundational exam)", max_usd = 150 },
+  { value = "medium", label = "$150–$300 (one or two exams)", max_usd = 300 },
+  { value = "high", label = "$300+ (multiple exams)", max_usd = 1000 },
+  { value = "employer", label = "My employer pays — no limit" }
+]
+
+[[questions]]
+id = "existing-certs"
+text = "Do you already hold any cloud certifications?"
+type = "single"
+options = [
+  { value = "none", label = "No — this would be my first" },
+  { value = "fundamentals", label = "Yes — foundational level only" },
+  { value = "associate", label = "Yes — associate level" },
+  { value = "advanced", label = "Yes — professional or expert level" }
+]
+
+# ── Exam Day Prep ──────────────────────────────────────────────────────
+
+[exam_prep]
+
+[exam_prep.universal]
+title = "Universal Exam Day Tips"
+items = [
+  "Test your equipment 24h before (webcam, mic, internet for online proctoring)",
+  "Have a valid government-issued photo ID ready",
+  "Clear your desk — proctors check your workspace",
+  "Close all other applications before starting",
+  "Read each question twice — look for qualifiers like 'MOST', 'LEAST', 'BEST'",
+  "Flag uncertain questions and come back — don't spend 5 min on one question",
+  "Time management: divide total time by questions for your per-question budget",
+  "Take a deep breath before starting — you've prepared for this"
+]
+
+[exam_prep.microsoft]
+title = "Microsoft Exams (Pearson VUE)"
+items = [
+  "Schedule at learn.microsoft.com/credentials → Pearson VUE",
+  "Online or test centre — online requires a clean, quiet room",
+  "65 minutes typical, some exams give 100–120 minutes",
+  "You CAN go back and change answers (unlike some other providers)",
+  "Case studies appear first — they're time-heavy, budget accordingly",
+  "Fundamentals never expire. Associate/Expert renew annually via FREE Learn assessment",
+  "Score 700/1000 to pass (not percentage — it's a scaled score)",
+  "Results appear immediately after completing the exam",
+  "Free retake within 24h if you fail (first attempt only, on some exams)"
+]
+
+[exam_prep.aws]
+title = "AWS Exams (Pearson VUE or PSI)"
+items = [
+  "Schedule at aws.amazon.com/certification → Pearson VUE or PSI",
+  "Choose Pearson VUE for most consistent experience",
+  "Passing Cloud Practitioner gives 50% off your NEXT exam — take it first!",
+  "AWS exams cannot go back once you submit an answer section",
+  "Score 700–750/1000 depending on exam (check your specific exam)",
+  "Certs valid for 3 years — must retake full exam to renew",
+  "Results within 5 business days (not always immediate)",
+  "Practice exams available on AWS Skill Builder (some free)"
+]
+
+[exam_prep.gcp]
+title = "Google Cloud Exams (Kryterion/Webassessor)"
+items = [
+  "Schedule at cloud.google.com/learn/certification → Webassessor",
+  "Online proctoring available for most exams",
+  "Professional exams include case studies — read them carefully before questions",
+  "2-hour time limit for most professional exams",
+  "Score threshold not publicly disclosed — Google uses a scaled pass/fail",
+  "Certs valid for 2 years — must retake full exam to renew (shortest of the 3 providers)",
+  "Results within 7–10 days for professional exams",
+  "Free practice exams available on Google Cloud Skills Boost"
+]

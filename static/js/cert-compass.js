@@ -8,6 +8,8 @@
   const CERTS = window.__compassCerts || [];
   const GROUPS = window.__compassGroups || [];
   const PATHS = window.__compassPaths || [];
+  const SIGNALS = window.__compassSignals || [];
+  const QUIZ_Q = window.__compassQuiz || [];
 
   const providerMap = {};
   PROVIDERS.forEach(p => { providerMap[p.id] = p; });

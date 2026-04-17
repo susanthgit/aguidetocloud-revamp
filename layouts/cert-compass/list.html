@@ -4,8 +4,11 @@
 {{- $certs := $data.certifications.certs -}}
 {{- $groups := $data.equivalents.groups -}}
 {{- $paths := $data.career_paths.paths -}}
+{{- $signals := $data.market_signals.signals -}}
+{{- $quiz := $data.quiz.questions -}}
+{{- $examPrep := $data.quiz.exam_prep -}}
 
-{{ partial "tool-hero.html" (dict "title" .Title "accent" "#6366F1" "counter_base" (len $certs) "counter_verb" "Certifications") }}
+{{ partial "tool-hero.html" (dict "Page" . "title" .Title "subtitle" "Find equivalent certs across Azure, AWS & Google Cloud — 40 certs · 12 match groups · 8 career paths" "accent" "#6366F1" "counter_base" (len $certs) "counter_verb" "Certifications") }}
 
 <div class="compass-page">
   <!-- My Certs banner -->
@@ -21,6 +24,8 @@
     <button class="compass-tab active" role="tab" aria-selected="true" data-tab="matches">Closest Matches</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="careers">Career Paths</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="dashboard">My Journey</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="quiz">Which Cert?</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
@@ -108,9 +113,67 @@
     <div class="compass-compare-table-wrap" id="compare-table-wrap"></div>
   </div>
 
+  <!-- ═══ MY CLOUD JOURNEY DASHBOARD ═══ -->
+  <div class="compass-panel" id="panel-dashboard">
+    <div id="dashboard-empty" style="text-align:center;padding:2rem">
+      <p style="font-size:1.2rem;margin-bottom:0.5rem">🧭 Your Cloud Journey Starts Here</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:1rem">Mark certifications you hold using the "I Have This" button on the Explore tab. Your progress, gaps, and recommendations will appear here.</p>
+      <button class="compass-btn compass-btn-primary" onclick="window.__compassSwitchTab('explore')">Browse Certifications</button>
+    </div>
+    <div id="dashboard-content" style="display:none">
+      <div class="compass-dash-stats" id="dash-stats"></div>
+      <div class="compass-dash-section">
+        <h3 class="compass-dash-heading">Progress by Provider</h3>
+        <div class="compass-dash-rings" id="dash-rings"></div>
+      </div>
+      <div class="compass-dash-section">
+        <h3 class="compass-dash-heading">Portfolio Gaps</h3>
+        <p class="compass-subtitle">Equivalent certs you're missing across other providers</p>
+        <div id="dash-gaps"></div>
+      </div>
+      <div class="compass-dash-section">
+        <h3 class="compass-dash-heading">Recommended Next</h3>
+        <div id="dash-recommended"></div>
+      </div>
+      <div class="compass-dash-section">
+        <h3 class="compass-dash-heading">Your Investment</h3>
+        <div id="dash-investment"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHICH CERT NEXT? QUIZ ═══ -->
+  <div class="compass-panel" id="panel-quiz">
+    <p class="compass-subtitle">Answer a few questions and we'll recommend the best certification for your situation.</p>
+    <div class="compass-quiz-container" id="quiz-container"></div>
+    <div class="compass-quiz-results" id="quiz-results" style="display:none"></div>
+  </div>
+
   <!-- ═══ FAQ TAB ═══ -->
   <div class="compass-panel" id="panel-faq">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <!-- Exam Day Prep -->
+      <h3 style="color:var(--compass-accent);margin-bottom:1rem">Exam Day Preparation</h3>
+      {{ with $examPrep }}
+      <details open>
+        <summary><strong>{{ .universal.title }}</strong></summary>
+        <ul style="margin-top:0.5rem">{{ range .universal.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+      </details>
+      <details>
+        <summary><strong>{{ .microsoft.title }}</strong></summary>
+        <ul style="margin-top:0.5rem">{{ range .microsoft.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+      </details>
+      <details>
+        <summary><strong>{{ .aws.title }}</strong></summary>
+        <ul style="margin-top:0.5rem">{{ range .aws.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+      </details>
+      <details>
+        <summary><strong>{{ .gcp.title }}</strong></summary>
+        <ul style="margin-top:0.5rem">{{ range .gcp.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
+
+      <h3 style="color:var(--compass-accent);margin:2rem 0 1rem">Frequently Asked Questions</h3>
       {{ range .Params.faq }}
       <details open>
         <summary><strong>{{ .question }}</strong></summary>
@@ -138,6 +201,8 @@ window.__compassProviders = {{ $providers | jsonify | safeJS }};
 window.__compassCerts = {{ $certs | jsonify | safeJS }};
 window.__compassGroups = {{ $groups | jsonify | safeJS }};
 window.__compassPaths = {{ $paths | jsonify | safeJS }};
+window.__compassSignals = {{ $signals | jsonify | safeJS }};
+window.__compassQuiz = {{ $quiz | jsonify | safeJS }};
 </script>
 
 <link rel="stylesheet" href="/css/cert-compass.css?v={{ site.Params.cache_version }}">
