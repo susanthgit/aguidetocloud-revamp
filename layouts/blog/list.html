@@ -1,13 +1,8 @@
 {{ define "main" }}
-<div class="page-hero">
-  <h1>{{ .Title }}</h1>
-  <p>{{ .Description }}</p>
-  {{ partial "section-prev-next.html" . }}
-</div>
+{{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" "#0EA5E9" "counter_base" (len .Pages) "counter_verb" "articles") }}
 <div class="container">
   <div class="blog-tl-header">
     <input type="text" id="blog-search" class="blog-tl-search" placeholder="🔍 Search..." autocomplete="off" aria-label="Search blog posts">
-    <span class="blog-tl-count">{{ len .Pages }} articles</span>
   </div>
 
   <div class="blog-video-cta">

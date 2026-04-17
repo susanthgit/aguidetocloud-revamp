@@ -10,6 +10,14 @@
   const PATHS = window.__compassPaths || [];
   const SIGNALS = window.__compassSignals || [];
   const QUIZ_Q = window.__compassQuiz || [];
+  const TOPIC_DEFS = window.__compassTopicDefs || [];
+  const CERT_TOPICS = window.__compassCertTopics || [];
+
+  // Build topic lookup maps
+  const topicNameMap = {};
+  TOPIC_DEFS.forEach(t => { topicNameMap[t.id] = t.name; });
+  const certTopicMap = {};
+  CERT_TOPICS.forEach(ct => { certTopicMap[ct.cert_id] = ct.topics || []; });
 
   const providerMap = {};
   PROVIDERS.forEach(p => { providerMap[p.id] = p; });

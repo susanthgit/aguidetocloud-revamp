@@ -1,0 +1,283 @@
+# ============================================================================
+# TOPIC TAXONOMY — Controlled cross-cloud skill tags
+# ============================================================================
+# ~20 mid-granularity topics that apply across all 3 providers.
+# Each cert gets 5-10 tags. Used for:
+#   - Skills Translator overlap %
+#   - Portfolio gap analysis
+#   - Quiz recommendations
+#
+# NOT provider-specific service names (e.g., "S3" or "Blob Storage")
+# NOT too broad (e.g., just "security")
+# Goldilocks: transferable skill categories
+
+# ── Topic Definitions ────────────────────────────────────────────────────
+
+[[topics]]
+id = "iam"
+name = "Identity & Access Management"
+description = "Authentication, authorisation, roles, policies, SSO, MFA"
+
+[[topics]]
+id = "compute"
+name = "Compute & Virtual Machines"
+description = "VMs, scaling, load balancing, availability sets"
+
+[[topics]]
+id = "containers"
+name = "Containers & Orchestration"
+description = "Docker, Kubernetes, container registries, managed container services"
+
+[[topics]]
+id = "serverless"
+name = "Serverless & Functions"
+description = "FaaS, event-driven compute, API gateways"
+
+[[topics]]
+id = "networking"
+name = "Networking & Connectivity"
+description = "VPCs/VNets, subnets, DNS, load balancers, CDN, hybrid connectivity"
+
+[[topics]]
+id = "storage"
+name = "Storage & Object Storage"
+description = "Blob/S3/GCS, file storage, disk storage, lifecycle policies"
+
+[[topics]]
+id = "databases"
+name = "Database Services"
+description = "Relational (SQL), NoSQL, in-memory, managed database services"
+
+[[topics]]
+id = "monitoring"
+name = "Monitoring & Logging"
+description = "Metrics, alerts, dashboards, log analytics, tracing"
+
+[[topics]]
+id = "security-controls"
+name = "Security Controls & Compliance"
+description = "Encryption, key management, firewalls, WAF, DDoS, compliance frameworks"
+
+[[topics]]
+id = "governance"
+name = "Governance & Cost Management"
+description = "Policies, tags, budgets, resource organisation, billing"
+
+[[topics]]
+id = "iac"
+name = "Infrastructure as Code"
+description = "ARM/CloudFormation/Terraform, templates, deployment automation"
+
+[[topics]]
+id = "cicd"
+name = "CI/CD & DevOps Practices"
+description = "Pipelines, source control, automated testing, release management"
+
+[[topics]]
+id = "data-pipelines"
+name = "Data Pipelines & ETL"
+description = "Data ingestion, transformation, orchestration, streaming"
+
+[[topics]]
+id = "data-warehousing"
+name = "Data Warehousing & Analytics"
+description = "Data lakes, warehouses, BI, query engines, big data"
+
+[[topics]]
+id = "ml-fundamentals"
+name = "ML Fundamentals & Model Training"
+description = "Algorithms, training, evaluation, feature engineering"
+
+[[topics]]
+id = "ai-services"
+name = "AI Services & APIs"
+description = "Pre-built AI (vision, speech, language, translation), AI platforms"
+
+[[topics]]
+id = "ml-ops"
+name = "MLOps & Model Deployment"
+description = "Model serving, pipelines, monitoring, A/B testing, endpoints"
+
+[[topics]]
+id = "incident-response"
+name = "Threat Detection & Incident Response"
+description = "SIEM, SOAR, threat hunting, security operations"
+
+[[topics]]
+id = "app-development"
+name = "Application Development"
+description = "SDKs, APIs, messaging, caching, app hosting patterns"
+
+[[topics]]
+id = "migration"
+name = "Migration & Hybrid"
+description = "Cloud migration strategies, hybrid architectures, multi-cloud"
+
+# ── Cert-to-Topic Mappings ───────────────────────────────────────────────
+# Each cert gets its relevant topics. Order = primary topics first.
+
+# ── Microsoft ────────────────────────────────────────────────────────────
+
+[[cert_topics]]
+cert_id = "ms-az-900"
+topics = ["compute", "storage", "networking", "iam", "governance", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-ai-900"
+topics = ["ai-services", "ml-fundamentals", "governance"]
+
+[[cert_topics]]
+cert_id = "ms-dp-900"
+topics = ["databases", "data-warehousing", "data-pipelines", "storage"]
+
+[[cert_topics]]
+cert_id = "ms-sc-900"
+topics = ["iam", "security-controls", "governance", "incident-response"]
+
+[[cert_topics]]
+cert_id = "ms-az-104"
+topics = ["compute", "storage", "networking", "iam", "monitoring", "governance", "containers"]
+
+[[cert_topics]]
+cert_id = "ms-az-204"
+topics = ["app-development", "serverless", "containers", "storage", "monitoring", "cicd"]
+
+[[cert_topics]]
+cert_id = "ms-az-500"
+topics = ["security-controls", "iam", "networking", "monitoring", "governance", "incident-response"]
+
+[[cert_topics]]
+cert_id = "ms-az-700"
+topics = ["networking", "security-controls", "monitoring", "migration"]
+
+[[cert_topics]]
+cert_id = "ms-dp-203"
+topics = ["data-pipelines", "data-warehousing", "storage", "databases", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-dp-300"
+topics = ["databases", "monitoring", "security-controls", "governance", "migration"]
+
+[[cert_topics]]
+cert_id = "ms-ai-102"
+topics = ["ai-services", "app-development", "ml-ops", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-az-305"
+topics = ["compute", "storage", "networking", "iam", "security-controls", "governance", "monitoring", "migration", "containers"]
+
+[[cert_topics]]
+cert_id = "ms-az-400"
+topics = ["cicd", "iac", "monitoring", "containers", "security-controls", "app-development"]
+
+[[cert_topics]]
+cert_id = "ms-sc-200"
+topics = ["incident-response", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-sc-300"
+topics = ["iam", "security-controls", "governance"]
+
+# ── AWS ──────────────────────────────────────────────────────────────────
+
+[[cert_topics]]
+cert_id = "aws-cloud-practitioner"
+topics = ["compute", "storage", "networking", "iam", "governance", "security-controls"]
+
+[[cert_topics]]
+cert_id = "aws-ai-practitioner"
+topics = ["ai-services", "ml-fundamentals", "governance"]
+
+[[cert_topics]]
+cert_id = "aws-solutions-architect-assoc"
+topics = ["compute", "storage", "networking", "iam", "security-controls", "governance", "databases", "serverless", "containers", "migration"]
+
+[[cert_topics]]
+cert_id = "aws-developer-assoc"
+topics = ["app-development", "serverless", "containers", "cicd", "monitoring", "storage"]
+
+[[cert_topics]]
+cert_id = "aws-sysops-assoc"
+topics = ["compute", "storage", "networking", "iam", "monitoring", "governance", "security-controls"]
+
+[[cert_topics]]
+cert_id = "aws-data-engineer-assoc"
+topics = ["data-pipelines", "data-warehousing", "storage", "databases", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "aws-ml-engineer-assoc"
+topics = ["ml-fundamentals", "ml-ops", "data-pipelines", "ai-services", "monitoring"]
+
+[[cert_topics]]
+cert_id = "aws-solutions-architect-pro"
+topics = ["compute", "storage", "networking", "iam", "security-controls", "governance", "monitoring", "migration", "containers", "serverless", "databases"]
+
+[[cert_topics]]
+cert_id = "aws-devops-pro"
+topics = ["cicd", "iac", "monitoring", "containers", "security-controls", "incident-response"]
+
+[[cert_topics]]
+cert_id = "aws-security-specialty"
+topics = ["security-controls", "iam", "networking", "incident-response", "monitoring", "governance"]
+
+[[cert_topics]]
+cert_id = "aws-networking-specialty"
+topics = ["networking", "security-controls", "monitoring", "migration"]
+
+[[cert_topics]]
+cert_id = "aws-database-specialty"
+topics = ["databases", "monitoring", "security-controls", "migration", "data-pipelines"]
+
+[[cert_topics]]
+cert_id = "aws-ml-specialty"
+topics = ["ml-fundamentals", "ml-ops", "data-pipelines", "ai-services", "monitoring", "security-controls"]
+
+# ── Google Cloud ─────────────────────────────────────────────────────────
+
+[[cert_topics]]
+cert_id = "gcp-cloud-digital-leader"
+topics = ["compute", "storage", "networking", "iam", "governance", "security-controls"]
+
+[[cert_topics]]
+cert_id = "gcp-genai-leader"
+topics = ["ai-services", "ml-fundamentals", "governance"]
+
+[[cert_topics]]
+cert_id = "gcp-associate-cloud-engineer"
+topics = ["compute", "storage", "networking", "iam", "monitoring", "governance", "containers"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-cloud-architect"
+topics = ["compute", "storage", "networking", "iam", "security-controls", "governance", "monitoring", "migration", "containers"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-data-engineer"
+topics = ["data-pipelines", "data-warehousing", "storage", "databases", "ml-fundamentals", "monitoring"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-cloud-developer"
+topics = ["app-development", "serverless", "containers", "cicd", "monitoring", "storage"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-cloud-devops"
+topics = ["cicd", "iac", "monitoring", "containers", "incident-response"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-cloud-security"
+topics = ["security-controls", "iam", "networking", "monitoring", "governance", "incident-response"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-network-engineer"
+topics = ["networking", "security-controls", "monitoring", "migration"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-ml-engineer"
+topics = ["ml-fundamentals", "ml-ops", "data-pipelines", "ai-services", "monitoring"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-database-engineer"
+topics = ["databases", "monitoring", "security-controls", "migration"]
+
+[[cert_topics]]
+cert_id = "gcp-prof-secops-engineer"
+topics = ["incident-response", "monitoring", "security-controls"]

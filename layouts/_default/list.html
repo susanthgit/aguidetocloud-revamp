@@ -1,11 +1,10 @@
 {{ define "main" }}
-<div class="page-hero">
-  <h1>{{ .Title }}</h1>
-  {{ with .Description }}<p>{{ . }}</p>{{ end }}
-  {{ partial "section-prev-next.html" . }}
-  {{ partial "page-search.html" . }}
-</div>
+{{/* Section accent lookup — matches --hero-tint CSS values */}}
+{{ $accents := dict "ai-hub" "#C026D3" "cloud-labs" "#3B82F6" "certifications" "#10B981" "exam-qa" "#8B5CF6" "interview-prep" "#A78BFA" "music" "#EC4899" }}
+{{ $accent := index $accents .Section | default "#9333EA" }}
+{{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" $accent "hide_badges" true) }}
 <div class="container">
+  {{ partial "page-search.html" . }}
   <section class="section">
     {{ with .Content }}
       <div style="margin-bottom: 2rem; color: var(--text-secondary);">{{ . }}</div>

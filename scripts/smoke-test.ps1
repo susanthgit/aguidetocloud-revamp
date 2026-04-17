@@ -123,9 +123,9 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     $promptsPage = Fetch-Page "$BASE/prompts/"
     Test-Check "Prompts page loads" ($null -ne $promptsPage -and $promptsPage.StatusCode -eq 200)
     if ($null -ne $promptsPage) {
-        Test-Check "Prompts has platform filter" ($promptsPage.Content -match 'prompts-platform')
+        Test-Check "Prompts has platform filter" ($promptsPage.Content -match 'chips-platforms')
         Test-Check "Prompts has category groups" ($promptsPage.Content -match 'prompts-category-group')
-        Test-Check "Prompts JS loaded" ($promptsPage.Content -match 'prompts-v2\.js')
+        Test-Check "Prompts JS loaded" ($promptsPage.Content -match 'prompts-v3\.js')
         Test-Check "Prompts CSS loaded" ($promptsPage.Content -match 'prompts\.css')
     }
 

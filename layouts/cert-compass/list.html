@@ -7,6 +7,8 @@
 {{- $signals := $data.market_signals.signals -}}
 {{- $quiz := $data.quiz.questions -}}
 {{- $examPrep := $data.quiz.exam_prep -}}
+{{- $topicDefs := $data.topics.topics -}}
+{{- $certTopics := $data.topics.cert_topics -}}
 
 {{ partial "tool-hero.html" (dict "Page" . "title" .Title "subtitle" "Find equivalent certs across Azure, AWS & Google Cloud — 40 certs · 12 match groups · 8 career paths" "accent" "#6366F1" "counter_base" (len $certs) "counter_verb" "Certifications") }}
 
@@ -203,6 +205,8 @@ window.__compassGroups = {{ $groups | jsonify | safeJS }};
 window.__compassPaths = {{ $paths | jsonify | safeJS }};
 window.__compassSignals = {{ $signals | jsonify | safeJS }};
 window.__compassQuiz = {{ $quiz | jsonify | safeJS }};
+window.__compassTopicDefs = {{ $topicDefs | jsonify | safeJS }};
+window.__compassCertTopics = {{ $certTopics | jsonify | safeJS }};
 </script>
 
 <link rel="stylesheet" href="/css/cert-compass.css?v={{ site.Params.cache_version }}">

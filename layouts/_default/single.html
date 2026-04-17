@@ -18,6 +18,22 @@
 
   {{ if $isBlog }}<article>{{ end }}
   <h1>{{ .Title }}</h1>
+  {{ if $isBlog }}
+  {{/* Compute estimated reads from post age */}}
+  {{ $daysSince := div (sub now.Unix .Date.Unix) 86400 }}
+  {{ $readBase := add (mul $daysSince 8) (div $wordCount 50) }}
+  <div class="tool-hero-badges" style="margin: 0.3rem 0 0.5rem">
+    <span class="tool-hero-live" id="th-live" style="display:none" aria-hidden="true">
+      <span class="tool-hero-live-dot"></span>
+      <span id="th-live-num">0</span> live
+    </span>
+    <div class="tool-counter" data-base="{{ $readBase }}" aria-hidden="true">
+      <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $readBase }}</span>
+      <span class="tool-counter-verb">reads</span>
+    </div>
+    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+  </div>
+  {{ end }}
   {{ partial "blog-prev-next.html" . }}
   {{ partial "section-prev-next.html" . }}
   {{ if not .Date.IsZero }}

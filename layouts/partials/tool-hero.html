@@ -1,8 +1,9 @@
-{{/* Tool Hero — Stacked header for all Cloud & AI Toolkit tools
+{{/* Tool/Page Hero — Stacked glass card header
      Usage: {{ partial "tool-hero.html" (dict "title" "AI News" "accent" "#00e5ff") }}
      subtitle: optional — auto-reads from toolkit_nav.toml desc if omitted.
      freshness: optional — data file path for pipeline tools.
-     counter_base/counter_verb: optional dict overrides (e.g. cert guides).
+     counter_base/counter_verb: optional dict overrides (e.g. cert guides, blog).
+     hide_badges: optional — set true for section pages (no badges row).
 */}}
 {{ $p := .page | default page }}
 {{ $url := $p.RelPermalink }}
@@ -17,6 +18,7 @@
   <div class="tool-hero-inner">
     <h1 class="tool-hero-title">{{ .title }}</h1>
     {{ with $subtitle }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
+    {{ if not .hide_badges }}
     {{/* Badges row */}}
     {{ $counters := (index hugo.Data "tool_counters").tools }}
     {{ $counterBase := 0 }}
@@ -46,6 +48,7 @@
       {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
       <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
     </div>
+    {{ end }}
     {{ with $.extra_html }}{{ . | safeHTML }}{{ end }}
     {{ partial "tool-prev-next.html" $p }}
     {{ partial "cert-prev-next.html" $p }}
