@@ -185,3 +185,18 @@ verb = "passports generated"
 url = "/phishing-test/"
 base = 150
 verb = "phishing tests taken"
+
+[[tools]]
+url = "/ai-cost-calculator/"
+base = 180
+verb = "cost estimates calculated"
+
+[[tools]]
+url = "/purview-starter/"
+base = 110
+verb = "starter kits deployed"
+
+[[tools]]
+url = "/security-toolkit/"
+base = 200
+verb = "security assessments"
