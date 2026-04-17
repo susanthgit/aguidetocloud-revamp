@@ -9,7 +9,7 @@
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
-    <div class="siteana-stat siteana-heartbeat-stat" id="sa-live-stat" style="display:none">
+    <div class="siteana-stat siteana-heartbeat-stat" id="sa-live-stat">
       <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
       <span class="siteana-stat-num" id="sa-live-count">0</span>
       <span class="siteana-stat-label">Live Now</span>
@@ -33,32 +33,18 @@
       <span class="siteana-stat-num" id="sa-today-views">—</span>
       <span class="siteana-stat-label">Today</span>
     </div>
-    <div class="siteana-stat">
-      <span class="siteana-stat-num">{{ $tc }}</span>
-      <span class="siteana-stat-label">Free Tools</span>
-    </div>
   </div>
 
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
-    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="dashboard">Dashboard</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="insights">Search &amp; Insights</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">Content</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="about">About This Data</button>
   </div>
 
-  <!-- ═══════════ Tab: Overview ═══════════ -->
-  <div class="siteana-panel active" id="panel-overview" role="tabpanel">
-
-    <!-- Live Pulse -->
-    <div class="siteana-card siteana-live-card" id="sa-live-card" style="display:none">
-      <div class="siteana-live-header">
-        <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
-        <h3 class="siteana-card-title" style="margin:0">Live Pulse</h3>
-        <span class="siteana-live-badge" id="sa-live-badge">0 browsing now</span>
-      </div>
-      <div id="sa-live-pages" class="siteana-live-pages"></div>
-    </div>
+  <!-- ═══════════ Tab 1: Dashboard ═══════════ -->
+  <div class="siteana-panel active" id="panel-dashboard" role="tabpanel">
 
     <!-- Traffic Trend -->
     <div class="siteana-card">
@@ -86,12 +72,126 @@
       </div>
       <div class="siteana-card siteana-transparency">
         <h3>Transparency Note</h3>
-        <p>Traffic data from Google Analytics (30-day window). All counts are approximate and anonymous — no cookies, no personal data, no IP addresses stored.</p>
-        <p>This data is real and unfiltered. We believe in building in public.</p>
+        <p>Traffic from Google Analytics (30-day window). All counts are approximate and anonymous — no personal data stored.</p>
+        <p>This data is real and unfiltered. <a href="#" data-tab-link="about" style="color:#64748B">Learn how it's collected →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab 2: Tools ═══════════ -->
+  <div class="siteana-panel" id="panel-tools" role="tabpanel">
+
+    <!-- Full Leaderboard (FIRST — it's what people come for) -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Tool Leaderboard</h3>
+      <p class="siteana-hint">All {{ $tc }} free tools ranked by page views (30 days)</p>
+      <div id="sa-leaderboard"></div>
+    </div>
+
+    <!-- Rising Stars + Hidden Gems -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Rising Stars</h3>
+        <p class="siteana-hint">Biggest week-over-week growth</p>
+        <div id="sa-rising"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Hidden Gems</h3>
+        <p class="siteana-hint">Great tools you might have missed</p>
+        <div id="sa-gems"></div>
       </div>
     </div>
 
-    <!-- Your Journey (localStorage personalisation) -->
+    <!-- Tool of the Day + Activity -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card siteana-featured-card" id="sa-featured">
+        <div class="siteana-featured-badge">Tool of the Day</div>
+        <div class="siteana-featured-body" id="sa-featured-body"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Activity Breakdown</h3>
+        <canvas id="sa-activity-chart" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab 3: Content ═══════════ -->
+  <div class="siteana-panel" id="panel-content" role="tabpanel">
+
+    <!-- Content Overview (static counts at top for context) -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">What's on the Site</h3>
+      <div class="siteana-content-stats">
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ $tc }}</span>
+          <span>Free Tools</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
+          <span>Blog Posts</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "prompts") }}</span>
+          <span>Prompts</span>
+        </div>
+        <div class="siteana-content-item">
+          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "cert-tracker") }}</span>
+          <span>Cert Guides</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Pages -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Pages</h3>
+      <p class="siteana-hint">Most visited pages across the entire site</p>
+      <div id="sa-top-pages"></div>
+    </div>
+
+    <!-- Top Blog Posts -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Top Blog Posts</h3>
+      <p class="siteana-hint">Most read blog articles</p>
+      <div id="sa-blog-pages"></div>
+    </div>
+
+    <!-- Search Intelligence -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">What People Search For</h3>
+      <p class="siteana-hint">Top Google queries that bring visitors here (Search Console data, ~48h delay)</p>
+      <div id="sa-search-queries"></div>
+    </div>
+
+    <!-- Content Freshness -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Content Freshness</h3>
+      <p class="siteana-hint">How recently each content area was updated</p>
+      <div class="siteana-freshness" id="sa-freshness">
+        {{ $sections := slice
+          (dict "name" "AI News" "icon" "📰" "freq" "4× daily" "color" "#ff66ff")
+          (dict "name" "M365 Roadmap" "icon" "🗺️" "freq" "Daily" "color" "#E5A00D")
+          (dict "name" "Service Health" "icon" "🩺" "freq" "Every 2 hours" "color" "#EA580C")
+          (dict "name" "Cert Study Guides" "icon" "📚" "freq" "Weekly" "color" "#10B981")
+          (dict "name" "Deprecation Timeline" "icon" "⏰" "freq" "Daily" "color" "#DC2626")
+          (dict "name" "Blog Posts" "icon" "📝" "freq" "As written" "color" "#0EA5E9")
+          (dict "name" "Licensing Data" "icon" "💳" "freq" "Bi-weekly check" "color" "#F43F5E")
+          (dict "name" "Copilot Matrix" "icon" "📊" "freq" "Bi-weekly check" "color" "#60A5FA")
+        }}
+        {{ range $sections }}
+        <div class="siteana-fresh-item">
+          <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
+          <span class="siteana-fresh-name">{{ .name }}</span>
+          <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab 4: About This Data ═══════════ -->
+  <div class="siteana-panel" id="panel-about" role="tabpanel">
+
+    <!-- Your Journey -->
     <div class="siteana-card siteana-journey-card" id="sa-journey">
       <div class="siteana-journey-inner" id="sa-journey-body">
         <span class="siteana-journey-wave">👋</span>
@@ -148,135 +248,23 @@
       <a href="/prompt-guide/" class="siteana-bip-cta">Want to build something? Start with our Prompt Guide →</a>
     </div>
 
-    <!-- Growth Milestones -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Growth Milestones</h3>
-      <div class="siteana-milestones" id="sa-milestones">
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Mar 2026</strong><span>Site launched with 13 free tools</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 7</strong><span>AI News pipeline goes live (4× daily)</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 10</strong><span>M365 Roadmap Tracker launched</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 12</strong><span>20 tools milestone</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 13</strong><span>Community tools launched (QR, WiFi, Timer, etc.)</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 14</strong><span>Raycast-style homepage redesign</span></div></div>
-        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 17</strong><span>{{ $tc }} tools — biggest toolkit on the web for IT pros</span></div></div>
-        <div class="siteana-ms-item siteana-ms-next"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Next</strong><span id="sa-ms-next">Loading first user milestone...</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════ Tab: Tools ═══════════ -->
-  <div class="siteana-panel" id="panel-tools" role="tabpanel">
-
-    <!-- Featured Tool of the Day -->
-    <div class="siteana-card siteana-featured-card" id="sa-featured">
-      <div class="siteana-featured-badge">Tool of the Day</div>
-      <div class="siteana-featured-body" id="sa-featured-body"></div>
-    </div>
-
-    <!-- Rising Stars + Hidden Gems -->
+    <!-- Growth Milestones + Community Impact -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Rising Stars</h3>
-        <p class="siteana-hint">Biggest week-over-week growth</p>
-        <div id="sa-rising"></div>
-      </div>
-      <div class="siteana-card">
-        <h3 class="siteana-card-title">Hidden Gems</h3>
-        <p class="siteana-hint">Great tools you might have missed</p>
-        <div id="sa-gems"></div>
-      </div>
-    </div>
-
-    <!-- Full Leaderboard -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Tool Popularity</h3>
-      <p class="siteana-hint">All {{ $tc }} free tools ranked by page views</p>
-      <div id="sa-leaderboard"></div>
-    </div>
-
-    <!-- Activity Doughnut -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Activity Breakdown</h3>
-      <canvas id="sa-activity-chart" height="220"></canvas>
-    </div>
-
-    <!-- Content Overview -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Content Overview</h3>
-      <div class="siteana-content-stats">
-        <div class="siteana-content-item">
-          <span class="siteana-content-num">{{ $tc }}</span>
-          <span>Free Tools</span>
-        </div>
-        <div class="siteana-content-item">
-          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
-          <span>Blog Posts</span>
-        </div>
-        <div class="siteana-content-item">
-          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "prompts") }}</span>
-          <span>Prompts</span>
-        </div>
-        <div class="siteana-content-item">
-          <span class="siteana-content-num">{{ len (where .Site.RegularPages "Section" "cert-tracker") }}</span>
-          <span>Cert Guides</span>
+        <h3 class="siteana-card-title">Growth Milestones</h3>
+        <div class="siteana-milestones" id="sa-milestones">
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Mar 2026</strong><span>Site launched with 13 tools</span></div></div>
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 7</strong><span>AI News pipeline goes live</span></div></div>
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 10</strong><span>M365 Roadmap Tracker</span></div></div>
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 13</strong><span>Community tools launched</span></div></div>
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 17</strong><span>{{ $tc }} tools milestone</span></div></div>
+          <div class="siteana-ms-item siteana-ms-next"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Next</strong><span id="sa-ms-next">Loading...</span></div></div>
         </div>
       </div>
-    </div>
-
-    <!-- Community Impact -->
-    <div class="siteana-card siteana-impact-card">
-      <h3 class="siteana-card-title">Estimated Community Impact</h3>
-      <p class="siteana-hint">Rough estimates based on typical usage patterns — not exact numbers</p>
-      <div class="siteana-impact-grid" id="sa-impact"></div>
-    </div>
-  </div>
-
-  <!-- ═══════════ Tab: Search & Insights ═══════════ -->
-  <div class="siteana-panel" id="panel-insights" role="tabpanel">
-
-    <!-- Search Intelligence -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">What People Search For</h3>
-      <p class="siteana-hint">Top Google queries that bring visitors here (Google Search Console data, ~48h delay)</p>
-      <div id="sa-search-queries"></div>
-    </div>
-
-    <!-- Top Pages -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Pages</h3>
-      <p class="siteana-hint">Most visited pages across the entire site</p>
-      <div id="sa-top-pages"></div>
-    </div>
-
-    <!-- Top Blog Posts -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Blog Posts</h3>
-      <p class="siteana-hint">Most read blog articles</p>
-      <div id="sa-blog-pages"></div>
-    </div>
-
-    <!-- Content Freshness Radar -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Content Freshness</h3>
-      <p class="siteana-hint">How recently each content area was updated</p>
-      <div class="siteana-freshness" id="sa-freshness">
-        {{ $sections := slice
-          (dict "name" "AI News" "icon" "📰" "freq" "4× daily" "color" "#ff66ff")
-          (dict "name" "M365 Roadmap" "icon" "🗺️" "freq" "Daily" "color" "#E5A00D")
-          (dict "name" "Service Health" "icon" "🩺" "freq" "Every 2 hours" "color" "#EA580C")
-          (dict "name" "Cert Study Guides" "icon" "📚" "freq" "Weekly" "color" "#10B981")
-          (dict "name" "Deprecation Timeline" "icon" "⏰" "freq" "Daily" "color" "#DC2626")
-          (dict "name" "Blog Posts" "icon" "📝" "freq" "As written" "color" "#0EA5E9")
-          (dict "name" "Licensing Data" "icon" "💳" "freq" "Bi-weekly check" "color" "#F43F5E")
-          (dict "name" "Copilot Matrix" "icon" "📊" "freq" "Bi-weekly check" "color" "#60A5FA")
-        }}
-        {{ range $sections }}
-        <div class="siteana-fresh-item">
-          <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
-          <span class="siteana-fresh-name">{{ .name }}</span>
-          <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
-        </div>
-        {{ end }}
+      <div class="siteana-card siteana-impact-card">
+        <h3 class="siteana-card-title">Community Impact</h3>
+        <p class="siteana-hint">Estimated from usage patterns</p>
+        <div class="siteana-impact-grid" id="sa-impact"></div>
       </div>
     </div>
 
@@ -310,21 +298,19 @@
       </div>
       <p class="siteana-opendata-note">Best-effort public API. Response cached for 5 minutes. Data refreshes continuously from GA4 + Google Search Console.</p>
     </div>
-  </div>
 
-  <!-- ═══════════ Tab: FAQ ═══════════ -->
-  <div class="siteana-panel" id="panel-faq" role="tabpanel">
-  {{ with .Params.faq }}
-  <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    <h2 style="color:#64748B;margin-bottom:1.5rem">Frequently Asked Questions</h2>
-    {{ range $i, $q := . }}
-    <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
-      <summary style="color:#64748B;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
-      <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
-    </details>
+    <!-- FAQ (inline, not a separate tab) -->
+    {{ with .Params.faq }}
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Frequently Asked Questions</h3>
+      {{ range $i, $q := . }}
+      <details{{ if eq $i 0 }} open{{ end }} style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+        <summary style="color:#64748B;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ $q.question }}</summary>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+      </details>
+      {{ end }}
+    </div>
     {{ end }}
-  </div>
-  {{ end }}
   </div>
 
   {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}
@@ -454,6 +440,15 @@
       if (panel) panel.classList.add('active');
     });
   });
+  // Cross-tab links (data-tab-link attribute)
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('[data-tab-link]');
+    if (!link) return;
+    e.preventDefault();
+    var targetTab = link.dataset.tabLink;
+    var tab = document.querySelector('.siteana-tab[data-tab="' + targetTab + '"]');
+    if (tab) tab.click();
+  });
 
   // ── Fetch main data ──
   fetch(API + '?range=30d').then(function(r) { return r.json(); }).then(render).catch(function() {});
@@ -463,17 +458,6 @@
     fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
       var count = d.active || 0;
       var el = document.getElementById('sa-live-count'); if (el) el.textContent = count;
-      var badge = document.getElementById('sa-live-badge'); if (badge) badge.textContent = count + ' browsing now';
-      var stat = document.getElementById('sa-live-stat');
-      var card = document.getElementById('sa-live-card');
-      if (count > 0) { if (stat) stat.style.display = ''; if (card) card.style.display = ''; }
-      else { if (stat) stat.style.display = 'none'; if (card) card.style.display = 'none'; }
-      var pagesEl = document.getElementById('sa-live-pages');
-      if (pagesEl && d.pages && d.pages.length) {
-        pagesEl.innerHTML = d.pages.slice(0, 5).map(function(p) {
-          return '<div class="siteana-live-page"><span class="siteana-live-page-dot"></span><span>' + esc(p.page || 'Unknown') + '</span><span class="siteana-live-page-count">' + p.users + '</span></div>';
-        }).join('');
-      }
     }).catch(function() {});
   }
   function startRealtime() { pollRealtime(); _realtimeTimer = setInterval(pollRealtime, 60000); }
