@@ -215,7 +215,7 @@ window.__compassQuiz = {{ $quiz | jsonify | safeJS }};
   "@type": "WebApplication",
   "name": {{ .Title | jsonify }},
   "description": {{ .Description | jsonify }},
-  "url": "{{ .Permalink }}",
+  "url": {{ .Permalink | jsonify }},
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }

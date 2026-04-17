@@ -82,7 +82,7 @@
   "name": {{ printf "%s (%s)" $cert.name $cert.exam_code | jsonify }},
   "description": {{ $cert.description | jsonify }},
   "provider": { "@type": "Organization", "name": {{ if $provider }}{{ $provider.name | jsonify }}{{ else }}"Cloud Provider"{{ end }} },
-  "offers": { "@type": "Offer", "price": "{{ $cert.fee_usd }}", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": {{ printf "%d" $cert.fee_usd | jsonify }}, "priceCurrency": "USD" }
 }
 </script>
 {{ end }}

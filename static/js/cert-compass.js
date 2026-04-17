@@ -648,6 +648,13 @@
       selectedCompare = new Set(compare.split(',').filter(id => certMap[id]));
       if (selectedCompare.size >= 2 && !tab) switchTab('compare');
     }
+
+    // Default compare: Cloud Fundamentals preset if nothing selected
+    if (!selectedCompare.size) {
+      selectedCompare = new Set(['ms-az-900', 'aws-cloud-practitioner', 'gcp-cloud-digital-leader'].filter(id => certMap[id]));
+      renderCompareSelect();
+      renderCompareTable();
+    }
   }
 
   // ── Init ──────────────────────────────────────────────────────────────
