@@ -1257,6 +1257,8 @@ a:hover {
   }
   .hp-ray-card { min-height: 260px; scroll-snap-align: unset; }
   .hp-ray-card:nth-child(n+5) { display: none; }
+  .hp-ray-grid.hp-ray-filtered .hp-ray-card:nth-child(n+5) { display: block; }
+  .hp-ray-grid.hp-ray-filtered .hp-ray-card[data-hidden="true"] { display: none; }
   .hp-ray-card[data-hidden="true"] { display: none; }
   .hp-ray-nav { display: none; }
   .hp-ray-browse { margin-top: 1rem; }

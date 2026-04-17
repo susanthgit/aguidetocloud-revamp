@@ -253,6 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
           card.setAttribute('data-hidden', 'true');
         }
       });
+      if (cat === 'all') { rayGrid.classList.remove('hp-ray-filtered'); }
+      else { rayGrid.classList.add('hp-ray-filtered'); }
       // Dynamic rows: mobile = always 1 row; desktop = 1 row if ≤4 visible, 2 rows otherwise
       var visibleCount = rayGrid.querySelectorAll('.hp-ray-card:not([data-hidden="true"])').length;
       var isMobile = window.innerWidth <= 768;
