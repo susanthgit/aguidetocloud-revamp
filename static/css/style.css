@@ -393,6 +393,66 @@ a:hover {
   box-shadow: none;
 }
 
+/* ── Smart Mega Menu (2026-04-17) ─────────────────────────────────────── */
+.mega-menu--smart { width: 380px; padding: 0 !important; }
+.mega-smart-search {
+  padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mega-smart-search input {
+  width: 100%; padding: 0.5rem 0.8rem; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; font-size: 0.85rem; outline: none;
+}
+.mega-smart-search input::placeholder { color: rgba(255,255,255,0.3); }
+.mega-smart-search input:focus { border-color: rgba(255,102,255,0.4); }
+.mega-smart-body { padding: 0.4rem 0.6rem; max-height: 360px; overflow-y: auto; scrollbar-width: thin; }
+.mega-smart-section { margin-bottom: 0.5rem; }
+.mega-smart-label {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35); padding: 0.2rem 0.4rem; margin-bottom: 0.15rem;
+}
+.mega-smart-list { display: flex; flex-direction: column; }
+.mega-smart-list a {
+  padding: 0.35rem 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.8);
+  border-radius: 6px; text-decoration: none; transition: all 0.15s;
+  border: none !important;
+}
+.mega-smart-list a:hover { background: rgba(255,102,255,0.08); color: #ff99ff; }
+.mega-smart-list a.nav-active { color: #ff99ff; background: rgba(255,102,255,0.06); }
+.mega-smart-cats { display: flex; flex-direction: column; gap: 0.2rem; }
+.mega-smart-cat {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.4rem 0.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.7);
+  border-radius: 6px; text-decoration: none; transition: all 0.15s;
+  border-left: 3px solid var(--cat-color, rgba(255,255,255,0.1));
+  border-top: none !important; border-bottom: none !important; border-right: none !important;
+}
+.mega-smart-cat:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.mega-smart-cat span {
+  font-size: 0.7rem; color: rgba(255,255,255,0.3); font-weight: 600;
+}
+.mega-smart-results {
+  padding: 0.4rem 0.6rem; max-height: 300px; overflow-y: auto;
+}
+.mega-smart-results a {
+  display: block; padding: 0.4rem 0.5rem; font-size: 0.85rem;
+  color: rgba(255,255,255,0.8); border-radius: 6px; text-decoration: none;
+  transition: all 0.15s; border: none !important;
+}
+.mega-smart-results a:hover { background: rgba(255,102,255,0.08); color: #ff99ff; }
+.mega-smart-results .mega-search-empty {
+  padding: 1rem; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem;
+}
+.mega-smart-footer {
+  display: flex; justify-content: space-between; padding: 0.5rem 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.mega-smart-footer a {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); text-decoration: none;
+  border: none !important;
+}
+.mega-smart-footer a:hover { color: #ff99ff; }
+
 /* Legacy dropdown labels (Videos dropdown) */
 .nav-cat-label {
   padding: 0.5rem 1.2rem 0.2rem;

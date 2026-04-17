@@ -23,74 +23,44 @@
       </li>
       <li class="nav-dropdown nav-dropdown--mega{{ if or (hasPrefix $.RelPermalink "/ai-news/") (hasPrefix $.RelPermalink "/m365-roadmap/") (hasPrefix $.RelPermalink "/prompts/") (hasPrefix $.RelPermalink "/prompt-polisher/") (hasPrefix $.RelPermalink "/prompt-guide/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/licensing/") (hasPrefix $.RelPermalink "/service-health/") (hasPrefix $.RelPermalink "/copilot-readiness/") (hasPrefix $.RelPermalink "/copilot-matrix/") (hasPrefix $.RelPermalink "/deprecation-timeline/") (hasPrefix $.RelPermalink "/roi-calculator/") (hasPrefix $.RelPermalink "/ai-mapper/") (hasPrefix $.RelPermalink "/ai-showdown/") (hasPrefix $.RelPermalink "/ps-builder/") (hasPrefix $.RelPermalink "/migration-planner/") (hasPrefix $.RelPermalink "/free-tools/") (hasPrefix $.RelPermalink "/feedback/") (hasPrefix $.RelPermalink "/site-analytics/") (hasPrefix $.RelPermalink "/password-generator/") (hasPrefix $.RelPermalink "/image-compressor/") (hasPrefix $.RelPermalink "/typing-test/") (hasPrefix $.RelPermalink "/countdown/") (hasPrefix $.RelPermalink "/color-palette/") (hasPrefix $.RelPermalink "/pomodoro/") (hasPrefix $.RelPermalink "/world-clock/") (hasPrefix $.RelPermalink "/qr-generator/") (hasPrefix $.RelPermalink "/wifi-qr/") (hasPrefix $.RelPermalink "/ca-builder/") (hasPrefix $.RelPermalink "/purview-starter/") (hasPrefix $.RelPermalink "/security-toolkit/") (hasPrefix $.RelPermalink "/agent-365-planner/") (hasPrefix $.RelPermalink "/admin-bingo/") (hasPrefix $.RelPermalink "/acronym-battle/") (hasPrefix $.RelPermalink "/feature-roulette/") (hasPrefix $.RelPermalink "/rename-tracker/") (hasPrefix $.RelPermalink "/admin-comms/") (hasPrefix $.RelPermalink "/compliance-passport/") (hasPrefix $.RelPermalink "/phishing-test/") }} nav-dropdown-active{{ end }}">
         <a href="/free-tools/" class="dropdown-toggle">Toolkit ▾</a>
-        <div class="dropdown-menu mega-menu">
-          <div class="mega-header">
-            <a href="/free-tools/"{{ if eq $.RelPermalink "/free-tools/" }} aria-current="page" class="nav-active"{{ end }}><strong>All Tools</strong></a>
+        <div class="dropdown-menu mega-menu mega-menu--smart">
+          <div class="mega-smart-search">
+            <input type="text" id="mega-tool-search" placeholder="Search 38 tools..." aria-label="Search tools" autocomplete="off">
           </div>
-          <div class="mega-columns">
-            <div class="mega-col">
-              <button class="mega-label" style="--mega-accent:#A78BFA" aria-expanded="false">Prompts & Learning <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/prompts/"{{ if hasPrefix $.RelPermalink "/prompts/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Library</a>
-                <a href="/prompt-polisher/"{{ if hasPrefix $.RelPermalink "/prompt-polisher/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Polisher</a>
-                <a href="/prompt-guide/"{{ if hasPrefix $.RelPermalink "/prompt-guide/" }} aria-current="page" class="nav-active"{{ end }}>Prompt Guide</a>
-                <a href="/cert-tracker/"{{ if hasPrefix $.RelPermalink "/cert-tracker/" }} aria-current="page" class="nav-active"{{ end }}>Cert Study Guides</a>
-              </div>
-              <button class="mega-label" style="--mega-accent:#3B82F6" aria-expanded="false">Copilot <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/copilot-readiness/"{{ if hasPrefix $.RelPermalink "/copilot-readiness/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Readiness</a>
-                <a href="/copilot-matrix/"{{ if hasPrefix $.RelPermalink "/copilot-matrix/" }} aria-current="page" class="nav-active"{{ end }}>Copilot Features</a>
-                <a href="/roi-calculator/"{{ if hasPrefix $.RelPermalink "/roi-calculator/" }} aria-current="page" class="nav-active"{{ end }}>ROI Calculator</a>
-              </div>
-              <button class="mega-label" style="--mega-accent:#E5A00D" aria-expanded="false">Stay Informed <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/ai-news/"{{ if hasPrefix $.RelPermalink "/ai-news/" }} aria-current="page" class="nav-active"{{ end }}>AI News</a>
-                <a href="/m365-roadmap/"{{ if hasPrefix $.RelPermalink "/m365-roadmap/" }} aria-current="page" class="nav-active"{{ end }}>M365 Roadmap</a>
-                <a href="/service-health/"{{ if hasPrefix $.RelPermalink "/service-health/" }} aria-current="page" class="nav-active"{{ end }}>Service Health</a>
-                <a href="/deprecation-timeline/"{{ if hasPrefix $.RelPermalink "/deprecation-timeline/" }} aria-current="page" class="nav-active"{{ end }}>Deprecation Timeline</a>
-                <a href="/feature-roulette/"{{ if hasPrefix $.RelPermalink "/feature-roulette/" }} aria-current="page" class="nav-active"{{ end }}>Feature Roulette</a>
-                <a href="/rename-tracker/"{{ if hasPrefix $.RelPermalink "/rename-tracker/" }} aria-current="page" class="nav-active"{{ end }}>Rename Tracker</a>
+          <div class="mega-smart-results" id="mega-search-results" style="display:none"></div>
+          <div class="mega-smart-body" id="mega-smart-body">
+            <div class="mega-smart-section" id="mega-recent-section" style="display:none">
+              <div class="mega-smart-label">Recent</div>
+              <div class="mega-smart-list" id="mega-recent-list"></div>
+            </div>
+            <div class="mega-smart-section">
+              <div class="mega-smart-label">Popular</div>
+              <div class="mega-smart-list">
+                <a href="/copilot-readiness/"{{ if hasPrefix $.RelPermalink "/copilot-readiness/" }} class="nav-active"{{ end }}>Copilot Readiness</a>
+                <a href="/ai-news/"{{ if hasPrefix $.RelPermalink "/ai-news/" }} class="nav-active"{{ end }}>AI News</a>
+                <a href="/licensing/"{{ if hasPrefix $.RelPermalink "/licensing/" }} class="nav-active"{{ end }}>Licensing Simplifier</a>
+                <a href="/phishing-test/"{{ if hasPrefix $.RelPermalink "/phishing-test/" }} class="nav-active"{{ end }}>Phishing Simulator</a>
+                <a href="/ps-builder/"{{ if hasPrefix $.RelPermalink "/ps-builder/" }} class="nav-active"{{ end }}>PowerShell Builder</a>
+                <a href="/service-health/"{{ if hasPrefix $.RelPermalink "/service-health/" }} class="nav-active"{{ end }}>Service Health</a>
+                <a href="/cert-tracker/"{{ if hasPrefix $.RelPermalink "/cert-tracker/" }} class="nav-active"{{ end }}>Cert Study Guides</a>
+                <a href="/roi-calculator/"{{ if hasPrefix $.RelPermalink "/roi-calculator/" }} class="nav-active"{{ end }}>ROI Calculator</a>
               </div>
             </div>
-            <div class="mega-col">
-              <button class="mega-label" style="--mega-accent:#38BDF8" aria-expanded="false">Compare & Plan <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/ai-mapper/"{{ if hasPrefix $.RelPermalink "/ai-mapper/" }} aria-current="page" class="nav-active"{{ end }}>AI Service Mapper</a>
-                <a href="/ai-showdown/"{{ if hasPrefix $.RelPermalink "/ai-showdown/" }} aria-current="page" class="nav-active"{{ end }}>AI SaaS Showdown</a>
-                <a href="/ai-cost-calculator/"{{ if hasPrefix $.RelPermalink "/ai-cost-calculator/" }} aria-current="page" class="nav-active"{{ end }}>AI Cost Calculator</a>
-                <a href="/licensing/"{{ if hasPrefix $.RelPermalink "/licensing/" }} aria-current="page" class="nav-active"{{ end }}>Licensing Simplifier</a>
-                <a href="/migration-planner/"{{ if hasPrefix $.RelPermalink "/migration-planner/" }} aria-current="page" class="nav-active"{{ end }}>Migration Planner</a>
-              </div>
-              <button class="mega-label" style="--mega-accent:#7C3AED" aria-expanded="false">IT Admin <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/ca-builder/"{{ if hasPrefix $.RelPermalink "/ca-builder/" }} aria-current="page" class="nav-active"{{ end }}>CA Policy Builder</a>
-                <a href="/purview-starter/"{{ if hasPrefix $.RelPermalink "/purview-starter/" }} aria-current="page" class="nav-active"{{ end }}>Purview Starter Kit</a>
-                <a href="/security-toolkit/"{{ if hasPrefix $.RelPermalink "/security-toolkit/" }} aria-current="page" class="nav-active"{{ end }}>Security Toolkit</a>
-                <a href="/ps-builder/"{{ if hasPrefix $.RelPermalink "/ps-builder/" }} aria-current="page" class="nav-active"{{ end }}>PowerShell Builder</a>
-                <a href="/agent-365-planner/"{{ if hasPrefix $.RelPermalink "/agent-365-planner/" }} aria-current="page" class="nav-active"{{ end }}>Agent 365 Planner</a>
-                <a href="/admin-comms/"{{ if hasPrefix $.RelPermalink "/admin-comms/" }} aria-current="page" class="nav-active"{{ end }}>IT Admin Comms</a>
-                <a href="/compliance-passport/"{{ if hasPrefix $.RelPermalink "/compliance-passport/" }} aria-current="page" class="nav-active"{{ end }}>Compliance Passport</a>
-                <a href="/phishing-test/"{{ if hasPrefix $.RelPermalink "/phishing-test/" }} aria-current="page" class="nav-active"{{ end }}>Phishing Simulator</a>
-              </div>
-              <button class="mega-label" style="--mega-accent:#14B8A6" aria-expanded="false">Utilities <span class="mega-chevron">▸</span></button>
-              <div class="mega-group">
-                <a href="/world-clock/"{{ if hasPrefix $.RelPermalink "/world-clock/" }} aria-current="page" class="nav-active"{{ end }}>Meeting Planner</a>
-                <a href="/qr-generator/"{{ if hasPrefix $.RelPermalink "/qr-generator/" }} aria-current="page" class="nav-active"{{ end }}>QR Code Generator</a>
-                <a href="/wifi-qr/"{{ if hasPrefix $.RelPermalink "/wifi-qr/" }} aria-current="page" class="nav-active"{{ end }}>WiFi QR Cards</a>
-                <a href="/password-generator/"{{ if hasPrefix $.RelPermalink "/password-generator/" }} aria-current="page" class="nav-active"{{ end }}>Password Generator</a>
-                <a href="/image-compressor/"{{ if hasPrefix $.RelPermalink "/image-compressor/" }} aria-current="page" class="nav-active"{{ end }}>Image Compressor</a>
-                <a href="/typing-test/"{{ if hasPrefix $.RelPermalink "/typing-test/" }} aria-current="page" class="nav-active"{{ end }}>Typing Speed Test</a>
-                <a href="/countdown/"{{ if hasPrefix $.RelPermalink "/countdown/" }} aria-current="page" class="nav-active"{{ end }}>Countdown Timer</a>
-                <a href="/color-palette/"{{ if hasPrefix $.RelPermalink "/color-palette/" }} aria-current="page" class="nav-active"{{ end }}>Colour Palette</a>
-                <a href="/pomodoro/"{{ if hasPrefix $.RelPermalink "/pomodoro/" }} aria-current="page" class="nav-active"{{ end }}>Pomodoro Timer</a>
-                <a href="/admin-bingo/"{{ if hasPrefix $.RelPermalink "/admin-bingo/" }} aria-current="page" class="nav-active"{{ end }}>IT Admin Bingo</a>
-                <a href="/acronym-battle/"{{ if hasPrefix $.RelPermalink "/acronym-battle/" }} aria-current="page" class="nav-active"{{ end }}>Acronym Battle</a>
-                <a href="/site-analytics/"{{ if hasPrefix $.RelPermalink "/site-analytics/" }} aria-current="page" class="nav-active"{{ end }}>Site Analytics</a>
+            <div class="mega-smart-section">
+              <div class="mega-smart-label">Categories</div>
+              <div class="mega-smart-cats">
+                <a href="/free-tools/#prompts" class="mega-smart-cat" style="--cat-color:#A78BFA">Prompts & Learning <span>4</span></a>
+                <a href="/free-tools/#copilot" class="mega-smart-cat" style="--cat-color:#3B82F6">Copilot <span>3</span></a>
+                <a href="/free-tools/#informed" class="mega-smart-cat" style="--cat-color:#E5A00D">Stay Informed <span>6</span></a>
+                <a href="/free-tools/#compare" class="mega-smart-cat" style="--cat-color:#38BDF8">Compare & Plan <span>5</span></a>
+                <a href="/free-tools/#admin" class="mega-smart-cat" style="--cat-color:#7C3AED">IT Admin <span>10</span></a>
+                <a href="/free-tools/#utilities" class="mega-smart-cat" style="--cat-color:#14B8A6">Utilities & Fun <span>12</span></a>
               </div>
             </div>
           </div>
-          <div class="mega-footer">
-            <a href="/feedback/"{{ if hasPrefix $.RelPermalink "/feedback/" }} aria-current="page" class="nav-active"{{ end }}>Feedback</a>
+          <div class="mega-smart-footer">
+            <a href="/free-tools/"><strong>Browse all {{ len (where (index hugo.Data "toolkit_nav").tools "is_tool" true) }} tools →</strong></a>
+            <a href="/feedback/">Feedback</a>
           </div>
         </div>
       </li>

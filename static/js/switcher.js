@@ -308,3 +308,113 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 });
+
+// ── Smart Mega Menu: Search + Recent Tools ──────────────────────────────
+(function(){
+  const TOOLS = [
+    {name:'Prompt Library',url:'/prompts/'},
+    {name:'Prompt Polisher',url:'/prompt-polisher/'},
+    {name:'Prompt Guide',url:'/prompt-guide/'},
+    {name:'Copilot Readiness',url:'/copilot-readiness/'},
+    {name:'Copilot Features',url:'/copilot-matrix/'},
+    {name:'ROI Calculator',url:'/roi-calculator/'},
+    {name:'AI News',url:'/ai-news/'},
+    {name:'M365 Roadmap',url:'/m365-roadmap/'},
+    {name:'Service Health',url:'/service-health/'},
+    {name:'Deprecation Timeline',url:'/deprecation-timeline/'},
+    {name:'Feature Roulette',url:'/feature-roulette/'},
+    {name:'Rename Tracker',url:'/rename-tracker/'},
+    {name:'AI Service Mapper',url:'/ai-mapper/'},
+    {name:'AI SaaS Showdown',url:'/ai-showdown/'},
+    {name:'AI Cost Calculator',url:'/ai-cost-calculator/'},
+    {name:'Licensing Simplifier',url:'/licensing/'},
+    {name:'Migration Planner',url:'/migration-planner/'},
+    {name:'CA Policy Builder',url:'/ca-builder/'},
+    {name:'Purview Starter Kit',url:'/purview-starter/'},
+    {name:'Security Toolkit',url:'/security-toolkit/'},
+    {name:'PowerShell Builder',url:'/ps-builder/'},
+    {name:'Agent 365 Planner',url:'/agent-365-planner/'},
+    {name:'IT Admin Comms',url:'/admin-comms/'},
+    {name:'Compliance Passport',url:'/compliance-passport/'},
+    {name:'Phishing Simulator',url:'/phishing-test/'},
+    {name:'Cert Study Guides',url:'/cert-tracker/'},
+    {name:'Meeting Planner',url:'/world-clock/'},
+    {name:'QR Code Generator',url:'/qr-generator/'},
+    {name:'WiFi QR Cards',url:'/wifi-qr/'},
+    {name:'Password Generator',url:'/password-generator/'},
+    {name:'Image Compressor',url:'/image-compressor/'},
+    {name:'Typing Speed Test',url:'/typing-test/'},
+    {name:'Countdown Timer',url:'/countdown/'},
+    {name:'Colour Palette',url:'/color-palette/'},
+    {name:'Pomodoro Timer',url:'/pomodoro/'},
+    {name:'IT Admin Bingo',url:'/admin-bingo/'},
+    {name:'Acronym Battle',url:'/acronym-battle/'},
+    {name:'Site Analytics',url:'/site-analytics/'}
+  ];
+  const RECENT_KEY = 'nav_recent_tools';
+  const MAX_RECENT = 5;
+
+  function getRecent() {
+    try { return JSON.parse(localStorage.getItem(RECENT_KEY)) || []; } catch { return []; }
+  }
+  function saveRecent(url) {
+    try {
+      let r = getRecent().filter(u => u !== url);
+      r.unshift(url);
+      if (r.length > MAX_RECENT) r = r.slice(0, MAX_RECENT);
+      localStorage.setItem(RECENT_KEY, JSON.stringify(r));
+    } catch {}
+  }
+
+  // Track current tool visit
+  const path = window.location.pathname;
+  if (TOOLS.some(t => t.url === path)) saveRecent(path);
+
+  // Render recent
+  function renderRecent() {
+    const recent = getRecent();
+    const section = document.getElementById('mega-recent-section');
+    const list = document.getElementById('mega-recent-list');
+    if (!section || !list || recent.length === 0) return;
+    section.style.display = 'block';
+    list.innerHTML = recent.map(url => {
+      const tool = TOOLS.find(t => t.url === url);
+      if (!tool) return '';
+      return '<a href="' + url + '">' + tool.name + '</a>';
+    }).join('');
+  }
+
+  // Search
+  function initSearch() {
+    const input = document.getElementById('mega-tool-search');
+    const results = document.getElementById('mega-search-results');
+    const body = document.getElementById('mega-smart-body');
+    if (!input || !results || !body) return;
+
+    let debounce;
+    input.addEventListener('input', function() {
+      clearTimeout(debounce);
+      debounce = setTimeout(function() {
+        const q = input.value.toLowerCase().trim();
+        if (!q) {
+          results.style.display = 'none';
+          body.style.display = 'block';
+          return;
+        }
+        const matches = TOOLS.filter(t => t.name.toLowerCase().includes(q));
+        body.style.display = 'none';
+        results.style.display = 'block';
+        if (matches.length === 0) {
+          results.innerHTML = '<div class="mega-search-empty">No tools found</div>';
+        } else {
+          results.innerHTML = matches.map(t => '<a href="' + t.url + '">' + t.name + '</a>').join('');
+        }
+      }, 150);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    renderRecent();
+    initSearch();
+  });
+})();
