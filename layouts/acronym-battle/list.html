@@ -14,26 +14,61 @@
 
   <!-- PLAY TAB -->
   <div class="acro-panel active" id="panel-play">
-    <div class="acro-mode-bar">
-      <button class="acro-mode active" data-mode="quick">Quick 10</button>
-      <button class="acro-mode" data-mode="marathon">Marathon</button>
-      <button class="acro-mode" data-mode="daily">Daily 10</button>
-      <button class="acro-mode" data-mode="learn">Learn</button>
-      <select class="acro-cat-select" id="cat-filter" aria-label="Filter by category">
-        <option value="all">All Categories</option>
-        <option value="security">Security</option>
-        <option value="networking">Networking</option>
-        <option value="m365">M365</option>
-        <option value="azure">Azure</option>
-        <option value="ai">AI</option>
-        <option value="general">General</option>
-      </select>
-    </div>
+    <!-- ─── LOBBY ─── -->
+    <div class="acro-lobby" id="acro-lobby">
+      <div class="acro-ticker" aria-hidden="true">
+        <div class="acro-ticker-track" id="ticker-track"></div>
+      </div>
 
-    <!-- Pre-game -->
-    <div class="acro-start" id="acro-start">
-      <p class="acro-start-text">Test your IT acronym knowledge. Pick a mode and hit Start!</p>
-      <button class="acro-btn acro-btn-primary" id="btn-start">Start Game</button>
+      <div class="acro-lobby-stats" id="lobby-stats" style="display:none">
+        <div class="acro-lstat"><span class="acro-lstat-num" id="ls-played">0</span><span class="acro-lstat-label">Games</span></div>
+        <div class="acro-lstat"><span class="acro-lstat-num" id="ls-best">0</span><span class="acro-lstat-label">Best Score</span></div>
+        <div class="acro-lstat"><span class="acro-lstat-num" id="ls-streak">0</span><span class="acro-lstat-label">Best Streak</span></div>
+        <div class="acro-lstat"><span class="acro-lstat-num" id="ls-acc">0%</span><span class="acro-lstat-label">Accuracy</span></div>
+      </div>
+
+      <div class="acro-modes-grid">
+        <button class="acro-mode-card" data-mode="quick">
+          <div class="acro-mc-icon">⚡</div>
+          <div class="acro-mc-title">Quick 10</div>
+          <div class="acro-mc-desc">10 random acronyms — fast and fun</div>
+          <div class="acro-mc-time">~2 min</div>
+        </button>
+        <button class="acro-mode-card" data-mode="marathon">
+          <div class="acro-mc-icon">🏃</div>
+          <div class="acro-mc-title">Marathon</div>
+          <div class="acro-mc-desc">Every acronym in the database</div>
+          <div class="acro-mc-time">~15 min</div>
+        </button>
+        <button class="acro-mode-card acro-mc-featured" data-mode="daily">
+          <div class="acro-mc-badge">Today</div>
+          <div class="acro-mc-icon">📅</div>
+          <div class="acro-mc-title">Daily Challenge</div>
+          <div class="acro-mc-desc">Same 10 for everyone today</div>
+          <div class="acro-mc-time">~2 min</div>
+        </button>
+        <button class="acro-mode-card" data-mode="learn">
+          <div class="acro-mc-icon">📚</div>
+          <div class="acro-mc-title">Learn Mode</div>
+          <div class="acro-mc-desc">Browse answers at your own pace</div>
+          <div class="acro-mc-time">No timer</div>
+        </button>
+      </div>
+
+      <div class="acro-lobby-filter">
+        <label for="cat-filter" class="acro-lobby-filter-label">Category</label>
+        <select class="acro-cat-select" id="cat-filter" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+          <option value="security">Security</option>
+          <option value="networking">Networking</option>
+          <option value="m365">M365</option>
+          <option value="azure">Azure</option>
+          <option value="ai">AI</option>
+          <option value="general">General</option>
+        </select>
+      </div>
+
+      <div class="acro-lobby-count" id="lobby-count"></div>
     </div>
 
     <!-- In-game -->

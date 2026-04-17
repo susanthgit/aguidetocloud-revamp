@@ -83,7 +83,7 @@
     const count = mode === 'marathon' ? shuffled.length : QUICK_COUNT;
     questions = shuffled.slice(0, Math.min(count, shuffled.length));
 
-    document.getElementById('acro-start').style.display = 'none';
+    document.getElementById('acro-lobby').style.display = 'none';
     document.getElementById('acro-results').style.display = 'none';
     document.getElementById('acro-game').style.display = 'block';
     document.getElementById('hud-progress-wrap').style.display = mode === 'marathon' ? 'none' : '';
@@ -373,28 +373,68 @@
     });
   }
 
-  // ── Mode switching ───────────────────────────────────────────────────────
-  function initModes() {
-    document.querySelectorAll('.acro-mode').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.acro-mode').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        mode = btn.dataset.mode;
-      });
-    });
+  // ── Lobby rendering ──────────────────────────────────────────────────────
+  function renderTicker() {
+    const track = document.getElementById('ticker-track');
+    if (!track || !ALL.length) return;
+    const sample = shuffle(ALL).slice(0, 30).map(a => a.acronym);
+    const html = sample.map(s => '<span>' + esc(s) + '</span>').join('');
+    track.innerHTML = html + html;
+  }
+
+  function renderLobbyStats() {
+    const el = document.getElementById('lobby-stats');
+    if (!el) return;
+    if (stats.played > 0) {
+      el.style.display = '';
+      document.getElementById('ls-played').textContent = stats.played;
+      document.getElementById('ls-best').textContent = stats.bestScore;
+      document.getElementById('ls-streak').textContent = stats.bestStreak;
+      const acc = stats.totalAnswered > 0 ? Math.round((stats.totalCorrect / stats.totalAnswered) * 100) : 0;
+      document.getElementById('ls-acc').textContent = acc + '%';
+    } else {
+      el.style.display = 'none';
+    }
+  }
+
+  function updateLobbyCount() {
+    const el = document.getElementById('lobby-count');
+    if (!el) return;
+    const filtered = getFiltered();
+    const cat = document.getElementById('cat-filter').value;
+    if (cat === 'all') {
+      const cats = new Set(ALL.map(a => a.category));
+      el.textContent = ALL.length + ' acronyms \u00b7 ' + cats.size + ' categories';
+    } else {
+      el.textContent = filtered.length + ' ' + cat + ' acronyms';
+    }
   }
 
   // ── Init ─────────────────────────────────────────────────────────────────
   function init() {
     initTabs();
-    initModes();
     renderStats();
+    renderTicker();
+    renderLobbyStats();
+    updateLobbyCount();
 
-    document.getElementById('btn-start').addEventListener('click', startGame);
+    // Mode card click → set mode + start game
+    document.querySelectorAll('.acro-mode-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        mode = card.dataset.mode;
+        startGame();
+      });
+    });
+
+    // Category change → update count
+    var catEl = document.getElementById('cat-filter');
+    if (catEl) catEl.addEventListener('change', updateLobbyCount);
+
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
-    document.getElementById('btn-play-again').addEventListener('click', () => {
+    document.getElementById('btn-play-again').addEventListener('click', function () {
       document.getElementById('acro-results').style.display = 'none';
-      document.getElementById('acro-start').style.display = 'block';
+      document.getElementById('acro-lobby').style.display = 'block';
+      renderLobbyStats();
     });
     document.getElementById('btn-share-score').addEventListener('click', shareScore);
     document.getElementById('btn-share-card').addEventListener('click', generateShareCard);
