@@ -3,10 +3,17 @@
 
 {{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#64748B") }}
 
+{{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
+
 <div class="siteana-page">
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
+    <div class="siteana-stat siteana-heartbeat-stat" id="sa-live-stat" style="display:none">
+      <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
+      <span class="siteana-stat-num" id="sa-live-count">0</span>
+      <span class="siteana-stat-label">Live Now</span>
+    </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num" id="sa-total-views">—</span>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
@@ -27,7 +34,6 @@
       <span class="siteana-stat-label">Today</span>
     </div>
     <div class="siteana-stat">
-      {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
       <span class="siteana-stat-num">{{ $tc }}</span>
       <span class="siteana-stat-label">Free Tools</span>
     </div>
@@ -37,16 +43,30 @@
   <div class="siteana-tabs" role="tablist">
     <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="pages">Pages</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="insights">Search &amp; Insights</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
-  <!-- Tab: Overview -->
+  <!-- ═══════════ Tab: Overview ═══════════ -->
   <div class="siteana-panel active" id="panel-overview" role="tabpanel">
+
+    <!-- Live Pulse -->
+    <div class="siteana-card siteana-live-card" id="sa-live-card" style="display:none">
+      <div class="siteana-live-header">
+        <div class="siteana-pulse-wrap"><span class="siteana-pulse-dot"></span></div>
+        <h3 class="siteana-card-title" style="margin:0">Live Pulse</h3>
+        <span class="siteana-live-badge" id="sa-live-badge">0 browsing now</span>
+      </div>
+      <div id="sa-live-pages" class="siteana-live-pages"></div>
+    </div>
+
+    <!-- Traffic Trend -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
       <canvas id="sa-trend-chart" height="220"></canvas>
     </div>
+
+    <!-- Countries + Sources -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
         <h3 class="siteana-card-title">Top Countries</h3>
@@ -57,6 +77,8 @@
         <div id="sa-sources"></div>
       </div>
     </div>
+
+    <!-- Devices + Transparency -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
         <h3 class="siteana-card-title">Devices</h3>
@@ -68,25 +90,122 @@
         <p>This data is real and unfiltered. We believe in building in public.</p>
       </div>
     </div>
+
+    <!-- Your Journey (localStorage personalisation) -->
+    <div class="siteana-card siteana-journey-card" id="sa-journey">
+      <div class="siteana-journey-inner" id="sa-journey-body">
+        <span class="siteana-journey-wave">👋</span>
+        <p id="sa-journey-text">Welcome! You're one of our visitors this month.</p>
+        <p class="siteana-journey-privacy">This info lives only in <strong>your browser</strong>. We can't see it. <a href="#" id="sa-journey-reset" style="color:#64748B;font-size:0.78rem">Reset</a></p>
+      </div>
+    </div>
+
+    <!-- Built in Public -->
+    <div class="siteana-card siteana-bip-card">
+      <div class="siteana-bip-header">
+        <h3 class="siteana-card-title" style="margin:0">Built in Public</h3>
+        <span class="siteana-bip-badge">The story</span>
+      </div>
+      <p class="siteana-bip-lead">This entire site — {{ $tc }} tools, 5 automated pipelines, 52 cert guides — was built by <strong>one IT pro with zero coding background</strong>, using AI assistants (GitHub Copilot CLI + Claude). In 18 days.</p>
+      <div class="siteana-bip-stack">
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Framework</span>
+          <span class="siteana-bip-value">Hugo (static site generator)</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Hosting</span>
+          <span class="siteana-bip-value">Cloudflare Pages</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Tools engine</span>
+          <span class="siteana-bip-value">100% client-side JavaScript</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Analytics</span>
+          <span class="siteana-bip-value">Google Analytics 4</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Pipelines</span>
+          <span class="siteana-bip-value">GitHub Actions (5 repos)</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row">
+          <span class="siteana-bip-label">Search</span>
+          <span class="siteana-bip-value">Pagefind (static index)</span>
+          <span class="siteana-bip-cost">Free</span>
+        </div>
+        <div class="siteana-bip-row siteana-bip-total">
+          <span class="siteana-bip-label">Infrastructure cost</span>
+          <span class="siteana-bip-value"></span>
+          <span class="siteana-bip-cost">$0/month</span>
+        </div>
+      </div>
+      <p class="siteana-bip-footnote">* Excludes domain registration (~$12/yr) and optional AI subscriptions. All tools run in your browser — no server-side processing.</p>
+      <a href="/prompt-guide/" class="siteana-bip-cta">Want to build something? Start with our Prompt Guide →</a>
+    </div>
+
+    <!-- Growth Milestones -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Growth Milestones</h3>
+      <div class="siteana-milestones" id="sa-milestones">
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Mar 2026</strong><span>Site launched with 13 free tools</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 7</strong><span>AI News pipeline goes live (4× daily)</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 10</strong><span>M365 Roadmap Tracker launched</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 12</strong><span>20 tools milestone</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 13</strong><span>Community tools launched (QR, WiFi, Timer, etc.)</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 14</strong><span>Raycast-style homepage redesign</span></div></div>
+        <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 17</strong><span>{{ $tc }} tools — biggest toolkit on the web for IT pros</span></div></div>
+        <div class="siteana-ms-item siteana-ms-next"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Next</strong><span id="sa-ms-next">Loading first user milestone...</span></div></div>
+      </div>
+    </div>
   </div>
 
-  <!-- Tab: Tools -->
+  <!-- ═══════════ Tab: Tools ═══════════ -->
   <div class="siteana-panel" id="panel-tools" role="tabpanel">
+
+    <!-- Featured Tool of the Day -->
+    <div class="siteana-card siteana-featured-card" id="sa-featured">
+      <div class="siteana-featured-badge">Tool of the Day</div>
+      <div class="siteana-featured-body" id="sa-featured-body"></div>
+    </div>
+
+    <!-- Rising Stars + Hidden Gems -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Rising Stars</h3>
+        <p class="siteana-hint">Biggest week-over-week growth</p>
+        <div id="sa-rising"></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Hidden Gems</h3>
+        <p class="siteana-hint">Great tools you might have missed</p>
+        <div id="sa-gems"></div>
+      </div>
+    </div>
+
+    <!-- Full Leaderboard -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Tool Popularity</h3>
       <p class="siteana-hint">All {{ $tc }} free tools ranked by page views</p>
       <div id="sa-leaderboard"></div>
     </div>
+
+    <!-- Activity Doughnut -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Activity Breakdown</h3>
       <canvas id="sa-activity-chart" height="220"></canvas>
     </div>
+
+    <!-- Content Overview -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Content Overview</h3>
       <div class="siteana-content-stats">
         <div class="siteana-content-item">
-          {{ $navTools2 := (index hugo.Data "toolkit_nav").tools }}{{ $tc2 := 0 }}{{ range $navTools2 }}{{ if .is_tool }}{{ $tc2 = add $tc2 1 }}{{ end }}{{ end }}
-          <span class="siteana-content-num">{{ $tc2 }}</span>
+          <span class="siteana-content-num">{{ $tc }}</span>
           <span>Free Tools</span>
         </div>
         <div class="siteana-content-item">
@@ -103,23 +222,97 @@
         </div>
       </div>
     </div>
+
+    <!-- Community Impact -->
+    <div class="siteana-card siteana-impact-card">
+      <h3 class="siteana-card-title">Estimated Community Impact</h3>
+      <p class="siteana-hint">Rough estimates based on typical usage patterns — not exact numbers</p>
+      <div class="siteana-impact-grid" id="sa-impact"></div>
+    </div>
   </div>
 
-  <!-- Tab: Pages -->
-  <div class="siteana-panel" id="panel-pages" role="tabpanel">
+  <!-- ═══════════ Tab: Search & Insights ═══════════ -->
+  <div class="siteana-panel" id="panel-insights" role="tabpanel">
+
+    <!-- Search Intelligence -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">What People Search For</h3>
+      <p class="siteana-hint">Top Google queries that bring visitors here (Google Search Console data, ~48h delay)</p>
+      <div id="sa-search-queries"></div>
+    </div>
+
+    <!-- Top Pages -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Top Pages</h3>
       <p class="siteana-hint">Most visited pages across the entire site</p>
       <div id="sa-top-pages"></div>
     </div>
+
+    <!-- Top Blog Posts -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Top Blog Posts</h3>
       <p class="siteana-hint">Most read blog articles</p>
       <div id="sa-blog-pages"></div>
     </div>
+
+    <!-- Content Freshness Radar -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Content Freshness</h3>
+      <p class="siteana-hint">How recently each content area was updated</p>
+      <div class="siteana-freshness" id="sa-freshness">
+        {{ $sections := slice
+          (dict "name" "AI News" "icon" "📰" "freq" "4× daily" "color" "#ff66ff")
+          (dict "name" "M365 Roadmap" "icon" "🗺️" "freq" "Daily" "color" "#E5A00D")
+          (dict "name" "Service Health" "icon" "🩺" "freq" "Every 2 hours" "color" "#EA580C")
+          (dict "name" "Cert Study Guides" "icon" "📚" "freq" "Weekly" "color" "#10B981")
+          (dict "name" "Deprecation Timeline" "icon" "⏰" "freq" "Daily" "color" "#DC2626")
+          (dict "name" "Blog Posts" "icon" "📝" "freq" "As written" "color" "#0EA5E9")
+          (dict "name" "Licensing Data" "icon" "💳" "freq" "Bi-weekly check" "color" "#F43F5E")
+          (dict "name" "Copilot Matrix" "icon" "📊" "freq" "Bi-weekly check" "color" "#60A5FA")
+        }}
+        {{ range $sections }}
+        <div class="siteana-fresh-item">
+          <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
+          <span class="siteana-fresh-name">{{ .name }}</span>
+          <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Fun Facts -->
+    <div class="siteana-card siteana-funfacts-card">
+      <h3 class="siteana-card-title">Fun Facts</h3>
+      <div class="siteana-funfacts" id="sa-funfacts"></div>
+    </div>
+
+    <!-- Open Data -->
+    <div class="siteana-card siteana-opendata-card">
+      <h3 class="siteana-card-title">Open Data</h3>
+      <p class="siteana-opendata-lead">All this data is free and open. Build something with it.</p>
+      <div class="siteana-opendata-api">
+        <code class="siteana-opendata-code">curl https://www.aguidetocloud.com/api/stats?range=30d</code>
+        <button class="siteana-opendata-copy" id="sa-copy-api" aria-label="Copy API URL">Copy</button>
+      </div>
+      <div class="siteana-opendata-endpoints">
+        <div class="siteana-opendata-ep">
+          <strong>Main stats</strong>
+          <span>/api/stats?range=30d</span>
+        </div>
+        <div class="siteana-opendata-ep">
+          <strong>Realtime</strong>
+          <span>/api/stats?realtime=1</span>
+        </div>
+        <div class="siteana-opendata-ep">
+          <strong>Custom range</strong>
+          <span>/api/stats?range=custom&amp;start=2026-04-01&amp;end=2026-04-17</span>
+        </div>
+      </div>
+      <p class="siteana-opendata-note">Best-effort public API. Response cached for 5 minutes. Data refreshes continuously from GA4 + Google Search Console.</p>
+    </div>
   </div>
 
-  <!-- Tab: FAQ -->
+  <!-- ═══════════ Tab: FAQ ═══════════ -->
   <div class="siteana-panel" id="panel-faq" role="tabpanel">
   {{ with .Params.faq }}
   <div style="max-width:800px;margin:0 auto;padding:0 1rem">
@@ -140,16 +333,17 @@
 <!-- Pagefind: hidden searchable content -->
 <div data-pagefind-body style="display:none" aria-hidden="true">
   <h1>Site Analytics — Live Usage Statistics Dashboard</h1>
-  <p>View live, transparent analytics for A Guide to Cloud and AI. See which tools are most popular, daily traffic trends, top search queries, and content statistics. All data collected anonymously with no cookies or personal data.</p>
+  <p>View live, transparent analytics for A Guide to Cloud and AI. See which tools are most popular, daily traffic trends, top search queries, content freshness, and fun facts. All data collected anonymously with no cookies or personal data.</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous" defer></script>
 <script>
 (function() {
   'use strict';
   var API = '/api/stats';
-  var _trendChart = null;
-  var _activityChart = null;
+  var _trendChart = null, _activityChart = null;
+  var _realtimeTimer = null;
+  var _cachedData = null;
 
   var TOOLS = {
     'ai-news':'AI News','m365-roadmap':'M365 Roadmap','prompt-library':'Prompt Library',
@@ -161,7 +355,13 @@
     'ca-builder':'CA Policy Builder','meeting-planner':'Meeting Planner','feedback':'Community Feedback',
     'site-analytics':'Site Analytics','qr-generator':'QR Generator','wifi-qr':'WiFi QR Cards',
     'password-generator':'Password Generator','image-compressor':'Image Compressor',
-    'typing-test':'Typing Speed Test','countdown':'Countdown Timer','color-palette':'Colour Palette','pomodoro':'Pomodoro Timer'
+    'typing-test':'Typing Speed Test','countdown':'Countdown Timer','color-palette':'Colour Palette',
+    'pomodoro':'Pomodoro Timer','admin-bingo':'IT Admin Bingo','acronym-battle':'Tech Acronym Battle',
+    'feature-roulette':'Feature Roulette','rename-tracker':'M365 Rename Tracker',
+    'admin-comms':'IT Admin Comms','compliance-passport':'Compliance Passport',
+    'phishing-test':'Phishing Simulator','security-toolkit':'Security Toolkit',
+    'ai-cost-calculator':'AI Cost Calculator','agent-365-planner':'Agent 365 Planner',
+    'purview-starter':'Purview Starter Kit','world-clock':'Meeting Planner'
   };
   var COLORS = {
     'ai-news':'#ff66ff','m365-roadmap':'#E5A00D','prompt-library':'#A78BFA','licensing':'#F43F5E',
@@ -172,13 +372,79 @@
     'meeting-planner':'#0EA5E9','feedback':'#FBBF24','site-analytics':'#64748B',
     'qr-generator':'#EC4899','wifi-qr':'#22D3EE','password-generator':'#D946EF',
     'image-compressor':'#818CF8','typing-test':'#34D399','countdown':'#FB923C',
-    'color-palette':'#F472B6','pomodoro':'#EF4444'
+    'color-palette':'#F472B6','pomodoro':'#EF4444','admin-bingo':'#E91E8E',
+    'acronym-battle':'#9B59B6','feature-roulette':'#F39C12','rename-tracker':'#B07D4F',
+    'admin-comms':'#5B9BD5','compliance-passport':'#2ECC71','phishing-test':'#E74C3C',
+    'security-toolkit':'#41A235','ai-cost-calculator':'#66C559','agent-365-planner':'#00A4EF',
+    'purview-starter':'#84CC16','world-clock':'#0EA5E9'
+  };
+  var TOOL_URLS = {
+    'ai-news':'/ai-news/','m365-roadmap':'/m365-roadmap/','prompt-library':'/prompts/',
+    'licensing':'/licensing/','prompt-polisher':'/prompt-polisher/','copilot-readiness':'/copilot-readiness/',
+    'copilot-matrix':'/copilot-matrix/','deprecation-timeline':'/deprecation-timeline/',
+    'service-health':'/service-health/','cert-tracker':'/cert-tracker/','roi-calculator':'/roi-calculator/',
+    'ai-mapper':'/ai-mapper/','ai-showdown':'/ai-showdown/','ps-builder':'/ps-builder/',
+    'migration-planner':'/migration-planner/','prompt-guide':'/prompt-guide/',
+    'ca-builder':'/ca-builder/','meeting-planner':'/world-clock/','feedback':'/feedback/',
+    'site-analytics':'/site-analytics/','qr-generator':'/qr-generator/','wifi-qr':'/wifi-qr/',
+    'password-generator':'/password-generator/','image-compressor':'/image-compressor/',
+    'typing-test':'/typing-test/','countdown':'/countdown/','color-palette':'/color-palette/',
+    'pomodoro':'/pomodoro/','admin-bingo':'/admin-bingo/','acronym-battle':'/acronym-battle/',
+    'feature-roulette':'/feature-roulette/','rename-tracker':'/rename-tracker/',
+    'admin-comms':'/admin-comms/','compliance-passport':'/compliance-passport/',
+    'phishing-test':'/phishing-test/','security-toolkit':'/security-toolkit/',
+    'ai-cost-calculator':'/ai-cost-calculator/','agent-365-planner':'/agent-365-planner/',
+    'purview-starter':'/purview-starter/','world-clock':'/world-clock/'
+  };
+  var TOOL_TAGLINES = {
+    'ai-news':'Your AI news briefing, 4× daily — zero noise.',
+    'm365-roadmap':'Every M365 feature in flight, one dashboard.',
+    'prompt-library':'84 battle-tested prompts, ready to copy.',
+    'licensing':'M365 licensing made simple — 59 plans compared.',
+    'prompt-polisher':'Paste a bad prompt, get a great one.',
+    'copilot-readiness':'30-question Copilot readiness score in 5 min.',
+    'copilot-matrix':'Every Copilot feature, every tier, one table.',
+    'deprecation-timeline':'Never miss a retirement deadline again.',
+    'service-health':'M365 service outages — tracked, timed, explained.',
+    'cert-tracker':'52 Microsoft cert study guides, always current.',
+    'roi-calculator':'Prove Copilot ROI to your CFO in 2 clicks.',
+    'ai-mapper':'25 AI services mapped by use case + cost.',
+    'ai-showdown':'10 AI subscriptions compared side by side.',
+    'ps-builder':'68 PowerShell recipes, zero Googling needed.',
+    'migration-planner':'Plan your M365 migration in 12 questions.',
+    'prompt-guide':'Master prompt engineering with 8 hands-on techniques.',
+    'ca-builder':'Design Conditional Access policies visually.',
+    'meeting-planner':'Find the golden hour across time zones.',
+    'qr-generator':'Full-featured QR codes — styled, batched, scanned.',
+    'wifi-qr':'Beautiful printable WiFi QR cards.',
+    'password-generator':'CSPRNG passwords — nothing leaves your browser.',
+    'image-compressor':'Compress images privately — 100% client-side.',
+    'typing-test':'Test your WPM with retro terminal vibes.',
+    'countdown':'Flip-clock countdowns for your events.',
+    'color-palette':'Generate, check, and extract colour palettes.',
+    'pomodoro':'Focus timer with ambient sounds and stats.',
+    'admin-bingo':'IT admin meeting bingo — we all know the squares.',
+    'acronym-battle':'Battle-test your tech acronym knowledge.',
+    'feature-roulette':'Spin the wheel and discover M365 features.',
+    'rename-tracker':'Every M365 rebrand since the dawn of time.',
+    'admin-comms':'IT admin email templates, ready to send.',
+    'compliance-passport':'Find which compliance frameworks apply to you.',
+    'phishing-test':'Can you spot the phish? Test yourself.',
+    'security-toolkit':'50-question M365 security assessment.',
+    'ai-cost-calculator':'Total AI adoption cost — licensing to governance.',
+    'agent-365-planner':'Agent 365 governance assessment + checklist.',
+    'purview-starter':'Sensitivity labels + DLP in starter kits.',
+    'feedback':'Share ideas and feedback with the community.'
   };
 
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
   function roundK(n) { if (!n || n < 100) return String(n||0); if (n<1000) return String(Math.round(n/10)*10); if (n<10000) return (n/1000).toFixed(1)+'K'; return Math.round(n/1000)+'K+'; }
 
-  // Tabs
+  // Seeded random for Tool of the Day (mulberry32)
+  function mulberry32(a) { return function() { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function todaySeed() { var d = new Date(); return d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate(); }
+
+  // ── Tabs ──
   document.querySelectorAll('.siteana-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
       document.querySelectorAll('.siteana-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
@@ -189,35 +455,179 @@
     });
   });
 
-  // Fetch and render
+  // ── Fetch main data ──
   fetch(API + '?range=30d').then(function(r) { return r.json(); }).then(render).catch(function() {});
 
+  // ── Realtime polling (visibility-gated) ──
+  function pollRealtime() {
+    fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
+      var count = d.active || 0;
+      var el = document.getElementById('sa-live-count'); if (el) el.textContent = count;
+      var badge = document.getElementById('sa-live-badge'); if (badge) badge.textContent = count + ' browsing now';
+      var stat = document.getElementById('sa-live-stat');
+      var card = document.getElementById('sa-live-card');
+      if (count > 0) { if (stat) stat.style.display = ''; if (card) card.style.display = ''; }
+      else { if (stat) stat.style.display = 'none'; if (card) card.style.display = 'none'; }
+      var pagesEl = document.getElementById('sa-live-pages');
+      if (pagesEl && d.pages && d.pages.length) {
+        pagesEl.innerHTML = d.pages.slice(0, 5).map(function(p) {
+          return '<div class="siteana-live-page"><span class="siteana-live-page-dot"></span><span>' + esc(p.page || 'Unknown') + '</span><span class="siteana-live-page-count">' + p.users + '</span></div>';
+        }).join('');
+      }
+    }).catch(function() {});
+  }
+  function startRealtime() { pollRealtime(); _realtimeTimer = setInterval(pollRealtime, 60000); }
+  function stopRealtime() { if (_realtimeTimer) { clearInterval(_realtimeTimer); _realtimeTimer = null; } }
+  if (!document.hidden) startRealtime();
+  document.addEventListener('visibilitychange', function() { document.hidden ? stopRealtime() : startRealtime(); });
+
+  // ── Main render ──
   function render(data) {
-    var ga4 = data.ga4;
-    if (!ga4) return;
+    _cachedData = data;
+    var ga4 = data.ga4; if (!ga4) return;
     var el;
     el = document.getElementById('sa-total-views'); if (el) el.textContent = roundK(ga4.totals.views);
     el = document.getElementById('sa-total-users'); if (el) el.textContent = roundK(ga4.totals.users);
     el = document.getElementById('sa-total-sessions'); if (el) el.textContent = roundK(ga4.totals.sessions);
     el = document.getElementById('sa-today-views'); if (el) el.textContent = roundK(ga4.today.views);
-    if (ga4.wow && ga4.wow.change) { wow('sa-wow-views', ga4.wow.change.views); wow('sa-wow-users', ga4.wow.change.users); wow('sa-wow-sessions', ga4.wow.change.sessions); }
+    if (ga4.wow && ga4.wow.change) { setWow('sa-wow-views', ga4.wow.change.views); setWow('sa-wow-users', ga4.wow.change.users); setWow('sa-wow-sessions', ga4.wow.change.sessions); }
     if (ga4.trend) renderTrend(ga4.trend);
-    if (ga4.leaderboard) renderLeaderboard(ga4.leaderboard, ga4.tool_trends);
-    if (ga4.leaderboard) renderActivity(ga4.leaderboard);
-    renderList('sa-countries', ga4.countries, 'country', 'users');
-    renderList('sa-sources', ga4.sources, 'source', 'sessions');
-    renderList('sa-devices', ga4.devices, 'device', 'users');
+    if (ga4.leaderboard) { renderLeaderboard(ga4.leaderboard, ga4.tool_trends); renderActivity(ga4.leaderboard); renderFeatured(ga4.leaderboard); renderRisingStars(ga4.leaderboard, ga4.tool_trends); renderHiddenGems(ga4.leaderboard); renderMilestoneNext(ga4.totals); renderImpact(ga4.leaderboard, ga4.totals); }
+    renderList('sa-countries', ga4.countries, 'country', 'users', true);
+    renderList('sa-sources', ga4.sources, 'source', 'sessions', false);
+    renderList('sa-devices', ga4.devices, 'device', 'users', false);
     if (ga4.top_pages) renderPages('sa-top-pages', ga4.top_pages, 20);
     if (ga4.blog_pages) renderPages('sa-blog-pages', ga4.blog_pages, 15);
+    if (data.gsc && data.gsc.queries) renderSearchQueries(data.gsc.queries);
+    renderFunFacts(ga4);
+    initJourney(ga4.totals);
   }
 
-  function wow(id, pct) {
+  function setWow(id, pct) {
     var el = document.getElementById(id); if (!el) return;
     el.className = 'siteana-wow ' + (pct > 0 ? 'siteana-wow-up' : pct < 0 ? 'siteana-wow-down' : 'siteana-wow-flat');
     el.textContent = (pct > 0 ? '\u2191' : pct < 0 ? '\u2193' : '\u2192') + ' ' + Math.abs(pct) + '%';
     el.style.display = 'inline-block';
   }
 
+  // ── Featured Tool of the Day ──
+  function renderFeatured(lb) {
+    var el = document.getElementById('sa-featured-body'); if (!el) return;
+    var eligible = lb.filter(function(t) { return t.tool !== 'site-analytics' && t.tool !== 'feedback'; });
+    if (!eligible.length) return;
+    var rng = mulberry32(todaySeed());
+    var idx = Math.floor(rng() * eligible.length);
+    var tool = eligible[idx];
+    var name = TOOLS[tool.tool] || tool.tool;
+    var color = COLORS[tool.tool] || '#64748B';
+    var url = TOOL_URLS[tool.tool] || '/';
+    var tagline = TOOL_TAGLINES[tool.tool] || '';
+    var rank = lb.indexOf(tool) + 1;
+    el.innerHTML = '<div class="siteana-featured-inner">'
+      + '<a href="' + esc(url) + '" class="siteana-featured-name" style="color:' + color + '">' + esc(name) + '</a>'
+      + '<p class="siteana-featured-tagline">' + esc(tagline) + '</p>'
+      + '<div class="siteana-featured-stats">'
+      + '<span>' + roundK(tool.views) + ' views</span>'
+      + '<span>' + roundK(tool.users) + ' users</span>'
+      + '<span>#' + rank + ' overall</span>'
+      + '</div>'
+      + '<a href="' + esc(url) + '" class="siteana-featured-cta" style="background:' + color + '">Try it now &rarr;</a>'
+      + '</div>';
+  }
+
+  // ── Rising Stars (WoW growth via sparkline trend) ──
+  function renderRisingStars(lb, trends) {
+    var el = document.getElementById('sa-rising'); if (!el || !trends) return;
+    var stars = [];
+    lb.forEach(function(t) {
+      var data = trends[t.tool];
+      if (!data || data.length < 14) return;
+      var recent = data.slice(-7).reduce(function(a,b){return a+b;},0);
+      var prior = data.slice(-14,-7).reduce(function(a,b){return a+b;},0);
+      if (prior > 10) { var growth = Math.round(((recent - prior) / prior) * 100); stars.push({ tool: t.tool, growth: growth, views: t.views }); }
+    });
+    stars.sort(function(a,b){return b.growth - a.growth;});
+    var top = stars.slice(0, 5).filter(function(s){return s.growth > 0;});
+    if (!top.length) { el.innerHTML = '<p class="siteana-hint">No rising stars this week — all tools steady!</p>'; return; }
+    el.innerHTML = top.map(function(s) {
+      var name = TOOLS[s.tool] || s.tool;
+      var color = COLORS[s.tool] || '#64748B';
+      var url = TOOL_URLS[s.tool] || '/';
+      return '<div class="siteana-rising-item">'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + ';text-decoration:none">' + esc(name) + '</a>'
+        + '<span class="siteana-rising-pct">\u2191 ' + s.growth + '%</span></div>';
+    }).join('');
+  }
+
+  // ── Hidden Gems (lower half of leaderboard with decent traffic) ──
+  function renderHiddenGems(lb) {
+    var el = document.getElementById('sa-gems'); if (!el) return;
+    var mid = Math.floor(lb.length / 2);
+    var gems = lb.slice(mid).filter(function(t) { return t.views > 0 && t.tool !== 'site-analytics'; }).slice(0, 5);
+    if (!gems.length) { el.innerHTML = '<p class="siteana-hint">All tools are getting love!</p>'; return; }
+    el.innerHTML = gems.map(function(t) {
+      var name = TOOLS[t.tool] || t.tool;
+      var color = COLORS[t.tool] || '#64748B';
+      var url = TOOL_URLS[t.tool] || '/';
+      var tagline = TOOL_TAGLINES[t.tool] || '';
+      return '<div class="siteana-gem-item">'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + ';text-decoration:none">' + esc(name) + '</a>'
+        + '<span class="siteana-gem-tagline">' + esc(tagline.length > 50 ? tagline.slice(0,50)+'...' : tagline) + '</span>'
+        + '<span class="siteana-gem-views">' + roundK(t.views) + ' views</span></div>';
+    }).join('');
+  }
+
+  // ── Search Intelligence ──
+  function renderSearchQueries(queries) {
+    var el = document.getElementById('sa-search-queries'); if (!el || !queries.length) return;
+    el.innerHTML = queries.slice(0, 20).map(function(q, i) {
+      var badge = q.position <= 3 ? '<span class="siteana-pos-badge siteana-pos-gold">#' + Math.round(q.position) + '</span>'
+        : q.position <= 10 ? '<span class="siteana-pos-badge siteana-pos-blue">#' + Math.round(q.position) + '</span>'
+        : '<span class="siteana-pos-badge">#' + Math.round(q.position) + '</span>';
+      return '<div class="siteana-search-row">'
+        + '<span class="siteana-search-rank">' + (i+1) + '</span>'
+        + '<span class="siteana-search-query">' + esc(q.query) + '</span>'
+        + badge
+        + '<span class="siteana-search-metric">' + q.clicks + ' clicks</span>'
+        + '<span class="siteana-search-metric siteana-search-imp">' + roundK(q.impressions) + ' imp</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── Fun Facts ──
+  function renderFunFacts(ga4) {
+    var el = document.getElementById('sa-funfacts'); if (!el) return;
+    var facts = [];
+    var tv = ga4.totals.views || 0;
+    var tu = ga4.totals.users || 0;
+    var toolCount = Object.keys(TOOLS).length;
+    if (tv > 0) facts.push({ icon: '📖', text: 'In the last 30 days, our pages were viewed <strong>' + roundK(tv) + ' times</strong> — that\'s like reading a 300-page book ' + Math.round(tv / 300) + ' times.' });
+    if (tu > 0 && ga4.countries && ga4.countries.length > 3) facts.push({ icon: '🌍', text: 'Visitors from <strong>' + ga4.countries.length + ' countries</strong> used our tools this month. The internet is beautiful.' });
+    facts.push({ icon: '🛠️', text: 'Every single one of our <strong>' + toolCount + ' tools</strong> runs 100% in your browser — zero server calls, zero data collected, zero cost.' });
+    if (ga4.today && ga4.today.views > 0) facts.push({ icon: '☀️', text: 'Today alone, <strong>' + ga4.today.views + ' pages</strong> were viewed. Thanks for being one of them!' });
+    var avgPerTool = ga4.leaderboard ? Math.round(tv / Math.max(ga4.leaderboard.length, 1)) : 0;
+    if (avgPerTool > 0) facts.push({ icon: '📊', text: 'Each tool averages <strong>' + roundK(avgPerTool) + ' views/month</strong>. Our most popular tool gets ' + roundK(ga4.leaderboard[0].views) + '.' });
+    facts.push({ icon: '💸', text: 'Total cost to run all ' + toolCount + ' tools: <strong>$0/month</strong>. Client-side JavaScript + open data = free forever.' });
+    if (ga4.devices) { var mobile = ga4.devices.find(function(d){return d.device.toLowerCase()==='mobile';}); if (mobile) facts.push({ icon: '📱', text: '<strong>' + Math.round(mobile.users / tu * 100) + '%</strong> of visitors are on mobile. Yes, all our tools work great on phones!' }); }
+    // Show 4 random facts (seeded by day so they rotate daily)
+    var rng = mulberry32(todaySeed() + 99);
+    for (var i = facts.length - 1; i > 0; i--) { var j = Math.floor(rng() * (i + 1)); var tmp = facts[i]; facts[i] = facts[j]; facts[j] = tmp; }
+    el.innerHTML = facts.slice(0, 4).map(function(f) {
+      return '<div class="siteana-fact"><span class="siteana-fact-icon">' + f.icon + '</span><p>' + f.text + '</p></div>';
+    }).join('');
+  }
+
+  // ── Growth milestone next target ──
+  function renderMilestoneNext(totals) {
+    var el = document.getElementById('sa-ms-next'); if (!el) return;
+    var views = totals.views || 0;
+    var targets = [1000, 5000, 10000, 25000, 50000, 100000, 250000, 500000];
+    var next = targets.find(function(t) { return t > views; });
+    if (next) { el.textContent = roundK(next) + ' page views/month (' + Math.round((views/next)*100) + '% there!)'; }
+    else { el.textContent = 'We broke all our targets. New ones incoming!'; }
+  }
+
+  // ── Charts ──
   function renderTrend(trend) {
     var ctx = document.getElementById('sa-trend-chart'); if (!ctx || !trend.length) return;
     if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
@@ -276,12 +686,16 @@
     ctx.stroke(); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath(); ctx.globalAlpha=0.15; ctx.fillStyle=color; ctx.fill(); ctx.globalAlpha=1;
   }
 
-  function renderList(id, items, labelKey, valueKey) {
+  // Country code to flag emoji
+  var COUNTRY_FLAGS = {'United States':'\uD83C\uDDFA\uD83C\uDDF8','United Kingdom':'\uD83C\uDDEC\uD83C\uDDE7','India':'\uD83C\uDDEE\uD83C\uDDF3','Australia':'\uD83C\uDDE6\uD83C\uDDFA','Canada':'\uD83C\uDDE8\uD83C\uDDE6','Germany':'\uD83C\uDDE9\uD83C\uDDEA','France':'\uD83C\uDDEB\uD83C\uDDF7','Brazil':'\uD83C\uDDE7\uD83C\uDDF7','Netherlands':'\uD83C\uDDF3\uD83C\uDDF1','Japan':'\uD83C\uDDEF\uD83C\uDDF5','New Zealand':'\uD83C\uDDF3\uD83C\uDDFF','Singapore':'\uD83C\uDDF8\uD83C\uDDEC','South Africa':'\uD83C\uDDFF\uD83C\uDDE6','Ireland':'\uD83C\uDDEE\uD83C\uDDEA','Philippines':'\uD83C\uDDF5\uD83C\uDDED','Mexico':'\uD83C\uDDF2\uD83C\uDDFD','Spain':'\uD83C\uDDEA\uD83C\uDDF8','Italy':'\uD83C\uDDEE\uD83C\uDDF9','Sweden':'\uD83C\uDDF8\uD83C\uDDEA','Poland':'\uD83C\uDDF5\uD83C\uDDF1','South Korea':'\uD83C\uDDF0\uD83C\uDDF7','Switzerland':'\uD83C\uDDE8\uD83C\uDDED','Indonesia':'\uD83C\uDDEE\uD83C\uDDE9','Turkey':'\uD83C\uDDF9\uD83C\uDDF7','Pakistan':'\uD83C\uDDF5\uD83C\uDDF0','Nigeria':'\uD83C\uDDF3\uD83C\uDDEC','Malaysia':'\uD83C\uDDF2\uD83C\uDDFE','Kenya':'\uD83C\uDDF0\uD83C\uDDEA','Israel':'\uD83C\uDDEE\uD83C\uDDF1','United Arab Emirates':'\uD83C\uDDE6\uD83C\uDDEA','Denmark':'\uD83C\uDDE9\uD83C\uDDF0','Norway':'\uD83C\uDDF3\uD83C\uDDF4','Belgium':'\uD83C\uDDE7\uD83C\uDDEA','Austria':'\uD83C\uDDE6\uD83C\uDDF9','Portugal':'\uD83C\uDDF5\uD83C\uDDF9','Romania':'\uD83C\uDDF7\uD83C\uDDF4','Colombia':'\uD83C\uDDE8\uD83C\uDDF4','Argentina':'\uD83C\uDDE6\uD83C\uDDF7','Thailand':'\uD83C\uDDF9\uD83C\uDDED','Vietnam':'\uD83C\uDDFB\uD83C\uDDF3','Egypt':'\uD83C\uDDEA\uD83C\uDDEC','Chile':'\uD83C\uDDE8\uD83C\uDDF1','Czech Republic':'\uD83C\uDDE8\uD83C\uDDFF','Czechia':'\uD83C\uDDE8\uD83C\uDDFF','Finland':'\uD83C\uDDEB\uD83C\uDDEE','Greece':'\uD83C\uDDEC\uD83C\uDDF7','Saudi Arabia':'\uD83C\uDDF8\uD83C\uDDE6','Hong Kong':'\uD83C\uDDED\uD83C\uDDF0','Taiwan':'\uD83C\uDDF9\uD83C\uDDFC','Bangladesh':'\uD83C\uDDE7\uD83C\uDDE9','Sri Lanka':'\uD83C\uDDF1\uD83C\uDDF0','Ghana':'\uD83C\uDDEC\uD83C\uDDED','China':'\uD83C\uDDE8\uD83C\uDDF3','Russia':'\uD83C\uDDF7\uD83C\uDDFA'};
+
+  function renderList(id, items, labelKey, valueKey, showFlags) {
     var el = document.getElementById(id); if (!el || !items || !items.length) return;
     var max = items[0][valueKey] || 1;
     el.innerHTML = items.map(function(item) {
       var pct = Math.round((item[valueKey] / max) * 100);
-      return '<div class="siteana-lb-item"><span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
+      var flag = (showFlags && COUNTRY_FLAGS[item[labelKey]]) ? '<span class="siteana-flag">' + COUNTRY_FLAGS[item[labelKey]] + '</span> ' : '';
+      return '<div class="siteana-lb-item">' + flag + '<span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
         + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span></div>';
     }).join('');
@@ -301,6 +715,69 @@
         + '<span class="siteana-lb-total">' + roundK(p.views) + '</span></div>';
     }).join('');
   }
+
+  // ── Community Impact Estimator ──
+  function renderImpact(lb, totals) {
+    var el = document.getElementById('sa-impact'); if (!el) return;
+    var findTool = function(slug) { var t = lb.find(function(x){return x.tool===slug;}); return t ? t.views : 0; };
+    var items = [
+      { icon: '⏱️', label: 'Hours saved by IT admins', lo: Math.round(totals.users * 2 / 60), hi: Math.round(totals.users * 5 / 60), note: '2–5 min per successful tool use' },
+      { icon: '📋', label: 'Prompts polished', lo: Math.round(findTool('prompt-polisher') * 0.3), hi: Math.round(findTool('prompt-polisher') * 0.5), note: '30–50% of page visitors use the tool' },
+      { icon: '🔐', label: 'CA policies designed', lo: Math.round(findTool('ca-builder') * 0.2), hi: Math.round(findTool('ca-builder') * 0.4), note: '20–40% export a policy' },
+      { icon: '📊', label: 'ROI calculations run', lo: Math.round(findTool('roi-calculator') * 0.4), hi: Math.round(findTool('roi-calculator') * 0.6), note: '40–60% engagement rate' },
+      { icon: '🎓', label: 'Cert study sessions', lo: Math.round(findTool('cert-tracker') * 0.5), hi: Math.round(findTool('cert-tracker') * 0.7), note: '50–70% of cert visitors study' },
+      { icon: '📱', label: 'QR codes generated', lo: Math.round(findTool('qr-generator') * 0.5), hi: Math.round(findTool('qr-generator') * 0.7), note: '50–70% create a code' }
+    ];
+    el.innerHTML = items.map(function(item) {
+      return '<div class="siteana-impact-item">'
+        + '<span class="siteana-impact-icon">' + item.icon + '</span>'
+        + '<div class="siteana-impact-body">'
+        + '<span class="siteana-impact-range">' + roundK(item.lo) + ' – ' + roundK(item.hi) + '</span>'
+        + '<span class="siteana-impact-label">' + esc(item.label) + '</span>'
+        + '</div></div>';
+    }).join('');
+  }
+
+  // ── Your Journey (localStorage personalisation) ──
+  function initJourney(totals) {
+    var KEY = 'siteana_journey';
+    var data = null;
+    try { data = JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+    var now = new Date().toISOString().split('T')[0];
+    if (!data) {
+      data = { visits: 1, firstVisit: now, lastVisit: now };
+    } else {
+      if (data.lastVisit !== now) { data.visits = (data.visits || 0) + 1; data.lastVisit = now; }
+    }
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch(e) {}
+
+    var textEl = document.getElementById('sa-journey-text'); if (!textEl) return;
+    if (data.visits <= 1) {
+      textEl.innerHTML = 'Welcome! You\'re one of <strong>' + roundK(totals.users) + ' visitors</strong> this month. Explore our ' + Object.keys(TOOLS).length + ' free tools — every one runs privately in your browser.';
+    } else {
+      var daysSince = Math.max(1, Math.round((Date.now() - new Date(data.firstVisit).getTime()) / 86400000));
+      textEl.innerHTML = 'Welcome back! This is visit <strong>#' + data.visits + '</strong> on this browser'
+        + (daysSince > 1 ? ' — you\'ve been visiting for <strong>' + daysSince + ' days</strong>' : '') + '.'
+        + ' Thanks for being part of the community.';
+    }
+
+    var resetEl = document.getElementById('sa-journey-reset');
+    if (resetEl) resetEl.addEventListener('click', function(e) {
+      e.preventDefault();
+      try { localStorage.removeItem(KEY); } catch(e2) {}
+      textEl.textContent = 'Local history cleared. Refreshing...';
+      setTimeout(function(){ location.reload(); }, 800);
+    });
+  }
+
+  // ── Open Data copy button ──
+  var copyBtn = document.getElementById('sa-copy-api');
+  if (copyBtn) copyBtn.addEventListener('click', function() {
+    var url = 'https://www.aguidetocloud.com/api/stats?range=30d';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function() { copyBtn.textContent = 'Copied!'; setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 2000); });
+    }
+  });
 
   // Auto-refresh every 5 min
   setInterval(function() { fetch(API + '?range=30d').then(function(r){return r.json();}).then(render).catch(function(){}); }, 300000);

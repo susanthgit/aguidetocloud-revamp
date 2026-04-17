@@ -599,6 +599,694 @@
 /* Nav accent */
 .page-site-analytics .site-nav { border-bottom-color: #64748B; }
 
+/* ── LIVE PULSE CARD ─────────────── */
+.siteana-live-card {
+  border-color: rgba(239,68,68,0.25);
+  background: rgba(239,68,68,0.04);
+}
+
+.siteana-live-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.siteana-live-badge {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #EF4444;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.25);
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+}
+
+.siteana-live-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.siteana-live-page {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  padding: 0.3rem 0;
+}
+
+.siteana-live-page-dot {
+  width: 6px;
+  height: 6px;
+  background: #EF4444;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.siteana-live-page-count {
+  margin-left: auto;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.82rem;
+}
+
+/* ── FEATURED TOOL OF THE DAY ────── */
+.siteana-featured-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(100,116,139,0.3);
+  background: linear-gradient(135deg, rgba(100,116,139,0.08), rgba(100,116,139,0.02));
+}
+
+.siteana-featured-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #E5A00D;
+  background: rgba(229,160,13,0.12);
+  border: 1px solid rgba(229,160,13,0.25);
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.siteana-featured-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.siteana-featured-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.siteana-featured-name:hover { opacity: 0.8; }
+
+.siteana-featured-tagline {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.siteana-featured-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0.25rem 0;
+}
+
+.siteana-featured-cta {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  text-align: center;
+  max-width: 180px;
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.siteana-featured-cta:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* ── RISING STARS ────────────────── */
+.siteana-rising-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-rising-item:last-child { border-bottom: none; }
+
+.siteana-rising-pct {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.25);
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* ── HIDDEN GEMS ─────────────────── */
+.siteana-gem-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-gem-item:last-child { border-bottom: none; }
+
+.siteana-gem-tagline {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  flex: 1;
+  min-width: 100px;
+}
+
+.siteana-gem-views {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+}
+
+/* ── SEARCH INTELLIGENCE ─────────── */
+.siteana-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.siteana-search-row:last-child { border-bottom: none; }
+
+.siteana-search-rank {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.siteana-search-query {
+  flex: 1;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siteana-pos-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+}
+
+.siteana-pos-gold {
+  background: rgba(229,160,13,0.15);
+  color: #E5A00D;
+  border-color: rgba(229,160,13,0.3);
+}
+
+.siteana-pos-blue {
+  background: rgba(56,189,248,0.12);
+  color: #38BDF8;
+  border-color: rgba(56,189,248,0.25);
+}
+
+.siteana-search-metric {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.siteana-search-imp {
+  color: rgba(255,255,255,0.35);
+}
+
+@media (max-width: 640px) {
+  .siteana-search-imp { display: none; }
+  .siteana-search-query { font-size: 0.82rem; }
+}
+
+/* ── CONTENT FRESHNESS RADAR ─────── */
+.siteana-freshness {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.siteana-fresh-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.siteana-fresh-item:last-child { border-bottom: none; }
+
+.siteana-fresh-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.siteana-fresh-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+.siteana-fresh-freq {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* ── FUN FACTS ───────────────────── */
+.siteana-funfacts-card {
+  border-color: rgba(251,191,36,0.2);
+  background: linear-gradient(135deg, rgba(251,191,36,0.04), rgba(251,191,36,0.01));
+}
+
+.siteana-funfacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .siteana-funfacts { grid-template-columns: 1fr; }
+}
+
+.siteana-fact {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.siteana-fact-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.siteana-fact p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.siteana-fact strong {
+  color: rgba(255,255,255,0.95);
+}
+
+/* ── GROWTH MILESTONES ───────────── */
+.siteana-milestones {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.siteana-milestones::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, #64748B, rgba(100,116,139,0.2));
+}
+
+.siteana-ms-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.siteana-ms-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+  position: absolute;
+  left: -2rem;
+}
+
+.siteana-ms-done .siteana-ms-marker {
+  background: #64748B;
+  box-shadow: 0 0 8px rgba(100,116,139,0.4);
+}
+
+.siteana-ms-next .siteana-ms-marker {
+  background: transparent;
+  border: 2px solid #FBBF24;
+  box-shadow: 0 0 8px rgba(251,191,36,0.3);
+}
+
+.siteana-ms-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.siteana-ms-body strong {
+  font-size: 0.82rem;
+  color: #64748B;
+}
+
+.siteana-ms-next .siteana-ms-body strong {
+  color: #FBBF24;
+}
+
+.siteana-ms-body span {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+
+/* ── SPARKLINE (already exists, ensure name-row flex) ─── */
+.siteana-lb-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.siteana-sparkline {
+  flex-shrink: 0;
+}
+
+/* ── FLAG EMOJI ──────────────────── */
+.siteana-flag {
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── YOUR JOURNEY CARD ───────────── */
+.siteana-journey-card {
+  border-color: rgba(167,139,250,0.25);
+  background: linear-gradient(135deg, rgba(167,139,250,0.06), rgba(167,139,250,0.01));
+}
+
+.siteana-journey-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.siteana-journey-wave { font-size: 2rem; }
+
+.siteana-journey-inner > p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.siteana-journey-inner > p strong { color: #A78BFA; }
+
+.siteana-journey-privacy {
+  font-size: 0.75rem !important;
+  color: rgba(255,255,255,0.35) !important;
+  margin-top: 0.5rem !important;
+}
+
+/* ── BUILT IN PUBLIC CARD ────────── */
+.siteana-bip-card {
+  border-color: rgba(20,184,166,0.25);
+  background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(20,184,166,0.01));
+}
+
+.siteana-bip-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.siteana-bip-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #14B8A6;
+  background: rgba(20,184,166,0.12);
+  border: 1px solid rgba(20,184,166,0.25);
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+}
+
+.siteana-bip-lead {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.siteana-bip-lead strong { color: rgba(255,255,255,0.95); }
+
+.siteana-bip-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0.75rem;
+}
+
+.siteana-bip-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.85rem;
+}
+
+.siteana-bip-row:last-child { border-bottom: none; }
+
+.siteana-bip-label {
+  width: 130px;
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+.siteana-bip-value {
+  flex: 1;
+  color: rgba(255,255,255,0.8);
+}
+
+.siteana-bip-cost {
+  font-weight: 700;
+  color: #10B981;
+  text-align: right;
+  min-width: 70px;
+}
+
+.siteana-bip-total {
+  background: rgba(16,185,129,0.08);
+  border-radius: 8px;
+  padding: 0.6rem 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.siteana-bip-total .siteana-bip-label { color: rgba(255,255,255,0.9); font-weight: 700; }
+.siteana-bip-total .siteana-bip-cost { font-size: 1.1rem; color: #10B981; }
+
+.siteana-bip-footnote {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.siteana-bip-cta {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  background: rgba(20,184,166,0.15);
+  border: 1px solid rgba(20,184,166,0.3);
+  border-radius: 10px;
+  color: #14B8A6;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.siteana-bip-cta:hover {
+  background: rgba(20,184,166,0.25);
+  border-color: rgba(20,184,166,0.5);
+}
+
+@media (max-width: 640px) {
+  .siteana-bip-label { width: 90px; font-size: 0.78rem; }
+  .siteana-bip-value { font-size: 0.78rem; }
+}
+
+/* ── COMMUNITY IMPACT ────────────── */
+.siteana-impact-card {
+  border-color: rgba(56,189,248,0.2);
+  background: linear-gradient(135deg, rgba(56,189,248,0.04), rgba(56,189,248,0.01));
+}
+
+.siteana-impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .siteana-impact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .siteana-impact-grid { grid-template-columns: 1fr; }
+}
+
+.siteana-impact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.siteana-impact-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.siteana-impact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.siteana-impact-range {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #38BDF8;
+}
+
+.siteana-impact-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── OPEN DATA CARD ──────────────── */
+.siteana-opendata-card {
+  border-color: rgba(100,116,139,0.3);
+}
+
+.siteana-opendata-lead {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 1rem;
+}
+
+.siteana-opendata-api {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.siteana-opendata-code {
+  flex: 1;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.82rem;
+  color: #10B981;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.siteana-opendata-copy {
+  background: rgba(100,116,139,0.2);
+  border: 1px solid rgba(100,116,139,0.3);
+  color: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.siteana-opendata-copy:hover {
+  background: rgba(100,116,139,0.35);
+  color: #fff;
+}
+
+.siteana-opendata-endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.siteana-opendata-ep {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.siteana-opendata-ep:last-child { border-bottom: none; }
+
+.siteana-opendata-ep strong {
+  min-width: 100px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+
+.siteana-opendata-ep span {
+  color: rgba(255,255,255,0.4);
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.78rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siteana-opendata-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .siteana-opendata-api { flex-direction: column; }
+  .siteana-opendata-code { font-size: 0.75rem; }
+}
+
 /* ── MORNING BRIEF ─────────────────── */
 .siteana-brief {
   margin-bottom: 1.5rem;
