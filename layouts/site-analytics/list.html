@@ -1,25 +1,27 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
 
-<!-- Circular nav + title + badges (no hero) -->
-<div style="max-width:1100px;margin:0 auto;padding:0.75rem 1.5rem 0">
+<!-- Compact header: nav + title + badges all tight -->
+<div style="max-width:1100px;margin:0 auto;padding:0.25rem 1.5rem 0">
   {{ partial "tool-prev-next.html" . }}
-  <h1 class="siteana-page-title">Site Analytics</h1>
-  <p class="siteana-page-subtitle">Your data powers this site. Here's everything we see — nothing hidden.</p>
-  {{/* Counter + Ko-fi badges */}}
-  {{ $url := .RelPermalink }}
-  {{ $counters := (index hugo.Data "tool_counters").tools }}
-  {{ $counterBase := 0 }}{{ $counterVerb := "" }}
-  {{ range $counters }}{{ if eq .url $url }}{{ $counterBase = .base }}{{ $counterVerb = .verb }}{{ end }}{{ end }}
-  <div class="tool-hero-badges" style="justify-content:center;margin-top:0.5rem;margin-bottom:1.5rem">
+  <div class="siteana-compact-header">
+    <h1 class="siteana-page-title">Site Analytics</h1>
+    <span class="siteana-page-sep">·</span>
+    <span class="siteana-page-subtitle">Your data powers this site — nothing hidden</span>
+    <span class="siteana-page-sep">·</span>
+    {{/* Counter + Ko-fi badges inline */}}
+    {{ $url := .RelPermalink }}
+    {{ $counters := (index hugo.Data "tool_counters").tools }}
+    {{ $counterBase := 0 }}{{ $counterVerb := "" }}
+    {{ range $counters }}{{ if eq .url $url }}{{ $counterBase = .base }}{{ $counterVerb = .verb }}{{ end }}{{ end }}
     {{ if gt $counterBase 0 }}
-    <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
+    <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true" style="margin:0">
       <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
       <span class="tool-counter-verb">{{ $counterVerb }}</span>
     </div>
     <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
     {{ end }}
-    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi" style="margin:0">☕ Support</a>
   </div>
 </div>
 

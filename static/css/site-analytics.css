@@ -279,19 +279,32 @@
 
 .siteana-page-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #64748B;
-  text-align: center;
-  margin: 0.25rem 0 0;
+  margin: 0;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .siteana-page-subtitle {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.45);
-  text-align: center;
-  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.siteana-page-sep {
+  color: rgba(255,255,255,0.15);
+  font-size: 0.8rem;
+}
+
+.siteana-compact-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.25rem 0 0.75rem;
 }
 
 /* Stats Bar */
