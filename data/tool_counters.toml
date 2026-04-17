@@ -150,3 +150,38 @@ verb = "analytics views"
 url = "/feedback/"
 base = 240
 verb = "feedback submissions"
+
+[[tools]]
+url = "/admin-bingo/"
+base = 50
+verb = "bingo cards generated"
+
+[[tools]]
+url = "/acronym-battle/"
+base = 80
+verb = "quizzes played"
+
+[[tools]]
+url = "/feature-roulette/"
+base = 60
+verb = "features discovered"
+
+[[tools]]
+url = "/rename-tracker/"
+base = 120
+verb = "rename searches"
+
+[[tools]]
+url = "/admin-comms/"
+base = 90
+verb = "emails drafted"
+
+[[tools]]
+url = "/compliance-passport/"
+base = 70
+verb = "passports generated"
+
+[[tools]]
+url = "/phishing-test/"
+base = 150
+verb = "phishing tests taken"
