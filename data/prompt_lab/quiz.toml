@@ -1,0 +1,59 @@
+# ============================================================================
+# PROMPT LAB — Which Technique? Quiz (5 questions, weighted scoring)
+# ============================================================================
+# Each option has weights for relevant techniques.
+# After all 5 questions, sum weights and recommend top 3.
+# ============================================================================
+
+[[questions]]
+id = "q1"
+text = "What kind of task are you working on?"
+options = [
+  { value = "decision", label = "Making a decision between options", weights = { tree-of-thought = 3, chain-of-verification = 1, self-ask = 1 } },
+  { value = "complex-project", label = "Planning a complex project", weights = { least-to-most = 3, prompt-chaining = 2, self-ask = 1 } },
+  { value = "document", label = "Creating a document or policy", weights = { skeleton-prompting = 3, mega-prompting = 2, iterative-refinement = 1 } },
+  { value = "troubleshoot", label = "Troubleshooting a problem", weights = { react = 3, self-ask = 2, chain-of-verification = 1 } },
+  { value = "improve", label = "Improving something that exists", weights = { self-reflection = 3, iterative-refinement = 2, meta-prompting = 1 } },
+  { value = "learn", label = "Learning or researching a topic", weights = { generated-knowledge = 3, self-ask = 1, chain-of-verification = 1 } }
+]
+
+[[questions]]
+id = "q2"
+text = "How complex is the task?"
+options = [
+  { value = "simple", label = "Straightforward — one clear question", weights = { skeleton-prompting = 2, mega-prompting = 1 } },
+  { value = "medium", label = "Multi-step — several things to figure out", weights = { prompt-chaining = 2, least-to-most = 2, tree-of-thought = 1 } },
+  { value = "hard", label = "Very complex — many variables and unknowns", weights = { self-ask = 2, least-to-most = 2, generated-knowledge = 2, react = 1 } }
+]
+
+[[questions]]
+id = "q3"
+text = "What's the biggest challenge with your current AI results?"
+options = [
+  { value = "shallow", label = "Answers are too shallow or generic", weights = { mega-prompting = 3, generated-knowledge = 2, prompt-chaining = 1 } },
+  { value = "wrong", label = "Answers contain errors or hallucinations", weights = { chain-of-verification = 3, self-reflection = 2, self-ask = 1 } },
+  { value = "messy", label = "Output is unstructured or hard to use", weights = { skeleton-prompting = 3, mega-prompting = 1, iterative-refinement = 1 } },
+  { value = "narrow", label = "Only considers one approach or perspective", weights = { tree-of-thought = 3, iterative-refinement = 2, self-ask = 1 } },
+  { value = "overwhelming", label = "Task is too big for one prompt", weights = { prompt-chaining = 3, least-to-most = 2 } },
+  { value = "prompts", label = "I don't know what to prompt for", weights = { meta-prompting = 3, self-ask = 2 } }
+]
+
+[[questions]]
+id = "q4"
+text = "How will the output be used?"
+options = [
+  { value = "share", label = "Shared with stakeholders or leadership", weights = { chain-of-verification = 2, iterative-refinement = 2, self-reflection = 1 } },
+  { value = "execute", label = "I'll follow the steps myself", weights = { react = 2, least-to-most = 2, prompt-chaining = 1 } },
+  { value = "template", label = "As a reusable template for the team", weights = { meta-prompting = 2, skeleton-prompting = 2, mega-prompting = 1 } },
+  { value = "quick", label = "Just for my own quick use", weights = { self-ask = 1, skeleton-prompting = 1 } },
+  { value = "critical", label = "Critical decision — accuracy is essential", weights = { chain-of-verification = 3, generated-knowledge = 2, tree-of-thought = 1 } }
+]
+
+[[questions]]
+id = "q5"
+text = "How much time do you want to spend prompting?"
+options = [
+  { value = "minimal", label = "One well-crafted prompt", weights = { mega-prompting = 3, skeleton-prompting = 2 } },
+  { value = "some", label = "A few back-and-forth messages", weights = { self-reflection = 2, iterative-refinement = 2, prompt-chaining = 1 } },
+  { value = "thorough", label = "As much as needed for the best result", weights = { prompt-chaining = 2, react = 2, generated-knowledge = 1, iterative-refinement = 1 } }
+]

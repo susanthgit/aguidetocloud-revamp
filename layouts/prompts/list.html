@@ -1,17 +1,12 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/prompts.css?v={{ site.Params.cache_version }}">
 
-{{/* Determine if this is the main prompts page or a subcategory */}}
 {{ $isMainPage := eq .RelPermalink "/prompts/" }}
 {{ $allPrompts := .RegularPagesRecursive }}
 {{ $pagePrompts := $allPrompts }}
+{{ if not $isMainPage }}{{ $pagePrompts = .RegularPages }}{{ end }}
 
-{{/* For category pages, only show that category's prompts */}}
-{{ if not $isMainPage }}
-  {{ $pagePrompts = .RegularPages }}
-{{ end }}
-
-{{/* ── SEO: JSON-LD Structured Data ── */}}
+{{/* ── SEO: JSON-LD ── */}}
 {{ if $isMainPage }}
 <script type="application/ld+json">
 {
@@ -21,18 +16,11 @@
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $allPrompts }},
-  "publisher": {
-    "@type": "Organization",
-    "name": "A Guide to Cloud & AI",
-    "url": "{{ .Site.BaseURL }}"
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
-      {"@type": "ListItem", "position": 2, "name": "AI Prompt Library"}
-    ]
-  }
+  "publisher": {"@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}"},
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+    {"@type": "ListItem", "position": 2, "name": "AI Prompt Library"}
+  ]}
 }
 </script>
 {{ else }}
@@ -44,19 +32,12 @@
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $pagePrompts }},
-  "isPartOf": {
-    "@type": "CollectionPage",
-    "name": "AI Prompt Library",
-    "url": "{{ .Site.BaseURL }}prompts/"
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
-      {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
-      {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}}
-    ]
-  }
+  "isPartOf": {"@type": "CollectionPage", "name": "AI Prompt Library", "url": "{{ .Site.BaseURL }}prompts/"},
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
+    {"@type": "ListItem", "position": 2, "name": "AI Prompt Library", "item": "{{ .Site.BaseURL }}prompts/"},
+    {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}}
+  ]}
 }
 </script>
 {{ end }}
@@ -75,131 +56,125 @@
   </div>
   {{ end }}
 
-  <!-- ── CONTENT ── -->
   <div class="prompts-container">
 
     {{ if $isMainPage }}
-    {{/* ── Glass Pill Tabs ── */}}
+    {{/* ── 3-Tab Structure ── */}}
     <div class="prompts-tabs" role="tablist" aria-label="Prompt Library sections">
-      <button class="prompts-tab-btn active" data-tab="main" role="tab" aria-selected="true">Browse Prompts</button>
-      <button class="prompts-tab-btn" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
+      <button class="prompts-tab-btn active" data-tab="browse" role="tab" aria-selected="true" aria-controls="panel-browse">Browse Prompts</button>
+      <button class="prompts-tab-btn" data-tab="my-prompts" role="tab" aria-selected="false" aria-controls="panel-my-prompts">My Prompts <span class="prompts-fav-badge" id="fav-badge" hidden>0</span></button>
+      <button class="prompts-tab-btn" data-tab="faq" role="tab" aria-selected="false" aria-controls="panel-faq">FAQ</button>
     </div>
-    <div class="prompts-panel active" id="panel-main" role="tabpanel">
-    {{ end }}
 
-    {{/* ── TOOLBAR: Search + Platform dropdown (main page only) ── */}}
-    {{ if $isMainPage }}
-    <div class="prompts-toolbar">
-      <input type="text" id="prompts-search" class="prompts-search" placeholder="Search {{ len $allPrompts }} prompts..." autocomplete="off" aria-label="Search prompts">
-      <select id="prompts-platform" class="prompts-select" aria-label="Filter by platform">
-        <option value="all">All Platforms</option>
-        {{ range $key, $val := hugo.Data.platforms }}
-        <option value="{{ $key }}">{{ $val.emoji }} {{ $val.name }}</option>
-        {{ end }}
-      </select>
-    </div>
-    <div class="prompts-filter-info">
-      <span>Showing <b id="prompts-count">{{ len $allPrompts }}</b> of {{ len $allPrompts }} prompts</span>
-      <button class="prompts-clear-btn" id="prompts-clear" style="display:none">✕ Clear filters</button>
-    </div>
-    {{ end }}
+    {{/* ── Browse Panel ── */}}
+    <div class="prompts-panel active" id="panel-browse" role="tabpanel">
 
-    {{/* ── PROMPTS GROUPED BY CATEGORY ── */}}
-    {{ $promptIndex := 0 }}
-    {{ if $isMainPage }}
-      {{ range .Sections.ByWeight }}
-        {{ $sectionPrompts := .RegularPages }}
-        {{ if gt (len $sectionPrompts) 0 }}
-        <div class="prompts-category-group" data-category="{{ .File.ContentBaseName }}">
-          <h2 class="prompts-category-heading">
-            <span class="prompts-category-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
-            {{ .Title }}
-            <span class="prompts-category-count">{{ len $sectionPrompts }}</span>
-          </h2>
+      {{/* Prompt of the Day (JS-rendered) */}}
+      <div id="prompts-potd"></div>
 
-          {{ range $sectionPrompts }}
-          {{ $prompt := .Params.prompt | default "" }}
-          {{ $platforms := .Params.platforms | default (slice) }}
-          {{ $bestOn := .Params.best_on | default "" }}
-          {{ $description := .Description | default "" }}
-          {{ $isFirst := eq $promptIndex 0 }}
+      {{/* Search */}}
+      <div class="prompts-toolbar">
+        <input type="text" id="prompts-search" class="prompts-search" placeholder="Search {{ len $allPrompts }} prompts..." autocomplete="off" aria-label="Search prompts">
+      </div>
 
-          <div class="prompt-row"
-               data-platforms="{{ delimit $platforms " " }}"
-               data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
-
-            <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="{{ if $isFirst }}true{{ else }}false{{ end }}">
-              <span class="prompt-row-arrow">{{ if $isFirst }}▾{{ else }}▸{{ end }}</span>
-              <div class="prompt-row-info">
-                <span class="prompt-row-title">
-                  {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </span>
-                {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
-              </div>
-              <div class="prompt-row-platforms">
-                {{ range $platforms }}
-                  {{ $pdata := index hugo.Data.platforms . }}
-                  {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
-                {{ end }}
-              </div>
-              <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">Copy</button>
-              <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Open in Prompt Polisher">Polish</a>
-            </div>
-
-            <div class="prompt-row-body"{{ if not $isFirst }} hidden{{ end }}>
-              <div class="prompt-text">{{ $prompt }}</div>
-            </div>
-          </div>
-          {{ $promptIndex = add $promptIndex 1 }}
-          {{ end }}
+      {{/* Filter Chips (JS-populated from data) */}}
+      <div class="prompts-filter-groups" id="filter-groups">
+        <div class="prompts-filter-group">
+          <span class="prompts-filter-label">Platform</span>
+          <div class="prompts-chips" id="chips-platforms"></div>
         </div>
-        {{ end }}
-      {{ end }}
-    {{ else }}
-      {{/* Category sub-pages — flat list, no grouping needed */}}
-      {{ range $pagePrompts }}
-      {{ $prompt := .Params.prompt | default "" }}
-      {{ $platforms := .Params.platforms | default (slice) }}
-      {{ $bestOn := .Params.best_on | default "" }}
-      {{ $description := .Description | default "" }}
-
-      <div class="prompt-row"
-           data-platforms="{{ delimit $platforms " " }}"
-           data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
-
-        <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
-          <span class="prompt-row-arrow">▸</span>
-          <div class="prompt-row-info">
-            <span class="prompt-row-title">
-              {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </span>
-            {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
-          </div>
-          <div class="prompt-row-platforms">
-            {{ range $platforms }}
-              {{ $pdata := index hugo.Data.platforms . }}
-              {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
-            {{ end }}
-          </div>
-          <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">Copy</button>
-          <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Open in Prompt Polisher">Polish</a>
+        <div class="prompts-filter-group">
+          <span class="prompts-filter-label">Difficulty</span>
+          <div class="prompts-chips" id="chips-difficulty"></div>
         </div>
-
-        <div class="prompt-row-body" hidden>
-          <div class="prompt-text">{{ $prompt }}</div>
+        <div class="prompts-filter-group" id="group-roles">
+          <span class="prompts-filter-label">Role</span>
+          <div class="prompts-chips" id="chips-roles"></div>
         </div>
       </div>
-      {{ end }}
-    {{ end }}
 
-    <div id="prompts-empty" class="prompts-empty" style="display: none;">
-      <p>🔍 No prompts match your current filters. Try clearing a filter or searching different terms.</p>
+      {{/* Results bar */}}
+      <div class="prompts-results-bar">
+        <span>Showing <b id="prompts-count">{{ len $allPrompts }}</b> of {{ len $allPrompts }} prompts</span>
+        <div class="prompts-results-actions">
+          <button class="prompts-view-btn" id="view-toggle" aria-label="Toggle grid view" title="Switch view">☰ List</button>
+          <button class="prompts-clear-btn" id="prompts-clear" hidden>Clear filters</button>
+        </div>
+      </div>
+
+      {{/* List View (server-rendered accordion) */}}
+      <div id="prompts-list-view">
+        {{ range .Sections.ByWeight }}
+          {{ $cat := .File.ContentBaseName }}
+          {{ $sectionPrompts := .RegularPages }}
+          {{ if gt (len $sectionPrompts) 0 }}
+          <div class="prompts-category-group" data-category="{{ $cat }}">
+            <h2 class="prompts-category-heading">
+              <span class="prompts-category-emoji">{{ with .Params.emoji }}{{ . }}{{ else }}📁{{ end }}</span>
+              {{ .Title }}
+              <span class="prompts-category-count"></span>
+            </h2>
+            {{ range $sectionPrompts }}
+            {{ $prompt := .Params.prompt | default "" }}
+            {{ $platforms := .Params.platforms | default (slice) }}
+            {{ $bestOn := .Params.best_on | default "" }}
+            {{ $difficulty := .Params.difficulty | default "beginner" }}
+            {{ $roles := .Params.roles | default (slice) }}
+            {{ $pid := printf "%s/%s" $cat .File.ContentBaseName }}
+            {{ $hasVars := findRE `\[[A-Z]` $prompt }}
+            <div class="prompt-row"
+                 data-pid="{{ $pid }}"
+                 data-platforms="{{ delimit $platforms " " }}"
+                 data-difficulty="{{ $difficulty }}"
+                 data-roles="{{ delimit $roles " " }}"
+                 data-category="{{ $cat }}"
+                 data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower (.Description | default "") }}">
+              <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
+                <button class="prompt-fav-btn" data-pid="{{ $pid }}" aria-label="Toggle favorite" aria-pressed="false">☆</button>
+                <span class="prompt-row-arrow">▸</span>
+                <div class="prompt-row-info">
+                  <span class="prompt-row-title">
+                    {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </span>
+                  {{ with .Description }}<span class="prompt-row-desc">{{ . }}</span>{{ end }}
+                </div>
+                <span class="prompt-diff-badge" data-level="{{ $difficulty }}">{{ $difficulty | title }}</span>
+                <div class="prompt-row-platforms">
+                  {{ range $platforms }}
+                    {{ $pdata := index hugo.Data.platforms . }}
+                    {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
+                  {{ end }}
+                </div>
+                <div class="prompt-row-actions">
+                  {{ if $hasVars }}<button class="prompt-customize-btn" data-pid="{{ $pid }}">Customize</button>{{ end }}
+                  <button class="prompt-copy-btn" data-pid="{{ $pid }}">Copy</button>
+                  <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Polish this prompt">Polish</a>
+                </div>
+              </div>
+              <div class="prompt-row-body" hidden>
+                <div class="prompt-text">{{ $prompt }}</div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{/* Grid View (JS-rendered cards) */}}
+      <div id="prompts-grid-view" class="prompts-grid" hidden></div>
+
+      {{/* Empty state */}}
+      <div id="prompts-empty" class="prompts-empty" hidden>
+        <p>No prompts match your filters. Try clearing a filter or different search terms.</p>
+      </div>
     </div>
 
-    {{ if $isMainPage }}
-    </div>{{/* end panel-main */}}
+    {{/* ── My Prompts Panel ── */}}
+    <div class="prompts-panel" id="panel-my-prompts" role="tabpanel">
+      <div id="my-prompts-content"></div>
+    </div>
 
     {{/* ── FAQ Panel ── */}}
     <div class="prompts-panel" id="panel-faq" role="tabpanel">
@@ -215,17 +190,74 @@
     </div>
     {{ end }}
     </div>
+
+    {{ else }}
+    {{/* ── Category Sub-Pages ── */}}
+    {{ range $pagePrompts }}
+    {{ $prompt := .Params.prompt | default "" }}
+    {{ $platforms := .Params.platforms | default (slice) }}
+    {{ $bestOn := .Params.best_on | default "" }}
+    {{ $description := .Description | default "" }}
+    <div class="prompt-row"
+         data-platforms="{{ delimit $platforms " " }}"
+         data-search-text="{{ lower .Title }} {{ lower $prompt }} {{ lower (delimit (.Params.tags | default (slice)) " ") }} {{ lower $description }}">
+      <div class="prompt-row-header" role="button" tabindex="0" aria-expanded="false">
+        <span class="prompt-row-arrow">▸</span>
+        <div class="prompt-row-info">
+          <span class="prompt-row-title">
+            {{ if and .Date (gt .Date (now.AddDate 0 0 -14)) }}<span class="prompt-new-badge">NEW</span>{{ end }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </span>
+          {{ if $description }}<span class="prompt-row-desc">{{ $description }}</span>{{ end }}
+        </div>
+        <div class="prompt-row-platforms">
+          {{ range $platforms }}
+            {{ $pdata := index hugo.Data.platforms . }}
+            {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
+          {{ end }}
+        </div>
+        <button class="prompt-copy-btn" data-prompt="{{ $prompt }}">Copy</button>
+        <a class="prompt-polish-btn" href="/prompt-polisher/?text={{ $prompt | urlquery }}" title="Polish this prompt">Polish</a>
+      </div>
+      <div class="prompt-row-body" hidden>
+        <div class="prompt-text">{{ $prompt }}</div>
+      </div>
+    </div>
+    {{ end }}
+    <div id="prompts-empty" class="prompts-empty" hidden>
+      <p>No prompts match your filters.</p>
+    </div>
     {{ end }}
 
   </div>
 
-  {{/* ── Prompt Toolkit Cross-Links ── */}}
+  {{/* ── Variable Wizard Modal ── */}}
+  {{ if $isMainPage }}
+  <div class="prompts-wizard-overlay" id="wizard-overlay" hidden>
+    <div class="prompts-wizard-modal" role="dialog" aria-modal="true" aria-labelledby="wizard-title">
+      <div class="prompts-wizard-header">
+        <h3 id="wizard-title">Customize Prompt</h3>
+        <button class="prompts-wizard-close" id="wizard-close" aria-label="Close">&times;</button>
+      </div>
+      <div id="wizard-body" class="prompts-wizard-body"></div>
+      <div class="prompts-wizard-footer">
+        <button class="prompts-wizard-copy" id="wizard-copy">Copy Customized</button>
+        <button class="prompts-wizard-polish" id="wizard-polish">Polish</button>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* Aria-live for copy feedback */}}
+  <div id="prompts-live" class="sr-only" aria-live="polite" role="status"></div>
+
+  {{/* Cross-links */}}
   <div class="prompts-ecosystem">
-    <h2>🔗 Your Prompt Engineering Toolkit</h2>
+    <h2>Your Prompt Engineering Toolkit</h2>
     <div class="prompts-eco-grid">
       <a href="/prompt-guide/" class="prompts-eco-card"><span>🎓</span><strong>Guide</strong><p>Learn techniques</p></a>
       <a href="/prompt-polisher/" class="prompts-eco-card"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
-      <a href="/prompts/" class="prompts-eco-card prompts-eco-active"><span>💡</span><strong>Library</strong><p>84 ready prompts</p></a>
+      <a href="/prompts/" class="prompts-eco-card prompts-eco-active"><span>💡</span><strong>Library</strong><p>{{ len $allPrompts }} ready prompts</p></a>
     </div>
     <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
@@ -237,16 +269,21 @@
   {{ end }}
 </div>
 
-<script src="/js/prompts-v2.js?v={{ site.Params.cache_version }}"></script>
+{{/* ── Data Injection (main page only) ── */}}
+{{ if $isMainPage }}
 <script>
-document.querySelectorAll('.prompts-tab-btn').forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    document.querySelectorAll('.prompts-tab-btn').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-    document.querySelectorAll('.prompts-panel').forEach(function(p) { p.classList.remove('active'); p.hidden = true; });
-    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
-    var panel = document.getElementById('panel-' + tab.dataset.tab);
-    if (panel) { panel.classList.add('active'); panel.hidden = false; }
-  });
-});
+{{ $promptData := slice }}
+{{ range .Sections.ByWeight }}
+  {{ $cat := .File.ContentBaseName }}
+  {{ $catTitle := .Title }}
+  {{ $catEmoji := .Params.emoji | default "📁" }}
+  {{ range .RegularPages }}
+    {{ $promptData = $promptData | append (dict "id" (printf "%s/%s" $cat .File.ContentBaseName) "title" .Title "description" (.Description | default "") "prompt" (.Params.prompt | default "") "platforms" (.Params.platforms | default (slice)) "bestOn" (.Params.best_on | default "") "difficulty" (.Params.difficulty | default "beginner") "roles" (.Params.roles | default (slice)) "category" $cat "categoryTitle" $catTitle "categoryEmoji" $catEmoji "tags" (.Params.tags | default (slice)) "url" .RelPermalink "date" (.Date.Format "2006-01-02")) }}
+  {{ end }}
+{{ end }}
+window.__prompts = {{ $promptData | jsonify | safeJS }};
+window.__platforms = {{ hugo.Data.platforms | jsonify | safeJS }};
 </script>
+{{ end }}
+<script src="/js/prompts-v3.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

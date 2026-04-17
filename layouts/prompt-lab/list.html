@@ -1,0 +1,149 @@
+{{ define "main" }}
+{{ $data := index hugo.Data "prompt_lab" }}
+{{ $techniques := $data.techniques.techniques }}
+{{ $exercises := $data.exercises.exercises }}
+{{ $combinations := $data.combinations.combinations }}
+{{ $quiz := $data.quiz.questions }}
+{{ $faq := .Params.faq }}
+
+{{ partial "tool-hero.html" (dict "Page" . "title" "Prompt Lab" "subtitle" "12 advanced techniques · Hands-on exercises · Combination builder" "accent" "#2DD4BF") }}
+
+<div class="plab-page">
+
+  <div class="plab-tabs" role="tablist">
+    <button class="plab-tab active" role="tab" aria-selected="true" data-tab="techniques">Techniques</button>
+    <button class="plab-tab" role="tab" aria-selected="false" data-tab="lab">Lab</button>
+    <button class="plab-tab" role="tab" aria-selected="false" data-tab="combine">Combine</button>
+    <button class="plab-tab" role="tab" aria-selected="false" data-tab="quiz">Which Technique?</button>
+    <button class="plab-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- ═══ TAB 1: TECHNIQUES ═══ -->
+  <div class="plab-panel active" id="panel-techniques">
+    <p class="plab-intro">12 advanced techniques that go beyond the <a href="/prompt-guide/">Prompt Guide</a> fundamentals. Click any technique to learn the pattern, see before/after examples, and jump to practice.</p>
+
+    <div class="plab-progress-bar">
+      <div class="plab-progress-fill" id="progress-fill"></div>
+    </div>
+    <p class="plab-progress-text" id="progress-text">0 of 12 explored</p>
+
+    <h2 class="plab-tier-heading" style="--tier-color:#2DD4BF">Intermediate</h2>
+    <p class="plab-tier-desc">Build on the fundamentals — practical techniques for everyday AI tasks.</p>
+    <div class="plab-grid" id="grid-intermediate"></div>
+
+    <h2 class="plab-tier-heading" style="--tier-color:#F59E0B">Expert</h2>
+    <p class="plab-tier-desc">Advanced strategies for complex problems — requires a shift in thinking.</p>
+    <div class="plab-grid" id="grid-expert"></div>
+  </div>
+
+  <!-- ═══ TAB 2: LAB ═══ -->
+  <div class="plab-panel" id="panel-lab">
+    <p class="plab-intro">Pick a technique and practice with real workplace scenarios. Each exercise has criteria to check your prompt against.</p>
+    <div class="plab-lab-controls">
+      <label for="lab-technique-picker" class="plab-label">Choose a technique:</label>
+      <select id="lab-technique-picker" class="plab-select" aria-label="Select a technique to practice">
+        <option value="">— Select a technique —</option>
+      </select>
+      <span class="plab-exercise-count" id="lab-exercise-count"></span>
+    </div>
+    <div id="lab-exercises"></div>
+    <div class="plab-lab-empty" id="lab-empty">
+      <p>Select a technique above to start practising.</p>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 3: COMBINE ═══ -->
+  <div class="plab-panel" id="panel-combine">
+    <p class="plab-intro">Combine techniques for maximum impact. These recipes solve real workplace scenarios using 2-3 techniques in sequence.</p>
+
+    <h2 class="plab-section-title">Recipes</h2>
+    <div class="plab-combo-grid" id="combo-grid"></div>
+
+    <h2 class="plab-section-title" style="margin-top:2rem">Build Your Own</h2>
+    <p class="plab-tier-desc">Pick 2-3 techniques and we'll generate a combined prompt template.</p>
+    <div class="plab-custom-combo">
+      <div class="plab-custom-selects">
+        <select id="custom-t1" class="plab-select" aria-label="First technique"><option value="">Step 1...</option></select>
+        <span class="plab-flow-arrow">→</span>
+        <select id="custom-t2" class="plab-select" aria-label="Second technique"><option value="">Step 2...</option></select>
+        <span class="plab-flow-arrow">→</span>
+        <select id="custom-t3" class="plab-select" aria-label="Third technique (optional)"><option value="">(Optional) Step 3...</option></select>
+      </div>
+      <button class="plab-btn" id="btn-gen-combo" disabled>Generate Combined Template</button>
+      <div class="plab-custom-result" id="custom-combo-result" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 4: QUIZ ═══ -->
+  <div class="plab-panel" id="panel-quiz">
+    <p class="plab-intro">Not sure which technique to use? Answer 5 quick questions and we'll recommend the best fit for your task.</p>
+    <div class="plab-quiz-progress" id="quiz-progress"></div>
+    <div id="quiz-container"></div>
+    <div id="quiz-results" style="display:none"></div>
+  </div>
+
+  <!-- ═══ TAB 5: FAQ ═══ -->
+  <div class="plab-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range $faq }}
+      <details open>
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+
+</div>
+
+<!-- Cross-links -->
+{{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "prompt-lab") }}
+
+<!-- Pagefind hidden block -->
+<div data-pagefind-body aria-hidden="true" style="display:none">
+  <h2>Prompt Lab — Advanced Prompt Engineering Techniques</h2>
+  <p>Learn 12 advanced AI prompting techniques: Tree of Thought, Prompt Chaining, Skeleton Prompting, Mega Prompting, Self-Ask, Meta Prompting, Self-Reflection, Chain of Verification, Least-to-Most, Generated Knowledge, ReAct, and Iterative Refinement. Free interactive exercises for ChatGPT, M365 Copilot, Claude, and Gemini.</p>
+</div>
+
+<!-- SEO JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Sutheesh", "url": "https://www.aguidetocloud.com/about/" }
+}
+</script>
+{{ if $faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := $faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<!-- Data injection -->
+<script>
+window.__plabTechniques = {{ $techniques | jsonify | safeJS }};
+window.__plabExercises = {{ $exercises | jsonify | safeJS }};
+window.__plabCombinations = {{ $combinations | jsonify | safeJS }};
+window.__plabQuiz = {{ $quiz | jsonify | safeJS }};
+</script>
+<link rel="stylesheet" href="/css/prompt-lab.css?v={{ site.Params.cache_version }}">
+<script defer src="/js/prompt-lab.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

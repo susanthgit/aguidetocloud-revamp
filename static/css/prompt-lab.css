@@ -1,0 +1,416 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROMPT LAB — Advanced Prompt Engineering
+   Accent: #2DD4BF (Aquamarine)  |  Namespace: .plab-*
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.plab-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ── Glass Pill Tabs ────────────────────────────────────────────────────── */
+.plab-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+  overflow-x: auto; scrollbar-width: none;
+}
+.plab-tabs::-webkit-scrollbar { display: none; }
+.plab-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  font-family: inherit;
+}
+.plab-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.plab-tab.active {
+  color: #000; background: #2DD4BF; border-color: #2DD4BF;
+  box-shadow: 0 2px 8px rgba(45,212,191,0.3);
+}
+.plab-panel { display: none; }
+.plab-panel.active { display: block; }
+
+/* ── Intro + Section Headings ───────────────────────────────────────────── */
+.plab-intro {
+  color: rgba(255,255,255,0.7); font-size: 0.92rem; line-height: 1.6;
+  margin-bottom: 1.5rem; max-width: 700px;
+}
+.plab-intro a { color: #2DD4BF; text-decoration: underline; }
+
+.plab-section-title {
+  color: #2DD4BF; font-size: 1.1rem; font-weight: 700;
+  margin: 0 0 1rem; padding: 0;
+}
+
+.plab-tier-heading {
+  color: var(--tier-color, #2DD4BF); font-size: 1rem; font-weight: 700;
+  margin: 2rem 0 0.25rem; padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--tier-color, #2DD4BF);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.plab-tier-desc {
+  color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: 0 0 1rem;
+}
+
+/* ── Progress Bar ───────────────────────────────────────────────────────── */
+.plab-progress-bar {
+  height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px;
+  overflow: hidden; margin-bottom: 0.25rem;
+}
+.plab-progress-fill {
+  height: 100%; background: #2DD4BF; border-radius: 3px;
+  transition: width 0.4s ease; width: 0;
+}
+.plab-progress-text {
+  font-size: 0.75rem; color: rgba(255,255,255,0.4); margin: 0 0 1.5rem;
+}
+
+/* ── Technique Cards ────────────────────────────────────────────────────── */
+.plab-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; }
+
+.plab-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+  cursor: pointer;
+}
+.plab-card:hover { border-color: rgba(45,212,191,0.3); }
+.plab-card.explored { border-left: 3px solid #2DD4BF; }
+
+.plab-card-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.85rem 1rem; user-select: none;
+}
+.plab-card-emoji { font-size: 1.3rem; flex-shrink: 0; }
+.plab-card-info { flex: 1; min-width: 0; }
+.plab-card-name { font-size: 0.92rem; font-weight: 600; color: #fff; }
+.plab-card-tagline {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.plab-card-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.plab-badge {
+  font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.5rem;
+  border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.plab-badge-diff-1 { background: rgba(45,212,191,0.15); color: #2DD4BF; }
+.plab-badge-diff-2 { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.plab-badge-diff-3 { background: rgba(239,68,68,0.15); color: #EF4444; }
+.plab-badge-explored { background: rgba(45,212,191,0.2); color: #2DD4BF; }
+
+.plab-card-chevron {
+  color: rgba(255,255,255,0.3); font-size: 0.8rem; transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.plab-card.open .plab-card-chevron { transform: rotate(90deg); }
+
+/* Card expanded content */
+.plab-card-body { display: none; padding: 0 1rem 1rem; }
+.plab-card.open .plab-card-body { display: block; }
+
+.plab-card-body h4 {
+  color: #2DD4BF; font-size: 0.82rem; font-weight: 700;
+  margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.plab-when-list {
+  list-style: none; padding: 0; margin: 0 0 0.5rem;
+}
+.plab-when-list li {
+  font-size: 0.82rem; color: rgba(255,255,255,0.7); padding: 0.2rem 0;
+  padding-left: 1.2rem; position: relative;
+}
+.plab-when-list li::before {
+  content: '→'; position: absolute; left: 0; color: #2DD4BF;
+}
+
+.plab-pattern-box {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 0.75rem 1rem; font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.8);
+  white-space: pre-wrap; margin: 0.5rem 0;
+}
+
+/* Before/After */
+.plab-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 0.5rem 0; }
+.plab-ba-card {
+  background: rgba(0,0,0,0.2); border-radius: 8px; padding: 0.75rem;
+  border-left: 3px solid;
+}
+.plab-ba-before { border-color: #EF4444; }
+.plab-ba-after { border-color: #2DD4BF; }
+.plab-ba-label {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  margin-bottom: 0.3rem; letter-spacing: 0.04em;
+}
+.plab-ba-before .plab-ba-label { color: #EF4444; }
+.plab-ba-after .plab-ba-label { color: #2DD4BF; }
+.plab-ba-prompt {
+  font-size: 0.78rem; color: rgba(255,255,255,0.85); line-height: 1.5;
+  font-style: italic; margin: 0.3rem 0;
+}
+.plab-ba-note {
+  font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem;
+}
+
+/* Platform tips */
+.plab-platform-tips { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.5rem 0; }
+.plab-tip {
+  font-size: 0.75rem; color: rgba(255,255,255,0.6); padding: 0.5rem;
+  background: rgba(255,255,255,0.02); border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.plab-tip strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: 0.2rem; }
+
+.plab-card-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.plab-btn {
+  background: #2DD4BF; color: #000; border: none; padding: 0.5rem 1rem;
+  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.plab-btn:hover { background: #5EEAD4; }
+.plab-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.plab-btn-outline {
+  background: none; color: #2DD4BF; border: 1px solid rgba(45,212,191,0.3);
+  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.plab-btn-outline:hover { background: rgba(45,212,191,0.1); }
+
+/* Prerequisite link */
+.plab-prereq {
+  font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.5rem;
+}
+.plab-prereq a { color: #2DD4BF; }
+
+/* ── Lab Tab ────────────────────────────────────────────────────────────── */
+.plab-lab-controls {
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.plab-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 600; }
+.plab-select {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  color: #fff; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem;
+  font-family: inherit; min-width: 240px;
+}
+.plab-select option { background: #0a0a14; }
+.plab-exercise-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+.plab-lab-empty {
+  text-align: center; padding: 3rem 1rem; color: rgba(255,255,255,0.3);
+  font-size: 0.9rem;
+}
+
+.plab-exercise {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem;
+}
+.plab-exercise-header {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;
+}
+.plab-exercise-title { font-size: 0.92rem; font-weight: 600; color: #fff; }
+
+.plab-exercise-scenario {
+  background: rgba(0,0,0,0.2); border-radius: 8px; padding: 0.75rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem;
+  border-left: 3px solid rgba(45,212,191,0.3);
+}
+
+.plab-exercise-starter {
+  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 8px; padding: 0.6rem 0.75rem; margin-bottom: 0.5rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7); font-style: italic;
+}
+.plab-exercise-starter::before {
+  content: 'Starter prompt: '; font-weight: 700; color: #EF4444;
+  font-style: normal; font-size: 0.72rem; text-transform: uppercase;
+}
+
+.plab-exercise-task {
+  font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.plab-textarea {
+  width: 100%; min-height: 100px; background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+  color: #fff; padding: 0.75rem; font-size: 0.85rem; font-family: inherit;
+  resize: vertical; line-height: 1.5; margin-bottom: 0.75rem;
+}
+.plab-textarea:focus {
+  outline: none; border-color: #2DD4BF;
+  box-shadow: 0 0 0 2px rgba(45,212,191,0.2);
+}
+
+/* Criteria checklist */
+.plab-criteria { list-style: none; padding: 0; margin: 0 0 0.75rem; }
+.plab-criteria li {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); padding: 0.3rem 0;
+  padding-left: 1.5rem; position: relative; transition: color 0.2s;
+}
+.plab-criteria li::before {
+  content: '○'; position: absolute; left: 0; font-size: 0.85rem;
+}
+.plab-criteria li.met { color: #2DD4BF; }
+.plab-criteria li.met::before { content: '●'; color: #2DD4BF; }
+
+/* Hints */
+.plab-hints-toggle {
+  font-size: 0.78rem; color: rgba(45,212,191,0.7); cursor: pointer;
+  background: none; border: none; padding: 0; font-family: inherit;
+  margin-bottom: 0.5rem;
+}
+.plab-hints-toggle:hover { color: #2DD4BF; }
+.plab-hints-list {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5); margin: 0 0 0.5rem;
+  padding-left: 1.2rem;
+}
+
+/* Sample answer reveal */
+.plab-answer-box {
+  display: none; background: rgba(45,212,191,0.05);
+  border: 1px solid rgba(45,212,191,0.2); border-radius: 8px;
+  padding: 0.75rem; margin-top: 0.5rem;
+}
+.plab-answer-box.visible { display: block; }
+.plab-answer-label {
+  font-size: 0.72rem; font-weight: 700; color: #2DD4BF;
+  text-transform: uppercase; margin-bottom: 0.3rem;
+}
+.plab-answer-text {
+  font-size: 0.82rem; color: rgba(255,255,255,0.8); white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+/* ── Combine Tab ────────────────────────────────────────────────────────── */
+.plab-combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+
+.plab-combo-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; cursor: pointer; transition: border-color 0.2s;
+}
+.plab-combo-card:hover { border-color: rgba(45,212,191,0.3); }
+.plab-combo-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+.plab-combo-name { font-size: 0.92rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
+.plab-combo-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+
+.plab-combo-flow {
+  display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.plab-combo-step {
+  font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.5rem;
+  background: rgba(45,212,191,0.1); color: #2DD4BF; border-radius: 4px;
+}
+.plab-combo-arrow { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+
+.plab-combo-expanded { display: none; margin-top: 0.75rem; }
+.plab-combo-card.open .plab-combo-expanded { display: block; }
+.plab-combo-usecase { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; }
+
+.plab-combo-template {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 0.75rem; font-size: 0.78rem;
+  color: rgba(255,255,255,0.8); white-space: pre-wrap; line-height: 1.5;
+  font-family: 'JetBrains Mono', monospace; margin-bottom: 0.5rem;
+}
+
+/* Custom combo builder */
+.plab-custom-combo { margin-top: 1rem; }
+.plab-custom-selects {
+  display: flex; align-items: center; gap: 0.5rem;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+.plab-flow-arrow { color: rgba(255,255,255,0.3); font-size: 1.1rem; font-weight: 700; }
+.plab-custom-result {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 1rem; margin-top: 0.75rem;
+}
+
+/* ── Quiz Tab ───────────────────────────────────────────────────────────── */
+.plab-quiz-progress {
+  display: flex; gap: 0.4rem; margin-bottom: 1.5rem;
+}
+.plab-quiz-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); transition: background 0.3s;
+}
+.plab-quiz-dot.active { background: #2DD4BF; }
+.plab-quiz-dot.done { background: rgba(45,212,191,0.4); }
+
+.plab-quiz-question {
+  font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 1rem;
+}
+.plab-quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.plab-quiz-option {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0.75rem 1rem; cursor: pointer;
+  font-size: 0.88rem; color: rgba(255,255,255,0.7); transition: all 0.2s;
+  text-align: left; font-family: inherit;
+}
+.plab-quiz-option:hover {
+  border-color: rgba(45,212,191,0.4); color: #fff;
+  background: rgba(45,212,191,0.06);
+}
+.plab-quiz-option.selected {
+  border-color: #2DD4BF; color: #fff; background: rgba(45,212,191,0.1);
+}
+
+/* Quiz results */
+.plab-results-title {
+  font-size: 1.1rem; font-weight: 700; color: #2DD4BF; margin-bottom: 1rem;
+}
+.plab-result-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; margin-bottom: 0.75rem;
+  display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.plab-result-rank {
+  font-size: 1.5rem; font-weight: 800; color: #2DD4BF; flex-shrink: 0;
+  width: 2rem; text-align: center;
+}
+.plab-result-rank.gold { color: #F59E0B; }
+.plab-result-name { font-size: 0.92rem; font-weight: 600; color: #fff; }
+.plab-result-score { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+.plab-result-why { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem; }
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────── */
+#panel-faq details {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; margin-bottom: 0.75rem; padding: 0;
+  overflow: hidden;
+}
+#panel-faq summary {
+  font-size: 0.9rem; font-weight: 600; color: #fff;
+  padding: 0.85rem 1rem; cursor: pointer; list-style: none;
+}
+#panel-faq summary::-webkit-details-marker { display: none; }
+#panel-faq details p {
+  font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6;
+  padding: 0 1rem 0.85rem; margin: 0;
+}
+
+/* ── Toast ───────────────────────────────────────────────────────────────── */
+.plab-toast {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  background: #2DD4BF; color: #000; padding: 0.6rem 1rem;
+  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  z-index: 1000; opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+.plab-toast.show { opacity: 1; }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .plab-page { padding: 0 1rem 2rem; }
+  .plab-ba-grid { grid-template-columns: 1fr; }
+  .plab-platform-tips { grid-template-columns: 1fr; }
+  .plab-custom-selects { flex-direction: column; align-items: stretch; }
+  .plab-flow-arrow { text-align: center; }
+  .plab-combo-grid { grid-template-columns: 1fr; }
+  .plab-select { min-width: 100%; }
+  .plab-lab-controls { flex-direction: column; align-items: stretch; }
+}

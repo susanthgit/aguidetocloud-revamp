@@ -338,6 +338,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {name:'Compliance Passport',url:'/compliance-passport/'},
     {name:'Phishing Simulator',url:'/phishing-test/'},
     {name:'Cert Study Guides',url:'/cert-tracker/'},
+    {name:'Cert Compass',url:'/cert-compass/'},
     {name:'Meeting Planner',url:'/world-clock/'},
     {name:'QR Code Generator',url:'/qr-generator/'},
     {name:'WiFi QR Cards',url:'/wifi-qr/'},

@@ -25,14 +25,18 @@
 }
 
 /* ── Compact hero for cert study guide pages ── */
-.tool-hero { padding: 0.8rem 1rem 0.5rem; }
-.tool-hero-title { font-size: 1.2rem; margin-bottom: 0.15rem; }
+.tool-hero { padding: 0.5rem 0.75rem 0; }
+.tool-hero-inner { padding: 0.5rem 1rem 0.35rem; }
+.tool-hero-title { font-size: 1.2rem; }
+.tool-hero-title::after { width: 50px; }
 .tool-hero-subtitle { font-size: 0.78rem; }
-.tool-hero-badges { margin-top: 0.3rem; gap: 0.5rem; }
+.tool-hero-badges { margin-top: 0.15rem; }
 .cert-pn { margin-top: 0.5rem; padding-top: 0.4rem; }
 @media (max-width: 640px) {
-  .tool-hero { padding: 0.5rem 0.75rem 0.3rem; }
+  .tool-hero { padding: 0.4rem 0.5rem 0; }
+  .tool-hero-inner { padding: 0.4rem 0.75rem 0.3rem; }
   .tool-hero-title { font-size: 1rem; }
+  .tool-hero-title::after { width: 36px; }
 }
 
 /* ── Cert Prev/Next Circular Nav ── */

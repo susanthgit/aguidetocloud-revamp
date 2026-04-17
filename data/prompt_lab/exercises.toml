@@ -1,0 +1,679 @@
+# ============================================================================
+# PROMPT LAB — Exercises (3 per technique = 36 total)
+# ============================================================================
+# Each exercise has a workplace scenario, starter prompt, task, criteria
+# (keyword-based for real-time checking), and sample answer.
+# Difficulty: 1 (easy), 2 (medium), 3 (hard)
+# ============================================================================
+
+# ── Tree of Thought ──────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "tree-of-thought"
+id = "tot-1"
+title = "Cloud Storage Decision"
+difficulty = 1
+scenario = "Your team needs to choose between OneDrive, SharePoint, and a third-party cloud storage solution for your 200-person marketing department."
+starter_prompt = "Which cloud storage should our marketing team use?"
+task = "Rewrite this prompt to make the AI explore multiple storage options with structured evaluation."
+hints = ["Ask for at least 3 options", "Request pros and cons for each", "Ask for a recommendation with reasoning"]
+criteria = [
+  "Mentions evaluating multiple options (3+)",
+  "Asks for pros and cons or trade-offs",
+  "Requests a final recommendation with reasoning",
+  "Includes context about the team (marketing, 200 people)"
+]
+keywords = ["approaches,options,alternatives,compare,consider", "pros,cons,trade-offs,advantages,disadvantages", "recommend,best,evaluate,choose,pick", "marketing,200,team,department"]
+sample_answer = "Consider 3 cloud storage approaches for our 200-person marketing department: (1) OneDrive only, (2) SharePoint team sites, (3) a hybrid with a third-party tool like Box. For each option, list 3 pros, 3 cons, estimated cost per user, and how well it handles large video files (a key marketing need). Then evaluate all three and recommend the best fit, explaining your reasoning."
+
+[[exercises]]
+technique_id = "tree-of-thought"
+id = "tot-2"
+title = "Security Architecture"
+difficulty = 2
+scenario = "Your CISO wants to implement Zero Trust for remote workers. There are different approaches: device-based, identity-based, or network-based Zero Trust models."
+starter_prompt = "How do we implement Zero Trust for remote workers?"
+task = "Use Tree of Thought to have the AI explore different Zero Trust models before recommending one."
+hints = ["Specify the Zero Trust models to explore", "Ask for evaluation criteria", "Request scoring or ranking"]
+criteria = [
+  "Specifies multiple Zero Trust approaches to explore",
+  "Asks for structured evaluation of each approach",
+  "Includes context (remote workers, org details)",
+  "Requests a scored or ranked recommendation"
+]
+keywords = ["approaches,models,strategies,paths,options", "evaluate,compare,score,rank,assess", "remote,workers,employees,hybrid", "recommend,best,strongest,winner"]
+sample_answer = "Evaluate 3 Zero Trust approaches for our 500 remote workers on M365 E5: (1) Identity-first (Entra ID Conditional Access + MFA as the foundation), (2) Device-first (Intune compliance required for all access), (3) Network-first (ZTNA/Private Access replacing VPN). For each: explain the architecture, list 3 strengths and 3 weaknesses, rate implementation complexity (1-5), rate user impact (1-5), and estimate timeline. Then score each approach overall and recommend which to start with and why."
+
+[[exercises]]
+technique_id = "tree-of-thought"
+id = "tot-3"
+title = "Vendor Evaluation"
+difficulty = 3
+scenario = "You need to choose a SIEM solution. Options include Microsoft Sentinel, Splunk, and CrowdStrike. Budget is tight but security is critical."
+starter_prompt = "Which SIEM should we buy?"
+task = "Craft a Tree of Thought prompt that explores each option with specific evaluation criteria relevant to your constraints."
+hints = ["Define evaluation dimensions (cost, features, integration)", "Include your specific constraints", "Ask for weighted scoring"]
+criteria = [
+  "Names specific SIEM options to evaluate",
+  "Defines multiple evaluation criteria or dimensions",
+  "Includes constraints (budget, existing stack)",
+  "Asks for weighted or scored comparison"
+]
+keywords = ["Sentinel,Splunk,CrowdStrike,options,evaluate", "cost,price,budget,criteria,dimensions,features", "M365,existing,integration,stack,constraint", "score,weight,rank,compare,matrix"]
+sample_answer = "Evaluate these 3 SIEM solutions for our 300-person organisation (M365 E5, Azure-heavy, $50K annual security budget): Microsoft Sentinel, Splunk Cloud, and CrowdStrike Falcon LogScale. Score each on these weighted criteria: (1) Annual cost for our data volume (~50GB/day) — weight 30%, (2) M365 integration depth — weight 25%, (3) Detection coverage (MITRE ATT&CK) — weight 20%, (4) Ease of management for a 2-person security team — weight 15%, (5) Vendor lock-in risk — weight 10%. Calculate weighted scores, then present a recommendation matrix showing the winner and runner-up with clear reasoning."
+
+# ── Prompt Chaining ──────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "prompt-chaining"
+id = "chain-1"
+title = "Onboarding Documentation"
+difficulty = 1
+scenario = "You need to create a new employee IT onboarding guide. It needs to cover accounts, devices, software, and security training."
+starter_prompt = "Create an IT onboarding guide for new employees."
+task = "Break this into a chain of steps where each output feeds into the next."
+hints = ["Start by identifying what new employees need", "Then create content for each area", "End with a final formatted guide"]
+criteria = [
+  "Breaks the task into 3+ sequential steps",
+  "Each step clearly builds on the previous one",
+  "Steps progress from research to creation to final output",
+  "Includes a final assembly or formatting step"
+]
+keywords = ["step 1,step 2,step 3,first,then,next,finally", "using,based on,from the above,output,result", "list,identify,gather,research,inventory", "create,format,compile,assemble,produce"]
+sample_answer = "Let's build this step by step:\n\nStep 1: List every system, tool, and account a new employee at our company needs access to on Day 1, grouped by category (Identity, Communication, Productivity, Security, Department-Specific).\n\nStep 2: For each item from Step 1, write a 2-3 sentence description of what it is and why the employee needs it, plus the exact steps to request or set up access.\n\nStep 3: Using the content from Steps 1 and 2, create a polished IT Onboarding Guide formatted as a checklist the employee can follow, with estimated time per task and a 'Need Help?' contact for each section."
+
+[[exercises]]
+technique_id = "prompt-chaining"
+id = "chain-2"
+title = "Security Incident Report"
+difficulty = 2
+scenario = "A phishing email compromised one user's account. You need to investigate, contain, remediate, and write the incident report."
+starter_prompt = "Write a report about the phishing incident."
+task = "Create a prompt chain that mirrors the incident response workflow — investigate first, then contain, then report."
+hints = ["Mirror the real IR workflow: detect → investigate → contain → remediate → report", "Each step should use findings from the previous step", "The final report should reference all previous steps"]
+criteria = [
+  "Follows an incident response sequence",
+  "Each step uses information from the previous one",
+  "Covers investigation, containment, and reporting phases",
+  "Final step produces a formal document"
+]
+keywords = ["step,phase,stage,first,then,next", "investigate,identify,detect,discover,assess", "contain,isolate,block,remediate,reset", "report,document,summary,findings,timeline"]
+sample_answer = "Work through this phishing incident systematically:\n\nStep 1 — INVESTIGATE: A user (jane.doe@contoso.com) clicked a credential harvesting link at 2:15 PM yesterday. List all the checks I should perform to assess the blast radius — compromised mailbox rules, sent items, sign-in logs, file access, lateral movement indicators.\n\nStep 2 — CONTAIN: Based on the investigation findings above, list every containment action in priority order — what to block, reset, revoke, and isolate. Include the exact M365 admin portal path for each action.\n\nStep 3 — REMEDIATE: Now list the remediation steps to prevent recurrence — policy changes, user training, detection rules to add.\n\nStep 4 — REPORT: Using all findings from Steps 1-3, write a formal incident report with: Executive Summary, Timeline, Impact Assessment, Actions Taken, Root Cause, and Recommendations."
+
+[[exercises]]
+technique_id = "prompt-chaining"
+id = "chain-3"
+title = "Licence Optimisation"
+difficulty = 3
+scenario = "Your CFO wants to reduce M365 licensing costs. You need to analyse current usage, identify waste, model alternatives, and present recommendations."
+starter_prompt = "How can we reduce our Microsoft 365 licensing costs?"
+task = "Design a 4-step prompt chain that goes from analysis to executive recommendation."
+hints = ["Start with inventory/analysis", "Move to waste identification", "Model alternative scenarios", "End with an executive-ready recommendation"]
+criteria = [
+  "Has 4+ distinct sequential steps",
+  "Progresses from analysis to recommendation",
+  "Includes a cost modelling or comparison step",
+  "Ends with executive-ready output"
+]
+keywords = ["step,phase,first,then,next,finally", "analyse,audit,inventory,assess,review", "waste,unused,underutilised,savings,reduce", "executive,CFO,recommend,present,proposal"]
+sample_answer = "Let's approach licence optimisation systematically:\n\nStep 1 — AUDIT: We have 800 users across E3, E5, and Business Premium. List every M365 licence tier's key features and identify which features justify the price premium between tiers. Create a decision matrix: 'If the user only needs X, they should be on Y tier.'\n\nStep 2 — IDENTIFY WASTE: Using the decision matrix from Step 1, describe a process to identify users on higher tiers than they need. What usage signals indicate someone doesn't need E5 vs E3? What admin reports and PowerShell commands would reveal this?\n\nStep 3 — MODEL SCENARIOS: Create 3 cost scenarios: (A) Current state, (B) Optimised by downgrading over-licensed users, (C) Aggressive — moving to cheapest viable tier per user. Calculate annual cost for each assuming 800 users.\n\nStep 4 — PRESENT: Using all the above, write a 1-page executive brief for our CFO showing current spend, savings per scenario, implementation risk, and your recommendation."
+
+# ── Skeleton Prompting ───────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "skeleton-prompting"
+id = "skel-1"
+title = "Incident Comms Template"
+difficulty = 1
+scenario = "You need to send an email to all staff about a service outage. You want consistent structure every time."
+starter_prompt = "Write an outage notification email."
+task = "Create a skeleton with specific sections the AI should fill in for this outage."
+hints = ["Define each section with what should go there", "Include placeholders for variable information", "Make it reusable for future outages"]
+criteria = [
+  "Provides a clear template structure with sections",
+  "Each section has guidance on what to include",
+  "Includes context about the specific outage",
+  "Structure is reusable for future incidents"
+]
+keywords = ["template,structure,section,fill in,skeleton,framework", "summary,impact,status,timeline,update,next", "outage,incident,service,disruption", "reusable,consistent,every time,standard"]
+sample_answer = "Fill in this outage notification template for our current situation (Teams voice calling is down since 9 AM, affecting 200 users, ETA for fix is 2 PM):\n\n## Subject Line\nClear, specific subject — include the service name and status.\n\n## What's Happening (2 sentences)\nPlain English description of the issue. No jargon.\n\n## Who's Affected\nSpecific teams, locations, or user groups impacted.\n\n## What We're Doing\nActions IT is taking right now, in bullet points.\n\n## Workaround\nWhat users can do in the meantime.\n\n## Next Update\nWhen we'll send the next status update.\n\n## Contact\nWho to reach if they need urgent help."
+
+[[exercises]]
+technique_id = "skeleton-prompting"
+id = "skel-2"
+title = "Security Policy Document"
+difficulty = 2
+scenario = "You need to write an acceptable use policy for AI tools in your organisation."
+starter_prompt = "Write an AI acceptable use policy."
+task = "Design a skeleton that ensures the policy covers all necessary sections with specific guidance per section."
+hints = ["Think about what a legal/compliance team would expect", "Include both rules and examples", "Add an enforcement section"]
+criteria = [
+  "Has 5+ distinct policy sections",
+  "Each section includes what content should be generated",
+  "Covers both allowed and prohibited uses",
+  "Includes practical examples or scenarios"
+]
+keywords = ["template,structure,section,fill,skeleton,framework,outline", "policy,rule,guideline,acceptable,prohibited,allowed", "AI,copilot,ChatGPT,tool,generative", "example,scenario,enforcement,compliance"]
+sample_answer = "Fill in this AI Acceptable Use Policy skeleton for our financial services company (300 employees, M365 E5 with Copilot, SOC 2 compliant):\n\n## 1. Purpose & Scope\nWhy this policy exists, who it applies to, which AI tools are covered.\n\n## 2. Approved AI Tools\nTable: Tool name | Approved use | Data classification allowed | Licence requirement.\n\n## 3. Prohibited Uses\nBullet list of specific things employees must NOT do with AI tools, with a real example for each.\n\n## 4. Data Handling Rules\nWhat data can be entered into each tool. Rules by classification level (Public / Internal / Confidential / Restricted).\n\n## 5. Review & Approval\nWhen does AI output need human review before sharing externally? Decision tree.\n\n## 6. Incident Reporting\nWhat to do if someone accidentally shares sensitive data with an AI tool.\n\n## 7. Enforcement\nConsequences for policy violations, ranging from warning to termination.\n\n## 8. Review Cycle\nHow often this policy is reviewed and by whom."
+
+[[exercises]]
+technique_id = "skeleton-prompting"
+id = "skel-3"
+title = "Architecture Decision Record"
+difficulty = 3
+scenario = "You need to document why you chose Microsoft Sentinel over Splunk for your SIEM. Future teams need to understand the reasoning."
+starter_prompt = "Document why we chose Sentinel."
+task = "Create an Architecture Decision Record (ADR) skeleton that captures the decision, context, options, and consequences."
+hints = ["ADRs have a standard structure (context, decision, consequences)", "Include what was rejected and why", "Future-proof it with review triggers"]
+criteria = [
+  "Follows ADR format (context, decision, consequences)",
+  "Includes rejected alternatives with reasons",
+  "Captures assumptions and constraints",
+  "Includes review triggers for revisiting the decision"
+]
+keywords = ["template,structure,ADR,record,skeleton,framework", "context,decision,consequence,rationale,status", "rejected,alternative,considered,option,chose", "review,trigger,revisit,assumption,constraint"]
+sample_answer = "Fill in this Architecture Decision Record for our SIEM selection:\n\n## ADR-2026-003: SIEM Platform Selection\n\n### Status\n[Proposed / Accepted / Deprecated / Superseded]\n\n### Context\nWhat business need or technical problem drove this decision? What constraints existed (budget, timeline, team skills, existing infrastructure)?\n\n### Decision\nWhat did we decide? State it clearly in one sentence.\n\n### Options Considered\nFor each option (Sentinel, Splunk, CrowdStrike LogScale): Summary of approach, estimated cost, key strengths, key weaknesses, team capability fit.\n\n### Rationale\nWhy did we choose this option over the others? What were the deciding factors?\n\n### Consequences\nPositive: What benefits do we get?\nNegative: What trade-offs are we accepting?\nRisks: What could go wrong with this choice?\n\n### Assumptions\nWhat did we assume to be true that, if wrong, would change this decision?\n\n### Review Triggers\nList specific events that should trigger a re-evaluation (e.g., contract renewal, team growth to 5+ analysts, Azure cost exceeding $X/month)."
+
+# ── Mega Prompting ───────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "mega-prompting"
+id = "mega-1"
+title = "Tenant Audit Prompt"
+difficulty = 1
+scenario = "You want to create a reusable prompt that generates a comprehensive M365 tenant security audit every quarter."
+starter_prompt = "Audit our Microsoft 365 security."
+task = "Transform this into a mega prompt that combines role, context, task, format, constraints, and examples."
+hints = ["Assign a specific expert role", "Provide organisational context", "Define exact output format", "Set constraints on scope and depth"]
+criteria = [
+  "Assigns a specific expert role with experience",
+  "Includes organisational context and constraints",
+  "Specifies exact output format or structure",
+  "Sets boundaries on what to include or exclude"
+]
+keywords = ["you are,role,expert,consultant,specialist,engineer", "context,organisation,company,environment,users,licensing", "format,structure,output,template,sections,table", "constraint,avoid,exclude,limit,focus,scope,requirement"]
+sample_answer = "You are a senior Microsoft 365 security consultant with 10 years of experience in enterprise environments.\n\nContext: Our organisation has 500 users on M365 E5 licensing with hybrid Exchange and Entra ID. We're in financial services, subject to SOC 2 and privacy regulations. We have a 3-person IT security team.\n\nTask: Conduct a comprehensive security audit of our M365 tenant configuration, covering identity, email, data protection, devices, and monitoring.\n\nRequirements:\n- Each finding must include: severity (Critical/High/Medium/Low), the current state, the recommended state, and the exact admin portal path to fix it\n- Prioritise findings by risk, not alphabetically\n- Include a 1-page executive summary with a security score out of 100\n\nFormat: Start with the executive summary, then detailed findings grouped by security domain, ending with a 30-day remediation roadmap.\n\nConstraints:\n- Only include findings we can action with E5 licensing (no upsell)\n- Skip cosmetic issues — focus on real security risk\n- Keep the total under 2000 words\n\nThink step by step through each security domain before writing."
+
+[[exercises]]
+technique_id = "mega-prompting"
+id = "mega-2"
+title = "Training Material Creator"
+difficulty = 2
+scenario = "You need to create a 30-minute Copilot training session for managers who've never used AI tools."
+starter_prompt = "Create a Copilot training session for managers."
+task = "Build a mega prompt that produces a complete, facilitator-ready training session."
+hints = ["Define the audience precisely", "Specify the deliverables (slides outline, script, exercises)", "Set tone and complexity constraints", "Include what NOT to cover"]
+criteria = [
+  "Defines the audience (managers, non-technical, first time)",
+  "Specifies multiple deliverables",
+  "Sets tone and complexity level",
+  "Excludes topics that would overwhelm beginners"
+]
+keywords = ["you are,role,trainer,facilitator,instructor", "manager,executive,leader,non-technical,beginner", "slide,script,exercise,handout,agenda,deliverable", "avoid,exclude,don't,skip,not,simple,basic"]
+sample_answer = "You are an experienced corporate trainer who specialises in making AI tools approachable for non-technical professionals.\n\nContext: You're creating a 30-minute Copilot introduction for 20 department managers. None have used AI tools before. Some are sceptical. They need to see immediate personal value, not hear about technology.\n\nTask: Create a complete facilitator-ready training session with these deliverables:\n1. Slide deck outline (10 slides max, with speaker notes)\n2. Three live demo scenarios they can follow along with\n3. A one-page 'cheat sheet' handout they'll keep\n\nRequirements:\n- Open with a 'wow moment' demo in the first 2 minutes\n- Every example must use THEIR daily tasks (emails, meetings, reports)\n- Include at least one interactive exercise where they try Copilot themselves\n- End with 3 specific things they can try tomorrow\n\nTone: Conversational, encouraging, zero jargon. Talk about what Copilot DOES, not how it WORKS.\n\nConstraints:\n- Don't mention tokens, models, APIs, or prompt engineering\n- Don't compare to ChatGPT or competitors\n- Don't oversell — be honest about limitations\n- Keep everything within M365 Copilot (no third-party tools)"
+
+[[exercises]]
+technique_id = "mega-prompting"
+id = "mega-3"
+title = "RFP Response Template"
+difficulty = 3
+scenario = "Your company is responding to an RFP for IT managed services. You need a compelling, structured response."
+starter_prompt = "Help me write an RFP response for managed IT services."
+task = "Craft a mega prompt that produces a professional RFP response with all necessary components."
+hints = ["Assign a business development expert role", "Include your company's differentiators", "Specify RFP response conventions", "Request both executive summary and detailed sections"]
+criteria = [
+  "Assigns a specialised role (BD, proposal writer)",
+  "Includes company differentiators and context",
+  "Follows RFP response structure conventions",
+  "Requests both summary and detailed components"
+]
+keywords = ["you are,role,expert,writer,consultant,strategist", "company,differentiator,strength,track record,capability", "RFP,proposal,response,section,executive summary,compliance", "structure,format,page,word count,section,appendix"]
+sample_answer = "You are a senior proposal writer with 12 years of experience winning IT managed services contracts.\n\nContext: Our company (TechServe NZ, 50 employees) is responding to an RFP from a 1,000-person law firm seeking managed IT services. Our strengths: M365 expertise, 24/7 NZ-based support, legal industry experience (3 existing law firm clients), ISO 27001 certified. Our weakness: we're smaller than the incumbent (a large MSP).\n\nTask: Write a compelling RFP response that positions our size as an advantage (dedicated attention, senior staff on their account) while addressing the implied risk.\n\nFormat:\n1. Executive Summary (1 page — this wins or loses the deal)\n2. Company Overview with 3 client testimonials\n3. Technical Approach per RFP requirement\n4. Staffing Plan with named resources\n5. SLA commitments in a table\n6. Transition Plan (30/60/90 day)\n7. Pricing Summary\n\nConstraints:\n- Professional but warm tone — law firms value relationships\n- Avoid generic MSP language ('synergies', 'leverage', 'best-in-class')\n- Total response under 15 pages\n- Each section must directly reference the RFP requirement number it addresses"
+
+# ── Self-Ask ─────────────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "self-ask"
+id = "sa-1"
+title = "Copilot Deployment"
+difficulty = 1
+scenario = "You're planning to deploy M365 Copilot to your first 50 pilot users."
+starter_prompt = "Create a Copilot pilot deployment plan."
+task = "Rewrite this so the AI first identifies what it needs to know before creating the plan."
+hints = ["Ask the AI to list questions first", "Have it make stated assumptions", "Request that assumptions are flagged in the plan"]
+criteria = [
+  "Asks AI to list questions before answering",
+  "Requires assumptions to be stated explicitly",
+  "Still asks for the actual deployment plan",
+  "Asks which recommendations would change if assumptions are wrong"
+]
+keywords = ["question,ask,need to know,information,clarif", "assumption,assume,state,explicit,flag", "plan,deploy,pilot,rollout", "change,different,wrong,adjust,depend"]
+sample_answer = "I need a Copilot pilot deployment plan for 50 users.\n\nBefore creating the plan:\n1. List 8 questions you'd need answered to create the best possible pilot plan\n2. For each question, state your assumption since I haven't provided details\n3. Create the pilot plan based on those stated assumptions\n4. At the end, flag any recommendations that would change significantly if your assumptions are wrong\n5. Mark each assumption as [Safe to assume] or [Verify before proceeding]"
+
+[[exercises]]
+technique_id = "self-ask"
+id = "sa-2"
+title = "Budget Proposal"
+difficulty = 2
+scenario = "Your CTO asked you to propose a cybersecurity budget for next year."
+starter_prompt = "Help me create a cybersecurity budget proposal."
+task = "Use Self-Ask to make the AI surface all the unknowns before proposing numbers."
+hints = ["Ask about existing spending, threats, compliance needs", "Have the AI categorise assumptions by risk level", "Request the budget be adjustable based on assumption changes"]
+criteria = [
+  "Has the AI identify unknowns about current spending and needs",
+  "Asks for risk-categorised assumptions",
+  "Still produces the actual budget proposal",
+  "Includes sensitivity analysis or adjustable scenarios"
+]
+keywords = ["question,ask,need to know,unknown,gap", "assumption,assume,estimate,risk,confidence", "budget,cost,spend,invest,allocate", "scenario,adjust,sensitivity,change,depend,if"]
+sample_answer = "I need to propose a cybersecurity budget for next financial year to our CTO.\n\nBefore proposing numbers:\n1. List 12 questions you'd need answered to create an accurate cybersecurity budget (covering current spend, threat landscape, compliance requirements, team size, tool contracts, and planned projects)\n2. Categorise each assumption as: 🟢 Low risk (safe to estimate), 🟡 Medium risk (should verify), 🔴 High risk (could significantly change the budget)\n3. Create the budget proposal with line items, using your assumptions\n4. Show a sensitivity table: if any 🔴 assumption is wrong, how does the total budget change?\n5. End with 'Questions to ask your CTO before finalising' — the 3 most impactful unknowns"
+
+[[exercises]]
+technique_id = "self-ask"
+id = "sa-3"
+title = "Compliance Gap Analysis"
+difficulty = 3
+scenario = "A new regulation (NZ Privacy Act changes) may affect how your organisation handles personal data in M365."
+starter_prompt = "What do we need to change for the new privacy regulations?"
+task = "Apply Self-Ask to make the AI surface regulatory uncertainties and organisational unknowns before advising."
+hints = ["Separate what the AI knows vs what it needs from you", "Have it distinguish regulatory facts from interpretations", "Request conditional recommendations"]
+criteria = [
+  "Separates known regulatory facts from unknowns",
+  "Asks about organisation-specific details it can't know",
+  "Produces conditional recommendations (if X then Y)",
+  "Flags areas needing legal review"
+]
+keywords = ["question,ask,need,know,unknown,gap,clarif", "assume,assumption,interpret,legal,review", "regulation,privacy,compliance,act,law", "conditional,if,depend,recommend,flag,review"]
+sample_answer = "We need to assess the impact of NZ Privacy Act changes on our M365 environment.\n\nBefore advising:\n1. List what you know with certainty about these regulatory changes (cite sources if possible)\n2. List what you're uncertain about or interpreting (flag these clearly)\n3. List 8 organisation-specific questions you'd need answered (data types we hold, current controls, cross-border data flows, etc.)\n4. State your assumptions for each and flag confidence level\n\nThen provide:\n- A gap analysis with conditional recommendations: 'IF you [process health data / transfer data to Australia / etc.], THEN you need to [action]'\n- A clear list of items that require legal review vs items IT can action independently\n- Priority order based on risk and regulatory deadline"
+
+# ── Self-Reflection ──────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "self-reflection"
+id = "ref-1"
+title = "Policy Review"
+difficulty = 1
+scenario = "You've asked the AI to write a BYOD (Bring Your Own Device) policy."
+starter_prompt = "Write a BYOD policy for our company."
+task = "Add Self-Reflection instructions so the AI reviews its own policy for gaps."
+hints = ["Ask it to critique from specific quality criteria", "Include different stakeholder perspectives", "Request a revised version"]
+criteria = [
+  "Asks for the initial policy output",
+  "Specifies quality criteria for self-review",
+  "Requests specific improvements to be listed",
+  "Asks for a revised version incorporating improvements"
+]
+keywords = ["review,critique,evaluate,assess,check", "criteria,quality,gap,weakness,improve", "list,specific,improvement,finding", "revise,version 2,updated,improved,rewrite"]
+sample_answer = "Write a BYOD policy for our 200-person organisation (M365 E5, Intune-managed).\n\nAfter writing the policy, review it against these criteria:\n- Security: Does it address data loss if a personal device is lost or stolen?\n- Practicality: Could a non-technical employee understand and follow every rule?\n- Enforceability: Can IT actually verify compliance with each policy item?\n- Completeness: Does it cover all device types (phones, tablets, laptops, wearables)?\n\nList specific improvements for each criterion with examples, then produce a revised Version 2."
+
+[[exercises]]
+technique_id = "self-reflection"
+id = "ref-2"
+title = "Presentation Upgrade"
+difficulty = 2
+scenario = "You need a presentation for the board about your IT department's achievements this quarter."
+starter_prompt = "Create a quarterly IT achievements presentation."
+task = "Use Self-Reflection to make the AI review its presentation from the board's perspective."
+hints = ["The board cares about business impact, not technical details", "Include quantifiable outcomes", "Critique from a CFO and CEO perspective"]
+criteria = [
+  "Asks for the initial presentation content",
+  "Critique includes specific board-relevant perspectives",
+  "Looks for business impact vs technical details",
+  "Produces improved version with measurable outcomes"
+]
+keywords = ["review,critique,evaluate,perspective,lens", "board,executive,CEO,CFO,business,impact", "measurable,quantif,outcome,result,ROI,metric", "revise,version 2,improved,rewrite,update"]
+sample_answer = "Create a 10-slide quarterly IT achievements presentation for our board of directors.\n\nAfter creating the slides, review each one from these perspectives:\n1. The CFO: Is every achievement tied to a dollar value, time saving, or risk reduction? Replace any 'we implemented X' with 'X saved/prevented/enabled Y.'\n2. The CEO: Does the narrative show IT as a business enabler, not a cost centre? Is there a clear connection to company strategy?\n3. A sceptical board member: Would they challenge any claim? Are all numbers defensible?\n\nList the weakest slide and the strongest slide with reasoning. Then produce Version 2 addressing all feedback."
+
+[[exercises]]
+technique_id = "self-reflection"
+id = "ref-3"
+title = "Runbook Quality"
+difficulty = 3
+scenario = "You've asked the AI to create a runbook for restoring Exchange Online mailboxes from backup."
+starter_prompt = "Write a runbook for Exchange Online mailbox restoration."
+task = "Apply Self-Reflection with the '2 AM test' — could a junior admin follow this during an outage?"
+hints = ["The 2 AM test: works when tired, stressed, and without senior support", "Check for missing error handling", "Verify every step is unambiguous"]
+criteria = [
+  "Asks for the initial runbook",
+  "Applies the '2 AM test' criterion explicitly",
+  "Checks for error handling and edge cases",
+  "Requests actionable improvements and a revised version"
+]
+keywords = ["review,critique,test,check,evaluate,assess", "2 AM,junior,alone,stress,outage,emergency", "error,fail,wrong,edge case,troubleshoot", "revise,version 2,improve,fix,update,rewrite"]
+sample_answer = "Write a runbook for restoring Exchange Online mailboxes from backup (native Microsoft tools, E5 licensing, Veeam backup as secondary).\n\nAfter writing the runbook, apply the '2 AM Test' — review as if you're a junior admin running this alone during a 2 AM outage:\n- Are any steps ambiguous? (Could someone do the wrong thing?)\n- Are there missing 'What if this fails?' branches?\n- Are PowerShell commands copy-pasteable? (No placeholder text that could be run literally)\n- Is the escalation path clear at every decision point?\n- Are expected completion times listed for each major phase?\n\nList every issue found, then produce Version 2 that a panicked junior admin could follow safely."
+
+# ── Least-to-Most ────────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "least-to-most"
+id = "l2m-1"
+title = "DLP Deployment"
+difficulty = 1
+scenario = "You need to deploy Data Loss Prevention across your M365 tenant for the first time."
+starter_prompt = "How do we deploy DLP in Microsoft 365?"
+task = "Rewrite to have the AI break DLP deployment into the smallest possible ordered sub-tasks."
+hints = ["Start with prerequisites", "Order from simplest to most complex", "Include dependencies between tasks"]
+criteria = [
+  "Asks to break into smallest sub-tasks",
+  "Requests ordering from simplest to most complex",
+  "Asks for dependencies or prerequisites per task",
+  "Includes effort estimates"
+]
+keywords = ["break,decompose,sub-task,smallest,step,piece", "simple,complex,order,sequence,first,last", "prerequisite,dependency,before,requires,after", "effort,time,estimate,hours,days"]
+sample_answer = "Break our first-ever M365 DLP deployment into the smallest possible sub-tasks, ordered from simplest to most complex. We're a 300-person organisation on E5 with no existing DLP policies.\n\nFor each sub-task:\n1. What it involves (1-2 sentences)\n2. Prerequisites — which earlier tasks must be done first\n3. Estimated effort (1-2 hours / half-day / full day / multi-day)\n4. Owner role (IT Admin / Security / Compliance / Management)\n\nStart with absolute basics (like 'decide what sensitive data types we have') and work up to complex items (like 'tune policies based on false positive data')."
+
+[[exercises]]
+technique_id = "least-to-most"
+id = "l2m-2"
+title = "Teams Governance"
+difficulty = 2
+scenario = "Your Teams environment has grown to 500 teams with no governance. Management wants it cleaned up."
+starter_prompt = "Clean up our messy Teams environment."
+task = "Apply Least-to-Most to decompose this overwhelming project into a manageable task sequence."
+hints = ["Start with discovery/audit tasks", "Move to policy definition", "Then cleanup actions", "End with ongoing governance"]
+criteria = [
+  "Decomposes into 10+ granular sub-tasks",
+  "Clear progression from audit to cleanup to governance",
+  "Dependencies between tasks are explicit",
+  "Includes both technical and people/process tasks"
+]
+keywords = ["break,decompose,sub-task,step,piece,task", "audit,discover,inventory,assess,current state", "policy,rule,naming,lifecycle,governance,standard", "cleanup,archive,delete,merge,ongoing,maintain"]
+sample_answer = "Our Teams environment has 500 teams, many inactive or duplicated, with no governance policies. Break the cleanup project into the smallest possible sub-tasks, ordered from simplest to most complex.\n\nFor each sub-task:\n1. What it involves\n2. Prerequisites (which earlier tasks must be done first)\n3. Effort estimate\n4. Owner (IT Admin / Team Owners / Management / All Staff)\n5. Risk level (what could go wrong)\n\nI expect this to include both technical tasks (PowerShell audits, policy configuration) AND people tasks (communications, training, approvals). Start from 'generate a list of all teams' and work up to 'implement automated lifecycle management.'"
+
+[[exercises]]
+technique_id = "least-to-most"
+id = "l2m-3"
+title = "Zero Trust Implementation"
+difficulty = 3
+scenario = "The board has mandated a Zero Trust security model within 12 months. This affects every layer of your IT."
+starter_prompt = "Implement Zero Trust across our organisation."
+task = "Use Least-to-Most to decompose this massive initiative into a realistic, sequenced project plan."
+hints = ["Cover all Zero Trust pillars (identity, devices, network, apps, data)", "Each task should be small enough to assign to one person", "Build from foundation (identity) up to advanced (automation)"]
+criteria = [
+  "Covers multiple Zero Trust pillars",
+  "Tasks are small enough to be individually assignable",
+  "Clear foundation → advanced progression",
+  "Includes realistic effort and dependency mapping"
+]
+keywords = ["break,decompose,sub-task,smallest,step,phase", "identity,device,network,app,data,pillar", "foundation,basic,advanced,prerequisite,depend", "effort,timeline,owner,assign,resource"]
+sample_answer = "Our board has mandated Zero Trust within 12 months. We're a 500-person organisation on M365 E5 with hybrid infrastructure. Current state: basic MFA, no Conditional Access, Intune partially deployed, flat network.\n\nBreak this into the smallest possible sub-tasks spanning all Zero Trust pillars (Identity, Devices, Network, Applications, Data, Monitoring). Order from simplest to most complex.\n\nFor each sub-task:\n1. Description (1-2 sentences)\n2. Zero Trust pillar it addresses\n3. Prerequisites (other tasks that must be done first)\n4. Effort (days)\n5. Owner role\n6. Quick win? (Yes/No — can this show value to the board early?)\n\nStart with foundational identity tasks and work up to advanced automation. I need this to be realistic enough to build a 12-month Gantt chart from."
+
+# ── Generated Knowledge ──────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "generated-knowledge"
+id = "gk-1"
+title = "Conditional Access Design"
+difficulty = 1
+scenario = "You need to design Conditional Access policies for your organisation but want the AI to be thorough."
+starter_prompt = "Design Conditional Access policies for our org."
+task = "Use Generated Knowledge to make the AI build its CA knowledge base before designing policies."
+hints = ["Have it summarise CA concepts first", "Include common mistakes and best practices", "Then apply that knowledge to your specific situation"]
+criteria = [
+  "Asks AI to summarise its knowledge about the topic first",
+  "Knowledge section covers key concepts and pitfalls",
+  "Then uses that knowledge for the actual task",
+  "Output should be deeper than a direct answer"
+]
+keywords = ["first,write,summarise,list,everything you know,knowledge", "concept,best practice,mistake,pitfall,gotcha", "then,using that,based on,apply,now,create", "Conditional Access,CA,policy,Entra"]
+sample_answer = "First, write a comprehensive summary of everything you know about Conditional Access in Microsoft Entra ID that's relevant to an IT admin designing policies from scratch. Cover:\n- Core concepts (assignments, conditions, grant/session controls)\n- The 5 most common CA policy mistakes and how to avoid them\n- Best practice policy sets recommended by Microsoft\n- How CA interacts with MFA, Intune compliance, and app protection\n- What 'Report-only' mode is and why it matters\n\nThen, using that knowledge, design a Conditional Access policy set for our organisation: 300 users, M365 E5, Intune-managed devices, 20% remote workforce. Include a break-glass account procedure."
+
+[[exercises]]
+technique_id = "generated-knowledge"
+id = "gk-2"
+title = "SharePoint Architecture"
+difficulty = 2
+scenario = "You're redesigning your SharePoint Online architecture after years of organic growth."
+starter_prompt = "Help me redesign our SharePoint structure."
+task = "Apply Generated Knowledge to make the AI first build expertise on SharePoint IA, then apply it."
+hints = ["Have it cover information architecture principles", "Include common anti-patterns", "Then apply to your specific situation"]
+criteria = [
+  "Knowledge phase covers SharePoint IA principles",
+  "Includes anti-patterns and best practices",
+  "Application phase uses the knowledge for specific advice",
+  "Context about current state is provided"
+]
+keywords = ["first,summarise,write,knowledge,know,cover", "SharePoint,site,hub,information architecture,IA", "anti-pattern,mistake,best practice,principle,modern", "then,using,based on,apply,redesign,recommend"]
+sample_answer = "First, write a comprehensive guide on modern SharePoint Online information architecture. Cover:\n- Hub site vs communication site vs team site — when to use each\n- The flat vs deep hierarchy debate and current Microsoft guidance\n- Top 5 SharePoint architecture anti-patterns (and what to do instead)\n- How metadata and search should influence IA decisions\n- Permission inheritance strategies that scale\n- How SharePoint IA affects Copilot's ability to find and use content\n\nThen, using that knowledge, redesign our SharePoint architecture. Current state: 200 team sites (most created ad-hoc), no hub sites, 50 classic sites not yet migrated, 3TB of content, no consistent metadata. We're 400 users across 6 departments. Our primary goals are: Copilot readiness, findability, and governance."
+
+[[exercises]]
+technique_id = "generated-knowledge"
+id = "gk-3"
+title = "Incident Response Plan"
+difficulty = 3
+scenario = "You need to build an incident response plan that covers ransomware, account compromise, and data breach scenarios."
+starter_prompt = "Create an incident response plan for our organisation."
+task = "Use Generated Knowledge to have the AI build deep IR expertise before creating your plan."
+hints = ["Cover NIST IR framework, M365-specific tools, and real-world lessons", "Include attacker TTPs for each scenario", "Then create scenario-specific playbooks"]
+criteria = [
+  "Knowledge phase is comprehensive and framework-based",
+  "Covers multiple incident types and attacker techniques",
+  "Application phase creates specific, actionable playbooks",
+  "Includes M365-specific tools and capabilities"
+]
+keywords = ["first,summarise,knowledge,cover,write,everything", "NIST,framework,phase,playbook,IR,incident response", "ransomware,compromise,breach,attack,scenario,TTP", "then,using,based on,apply,create,build,plan"]
+sample_answer = "First, build a comprehensive incident response knowledge base covering:\n- The NIST Incident Response lifecycle (Preparation, Detection, Containment, Eradication, Recovery, Lessons Learned)\n- For each of these 3 scenarios, typical attacker techniques and indicators: (a) Ransomware, (b) Business Email Compromise, (c) Data Exfiltration\n- Microsoft 365 Defender capabilities available for each IR phase\n- Common IR mistakes that make incidents worse\n- Legal notification requirements (general, not jurisdiction-specific)\n\nThen, using that knowledge base, create 3 incident response playbooks for our 500-person M365 E5 organisation. Each playbook should have: trigger criteria, immediate actions (first 30 minutes), investigation steps, containment procedures, communication templates, and recovery procedures. Include the specific M365 tools and admin portal paths for each step."
+
+# ── Meta Prompting ───────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "meta-prompting"
+id = "meta-1"
+title = "Weekly Report Prompt"
+difficulty = 2
+scenario = "You write a weekly IT status report for leadership every Friday. You want a reusable prompt that always produces great reports."
+starter_prompt = "Help me write my weekly IT report."
+task = "Use Meta Prompting to have the AI design the optimal weekly report prompt for you."
+hints = ["Ask the AI to design the prompt, not write the report", "Have it explain its design choices", "Make the output a reusable template"]
+criteria = [
+  "Asks AI to design a prompt, not do the task directly",
+  "Requests explanation of design choices",
+  "Output should be a reusable prompt template",
+  "Specifies what makes a 'good' weekly report prompt"
+]
+keywords = ["design,create,write,build,craft,generate a prompt", "prompt,template,instruction,reusable", "explain,why,choice,reasoning,effective", "weekly,report,status,leadership"]
+sample_answer = "I write a weekly IT status report for leadership every Friday. I want a reusable prompt that consistently produces excellent reports.\n\nDesign the most effective prompt template for generating weekly IT status reports. The prompt you design should:\n- Produce reports that executives actually read (short, impactful, decision-oriented)\n- Have clear placeholders I can fill in each week ([THIS WEEK'S PROJECTS], [METRICS], etc.)\n- Include the right role and context for consistent quality\n- Build in constraints that prevent common report-writing mistakes (too long, too technical, burying the lead)\n\nAfter designing the prompt, explain why you made each structural choice and how it improves the output quality."
+
+[[exercises]]
+technique_id = "meta-prompting"
+id = "meta-2"
+title = "Interview Question Generator"
+difficulty = 2
+scenario = "You need to interview candidates for an IT security analyst role."
+starter_prompt = "Give me interview questions for an IT security analyst."
+task = "Use Meta Prompting to have the AI design a prompt that generates the best possible interview questions."
+hints = ["The AI should design a prompt for generating questions, not just list questions", "Include evaluation criteria for what makes a good interview question", "Make it adaptable for different seniority levels"]
+criteria = [
+  "Asks AI to design a prompt, not just generate questions",
+  "Includes criteria for what makes good interview questions",
+  "Output is a reusable prompt template",
+  "Adaptable for different roles or levels"
+]
+keywords = ["design,create,build,generate a prompt", "prompt,template,reusable,effective", "interview,question,assess,evaluate,candidate", "criteria,quality,good,effective,explain why"]
+sample_answer = "I need to interview candidates for IT security roles of varying seniority. Design a prompt template that generates the best possible interview questions.\n\nThe prompt you design should:\n- Have a placeholder for [ROLE LEVEL: Junior/Mid/Senior] that adjusts question complexity\n- Generate questions that test real skills, not just memorised knowledge\n- Include the expected 'good answer' criteria alongside each question\n- Mix technical, scenario-based, and behavioural questions\n- Avoid generic questions that every candidate can fake\n\nDesign the prompt, then explain why each element makes it effective. Finally, demonstrate by running the prompt for a Senior Security Analyst position."
+
+[[exercises]]
+technique_id = "meta-prompting"
+id = "meta-3"
+title = "Prompt Library Builder"
+difficulty = 3
+scenario = "You want to create a library of 10 prompts your IT team can use daily."
+starter_prompt = "Create some useful prompts for my IT team."
+task = "Go full meta: have the AI design a prompt that designs prompts, with quality criteria and self-evaluation."
+hints = ["Three levels of meta: you prompt → AI designs a prompt-generator → that generates specific prompts", "Include quality criteria for each generated prompt", "Have the AI evaluate its own generated prompts"]
+criteria = [
+  "Multi-level meta: prompt that generates prompts",
+  "Includes quality criteria for generated prompts",
+  "Self-evaluation of the generated prompts",
+  "Produces a practical, usable library"
+]
+keywords = ["design,create,generate,build prompt", "prompt,template,library,collection", "quality,criteria,evaluate,score,assess", "meta,generate prompts,prompt that,design a prompt"]
+sample_answer = "I want to build a prompt library for my 5-person IT team (M365 E5, Azure, Intune).\n\nFirst, design a 'Prompt Generator Prompt' — a meta-template that can produce high-quality, task-specific prompts. The generator should:\n- Accept inputs: [TASK], [TOOL], [AUDIENCE], [OUTPUT FORMAT]\n- Always include: role assignment, context, constraints, and output format\n- Score each generated prompt on: specificity (1-5), reusability (1-5), and clarity (1-5)\n\nThen, use your generator to create 10 prompts for these daily IT tasks:\n1. Triage new support tickets\n2. Write change request documentation\n3. Summarise overnight monitoring alerts\n4. Draft user communication about maintenance\n5. Review PowerShell scripts for errors\n\nFor each generated prompt, show the quality scores and explain one thing that makes it better than a naive version."
+
+# ── Chain of Verification ────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "chain-of-verification"
+id = "cov-1"
+title = "Licensing Facts"
+difficulty = 2
+scenario = "You need accurate M365 licensing information for a budget meeting tomorrow."
+starter_prompt = "What's included in Microsoft 365 E5?"
+task = "Add Chain of Verification to make the AI fact-check its own licensing claims."
+hints = ["Ask for the information first", "Then have it list every factual claim", "Rate confidence and flag uncertain items"]
+criteria = [
+  "Gets the initial informational response",
+  "Asks AI to extract factual claims from its response",
+  "Requires confidence rating per claim",
+  "Asks for verification method for uncertain claims"
+]
+keywords = ["claim,fact,statement,specific,verify,check", "confidence,certain,uncertain,accurate,correct", "high,medium,low,rate,score,flag", "verify,confirm,check,source,URL,documentation"]
+sample_answer = "List everything included in a Microsoft 365 E5 licence — all services, security features, compliance tools, and pricing per user per month.\n\nAfter your response:\n1. Extract every specific factual claim (prices, feature names, inclusion/exclusion statements, limits)\n2. Rate each claim: ✅ High confidence (core, well-known), ⚠️ Medium (may have changed recently), ❌ Low (might be outdated or incorrect)\n3. For each ⚠️ and ❌ item, suggest the specific Microsoft documentation page I should check to verify\n4. If you find any contradictions in your own response, correct them"
+
+[[exercises]]
+technique_id = "chain-of-verification"
+id = "cov-2"
+title = "Compliance Requirements"
+difficulty = 2
+scenario = "You're preparing for a SOC 2 audit and need accurate information about M365 compliance controls."
+starter_prompt = "How does Microsoft 365 help with SOC 2 compliance?"
+task = "Apply Chain of Verification to ensure the compliance guidance is reliable enough to share with auditors."
+hints = ["Compliance information must be highly accurate", "Have the AI separate Microsoft's responsibility from yours", "Flag any claims about certifications or attestations"]
+criteria = [
+  "Gets compliance guidance first",
+  "Verifies claims about certifications and controls",
+  "Separates vendor vs customer responsibilities",
+  "Flags items auditors would challenge"
+]
+keywords = ["claim,fact,verify,check,accurate,correct", "SOC 2,compliance,audit,certification,attestation", "confidence,certain,flag,verify,source", "Microsoft,customer,shared,responsibility"]
+sample_answer = "Explain how Microsoft 365 E5 supports SOC 2 Type II compliance, covering: which SOC 2 trust service criteria M365 addresses, what Microsoft handles vs what we must configure ourselves, and which M365 features map to specific SOC 2 controls.\n\nAfter your response:\n1. List every claim about Microsoft certifications, attestations, or compliance coverage\n2. Rate confidence: ✅ Verifiable (published in Microsoft Trust Portal), ⚠️ Likely correct but verify, ❌ Potentially outdated\n3. For each claim, note whether an auditor would accept it at face value or require documentation\n4. Explicitly separate: 'Microsoft is responsible for X' vs 'Customer must configure Y'\n5. Link to specific Microsoft Trust Portal or compliance documentation pages"
+
+[[exercises]]
+technique_id = "chain-of-verification"
+id = "cov-3"
+title = "Technical Architecture Review"
+difficulty = 3
+scenario = "You're documenting your Azure/M365 hybrid architecture for a new team member and need it to be accurate."
+starter_prompt = "Document our hybrid M365 and Azure architecture best practices."
+task = "Use Chain of Verification for a technical document where wrong information could cause outages."
+hints = ["Technical architecture errors can cause outages", "Verify version-specific claims", "Check compatibility statements especially carefully"]
+criteria = [
+  "Gets architecture documentation first",
+  "Verifies technical claims about compatibility and requirements",
+  "Flags version-specific or environment-specific claims",
+  "Distinguishes best practices from requirements"
+]
+keywords = ["claim,fact,verify,check,technical,accurate", "architecture,hybrid,Azure,M365,infrastructure", "confidence,version,compatibility,require,support", "best practice,requirement,must,should,recommend"]
+sample_answer = "Document the best practices for a hybrid M365/Azure architecture: Entra Connect sync, Exchange hybrid, SharePoint hybrid, and Azure AD Application Proxy. Include version requirements, network requirements, and certificate requirements for each.\n\nAfter your documentation:\n1. Extract every technical claim: version numbers, port requirements, protocol specifications, compatibility statements, and 'requires X' declarations\n2. Rate each: ✅ High confidence, ⚠️ May have changed in recent updates, ❌ Possibly outdated — technology moves fast\n3. For ⚠️ and ❌ items: provide the specific Microsoft Learn documentation URL to verify\n4. Flag any statements where the recommendation differs between 'greenfield' (new setup) vs 'existing migration'\n5. Note: clearly label which items are hard requirements vs recommended best practices — getting this wrong could cause an outage"
+
+# ── ReAct ────────────────────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "react"
+id = "react-1"
+title = "MFA Lockout"
+difficulty = 1
+scenario = "Multiple users report they're locked out of their accounts after an MFA change was pushed overnight."
+starter_prompt = "Users are locked out after MFA changes. Help!"
+task = "Restructure this as a ReAct troubleshooting prompt with Think/Act/Observe cycles."
+hints = ["Start with the most likely cause", "Each action should be a specific admin check", "Observations should determine the next step"]
+criteria = [
+  "Uses Think/Act/Observe structure",
+  "Each cycle determines the next step",
+  "Actions are specific admin portal checks or commands",
+  "Continues until root cause is found"
+]
+keywords = ["think,thought,consider,likely,cause,hypothesis", "act,check,verify,look,run,navigate,action", "observe,result,finding,tells us,indicates,means", "repeat,continue,next,cycle,step,troubleshoot"]
+sample_answer = "Multiple users are locked out this morning after we pushed MFA registration changes overnight via Conditional Access. Approximately 30 of 500 users affected, all reporting 'Your sign-in was blocked.'\n\nTroubleshoot this systematically using Think → Act → Observe:\n\n**Think:** What's the most likely cause given the timing and symptoms?\n**Act:** What specific check should I perform first? (Give the exact Entra admin portal path or PowerShell command)\n**Observe:** What would each possible result mean?\n\nContinue the investigation cycle, branching based on findings. Cover: CA policy configuration, MFA registration state, user group membership, and sign-in log error codes. Don't jump to solutions — diagnose first."
+
+[[exercises]]
+technique_id = "react"
+id = "react-2"
+title = "Email Delivery Failure"
+difficulty = 2
+scenario = "Emails from your domain to a specific partner are bouncing with NDR errors."
+starter_prompt = "Our emails to partner.com are bouncing."
+task = "Apply ReAct to create a systematic email delivery investigation."
+hints = ["Email delivery has many potential failure points", "Each observation should narrow down the cause", "Include both sender-side and receiver-side checks"]
+criteria = [
+  "Follows Think/Act/Observe pattern",
+  "Investigation covers multiple failure points",
+  "Each cycle narrows the diagnosis",
+  "Includes both internal and external checks"
+]
+keywords = ["think,thought,consider,likely,hypothesis", "act,check,test,verify,look,command,run", "observe,result,finding,means,indicates,NDR,bounce", "DNS,SPF,DKIM,DMARC,transport,connector,MX"]
+sample_answer = "Emails from our M365 tenant (contoso.com) to partner.com are bouncing. NDR error: '550 5.7.1 Message rejected due to policy.' Started 2 days ago, only affects this one partner domain, internal emails work fine.\n\nInvestigate using Think → Act → Observe cycles:\n\n**Think:** Given the error code and symptoms, what are the top 3 possible causes?\n**Act:** For the most likely cause, what specific diagnostic check should I run? (PowerShell command, message trace, DNS lookup, or admin portal check)\n**Observe:** What would each possible result tell us?\n\nContinue cycling through: our SPF/DKIM/DMARC records, Exchange transport rules, connector configuration, message trace results, and potential recipient-side blocks. Each observation should determine the next check."
+
+[[exercises]]
+technique_id = "react"
+id = "react-3"
+title = "Performance Investigation"
+difficulty = 3
+scenario = "SharePoint Online is slow for your entire organisation. No Microsoft service health alerts. Users complain pages take 10+ seconds to load."
+starter_prompt = "SharePoint is slow for everyone. What's wrong?"
+task = "Build a comprehensive ReAct investigation covering network, tenant, client, and content layers."
+hints = ["Performance issues can be network, client, tenant, or content-related", "Include specific diagnostic tools and metrics", "Branch the investigation based on findings"]
+criteria = [
+  "Systematic Think/Act/Observe across multiple layers",
+  "Covers network, client, tenant, and content dimensions",
+  "Uses specific diagnostic tools and metrics",
+  "Investigation branches based on intermediate findings"
+]
+keywords = ["think,thought,consider,hypothesis,layer,possible", "act,check,test,measure,diagnose,run,tool", "observe,result,metric,latency,finding,indicates", "network,client,tenant,content,browser,DNS,CDN"]
+sample_answer = "SharePoint Online is slow for our entire 400-person organisation. Pages take 10+ seconds to load. No Microsoft service health advisories. Started gradually over the past week. Affects all browsers and devices.\n\nConduct a systematic performance investigation using Think → Act → Observe, covering all possible layers:\n\nStart with Layer 1 (Network): DNS resolution, proxy/firewall inspection, M365 connectivity test results\nThen Layer 2 (Client): Browser dev tools network waterfall, client-side caching state\nThen Layer 3 (Tenant): Large lists, custom solutions, storage quotas\nThen Layer 4 (Content): Page complexity, web parts, embedded content\n\nFor each Think → Act → Observe cycle:\n- **Think:** Given what we know so far, what's the most likely cause at this layer?\n- **Act:** What specific diagnostic should I run? (Exact tool, command, or browser action)\n- **Observe:** What metric or result would confirm or rule out this cause? What's the threshold for 'normal'?\n\nBranch your investigation based on findings — don't follow a fixed script."
+
+# ── Iterative Refinement ─────────────────────────────────────────────────────
+
+[[exercises]]
+technique_id = "iterative-refinement"
+id = "iter-1"
+title = "All-Staff Email"
+difficulty = 1
+scenario = "You need to email all 500 staff about a mandatory password policy change."
+starter_prompt = "Write an email about our new password policy."
+task = "Add multi-perspective review rounds to produce an email that works for everyone."
+hints = ["Different audiences read differently: executives skim, sceptics resist, helpdesk prepares", "Each perspective should catch different issues", "Version 2 should address all perspectives"]
+criteria = [
+  "Asks for initial version focused on one quality",
+  "Reviews from 2+ distinct perspectives",
+  "Each perspective catches different issues",
+  "Produces improved version addressing all feedback"
+]
+keywords = ["version 1,first draft,initial,V1", "perspective,viewpoint,lens,as a,critique,review", "executive,employee,sceptic,helpdesk,manager", "version 2,improve,revise,address,fix,V2"]
+sample_answer = "Write a company-wide email announcing our new password policy (minimum 16 characters, passphrase encouraged, no expiry, MFA required within 30 days). This is Version 1 — focus on clarity and completeness.\n\nAfter Version 1, critique from these perspectives:\n1. **The busy executive:** Can they understand the action required from just the subject line and first sentence?\n2. **The annoyed employee:** Does it explain WHY this is happening? Does it acknowledge the inconvenience?\n3. **The IT helpdesk:** Will this email generate more support tickets or fewer? Are self-service instructions clear enough?\n\nList specific improvements from each perspective, then produce Version 2 that addresses all feedback and stays under 200 words."
+
+[[exercises]]
+technique_id = "iterative-refinement"
+id = "iter-2"
+title = "Executive Presentation"
+difficulty = 2
+scenario = "You need a 5-minute presentation for the CEO on why the company should invest in AI tools."
+starter_prompt = "Make a presentation about why we should invest in AI."
+task = "Use Iterative Refinement with business-specific perspective rounds."
+hints = ["Each round should target a different C-suite concern", "CFO wants numbers, CEO wants strategy, CTO wants feasibility", "The final version should survive all three critiques"]
+criteria = [
+  "Produces initial version with clear focus",
+  "Reviews from multiple C-suite perspectives",
+  "Each review targets different concerns (financial, strategic, technical)",
+  "Final version addresses all executive concerns"
+]
+keywords = ["version 1,V1,initial,first", "CFO,CEO,CTO,executive,perspective,critique", "cost,ROI,strategy,feasible,risk,revenue,competitive", "version 2,V2,improve,revise,address,final"]
+sample_answer = "Create a 5-minute presentation (8 slides max) arguing that our 300-person company should invest in M365 Copilot and AI training. This is Version 1 — focus on making the strongest possible business case.\n\nAfter Version 1, critique it from 3 C-suite perspectives:\n1. **CFO lens:** Are the cost projections credible? Is the ROI timeline realistic? What's the total cost of ownership including training and change management?\n2. **CEO lens:** Does this align with our 3-year strategy? Will it give us competitive advantage? Is the transformation story compelling?\n3. **CTO lens:** Is the technical approach feasible? What infrastructure changes are needed? What are the security implications?\n\nList the single biggest weakness each executive would identify. Then produce Version 2 that survives all three critiques while staying concise enough for a 5-minute slot."
+
+[[exercises]]
+technique_id = "iterative-refinement"
+id = "iter-3"
+title = "Policy Document"
+difficulty = 3
+scenario = "You're writing an AI acceptable use policy that needs approval from Legal, HR, IT, and the CEO."
+starter_prompt = "Write an AI acceptable use policy."
+task = "Apply Iterative Refinement with 4 stakeholder perspectives to produce a policy everyone can approve."
+hints = ["Each stakeholder has different concerns and language preferences", "Legal wants risk coverage, HR wants fairness, IT wants enforceability, CEO wants brevity", "The final version must balance all four"]
+criteria = [
+  "Produces initial policy focused on one dimension",
+  "Reviews from 4 distinct stakeholder perspectives",
+  "Each perspective represents genuine real-world concerns",
+  "Final version balances all perspectives without being watered down"
+]
+keywords = ["version 1,V1,initial,draft", "legal,HR,IT,CEO,stakeholder,perspective,review", "risk,fair,enforce,brief,practical,liability", "version 2,V2,final,balance,address,approve"]
+sample_answer = "Write an AI Acceptable Use Policy for our 300-person financial services company (M365 Copilot, ChatGPT Enterprise approved, personal AI use restricted). Version 1 — focus on being comprehensive and covering all scenarios.\n\nNow apply 4 rounds of stakeholder review:\n\nRound 1 — **Legal:** Flag any liability gaps. Are prohibited uses specific enough to be enforceable? Is there a clear safe harbour for good-faith mistakes? Does it address IP ownership of AI-generated content?\n\nRound 2 — **HR:** Is the policy fair and non-discriminatory? Does it account for accessibility needs? Is the language clear to non-technical employees? Are consequences proportionate?\n\nRound 3 — **IT Security:** Can every 'prohibited use' actually be detected and prevented technically? Are the monitoring provisions realistic? Does it align with our DLP and audit capabilities?\n\nRound 4 — **CEO:** Can this be summarised in 3 bullet points for the all-hands? Does it enable innovation or just restrict it? Will employees feel trusted or surveilled?\n\nAfter all 4 rounds, list the conflicting recommendations (there will be some) and produce a Version 2 that makes the best trade-off for each conflict."

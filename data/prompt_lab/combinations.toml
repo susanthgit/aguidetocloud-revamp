@@ -1,0 +1,184 @@
+# ============================================================================
+# PROMPT LAB — Technique Combinations (Scenario-First)
+# ============================================================================
+# 8 pre-built combinations named after real workplace scenarios.
+# Each combines 2-3 techniques in a specific order with a template.
+# ============================================================================
+
+[[combinations]]
+id = "incident-triage"
+name = "Incident Triage"
+description = "Systematically investigate and document a security or IT incident"
+icon = "🚨"
+techniques = ["self-ask", "react", "self-reflection"]
+flow_labels = ["Surface unknowns", "Investigate systematically", "Quality-check the response"]
+template = """Before investigating, list what information you need about this incident that I haven't provided. State your assumptions clearly.
+
+Now investigate step by step using Think → Act → Observe:
+- Think: What's the most likely cause?
+- Act: What should I check? (Exact admin path or command)
+- Observe: What would the result tell me?
+Continue until root cause is identified.
+
+After your investigation, review your analysis:
+- Did you consider all likely causes?
+- Are your recommended actions safe to perform?
+- What could go wrong with your recommendations?
+Produce a revised final assessment."""
+use_case = "Security incidents, outage investigations, account compromise response"
+
+[[combinations]]
+id = "deep-analysis"
+name = "Deep Analysis"
+description = "Get thorough, verified answers to complex technical questions"
+icon = "🔍"
+techniques = ["generated-knowledge", "tree-of-thought", "chain-of-verification"]
+flow_labels = ["Build knowledge base", "Explore multiple approaches", "Verify all claims"]
+template = """First, write everything you know about [TOPIC] that's relevant to [CONTEXT]. Cover key concepts, best practices, common mistakes, and recent changes.
+
+Using that knowledge, consider [N] different approaches to [TASK]. For each approach: explain the strategy, list pros and cons, and rate feasibility.
+
+After recommending the best approach, extract every specific factual claim. Rate your confidence (High/Medium/Low) and flag anything that should be verified before acting on it."""
+use_case = "Architecture decisions, vendor evaluations, technology strategy"
+
+[[combinations]]
+id = "policy-builder"
+name = "Policy Builder"
+description = "Create bulletproof policies that survive stakeholder review"
+icon = "📋"
+techniques = ["self-ask", "skeleton-prompting", "iterative-refinement"]
+flow_labels = ["Identify requirements", "Structure the document", "Multi-perspective review"]
+template = """I need a [POLICY TYPE] policy for [CONTEXT].
+
+Before writing, list 8 questions you'd need answered to write the best policy. State your assumptions for each.
+
+Then fill in this policy structure:
+1. Purpose & Scope
+2. Definitions
+3. Policy Statements (numbered, enforceable rules)
+4. Exceptions Process
+5. Enforcement
+6. Review Cycle
+
+After writing, critique from these perspectives:
+1. Legal: liability gaps, enforceability
+2. Employees: clarity, fairness
+3. IT: detectability, technical feasibility
+Produce a revised version addressing all concerns."""
+use_case = "Security policies, acceptable use policies, data governance, AI policies"
+
+[[combinations]]
+id = "migration-planning"
+name = "Migration Planning"
+description = "Plan complex migration projects from discovery to execution"
+icon = "🚀"
+techniques = ["self-ask", "least-to-most", "chain-of-verification"]
+flow_labels = ["Surface unknowns", "Decompose into tasks", "Verify assumptions"]
+template = """I'm planning a migration: [DESCRIPTION].
+
+Before planning, list 10 questions you'd need answered. State assumptions where I haven't provided details.
+
+Break the migration into the smallest possible sub-tasks, ordered from simplest to most complex. For each: description, prerequisites, effort estimate, owner role, and risk level.
+
+After the plan, verify each technical assumption:
+- Are version requirements current?
+- Are compatibility claims accurate?
+- Are timeline estimates realistic?
+Flag anything with less than High confidence."""
+use_case = "Cloud migrations, tenant moves, platform upgrades, tool rollouts"
+
+[[combinations]]
+id = "training-creator"
+name = "Training Creator"
+description = "Build comprehensive training materials that actually teach"
+icon = "🎓"
+techniques = ["generated-knowledge", "skeleton-prompting", "iterative-refinement"]
+flow_labels = ["Build subject expertise", "Structure the curriculum", "Review from learner perspectives"]
+template = """First, write a comprehensive knowledge summary about [TOPIC] covering: key concepts, common misconceptions, what beginners struggle with most, and what experts wish they'd learned earlier.
+
+Using that knowledge, fill in this training structure:
+1. Learning Objectives (3-5 measurable outcomes)
+2. Pre-Session Requirements
+3. Agenda with Timing
+4. Content per Section (key points + demo/exercise)
+5. Hands-On Exercise with Step-by-Step Instructions
+6. Quick Reference Handout
+7. Assessment Questions
+
+After creating the training, critique from:
+1. A complete beginner: Is anything assumed?
+2. A sceptic: Why should I care about this?
+3. The facilitator: Can I deliver this without being an expert?
+Produce Version 2 addressing all feedback."""
+use_case = "Copilot training, security awareness, new tool onboarding, admin skills"
+
+[[combinations]]
+id = "troubleshooter"
+name = "Systematic Troubleshooter"
+description = "Diagnose and resolve complex technical problems methodically"
+icon = "🔧"
+techniques = ["self-ask", "react", "chain-of-verification"]
+flow_labels = ["Clarify the problem", "Investigate step by step", "Verify the solution"]
+template = """I'm troubleshooting: [PROBLEM DESCRIPTION].
+
+Before investigating, list what additional information would help diagnose this. State assumptions for anything I haven't told you.
+
+Now work through Think → Act → Observe cycles:
+- Think: Most likely cause given current evidence?
+- Act: Specific diagnostic to run (exact commands/paths)?
+- Observe: What each result would mean?
+Continue until root cause is identified.
+
+After proposing a fix, verify:
+- Will this fix address the root cause, not just symptoms?
+- Could this fix break anything else?
+- What's the rollback plan if it doesn't work?
+Rate your confidence in the diagnosis (High/Medium/Low)."""
+use_case = "Service outages, connectivity issues, performance problems, configuration errors"
+
+[[combinations]]
+id = "decision-maker"
+name = "Executive Decision Brief"
+description = "Produce board-ready analysis for major IT decisions"
+icon = "💼"
+techniques = ["tree-of-thought", "mega-prompting", "chain-of-verification"]
+flow_labels = ["Explore all options", "Produce comprehensive brief", "Verify every claim"]
+template = """You are a senior IT strategy consultant presenting to a board of directors.
+
+Context: [ORGANISATION DETAILS AND DECISION CONTEXT]
+
+Consider [N] approaches to [DECISION]. For each: strategy summary, investment required, expected ROI, risk assessment, and 3-year outlook. Score each on cost (1-10), risk (1-10), and strategic value (1-10).
+
+Present your recommendation as a 2-page executive brief with:
+- Executive summary (3 sentences)
+- Options comparison table
+- Recommended approach with rationale
+- Implementation timeline
+- Risk mitigation plan
+
+After the brief, verify every cost figure, timeline, and capability claim. Flag any that are estimated vs confirmed."""
+use_case = "Technology investments, platform migrations, vendor selections, major upgrades"
+
+[[combinations]]
+id = "content-factory"
+name = "Content Factory"
+description = "Produce polished professional documents efficiently"
+icon = "📝"
+techniques = ["mega-prompting", "prompt-chaining", "self-reflection"]
+flow_labels = ["Set up the master brief", "Build in stages", "Self-critique and improve"]
+template = """You are a [ROLE] with expertise in [DOMAIN].
+
+Context: [BACKGROUND AND REQUIREMENTS]
+
+Build this [DOCUMENT TYPE] in stages:
+
+Step 1: Create an outline with key messages per section.
+Step 2: Write each section with [SPECIFIC QUALITY REQUIREMENTS].
+Step 3: Add supporting details — data, examples, references.
+
+After completing the document, review against:
+- Does every section earn its place? (Remove fluff)
+- Is the language appropriate for [AUDIENCE]?
+- Are there any contradictions between sections?
+Produce a polished final version."""
+use_case = "Reports, proposals, documentation, presentations, communication plans"
