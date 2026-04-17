@@ -148,6 +148,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // ── Mega-menu mobile accordion ──
+  document.querySelectorAll('.mega-label').forEach(function(label) {
+    label.addEventListener('click', function(e) {
+      if (window.innerWidth > 1024) return; // Desktop: no accordion
+      e.preventDefault();
+      var group = this.nextElementSibling;
+      if (!group || !group.classList.contains('mega-group')) return;
+      var wasOpen = group.classList.contains('mega-group--open');
+      // Close all other groups in this mega-menu
+      var mega = this.closest('.mega-menu');
+      if (mega) {
+        mega.querySelectorAll('.mega-group--open').forEach(function(g) {
+          g.classList.remove('mega-group--open');
+        });
+        mega.querySelectorAll('.mega-label[aria-expanded="true"]').forEach(function(l) {
+          l.setAttribute('aria-expanded', 'false');
+        });
+      }
+      // Toggle this group
+      if (!wasOpen) {
+        group.classList.add('mega-group--open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // ── Nav scroll enhancement: opacity + glow on scroll ──
   var siteNav = document.querySelector('.site-nav');
   if (siteNav) {

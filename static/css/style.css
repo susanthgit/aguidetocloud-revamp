@@ -335,6 +335,19 @@ a:hover {
   cursor: default;
   pointer-events: none;
   user-select: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.mega-chevron {
+  float: right;
+  font-size: 0.55rem;
+  transition: transform 0.2s ease;
+  display: none;
+}
+.mega-group {
+  display: flex;
+  flex-direction: column;
 }
 .mega-label:first-child {
   margin-top: 0.1rem;
@@ -3088,6 +3101,7 @@ pre.mermaid {
     top: 56px;
     left: 0;
     right: 0;
+    z-index: 9999;
     flex-direction: column;
     background: rgba(3, 3, 8, 0.98);
     -webkit-backdrop-filter: blur(20px);
@@ -3161,8 +3175,33 @@ pre.mermaid {
     border-right: none;
   }
   .mega-label {
-    padding: 0.5rem 0 0.1rem;
-    font-size: 0.6rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
+    pointer-events: auto;
+    cursor: pointer;
+    margin: 0.2rem 0;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .mega-label:hover, .mega-label:focus-visible {
+    background: color-mix(in srgb, var(--mega-accent, #fff) 15%, transparent);
+  }
+  .mega-label[aria-expanded="true"] {
+    background: color-mix(in srgb, var(--mega-accent, #fff) 18%, transparent);
+    border-left: 3px solid var(--mega-accent, rgba(255,255,255,0.3));
+  }
+  .mega-label[aria-expanded="true"] .mega-chevron {
+    transform: rotate(90deg);
+  }
+  .mega-chevron {
+    display: inline;
+  }
+  .mega-group {
+    display: none;
+    padding-left: 0.4rem;
+  }
+  .mega-group.mega-group--open {
+    display: flex;
   }
   .mega-col a {
     padding: 0.4rem 0;
