@@ -1,29 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
 
-<!-- Compact header: nav + title + badges all tight -->
-<div style="max-width:1100px;margin:0 auto;padding:0.25rem 1.5rem 0">
-  {{ partial "tool-prev-next.html" . }}
-  <div class="siteana-compact-header">
-    <h1 class="siteana-page-title">Site Analytics</h1>
-    <span class="siteana-page-sep">·</span>
-    <span class="siteana-page-subtitle">Your data powers this site — nothing hidden</span>
-    <span class="siteana-page-sep">·</span>
-    {{/* Counter + Ko-fi badges inline */}}
-    {{ $url := .RelPermalink }}
-    {{ $counters := (index hugo.Data "tool_counters").tools }}
-    {{ $counterBase := 0 }}{{ $counterVerb := "" }}
-    {{ range $counters }}{{ if eq .url $url }}{{ $counterBase = .base }}{{ $counterVerb = .verb }}{{ end }}{{ end }}
-    {{ if gt $counterBase 0 }}
-    <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true" style="margin:0">
-      <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
-      <span class="tool-counter-verb">{{ $counterVerb }}</span>
-    </div>
-    <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
-    {{ end }}
-    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi" style="margin:0">☕ Support</a>
-  </div>
-</div>
+{{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Your data powers this site — nothing hidden" "accent" "#64748B") }}
 
 {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
 
