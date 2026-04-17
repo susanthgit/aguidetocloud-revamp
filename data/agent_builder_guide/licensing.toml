@@ -1,0 +1,172 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 Agent Builder Guide — Licensing & Capabilities
+# ═══════════════════════════════════════════════════════════════
+
+[[tiers]]
+id = "free"
+name = "Copilot Chat (Free)"
+label = "Free"
+badge_colour = "#6B7280"
+description = "Build agents grounded on public web data only. No access to M365 Graph data."
+example = "Personal research assistant, public FAQ bot"
+pricing_note = "Included with any M365 licence"
+
+[[tiers]]
+id = "paygo"
+name = "Copilot Chat + Usage Billing"
+label = "Pay-as-you-go"
+badge_colour = "#F59E0B"
+description = "Build work-grounded agents with metered consumption. Admin enables pay-as-you-go billing — no per-user Copilot licence needed."
+example = "Team knowledge bot for small pilot"
+pricing_note = "Billed per Copilot credit consumed"
+
+[[tiers]]
+id = "paid"
+name = "M365 Copilot (Paid Add-on)"
+label = "Licensed"
+badge_colour = "#10B981"
+description = "Full Agent Builder with all knowledge sources, enterprise Graph grounding, sharing, and advanced capabilities."
+example = "Project FAQ bot, onboarding assistant, document helper"
+pricing_note = "Per-user add-on on M365 E3/E5/E7/Business Standard/Premium"
+
+# ── Capability Matrix ──
+
+[[capabilities]]
+id = "web_search"
+name = "Web search knowledge"
+description = "Ground agents in public web content"
+free = true
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "web_urls"
+name = "Public website URLs (up to 4)"
+description = "Add specific public URLs as knowledge — max 2 levels deep, no query parameters"
+free = true
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "sharepoint"
+name = "SharePoint knowledge"
+description = "Ground agents in SharePoint sites, folders, and files — respects existing permissions"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "file_upload"
+name = "Upload files (up to 20)"
+description = "Upload documents from your device — doc, docx, pdf, pptx, txt, csv, xlsx supported"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "teams"
+name = "Teams chat knowledge"
+description = "Ground agents in Teams chats, channels, and meeting transcripts (up to 5 specific chats)"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "email"
+name = "Outlook email knowledge"
+description = "Ground agents in your entire mailbox — cannot scope to specific folders"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "graph"
+name = "Enterprise Graph grounding"
+description = "Access files, emails, calendar, Teams across M365 — within user permissions"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "connectors"
+name = "M365 Copilot connectors"
+description = "Connect to additional data sources configured by your admin"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "image_gen"
+name = "Image generation (DALL-E)"
+description = "Create images within agent conversations — when enabled by admin"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "code_interpreter"
+name = "Code interpreter"
+description = "Generate charts, analyse data, run calculations"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "share"
+name = "Share with organisation"
+description = "Share agents with specific users, security groups, or everyone in org"
+free = false
+paygo = true
+paid = true
+
+[[capabilities]]
+id = "copy_to_studio"
+name = "Copy to Copilot Studio"
+description = "Move your agent to Copilot Studio for advanced capabilities"
+free = true
+paygo = true
+paid = true
+
+# ── Quick Scenarios (hero cards) ──
+
+[[scenarios]]
+title = "Build a team FAQ bot"
+description = "Answer questions from your SharePoint project docs"
+requires = "paid"
+knowledge = ["sharepoint"]
+icon = "📋"
+
+[[scenarios]]
+title = "Search my emails"
+description = "Find information across your entire Outlook mailbox"
+requires = "paid"
+knowledge = ["email"]
+icon = "📧"
+
+[[scenarios]]
+title = "Onboarding assistant"
+description = "Help new hires find answers from uploaded policy documents"
+requires = "paid"
+knowledge = ["file_upload", "sharepoint"]
+icon = "👋"
+
+[[scenarios]]
+title = "Public website helper"
+description = "Answer questions from up to 4 public web pages"
+requires = "free"
+knowledge = ["web_urls"]
+icon = "🌐"
+
+[[scenarios]]
+title = "Meeting memory bot"
+description = "Recall what was discussed in specific Teams conversations"
+requires = "paid"
+knowledge = ["teams"]
+icon = "🧠"
+
+[[scenarios]]
+title = "Research assistant"
+description = "Search the web for any topic — no org data needed"
+requires = "free"
+knowledge = ["web_search"]
+icon = "🔍"

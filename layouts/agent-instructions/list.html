@@ -1,0 +1,241 @@
+{{ define "main" }}
+{{ $data := (index hugo.Data "agent_instructions") }}
+{{ $platforms := $data.platforms.platforms }}
+{{ $templates := $data.templates.templates }}
+{{ $practices := $data.practices.practices }}
+<link rel="stylesheet" href="/css/agent-instructions.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "title" "Agent Instruction Builder" "accent" "#E0976B") }}
+
+<div class="aginst-page">
+  <div class="aginst-tabs" role="tablist">
+    <button class="aginst-tab active" role="tab" aria-selected="true" data-tab="build">Quick Build</button>
+    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="templates">Templates</button>
+    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="platforms">Platform Guide</button>
+    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="practices">Best Practices</button>
+    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- TAB 1: QUICK BUILD -->
+  <div class="aginst-panel active" id="panel-build">
+    <div class="aginst-wizard">
+      <div class="aginst-steps-bar">
+        <button class="aginst-step-dot active" data-step="1">1</button>
+        <div class="aginst-step-line"></div>
+        <button class="aginst-step-dot" data-step="2">2</button>
+        <div class="aginst-step-line"></div>
+        <button class="aginst-step-dot" data-step="3">3</button>
+        <div class="aginst-step-line"></div>
+        <button class="aginst-step-dot" data-step="4">4</button>
+      </div>
+      <div class="aginst-step-labels">
+        <span class="active">Platform & Purpose</span>
+        <span>Capabilities & Scope</span>
+        <span>Tone & Examples</span>
+        <span>Guardrails & Output</span>
+      </div>
+
+      <!-- Step 1: Platform & Purpose -->
+      <div class="aginst-step active" id="step-1">
+        <h3>Choose your platform</h3>
+        <p class="aginst-tip">Not sure? Pick <strong>M365 Agent Builder</strong> for work agents or <strong>ChatGPT</strong> for personal ones.</p>
+        <div class="aginst-platform-grid" id="platform-grid"></div>
+
+        <h3 style="margin-top:1.5rem">What does your agent do?</h3>
+        <div class="aginst-field">
+          <label for="agent-role">Agent role</label>
+          <input type="text" id="agent-role" placeholder="e.g. IT support assistant, HR benefits advisor, project coordinator" maxlength="200" class="aginst-input">
+        </div>
+        <div class="aginst-field">
+          <label for="agent-audience">Who will use it?</label>
+          <input type="text" id="agent-audience" placeholder="e.g. Employees, customers, new hires, sales team" maxlength="150" class="aginst-input">
+        </div>
+        <div class="aginst-field">
+          <label for="org-name">Organisation name <span class="aginst-optional">(optional)</span></label>
+          <input type="text" id="org-name" placeholder="e.g. Contoso, Northwind" maxlength="100" class="aginst-input">
+        </div>
+        <div class="aginst-quick-picks">
+          <span class="aginst-pick-label">Quick picks:</span>
+          <button class="aginst-pick" data-role="IT support assistant" data-audience="Employees needing tech help">🖥️ IT Helpdesk</button>
+          <button class="aginst-pick" data-role="HR benefits advisor" data-audience="Employees with HR questions">👥 HR Assistant</button>
+          <button class="aginst-pick" data-role="Project management assistant" data-audience="Project teams and managers">📋 Project Mgr</button>
+          <button class="aginst-pick" data-role="Knowledge base assistant" data-audience="All employees seeking information">📚 Knowledge Base</button>
+          <button class="aginst-pick" data-role="Customer support agent" data-audience="External customers">🎧 Support</button>
+          <button class="aginst-pick" data-role="Training and onboarding coach" data-audience="New hires and learners">🎓 Training</button>
+        </div>
+        <div class="aginst-nav-row">
+          <span></span>
+          <button class="aginst-btn aginst-btn-primary" id="btn-next-1">Next: Capabilities →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Capabilities & Scope -->
+      <div class="aginst-step" id="step-2">
+        <h3>What can your agent access?</h3>
+        <p class="aginst-tip">Enable only what your agent needs. More capabilities = more power but more risk.</p>
+        <div class="aginst-toggles" id="capability-toggles">
+          <label class="aginst-toggle"><input type="checkbox" id="cap-knowledge" checked><span class="aginst-toggle-slider"></span>Access company documents and knowledge</label>
+          <label class="aginst-toggle"><input type="checkbox" id="cap-web"><span class="aginst-toggle-slider"></span>Search the web for information</label>
+          <label class="aginst-toggle"><input type="checkbox" id="cap-actions"><span class="aginst-toggle-slider"></span>Perform actions (create tickets, send emails)</label>
+          <label class="aginst-toggle"><input type="checkbox" id="cap-code"><span class="aginst-toggle-slider"></span>Run code and analyse data</label>
+          <label class="aginst-toggle"><input type="checkbox" id="cap-images"><span class="aginst-toggle-slider"></span>Generate images</label>
+        </div>
+
+        <h3 style="margin-top:1.5rem">Define the scope</h3>
+        <div class="aginst-field">
+          <label for="scope-can">Topics it CAN help with</label>
+          <textarea id="scope-can" rows="3" placeholder="e.g. Password resets, software installation, VPN troubleshooting, printer setup" class="aginst-input"></textarea>
+        </div>
+        <div class="aginst-field">
+          <label for="scope-cannot">Topics it should REFUSE</label>
+          <textarea id="scope-cannot" rows="3" placeholder="e.g. HR questions, salary info, access to admin consoles" class="aginst-input"></textarea>
+        </div>
+        <div class="aginst-nav-row">
+          <button class="aginst-btn" id="btn-back-2">← Back</button>
+          <button class="aginst-btn aginst-btn-primary" id="btn-next-2">Next: Tone & Examples →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Tone & Examples -->
+      <div class="aginst-step" id="step-3">
+        <h3>Set the tone</h3>
+        <div class="aginst-radio-group">
+          <label class="aginst-radio"><input type="radio" name="tone" value="professional" checked> Professional</label>
+          <label class="aginst-radio"><input type="radio" name="tone" value="friendly"> Friendly</label>
+          <label class="aginst-radio"><input type="radio" name="tone" value="technical"> Technical</label>
+          <label class="aginst-radio"><input type="radio" name="tone" value="casual"> Casual</label>
+        </div>
+        <div class="aginst-radio-group" style="margin-top:1rem">
+          <span class="aginst-pick-label">Detail level:</span>
+          <label class="aginst-radio"><input type="radio" name="verbosity" value="concise" checked> Concise</label>
+          <label class="aginst-radio"><input type="radio" name="verbosity" value="balanced"> Balanced</label>
+          <label class="aginst-radio"><input type="radio" name="verbosity" value="detailed"> Detailed</label>
+        </div>
+        <div class="aginst-radio-group" style="margin-top:1rem">
+          <span class="aginst-pick-label">Output format:</span>
+          <label class="aginst-radio"><input type="radio" name="format" value="bullets" checked> Bullet points</label>
+          <label class="aginst-radio"><input type="radio" name="format" value="steps"> Numbered steps</label>
+          <label class="aginst-radio"><input type="radio" name="format" value="paragraphs"> Paragraphs</label>
+          <label class="aginst-radio"><input type="radio" name="format" value="mixed"> Mixed</label>
+        </div>
+
+        <h3 style="margin-top:1.5rem">Example interactions</h3>
+        <p class="aginst-tip">Include at least one normal question AND one out-of-scope question.</p>
+        <div id="examples-container">
+          <div class="aginst-example-pair" data-idx="0">
+            <div class="aginst-field"><label>Example question 1 <span class="aginst-badge-good">Happy path</span></label>
+              <input type="text" class="aginst-input ex-user" placeholder="e.g. How do I reset my password?" maxlength="300"></div>
+            <div class="aginst-field"><label>Ideal response</label>
+              <textarea class="aginst-input ex-agent" rows="3" placeholder="e.g. Go to portal.office.com, click 'Can't access your account'..." maxlength="800"></textarea></div>
+          </div>
+          <div class="aginst-example-pair" data-idx="1">
+            <div class="aginst-field"><label>Example question 2 <span class="aginst-badge-refuse">Out of scope</span></label>
+              <input type="text" class="aginst-input ex-user" placeholder="e.g. Can you give me admin access?" maxlength="300"></div>
+            <div class="aginst-field"><label>Ideal refusal</label>
+              <textarea class="aginst-input ex-agent" rows="3" placeholder="e.g. I can't grant access directly. Please submit a request through..." maxlength="800"></textarea></div>
+          </div>
+        </div>
+        <button class="aginst-btn aginst-btn-sm" id="btn-add-example">+ Add another example</button>
+        <div class="aginst-nav-row">
+          <button class="aginst-btn" id="btn-back-3">← Back</button>
+          <button class="aginst-btn aginst-btn-primary" id="btn-next-3">Next: Guardrails →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Guardrails & Output -->
+      <div class="aginst-step" id="step-4">
+        <h3>When the agent doesn't know</h3>
+        <div class="aginst-radio-group">
+          <label class="aginst-radio"><input type="radio" name="unknown" value="ask" checked> Ask the user to clarify</label>
+          <label class="aginst-radio"><input type="radio" name="unknown" value="redirect"> Apologise and redirect to a human</label>
+          <label class="aginst-radio"><input type="radio" name="unknown" value="suggest"> Suggest related topics it CAN help with</label>
+        </div>
+
+        <h3 style="margin-top:1.5rem">Safety rules</h3>
+        <div class="aginst-toggles">
+          <label class="aginst-toggle"><input type="checkbox" id="safe-pii" checked><span class="aginst-toggle-slider"></span>Never share personal information</label>
+          <label class="aginst-toggle"><input type="checkbox" id="safe-fabricate" checked><span class="aginst-toggle-slider"></span>Never fabricate information</label>
+          <label class="aginst-toggle"><input type="checkbox" id="safe-medical"><span class="aginst-toggle-slider"></span>No medical advice</label>
+          <label class="aginst-toggle"><input type="checkbox" id="safe-legal"><span class="aginst-toggle-slider"></span>No legal advice</label>
+          <label class="aginst-toggle"><input type="checkbox" id="safe-financial"><span class="aginst-toggle-slider"></span>No financial advice</label>
+          <label class="aginst-toggle"><input type="checkbox" id="safe-escalate" checked><span class="aginst-toggle-slider"></span>Escalate frustrated users to humans</label>
+        </div>
+        <div class="aginst-field" style="margin-top:1rem">
+          <label for="custom-rules">Custom rules <span class="aginst-optional">(optional)</span></label>
+          <textarea id="custom-rules" rows="3" class="aginst-input" placeholder="e.g. Always greet users by name if known. Never mention competitor products."></textarea>
+        </div>
+        <div class="aginst-nav-row">
+          <button class="aginst-btn" id="btn-back-4">← Back</button>
+          <button class="aginst-btn aginst-btn-primary aginst-btn-generate" id="btn-generate">Generate Instructions</button>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="aginst-step" id="step-output" style="display:none">
+        <div class="aginst-output-header">
+          <h3>Your Agent Instructions</h3>
+          <div class="aginst-char-count" id="char-count"></div>
+        </div>
+        <pre class="aginst-output-box" id="output-box"></pre>
+        <div class="aginst-output-actions">
+          <button class="aginst-btn aginst-btn-primary" id="btn-copy">Copy to Clipboard</button>
+          <button class="aginst-btn" id="btn-download">Download .md</button>
+          <button class="aginst-btn" id="btn-edit">← Edit</button>
+          <button class="aginst-btn" id="btn-start-over">Start Over</button>
+        </div>
+        <div class="aginst-platform-tips" id="platform-tips"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: TEMPLATES -->
+  <div class="aginst-panel" id="panel-templates">
+    <div class="aginst-filter-row">
+      <select class="aginst-select" id="tpl-cat-filter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="Support">Support</option>
+        <option value="Productivity">Productivity</option>
+      </select>
+    </div>
+    <div class="aginst-tpl-grid" id="tpl-grid"></div>
+  </div>
+
+  <!-- TAB 3: PLATFORM GUIDE -->
+  <div class="aginst-panel" id="panel-platforms">
+    <h3 style="color:#fff;margin-bottom:1rem;text-align:center">Which platform is right for you?</h3>
+    <div class="aginst-platform-compare" id="platform-compare"></div>
+    <div class="aginst-decider" id="platform-decider">
+      <h3 style="color:#fff;margin:2rem 0 1rem;text-align:center">Not sure? Answer 3 questions</h3>
+      <div id="decider-q"></div>
+    </div>
+  </div>
+
+  <!-- TAB 4: BEST PRACTICES -->
+  <div class="aginst-panel" id="panel-practices">
+    <div class="aginst-practices-progress" id="practices-progress"></div>
+    <div class="aginst-practices-grid" id="practices-grid"></div>
+  </div>
+
+  <!-- TAB 5: FAQ -->
+  <div class="aginst-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      {{ range .Params.faq }}
+      <details open>
+        <summary><strong>{{ .question }}</strong></summary>
+        <p>{{ .answer | markdownify }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "agent-instructions") }}
+{{ partial "back-nav" . }}
+
+<script>
+window.__aginstPlatforms = {{ $platforms | jsonify | safeJS }};
+window.__aginstTemplates = {{ $templates | jsonify | safeJS }};
+window.__aginstPractices = {{ $practices | jsonify | safeJS }};
+</script>
+<script defer src="/js/agent-instructions.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

@@ -1,0 +1,347 @@
+/* ═══════════════════════════════════════════════════════════════
+   Copilot Studio Companion — CSS
+   Accent: #9055E3 (Studio Purple)
+   Namespace: .cstudio-*
+   ═══════════════════════════════════════════════════════════════ */
+
+:root { --cstudio-accent: #9055E3; --cstudio-accent-rgb: 144,85,227; }
+
+.cstudio-page { max-width: 960px; margin: 0 auto; padding: 0 1rem 2rem; }
+
+/* ── Main Tabs ── */
+.cstudio-tabs {
+  display: flex; gap: 0.5rem; padding: 0.35rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; margin-bottom: 1.5rem;
+  overflow-x: auto; scrollbar-width: none;
+}
+.cstudio-tabs::-webkit-scrollbar { display: none; }
+.cstudio-tab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.cstudio-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.cstudio-tab.active {
+  color: #fff; background: var(--cstudio-accent);
+  border-color: var(--cstudio-accent);
+  box-shadow: 0 2px 8px rgba(var(--cstudio-accent-rgb), 0.3);
+}
+.cstudio-panel { display: none; }
+.cstudio-panel.active { display: block; }
+
+/* ── Sub Tabs (Features & Limits) ── */
+.cstudio-subtabs {
+  display: flex; gap: 0.35rem; padding: 0.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; margin-bottom: 1.2rem;
+  overflow-x: auto; scrollbar-width: none;
+}
+.cstudio-subtabs::-webkit-scrollbar { display: none; }
+.cstudio-subtab {
+  background: none; border: 1px solid transparent;
+  color: rgba(255,255,255,0.4); font-size: 0.78rem; font-weight: 600;
+  padding: 0.45rem 0.9rem; cursor: pointer; border-radius: 7px;
+  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+}
+.cstudio-subtab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.cstudio-subtab.active {
+  color: #fff; background: rgba(var(--cstudio-accent-rgb), 0.25);
+  border-color: rgba(var(--cstudio-accent-rgb), 0.4);
+}
+.cstudio-subpanel { display: none; }
+.cstudio-subpanel.active { display: block; }
+
+/* ── Section Titles ── */
+.cstudio-section-title {
+  color: #fff; font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem;
+}
+.cstudio-tip {
+  color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: -0.5rem 0 1rem;
+}
+
+/* ── Feature Checker (Decide Tab) ── */
+.cstudio-checker { margin-bottom: 1.5rem; }
+.cstudio-check-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 0.75rem; border-radius: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.15s;
+}
+.cstudio-check-row:hover { background: rgba(255,255,255,0.03); }
+.cstudio-check-label { flex: 1; color: rgba(255,255,255,0.8); font-size: 0.85rem; cursor: pointer; }
+.cstudio-check-toggle {
+  width: 36px; height: 20px; border-radius: 10px;
+  background: rgba(255,255,255,0.1); position: relative;
+  cursor: pointer; transition: background 0.2s; flex-shrink: 0;
+}
+.cstudio-check-toggle.on { background: var(--cstudio-accent); }
+.cstudio-check-toggle::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px; border-radius: 50%; background: #fff;
+  transition: transform 0.2s;
+}
+.cstudio-check-toggle.on::after { transform: translateX(16px); }
+.cstudio-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.cstudio-dot.green { background: #4ade80; }
+.cstudio-dot.amber { background: #fbbf24; }
+.cstudio-dot.red { background: #f87171; }
+.cstudio-dot.off { background: rgba(255,255,255,0.1); }
+
+/* ── Cards ── */
+.cstudio-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.75rem;
+  transition: border-color 0.2s;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.cstudio-card:hover { border-color: rgba(var(--cstudio-accent-rgb), 0.3); }
+.cstudio-card-title {
+  color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.cstudio-card-desc { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; }
+.cstudio-card-icon { font-size: 1.2rem; }
+.cstudio-badge {
+  display: inline-block; padding: 0.15rem 0.5rem; border-radius: 6px;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+}
+.cstudio-badge-cs { background: rgba(var(--cstudio-accent-rgb), 0.2); color: var(--cstudio-accent); }
+.cstudio-badge-ga { background: rgba(74,222,128,0.15); color: #4ade80; }
+.cstudio-badge-preview { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.cstudio-badge-exp { background: rgba(248,113,113,0.15); color: #f87171; }
+.cstudio-badge-high { background: rgba(248,113,113,0.15); color: #f87171; }
+.cstudio-badge-medium { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+/* ── Expandable Details ── */
+.cstudio-card details summary {
+  cursor: pointer; color: rgba(255,255,255,0.5); font-size: 0.78rem;
+  margin-top: 0.5rem; list-style: none;
+}
+.cstudio-card details summary::before { content: '▸ '; }
+.cstudio-card details[open] summary::before { content: '▾ '; }
+.cstudio-card details .cstudio-detail-content {
+  margin-top: 0.5rem; padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Grid Layouts ── */
+.cstudio-grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem; }
+.cstudio-grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+.cstudio-grid-4 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+
+/* ── Platform Compare Cards ── */
+.cstudio-platform-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem; text-align: center;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.cstudio-platform-card .cstudio-card-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+.cstudio-platform-card h4 { color: #fff; font-size: 0.95rem; margin: 0.3rem 0; }
+.cstudio-platform-card p { color: rgba(255,255,255,0.5); font-size: 0.78rem; line-height: 1.4; }
+
+/* ── Upgrade Trigger Cards ── */
+.cstudio-trigger-card {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
+  border-left: 3px solid var(--cstudio-accent);
+}
+.cstudio-trigger-card .cstudio-card-desc { margin: 0; }
+
+/* ── Knowledge Source Cards ── */
+.cstudio-knowledge-card .cstudio-limit-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.78rem;
+}
+.cstudio-limit-label { color: rgba(255,255,255,0.5); }
+.cstudio-limit-value { color: #fff; font-weight: 600; }
+.cstudio-gotcha {
+  color: rgba(255,255,255,0.5); font-size: 0.75rem; line-height: 1.4;
+  padding-left: 0.75rem; position: relative;
+}
+.cstudio-gotcha::before { content: '⚠️'; position: absolute; left: 0; }
+
+/* ── Model Table ── */
+.cstudio-model-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.cstudio-model-table th {
+  text-align: left; color: rgba(255,255,255,0.5); font-weight: 600;
+  padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.cstudio-model-table td {
+  color: rgba(255,255,255,0.8); padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.cstudio-model-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* ── Wizard ── */
+.cstudio-steps-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: 1rem;
+}
+.cstudio-step-dot {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s;
+}
+.cstudio-step-dot.active {
+  background: var(--cstudio-accent); border-color: var(--cstudio-accent);
+  color: #fff; box-shadow: 0 0 10px rgba(var(--cstudio-accent-rgb), 0.4);
+}
+.cstudio-step-dot.done {
+  background: rgba(var(--cstudio-accent-rgb), 0.2); border-color: var(--cstudio-accent);
+  color: var(--cstudio-accent);
+}
+.cstudio-step-line {
+  width: 30px; height: 2px; background: rgba(255,255,255,0.1);
+}
+.cstudio-wizard-step { display: none; }
+.cstudio-wizard-step.active { display: block; }
+
+/* ── Form Controls ── */
+.cstudio-field { margin-bottom: 0.75rem; }
+.cstudio-field label {
+  display: block; color: rgba(255,255,255,0.6); font-size: 0.8rem;
+  font-weight: 600; margin-bottom: 0.3rem;
+}
+.cstudio-input {
+  width: 100%; padding: 0.6rem 0.8rem; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; font-size: 0.85rem; font-family: inherit;
+  transition: border-color 0.2s; box-sizing: border-box;
+}
+.cstudio-input:focus { border-color: var(--cstudio-accent); outline: none; }
+.cstudio-input::placeholder { color: rgba(255,255,255,0.3); }
+.cstudio-select {
+  padding: 0.5rem 0.8rem; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; font-size: 0.82rem; cursor: pointer;
+}
+.cstudio-radio-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cstudio-radio {
+  display: flex; align-items: center; gap: 0.35rem;
+  color: rgba(255,255,255,0.7); font-size: 0.82rem; cursor: pointer;
+  padding: 0.4rem 0.7rem; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.15s;
+}
+.cstudio-radio:has(input:checked) {
+  border-color: var(--cstudio-accent);
+  background: rgba(var(--cstudio-accent-rgb), 0.1);
+  color: #fff;
+}
+.cstudio-radio input { accent-color: var(--cstudio-accent); }
+
+/* ── Buttons ── */
+.cstudio-btn {
+  padding: 0.55rem 1.1rem; border-radius: 8px; font-size: 0.82rem;
+  font-weight: 600; cursor: pointer; border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8);
+  transition: all 0.2s;
+}
+.cstudio-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.cstudio-btn-primary {
+  background: var(--cstudio-accent); color: #fff;
+  border-color: var(--cstudio-accent);
+}
+.cstudio-btn-primary:hover {
+  background: rgba(var(--cstudio-accent-rgb), 0.8);
+  box-shadow: 0 2px 12px rgba(var(--cstudio-accent-rgb), 0.3);
+}
+.cstudio-nav-row { display: flex; justify-content: space-between; margin-top: 1.2rem; }
+
+/* ── Score Ring ── */
+.cstudio-score-ring { width: 120px; height: 120px; margin: 0 auto; }
+
+/* ── Credits Estimator ── */
+.cstudio-estimator {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 1.2rem;
+}
+.cstudio-estimator-result {
+  text-align: center; margin-top: 1rem;
+  padding: 1rem; border-radius: 10px;
+  background: rgba(var(--cstudio-accent-rgb), 0.08);
+  border: 1px solid rgba(var(--cstudio-accent-rgb), 0.2);
+}
+.cstudio-estimator-result .cstudio-big-number {
+  font-size: 2rem; font-weight: 800; color: var(--cstudio-accent);
+}
+.cstudio-estimator-result .cstudio-small-text {
+  color: rgba(255,255,255,0.5); font-size: 0.78rem;
+}
+.cstudio-bar {
+  height: 8px; border-radius: 4px; background: rgba(255,255,255,0.08);
+  margin-top: 0.5rem; overflow: hidden;
+}
+.cstudio-bar-fill {
+  height: 100%; border-radius: 4px; transition: width 0.5s ease;
+  background: var(--cstudio-accent);
+}
+.cstudio-bar-fill.warn { background: #fbbf24; }
+.cstudio-bar-fill.over { background: #f87171; }
+
+/* ── Topic Map ── */
+.cstudio-topic-item {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.cstudio-topic-name { color: #fff; font-weight: 600; font-size: 0.85rem; flex: 1; }
+.cstudio-topic-meta { color: rgba(255,255,255,0.4); font-size: 0.72rem; }
+.cstudio-topic-remove {
+  background: none; border: none; color: rgba(255,255,255,0.3);
+  cursor: pointer; font-size: 1rem; padding: 0 0.3rem;
+}
+.cstudio-topic-remove:hover { color: #f87171; }
+
+/* ── Toast ── */
+.cstudio-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+  background: rgba(var(--cstudio-accent-rgb), 0.9); color: #fff;
+  padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.82rem;
+  font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none;
+  z-index: 9999;
+}
+.cstudio-toast.show { opacity: 1; }
+
+/* ── FAQ ── */
+.cstudio-panel details {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
+}
+.cstudio-panel details summary {
+  color: #fff; font-size: 0.9rem; cursor: pointer; list-style: none;
+}
+.cstudio-panel details summary::-webkit-details-marker { display: none; }
+.cstudio-panel details p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; margin: 0.5rem 0 0; }
+.cstudio-panel details a { color: var(--cstudio-accent); }
+
+/* ── Learn Link ── */
+.cstudio-learn-link {
+  color: var(--cstudio-accent); font-size: 0.75rem; text-decoration: none;
+}
+.cstudio-learn-link:hover { text-decoration: underline; }
+
+/* ── Export Row ── */
+.cstudio-export-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cstudio-page { padding: 0 0.5rem 2rem; }
+  .cstudio-grid-2, .cstudio-grid-3, .cstudio-grid-4 { grid-template-columns: 1fr; }
+  .cstudio-tabs { gap: 0.25rem; }
+  .cstudio-tab { padding: 0.5rem 0.6rem; font-size: 0.75rem; }
+  .cstudio-subtab { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
+}

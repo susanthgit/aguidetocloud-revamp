@@ -1,0 +1,181 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 Agent Builder Guide — Tips, Tricks & Troubleshooting
+# ═══════════════════════════════════════════════════════════════
+
+# ── CAPS Technique ──
+
+[caps_technique]
+title = "The CAPS Technique for Instruction Boundaries"
+description = "When you need agents to stay strictly within their role, use this three-part formula."
+why_it_works = "Without all three parts, the AI tends to 'be helpful' and answer off-topic questions anyway. CAPS draw attention, exact fallback gives a concrete response, and the redirect keeps it positive."
+
+[[caps_technique.parts]]
+name = "CAPS Keywords"
+description = "Use CAPITAL LETTERS for critical boundary instructions"
+example = "You MUST ONLY answer questions about marketing campaigns.\nYou MUST NOT provide information about HR, finance, or personal topics."
+
+[[caps_technique.parts]]
+name = "Exact Fallback Text"
+description = "Provide the exact text the agent should use when declining"
+example = "If asked about topics outside marketing, respond EXACTLY with:\n\"I'm the Marketing Campaign Bot — I can only help with campaign-related questions.\""
+
+[[caps_technique.parts]]
+name = "Positive Redirect"
+description = "Instead of just refusing, redirect to the right resource"
+example = "ALWAYS redirect politely. Example:\n\"That's a great question, but it's outside my area. For IT support, try the IT Help Desk agent.\""
+
+# ── Troubleshooting ──
+
+[[troubleshooting]]
+problem = "Agent doesn't use my knowledge sources"
+cause = "Files still indexing or unsupported format"
+fix = "Wait for 'Preparing' to finish. Check file type is supported (.doc, .docx, .pdf, .pptx, .txt, .csv, .xlsx)"
+severity = "high"
+
+[[troubleshooting]]
+problem = "Agent gives generic answers"
+cause = "Instructions too vague or knowledge sources too broad"
+fix = "Add specific skills/workflows to instructions. Narrow knowledge to focused documents"
+severity = "high"
+
+[[troubleshooting]]
+problem = "Agent answers off-topic questions"
+cause = "Boundaries too soft"
+fix = "Use the CAPS technique — CAPS keywords + exact fallback text + positive redirect"
+severity = "high"
+
+[[troubleshooting]]
+problem = "Agent creation fails silently"
+cause = "Uploaded file has unsupported sensitivity label"
+fix = "Remove files with user-defined permissions, DKE, or disabled extract rights"
+severity = "high"
+
+[[troubleshooting]]
+problem = "SharePoint content not showing"
+cause = "Restricted SharePoint Search enabled or permission issue"
+fix = "Check admin settings. Verify user has access to the SharePoint site"
+severity = "medium"
+
+[[troubleshooting]]
+problem = "Agent can't read Excel data"
+cause = "'Generate docs' capability not enabled"
+fix = "Enable 'Generate docs' in agent settings. Keep data in ONE sheet"
+severity = "medium"
+
+[[troubleshooting]]
+problem = "Users can't access shared agent"
+cause = "Sensitivity label on embedded content blocks them"
+fix = "Check that target users have extract rights to the highest label on embedded files"
+severity = "medium"
+
+[[troubleshooting]]
+problem = "Agent makes up answers"
+cause = "No 'unknown' handling in instructions"
+fix = "Add explicit fallback: 'If you don't know, say so. DO NOT guess.'"
+severity = "high"
+
+# ── Common Mistakes ──
+
+[[mistakes]]
+mistake = "Instructions too vague"
+problem = "'Be helpful' — agent doesn't know what helpful means"
+fix = "Define specific tasks and workflows"
+
+[[mistakes]]
+mistake = "Filling all 8,000 characters"
+problem = "Overwhelming the AI with too much context"
+fix = "Focus on top 5-6 skills. Move reference content to knowledge docs"
+
+[[mistakes]]
+mistake = "Contradictory rules"
+problem = "'Be concise' AND 'Always provide full context'"
+fix = "Choose one approach and be consistent"
+
+[[mistakes]]
+mistake = "No error handling"
+problem = "Agent makes up answers when unsure"
+fix = "Always include 'what to do when you don't know' section"
+
+[[mistakes]]
+mistake = "Only negative rules"
+problem = "'Don't do X, don't do Y' — agent focuses on what NOT to do"
+fix = "Lead with positives: 'DO this' first, then restrictions"
+
+[[mistakes]]
+mistake = "No examples"
+problem = "Agent guesses the format you want"
+fix = "Provide 1-2 example interactions for complex scenarios"
+
+[[mistakes]]
+mistake = "Missing tone spec"
+problem = "Agent varies between formal and casual randomly"
+fix = "Set tone explicitly: 'Professional, friendly, concise'"
+
+# ── Testing Steps ──
+
+[[testing_steps]]
+step = 1
+title = "Test conversation starters"
+description = "Try each one — does the agent respond accurately with specific numbers and sources?"
+
+[[testing_steps]]
+step = 2
+title = "Test edge cases"
+description = "Ask questions OUTSIDE the agent's scope. Do boundaries hold?"
+
+[[testing_steps]]
+step = 3
+title = "Test consistency"
+description = "Ask the same question different ways. Are answers consistent?"
+
+[[testing_steps]]
+step = 4
+title = "Compare vs base Copilot"
+description = "Ask the same question to your agent AND plain M365 Copilot. Your agent should be better."
+
+[[testing_steps]]
+step = 5
+title = "Test with colleagues"
+description = "Share with 2-3 trusted people. What unexpected questions do they ask?"
+
+[[testing_steps]]
+step = 6
+title = "Iterate"
+description = "Refine instructions based on testing. Tighten boundaries, add examples, adjust tone."
+
+# ── Key Limits Quick Reference ──
+
+[[limits]]
+item = "Instructions"
+value = "8,000 characters"
+tip = "Don't fill all 8,000 — focused instructions work better"
+
+[[limits]]
+item = "Public URLs"
+value = "4 (max 2 levels deep)"
+tip = "Most Learn URLs are rejected — download as .txt instead"
+
+[[limits]]
+item = "SharePoint files"
+value = "Up to 100"
+tip = "Some docs say 20 sources overall — test your specific limits"
+
+[[limits]]
+item = "Uploaded files"
+value = "20"
+tip = "Max 512MB for doc/pdf/pptx/txt; 30MB for xlsx"
+
+[[limits]]
+item = "Teams chats"
+value = "5 specific chats"
+tip = "Scoping to specific chats improves accuracy"
+
+[[limits]]
+item = "Emails"
+value = "All or nothing"
+tip = "Cannot scope — use instruction guidance to focus"
+
+[[limits]]
+item = "Supported formats"
+value = ".doc .docx .pdf .ppt .pptx .txt .csv .xlsx"
+tip = ".md NOT supported — rename to .txt"

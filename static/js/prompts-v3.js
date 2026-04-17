@@ -35,12 +35,13 @@
   // === STATE ===
   var S = {
     search: '',
-    platform: '',      // single select dropdown
-    difficulty: '',    // single select dropdown
-    role: '',          // single select dropdown
+    platform: '',
+    difficulty: '',
+    role: '',
+    category: '',       // active category filter (empty = show category grid)
     view: 'list',
     tab: 'browse',
-    favorites: []      // array of prompt IDs
+    favorites: []
   };
 
   // === DOM CACHE ===
@@ -49,6 +50,8 @@
     D.search = document.getElementById('prompts-search');
     D.count = document.getElementById('prompts-count');
     D.clear = document.getElementById('prompts-clear');
+    D.catGrid = document.getElementById('prompts-categories');
+    D.listWrapper = document.getElementById('prompts-list-wrapper');
     D.listView = document.getElementById('prompts-list-view');
     D.gridView = document.getElementById('prompts-grid-view');
     D.empty = document.getElementById('prompts-empty');
@@ -66,6 +69,8 @@
     D.filterPlatform = document.getElementById('filter-platform');
     D.filterDifficulty = document.getElementById('filter-difficulty');
     D.filterRole = document.getElementById('filter-role');
+    D.backToCats = document.getElementById('back-to-cats');
+    D.activeCat = document.getElementById('prompts-active-cat');
     D.rows = document.querySelectorAll('#prompts-list-view .prompt-row');
     D.groups = document.querySelectorAll('#prompts-list-view .prompts-category-group');
   }
@@ -109,16 +114,53 @@
         var txt = (p.title + ' ' + p.description + ' ' + p.prompt + ' ' + (p.tags || []).join(' ')).toLowerCase();
         if (txt.indexOf(q) === -1) return false;
       }
-      // Platform: single select from dropdown
+      if (S.category && p.category !== S.category) return false;
       if (S.platform && (p.platforms || []).indexOf(S.platform) === -1) return false;
-      // Difficulty: single select
       if (S.difficulty && p.difficulty !== S.difficulty) return false;
-      // Role: single select
       if (S.role) {
         if ((p.roles || []).indexOf(S.role) === -1) return false;
       }
       return true;
     });
+  }
+
+  // === CATEGORY NAVIGATION ===
+  function showCategoryGrid() {
+    S.category = '';
+    if (D.catGrid) D.catGrid.hidden = false;
+    if (D.listWrapper) D.listWrapper.hidden = true;
+    syncUrl();
+  }
+
+  function showCategory(catSlug) {
+    S.category = catSlug;
+    if (D.catGrid) D.catGrid.hidden = true;
+    if (D.listWrapper) D.listWrapper.hidden = false;
+    // Find category title
+    var catTitle = catSlug;
+    for (var i = 0; i < PROMPTS.length; i++) {
+      if (PROMPTS[i].category === catSlug) { catTitle = PROMPTS[i].categoryEmoji + ' ' + PROMPTS[i].categoryTitle; break; }
+    }
+    if (D.activeCat) D.activeCat.textContent = catTitle;
+    applyFilters();
+    // Open first row in the selected category
+    var firstRow = D.listView && D.listView.querySelector('.prompts-category-group[data-category="' + catSlug + '"] .prompt-row');
+    if (firstRow) {
+      var body = firstRow.querySelector('.prompt-row-body');
+      var arrow = firstRow.querySelector('.prompt-row-arrow');
+      var header = firstRow.querySelector('.prompt-row-header');
+      if (body) body.hidden = false;
+      if (arrow) arrow.textContent = '▾';
+      if (header) header.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function showAllPrompts() {
+    S.category = '';
+    if (D.catGrid) D.catGrid.hidden = true;
+    if (D.listWrapper) D.listWrapper.hidden = false;
+    if (D.activeCat) D.activeCat.textContent = 'Search results';
+    applyFilters();
   }
 
   function applyFilters() {
@@ -483,6 +525,7 @@
   function syncUrl() {
     var p = new URLSearchParams();
     if (S.search) p.set('q', S.search);
+    if (S.category) p.set('cat', S.category);
     if (S.platform) p.set('platform', S.platform);
     if (S.difficulty) p.set('difficulty', S.difficulty);
     if (S.role) p.set('role', S.role);
@@ -495,6 +538,7 @@
   function readUrl() {
     var p = new URLSearchParams(location.search);
     if (p.get('q') && D.search) { S.search = p.get('q'); D.search.value = S.search; }
+    if (p.get('cat')) S.category = p.get('cat');
     if (p.get('platform')) { S.platform = p.get('platform'); if (D.filterPlatform) D.filterPlatform.value = S.platform; }
     if (p.get('difficulty')) { S.difficulty = p.get('difficulty'); if (D.filterDifficulty) D.filterDifficulty.value = S.difficulty; }
     if (p.get('role')) { S.role = p.get('role'); if (D.filterRole) D.filterRole.value = S.role; }
@@ -504,27 +548,55 @@
 
   // === EVENT BINDING ===
   function bindEvents() {
-    // Search (debounced)
+    // Search (debounced) — switches to prompt view on type
     var searchTimer;
     if (D.search) {
       D.search.addEventListener('input', function () {
         clearTimeout(searchTimer);
         searchTimer = setTimeout(function () {
           S.search = D.search.value.trim();
-          applyFilters();
+          if (S.search) {
+            showAllPrompts();
+          } else if (!S.category) {
+            showCategoryGrid();
+          } else {
+            applyFilters();
+          }
         }, 200);
       });
     }
 
-    // Dropdown filters
+    // Dropdown filters — switch to prompt view when used
     if (D.filterPlatform) D.filterPlatform.addEventListener('change', function () {
-      S.platform = this.value; applyFilters();
+      S.platform = this.value;
+      if (S.platform && !S.category && !S.search) showAllPrompts();
+      else applyFilters();
     });
     if (D.filterDifficulty) D.filterDifficulty.addEventListener('change', function () {
-      S.difficulty = this.value; applyFilters();
+      S.difficulty = this.value;
+      if (S.difficulty && !S.category && !S.search) showAllPrompts();
+      else applyFilters();
     });
     if (D.filterRole) D.filterRole.addEventListener('change', function () {
-      S.role = this.value; applyFilters();
+      S.role = this.value;
+      if (S.role && !S.category && !S.search) showAllPrompts();
+      else applyFilters();
+    });
+
+    // Back to categories
+    if (D.backToCats) D.backToCats.addEventListener('click', function () {
+      S.search = ''; S.platform = ''; S.difficulty = ''; S.role = '';
+      if (D.search) D.search.value = '';
+      if (D.filterPlatform) D.filterPlatform.value = '';
+      if (D.filterDifficulty) D.filterDifficulty.value = '';
+      if (D.filterRole) D.filterRole.value = '';
+      showCategoryGrid();
+    });
+
+    // Category card clicks
+    if (D.catGrid) D.catGrid.addEventListener('click', function (e) {
+      var card = e.target.closest('.prompts-cat-card');
+      if (card) showCategory(card.dataset.category);
     });
 
     // Clear filters
@@ -642,21 +714,17 @@
     renderPOTD();
     readUrl();
     if (S.tab !== 'browse') switchTab(S.tab);
+    // If URL has a category or search, show prompts; otherwise show category grid
+    if (S.category) {
+      showCategory(S.category);
+    } else if (S.search || S.platform || S.difficulty || S.role) {
+      showAllPrompts();
+    }
+    // else: category grid is already visible by default
     setView(S.view);
-    applyFilters();
     updateFavButtons();
     updateFavBadge();
     bindEvents();
-    // Open first accordion row by default
-    var firstRow = D.listView && D.listView.querySelector('.prompt-row');
-    if (firstRow) {
-      var body = firstRow.querySelector('.prompt-row-body');
-      var arrow = firstRow.querySelector('.prompt-row-arrow');
-      var header = firstRow.querySelector('.prompt-row-header');
-      if (body) body.hidden = false;
-      if (arrow) arrow.textContent = '▾';
-      if (header) header.setAttribute('aria-expanded', 'true');
-    }
   }
 
   document.addEventListener('DOMContentLoaded', init);

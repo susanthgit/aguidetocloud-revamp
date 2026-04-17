@@ -1,0 +1,141 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 Agent Builder Guide — Sharing & Privacy
+# ═══════════════════════════════════════════════════════════════
+
+[[sharing_options]]
+id = "only_you"
+name = "Only you"
+description = "Private agent — only you can use it"
+icon = "🔒"
+
+[[sharing_options]]
+id = "specific"
+name = "Specific users"
+description = "Share with named individuals or security groups"
+icon = "👥"
+
+[[sharing_options]]
+id = "everyone"
+name = "Anyone in your organisation"
+description = "Available to all users in your tenant"
+icon = "🏢"
+
+# ── Privacy Matrix ──
+
+[[privacy_rules]]
+source = "Emails"
+who_sees = "Each user sees their OWN emails"
+model = "Enterprise Graph (per-user)"
+risk_level = "low"
+key_fact = "Your emails are NEVER exposed to other users"
+
+[[privacy_rules]]
+source = "Teams chats"
+who_sees = "Based on user's Teams access"
+model = "Enterprise Graph (per-user)"
+risk_level = "low"
+key_fact = "Each user's Teams permissions are respected"
+
+[[privacy_rules]]
+source = "SharePoint"
+who_sees = "Based on user's SharePoint permissions"
+model = "Existing permissions + sensitivity labels"
+risk_level = "low"
+key_fact = "If a user can't access a file, the agent won't show it"
+
+[[privacy_rules]]
+source = "Embedded files"
+who_sees = "Everyone with agent access"
+model = "Sensitivity labels gate access only"
+risk_level = "high"
+key_fact = "Information Barriers NOT supported — anyone with access sees all"
+
+[[privacy_rules]]
+source = "Web pages"
+who_sees = "Same content for everyone"
+model = "Public data"
+risk_level = "none"
+key_fact = "Public websites, no privacy concern"
+
+[[privacy_rules]]
+source = "Connectors"
+who_sees = "Based on connector permissions"
+model = "Admin-configured"
+risk_level = "medium"
+key_fact = "Depends on how admin configured the connector"
+
+# ── Enterprise Graph ──
+
+[enterprise_graph]
+title = "Enterprise Graph Grounding"
+description = "Microsoft's knowledge graph connecting all M365 data — emails, files, Teams, calendar, people."
+how_it_works = "When enabled, your agent accesses any M365 data the CURRENT USER has permission to see. No extra privileges — works within existing access levels."
+key_principles = [
+  "No new privileges — agents never access data beyond what the user already has",
+  "Built-in auditing — standard M365 audit logs track agent activity",
+  "DLP and retention — Microsoft Purview policies apply to agent interactions"
+]
+
+# ── Sensitivity Labels ──
+
+[[label_scenarios]]
+scenario = "Double Key Encryption (DKE)"
+what_happens = "File embeds but isn't used as knowledge"
+action = "Don't upload DKE files"
+severity = "warning"
+
+[[label_scenarios]]
+scenario = "User-defined permissions"
+what_happens = "Agent creation fails silently"
+action = "Remove these files"
+severity = "error"
+
+[[label_scenarios]]
+scenario = "Extract rights disabled"
+what_happens = "Agent creation fails silently"
+action = "Remove these files"
+severity = "error"
+
+[[label_scenarios]]
+scenario = "Cross-tenant encrypted files"
+what_happens = "File embeds but isn't used as knowledge"
+action = "Don't upload these"
+severity = "warning"
+
+[[label_scenarios]]
+scenario = "Password-protected"
+what_happens = "Shows error message"
+action = "Remove and re-upload without password"
+severity = "info"
+
+# ── Admin Controls ──
+
+[[admin_controls]]
+name = "View agent inventory"
+description = "See all agents and their metadata"
+location = "M365 Admin Centre > Copilot > Agents"
+
+[[admin_controls]]
+name = "Enable/disable agents"
+description = "Control which agents are available in your tenant"
+location = "M365 Admin Centre > Copilot > Agents"
+
+[[admin_controls]]
+name = "Configure sharing controls"
+description = "Set who can share agents and with whom"
+location = "M365 Admin Centre > Copilot > Settings > Data access > Agents"
+
+[[admin_controls]]
+name = "Manage billing"
+description = "Configure pay-as-you-go billing and review usage"
+location = "M365 Admin Centre > Copilot > Agents"
+
+[[admin_controls]]
+name = "Enforce compliance"
+description = "Use Microsoft Purview for sensitivity labels and audit logs"
+location = "Microsoft Purview portal"
+
+[[admin_controls]]
+name = "Manage file storage"
+description = "View and manage SharePoint Embedded (SPE) containers used by agents"
+location = "SharePoint Admin Centre or PowerShell"

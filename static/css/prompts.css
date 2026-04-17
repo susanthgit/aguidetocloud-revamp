@@ -114,16 +114,20 @@
 }
 .prompts-select {
   padding: 0.6rem 0.8rem;
-  background: rgba(6, 6, 12, 0.55);
+  background: rgba(6, 6, 12, 0.85);
   -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
   backdrop-filter: blur(var(--glass-blur-subtle));
   border: var(--glass-border);
   border-radius: var(--glass-radius-button);
-  color: var(--text-secondary);
+  color: #fff;
   font-family: var(--font-heading);
   font-size: 0.82rem;
   cursor: pointer;
-  min-width: 160px;
+  min-width: 140px;
+}
+.prompts-select option {
+  background: #0a0a14;
+  color: #fff;
 }
 .prompts-select:focus {
   outline: none;
@@ -892,6 +896,50 @@
 }
 .prompts-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .prompts-btt:hover { box-shadow: 0 4px 20px rgba(167, 139, 250, 0.5); }
+
+/* ══ V3: Category Card Grid (Level 1) ══ */
+.prompts-cat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem;
+  padding: 0.5rem 0 1.5rem;
+}
+.prompts-cat-card {
+  background: rgba(6,6,12,0.55);
+  -webkit-backdrop-filter: blur(var(--glass-blur-card));
+  backdrop-filter: blur(var(--glass-blur-card));
+  border: var(--glass-border); border-radius: var(--glass-radius-card);
+  padding: 1.1rem; cursor: pointer; text-align: left;
+  display: flex; flex-direction: column; gap: 0.3rem;
+  transition: all 0.2s; font-family: var(--font-heading);
+}
+.prompts-cat-card:hover {
+  border-color: rgba(167,139,250,0.3); box-shadow: 0 0 20px rgba(167,139,250,0.1);
+  transform: translateY(-2px);
+}
+.prompts-cat-card-emoji { font-size: 1.6rem; }
+.prompts-cat-card-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
+.prompts-cat-card-count { font-size: 0.72rem; color: var(--text-muted); }
+
+/* ══ V3: Back to Categories + Active Category ══ */
+.prompts-back-cats {
+  background: none; border: 1px solid rgba(167,139,250,0.25); color: var(--prompt-accent);
+  padding: 0.3rem 0.7rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+  font-family: var(--font-heading); cursor: pointer; transition: all 0.2s;
+}
+.prompts-back-cats:hover { background: rgba(167,139,250,0.1); }
+.prompts-active-cat {
+  font-size: 0.85rem; font-weight: 700; color: #fff;
+  font-family: var(--font-heading);
+}
+.prompts-results-left { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .prompts-cat-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .prompts-cat-card { padding: 0.9rem; }
+  .prompts-cat-card-emoji { font-size: 1.3rem; }
+}
+@media (max-width: 480px) {
+  .prompts-cat-grid { grid-template-columns: 1fr; }
+}
 
 /* ══ V3: Filter Groups ══ */
 .prompts-filter-groups {

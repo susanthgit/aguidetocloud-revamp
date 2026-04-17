@@ -1,0 +1,250 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — AI Model Availability
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model
+# ═══════════════════════════════════════════════════════════════
+
+# Model Categories
+# Mini    = fast/cheap, summarisation, info tasks
+# General = balanced, content creation, document processing
+# Deep    = reasoning, analysis, multi-step logic
+# Auto    = adaptive routing per turn, mixed workloads
+
+[[models]]
+id = "gpt-41-mini"
+name = "GPT-4.1 mini"
+provider = "OpenAI"
+category = "Mini"
+status = "GA"
+is_default = true
+context_window = 128000
+trained_data_cutoff = "June 2024"
+credit_rate = "Basic"
+strengths = ["Fastest response times", "Most cost-effective", "Good for most everyday tasks"]
+best_for = ["FAQ bots", "Simple Q&A", "Summarisation", "Information lookup"]
+regions = "All regions"
+cross_geo = false
+notes = "Default model for all new agents. Fallback when selected model is unavailable."
+
+[[models]]
+id = "gpt-41"
+name = "GPT-4.1"
+provider = "OpenAI"
+category = "General"
+status = "GA"
+is_default = false
+context_window = 128000
+trained_data_cutoff = "June 2024"
+credit_rate = "Standard"
+strengths = ["Better quality than mini", "Strong document processing", "Good content creation"]
+best_for = ["Complex content creation", "Document analysis", "Advanced Q&A"]
+regions = "All regions"
+cross_geo = false
+notes = ""
+
+[[models]]
+id = "chatgpt-5"
+name = "ChatGPT-5"
+provider = "OpenAI"
+category = "General"
+status = "GA"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Standard"
+strengths = ["Latest OpenAI general model", "Strong reasoning", "Broad knowledge"]
+best_for = ["Complex conversations", "Multi-step reasoning", "Content generation"]
+regions = "All regions (excluding GCC)"
+cross_geo = false
+notes = "Generally available globally excluding GCC environments."
+
+[[models]]
+id = "gpt-5-reasoning"
+name = "GPT-5 Reasoning"
+provider = "OpenAI"
+category = "Deep"
+status = "Preview"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Premium"
+strengths = ["Strongest reasoning capability", "Multi-step analysis", "Complex decision making"]
+best_for = ["Data analysis", "Policy review", "Complex troubleshooting", "Contract analysis"]
+regions = "All regions (cross-geo except Europe)"
+cross_geo = true
+notes = "Preview — not recommended for production. Cross-geo processing for non-US regions."
+
+[[models]]
+id = "gpt-5-auto"
+name = "GPT-5 Auto"
+provider = "OpenAI"
+category = "Auto"
+status = "Preview"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Variable"
+strengths = ["Automatically routes to best model per query", "Optimises cost vs quality", "Mixed workload support"]
+best_for = ["Helpdesk agents with mixed intents", "Tier-0 customer support", "Agents blending knowledge and actions"]
+regions = "All regions (cross-geo except Europe)"
+cross_geo = true
+notes = "Preview. Dynamically selects reasoning depth per turn."
+
+[[models]]
+id = "claude-sonnet-45"
+name = "Claude Sonnet 4.5"
+provider = "Anthropic"
+category = "General"
+status = "GA"
+is_default = false
+context_window = 200000
+trained_data_cutoff = ""
+credit_rate = "Standard"
+strengths = ["Strong nuanced analysis", "Professional prose", "Good at following complex instructions"]
+best_for = ["Professional writing", "Policy analysis", "Detailed explanations"]
+regions = "All regions (cross-geo)"
+cross_geo = true
+notes = "Hosted outside Microsoft — subject to Anthropic terms. Data may be processed outside your region."
+
+[[models]]
+id = "claude-sonnet-46"
+name = "Claude Sonnet 4.6"
+provider = "Anthropic"
+category = "General"
+status = "GA"
+is_default = false
+context_window = 200000
+trained_data_cutoff = ""
+credit_rate = "Standard"
+strengths = ["Latest Claude general model", "Improved instruction following", "Strong coding ability"]
+best_for = ["Complex instruction following", "Code-related tasks", "Detailed analysis"]
+regions = "All regions (cross-geo)"
+cross_geo = true
+notes = "Hosted outside Microsoft — subject to Anthropic terms."
+
+[[models]]
+id = "claude-opus-46"
+name = "Claude Opus 4.6"
+provider = "Anthropic"
+category = "Deep"
+status = "GA"
+is_default = false
+context_window = 200000
+trained_data_cutoff = ""
+credit_rate = "Premium"
+strengths = ["Deepest reasoning from Anthropic", "Extended thinking", "Complex multi-step analysis"]
+best_for = ["Complex analytics", "Multi-step reasoning", "Long document synthesis with citations"]
+regions = "All regions (cross-geo)"
+cross_geo = true
+notes = "Hosted outside Microsoft. GA globally but cross-geo data processing."
+
+[[models]]
+id = "claude-opus-47"
+name = "Claude Opus 4.7"
+provider = "Anthropic"
+category = "Deep"
+status = "Experimental"
+is_default = false
+context_window = 200000
+trained_data_cutoff = ""
+credit_rate = "Premium"
+strengths = ["Cutting-edge reasoning", "Latest Anthropic capabilities"]
+best_for = ["Experimentation", "Testing latest capabilities"]
+regions = "All regions (cross-geo)"
+cross_geo = true
+notes = "Experimental — not for production. Subject to preview terms."
+
+[[models]]
+id = "grok-41-fast"
+name = "Grok 4.1 Fast (Non-reasoning)"
+provider = "xAI"
+category = "General"
+status = "Experimental"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Standard"
+strengths = ["Fast processing", "Unique xAI perspective"]
+best_for = ["Experimentation", "Testing"]
+regions = "US only (early access environment)"
+cross_geo = false
+notes = "Experimental — US early access only. Not for production."
+
+[[models]]
+id = "gpt-53-chat"
+name = "GPT-5.3 Chat"
+provider = "OpenAI"
+category = "General"
+status = "Experimental"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Standard"
+strengths = ["Next-gen chat capabilities"]
+best_for = ["Experimentation"]
+regions = "US only (early access environment)"
+cross_geo = false
+notes = "Experimental — US early access only."
+
+[[models]]
+id = "gpt-54-reasoning"
+name = "GPT-5.4 Reasoning"
+provider = "OpenAI"
+category = "Deep"
+status = "Experimental"
+is_default = false
+context_window = 128000
+trained_data_cutoff = ""
+credit_rate = "Premium"
+strengths = ["Latest reasoning capabilities"]
+best_for = ["Experimentation"]
+regions = "US only (early access environment)"
+cross_geo = false
+notes = "Experimental — US early access only."
+
+# ── Category Descriptions ────────────────────────────────────
+
+[[categories]]
+id = "Mini"
+label = "Mini"
+description = "Fast and cost-effective. Good for most everyday tasks."
+strengths = "Summarisation, information tasks, image/document processing"
+speed = "Fastest"
+cost = "Lowest"
+reasoning = "Shallow"
+
+[[categories]]
+id = "General"
+label = "General"
+description = "Balanced performance for complex tasks."
+strengths = "Content creation, advanced Q&A, document processing"
+speed = "Moderate"
+cost = "Standard"
+reasoning = "Moderate"
+
+[[categories]]
+id = "Deep"
+label = "Deep"
+description = "Optimised for deliberate, multi-step reasoning."
+strengths = "Complex analytics, policy analysis, troubleshooting, long document synthesis"
+speed = "Slowest"
+cost = "Highest"
+reasoning = "Multi-step, tool-rich"
+
+[[categories]]
+id = "Auto"
+label = "Auto"
+description = "Dynamically routes queries to the best model per turn."
+strengths = "Mixed workloads, helpdesk agents, unpredictable complexity"
+speed = "Variable"
+cost = "Variable"
+reasoning = "Adaptive per turn"
+
+# ── Key Notes ────────────────────────────────────────────────
+
+[notes]
+cross_geo_warning = "Models marked 'cross-geo' may process data outside your region. Review data residency requirements before selecting."
+anthropic_warning = "Anthropic Claude models are hosted outside Microsoft and subject to Anthropic's terms and data handling policies."
+gcc_note = "GCC environments use GPT-4o mini and GPT-4o instead of GPT-4.1 variants."
+default_fallback = "If a selected model is unavailable or turned off, the agent falls back to the default model (GPT-4.1 mini)."
+retirement_note = "When a model is retired, you can continue using it for up to one month. Then it automatically falls back to the new default."
+computer_use_note = "Claude Sonnet 4.5 supports Computer Use agents for controlling desktop applications via AI."

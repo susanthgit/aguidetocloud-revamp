@@ -1,0 +1,208 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Knowledge Sources & Limits
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/requirements-quotas
+# ═══════════════════════════════════════════════════════════════
+
+[[sources]]
+id = "sharepoint-sites"
+name = "SharePoint Sites"
+icon = "📁"
+category = "Microsoft 365"
+max_files = 1000
+max_folders = 50
+max_subfolder_depth = 10
+max_file_size_mb = 512
+max_file_size_no_copilot_mb = 7
+sync_frequency = "4-6 hours"
+supported_file_types = ["DOC", "DOCX", "PPT", "PPTX", "PDF", "XLS", "XLSX"]
+requires_licence = "Copilot Studio (M365 Copilot recommended for files >7MB)"
+description = "Add SharePoint sites as knowledge sources. Modern pages only — classic ASPX pages are not supported."
+gotchas = [
+  "Only modern SharePoint pages supported — classic ASPX pages are ignored",
+  "Without M365 Copilot licence, files must be under 7MB (split large files)",
+  "With M365 Copilot licence, files up to 200MB supported via Tenant Graph Grounding",
+  "SPFx components on modern pages are not supported",
+  "Sensitivity labels 'Confidential' or 'Highly Confidential' block indexing",
+  "Password-protected files show as Ready but don't provide responses",
+  "Custom CSS or accordion navigation on SharePoint sites breaks content extraction",
+  "Ampersand (&) in document or folder names is not supported",
+  "Cannot answer queries that reference specific file names",
+  "Guest users cannot use generative answers from SharePoint in SSO-enabled apps",
+  "Document libraries are not supported as lists",
+  "Omit https:// from SharePoint URLs — only sharepoint.com domain recognised"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+[[sources]]
+id = "sharepoint-lists"
+name = "SharePoint Lists"
+icon = "📋"
+category = "Microsoft 365"
+max_rows = 2048
+max_lists_per_session = 15
+max_lookup_columns = 12
+sync_frequency = "4-6 hours"
+supported_file_types = []
+requires_licence = "Copilot Studio"
+description = "Use SharePoint lists as structured data sources. Add up to 15 lists per knowledge-add session."
+gotchas = [
+  "Only the first 2,048 rows are returned per query",
+  "Max 15 lists selectable per Add Knowledge session — add more in batches",
+  "Lists with more than 12 lookup columns in default view are not supported",
+  "List views cannot be selected as a knowledge source",
+  "Glossary and Synonyms are not supported for lists",
+  "Attachments column does not index attachment contents"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+[[sources]]
+id = "onedrive"
+name = "OneDrive"
+icon = "☁️"
+category = "Microsoft 365"
+max_files = 1000
+max_folders = 50
+max_subfolder_depth = 10
+max_file_size_mb = 512
+sync_frequency = "4-6 hours"
+supported_file_types = ["DOC", "DOCX", "PPT", "PPTX", "PDF", "XLS", "XLSX"]
+requires_licence = "Copilot Studio"
+description = "Add OneDrive files and folders as knowledge sources. Folders are treated as a single source containing all content."
+gotchas = [
+  "Each source: max 1,000 files, 50 folders, 10 layers of subfolders",
+  "Sensitivity labels 'Confidential' or 'Highly Confidential' block indexing",
+  "Password-protected files show as Ready but don't provide responses",
+  "ALM (Application Lifecycle Management) is not supported — importing agents doesn't reprocess knowledge",
+  "Glossary and Synonyms are not supported"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "dataverse"
+name = "Dataverse Tables"
+icon = "🗄️"
+category = "Microsoft 365"
+max_sources_per_agent = 2
+max_tables_per_source = 15
+supported_table_types = ["Standard", "Activity", "Virtual (specific provider)"]
+sync_frequency = "Real-time"
+supported_file_types = []
+requires_licence = "Copilot Studio"
+description = "Use Dataverse tables as structured knowledge. Supports synonyms and glossaries."
+gotchas = [
+  "Maximum 2 Dataverse sources per agent",
+  "Maximum 15 tables per knowledge source",
+  "Only Standard, Activity, and specific Virtual tables supported",
+  "Maker must have READ permissions on all tables",
+  "Synonym name max 100 chars, description max 1,000 chars",
+  "Glossary name max 100 chars, description max 1,000 chars"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+[[sources]]
+id = "file-upload"
+name = "Uploaded Files"
+icon = "📎"
+category = "Direct Upload"
+max_files = 500
+max_file_size_mb = 512
+sync_frequency = "Immediate"
+supported_file_types = ["DOC", "DOCX", "PPT", "PPTX", "PDF", "XLS", "XLSX"]
+requires_licence = "Copilot Studio"
+description = "Upload files directly to your agent. 500-file limit does NOT apply to SharePoint knowledge sources."
+gotchas = [
+  "500-file limit applies to direct uploads only — not SharePoint",
+  "Image uploads only supported within PDF files",
+  "XLSX files can be uploaded but agent can't run code to analyse them — responses may be suboptimal"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "salesforce"
+name = "Salesforce"
+icon = "💼"
+category = "Third-Party"
+max_articles = -1
+max_file_size_mb = -1
+sync_frequency = "4-6 hours"
+supported_file_types = []
+requires_licence = "Copilot Studio + Salesforce connector"
+description = "Connect to Salesforce knowledge articles. No limit on number or size of articles."
+gotchas = [
+  "ALM not supported — importing agents doesn't reprocess knowledge",
+  "Glossary and Synonyms not supported"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "confluence"
+name = "Confluence"
+icon = "📝"
+category = "Third-Party"
+max_articles = -1
+max_file_size_mb = -1
+sync_frequency = "4-6 hours"
+supported_file_types = []
+requires_licence = "Copilot Studio + Confluence connector"
+description = "Connect to Confluence knowledge articles. No limit on number or size of articles."
+gotchas = [
+  "ALM not supported",
+  "Glossary and Synonyms not supported"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "servicenow"
+name = "ServiceNow"
+icon = "🔧"
+category = "Third-Party"
+max_articles = -1
+max_file_size_mb = -1
+sync_frequency = "4-6 hours"
+supported_file_types = []
+requires_licence = "Copilot Studio + ServiceNow connector"
+description = "Connect to ServiceNow knowledge base articles."
+gotchas = [
+  "ALM not supported"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "zendesk"
+name = "Zendesk"
+icon = "🎫"
+category = "Third-Party"
+max_articles = -1
+max_file_size_mb = -1
+sync_frequency = "4-6 hours"
+supported_file_types = []
+requires_licence = "Copilot Studio + Zendesk connector"
+description = "Connect to Zendesk knowledge base articles."
+gotchas = [
+  "ALM not supported"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-unstructured-data"
+
+[[sources]]
+id = "web-urls"
+name = "Public Websites"
+icon = "🌐"
+category = "Web"
+max_urls = -1
+sync_frequency = "On-demand"
+supported_file_types = []
+requires_licence = "Copilot Studio"
+description = "Add public website URLs for the agent to search and reference."
+gotchas = [
+  "Websites must be publicly accessible",
+  "Dynamic/JavaScript-rendered content may not be fully indexed",
+  "Respect robots.txt — blocked pages won't be crawled"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+# ── General Knowledge Notes ──────────────────────────────────
+
+[general]
+auth_note = "All unstructured data sources require user-level authentication at runtime"
+exhaustive_retrieval_note = "Queries needing hundreds of files may see degraded performance due to context window limits"
+sync_note = "Sync frequency of 4-6 hours is from ingestion completion time"

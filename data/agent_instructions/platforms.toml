@@ -1,0 +1,137 @@
+# ═══════════════════════════════════════════════════════════════
+# AGENT INSTRUCTION BUILDER — Platform Specifications
+# ═══════════════════════════════════════════════════════════════
+
+[[platforms]]
+id = "m365"
+name = "M365 Agent Builder"
+icon = "🤖"
+char_limit = 8000
+format = "markdown"
+supports_knowledge = true
+supports_actions = true
+supports_code_interpreter = true
+supports_image_gen = true
+deployment = "M365 Copilot, Teams, Outlook, Word, PowerPoint"
+doc_url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-instructions"
+description = "Build declarative agents inside Microsoft 365 Copilot with no code. Best for org-wide productivity agents grounded in your company data."
+tips = [
+  "Use Markdown headers (##) to structure sections clearly",
+  "Focus on what the agent SHOULD do — not what to avoid",
+  "Define conversation starters separately in the builder UI",
+  "Add SharePoint or OneDrive as knowledge sources for grounding",
+  "Use precise verbs: ask, search, send, check, summarise",
+  "Break multi-step tasks into atomic numbered steps",
+  "Keep total instructions under 8,000 characters"
+]
+strengths = [
+  "No-code, natural language setup",
+  "Grounded in M365 data (SharePoint, OneDrive, email)",
+  "Deploys to Teams, Outlook, Word, PowerPoint",
+  "Built-in Code Interpreter and Image Generator"
+]
+limitations = [
+  "8,000 character instruction limit",
+  "Limited workflow branching vs Copilot Studio",
+  "Requires M365 Copilot licence for end users"
+]
+
+[[platforms]]
+id = "chatgpt"
+name = "ChatGPT Custom GPT"
+icon = "💬"
+char_limit = 8000
+format = "plain"
+supports_knowledge = true
+supports_actions = true
+supports_code_interpreter = true
+supports_image_gen = true
+deployment = "ChatGPT web, mobile, API"
+doc_url = "https://help.openai.com/en/articles/8554397-creating-a-gpt"
+description = "Create custom GPTs in the ChatGPT interface. Best for consumer-facing bots, personal assistants, and public tools via the GPT Store."
+tips = [
+  "Keep instructions concise — shorter is often better with GPT-4",
+  "Include 2-3 example Q&A pairs to anchor behaviour",
+  "Explicitly state what the GPT should NOT do",
+  "Upload reference docs to the Knowledge section",
+  "Enable or disable tools (Code Interpreter, DALL-E, Web Browse) as needed",
+  "Test with edge cases before publishing to the GPT Store"
+]
+strengths = [
+  "Massive user base with easy sharing via GPT Store",
+  "Built-in tools: Code Interpreter, DALL-E, Web Browse",
+  "Knowledge file upload for grounding",
+  "API access for developer integrations"
+]
+limitations = [
+  "No enterprise data integration like M365",
+  "Limited audit and governance controls",
+  "ChatGPT Plus, Team, or Enterprise required to create"
+]
+
+[[platforms]]
+id = "claude"
+name = "Claude Projects"
+icon = "🧠"
+char_limit = 4000
+format = "plain"
+supports_knowledge = true
+supports_actions = false
+supports_code_interpreter = true
+supports_image_gen = false
+deployment = "Claude.ai"
+doc_url = "https://docs.anthropic.com/claude/docs/system-prompts"
+description = "Create persistent project contexts in Claude. Best for focused research, writing, and analysis with uploaded documents."
+tips = [
+  "Be direct and specific — Claude responds well to clear instructions",
+  "Use XML tags (<role>, <rules>) to structure sections — Claude handles them natively",
+  "Shorter instructions often outperform longer ones",
+  "Upload documents as project knowledge for grounding",
+  "Specify output format explicitly (bullets, JSON, table)",
+  "Include chain-of-thought guidance for complex reasoning tasks"
+]
+strengths = [
+  "Strong reasoning and nuanced analysis",
+  "Native XML tag support for structured prompts",
+  "200K+ context window for large documents",
+  "Clean, professional prose output"
+]
+limitations = [
+  "No external tool or action integration",
+  "No image generation capability",
+  "Limited to Claude.ai — no Teams or Outlook deployment",
+  "Requires Claude Pro for Projects feature"
+]
+
+[[platforms]]
+id = "studio"
+name = "Copilot Studio"
+icon = "⚙️"
+char_limit = 16000
+format = "markdown"
+supports_knowledge = true
+supports_actions = true
+supports_code_interpreter = false
+supports_image_gen = false
+deployment = "Teams, Web, Custom channels"
+doc_url = "https://learn.microsoft.com/microsoft-copilot-studio/"
+description = "Build enterprise-grade conversational AI with topics, actions, and advanced orchestration. Best for complex workflows and multi-step business processes."
+tips = [
+  "Use topics to define conversation branches and flows",
+  "Define a clear fallback topic for unrecognised queries",
+  "Connect Power Platform connectors for external actions",
+  "Use entity recognition for structured data extraction",
+  "Test full conversation flows end-to-end before publishing",
+  "Set up authentication for any sensitive operations"
+]
+strengths = [
+  "Advanced workflow orchestration with topics and triggers",
+  "Power Platform integration (Power Automate, Dataverse)",
+  "Enterprise deployment across multiple channels",
+  "Built-in analytics and conversation insights"
+]
+limitations = [
+  "Steeper learning curve than Agent Builder",
+  "Requires Copilot Studio licence",
+  "More complex setup — overkill for simple agents"
+]

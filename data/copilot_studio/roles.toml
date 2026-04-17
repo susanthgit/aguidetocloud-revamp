@@ -1,0 +1,147 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Agent Role Templates
+# ═══════════════════════════════════════════════════════════════
+
+[[roles]]
+id = "it-support"
+name = "IT Support Agent"
+icon = "🖥️"
+description = "Handle employee IT issues: password resets, software troubleshooting, VPN problems, ticket creation."
+complexity = "Medium"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams"]
+recommended_knowledge = ["SharePoint (IT KB)", "ServiceNow KB"]
+recommended_actions = ["Create ServiceNow ticket", "Check outage status", "Reset password via flow"]
+recommended_model = "gpt-41-mini"
+model_reason = "FAQ-style responses don't need deep reasoning — fast and cost-effective"
+architecture = "single"
+architecture_reason = "One agent can handle all IT support intents with topics for common issues"
+estimated_topics = 15
+estimated_tools = 5
+credit_multiplier = 1.5
+
+[[roles]]
+id = "hr-assistant"
+name = "HR & Benefits Assistant"
+icon = "👥"
+description = "Answer employee questions about leave, benefits, policies, and onboarding using HR documentation."
+complexity = "Low"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams"]
+recommended_knowledge = ["SharePoint (HR policies)", "Uploaded files (handbook)"]
+recommended_actions = ["Link to HR portal", "Direct to HRBP"]
+recommended_model = "gpt-41-mini"
+model_reason = "Policy lookup and Q&A — doesn't need heavy reasoning"
+architecture = "single"
+architecture_reason = "HR knowledge is one domain — no need for multi-agent"
+estimated_topics = 10
+estimated_tools = 2
+credit_multiplier = 1.0
+
+[[roles]]
+id = "sales-enablement"
+name = "Sales Enablement Coach"
+icon = "💼"
+description = "Prepare sales teams for meetings, provide competitive intelligence, draft pitches, handle objection coaching."
+complexity = "Medium"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams", "Web"]
+recommended_knowledge = ["SharePoint (sales playbook, competitive intel)", "Dataverse (CRM data)"]
+recommended_actions = ["Query CRM via connector", "Draft email", "Create follow-up task"]
+recommended_model = "gpt-41"
+model_reason = "Content creation and analysis needs more power than mini"
+architecture = "single"
+architecture_reason = "Sales is one domain, but consider connected CRM agent if CRM logic is complex"
+estimated_topics = 12
+estimated_tools = 8
+credit_multiplier = 1.8
+
+[[roles]]
+id = "customer-service"
+name = "Customer Service Agent"
+icon = "🎧"
+description = "Handle external customer enquiries, troubleshoot issues, escalate to human agents when needed."
+complexity = "High"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Web", "Teams", "Omnichannel"]
+recommended_knowledge = ["SharePoint (product docs)", "ServiceNow KB", "Zendesk"]
+recommended_actions = ["Create support ticket", "Check order status", "Escalate to human"]
+recommended_model = "chatgpt-5"
+model_reason = "Customer-facing needs best quality — empathy, accuracy, nuanced responses"
+architecture = "multi"
+architecture_reason = "Consider separate agents for product support vs billing vs returns — different knowledge and permissions"
+estimated_topics = 25
+estimated_tools = 12
+credit_multiplier = 2.0
+
+[[roles]]
+id = "knowledge-base"
+name = "Knowledge Base Bot"
+icon = "📚"
+description = "Answer questions using company documentation, policies, and internal knowledge articles."
+complexity = "Low"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams"]
+recommended_knowledge = ["SharePoint (company docs)", "Confluence", "Uploaded files"]
+recommended_actions = ["Link to source document"]
+recommended_model = "gpt-41-mini"
+model_reason = "Straightforward document Q&A — fast and cost-effective"
+architecture = "single"
+architecture_reason = "One agent with generative answers over documents — simple and effective"
+estimated_topics = 5
+estimated_tools = 1
+credit_multiplier = 1.2
+
+[[roles]]
+id = "compliance"
+name = "Compliance & Policy Agent"
+icon = "⚖️"
+description = "Guide employees through compliance requirements, policy questions, and regulatory procedures."
+complexity = "High"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams"]
+recommended_knowledge = ["SharePoint (compliance docs)", "Dataverse (regulatory data)"]
+recommended_actions = ["Log compliance query", "Generate audit report", "Escalate to compliance team"]
+recommended_model = "gpt-5-reasoning"
+model_reason = "Policy interpretation requires deep reasoning — accuracy is critical"
+architecture = "single"
+architecture_reason = "Compliance is one domain but consider child agents for different regulation areas (GDPR, SOX, HIPAA)"
+estimated_topics = 20
+estimated_tools = 6
+credit_multiplier = 2.5
+
+[[roles]]
+id = "operations"
+name = "Operations & Facilities"
+icon = "🏢"
+description = "Help with office bookings, facility requests, asset management, and operational queries."
+complexity = "Medium"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams", "Web"]
+recommended_knowledge = ["SharePoint (facility guides)", "Dataverse (bookings, assets)"]
+recommended_actions = ["Book room via connector", "Submit facility request", "Check asset status"]
+recommended_model = "gpt-41-mini"
+model_reason = "Operational tasks are straightforward — speed matters more than depth"
+architecture = "single"
+architecture_reason = "One agent unless facilities and asset management need different permissions"
+estimated_topics = 12
+estimated_tools = 8
+credit_multiplier = 1.5
+
+[[roles]]
+id = "custom"
+name = "Custom Agent"
+icon = "🔧"
+description = "Build your own agent for a unique use case. Define everything from scratch."
+complexity = "Variable"
+recommended_platform = "copilot-studio"
+recommended_channels = ["Teams"]
+recommended_knowledge = []
+recommended_actions = []
+recommended_model = "gpt-41-mini"
+model_reason = "Start with mini — upgrade if quality isn't sufficient"
+architecture = "single"
+architecture_reason = "Start simple — split when complexity demands it"
+estimated_topics = 10
+estimated_tools = 5
+credit_multiplier = 1.5

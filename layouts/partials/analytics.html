@@ -1,18 +1,77 @@
-<!-- Google Analytics 4 -->
+<!-- Cookie Consent + Analytics (Consent Mode v2) -->
 {{ if hugo.IsProduction }}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HWWZGWCD0"></script>
 <script>
+  // Consent Mode v2: default to denied
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
   gtag('js', new Date());
-  gtag('config', 'G-2HWWZGWCD0');
+  gtag('config', 'G-2HWWZGWCD0', { anonymize_ip: true });
 </script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window,document,"clarity","script","w44u6ylgj1");
+<script>
+(function() {
+  var CONSENT_KEY = 'agtc_consent';
+  var consent = localStorage.getItem(CONSENT_KEY);
+
+  function loadGA4() {
+    if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2HWWZGWCD0';
+    document.head.appendChild(s);
+  }
+
+  function loadClarity() {
+    if (window.clarity) return;
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","w44u6ylgj1");
+  }
+
+  function grantConsent() {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+    loadGA4();
+    loadClarity();
+  }
+
+  // If already consented, load immediately
+  if (consent === 'granted') {
+    grantConsent();
+  }
+
+  // Build banner (only if no choice made yet)
+  if (!consent) {
+    var banner = document.createElement('div');
+    banner.id = 'consent-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML = '<div class="consent-inner">'
+      + '<p>We use cookies for anonymous analytics (Google Analytics & Microsoft Clarity) to improve this site. No personal data is collected. <a href="/privacy/">Privacy Policy</a></p>'
+      + '<div class="consent-buttons">'
+      + '<button id="consent-accept" class="consent-btn consent-btn-accept">Accept</button>'
+      + '<button id="consent-reject" class="consent-btn consent-btn-reject">Reject</button>'
+      + '</div></div>';
+    document.body.appendChild(banner);
+
+    document.getElementById('consent-accept').addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'granted');
+      grantConsent();
+      banner.remove();
+    });
+    document.getElementById('consent-reject').addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'denied');
+      banner.remove();
+    });
+  }
+})();
 </script>
 {{ end }}

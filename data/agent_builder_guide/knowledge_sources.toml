@@ -1,0 +1,188 @@
+# ═══════════════════════════════════════════════════════════════
+# M365 Agent Builder Guide — Knowledge Sources
+# ═══════════════════════════════════════════════════════════════
+
+[[sources]]
+id = "web_urls"
+name = "Public Website URLs"
+icon = "🌐"
+limit = "4 URLs"
+licence = "Free or Paid"
+description = "Add specific public websites as knowledge. The agent can answer from page content."
+rules = [
+  "Maximum 4 URLs per agent",
+  "URLs must be maximum 2 levels deep (e.g. example.com/docs/guide)",
+  "URLs cannot contain query parameters (e.g. ?id=123)",
+  "URLs must be publicly accessible — no login-required pages"
+]
+tips = [
+  "Choose content-rich pages rather than navigation pages",
+  "Microsoft Learn URLs are typically 4-5 levels deep and WILL be rejected — download as .txt instead",
+  "Use the 'Search all websites' toggle for broader web grounding beyond your 4 URLs",
+  "Test every URL in Agent Builder before relying on it"
+]
+gotchas = [
+  "Most Microsoft Learn article URLs are too deep (4-5 levels) and will be rejected",
+  "Agent Builder doesn't always show a clear error — the URL may silently not be added"
+]
+
+[[sources]]
+id = "sharepoint"
+name = "SharePoint Content"
+icon = "📂"
+limit = "Up to 100 files"
+licence = "Paid only"
+description = "Ground your agent in SharePoint sites, folders, and files. The most powerful knowledge source for enterprise agents."
+rules = [
+  "Up to 100 SharePoint files per agent (per current Microsoft Learn docs)",
+  "Some documentation references a broader '20 knowledge sources' limit — try adding more files within existing folders if you hit a limit",
+  "Agent respects existing user permissions — users only see files they have access to",
+  "Sensitivity labels on files carry over to agent access",
+  "Restricted SharePoint Search blocks SharePoint as a knowledge source"
+]
+tips = [
+  "Add specific folders rather than entire sites for more accurate answers",
+  "Keep documents concise — short, well-structured files work better than massive ones",
+  "Excel works best with data in ONE sheet within a workbook",
+  "Communication sites may not appear in the picker — try 'More Places' or enter URL directly",
+  "3 ways to add: Enter URL, file picker (cloud icon), or search bar"
+]
+gotchas = [
+  "New SharePoint sites can take HOURS to appear in the file picker",
+  "New files take several minutes to index — 'Preparing' status shown until ready",
+  "Excel files need 'Generate docs' capability enabled just to READ them"
+]
+
+[[sources]]
+id = "uploaded"
+name = "Uploaded (Embedded) Files"
+icon = "📎"
+limit = "20 files"
+licence = "Paid only"
+description = "Upload files from your device. These become embedded in the agent and available to anyone with access."
+rules = [
+  "Maximum 20 files per agent",
+  "Files take 1-2 minutes to upload (shown as grey until ready)",
+  "Information Barriers (IB) NOT supported — anyone with agent access sees all embedded content",
+  "Highest sensitivity label from any file applies to the whole agent"
+]
+tips = [
+  "Use .txt or .docx for best results — Markdown syntax in .txt is still readable by AI",
+  ".md files are NOT supported — rename to .txt",
+  "Remove files with restrictive sensitivity labels to avoid blocking users",
+  "Upload curated reference docs rather than raw data dumps"
+]
+gotchas = [
+  "Files with user-defined permissions cause agent creation to fail SILENTLY",
+  "Double Key Encrypted files embed but aren't used as knowledge (no error shown)",
+  "Uploading ONE Confidential file makes the whole agent require Confidential access",
+  "Password-protected files show an error message"
+]
+
+[[sources.file_types]]
+extension = ".doc, .docx"
+max_size = "512 MB"
+[[sources.file_types]]
+extension = ".pdf"
+max_size = "512 MB"
+[[sources.file_types]]
+extension = ".ppt, .pptx"
+max_size = "512 MB"
+[[sources.file_types]]
+extension = ".txt"
+max_size = "512 MB"
+[[sources.file_types]]
+extension = ".xls, .xlsx"
+max_size = "30 MB"
+[[sources.file_types]]
+extension = ".csv"
+max_size = "150 MB"
+
+[[sources]]
+id = "teams"
+name = "Teams Chats & Meetings"
+icon = "💬"
+limit = "5 specific chats"
+licence = "Paid only"
+description = "Ground your agent in Teams chats, channels, and meeting transcripts."
+rules = [
+  "Select up to 5 specific chats (channels, group chats, meeting chats)",
+  "Or select 'My Teams chats and meetings' for ALL your chats and transcripts",
+  "Cannot scope to individual meetings when using 'all' option",
+  "Very long transcript histories may not be fully available"
+]
+tips = [
+  "Scoping to specific chats improves accuracy significantly",
+  "Channel conversations work great for project-specific agents",
+  "Meeting transcripts create powerful 'meeting memory' agents"
+]
+gotchas = [
+  "Requires M365 Copilot paid licence — not available on free tier",
+  "The 'all' option searches everything including personal chats"
+]
+
+[[sources]]
+id = "email"
+name = "Outlook Email"
+icon = "📧"
+limit = "All or nothing"
+licence = "Paid only"
+description = "Search, summarise, and answer from your Outlook mailbox. Cannot scope to specific folders."
+rules = [
+  "Adds ALL email in your mailbox as knowledge — cannot filter",
+  "Cannot scope to specific folders, senders, or date ranges",
+  "When shared, each user sees THEIR OWN emails — not yours",
+  "Requires M365 Copilot paid licence"
+]
+tips = [
+  "Great for 'What did I discuss about project X?' type questions",
+  "Use instructions to focus: 'Only search emails related to Project Alpha'",
+  "Consider SharePoint/Teams as alternatives if you don't need email-specific data"
+]
+gotchas = [
+  "Personal emails are included — be aware in professional contexts",
+  "No way to exclude specific folders or date ranges",
+  "All-or-nothing can lead to noisy results — use instruction guidance"
+]
+privacy_note = "When you share an agent with email knowledge, each user who uses the agent accesses THEIR OWN mailbox. Your emails are NEVER exposed to other users."
+
+[[sources]]
+id = "connectors"
+name = "M365 Copilot Connectors"
+icon = "🔌"
+limit = "Admin-controlled"
+licence = "Paid only"
+description = "Connect to additional data sources configured by your admin."
+rules = [
+  "Must be enabled by your organisation's administrator",
+  "Available only with M365 Copilot paid licence",
+  "Configured in the M365 Admin Centre"
+]
+tips = [
+  "Ask your IT admin if connectors are available in your tenant",
+  "Common connectors include ServiceNow, Salesforce, and custom APIs"
+]
+gotchas = [
+  "Not visible in Agent Builder if admin hasn't enabled them"
+]
+
+[[sources]]
+id = "web_search"
+name = "Web Search Toggle"
+icon = "🔍"
+limit = "On/Off"
+licence = "Free or Paid"
+description = "When enabled, your agent can search the public web beyond your specific knowledge sources."
+rules = [
+  "Toggle 'Search all websites' on the Configure tab",
+  "Searches public web — not org-specific data",
+  "Can be combined with other knowledge sources"
+]
+tips = [
+  "Enable for agents that need up-to-date information",
+  "Disable for agents that should ONLY answer from org knowledge",
+  "Use instructions to prioritise: 'Check uploaded documents first, only search web if not found'"
+]
+gotchas = [
+  "Web results may override your curated knowledge if not managed via instructions"
+]

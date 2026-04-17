@@ -530,6 +530,19 @@ body_class = "page-it-day-sim"
 # ── Community (non-tool) ──────────────────────────────────────────────────────
 
 [[tools]]
+name = "Agent Instruction Builder"
+slug = "agent-instructions"
+hex = "#E0976B"
+hue = 24
+name_friendly = "Warm Copper"
+category = "Learning"
+css_namespace = "aginst-*"
+body_class = "page-agent-instructions"
+# NOTE: Hue 24° shares warm range with Service Health (16°) and Countdown (30°) — much lighter/desaturated, visually distinct. Colour space exhausted at 45 tools.
+
+# ── Community (non-tool) ──────────────────────────────────────────────────────
+
+[[tools]]
 name = "Community Feedback"
 slug = "feedback"
 hex = "#FBBF24"

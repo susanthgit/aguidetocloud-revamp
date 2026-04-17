@@ -1,0 +1,85 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Integration Patterns
+# ═══════════════════════════════════════════════════════════════
+
+[[connector_types]]
+id = "standard"
+name = "Standard Connectors"
+licence_required = "Included with Copilot Studio"
+examples = ["SharePoint", "Outlook", "Teams", "OneDrive", "Excel Online", "Planner"]
+description = "M365 and common SaaS connectors included at no extra cost."
+
+[[connector_types]]
+id = "premium"
+name = "Premium Connectors"
+licence_required = "Included with Copilot Studio"
+examples = ["SQL Server", "Salesforce", "ServiceNow", "SAP", "Dynamics 365", "Azure SQL"]
+description = "Enterprise connectors for CRM, ERP, databases. Included with CS licence (unlike standalone Power Platform)."
+
+[[connector_types]]
+id = "custom"
+name = "Custom Connectors"
+licence_required = "Included with Copilot Studio"
+examples = ["Any REST API", "Internal services", "Legacy systems via API wrapper"]
+description = "Build your own connector to any REST API endpoint."
+
+# ── Auth Methods ─────────────────────────────────────────────
+
+[[auth_methods]]
+id = "sso"
+name = "Single Sign-On (SSO)"
+description = "User authenticated via Azure AD/Entra ID. Seamless — no login prompt."
+best_for = "Internal Teams agents"
+notes = "Recommended for enterprise agents. SharePoint GenAI answers don't support SSO for guest users."
+
+[[auth_methods]]
+id = "manual"
+name = "Manual Authentication"
+description = "Agent prompts user to sign in via OAuth flow. Uses Bot Framework token service."
+best_for = "External users, multi-channel agents"
+notes = "Required for external-facing agents. Token.botframework.com must be accessible."
+
+[[auth_methods]]
+id = "none"
+name = "No Authentication"
+description = "Agent accessible without sign-in. Public-facing, anonymous access."
+best_for = "Public FAQ bots, website widgets"
+notes = "No access to user-specific data. Limited to public knowledge sources."
+
+# ── Channel Profiles ─────────────────────────────────────────
+
+[[channel_profiles]]
+id = "internal-teams"
+name = "Internal Teams Agent"
+channels = ["Teams"]
+auth = "SSO"
+knowledge = ["SharePoint", "OneDrive", "Dataverse"]
+actions = ["Power Automate", "M365 connectors"]
+considerations = ["Easiest deployment", "Automatic user context", "50 agents per team limit in Teams app"]
+
+[[channel_profiles]]
+id = "external-web"
+name = "External Website Bot"
+channels = ["Web"]
+auth = "Manual or None"
+knowledge = ["Uploaded files", "Public websites", "Dataverse"]
+actions = ["Custom connectors", "CRM integration"]
+considerations = ["Need to embed widget code", "Consider load times", "Privacy policy required"]
+
+[[channel_profiles]]
+id = "omnichannel-support"
+name = "Dynamics 365 Customer Service"
+channels = ["Omnichannel"]
+auth = "Dynamics auth"
+knowledge = ["Dataverse", "ServiceNow", "Zendesk"]
+actions = ["Create case", "Escalate to human", "Update CRM"]
+considerations = ["28KB message size limit for context", "Full agent handoff capabilities", "Requires Dynamics 365 licence"]
+
+[[channel_profiles]]
+id = "multi-channel"
+name = "Multi-Channel Deployment"
+channels = ["Teams", "Web", "Facebook"]
+auth = "Mixed (SSO for Teams, Manual for Web/Facebook)"
+knowledge = ["SharePoint", "Uploaded files", "Web"]
+actions = ["Connectors", "Power Automate"]
+considerations = ["Same agent, different auth per channel", "Test on each channel separately", "Mobile responsiveness for web widget"]

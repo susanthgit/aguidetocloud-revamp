@@ -1,0 +1,126 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Quotas & Limits
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/requirements-quotas
+# ═══════════════════════════════════════════════════════════════
+
+# ── Message Quotas (RPM/RPH by tier) ─────────────────────────
+
+[[quotas]]
+id = "messages-standard"
+name = "Messages to an agent"
+scope = "Per Dataverse environment"
+limit = "8,000 RPM"
+applies_to = "Paid plan"
+note = "Includes any message from a user or integrations (Azure Bot Framework skills)"
+
+[[genai_quotas]]
+tier = "1-10 prepaid packs"
+rpm = 50
+rph = 1000
+
+[[genai_quotas]]
+tier = "11-50 prepaid packs"
+rpm = 80
+rph = 1600
+
+[[genai_quotas]]
+tier = "51-150 prepaid packs"
+rpm = 100
+rph = 2000
+
+[[genai_quotas]]
+tier = "150+ prepaid packs"
+rpm_note = "+1 RPM per extra 10 packs"
+rph_note = "+20 RPH per extra 10 packs"
+
+[[genai_quotas]]
+tier = "Trial/Developer"
+rpm = 10
+rph = 200
+
+[[genai_quotas]]
+tier = "Pay-as-you-go"
+rpm = 100
+rph = 2000
+
+[[genai_quotas]]
+tier = "M365 Copilot users"
+rpm = 100
+rph = 2000
+
+# ── Agent Limits ─────────────────────────────────────────────
+
+[limits]
+
+[limits.web_app]
+instructions_chars = 8000
+connector_payload_mb = 5
+connector_payload_gcc_kb = 450
+file_upload_size_mb = 512
+file_upload_count = 500
+skills_per_agent = 100
+topics_per_agent = 1000
+trigger_phrases_per_topic = 200
+tools_recommended_max = 40
+tools_note = "Performance degrades at 30-40+ tools/topics/agents"
+
+[limits.teams_app]
+agents_per_team = 50
+skills_per_agent = 100
+topics_dataverse_teams = 250
+topics_dataverse_full = 1000
+trigger_phrases_per_topic = 200
+skills_note = "Skills require Copilot Studio standalone subscription — Teams plan doesn't include skills"
+
+[limits.subscription]
+power_platform_requests_standard = 250000
+power_platform_requests_standard_period = "24 hours"
+power_platform_requests_teams = 6000
+power_platform_requests_teams_period = "24 hours"
+teams_sessions_note = "Unlimited per tenant/month but 10 sessions per user per 24 hours across all agents"
+
+[limits.omnichannel]
+message_size_kb = 28
+message_size_note = "ACS channel limit — affects variable passing during handoff to Omnichannel"
+
+# ── Channel Limits ───────────────────────────────────────────
+
+[[channels]]
+id = "teams"
+name = "Microsoft Teams"
+icon = "💬"
+limits = "50 agents per team (Teams app); unlimited via web app deployment"
+auth = "SSO with Azure AD"
+notes = "Primary enterprise channel. Teams app has additional limits vs web app."
+
+[[channels]]
+id = "web"
+name = "Web Widget"
+icon = "🌐"
+limits = "No specific agent limits"
+auth = "Configurable (SSO, manual, none)"
+notes = "Embed on any website via iframe or SDK"
+
+[[channels]]
+id = "facebook"
+name = "Facebook"
+icon = "📘"
+limits = "Standard Bot Framework limits"
+auth = "Facebook auth"
+notes = "Via Azure Bot Service channel"
+
+[[channels]]
+id = "omnichannel"
+name = "Dynamics 365 Omnichannel"
+icon = "🏢"
+limits = "28KB message size limit for context passing"
+auth = "Dynamics 365 auth"
+notes = "Full customer service integration with agent handoff"
+
+[[channels]]
+id = "custom"
+name = "Custom Channels"
+icon = "🔧"
+limits = "Azure Bot Service limits apply"
+auth = "Configurable"
+notes = "Any channel supported by Azure Bot Service"

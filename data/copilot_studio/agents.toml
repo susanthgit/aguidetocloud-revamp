@@ -1,0 +1,207 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Multi-Agent Architecture
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/authoring-add-other-agents
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/guidance/multi-agent-patterns
+# ═══════════════════════════════════════════════════════════════
+
+[[agent_types]]
+id = "child"
+name = "Child Agent (Inline)"
+icon = "🔗"
+description = "Lightweight agents within your existing agent. Share context with the parent agent and use their own tools and knowledge."
+orchestration = "Parent's orchestration"
+context_sharing = "Shared with parent"
+deployment = "Part of parent agent — not independently deployable"
+tool_limits = "Separate from parent (own limits)"
+latency_impact = "Slight increase due to added orchestration layer"
+when_to_use = [
+  "Building a single agent to handle one intent or task",
+  "A single developer or small team manages the entire solution",
+  "You want to logically group tools, instructions, and knowledge into subagents",
+  "You don't need separate configuration, authentication, or deployment",
+  "You don't intend to publish the subagent independently",
+  "You don't need to reuse the agent across multiple parent agents"
+]
+benefits = [
+  "Separate tool limits from parent — scale beyond 30-40 tools",
+  "Logical grouping of related functionality",
+  "Simple context passing — shared conversation history",
+  "No separate deployment or governance needed"
+]
+considerations = [
+  "Added latency from extra orchestration layer",
+  "Cannot be published or used independently",
+  "Cannot be reused across multiple agents"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-agent-child-agent"
+
+[[agent_types]]
+id = "connected-cs"
+name = "Connected Agent (Copilot Studio)"
+icon = "🔌"
+description = "Separate Copilot Studio agents with their own orchestration, tools, and knowledge. The parent delegates requests to them."
+orchestration = "Own orchestration"
+context_sharing = "Conversation history passed by default; specific params can be sent"
+deployment = "Independent — can be published and used on their own channels"
+tool_limits = "Own limits (separate from parent)"
+latency_impact = "Moderate — context switching between agents"
+when_to_use = [
+  "Multiple teams or developers manage different agents independently",
+  "You need to publish and maintain agents separately",
+  "Agents must have dedicated settings (model choice, environment)",
+  "You need independent ALM (Application Lifecycle Management)",
+  "You want to make the agent reusable across multiple parent agents",
+  "The subtask is complex enough to need its own tools and knowledge",
+  "Different governance rules or access controls are needed"
+]
+benefits = [
+  "Full independence — own model, settings, deployment",
+  "Reusable across multiple agents",
+  "Separate governance and access controls",
+  "Independent ALM and versioning"
+]
+considerations = [
+  "Higher latency from context switching",
+  "Must manage data handoff explicitly",
+  "Security: connected agent may access things parent can't — govern carefully",
+  "Need to correlate parent and connected session logs for debugging"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-agent-copilot-studio-agent"
+
+[[agent_types]]
+id = "connected-a2a"
+name = "Connected Agent (A2A Protocol)"
+icon = "🌐"
+description = "External agents available over the Agent-to-Agent (A2A) protocol. Cross-platform agent interoperability."
+orchestration = "External"
+context_sharing = "Protocol-defined"
+deployment = "External system"
+tool_limits = "External"
+latency_impact = "Higher — cross-system communication"
+when_to_use = [
+  "Connecting to agents built on non-Microsoft platforms",
+  "Cross-organisation agent collaboration",
+  "Industry-standard agent interoperability"
+]
+benefits = [
+  "Cross-platform interoperability",
+  "Connect to any A2A-compatible agent"
+]
+considerations = [
+  "Higher latency",
+  "Security governance across systems",
+  "Protocol maturity — still evolving"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-agent-agent-to-agent"
+
+[[agent_types]]
+id = "connected-foundry"
+name = "Connected Agent (Azure AI Foundry)"
+icon = "☁️"
+description = "Connect to agents built in Azure AI Foundry. Brings custom AI capabilities into your Copilot Studio agent."
+orchestration = "AI Foundry orchestration"
+context_sharing = "API-based"
+deployment = "Azure"
+tool_limits = "Azure-defined"
+latency_impact = "Variable — depends on Foundry agent complexity"
+when_to_use = [
+  "You have custom AI models or RAG pipelines in Azure",
+  "You need capabilities beyond Copilot Studio's built-in features",
+  "Specialised domain AI that requires fine-tuned models"
+]
+benefits = [
+  "Access custom AI models and RAG",
+  "Leverage Azure AI investment"
+]
+considerations = [
+  "Preview feature — not for production yet",
+  "Requires Azure AI Foundry setup",
+  "Additional Azure costs"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-agent-foundry-agent"
+
+[[agent_types]]
+id = "connected-fabric"
+name = "Connected Agent (Fabric Data)"
+icon = "📊"
+description = "Connect to Microsoft Fabric Data agents for data analytics and insights within conversations."
+orchestration = "Fabric orchestration"
+context_sharing = "API-based"
+deployment = "Fabric workspace"
+tool_limits = "Fabric-defined"
+latency_impact = "Variable"
+when_to_use = [
+  "You need real-time data analytics in conversations",
+  "Your data lives in Microsoft Fabric lakehouse/warehouse",
+  "Complex data queries that need Fabric's compute"
+]
+benefits = [
+  "Direct access to Fabric data",
+  "Real-time analytics in conversation"
+]
+considerations = [
+  "Preview feature",
+  "Requires Fabric workspace and licence"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-agent-fabric-data-agent"
+
+[[agent_types]]
+id = "autonomous"
+name = "Autonomous Agent"
+icon = "⚡"
+description = "Agents that act without user prompts — triggered by events, schedules, or data changes. Operate continuously in the background."
+orchestration = "Trigger-based"
+context_sharing = "Event context"
+deployment = "Background — no user-facing channel required"
+tool_limits = "Standard CS limits"
+latency_impact = "N/A — background execution"
+when_to_use = [
+  "Time-sensitive tasks that can't wait for user input",
+  "Monitoring data and reacting to changes",
+  "Routine tasks that should run automatically",
+  "Processing updates, triaging events, initiating follow-ups"
+]
+benefits = [
+  "No user prompt needed — trigger-based",
+  "Continuous background operation",
+  "Event-driven architecture",
+  "Scale to handle high-volume automated tasks"
+]
+considerations = [
+  "Every agent operates within scoped permissions",
+  "Explicit decision boundaries required",
+  "Auditable processes mandatory",
+  "Consumes Copilot Credits per execution"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/guidance/autonomous-agents"
+
+# ── Architecture Best Practices ──────────────────────────────
+
+[best_practices]
+tool_threshold = 30
+tool_threshold_note = "Performance degrades when a main agent has more than 30-40 tools, topics, and other agents. Split functionality across multiple agents at that point."
+start_simple = "Start with one agent. Only split into multiple agents when you clearly see a need for modularity or a boundary."
+
+[[anti_patterns]]
+id = "over-delegation"
+name = "Over-delegation"
+description = "Creating a separate agent for every small task — leads to architecture sprawl, hard to maintain/debug/secure."
+fix = "Only create separate agents for genuinely distinct domains or when tool limits are hit."
+
+[[anti_patterns]]
+id = "under-delegation"
+name = "Under-delegation (monolith)"
+description = "One giant agent that handles HR, IT, sales, compliance, operations — impossible to maintain."
+fix = "Split by domain when intents start overlapping or tool count exceeds 30-40."
+
+[[anti_patterns]]
+id = "undefined-boundaries"
+name = "Undefined delegation boundaries"
+description = "Parent doesn't know when to hand off, child agents don't know expected inputs, responsibilities overlap."
+fix = "Describe each connected agent's purpose clearly. Treat it like a tool with a clear name and description."
+
+[[anti_patterns]]
+id = "security-bypass"
+name = "Security bypass via connected agents"
+description = "Connected agent has permissions the parent doesn't — calling it circumvents restrictions."
+fix = "Treat connected agent calls like powerful actions. Apply same checks, consent, and approval gates."

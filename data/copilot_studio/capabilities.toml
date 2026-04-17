@@ -1,0 +1,197 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Capabilities Explorer
+# ═══════════════════════════════════════════════════════════════
+
+[[capabilities]]
+id = "generative-orchestration"
+name = "Generative Orchestration"
+category = "Conversations"
+cs_only = true
+description = "AI automatically selects the best topic, tool, or action for each user query. No manual routing needed — the orchestrator understands intent and picks the right path."
+why_it_matters = "Instead of mapping every possible question to a topic, the AI decides what to do dynamically. This dramatically reduces the number of topics you need to create."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-generative-actions"
+
+[[capabilities]]
+id = "topics"
+name = "Conversation Topics"
+category = "Conversations"
+cs_only = true
+description = "Define structured conversation flows with trigger phrases, branching logic, conditions, variables, and actions. Topics are the building blocks of multi-step conversations."
+why_it_matters = "Topics let you control exactly how the agent responds to specific intents — not just answering questions but guiding users through workflows step by step."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-create-edit-topics"
+
+[[capabilities]]
+id = "generative-answers"
+name = "Generative Answers"
+category = "Conversations"
+cs_only = false
+description = "AI generates responses from your knowledge sources when no specific topic matches. Covers questions you haven't explicitly authored."
+why_it_matters = "You can't anticipate every question. Generative answers fill the gaps — the agent reads your documents and answers in natural language."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-conversations"
+
+[[capabilities]]
+id = "nlu"
+name = "Natural Language Understanding"
+category = "Conversations"
+cs_only = false
+description = "Built-in NLU matches user intent to the best topic, even when phrasing varies. Customise with trigger phrases and entities."
+why_it_matters = "Users don't speak in keywords — they use natural language. NLU ensures your agent understands intent regardless of wording."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-ai-features"
+
+[[capabilities]]
+id = "prompt-builder"
+name = "Prompt Builder"
+category = "Conversations"
+cs_only = true
+description = "Create custom prompts with model selection, content moderation settings, and input/output configuration. Build reusable prompt templates."
+why_it_matters = "Fine-tune how your agent reasons about specific tasks. Choose different models per prompt — use mini for simple tasks, deep for complex analysis."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/prompts-overview"
+
+[[capabilities]]
+id = "connectors"
+name = "1,000+ Connectors"
+category = "Integration"
+cs_only = true
+description = "Connect to external services via Power Platform connectors — Standard, Premium, and Custom. Access CRM, ITSM, databases, APIs, and more."
+why_it_matters = "Your agent can read from and write to business systems. Create tickets in ServiceNow, query Salesforce, update Dynamics 365 — all within a conversation."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-connectors"
+
+[[capabilities]]
+id = "power-automate"
+name = "Power Automate Integration"
+category = "Integration"
+cs_only = true
+description = "Trigger cloud flows (automated, instant, scheduled) from within conversations. Full Power Automate capability as agent actions."
+why_it_matters = "Turn conversations into action — send approval requests, update databases, trigger notifications, run complex multi-step business processes."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create"
+
+[[capabilities]]
+id = "dataverse"
+name = "Dataverse Integration"
+category = "Integration"
+cs_only = true
+description = "Use Dataverse tables as knowledge sources and for data operations. Built-in support for synonyms and glossaries."
+why_it_matters = "Dataverse is the backbone of Power Platform. Direct integration means your agent can read, write, and query business data natively."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+[[capabilities]]
+id = "tools"
+name = "Agent Tools (Actions)"
+category = "Integration"
+cs_only = true
+description = "Add custom tools that agents can invoke during conversations. Tools can call APIs, run scripts, or perform complex operations."
+why_it_matters = "Extend your agent beyond conversation — let it take real actions in your systems, from creating records to running calculations."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/add-tools-custom-agent"
+
+[[capabilities]]
+id = "computer-use"
+name = "Computer Use"
+category = "Integration"
+cs_only = true
+description = "Agents can control desktop applications via AI — click buttons, fill forms, navigate UIs. Uses Claude Sonnet 4.5."
+why_it_matters = "Automate legacy applications that don't have APIs. The agent literally operates the desktop app like a human would."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/computer-use"
+
+[[capabilities]]
+id = "multi-channel"
+name = "Multi-Channel Deployment"
+category = "Deployment"
+cs_only = true
+description = "Deploy your agent to Teams, websites, mobile apps, Facebook, Azure Bot Service, Dynamics 365 Omnichannel, and custom channels."
+why_it_matters = "Meet users where they are. One agent, deployed everywhere — employees in Teams, customers on your website, support via Omnichannel."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels"
+
+[[capabilities]]
+id = "multi-agent"
+name = "Multi-Agent Orchestration"
+category = "Deployment"
+cs_only = true
+description = "Build parent/child agent hierarchies, connect to other Copilot Studio agents, AI Foundry agents, Fabric Data agents, and A2A protocol agents."
+why_it_matters = "Complex enterprises need specialised agents. Multi-agent lets you build modular, maintainable architectures instead of one giant monolith."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-add-other-agents"
+
+[[capabilities]]
+id = "autonomous-agents"
+name = "Autonomous Agents"
+category = "Deployment"
+cs_only = true
+description = "Trigger-based agents that operate without user prompts. Monitor events, react to data changes, and execute tasks in the background."
+why_it_matters = "Not everything starts with a user typing a question. Autonomous agents handle time-sensitive tasks, process updates, and triage events proactively."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/guidance/autonomous-agents"
+
+[[capabilities]]
+id = "model-selection"
+name = "AI Model Selection"
+category = "AI"
+cs_only = true
+description = "Choose from multiple AI models: GPT-4.1, GPT-5, Claude Sonnet/Opus, Grok. Pick Mini (fast/cheap), General (balanced), Deep (reasoning), or Auto (adaptive)."
+why_it_matters = "Different tasks need different models. Use mini for FAQs (cheap), deep for analysis (powerful), or auto to let the platform decide per query."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model"
+
+[[capabilities]]
+id = "content-moderation"
+name = "Content Moderation"
+category = "AI"
+cs_only = true
+description = "Configure sensitivity levels for hate/fairness, sexual, violence, and self-harm content filtering — per prompt and per agent."
+why_it_matters = "Regulated industries need precise content controls. Set low sensitivity for document processing, high for public-facing agents."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/prompt-model-settings"
+
+[[capabilities]]
+id = "analytics"
+name = "Conversation Analytics"
+category = "Monitoring"
+cs_only = true
+description = "Built-in analytics dashboard showing conversation volumes, resolution rates, customer satisfaction, topic performance, and session transcripts."
+why_it_matters = "Understand how your agent is performing. Identify top topics, spot gaps, measure impact, and improve over time with data."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/analytics-overview"
+
+[[capabilities]]
+id = "evaluations"
+name = "Agent Evaluations"
+category = "Monitoring"
+cs_only = true
+description = "Test and evaluate your agent's performance against defined criteria before deployment. Automated testing capabilities."
+why_it_matters = "Catch issues before users do. Run evaluations to verify accuracy, completeness, and safety of agent responses."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-ai-features"
+
+[[capabilities]]
+id = "dlp"
+name = "DLP & Governance"
+category = "Monitoring"
+cs_only = true
+description = "Data Loss Prevention policies, environment controls, role-based access, audit logging. Enterprise-grade security governance."
+why_it_matters = "IT admins need control. DLP ensures agents don't leak sensitive data. Environment controls prevent shadow IT. Audit logs prove compliance."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention"
+
+# ── Category labels ──────────────────────────────────────────
+
+[[categories]]
+id = "Conversations"
+label = "Conversations & AI"
+icon = "💬"
+order = 1
+
+[[categories]]
+id = "Integration"
+label = "Integration & Actions"
+icon = "🔌"
+order = 2
+
+[[categories]]
+id = "Deployment"
+label = "Deployment & Architecture"
+icon = "🚀"
+order = 3
+
+[[categories]]
+id = "AI"
+label = "AI Models & Safety"
+icon = "🧠"
+order = 4
+
+[[categories]]
+id = "Monitoring"
+label = "Analytics & Governance"
+icon = "📊"
+order = 5

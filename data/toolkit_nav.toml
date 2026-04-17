@@ -536,6 +536,17 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
+url = "/agent-instructions/"
+emoji = "📝"
+name = "Agent Instruction Builder"
+short = "Agent Instruct"
+desc = "Create AI agent instructions for M365, ChatGPT, Claude & Copilot Studio"
+color = "#E0976B"
+category = "learning"
+visual = "lines"
+is_tool = true
+
+[[tools]]
 url = "/feedback/"
 emoji = "💬"
 name = "Community Feedback"

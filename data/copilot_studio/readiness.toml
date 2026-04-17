@@ -1,0 +1,180 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Build Readiness Assessment
+# ═══════════════════════════════════════════════════════════════
+
+[[questions]]
+id = "licence"
+category = "Licensing"
+question = "Do you have a Copilot Studio tenant licence?"
+options = [
+  { value = "yes", label = "Yes — we have the tenant licence", score = 3 },
+  { value = "m365", label = "We have M365 Copilot but not Copilot Studio", score = 2 },
+  { value = "teams", label = "We only have the Teams plan (M365/O365)", score = 1 },
+  { value = "no", label = "No — we don't have any licence yet", score = 0 }
+]
+weight = 2
+recommendation_low = "You'll need a Copilot Studio tenant licence to build agents with full capabilities. The Teams plan is limited to Teams-only chatbots."
+
+[[questions]]
+id = "environment"
+category = "Environment"
+question = "Do you have a Dataverse environment set up?"
+options = [
+  { value = "yes", label = "Yes — production Dataverse environment ready", score = 3 },
+  { value = "dev", label = "We have a dev/sandbox environment", score = 2 },
+  { value = "teams", label = "We only have Dataverse for Teams", score = 1 },
+  { value = "no", label = "No Dataverse environment", score = 0 }
+]
+weight = 2
+recommendation_low = "Copilot Studio requires a Dataverse environment. Ask your Power Platform admin to create one, or use a developer environment for testing."
+
+[[questions]]
+id = "knowledge-ready"
+category = "Knowledge"
+question = "Is your knowledge content ready?"
+options = [
+  { value = "clean", label = "Yes — documents are current, well-organised, in supported formats", score = 3 },
+  { value = "partial", label = "Mostly — some documents need updating or restructuring", score = 2 },
+  { value = "scattered", label = "Content exists but is scattered across systems", score = 1 },
+  { value = "none", label = "No — we need to create the knowledge base first", score = 0 }
+]
+weight = 1
+recommendation_low = "Your agent is only as good as its knowledge. Prioritise getting documents into supported formats (DOC, PDF, PPT) on SharePoint before building."
+
+[[questions]]
+id = "file-sizes"
+category = "Knowledge"
+question = "Are your knowledge files under the size limits?"
+options = [
+  { value = "small", label = "All files under 7MB", score = 3 },
+  { value = "medium", label = "Some files are 7-200MB (we have M365 Copilot)", score = 2 },
+  { value = "large", label = "Some files are 7-200MB (no M365 Copilot)", score = 1 },
+  { value = "huge", label = "We have files over 512MB", score = 0 }
+]
+weight = 1
+recommendation_low = "Files over 7MB need M365 Copilot licence for indexing. Files over 512MB must be split. Consider restructuring large documents."
+
+[[questions]]
+id = "auth"
+category = "Security"
+question = "How will users authenticate?"
+options = [
+  { value = "sso", label = "Azure AD/Entra ID SSO (internal users)", score = 3 },
+  { value = "manual", label = "OAuth sign-in (external users)", score = 2 },
+  { value = "none", label = "No auth needed (public bot)", score = 2 },
+  { value = "unsure", label = "Not sure yet", score = 1 }
+]
+weight = 1
+recommendation_low = "Decide on authentication early — it affects which knowledge sources and actions are available. SSO is easiest for internal Teams agents."
+
+[[questions]]
+id = "dlp"
+category = "Security"
+question = "Are DLP policies configured for Power Platform?"
+options = [
+  { value = "yes", label = "Yes — DLP policies are in place and tested", score = 3 },
+  { value = "basic", label = "Basic policies exist but not tested with CS", score = 2 },
+  { value = "no", label = "No DLP policies for Power Platform", score = 1 },
+  { value = "unsure", label = "Not sure", score = 0 }
+]
+weight = 1
+recommendation_low = "Set up DLP policies before deploying agents to production. This prevents agents from accidentally connecting to unauthorised services."
+
+[[questions]]
+id = "connectors"
+category = "Integration"
+question = "Do you know which external systems your agent needs to connect to?"
+options = [
+  { value = "mapped", label = "Yes — systems identified and connector availability confirmed", score = 3 },
+  { value = "identified", label = "Systems identified but haven't checked connectors yet", score = 2 },
+  { value = "vague", label = "General idea but not specific systems", score = 1 },
+  { value = "none", label = "No external system access needed", score = 3 }
+]
+weight = 1
+recommendation_low = "Map your integration needs before building. Check if Power Platform connectors exist for your systems, or plan for custom connector development."
+
+[[questions]]
+id = "stakeholders"
+category = "Governance"
+question = "Do you have stakeholder buy-in and a clear owner?"
+options = [
+  { value = "full", label = "Yes — sponsor, owner, and IT approval all in place", score = 3 },
+  { value = "partial", label = "Have a sponsor but IT hasn't approved yet", score = 2 },
+  { value = "exploring", label = "Still exploring — no formal approval", score = 1 },
+  { value = "solo", label = "Just me experimenting", score = 1 }
+]
+weight = 1
+recommendation_low = "Get stakeholder buy-in early. Production agents need IT approval, licensing decisions, and a clear owner for ongoing maintenance."
+
+[[questions]]
+id = "topics-planned"
+category = "Design"
+question = "Have you planned your conversation topics?"
+options = [
+  { value = "mapped", label = "Yes — topics, intents, and flows documented", score = 3 },
+  { value = "listed", label = "I have a list of intents but no detailed flows", score = 2 },
+  { value = "rough", label = "Rough idea of what the agent should handle", score = 1 },
+  { value = "none", label = "No — planning to figure it out as I build", score = 0 }
+]
+weight = 1
+recommendation_low = "Plan your topics before building. List the top 10 questions your agent should handle, plus how it should respond to out-of-scope requests."
+
+[[questions]]
+id = "testing"
+category = "Design"
+question = "Do you have a testing plan?"
+options = [
+  { value = "full", label = "Yes — test scenarios, success criteria, and testers identified", score = 3 },
+  { value = "basic", label = "I'll test the main scenarios myself", score = 2 },
+  { value = "minimal", label = "Will test as I build", score = 1 },
+  { value = "none", label = "Haven't thought about testing", score = 0 }
+]
+weight = 1
+recommendation_low = "Define test scenarios before building. Include: happy path, edge cases, out-of-scope questions, and escalation flows."
+
+# ── Score Tiers ──────────────────────────────────────────────
+
+[[tiers]]
+min = 0
+max = 30
+label = "Not Ready"
+colour = "red"
+icon = "🔴"
+summary = "Several prerequisites need attention before you start building."
+action = "Address the flagged items below before creating your agent."
+
+[[tiers]]
+min = 31
+max = 50
+label = "Early Stage"
+colour = "orange"
+icon = "🟠"
+summary = "Foundation is forming but key gaps remain."
+action = "You can start exploring in a dev environment, but don't deploy to production yet."
+
+[[tiers]]
+min = 51
+max = 70
+label = "Getting Ready"
+colour = "yellow"
+icon = "🟡"
+summary = "Most prerequisites are in place. A few items to finalise."
+action = "Start building your MVP agent. Address remaining items before production rollout."
+
+[[tiers]]
+min = 71
+max = 85
+label = "Nearly Ready"
+colour = "green"
+icon = "🟢"
+summary = "Strong foundation. Ready to build with confidence."
+action = "Build and test your agent. You're in good shape for production deployment."
+
+[[tiers]]
+min = 86
+max = 100
+label = "Build Ready"
+colour = "emerald"
+icon = "🌟"
+summary = "Everything is in place. You're ready to build a production-quality agent."
+action = "Go build! Follow the Blueprint tab to map your topics and integrations."

@@ -1,0 +1,331 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Platform Decision Matrix
+# ═══════════════════════════════════════════════════════════════
+
+[[platforms]]
+id = "agent-builder"
+name = "M365 Agent Builder"
+also_known_as = "Copilot Studio Lite"
+icon = "🤖"
+url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/copilot-studio-agent-builder"
+description = "No-code agent creation inside M365 Copilot. Best for individual/small team agents grounded in M365 data."
+licence_required = "M365 Copilot"
+instruction_limit = 8000
+max_knowledge_sources = 20
+max_urls = 4
+supports_topics = false
+supports_connectors = false
+supports_power_automate = false
+supports_dataverse = false
+supports_multi_channel = false
+supports_custom_model = false
+supports_autonomous = false
+supports_child_agents = false
+supports_analytics = false
+supports_dlp = false
+deployment = ["M365 Copilot Chat", "Teams", "Outlook", "Word", "PowerPoint"]
+strengths = [
+  "Zero learning curve — describe your agent in plain English",
+  "Grounded in M365 data (SharePoint, OneDrive, Email, Teams)",
+  "Built-in Code Interpreter and Image Generator",
+  "Deploys instantly to M365 Copilot apps"
+]
+limitations = [
+  "8,000 character instruction limit",
+  "No workflow branching or conversation topics",
+  "No external API/connector integration",
+  "No multi-channel deployment beyond M365",
+  "Limited governance controls"
+]
+
+[[platforms]]
+id = "copilot-studio"
+name = "Copilot Studio"
+also_known_as = "Full Copilot Studio"
+icon = "⚙️"
+url = "https://learn.microsoft.com/microsoft-copilot-studio/"
+description = "Enterprise-grade low-code agent platform with topics, connectors, Power Automate, multi-channel deployment, and advanced orchestration."
+licence_required = "Copilot Studio tenant licence"
+instruction_limit = 16000
+max_knowledge_sources = -1
+max_urls = -1
+supports_topics = true
+supports_connectors = true
+supports_power_automate = true
+supports_dataverse = true
+supports_multi_channel = true
+supports_custom_model = true
+supports_autonomous = true
+supports_child_agents = true
+supports_analytics = true
+supports_dlp = true
+deployment = ["Teams", "Web widget", "Mobile", "Facebook", "Azure Bot Service", "Omnichannel", "Custom channels"]
+strengths = [
+  "Advanced conversation flow with topics and branching logic",
+  "1,000+ connectors (Power Platform, custom APIs)",
+  "Power Automate integration for workflows",
+  "Multi-channel deployment (Teams, Web, Facebook, etc.)",
+  "AI model selection (GPT-5, Claude, Grok)",
+  "Multi-agent orchestration (child + connected agents)",
+  "Autonomous agents with trigger-based execution",
+  "Enterprise analytics and conversation insights",
+  "DLP policies and governance controls",
+  "Generative orchestration with tool selection"
+]
+limitations = [
+  "Steeper learning curve than Agent Builder",
+  "Requires Copilot Studio licence (25K credits/month)",
+  "More complex setup — overkill for simple Q&A agents",
+  "Dataverse environment required"
+]
+
+[[platforms]]
+id = "ai-foundry"
+name = "Azure AI Foundry"
+also_known_as = "Azure AI Studio"
+icon = "☁️"
+url = "https://learn.microsoft.com/azure/ai-studio/"
+description = "Full developer platform for custom AI solutions with your own models, RAG pipelines, fine-tuning, evaluation, and deployment."
+licence_required = "Azure subscription (pay-as-you-go)"
+instruction_limit = -1
+max_knowledge_sources = -1
+max_urls = -1
+supports_topics = false
+supports_connectors = true
+supports_power_automate = false
+supports_dataverse = false
+supports_multi_channel = true
+supports_custom_model = true
+supports_autonomous = true
+supports_child_agents = true
+supports_analytics = true
+supports_dlp = true
+deployment = ["Custom apps", "APIs", "Azure Bot Service", "Any platform via SDK"]
+strengths = [
+  "Full control over AI models (BYOM, fine-tuning, RAG)",
+  "Custom evaluation and testing pipelines",
+  "Scale to millions of users",
+  "Any programming language and framework",
+  "Advanced AI safety and content filtering",
+  "Custom orchestration with Semantic Kernel or LangChain"
+]
+limitations = [
+  "Requires developer skills (Python, C#, etc.)",
+  "Higher cost — Azure consumption-based pricing",
+  "Longer development cycle",
+  "No visual low-code authoring"
+]
+
+# ── Upgrade Triggers ──────────────────────────────────────────
+
+[[upgrade_triggers]]
+id = "workflows"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need multi-step workflows with branching logic"
+detail = "Agent Builder can answer questions but can't route conversations through conditional steps. Copilot Studio's topics let you build if/then workflows with variables, loops, and conditions."
+priority = "high"
+
+[[upgrade_triggers]]
+id = "external-api"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need to connect to external systems (CRM, ITSM, databases)"
+detail = "Agent Builder only accesses M365 data. Copilot Studio has 1,000+ connectors to ServiceNow, Salesforce, SAP, custom APIs, and any REST endpoint."
+priority = "high"
+
+[[upgrade_triggers]]
+id = "multi-channel"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need to deploy beyond Teams and M365 apps"
+detail = "Agent Builder agents live inside M365 Copilot. Copilot Studio agents can deploy to websites, mobile apps, Facebook, and any Azure Bot Service channel."
+priority = "high"
+
+[[upgrade_triggers]]
+id = "power-automate"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need to trigger Power Automate flows from conversations"
+detail = "Copilot Studio can call Power Automate cloud flows as actions — create tickets, send emails, update records, run approvals, all within the conversation."
+priority = "high"
+
+[[upgrade_triggers]]
+id = "governance"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need enterprise governance, DLP, and analytics"
+detail = "Copilot Studio provides conversation analytics, DLP policies, environment management, and role-based access control."
+priority = "medium"
+
+[[upgrade_triggers]]
+id = "model-choice"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You want to choose or switch AI models (GPT-5, Claude, etc.)"
+detail = "Agent Builder uses the default model. Copilot Studio lets you pick from GPT-4.1, GPT-5, Claude Sonnet/Opus, and more — choosing speed vs quality vs cost."
+priority = "medium"
+
+[[upgrade_triggers]]
+id = "autonomous"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need agents that act without user prompts (trigger-based)"
+detail = "Autonomous agents in Copilot Studio can monitor events, react to data changes, and execute tasks in the background without waiting for a user message."
+priority = "medium"
+
+[[upgrade_triggers]]
+id = "multi-agent"
+from = "agent-builder"
+to = "copilot-studio"
+trigger = "You need multiple specialised agents working together"
+detail = "Copilot Studio supports child agents (inline), connected agents (separate), and can even connect to Azure AI Foundry and Fabric Data agents."
+priority = "medium"
+
+[[upgrade_triggers]]
+id = "scale"
+from = "copilot-studio"
+to = "ai-foundry"
+trigger = "You need custom models, fine-tuning, or massive scale"
+detail = "When Copilot Studio's pre-built capabilities aren't enough — you need custom model training, RAG pipelines, or enterprise-scale deployment with full code control."
+priority = "low"
+
+[[upgrade_triggers]]
+id = "custom-ux"
+from = "copilot-studio"
+to = "ai-foundry"
+trigger = "You need a completely custom user experience"
+detail = "AI Foundry lets you build any UX — custom web apps, mobile apps, embedded AI — not limited to chat interfaces."
+priority = "low"
+
+# ── Feature Comparison Flags ──────────────────────────────────
+# Used by the interactive checker: user toggles requirements,
+# platforms light up green/amber/red
+
+[[features]]
+id = "simple-qa"
+label = "Simple Q&A from company docs"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "amber"
+note = "All can do this, but AI Foundry is overkill for simple Q&A"
+
+[[features]]
+id = "m365-data"
+label = "Access M365 data (SharePoint, OneDrive, Email)"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "amber"
+note = "Agent Builder and CS have native M365 integration"
+
+[[features]]
+id = "conversation-flow"
+label = "Multi-step conversation with branching logic"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "Agent Builder has no topics or conversation flow control"
+
+[[features]]
+id = "external-systems"
+label = "Connect to external systems (CRM, ITSM, APIs)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "CS has 1,000+ connectors; AI Foundry has full API access"
+
+[[features]]
+id = "power-automate"
+label = "Trigger Power Automate workflows"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "red"
+note = "Only Copilot Studio has native Power Automate integration"
+
+[[features]]
+id = "multi-channel"
+label = "Deploy to web, mobile, Facebook (beyond Teams)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "Agent Builder is M365 only; CS and Foundry support multi-channel"
+
+[[features]]
+id = "model-selection"
+label = "Choose AI model (GPT-5, Claude, etc.)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "Agent Builder uses the default model only"
+
+[[features]]
+id = "autonomous"
+label = "Background agents (trigger-based, no user prompt)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "Autonomous agents are a Copilot Studio feature"
+
+[[features]]
+id = "child-agents"
+label = "Multi-agent orchestration (parent/child agents)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "CS supports child, connected, and cross-platform agents"
+
+[[features]]
+id = "analytics"
+label = "Conversation analytics and insights"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "CS has built-in analytics; Foundry needs custom setup"
+
+[[features]]
+id = "enterprise-governance"
+label = "DLP policies, environment controls, RBAC"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+note = "CS and Foundry have enterprise governance; Agent Builder is limited"
+
+[[features]]
+id = "custom-model"
+label = "Fine-tune or bring your own model"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+note = "Only AI Foundry supports custom model training and fine-tuning"
+
+[[features]]
+id = "code-control"
+label = "Full code control (Python, C#, SDK)"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+note = "AI Foundry is the only developer-first platform"
+
+[[features]]
+id = "no-code"
+label = "No-code / low-code setup"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "red"
+note = "AI Foundry requires developer skills"
+
+[[features]]
+id = "cost-free"
+label = "Included with existing M365 Copilot licence"
+agent_builder = "green"
+copilot_studio = "amber"
+ai_foundry = "red"
+note = "Agent Builder is free with M365 Copilot; CS needs its own licence; Foundry is Azure consumption"
+
+[[features]]
+id = "computer-use"
+label = "Computer Use (control desktop apps via AI)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "red"
+note = "Copilot Studio supports Computer Use with Claude models"

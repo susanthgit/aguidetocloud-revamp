@@ -1,6 +1,6 @@
 ---
 title: "AI Prompt Library"
-description: "Tested prompts for every AI platform — M365 Copilot, ChatGPT, Claude, Gemini & more. Find, customize, copy, use."
+description: "500+ tested prompts for M365 Copilot, ChatGPT, Claude & more — across Teams, Word, Excel, Outlook, PowerPoint and 40 categories. Find, customize, copy, use."
 type: "prompts"
 sitemap:
   priority: 0.8

@@ -1,0 +1,165 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Licensing & Credits
+# Source: https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing
+# Source: https://learn.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq
+# ═══════════════════════════════════════════════════════════════
+
+# ── Copilot Credits (changed from "messages" Sept 2025) ──────
+
+[credits]
+currency_name = "Copilot Credits"
+changed_from = "Messages"
+changed_date = "September 1, 2025"
+change_note = "No change in quantity per prepaid pack or pay-as-you-go rate — just renamed."
+
+[[credit_rates]]
+type = "Regular (non-GenAI)"
+rate = 1
+description = "Standard topic-based response, no generative AI involved"
+example = "User asks store hours, agent replies from a topic → 1 credit"
+
+[[credit_rates]]
+type = "Generative AI answer"
+rate = 2
+description = "Response uses generative AI (GenAnswers, generative orchestration, AI tools)"
+example = "User asks a question answered via GenAI from knowledge sources → 2 credits"
+
+[[credit_rates]]
+type = "Proactive greeting"
+rate = 1
+description = "Agent proactively greets a user on a website"
+example = "Agent shows welcome message on website → 1 credit"
+
+# ── Licence Types ────────────────────────────────────────────
+
+[[licences]]
+id = "tenant"
+name = "Copilot Studio Tenant Licence"
+price_usd = ""
+price_note = "Contact Microsoft for pricing — varies by agreement"
+credits_per_month = 25000
+includes = [
+  "25,000 Copilot Credits per tenant per month",
+  "Create unlimited agents",
+  "Generative answers and AI features",
+  "Standard, Premium, and Custom connectors",
+  "Power Automate cloud flows within CS context",
+  "Dataverse default capacity: 5GB Database + 20GB File + 2GB Log"
+]
+notes = "Primary licence. Required to use Copilot Studio at all."
+
+[[licences]]
+id = "user"
+name = "Copilot Studio User Licence"
+price_usd = "0"
+price_note = "Free per user — but tenant licence is required"
+credits_per_month = 0
+includes = [
+  "Required for each user AUTHORING agents",
+  "No additional credits — uses tenant pool"
+]
+notes = "Each maker/author needs this licence. Recommended to acquire with tenant licence."
+
+[[licences]]
+id = "m365-copilot"
+name = "M365 Copilot (included rights)"
+price_usd = "30"
+price_note = "Per user/month — Copilot Studio use rights included"
+credits_per_month = 0
+includes = [
+  "Agent Builder (no-code agent creation inside M365 Copilot)",
+  "Use Copilot Studio agents deployed to M365 Copilot",
+  "100 RPM / 2,000 RPH GenAI quota",
+  "No additional Copilot Studio licence needed to USE agents"
+]
+notes = "M365 Copilot users can use CS agents but can't author in full Copilot Studio without a CS user licence."
+
+[[licences]]
+id = "teams-plan"
+name = "Copilot Studio for Teams"
+price_usd = "0"
+price_note = "Included with select Microsoft 365 / Office 365 licences"
+credits_per_month = 0
+includes = [
+  "Build and deploy chatbots within Teams only",
+  "Uses Dataverse for Teams (limited vs full Dataverse)",
+  "Unlimited chat sessions per tenant/month",
+  "Service limit: 10 sessions per user per 24 hours"
+]
+notes = "Limited to Teams channel. No skills. Can upgrade Dataverse for Teams to full Dataverse."
+
+[[licences]]
+id = "payg"
+name = "Pay-As-You-Go"
+price_usd = ""
+price_note = "Consumption-based — billed per credit used"
+credits_per_month = 0
+includes = [
+  "No upfront commitment",
+  "100 RPM / 2,000 RPH GenAI quota",
+  "Same capabilities as tenant licence",
+  "Billed to Azure subscription"
+]
+notes = "Good for testing, variable workloads, or exceeding 25K credits/month."
+
+[[licences]]
+id = "prepaid"
+name = "Prepaid Message Packs"
+price_usd = ""
+price_note = "Bulk purchase for additional credits"
+credits_per_month = 0
+includes = [
+  "Additional credits beyond the 25K tenant allocation",
+  "Higher GenAI RPM/RPH quotas with more packs"
+]
+notes = "Buy additional packs when 25K credits/month isn't enough."
+
+# ── Dataverse Capacity (included with tenant licence) ────────
+
+[dataverse]
+database_gb = 5
+file_gb = 20
+log_gb = 2
+note = "Default capacity included with Copilot Studio tenant licence"
+
+# ── Credit Estimation Formulas ───────────────────────────────
+
+[estimation]
+formula_note = "Monthly credits = (conversations/day × 30) × avg_messages_per_conversation × credit_rate"
+genai_rate = 2
+regular_rate = 1
+included_monthly = 25000
+
+[[estimation_scenarios]]
+name = "Small team FAQ bot"
+conversations_per_day = 20
+messages_per_conversation = 3
+genai_percentage = 50
+monthly_estimate = 2700
+within_included = true
+
+[[estimation_scenarios]]
+name = "Department helpdesk"
+conversations_per_day = 100
+messages_per_conversation = 5
+genai_percentage = 60
+monthly_estimate = 21000
+within_included = true
+
+[[estimation_scenarios]]
+name = "Enterprise support"
+conversations_per_day = 500
+messages_per_conversation = 6
+genai_percentage = 70
+monthly_estimate = 126000
+within_included = false
+packs_needed = 5
+
+[[estimation_scenarios]]
+name = "Customer-facing website bot"
+conversations_per_day = 1000
+messages_per_conversation = 4
+genai_percentage = 80
+monthly_estimate = 216000
+within_included = false
+packs_needed = 8
