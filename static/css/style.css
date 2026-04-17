@@ -1755,66 +1755,6 @@ a.welcome-stat-link:hover {
 .global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .global-btt:hover { background: rgba(255, 255, 255, 0.12); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
 
-/* ── Cookie Consent Banner ── */
-#consent-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10001;
-  padding: 0;
-  animation: consent-slide-up 0.4s ease-out;
-}
-@keyframes consent-slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
-.consent-inner {
-  max-width: 720px;
-  margin: 0 auto 1rem;
-  padding: 1rem 1.5rem;
-  background: rgba(10, 10, 20, 0.95);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
-}
-.consent-inner p {
-  margin: 0;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
-  flex: 1;
-}
-.consent-inner a { color: #A78BFA; text-decoration: underline; }
-.consent-buttons { display: flex; gap: 0.5rem; flex-shrink: 0; }
-.consent-btn {
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.consent-btn-accept {
-  background: #14B8A6;
-  color: #000;
-  border-color: #14B8A6;
-}
-.consent-btn-accept:hover { background: #0d9488; }
-.consent-btn-reject {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-}
-.consent-btn-reject:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
-@media (max-width: 640px) {
-  .consent-inner { flex-direction: column; text-align: center; margin: 0 0.5rem 0.5rem; padding: 1rem; }
-  .consent-buttons { width: 100%; }
-  .consent-btn { flex: 1; }
-}
-
 /* ── Feedback FAB (floating action button) ── */
 .feedback-fab {
   position: fixed;
