@@ -1542,7 +1542,7 @@
     var el = document.getElementById('sa-yt-scorecard');
     if (!card || !el || !sc) { if (card) card.style.display = 'none'; return; }
     card.style.display = '';
-    var gradeColor = sc.grade === 'A+' || sc.grade === 'A' ? '#10B981' : sc.grade === 'B' ? '#FBBF24' : '#EF4444';
+    var gradeColor = sc.grade.charAt(0) === 'A' ? '#10B981' : sc.grade.charAt(0) === 'B' ? '#FBBF24' : sc.grade.charAt(0) === 'C' ? '#FB923C' : '#EF4444';
     var metrics = [
       { label: 'Views', tw: numFmt(sc.thisWeek.views), lw: numFmt(sc.lastWeek.views), chg: sc.changes.views },
       { label: 'Watch Time', tw: numFmt(sc.thisWeek.watch) + 'm', lw: numFmt(sc.lastWeek.watch) + 'm', chg: sc.changes.watch },
@@ -1714,7 +1714,7 @@
       var rtEl = document.getElementById('sa-live-count');
       vitals.push({ num: rtEl ? rtEl.textContent : '0', label: 'Live Now', color: '#EF4444' });
       if (currentData._healthScore) vitals.push({ num: currentData._healthScore, label: 'Health', color: currentData._healthColor || '#64748B' });
-      if (ytDataCache && ytDataCache.weeklyScorecard) vitals.push({ num: ytDataCache.weeklyScorecard.grade, label: 'YT Grade', color: ytDataCache.weeklyScorecard.grade.charAt(0) === 'A' ? '#10B981' : ytDataCache.weeklyScorecard.grade === 'B' ? '#FBBF24' : '#EF4444' });
+      if (ytDataCache && ytDataCache.weeklyScorecard) vitals.push({ num: ytDataCache.weeklyScorecard.grade, label: 'YT Grade', color: ytDataCache.weeklyScorecard.grade.charAt(0) === 'A' ? '#10B981' : ytDataCache.weeklyScorecard.grade.charAt(0) === 'B' ? '#FBBF24' : ytDataCache.weeklyScorecard.grade.charAt(0) === 'C' ? '#FB923C' : '#EF4444' });
       vitalsEl.innerHTML = vitals.map(function(v) {
         return '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + v.color + '">' + v.num + '</span><span class="siteana-stat-label">' + v.label + '</span></div>';
       }).join('');

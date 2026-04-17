@@ -79,6 +79,7 @@ export async function onRequestGet(context) {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, max-age=300',
+        'Vary': 'Origin',
         'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : (isLocalhost ? origin : 'https://www.aguidetocloud.com'),
       },
     });
