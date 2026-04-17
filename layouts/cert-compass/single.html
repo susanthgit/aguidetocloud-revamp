@@ -43,8 +43,19 @@
     <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem">{{ .description }}</p>
     <div class="compass-match-cols" style="margin-bottom:1.5rem">
       {{ range .cert_ids }}
-        {{ $mc := false }}{{ range $certs }}{{ if eq .id (index $.Params "cert_id" | default "") }}{{ end }}{{ end }}
-        {{/* Render each cert in the group */}}
+        {{ $cid := . }}
+        {{ range $certs }}
+          {{ if eq .id $cid }}
+          {{ $pHex := cond (eq .provider "microsoft") "#0078D4" (cond (eq .provider "aws") "#FF9900" "#4285F4") }}
+          {{ $pName := cond (eq .provider "microsoft") "Microsoft" (cond (eq .provider "aws") "AWS" "Google Cloud") }}
+          <a href="/cert-compass/{{ .id }}/" class="compass-match-cert" style="border-left:3px solid {{ $pHex }};text-decoration:none;display:block{{ if eq .id $certId }};opacity:0.5{{ end }}">
+            <div class="compass-match-cert-provider" style="color:{{ $pHex }}">{{ $pName }}</div>
+            <div class="compass-match-cert-name" style="color:#fff">{{ .name }}</div>
+            <div class="compass-match-cert-code">{{ .exam_code }}</div>
+            <div class="compass-match-cert-stats"><span>${{ .fee_usd }}</span><span>{{ .study_hours_min }}–{{ .study_hours_max }}h</span></div>
+          </a>
+          {{ end }}
+        {{ end }}
       {{ end }}
     </div>
     <p style="font-size:0.82rem;color:rgba(255,255,255,0.5)">{{ .comparison_notes }}</p>

@@ -1,0 +1,621 @@
+# ============================================================================
+# PROMPT LAB — Advanced Techniques
+# ============================================================================
+# 12 techniques NOT covered in the Prompt Guide (which teaches 8 fundamentals).
+# Split into Intermediate (5) and Expert (7) tiers.
+# Every example uses IT admin / knowledge worker scenarios.
+# ============================================================================
+
+# ── TIER 1: INTERMEDIATE ─────────────────────────────────────────────────────
+
+[[techniques]]
+id = "tree-of-thought"
+name = "Tree of Thought"
+short = "ToT"
+tier = "intermediate"
+difficulty = 2
+emoji = "🌳"
+tagline = "Explore multiple reasoning paths before choosing the best"
+academic_name = "Tree of Thought Prompting (Yao et al., 2023)"
+prerequisite = "Think Step-by-Step"
+prerequisite_url = "/prompt-guide/"
+description = "Instead of following one line of thinking, Tree of Thought asks the AI to explore multiple approaches in parallel — like a decision tree. Each branch is evaluated on its merits before the AI recommends the strongest path. This prevents the AI from getting locked into its first idea."
+
+when_to_use = [
+  "Making decisions with multiple valid options",
+  "Strategic planning where trade-offs matter",
+  "Complex problems where the first answer might not be the best",
+  "Architecture or design decisions with long-term impact"
+]
+
+pattern = """Consider [N] different approaches to [task]. For each approach:
+1. Explain the strategy
+2. List pros and cons
+3. Rate feasibility (1-10)
+Then evaluate all approaches and recommend the best one, explaining your reasoning."""
+
+before_prompt = "How should we migrate our on-premises Exchange to Microsoft 365?"
+before_note = "Gets a single approach — the AI picks one path and runs with it"
+
+after_prompt = """Consider 3 different approaches to migrating 500 on-premises Exchange mailboxes to Microsoft 365. For each approach:
+1. Explain the migration strategy in detail
+2. List 3 pros and 3 cons
+3. Estimate timeline for 500 users and risk level (Low/Medium/High)
+
+Then evaluate all three approaches and recommend the best for our situation: 500 users, limited IT staff, 3-month deadline."""
+after_note = "Gets thorough analysis of multiple options, with a well-reasoned recommendation backed by comparison"
+
+copilot_tip = "Works best in Copilot Chat with web grounding enabled. In Word, use it to generate comparison tables with 'Create a table comparing these 3 approaches'."
+chatgpt_tip = "GPT-4o handles complex branching well. Use Canvas mode to visually compare branches side by side."
+claude_tip = "Claude excels at nuanced evaluation. Add 'Be genuinely critical of each approach' for more honest analysis."
+gemini_tip = "Gemini's web grounding can add real-world data to each branch. Add 'Include recent industry examples' for each approach."
+
+
+[[techniques]]
+id = "prompt-chaining"
+name = "Prompt Chaining"
+short = "Chaining"
+tier = "intermediate"
+difficulty = 2
+emoji = "🔗"
+tagline = "Break complex tasks into a pipeline of linked steps"
+academic_name = "Prompt Chaining / Sequential Prompting"
+prerequisite = ""
+prerequisite_url = ""
+description = "Instead of asking the AI to do everything at once (which often produces shallow results), Prompt Chaining breaks a complex task into a series of steps where each output feeds into the next. Think of it like an assembly line — each station does one job well, and the final product is higher quality than trying to do everything at once."
+
+when_to_use = [
+  "Multi-step projects that need depth at each stage",
+  "Tasks where doing everything at once produces shallow results",
+  "Workflows that mirror real business processes",
+  "When you need to review and adjust between steps"
+]
+
+pattern = """Step 1: [First task — extract, research, or gather]
+Step 2: Using the output from Step 1, [analyse, categorise, or evaluate]
+Step 3: Based on Steps 1 and 2, [create, recommend, or produce final output]"""
+
+before_prompt = "Create a report about our Microsoft 365 usage and recommendations."
+before_note = "Too broad — the AI will produce a shallow, generic report"
+
+after_prompt = """Let's build this in steps:
+
+Step 1: List all Microsoft 365 services a typical 500-person organization would use, grouped by category (Communication, Collaboration, Security, Compliance, Productivity).
+
+Step 2: For each service, suggest the 3 most important usage metrics an IT admin should track, and explain why each matters.
+
+Step 3: Using those services and metrics, create a monthly M365 usage report template with sections, suggested visualisations, and a traffic-light health scoring system."""
+after_note = "Each step builds on the last, producing a thorough, structured final output"
+
+copilot_tip = "In Copilot Chat, you can literally send each step as a separate message. The conversation context carries forward naturally."
+chatgpt_tip = "Use the 'Continue' feature if the response is cut off mid-step. GPT-4o handles multi-step chains well in a single prompt too."
+claude_tip = "Claude handles very long chains well thanks to its large context window. You can chain 5-7 steps in a single prompt."
+gemini_tip = "Gemini in Google Workspace can chain across documents — generate content in one, refine in another."
+
+
+[[techniques]]
+id = "skeleton-prompting"
+name = "Skeleton Prompting"
+short = "Skeleton"
+tier = "intermediate"
+difficulty = 1
+emoji = "🦴"
+tagline = "Provide a template structure for the AI to fill in"
+academic_name = "Skeleton-of-Thought Prompting (Ning et al., 2023)"
+prerequisite = "Define the Format"
+prerequisite_url = "/prompt-guide/"
+description = "You give the AI a skeleton — a framework, outline, or template — and ask it to flesh out each section. This is incredibly powerful because you control the structure and the AI fills in the expertise. Perfect for any document, plan, or report where you know WHAT sections you need but not the content."
+
+when_to_use = [
+  "Creating documents with a specific structure (policies, plans, reports)",
+  "When you know the sections but need the AI to fill in expert content",
+  "Generating consistent output across multiple similar tasks",
+  "Templates that will be reused across the team"
+]
+
+pattern = """Fill in the following template with detailed, actionable content:
+
+## [Section 1 Title]
+[What to include here]
+
+## [Section 2 Title]
+[What to include here]
+
+## [Section 3 Title]
+[What to include here]"""
+
+before_prompt = "Write a change management communication plan for our Teams upgrade."
+before_note = "The AI chooses what to include — might miss critical sections your organisation needs"
+
+after_prompt = """Fill in this change management template with specific, actionable content for our Microsoft Teams upgrade (Classic to New Teams, 2000 users, rolling out over 4 weeks):
+
+## 1. Executive Summary
+Two sentences: what's changing and why it matters.
+
+## 2. What's Changing
+Bullet list of specific changes users will see.
+
+## 3. Who's Affected
+List each affected group and how they're impacted differently.
+
+## 4. Timeline
+Week-by-week rollout schedule with specific milestones.
+
+## 5. Support Plan
+How users get help: channels, hours, escalation path.
+
+## 6. Rollback Plan
+Step-by-step rollback if critical issues arise.
+
+## 7. Success Metrics
+3-5 measurable criteria to evaluate the rollout."""
+after_note = "You control the structure — guaranteed to cover every section your stakeholders expect"
+
+copilot_tip = "Use this in Word to generate entire documents. Copilot respects your heading structure and fills in content under each heading."
+chatgpt_tip = "Pair with Custom Instructions to make the skeleton your default output format for recurring tasks."
+claude_tip = "Claude is excellent at maintaining consistent quality across all skeleton sections. It won't front-load effort into Section 1 and rush Section 7."
+gemini_tip = "In Google Docs, paste the skeleton as headings first, then ask Gemini to fill in each section."
+
+
+[[techniques]]
+id = "mega-prompting"
+name = "Mega Prompting"
+short = "Mega"
+tier = "intermediate"
+difficulty = 2
+emoji = "🧬"
+tagline = "One comprehensive prompt that combines everything into a masterpiece"
+academic_name = "Mega Prompt Engineering"
+prerequisite = "All 8 fundamentals"
+prerequisite_url = "/prompt-guide/"
+description = "A Mega Prompt is the ultimate single prompt — combining role, context, task, format, constraints, examples, and reasoning all in one carefully crafted instruction. Think of it as the difference between giving someone a one-line request vs giving them a detailed brief. Mega Prompts consistently produce the best single-shot results."
+
+when_to_use = [
+  "High-stakes outputs that need to be excellent on the first try",
+  "Creating reusable prompt templates for your team",
+  "Complex tasks that benefit from comprehensive context upfront",
+  "When you want to minimise back-and-forth conversation"
+]
+
+pattern = """You are a [specific role] with [years] of experience in [domain].
+
+**Context:** [Background situation, constraints, stakeholders]
+
+**Task:** [Clear, specific objective]
+
+**Requirements:**
+- [Requirement 1]
+- [Requirement 2]
+- [Requirement 3]
+
+**Format:** [Exact output structure]
+
+**Constraints:**
+- [What to avoid]
+- [Limitations to respect]
+
+**Example of good output:** [Brief example showing the quality bar]
+
+Think through this step by step before writing your response."""
+
+before_prompt = "Write a security policy for our organisation."
+before_note = "Vague — could be 500 words or 5000, could cover any aspect of security"
+
+after_prompt = """You are a senior IT security consultant with 15 years of experience in Microsoft 365 environments.
+
+**Context:** We're a 300-person financial services company using M365 E5. We passed our last SOC 2 audit but had findings around identity management and data loss prevention. Our CISO wants a practical, enforceable policy — not a theoretical document.
+
+**Task:** Write a Microsoft 365 Security Policy covering identity, data protection, and endpoint management.
+
+**Requirements:**
+- Each policy item must have: the rule, the rationale, the admin setting to configure, and the exception process
+- Align with CIS Microsoft 365 Benchmark v3.0
+- Include both "must do" and "should do" items, clearly labelled
+- Reference specific M365 admin portal paths
+
+**Format:** Organised by security domain with numbered policy items. Include a 1-page executive summary at the top.
+
+**Constraints:**
+- Keep it under 3000 words
+- No theoretical advice — only actionable policies
+- Don't include recommendations that require additional licensing beyond E5
+
+Think step by step about what areas to cover before writing."""
+after_note = "A comprehensive brief that produces a specific, actionable, expert-level output on the first try"
+
+copilot_tip = "Save your best Mega Prompts in a OneNote notebook. In Copilot Chat, you can reference them with 'Use the prompt from my OneNote: [page name]'."
+chatgpt_tip = "Store Mega Prompts as Custom GPTs for repeat use. The system instructions become your permanent mega prompt."
+claude_tip = "Claude handles very long prompts well (200K context). Don't be afraid of 500+ word mega prompts — Claude actually performs better with more context."
+gemini_tip = "In Gemini Advanced, you can upload a document as context alongside your mega prompt for even richer results."
+
+
+[[techniques]]
+id = "self-ask"
+name = "Self-Ask"
+short = "Self-Ask"
+tier = "intermediate"
+difficulty = 2
+emoji = "🤔"
+tagline = "Make the AI identify what it needs to know before answering"
+academic_name = "Self-Ask Prompting (Press et al., 2022)"
+prerequisite = ""
+prerequisite_url = ""
+description = "Instead of the AI jumping straight to an answer, Self-Ask forces it to pause and think about what information it needs first. The AI asks itself clarifying questions, answers them (or flags them as assumptions), and THEN produces its response. This dramatically reduces hallucination and produces more thoughtful, qualified answers."
+
+when_to_use = [
+  "Complex decisions where missing context could lead to bad advice",
+  "When you know the topic but aren't sure what to ask",
+  "Ambiguous situations with many variables",
+  "When you want the AI to flag its own assumptions"
+]
+
+pattern = """Before answering my question, do the following:
+1. List [N] questions you would need answered to give the best possible response
+2. For each question, either answer it from what I've provided, or state your assumption clearly
+3. Then, using those answers and assumptions, provide your response
+4. Flag any recommendations that would change if your assumptions are wrong"""
+
+before_prompt = "Design a Copilot rollout plan for our organisation."
+before_note = "The AI will make invisible assumptions about your org size, licensing, readiness, and timeline"
+
+after_prompt = """I need a Copilot rollout plan for our organisation.
+
+Before designing the plan:
+1. List 10 questions you would need answered to create the best rollout plan possible
+2. For each question, state a reasonable assumption (since I haven't provided details)
+3. Then design the rollout plan based on those stated assumptions
+4. At the end, list which recommendations would change significantly if any assumption is wrong"""
+after_note = "The AI's assumptions are visible and challengeable — you can correct them and get a better plan"
+
+copilot_tip = "Especially powerful with M365 Copilot because it can pull real context from your tenant. 'List what you'd need to know, then check my SharePoint for answers before proceeding.'"
+chatgpt_tip = "Pair with memory features — ChatGPT can remember your org context for future Self-Ask prompts."
+claude_tip = "Claude is naturally good at flagging uncertainty. Self-Ask plays to its strengths. Add 'Be honest about what you don't know' for maximum effect."
+gemini_tip = "Use Self-Ask with Gemini's Google Search grounding — it can actually look up answers to its own questions in real time."
+
+
+# ── TIER 2: EXPERT ───────────────────────────────────────────────────────────
+
+[[techniques]]
+id = "meta-prompting"
+name = "Meta Prompting"
+short = "Meta"
+tier = "expert"
+difficulty = 3
+emoji = "🪞"
+tagline = "Make the AI design better prompts for you"
+academic_name = "Meta Prompting / Prompt Generation"
+prerequisite = ""
+prerequisite_url = ""
+description = "Meta Prompting is prompt engineering about prompt engineering. You ask the AI to generate, critique, or improve prompts rather than doing the task directly. This is incredibly powerful for two reasons: (1) the AI knows what makes a good prompt, and (2) you get a reusable template, not just a one-off answer. Think of it as teaching the AI to fish, not just giving you fish."
+
+when_to_use = [
+  "Building prompt libraries or templates for your team",
+  "When you're not sure how to prompt for a specific task",
+  "Creating reusable prompt workflows",
+  "Improving prompts that aren't producing good enough results"
+]
+
+pattern = """I need to [achieve goal] using AI. Design the most effective prompt that would produce [desired output].
+
+The prompt you design should:
+- Include the right role and context
+- Specify the exact format needed
+- Include constraints to avoid common mistakes
+- Be reusable for similar tasks
+
+After designing the prompt, explain WHY you made each choice."""
+
+before_prompt = "I need to use AI to check our tenant security. What prompt should I use?"
+before_note = "Asks for advice about prompting — gets generic tips instead of an actual prompt"
+
+after_prompt = """Design the most effective prompt that would produce a comprehensive Microsoft 365 tenant security audit checklist.
+
+The prompt you design should:
+- Assign an appropriate expert role
+- Cover identity, email, data, endpoints, and compliance
+- Output a prioritised checklist with admin portal paths
+- Include constraints to avoid generic advice
+- Be reusable monthly with minimal modification
+
+After writing the prompt, explain why you structured it that way and what makes it effective."""
+after_note = "You get both a ready-to-use expert prompt AND an explanation of why it works — a reusable asset"
+
+copilot_tip = "Ask Copilot to design prompts for specific M365 apps: 'Design a prompt I can use in Word Copilot to...' — it knows each app's capabilities."
+chatgpt_tip = "Use Meta Prompting to build Custom GPT instructions. Ask: 'Design the system instructions for a GPT that specialises in [topic].'"
+claude_tip = "Claude is excellent at explaining its reasoning. The 'explain WHY you made each choice' part produces very insightful prompt design rationale."
+gemini_tip = "Ask Gemini to design prompts that leverage its unique features: 'Design a prompt that uses your ability to search the web and analyse images.'"
+
+
+[[techniques]]
+id = "self-reflection"
+name = "Self-Reflection"
+short = "Reflect"
+tier = "intermediate"
+difficulty = 2
+emoji = "🔄"
+tagline = "Make the AI critique and improve its own output"
+academic_name = "Self-Refine (Madaan et al., 2023)"
+prerequisite = ""
+prerequisite_url = ""
+description = "Self-Reflection asks the AI to produce an output, then immediately critique it against specific quality criteria, and finally produce an improved version. It's like having a built-in editor and reviewer. The key insight is that AI is often better at EVALUATING quality than producing it on the first try — Self-Reflection exploits this gap."
+
+when_to_use = [
+  "Important documents that need to be polished",
+  "When the first draft is good but not good enough",
+  "Complex outputs where quality varies across sections",
+  "Any time you'd normally review and revise manually"
+]
+
+pattern = """[Task instruction]
+
+After completing your response, review it against these criteria:
+- [Quality criterion 1]
+- [Quality criterion 2]
+- [Quality criterion 3]
+
+List specific improvements for each criterion, then produce a revised version incorporating all improvements."""
+
+before_prompt = "Write a disaster recovery plan for our Microsoft 365 tenant."
+before_note = "Gets a decent first draft — but first drafts always have gaps"
+
+after_prompt = """Write a disaster recovery plan for our Microsoft 365 tenant (500 users, E5 licensing, hybrid Exchange).
+
+After writing the plan, review it against these criteria:
+- Completeness: Are all critical M365 services covered?
+- Actionability: Could our junior admin follow this at 2 AM during an outage?
+- Realism: Are the recovery time objectives actually achievable?
+- Missing scenarios: What disaster scenarios did you overlook?
+
+List specific improvements for each criterion, then produce a revised Version 2."""
+after_note = "The AI catches its own gaps and produces a significantly better second version — without you having to identify the problems"
+
+copilot_tip = "In a Copilot Chat conversation, you can say 'Now review what you just wrote and improve it' — the conversation context makes this seamless."
+chatgpt_tip = "Use in Canvas mode — GPT-4o can highlight specific sections it wants to improve and make targeted edits."
+claude_tip = "Claude is exceptionally honest in self-critique. It will genuinely identify weaknesses rather than saying 'the output is already comprehensive.'"
+gemini_tip = "Ask Gemini to check its facts during reflection: 'Also verify any specific claims against current documentation.'"
+
+
+[[techniques]]
+id = "chain-of-verification"
+name = "Chain of Verification"
+short = "CoVe"
+tier = "expert"
+difficulty = 3
+emoji = "✅"
+tagline = "Make the AI fact-check its own claims"
+academic_name = "Chain-of-Verification (Dhuliawala et al., 2023)"
+prerequisite = ""
+prerequisite_url = ""
+description = "Chain of Verification (CoVe) fights AI hallucination head-on. After the AI produces an answer, you ask it to extract every factual claim, verify each one independently, and correct any errors. This is essential for any output that will be shared with stakeholders, published, or used for decisions — because AI confidently states things that are sometimes wrong."
+
+when_to_use = [
+  "Any output with specific facts, numbers, or technical details",
+  "Licensing or pricing information",
+  "Documentation that stakeholders will rely on",
+  "When accuracy matters more than speed"
+]
+
+pattern = """[Your question or task]
+
+After your response, do the following:
+1. Extract every specific factual claim (names, numbers, dates, requirements, compatibility statements)
+2. For each claim, assess your confidence level (High / Medium / Low)
+3. For any Medium or Low confidence claims, flag them clearly
+4. Correct any claims you identify as potentially wrong"""
+
+before_prompt = "What Microsoft licences include Copilot features, and what do they cost?"
+before_note = "AI may state outdated prices, wrong licence names, or incorrect feature inclusions"
+
+after_prompt = """List all Microsoft licence plans that include any form of Copilot functionality, including:
+- Plan name and price per user per month
+- Which Copilot features are included
+- Any prerequisites or add-on requirements
+
+After your response:
+1. List every specific factual claim you made (prices, plan names, features, requirements)
+2. Rate your confidence for each: High (certain), Medium (likely correct), Low (may be outdated)
+3. Flag any claims rated Medium or Low with ⚠️
+4. Suggest how I can verify the flagged claims (specific URLs or admin portal paths)"""
+after_note = "The AI self-identifies where it might be wrong — dramatically reduces the risk of sharing inaccurate information"
+
+copilot_tip = "M365 Copilot with web grounding can actually verify claims against live Microsoft documentation. Add 'Search Microsoft Learn to verify each claim.'"
+chatgpt_tip = "Use with browsing enabled — ChatGPT can check its own claims against current web sources."
+claude_tip = "Claude is naturally cautious about factual claims. CoVe amplifies this strength. It will genuinely flag uncertain items rather than pretending everything is verified."
+gemini_tip = "Gemini's Google Search integration is ideal for CoVe — it can check facts in real time. Add 'Verify each claim using current search results.'"
+
+
+[[techniques]]
+id = "least-to-most"
+name = "Least-to-Most"
+short = "L2M"
+tier = "intermediate"
+difficulty = 2
+emoji = "🧩"
+tagline = "Decompose complex problems into progressively harder sub-tasks"
+academic_name = "Least-to-Most Prompting (Zhou et al., 2022)"
+prerequisite = ""
+prerequisite_url = ""
+description = "Least-to-Most breaks an overwhelming task into its smallest possible pieces, ordered from simplest to most complex. The AI solves each sub-problem in sequence, using the solutions to earlier sub-problems to tackle harder ones. This prevents the AI from being overwhelmed by complexity and ensures nothing gets skipped."
+
+when_to_use = [
+  "Large projects that feel overwhelming to plan",
+  "Migration or deployment projects with many moving parts",
+  "When you need to understand dependencies between tasks",
+  "Breaking work into assignable chunks for a team"
+]
+
+pattern = """Break [complex task] into the smallest possible sub-tasks, ordered from simplest to most complex.
+
+For each sub-task:
+1. What it involves (1-2 sentences)
+2. Prerequisites (which earlier sub-tasks must be done first)
+3. Estimated effort (Small/Medium/Large)
+4. Who should own it (role)
+
+Then solve/address each sub-task in order."""
+
+before_prompt = "We need to set up data loss prevention for our Microsoft 365 tenant."
+before_note = "Gets a high-level overview that misses dependencies and sequencing"
+
+after_prompt = """Break our Microsoft 365 DLP deployment into the smallest possible sub-tasks, ordered from simplest to most complex.
+
+We're a 300-person organisation on E5 licensing with no existing DLP policies.
+
+For each sub-task:
+1. What it involves (1-2 sentences)
+2. Prerequisites — which earlier sub-tasks must be done first
+3. Estimated effort (1-2 hours / half-day / full day / multi-day)
+4. Who should own it (IT Admin / Security Lead / Compliance / Management)
+
+Start with the absolute basics and work up to the most complex configuration."""
+after_note = "Gets a complete, sequenced project plan where each task is small enough to actually do — with clear dependencies"
+
+copilot_tip = "After decomposing, ask Copilot to create a Planner board: 'Now create tasks in Planner for each sub-task with the dependencies as checklists.'"
+chatgpt_tip = "Use with the Tasks feature — ChatGPT can create actual task items from the decomposition."
+claude_tip = "Claude handles very long decompositions well. Don't limit to '10 sub-tasks' — let it find the natural granularity."
+gemini_tip = "Ask Gemini to output the decomposition as a Gantt chart table with dependencies marked."
+
+
+[[techniques]]
+id = "generated-knowledge"
+name = "Generated Knowledge"
+short = "GenKnow"
+tier = "expert"
+difficulty = 2
+emoji = "📚"
+tagline = "Make the AI build its own knowledge base before answering"
+academic_name = "Generated Knowledge Prompting (Liu et al., 2022)"
+prerequisite = ""
+prerequisite_url = ""
+description = "Instead of asking a question directly, Generated Knowledge asks the AI to first write down everything it knows about the topic, THEN use that knowledge to answer your actual question. This works because the act of 'recalling' knowledge activates more relevant information in the model, producing deeper and more accurate responses — like how studying before an exam works better than just winging it."
+
+when_to_use = [
+  "Complex topics where you need comprehensive coverage",
+  "When the AI's first answer seems shallow or incomplete",
+  "Technical subjects with many interconnected concepts",
+  "Creating documentation or training materials"
+]
+
+pattern = """First, write a comprehensive summary of everything you know about [topic] that's relevant to [context]. Cover:
+- Key concepts and terminology
+- Common approaches and best practices
+- Known pitfalls and gotchas
+- Recent changes or updates
+
+Then, using that knowledge base, [your actual task]."""
+
+before_prompt = "Set up DMARC email authentication for our Microsoft 365 domain."
+before_note = "Gets step-by-step instructions but may miss nuances, gotchas, and the why behind each step"
+
+after_prompt = """First, write a comprehensive summary of everything you know about DMARC email authentication that's relevant to a Microsoft 365 admin. Cover:
+- How DMARC works with SPF and DKIM
+- The three DMARC enforcement levels and when to use each
+- Common deployment mistakes that break email flow
+- Microsoft 365-specific considerations and limitations
+- How to read DMARC reports
+
+Then, using that knowledge, create a step-by-step DMARC deployment plan for our domain (contoso.com) in Microsoft 365, starting from no email authentication and ending at full DMARC enforcement."""
+after_note = "The AI 'studies' the topic first, then produces a much more thorough and nuanced plan"
+
+copilot_tip = "With M365 Copilot, combine with document context: 'First summarise what you know about DMARC, then review our current DNS records from this document and identify gaps.'"
+chatgpt_tip = "Works exceptionally well with GPT-4o. The knowledge generation phase noticeably improves the quality of the subsequent answer."
+claude_tip = "Claude's large context window means the generated knowledge stays fully accessible. No quality loss even with very long knowledge sections."
+gemini_tip = "Ask Gemini to generate knowledge using web grounding: 'Search for the latest DMARC best practices, then summarise and use that to...' — gets current information."
+
+
+[[techniques]]
+id = "react"
+name = "ReAct"
+short = "ReAct"
+tier = "expert"
+difficulty = 3
+emoji = "⚡"
+tagline = "Interleave thinking and doing for systematic problem-solving"
+academic_name = "ReAct: Reasoning + Acting (Yao et al., 2022)"
+prerequisite = "Think Step-by-Step"
+prerequisite_url = "/prompt-guide/"
+description = "ReAct (Reasoning + Acting) structures the AI's response as a cycle of Thought → Action → Observation. The AI thinks about what to do, describes what action to take, observes the result, and then decides the next step. This is incredibly effective for troubleshooting, debugging, and any scenario where you need systematic investigation — it prevents the AI from jumping to conclusions."
+
+when_to_use = [
+  "Troubleshooting and debugging technical issues",
+  "Step-by-step investigations where each finding changes the next step",
+  "Security incident response",
+  "Any scenario where you need to 'think aloud' through a problem"
+]
+
+pattern = """Help me [investigate/troubleshoot/solve] this: [problem description]
+
+Work through this using the Think → Act → Observe pattern:
+- **Think:** What's the most likely cause based on what we know?
+- **Act:** What specific check or action should we perform?
+- **Observe:** What would the result tell us?
+
+Repeat until we've identified the root cause and solution."""
+
+before_prompt = "Copilot isn't working for some of our users. How do we fix it?"
+before_note = "Gets a generic checklist — not a diagnostic investigation"
+
+after_prompt = """Some of our M365 Copilot users report it's not appearing in their Office apps, while others can use it fine. We've confirmed all users have Copilot licences assigned.
+
+Help me troubleshoot this systematically. Work through it using Think → Act → Observe:
+- **Think:** What's the most likely cause based on what we know so far?
+- **Act:** What specific check should I perform in the admin portal? (Give exact navigation path)
+- **Observe:** What would each possible result tell us?
+
+Continue the investigation cycle until we've identified the root cause, covering at minimum: licence assignment, update channel, policy settings, and network requirements."""
+after_note = "Gets a systematic diagnostic workflow, not just a checklist — each step's result determines the next step"
+
+copilot_tip = "ReAct is how Copilot agents actually work internally. Use this pattern to simulate agent-like systematic reasoning in regular Copilot Chat."
+chatgpt_tip = "Works well with code interpreter — ChatGPT can actually perform analysis actions, observe results, and adjust."
+claude_tip = "Add 'Don't skip ahead — work through each cycle completely before moving to the next' for maximum thoroughness."
+gemini_tip = "In Gemini with workspace integration, the 'Act' steps can reference real documents: 'Act: Check the sharing settings in our SharePoint site [URL].'"
+
+
+[[techniques]]
+id = "iterative-refinement"
+name = "Iterative Refinement"
+short = "Iterate"
+tier = "expert"
+difficulty = 2
+emoji = "🔁"
+tagline = "Systematically improve output through structured feedback rounds"
+academic_name = "Iterative Refinement / Multi-Turn Improvement"
+prerequisite = ""
+prerequisite_url = ""
+description = "Iterative Refinement structures the AI interaction as multiple explicit rounds of improvement. Unlike Self-Reflection (which happens in one turn), Iterative Refinement has the AI critique from DIFFERENT PERSPECTIVES in each round — like getting feedback from different reviewers. Each round targets specific quality dimensions, producing a polished final output."
+
+when_to_use = [
+  "Important communications that multiple stakeholders will see",
+  "Policy documents that need to be bulletproof",
+  "When a single round of feedback isn't enough",
+  "Creating content that needs to work for different audiences"
+]
+
+pattern = """[Task instruction]. This is Version 1 — focus on [primary quality].
+
+After Version 1, critique it from these perspectives and produce Version 2:
+- Perspective 1: [audience/lens]
+- Perspective 2: [audience/lens]
+- Perspective 3: [audience/lens]
+
+For Version 2, fix every issue found while keeping what works."""
+
+before_prompt = "Write an email to the company about our upcoming Microsoft Teams upgrade."
+before_note = "Gets one draft — might not land well with all audiences"
+
+after_prompt = """Write a company-wide email announcing our upgrade from Classic Teams to New Teams, rolling out over the next 3 weeks.
+
+This is Version 1 — focus on clarity and completeness.
+
+After Version 1, critique it from these 3 perspectives:
+1. **The executive who skims:** Is the key message in the first 2 sentences? Can they forward it to their team?
+2. **The tech-skeptic employee:** Does it acknowledge disruption honestly? Does it explain what changes in their daily workflow?
+3. **The IT helpdesk:** Will it reduce or increase support calls? Are the support channels clear?
+
+List specific improvements from each perspective, then produce Version 2 that addresses all feedback while staying under 300 words."""
+after_note = "The final version works for executives, sceptics, AND the helpdesk — because it was reviewed from all their perspectives"
+
+copilot_tip = "In a Copilot Chat thread, you can naturally iterate: 'Now rewrite this for a more technical audience' — the context carries."
+chatgpt_tip = "Use the editing features in Canvas — GPT-4o can track changes between versions visually."
+claude_tip = "Claude excels at perspective-taking. Name specific critics: 'Critique as a cybersecurity auditor, then as a new hire' for sharper feedback."
+gemini_tip = "Ask Gemini to search for best practices before each refinement round: 'Before Version 2, search for best practices in change communication.'"

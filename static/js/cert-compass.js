@@ -624,12 +624,13 @@
           </div>
         </div>`;
       }).join('') +
-      `<button class="compass-btn compass-btn-outline" style="margin-top:1rem" onclick="quizAnswers={};renderQuiz()">Retake Quiz</button>`;
+      `<button class="compass-btn compass-btn-outline" style="margin-top:1rem" onclick="window.__compassRetakeQuiz()">Retake Quiz</button>`;
 
     results.scrollIntoView({ behavior: 'smooth' });
   }
 
   // ── Keyboard Shortcuts ────────────────────────────────────────────────
+  window.__compassRetakeQuiz = function () { quizAnswers = {}; renderQuiz(); document.getElementById('quiz-results').style.display = 'none'; };
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
     if (e.key === '/') { e.preventDefault(); const s = document.getElementById('compass-search'); if (s) { switchTab('explore'); s.focus(); } }
