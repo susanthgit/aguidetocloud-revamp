@@ -7,6 +7,12 @@ id = "agent-builder"
 name = "M365 Agent Builder"
 also_known_as = "Copilot Studio Lite"
 icon = "🤖"
+short = "No-code"
+audience = "Business users & makers"
+code_level = "no-code"
+cost_model = "per-user"
+cost_example = "Included with M365 Copilot ($30/user/mo)"
+where_it_lives = "Inside M365 Copilot"
 url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/copilot-studio-agent-builder"
 description = "No-code agent creation inside M365 Copilot. Best for individual/small team agents grounded in M365 data."
 licence_required = "M365 Copilot"
@@ -19,10 +25,13 @@ supports_power_automate = false
 supports_dataverse = false
 supports_multi_channel = false
 supports_custom_model = false
+supports_fine_tuning = false
 supports_autonomous = false
 supports_child_agents = false
 supports_analytics = false
 supports_dlp = false
+supports_sovereign = false
+supports_cicd = false
 deployment = ["M365 Copilot Chat", "Teams", "Outlook", "Word", "PowerPoint"]
 strengths = [
   "Zero learning curve — describe your agent in plain English",
@@ -43,6 +52,12 @@ id = "copilot-studio"
 name = "Copilot Studio"
 also_known_as = "Full Copilot Studio"
 icon = "⚙️"
+short = "Low-code"
+audience = "IT admins & citizen developers"
+code_level = "low-code"
+cost_model = "per-credit"
+cost_example = "Copilot Credits ($0.01/credit PAYG or $200/mo for 25K)"
+where_it_lives = "copilotstudio.microsoft.com"
 url = "https://learn.microsoft.com/microsoft-copilot-studio/"
 description = "Enterprise-grade low-code agent platform with topics, connectors, Power Automate, multi-channel deployment, and advanced orchestration."
 licence_required = "Copilot Studio tenant licence"
@@ -55,10 +70,14 @@ supports_power_automate = true
 supports_dataverse = true
 supports_multi_channel = true
 supports_custom_model = true
+supports_fine_tuning = false
 supports_autonomous = true
 supports_child_agents = true
 supports_analytics = true
 supports_dlp = true
+supports_sovereign = false
+supports_cicd = false
+cicd_note = "Power Platform ALM"
 deployment = ["Teams", "Web widget", "Mobile", "Facebook", "Azure Bot Service", "Omnichannel", "Custom channels"]
 strengths = [
   "Advanced conversation flow with topics and branching logic",
@@ -84,8 +103,14 @@ id = "ai-foundry"
 name = "Azure AI Foundry"
 also_known_as = "Azure AI Studio"
 icon = "☁️"
-url = "https://learn.microsoft.com/azure/ai-studio/"
-description = "Full developer platform for custom AI solutions with your own models, RAG pipelines, fine-tuning, evaluation, and deployment."
+short = "Pro-code"
+audience = "Developers & data scientists"
+code_level = "pro-code"
+cost_model = "consumption"
+cost_example = "Pay per token — GPT-4o: $2.50/1M input, $10/1M output"
+where_it_lives = "Azure portal"
+url = "https://learn.microsoft.com/azure/ai-foundry/what-is-azure-ai-foundry"
+description = "Full developer platform for custom AI solutions. 1,800+ models, fine-tuning, RAG pipelines, multi-agent orchestration, and sovereign deployment."
 licence_required = "Azure subscription (pay-as-you-go)"
 instruction_limit = -1
 max_knowledge_sources = -1
@@ -96,11 +121,25 @@ supports_power_automate = false
 supports_dataverse = false
 supports_multi_channel = true
 supports_custom_model = true
+supports_fine_tuning = true
 supports_autonomous = true
 supports_child_agents = true
 supports_analytics = true
 supports_dlp = true
+supports_sovereign = true
+supports_cicd = true
+cicd_note = "Azure DevOps / GitHub Actions"
+model_catalogue = "1,800+ models"
 deployment = ["Custom apps", "APIs", "Azure Bot Service", "Any platform via SDK"]
+escalation_triggers = [
+  "Need to fine-tune models on proprietary data",
+  "Need air-gapped or sovereign deployment",
+  "Need full multi-agent orchestration (agent A→B→C)",
+  "Need models outside Microsoft's managed catalogue (Llama, Mistral, etc.)",
+  "Have a development team writing Python/C#",
+  "Building a customer-facing AI product requiring custom scale",
+  "Need full CI/CD with Azure DevOps or GitHub"
+]
 strengths = [
   "Full control over AI models (BYOM, fine-tuning, RAG)",
   "Custom evaluation and testing pipelines",
@@ -297,6 +336,99 @@ agent_builder = "red"
 copilot_studio = "red"
 ai_foundry = "green"
 note = "Only AI Foundry supports custom model training and fine-tuning"
+
+[[features]]
+id = "code-control"
+label = "Full code control (Python, C#, SDK)"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+note = "AI Foundry is the only developer-first platform"
+
+[[features]]
+id = "no-code"
+label = "No-code / low-code setup"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "red"
+note = "AI Foundry requires developer skills"
+
+[[features]]
+id = "cost-free"
+label = "Included with existing M365 Copilot licence"
+agent_builder = "green"
+copilot_studio = "amber"
+ai_foundry = "red"
+note = "Agent Builder is free with M365 Copilot; CS needs its own licence; Foundry is Azure consumption"
+
+[[features]]
+id = "computer-use"
+label = "Computer Use (control desktop apps via AI)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "red"
+note = "Copilot Studio supports Computer Use with Claude models"
+
+[[features]]
+id = "sovereign"
+label = "Air-gapped or sovereign deployment"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+note = "Only AI Foundry supports sovereign/air-gapped environments"
+
+[[features]]
+id = "cicd"
+label = "Full CI/CD pipeline (Azure DevOps, GitHub)"
+agent_builder = "red"
+copilot_studio = "amber"
+ai_foundry = "green"
+note = "CS uses Power Platform ALM; Foundry supports full DevOps/GitHub pipelines"
+
+[[features]]
+id = "model-catalogue"
+label = "Access to 1,800+ AI models"
+agent_builder = "red"
+copilot_studio = "amber"
+ai_foundry = "green"
+note = "CS has GPT + Claude + Grok; Foundry has the full Azure AI model catalogue"
+
+# ── Cost Model Comparison ────────────────────────────────────
+
+[[cost_models]]
+platform = "agent-builder"
+name = "Flat per-user"
+price = "$30/user/month"
+detail = "Included with M365 Copilot licence. Enterprise knowledge access included."
+warning = ""
+
+[[cost_models]]
+platform = "copilot-studio"
+name = "Variable per-credit"
+price = "$0.01/credit PAYG or ~$200/mo for 25K credits"
+detail = "Regular messages = 1 credit. GenAI answers = 2 credits. A single complex interaction with tools can use 20+ credits."
+warning = "Monitor credit consumption carefully — complex agents burn through credits fast."
+
+[[cost_models]]
+platform = "ai-foundry"
+name = "Consumption-based"
+price = "Per-token pricing (GPT-4o: $2.50/1M input, $10/1M output)"
+detail = "Pay per token, per tool invocation, per storage unit. No flat fee. Full Azure consumption model."
+warning = "Can surprise you without budget controls. Set Azure budgets and alerts."
+
+# ── Graduation Path ──────────────────────────────────────────
+
+[graduation_path]
+title = "These platforms are a ladder, not a choice"
+description = "Microsoft explicitly built a promotion path between all three platforms."
+steps = [
+  "Start in Agent Builder — create your first agent in minutes with zero code",
+  "Promote to Copilot Studio — one-click copy when you need topics, connectors, or multi-channel",
+  "Connect AI Foundry as backend — when you need custom models, fine-tuning, or sovereign deployment"
+]
+note = "You don't have to choose one forever. Start simple, graduate when complexity demands it."
+blog_url = "/blog/agent-builder-vs-copilot-studio-vs-foundry/"
+blog_label = "Read the full comparison guide — Agent Builder vs Copilot Studio vs Azure AI Foundry"
 
 [[features]]
 id = "code-control"

@@ -729,3 +729,4 @@
 
   document.addEventListener('DOMContentLoaded', init);
 })();
+/* deploy-fix: 2026041818 */

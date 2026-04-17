@@ -1183,3 +1183,4 @@ select.wiz-input { cursor: pointer; }
 .prompts-eco-card strong { display: block; margin-bottom: 0.25rem; }
 .prompts-eco-card p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 0; }
 @media (max-width: 480px) { .prompts-eco-grid { grid-template-columns: 1fr; } }
+/* deploy-fix: 2026041818 */

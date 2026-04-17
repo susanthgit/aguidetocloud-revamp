@@ -12,7 +12,7 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "AI Prompt Library — 500+ Tested Prompts for M365 Copilot, ChatGPT, Claude & More",
+  "name": "AI Prompt Library — 500 Tested Prompts for M365 Copilot, ChatGPT, Claude & More",
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $allPrompts }},
@@ -298,3 +298,4 @@ window.__platforms = {{ hugo.Data.platforms | jsonify | safeJS }};
 {{ end }}
 <script src="/js/prompts-v3.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
+

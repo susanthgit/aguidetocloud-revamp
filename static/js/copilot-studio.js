@@ -33,6 +33,8 @@
   var EST_SCENARIOS = (L.estimation || {}).scenarios || [];
   var READINESS_QS = RD.questions || [];
   var READINESS_TIERS = RD.tiers || [];
+  var COST_MODELS = D.cost_models || [];
+  var GRAD_PATH = D.graduation_path || {};
 
   var toggledFeatures = {};
 
@@ -139,16 +141,52 @@
       html += '<div class="cstudio-platform-card">';
       html += '<div class="cstudio-card-icon">' + esc(p.icon) + '</div>';
       html += '<h4>' + esc(p.name) + '</h4>';
+      if (p.short) html += '<div style="color:var(--cstudio-accent);font-size:0.72rem;font-weight:600">' + esc(p.short) + ' · ' + esc(p.audience || '') + '</div>';
       html += '<p>' + esc(p.description) + '</p>';
+      if (p.cost_example) html += '<div style="color:#fbbf24;font-size:0.75rem;margin-top:0.3rem">💰 ' + esc(p.cost_example) + '</div>';
+      if (p.where_it_lives) html += '<div style="color:rgba(255,255,255,0.4);font-size:0.72rem">📍 ' + esc(p.where_it_lives) + '</div>';
       html += '<div style="margin-top:0.5rem;text-align:left">';
       (p.strengths || []).slice(0, 4).forEach(function (s) {
         html += '<div style="color:rgba(255,255,255,0.5);font-size:0.72rem;padding:0.1rem 0">✅ ' + esc(s) + '</div>';
       });
       html += '</div>';
+      if (p.escalation_triggers && p.escalation_triggers.length) {
+        html += '<details><summary>When to choose this (' + p.escalation_triggers.length + ' signals)</summary><div class="cstudio-detail-content">';
+        p.escalation_triggers.forEach(function (t) { html += '<div style="color:rgba(255,255,255,0.5);font-size:0.72rem;padding:0.1rem 0">→ ' + esc(t) + '</div>'; });
+        html += '</div></details>';
+      }
       if (p.url) html += '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer" class="cstudio-learn-link" style="display:block;margin-top:0.5rem">Learn more →</a>';
       html += '</div>';
     });
     html += '</div>';
+    // Cost model comparison
+    if (COST_MODELS.length) {
+      html += '<h3 class="cstudio-section-title" style="margin-top:2rem">Cost model comparison</h3>';
+      html += '<div class="cstudio-grid-3">';
+      COST_MODELS.forEach(function (cm) {
+        html += '<div class="cstudio-card" style="text-align:center">';
+        html += '<div style="color:#fff;font-weight:700;font-size:0.85rem">' + esc(cm.name) + '</div>';
+        html += '<div style="color:var(--cstudio-accent);font-size:1rem;font-weight:800;margin:0.3rem 0">' + esc(cm.price) + '</div>';
+        html += '<div style="color:rgba(255,255,255,0.5);font-size:0.75rem">' + esc(cm.detail) + '</div>';
+        if (cm.warning) html += '<div style="color:#fbbf24;font-size:0.72rem;margin-top:0.3rem">⚠️ ' + esc(cm.warning) + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+    // Graduation path
+    if (GRAD_PATH.steps) {
+      html += '<div class="cstudio-card" style="border-left:3px solid var(--cstudio-accent);margin-top:1.5rem">';
+      html += '<div class="cstudio-card-title">🪜 ' + esc(GRAD_PATH.title || 'Graduation Path') + '</div>';
+      html += '<div class="cstudio-card-desc">' + esc(GRAD_PATH.description || '') + '</div>';
+      html += '<div style="margin-top:0.5rem">';
+      (GRAD_PATH.steps || []).forEach(function (s, i) {
+        html += '<div style="color:rgba(255,255,255,0.7);font-size:0.82rem;padding:0.3rem 0;padding-left:1.2rem;position:relative"><span style="position:absolute;left:0;color:var(--cstudio-accent);font-weight:700">' + (i + 1) + '.</span>' + esc(s) + '</div>';
+      });
+      html += '</div>';
+      if (GRAD_PATH.note) html += '<div style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:0.5rem;font-style:italic">' + esc(GRAD_PATH.note) + '</div>';
+      if (GRAD_PATH.blog_url) html += '<a href="' + esc(GRAD_PATH.blog_url) + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:0.5rem;color:var(--cstudio-accent);font-size:0.82rem">📖 ' + esc(GRAD_PATH.blog_label || 'Read the full guide') + '</a>';
+      html += '</div>';
+    }
     el.innerHTML = html;
   }
 

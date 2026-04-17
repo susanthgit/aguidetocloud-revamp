@@ -9,15 +9,15 @@ sitemap:
   changefreq: monthly
 faq:
   - question: "How does the Agent Instruction Builder work?"
-    answer: "Choose your platform and the wizard guides you through scope, tone, examples, and guardrails to generate copy-paste instructions."
+    answer: "Choose your platform and follow the guided wizard to generate copy-paste instructions."
   - question: "Which platforms are supported?"
     answer: "M365 Agent Builder, ChatGPT Custom GPTs, Claude Projects, and Copilot Studio."
   - question: "Do I need prompt engineering experience?"
     answer: "Not at all. Best practices are baked in automatically."
   - question: "Can I start from a template?"
-    answer: "Yes. Choose from 10 templates like IT Helpdesk, HR Assistant, or Project Manager."
+    answer: "Yes, choose from 10 templates like IT Helpdesk, HR Assistant, or Project Manager."
   - question: "Is my data safe?"
     answer: "Everything runs in your browser. No data leaves your device."
   - question: "Is this tool still being improved?"
-    answer: "Yes! This is V1. Visit our feedback page to suggest improvements."
+    answer: "Yes! Visit our feedback page to suggest improvements."
 ---
