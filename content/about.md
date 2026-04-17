@@ -14,6 +14,7 @@ images: ["images/og/sections/about.jpg"]
     <h2 style="color: var(--neon-cyan); margin-bottom: 0.3rem; font-size: 1.4rem;">Susanth Sutheesh</h2>
     <p style="color: var(--text-secondary); font-size: 0.9rem;">Sr AI Solution Engineer at Microsoft · Auckland, New Zealand 🇳🇿</p>
     <a href="/images/about/susanth-sutheesh-resume.pdf" download style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.6rem; padding:0.4rem 1rem; background:rgba(102,255,255,0.08); border:1px solid rgba(102,255,255,0.25); border-radius:6px; color:var(--neon-cyan); font-family:var(--font-heading); font-size:0.8rem; font-weight:600; text-decoration:none; transition:all 0.3s;">📄 Download Resume</a>
+    <a href="/links/" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.6rem; padding:0.4rem 1rem; background:rgba(255,102,255,0.08); border:1px solid rgba(255,102,255,0.25); border-radius:6px; color:#ff99ff; font-family:var(--font-heading); font-size:0.8rem; font-weight:600; text-decoration:none; transition:all 0.3s;">🔗 All My Links</a>
   </div>
 </div>
 
