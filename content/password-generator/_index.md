@@ -1,6 +1,6 @@
 ---
 title: "Password Generator — Create Strong, Secure Passwords Free"
-description: "Generate unbreakable passwords, passphrases & PINs instantly. Real-time strength analysis, crack-time estimates & privacy-first design. 100% free, runs in your browser — nothing is ever sent to a server."
+description: "Generate unbreakable passwords, passphrases & PINs instantly. Real-time strength analysis, crack-time estimates & breach checking via Have I Been Pwned (k-anonymity). 100% free, runs in your browser."
 type: "password-generator"
 layout: "list"
 sitemap:
@@ -8,7 +8,7 @@ sitemap:
   changefreq: "monthly"
 faq:
   - question: "Is this password generator safe to use?"
-    answer: "Yes — everything runs 100% in your browser using the Web Crypto API's cryptographically secure random number generator. No passwords are ever sent to a server, stored in a database, or transmitted over the network. You can even use it offline. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
+    answer: "Yes — password generation runs 100% in your browser using the Web Crypto API's cryptographically secure random number generator. No passwords are ever sent to a server, stored in a database, or transmitted over the network. The optional 'Check My Password' breach check uses Have I Been Pwned's k-anonymity API — only the first 5 characters of a SHA-1 hash are sent (never your actual password), making it mathematically impossible to reverse. Standard anonymous page analytics (Google Analytics) apply to all pages on the site, but no tool-specific data — passwords, images, palettes, etc. — is ever collected or transmitted."
   - question: "How does the strength meter work?"
     answer: "The strength meter calculates entropy (randomness) based on the character pool size and password length. It also detects common weaknesses like dictionary words, keyboard patterns (qwerty, asdf), sequential characters (abc, 123), repeated characters, and common substitutions (p@ssw0rd). The final score combines mathematical entropy with pattern penalty analysis."
   - question: "What is a passphrase and why is it better?"
@@ -18,7 +18,7 @@ faq:
   - question: "What makes a strong password?"
     answer: "A strong password has high entropy — meaning it's truly random and drawn from a large pool of possible characters. Length matters more than complexity: a 16-character password with lowercase letters only (77 bits) is stronger than an 8-character password with uppercase, lowercase, numbers, and symbols (52 bits). Avoid dictionary words, personal information, and common patterns."
   - question: "Can I use this offline?"
-    answer: "Yes! Once the page loads, everything works without an internet connection. The password generator, strength checker, and passphrase builder all run entirely in your browser with no server calls. You can even save the page for offline use."
+    answer: "Yes! Once the page loads, password generation and strength checking work without an internet connection. The only feature that requires connectivity is the optional breach check (which queries Have I Been Pwned's API). You can even save the page for offline use."
   - question: "How is the 'time to crack' calculated?"
     answer: "We calculate how long it would take to try every possible combination at different attack speeds: online attacks (1,000 guesses/sec with rate limiting), offline attacks against fast hashes like MD5 (100 billion/sec), and GPU cluster attacks (1 trillion/sec). The estimate assumes brute force — real attacks using dictionaries or patterns would be faster for weak passwords."
   - question: "What word list does the passphrase generator use?"
