@@ -45,10 +45,9 @@ self.addEventListener('fetch', function(event) {
   // Only handle same-origin GET requests
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-  // Skip: API routes, data files, analytics — always network
+  // Skip: API routes, data files — always network
   if (url.pathname.startsWith('/api/') ||
-      url.pathname.startsWith('/data/') ||
-      url.pathname.includes('analytics-track')) {
+      url.pathname.startsWith('/data/')) {
     return;
   }
 
