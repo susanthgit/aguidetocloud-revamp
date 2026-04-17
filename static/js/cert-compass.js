@@ -632,6 +632,9 @@
     const budget = quizAnswers['budget'] || 'medium';
     const existing = quizAnswers['existing-certs'] || 'none';
 
+    // Treat "none" (not sure) same as "multi" for scoring
+    const effectiveCloud = (cloud === 'none') ? 'multi' : cloud;
+
     const maxHours = time === 'minimal' ? 40 : time === 'moderate' ? 100 : 300;
     const maxUsd = budget === 'low' ? 150 : budget === 'medium' ? 300 : budget === 'high' ? 1000 : 9999;
 
@@ -640,8 +643,8 @@
       let score = c.demand_score || 50;
 
       // Provider preference
-      if (cloud === c.provider) score += 25;
-      else if (cloud === 'multi') score += 5;
+      if (effectiveCloud === c.provider) score += 25;
+      else if (effectiveCloud === 'multi') score += 5;
 
       // Role match
       const roleMap = { admin: ['admin','architecture'], developer: ['developer'], architect: ['architecture'], security: ['security'], data: ['data-engineering'], devops: ['devops'], manager: ['cloud-fundamentals','architecture'], 'career-switch': ['cloud-fundamentals'] };
@@ -661,8 +664,11 @@
       // Trending bonus
       if (c.trending === 'up') score += 5;
 
-      // Multi-cloud goal bonus for non-primary providers
-      if (goal === 'multi-cloud' && cloud !== c.provider && cloud !== 'multi') score += 15;
+      // Goal-based scoring
+      if (goal === 'multi-cloud' && effectiveCloud !== c.provider && effectiveCloud !== 'multi') score += 15;
+      if (goal === 'job') score += Math.round((c.demand_score || 50) * 0.15); // boost high-demand certs
+      if (goal === 'specialise' && (c.normalized_level === 'professional' || c.normalized_level === 'expert' || c.normalized_level === 'specialty')) score += 12;
+      if (goal === 'leadership' && c.normalized_level === 'foundational') score += 8; // leaders need breadth
 
       // Study guide bonus (Microsoft advantage)
       if (c.tracker_slug) score += 3;
