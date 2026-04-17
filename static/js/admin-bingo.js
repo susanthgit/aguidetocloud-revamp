@@ -57,24 +57,29 @@
   function getFilteredSquares() {
     const tag = document.getElementById('tag-filter').value;
     const theme = THEMES[activeTheme];
-    let pool = ALL_SQUARES;
+    const needed = TOTAL_CELLS - 1; // 24
 
-    // Theme filter first
-    if (theme && theme.tags) {
-      pool = pool.filter(s => s.tags && s.tags.some(t => theme.tags.includes(t)));
+    if (!theme || !theme.tags) {
+      // No theme — use all
+      let pool = ALL_SQUARES;
+      if (tag !== 'all') pool = pool.filter(s => s.tags && s.tags.includes(tag));
+      return pool;
     }
-    // Then category dropdown
-    if (tag !== 'all') {
-      pool = pool.filter(s => s.tags && s.tags.includes(tag));
-    }
-    return pool;
+
+    // Theme active — prioritise matching, fill rest with others
+    const matching = ALL_SQUARES.filter(s => s.tags && s.tags.some(t => theme.tags.includes(t)));
+    const others = ALL_SQUARES.filter(s => !s.tags || !s.tags.some(t => theme.tags.includes(t)));
+
+    if (matching.length >= needed) return matching;
+    // Not enough themed squares — fill with random others
+    return [...matching, ...others];
   }
 
   // ── Generate board ───────────────────────────────────────────────────────
   function generateBoard(seed) {
     const filtered = getFilteredSquares();
     if (filtered.length < TOTAL_CELLS - 1) {
-      alert('Not enough scenarios for this category. Try "All Categories".');
+      alert('Not enough scenarios. Please refresh the page.');
       return;
     }
     currentSeed = seed || Math.random().toString(36).slice(2, 10);
