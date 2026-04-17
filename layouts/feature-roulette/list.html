@@ -10,7 +10,7 @@
   </div>
 
   <div class="roulette-panel active" id="panel-play">
-    <div class="roulette-controls">
+    <div class="roulette-controls" id="roulette-controls" style="display:none">
       <button class="roulette-btn roulette-btn-primary" id="btn-spin" aria-label="Show random feature">🎰 Spin</button>
       <select class="roulette-select" id="product-filter" aria-label="Filter by product">
         <option value="all">All Products</option>
@@ -35,9 +35,51 @@
       </div>
     </div>
 
-    <div class="roulette-empty" id="roulette-empty">
-      <p>Hit <strong>Spin</strong> to discover a random M365 feature!</p>
-      <p class="roulette-empty-sub">Data from the official Microsoft 365 Roadmap · Updated daily</p>
+    <!-- ─── LOBBY ─── -->
+    <div class="roulette-lobby" id="roulette-lobby">
+      <div class="roulette-reels" aria-hidden="true">
+        <div class="roulette-reel">🎯</div>
+        <div class="roulette-reel">💡</div>
+        <div class="roulette-reel">🚀</div>
+      </div>
+
+      <div class="roulette-lobby-stats" id="roulette-lobby-stats" style="display:none">
+        <span>✅ <strong id="rl-known">0</strong> known</span>
+        <span class="roulette-ls-sep">·</span>
+        <span>💡 <strong id="rl-new">0</strong> discovered</span>
+      </div>
+
+      <p class="roulette-lobby-heading">Pick a product or spin randomly</p>
+
+      <div class="roulette-picks">
+        <button class="roulette-pick" data-product="Microsoft Teams">
+          <span class="roulette-pick-emoji">💬</span>
+          <span class="roulette-pick-name">Teams</span>
+        </button>
+        <button class="roulette-pick" data-product="Microsoft 365 Copilot">
+          <span class="roulette-pick-emoji">🤖</span>
+          <span class="roulette-pick-name">Copilot</span>
+        </button>
+        <button class="roulette-pick" data-product="SharePoint">
+          <span class="roulette-pick-emoji">📁</span>
+          <span class="roulette-pick-name">SharePoint</span>
+        </button>
+        <button class="roulette-pick" data-product="Microsoft Outlook">
+          <span class="roulette-pick-emoji">📧</span>
+          <span class="roulette-pick-name">Outlook</span>
+        </button>
+        <button class="roulette-pick" data-product="Microsoft Intune">
+          <span class="roulette-pick-emoji">🔒</span>
+          <span class="roulette-pick-name">Intune</span>
+        </button>
+        <button class="roulette-pick" data-product="Microsoft Purview">
+          <span class="roulette-pick-emoji">🛡️</span>
+          <span class="roulette-pick-name">Purview</span>
+        </button>
+      </div>
+
+      <button class="roulette-btn roulette-btn-primary roulette-lobby-cta" id="btn-lobby-spin">🎰 Spin — Any Product</button>
+      <p class="roulette-lobby-source">Data from the official Microsoft 365 Roadmap · Updated daily</p>
     </div>
   </div>
 

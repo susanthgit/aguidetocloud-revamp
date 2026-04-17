@@ -11,6 +11,7 @@
   let tracking = loadTracking();
   let dataLoaded = false;
   let dataLoading = false;
+  let pendingProduct = null;
 
   function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
@@ -34,9 +35,9 @@
     } catch (e) {
       console.error('Failed to load roadmap data:', e);
       showLoading(false);
-      const empty = document.getElementById('roulette-empty');
-      empty.innerHTML = '<p style="color:#E74C3C">Failed to load roadmap data. Please refresh.</p>';
-      empty.style.display = 'block';
+      var card = document.getElementById('roulette-card');
+      card.style.display = 'block';
+      card.innerHTML = '<p style="color:#E74C3C;text-align:center;padding:2rem">Failed to load roadmap data. Please refresh.</p>';
     }
     dataLoading = false;
     showLoading(false);
@@ -51,6 +52,24 @@
     } else {
       btn.textContent = '🎰 Spin';
       btn.disabled = false;
+    }
+  }
+
+  // ── Lobby ───────────────────────────────────────────────────────────────
+  function hideLobby() {
+    var lobby = document.getElementById('roulette-lobby');
+    if (lobby) lobby.style.display = 'none';
+    var controls = document.getElementById('roulette-controls');
+    if (controls) controls.style.display = '';
+  }
+
+  function renderLobbyStats() {
+    var el = document.getElementById('roulette-lobby-stats');
+    if (!el) return;
+    if (tracking.known.length > 0 || tracking.newToMe.length > 0) {
+      el.style.display = '';
+      document.getElementById('rl-known').textContent = tracking.known.length;
+      document.getElementById('rl-new').textContent = tracking.newToMe.length;
     }
   }
 
@@ -84,6 +103,7 @@
 
   // ── Spin ─────────────────────────────────────────────────────────────────
   async function spin() {
+    hideLobby();
     const btn = document.getElementById('btn-spin');
     if (!dataLoaded) {
       btn.disabled = true;
@@ -91,6 +111,14 @@
       const ok = await loadData();
       if (!ok) return;
     }
+
+    if (pendingProduct) {
+      const select = document.getElementById('product-filter');
+      select.value = pendingProduct;
+      if (!select.value) select.value = 'all';
+      pendingProduct = null;
+    }
+
     filtered = getFiltered();
     if (filtered.length === 0) { alert('No features found. Try a different filter.'); return; }
 
@@ -99,7 +127,6 @@
     const pool = unseen.length > 0 ? unseen : filtered;
     currentItem = pool[Math.floor(Math.random() * pool.length)];
 
-    document.getElementById('roulette-empty').style.display = 'none';
     const card = document.getElementById('roulette-card');
     card.style.display = 'block';
     card.style.animation = 'none';
@@ -174,10 +201,23 @@
   function init() {
     initTabs();
     updateCounts();
+    renderLobbyStats();
+
     document.getElementById('btn-spin').addEventListener('click', spin);
     document.getElementById('btn-knew').addEventListener('click', markKnown);
     document.getElementById('btn-new').addEventListener('click', markNew);
     document.getElementById('product-filter').addEventListener('change', () => { filtered = getFiltered(); });
+
+    // Lobby spin button
+    document.getElementById('btn-lobby-spin').addEventListener('click', spin);
+
+    // Product quick-picks
+    document.querySelectorAll('.roulette-pick').forEach(function (pick) {
+      pick.addEventListener('click', function () {
+        pendingProduct = pick.dataset.product;
+        spin();
+      });
+    });
 
     // Spacebar to spin
     document.addEventListener('keydown', (e) => {

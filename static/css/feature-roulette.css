@@ -75,8 +75,65 @@
 }
 .roulette-card-actions { display: flex; gap: 0.5rem; justify-content: center; }
 
-.roulette-empty { text-align: center; padding: 3rem 1rem; color: rgba(255,255,255,0.4); }
-.roulette-empty-sub { font-size: 0.8rem; margin-top: 0.5rem; }
+/* ── Lobby ────────────────────────────────────────────────────────────────── */
+.roulette-lobby { text-align: center; padding: 0.5rem 0; }
+
+.roulette-reels { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 1.5rem; }
+.roulette-reel {
+  width: 68px; height: 68px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; animation: roulette-pulse 3s ease-in-out infinite;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.roulette-reel:nth-child(2) { animation-delay: 1s; }
+.roulette-reel:nth-child(3) { animation-delay: 2s; }
+@keyframes roulette-pulse {
+  0%, 100% { transform: scale(1); border-color: rgba(255,255,255,0.1); }
+  50% { transform: scale(1.06); border-color: rgba(243,156,18,0.35); box-shadow: 0 0 16px rgba(243,156,18,0.1); }
+}
+
+.roulette-lobby-stats {
+  display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 1.2rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.5);
+}
+.roulette-lobby-stats strong { color: var(--roulette-accent); }
+.roulette-ls-sep { color: rgba(255,255,255,0.2); }
+
+.roulette-lobby-heading { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; font-weight: 500; }
+
+.roulette-picks {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem;
+}
+.roulette-pick {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 0.9rem 0.5rem; cursor: pointer; text-align: center;
+  transition: all 0.25s ease; color: #fff; position: relative;
+  animation: roulette-pick-in 0.35s ease backwards;
+}
+.roulette-pick:nth-child(1) { animation-delay: 0.03s; }
+.roulette-pick:nth-child(2) { animation-delay: 0.06s; }
+.roulette-pick:nth-child(3) { animation-delay: 0.09s; }
+.roulette-pick:nth-child(4) { animation-delay: 0.12s; }
+.roulette-pick:nth-child(5) { animation-delay: 0.15s; }
+.roulette-pick:nth-child(6) { animation-delay: 0.18s; }
+@keyframes roulette-pick-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.roulette-pick:hover {
+  border-color: rgba(243,156,18,0.4); background: rgba(243,156,18,0.08);
+  transform: translateY(-2px); box-shadow: 0 4px 16px rgba(243,156,18,0.12);
+}
+.roulette-pick:active { transform: translateY(0); }
+.roulette-pick:focus-visible { outline: 2px solid var(--roulette-accent); outline-offset: 2px; }
+.roulette-pick-emoji { display: block; font-size: 1.5rem; margin-bottom: 0.3rem; }
+.roulette-pick-name { display: block; font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+
+.roulette-lobby-cta {
+  width: 100%; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 700;
+  border-radius: 10px; margin-bottom: 1rem;
+}
+.roulette-lobby-source { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
 
 .roulette-panel details {
   margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
@@ -87,4 +144,7 @@
 
 @media (max-width: 480px) {
   .roulette-score-pill { margin-left: 0; width: 100%; text-align: center; }
+  .roulette-reel { width: 56px; height: 56px; font-size: 1.5rem; }
+  .roulette-picks { gap: 0.5rem; }
+  .roulette-card-actions { flex-direction: column; }
 }
