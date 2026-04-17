@@ -208,9 +208,11 @@ a:hover {
   background: #22c55e;
   animation: th-pulse 1.5s infinite;
 }
+.nav-live-label { }
 @media (max-width: 768px) {
   .nav-live { font-size: 0.6rem; margin-left: 0.25rem; gap: 0.15rem; }
   .nav-live-dot { width: 5px; height: 5px; }
+  .nav-live-label { display: none; }
 }
 
 .nav-links {
