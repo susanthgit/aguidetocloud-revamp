@@ -1,68 +1,117 @@
-/* admin-badges.js — IT Admin Achievement Badges tool
+/* admin-badges.js — IT Admin Achievement Badges V2
+   Earn modal with stories, career levels, improved UX
    100% client-side, zero dependencies, zero API calls */
 (function () {
   'use strict';
 
-  /* ── XSS helper ─────────────────────────────────────────── */
-  function esc(s) {
-    var d = document.createElement('div');
-    d.textContent = s || '';
-    return d.innerHTML;
-  }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
-  /* ── Seeded RNG (mulberry32) ────────────────────────────── */
   function mulberry32(seed) {
     return function () {
-      seed |= 0;
-      seed = seed + 0x6D2B79F5 | 0;
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
       var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
       t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
       return ((t ^ t >>> 14) >>> 0) / 4294967296;
     };
   }
 
-  /* ── Safe localStorage ──────────────────────────────────── */
-  function safeGet(key, fallback) {
-    try {
-      var raw = localStorage.getItem(key);
-      return raw ? JSON.parse(raw) : fallback;
-    } catch (_) { return fallback; }
-  }
-  function safeSet(key, val) {
-    try { localStorage.setItem(key, JSON.stringify(val)); } catch (_) { /* private mode */ }
-  }
+  function safeGet(key, fb) { try { var r = localStorage.getItem(key); return r ? JSON.parse(r) : fb; } catch (_) { return fb; } }
+  function safeSet(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (_) {} }
 
-  /* ── Data refs ──────────────────────────────────────────── */
   var badges = window.__badges || [];
   var categories = window.__badgeCategories || [];
   var rarities = window.__badgeRarities || [];
+  var stories = window.__badgeStories || {};
+  var careerTiers = window.__careerTiers || [];
 
-  var catMap = {};
-  categories.forEach(function (c) { catMap[c.id] = c; });
-  var rarMap = {};
-  rarities.forEach(function (r) { rarMap[r.id] = r; });
+  var catMap = {}; categories.forEach(function (c) { catMap[c.id] = c; });
+  var rarMap = {}; rarities.forEach(function (r) { rarMap[r.id] = r; });
 
   var STORE_KEY = 'badges_earned';
-  var STORIES_KEY = 'badges_stories';
   var activeFilter = 'all';
 
-  /* ── Earned state helpers ───────────────────────────────── */
   function getEarned() { return safeGet(STORE_KEY, []); }
   function setEarned(arr) { safeSet(STORE_KEY, arr); }
+  function isEarned(id) { return getEarned().indexOf(id) !== -1; }
 
-  function isEarned(id) {
-    return getEarned().indexOf(id) !== -1;
+  /* ── Career Level ───────────────────────────────────────── */
+  function getCareerLevel() {
+    var earned = getEarned();
+    var pts = 0;
+    earned.forEach(function (id) {
+      var b = badges.find(function (x) { return x.id === id; });
+      if (b) {
+        var r = rarMap[b.rarity];
+        pts += (r && r.points) ? r.points : 1;
+      }
+    });
+    var tier = careerTiers[0] || { title: 'Newcomer', emoji: '🐣', min_points: 0 };
+    for (var i = careerTiers.length - 1; i >= 0; i--) {
+      if (pts >= careerTiers[i].min_points) { tier = careerTiers[i]; break; }
+    }
+    var nextTier = null;
+    for (var j = 0; j < careerTiers.length; j++) {
+      if (careerTiers[j].min_points > pts) { nextTier = careerTiers[j]; break; }
+    }
+    return { points: pts, tier: tier, nextTier: nextTier };
   }
 
-  function toggleBadge(id) {
+  /* ── Earn Modal ─────────────────────────────────────────── */
+  function showEarnModal(id) {
+    var b = badges.find(function (x) { return x.id === id; });
+    if (!b) return;
+    var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
+    var st = stories[id] || {};
+    var storyText = st.story || b.desc;
+    var confirmText = st.confirm || ('I have earned: ' + b.name);
+
+    var overlay = document.getElementById('badges-modal');
+    var content = document.getElementById('badges-modal-content');
+    content.innerHTML =
+      '<button class="badges-modal-close" id="modal-close" aria-label="Close">&times;</button>' +
+      '<div class="badges-modal-emoji">' + esc(b.emoji) + '</div>' +
+      '<div class="badges-modal-name">' + esc(b.name) + '</div>' +
+      '<div class="badges-modal-rarity" style="color:' + esc(rar.color) + '">' + esc(rar.label) + '</div>' +
+      '<div class="badges-modal-story">' + esc(storyText) + '</div>' +
+      '<div class="badges-modal-confirm">' + esc(confirmText) + '</div>' +
+      '<div class="badges-modal-actions">' +
+        '<button class="badges-modal-earn" id="modal-earn">Yes, I earned this! \uD83C\uDFC6</button>' +
+        '<button class="badges-modal-skip" id="modal-skip">Not yet \uD83D\uDE05</button>' +
+      '</div>';
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    document.getElementById('modal-earn').addEventListener('click', function () {
+      earnBadge(id);
+      closeModal();
+    });
+    document.getElementById('modal-skip').addEventListener('click', closeModal);
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  function closeModal() {
+    var overlay = document.getElementById('badges-modal');
+    if (overlay) overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function earnBadge(id) {
+    var earned = getEarned();
+    if (earned.indexOf(id) === -1) earned.push(id);
+    setEarned(earned);
+    renderAllBadges(activeFilter);
+    renderBadgeWall();
+  }
+
+  function removeBadge(id) {
+    if (!confirm('Remove this badge?')) return;
     var earned = getEarned();
     var idx = earned.indexOf(id);
-    if (idx !== -1) {
-      if (!confirm('Remove this badge?')) return;
-      earned.splice(idx, 1);
-    } else {
-      earned.push(id);
-    }
+    if (idx !== -1) earned.splice(idx, 1);
     setEarned(earned);
     renderAllBadges(activeFilter);
     renderBadgeWall();
@@ -70,14 +119,12 @@
 
   /* ── Tab switching ──────────────────────────────────────── */
   function initTabs(ns) {
-    var tabs = document.querySelectorAll('.' + ns + '-tab');
-    tabs.forEach(function (tab) {
+    document.querySelectorAll('.' + ns + '-tab').forEach(function (tab) {
       tab.addEventListener('click', function () {
         var target = tab.getAttribute('data-tab');
-        tabs.forEach(function (t) {
-          var active = t.getAttribute('data-tab') === target;
-          t.classList.toggle('active', active);
-          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        document.querySelectorAll('.' + ns + '-tab').forEach(function (t) {
+          t.classList.toggle('active', t.getAttribute('data-tab') === target);
+          t.setAttribute('aria-selected', t.getAttribute('data-tab') === target ? 'true' : 'false');
         });
         document.querySelectorAll('.' + ns + '-panel').forEach(function (p) {
           p.classList.toggle('active', p.id === 'panel-' + target);
@@ -86,58 +133,48 @@
     });
   }
 
-  /* ── Daily challenge ────────────────────────────────────── */
-  function getDailyChallenge() {
+  /* ── Daily Challenge ────────────────────────────────────── */
+  function renderDailyChallenge(container) {
     var earned = getEarned();
     var unearned = badges.filter(function (b) { return earned.indexOf(b.id) === -1; });
-    if (!unearned.length) return null;
-
-    var dateSeed = parseInt(new Date().toISOString().slice(0, 10).replace(/-/g, ''), 10);
-    var rng = mulberry32(dateSeed);
-    var pick = Math.floor(rng() * unearned.length);
-    return unearned[pick];
-  }
-
-  function renderDailyChallenge(container) {
-    var challenge = getDailyChallenge();
-    if (!challenge) {
+    if (!unearned.length) {
       container.innerHTML = '<div class="badges-daily badges-daily--done">' +
-        '<span class="badges-daily-emoji">🏆</span>' +
-        '<div><strong>All badges earned!</strong><br><small>You\'ve collected every badge. Legend.</small></div>' +
-        '</div>';
+        '<span class="badges-daily-emoji">\uD83C\uDFC6</span>' +
+        '<div><strong>All badges earned!</strong><br><small>You\'ve collected every badge. Legend.</small></div></div>';
       return;
     }
+    var dateSeed = parseInt(new Date().toISOString().slice(0, 10).replace(/-/g, ''), 10);
+    var rng = mulberry32(dateSeed);
+    var challenge = unearned[Math.floor(rng() * unearned.length)];
     var rar = rarMap[challenge.rarity] || { label: '?', color: '#888' };
-    var cat = catMap[challenge.category] || { name: '?', emoji: '❓' };
+    var st = stories[challenge.id] || {};
+    var preview = (st.story || challenge.desc || '').slice(0, 100);
+    if ((st.story || '').length > 100) preview += '\u2026';
+
     container.innerHTML =
       '<div class="badges-daily">' +
         '<span class="badges-daily-label">Today\'s Challenge</span>' +
-        '<div class="badges-daily-card">' +
+        '<div class="badges-daily-card" data-id="' + esc(challenge.id) + '" role="button" tabindex="0">' +
           '<span class="badges-daily-emoji">' + esc(challenge.emoji) + '</span>' +
           '<div class="badges-daily-info">' +
             '<strong>' + esc(challenge.name) + '</strong>' +
-            '<small>' + esc(challenge.desc) + '</small>' +
-            '<span class="badges-rarity-badge" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span> ' +
-            '<span class="badges-cat-label">' + esc(cat.emoji) + ' ' + esc(cat.name) + '</span>' +
+            '<p class="badges-daily-preview">' + esc(preview) + '</p>' +
+            '<span class="badges-rarity-badge" style="background:' + esc(rar.color) + '">' + esc(rar.label) + '</span>' +
           '</div>' +
-          '<button class="badges-earn-btn" data-id="' + esc(challenge.id) + '">Earn it</button>' +
         '</div>' +
       '</div>';
 
-    var btn = container.querySelector('.badges-earn-btn');
-    if (btn) {
-      btn.addEventListener('click', function () {
-        toggleBadge(challenge.id);
-        renderDailyChallenge(container);
-      });
-    }
+    container.querySelector('.badges-daily-card').addEventListener('click', function () {
+      showEarnModal(challenge.id);
+    });
   }
 
-  /* ── Share individual badge as PNG ────────────────────────── */
+  /* ── Share badge as PNG ─────────────────────────────────── */
   function shareBadge(id) {
-    var b = badges.find(function(x) { return x.id === id; });
+    var b = badges.find(function (x) { return x.id === id; });
     if (!b) return;
     var rar = rarMap[b.rarity] || { label: '?', color: '#888' };
+    var career = getCareerLevel();
 
     var W = 600, H = 400;
     var canvas = document.createElement('canvas');
@@ -145,115 +182,32 @@
     var ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    ctx.fillStyle = '#030308';
-    ctx.fillRect(0, 0, W, H);
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
-    ctx.lineWidth = 2;
+    ctx.fillStyle = '#030308'; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)'; ctx.lineWidth = 2;
     ctx.strokeRect(16, 16, W - 32, H - 32);
-
     ctx.textAlign = 'center';
-    ctx.font = '80px serif';
-    ctx.fillText(b.emoji, W / 2, 120);
-
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 24px Inter, system-ui, sans-serif';
+    ctx.font = '80px serif'; ctx.fillText(b.emoji, W / 2, 120);
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 24px Inter, system-ui, sans-serif';
     ctx.fillText(b.name, W / 2, 175);
-
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.font = '16px Inter, system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.font = '16px Inter, system-ui, sans-serif';
     var desc = b.desc.length > 60 ? b.desc.slice(0, 57) + '\u2026' : b.desc;
     ctx.fillText(desc, W / 2, 210);
-
-    // Rarity pill
-    ctx.fillStyle = rar.color;
-    ctx.font = 'bold 14px Inter, system-ui, sans-serif';
+    ctx.fillStyle = rar.color; ctx.font = 'bold 14px Inter, system-ui, sans-serif';
     var rarText = rar.label.toUpperCase();
     var tw = ctx.measureText(rarText).width;
-    var px = W / 2 - tw / 2 - 12;
-    ctx.beginPath();
-    ctx.roundRect(px, 230, tw + 24, 28, 14);
-    ctx.fill();
-    ctx.fillStyle = '#000';
-    ctx.fillText(rarText, W / 2, 250);
-
-    // Earned by
-    var stories = safeGet(STORIES_KEY, {});
-    var username = stories._username || 'an IT Admin';
-    ctx.fillStyle = 'rgba(255,255,255,0.4)';
-    ctx.font = '14px Inter, system-ui, sans-serif';
-    ctx.fillText('Earned by ' + username, W / 2, 300);
-
-    ctx.fillStyle = 'rgba(255,255,255,0.25)';
-    ctx.font = '12px Inter, system-ui, sans-serif';
+    ctx.beginPath(); ctx.roundRect(W / 2 - tw / 2 - 12, 230, tw + 24, 28, 14); ctx.fill();
+    ctx.fillStyle = '#000'; ctx.fillText(rarText, W / 2, 250);
+    ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.font = '14px Inter, system-ui, sans-serif';
+    ctx.fillText(career.tier.emoji + ' ' + career.tier.title + ' \u00b7 ' + career.points + ' pts', W / 2, 300);
+    ctx.fillStyle = 'rgba(255,255,255,0.25)'; ctx.font = '12px Inter, system-ui, sans-serif';
     ctx.fillText('aguidetocloud.com/admin-badges', W / 2, H - 24);
 
-    canvas.toBlob(function(blob) {
+    canvas.toBlob(function (blob) {
       if (!blob) return;
       var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'badge-' + id + '.png';
-      a.click();
-      setTimeout(function() { URL.revokeObjectURL(url); }, 5000);
+      var a = document.createElement('a'); a.href = url; a.download = 'badge-' + id + '.png'; a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
     }, 'image/png');
-  }
-
-  /* ── Suggested next badge ──────────────────────────────── */
-  function getSuggestedBadge() {
-    var earned = getEarned();
-    if (earned.length >= badges.length) return null;
-
-    // Count earned per category
-    var catCount = {};
-    earned.forEach(function(id) {
-      var b = badges.find(function(x) { return x.id === id; });
-      if (b) catCount[b.category] = (catCount[b.category] || 0) + 1;
-    });
-
-    // Sort categories by most earned
-    var catsSorted = Object.keys(catCount).sort(function(a, b) { return catCount[b] - catCount[a]; });
-
-    // Rarity order
-    var rarOrder = ['common', 'uncommon', 'rare', 'epic', 'legendary'];
-
-    // Try each category (most earned first), find lowest rarity un-earned
-    for (var c = 0; c < catsSorted.length; c++) {
-      var unearned = badges.filter(function(b) {
-        return b.category === catsSorted[c] && earned.indexOf(b.id) === -1;
-      });
-      if (!unearned.length) continue;
-      unearned.sort(function(a, b) {
-        return rarOrder.indexOf(a.rarity) - rarOrder.indexOf(b.rarity);
-      });
-      return unearned[0];
-    }
-
-    // Fallback: any un-earned badge, lowest rarity
-    var all = badges.filter(function(b) { return earned.indexOf(b.id) === -1; });
-    all.sort(function(a, b) { return rarOrder.indexOf(a.rarity) - rarOrder.indexOf(b.rarity); });
-    return all[0] || null;
-  }
-
-  function renderSuggested() {
-    var slot = document.getElementById('badges-suggested-slot');
-    if (!slot) {
-      var filterBar = document.querySelector('.badges-filter-bar');
-      if (filterBar) {
-        slot = document.createElement('div');
-        slot.id = 'badges-suggested-slot';
-        filterBar.parentNode.insertBefore(slot, filterBar);
-      }
-    }
-    if (!slot) return;
-
-    var badge = getSuggestedBadge();
-    if (!badge) { slot.innerHTML = ''; return; }
-    var rar = rarMap[badge.rarity] || { label: '?', color: '#888' };
-    slot.innerHTML = '<div class="badges-suggested">' +
-      '\uD83C\uDFAF <strong>Next up:</strong> ' + esc(badge.emoji) + ' ' + esc(badge.name) +
-      ' \u2014 ' + esc(badge.desc) +
-      ' <span class="badges-rarity-badge" style="background:' + esc(rar.color) + ';margin-left:0.5rem;">' + esc(rar.label) + '</span>' +
-    '</div>';
   }
 
   /* ── Badge card HTML ────────────────────────────────────── */
@@ -271,7 +225,7 @@
     '</div>';
   }
 
-  /* ── Render All Badges grid ─────────────────────────────── */
+  /* ── Render All Badges ──────────────────────────────────── */
   function renderAllBadges(filter) {
     activeFilter = filter || 'all';
     var grid = document.getElementById('all-badges-grid');
@@ -282,211 +236,159 @@
       return activeFilter === 'all' || b.category === activeFilter;
     });
 
-    // Total progress bar
+    var career = getCareerLevel();
     var totalEarned = earned.length;
     var totalPct = badges.length > 0 ? Math.round(totalEarned / badges.length * 100) : 0;
-    var progressHtml =
+    var nextInfo = career.nextTier
+      ? (career.nextTier.min_points - career.points) + ' pts to ' + career.nextTier.emoji + ' ' + career.nextTier.title
+      : 'Max level reached!';
+
+    var html =
+      '<div class="badges-career-bar">' +
+        '<div class="badges-career-level">' + esc(career.tier.emoji) + ' ' + esc(career.tier.title) + '</div>' +
+        '<div class="badges-career-pts">' + career.points + ' pts</div>' +
+        '<div class="badges-career-next">' + esc(nextInfo) + '</div>' +
+      '</div>' +
       '<div class="badges-total-progress">' +
         '<span class="badges-total-count">' + totalEarned + ' / ' + badges.length + '</span>' +
         '<div class="badges-total-bar"><div class="badges-total-bar-fill" style="width:' + totalPct + '%"></div></div>' +
-        '<span class="badges-total-label">' + totalPct + '% complete</span>' +
+        '<span class="badges-total-label">' + totalPct + '%</span>' +
       '</div>';
 
-    var html = progressHtml;
-
     if (activeFilter === 'all') {
-      // Group by category with headers
       categories.forEach(function (cat) {
         var catBadges = filtered.filter(function (b) { return b.category === cat.id; });
         if (!catBadges.length) return;
         var catEarned = catBadges.filter(function (b) { return earned.indexOf(b.id) !== -1; }).length;
         var catPct = catBadges.length > 0 ? Math.round(catEarned / catBadges.length * 100) : 0;
 
-        html += '<div class="badges-category-group">';
-        html += '<div class="badges-cat-header">';
-        html += '<span class="badges-cat-header-name">' + esc(cat.emoji) + ' ' + esc(cat.name) + '</span>';
-        html += '<span class="badges-cat-header-count">' + catEarned + ' / ' + catBadges.length + '</span>';
-        html += '<div class="badges-cat-progress"><div class="badges-cat-progress-fill" style="width:' + catPct + '%"></div></div>';
-        html += '</div>';
-        html += '<div class="badges-grid">';
-        // Sort: earned first within category
+        html += '<div class="badges-category-group">' +
+          '<div class="badges-cat-header">' +
+            '<span class="badges-cat-header-name">' + esc(cat.emoji) + ' ' + esc(cat.name) + '</span>' +
+            '<span class="badges-cat-header-count">' + catEarned + ' / ' + catBadges.length + '</span>' +
+            '<div class="badges-cat-progress"><div class="badges-cat-progress-fill" style="width:' + catPct + '%"></div></div>' +
+          '</div><div class="badges-grid">';
         catBadges.sort(function (a, b) {
-          var aE = earned.indexOf(a.id) !== -1 ? 0 : 1;
-          var bE = earned.indexOf(b.id) !== -1 ? 0 : 1;
-          return aE - bE;
+          return (earned.indexOf(a.id) !== -1 ? 0 : 1) - (earned.indexOf(b.id) !== -1 ? 0 : 1);
         });
-        catBadges.forEach(function (b) {
-          html += badgeCard(b, earned.indexOf(b.id) !== -1);
-        });
+        catBadges.forEach(function (b) { html += badgeCard(b, earned.indexOf(b.id) !== -1); });
         html += '</div></div>';
       });
     } else {
-      // Single category — flat grid
       filtered.sort(function (a, b) {
-        var aE = earned.indexOf(a.id) !== -1 ? 0 : 1;
-        var bE = earned.indexOf(b.id) !== -1 ? 0 : 1;
-        return aE - bE;
+        return (earned.indexOf(a.id) !== -1 ? 0 : 1) - (earned.indexOf(b.id) !== -1 ? 0 : 1);
       });
       html += '<div class="badges-grid">';
-      filtered.forEach(function (b) {
-        html += badgeCard(b, earned.indexOf(b.id) !== -1);
-      });
+      filtered.forEach(function (b) { html += badgeCard(b, earned.indexOf(b.id) !== -1); });
       html += '</div>';
     }
 
-    if (!filtered.length) {
-      html = '<p class="badges-empty">No badges in this category.</p>';
-    }
-
+    if (!filtered.length) html = '<p class="badges-empty">No badges in this category.</p>';
     grid.innerHTML = html;
-    renderSuggested();
 
-    // Update filter button active states
     document.querySelectorAll('.badges-filter').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-cat') === activeFilter);
     });
   }
 
-  /* ── Render My Badge Wall ───────────────────────────────── */
+  /* ── Badge Wall (My Badges) ─────────────────────────────── */
   function renderBadgeWall() {
     var wall = document.getElementById('badge-wall');
     var counter = document.getElementById('badge-counter');
     if (!wall) return;
 
     var earned = getEarned();
-    var earnedBadges = badges.filter(function (b) {
-      return earned.indexOf(b.id) !== -1;
-    });
+    var earnedBadges = badges.filter(function (b) { return earned.indexOf(b.id) !== -1; });
+    var career = getCareerLevel();
 
     if (counter) {
-      counter.textContent = earnedBadges.length + ' of ' + badges.length + ' badges earned';
+      counter.innerHTML =
+        '<div class="badges-career-display">' +
+          '<span style="font-size:2rem">' + esc(career.tier.emoji) + '</span>' +
+          '<div class="badges-big-number">' + career.tier.title + '</div>' +
+          '<div class="badges-counter-label">' + earnedBadges.length + ' of ' + badges.length + ' badges \u00b7 ' + career.points + ' pts</div>' +
+        '</div>';
     }
 
     if (!earnedBadges.length) {
       wall.innerHTML =
         '<div class="badges-empty-wall">' +
-          '<span style="font-size:3rem">🎯</span>' +
+          '<span style="font-size:3rem">\uD83C\uDFAF</span>' +
           '<p><strong>No badges yet!</strong></p>' +
           '<p>Head to the <em>All Badges</em> tab and start earning.</p>' +
         '</div>';
       return;
     }
 
-    var stories = safeGet(STORIES_KEY, {});
-    var html = '';
+    var html = '<div class="badges-wall">';
     earnedBadges.forEach(function (b) {
-      var story = stories[b.id] || '';
-      html += '<div class="badges-wall-item" title="' + esc(b.name) + '">' +
+      html += '<div class="badges-wall-item" title="' + esc(b.name) + ': ' + esc(b.desc) + '">' +
         '<span class="badges-wall-emoji">' + esc(b.emoji) + '</span>' +
         '<span class="badges-wall-name">' + esc(b.name) + '</span>' +
-        '<div class="badges-story" contenteditable="true" data-id="' + esc(b.id) + '" placeholder="How did you earn this?">' + esc(story) + '</div>' +
       '</div>';
     });
+    html += '</div>';
     wall.innerHTML = html;
   }
 
-  /* ── Download badge wall as PNG ─────────────────────────── */
+  /* ── Download badge wall PNG ────────────────────────────── */
   function downloadWall() {
     var earned = getEarned();
-    var earnedBadges = badges.filter(function (b) {
-      return earned.indexOf(b.id) !== -1;
-    });
-    if (!earnedBadges.length) {
-      alert('Earn some badges first!');
-      return;
-    }
+    var earnedBadges = badges.filter(function (b) { return earned.indexOf(b.id) !== -1; });
+    if (!earnedBadges.length) { alert('Earn some badges first!'); return; }
+    var career = getCareerLevel();
 
     var W = 1200, H = 630;
     var canvas = document.createElement('canvas');
-    canvas.width = W;
-    canvas.height = H;
+    canvas.width = W; canvas.height = H;
     var ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Background
-    ctx.fillStyle = '#030308';
-    ctx.fillRect(0, 0, W, H);
-
-    // Subtle border
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
-    ctx.lineWidth = 2;
+    ctx.fillStyle = '#030308'; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)'; ctx.lineWidth = 2;
     ctx.strokeRect(20, 20, W - 40, H - 40);
-
-    // Title
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 32px Inter, system-ui, sans-serif';
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 32px Inter, system-ui, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('My IT Admin Badges', W / 2, 65);
+    ctx.fillText(career.tier.emoji + ' ' + career.tier.title, W / 2, 60);
+    ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.font = '18px Inter, system-ui, sans-serif';
+    ctx.fillText(earnedBadges.length + ' of ' + badges.length + ' badges \u00b7 ' + career.points + ' pts', W / 2, 90);
 
-    // Count
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.font = '18px Inter, system-ui, sans-serif';
-    ctx.fillText(earnedBadges.length + ' of ' + badges.length + ' badges earned', W / 2, 95);
-
-    // Badge grid
     var cols = Math.min(earnedBadges.length, 8);
     var rows = Math.ceil(earnedBadges.length / cols);
     var cellW = (W - 100) / cols;
     var cellH = Math.min(70, (H - 140) / rows);
     var startY = 125;
-
     earnedBadges.forEach(function (b, i) {
-      var col = i % cols;
-      var row = Math.floor(i / cols);
-      var x = 50 + col * cellW + cellW / 2;
-      var y = startY + row * cellH;
-
-      if (y + 30 > H - 30) return; // Don't overflow
-
-      ctx.font = '24px serif';
-      ctx.textAlign = 'center';
-      ctx.fillStyle = '#ffffff';
+      var col = i % cols, row = Math.floor(i / cols);
+      var x = 50 + col * cellW + cellW / 2, y = startY + row * cellH;
+      if (y + 30 > H - 30) return;
+      ctx.font = '24px serif'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff';
       ctx.fillText(b.emoji, x, y + 5);
-
-      ctx.font = '11px Inter, system-ui, sans-serif';
-      ctx.fillStyle = 'rgba(255,255,255,0.75)';
-      var name = b.name.length > 16 ? b.name.slice(0, 15) + '…' : b.name;
-      ctx.fillText(name, x, y + 24);
+      ctx.font = '11px Inter, system-ui, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.75)';
+      ctx.fillText(b.name.length > 16 ? b.name.slice(0, 15) + '\u2026' : b.name, x, y + 24);
     });
 
-    // Footer
-    ctx.fillStyle = 'rgba(255,255,255,0.3)';
-    ctx.font = '12px Inter, system-ui, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('aguidetocloud.com/admin-badges', W / 2, H - 25);
+    ctx.fillStyle = 'rgba(255,255,255,0.3)'; ctx.font = '12px Inter, system-ui, sans-serif';
+    ctx.textAlign = 'center'; ctx.fillText('aguidetocloud.com/admin-badges', W / 2, H - 25);
 
     canvas.toBlob(function (blob) {
       if (!blob) return;
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'my-admin-badges.png';
-      a.click();
+      var url = URL.createObjectURL(blob); var a = document.createElement('a');
+      a.href = url; a.download = 'my-admin-badges.png'; a.click();
       setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
     }, 'image/png');
   }
 
-  /* ── Clear all earned badges ────────────────────────────── */
-  function clearAll() {
-    if (!confirm('Clear all earned badges? This cannot be undone.')) return;
-    setEarned([]);
-    renderAllBadges(activeFilter);
-    renderBadgeWall();
-  }
-
-  /* ── Event delegation for badge cards ───────────────────── */
+  /* ── Event delegation ───────────────────────────────────── */
   function handleCardClick(e) {
     var shareBtn = e.target.closest('.badges-share-btn');
-    if (shareBtn) {
-      e.stopPropagation();
-      var sid = shareBtn.getAttribute('data-id');
-      if (sid) shareBadge(sid);
-      return;
-    }
+    if (shareBtn) { e.stopPropagation(); shareBadge(shareBtn.getAttribute('data-id')); return; }
     var card = e.target.closest('.badges-card');
     if (!card) return;
     var id = card.getAttribute('data-id');
-    if (id) toggleBadge(id);
+    if (!id) return;
+    if (isEarned(id)) { removeBadge(id); }
+    else { showEarnModal(id); }
   }
 
   function handleCardKeydown(e) {
@@ -495,64 +397,46 @@
     if (!card) return;
     e.preventDefault();
     var id = card.getAttribute('data-id');
-    if (id) toggleBadge(id);
+    if (!id) return;
+    if (isEarned(id)) { removeBadge(id); }
+    else { showEarnModal(id); }
   }
 
   /* ── Init ───────────────────────────────────────────────── */
   function init() {
     if (!badges.length) return;
-
     initTabs('badges');
 
-    // Category filter buttons
     document.querySelectorAll('.badges-filter').forEach(function (btn) {
       btn.addEventListener('click', function () {
         renderAllBadges(btn.getAttribute('data-cat') || 'all');
       });
     });
 
-    // Grid click delegation
     var grid = document.getElementById('all-badges-grid');
-    if (grid) {
-      grid.addEventListener('click', handleCardClick);
-      grid.addEventListener('keydown', handleCardKeydown);
-    }
+    if (grid) { grid.addEventListener('click', handleCardClick); grid.addEventListener('keydown', handleCardKeydown); }
 
-    // Download wall button
     var dlBtn = document.getElementById('btn-download-wall');
     if (dlBtn) dlBtn.addEventListener('click', downloadWall);
 
-    // Clear all button
     var clrBtn = document.getElementById('btn-clear-all');
-    if (clrBtn) clrBtn.addEventListener('click', clearAll);
+    if (clrBtn) clrBtn.addEventListener('click', function () {
+      if (confirm('Clear all earned badges? This cannot be undone.')) {
+        setEarned([]); renderAllBadges(activeFilter); renderBadgeWall();
+      }
+    });
 
-    // Daily challenge
     var dailySlot = document.getElementById('daily-challenge');
     if (dailySlot) renderDailyChallenge(dailySlot);
 
-    // Story blur delegation (badge wall)
-    var wall = document.getElementById('badge-wall');
-    if (wall) {
-      wall.addEventListener('focusout', function (e) {
-        if (!e.target.classList.contains('badges-story')) return;
-        var bid = e.target.getAttribute('data-id');
-        if (!bid) return;
-        var stories = safeGet(STORIES_KEY, {});
-        var text = (e.target.textContent || '').trim();
-        if (text) { stories[bid] = text; } else { delete stories[bid]; }
-        safeSet(STORIES_KEY, stories);
-      });
-    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
 
-    // Initial renders
     renderAllBadges('all');
     renderBadgeWall();
   }
 
-  /* ── Boot ───────────────────────────────────────────────── */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();

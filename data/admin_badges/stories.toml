@@ -1,0 +1,182 @@
+# IT Admin Badge Unlock Stories + Confirmation Questions
+# Each key maps to a badge ID
+
+[sev1-survivor]
+story = "It's 5:47 PM on a Friday. Your bag is packed, your coat is on, and then Slack explodes. Exchange is down. All of it. The next 6 hours are a blur of conference calls, pizza deliveries, and the CTO asking 'is it fixed yet?' every 12 minutes."
+confirm = "I have survived a critical production outage on a Friday evening"
+
+[reply-all-survivor]
+story = "It started with an innocent 'Please remove me from this list.' Then someone replied all to say 'Stop replying all.' Then someone replied all to THAT. 847 emails in 12 minutes. The CEO replied all: 'Please stop replying all.' The irony was lost on nobody."
+confirm = "I have lived through a company-wide Reply All storm"
+
+[weekend-warrior]
+story = "Your phone buzzes at 7 AM on a Saturday. 'Quick question' from your manager. Three hours later you're knee-deep in a production database, still in pyjamas, wondering why you ever gave anyone your personal number."
+confirm = "I have fixed a production issue on a weekend"
+
+[midnight-deploy]
+story = "The change window starts at midnight. By 2 AM, the easy part is done. By 3 AM, the hard part has turned impossible. By 4 AM, you're Googling things you never thought you'd need to Google. By 5 AM, it works. You don't know why."
+confirm = "I have completed a maintenance window after midnight"
+
+[printer-whisperer]
+story = "Three technicians had tried. Two had cried. The printer just wouldn't. You walked up, turned it off and on, whispered something to it, and it printed. You don't know what you whispered. Neither does the printer. But it worked."
+confirm = "I have fixed a printer that defeated multiple other technicians"
+
+[cable-hero]
+story = "After 3 hours of checking configurations, reviewing firewall rules, and escalating to Microsoft support, you found it. A loose Ethernet cable. You pushed it in. Everything worked. You told nobody."
+confirm = "I have solved a critical issue caused by a loose cable"
+
+[vpn-ninja]
+story = "The VPN was down. Users couldn't connect. Your manager wanted a status update. But to troubleshoot the VPN you needed to be ON the VPN. It's like being asked to fix a bridge while standing on it. You found a way."
+confirm = "I have troubleshot a VPN issue while connected through the same VPN"
+
+[outage-prophet]
+story = "Something felt wrong. The dashboards were green. The helpdesk was quiet. But you had a feeling. You checked, and there it was — a ticking time bomb that would have detonated at 9 AM Monday. You fixed it. Nobody knew. Nobody ever will."
+confirm = "I have predicted and prevented an outage before it happened"
+
+[mfa-champion]
+story = "1,247 users. Zero complaints. Not a single 'why do I need this?' email. You did it with clear communications, a phased rollout, and a LOT of patience. MFA nirvana."
+confirm = "I have deployed MFA to 1000+ users without complaints"
+
+[phish-catcher]
+story = "The email looked perfect. Professional formatting, correct logo, even a genuine-looking sender address. But you spotted the one-pixel difference in the domain name. You blocked it, alerted the org, and prevented what would have been a very bad day."
+confirm = "I have caught a phishing campaign before anyone clicked"
+
+[zero-trust-architect]
+story = "No more 'inside the network means trusted.' You redesigned everything — identity verification, device compliance, conditional access, micro-segmentation. Your CISO actually smiled. That might be a first."
+confirm = "I have implemented a Zero Trust security framework"
+
+[shadow-it-hunter]
+story = "They thought nobody would notice the 47 unapproved SaaS subscriptions. You noticed. Marketing had three different project management tools. Sales had a file-sharing app with no encryption. HR was using... actually, let's not talk about what HR was using."
+confirm = "I have discovered and remediated unauthorized SaaS applications"
+
+[breach-responder]
+story = "The alert came in at 2:14 PM. By 2:15 PM your heart rate doubled. By 2:20 PM you had assembled the incident response team. The next 72 hours were the most intense of your career. You contained it. You documented everything."
+confirm = "I have led incident response for a real security breach"
+
+[password-liberator]
+story = "No more 'your password expires in 7 days.' No more users adding '!' to the end of 'Summer2024'. You implemented passwordless auth and watched helpdesk tickets drop by 40%. The users thanked you. THANKED you. That never happens."
+confirm = "I have eliminated forced password expiry and deployed passwordless auth"
+
+[patch-tuesday-hero]
+story = "The second Tuesday of the month. 500+ devices, critical patches, reboot windows, and that one server nobody can find the owner of. You patched them all. In 48 hours. While keeping production running."
+confirm = "I have patched 500+ devices within 48 hours of Patch Tuesday"
+
+[dlp-guardian]
+story = "The alert popped up: 'Sensitive data detected in outbound email.' Someone was about to send a spreadsheet with 10,000 customer records to their personal Gmail. Your DLP policy caught it. You prevented a data breach and probably saved someone's career."
+confirm = "I have prevented a data leak using DLP policies"
+
+[cloud-migrator]
+story = "On-prem Exchange. On-prem SharePoint. On-prem file servers. On-prem everything. You moved it ALL to Microsoft 365. The old servers are now bookends. Beautiful, expensive bookends."
+confirm = "I have migrated an organisation from on-premises to Microsoft 365"
+
+[tenant-merger]
+story = "Two companies, two tenants, two sets of users who hate change. You merged them into one. Email addresses, SharePoint sites, Teams channels, OneDrive data — all of it. The users barely noticed. That's how you know it went well."
+confirm = "I have successfully merged two M365 tenants"
+
+[exchange-escapee]
+story = "The last on-prem Exchange server. The one that's been humming in the corner for years. You migrated the final mailbox, ran the decommission script, and turned it off. The silence was beautiful."
+confirm = "I have decommissioned my last on-premises Exchange server"
+
+[zero-data-loss]
+story = "50,000 mailboxes. 2TB of SharePoint data. 8,000 OneDrive accounts. Zero bytes lost. You didn't sleep for a week, but when the final validation report came back clean, you wept a single tear of joy. Probably from exhaustion."
+confirm = "I have completed a major migration with zero data loss"
+
+[hybrid-master]
+story = "Some things in the cloud. Some things on-prem. Azure AD Connect syncing away. Hybrid Exchange doing its thing. You've been managing this dual-world for over two years. You speak both languages fluently now."
+confirm = "I have managed a hybrid on-prem and cloud environment for 2+ years"
+
+[google-to-m365]
+story = "They were on Google Workspace. Now they're on Microsoft 365. The Gmail users mourned. The Google Drive fans protested. But after a month, most admitted Outlook's calendar is better. You don't say 'I told you so.' But you think it."
+confirm = "I have migrated an organisation from Google Workspace to Microsoft 365"
+
+[compliance-hero]
+story = "The auditor walked in on Monday. By Wednesday, they were done. First-time pass. No major findings. You celebrated by updating the compliance documentation. Because that's who you are now."
+confirm = "I have passed an external compliance audit on the first attempt"
+
+[policy-architect]
+story = "100 pages. Acceptable use, data classification, incident response, change management, access control. You wrote it all from scratch. It took months. Three people have read it. But it exists, and that's what matters."
+confirm = "I have written a comprehensive IT governance policy from scratch"
+
+[gdpr-ready]
+story = "Data mapping, privacy impact assessments, consent mechanisms, data subject access requests, breach notification procedures. You made your org GDPR compliant. The DPO now sends you birthday cards."
+confirm = "I have achieved GDPR compliance for my organisation"
+
+[license-optimizer]
+story = "You ran the licence audit. 200 E5 licences for users who only use Outlook. 50 Power BI Pro licences for people who've never opened Power BI. You right-sized everything and saved the company more than 50K. Finance loves you now. That's new."
+confirm = "I have saved significant money by optimising Microsoft 365 licences"
+
+[label-master]
+story = "Public, Internal, Confidential, Highly Confidential. Auto-labelling policies. Default labels. Label inheritance. You deployed sensitivity labels to every user, every app, every document. The data is classified. Your OCD is satisfied."
+confirm = "I have deployed sensitivity labels across an entire organisation"
+
+[audit-ace]
+story = "365 days. Clean audit logs. Every admin action tracked. Every login monitored. Every alert investigated. Your compliance dashboard is a thing of beauty. The CISO uses it as their desktop wallpaper."
+confirm = "I have maintained clean, comprehensive audit logs for a full year"
+
+[documentation-hero]
+story = "You documented everything. The architecture. The runbooks. The disaster recovery plan. The 'what to do if Dave from accounting locks himself out again' guide. Nobody has read any of it. But when you're on holiday and something breaks, they'll be grateful."
+confirm = "I have written comprehensive IT documentation"
+
+[training-champion]
+story = "100+ users. Same confused faces. Same questions. 'Where did my files go?' 'Why does Teams look different?' 'Can I still use Internet Explorer?' You trained them all. With patience, humour, and only minor internal screaming."
+confirm = "I have trained 100+ end users on a new system"
+
+[cert-collector]
+story = "AZ-900. Then SC-900. Then AZ-104. The study guides, the practice exams, the nervous click on 'End Exam.' You've passed 3+ Microsoft certifications. Your LinkedIn is glowing. Your imposter syndrome is confused."
+confirm = "I have passed 3 or more Microsoft certifications"
+
+[mentor]
+story = "They came in as a junior — unsure, overwhelmed, asking what DHCP stood for. You showed them the ropes. You let them break things safely. You taught them to Google properly. Now they're a senior admin. You made that happen."
+confirm = "I have mentored a junior admin into a senior role"
+
+[knowledge-base-builder]
+story = "Article 1: 'How to reset your password.' Article 100: 'Advanced conditional access troubleshooting for hybrid Azure AD-joined devices in multi-forest environments.' Your knowledge base has range. It has depth. It has a search bar that actually works."
+confirm = "I have built an internal knowledge base with 100+ articles"
+
+[copilot-evangelist]
+story = "You didn't just deploy Copilot — you made people WANT to use it. Training sessions, prompt libraries, lunch-and-learns, success stories. Your adoption rate makes Microsoft's own case studies jealous."
+confirm = "I have led a successful Copilot rollout and training programme"
+
+[runbook-writer]
+story = "Step 1: Don't panic. Step 2: Open this runbook. You created runbooks so clear, so detailed, that the on-call person at 3 AM can handle what used to require you specifically. Freedom."
+confirm = "I have created runbooks that enabled others to handle incidents"
+
+[ai-whisperer]
+story = "You deployed Copilot. But here's the legendary part: people actually USE it. Not just 'I tried it once.' They use it daily. They share prompts. They argue about which model is better. You created an AI culture. That's rare."
+confirm = "I have deployed M365 Copilot and achieved genuine user adoption"
+
+[rename-tracker]
+story = "Azure Active Directory became Microsoft Entra ID. Office 365 became Microsoft 365. Skype for Business became Teams. Microsoft Stream Classic became Microsoft Stream on SharePoint. You keep track of them all. You are the rename whisperer."
+confirm = "I can accurately name Microsoft's constantly rebranding products"
+
+[coffee-driven]
+story = "The P1 started at 11 PM. By midnight, you were on your third coffee. By 2 AM, you'd switched to espresso. By 4 AM, you were mainlining caffeine through an IV drip (figuratively). By 6 AM, it was fixed. You slept for 14 hours."
+confirm = "I have fixed a critical incident fuelled entirely by caffeine"
+
+[the-fixer]
+story = "When the SharePoint admin can't fix it, they call you. When the network team is stuck, they call you. When the CEO's laptop 'does that thing again,' they call you. You are The Fixer. Your phone never stops ringing."
+confirm = "I am the person everyone calls when nothing else works"
+
+[invisible-admin]
+story = "No outages. No complaints. No emergency calls. Everything just worked. For an entire quarter, nobody in the company knew the IT department existed. That's not neglect. That's excellence."
+confirm = "I have achieved a period where everything just worked perfectly"
+
+[no-downtime]
+story = "365 days. 8,760 hours. 525,600 minutes. Not a single minute of unplanned downtime. Not one. Your uptime record is 100%. You've achieved what most SLAs only dream about."
+confirm = "I have maintained 100% uptime for a full calendar year"
+
+[budget-magician]
+story = "The project was budgeted at half a million. You delivered it for 380K. You found open-source alternatives, negotiated vendor discounts, and reused existing hardware. Finance still doesn't believe you."
+confirm = "I have delivered a major IT project under budget"
+
+[last-one-standing]
+story = "The great resignation hit. One by one, your team left. The network admin. The security analyst. The helpdesk lead. But you stayed. You held down the fort. You became the entire IT department. Singular."
+confirm = "I have been the sole remaining IT person during a mass departure"
+
+[change-management-pro]
+story = "Major system rollout. 2,000+ users affected. New processes, new tools, new everything. Zero helpdesk tickets on go-live day. Zero. Your change management plan was so good that users didn't even realise things had changed."
+confirm = "I have rolled out a major change with zero helpdesk tickets"
+
+[script-wizard]
+story = "The manual process took 4 hours. Click, wait, copy, paste, click, wait, repeat. You wrote a script. 47 lines of PowerShell. Now it takes 30 seconds. You've automated yourself into having time for coffee."
+confirm = "I have automated a multi-hour manual process into a quick script"

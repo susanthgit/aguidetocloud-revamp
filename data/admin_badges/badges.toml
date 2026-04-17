@@ -398,18 +398,22 @@ color = "#FFD54F"
 id = "common"
 label = "Common"
 color = "#9CA3AF"
+points = 1
 
 [[rarities]]
 id = "uncommon"
 label = "Uncommon"
 color = "#10B981"
+points = 2
 
 [[rarities]]
 id = "rare"
 label = "Rare"
 color = "#3B82F6"
+points = 3
 
 [[rarities]]
 id = "legendary"
 label = "Legendary"
 color = "#FFD54F"
+points = 5

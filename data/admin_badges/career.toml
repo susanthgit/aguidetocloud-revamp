@@ -1,0 +1,37 @@
+# Career level tiers based on total rarity points earned
+# Points: common=1, uncommon=2, rare=3, legendary=5
+
+[[tiers]]
+min_points = 0
+title = "IT Intern"
+emoji = "🐣"
+
+[[tiers]]
+min_points = 5
+title = "Help Desk Hero"
+emoji = "🎧"
+
+[[tiers]]
+min_points = 15
+title = "Junior Admin"
+emoji = "🔧"
+
+[[tiers]]
+min_points = 30
+title = "Seasoned Admin"
+emoji = "⚙️"
+
+[[tiers]]
+min_points = 50
+title = "Senior Admin"
+emoji = "🛡️"
+
+[[tiers]]
+min_points = 75
+title = "IT Legend"
+emoji = "👑"
+
+[[tiers]]
+min_points = 100
+title = "IT Demigod"
+emoji = "⚡"

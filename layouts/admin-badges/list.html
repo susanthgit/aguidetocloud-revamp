@@ -3,6 +3,8 @@
 {{ $badges := $data.badges.badges }}
 {{ $categories := $data.badges.categories }}
 {{ $rarities := $data.badges.rarities }}
+{{ $stories := $data.stories }}
+{{ $careerTiers := $data.career.tiers }}
 
 <link rel="stylesheet" href="/css/admin-badges.css?v={{ site.Params.cache_version }}">
 
@@ -54,10 +56,16 @@
 {{ partial "tool-ecosystem.html" (dict "group" "community" "active" "admin-badges") }}
 {{ partial "back-nav" . }}
 
+<div class="badges-modal-overlay" id="badges-modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="badges-modal" id="badges-modal-content"></div>
+</div>
+
 <script>
 window.__badges = {{ $badges | jsonify | safeJS }};
 window.__badgeCategories = {{ $categories | jsonify | safeJS }};
 window.__badgeRarities = {{ $rarities | jsonify | safeJS }};
+window.__badgeStories = {{ $stories | jsonify | safeJS }};
+window.__careerTiers = {{ $careerTiers | jsonify | safeJS }};
 </script>
 <script defer src="/js/admin-badges.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}
