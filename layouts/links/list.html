@@ -561,12 +561,6 @@
       </div>
     </div>
 
-    <!-- Testimonial -->
-    <div class="testimonial" id="testimonial">
-      <div>"Best free cloud resources I've found — wish I had this when I started studying"</div>
-      <div class="testimonial-author">— YouTube viewer</div>
-    </div>
-
     <!-- What's New -->
     <div class="whats-new" id="whats-new">
       <div class="whats-new-item active">🔥 New: <a href="/security-toolkit/" data-link-id="banner_security" data-link-section="banner">M365 Security Toolkit</a> just launched</div>
@@ -689,6 +683,12 @@
       </a>
     </div>
 
+    <!-- Testimonial -->
+    <div class="testimonial" id="testimonial">
+      <div>"Best free cloud resources I've found — wish I had this when I started studying"</div>
+      <div class="testimonial-author">— YouTube viewer</div>
+    </div>
+
     <!-- Social Icons -->
     <div class="socials">
       <a href="https://www.youtube.com/@SusanthSutheesh" class="social-icon" aria-label="YouTube Main Channel" target="_blank" rel="noopener noreferrer" data-link-id="social_youtube" data-link-section="social">
@@ -802,10 +802,10 @@
       }, 8000);
     })();
 
-    /* Latest video (lightweight fetch from YouTube API) */
+    /* Latest video (API with hardcoded fallback) */
     (function() {
-      fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) {
-        if (d.error || !d.id) return;
+      var fallback = { id: 'FHD3Sez_MeU', title: 'Microsoft 365 Copilot — March 2026 Updates', published: '2026-03-17' };
+      function show(d) {
         var wrap = document.getElementById('latest-video');
         var link = document.getElementById('video-link');
         var img = document.getElementById('video-img');
@@ -817,7 +817,10 @@
         title.textContent = d.title || '';
         meta.textContent = d.published || '';
         wrap.style.display = '';
-      }).catch(function(){});
+      }
+      fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) {
+        show(d.error || !d.id ? fallback : d);
+      }).catch(function() { show(fallback); });
     })();
   </script>
 </body>
