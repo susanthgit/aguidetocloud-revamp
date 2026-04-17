@@ -100,11 +100,17 @@ export async function onRequestPost(context) {
   if (!category || !CATEGORY_MAP[category]) {
     return new Response(JSON.stringify({ error: 'Invalid category' }), { status: 400 });
   }
-  if (!subject || subject.trim().length < 5) {
-    return new Response(JSON.stringify({ error: 'Subject must be at least 5 characters' }), { status: 400 });
+  if (!subject || subject.trim().length < 5 || subject.trim().length > 200) {
+    return new Response(JSON.stringify({ error: 'Subject must be 5-200 characters' }), { status: 400 });
   }
-  if (!message || message.trim().length < 10) {
-    return new Response(JSON.stringify({ error: 'Message must be at least 10 characters' }), { status: 400 });
+  if (!message || message.trim().length < 10 || message.trim().length > 5000) {
+    return new Response(JSON.stringify({ error: 'Message must be 10-5000 characters' }), { status: 400 });
+  }
+  if (name && name.trim().length > 100) {
+    return new Response(JSON.stringify({ error: 'Name must be under 100 characters' }), { status: 400 });
+  }
+  if (email && email.trim().length > 254) {
+    return new Response(JSON.stringify({ error: 'Email must be under 254 characters' }), { status: 400 });
   }
 
   const pat = env.GITHUB_FEEDBACK_PAT;
@@ -121,9 +127,11 @@ export async function onRequestPost(context) {
     let discussionBody = message.trim();
     const metaParts = [];
     if (name) metaParts.push(`**From:** ${name.trim()}`);
-    if (email) metaParts.push(`**Email:** ${email.trim()}`);
+    // Email is deliberately NOT included in the public discussion body
+    // to prevent PII exposure. Contact email stays between user and site owner.
     if (toolLabel) metaParts.push(`**Related Tool:** ${toolLabel}`);
     metaParts.push(`**Category:** ${catInfo.label}`);
+    if (email) metaParts.push(`*Reply contact provided via form*`);
     if (metaParts.length) discussionBody += '\n\n---\n' + metaParts.join(' · ');
 
     const categoryId = await getCategoryId(pat, catInfo.ghCategory);

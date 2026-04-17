@@ -241,10 +241,7 @@ async function handleLatestVideo(env) {
       thumbnail: item.snippet?.thumbnails?.high?.url || '' };
     cacheStore.latestvideo = { data, time: now };
     return jsonRes(data);
-  } catch (e) { return jsonRes({ error: e.message }); }
-}
-
-// ── Endpoint: Bio Links ──────────────────────────────────────────
+  } catch (e) { console.error('Latest video error:', e.message); return jsonRes({ error: 'Failed to fetch video' }); }──────────────────────────────────────────
 
 async function handleBioLinks(env) {
   const now = Date.now();
@@ -297,10 +294,7 @@ async function handleBioLinks(env) {
       updated: new Date().toISOString() };
     cacheStore.biolinks = { data, time: now };
     return jsonRes(data);
-  } catch (e) { return jsonRes({ error: e.message }); }
-}
-
-// ── Endpoint: YouTube Intelligence ───────────────────────────────
+  } catch (e) { console.error('Bio links error:', e.message); return jsonRes({ error: 'Failed to fetch bio data' }); }───────────────────────────────
 
 async function handleYouTube(env) {
   const now = Date.now();
@@ -404,7 +398,7 @@ async function handleYouTube(env) {
           topVideos: (vRes.rows || []).map(r => ({ videoId: r[0], views: r[1], watchMinutes: Math.round(r[2]), avgDuration: Math.round(r[3]), likes: r[4], subsGained: r[5] })),
           trafficSources: (tRes.rows || []).map(r => ({ source: r[0], views: r[1], watchMinutes: Math.round(r[2]) }))
         };
-      } catch (e) { ytAnalytics = { error: e.message }; }
+      } catch (e) { console.error('YT analytics error:', e.message); ytAnalytics = { error: 'Analytics unavailable' }; }
     }
 
     const recs = [];
@@ -471,7 +465,7 @@ async function handleYouTube(env) {
       } };
     cacheStore.youtube = { data, time: now };
     return jsonRes(data);
-  } catch (e) { return jsonRes({ error: e.message }); }
+  } catch (e) { console.error('YouTube error:', e.message); return jsonRes({ error: 'Failed to fetch YouTube data' }); }
 }
 
 // ── Endpoint: Main Analytics ─────────────────────────────────────

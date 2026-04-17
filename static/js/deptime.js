@@ -401,19 +401,22 @@
 
   /* ─── Detail Modal ─── */
   window.__deptimeShowDetail = function (id) {
+    const safeItemId = safeId(id);
     const item = allItems.find(i => i.id === id);
     if (!item) return;
 
     const modal = document.getElementById('deptime-modal');
     const body = document.getElementById('deptime-modal-body');
-    const urgencyClass = item.urgency || 'future';
+    const urgencyClass = safeClass(item.urgency);
     const countdownBg = `deptime-countdown-${urgencyClass}`;
 
+    // Validate URLs before inserting into href
+    const urlPattern = /^https?:\/\//;
     let linksHtml = '';
-    if (item.migration_url) linksHtml += `<a href="${item.migration_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📖 Migration Guide</a>`;
-    if (item.official_url) linksHtml += `<a href="${item.official_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">🔗 Official Source</a>`;
-    if (item.lifecycle_url) linksHtml += `<a href="${item.lifecycle_url}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📅 Lifecycle Page</a>`;
-    linksHtml += `<button class="deptime-modal-link" onclick="window.__deptimeCopyLink('${item.id}')">📋 Copy Link</button>`;
+    if (item.migration_url && urlPattern.test(item.migration_url)) linksHtml += `<a href="${esc(item.migration_url)}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📖 Migration Guide</a>`;
+    if (item.official_url && urlPattern.test(item.official_url)) linksHtml += `<a href="${esc(item.official_url)}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">🔗 Official Source</a>`;
+    if (item.lifecycle_url && urlPattern.test(item.lifecycle_url)) linksHtml += `<a href="${esc(item.lifecycle_url)}" class="deptime-modal-link" target="_blank" rel="noopener noreferrer">📅 Lifecycle Page</a>`;
+    linksHtml += `<button class="deptime-modal-link" onclick="window.__deptimeCopyLink('${safeItemId}')">📋 Copy Link</button>`;
 
     body.innerHTML = `
       <div class="deptime-modal-countdown ${countdownBg}">
@@ -423,13 +426,13 @@
       <div class="deptime-modal-title">${esc(item.title)}</div>
       <div class="deptime-modal-badges">
         <span class="deptime-badge deptime-badge-${urgencyClass}">${urgencyClass.toUpperCase()}</span>
-        <span class="deptime-badge deptime-badge-type">${item.type_emoji} ${esc(item.type_name)}</span>
-        <span class="deptime-badge deptime-badge-type">${item.category_emoji} ${esc(item.category_name)}</span>
+        <span class="deptime-badge deptime-badge-type">${esc(item.type_emoji || '')} ${esc(item.type_name)}</span>
+        <span class="deptime-badge deptime-badge-type">${esc(item.category_emoji || '')} ${esc(item.category_name)}</span>
         ${item.impact ? `<span class="deptime-badge deptime-badge-type">Impact: ${esc(item.impact)}</span>` : ''}
         ${item.mc_id ? `<span class="deptime-badge deptime-badge-type">📋 ${esc(item.mc_id)}</span>` : ''}
       </div>
       <div class="deptime-modal-section"><h3>Description</h3><p>${esc(item.description || 'No description available.')}</p></div>
-      <div class="deptime-modal-section"><h3>Deadline</h3><p>📅 ${item.deadline || 'TBD'}${item.announced_date ? ' (Announced: ' + esc(item.announced_date) + ')' : ''}</p></div>
+      <div class="deptime-modal-section"><h3>Deadline</h3><p>📅 ${esc(item.deadline || 'TBD')}${item.announced_date ? ' (Announced: ' + esc(item.announced_date) + ')' : ''}</p></div>
       ${item.migration_path ? `<div class="deptime-modal-section"><h3>Migration Path</h3><p>${esc(item.migration_path)}</p></div>` : ''}
       ${item.replacement ? `<div class="deptime-modal-section"><h3>Replacement</h3><p>➡️ ${esc(item.replacement)}</p></div>` : ''}
       ${item.services && item.services.length ? `<div class="deptime-modal-section"><h3>Affected Services</h3><p>${(item.services || []).map(esc).join(', ')}</p></div>` : ''}
@@ -437,8 +440,7 @@
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    // Update URL with item deep-link
-    history.replaceState(null, '', `${window.location.pathname}?item=${id}`);
+    history.replaceState(null, '', `${window.location.pathname}?item=${safeItemId}`);
   };
 
   function closeModal() {
