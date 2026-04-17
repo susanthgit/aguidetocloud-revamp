@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := (index hugo.Data "phishing_test") }}
-{{ $scenarios := $data.scenarios }}
+{{ $scenarios := $data.scenarios.scenarios }}
 <link rel="stylesheet" href="/css/phishing-test.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "Page" . "title" "Is This Phishing?" "subtitle" "Can you spot the fakes? Test your skills." "accent" "#E74C3C") }}

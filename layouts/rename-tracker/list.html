@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := (index hugo.Data "rename_tracker") }}
-{{ $products := $data.products }}
+{{ $products := $data.products.products }}
 <link rel="stylesheet" href="/css/rename-tracker.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "Page" . "title" "What Did They Call It Now?" "subtitle" "Track every Microsoft product rename in one place" "accent" "#B07D4F") }}

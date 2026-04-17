@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := (index hugo.Data "admin_comms") }}
-{{ $templates := $data.templates }}
+{{ $templates := $data.templates.templates }}
 <link rel="stylesheet" href="/css/admin-comms.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "Page" . "title" "IT Admin Comms Templates" "subtitle" "Professional emails in seconds, not hours" "accent" "#5B9BD5") }}
