@@ -277,6 +277,16 @@
   padding: 0 1.5rem 3rem;
 }
 
+.siteana-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #64748B;
+  text-align: center;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
 /* Stats Bar */
 .siteana-stats-bar {
   display: flex;

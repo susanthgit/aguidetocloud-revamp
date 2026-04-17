@@ -1,11 +1,12 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "title" "Site Analytics" "subtitle" "Live usage statistics — transparent, anonymous, and open" "accent" "#64748B") }}
-
 {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
 
-<div class="siteana-page">
+<div class="siteana-page" style="padding-top:2rem">
+
+  <!-- Compact title -->
+  <h1 class="siteana-page-title">Site Analytics</h1>
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
