@@ -41,6 +41,17 @@ def generate_redirects(config):
         # SWA wildcards use /* which CF Pages also supports
         lines.append(f"{src} {dst} {code}")
 
+        # CF Pages _redirects is exact-match on trailing slashes.
+        # SWA was lenient (matched both /bio and /bio/). Emit both
+        # variants for non-wildcard routes so old links still work.
+        if not src.endswith("*"):
+            if src.endswith("/") and len(src) > 1:
+                # /bio/ → also emit /bio
+                lines.append(f"{src.rstrip('/')} {dst} {code}")
+            elif not src.endswith("/"):
+                # /hiking → also emit /hiking/
+                lines.append(f"{src}/ {dst} {code}")
+
     return "\n".join(lines) + "\n"
 
 
