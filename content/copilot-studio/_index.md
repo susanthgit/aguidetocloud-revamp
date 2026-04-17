@@ -3,6 +3,7 @@ title: "Copilot Studio Companion — Plan, Design & Build Your AI Agent"
 description: "Interactive planning companion for Microsoft Copilot Studio. Decide which platform to use, explore features and limits, plan your agent architecture, estimate Copilot Credits, and generate a build blueprint."
 type: "copilot-studio"
 layout: "list"
+url: "/copilot-studio/"
 lastmod: 2026-04-18
 sitemap:
   priority: 0.85
