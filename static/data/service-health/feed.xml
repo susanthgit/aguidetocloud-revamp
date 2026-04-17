@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2026 23:00:16 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 03:42:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1281212</link>
-      <description>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">IT1281212</guid>
-      <pubDate>Wed, 15 Apr 2026 19:32:42 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
@@ -26,9 +17,9 @@
       <pubDate>Wed, 15 Apr 2026 19:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience intermittent failures with requests in Microsoft 365 Copilot</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Some users may experience intermittent failures with requests in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1281119</guid>
@@ -60,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1280167</guid>
       <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1281212</link>
+      <description>[Microsoft Intune] Users may have been unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1281212</guid>
+      <pubDate>Tue, 14 Apr 2026 00:24:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online</title>
