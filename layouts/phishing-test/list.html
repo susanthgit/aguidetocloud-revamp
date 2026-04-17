@@ -12,17 +12,49 @@
   </div>
 
   <div class="phish-panel active" id="panel-play">
-    <!-- Start -->
-    <div class="phish-start" id="phish-start">
-      <p class="phish-start-text">You'll see realistic email scenarios. Decide: <strong>Phishing</strong>, <strong>Legit</strong>, or <strong>Verify</strong>.</p>
-      <div class="phish-diff-bar">
-        <button class="phish-diff active" data-diff="all">All Levels</button>
-        <button class="phish-diff" data-diff="1">Easy</button>
-        <button class="phish-diff" data-diff="2">Medium</button>
-        <button class="phish-diff" data-diff="3">Expert</button>
+    <!-- ─── LOBBY ─── -->
+    <div class="phish-lobby" id="phish-lobby">
+      <div class="phish-verdicts" aria-hidden="true">
+        <div class="phish-verdict-pill phish-vp-phishing">🎣 Phishing</div>
+        <div class="phish-verdict-pill phish-vp-legit">✅ Legit</div>
+        <div class="phish-verdict-pill phish-vp-verify">🔍 Verify</div>
       </div>
-      <button class="phish-btn phish-btn-primary" id="btn-start">Start Test</button>
-      <button class="phish-btn" id="btn-daily">📅 Daily Challenge</button>
+
+      <p class="phish-lobby-heading">Can you tell the difference? Pick a difficulty.</p>
+
+      <div class="phish-modes-grid">
+        <button class="phish-mode-card" data-diff="all">
+          <div class="phish-mc-icon">🎯</div>
+          <div class="phish-mc-title">All Levels</div>
+          <div class="phish-mc-desc">Mixed difficulty — the full challenge</div>
+          <div class="phish-mc-count" data-diff="all"></div>
+        </button>
+        <button class="phish-mode-card" data-diff="1">
+          <div class="phish-mc-icon">🟢</div>
+          <div class="phish-mc-title">Easy</div>
+          <div class="phish-mc-desc">Obvious red flags — learn the basics</div>
+          <div class="phish-mc-count" data-diff="1"></div>
+        </button>
+        <button class="phish-mode-card" data-diff="2">
+          <div class="phish-mc-icon">🟡</div>
+          <div class="phish-mc-title">Medium</div>
+          <div class="phish-mc-desc">Trickier — needs a closer look</div>
+          <div class="phish-mc-count" data-diff="2"></div>
+        </button>
+        <button class="phish-mode-card" data-diff="3">
+          <div class="phish-mc-icon">🔴</div>
+          <div class="phish-mc-title">Expert</div>
+          <div class="phish-mc-desc">Subtle red flags — spot the difference</div>
+          <div class="phish-mc-count" data-diff="3"></div>
+        </button>
+      </div>
+
+      <button class="phish-daily-card" id="btn-daily">
+        <div class="phish-dc-badge">Today</div>
+        <span class="phish-dc-icon">📅</span>
+        <span class="phish-dc-title">Daily Challenge</span>
+        <span class="phish-dc-desc">— same 10 for everyone today</span>
+      </button>
     </div>
 
     <!-- Game -->

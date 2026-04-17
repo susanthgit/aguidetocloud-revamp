@@ -58,7 +58,7 @@
     isDaily = false;
     current = 0; score = 0; streak = 0; bestStreak = 0; correct = 0; results = [];
 
-    document.getElementById('phish-start').style.display = 'none';
+    document.getElementById('phish-lobby').style.display = 'none';
     document.getElementById('phish-results').style.display = 'none';
     document.getElementById('phish-game').style.display = 'block';
     showQuestion();
@@ -282,6 +282,15 @@
     link.click();
   }
 
+  // ── Lobby counts ─────────────────────────────────────────────────────────
+  function updateLobbyCounts() {
+    document.querySelectorAll('.phish-mc-count').forEach(function (el) {
+      var diff = el.dataset.diff;
+      var count = diff === 'all' ? ALL.length : ALL.filter(function (s) { return String(s.difficulty) === diff; }).length;
+      el.textContent = count + ' scenarios';
+    });
+  }
+
   // Tabs with keyboard nav
   function initTabs() {
     const tabs = document.querySelectorAll('.phish-tab');
@@ -305,14 +314,21 @@
 
   function init() {
     initTabs();
+    updateLobbyCounts();
 
-    // Difficulty selector
-    document.querySelectorAll('.phish-diff').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.phish-diff').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        difficulty = btn.dataset.diff;
+    // Mode cards — set difficulty + start game
+    document.querySelectorAll('.phish-mode-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        difficulty = card.dataset.diff;
+        startGame();
       });
+    });
+
+    // Daily challenge
+    document.getElementById('btn-daily').addEventListener('click', function () {
+      isDaily = true;
+      difficulty = 'all';
+      startGame();
     });
 
     // Choice buttons
@@ -320,12 +336,10 @@
       btn.addEventListener('click', () => handleChoice(btn.dataset.answer));
     });
 
-    document.getElementById('btn-start').addEventListener('click', startGame);
-    document.getElementById('btn-daily').addEventListener('click', () => { isDaily = true; startGame(); });
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
-    document.getElementById('btn-retry').addEventListener('click', () => {
+    document.getElementById('btn-retry').addEventListener('click', function () {
       document.getElementById('phish-results').style.display = 'none';
-      document.getElementById('phish-start').style.display = 'block';
+      document.getElementById('phish-lobby').style.display = 'block';
     });
     document.getElementById('btn-share').addEventListener('click', shareScore);
     document.getElementById('btn-share-card').addEventListener('click', generateShareCard);
