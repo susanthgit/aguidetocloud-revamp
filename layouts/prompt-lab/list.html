@@ -1,1 +1,39 @@
-{{ define "main" }}{{ $d := index hugo.Data "prompt_lab" }}{{ $t := $d.techniques.techniques }}<h1>Count: {{ len $t }}</h1>{{ end }}
+{{ define "main" }}
+{{ $data := index hugo.Data "prompt_lab" }}
+{{ $techniques := $data.techniques.techniques }}
+{{ $exercises := $data.exercises.exercises }}
+{{ $combinations := $data.combinations.combinations }}
+{{ $quiz := $data.quiz.questions }}
+{{ $faq := .Params.faq }}
+{{ partial "tool-hero.html" (dict "Page" . "title" "Prompt Lab" "subtitle" "12 advanced techniques" "accent" "#2DD4BF") }}
+<div class="plab-page">
+  <div class="plab-tabs" role="tablist">
+    <button class="plab-tab active" data-tab="techniques">Techniques</button>
+    <button class="plab-tab" data-tab="lab">Lab</button>
+    <button class="plab-tab" data-tab="faq">FAQ</button>
+  </div>
+  <div class="plab-panel active" id="panel-techniques">
+    <p>Technique count: {{ len $techniques }}</p>
+    <p>Exercise count: {{ len $exercises }}</p>
+    <p>Combo count: {{ len $combinations }}</p>
+    <p>Quiz count: {{ len $quiz }}</p>
+    <div id="grid-intermediate"></div>
+    <div id="grid-expert"></div>
+  </div>
+  <div class="plab-panel" id="panel-lab">
+    <select id="lab-technique-picker"><option value="">Select</option></select>
+    <div id="lab-exercises"></div>
+    <div id="lab-empty"></div>
+  </div>
+  <div class="plab-panel" id="panel-faq">
+    <div style="max-width:800px;margin:0 auto">
+      {{ range $faq }}<details open><summary>{{ .question }}</summary><p>{{ .answer }}</p></details>{{ end }}
+    </div>
+  </div>
+</div>
+<div data-pagefind-body aria-hidden="true" style="display:none"><p>Prompt Lab Advanced Techniques</p></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }}}</script>
+<p id="data-test">DATA WILL BE INJECTED BY JS</p>
+<link rel="stylesheet" href="/css/prompt-lab.css?v={{ site.Params.cache_version }}">
+<script defer src="/js/prompt-lab.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

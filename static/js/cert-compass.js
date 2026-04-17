@@ -181,6 +181,66 @@
   domainFilter.addEventListener('change', filterCerts);
 
   // ── Closest Matches Tab ───────────────────────────────────────────────
+  // ── Skills Translator ───────────────────────────────────────────────────
+  function calcOverlap(certA, certB) {
+    const tA = new Set(certTopicMap[certA] || []);
+    const tB = new Set(certTopicMap[certB] || []);
+    if (!tA.size || !tB.size) return { pct: 0, shared: [], onlyA: [], onlyB: [] };
+    const shared = [...tA].filter(t => tB.has(t));
+    const onlyA = [...tA].filter(t => !tB.has(t));
+    const onlyB = [...tB].filter(t => !tA.has(t));
+    const union = new Set([...tA, ...tB]);
+    return { pct: Math.round((shared.length / union.size) * 100), shared, onlyA, onlyB };
+  }
+
+  function renderSkillsTranslator(certs) {
+    if (certs.length < 2) return '';
+    // Build pairwise overlaps
+    const pairs = [];
+    for (let i = 0; i < certs.length; i++) {
+      for (let j = i + 1; j < certs.length; j++) {
+        const ov = calcOverlap(certs[i].id, certs[j].id);
+        pairs.push({ a: certs[i], b: certs[j], ...ov });
+      }
+    }
+    if (!pairs.length || pairs.every(p => p.pct === 0)) return '';
+
+    const pairHtml = pairs.map(p => {
+      const avgStudy = Math.round(((p.a.study_hours_min + p.a.study_hours_max) / 2 + (p.b.study_hours_min + p.b.study_hours_max) / 2) / 2);
+      const savedHours = Math.round(avgStudy * p.pct / 100);
+      const barColor = p.pct >= 70 ? '#10B981' : p.pct >= 40 ? '#FBBF24' : '#EF4444';
+      return `<div class="compass-skill-pair">
+        <div class="compass-skill-pair-header">
+          <span style="color:${providerColor(p.a.provider)}">${esc(p.a.exam_code)}</span>
+          <span class="compass-skill-arrow">↔</span>
+          <span style="color:${providerColor(p.b.provider)}">${esc(p.b.exam_code)}</span>
+          <span class="compass-skill-pct" style="color:${barColor}">${p.pct}% overlap</span>
+        </div>
+        <div class="compass-skill-bar"><div class="compass-skill-bar-fill" style="width:${p.pct}%;background:${barColor}"></div></div>
+        <div class="compass-skill-detail">
+          <div class="compass-skill-col">
+            <strong style="color:#10B981">Shared skills (${p.shared.length})</strong>
+            ${p.shared.map(t => `<span class="compass-skill-tag compass-skill-shared">${esc(topicNameMap[t] || t)}</span>`).join('')}
+          </div>
+          ${p.onlyB.length ? `<div class="compass-skill-col">
+            <strong style="color:#FBBF24">New to learn for ${esc(p.b.exam_code)} (${p.onlyB.length})</strong>
+            ${p.onlyB.map(t => `<span class="compass-skill-tag compass-skill-new">${esc(topicNameMap[t] || t)}</span>`).join('')}
+          </div>` : ''}
+          ${p.onlyA.length ? `<div class="compass-skill-col">
+            <strong style="color:#FBBF24">New to learn for ${esc(p.a.exam_code)} (${p.onlyA.length})</strong>
+            ${p.onlyA.map(t => `<span class="compass-skill-tag compass-skill-new">${esc(topicNameMap[t] || t)}</span>`).join('')}
+          </div>` : ''}
+        </div>
+        ${savedHours > 0 ? `<div class="compass-skill-savings">~${savedHours}h study time transferable from existing knowledge</div>` : ''}
+      </div>`;
+    }).join('');
+
+    return `<details class="compass-skill-translator">
+      <summary><strong>🔄 Translate My Skills</strong> — see topic overlap between these certs</summary>
+      ${pairHtml}
+    </details>`;
+  }
+
   function renderMatches() {
     const grid = document.getElementById('matches-grid');
     grid.innerHTML = GROUPS.map(g => {
@@ -215,6 +275,7 @@
         <div class="compass-match-cols">${cols}</div>
         <div class="compass-match-notes">${esc(g.comparison_notes)}</div>
         <div class="compass-match-rec">💡 ${esc(g.recommendation)}</div>
+        ${renderSkillsTranslator(certs)}
         <div class="compass-match-cta" style="margin-top:0.75rem">
           <button class="compass-btn compass-btn-primary" onclick="window.__compassCompare('${esc(compareIds)}')">Deep Compare</button>
         </div>

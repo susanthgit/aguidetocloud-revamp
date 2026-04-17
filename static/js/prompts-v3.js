@@ -35,9 +35,9 @@
   // === STATE ===
   var S = {
     search: '',
-    platforms: [],     // OR within
-    difficulty: '',    // single select
-    roles: [],         // OR within
+    platform: '',      // single select dropdown
+    difficulty: '',    // single select dropdown
+    role: '',          // single select dropdown
     view: 'list',
     tab: 'browse',
     favorites: []      // array of prompt IDs
@@ -63,10 +63,9 @@
     D.wizPolish = document.getElementById('wizard-polish');
     D.wizTitle = document.getElementById('wizard-title');
     D.live = document.getElementById('prompts-live');
-    D.chipsPlatforms = document.getElementById('chips-platforms');
-    D.chipsDifficulty = document.getElementById('chips-difficulty');
-    D.chipsRoles = document.getElementById('chips-roles');
-    D.rolesGroup = document.getElementById('group-roles');
+    D.filterPlatform = document.getElementById('filter-platform');
+    D.filterDifficulty = document.getElementById('filter-difficulty');
+    D.filterRole = document.getElementById('filter-role');
     D.rows = document.querySelectorAll('#prompts-list-view .prompt-row');
     D.groups = document.querySelectorAll('#prompts-list-view .prompts-category-group');
   }
@@ -85,71 +84,38 @@
     } catch (e) { /* quota or private */ }
   }
 
-  // === BUILD FILTER CHIPS ===
-  function buildFilterChips() {
-    if (!D.chipsPlatforms) return;
-
-    // Platform chips (from data)
-    var html = '';
-    var platformKeys = Object.keys(PLATFORMS);
-    for (var i = 0; i < platformKeys.length; i++) {
-      var k = platformKeys[i], p = PLATFORMS[k];
-      html += '<button class="prompts-chip" data-dim="platforms" data-val="' + esc(k) + '" aria-pressed="false">' + esc(p.emoji) + ' ' + esc(p.short) + '</button>';
-    }
-    D.chipsPlatforms.innerHTML = html;
-
-    // Difficulty chips
-    var diffs = ['beginner', 'intermediate', 'advanced'];
-    html = '';
-    for (var d = 0; d < diffs.length; d++) {
-      html += '<button class="prompts-chip" data-dim="difficulty" data-val="' + diffs[d] + '" aria-pressed="false">' + humanize(diffs[d]) + '</button>';
-    }
-    D.chipsDifficulty.innerHTML = html;
-
-    // Role chips (from unique values in data)
+  // === BUILD FILTER DROPDOWNS ===
+  function buildFilterDropdowns() {
+    // Role dropdown (populated from data)
+    if (!D.filterRole) return;
     var roleSet = {};
     for (var r = 0; r < PROMPTS.length; r++) {
       var roles = PROMPTS[r].roles || [];
       for (var ri = 0; ri < roles.length; ri++) roleSet[roles[ri]] = true;
     }
     var roleKeys = Object.keys(roleSet).sort();
-    if (roleKeys.length === 0 && D.rolesGroup) {
-      D.rolesGroup.hidden = true;
-    } else {
-      html = '';
-      for (var rk = 0; rk < roleKeys.length; rk++) {
-        html += '<button class="prompts-chip" data-dim="roles" data-val="' + esc(roleKeys[rk]) + '" aria-pressed="false">' + esc(humanize(roleKeys[rk])) + '</button>';
-      }
-      D.chipsRoles.innerHTML = html;
+    var html = '<option value="">All Roles</option>';
+    for (var rk = 0; rk < roleKeys.length; rk++) {
+      html += '<option value="' + esc(roleKeys[rk]) + '">' + esc(humanize(roleKeys[rk])) + '</option>';
     }
+    D.filterRole.innerHTML = html;
   }
 
   // === FILTER LOGIC ===
   function getFilteredPrompts() {
     return PROMPTS.filter(function (p) {
-      // Search
       if (S.search) {
         var q = S.search.toLowerCase();
         var txt = (p.title + ' ' + p.description + ' ' + p.prompt + ' ' + (p.tags || []).join(' ')).toLowerCase();
         if (txt.indexOf(q) === -1) return false;
       }
-      // Platform: OR within
-      if (S.platforms.length > 0) {
-        var match = false;
-        for (var i = 0; i < S.platforms.length; i++) {
-          if ((p.platforms || []).indexOf(S.platforms[i]) !== -1) { match = true; break; }
-        }
-        if (!match) return false;
-      }
+      // Platform: single select from dropdown
+      if (S.platform && (p.platforms || []).indexOf(S.platform) === -1) return false;
       // Difficulty: single select
       if (S.difficulty && p.difficulty !== S.difficulty) return false;
-      // Roles: OR within
-      if (S.roles.length > 0) {
-        var rMatch = false;
-        for (var j = 0; j < S.roles.length; j++) {
-          if ((p.roles || []).indexOf(S.roles[j]) !== -1) { rMatch = true; break; }
-        }
-        if (!rMatch) return false;
+      // Role: single select
+      if (S.role) {
+        if ((p.roles || []).indexOf(S.role) === -1) return false;
       }
       return true;
     });
@@ -185,7 +151,7 @@
     if (D.empty) D.empty.hidden = filtered.length > 0;
 
     // Clear button
-    var hasFilters = S.search || S.platforms.length || S.difficulty || S.roles.length;
+    var hasFilters = S.search || S.platform || S.difficulty || S.role;
     if (D.clear) D.clear.hidden = !hasFilters;
 
     syncUrl();
@@ -199,14 +165,6 @@
       var p = prompts[i];
       var isFav = S.favorites.indexOf(p.id) !== -1;
       var hasVars = /\[[A-Z]/.test(p.prompt);
-      var platHtml = '';
-      for (var pi = 0; pi < (p.platforms || []).length; pi++) {
-        var pk = p.platforms[pi], pd = PLATFORMS[pk];
-        if (pd) {
-          var isBest = pk === p.bestOn;
-          platHtml += '<span class="prompt-platform-badge' + (isBest ? ' best' : '') + '">' + (isBest ? '⭐' : esc(pd.emoji)) + ' ' + esc(pd.short) + '</span>';
-        }
-      }
       html += '<div class="prompts-card" data-pid="' + esc(p.id) + '">' +
         '<div class="prompts-card-top">' +
           '<button class="prompt-fav-btn' + (isFav ? ' active' : '') + '" data-pid="' + esc(p.id) + '" aria-label="Toggle favorite" aria-pressed="' + isFav + '">' + (isFav ? '★' : '☆') + '</button>' +
@@ -214,7 +172,6 @@
         '</div>' +
         '<h3 class="prompts-card-title"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a></h3>' +
         '<p class="prompts-card-desc">' + esc(p.description) + '</p>' +
-        '<div class="prompts-card-platforms">' + platHtml + '</div>' +
         '<div class="prompts-card-actions">' +
           (hasVars ? '<button class="prompt-customize-btn" data-pid="' + esc(p.id) + '">Customize</button>' : '') +
           '<button class="prompt-copy-btn" data-pid="' + esc(p.id) + '">Copy</button>' +
@@ -526,9 +483,9 @@
   function syncUrl() {
     var p = new URLSearchParams();
     if (S.search) p.set('q', S.search);
-    if (S.platforms.length) p.set('platform', S.platforms.join(','));
+    if (S.platform) p.set('platform', S.platform);
     if (S.difficulty) p.set('difficulty', S.difficulty);
-    if (S.roles.length) p.set('role', S.roles.join(','));
+    if (S.role) p.set('role', S.role);
     if (S.view !== 'list') p.set('view', S.view);
     if (S.tab !== 'browse') p.set('tab', S.tab);
     var str = p.toString();
@@ -538,28 +495,16 @@
   function readUrl() {
     var p = new URLSearchParams(location.search);
     if (p.get('q') && D.search) { S.search = p.get('q'); D.search.value = S.search; }
-    if (p.get('platform')) S.platforms = p.get('platform').split(',');
-    if (p.get('difficulty')) S.difficulty = p.get('difficulty');
-    if (p.get('role')) S.roles = p.get('role').split(',');
+    if (p.get('platform')) { S.platform = p.get('platform'); if (D.filterPlatform) D.filterPlatform.value = S.platform; }
+    if (p.get('difficulty')) { S.difficulty = p.get('difficulty'); if (D.filterDifficulty) D.filterDifficulty.value = S.difficulty; }
+    if (p.get('role')) { S.role = p.get('role'); if (D.filterRole) D.filterRole.value = S.role; }
     if (p.get('view')) S.view = p.get('view');
     if (p.get('tab')) S.tab = p.get('tab');
   }
 
-  function syncChipStates() {
-    document.querySelectorAll('.prompts-chip').forEach(function (chip) {
-      var dim = chip.dataset.dim, val = chip.dataset.val;
-      var active = false;
-      if (dim === 'platforms') active = S.platforms.indexOf(val) !== -1;
-      else if (dim === 'difficulty') active = S.difficulty === val;
-      else if (dim === 'roles') active = S.roles.indexOf(val) !== -1;
-      chip.classList.toggle('active', active);
-      chip.setAttribute('aria-pressed', active);
-    });
-  }
-
   // === EVENT BINDING ===
   function bindEvents() {
-    // Search
+    // Search (debounced)
     var searchTimer;
     if (D.search) {
       D.search.addEventListener('input', function () {
@@ -571,34 +516,24 @@
       });
     }
 
-    // Chip clicks (event delegation)
-    document.getElementById('filter-groups').addEventListener('click', function (e) {
-      var chip = e.target.closest('.prompts-chip');
-      if (!chip) return;
-      var dim = chip.dataset.dim, val = chip.dataset.val;
-
-      if (dim === 'difficulty') {
-        // Single select — toggle
-        S.difficulty = S.difficulty === val ? '' : val;
-      } else if (dim === 'platforms') {
-        // OR — toggle in array
-        var idx = S.platforms.indexOf(val);
-        if (idx === -1) S.platforms.push(val);
-        else S.platforms.splice(idx, 1);
-      } else if (dim === 'roles') {
-        var ridx = S.roles.indexOf(val);
-        if (ridx === -1) S.roles.push(val);
-        else S.roles.splice(ridx, 1);
-      }
-      syncChipStates();
-      applyFilters();
+    // Dropdown filters
+    if (D.filterPlatform) D.filterPlatform.addEventListener('change', function () {
+      S.platform = this.value; applyFilters();
+    });
+    if (D.filterDifficulty) D.filterDifficulty.addEventListener('change', function () {
+      S.difficulty = this.value; applyFilters();
+    });
+    if (D.filterRole) D.filterRole.addEventListener('change', function () {
+      S.role = this.value; applyFilters();
     });
 
     // Clear filters
     if (D.clear) D.clear.addEventListener('click', function () {
-      S.search = ''; S.platforms = []; S.difficulty = ''; S.roles = [];
+      S.search = ''; S.platform = ''; S.difficulty = ''; S.role = '';
       if (D.search) D.search.value = '';
-      syncChipStates();
+      if (D.filterPlatform) D.filterPlatform.value = '';
+      if (D.filterDifficulty) D.filterDifficulty.value = '';
+      if (D.filterRole) D.filterRole.value = '';
       applyFilters();
     });
 
@@ -703,16 +638,25 @@
   function init() {
     cacheDom();
     loadState();
-    buildFilterChips();
+    buildFilterDropdowns();
     renderPOTD();
     readUrl();
-    syncChipStates();
     if (S.tab !== 'browse') switchTab(S.tab);
     setView(S.view);
     applyFilters();
     updateFavButtons();
     updateFavBadge();
     bindEvents();
+    // Open first accordion row by default
+    var firstRow = D.listView && D.listView.querySelector('.prompt-row');
+    if (firstRow) {
+      var body = firstRow.querySelector('.prompt-row-body');
+      var arrow = firstRow.querySelector('.prompt-row-arrow');
+      var header = firstRow.querySelector('.prompt-row-header');
+      if (body) body.hidden = false;
+      if (arrow) arrow.textContent = '▾';
+      if (header) header.setAttribute('aria-expanded', 'true');
+    }
   }
 
   document.addEventListener('DOMContentLoaded', init);

@@ -72,25 +72,22 @@
       {{/* Prompt of the Day (JS-rendered) */}}
       <div id="prompts-potd"></div>
 
-      {{/* Search */}}
+      {{/* Search + Filter Dropdowns */}}
       <div class="prompts-toolbar">
         <input type="text" id="prompts-search" class="prompts-search" placeholder="Search {{ len $allPrompts }} prompts..." autocomplete="off" aria-label="Search prompts">
-      </div>
-
-      {{/* Filter Chips (JS-populated from data) */}}
-      <div class="prompts-filter-groups" id="filter-groups">
-        <div class="prompts-filter-group">
-          <span class="prompts-filter-label">Platform</span>
-          <div class="prompts-chips" id="chips-platforms"></div>
-        </div>
-        <div class="prompts-filter-group">
-          <span class="prompts-filter-label">Difficulty</span>
-          <div class="prompts-chips" id="chips-difficulty"></div>
-        </div>
-        <div class="prompts-filter-group" id="group-roles">
-          <span class="prompts-filter-label">Role</span>
-          <div class="prompts-chips" id="chips-roles"></div>
-        </div>
+        <select id="filter-platform" class="prompts-select" aria-label="Filter by platform">
+          <option value="">All Platforms</option>
+          {{ range $key, $val := hugo.Data.platforms }}
+          <option value="{{ $key }}">{{ $val.emoji }} {{ $val.name }}</option>
+          {{ end }}
+        </select>
+        <select id="filter-difficulty" class="prompts-select" aria-label="Filter by difficulty">
+          <option value="">All Levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <select id="filter-role" class="prompts-select" aria-label="Filter by role"></select>
       </div>
 
       {{/* Results bar */}}
@@ -140,12 +137,6 @@
                   {{ with .Description }}<span class="prompt-row-desc">{{ . }}</span>{{ end }}
                 </div>
                 <span class="prompt-diff-badge" data-level="{{ $difficulty }}">{{ $difficulty | title }}</span>
-                <div class="prompt-row-platforms">
-                  {{ range $platforms }}
-                    {{ $pdata := index hugo.Data.platforms . }}
-                    {{ if $pdata }}<span class="prompt-platform-badge{{ if eq . $bestOn }} best{{ end }}">{{ if eq . $bestOn }}⭐{{ else }}{{ $pdata.emoji }}{{ end }} {{ $pdata.short }}</span>{{ end }}
-                  {{ end }}
-                </div>
                 <div class="prompt-row-actions">
                   {{ if $hasVars }}<button class="prompt-customize-btn" data-pid="{{ $pid }}">Customize</button>{{ end }}
                   <button class="prompt-copy-btn" data-pid="{{ $pid }}">Copy</button>

@@ -138,6 +138,15 @@
     <div id="cert-related-list"></div>
   </div>
 
+  {{/* Cross-link to Cert Compass */}}
+  {{ $examCode := .Params.exam_code | default "" }}
+  {{ $compassSlug := printf "ms-%s" (lower $examCode) }}
+  <div class="cert-compass-cta" style="margin:1.5rem 0;padding:1rem;border-radius:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);text-align:center">
+    <p style="font-size:0.88rem;color:#fff;margin:0 0 0.5rem"><strong>🧭 How does {{ $examCode }} compare across AWS & Google Cloud?</strong></p>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin:0 0 0.75rem">See closest matches, skill overlap, and cost comparison with our Multi-Cloud Cert Compass.</p>
+    <a href="/cert-compass/?tab=matches" style="display:inline-block;padding:0.5rem 1.2rem;border-radius:8px;background:#6366F1;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none">Open Cert Compass →</a>
+  </div>
+
   {{/* Back to all exams */}}
   {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Study Guides") }}
 </div>

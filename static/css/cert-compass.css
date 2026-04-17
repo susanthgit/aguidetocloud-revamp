@@ -324,6 +324,43 @@
 /* ── Cost Compare Table ──────────────────────────────────────────────── */
 .compass-cost-compare { margin-bottom: 1.25rem; overflow-x: auto; }
 
+/* ── Skills Translator ───────────────────────────────────────────────── */
+.compass-skill-translator {
+  margin-top: 0.85rem; padding: 0.85rem; border-radius: 10px;
+  background: rgba(var(--compass-accent-rgb), 0.04);
+  border: 1px solid rgba(var(--compass-accent-rgb), 0.15);
+}
+.compass-skill-translator summary {
+  cursor: pointer; color: var(--compass-accent); font-size: 0.85rem; list-style: none;
+}
+.compass-skill-translator summary::-webkit-details-marker { display: none; }
+.compass-skill-translator[open] summary { margin-bottom: 0.75rem; }
+.compass-skill-pair { margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.compass-skill-pair:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.compass-skill-pair-header {
+  display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;
+}
+.compass-skill-arrow { color: rgba(255,255,255,0.3); }
+.compass-skill-pct { margin-left: auto; font-size: 0.82rem; font-weight: 700; }
+.compass-skill-bar {
+  height: 6px; border-radius: 3px; background: rgba(255,255,255,0.08); margin-bottom: 0.6rem; overflow: hidden;
+}
+.compass-skill-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+.compass-skill-detail { display: flex; gap: 1rem; flex-wrap: wrap; }
+.compass-skill-col { flex: 1; min-width: 180px; }
+.compass-skill-col strong { display: block; font-size: 0.72rem; margin-bottom: 0.3rem; }
+.compass-skill-tag {
+  display: inline-block; font-size: 0.68rem; padding: 0.15rem 0.45rem; border-radius: 5px;
+  margin: 0.15rem 0.1rem; font-weight: 500;
+}
+.compass-skill-shared { background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.2); }
+.compass-skill-new { background: rgba(251,191,36,0.1); color: #FBBF24; border: 1px solid rgba(251,191,36,0.2); }
+.compass-skill-savings {
+  font-size: 0.75rem; color: #10B981; margin-top: 0.5rem; font-weight: 600;
+  padding: 0.3rem 0.6rem; border-radius: 6px;
+  background: rgba(16,185,129,0.08); display: inline-block;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .compass-grid { grid-template-columns: 1fr; }
