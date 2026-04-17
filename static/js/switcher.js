@@ -317,6 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {name:'Prompt Library',url:'/prompts/'},
     {name:'Prompt Polisher',url:'/prompt-polisher/'},
     {name:'Prompt Guide',url:'/prompt-guide/'},
+    {name:'Advanced Prompt Lab',url:'/prompt-lab/'},
     {name:'Copilot Readiness',url:'/copilot-readiness/'},
     {name:'Copilot Features',url:'/copilot-matrix/'},
     {name:'ROI Calculator',url:'/roi-calculator/'},

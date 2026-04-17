@@ -63,6 +63,17 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
+url = "/prompt-lab/"
+emoji = "🧪"
+name = "Prompt Lab"
+short = "Prompt Lab"
+desc = "Master 12 advanced prompting techniques with hands-on exercises"
+color = "#2DD4BF"
+category = "learning"
+visual = "scatter"
+is_tool = true
+
+[[tools]]
 url = "/copilot-readiness/"
 emoji = "🎯"
 name = "Copilot Readiness"

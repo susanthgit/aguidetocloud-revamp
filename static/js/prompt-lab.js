@@ -84,13 +84,16 @@
 
   function restoreUrl() {
     var p = new URLSearchParams(window.location.search);
-    if (p.get('tab')) switchTab(p.get('tab'));
-    if (p.get('technique')) {
-      S.labTechnique = p.get('technique');
+    var validTabs = ['techniques', 'lab', 'combine', 'quiz', 'faq'];
+    var tab = p.get('tab');
+    if (tab && validTabs.indexOf(tab) !== -1) switchTab(tab);
+    var tech = p.get('technique');
+    if (tech && T.some(function (t) { return t.id === tech; })) {
+      S.labTechnique = tech;
       var picker = $('lab-technique-picker');
       if (picker) picker.value = S.labTechnique;
       renderExercises();
-      if (p.get('tab') !== 'lab') switchTab('lab');
+      if (tab !== 'lab') switchTab('lab');
     }
   }
 
@@ -126,11 +129,17 @@
     }).join('');
   }
 
+  function safeUrl(url) {
+    if (!url) return '/prompt-guide/';
+    if (url.charAt(0) === '/' || url.indexOf('https://') === 0 || url.indexOf('http://') === 0) return url;
+    return '/prompt-guide/';
+  }
+
   function renderCardBody(t) {
     var h = '';
 
     if (t.prerequisite) {
-      h += '<p class="plab-prereq">Builds on: <a href="' + esc(t.prerequisite_url || '/prompt-guide/') + '">' + esc(t.prerequisite) + '</a> from the Prompt Guide</p>';
+      h += '<p class="plab-prereq">Builds on: <a href="' + esc(safeUrl(t.prerequisite_url)) + '">' + esc(t.prerequisite) + '</a> from the Prompt Guide</p>';
     }
 
     h += '<p style="font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.5;margin:0.5rem 0">' + esc(t.description) + '</p>';
@@ -290,7 +299,7 @@
     var items = qa('li', criteriaEl);
     items.forEach(function (li, idx) {
       if (!ex.keywords[idx]) return;
-      var kws = ex.keywords[idx].split(',');
+      var kws = ex.keywords[idx].toLowerCase().split(',');
       var met = kws.some(function (kw) { return lower.indexOf(kw.trim()) !== -1; });
       li.classList.toggle('met', met);
     });
@@ -340,7 +349,12 @@
     });
 
     function checkReady() {
-      btn.disabled = !selects[0].value || !selects[1].value;
+      var v1 = selects[0].value, v2 = selects[1].value, v3 = selects[2] ? selects[2].value : '';
+      var vals = [v1, v2, v3].filter(Boolean);
+      var unique = vals.filter(function (v, i) { return vals.indexOf(v) === i; });
+      var hasDupes = vals.length !== unique.length;
+      btn.disabled = !v1 || !v2 || hasDupes;
+      btn.textContent = hasDupes ? 'Remove duplicates first' : 'Generate Combined Template';
     }
     selects.forEach(function (sel) {
       if (sel) sel.addEventListener('change', checkReady);
@@ -446,8 +460,7 @@
       var opt = (q.options || []).find(function (o) { return o.value === val; });
       if (!opt || !opt.weights) return;
       Object.keys(opt.weights).forEach(function (tid) {
-        var techId = tid;
-        if (scores[techId] !== undefined) scores[techId] += opt.weights[tid];
+        if (scores[tid] !== undefined) scores[tid] += (Number(opt.weights[tid]) || 0);
       });
     });
 
@@ -487,9 +500,12 @@
           if (id && !S.explored[id]) {
             S.explored[id] = true;
             card.classList.add('explored');
+            var badges = card.querySelector('.plab-card-badges');
+            if (badges && !badges.querySelector('.plab-badge-explored')) {
+              badges.insertAdjacentHTML('afterbegin', '<span class="plab-badge plab-badge-explored">✓</span>');
+            }
             save();
             updateProgress();
-            renderTechniques();
           }
         }
         return;
@@ -518,6 +534,7 @@
           if (picker) picker.value = tid;
           renderExercises();
           switchTab('lab');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
           break;
 
         case 'copy-pattern':
@@ -568,18 +585,21 @@
   /* ── Copy ──────────────────────────────────────────────────────────────── */
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () { toast('Copied!'); });
+      navigator.clipboard.writeText(text).then(function () { toast('Copied!'); }).catch(function () { fallbackCopy(text); });
     } else {
-      var ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      toast('Copied!');
+      fallbackCopy(text);
     }
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); toast('Copied!'); } catch (e) { toast('Copy failed — select manually'); }
+    document.body.removeChild(ta);
   }
 
   /* ── Toast ─────────────────────────────────────────────────────────────── */

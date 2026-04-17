@@ -1,39 +1,74 @@
 {{ define "main" }}
-{{ $data := index hugo.Data "prompt_lab" }}
-{{ $techniques := $data.techniques.techniques }}
-{{ $exercises := $data.exercises.exercises }}
-{{ $combinations := $data.combinations.combinations }}
-{{ $quiz := $data.quiz.questions }}
+{{ $t := index hugo.Data "prompt_lab" "techniques" "techniques" }}
+{{ $e := index hugo.Data "prompt_lab" "exercises" "exercises" }}
+{{ $c := index hugo.Data "prompt_lab" "combinations" "combinations" }}
+{{ $q := index hugo.Data "prompt_lab" "quiz" "questions" }}
 {{ $faq := .Params.faq }}
-{{ partial "tool-hero.html" (dict "Page" . "title" "Prompt Lab" "subtitle" "12 advanced techniques" "accent" "#2DD4BF") }}
+{{ partial "tool-hero.html" (dict "Page" . "title" "Advanced Prompt Lab" "subtitle" "12 advanced techniques, hands-on exercises, combination builder" "accent" "#2DD4BF") }}
 <div class="plab-page">
-  <div class="plab-tabs" role="tablist">
-    <button class="plab-tab active" data-tab="techniques">Techniques</button>
-    <button class="plab-tab" data-tab="lab">Lab</button>
-    <button class="plab-tab" data-tab="faq">FAQ</button>
-  </div>
-  <div class="plab-panel active" id="panel-techniques">
-    <p>Technique count: {{ len $techniques }}</p>
-    <p>Exercise count: {{ len $exercises }}</p>
-    <p>Combo count: {{ len $combinations }}</p>
-    <p>Quiz count: {{ len $quiz }}</p>
-    <div id="grid-intermediate"></div>
-    <div id="grid-expert"></div>
-  </div>
-  <div class="plab-panel" id="panel-lab">
-    <select id="lab-technique-picker"><option value="">Select</option></select>
-    <div id="lab-exercises"></div>
-    <div id="lab-empty"></div>
-  </div>
-  <div class="plab-panel" id="panel-faq">
-    <div style="max-width:800px;margin:0 auto">
-      {{ range $faq }}<details open><summary>{{ .question }}</summary><p>{{ .answer }}</p></details>{{ end }}
-    </div>
-  </div>
+<div class="plab-tabs" role="tablist">
+<button class="plab-tab active" role="tab" aria-selected="true" data-tab="techniques">Techniques</button>
+<button class="plab-tab" role="tab" aria-selected="false" data-tab="lab">Lab</button>
+<button class="plab-tab" role="tab" aria-selected="false" data-tab="combine">Combine</button>
+<button class="plab-tab" role="tab" aria-selected="false" data-tab="quiz">Which Technique?</button>
+<button class="plab-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
 </div>
-<div data-pagefind-body aria-hidden="true" style="display:none"><p>Prompt Lab Advanced Techniques</p></div>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }}}</script>
-<p id="data-test">DATA WILL BE INJECTED BY JS</p>
+<div class="plab-panel active" id="panel-techniques">
+<p class="plab-intro">12 advanced techniques that go beyond the <a href="/prompt-guide/">Prompt Guide</a> fundamentals. Click any card to learn the pattern, see before/after examples, and jump to practice.</p>
+<div class="plab-progress-bar"><div class="plab-progress-fill" id="progress-fill"></div></div>
+<p class="plab-progress-text" id="progress-text">0 of 12 explored</p>
+<h2 class="plab-tier-heading" style="--tier-color:#2DD4BF">Intermediate</h2>
+<p class="plab-tier-desc">Build on the fundamentals.</p>
+<div class="plab-grid" id="grid-intermediate"></div>
+<h2 class="plab-tier-heading" style="--tier-color:#F59E0B">Expert</h2>
+<p class="plab-tier-desc">Advanced strategies for complex problems.</p>
+<div class="plab-grid" id="grid-expert"></div>
+</div>
+<div class="plab-panel" id="panel-lab">
+<p class="plab-intro">Pick a technique and practice with real workplace scenarios.</p>
+<div class="plab-lab-controls">
+<label for="lab-technique-picker" class="plab-label">Choose a technique:</label>
+<select id="lab-technique-picker" class="plab-select" aria-label="Select a technique to practice"><option value="">Select a technique</option></select>
+<span class="plab-exercise-count" id="lab-exercise-count"></span>
+</div>
+<div id="lab-exercises"></div>
+<div class="plab-lab-empty" id="lab-empty"><p>Select a technique above to start practising.</p></div>
+</div>
+<div class="plab-panel" id="panel-combine">
+<p class="plab-intro">Combine techniques for maximum impact.</p>
+<h2 class="plab-section-title">Recipes</h2>
+<div class="plab-combo-grid" id="combo-grid"></div>
+<h2 class="plab-section-title" style="margin-top:2rem">Build Your Own</h2>
+<p class="plab-tier-desc">Pick 2-3 techniques to generate a combined prompt template.</p>
+<div class="plab-custom-combo">
+<div class="plab-custom-selects">
+<select id="custom-t1" class="plab-select" aria-label="First technique"><option value="">Step 1...</option></select>
+<span class="plab-flow-arrow">&#8594;</span>
+<select id="custom-t2" class="plab-select" aria-label="Second technique"><option value="">Step 2...</option></select>
+<span class="plab-flow-arrow">&#8594;</span>
+<select id="custom-t3" class="plab-select" aria-label="Third technique"><option value="">(Optional) Step 3...</option></select>
+</div>
+<button class="plab-btn" id="btn-gen-combo" disabled>Generate Combined Template</button>
+<div class="plab-custom-result" id="custom-combo-result" style="display:none"></div>
+</div>
+</div>
+<div class="plab-panel" id="panel-quiz">
+<p class="plab-intro">Not sure which technique to use? Answer 5 quick questions.</p>
+<div class="plab-quiz-progress" id="quiz-progress"></div>
+<div id="quiz-container"></div>
+<div id="quiz-results" style="display:none"></div>
+</div>
+<div class="plab-panel" id="panel-faq">
+<div style="max-width:800px;margin:0 auto;padding:0 1rem">
+{{ range $faq }}<details open><summary>{{ .question }}</summary><p>{{ .answer }}</p></details>{{ end }}
+</div>
+</div>
+</div>
+{{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "prompt-lab") }}
+<div data-pagefind-bodyaria-hidden="true" style="display:none"><h2>Prompt Lab</h2><p>Learn 12 advanced AI prompting techniques: Tree of Thought, Prompt Chaining, Skeleton Prompting, Mega Prompting, Self-Ask, Meta Prompting, Self-Reflection, Chain of Verification, Least-to-Most, Generated Knowledge, ReAct, Iterative Refinement.</p></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }},"url":"{{ .Permalink }}","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+{{ if $faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $item := $faq }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $item.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $item.answer | jsonify }}}}{{ end }}]}</script>{{ end }}
+<script>window.__plabTechniques={{ $t | jsonify | safeJS }};window.__plabExercises={{ $e | jsonify | safeJS }};window.__plabCombinations={{ $c | jsonify | safeJS }};window.__plabQuiz={{ $q | jsonify | safeJS }};</script>
 <link rel="stylesheet" href="/css/prompt-lab.css?v={{ site.Params.cache_version }}">
 <script defer src="/js/prompt-lab.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

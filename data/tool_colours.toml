@@ -56,6 +56,17 @@ category = "Prompt"
 css_namespace = "pguide-*"
 body_class = "page-prompt-guide"
 
+[[tools]]
+name = "Prompt Lab"
+slug = "prompt-lab"
+hex = "#2DD4BF"
+hue = 166
+name_friendly = "Aquamarine"
+category = "Prompt"
+css_namespace = "plab-*"
+body_class = "page-prompt-lab"
+# NOTE: Hue 166° is 82° from Guide (84°) within Prompt category — well above 45° minimum. Globally 6° from Cert Guides (160°) — accepted, different category + different saturation
+
 # ── Copilot Tools ─────────────────────────────────────────────────────────────
 
 [[tools]]
