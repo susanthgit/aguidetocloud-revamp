@@ -63,3 +63,28 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[[module.mounts]]
+  source = "static"
+  target = "static"
+  excludeFiles = ["**/{~$}*"]
+
+[[module.mounts]]
+  source = "content"
+  target = "content"
+
+[[module.mounts]]
+  source = "layouts"
+  target = "layouts"
+
+[[module.mounts]]
+  source = "data"
+  target = "data"
+
+[[module.mounts]]
+  source = "assets"
+  target = "assets"
+
+[[module.mounts]]
+  source = "archetypes"
+  target = "archetypes"
