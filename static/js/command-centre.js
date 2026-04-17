@@ -23,7 +23,7 @@
     'password-generator':'Password Generator','image-compressor':'Image Compressor',
     'typing-test':'Typing Test','countdown':'Countdown','color-palette':'Colour Palette','pomodoro':'Pomodoro'
   };
-  var SEO_IGNORE = ['karamatura','marawhara','hiking','track','trail','mount donald','tramping'];
+  var SEO_IGNORE = ['karamatura','marawhara','hiking','track','trail','mount donald','tramping','huia','dam','walk'];
 
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
   function numFmt(n) { return typeof n === 'number' ? n.toLocaleString('en-US') : String(n || 0); }
