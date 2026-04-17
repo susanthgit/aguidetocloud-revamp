@@ -12,6 +12,8 @@
     e.textContent = s || '';
     return e.innerHTML;
   }
+  function safeId(s) { return (s || '').replace(/[^a-zA-Z0-9_\-]/g, ''); }
+  function safeClass(s) { return ['critical','warning','watch','future','passed'].includes(s) ? s : 'future'; }
 
   const CACHE_KEY = 'deptime_v1';
   const CACHE_TTL = 10 * 60 * 1000;
@@ -91,7 +93,7 @@
     if (counts.critical > 0 && banner) {
       const critItems = active.filter(i => i.urgency === 'critical');
       let listHtml = critItems.map((i, idx) =>
-        `<li onclick="window.__deptimeShowDetail('${i.id}')">${idx + 1}. <strong>${esc(i.title)}</strong> — ${esc(i.urgency_label)}</li>`
+        `<li onclick="window.__deptimeShowDetail('${safeId(i.id)}')">${idx + 1}. <strong>${esc(i.title)}</strong> — ${esc(i.urgency_label)}</li>`
       ).join('');
       banner.innerHTML = `<div class="deptime-banner-header"><span class="deptime-banner-icon">🚨</span> <strong>${counts.critical} critical item${counts.critical > 1 ? 's' : ''} need${counts.critical === 1 ? 's' : ''} immediate attention</strong></div>
         <ol class="deptime-banner-list">${listHtml}</ol>`;
@@ -124,8 +126,8 @@
       html += '<div class="deptime-month-empty">Nothing this month 🎉</div>';
     } else {
       thisMonthItems.sort((a, b) => a.deadline.localeCompare(b.deadline)).forEach(i => {
-        html += `<div class="deptime-month-item deptime-month-item-${i.urgency}" onclick="window.__deptimeShowDetail('${i.id}')">
-          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${esc(i.title)}
+        html += `<div class="deptime-month-item deptime-month-item-${safeClass(i.urgency)}" onclick="window.__deptimeShowDetail('${safeId(i.id)}')">
+          <span class="deptime-month-date">${esc(i.deadline.substring(5))}</span> ${esc(i.title)}
         </div>`;
       });
     }
@@ -137,8 +139,8 @@
       html += '<div class="deptime-month-empty">Nothing next month 🎉</div>';
     } else {
       nextMonthItems.sort((a, b) => a.deadline.localeCompare(b.deadline)).slice(0, 5).forEach(i => {
-        html += `<div class="deptime-month-item deptime-month-item-${i.urgency}" onclick="window.__deptimeShowDetail('${i.id}')">
-          <span class="deptime-month-date">${i.deadline.substring(5)}</span> ${esc(i.title)}
+        html += `<div class="deptime-month-item deptime-month-item-${safeClass(i.urgency)}" onclick="window.__deptimeShowDetail('${safeId(i.id)}')">
+          <span class="deptime-month-date">${esc(i.deadline.substring(5))}</span> ${esc(i.title)}
         </div>`;
       });
       if (nextMonthItems.length > 5) html += `<div class="deptime-month-more">+${nextMonthItems.length - 5} more</div>`;
@@ -150,17 +152,18 @@
 
   /* ─── [#6] Card Rendering (refined layout) ─── */
   function renderCard(item) {
-    const urgencyClass = item.urgency || 'future';
+    const urgencyClass = safeClass(item.urgency);
+    const id = safeId(item.id);
     const actions = [];
-    if (item.migration_url) actions.push(`<a href="${item.migration_url}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 Migration</a>`);
-    if (item.official_url) actions.push(`<a href="${item.official_url}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🔗 Source</a>`);
+    if (item.migration_url) actions.push(`<a href="${esc(item.migration_url)}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">📖 Migration</a>`);
+    if (item.official_url) actions.push(`<a href="${esc(item.official_url)}" class="deptime-action-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🔗 Source</a>`);
 
     // [#5] Deep-link copy
-    actions.push(`<button class="deptime-action-link deptime-share-btn" onclick="event.stopPropagation();window.__deptimeCopyLink('${item.id}')" title="Copy shareable link">Share</button>`);
+    actions.push(`<button class="deptime-action-link deptime-share-btn" onclick="event.stopPropagation();window.__deptimeCopyLink('${id}')" title="Copy shareable link">Share</button>`);
     const watchClass = isWatched(item.id) ? ' deptime-watched' : '';
-    actions.push(`<button class="deptime-action-link deptime-watch-btn${watchClass}" onclick="event.stopPropagation();window.__deptimeToggleWatch('${item.id}',this)" title="Add to watchlist">★</button>`);
+    actions.push(`<button class="deptime-action-link deptime-watch-btn${watchClass}" onclick="event.stopPropagation();window.__deptimeToggleWatch('${id}',this)" title="Add to watchlist">★</button>`);
 
-    return `<div class="deptime-card" data-id="${item.id}" onclick="window.__deptimeShowDetail('${item.id}')">
+    return `<div class="deptime-card" data-id="${id}" onclick="window.__deptimeShowDetail('${id}')">
       <div class="deptime-card-urgency deptime-card-urgency-${urgencyClass}"></div>
       <div class="deptime-card-top">
         <div class="deptime-card-countdown deptime-countdown-${urgencyClass}">
@@ -177,7 +180,7 @@
       </div>
       <div class="deptime-card-desc">${esc(item.description || '')}</div>
       <div class="deptime-card-meta">
-        <span class="deptime-meta-item">📅 ${item.deadline || 'TBD'}</span>
+        <span class="deptime-meta-item">📅 ${esc(item.deadline || 'TBD')}</span>
         ${item.mc_id ? `<span class="deptime-meta-item">📋 ${esc(item.mc_id)}</span>` : ''}
         ${item.impact ? `<span class="deptime-meta-item">Impact: ${esc(item.impact)}</span>` : ''}
         ${item.replacement ? `<span class="deptime-meta-item">➡️ ${esc(item.replacement)}</span>` : ''}
@@ -229,7 +232,7 @@
         <div class="deptime-timeline-month-label">${label} (${monthItems.length})</div>`;
       monthItems.forEach(item => {
         const day = item.deadline.substring(8, 10);
-        html += `<div class="deptime-timeline-item deptime-timeline-item-${item.urgency}" onclick="window.__deptimeShowDetail('${item.id}')">
+        html += `<div class="deptime-timeline-item deptime-timeline-item-${safeClass(item.urgency)}" onclick="window.__deptimeShowDetail('${safeId(item.id)}')">
           <span class="deptime-timeline-date">${label.split(' ')[0]} ${parseInt(day)}</span>
           <span class="deptime-timeline-title">${esc(item.title)}</span>
         </div>`;

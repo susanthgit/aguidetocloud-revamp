@@ -552,6 +552,6 @@ window.__aicostPricing = {{ $pricing | jsonify | safeJS }};
 window.__aicostBenchmarks = {{ $benchmarks | jsonify | safeJS }};
 window.__aicostTokens = {{ $tokens | jsonify | safeJS }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer crossorigin="anonymous" integrity="sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC"></script>
 <script src="/js/ai-cost-calculator.js?v={{ site.Params.cache_version }}" defer></script>
 {{ end }}

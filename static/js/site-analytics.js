@@ -1412,7 +1412,7 @@
     }
     if (yt.mainAnalysis && yt.mainAnalysis.topByVelocity && yt.mainAnalysis.topByVelocity.length) {
       var top = yt.mainAnalysis.topByVelocity[0];
-      parts.push('Fastest growing: "' + top.title.slice(0, 50) + '..." at ' + top.viewsPerDay + ' views/day.');
+      parts.push('Fastest growing: "' + esc(top.title.slice(0, 50)) + '..." at ' + top.viewsPerDay + ' views/day.');
     }
     if (!parts.length) { el.style.display = 'none'; return; }
     el.style.display = '';
@@ -1549,7 +1549,9 @@
       { label: 'Net Subs', tw: sc.thisWeek.subs, lw: sc.lastWeek.subs, chg: sc.changes.subs },
       { label: 'Likes', tw: numFmt(sc.thisWeek.likes), lw: numFmt(sc.lastWeek.likes), chg: sc.changes.likes }
     ];
-    el.innerHTML = '<div class="siteana-scorecard-grade" style="color:' + gradeColor + '">Grade: ' + sc.grade + '</div>'
+    var validGrades = ['A+','A','A-','B+','B','B-','C+','C','C-','D','F'];
+    var safeGrade = validGrades.includes(sc.grade) ? sc.grade : '?';
+    el.innerHTML = '<div class="siteana-scorecard-grade" style="color:' + gradeColor + '">Grade: ' + safeGrade + '</div>'
       + '<div class="siteana-ba-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">'
       + '<div class="siteana-ba-header"><span></span><span>This Week</span><span>Last Week</span><span>Change</span></div>'
       + metrics.map(function(m) {

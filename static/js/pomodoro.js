@@ -50,7 +50,18 @@
 
   /* ═══════════ PERSISTENCE ═══════════ */
   function loadSettings() {
-    try { const r = localStorage.getItem('pomo_settings'); if (r) Object.assign(S.settings, JSON.parse(r)); } catch {}
+    try {
+      const r = localStorage.getItem('pomo_settings');
+      if (r) {
+        const parsed = JSON.parse(r);
+        // Only copy known setting keys to prevent prototype pollution
+        for (const key of Object.keys(DEFAULTS)) {
+          if (Object.prototype.hasOwnProperty.call(parsed, key)) {
+            S.settings[key] = parsed[key];
+          }
+        }
+      }
+    } catch {}
   }
   function saveSettings() { localStorage.setItem('pomo_settings', JSON.stringify(S.settings)); }
   function loadTasks() {

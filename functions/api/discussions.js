@@ -21,7 +21,13 @@ async function graphql(pat, query) {
 }
 
 export async function onRequestGet(context) {
-  const { env } = context;
+  const { env, request } = context;
+
+  // Origin check
+  const origin = request.headers.get('origin') || '';
+  const allowedOrigins = ['https://www.aguidetocloud.com', 'https://aguidetocloud.com'];
+  const isLocalhost = origin.startsWith('http://localhost');
+
   const pat = env.GITHUB_FEEDBACK_PAT;
 
   if (!pat) {
@@ -73,6 +79,7 @@ export async function onRequestGet(context) {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, max-age=300',
+        'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : (isLocalhost ? origin : 'https://www.aguidetocloud.com'),
       },
     });
   } catch (err) {

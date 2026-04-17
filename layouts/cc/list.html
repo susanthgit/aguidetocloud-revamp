@@ -1,7 +1,7 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/command-centre.css?v={{ site.Params.cache_version }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
 
 <!-- PASSWORD GATE -->
 <div id="cc-gate" style="display:flex;align-items:center;justify-content:center;min-height:80vh">
@@ -271,7 +271,7 @@
     </section>
   </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous" integrity="sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC"></script>
 <script src="/js/command-centre.js?v={{ site.Params.cache_version }}"></script>
 <script>
 (function(){

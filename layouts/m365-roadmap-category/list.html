@@ -50,7 +50,7 @@
   "isPartOf": { "@type": "WebApplication", "name": "M365 Roadmap Tracker", "url": "https://www.aguidetocloud.com/m365-roadmap/" }
 }
 </script>
-<script>window.__roadmapCategoryFilter = '{{ .Params.roadmap_filter }}';</script>
+<script>window.__roadmapCategoryFilter = {{ .Params.roadmap_filter | jsonify }};</script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
 
 {{ partial "back-nav" (dict "Page" . "URL" "/m365-roadmap/" "Label" "Full Roadmap") }}

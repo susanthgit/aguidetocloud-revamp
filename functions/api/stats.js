@@ -189,7 +189,7 @@ const TOOL_PATHS = {
 function jsonRes(data, status = 200, cache = 'public, max-age=300') {
   return new Response(JSON.stringify(data), {
     status, headers: { 'Content-Type': 'application/json', 'Cache-Control': cache,
-      'Access-Control-Allow-Origin': '*' }
+      'Access-Control-Allow-Origin': 'https://www.aguidetocloud.com' }
   });
 }
 
@@ -582,11 +582,31 @@ async function handleMainStats(env, url) {
   return jsonRes(response);
 }
 
+// ── Rate limiter for stats API ───────────────────────────────────
+const STATS_RATE = new Map();
+const STATS_WINDOW = 60000; // 1 minute
+const STATS_MAX = 30; // 30 requests/minute per IP
+
+function isStatsRateLimited(ip) {
+  const now = Date.now();
+  const entry = STATS_RATE.get(ip);
+  if (!entry) { STATS_RATE.set(ip, { count: 1, start: now }); return false; }
+  if (now - entry.start > STATS_WINDOW) { STATS_RATE.set(ip, { count: 1, start: now }); return false; }
+  entry.count++;
+  return entry.count > STATS_MAX;
+}
+
 // ── Main Handler ─────────────────────────────────────────────────
 
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
+
+  // Rate limit
+  const clientIp = request.headers.get('cf-connecting-ip') || 'unknown';
+  if (isStatsRateLimited(clientIp)) {
+    return jsonRes({ error: 'Too many requests' }, 429, 'no-cache');
+  }
 
   try {
     if (url.searchParams.get('realtime') === '1') return await handleRealtime(env);
@@ -596,6 +616,6 @@ export async function onRequestGet(context) {
     return await handleMainStats(env, url);
   } catch (e) {
     console.error('Stats error:', e.message, e.stack);
-    return jsonRes({ error: e.message }, 500);
+    return jsonRes({ error: 'Internal server error' }, 500);
   }
 }

@@ -50,7 +50,7 @@
   {{ partial "back-nav" (dict "Page" . "URL" "/ai-news/" "Label" "AI News") }}
 </div>
 <script>
-  window.__ainewsCategoryFilter = "{{ .Params.category_filter }}";
+  window.__ainewsCategoryFilter = {{ .Params.category_filter | jsonify }};
 </script>
 <script src="/js/ainews.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

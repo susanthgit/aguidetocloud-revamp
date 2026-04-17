@@ -72,8 +72,10 @@ export async function onRequestPost(context) {
   const { request, env } = context;
 
   // Origin check
-  const origin = request.headers.get('origin') || request.headers.get('referer') || '';
-  if (!origin.includes('aguidetocloud.com') && !origin.includes('localhost')) {
+  const origin = request.headers.get('origin') || '';
+  const allowedOrigins = ['https://www.aguidetocloud.com', 'https://aguidetocloud.com'];
+  const isLocalhost = origin.startsWith('http://localhost');
+  if (!allowedOrigins.includes(origin) && !isLocalhost) {
     return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
   }
 
