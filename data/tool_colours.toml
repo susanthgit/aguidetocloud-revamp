@@ -67,6 +67,17 @@ css_namespace = "plab-*"
 body_class = "page-prompt-lab"
 # NOTE: Hue 166° is 82° from Guide (84°) within Prompt category — well above 45° minimum. Globally 6° from Cert Guides (160°) — accepted, different category + different saturation
 
+[[tools]]
+name = "Prompt Tester"
+slug = "prompt-tester"
+hex = "#F97316"
+hue = 25
+name_friendly = "Orange"
+category = "Prompt"
+css_namespace = "ptest-*"
+body_class = "page-prompt-tester"
+# NOTE: Hue 25° is 59° from nearest Prompt tool (Guide 84°) — well above 45° minimum. Globally close to Rename Tracker 28° and Countdown 30° — accepted, different categories + different saturation
+
 # ── Copilot Tools ─────────────────────────────────────────────────────────────
 
 [[tools]]
@@ -175,6 +186,17 @@ body_class = "page-ai-cost-calculator"
 # NOTE: Hue 113° is 29° from Prompt Guide (84°) and PS Builder (142°) — accepted compromise, max equidistant in largest gap
 
 # ── Admin & Security ──────────────────────────────────────────────────────────
+
+[[tools]]
+name = "M365 Licence Picker"
+slug = "licence-picker"
+hex = "#5AA830"
+hue = 99
+name_friendly = "Value Green"
+category = "Admin"
+css_namespace = "licpick-*"
+body_class = "page-licence-picker"
+# NOTE: Hue 99° equidistant in largest gap (Lime 84° to Money Green 113°). Same approach as AI Cost Calculator.
 
 [[tools]]
 name = "Licensing Simplifier"
@@ -548,6 +570,17 @@ category = "Community"
 css_namespace = "itday-*"
 body_class = "page-it-day-sim"
 # NOTE: Hue 320° is 5° from Bingo 325° — accepted, desaturated vs vivid
+
+[[tools]]
+name = "Copilot Demo Script Builder"
+slug = "demo-scripts"
+hex = "#F97316"
+hue = 25
+name_friendly = "Vivid Orange"
+category = "Copilot"
+css_namespace = "demoscr-*"
+body_class = "page-demo-scripts"
+# NOTE: Hue 25° is 3° from Rename Tracker 28° and Countdown 30° — accepted, high saturation vivid orange vs muted bronze/tangerine
 
 # ── Community (non-tool) ──────────────────────────────────────────────────────
 

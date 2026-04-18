@@ -53,6 +53,8 @@ TOOLS = [
     ("cs-companion", "/cs-companion/"),
     ("instruct-builder", "/instruct-builder/"),
     ("agent-builder-guide", "/agent-builder-guide/"),
+    ("demo-scripts", "/demo-scripts/"),
+    ("prompt-tester", "/prompt-tester/"),
 ]
 
 WIDTH = 1280

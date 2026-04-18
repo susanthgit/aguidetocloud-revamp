@@ -15,6 +15,9 @@ tagline = "8 prompt engineering techniques. Hands-on practice. Zero jargon."
 [tools.prompt-lab]
 tagline = "Master 12 advanced AI prompting techniques. Practice with real exercises."
 
+[tools.prompt-tester]
+tagline = "A/B compare two prompts side-by-side. CRAFTS scoring, diff view, auto-improve."
+
 [tools.copilot-readiness]
 tagline = "Score your M365 environment across 7 pillars. Get actionable next steps."
 
@@ -26,6 +29,9 @@ tagline = "Can I build this? 15 scenarios assessed. Capability matrix. Graduate 
 
 [tools.cs-companion]
 tagline = "Your Copilot Studio guide. 12 scenarios. 7 capabilities. Governance checklists. Design patterns."
+
+[tools.licence-picker]
+tagline = "Pick features you need. Get the cheapest M365 plan. Shopping cart for licences."
 
 [tools.security-toolkit]
 tagline = "50-question CIS assessment. Email DNS generator. Remediation scripts. No tenant access."
@@ -149,6 +155,9 @@ tagline = "Guess the PowerShell command. 30 tasks. Timed quiz. Category mastery 
 
 [tools.it-day-sim]
 tagline = "Choose-your-adventure as an IT admin. Every choice has consequences."
+
+[tools.demo-scripts]
+tagline = "Pick a scenario. Configure audience & duration. Get a complete Copilot demo script."
 
 [tools.instruct-builder]
 tagline = "5 fields. 5 platforms. Pro-quality agent instructions in seconds."

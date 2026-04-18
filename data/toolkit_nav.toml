@@ -74,6 +74,17 @@ visual = "scatter"
 is_tool = true
 
 [[tools]]
+url = "/prompt-tester/"
+emoji = "🔬"
+name = "Prompt Tester"
+short = "Tester"
+desc = "A/B compare two prompts with CRAFTS scoring — see which is better"
+color = "#F97316"
+category = "prompt"
+visual = "bars"
+is_tool = true
+
+[[tools]]
 url = "/copilot-readiness/"
 emoji = "🎯"
 name = "M365 Copilot Readiness"
@@ -181,6 +192,17 @@ desc = "Total AI adoption cost — licensing, tokens, training, governance, budg
 color = "#66C559"
 category = "planning"
 visual = "gauge"
+is_tool = true
+
+[[tools]]
+url = "/licence-picker/"
+emoji = "🛒"
+name = "M365 Licence Picker"
+short = "Licence Picker"
+desc = "Pick features you need — get the cheapest M365 plan instantly"
+color = "#5AA830"
+category = "planning"
+visual = "grid"
 is_tool = true
 
 [[tools]]
@@ -565,6 +587,17 @@ short = "Instruct Builder"
 desc = "Generate platform-optimised AI agent instructions in seconds"
 color = "#2DD4BF"
 category = "agent"
+visual = "lines"
+is_tool = true
+
+[[tools]]
+url = "/demo-scripts/"
+emoji = "🎬"
+name = "Copilot Demo Script Builder"
+short = "Demo Scripts"
+desc = "Generate ready-to-deliver M365 Copilot demo scripts with prompts, talking points & timing"
+color = "#F97316"
+category = "copilot"
 visual = "lines"
 is_tool = true
 

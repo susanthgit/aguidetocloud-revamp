@@ -1,0 +1,317 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/prompt-tester.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Prompt Tester — A/B Compare Any Two AI Prompts",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+
+<div class="ptest-page">
+
+  {{ partial "tool-hero.html" (dict "title" "Prompt Tester" "accent" "#F97316") }}
+
+  <div class="ptest-container">
+
+    {{/* ── Glass Pill Tabs ── */}}
+    <div class="ptest-tabs" role="tablist" aria-label="Prompt Tester sections">
+      <button class="ptest-tab active" data-tab="compare" role="tab" aria-selected="true">Compare</button>
+      <button class="ptest-tab" data-tab="history" role="tab" aria-selected="false">History</button>
+      <button class="ptest-tab" data-tab="guide" role="tab" aria-selected="false">Scoring Guide</button>
+      <button class="ptest-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
+    </div>
+
+    {{/* ═══════════ TAB 1: COMPARE ═══════════ */}}
+    <div class="ptest-panel active" id="panel-compare" role="tabpanel">
+
+      {{/* ── Optional context field ── */}}
+      <div class="ptest-context-row">
+        <label for="ptest-context" class="ptest-label-small">What task is this prompt for? <span class="ptest-optional">(optional)</span></label>
+        <input type="text" id="ptest-context" class="ptest-context-input" placeholder="e.g. Writing a blog post about Azure security" maxlength="200">
+      </div>
+
+      {{/* ── Side-by-side inputs ── */}}
+      <div class="ptest-inputs">
+        <div class="ptest-input-col">
+          <div class="ptest-input-header">
+            <label for="ptest-input-a" class="ptest-label">Prompt A</label>
+            <span class="ptest-char-count" id="ptest-count-a">0 chars</span>
+          </div>
+          <textarea id="ptest-input-a" class="ptest-textarea" placeholder="Paste your first prompt here..." rows="8" aria-label="Prompt A"></textarea>
+          <div class="ptest-live-score" id="ptest-live-a" aria-live="polite"></div>
+        </div>
+
+        <div class="ptest-swap-col">
+          <button id="ptest-swap" class="ptest-swap-btn" title="Swap A ↔ B" aria-label="Swap prompts">⇄</button>
+        </div>
+
+        <div class="ptest-input-col">
+          <div class="ptest-input-header">
+            <label for="ptest-input-b" class="ptest-label">Prompt B</label>
+            <span class="ptest-char-count" id="ptest-count-b">0 chars</span>
+          </div>
+          <textarea id="ptest-input-b" class="ptest-textarea" placeholder="Paste your second prompt here..." rows="8" aria-label="Prompt B"></textarea>
+          <div class="ptest-live-score" id="ptest-live-b" aria-live="polite"></div>
+        </div>
+      </div>
+
+      {{/* ── Action buttons ── */}}
+      <div class="ptest-actions">
+        <button id="ptest-compare-btn" class="ptest-btn-primary" disabled>🔬 Compare Prompts</button>
+        <span class="ptest-shortcut-hint">Ctrl+Enter</span>
+        <div class="ptest-examples-wrap">
+          <button id="ptest-examples-btn" class="ptest-btn-secondary">💡 Try an example</button>
+          <div id="ptest-examples-menu" class="ptest-examples-menu" hidden></div>
+        </div>
+        <div class="ptest-examples-wrap">
+          <button id="ptest-template-btn" class="ptest-btn-secondary">📝 Use a template</button>
+          <div id="ptest-template-menu" class="ptest-examples-menu" hidden></div>
+        </div>
+        <button id="ptest-blind-toggle" class="ptest-btn-secondary">🎲 Blind Mode</button>
+        <button id="ptest-duel-btn" class="ptest-btn-secondary">⚡ Challenge</button>
+        <button id="ptest-clear-btn" class="ptest-btn-secondary" style="display:none">✕ Clear</button>
+      </div>
+
+      {{/* ── V3: Blind Mode reveal bar ── */}}
+      <div id="ptest-blind-bar" class="ptest-blind-bar" style="display:none">
+        <span>🎲 Blind Mode active — scores hidden until you guess</span>
+        <button id="ptest-blind-guess-a" class="ptest-btn-secondary">I think left is better</button>
+        <button id="ptest-blind-guess-b" class="ptest-btn-secondary">I think right is better</button>
+      </div>
+
+      {{/* ── V3: Challenge/Duel mode ── */}}
+      <div id="ptest-duel" class="ptest-duel" style="display:none">
+        <div class="ptest-duel-header">
+          <h3>⚡ Prompt Challenge</h3>
+          <button id="ptest-duel-close" class="ptest-btn-secondary">✕ Exit</button>
+        </div>
+        <div class="ptest-duel-task" id="ptest-duel-task"></div>
+        <div class="ptest-duel-timer" id="ptest-duel-timer">60</div>
+        <textarea id="ptest-duel-input" class="ptest-textarea" rows="6" placeholder="Write your best prompt for this task..."></textarea>
+        <button id="ptest-duel-submit" class="ptest-btn-primary">🏁 Submit &amp; Score</button>
+        <div id="ptest-duel-result" class="ptest-duel-result" style="display:none"></div>
+      </div>
+
+      {{/* ── Results ── */}}
+      <div id="ptest-results" class="ptest-results" hidden>
+
+        {{/* ── Score banner ── */}}
+        <div class="ptest-score-banner">
+          <div class="ptest-score-side">
+            <span class="ptest-score-label-top">Prompt A</span>
+            <span class="ptest-score-number" id="ptest-score-a">0</span>
+            <span class="ptest-score-max">/100</span>
+            <span class="ptest-score-label" id="ptest-label-a"></span>
+          </div>
+          <div class="ptest-verdict" id="ptest-verdict">
+            <span class="ptest-verdict-text" id="ptest-verdict-text"></span>
+            <span class="ptest-verdict-delta" id="ptest-verdict-delta"></span>
+          </div>
+          <div class="ptest-score-side">
+            <span class="ptest-score-label-top">Prompt B</span>
+            <span class="ptest-score-number" id="ptest-score-b">0</span>
+            <span class="ptest-score-max">/100</span>
+            <span class="ptest-score-label" id="ptest-label-b"></span>
+          </div>
+        </div>
+
+        {{/* ── Per-criterion comparison ── */}}
+        <div class="ptest-breakdown" id="ptest-breakdown"></div>
+
+        {{/* ── Radar chart ── */}}
+        <div class="ptest-radar-section">
+          <h3 class="ptest-section-title">🕸️ CRAFTS Profile</h3>
+          <div class="ptest-radar-wrap">
+            <svg id="ptest-radar" viewBox="0 0 300 280" class="ptest-radar-svg"></svg>
+            <div class="ptest-radar-legend">
+              <span class="ptest-radar-legend-a">● Prompt A</span>
+              <span class="ptest-radar-legend-b">● Prompt B</span>
+            </div>
+          </div>
+        </div>
+
+        {{/* ── Explanation ── */}}
+        <div class="ptest-explanation" id="ptest-explanation"></div>
+
+        {{/* ── Diff view ── */}}
+        <div class="ptest-diff-section" id="ptest-diff-section" style="display:none">
+          <h3 class="ptest-section-title">📝 Word Diff</h3>
+          <div class="ptest-diff" id="ptest-diff"></div>
+        </div>
+
+        {{/* ── Action row ── */}}
+        <div class="ptest-result-actions">
+          <button id="ptest-copy-winner" class="ptest-btn-primary">📋 Copy Stronger Prompt</button>
+          <button id="ptest-improve" class="ptest-btn-secondary">✨ Improve Weaker Prompt</button>
+          <button id="ptest-fix-both" class="ptest-btn-secondary">🔧 Fix Both &amp; Re-Compare</button>
+          <select id="ptest-platform" class="ptest-platform-select" aria-label="Optimise for platform">
+            <option value="general">Any AI platform</option>
+            <option value="copilot">M365 Copilot</option>
+            <option value="chatgpt">ChatGPT</option>
+            <option value="claude">Claude</option>
+            <option value="gemini">Gemini</option>
+          </select>
+          <button id="ptest-share" class="ptest-btn-secondary">🔗 Share</button>
+          <button id="ptest-export-img" class="ptest-btn-secondary">📸 Export Image</button>
+          <button id="ptest-presenter" class="ptest-btn-secondary">📺 Presenter</button>
+          <a href="/prompts/" class="ptest-btn-secondary ptest-lib-link">📚 Browse Prompt Library</a>
+        </div>
+
+        {{/* ── Improved prompt output (side-by-side) ── */}}
+        <div id="ptest-improved" class="ptest-improved" style="display:none">
+          <h3 class="ptest-section-title">✨ Improved Version</h3>
+          <div class="ptest-improved-grid">
+            <div class="ptest-improved-side">
+              <span class="ptest-improved-label">Original</span>
+              <div class="ptest-improved-text" id="ptest-original-text"></div>
+            </div>
+            <div class="ptest-improved-side">
+              <span class="ptest-improved-label">Improved</span>
+              <div class="ptest-improved-text" id="ptest-improved-text"></div>
+            </div>
+          </div>
+          <div class="ptest-improved-score" id="ptest-improved-score"></div>
+          <button id="ptest-copy-improved" class="ptest-btn-secondary">📋 Copy Improved</button>
+        </div>
+
+        {{/* ── Confetti canvas ── */}}
+        <canvas id="ptest-confetti" class="ptest-confetti"></canvas>
+
+      </div>
+
+    </div>
+
+    {{/* ═══════════ TAB 2: HISTORY ═══════════ */}}
+    <div class="ptest-panel" id="panel-history" role="tabpanel">
+      <div class="ptest-history-header">
+        <h2>Comparison History</h2>
+        <p class="ptest-subtle">Stored locally in this browser only. Nothing leaves your device.</p>
+        <div class="ptest-history-actions">
+          <button id="ptest-export-history" class="ptest-btn-secondary">📥 Export All</button>
+          <button id="ptest-clear-history" class="ptest-btn-secondary ptest-btn-danger">🗑️ Clear History</button>
+        </div>
+      </div>
+      <div id="ptest-history-list" class="ptest-history-list">
+        <p class="ptest-empty">No comparisons yet. Compare two prompts to see them here.</p>
+      </div>
+
+      {{/* V3: Score History Chart */}}
+      <div id="ptest-chart-section" class="ptest-chart-section" style="display:none">
+        <h3 class="ptest-section-title">📈 Score Trend</h3>
+        <svg id="ptest-chart" viewBox="0 0 600 200" class="ptest-chart-svg"></svg>
+      </div>
+
+      {{/* V3: CRAFTS Weakness Heatmap */}}
+      <div id="ptest-heatmap-section" class="ptest-heatmap-section" style="display:none">
+        <h3 class="ptest-section-title">🔥 Your CRAFTS Weaknesses</h3>
+        <p class="ptest-subtle">Based on your Prompt A entries (the "before" prompts). Most people forget the same pillars.</p>
+        <div id="ptest-heatmap" class="ptest-heatmap"></div>
+      </div>
+    </div>
+
+    {{/* ═══════════ TAB 3: SCORING GUIDE ═══════════ */}}
+    <div class="ptest-panel" id="panel-guide" role="tabpanel">
+      <div class="ptest-guide">
+        <h2>The CRAFTS Scoring Framework</h2>
+        <p>Every AI prompt is scored across six pillars. Here's what the Prompt Tester looks for and how to score higher.</p>
+
+        <div class="ptest-guide-grid">
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">C</span><strong>Context</strong><span class="ptest-guide-weight">15 pts</span></div>
+            <p>Background information, domain keywords, specific details that help the AI understand your situation.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0–5):</strong> No background. "Write about AI."</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (6–10):</strong> Some detail. "Write about AI for my company blog."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (11–15):</strong> Rich context. "I'm an IT admin at a 500-person company migrating to Azure. Write about AI governance for our internal newsletter."</div>
+            </div>
+          </div>
+
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">R</span><strong>Role</strong><span class="ptest-guide-weight">20 pts</span></div>
+            <p>A persona or expertise level for the AI to adopt — guides the depth and style of the response.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0):</strong> No role assigned.</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (15):</strong> "Act as a consultant."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (20):</strong> "You are a senior cloud architect with 10 years of Azure experience."</div>
+            </div>
+          </div>
+
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">A</span><strong>Action</strong><span class="ptest-guide-weight">25 pts</span></div>
+            <p>Clear task verbs, specific instructions, multi-step requests. The core of what you want done.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0–8):</strong> Vague. "Help me with security."</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (9–18):</strong> Clear verb. "Create a security checklist for Azure."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (19–25):</strong> Detailed. "Create a 10-item security checklist for Azure VMs, covering network, identity, and encryption."</div>
+            </div>
+          </div>
+
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">F</span><strong>Format</strong><span class="ptest-guide-weight">15 pts</span></div>
+            <p>Explicit output structure — table, bullet points, JSON, step-by-step, code block, etc.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0):</strong> No format specified.</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (6–12):</strong> Implicit format. "List the benefits."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (13–15):</strong> Explicit. "Format as a markdown table with columns: Risk, Impact, Mitigation."</div>
+            </div>
+          </div>
+
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">T</span><strong>Tone</strong><span class="ptest-guide-weight">10 pts</span></div>
+            <p>Voice, formality, audience awareness — professional, casual, beginner-friendly, executive, etc.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0):</strong> No tone guidance.</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (5–8):</strong> Audience specified. "For a technical audience."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (9–10):</strong> Explicit tone. "Use a professional but approachable tone suitable for IT managers."</div>
+            </div>
+          </div>
+
+          <div class="ptest-guide-card">
+            <div class="ptest-guide-header"><span class="ptest-guide-letter">S</span><strong>Scope</strong><span class="ptest-guide-weight">15 pts</span></div>
+            <p>Boundaries, constraints, exclusions, word counts, focus areas — tells the AI what NOT to do.</p>
+            <div class="ptest-guide-levels">
+              <div class="ptest-guide-level ptest-level-low"><strong>Low (0):</strong> No boundaries set.</div>
+              <div class="ptest-guide-level ptest-level-mid"><strong>Mid (4–8):</strong> Some limits. "Keep it under 500 words."</div>
+              <div class="ptest-guide-level ptest-level-high"><strong>High (9–15):</strong> Multiple constraints. "Focus on Azure only, exclude AWS. Maximum 300 words."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ptest-guide-tip">
+          <p>🎯 <strong>Pro tip:</strong> You don't need a perfect 100 for every prompt. Aim for 60+ on important prompts. The biggest gains come from adding <strong>Role</strong> (often forgotten) and <strong>Scope</strong> (most underused).</p>
+          <p>Want to practise? Try our <a href="/prompt-guide/" style="color: var(--tool-accent)">Prompt Engineering Guide</a> or score a single prompt with the <a href="/prompt-polisher/" style="color: var(--tool-accent)">Prompt Polisher</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    {{/* ═══════════ TAB 4: FAQ ═══════════ */}}
+    <div class="ptest-panel" id="panel-faq" role="tabpanel">
+      <div class="ptest-faq">
+        <h2>Frequently Asked Questions</h2>
+        {{ range .Params.faq }}
+        <details open>
+          <summary>{{ .question }}</summary>
+          <p>{{ .answer | markdownify }}</p>
+        </details>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+
+  {{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "prompt-tester") }}
+
+</div>
+
+<script src="/js/prompt-crafts-core.js?v={{ site.Params.cache_version }}"></script>
+<script src="/js/prompt-tester.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
