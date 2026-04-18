@@ -1,188 +1,228 @@
 {{ define "main" }}
-{{ $data := (index hugo.Data "agent_builder_guide") }}
-{{ $lic := $data.licensing }}
-{{ $ks := $data.knowledge_sources }}
-{{ $sh := $data.sharing }}
-{{ $tips := $data.tips }}
+{{ $lic := (index hugo.Data "agent_builder_guide").licensing }}
+{{ $ks := (index hugo.Data "agent_builder_guide").knowledge_sources }}
+{{ $tips := (index hugo.Data "agent_builder_guide").tips }}
+{{ $gallery := (index hugo.Data "agent_builder_guide").gallery }}
+{{ $cmp := (index hugo.Data "agent_builder_guide").comparison }}
 <link rel="stylesheet" href="/css/agent-builder-guide.css?v={{ site.Params.cache_version }}">
-
-{{ partial "tool-hero.html" (dict "title" "M365 Agent Builder Guide" "accent" "#5B9F73") }}
-
+{{ partial "tool-hero.html" (dict "title" "M365 Agent Builder Helper" "accent" "#00A4EF") }}
 <div class="abguide-page">
-  <div class="abguide-tabs" role="tablist">
-    <button class="abguide-tab active" role="tab" aria-selected="true" data-tab="capabilities">What Can I Do?</button>
-    <button class="abguide-tab" role="tab" aria-selected="false" data-tab="knowledge">Knowledge Sources</button>
-    <button class="abguide-tab" role="tab" aria-selected="false" data-tab="sharing">Sharing & Privacy</button>
-    <button class="abguide-tab" role="tab" aria-selected="false" data-tab="tips">Tips & Tricks</button>
-    <button class="abguide-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
-  </div>
-
-  <!-- TAB 1: WHAT CAN I DO? -->
-  <div class="abguide-panel active" id="panel-capabilities">
-    <p style="text-align:center;color:rgba(255,255,255,0.6);margin-bottom:1.5rem">Pick your licence tier to see what's available in Agent Builder</p>
-    <div class="abguide-tier-cards">
-      {{ range $lic.tiers }}<button class="abguide-tier-card" data-tier="{{ .id }}" style="--tier-colour:{{ .badge_colour }}">
-        <span class="abguide-tier-badge" style="background:{{ .badge_colour }}">{{ .label }}</span>
-        <h3>{{ .name }}</h3><p>{{ .description }}</p>
-        <span class="abguide-tier-example">{{ .example }}</span>
-        <span class="abguide-tier-pricing">{{ .pricing_note }}</span>
-      </button>{{ end }}
-    </div>
-    <div id="capability-matrix" class="abguide-matrix" style="display:none">
-      <h3 id="matrix-title" style="text-align:center;margin:1.5rem 0 1rem"></h3>
-      <div class="abguide-cap-grid" id="cap-grid"></div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;text-align:center;margin-top:1rem">Capabilities may vary based on admin settings and tenant configuration</p>
-    </div>
-    <h3 style="margin-top:2rem;margin-bottom:1rem;color:#5B9F73">What do you want to build?</h3>
-    <div class="abguide-scenario-grid">
-      {{ range $lic.scenarios }}<div class="abguide-scenario-card" data-requires="{{ .requires }}">
-        <span class="abguide-scenario-icon">{{ .icon }}</span>
-        <strong>{{ .title }}</strong><p>{{ .description }}</p>
-        <span class="abguide-scenario-badge" data-req="{{ .requires }}"></span>
-      </div>{{ end }}
-    </div>
-    <div class="abguide-cta-row">
-      <a href="/agent-instructions/" class="abguide-cta">Need to write instructions? Agent Instruction Builder</a>
-      <a href="/agent-365-planner/" class="abguide-cta">Already have agents? Agent 365 Planner</a>
-    </div>
-  </div>
-
-  <!-- TAB 2: KNOWLEDGE SOURCES -->
-  <div class="abguide-panel" id="panel-knowledge">
-    <div class="abguide-limits-summary">
-      <h3 style="margin-bottom:1rem">Quick Reference — All Limits</h3>
-      <div class="abguide-limits-grid">
-        {{ range $tips.limits }}<div class="abguide-limit-pill">
-          <strong>{{ .item }}</strong>
-          <span class="abguide-limit-value">{{ .value }}</span>
-          <span class="abguide-limit-tip">{{ .tip }}</span>
-        </div>{{ end }}
-      </div>
-    </div>
-    <h3 style="margin:2rem 0 1rem">Detailed Source Guide</h3>
-    {{ range $ks.sources }}<details class="abguide-source-card" {{ if eq .id "sharepoint" }}open{{ end }}>
-      <summary>
-        <span class="abguide-source-icon">{{ .icon }}</span>
-        <span class="abguide-source-name">{{ .name }}</span>
-        <span class="abguide-source-limit">{{ .limit }}</span>
-        <span class="abguide-source-licence">{{ .licence }}</span>
-      </summary>
-      <div class="abguide-source-body">
-        <p>{{ .description }}</p>
-        {{ with .privacy_note }}<div class="abguide-privacy-callout"><strong>Privacy:</strong> {{ . }}</div>{{ end }}
-        {{ with .rules }}<h4>Rules and Limits</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-        {{ with .file_types }}<h4>File Size Limits</h4>
-        <table class="abguide-file-table"><thead><tr><th>Format</th><th>Max Size</th></tr></thead><tbody>
-        {{ range . }}<tr><td>{{ .extension }}</td><td>{{ .max_size }}</td></tr>{{ end }}
-        </tbody></table>{{ end }}
-        {{ with .tips }}<h4>Tips</h4><ul class="abguide-tips-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-        {{ with .gotchas }}<h4>Gotchas</h4><ul class="abguide-gotchas-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-      </div>
-    </details>{{ end }}
-  </div>
-
-  <!-- TAB 3: SHARING & PRIVACY -->
-  <div class="abguide-panel" id="panel-sharing">
-    <div class="abguide-highlight-card" style="--highlight:#5B9F73">
-      <h3>The #1 Question: What happens when I share my agent?</h3>
-      <p>Short answer: <strong>each user sees their own data</strong>. Your emails, Teams chats, and files are never exposed to other users. The agent respects existing M365 permissions.</p>
-      <p><strong>Exception:</strong> Embedded (uploaded) files ARE shared with everyone who has agent access. Use SharePoint for sensitive documents.</p>
-    </div>
-    <h3 style="margin:2rem 0 1rem">Privacy Matrix — Who Sees What?</h3>
-    <div class="abguide-table-wrap">
-      <table class="abguide-privacy-table">
-        <thead><tr><th>Source</th><th>Who Sees What?</th><th>Permission Model</th><th>Risk</th></tr></thead>
-        <tbody>{{ range $sh.privacy_rules }}<tr>
-          <td><strong>{{ .source }}</strong></td><td>{{ .who_sees }}</td><td>{{ .model }}</td>
-          <td><span class="abguide-risk abguide-risk--{{ .risk_level }}">{{ .risk_level }}</span></td>
-        </tr>{{ end }}</tbody>
-      </table>
-    </div>
-    <h3 style="margin:2rem 0 1rem">Enterprise Graph — How It Works</h3>
-    <div class="abguide-graph-card">
-      <p>{{ $sh.enterprise_graph.how_it_works }}</p>
-      <ul>{{ range $sh.enterprise_graph.key_principles }}<li>{{ . }}</li>{{ end }}</ul>
-    </div>
-    <h3 style="margin:2rem 0 1rem">Sensitivity Labels — Watch Out</h3>
-    <div class="abguide-label-grid">
-    {{ range $sh.label_scenarios }}<div class="abguide-label-card abguide-label--{{ .severity }}">
-      <strong>{{ .scenario }}</strong><p>{{ .what_happens }}</p>
-      <span class="abguide-label-action">{{ .action }}</span>
-    </div>{{ end }}
-    </div>
-    <h3 style="margin:2rem 0 1rem">Admin Controls</h3>
-    <div class="abguide-admin-grid">
-    {{ range $sh.admin_controls }}<div class="abguide-admin-card">
-      <strong>{{ .name }}</strong><p>{{ .description }}</p>
-      <span class="abguide-admin-loc">{{ .location }}</span>
-    </div>{{ end }}
-    </div>
-  </div>
-
-  <!-- TAB 4: TIPS & TRICKS -->
-  <div class="abguide-panel" id="panel-tips">
-    <div class="abguide-highlight-card" style="--highlight:#F59E0B">
-      <h3>{{ $tips.caps_technique.title }}</h3>
-      <p>{{ $tips.caps_technique.description }}</p>
-      <div class="abguide-caps-parts">
-      {{ range $tips.caps_technique.parts }}<div class="abguide-caps-part">
-        <strong>{{ .name }}</strong><p>{{ .description }}</p>
-        <pre class="abguide-code">{{ .example }}</pre>
-      </div>{{ end }}
-      </div>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:1rem">{{ $tips.caps_technique.why_it_works }}</p>
-    </div>
-    <h3 style="margin:2rem 0 1rem">Troubleshooting</h3>
-    <div class="abguide-trouble-grid">
-    {{ range $tips.troubleshooting }}<div class="abguide-trouble-card">
-      <div class="abguide-trouble-header">
-        <span class="abguide-trouble-sev abguide-trouble-sev--{{ .severity }}"></span>
-        <strong>{{ .problem }}</strong>
-      </div>
-      <p><strong>Cause:</strong> {{ .cause }}</p>
-      <p><strong>Fix:</strong> {{ .fix }}</p>
-    </div>{{ end }}
-    </div>
-    <h3 style="margin:2rem 0 1rem">Common Mistakes</h3>
-    <div class="abguide-mistakes-grid">
-    {{ range $tips.mistakes }}<div class="abguide-mistake-card">
-      <strong>{{ .mistake }}</strong>
-      <p class="abguide-mistake-problem">{{ .problem }}</p>
-      <p class="abguide-mistake-fix">{{ .fix }}</p>
-    </div>{{ end }}
-    </div>
-    <h3 style="margin:2rem 0 1rem">Testing Your Agent</h3>
-    <div class="abguide-steps-list">
-    {{ range $tips.testing_steps }}<div class="abguide-step-item">
-      <span class="abguide-step-num">{{ .step }}</span>
-      <div><strong>{{ .title }}</strong><p>{{ .description }}</p></div>
-    </div>{{ end }}
-    </div>
-    <div class="abguide-cta-row" style="margin-top:2rem">
-      <a href="/agent-instructions/" class="abguide-cta">Write agent instructions with Agent Instruction Builder</a>
-    </div>
-  </div>
-
-  <!-- TAB 5: FAQ -->
-  <div class="abguide-panel" id="panel-faq">
-    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-    {{ range .Params.faq }}<details open class="abguide-faq-item">
-      <summary>{{ .question }}</summary>
-      <p>{{ .answer }}</p>
-    </details>{{ end }}
-    </div>
-  </div>
-
-  {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "agent-builder-guide") }}
+<div class="abguide-search-wrap"><input type="text" id="abguide-search" class="abguide-search" placeholder="Search across all tabs..." aria-label="Search across all tabs"></div>
+<div class="abguide-tabs" role="tablist" aria-label="Agent Builder Helper sections">
+<button class="abguide-tab active" role="tab" id="tab-scenarios" aria-selected="true" aria-controls="panel-scenarios" data-tab="scenarios">Can I Build This?</button>
+<button class="abguide-tab" role="tab" id="tab-matrix" aria-selected="false" aria-controls="panel-matrix" data-tab="matrix">Capability Matrix</button>
+<button class="abguide-tab" role="tab" id="tab-knowledge" aria-selected="false" aria-controls="panel-knowledge" data-tab="knowledge">Knowledge Sources</button>
+<button class="abguide-tab" role="tab" id="tab-tips" aria-selected="false" aria-controls="panel-tips" data-tab="tips">Tips & Tools</button>
+<button class="abguide-tab" role="tab" id="tab-community" aria-selected="false" aria-controls="panel-community" data-tab="community">Community & FAQ</button>
 </div>
-
-<div data-pagefind-body aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden">
-  <h1>M365 Agent Builder Guide</h1>
-  <p>Interactive guide to Microsoft 365 Copilot Agent Builder licensing, knowledge sources, sharing, privacy, capabilities, tips and troubleshooting.</p>
+<div class="abguide-panel active" id="panel-scenarios" role="tabpanel" aria-labelledby="tab-scenarios">
+<div class="abguide-wizard" id="wizard">
+<h3 class="abguide-wizard-title">Start Here: What do you want to build?</h3>
+<div class="abguide-wizard-steps" id="wizard-steps">
+<div class="abguide-wiz-step active" data-step="1">
+<p class="abguide-wiz-q">What data does your agent need?</p>
+<div class="abguide-wiz-options">
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="web"> Public websites / web search</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="sharepoint"> SharePoint files or sites</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="files"> Upload files from my device</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="email"> Outlook emails</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="teams"> Teams chats / meetings</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="code"> Data analysis / charts</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="wiz-data" value="none"> No specific data</label>
 </div>
-
+<button class="abguide-wiz-next" data-next="2">Next &rarr;</button>
+</div>
+<div class="abguide-wiz-step" data-step="2">
+<p class="abguide-wiz-q">Who will use this agent?</p>
+<div class="abguide-wiz-options">
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-audience" value="me"> Just me</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-audience" value="team"> My team / specific people</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-audience" value="org"> Everyone in my organisation</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-audience" value="external"> External customers / public</label>
+</div>
+<div class="abguide-wiz-nav"><button class="abguide-wiz-back" data-back="1">&larr; Back</button><button class="abguide-wiz-next" data-next="3">Next &rarr;</button></div>
+</div>
+<div class="abguide-wiz-step" data-step="3">
+<p class="abguide-wiz-q">Does your agent need to take actions?</p>
+<div class="abguide-wiz-options">
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-actions" value="qa"> No &mdash; just answer questions</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-actions" value="workflow"> Yes &mdash; trigger workflows</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-actions" value="api"> Yes &mdash; call external APIs</label>
+<label class="abguide-wiz-opt"><input type="radio" name="wiz-actions" value="notify"> Yes &mdash; send notifications</label>
+</div>
+<div class="abguide-wiz-nav"><button class="abguide-wiz-back" data-back="2">&larr; Back</button><button class="abguide-wiz-result" id="wizard-evaluate">Show My Results</button></div>
+</div>
+</div>
+<div id="wizard-result" class="abguide-wizard-result" style="display:none" aria-live="polite"></div>
+</div>
+<div class="abguide-filter-bar">
+<span class="abguide-filter-label">Filter:</span>
+<button class="abguide-filter active" data-filter="all">All</button>
+<button class="abguide-filter" data-filter="free">Free</button>
+<button class="abguide-filter" data-filter="paygo">Pay-as-you-go</button>
+<button class="abguide-filter" data-filter="paid">Licensed</button>
+<button class="abguide-filter" data-filter="yes">Possible</button>
+<button class="abguide-filter" data-filter="no">Needs Studio</button>
+</div>
+<div class="abguide-scenario-grid">
+{{ range $lic.scenarios }}<button class="abguide-scenario-card" data-verdict="{{ .verdict }}" data-requires="{{ .requires }}" data-knowledge="{{ delimit .knowledge "," }}" data-tip="{{ .tip }}" {{ with .partial_reason }}data-partial="{{ . }}"{{ end }}{{ with .studio_reason }}data-studio="{{ . }}"{{ end }}{{ with .sample_instructions }}data-instructions="{{ . }}"{{ end }}{{ with .conversation_starters }}data-starters="{{ delimit . "|" }}"{{ end }}{{ with .test_prompts }}data-tests="{{ delimit . "|" }}"{{ end }}>
+<span class="abguide-scenario-icon">{{ .icon }}</span>
+<strong>{{ .title }}</strong>
+<p>{{ .description }}</p>
+<span class="abguide-verdict abguide-verdict--{{ .verdict }}">{{ if eq .verdict "yes" }}&#10003; Yes{{ else if eq .verdict "partial" }}&#9888; Partial{{ else }}&#10007; Studio{{ end }}</span>
+</button>{{ end }}
+</div>
+<div id="scenario-detail" class="abguide-detail-card" style="display:none"><button class="abguide-detail-close" aria-label="Close">&times;</button><div id="scenario-detail-body"></div></div>
+<details class="abguide-simulator" id="simulator">
+<summary class="abguide-sim-toggle">Try the Agent Builder Simulator</summary>
+<div class="abguide-sim-body">
+<p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">Experience the Agent Builder workflow without leaving this page.</p>
+<div class="abguide-sim-steps">
+<div class="abguide-sim-step active" data-sim="1"><label>Agent Name</label><input type="text" id="sim-name" class="abguide-sim-input" placeholder="e.g. HR Policy Bot" aria-label="Agent name"></div>
+<div class="abguide-sim-step" data-sim="2"><label>Instructions <span id="sim-char-count" class="abguide-sim-counter">0 / 8,000</span></label><textarea id="sim-instructions" class="abguide-sim-textarea" placeholder="Describe what your agent should do..." rows="6" maxlength="8000" aria-label="Agent instructions"></textarea></div>
+<div class="abguide-sim-step" data-sim="3"><label>Knowledge Sources</label><div class="abguide-sim-sources">
+<label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="web"> Web search</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="sharepoint"> SharePoint</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="files"> Upload files</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="email"> Email</label>
+<label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="teams"> Teams</label>
+</div></div>
+<div class="abguide-sim-step" data-sim="4"><label>Conversation Starters</label>
+<input type="text" class="abguide-sim-input sim-starter" placeholder="e.g. What's our leave policy?" aria-label="Starter 1">
+<input type="text" class="abguide-sim-input sim-starter" placeholder="e.g. How do I submit expenses?" aria-label="Starter 2">
+<input type="text" class="abguide-sim-input sim-starter" placeholder="e.g. Who's my manager?" aria-label="Starter 3">
+</div>
+<div class="abguide-sim-step" data-sim="5"><div id="sim-preview" class="abguide-sim-preview"></div></div>
+</div>
+<div class="abguide-sim-nav"><button class="abguide-sim-back" id="sim-back">&larr; Back</button><span class="abguide-sim-progress" id="sim-progress">Step 1 of 5</span><button class="abguide-sim-next" id="sim-next">Next &rarr;</button></div>
+</div></details>
+<div class="abguide-cta-row"><a href="/agent-instructions/" class="abguide-cta">Write agent instructions</a><a href="/agent-365-planner/" class="abguide-cta">Agent 365 Planner</a></div>
+</div>
+<div class="abguide-panel" id="panel-matrix" role="tabpanel" aria-labelledby="tab-matrix">
+<div class="abguide-decision-guide"><h3>Which licence tier do I need?</h3>
+<div class="abguide-decision-cards">
+<div class="abguide-decision-card abguide-decision--free"><strong>Free</strong> is enough if you only need:<ul><li>Web search / public URLs</li><li>Code interpreter &amp; charts</li><li>Image generation</li></ul><span class="abguide-decision-admin">No admin action needed</span></div>
+<div class="abguide-decision-card abguide-decision--paygo"><strong>Pay-as-you-go</strong> if you also need:<ul><li>SharePoint files &amp; sites</li><li>Upload documents</li><li>Copilot connectors</li><li>Share with others</li></ul><span class="abguide-decision-admin">Ask admin to enable pay-as-you-go billing</span></div>
+<div class="abguide-decision-card abguide-decision--paid"><strong>Licensed</strong> if you also need:<ul><li>Outlook email search</li><li>Teams chats &amp; meetings</li><li>People / org chart data</li><li>Full Enterprise Graph</li></ul><span class="abguide-decision-admin">Ask admin for M365 Copilot licence</span></div>
+</div></div>
+<h3 style="margin:2rem 0 1rem">Full Capability Matrix</h3>
+<p class="abguide-verified">Last verified: April 2026 &middot; <a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/knowledge-sources" target="_blank" rel="noopener">MS Learn source</a></p>
+<div class="abguide-table-wrap"><table class="abguide-matrix-table">
+<thead><tr><th>Capability</th><th><span class="abguide-col-badge" style="background:#6B7280">Free</span></th><th><span class="abguide-col-badge" style="background:#F59E0B">PAYG</span></th><th><span class="abguide-col-badge" style="background:#10B981">Licensed</span></th><th>Notes</th></tr></thead>
+<tbody>{{ range $lic.capabilities }}<tr><td><strong>{{ .name }}</strong><br><span class="abguide-cap-desc">{{ .description }}</span></td><td class="abguide-cell">{{ if .free }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-cell">{{ if .paygo }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-cell">{{ if .paid }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-note">{{ with .note }}{{ . }}{{ end }}</td></tr>{{ end }}</tbody>
+</table></div>
+<h3 style="margin:2rem 0 1rem">Agent Builder vs Copilot Studio</h3>
+<div class="abguide-table-wrap"><table class="abguide-compare-table">
+<thead><tr><th>Feature</th><th style="color:#00A4EF">Agent Builder</th><th style="color:#7C3AED">Copilot Studio</th></tr></thead>
+<tbody>{{ range $cmp.features }}<tr><td><strong>{{ .feature }}</strong></td><td class="{{ if eq .winner "builder" }}abguide-winner{{ end }}">{{ .agent_builder }}</td><td class="{{ if eq .winner "studio" }}abguide-winner{{ end }}">{{ .copilot_studio }}</td></tr>{{ end }}</tbody>
+</table></div>
+<h3 style="margin:2rem 0 1rem">{{ $tips.cost_model.title }}</h3>
+<div class="abguide-cost-grid">{{ range $tips.cost_model.tiers }}<div class="abguide-cost-card"><span class="abguide-cost-tier">{{ .tier }}</span><span class="abguide-cost-price">{{ .cost }}</span><p>{{ .what_you_get }}</p><span class="abguide-cost-who">{{ .who_pays }}</span><span class="abguide-cost-admin">{{ .admin_note }}</span></div>{{ end }}</div>
+</div>
+<div class="abguide-panel" id="panel-knowledge" role="tabpanel" aria-labelledby="tab-knowledge">
+<div class="abguide-limits-summary"><h3 style="margin-bottom:1rem">Quick Reference &mdash; All Limits</h3>
+<p class="abguide-verified">Last verified: April 2026 &middot; <a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-builder-add-knowledge" target="_blank" rel="noopener">MS Learn source</a></p>
+<div class="abguide-limits-grid">{{ range $tips.limits }}<div class="abguide-limit-pill"><strong>{{ .item }}</strong><span class="abguide-limit-value">{{ .value }}</span><span class="abguide-limit-tip">{{ .tip }}</span></div>{{ end }}</div></div>
+<div class="abguide-recommender" id="ks-recommender"><h3>Which knowledge source should I use?</h3>
+<div class="abguide-rec-form"><label class="abguide-rec-q">Where is your data?</label>
+<div class="abguide-rec-options">
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="sharepoint"> SharePoint / Teams site</label>
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="local"> On my computer</label>
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="web"> On a public website</label>
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="email"> In my Outlook emails</label>
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="teams"> In Teams conversations</label>
+<label class="abguide-wiz-opt"><input type="radio" name="rec-where" value="external"> In an external system</label>
+</div><div id="rec-result" class="abguide-rec-result" style="display:none" aria-live="polite"></div></div></div>
+<h3 style="margin:2rem 0 1rem">Detailed Source Guide</h3>
+{{ range $ks.sources }}<details class="abguide-source-card" {{ if eq .id "sharepoint" }}open{{ end }}>
+<summary><span class="abguide-source-icon">{{ .icon }}</span><span class="abguide-source-name">{{ .name }}</span><span class="abguide-source-limit">{{ .limit }}</span><span class="abguide-source-licence">{{ .licence }}</span></summary>
+<div class="abguide-source-body"><p>{{ .description }}</p>
+{{ with .privacy_note }}<div class="abguide-privacy-callout"><strong>Privacy:</strong> {{ . }}</div>{{ end }}
+{{ with .rules }}<h4>Rules and Limits</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+{{ with .file_types }}<h4>File Size Limits</h4><table class="abguide-file-table"><thead><tr><th>Format</th><th>Max Size</th></tr></thead><tbody>{{ range . }}<tr><td>{{ .extension }}</td><td>{{ .max_size }}</td></tr>{{ end }}</tbody></table>{{ end }}
+{{ with .tips }}<h4>Tips</h4><ul class="abguide-tips-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+{{ with .gotchas }}<h4>Gotchas</h4><ul class="abguide-gotchas-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+</div></details>{{ end }}
+</div>
+<div class="abguide-panel" id="panel-tips" role="tabpanel" aria-labelledby="tab-tips">
+<div class="abguide-admin-prereqs"><h3>{{ $tips.admin_prereqs.title }}</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">{{ $tips.admin_prereqs.description }}</p>
+<div class="abguide-prereq-grid">{{ range $tips.admin_prereqs.items }}<div class="abguide-prereq-card{{ if .blocker }} abguide-prereq--blocker{{ end }}"><strong>{{ .item }}{{ if .blocker }} <span class="abguide-prereq-blocker">BLOCKER</span>{{ end }}</strong><p>{{ .what }}</p><span class="abguide-prereq-admin">{{ .admin_action }}</span></div>{{ end }}</div></div>
+<div class="abguide-admin-email" style="margin-top:2rem"><h3>Admin Email Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate a professional email to send your IT admin.</p>
+<div class="abguide-email-form">
+<label>What do you need? <select id="email-need" class="abguide-sim-input" aria-label="What you need"><option value="paygo">Enable pay-as-you-go billing</option><option value="licence">M365 Copilot licence</option><option value="connector">Enable a Copilot connector</option><option value="sharing">Enable agent sharing</option></select></label>
+<label>Your name <input type="text" id="email-name" class="abguide-sim-input" placeholder="Your name" aria-label="Your name"></label>
+<label>What you want to build <input type="text" id="email-agent" class="abguide-sim-input" placeholder="e.g. HR FAQ bot" aria-label="Agent description"></label>
+<button class="abguide-evaluate-btn" id="gen-email-btn">Generate Email</button>
+<div id="email-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="email-text"></span></div>
+</div></div>
+<div class="abguide-instgen" style="margin-top:2rem"><h3>Quick Instruction Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate ready-to-paste agent instructions.</p>
+<div class="abguide-instgen-form">
+<label>Agent purpose <input type="text" id="ig-purpose" class="abguide-sim-input" placeholder="e.g. Answer HR policy questions" aria-label="Agent purpose"></label>
+<label>Company name <input type="text" id="ig-company" class="abguide-sim-input" placeholder="e.g. Contoso" aria-label="Company name"></label>
+<label>Tone <select id="ig-tone" class="abguide-sim-input" aria-label="Tone"><option value="professional">Professional</option><option value="friendly">Friendly</option><option value="concise">Concise</option></select></label>
+<label>Boundary strictness <select id="ig-boundary" class="abguide-sim-input" aria-label="Boundary strictness"><option value="strict">Strict</option><option value="moderate">Moderate</option><option value="relaxed">Relaxed</option></select></label>
+<button class="abguide-evaluate-btn" id="gen-inst-btn">Generate Instructions</button>
+<div id="ig-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="ig-text"></span></div>
+</div></div>
+<div class="abguide-healthcheck" style="margin-top:2rem"><h3>Agent Health Checker</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Paste your instructions and get a quality score.</p>
+<textarea id="hc-input" class="abguide-sim-textarea" rows="5" placeholder="Paste your agent instructions here..." aria-label="Instructions to check"></textarea>
+<button class="abguide-evaluate-btn" id="hc-btn" style="margin-top:0.5rem">Check Health</button>
+<div id="hc-result" class="abguide-hc-result" style="display:none" aria-live="polite"></div></div>
+<div class="abguide-highlight-card" style="--highlight:#00A4EF;margin-top:2rem"><h3>{{ $tips.caps_technique.title }}</h3><p>{{ $tips.caps_technique.description }}</p>
+<div class="abguide-caps-parts">{{ range $tips.caps_technique.parts }}<div class="abguide-caps-part"><strong>{{ .name }}</strong><p>{{ .description }}</p><pre class="abguide-code">{{ .example }}</pre></div>{{ end }}</div>
+<p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:1rem">{{ $tips.caps_technique.why_it_works }}</p></div>
+<h3 style="margin:2rem 0 1rem">Sharing &amp; Privacy Rules</h3>
+<div class="abguide-privacy-grid">{{ range $tips.privacy_rules }}<div class="abguide-privacy-card"><span class="abguide-privacy-icon">{{ .icon }}</span><strong>{{ .rule }}</strong><p>{{ .detail }}</p></div>{{ end }}</div>
+<h3 style="margin:2rem 0 1rem" id="troubleshoot">What's Going Wrong?</h3>
+<div class="abguide-symptom-grid">{{ range $tips.symptoms }}<button class="abguide-symptom-btn" data-causes="{{ delimit .likely_causes "|" }}" data-fix="{{ .quick_fix }}" data-tab="{{ .related_tab }}">{{ .symptom }}</button>{{ end }}</div>
+<div id="symptom-result" class="abguide-symptom-result" style="display:none" aria-live="polite"></div>
+<h3 style="margin:2rem 0 1rem">Detailed Troubleshooting</h3>
+<div class="abguide-trouble-grid">{{ range $tips.troubleshooting }}<div class="abguide-trouble-card"><div class="abguide-trouble-header"><span class="abguide-trouble-sev abguide-trouble-sev--{{ .severity }}"></span><strong>{{ .problem }}</strong></div><p><strong>Cause:</strong> {{ .cause }}</p><p><strong>Fix:</strong> {{ .fix }}</p></div>{{ end }}</div>
+<h3 style="margin:2rem 0 1rem">Common Mistakes</h3>
+<div class="abguide-mistakes-grid">{{ range $tips.mistakes }}<div class="abguide-mistake-card"><strong>{{ .mistake }}</strong><p class="abguide-mistake-problem">{{ .problem }}</p><p class="abguide-mistake-fix">{{ .fix }}</p></div>{{ end }}</div>
+<h3 style="margin:2rem 0 1rem">Testing Your Agent</h3>
+<div class="abguide-steps-list">{{ range $tips.testing_steps }}<div class="abguide-step-item"><span class="abguide-step-num">{{ .step }}</span><div><strong>{{ .title }}</strong><p>{{ .description }}</p></div></div>{{ end }}</div>
+<h3 style="margin:2rem 0 1rem">{{ $tips.lifecycle.title }}</h3>
+<div class="abguide-lifecycle-grid">{{ range $tips.lifecycle.items }}<div class="abguide-lifecycle-card"><span class="abguide-lifecycle-icon">{{ .icon }}</span><strong>{{ .question }}</strong><p>{{ .answer }}</p></div>{{ end }}</div>
+<h3 style="margin:2rem 0 1rem" id="graduate">{{ $tips.graduate.title }}</h3>
+<div class="abguide-graduate-grid">{{ range $tips.graduate.checklist }}<div class="abguide-graduate-card"><strong>{{ .signal }}</strong><p>{{ .reason }}</p></div>{{ end }}</div>
+<div class="abguide-cta-row" style="margin-top:2rem"><a href="/agent-instructions/" class="abguide-cta">Full Instruction Builder</a><a href="/copilot-studio/" class="abguide-cta">Copilot Studio Companion</a></div>
+</div>
+<div class="abguide-panel" id="panel-community" role="tabpanel" aria-labelledby="tab-community">
+<h3 style="margin-bottom:1rem">Agent Gallery &mdash; What Others Built</h3>
+<p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">Curated agent ideas from real IT admins. Click to see instructions.</p>
+<div class="abguide-gallery-grid">
+{{ range $gallery.agents }}<details class="abguide-gallery-card">
+<summary><strong>{{ .name }}</strong><span class="abguide-gallery-dept">{{ .department }}</span><span class="abguide-gallery-tier">{{ .tier }}</span></summary>
+<div class="abguide-gallery-body"><p>{{ .description }}</p>
+<p><strong>Knowledge:</strong> {{ delimit .knowledge ", " }}</p>
+<div class="abguide-playbook-code"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button>{{ .instructions_preview }}</div>
+<p style="font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.5rem">By: {{ .author }}</p>
+</div></details>{{ end }}
+</div>
+<h3 style="margin:2rem 0 1rem">Frequently Asked Questions</h3>
+<div style="max-width:800px;margin:0 auto">
+{{ range $i, $q := .Params.faq }}<details class="abguide-faq-item"{{ if eq $i 0 }} open{{ end }}><summary>{{ $q.question }}</summary><p>{{ $q.answer }}</p></details>{{ end }}
+</div>
+<h3 style="margin:2rem 0 1rem">Changelog</h3>
+<div class="abguide-changelog">
+{{ range $tips.changelog }}<div class="abguide-changelog-entry"><span class="abguide-changelog-badge">{{ .version }}</span><span class="abguide-changelog-date">{{ .date }}</span><ul>{{ range .changes }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
+</div>
+</div>
+{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "agent-builder-guide") }}
+</div>
+<button class="abguide-progress-toggle" id="progress-toggle" aria-label="Toggle progress tracker">&#128203;</button>
+<div class="abguide-progress-bar" id="progress-bar">
+<span class="abguide-progress-title">Your Progress</span>
+<label class="abguide-progress-item"><input type="checkbox" data-track="scenario"> Chose scenario</label>
+<label class="abguide-progress-item"><input type="checkbox" data-track="licence"> Know my licence</label>
+<label class="abguide-progress-item"><input type="checkbox" data-track="instructions"> Got instructions</label>
+<label class="abguide-progress-item"><input type="checkbox" data-track="knowledge"> Picked knowledge</label>
+<label class="abguide-progress-item"><input type="checkbox" data-track="tested"> Tested agent</label>
+<label class="abguide-progress-item"><input type="checkbox" data-track="shared"> Shared it</label>
+</div>
+<div data-pagefind-body aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden"><h1>M365 Agent Builder Helper</h1><p>Interactive guide to M365 Copilot Agent Builder with scenarios, capability matrix, knowledge sources, agent gallery, instruction generator, health checker, and more.</p></div>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }},"url":"{{ .Permalink }}","applicationCategory":"ReferenceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 {{ with .Params.faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $q := . }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $q.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $q.answer | jsonify }}}}{{ end }}]}</script>{{ end }}
-
 <script src="/js/agent-builder-guide.js?v={{ site.Params.cache_version }}" defer></script>
 {{ end }}

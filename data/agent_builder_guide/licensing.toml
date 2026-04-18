@@ -1,5 +1,6 @@
 # ═══════════════════════════════════════════════════════════════
-# M365 Agent Builder Guide — Licensing & Capabilities
+# Agent Builder Helper — Licensing, Capabilities & Scenarios
+# Updated: 2026-04-18 from Microsoft Learn (knowledge-sources)
 # ═══════════════════════════════════════════════════════════════
 
 [[tiers]]
@@ -7,8 +8,8 @@ id = "free"
 name = "Copilot Chat (Free)"
 label = "Free"
 badge_colour = "#6B7280"
-description = "Build agents grounded on public web data only. No access to M365 Graph data."
-example = "Personal research assistant, public FAQ bot"
+description = "Build agents grounded on public web data only. Code interpreter and image generation included."
+example = "Research assistant, public FAQ bot, data analyst"
 pricing_note = "Included with any M365 licence"
 
 [[tiers]]
@@ -16,8 +17,8 @@ id = "paygo"
 name = "Copilot Chat + Usage Billing"
 label = "Pay-as-you-go"
 badge_colour = "#F59E0B"
-description = "Build work-grounded agents with metered consumption. Admin enables pay-as-you-go billing — no per-user Copilot licence needed."
-example = "Team knowledge bot for small pilot"
+description = "Add SharePoint, file uploads, and connectors. Admin enables pay-as-you-go — no per-user Copilot licence needed. Cannot access email, Teams, or people data."
+example = "Team knowledge bot, SharePoint Q&A assistant"
 pricing_note = "Billed per Copilot credit consumed"
 
 [[tiers]]
@@ -25,11 +26,13 @@ id = "paid"
 name = "M365 Copilot (Paid Add-on)"
 label = "Licensed"
 badge_colour = "#10B981"
-description = "Full Agent Builder with all knowledge sources, enterprise Graph grounding, sharing, and advanced capabilities."
-example = "Project FAQ bot, onboarding assistant, document helper"
+description = "Full Agent Builder with ALL knowledge sources including email, Teams chats, meetings, and people data. Enterprise Graph grounding."
+example = "Email assistant, meeting prep agent, org-wide knowledge bot"
 pricing_note = "Per-user add-on on M365 E3/E5/E7/Business Standard/Premium"
 
 # ── Capability Matrix ──
+# Source: https://learn.microsoft.com/microsoft-365/copilot/extensibility/knowledge-sources
+# "License only" = requires per-user M365 Copilot licence (pay-as-you-go does NOT work)
 
 [[capabilities]]
 id = "web_search"
@@ -38,14 +41,34 @@ description = "Ground agents in public web content"
 free = true
 paygo = true
 paid = true
+note = ""
 
 [[capabilities]]
 id = "web_urls"
-name = "Public website URLs (up to 4)"
-description = "Add specific public URLs as knowledge — max 2 levels deep, no query parameters"
+name = "Scoped web search (up to 4 URLs)"
+description = "Add specific public URLs — max 2 levels deep, no query parameters"
 free = true
 paygo = true
 paid = true
+note = ""
+
+[[capabilities]]
+id = "code_interpreter"
+name = "Code interpreter"
+description = "Generate charts, analyse data, run calculations in-conversation"
+free = true
+paygo = true
+paid = true
+note = "No licence required"
+
+[[capabilities]]
+id = "image_gen"
+name = "Image generation (DALL-E)"
+description = "Create images within agent conversations — when enabled by admin"
+free = true
+paygo = true
+paid = true
+note = "No licence required"
 
 [[capabilities]]
 id = "sharepoint"
@@ -54,6 +77,7 @@ description = "Ground agents in SharePoint sites, folders, and files — respect
 free = false
 paygo = true
 paid = true
+note = ""
 
 [[capabilities]]
 id = "file_upload"
@@ -62,54 +86,16 @@ description = "Upload documents from your device — doc, docx, pdf, pptx, txt, 
 free = false
 paygo = true
 paid = true
-
-[[capabilities]]
-id = "teams"
-name = "Teams chat knowledge"
-description = "Ground agents in Teams chats, channels, and meeting transcripts (up to 5 specific chats)"
-free = false
-paygo = true
-paid = true
-
-[[capabilities]]
-id = "email"
-name = "Outlook email knowledge"
-description = "Ground agents in your entire mailbox — cannot scope to specific folders"
-free = false
-paygo = true
-paid = true
-
-[[capabilities]]
-id = "graph"
-name = "Enterprise Graph grounding"
-description = "Access files, emails, calendar, Teams across M365 — within user permissions"
-free = false
-paygo = true
-paid = true
+note = ""
 
 [[capabilities]]
 id = "connectors"
 name = "M365 Copilot connectors"
-description = "Connect to additional data sources configured by your admin"
+description = "Connect to additional data sources configured by your admin (ServiceNow, Salesforce, etc.)"
 free = false
 paygo = true
 paid = true
-
-[[capabilities]]
-id = "image_gen"
-name = "Image generation (DALL-E)"
-description = "Create images within agent conversations — when enabled by admin"
-free = false
-paygo = true
-paid = true
-
-[[capabilities]]
-id = "code_interpreter"
-name = "Code interpreter"
-description = "Generate charts, analyse data, run calculations"
-free = false
-paygo = true
-paid = true
+note = ""
 
 [[capabilities]]
 id = "share"
@@ -118,6 +104,43 @@ description = "Share agents with specific users, security groups, or everyone in
 free = false
 paygo = true
 paid = true
+note = ""
+
+[[capabilities]]
+id = "email"
+name = "Outlook email knowledge"
+description = "Ground agents in your entire mailbox — cannot scope to specific folders"
+free = false
+paygo = false
+paid = true
+note = "Licence only — pay-as-you-go does NOT work"
+
+[[capabilities]]
+id = "teams"
+name = "Teams chat & meeting knowledge"
+description = "Ground agents in Teams chats, channels, and meeting transcripts (up to 5 chats)"
+free = false
+paygo = false
+paid = true
+note = "Licence only — pay-as-you-go does NOT work"
+
+[[capabilities]]
+id = "people"
+name = "People knowledge"
+description = "Access people profiles, org chart, and directory information"
+free = false
+paygo = false
+paid = true
+note = "Licence only — pay-as-you-go does NOT work"
+
+[[capabilities]]
+id = "graph"
+name = "Enterprise Graph grounding"
+description = "Full access to M365 data — files, emails, calendar, Teams, people"
+free = false
+paygo = false
+paid = true
+note = "Licence only — the sum of email + Teams + people"
 
 [[capabilities]]
 id = "copy_to_studio"
@@ -126,47 +149,176 @@ description = "Move your agent to Copilot Studio for advanced capabilities"
 free = true
 paygo = true
 paid = true
+note = ""
 
-# ── Quick Scenarios (hero cards) ──
+# ── Scenarios with Verdicts ──
+# verdict: "yes" (✅), "partial" (⚠️), "no" (❌)
+# requires: "free", "paygo", "paid"
 
 [[scenarios]]
-title = "Build a team FAQ bot"
-description = "Answer questions from your SharePoint project docs"
-requires = "paid"
-knowledge = ["sharepoint"]
+title = "HR FAQ Bot"
+description = "Answer employee questions from SharePoint HR docs"
 icon = "📋"
+verdict = "yes"
+requires = "paygo"
+knowledge = ["sharepoint"]
+tip = "Upload key policies as files for faster indexing"
+sample_instructions = "You are the HR Policy Bot for [Company]. Answer employee questions ONLY about HR policies using the SharePoint documents provided.\n\nYou MUST NOT answer questions outside HR topics.\nIf asked about non-HR topics, respond EXACTLY with: 'I'm the HR Policy Bot — I can only help with HR-related questions. For IT support, contact the IT Help Desk.'\n\nALWAYS cite the specific document name when answering.\nBe professional, concise, and helpful."
+conversation_starters = ["What's our annual leave policy?", "How do I apply for parental leave?", "What are the dress code guidelines?"]
+test_prompts = ["What's the WiFi password? (should refuse)", "Summarise the sick leave policy (should answer from docs)"]
 
 [[scenarios]]
-title = "Search my emails"
-description = "Find information across your entire Outlook mailbox"
-requires = "paid"
-knowledge = ["email"]
-icon = "📧"
+title = "IT Help Desk Agent"
+description = "Troubleshoot common issues from uploaded IT guides"
+icon = "🛠️"
+verdict = "yes"
+requires = "paygo"
+knowledge = ["file_upload"]
+tip = "Structure docs as Q&A format for better answers"
+sample_instructions = "You are the IT Help Desk Bot. Help users troubleshoot common IT issues using the uploaded guides.\n\nALWAYS start by asking clarifying questions before providing solutions.\nPresent solutions as numbered steps.\nIf you can't find an answer, say EXACTLY: 'I couldn't find a solution in our guides. Please raise a ticket at [URL].'\n\nBe concise and patient."
+conversation_starters = ["My VPN won't connect", "How do I reset my password?", "My laptop is running slow"]
+test_prompts = ["How do I fix the coffee machine? (should refuse)", "I can't print (should troubleshoot)"]
 
 [[scenarios]]
-title = "Onboarding assistant"
-description = "Help new hires find answers from uploaded policy documents"
-requires = "paid"
-knowledge = ["file_upload", "sharepoint"]
+title = "Sales Playbook"
+description = "Quick access to pricing, objection handling, competitor info"
+icon = "💼"
+verdict = "yes"
+requires = "paygo"
+knowledge = ["sharepoint", "file_upload"]
+tip = "Keep documents concise — short files perform better"
+sample_instructions = "You are the Sales Playbook Bot. Help sales reps quickly find pricing, competitor info, and objection handling from our sales docs.\n\nBe concise and action-oriented.\nWhen providing pricing, ALWAYS add: 'Verify current pricing with your manager before quoting.'\nYou MUST NOT make up pricing or competitor information."
+conversation_starters = ["What's our response to [Competitor] pricing?", "Give me the elevator pitch for [Product]", "How do I handle the 'too expensive' objection?"]
+test_prompts = ["What's the latest stock price? (should refuse)", "Compare us to [Competitor] (should answer from docs)"]
+
+[[scenarios]]
+title = "Onboarding Assistant"
+description = "Help new hires find policies, processes, and contacts"
 icon = "👋"
+verdict = "yes"
+requires = "paygo"
+knowledge = ["sharepoint", "file_upload"]
+tip = "Create a dedicated SharePoint folder for onboarding content"
+sample_instructions = "You are the New Hire Onboarding Bot. Help new employees find information about company policies, benefits, team processes, and first-week tasks.\n\nBe warm and welcoming.\nUse bullet points for checklists.\nIf asked about specific team practices, say: 'That varies by team — check with your manager for team-specific details.'"
+conversation_starters = ["What do I need to do in my first week?", "How do I set up my laptop?", "Where can I find the benefits guide?"]
+test_prompts = ["What's the CEO's salary? (should refuse)", "What software do I need to install? (should answer from docs)"]
 
 [[scenarios]]
-title = "Public website helper"
-description = "Answer questions from up to 4 public web pages"
-requires = "free"
-knowledge = ["web_urls"]
-icon = "🌐"
-
-[[scenarios]]
-title = "Meeting memory bot"
-description = "Recall what was discussed in specific Teams conversations"
-requires = "paid"
-knowledge = ["teams"]
-icon = "🧠"
-
-[[scenarios]]
-title = "Research assistant"
+title = "Research Assistant"
 description = "Search the web for any topic — no org data needed"
+icon = "🔍"
+verdict = "yes"
 requires = "free"
 knowledge = ["web_search"]
-icon = "🔍"
+tip = "Enable 'Search all websites' toggle for broadest coverage"
+sample_instructions = "You are a Research Assistant. Search the web to answer questions on any topic.\n\nProvide clear, factual answers with sources when possible.\nIf information might be outdated, say so.\nFor opinions, present multiple perspectives.\nBe thorough but concise."
+conversation_starters = ["What are the latest trends in [Industry]?", "Summarise [topic] for me", "Compare [A] vs [B]"]
+test_prompts = ["Any topic should work — this agent uses web search"]
+
+[[scenarios]]
+title = "Public Website Helper"
+description = "Answer questions from up to 4 specific web pages"
+icon = "🌐"
+verdict = "yes"
+requires = "free"
+knowledge = ["web_urls"]
+tip = "Most Microsoft Learn URLs are too deep — download as .txt instead"
+sample_instructions = "You are a Website Helper for [Company]. Answer questions ONLY from the provided website URLs.\n\nYou MUST NOT answer questions that aren't covered by these pages.\nIf unsure, say EXACTLY: 'I couldn't find that on our website. Please contact support at [email].'"
+conversation_starters = ["What products do you offer?", "How do I contact support?", "What are your business hours?"]
+test_prompts = ["Ask something not on the website (should refuse)", "Ask about a specific page topic (should answer)"]
+
+[[scenarios]]
+title = "Data Analysis Assistant"
+description = "Generate charts, run calculations, analyse uploaded data"
+icon = "📊"
+verdict = "yes"
+requires = "free"
+knowledge = ["code_interpreter"]
+tip = "Code interpreter is free — no licence needed!"
+sample_instructions = "You are a Data Analyst Bot. Help users analyse data, create charts, and run calculations.\n\nWhen given data, ALWAYS start by summarising what you see.\nUse clear chart titles and labels.\nExplain your analysis in simple, non-technical terms.\nIf data looks incomplete, ask before proceeding."
+conversation_starters = ["Analyse this data for trends", "Create a chart showing monthly sales", "Calculate the year-over-year growth"]
+test_prompts = ["Upload a spreadsheet and ask for insights", "Ask for a chart from sample data"]
+
+[[scenarios]]
+title = "Email Finder"
+description = "Search and summarise across your entire Outlook mailbox"
+icon = "📧"
+verdict = "yes"
+requires = "paid"
+knowledge = ["email"]
+tip = "Each user sees THEIR OWN emails — your data is never exposed"
+sample_instructions = "You are an Email Search Assistant. Help users find and summarise emails.\n\nWhen searching, specify the date range and key participants.\nPresent results as a brief summary with the most relevant emails listed first.\nYou MUST NOT forward, share, or compose emails — you are read-only."
+conversation_starters = ["Find emails about Project Alpha from last month", "Summarise what [Person] sent me last week", "What action items are in my recent emails?"]
+test_prompts = ["Send an email to [Person] (should refuse — read-only)", "Find emails about [topic] (should search)"]
+
+[[scenarios]]
+title = "Meeting Memory Bot"
+description = "Recall discussions from specific Teams chats and meetings"
+icon = "🧠"
+verdict = "yes"
+requires = "paid"
+knowledge = ["teams"]
+tip = "Scope to specific chats for significantly better accuracy"
+sample_instructions = "You are the Meeting Memory Bot. Help users recall discussions, decisions, and action items from Teams conversations and meetings.\n\nALWAYS specify which meeting or chat you're referencing.\nPresent action items as a numbered list with owners.\nIf you can't find the conversation, say so clearly."
+conversation_starters = ["What was decided in today's standup?", "What are the action items from the project meeting?", "What did [Person] say about the deadline?"]
+test_prompts = ["Ask about a meeting that doesn't exist (should say can't find it)", "Ask for action items from a real meeting"]
+
+[[scenarios]]
+title = "Meeting Prep Agent"
+description = "Summarise relevant emails and past context before meetings"
+icon = "📅"
+verdict = "partial"
+requires = "paid"
+knowledge = ["email", "teams"]
+partial_reason = "Works great for email + Teams context but can't access calendar events directly as knowledge. Use instructions to guide behaviour."
+sample_instructions = "You are a Meeting Prep Bot. Help users prepare for upcoming meetings by summarising relevant emails, past discussions, and context.\n\nPresent a brief: attendees, last discussion summary, open action items, suggested talking points.\nNote: You cannot access calendar directly — ask the user for meeting details."
+conversation_starters = ["Prepare me for my meeting with [Person]", "What context do I need for the budget review?", "Summarise the last 3 conversations about Project X"]
+test_prompts = ["What's on my calendar today? (should note calendar isn't directly accessible)"]
+
+[[scenarios]]
+title = "Customer Support Bot"
+description = "External-facing chatbot for customers on your website"
+icon = "💬"
+verdict = "no"
+requires = "studio"
+knowledge = []
+studio_reason = "Agent Builder agents can only be shared within your organisation. For customer-facing bots, you need Copilot Studio with multi-channel deployment."
+
+[[scenarios]]
+title = "Approval Workflow"
+description = "Multi-step approval process with email notifications"
+icon = "⚙️"
+verdict = "no"
+requires = "studio"
+knowledge = []
+studio_reason = "Agent Builder is Q&A only — no actions, workflows, or automation. Use Copilot Studio with Power Automate for multi-step processes."
+
+[[scenarios]]
+title = "External API Integration"
+description = "Connect to Salesforce, ServiceNow, or custom REST APIs"
+icon = "🔗"
+verdict = "no"
+requires = "studio"
+knowledge = []
+studio_reason = "Agent Builder can't call external APIs directly. Use Copilot Studio with HTTP actions or API plugins."
+
+[[scenarios]]
+title = "Proactive Notifications"
+description = "Alert users when new content is published or conditions are met"
+icon = "🔔"
+verdict = "no"
+requires = "studio"
+knowledge = []
+studio_reason = "Agent Builder agents are reactive (user must start the conversation). For proactive messaging, use Copilot Studio with event triggers."
+
+[[scenarios]]
+title = "Multi-Source Enterprise Bot"
+description = "Combine SharePoint + email + Teams + connectors in one agent"
+icon = "🏢"
+verdict = "partial"
+requires = "paid"
+knowledge = ["sharepoint", "email", "teams", "connectors"]
+partial_reason = "You can add multiple knowledge sources but may hit limits. Email, Teams, and People require per-user M365 Copilot licence — pay-as-you-go won't cover these."
+sample_instructions = "You are the [Team] Knowledge Bot. Answer questions using our team's SharePoint docs, relevant emails, and Teams conversations.\n\nWhen answering, cite which source you used.\nIf information conflicts across sources, flag it and present both.\nPrioritise SharePoint documents over email for factual questions."
+conversation_starters = ["What's the latest status of Project X?", "Find the most recent proposal document", "What did the team discuss about the deadline?"]
+test_prompts = ["Ask something that spans multiple sources", "Ask about a topic only in one source"]

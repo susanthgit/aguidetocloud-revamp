@@ -31,7 +31,7 @@ id = "sharepoint"
 name = "SharePoint Content"
 icon = "📂"
 limit = "Up to 100 files"
-licence = "Paid only"
+licence = "Pay-as-you-go or Paid"
 description = "Ground your agent in SharePoint sites, folders, and files. The most powerful knowledge source for enterprise agents."
 rules = [
   "Up to 100 SharePoint files per agent (per current Microsoft Learn docs)",
@@ -58,7 +58,7 @@ id = "uploaded"
 name = "Uploaded (Embedded) Files"
 icon = "📎"
 limit = "20 files"
-licence = "Paid only"
+licence = "Pay-as-you-go or Paid"
 description = "Upload files from your device. These become embedded in the agent and available to anyone with access."
 rules = [
   "Maximum 20 files per agent",
@@ -103,7 +103,7 @@ id = "teams"
 name = "Teams Chats & Meetings"
 icon = "💬"
 limit = "5 specific chats"
-licence = "Paid only"
+licence = "M365 Copilot licence only"
 description = "Ground your agent in Teams chats, channels, and meeting transcripts."
 rules = [
   "Select up to 5 specific chats (channels, group chats, meeting chats)",
@@ -126,7 +126,7 @@ id = "email"
 name = "Outlook Email"
 icon = "📧"
 limit = "All or nothing"
-licence = "Paid only"
+licence = "M365 Copilot licence only"
 description = "Search, summarise, and answer from your Outlook mailbox. Cannot scope to specific folders."
 rules = [
   "Adds ALL email in your mailbox as knowledge — cannot filter",
@@ -151,7 +151,7 @@ id = "connectors"
 name = "M365 Copilot Connectors"
 icon = "🔌"
 limit = "Admin-controlled"
-licence = "Paid only"
+licence = "Pay-as-you-go or Paid"
 description = "Connect to additional data sources configured by your admin."
 rules = [
   "Must be enabled by your organisation's administrator",

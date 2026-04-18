@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════════════
+# Agent Builder vs Copilot Studio — Feature Comparison
+# ═══════════════════════════════════════════════════════════════
+
+[[features]]
+feature = "Coding required"
+agent_builder = "None — natural language only"
+copilot_studio = "Low-code / no-code"
+winner = "builder"
+category = "ease"
+
+[[features]]
+feature = "Build time"
+agent_builder = "5–15 minutes"
+copilot_studio = "Hours to days"
+winner = "builder"
+category = "ease"
+
+[[features]]
+feature = "Where to build"
+agent_builder = "microsoft365.com/chat or Teams"
+copilot_studio = "copilotstudio.microsoft.com"
+winner = "tie"
+category = "ease"
+
+[[features]]
+feature = "Knowledge sources"
+agent_builder = "M365 data (SP, email, Teams, web, files)"
+copilot_studio = "M365 + Dataverse + external APIs + custom"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Actions & automation"
+agent_builder = "No — Q&A only"
+copilot_studio = "Yes — Power Automate, HTTP, connectors"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "External API calls"
+agent_builder = "Not supported"
+copilot_studio = "HTTP actions, API plugins"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Proactive messaging"
+agent_builder = "No — user must start conversation"
+copilot_studio = "Yes — event triggers, scheduled messages"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Conversation branching"
+agent_builder = "Simple Q&A flow"
+copilot_studio = "Complex topic trees with conditions"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Deployment channels"
+agent_builder = "M365 Copilot + Teams only"
+copilot_studio = "Teams, web, Facebook, SMS, custom"
+winner = "studio"
+category = "deployment"
+
+[[features]]
+feature = "Customer-facing"
+agent_builder = "Internal org only"
+copilot_studio = "Internal + external customers"
+winner = "studio"
+category = "deployment"
+
+[[features]]
+feature = "Sharing"
+agent_builder = "Share link within org"
+copilot_studio = "Teams app store, managed deployment"
+winner = "studio"
+category = "deployment"
+
+[[features]]
+feature = "Cost"
+agent_builder = "Included with M365 / pay-as-you-go"
+copilot_studio = "$200/tenant/month (25k messages)"
+winner = "builder"
+category = "cost"
+
+[[features]]
+feature = "AI model"
+agent_builder = "GPT-4o (managed by Microsoft)"
+copilot_studio = "GPT-4o + custom model options"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Block general AI knowledge"
+agent_builder = "Can prioritise but not fully block"
+copilot_studio = "Full control over knowledge scoping"
+winner = "studio"
+category = "capabilities"
+
+[[features]]
+feature = "Copy between platforms"
+agent_builder = "Copy TO Copilot Studio ✅"
+copilot_studio = "Cannot copy back to Agent Builder"
+winner = "tie"
+category = "ease"

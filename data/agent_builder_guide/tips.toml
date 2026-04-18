@@ -1,6 +1,23 @@
 # ═══════════════════════════════════════════════════════════════
-# M365 Agent Builder Guide — Tips, Tricks & Troubleshooting
+# M365 Agent Builder Helper — Tips, Tricks & Troubleshooting
 # ═══════════════════════════════════════════════════════════════
+
+# ── Changelog ──
+
+[[changelog]]
+date = "2026-04-18"
+version = "V3"
+changes = ["Agent Builder Simulator", "Instruction Generator with templates", "Agent Health Checker (score your instructions)", "Knowledge Source Recommender", "Agent Gallery with 10 curated ideas", "Agent Builder vs Copilot Studio comparison", "Admin email generator", "My Agent Plan export", "Scenario filters by department and tier", "Progress tracker", "Deep-link sharing", "Video walkthrough links"]
+
+[[changelog]]
+date = "2026-04-18"
+version = "V2"
+changes = ["Guided 3-step wizard", "Structured evaluator replacing keyword matching", "Playbook templates with copy-to-clipboard", "Plain-English licensing decision guide", "Admin prerequisites section", "Cost model guidance", "Symptom-based troubleshooter", "Lifecycle Q&A section", "Search across all tabs", "Accessibility improvements"]
+
+[[changelog]]
+date = "2026-04-18"
+version = "V1"
+changes = ["Initial launch with 5 tabs", "15 assessed scenarios", "Capability matrix", "Knowledge source detailed guides", "CAPS technique", "Graduate to Studio checklist"]
 
 # ── CAPS Technique ──
 
@@ -179,3 +196,224 @@ tip = "Cannot scope — use instruction guidance to focus"
 item = "Supported formats"
 value = ".doc .docx .pdf .ppt .pptx .txt .csv .xlsx"
 tip = ".md NOT supported — rename to .txt"
+
+# ── Graduate to Copilot Studio ──
+
+[graduate]
+title = "When to Graduate to Copilot Studio"
+description = "Agent Builder is powerful for 80% of use cases. But if you're hitting these walls, it's time to level up."
+
+[[graduate.checklist]]
+signal = "You need multi-step workflows or approvals"
+reason = "Agent Builder is Q&A only — no actions or automation"
+
+[[graduate.checklist]]
+signal = "You need to call external APIs (Salesforce, ServiceNow, etc.)"
+reason = "Agent Builder can't make HTTP calls or connect to non-M365 services directly"
+
+[[graduate.checklist]]
+signal = "You need proactive messaging (alerts, notifications)"
+reason = "Agent Builder agents are reactive — users must start the conversation"
+
+[[graduate.checklist]]
+signal = "You need customer-facing deployment (website, Facebook, SMS)"
+reason = "Agent Builder agents only work within your M365 tenant"
+
+[[graduate.checklist]]
+signal = "You need stricter knowledge control (block ALL general AI knowledge)"
+reason = "Agent Builder can prioritise but can't fully block general knowledge"
+
+[[graduate.checklist]]
+signal = "You need advanced conversation flows with branching logic"
+reason = "Agent Builder supports simple Q&A; Copilot Studio supports complex topic trees"
+
+[[graduate.checklist]]
+signal = "You want to publish to the Teams app store for the whole org"
+reason = "Agent Builder sharing is simpler; Copilot Studio supports full Teams app packaging"
+
+# ── Sharing & Privacy Quick Rules ──
+
+[[privacy_rules]]
+rule = "Each user sees THEIR OWN data"
+detail = "Emails, Teams chats, and files are scoped to the current user's permissions. Your data is never exposed."
+icon = "🔒"
+
+[[privacy_rules]]
+rule = "Embedded files ARE shared with everyone"
+detail = "Files you upload become part of the agent. Anyone with access sees all uploaded content — use SharePoint for sensitive docs."
+icon = "⚠️"
+
+[[privacy_rules]]
+rule = "SharePoint respects existing permissions"
+detail = "If a user can't access a SharePoint file normally, the agent won't show it to them either."
+icon = "✅"
+
+[[privacy_rules]]
+rule = "Sensitivity labels gate access"
+detail = "The highest sensitivity label from any embedded file applies to the whole agent. Users without extract rights are blocked."
+icon = "🏷️"
+
+[[privacy_rules]]
+rule = "Information Barriers NOT supported"
+detail = "IB policies don't apply to embedded file content. Use SharePoint-based knowledge instead for IB compliance."
+icon = "🚧"
+
+# ── Admin Prerequisites ──
+
+[admin_prereqs]
+title = "Before You Start — Admin Dependencies"
+description = "Many Agent Builder features depend on admin settings. If something isn't working, check these first."
+
+[[admin_prereqs.items]]
+item = "Agent Builder access"
+what = "Users need access to microsoft365.com/chat or Teams desktop"
+admin_action = "No special admin action — available to all M365 users by default"
+blocker = false
+
+[[admin_prereqs.items]]
+item = "Pay-as-you-go billing"
+what = "Required for SharePoint, file uploads, connectors, and sharing"
+admin_action = "M365 Admin Centre → Copilot → Settings → enable pay-as-you-go billing via Azure subscription"
+blocker = true
+
+[[admin_prereqs.items]]
+item = "M365 Copilot licence"
+what = "Required for email, Teams, people data, and Enterprise Graph"
+admin_action = "Assign M365 Copilot add-on licence to specific users"
+blocker = true
+
+[[admin_prereqs.items]]
+item = "Copilot connectors"
+what = "Connect to external data sources like ServiceNow or Salesforce"
+admin_action = "M365 Admin Centre → Copilot → Connectors → enable and configure"
+blocker = true
+
+[[admin_prereqs.items]]
+item = "Sharing controls"
+what = "Who can share agents and with whom"
+admin_action = "M365 Admin Centre → Copilot → Settings → Data access → Agents"
+blocker = false
+
+[[admin_prereqs.items]]
+item = "Restricted SharePoint Search"
+what = "If enabled, blocks SharePoint as a knowledge source"
+admin_action = "SharePoint Admin Centre → check if Restricted Search is active"
+blocker = true
+
+[[admin_prereqs.items]]
+item = "Image generation"
+what = "DALL-E image creation in agent conversations"
+admin_action = "M365 Admin Centre → Copilot → Settings → enable image generation"
+blocker = false
+
+# ── Cost Model ──
+
+[cost_model]
+title = "What Does It Cost?"
+
+[[cost_model.tiers]]
+tier = "Free"
+cost = "Included"
+what_you_get = "Web search, public URLs, code interpreter, image generation, basic instructions"
+who_pays = "No additional cost — included with any M365 licence"
+admin_note = "No admin action needed"
+
+[[cost_model.tiers]]
+tier = "Pay-as-you-go"
+cost = "Per Copilot credit"
+what_you_get = "Everything free + SharePoint, file uploads, connectors, sharing"
+who_pays = "Organisation pays per credit consumed — billed to Azure subscription"
+admin_note = "Admin must enable pay-as-you-go billing in M365 Admin Centre"
+
+[[cost_model.tiers]]
+tier = "Licensed"
+cost = "Per user/month"
+what_you_get = "Everything pay-as-you-go + email, Teams, people, Enterprise Graph"
+who_pays = "Per-user M365 Copilot add-on licence assigned by admin"
+admin_note = "Admin assigns licence to individual users"
+
+# ── Lifecycle — What Changes Over Time ──
+
+[lifecycle]
+title = "What Changes Over Time?"
+description = "Agents aren't set-and-forget. Here's what to expect after you build one."
+
+[[lifecycle.items]]
+question = "How long does indexing take?"
+answer = "SharePoint content: several minutes to hours for new sites. Uploaded files: 1-2 minutes (shown as grey until ready). New SharePoint sites may not appear in the picker for hours."
+icon = "⏱️"
+
+[[lifecycle.items]]
+question = "What happens when source files change?"
+answer = "SharePoint: changes are picked up automatically over time (not instant). Uploaded files: you must re-upload the updated version manually."
+icon = "🔄"
+
+[[lifecycle.items]]
+question = "What happens when the agent creator leaves?"
+answer = "The agent continues to work. Other users can still use it. However, only the creator (or an admin) can edit instructions and knowledge sources."
+icon = "👤"
+
+[[lifecycle.items]]
+question = "Why does it work for me but not my colleague?"
+answer = "Most likely a permission issue — your colleague may not have access to the SharePoint files, or they may not have the required licence tier (e.g. email needs M365 Copilot licence)."
+icon = "🔐"
+
+[[lifecycle.items]]
+question = "How do I update my agent?"
+answer = "Open microsoft365.com/chat → find your agent in the left panel → click the three dots → Edit. Changes take effect immediately."
+icon = "✏️"
+
+[[lifecycle.items]]
+question = "Can multiple people edit the same agent?"
+answer = "No — only the creator can edit. To collaborate, copy the agent to Copilot Studio where multiple makers can work together."
+icon = "👥"
+
+# ── Symptom-Based Troubleshooting ──
+
+[[symptoms]]
+symptom = "Agent gives generic answers"
+likely_causes = ["Instructions too vague", "Knowledge sources too broad", "Web search overriding curated knowledge"]
+quick_fix = "Add specific tasks to instructions. Enable 'Only use specified sources'. Narrow SharePoint to specific folders."
+related_tab = "tips"
+
+[[symptoms]]
+symptom = "Agent answers off-topic questions"
+likely_causes = ["No boundary instructions", "No fallback text", "General knowledge not restricted"]
+quick_fix = "Use CAPS technique: CAPS keywords + exact fallback text + positive redirect."
+related_tab = "tips"
+
+[[symptoms]]
+symptom = "Agent makes up answers"
+likely_causes = ["No 'unknown' handling", "Knowledge sources don't cover the topic", "Instructions say 'be helpful'"]
+quick_fix = "Add: 'If you don't know, say so. DO NOT guess.' and provide a fallback message."
+related_tab = "tips"
+
+[[symptoms]]
+symptom = "Agent can't find my files"
+likely_causes = ["Files still indexing", "Restricted SharePoint Search", "Wrong file format", "Permission issue"]
+quick_fix = "Wait for 'Preparing' to finish. Check file type. Verify SharePoint access. Check admin settings."
+related_tab = "knowledge"
+
+[[symptoms]]
+symptom = "I can't share my agent"
+likely_causes = ["Free tier (sharing requires paygo/licence)", "Admin disabled sharing", "Sensitivity label blocking users"]
+quick_fix = "Check licence tier. Ask admin about sharing settings. Remove files with restrictive labels."
+related_tab = "matrix"
+
+[[symptoms]]
+symptom = "Colleague can't use my shared agent"
+likely_causes = ["They lack the required licence", "They don't have SharePoint access", "Sensitivity label blocks them"]
+quick_fix = "Verify they have the right licence tier. Check SharePoint permissions. Review sensitivity labels on embedded files."
+related_tab = "matrix"
+
+[[symptoms]]
+symptom = "Agent creation fails silently"
+likely_causes = ["Uploaded file has user-defined permissions", "File has disabled extract rights", "Double Key Encryption"]
+quick_fix = "Remove all uploaded files, then add them back one by one to find the problematic file."
+related_tab = "knowledge"
+
+[[symptoms]]
+symptom = "I don't see Agent Builder at all"
+likely_causes = ["Using mobile (not supported)", "Tenant doesn't have Copilot enabled", "Using wrong app URL"]
+quick_fix = "Go to microsoft365.com/chat on desktop or Teams desktop. Ask your admin to verify Copilot is enabled."
+related_tab = "tips"

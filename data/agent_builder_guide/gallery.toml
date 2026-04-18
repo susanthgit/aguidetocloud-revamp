@@ -1,0 +1,113 @@
+# ═══════════════════════════════════════════════════════════════
+# Agent Gallery — Curated community agent ideas
+# ═══════════════════════════════════════════════════════════════
+
+[[agents]]
+name = "HR Policy Bot"
+author = "IT Admin, Healthcare"
+department = "HR"
+description = "Answers employee questions about leave, benefits, dress code, and workplace policies from SharePoint HR docs."
+knowledge = ["sharepoint"]
+tier = "paygo"
+stars = 5
+instructions_preview = "You are the HR Policy Bot. Answer ONLY from SharePoint HR documents. Cite document names. Refuse non-HR topics."
+tags = ["hr", "policies", "sharepoint"]
+
+[[agents]]
+name = "Project Status Reporter"
+author = "PMO Lead, Tech"
+department = "Project Management"
+description = "Pulls project updates from SharePoint project sites and summarises status, risks, and next steps."
+knowledge = ["sharepoint", "teams"]
+tier = "paid"
+stars = 5
+instructions_preview = "You are the Project Status Bot. Summarise project health from SharePoint docs and Teams discussions. Flag risks in red."
+tags = ["projects", "status", "sharepoint", "teams"]
+
+[[agents]]
+name = "IT Troubleshooter"
+author = "Service Desk Lead"
+department = "IT"
+description = "Guides users through common IT issues using uploaded troubleshooting guides. Escalates when stuck."
+knowledge = ["file_upload"]
+tier = "paygo"
+stars = 4
+instructions_preview = "You are the IT Help Bot. Use numbered steps. Ask clarifying questions first. Escalate if not in guides."
+tags = ["it", "troubleshooting", "helpdesk"]
+
+[[agents]]
+name = "Brand Voice Coach"
+author = "Marketing Manager"
+department = "Marketing"
+description = "Reviews draft content against uploaded brand guidelines and suggests improvements for tone and style."
+knowledge = ["file_upload"]
+tier = "paygo"
+stars = 4
+instructions_preview = "You are the Brand Voice Coach. Compare user content against brand guidelines. Suggest specific rewrites."
+tags = ["marketing", "brand", "writing"]
+
+[[agents]]
+name = "Expense Policy Guide"
+author = "Finance Analyst"
+department = "Finance"
+description = "Answers questions about expense limits, receipt requirements, and approval workflows from finance policy docs."
+knowledge = ["file_upload", "sharepoint"]
+tier = "paygo"
+stars = 4
+instructions_preview = "You are the Expense Guide Bot. Answer from expense policies only. Always quote the specific limit or rule number."
+tags = ["finance", "expenses", "policies"]
+
+[[agents]]
+name = "Competitive Intel Tracker"
+author = "Strategy Analyst"
+department = "Sales"
+description = "Searches the web for competitor news, pricing changes, and product announcements. Summarises weekly."
+knowledge = ["web_search"]
+tier = "free"
+stars = 4
+instructions_preview = "You are a Competitive Intel Bot. Search for competitor news. Present as: Company, Update, Impact, Source."
+tags = ["sales", "competitive", "research"]
+
+[[agents]]
+name = "Meeting Recap Bot"
+author = "EA, Executive Team"
+department = "Operations"
+description = "Summarises Teams meeting discussions into action items, decisions, and follow-ups organised by person."
+knowledge = ["teams"]
+tier = "paid"
+stars = 5
+instructions_preview = "You are the Meeting Recap Bot. Summarise meetings as: Decisions, Action Items (with owners), Follow-ups."
+tags = ["meetings", "teams", "productivity"]
+
+[[agents]]
+name = "Training Navigator"
+author = "L&D Coordinator"
+department = "HR"
+description = "Recommends training courses and learning paths based on role and career goals from the SharePoint learning catalogue."
+knowledge = ["sharepoint"]
+tier = "paygo"
+stars = 3
+instructions_preview = "You are the Training Navigator. Match user goals to available courses. Suggest learning paths by seniority."
+tags = ["training", "learning", "career"]
+
+[[agents]]
+name = "Contract Clause Finder"
+author = "Legal Paralegal"
+department = "Legal"
+description = "Searches uploaded contract templates to find specific clauses, terms, and conditions quickly."
+knowledge = ["file_upload"]
+tier = "paygo"
+stars = 4
+instructions_preview = "You are the Contract Search Bot. Find specific clauses. Always quote the exact text and section number."
+tags = ["legal", "contracts", "search"]
+
+[[agents]]
+name = "Data Insight Generator"
+author = "Business Analyst"
+department = "Analytics"
+description = "Analyses uploaded spreadsheets and generates charts, trends, and summaries using code interpreter."
+knowledge = ["code_interpreter"]
+tier = "free"
+stars = 5
+instructions_preview = "You are a Data Analyst. Summarise data first, then create charts. Explain findings in simple terms."
+tags = ["data", "analytics", "charts"]
