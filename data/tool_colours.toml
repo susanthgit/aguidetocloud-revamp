@@ -229,6 +229,17 @@ body_class = "page-security-toolkit"
 # NOTE: 29° from Purview (84°) and PS Builder (142°) — mathematical optimum, colour space exhausted at 30+ tools
 
 [[tools]]
+name = "Copilot Studio Companion"
+slug = "cs-companion"
+hex = "#9055E3"
+hue = 270
+name_friendly = "Studio Purple"
+category = "Copilot"
+css_namespace = "cscomp-*"
+body_class = "page-cs-companion"
+# NOTE: Hue 270° is 12° from CA Builder (258°) — accepted, different category (Copilot vs Admin) + different lightness
+
+[[tools]]
 name = "Agent 365 Planner"
 slug = "agent-365-planner"
 hex = "#00A4EF"
@@ -238,6 +249,17 @@ category = "Admin"
 css_namespace = "agplan-*"
 body_class = "page-agent-365-planner"
 # NOTE: Hue 199° overlaps Meeting Planner (199°) and AI Mapper (198°) — accepted compromise for Microsoft Agent 365 brand matching
+
+[[tools]]
+name = "M365 Agent Builder Helper"
+slug = "agent-builder-guide"
+hex = "#00A4EF"
+hue = 199
+name_friendly = "M365 Blue"
+category = "Copilot"
+css_namespace = "abguide-*"
+body_class = "page-agent-builder-guide"
+# NOTE: Shares #00A4EF with Agent 365 Planner — intentional brand matching for Agent Builder family
 
 [[tools]]
 name = "Migration Planner"
@@ -531,14 +553,14 @@ body_class = "page-it-day-sim"
 
 [[tools]]
 name = "Agent Instruction Builder"
-slug = "agent-instructions"
-hex = "#E0976B"
-hue = 24
-name_friendly = "Warm Copper"
+slug = "instruct-builder"
+hex = "#2DD4BF"
+hue = 166
+name_friendly = "Teal-Cyan"
 category = "Learning"
-css_namespace = "aginst-*"
-body_class = "page-agent-instructions"
-# NOTE: Hue 24° shares warm range with Service Health (16°) and Countdown (30°) — much lighter/desaturated, visually distinct. Colour space exhausted at 45 tools.
+css_namespace = "instruct-*"
+body_class = "page-instruct-builder"
+# NOTE: Hue 166° same as Prompt Lab — accepted, different category (Learning vs Prompt) and different tool purpose.
 
 # ── Community (non-tool) ──────────────────────────────────────────────────────
 

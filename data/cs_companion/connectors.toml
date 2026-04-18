@@ -1,0 +1,214 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Connector Explorer
+# Top connectors with category, licence tier, use cases
+# ═══════════════════════════════════════════════════════════════
+
+[[connectors]]
+name = "SharePoint"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "📁"
+use_cases = ["Document knowledge", "List data", "File management"]
+
+[[connectors]]
+name = "Outlook 365"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "📧"
+use_cases = ["Send emails", "Calendar lookups", "Meeting scheduling"]
+
+[[connectors]]
+name = "Microsoft Teams"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "💬"
+use_cases = ["Post messages", "Channel notifications", "Adaptive Cards"]
+
+[[connectors]]
+name = "OneDrive for Business"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "☁️"
+use_cases = ["File access", "Document sharing", "Knowledge grounding"]
+
+[[connectors]]
+name = "Planner"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "📋"
+use_cases = ["Create tasks", "Update status", "Assign work"]
+
+[[connectors]]
+name = "Excel Online"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "📊"
+use_cases = ["Read/write spreadsheets", "Data lookups", "Report generation"]
+
+[[connectors]]
+name = "Approvals"
+category = "Microsoft 365"
+tier = "Standard"
+icon = "✅"
+use_cases = ["Request approvals", "Approval workflows", "Decision tracking"]
+
+[[connectors]]
+name = "Dataverse"
+category = "Power Platform"
+tier = "Premium"
+icon = "🗄️"
+use_cases = ["Business data storage", "CRUD operations", "Relational queries"]
+
+[[connectors]]
+name = "Power Automate"
+category = "Power Platform"
+tier = "Standard"
+icon = "⚡"
+use_cases = ["Trigger flows", "Complex workflows", "Scheduled actions"]
+
+[[connectors]]
+name = "AI Builder"
+category = "Power Platform"
+tier = "Premium"
+icon = "🤖"
+use_cases = ["Document processing", "Object detection", "Text classification"]
+
+[[connectors]]
+name = "SQL Server"
+category = "Database"
+tier = "Premium"
+icon = "🛢️"
+use_cases = ["Query databases", "CRUD operations", "Report data"]
+
+[[connectors]]
+name = "Azure SQL"
+category = "Database"
+tier = "Premium"
+icon = "🛢️"
+use_cases = ["Cloud database queries", "Stored procedures", "Data lookups"]
+
+[[connectors]]
+name = "Cosmos DB"
+category = "Database"
+tier = "Premium"
+icon = "🌍"
+use_cases = ["NoSQL queries", "Document storage", "Global data access"]
+
+[[connectors]]
+name = "ServiceNow"
+category = "ITSM"
+tier = "Premium"
+icon = "🎫"
+use_cases = ["Create incidents", "Query tickets", "Update records"]
+
+[[connectors]]
+name = "Jira"
+category = "ITSM"
+tier = "Premium"
+icon = "🐛"
+use_cases = ["Create issues", "Sprint tracking", "Bug management"]
+
+[[connectors]]
+name = "Salesforce"
+category = "CRM"
+tier = "Premium"
+icon = "💼"
+use_cases = ["Account lookups", "Opportunity management", "Lead tracking"]
+
+[[connectors]]
+name = "Dynamics 365"
+category = "CRM"
+tier = "Premium"
+icon = "📈"
+use_cases = ["Customer data", "Case management", "Sales pipeline"]
+
+[[connectors]]
+name = "SAP"
+category = "ERP"
+tier = "Premium"
+icon = "🏭"
+use_cases = ["Purchase orders", "Inventory queries", "Financial data"]
+
+[[connectors]]
+name = "HTTP"
+category = "Custom"
+tier = "Premium"
+icon = "🌐"
+use_cases = ["Any REST API", "Webhooks", "Custom integrations"]
+
+[[connectors]]
+name = "Custom Connector"
+category = "Custom"
+tier = "Premium"
+icon = "🔧"
+use_cases = ["Wrap any REST API", "Reusable across agents", "DLP-manageable"]
+
+[[connectors]]
+name = "Azure Key Vault"
+category = "Azure"
+tier = "Premium"
+icon = "🔐"
+use_cases = ["Secret storage", "Certificate management", "Secure config"]
+
+[[connectors]]
+name = "Azure Blob Storage"
+category = "Azure"
+tier = "Premium"
+icon = "📦"
+use_cases = ["File storage", "Blob management", "Document processing"]
+
+[[connectors]]
+name = "Azure OpenAI"
+category = "Azure"
+tier = "Premium"
+icon = "🧠"
+use_cases = ["Custom prompts", "Embeddings", "Model inference"]
+
+[[connectors]]
+name = "Twilio"
+category = "Communication"
+tier = "Premium"
+icon = "📱"
+use_cases = ["SMS notifications", "Phone calls", "WhatsApp messages"]
+
+[[connectors]]
+name = "Slack"
+category = "Communication"
+tier = "Premium"
+icon = "💬"
+use_cases = ["Post messages", "Channel notifications", "User lookups"]
+
+[[connectors]]
+name = "Gmail"
+category = "Google"
+tier = "Standard"
+icon = "✉️"
+use_cases = ["Send/read emails", "Label management", "Search"]
+
+[[connectors]]
+name = "Google Sheets"
+category = "Google"
+tier = "Standard"
+icon = "📊"
+use_cases = ["Read/write rows", "Data lookups", "Spreadsheet automation"]
+
+[[connectors]]
+name = "Zendesk"
+category = "ITSM"
+tier = "Premium"
+icon = "🎧"
+use_cases = ["Create tickets", "Customer lookup", "Knowledge base"]
+
+[[connectors]]
+name = "GitHub"
+category = "DevOps"
+tier = "Premium"
+icon = "🐙"
+use_cases = ["Create issues", "PR management", "Repo queries"]
+
+[[connectors]]
+name = "Azure DevOps"
+category = "DevOps"
+tier = "Premium"
+icon = "🔄"
+use_cases = ["Work items", "Pipeline triggers", "Board queries"]

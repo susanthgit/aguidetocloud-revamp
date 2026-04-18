@@ -1,0 +1,165 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Governance & Sharing
+# Tab 3: "Governance & Sharing"
+# ═══════════════════════════════════════════════════════════════
+
+[[sections]]
+id = "environments"
+title = "Power Platform Environments"
+icon = "🏗️"
+order = 1
+analogy = "Environments are like separate offices in a building. Each office has its own security badge (access controls), its own filing cabinets (Dataverse), and its own rules (DLP policies). You build agents in the dev office, test them in the test office, and deploy to the production office."
+explanation = "Every Copilot Studio agent lives inside a Power Platform environment. Environments are containers that hold agents, Dataverse data, connectors, and security settings. Using separate environments for development, testing, and production is a best practice for enterprise deployments."
+checklist = [
+  "Create separate Dev, Test, and Production environments",
+  "Use Managed Environments for enhanced governance controls",
+  "Assign Environment Admin and Environment Maker roles to appropriate groups",
+  "Enable environment routing to direct new makers to designated environments",
+  "Set up Application Lifecycle Management (ALM) for promoting agents between environments"
+]
+learn_url = "https://learn.microsoft.com/power-platform/admin/environments-overview"
+
+[[sections]]
+id = "dlp"
+title = "DLP Policies"
+icon = "🛡️"
+order = 2
+analogy = "DLP policies are like customs officers at a border. They check what data is going where and block anything that shouldn't cross the line. They prevent your agent from accidentally sending company secrets to an external API or social media channel."
+explanation = "Data Loss Prevention policies control which connectors and channels agents can use. DLP policies are configured at the tenant or environment level in the Power Platform admin centre. Since early 2025, DLP enforcement is mandatory for all tenants — no exemptions."
+checklist = [
+  "Review which connectors are in Business vs Non-business vs Blocked groups",
+  "Block channels you don't want agents published to (Facebook, WhatsApp, etc.)",
+  "Block HTTP connector if agents shouldn't make arbitrary web requests",
+  "Use endpoint filtering to allow specific HTTP endpoints instead of blocking all HTTP",
+  "Block event triggers if you want to prevent autonomous agent creation",
+  "Test DLP policy impact — blocked agents show detailed error messages with policy names",
+  "Use the Centre of Excellence (CoE) Starter Kit to audit agent-DLP compliance"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention"
+
+[[sections]]
+id = "sharing"
+title = "Sharing (Internal vs External)"
+icon = "🤝"
+order = 3
+analogy = "Sharing an agent is like lending a car. Sharing internally (employees) means they drive on company roads with company insurance. Sharing externally (website, WhatsApp) means anyone on the public road can drive — you need different insurance, different rules."
+explanation = "Copilot Studio agents can be shared internally within your organisation or externally with customers and partners. Internal sharing happens via Teams, M365 Copilot, or SharePoint. External sharing uses web widgets, WhatsApp, Facebook, or custom Direct Line channels. Each has different authentication, security, and licensing implications."
+checklist = [
+  "Internal agents: deploy to Teams app catalogue with admin approval",
+  "Internal agents: can use SSO (Single Sign-On) with Entra ID for seamless auth",
+  "External agents: configure authentication (Entra ID for partners, unauthenticated for public)",
+  "External agents: enable web channel security to prevent embedding on unauthorised sites",
+  "External agents: review and test Adaptive Card rendering in target channels",
+  "Consider that external-facing agents consume more Copilot Credits (public traffic can spike)",
+  "Set up monitoring/alerts for unexpected credit consumption from external channels"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/configuration-end-user-authentication"
+
+[[sections]]
+id = "admin-controls"
+title = "Admin Controls"
+icon = "⚙️"
+order = 4
+analogy = "Admin controls are like a building's master control room. Global Admins and Power Platform Admins can see everything happening with agents across the organisation — who built what, where it's deployed, and what it's accessing."
+explanation = "Administrators manage Copilot Studio through the Power Platform admin centre. They control who can create agents, which environments they work in, what data they can access, and where they can be published. Tenant-level settings override environment-level settings."
+checklist = [
+  "Control who can create agents using Entra ID security groups",
+  "Enable or disable publishing of generative AI-powered agents at tenant level",
+  "Manage environment-level GenAI features (can be disabled where regional capacity isn't available)",
+  "Review agent connections — ensure they use strong authentication and delegation",
+  "Store sensitive credentials in Azure Key Vault, not in connection configurations",
+  "Use the Power BI CoE Dashboard for tenant-wide visibility into agents and usage",
+  "Set up telemetry forwarding to Application Insights for detailed monitoring"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/guidance/sec-gov-phase2"
+
+[[sections]]
+id = "agent365"
+title = "Agent 365 Governance"
+icon = "🤖"
+order = 5
+analogy = "Agent 365 governance is about knowing where all your agents live. Like a company vehicle fleet — every agent should be registered, insured (licensed), and have a responsible owner. No rogue agents driving around unsupervised."
+explanation = "As organisations adopt M365 Copilot and Copilot Studio, agent sprawl becomes a real risk. Agent 365 governance means tracking all agents across Agent Builder and Copilot Studio, ensuring each has an owner, a purpose, and appropriate permissions. Copilot Studio agents promoted from Agent Builder inherit different governance — they move from M365 Copilot's simpler model to Power Platform's full governance framework."
+checklist = [
+  "Maintain an agent registry (who owns each agent, its purpose, where it's deployed)",
+  "Set policies for agent creation — who can build agents and in which environments",
+  "Review agents promoted from Agent Builder to Copilot Studio — they may need new DLP compliance",
+  "Monitor agent credit consumption to prevent budget surprises",
+  "Establish a review process before agents are published to production",
+  "Archive or delete unused agents — they still consume environment resources"
+]
+learn_url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/copilot-studio-experience"
+
+[[sections]]
+id = "compliance"
+title = "Compliance & Audit"
+icon = "📋"
+order = 6
+analogy = "Compliance is like having a black box recorder in every car. If something goes wrong, you can replay exactly what happened, who was involved, and when. Audit logs, data residency, and sensitivity labels give you that accountability."
+explanation = "Copilot Studio supports enterprise compliance requirements including audit logging, geographic data residency, and integration with Microsoft Purview. Conversation transcripts can be retained, sensitivity labels respected, and all agent actions logged for regulatory review."
+checklist = [
+  "Enable audit logging in the Power Platform admin centre",
+  "Verify data residency — Copilot Studio stores data in your tenant's geographic region",
+  "Configure Microsoft Purview sensitivity labels (Confidential/Highly Confidential files are not indexed)",
+  "Set data retention policies for conversation transcripts",
+  "Review Copilot Studio's compliance certifications (SOC 2, ISO 27001, GDPR, etc.)",
+  "For regulated industries: conduct a formal risk assessment before deploying customer-facing agents",
+  "Document your AI governance framework — include Copilot Studio agents in your responsible AI policy"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/security-and-governance"
+
+# ── Admin Prerequisites ──────────────────────────────────────
+
+[[prerequisites]]
+id = "licence"
+title = "Copilot Studio Licence"
+icon = "🔑"
+status_check = "Do you have a Copilot Studio tenant licence or pay-as-you-go via Azure?"
+required = true
+detail = "Without a licence, you can't create agents in Copilot Studio. The tenant licence includes 25K credits/month. PAYG costs $0.01/credit."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing"
+
+[[prerequisites]]
+id = "environment"
+title = "Power Platform Environment"
+icon = "🏗️"
+status_check = "Do you have a non-default Dataverse environment set up for Copilot Studio?"
+required = true
+detail = "Agents need a Dataverse environment. Don't use the default environment for production agents — create dedicated environments for Dev, Test, and Production."
+learn_url = "https://learn.microsoft.com/power-platform/admin/environments-overview"
+
+[[prerequisites]]
+id = "admin-access"
+title = "Power Platform Admin Access"
+icon = "⚙️"
+status_check = "Does your admin have Power Platform admin or Environment Admin role?"
+required = true
+detail = "Someone needs admin access to create environments, set DLP policies, manage connectors, and approve agent publishing."
+learn_url = "https://learn.microsoft.com/power-platform/admin/use-service-admin-role-manage-tenant"
+
+[[prerequisites]]
+id = "dlp"
+title = "DLP Policies Reviewed"
+icon = "🛡️"
+status_check = "Have you reviewed which connectors and channels are allowed by DLP?"
+required = true
+detail = "DLP enforcement is mandatory since early 2025. If your agent needs a connector that DLP blocks, you'll get errors on publish. Review policies BEFORE building."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention"
+
+[[prerequisites]]
+id = "entra-groups"
+title = "Entra ID Security Groups"
+icon = "👥"
+status_check = "Do you have security groups set up for agent makers and users?"
+required = false
+detail = "Use Entra ID groups to control who can create agents, who can access specific environments, and who gets Copilot Studio licences."
+learn_url = "https://learn.microsoft.com/entra/identity/users/licensing-groups-assign"
+
+[[prerequisites]]
+id = "auth-plan"
+title = "Authentication Plan"
+icon = "🔐"
+status_check = "Have you decided how users will authenticate with the agent?"
+required = false
+detail = "Internal agents: use SSO with Entra ID. External agents: decide between manual auth, unauthenticated access, or partner auth. This affects security and user experience."
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/configuration-end-user-authentication"

@@ -1,0 +1,293 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Scenarios & Evaluator
+# Tab 1: "Can I Build This?"
+# ═══════════════════════════════════════════════════════════════
+
+# ── Feature Toggles (evaluator) ──────────────────────────────
+# User toggles requirements → platform recommendation lights up
+
+[[features]]
+id = "simple-qa"
+label = "Simple Q&A from company docs"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "amber"
+tip = "All platforms can do this — Agent Builder is the easiest starting point"
+
+[[features]]
+id = "m365-data"
+label = "Access SharePoint, OneDrive, Email, Teams data"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "amber"
+tip = "Agent Builder and CS have native M365 integration"
+
+[[features]]
+id = "conversation-flow"
+label = "Multi-step conversation with branching logic"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "Agent Builder has no topics or conversation flow control"
+
+[[features]]
+id = "external-systems"
+label = "Connect to external systems (CRM, ITSM, APIs)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "CS has 1,000+ connectors; AI Foundry has full API access"
+
+[[features]]
+id = "power-automate"
+label = "Trigger Power Automate workflows"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "red"
+tip = "Only Copilot Studio has native Power Automate integration"
+
+[[features]]
+id = "multi-channel"
+label = "Deploy to web, mobile, WhatsApp (beyond Teams)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "Agent Builder is M365 only; CS and Foundry support multi-channel"
+
+[[features]]
+id = "model-selection"
+label = "Choose AI model (GPT-5, Claude, Grok)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "Agent Builder uses the default model only"
+
+[[features]]
+id = "autonomous"
+label = "Background agents (trigger-based, no user prompt)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "Autonomous agents run without a user starting the conversation"
+
+[[features]]
+id = "multi-agent"
+label = "Multi-agent orchestration (parent/child agents)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "CS supports child, connected, and cross-platform agents"
+
+[[features]]
+id = "enterprise-governance"
+label = "DLP policies, environment controls, RBAC"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "CS and Foundry have enterprise governance; Agent Builder is limited"
+
+[[features]]
+id = "custom-model"
+label = "Fine-tune or bring your own model"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+tip = "Only AI Foundry supports custom model training"
+
+[[features]]
+id = "adaptive-cards"
+label = "Rich adaptive card interactions in chat"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "green"
+tip = "Adaptive Cards let agents show forms, buttons, and structured data"
+
+[[features]]
+id = "computer-use"
+label = "Control desktop apps via AI (Computer Use)"
+agent_builder = "red"
+copilot_studio = "green"
+ai_foundry = "red"
+tip = "Copilot Studio can operate desktop apps like a human user"
+
+[[features]]
+id = "sovereign"
+label = "Air-gapped or sovereign deployment"
+agent_builder = "red"
+copilot_studio = "red"
+ai_foundry = "green"
+tip = "Only AI Foundry supports sovereign/air-gapped environments"
+
+[[features]]
+id = "no-code"
+label = "No-code / low-code setup (no developers)"
+agent_builder = "green"
+copilot_studio = "green"
+ai_foundry = "red"
+tip = "AI Foundry requires developer skills"
+
+[[features]]
+id = "included-licence"
+label = "Included with existing M365 Copilot licence"
+agent_builder = "green"
+copilot_studio = "amber"
+ai_foundry = "red"
+tip = "Agent Builder is free with M365 Copilot; CS needs its own licence"
+
+# ── Scenarios ────────────────────────────────────────────────
+# Pre-built scenarios users can browse
+
+[[scenarios]]
+id = "hr-faq"
+icon = "👥"
+title = "HR FAQ Bot"
+description = "Employees ask about leave policies, benefits, onboarding — agent answers from HR SharePoint."
+verdict = "builder"
+verdict_label = "Start with Agent Builder"
+explanation = "This is simple Q&A from company documents. Agent Builder handles this perfectly — no need for Copilot Studio's complexity."
+components = ["Knowledge sources (SharePoint)", "Instructions"]
+upgrade_trigger = "When you need approval workflows (e.g. leave requests) → upgrade to Copilot Studio"
+
+[[scenarios]]
+id = "it-helpdesk"
+icon = "🎧"
+title = "IT Helpdesk Agent"
+description = "Reset passwords, create tickets in ServiceNow, escalate to humans, track resolution status."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "This needs external system integration (ServiceNow), multi-step workflows (ticket creation → assignment → status check), and Power Automate flows. Classic Copilot Studio territory."
+components = ["Topics", "Power Automate flows", "ServiceNow connector", "Adaptive Cards", "Human handoff"]
+risks = ["Premium connector required (ServiceNow)", "Credit-intensive (GenAI + tools per interaction)"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "customer-support"
+icon = "💬"
+title = "External Customer Support Bot"
+description = "Customer-facing bot on your website answering product questions, handling returns, collecting feedback."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "External-facing agents need multi-channel deployment (website widget), unauthenticated access, and likely custom connectors to your CRM/order system."
+components = ["Web channel", "Knowledge sources", "Custom connector (CRM)", "Unauthenticated access", "Adaptive Cards"]
+risks = ["External data boundary", "Unpredictable credit consumption", "Web channel security required"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "approval-workflow"
+icon = "✅"
+title = "Multi-Step Approval Workflow"
+description = "Purchase requests that need manager approval, budget check, then procurement — all through chat."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "Approval workflows require Power Automate integration, Dataverse for tracking, and multi-step conversation topics with conditional branching."
+components = ["Topics with branching", "Power Automate (Approvals)", "Dataverse", "Adaptive Cards (forms)"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "crm-agent"
+icon = "📊"
+title = "CRM Integration Agent"
+description = "Sales team asks the agent about customer history, pipeline, upcoming renewals — pulls live data from Dynamics 365 or Salesforce."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "Live CRM data integration requires connectors (Dynamics 365 or custom Salesforce connector) and structured conversation flows to present data meaningfully."
+components = ["Connectors (Dynamics 365 / Salesforce)", "Adaptive Cards", "Topics", "Generative orchestration"]
+risks = ["Premium connector required", "Admin consent for CRM access"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "onboarding"
+icon = "🎓"
+title = "Employee Onboarding Guide"
+description = "New hires get guided through setup — IT equipment, badge, training schedule, benefits enrolment."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "Onboarding needs multi-step guidance with conditional paths (different by role/department), task tracking via Dataverse, and potentially Power Automate for ticket creation."
+components = ["Topics (role-based branching)", "Power Automate", "Dataverse", "Knowledge sources"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "meeting-notes"
+icon = "📝"
+title = "Meeting Notes Summariser"
+description = "Agent that summarises meeting transcripts and extracts action items from Teams meetings."
+verdict = "builder"
+verdict_label = "Start with Agent Builder"
+explanation = "Agent Builder can access Teams meeting transcripts via M365 Graph Grounding. Simple instruction-based agent — no workflows needed."
+components = ["Instructions", "M365 Graph Grounding"]
+upgrade_trigger = "When you need to auto-create tasks in Planner or send follow-up emails → upgrade to Copilot Studio"
+
+[[scenarios]]
+id = "multi-channel-bot"
+icon = "🌐"
+title = "Teams + Website + WhatsApp Bot"
+description = "Same agent deployed across Teams for employees, website for customers, and WhatsApp for mobile."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "Multi-channel deployment is a Copilot Studio feature. Agent Builder agents only live inside M365 apps."
+components = ["Multi-channel publishing", "Teams channel", "Web widget", "WhatsApp channel", "Authentication config per channel"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "data-analysis"
+icon = "📈"
+title = "Custom AI Data Analysis Pipeline"
+description = "Process thousands of documents, extract structured data, run custom ML models, generate reports."
+verdict = "foundry"
+verdict_label = "Azure AI Foundry"
+explanation = "This needs custom model training, RAG pipelines at scale, and programmatic orchestration. Beyond what Copilot Studio's low-code canvas can handle."
+components = ["Custom models", "RAG pipeline", "Azure AI Search", "Custom evaluation", "CI/CD"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "policy-lookup"
+icon = "📋"
+title = "Company Policy Lookup"
+description = "Employees ask about travel policy, expense rules, compliance requirements — agent answers from internal docs."
+verdict = "builder"
+verdict_label = "Start with Agent Builder"
+explanation = "Pure knowledge retrieval from company documents. Agent Builder with SharePoint knowledge sources handles this perfectly."
+components = ["Knowledge sources (SharePoint)", "Instructions"]
+upgrade_trigger = "When you need to collect expense reports or route approvals → upgrade to Copilot Studio"
+
+[[scenarios]]
+id = "autonomous-monitor"
+icon = "🤖"
+title = "Autonomous Monitoring Agent"
+description = "Agent monitors Dataverse for overdue tickets, sends reminders, escalates to managers — all without user prompts."
+verdict = "studio"
+verdict_label = "Copilot Studio"
+explanation = "Autonomous agents with event triggers are a Copilot Studio capability. The agent runs in the background, monitoring and acting on data changes."
+components = ["Autonomous triggers", "Dataverse", "Power Automate", "Adaptive Cards"]
+upgrade_trigger = ""
+
+[[scenarios]]
+id = "sovereign-ai"
+icon = "🏛️"
+title = "Government / Sovereign AI Deployment"
+description = "AI agent for a government agency requiring air-gapped deployment, data sovereignty, and specific compliance certifications."
+verdict = "foundry"
+verdict_label = "Azure AI Foundry"
+explanation = "Sovereign and air-gapped deployments require Azure AI Foundry. Copilot Studio doesn't support isolated environments."
+components = ["Azure AI Foundry", "Sovereign cloud", "Custom models", "Compliance certifications"]
+upgrade_trigger = ""
+
+# ── Cost Quick Reference ─────────────────────────────────────
+
+[[cost_models]]
+platform = "agent-builder"
+name = "Included"
+price = "Included with M365 Copilot ($30/user/mo)"
+detail = "No extra cost if you already have M365 Copilot licences."
+
+[[cost_models]]
+platform = "copilot-studio"
+name = "Credit-based"
+price = "$200/mo for 25K credits (or $0.01/credit PAYG)"
+detail = "Regular messages = 1 credit. GenAI answers = 2 credits. Complex interactions with tools can use 20+ credits."
+
+[[cost_models]]
+platform = "ai-foundry"
+name = "Consumption"
+price = "Per-token pricing (varies by model)"
+detail = "Pay per token, per tool invocation, per storage unit. Full Azure consumption model."

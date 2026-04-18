@@ -1,0 +1,114 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Agent Planner & Credit Estimator
+# ═══════════════════════════════════════════════════════════════
+
+# ── Planner Wizard Steps ──────────────────────────────────────
+
+[[steps]]
+id = "purpose"
+title = "What's the agent's purpose?"
+order = 1
+options = [
+  { id = "faq", label = "Answer questions from documents", icon = "📖" },
+  { id = "workflow", label = "Guide users through a process", icon = "⚡" },
+  { id = "integration", label = "Connect to external systems", icon = "🔌" },
+  { id = "monitoring", label = "Monitor and act autonomously", icon = "🤖" },
+  { id = "support", label = "Customer support (external)", icon = "💬" }
+]
+
+[[steps]]
+id = "audience"
+title = "Who will use this agent?"
+order = 2
+options = [
+  { id = "internal", label = "Internal employees only", icon = "🏢" },
+  { id = "external", label = "External customers/partners", icon = "🌐" },
+  { id = "both", label = "Both internal and external", icon = "🔀" }
+]
+
+[[steps]]
+id = "channels"
+title = "Where should it be available?"
+order = 3
+multi = true
+options = [
+  { id = "teams", label = "Microsoft Teams", icon = "💬" },
+  { id = "web", label = "Website widget", icon = "🌐" },
+  { id = "whatsapp", label = "WhatsApp", icon = "📱" },
+  { id = "m365", label = "M365 Copilot Chat", icon = "🤖" },
+  { id = "dynamics", label = "Dynamics 365 Omnichannel", icon = "📞" }
+]
+
+[[steps]]
+id = "integrations"
+title = "What systems does it need to connect to?"
+order = 4
+multi = true
+options = [
+  { id = "sharepoint", label = "SharePoint / OneDrive", icon = "📁" },
+  { id = "crm", label = "CRM (Salesforce, Dynamics)", icon = "💼" },
+  { id = "itsm", label = "ITSM (ServiceNow, Jira)", icon = "🎫" },
+  { id = "database", label = "Databases (SQL, Cosmos)", icon = "🛢️" },
+  { id = "api", label = "Custom REST APIs", icon = "🌐" },
+  { id = "none", label = "No external systems", icon = "✅" }
+]
+
+[[steps]]
+id = "complexity"
+title = "How complex is the conversation?"
+order = 5
+options = [
+  { id = "simple", label = "Simple Q&A — one question, one answer", icon = "💬" },
+  { id = "guided", label = "Guided flow — multi-step with conditions", icon = "🔀" },
+  { id = "complex", label = "Complex — branching, approvals, escalation", icon = "🌳" }
+]
+
+# ── Credit Estimator Rates ────────────────────────────────────
+
+[credits]
+currency = "Copilot Credits"
+prepaid_monthly = 25000
+prepaid_cost_usd = 200
+payg_rate = 0.01
+
+[[credit_actions]]
+id = "classic"
+label = "Classic topic response (no AI)"
+credits = 1
+description = "Standard topic-based response without generative AI"
+
+[[credit_actions]]
+id = "genai"
+label = "Generative AI answer"
+credits = 2
+description = "Response using generative answers, orchestration, or AI tools"
+
+[[credit_actions]]
+id = "autonomous"
+label = "Autonomous agent trigger"
+credits = 2
+description = "Background agent triggered by event or schedule"
+
+[[credit_actions]]
+id = "flow"
+label = "Power Automate flow action"
+credits = 1
+description = "Triggering a cloud flow from conversation"
+
+[[credit_actions]]
+id = "tool"
+label = "Agent tool invocation"
+credits = 2
+description = "Calling an external tool, connector, or MCP server"
+
+[[credit_actions]]
+id = "greeting"
+label = "Proactive greeting"
+credits = 1
+description = "Agent proactively greets user on website"
+
+# ── Planner Output Templates ─────────────────────────────────
+
+[output_template]
+title = "Agent Build Plan"
+sections = ["Purpose", "Audience & Channels", "Knowledge Sources", "Topics & Flows", "Connectors & Tools", "Governance Checklist", "Estimated Credits", "Next Steps"]

@@ -1,87 +1,401 @@
 {{ define "main" }}
-{{ $cs := (index hugo.Data "copilot_studio") }}
-<link rel="stylesheet" href="/css/copilot-studio.css?v={{ site.Params.cache_version }}">
+{{ $d := (index hugo.Data "cs_companion") }}
+<link rel="stylesheet" href="/css/cs-companion.css?v={{ site.Params.cache_version }}">
 
 {{ partial "tool-hero.html" (dict "title" "Copilot Studio Companion" "accent" "#9055E3") }}
 
-<div class="cstudio-page">
-  <div class="cstudio-tabs" role="tablist">
-    <button class="cstudio-tab active" role="tab" aria-selected="true" data-tab="decide">Decide</button>
-    <button class="cstudio-tab" role="tab" aria-selected="false" data-tab="features">Features & Limits</button>
-    <button class="cstudio-tab" role="tab" aria-selected="false" data-tab="plan">Plan</button>
-    <button class="cstudio-tab" role="tab" aria-selected="false" data-tab="blueprint">Blueprint</button>
-    <button class="cstudio-tab" role="tab" aria-selected="false" data-tab="licensing">Licensing</button>
-    <button class="cstudio-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+<div class="cscomp-page">
+  <!-- ═══ PERSONA SWITCHER (#8) ═══ -->
+  <div class="cscomp-persona-bar" id="persona-bar">
+    <span class="cscomp-persona-label">I am:</span>
+    <button class="cscomp-persona-btn active" data-persona="admin" aria-label="IT Admin persona">🔧 IT Admin</button>
+    <button class="cscomp-persona-btn" data-persona="maker" aria-label="Maker persona">🏗️ Maker</button>
+    <button class="cscomp-persona-btn" data-persona="architect" aria-label="Architect persona">📐 Architect</button>
   </div>
 
-  <!-- TAB 1: DECIDE -->
-  <div class="cstudio-panel active" id="panel-decide">
-    <h3 class="cstudio-section-title">Which platform is right for you?</h3>
-    <p class="cstudio-tip">Toggle the features you need — each platform lights up green (supported), amber (partial), or red (not available).</p>
-    <div id="feature-checker"></div>
-    <h3 class="cstudio-section-title" style="margin-top:2rem">When to upgrade</h3>
-    <div id="upgrade-triggers"></div>
-    <h3 class="cstudio-section-title" style="margin-top:2rem">Platform comparison</h3>
-    <div id="platform-cards"></div>
+  <!-- ═══ PAGE SEARCH (#12) ═══ -->
+  <div class="cscomp-search-bar">
+    <input type="text" id="cscomp-search" class="cscomp-search-input" placeholder="Search across all tabs..." aria-label="Search Copilot Studio Companion">
+    <div class="cscomp-search-results" id="cscomp-search-results" style="display:none"></div>
   </div>
 
-  <!-- TAB 2: FEATURES & LIMITS -->
-  <div class="cstudio-panel" id="panel-features">
-    <div class="cstudio-subtabs" id="features-subtabs">
-      <button class="cstudio-subtab active" data-sub="knowledge">Knowledge Sources</button>
-      <button class="cstudio-subtab" data-sub="models">AI Models</button>
-      <button class="cstudio-subtab" data-sub="agents">Agent Architecture</button>
-      <button class="cstudio-subtab" data-sub="quotas">Quotas & Limits</button>
-      <button class="cstudio-subtab" data-sub="capabilities">All Capabilities</button>
+  <div class="cscomp-tabs" role="tablist" aria-label="Copilot Studio Companion sections">
+    <button class="cscomp-tab active" role="tab" aria-selected="true" data-tab="scenarios">Can I Build This?</button>
+    <button class="cscomp-tab" role="tab" aria-selected="false" data-tab="capabilities">Capabilities</button>
+    <button class="cscomp-tab" role="tab" aria-selected="false" data-tab="governance">Governance &amp; Sharing</button>
+    <button class="cscomp-tab" role="tab" aria-selected="false" data-tab="patterns">Design Patterns</button>
+    <button class="cscomp-tab" role="tab" aria-selected="false" data-tab="planner">Plan &amp; Estimate</button>
+    <button class="cscomp-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- ═══ TAB 1: CAN I BUILD THIS? ═══ -->
+  <div class="cscomp-panel active" id="panel-scenarios">
+    <h2 class="cscomp-section-title">What do you need?</h2>
+    <p class="cscomp-tip">Toggle the features your agent needs — each platform lights up green (supported), amber (partial), or red (not available).</p>
+
+    <div class="cscomp-evaluator">
+      <div class="cscomp-eval-header">
+        <div class="cscomp-eval-plat"><span>Agent Builder</span></div>
+        <div class="cscomp-eval-plat"><span>Copilot Studio</span></div>
+        <div class="cscomp-eval-plat"><span>AI Foundry</span></div>
+      </div>
+      {{ range $d.scenarios.features }}
+      <div class="cscomp-eval-row" data-feature="{{ .id }}">
+        <label class="cscomp-eval-label">
+          <input type="checkbox" class="cscomp-eval-check" aria-label="{{ .label }}" data-ab="{{ .agent_builder }}" data-cs="{{ .copilot_studio }}" data-af="{{ .ai_foundry }}">
+          <span>{{ .label }}</span>
+        </label>
+        <div class="cscomp-eval-dots">
+          <span class="cscomp-dot" data-plat="ab"></span>
+          <span class="cscomp-dot" data-plat="cs"></span>
+          <span class="cscomp-dot" data-plat="af"></span>
+        </div>
+        <div class="cscomp-eval-tip">{{ .tip }}</div>
+      </div>
+      {{ end }}
+      <div class="cscomp-eval-verdict" id="eval-verdict">
+        <p>Toggle features above to see which platform fits your needs.</p>
+      </div>
     </div>
-    <div class="cstudio-subpanel active" id="sub-knowledge"><div id="knowledge-grid"></div></div>
-    <div class="cstudio-subpanel" id="sub-models"><div id="models-grid"></div></div>
-    <div class="cstudio-subpanel" id="sub-agents"><div id="agents-grid"></div></div>
-    <div class="cstudio-subpanel" id="sub-quotas"><div id="quotas-grid"></div></div>
-    <div class="cstudio-subpanel" id="sub-capabilities"><div id="capabilities-grid"></div></div>
-  </div>
 
-  <!-- TAB 3: PLAN -->
-  <div class="cstudio-panel" id="panel-plan">
-    <div class="cstudio-wizard">
-      <div class="cstudio-steps-bar" id="plan-steps-bar"></div>
-      <div id="plan-wizard-content"></div>
+    <!-- Custom Scenario Input (#3) -->
+    <div class="cscomp-custom-input">
+      <h3>🔍 Describe Your Scenario</h3>
+      <input type="text" id="custom-scenario" class="cscomp-custom-scenario-input" placeholder="e.g. 'I want an agent that creates ServiceNow tickets from Teams'" aria-label="Describe your agent scenario">
+      <div id="custom-scenario-result" class="cscomp-custom-result" style="display:none"></div>
+    </div>
+
+    <h2 class="cscomp-section-title" style="margin-top:2rem">Common Scenarios</h2>
+    <p class="cscomp-tip">Browse pre-built scenarios to see which platform is right — and which components you'll need.</p>
+    <div class="cscomp-scenario-filter" id="scenario-filter">
+      <button class="cscomp-filter-btn active" data-filter="all">All</button>
+      <button class="cscomp-filter-btn" data-filter="builder">🟢 Agent Builder</button>
+      <button class="cscomp-filter-btn" data-filter="studio">🟣 Copilot Studio</button>
+      <button class="cscomp-filter-btn" data-filter="foundry">🔵 AI Foundry</button>
+    </div>
+    <div class="cscomp-scenario-grid">
+      {{ range $d.scenarios.scenarios }}
+      <div class="cscomp-scenario-card" data-verdict="{{ .verdict }}" data-keywords="{{ .title }} {{ .description }} {{ delimit .components " " }}">
+        <div class="cscomp-scenario-top">
+          <span class="cscomp-scenario-icon">{{ .icon }}</span>
+          <h3>{{ .title }}</h3>
+          <span class="cscomp-verdict-badge cscomp-verdict-{{ .verdict }}">{{ .verdict_label }}</span>
+        </div>
+        <p class="cscomp-scenario-desc">{{ .description }}</p>
+        {{ with .risks }}<div class="cscomp-risk-badges">{{ range . }}<span class="cscomp-risk-badge">⚠️ {{ . }}</span>{{ end }}</div>{{ end }}
+        <details class="cscomp-scenario-detail">
+          <summary>Why this platform?</summary>
+          <p>{{ .explanation }}</p>
+          <div class="cscomp-components">
+            <strong>Key components:</strong>
+            <ul>{{ range .components }}<li>{{ . }}</li>{{ end }}</ul>
+          </div>
+          {{ with .upgrade_trigger }}<p class="cscomp-upgrade-hint">⬆️ {{ . }}</p>{{ end }}
+        </details>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="cscomp-cost-strip">
+      <h3>💰 Quick Cost Comparison</h3>
+      <div class="cscomp-cost-grid">
+        {{ range $d.scenarios.cost_models }}
+        <div class="cscomp-cost-card">
+          <strong>{{ .name }}</strong>
+          <span class="cscomp-cost-price">{{ .price }}</span>
+          <p>{{ .detail }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Shareable Decision Summary (#6) -->
+    <div class="cscomp-share-row">
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-share-summary">📋 Copy Decision Summary</button>
+    </div>
+
+    <div class="cscomp-cta-row">
+      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">🚀 Open Copilot Studio</a>
+      <a href="/agent-builder-guide/" class="cscomp-cta">🤖 Agent Builder Guide — the simpler option</a>
+      <a href="/blog/agent-builder-vs-copilot-studio-vs-foundry/" class="cscomp-cta">📖 Read the full comparison blog</a>
     </div>
   </div>
 
-  <!-- TAB 4: BLUEPRINT -->
-  <div class="cstudio-panel" id="panel-blueprint">
-    <h3 class="cstudio-section-title">Topic Map</h3>
-    <p class="cstudio-tip">Plan your conversation topics before building them in Copilot Studio.</p>
-    <div id="topic-map"></div>
-    <h3 class="cstudio-section-title" style="margin-top:2rem">Integration Checklist</h3>
-    <div id="integration-checklist"></div>
-    <div class="cstudio-export-row" style="margin-top:1.5rem">
-      <button class="cstudio-btn cstudio-btn-primary" id="btn-export-blueprint">Export Blueprint (.md)</button>
-      <button class="cstudio-btn" id="btn-copy-blueprint">Copy to Clipboard</button>
+  <!-- ═══ TAB 2: CAPABILITIES ═══ -->
+  <div class="cscomp-panel" id="panel-capabilities">
+    <h2 class="cscomp-section-title">Copilot Studio Capabilities</h2>
+    <p class="cscomp-tip">Everything Copilot Studio can do, explained for IT admins — not developers.</p>
+
+    <!-- Comparison Table (#4) -->
+    <details class="cscomp-compare-toggle">
+      <summary><strong>📊 Quick Comparison: Agent Builder vs Studio vs Foundry</strong></summary>
+      <div class="cscomp-compare-table-wrap">
+        <table class="cscomp-compare-table">
+          <thead><tr><th>Capability</th><th>Agent Builder</th><th>Copilot Studio</th><th>AI Foundry</th></tr></thead>
+          <tbody>
+            <tr><td>Topics & conversation flow</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅ (code)</td></tr>
+            <tr><td>Knowledge grounding</td><td class="cscomp-cell-green">✅ M365</td><td class="cscomp-cell-green">✅ Multi-source</td><td class="cscomp-cell-green">✅ Custom RAG</td></tr>
+            <tr><td>Model selection</td><td class="cscomp-cell-red">❌ Default only</td><td class="cscomp-cell-green">✅ 6+ models</td><td class="cscomp-cell-green">✅ 1800+ models</td></tr>
+            <tr><td>Adaptive Cards</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅ (custom)</td></tr>
+            <tr><td>Connectors (1000+)</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-amber">Via code</td></tr>
+            <tr><td>Power Automate</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅ Native</td><td class="cscomp-cell-red">❌</td></tr>
+            <tr><td>Tools & MCP servers</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅</td></tr>
+            <tr><td>Multi-channel deploy</td><td class="cscomp-cell-red">❌ M365 only</td><td class="cscomp-cell-green">✅ 8+ channels</td><td class="cscomp-cell-green">✅ Any</td></tr>
+            <tr><td>Computer Use</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-red">❌</td></tr>
+            <tr><td>Fine-tuning</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td></tr>
+            <tr><td>No-code authoring</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-red">❌</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="cscomp-cap-nav">
+      {{ range sort $d.capabilities.capabilities "order" }}
+      <a href="#cap-{{ .id }}">{{ .icon }} {{ .title }}</a>
+      {{ end }}
+    </div>
+    {{ range sort $d.capabilities.capabilities "order" }}
+    <div class="cscomp-cap-section" id="cap-{{ .id }}">
+      <h3 class="cscomp-cap-title"><span class="cscomp-cap-icon">{{ .icon }}</span> {{ .title }}</h3>
+      <div class="cscomp-cap-analogy">💡 <em>{{ .analogy }}</em></div>
+      <div class="cscomp-cap-body">
+        <p>{{ .what_it_is }}</p>
+        <details class="cscomp-cap-when">
+          <summary><strong>When to use this</strong></summary>
+          <p>{{ .when_to_use }}</p>
+        </details>
+        <div class="cscomp-cap-facts">
+          <h4>Key Facts</h4>
+          <ul>{{ range .key_facts }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        <details class="cscomp-cap-gotchas">
+          <summary><strong>⚠️ Gotchas &amp; Limitations</strong></summary>
+          <ul>{{ range .gotchas }}<li>{{ . }}</li>{{ end }}</ul>
+        </details>
+        <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Microsoft Learn docs →</a>
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Connector Explorer (#15) -->
+    <div class="cscomp-connector-section" id="cap-connectors-explorer">
+      <h3 class="cscomp-cap-title"><span class="cscomp-cap-icon">🔎</span> Connector Explorer</h3>
+      <p class="cscomp-tip">Search the top 30 connectors. Premium connectors need appropriate Power Platform licensing.</p>
+      <input type="text" id="connector-search" class="cscomp-connector-search" placeholder="Search connectors (e.g. ServiceNow, SQL, Teams)..." aria-label="Search connectors">
+      <div class="cscomp-connector-grid" id="connector-grid">
+        {{ range $d.connectors.connectors }}
+        <div class="cscomp-connector-card" data-name="{{ .name }}" data-cat="{{ .category }}" data-tier="{{ .tier }}">
+          <div class="cscomp-connector-top">
+            <span class="cscomp-connector-icon">{{ .icon }}</span>
+            <strong>{{ .name }}</strong>
+            <span class="cscomp-tier-badge cscomp-tier-{{ lower .tier }}">{{ .tier }}</span>
+          </div>
+          <span class="cscomp-connector-cat">{{ .category }}</span>
+          <ul class="cscomp-connector-uses">{{ range .use_cases }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="cscomp-cta-row" style="margin-top:1.5rem">
+      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">🚀 Open Copilot Studio</a>
+      <a href="https://learn.microsoft.com/microsoft-copilot-studio/" target="_blank" rel="noopener" class="cscomp-cta">📚 Full documentation</a>
     </div>
   </div>
 
-  <!-- TAB 5: LICENSING -->
-  <div class="cstudio-panel" id="panel-licensing">
-    <h3 class="cstudio-section-title">Copilot Credits Explained</h3>
-    <div id="credits-explainer"></div>
-    <h3 class="cstudio-section-title" style="margin-top:2rem">Estimate Your Monthly Usage</h3>
-    <div id="credits-estimator"></div>
-    <h3 class="cstudio-section-title" style="margin-top:2rem">Licence Comparison</h3>
-    <div id="licence-comparison"></div>
+  <!-- ═══ TAB 3: GOVERNANCE & SHARING ═══ -->
+  <div class="cscomp-panel" id="panel-governance">
+    <h2 class="cscomp-section-title">Governance &amp; Sharing</h2>
+    <p class="cscomp-tip">Everything admins need to know about controlling, securing, and sharing Copilot Studio agents.</p>
+
+    <!-- Admin Prerequisites (#5) -->
+    <div class="cscomp-prereq-section">
+      <h3 class="cscomp-section-title">🚦 Before You Start — Prerequisites</h3>
+      <p class="cscomp-tip">Check these BEFORE building your first agent. Missing prerequisites are the #1 cause of failed Studio projects.</p>
+      <div class="cscomp-prereq-grid">
+        {{ range $d.governance.prerequisites }}
+        <div class="cscomp-prereq-card{{ if .required }} cscomp-prereq-required{{ end }}">
+          <div class="cscomp-prereq-top">
+            <span>{{ .icon }}</span>
+            <strong>{{ .title }}</strong>
+            {{ if .required }}<span class="cscomp-prereq-req">Required</span>{{ else }}<span class="cscomp-prereq-opt">Recommended</span>{{ end }}
+          </div>
+          <p class="cscomp-prereq-check">{{ .status_check }}</p>
+          <details><summary>Details</summary><p>{{ .detail }}</p>
+          <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Learn more →</a></details>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ range sort $d.governance.sections "order" }}
+    <div class="cscomp-gov-section" id="gov-{{ .id }}">
+      <h3 class="cscomp-gov-title"><span class="cscomp-gov-icon">{{ .icon }}</span> {{ .title }}</h3>
+      <div class="cscomp-gov-analogy">💡 <em>{{ .analogy }}</em></div>
+      <p class="cscomp-gov-explanation">{{ .explanation }}</p>
+      <div class="cscomp-gov-checklist">
+        <h4>✅ Admin Checklist</h4>
+        <ul>{{ range .checklist }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Microsoft Learn docs →</a>
+    </div>
+    {{ end }}
+    <div class="cscomp-gov-export-row">
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-export-checklist">📋 Copy All Checklists</button>
+      <button class="cscomp-btn" id="btn-reset-checklist">🔄 Reset Progress</button>
+    </div>
   </div>
 
-  <!-- TAB 6: FAQ -->
-  <div class="cstudio-panel" id="panel-faq">
+  <!-- ═══ TAB 4: DESIGN PATTERNS ═══ -->
+  <div class="cscomp-panel" id="panel-patterns">
+    <h2 class="cscomp-section-title">Design Patterns</h2>
+    <p class="cscomp-tip">Five proven architectures for Copilot Studio agents. Pick the one closest to your scenario and adapt.</p>
+
+    <div class="cscomp-pattern-nav" id="pattern-nav">
+      {{ range sort $d.patterns.patterns "order" }}
+      <button class="cscomp-pattern-btn{{ if eq .order 1 }} active{{ end }}" data-pattern="{{ .id }}" aria-label="{{ .title }}">
+        <span>{{ .icon }}</span> {{ .title }}
+      </button>
+      {{ end }}
+    </div>
+
+    {{ range sort $d.patterns.patterns "order" }}
+    <div class="cscomp-pattern-detail{{ if eq .order 1 }} active{{ end }}" id="pattern-{{ .id }}">
+      <div class="cscomp-pattern-header">
+        <span class="cscomp-pattern-complexity cscomp-complexity-{{ lower .complexity }}">{{ .complexity }} complexity</span>
+        <p>{{ .summary }}</p>
+      </div>
+      <div class="cscomp-pattern-when"><strong>When to use:</strong> {{ .when_to_use }}</div>
+      <div class="cscomp-pattern-components">
+        <strong>Components needed:</strong>
+        {{ range .components }}<span class="cscomp-component-pill">{{ . }}</span>{{ end }}
+      </div>
+      <div class="cscomp-pattern-diagram">
+        <h4>Architecture</h4>
+        <pre class="cscomp-ascii">{{ .diagram }}</pre>
+      </div>
+      <div class="cscomp-pattern-steps">
+        <h4>How to Build It</h4>
+        <ol>{{ range .steps }}<li>{{ . }}</li>{{ end }}</ol>
+      </div>
+      {{ with .what_carries_over }}<div class="cscomp-migration-detail"><h4>✅ What Carries Over</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
+      {{ with .what_needs_rebuilding }}<div class="cscomp-migration-detail"><h4>🔨 What Needs Rebuilding</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
+      <div class="cscomp-pattern-tips"><h4>💡 Tips</h4><ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul></div>
+    </div>
+    {{ end }}
+
+    <div class="cscomp-export-row">
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-pattern">📋 Copy Pattern as Markdown</button>
+    </div>
+
+    <!-- Anti-Patterns (#14) -->
+    <h2 class="cscomp-section-title" style="margin-top:2.5rem">🚫 Anti-Patterns — What NOT to Do</h2>
+    <p class="cscomp-tip">Learn from common mistakes. These patterns cause projects to fail.</p>
+    <div class="cscomp-antipattern-grid">
+      {{ range $d.patterns.anti_patterns }}
+      <div class="cscomp-antipattern-card">
+        <div class="cscomp-antipattern-top"><span>{{ .icon }}</span> <strong>{{ .title }}</strong></div>
+        <p class="cscomp-antipattern-desc">{{ .description }}</p>
+        <div class="cscomp-antipattern-why"><strong>Why it fails:</strong> {{ .why_bad }}</div>
+        <div class="cscomp-antipattern-fix"><strong>✅ Instead:</strong> {{ .instead }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- ═══ TAB 5: PLAN & ESTIMATE (#1, #2) ═══ -->
+  <div class="cscomp-panel" id="panel-planner">
+    <h2 class="cscomp-section-title">Agent Planner</h2>
+    <p class="cscomp-tip">Answer 5 questions to generate a build plan for your Copilot Studio agent.</p>
+
+    <div class="cscomp-planner-wizard" id="planner-wizard">
+      <div class="cscomp-planner-steps" id="planner-steps-bar">
+        {{ range $d.planner.steps }}
+        <div class="cscomp-planner-step{{ if eq .order 1 }} active{{ end }}" data-step="{{ .order }}">
+          <span class="cscomp-step-num">{{ .order }}</span>
+          <span class="cscomp-step-title">{{ .title }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ range $d.planner.steps }}
+      <div class="cscomp-planner-question{{ if eq .order 1 }} active{{ end }}" data-step="{{ .order }}" data-id="{{ .id }}" data-multi="{{ with .multi }}true{{ else }}false{{ end }}">
+        <h3>{{ .title }}</h3>
+        <div class="cscomp-planner-options">
+          {{ range .options }}
+          <button class="cscomp-planner-option" data-value="{{ .id }}">
+            <span>{{ .icon }}</span> {{ .label }}
+          </button>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      <div class="cscomp-planner-nav">
+        <button class="cscomp-btn" id="planner-prev" style="display:none">← Back</button>
+        <button class="cscomp-btn cscomp-btn-primary" id="planner-next">Next →</button>
+      </div>
+    </div>
+
+    <div class="cscomp-planner-output" id="planner-output" style="display:none">
+      <h3>📋 Your Agent Build Plan</h3>
+      <div id="planner-result"></div>
+      <div class="cscomp-export-row">
+        <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-plan">📋 Copy Plan as Markdown</button>
+        <button class="cscomp-btn" id="btn-restart-planner">🔄 Start Over</button>
+      </div>
+    </div>
+
+    <h2 class="cscomp-section-title" style="margin-top:2.5rem">💰 Credit Estimator</h2>
+    <p class="cscomp-tip">Estimate your monthly Copilot Studio credit consumption.</p>
+
+    <div class="cscomp-estimator">
+      <div class="cscomp-est-row">
+        <label>Conversations per day</label>
+        <input type="range" id="est-convos" min="10" max="2000" value="100" class="cscomp-slider" aria-label="Conversations per day">
+        <span class="cscomp-est-val" id="est-convos-val">100</span>
+      </div>
+      <div class="cscomp-est-row">
+        <label>% using Generative AI</label>
+        <input type="range" id="est-genai" min="0" max="100" value="60" class="cscomp-slider" aria-label="Percent generative AI">
+        <span class="cscomp-est-val" id="est-genai-val">60%</span>
+      </div>
+      <div class="cscomp-est-row">
+        <label>% with tool/connector calls</label>
+        <input type="range" id="est-tools" min="0" max="100" value="20" class="cscomp-slider" aria-label="Percent with tools">
+        <span class="cscomp-est-val" id="est-tools-val">20%</span>
+      </div>
+      <div class="cscomp-est-row">
+        <label>Autonomous triggers per day</label>
+        <input type="range" id="est-auto" min="0" max="500" value="0" class="cscomp-slider" aria-label="Autonomous triggers per day">
+        <span class="cscomp-est-val" id="est-auto-val">0</span>
+      </div>
+      <div class="cscomp-est-result" id="est-result">
+        <div class="cscomp-est-total"><span id="est-credits">0</span> <small>credits/month</small></div>
+        <div class="cscomp-est-detail" id="est-detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 6: FAQ ═══ -->
+  <div class="cscomp-panel" id="panel-faq">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <h2 class="cscomp-section-title">Frequently Asked Questions</h2>
       {{ range .Params.faq }}
-      <details open>
+      <details open class="cscomp-faq-item">
         <summary><strong>{{ .question }}</strong></summary>
         <p>{{ .answer | markdownify }}</p>
       </details>
       {{ end }}
+
+      <!-- Changelog (#9) -->
+      <h2 class="cscomp-section-title" style="margin-top:2rem">📝 What's New in Copilot Studio</h2>
+      {{ range $d.changelog.entries }}
+      <details class="cscomp-faq-item">
+        <summary><strong>{{ .date }}</strong></summary>
+        <ul>{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
     </div>
+    <div class="cscomp-updated">Last updated: April 2026 · Sources: Microsoft Learn, Power Platform admin centre</div>
   </div>
 </div>
 
@@ -91,22 +405,13 @@
 <div data-pagefind-body aria-hidden="true" style="position:absolute;left:-9999px">
   <h1>Copilot Studio Companion</h1>
   <p>{{ .Description }}</p>
-  <p>Plan and design Microsoft Copilot Studio agents. Interactive feature comparison, knowledge source limits, AI model availability, multi-agent architecture, Copilot Credits estimator, and build readiness assessment.</p>
+  <p>Interactive guide to Microsoft Copilot Studio. Evaluate scenarios, explore capabilities, navigate governance, design agent architectures, plan agents, and estimate credit costs.</p>
+  {{ range $d.scenarios.scenarios }}<p>{{ .title }}: {{ .description }}</p>{{ end }}
+  {{ range $d.capabilities.capabilities }}<p>{{ .title }}: {{ .what_it_is }}</p>{{ end }}
+  {{ range $d.governance.sections }}<p>{{ .title }}: {{ .explanation }}</p>{{ end }}
+  {{ range $d.patterns.patterns }}<p>{{ .title }}: {{ .summary }}</p>{{ end }}
+  {{ range $d.connectors.connectors }}<p>Connector: {{ .name }} ({{ .tier }}) — {{ delimit .use_cases ", " }}</p>{{ end }}
 </div>
 
-<script>
-window.__cstudioData = {
-  decision: {{ $cs.decision | jsonify | safeJS }},
-  knowledge: {{ $cs.knowledge | jsonify | safeJS }},
-  models: {{ $cs.models | jsonify | safeJS }},
-  agents: {{ $cs.agents | jsonify | safeJS }},
-  quotas: {{ $cs.quotas | jsonify | safeJS }},
-  capabilities: {{ $cs.capabilities | jsonify | safeJS }},
-  roles: {{ $cs.roles | jsonify | safeJS }},
-  licensing: {{ $cs.licensing | jsonify | safeJS }},
-  integration: {{ $cs.integration | jsonify | safeJS }},
-  readiness: {{ $cs.readiness | jsonify | safeJS }}
-};
-</script>
-<script defer src="/js/copilot-studio.js?v={{ site.Params.cache_version }}"></script>
+<script defer src="/js/cs-companion.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

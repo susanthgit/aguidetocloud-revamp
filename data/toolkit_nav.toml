@@ -250,6 +250,28 @@ visual = "grid"
 is_tool = true
 
 [[tools]]
+url = "/agent-builder-guide/"
+emoji = "🏗️"
+name = "M365 Agent Builder Helper"
+short = "Agent Builder"
+desc = "Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio"
+color = "#00A4EF"
+category = "copilot"
+visual = "blocks"
+is_tool = true
+
+[[tools]]
+url = "/cs-companion/"
+emoji = "⚙️"
+name = "Copilot Studio Companion"
+short = "Studio Companion"
+desc = "Evaluate scenarios, explore capabilities, navigate governance, and design agent architectures"
+color = "#9055E3"
+category = "copilot"
+visual = "grid"
+is_tool = true
+
+[[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
 name = "Migration Planner"
@@ -536,12 +558,12 @@ visual = "blocks"
 is_tool = true
 
 [[tools]]
-url = "/agent-instructions/"
+url = "/instruct-builder/"
 emoji = "📝"
 name = "Agent Instruction Builder"
-short = "Agent Instruct"
-desc = "Create AI agent instructions for M365, ChatGPT, Claude & Copilot Studio"
-color = "#E0976B"
+short = "Instruct Builder"
+desc = "Generate platform-optimised AI agent instructions in seconds"
+color = "#2DD4BF"
 category = "learning"
 visual = "lines"
 is_tool = true

@@ -1,0 +1,41 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Changelog
+# ═══════════════════════════════════════════════════════════════
+
+[[entries]]
+date = "April 2026"
+items = [
+  "Computer Use now GA — agents can control desktop apps via Claude Sonnet 4.5",
+  "A2A (Agent-to-Agent) protocol support — connect to agents on any platform",
+  "Grok 3 model added to model catalogue",
+  "MCP server connections now GA — extend agents with external tool servers",
+  "Generative builder improvements — describe what you want, AI builds the topic",
+  "SharePoint channel now available for embedding agents on SP pages"
+]
+
+[[entries]]
+date = "March 2026"
+items = [
+  "Claude Opus 4 added as Deep reasoning model option",
+  "Agent evaluations GA — automated testing before deployment",
+  "Enhanced analytics with conversation transcripts and topic performance",
+  "Environment routing improvements — new makers auto-directed to designated environments"
+]
+
+[[entries]]
+date = "February 2026"
+items = [
+  "GPT-5 added to General model tier",
+  "Multi-agent orchestration improvements — better child agent handoff",
+  "DLP endpoint filtering for HTTP connector — allow specific URLs instead of blocking all",
+  "Improved Adaptive Card designer in the authoring canvas"
+]
+
+[[entries]]
+date = "January 2026"
+items = [
+  "Auto model selection (per-turn adaptive routing) now GA",
+  "Autonomous agent triggers expanded — Dataverse, HTTP, scheduled",
+  "Power Automate integration improvements — async flow patterns supported",
+  "Content moderation per-prompt configuration"
+]

@@ -1,0 +1,166 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Capabilities Reference
+# Tab 2: "Capabilities"
+# ═══════════════════════════════════════════════════════════════
+
+[[capabilities]]
+id = "topics"
+title = "Conversation Topics"
+icon = "💬"
+order = 1
+analogy = "Think of topics like a phone menu system — but smarter. Instead of 'Press 1 for billing', the AI understands what the user wants and routes them to the right conversation path automatically."
+what_it_is = "Topics are structured conversation flows with trigger phrases, branching logic, conditions, variables, and actions. They're the building blocks of how your agent responds to specific intents."
+when_to_use = "Use authored topics when you need precise control over a conversation — like guiding someone through a ticket submission, an approval, or a multi-step process. Use generative orchestration to let AI pick the right topic automatically."
+key_facts = [
+  "Two types: authored (you build them) and system (pre-built, like Greeting and Fallback)",
+  "Generative orchestration lets AI automatically choose which topic to use — no manual routing",
+  "Topics can call Power Automate flows, show Adaptive Cards, set variables, and branch on conditions",
+  "You can test topics in real-time without publishing the agent",
+  "Trigger phrases tell the AI when this topic should activate — add 5-10 varied phrases"
+]
+gotchas = [
+  "Too many topics with overlapping triggers causes confusion — keep triggers distinct",
+  "System topics (Greeting, Escalation, Fallback) should be customised, not left as defaults",
+  "Topic names appear in analytics — use clear, descriptive names from the start"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-create-edit-topics"
+
+[[capabilities]]
+id = "knowledge"
+title = "Knowledge Sources"
+icon = "📚"
+order = 2
+analogy = "Knowledge sources are like giving your agent a library card. You tell it which bookshelves to read from (SharePoint sites, websites, Dataverse), and it finds answers from those sources using AI."
+what_it_is = "Knowledge sources ground your agent's responses in real data. The agent reads your documents and generates natural language answers with citations. This is 'generative answers' — the agent doesn't just match keywords, it understands and summarises."
+when_to_use = "Use knowledge sources for any Q&A scenario — HR policies, IT documentation, product manuals, compliance guides. The agent reads your docs so users don't have to."
+key_facts = [
+  "Supported sources: SharePoint sites, SharePoint lists, Dataverse tables, public websites, uploaded files",
+  "With M365 Copilot licence: files up to 200MB supported via Tenant Graph Grounding",
+  "Without M365 Copilot: file size limit is 7MB per document",
+  "Sync frequency: SharePoint sources refresh every 4-6 hours",
+  "Max 1,000 files per SharePoint site, 50 folders, 10 levels of subfolder depth",
+  "Supported file types: DOC, DOCX, PPT, PPTX, PDF, XLS, XLSX"
+]
+gotchas = [
+  "Only modern SharePoint pages — classic ASPX pages are ignored",
+  "Sensitivity labels (Confidential/Highly Confidential) block indexing",
+  "Password-protected files show as 'Ready' but return no answers",
+  "Ampersands (&) in document or folder names are not supported",
+  "Guest users cannot use generative answers from SharePoint in SSO-enabled apps"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio"
+
+[[capabilities]]
+id = "models"
+title = "AI Model Selection"
+icon = "🧠"
+order = 3
+analogy = "Choosing a model is like picking a worker for a job. Mini models are like interns — fast and cheap for simple tasks. General models are experienced staff. Deep models are senior consultants for complex analysis."
+what_it_is = "Copilot Studio lets you choose which AI model powers your agent. Different models offer different trade-offs between speed, quality, and cost (credit consumption)."
+when_to_use = "Use Mini (GPT-4.1 mini) for simple FAQ bots. General (GPT-5, Claude) for content creation. Deep (o3, Claude Opus) for complex reasoning. Or set Auto and let the platform decide per query."
+key_facts = [
+  "Four model tiers: Mini (fast/cheap), General (balanced), Deep (reasoning), Auto (adaptive per turn)",
+  "Models available: GPT-4.1, GPT-4.1 mini, GPT-5, Claude Sonnet 4.5, Claude Opus 4, Grok 3",
+  "Default is GPT-4.1 mini — change this if your agent needs higher quality",
+  "Auto mode picks the best model per turn — fast models for simple questions, powerful models for complex ones",
+  "Model selection affects credit consumption — Deep models cost more credits per response"
+]
+gotchas = [
+  "Not all models are available in all regions — check your environment's geographic region",
+  "Some models require cross-geo data movement approval from your admin",
+  "Claude models enable Computer Use capability — consider this for desktop automation scenarios",
+  "Changing models mid-deployment may alter response quality — test thoroughly before switching"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model"
+
+[[capabilities]]
+id = "adaptive-cards"
+title = "Adaptive Cards"
+icon = "🃏"
+order = 4
+analogy = "Adaptive Cards turn chat messages into mini web pages. Instead of plain text saying 'Here are 3 options', the agent shows a visual card with buttons, forms, images, and choices — like a small app inside the chat."
+what_it_is = "Adaptive Cards are JSON-based UI elements that render rich, interactive content within Teams, websites, and other channels. They can display data, collect input, and trigger actions."
+when_to_use = "Use Adaptive Cards when plain text isn't enough — showing product details with images, collecting form data (expense reports, survey responses), presenting comparison tables, or giving users structured choices."
+key_facts = [
+  "Supported in Teams, web widget, and most Direct Line channels",
+  "Can collect user input: text fields, dropdowns, date pickers, toggle switches",
+  "The generative builder can help create Adaptive Cards from natural language descriptions",
+  "Cards can include action buttons that trigger Power Automate flows or topic transitions",
+  "Maximum card payload: 40KB (per the Bot Framework limit)"
+]
+gotchas = [
+  "Card rendering varies by channel — test in every channel you plan to deploy to",
+  "Not all channels support all card features (e.g. WhatsApp has limited card support)",
+  "Complex cards with many inputs can feel overwhelming — keep them focused on one task",
+  "Cards are stateless — data must be captured via variables when submitted"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-send-message"
+
+[[capabilities]]
+id = "connectors"
+title = "Connectors & Power Automate"
+icon = "🔌"
+order = 5
+analogy = "Connectors are like USB adapters for your agent. Each connector lets your agent plug into a different system — ServiceNow, Salesforce, SQL databases, or any REST API. Power Automate is the extension cord that chains these connections into workflows."
+what_it_is = "Copilot Studio integrates with 1,000+ Power Platform connectors (Standard, Premium, Custom) and can trigger Power Automate cloud flows as actions. This lets agents read from and write to business systems."
+when_to_use = "Use connectors when your agent needs to interact with external systems. Use Power Automate when you need multi-step workflows — create a ticket, send an email, update a record, run an approval."
+key_facts = [
+  "Standard connectors: SharePoint, Outlook, Teams, OneDrive, Excel, Planner",
+  "Premium connectors: Dataverse, SQL Server, Dynamics 365, ServiceNow, Salesforce",
+  "Custom connectors: wrap any REST API as a reusable connector",
+  "Power Automate flows run within the Copilot Studio context — no separate licence needed for cloud flows triggered by agents",
+  "HTTP Request node lets you call any REST endpoint directly without a connector"
+]
+gotchas = [
+  "DLP policies control which connectors agents can use — check with your admin",
+  "Connector authentication uses the connection owner's credentials unless delegation is configured",
+  "Premium connectors require appropriate Power Platform licensing in the environment",
+  "Long-running flows (>2 minutes) may need async patterns — the agent can't wait indefinitely"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/advanced-connectors"
+
+[[capabilities]]
+id = "tools-mcp"
+title = "Tools & MCP Servers"
+icon = "🛠️"
+order = 6
+analogy = "Tools are like giving your agent a Swiss Army knife. Each tool is a specific skill — calling an API, running a calculation, looking up data. MCP servers are external toolboxes that can be shared across multiple agents."
+what_it_is = "Agent tools extend what your agent can do beyond conversation. Tools can call APIs, run Power Automate flows, or connect to external MCP (Model Context Protocol) servers. With generative orchestration, the AI automatically decides which tool to use."
+when_to_use = "Add tools when your agent needs to take actions — calculate shipping costs, check inventory, create records. Use MCP servers when you want to share a set of tools across multiple agents or platforms."
+key_facts = [
+  "Tools can be: Power Automate flows, custom connectors, HTTP actions, or MCP server connections",
+  "Generative orchestration automatically selects the right tool based on user intent",
+  "MCP servers expose tools via a standardised protocol — build once, use everywhere",
+  "Computer Use is a special tool that lets agents operate desktop applications visually",
+  "Tools can have input parameters and return structured output for the agent to use"
+]
+gotchas = [
+  "Tool descriptions are critical — the AI uses them to decide when to invoke each tool",
+  "Too many tools can confuse the orchestrator — keep tool sets focused and well-described",
+  "MCP server connections require network access from the Copilot Studio environment",
+  "Computer Use requires Claude Sonnet 4.5 model and is best for desktop-only workflows without APIs"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-tools"
+
+[[capabilities]]
+id = "channels"
+title = "Deployment Channels"
+icon = "📡"
+order = 7
+analogy = "Channels are like opening branches of a shop. Your agent is the same business, but it serves customers in Teams (the office branch), your website (the high street branch), WhatsApp (the mobile branch), and more."
+what_it_is = "Copilot Studio agents can be published to multiple channels simultaneously. Each channel may have different authentication, appearance, and capability settings."
+when_to_use = "Deploy to Teams for internal employees. Add a web widget for website visitors. Enable WhatsApp or Facebook for customer support on mobile. Use Dynamics 365 Omnichannel for unified customer service."
+key_facts = [
+  "Available channels: Teams, Web widget, Mobile app, Facebook, WhatsApp, Azure Bot Service, Dynamics 365 Omnichannel, SharePoint, Custom (Direct Line)",
+  "Teams deployment: publish to your org's app catalogue (admin approval may be required)",
+  "Web widget: embed with a JavaScript snippet — customise appearance and behaviour",
+  "Each channel can have different authentication requirements (SSO, manual auth, or none)",
+  "DLP policies can block specific channels at the environment or tenant level"
+]
+gotchas = [
+  "Not all features work identically across channels — test Adaptive Cards in each channel",
+  "WhatsApp and Facebook require business verification with Meta",
+  "Unauthenticated web channels have different security implications — configure web channel security",
+  "SharePoint channel embeds the agent on SharePoint pages but may require Managed Environments"
+]
+learn_url = "https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels"

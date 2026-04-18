@@ -1,0 +1,253 @@
+# ═══════════════════════════════════════════════════════════════
+# COPILOT STUDIO COMPANION — Design Patterns
+# Tab 4: "Design Patterns"
+# ═══════════════════════════════════════════════════════════════
+
+[[patterns]]
+id = "faq-bot"
+title = "Simple FAQ Bot"
+icon = "📖"
+order = 1
+summary = "Knowledge-grounded agent that answers questions from your documents. No topics needed."
+when_to_use = "When employees or customers need to ask questions about existing documentation — HR policies, product manuals, IT procedures."
+complexity = "Low"
+components = ["Knowledge sources (SharePoint/Web)", "Generative answers", "Fallback topic"]
+diagram = """
+┌─────────────┐     ┌──────────────────┐     ┌──────────────┐
+│   User asks  │────▶│  Generative AI   │────▶│   Response   │
+│   question   │     │  searches docs   │     │  with source │
+└─────────────┘     └──────────────────┘     └──────────────┘
+                           │
+                    ┌──────┴──────┐
+                    │  Knowledge  │
+                    │  Sources    │
+                    ├─────────────┤
+                    │ SharePoint  │
+                    │ Websites    │
+                    │ Dataverse   │
+                    └─────────────┘
+"""
+steps = [
+  "Create a new agent in Copilot Studio",
+  "Add knowledge sources (SharePoint sites, uploaded files, or public URLs)",
+  "Configure the system prompt with tone and scope instructions",
+  "Customise the Fallback topic for unrecognised questions",
+  "Test with real user questions before publishing",
+  "Publish to Teams (internal) or web widget (external)"
+]
+tips = [
+  "Start with 1-2 knowledge sources and expand — don't dump everything in at once",
+  "Use the default GPT-4.1 mini model for FAQ bots — fast and cost-effective",
+  "Monitor analytics to find gaps — questions with no good answer reveal missing docs"
+]
+
+[[patterns]]
+id = "workflow-agent"
+title = "Workflow Automation Agent"
+icon = "⚡"
+order = 2
+summary = "Agent that guides users through multi-step processes with Power Automate integration."
+when_to_use = "When conversations need to DO things — create tickets, send approvals, update records, trigger notifications."
+complexity = "Medium"
+components = ["Topics with branching", "Power Automate flows", "Adaptive Cards", "Variables", "Dataverse"]
+diagram = """
+┌──────────┐    ┌────────────┐    ┌───────────────┐    ┌──────────┐
+│  User    │───▶│  Topic:    │───▶│ Power Automate│───▶│ Confirm  │
+│  Request │    │  Collect   │    │ Flow: Create  │    │ to User  │
+└──────────┘    │  Details   │    │ Ticket/Record │    └──────────┘
+                └────────────┘    └───────────────┘
+                     │                    │
+                     ▼                    ▼
+              ┌──────────────┐    ┌──────────────┐
+              │ Adaptive Card│    │  Dataverse   │
+              │ (input form) │    │  (store data)│
+              └──────────────┘    └──────────────┘
+"""
+steps = [
+  "Map out the workflow on paper: what info is needed? What actions follow?",
+  "Create a topic with trigger phrases for the workflow (e.g. 'submit expense')",
+  "Add question nodes to collect required information from the user",
+  "Use Adaptive Cards for structured data collection (forms, dropdowns)",
+  "Create a Power Automate cloud flow for the backend action",
+  "Connect the flow as a tool/action in the topic",
+  "Add confirmation and error handling paths",
+  "Store workflow state in Dataverse if multi-session"
+]
+tips = [
+  "Design the conversation flow before building it — whiteboard the happy path and error paths",
+  "Keep each topic focused on ONE workflow — don't combine ticket creation and approval in one topic",
+  "Use variables to carry data between conversation steps and Power Automate flows"
+]
+
+[[patterns]]
+id = "api-agent"
+title = "API Integration Agent"
+icon = "🔌"
+order = 3
+summary = "Agent that connects to external systems via connectors and custom APIs to provide live data."
+when_to_use = "When your agent needs real-time data from external systems — CRM records, inventory levels, pricing, or any REST API."
+complexity = "Medium-High"
+components = ["Custom connectors or HTTP node", "Adaptive Cards (data display)", "Topics", "Generative orchestration"]
+diagram = """
+┌──────────┐    ┌──────────────┐    ┌───────────────┐
+│  User    │───▶│ Generative   │───▶│  Connector /  │
+│  Query   │    │ Orchestrator │    │  HTTP Request  │
+└──────────┘    └──────────────┘    └───────┬───────┘
+                                            │
+                    ┌───────────────────────┘
+                    ▼
+             ┌──────────────┐    ┌──────────────┐
+             │ External API │    │ Parse & Show  │
+             │ (CRM, ITSM,  │    │ Adaptive Card │
+             │  Database)   │    │ to User       │
+             └──────────────┘    └──────────────┘
+"""
+steps = [
+  "Identify the API your agent needs to call — get the endpoint URL, auth method, and schema",
+  "Option A: Create a custom connector in Power Platform (reusable, manageable)",
+  "Option B: Use the HTTP Request node for quick one-off API calls",
+  "Define the tool/action with clear input parameters and output structure",
+  "Use Adaptive Cards to display structured API responses (tables, lists, details)",
+  "Handle API errors gracefully — show friendly messages, not raw error codes",
+  "Test with real API calls including edge cases (no results, rate limits, timeouts)"
+]
+tips = [
+  "Custom connectors are better than raw HTTP for governance — admins can manage and DLP-control them",
+  "Cache frequently-requested data in Dataverse to reduce API calls and improve response time",
+  "Use generative orchestration with good tool descriptions — the AI will call the right API automatically"
+]
+
+[[patterns]]
+id = "multi-channel"
+title = "Multi-Channel Agent"
+icon = "🌐"
+order = 4
+summary = "One agent deployed across Teams (employees), website (customers), and mobile (WhatsApp) with channel-specific behaviour."
+when_to_use = "When different audiences need access to the same agent through different platforms — employees in Teams, customers on your website."
+complexity = "Medium"
+components = ["Multi-channel publishing", "Authentication per channel", "Channel-specific topics", "Web widget customisation"]
+diagram = """
+                    ┌──────────────────┐
+                    │   Copilot Studio │
+                    │   (ONE agent)    │
+                    └────────┬─────────┘
+                             │
+            ┌────────────────┼────────────────┐
+            ▼                ▼                ▼
+     ┌────────────┐   ┌────────────┐   ┌────────────┐
+     │   Teams    │   │  Website   │   │  WhatsApp  │
+     │  (SSO)     │   │  (widget)  │   │  (Meta)    │
+     │ Employees  │   │  Customers │   │  Mobile    │
+     └────────────┘   └────────────┘   └────────────┘
+"""
+steps = [
+  "Build and test your agent in Copilot Studio first — get the core working",
+  "Configure authentication for each channel: SSO for Teams, manual auth or none for web",
+  "Publish to Teams via the org app catalogue (may need admin approval)",
+  "Generate the web widget embed code and add to your website",
+  "For WhatsApp: register a WhatsApp Business account and connect via the channel settings",
+  "Use channel-specific topic conditions if behaviour should differ per channel",
+  "Test in each channel — Adaptive Card rendering varies across platforms"
+]
+tips = [
+  "Start with Teams (easiest), then add web, then mobile channels",
+  "External channels can drive unexpected credit consumption — set up monitoring",
+  "Web channel security prevents your widget from being embedded on unauthorised sites"
+]
+
+[[patterns]]
+id = "migration"
+title = "Agent Builder → Studio Migration"
+icon = "🔄"
+order = 5
+summary = "Migrating an agent from Agent Builder to Copilot Studio for advanced capabilities."
+when_to_use = "When your Agent Builder agent has outgrown its limits — you need topics, connectors, workflows, multi-channel, or governance."
+complexity = "Low-Medium"
+components = ["Agent Builder source agent", "Copilot Studio destination", "Reconfiguration of advanced features"]
+diagram = """
+┌─────────────────┐         ┌─────────────────────┐
+│  Agent Builder   │  Copy   │   Copilot Studio    │
+│  ┌────────────┐ │ ──────▶ │  ┌────────────────┐ │
+│  │Instructions│ │  ✅     │  │ Instructions   │ │
+│  │Knowledge   │ │  ✅     │  │ Knowledge      │ │
+│  │Basic config│ │  ✅     │  │ + Topics       │ │
+│  └────────────┘ │         │  │ + Connectors   │ │
+│                 │         │  │ + Channels     │ │
+│  Limits:        │         │  │ + Power Auto   │ │
+│  • 8K chars     │         │  │ + Governance   │ │
+│  • No topics    │         │  └────────────────┘ │
+│  • M365 only    │         │                     │
+└─────────────────┘         └─────────────────────┘
+"""
+steps = [
+  "In Agent Builder, open your agent and select 'Edit in Copilot Studio'",
+  "This copies: instructions, knowledge sources, basic configuration",
+  "Review and update the instruction text (Studio allows 16K chars vs Builder's 8K)",
+  "Add topics for any multi-step conversations you couldn't build before",
+  "Add connectors and Power Automate flows for external system integration",
+  "Configure additional channels beyond Teams",
+  "Set up environment governance (DLP, RBAC) for the new agent",
+  "Test thoroughly — behaviour may differ slightly with the richer orchestration engine",
+  "Note: This is a one-way copy. The Agent Builder version remains but changes won't sync back."
+]
+what_carries_over = [
+  "Instructions (system prompt)",
+  "Knowledge sources (SharePoint, files, URLs)",
+  "Basic agent configuration and name"
+]
+what_needs_rebuilding = [
+  "No topics exist — you build them fresh in Studio",
+  "No connectors — add them in the Studio environment",
+  "No Power Automate flows — create and connect them",
+  "Authentication may need reconfiguration for new channels",
+  "DLP policies in the target environment may restrict some features"
+]
+tips = [
+  "Don't migrate just because you can — only promote when you genuinely need Studio's features",
+  "The Agent Builder version continues to work independently after the copy",
+  "Test the Studio version with real users before retiring the Agent Builder version"
+]
+
+# ═══════════════════════════════════════════════════════════════
+# ANTI-PATTERNS — What NOT to do
+# ═══════════════════════════════════════════════════════════════
+
+[[anti_patterns]]
+id = "monolith"
+title = "The Monolith Agent"
+icon = "🏗️"
+description = "One giant agent that does everything — HR, IT, Finance, Sales — with 50+ topics and every connector enabled."
+why_bad = "Impossible to maintain, test, or govern. DLP becomes a nightmare because you can't restrict connectors per department. Performance degrades with too many topics competing for intent matching."
+instead = "Build specialised agents per department. Use multi-agent orchestration to connect them."
+
+[[anti_patterns]]
+id = "no-governance"
+title = "Ship It Without Governance"
+icon = "🚫"
+description = "Building and publishing agents directly in the default environment with no DLP, no RBAC, no approval process."
+why_bad = "Shadow AI. No audit trail. Agents accessing sensitive data without controls. One DLP change breaks everything. Compliance nightmare."
+instead = "Set up Dev/Test/Prod environments BEFORE anyone builds. Apply DLP policies. Require admin approval for publishing."
+
+[[anti_patterns]]
+id = "skip-testing"
+title = "Skip Testing — It Worked in Preview"
+icon = "🎰"
+description = "Testing only in the built-in test chat, then publishing straight to production."
+why_bad = "Test chat doesn't replicate real-world conditions — different channels render Adaptive Cards differently, auth flows differ, concurrent users expose race conditions."
+instead = "Test in every target channel. Use Agent Evaluations for automated testing. Deploy to Test environment first. Get real users to UAT."
+
+[[anti_patterns]]
+id = "ignore-credits"
+title = "Ignore Credit Consumption"
+icon = "💸"
+description = "Building a complex agent with GenAI, tools, autonomous triggers, and external channels — without estimating credit usage."
+why_bad = "A single complex interaction can burn 20+ credits. External-facing agents can spike unpredictably. You'll blow through 25K credits in a week."
+instead = "Use the Credit Estimator (Tab 6). Set up consumption monitoring. Add pay-as-you-go as a safety net. Start with simple patterns and add complexity."
+
+[[anti_patterns]]
+id = "over-engineer"
+title = "Studio for Simple Q&A"
+icon = "🔨"
+description = "Using Copilot Studio with topics, connectors, and custom flows for a simple HR FAQ that just answers questions from SharePoint documents."
+why_bad = "Unnecessary complexity. Costs credits when Agent Builder is free with M365 Copilot. Overkill maintenance burden."
+instead = "Start with Agent Builder. It handles document Q&A perfectly. Only promote to Studio when you genuinely need topics, connectors, or multi-channel."
