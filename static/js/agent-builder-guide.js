@@ -120,7 +120,6 @@ var detailClose=document.querySelector('.abguide-detail-close');
 scenarioCards.forEach(function(card){
 card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
 card.addEventListener('click',function(){
-  card.addEventListener('click',function(){
     scenarioCards.forEach(function(c){c.classList.remove('selected');});card.classList.add('selected');
     var v=card.dataset.verdict,r=card.dataset.requires,k=card.dataset.knowledge?card.dataset.knowledge.split(',').filter(Boolean):[],
     tip=card.dataset.tip||'',partial=card.dataset.partial||'',studio=card.dataset.studio||'',
@@ -199,7 +198,7 @@ window.abguideCopy=function(el){
   var orig=el.textContent;
 navigator.clipboard.writeText(text).then(function(){el.textContent='Copied!';setTimeout(function(){el.textContent=orig;},1500);}).catch(function(){
 var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-el.textContent='Copied!';setTimeout(function(){el.textContent=orig;},1500);})
+el.textContent='Copied!';setTimeout(function(){el.textContent=orig;},1500);});
 };
 
 /* ── Symptom picker ── */
