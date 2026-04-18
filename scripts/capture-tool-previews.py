@@ -55,6 +55,15 @@ TOOLS = [
     ("agent-builder-guide", "/agent-builder-guide/"),
     ("demo-scripts", "/demo-scripts/"),
     ("prompt-tester", "/prompt-tester/"),
+    ("licence-picker", "/licence-picker/"),
+    ("prompt-lab", "/prompt-lab/"),
+    ("cert-compass", "/cert-compass/"),
+    ("sla-calculator", "/sla-calculator/"),
+    ("admin-badges", "/admin-badges/"),
+    ("policy-tester", "/policy-tester/"),
+    ("incident-comms", "/incident-comms/"),
+    ("cli-quiz", "/cli-quiz/"),
+    ("it-day-sim", "/it-day-sim/"),
 ]
 
 WIDTH = 1280
