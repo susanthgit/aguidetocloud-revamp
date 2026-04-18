@@ -630,9 +630,11 @@
 .page-site-analytics .site-nav { border-bottom-color: #64748B; }
 
 /* ── LIVE PULSE CARD ─────────────── */
+/* V3: Now used for per-page live visitor breakdown */
 .siteana-live-card {
-  border-color: rgba(239,68,68,0.25);
-  background: rgba(239,68,68,0.04);
+  border-color: rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.04);
+  border-left: 3px solid #22c55e;
 }
 
 .siteana-live-header {
@@ -2469,7 +2471,6 @@
 }
 
 /* ── Live Pages Widget ── */
-.siteana-live-card { border-left: 3px solid #22c55e; }
 .siteana-pulse-dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; animation: siteana-pulse 1.5s ease-in-out infinite; }
 @keyframes siteana-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 .siteana-live-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
