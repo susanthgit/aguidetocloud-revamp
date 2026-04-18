@@ -986,8 +986,7 @@
     var container = document.getElementById('cc-live-pages');
     if (!section || !container) return;
     var pages = (rt.pages || []).filter(function(p) { return p.users > 0; });
-    if (pages.length === 0) { section.style.display = 'none'; return; }
-    section.style.display = '';
+    if (pages.length === 0) { container.innerHTML = '<span class="cc-live-empty">0 visitors right now</span>'; return; }
     var max = pages[0].users;
     var html = '<table class="cc-live-table"><thead><tr><th>Page</th><th>Path</th><th style="text-align:right">Users</th><th style="width:120px"></th></tr></thead><tbody>';
     pages.forEach(function(p) {

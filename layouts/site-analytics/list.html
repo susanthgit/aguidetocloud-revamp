@@ -47,9 +47,9 @@
   <div class="siteana-panel active" id="panel-dashboard" role="tabpanel">
 
     <!-- Right Now — Live Pages -->
-    <div class="siteana-card siteana-live-card" id="sa-live-card" style="display:none">
+    <div class="siteana-card siteana-live-card" id="sa-live-card">
       <h3 class="siteana-card-title"><span class="siteana-pulse-dot-sm"></span> Right Now</h3>
-      <div id="sa-live-pages" class="siteana-live-list"></div>
+      <div id="sa-live-pages" class="siteana-live-list"><div class="siteana-live-empty">Waiting for visitors...</div></div>
     </div>
 
     <!-- Traffic Trend -->
@@ -468,7 +468,6 @@
       var card = document.getElementById('sa-live-card');
       var list = document.getElementById('sa-live-pages');
       if (card && list && d.pages && d.pages.length > 0) {
-        card.style.display = '';
         var top = d.pages.slice(0, 5);
         var max = top[0].users || 1;
         var html = '';
@@ -483,7 +482,7 @@
         });
         if (d.pages.length > 5) html += '<div class="siteana-live-more">+ ' + (d.pages.length - 5) + ' more pages</div>';
         list.innerHTML = html;
-      } else if (card) { card.style.display = 'none'; }
+      } else if (list) { list.innerHTML = '<div class="siteana-live-empty">0 visitors right now</div>'; }
     }).catch(function() {});
   }
   function startRealtime() { pollRealtime(); _realtimeTimer = setInterval(pollRealtime, 60000); }
