@@ -1,0 +1,393 @@
+{{ define "main" }}
+{{ $d := (index hugo.Data "demo_scripts") }}
+<link rel="stylesheet" href="/css/demo-scripts.css?v={{ site.Params.cache_version }}">
+
+{{ partial "tool-hero.html" (dict "title" "Copilot Demo Script Builder" "accent" "#F97316") }}
+
+<!-- ═══ WIZARD MODAL ═══ -->
+<div class="demoscr-wizard-overlay" id="wizard-overlay" style="display:none">
+  <div class="demoscr-wizard">
+    <button class="demoscr-wizard-close" id="wizard-close">&times;</button>
+    <h2>🧙 Find Your Perfect Demo</h2>
+    <p class="demoscr-tip">Answer 3 quick questions and we'll recommend the best scenario for your audience.</p>
+    <div class="demoscr-wizard-steps">
+      <div class="demoscr-wizard-step active" data-wstep="1">
+        <h3>1. What industry is your customer?</h3>
+        <div class="demoscr-wizard-options" id="wiz-industry">
+          <button class="demoscr-wizard-opt" data-val="Sales">📊 Sales / Revenue</button>
+          <button class="demoscr-wizard-opt" data-val="HR">👥 HR / People</button>
+          <button class="demoscr-wizard-opt" data-val="IT">🔧 IT / Technology</button>
+          <button class="demoscr-wizard-opt" data-val="Finance">💰 Finance / Accounting</button>
+          <button class="demoscr-wizard-opt" data-val="Marketing">🎯 Marketing / Comms</button>
+          <button class="demoscr-wizard-opt" data-val="Executive">👔 Executive / Leadership</button>
+          <button class="demoscr-wizard-opt" data-val="Legal">⚖️ Legal / Compliance</button>
+          <button class="demoscr-wizard-opt" data-val="Operations">🏭 Operations / Supply Chain</button>
+          <button class="demoscr-wizard-opt" data-val="Service">🎧 Customer Service</button>
+          <button class="demoscr-wizard-opt" data-val="Education">🎓 Education</button>
+        </div>
+      </div>
+      <div class="demoscr-wizard-step" data-wstep="2">
+        <h3>2. What's their biggest pain point?</h3>
+        <div class="demoscr-wizard-options" id="wiz-pain">
+          <button class="demoscr-wizard-opt" data-val="meetings">📅 Too many meetings, no action items</button>
+          <button class="demoscr-wizard-opt" data-val="email">📧 Email overload, can't keep up</button>
+          <button class="demoscr-wizard-opt" data-val="content">📝 Slow content creation (docs, decks)</button>
+          <button class="demoscr-wizard-opt" data-val="data">📊 Manual data analysis takes forever</button>
+          <button class="demoscr-wizard-opt" data-val="search">🔍 Can't find information quickly</button>
+          <button class="demoscr-wizard-opt" data-val="comms">📢 Inconsistent internal communications</button>
+        </div>
+      </div>
+      <div class="demoscr-wizard-step" data-wstep="3">
+        <h3>3. How long is your demo slot?</h3>
+        <div class="demoscr-wizard-options" id="wiz-duration">
+          <button class="demoscr-wizard-opt" data-val="5">⚡ 5 minutes (executive teaser)</button>
+          <button class="demoscr-wizard-opt" data-val="15">⏱️ 15 minutes (standard demo)</button>
+          <button class="demoscr-wizard-opt" data-val="30">🕐 30 minutes (deep dive)</button>
+        </div>
+      </div>
+    </div>
+    <div class="demoscr-wizard-result" id="wizard-result" style="display:none">
+      <h3>✨ Recommended Demo</h3>
+      <div id="wizard-recommendation"></div>
+      <button class="demoscr-btn demoscr-btn-primary" id="wizard-apply">Load This Script →</button>
+    </div>
+  </div>
+</div>
+
+<div class="demoscr-page">
+  <!-- ═══ GLOBAL SEARCH ═══ -->
+  <div class="demoscr-search-bar">
+    <input type="text" id="demoscr-search" class="demoscr-search-input" placeholder="Search scenarios, prompts, tips..." aria-label="Search Demo Script Builder">
+    <div class="demoscr-search-results" id="demoscr-search-results" style="display:none"></div>
+  </div>
+
+  <!-- ═══ TABS ═══ -->
+  <div class="demoscr-tabs" role="tablist" aria-label="Demo Script Builder sections">
+    <button class="demoscr-tab active" role="tab" aria-selected="true" data-tab="builder">Script Builder</button>
+    <button class="demoscr-tab" role="tab" aria-selected="false" data-tab="prompts">Prompt Library</button>
+    <button class="demoscr-tab" role="tab" aria-selected="false" data-tab="tips">Demo Tips</button>
+    <button class="demoscr-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  </div>
+
+  <!-- ═══ TAB 1: SCRIPT BUILDER ═══ -->
+  <div class="demoscr-panel active" id="panel-builder">
+
+    <!-- Scenario Picker -->
+    <h2 class="demoscr-section-title">Pick Your Demo Scenario</h2>
+    <p class="demoscr-tip">Choose a scenario that matches your customer's industry. The default (Sales Pipeline Review) loads automatically.</p>
+    <button class="demoscr-btn demoscr-btn-accent" id="btn-wizard">🧙 Help Me Choose</button>
+
+    <!-- Category Filter -->
+    <div class="demoscr-cat-filter" id="cat-filter">
+      <button class="demoscr-cat-pill active" data-cat="all">All</button>
+      <button class="demoscr-cat-pill" data-cat="Sales">📊 Sales</button>
+      <button class="demoscr-cat-pill" data-cat="HR">👥 HR</button>
+      <button class="demoscr-cat-pill" data-cat="IT">🔧 IT</button>
+      <button class="demoscr-cat-pill" data-cat="Finance">💰 Finance</button>
+      <button class="demoscr-cat-pill" data-cat="Marketing">🎯 Marketing</button>
+      <button class="demoscr-cat-pill" data-cat="Executive">👔 Executive</button>
+      <button class="demoscr-cat-pill" data-cat="Legal">⚖️ Legal</button>
+      <button class="demoscr-cat-pill" data-cat="Operations">🏭 Ops</button>
+      <button class="demoscr-cat-pill" data-cat="Service">🎧 Service</button>
+      <button class="demoscr-cat-pill" data-cat="Education">🎓 Education</button>
+    </div>
+
+    <div class="demoscr-scenario-grid" id="scenario-grid">
+      {{ range $d.scenarios.scenarios }}
+      {{ if ne .id "custom" }}
+      <button class="demoscr-scenario-card{{ if .default }} active{{ end }}" data-scenario="{{ .id }}" data-category="{{ .category }}" aria-label="{{ .name }}">
+        <span class="demoscr-scenario-icon">{{ .icon }}</span>
+        <span class="demoscr-scenario-name">{{ .name }}</span>
+        <span class="demoscr-scenario-cat">{{ .category }}</span>
+        <span class="demoscr-scenario-tagline">{{ .tagline }}</span>
+      </button>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    <!-- Custom Scenario -->
+    <div class="demoscr-custom-scenario">
+      <h3>🔧 Build a Custom Script</h3>
+      <p class="demoscr-tip">Describe your demo scenario and we'll assemble steps from our library that match.</p>
+      <input type="text" id="custom-input" class="demoscr-custom-input" placeholder="e.g. 'Show HR how to onboard new hires and answer policy questions using Teams and Word'">
+      <div id="custom-results" class="demoscr-custom-results" style="display:none"></div>
+    </div>
+
+    <!-- Configuration Panel -->
+    <div class="demoscr-config" id="config-panel">
+      <h2 class="demoscr-section-title">Configure Your Demo</h2>
+      <div class="demoscr-config-grid">
+        <div class="demoscr-config-group">
+          <label class="demoscr-config-label">Audience</label>
+          <div class="demoscr-pill-group" data-config="audience">
+            <button class="demoscr-pill" data-value="technical">⚙️ Technical</button>
+            <button class="demoscr-pill active" data-value="business">💼 Business</button>
+            <button class="demoscr-pill" data-value="executive">👔 Executive</button>
+          </div>
+        </div>
+        <div class="demoscr-config-group">
+          <label class="demoscr-config-label">Duration</label>
+          <div class="demoscr-pill-group" data-config="duration">
+            <button class="demoscr-pill" data-value="5">5 min</button>
+            <button class="demoscr-pill active" data-value="15">15 min</button>
+            <button class="demoscr-pill" data-value="30">30 min</button>
+          </div>
+        </div>
+        <div class="demoscr-config-group">
+          <label class="demoscr-config-label">Wow Factor</label>
+          <div class="demoscr-pill-group" data-config="risk">
+            <button class="demoscr-pill" data-value="low">🟢 Safe</button>
+            <button class="demoscr-pill active" data-value="medium">🟡 Moderate</button>
+            <button class="demoscr-pill" data-value="high">🔴 Bold</button>
+          </div>
+        </div>
+        <div class="demoscr-config-group demoscr-config-apps">
+          <label class="demoscr-config-label">Focus Apps</label>
+          <div class="demoscr-app-toggles" id="app-toggles">
+            {{ range $d.scenarios.apps }}
+            <label class="demoscr-app-toggle">
+              <input type="checkbox" value="{{ .id }}" checked>
+              <span class="demoscr-app-chip">{{ .icon }} {{ .name }}</span>
+            </label>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generated Script -->
+    <div class="demoscr-script-wrapper" id="script-wrapper">
+      <div class="demoscr-script-header">
+        <h2 class="demoscr-section-title" id="script-title">Loading...</h2>
+        <div class="demoscr-script-actions">
+          <button class="demoscr-btn" id="btn-record" title="Recording mode — minimal timer overlay">🔴 Record</button>
+          <button class="demoscr-btn" id="btn-practice" title="Practice mode — step by step with timer">🎯 Practice</button>
+          <button class="demoscr-btn" id="btn-copy-script" title="Copy full script">📋 Copy Script</button>
+          <button class="demoscr-btn" id="btn-copy-prompts" title="Copy just the prompts">💬 Copy Prompts</button>
+          <button class="demoscr-btn" id="btn-export-md" title="Export as Markdown">📄 Export MD</button>
+          <button class="demoscr-btn" id="btn-share" title="Copy shareable link">🔗 Share</button>
+          <button class="demoscr-btn" id="btn-print" title="Print-friendly version">🖨️ Print</button>
+        </div>
+      </div>
+      <div class="demoscr-script-meta" id="script-meta"></div>
+      <div class="demoscr-script-body" id="script-body">
+        <!-- JS renders the script here -->
+      </div>
+      <!-- V3: Before/After + Q&A Prep rendered by JS below script body -->
+      <div class="demoscr-before-after" id="before-after"></div>
+      <div class="demoscr-qa-prep" id="qa-prep"></div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 2: PROMPT LIBRARY ═══ -->
+  <div class="demoscr-panel" id="panel-prompts">
+    <h2 class="demoscr-section-title">Demo Prompt Library</h2>
+    <p class="demoscr-tip">Curated prompts that work reliably in demos. Filter by app, copy with one click, and see expected responses.</p>
+
+    <div class="demoscr-prompt-filters" id="prompt-filters">
+      <button class="demoscr-filter-btn active" data-app="all">All Apps</button>
+      {{ range $d.scenarios.apps }}
+      <button class="demoscr-filter-btn" data-app="{{ .id }}">{{ .icon }} {{ .name }}</button>
+      {{ end }}
+    </div>
+
+    <div class="demoscr-prompt-grid" id="prompt-grid">
+      <!-- JS renders prompts here -->
+    </div>
+  </div>
+
+  <!-- ═══ TAB 3: DEMO TIPS ═══ -->
+  <div class="demoscr-panel" id="panel-tips">
+    <h2 class="demoscr-section-title">The 5 Rules of a Great Copilot Demo</h2>
+    <div class="demoscr-rules-grid">
+      {{ range $d.tips.rules }}
+      <div class="demoscr-rule-card">
+        <span class="demoscr-rule-icon">{{ .icon }}</span>
+        <h3>Rule {{ .order }}: {{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    <h2 class="demoscr-section-title">When Copilot Fails Live</h2>
+    <div class="demoscr-tips-list">
+      {{ range $d.tips.failure_tips }}
+      <div class="demoscr-tip-card">
+        <span class="demoscr-tip-icon">{{ .icon }}</span>
+        <div>
+          <h4>{{ .title }}</h4>
+          <p>{{ .tip }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <h2 class="demoscr-section-title">Know Your Audience</h2>
+    <div class="demoscr-audience-grid">
+      {{ with $d.tips.audience_tips.technical }}
+      <div class="demoscr-audience-card" data-audience="technical">
+        <h3>{{ .icon }} {{ .title }}</h3>
+        <p class="demoscr-audience-approach">{{ .approach }}</p>
+        <ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      {{ end }}
+      {{ with $d.tips.audience_tips.business }}
+      <div class="demoscr-audience-card" data-audience="business">
+        <h3>{{ .icon }} {{ .title }}</h3>
+        <p class="demoscr-audience-approach">{{ .approach }}</p>
+        <ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      {{ end }}
+      {{ with $d.tips.audience_tips.executive }}
+      <div class="demoscr-audience-card" data-audience="executive">
+        <h3>{{ .icon }} {{ .title }}</h3>
+        <p class="demoscr-audience-approach">{{ .approach }}</p>
+        <ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      {{ end }}
+    </div>
+
+    <h2 class="demoscr-section-title">Tenant Preparation Checklist</h2>
+    <div class="demoscr-checklist" id="tenant-checklist">
+      {{ range $d.tips.tenant_checklist }}
+      <label class="demoscr-check-item" data-priority="{{ .priority }}">
+        <input type="checkbox">
+        <span class="demoscr-check-text">
+          <strong>{{ .item }}</strong>
+          {{ with .note }}<em>{{ . }}</em>{{ end }}
+        </span>
+        <span class="demoscr-check-priority demoscr-priority-{{ .priority }}">{{ .priority }}</span>
+      </label>
+      {{ end }}
+    </div>
+
+    <h2 class="demoscr-section-title">Hardware &amp; Network Checklist</h2>
+    <div class="demoscr-checklist" id="hardware-checklist">
+      {{ range $d.tips.hardware_checklist }}
+      <label class="demoscr-check-item" data-priority="{{ .priority }}">
+        <input type="checkbox">
+        <span class="demoscr-check-text">
+          <strong>{{ .item }}</strong>
+          {{ with .note }}<em>{{ . }}</em>{{ end }}
+        </span>
+        <span class="demoscr-check-priority demoscr-priority-{{ .priority }}">{{ .priority }}</span>
+      </label>
+      {{ end }}
+    </div>
+
+    <h2 class="demoscr-section-title">Common Demo Traps</h2>
+    <div class="demoscr-traps-grid">
+      {{ range $d.tips.traps }}
+      <div class="demoscr-trap-card">
+        <div class="demoscr-trap-header">
+          <span class="demoscr-trap-label">⚠️ Trap</span>
+          {{ if ne .scenario "all" }}<span class="demoscr-trap-app">{{ .scenario }}</span>{{ end }}
+        </div>
+        <p class="demoscr-trap-desc">{{ .trap }}</p>
+        <p class="demoscr-trap-fix"><strong>Fix:</strong> {{ .fix }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- V3: Data Seeder Guide -->
+    <h2 class="demoscr-section-title">🌱 Demo Tenant Data Seeder</h2>
+    <p class="demoscr-tip">Follow these steps to populate your demo tenant with realistic data. An empty tenant = an empty demo.</p>
+    <div class="demoscr-seeder-grid">
+      {{ range $d.tips.seeder_steps }}
+      <div class="demoscr-seeder-card">
+        <div class="demoscr-seeder-header">
+          <span class="demoscr-seeder-num">{{ .icon }}</span>
+          <h4>Step {{ .order }}: {{ .title }}</h4>
+        </div>
+        <p class="demoscr-seeder-action">{{ .action }}</p>
+        <p class="demoscr-seeder-detail">{{ .detail }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- ═══ TAB 4: FAQ ═══ -->
+  <div class="demoscr-panel" id="panel-faq">
+    <h2 class="demoscr-section-title">Frequently Asked Questions</h2>
+    <div class="demoscr-faq-list">
+      {{ range .Params.faq }}
+      <details class="demoscr-faq-item" open>
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- ═══ RELATED TOOLS ═══ -->
+  <div class="demoscr-related">
+    <h2 class="demoscr-section-title">Related Tools</h2>
+    <div class="demoscr-related-grid">
+      <a href="/copilot-readiness/" class="demoscr-related-card" style="--rel-accent:#3B82F6">
+        <span class="demoscr-related-icon">🎯</span>
+        <div><strong>Copilot Readiness</strong><span>Score your org's readiness across 7 pillars</span></div>
+      </a>
+      <a href="/copilot-matrix/" class="demoscr-related-card" style="--rel-accent:#60A5FA">
+        <span class="demoscr-related-icon">📊</span>
+        <div><strong>Feature Matrix</strong><span>Compare Copilot features across every app &amp; tier</span></div>
+      </a>
+      <a href="/roi-calculator/" class="demoscr-related-card" style="--rel-accent:#14B8A6">
+        <span class="demoscr-related-icon">💰</span>
+        <div><strong>ROI Calculator</strong><span>Estimate ROI by role with realistic adoption curves</span></div>
+      </a>
+      <a href="/prompts/" class="demoscr-related-card" style="--rel-accent:#A78BFA">
+        <span class="demoscr-related-icon">💡</span>
+        <div><strong>Prompt Library</strong><span>500 tested prompts across 5 AI platforms</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Practice mode overlay -->
+<div class="demoscr-practice-overlay" id="practice-overlay" style="display:none">
+  <div class="demoscr-practice-header">
+    <div class="demoscr-practice-timer" id="practice-timer">00:00</div>
+    <span class="demoscr-practice-progress" id="practice-progress">Step 1 of 6</span>
+    <div class="demoscr-practice-controls">
+      <button class="demoscr-btn" id="practice-prev" title="Previous step">← Prev</button>
+      <button class="demoscr-btn" id="practice-next" title="Next step">Next →</button>
+      <button class="demoscr-btn" id="practice-exit" title="Exit practice mode">✕ Exit</button>
+    </div>
+  </div>
+  <div class="demoscr-practice-body" id="practice-body"></div>
+  <div class="demoscr-practice-scorecard" id="practice-scorecard" style="display:none">
+    <h2>📊 Practice Scorecard</h2>
+    <div id="scorecard-body"></div>
+    <div class="demoscr-scorecard-actions">
+      <button class="demoscr-btn" id="scorecard-restart">🔄 Practice Again</button>
+      <button class="demoscr-btn" id="scorecard-exit">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Recording mode overlay -->
+<div class="demoscr-recording-overlay" id="recording-overlay" style="display:none">
+  <div class="demoscr-recording-bar">
+    <span class="demoscr-recording-dot"></span>
+    <span class="demoscr-recording-label">REC</span>
+    <span class="demoscr-recording-timer" id="recording-timer">00:00</span>
+    <span class="demoscr-recording-step" id="recording-step">Step 1 of 6</span>
+    <button class="demoscr-btn" id="recording-next">Next →</button>
+    <button class="demoscr-btn" id="recording-stop">⬛ Stop</button>
+  </div>
+</div>
+
+<!-- Data injection for JS -->
+<script>
+  window.DEMO_DATA = {
+    scenarios: {{ $d.scenarios.scenarios | jsonify | safeJS }},
+    apps: {{ $d.scenarios.apps | jsonify | safeJS }},
+    steps: {{ $d.steps.steps | jsonify | safeJS }},
+    prompts: {{ $d.prompts.prompts | jsonify | safeJS }},
+    qa_prep: {{ $d.scenarios.qa_prep | jsonify | safeJS }}
+  };
+</script>
+<script src="/js/demo-scripts.js?v={{ site.Params.cache_version }}"></script>
+
+{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "All Tools") }}
+{{ end }}

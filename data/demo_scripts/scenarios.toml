@@ -1,0 +1,336 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DEMO SCRIPT BUILDER — Scenario Definitions
+# ═══════════════════════════════════════════════════════════════════════════
+# 12 demo scenarios across 6 business categories.
+# Each scenario defines which M365 apps are used and the core value prop.
+# Steps are in steps.toml, linked by scenario ID.
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── M365 Apps Reference ──────────────────────────────────────────────────
+# copilot-chat  = Microsoft 365 Copilot Chat (cross-app, Graph-powered)
+# teams         = Microsoft Teams (meetings, chat, channels)
+# outlook       = Microsoft Outlook (email, calendar)
+# word          = Microsoft Word
+# excel         = Microsoft Excel
+# powerpoint    = Microsoft PowerPoint
+# loop          = Microsoft Loop
+# onenote       = Microsoft OneNote
+# whiteboard    = Microsoft Whiteboard
+# forms         = Microsoft Forms
+# planner       = Microsoft Planner
+
+[[apps]]
+id = "copilot-chat"
+name = "Copilot Chat"
+icon = "💬"
+description = "Cross-app AI assistant powered by Microsoft Graph"
+
+[[apps]]
+id = "teams"
+name = "Microsoft Teams"
+icon = "👥"
+description = "Meetings, chat, and channel collaboration"
+
+[[apps]]
+id = "outlook"
+name = "Microsoft Outlook"
+icon = "📧"
+description = "Email, calendar, and scheduling"
+
+[[apps]]
+id = "word"
+name = "Microsoft Word"
+icon = "📝"
+description = "Document creation and editing"
+
+[[apps]]
+id = "excel"
+name = "Microsoft Excel"
+icon = "📊"
+description = "Data analysis, formulas, and visualisation"
+
+[[apps]]
+id = "powerpoint"
+name = "Microsoft PowerPoint"
+icon = "📽️"
+description = "Presentations and slide decks"
+
+[[apps]]
+id = "loop"
+name = "Microsoft Loop"
+icon = "🔄"
+description = "Collaborative workspaces and components"
+
+[[apps]]
+id = "onenote"
+name = "Microsoft OneNote"
+icon = "📓"
+description = "Notes and knowledge capture"
+
+[[apps]]
+id = "whiteboard"
+name = "Microsoft Whiteboard"
+icon = "🖊️"
+description = "Visual collaboration and brainstorming"
+
+[[apps]]
+id = "forms"
+name = "Microsoft Forms"
+icon = "📋"
+description = "Surveys, quizzes, and feedback collection"
+
+[[apps]]
+id = "planner"
+name = "Microsoft Planner"
+icon = "✅"
+description = "Task and project management"
+
+# ── Scenario Definitions ────────────────────────────────────────────────
+
+[[scenarios]]
+id = "sales-pipeline"
+name = "Sales Pipeline Review"
+icon = "📊"
+category = "Sales"
+tagline = "Prepare for a pipeline review meeting in minutes, not hours"
+apps = ["copilot-chat", "excel", "teams", "outlook", "powerpoint"]
+business_value = "Turn 2 hours of meeting prep into 15 minutes with full customer context"
+default = true
+
+[[scenarios]]
+id = "sales-proposal"
+name = "Customer Proposal"
+icon = "📑"
+category = "Sales"
+tagline = "Generate a professional proposal from meeting notes and emails"
+apps = ["copilot-chat", "word", "powerpoint", "outlook"]
+business_value = "Create proposals in 30 minutes that used to take half a day"
+
+[[scenarios]]
+id = "hr-policy"
+name = "Policy Q&A"
+icon = "📜"
+category = "HR"
+tagline = "Answer employee policy questions instantly with Copilot"
+apps = ["copilot-chat", "word", "outlook"]
+business_value = "HR teams answer policy questions 5x faster with consistent, accurate responses"
+
+[[scenarios]]
+id = "hr-onboarding"
+name = "New Hire Onboarding"
+icon = "🎉"
+category = "HR"
+tagline = "Create a complete onboarding experience in one sitting"
+apps = ["copilot-chat", "word", "loop", "outlook", "powerpoint"]
+business_value = "Build personalised onboarding packs that used to take 3 days in under an hour"
+
+[[scenarios]]
+id = "it-incident"
+name = "Incident Response"
+icon = "🚨"
+category = "IT"
+tagline = "Summarise, communicate, and document IT incidents faster"
+apps = ["teams", "copilot-chat", "word", "outlook", "powerpoint"]
+business_value = "Cut incident response documentation time by 80% with automatic summaries"
+
+[[scenarios]]
+id = "it-knowledge"
+name = "KB Article Creation"
+icon = "📚"
+category = "IT"
+tagline = "Turn tribal knowledge into searchable documentation"
+apps = ["copilot-chat", "word", "teams"]
+business_value = "Create knowledge base articles from real conversations and tickets"
+
+[[scenarios]]
+id = "finance-budget"
+name = "Budget Analysis"
+icon = "💰"
+category = "Finance"
+tagline = "Analyse budgets and create executive summaries with natural language"
+apps = ["excel", "copilot-chat", "word", "powerpoint"]
+business_value = "Finance teams analyse data in minutes using plain English instead of complex formulas"
+
+[[scenarios]]
+id = "finance-quarterly"
+name = "Quarterly Review Prep"
+icon = "📈"
+category = "Finance"
+tagline = "Prepare quarterly business review materials end-to-end"
+apps = ["excel", "copilot-chat", "powerpoint", "word", "outlook"]
+business_value = "Compile a complete QBR deck from data and conversations in under an hour"
+
+[[scenarios]]
+id = "marketing-campaign"
+name = "Campaign Brief"
+icon = "🎯"
+category = "Marketing"
+tagline = "Create a complete campaign brief from strategy to stakeholder comms"
+apps = ["copilot-chat", "word", "powerpoint", "outlook"]
+business_value = "Marketing teams go from idea to approved brief 3x faster"
+
+[[scenarios]]
+id = "exec-email"
+name = "Executive Email Triage"
+icon = "📬"
+category = "Executive"
+tagline = "Triage, prioritise, and respond to a full inbox in minutes"
+apps = ["outlook", "copilot-chat", "teams"]
+business_value = "Executives save 45 minutes every morning on email management"
+
+[[scenarios]]
+id = "exec-meeting"
+name = "Meeting Summary & Actions"
+icon = "📋"
+category = "Executive"
+tagline = "Never miss an action item — auto-summarise any meeting"
+apps = ["teams", "copilot-chat", "loop", "outlook"]
+business_value = "100% of action items captured and assigned — no more 'I forgot' moments"
+
+[[scenarios]]
+id = "custom"
+name = "Custom Scenario"
+icon = "🔧"
+category = "Custom"
+tagline = "Build your own demo script for any business scenario"
+apps = ["copilot-chat", "teams", "outlook", "word", "excel", "powerpoint", "loop"]
+business_value = "Tailor the demo to your customer's exact workflow"
+time_without = "Varies"
+time_with = "Varies"
+
+# ── V3: New Industry Scenarios ───────────────────────────────────────
+
+[[scenarios]]
+id = "legal-contract"
+name = "Contract Review"
+icon = "⚖️"
+category = "Legal"
+tagline = "Review contracts, identify risks, and draft amendments faster"
+apps = ["copilot-chat", "word", "outlook"]
+business_value = "Legal teams review contracts in 45 minutes instead of 4 hours"
+time_without = "4 hours"
+time_with = "45 minutes"
+
+[[scenarios]]
+id = "ops-supply"
+name = "Supply Chain Update"
+icon = "🏭"
+category = "Operations"
+tagline = "Analyse supply chain data and create stakeholder reports"
+apps = ["copilot-chat", "excel", "powerpoint", "outlook"]
+business_value = "Operations teams create supply chain reports in 30 minutes instead of 3 hours"
+time_without = "3 hours"
+time_with = "30 minutes"
+
+[[scenarios]]
+id = "cs-tickets"
+name = "Customer Service"
+icon = "🎧"
+category = "Service"
+tagline = "Resolve customer tickets faster with context and KB access"
+apps = ["copilot-chat", "teams", "word", "outlook"]
+business_value = "Resolve customer tickets in 8 minutes instead of 30 — a 73% reduction"
+time_without = "30 minutes per ticket"
+time_with = "8 minutes per ticket"
+
+[[scenarios]]
+id = "edu-lesson"
+name = "Lesson Planning"
+icon = "🎓"
+category = "Education"
+tagline = "Create lessons, presentations, and assessments in one sitting"
+apps = ["copilot-chat", "word", "powerpoint", "forms"]
+business_value = "Teachers create a full lesson pack in 30 minutes instead of 2 hours"
+time_without = "2 hours"
+time_with = "30 minutes"
+
+# ── Before/After timing for existing scenarios ───────────────────────
+# (added via JS lookup — see timing_map in demo-scripts.js)
+
+# ── Q&A Prep — Predicted Audience Questions by Category ──────────────
+
+[[qa_prep]]
+category = "Sales"
+icon = "📊"
+questions = [
+  { q = "How does Copilot handle confidential customer data?", a = "Copilot only accesses data the signed-in user already has permission to see. It respects your existing M365 security model — sensitivity labels, DLP policies, and access controls all apply." },
+  { q = "Can it integrate with our CRM like Salesforce or Dynamics?", a = "Yes — through Copilot extensibility. Graph connectors bring external data into Copilot, and Copilot Studio agents can connect to Salesforce, Dynamics, ServiceNow, and 1000+ connectors via Power Platform." },
+  { q = "What if our sales data is in a system outside M365?", a = "Copilot Chat searches M365 data by default. For external systems, you'd use Graph connectors or Copilot Studio agents to bring that data in. The extensibility story is strong and growing." },
+  { q = "How accurate are the meeting summaries?", a = "Very accurate for factual content — decisions, action items, names. It can occasionally miss nuance or context. That's why we always recommend review before sharing. The human in the loop is essential." },
+]
+
+[[qa_prep]]
+category = "HR"
+icon = "👥"
+questions = [
+  { q = "How do we ensure Copilot gives correct policy answers?", a = "Copilot cites its sources — you can click through to verify the original document. Keep your SharePoint policy documents up-to-date and Copilot will always reference the latest version." },
+  { q = "Can employees access each other's HR data through Copilot?", a = "No. Copilot respects M365 permissions. If an employee can't access a document in SharePoint, Copilot can't access it either. Your existing information barriers and access controls apply." },
+  { q = "Does it work with our HRIS like Workday or SAP?", a = "Not natively, but through Copilot extensibility — Graph connectors or Copilot Studio agents can surface HRIS data within Copilot. This is an integration project, not out-of-box." },
+]
+
+[[qa_prep]]
+category = "IT"
+icon = "🔧"
+questions = [
+  { q = "Can Copilot access our ticketing system?", a = "Not out-of-box, but yes through extensibility. ServiceNow, Jira, and other ITSM tools can be connected via Graph connectors or Copilot Studio agents with Power Platform connectors." },
+  { q = "How does Copilot handle sensitive security incident data?", a = "Copilot respects your M365 security model. If incident channels have restricted access, only members can see Copilot summaries. Sensitivity labels on documents carry through to Copilot outputs." },
+  { q = "Will Copilot replace our IT help desk?", a = "No — Copilot augments your help desk team, not replaces them. It handles routine questions faster and helps agents find solutions quicker. Complex issues still need human expertise and judgment." },
+]
+
+[[qa_prep]]
+category = "Finance"
+icon = "💰"
+questions = [
+  { q = "Can we trust Copilot with financial calculations?", a = "Copilot generates real Excel formulas you can inspect and verify. Always review calculations before presenting them. Think of Copilot as a fast first draft — the CFO still signs off." },
+  { q = "How does it handle confidential financial data?", a = "Same security model as M365 — Copilot only accesses data the user has permission to see. Sensitivity labels, DLP policies, and compliance boundaries all apply to Copilot-generated content." },
+  { q = "Can it connect to our ERP or financial system?", a = "Through extensibility — Graph connectors for read-only data surfacing, or Copilot Studio agents for interactive queries. SAP, Oracle, and other ERPs can be connected via Power Platform." },
+]
+
+[[qa_prep]]
+category = "Marketing"
+icon = "🎯"
+questions = [
+  { q = "Can Copilot maintain our brand voice?", a = "You can guide Copilot's tone through prompts — 'Use our brand voice: professional but friendly, active voice, short sentences.' For consistent brand voice at scale, a Copilot Studio agent with brand guidelines as instructions works well." },
+  { q = "Does it generate images or just text?", a = "In PowerPoint, Copilot can suggest and insert stock images. For custom image generation, you'd use Microsoft Designer or DALL-E integration. Text generation is Copilot's strength in M365." },
+]
+
+[[qa_prep]]
+category = "Executive"
+icon = "👔"
+questions = [
+  { q = "What's the ROI? How do we measure success?", a = "Microsoft's Work Trend Index shows 11 hours saved per month per user. Use the Copilot Dashboard in Viva Insights to track adoption and the Copilot business impact report to correlate usage with business outcomes." },
+  { q = "What about data security and compliance?", a = "Copilot inherits your M365 security posture — Entra ID, sensitivity labels, DLP, information barriers, audit logging. It processes data within your M365 data boundary. No customer data is used to train the models." },
+  { q = "How long does deployment take?", a = "Licence assignment is immediate. Meaningful adoption takes 30-60 days with proper change management. FastTrack provides free deployment assistance for 150+ licences." },
+  { q = "What if employees don't use it?", a = "Adoption requires change management — not just licences. The Copilot Success Kit provides communication templates, training resources, and champion programmes. Start with enthusiastic teams and let success stories spread." },
+]
+
+[[qa_prep]]
+category = "Legal"
+icon = "⚖️"
+questions = [
+  { q = "Can Copilot reliably identify legal risks in contracts?", a = "Copilot can surface clauses and flag patterns, but it's not a substitute for legal review. Use it to accelerate the first-pass review — the lawyer still makes the final judgment on risk." },
+  { q = "Is Copilot output privileged/confidential?", a = "Copilot-generated content inherits the security context of its source data. If source documents are labelled Confidential, outputs should be treated the same way. Your sensitivity labels carry through." },
+]
+
+[[qa_prep]]
+category = "Operations"
+icon = "🏭"
+questions = [
+  { q = "Can Copilot connect to our ERP/supply chain systems?", a = "Through extensibility — Graph connectors and Copilot Studio agents can surface data from SAP, Oracle, and other supply chain systems. The data stays in your systems; Copilot queries it on demand." },
+]
+
+[[qa_prep]]
+category = "Service"
+icon = "🎧"
+questions = [
+  { q = "Can Copilot handle customer-facing interactions?", a = "M365 Copilot is for internal use — helping agents, not replacing them. For customer-facing AI, Copilot Studio can build chatbots that interact with customers directly via web, WhatsApp, or Teams." },
+  { q = "How does it access our knowledge base?", a = "If your KB is in SharePoint, Copilot searches it natively. For external KB systems like Zendesk or Confluence, use Graph connectors to bring that content into the M365 search index." },
+]
+
+[[qa_prep]]
+category = "Education"
+icon = "🎓"
+questions = [
+  { q = "Is Copilot appropriate for student-facing use?", a = "M365 Copilot is licensed per user for staff. For student-facing AI, Microsoft provides Copilot in Education with appropriate safeguards. This demo focuses on teacher productivity." },
+  { q = "Can it align content to curriculum standards?", a = "Yes — include the standard in your prompt: 'Create a lesson aligned to NZQA Achievement Standard 91267.' Copilot will structure content accordingly, though always verify alignment." },
+]

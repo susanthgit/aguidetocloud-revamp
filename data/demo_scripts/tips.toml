@@ -1,0 +1,334 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DEMO SCRIPT BUILDER — Tips, Rules & Checklists
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── The 5 Rules of a Great Copilot Demo ──────────────────────────────────
+
+[[rules]]
+order = 1
+title = "Show, Don't Tell"
+icon = "🎬"
+description = "A 5-minute live demo is worth more than 30 slides. If Copilot can do it, show it live. Audiences remember what they see, not what they hear."
+
+[[rules]]
+order = 2
+title = "Start with the Problem"
+icon = "😤"
+description = "Open with a pain point your audience recognises. 'How long does it take your team to prepare for a pipeline review?' Get them nodding before you show the solution."
+
+[[rules]]
+order = 3
+title = "Use Realistic Data"
+icon = "📂"
+description = "Generic demo data gets generic reactions. Use realistic (but fictional) company names, email threads, and meeting transcripts. Contoso and Northwind are your friends."
+
+[[rules]]
+order = 4
+title = "Narrate the Value"
+icon = "💡"
+description = "Don't just show WHAT Copilot does — explain WHY it matters. 'Notice how that pulled from 3 different sources? Your team does that manually today, and it takes 45 minutes.'"
+
+[[rules]]
+order = 5
+title = "End with the Scale Question"
+icon = "🚀"
+description = "Close with: 'Imagine every person in your org saving 30 minutes a day. What would your team do with that time?' Let them picture the transformation."
+
+# ── What to Do When Copilot Fails Live ──────────────────────────────────
+
+[[failure_tips]]
+order = 1
+title = "Stay Calm and Pivot"
+tip = "Say: 'Let me show you something else while that loads.' Move to the next step and come back."
+icon = "🧘"
+
+[[failure_tips]]
+order = 2
+title = "Have a Backup Recording"
+tip = "Pre-record each demo step as a short video clip. If live fails, say: 'Here's what it looks like' and play the clip."
+icon = "🎥"
+
+[[failure_tips]]
+order = 3
+title = "Acknowledge Honestly"
+tip = "Say: 'AI isn't perfect every time — just like us. The magic is that you can refine the prompt and try again in seconds.' This actually builds trust."
+icon = "🤝"
+
+[[failure_tips]]
+order = 4
+title = "Reframe as a Feature"
+tip = "If the response is unexpected, say: 'This is a great example of why the human in the loop matters. You review, refine, and approve — Copilot is your assistant, not your replacement.'"
+icon = "🔄"
+
+[[failure_tips]]
+order = 5
+title = "Pre-test 30 Minutes Before"
+tip = "Run your exact demo script start-to-finish 30 minutes before the session. Test on the same network, same device, same account."
+icon = "⏰"
+
+[[failure_tips]]
+order = 6
+title = "The 3-Prompt Rule"
+tip = "If a prompt doesn't work, try it twice more with slight variations. If it still fails after 3 attempts, move on gracefully."
+icon = "3️⃣"
+
+# ── Audience-Specific Advice ─────────────────────────────────────────────
+
+[audience_tips]
+
+[audience_tips.technical]
+title = "Technical Audience"
+icon = "⚙️"
+approach = "Show the 'how' — they want to understand the architecture"
+tips = [
+  "Explain that Copilot uses Microsoft Graph to access data across M365 apps",
+  "Show the security model: Copilot only accesses data the user already has permission to see",
+  "Mention grounding — Copilot references your organisation's data, not the internet (unless you allow it)",
+  "Discuss data residency: Copilot prompts and responses are processed within your M365 data boundary",
+  "Show how sensitivity labels carry through to Copilot-generated content",
+  "Be ready for 'Can it access SharePoint?' — yes, if the user has access to those sites",
+  "Mention extensibility: Graph connectors, plugins, and Copilot Studio agents for custom scenarios"
+]
+
+[audience_tips.business]
+title = "Business Audience"
+icon = "💼"
+approach = "Show the 'so what' — they want time saved and quality improved"
+tips = [
+  "Quantify time savings: 'This took 45 minutes manually — Copilot did it in 30 seconds'",
+  "Use their language: ROI, productivity, competitive advantage, employee satisfaction",
+  "Show before/after: 'Here's what your team does today' vs 'Here's Copilot doing it in real-time'",
+  "Relate to their industry: use scenarios from their sector (sales, HR, marketing)",
+  "Ask engagement questions: 'How many of your team do this daily?'",
+  "Don't over-explain the technology — focus on outcomes",
+  "End each section with a business impact statement"
+]
+
+[audience_tips.executive]
+title = "Executive Audience"
+icon = "👔"
+approach = "Show the 'scale' — they think in headcount, cost, and strategic advantage"
+tips = [
+  "Lead with the numbers: 'Microsoft's Work Trend Index shows Copilot users save 11 hours per month'",
+  "Frame every feature as org-wide impact: 'If 500 people each save 30 minutes a day...'",
+  "Address security and governance proactively — executives worry about data leakage",
+  "Show Copilot as a strategic investment, not a cost: 'This is your competitive edge'",
+  "Keep demos short and high-impact — executives lose interest after 10 minutes",
+  "Use the ROI Calculator to back up claims with real numbers",
+  "Close with a clear next step: pilot programme, department rollout, or proof of concept"
+]
+
+# ── Tenant Preparation Checklist ─────────────────────────────────────────
+
+[[tenant_checklist]]
+order = 1
+item = "Copilot licences assigned to all demo accounts"
+priority = "critical"
+note = "Allow 24-48 hours for licence provisioning to take effect"
+
+[[tenant_checklist]]
+order = 2
+item = "Demo accounts have 2+ weeks of realistic email and Teams data"
+priority = "critical"
+note = "Copilot needs context to give meaningful responses — empty tenants give empty answers"
+
+[[tenant_checklist]]
+order = 3
+item = "Teams meeting transcription enabled in admin settings"
+priority = "critical"
+note = "Meeting summaries require transcription to be turned on BEFORE the meeting starts"
+
+[[tenant_checklist]]
+order = 4
+item = "SharePoint sites populated with business documents (proposals, reports, policies)"
+priority = "high"
+note = "Copilot Chat uses Graph to search SharePoint — more content = better demos"
+
+[[tenant_checklist]]
+order = 5
+item = "Excel files formatted as Tables (not raw data ranges)"
+priority = "high"
+note = "Excel Copilot works best with structured Tables — select data, press Ctrl+T"
+
+[[tenant_checklist]]
+order = 6
+item = "Calendar populated with realistic meetings for the past month"
+priority = "medium"
+note = "Copilot references calendar context when preparing for meetings"
+
+[[tenant_checklist]]
+order = 7
+item = "OneDrive has recent documents for Copilot to reference"
+priority = "medium"
+note = "Copilot can reference your recent files when drafting new content"
+
+[[tenant_checklist]]
+order = 8
+item = "Loop workspace created with sample collaborative content"
+priority = "low"
+note = "Only needed if your demo includes Loop scenarios"
+
+[[tenant_checklist]]
+order = 9
+item = "Demo passwords documented and tested (MFA enrolled if required)"
+priority = "critical"
+note = "Nothing kills a demo faster than a locked account or unexpected MFA prompt"
+
+[[tenant_checklist]]
+order = 10
+item = "Web apps bookmarked and signed in on the demo device"
+priority = "medium"
+note = "Pre-authenticate to avoid sign-in flows during the demo"
+
+# ── Hardware & Network Checklist ─────────────────────────────────────────
+
+[[hardware_checklist]]
+order = 1
+item = "Stable internet connection (wired preferred, or tested WiFi)"
+priority = "critical"
+note = "Copilot needs consistent connectivity — slow responses kill momentum"
+
+[[hardware_checklist]]
+order = 2
+item = "External display tested and resolution confirmed"
+priority = "high"
+note = "Test your exact setup: adapter, resolution, display mirroring vs extend"
+
+[[hardware_checklist]]
+order = 3
+item = "Browser with demo tabs pre-loaded (Edge recommended)"
+priority = "high"
+note = "Have all apps open in tabs, signed in, ready to go"
+
+[[hardware_checklist]]
+order = 4
+item = "All non-demo apps closed and notifications off"
+priority = "high"
+note = "Enable Focus Assist / Do Not Disturb — one Slack ping can derail a demo"
+
+[[hardware_checklist]]
+order = 5
+item = "Backup mobile hotspot available"
+priority = "medium"
+note = "If venue WiFi fails, you can switch to your phone hotspot in 30 seconds"
+
+[[hardware_checklist]]
+order = 6
+item = "Power adapter connected (or full battery confirmed)"
+priority = "medium"
+note = "AI features are resource-intensive — low battery can throttle performance"
+
+[[hardware_checklist]]
+order = 7
+item = "Browser zoom at 125-150% for readability on large screens"
+priority = "low"
+note = "Back-of-room readability matters — increase font size before you start"
+
+[[hardware_checklist]]
+order = 8
+item = "Demo script printed or on second screen"
+priority = "low"
+note = "Have your script accessible without switching away from the demo"
+
+# ── Common Demo Traps ───────────────────────────────────────────────────
+
+[[traps]]
+scenario = "all"
+trap = "Empty or fresh demo tenant with no data"
+fix = "Populate with 2+ weeks of emails, meetings, and documents BEFORE the demo. Use Microsoft's demo content packs if available."
+
+[[traps]]
+scenario = "all"
+trap = "Copilot gives a generic or unhelpful response"
+fix = "Use more specific prompts. Instead of 'help me with this', try 'Summarise the key decisions from my meeting with Sarah about the Q3 budget on Tuesday'."
+
+[[traps]]
+scenario = "all"
+trap = "Slow response times making the audience restless"
+fix = "Fill the gap: 'While Copilot works on this, let me explain what's happening behind the scenes...' Have a 30-second filler talking point ready."
+
+[[traps]]
+scenario = "all"
+trap = "Audience asks 'Can Copilot do X?' for something it can't"
+fix = "Be honest: 'That's not available today, but here's what's on the roadmap' or 'That's a great use case for a custom Copilot Studio agent.' Never promise features."
+
+[[traps]]
+scenario = "excel"
+trap = "Excel Copilot button is greyed out"
+fix = "Data must be in a formatted Table (Ctrl+T). Remove merged cells, blank rows, and ensure headers are in the first row."
+
+[[traps]]
+scenario = "teams"
+trap = "Meeting summary shows 'No transcript available'"
+fix = "Transcription must be enabled BEFORE the meeting starts. Go to Teams Admin → Meeting policies → enable 'Allow transcription'."
+
+[[traps]]
+scenario = "teams"
+trap = "Copilot Chat doesn't find relevant Teams messages"
+fix = "Copilot searches messages the user has access to. Ensure the demo account is a member of the relevant channels and chats."
+
+[[traps]]
+scenario = "outlook"
+trap = "Copilot draft is too generic or formal"
+fix = "Add context to the prompt: 'Draft a friendly, concise reply acknowledging their concerns and suggesting a call on Thursday.' Tone and detail in the prompt = better output."
+
+[[traps]]
+scenario = "powerpoint"
+trap = "Generated slides look bland or unstructured"
+fix = "Apply a theme BEFORE asking Copilot to generate slides. Copilot respects your existing deck theme and layout."
+
+[[traps]]
+scenario = "copilot-chat"
+trap = "Copilot Chat says 'I don't have enough information'"
+fix = "The user needs data in M365 for Copilot to reference. Check that the account has recent emails, Teams chats, and documents. Try narrowing the query scope."
+
+# ── V3: Demo Data Seeder Guide ──────────────────────────────────────
+
+[[seeder_steps]]
+order = 1
+title = "Create Demo User Accounts"
+action = "Create 3-5 fictional users: Sarah (Sales VP), Marcus (Finance Director), Priya (IT Manager), Alex (Marketing Lead), Jordan (HR Business Partner)"
+detail = "Assign M365 E5 + Copilot licences. Allow 24-48 hours for provisioning. Set up profile photos and job titles for realism."
+icon = "👤"
+
+[[seeder_steps]]
+order = 2
+title = "Populate Email Threads"
+action = "Send 20-30 realistic emails between demo users over 2 weeks. Mix meeting requests, project updates, budget discussions, and customer follow-ups. Use Contoso and Northwind as external contacts."
+detail = "Copilot needs email context for summaries and drafting. Spread emails across dates — don't send all on the same day. Include reply chains with 3-5 exchanges."
+icon = "📧"
+
+[[seeder_steps]]
+order = 3
+title = "Create Teams Channels & Conversations"
+action = "Set up channels: #sales-pipeline, #it-incidents, #marketing-campaigns, #leadership. Post 10-15 messages in each with realistic discussions, decisions, and action items."
+detail = "Copilot Chat searches Teams channels. Include @mentions, decisions, and disagreements for richer summaries."
+icon = "👥"
+
+[[seeder_steps]]
+order = 4
+title = "Schedule & Record Meetings"
+action = "Schedule 3-5 Teams meetings between demo users. Enable transcription BEFORE each meeting. Have 15-30 minute conversations covering project updates, budget reviews, and customer feedback."
+detail = "Meeting summaries are the #1 demo feature. Without transcripts, this step fails completely. Verify transcription is enabled in Teams Admin."
+icon = "📅"
+
+[[seeder_steps]]
+order = 5
+title = "Upload SharePoint Documents"
+action = "Create a Team site with realistic documents: sales proposals, HR policies, budget spreadsheets, project plans, incident reports. Organise in folders that make sense."
+detail = "Copilot Chat references SharePoint documents via Graph. The more realistic the content, the better the demo. Use 5-10 page documents, not single paragraphs."
+icon = "📁"
+
+[[seeder_steps]]
+order = 6
+title = "Prepare Excel Data"
+action = "Create 2-3 Excel workbooks with realistic data: sales pipeline (30+ deals with stages, values, owners), budget tracker (departments, monthly actuals vs plan), supplier performance (lead times, costs)."
+detail = "CRITICAL: Format data as Tables (Ctrl+T). Remove merged cells and blank rows. Add column headers in row 1. Excel Copilot ONLY works with structured Tables."
+icon = "📊"
+
+[[seeder_steps]]
+order = 7
+title = "Test Every Demo Step"
+action = "Run your exact demo script end-to-end with the demo account. Test each Copilot prompt and verify the responses are useful. Note any prompts that need tweaking."
+detail = "Do this 24 hours before the demo and again 30 minutes before. Copilot responses can vary — know what to expect and have fallbacks ready."
+icon = "✅"

@@ -1,0 +1,318 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DEMO SCRIPT BUILDER — Demo Prompts Library
+# ═══════════════════════════════════════════════════════════════════════════
+# Curated prompts for Copilot demos, organised by M365 app.
+# Each prompt shows expected output, talking point, and reliability rating.
+# reliability: high = works consistently, medium = usually works well
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── COPILOT CHAT (BizChat) ───────────────────────────────────────────────
+
+[[prompts]]
+id = "chat-meeting-prep"
+app = "copilot-chat"
+category = "Meetings"
+prompt = "Help me prepare for my meeting with [Name] tomorrow. Summarise our recent interactions and any open action items"
+expected = "Copilot shows a briefing with recent emails, meetings, and outstanding tasks related to the person"
+talk = "This is meeting prep on autopilot — full context in 30 seconds instead of 30 minutes of digging"
+reliability = "high"
+
+[[prompts]]
+id = "chat-weekly-summary"
+app = "copilot-chat"
+category = "Productivity"
+prompt = "Give me a summary of my week. What were the key meetings, decisions, and commitments I made?"
+expected = "Copilot aggregates your calendar, emails, and meeting transcripts into a weekly summary"
+talk = "Imagine starting every Monday with a clear view of what happened last week and what's pending"
+reliability = "high"
+
+[[prompts]]
+id = "chat-find-document"
+app = "copilot-chat"
+category = "Search"
+prompt = "Find the latest version of the Q3 budget proposal that was shared in the finance team"
+expected = "Copilot locates the document in SharePoint or OneDrive and provides a direct link"
+talk = "No more searching through SharePoint folders or asking colleagues 'where did you save that file?'"
+reliability = "high"
+
+[[prompts]]
+id = "chat-action-items"
+app = "copilot-chat"
+category = "Productivity"
+prompt = "What action items were assigned to me across all my meetings this week?"
+expected = "Copilot searches meeting transcripts and surfaces action items with owners and context"
+talk = "Personal accountability made effortless — you always know what you committed to"
+reliability = "medium"
+
+[[prompts]]
+id = "chat-competitor-intel"
+app = "copilot-chat"
+category = "Sales"
+prompt = "What have people in my organisation said about [Competitor Name] in the last month? Search emails and Teams messages"
+expected = "Copilot surfaces mentions of the competitor from accessible M365 data"
+talk = "Competitive intelligence already exists in your data — Copilot just makes it accessible"
+reliability = "medium"
+
+[[prompts]]
+id = "chat-project-status"
+app = "copilot-chat"
+category = "Productivity"
+prompt = "What's the current status of the [Project Name]? Search my emails, Teams, and recent documents for updates"
+expected = "Copilot compiles a status summary from multiple data sources"
+talk = "Cross-app project visibility without opening 5 different tools"
+reliability = "medium"
+
+# ── MICROSOFT TEAMS ──────────────────────────────────────────────────────
+
+[[prompts]]
+id = "teams-meeting-summary"
+app = "teams"
+category = "Meetings"
+prompt = "Summarise this meeting and list all action items with owners and deadlines"
+expected = "Structured meeting summary with decisions, action items, and assigned owners"
+talk = "This is the #1 most-used Copilot feature — reliable and impressive every time"
+reliability = "high"
+
+[[prompts]]
+id = "teams-meeting-decisions"
+app = "teams"
+category = "Meetings"
+prompt = "What decisions were made during this meeting?"
+expected = "Copilot extracts specific decisions from the meeting transcript"
+talk = "Decisions often get lost in long discussions — Copilot extracts them clearly"
+reliability = "high"
+
+[[prompts]]
+id = "teams-catch-up"
+app = "teams"
+category = "Chat"
+prompt = "Catch me up on what I missed in this channel today"
+expected = "Copilot summarises recent channel messages, highlighting key topics and decisions"
+talk = "For busy professionals who can't read every message — get the highlights instantly"
+reliability = "high"
+
+[[prompts]]
+id = "teams-meeting-topics"
+app = "teams"
+category = "Meetings"
+prompt = "What were the different topics discussed in this meeting and how much time was spent on each?"
+expected = "Copilot breaks down the meeting into topic segments with approximate durations"
+talk = "Meeting efficiency insights — are your meetings staying on topic?"
+reliability = "medium"
+
+[[prompts]]
+id = "teams-sentiment"
+app = "teams"
+category = "Meetings"
+prompt = "Were there any unresolved questions or disagreements in this meeting?"
+expected = "Copilot identifies areas of ambiguity or disagreement from the meeting discussion"
+talk = "The things NOT resolved in a meeting are often more important than the things that were"
+reliability = "medium"
+
+# ── MICROSOFT OUTLOOK ────────────────────────────────────────────────────
+
+[[prompts]]
+id = "outlook-summarise-thread"
+app = "outlook"
+category = "Email"
+prompt = "Summarise this email thread. What's the latest status and are there any outstanding requests?"
+expected = "Copilot condenses a long email thread into key points, decisions, and pending actions"
+talk = "Long email threads with 20+ replies? Copilot reads them all and gives you the bottom line"
+reliability = "high"
+
+[[prompts]]
+id = "outlook-draft-reply"
+app = "outlook"
+category = "Email"
+prompt = "Draft a reply thanking them for the proposal, confirming our meeting next Thursday, and asking them to send the updated pricing by Wednesday"
+expected = "Copilot generates a contextual reply addressing all three points from your prompt"
+talk = "Three requests, one prompt, one well-crafted email. Copilot handles the nuance"
+reliability = "high"
+
+[[prompts]]
+id = "outlook-email-triage"
+app = "outlook"
+category = "Email"
+prompt = "Summarise my unread emails from today and highlight which ones need my urgent attention"
+expected = "Copilot categorises emails by urgency with brief summaries"
+talk = "Start every morning with clarity instead of inbox overwhelm"
+reliability = "high"
+
+[[prompts]]
+id = "outlook-coaching"
+app = "outlook"
+category = "Email"
+prompt = "Coaching: Make this email more concise and direct while keeping a professional tone"
+expected = "Copilot suggests edits to tighten the email, reduce wordiness, and sharpen the message"
+talk = "Copilot coaching is like having a writing mentor for every email you send"
+reliability = "high"
+
+[[prompts]]
+id = "outlook-schedule"
+app = "outlook"
+category = "Calendar"
+prompt = "Draft a meeting invite for the project kickoff next Monday at 10am. Include an agenda with introductions, project overview, timeline review, and Q&A"
+expected = "Copilot generates a meeting invite with a structured agenda"
+talk = "Well-structured meeting invites set expectations — Copilot ensures every invite has an agenda"
+reliability = "high"
+
+# ── MICROSOFT WORD ───────────────────────────────────────────────────────
+
+[[prompts]]
+id = "word-draft-proposal"
+app = "word"
+category = "Documents"
+prompt = "Draft a project proposal for migrating our email system to Microsoft 365. Include executive summary, current state, proposed solution, timeline, risks, and investment"
+expected = "Copilot generates a multi-section proposal with professional structure and relevant content"
+talk = "A solid first draft in 60 seconds — your team refines rather than starts from scratch"
+reliability = "high"
+
+[[prompts]]
+id = "word-summarise"
+app = "word"
+category = "Documents"
+prompt = "Summarise this document in 5 bullet points for someone who hasn't read it"
+expected = "Copilot extracts the key points into a concise, accessible summary"
+talk = "Perfect for executives who need the highlights, not the full 20-page report"
+reliability = "high"
+
+[[prompts]]
+id = "word-rewrite"
+app = "word"
+category = "Documents"
+prompt = "Rewrite this paragraph to be more concise and action-oriented"
+expected = "Copilot tightens the language, removes filler words, and strengthens the verbs"
+talk = "Writing improvement at the paragraph level — instant editing feedback"
+reliability = "high"
+
+[[prompts]]
+id = "word-faq"
+app = "word"
+category = "Documents"
+prompt = "Create a FAQ section based on the content in this document. Generate 8 questions an employee would likely ask"
+expected = "Copilot analyses the document and generates relevant FAQ entries with clear answers"
+talk = "Anticipating questions is hard — Copilot does it automatically from your existing content"
+reliability = "high"
+
+[[prompts]]
+id = "word-from-file"
+app = "word"
+category = "Documents"
+prompt = "Based on /[filename], create a one-page executive brief highlighting the key findings and recommendations"
+expected = "Copilot reads the referenced file and creates a condensed executive summary"
+talk = "Cross-file referencing is incredibly powerful — one document informs another automatically"
+reliability = "medium"
+
+# ── MICROSOFT EXCEL ──────────────────────────────────────────────────────
+
+[[prompts]]
+id = "excel-analyse"
+app = "excel"
+category = "Analysis"
+prompt = "Analyse this data and highlight the key trends. What patterns should I pay attention to?"
+expected = "Copilot identifies trends, outliers, and notable patterns in the dataset"
+talk = "Natural language data analysis — no formulas, no pivot tables, just ask the question"
+reliability = "high"
+
+[[prompts]]
+id = "excel-formula"
+app = "excel"
+category = "Formulas"
+prompt = "Add a column that calculates the year-over-year percentage growth for each row"
+expected = "Copilot adds a new column with the correct growth formula applied"
+talk = "For people who don't remember VLOOKUP syntax — just describe what you need in plain English"
+reliability = "high"
+
+[[prompts]]
+id = "excel-chart"
+app = "excel"
+category = "Visualisation"
+prompt = "Create a chart showing monthly revenue trends for the last 12 months with a trend line"
+expected = "Copilot generates a line chart with trend visualisation"
+talk = "Presentation-ready charts in seconds — no more formatting battles"
+reliability = "medium"
+
+[[prompts]]
+id = "excel-pivot"
+app = "excel"
+category = "Analysis"
+prompt = "Create a pivot table showing total sales by region and product category"
+expected = "Copilot creates a PivotTable with the specified dimensions"
+talk = "Pivot tables are powerful but intimidating — Copilot makes them accessible to everyone"
+reliability = "medium"
+
+[[prompts]]
+id = "excel-sort-filter"
+app = "excel"
+category = "Analysis"
+prompt = "Show me only the rows where the deal value is over $50,000 and the status is 'In Progress'"
+expected = "Copilot applies filters to show the matching subset of data"
+talk = "Complex filtering in natural language — no more hunting through the filter menu"
+reliability = "high"
+
+# ── MICROSOFT POWERPOINT ─────────────────────────────────────────────────
+
+[[prompts]]
+id = "ppt-from-prompt"
+app = "powerpoint"
+category = "Creation"
+prompt = "Create a 6-slide presentation about our digital transformation strategy. Include: vision, current challenges, proposed solutions, timeline, investment, and next steps"
+expected = "Copilot generates a structured presentation with content for each slide"
+talk = "From empty deck to structured presentation in 60 seconds — that's the Copilot difference"
+reliability = "high"
+
+[[prompts]]
+id = "ppt-from-document"
+app = "powerpoint"
+category = "Creation"
+prompt = "Create a presentation based on /[Document Name]. Focus on the key findings and recommendations"
+expected = "Copilot reads the document and creates slides that present the key content"
+talk = "Document to deck — the most common workflow, now automated"
+reliability = "medium"
+
+[[prompts]]
+id = "ppt-organise"
+app = "powerpoint"
+category = "Editing"
+prompt = "Organise these slides into a more logical flow. Group related topics and add transition slides"
+expected = "Copilot restructures the slide order and may add section divider slides"
+talk = "Deck organisation is tedious — Copilot handles the structure so you focus on the story"
+reliability = "medium"
+
+[[prompts]]
+id = "ppt-speaker-notes"
+app = "powerpoint"
+category = "Editing"
+prompt = "Add speaker notes to each slide with key talking points and transitions"
+expected = "Copilot generates speaker notes that expand on each slide's content"
+talk = "Speaker notes for every slide — your team presents confidently even with unfamiliar decks"
+reliability = "high"
+
+[[prompts]]
+id = "ppt-summarise"
+app = "powerpoint"
+category = "Summary"
+prompt = "Summarise this presentation in 3 bullet points"
+expected = "Copilot distils the entire deck into key takeaways"
+talk = "Need the executive summary of a 50-slide deck? Copilot reads it all in seconds"
+reliability = "high"
+
+# ── MICROSOFT LOOP ───────────────────────────────────────────────────────
+
+[[prompts]]
+id = "loop-brainstorm"
+app = "loop"
+category = "Collaboration"
+prompt = "Help me brainstorm ideas for our team offsite. Create a table with activity ideas, estimated time, and cost"
+expected = "Loop creates an interactive table with brainstorming content that the team can edit live"
+talk = "Collaborative brainstorming with AI — the table stays live and editable by everyone"
+reliability = "high"
+
+[[prompts]]
+id = "loop-action-tracker"
+app = "loop"
+category = "Productivity"
+prompt = "Create a task tracker for our project launch. Include columns for task, owner, priority, status, and due date"
+expected = "Loop generates an interactive task tracking component"
+talk = "Loop components are live — paste them in Teams or Outlook and they sync automatically"
+reliability = "high"

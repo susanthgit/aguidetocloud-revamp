@@ -1,0 +1,1032 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DEMO SCRIPT BUILDER — Demo Steps
+# ═══════════════════════════════════════════════════════════════════════════
+# Each step belongs to a scenario (by ID). Steps are ordered and filtered
+# by min_duration (5/15/30), risk level, and app.
+#
+# min_duration: 5 = essential (all durations), 15 = medium, 30 = extended
+# risk: low = reliable, medium = usually works, high = impressive but risky
+# wow: true = highlight as a "wow moment" with ⭐
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── SALES PIPELINE REVIEW ────────────────────────────────────────────────
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 1
+app = "copilot-chat"
+title = "Get Customer Context"
+action = "Open Microsoft 365 Copilot Chat (copilot.microsoft.com or the Copilot app in Teams)"
+prompt = "Summarise my recent interactions with Contoso Ltd over the last 2 weeks, including emails, meetings, and Teams messages"
+expected = "Copilot surfaces a chronological summary showing email exchanges, meeting highlights, and Teams chat topics — all in one consolidated view"
+talk_technical = "Copilot uses Microsoft Graph to aggregate data across all M365 apps. It only accesses data the signed-in user has permission to see."
+talk_business = "Think about how long it takes your sales team to manually piece together customer context before a meeting. Copilot does it in seconds."
+talk_executive = "Multiply this time saving by every customer-facing employee in your org. That's the productivity unlock."
+fallback = "If Copilot returns limited results, try narrowing to a specific person: 'Summarise my emails with Sarah from Contoso this week'. The account needs real M365 data to work with."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 2
+app = "excel"
+title = "Analyse Pipeline Data"
+action = "Open the sales pipeline Excel workbook → Click on a cell inside the data table → Select Copilot from the ribbon"
+prompt = "Which deals are most likely to close this quarter? Show me the top 5 by revenue with their current stage and probability"
+expected = "Copilot analyses the pipeline data and highlights top opportunities, potentially adding a sorted view or chart"
+talk_technical = "Excel Copilot works with structured Tables. Behind the scenes, it generates formulas and PivotTables — you can inspect and modify everything it creates."
+talk_business = "Instead of building filters and pivot tables manually, your sales ops team can ask questions in plain English and get instant answers."
+talk_executive = "This is self-serve analytics for every employee — no more waiting for the BI team to run a report."
+fallback = "If the Copilot button is greyed out, ensure the data is formatted as a Table (select data → Ctrl+T). Remove merged cells and blank rows."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 3
+app = "teams"
+title = "Recap Last Customer Meeting"
+action = "Open Microsoft Teams → Find the most recent meeting with Contoso → Click the Copilot icon in the meeting recap"
+prompt = "What were the key discussion points and action items from this meeting?"
+expected = "Copilot shows a structured summary with topics discussed, decisions made, and action items with assigned owners"
+talk_technical = "This works because meeting transcription captures every word. Copilot then uses NLP to extract structure from the conversation."
+talk_business = "No more 'I thought you were handling that' moments. Every action item is captured and attributed automatically."
+talk_executive = "Accountability at scale — every meeting, every action item, every owner. No excuses."
+fallback = "If no transcript is available, transcription must be enabled BEFORE the meeting. Show a pre-recorded example instead."
+wow = false
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 4
+app = "word"
+title = "Draft Meeting Agenda"
+action = "Open Microsoft Word → New blank document → Click the Copilot icon"
+prompt = "Draft an agenda for tomorrow's sales pipeline review meeting with the team. Include sections for: pipeline overview, top deals update, risk deals, resource needs, and next steps"
+expected = "Copilot generates a structured meeting agenda with clear sections, talking points under each, and placeholder time allocations"
+talk_technical = "Word Copilot can also reference existing files — try adding 'based on /last week's meeting notes' to pull in context from other documents."
+talk_business = "Your meeting agenda just went from a 15-minute task to a 30-second task. And it's more structured than what most people write manually."
+talk_executive = "Better-prepared meetings mean faster decisions. Multiply that across hundreds of meetings a week."
+fallback = "If the output is too generic, add more context: 'Our pipeline has 47 deals worth $2.3M. Focus on the 5 deals closing this month.'"
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 5
+app = "outlook"
+title = "Draft Customer Follow-up"
+action = "Open Microsoft Outlook → Click New Email → Click the Copilot icon in the compose window"
+prompt = "Draft a follow-up email to Sarah at Contoso thanking her for yesterday's meeting, summarising the 3 key next steps we agreed on, and proposing a check-in call next Thursday at 2pm"
+expected = "Copilot generates a professional, personalised email with specific details from the meeting context"
+talk_technical = "Copilot can reference your recent meetings and emails to add specific context. It respects your writing style over time."
+talk_business = "Your sales team sends 50+ emails a day. If each email saves 3 minutes, that's 2.5 hours back per person, per day."
+talk_executive = "Consistent, professional communication at scale. Every customer interaction reflects your brand quality."
+fallback = "If the draft is too generic, use Outlook's Copilot coaching feature to adjust tone: try 'Make it more friendly and concise'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 6
+app = "powerpoint"
+title = "Create Pipeline Update Deck"
+action = "Open Microsoft PowerPoint → New blank presentation (apply company theme first) → Click the Copilot icon"
+prompt = "Create a 5-slide sales pipeline update presentation covering: pipeline summary, top opportunities, risk deals, competitive landscape, and next quarter forecast"
+expected = "Copilot generates a structured deck with slides, bullet points, and placeholder content for each section"
+talk_technical = "Copilot uses the active theme for styling. For best results, apply your corporate template before generating slides."
+talk_business = "That deck used to take an hour to create. Your sales leaders now walk into pipeline reviews fully prepared, every time."
+talk_executive = "This is the last slide anyone needs to see — Copilot just turned meeting prep from a chore into a competitive advantage."
+fallback = "If slides look generic, try referencing a source document: 'Create a presentation based on /Q3 Pipeline Report.docx'."
+wow = true
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "sales-pipeline"
+order = 7
+app = "copilot-chat"
+title = "Prepare Competitive Intel"
+action = "Return to Copilot Chat"
+prompt = "Based on my recent emails and meetings, what competitive threats have been mentioned regarding the Contoso deal? Summarise any competitor mentions and concerns raised"
+expected = "Copilot searches across emails and meeting transcripts to surface competitive intelligence"
+talk_technical = "This is Microsoft Graph search in action — Copilot correlates data across apps to find patterns a human might miss."
+talk_business = "Your sales team has competitive intel buried in emails and meeting notes. Copilot surfaces it automatically."
+talk_executive = "This is intelligence you're already paying for — it's in your data. Copilot just makes it accessible."
+fallback = "If results are thin, try: 'What has anyone in my organisation said about [Competitor Name] in the last month?'"
+wow = true
+risk = "high"
+min_duration = 30
+
+# ── CUSTOMER PROPOSAL ────────────────────────────────────────────────────
+
+[[steps]]
+scenario = "sales-proposal"
+order = 1
+app = "copilot-chat"
+title = "Gather Proposal Context"
+action = "Open Copilot Chat"
+prompt = "Help me prepare a proposal for Northwind Traders. Summarise our last 3 meetings with them, their key requirements, and any concerns they've raised"
+expected = "Copilot compiles meeting summaries, email context, and key discussion points into a structured briefing"
+talk_technical = "Copilot searches across your Graph data — emails, meetings, chats, and shared documents — to build comprehensive context."
+talk_business = "Before writing a single word, your sales rep has the full picture. No more missing key requirements because they were buried in an email thread."
+talk_executive = "Better proposals win more deals. This is proposal quality at scale."
+fallback = "Try being more specific: 'What did Northwind say they need in terms of security and compliance requirements?'"
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "sales-proposal"
+order = 2
+app = "word"
+title = "Draft the Proposal"
+action = "Open Word → New document → Copilot icon"
+prompt = "Draft a business proposal for Northwind Traders for our Microsoft 365 implementation services. Include: executive summary, understanding of their needs, proposed solution, timeline, investment, and why us. Make it professional and persuasive."
+expected = "Copilot generates a multi-page proposal with structured sections, professional language, and placeholders for specific details"
+talk_technical = "You can reference existing proposals with /filename to use them as templates. Copilot will adapt the structure while personalising the content."
+talk_business = "A proposal that used to take half a day now has a solid first draft in 60 seconds. Your team refines and personalises rather than starting from scratch."
+talk_executive = "Faster proposals mean faster deal cycles. You're not just saving time — you're accelerating revenue."
+fallback = "If the output is too generic, add specific context: 'Northwind has 500 employees, they're migrating from Google Workspace, and security is their top priority.'"
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "sales-proposal"
+order = 3
+app = "powerpoint"
+title = "Create Proposal Deck"
+action = "Open PowerPoint → Apply company template → Copilot icon"
+prompt = "Create a proposal presentation for Northwind Traders based on /Northwind Proposal.docx. Include an executive summary slide, solution overview, timeline, investment, and next steps."
+expected = "Copilot creates slides from the Word document content, organized into a professional presentation"
+talk_technical = "The /file reference tells Copilot to use that specific document as the source. It extracts and restructures the content for slides."
+talk_business = "Your proposal deck matches your document — consistent messaging across all customer touchpoints."
+talk_executive = "One source of truth, multiple formats. No more mismatches between the proposal document and the presentation."
+fallback = "If file reference doesn't work, copy key sections from Word and ask: 'Create slides from this content: [paste text]'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "sales-proposal"
+order = 4
+app = "outlook"
+title = "Send Proposal with Cover Email"
+action = "Open Outlook → New email → Copilot icon"
+prompt = "Draft an email to Jamie at Northwind Traders. Attach our proposal and presentation. The tone should be confident but not pushy. Highlight 3 key differentiators and suggest a review call next week."
+expected = "Copilot drafts a professional cover email that references the proposal, highlights key points, and proposes next steps"
+talk_technical = "Copilot can adapt its writing style based on your previous emails to this person — it learns your voice."
+talk_business = "From context gathering to sent proposal — the entire workflow took less than 30 minutes."
+talk_executive = "Your team just closed the loop on a proposal in one sitting. No handoffs, no delays, no lost context."
+fallback = "Use Copilot coaching to adjust: 'Make it warmer' or 'Shorten to 3 paragraphs'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── HR POLICY Q&A ────────────────────────────────────────────────────────
+
+[[steps]]
+scenario = "hr-policy"
+order = 1
+app = "copilot-chat"
+title = "Answer a Policy Question"
+action = "Open Copilot Chat"
+prompt = "What is our company's parental leave policy? Include eligibility, duration, and how to apply"
+expected = "Copilot searches SharePoint and internal documents to surface the relevant policy details with citations"
+talk_technical = "Copilot searches SharePoint, OneDrive, and other M365 content. It shows citations so you can verify the source document."
+talk_business = "Your HR team gets the same questions hundreds of times. Copilot gives employees instant, accurate answers — freeing HR for strategic work."
+talk_executive = "Self-service HR at scale. Every employee gets the same accurate answer, instantly. No more inconsistent advice."
+fallback = "If Copilot can't find the policy, it means the document isn't in SharePoint or the user doesn't have access. This is actually a great data governance conversation."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "hr-policy"
+order = 2
+app = "copilot-chat"
+title = "Compare Policies"
+action = "Continue in Copilot Chat"
+prompt = "Compare our parental leave policy with our flexible working policy. What are the key differences in eligibility and application process?"
+expected = "Copilot creates a comparison of the two policies, highlighting key differences"
+talk_technical = "Copilot maintains conversation context — it remembers the previous question and builds on it."
+talk_business = "Employees can explore policies naturally, like talking to an HR colleague. Multi-turn conversations make complex topics accessible."
+talk_executive = "Think about the reduction in HR tickets. If 50% of policy questions are answered instantly by Copilot, what does your HR team do with that time?"
+fallback = "If comparison is incomplete, try: 'Show me a table comparing eligibility, duration, and application process for both policies'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "hr-policy"
+order = 3
+app = "word"
+title = "Draft Policy Summary"
+action = "Open Word → New document → Copilot"
+prompt = "Create a one-page employee-friendly summary of our parental leave policy. Use simple language, include key dates and steps, and add a FAQ section"
+expected = "Copilot generates a clear, well-structured policy summary with headers, bullet points, and FAQ"
+talk_technical = "Word Copilot can reference SharePoint documents. Try: 'Based on /Parental Leave Policy.docx, create a simplified summary'."
+talk_business = "HR can create employee communications in minutes. No more spending hours translating legal policy language into something people actually read."
+talk_executive = "Better communication = fewer misunderstandings = fewer escalations. This pays for itself."
+fallback = "If output is too formal, add: 'Use a friendly, conversational tone that a new employee would easily understand'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "hr-policy"
+order = 4
+app = "outlook"
+title = "Share with the Team"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft an email to all-staff announcing updated parental leave benefits. Tone should be warm and celebratory. Highlight the key improvements and link to the full policy document."
+expected = "Copilot drafts a professional all-hands email with the right tone for a positive policy update"
+talk_technical = "Copilot adapts tone based on your prompt — 'warm and celebratory' vs 'formal and factual' gives very different outputs."
+talk_business = "From policy question to team announcement in under 10 minutes. That's HR agility."
+talk_executive = "Employee experience matters. Fast, well-communicated policy updates build trust and engagement."
+fallback = "Adjust tone with coaching: 'Make it more enthusiastic' or 'Add a personal touch from the HR director'."
+wow = false
+risk = "low"
+min_duration = 30
+
+# ── IT INCIDENT RESPONSE ─────────────────────────────────────────────────
+
+[[steps]]
+scenario = "it-incident"
+order = 1
+app = "teams"
+title = "Summarise Incident Channel"
+action = "Open the incident response Teams channel → Click the Copilot icon in the channel"
+prompt = "Summarise the last 24 hours of this channel. What happened, who's involved, and what's the current status?"
+expected = "Copilot provides a chronological summary of the incident discussion with key updates, decisions, and current status"
+talk_technical = "Channel Copilot reads all messages the user has access to and creates structured summaries. Great for handoffs between shifts."
+talk_business = "When an incident hits, your team is in firefighting mode. Copilot captures the chaos so nobody has to manually write status reports."
+talk_executive = "Faster incident resolution through better communication. No more 'what's the latest status?' interruptions."
+fallback = "If the channel is quiet, switch to a chat with the incident team: 'Summarise our discussion about the network outage today'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "it-incident"
+order = 2
+app = "copilot-chat"
+title = "Gather Incident Context"
+action = "Open Copilot Chat"
+prompt = "What do I know about the Exchange Online service issue reported today? Search my emails, Teams messages, and any shared documents about this incident"
+expected = "Copilot aggregates information from multiple sources about the incident"
+talk_technical = "Copilot Chat acts as your personal search engine across M365 — it correlates data from email, Teams, SharePoint, and calendar."
+talk_business = "During an incident, information is scattered across channels, emails, and documents. Copilot brings it all together in one view."
+talk_executive = "Situational awareness in seconds, not minutes. Your incident commanders have the full picture immediately."
+fallback = "Be more specific: 'Find all emails from the last 6 hours mentioning Exchange, outage, or service disruption'."
+wow = false
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "it-incident"
+order = 3
+app = "word"
+title = "Draft Incident Report"
+action = "Open Word → Copilot"
+prompt = "Create a post-incident report for the Exchange Online outage. Include: incident summary, timeline of events, root cause analysis, impact assessment, remediation steps taken, and prevention recommendations"
+expected = "Copilot generates a structured incident report template with professional formatting"
+talk_technical = "For a more detailed report, reference the Teams channel: 'Based on discussions in the #exchange-outage channel, create a post-incident report'."
+talk_business = "Post-incident reports are critical but nobody likes writing them. Copilot creates a comprehensive first draft so your team can focus on the analysis."
+talk_executive = "Consistent, thorough incident documentation. Auditors and stakeholders get professional reports every time, not hastily written summaries."
+fallback = "If output is too generic, add specific details: 'The outage started at 9:15am, affected 500 users, and was caused by a certificate expiration'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "it-incident"
+order = 4
+app = "outlook"
+title = "Draft Stakeholder Update"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft a stakeholder communication about the Exchange Online incident. Audience is non-technical leadership. Include: what happened (simple terms), current status, impact, and next steps. Tone should be reassuring and transparent."
+expected = "Copilot drafts a professional, non-technical status update suitable for executives"
+talk_technical = "Notice how specifying 'non-technical leadership' changes the output — Copilot adjusts language complexity based on audience."
+talk_business = "During incidents, communication is as important as resolution. Copilot ensures your stakeholders are informed with the right level of detail."
+talk_executive = "Transparent, timely communication during incidents builds trust. Copilot ensures no stakeholder is left in the dark."
+fallback = "Adjust with coaching: 'Make it less technical' or 'Add an estimated resolution time of 4pm today'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "it-incident"
+order = 5
+app = "powerpoint"
+title = "Create Post-Incident Review Deck"
+action = "Open PowerPoint → Apply company template → Copilot"
+prompt = "Create a post-incident review presentation based on /Exchange Incident Report.docx. Include: incident timeline, root cause, impact analysis, lessons learned, and prevention plan"
+expected = "Copilot generates a structured review deck from the incident report document"
+talk_technical = "Cross-app referencing is one of Copilot's most powerful features — information flows seamlessly between documents and presentations."
+talk_business = "From incident to review-ready deck — the entire documentation workflow is accelerated."
+talk_executive = "Continuous improvement through consistent post-incident reviews. No more skipping the review because 'we didn't have time to prepare'."
+fallback = "If file reference fails, paste the key points directly: 'Create 5 slides covering: [paste incident summary]'."
+wow = false
+risk = "medium"
+min_duration = 30
+
+# ── BUDGET ANALYSIS ──────────────────────────────────────────────────────
+
+[[steps]]
+scenario = "finance-budget"
+order = 1
+app = "excel"
+title = "Analyse Budget Data"
+action = "Open the budget Excel workbook → Click a cell in the data table → Copilot from ribbon"
+prompt = "Analyse this budget data. Which departments are over budget? Show me the top 3 areas of overspend with percentage variance"
+expected = "Copilot analyses the data and highlights departments exceeding budget with specific variance percentages"
+talk_technical = "Excel Copilot generates real formulas and PivotTables you can inspect, modify, and audit. Nothing is a black box."
+talk_business = "Your finance team spends hours building variance reports manually. Copilot finds the answers in seconds using natural language."
+talk_executive = "Real-time budget insights for every finance professional. No more waiting for the monthly report to know where you stand."
+fallback = "Try a simpler question first: 'What is the total spend per department?' Then follow up with variance analysis."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "finance-budget"
+order = 2
+app = "excel"
+title = "Create Trend Visualisation"
+action = "Continue in Excel with Copilot"
+prompt = "Create a chart showing monthly spending trends for the top 5 departments over the last 6 months. Highlight any months where spending exceeded budget"
+expected = "Copilot creates a line or bar chart with trend data and budget threshold markers"
+talk_technical = "Copilot can create various chart types — line, bar, scatter, pie. Specify the chart type if the default isn't what you need."
+talk_business = "Visual trends tell a story that numbers alone can't. Your finance team creates presentation-ready charts in seconds."
+talk_executive = "Data-driven decision making starts with accessible data. When anyone can create charts from data, insights aren't bottlenecked."
+fallback = "If chart doesn't appear, try: 'Add a column chart comparing actual vs budget for each department'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "finance-budget"
+order = 3
+app = "copilot-chat"
+title = "Identify Budget Trends"
+action = "Open Copilot Chat"
+prompt = "Based on our Q3 financial data, what trends should I highlight in the upcoming budget review? Look across my recent emails and documents for any budget concerns raised by department heads"
+expected = "Copilot searches across M365 data to surface budget-related concerns and trends from communications"
+talk_technical = "Copilot Chat searches across emails, documents, and Teams messages — it finds context that pure data analysis misses."
+talk_business = "Quantitative data from Excel + qualitative context from emails and meetings = a complete budget picture."
+talk_executive = "This is augmented intelligence — Copilot combines numbers with narrative to give you the full story."
+fallback = "Try more specific: 'What did the marketing department say about their Q3 budget in recent emails?'"
+wow = true
+risk = "high"
+min_duration = 15
+
+[[steps]]
+scenario = "finance-budget"
+order = 4
+app = "word"
+title = "Draft Budget Narrative"
+action = "Open Word → Copilot"
+prompt = "Write an executive summary for the Q3 budget review. Include: overall budget performance, key variances, areas of concern, and recommendations. Keep it to one page, professional tone."
+expected = "Copilot generates a concise executive summary with structured sections and professional language"
+talk_technical = "Reference the Excel file for data: 'Based on /Q3 Budget.xlsx, write an executive summary of budget performance'."
+talk_business = "The narrative that accompanies the numbers is often harder to write than the analysis itself. Copilot drafts it in seconds."
+talk_executive = "Board-ready narratives that align with the data. Consistent quality, faster turnaround."
+fallback = "Add specific numbers for better output: 'Total budget: $12M. Actual spend: $13.2M. Key overspend: Marketing ($500K over), IT ($300K over)'."
+wow = false
+risk = "low"
+min_duration = 30
+
+# ── CAMPAIGN BRIEF ───────────────────────────────────────────────────────
+
+[[steps]]
+scenario = "marketing-campaign"
+order = 1
+app = "copilot-chat"
+title = "Research Campaign Context"
+action = "Open Copilot Chat"
+prompt = "Summarise what our marketing team has discussed about the spring product launch in recent emails and Teams messages. What's the proposed timeline and target audience?"
+expected = "Copilot aggregates marketing discussions and surfaces key campaign parameters from internal communications"
+talk_technical = "Copilot Chat searches across the user's accessible M365 data. The more internal discussion exists, the richer the context."
+talk_business = "Campaign planning often starts with scattered conversations. Copilot consolidates all the thinking into one starting point."
+talk_executive = "Faster time-to-market for campaigns. Your marketing team goes from idea to brief in hours, not weeks."
+fallback = "If no results, try: 'What recent documents have been shared about product launches or marketing campaigns?'"
+wow = false
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "marketing-campaign"
+order = 2
+app = "word"
+title = "Draft Campaign Brief"
+action = "Open Word → Copilot"
+prompt = "Create a marketing campaign brief for our spring cloud migration toolkit launch. Include: campaign objective, target audience, key messages, channels, timeline, success metrics, and budget considerations"
+expected = "Copilot generates a comprehensive campaign brief with all standard sections filled with relevant content"
+talk_technical = "Word Copilot uses your prompt as the creative direction and generates structured content. You can then iterate section by section."
+talk_business = "A campaign brief that used to take a full day now has a solid first draft in 60 seconds. Your team focuses on strategy, not structure."
+talk_executive = "Marketing velocity is a competitive advantage. Faster briefs = faster campaigns = faster market response."
+fallback = "For better results, be specific about audience: 'Target: IT decision makers at enterprises with 1000+ employees considering cloud migration'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "marketing-campaign"
+order = 3
+app = "powerpoint"
+title = "Create Campaign Pitch Deck"
+action = "Open PowerPoint → Company template → Copilot"
+prompt = "Create a 6-slide campaign pitch deck covering: campaign overview, target audience persona, channel strategy, creative direction, timeline and milestones, and budget breakdown"
+expected = "Copilot generates a visually structured pitch deck with relevant content for each section"
+talk_technical = "For best results, apply your company template first. Copilot respects the active theme, layouts, and colour scheme."
+talk_business = "Your marketing team presents campaign proposals to leadership regularly. Copilot ensures every deck is professional and complete."
+talk_executive = "Consistent, high-quality campaign presentations. No more rushed, incomplete decks because the team ran out of time."
+fallback = "Reference the Word brief: 'Create a presentation based on /Spring Campaign Brief.docx'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "marketing-campaign"
+order = 4
+app = "outlook"
+title = "Share Brief for Review"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft an email to the marketing leadership team sharing the spring campaign brief for review. Ask for feedback by Friday. Highlight the 3 most innovative aspects of the campaign."
+expected = "Copilot drafts a professional internal email with key highlights and a clear call-to-action for feedback"
+talk_technical = "Copilot can attach files and reference documents in the email draft — just mention them in your prompt."
+talk_business = "The entire creative-to-communication flow happened in one session. No context switching, no handoffs."
+talk_executive = "Marketing agility at its best. From idea to stakeholder review in under 30 minutes."
+fallback = "Adjust with coaching: 'Make it more concise' or 'Add urgency about the launch timeline'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── EXECUTIVE EMAIL TRIAGE ───────────────────────────────────────────────
+
+[[steps]]
+scenario = "exec-email"
+order = 1
+app = "outlook"
+title = "Summarise Today's Inbox"
+action = "Open Outlook → Click the Copilot icon in the top ribbon"
+prompt = "Summarise my unread emails from today. Group them by urgency: what needs my immediate attention, what can wait, and what's informational"
+expected = "Copilot categorises unread emails into priority groups with brief summaries of each"
+talk_technical = "Outlook Copilot analyses email content, sender importance, and context to determine urgency. It uses your interaction patterns to learn priorities."
+talk_business = "The average executive gets 120+ emails a day. Copilot cuts through the noise in 30 seconds."
+talk_executive = "This is your morning routine, reimagined. Instead of scrolling through emails for 45 minutes, you see the priorities immediately."
+fallback = "Try a narrower scope: 'Summarise my unread emails from the last 4 hours' or 'Show me emails from direct reports only'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "exec-email"
+order = 2
+app = "outlook"
+title = "Draft Priority Responses"
+action = "Open the most urgent email → Click Reply → Copilot icon"
+prompt = "Draft a reply acknowledging their request, confirming I'll review the proposal by Wednesday, and asking them to send the updated financials"
+expected = "Copilot drafts a concise, professional reply that references the original email context"
+talk_technical = "Copilot reads the full email thread to understand context. Your reply will be contextually appropriate."
+talk_business = "Quick, professional responses maintain relationships. Copilot ensures your replies are thoughtful even when you're in a rush."
+talk_executive = "Your response time is your brand. Copilot helps you respond quickly without sacrificing quality."
+fallback = "Use Copilot coaching: 'Adjust tone to be more direct' or 'Shorten this to 2 sentences'."
+wow = false
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "exec-email"
+order = 3
+app = "copilot-chat"
+title = "Check What You Missed"
+action = "Open Copilot Chat"
+prompt = "What important messages or updates did I miss in the leadership Teams channel this week? Include any decisions that were made or action items assigned to me"
+expected = "Copilot surfaces key messages, decisions, and assigned tasks from Teams channels"
+talk_technical = "Copilot searches Teams channels and chats the user has access to. It identifies decisions and action items using NLP."
+talk_business = "Busy executives can't read every Teams message. Copilot ensures nothing important falls through the cracks."
+talk_executive = "Stay informed without spending hours in Teams. Get the signal, skip the noise."
+fallback = "Narrow the scope: 'What did the CFO post in the leadership channel today?' or 'Were there any budget-related decisions this week?'"
+wow = true
+risk = "medium"
+min_duration = 15
+
+# ── MEETING SUMMARY & ACTIONS ───────────────────────────────────────────
+
+[[steps]]
+scenario = "exec-meeting"
+order = 1
+app = "teams"
+title = "Get Meeting Recap"
+action = "Open Teams → Recent meetings → Select the meeting → Click 'Recap' tab → Copilot icon"
+prompt = "Give me a comprehensive summary of this meeting including: key topics discussed, decisions made, action items with owners, and any open questions"
+expected = "Copilot generates a structured meeting summary from the transcript with clear sections"
+talk_technical = "Meeting recap requires transcription to be enabled BEFORE the meeting. The AI processes the full transcript, not just highlights."
+talk_business = "No more frantically scribbling notes during meetings. Focus on the conversation — Copilot captures everything."
+talk_executive = "Meeting accountability at scale. Every meeting, every decision, every action item — documented automatically."
+fallback = "If recap is minimal, the meeting may not have had transcription enabled. Show a pre-prepared meeting recap instead."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "exec-meeting"
+order = 2
+app = "copilot-chat"
+title = "Find My Action Items"
+action = "Open Copilot Chat"
+prompt = "What action items were assigned to me across all my meetings this week? List them with the meeting they came from and any deadlines mentioned"
+expected = "Copilot aggregates action items from multiple meeting transcripts and surfaces them in one list"
+talk_technical = "Copilot searches across all meeting transcripts accessible to the user and identifies action items using natural language understanding."
+talk_business = "Action items get lost when they're scattered across different meeting notes. Copilot consolidates them into a single, actionable list."
+talk_executive = "Personal accountability made effortless. You always know what you committed to and when."
+fallback = "Try narrowing: 'What action items do I have from yesterday's project standup meeting?'"
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "exec-meeting"
+order = 3
+app = "loop"
+title = "Create Action Items Tracker"
+action = "Open Microsoft Loop → Create a new page"
+prompt = "Create a task tracker table for the action items from today's leadership meeting. Include columns for: task, owner, deadline, status, and notes"
+expected = "Loop creates an interactive table that team members can edit collaboratively in real-time"
+talk_technical = "Loop components are live and embeddable — you can paste this table into a Teams chat or Outlook email and it stays synced."
+talk_business = "Collaborative task tracking that lives where your team works. No separate project management tool needed for simple follow-ups."
+talk_executive = "Meetings drive action. Loop ensures those actions are visible, tracked, and accountable."
+fallback = "If Loop isn't available, use Word or a Teams message with Copilot to create a similar action items list."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "exec-meeting"
+order = 4
+app = "outlook"
+title = "Send Meeting Follow-up"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft a meeting follow-up email to all attendees of today's leadership meeting. Include a summary of key decisions, list all action items with owners and deadlines, and note the next meeting date"
+expected = "Copilot generates a professional follow-up email with structured action items and clear next steps"
+talk_technical = "Copilot can reference the Teams meeting for context. It maintains consistency between the meeting recap and the email."
+talk_business = "Professional follow-ups after every meeting — no excuses. Your team knows exactly what was decided and who's doing what."
+talk_executive = "This is how high-performing teams operate. Clear communication, clear accountability, clear next steps."
+fallback = "If output is too generic, reference the specific meeting: 'Use the summary from my 2pm leadership meeting as the basis'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── NEW HIRE ONBOARDING ──────────────────────────────────────────────────
+
+[[steps]]
+scenario = "hr-onboarding"
+order = 1
+app = "copilot-chat"
+title = "Create Onboarding Plan"
+action = "Open Copilot Chat"
+prompt = "Create a 30-60-90 day onboarding plan for a new Marketing Coordinator joining our team. Include key milestones, training topics, people to meet, and success criteria for each phase"
+expected = "Copilot generates a structured 3-phase onboarding plan with specific activities and goals"
+talk_technical = "Copilot can reference existing onboarding documents if they're in SharePoint: 'Based on our onboarding template in /HR Policies, create a plan for...'."
+talk_business = "New hire onboarding is critical for retention but time-consuming to personalise. Copilot creates tailored plans instantly."
+talk_executive = "Better onboarding = faster time-to-productivity = higher retention. The ROI on good onboarding is massive."
+fallback = "Add more role-specific context: 'This person will manage social media, email campaigns, and marketing analytics'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "hr-onboarding"
+order = 2
+app = "word"
+title = "Build Welcome Pack"
+action = "Open Word → Copilot"
+prompt = "Create a welcome document for our new Marketing Coordinator. Include: welcome message from the team, company overview, team structure, key contacts, first week schedule, IT setup instructions, and FAQ for new starters"
+expected = "Copilot generates a comprehensive, well-structured welcome document"
+talk_technical = "Reference existing docs: 'Include information from /Employee Handbook.docx and /Marketing Team Guide.docx'."
+talk_business = "A professional welcome pack sets the tone for the entire employee experience. Copilot ensures every new hire gets one."
+talk_executive = "Employer brand starts on day one. Consistent, high-quality onboarding across every hire."
+fallback = "Break into parts if output is too thin: generate the welcome message separately, then the schedule, then FAQ."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "hr-onboarding"
+order = 3
+app = "outlook"
+title = "Draft Welcome Email"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft a warm welcome email to Alex, who joins as our new Marketing Coordinator next Monday. Introduce yourself as their manager, share excitement about them joining, and outline what their first week will look like"
+expected = "Copilot generates a personal, warm welcome email with first-week details"
+talk_technical = "Notice how specifying 'warm' changes the tone vs 'professional' or 'formal'. Tone control is a key Copilot feature."
+talk_business = "The welcome email sets expectations and reduces first-day anxiety. A great first impression takes 30 seconds with Copilot."
+talk_executive = "Employee experience is a competitive differentiator. Small touches like personal welcome emails compound into culture."
+fallback = "Adjust with coaching: 'Make it more personal and less corporate' or 'Add specific details about the team'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── KB ARTICLE CREATION ──────────────────────────────────────────────────
+
+[[steps]]
+scenario = "it-knowledge"
+order = 1
+app = "copilot-chat"
+title = "Gather Existing Knowledge"
+action = "Open Copilot Chat"
+prompt = "Search my Teams messages and emails for any discussions about setting up VPN access. Compile the key steps, common issues, and solutions that have been shared"
+expected = "Copilot surfaces relevant VPN-related discussions and distils them into actionable knowledge"
+talk_technical = "This is turning tribal knowledge into documented knowledge. Copilot mines your communication history for solutions that already exist."
+talk_business = "Your help desk answers the same VPN questions weekly. Copilot turns those answers into a searchable KB article."
+talk_executive = "Knowledge management at scale. Capture institutional knowledge before it walks out the door."
+fallback = "Try broader: 'Find all messages about VPN, remote access, or network connectivity issues from the IT help desk channel'."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "it-knowledge"
+order = 2
+app = "word"
+title = "Draft KB Article"
+action = "Open Word → Copilot"
+prompt = "Create a knowledge base article titled 'How to Set Up VPN Access'. Structure it as: overview, prerequisites, step-by-step instructions, troubleshooting common issues, and contact information for further help. Use clear, non-technical language."
+expected = "Copilot generates a well-structured KB article with numbered steps and troubleshooting tips"
+talk_technical = "Word Copilot excels at structured document creation. You can refine sections individually using Copilot's rewrite feature."
+talk_business = "Every IT support interaction that results in a KB article reduces future ticket volume. Copilot makes article creation effortless."
+talk_executive = "Self-service support reduces costs and improves employee satisfaction. Every KB article is an investment in efficiency."
+fallback = "If too generic, add specifics: 'Our VPN client is GlobalProtect. Include steps for Windows 11 and macOS'."
+wow = false
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "it-knowledge"
+order = 3
+app = "teams"
+title = "Share for Peer Review"
+action = "Open Teams → Post in IT team channel"
+prompt = "Write a Teams message to the IT team asking them to review the new VPN KB article. Include a brief summary of what's covered and ask for feedback on accuracy and completeness"
+expected = "Copilot drafts a channel message suitable for soliciting peer feedback"
+talk_technical = "Teams compose with Copilot ensures your internal messages are clear and professional."
+talk_business = "Peer review ensures accuracy. Copilot streamlines the feedback loop so articles get published faster."
+talk_executive = "Quality assurance built into the workflow. Knowledge is reviewed before it reaches employees."
+fallback = "If Teams compose Copilot isn't available, draft in Copilot Chat and paste into Teams."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── QUARTERLY REVIEW PREP ────────────────────────────────────────────────
+
+[[steps]]
+scenario = "finance-quarterly"
+order = 1
+app = "excel"
+title = "Analyse Quarterly Data"
+action = "Open the Q3 performance Excel workbook → Copilot"
+prompt = "Summarise Q3 performance vs plan. Show revenue, expenses, and margin by business unit. Highlight any areas that are more than 10% off target"
+expected = "Copilot creates a summary analysis highlighting variances against the plan"
+talk_technical = "Copilot generates actual Excel formulas for the calculations. You can review and modify every formula it creates."
+talk_business = "Quarterly analysis that used to take a day now takes minutes. Your finance team focuses on insights, not data wrangling."
+talk_executive = "Faster quarterly cycles mean faster strategic decisions. You see performance data days earlier than before."
+fallback = "Start simpler: 'Show me total revenue and expenses by business unit for Q3' then ask for variance analysis separately."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "finance-quarterly"
+order = 2
+app = "copilot-chat"
+title = "Gather Qualitative Context"
+action = "Open Copilot Chat"
+prompt = "What have business unit leaders been saying about Q3 performance in their recent emails and meetings? Summarise any concerns, wins, or strategic shifts mentioned"
+expected = "Copilot searches across M365 data to surface qualitative insights from leadership communications"
+talk_technical = "This combines Graph search with NLP — finding not just mentions of 'Q3' but understanding the context and sentiment."
+talk_business = "Numbers tell you what happened. Context tells you why. Copilot gives you both in one workflow."
+talk_executive = "The story behind the numbers — delivered automatically from your own organisational conversations."
+fallback = "Narrow the search: 'What did the Sales VP say about Q3 pipeline performance in recent Teams messages or emails?'"
+wow = true
+risk = "high"
+min_duration = 15
+
+[[steps]]
+scenario = "finance-quarterly"
+order = 3
+app = "powerpoint"
+title = "Build QBR Deck"
+action = "Open PowerPoint → Company template → Copilot"
+prompt = "Create a quarterly business review presentation with these sections: Q3 highlights, financial performance, business unit updates, challenges and risks, Q4 outlook, and strategic priorities"
+expected = "Copilot generates a comprehensive QBR deck structure with relevant content suggestions"
+talk_technical = "For the best results, reference your data: 'Create a QBR deck based on /Q3 Performance.xlsx and /Q3 Summary.docx'."
+talk_business = "QBR deck prep goes from a 2-day exercise to a 1-hour exercise. Your team spends time refining the story, not building slides."
+talk_executive = "Consistent, comprehensive QBR decks every quarter. No more rushed decks or missing sections."
+fallback = "If too generic, build section by section: 'Create a financial performance slide showing revenue trend for the last 4 quarters'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "finance-quarterly"
+order = 4
+app = "word"
+title = "Draft Board Narrative"
+action = "Open Word → Copilot"
+prompt = "Write a 2-page board-level narrative summary of Q3 performance. Include: executive summary, financial highlights, strategic progress, key risks, and outlook. Tone should be authoritative and balanced."
+expected = "Copilot generates a board-ready narrative with executive-appropriate language"
+talk_technical = "Specifying 'board-level' and 'authoritative' as tone markers shapes the output significantly."
+talk_business = "Board narratives require a specific voice and structure. Copilot provides the foundation; your CFO adds the insight."
+talk_executive = "Board-ready documentation in minutes. Consistent quality, every quarter."
+fallback = "Reference source data: 'Based on /Q3 Performance.xlsx, write a board summary focusing on revenue growth and margin trends'."
+wow = false
+risk = "low"
+min_duration = 30
+
+[[steps]]
+scenario = "finance-quarterly"
+order = 5
+app = "outlook"
+title = "Distribute QBR Materials"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft an email to the board members sharing Q3 QBR materials. Include a brief preview of key highlights, attach the deck and narrative, and note the review meeting date"
+expected = "Copilot drafts a professional board communication email"
+talk_technical = "Copilot adapts language complexity based on the audience you specify — board members get executive-level communication."
+talk_business = "Professional, consistent board communications. No more last-minute scrambling to write the cover email."
+talk_executive = "End-to-end quarterly workflow — from data analysis to board distribution — in one session."
+fallback = "Keep it short: 'Draft a 3-sentence email sharing the Q3 materials and noting the board meeting is next Tuesday at 10am'."
+wow = false
+risk = "low"
+min_duration = 30
+
+# ── V3: LEGAL — CONTRACT REVIEW ──────────────────────────────────────
+
+[[steps]]
+scenario = "legal-contract"
+order = 1
+app = "copilot-chat"
+title = "Summarise Contract Key Terms"
+action = "Open Copilot Chat"
+prompt = "Summarise the key terms, obligations, and deadlines from the Contoso service agreement. Highlight any unusual clauses or terms that differ from standard contracts"
+expected = "Copilot analyses the contract document and surfaces key terms, payment schedules, SLAs, termination clauses, and liability limits"
+talk_technical = "Copilot uses Microsoft Graph to access the contract in SharePoint. It performs extractive summarisation — pulling actual clauses, not generating new text."
+talk_business = "Your legal team spends hours reading contracts page by page. Copilot gives them a structured overview in 30 seconds so they can focus on the clauses that matter."
+talk_executive = "Contract review bottlenecks slow down deals. If your legal team reviews contracts 5x faster, that's revenue acceleration."
+fallback = "If results are thin, reference the file directly: 'Summarise /Contoso Service Agreement.docx, focusing on payment terms and liability'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "legal-contract"
+order = 2
+app = "word"
+title = "Identify Risk Clauses"
+action = "Open the contract in Word → Select text → Click Copilot"
+prompt = "Review this contract and identify any clauses that pose potential risks. Flag auto-renewal terms, unlimited liability, restrictive IP assignments, and non-standard termination conditions"
+expected = "Copilot highlights specific clauses with risk annotations and explanations"
+talk_technical = "Word Copilot can analyse inline — it reads the full document context to identify patterns that deviate from standard terms."
+talk_business = "Junior lawyers miss risky clauses. Copilot doesn't replace legal judgment but ensures nothing gets overlooked."
+talk_executive = "Risk mitigation at scale. Every contract gets a thorough first review, regardless of team workload."
+fallback = "Try section by section: 'Review paragraphs 5.1 to 5.8 and flag any terms that favour the supplier over us'."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "legal-contract"
+order = 3
+app = "word"
+title = "Draft Amendment Language"
+action = "Continue in Word → Copilot"
+prompt = "Draft amendment language for clause 7.3 (liability limitation). Change the liability cap from unlimited to 2x the annual contract value, and add a mutual limitation"
+expected = "Copilot generates professional legal amendment text suitable for redlining"
+talk_technical = "Copilot drafts based on common legal patterns. Always review with qualified legal counsel before use."
+talk_business = "Drafting amendment language is time-consuming. Copilot gives you a solid starting point that your lawyer refines."
+talk_executive = "Faster negotiation cycles. Your legal team focuses on strategy, not wordsmithing."
+fallback = "Be more specific: 'Rewrite this clause to limit each party's liability to total fees paid in the prior 12 months'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "legal-contract"
+order = 4
+app = "outlook"
+title = "Send Review Summary"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft an email to the legal team summarising my review of the Contoso contract. Include the 3 key risk areas, my recommended amendments, and ask for feedback by Friday"
+expected = "Copilot generates a professional internal email with structured risk summary"
+talk_technical = "Copilot can reference your recent Word document edits to add specific context to the email."
+talk_business = "From contract review to team communication in one sitting. No context lost between review and handoff."
+talk_executive = "Transparent, traceable legal process. Every review generates a clear communication trail."
+fallback = "Add specifics: 'Highlight that the liability clause and auto-renewal terms need immediate attention'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── V3: OPERATIONS — SUPPLY CHAIN UPDATE ─────────────────────────────
+
+[[steps]]
+scenario = "ops-supply"
+order = 1
+app = "excel"
+title = "Analyse Supply Chain Data"
+action = "Open the supply chain Excel workbook → Copilot"
+prompt = "Analyse this supply chain data. Which suppliers have the longest lead times? Show me the top 5 bottlenecks by average delay in days"
+expected = "Copilot analyses supplier performance data and highlights delayed suppliers with specific metrics"
+talk_technical = "Excel Copilot generates real formulas — you can inspect the underlying AVERAGE, SORT, and FILTER functions."
+talk_business = "Your operations team manually tracks supplier performance. Copilot turns that data into actionable insights in seconds."
+talk_executive = "Supply chain visibility at your fingertips. No more waiting for the weekly report to know where bottlenecks are."
+fallback = "Try simpler: 'What is the average lead time per supplier?' then follow up with 'Which are above 14 days?'"
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "ops-supply"
+order = 2
+app = "copilot-chat"
+title = "Gather Context from Discussions"
+action = "Open Copilot Chat"
+prompt = "What have our procurement and logistics teams discussed about supply chain delays this month? Search emails and Teams messages for issues or risks"
+expected = "Copilot aggregates supply chain discussions from across M365 communications"
+talk_technical = "Copilot Chat searches across the user's accessible M365 data — correlating mentions and context across apps."
+talk_business = "Quantitative data from Excel plus qualitative context from discussions equals a complete supply chain picture."
+talk_executive = "Information lives in conversations. Copilot captures both the data and the context."
+fallback = "Narrow scope: 'What did the logistics team say about shipping delays from APAC suppliers recently?'"
+wow = true
+risk = "high"
+min_duration = 15
+
+[[steps]]
+scenario = "ops-supply"
+order = 3
+app = "powerpoint"
+title = "Create Supply Chain Report"
+action = "Open PowerPoint → Company template → Copilot"
+prompt = "Create a supply chain performance report covering: executive summary, supplier scorecard, key bottlenecks, risk assessment, and recommended actions"
+expected = "Copilot generates a structured operations report deck"
+talk_technical = "Reference data files: 'Create a presentation based on /Supply Chain Analysis.xlsx' for data-driven slides."
+talk_business = "Board-ready supply chain reports in minutes. Your ops team presents with confidence every week."
+talk_executive = "Operational transparency without the overhead."
+fallback = "Build section by section: 'Create a slide showing top 5 suppliers ranked by on-time delivery percentage'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "ops-supply"
+order = 4
+app = "outlook"
+title = "Distribute to Stakeholders"
+action = "Open Outlook → New email → Copilot"
+prompt = "Draft an email to the operations leadership sharing the weekly supply chain update. Highlight the 2 most critical bottlenecks and proposed mitigations"
+expected = "Copilot generates a professional stakeholder update email"
+talk_technical = "Copilot adapts communication complexity based on your audience description."
+talk_business = "Consistent, timely stakeholder communication every week."
+talk_executive = "Operational rhythm without the overhead. Your team runs like clockwork."
+fallback = "Keep brief: 'Summarise supply chain status in 3 bullet points for the COO'."
+wow = false
+risk = "low"
+min_duration = 30
+
+# ── V3: CUSTOMER SERVICE — TICKET RESOLUTION ────────────────────────
+
+[[steps]]
+scenario = "cs-tickets"
+order = 1
+app = "copilot-chat"
+title = "Summarise Customer History"
+action = "Open Copilot Chat"
+prompt = "Summarise recent support interactions with Northwind Traders. What tickets were raised, what's resolved, and what's still outstanding?"
+expected = "Copilot compiles a customer support history from emails, Teams, and shared documents"
+talk_technical = "Copilot searches across M365 Graph data. For external ticketing systems, Graph connectors bring that data in."
+talk_business = "Agents spend 10 minutes per ticket understanding history. Copilot gives full context in 30 seconds."
+talk_executive = "Faster resolution = higher CSAT. Context at the agent's fingertips."
+fallback = "Be specific: 'Find all emails from Northwind Traders in the last 30 days mentioning support or issues'."
+wow = true
+risk = "medium"
+min_duration = 5
+
+[[steps]]
+scenario = "cs-tickets"
+order = 2
+app = "copilot-chat"
+title = "Find KB Solution"
+action = "Continue in Copilot Chat"
+prompt = "Search our internal knowledge base for solutions to SSO configuration errors. What steps have we documented?"
+expected = "Copilot searches SharePoint KB articles and surfaces relevant resolution steps"
+talk_technical = "This is SharePoint search powered by Copilot's NLP. Your KB articles need to be in SharePoint."
+talk_business = "New agents don't know where to find answers. Copilot searches your entire KB with natural language."
+talk_executive = "Your best agent's knowledge available to every agent through Copilot."
+fallback = "Try broader: 'What KB articles do we have about SSO, single sign-on, or authentication issues?'"
+wow = false
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "cs-tickets"
+order = 3
+app = "word"
+title = "Draft Customer Response"
+action = "Open Word → Copilot"
+prompt = "Draft a professional support response to Northwind about their SSO issue. Include resolution steps from our KB, a fix timeline, and an empathetic apology. Tone: empathetic and solution-focused"
+expected = "Copilot generates a detailed, empathetic customer response with clear next steps"
+talk_technical = "Specifying tone is a key prompt technique. Compare 'empathetic' vs 'formal' for very different results."
+talk_business = "Consistent, professional responses at scale. Every customer gets the same quality regardless of which agent handles the ticket."
+talk_executive = "Brand consistency in support communication. Quality doesn't depend on individual writing skills."
+fallback = "Split it: first 'Draft the resolution steps', then 'Add an empathetic opening and professional closing'."
+wow = false
+risk = "low"
+min_duration = 15
+
+[[steps]]
+scenario = "cs-tickets"
+order = 4
+app = "teams"
+title = "Escalation Communication"
+action = "Open Teams → Post in support escalation channel"
+prompt = "Write a Teams message escalating the Northwind SSO issue to engineering. Include customer impact, steps tried, and what we need. Mark as urgent"
+expected = "Copilot drafts a clear, structured escalation message"
+talk_technical = "Teams compose Copilot ensures escalation messages are clear and complete."
+talk_business = "Clear escalations get resolved faster. No more unclear handoffs that bounce back."
+talk_executive = "Reduced mean time to resolution through better internal communication."
+fallback = "Draft in Copilot Chat first: 'Write an urgent escalation about an SSO issue affecting Northwind'."
+wow = false
+risk = "low"
+min_duration = 15
+
+# ── V3: EDUCATION — LESSON PLANNING ─────────────────────────────────
+
+[[steps]]
+scenario = "edu-lesson"
+order = 1
+app = "copilot-chat"
+title = "Research Topic"
+action = "Open Copilot Chat"
+prompt = "Help me prepare a Year 10 science lesson on the greenhouse effect. Summarise key concepts, common misconceptions, and engaging activity ideas"
+expected = "Copilot provides a structured topic overview with key concepts, misconceptions, and activities"
+talk_technical = "Copilot Chat can reference curriculum documents in SharePoint to align content with learning standards."
+talk_business = "Teachers spend hours researching and planning. Copilot gives them a comprehensive starting point in seconds."
+talk_executive = "If Copilot saves 90 minutes per lesson plan, that's hours back per week for actual teaching."
+fallback = "Add curriculum: 'Align to the NZ Science curriculum Level 5, Living World strand'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "edu-lesson"
+order = 2
+app = "word"
+title = "Create Lesson Plan"
+action = "Open Word → Copilot"
+prompt = "Create a 50-minute Year 10 lesson plan on the greenhouse effect. Include: objectives, starter (5 min), main teaching (20 min), group activity (15 min), plenary (10 min), differentiation, and resources needed"
+expected = "Copilot generates a structured lesson plan with timed sections and differentiation"
+talk_technical = "Detailed prompts with timings and structure give Copilot a framework to work within."
+talk_business = "A complete lesson plan in 60 seconds. Teachers refine and personalise rather than create from scratch."
+talk_executive = "Consistent lesson quality across your school. New teachers get the same structured starting point."
+fallback = "Break it: 'Create learning objectives' then 'Create a 50-minute lesson structure for those objectives'."
+wow = true
+risk = "low"
+min_duration = 5
+
+[[steps]]
+scenario = "edu-lesson"
+order = 3
+app = "powerpoint"
+title = "Build Teaching Slides"
+action = "Open PowerPoint → Copilot"
+prompt = "Create a teaching presentation on the greenhouse effect for Year 10. Include: what it is, key gases, human impact, evidence, and what we can do. Simple language, suggest images"
+expected = "Copilot generates student-appropriate slides with clear explanations"
+talk_technical = "Apply a school template first for branded slides. Copilot respects the active theme."
+talk_business = "Engaging presentations for every lesson. No more text-heavy slides."
+talk_executive = "Professional teaching resources at scale."
+fallback = "Reference the plan: 'Create slides based on /Greenhouse Effect Lesson Plan.docx'."
+wow = false
+risk = "medium"
+min_duration = 15
+
+[[steps]]
+scenario = "edu-lesson"
+order = 4
+app = "forms"
+title = "Create Assessment Quiz"
+action = "Open Microsoft Forms → Copilot"
+prompt = "Create a 10-question quiz on the greenhouse effect for Year 10. Mix multiple choice, true/false, and short answer. Different difficulty levels"
+expected = "Copilot generates a varied quiz with appropriate difficulty progression"
+talk_technical = "Forms Copilot creates auto-grading quizzes. Instant feedback for both teacher and student."
+talk_business = "Assessment creation is one of the most time-consuming teaching tasks. Copilot does it in seconds."
+talk_executive = "From lesson planning to assessment — the entire teaching workflow in one session."
+fallback = "Start simpler: 'Create 5 multiple choice questions about greenhouse gases'."
+wow = false
+risk = "medium"
+min_duration = 15
