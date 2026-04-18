@@ -14,6 +14,18 @@ name = "AI Hub"
 short = "AI Hub"
 
 [[sections]]
+url = "/free-tools/"
+emoji = "🧰"
+name = "Free Tools"
+short = "Tools"
+
+[[sections]]
+url = "/blog/"
+emoji = "📝"
+name = "Blog"
+short = "Blog"
+
+[[sections]]
 url = "/cloud-labs/"
 emoji = "☁️"
 name = "Cloud Labs"
@@ -42,18 +54,6 @@ url = "/music/"
 emoji = "🎵"
 name = "Study Music"
 short = "Music"
-
-[[sections]]
-url = "/free-tools/"
-emoji = "🧰"
-name = "Free Tools"
-short = "Tools"
-
-[[sections]]
-url = "/blog/"
-emoji = "📝"
-name = "Blog"
-short = "Blog"
 
 [[sections]]
 url = "/about/"
