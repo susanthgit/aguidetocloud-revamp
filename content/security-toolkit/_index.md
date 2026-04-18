@@ -25,4 +25,6 @@ faq:
     answer: "Quarterly is best practice. The tool tracks your previous score so you can measure improvement over time and demonstrate security progress to leadership."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is V1. Share your feedback at /feedback/ and help shape future versions."
+images:
+  - images/og/security-toolkit.jpg
 ---

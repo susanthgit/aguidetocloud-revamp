@@ -23,4 +23,6 @@ faq:
     answer: Yes! The 'Copy to Copilot Studio' option lets you transfer your agent for advanced features. Available at all licence tiers.
   - question: Is this tool still being improved?
     answer: Yes! This is V1. Visit our feedback page to suggest improvements or share your Agent Builder experiences.
+images:
+  - images/og/agent-builder-guide.jpg
 ---

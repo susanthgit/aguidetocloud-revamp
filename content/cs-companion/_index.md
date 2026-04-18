@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Copilot Studio Companion"
 description: "Your comprehensive interactive guide to Microsoft Copilot Studio — evaluate scenarios, explore capabilities, navigate governance, and design agent architectures."
 type: "cs-companion"
@@ -22,4 +22,6 @@ faq:
     answer: "Yes. Copilot Studio supports multi-agent orchestration where a Studio agent can call an AI Foundry agent as a connected agent. This hybrid pattern lets you keep the low-code authoring experience of Copilot Studio while leveraging AI Foundry's custom models for specific tasks. It's the best of both worlds for organisations that need some custom AI without going all-in on pro-code."
   - question: "What governance controls should I set up before letting people build agents?"
     answer: "Start with the basics: (1) Create separate Dev/Test/Production environments, (2) Apply DLP policies that block unnecessary connectors and channels, (3) Control who can create agents using Entra ID security groups, (4) Require admin approval before agents are published to the org app catalogue, (5) Enable audit logging, (6) Set up credit consumption monitoring. Use the Power Platform Centre of Excellence Starter Kit for cross-tenant visibility into all agents."
+images:
+  - images/og/cs-companion.jpg
 ---

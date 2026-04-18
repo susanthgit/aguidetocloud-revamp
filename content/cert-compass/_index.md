@@ -24,4 +24,6 @@ faq:
     answer: "We verify the data quarterly. Exam retirements, new certifications, and pricing changes are updated as they're announced. Check the 'Last verified' date on each certification card."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is V1. We're planning a 'Which Cert Next?' quiz, more detailed career path visualisations, and cost comparison features. Share your ideas on our feedback page."
+images:
+  - images/og/cert-compass.jpg
 ---

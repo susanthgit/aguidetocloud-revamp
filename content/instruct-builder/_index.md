@@ -17,4 +17,6 @@ faq:
     answer: "100% safe. Everything runs entirely in your browser — no data is sent to any server, no API calls are made, and nothing is stored. Your agent instructions never leave your device."
   - question: "Is this tool still being improved?"
     answer: "Yes! We regularly update the templates, platform configurations, and best practice patterns as platforms evolve. [Share your feedback](/feedback/) to help us improve."
+images:
+  - images/og/instruct-builder.jpg
 ---
