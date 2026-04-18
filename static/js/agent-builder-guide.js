@@ -118,6 +118,8 @@ var detailEl=document.getElementById('scenario-detail');
 var detailBody=document.getElementById('scenario-detail-body');
 var detailClose=document.querySelector('.abguide-detail-close');
 scenarioCards.forEach(function(card){
+card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
+card.addEventListener('click',function(){
   card.addEventListener('click',function(){
     scenarioCards.forEach(function(c){c.classList.remove('selected');});card.classList.add('selected');
     var v=card.dataset.verdict,r=card.dataset.requires,k=card.dataset.knowledge?card.dataset.knowledge.split(',').filter(Boolean):[],

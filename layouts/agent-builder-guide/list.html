@@ -65,12 +65,12 @@
 <button class="abguide-filter" data-filter="no">Needs Studio</button>
 </div>
 <div class="abguide-scenario-grid">
-{{ range $lic.scenarios }}<button class="abguide-scenario-card" data-verdict="{{ .verdict }}" data-requires="{{ .requires }}" data-knowledge="{{ delimit .knowledge "," }}" data-tip="{{ .tip }}" {{ with .partial_reason }}data-partial="{{ . }}"{{ end }}{{ with .studio_reason }}data-studio="{{ . }}"{{ end }}{{ with .sample_instructions }}data-instructions="{{ . }}"{{ end }}{{ with .conversation_starters }}data-starters="{{ delimit . "|" }}"{{ end }}{{ with .test_prompts }}data-tests="{{ delimit . "|" }}"{{ end }}>
+{{ range $lic.scenarios }}<div class="abguide-scenario-card" role="button" tabindex="0" data-verdict="{{ .verdict }}" data-requires="{{ .requires }}" data-knowledge="{{ delimit .knowledge "," }}" data-tip="{{ .tip }}" {{ with .partial_reason }}data-partial="{{ . }}"{{ end }}{{ with .studio_reason }}data-studio="{{ . }}"{{ end }}{{ with .sample_instructions }}data-instructions="{{ . }}"{{ end }}{{ with .conversation_starters }}data-starters="{{ delimit . "|" }}"{{ end }}{{ with .test_prompts }}data-tests="{{ delimit . "|" }}"{{ end }}>
 <span class="abguide-scenario-icon">{{ .icon }}</span>
 <strong>{{ .title }}</strong>
-<p>{{ .description }}</p>
+<span class="abguide-scenario-desc">{{ .description }}</span>
 <span class="abguide-verdict abguide-verdict--{{ .verdict }}">{{ if eq .verdict "yes" }}&#10003; Yes{{ else if eq .verdict "partial" }}&#9888; Partial{{ else }}&#10007; Studio{{ end }}</span>
-</button>{{ end }}
+</div>{{ end }}
 </div>
 <div id="scenario-detail" class="abguide-detail-card" style="display:none"><button class="abguide-detail-close" aria-label="Close">&times;</button><div id="scenario-detail-body"></div></div>
 <details class="abguide-simulator" id="simulator">
@@ -79,7 +79,7 @@
 <p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">Experience the Agent Builder workflow without leaving this page.</p>
 <div class="abguide-sim-steps">
 <div class="abguide-sim-step active" data-sim="1"><label>Agent Name</label><input type="text" id="sim-name" class="abguide-sim-input" placeholder="e.g. HR Policy Bot" aria-label="Agent name"></div>
-<div class="abguide-sim-step" data-sim="2"><label>Instructions <span id="sim-char-count" class="abguide-sim-counter">0 / 8,000</span></label><textarea id="sim-instructions" class="abguide-sim-textarea" placeholder="Describe what your agent should do..." rows="6" maxlength="8000" aria-label="Agent instructions"></textarea></div>
+<div class="abguide-sim-step" data-sim="2"><div class="abguide-sim-label-row"><label for="sim-instructions">Instructions</label><span id="sim-char-count" class="abguide-sim-counter">0 / 8,000</span></div><textarea id="sim-instructions" class="abguide-sim-textarea" placeholder="Describe what your agent should do..." rows="6" maxlength="8000" aria-label="Agent instructions"></textarea></div>
 <div class="abguide-sim-step" data-sim="3"><label>Knowledge Sources</label><div class="abguide-sim-sources">
 <label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="web"> Web search</label>
 <label class="abguide-wiz-opt"><input type="checkbox" name="sim-src" value="sharepoint"> SharePoint</label>
@@ -149,18 +149,41 @@
 <div class="abguide-prereq-grid">{{ range $tips.admin_prereqs.items }}<div class="abguide-prereq-card{{ if .blocker }} abguide-prereq--blocker{{ end }}"><strong>{{ .item }}{{ if .blocker }} <span class="abguide-prereq-blocker">BLOCKER</span>{{ end }}</strong><p>{{ .what }}</p><span class="abguide-prereq-admin">{{ .admin_action }}</span></div>{{ end }}</div></div>
 <div class="abguide-admin-email" style="margin-top:2rem"><h3>Admin Email Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate a professional email to send your IT admin.</p>
 <div class="abguide-email-form">
-<label>What do you need? <select id="email-need" class="abguide-sim-input" aria-label="What you need"><option value="paygo">Enable pay-as-you-go billing</option><option value="licence">M365 Copilot licence</option><option value="connector">Enable a Copilot connector</option><option value="sharing">Enable agent sharing</option></select></label>
-<label>Your name <input type="text" id="email-name" class="abguide-sim-input" placeholder="Your name" aria-label="Your name"></label>
-<label>What you want to build <input type="text" id="email-agent" class="abguide-sim-input" placeholder="e.g. HR FAQ bot" aria-label="Agent description"></label>
+<div class="abguide-form-field">
+  <label for="email-need">What do you need?</label>
+  <select id="email-need" class="abguide-sim-input" aria-label="What you need"><option value="paygo">Enable pay-as-you-go billing</option><option value="licence">M365 Copilot licence</option><option value="connector">Enable a Copilot connector</option><option value="sharing">Enable agent sharing</option></select>
+</div>
+<div class="abguide-form-field">
+  <label for="email-name">Your name</label>
+  <input type="text" id="email-name" class="abguide-sim-input" placeholder="Your name">
+</div>
+<div class="abguide-form-field">
+  <label for="email-agent">What you want to build</label>
+  <input type="text" id="email-agent" class="abguide-sim-input" placeholder="e.g. HR FAQ bot">
+</div>
 <button class="abguide-evaluate-btn" id="gen-email-btn">Generate Email</button>
 <div id="email-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="email-text"></span></div>
 </div></div>
 <div class="abguide-instgen" style="margin-top:2rem"><h3>Quick Instruction Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate ready-to-paste agent instructions.</p>
 <div class="abguide-instgen-form">
-<label>Agent purpose <input type="text" id="ig-purpose" class="abguide-sim-input" placeholder="e.g. Answer HR policy questions" aria-label="Agent purpose"></label>
-<label>Company name <input type="text" id="ig-company" class="abguide-sim-input" placeholder="e.g. Contoso" aria-label="Company name"></label>
-<label>Tone <select id="ig-tone" class="abguide-sim-input" aria-label="Tone"><option value="professional">Professional</option><option value="friendly">Friendly</option><option value="concise">Concise</option></select></label>
-<label>Boundary strictness <select id="ig-boundary" class="abguide-sim-input" aria-label="Boundary strictness"><option value="strict">Strict</option><option value="moderate">Moderate</option><option value="relaxed">Relaxed</option></select></label>
+<div class="abguide-form-field">
+  <label for="ig-purpose">Agent purpose</label>
+  <input type="text" id="ig-purpose" class="abguide-sim-input" placeholder="e.g. Answer HR policy questions">
+</div>
+<div class="abguide-form-field">
+  <label for="ig-company">Company name</label>
+  <input type="text" id="ig-company" class="abguide-sim-input" placeholder="e.g. Contoso">
+</div>
+<div class="abguide-form-row">
+  <div class="abguide-form-field">
+    <label for="ig-tone">Tone</label>
+    <select id="ig-tone" class="abguide-sim-input"><option value="professional">Professional</option><option value="friendly">Friendly</option><option value="concise">Concise</option></select>
+  </div>
+  <div class="abguide-form-field">
+    <label for="ig-boundary">Boundary strictness</label>
+    <select id="ig-boundary" class="abguide-sim-input"><option value="strict">Strict</option><option value="moderate">Moderate</option><option value="relaxed">Relaxed</option></select>
+  </div>
+</div>
 <button class="abguide-evaluate-btn" id="gen-inst-btn">Generate Instructions</button>
 <div id="ig-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="ig-text"></span></div>
 </div></div>

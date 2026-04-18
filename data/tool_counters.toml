@@ -22,6 +22,11 @@ base = 6800
 verb = "guides viewed"
 
 [[tools]]
+url = "/cert-compass/"
+base = 320
+verb = "paths explored"
+
+[[tools]]
 url = "/copilot-readiness/"
 base = 2100
 verb = "readiness checks completed"
@@ -105,6 +110,11 @@ verb = "migrations planned"
 url = "/prompt-guide/"
 base = 1100
 verb = "techniques practiced"
+
+[[tools]]
+url = "/prompt-lab/"
+base = 450
+verb = "prompts engineered"
 
 [[tools]]
 url = "/world-clock/"
