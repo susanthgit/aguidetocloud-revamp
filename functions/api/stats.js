@@ -214,12 +214,14 @@ async function handleRealtime(env) {
   if (!token) return jsonRes({ active: 0, pages: [] }, 200, 'no-cache');
   try {
     const res = await ga4RunRealtimeReport(token, {
-      dimensions: [{ name: 'unifiedScreenName' }],
-      metrics: [{ name: 'activeUsers' }], limit: 10
+      dimensions: [{ name: 'unifiedScreenName' }, { name: 'pagePath' }],
+      metrics: [{ name: 'activeUsers' }], limit: 25
     });
     const rows = (res.rows || []).map(r => ({
-      page: r.dimensionValues?.[0]?.value || '', users: parseInt(r.metricValues?.[0]?.value) || 0
-    }));
+      page: r.dimensionValues?.[0]?.value || '',
+      path: r.dimensionValues?.[1]?.value || '',
+      users: parseInt(r.metricValues?.[0]?.value) || 0
+    })).sort((a, b) => b.users - a.users);
     return jsonRes({ active: rows.reduce((s, p) => s + p.users, 0), pages: rows }, 200, 'no-cache');
   } catch { return jsonRes({ active: 0, pages: [] }, 200, 'no-cache'); }
 }

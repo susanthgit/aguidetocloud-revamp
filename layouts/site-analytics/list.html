@@ -46,6 +46,12 @@
   <!-- ═══════════ Tab 1: Dashboard ═══════════ -->
   <div class="siteana-panel active" id="panel-dashboard" role="tabpanel">
 
+    <!-- Right Now — Live Pages -->
+    <div class="siteana-card siteana-live-card" id="sa-live-card" style="display:none">
+      <h3 class="siteana-card-title"><span class="siteana-pulse-dot-sm"></span> Right Now</h3>
+      <div id="sa-live-pages" class="siteana-live-list"></div>
+    </div>
+
     <!-- Traffic Trend -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
@@ -458,6 +464,26 @@
     fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
       var count = d.active || 0;
       var el = document.getElementById('sa-live-count'); if (el) el.textContent = count;
+      // Per-page breakdown (top 5)
+      var card = document.getElementById('sa-live-card');
+      var list = document.getElementById('sa-live-pages');
+      if (card && list && d.pages && d.pages.length > 0) {
+        card.style.display = '';
+        var top = d.pages.slice(0, 5);
+        var max = top[0].users || 1;
+        var html = '';
+        top.forEach(function(p) {
+          var pct = Math.round((p.users / max) * 100);
+          var name = p.page || p.path || '(unknown)';
+          html += '<div class="siteana-live-row">';
+          html += '<span class="siteana-live-name">' + name + '</span>';
+          html += '<span class="siteana-live-num">' + p.users + '</span>';
+          html += '<div class="siteana-live-bar"><div class="siteana-live-fill" style="width:' + pct + '%"></div></div>';
+          html += '</div>';
+        });
+        if (d.pages.length > 5) html += '<div class="siteana-live-more">+ ' + (d.pages.length - 5) + ' more pages</div>';
+        list.innerHTML = html;
+      } else if (card) { card.style.display = 'none'; }
     }).catch(function() {});
   }
   function startRealtime() { pollRealtime(); _realtimeTimer = setInterval(pollRealtime, 60000); }

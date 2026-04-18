@@ -434,3 +434,16 @@ body { background: var(--cc-bg) !important; }
 .cc-bio-insight strong { color: #fff; }
 
 @media print { #cc-gate { display: none !important; } .cc-views { display: none; } .cc-panel { display: block !important; } }
+/* ── Live Pages Breakdown ── */
+.cc-live-pages { overflow-x: auto; }
+.cc-live-table { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.cc-live-table th { text-align: left; color: var(--cc-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 8px; border-bottom: 1px solid var(--cc-border); }
+.cc-live-table td { padding: 5px 8px; border-bottom: 1px solid var(--cc-border); }
+.cc-live-name { color: var(--cc-text); font-weight: 600; max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cc-live-path { color: var(--cc-muted); font-size: 11px; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cc-live-path a { color: var(--cc-muted); text-decoration: none; }
+.cc-live-path a:hover { color: var(--cc-green); }
+.cc-live-count { text-align: right; color: var(--cc-green); font-weight: 700; font-size: 14px; }
+.cc-live-bar { height: 6px; border-radius: 3px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.cc-live-fill { height: 100%; border-radius: 3px; background: var(--cc-green); transition: width 0.5s ease; }
+.cc-live-footer { font-size: 11px; color: var(--cc-muted); margin-top: 6px; text-align: right; }

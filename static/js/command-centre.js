@@ -83,6 +83,7 @@
     var liveEl = document.getElementById('cc-live');
     var liveNum = document.getElementById('cc-live-num');
     if (liveEl && realtime.active > 0) { liveEl.style.display = ''; liveNum.textContent = realtime.active; }
+    renderLivePages(realtime);
 
     // Health score
     var score = computeHealth(ga4, gsc);
@@ -979,8 +980,33 @@
   var bioData = null;
   var _bioTrend = null;
 
+  // ── LIVE PAGES BREAKDOWN ──
+  function renderLivePages(rt) {
+    var section = document.getElementById('cc-live-section');
+    var container = document.getElementById('cc-live-pages');
+    if (!section || !container) return;
+    var pages = (rt.pages || []).filter(function(p) { return p.users > 0; });
+    if (pages.length === 0) { section.style.display = 'none'; return; }
+    section.style.display = '';
+    var max = pages[0].users;
+    var html = '<table class="cc-live-table"><thead><tr><th>Page</th><th>Path</th><th style="text-align:right">Users</th><th style="width:120px"></th></tr></thead><tbody>';
+    pages.forEach(function(p) {
+      var pct = max > 0 ? Math.round((p.users / max) * 100) : 0;
+      var name = p.page || p.path || '(unknown)';
+      var path = p.path || '';
+      html += '<tr><td class="cc-live-name">' + esc(name) + '</td>';
+      html += '<td class="cc-live-path"><a href="' + esc(path) + '" target="_blank">' + esc(path) + '</a></td>';
+      html += '<td class="cc-live-count">' + p.users + '</td>';
+      html += '<td><div class="cc-live-bar"><div class="cc-live-fill" style="width:' + pct + '%"></div></div></td></tr>';
+    });
+    html += '</tbody></table>';
+    html += '<p class="cc-live-footer">' + rt.active + ' total · refreshes every 30s</p>';
+    container.innerHTML = html;
+  }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
   // ── INIT ──
   init();
-  setInterval(function() { fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(rt) { var el = document.getElementById('cc-live'); var n = document.getElementById('cc-live-num'); if (el && rt.active > 0) { el.style.display = ''; n.textContent = rt.active; } else if (el) { el.style.display = 'none'; } }).catch(function(){}); }, 30000);
+  setInterval(function() { fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(rt) { var el = document.getElementById('cc-live'); var n = document.getElementById('cc-live-num'); if (el && rt.active > 0) { el.style.display = ''; n.textContent = rt.active; } else if (el) { el.style.display = 'none'; } renderLivePages(rt); }).catch(function(){}); }, 30000);
   setInterval(function() { fetch(API + '?range=30d').then(function(r) { return r.json(); }).then(function(d) { siteData = d; renderDashboard(d, { active: 0 }); }).catch(function(){}); }, 300000);
 })();
