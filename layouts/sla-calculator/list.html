@@ -3,6 +3,25 @@
 {{ $tiers := $data.slas.tiers }}
 {{ $m365 := $data.slas.m365_slas }}
 <link rel="stylesheet" href="/css/sla-calculator.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "SLA Uptime Calculator" "accent" "#4ECDC4") }}
 

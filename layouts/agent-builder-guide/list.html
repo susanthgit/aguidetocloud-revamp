@@ -244,7 +244,7 @@
 <label class="abguide-progress-item"><input type="checkbox" data-track="tested"> Tested agent</label>
 <label class="abguide-progress-item"><input type="checkbox" data-track="shared"> Shared it</label>
 </div>
-<div data-pagefind-body aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden"><h1>M365 Agent Builder Helper</h1><p>Interactive guide to M365 Copilot Agent Builder with scenarios, capability matrix, knowledge sources, agent gallery, instruction generator, health checker, and more.</p></div>
+<div data-pagefind-body aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden"><h2>M365 Agent Builder Helper</h2><p>Interactive guide to M365 Copilot Agent Builder with scenarios, capability matrix, knowledge sources, agent gallery, instruction generator, health checker, and more.</p></div>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }},"url":"{{ .Permalink }}","applicationCategory":"ReferenceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 {{ with .Params.faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $q := . }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $q.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $q.answer | jsonify }}}}{{ end }}]}</script>{{ end }}
 <script src="/js/agent-builder-guide.js?v={{ site.Params.cache_version }}" defer></script>

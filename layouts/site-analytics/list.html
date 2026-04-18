@@ -1,5 +1,24 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/site-analytics.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "Site Analytics" "accent" "#64748B") }}
 
@@ -330,7 +349,7 @@
 
 <!-- Pagefind: hidden searchable content -->
 <div data-pagefind-body style="display:none" aria-hidden="true">
-  <h1>Site Analytics — Live Usage Statistics Dashboard</h1>
+  <h2>Site Analytics — Live Usage Statistics Dashboard</h2>
   <p>View live, transparent analytics for A Guide to Cloud and AI. See which tools are most popular, daily traffic trends, top search queries, content freshness, and fun facts. All data collected anonymously with no cookies or personal data.</p>
 </div>
 

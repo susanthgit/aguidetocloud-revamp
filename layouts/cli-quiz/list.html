@@ -3,14 +3,33 @@
 {{ $commands := $data.commands.commands }}
 
 <link rel="stylesheet" href="/css/cli-quiz.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "CLI Command Quiz" "accent" "#7E57C2") }}
 
 <div class="cliquiz-page">
-  <div class="cliquiz-tabs" role="tablist">
-    <button class="cliquiz-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
-    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="stats">Stats</button>
-    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  <div class="cliquiz-tabs" role="tablist" aria-label="CLI Quiz tabs">
+    <button class="cliquiz-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
+    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="stats" aria-label="Stats tab">Stats</button>
+    <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="faq" aria-label="FAQ tab">FAQ</button>
   </div>
 
   {{/* ── Play Panel ── */}}

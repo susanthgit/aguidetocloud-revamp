@@ -2,6 +2,25 @@
 {{ $data := (index hugo.Data "rename_tracker") }}
 {{ $products := $data.products.products }}
 <link rel="stylesheet" href="/css/rename-tracker.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "What Did They Call It Now?" "accent" "#B07D4F") }}
 

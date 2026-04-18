@@ -2,13 +2,32 @@
 {{ $data := (index hugo.Data "phishing_test") }}
 {{ $scenarios := $data.scenarios.scenarios }}
 <link rel="stylesheet" href="/css/phishing-test.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "Is This Phishing?" "accent" "#E74C3C") }}
 
 <div class="phish-page">
-  <div class="phish-tabs" role="tablist">
-    <button class="phish-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
-    <button class="phish-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  <div class="phish-tabs" role="tablist" aria-label="Phishing Test tabs">
+    <button class="phish-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
+    <button class="phish-tab" role="tab" aria-selected="false" data-tab="faq" aria-label="FAQ tab">FAQ</button>
   </div>
 
   <div class="phish-panel active" id="panel-play">
@@ -75,16 +94,16 @@
       </div>
 
       <div class="phish-choices" id="phish-choices">
-        <button class="phish-choice phish-choice-phishing" data-answer="phishing">🎣 Phishing</button>
-        <button class="phish-choice phish-choice-legit" data-answer="legit">✅ Legit</button>
-        <button class="phish-choice phish-choice-verify" data-answer="verify">🔍 Verify</button>
+        <button class="phish-choice phish-choice-phishing" data-answer="phishing" aria-label="Mark as phishing">🎣 Phishing</button>
+        <button class="phish-choice phish-choice-legit" data-answer="legit" aria-label="Mark as legitimate">✅ Legit</button>
+        <button class="phish-choice phish-choice-verify" data-answer="verify" aria-label="Mark as needs verification">🔍 Verify</button>
       </div>
 
       <div class="phish-feedback" id="phish-feedback" style="display:none">
         <div class="phish-feedback-verdict" id="feedback-verdict"></div>
         <div class="phish-feedback-explanation" id="feedback-explanation"></div>
         <div class="phish-feedback-flags" id="feedback-flags"></div>
-        <button class="phish-btn phish-btn-primary" id="btn-next">Next →</button>
+        <button class="phish-btn phish-btn-primary" id="btn-next" aria-label="Next question">Next →</button>
       </div>
     </div>
 
@@ -93,9 +112,9 @@
       <div class="phish-results-score" id="results-score"></div>
       <div class="phish-results-detail" id="results-detail"></div>
       <div class="phish-results-actions">
-        <button class="phish-btn phish-btn-primary" id="btn-retry">Try Again</button>
-        <button class="phish-btn" id="btn-share">Share Score</button>
-        <button class="phish-btn" id="btn-share-card">📸 Download Card</button>
+        <button class="phish-btn phish-btn-primary" id="btn-retry" aria-label="Try again">Try Again</button>
+        <button class="phish-btn" id="btn-share" aria-label="Share score">Share Score</button>
+        <button class="phish-btn" id="btn-share-card" aria-label="Download score card">📸 Download Card</button>
       </div>
     </div>
   </div>

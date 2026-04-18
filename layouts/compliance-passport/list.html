@@ -1,14 +1,33 @@
 {{ define "main" }}
 {{ $data := (index hugo.Data "compliance_passport") }}
 <link rel="stylesheet" href="/css/compliance-passport.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "Compliance Passport" "accent" "#2ECC71") }}
 
 <div class="passport-page">
-  <div class="passport-tabs" role="tablist">
-    <button class="passport-tab active" role="tab" aria-selected="true" data-tab="quiz">Assessment</button>
-    <button class="passport-tab" role="tab" aria-selected="false" data-tab="passport">My Passport</button>
-    <button class="passport-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  <div class="passport-tabs" role="tablist" aria-label="Compliance Passport tabs">
+    <button class="passport-tab active" role="tab" aria-selected="true" data-tab="quiz" aria-label="Assessment tab">Assessment</button>
+    <button class="passport-tab" role="tab" aria-selected="false" data-tab="passport" aria-label="My Passport tab">My Passport</button>
+    <button class="passport-tab" role="tab" aria-selected="false" data-tab="faq" aria-label="FAQ tab">FAQ</button>
   </div>
 
   <div class="passport-panel active" id="panel-quiz">
@@ -17,15 +36,15 @@
     </div>
     <div class="passport-presets">
       <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-right:0.5rem">Quick start:</span>
-      <button class="passport-preset" data-preset="healthcare">Healthcare</button>
-      <button class="passport-preset" data-preset="financial">Financial</button>
-      <button class="passport-preset" data-preset="education">Education</button>
-      <button class="passport-preset" data-preset="government">Government</button>
-      <button class="passport-preset" data-preset="anz_enterprise">ANZ Enterprise</button>
+      <button class="passport-preset" data-preset="healthcare" aria-label="Healthcare preset">Healthcare</button>
+      <button class="passport-preset" data-preset="financial" aria-label="Financial preset">Financial</button>
+      <button class="passport-preset" data-preset="education" aria-label="Education preset">Education</button>
+      <button class="passport-preset" data-preset="government" aria-label="Government preset">Government</button>
+      <button class="passport-preset" data-preset="anz_enterprise" aria-label="ANZ Enterprise preset">ANZ Enterprise</button>
     </div>
     <div class="passport-quiz" id="passport-quiz"></div>
     <div class="passport-quiz-actions" id="quiz-actions" style="display:none">
-      <button class="passport-btn passport-btn-primary" id="btn-generate">Generate My Passport</button>
+      <button class="passport-btn passport-btn-primary" id="btn-generate" aria-label="Generate compliance passport">Generate My Passport</button>
     </div>
   </div>
 

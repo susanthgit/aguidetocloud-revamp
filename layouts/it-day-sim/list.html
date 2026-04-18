@@ -4,14 +4,33 @@
 {{ $scoreTiers := $data.story.score_tiers }}
 
 <link rel="stylesheet" href="/css/it-day-sim.css?v={{ site.Params.cache_version }}">
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ partial "tool-hero.html" (dict "title" "My IT Day Simulator" "accent" "#C27BA0") }}
 
 <div class="itday-page">
-  <div class="itday-tabs" role="tablist">
-    <button class="itday-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
-    <button class="itday-tab" role="tab" aria-selected="false" data-tab="history">Results History</button>
-    <button class="itday-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+  <div class="itday-tabs" role="tablist" aria-label="IT Day Simulator tabs">
+    <button class="itday-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
+    <button class="itday-tab" role="tab" aria-selected="false" data-tab="history" aria-label="Results History tab">Results History</button>
+    <button class="itday-tab" role="tab" aria-selected="false" data-tab="faq" aria-label="FAQ tab">FAQ</button>
   </div>
 
   {{/* ── Play Panel ── */}}
