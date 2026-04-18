@@ -4,6 +4,9 @@ description: "Plan your Microsoft 365 migration for free. Interactive wizard cov
 type: "migration-planner"
 layout: "list"
 url: "/migration-planner/"
+sitemap:
+  priority: 0.8
+  changefreq: "monthly"
 lastmod: 2026-04-16
 images: ["images/og/migration-planner.jpg"]
 faq:

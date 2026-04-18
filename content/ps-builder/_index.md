@@ -3,6 +3,10 @@ title: "PowerShell Command Builder — Build M365, Azure & Windows Admin Command
 description: "Free, visual PowerShell command builder for IT admins. Build Exchange, Teams, SharePoint, Entra ID, Azure, Active Directory, GPO & Windows commands with guided parameters. No sign-up, works offline."
 layout: "list"
 type: "ps-builder"
+sitemap:
+  priority: 0.8
+  changefreq: "monthly"
+lastmod: 2026-04-16
 faq:
   - question: "What is the PowerShell Command Builder?"
     answer: "A free, browser-based tool that helps IT admins visually build PowerShell commands for Microsoft 365, Azure, Active Directory, Group Policy, and Windows. Select a module, choose a cmdlet, fill in parameters with guided tooltips, and get a ready-to-run command — no syntax memorisation needed."
@@ -22,6 +26,5 @@ faq:
     answer: "Recipes are pre-built, tested PowerShell commands for common admin tasks like 'Create a Shared Mailbox' or 'Find Locked-Out Accounts.' The Build tab lets you construct custom commands by choosing any cmdlet and filling in parameters yourself. Recipes are faster for common tasks; Build is for custom needs."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
-lastmod: 2026-04-16
 images: ["images/og/ps-builder.jpg"]
 ---

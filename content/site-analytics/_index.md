@@ -3,6 +3,7 @@ title: "Site Analytics"
 description: "Live usage statistics for A Guide to Cloud & AI — tool popularity, traffic trends, and top search queries. Transparent, anonymous, and open."
 type: "site-analytics"
 layout: "list"
+lastmod: 2026-04-16
 sitemap:
   priority: 0.6
   changefreq: "daily"

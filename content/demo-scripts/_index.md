@@ -3,6 +3,10 @@ title: "Copilot Demo Script Builder"
 description: "Generate complete, ready-to-deliver Microsoft 365 Copilot demo scripts. Pick a scenario, configure your audience, and get step-by-step talking points, prompts, timing cues, and fallback plans."
 type: "demo-scripts"
 layout: "list"
+sitemap:
+  priority: 0.8
+  changefreq: "monthly"
+lastmod: 2026-04-18
 faq:
   - question: "Who is this tool for?"
     answer: "Copilot Solution Engineers, IT champions, Microsoft partners, and anyone who needs to deliver a compelling M365 Copilot demo. Whether it's a 5-minute executive teaser or a 30-minute deep dive, this tool generates a complete script you can follow step by step."

@@ -3,6 +3,10 @@ title: "Copilot Studio Companion"
 description: "Your comprehensive interactive guide to Microsoft Copilot Studio — evaluate scenarios, explore capabilities, navigate governance, and design agent architectures."
 type: "cs-companion"
 layout: "list"
+sitemap:
+  priority: 0.8
+  changefreq: "monthly"
+lastmod: 2026-04-18
 aliases:
   - /copilot-studio/
 faq:
