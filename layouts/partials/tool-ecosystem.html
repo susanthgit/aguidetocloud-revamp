@@ -11,11 +11,13 @@
 {{ if eq $group "copilot" }}
 <div class="tool-eco" style="--eco-accent: #3B82F6">
   <h2 class="tool-eco-title">🤖 Your Copilot Decision Toolkit</h2>
-  <div class="tool-eco-grid tool-eco-5">
+  <div class="tool-eco-grid tool-eco-7">
     <a href="/copilot-readiness/" class="tool-eco-card{{ if eq $active "readiness" }} tool-eco-active{{ end }}"><span>🎯</span><strong>Readiness</strong><p>Are you ready?</p></a>
     <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>📊</span><strong>Features</strong><p>What can it do?</p></a>
     <a href="/roi-calculator/" class="tool-eco-card{{ if eq $active "roi" }} tool-eco-active{{ end }}"><span>💰</span><strong>ROI</strong><p>Is it worth it?</p></a>
     <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>📜</span><strong>Licensing</strong><p>What licence?</p></a>
+    <a href="/licence-picker/" class="tool-eco-card{{ if eq $active "licence-picker" }} tool-eco-active{{ end }}"><span>🛒</span><strong>Licence Picker</strong><p>Cheapest combo</p></a>
+    <a href="/demo-scripts/" class="tool-eco-card{{ if eq $active "demo-scripts" }} tool-eco-active{{ end }}"><span>🎬</span><strong>Demo Scripts</strong><p>Show the value</p></a>
     <a href="/cs-companion/" class="tool-eco-card{{ if eq $active "copilot-studio" }} tool-eco-active{{ end }}"><span>⚙️</span><strong>Studio</strong><p>Build agents</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>

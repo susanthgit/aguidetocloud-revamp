@@ -389,5 +389,6 @@
 </script>
 <script src="/js/demo-scripts.js?v={{ site.Params.cache_version }}"></script>
 
+{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "demo-scripts") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "All Tools") }}
 {{ end }}

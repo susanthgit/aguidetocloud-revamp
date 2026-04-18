@@ -253,7 +253,7 @@ verb = "days survived"
 
 [[tools]]
 url = "/demo-scripts/"
-base = 0
+base = 50
 verb = "demo scripts generated"
 
 [[tools]]
@@ -263,10 +263,10 @@ verb = "instructions generated"
 
 [[tools]]
 url = "/prompt-tester/"
-base = 0
+base = 85
 verb = "prompts compared"
 
 [[tools]]
 url = "/licence-picker/"
-base = 0
+base = 180
 verb = "licence combos calculated"
