@@ -498,7 +498,7 @@ name = "Phishing Simulator"
 short = "Phishing"
 desc = "Spot the fakes — 30 realistic email scenarios"
 color = "#E74C3C"
-category = "admin"
+category = "security"
 visual = "blocks"
 is_tool = true
 

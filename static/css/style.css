@@ -3563,6 +3563,8 @@ pre.mermaid {
 .tool-eco-4 { grid-template-columns: repeat(4, 1fr); }
 .tool-eco-5 { grid-template-columns: repeat(5, 1fr); }
 .tool-eco-6 { grid-template-columns: repeat(6, 1fr); }
+.tool-eco-7 { grid-template-columns: repeat(4, 1fr); }
+.tool-eco-8 { grid-template-columns: repeat(4, 1fr); }
 .tool-eco-2 { grid-template-columns: repeat(2, 1fr); max-width: 400px; margin: 0 auto; }
 .tool-eco-card {
   background: rgba(255,255,255,0.04);
@@ -3585,6 +3587,8 @@ pre.mermaid {
 @media (max-width: 600px) {
   .tool-eco-5 { grid-template-columns: repeat(3, 1fr); }
   .tool-eco-6 { grid-template-columns: repeat(3, 1fr); }
+  .tool-eco-7 { grid-template-columns: repeat(3, 1fr); }
+  .tool-eco-8 { grid-template-columns: repeat(3, 1fr); }
   .tool-eco-4 { grid-template-columns: repeat(2, 1fr); }
   .tool-eco-3 { grid-template-columns: 1fr; }
 }
