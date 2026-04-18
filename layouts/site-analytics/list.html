@@ -46,6 +46,18 @@
   <!-- ═══════════ Tab 1: Dashboard ═══════════ -->
   <div class="siteana-panel active" id="panel-dashboard" role="tabpanel">
 
+    <!-- Right Now — Full per-page live visitors with bar chart -->
+    <div class="sa-rt-card" id="sa-rt-card">
+      <div class="sa-rt-header">
+        <span class="sa-rt-dot"></span>
+        <strong class="sa-rt-title">Right Now</strong>
+        <span class="sa-rt-total" id="sa-rt-total"></span>
+      </div>
+      <div class="sa-rt-list" id="sa-rt-list">
+        <span class="sa-rt-empty">Waiting for data...</span>
+      </div>
+    </div>
+
     <!-- Traffic Trend -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
@@ -458,6 +470,24 @@
     fetch(API + '?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
       var count = d.active || 0;
       var el = document.getElementById('sa-live-count'); if (el) el.textContent = count;
+      var totalEl = document.getElementById('sa-rt-total');
+      if (totalEl) totalEl.textContent = count + ' visitor' + (count !== 1 ? 's' : '');
+      var list = document.getElementById('sa-rt-list');
+      if (!list) return;
+      var pages = (d.pages || []).filter(function(p) { return p.users > 0; });
+      if (pages.length === 0) { list.innerHTML = '<span class="sa-rt-empty">0 visitors right now</span>'; return; }
+      var max = pages[0].users;
+      var html = '';
+      pages.forEach(function(p) {
+        var pct = max > 0 ? Math.round((p.users / max) * 100) : 0;
+        var name = p.page || '(unknown)';
+        html += '<div class="sa-rt-row">';
+        html += '<span class="sa-rt-name">' + name + '</span>';
+        html += '<div class="sa-rt-bar-wrap"><div class="sa-rt-bar-fill" style="width:' + pct + '%"></div></div>';
+        html += '<span class="sa-rt-count">' + p.users + '</span>';
+        html += '</div>';
+      });
+      list.innerHTML = html;
     }).catch(function() {});
   }
   function startRealtime() { pollRealtime(); _realtimeTimer = setInterval(pollRealtime, 60000); }

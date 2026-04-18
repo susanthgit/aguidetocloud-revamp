@@ -2462,6 +2462,22 @@
   .siteana-ba-row > span:nth-child(1) { grid-column: 1 / -1; }
 }
 
+/* ── Right Now — Live per-page bar chart (sa-rt-*) ── */
+.sa-rt-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid #22c55e; border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+.sa-rt-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.sa-rt-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: sa-rt-pulse 1.5s ease-in-out infinite; }
+@keyframes sa-rt-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.sa-rt-title { font-size: 0.95rem; color: #fff; }
+.sa-rt-total { margin-left: auto; font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+.sa-rt-list { display: flex; flex-direction: column; gap: 4px; }
+.sa-rt-empty { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+.sa-rt-row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(80px, 2fr) 32px; gap: 10px; align-items: center; padding: 3px 0; }
+.sa-rt-name { font-size: 0.82rem; color: rgba(255,255,255,0.75); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sa-rt-bar-wrap { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.sa-rt-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #22c55e, #4ade80); transition: width 0.5s ease; }
+.sa-rt-count { font-size: 0.82rem; font-weight: 700; color: #22c55e; text-align: right; }
+@media (max-width: 768px) { .sa-rt-row { grid-template-columns: minmax(80px, 1fr) minmax(60px, 1.5fr) 28px; } .sa-rt-name { font-size: 0.78rem; } }
+
 /* Print */
 @media print {
   .siteana-tabs, .siteana-transparency, .siteana-range-bar { display: none; }
