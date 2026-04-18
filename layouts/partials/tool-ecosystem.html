@@ -26,10 +26,12 @@
 {{ else if eq $group "m365-admin" }}
 <div class="tool-eco" style="--eco-accent: #E5A00D">
   <h2 class="tool-eco-title">📋 Your M365 Admin Toolkit</h2>
-  <div class="tool-eco-grid tool-eco-3">
+  <div class="tool-eco-grid tool-eco-5">
+    <a href="/ai-news/" class="tool-eco-card{{ if eq $active "ai-news" }} tool-eco-active{{ end }}"><span>📰</span><strong>AI News</strong><p>What's new?</p></a>
     <a href="/m365-roadmap/" class="tool-eco-card{{ if eq $active "roadmap" }} tool-eco-active{{ end }}"><span>📋</span><strong>Roadmap</strong><p>What's coming?</p></a>
     <a href="/deprecation-timeline/" class="tool-eco-card{{ if eq $active "deprecation" }} tool-eco-active{{ end }}"><span>⏰</span><strong>Deprecations</strong><p>What's retiring?</p></a>
     <a href="/service-health/" class="tool-eco-card{{ if eq $active "health" }} tool-eco-active{{ end }}"><span>🏥</span><strong>Service Health</strong><p>Is it working?</p></a>
+    <a href="/rename-tracker/" class="tool-eco-card{{ if eq $active "rename-tracker" }} tool-eco-active{{ end }}"><span>🔄</span><strong>Rename Tracker</strong><p>Name changes</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
@@ -37,9 +39,10 @@
 {{ else if eq $group "ai-compare" }}
 <div class="tool-eco" style="--eco-accent: #38BDF8">
   <h2 class="tool-eco-title">🔍 Your AI Comparison Toolkit</h2>
-  <div class="tool-eco-grid tool-eco-3">
+  <div class="tool-eco-grid tool-eco-4">
     <a href="/ai-mapper/" class="tool-eco-card{{ if eq $active "mapper" }} tool-eco-active{{ end }}"><span>🗺️</span><strong>Service Mapper</strong><p>Which platform?</p></a>
     <a href="/ai-showdown/" class="tool-eco-card{{ if eq $active "showdown" }} tool-eco-active{{ end }}"><span>🥊</span><strong>SaaS Showdown</strong><p>Which subscription?</p></a>
+    <a href="/ai-cost-calculator/" class="tool-eco-card{{ if eq $active "ai-cost" }} tool-eco-active{{ end }}"><span>💰</span><strong>AI Cost Calc</strong><p>Total AI cost</p></a>
     <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>📊</span><strong>Copilot Features</strong><p>What's in M365?</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
@@ -59,7 +62,7 @@
 {{ else if eq $group "admin" }}
 <div class="tool-eco" style="--eco-accent: #7C3AED">
   <h2 class="tool-eco-title">Your Admin Toolkit</h2>
-  <div class="tool-eco-grid tool-eco-4">
+  <div class="tool-eco-grid tool-eco-5">
     <a href="/ca-builder/" class="tool-eco-card{{ if eq $active "ca-builder" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>Entra ID CA</strong><p>Conditional Access</p></a>
     <a href="/purview-starter/" class="tool-eco-card{{ if eq $active "purview" }} tool-eco-active{{ end }}"><span>🔐</span><strong>Purview</strong><p>Labels & DLP</p></a>
     <a href="/ps-builder/" class="tool-eco-card{{ if eq $active "ps-builder" }} tool-eco-active{{ end }}"><span>⚡</span><strong>PowerShell</strong><p>Script builder</p></a>
@@ -68,6 +71,8 @@
     <a href="/policy-tester/" class="tool-eco-card{{ if eq $active "policy-tester" }} tool-eco-active{{ end }}"><span>🔑</span><strong>Policy Tester</strong><p>Score your policy</p></a>
     <a href="/incident-comms/" class="tool-eco-card{{ if eq $active "incident-comms" }} tool-eco-active{{ end }}"><span>📢</span><strong>Incident Comms</strong><p>Status updates</p></a>
     <a href="/migration-planner/" class="tool-eco-card{{ if eq $active "migration" }} tool-eco-active{{ end }}"><span>🚀</span><strong>Migration</strong><p>Plan your move</p></a>
+    <a href="/admin-comms/" class="tool-eco-card{{ if eq $active "admin-comms" }} tool-eco-active{{ end }}"><span>📧</span><strong>Admin Comms</strong><p>Draft emails</p></a>
+    <a href="/compliance-passport/" class="tool-eco-card{{ if eq $active "compliance-passport" }} tool-eco-active{{ end }}"><span>📋</span><strong>Compliance</strong><p>Framework passport</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
@@ -82,6 +87,7 @@
     <a href="/it-day-sim/" class="tool-eco-card{{ if eq $active "it-day-sim" }} tool-eco-active{{ end }}"><span>🎮</span><strong>My IT Day</strong><p>Choose your adventure</p></a>
     <a href="/admin-badges/" class="tool-eco-card{{ if eq $active "admin-badges" }} tool-eco-active{{ end }}"><span>🏅</span><strong>Admin Badges</strong><p>Claim achievements</p></a>
     <a href="/phishing-test/" class="tool-eco-card{{ if eq $active "phishing-test" }} tool-eco-active{{ end }}"><span>🎣</span><strong>Phishing Test</strong><p>Spot the fakes</p></a>
+    <a href="/feature-roulette/" class="tool-eco-card{{ if eq $active "feature-roulette" }} tool-eco-active{{ end }}"><span>🎰</span><strong>Feature Roulette</strong><p>Discover features</p></a>
   </div>
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
