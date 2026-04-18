@@ -1,209 +1,238 @@
 {{ define "main" }}
-{{ $data := (index hugo.Data "agent_instructions") }}
+{{ $data := (index hugo.Data "instruct_builder") }}
 {{ $platforms := $data.platforms.platforms }}
 {{ $templates := $data.templates.templates }}
-{{ $practices := $data.practices.practices }}
-<link rel="stylesheet" href="/css/agent-instructions.css?v={{ site.Params.cache_version }}">
+<link rel="stylesheet" href="/css/instruct-builder.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "title" "Agent Instruction Builder" "accent" "#E0976B") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Agent Instruction Builder — Generate AI Agent Instructions",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
 
-<div class="aginst-page">
-  <div class="aginst-tabs" role="tablist">
-    <button class="aginst-tab active" role="tab" aria-selected="true" data-tab="build">Quick Build</button>
-    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="templates">Templates</button>
-    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="platforms">Platform Guide</button>
-    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="practices">Best Practices</button>
-    <button class="aginst-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+{{ partial "tool-hero.html" (dict "title" "Agent Instruction Builder" "accent" "#2DD4BF") }}
+
+<div class="instruct-page instruct-v3">
+
+  {{/* Keyboard hint */}}
+  <div class="instruct-kbd-bar"><kbd>Tab</kbd> fields · <kbd>Ctrl+Enter</kbd> generate · <kbd>?</kbd> shortcuts</div>
+
+  {{/* ── Glass Pill Tabs ── */}}
+  <div class="instruct-tabs" role="tablist" aria-label="Agent Instruction Builder sections">
+    <button class="instruct-tab active" data-tab="build" role="tab" aria-selected="true">Build</button>
+    <button class="instruct-tab" data-tab="templates" role="tab" aria-selected="false">Templates</button>
+    <button class="instruct-tab" data-tab="quiz" role="tab" aria-selected="false">Which Platform?</button>
+    <button class="instruct-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
-  <div class="aginst-panel active" id="panel-build">
-    <div class="aginst-wizard">
-      <div class="aginst-steps-bar">
-        <button class="aginst-step-dot active" data-step="1">1</button>
-        <div class="aginst-step-line"></div>
-        <button class="aginst-step-dot" data-step="2">2</button>
-        <div class="aginst-step-line"></div>
-        <button class="aginst-step-dot" data-step="3">3</button>
-        <div class="aginst-step-line"></div>
-        <button class="aginst-step-dot" data-step="4">4</button>
-      </div>
-      <div class="aginst-step-labels">
-        <span class="active">Platform</span>
-        <span>Scope</span>
-        <span>Tone</span>
-        <span>Guardrails</span>
-      </div>
+  {{/* ══════════ TAB 1: BUILD (split-pane) ══════════ */}}
+  <div class="instruct-panel active" id="panel-build" role="tabpanel">
+    <div class="instruct-split">
 
-      <div class="aginst-step active" id="step-1">
-        <h3>Choose your platform</h3>
-        <p class="aginst-tip">Not sure? Pick <strong>M365 Agent Builder</strong> for work agents or <strong>ChatGPT</strong> for personal ones.</p>
-        <div class="aginst-platform-grid" id="platform-grid"></div>
-        <h3 style="margin-top:1.5rem">What does your agent do?</h3>
-        <div class="aginst-field">
-          <label for="agent-role">Agent role</label>
-          <input type="text" id="agent-role" placeholder="e.g. IT support assistant, HR benefits advisor" maxlength="200" class="aginst-input">
-        </div>
-        <div class="aginst-field">
-          <label for="agent-audience">Who will use it?</label>
-          <input type="text" id="agent-audience" placeholder="e.g. Employees, customers, new hires" maxlength="150" class="aginst-input">
-        </div>
-        <div class="aginst-field">
-          <label for="org-name">Organisation name <span class="aginst-optional">(optional)</span></label>
-          <input type="text" id="org-name" placeholder="e.g. Contoso" maxlength="100" class="aginst-input">
-        </div>
-        <div class="aginst-quick-picks">
-          <span class="aginst-pick-label">Quick picks:</span>
-          <button class="aginst-pick" data-role="IT support assistant" data-audience="Employees needing tech help">IT Helpdesk</button>
-          <button class="aginst-pick" data-role="HR benefits advisor" data-audience="Employees with HR questions">HR Assistant</button>
-          <button class="aginst-pick" data-role="Project management assistant" data-audience="Project teams">Project Mgr</button>
-          <button class="aginst-pick" data-role="Knowledge base assistant" data-audience="All employees">Knowledge Base</button>
-          <button class="aginst-pick" data-role="Customer support agent" data-audience="External customers">Support</button>
-          <button class="aginst-pick" data-role="Training and onboarding coach" data-audience="New hires">Training</button>
-        </div>
-        <div class="aginst-nav-row">
-          <span></span>
-          <button class="aginst-btn aginst-btn-primary" id="btn-next-1">Next: Capabilities</button>
-        </div>
-      </div>
+      {{/* ── LEFT: Form ── */}}
+      <div class="instruct-split-form">
+        <div class="instruct-form" id="instruct-form">
 
-      <div class="aginst-step" id="step-2">
-        <h3>What can your agent access?</h3>
-        <p class="aginst-tip">Enable only what your agent needs.</p>
-        <div class="aginst-toggles">
-          <label class="aginst-toggle"><input type="checkbox" id="cap-knowledge" checked><span class="aginst-toggle-slider"></span>Access company documents</label>
-          <label class="aginst-toggle"><input type="checkbox" id="cap-web"><span class="aginst-toggle-slider"></span>Search the web</label>
-          <label class="aginst-toggle"><input type="checkbox" id="cap-actions"><span class="aginst-toggle-slider"></span>Perform actions</label>
-          <label class="aginst-toggle"><input type="checkbox" id="cap-code"><span class="aginst-toggle-slider"></span>Run code / analyse data</label>
-          <label class="aginst-toggle"><input type="checkbox" id="cap-images"><span class="aginst-toggle-slider"></span>Generate images</label>
-        </div>
-        <h3 style="margin-top:1.5rem">Define the scope</h3>
-        <div class="aginst-field">
-          <label for="scope-can">Topics it CAN help with</label>
-          <textarea id="scope-can" rows="3" placeholder="e.g. Password resets, software installation, VPN troubleshooting" class="aginst-input"></textarea>
-        </div>
-        <div class="aginst-field">
-          <label for="scope-cannot">Topics it should REFUSE</label>
-          <textarea id="scope-cannot" rows="3" placeholder="e.g. HR questions, salary info, admin consoles" class="aginst-input"></textarea>
-        </div>
-        <div class="aginst-nav-row">
-          <button class="aginst-btn" id="btn-back-2">Back</button>
-          <button class="aginst-btn aginst-btn-primary" id="btn-next-2">Next: Tone</button>
-        </div>
-      </div>
-
-      <div class="aginst-step" id="step-3">
-        <h3>Set the tone</h3>
-        <div class="aginst-radio-group">
-          <label class="aginst-radio"><input type="radio" name="tone" value="professional" checked> Professional</label>
-          <label class="aginst-radio"><input type="radio" name="tone" value="friendly"> Friendly</label>
-          <label class="aginst-radio"><input type="radio" name="tone" value="technical"> Technical</label>
-          <label class="aginst-radio"><input type="radio" name="tone" value="casual"> Casual</label>
-        </div>
-        <div class="aginst-radio-group" style="margin-top:1rem">
-          <span class="aginst-pick-label">Detail level:</span>
-          <label class="aginst-radio"><input type="radio" name="verbosity" value="concise" checked> Concise</label>
-          <label class="aginst-radio"><input type="radio" name="verbosity" value="balanced"> Balanced</label>
-          <label class="aginst-radio"><input type="radio" name="verbosity" value="detailed"> Detailed</label>
-        </div>
-        <div class="aginst-radio-group" style="margin-top:1rem">
-          <span class="aginst-pick-label">Output format:</span>
-          <label class="aginst-radio"><input type="radio" name="format" value="bullets" checked> Bullet points</label>
-          <label class="aginst-radio"><input type="radio" name="format" value="steps"> Numbered steps</label>
-          <label class="aginst-radio"><input type="radio" name="format" value="paragraphs"> Paragraphs</label>
-          <label class="aginst-radio"><input type="radio" name="format" value="mixed"> Mixed</label>
-        </div>
-        <h3 style="margin-top:1.5rem">Example interactions</h3>
-        <p class="aginst-tip">Include at least one normal question AND one out-of-scope question.</p>
-        <div id="examples-container">
-          <div class="aginst-example-pair" data-idx="0">
-            <div class="aginst-field"><label>Example question 1 <span class="aginst-badge-good">Happy path</span></label>
-              <input type="text" class="aginst-input ex-user" placeholder="e.g. How do I reset my password?" maxlength="300"></div>
-            <div class="aginst-field"><label>Ideal response</label>
-              <textarea class="aginst-input ex-agent" rows="3" placeholder="e.g. Go to portal.office.com..." maxlength="800"></textarea></div>
+          <div class="instruct-field">
+            <label for="instruct-platform">Platform</label>
+            <select id="instruct-platform" class="instruct-select">
+              {{ range $platforms }}
+              <option value="{{ .id }}">{{ .icon }} {{ .name }} ({{ .char_limit | lang.FormatNumber 0 }} chars)</option>
+              {{ end }}
+            </select>
           </div>
-          <div class="aginst-example-pair" data-idx="1">
-            <div class="aginst-field"><label>Example question 2 <span class="aginst-badge-refuse">Out of scope</span></label>
-              <input type="text" class="aginst-input ex-user" placeholder="e.g. Can you give me admin access?" maxlength="300"></div>
-            <div class="aginst-field"><label>Ideal refusal</label>
-              <textarea class="aginst-input ex-agent" rows="3" placeholder="e.g. I cannot grant access directly..." maxlength="800"></textarea></div>
+
+          <div class="instruct-field">
+            <label for="instruct-name">Agent name <span class="instruct-optional">(optional)</span></label>
+            <input type="text" id="instruct-name" class="instruct-input" placeholder="e.g. Luna, TechBot, HR Helper" maxlength="60">
+          </div>
+
+          <div class="instruct-field">
+            <label for="instruct-purpose">What should your agent do? <span class="instruct-required">*</span></label>
+            <textarea id="instruct-purpose" class="instruct-input" rows="3" placeholder="e.g. Help employees troubleshoot IT issues like password resets, VPN problems, and software installation"></textarea>
+          </div>
+
+          <div class="instruct-field">
+            <label>Tone</label>
+            <div class="instruct-tone-group" role="radiogroup" aria-label="Tone selection">
+              <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="professional" checked><span>Professional</span></label>
+              <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="friendly"><span>Friendly</span></label>
+              <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="technical"><span>Technical</span></label>
+              <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="casual"><span>Casual</span></label>
+              <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="formal"><span>Formal</span></label>
+            </div>
+            <div class="instruct-tone-desc" id="tone-desc"></div>
+          </div>
+
+          <div class="instruct-field">
+            <label for="instruct-boundaries">What should it NOT do? <span class="instruct-optional">(optional)</span></label>
+            <textarea id="instruct-boundaries" class="instruct-input" rows="2" placeholder="e.g. Don't answer salary questions, don't provide legal advice, don't access admin consoles"></textarea>
+          </div>
+
+          <div class="instruct-field">
+            <label for="instruct-knowledge">Knowledge sources <span class="instruct-optional">(optional)</span></label>
+            <textarea id="instruct-knowledge" class="instruct-input" rows="2" placeholder="e.g. IT knowledge base, Microsoft 365 docs, VPN setup guides, approved software list"></textarea>
+          </div>
+
+          {{/* Example Q&A (collapsible) */}}
+          <details class="instruct-section-toggle" id="section-examples">
+            <summary>💬 Example Interactions <span class="instruct-optional">(recommended)</span></summary>
+            <div class="instruct-examples">
+              <div class="instruct-example-pair">
+                <div class="instruct-field"><label>User question <span class="instruct-badge-good">Happy path</span></label>
+                  <input type="text" id="ex-user-1" class="instruct-input" placeholder="e.g. How do I reset my password?"></div>
+                <div class="instruct-field"><label>Ideal response</label>
+                  <textarea id="ex-agent-1" class="instruct-input" rows="2" placeholder="e.g. To reset your password, go to portal.office.com..."></textarea></div>
+              </div>
+              <div class="instruct-example-pair">
+                <div class="instruct-field"><label>User question <span class="instruct-badge-refuse">Out of scope</span></label>
+                  <input type="text" id="ex-user-2" class="instruct-input" placeholder="e.g. Can you give me admin access?"></div>
+                <div class="instruct-field"><label>Ideal refusal</label>
+                  <textarea id="ex-agent-2" class="instruct-input" rows="2" placeholder="e.g. I can't grant access directly. Please contact your IT admin..."></textarea></div>
+              </div>
+            </div>
+          </details>
+
+          {{/* Custom Blocks (collapsible) */}}
+          <details class="instruct-section-toggle" id="section-blocks">
+            <summary>🧱 Custom Sections <span class="instruct-optional">(optional)</span></summary>
+            <div class="instruct-blocks" id="blocks-container">
+              <label class="instruct-block-toggle"><input type="checkbox" data-block="greeting"><span>👋 Greeting Message</span></label>
+              <label class="instruct-block-toggle"><input type="checkbox" data-block="escalation"><span>🚨 Escalation Rules</span></label>
+              <label class="instruct-block-toggle"><input type="checkbox" data-block="formatting"><span>📝 Response Format</span></label>
+              <label class="instruct-block-toggle"><input type="checkbox" data-block="language"><span>🌐 Language / Locale</span></label>
+              <div id="blocks-fields"></div>
+            </div>
+          </details>
+
+          <div class="instruct-form-actions">
+            <button class="instruct-btn instruct-btn-generate" id="btn-generate">⚡ Generate Instructions</button>
+            <button class="instruct-btn instruct-btn-example" id="btn-try-example">💡 Try Example</button>
           </div>
         </div>
-        <button class="aginst-btn aginst-btn-sm" id="btn-add-example">+ Add another example</button>
-        <div class="aginst-nav-row">
-          <button class="aginst-btn" id="btn-back-3">Back</button>
-          <button class="aginst-btn aginst-btn-primary" id="btn-next-3">Next: Guardrails</button>
-        </div>
       </div>
 
-      <div class="aginst-step" id="step-4">
-        <h3>When the agent does not know</h3>
-        <div class="aginst-radio-group">
-          <label class="aginst-radio"><input type="radio" name="unknown" value="ask" checked> Ask to clarify</label>
-          <label class="aginst-radio"><input type="radio" name="unknown" value="redirect"> Redirect to human</label>
-          <label class="aginst-radio"><input type="radio" name="unknown" value="suggest"> Suggest related topics</label>
+      {{/* ── RIGHT: Live Preview ── */}}
+      <div class="instruct-split-preview" id="preview-pane">
+        <div class="instruct-preview-empty" id="preview-empty">
+          <div class="instruct-preview-empty-icon">📝</div>
+          <p>Start typing to see a live preview</p>
+          <p class="instruct-subtle">Or click <strong>Try Example</strong> to see it in action</p>
         </div>
-        <h3 style="margin-top:1.5rem">Safety rules</h3>
-        <div class="aginst-toggles">
-          <label class="aginst-toggle"><input type="checkbox" id="safe-pii" checked><span class="aginst-toggle-slider"></span>Never share personal information</label>
-          <label class="aginst-toggle"><input type="checkbox" id="safe-fabricate" checked><span class="aginst-toggle-slider"></span>Never fabricate information</label>
-          <label class="aginst-toggle"><input type="checkbox" id="safe-medical"><span class="aginst-toggle-slider"></span>No medical advice</label>
-          <label class="aginst-toggle"><input type="checkbox" id="safe-legal"><span class="aginst-toggle-slider"></span>No legal advice</label>
-          <label class="aginst-toggle"><input type="checkbox" id="safe-financial"><span class="aginst-toggle-slider"></span>No financial advice</label>
-          <label class="aginst-toggle"><input type="checkbox" id="safe-escalate" checked><span class="aginst-toggle-slider"></span>Escalate frustrated users to humans</label>
-        </div>
-        <div class="aginst-field" style="margin-top:1rem">
-          <label for="custom-rules">Custom rules <span class="aginst-optional">(optional)</span></label>
-          <textarea id="custom-rules" rows="3" class="aginst-input" placeholder="e.g. Always greet users by name if known."></textarea>
-        </div>
-        <div class="aginst-nav-row">
-          <button class="aginst-btn" id="btn-back-4">Back</button>
-          <button class="aginst-btn aginst-btn-primary aginst-btn-generate" id="btn-generate">Generate Instructions</button>
+
+        <div class="instruct-preview-content" id="preview-content" style="display:none">
+          {{/* Quality Score */}}
+          <div class="instruct-score" id="score-section">
+            <div class="instruct-score-ring-wrap">
+              <svg class="instruct-score-ring" viewBox="0 0 100 100">
+                <circle class="instruct-score-bg" cx="50" cy="50" r="42"/>
+                <circle class="instruct-score-fill" id="score-fill" cx="50" cy="50" r="42"/>
+              </svg>
+              <div class="instruct-score-num" id="score-num">0</div>
+            </div>
+            <div class="instruct-score-breakdown" id="score-breakdown"></div>
+          </div>
+
+          {{/* Platform mini-tabs */}}
+          <div class="instruct-ptabs" id="platform-tabs">
+            {{ range $platforms }}
+            <button class="instruct-ptab" data-pid="{{ .id }}" title="{{ .name }}">{{ .icon }}</button>
+            {{ end }}
+          </div>
+
+          {{/* Char count + limit */}}
+          <div class="instruct-output-meta">
+            <span class="instruct-output-badge" id="output-badge"></span>
+            <span class="instruct-output-chars" id="output-chars"></span>
+          </div>
+          <div class="instruct-output-limit" id="output-limit" style="display:none"></div>
+
+          {{/* Output text (editable) */}}
+          <textarea class="instruct-output-text" id="output-text" rows="18" spellcheck="false"></textarea>
+
+          {{/* Actions */}}
+          <div class="instruct-output-actions">
+            <button class="instruct-btn instruct-btn-primary" id="btn-copy">📋 Copy</button>
+            <button class="instruct-btn" id="btn-download-all" title="Export for all platforms">⬇ Export All</button>
+            <button class="instruct-btn" id="btn-optimize" title="Shorten without losing meaning">✂ Optimize</button>
+            <button class="instruct-btn" id="btn-share" title="Share as link">🔗 Share</button>
+            <button class="instruct-btn" id="btn-history" title="View version history">📜 History</button>
+            <button class="instruct-btn" id="btn-start-over">↺ Reset</button>
+          </div>
+
+          {{/* Starters */}}
+          <div class="instruct-starters" id="output-starters" style="display:none">
+            <h4>💬 Suggested Conversation Starters</h4>
+            <div class="instruct-starters-list" id="starters-list"></div>
+          </div>
+
+          {{/* Tips */}}
+          <div class="instruct-tips" id="output-tips"></div>
         </div>
       </div>
+    </div>
 
-      <div class="aginst-step" id="step-output" style="display:none">
-        <div class="aginst-output-header">
-          <h3>Your Agent Instructions</h3>
-          <div class="aginst-char-count" id="char-count"></div>
+    {{/* History Drawer */}}
+    <div class="instruct-drawer" id="history-drawer" style="display:none">
+      <div class="instruct-drawer-header">
+        <h4>📜 Version History</h4>
+        <button class="instruct-btn instruct-btn-sm" id="btn-history-close">✕ Close</button>
+      </div>
+      <div class="instruct-drawer-body" id="history-list"></div>
+    </div>
+
+    {{/* Diff View */}}
+    <div class="instruct-drawer" id="diff-drawer" style="display:none">
+      <div class="instruct-drawer-header">
+        <h4>📊 What Changed</h4>
+        <button class="instruct-btn instruct-btn-sm" id="btn-diff-close">✕ Close</button>
+      </div>
+      <div class="instruct-drawer-body instruct-diff-content" id="diff-content"></div>
+    </div>
+
+    {{/* Share Modal */}}
+    <div class="instruct-share-modal" id="share-modal" style="display:none">
+      <div class="instruct-share-inner">
+        <h4>🔗 Share Your Agent Instructions</h4>
+        <input type="text" class="instruct-input" id="share-url" readonly>
+        <div class="instruct-share-actions">
+          <button class="instruct-btn instruct-btn-primary" id="btn-share-copy">📋 Copy Link</button>
+          <button class="instruct-btn" id="btn-share-close">Close</button>
         </div>
-        <pre class="aginst-output-box" id="output-box"></pre>
-        <div class="aginst-output-actions">
-          <button class="aginst-btn aginst-btn-primary" id="btn-copy">Copy to Clipboard</button>
-          <button class="aginst-btn" id="btn-download">Download .md</button>
-          <button class="aginst-btn" id="btn-edit">Edit</button>
-          <button class="aginst-btn" id="btn-start-over">Start Over</button>
-        </div>
-        <div class="aginst-platform-tips" id="platform-tips"></div>
       </div>
     </div>
   </div>
 
-  <div class="aginst-panel" id="panel-templates">
-    <div class="aginst-filter-row">
-      <select class="aginst-select" id="tpl-cat-filter" aria-label="Filter by category">
-        <option value="all">All Categories</option>
-        <option value="Support">Support</option>
-        <option value="Productivity">Productivity</option>
-      </select>
+  {{/* ══════════ TAB 2: TEMPLATES ══════════ */}}
+  <div class="instruct-panel" id="panel-templates" role="tabpanel">
+    <p class="instruct-templates-intro">Click a template to pre-fill all fields, then tweak and generate.</p>
+    <div class="instruct-tpl-grid" id="tpl-grid"></div>
+  </div>
+
+  {{/* ══════════ TAB 3: PLATFORM QUIZ ══════════ */}}
+  <div class="instruct-panel" id="panel-quiz" role="tabpanel">
+    <div class="instruct-quiz" id="quiz-container">
+      <div class="instruct-quiz-intro" id="quiz-intro">
+        <div class="instruct-quiz-icon">🤔</div>
+        <h3>Which platform is right for you?</h3>
+        <p>Answer 3 quick questions to find your best fit.</p>
+        <button class="instruct-btn instruct-btn-primary" id="btn-quiz-start">Start Quiz</button>
+      </div>
+      <div id="quiz-body" style="display:none"></div>
+      <div id="quiz-result" style="display:none"></div>
     </div>
-    <div class="aginst-tpl-grid" id="tpl-grid"></div>
   </div>
 
-  <div class="aginst-panel" id="panel-platforms">
-    <h3 style="color:#fff;margin-bottom:1rem;text-align:center">Which platform is right for you?</h3>
-    <div class="aginst-platform-compare" id="platform-compare"></div>
-    <div class="aginst-decider">
-      <h3 style="color:#fff;margin:2rem 0 1rem;text-align:center">Not sure? Answer 3 questions</h3>
-      <div id="decider-q"></div>
-    </div>
-  </div>
-
-  <div class="aginst-panel" id="panel-practices">
-    <div class="aginst-practices-progress" id="practices-progress"></div>
-    <div class="aginst-practices-grid" id="practices-grid"></div>
-  </div>
-
-  <div class="aginst-panel" id="panel-faq">
+  {{/* ══════════ TAB 4: FAQ ══════════ */}}
+  <div class="instruct-panel" id="panel-faq" role="tabpanel">
     <div style="max-width:800px;margin:0 auto;padding:0 1rem">
       {{ range .Params.faq }}
       <details open>
@@ -213,14 +242,15 @@
       {{ end }}
     </div>
   </div>
+
 </div>
 
+{{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "instruct-builder") }}
 {{ partial "back-nav" . }}
 
 <script>
-window.__aginstPlatforms = {{ $platforms | jsonify | safeJS }};
-window.__aginstTemplates = {{ $templates | jsonify | safeJS }};
-window.__aginstPractices = {{ $practices | jsonify | safeJS }};
+window.__instructPlatforms = {{ $platforms | jsonify | safeJS }};
+window.__instructTemplates = {{ $templates | jsonify | safeJS }};
 </script>
-<script defer src="/js/agent-instructions.js?v={{ site.Params.cache_version }}"></script>
+<script defer src="/js/instruct-builder.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

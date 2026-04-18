@@ -1,0 +1,88 @@
+# ═══════════════════════════════════════════════════════════════
+# AGENT INSTRUCTION BUILDER — Platform Specifications
+# ═══════════════════════════════════════════════════════════════
+
+[[platforms]]
+id = "m365"
+name = "M365 Agent Builder"
+icon = "🤖"
+char_limit = 8000
+format = "markdown"
+doc_url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-instructions"
+description = "Build declarative agents for Microsoft 365 Copilot. Best for org-wide productivity agents grounded in SharePoint, OneDrive, and email."
+tips = [
+  "Use Markdown headers (##) to organise instruction sections",
+  "Use CAPS for hard boundaries: NEVER, ALWAYS, MUST NOT",
+  "Define conversation starters separately in the Agent Builder UI",
+  "Add SharePoint or OneDrive as knowledge sources for grounding",
+  "Keep total instructions under 8,000 characters",
+  "Focus on what the agent SHOULD do — not just what to avoid"
+]
+
+[[platforms]]
+id = "studio"
+name = "Copilot Studio"
+icon = "⚙️"
+char_limit = 8000
+format = "markdown"
+doc_url = "https://learn.microsoft.com/microsoft-copilot-studio/"
+description = "Build enterprise-grade agents with topics, actions, and Power Platform integration. Best for complex workflows and multi-step business processes."
+tips = [
+  "Keep instructions clear and specific — avoid ambiguous language",
+  "Include examples to illustrate expected behaviour",
+  "Give the agent a fallback path for unanswerable questions",
+  "Use topics for branching conversation flows",
+  "Connect Power Automate for external actions",
+  "Instructions are limited to 8,000 characters"
+]
+
+[[platforms]]
+id = "chatgpt"
+name = "ChatGPT GPT Builder"
+icon = "💬"
+char_limit = 8000
+format = "plain"
+doc_url = "https://help.openai.com/en/articles/8554397-creating-a-gpt"
+description = "Create custom GPTs in ChatGPT. Best for consumer-facing bots, personal assistants, and tools shared via the GPT Store."
+tips = [
+  "Shorter instructions often perform better with GPT-4o",
+  "Include 2-3 example interactions to anchor behaviour",
+  "Explicitly state what the GPT should NOT do",
+  "Upload reference docs to the Knowledge section",
+  "Enable only the tools you need (Code, DALL-E, Browse)",
+  "Test edge cases before publishing to the GPT Store"
+]
+
+[[platforms]]
+id = "claude"
+name = "Claude Projects"
+icon = "🧠"
+char_limit = 8000
+format = "xml"
+doc_url = "https://docs.anthropic.com/claude/docs/system-prompts"
+description = "Create persistent project contexts in Claude. Best for focused research, writing, and analysis with large document sets."
+tips = [
+  "Use XML tags (<role>, <rules>) — Claude handles them natively",
+  "Be direct and specific — Claude responds well to clear instructions",
+  "Shorter instructions often outperform longer ones",
+  "Upload project documents for grounded responses",
+  "Specify output format explicitly (bullets, JSON, tables)",
+  "Include chain-of-thought guidance for complex reasoning"
+]
+
+[[platforms]]
+id = "assistants"
+name = "OpenAI Assistants API"
+icon = "🔧"
+char_limit = 32000
+format = "markdown"
+doc_url = "https://platform.openai.com/docs/assistants/overview"
+description = "Build agents via the OpenAI API with function calling, code interpreter, and file search. Best for developer-built integrations and custom apps."
+tips = [
+  "Place the system message first in the thread",
+  "Be explicit about tone, persona, and constraints",
+  "Describe when and how to use available tools/functions",
+  "Trim older thread history if approaching the token limit",
+  "Use structured output (JSON mode) for machine-readable responses",
+  "Token limit depends on model — GPT-4o supports 128K context"
+]
