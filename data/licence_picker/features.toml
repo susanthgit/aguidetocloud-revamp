@@ -1,0 +1,369 @@
+# ============================================
+# M365 Licence Picker — Feature Definitions
+# Each feature = one toggleable tile in the picker
+# Plans reference these IDs in their features arrays
+# ============================================
+# supersedes: if a plan includes feature X that supersedes Y,
+# selecting Y is satisfied by X. Example: entra-p2 supersedes entra-p1.
+# ============================================
+
+# ── PRODUCTIVITY ─────────────────────────────────
+
+[[features]]
+id = "teams"
+name = "Microsoft Teams"
+description = "Chat, meetings, webinars, and collaboration"
+category = "Productivity"
+icon = "💬"
+supersedes = []
+
+[[features]]
+id = "sharepoint"
+name = "SharePoint Online"
+description = "Intranet, document libraries, and team sites"
+category = "Productivity"
+icon = "📁"
+supersedes = []
+
+[[features]]
+id = "onedrive"
+name = "OneDrive for Business"
+description = "Personal cloud storage — 1 TB per user"
+category = "Productivity"
+icon = "☁️"
+supersedes = []
+
+[[features]]
+id = "exchange"
+name = "Exchange Online"
+description = "Business email, calendar, and contacts"
+category = "Productivity"
+icon = "📧"
+supersedes = []
+
+[[features]]
+id = "desktop-apps"
+name = "Desktop Office Apps"
+description = "Word, Excel, PowerPoint, Outlook — installed on PC/Mac"
+category = "Productivity"
+icon = "💻"
+supersedes = ["web-mobile-apps"]
+
+[[features]]
+id = "web-mobile-apps"
+name = "Web & Mobile Apps"
+description = "Office apps in the browser and on iOS/Android"
+category = "Productivity"
+icon = "🌐"
+supersedes = []
+
+[[features]]
+id = "power-bi-pro"
+name = "Power BI Pro"
+description = "Business analytics, interactive dashboards & reports"
+category = "Productivity"
+icon = "📊"
+supersedes = []
+
+[[features]]
+id = "bookings"
+name = "Microsoft Bookings"
+description = "Online appointment scheduling for customers"
+category = "Productivity"
+icon = "📅"
+supersedes = []
+
+# ── SECURITY ─────────────────────────────────────
+
+[[features]]
+id = "defender-o365-p1"
+name = "Defender for Office 365 P1"
+description = "Safe Links, Safe Attachments — email & link protection"
+category = "Security"
+icon = "🛡️"
+supersedes = []
+
+[[features]]
+id = "defender-o365-p2"
+name = "Defender for Office 365 P2"
+description = "Threat Explorer, automated investigation, attack simulation"
+category = "Security"
+icon = "🛡️"
+supersedes = ["defender-o365-p1"]
+
+[[features]]
+id = "defender-endpoint-p1"
+name = "Defender for Endpoint P1"
+description = "Next-gen antivirus, attack surface reduction, device control"
+category = "Security"
+icon = "🔒"
+supersedes = []
+
+[[features]]
+id = "defender-endpoint-p2"
+name = "Defender for Endpoint P2"
+description = "EDR, advanced hunting, threat analytics, auto-investigation"
+category = "Security"
+icon = "🔒"
+supersedes = ["defender-endpoint-p1"]
+
+[[features]]
+id = "defender-identity"
+name = "Defender for Identity"
+description = "On-premises Active Directory threat monitoring & detection"
+category = "Security"
+icon = "🕵️"
+supersedes = []
+
+[[features]]
+id = "defender-cloud-apps"
+name = "Defender for Cloud Apps"
+description = "CASB — shadow IT discovery, app governance, session control"
+category = "Security"
+icon = "☁️"
+supersedes = []
+
+# ── IDENTITY & ACCESS ────────────────────────────
+
+[[features]]
+id = "entra-p1"
+name = "Conditional Access & MFA"
+description = "Policy-based access control, MFA enforcement, SSPR, group-based licensing"
+category = "Identity"
+icon = "🔐"
+supersedes = []
+
+[[features]]
+id = "entra-p2"
+name = "PIM & Identity Protection"
+description = "Privileged Identity Management, risk-based sign-in, access reviews"
+category = "Identity"
+icon = "👤"
+supersedes = ["entra-p1"]
+
+[[features]]
+id = "entra-governance"
+name = "Identity Governance"
+description = "Entitlement management, lifecycle workflows, access certifications"
+category = "Identity"
+icon = "⚙️"
+supersedes = ["entra-p2", "entra-p1"]
+
+# ── COMPLIANCE ───────────────────────────────────
+
+[[features]]
+id = "dlp"
+name = "Data Loss Prevention"
+description = "Prevent sensitive data from leaving your organisation"
+category = "Compliance"
+icon = "🚫"
+supersedes = []
+
+[[features]]
+id = "information-protection"
+name = "Sensitivity Labels"
+description = "Classify and protect documents with sensitivity labels"
+category = "Compliance"
+icon = "🏷️"
+supersedes = []
+
+[[features]]
+id = "ediscovery-standard"
+name = "eDiscovery Standard"
+description = "Content search, legal hold, and basic case management"
+category = "Compliance"
+icon = "🔍"
+supersedes = []
+
+[[features]]
+id = "ediscovery-premium"
+name = "eDiscovery Premium"
+description = "Advanced case management, custodian management, review sets"
+category = "Compliance"
+icon = "🔍"
+supersedes = ["ediscovery-standard"]
+
+[[features]]
+id = "insider-risk"
+name = "Insider Risk Management"
+description = "Detect and act on risky user behaviour inside your org"
+category = "Compliance"
+icon = "⚠️"
+supersedes = []
+
+[[features]]
+id = "audit-premium"
+name = "Audit Premium"
+description = "Long-term audit log retention (up to 10 years), crucial events"
+category = "Compliance"
+icon = "📋"
+supersedes = []
+
+[[features]]
+id = "communication-compliance"
+name = "Communication Compliance"
+description = "Monitor Teams, email, and Copilot interactions for policy violations"
+category = "Compliance"
+icon = "💬"
+supersedes = []
+
+# ── DEVICE MANAGEMENT ────────────────────────────
+
+[[features]]
+id = "intune-p1"
+name = "Intune (MDM/MAM)"
+description = "Mobile device management, app protection policies"
+category = "Device"
+icon = "📱"
+supersedes = []
+
+[[features]]
+id = "intune-p2"
+name = "Intune Advanced"
+description = "Remote Help, Endpoint Privilege Management, advanced analytics"
+category = "Device"
+icon = "📱"
+supersedes = ["intune-p1"]
+
+[[features]]
+id = "autopilot"
+name = "Windows Autopilot"
+description = "Zero-touch device deployment and provisioning"
+category = "Device"
+icon = "🚀"
+supersedes = []
+
+[[features]]
+id = "windows-enterprise"
+name = "Windows Enterprise"
+description = "Windows 10/11 Enterprise E3 upgrade rights"
+category = "Device"
+icon = "🪟"
+supersedes = []
+
+# ── AI ───────────────────────────────────────────
+
+[[features]]
+id = "m365-copilot"
+name = "Microsoft 365 Copilot"
+description = "AI assistant across Word, Excel, PowerPoint, Outlook, Teams"
+category = "AI"
+icon = "🤖"
+supersedes = []
+
+[[features]]
+id = "copilot-studio"
+name = "Copilot Studio"
+description = "Build and deploy custom AI copilots and agents"
+category = "AI"
+icon = "🏗️"
+supersedes = []
+
+# ── VOICE ────────────────────────────────────────
+
+[[features]]
+id = "teams-phone"
+name = "Teams Phone System"
+description = "PSTN calling, call queues, auto attendants"
+category = "Voice"
+icon = "📞"
+supersedes = []
+
+[[features]]
+id = "audio-conferencing"
+name = "Audio Conferencing"
+description = "Dial-in numbers for Teams meetings"
+category = "Voice"
+icon = "🎧"
+supersedes = []
+
+[[features]]
+id = "calling-plan"
+name = "Calling Plan"
+description = "Domestic PSTN calling minutes included"
+category = "Voice"
+icon = "📱"
+supersedes = []
+
+# ── Category display order ───────────────────────
+
+[[categories]]
+id = "Productivity"
+label = "Productivity"
+icon = "💼"
+order = 1
+
+[[categories]]
+id = "Security"
+label = "Security"
+icon = "🛡️"
+order = 2
+
+[[categories]]
+id = "Identity"
+label = "Identity & Access"
+icon = "🔐"
+order = 3
+
+[[categories]]
+id = "Compliance"
+label = "Compliance"
+icon = "📋"
+order = 4
+
+[[categories]]
+id = "Device"
+label = "Device Management"
+icon = "📱"
+order = 5
+
+[[categories]]
+id = "AI"
+label = "AI & Copilot"
+icon = "🤖"
+order = 6
+
+[[categories]]
+id = "Voice"
+label = "Voice & Calling"
+icon = "📞"
+order = 7
+
+# ── Popular quick-select combos ──────────────────
+
+[[combos]]
+id = "basic-office"
+name = "Basic Office"
+description = "Email, Teams, and file storage"
+features = ["teams", "sharepoint", "onedrive", "exchange", "web-mobile-apps"]
+
+[[combos]]
+id = "e3-essentials"
+name = "E3 Essentials"
+description = "Desktop apps + basic security"
+features = ["teams", "sharepoint", "onedrive", "exchange", "desktop-apps", "entra-p1", "intune-p1", "defender-endpoint-p1"]
+
+[[combos]]
+id = "full-security"
+name = "Full Security"
+description = "All Defender + Identity + Compliance"
+features = ["defender-o365-p2", "defender-endpoint-p2", "defender-identity", "defender-cloud-apps", "entra-p2", "insider-risk", "dlp"]
+
+[[combos]]
+id = "copilot-ready"
+name = "Copilot Ready"
+description = "Desktop apps + Copilot"
+features = ["teams", "sharepoint", "onedrive", "exchange", "desktop-apps", "m365-copilot"]
+
+[[combos]]
+id = "everything"
+name = "Everything"
+description = "Every feature — the full M365 E7 experience"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange", "desktop-apps",
+  "entra-p2", "intune-p2", "defender-endpoint-p2", "defender-o365-p2",
+  "defender-identity", "defender-cloud-apps", "dlp", "information-protection",
+  "ediscovery-premium", "insider-risk", "audit-premium",
+  "power-bi-pro", "teams-phone", "audio-conferencing",
+  "m365-copilot", "windows-enterprise", "autopilot"
+]

@@ -1,0 +1,177 @@
+# ============================================
+# M365 Licence Picker — Add-on Definitions
+# Per-user monthly prices in USD (list price)
+# Last verified: April 2026
+# ============================================
+# requires_base: plan IDs that can use this add-on
+# already_in: plan IDs that already include this feature (don't buy separately)
+# provides: feature IDs this add-on unlocks
+# ============================================
+
+[[addons]]
+id = "copilot-addon"
+name = "Microsoft 365 Copilot"
+price_usd = 30
+price_aud = 44
+price_nzd = 48
+price_gbp = 24
+price_eur = 28.80
+provides = ["m365-copilot"]
+requires_base = ["bs", "bp", "m365-e3", "m365-e5"]
+already_in = ["m365-e7"]
+description = "AI assistant across all M365 apps — Word, Excel, PPT, Outlook, Teams"
+note = "Not available for Business Basic, O365-only, or Frontline plans"
+
+[[addons]]
+id = "entra-p2-addon"
+name = "Entra ID P2"
+price_usd = 6
+price_aud = 8.80
+price_nzd = 9.60
+price_gbp = 4.80
+price_eur = 5.80
+provides = ["entra-p2"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "o365-e5", "m365-e3", "f1", "f3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "PIM, Identity Protection, risk-based Conditional Access, access reviews"
+note = ""
+
+[[addons]]
+id = "intune-p2-addon"
+name = "Intune Plan 2"
+price_usd = 4
+price_aud = 5.80
+price_nzd = 6.40
+price_gbp = 3.20
+price_eur = 3.80
+provides = ["intune-p2"]
+requires_base = ["bp", "m365-e3", "m365-e5", "f3"]
+already_in = ["m365-e7"]
+description = "Remote Help, Endpoint Privilege Management, advanced analytics"
+note = "Requires Intune Plan 1 (included in base plan)"
+
+[[addons]]
+id = "teams-phone-addon"
+name = "Teams Phone Standard"
+price_usd = 8
+price_aud = 11.60
+price_nzd = 12.80
+price_gbp = 6.40
+price_eur = 7.70
+provides = ["teams-phone"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "m365-e3", "f1", "f3"]
+already_in = ["o365-e5", "m365-e5", "m365-e7"]
+description = "PSTN calling, call queues, auto attendants, voicemail"
+note = "Requires a plan that includes Microsoft Teams"
+
+[[addons]]
+id = "audio-conf-addon"
+name = "Audio Conferencing"
+price_usd = 4
+price_aud = 5.80
+price_nzd = 6.40
+price_gbp = 3.20
+price_eur = 3.80
+provides = ["audio-conferencing"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "m365-e3", "f1", "f3"]
+already_in = ["o365-e5", "m365-e5", "m365-e7"]
+description = "Dial-in phone numbers for Teams meetings"
+note = ""
+
+[[addons]]
+id = "calling-plan-addon"
+name = "Domestic Calling Plan"
+price_usd = 12
+price_aud = 17.50
+price_nzd = 19.20
+price_gbp = 9.60
+price_eur = 11.50
+provides = ["calling-plan"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "o365-e5", "m365-e3", "m365-e5", "m365-e7", "f1", "f3"]
+already_in = []
+description = "Domestic PSTN calling minutes (varies by country)"
+note = "Requires Teams Phone System — always an add-on, never bundled"
+
+[[addons]]
+id = "defender-endpoint-p2-addon"
+name = "Defender for Endpoint P2"
+price_usd = 5.20
+price_aud = 7.60
+price_nzd = 8.30
+price_gbp = 4.20
+price_eur = 5
+provides = ["defender-endpoint-p2"]
+requires_base = ["bp", "m365-e3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "EDR, advanced hunting, threat analytics, automated investigation"
+note = "Requires base plan with Defender for Endpoint P1"
+
+[[addons]]
+id = "defender-o365-p2-addon"
+name = "Defender for Office 365 P2"
+price_usd = 5
+price_aud = 7.30
+price_nzd = 8
+price_gbp = 4
+price_eur = 4.80
+provides = ["defender-o365-p2"]
+requires_base = ["bp", "o365-e3", "o365-e5", "m365-e3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "Threat Explorer, attack simulation, automated investigation"
+note = ""
+
+[[addons]]
+id = "defender-identity-addon"
+name = "Defender for Identity"
+price_usd = 5.50
+price_aud = 8
+price_nzd = 8.80
+price_gbp = 4.40
+price_eur = 5.30
+provides = ["defender-identity"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "o365-e5", "m365-e3", "f1", "f3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "Monitor on-premises Active Directory for advanced threats"
+note = ""
+
+[[addons]]
+id = "defender-cloud-apps-addon"
+name = "Defender for Cloud Apps"
+price_usd = 3.50
+price_aud = 5.10
+price_nzd = 5.60
+price_gbp = 2.80
+price_eur = 3.40
+provides = ["defender-cloud-apps"]
+requires_base = ["bb", "bs", "bp", "o365-e1", "o365-e3", "o365-e5", "m365-e3", "f1", "f3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "CASB — discover shadow IT, control app access, protect data"
+note = ""
+
+[[addons]]
+id = "purview-suite-addon"
+name = "Purview Compliance Suite"
+price_usd = 12
+price_aud = 17.50
+price_nzd = 19.20
+price_gbp = 9.60
+price_eur = 11.50
+provides = ["insider-risk", "audit-premium", "communication-compliance", "ediscovery-premium"]
+requires_base = ["m365-e3"]
+already_in = ["m365-e5", "m365-e7"]
+description = "Advanced compliance: Insider Risk, Audit Premium, eDiscovery Premium, Communication Compliance"
+note = "E3 base required; individual compliance add-ons also available"
+
+[[addons]]
+id = "copilot-studio-addon"
+name = "Copilot Studio"
+price_usd = 30
+price_aud = 44
+price_nzd = 48
+price_gbp = 24
+price_eur = 28.80
+provides = ["copilot-studio"]
+requires_base = ["bs", "bp", "m365-e3", "m365-e5"]
+already_in = ["m365-e7"]
+description = "Build and deploy custom AI copilots, agents, and workflows"
+note = "Pricing is per user; tenant-level options also available ($200/tenant)"

@@ -1,0 +1,76 @@
+# ============================================
+# M365 Licence Picker — Common Scenarios
+# Pre-built answers to frequent licensing questions
+# ============================================
+
+[[scenarios]]
+id = "cheapest-copilot"
+title = "Cheapest way to get Copilot"
+icon = "🤖"
+question = "What's the cheapest way to get Microsoft 365 Copilot?"
+answer = "The cheapest path is **Business Standard ($14)** + Copilot add-on ($30) = **$44/user/month**. This gives you desktop Office apps, Teams, email, and full Copilot. For enterprise, **M365 E3 ($39)** + Copilot ($30) = **$69/user/month** also adds security. If you're going all-in, **M365 E7 ($99)** includes Copilot plus everything else — saves money if you'd be buying 3+ add-ons anyway."
+recommended = "Business Standard + Copilot add-on"
+monthly_cost = 44
+
+[[scenarios]]
+id = "e3-vs-e5"
+title = "E3 vs E5 for 500 users"
+icon = "⚖️"
+question = "Should I get M365 E3 or E5 for 500 knowledge workers?"
+answer = "**E3 ($39)** covers productivity, basic security (Defender P1, Entra P1, Intune P1), and compliance (DLP, eDiscovery Standard). **E5 ($60)** adds advanced security (Defender P2, Entra P2), compliance (Insider Risk, Audit Premium), Power BI Pro, and Teams Phone. The **$21 gap** is worth it if you need 3+ of those E5 features — buying them as add-ons often costs more. For 500 users, E3 = $19,500/mo vs E5 = $30,000/mo. If you only need Entra P2 ($6), E3 + add-on = $22,500/mo — cheaper than E5."
+recommended = "Depends on feature count"
+monthly_cost = 0
+
+[[scenarios]]
+id = "what-is-f3"
+title = "What does F3 actually include?"
+icon = "👷"
+question = "What do I get with Microsoft 365 F3 for frontline workers?"
+answer = "**M365 F3 ($10/user/month)** is designed for shift workers, retail, and field staff. You get: Teams (full), web/mobile Office apps (full editing), SharePoint, OneDrive (2 GB), Exchange (2 GB kiosk), Entra ID P1, Intune P1, and Windows Enterprise. Key limitation: **no desktop Office apps** and **small mailbox/storage**. If workers need desktop apps, consider assigning them a Standard or E3 licence instead."
+recommended = "M365 F3"
+monthly_cost = 10
+
+[[scenarios]]
+id = "conditional-access-plan"
+title = "Do I need E5 for Conditional Access?"
+icon = "🔐"
+question = "Which plan includes Conditional Access?"
+answer = "No, you do **not** need E5 for Conditional Access. It's part of **Entra ID P1**, which is included in **M365 E3 ($39)**, **Business Premium ($22)**, and even **F1 ($3)** and **F3 ($10)**. E5 includes Entra ID **P2** which adds PIM and Identity Protection — only needed for privileged access management and risk-based policies."
+recommended = "M365 E3 or Business Premium"
+monthly_cost = 0
+
+[[scenarios]]
+id = "full-security-stack"
+title = "Cheapest full security stack"
+icon = "🛡️"
+question = "What's the cheapest way to get ALL Defender products + Entra P2?"
+answer = "**M365 E5 ($60)** includes everything: Defender for Endpoint P2, Defender for O365 P2, Defender for Identity, Defender for Cloud Apps, and Entra ID P2. Buying these as add-ons on E3 costs: Endpoint P2 ($5.20) + O365 P2 ($5) + Identity ($5.50) + Cloud Apps ($3.50) + Entra P2 ($6) = **$25.20 in add-ons** → E3 + add-ons = $64.20 — more expensive than E5. **E5 wins** if you need 3+ security features."
+recommended = "M365 E5"
+monthly_cost = 60
+
+[[scenarios]]
+id = "small-business"
+title = "Best plan for 50-user business"
+icon = "🏢"
+question = "What's the best M365 plan for a small business with 50 users?"
+answer = "For most small businesses: **Business Standard ($14)** is the sweet spot. You get desktop Office apps, Teams, email, SharePoint, and OneDrive. If you need security (Intune, Defender, Conditional Access), upgrade to **Business Premium ($22)** — it's the most cost-effective security bundle under 300 seats. For 50 users: Standard = $700/mo, Premium = $1,100/mo. The $400 difference buys you device management, threat protection, and DLP."
+recommended = "Business Standard or Premium"
+monthly_cost = 14
+
+[[scenarios]]
+id = "what-is-e7"
+title = "What's in Microsoft 365 E7?"
+icon = "✨"
+question = "What makes E7 different from E5?"
+answer = "**M365 E7 ($99/user/month)** is Microsoft's new top-tier plan (GA May 2026). It includes **everything in E5** plus: Microsoft 365 Copilot (normally $30 add-on), Copilot Studio, Agent 365, Entra ID Governance, Intune Plan 2, and advanced security features. If you're on E5 + Copilot ($60 + $30 = $90), E7 at $99 gives you $9 more for significantly more features. Best for organisations standardising AI across all users."
+recommended = "M365 E7 (if GA)"
+monthly_cost = 99
+
+[[scenarios]]
+id = "e3-addons-vs-e5"
+title = "E3 + security add-ons vs E5"
+icon = "💰"
+question = "Is it cheaper to buy E3 with add-ons or just get E5?"
+answer = "**Breakpoint: 3 security/compliance add-ons.** E5 costs $21/mo more than E3. Common add-on prices: Entra P2 ($6), Defender Endpoint P2 ($5.20), Defender O365 P2 ($5), Identity ($5.50), Cloud Apps ($3.50). If you need any 3 of these, you're at $15-17 in add-ons — close to E5's gap. If you also want Power BI Pro ($10) or Teams Phone ($8), E5 is definitively cheaper. **Rule of thumb:** 3+ add-ons → go E5."
+recommended = "E5 if 3+ add-ons needed"
+monthly_cost = 0

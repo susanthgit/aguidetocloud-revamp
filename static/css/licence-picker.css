@@ -1,0 +1,1361 @@
+/* ═══════════════════════════════════════════════
+   M365 Licence Picker — CSS
+   Namespace: .licpick-*
+   Accent: #5AA830 (Value Green)
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --lp-accent: #5AA830;
+  --lp-accent-dim: rgba(90, 168, 48, 0.15);
+  --lp-accent-glow: rgba(90, 168, 48, 0.3);
+  --lp-glass: rgba(255,255,255,0.04);
+  --lp-glass-border: rgba(255,255,255,0.08);
+  --lp-glass-hover: rgba(255,255,255,0.08);
+  --lp-text: #e2e8f0;
+  --lp-text-dim: #94a3b8;
+  --lp-surface: #0a0a14;
+  --lp-card: rgba(15,15,30,0.6);
+  --lp-radius: 14px;
+  --lp-radius-sm: 8px;
+}
+
+/* ── Tabs ──────────────────────────────────────── */
+.licpick-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  background: var(--lp-glass);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.licpick-tabs::-webkit-scrollbar { display: none; }
+.licpick-tab {
+  flex: 1 1 0;
+  min-width: max-content;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--lp-text-dim);
+  font: 600 0.85rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.licpick-tab:hover { color: var(--lp-text); background: var(--lp-glass-hover); }
+.licpick-tab.active {
+  background: var(--lp-accent);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--lp-accent-glow);
+}
+.licpick-panel { animation: lpFadeIn 0.3s ease; }
+@keyframes lpFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ── Tab 1: Feature Picker Layout ──────────────── */
+.licpick-picker-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (max-width: 1024px) {
+  .licpick-picker-layout { grid-template-columns: 1fr; }
+  .licpick-results-col { position: static; order: -1; }
+}
+
+/* ── Toolbar ───────────────────────────────────── */
+.licpick-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.licpick-combos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.licpick-combo-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: 999px;
+  background: var(--lp-glass);
+  color: var(--lp-text-dim);
+  font: 500 0.78rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+.licpick-combo-btn:hover {
+  border-color: var(--lp-accent);
+  color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+}
+.licpick-combo-btn.active {
+  background: var(--lp-accent);
+  color: #fff;
+  border-color: var(--lp-accent);
+}
+.licpick-clear-btn:hover { border-color: #ef4444; color: #ef4444; background: rgba(239,68,68,0.1); }
+.licpick-selected-count {
+  font: 600 0.85rem/1.3 inherit;
+  color: var(--lp-text-dim);
+}
+.licpick-selected-count span { color: var(--lp-accent); }
+
+/* ── Category Sections ─────────────────────────── */
+.licpick-category { margin-bottom: 1.5rem; }
+.licpick-cat-title {
+  font: 700 1rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.licpick-cat-icon { font-size: 1.1rem; }
+
+/* ── Feature Grid ──────────────────────────────── */
+.licpick-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.licpick-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--lp-glass);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.licpick-tile:hover {
+  background: var(--lp-glass-hover);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
+.licpick-tile.selected {
+  background: var(--lp-accent-dim);
+  border-color: var(--lp-accent);
+  box-shadow: 0 0 12px var(--lp-accent-glow);
+}
+.licpick-tile-icon { font-size: 1.3rem; flex-shrink: 0; }
+.licpick-tile-info { flex: 1; min-width: 0; }
+.licpick-tile-name {
+  font: 600 0.82rem/1.3 inherit;
+  color: var(--lp-text);
+  display: block;
+}
+.licpick-tile-desc {
+  font: 400 0.7rem/1.3 inherit;
+  color: var(--lp-text-dim);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.licpick-tile-check {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--lp-glass-border);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+  color: transparent;
+}
+.licpick-tile.selected .licpick-tile-check {
+  background: var(--lp-accent);
+  border-color: var(--lp-accent);
+  color: #fff;
+}
+
+/* ── Results Panel ─────────────────────────────── */
+.licpick-results-col {
+  position: sticky;
+  top: 100px;
+}
+.licpick-results-empty, .licpick-results-active {
+  background: var(--lp-card);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+}
+.licpick-results-empty {
+  text-align: center;
+}
+.licpick-results-empty-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+.licpick-results-empty h3 { font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--lp-text); }
+.licpick-results-empty p { color: var(--lp-text-dim); font-size: 0.85rem; margin: 0 0 0.5rem; }
+.licpick-hint { font-size: 0.78rem; color: var(--lp-text-dim); }
+.licpick-inline-combo {
+  background: none;
+  border: none;
+  color: var(--lp-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  font: inherit;
+}
+
+/* ── Recommendation Card ───────────────────────── */
+.licpick-result-card {
+  margin-bottom: 1.5rem;
+}
+.licpick-rec-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--lp-accent);
+  color: #fff;
+  font: 700 0.75rem/1.3 inherit;
+  margin-bottom: 0.75rem;
+}
+#licpick-rec-name {
+  font: 700 1.2rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 0.5rem;
+}
+.licpick-rec-price { display: flex; align-items: baseline; gap: 4px; }
+.licpick-price-big {
+  font: 800 2rem/1 inherit;
+  color: var(--lp-accent);
+}
+.licpick-price-period {
+  font-size: 0.8rem;
+  color: var(--lp-text-dim);
+}
+.licpick-rec-nzd {
+  font-size: 0.8rem;
+  color: var(--lp-text-dim);
+  margin: 4px 0 1rem;
+}
+.licpick-rec-breakdown {
+  font-size: 0.82rem;
+  color: var(--lp-text-dim);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.licpick-rec-breakdown .licpick-bd-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--lp-glass-border);
+}
+.licpick-rec-breakdown .licpick-bd-total {
+  font-weight: 700;
+  color: var(--lp-accent);
+  border-bottom: none;
+  border-top: 2px solid var(--lp-accent);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+.licpick-rec-coverage {
+  font-size: 0.78rem;
+  color: var(--lp-text-dim);
+}
+.licpick-coverage-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+  margin: 6px 0;
+}
+.licpick-coverage-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--lp-accent);
+  transition: width 0.4s ease;
+}
+
+/* ── Alternatives ──────────────────────────────── */
+.licpick-alternatives h4 {
+  font: 600 0.9rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 0.75rem;
+}
+.licpick-alt-card {
+  padding: 12px;
+  background: var(--lp-glass);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.licpick-alt-card:hover {
+  border-color: rgba(255,255,255,0.15);
+}
+.licpick-alt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.licpick-alt-name { font: 600 0.85rem/1.3 inherit; color: var(--lp-text); }
+.licpick-alt-price { font: 700 0.85rem/1.3 inherit; color: var(--lp-accent); }
+.licpick-alt-note { font-size: 0.75rem; color: var(--lp-text-dim); }
+.licpick-alt-overkill {
+  background: rgba(234,179,8,0.1);
+  border-color: rgba(234,179,8,0.3);
+}
+.licpick-alt-overkill .licpick-alt-name::before { content: "⚠️ "; }
+
+/* ── Tips ──────────────────────────────────────── */
+.licpick-tips {
+  margin-top: 1rem;
+  padding: 12px;
+  background: rgba(234,179,8,0.08);
+  border: 1px solid rgba(234,179,8,0.2);
+  border-radius: var(--lp-radius-sm);
+  font-size: 0.8rem;
+  color: #fbbf24;
+  line-height: 1.5;
+}
+.licpick-tips:empty { display: none; }
+
+/* ── Actions ───────────────────────────────────── */
+.licpick-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.licpick-action-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 600 0.82rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.licpick-action-btn:hover {
+  border-color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+}
+
+/* ══════════════════════════════════════════════════
+   TAB 2 — PLAN COMPARISON
+   ══════════════════════════════════════════════════ */
+.licpick-compare-controls {
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+}
+.licpick-compare-controls label {
+  font-size: 0.85rem;
+  color: var(--lp-text-dim);
+  margin-right: 8px;
+}
+.licpick-compare-controls select {
+  padding: 8px 12px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.85rem/1.3 inherit;
+  backdrop-filter: blur(8px);
+}
+.licpick-compare-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: auto;
+}
+.licpick-compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+}
+.licpick-compare-table th,
+.licpick-compare-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--lp-glass-border);
+  text-align: center;
+  white-space: nowrap;
+}
+.licpick-compare-table th {
+  position: sticky;
+  top: 0;
+  background: var(--lp-surface);
+  color: var(--lp-text);
+  font-weight: 700;
+  z-index: 2;
+}
+.licpick-compare-table th:first-child,
+.licpick-compare-table td:first-child {
+  text-align: left;
+  position: sticky;
+  left: 0;
+  background: var(--lp-surface);
+  z-index: 3;
+  min-width: 180px;
+}
+.licpick-compare-table td:first-child { color: var(--lp-text); font-weight: 500; }
+.licpick-compare-table .lp-yes { color: var(--lp-accent); font-weight: 700; }
+.licpick-compare-table .lp-no { color: rgba(255,255,255,0.15); }
+.licpick-compare-table .lp-price-row td {
+  font-weight: 700;
+  color: var(--lp-accent);
+  border-top: 2px solid var(--lp-accent);
+}
+.licpick-compare-table .lp-cat-row td {
+  background: var(--lp-accent-dim);
+  font-weight: 700;
+  color: var(--lp-accent);
+  text-align: left;
+}
+.licpick-plan-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.licpick-badge-popular { background: var(--lp-accent); color: #fff; }
+.licpick-badge-new { background: #6366f1; color: #fff; }
+.licpick-badge-security { background: #ef4444; color: #fff; }
+
+/* ══════════════════════════════════════════════════
+   TAB 3 — ADD-ON CALCULATOR
+   ══════════════════════════════════════════════════ */
+.licpick-addon-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 320px;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .licpick-addon-layout { grid-template-columns: 1fr; }
+}
+.licpick-addon-layout h3 {
+  font: 700 1rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 1rem;
+}
+.licpick-base-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+.licpick-base-btn {
+  padding: 12px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.licpick-base-btn:hover { border-color: rgba(255,255,255,0.15); }
+.licpick-base-btn.selected {
+  border-color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+}
+.licpick-base-btn-name { font: 600 0.82rem/1.3 inherit; display: block; }
+.licpick-base-btn-price { font: 700 0.85rem/1.3 inherit; color: var(--lp-accent); display: block; margin-top: 4px; }
+
+.licpick-addon-card {
+  padding: 14px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+.licpick-addon-card.disabled { opacity: 0.4; pointer-events: none; }
+.licpick-addon-card.conflict {
+  border-color: rgba(234,179,8,0.3);
+  background: rgba(234,179,8,0.05);
+}
+.licpick-addon-card.selected {
+  border-color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+}
+.licpick-addon-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.licpick-addon-name { font: 600 0.85rem/1.3 inherit; color: var(--lp-text); }
+.licpick-addon-price { font: 700 0.85rem/1.3 inherit; color: var(--lp-accent); }
+.licpick-addon-desc { font-size: 0.78rem; color: var(--lp-text-dim); margin: 0; }
+.licpick-addon-conflict-msg {
+  font-size: 0.75rem;
+  color: #fbbf24;
+  margin-top: 6px;
+}
+
+/* ── Stack Summary ─────────────────────────────── */
+.licpick-addon-total {
+  position: sticky;
+  top: 100px;
+  background: var(--lp-card);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+.licpick-stack-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  color: var(--lp-text);
+  border-bottom: 1px solid var(--lp-glass-border);
+}
+.licpick-stack-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0;
+  margin-top: 6px;
+  border-top: 2px solid var(--lp-accent);
+  font: 700 1rem/1.3 inherit;
+  color: var(--lp-accent);
+}
+.licpick-stack-annual {
+  font-size: 0.8rem;
+  color: var(--lp-text-dim);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════════════
+   TAB 4 — SCENARIOS
+   ══════════════════════════════════════════════════ */
+.licpick-scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.licpick-scenario-card {
+  padding: 1.5rem;
+  background: var(--lp-card);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  backdrop-filter: blur(12px);
+}
+.licpick-scenario-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.licpick-scenario-title {
+  font: 700 1rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 0.5rem;
+}
+.licpick-scenario-q {
+  font: 500 0.85rem/1.4 inherit;
+  color: var(--lp-accent);
+  margin: 0 0 0.75rem;
+}
+.licpick-scenario-answer {
+  font-size: 0.82rem;
+  color: var(--lp-text-dim);
+  line-height: 1.6;
+}
+.licpick-scenario-answer strong { color: var(--lp-text); }
+.licpick-scenario-cost {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--lp-accent-dim);
+  color: var(--lp-accent);
+  font: 700 0.82rem/1.3 inherit;
+}
+.licpick-scenario-rec {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--lp-text-dim);
+}
+
+/* ══════════════════════════════════════════════════
+   TAB 5 — FAQ
+   ══════════════════════════════════════════════════ */
+.licpick-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.licpick-faq-item {
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--lp-card);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  backdrop-filter: blur(12px);
+}
+.licpick-faq-item summary {
+  font: 600 0.95rem/1.4 inherit;
+  color: var(--lp-text);
+  cursor: pointer;
+  list-style: none;
+}
+.licpick-faq-item summary::before {
+  content: "▸ ";
+  color: var(--lp-accent);
+  transition: transform 0.2s;
+}
+.licpick-faq-item[open] summary::before { content: "▾ "; }
+.licpick-faq-item p {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--lp-text-dim);
+  line-height: 1.6;
+}
+
+/* ── Related Tools ─────────────────────────────── */
+.licpick-related {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.licpick-related h3 {
+  font: 700 1rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0 0 1rem;
+}
+.licpick-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.licpick-related-card {
+  display: block;
+  padding: 1.25rem;
+  background: var(--lp-glass);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.licpick-related-card:hover {
+  border-color: var(--lp-accent);
+  transform: translateY(-2px);
+}
+.licpick-related-icon { font-size: 1.5rem; }
+.licpick-related-card strong {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+  color: var(--lp-text);
+  font-size: 0.9rem;
+}
+.licpick-related-card p {
+  margin: 0;
+  color: var(--lp-text-dim);
+  font-size: 0.8rem;
+}
+
+/* ── Search Box ─────────────────────────────────── */
+.licpick-search-row { width: 100%; margin-bottom: 8px; }
+.licpick-search {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.85rem/1.3 inherit;
+  backdrop-filter: blur(8px);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.licpick-search:focus { border-color: var(--lp-accent); }
+.licpick-search::placeholder { color: var(--lp-text-dim); }
+
+/* ── Filters Row ───────────────────────────────── */
+.licpick-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+}
+.licpick-seat-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.licpick-seat-input label {
+  font: 500 0.82rem/1.3 inherit;
+  color: var(--lp-text-dim);
+}
+.licpick-seat-input input {
+  width: 90px;
+  padding: 6px 10px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.82rem/1.3 inherit;
+}
+.licpick-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 0.78rem/1.3 inherit;
+  color: var(--lp-text-dim);
+  cursor: pointer;
+}
+.licpick-toggle-label input[type="checkbox"] {
+  accent-color: var(--lp-accent);
+}
+
+/* ── Dependency Badge ──────────────────────────── */
+.licpick-tile-dep {
+  display: block;
+  font: 500 0.65rem/1.3 inherit;
+  color: #fbbf24;
+  margin-top: 2px;
+}
+
+/* ── Toast ─────────────────────────────────────── */
+.licpick-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--lp-accent);
+  color: #fff;
+  font: 600 0.82rem/1.3 inherit;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.licpick-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — OUTCOME SHORTCUTS
+   ══════════════════════════════════════════════════ */
+.licpick-outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.licpick-outcome-btn {
+  padding: 10px 18px;
+  border: 1px solid var(--lp-accent-glow);
+  border-radius: 999px;
+  background: var(--lp-accent-dim);
+  color: var(--lp-text);
+  font: 600 0.85rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+.licpick-outcome-btn:hover {
+  background: var(--lp-accent);
+  color: #fff;
+  border-color: var(--lp-accent);
+  box-shadow: 0 0 16px var(--lp-accent-glow);
+  transform: translateY(-1px);
+}
+.licpick-outcome-btn:active {
+  transform: scale(0.97);
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — PERSONA DROPDOWN
+   ══════════════════════════════════════════════════ */
+.licpick-persona-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid var(--lp-glass-border);
+}
+.licpick-persona-row label {
+  font: 600 0.85rem/1.3 inherit;
+  color: var(--lp-text-dim);
+  white-space: nowrap;
+}
+.licpick-persona-row select {
+  padding: 8px 14px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.85rem/1.3 inherit;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.licpick-tile.licpick-persona-highlight {
+  box-shadow: 0 0 0 2px var(--lp-accent-glow), 0 0 20px rgba(90,168,48,0.15);
+  border-color: rgba(90,168,48,0.4);
+}
+.licpick-tile.licpick-persona-highlight::after {
+  content: '★';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: var(--lp-accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.licpick-tile { position: relative; }
+
+/* ══════════════════════════════════════════════════
+   V3 — FEATURE TOOLTIPS
+   ══════════════════════════════════════════════════ */
+.licpick-tile .licpick-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  padding: 14px;
+  background: rgba(15,15,30,0.95);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  font-size: 0.78rem;
+  color: var(--lp-text-dim);
+  line-height: 1.5;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.licpick-tile .licpick-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(15,15,30,0.95);
+  border-left: 1px solid var(--lp-glass-border);
+  border-top: 1px solid var(--lp-glass-border);
+}
+.licpick-tile:hover .licpick-tooltip,
+.licpick-tile:focus .licpick-tooltip {
+  display: block;
+}
+.licpick-tooltip-name {
+  font-weight: 700;
+  color: var(--lp-text);
+  margin-bottom: 4px;
+  display: block;
+}
+.licpick-tooltip-plans {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--lp-glass-border);
+  font-size: 0.72rem;
+}
+.licpick-tooltip-addon {
+  color: var(--lp-accent);
+  font-size: 0.72rem;
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — COMPARISON TABLE HIGHLIGHTS
+   ══════════════════════════════════════════════════ */
+.licpick-compare-table tr.licpick-row-highlight td {
+  background: rgba(90,168,48,0.08);
+}
+.licpick-compare-table tr.licpick-row-highlight td:first-child {
+  background: rgba(90,168,48,0.12);
+  border-left: 3px solid var(--lp-accent);
+}
+.licpick-compare-table th.licpick-col-highlight,
+.licpick-compare-table td.licpick-col-highlight {
+  background: rgba(90,168,48,0.06) !important;
+  border-left: 1px solid rgba(90,168,48,0.15);
+  border-right: 1px solid rgba(90,168,48,0.15);
+}
+.licpick-compare-table th.licpick-col-highlight {
+  border-top: 3px solid var(--lp-accent);
+}
+.licpick-diff-toggle {
+  margin-left: 16px;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — SCENARIO TRY-THIS BUTTON
+   ══════════════════════════════════════════════════ */
+.licpick-scenario-try {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 8px 18px;
+  border: 1px solid var(--lp-accent);
+  border-radius: 999px;
+  background: var(--lp-accent-dim);
+  color: var(--lp-accent);
+  font: 600 0.82rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.licpick-scenario-try:hover {
+  background: var(--lp-accent);
+  color: #fff;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — ANNUAL COST DISPLAY
+   ══════════════════════════════════════════════════ */
+.licpick-rec-annual {
+  font-size: 0.82rem;
+  color: var(--lp-text-dim);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding: 10px 12px;
+  background: var(--lp-glass);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+}
+.licpick-rec-annual:empty { display: none; }
+.licpick-rec-annual .licpick-annual-team {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--lp-glass-border);
+  color: var(--lp-accent);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — ADD-ON GUARDRAILS
+   ══════════════════════════════════════════════════ */
+.licpick-addon-card.conflict {
+  cursor: default;
+}
+.licpick-addon-reason {
+  font-size: 0.72rem;
+  color: #f87171;
+  margin-top: 4px;
+  font-style: italic;
+}
+.licpick-addon-card.selected .licpick-addon-unlocks {
+  display: block;
+}
+.licpick-addon-unlocks {
+  display: none;
+  font-size: 0.72rem;
+  color: var(--lp-accent);
+  margin-top: 6px;
+}
+.licpick-stack-features {
+  font-size: 0.75rem;
+  color: var(--lp-text-dim);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--lp-glass-border);
+  line-height: 1.5;
+}
+.licpick-stack-features strong {
+  color: var(--lp-text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — EMAIL MODAL
+   ══════════════════════════════════════════════════ */
+.licpick-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: lpFadeIn 0.2s ease;
+}
+.licpick-modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  background: rgba(15,15,30,0.97);
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+.licpick-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.licpick-modal-header h3 {
+  margin: 0;
+  font: 700 1.1rem/1.3 inherit;
+  color: var(--lp-text);
+}
+.licpick-modal-close {
+  background: none;
+  border: none;
+  color: var(--lp-text-dim);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.licpick-modal-close:hover { color: var(--lp-text); background: var(--lp-glass-hover); }
+.licpick-modal-body {
+  width: 100%;
+  min-height: 300px;
+  padding: 12px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 400 0.82rem/1.5 'Segoe UI', system-ui, sans-serif;
+  resize: vertical;
+}
+.licpick-modal-body:focus { border-color: var(--lp-accent); outline: none; }
+.licpick-modal-actions {
+  display: flex;
+  gap: 8px;
+}
+.licpick-email-mailto {
+  text-decoration: none;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════
+   V3 — TILE SELECTION ANIMATION
+   ══════════════════════════════════════════════════ */
+@keyframes lpTilePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+.licpick-tile.licpick-pulse {
+  animation: lpTilePulse 0.25s ease;
+}
+
+/* ── Results slide-in ─────────────────────── */
+@keyframes lpSlideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: none; }
+}
+.licpick-results-active.licpick-slide-in {
+  animation: lpSlideIn 0.35s ease;
+}
+
+/* ── Count up animation ──────────────────── */
+.licpick-selected-count span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.licpick-selected-count span.licpick-count-bump {
+  transform: scale(1.3);
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 768px) {
+  .licpick-feature-grid { grid-template-columns: 1fr 1fr; }
+  .licpick-scenarios-grid { grid-template-columns: 1fr; }
+  .licpick-tile-desc { display: none; }
+  .licpick-outcomes { gap: 6px; }
+  .licpick-outcome-btn { padding: 8px 12px; font-size: 0.78rem; }
+  .licpick-tile .licpick-tooltip { width: 220px; left: 0; transform: none; }
+  .licpick-modal { padding: 1rem; }
+}
+@media (max-width: 480px) {
+  .licpick-feature-grid { grid-template-columns: 1fr; }
+  .licpick-tab { padding: 8px 12px; font-size: 0.78rem; }
+}
+
+/* ══════════════════════════════════════════════════
+   V4 — CURRENCY DROPDOWN
+   ══════════════════════════════════════════════════ */
+.licpick-currency-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.licpick-currency-select label {
+  font: 500 0.82rem/1.3 inherit;
+  color: var(--lp-text-dim);
+}
+.licpick-currency-select select {
+  padding: 6px 10px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.82rem/1.3 inherit;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.licpick-currency-select select:focus {
+  border-color: var(--lp-accent);
+  outline: none;
+}
+
+/* ══════════════════════════════════════════════════
+   V4 — SKU BADGE
+   ══════════════════════════════════════════════════ */
+.licpick-sku {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--lp-glass-border);
+  color: var(--lp-text-dim);
+  font: 500 0.65rem/1.3 monospace;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* ══════════════════════════════════════════════════
+   V4 — COST CHART
+   ══════════════════════════════════════════════════ */
+.licpick-chart { margin-top: 1.5rem; }
+.licpick-chart-title {
+  font: 600 0.85rem/1.3 inherit;
+  color: var(--lp-text);
+  margin-bottom: 0.75rem;
+}
+.licpick-chart-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.licpick-chart-label {
+  min-width: 100px;
+  font: 500 0.75rem/1.3 inherit;
+  color: var(--lp-text-dim);
+  text-align: right;
+}
+.licpick-chart-bar-wrap {
+  flex: 1;
+  height: 24px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.licpick-chart-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+  min-width: 2px;
+}
+.licpick-chart-bar.cheapest { background: var(--lp-accent); }
+.licpick-chart-bar.other { background: rgba(255,255,255,0.12); }
+.licpick-chart-price {
+  min-width: 70px;
+  font: 600 0.75rem/1.3 inherit;
+  color: var(--lp-text);
+}
+
+/* ══════════════════════════════════════════════════
+   V4 — MULTI-SEGMENT PLANNING
+   ══════════════════════════════════════════════════ */
+.licpick-segments { margin-bottom: 1.5rem; }
+.licpick-segments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.licpick-segments-title {
+  font: 700 0.95rem/1.3 inherit;
+  color: var(--lp-text);
+  margin: 0;
+}
+.licpick-segment-add {
+  padding: 6px 14px;
+  border: 1px dashed var(--lp-glass-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--lp-accent);
+  font: 600 0.78rem/1.3 inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.licpick-segment-add:hover {
+  border-color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+}
+.licpick-segments-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.licpick-segment-card {
+  flex: 1 1 200px;
+  max-width: 300px;
+  padding: 12px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-glass);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.licpick-segment-card.active {
+  border-color: var(--lp-accent);
+  background: var(--lp-accent-dim);
+  box-shadow: 0 0 12px var(--lp-accent-glow);
+}
+.licpick-segment-card:hover { border-color: rgba(255,255,255,0.15); }
+.licpick-segment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.licpick-segment-name {
+  border: none;
+  background: transparent;
+  color: var(--lp-text);
+  font: 600 0.85rem/1.3 inherit;
+  width: 140px;
+  border-bottom: 1px solid var(--lp-glass-border);
+  padding: 2px 0;
+}
+.licpick-segment-name:focus { border-color: var(--lp-accent); outline: none; }
+.licpick-segment-remove {
+  border: none;
+  background: none;
+  color: var(--lp-text-dim);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2px 6px;
+}
+.licpick-segment-remove:hover { color: #ef4444; }
+.licpick-segment-count-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.licpick-segment-count-row label {
+  font: 500 0.78rem/1.3 inherit;
+  color: var(--lp-text-dim);
+}
+.licpick-segment-count {
+  width: 70px;
+  padding: 4px 8px;
+  border: 1px solid var(--lp-glass-border);
+  border-radius: 6px;
+  background: var(--lp-glass);
+  color: var(--lp-text);
+  font: 500 0.78rem/1.3 inherit;
+}
+.licpick-segment-info {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font: 500 0.72rem/1.3 inherit;
+  color: var(--lp-text-dim);
+}
+.licpick-segment-total {
+  margin-top: 6px;
+  font: 700 0.82rem/1.3 inherit;
+  color: var(--lp-accent);
+}
+.licpick-segments-total {
+  margin-top: 12px;
+  padding: 12px;
+  border: 2px solid var(--lp-accent);
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-accent-dim);
+  font: 600 0.9rem/1.3 inherit;
+  color: var(--lp-text);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════
+   V4 — PRINT STYLES
+   ══════════════════════════════════════════════════ */
+@media print {
+  .site-header, .site-footer, .site-nav, .tool-hero-badges,
+  .licpick-tabs, .licpick-features-col, .licpick-related,
+  .licpick-actions, .licpick-results-empty, .licpick-toast,
+  .licpick-modal-overlay, .tool-hero-inner > :not(.tool-hero-title),
+  .licpick-tips, .licpick-chart { display: none !important; }
+
+  .licpick-picker-layout { display: block !important; }
+  .licpick-results-col { position: static !important; width: 100% !important; }
+  .licpick-results-active { display: block !important; }
+
+  body, .licpick-results-active, .licpick-result-card {
+    background: #fff !important;
+    color: #1a1a1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .licpick-rec-badge { background: #22c55e !important; }
+  .licpick-price-big { color: #16a34a !important; }
+  .licpick-bd-line { border-color: #e5e7eb !important; color: #374151 !important; }
+  .licpick-bd-total { border-color: #22c55e !important; color: #16a34a !important; }
+  .licpick-rec-annual, .licpick-rec-nzd { color: #6b7280 !important; }
+  .licpick-rec-coverage { color: #374151 !important; }
+
+  .licpick-results-active::before {
+    content: "M365 Licence Recommendation — aguidetocloud.com/licence-picker/";
+    display: block;
+    font: 600 0.9rem/1.5 inherit;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .licpick-alt-card {
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    color: #374151 !important;
+  }
+  .licpick-alt-name { color: #1a1a1a !important; }
+  .licpick-alt-price { color: #16a34a !important; }
+  .licpick-alt-note { color: #6b7280 !important; }
+}

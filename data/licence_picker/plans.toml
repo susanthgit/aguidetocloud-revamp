@@ -1,0 +1,293 @@
+# ============================================
+# M365 Licence Picker — Plans Database
+# Prices in USD per user/month (list price)
+# Last verified: April 2026
+# ============================================
+# NOTE: Feature IDs must match features.toml IDs exactly.
+# Plans are the source of truth for feature inclusion.
+# Quarterly review: check Microsoft pricing pages for updates.
+# ============================================
+
+# ── BUSINESS PLANS (≤300 seats) ──────────────────
+
+[[plans]]
+id = "bb"
+name = "Microsoft 365 Business Basic"
+short = "Business Basic"
+price_usd = 7
+price_aud = 10
+price_nzd = 11.20
+price_gbp = 5.60
+price_eur = 6.70
+sku = "AAD_BASIC"
+category = "Business"
+seat_max = 300
+status = "ga"
+badge = ""
+tagline = "Web & mobile apps, Teams, email"
+description = "Entry-level business plan with web and mobile Office apps, 50 GB Exchange mailbox, Teams, SharePoint, OneDrive (1 TB). No desktop apps."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-basic"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "web-mobile-apps", "bookings"
+]
+
+[[plans]]
+id = "bs"
+name = "Microsoft 365 Business Standard"
+short = "Business Standard"
+price_usd = 14
+price_aud = 20.40
+price_nzd = 22.40
+price_gbp = 11.20
+price_eur = 13.40
+sku = "O365_BUSINESS_PREMIUM"
+category = "Business"
+seat_max = 300
+status = "ga"
+badge = "Popular"
+tagline = "Desktop apps + collaboration"
+description = "Everything in Basic plus full desktop Office apps, webinar hosting, and business app integration. The most popular small business plan."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings"
+]
+
+[[plans]]
+id = "bp"
+name = "Microsoft 365 Business Premium"
+short = "Business Premium"
+price_usd = 22
+price_aud = 32
+price_nzd = 35.20
+price_gbp = 17.60
+price_eur = 21
+sku = "SPB"
+category = "Business"
+seat_max = 300
+status = "ga"
+badge = "Best Value"
+tagline = "Security + device management for SMBs"
+description = "Everything in Standard plus Entra ID P1, Intune P1, Defender for Business (Endpoint P1 + O365 P1), DLP, Information Protection, and Autopilot."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "entra-p1", "intune-p1", "defender-o365-p1",
+  "defender-endpoint-p1", "dlp", "information-protection",
+  "autopilot"
+]
+
+# ── OFFICE 365 PLANS (Enterprise, productivity only) ─────
+
+[[plans]]
+id = "o365-e1"
+name = "Office 365 E1"
+short = "O365 E1"
+price_usd = 10
+price_aud = 14.50
+price_nzd = 16
+price_gbp = 8
+price_eur = 9.60
+sku = "STANDARDPACK"
+category = "Enterprise"
+seat_max = 0
+status = "ga"
+badge = ""
+tagline = "Web apps + email for enterprise"
+description = "Web and mobile Office apps, 50 GB Exchange, Teams, SharePoint, OneDrive (1 TB). No desktop apps, no security suite."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e1"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "web-mobile-apps", "bookings"
+]
+
+[[plans]]
+id = "o365-e3"
+name = "Office 365 E3"
+short = "O365 E3"
+price_usd = 26
+price_aud = 38
+price_nzd = 41.60
+price_gbp = 20.80
+price_eur = 24.90
+sku = "ENTERPRISEPACK"
+category = "Enterprise"
+seat_max = 0
+status = "ga"
+badge = ""
+tagline = "Desktop apps + basic compliance"
+description = "Everything in E1 plus full desktop Office apps, 100 GB mailbox, unlimited OneDrive, basic DLP, and eDiscovery Standard."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e3"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "dlp", "information-protection", "ediscovery-standard"
+]
+
+[[plans]]
+id = "o365-e5"
+name = "Office 365 E5"
+short = "O365 E5"
+price_usd = 41
+price_aud = 60
+price_nzd = 65.60
+price_gbp = 32.80
+price_eur = 39.30
+sku = "ENTERPRISEPREMIUM"
+category = "Enterprise"
+seat_max = 0
+status = "ga"
+badge = ""
+tagline = "Analytics, calling & Power BI"
+description = "Everything in E3 plus Power BI Pro, Teams Phone, Audio Conferencing, Defender for O365 P1, and advanced eDiscovery."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "dlp", "information-protection", "ediscovery-standard",
+  "defender-o365-p1", "power-bi-pro",
+  "teams-phone", "audio-conferencing"
+]
+
+# ── MICROSOFT 365 PLANS (Enterprise, full suite) ─────────
+
+[[plans]]
+id = "m365-e3"
+name = "Microsoft 365 E3"
+short = "M365 E3"
+price_usd = 39
+price_aud = 57
+price_nzd = 62.40
+price_gbp = 31.20
+price_eur = 37.40
+sku = "SPE_E3"
+category = "Enterprise"
+seat_max = 0
+status = "ga"
+badge = "Most Popular"
+tagline = "The enterprise standard"
+description = "Office 365 E3 plus Windows 11 Enterprise, Entra ID P1, Intune P1, Defender for Endpoint P1, Defender for O365 P1. The most popular enterprise plan."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e3"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "entra-p1", "intune-p1",
+  "defender-endpoint-p1", "defender-o365-p1",
+  "dlp", "information-protection", "ediscovery-standard",
+  "windows-enterprise", "autopilot"
+]
+
+[[plans]]
+id = "m365-e5"
+name = "Microsoft 365 E5"
+short = "M365 E5"
+price_usd = 60
+price_aud = 87
+price_nzd = 96
+price_gbp = 48
+price_eur = 57.50
+sku = "SPE_E5"
+category = "Enterprise"
+seat_max = 0
+status = "ga"
+badge = "Best Security"
+tagline = "Full security, compliance & analytics"
+description = "Everything in E3 plus Entra ID P2, Defender for Endpoint P2, Defender for O365 P2, Defender for Identity, Defender for Cloud Apps, Insider Risk, eDiscovery Premium, Audit Premium, Power BI Pro, Teams Phone, Audio Conferencing."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e5"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "entra-p1", "entra-p2", "intune-p1",
+  "defender-endpoint-p1", "defender-endpoint-p2",
+  "defender-o365-p1", "defender-o365-p2",
+  "defender-identity", "defender-cloud-apps",
+  "dlp", "information-protection",
+  "ediscovery-standard", "ediscovery-premium",
+  "insider-risk", "audit-premium", "communication-compliance",
+  "power-bi-pro", "teams-phone", "audio-conferencing",
+  "windows-enterprise", "autopilot"
+]
+
+[[plans]]
+id = "m365-e7"
+name = "Microsoft 365 E7"
+short = "M365 E7"
+price_usd = 99
+price_aud = 144
+price_nzd = 158.40
+price_gbp = 79.20
+price_eur = 94.90
+sku = "SPE_E7"
+category = "Enterprise"
+seat_max = 0
+status = "preview"
+badge = "New"
+tagline = "Everything + Copilot + AI governance"
+description = "Everything in E5 plus Microsoft 365 Copilot, Copilot Studio, Entra ID Governance, Agent 365, and advanced Intune features. The complete AI-ready enterprise plan."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e7"
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "desktop-apps", "web-mobile-apps", "bookings",
+  "entra-p1", "entra-p2", "entra-governance", "intune-p1", "intune-p2",
+  "defender-endpoint-p1", "defender-endpoint-p2",
+  "defender-o365-p1", "defender-o365-p2",
+  "defender-identity", "defender-cloud-apps",
+  "dlp", "information-protection",
+  "ediscovery-standard", "ediscovery-premium",
+  "insider-risk", "audit-premium", "communication-compliance",
+  "power-bi-pro", "teams-phone", "audio-conferencing",
+  "windows-enterprise", "autopilot",
+  "m365-copilot", "copilot-studio"
+]
+
+# ── FRONTLINE PLANS ──────────────────────────────
+
+[[plans]]
+id = "f1"
+name = "Microsoft 365 F1"
+short = "M365 F1"
+price_usd = 3
+price_aud = 4.30
+price_nzd = 4.80
+price_gbp = 2.40
+price_eur = 2.90
+sku = "SPE_F1"
+category = "Frontline"
+seat_max = 0
+status = "ga"
+badge = ""
+tagline = "Chat & view for deskless workers"
+description = "Teams (chat/meetings), web Office apps (view-only), Exchange (2 GB kiosk), OneDrive (2 GB), SharePoint (read-only), Entra ID P1. Designed for frontline workers."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/f1"
+limitations = ["exchange:2 GB kiosk mailbox", "onedrive:2 GB storage", "sharepoint:Read-only access", "web-mobile-apps:View-only"]
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "web-mobile-apps", "entra-p1"
+]
+
+[[plans]]
+id = "f3"
+name = "Microsoft 365 F3"
+short = "M365 F3"
+price_usd = 10
+price_aud = 14.50
+price_nzd = 16
+price_gbp = 8
+price_eur = 9.60
+sku = "SPE_F3"
+category = "Frontline"
+seat_max = 0
+status = "ga"
+badge = ""
+tagline = "Full web apps + security for frontline"
+description = "Everything in F1 with full web/mobile Office editing, SharePoint full access, Intune P1, Windows Enterprise. For frontline workers who need to edit documents."
+ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/f3"
+limitations = ["exchange:2 GB kiosk mailbox", "onedrive:2 GB storage"]
+features = [
+  "teams", "sharepoint", "onedrive", "exchange",
+  "web-mobile-apps", "bookings",
+  "entra-p1", "intune-p1",
+  "windows-enterprise"
+]
