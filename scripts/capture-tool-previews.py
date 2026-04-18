@@ -52,6 +52,7 @@ TOOLS = [
     ("site-analytics", "/site-analytics/"),
     ("cs-companion", "/cs-companion/"),
     ("instruct-builder", "/instruct-builder/"),
+    ("agent-builder-guide", "/agent-builder-guide/"),
 ]
 
 WIDTH = 1280

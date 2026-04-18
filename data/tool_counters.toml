@@ -32,6 +32,11 @@ base = 0
 verb = "governance plans created"
 
 [[tools]]
+url = "/agent-builder-guide/"
+base = 0
+verb = "scenarios evaluated"
+
+[[tools]]
 url = "/cs-companion/"
 base = 0
 verb = "scenarios evaluated"
