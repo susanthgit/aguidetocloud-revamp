@@ -51,6 +51,7 @@ TOOLS = [
     ("security-toolkit", "/security-toolkit/"),
     ("site-analytics", "/site-analytics/"),
     ("cs-companion", "/cs-companion/"),
+    ("instruct-builder", "/instruct-builder/"),
 ]
 
 WIDTH = 1280
