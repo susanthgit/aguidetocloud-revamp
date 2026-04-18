@@ -32,77 +32,77 @@
 [[tools]]
 url = "/prompts/"
 emoji = "💡"
-name = "Prompt Library"
+name = "AI Prompt Library"
 short = "Prompts"
 desc = "500 tested prompts for M365 Copilot, ChatGPT, Claude & more"
 color = "#A78BFA"
-category = "learning"
+category = "prompt"
 visual = "lines"
 is_tool = true
 
 [[tools]]
 url = "/prompt-polisher/"
 emoji = "✨"
-name = "Prompt Polisher"
+name = "AI Prompt Polisher"
 short = "Polisher"
 desc = "Score & rewrite any prompt with the CRAFTS framework"
 color = "#EC4899"
-category = "learning"
+category = "prompt"
 visual = "gauge"
 is_tool = true
 
 [[tools]]
 url = "/prompt-guide/"
 emoji = "📖"
-name = "Prompt Guide"
+name = "Prompt Engineering Guide"
 short = "Prompt Guide"
 desc = "Learn 8 techniques with hands-on practice"
 color = "#84CC16"
-category = "learning"
+category = "prompt"
 visual = "blocks"
 is_tool = true
 
 [[tools]]
 url = "/prompt-lab/"
 emoji = "🧪"
-name = "Prompt Lab"
+name = "Advanced Prompt Lab"
 short = "Prompt Lab"
 desc = "Master 12 advanced prompting techniques with hands-on exercises"
 color = "#2DD4BF"
-category = "learning"
+category = "prompt"
 visual = "scatter"
 is_tool = true
 
 [[tools]]
 url = "/copilot-readiness/"
 emoji = "🎯"
-name = "Copilot Readiness"
+name = "M365 Copilot Readiness"
 short = "Readiness"
 desc = "Score your org across 7 pillars — 0 to 100"
 color = "#3B82F6"
-category = "copilot"
+category = "planning"
 visual = "gauge"
 is_tool = true
 
 [[tools]]
 url = "/copilot-matrix/"
 emoji = "📊"
-name = "Copilot Features"
+name = "Copilot Feature Matrix"
 short = "Features"
 desc = "Feature comparison across every app & licence tier"
 color = "#60A5FA"
-category = "copilot"
+category = "planning"
 visual = "grid"
 is_tool = true
 
 [[tools]]
 url = "/roi-calculator/"
 emoji = "💰"
-name = "ROI Calculator"
+name = "Copilot ROI Calculator"
 short = "ROI"
 desc = "Estimate ROI by role with realistic adoption curves"
 color = "#14B8A6"
-category = "copilot"
+category = "planning"
 visual = "bars"
 is_tool = true
 
@@ -131,7 +131,7 @@ is_tool = true
 [[tools]]
 url = "/service-health/"
 emoji = "🏥"
-name = "Service Health"
+name = "M365 Service Health"
 short = "Health"
 desc = "32 M365 + Azure services tracked every 2 hours"
 color = "#EA580C"
@@ -157,7 +157,7 @@ name = "AI Service Mapper"
 short = "AI Mapper"
 desc = "Compare 25+ AI services — pricing & capabilities"
 color = "#38BDF8"
-category = "compare"
+category = "planning"
 visual = "grid"
 is_tool = true
 
@@ -168,7 +168,7 @@ name = "AI SaaS Showdown"
 short = "Showdown"
 desc = "Head-to-head AI platform comparison & quiz"
 color = "#D4A853"
-category = "compare"
+category = "planning"
 visual = "bars"
 is_tool = true
 
@@ -179,51 +179,51 @@ name = "AI Cost Calculator"
 short = "AI Cost"
 desc = "Total AI adoption cost — licensing, tokens, training, governance, budget timelines"
 color = "#66C559"
-category = "compare"
+category = "planning"
 visual = "gauge"
 is_tool = true
 
 [[tools]]
 url = "/licensing/"
 emoji = "📜"
-name = "Licensing Simplifier"
+name = "M365 Licensing Simplifier"
 short = "Licensing"
 desc = "Compare M365 plans in plain English with pricing"
 color = "#F43F5E"
-category = "compare"
+category = "planning"
 visual = "blocks"
 is_tool = true
 
 [[tools]]
 url = "/ca-builder/"
 emoji = "🛡️"
-name = "CA Policy Builder"
+name = "Entra ID CA Policy Builder"
 short = "CA Builder"
 desc = "Design Entra ID Conditional Access policies visually"
 color = "#7C3AED"
-category = "admin"
+category = "security"
 visual = "blocks"
 is_tool = true
 
 [[tools]]
 url = "/ps-builder/"
 emoji = "⚡"
-name = "PowerShell Builder"
+name = "M365 PowerShell Builder"
 short = "PS Builder"
 desc = "Build M365 & Azure admin commands — 68 recipes"
 color = "#4ADE80"
-category = "admin"
+category = "admin-ops"
 visual = "lines"
 is_tool = true
 
 [[tools]]
 url = "/purview-starter/"
 emoji = "🔐"
-name = "Purview Starter Kit"
+name = "Purview DLP Starter Kit"
 short = "Purview"
 desc = "Plan sensitivity labels & DLP with pre-built kits"
 color = "#84CC16"
-category = "admin"
+category = "security"
 visual = "blocks"
 is_tool = true
 
@@ -234,18 +234,18 @@ name = "M365 Security Toolkit"
 short = "Security"
 desc = "CIS-aligned security assessment, email DNS generator & remediation scripts"
 color = "#41A235"
-category = "admin"
+category = "security"
 visual = "grid"
 is_tool = true
 
 [[tools]]
 url = "/agent-365-planner/"
 emoji = "🤖"
-name = "Agent 365 Planner"
-short = "Agent 365"
+name = "Agent 365 Governance Planner"
+short = "Agent Gov"
 desc = "Plan your AI agent governance, registry, and deployment strategy"
 color = "#00A4EF"
-category = "admin"
+category = "agent"
 visual = "grid"
 is_tool = true
 
@@ -256,7 +256,7 @@ name = "M365 Agent Builder Helper"
 short = "Agent Builder"
 desc = "Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio"
 color = "#00A4EF"
-category = "copilot"
+category = "agent"
 visual = "blocks"
 is_tool = true
 
@@ -267,40 +267,40 @@ name = "Copilot Studio Companion"
 short = "Studio Companion"
 desc = "Evaluate scenarios, explore capabilities, navigate governance, and design agent architectures"
 color = "#9055E3"
-category = "copilot"
+category = "agent"
 visual = "grid"
 is_tool = true
 
 [[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
-name = "Migration Planner"
+name = "M365 Migration Planner"
 short = "Migration"
 desc = "Plan your M365 migration with risk scoring"
 color = "#6478CC"
-category = "admin"
+category = "admin-ops"
 visual = "timeline"
 is_tool = true
 
 [[tools]]
 url = "/cert-tracker/"
 emoji = "🎓"
-name = "Cert Study Guides"
+name = "Microsoft Cert Study Guides"
 short = "Cert Guides"
 desc = "Every Microsoft cert — objectives deep-linked to Learn"
 color = "#10B981"
-category = "learning"
+category = "certs"
 visual = "blocks"
 is_tool = true
 
 [[tools]]
 url = "/cert-compass/"
 emoji = "🧭"
-name = "Cert Compass"
+name = "Multi-Cloud Cert Compass"
 short = "Compass"
 desc = "Navigate certs across Azure, AWS & Google Cloud"
 color = "#6366F1"
-category = "learning"
+category = "certs"
 visual = "scatter"
 is_tool = true
 
@@ -439,7 +439,7 @@ is_tool = true
 [[tools]]
 url = "/rename-tracker/"
 emoji = "🔄"
-name = "Rename Tracker"
+name = "Microsoft Rename Tracker"
 short = "Renames"
 desc = "Track every Microsoft product rename in one place"
 color = "#B07D4F"
@@ -450,11 +450,11 @@ is_tool = true
 [[tools]]
 url = "/admin-comms/"
 emoji = "📧"
-name = "IT Admin Comms"
+name = "Admin Email Templates"
 short = "Comms"
 desc = "Ready-made email templates for M365 admins"
 color = "#5B9BD5"
-category = "admin"
+category = "admin-ops"
 visual = "lines"
 is_tool = true
 
@@ -465,7 +465,7 @@ name = "Compliance Passport"
 short = "Compliance"
 desc = "Which compliance frameworks apply to your org?"
 color = "#2ECC71"
-category = "admin"
+category = "security"
 visual = "grid"
 is_tool = true
 
@@ -494,11 +494,11 @@ is_tool = true
 [[tools]]
 url = "/sla-calculator/"
 emoji = "📐"
-name = "SLA Calculator"
+name = "SLA Uptime Calculator"
 short = "SLA Calc"
 desc = "Enter SLA % — see exact downtime budget per year, month, week, day"
 color = "#4ECDC4"
-category = "admin"
+category = "admin-ops"
 visual = "bars"
 is_tool = true
 
@@ -520,18 +520,18 @@ name = "Password Policy Tester"
 short = "Policy Test"
 desc = "Score your password policy against NIST, CIS & Microsoft"
 color = "#26A69A"
-category = "admin"
+category = "security"
 visual = "gauge"
 is_tool = true
 
 [[tools]]
 url = "/incident-comms/"
 emoji = "📢"
-name = "Incident Comms"
+name = "Incident Comms Generator"
 short = "Incident"
 desc = "Generate professional outage updates in seconds"
 color = "#FF8F66"
-category = "admin"
+category = "admin-ops"
 visual = "lines"
 is_tool = true
 
@@ -564,7 +564,7 @@ name = "Agent Instruction Builder"
 short = "Instruct Builder"
 desc = "Generate platform-optimised AI agent instructions in seconds"
 color = "#2DD4BF"
-category = "learning"
+category = "agent"
 visual = "lines"
 is_tool = true
 

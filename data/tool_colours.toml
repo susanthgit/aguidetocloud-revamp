@@ -187,7 +187,7 @@ css_namespace = "lic-*"
 body_class = "page-licensing"
 
 [[tools]]
-name = "CA Policy Builder"
+name = "Entra ID CA Policy Builder"
 slug = "ca-builder"
 hex = "#7C3AED"
 hue = 258
@@ -240,7 +240,7 @@ body_class = "page-cs-companion"
 # NOTE: Hue 270° is 12° from CA Builder (258°) — accepted, different category (Copilot vs Admin) + different lightness
 
 [[tools]]
-name = "Agent 365 Planner"
+name = "Agent 365 Governance Planner"
 slug = "agent-365-planner"
 hex = "#00A4EF"
 hue = 199

@@ -6,7 +6,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "CA Policy Builder — Conditional Access Policy Designer",
+  "name": "Entra ID CA Policy Builder — Conditional Access Policy Designer",
   "description": {{ .Description | jsonify }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "SecurityApplication",
@@ -30,14 +30,14 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Conditional Access Policy Builder" "accent" "#7C3AED") }}
+{{ partial "tool-hero.html" (dict "title" "Entra ID CA Policy Builder" "accent" "#7C3AED") }}
 
 <div class="cab-page">
 
   <div class="cab-container">
 
     {{/* ── Tab Navigation ── */}}
-    <div class="cab-tabs" role="tablist" aria-label="CA Policy Builder sections">
+    <div class="cab-tabs" role="tablist" aria-label="Entra ID CA Policy Builder sections">
       <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="build" id="tab-build" aria-controls="panel-build">Build</button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="review" id="tab-review" aria-controls="panel-review">Review <span class="cab-badge" id="cab-policy-count" style="display:none">0</span></button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="export" id="tab-export" aria-controls="panel-export">Export</button>

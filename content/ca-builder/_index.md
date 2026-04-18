@@ -1,5 +1,5 @@
 ---
-title: "CA Policy Builder — Design Zero Trust Conditional Access Policies for Microsoft Entra ID"
+title: "Entra ID CA Policy Builder — Design Zero Trust Conditional Access Policies for Microsoft Entra ID"
 description: "Free interactive Conditional Access policy builder for Microsoft Entra ID. Browse 20+ Zero Trust templates, build custom policies with a guided wizard, lint your policy set for safety risks, and export deploy-ready PowerShell & Graph API JSON — no login required."
 type: "ca-builder"
 layout: "list"
