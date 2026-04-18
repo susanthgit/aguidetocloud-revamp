@@ -32,6 +32,11 @@ base = 0
 verb = "governance plans created"
 
 [[tools]]
+url = "/cs-companion/"
+base = 0
+verb = "scenarios evaluated"
+
+[[tools]]
 url = "/prompt-polisher/"
 base = 3400
 verb = "prompts polished"
@@ -230,3 +235,8 @@ verb = "quizzes played"
 url = "/it-day-sim/"
 base = 35
 verb = "days survived"
+
+[[tools]]
+url = "/instruct-builder/"
+base = 120
+verb = "instructions generated"

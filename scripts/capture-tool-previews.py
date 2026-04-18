@@ -50,6 +50,7 @@ TOOLS = [
     ("ai-cost-calculator", "/ai-cost-calculator/"),
     ("security-toolkit", "/security-toolkit/"),
     ("site-analytics", "/site-analytics/"),
+    ("cs-companion", "/cs-companion/"),
 ]
 
 WIDTH = 1280
