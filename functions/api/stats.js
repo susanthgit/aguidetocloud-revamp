@@ -217,11 +217,12 @@ async function handleRealtime(env) {
       dimensions: [{ name: 'unifiedScreenName' }],
       metrics: [{ name: 'activeUsers' }], limit: 25
     });
-    const rows = (res.rows || []).map(r => ({
-      page: r.dimensionValues?.[0]?.value || '',
-      path: '/' + (r.dimensionValues?.[0]?.value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '/',
-      users: parseInt(r.metricValues?.[0]?.value) || 0
-    })).sort((a, b) => b.users - a.users);
+    const rows = (res.rows || []).map(r => {
+      const rawTitle = r.dimensionValues?.[0]?.value || '';
+      const cleanTitle = rawTitle.replace(/\s*\|.*$/, '').replace(/\s*[—–].*$/, '').trim();
+      const slug = '/' + cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '/';
+      return { page: cleanTitle, path: slug, users: parseInt(r.metricValues?.[0]?.value) || 0 };
+    }).sort((a, b) => b.users - a.users);
     return jsonRes({ active: rows.reduce((s, p) => s + p.users, 0), pages: rows }, 200, 'no-cache');
   } catch { return jsonRes({ active: 0, pages: [] }, 200, 'no-cache'); }
 }
