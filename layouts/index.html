@@ -175,8 +175,88 @@
     </div>
   </section>
 
+  <!-- ☁️ The Cloud Brief — Newsletter Signup -->
+  <section class="hp-newsletter" id="newsletter">
+    <div class="hp-newsletter-inner">
+      <div class="hp-newsletter-content">
+        <span class="hp-newsletter-badge">📬 Free Weekly Newsletter</span>
+        <h2>Guided Weekly</h2>
+        <p class="hp-newsletter-tagline">Cloud & AI insights, every Sunday — in 2 minutes.</p>
+        <div class="hp-newsletter-benefits">
+          <div class="hp-newsletter-benefit">📰 <span>Top AI & cloud stories, curated by a Microsoft Engineer</span></div>
+          <div class="hp-newsletter-benefit">🛠️ <span>Free tool spotlights from our {{ $toolCount }}+ toolkit</span></div>
+          <div class="hp-newsletter-benefit">🎓 <span>Cert tips, exam updates & career advice</span></div>
+          <div class="hp-newsletter-benefit">🎬 <span>Latest tutorials, straight to your inbox</span></div>
+        </div>
+        <form class="hp-newsletter-form" id="hp-newsletter-form" aria-label="Newsletter signup">
+          <div class="hp-newsletter-input-row">
+            <input type="email" id="hp-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+            <button type="submit" class="hp-newsletter-btn">Subscribe — It's Free</button>
+          </div>
+          <p class="hp-newsletter-trust">Join cloud professionals worldwide. Unsubscribe anytime. No spam, ever.</p>
+        </form>
+        <div class="hp-newsletter-success" id="hp-newsletter-success" hidden>
+          <span class="hp-newsletter-success-icon">✅</span>
+          <p><strong>You're in!</strong> Check your inbox to confirm. Your first Guided Weekly arrives this Sunday.</p>
+        </div>
+        <a href="/newsletter/" class="hp-newsletter-preview-link">See a sample issue →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🚀 Guided Waitlist — Premium Learning Platform Teaser -->
+  <section class="hp-waitlist" id="guided-waitlist">
+    <div class="hp-waitlist-inner">
+      <span class="hp-waitlist-badge">🚀 Coming Soon</span>
+      <h2>Guided</h2>
+      <p class="hp-waitlist-tagline">Premium interactive study guides for Microsoft certifications.<br>Beautiful. Interactive. Built to make you pass.</p>
+      <div class="hp-waitlist-features">
+        <span>📖 Interactive modules</span>
+        <span>🃏 Flashcards</span>
+        <span>✅ Practice exams</span>
+        <span>📱 Mobile-first</span>
+      </div>
+      <p class="hp-waitlist-starting">Starting with <strong>AZ-900</strong>, <strong>AI-901</strong> & <strong>SC-900</strong></p>
+      <form class="hp-newsletter-form" id="hp-waitlist-form" aria-label="Guided waitlist signup">
+        <div class="hp-newsletter-input-row">
+          <input type="email" id="hp-waitlist-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+          <button type="submit" class="hp-waitlist-btn">Join the Waitlist</button>
+        </div>
+        <p class="hp-newsletter-trust">Be the first to get early access + launch pricing. No spam.</p>
+      </form>
+      <div class="hp-newsletter-success" id="hp-waitlist-success" hidden>
+        <span class="hp-newsletter-success-icon">🎉</span>
+        <p><strong>You're on the list!</strong> We'll email you when Guided launches with exclusive early-bird pricing.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="hp-final-cta">
+
+  <script>
+  (function() {
+    function setupForm(formId, emailId, successId, storageKey) {
+      var form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById(emailId).value.trim();
+        if (!email) return;
+        try {
+          var subs = JSON.parse(localStorage.getItem(storageKey) || '[]');
+          if (subs.indexOf(email) === -1) subs.push(email);
+          localStorage.setItem(storageKey, JSON.stringify(subs));
+        } catch(err) { /* ignore */ }
+        // TODO: Replace with Beehiiv API POST when account is created
+        form.hidden = true;
+        document.getElementById(successId).hidden = false;
+      });
+    }
+    setupForm('hp-newsletter-form', 'hp-newsletter-email', 'hp-newsletter-success', 'guided_weekly_subs');
+    setupForm('hp-waitlist-form', 'hp-waitlist-email', 'hp-waitlist-success', 'guided_waitlist_subs');
+  })();
+  </script>
     <h2>Ready to level up?</h2>
     <p>Pick a tool and start building, learning, or planning — it takes 30 seconds.</p>
     <div class="hp-final-cta-row">
