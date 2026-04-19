@@ -335,19 +335,20 @@ function guidedQuizCheck(btn) {
   result.hidden = false;
 }
 (function() {
+  var BEEHIIV_URL = 'https://guided-weekly.beehiiv.com/subscribe';
   var form = document.getElementById('guided-page-waitlist');
   if (!form) return;
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var email = document.getElementById('guided-page-email').value.trim();
     if (!email) return;
-    try {
-      var subs = JSON.parse(localStorage.getItem('guided_waitlist_subs') || '[]');
-      if (subs.indexOf(email) === -1) subs.push(email);
-      localStorage.setItem('guided_waitlist_subs', JSON.stringify(subs));
-    } catch(err) {}
-    form.hidden = true;
-    document.getElementById('guided-page-success').hidden = false;
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Joining...'; }
+    window.open(BEEHIIV_URL + '?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
+    setTimeout(function() {
+      form.hidden = true;
+      document.getElementById('guided-page-success').hidden = false;
+    }, 1500);
   });
 })();
 </script>

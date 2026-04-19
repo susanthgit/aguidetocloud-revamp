@@ -236,25 +236,28 @@
 
   <script>
   (function() {
-    function setupForm(formId, emailId, successId, storageKey) {
+    var BEEHIIV_URL = 'https://guided-weekly.beehiiv.com/subscribe';
+
+    function setupForm(formId, emailId, successId) {
       var form = document.getElementById(formId);
       if (!form) return;
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var email = document.getElementById(emailId).value.trim();
         if (!email) return;
-        try {
-          var subs = JSON.parse(localStorage.getItem(storageKey) || '[]');
-          if (subs.indexOf(email) === -1) subs.push(email);
-          localStorage.setItem(storageKey, JSON.stringify(subs));
-        } catch(err) { /* ignore */ }
-        // TODO: Replace with Beehiiv API POST when account is created
-        form.hidden = true;
-        document.getElementById(successId).hidden = false;
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
+        // Open Beehiiv subscribe in hidden iframe with email pre-filled
+        var w = window.open(BEEHIIV_URL + '?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
+        // Show success after short delay
+        setTimeout(function() {
+          form.hidden = true;
+          document.getElementById(successId).hidden = false;
+        }, 1500);
       });
     }
-    setupForm('hp-newsletter-form', 'hp-newsletter-email', 'hp-newsletter-success', 'guided_weekly_subs');
-    setupForm('hp-waitlist-form', 'hp-waitlist-email', 'hp-waitlist-success', 'guided_waitlist_subs');
+    setupForm('hp-newsletter-form', 'hp-newsletter-email', 'hp-newsletter-success');
+    setupForm('hp-waitlist-form', 'hp-waitlist-email', 'hp-waitlist-success');
   })();
   </script>
     <h2>Ready to level up?</h2>
