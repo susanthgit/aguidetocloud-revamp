@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "azure quota", "learnaiandcloud", "susanth sutheesh", "azure subscription limit", "azure support request", "azure tips", "azure tutorials"]
 views: 6772
 likes: 46
+aliases:
+  - "/blog/request-azure-quota-increase-step-by-step-for/"
 ---
 Running into Azure limits while building labs or projects? Learn how to request a quota increase for more resources Quick tutorial with screenshots Great for students and hands-on practice environments

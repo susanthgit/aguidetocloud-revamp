@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiassistan
 featured: false
 views: 651
 likes: 14
+aliases:
+  - "/blog/master-researcher-agent-save-time-with-ai-powered/"
 ---
 Discover the true power of the Microsoft 365 Researcher Agent — your personal AI research assistant inside Microsoft 365. In this video, you’ll learn: What the Researcher Agent is and how it differs from Copilot Chat The top use cases for boosting productivity with AI How it works behind the scenes using Microsoft Graph & GPT 5 powerful prompt examples that save hours of work

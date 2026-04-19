@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aiproducti
 featured: false
 views: 1355
 likes: 18
+aliases:
+  - "/blog/master-sharepoint-agent-in-microsoft-365-create-customize/"
 ---
 Learn How to Build & Use SharePoint Agents in Microsoft 365! In this step-by-step tutorial, I’ll walk you through everything you need to know to get started with SharePoint Agents for your organization. Whether you’re new to AI Agents or looking to customize your SharePoint Copilot experience, this video covers it all. What You’ll Learn: Create a New SharePoint Site for Agent Data

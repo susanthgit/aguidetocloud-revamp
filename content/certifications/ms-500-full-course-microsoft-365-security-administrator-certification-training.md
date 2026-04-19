@@ -8,5 +8,7 @@ tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "ms--500", "ms--500 certification", "ms--500 exam", "ms-500", "microsoft certification", "susanth sutheesh"]
 views: 55266
 likes: 757
+aliases:
+  - "/blog/ms-500-full-course-microsoft-365-security/"
 ---
 Prepare for the MS-500 exam and learn how to manage Microsoft 365 security. Topics include identity protection, threat management, and compliance. Ideal for IT security admins Practical and role-based learning Deep dive into Microsoft 365 security features.

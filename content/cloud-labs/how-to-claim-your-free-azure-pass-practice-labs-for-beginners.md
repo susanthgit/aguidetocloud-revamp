@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "azure pass", "azure for beginners", "azure hands on lab", "azure pass claim process", "azure tutorial", "free azure credits", "learnaiandcloud"]
 views: 3100
 likes: 49
+aliases:
+  - "/blog/how-to-claim-your-free-azure-pass-practice/"
 ---
 Get free access to Azure labs using Microsoft’s Azure Pass Practice real-world cloud scenarios with zero cost Step-by-step guide to claim your Azure Pass Ideal for hands-on learners and certification students

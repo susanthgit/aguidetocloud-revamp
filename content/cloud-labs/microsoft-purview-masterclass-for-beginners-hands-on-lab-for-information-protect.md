@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "autolabeling", "copilotsecurity", "dataclassification", "datalossprevention", "handsonlab", "informationprotection", "learnaiandcloud"]
 views: 27904
 likes: 440
+aliases:
+  - "/blog/microsoft-purview-masterclass-for-beginners-hands-on-lab/"
 ---
 Master Microsoft Purview with Real Hands-on Labs! In this beginner-friendly Microsoft Purview Masterclass, you’ll learn how to protect and manage your organization’s sensitive data using hands-on labs across real-world compliance and security scenarios. Designed for IT Admins, Security Teams, and anyone starting with data protection in Microsoft 365. What You’ll Learn in This Tutorial:

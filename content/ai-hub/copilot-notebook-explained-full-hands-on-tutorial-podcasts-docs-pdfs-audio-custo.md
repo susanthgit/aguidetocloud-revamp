@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai tutorial", "microsoft 365 copilot", "susan
 featured: false
 views: 2173
 likes: 23
+aliases:
+  - "/blog/copilot-notebook-explained-full-hands-on-tutorial/"
 ---
 Take a deep dive into Microsoft 365 Copilot Notebook — the new workspace where you can bring your ideas, documents, and data together to create powerful AI-driven projects. In this video, you’ll learn how to: Create and use different types of project notebooks in M365 Copilot Upload and generate podcast-style audio files for your projects

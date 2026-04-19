@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "aicompliance", "auditlogs", "compliance", "cybersecurity", "dlp", "dataprotection", "informationsecurity"]
 views: 3685
 likes: 52
+aliases:
+  - "/blog/microsoft-purview-masterclass-part-2-insider-risk-dlp/"
 ---
 Welcome to Part 2 of the Microsoft Purview Masterclass series! In this hands-on tutorial, we dive deeper into configuring Microsoft Purview for real-world compliance scenarios. Insider Risk Management Setup & Best Practices Enabling & Using Audit Logs Creating and Managing Sensitive Information Types Deploying DLP Policies to Protect Data Managing Insider Risk in an AI-Integrated Environment

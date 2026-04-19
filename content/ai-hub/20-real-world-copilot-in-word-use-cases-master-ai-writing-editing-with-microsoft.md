@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai document editing", "ai writing tools", "ai
 featured: false
 views: 2572
 likes: 27
+aliases:
+  - "/blog/20-real-world-copilot-in-word-use-cases/"
 ---
 Unlock the full power of Microsoft Copilot in Word with this practical, hands-on tutorial! In this video, we explore 20 real-world Copilot features that will transform how you write, edit, summarize, and format documents using AI.

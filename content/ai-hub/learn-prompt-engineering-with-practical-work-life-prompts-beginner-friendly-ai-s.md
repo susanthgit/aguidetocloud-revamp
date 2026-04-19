@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aibeginner
 featured: false
 views: 2356
 likes: 46
+aliases:
+  - "/blog/learn-prompt-engineering-with-practical-work-life-prompts/"
 ---
 Want to write better AI prompts for everyday tasks? This beginner guide will teach you how—step by step.  In this hands-on tutorial, you’ll learn to design effective prompts using 20 real-life personal and work examples. Learn how to: Set the right Task & Context Choose the right Tone, Role, and Audience Apply Purpose, Format, Style & Constraints Personalize prompts for maximum impact

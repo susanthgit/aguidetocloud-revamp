@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai tutorial", "microsoft 365 copilot", "susan
 featured: false
 views: 2013
 likes: 25
+aliases:
+  - "/blog/copilot-in-excel-tutorial-20-powerful-features-to/"
 ---
 In this power-packed tutorial, explore 20 real-world features and AI use cases that make data work easier, faster, and smarter — perfect for beginners and professionals alike. What you’ll learn in this video: Summarize large data tables in seconds Create smart charts with AI-driven prompts Generate formulas instantly Identify trends and outliers with natural language

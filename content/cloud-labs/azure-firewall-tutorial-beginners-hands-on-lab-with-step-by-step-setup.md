@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "azure for beginners", "azure hands on lab", "azure tutorial", "learnaiandcloud", "susanth sutheesh", "beginner tutorial", "cloud computing"]
 views: 8630
 likes: 194
+aliases:
+  - "/blog/azure-firewall-tutorial-beginners-hands-on-lab-with/"
 ---
 This lab walks you through how to set up and configure Azure Firewall. Learn about rules, policies, and how Azure Firewall helps protect your cloud workloads. It’s a practical guide for beginners who want to learn Azure security by doing.

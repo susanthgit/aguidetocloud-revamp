@@ -8,5 +8,7 @@ tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "ms--500", "ms--500 certification", "ms--500 exam", "ms-500 q&a", "microsoft certification", "susanth sutheesh"]
 views: 720
 likes: 14
+aliases:
+  - "/blog/ms-500-mock-exam-microsoft-365-security-administration/"
 ---
 Get ready for the MS-500 Microsoft 365 Security Administration exam with this mock exam video. Learn key concepts in identity protection, threat management, and compliance across Microsoft 365 services with real-world exam questions and answers. Ideal for security admins and IT professionals Perfect for those aiming to become Microsoft 365 security experts.

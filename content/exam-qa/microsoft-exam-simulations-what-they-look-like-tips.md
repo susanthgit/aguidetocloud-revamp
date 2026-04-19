@@ -8,5 +8,7 @@ tag_class: "cert"
 tags: ["a guide to cloud and ai", "learnaiandcloud", "susanth sutheesh", "az-104", "az-900", "beginner tutorial", "certification simulation", "exam demo"]
 views: 1948
 likes: 41
+aliases:
+  - "/blog/microsoft-exam-simulations-what-they-look-like-tips/"
 ---
 Want to know what the real Microsoft exam looks like? This video walks you through live simulation examples Learn how to navigate case studies, labs, and scenario questions Includes tips to stay calm and succeed on exam day

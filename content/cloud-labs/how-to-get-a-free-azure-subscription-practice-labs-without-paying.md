@@ -8,5 +8,7 @@ tag_class: "cloud"
 tags: ["a guide to cloud and ai", "azure for beginners", "azure hands on lab", "azure tutorial", "learnaiandcloud", "susanth sutheesh", "azure for students", "azure free credit"]
 views: 30146
 likes: 249
+aliases:
+  - "/blog/how-to-get-a-free-azure-subscription-practice/"
 ---
 Need a real Azure environment for practice? Get your free Azure subscription with credits – no hidden costs Ideal for labs, hands-on learning, and certification prep Works for students, developers, and professionals

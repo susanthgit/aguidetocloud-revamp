@@ -9,5 +9,7 @@ tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "aibasics",
 featured: false
 views: 1564
 likes: 44
+aliases:
+  - "/blog/prompt-engineering-explained-with-images-learn-prompting-using/"
 ---
 Unlock the secrets of prompt engineering with this fun, beginner-friendly tutorial! In this video, we’ll use creative image prompts based on the adorable Cavalier King Charles Spaniel  to teach you the essential components of effective prompting. Learn how to craft powerful prompts by mastering: Task, Role, Tone, Format, Style, Emotion Audience, Purpose, Context, Constraints, Iteration
