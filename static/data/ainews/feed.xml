@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Apr 2026 23:32:41 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 06:23:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Tesla brings its robotaxi service to Dallas and Houston</title>
-      <link>https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/</link>
-      <description>Tesla has launched its robotaxi service in Dallas and Houston, showcasing vehicles operating without human drivers. This expansion marks a significant step in Tesla's autonomous vehicle strategy.</description>
-      <category>Top Stories</category>
-      <pubDate>Sat, 18 Apr 2026 21:37:15 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/</guid>
+      <title>After testing this HP laptop, I get why its 'boring' design is adored by business users</title>
+      <link>https://www.zdnet.com/article/hp-zbook-8-g1i-review/</link>
+      <description>HP's ZBook 8 G1i is designed as a traditional business workstation, prioritizing functionality over aesthetics, which appeals to business users. This approach highlights a preference for reliability in professional settings.</description>
+      <category>Industry</category>
+      <pubDate>Sun, 19 Apr 2026 02:00:44 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/hp-zbook-8-g1i-review/</guid>
     </item>
     <item>
-      <title>The RAM shortage could last years</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years</link>
-      <description>A report indicates that the global RAM shortage may persist until 2030, with manufacturers only expected to meet 60% of demand by 2027. Major memory makers are ramping up production but face ongoing challenges.</description>
-      <category>Top Stories</category>
-      <pubDate>Sat, 18 Apr 2026 17:08:45 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years</guid>
-    </item>
-    <item>
-      <title>AI chip developer Cerebras Systems files to go public amid rapid revenue growth</title>
-      <link>https://siliconangle.com/2026/04/17/ai-chip-developer-cerebras-systems-files-go-public-amid-rapid-revenue-growth/</link>
-      <description>Cerebras Systems has filed to go public, driven by rapid revenue growth from its AI chip technology. This marks a significant milestone for the company after a previous IPO attempt.</description>
+      <title>The lobster is loose, and it’s not going back: Peter Steinberger on building OpenClaw at TED 2026</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/the-lobster-is-loose-and-its-not-going-back-peter-steinberger-on-building-openclaw-at-ted-2026/articleshow/130348222.cms</link>
+      <description>Peter Steinberger discussed the growing adoption of OpenClaw at TED 2026, emphasizing its appeal to both engineers and non-programmers. The tool's development followed a challenging period, reflecting resilience in innovation.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 23:26:49 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/04/17/ai-chip-developer-cerebras-systems-files-go-public-amid-rapid-revenue-growth/</guid>
+      <pubDate>Sat, 18 Apr 2026 06:22:33 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/the-lobster-is-loose-and-its-not-going-back-peter-steinberger-on-building-openclaw-at-ted-2026/articleshow/130348222.cms</guid>
     </item>
     <item>
-      <title>ollama-local-rag added to PyPI</title>
-      <link>https://pypi.org/project/ollama-local-rag/</link>
-      <description>The ollama-local-rag package has been added to PyPI, allowing users to ask questions about their documents using local language models without relying on cloud services.</description>
+      <title>gemiterm 1.0.8</title>
+      <link>https://pypi.org/project/gemiterm/1.0.8/</link>
+      <description>Gemiterm 1.0.8 is a Python CLI tool that integrates Playwright-based Google authentication with the gemini-webapi library, enhancing user authentication processes. This tool simplifies workflows for developers using these technologies.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 06:21:13 +0000</pubDate>
+      <guid>https://pypi.org/project/gemiterm/1.0.8/</guid>
+    </item>
+    <item>
+      <title>vox-voxtral 0.2.11</title>
+      <link>https://pypi.org/project/vox-voxtral/0.2.11/</link>
+      <description>Voxtral 0.2.11 is an adapter for speech-to-text and text-to-speech functionalities in Mistral Vox, enhancing its capabilities. This update is significant for developers working with voice applications.</description>
       <category>Mistral</category>
-      <pubDate>Fri, 17 Apr 2026 23:19:29 +0000</pubDate>
-      <guid>https://pypi.org/project/ollama-local-rag/</guid>
+      <pubDate>Sat, 18 Apr 2026 06:17:52 +0000</pubDate>
+      <guid>https://pypi.org/project/vox-voxtral/0.2.11/</guid>
     </item>
     <item>
-      <title>Show HN: AI agents should browse your site, not call your API</title>
-      <link>https://www.rtrvr.ai/rover/blog/four-architectures-website-ai-agents</link>
-      <description>A comparison of AI agent architectures for websites suggests that using DOM-native execution could simplify development compared to traditional API-tool agents. This could streamline AI integration on web platforms.</description>
+      <title>Ola’s Krutrim quietly shuts down its agentic AI assistant ‘Kruti’</title>
+      <link>https://www.medianama.com/2026/04/223-olas-krutrim-shuts-down-agentic-ai-assistant-kruti/</link>
+      <description>Ola's AI assistant Kruti has been shut down less than a year after its launch, raising questions about the company's AI strategy amid recent layoffs. This move indicates challenges in the competitive AI landscape.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 23:14:00 +0000</pubDate>
-      <guid>https://www.rtrvr.ai/rover/blog/four-architectures-website-ai-agents</guid>
+      <pubDate>Sat, 18 Apr 2026 06:15:47 +0000</pubDate>
+      <guid>https://www.medianama.com/2026/04/223-olas-krutrim-shuts-down-agentic-ai-assistant-kruti/</guid>
     </item>
     <item>
-      <title>codex-dobby-mcp 0.1.1</title>
-      <link>https://pypi.org/project/codex-dobby-mcp/0.1.1/</link>
-      <description>The codex-dobby-mcp 0.1.1 has been released, which is a local server for routing tasks through Claude orchestration. This update enhances task management capabilities.</description>
+      <title>keepai 0.7.4</title>
+      <link>https://pypi.org/project/keepai/0.7.4/</link>
+      <description>Keepai 0.7.4 is a command-line interface for orchestrating Claude Code agents, allowing users to adopt, monitor, and manage AI workflows effectively. This tool enhances the usability of AI agents.</description>
       <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 23:13:14 +0000</pubDate>
-      <guid>https://pypi.org/project/codex-dobby-mcp/0.1.1/</guid>
+      <pubDate>Sat, 18 Apr 2026 06:14:52 +0000</pubDate>
+      <guid>https://pypi.org/project/keepai/0.7.4/</guid>
     </item>
     <item>
-      <title>dke-forge added to PyPI</title>
-      <link>https://pypi.org/project/dke-forge/</link>
-      <description>The dke-forge package has been added to PyPI, providing a CLI and server for the DKE-Forge deterministic code intelligence engine, enhancing code analysis tools.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 23:13:03 +0000</pubDate>
-      <guid>https://pypi.org/project/dke-forge/</guid>
+      <title>Opera Brings Browser Connector to Opera One and Opera GX, Letting ChatGPT and Claude Read Open Tabs</title>
+      <link>https://www.ghacks.net/2026/04/18/opera-brings-browser-connector-to-opera-one-and-opera-gx-letting-chatgpt-and-claude-read-open-tabs/</link>
+      <description>Opera has introduced a Browser Connector feature in Opera One and Opera GX, enabling ChatGPT and Claude to access open tabs. This integration enhances user experience by linking AI tools with browsing.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 18 Apr 2026 06:09:02 +0000</pubDate>
+      <guid>https://www.ghacks.net/2026/04/18/opera-brings-browser-connector-to-opera-one-and-opera-gx-letting-chatgpt-and-claude-read-open-tabs/</guid>
     </item>
     <item>
-      <title>Show HN: codeburn-rs; CodeBurn but 600x faster in Rust [view coding token usage]</title>
-      <link>https://github.com/rossnoah/codeburn-rs</link>
-      <description>The codeburn-rs project claims to offer a version of CodeBurn that is 600 times faster, developed in Rust. This could significantly enhance coding efficiency.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 23:01:01 +0000</pubDate>
-      <guid>https://github.com/rossnoah/codeburn-rs</guid>
-    </item>
-    <item>
-      <title>Tesla’s Cybertruck Sales Have Been Bolstered by Elon Musk’s SpaceX and Other Companies</title>
-      <link>http://robbreport.com/motors/cars/tesla-cybertruck-inflated-elon-musk-companies-1237999126/</link>
-      <description>Sales of the Tesla Cybertruck were boosted in late 2025 by orders from companies owned by Elon Musk, including SpaceX, indicating strong demand linked to Musk's ventures.</description>
-      <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 23:00:00 +0000</pubDate>
-      <guid>http://robbreport.com/motors/cars/tesla-cybertruck-inflated-elon-musk-companies-1237999126/</guid>
-    </item>
-    <item>
-      <title>llm-lens-web 0.2.4</title>
-      <link>https://pypi.org/project/llm-lens-web/0.2.4/</link>
-      <description>The llm-lens-web 0.2.4 update introduces a local web UI for managing conversation history with language models, enhancing user experience in AI interactions.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 22:57:39 +0000</pubDate>
-      <guid>https://pypi.org/project/llm-lens-web/0.2.4/</guid>
-    </item>
-    <item>
-      <title>Full-Stack Optimizations for Agentic Inference with NVIDIA Dynamo</title>
-      <link>https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/</link>
-      <description>NVIDIA's Dynamo is enhancing coding agents' capabilities, with Stripe's agents generating over 1,300 pull requests weekly, indicating a significant shift in software development efficiency.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 17 Apr 2026 22:53:22 +0000</pubDate>
-      <guid>https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/</guid>
-    </item>
-    <item>
-      <title>longhouse 0.1.12</title>
-      <link>https://pypi.org/project/longhouse/0.1.12/</link>
-      <description>Longhouse 0.1.12 allows users to maintain Claude Code, Codex CLI, and Gemini CLI sessions in a single searchable timeline, improving workflow management.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 22:45:04 +0000</pubDate>
-      <guid>https://pypi.org/project/longhouse/0.1.12/</guid>
-    </item>
-    <item>
-      <title>modelaudit-picklescan added to PyPI</title>
-      <link>https://pypi.org/project/modelaudit-picklescan/</link>
-      <description>Modelaudit-picklescan has been added to PyPI, providing a standalone security scanner for pickle files, enhancing security in Python applications.</description>
+      <title>torch-aac 0.7.0</title>
+      <link>https://pypi.org/project/torch-aac/0.7.0/</link>
+      <description>Torch-aac 0.7.0 is a GPU-accelerated AAC-LC encoder built using PyTorch, aimed at improving audio encoding efficiency. This development is significant for audio processing applications.</description>
       <category>Meta</category>
-      <pubDate>Fri, 17 Apr 2026 22:36:52 +0000</pubDate>
-      <guid>https://pypi.org/project/modelaudit-picklescan/</guid>
+      <pubDate>Sat, 18 Apr 2026 06:08:57 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-aac/0.7.0/</guid>
     </item>
     <item>
-      <title>compactbench 0.1.0</title>
-      <link>https://pypi.org/project/compactbench/</link>
-      <description>Compactbench 0.1.0 introduces an open benchmark for evaluating AI conversation compaction methods, aiding in the development of more efficient AI interactions.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 22:29:22 +0000</pubDate>
-      <guid>https://pypi.org/project/compactbench/</guid>
+      <title>vox-voxtral 0.2.10</title>
+      <link>https://pypi.org/project/vox-voxtral/0.2.10/</link>
+      <description>Voxtral 0.2.10 is another update for the Mistral Voxtral STT/TTS adapter, providing improvements for speech technologies. This update continues to enhance the tool's performance for developers.</description>
+      <category>Mistral</category>
+      <pubDate>Sat, 18 Apr 2026 06:03:50 +0000</pubDate>
+      <guid>https://pypi.org/project/vox-voxtral/0.2.10/</guid>
     </item>
     <item>
-      <title>matadore added to PyPI</title>
-      <link>https://pypi.org/project/matadore/</link>
-      <description>Matadore, a new tool for AI-powered attack surface mapping, has been added to PyPI, aiding red teams in identifying vulnerabilities.</description>
-      <category>Microsoft</category>
-      <pubDate>Fri, 17 Apr 2026 22:25:02 +0000</pubDate>
-      <guid>https://pypi.org/project/matadore/</guid>
+      <title>Anthropic Launches Claude Design to Generate Visual Assets From Text Prompts</title>
+      <link>https://www.ghacks.net/2026/04/18/anthropic-launches-claude-design-to-generate-visual-assets-from-text-prompts/</link>
+      <description>Anthropic has launched Claude Design, a new service that generates visual assets from text prompts, showcasing advancements in AI's creative capabilities. This tool opens new avenues for designers and content creators.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 18 Apr 2026 06:02:23 +0000</pubDate>
+      <guid>https://www.ghacks.net/2026/04/18/anthropic-launches-claude-design-to-generate-visual-assets-from-text-prompts/</guid>
     </item>
     <item>
-      <title>ChatGPT Goes to Therapy: The New Emotional Economy</title>
-      <link>https://www.psychologytoday.com/us/blog/the-inner-life-of-students/202604/chatgpt-goes-to-therapy-the-new-emotional-economy</link>
-      <description>AI's role in emotional support is evolving, as it reshapes how people express emotions and seek comfort, raising concerns about authenticity.</description>
+      <title>Why did Anthropic limit wider Mythos release? #tech</title>
+      <link>https://alltoc.com/tech/why-did-anthropic-limit-wider-mythos-release</link>
+      <description>Anthropic has restricted the release of its Mythos model due to concerns over reliability and capacity, following reported outages. This decision impacts the availability of their AI technology.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 18 Apr 2026 06:02:02 +0000</pubDate>
+      <guid>https://alltoc.com/tech/why-did-anthropic-limit-wider-mythos-release</guid>
+    </item>
+    <item>
+      <title>Ethereum Is Finally Rewarding Risk Again – But the Direction Has Changed</title>
+      <link>https://bitcoinist.com/ethereum-finally-rewarding-risk-direction-changed/</link>
+      <description>Ethereum's price struggles to break the $2,400 mark amid a warming market, indicating a cautious yet constructive environment for the cryptocurrency. The current situation reflects broader market dynamics.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 22:13:32 +0000</pubDate>
-      <guid>https://www.psychologytoday.com/us/blog/the-inner-life-of-students/202604/chatgpt-goes-to-therapy-the-new-emotional-economy</guid>
+      <pubDate>Sat, 18 Apr 2026 06:00:23 +0000</pubDate>
+      <guid>https://bitcoinist.com/ethereum-finally-rewarding-risk-direction-changed/</guid>
     </item>
     <item>
-      <title>Claude Opus 4.7 hits 92% honesty rate— are we closer than ever to human-like AI with less hallucination? Here’s what Anthropic’s new AI model is capable of</title>
-      <link>https://economictimes.indiatimes.com/news/international/us/claude-opus-4-7-hits-92-honesty-rate-are-we-closer-than-ever-to-human-like-ai-with-less-hallucination-heres-what-anthropics-new-ai-model-is-capable-of/articleshow/130341842.cms</link>
-      <description>Claude Opus 4.7 achieves a 92% honesty rate and shows significant improvements in coding capabilities, indicating progress towards more human-like AI.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 22:09:53 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/news/international/us/claude-opus-4-7-hits-92-honesty-rate-are-we-closer-than-ever-to-human-like-ai-with-less-hallucination-heres-what-anthropics-new-ai-model-is-capable-of/articleshow/130341842.cms</guid>
+      <title>Nvidia and PNY accused of warranty fraud after refusing to replace faulty $9,000 GPU</title>
+      <link>https://www.naturalnews.com/2026-04-18-nvidia-pny-accused-warranty-fraud-faulty-gpu.html</link>
+      <description>Nvidia and PNY face accusations of warranty fraud after allegedly refusing to replace a faulty $9,000 GPU, despite evidence of hardware failure. This raises concerns about consumer rights in tech.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-04-18-nvidia-pny-accused-warranty-fraud-faulty-gpu.html</guid>
     </item>
     <item>
-      <title>Apple code leaks four iOS 27 features and new design changes</title>
-      <link>https://www.tweaktown.com/news/111098/apple-code-leaks-four-ios-27-features-and-new-design-changes/index.html</link>
-      <description>Apple's code leak reveals new features for iOS 27, including smarter Visual Intelligence and customizable Liquid Glass, indicating ongoing innovation.</description>
-      <category>Apple</category>
-      <pubDate>Fri, 17 Apr 2026 22:06:05 +0000</pubDate>
-      <guid>https://www.tweaktown.com/news/111098/apple-code-leaks-four-ios-27-features-and-new-design-changes/index.html</guid>
-    </item>
-    <item>
-      <title>Your AI agent can read your codebase. It doesn’t know your product.</title>
-      <link>https://uxdesign.cc/your-ai-agent-can-read-your-codebase-it-doesnt-know-your-product-b5ea0cd77989</link>
-      <description>AI coding agents require additional context beyond code, such as brand and visual language, to effectively understand and contribute to products.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 21:56:02 +0000</pubDate>
-      <guid>https://uxdesign.cc/your-ai-agent-can-read-your-codebase-it-doesnt-know-your-product-b5ea0cd77989</guid>
-    </item>
-    <item>
-      <title>deviantART says artists made $23 million on its platform last year, boasts that it was “100% right” to embrace generative AI</title>
-      <link>https://www.tubefilter.com/2026/04/17/deviantart-paying-artists-ai-controversy-user-increase/</link>
-      <description>DeviantART reports that artists earned $23 million on its platform last year, affirming its decision to embrace generative AI as beneficial.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 17 Apr 2026 21:49:56 +0000</pubDate>
-      <guid>https://www.tubefilter.com/2026/04/17/deviantart-paying-artists-ai-controversy-user-increase/</guid>
-    </item>
-    <item>
-      <title>agent-spawn-mcp 1.0.5</title>
-      <link>https://pypi.org/project/agent-spawn-mcp/1.0.5/</link>
-      <description>The agent-spawn-mcp 1.0.5 is a universal server designed for any OpenAI-compatible language model, supporting both OpenAI and Anthropic API formats. This development enhances interoperability among AI systems.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 21:49:09 +0000</pubDate>
-      <guid>https://pypi.org/project/agent-spawn-mcp/1.0.5/</guid>
-    </item>
-    <item>
-      <title>code-aide 1.14.1</title>
-      <link>https://pypi.org/project/code-aide/1.14.1/</link>
-      <description>The code-aide 1.14.1 update allows users to manage various AI coding tools, including Claude and Copilot, through a command-line interface. This streamlines the coding process for developers.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 21:45:43 +0000</pubDate>
-      <guid>https://pypi.org/project/code-aide/1.14.1/</guid>
-    </item>
-    <item>
-      <title>AI Trusted Less Than Social Media and Airlines, With Grok Placing Last, Survey Says</title>
-      <link>https://www.cnet.com/tech/services-and-software/ai-trust-survey-acsi-gemini-grok/</link>
-      <description>A recent survey reveals that Americans trust AI less than social media and airlines, with concerns primarily about the loss of personal interaction rather than job displacement. This highlights growing skepticism towards AI technologies.</description>
-      <category>Microsoft</category>
-      <pubDate>Fri, 17 Apr 2026 21:45:08 +0000</pubDate>
-      <guid>https://www.cnet.com/tech/services-and-software/ai-trust-survey-acsi-gemini-grok/</guid>
-    </item>
-    <item>
-      <title>Show HN: Mind-OS – First free online AI dependency self‑assessment</title>
-      <link>https://iamalex-afk.github.io/human-os-patch-33-protocols/</link>
-      <description>Mind-OS has launched a free online tool for AI dependency self-assessment, aimed at helping users evaluate their reliance on AI technologies. This initiative promotes awareness of AI's impact on daily life.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 21:40:25 +0000</pubDate>
-      <guid>https://iamalex-afk.github.io/human-os-patch-33-protocols/</guid>
-    </item>
-    <item>
-      <title>OpenAI leadership shakeup raises uncertainty over GPT-5.5 timeline</title>
-      <link>https://cryptobriefing.com/openai-leadership-shakeup-raises-uncertainty-over-gpt-55-timeline/</link>
-      <description>OpenAI's recent leadership changes may delay the release of GPT-5.5, raising concerns about market confidence and reflecting internal disagreements on the direction of AI development. This uncertainty could impact stakeholders.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 17 Apr 2026 21:39:02 +0000</pubDate>
-      <guid>https://cryptobriefing.com/openai-leadership-shakeup-raises-uncertainty-over-gpt-55-timeline/</guid>
-    </item>
-    <item>
-      <title>alphagenome-pytorch 0.3.1</title>
-      <link>https://pypi.org/project/alphagenome-pytorch/0.3.1/</link>
-      <description>The alphagenome-pytorch 0.3.1 release provides a PyTorch implementation of AlphaGenome, which is significant for researchers working on genetic algorithms and AI applications in genomics.</description>
-      <category>Meta</category>
-      <pubDate>Fri, 17 Apr 2026 21:38:23 +0000</pubDate>
-      <guid>https://pypi.org/project/alphagenome-pytorch/0.3.1/</guid>
-    </item>
-    <item>
-      <title>The Guardian’s Funding Relationship With Liberal Group Omidyar Raises Conflict Of Interest Allegations</title>
-      <link>https://dailycaller.com/2026/04/17/guardian-ai-series-funded-omidyar-network-raises-conflict-questions/</link>
-      <description>The Guardian's new editorial series on AI, funded by the Omidyar Network, has raised allegations of conflict of interest, questioning the integrity of the coverage. This highlights the complexities of media funding in tech reporting.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 17 Apr 2026 21:21:13 +0000</pubDate>
-      <guid>https://dailycaller.com/2026/04/17/guardian-ai-series-funded-omidyar-network-raises-conflict-questions/</guid>
-    </item>
-    <item>
-      <title>UGreen NASync iDX6011 Pro NAS review: An AI-powered NAS combines workstation-class hardware with genuinely useful local AI</title>
-      <link>https://www.techradar.com/computing/ugreen-nasync-idx6011-pro-nas-review</link>
-      <description>The UGreen NASync iDX6011 Pro NAS is a powerful, AI-enhanced network-attached storage solution, combining high-end hardware with local AI capabilities for improved data management. This represents a trend toward smarter storage solutions.</description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 17 Apr 2026 21:15:00 +0000</pubDate>
-      <guid>https://www.techradar.com/computing/ugreen-nasync-idx6011-pro-nas-review</guid>
-    </item>
-    <item>
-      <title>Notebooks are now available for free Gemini app users</title>
-      <link>http://9to5google.com/2026/04/17/gemini-notebooks-free/</link>
-      <description>The Gemini app has introduced notebooks for free users after initially launching them for subscribers, expanding access to AI tools and enhancing user experience. This move aims to democratize AI resources.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 21:05:00 +0000</pubDate>
-      <guid>http://9to5google.com/2026/04/17/gemini-notebooks-free/</guid>
-    </item>
-    <item>
-      <title>HomeKit Weekly: The Ulticam IQ brings PoE and Gemini AI to a Matter-certified smart camera</title>
-      <link>https://9to5mac.com/2026/04/17/ulticam-iq/</link>
-      <description>The Ulticam IQ V2 is launched as the first Matter-certified AI security camera, featuring Power over Ethernet and 4K resolution, along with Google Gemini AI integrations. This innovation enhances smart home security.</description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 21:01:00 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/04/17/ulticam-iq/</guid>
-    </item>
-    <item>
-      <title>Beyond the API Key: Integrating Gemini into the Laravel AI SDK</title>
-      <link>https://origin-main.com/guides/laravel-gemini-integration/</link>
-      <description>The article provides a guide on integrating Google Gemini into the Laravel AI SDK, focusing on configuration and response handling. This is significant for developers looking to enhance their applications with AI capabilities using Laravel. </description>
-      <category>Google</category>
-      <pubDate>Fri, 17 Apr 2026 21:00:00 +0000</pubDate>
-      <guid>https://origin-main.com/guides/laravel-gemini-integration/</guid>
-    </item>
-    <item>
-      <title>Forget Climate Activism, the Guardian is Now Pushing AI Activism</title>
-      <link>https://wattsupwiththat.com/2026/04/17/forget-climate-activism-the-guardian-is-now-pushing-ai-activism/</link>
-      <description>The Guardian is shifting its focus from climate activism to advocating for AI technologies, highlighting the historical lessons against banning economically vital innovations. This reflects a growing recognition of AI's importance in modern society. </description>
+      <title>Study Finds Wide Range of Pesticide Residues in Household Dust</title>
+      <link>https://www.naturalnews.com/2026-04-18-study-finds-pesticide-residues-in-household-dust.html</link>
+      <description>A study in the Czech Republic found a variety of pesticide residues in household dust, raising concerns about indoor exposure and health risks. This research emphasizes the need for better indoor air quality management.</description>
       <category>Perplexity</category>
-      <pubDate>Fri, 17 Apr 2026 21:00:00 +0000</pubDate>
-      <guid>https://wattsupwiththat.com/2026/04/17/forget-climate-activism-the-guardian-is-now-pushing-ai-activism/</guid>
+      <pubDate>Sat, 18 Apr 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-04-18-study-finds-pesticide-residues-in-household-dust.html</guid>
     </item>
     <item>
-      <title>hf-inference-acp 0.6.18</title>
-      <link>https://pypi.org/project/hf-inference-acp/0.6.18/</link>
-      <description>Hugging Face has released version 0.6.18 of its inference agent with support for ACP, enhancing its capabilities for AI applications. This update is part of ongoing improvements in AI tools for developers. </description>
+      <title>There Are Signs of a Massive AI Backlash</title>
+      <link>https://slashdot.org/submission/17346570/there-are-signs-of-a-massive-ai-backlash</link>
+      <description>Public backlash against AI is intensifying, exemplified by a recent incident where a man allegedly attacked OpenAI CEO Sam Altman's home. This reflects growing societal concerns over AI's impact.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 18 Apr 2026 05:57:23 +0000</pubDate>
+      <guid>https://slashdot.org/submission/17346570/there-are-signs-of-a-massive-ai-backlash</guid>
+    </item>
+    <item>
+      <title>socratic-agents 0.2.7</title>
+      <link>https://pypi.org/project/socratic-agents/0.2.7/</link>
+      <description>The socratic-agents 0.2.7 system introduces 18 specialized agents for AI workflows, featuring integrations with Openclaw and LangChain. This development enhances multi-agent orchestration capabilities.</description>
       <category>Open Source</category>
-      <pubDate>Fri, 17 Apr 2026 20:52:30 +0000</pubDate>
-      <guid>https://pypi.org/project/hf-inference-acp/0.6.18/</guid>
+      <pubDate>Sat, 18 Apr 2026 05:56:14 +0000</pubDate>
+      <guid>https://pypi.org/project/socratic-agents/0.2.7/</guid>
     </item>
     <item>
-      <title>sugra-api-mcp 0.2.0</title>
-      <link>https://pypi.org/project/sugra-api-mcp/0.2.0/</link>
-      <description>The sugra-api-mcp 0.2.0 has been launched, providing a connector for LLM agents to access a wide array of data sources, which can enhance AI model capabilities. This is significant for developers needing comprehensive data integration. </description>
-      <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 20:47:44 +0000</pubDate>
-      <guid>https://pypi.org/project/sugra-api-mcp/0.2.0/</guid>
+      <title>SJHN Daily: Central Scouting Final Rankings, Cuda Playoff Match-Up Set, Sharks No. 9 in Lottery</title>
+      <link>https://sanjosehockeynow.com/san-jose-sharks-gavin-mckenna-ivar-stenberg-nhl-central-scouting/</link>
+      <description>The SJHN Daily reports on NHL Central Scouting's final rankings, highlighting top prospects like Gavin McKenna and Ivar Stenberg. This information is crucial for teams ahead of the draft.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 05:55:25 +0000</pubDate>
+      <guid>https://sanjosehockeynow.com/san-jose-sharks-gavin-mckenna-ivar-stenberg-nhl-central-scouting/</guid>
     </item>
     <item>
-      <title>clean-code-skill-kit added to PyPI</title>
-      <link>https://pypi.org/project/clean-code-skill-kit/</link>
-      <description>The clean-code-skill-kit has been added to PyPI, offering AI skill adapters and configurations for developers focused on clean coding practices. This toolkit aims to streamline AI development processes. </description>
-      <category>GitHub Copilot</category>
-      <pubDate>Fri, 17 Apr 2026 20:42:09 +0000</pubDate>
-      <guid>https://pypi.org/project/clean-code-skill-kit/</guid>
+      <title>claude-safety-guard 0.1.2</title>
+      <link>https://pypi.org/project/claude-safety-guard/0.1.2/</link>
+      <description>The claude-safety-guard 0.1.2 is a new tool designed to prevent destructive shell commands from executing, enhancing security for users of Claude Code. This tool addresses critical safety concerns.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 18 Apr 2026 05:47:14 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-safety-guard/0.1.2/</guid>
     </item>
     <item>
-      <title>Ranjan Roy: Nvidia faces fierce competition from Google and Amazon, the significance of GPUs in AI model training, and the geopolitical risks of export controls | Big Technology</title>
-      <link>https://cryptobriefing.com/ranjan-roy-nvidia-faces-fierce-competition-from-google-and-amazon-the-significance-of-gpus-in-ai-model-training-and-the-geopolitical-risks-of-export-controls-big-technology/</link>
-      <description>Ranjan Roy discusses Nvidia's challenges from competitors like Google and Amazon, emphasizing the critical role of GPUs in AI training amid geopolitical risks. This highlights the competitive landscape in AI hardware. </description>
-      <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 20:41:57 +0000</pubDate>
-      <guid>https://cryptobriefing.com/ranjan-roy-nvidia-faces-fierce-competition-from-google-and-amazon-the-significance-of-gpus-in-ai-model-training-and-the-geopolitical-risks-of-export-controls-big-technology/</guid>
+      <title>claude-backup-cron 0.1.2</title>
+      <link>https://pypi.org/project/claude-backup-cron/0.1.2/</link>
+      <description>The claude-backup-cron 0.1.2 offers scheduled encrypted backups for Claude Code memory, ensuring data security and integrity. This feature is vital for maintaining project continuity.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 18 Apr 2026 05:47:14 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-backup-cron/0.1.2/</guid>
     </item>
     <item>
-      <title>Samsung loaded its 2026 TV lineup with AI features</title>
-      <link>https://mobilesyrup.com/2026/04/17/samsung-2026-lineup-ai/</link>
-      <description>Samsung unveiled its 2026 TV lineup featuring AI enhancements at a tech seminar in Frankfurt, showcasing the integration of AI into consumer electronics. This reflects the growing trend of AI in everyday technology. </description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 17 Apr 2026 20:39:49 +0000</pubDate>
-      <guid>https://mobilesyrup.com/2026/04/17/samsung-2026-lineup-ai/</guid>
+      <title>Anthropic valuation hits $800B amid US strategic asset recognition</title>
+      <link>https://cryptobriefing.com/anthropic-valuation-hits-800b-amid-us-strategic-asset-recognition/</link>
+      <description>Anthropic's valuation has soared to $800 billion, reflecting the increasing strategic importance of AI in national security and its potential to reshape global tech dynamics.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 05:45:18 +0000</pubDate>
+      <guid>https://cryptobriefing.com/anthropic-valuation-hits-800b-amid-us-strategic-asset-recognition/</guid>
     </item>
     <item>
-      <title>indexed-parquet-dataset 0.3.7.dev0</title>
-      <link>https://pypi.org/project/indexed-parquet-dataset/0.3.7.dev0/</link>
-      <description>The indexed-parquet-dataset 0.3.7.dev0 offers a high-performance indexer for Parquet datasets in PyTorch, improving data access speeds for AI applications. This is important for developers working with large datasets. </description>
+      <title>fastapi-mcp-azure-oauth 1.0.1</title>
+      <link>https://pypi.org/project/fastapi-mcp-azure-oauth/1.0.1/</link>
+      <description>The release of fastapi-mcp-azure-oauth 1.0.1 introduces an RFC-compliant Azure AD OAuth 2.0 router for FastAPI MCP servers, enhancing integration with Copilot Studio.</description>
+      <category>Copilot Studio</category>
+      <pubDate>Sat, 18 Apr 2026 05:41:27 +0000</pubDate>
+      <guid>https://pypi.org/project/fastapi-mcp-azure-oauth/1.0.1/</guid>
+    </item>
+    <item>
+      <title>NVIDIA Stock 2026: Analysts Urge Buy Amid AI Boom Despite High Valuation Risks</title>
+      <link>https://www.ibtimes.com.au/nvidia-stock-2026-analysts-urge-buy-amid-ai-boom-despite-high-valuation-risks-1866916</link>
+      <description>NVIDIA's stock remains strong, trading near $200 as analysts recommend buying amid a booming AI market, despite concerns over high valuations.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 05:39:16 +0000</pubDate>
+      <guid>https://www.ibtimes.com.au/nvidia-stock-2026-analysts-urge-buy-amid-ai-boom-despite-high-valuation-risks-1866916</guid>
+    </item>
+    <item>
+      <title>New Year Horoscope Predictions 5</title>
+      <link>https://english.gossiplankanews.com/2026/04/new-year-horoscope-predictions-5.html</link>
+      <description>This article provides horoscope predictions for Aries, suggesting favorable conditions for starting new ventures in the upcoming year.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 05:37:41 +0000</pubDate>
+      <guid>https://english.gossiplankanews.com/2026/04/new-year-horoscope-predictions-5.html</guid>
+    </item>
+    <item>
+      <title>fastapi-mcp-azure-oauth added to PyPI</title>
+      <link>https://pypi.org/project/fastapi-mcp-azure-oauth/</link>
+      <description>The addition of fastapi-mcp-azure-oauth to PyPI provides developers with an RFC-compliant Azure AD OAuth 2.0 router, facilitating easier integration with FastAPI.</description>
+      <category>Copilot Studio</category>
+      <pubDate>Sat, 18 Apr 2026 05:32:47 +0000</pubDate>
+      <guid>https://pypi.org/project/fastapi-mcp-azure-oauth/</guid>
+    </item>
+    <item>
+      <title>gemiterm 1.0.5</title>
+      <link>https://pypi.org/project/gemiterm/1.0.5/</link>
+      <description>Gemiterm 1.0.5 is a new Python CLI tool that connects Playwright-based Google authentication with the gemini-webapi library, streamlining user authentication processes.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 05:29:33 +0000</pubDate>
+      <guid>https://pypi.org/project/gemiterm/1.0.5/</guid>
+    </item>
+    <item>
+      <title>Anthropic taps Peter Thiel-backed Persona for Claude ID checks, raising DPDP concerns</title>
+      <link>https://www.medianama.com/2026/04/223-anthropic-persona-identity-verification-claude-privacy-concerns/</link>
+      <description>Anthropic has begun requiring some Claude users to submit identification and selfies, raising privacy concerns regarding data handling and surveillance.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 18 Apr 2026 05:15:20 +0000</pubDate>
+      <guid>https://www.medianama.com/2026/04/223-anthropic-persona-identity-verification-claude-privacy-concerns/</guid>
+    </item>
+    <item>
+      <title>XRP Just Settled $291 Million On-Chain, Almost Nothing Hit Binance: Find Out What’s Happening</title>
+      <link>http://www.newsbtc.com/xrp-news/xrp-just-settled-291-million-on-chain-almost-nothing-hit-binance-find-out-whats-happening/</link>
+      <description>XRP has seen a significant price increase, reclaiming key levels and building momentum as it approaches a decisive market move.</description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 18 Apr 2026 05:00:21 +0000</pubDate>
+      <guid>http://www.newsbtc.com/xrp-news/xrp-just-settled-291-million-on-chain-almost-nothing-hit-binance-find-out-whats-happening/</guid>
+    </item>
+    <item>
+      <title>Mastercard Weighs RLUSD Settlement On XRP Ledger, Exec Says</title>
+      <link>https://bitcoinist.com/mastercard-rlusd-settlement-xrp-ledger/</link>
+      <description>Mastercard is considering using Ripple USD (RLUSD) for settling card transactions, which could integrate XRP Ledger technology into its payment systems.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 05:00:17 +0000</pubDate>
+      <guid>https://bitcoinist.com/mastercard-rlusd-settlement-xrp-ledger/</guid>
+    </item>
+    <item>
+      <title>nucl 0.20.0</title>
+      <link>https://pypi.org/project/nucl/0.20.0/</link>
+      <description>Nucl 0.20.0 is a minimal machine learning experiment platform that integrates Azure ML and Vertex AI, aimed at simplifying ML workflows.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 04:59:42 +0000</pubDate>
+      <guid>https://pypi.org/project/nucl/0.20.0/</guid>
+    </item>
+    <item>
+      <title>gemiterm 1.0.4</title>
+      <link>https://pypi.org/project/gemiterm/1.0.4/</link>
+      <description>Gemiterm 1.0.4 is an earlier version of a Python CLI tool that connects Playwright-based Google authentication with the gemini-webapi library.</description>
+      <category>Google</category>
+      <pubDate>Sat, 18 Apr 2026 04:50:01 +0000</pubDate>
+      <guid>https://pypi.org/project/gemiterm/1.0.4/</guid>
+    </item>
+    <item>
+      <title>adam-atan2-pytorch 0.3.0</title>
+      <link>https://pypi.org/project/adam-atan2-pytorch/0.3.0/</link>
+      <description>The Adam-atan2 for Pytorch has been released, providing a new optimization algorithm for machine learning tasks. This update is significant for developers using Pytorch for AI projects.</description>
       <category>Meta</category>
-      <pubDate>Fri, 17 Apr 2026 20:38:28 +0000</pubDate>
-      <guid>https://pypi.org/project/indexed-parquet-dataset/0.3.7.dev0/</guid>
+      <pubDate>Sat, 18 Apr 2026 04:10:06 +0000</pubDate>
+      <guid>https://pypi.org/project/adam-atan2-pytorch/0.3.0/</guid>
     </item>
     <item>
-      <title>vfs-py added to PyPI</title>
-      <link>https://pypi.org/project/vfs-py/</link>
-      <description>The vfs-py library has been added to PyPI, providing a unified framework for safe file operations and semantic search tailored for AI agents. This aids developers in building more intelligent applications. </description>
+      <title>The pivotal role of AI in rewiring India’s agricultural ecosystem</title>
+      <link>https://www.thehindubusinessline.com/economy/agri-business/the-pivotal-role-of-ai-in-rewiring-indias-agricultural-ecosystem/article70874154.ece</link>
+      <description>AI is significantly transforming India's agricultural sector by improving sustainability and helping small farmers overcome challenges. This shift could lead to increased productivity and economic growth in rural areas.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 18 Apr 2026 03:40:40 +0000</pubDate>
+      <guid>https://www.thehindubusinessline.com/economy/agri-business/the-pivotal-role-of-ai-in-rewiring-indias-agricultural-ecosystem/article70874154.ece</guid>
+    </item>
+    <item>
+      <title>bizverify-agents 0.2.0</title>
+      <link>https://pypi.org/project/bizverify-agents/0.2.0/</link>
+      <description>BizVerify has introduced tool wrappers for LLM agent frameworks, including LangChain and CrewAI. This update aims to enhance the functionality and integration of language model agents.</description>
       <category>Open Source</category>
-      <pubDate>Fri, 17 Apr 2026 20:34:48 +0000</pubDate>
-      <guid>https://pypi.org/project/vfs-py/</guid>
+      <pubDate>Sat, 18 Apr 2026 03:26:35 +0000</pubDate>
+      <guid>https://pypi.org/project/bizverify-agents/0.2.0/</guid>
     </item>
     <item>
-      <title>The Claude-lash is here: Opus 4.7 is burning through tokens — and some people's patience</title>
-      <link>https://www.businessinsider.com/anthropic-claude-opus-4-7-backlash-tokens-2026-4</link>
-      <description>Anthropic's new model, Opus 4.7, has been released but has received criticism from users for its performance and increased computational costs. This highlights ongoing challenges in AI model development. </description>
-      <category>GitHub Copilot</category>
-      <pubDate>Fri, 17 Apr 2026 20:29:16 +0000</pubDate>
-      <guid>https://www.businessinsider.com/anthropic-claude-opus-4-7-backlash-tokens-2026-4</guid>
-    </item>
-    <item>
-      <title>indexed-parquet-dataset 0.3.5.dev0</title>
-      <link>https://pypi.org/project/indexed-parquet-dataset/0.3.5.dev0/</link>
-      <description>The release of indexed-parquet-dataset 0.3.5.dev0 introduces a high-performance random access indexer for Parquet datasets in PyTorch, enhancing data handling capabilities. This development is significant for data scientists and machine learning practitioners working with large datasets.</description>
+      <title>unfairseq 0.0.1</title>
+      <link>https://pypi.org/project/unfairseq/0.0.1/</link>
+      <description>The Un-fairseq 0.0.1 release introduces a config-driven encoder-decoder framework for various language models. This development aims to streamline the implementation of advanced NLP techniques.</description>
       <category>Meta</category>
-      <pubDate>Fri, 17 Apr 2026 20:21:31 +0000</pubDate>
-      <guid>https://pypi.org/project/indexed-parquet-dataset/0.3.5.dev0/</guid>
+      <pubDate>Sat, 18 Apr 2026 03:16:06 +0000</pubDate>
+      <guid>https://pypi.org/project/unfairseq/0.0.1/</guid>
     </item>
     <item>
-      <title>Ex-UCP candidate who says she was branded a racist hopes 'truth can be aired in full' at trial</title>
-      <link>https://www.cbc.ca/news/canada/calgary/caylan-ford-defamation-trial-9.7167719</link>
-      <description>Caylan Ford is seeking justice in a Calgary trial after her private Facebook messages were leaked, leading to accusations of racism that she claims ruined her life. This case highlights issues of privacy and the impact of social media on reputations.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Fri, 17 Apr 2026 20:20:14 +0000</pubDate>
-      <guid>https://www.cbc.ca/news/canada/calgary/caylan-ford-defamation-trial-9.7167719</guid>
+      <title>AI Could Create A Massive Problem For Valve’s Steam</title>
+      <link>https://www.techdirt.com/2026/04/17/ai-could-create-a-massive-problem-for-valves-steam/</link>
+      <description>The intersection of AI and the gaming industry poses challenges for Valve's Steam platform, as discussions around AI's role in gaming become increasingly complex. This could impact game development and user experiences.</description>
+      <category>Industry</category>
+      <pubDate>Sat, 18 Apr 2026 02:39:28 +0000</pubDate>
+      <guid>https://www.techdirt.com/2026/04/17/ai-could-create-a-massive-problem-for-valves-steam/</guid>
     </item>
     <item>
-      <title>deepbach-pytorch 0.4.1</title>
-      <link>https://pypi.org/project/deepbach-pytorch/0.4.1/</link>
-      <description>DeepBach 0.4.1 is a new implementation for harmonization in PyTorch, aimed at enhancing music composition and analysis. This tool could be beneficial for researchers and developers in the field of AI-driven music generation.</description>
-      <category>Meta</category>
-      <pubDate>Fri, 17 Apr 2026 20:13:08 +0000</pubDate>
-      <guid>https://pypi.org/project/deepbach-pytorch/0.4.1/</guid>
+      <title>mnemic-mre added to PyPI</title>
+      <link>https://pypi.org/project/mnemic-mre/</link>
+      <description>The Mnemic Reflex Engine has been added to PyPI, offering zero-cost autonomous steering for Mixture-of-Experts language models. This tool aims to enhance model efficiency and performance.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 02:36:25 +0000</pubDate>
+      <guid>https://pypi.org/project/mnemic-mre/</guid>
     </item>
     <item>
-      <title>Oracle Brings Agentic AI Platform to Corporate Banking</title>
-      <link>https://finovate.com/oracle-brings-agentic-ai-platform-to-corporate-banking/</link>
-      <description>Oracle has launched new embedded AI capabilities for its corporate banking clients, enhancing its agentic AI platform. This move aims to improve operational efficiency and decision-making in corporate banking.</description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 17 Apr 2026 20:05:28 +0000</pubDate>
-      <guid>https://finovate.com/oracle-brings-agentic-ai-platform-to-corporate-banking/</guid>
-    </item>
-    <item>
-      <title>SP500 to 7300+, TESLA to $430 Next Week or Two. Multi-year AI Boom Will Continue</title>
-      <link>https://www.nextbigfuture.com/2026/04/sp500-to-7300-tesla-to-430-next-week-or-two-multi-year-ai-boom-will-continue.html</link>
-      <description>Predictions suggest that Tesla's stock could rise significantly due to new business deals with major tech companies, indicating a continued multi-year AI boom. This outlook is attracting attention from accredited investors.</description>
+      <title>ハリー・ケインがメッシの記録を上回るペースでシーズン50ゴールに到達</title>
+      <link>https://footballnet.2chblog.jp/archives/59800361.html</link>
+      <description>Harry Kane has reached 50 goals in a season, surpassing Lionel Messi's pace, though he is unlikely to break Messi's overall record. This achievement highlights Kane's exceptional scoring ability.</description>
       <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 20:03:42 +0000</pubDate>
-      <guid>https://www.nextbigfuture.com/2026/04/sp500-to-7300-tesla-to-430-next-week-or-two-multi-year-ai-boom-will-continue.html</guid>
+      <pubDate>Sat, 18 Apr 2026 01:00:22 +0000</pubDate>
+      <guid>https://footballnet.2chblog.jp/archives/59800361.html</guid>
     </item>
     <item>
-      <title>China Makes Major Move To Challenge U.S. For Key Tech Dominance</title>
-      <link>https://freerepublic.com/focus/f-news/4375328/posts</link>
-      <description>Huawei is expanding its AI technology into various countries, challenging U.S. dominance in the tech sector. This rapid expansion signals a significant shift in the global AI landscape.</description>
+      <title>Supply chain AI startup Loop secures $95M investment</title>
+      <link>https://siliconangle.com/2026/04/17/supply-chain-ai-startup-loop-secures-95m-investment/</link>
+      <description>Supply chain AI startup Loop has secured $95 million in funding to enhance its optimization platform. This investment reflects growing interest in AI solutions for supply chain efficiency.</description>
+      <category>Industry</category>
+      <pubDate>Sat, 18 Apr 2026 00:57:35 +0000</pubDate>
+      <guid>https://siliconangle.com/2026/04/17/supply-chain-ai-startup-loop-secures-95m-investment/</guid>
+    </item>
+    <item>
+      <title>Show HN - TokensAI – Mint for AI Usage</title>
+      <link>https://tokensai.dev</link>
+      <description>TokensAI allows users to aggregate their AI API usage and generate embeddable badges for social media. This tool aims to simplify tracking and showcasing AI usage.</description>
+      <category>xAI</category>
+      <pubDate>Sat, 18 Apr 2026 00:43:56 +0000</pubDate>
+      <guid>https://tokensai.dev</guid>
+    </item>
+    <item>
+      <title>Show HN: Llama.cpp Tutorial 2026: Run GGUF Models Locally on CPU and GPU</title>
+      <link>https://news.ycombinator.com/item?id=47812127</link>
+      <description>The Llama.cpp tutorial for 2026 provides comprehensive guidance on running GGUF models locally, including installation and performance tuning. This resource is valuable for developers working with these models.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 00:37:53 +0000</pubDate>
+      <guid>https://news.ycombinator.com/item?id=47812127</guid>
+    </item>
+    <item>
+      <title>DeepSeek in talks to raise $300 million at $10 billion valuation, Report says</title>
+      <link>https://www.livemint.com/companies/news/deepseek-in-talks-to-raise-300-million-at-10-billion-valuation-report-says-11776471894854.html</link>
+      <description>DeepSeek is negotiating to raise $300 million at a $10 billion valuation, highlighting its significant role in the AI market amid rising capital needs.</description>
       <category>DeepSeek</category>
-      <pubDate>Fri, 17 Apr 2026 20:03:17 +0000</pubDate>
-      <guid>https://freerepublic.com/focus/f-news/4375328/posts</guid>
+      <pubDate>Sat, 18 Apr 2026 00:33:31 +0000</pubDate>
+      <guid>https://www.livemint.com/companies/news/deepseek-in-talks-to-raise-300-million-at-10-billion-valuation-report-says-11776471894854.html</guid>
     </item>
     <item>
-      <title>Amazon SageMaker HyperPod now supports flexible instance groups</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/sagemaker-hyperpod-flexible-instance-groups/</link>
-      <description>Amazon SageMaker HyperPod has introduced support for flexible instance groups, allowing users to optimize their training and inference workloads by selecting multiple instance types. This enhancement aims to improve user experience and efficiency.</description>
+      <title>pytorch-ignite 0.6.0.dev20260418</title>
+      <link>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260418/</link>
+      <description>PyTorch Ignite 0.6.0.dev20260418 is a new lightweight library designed to assist in training neural networks more efficiently.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 18 Apr 2026 00:30:43 +0000</pubDate>
+      <guid>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260418/</guid>
+    </item>
+    <item>
+      <title>Nimble companies are succeeding in the AI era: YC's Jared Friedman</title>
+      <link>https://economictimes.indiatimes.com/tech/startups/nimble-companies-are-succeeding-in-the-ai-era-ycs-jared-friedman/articleshow/130340575.cms</link>
+      <description>Jared Friedman from Y Combinator notes that nimble AI startups are thriving by quickly adapting and leveraging strong engineering talent from India.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 18 Apr 2026 00:30:00 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/startups/nimble-companies-are-succeeding-in-the-ai-era-ycs-jared-friedman/articleshow/130340575.cms</guid>
+    </item>
+    <item>
+      <title>torch-migraphx 1.1</title>
+      <link>https://pypi.org/project/torch-migraphx/1.1/</link>
+      <description>Torch-MIGraphX 1.1 integrates PyTorch with the MIGraphX acceleration engine, enhancing performance for AI applications.</description>
+      <category>Meta</category>
+      <pubDate>Sat, 18 Apr 2026 00:27:27 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-migraphx/1.1/</guid>
+    </item>
+    <item>
+      <title>[AgentCore CLI] agentcore dev コマンド実行時に Agent Inspector Web UI が追加されました！</title>
+      <link>https://dev.classmethod.jp/articles/agentcore-cli-inspector-web-ui/</link>
+      <description>The AgentCore CLI has added a new Agent Inspector Web UI feature for enhanced command execution monitoring.</description>
       <category>Amazon</category>
-      <pubDate>Fri, 17 Apr 2026 20:03:00 +0000</pubDate>
-      <guid>https://aws.amazon.com/about-aws/whats-new/2026/04/sagemaker-hyperpod-flexible-instance-groups/</guid>
+      <pubDate>Sat, 18 Apr 2026 00:27:10 +0000</pubDate>
+      <guid>https://dev.classmethod.jp/articles/agentcore-cli-inspector-web-ui/</guid>
     </item>
     <item>
-      <title>Maine Said No to New Data Centers. Other States Are Racing to Follow.</title>
-      <link>https://www.motherjones.com/environment/2026/04/maine-ai-data-center-moratorium-ban-energy-grid/</link>
-      <description>Maine has rejected new data centers, reflecting a growing trend of pushback against hyperscale data infrastructure. This decision may influence other states as they consider similar measures amid concerns over environmental impact.</description>
+      <title>vox-voxtral 0.2.9</title>
+      <link>https://pypi.org/project/vox-voxtral/0.2.9/</link>
+      <description>Voxtral 0.2.9 is a new adapter for Mistral's STT/TTS capabilities, enhancing voice processing functionalities.</description>
+      <category>Mistral</category>
+      <pubDate>Sat, 18 Apr 2026 00:21:16 +0000</pubDate>
+      <guid>https://pypi.org/project/vox-voxtral/0.2.9/</guid>
+    </item>
+    <item>
+      <title>Show HN: Agentic Dev – AI dev-tools news, curated daily by Claude</title>
+      <link>https://agenticdev.blog/</link>
+      <description>Agentic Dev curates daily AI development tools news, providing insights from various sources to keep developers informed.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Sat, 18 Apr 2026 00:02:42 +0000</pubDate>
+      <guid>https://agenticdev.blog/</guid>
+    </item>
+    <item>
+      <title>Daily Hacker News for 2026-04-17</title>
+      <link>https://www.daemonology.net/hn-daily/2026-04-17.html</link>
+      <description>A roundup of the top-rated Hacker News articles reveals significant discussions around AI platforms and innovations.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.daemonology.net/hn-daily/2026-04-17.html</guid>
+    </item>
+    <item>
+      <title>Contextual deep learning for accurate news article categorisation with pre-trained embeddings</title>
+      <link>https://www.nature.com/articles/s41598-026-38998-3</link>
+      <description>A study discusses the use of contextual deep learning for accurately categorizing news articles using pre-trained embeddings.</description>
       <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 20:02:32 +0000</pubDate>
-      <guid>https://www.motherjones.com/environment/2026/04/maine-ai-data-center-moratorium-ban-energy-grid/</guid>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/s41598-026-38998-3</guid>
     </item>
     <item>
-      <title>Reese Witherspoon Doubles Down on AI Comments After Fan Backlash</title>
-      <link>https://www.usmagazine.com/celebrity-news/news/reese-witherspoon-doubles-down-on-ai-after-fan-backlash/</link>
-      <description>Reese Witherspoon's comments on AI sparked a backlash after she posed a question about technology to her book club, igniting a debate on the implications of AI on society and the environment. This incident highlights the public's concern over AI's role in shaping the future.</description>
-      <category>Perplexity</category>
-      <pubDate>Fri, 17 Apr 2026 19:56:13 +0000</pubDate>
-      <guid>https://www.usmagazine.com/celebrity-news/news/reese-witherspoon-doubles-down-on-ai-after-fan-backlash/</guid>
-    </item>
-    <item>
-      <title>inwith-a2a 0.1.0</title>
-      <link>https://pypi.org/project/inwith-a2a/</link>
-      <description>The release of inwith-a2a 0.1.0 introduces a Python SDK for the InWith AI Agent-to-Agent Ecosystem, facilitating communication between AI agents. This tool is aimed at developers looking to create more interactive AI systems.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 17 Apr 2026 19:54:25 +0000</pubDate>
-      <guid>https://pypi.org/project/inwith-a2a/</guid>
+      <title>Musk’s Latest Announcement: SpaceX, Grok and What It Means for Investors</title>
+      <link>https://finance.yahoo.com/markets/stocks/articles/musk-latest-announcement-spacex-grok-222005946.html</link>
+      <description>Musk's announcement regarding SpaceX and Grok suggests a potential IPO, raising investor interest due to its high valuation.</description>
+      <category>xAI</category>
+      <pubDate>Fri, 17 Apr 2026 22:20:05 +0000</pubDate>
+      <guid>https://finance.yahoo.com/markets/stocks/articles/musk-latest-announcement-spacex-grok-222005946.html</guid>
     </item>
   </channel>
 </rss>
