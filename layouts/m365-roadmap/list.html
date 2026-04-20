@@ -96,6 +96,7 @@ document.querySelectorAll('.rdmap-top-tab').forEach(function(tab) {
 });
 </script>
 
+{{ partial "bookmark-cta.html" (dict "tool" "M365 Roadmap" "accent" "#E5A00D") }}
 {{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "roadmap") }}
 {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 {{ end }}

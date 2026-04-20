@@ -1721,6 +1721,69 @@ a.welcome-stat-link:hover {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+
+/* ── BOOKMARK CTA ──────────────────── */
+.bookmark-cta {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.bookmark-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--bm-accent, #64748B);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bookmark-cta-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.bookmark-cta-text strong {
+  color: rgba(255,255,255,0.9);
+}
+
+.bookmark-cta-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.bookmark-cta-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.bookmark-cta-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: 'Fira Code', monospace;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .bookmark-cta-inner { flex-direction: column; text-align: center; }
+  .bookmark-cta-text { justify-content: center; flex-wrap: wrap; }
+}
 .back-nav-link {
   display: inline-flex;
   align-items: center;

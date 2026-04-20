@@ -1,0 +1,18 @@
+{{/* 
+  Bookmark CTA — add to tools with high repeat visitors.
+  Usage: {{ partial "bookmark-cta.html" (dict "tool" "AI News" "accent" "#ff66ff") }}
+*/}}
+<div class="bookmark-cta" style="--bm-accent: {{ .accent | default "#64748B" }}">
+  <div class="bookmark-cta-inner">
+    <p class="bookmark-cta-text">
+      <span class="bookmark-cta-icon">🔖</span>
+      <strong>Come back often?</strong> Bookmark this page or add it to your home screen — it's always free.
+    </p>
+    <div class="bookmark-cta-actions">
+      <button class="bookmark-cta-btn" id="bm-bookmark" aria-label="Bookmark this page">
+        ⌘/Ctrl + D to Bookmark
+      </button>
+      <a href="/ai-news/" class="bookmark-cta-rss" style="display:none">RSS Feed</a>
+    </div>
+  </div>
+</div>

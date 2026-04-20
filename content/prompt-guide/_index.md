@@ -1,6 +1,6 @@
 ---
-title: "Prompt Engineering Guide — Learn 8 Techniques to Write Better AI Prompts"
-description: "Free interactive prompt engineering guide with hands-on practice. Learn 8 essential techniques for ChatGPT, Copilot, Claude & Gemini — with before/after examples, quizzes, and a step-by-step Prompt Builder."
+title: "Prompt Engineering Guide — 8 Free Techniques with Hands-On Practice"
+description: "Master prompt engineering for ChatGPT, Microsoft Copilot, Claude & Gemini. 8 interactive techniques with before/after examples, quizzes, and a step-by-step Prompt Builder. Free, no account needed."
 type: "prompt-guide"
 layout: "list"
 sitemap:
