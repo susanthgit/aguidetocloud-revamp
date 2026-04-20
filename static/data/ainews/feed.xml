@@ -5,399 +5,383 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Apr 2026 23:34:03 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 07:09:29 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>I hid 4 Bluetooth trackers (including AirTags) to test their reliability - here's how Android rivals compared</title>
-      <link>https://www.zdnet.com/article/retested-apple-airtags-after-five-years-how-they-compare/</link>
-      <description>A reliability test of four Bluetooth trackers, including AirTags, showed how well they help locate lost items years after their release. The findings highlight the ongoing effectiveness of these devices in everyday use.</description>
-      <category>Industry</category>
-      <pubDate>Sun, 19 Apr 2026 23:00:43 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/retested-apple-airtags-after-five-years-how-they-compare/</guid>
-    </item>
-    <item>
-      <title>Just like phishing for gullible humans, prompt injecting AIs is here to stay</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/19/just_like_phishing_for_gullible/</link>
-      <description>Prompt injection attacks are becoming a persistent issue for AI systems, similar to phishing for humans. These vulnerabilities can lead AI bots to inadvertently reveal sensitive information.</description>
+      <title>'Invisible mouse' made a mess of PC rebuild</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/20/who_me/</link>
+      <description>An article discusses a reader's chaotic experience while attempting to rebuild a PC, highlighting the challenges of managing a messy workspace. It illustrates the difficulties of fixing problems without clear visibility.</description>
       <category>Top Stories</category>
-      <pubDate>Sun, 19 Apr 2026 23:00:14 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/19/just_like_phishing_for_gullible/</guid>
+      <pubDate>Mon, 20 Apr 2026 07:01:09 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/20/who_me/</guid>
     </item>
     <item>
-      <title>OpenAI’s existential questions</title>
-      <link>https://techcrunch.com/2026/04/19/openais-existential-questions/</link>
-      <description>The latest episode of Equity discusses OpenAI's recent acquisitions and their potential to address significant challenges facing the company. The conversation centers on the strategic direction of OpenAI amidst evolving market demands.</description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 19 Apr 2026 21:24:06 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/19/openais-existential-questions/</guid>
-    </item>
-    <item>
-      <title>The 12-month window</title>
-      <link>https://techcrunch.com/2026/04/19/the-12-month-window/</link>
-      <description>Many AI startups are emerging due to gaps in existing foundation models, but this window of opportunity may not last. The article discusses the implications for innovation and competition in the AI space.</description>
+      <title>NASA working on ‘Big Bang’ upgrade to keep the Voyagers alive for longer</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/20/voyager_big_bang_upgrades/</link>
+      <description>NASA is developing a plan called 'The Big Bang' to extend the operational life of the Voyager probes after a recent power glitch. This upgrade is crucial for maintaining communication with these historic spacecraft.</description>
       <category>Top Stories</category>
-      <pubDate>Sun, 19 Apr 2026 19:30:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/19/the-12-month-window/</guid>
+      <pubDate>Mon, 20 Apr 2026 05:52:05 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/20/voyager_big_bang_upgrades/</guid>
     </item>
     <item>
-      <title>Cloud development platform Vercel was hacked</title>
-      <link>https://www.theverge.com/tech/914723/vercel-hacked</link>
-      <description>Vercel, a key cloud development platform, was hacked, leading to the theft of sensitive data, including employee information. The breach raises concerns about security in the tech industry.</description>
+      <title>Indonesia’s game rating system paused amid claims it leaked developer creds and glimpses of major new titles</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/20/asia_tech_news_roundup/</link>
+      <description>Indonesia has paused its game rating system due to allegations of leaking developer credentials and footage of unreleased games. This suspension raises concerns about data security in the gaming industry.</description>
       <category>Top Stories</category>
-      <pubDate>Sun, 19 Apr 2026 15:54:52 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/914723/vercel-hacked</guid>
+      <pubDate>Mon, 20 Apr 2026 02:07:30 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/20/asia_tech_news_roundup/</guid>
     </item>
     <item>
-      <title>cc-sentiment 0.2.47</title>
-      <link>https://pypi.org/project/cc-sentiment/0.2.47/</link>
-      <description>The article discusses the release of cc-sentiment version 0.2.47, a local scoring tool that contributes to sentiment analysis metrics. It highlights advancements in local AI tools.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 18 Apr 2026 23:29:21 +0000</pubDate>
-      <guid>https://pypi.org/project/cc-sentiment/0.2.47/</guid>
-    </item>
-    <item>
-      <title>alexandria-wiki 0.24.3</title>
-      <link>https://pypi.org/project/alexandria-wiki/0.24.3/</link>
-      <description>Alexandria-wiki version 0.24.3 is introduced as a local-first knowledge engine that organizes information for connected AI agents. This development emphasizes the trend towards decentralized knowledge management.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 18 Apr 2026 23:24:31 +0000</pubDate>
-      <guid>https://pypi.org/project/alexandria-wiki/0.24.3/</guid>
-    </item>
-    <item>
-      <title>mkalkere/agent-coordinator: Lightweight coordination server for autonomous AI coding agents — task claiming, file locks, message passing, and health monitoring over REST</title>
-      <link>https://github.com/mkalkere/agent-coordinator</link>
-      <description>The mkalkere/agent-coordinator project is a lightweight server designed for coordinating autonomous AI coding agents, facilitating task management and communication. This tool aims to enhance the efficiency of AI workflows.</description>
-      <category>Google</category>
-      <pubDate>Sat, 18 Apr 2026 23:12:04 +0000</pubDate>
-      <guid>https://github.com/mkalkere/agent-coordinator</guid>
-    </item>
-    <item>
-      <title>Top 10 Mistakes Developers Make When Adopting AI</title>
-      <link>https://www.c-sharpcorner.com/article/top-10-mistakes-developers-make-when-adopting-ai/</link>
-      <description>The article outlines the top 10 mistakes developers make when adopting AI tools, offering strategies and insights to improve the integration of AI in software development. It aims to guide developers toward becoming more proficient in AI usage.</description>
+      <title>I asked ChatGPT and Gemini how much home loan I can afford on ₹7–9 lakh income. The answer wasn’t what I expected</title>
+      <link>https://www.livemint.com/money/personal-finance/i-asked-chatgpt-and-gemini-how-much-home-loan-i-can-afford-on-rs-7-9-lakh-income-the-answer-wasn-t-what-i-expected-11776566552151.html</link>
+      <description>A user sought advice from ChatGPT and Gemini on home loan affordability based on a salary of ₹7-9 lakh, revealing unexpected insights from the AI tools. The interaction showcases the practical applications of AI in financial planning.</description>
       <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 23:07:53 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/top-10-mistakes-developers-make-when-adopting-ai/</guid>
+      <pubDate>Sun, 19 Apr 2026 07:02:14 +0000</pubDate>
+      <guid>https://www.livemint.com/money/personal-finance/i-asked-chatgpt-and-gemini-how-much-home-loan-i-can-afford-on-rs-7-9-lakh-income-the-answer-wasn-t-what-i-expected-11776566552151.html</guid>
     </item>
     <item>
-      <title>Monster Hailstorm Slams Midwest With Baseball-Size Ice, Jaw-Dropping Video Goes Viral</title>
-      <link>https://johnnyjet.com/monster-hailstorm-slams-midwest-with-baseball-size-ice-jaw-dropping-video-goes-viral/</link>
-      <description>A severe hailstorm recently hit the Midwest, producing baseball-sized hail and causing significant damage. Videos of the storm have gone viral, showcasing its intensity.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 18 Apr 2026 23:06:27 +0000</pubDate>
-      <guid>https://johnnyjet.com/monster-hailstorm-slams-midwest-with-baseball-size-ice-jaw-dropping-video-goes-viral/</guid>
-    </item>
-    <item>
-      <title>Should you really trust health advice from an AI chatbot?</title>
-      <link>https://www.bbc.com/news/articles/clyepyy82kxo</link>
-      <description>A user named Abi shares her experiences with an AI chatbot for health advice, highlighting inconsistent results. This raises questions about the reliability of AI in health-related queries.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 23:04:43 +0000</pubDate>
-      <guid>https://www.bbc.com/news/articles/clyepyy82kxo</guid>
-    </item>
-    <item>
-      <title>language-model-common 2.0.23</title>
-      <link>https://pypi.org/project/language-model-common/2.0.23/</link>
-      <description>The release of language-model-common 2.0.23 enhances the Langchain framework, allowing for improved loading configurations. This update aims to streamline language model integration.</description>
-      <category>Open Source</category>
-      <pubDate>Sat, 18 Apr 2026 23:04:37 +0000</pubDate>
-      <guid>https://pypi.org/project/language-model-common/2.0.23/</guid>
-    </item>
-    <item>
-      <title>atlas-chimera added to PyPI</title>
-      <link>https://pypi.org/project/atlas-chimera/</link>
-      <description>The atlas-chimera package has been added to PyPI, enabling reference-free chimera detection for metagenomic assemblies. This tool is significant for genomic research and analysis.</description>
-      <category>Meta</category>
-      <pubDate>Sat, 18 Apr 2026 23:04:28 +0000</pubDate>
-      <guid>https://pypi.org/project/atlas-chimera/</guid>
-    </item>
-    <item>
-      <title>ite-agent added to PyPI</title>
-      <link>https://pypi.org/project/ite-agent/</link>
-      <description>The ite-agent has been introduced to PyPI as an AI coding agent designed for interactive terminal environments. This tool aims to enhance coding efficiency and user experience.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 23:04:10 +0000</pubDate>
-      <guid>https://pypi.org/project/ite-agent/</guid>
-    </item>
-    <item>
-      <title>atlas-place added to PyPI</title>
-      <link>https://pypi.org/project/atlas-place/</link>
-      <description>The atlas-place package is now available on PyPI, providing phylogenetic placement using BiosphereAtlas hyperbolic coordinates. This tool aids in biological data analysis.</description>
-      <category>Meta</category>
-      <pubDate>Sat, 18 Apr 2026 23:03:05 +0000</pubDate>
-      <guid>https://pypi.org/project/atlas-place/</guid>
-    </item>
-    <item>
-      <title>vox-voxtral 0.2.28</title>
-      <link>https://pypi.org/project/vox-voxtral/0.2.28/</link>
-      <description>The vox-voxtral 0.2.28 release introduces a Mistral Voxtral STT/TTS adapter for Vox, enhancing speech-to-text and text-to-speech capabilities.</description>
-      <category>Mistral</category>
-      <pubDate>Sat, 18 Apr 2026 23:01:47 +0000</pubDate>
-      <guid>https://pypi.org/project/vox-voxtral/0.2.28/</guid>
-    </item>
-    <item>
-      <title>torchcrop added to PyPI</title>
-      <link>https://pypi.org/project/torchcrop/</link>
-      <description>The torchcrop library has been added to PyPI, offering a PyTorch-native solution for hybrid crop modeling. This development is relevant for agricultural AI applications.</description>
-      <category>Meta</category>
-      <pubDate>Sat, 18 Apr 2026 22:53:13 +0000</pubDate>
-      <guid>https://pypi.org/project/torchcrop/</guid>
-    </item>
-    <item>
-      <title>torchcrop 0.0.1</title>
-      <link>https://pypi.org/project/torchcrop/0.0.1/</link>
-      <description>The torchcrop 0.0.1 release provides a PyTorch-native library for hybrid crop modeling, contributing to advancements in agricultural technology.</description>
-      <category>Meta</category>
-      <pubDate>Sat, 18 Apr 2026 22:53:13 +0000</pubDate>
-      <guid>https://pypi.org/project/torchcrop/0.0.1/</guid>
-    </item>
-    <item>
-      <title>alexandria-wiki 0.24.1</title>
-      <link>https://pypi.org/project/alexandria-wiki/0.24.1/</link>
-      <description>The alexandria-wiki 0.24.1 is a local-first knowledge engine that accumulates knowledge for connected agents like Claude Code, enhancing information accessibility.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 18 Apr 2026 22:53:01 +0000</pubDate>
-      <guid>https://pypi.org/project/alexandria-wiki/0.24.1/</guid>
-    </item>
-    <item>
-      <title>brainvault 0.2.5</title>
-      <link>https://pypi.org/project/brainvault/0.2.5/</link>
-      <description>The brainvault 0.2.5 introduces a personal memory layer for Claude Code and Cursor, enabling personalized interactions based on user history and preferences.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 18 Apr 2026 22:49:22 +0000</pubDate>
-      <guid>https://pypi.org/project/brainvault/0.2.5/</guid>
-    </item>
-    <item>
-      <title>brainvault 0.2.4</title>
-      <link>https://pypi.org/project/brainvault/0.2.4/</link>
-      <description>BrainVault 0.2.4 introduces a personal memory layer for Claude Code and Cursor, enhancing user interaction by understanding individual preferences and thought processes. This development could improve user experience in AI applications.</description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 18 Apr 2026 22:48:00 +0000</pubDate>
-      <guid>https://pypi.org/project/brainvault/0.2.4/</guid>
-    </item>
-    <item>
-      <title>Zero-Copy GPU Inference from WebAssembly on Apple Silicon</title>
-      <link>https://abacusnoir.com/2026/04/18/zero-copy-gpu-inference-from-webassembly-on-apple-silicon/</link>
-      <description>A new WebAssembly module allows zero-copy GPU inference on Apple Silicon, enabling efficient stateful AI inference without the need for intermediate buffers. This advancement could significantly boost performance in AI applications.</description>
-      <category>Meta</category>
-      <pubDate>Sat, 18 Apr 2026 22:46:13 +0000</pubDate>
-      <guid>https://abacusnoir.com/2026/04/18/zero-copy-gpu-inference-from-webassembly-on-apple-silicon/</guid>
-    </item>
-    <item>
-      <title>agentified-langchain 0.3.0</title>
-      <link>https://pypi.org/project/agentified-langchain/0.3.0/</link>
-      <description>Agentified-langchain 0.3.0 is a new adapter for LangChain that facilitates tool injection for LangChain/LangGraph agents. This update enhances the functionality and versatility of these AI tools.</description>
-      <category>Open Source</category>
-      <pubDate>Sat, 18 Apr 2026 22:44:18 +0000</pubDate>
-      <guid>https://pypi.org/project/agentified-langchain/0.3.0/</guid>
-    </item>
-    <item>
-      <title>bernstein 1.8.7</title>
-      <link>https://pypi.org/project/bernstein/1.8.7/</link>
-      <description>Bernstein 1.8.7 offers declarative agent orchestration designed for engineering teams, streamlining the management of AI agents. This tool aims to improve collaboration and efficiency in AI projects.</description>
-      <category>Copilot Studio</category>
-      <pubDate>Sat, 18 Apr 2026 22:44:10 +0000</pubDate>
-      <guid>https://pypi.org/project/bernstein/1.8.7/</guid>
-    </item>
-    <item>
-      <title>blackmount-mcp added to PyPI</title>
-      <link>https://pypi.org/project/blackmount-mcp/</link>
-      <description>Blackmount-mcp has been added to PyPI, allowing users to manage their browser as an MCP server, integrating features like search history and AI chat exports. This tool enhances user control over their data.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 22:42:01 +0000</pubDate>
-      <guid>https://pypi.org/project/blackmount-mcp/</guid>
-    </item>
-    <item>
-      <title>leanctx 0.0.0</title>
-      <link>https://pypi.org/project/leanctx/0.0.0/</link>
-      <description>Leanctx 0.0.0 introduces a prompt compression tool for LLM applications, potentially reducing costs associated with using models from Anthropic, OpenAI, and Gemini by 40-60%. This can make LLMs more accessible for developers.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 22:39:56 +0000</pubDate>
-      <guid>https://pypi.org/project/leanctx/0.0.0/</guid>
-    </item>
-    <item>
-      <title>leanctx added to PyPI</title>
-      <link>https://pypi.org/project/leanctx/</link>
-      <description>Leanctx has been added to PyPI, providing a drop-in solution for prompt compression in production LLM applications. This tool aims to help developers save on AI service costs.</description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 18 Apr 2026 22:39:56 +0000</pubDate>
-      <guid>https://pypi.org/project/leanctx/</guid>
-    </item>
-    <item>
-      <title>infinium-copilot-cli-connector added to PyPI</title>
-      <link>https://pypi.org/project/infinium-copilot-cli-connector/</link>
-      <description>Infinium-copilot-cli-connector has been added to PyPI, creating a bridge between GitHub Copilot CLI hooks and Infinium agent tracing. This integration enhances the functionality of both tools.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 18 Apr 2026 22:17:27 +0000</pubDate>
-      <guid>https://pypi.org/project/infinium-copilot-cli-connector/</guid>
-    </item>
-    <item>
-      <title>multi-model-image-gen 0.2.2</title>
-      <link>https://pypi.org/project/multi-model-image-gen/0.2.2/</link>
-      <description>Multi-model-image-gen 0.2.2 is a unified Python library for image generation that supports various platforms like OpenAI and Google. This library aims to streamline image generation processes across different AI services.</description>
-      <category>Google</category>
-      <pubDate>Sat, 18 Apr 2026 21:53:53 +0000</pubDate>
-      <guid>https://pypi.org/project/multi-model-image-gen/0.2.2/</guid>
-    </item>
-    <item>
-      <title>He Warns Consumers About AI. His Dad Died After Relying on It</title>
-      <link>https://www.newser.com/story/387286/he-warns-consumers-about-ai-his-dad-died-after-relying-on-it.html</link>
-      <description>Ben Riley, an advocate against over-reliance on AI, shares a personal tragedy after his father relied on AI for critical decisions, leading to his death. This story highlights the potential dangers of trusting AI in life-or-death situations.</description>
-      <category>Perplexity</category>
-      <pubDate>Sat, 18 Apr 2026 21:50:00 +0000</pubDate>
-      <guid>https://www.newser.com/story/387286/he-warns-consumers-about-ai-his-dad-died-after-relying-on-it.html</guid>
-    </item>
-    <item>
-      <title>OnePlus Buds Ace 3 key specs and images surface online</title>
-      <link>https://www.gsmarena.com/oneplus_buds_ace_3_key_specs_and_images_surface_online-news-72439.php</link>
-      <description>OnePlus is set to release its budget-friendly TWS earbuds, Buds Ace 3, later this month, following the Buds Ace 2. This launch is significant as it continues OnePlus's trend of providing affordable audio solutions.</description>
+      <title>Leak: Apple Testing Four Distinct Frame Styles for Upcoming 2027 Smart Glasses</title>
+      <link>https://www.geeky-gadgets.com/2027-apple-smart-glasses/</link>
+      <description>Apple is reportedly testing four different frame styles for its upcoming smart glasses, set to launch in 2027. This development could significantly impact the wearable technology market.</description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 18 Apr 2026 21:47:02 +0000</pubDate>
-      <guid>https://www.gsmarena.com/oneplus_buds_ace_3_key_specs_and_images_surface_online-news-72439.php</guid>
+      <pubDate>Sun, 19 Apr 2026 07:00:54 +0000</pubDate>
+      <guid>https://www.geeky-gadgets.com/2027-apple-smart-glasses/</guid>
     </item>
     <item>
-      <title>longhouse 0.1.13</title>
-      <link>https://pypi.org/project/longhouse/0.1.13/</link>
-      <description>The longhouse 0.1.13 update allows users to keep Claude Code, Codex CLI, and Gemini CLI sessions organized in a searchable timeline. This enhancement improves workflow efficiency for developers.</description>
-      <category>Google</category>
-      <pubDate>Sat, 18 Apr 2026 21:44:12 +0000</pubDate>
-      <guid>https://pypi.org/project/longhouse/0.1.13/</guid>
-    </item>
-    <item>
-      <title>cliworker 0.7.1</title>
-      <link>https://pypi.org/project/cliworker/0.7.1/</link>
-      <description>The cliworker 0.7.1 update introduces features for faster and more reliable calls to various CLIs, enhancing user experience with speed flags and other optimizations. This update is crucial for developers who rely on these tools.</description>
-      <category>Google</category>
-      <pubDate>Sat, 18 Apr 2026 21:37:33 +0000</pubDate>
-      <guid>https://pypi.org/project/cliworker/0.7.1/</guid>
-    </item>
-    <item>
-      <title>‘Shut The Whole Thing Down’: Bill Maher Wants ‘On The Spectrum, Sociopath’ Tech CEOs To Pump The Brakes On AI</title>
-      <link>https://dailycaller.com/2026/04/18/bill-maher-real-time-ai-ceo-on-the-spectrum-sociopaths/</link>
-      <description>Bill Maher has called for tech CEOs to halt AI advancements, expressing concerns about the implications of their work. His remarks highlight growing public unease regarding unchecked AI development.</description>
-      <category>xAI</category>
-      <pubDate>Sat, 18 Apr 2026 21:20:08 +0000</pubDate>
-      <guid>https://dailycaller.com/2026/04/18/bill-maher-real-time-ai-ceo-on-the-spectrum-sociopaths/</guid>
-    </item>
-    <item>
-      <title>viralvideo added to PyPI</title>
-      <link>https://pypi.org/project/viralvideo/</link>
-      <description>The viralvideo package added to PyPI enables users to create TikTok-style viral videos from templates, catering to the growing demand for easily producible social media content. This tool could enhance content creation for marketers and influencers.</description>
-      <category>Google</category>
-      <pubDate>Sat, 18 Apr 2026 21:17:11 +0000</pubDate>
-      <guid>https://pypi.org/project/viralvideo/</guid>
-    </item>
-    <item>
-      <title>agentlens-monitor 0.3.0</title>
-      <link>https://pypi.org/project/agentlens-monitor/0.3.0/</link>
-      <description>The agentlens-monitor 0.3.0 update offers features for LLM observability, including quality scoring and hallucination detection. This is important for developers working with AI models to ensure reliability and performance.</description>
-      <category>Open Source</category>
-      <pubDate>Sat, 18 Apr 2026 21:15:32 +0000</pubDate>
-      <guid>https://pypi.org/project/agentlens-monitor/0.3.0/</guid>
-    </item>
-    <item>
-      <title>tokenxray added to PyPI</title>
-      <link>https://pypi.org/project/tokenxray/</link>
-      <description>The tokenxray tool added to PyPI allows users to analyze AI coding session costs and track spending, helping developers manage their resources more effectively. This is crucial for optimizing AI project budgets.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 18 Apr 2026 21:11:22 +0000</pubDate>
-      <guid>https://pypi.org/project/tokenxray/</guid>
-    </item>
-    <item>
-      <title>Rubén Gallego on why he defended Eric Swalwell — and why he regrets it now</title>
-      <link>https://www.vox.com/america-actually/486180/eric-swalwell-ruben-gallego-friendship-interview</link>
-      <description>Rep. Eric Swalwell has stepped down from the California governor’s race amid sexual misconduct allegations, which has also affected Sen. Rubén Gallego, who regrets defending Swalwell. This scandal has significant political implications.</description>
-      <category>Industry</category>
-      <pubDate>Sat, 18 Apr 2026 20:53:18 +0000</pubDate>
-      <guid>https://www.vox.com/america-actually/486180/eric-swalwell-ruben-gallego-friendship-interview</guid>
-    </item>
-    <item>
-      <title>Here are all of the new Apple products worth waiting for, and what to avoid buying now - 9to5Mac</title>
-      <link>https://9to5mac.com/2026/04/18/upcoming-apple-product-launches-worth-waiting-for-later-this-year/</link>
-      <description>9to5Mac outlines new Apple products to look forward to, including updated MacBook models and iPads, while advising against certain purchases. This information helps consumers make informed buying decisions.</description>
-      <category>Apple</category>
-      <pubDate>Sat, 18 Apr 2026 20:14:13 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/04/18/upcoming-apple-product-launches-worth-waiting-for-later-this-year/</guid>
-    </item>
-    <item>
-      <title>comfy-env 0.2.69</title>
-      <link>https://pypi.org/project/comfy-env/0.2.69/</link>
-      <description>The comfy-env 0.2.69 update improves environment management for ComfyUI custom nodes, focusing on CUDA wheel resolution and process isolation. This is beneficial for developers working with custom UI nodes.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 18 Apr 2026 20:08:26 +0000</pubDate>
-      <guid>https://pypi.org/project/comfy-env/0.2.69/</guid>
-    </item>
-    <item>
-      <title>comfy-env 0.2.68</title>
-      <link>https://pypi.org/project/comfy-env/0.2.68/</link>
-      <description>Comfy-env 0.2.68 has been released, enhancing environment management for ComfyUI custom nodes with improved CUDA wheel resolution and process isolation. This update is significant for developers using ComfyUI for AI applications.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 18 Apr 2026 19:56:26 +0000</pubDate>
-      <guid>https://pypi.org/project/comfy-env/0.2.68/</guid>
-    </item>
-    <item>
-      <title>comfy-env 0.2.67</title>
-      <link>https://pypi.org/project/comfy-env/0.2.67/</link>
-      <description>The release of comfy-env 0.2.67 continues to improve environment management for ComfyUI custom nodes, focusing on CUDA wheel resolution and process isolation. This is crucial for developers needing stable environments for AI projects.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 18 Apr 2026 19:43:18 +0000</pubDate>
-      <guid>https://pypi.org/project/comfy-env/0.2.67/</guid>
-    </item>
-    <item>
-      <title>hf-inference-acp 0.6.19</title>
-      <link>https://pypi.org/project/hf-inference-acp/0.6.19/</link>
-      <description>Hugging Face has released hf-inference-acp 0.6.19, an inference agent that supports ACP and is powered by fast-agent-mcp. This tool enhances the capabilities of Hugging Face's AI models.</description>
-      <category>Open Source</category>
-      <pubDate>Sat, 18 Apr 2026 19:40:24 +0000</pubDate>
-      <guid>https://pypi.org/project/hf-inference-acp/0.6.19/</guid>
-    </item>
-    <item>
-      <title>aidiary added to PyPI</title>
-      <link>https://pypi.org/project/aidiary/</link>
-      <description>Aidiary has been added to PyPI, offering a portable human-AI collaboration memory system that utilizes an MCP server and knowledge graphs. This tool aims to enhance collaboration between humans and AI.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 18 Apr 2026 19:37:55 +0000</pubDate>
-      <guid>https://pypi.org/project/aidiary/</guid>
-    </item>
-    <item>
-      <title>Show HN: Trained a 12M transformer on an ML framework we built from scratch</title>
-      <link>https://github.com/mni-ml/framework</link>
-      <description>Two CS students have developed a machine learning framework from scratch in Rust and CUDA, successfully training a 12M transformer model. This project exemplifies their commitment to understanding the entire ML stack.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 18 Apr 2026 19:17:39 +0000</pubDate>
-      <guid>https://github.com/mni-ml/framework</guid>
-    </item>
-    <item>
-      <title>comfy-env 0.2.66</title>
-      <link>https://pypi.org/project/comfy-env/0.2.66/</link>
-      <description>Comfy-env 0.2.66 has been released, further refining environment management for ComfyUI custom nodes with enhancements in CUDA wheel resolution and process isolation. This is vital for developers working on AI projects.</description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 18 Apr 2026 18:49:06 +0000</pubDate>
-      <guid>https://pypi.org/project/comfy-env/0.2.66/</guid>
-    </item>
-    <item>
-      <title>vox-voxtral 0.2.20</title>
-      <link>https://pypi.org/project/vox-voxtral/0.2.20/</link>
-      <description>Voxtral 0.2.20 has been released, providing a Mistral adapter for speech-to-text (STT) and text-to-speech (TTS) functionalities. This enhances the capabilities of Vox for audio processing.</description>
-      <category>Mistral</category>
-      <pubDate>Sat, 18 Apr 2026 12:48:02 +0000</pubDate>
-      <guid>https://pypi.org/project/vox-voxtral/0.2.20/</guid>
-    </item>
-    <item>
-      <title>Why Use a Proxy Server? Benefits, Drawbacks and Common Use Cases</title>
-      <link>https://www.cnet.com/tech/services-and-software/why-use-proxy-server-benefits-drawbacks-common-use-cases/</link>
-      <description>The article discusses the benefits and drawbacks of using proxy servers, highlighting their utility in web scraping and network performance improvement while also noting potential risks.</description>
+      <title>Mozilla’s Thunderbolt Is an Open-Source AI Client, but What Exactly Is It?</title>
+      <link>https://www.hongkiat.com/blog/mozilla-thunderbolt-open-source-ai-client/</link>
+      <description>Mozilla has introduced Thunderbolt, an open-source AI client designed to give organizations greater control over their AI models and workflows. This tool aims to enhance transparency and customization in AI usage.</description>
       <category>Perplexity</category>
-      <pubDate>Sat, 18 Apr 2026 12:00:00 +0000</pubDate>
-      <guid>https://www.cnet.com/tech/services-and-software/why-use-proxy-server-benefits-drawbacks-common-use-cases/</guid>
+      <pubDate>Sun, 19 Apr 2026 07:00:00 +0000</pubDate>
+      <guid>https://www.hongkiat.com/blog/mozilla-thunderbolt-open-source-ai-client/</guid>
     </item>
     <item>
-      <title>Grok Speech to Text and Text to Speech APIs</title>
-      <link>https://x.ai/news/grok-stt-and-tts-apis</link>
-      <description>Grok has announced two new audio APIs: Grok Speech to Text (STT) and Grok Text to Speech (TTS), built on the same technology as Grok Voice, Tesla vehicles, and Starlink support. These APIs aim to enhance audio processing capabilities.</description>
+      <title>openhost 0.4.0</title>
+      <link>https://pypi.org/project/openhost/0.4.0/</link>
+      <description>The article introduces openhost 0.4.0, a tool that allows users to run local large language models from Python, compatible with LangChain. This development supports local AI model deployment.</description>
+      <category>Meta</category>
+      <pubDate>Sun, 19 Apr 2026 06:49:22 +0000</pubDate>
+      <guid>https://pypi.org/project/openhost/0.4.0/</guid>
+    </item>
+    <item>
+      <title>captain-nemo 0.3.72</title>
+      <link>https://pypi.org/project/captain-nemo/0.3.72/</link>
+      <description>Captain-nemo 0.3.72 is a coding agent daemon connected to Lark, powered by the Claude Agent SDK. This tool aims to streamline coding tasks through AI assistance.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 19 Apr 2026 06:43:49 +0000</pubDate>
+      <guid>https://pypi.org/project/captain-nemo/0.3.72/</guid>
+    </item>
+    <item>
+      <title>claude-tap 0.1.29</title>
+      <link>https://pypi.org/project/claude-tap/0.1.29/</link>
+      <description>Claude-tap 0.1.29 is a tool that allows users to trace Claude Code API requests via a local reverse proxy, enabling inspection of system prompts and token usage. This aids in debugging and optimizing API interactions.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 19 Apr 2026 06:41:44 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-tap/0.1.29/</guid>
+    </item>
+    <item>
+      <title>pyg-nightly 2.8.0.dev20260419</title>
+      <link>https://pypi.org/project/pyg-nightly/2.8.0.dev20260419/</link>
+      <description>Pyg-nightly 2.8.0.dev20260419 is a Graph Neural Network library for PyTorch, aimed at facilitating advanced machine learning applications. This library supports the growing interest in graph-based AI models.</description>
+      <category>Meta</category>
+      <pubDate>Sun, 19 Apr 2026 06:41:18 +0000</pubDate>
+      <guid>https://pypi.org/project/pyg-nightly/2.8.0.dev20260419/</guid>
+    </item>
+    <item>
+      <title>socratic-nexus 0.3.4</title>
+      <link>https://pypi.org/project/socratic-nexus/0.3.4/</link>
+      <description>Socratic Nexus 0.3.4 is a universal client for large language models, compatible with various LLMs and featuring integrations with Openclaw and LangChain. This development enhances accessibility for developers working with multiple AI models.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 06:23:42 +0000</pubDate>
+      <guid>https://pypi.org/project/socratic-nexus/0.3.4/</guid>
+    </item>
+    <item>
+      <title>captain-nemo 0.3.71</title>
+      <link>https://pypi.org/project/captain-nemo/0.3.71/</link>
+      <description>Captain Nemo 0.3.71 is a coding agent daemon that connects with Lark and utilizes the Claude Agent SDK. This tool aims to improve coding efficiency through AI integration.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 19 Apr 2026 06:23:05 +0000</pubDate>
+      <guid>https://pypi.org/project/captain-nemo/0.3.71/</guid>
+    </item>
+    <item>
+      <title>geny-executor 0.20.0</title>
+      <link>https://pypi.org/project/geny-executor/0.20.0/</link>
+      <description>Geny Executor 0.20.0 is an agent pipeline library featuring a 16-stage dual-abstraction architecture, built on the Anthropic API. This architecture aims to optimize AI task execution.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 19 Apr 2026 06:21:04 +0000</pubDate>
+      <guid>https://pypi.org/project/geny-executor/0.20.0/</guid>
+    </item>
+    <item>
+      <title>nteract 2.2.1a202604190553</title>
+      <link>https://pypi.org/project/nteract/2.2.1a202604190553/</link>
+      <description>Nteract 2.2.1a202604190553 enhances Jupyter notebooks by integrating AI capabilities, supporting various agents like Claude and ChatGPT. This integration allows for more interactive and intelligent data analysis.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 06:12:06 +0000</pubDate>
+      <guid>https://pypi.org/project/nteract/2.2.1a202604190553/</guid>
+    </item>
+    <item>
+      <title>gemcode 0.3.108</title>
+      <link>https://pypi.org/project/gemcode/0.3.108/</link>
+      <description>Gemcode 0.3.108 is a local-first coding agent designed for Google Gemini, focusing on user privacy and performance. This approach allows developers to work more securely with AI.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 06:11:50 +0000</pubDate>
+      <guid>https://pypi.org/project/gemcode/0.3.108/</guid>
+    </item>
+    <item>
+      <title>tachikoma-agent 1.30.3</title>
+      <link>https://pypi.org/project/tachikoma-agent/1.30.3/</link>
+      <description>Tachikoma Agent 1.30.3 is a proactive personal assistant built on the Claude Agent SDK, designed to enhance personal productivity through AI assistance. This tool aims to support users in managing daily tasks.</description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 19 Apr 2026 06:09:49 +0000</pubDate>
+      <guid>https://pypi.org/project/tachikoma-agent/1.30.3/</guid>
+    </item>
+    <item>
+      <title>AI Fitness Recovery Solutions Gain Popularity</title>
+      <link>https://grandgoldman.com/blogs/lifestyle/ai-fitness-recovery-solutions-gain-popularity</link>
+      <description>AI fitness recovery solutions are gaining popularity, reflecting a growing trend in integrating AI into personal health and fitness. These solutions aim to enhance recovery processes for athletes and fitness enthusiasts.</description>
+      <category>Industry</category>
+      <pubDate>Sun, 19 Apr 2026 06:07:42 +0000</pubDate>
+      <guid>https://grandgoldman.com/blogs/lifestyle/ai-fitness-recovery-solutions-gain-popularity</guid>
+    </item>
+    <item>
+      <title>GitHub Copilotを自分好みにカスタマイズする copilot-instructions.md</title>
+      <link>https://dev.classmethod.jp/articles/shoma-customize-github-copilot-to-your-preference-copilot-instructions-md/</link>
+      <description>A guide on customizing GitHub Copilot offers users tips on tailoring the AI tool to better fit their coding preferences. This customization can enhance user experience and productivity.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Sun, 19 Apr 2026 06:05:36 +0000</pubDate>
+      <guid>https://dev.classmethod.jp/articles/shoma-customize-github-copilot-to-your-preference-copilot-instructions-md/</guid>
+    </item>
+    <item>
+      <title>Cerebras files for IPO how much revenue #tech</title>
+      <link>https://alltoc.com/tech/cerebras-files-for-ipo-how-much-revenue</link>
+      <description>Cerebras Systems has filed for an IPO, aiming to capitalize on the booming AI chip market. The company claims to produce the fastest AI hardware for training and inference, indicating strong growth potential.</description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 19 Apr 2026 06:01:27 +0000</pubDate>
+      <guid>https://alltoc.com/tech/cerebras-files-for-ipo-how-much-revenue</guid>
+    </item>
+    <item>
+      <title>Meta Plans 8,000 Job Cuts in May, With Further Layoffs Expected Later This Year</title>
+      <link>https://www.naturalnews.com/2026-04-19-meta-platforms-plans-job-cuts-in-may.html</link>
+      <description>Meta Platforms plans to cut approximately 8,000 jobs, representing about 10% of its workforce, as part of a restructuring effort. This move indicates ongoing challenges in the tech industry.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-04-19-meta-platforms-plans-job-cuts-in-may.html</guid>
+    </item>
+    <item>
+      <title>llama-index-tools-instanode 0.2.0</title>
+      <link>https://pypi.org/project/llama-index-tools-instanode/0.2.0/</link>
+      <description>LlamaIndex tools have been updated to version 0.2.0, allowing users to provision Postgres databases and webhooks from LlamaIndex agents on instanode.dev.</description>
+      <category>Meta</category>
+      <pubDate>Sun, 19 Apr 2026 05:51:47 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-index-tools-instanode/0.2.0/</guid>
+    </item>
+    <item>
+      <title>langchain-instanode 0.2.0</title>
+      <link>https://pypi.org/project/langchain-instanode/0.2.0/</link>
+      <description>LangChain tools have also been updated to version 0.2.0, enabling AI agents to provision ephemeral Postgres databases and webhook receivers on instanode.dev.</description>
+      <category>Open Source</category>
+      <pubDate>Sun, 19 Apr 2026 05:51:32 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-instanode/0.2.0/</guid>
+    </item>
+    <item>
+      <title>llmfit: Right-sizes LLM models to your system's RAM, CPU, and GPU</title>
+      <link>https://www.llmfit.org</link>
+      <description>The llmfit tool helps users find LLM models that fit their system's RAM, CPU, and GPU specifications with a single command.</description>
+      <category>Meta</category>
+      <pubDate>Sun, 19 Apr 2026 05:47:02 +0000</pubDate>
+      <guid>https://www.llmfit.org</guid>
+    </item>
+    <item>
+      <title>Show HN: AgentKey – Access governance for AI agents</title>
+      <link>https://agentkey.dev</link>
+      <description>AgentKey provides access governance for AI agents, allowing management of SaaS tool access with human approval and audit logging.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 05:40:29 +0000</pubDate>
+      <guid>https://agentkey.dev</guid>
+    </item>
+    <item>
+      <title>llama-index-tools-instanode added to PyPI</title>
+      <link>https://pypi.org/project/llama-index-tools-instanode/</link>
+      <description>LlamaIndex tools have been added to PyPI, enabling users to provision Postgres databases and webhooks from LlamaIndex agents.</description>
+      <category>Meta</category>
+      <pubDate>Sun, 19 Apr 2026 05:33:16 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-index-tools-instanode/</guid>
+    </item>
+    <item>
+      <title>langchain-instanode added to PyPI</title>
+      <link>https://pypi.org/project/langchain-instanode/</link>
+      <description>LangChain tools have been added to PyPI, allowing AI agents to provision ephemeral Postgres databases and webhook receivers.</description>
+      <category>Open Source</category>
+      <pubDate>Sun, 19 Apr 2026 05:33:11 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-instanode/</guid>
+    </item>
+    <item>
+      <title>langchain-instanode 0.1.0</title>
+      <link>https://pypi.org/project/langchain-instanode/0.1.0/</link>
+      <description>LangChain tools were initially released in version 0.1.0, enabling AI agents to provision ephemeral Postgres databases and webhook receivers.</description>
+      <category>Open Source</category>
+      <pubDate>Sun, 19 Apr 2026 05:33:11 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-instanode/0.1.0/</guid>
+    </item>
+    <item>
+      <title>Shinsegae pivots on AI strategy after dropping OpenAI partnership - The Korea Times</title>
+      <link>https://www.koreatimes.co.kr/business/companies/20260419/shinsegae-pivots-on-ai-strategy-after-dropping-openai-partnership</link>
+      <description>Shinsegae has shifted its AI strategy by canceling its partnership with OpenAI, indicating a major change in its AI deployment plans.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 05:31:10 +0000</pubDate>
+      <guid>https://www.koreatimes.co.kr/business/companies/20260419/shinsegae-pivots-on-ai-strategy-after-dropping-openai-partnership</guid>
+    </item>
+    <item>
+      <title>attune-rag 0.1.3</title>
+      <link>https://pypi.org/project/attune-rag/0.1.3/</link>
+      <description>The attune-rag 0.1.3 is a lightweight, LLM-agnostic RAG pipeline that works with various LLMs, enhancing flexibility in AI applications.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 05:25:50 +0000</pubDate>
+      <guid>https://pypi.org/project/attune-rag/0.1.3/</guid>
+    </item>
+    <item>
+      <title>Doctor-led AI platform offering 24x7 monitoring outside hospital launched in Chennai</title>
+      <link>https://www.thehindubusinessline.com/companies/doctor-led-ai-platform-offering-24x7-monitoring-outside-hospital-launched-in-chennai/article70880076.ece</link>
+      <description>A doctor-led AI platform has been launched in Chennai, offering 24/7 monitoring outside of hospitals, with plans for expansion in southern states.</description>
+      <category>AI Foundry</category>
+      <pubDate>Sun, 19 Apr 2026 05:12:03 +0000</pubDate>
+      <guid>https://www.thehindubusinessline.com/companies/doctor-led-ai-platform-offering-24x7-monitoring-outside-hospital-launched-in-chennai/article70880076.ece</guid>
+    </item>
+    <item>
+      <title>flamehaven-filesearch 1.5.2</title>
+      <link>https://pypi.org/project/flamehaven-filesearch/1.5.2/</link>
+      <description>FLAMEHAVEN FileSearch 1.5.2 is an open-source semantic document search tool that integrates API authentication using Google Gemini. This update enhances the tool's capabilities for users seeking advanced search functionalities.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 04:52:07 +0000</pubDate>
+      <guid>https://pypi.org/project/flamehaven-filesearch/1.5.2/</guid>
+    </item>
+    <item>
+      <title>flamehaven-filesearch 1.5.1</title>
+      <link>https://pypi.org/project/flamehaven-filesearch/1.5.1/</link>
+      <description>FLAMEHAVEN FileSearch 1.5.1 is an open-source semantic document search tool with API authentication powered by Google Gemini. This version continues to improve user access to advanced search features.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 04:51:37 +0000</pubDate>
+      <guid>https://pypi.org/project/flamehaven-filesearch/1.5.1/</guid>
+    </item>
+    <item>
+      <title>flamehaven-filesearch 1.5.0</title>
+      <link>https://pypi.org/project/flamehaven-filesearch/1.5.0/</link>
+      <description>FLAMEHAVEN FileSearch 1.5.0 is an open-source semantic document search application that utilizes API authentication through Google Gemini. This version lays the groundwork for enhanced search functionalities.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 04:51:17 +0000</pubDate>
+      <guid>https://pypi.org/project/flamehaven-filesearch/1.5.0/</guid>
+    </item>
+    <item>
+      <title>TeLLMgramBot 3.13.2</title>
+      <link>https://pypi.org/project/tellmgrambot/3.13.2/</link>
+      <description>TeLLMgramBot 3.13.2 is a Telegram bot powered by large language models from OpenAI and Anthropic, offering users interactive capabilities within the messaging platform. This update signifies the growing integration of AI in everyday communication tools.</description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 19 Apr 2026 04:45:27 +0000</pubDate>
+      <guid>https://pypi.org/project/tellmgrambot/3.13.2/</guid>
+    </item>
+    <item>
+      <title>hol-guard 2.0.26</title>
+      <link>https://pypi.org/project/hol-guard/2.0.26/</link>
+      <description>HOL Guard 2.0.26 is a protective tool designed to secure local AI harnesses before they operate with various AI tools like Codex and Claude Code. This update emphasizes the importance of security in AI deployments.</description>
+      <category>Google</category>
+      <pubDate>Sun, 19 Apr 2026 04:32:05 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.26/</guid>
+    </item>
+    <item>
+      <title>iris-vector-rag 0.10.1</title>
+      <link>https://pypi.org/project/iris-vector-rag/0.10.1/</link>
+      <description>iris-vector-rag 0.10.1 introduces enterprise RAG pipelines with native IRIS vector search, featuring six production implementations and configurations for AWS/Azure. This development aims to streamline AI data processing without external VectorDBs.</description>
+      <category>Open Source</category>
+      <pubDate>Sun, 19 Apr 2026 03:25:18 +0000</pubDate>
+      <guid>https://pypi.org/project/iris-vector-rag/0.10.1/</guid>
+    </item>
+    <item>
+      <title>Persistent Edge Hijacker - Aitopia Extension Reinstalls via Registry</title>
+      <link>https://www.bleepingcomputer.com/forums/t/815563/persistent-edge-hijacker-aitopia-extension-reinstalls-via-registry/</link>
+      <description>A persistent browser hijacker named Aitopia Extension is causing issues by reinstalling itself via the registry. Users are seeking help to remove this malware affecting their browsing experience.</description>
+      <category>DeepSeek</category>
+      <pubDate>Sun, 19 Apr 2026 03:20:03 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/forums/t/815563/persistent-edge-hijacker-aitopia-extension-reinstalls-via-registry/</guid>
+    </item>
+    <item>
+      <title>thaw-native 0.3.0</title>
+      <link>https://pypi.org/project/thaw-native/0.3.0/</link>
+      <description>Thaw-native 0.3.0 is a Rust and CUDA-based extension designed for efficient data management through pipelined DMA freeze and restore functionalities. This update enhances performance for developers working with data-intensive applications.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 19 Apr 2026 02:47:03 +0000</pubDate>
+      <guid>https://pypi.org/project/thaw-native/0.3.0/</guid>
+    </item>
+    <item>
+      <title>Elon Musk fulfills teen's last wish in touching X post after she was too weak to take his call</title>
+      <link>https://www.foxnews.com/media/elon-musk-fulfills-teens-last-wish-touching-x-post-after-weak-take-call</link>
+      <description>Elon Musk honored a dying 15-year-old cancer patient by answering her handwritten questions and making her plushie a SpaceX mascot after she passed away. This gesture highlights Musk's personal connection with fans.</description>
       <category>xAI</category>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://x.ai/news/grok-stt-and-tts-apis</guid>
+      <pubDate>Sun, 19 Apr 2026 01:54:34 +0000</pubDate>
+      <guid>https://www.foxnews.com/media/elon-musk-fulfills-teens-last-wish-touching-x-post-after-weak-take-call</guid>
+    </item>
+    <item>
+      <title>Becky Lynch Wins Back IC Title at WrestleMania in Win for Consistency</title>
+      <link>https://bleedingcool.com/tv/becky-lynch-wins-back-ic-title-at-wrestlemania-in-win-for-consistency/</link>
+      <description>Becky Lynch won back the Intercontinental Title at WrestleMania, marking a significant moment in her wrestling career. This victory is celebrated as a testament to her consistency in the sport.</description>
+      <category>xAI</category>
+      <pubDate>Sun, 19 Apr 2026 01:12:10 +0000</pubDate>
+      <guid>https://bleedingcool.com/tv/becky-lynch-wins-back-ic-title-at-wrestlemania-in-win-for-consistency/</guid>
+    </item>
+    <item>
+      <title>vox-voxtral 0.2.30</title>
+      <link>https://pypi.org/project/vox-voxtral/0.2.30/</link>
+      <description>Mistral released version 0.2.30 of the Voxtral STT/TTS adapter for Vox, enhancing speech-to-text and text-to-speech functionalities. This update is significant for developers integrating voice technologies.</description>
+      <category>Mistral</category>
+      <pubDate>Sun, 19 Apr 2026 00:15:28 +0000</pubDate>
+      <guid>https://pypi.org/project/vox-voxtral/0.2.30/</guid>
+    </item>
+    <item>
+      <title>bernstein 1.8.8</title>
+      <link>https://pypi.org/project/bernstein/1.8.8/</link>
+      <description>Version 1.8.8 of the Bernstein tool introduces declarative agent orchestration aimed at improving engineering team workflows. This update is important for teams looking to streamline project management.</description>
+      <category>Copilot Studio</category>
+      <pubDate>Sun, 19 Apr 2026 00:04:00 +0000</pubDate>
+      <guid>https://pypi.org/project/bernstein/1.8.8/</guid>
+    </item>
+    <item>
+      <title>apple-fm-cli 0.1.2</title>
+      <link>https://pypi.org/project/apple-fm-cli/0.1.2/</link>
+      <description>The release of version 0.1.2 of the apple-fm-cli provides a command-line interface and HTTP server compatible with OpenAI for Apple's Foundation Models. This is significant for developers working with Apple's AI tools.</description>
+      <category>Apple</category>
+      <pubDate>Sat, 18 Apr 2026 23:50:26 +0000</pubDate>
+      <guid>https://pypi.org/project/apple-fm-cli/0.1.2/</guid>
+    </item>
+    <item>
+      <title>apple-fm-cli added to PyPI</title>
+      <link>https://pypi.org/project/apple-fm-cli/</link>
+      <description>The apple-fm-cli has been added to PyPI, allowing developers to easily access a command-line interface and HTTP server for Apple's Foundation Models. This addition is crucial for enhancing accessibility to Apple's AI resources.</description>
+      <category>Apple</category>
+      <pubDate>Sat, 18 Apr 2026 23:50:22 +0000</pubDate>
+      <guid>https://pypi.org/project/apple-fm-cli/</guid>
+    </item>
+    <item>
+      <title>vox-voxtral 0.2.29</title>
+      <link>https://pypi.org/project/vox-voxtral/0.2.29/</link>
+      <description>Mistral released version 0.2.29 of the Voxtral STT/TTS adapter for Vox, which improves the performance of speech technologies. This update is relevant for developers focusing on voice applications.</description>
+      <category>Mistral</category>
+      <pubDate>Sat, 18 Apr 2026 23:45:29 +0000</pubDate>
+      <guid>https://pypi.org/project/vox-voxtral/0.2.29/</guid>
+    </item>
+    <item>
+      <title>Top 10 Mistakes Startups Make When Using AI</title>
+      <link>https://www.c-sharpcorner.com/article/top-10-mistakes-startups-make-when-using-ai/</link>
+      <description>The article outlines the top 10 mistakes startups make when using AI, providing insights on how to avoid these pitfalls and build scalable systems. This guidance is essential for AI founders aiming for success.</description>
+      <category>Industry</category>
+      <pubDate>Sat, 18 Apr 2026 23:37:58 +0000</pubDate>
+      <guid>https://www.c-sharpcorner.com/article/top-10-mistakes-startups-make-when-using-ai/</guid>
+    </item>
+    <item>
+      <title>JPMorgan has stark message on Qualcomm stock</title>
+      <link>https://www.thestreet.com/investing/stocks/jpmorgan-has-a-stark-message-on-qualcomm-stock</link>
+      <description>JPMorgan has expressed caution regarding Qualcomm's stock ahead of its earnings report, highlighting pressures in its core handset business. This is significant for investors monitoring Qualcomm's performance.</description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 18 Apr 2026 17:47:00 +0000</pubDate>
+      <guid>https://www.thestreet.com/investing/stocks/jpmorgan-has-a-stark-message-on-qualcomm-stock</guid>
     </item>
   </channel>
 </rss>
