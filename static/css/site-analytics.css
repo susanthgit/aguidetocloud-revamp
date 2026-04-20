@@ -760,7 +760,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  min-width: 0;
+  flex-wrap: wrap;
 }
 
 /* Scoped leaderboard name — full names, clickable */
@@ -1905,11 +1905,6 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 0.5rem;
-}
-
-.siteana-lb-name-row {
-  display: flex;
-  align-items: center;
 }
 
 /* ── CUMULATIVE COUNTER ───────────── */
