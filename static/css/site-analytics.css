@@ -199,7 +199,8 @@
 
 /* Leaderboard */
 .siteana-lb-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2rem 1fr auto 3.5rem;
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem 0;
@@ -221,7 +222,7 @@
 .siteana-lb-rank.silver { color: #9CA3AF; }
 .siteana-lb-rank.bronze { color: #CD7F32; }
 
-.siteana-lb-info { flex: 3; min-width: 140px; }
+.siteana-lb-info { min-width: 0; }
 
 .siteana-lb-name {
   font-weight: 600;
@@ -235,9 +236,8 @@
 }
 
 .siteana-lb-bar-wrap {
-  flex: 1;
-  max-width: 120px;
-  min-width: 20px;
+  width: 100%;
+  max-width: 100px;
   height: 8px;
   background: rgba(255,255,255,0.05);
   border-radius: 4px;
@@ -1898,13 +1898,6 @@
 .siteana-insight-icon {
   font-size: 1.1rem;
   flex-shrink: 0;
-}
-
-/* ── SPARKLINES ───────────────────── */
-.siteana-sparkline {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5rem;
 }
 
 /* ── CUMULATIVE COUNTER ───────────── */
