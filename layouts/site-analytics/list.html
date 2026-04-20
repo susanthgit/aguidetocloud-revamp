@@ -1168,12 +1168,13 @@
       return items.map(function(t, i) {
         var name = TOOLS[t.tool] || t.tool;
         var color = COLORS[t.tool] || '#64748B';
+        var url = TOOL_URLS[t.tool] || '/';
         var pct = Math.round((t.total / max) * 100);
         var rank = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
         var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
         var newBadge = (t._isNew) ? ' <span class="siteana-new-badge">NEW</span>' : '';
         return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
-          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</span>' + newBadge + spark + '</div>'
+          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</a>' + newBadge + spark + '</div>'
           + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
           + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
           + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
