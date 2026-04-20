@@ -7,20 +7,27 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // SessionStorage cache — avoid re-fetching on tab switch / category pages
   var _cache = {};
+  var _cacheTimes = {};
+  var CACHE_TTL = 1800000; // 30 minutes
   async function fetchJson(url) {
-    if (_cache[url]) return _cache[url];
+    if (_cache[url] && _cacheTimes[url] && (Date.now() - _cacheTimes[url]) < CACHE_TTL) return _cache[url];
     var cached = sessionStorage.getItem('ainews_' + url);
     if (cached) {
       try {
-        _cache[url] = JSON.parse(cached);
-        return _cache[url];
+        var wrapper = JSON.parse(cached);
+        if (wrapper._ts && wrapper._data && (Date.now() - wrapper._ts) < CACHE_TTL) {
+          _cache[url] = wrapper._data;
+          _cacheTimes[url] = wrapper._ts;
+          return _cache[url];
+        }
       } catch (e) { /* parse error, re-fetch */ }
     }
     var resp = await fetch(url);
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var data = await resp.json();
     _cache[url] = data;
-    try { sessionStorage.setItem('ainews_' + url, JSON.stringify(data)); } catch (e) { /* quota exceeded */ }
+    _cacheTimes[url] = Date.now();
+    try { sessionStorage.setItem('ainews_' + url, JSON.stringify({ _data: data, _ts: Date.now() })); } catch (e) { /* quota exceeded */ }
     return data;
   }
 
@@ -104,8 +111,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Category landing page — fetch, filter, render
     await loadCategoryView(window.__ainewsCategoryFilter);
   } else {
-    // Main AI News page — load daily view
-    await loadView('daily');
+    // Main AI News page — load monthly view by default
+    await loadView('monthly');
   }
 
   // Tab switching — only on main page (tabs don't exist on category pages)
@@ -345,8 +352,11 @@ function renderNews(data, view) {
   var compactItems = compactOrdered.slice(0, maxCompact);
   if (compactItems.length > 0) {
     var initialShow = Math.min(compactItems.length, view === 'monthly' ? 50 : 20);
+    var allAutoExpanded = compactItems.length <= 10;
     html += '<div class="ainews-tier-section" id="ainews-compact-section">';
-    html += '<div class="ainews-tier-header ainews-tier-deepdives">More Stories</div>';
+    html += '<div class="ainews-tier-header ainews-tier-deepdives">More Stories <span class="ainews-stories-count">(' + compactItems.length + ')</span>';
+    html += '<button class="ainews-toggle-all" aria-label="' + (allAutoExpanded ? 'Collapse all stories' : 'Expand all stories') + '">' + (allAutoExpanded ? 'Collapse All ▲' : 'Expand All ▼') + '</button>';
+    html += '</div>';
     html += '<div class="ainews-compact-list" id="ainews-compact">';
     compactItems.forEach(function (entry, i) {
       var article = entry.primary;
@@ -361,9 +371,9 @@ function renderNews(data, view) {
       if (entry.related.length > 0) html += ' <span class="ainews-cluster-badge">+' + entry.related.length + ' source' + (entry.related.length > 1 ? 's' : '') + '</span>';
       html += '</span>';
       html += '<span class="ainews-compact-time">' + v.time + '</span>';
-      html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="' + (i === 0 ? 'true' : 'false') + '">' + (i === 0 ? '▲' : '▼') + '</button>';
+      html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="' + (i < 10 ? 'true' : 'false') + '">' + (i < 10 ? '▲' : '▼') + '</button>';
       html += '</div>';
-      html += '<div class="ainews-compact-detail"' + (i === 0 ? '' : ' hidden') + '>';
+      html += '<div class="ainews-compact-detail' + (i < 10 ? ' ainews-detail-open' : '') + '"' + (i < 10 ? '' : ' inert') + '>';
       html += '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>';
       if (v.whyMatters) html += '<p class="ainews-why"><strong>Why it matters:</strong> ' + escapeHtml(v.whyMatters) + '</p>';
       // Show clustered related articles
@@ -437,7 +447,10 @@ function renderNews(data, view) {
   }).catch(function () {});
 
   // === EVENT DELEGATION (single listener for filter, accordion, show-more) ===
-  grid.addEventListener('click', function (e) {
+  // Guard: only attach once — renderNews is called on every tab switch
+  if (!grid._ainewsClickBound) {
+    grid._ainewsClickBound = true;
+    grid.addEventListener('click', function (e) {
     // Smart filter toggle
     var filterBtn = e.target.closest('#ainews-filter-btn');
     if (filterBtn) {
@@ -474,10 +487,32 @@ function renderNews(data, view) {
       var row = (expandBtn || titleClick).closest('.ainews-compact-row');
       var detail = row.querySelector('.ainews-compact-detail');
       var chevron = row.querySelector('.ainews-compact-expand');
-      var isOpen = !detail.hidden;
-      detail.hidden = isOpen;
+      var isOpen = detail.classList.contains('ainews-detail-open');
+      detail.classList.toggle('ainews-detail-open');
+      if (isOpen) detail.setAttribute('inert', ''); else detail.removeAttribute('inert');
       chevron.textContent = isOpen ? '▼' : '▲';
-      chevron.setAttribute('aria-expanded', !isOpen);
+      chevron.setAttribute('aria-expanded', String(!isOpen));
+      return;
+    }
+    // Expand All / Collapse All toggle
+    var toggleBtn = e.target.closest('.ainews-toggle-all');
+    if (toggleBtn) {
+      e.preventDefault();
+      var visibleRows = grid.querySelectorAll('.ainews-compact-row:not([style*="display: none"]):not([style*="display:none"])');
+      var anyCollapsed = false;
+      visibleRows.forEach(function (r) {
+        if (!r.querySelector('.ainews-detail-open')) anyCollapsed = true;
+      });
+      var expanding = anyCollapsed;
+      visibleRows.forEach(function (r) {
+        var d = r.querySelector('.ainews-compact-detail');
+        var ch = r.querySelector('.ainews-compact-expand');
+        if (expanding) { d.classList.add('ainews-detail-open'); d.removeAttribute('inert'); }
+        else { d.classList.remove('ainews-detail-open'); d.setAttribute('inert', ''); }
+        if (ch) { ch.textContent = expanding ? '▲' : '▼'; ch.setAttribute('aria-expanded', String(expanding)); }
+      });
+      toggleBtn.textContent = expanding ? 'Collapse All ▲' : 'Expand All ▼';
+      toggleBtn.setAttribute('aria-label', expanding ? 'Collapse all stories' : 'Expand all stories');
       return;
     }
     // Show more
@@ -496,6 +531,15 @@ function renderNews(data, view) {
     }
   });
 
+  // Keyboard: Enter/Space expands compact rows (accessibility)
+  grid.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var title = e.target.closest('.ainews-compact-title');
+    if (!title) return;
+    e.preventDefault();
+    title.click();
+  });
+
   // Close smart filter dropdown when clicking outside
   document.addEventListener('click', function (e) {
     var dd = document.getElementById('ainews-filter-dropdown');
@@ -505,9 +549,19 @@ function renderNews(data, view) {
       if (btn) btn.setAttribute('aria-expanded', 'false');
     }
   });
+  } // end guard: _ainewsClickBound
 
   // === FILTER BY CATEGORY ===
   function filterByCategory(cat) {
+    // Collapse all expanded details — clean slate for the new filter
+    grid.querySelectorAll('.ainews-compact-detail.ainews-detail-open').forEach(function (d) {
+      d.classList.remove('ainews-detail-open');
+      d.setAttribute('inert', '');
+    });
+    grid.querySelectorAll('.ainews-compact-expand').forEach(function (ch) {
+      ch.textContent = '▼';
+      ch.setAttribute('aria-expanded', 'false');
+    });
     // Filter headlines
     grid.querySelectorAll('.ainews-card-hero').forEach(function (el) {
       el.closest('.ainews-loadmore-item').style.display = (cat === 'all' || el.dataset.category === cat) ? '' : 'none';
