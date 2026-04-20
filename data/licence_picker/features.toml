@@ -149,6 +149,30 @@ category = "Identity"
 icon = "⚙️"
 supersedes = ["entra-p2", "entra-p1"]
 
+[[features]]
+id = "entra-private-access"
+name = "Entra Private Access (ZTNA)"
+description = "Zero Trust Network Access — replace VPN with identity-based private app access"
+category = "Identity"
+icon = "🔒"
+supersedes = []
+
+[[features]]
+id = "entra-internet-access"
+name = "Entra Internet Access"
+description = "Secure web gateway — filter and control web and SaaS traffic"
+category = "Identity"
+icon = "🌐"
+supersedes = []
+
+[[features]]
+id = "entra-verified-id"
+name = "Entra Verified ID"
+description = "Decentralised digital identity verification for employees, partners, and customers"
+category = "Identity"
+icon = "✅"
+supersedes = []
+
 # ── COMPLIANCE ───────────────────────────────────
 
 [[features]]
@@ -257,6 +281,14 @@ name = "Copilot Studio"
 description = "Build and deploy custom AI copilots and agents"
 category = "AI"
 icon = "🏗️"
+supersedes = []
+
+[[features]]
+id = "agent-365"
+name = "Agent 365"
+description = "Centralised AI agent governance — inventory, security policies, lifecycle management"
+category = "AI"
+icon = "🤖"
 supersedes = []
 
 # ── VOICE ────────────────────────────────────────

@@ -19,9 +19,13 @@ faq:
   - q: "Is Microsoft 365 E5 worth the extra cost over E3?"
     a: "If you need advanced security (EDR, CASB, identity protection), Teams Phone, Power BI, or are in a regulated industry — yes. E5 replaces multiple third-party tools. If you only need basic security, E3 is sufficient."
   - q: "Does E5 include Copilot?"
-    a: "No. Copilot is a $30/user/month add-on even for E5. The only plan with Copilot included is M365 E7 ($99/user/month)."
+    a: "No. Copilot is a $30/user/month add-on even for E5. The only plan with Copilot included is M365 E7 ($99/user/month), which also adds Agent 365 and the full Entra Suite."
   - q: "Can I mix E3 and E5 licences in the same tenant?"
     a: "Yes. Most organisations give E5 to security teams, executives, and high-risk users, while general staff get E3."
+  - q: "Should I upgrade from E5 to E7?"
+    a: "If you're already buying the Copilot add-on ($30) for E5 users ($90 total), E7 at $99 adds Agent 365 ($15 value) and the full Entra Suite for just $9 more. That's a strong case for organisations committed to AI."
+  - q: "Does E5 include Microsoft Sentinel?"
+    a: "No. Microsoft Sentinel (SIEM) is a separate consumption-based Azure service. E5 includes the Defender XDR suite (endpoint, email, identity, cloud apps) but not the SIEM."
 ---
 
 ## Who Is Microsoft 365 E5 For?
@@ -138,24 +142,42 @@ E5 already includes most security and compliance features, but some organisation
 | Employee experience | **Viva Suite** | +$12/user/mo |
 | Full Entra Suite (ZTNA, Internet Access) | **Entra Suite** | Varies |
 
-> **💡 Tip:** If you're on E5 and adding the $30 Copilot add-on ($90 total), compare that to E7 at $99 — you get Copilot PLUS Agent 365 and the full Entra Suite for just $9 more.
+> **💡 Tip:** If you're on E5 and adding the $30 Copilot add-on ($90 total), compare that to [E7 at $99](/licensing/microsoft-365-e7/) — you get Copilot PLUS Agent 365 and the full Entra Suite for just $9 more.
 
 ## Frequently Asked Questions
 
 
-**1. Should I give E5 to all users or just some?**
+**1. What does Microsoft 365 E5 include that E3 doesn't?**
 
-Most organisations use **mixed licensing** — E5 for security teams, executives, finance, and legal; E3 for everyone else. This is fully supported and the most cost-effective approach.
-
-
-
-**2. Does E5 replace CrowdStrike/Netskope/Splunk?**
-
-Potentially. Defender for Endpoint P2 competes with CrowdStrike, Defender for Cloud Apps competes with Netskope, and Sentinel (separate) competes with Splunk. Many organisations consolidate to save costs and reduce integration complexity.
+E5 adds Entra ID P2 (PIM), Defender for Endpoint P2 (full EDR), Defender for Office 365 P2, Insider Risk Management, eDiscovery Premium, Teams Phone System, Power BI Pro, Audio Conferencing, and advanced DLP with endpoint DLP.
 
 
 
-**3. Is Teams Phone in E5 a full phone system?**
+**2. Is Microsoft 365 E5 worth the extra cost over E3?**
 
-Yes — E5 includes the Teams Phone System (cloud PBX). You still need a **Calling Plan** or **Direct Routing** for actual PSTN connectivity (making/receiving external calls). The phone system itself is included.
+If you need advanced security (EDR, CASB, identity protection), Teams Phone, Power BI, or are in a regulated industry — yes. E5 replaces multiple third-party tools. If you only need basic security, [E3](/licensing/microsoft-365-e3/) is sufficient.
+
+
+
+**3. Does E5 include Copilot?**
+
+No. [Copilot](/licensing/microsoft-365-copilot/) is a $30/user/month add-on even for E5. The only plan with Copilot included is [M365 E7](/licensing/microsoft-365-e7/) ($99/user/month), which also adds Agent 365 and the full Entra Suite.
+
+
+
+**4. Can I mix E3 and E5 licences in the same tenant?**
+
+Yes. Most organisations give E5 to security teams, executives, and high-risk users, while general staff get [E3](/licensing/microsoft-365-e3/).
+
+
+
+**5. Should I upgrade from E5 to E7?**
+
+If you're already buying the [Copilot add-on](/licensing/microsoft-365-copilot/) ($30) for E5 users ($90 total), [E7 at $99](/licensing/microsoft-365-e7/) adds Agent 365 ($15 value) and the full Entra Suite for just $9 more. That's a strong case for organisations committed to AI.
+
+
+
+**6. Does E5 include Microsoft Sentinel?**
+
+No. Microsoft Sentinel (SIEM) is a separate consumption-based Azure service. E5 includes the Defender XDR suite (endpoint, email, identity, cloud apps) but not the SIEM.
 

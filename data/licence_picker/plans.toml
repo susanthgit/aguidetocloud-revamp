@@ -222,7 +222,7 @@ price_eur = 94.90
 sku = "SPE_E7"
 category = "Enterprise"
 seat_max = 0
-status = "preview"
+status = "ga"
 badge = "New"
 tagline = "Everything + Copilot + AI governance"
 description = "Everything in E5 plus Microsoft 365 Copilot, Copilot Studio, Entra ID Governance, Agent 365, and advanced Intune features. The complete AI-ready enterprise plan."
@@ -230,7 +230,9 @@ ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e7"
 features = [
   "teams", "sharepoint", "onedrive", "exchange",
   "desktop-apps", "web-mobile-apps", "bookings",
-  "entra-p1", "entra-p2", "entra-governance", "intune-p1", "intune-p2",
+  "entra-p1", "entra-p2", "entra-governance",
+  "entra-private-access", "entra-internet-access", "entra-verified-id",
+  "intune-p1", "intune-p2",
   "defender-endpoint-p1", "defender-endpoint-p2",
   "defender-o365-p1", "defender-o365-p2",
   "defender-identity", "defender-cloud-apps",
@@ -239,7 +241,7 @@ features = [
   "insider-risk", "audit-premium", "communication-compliance",
   "power-bi-pro", "teams-phone", "audio-conferencing",
   "windows-enterprise", "autopilot",
-  "m365-copilot", "copilot-studio"
+  "m365-copilot", "copilot-studio", "agent-365"
 ]
 
 # ── FRONTLINE PLANS ──────────────────────────────

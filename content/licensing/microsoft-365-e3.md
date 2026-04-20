@@ -22,6 +22,10 @@ faq:
     a: "E5 adds advanced security (Defender P2, Entra ID P2), advanced compliance (Insider Risk, eDiscovery Premium), Teams Phone System, Power BI Pro, and Audio Conferencing. E5 costs $60/user/month vs E3's $39."
   - q: "What is the difference between Office 365 E3 and Microsoft 365 E3?"
     a: "Microsoft 365 E3 includes everything in Office 365 E3 PLUS Windows 11 Enterprise E3, Enterprise Mobility + Security E3 (Intune P1, Entra ID P1), and Defender for Endpoint P1. Microsoft 365 E3 is the more complete package."
+  - q: "Should I upgrade from E3 to E5 or E7?"
+    a: "If you need advanced security (EDR, CASB, PIM) or Teams Phone — upgrade to E5 ($60). If you also want Copilot, Agent 365, and the full Entra Suite — go directly to E7 ($99). If you only want Copilot, add it as a $30 add-on to E3."
+  - q: "Can I add Copilot to Microsoft 365 E3?"
+    a: "Yes. Microsoft 365 Copilot is available as a $30/user/month add-on for E3 ($69 total). Alternatively, M365 E7 ($99) includes Copilot plus Agent 365 and the full Entra Suite."
 ---
 
 ## Who Is Microsoft 365 E3 For?
@@ -153,7 +157,7 @@ flowchart LR
 
 ## Office 365 E3 vs Microsoft 365 E3 — What's the Difference?
 
-This is the **second most confusing** licensing question. Here's the simple version:
+This is the **second most confusing** licensing question. Here's the simple version (see the full [Office 365 E3 guide](/licensing/office-365-e3/) for details):
 
 ```mermaid
 flowchart LR
@@ -182,7 +186,7 @@ If E3 almost covers your needs but you need one more thing, here are the most co
 | Advanced identity (PIM) | **Entra ID P2** | +$9/user/mo |
 | Employee experience | **Viva Suite** | +$12/user/mo |
 
-> **💡 Tip:** If you're adding 3+ add-ons to E3, do the maths — E5 at $60/mo might be cheaper than E3 ($39) plus individual add-ons.
+> **💡 Tip:** If you're adding 3+ add-ons to E3, do the maths — [E5 at $60/mo](/licensing/microsoft-365-e5/) might be cheaper than E3 ($39) plus individual add-ons. And if you want Copilot, check [E7 at $99/mo](/licensing/microsoft-365-e7/) — it includes Copilot, Agent 365, and the full Entra Suite.
 
 ## Pricing History & What's Coming
 
@@ -196,31 +200,37 @@ If E3 almost covers your needs but you need one more thing, here are the most co
 ## Frequently Asked Questions
 
 
-**1. Can I mix E3 and E5 users in the same tenant?**
+**1. What is included in Microsoft 365 E3?**
 
-Yes! Most organisations give E3 to general staff and E5 to security teams, executives, and finance. This is called "mixed licensing" and is fully supported.
-
-
-
-**2. Can I upgrade from E3 to E5 later?**
-
-Yes — it's a simple licence change in the admin centre. No data migration needed.
+Microsoft 365 E3 includes desktop Office apps (Word, Excel, PowerPoint, Outlook), Exchange Online with 100 GB mailbox, Teams, SharePoint, OneDrive, Entra ID P1, Intune P1, Defender for Endpoint P1, Defender for Office 365 P1, Windows 11 Enterprise E3, and basic compliance tools like DLP and eDiscovery.
 
 
 
-**3. Is Copilot included in E3?**
+**2. How much does Microsoft 365 E3 cost?**
 
-No. You need the **Microsoft 365 Copilot add-on** ($30/user/month) or upgrade to **M365 E7** ($99/user/month) which includes Copilot.
-
-
-
-**4. Do I still need SCCM/ConfigMgr with E3?**
-
-E3 includes Intune P1, which can manage devices entirely from the cloud. Many organisations are moving to Intune-only. You can also use co-management (SCCM + Intune together) during the transition.
+Microsoft 365 E3 costs $39 per user per month (USD list price). From July 2026, this price applies to new customers and renewals. Enterprise Agreement and CSP pricing may differ.
 
 
 
-**5. What happens to my data if I downgrade from E3?**
+**3. What is the difference between Microsoft 365 E3 and E5?**
 
-Your data stays in Exchange, OneDrive, and SharePoint — but features tied to the higher licence (like DLP policies, Conditional Access rules) will stop working. You have a 30-day grace period.
+[E5](/licensing/microsoft-365-e5/) adds advanced security (Defender P2, Entra ID P2), advanced compliance (Insider Risk, eDiscovery Premium), Teams Phone System, Power BI Pro, and Audio Conferencing. E5 costs $60/user/month vs E3's $39.
+
+
+
+**4. What is the difference between Office 365 E3 and Microsoft 365 E3?**
+
+Microsoft 365 E3 includes everything in [Office 365 E3](/licensing/office-365-e3/) PLUS Windows 11 Enterprise E3, Enterprise Mobility + Security E3 (Intune P1, Entra ID P1), and Defender for Endpoint P1. Microsoft 365 E3 is the more complete package.
+
+
+
+**5. Should I upgrade from E3 to E5 or E7?**
+
+If you need advanced security (EDR, CASB, PIM) or Teams Phone — upgrade to [E5](/licensing/microsoft-365-e5/) ($60). If you also want Copilot, Agent 365, and the full Entra Suite — go directly to [E7](/licensing/microsoft-365-e7/) ($99). If you only want Copilot, add it as a [$30 add-on](/licensing/microsoft-365-copilot/) to E3.
+
+
+
+**6. Can I add Copilot to Microsoft 365 E3?**
+
+Yes. [Microsoft 365 Copilot](/licensing/microsoft-365-copilot/) is available as a $30/user/month add-on for E3 ($69 total). Alternatively, [M365 E7](/licensing/microsoft-365-e7/) ($99) includes Copilot plus Agent 365 and the full Entra Suite.
 
