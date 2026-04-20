@@ -34,36 +34,48 @@
       <span class="siteana-stat-label">Live Now</span>
     </div>
     <div class="siteana-stat">
-      <span class="siteana-stat-num" id="sa-total-views">—</span>
+      <span class="siteana-stat-num siteana-skeleton" id="sa-total-views">—</span>
+      <canvas class="siteana-stat-spark" id="sa-spark-views" width="60" height="16"></canvas>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
       <span class="siteana-stat-label">Page Views (30d)</span>
     </div>
     <div class="siteana-stat">
-      <span class="siteana-stat-num" id="sa-total-users">—</span>
+      <span class="siteana-stat-num siteana-skeleton" id="sa-total-users">—</span>
+      <canvas class="siteana-stat-spark" id="sa-spark-users" width="60" height="16"></canvas>
       <span class="siteana-wow" id="sa-wow-users" style="display:none"></span>
       <span class="siteana-stat-label">Unique Users</span>
     </div>
     <div class="siteana-stat">
-      <span class="siteana-stat-num" id="sa-total-sessions">—</span>
+      <span class="siteana-stat-num siteana-skeleton" id="sa-total-sessions">—</span>
       <span class="siteana-wow" id="sa-wow-sessions" style="display:none"></span>
       <span class="siteana-stat-label">Sessions</span>
     </div>
     <div class="siteana-stat">
-      <span class="siteana-stat-num" id="sa-today-views">—</span>
+      <span class="siteana-stat-num siteana-skeleton" id="sa-today-views">—</span>
       <span class="siteana-stat-label">Today</span>
+    </div>
+    <div class="siteana-stat">
+      <span class="siteana-stat-num siteana-skeleton" id="sa-pps">—</span>
+      <span class="siteana-stat-label">Pages / Session</span>
     </div>
   </div>
 
+  <!-- Refresh indicator -->
+  <div class="siteana-refreshed" id="sa-refreshed"></div>
+
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
-    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="dashboard">Dashboard</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="tools">Tools</button>
+    <button class="siteana-tab active" role="tab" aria-selected="true" data-tab="tools">Tools</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="dashboard">Live</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="blog">Blog</button>
     <button class="siteana-tab" role="tab" aria-selected="false" data-tab="content">Content</button>
-    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="about">About This Data</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="guided">Guided</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="search">Search</button>
+    <button class="siteana-tab" role="tab" aria-selected="false" data-tab="about">Story</button>
   </div>
 
   <!-- ═══════════ Tab 1: Dashboard ═══════════ -->
-  <div class="siteana-panel active" id="panel-dashboard" role="tabpanel">
+  <div class="siteana-panel" id="panel-dashboard" role="tabpanel">
 
     <!-- Right Now — Full per-page live visitors with bar chart -->
     <div class="sa-rt-card" id="sa-rt-card">
@@ -80,18 +92,33 @@
     <!-- Traffic Trend -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
-      <canvas id="sa-trend-chart" height="220"></canvas>
+      <canvas id="sa-trend-chart" height="220" aria-label="30-day traffic trend chart"></canvas>
+    </div>
+
+    <!-- Heatmap Calendar -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Daily Activity</h3>
+      <p class="siteana-hint">Traffic intensity over the last 30 days</p>
+      <div class="siteana-heatmap-grid" id="sa-heatmap"></div>
+      <div class="siteana-hm-legend">
+        <span>Less</span>
+        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.1);border-radius:3px"></span>
+        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.3);border-radius:3px"></span>
+        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.55);border-radius:3px"></span>
+        <span class="siteana-hm-legend-cell" style="background:#64748B;border-radius:3px"></span>
+        <span>More</span>
+      </div>
     </div>
 
     <!-- Countries + Sources -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
         <h3 class="siteana-card-title">Top Countries</h3>
-        <div id="sa-countries"></div>
+        <div id="sa-countries"><p class="siteana-hint">Loading...</p></div>
       </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Traffic Sources</h3>
-        <div id="sa-sources"></div>
+        <div id="sa-sources"><p class="siteana-hint">Loading...</p></div>
       </div>
     </div>
 
@@ -99,7 +126,7 @@
     <div class="siteana-grid-2">
       <div class="siteana-card">
         <h3 class="siteana-card-title">Devices</h3>
-        <div id="sa-devices"></div>
+        <div id="sa-devices"><p class="siteana-hint">Loading...</p></div>
       </div>
       <div class="siteana-card siteana-transparency">
         <h3>Transparency Note</h3>
@@ -110,13 +137,13 @@
   </div>
 
   <!-- ═══════════ Tab 2: Tools ═══════════ -->
-  <div class="siteana-panel" id="panel-tools" role="tabpanel">
+  <div class="siteana-panel active" id="panel-tools" role="tabpanel">
 
     <!-- Full Leaderboard (FIRST — it's what people come for) -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Tool Leaderboard</h3>
       <p class="siteana-hint">All {{ $tc }} free tools ranked by page views (30 days)</p>
-      <div id="sa-leaderboard"></div>
+      <div id="sa-leaderboard"><p class="siteana-hint" style="text-align:center;padding:2rem 0">Loading leaderboard...</p></div>
     </div>
 
     <!-- Rising Stars + Hidden Gems -->
@@ -124,12 +151,12 @@
       <div class="siteana-card">
         <h3 class="siteana-card-title">Rising Stars</h3>
         <p class="siteana-hint">Biggest week-over-week growth</p>
-        <div id="sa-rising"></div>
+        <div id="sa-rising"><p class="siteana-hint">Loading...</p></div>
       </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Hidden Gems</h3>
         <p class="siteana-hint">Great tools you might have missed</p>
-        <div id="sa-gems"></div>
+        <div id="sa-gems"><p class="siteana-hint">Loading...</p></div>
       </div>
     </div>
 
@@ -137,12 +164,139 @@
     <div class="siteana-grid-2">
       <div class="siteana-card siteana-featured-card" id="sa-featured">
         <div class="siteana-featured-badge">Tool of the Day</div>
-        <div class="siteana-featured-body" id="sa-featured-body"></div>
+        <div class="siteana-featured-body" id="sa-featured-body"><p class="siteana-hint" style="text-align:center;padding:1.5rem 0">Picking today's featured tool...</p></div>
       </div>
       <div class="siteana-card">
         <h3 class="siteana-card-title">Activity Breakdown</h3>
-        <canvas id="sa-activity-chart" height="220"></canvas>
+        <canvas id="sa-activity-chart" height="280" aria-label="Tool activity breakdown chart"></canvas>
       </div>
+    </div>
+
+    <!-- Category Breakdown + Content Split -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Traffic by Category</h3>
+        <p class="siteana-hint">Which tool categories get the most traffic</p>
+        <div id="sa-category-bars"><p class="siteana-hint">Loading...</p></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Content vs Tools</h3>
+        <p class="siteana-hint">Where visitors spend their time</p>
+        <canvas id="sa-content-split" height="220" aria-label="Content vs tools traffic split chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab: Blog ═══════════ -->
+  <div class="siteana-panel" id="panel-blog" role="tabpanel">
+
+    <!-- Blog Overview -->
+    {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+    {{ $blogCount := len $blogPages }}
+    {{ $tags := slice }}
+    {{ range $blogPages }}{{ with .Params.card_tag }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+    {{ $uniqueTags := uniq $tags }}
+
+    <div class="siteana-content-stats" style="margin-bottom:1.5rem">
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" style="color:#0EA5E9">{{ $blogCount }}</span>
+        <span>Blog Posts</span>
+      </div>
+      <div class="siteana-content-item">
+        {{ $totalWords := 0 }}{{ range $blogPages }}{{ $totalWords = add $totalWords (countwords .Content) }}{{ end }}
+        <span class="siteana-content-num" style="color:#10B981">{{ div $totalWords 1000 }}K</span>
+        <span>Words Written</span>
+      </div>
+      <div class="siteana-content-item">
+        {{ $avgRead := div (div $totalWords $blogCount) 250 }}{{ if lt $avgRead 1 }}{{ $avgRead = 1 }}{{ end }}
+        <span class="siteana-content-num" style="color:#EC4899">{{ $avgRead }}</span>
+        <span>Avg Min / Post</span>
+      </div>
+      <div class="siteana-content-item">
+        {{ $totalFaq := 0 }}{{ range $blogPages }}{{ with .Params.faq }}{{ $totalFaq = add $totalFaq (len .) }}{{ end }}{{ end }}
+        <span class="siteana-content-num" style="color:#FBBF24">{{ $totalFaq }}</span>
+        <span>FAQ Answers</span>
+      </div>
+    </div>
+
+    <!-- Blog Traffic Leaderboard -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Blog Post Performance</h3>
+      <p class="siteana-hint">Page views from GA4 (30 days)</p>
+      <div id="sa-blog-pages"><p class="siteana-hint">Loading...</p></div>
+    </div>
+
+    <!-- All Posts by Category + Recency -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Posts by Category</h3>
+        <div class="siteana-blog-cats">
+          {{ range $uniqueTags }}
+          {{ $tag := . }}
+          {{ $count := 0 }}{{ range $blogPages }}{{ if eq .Params.card_tag $tag }}{{ $count = add $count 1 }}{{ end }}{{ end }}
+          <div class="siteana-blog-cat-row">
+            <span class="siteana-blog-cat-tag">{{ $tag }}</span>
+            <span class="siteana-blog-cat-count">{{ $count }} post{{ if gt $count 1 }}s{{ end }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Publishing Timeline</h3>
+        <p class="siteana-hint">When each post was published</p>
+        <div class="siteana-blog-timeline">
+          {{ range first 8 (sort $blogPages "Date" "desc") }}
+          <div class="siteana-blog-tl-item">
+            <span class="siteana-blog-tl-date">{{ .Date.Format "Jan 2" }}</span>
+            <span class="siteana-blog-tl-dot" style="background:{{ with .Params.card_tag }}{{ if eq . "Copilot" }}#0EA5E9{{ else if eq . "AI Agents" }}#00A4EF{{ else if eq . "What's New" }}#FBBF24{{ else }}#64748B{{ end }}{{ else }}#64748B{{ end }}"></span>
+            <a href="{{ .RelPermalink }}" class="siteana-blog-tl-title">{{ .Title | truncate 55 }}</a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Reading Stats + Content Depth -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Reading Estimates</h3>
+        <p class="siteana-hint">Approximate read time per post</p>
+        <div class="siteana-blog-reading">
+          {{ range first 8 (sort $blogPages "Date" "desc") }}
+          {{ $words := countwords .Content }}
+          {{ $readMin := div $words 250 }}
+          {{ if lt $readMin 1 }}{{ $readMin = 1 }}{{ end }}
+          <div class="siteana-blog-read-row">
+            <span class="siteana-blog-read-title">{{ .Title | truncate 40 }}</span>
+            <div class="siteana-blog-read-bar-wrap">
+              <div class="siteana-blog-read-bar" style="width:{{ div (mul $readMin 100) 30 }}%;background:#0EA5E9"></div>
+            </div>
+            <span class="siteana-blog-read-time">{{ $readMin }} min</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Content Depth</h3>
+        <p class="siteana-hint">Word count and FAQ coverage per post</p>
+        <div class="siteana-blog-depth">
+          {{ range first 6 (sort $blogPages "Date" "desc") }}
+          {{ $words := countwords .Content }}
+          {{ $faqCount := 0 }}{{ with .Params.faq }}{{ $faqCount = len . }}{{ end }}
+          <div class="siteana-blog-depth-row">
+            <span class="siteana-blog-depth-title">{{ .Title | truncate 35 }}</span>
+            <span class="siteana-blog-depth-words">{{ div $words 100 | mul 100 }} words</span>
+            {{ if gt $faqCount 0 }}<span class="siteana-blog-depth-faq">{{ $faqCount }} FAQ</span>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="siteana-card" style="text-align:center;border-color:rgba(14,165,233,0.2);background:linear-gradient(135deg,rgba(14,165,233,0.06),rgba(14,165,233,0.01))">
+      <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1rem">Deep-dive guides on Microsoft 365, Copilot, AI, and cloud — written for IT pros, not developers.</p>
+      <a href="/blog/" style="display:inline-block;padding:0.65rem 2rem;background:#0EA5E9;color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:0.9rem;transition:opacity 0.2s">Read the Blog →</a>
     </div>
   </div>
 
@@ -176,21 +330,7 @@
     <div class="siteana-card">
       <h3 class="siteana-card-title">Top Pages</h3>
       <p class="siteana-hint">Most visited pages across the entire site</p>
-      <div id="sa-top-pages"></div>
-    </div>
-
-    <!-- Top Blog Posts -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Top Blog Posts</h3>
-      <p class="siteana-hint">Most read blog articles</p>
-      <div id="sa-blog-pages"></div>
-    </div>
-
-    <!-- Search Intelligence -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">What People Search For</h3>
-      <p class="siteana-hint">Top Google queries that bring visitors here (Search Console data, ~48h delay)</p>
-      <div id="sa-search-queries"></div>
+      <div id="sa-top-pages"><p class="siteana-hint">Loading...</p></div>
     </div>
 
     <!-- Content Freshness -->
@@ -210,12 +350,154 @@
         }}
         {{ range $sections }}
         <div class="siteana-fresh-item">
+          <span class="siteana-fresh-icon">{{ .icon }}</span>
           <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
           <span class="siteana-fresh-name">{{ .name }}</span>
           <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
         </div>
         {{ end }}
       </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab: Guided ═══════════ -->
+  <div class="siteana-panel" id="panel-guided" role="tabpanel">
+
+    <!-- Platform Overview -->
+    <div class="siteana-card siteana-guided-hero">
+      <div class="siteana-guided-header">
+        <h3 class="siteana-card-title" style="margin:0">Guided — Interactive Cert Prep</h3>
+        <a href="/guided/" class="siteana-guided-badge">Open Platform →</a>
+      </div>
+      <p class="siteana-hint" style="margin-top:0.5rem">Interactive Microsoft certification preparation with hands-on modules, quizzes, and progress tracking.</p>
+    </div>
+
+    <!-- Cert Path Stats -->
+    <div class="siteana-content-stats" style="margin-bottom:1.5rem">
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" style="color:#00A4EF">3</span>
+        <span>Cert Paths</span>
+      </div>
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" style="color:#10B981">55</span>
+        <span>Study Modules</span>
+      </div>
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" style="color:#A78BFA">3</span>
+        <span>Practice Exams</span>
+      </div>
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" style="color:#FBBF24">Free</span>
+        <span>Always</span>
+      </div>
+    </div>
+
+    <!-- Certification Paths Detail -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Certification Paths</h3>
+      <div class="siteana-guided-paths">
+        <div class="siteana-guided-path">
+          <div class="siteana-guided-path-header">
+            <span class="siteana-guided-path-icon" style="background:rgba(0,164,239,0.15);color:#00A4EF">AB</span>
+            <div class="siteana-guided-path-info">
+              <strong>AB-900: Microsoft 365 Copilot Foundations</strong>
+              <span class="siteana-hint" style="margin:0">3 domains · 28 modules</span>
+            </div>
+            <span class="siteana-guided-path-status siteana-gp-live">Live</span>
+          </div>
+          <div class="siteana-guided-path-domains">
+            <span>📋 Domain 1: M365 Platform <em>(10 modules)</em></span>
+            <span>🔒 Domain 2: Security & Compliance <em>(10 modules)</em></span>
+            <span>🤖 Domain 3: Copilot & Agents <em>(8 modules)</em></span>
+          </div>
+        </div>
+        <div class="siteana-guided-path">
+          <div class="siteana-guided-path-header">
+            <span class="siteana-guided-path-icon" style="background:rgba(167,139,250,0.15);color:#A78BFA">AI</span>
+            <div class="siteana-guided-path-info">
+              <strong>AI-901: Azure AI Fundamentals</strong>
+              <span class="siteana-hint" style="margin:0">2 domains · 26 modules</span>
+            </div>
+            <span class="siteana-guided-path-status siteana-gp-live">Live</span>
+          </div>
+          <div class="siteana-guided-path-domains">
+            <span>🧠 Domain 1: AI Concepts <em>(11 modules)</em></span>
+            <span>🔧 Domain 2: Azure AI Services <em>(15 modules)</em></span>
+          </div>
+        </div>
+        <div class="siteana-guided-path">
+          <div class="siteana-guided-path-header">
+            <span class="siteana-guided-path-icon" style="background:rgba(56,189,248,0.15);color:#38BDF8">AZ</span>
+            <div class="siteana-guided-path-info">
+              <strong>AZ-900: Azure Fundamentals</strong>
+              <span class="siteana-hint" style="margin:0">Coming soon · 1 module</span>
+            </div>
+            <span class="siteana-guided-path-status siteana-gp-soon">Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guided Traffic (from GA4 data) -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Guided Pages Traffic</h3>
+        <p class="siteana-hint">Page views for /guided/ paths (30 days)</p>
+        <div id="sa-guided-pages"><p class="siteana-hint">Loading...</p></div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">Study Experience</h3>
+        <p class="siteana-hint">What makes Guided different</p>
+        <div class="siteana-guided-features">
+          <div class="siteana-guided-feat">
+            <span>📖</span>
+            <div><strong>ELI5 Toggle</strong><span>Switch between expert and simple explanations</span></div>
+          </div>
+          <div class="siteana-guided-feat">
+            <span>📝</span>
+            <div><strong>Progressive Disclosure</strong><span>Learn at your pace — expand details when ready</span></div>
+          </div>
+          <div class="siteana-guided-feat">
+            <span>🎯</span>
+            <div><strong>Practice Quizzes</strong><span>Test yourself after each domain</span></div>
+          </div>
+          <div class="siteana-guided-feat">
+            <span>📱</span>
+            <div><strong>Mobile-First</strong><span>Study on your commute — every page optimised</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="siteana-card" style="text-align:center;border-color:rgba(0,164,239,0.2);background:linear-gradient(135deg,rgba(0,164,239,0.06),rgba(0,164,239,0.01))">
+      <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1rem">Start studying for free — interactive modules, no account required.</p>
+      <a href="/guided/" style="display:inline-block;padding:0.65rem 2rem;background:#00A4EF;color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:0.9rem;transition:opacity 0.2s">Open Guided →</a>
+    </div>
+  </div>
+
+  <!-- ═══════════ Tab: Search ═══════════ -->
+  <div class="siteana-panel" id="panel-search" role="tabpanel">
+
+    <!-- Search Position Distribution -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Search Position Distribution</h3>
+      <p class="siteana-hint">How many queries rank in each position band</p>
+      <div class="siteana-pos-dist" id="sa-pos-dist"><p class="siteana-hint">Loading...</p></div>
+    </div>
+
+    <!-- Search Intelligence (moved from Content tab) -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">What People Search For</h3>
+      <p class="siteana-hint">Top Google queries that bring visitors here (Search Console data, ~48h delay)</p>
+      <div id="sa-search-queries"><p class="siteana-hint">Loading search data...</p></div>
+    </div>
+
+    <!-- SEO Opportunities -->
+    <div class="siteana-card" style="border-color:rgba(251,191,36,0.2);background:linear-gradient(135deg,rgba(251,191,36,0.04),rgba(251,191,36,0.01))">
+      <h3 class="siteana-card-title">🎯 SEO Opportunities</h3>
+      <p class="siteana-hint">Queries ranking #4–10 with high impressions — one optimisation away from page 1</p>
+      <div id="sa-seo-opps"><p class="siteana-hint">Loading...</p></div>
     </div>
   </div>
 
@@ -289,6 +571,7 @@
           <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 10</strong><span>M365 Roadmap Tracker</span></div></div>
           <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 13</strong><span>Community tools launched</span></div></div>
           <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 17</strong><span>{{ $tc }} tools milestone</span></div></div>
+          <div class="siteana-ms-item siteana-ms-done"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Apr 20</strong><span>Site Analytics redesign</span></div></div>
           <div class="siteana-ms-item siteana-ms-next"><span class="siteana-ms-marker"></span><div class="siteana-ms-body"><strong>Next</strong><span id="sa-ms-next">Loading...</span></div></div>
         </div>
       </div>
@@ -493,13 +776,14 @@
       if (totalEl) totalEl.textContent = count + ' visitor' + (count !== 1 ? 's' : '');
       var list = document.getElementById('sa-rt-list');
       if (!list) return;
+      if (count === 0) { list.innerHTML = '<span class="sa-rt-empty">No active visitors right now — you might be the first! 🎉</span>'; return; }
       var pages = (d.pages || []).filter(function(p) { return p.users > 0; });
-      if (pages.length === 0) { list.innerHTML = '<span class="sa-rt-empty">0 visitors right now</span>'; return; }
+      if (pages.length === 0) { list.innerHTML = '<span class="sa-rt-empty">' + count + ' visitor' + (count !== 1 ? 's' : '') + ' active — page breakdown loading...</span>'; return; }
       var max = pages[0].users;
       var html = '';
       pages.forEach(function(p) {
         var pct = max > 0 ? Math.round((p.users / max) * 100) : 0;
-        var name = p.page || '(unknown)';
+        var name = esc(p.page || '(unknown)');
         html += '<div class="sa-rt-row">';
         html += '<span class="sa-rt-name">' + name + '</span>';
         html += '<div class="sa-rt-bar-wrap"><div class="sa-rt-bar-fill" style="width:' + pct + '%"></div></div>';
@@ -514,27 +798,79 @@
   if (!document.hidden) startRealtime();
   document.addEventListener('visibilitychange', function() { document.hidden ? stopRealtime() : startRealtime(); });
 
+  // ── Count-up animation ──
+  function animateCount(el, target, duration) {
+    if (!el || !target) return;
+    var text = roundK(target);
+    if (target < 100) { el.textContent = text; el.classList.remove('siteana-skeleton'); return; }
+    var start = 0, startTime = null;
+    el.classList.remove('siteana-skeleton');
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / (duration || 800), 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = roundK(Math.round(start + (target - start) * eased));
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = text;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ── Stat sparkline (last 7 days from trend data) ──
+  function renderStatSparklines(trend) {
+    if (!trend || trend.length < 7) return;
+    var last7 = trend.slice(-7);
+    drawSparkline(document.getElementById('sa-spark-views'), last7.map(function(d){return d.views;}), '#64748B');
+    drawSparkline(document.getElementById('sa-spark-users'), last7.map(function(d){return d.users;}), '#ff66ff');
+  }
+
+  // ── Heatmap Calendar ──
+  function renderHeatmap(trend) {
+    var el = document.getElementById('sa-heatmap'); if (!el || !trend || !trend.length) return;
+    var views = trend.map(function(d){return d.views;});
+    var max = Math.max.apply(null, views) || 1;
+    var html = '';
+    trend.forEach(function(d) {
+      var intensity = d.views / max;
+      var bg = intensity < 0.15 ? 'rgba(100,116,139,0.08)' : intensity < 0.35 ? 'rgba(100,116,139,0.25)' : intensity < 0.6 ? 'rgba(100,116,139,0.45)' : intensity < 0.8 ? 'rgba(100,116,139,0.7)' : '#64748B';
+      var day = d.date.slice(5);
+      html += '<div class="siteana-hm-cell" style="background:' + bg + '" data-tip="' + day + ': ' + d.views + ' views"><span class="siteana-hm-label">' + day.slice(3) + '</span></div>';
+    });
+    el.innerHTML = html;
+  }
+
   // ── Main render ──
+  var _lastRefresh = null;
+  function updateRefreshTime() {
+    var el = document.getElementById('sa-refreshed'); if (!el || !_lastRefresh) return;
+    var ago = Math.round((Date.now() - _lastRefresh) / 60000);
+    el.textContent = ago < 1 ? 'Data refreshed just now' : 'Data from ' + ago + ' min ago · Auto-refreshes every 5 min';
+  }
   function render(data) {
     _cachedData = data;
+    _lastRefresh = Date.now();
+    updateRefreshTime();
     var ga4 = data.ga4; if (!ga4) return;
-    var el;
-    el = document.getElementById('sa-total-views'); if (el) el.textContent = roundK(ga4.totals.views);
-    el = document.getElementById('sa-total-users'); if (el) el.textContent = roundK(ga4.totals.users);
-    el = document.getElementById('sa-total-sessions'); if (el) el.textContent = roundK(ga4.totals.sessions);
-    el = document.getElementById('sa-today-views'); if (el) el.textContent = roundK(ga4.today.views);
+    animateCount(document.getElementById('sa-total-views'), ga4.totals.views, 900);
+    animateCount(document.getElementById('sa-total-users'), ga4.totals.users, 900);
+    animateCount(document.getElementById('sa-total-sessions'), ga4.totals.sessions, 900);
+    animateCount(document.getElementById('sa-today-views'), ga4.today.views, 600);
+    // Pages per session
+    var pps = ga4.totals.sessions > 0 ? (ga4.totals.views / ga4.totals.sessions).toFixed(1) : '—';
+    var ppsEl = document.getElementById('sa-pps'); if (ppsEl) { ppsEl.textContent = pps; ppsEl.classList.remove('siteana-skeleton'); }
     if (ga4.wow && ga4.wow.change) { setWow('sa-wow-views', ga4.wow.change.views); setWow('sa-wow-users', ga4.wow.change.users); setWow('sa-wow-sessions', ga4.wow.change.sessions); }
-    if (ga4.trend) renderTrend(ga4.trend);
-    if (ga4.leaderboard) { renderLeaderboard(ga4.leaderboard, ga4.tool_trends); renderActivity(ga4.leaderboard); renderFeatured(ga4.leaderboard); renderRisingStars(ga4.leaderboard, ga4.tool_trends); renderHiddenGems(ga4.leaderboard); renderMilestoneNext(ga4.totals); renderImpact(ga4.leaderboard, ga4.totals); }
+    if (ga4.trend) { renderTrend(ga4.trend); renderStatSparklines(ga4.trend); renderHeatmap(ga4.trend); }
+    if (ga4.leaderboard) { renderLeaderboard(ga4.leaderboard, ga4.tool_trends); renderActivity(ga4.leaderboard); renderFeatured(ga4.leaderboard); renderRisingStars(ga4.leaderboard, ga4.tool_trends); renderHiddenGems(ga4.leaderboard); renderMilestoneNext(ga4.totals); renderImpact(ga4.leaderboard, ga4.totals); renderCategoryBars(ga4.leaderboard); }
     renderList('sa-countries', ga4.countries, 'country', 'users', true);
     renderList('sa-sources', ga4.sources, 'source', 'sessions', false);
     renderList('sa-devices', ga4.devices, 'device', 'users', false);
-    if (ga4.top_pages) renderPages('sa-top-pages', ga4.top_pages, 20);
+    if (ga4.top_pages) { renderPages('sa-top-pages', ga4.top_pages, 20); renderContentSplit(ga4.top_pages); renderGuidedPages(ga4.top_pages); }
     if (ga4.blog_pages) renderPages('sa-blog-pages', ga4.blog_pages, 15);
     if (data.gsc && data.gsc.queries) renderSearchQueries(data.gsc.queries);
     renderFunFacts(ga4);
     initJourney(ga4.totals);
   }
+  setInterval(updateRefreshTime, 60000);
 
   function setWow(id, pct) {
     var el = document.getElementById(id); if (!el) return;
@@ -617,13 +953,147 @@
       var badge = q.position <= 3 ? '<span class="siteana-pos-badge siteana-pos-gold">#' + Math.round(q.position) + '</span>'
         : q.position <= 10 ? '<span class="siteana-pos-badge siteana-pos-blue">#' + Math.round(q.position) + '</span>'
         : '<span class="siteana-pos-badge">#' + Math.round(q.position) + '</span>';
+      var ctr = q.impressions > 0 ? ((q.clicks / q.impressions) * 100).toFixed(1) + '%' : '—';
       return '<div class="siteana-search-row">'
         + '<span class="siteana-search-rank">' + (i+1) + '</span>'
         + '<span class="siteana-search-query">' + esc(q.query) + '</span>'
         + badge
         + '<span class="siteana-search-metric">' + q.clicks + ' clicks</span>'
+        + '<span class="siteana-search-metric siteana-search-ctr">' + ctr + '</span>'
         + '<span class="siteana-search-metric siteana-search-imp">' + roundK(q.impressions) + ' imp</span>'
         + '</div>';
+    }).join('');
+    renderPosDist(queries);
+    renderSeoOpps(queries);
+  }
+
+  // ── Search Position Distribution ──
+  function renderPosDist(queries) {
+    var el = document.getElementById('sa-pos-dist'); if (!el || !queries.length) return;
+    var bands = [
+      { label: '#1–3', min: 0, max: 3, color: '#10B981', count: 0 },
+      { label: '#4–10', min: 3, max: 10, color: '#FBBF24', count: 0 },
+      { label: '#11–20', min: 10, max: 20, color: '#FB923C', count: 0 },
+      { label: '#20+', min: 20, max: 999, color: '#EF4444', count: 0 }
+    ];
+    queries.forEach(function(q) {
+      for (var i = 0; i < bands.length; i++) {
+        if (q.position > bands[i].min && q.position <= bands[i].max) { bands[i].count++; break; }
+      }
+    });
+    var max = Math.max.apply(null, bands.map(function(b){return b.count;})) || 1;
+    el.innerHTML = bands.map(function(b) {
+      var pct = Math.round((b.count / max) * 100);
+      return '<div class="siteana-dist-row">'
+        + '<span class="siteana-dist-label" style="color:' + b.color + '">' + b.label + '</span>'
+        + '<div class="siteana-dist-bar-wrap"><div class="siteana-dist-bar" style="width:' + pct + '%;background:' + b.color + '"></div></div>'
+        + '<span class="siteana-dist-count">' + b.count + ' queries</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── SEO Opportunities (queries #4-10 with high impressions) ──
+  function renderSeoOpps(queries) {
+    var el = document.getElementById('sa-seo-opps'); if (!el) return;
+    var opps = queries.filter(function(q) { return q.position > 3 && q.position <= 10 && q.impressions >= 200; });
+    opps.sort(function(a,b) { return b.impressions - a.impressions; });
+    if (!opps.length) { el.innerHTML = '<p class="siteana-hint">No opportunities found — all high-impression queries are already top 3! 🎉</p>'; return; }
+    el.innerHTML = opps.slice(0, 8).map(function(q) {
+      var ctr = q.impressions > 0 ? ((q.clicks / q.impressions) * 100).toFixed(1) : '0';
+      var potentialClicks = Math.round(q.impressions * 0.25) - q.clicks;
+      return '<div class="siteana-opp-item">'
+        + '<div class="siteana-opp-query">' + esc(q.query) + '</div>'
+        + '<div class="siteana-opp-stats">Position #' + Math.round(q.position) + ' · ' + roundK(q.impressions) + ' impressions · ' + ctr + '% CTR</div>'
+        + (potentialClicks > 0 ? '<div class="siteana-opp-uplift">↑ Moving to top 3 could add ~' + potentialClicks + ' clicks/month</div>' : '')
+        + '</div>';
+    }).join('');
+  }
+
+  // ── Category Breakdown ──
+  var TOOL_CATS = {
+    'prompt-library':'prompt','prompt-polisher':'prompt','prompt-guide':'prompt',
+    'copilot-readiness':'planning','copilot-matrix':'planning','roi-calculator':'planning',
+    'ai-mapper':'planning','ai-showdown':'planning','ai-cost-calculator':'planning',
+    'migration-planner':'planning','meeting-planner':'planning',
+    'ai-news':'informed','m365-roadmap':'informed','deprecation-timeline':'informed',
+    'service-health':'informed','rename-tracker':'informed','licensing':'informed',
+    'ca-builder':'security','ps-builder':'security','compliance-passport':'security',
+    'phishing-test':'security','security-toolkit':'security','purview-starter':'security',
+    'cert-tracker':'certs','admin-bingo':'community','acronym-battle':'community',
+    'feature-roulette':'community','qr-generator':'community','wifi-qr':'community',
+    'password-generator':'community','image-compressor':'community','typing-test':'community',
+    'countdown':'community','color-palette':'community','pomodoro':'community',
+    'admin-comms':'admin-ops','agent-365-planner':'agent','feedback':'community',
+    'site-analytics':'community'
+  };
+  var CAT_LABELS = {
+    'prompt':'Prompt Engineering','planning':'Copilot & AI Planning','informed':'Stay Informed',
+    'security':'Security & Compliance','certs':'Certification','community':'Utilities & Fun',
+    'admin-ops':'Admin Operations','agent':'Agent Builders'
+  };
+  var CAT_COLORS = {
+    'prompt':'#A78BFA','planning':'#3B82F6','informed':'#E5A00D',
+    'security':'#7C3AED','certs':'#10B981','community':'#14B8A6',
+    'admin-ops':'#4ADE80','agent':'#00A4EF'
+  };
+  function renderCategoryBars(lb) {
+    var el = document.getElementById('sa-category-bars'); if (!el || !lb.length) return;
+    var catViews = {};
+    lb.forEach(function(t) {
+      var cat = TOOL_CATS[t.tool] || 'community';
+      catViews[cat] = (catViews[cat] || 0) + (t.views || 0);
+    });
+    var sorted = Object.keys(catViews).sort(function(a,b){return catViews[b]-catViews[a];});
+    var max = catViews[sorted[0]] || 1;
+    el.innerHTML = sorted.map(function(cat) {
+      var pct = Math.round((catViews[cat] / max) * 100);
+      var label = CAT_LABELS[cat] || cat;
+      var color = CAT_COLORS[cat] || '#64748B';
+      return '<div class="siteana-cat-row">'
+        + '<span class="siteana-cat-label" style="color:' + color + '">' + esc(label) + '</span>'
+        + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+        + '<span class="siteana-cat-views">' + roundK(catViews[cat]) + '</span>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── Content vs Tools Traffic Split ──
+  var _contentSplitChart = null;
+  function renderContentSplit(topPages) {
+    var ctx = document.getElementById('sa-content-split'); if (!ctx || !topPages || !topPages.length) return;
+    var buckets = { 'Tools': 0, 'Blog': 0, 'Homepage': 0, 'Other': 0 };
+    topPages.forEach(function(p) {
+      if (p.path === '/') buckets['Homepage'] += p.views;
+      else if (p.path.startsWith('/blog/')) buckets['Blog'] += p.views;
+      else if (p.path === '/free-tools/' || p.path === '/prompts/' || p.path === '/cert-tracker/') buckets['Other'] += p.views;
+      else buckets['Tools'] += p.views;
+    });
+    var labels = Object.keys(buckets).filter(function(k){return buckets[k]>0;});
+    var data = labels.map(function(k){return buckets[k];});
+    var colors = { 'Tools': '#64748B', 'Blog': '#0EA5E9', 'Homepage': '#A78BFA', 'Other': '#6B7280' };
+    if (_contentSplitChart) { _contentSplitChart.destroy(); _contentSplitChart = null; }
+    _contentSplitChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: labels.map(function(l){return colors[l]||'#64748B';}), borderWidth: 0 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
+    });
+  }
+
+  // ── Guided Pages Traffic ──
+  function renderGuidedPages(topPages) {
+    var el = document.getElementById('sa-guided-pages'); if (!el || !topPages) return;
+    var guided = topPages.filter(function(p) { return p.path.indexOf('/guided/') === 0; });
+    if (!guided.length) { el.innerHTML = '<p class="siteana-hint">No Guided traffic data yet — the platform is brand new!</p>'; return; }
+    guided.sort(function(a,b) { return b.views - a.views; });
+    var max = guided[0].views || 1;
+    el.innerHTML = guided.slice(0, 10).map(function(p, i) {
+      var pct = Math.round((p.views / max) * 100);
+      var name = p.path.replace('/guided/', '').replace(/\//g, ' › ').replace(/\s*›\s*$/, '') || 'Homepage';
+      if (name.length > 45) name = name.slice(0,42) + '...';
+      return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i+1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:#00A4EF;text-decoration:none">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#00A4EF"></div></div>'
+        + '<span class="siteana-lb-total">' + roundK(p.views) + '</span></div>';
     }).join('');
   }
 
@@ -684,28 +1154,44 @@
     _activityChart = new Chart(ctx, {
       type: 'doughnut',
       data: { labels: top8.map(function(t){return TOOLS[t.tool]||t.tool;}), datasets: [{ data: top8.map(function(t){return t.total;}), backgroundColor: top8.map(function(t){return COLORS[t.tool]||'#64748B';}), borderWidth: 0 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 8 } } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
     });
   }
 
   function renderLeaderboard(lb, trends) {
     var el = document.getElementById('sa-leaderboard'); if (!el || !lb.length) return;
     var max = lb[0].total || 1;
-    el.innerHTML = lb.map(function(t, i) {
-      var name = TOOLS[t.tool] || t.tool;
-      var color = COLORS[t.tool] || '#64748B';
-      var pct = Math.round((t.total / max) * 100);
-      var rank = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
-      var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
-      return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
-        + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</span>' + spark + '</div>'
-        + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
-        + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
-    }).join('');
-    if (trends) lb.forEach(function(t) {
-      if (trends[t.tool]) drawSparkline(document.getElementById('sp-' + t.tool), trends[t.tool], COLORS[t.tool] || '#64748B');
-    });
+    var DEFAULT_SHOW = 15;
+    var showAll = false;
+
+    function buildRows(items) {
+      return items.map(function(t, i) {
+        var name = TOOLS[t.tool] || t.tool;
+        var color = COLORS[t.tool] || '#64748B';
+        var pct = Math.round((t.total / max) * 100);
+        var rank = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+        var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
+        var newBadge = (t._isNew) ? ' <span class="siteana-new-badge">NEW</span>' : '';
+        return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
+          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</span>' + newBadge + spark + '</div>'
+          + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
+          + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+          + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
+      }).join('');
+    }
+
+    function draw() {
+      var visible = showAll ? lb : lb.slice(0, DEFAULT_SHOW);
+      var toggleText = showAll ? 'Show top ' + DEFAULT_SHOW : 'Show all ' + lb.length + ' tools';
+      el.innerHTML = buildRows(visible)
+        + (lb.length > DEFAULT_SHOW ? '<button class="siteana-lb-toggle" id="sa-lb-toggle">' + toggleText + '</button>' : '');
+      if (trends) visible.forEach(function(t) {
+        if (trends[t.tool]) drawSparkline(document.getElementById('sp-' + t.tool), trends[t.tool], COLORS[t.tool] || '#64748B');
+      });
+      var btn = document.getElementById('sa-lb-toggle');
+      if (btn) btn.addEventListener('click', function() { showAll = !showAll; draw(); });
+    }
+    draw();
   }
 
   function drawSparkline(c, data, color) {
