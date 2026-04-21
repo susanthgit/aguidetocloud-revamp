@@ -3023,6 +3023,33 @@ a.welcome-stat-link:hover {
 }
 .content-body blockquote.callout-disclaimer strong { color: #9CA3AF; }
 
+/* ── PROMPT CARDS (standout prompt boxes) ─── */
+.prompt-cards blockquote {
+  border-left: 4px solid #A78BFA;
+  background: linear-gradient(135deg, rgba(40, 15, 70, 0.45) 0%, rgba(55, 20, 90, 0.3) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 0.8rem 1.2rem;
+  margin: 0.6rem 0;
+  color: #E0D4FF;
+  font-size: 0.95rem;
+}
+.prompt-cards blockquote p { color: #E0D4FF; margin-bottom: 0; }
+.prompt-cards blockquote strong { color: #C4B5FD; }
+.prompt-cards blockquote em { color: #B8A9E8; font-style: normal; opacity: 0.8; }
+
+/* Instruction/template cards — teal variant */
+.instruction-cards blockquote {
+  border-left: 4px solid #14B8A6;
+  background: linear-gradient(135deg, rgba(10, 40, 40, 0.45) 0%, rgba(15, 55, 55, 0.3) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 0.8rem 1.2rem;
+  margin: 0.6rem 0;
+  color: #B2F5EA;
+  font-size: 0.92rem;
+}
+.instruction-cards blockquote p { color: #B2F5EA; margin-bottom: 0; }
+.instruction-cards blockquote strong { color: #5EEAD4; }
+
 /* ── FAQ SECTION STYLING ──────────────────── */
 /* blog-faq wraps all Q&A pairs — style each pair distinctly */
 .blog-faq {
