@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Apr 2026 18:00:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 23:34:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith</title>
-      <link>https://developers.googleblog.com/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/</link>
-      <description>The blog discusses how a sales research prototype was transformed into a reliable production AI agent using Google's Agent Development Kit, enhancing scalability and transparency. Key improvements included replacing monolithic scripts with sub-agents and implementing observability tools.</description>
-      <category>Google</category>
-      <pubDate>Tue, 21 Apr 2026 17:58:26 +0000</pubDate>
-      <guid>https://developers.googleblog.com/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/</guid>
-    </item>
-    <item>
-      <title>Tim Cook's Legacy Is Turning Apple Into a Subscription</title>
-      <link>https://www.wired.com/story/apple-tim-cook-subscription-business/</link>
-      <description>As Tim Cook prepares to leave Apple, his focus on services has set the stage for incoming CEO John Ternus to lead the company into the AI era. This transition emphasizes the importance of adapting to new technologies.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 17:35:12 +0000</pubDate>
-      <guid>https://www.wired.com/story/apple-tim-cook-subscription-business/</guid>
-    </item>
-    <item>
-      <title>More Cisco SD-WAN bugs battered in attacks</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/cisco_sdwan_bugs_kev/</link>
-      <description>CISA has alerted federal agencies about three vulnerabilities in Cisco's SD-WAN Manager that are currently under attack, giving them four days to implement patches. This highlights ongoing cybersecurity challenges.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 17:30:50 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/cisco_sdwan_bugs_kev/</guid>
-    </item>
-    <item>
-      <title>5 Apple products explain my optimism for John Ternus as the next CEO</title>
-      <link>https://www.zdnet.com/article/5-apple-products-explain-my-optimism-for-john-ternus-as-the-next-ceo/</link>
-      <description>The article expresses optimism for John Ternus as Apple's next CEO, highlighting five products that showcase the company's potential under his leadership. It suggests a positive outlook for Apple's future innovations.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 17:30:40 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/5-apple-products-explain-my-optimism-for-john-ternus-as-the-next-ceo/</guid>
-    </item>
-    <item>
-      <title>This Motorola phone deal comes with free Bluetooth trackers and earbuds - how it works</title>
-      <link>https://www.zdnet.com/article/motorola-moto-g-deal/</link>
-      <description>Motorola is promoting its latest Moto G phone by offering a deal that includes free Bluetooth trackers and earbuds. This marketing strategy aims to attract new customers.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 17:29:25 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/motorola-moto-g-deal/</guid>
-    </item>
-    <item>
-      <title>Building agent-first governance and security</title>
-      <link>https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/</link>
-      <description>As AI agents become more prevalent in organizations, the article discusses the risks associated with insecure agents that could be exploited to access sensitive data. It emphasizes the need for governance and security measures.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 17:22:54 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/</guid>
-    </item>
-    <item>
-      <title>Clarifai deletes 3 million photos that OkCupid provided to train facial recognition AI, report says</title>
-      <link>https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/</link>
-      <description>Clarifai has deleted 3 million photos provided by OkCupid for training facial recognition AI, following an FTC settlement. This action reflects ongoing scrutiny over data privacy practices.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 17:11:01 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/</guid>
-    </item>
-    <item>
-      <title>Verizon will give you Meta Ray-Bans for free with this Fios Internet deal - how to get yours</title>
-      <link>https://www.zdnet.com/article/meta-ray-bans-smart-glasses-verizon-deal/</link>
-      <description>Verizon is offering free Meta Ray-Ban glasses to customers who sign up for specific Fios Internet plans. This promotion aims to enhance customer acquisition.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 17:00:36 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/meta-ray-bans-smart-glasses-verizon-deal/</guid>
-    </item>
-    <item>
-      <title>End-to-end lineage with DVC and Amazon SageMaker AI MLflow apps</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/end-to-end-lineage-with-dvc-and-amazon-sagemaker-ai-mlflow-apps/</link>
-      <description>The article explains how to integrate DVC, Amazon SageMaker AI, and MLflow Apps to establish end-to-end machine learning model lineage, providing practical examples for implementation.</description>
-      <category>Amazon</category>
-      <pubDate>Tue, 21 Apr 2026 16:43:03 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/end-to-end-lineage-with-dvc-and-amazon-sagemaker-ai-mlflow-apps/</guid>
-    </item>
-    <item>
-      <title>Phone-to-satellite use goes into orbit, growing 25% in 8 months</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/phone_to_satellite_services_jump_25_percent/</link>
-      <description>The direct-to-device satellite market has seen a 25% increase in connections over eight months, with the US and Starlink leading the growth. This indicates a rising trend in satellite communications.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 16:35:39 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/phone_to_satellite_services_jump_25_percent/</guid>
-    </item>
-    <item>
-      <title>Can a near infrared laptop light boost my mood? I tried it to find out</title>
-      <link>https://www.zdnet.com/article/sunbooster-sls2000-review/</link>
-      <description>The SunBooster SLS2000 is a device that attaches to your laptop and mimics sunlight, claiming to enhance mood and focus. This product taps into the growing interest in light therapy for mental well-being.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 16:22:42 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/sunbooster-sls2000-review/</guid>
-    </item>
-    <item>
-      <title>This free app makes journaling so easy that I've managed to do it for 3 months</title>
-      <link>https://www.zdnet.com/article/diarly-journaling-app-hands-on/</link>
-      <description>A new journaling app simplifies the process, making it easier for users to maintain a journaling habit for three months. This reflects a trend towards digital solutions for personal development.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 16:17:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/diarly-journaling-app-hands-on/</guid>
-    </item>
-    <item>
-      <title>CachyOS is the Arch Linux distro to try if you want serious speed and performance</title>
-      <link>https://www.zdnet.com/article/catchos-arch-linux-hands-on/</link>
-      <description>CachyOS, a fast and performance-oriented Linux distribution, has released an updated version that enhances its capabilities. This positions it as a top choice for users seeking speed in their operating system.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 16:11:59 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/catchos-arch-linux-hands-on/</guid>
-    </item>
-    <item>
-      <title>CodeQL now supports sanitizers and validators in models-as-data</title>
-      <link>https://github.blog/changelog/2026-04-21-codeql-now-supports-sanitizers-and-validators-in-models-as-data</link>
-      <description>CodeQL, GitHub's static analysis tool, now allows users to create custom sanitizers and validators, enhancing its ability to identify security issues in code. This update is significant for developers focused on security.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 21 Apr 2026 16:07:48 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-04-21-codeql-now-supports-sanitizers-and-validators-in-models-as-data</guid>
-    </item>
-    <item>
-      <title>Modernizing the Facebook Groups Search to Unlock the Power of Community Knowledge</title>
-      <link>https://engineering.fb.com/2026/04/21/ml-applications/modernizing-the-facebook-groups-search-to-unlock-the-power-of-community-knowledge/</link>
-      <description>Facebook has revamped its Groups Search feature to improve the discovery and validation of community content. This update aims to enhance user experience and engagement within groups.</description>
-      <category>Meta</category>
-      <pubDate>Tue, 21 Apr 2026 16:00:19 +0000</pubDate>
-      <guid>https://engineering.fb.com/2026/04/21/ml-applications/modernizing-the-facebook-groups-search-to-unlock-the-power-of-community-knowledge/</guid>
-    </item>
-    <item>
-      <title>AI Dungeon maker Latitude unveils Voyage, a platform for creating AI-powered RPGs</title>
-      <link>https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/</link>
-      <description>Latitude has launched Voyage, a platform that enables users to create their own AI-powered role-playing games. This innovation could transform the gaming landscape by democratizing game development.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 16:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/</guid>
-    </item>
-    <item>
-      <title>macOS ClickFix attacks deliver AppleScript stealers to snarf credentials, wallets</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/macos_clickfix_attacks_deliver_applescript/</link>
-      <description>A ClickFix campaign has targeted macOS users with an AppleScript-based infostealer that collects sensitive data from browsers and cryptocurrency wallets. This highlights ongoing security threats to Apple users.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 15:50:06 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/macos_clickfix_attacks_deliver_applescript/</guid>
-    </item>
-    <item>
-      <title>Anthropic bakes memory fixes into Bun 1.1.13 as developers complain of leaks</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/anthropics_bun_1113_released_with_memory_fixes/</link>
-      <description>The latest update of the Bun JavaScript toolkit addresses critical memory leak issues that have been affecting performance in production environments. This is a significant improvement for developers using Bun.</description>
+      <title>Unauthorized group has gained access to Anthropic’s exclusive cyber tool Mythos, report claims</title>
+      <link>https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/</link>
+      <description>An unauthorized group reportedly accessed Anthropic's exclusive cyber tool, Mythos. Anthropic is investigating but claims no evidence of system compromise has been found.</description>
       <category>Anthropic</category>
-      <pubDate>Tue, 21 Apr 2026 15:27:15 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/anthropics_bun_1113_released_with_memory_fixes/</guid>
+      <pubDate>Tue, 21 Apr 2026 23:26:45 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/</guid>
     </item>
     <item>
-      <title>Bond, a new social media platform, wants to use AI to help you kick your doomscrolling habit</title>
-      <link>https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/</link>
-      <description>Bond, a new social media platform, aims to reduce doomscrolling by using AI to encourage users to engage in real-world activities. This reflects a growing concern about digital well-being.</description>
+      <title>SpaceX is working with Cursor and has an option to buy the startup for $60 billion</title>
+      <link>https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/</link>
+      <description>SpaceX is collaborating with startup Cursor and has an option to acquire it for $60 billion. This move comes ahead of SpaceX's anticipated IPO.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 15:24:29 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/</guid>
+      <pubDate>Tue, 21 Apr 2026 22:58:22 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/</guid>
     </item>
     <item>
-      <title>YouTube expands its AI likeness detection technology to celebrities</title>
-      <link>https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/</link>
-      <description>YouTube is expanding its AI likeness detection technology to help celebrities manage their digital presence by identifying and removing deepfakes. This move underscores the platform's commitment to protecting users.</description>
+      <title>Roundtables: Unveiling The 10 Things That Matter in AI Right Now</title>
+      <link>https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/</link>
+      <description>A special edition of Roundtables at EmTech AI reveals 10 crucial trends and technologies in AI. Subscribers can access insights on emerging movements in the field.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 15:02:06 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/</guid>
+      <pubDate>Tue, 21 Apr 2026 22:09:25 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/</guid>
     </item>
     <item>
-      <title>The spaghettified DBMS chart that shows Oracle's crown is slowly slipping</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/gartner_bamboozling_dbms_chart_shows/</link>
-      <description>Gartner's latest DBMS Market Share Ranks show that dominant database vendors, including Oracle, are gradually losing market share, indicating a shift in the industry landscape.</description>
+      <title>Apple has an opportunity to rediscover humanity in its push toward AI</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/apple_ternus_rediscover_humanity/</link>
+      <description>An opinion piece argues that Apple's leadership transition offers a chance to reconnect with its innovative roots and inspire users again through AI.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 21 Apr 2026 14:45:43 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/gartner_bamboozling_dbms_chart_shows/</guid>
+      <pubDate>Tue, 21 Apr 2026 22:06:58 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/apple_ternus_rediscover_humanity/</guid>
     </item>
     <item>
-      <title>3 new ways Ads Advisor is making Google Ads safer and faster</title>
-      <link>https://blog.google/products/ads-commerce/ads-advisor-google-ads/</link>
-      <description>Google Ads Advisor is introducing three new features aimed at enhancing safety and speed for advertisers, improving the overall user experience.</description>
-      <category>Google</category>
-      <pubDate>Tue, 21 Apr 2026 14:30:00 +0000</pubDate>
-      <guid>https://blog.google/products/ads-commerce/ads-advisor-google-ads/</guid>
+      <title>Nation-states want to cause harm, not just steal cash - stop handing your cyber defenses to the cheapest contractor</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/21/ncsc_chinas_cyberattacks_uk/</link>
+      <description>The UK National Cyber Security Centre warns that state-sponsored cyberattacks from China are increasingly sophisticated, urging better cybersecurity practices.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:30:09 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/21/ncsc_chinas_cyberattacks_uk/</guid>
     </item>
     <item>
-      <title>Samsung is ending Messages in July: 5 replacements I'd switch to now</title>
-      <link>https://www.zdnet.com/article/samsung-ending-messages-replacement-apps/</link>
-      <description>Samsung will discontinue its built-in messaging app in July, prompting users to seek alternative messaging solutions.</description>
+      <title>The new word in home construction could be “plastics”</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134856/the-new-word-in-home-construction-could-be-plastics/</link>
+      <description>MIT engineers propose using plastics in home construction to address environmental pollution and resource shortages, potentially revolutionizing building materials.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134856/the-new-word-in-home-construction-could-be-plastics/</guid>
+    </item>
+    <item>
+      <title>A natural protein may protect the GI tract from infection</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134858/a-natural-protein-may-protect-the-gi-tract-from-infection/</link>
+      <description>MIT researchers discovered that a protein called intelectin-2 can protect the gastrointestinal tract from infections, enhancing the body's mucosal barrier.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134858/a-natural-protein-may-protect-the-gi-tract-from-infection/</guid>
+    </item>
+    <item>
+      <title>This tool could show how consciousness works</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134862/this-tool-could-show-how-consciousness-works/</link>
+      <description>Researchers propose using transcranial focused ultrasound to explore how consciousness arises from brain activity, offering a noninvasive research method.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134862/this-tool-could-show-how-consciousness-works/</guid>
+    </item>
+    <item>
+      <title>Early life may have breathed oxygen earlier than believed</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134867/early-life-may-have-breathed-oxygen-earlier-than-believed/</link>
+      <description>MIT geobiologists found evidence that early life forms may have utilized oxygen much earlier than previously thought, reshaping our understanding of evolutionary history.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134867/early-life-may-have-breathed-oxygen-earlier-than-believed/</guid>
+    </item>
+    <item>
+      <title>Analog computing from waste heat</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134870/analog-computing-from-waste-heat/</link>
+      <description>MIT researchers have developed a method for analog computing that uses waste heat from electronic devices for data processing, bypassing traditional electricity needs.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134870/analog-computing-from-waste-heat/</guid>
+    </item>
+    <item>
+      <title>Get ready for hotter, muggier, stormier summers</title>
+      <link>https://www.technologyreview.com/2026/04/21/1134873/get-ready-for-hotter-muggier-stormier-summers/</link>
+      <description>A study by MIT scientists reveals that a key atmospheric condition is causing more frequent hot, humid, and stormy summers in midlatitude regions like the US Midwest. This trend highlights the growing impact of climate change on weather patterns.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/04/21/1134873/get-ready-for-hotter-muggier-stormier-summers/</guid>
+    </item>
+    <item>
+      <title>From developer desks to the whole organization: Running Claude Cowork in Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/from-developer-desks-to-the-whole-organization-running-claude-cowork-in-amazon-bedrock/</link>
+      <description>Claude Cowork is now available in Amazon Bedrock, allowing organizations to run it directly or via an LLM gateway. This integration aims to enhance productivity for knowledge workers.</description>
+      <category>Amazon</category>
+      <pubDate>Tue, 21 Apr 2026 19:13:49 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/from-developer-desks-to-the-whole-organization-running-claude-cowork-in-amazon-bedrock/</guid>
+    </item>
+    <item>
+      <title>I got an early look at ChatGPT Images 2.0, and it's impressive - with one exception</title>
+      <link>https://www.zdnet.com/article/chatgpt-images-2-hands-on-testing/</link>
+      <description>ChatGPT Images 2.0 offers impressive precision and design control for image generation, although it has one notable limitation. Users can try it out to explore its capabilities.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 21 Apr 2026 19:00:48 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/chatgpt-images-2-hands-on-testing/</guid>
+    </item>
+    <item>
+      <title>ChatGPT’s new Images 2.0 model is surprisingly good at generating text</title>
+      <link>https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/</link>
+      <description>The new ChatGPT Images 2.0 model from OpenAI demonstrates significant advancements in AI capabilities, particularly in generating text alongside images. This evolution reflects the rapid progress in AI technology.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 21 Apr 2026 19:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/</guid>
+    </item>
+    <item>
+      <title>OpenAI Beefs Up ChatGPT’s Image Generation Model</title>
+      <link>https://www.wired.com/story/openai-beefs-up-chatgpts-image-generation-model/</link>
+      <description>OpenAI has enhanced ChatGPT's image generation model, making it better at creating detailed images and rendering text, although it still faces challenges with non-English languages.</description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 21 Apr 2026 19:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/openai-beefs-up-chatgpts-image-generation-model/</guid>
+    </item>
+    <item>
+      <title>I compared Thread, Zigbee, and Matter - here's the best smart home setup for you</title>
+      <link>https://www.zdnet.com/article/thread-vs-zigbee-vs-matter/</link>
+      <description>This article compares Thread, Zigbee, and Matter, three technologies essential for smart home connectivity, helping readers choose the best setup for their needs.</description>
       <category>Industry</category>
-      <pubDate>Tue, 21 Apr 2026 14:03:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/samsung-ending-messages-replacement-apps/</guid>
+      <pubDate>Tue, 21 Apr 2026 18:53:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/thread-vs-zigbee-vs-matter/</guid>
     </item>
     <item>
-      <title>Ordering with the Starbucks ChatGPT app was a true coffee nightmare</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/915821/starbucks-chatgpt-app-testing</link>
-      <description>A user experienced significant difficulties ordering coffee through the Starbucks ChatGPT app, highlighting potential flaws in AI-driven customer service.</description>
+      <title>Sam Altman throws shade at Anthropic’s cyber model, Mythos: ‘fear-based marketing’</title>
+      <link>https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/</link>
+      <description>OpenAI CEO Sam Altman criticized Anthropic's cybersecurity model, Mythos, accusing it of using fear-based marketing to exaggerate its effectiveness. This highlights competitive tensions in the AI sector.</description>
       <category>OpenAI</category>
-      <pubDate>Tue, 21 Apr 2026 12:19:40 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/915821/starbucks-chatgpt-app-testing</guid>
+      <pubDate>Tue, 21 Apr 2026 18:51:52 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/</guid>
     </item>
     <item>
-      <title>Scaling Codex to enterprises worldwide</title>
-      <link>https://openai.com/index/scaling-codex-to-enterprises-worldwide</link>
-      <description>OpenAI has launched Codex Labs to help enterprises implement Codex in software development, partnering with major firms like Accenture and PwC.</description>
+      <title>SpaceX cuts a deal to maybe buy Cursor for $60 billion</title>
+      <link>https://www.theverge.com/science/916427/spacex-cursor-potential-deal-acquisition</link>
+      <description>SpaceX has announced a potential $60 billion deal to acquire the AI programming platform Cursor, which could enhance its xAI tools ahead of an IPO. Alternatively, SpaceX could pay a $10 billion fee.</description>
+      <category>xAI</category>
+      <pubDate>Tue, 21 Apr 2026 18:45:37 -0400</pubDate>
+      <guid>https://www.theverge.com/science/916427/spacex-cursor-potential-deal-acquisition</guid>
+    </item>
+    <item>
+      <title>Mozilla Used Anthropic’s Mythos to Find and Fix 271 Bugs in Firefox</title>
+      <link>https://www.wired.com/story/mozilla-used-anthropics-mythos-to-find-271-bugs-in-firefox/</link>
+      <description>Mozilla utilized Anthropic's Mythos to identify and fix 271 bugs in Firefox, indicating that while AI may not revolutionize cybersecurity, it will challenge software developers.</description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 21 Apr 2026 18:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/mozilla-used-anthropics-mythos-to-find-271-bugs-in-firefox/</guid>
+    </item>
+    <item>
+      <title>I saw Framework's new 'MacBook Pro for Linux' and it's the hardware enthusiasts deserve</title>
+      <link>https://www.zdnet.com/article/framework-laptop-13-pro-macbook-pro-for-linux-users/</link>
+      <description>The Framework Laptop 13 Pro, designed based on six years of user feedback, offers a modular and premium experience, catering to hardware enthusiasts seeking a Linux-compatible device.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 18:15:45 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/framework-laptop-13-pro-macbook-pro-for-linux-users/</guid>
+    </item>
+    <item>
+      <title>Scaling agentic AI demands a strong data foundation - 4 steps to take first</title>
+      <link>https://www.zdnet.com/article/scaling-agentic-ai-requires-strong-data-foundation/</link>
+      <description>McKinsey outlines four essential steps for organizations to build a robust data foundation, connecting strategy, technology, and personnel for effective AI scaling.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 18:01:59 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/scaling-agentic-ai-requires-strong-data-foundation/</guid>
+    </item>
+    <item>
+      <title>I powered my 3,000-sq-ft home with an EcoFlow battery in a blackout - here's how it kept my AC on</title>
+      <link>https://www.zdnet.com/article/ecoflow-delta-pro-ultra-x-review/</link>
+      <description>The EcoFlow Delta Pro Ultra X successfully powered a 3,000-sq-ft home during a blackout, maintaining normal operations including air conditioning.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 18:00:47 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/ecoflow-delta-pro-ultra-x-review/</guid>
+    </item>
+    <item>
+      <title>OpenAI’s updated image generator can now pull information from the web</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/916166/openai-chatgpt-images-2</link>
+      <description>OpenAI has launched an updated version of its image generator, ChatGPT Images 2.0, which can now search the web to create more sophisticated images from prompts.</description>
       <category>OpenAI</category>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/scaling-codex-to-enterprises-worldwide</guid>
+      <pubDate>Tue, 21 Apr 2026 15:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/916166/openai-chatgpt-images-2</guid>
     </item>
     <item>
-      <title>AI and the Future of Cybersecurity: Why Openness Matters</title>
-      <link>https://huggingface.co/blog/cybersecurity-openness</link>
-      <description>The article discusses the importance of openness in AI for enhancing cybersecurity, emphasizing collaborative efforts to combat threats.</description>
-      <category>Open Source</category>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://huggingface.co/blog/cybersecurity-openness</guid>
+      <title>Moonshot AI's new Kimi K2.6 swarms your complex tasks with 1,000 collaborating agents</title>
+      <link>https://www.zdnet.com/article/moonshot-ai-kimi-k2-6-swarms-complex-tasks-collaborating-agents/</link>
+      <description>Moonshot AI's Kimi K2.6 introduces a swarm of 1,000 collaborating agents, potentially transforming the approach to complex engineering tasks.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 13:59:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/moonshot-ai-kimi-k2-6-swarms-complex-tasks-collaborating-agents/</guid>
     </item>
     <item>
-      <title>Google rolls out Gemini in Chrome in APAC countries</title>
-      <link>https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/</link>
-      <description>Google has begun rolling out its Gemini feature in Chrome across several APAC countries, enhancing browser capabilities for users in those regions.</description>
+      <title>I tested Surfshark's new Dausos VPN protocol - here's how it compares to WireGuard</title>
+      <link>https://www.zdnet.com/article/surfshark-dausos-vpn-protocol/</link>
+      <description>Surfshark's new Dausos VPN protocol promises enhanced security and speed, with early tests comparing its performance to the established WireGuard protocol.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 13:30:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/surfshark-dausos-vpn-protocol/</guid>
+    </item>
+    <item>
+      <title>I've tested every Razr and Galaxy Flip: 3 reasons Motorola crushes Samsung at foldables</title>
+      <link>https://www.zdnet.com/article/motorola-is-beating-samsung-at-making-flip-phones-and-im-not-surprised-at-all/</link>
+      <description>Motorola dominates the US foldable phone market, outperforming Samsung and Google due to strategic advantages and product features.</description>
+      <category>Industry</category>
+      <pubDate>Tue, 21 Apr 2026 13:03:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/motorola-is-beating-samsung-at-making-flip-phones-and-im-not-surprised-at-all/</guid>
+    </item>
+    <item>
+      <title>Can Large Language Models Understand Context?</title>
+      <link>https://machinelearning.apple.com/research/llm-context-understanding</link>
+      <description>A new paper explores the contextual understanding of Large Language Models (LLMs), introducing a benchmark to evaluate their linguistic capabilities.</description>
+      <category>Apple</category>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/llm-context-understanding</guid>
+    </item>
+    <item>
+      <title>Pixel 11 May Revive the Old-School Notification LED With 'Pixel Glow'</title>
+      <link>https://www.cnet.com/tech/mobile/pixel-11-may-revive-the-notification-led-with-pixel-glow/</link>
+      <description>The Pixel 11 may bring back the classic notification LED feature, dubbed 'Pixel Glow,' appealing to users nostalgic for older tech.</description>
+      <category>Google</category>
+      <pubDate>Mon, 20 Apr 2026 23:32:52 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/mobile/pixel-11-may-revive-the-notification-led-with-pixel-glow/</guid>
+    </item>
+    <item>
+      <title>Who should Saints pick in 2026? Google AI says take Kelvin Banks again</title>
+      <link>https://saintswire.usatoday.com/story/sports/nfl/saints/2026/04/20/2026-nfl-draft-ai-google-gemini-saints-first-round-pick/89707037007/</link>
+      <description>Google AI suggests the New Orleans Saints should draft Kelvin Banks Jr. again, as NFL teams are urged to leverage AI in scouting.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 20 Apr 2026 23:25:22 +0000</pubDate>
+      <guid>https://saintswire.usatoday.com/story/sports/nfl/saints/2026/04/20/2026-nfl-draft-ai-google-gemini-saints-first-round-pick/89707037007/</guid>
+    </item>
+    <item>
+      <title>implo.ai – Buy ready-to-deploy AI prompts, workflows, agents, and templates</title>
+      <link>https://betalist.com/startups/implo-ai</link>
+      <description>Implo.ai offers a marketplace for ready-to-deploy AI prompts, workflows, agents, and templates, streamlining AI implementation for users.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 20 Apr 2026 23:25:00 +0000</pubDate>
+      <guid>https://betalist.com/startups/implo-ai</guid>
+    </item>
+    <item>
+      <title>invokerl added to PyPI</title>
+      <link>https://pypi.org/project/invokerl/</link>
+      <description>Invokerl has been added to PyPI, enabling hackable reinforcement learning post-training for large language models, enhancing their adaptability and performance.</description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 20 Apr 2026 23:22:04 +0000</pubDate>
+      <guid>https://pypi.org/project/invokerl/</guid>
+    </item>
+    <item>
+      <title>prismhr-mcp 0.1.0.dev51</title>
+      <link>https://pypi.org/project/prismhr-mcp/0.1.0.dev51/</link>
+      <description>The prismhr-mcp 0.1.0.dev51 has been released, offering an open-source Model Context Protocol server for PrismHR, integrating Microsoft 365 connectors for AI agents.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 20 Apr 2026 23:19:51 +0000</pubDate>
+      <guid>https://pypi.org/project/prismhr-mcp/0.1.0.dev51/</guid>
+    </item>
+    <item>
+      <title>Stock market today: Dow, S&amp;P 500, and Nasdaq climb amid Apple CEO change and Iran uncertainty</title>
+      <link>https://finance.yahoo.com/markets/stocks/live/stock-market-today-dow-sp-500-and-nasdaq-climb-amid-apple-ceo-change-warsh-hearings-iran-uncertainty-231748048.html</link>
+      <description>The stock market saw gains with the Dow, S&amp;P 500, and Nasdaq rising amid Tim Cook's departure as Apple CEO and ongoing tensions regarding the US-Iran truce.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 20 Apr 2026 23:17:48 +0000</pubDate>
+      <guid>https://finance.yahoo.com/markets/stocks/live/stock-market-today-dow-sp-500-and-nasdaq-climb-amid-apple-ceo-change-warsh-hearings-iran-uncertainty-231748048.html</guid>
+    </item>
+    <item>
+      <title>ccli-prompt 0.1.1</title>
+      <link>https://pypi.org/project/ccli-prompt/0.1.1/</link>
+      <description>CCLI-prompt 0.1.1 has been released, providing an inline prompt feature for zsh terminals, powered by Claude, enhancing user experience.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 20 Apr 2026 23:17:25 +0000</pubDate>
+      <guid>https://pypi.org/project/ccli-prompt/0.1.1/</guid>
+    </item>
+    <item>
+      <title>French prosecutors summon Musk over allegations of child abuse images and deepfakes on X</title>
+      <link>https://www.nbcnews.com/world/europe/french-prosecutors-summon-musk-allegations-child-abuse-images-deepfake-rcna340944</link>
+      <description>Elon Musk has been summoned by French prosecutors to address allegations related to child abuse images and deepfakes on the social media platform X.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 20 Apr 2026 23:13:55 +0000</pubDate>
+      <guid>https://www.nbcnews.com/world/europe/french-prosecutors-summon-musk-allegations-child-abuse-images-deepfake-rcna340944</guid>
+    </item>
+    <item>
+      <title>xaidr added to PyPI</title>
+      <link>https://pypi.org/project/xaidr/</link>
+      <description>Xaidr has been added to PyPI, offering a Delphi Python SDK for extended AI detection and response capabilities for agent fleets.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 20 Apr 2026 23:13:15 +0000</pubDate>
+      <guid>https://pypi.org/project/xaidr/</guid>
+    </item>
+    <item>
+      <title>Moonshot AI releases Kimi-K2.6 model with 1T parameters, attention optimizations</title>
+      <link>https://siliconangle.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-model-1t-parameters-attention-optimizations/</link>
+      <description>Moonshot AI has launched the Kimi-K2.6 model, boasting 1 trillion parameters and attention optimizations, claiming superior performance over GPT-5.4 and Claude Opus 4.6.</description>
+      <category>Meta</category>
+      <pubDate>Mon, 20 Apr 2026 23:04:02 +0000</pubDate>
+      <guid>https://siliconangle.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-model-1t-parameters-attention-optimizations/</guid>
+    </item>
+    <item>
+      <title>Maximizing Memory Efficiency to Run Bigger Models on NVIDIA Jetson</title>
+      <link>https://developer.nvidia.com/blog/maximizing-memory-efficiency-to-run-bigger-models-on-nvidia-jetson/</link>
+      <description>Developers are focusing on maximizing memory efficiency to deploy larger AI models on NVIDIA Jetson devices, expanding AI's reach beyond data centers.</description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 20 Apr 2026 23:01:38 +0000</pubDate>
+      <guid>https://developer.nvidia.com/blog/maximizing-memory-efficiency-to-run-bigger-models-on-nvidia-jetson/</guid>
+    </item>
+    <item>
+      <title>The Web Is Gaslighting AI Agents and Nobody Can Tell</title>
+      <link>https://www.pymnts.com/artificial-intelligence-2/2026/the-web-is-gaslighting-ai-agents-and-nobody-can-tell/</link>
+      <description>Research indicates that AI agents can be manipulated by misleading online listings, which complicates their decision-making processes and raises ethical concerns.</description>
+      <category>Google</category>
+      <pubDate>Mon, 20 Apr 2026 22:55:54 +0000</pubDate>
+      <guid>https://www.pymnts.com/artificial-intelligence-2/2026/the-web-is-gaslighting-ai-agents-and-nobody-can-tell/</guid>
+    </item>
+    <item>
+      <title>Run High-Throughput Reinforcement Learning Training with End-to-End FP8 Precision</title>
+      <link>https://developer.nvidia.com/blog/run-high-throughput-reinforcement-learning-training-with-end-to-end-fp8-precision/</link>
+      <description>A new method for high-throughput reinforcement learning training using end-to-end FP8 precision is introduced, enhancing the efficiency of LLMs in complex reasoning tasks.</description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 20 Apr 2026 22:52:45 +0000</pubDate>
+      <guid>https://developer.nvidia.com/blog/run-high-throughput-reinforcement-learning-training-with-end-to-end-fp8-precision/</guid>
+    </item>
+    <item>
+      <title>New website tracks wait times for trendy NYC eateries — by paying locals to film diners in line</title>
+      <link>https://nypost.com/2026/04/20/us-news/new-website-tracks-wait-times-for-trendy-nyc-eateries-by-paying-locals-to-film-diners-in-line/</link>
+      <description>A new website is tracking wait times at popular NYC restaurants by hiring locals to film diners in line. This innovative approach aims to provide real-time updates for hungry patrons.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 20 Apr 2026 22:42:11 +0000</pubDate>
+      <guid>https://nypost.com/2026/04/20/us-news/new-website-tracks-wait-times-for-trendy-nyc-eateries-by-paying-locals-to-film-diners-in-line/</guid>
+    </item>
+    <item>
+      <title>Elon Musk Is a No-Show for Questioning in French Court Hearing Into X Social Media Platform and Grok Chatbot</title>
+      <link>https://www.thegatewaypundit.com/2026/04/elon-musk-is-no-show-questioning-french-court/</link>
+      <description>Elon Musk failed to appear for questioning in a French court regarding the X social media platform and Grok chatbot. This absence raises concerns over free speech and regulatory scrutiny in France.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 20 Apr 2026 22:40:35 +0000</pubDate>
+      <guid>https://www.thegatewaypundit.com/2026/04/elon-musk-is-no-show-questioning-french-court/</guid>
+    </item>
+    <item>
+      <title>Show HN: Dynamic Hybrid Search That Beats Pure Dense and Fixed Hybrid</title>
+      <link>https://github.com/nickswami/dasein-python-sdk/blob/master/README.md</link>
+      <description>A new project on Hacker News showcases a dynamic hybrid search model that outperforms traditional methods. The project aims to improve search efficiency and relevance.</description>
+      <category>Mistral</category>
+      <pubDate>Mon, 20 Apr 2026 22:34:54 +0000</pubDate>
+      <guid>https://github.com/nickswami/dasein-python-sdk/blob/master/README.md</guid>
+    </item>
+    <item>
+      <title>Google brings Gemini in Chrome to users in Australia, Japan, Singapore and South Korea</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181814888</link>
+      <description>Google's Gemini chatbot is expanding to users in Australia, Japan, Singapore, and other East Asian countries after its US debut. This rollout enhances accessibility to AI features in these regions.</description>
+      <category>Google</category>
+      <pubDate>Mon, 20 Apr 2026 22:13:35 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=181814888</guid>
+    </item>
+    <item>
+      <title>uipath-langchain-client 1.9.5</title>
+      <link>https://pypi.org/project/uipath-langchain-client/1.9.5/</link>
+      <description>The latest version of the UiPath LangChain client has been released, offering compatibility with chat models and embeddings for its LLM services. This update enhances the integration of AI in automation.</description>
+      <category>Mistral</category>
+      <pubDate>Mon, 20 Apr 2026 22:07:59 +0000</pubDate>
+      <guid>https://pypi.org/project/uipath-langchain-client/1.9.5/</guid>
+    </item>
+    <item>
+      <title>sagemaker 2.257.2</title>
+      <link>https://pypi.org/project/sagemaker/2.257.2/</link>
+      <description>Amazon has released an open-source library for training and deploying models on SageMaker, version 2.257.2. This tool aims to simplify the machine learning workflow for developers.</description>
+      <category>Amazon</category>
+      <pubDate>Mon, 20 Apr 2026 22:04:10 +0000</pubDate>
+      <guid>https://pypi.org/project/sagemaker/2.257.2/</guid>
+    </item>
+    <item>
+      <title>The web trained AI to deceive. Now designers have to untrain it.</title>
+      <link>https://uxdesign.cc/the-web-trained-ai-to-deceive-now-designers-have-to-untrain-it-420f9d3fe78e</link>
+      <description>Designers are facing challenges as AI has been trained to create manipulative user experiences. The article discusses the need to 'untrain' AI to promote ethical design practices.</description>
+      <category>Mistral</category>
+      <pubDate>Mon, 20 Apr 2026 22:01:45 +0000</pubDate>
+      <guid>https://uxdesign.cc/the-web-trained-ai-to-deceive-now-designers-have-to-untrain-it-420f9d3fe78e</guid>
+    </item>
+    <item>
+      <title>I ran a full LLM on my phone with no internet, and it's more useful than I expected</title>
+      <link>https://www.xda-developers.com/ran-a-full-llm-on-my-phone-with-no-internet-and-more-useful-than-i-expected/</link>
+      <description>An individual successfully ran a full language model on their phone without internet access, finding it surprisingly useful. This experience highlights the potential of local AI applications.</description>
+      <category>Google</category>
+      <pubDate>Mon, 20 Apr 2026 22:00:22 +0000</pubDate>
+      <guid>https://www.xda-developers.com/ran-a-full-llm-on-my-phone-with-no-internet-and-more-useful-than-i-expected/</guid>
+    </item>
+    <item>
+      <title>4 Unsettling Theories About Edgar Allan Poe’s Death That Experts Still Can’t Explain</title>
+      <link>https://www.mentalfloss.com/literature/poetry/unsettling-theories-edgar-allan-poe-death-experts-can-t-explain</link>
+      <description>Experts continue to debate the mysterious circumstances surrounding Edgar Allan Poe's death, with several unsettling theories still unproven. This ongoing intrigue keeps Poe's legacy alive.</description>
+      <category>Perplexity</category>
+      <pubDate>Mon, 20 Apr 2026 22:00:01 +0000</pubDate>
+      <guid>https://www.mentalfloss.com/literature/poetry/unsettling-theories-edgar-allan-poe-death-experts-can-t-explain</guid>
+    </item>
+    <item>
+      <title>We’re expanding Gemini in Chrome to users in Asia Pacific.</title>
+      <link>https://blog.google/products-and-platforms/products/chrome/chrome-expands-apac/</link>
+      <description>Google is further expanding its Gemini AI features in Chrome to several countries in the Asia Pacific region, enhancing user access to advanced AI tools.</description>
       <category>Google</category>
       <pubDate>Mon, 20 Apr 2026 22:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/</guid>
-    </item>
-    <item>
-      <title>z3rno-mcp added to PyPI</title>
-      <link>https://pypi.org/project/z3rno-mcp/</link>
-      <description>The z3rno-mcp has been added to PyPI, providing tools for memory operations in various MCP clients, enhancing their functionality.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 20 Apr 2026 17:56:15 +0000</pubDate>
-      <guid>https://pypi.org/project/z3rno-mcp/</guid>
-    </item>
-    <item>
-      <title>z3rno-mcp 0.1.0</title>
-      <link>https://pypi.org/project/z3rno-mcp/0.1.0/</link>
-      <description>The z3rno-mcp 0.1.0 release provides new memory operation tools for Claude Desktop and other MCP clients, enhancing their capabilities.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 20 Apr 2026 17:56:15 +0000</pubDate>
-      <guid>https://pypi.org/project/z3rno-mcp/0.1.0/</guid>
-    </item>
-    <item>
-      <title>2026 Mercedes-Benz C-Class EV debuts – W520-gen with 800V tech, 330 kW DC, up to 800 km range WLTP</title>
-      <link>https://paultan.org/2026/04/21/2026-mercedes-benz-c-class-ev-debuts-w520-gen-with-800v-tech-330-kw-dc-up-to-800-km-range-wltp/</link>
-      <description>The 2026 Mercedes-Benz C-Class EV has been unveiled, featuring advanced technology and a competitive range, positioning it against rivals like the BMW i3.</description>
-      <category>Google</category>
-      <pubDate>Mon, 20 Apr 2026 17:54:16 +0000</pubDate>
-      <guid>https://paultan.org/2026/04/21/2026-mercedes-benz-c-class-ev-debuts-w520-gen-with-800v-tech-330-kw-dc-up-to-800-km-range-wltp/</guid>
-    </item>
-    <item>
-      <title>Google Photos Can Now Smooth Skin and Whiten Teeth Via New ‘Touch-Up’ Menu</title>
-      <link>https://petapixel.com/2026/04/20/google-photos-can-now-smooth-skin-and-whiten-teeth-via-new-touch-up-menu/</link>
-      <description>Google Photos has introduced a 'Touch-Up' menu that allows users to enhance their appearance by smoothing skin and whitening teeth in photos. This feature aims to improve user experience and engagement with the app.</description>
-      <category>Google</category>
-      <pubDate>Mon, 20 Apr 2026 17:46:41 +0000</pubDate>
-      <guid>https://petapixel.com/2026/04/20/google-photos-can-now-smooth-skin-and-whiten-teeth-via-new-touch-up-menu/</guid>
-    </item>
-    <item>
-      <title>coding-agent-wrapper added to PyPI</title>
-      <link>https://pypi.org/project/coding-agent-wrapper/</link>
-      <description>A new Python library called coding-agent-wrapper has been added to PyPI, enabling users to orchestrate coding agents like Claude Code and Codex with tool servers and credential management. This streamlines the development process for AI applications.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 20 Apr 2026 17:45:14 +0000</pubDate>
-      <guid>https://pypi.org/project/coding-agent-wrapper/</guid>
-    </item>
-    <item>
-      <title>Own your digital vibe with Fix Your Search</title>
-      <link>https://pagesix.com/contributor-content/own-your-digital-vibe-with-fix-your-search/</link>
-      <description>Tonia Ryan has launched 'Fix Your Search' to help individuals manage their online presence and ensure their Google search results reflect their desired image. This initiative empowers users to take control of their digital reputation.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:39:12 +0000</pubDate>
-      <guid>https://pagesix.com/contributor-content/own-your-digital-vibe-with-fix-your-search/</guid>
-    </item>
-    <item>
-      <title>linkedin-network-cleaner added to PyPI</title>
-      <link>https://pypi.org/project/linkedin-network-cleaner/</link>
-      <description>The linkedin-network-cleaner has been added to PyPI, allowing users to extract, score, and clean their LinkedIn networks using AI. This tool aims to enhance professional networking efficiency.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 20 Apr 2026 17:37:31 +0000</pubDate>
-      <guid>https://pypi.org/project/linkedin-network-cleaner/</guid>
-    </item>
-    <item>
-      <title>What to expect during the Phi Moments @ Next event: Join theCUBE April 22-23</title>
-      <link>https://siliconangle.com/2026/04/20/phi-moments-google-cloud-next-ai-first-digital-phimomentsatnext/</link>
-      <description>The Phi Moments @ Next event will showcase advancements in AI by major providers like Google Cloud, focusing on how partners like Quantiphi Inc. utilize these technologies. This highlights the collaborative nature of AI development.</description>
-      <category>Google</category>
-      <pubDate>Mon, 20 Apr 2026 17:32:51 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/04/20/phi-moments-google-cloud-next-ai-first-digital-phimomentsatnext/</guid>
-    </item>
-    <item>
-      <title>See video of Earthset that an Artemis II astronaut filmed on his iPhone while circling the moon</title>
-      <link>https://www.nbcnews.com/science/space/video-artemis-ii-astronaut-earthset-moon-nasa-rcna341000</link>
-      <description>NASA astronaut Reid Wiseman shared a video of Earthset filmed during the Artemis II mission while orbiting the moon. This footage offers a unique perspective of Earth from space.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 20 Apr 2026 17:32:23 +0000</pubDate>
-      <guid>https://www.nbcnews.com/science/space/video-artemis-ii-astronaut-earthset-moon-nasa-rcna341000</guid>
-    </item>
-    <item>
-      <title>Is XRP Gearing Up For A 35% Move? This Pattern May Suggest So</title>
-      <link>http://www.newsbtc.com/xrp-news/xrp-gearing-up-35-move-this-pattern-suggest-so/</link>
-      <description>A crypto analyst suggests that XRP may be poised for a 35% price movement based on a symmetrical triangle pattern observed in its price chart. This analysis could influence trader decisions in the cryptocurrency market.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:30:33 +0000</pubDate>
-      <guid>http://www.newsbtc.com/xrp-news/xrp-gearing-up-35-move-this-pattern-suggest-so/</guid>
-    </item>
-    <item>
-      <title>I solved my read-it-later bookmarks problem with a reading inbox in Obsidian</title>
-      <link>https://www.makeuseof.com/how-to-use-obsidian-for-read-it-later-bookmarks/</link>
-      <description>An individual shares their experience of organizing read-it-later bookmarks using a reading inbox in Obsidian, which helped them manage their reading materials more effectively. This approach encourages better information consumption.</description>
-      <category>Google</category>
-      <pubDate>Mon, 20 Apr 2026 17:30:19 +0000</pubDate>
-      <guid>https://www.makeuseof.com/how-to-use-obsidian-for-read-it-later-bookmarks/</guid>
-    </item>
-    <item>
-      <title>Adobe deploys agents across its customer experience tools</title>
-      <link>https://siliconangle.com/2026/04/20/adobe-deploys-agents-across-customer-experience-tools/</link>
-      <description>Adobe has launched a new enterprise platform to integrate AI agents across its marketing and customer engagement tools, aiming to enhance customer experiences. This positions Adobe as a key player in AI-driven customer solutions.</description>
-      <category>M365 Copilot</category>
-      <pubDate>Mon, 20 Apr 2026 17:28:42 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/04/20/adobe-deploys-agents-across-customer-experience-tools/</guid>
-    </item>
-    <item>
-      <title>Elon Musk skips probe as France investigates X</title>
-      <link>https://www.dw.com/en/france-probes-x-over-algorithms-and-deepfakes-as-musk-skips-interview/a-76864163</link>
-      <description>French prosecutors are investigating whether X's AI chatbot Grok contributed to the dissemination of harmful content, including child sexual abuse material and Holocaust denial. This raises serious ethical concerns about AI's role in content moderation.</description>
-      <category>xAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:28:00 +0000</pubDate>
-      <guid>https://www.dw.com/en/france-probes-x-over-algorithms-and-deepfakes-as-musk-skips-interview/a-76864163</guid>
-    </item>
-    <item>
-      <title>Apple releases beta 3 for iPadOS 26.5, watchOS 26.5, and more</title>
-      <link>https://9to5mac.com/2026/04/20/apple-releases-beta-3-for-ipados-26-5-watchos-26-5-and-more/</link>
-      <description>Apple has released developer beta 3 for iPadOS 26.5, watchOS 26.5, and tvOS 26.5, continuing its software development cycle. This update is significant for developers testing new features ahead of public releases.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 20 Apr 2026 17:17:05 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/04/20/apple-releases-beta-3-for-ipados-26-5-watchos-26-5-and-more/</guid>
-    </item>
-    <item>
-      <title>valuehead added to PyPI</title>
-      <link>https://pypi.org/project/valuehead/</link>
-      <description>The ValueHead agent trace evaluation platform has been added to the Python Package Index (PyPI), providing a new SDK for developers. This addition facilitates easier integration and use of the platform in Python applications.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:16:42 +0000</pubDate>
-      <guid>https://pypi.org/project/valuehead/</guid>
-    </item>
-    <item>
-      <title>I Asked ChatGPT for the Best Alternatives To Investing in Real Estate — Here’s What It Said</title>
-      <link>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_206c9b4e-1328-4c1f-8a38-eb1d61aa5922</link>
-      <description>An exploration of alternatives to real estate investing was conducted using ChatGPT, showcasing AI's capability to provide diverse investment options. This highlights the growing role of AI in financial decision-making.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:15:05 +0000</pubDate>
-      <guid>https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_206c9b4e-1328-4c1f-8a38-eb1d61aa5922</guid>
-    </item>
-    <item>
-      <title>SGLang CVE-2026-5760 (CVSS 9.8) Enables RCE via Malicious GGUF Model Files</title>
-      <link>https://thehackernews.com/2026/04/sglang-cve-2026-5760-cvss-98-enables.html</link>
-      <description>A critical security vulnerability (CVE-2026-5760) has been identified in SGLang, allowing remote code execution through malicious GGUF model files. With a CVSS score of 9.8, this poses a significant risk to affected systems.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:14:00 +0000</pubDate>
-      <guid>https://thehackernews.com/2026/04/sglang-cve-2026-5760-cvss-98-enables.html</guid>
-    </item>
-    <item>
-      <title>Fitbit Air leak points to a May launch and plenty of color options</title>
-      <link>https://www.androidcentral.com/wearables/fitbit/fitbit-air-leak-points-to-a-may-launch-and-plenty-of-color-options</link>
-      <description>Google's Fitbit Air is set to launch in May, featuring a subscription-free design and various color options. This product aims to compete directly with Whoop in the fitness tracker market.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 20 Apr 2026 17:05:00 +0000</pubDate>
-      <guid>https://www.androidcentral.com/wearables/fitbit/fitbit-air-leak-points-to-a-may-launch-and-plenty-of-color-options</guid>
-    </item>
-    <item>
-      <title>Elon Musk skips hearing in French probe of X</title>
-      <link>https://economictimes.indiatimes.com/tech/technology/elon-musk-skips-hearing-in-french-probe-of-x/articleshow/130398418.cms</link>
-      <description>Elon Musk did not attend a French court hearing related to X and its AI chatbot Grok, which is under investigation for algorithmic abuse and fraudulent data extraction. This absence raises questions about accountability in tech leadership.</description>
-      <category>xAI</category>
-      <pubDate>Mon, 20 Apr 2026 17:03:19 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/technology/elon-musk-skips-hearing-in-french-probe-of-x/articleshow/130398418.cms</guid>
-    </item>
-    <item>
-      <title>Mercedes-Benz Just Unveiled Its All-Electric C-Class—Here’s a First Look</title>
-      <link>http://robbreport.com/motors/cars/2027-mercedes-benz-c-class-ev-debut-1238007806/</link>
-      <description>Mercedes-Benz has unveiled its all-electric 2027 C-Class sedan, featuring a striking design and advanced technology with a 350-mile range. This launch emphasizes the automaker's commitment to electric vehicles.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 20 Apr 2026 17:00:00 +0000</pubDate>
-      <guid>http://robbreport.com/motors/cars/2027-mercedes-benz-c-class-ev-debut-1238007806/</guid>
-    </item>
-    <item>
-      <title>Conductor Launches AgentStack for Answer Engine Optimization</title>
-      <link>https://www.cmswire.com/digital-experience/conductor-launches-agentstack-for-aeo/</link>
-      <description>Conductor has launched AgentStack, an enterprise suite designed for optimizing AI search visibility through agentic LLM applications and developer tools. This aims to enhance the efficiency of AI-driven search engines.</description>
-      <category>Microsoft</category>
-      <pubDate>Mon, 20 Apr 2026 16:52:47 +0000</pubDate>
-      <guid>https://www.cmswire.com/digital-experience/conductor-launches-agentstack-for-aeo/</guid>
-    </item>
-    <item>
-      <title>ramjetio 0.7.3</title>
-      <link>https://pypi.org/project/ramjetio/0.7.3/</link>
-      <description>The ramjetio 0.7.3 update introduces a distributed cache system for PyTorch training, enhancing performance and efficiency for machine learning tasks. This update is beneficial for developers working with large datasets.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 20 Apr 2026 16:50:42 +0000</pubDate>
-      <guid>https://pypi.org/project/ramjetio/0.7.3/</guid>
-    </item>
-    <item>
-      <title>AI Chatbots Often Push Risky Cancer Treatment Alternatives</title>
-      <link>https://www.newser.com/story/387642/ai-chatbots-often-push-risky-cancer-treatment-alternatives.html</link>
-      <description>A study published in BMJ Open found that AI chatbots often suggest risky cancer treatment alternatives, raising concerns about the reliability of AI in healthcare. This underscores the need for careful oversight in AI medical advice.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 20 Apr 2026 16:50:00 +0000</pubDate>
-      <guid>https://www.newser.com/story/387642/ai-chatbots-often-push-risky-cancer-treatment-alternatives.html</guid>
+      <guid>https://blog.google/products-and-platforms/products/chrome/chrome-expands-apac/</guid>
     </item>
   </channel>
 </rss>
