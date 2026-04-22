@@ -38,7 +38,11 @@ tags:
   - productivity
 ---
 
-> 🔄 **Living document** — This article is updated as new Copilot Cowork features roll out. Last updated: April 2026.
+<div class="living-doc-banner">
+
+This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today might be GA tomorrow. If you spot anything out of date or inaccurate, please [send me feedback](/feedback/) and I'll update it. Last verified: April 2026.
+
+</div>
 
 Remember when Copilot first launched back in 2023? You could ask it to summarise an email, draft a paragraph in Word, or make a chart in Excel. It was genuinely impressive. But every time you wanted to do something across multiple apps — like "prep me for a meeting using info from my emails, Teams chats, and SharePoint files" — you had to prompt each app separately, copy-paste between them, and stitch it all together yourself.
 
