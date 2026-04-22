@@ -52,7 +52,7 @@ Instead of being an assistant that waits for your instructions, Cowork is more l
 
 This guide explains everything — in plain language, with real scenarios, and honest opinions on what's great and what's not quite there yet.
 
-**Quick links:** [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
+**Quick links:** [🚀 6 Prompts to Try Today](#6-high-impact-cowork-prompts-you-can-use-today) · [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
 
 ---
 
@@ -107,6 +107,144 @@ The difference is what happens after you send a message. Instead of an instant r
 It feels less like chatting with a bot and more like delegating to a very organised team member who keeps you in the loop.
 
 📖 [Official announcement: Copilot Cowork — A new way of getting work done](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/)
+
+---
+
+## 6 High-Impact Cowork Prompts You Can Use Today
+
+Now that you know what Cowork is, here's the fun part — trying it yourself. These prompts are based on real workflows that people actually do every week. Copy them, swap the **[placeholders]** for your own details, and watch Cowork do the work. Each one is designed to show Cowork's multi-step, cross-app power — the thing that makes it fundamentally different from regular Copilot.
+
+**💡 Pro tip:** The best Cowork prompts describe an **outcome**, not a process. Tell it what you need, not how to get there.
+
+### 1. ☀️ Morning Triage & Priority Setter
+
+*Best for: Everyone. Start your day in 60 seconds instead of 20 minutes of inbox scrolling.*
+
+<div class="prompt-cards">
+
+> Good morning! Give me a full briefing for today:
+> 1. What meetings do I have today — list them with times and who's attending
+> 2. What are my most important unread emails from overnight — flag anything that needs a response before my first meeting
+> 3. Any urgent or time-sensitive Teams messages I haven't responded to
+> 4. Based on all of this, recommend the 3 things I should prioritise this morning
+>
+> Then draft quick reply emails for the top 2 urgent items — keep them professional, friendly, and under 3 sentences each. Show me for approval.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** Reads your calendar, scans unread emails, checks Teams messages, prioritises your morning, and drafts replies — all before your first coffee is cold. Five skills working together: Daily Briefing → Calendar → Email → Teams → Communications.
+
+</div>
+
+### 2. 🎯 Meeting Prep Autopilot
+
+*Best for: Anyone with customer meetings, stakeholder reviews, or project check-ins.*
+
+<div class="prompt-cards">
+
+> I have a meeting with **[customer/stakeholder name]** about **[topic, e.g. "quarterly review", "project kickoff", "budget approval"]** coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about **[customer/stakeholder name]** or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** Finds the meeting on your calendar, digs through your email and Teams history with that person, locates the right files in SharePoint, creates a briefing document, and drafts a confirmation email — all from one prompt. Skills: Calendar → Enterprise Search → Word → Email.
+
+</div>
+
+### 3. 📬 Post-Session Follow-Up Machine
+
+*Best for: Trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards.*
+
+<div class="prompt-cards">
+
+> I just finished a **[session type, e.g. "training session", "client demo", "team workshop"]**. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
+> - A thank you and 2-sentence summary of what we covered
+> - Links to the recording and slides
+> - A "Questions?" section inviting them to reply
+>
+> Send it from my Outlook — show me for review before sending.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** Finds the meeting you just finished, locates the recording and shared materials, reads the transcript for key points, and drafts a complete follow-up email with everything linked — ready for you to review and send. Skills: Meetings → Enterprise Search → Email.
+
+</div>
+
+### 4. 📊 Weekly Team Update Generator
+
+*Best for: Team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
+
+<div class="prompt-cards">
+
+> It's the end of the week. Review my calendar, sent emails, and Teams messages from this week. Create a structured weekly update that includes:
+> 1. Key meetings I attended and what was discussed (1 line each)
+> 2. Any customer or partner interactions
+> 3. Content I created or shared (decks, docs, links)
+> 4. Open follow-ups I still need to action
+> 5. What's coming next week based on my calendar
+>
+> Format it as a professional but concise Teams-friendly post, then post it to the **[team channel name, e.g. "Project Alpha", "NZ Sales Team"]** channel for my approval.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** Reviews your entire week across Calendar, Email, and Teams, creates a structured summary, and posts it to your team channel — with your approval before it goes live. The weekly update that nobody has time to write, written in 2 minutes. Skills: Calendar → Email → Enterprise Search → Communications.
+
+</div>
+
+### 5. 📚 Knowledge Pack Builder
+
+*Best for: Subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions.*
+
+<div class="prompt-cards">
+
+> A **[recipient role, e.g. "customer CISO", "project sponsor", "new team member"]** has asked me about **[topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]**. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
+>
+> Create a polished 2-page Word document titled **"[Document title, e.g. 'M365 Copilot Governance Quick Guide']"** that covers the key areas a **[recipient role]** needs to know. Then draft an email to **[recipient name]** attaching this document with a brief "here's what you asked for" message. Show me everything for review.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** Combines your internal knowledge (SharePoint files, past emails) with fresh external research (Microsoft Learn), creates a polished document, and drafts a delivery email — turning a 2-hour research task into a 5-minute approval. Skills: Enterprise Search → Deep Research → Word → Email.
+
+</div>
+
+### 6. 🏢 Customer Deliverable From Email Brief
+
+*Best for: Anyone who receives a brief or request via email and needs to deliver something back — slides, reports, proposals.*
+
+<div class="prompt-cards">
+
+> I need to prepare a **[deliverable type, e.g. "slide deck", "report", "proposal"]** for an upcoming session with **[customer/team name]**.
+>
+> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at **[company name]** about **[topic, e.g. "executive training session", "quarterly review", "project kickoff"]**. Extract every topic and agenda item they listed.
+>
+> **Step 2 — Gather my materials:** Search my OneDrive and SharePoint for any existing decks, documents, or materials I've used on this topic recently.
+>
+> **Step 3 — Research:** Do a deep research on the latest information about **[topic]** from Microsoft Learn and the web.
+>
+> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy **[audience role]** care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
+>
+> **Step 5 — Draft the reply:** Draft an email to **[contact name]** attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
+
+</div>
+
+<div class="cowork-scenario">
+
+> **What Cowork does:** This is the ultimate showcase. Cowork reads a customer's email, extracts their requirements, searches your existing materials, researches the latest information, builds a complete slide deck structured around their brief, and drafts a delivery email — all from one prompt. What normally takes 2-3 hours, done in minutes. Skills: Email → Enterprise Search → Deep Research → PowerPoint → Email.
+
+</div>
+
+---
+
+**🎤 If you're demoing Cowork to others**, start with Prompt 1 (Morning Triage) — it's universal and gets instant reactions. Then show Prompt 6 (Customer Deliverable) to demonstrate the full multi-step power. The gap between "regular Copilot" and "Cowork" clicks immediately when people see it execute across 5 apps from a single instruction.
 
 ---
 
