@@ -3050,6 +3050,37 @@ a.welcome-stat-link:hover {
 .instruction-cards blockquote p { color: #B2F5EA; margin-bottom: 0; }
 .instruction-cards blockquote strong { color: #5EEAD4; }
 
+/* Cowork scenario cards — blue accent for AI response steps */
+.cowork-scenario blockquote {
+  border-left: 4px solid #60A5FA;
+  background: linear-gradient(135deg, rgba(10, 20, 50, 0.5) 0%, rgba(20, 35, 70, 0.35) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 0.8rem 1.2rem;
+  margin: 0.6rem 0;
+  color: #BFDBFE;
+  font-size: 0.93rem;
+}
+.cowork-scenario blockquote p { color: #BFDBFE; margin-bottom: 0; }
+.cowork-scenario blockquote strong { color: #93C5FD; }
+.cowork-scenario blockquote em { color: #60A5FA; font-style: normal; }
+
+/* Cowork persona header — colored pill badge */
+.cowork-persona {
+  display: inline-block;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+.cowork-persona.it { background: rgba(96,165,250,0.15); color: #60A5FA; border: 1px solid rgba(96,165,250,0.3); }
+.cowork-persona.sales { background: rgba(251,146,60,0.15); color: #FB923C; border: 1px solid rgba(251,146,60,0.3); }
+.cowork-persona.hr { background: rgba(244,114,182,0.15); color: #F472B6; border: 1px solid rgba(244,114,182,0.3); }
+.cowork-persona.finance { background: rgba(52,211,153,0.15); color: #34D399; border: 1px solid rgba(52,211,153,0.3); }
+.cowork-persona.marketing { background: rgba(251,191,36,0.15); color: #FBBF24; border: 1px solid rgba(251,191,36,0.3); }
+.cowork-persona.exec { background: rgba(192,132,252,0.15); color: #C084FC; border: 1px solid rgba(192,132,252,0.3); }
+
 /* ── FAQ SECTION STYLING ──────────────────── */
 /* blog-faq wraps all Q&A pairs — style each pair distinctly */
 .blog-faq {
