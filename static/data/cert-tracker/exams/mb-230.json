@@ -9,6 +9,7 @@
     "dynamics-365"
   ],
   "category": "Dynamics 365",
+  "status": "active",
   "updated_at": "2026-02-09 23:06:00+00:00",
   "skills_date": "March 11, 2026",
   "skills_at_a_glance": [
@@ -105,6 +106,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "MB-210",
+      "title": "Microsoft Dynamics 365 Sales Functional Consultant",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Dynamics 365"
+    },
+    {
+      "code": "PL-200",
+      "title": "Microsoft Power Platform Functional Consultant",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Power Platform"
+    },
+    {
+      "code": "MB-240",
+      "title": "Microsoft Dynamics 365 Field Service Functional Consultant",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Dynamics 365"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-230/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-230",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-230/practice/assessment?assessment-type=practice"

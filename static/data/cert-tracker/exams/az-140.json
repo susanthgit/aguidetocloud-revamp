@@ -10,6 +10,7 @@
     "azure-virtual-desktop"
   ],
   "category": "Azure",
+  "status": "active",
   "updated_at": "2026-03-19 18:11:00+00:00",
   "skills_date": "April 17, 2026",
   "skills_at_a_glance": [
@@ -144,6 +145,22 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "AZ-104",
+      "title": "Microsoft Azure Administrator",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Azure"
+    },
+    {
+      "code": "MD-102",
+      "title": "Microsoft 365 Endpoint Administrator",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Microsoft 365"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-140",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/practice/assessment?assessment-type=practice"

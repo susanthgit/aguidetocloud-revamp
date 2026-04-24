@@ -9,6 +9,7 @@
     "dynamics-365"
   ],
   "category": "Dynamics 365",
+  "status": "active",
   "updated_at": "2025-12-05 03:46:00+00:00",
   "skills_date": "December 17, 2025",
   "skills_at_a_glance": [
@@ -204,6 +205,22 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "PL-200",
+      "title": "Microsoft Power Platform Functional Consultant",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Power Platform"
+    },
+    {
+      "code": "MB-310",
+      "title": "Microsoft Dynamics 365 Finance Functional Consultant",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Dynamics 365"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-800",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/practice/assessment?assessment-type=practice"

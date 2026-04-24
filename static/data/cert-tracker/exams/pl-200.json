@@ -9,6 +9,7 @@
     "power-platform"
   ],
   "category": "Power Platform",
+  "status": "active",
   "updated_at": "2026-03-31 22:46:00+00:00",
   "skills_date": "December 26, 2024",
   "skills_at_a_glance": [
@@ -121,6 +122,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "PL-900",
+      "title": "Microsoft Power Platform Fundamentals",
+      "level": "beginner",
+      "status": "active",
+      "category": "Power Platform"
+    },
+    {
+      "code": "PL-400",
+      "title": "Microsoft Power Platform Developer",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Power Platform"
+    },
+    {
+      "code": "PL-600",
+      "title": "Microsoft Power Platform Solution Architect",
+      "level": "advanced",
+      "status": "retiring",
+      "category": "Power Platform"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-200/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-200",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-200/practice/assessment?assessment-type=practice"

@@ -9,6 +9,7 @@
     "azure"
   ],
   "category": "AI",
+  "status": "retiring",
   "updated_at": "2026-03-16 02:02:00+00:00",
   "skills_date": "December 23, 2025",
   "skills_at_a_glance": [
@@ -193,6 +194,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "AI-900",
+      "title": "Microsoft Azure AI Fundamentals",
+      "level": "beginner",
+      "status": "retiring",
+      "category": "AI"
+    },
+    {
+      "code": "DP-100",
+      "title": "Designing and Implementing a Data Science Solution on Azure",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Data"
+    },
+    {
+      "code": "AZ-204",
+      "title": "Developing Solutions for Microsoft Azure",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Azure"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-102",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/practice/assessment?assessment-type=practice"

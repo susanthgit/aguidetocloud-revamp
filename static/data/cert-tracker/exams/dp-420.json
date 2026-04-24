@@ -10,6 +10,7 @@
     "azure-cosmos-db"
   ],
   "category": "Data",
+  "status": "active",
   "updated_at": "2026-03-20 17:49:00+00:00",
   "skills_date": "April 20, 2026",
   "skills_at_a_glance": [
@@ -218,6 +219,29 @@
   },
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "DP-300",
+      "title": "Administering Microsoft Azure SQL Solutions",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Data"
+    },
+    {
+      "code": "AZ-204",
+      "title": "Developing Solutions for Microsoft Azure",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Azure"
+    },
+    {
+      "code": "DP-900",
+      "title": "Microsoft Azure Data Fundamentals",
+      "level": "beginner",
+      "status": "active",
+      "category": "Data"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/",
   "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-420",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/practice/assessment?assessment-type=practice"

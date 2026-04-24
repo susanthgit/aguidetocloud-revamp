@@ -10,12 +10,36 @@
     "m365"
   ],
   "category": "Security",
+  "status": "beta",
   "updated_at": "",
   "skills_date": null,
   "skills_at_a_glance": [],
   "skills_detailed": {},
   "change_log_official": [],
   "change_history": [],
+  "related_exams": [
+    {
+      "code": "SC-200",
+      "title": "Microsoft Security Operations Analyst",
+      "level": "intermediate",
+      "status": "active",
+      "category": "Security"
+    },
+    {
+      "code": "AZ-500",
+      "title": "Microsoft Azure Security Technologies",
+      "level": "intermediate",
+      "status": "retiring",
+      "category": "Azure"
+    },
+    {
+      "code": "SC-100",
+      "title": "Microsoft Cybersecurity Architect",
+      "level": "advanced",
+      "status": "active",
+      "category": "Security"
+    }
+  ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/",
   "study_guide_url": "",
   "practice_assessment_url": ""
