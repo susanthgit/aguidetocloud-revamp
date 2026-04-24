@@ -5,52 +5,79 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 17:05:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 21:54:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Purview] Some users in East US may experience latency in Microsoft Purview Data Loss Prevention</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1290422</link>
+      <description>[Microsoft Purview] Users may have experienced latency in Microsoft Purview Data Loss Prevention.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MP1290422</guid>
+      <pubDate>Fri, 24 Apr 2026 15:04:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Admins may encounter delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submissions page</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1289015</link>
+      <description>[Microsoft Defender XDR] Admins may encounter delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submissions page.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1289015</guid>
+      <pubDate>Thu, 23 Apr 2026 08:33:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to create or edit agents in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1286586</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to create or edit agents in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1286586</guid>
+      <pubDate>Tue, 21 Apr 2026 02:25:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may experience issues accessing or using Microsoft Copilot (Microsoft 365)</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1283380</link>
       <description>[Microsoft Copilot (Microsoft 365)] Affected users may have been unable to use Copilot services and features.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1283380</guid>
       <pubDate>Fri, 17 Apr 2026 15:07:37 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Microsoft Copilot usage reports in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1282908</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Copilot usage reports in the Microsoft 365 admin center.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen a delay in certain Copilot usage reports in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1282908</guid>
       <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may see a delay in certain reports in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1282907</link>
-      <description>[Microsoft 365 suite] Users may see a delay in certain reports in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Users may have seen a delay in certain reports in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1282907</guid>
       <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users may have experienced delays and saw failures with multiple functions in Microsoft Defender</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1283890</link>
+      <description>[Microsoft Defender XDR] Users may have experienced delays and saw failures with multiple functions in Microsoft Defender. </description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1283890</guid>
+      <pubDate>Thu, 16 Apr 2026 17:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
       <description>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1281730</guid>
       <pubDate>Wed, 15 Apr 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1281119</guid>
-      <pubDate>Wed, 15 Apr 2026 16:44:18 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
@@ -80,6 +107,24 @@
       <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Admins' search parameters may be missing after performing a group search in the Exchange admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1279815</link>
+      <description>[Exchange Online] Admins' search parameters may be missing after performing a group search in the Exchange admin center.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1279815</guid>
+      <pubDate>Tue, 14 Apr 2026 16:22:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Universal Print] Some users may be intermittently unable to create some printer shares in Universal Print</title>
+      <link>https://www.aguidetocloud.com/service-health/#UP1287359</link>
+      <description>[Universal Print] Users may be intermittently unable to create some printer shares in Universal Print.</description>
+      <category>Universal Print</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">UP1287359</guid>
+      <pubDate>Tue, 14 Apr 2026 04:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1281212</link>
       <description>[Microsoft Intune] Users may have been unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
@@ -89,13 +134,22 @@
       <pubDate>Tue, 14 Apr 2026 00:24:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online</title>
+      <title>[Exchange Online] Admins may have experienced failures when running admin operations the admin portal in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1280216</link>
-      <description>[Exchange Online] Admins may experience failures when running admin operations the admin portal in Exchange Online.</description>
+      <description>[Exchange Online] Admins may have experienced failures when running admin operations the admin portal in Exchange Online.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1280216</guid>
       <pubDate>Mon, 13 Apr 2026 22:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may have been unable to run queries in Microsoft 365 Copilot and received an error message.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1281119</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
@@ -127,18 +181,18 @@
     <item>
       <title>[Microsoft 365 suite] Admins may see delays occur with several reports in the Microsoft 365 Admin Center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1280165</link>
-      <description>[Microsoft 365 suite] Admins may see delays occur with several reports in the Microsoft 365 Admin Center.</description>
+      <description>[Microsoft 365 suite] Admins may have seen delays occur with several reports in the Microsoft 365 Admin Center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1280165</guid>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1275040</link>
-      <description>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web.</description>
+      <description>[Exchange Online] Users may have been unable to download or open email attachments in Outlook on the web.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1275040</guid>
       <pubDate>Thu, 09 Apr 2026 04:00:00 +0000</pubDate>
     </item>
@@ -402,60 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1256162</guid>
       <pubDate>Thu, 19 Mar 2026 09:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users' requests to use edit mode to interact with Microsoft Word documents in Copilot may fail</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1256025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users' requests to use edit mode to interact with Microsoft Word documents in Copilot may have failed.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1256025</guid>
-      <pubDate>Thu, 19 Mar 2026 06:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to mention Microsoft 365 Copilot bots in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1255395</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to mention Microsoft 365 Copilot bots in Microsoft Teams.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1255395</guid>
-      <pubDate>Wed, 18 Mar 2026 19:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users in the United States may be intermittently unable to access some Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1255228</link>
-      <description>[Microsoft 365 suite] Users in the United States may have been intermittently unable to access some Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1255228</guid>
-      <pubDate>Wed, 18 Mar 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Admins may see delayed or missing new Attack Simulation Training (AST) campaign training notifications in Defender</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1261545</link>
-      <description>[Microsoft Defender XDR] Admins may have seen delayed or missing new AST campaign training notifications in Microsoft Defender for Office 365.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1261545</guid>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be intermittently unable to access their Exchange Online mailboxes in some connection methods.</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1268771</link>
-      <description>[Exchange Online] Users may have been intermittently unable to access their Exchange Online mailboxes in some connection methods.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1268771</guid>
-      <pubDate>Tue, 17 Mar 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may have been unable to access Office.com or the Microsoft 365 Copilot web sign‑in page</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1254319</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access Office.com or the Microsoft 365 Copilot web sign‑in page.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1254319</guid>
-      <pubDate>Tue, 17 Mar 2026 11:42:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
