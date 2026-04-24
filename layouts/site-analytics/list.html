@@ -363,108 +363,84 @@
   <!-- ═══════════ Tab: Guided ═══════════ -->
   <div class="siteana-panel" id="panel-guided" role="tabpanel">
 
-    <!-- Platform Overview -->
+    <!-- Platform Pulse: Hero KPIs -->
     <div class="siteana-card siteana-guided-hero">
       <div class="siteana-guided-header">
-        <h3 class="siteana-card-title" style="margin:0">Guided — Interactive Cert Prep</h3>
+        <h3 class="siteana-card-title" style="margin:0">Guided — Platform Analytics</h3>
         <a href="/guided/" class="siteana-guided-badge">Open Platform →</a>
       </div>
-      <p class="siteana-hint" style="margin-top:0.5rem">Interactive Microsoft certification preparation with hands-on modules, quizzes, and progress tracking.</p>
+      <p class="siteana-hint" style="margin-top:0.5rem">Interactive certification prep — real-time engagement and learning intelligence.</p>
     </div>
 
-    <!-- Cert Path Stats -->
-    <div class="siteana-content-stats" style="margin-bottom:1.5rem">
+    <div class="siteana-content-stats" id="sa-guided-pulse" style="margin-bottom:1.5rem">
       <div class="siteana-content-item">
-        <span class="siteana-content-num" style="color:#00A4EF">3</span>
-        <span>Cert Paths</span>
+        <span class="siteana-content-num" id="gd-learners" style="color:#00A4EF">—</span>
+        <span>Learners (30d)</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" style="color:#10B981">55</span>
-        <span>Study Modules</span>
+        <span class="siteana-content-num" id="gd-starts" style="color:#10B981">—</span>
+        <span>Quiz Starts</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" style="color:#A78BFA">3</span>
-        <span>Practice Exams</span>
+        <span class="siteana-content-num" id="gd-completes" style="color:#A78BFA">—</span>
+        <span>Completed</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" style="color:#FBBF24">Free</span>
-        <span>Always</span>
+        <span class="siteana-content-num" id="gd-rate" style="color:#F59E0B">—</span>
+        <span>Completion Rate</span>
       </div>
-    </div>
-
-    <!-- Certification Paths Detail -->
-    <div class="siteana-card">
-      <h3 class="siteana-card-title">Certification Paths</h3>
-      <div class="siteana-guided-paths">
-        <div class="siteana-guided-path">
-          <div class="siteana-guided-path-header">
-            <span class="siteana-guided-path-icon" style="background:rgba(0,164,239,0.15);color:#00A4EF">AB</span>
-            <div class="siteana-guided-path-info">
-              <strong>AB-900: Microsoft 365 Copilot Foundations</strong>
-              <span class="siteana-hint" style="margin:0">3 domains · 28 modules</span>
-            </div>
-            <span class="siteana-guided-path-status siteana-gp-live">Live</span>
-          </div>
-          <div class="siteana-guided-path-domains">
-            <span>📋 Domain 1: M365 Platform <em>(10 modules)</em></span>
-            <span>🔒 Domain 2: Security & Compliance <em>(10 modules)</em></span>
-            <span>🤖 Domain 3: Copilot & Agents <em>(8 modules)</em></span>
-          </div>
-        </div>
-        <div class="siteana-guided-path">
-          <div class="siteana-guided-path-header">
-            <span class="siteana-guided-path-icon" style="background:rgba(167,139,250,0.15);color:#A78BFA">AI</span>
-            <div class="siteana-guided-path-info">
-              <strong>AI-901: Azure AI Fundamentals</strong>
-              <span class="siteana-hint" style="margin:0">2 domains · 26 modules</span>
-            </div>
-            <span class="siteana-guided-path-status siteana-gp-live">Live</span>
-          </div>
-          <div class="siteana-guided-path-domains">
-            <span>🧠 Domain 1: AI Concepts <em>(11 modules)</em></span>
-            <span>🔧 Domain 2: Azure AI Services <em>(15 modules)</em></span>
-          </div>
-        </div>
-        <div class="siteana-guided-path">
-          <div class="siteana-guided-path-header">
-            <span class="siteana-guided-path-icon" style="background:rgba(56,189,248,0.15);color:#38BDF8">AZ</span>
-            <div class="siteana-guided-path-info">
-              <strong>AZ-900: Azure Fundamentals</strong>
-              <span class="siteana-hint" style="margin:0">Coming soon · 1 module</span>
-            </div>
-            <span class="siteana-guided-path-status siteana-gp-soon">Soon</span>
-          </div>
-        </div>
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" id="gd-views" style="color:#EC4899">—</span>
+        <span>Page Views</span>
+      </div>
+      <div class="siteana-content-item">
+        <span class="siteana-content-num" id="gd-live" style="color:#22C55E">—</span>
+        <span>Live Now</span>
       </div>
     </div>
 
-    <!-- Guided Traffic (from GA4 data) -->
+    <!-- Trend + Mode split -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Guided Pages Traffic</h3>
-        <p class="siteana-hint">Page views for /guided/ paths (30 days)</p>
-        <div id="sa-guided-pages"><p class="siteana-hint">Loading...</p></div>
+        <h3 class="siteana-card-title">📈 Daily Engagement</h3>
+        <p class="siteana-hint">Page views and users on /guided/ (30 days)</p>
+        <div style="position:relative;height:220px">
+          <canvas id="gd-trend-chart"></canvas>
+        </div>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">Study Experience</h3>
-        <p class="siteana-hint">What makes Guided different</p>
-        <div class="siteana-guided-features">
-          <div class="siteana-guided-feat">
-            <span>📖</span>
-            <div><strong>ELI5 Toggle</strong><span>Switch between expert and simple explanations</span></div>
-          </div>
-          <div class="siteana-guided-feat">
-            <span>📝</span>
-            <div><strong>Progressive Disclosure</strong><span>Learn at your pace — expand details when ready</span></div>
-          </div>
-          <div class="siteana-guided-feat">
-            <span>🎯</span>
-            <div><strong>Practice Quizzes</strong><span>Test yourself after each domain</span></div>
-          </div>
-          <div class="siteana-guided-feat">
-            <span>📱</span>
-            <div><strong>Mobile-First</strong><span>Study on your commute — every page optimised</span></div>
-          </div>
+        <h3 class="siteana-card-title">🎯 Quiz Mode Distribution</h3>
+        <p class="siteana-hint">How learners prefer to study</p>
+        <div style="position:relative;height:220px;display:flex;align-items:center;justify-content:center">
+          <canvas id="gd-mode-chart"></canvas>
+        </div>
+        <div id="gd-mode-legend" class="siteana-hint" style="text-align:center;margin-top:0.5rem"></div>
+      </div>
+    </div>
+
+    <!-- Cert Performance Table -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">🎓 Certification Performance</h3>
+      <p class="siteana-hint">Practice page engagement per certification (30 days)</p>
+      <div id="gd-cert-table">
+        <p class="siteana-hint" style="padding:1rem 0">Loading certification data...</p>
+      </div>
+    </div>
+
+    <!-- Event Breakdown + Top Pages -->
+    <div class="siteana-grid-2">
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">⚡ Event Breakdown</h3>
+        <p class="siteana-hint">All tracked user actions (30 days)</p>
+        <div id="gd-events">
+          <p class="siteana-hint" style="padding:1rem 0">Loading events...</p>
+        </div>
+      </div>
+      <div class="siteana-card">
+        <h3 class="siteana-card-title">📄 Top Guided Pages</h3>
+        <p class="siteana-hint">Most viewed pages in the platform</p>
+        <div id="gd-top-pages">
+          <p class="siteana-hint" style="padding:1rem 0">Loading pages...</p>
         </div>
       </div>
     </div>

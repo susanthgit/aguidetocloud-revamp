@@ -595,6 +595,173 @@ function isStatsRateLimited(ip) {
   return entry.count > STATS_MAX;
 }
 
+// ── Endpoint: Guided Platform Analytics ──────────────────────────
+
+async function handleGuided(env) {
+  const now = Date.now();
+  if (cacheStore['guided'] && now - cacheStore['guided'].time < CACHE_TTL)
+    return jsonRes(cacheStore['guided'].data);
+
+  const token = await getToken(env);
+  if (!token) return jsonRes({ error: 'Auth failed' }, 500);
+
+  const sd = '30daysAgo', ed = 'today';
+
+  const [
+    guidedPagesRes,
+    guidedEventsRes,
+    guidedTrendRes,
+    guidedCertEventsRes,
+    guidedModeEventsRes,
+    guidedRealtimeRes,
+    guidedCertQuizRes
+  ] = await Promise.all([
+    // 1. Page views on /guided/ paths
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'pagePath' }],
+      metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
+      dimensionFilter: { filter: { fieldName: 'pagePath', stringFilter: { matchType: 'BEGINS_WITH', value: '/guided/' } } },
+      orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
+      limit: 50
+    }),
+    // 2. Custom event counts (all guided_* events)
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'eventName' }],
+      metrics: [{ name: 'eventCount' }, { name: 'totalUsers' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'BEGINS_WITH', value: 'guided_' } } },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }]
+    }),
+    // 3. Daily trend of guided page views
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'date' }],
+      metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }],
+      dimensionFilter: { filter: { fieldName: 'pagePath', stringFilter: { matchType: 'BEGINS_WITH', value: '/guided/' } } },
+      orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }]
+    }),
+    // 4. Per-cert practice page views
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'pagePath' }],
+      metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
+      dimensionFilter: { filter: { fieldName: 'pagePath', stringFilter: { matchType: 'CONTAINS', value: '/practice/' } } },
+      orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
+      limit: 30
+    }),
+    // 5. Event + customEvent:mode breakdown (quiz modes)
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'eventName' }, { name: 'customEvent:mode' }],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT_VALUE', value: 'guided_quiz_start' } } },
+      limit: 20
+    }).catch(() => ({ rows: [] })),
+    // 6. Realtime guided users
+    ga4RunRealtimeReport(token, {
+      dimensions: [{ name: 'unifiedScreenName' }],
+      metrics: [{ name: 'activeUsers' }],
+      dimensionFilter: { filter: { fieldName: 'unifiedScreenName', stringFilter: { matchType: 'CONTAINS', value: 'Guided' } } }
+    }).catch(() => ({ rows: [] })),
+    // 7. Per-cert quiz completions (using registered custom dimension)
+    ga4RunReport(token, {
+      dateRanges: [{ startDate: sd, endDate: ed }],
+      dimensions: [{ name: 'customEvent:cert_code' }],
+      metrics: [{ name: 'eventCount' }, { name: 'totalUsers' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT_VALUE', value: 'guided_quiz_complete' } } },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+      limit: 20
+    }).catch(() => ({ rows: [] }))
+  ]);
+
+  // Parse guided page views
+  const guidedPages = parseRows(guidedPagesRes).map(r => ({
+    path: r.dimensions[0], views: r.metrics[0], users: r.metrics[1]
+  }));
+
+  // Parse total guided page views + users
+  const totalViews = guidedPages.reduce((s, p) => s + p.views, 0);
+  const totalUsers = guidedPages.reduce((s, p) => s + p.users, 0);
+
+  // Parse event counts
+  const events = {};
+  for (const r of parseRows(guidedEventsRes)) {
+    events[r.dimensions[0]] = { count: r.metrics[0], users: r.metrics[1] };
+  }
+
+  // Parse daily trend
+  const trend = parseRows(guidedTrendRes).map(r => {
+    const raw = r.dimensions[0];
+    return { date: `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`, views: r.metrics[0], users: r.metrics[1], sessions: r.metrics[2] || 0 };
+  });
+
+  // Parse per-cert practice pages
+  const certStats = {};
+  for (const r of parseRows(guidedCertEventsRes)) {
+    const path = r.dimensions[0];
+    // Extract cert code from /guided/{cert}/practice/
+    const match = path.match(/^\/guided\/([^\/]+)\/practice/);
+    if (!match) continue;
+    const cert = match[1];
+    if (!certStats[cert]) certStats[cert] = { views: 0, users: 0 };
+    certStats[cert].views += r.metrics[0];
+    certStats[cert].users += r.metrics[1];
+  }
+
+  const certs = Object.entries(certStats)
+    .map(([code, d]) => ({ code, views: d.views, users: d.users }))
+    .sort((a, b) => b.views - a.views);
+
+  // Merge per-cert quiz completion data (from custom dimension)
+  const certQuizStats = {};
+  for (const r of parseRows(guidedCertQuizRes)) {
+    const cert = r.dimensions[0] || '';
+    if (cert) certQuizStats[cert] = { completions: r.metrics[0], quiz_users: r.metrics[1] };
+  }
+  // Enrich cert data with quiz stats
+  certs.forEach(c => {
+    const qs = certQuizStats[c.code];
+    if (qs) { c.completions = qs.completions; c.quiz_users = qs.quiz_users; }
+  });
+
+  // Parse mode distribution
+  const modes = {};
+  for (const r of parseRows(guidedModeEventsRes)) {
+    const mode = r.dimensions[1] || 'unknown';
+    modes[mode] = (modes[mode] || 0) + r.metrics[0];
+  }
+
+  // Parse realtime
+  const realtimeRows = (guidedRealtimeRes.rows || []);
+  const realtimeActive = realtimeRows.reduce((s, r) => s + (parseInt(r.metricValues?.[0]?.value) || 0), 0);
+
+  // Compute derived KPIs
+  const quizStarts = events['guided_quiz_start']?.count || 0;
+  const quizCompletes = events['guided_quiz_complete']?.count || 0;
+  const completionRate = quizStarts > 0 ? Math.round((quizCompletes / quizStarts) * 100) : 0;
+
+  const response = {
+    pulse: {
+      active_learners: totalUsers,
+      quizzes_taken: quizCompletes,
+      quiz_starts: quizStarts,
+      completion_rate: completionRate,
+      total_views: totalViews,
+      realtime_active: realtimeActive,
+    },
+    events,
+    trend,
+    certs,
+    modes,
+    pages: guidedPages.slice(0, 20),
+    updated: new Date().toISOString()
+  };
+
+  cacheStore['guided'] = { data: response, time: now };
+  return jsonRes(response);
+}
+
 // ── Main Handler ─────────────────────────────────────────────────
 
 export async function onRequestGet(context) {
@@ -612,6 +779,7 @@ export async function onRequestGet(context) {
     if (url.searchParams.get('latestvideo') === '1') return await handleLatestVideo(env);
     if (url.searchParams.get('biolinks') === '1') return await handleBioLinks(env);
     if (url.searchParams.get('youtube') === '1') return await handleYouTube(env);
+    if (url.searchParams.get('guided') === '1') return await handleGuided(env);
     return await handleMainStats(env, url);
   } catch (e) {
     console.error('Stats error:', e.message, e.stack);

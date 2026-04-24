@@ -95,6 +95,7 @@
       if (panel) panel.classList.add('active');
       if (tab.dataset.tab === 'growth') fetchGrowthData();
       if (tab.dataset.tab === 'command') renderCommandCentre();
+      if (tab.dataset.tab === 'guided') fetchGuidedData();
     });
   });
 
@@ -1814,6 +1815,232 @@
     var cmdPanel = document.getElementById('panel-command');
     if (cmdPanel && cmdPanel.classList.contains('active') && currentData) renderCommandCentre();
   }, 2000);
+
+  // ═══════════ GUIDED PLATFORM ANALYTICS ═══════════
+
+  var guidedDataCache = null;
+  var guidedTrendChart = null;
+  var guidedModeChart = null;
+
+  function fetchGuidedData() {
+    if (guidedDataCache) { renderGuided(guidedDataCache); return; }
+    fetch(API + '?guided=1').then(function(r) { return r.json(); }).then(function(data) {
+      guidedDataCache = data;
+      renderGuided(data);
+    }).catch(function() {
+      var el = document.getElementById('gd-cert-table');
+      if (el) el.innerHTML = '<p class="siteana-hint">Unable to load Guided analytics.</p>';
+    });
+  }
+
+  function renderGuided(data) {
+    if (!data || !data.pulse) return;
+    var p = data.pulse;
+
+    // Pulse KPIs
+    setText('gd-learners', numFmt(p.active_learners));
+    setText('gd-starts', numFmt(p.quiz_starts));
+    setText('gd-completes', numFmt(p.quizzes_taken));
+    setText('gd-rate', p.completion_rate + '%');
+    setText('gd-views', numFmt(p.total_views));
+    setText('gd-live', p.realtime_active || '0');
+
+    // Trend chart
+    renderGuidedTrend(data.trend || []);
+
+    // Mode doughnut
+    renderGuidedModes(data.modes || {});
+
+    // Cert table
+    renderGuidedCerts(data.certs || []);
+
+    // Events breakdown
+    renderGuidedEvents(data.events || {});
+
+    // Top pages
+    renderGuidedPages(data.pages || []);
+  }
+
+  function setText(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function renderGuidedTrend(trend) {
+    var canvas = document.getElementById('gd-trend-chart');
+    if (!canvas || !trend.length) return;
+    if (guidedTrendChart) guidedTrendChart.destroy();
+
+    var labels = trend.map(function(d) {
+      var parts = d.date.split('-');
+      return parts[1] + '/' + parts[2];
+    });
+
+    guidedTrendChart = new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Views',
+            data: trend.map(function(d) { return d.views; }),
+            borderColor: '#00A4EF',
+            backgroundColor: 'rgba(0,164,239,0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 0,
+            borderWidth: 2
+          },
+          {
+            label: 'Users',
+            data: trend.map(function(d) { return d.users; }),
+            borderColor: '#A78BFA',
+            backgroundColor: 'transparent',
+            tension: 0.3,
+            pointRadius: 0,
+            borderWidth: 2,
+            borderDash: [4, 4]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, labels: { color: 'rgba(255,255,255,0.6)', boxWidth: 12, padding: 12, font: { size: 11 } } }
+        },
+        scales: {
+          x: { ticks: { color: 'rgba(255,255,255,0.4)', maxTicksLimit: 8, font: { size: 10 } }, grid: { display: false } },
+          y: { ticks: { color: 'rgba(255,255,255,0.4)', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true }
+        }
+      }
+    });
+  }
+
+  var MODE_COLORS = {
+    study: '#10B981', exam: '#F59E0B', flashcards: '#A78BFA',
+    domain: '#00A4EF', weak: '#EC4899', unknown: '#64748B'
+  };
+  var MODE_LABELS = {
+    study: 'Study Mode', exam: 'Exam Mode', flashcards: 'Flashcards',
+    domain: 'Domain Focus', weak: 'Weak Areas', unknown: 'Other'
+  };
+
+  function renderGuidedModes(modes) {
+    var canvas = document.getElementById('gd-mode-chart');
+    if (!canvas) return;
+    var keys = Object.keys(modes);
+    if (!keys.length) {
+      var legend = document.getElementById('gd-mode-legend');
+      if (legend) legend.innerHTML = 'No quiz data yet — events start collecting when users take quizzes.';
+      return;
+    }
+    if (guidedModeChart) guidedModeChart.destroy();
+
+    guidedModeChart = new Chart(canvas, {
+      type: 'doughnut',
+      data: {
+        labels: keys.map(function(k) { return MODE_LABELS[k] || k; }),
+        datasets: [{
+          data: keys.map(function(k) { return modes[k]; }),
+          backgroundColor: keys.map(function(k) { return MODE_COLORS[k] || '#64748B'; }),
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: { display: true, position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', padding: 10, boxWidth: 10, font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  function renderGuidedCerts(certs) {
+    var el = document.getElementById('gd-cert-table');
+    if (!el) return;
+    if (!certs.length) {
+      el.innerHTML = '<p class="siteana-hint">No certification data yet — practice page views will appear here once users start practicing.</p>';
+      return;
+    }
+    var maxViews = Math.max.apply(null, certs.map(function(c) { return c.views; })) || 1;
+    var html = '<table style="width:100%;border-collapse:collapse;font-size:0.85rem">';
+    html += '<thead><tr style="color:rgba(255,255,255,0.4);font-size:0.75rem;text-align:left">';
+    html += '<th style="padding:0.5rem 0.75rem">Cert</th><th style="padding:0.5rem 0.75rem">Views</th>';
+    html += '<th style="padding:0.5rem 0.75rem">Users</th><th style="padding:0.5rem 0.75rem">Quizzes</th><th style="padding:0.5rem 0.75rem;width:35%"></th></tr></thead><tbody>';
+    certs.forEach(function(c, i) {
+      var pct = Math.round((c.views / maxViews) * 100);
+      var bg = i === 0 ? 'rgba(0,164,239,0.08)' : 'transparent';
+      html += '<tr style="border-top:1px solid rgba(255,255,255,0.05);background:' + bg + '">';
+      html += '<td style="padding:0.6rem 0.75rem;font-weight:600;color:rgba(255,255,255,0.9);text-transform:uppercase">' + esc(c.code) + '</td>';
+      html += '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">' + numFmt(c.views) + '</td>';
+      html += '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">' + numFmt(c.users) + '</td>';
+      html += '<td style="padding:0.6rem 0.75rem;color:' + (c.completions ? '#10B981' : 'rgba(255,255,255,0.3)') + '">' + (c.completions ? numFmt(c.completions) : '—') + '</td>';
+      html += '<td style="padding:0.6rem 0.75rem"><div style="background:rgba(0,164,239,0.15);border-radius:4px;height:8px;overflow:hidden">';
+      html += '<div style="width:' + pct + '%;height:100%;background:#00A4EF;border-radius:4px"></div></div></td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    el.innerHTML = html;
+  }
+
+  function renderGuidedEvents(events) {
+    var el = document.getElementById('gd-events');
+    if (!el) return;
+    var keys = Object.keys(events);
+    if (!keys.length) {
+      el.innerHTML = '<p class="siteana-hint">No events yet — data will appear after GA4 collects custom events (24-48h after first user interactions).</p>';
+      return;
+    }
+    var EVENT_LABELS = {
+      guided_home_view: '🏠 Homepage View',
+      guided_explore_view: '🔍 Explore View',
+      guided_cert_view: '📋 Cert Page View',
+      guided_practice_view: '📝 Practice Page View',
+      guided_quiz_start: '▶️ Quiz Start',
+      guided_quiz_complete: '✅ Quiz Complete',
+      guided_flashcard_start: '🃏 Flashcard Start',
+      guided_bookmark: '🔖 Bookmark',
+      guided_streak_update: '🔥 Streak Update',
+      guided_purchase_complete: '💳 Purchase Complete',
+      guided_activation_success: '🔑 Key Activation'
+    };
+    var sorted = keys.sort(function(a, b) { return (events[b].count || 0) - (events[a].count || 0); });
+    var html = '<div style="display:flex;flex-direction:column;gap:0.5rem">';
+    sorted.forEach(function(key) {
+      var e = events[key];
+      var label = EVENT_LABELS[key] || key.replace(/guided_/g, '').replace(/_/g, ' ');
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">';
+      html += '<span style="color:rgba(255,255,255,0.75);font-size:0.82rem">' + esc(label) + '</span>';
+      html += '<span style="color:rgba(255,255,255,0.5);font-size:0.82rem;font-variant-numeric:tabular-nums">' + numFmt(e.count) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  function renderGuidedPages(pages) {
+    var el = document.getElementById('gd-top-pages');
+    if (!el) return;
+    if (!pages.length) {
+      el.innerHTML = '<p class="siteana-hint">No guided page data yet.</p>';
+      return;
+    }
+    var html = '<div style="display:flex;flex-direction:column;gap:0.4rem">';
+    pages.slice(0, 12).forEach(function(p) {
+      var short = p.path.replace(/^\/guided\//, '/').replace(/\/$/, '') || '/';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">';
+      html += '<span style="color:rgba(255,255,255,0.7);font-size:0.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">' + esc(short) + '</span>';
+      html += '<span style="color:rgba(255,255,255,0.4);font-size:0.82rem;font-variant-numeric:tabular-nums">' + numFmt(p.views) + ' <small>views</small></span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
   // ── INIT ──
   fetchData(currentRange);
