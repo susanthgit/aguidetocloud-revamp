@@ -6,7 +6,8 @@
 #         focus_areas[], fee_usd, study_hours_min, study_hours_max,
 #         difficulty (1-5), validity_years, validity_override,
 #         prerequisites[], description, official_url, match_group,
-#         tracker_slug (Microsoft only — links to /cert-tracker/),
+#         tracker_slug (Microsoft only),
+#         guided_slug (all vendors -- links to /guided/ practice exams),
 #         status, last_verified
 #
 # normalized_level values: foundational, associate, professional, expert, specialty
@@ -35,6 +36,7 @@ description = "Foundational understanding of cloud concepts, Azure services, sec
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/"
 match_group = "cloud-fundamentals"
 tracker_slug = "az-900"
+guided_slug = "az-900"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -57,6 +59,7 @@ description = "Foundational knowledge of AI and machine learning concepts and re
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
 match_group = "ai-fundamentals"
 tracker_slug = "ai-900"
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -79,6 +82,7 @@ description = "Foundational knowledge of core data concepts and Azure data servi
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-fundamentals/"
 match_group = "data-fundamentals"
 tracker_slug = "dp-900"
+guided_slug = "dp-900"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -101,6 +105,7 @@ description = "Foundational knowledge of security, compliance, and identity conc
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/"
 match_group = "security-fundamentals"
 tracker_slug = "sc-900"
+guided_slug = "sc-900"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -122,6 +127,7 @@ description = "Managing Azure identities, governance, storage, compute, and virt
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/"
 match_group = "cloud-admin"
 tracker_slug = "az-104"
+guided_slug = "az-104"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -143,6 +149,7 @@ description = "Designing, building, testing, and maintaining cloud applications 
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/"
 match_group = "developer"
 tracker_slug = "az-204"
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -164,6 +171,7 @@ description = "Implementing security controls, managing identity and access, and
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/"
 match_group = "cloud-security"
 tracker_slug = "az-500"
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -185,6 +193,7 @@ description = "Designing, implementing, and managing Azure networking solutions.
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-network-engineer-associate/"
 match_group = "networking"
 tracker_slug = "az-700"
+guided_slug = "az-700"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -206,6 +215,7 @@ description = "Designing and implementing data storage, processing, and security
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/"
 match_group = "data-engineering"
 tracker_slug = "dp-203"
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -227,6 +237,7 @@ description = "Planning, implementing, and managing Azure SQL and relational dat
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-database-administrator-associate/"
 match_group = "database"
 tracker_slug = "dp-300"
+guided_slug = "dp-300"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -248,6 +259,7 @@ description = "Designing and implementing AI solutions using Azure AI services, 
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/"
 match_group = "ai-engineering"
 tracker_slug = "ai-102"
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -269,6 +281,7 @@ description = "Designing infrastructure, data, security, and business continuity
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/"
 match_group = "architect"
 tracker_slug = "az-305"
+guided_slug = "az-305"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -290,6 +303,7 @@ description = "Designing and implementing DevOps practices for version control, 
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/devops-engineer/"
 match_group = "devops"
 tracker_slug = "az-400"
+guided_slug = "az-400"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -311,6 +325,7 @@ description = "Investigating, responding to, and hunting for threats using Micro
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/"
 match_group = "security-operations"
 tracker_slug = "sc-200"
+guided_slug = "sc-200"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -332,6 +347,7 @@ description = "Designing and implementing identity management using Microsoft En
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/identity-and-access-administrator/"
 match_group = ""
 tracker_slug = "sc-300"
+guided_slug = "sc-300"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -357,6 +373,7 @@ description = "Foundational understanding of AWS Cloud concepts, services, secur
 official_url = "https://aws.amazon.com/certification/certified-cloud-practitioner/"
 match_group = "cloud-fundamentals"
 tracker_slug = ""
+guided_slug = "aws-clf-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -378,6 +395,7 @@ description = "Foundational knowledge of AI/ML concepts, generative AI, and resp
 official_url = "https://aws.amazon.com/certification/certified-ai-practitioner/"
 match_group = "ai-fundamentals"
 tracker_slug = ""
+guided_slug = "aws-aif-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -399,6 +417,7 @@ description = "Designing secure, resilient, high-performing, and cost-optimised 
 official_url = "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
 match_group = "architect"
 tracker_slug = ""
+guided_slug = "aws-saa-c03"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -420,6 +439,7 @@ description = "Developing, deploying, and debugging cloud-based applications on 
 official_url = "https://aws.amazon.com/certification/certified-developer-associate/"
 match_group = "developer"
 tracker_slug = ""
+guided_slug = "aws-dva-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -441,6 +461,7 @@ description = "Deploying, managing, and operating workloads on AWS including mon
 official_url = "https://aws.amazon.com/certification/certified-sysops-admin-associate/"
 match_group = "cloud-admin"
 tracker_slug = ""
+guided_slug = "aws-soa-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -462,6 +483,7 @@ description = "Implementing data pipelines, designing data stores, and managing 
 official_url = "https://aws.amazon.com/certification/certified-data-engineer-associate/"
 match_group = "data-engineering"
 tracker_slug = ""
+guided_slug = "aws-dea-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -483,6 +505,7 @@ description = "Building, training, tuning, and deploying ML models using AWS ser
 official_url = "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/"
 match_group = "ai-engineering"
 tracker_slug = ""
+guided_slug = "aws-mla-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -504,6 +527,7 @@ description = "Advanced architectural design, cost optimisation, migration, and 
 official_url = "https://aws.amazon.com/certification/certified-solutions-architect-professional/"
 match_group = "architect-advanced"
 tracker_slug = ""
+guided_slug = "aws-sap-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -525,6 +549,7 @@ description = "CI/CD pipelines, monitoring, logging, automation, and incident re
 official_url = "https://aws.amazon.com/certification/certified-devops-engineer-professional/"
 match_group = "devops"
 tracker_slug = ""
+guided_slug = "aws-dop-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -546,6 +571,7 @@ description = "Specialised knowledge in securing AWS workloads, data protection,
 official_url = "https://aws.amazon.com/certification/certified-security-specialty/"
 match_group = "cloud-security"
 tracker_slug = ""
+guided_slug = "aws-scs-c02"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -567,6 +593,7 @@ description = "Complex networking architectures, hybrid connectivity, and networ
 official_url = "https://aws.amazon.com/certification/certified-advanced-networking-specialty/"
 match_group = "networking"
 tracker_slug = ""
+guided_slug = "aws-ans-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -588,6 +615,7 @@ description = "Designing, deploying, and managing database solutions on AWS incl
 official_url = "https://aws.amazon.com/certification/certified-database-specialty/"
 match_group = "database"
 tracker_slug = ""
+guided_slug = "aws-dbs-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -609,6 +637,7 @@ description = "Advanced ML model design, training, tuning, and deployment with p
 official_url = "https://aws.amazon.com/certification/certified-machine-learning-specialty/"
 match_group = "ai-engineering-advanced"
 tracker_slug = ""
+guided_slug = "aws-mls-c01"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -634,6 +663,7 @@ description = "Foundational knowledge of cloud concepts, Google Cloud products, 
 official_url = "https://cloud.google.com/learn/certification/cloud-digital-leader"
 match_group = "cloud-fundamentals"
 tracker_slug = ""
+guided_slug = "gcp-cloud-digital-leader"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -655,6 +685,7 @@ description = "Understanding of generative AI concepts, responsible AI, and Goog
 official_url = "https://cloud.google.com/learn/certification/generative-ai-leader"
 match_group = "ai-fundamentals"
 tracker_slug = ""
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"
 
@@ -676,6 +707,7 @@ description = "Deploying and managing applications, configuring access, and moni
 official_url = "https://cloud.google.com/learn/certification/cloud-engineer"
 match_group = "cloud-admin"
 tracker_slug = ""
+guided_slug = "gcp-cloud-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -697,6 +729,7 @@ description = "Designing, developing, and managing robust, secure, and dynamic s
 official_url = "https://cloud.google.com/learn/certification/cloud-architect"
 match_group = "architect"
 tracker_slug = ""
+guided_slug = "gcp-cloud-architect"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -718,6 +751,7 @@ description = "Designing data processing systems, building data pipelines, and m
 official_url = "https://cloud.google.com/learn/certification/data-engineer"
 match_group = "data-engineering"
 tracker_slug = ""
+guided_slug = "gcp-data-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -739,6 +773,7 @@ description = "Building scalable and highly available applications using Google 
 official_url = "https://cloud.google.com/learn/certification/cloud-developer"
 match_group = "developer"
 tracker_slug = ""
+guided_slug = "gcp-cloud-developer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -760,6 +795,7 @@ description = "Building software delivery pipelines, deploying and monitoring se
 official_url = "https://cloud.google.com/learn/certification/cloud-devops-engineer"
 match_group = "devops"
 tracker_slug = ""
+guided_slug = "gcp-devops-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -781,6 +817,7 @@ description = "Configuring access, managing network security, and ensuring data 
 official_url = "https://cloud.google.com/learn/certification/cloud-security-engineer"
 match_group = "cloud-security"
 tracker_slug = ""
+guided_slug = "gcp-security-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -802,6 +839,7 @@ description = "Designing, implementing, and managing network architectures on Go
 official_url = "https://cloud.google.com/learn/certification/cloud-network-engineer"
 match_group = "networking"
 tracker_slug = ""
+guided_slug = "gcp-network-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -823,6 +861,7 @@ description = "Designing, building, and productionising ML models to solve busin
 official_url = "https://cloud.google.com/learn/certification/machine-learning-engineer"
 match_group = "ai-engineering"
 tracker_slug = ""
+guided_slug = "gcp-ml-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -844,6 +883,7 @@ description = "Designing, managing, and troubleshooting Google Cloud database so
 official_url = "https://cloud.google.com/learn/certification/cloud-database-engineer"
 match_group = "database"
 tracker_slug = ""
+guided_slug = "gcp-database-engineer"
 status = "active"
 last_verified = "2026-04-17"
 
@@ -865,5 +905,6 @@ description = "Detecting, investigating, and responding to security threats usin
 official_url = "https://cloud.google.com/learn/certification/security-operations-engineer"
 match_group = "security-operations"
 tracker_slug = ""
+guided_slug = ""
 status = "active"
 last_verified = "2026-04-17"

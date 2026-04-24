@@ -607,6 +607,7 @@
 .cert-badge-retiring { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
 .cert-badge-retired { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
 .cert-badge-beta { background: rgba(139, 92, 246, 0.15); color: #8B5CF6; }
+.cert-badge-guided { background: rgba(16, 185, 129, 0.12); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.65rem; }
 .cert-badge-upcoming { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
 
 /* Status card overlay */
@@ -1587,4 +1588,46 @@ a.cert-video-card:hover .cert-video-play svg {
   .guided-promo-stats { gap: 0.75rem; }
   .guided-promo-ctas { flex-direction: column; }
   .guided-promo-btn { justify-content: center; }
+}
+
+/* ── Guided platform banner on cert-tracker list page ── */
+.cert-guided-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.18);
+}
+.cert-guided-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--cert-text-dim);
+  line-height: 1.4;
+}
+.cert-guided-banner-content strong { color: var(--cert-accent-hover); }
+.cert-guided-banner-icon { font-size: 1.3rem; flex-shrink: 0; }
+.cert-guided-banner-cta {
+  flex-shrink: 0;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  background: var(--cert-accent);
+  color: #000;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.cert-guided-banner-cta:hover {
+  background: var(--cert-accent-hover);
+  box-shadow: 0 2px 12px rgba(16, 185, 129, 0.3);
+}
+@media (max-width: 640px) {
+  .cert-guided-banner { flex-direction: column; text-align: center; }
 }

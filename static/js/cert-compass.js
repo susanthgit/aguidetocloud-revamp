@@ -120,6 +120,7 @@
       const pc = providerColor(c.provider);
       const validity = c.validity_override || (c.validity_years + ' year' + (c.validity_years !== 1 ? 's' : ''));
       const tracker = c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms">Study Guide</a>` : '';
+            const guided = c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" class="compass-btn compass-btn-guided">Practice Exam</a>` : '';
       const haveClass = myCerts.has(c.id) ? ' owned' : '';
       const haveLabel = myCerts.has(c.id) ? '✓ I Have This' : '+ I Have This';
       const trendIcon = c.trending === 'up' ? '↑' : c.trending === 'down' ? '↓' : '';
@@ -151,6 +152,7 @@
           <div class="compass-card-actions">
             <a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary">Official Page</a>
             ${tracker}
+            ${guided}
             <button class="compass-btn compass-btn-have${haveClass}" onclick="event.stopPropagation();window.__compassToggleCert('${esc(c.id)}')">${haveLabel}</button>
             ${c.match_group ? `<button class="compass-btn compass-btn-outline" onclick="event.stopPropagation();window.__compassShowMatch('${esc(c.match_group)}')">Cross-Cloud Matches</button>` : ''}
           </div>
@@ -251,9 +253,10 @@
       const cols = certs.map(c => {
         const pc = providerColor(c.provider);
         const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA;font-size:0.7rem">[study guide]</a>` : '';
+        const guided = c.guided_slug ? ` <a href="/guided/${esc(c.guided_slug)}/practice/" style="color:#34D399;font-size:0.7rem">[practice exam]</a>` : '';
         return `<div class="compass-match-cert" style="border-left: 3px solid ${pc}">
           <div class="compass-match-cert-provider" style="color:${pc}">${esc(providerName(c.provider))}</div>
-          <div class="compass-match-cert-name">${esc(c.name)}${tracker}</div>
+          <div class="compass-match-cert-name">${esc(c.name)}${tracker}${guided}</div>
           <div class="compass-match-cert-code">${esc(c.exam_code)}</div>
           <div class="compass-match-cert-stats">
             <span>$${c.fee_usd}</span>
@@ -533,7 +536,8 @@
       { label: 'Prerequisites', fn: c => (c.prerequisites && c.prerequisites.length) ? c.prerequisites.map(pid => { const p = certMap[pid]; return p ? esc(p.exam_code) : esc(pid); }).join(', ') : 'None' },
       { label: 'Focus Areas', fn: c => (c.focus_areas || []).map(f => esc(f.replace(/-/g, ' '))).join(', ') },
       { label: 'Official Page', fn: c => `<a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" style="color:var(--compass-accent)">View →</a>` },
-      { label: 'Study Guide', fn: c => c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA">Available →</a>` : '<span style="color:rgba(255,255,255,0.3)">—</span>' }
+      { label: 'Study Guide', fn: c => c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA">Available →</a>` : '<span style="color:rgba(255,255,255,0.3)">—</span>' },
+      { label: 'Practice Exam', fn: c => c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" style="color:#34D399">200 Questions →</a>` : '<span style="color:rgba(255,255,255,0.3)">—</span>' }
     ];
 
     let html = '<table class="compass-compare-table"><thead><tr><th></th>';
@@ -672,6 +676,8 @@
 
       // Study guide bonus (Microsoft advantage)
       if (c.tracker_slug) score += 3;
+      // Practice exam bonus (guided platform)
+      if (c.guided_slug) score += 2;
 
       return { cert: c, score };
     }).sort((a, b) => b.score - a.score).slice(0, 3);
@@ -695,6 +701,7 @@
           <div style="margin-top:0.5rem;display:flex;gap:0.4rem">
             <a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary" style="font-size:0.75rem">Official Page</a>
             ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms" style="font-size:0.75rem">Study Guide</a>` : ''}
+            ${c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" class="compass-btn compass-btn-guided" style="font-size:0.75rem">Practice Exam</a>` : ''}
             <button class="compass-btn compass-btn-outline" style="font-size:0.75rem" onclick="window.__compassCompare('${scored.map(x=>x.cert.id).join(',')}')">Compare All 3</button>
           </div>
         </div>`;

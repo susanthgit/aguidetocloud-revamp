@@ -45,6 +45,16 @@
 
   {{/* ── Tab 2: All Guides ── */}}
   <div class="cert-panel" id="panel-guides" role="tabpanel" hidden>
+    {{/* Guided platform promo banner */}}
+    <div class="cert-guided-banner">
+      <div class="cert-guided-banner-content">
+        <span class="cert-guided-banner-icon">📖</span>
+        <div>
+          <strong>New: Interactive Study Guides</strong> — Flashcards, exam simulation, spaced repetition, progress tracking. Free forever across 126 certs.
+        </div>
+      </div>
+      <a href="/guided/explore/" class="cert-guided-banner-cta">Explore Guided →</a>
+    </div>
     <div class="roadmap-legend">
       <strong>Categories:</strong>
       <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#3B82F6"></div> Azure</div>
@@ -121,6 +131,10 @@
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "keywords": ["Microsoft certification study guide", "AZ-900 study guide", "Microsoft cert exam objectives", "free certification study materials"]
 }
+</script>
+{{/* Inject guided cert data for interactive badges */}}
+<script>
+window.__guidedCerts = {{ site.Data.guided_certs | jsonify | safeJS }};
 </script>
 <script src="/js/cert-tracker.js?v={{ site.Params.cache_version }}"></script>
 <script>

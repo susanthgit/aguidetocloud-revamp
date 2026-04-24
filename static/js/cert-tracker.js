@@ -183,6 +183,8 @@
     const statusLabels = { active: "", retiring: "⚠️ Retiring", retired: "🚫 Retired", beta: "🧪 Beta", upcoming: "🔜 Upcoming" };
     const status = exam.status || "active";
     const statusBadge = status !== "active" ? `<span class="cert-badge cert-badge-${status}">${statusLabels[status]}</span>` : "";
+    const guidedData = window.__guidedCerts && window.__guidedCerts[exam.code.toLowerCase()];
+    const guidedBadge = guidedData ? `<span class="cert-badge cert-badge-guided">📖 Interactive</span>` : "";
     const statusClass = status !== "active" ? ` cert-card-${status}` : "";
 
     const skillsHtml = (exam.skills_at_a_glance || [])
@@ -208,6 +210,7 @@
         </div>
         <div class="cert-card-meta">
           <span class="cert-badge cert-badge-${exam.level}">${levelLabel[exam.level] || esc(exam.level)}</span>
+          ${guidedBadge}
           ${statusBadge}
         </div>
         ${retireNote}${retiredNote}${betaNote}
