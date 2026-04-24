@@ -1275,6 +1275,128 @@
     }
   });
 
+  // ── Guided tab: lazy-load analytics ──
+  var _guidedLoaded = false;
+  document.querySelectorAll('.siteana-tab').forEach(function(tab) {
+    if (tab.dataset.tab === 'guided') {
+      tab.addEventListener('click', function() {
+        if (_guidedLoaded) return;
+        _guidedLoaded = true;
+        fetch(API + '?guided=1').then(function(r) { return r.json(); }).then(function(data) {
+          if (!data || !data.pulse) return;
+          var p = data.pulse;
+          var set = function(id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+          set('gd-learners', numK(p.active_learners));
+          set('gd-starts', numK(p.quiz_starts));
+          set('gd-completes', numK(p.quizzes_taken));
+          set('gd-rate', p.completion_rate + '%');
+          set('gd-views', numK(p.total_views));
+          set('gd-live', p.realtime_active || '0');
+
+          // Trend chart
+          var trend = data.trend || [];
+          if (trend.length && typeof Chart !== 'undefined') {
+            var canvas = document.getElementById('gd-trend-chart');
+            if (canvas) {
+              new Chart(canvas, {
+                type:'line',
+                data:{
+                  labels: trend.map(function(d){ var p=d.date.split('-'); return p[1]+'/'+p[2]; }),
+                  datasets:[
+                    { label:'Views', data:trend.map(function(d){return d.views;}), borderColor:'#00A4EF', backgroundColor:'rgba(0,164,239,0.1)', fill:true, tension:0.3, pointRadius:0, borderWidth:2 },
+                    { label:'Users', data:trend.map(function(d){return d.users;}), borderColor:'#A78BFA', backgroundColor:'transparent', tension:0.3, pointRadius:0, borderWidth:2, borderDash:[4,4] }
+                  ]
+                },
+                options:{ responsive:true, maintainAspectRatio:false,
+                  plugins:{ legend:{ display:true, labels:{ color:'rgba(255,255,255,0.6)', boxWidth:12, padding:12, font:{size:11} } } },
+                  scales:{ x:{ ticks:{ color:'rgba(255,255,255,0.4)', maxTicksLimit:8, font:{size:10} }, grid:{display:false} },
+                    y:{ ticks:{ color:'rgba(255,255,255,0.4)', font:{size:10} }, grid:{ color:'rgba(255,255,255,0.05)' }, beginAtZero:true } }
+                }
+              });
+            }
+          }
+
+          // Mode doughnut
+          var modes = data.modes || {};
+          var mKeys = Object.keys(modes);
+          var MCOL = { study:'#10B981', exam:'#F59E0B', flashcards:'#A78BFA', domain:'#00A4EF', weak:'#EC4899' };
+          var MLAB = { study:'Study', exam:'Exam', flashcards:'Flashcards', domain:'Domain Focus', weak:'Weak Areas' };
+          var mCanvas = document.getElementById('gd-mode-chart');
+          if (mCanvas && mKeys.length && typeof Chart !== 'undefined') {
+            new Chart(mCanvas, { type:'doughnut', data:{
+              labels: mKeys.map(function(k){return MLAB[k]||k;}),
+              datasets:[{ data:mKeys.map(function(k){return modes[k];}), backgroundColor:mKeys.map(function(k){return MCOL[k]||'#64748B';}), borderWidth:0 }]
+            }, options:{ responsive:true, maintainAspectRatio:false, cutout:'65%',
+              plugins:{ legend:{ display:true, position:'bottom', labels:{ color:'rgba(255,255,255,0.6)', padding:10, boxWidth:10, font:{size:11} } } } }
+            });
+          } else {
+            var mLeg = document.getElementById('gd-mode-legend');
+            if (mLeg) mLeg.innerHTML = 'No quiz data yet — events collect after first user quizzes.';
+          }
+
+          // Cert table
+          var certs = data.certs || [];
+          var certEl = document.getElementById('gd-cert-table');
+          if (certEl) {
+            if (!certs.length) { certEl.innerHTML = '<p class="siteana-hint">No certification data yet.</p>'; }
+            else {
+              var mx = certs[0].views || 1;
+              certEl.innerHTML = '<table style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="color:rgba(255,255,255,0.4);font-size:0.75rem;text-align:left">'
+                + '<th style="padding:0.5rem 0.75rem">Cert</th><th style="padding:0.5rem 0.75rem">Views</th><th style="padding:0.5rem 0.75rem">Users</th>'
+                + '<th style="padding:0.5rem 0.75rem">Quizzes</th><th style="padding:0.5rem 0.75rem;width:35%"></th></tr></thead><tbody>'
+                + certs.map(function(c,i){
+                  var pct = Math.round((c.views/mx)*100);
+                  return '<tr style="border-top:1px solid rgba(255,255,255,0.05);background:'+(i===0?'rgba(0,164,239,0.08)':'transparent')+'">'
+                    + '<td style="padding:0.6rem 0.75rem;font-weight:600;color:rgba(255,255,255,0.9);text-transform:uppercase">'+esc(c.code)+'</td>'
+                    + '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">'+numK(c.views)+'</td>'
+                    + '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">'+numK(c.users)+'</td>'
+                    + '<td style="padding:0.6rem 0.75rem;color:'+(c.completions?'#10B981':'rgba(255,255,255,0.3)')+'">'+((c.completions)?numK(c.completions):'\u2014')+'</td>'
+                    + '<td style="padding:0.6rem 0.75rem"><div style="background:rgba(0,164,239,0.15);border-radius:4px;height:8px;overflow:hidden">'
+                    + '<div style="width:'+pct+'%;height:100%;background:#00A4EF;border-radius:4px"></div></div></td></tr>';
+                }).join('') + '</tbody></table>';
+            }
+          }
+
+          // Events breakdown
+          var events = data.events || {};
+          var eKeys = Object.keys(events);
+          var evEl = document.getElementById('gd-events');
+          if (evEl) {
+            if (!eKeys.length) { evEl.innerHTML = '<p class="siteana-hint">No events yet — data appears 24-48h after first interactions.</p>'; }
+            else {
+              var ELAB = { guided_home_view:'\uD83C\uDFE0 Home', guided_explore_view:'\uD83D\uDD0D Explore', guided_cert_view:'\uD83D\uDCCB Cert Page',
+                guided_practice_view:'\uD83D\uDCDD Practice', guided_quiz_start:'\u25B6\uFE0F Quiz Start', guided_quiz_complete:'\u2705 Quiz Complete',
+                guided_flashcard_start:'\uD83C\uDCCF Flashcards', guided_bookmark:'\uD83D\uDD16 Bookmark', guided_streak_update:'\uD83D\uDD25 Streak' };
+              eKeys.sort(function(a,b){ return (events[b].count||0)-(events[a].count||0); });
+              evEl.innerHTML = '<div style="display:flex;flex-direction:column;gap:0.5rem">' + eKeys.map(function(k){
+                return '<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">'
+                  + '<span style="color:rgba(255,255,255,0.75);font-size:0.82rem">'+(ELAB[k]||k.replace(/guided_/g,'').replace(/_/g,' '))+'</span>'
+                  + '<span style="color:rgba(255,255,255,0.5);font-size:0.82rem;font-variant-numeric:tabular-nums">'+numK(events[k].count)+'</span></div>';
+              }).join('') + '</div>';
+            }
+          }
+
+          // Top pages
+          var pages = data.pages || [];
+          var pgEl = document.getElementById('gd-top-pages');
+          if (pgEl) {
+            if (!pages.length) { pgEl.innerHTML = '<p class="siteana-hint">No page data yet.</p>'; }
+            else {
+              pgEl.innerHTML = '<div style="display:flex;flex-direction:column;gap:0.4rem">' + pages.slice(0,12).map(function(p){
+                var short = p.path.replace(/^\/guided\//,'/').replace(/\/$/,'') || '/';
+                return '<div style="display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">'
+                  + '<span style="color:rgba(255,255,255,0.7);font-size:0.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">'+esc(short)+'</span>'
+                  + '<span style="color:rgba(255,255,255,0.4);font-size:0.82rem">'+numK(p.views)+'</span></div>';
+              }).join('') + '</div>';
+            }
+          }
+        }).catch(function(){});
+      });
+    }
+  });
+
+  function numK(n) { if (!n) return '0'; if (n >= 1000) return (n/1000).toFixed(1)+'k'; return String(n); }
+
   // Auto-refresh every 5 min
   setInterval(function() { fetch(API + '?range=30d').then(function(r){return r.json();}).then(render).catch(function(){}); }, 300000);
 })();
