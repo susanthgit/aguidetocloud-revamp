@@ -84,6 +84,144 @@
   </details>
   {{ end }}
 
+  {{/* ═══════════ GUIDED PLATFORM — Interactive Study Experience ═══════════ */}}
+  {{ $guidedSlug := lower .Params.exam_code }}
+  {{ $guidedCert := index site.Data.guided_certs $guidedSlug }}
+  <div class="guided-promo">
+    {{ if $guidedCert }}
+    {{/* ── Full section: cert has study guide + practice exam on Guided ── */}}
+    <div class="guided-promo-grid">
+      <div class="guided-promo-content">
+        <span class="guided-promo-badge">📖 Free Interactive Study Guide</span>
+        <h2 class="guided-promo-title">Study {{ .Params.exam_code }} interactively — not just reading</h2>
+        <p class="guided-promo-desc">Our guided platform turns this study guide into an interactive experience with flashcards, exam simulation, and spaced repetition — <strong>free forever</strong>.</p>
+
+        <div class="guided-promo-stats">
+          <div class="guided-promo-stat">
+            <span class="guided-promo-stat-num">{{ $guidedCert.modules }}</span>
+            <span class="guided-promo-stat-label">Study Modules</span>
+          </div>
+          <div class="guided-promo-stat">
+            <span class="guided-promo-stat-num">{{ $guidedCert.questions }}</span>
+            <span class="guided-promo-stat-label">Practice Qs</span>
+          </div>
+          <div class="guided-promo-stat">
+            <span class="guided-promo-stat-num">{{ $guidedCert.domains }}</span>
+            <span class="guided-promo-stat-label">Domains</span>
+          </div>
+          <div class="guided-promo-stat">
+            <span class="guided-promo-stat-num">20</span>
+            <span class="guided-promo-stat-label">Free Questions</span>
+          </div>
+        </div>
+
+        <div class="guided-promo-features">
+          <span class="guided-promo-pill">🧠 Spaced Repetition</span>
+          <span class="guided-promo-pill">⏱️ Exam Simulation</span>
+          <span class="guided-promo-pill">📊 Progress Tracking</span>
+          <span class="guided-promo-pill">📝 Detailed Explanations</span>
+          <span class="guided-promo-pill">🃏 Flashcards</span>
+          <span class="guided-promo-pill">🏆 XP & Badges</span>
+        </div>
+
+        <div class="guided-promo-ctas">
+          <a href="/guided/{{ $guidedSlug }}/" class="guided-promo-btn guided-promo-btn-primary">Start Free Study Guide →</a>
+          <a href="/guided/{{ $guidedSlug }}/practice/" class="guided-promo-btn guided-promo-btn-secondary">Try 20 Free Questions →</a>
+        </div>
+        <p class="guided-promo-note">No account needed · Free forever · Study guides + 20 practice questions included</p>
+      </div>
+
+      {{/* ── Visual preview: CSS-only animated mock of the guided UI ── */}}
+      <div class="guided-promo-preview" aria-hidden="true">
+        <div class="guided-preview-window">
+          <div class="guided-preview-header">
+            <span class="guided-preview-dot" style="background:#EF4444"></span>
+            <span class="guided-preview-dot" style="background:#F59E0B"></span>
+            <span class="guided-preview-dot" style="background:#10B981"></span>
+            <span class="guided-preview-tab">{{ .Params.exam_code }} Study Guide</span>
+          </div>
+          <div class="guided-preview-body">
+            {{/* Slide 1: Question card */}}
+            <div class="guided-preview-slide guided-slide-1">
+              <div class="guided-preview-badge-row">
+                <span class="gp-badge gp-badge-study">Study Mode</span>
+                <span class="gp-badge gp-badge-domain">Domain 1</span>
+              </div>
+              <p class="gp-question">Which cloud model uses a shared infrastructure managed by a third-party provider?</p>
+              <div class="gp-options">
+                <div class="gp-option">Private Cloud</div>
+                <div class="gp-option gp-option-correct">Public Cloud ✓</div>
+                <div class="gp-option">Hybrid Cloud</div>
+              </div>
+              <div class="gp-explanation">✅ <strong>Correct!</strong> Public cloud resources are shared across multiple tenants...</div>
+            </div>
+            {{/* Slide 2: Flashcard */}}
+            <div class="guided-preview-slide guided-slide-2">
+              <div class="guided-preview-badge-row">
+                <span class="gp-badge gp-badge-flash">🃏 Flashcards</span>
+                <span class="gp-badge gp-badge-sr">SM-2 Algorithm</span>
+              </div>
+              <div class="gp-flashcard">
+                <p class="gp-fc-label">What is IaaS?</p>
+                <div class="gp-fc-divider"></div>
+                <p class="gp-fc-answer">Infrastructure as a Service — you manage VMs, networking, and storage. The provider manages the physical hardware.</p>
+              </div>
+              <div class="gp-fc-buttons">
+                <span class="gp-fc-btn" style="border-color:rgba(239,68,68,0.4);color:#EF4444">Again</span>
+                <span class="gp-fc-btn" style="border-color:rgba(245,158,11,0.4);color:#F59E0B">Hard</span>
+                <span class="gp-fc-btn" style="border-color:rgba(59,130,246,0.4);color:#3B82F6">Good</span>
+                <span class="gp-fc-btn" style="border-color:rgba(16,185,129,0.4);color:#10B981">Easy</span>
+              </div>
+            </div>
+            {{/* Slide 3: Progress dashboard */}}
+            <div class="guided-preview-slide guided-slide-3">
+              <div class="guided-preview-badge-row">
+                <span class="gp-badge gp-badge-progress">📊 Your Progress</span>
+              </div>
+              <div class="gp-progress-grid">
+                <div class="gp-progress-ring">
+                  <svg viewBox="0 0 60 60" width="60" height="60">
+                    <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>
+                    <circle cx="30" cy="30" r="26" fill="none" stroke="#10B981" stroke-width="5" stroke-dasharray="163.4" stroke-dashoffset="49" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+                  </svg>
+                  <span class="gp-ring-text">70%</span>
+                </div>
+                <div class="gp-progress-details">
+                  <div class="gp-progress-row"><span>Domain 1</span><div class="gp-bar"><div class="gp-bar-fill" style="width:85%"></div></div><span>85%</span></div>
+                  <div class="gp-progress-row"><span>Domain 2</span><div class="gp-bar"><div class="gp-bar-fill" style="width:62%"></div></div><span>62%</span></div>
+                  <div class="gp-progress-row"><span>Domain 3</span><div class="gp-bar"><div class="gp-bar-fill" style="width:71%"></div></div><span>71%</span></div>
+                </div>
+              </div>
+              <div class="gp-xp-row">
+                <span>🏆 1,240 XP</span>
+                <span>🔥 7-day streak</span>
+                <span>🎖️ 4 badges</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ else }}
+    {{/* ── Fallback: legacy cert without guided study guide ── */}}
+    <div class="guided-promo-fallback">
+      <div class="guided-promo-fallback-icon">📖</div>
+      <div class="guided-promo-fallback-text">
+        <h3 class="guided-promo-fallback-title">Explore our Interactive Certification Platform</h3>
+        <p class="guided-promo-fallback-desc">Study with flashcards, exam simulation, spaced repetition, and progress tracking — across 35 Microsoft certs and 90+ others. Free study guides, 20 free practice questions per cert.</p>
+        <div class="guided-promo-features" style="margin-top:0.6rem">
+          <span class="guided-promo-pill">🧠 Spaced Repetition</span>
+          <span class="guided-promo-pill">⏱️ Exam Simulation</span>
+          <span class="guided-promo-pill">🃏 Flashcards</span>
+          <span class="guided-promo-pill">📊 Progress Tracking</span>
+        </div>
+        <a href="/guided/explore/" class="guided-promo-btn guided-promo-btn-primary" style="margin-top:0.75rem">Explore Guided →</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
   {{/* Video Resources — rendered from front matter cert_video_id / qa_video_id */}}
   {{ if or .Params.cert_video_id .Params.qa_video_id }}
   {{ $videoCount := 0 }}{{ with .Params.cert_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}{{ with .Params.qa_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}

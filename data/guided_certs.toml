@@ -1,0 +1,141 @@
+# Guided platform cert data — drives the "Interactive Study Guide" section
+# on cert-tracker individual pages. Only certs listed here get the full section.
+# Legacy certs (not listed) get a general guided platform CTA instead.
+#
+# Source of truth: guided platform at C:\ssClawy\guided\src\content\certs\*.toml
+# Last synced: 2026-04-25
+
+[ai-103]
+modules = 27
+questions = 200
+domains = 4
+
+[ai-300]
+modules = 25
+questions = 200
+domains = 4
+
+[ai-901]
+modules = 26
+questions = 200
+domains = 4
+
+[az-104]
+modules = 27
+questions = 200
+domains = 5
+
+[az-120]
+modules = 28
+questions = 200
+domains = 4
+
+[az-140]
+modules = 28
+questions = 250
+domains = 5
+
+[az-305]
+modules = 30
+questions = 200
+domains = 4
+
+[az-400]
+modules = 25
+questions = 200
+domains = 5
+
+[az-700]
+modules = 26
+questions = 200
+domains = 4
+
+[az-900]
+modules = 26
+questions = 250
+domains = 3
+
+[dp-300]
+modules = 28
+questions = 200
+domains = 5
+
+[dp-420]
+modules = 28
+questions = 200
+domains = 5
+
+[dp-750]
+modules = 28
+questions = 200
+domains = 5
+
+[dp-800]
+modules = 28
+questions = 200
+domains = 4
+
+[dp-900]
+modules = 27
+questions = 200
+domains = 5
+
+[mb-500]
+modules = 28
+questions = 200
+domains = 5
+
+[mb-800]
+modules = 28
+questions = 200
+domains = 5
+
+[md-102]
+modules = 27
+questions = 200
+domains = 4
+
+[ms-102]
+modules = 28
+questions = 200
+domains = 4
+
+[ms-700]
+modules = 27
+questions = 200
+domains = 4
+
+[pl-300]
+modules = 26
+questions = 200
+domains = 5
+
+[pl-400]
+modules = 26
+questions = 200
+domains = 5
+
+[pl-900]
+modules = 26
+questions = 200
+domains = 4
+
+[sc-100]
+modules = 26
+questions = 200
+domains = 4
+
+[sc-200]
+modules = 28
+questions = 200
+domains = 4
+
+[sc-300]
+modules = 27
+questions = 200
+domains = 4
+
+[sc-900]
+modules = 28
+questions = 200
+domains = 4
