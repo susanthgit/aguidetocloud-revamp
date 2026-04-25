@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T22:56:27.029890+00:00",
+  "generated_at": "2026-04-25T03:30:05.087865+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -57,12 +57,12 @@
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
-      "total_incidents": 7,
+      "total_incidents": 6,
       "active_incidents": 1,
-      "avg_duration_minutes": 1101,
+      "avg_duration_minutes": 1300,
       "last_incident": "2026-04-02T16:53:00+00:00",
       "classifications": {
-        "advisory": 6,
+        "advisory": 5,
         "incident": 1
       }
     },
@@ -70,12 +70,12 @@
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
-      "total_incidents": 5,
+      "total_incidents": 6,
       "active_incidents": 0,
-      "avg_duration_minutes": 11685,
+      "avg_duration_minutes": 11849,
       "last_incident": "2026-04-24T15:04:41.097000+00:00",
       "classifications": {
-        "advisory": 4,
+        "advisory": 5,
         "incident": 1
       }
     },
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 36,
+      "incident_count": 37,
       "services_affected": 9
     },
     {
@@ -228,7 +228,7 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 24,
+      "incident_count": 23,
       "services_affected": 13
     }
   ]
