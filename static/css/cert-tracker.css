@@ -615,8 +615,269 @@
 .cert-card-retired { opacity: 0.7; border-left: 3px solid #EF4444; }
 .cert-card-beta { border-left: 3px solid #8B5CF6; }
 
-/* ── Single exam page ── */
-.cert-single { max-width: 900px; }
+/* ── Single exam page — Product Layout ── */
+.cert-single { max-width: 1200px; }
+
+/* 2-column product layout */
+.cert-product-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+.cert-product-main { min-width: 0; }
+
+/* Sticky sidebar */
+.cert-product-sidebar {
+  position: sticky;
+  top: 80px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+.cert-sidebar-code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.25rem;
+}
+.cert-sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.cert-sidebar-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.cert-sidebar-stat {
+  text-align: center;
+  padding: 0.6rem 0.25rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.cert-sidebar-stat-num {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--tool-accent, #10B981);
+}
+.cert-sidebar-stat-label {
+  display: block;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.cert-sidebar-price {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.cert-sidebar-price strong {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.cert-sidebar-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+.cert-sidebar-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cert-sidebar-btn-primary {
+  background: #10B981;
+  color: #fff;
+}
+.cert-sidebar-btn-primary:hover { background: #059669; transform: translateY(-1px); }
+.cert-sidebar-btn-secondary {
+  background: transparent;
+  color: #10B981;
+  border: 1px solid rgba(16,185,129,0.4);
+}
+.cert-sidebar-btn-secondary:hover { border-color: #10B981; background: rgba(16,185,129,0.08); }
+.cert-sidebar-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cert-sidebar-features li {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.cert-sidebar-features li:last-child { border-bottom: none; }
+.cert-sidebar-plans {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+.cert-sidebar-plans a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+}
+.cert-sidebar-plans a:hover { color: #10B981; }
+
+/* Product page tabs */
+.cert-product-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cert-product-tab {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.cert-product-tab:hover { color: rgba(255,255,255,0.8); }
+.cert-product-tab.active {
+  color: var(--tool-accent, #10B981);
+  border-bottom-color: var(--tool-accent, #10B981);
+}
+.cert-product-panel { display: none; }
+.cert-product-panel.active { display: block; }
+
+/* Mobile floating bottom bar */
+.cert-floating-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(3,3,8,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  gap: 0.6rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.cert-floating-bar.visible { transform: translateY(0); }
+.cert-floating-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.cert-float-try {
+  color: #10B981;
+  border: 1px solid rgba(16,185,129,0.4);
+}
+.cert-float-buy {
+  background: #10B981;
+  color: #fff;
+}
+
+/* Mobile: stack to single column, show floating bar */
+@media (max-width: 900px) {
+  .cert-product-layout {
+    grid-template-columns: 1fr;
+  }
+  .cert-product-sidebar {
+    position: static;
+    display: none; /* Hidden on mobile — floating bar replaces it */
+  }
+  .cert-floating-bar {
+    display: flex;
+  }
+}
+
+/* ── Interactive Study Guide Curriculum ── */
+.cert-curriculum {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+}
+.cert-curriculum-domain {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cert-curriculum-domain:last-child { border-bottom: none; }
+.cert-curriculum-domain-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  list-style: none;
+}
+.cert-curriculum-domain-title::-webkit-details-marker { display: none; }
+.cert-curriculum-chevron {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+  color: rgba(255,255,255,0.3);
+}
+details[open] > .cert-curriculum-domain-title .cert-curriculum-chevron {
+  transform: rotate(90deg);
+}
+.cert-curriculum-modules {
+  padding: 0 0.5rem 0.5rem;
+}
+.cert-curriculum-module {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.84rem;
+  transition: background 0.15s;
+}
+.cert-curriculum-module:hover {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+.cert-curriculum-free { font-size: 0.8rem; }
+.cert-curriculum-paid { font-size: 0.75rem; opacity: 0.5; }
+.cert-curriculum-module-title { flex: 1; }
+.cert-curriculum-time {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+}
+
+/* Keep legacy single-column for backward compat on pages without product layout */
 
 /* Breadcrumbs */
 .cert-breadcrumb {

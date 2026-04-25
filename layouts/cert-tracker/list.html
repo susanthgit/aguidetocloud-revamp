@@ -1,50 +1,28 @@
 {{ define "main" }}
 <!-- Pagefind: hidden searchable content for this JS-rendered page -->
+{{ $allCerts := site.Data.all_certs.cert }}
+{{ $certCount := len $allCerts }}
+{{ $vendorCount := len site.Data.vendors.vendor }}
 <div data-pagefind-body style="display:none" aria-hidden="true">
-  <h2>Free Microsoft Certification Study Guides — 52 Exam Prep Resources</h2>
-  <p>Free study guides for 52 Microsoft certification exams. Current objectives sourced from Microsoft Learn, updated weekly. Covers Azure, Microsoft 365, Security, Power Platform, Dynamics 365, and AI.</p>
-  <p>Exams: AZ-900, AZ-104, AZ-305, AZ-400, SC-900, SC-200, SC-300, AI-900, DP-900, PL-900, MS-102, MD-102, PL-300, and 39 more.</p>
-  <p>Features: study progress tracking, retirement countdown, print checklist, prep time estimate, study plan generator, related exams cross-links, collapsible sections, certification roadmap Kanban board.</p>
+  <h2>Certification Study Guides & Practice Exams — {{ $certCount }} Certs, {{ $vendorCount }} Vendors</h2>
+  <p>Free study guides and practice exams for {{ $certCount }} certification exams across {{ $vendorCount }} vendors. Microsoft, AWS, CompTIA, Cisco, Google Cloud, ISC², ISACA, CNCF, HashiCorp, Juniper, Palo Alto, EC-Council, and Fortinet.</p>
+  <p>Features: study progress tracking, retirement countdown, print checklist, prep time estimate, study plan generator, related exams cross-links, exam simulation, spaced repetition.</p>
 </div>
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
-<link rel="alternate" type="application/rss+xml" title="Microsoft Cert Study Guide Updates" href="/data/cert-tracker/rss.xml">
-{{ partial "tool-hero.html" (dict "title" "Free Microsoft Cert Study Guides" "accent" "#10B981" "freshness" "/data/cert-tracker/latest.json") }}
+<link rel="alternate" type="application/rss+xml" title="Cert Study Guide Updates" href="/data/cert-tracker/rss.xml">
+{{ partial "tool-hero.html" (dict "title" "Certification Study Guides & Practice Exams" "accent" "#10B981" "freshness" "/data/cert-tracker/latest.json") }}
 <div class="cert-container">
 
   {{/* ── Tab Navigation ── */}}
   <div class="cert-tabs" role="tablist" aria-label="Cert Study Guides views">
-    <button class="cert-tab active" role="tab" aria-selected="true" data-tab="updates">Certification Roadmap</button>
-    <button class="cert-tab" role="tab" aria-selected="false" data-tab="guides">All Guides</button>
+    <button class="cert-tab active" role="tab" aria-selected="true" data-tab="guides">All Certs</button>
+    <button class="cert-tab" role="tab" aria-selected="false" data-tab="updates">Microsoft Roadmap</button>
     <button class="cert-tab" role="tab" aria-selected="false" data-tab="category">By Category</button>
     <button class="cert-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
   </div>
 
-  {{/* ── Tab 1: Certification Roadmap (default) ── */}}
-  <div class="cert-panel active" id="panel-updates" role="tabpanel">
-
-    <div style="padding:0.75rem 1rem;margin-bottom:1rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;display:flex;align-items:center;gap:0.75rem">
-      <span style="font-size:1.3rem">👆</span>
-      <p style="margin:0;font-size:0.9rem;color:var(--cert-text)"><strong>Click any card</strong> to open its free study guide. Read left to right: <strong>Fundamentals → Associate → Expert</strong></p>
-    </div>
-
-    <div class="kanban-wrap">
-      <div id="roadmap-content">
-        <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
-      </div>
-    </div>
-
-    <div class="cert-updates-section" style="margin-top:2rem">
-      <h2>📡 Stay Updated</h2>
-      <p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">Get notified when exam objectives change or new exams are announced.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📡 RSS Feed</a>
-        <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📋 Official Credentials</a>
-      </div>
-    </div>
-  </div>
-
-  {{/* ── Tab 2: All Guides ── */}}
-  <div class="cert-panel" id="panel-guides" role="tabpanel" hidden>
+  {{/* ── Tab 1: All Certs (default — vendor grid) ── */}}
+  <div class="cert-panel active" id="panel-guides" role="tabpanel">
     {{/* Guided platform promo banner */}}
     <div class="cert-guided-banner">
       <div class="cert-guided-banner-content">
@@ -93,7 +71,30 @@
     </div>
   </div>
 
-  {{/* ── Tab 2: By Category ── */}}
+  {{/* ── Tab 2: Microsoft Roadmap ── */}}
+  <div class="cert-panel" id="panel-updates" role="tabpanel" hidden>
+    <div style="padding:0.75rem 1rem;margin-bottom:1rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;display:flex;align-items:center;gap:0.75rem">
+      <span style="font-size:1.3rem">👆</span>
+      <p style="margin:0;font-size:0.9rem;color:var(--cert-text)"><strong>Click any card</strong> to open its free study guide. Read left to right: <strong>Fundamentals → Associate → Expert</strong></p>
+    </div>
+
+    <div class="kanban-wrap">
+      <div id="roadmap-content">
+        <div class="cert-skeleton"><div class="cert-skeleton-row"></div></div>
+      </div>
+    </div>
+
+    <div class="cert-updates-section" style="margin-top:2rem">
+      <h2>📡 Stay Updated</h2>
+      <p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">Get notified when exam objectives change or new exams are announced.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📡 RSS Feed</a>
+        <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📋 Official Credentials</a>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Tab 3: By Category ── */}}
   <div class="cert-panel" id="panel-category" role="tabpanel" hidden>
     <div class="cert-stats" id="cert-stats"></div>
     <div class="cert-chips" id="cert-chips" role="group" aria-label="Category filters"></div>
@@ -120,21 +121,23 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Free Microsoft Cert Study Guides",
+  "name": "Certification Study Guides & Practice Exams",
   "url": "https://www.aguidetocloud.com/cert-tracker/",
-  "description": "Free study guides for every Microsoft certification exam. Current objectives deep-linked to Microsoft Learn, skills measured with weights, practice assessments, and weekly change tracking.",
+  "description": "Free study guides and practice exams for {{ $certCount }} certification exams across {{ $vendorCount }} vendors. Microsoft, AWS, CompTIA, Cisco, Google Cloud, and more.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Person", "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com/about/" },
   "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "https://www.aguidetocloud.com" },
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "keywords": ["Microsoft certification study guide", "AZ-900 study guide", "Microsoft cert exam objectives", "free certification study materials"]
+  "keywords": ["certification study guide", "practice exam", "Microsoft certification", "AWS certification", "CompTIA certification", "Cisco certification", "free study materials"]
 }
 </script>
-{{/* Inject guided cert data for interactive badges */}}
+{{/* Inject cert data for interactive features */}}
 <script>
-window.__guidedCerts = {{ site.Data.guided_certs | jsonify | safeJS }};
+window.__guidedCerts = {{ site.Data.all_certs.cert_map | jsonify | safeJS }};
+window.__allCerts = {{ site.Data.all_certs.cert | jsonify | safeJS }};
+window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
 </script>
 <script src="/js/cert-tracker.js?v={{ site.Params.cache_version }}"></script>
 <script>

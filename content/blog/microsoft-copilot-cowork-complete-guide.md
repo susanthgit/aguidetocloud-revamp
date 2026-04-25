@@ -52,7 +52,7 @@ Instead of being an assistant that waits for your instructions, Cowork is more l
 
 This guide explains everything — in plain language, with real scenarios, and honest opinions on what's great and what's not quite there yet.
 
-**Quick links:** [🚀 6 Prompts to Try Today](#6-high-impact-cowork-prompts-you-can-use-today) · [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
+**Quick links:** [🚀 6 Prompts to Try Today](#6-high-impact-cowork-prompts-you-can-use-today) · [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [Skills & Extending Cowork](#extend-cowork-with-skills) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
 
 ---
 
@@ -540,6 +540,91 @@ That's it. The "agentic harness" is just the **framework that keeps AI agents pr
 
 ---
 
+## Extend Cowork with Skills
+
+When Cowork executes a task, it calls on individual **Skills** — modular capabilities that each handle one specific job. When I wrote "Skills: Calendar → Email → Teams → Communications" in the scenario boxes earlier, I was showing which skills Cowork uses at each step of the task. Think of skills like specialist team members: your email person, your spreadsheet person, your meeting coordinator. Cowork decides which ones to call and in what order.
+
+This is also the part that makes Cowork genuinely extensible — you're not limited to what Microsoft ships out of the box.
+
+### Built-in Cowork Skills
+
+These come with Cowork out of the box. No setup, no configuration — they just work:
+
+| Skill | What It Does |
+|---|---|
+| **Email** | Reads, searches, drafts and queues Outlook emails |
+| **Calendar** | Reads meetings, finds free slots, creates and updates events |
+| **Teams** | Reads chat history, posts to channels, sends direct messages |
+| **Enterprise Search** | Finds and retrieves files across SharePoint and OneDrive |
+| **Word** | Creates and edits documents |
+| **Excel** | Reads, writes and analyses spreadsheets |
+| **PowerPoint** | Builds and edits slide decks |
+| **Daily Briefing** | Summarises your day — meetings, emails, open actions |
+| **Deep Research** | Searches the web and Microsoft Learn for up-to-date information |
+| **Communications** | Orchestrates multi-channel drafts across email, Teams and documents |
+
+Ten skills working together is already powerful. But here's where it gets interesting.
+
+### Adding More Skills
+
+You can extend Cowork with additional skills — from Microsoft, from partners, or built by your own IT team. This is how you connect Cowork to systems outside of M365 like Dynamics 365, ServiceNow, Jira, SAP, or your own internal tools.
+
+**Option 1 — Custom skills via OneDrive (no-code, works today)**
+
+This is the easiest way — no admin involvement, no app installs. Two methods that both work:
+
+**Method A — Ask Cowork to create it for you (fastest):**
+
+Just tell Cowork in chat: *"Create a custom skill called [name] with these instructions: [your steps]"* — Cowork validates the skill, writes the SKILL.md file, and syncs it to your OneDrive automatically within ~35 seconds. Ready to use immediately.
+
+**Method B — Upload the file manually to OneDrive:**
+
+1. Open your **OneDrive** — go to `Documents → Cowork → Skills` (create these folders if they don't exist)
+2. Create a **subfolder** for your skill (e.g., `morning-briefing`)
+3. Inside that subfolder, create a file called **`SKILL.md`**
+4. Write your skill using this format:
+
+```markdown
+---
+name: Morning Briefing
+description: Summarises my day from calendar, email, and Teams.
+---
+
+1. Check my calendar for today's meetings and list them with times.
+2. Find my top 3 urgent unread emails.
+3. Check Teams for urgent messages.
+4. Recommend my 3 morning priorities.
+```
+
+5. Save it — Cowork **automatically discovers** all skills in this folder at the start of every conversation.
+
+Both methods produce the same result. Method A is great for quick personal skills; Method B is useful when you want to pre-build and distribute skill files across a team.
+
+You can create up to **50 custom skills** per user. Each file must be under 1 MB.
+
+**Option 2 — Via Copilot Studio (low-code, for admins)**
+
+If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
+
+**Option 3 — Pro-code skills (for developers)**
+
+For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) lets developers build skills in .NET, JavaScript, or Python. Register them in Copilot Studio and they become available inside Cowork — just like any built-in skill.
+
+### Where to Find Skills
+
+| Resource | What's There |
+|---|---|
+| [microsoft/skills on GitHub](https://github.com/microsoft/skills) | 130+ pre-built skills, ready to deploy or customise |
+| [microsoft/CopilotStudioSamples](https://github.com/microsoft/CopilotStudioSamples) | Agent and skill samples for real business scenarios |
+| [microsoft/Agents](https://github.com/microsoft/Agents) | SDK for building your own custom skills |
+| [Copilot Studio Sample Gallery](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/agent-samples) | Official curated samples from Microsoft |
+
+> ⚠️ **Admin tip:** Before adding third-party skills, review the permissions they request. Each skill accesses data on behalf of the user — so treat skill approval the same way you'd treat an app approval in Entra ID. Start with a pilot group.
+
+📖 [Add and manage skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-skills)
+
+---
+
 ## How to Get Microsoft Copilot Cowork
 
 Yes, you can get it now — but with a few caveats.
@@ -630,7 +715,7 @@ The honest truth? Cowork is brilliant at 80% of coordination work and occasional
 
 Let's keep it real:
 
-- ❌ **Can't access external systems** — only M365 apps (no Salesforce, Jira, SAP — yet)
+- ⚠️ **External systems need Skills** — Cowork doesn't connect to Salesforce, Jira, or SAP out of the box, but partner Skills available in the Agent Store can bridge this gap. See the [Skills section](#extend-cowork-with-skills) above.
 - ❌ **English only** at launch — more languages coming
 - ❌ **No offline mode** — it's cloud-based, needs internet
 - ❌ **Won't replace deep expertise** — it's great at coordination tasks, not strategic thinking
@@ -681,6 +766,10 @@ Copilot Cowork uses Microsoft's multi-model approach, which includes Anthropic's
 ### Does Copilot Cowork work with my existing data permissions?
 
 Yes. Cowork operates within your existing Microsoft 365 permissions. It can only access data that you already have access to — it doesn't bypass SharePoint permissions, [Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview) policies, or DLP rules. This is why cleaning up permissions BEFORE enabling Cowork is so important.
+
+### Can I add extra capabilities to Cowork?
+
+Yes — through **Skills**. Cowork ships with **13 built-in skills** covering the core M365 apps (Email, Scheduling, Calendar Management, Meetings, Teams, Enterprise Search, Word, Excel, PowerPoint, PDF, Daily Briefing, Deep Research, and Communications). You can add custom skills by creating `SKILL.md` files in your OneDrive at `Documents/Cowork/Skills/` — no code or admin needed. For more advanced scenarios, you can also build skills in Copilot Studio (low-code) or using the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) (pro-code).
 
 ### Will Copilot Cowork replace my job?
 

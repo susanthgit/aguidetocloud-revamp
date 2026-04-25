@@ -1,4 +1,26 @@
-/* Self-hosted fonts — Inter, Fira Code (latin subset) */
+/* Self-hosted fonts — Satoshi (primary), Inter (fallback), Fira Code (mono) */
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/satoshi-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/satoshi-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/satoshi-bold.woff2') format('woff2');
+}
 
 @font-face {
   font-family: 'Inter';
