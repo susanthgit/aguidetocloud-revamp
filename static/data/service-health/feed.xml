@@ -5,8 +5,18 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Apr 2026 03:30:05 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 05:56:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Azure] Azure incident affecting East US</title>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260401-1</link>
+      <description>[Azure] Between 11:39 UTC on 24th April and 00:15 UTC on 25 April 2026, a platform issue resulted in an impact to a subset of Azure services in the East US region. Impacted customers experienced failures or delays when provisioning, scaling, or updating Azure resources. Intermittent connectivity issues may also be seen on existing running workloads in Virtual Machines and Azure Virtual Desktop sessions.
+Impact initially began in a single Availability Zone (physical AZ01) in East US. As allocation demand</description>
+      <category>Azure</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">AZ-20260401-1</guid>
+      <pubDate>Sat, 25 Apr 2026 00:15:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Purview] Some users in East US may experience latency in Microsoft Purview Data Loss Prevention</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1290422</link>
@@ -447,15 +457,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1256744</guid>
       <pubDate>Fri, 20 Mar 2026 06:10:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be unable to summarize report content using Copilot for Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1256173</link>
-      <description>[Power BI] Users may have been unable to summarize report content using Copilot for Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1256173</guid>
-      <pubDate>Thu, 19 Mar 2026 13:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
