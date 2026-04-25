@@ -11,15 +11,16 @@
       <span class="hamburger-icon"></span>
     </button>
 
+    {{/* ═══════ Shared data for both desktop + mobile nav ═══════ */}}
+    {{ $certPages := where .Site.RegularPages "Section" "cert-tracker" }}
+    {{ $vendors := site.Data.vendors.vendor }}
+    {{ $msCats := slice "Azure" "Security" "AI" "Microsoft 365" "Data" "Power Platform" "Dynamics 365" }}
+
     {{/* ═══════ DESKTOP NAV (hidden on mobile) ═══════ */}}
     <ul class="nav-links" id="nav-links">
       <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">⌘K</button></li>
 
       {{/* ── Learn mega-dropdown: vendor-based like Whizlabs ── */}}
-      {{ $certPages := where .Site.RegularPages "Section" "cert-tracker" }}
-      {{ $vendors := site.Data.vendors.vendor }}
-      {{/* Also include Microsoft sub-categories for backward compat */}}
-      {{ $msCats := slice "Azure" "Security" "AI" "Microsoft 365" "Data" "Power Platform" "Dynamics 365" }}
       <li class="nav-dropdown nav-dropdown--mega nav-item--learn{{ if or (hasPrefix $.RelPermalink "/guided/") (hasPrefix $.RelPermalink "/pricing/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") (hasPrefix $.RelPermalink "/blog/") (hasPrefix $.RelPermalink "/start/") }} nav-dropdown-active{{ end }}">
         <a href="/cert-tracker/" class="dropdown-toggle">Learn ▾</a>
         <div class="dropdown-menu mega-menu mega-menu--learn">
@@ -146,9 +147,6 @@
     </ul>
 
     {{/* ═══════ MOBILE DRAWER (hidden on desktop) ═══════ */}}
-    {{/* Uses same vendor data as desktop nav */}}
-    {{ $mCertPages := where .Site.RegularPages "Section" "cert-tracker" }}
-    {{ $mVendors := site.Data.vendors.vendor }}
     <div class="nav-drawer" id="nav-drawer">
       <div class="drawer-tabs">
         <button class="drawer-tab active" data-tab="exams" aria-pressed="true">Practice Exams</button>
@@ -157,15 +155,15 @@
 
       {{/* ── Practice Exams tab: 13 vendors with expandable certs ── */}}
       <div class="drawer-panel active" id="drawer-panel-exams">
-        {{ range $i, $v := $mVendors }}
+        {{ range $i, $v := $vendors }}
         {{/* Collect certs for this vendor */}}
         {{ $vCerts := slice }}
         {{ if eq $v.slug "microsoft" }}
           {{ range $msCats }}
-            {{ $vCerts = $vCerts | append (where $mCertPages "Params.exam_category" .) }}
+            {{ $vCerts = $vCerts | append (where $certPages "Params.exam_category" .) }}
           {{ end }}
         {{ else }}
-          {{ $vCerts = where $mCertPages "Params.exam_category" $v.short_name }}
+          {{ $vCerts = where $certPages "Params.exam_category" $v.short_name }}
         {{ end }}
         {{ if gt (len $vCerts) 0 }}
         <div class="drawer-group{{ if eq $i 0 }} drawer-group--open{{ end }}">
