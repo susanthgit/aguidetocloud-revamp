@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Apr 2026 06:15:27 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 11:40:34 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Three reasons why DeepSeek’s new model matters</title>
-      <link>https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/</link>
-      <description>DeepSeek has previewed its new flagship model V4, which can handle longer prompts more efficiently than its predecessor. This open-source model represents a significant advancement in AI capabilities.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 24 Apr 2026 21:40:58 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/</guid>
-    </item>
-    <item>
-      <title>Meta Arms itself to the teeth by signing for 'tens of millions' of AWS Graviton cores</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/24/meta_aws_cpu/</link>
-      <description>Meta has signed a multi-year deal to utilize tens of millions of AWS Graviton 5 CPU cores, positioning itself as a major consumer of Amazon's silicon for AI workloads. This move follows Meta's struggles with the Metaverse.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 24 Apr 2026 12:00:16 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/24/meta_aws_cpu/</guid>
-    </item>
-    <item>
-      <title>In another wild turn for AI chips, Meta signs deal for millions of Amazon AI CPUs</title>
-      <link>https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/</link>
-      <description>Meta's recent acquisition of millions of Amazon's AI CPUs indicates a new competitive landscape in AI chip technology, focusing on CPU rather than GPU for agentic workloads. This shift highlights the evolving demands in AI processing.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 24 Apr 2026 12:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/</guid>
-    </item>
-    <item>
-      <title>AirPods, Touch Bars, and the rest of Tim Cook&amp;#8217;s legacy</title>
-      <link>https://www.theverge.com/podcast/917965/apple-ceo-cook-ternus-transition</link>
-      <description>Tim Cook's impending departure as Apple's CEO has been anticipated, with John Ternus likely to succeed him. This transition could lead to significant changes in Apple's direction and strategy.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 24 Apr 2026 10:43:07 -0400</pubDate>
-      <guid>https://www.theverge.com/podcast/917965/apple-ceo-cook-ternus-transition</guid>
-    </item>
-    <item>
-      <title>These AI Thirst Trap Creators Say They’re Misunderstood</title>
-      <link>https://www.wired.com/story/gay-ai-instagram-influencers-red-carpet/</link>
-      <description>A viral moment featuring AI-generated influencers has sparked discussions about their impact and the misconceptions surrounding them, highlighting the intersection of technology and social media culture.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 24 Apr 2026 09:30:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/gay-ai-instagram-influencers-red-carpet/</guid>
-    </item>
-    <item>
-      <title>Claude Code's product chief says people have serious FOMO over AI's relentless pace</title>
-      <link>https://www.businessinsider.com/claude-code-product-chief-users-fomo-anthropic-ai-release-pace-2026-4</link>
-      <description>Claude Code's product chief discusses the intense competition in the AI sector, where companies are rapidly releasing overlapping products, creating a sense of urgency among developers.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 24 Apr 2026 06:11:15 +0000</pubDate>
-      <guid>https://www.businessinsider.com/claude-code-product-chief-users-fomo-anthropic-ai-release-pace-2026-4</guid>
-    </item>
-    <item>
-      <title>mandala-gnn added to PyPI</title>
-      <link>https://pypi.org/project/mandala-gnn/</link>
-      <description>The mandala-gnn library has been added to PyPI, offering a native Graph Neural Network and Knowledge Graph Analytics tools supported by scientific research.</description>
-      <category>Meta</category>
-      <pubDate>Fri, 24 Apr 2026 06:10:22 +0000</pubDate>
-      <guid>https://pypi.org/project/mandala-gnn/</guid>
-    </item>
-    <item>
-      <title>【Databricks】Unity AI GatewayでLLMを利用してみた</title>
-      <link>https://dev.classmethod.jp/articles/databricks-try-unity-ai-gateway/</link>
-      <description>A report on utilizing LLMs with Databricks' Unity AI Gateway showcases the integration of large language models in data analytics workflows.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 06:10:19 +0000</pubDate>
-      <guid>https://dev.classmethod.jp/articles/databricks-try-unity-ai-gateway/</guid>
-    </item>
-    <item>
-      <title>mempalace-refresh added to PyPI</title>
-      <link>https://pypi.org/project/mempalace-refresh/</link>
-      <description>The mempalace-refresh tool has been introduced, allowing for efficient incremental mining of data without losing history or creating duplicates.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 24 Apr 2026 06:09:58 +0000</pubDate>
-      <guid>https://pypi.org/project/mempalace-refresh/</guid>
-    </item>
-    <item>
-      <title>OpenAI unveils GPT-5.5 with advanced agentic coding and real-world task execution</title>
-      <link>https://www.thehindubusinessline.com/info-tech/openai-unveils-gpt-55-with-advanced-agentic-coding-and-real-world-task-execution/article70900575.ece</link>
-      <description>OpenAI has launched GPT-5.5, featuring advanced coding capabilities, automation, and enterprise functionalities, promising faster outputs and enhanced AI safeguards.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 06:09:55 +0000</pubDate>
-      <guid>https://www.thehindubusinessline.com/info-tech/openai-unveils-gpt-55-with-advanced-agentic-coding-and-real-world-task-execution/article70900575.ece</guid>
-    </item>
-    <item>
-      <title>China's DeepSeek says releases long-awaited new AI model</title>
-      <link>https://www.hurriyetdailynews.com/chinas-deepseek-says-releases-long-awaited-new-ai-model-221410</link>
-      <description>Chinese startup DeepSeek has launched a new AI model, DeepSeek V4, more than a year after its previous model gained attention for its capabilities. This release underscores China's growing influence in the AI sector despite U.S. restrictions.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 06:04:32 +0000</pubDate>
-      <guid>https://www.hurriyetdailynews.com/chinas-deepseek-says-releases-long-awaited-new-ai-model-221410</guid>
-    </item>
-    <item>
-      <title>China’s top AI players</title>
-      <link>https://www.digitaljournal.com/world/chinas-top-ai-players/article</link>
-      <description>The release of DeepSeek's new large language model showcases China's booming AI industry, which continues to thrive despite U.S. export limitations on advanced technology. This event reflects the country's commitment to AI development.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 06:02:49 +0000</pubDate>
-      <guid>https://www.digitaljournal.com/world/chinas-top-ai-players/article</guid>
-    </item>
-    <item>
-      <title>Huawei Ascend 950 supports DeepSeek V4 how? #tech</title>
-      <link>https://alltoc.com/tech/huawei-ascend-950-supports-deepseek-v4-how</link>
-      <description>Huawei announced that its Ascend supernode platform will fully support DeepSeek's new V4 model, indicating a collaboration that could enhance AI capabilities in China. This partnership highlights the integration of hardware and AI software.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 24 Apr 2026 06:02:09 +0000</pubDate>
-      <guid>https://alltoc.com/tech/huawei-ascend-950-supports-deepseek-v4-how</guid>
-    </item>
-    <item>
-      <title>DeepSeek V4 Pro and V4 Flash preview details? #tech</title>
-      <link>https://alltoc.com/tech/deepseek-v4-pro-and-v4-flash-preview-details</link>
-      <description>DeepSeek has introduced preview access to its new flagship models, V4 Pro and V4 Flash, which are positioned as advancements in its AI lineup. However, these models are not yet fully comparable to the latest industry standards.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 24 Apr 2026 06:02:09 +0000</pubDate>
-      <guid>https://alltoc.com/tech/deepseek-v4-pro-and-v4-flash-preview-details</guid>
-    </item>
-    <item>
-      <title>What did SpaceX warn about Grok imagery? #tech</title>
-      <link>https://alltoc.com/tech/what-did-spacex-warn-about-grok-imagery</link>
-      <description>SpaceX has expressed concerns that ongoing investigations into abusive AI imagery generated by xAI's Grok could negatively impact its market access. This warning highlights the potential consequences of AI misuse.</description>
-      <category>xAI</category>
-      <pubDate>Fri, 24 Apr 2026 06:02:09 +0000</pubDate>
-      <guid>https://alltoc.com/tech/what-did-spacex-warn-about-grok-imagery</guid>
-    </item>
-    <item>
-      <title>concinno 2.23.0</title>
-      <link>https://pypi.org/project/concinno/2.23.0/</link>
-      <description>The latest update to concinno introduces AI behavior governance features for Claude Code, including input rewriting and safety agents. This reflects a growing focus on responsible AI deployment.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 24 Apr 2026 06:00:19 +0000</pubDate>
-      <guid>https://pypi.org/project/concinno/2.23.0/</guid>
-    </item>
-    <item>
-      <title>RFK Jr. Affirms Glyphosate Causes Cancer in Senate Hearing</title>
-      <link>https://www.naturalnews.com/2026-04-24-rfkjr-affirms-glyphosate-causes-cancer-senate-hearing.html</link>
-      <description>Robert F. Kennedy Jr. confirmed in a Senate hearing that glyphosate, a common herbicide, causes cancer, amid rising political and legal scrutiny. This statement could influence public health policy and agricultural practices.</description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 24 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.naturalnews.com/2026-04-24-rfkjr-affirms-glyphosate-causes-cancer-senate-hearing.html</guid>
-    </item>
-    <item>
-      <title>Digitalist Group Plc’s Business Review, 1 January – 31 March 2026</title>
-      <link>https://www.globenewswire.com/news-release/2026/04/24/3280524/0/en/Digitalist-Group-Plc-s-Business-Review-1-January-31-March-2026.html</link>
-      <description>Digitalist Group Plc released its business review for the first quarter of 2026, detailing financial performance and strategic initiatives. This review provides insights into the company's operational direction.</description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 24 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/04/24/3280524/0/en/Digitalist-Group-Plc-s-Business-Review-1-January-31-March-2026.html</guid>
-    </item>
-    <item>
-      <title>AI ALERT: The Silicon Valley Mechanists Are Blind to the Simple Truth: Machine Consciousness Is Already Here</title>
-      <link>https://www.naturalnews.com/2026-04-24-silicon-valley-mechanists-blind-to-simple-truth.html</link>
-      <description>An article argues that we are witnessing a significant cognitive shift with the emergence of machine consciousness, suggesting that experts are underestimating the implications of AI advancements. This perspective challenges current understandings of AI.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.naturalnews.com/2026-04-24-silicon-valley-mechanists-blind-to-simple-truth.html</guid>
-    </item>
-    <item>
-      <title>The Start of a New Era: The BMW Group at Auto China 2026.</title>
-      <link>https://www.press.bmwgroup.com/global/article/detail/T0457355EN/the-start-of-a-new-era:-the-bmw-group-at-auto-china-2026?language=en</link>
-      <description>At Auto China 2026, BMW unveiled several new models, including the iX3 Long Wheelbase and the new BMW 7 Series, showcasing innovations in digital experience and driver assistance technologies. This marks a significant step in automotive technology.</description>
-      <category>Amazon</category>
-      <pubDate>Fri, 24 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.press.bmwgroup.com/global/article/detail/T0457355EN/the-start-of-a-new-era:-the-bmw-group-at-auto-china-2026?language=en</guid>
-    </item>
-    <item>
-      <title>Ubuntu 26.04 "Resolute Raccoon" Launches With Gnome 50 and Linux 7.0</title>
-      <link>https://www.techpowerup.com/348494/ubuntu-26-04-resolute-raccoon-launches-with-gnome-50-and-linux-7-0</link>
-      <description>Canonical has launched Ubuntu 26.04 LTS, featuring Gnome 50 and Linux 7.0, with upgraded system requirements of 6 GB of RAM. This update brings various enhancements to the popular Linux distribution.</description>
-      <category>NVIDIA</category>
-      <pubDate>Fri, 24 Apr 2026 05:59:42 +0000</pubDate>
-      <guid>https://www.techpowerup.com/348494/ubuntu-26-04-resolute-raccoon-launches-with-gnome-50-and-linux-7-0</guid>
-    </item>
-    <item>
-      <title>Sam Altman hints at fast GPT-5.5 progress amid strong market confidence</title>
-      <link>https://cryptobriefing.com/sam-altman-hints-at-fast-gpt-55-progress-amid-strong-market-confidence/</link>
-      <description>Sam Altman has indicated that development of GPT-5.5 is progressing rapidly, which could boost AI accessibility and influence market investments. This signals strong confidence in the AI sector.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 05:59:12 +0000</pubDate>
-      <guid>https://cryptobriefing.com/sam-altman-hints-at-fast-gpt-55-progress-amid-strong-market-confidence/</guid>
-    </item>
-    <item>
-      <title>claude-repath 0.8.1</title>
-      <link>https://pypi.org/project/claude-repath/0.8.1/</link>
-      <description>The latest update for the Claude Code project, version 0.8.1, allows users to migrate project states seamlessly when moving project folders. This improves user experience across sessions.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 24 Apr 2026 05:53:15 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-repath/0.8.1/</guid>
-    </item>
-    <item>
-      <title>Japan launches financial task force amid AI security fears</title>
-      <link>https://www.channelnewsasia.com/business/japan-launches-financial-task-force-amid-ai-security-fears-6078291</link>
-      <description>Japan is forming a financial task force to tackle cybersecurity risks associated with AI, particularly concerning Anthropic's Mythos AI model. This aims to safeguard the financial system from potential vulnerabilities.</description>
-      <category>Anthropic</category>
-      <pubDate>Fri, 24 Apr 2026 05:52:55 +0000</pubDate>
-      <guid>https://www.channelnewsasia.com/business/japan-launches-financial-task-force-amid-ai-security-fears-6078291</guid>
-    </item>
-    <item>
-      <title>Who will win title? The big prediction special</title>
-      <link>https://www.bbc.com/sport/football/articles/cn0w49y475wo?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D</link>
-      <description>This article discusses predictions for the Premier League title race between Manchester City and Arsenal, featuring insights from pundits and fans. The outcome remains uncertain as the season progresses.</description>
-      <category>Microsoft</category>
-      <pubDate>Fri, 24 Apr 2026 05:48:17 +0000</pubDate>
-      <guid>https://www.bbc.com/sport/football/articles/cn0w49y475wo?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D</guid>
-    </item>
-    <item>
-      <title>Why productivity needs to be redefined</title>
-      <link>https://www.sidjha.com/2026/02/why-productivity-needs-to-be-redefined/</link>
-      <description>The article argues for a redefinition of productivity in the context of AI's impact on jobs, emphasizing the need to adapt to changing work dynamics. Failure to do so could lead to negative consequences for workers.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 05:48:00 +0000</pubDate>
-      <guid>https://www.sidjha.com/2026/02/why-productivity-needs-to-be-redefined/</guid>
-    </item>
-    <item>
-      <title>Why you should refuse to let your doctor record you • Buttondown</title>
-      <link>https://buttondown.com/maiht3k/archive/why-you-should-refuse-to-let-your-doctor-record/</link>
-      <description>The article discusses the implications of allowing doctors to record patient appointments, raising concerns about privacy and data security. It emphasizes the importance of patient consent and ethical considerations.</description>
-      <category>OpenAI</category>
-      <pubDate>Fri, 24 Apr 2026 05:47:02 +0000</pubDate>
-      <guid>https://buttondown.com/maiht3k/archive/why-you-should-refuse-to-let-your-doctor-record/</guid>
-    </item>
-    <item>
-      <title>Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model</title>
-      <link>https://simonwillison.net/2026/Apr/22/qwen36-27b/</link>
-      <description>Qwen has announced its new model, Qwen3.6-27B, claiming it delivers flagship-level coding performance, surpassing its predecessor. This model aims to enhance open-source coding capabilities.</description>
-      <category>Meta</category>
-      <pubDate>Fri, 24 Apr 2026 05:47:02 +0000</pubDate>
-      <guid>https://simonwillison.net/2026/Apr/22/qwen36-27b/</guid>
-    </item>
-    <item>
-      <title>SJHN Daily: Celebrini Writes Letter to Fans, Sahlin Wallenius Loaned to Cuda, Sharks Watch Giants</title>
-      <link>https://sanjosehockeynow.com/san-jose-sharks-macklin-celebrini-dear-san-jose-sam-dickinson-michael-misa-podcast/</link>
-      <description>Macklin Celebrini wrote a letter to San Jose Sharks fans expressing optimism about the team's future and encouraging them to make the most of the season. The letter reflects a commitment to the fanbase.</description>
-      <category>NVIDIA</category>
-      <pubDate>Fri, 24 Apr 2026 05:44:45 +0000</pubDate>
-      <guid>https://sanjosehockeynow.com/san-jose-sharks-macklin-celebrini-dear-san-jose-sam-dickinson-michael-misa-podcast/</guid>
-    </item>
-    <item>
-      <title>runx-py added to PyPI</title>
-      <link>https://pypi.org/project/runx-py/</link>
-      <description>The Python SDK for runx has been added to PyPI, providing a governed runtime for agent skills, tools, and chains. This addition enhances the functionality available to Python developers.</description>
-      <category>Open Source</category>
-      <pubDate>Fri, 24 Apr 2026 05:37:07 +0000</pubDate>
-      <guid>https://pypi.org/project/runx-py/</guid>
-    </item>
-    <item>
-      <title>China’s DeepSeek V4 AI model released with 1M-token context window</title>
-      <link>https://cryptobriefing.com/chinas-deepseek-v4-ai-model-released-with-1m-token-context-window/</link>
-      <description>China's DeepSeek has launched its V4 AI model featuring a 1M-token context window, signaling significant advancements in AI technology that may challenge Western dominance.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:30:21 +0000</pubDate>
-      <guid>https://cryptobriefing.com/chinas-deepseek-v4-ai-model-released-with-1m-token-context-window/</guid>
-    </item>
-    <item>
-      <title>China's DeepSeek says it released long-awaited new AI model</title>
-      <link>https://www.channelnewsasia.com/east-asia/china-releases-new-deepseek-v4-ai-model-6078236</link>
-      <description>DeepSeek's new AI model, released after a year of anticipation, boasts capabilities that rival US technologies, further positioning China in the AI race.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 24 Apr 2026 05:28:37 +0000</pubDate>
-      <guid>https://www.channelnewsasia.com/east-asia/china-releases-new-deepseek-v4-ai-model-6078236</guid>
-    </item>
-    <item>
-      <title>How to Build AI-Powered Security Tools in .NET</title>
-      <link>https://www.c-sharpcorner.com/article/how-to-build-ai-powered-security-tools-in-net/</link>
-      <description>This article provides a guide on building AI-powered security tools in .NET, focusing on threat detection and automated responses.</description>
-      <category>Microsoft</category>
-      <pubDate>Fri, 24 Apr 2026 05:25:02 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/how-to-build-ai-powered-security-tools-in-net/</guid>
-    </item>
-    <item>
-      <title>Canada's AI startup Cohere buys Germany's Aleph Alpha to expand in Europe</title>
-      <link>https://www.channelnewsasia.com/business/canadas-ai-startup-cohere-buys-germanys-aleph-alpha-expand-in-europe-6078246</link>
-      <description>Cohere, a Canadian AI startup, has acquired Germany's Aleph Alpha to expand its presence in the European market, targeting government and business clients.</description>
+      <title>The Apple Music student discount saves you $5/month and gives you free Apple TV - here's how</title>
+      <link>https://www.zdnet.com/article/how-to-get-an-apple-music-student-discount-subscription/</link>
+      <description>Students can now enjoy a discounted Apple Music subscription, saving $5 per month, along with free access to Apple TV. This initiative aims to attract younger audiences to Apple's services.</description>
       <category>Industry</category>
-      <pubDate>Fri, 24 Apr 2026 05:25:01 +0000</pubDate>
-      <guid>https://www.channelnewsasia.com/business/canadas-ai-startup-cohere-buys-germanys-aleph-alpha-expand-in-europe-6078246</guid>
+      <pubDate>Sat, 25 Apr 2026 11:00:50 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-get-an-apple-music-student-discount-subscription/</guid>
     </item>
     <item>
-      <title>China's DeepSeek launches preview of new AI model</title>
-      <link>https://www.dw.com/en/new-version-of-deepseek-ai-v4/a-76919223</link>
-      <description>DeepSeek has previewed its new AI model, V4, which follows its previous low-cost chatbot that gained attention for its capabilities.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:25:00 +0000</pubDate>
-      <guid>https://www.dw.com/en/new-version-of-deepseek-ai-v4/a-76919223</guid>
+      <title>Discord Sleuths Gained Unauthorized Access to Anthropic’s Mythos</title>
+      <link>https://www.wired.com/story/security-news-this-week-discord-sleuths-gained-unauthorized-access-to-anthropics-mythos/</link>
+      <description>Unauthorized access to Anthropic’s Mythos was achieved by Discord users, highlighting vulnerabilities in global telecom systems. This incident raises concerns about data security and privacy.</description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 25 Apr 2026 10:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/security-news-this-week-discord-sleuths-gained-unauthorized-access-to-anthropics-mythos/</guid>
     </item>
     <item>
-      <title>copass-google-agents 0.3.1</title>
-      <link>https://pypi.org/project/copass-google-agents/0.3.1/</link>
-      <description>This article discusses the release of Copass agent primitives for Google Vertex AI Agent Engine, aimed at enhancing AI functionalities.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:24:59 +0000</pubDate>
-      <guid>https://pypi.org/project/copass-google-agents/0.3.1/</guid>
+      <title>Zorin OS vs. Solus: I tested two great Linux distros for beginners to find out which is best</title>
+      <link>https://www.zdnet.com/article/solus-vs-zorin-best-distro-depends-on-your-linux-priorities/</link>
+      <description>A comparison between Zorin OS and Solus Linux reveals that both are excellent options for beginners, with Zorin OS 18.1 standing out for its user experience. This analysis helps users choose the right Linux distribution.</description>
+      <category>Industry</category>
+      <pubDate>Sat, 25 Apr 2026 10:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/solus-vs-zorin-best-distro-depends-on-your-linux-priorities/</guid>
     </item>
     <item>
-      <title>mcp-bastion-azure 0.1.3</title>
-      <link>https://pypi.org/project/mcp-bastion-azure/0.1.3/</link>
-      <description>MCP-Bastion security middleware for Azure OpenAI Service has been released, providing protections against prompt injection and PII.</description>
+      <title>Ace the Ping-Pong Robot Can Whup Your Ass</title>
+      <link>https://www.wired.com/story/ace-the-robot-wants-to-become-the-world-table-tennis-champion/</link>
+      <description>The Ace Ping-Pong Robot can analyze ball trajectories and adjust its racket to maintain a competitive game with human players. This development showcases advancements in robotics and AI.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 25 Apr 2026 09:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/ace-the-robot-wants-to-become-the-world-table-tennis-champion/</guid>
+    </item>
+    <item>
+      <title>Crime crew impersonates help desk, abuses Microsoft Teams to steal your data</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/25/new_crime_crew_impersonates_help_desks/</link>
+      <description>A new crime group is using social engineering tactics via Microsoft Teams to impersonate help desk staff and deploy custom malware for data theft. This highlights the evolving nature of cyber threats.</description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 25 Apr 2026 09:28:13 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/25/new_crime_crew_impersonates_help_desks/</guid>
+    </item>
+    <item>
+      <title>chimeralang-mcp 0.2.7</title>
+      <link>https://pypi.org/project/chimeralang-mcp/0.2.7/</link>
+      <description>ChimeraLang MCP Server version 0.2.7 introduces features like probabilistic types and hallucination detection, enhancing AI tool capabilities. This update is significant for developers working with AI.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 24 Apr 2026 11:38:30 +0000</pubDate>
+      <guid>https://pypi.org/project/chimeralang-mcp/0.2.7/</guid>
+    </item>
+    <item>
+      <title>Microsoft now lets admins uninstall Copilot on enterprise devices</title>
+      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-now-lets-admins-uninstall-copilot-on-enterprise-devices/</link>
+      <description>Microsoft has enabled IT administrators to uninstall the AI-powered Copilot from enterprise devices, providing more control over software management. This change reflects growing concerns about AI integration in workplaces.</description>
       <category>Microsoft</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:04 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-azure/0.1.3/</guid>
+      <pubDate>Fri, 24 Apr 2026 11:38:00 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/news/microsoft/microsoft-now-lets-admins-uninstall-copilot-on-enterprise-devices/</guid>
     </item>
     <item>
-      <title>mcp-bastion-gemini 0.1.2</title>
-      <link>https://pypi.org/project/mcp-bastion-gemini/0.1.2/</link>
-      <description>MCP-Bastion security middleware for Google Gemini has been launched, focusing on prompt injection and PII protection.</description>
+      <title>ai-rulez 4.0.2</title>
+      <link>https://pypi.org/project/ai-rulez/4.0.2/</link>
+      <description>The ai-rulez 4.0.2 update offers a comprehensive AI development workflow, supporting over 19 tools and enabling seamless configuration generation. This is crucial for developers looking for streamlined processes.</description>
       <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:03 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-gemini/0.1.2/</guid>
+      <pubDate>Fri, 24 Apr 2026 11:37:41 +0000</pubDate>
+      <guid>https://pypi.org/project/ai-rulez/4.0.2/</guid>
     </item>
     <item>
-      <title>mcp-bastion-langchain 0.1.2</title>
-      <link>https://pypi.org/project/mcp-bastion-langchain/0.1.2/</link>
-      <description>MCP-Bastion security middleware integration for LangChain has been introduced, offering protections against prompt injection and PII.</description>
+      <title>Financial Institutions M&amp;A Key Trends and Outlook</title>
+      <link>https://corpgov.law.harvard.edu/2026/04/24/financial-institutions-ma-key-trends-and-outlook-2/</link>
+      <description>The financial sector anticipates a resurgence in mergers and acquisitions (M&amp;A) activity in 2025, driven by a favorable regulatory environment and economic conditions. This outlook suggests potential growth in the industry.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 24 Apr 2026 11:32:37 +0000</pubDate>
+      <guid>https://corpgov.law.harvard.edu/2026/04/24/financial-institutions-ma-key-trends-and-outlook-2/</guid>
+    </item>
+    <item>
+      <title>"Crushed Tomatoes"</title>
+      <link>https://www.shopblogger.de/blog/archives/30018-Crushed-Tomatoes.html</link>
+      <description>The article titled 'Crushed Tomatoes' lacks content for summarization. Further details are needed to provide a summary and analysis.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:31:00 +0000</pubDate>
+      <guid>https://www.shopblogger.de/blog/archives/30018-Crushed-Tomatoes.html</guid>
+    </item>
+    <item>
+      <title>Anthropic’s Claude AI adds Spotify and StubHub as ‘connectors’</title>
+      <link>http://musically.com/2026/04/24/anthropics-claude-ai-adds-spotify-and-stubhub-as-connectors/</link>
+      <description>Anthropic's Claude AI has integrated Spotify and StubHub as connectors, enhancing its capabilities for music discovery and ticket purchasing through AI chatbots. This move reflects the increasing role of AI in online searching and shopping.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:30:00 +0000</pubDate>
+      <guid>http://musically.com/2026/04/24/anthropics-claude-ai-adds-spotify-and-stubhub-as-connectors/</guid>
+    </item>
+    <item>
+      <title>eulerstack 0.1.1</title>
+      <link>https://pypi.org/project/eulerstack/0.1.1/</link>
+      <description>Eulerstack 0.1.1 is a modular LLM assembler that uses YAML and is compatible with Hugging Face, allowing for flexible model configuration. This tool aims to simplify the development and deployment of language models.</description>
       <category>Open Source</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:03 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-langchain/0.1.2/</guid>
+      <pubDate>Fri, 24 Apr 2026 11:29:53 +0000</pubDate>
+      <guid>https://pypi.org/project/eulerstack/0.1.1/</guid>
     </item>
     <item>
-      <title>mcp-bastion-huggingface 0.1.3</title>
-      <link>https://pypi.org/project/mcp-bastion-huggingface/0.1.3/</link>
-      <description>MCP-Bastion security middleware for Hugging Face Inference has been released, focusing on prompt injection and PII safeguards.</description>
+      <title>claude-context-engine 0.2.7</title>
+      <link>https://pypi.org/project/claude-context-engine/0.2.7/</link>
+      <description>Claude-context-engine 0.2.7 is a local context engine designed for Claude Code, which indexes projects and compresses context to reduce token costs. This update aims to enhance efficiency in managing code sessions.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 24 Apr 2026 11:29:48 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-context-engine/0.2.7/</guid>
+    </item>
+    <item>
+      <title>Show HN: Llm.sql – Run a 640MB LLM on SQLite, with 210MB peak RSS and 7.4 tok/s</title>
+      <link>https://news.ycombinator.com/item?id=47888712</link>
+      <description>Llm.sql is a new LLM inference framework that allows running a 640MB LLM on SQLite, optimizing resource use by transforming LLM execution into structured SQL queries. This innovation addresses hardware limitations for edge LLMs.</description>
+      <category>Meta</category>
+      <pubDate>Fri, 24 Apr 2026 11:28:35 +0000</pubDate>
+      <guid>https://news.ycombinator.com/item?id=47888712</guid>
+    </item>
+    <item>
+      <title>claude-recall 0.5.2</title>
+      <link>https://pypi.org/project/claude-recall/0.5.2/</link>
+      <description>Claude-recall 0.5.2 introduces an automatic query system for Claude Code session archives, utilizing SQLite FTS5 for efficient data retrieval. This update enhances the precision and affordability of querying past sessions.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 24 Apr 2026 11:27:40 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-recall/0.5.2/</guid>
+    </item>
+    <item>
+      <title>Intel beats expectations for the sixth straight quarter as AI demand for CPUs surges</title>
+      <link>https://thenextweb.com/news/intel-q1-2026-earnings-ai-cpu/</link>
+      <description>Intel reported a Q1 revenue of $13.6 billion, surpassing expectations due to a 22% increase in AI and Data Centre revenue. This marks the sixth consecutive quarter of exceeding forecasts, driven by rising demand for AI processors.</description>
+      <category>xAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:15:26 +0000</pubDate>
+      <guid>https://thenextweb.com/news/intel-q1-2026-earnings-ai-cpu/</guid>
+    </item>
+    <item>
+      <title>Digital Payments and E-Commerce Global Fraud, Scams, and Risk Outlook Report: Losses to More than Double from $40 Billion in 2024 to $100 Billion by 2029 - AI Expands Risks and Defensive Capabilities</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/24/3280708/28124/en/Digital-Payments-and-E-Commerce-Global-Fraud-Scams-and-Risk-Outlook-Report-Losses-to-More-than-Double-from-40-Billion-in-2024-to-100-Billion-by-2029-AI-Expands-Risks-and-Defensive-.html</link>
+      <description>A report predicts that losses from fraud in digital payments and e-commerce will more than double by 2029, reaching $100 billion. The report emphasizes the need for enhanced AI-driven fraud detection and cybersecurity measures.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:15:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/24/3280708/28124/en/Digital-Payments-and-E-Commerce-Global-Fraud-Scams-and-Risk-Outlook-Report-Losses-to-More-than-Double-from-40-Billion-in-2024-to-100-Billion-by-2029-AI-Expands-Risks-and-Defensive-.html</guid>
+    </item>
+    <item>
+      <title>Elon Musk's Grok chatbot is inundated with questions on whether he's secretly the father of Amber Heard's children -  following court battle over their frozen embryos</title>
+      <link>https://www.dailymail.com/tvshowbiz/article-15761795/Elon-Musk-Grok-father-Amber-Heard-children-embryos.html</link>
+      <description>Elon Musk's Grok chatbot has become a topic of speculation as users flood it with questions regarding his alleged paternity of Amber Heard's children following a court battle over frozen embryos. This highlights the intersection of AI and celebrity culture.</description>
+      <category>xAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:13:57 +0000</pubDate>
+      <guid>https://www.dailymail.com/tvshowbiz/article-15761795/Elon-Musk-Grok-father-Amber-Heard-children-embryos.html</guid>
+    </item>
+    <item>
+      <title>imagine-mcp 1.0.2</title>
+      <link>https://pypi.org/project/imagine-mcp/1.0.2/</link>
+      <description>Imagine-mcp 1.0.2 is a server designed for image and video understanding and generation, compatible with platforms like Gemini, OpenAI, and Grok. This update aims to enhance multimedia processing capabilities.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:13:46 +0000</pubDate>
+      <guid>https://pypi.org/project/imagine-mcp/1.0.2/</guid>
+    </item>
+    <item>
+      <title>licos-agent-runtime 0.2.0</title>
+      <link>https://pypi.org/project/licos-agent-runtime/0.2.0/</link>
+      <description>Licos-agent-runtime 0.2.0 is a Python agent runtime for LangGraph and LangChain projects, providing a framework for developers to build AI applications. This update focuses on improving the functionality and performance of these projects.</description>
       <category>Open Source</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:02 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-huggingface/0.1.3/</guid>
+      <pubDate>Fri, 24 Apr 2026 11:09:03 +0000</pubDate>
+      <guid>https://pypi.org/project/licos-agent-runtime/0.2.0/</guid>
     </item>
     <item>
-      <title>mcp-bastion-deepseek 0.1.3</title>
-      <link>https://pypi.org/project/mcp-bastion-deepseek/0.1.3/</link>
-      <description>MCP-Bastion has released security middleware for DeepSeek AI, providing protections against prompt injection, PII, and rate limits. This enhances the security of AI applications.</description>
-      <category>DeepSeek</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:00 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-deepseek/0.1.3/</guid>
+      <title>A former ByteDance engineer says China's AI industry is 'far behind' the US — and the gap is getting worse</title>
+      <link>https://www.businessinsider.com/ex-bytedance-engineer-says-chinas-ai-is-far-behind-us-2026-4</link>
+      <description>A former ByteDance engineer claims China's AI industry is lagging behind the US and the gap is worsening, highlighting concerns about innovation and competitiveness.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:08:30 +0000</pubDate>
+      <guid>https://www.businessinsider.com/ex-bytedance-engineer-says-chinas-ai-is-far-behind-us-2026-4</guid>
     </item>
     <item>
-      <title>mcp-bastion-mistral 0.1.2</title>
-      <link>https://pypi.org/project/mcp-bastion-mistral/0.1.2/</link>
-      <description>MCP-Bastion has introduced security middleware for Mistral AI, focusing on prompt injection, PII, and rate-limit protections. This aims to improve the safety of AI systems.</description>
-      <category>Mistral</category>
-      <pubDate>Fri, 24 Apr 2026 05:23:00 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-mistral/0.1.2/</guid>
-    </item>
-    <item>
-      <title>mcp-bastion-vertexai 0.1.2</title>
-      <link>https://pypi.org/project/mcp-bastion-vertexai/0.1.2/</link>
-      <description>MCP-Bastion has launched security middleware for Google Cloud Vertex AI, targeting protections against prompt injection, PII, and rate limits. This is significant for securing cloud-based AI.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:22:58 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-bastion-vertexai/0.1.2/</guid>
-    </item>
-    <item>
-      <title>Top AI Tools Developers Should Learn Right Now</title>
-      <link>https://www.c-sharpcorner.com/article/top-ai-tools-developers-should-learn-right-now/</link>
-      <description>A list of top AI tools for developers highlights those that can enhance productivity and code quality. Staying updated with these tools is crucial for career advancement.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Fri, 24 Apr 2026 05:18:30 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/top-ai-tools-developers-should-learn-right-now/</guid>
-    </item>
-    <item>
-      <title>China’s DeepSeek unveils latest models a year after upending global tech</title>
-      <link>https://www.aljazeera.com/economy/2026/4/24/chinas-deepseek-unveils-latest-model-a-year-after-upending-global-tech</link>
-      <description>Chinese startup DeepSeek has launched its latest models, claiming that DeepSeek-V4-Pro outperforms all competitors in math and coding tasks. This could shift the competitive landscape in AI.</description>
-      <category>Google</category>
-      <pubDate>Fri, 24 Apr 2026 05:17:27 +0000</pubDate>
-      <guid>https://www.aljazeera.com/economy/2026/4/24/chinas-deepseek-unveils-latest-model-a-year-after-upending-global-tech</guid>
-    </item>
-    <item>
-      <title>IWT_PyTorch 0.1.5</title>
-      <link>https://pypi.org/project/iwt-pytorch/0.1.5/</link>
-      <description>IWT has released version 0.1.5 of its Iterative Weighted Thresholding feature selection classifier, designed for use with PyTorch and scikit-learn. This tool aids in machine learning feature selection.</description>
+      <title>open-titans 0.0.5</title>
+      <link>https://pypi.org/project/open-titans/0.0.5/</link>
+      <description>The release of open-titans 0.0.5 introduces Memory-Augmented Sequence Models in Pytorch, enhancing capabilities for developers in AI applications.</description>
       <category>Meta</category>
-      <pubDate>Fri, 24 Apr 2026 05:14:50 +0000</pubDate>
-      <guid>https://pypi.org/project/iwt-pytorch/0.1.5/</guid>
+      <pubDate>Fri, 24 Apr 2026 11:02:05 +0000</pubDate>
+      <guid>https://pypi.org/project/open-titans/0.0.5/</guid>
     </item>
     <item>
-      <title>[セッションレポート] Build AI architectures with custom models on Cloud Run 発表まとめ #GoogleCloudNext</title>
-      <link>https://dev.classmethod.jp/articles/26-next-vegas-session-custom-models-cloud-run/</link>
-      <description>A session report from Google Cloud Next discusses building AI architectures with custom models on Cloud Run, showcasing advancements in cloud-based AI solutions.</description>
-      <category>NVIDIA</category>
-      <pubDate>Fri, 24 Apr 2026 05:06:28 +0000</pubDate>
-      <guid>https://dev.classmethod.jp/articles/26-next-vegas-session-custom-models-cloud-run/</guid>
+      <title>NotebookLM's best feature got much better when I stopped using the default prompt</title>
+      <link>https://www.makeuseof.com/notebooklm-audio-overviews-better-custom-prompt/</link>
+      <description>NotebookLM's functionality improves significantly when users customize prompts beyond the defaults, enhancing the creation of podcast-style content.</description>
+      <category>Google</category>
+      <pubDate>Fri, 24 Apr 2026 11:01:16 +0000</pubDate>
+      <guid>https://www.makeuseof.com/notebooklm-audio-overviews-better-custom-prompt/</guid>
     </item>
     <item>
-      <title>Google TPU vs NVIDIA GPU: Future of AI Hardware</title>
-      <link>https://www.c-sharpcorner.com/article/google-tpu-vs-nvidia-gpu-future-of-ai-hardware/</link>
-      <description>An exploration of the competition between Google’s TPUs and NVIDIA’s GPUs reveals their differences and performance metrics, impacting choices for AI/ML workloads.</description>
-      <category>Meta</category>
-      <pubDate>Fri, 24 Apr 2026 05:00:17 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/google-tpu-vs-nvidia-gpu-future-of-ai-hardware/</guid>
-    </item>
-    <item>
-      <title>Cipla slips despite FDA nod for generic Ventolin; Morgan Stanley stays cautious</title>
-      <link>https://www.thehindubusinessline.com/markets/stock-markets/cipla-slips-despite-fda-nod-for-generic-ventolin-morgan-stanley-stays-cautious/article70900420.ece</link>
-      <description>Cipla's stock has declined despite receiving FDA approval for a generic version of Ventolin, reflecting broader market challenges and underperformance compared to Nifty 50.</description>
+      <title>The Real Reason Apple Just Pushed Back the Next Mac Studio</title>
+      <link>https://www.geeky-gadgets.com/real-reason-apple-delayed-mac-studio-2026/</link>
+      <description>Apple's delays in launching the Mac Studio and MacBook Ultra are reshaping its product strategy, largely due to a global memory supply crisis.</description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>Fri, 24 Apr 2026 04:59:51 +0000</pubDate>
-      <guid>https://www.thehindubusinessline.com/markets/stock-markets/cipla-slips-despite-fda-nod-for-generic-ventolin-morgan-stanley-stays-cautious/article70900420.ece</guid>
+      <pubDate>Fri, 24 Apr 2026 11:00:40 +0000</pubDate>
+      <guid>https://www.geeky-gadgets.com/real-reason-apple-delayed-mac-studio-2026/</guid>
     </item>
     <item>
-      <title>medh5 added to PyPI</title>
-      <link>https://pypi.org/project/medh5/</link>
-      <description>The medh5 library has been added to PyPI, offering a single-file format for medical imaging machine learning workloads, supporting multi-modality images and segmentation.</description>
+      <title>The Tech Download: How Apple's new chief could shake things up</title>
+      <link>https://www.cnbc.com/2026/04/24/the-tech-download-how-apples-new-chief-could-shake-things-up.html</link>
+      <description>CNBC's Jon Fortt discusses how Apple's new CEO could influence the company’s future direction and innovation strategies.</description>
+      <category>Apple</category>
+      <pubDate>Fri, 24 Apr 2026 11:00:01 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/04/24/the-tech-download-how-apples-new-chief-could-shake-things-up.html</guid>
+    </item>
+    <item>
+      <title>Claude Is Connecting Directly To Your Personal Apps</title>
+      <link>https://tech.slashdot.org/story/26/04/24/066231/claude-is-connecting-directly-to-your-personal-apps</link>
+      <description>Anthropic's Claude is expanding its app integrations to include personal services like Spotify and Uber, enhancing user interaction.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:00:00 +0000</pubDate>
+      <guid>https://tech.slashdot.org/story/26/04/24/066231/claude-is-connecting-directly-to-your-personal-apps</guid>
+    </item>
+    <item>
+      <title>The Stanford Freshmen Who Think They Rule the World</title>
+      <link>https://www.theatlantic.com/ideas/2026/04/stanford-students-power/686920/</link>
+      <description>Silicon Valley venture capitalists are increasingly targeting young entrepreneurs, indicating a shift in investment strategies towards fresh talent.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 24 Apr 2026 11:00:00 +0000</pubDate>
+      <guid>https://www.theatlantic.com/ideas/2026/04/stanford-students-power/686920/</guid>
+    </item>
+    <item>
+      <title>9 Tim Cook bets that paid off and 2 big flops that didn’t</title>
+      <link>https://www.macworld.com/article/3123189/9-tim-cook-bets-that-paid-off-and-2-big-flops-that-didnt.html</link>
+      <description>As Tim Cook prepares to step down as Apple CEO, he reflects on his successes and failures over 15 years, shaping Apple's legacy.</description>
+      <category>Apple</category>
+      <pubDate>Fri, 24 Apr 2026 11:00:00 +0000</pubDate>
+      <guid>https://www.macworld.com/article/3123189/9-tim-cook-bets-that-paid-off-and-2-big-flops-that-didnt.html</guid>
+    </item>
+    <item>
+      <title>China plans to block US investment in its top AI firms without government approval</title>
+      <link>https://thenextweb.com/news/china-us-investment-ai-startups-approval/</link>
+      <description>China is planning to restrict US investments in its top AI firms without government approval, escalating tensions in the US-China AI landscape.</description>
       <category>Meta</category>
-      <pubDate>Fri, 24 Apr 2026 04:54:12 +0000</pubDate>
-      <guid>https://pypi.org/project/medh5/</guid>
+      <pubDate>Fri, 24 Apr 2026 10:57:54 +0000</pubDate>
+      <guid>https://thenextweb.com/news/china-us-investment-ai-startups-approval/</guid>
+    </item>
+    <item>
+      <title>claude-recall added to PyPI</title>
+      <link>https://pypi.org/project/claude-recall/</link>
+      <description>The addition of claude-recall to PyPI allows for automatic and precise querying of Claude Code session archives, enhancing user experience.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Fri, 24 Apr 2026 10:57:40 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-recall/</guid>
+    </item>
+    <item>
+      <title>agent-framework-gemini 1.0.0a260424</title>
+      <link>https://pypi.org/project/agent-framework-gemini/1.0.0a260424/</link>
+      <description>Google has integrated its Gemini AI with the Microsoft Agent Framework, enhancing capabilities for developers using this framework. This integration signifies a step towards more advanced AI applications within Microsoft's ecosystem.</description>
+      <category>Google</category>
+      <pubDate>Fri, 24 Apr 2026 10:57:25 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-gemini/1.0.0a260424/</guid>
+    </item>
+    <item>
+      <title>agent-framework-copilotstudio 1.0.0b260424</title>
+      <link>https://pypi.org/project/agent-framework-copilotstudio/1.0.0b260424/</link>
+      <description>Microsoft Agent Framework now includes integration with Copilot Studio, allowing developers to leverage Copilot's features in their applications. This move enhances the versatility of the Agent Framework.</description>
+      <category>Copilot Studio</category>
+      <pubDate>Fri, 24 Apr 2026 10:57:23 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-copilotstudio/1.0.0b260424/</guid>
+    </item>
+    <item>
+      <title>agent-framework-bedrock 1.0.0b260424</title>
+      <link>https://pypi.org/project/agent-framework-bedrock/1.0.0b260424/</link>
+      <description>The Microsoft Agent Framework has added integration with Amazon Bedrock, enabling developers to utilize Bedrock's AI capabilities. This integration reflects a growing trend of cross-platform AI collaboration.</description>
+      <category>Amazon</category>
+      <pubDate>Fri, 24 Apr 2026 10:57:20 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-bedrock/1.0.0b260424/</guid>
+    </item>
+    <item>
+      <title>agent-framework-azure-ai-search 1.0.0b260424</title>
+      <link>https://pypi.org/project/agent-framework-azure-ai-search/1.0.0b260424/</link>
+      <description>Microsoft Agent Framework now supports Azure AI Search integration, providing developers with advanced search capabilities for their applications. This integration is significant for improving user experience in AI-driven apps.</description>
+      <category>Microsoft</category>
+      <pubDate>Fri, 24 Apr 2026 10:57:18 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-azure-ai-search/1.0.0b260424/</guid>
+    </item>
+    <item>
+      <title>agent-framework-github-copilot 1.0.0b260424</title>
+      <link>https://pypi.org/project/agent-framework-github-copilot/1.0.0b260424/</link>
+      <description>Integration of GitHub Copilot with Microsoft Agent Framework allows developers to use Copilot's AI assistance in their projects. This development aims to streamline coding processes within the Microsoft ecosystem.</description>
+      <category>GitHub Copilot</category>
+      <pubDate>Fri, 24 Apr 2026 10:56:54 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-github-copilot/1.0.0b260424/</guid>
+    </item>
+    <item>
+      <title>agent-framework-foundry 1.2.0</title>
+      <link>https://pypi.org/project/agent-framework-foundry/1.2.0/</link>
+      <description>Microsoft Foundry has been integrated into the Microsoft Agent Framework, providing developers with new tools for building AI applications. This integration enhances the framework's capabilities and developer experience.</description>
+      <category>Microsoft</category>
+      <pubDate>Fri, 24 Apr 2026 10:56:51 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-framework-foundry/1.2.0/</guid>
+    </item>
+    <item>
+      <title>tok-protocol added to PyPI</title>
+      <link>https://pypi.org/project/tok-protocol/</link>
+      <description>The tok protocol has been added to PyPI, offering a bridge-first CLI and runtime for Claude Code that compresses conversations. This addition aims to improve efficiency in managing AI interactions.</description>
+      <category>DeepSeek</category>
+      <pubDate>Fri, 24 Apr 2026 10:56:46 +0000</pubDate>
+      <guid>https://pypi.org/project/tok-protocol/</guid>
+    </item>
+    <item>
+      <title>Dew Drop – April 24, 2026 (#4654)</title>
+      <link>https://www.alvinashcraft.com/2026/04/24/dew-drop-april-24-2026-4654/</link>
+      <description>The latest Dew Drop edition highlights various AI resources, including a course on LangChain.js and the introduction of GPT-5.5. This serves as a valuable resource for those interested in AI development.</description>
+      <category>M365 Copilot</category>
+      <pubDate>Fri, 24 Apr 2026 10:55:46 +0000</pubDate>
+      <guid>https://www.alvinashcraft.com/2026/04/24/dew-drop-april-24-2026-4654/</guid>
+    </item>
+    <item>
+      <title>fin-agent 0.6.3</title>
+      <link>https://pypi.org/project/fin-agent/0.6.3/</link>
+      <description>The fin-agent 0.6.3 has been released, offering a financial analysis tool powered by DeepSeek and Tushare. This tool aims to assist users in conducting financial analyses more effectively.</description>
+      <category>DeepSeek</category>
+      <pubDate>Fri, 24 Apr 2026 10:55:32 +0000</pubDate>
+      <guid>https://pypi.org/project/fin-agent/0.6.3/</guid>
+    </item>
+    <item>
+      <title>Google Slashes Pixel 10 Pro XL to Black Friday Prices as It Clears Out 2025 Unlocked Flagship Smartphone Stock</title>
+      <link>https://gizmodo.com/google-slashes-pixel-10-pro-xl-to-black-friday-prices-as-it-clears-out-2025-unlocked-flagship-smartphone-stock-2000750244</link>
+      <description>Google has reduced the price of the Pixel 10 Pro XL to Black Friday levels as it clears out stock for its 2025 flagship smartphone. This move is part of a strategy to boost sales ahead of the holiday season.</description>
+      <category>Google</category>
+      <pubDate>Fri, 24 Apr 2026 10:54:28 +0000</pubDate>
+      <guid>https://gizmodo.com/google-slashes-pixel-10-pro-xl-to-black-friday-prices-as-it-clears-out-2025-unlocked-flagship-smartphone-stock-2000750244</guid>
+    </item>
+    <item>
+      <title>Show HN: Free MVP cost estimator – see what agencies charge vs. a 72-hour sprint</title>
+      <link>https://www.mohamedrashard.dev/cost-to-build</link>
+      <description>A new tool allows founders to estimate the cost of building an MVP by breaking down their app ideas into technical components, revealing agency pricing. This aims to provide transparency in the often opaque pricing of software development.</description>
+      <category>Google</category>
+      <pubDate>Fri, 24 Apr 2026 10:54:08 +0000</pubDate>
+      <guid>https://www.mohamedrashard.dev/cost-to-build</guid>
+    </item>
+    <item>
+      <title>sitellm added to PyPI</title>
+      <link>https://pypi.org/project/sitellm/</link>
+      <description>Sitellm, a new package combining Litellm with Chinese language capabilities and security features, has been added to the Python Package Index (PyPI). This addition enhances the tools available for developers working with AI in Chinese contexts.</description>
+      <category>Microsoft</category>
+      <pubDate>Fri, 24 Apr 2026 10:54:03 +0000</pubDate>
+      <guid>https://pypi.org/project/sitellm/</guid>
+    </item>
+    <item>
+      <title>maximo-enterprise-mcp 0.1.0</title>
+      <link>https://pypi.org/project/maximo-enterprise-mcp/</link>
+      <description>IBM has released version 0.1.0 of its Maximo Asset Management MCP server, providing a stable tool surface for API use. This update aims to improve asset management capabilities for enterprises.</description>
+      <category>AI Foundry</category>
+      <pubDate>Fri, 24 Apr 2026 10:52:54 +0000</pubDate>
+      <guid>https://pypi.org/project/maximo-enterprise-mcp/</guid>
+    </item>
+    <item>
+      <title>DeepSeek’s Sequel Set to Extend China’s Reach in Open-Source A.I. - The New York Times</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=182060938</link>
+      <description>DeepSeek has launched a flagship AI model that aims to strengthen China's position in the open-source AI landscape, following a significant breakthrough last year. This move is part of a broader trend of increased investment in China's AI sector.</description>
+      <category>DeepSeek</category>
+      <pubDate>Fri, 24 Apr 2026 10:52:49 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=182060938</guid>
+    </item>
+    <item>
+      <title>Telangana Police invokes UAPA to demand TeluguScribe’s user data from X</title>
+      <link>https://www.medianama.com/2026/04/223-telangana-police-uapa-teluguscribe-user-data-x/</link>
+      <description>The Telangana Police have invoked the Unlawful Activities (Prevention) Act to demand user data from X, citing objectionable content as justification. This raises concerns about privacy and freedom of expression in India.</description>
+      <category>xAI</category>
+      <pubDate>Fri, 24 Apr 2026 10:45:06 +0000</pubDate>
+      <guid>https://www.medianama.com/2026/04/223-telangana-police-uapa-teluguscribe-user-data-x/</guid>
+    </item>
+    <item>
+      <title>Localized Distribution In The AI Era: The DIRHAM Framework via @sejournal, @gregjarboe</title>
+      <link>https://www.searchenginejournal.com/localized-distribution-in-the-ai-era-the-dirham-framework/569851/</link>
+      <description>The DIRHAM framework is proposed as a solution for marketers to build trust and relevance in the AI-driven content ecosystem, addressing shortcomings of traditional frameworks. It emphasizes localized distribution strategies.</description>
+      <category>Perplexity</category>
+      <pubDate>Fri, 24 Apr 2026 10:45:06 +0000</pubDate>
+      <guid>https://www.searchenginejournal.com/localized-distribution-in-the-ai-era-the-dirham-framework/569851/</guid>
+    </item>
+    <item>
+      <title>At SpaceX, AI is burning the cash that Starlink earns</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/at-spacex-ai-is-burning-the-cash-that-starlink-earns/articleshow/130491240.cms</link>
+      <description>SpaceX is significantly investing in its AI division, xAI, funded by profits from Starlink, as it prepares for an IPO. This shift indicates a strategic pivot towards AI technologies amidst rising costs.</description>
+      <category>xAI</category>
+      <pubDate>Fri, 24 Apr 2026 10:38:31 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/at-spacex-ai-is-burning-the-cash-that-starlink-earns/articleshow/130491240.cms</guid>
+    </item>
+    <item>
+      <title>langchain-cosmergon 0.1.0</title>
+      <link>https://pypi.org/project/langchain-cosmergon/0.1.0/</link>
+      <description>The langchain-cosmergon 0.1.0 release introduces tools compatible with LangChain and CrewAI, aimed at enhancing the agent economy. This update supports developers in building more integrated AI solutions.</description>
+      <category>Open Source</category>
+      <pubDate>Fri, 24 Apr 2026 10:38:15 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-cosmergon/0.1.0/</guid>
+    </item>
+    <item>
+      <title>langchain-cosmergon added to PyPI</title>
+      <link>https://pypi.org/project/langchain-cosmergon/</link>
+      <description>The langchain-cosmergon package has been added to PyPI, providing tools that support the agent economy in a LangChain and CrewAI-compatible format. This addition enhances the ecosystem for developers.</description>
+      <category>Open Source</category>
+      <pubDate>Fri, 24 Apr 2026 10:38:10 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-cosmergon/</guid>
+    </item>
+    <item>
+      <title>China's DeepSeek launches an update of its AI model</title>
+      <link>https://www.kiro7.com/news/business/chinas-deepseek/SDBKXJWGOE237FPCM4IXCJL6JY/</link>
+      <description>DeepSeek has unveiled updates to its AI model, which previously made waves in the market, indicating ongoing innovation in China's AI sector. This update aims to maintain its competitive edge.</description>
+      <category>DeepSeek</category>
+      <pubDate>Fri, 24 Apr 2026 10:31:51 +0000</pubDate>
+      <guid>https://www.kiro7.com/news/business/chinas-deepseek/SDBKXJWGOE237FPCM4IXCJL6JY/</guid>
     </item>
   </channel>
 </rss>
