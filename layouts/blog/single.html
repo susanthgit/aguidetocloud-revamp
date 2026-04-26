@@ -1,0 +1,143 @@
+{{ define "main" }}
+{{/* ── 🌸 Zen Phase 5: Blog Reading Room — 3-column layout ── */}}
+{{ $wordCount := .WordCount }}
+{{ $readTime := div (add $wordCount 200) 250 }}
+{{ $hasVideo := .Params.youtube_id }}
+
+{{/* Counter base from post age + word count */}}
+{{ $daysSince := div (sub now.Unix .Date.Unix) 86400 }}
+{{ $readBase := add (mul $daysSince 8) (div $wordCount 50) }}
+
+<div class="zt-reading">
+  {{/* ── LEFT: Sidebar with TOC (desktop only) ── */}}
+  <aside class="zt-sidebar" aria-label="Table of contents">
+    <nav class="zt-toc">
+      <p class="zt-toc-title">On this page</p>
+      {{ .TableOfContents }}
+    </nav>
+  </aside>
+
+  {{/* ── CENTER: Main content ── */}}
+  <article class="zt-reading-content">
+    {{ partial "blog-prev-next.html" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    {{/* Badges: counter + Ko-fi */}}
+    <div class="zt-reading-badges">
+      <div class="tool-counter" data-base="{{ $readBase }}" aria-hidden="true">
+        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $readBase }}</span>
+        <span class="tool-counter-verb">reads</span>
+      </div>
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+    </div>
+
+    {{/* Meta line */}}
+    <p class="zt-reading-meta">
+      {{ if .Params.card_tag }}<span class="zt-tag">{{ .Params.card_tag }}</span>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      <span>·</span>
+      <span>by <a href="/links/">{{ .Site.Params.author }}</a></span>
+      <span>·</span>
+      <span>{{ $readTime }} min read</span>
+    </p>
+
+    {{/* Updated date */}}
+    {{ with .Lastmod }}
+    {{ if ne ($.Date.Format "2006-01-02") (.Format "2006-01-02") }}
+    <p class="zt-reading-updated">Updated <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time></p>
+    {{ end }}
+    {{ end }}
+
+    {{/* Share button */}}
+    <div class="zt-reading-actions">
+      <button aria-label="Share this article" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✅ Copied!';var b=this;setTimeout(function(){b.textContent='🔗 Share'},2000)}.bind(this))}">🔗 Share</button>
+    </div>
+
+    {{/* Mobile TOC (hidden on desktop) */}}
+    <details class="zt-toc-mobile">
+      <summary>On this page</summary>
+      <div class="zt-toc-mobile-inner">
+        {{ .TableOfContents }}
+      </div>
+    </details>
+
+    {{/* Mobile video (hidden on desktop, shown on mobile for video posts) */}}
+    {{ if $hasVideo }}
+    <div class="zt-reading-video-mobile" style="display:none">
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-md,10px);border:1px solid var(--border,#262626)">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}?rel=0"
+                title="{{ .Title }}" frameborder="0" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* Article body */}}
+    <div class="zt-reading-body">
+      {{ .Content }}
+    </div>
+
+    {{/* Resources */}}
+    {{ if .Params.resources }}
+    <div class="zt-reading-resources">
+      <h2>📥 Resources</h2>
+      <ul>
+        {{ range .Params.resources }}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ partial "back-nav" (dict "Page" . "URL" "/blog/" "Label" "Blog") }}
+  </article>
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content">
+    {{/* Video widget (only for posts with youtube_id) */}}
+    {{ if $hasVideo }}
+    <div class="zt-companion-video">
+      <div class="zt-companion-video-player" id="zt-video-player">
+        <iframe src="" data-src="https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}?rel=0&autoplay=1"
+                title="{{ .Title }}" frameborder="0" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="zt-companion-video-thumb" id="zt-video-thumb" onclick="var p=document.getElementById('zt-video-player'),f=p.querySelector('iframe');f.src=f.dataset.src;p.classList.add('is-active');this.style.display='none';document.getElementById('zt-video-collapse').style.display='block'">
+        <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/mqdefault.jpg" alt="Watch: {{ .Title }}" loading="lazy">
+        <div class="zt-companion-video-play">▶</div>
+      </div>
+      <button class="zt-companion-video-collapse" id="zt-video-collapse" style="display:none" onclick="var p=document.getElementById('zt-video-player'),f=p.querySelector('iframe');f.src='';p.classList.remove('is-active');document.getElementById('zt-video-thumb').style.display='block';this.style.display='none'">Collapse video</button>
+      <p class="zt-companion-video-label">📺 Watch this guide</p>
+    </div>
+    {{ end }}
+
+    {{/* Related articles */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">More articles</p>
+      {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
+      {{ range $related }}
+      <a href="{{ .Permalink }}" class="zt-companion-link">
+        <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+        <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+      </a>
+      {{ end }}
+    </div>
+
+    {{/* Subscribe CTA */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Stay updated</p>
+      <div class="zt-companion-cta">
+        <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
+        <a href="{{ .Site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+        <a href="/free-tools/" class="zt-companion-cta-btn">🧰 Free Tools</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="zt-reading-progress" aria-hidden="true"></div>
+{{ end }}

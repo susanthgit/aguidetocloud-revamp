@@ -16,7 +16,7 @@ enableRobotsTXT = true
   author = "Susanth Sutheesh"
   tagline = "Free Cloud, AI & Microsoft 365 Tools for IT Pros"
   subtitle = "Hands-on tutorials for beginners — by Susanth Sutheesh"
-  cache_version = "2026042616b"
+  cache_version = "2026042617a"
   youtube_channel = "https://www.youtube.com/susanthsutheesh"
   youtube_bites = "https://www.youtube.com/aguidetocloud"
   linkedin = "https://www.linkedin.com/in/susanthsutheesh/"
@@ -62,6 +62,10 @@ enableRobotsTXT = true
     weight = 6
 
 [markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true

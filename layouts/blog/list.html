@@ -1,49 +1,46 @@
 {{ define "main" }}
-{{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" "#0EA5E9" "counter_base" (len .Pages) "counter_verb" "articles") }}
-<div class="container">
-  <div class="blog-tl-header">
-    <input type="text" id="blog-search" class="blog-tl-search" placeholder="🔍 Search..." autocomplete="off" aria-label="Search blog posts">
+<div class="zt-page">
+  {{ partial "tool-header.html" (dict "page" . "title" .Title "counter_base" (len .Pages) "counter_verb" "articles") }}
+
+  {{/* Search */}}
+  <div style="max-width:600px;margin-bottom:var(--space-6,24px)">
+    <input type="text" id="blog-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search blog posts"
+      style="width:100%;padding:var(--space-2,8px) var(--space-3,12px);border-radius:var(--radius-sm,6px);border:1px solid var(--border,#262626);background:var(--bg-elevated,#1A1A1A);color:var(--text-primary,#F5F5F5);font-size:var(--zen-text-sm,0.875rem);outline:none;transition:border-color var(--transition,150ms ease-out)"
+      onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
   </div>
 
-  <div class="blog-video-cta">
-    <p>📺 Looking for video tutorials? Browse <a href="/ai-hub/">AI Hub</a> · <a href="/cloud-labs/">Cloud Labs</a> · <a href="/certifications/">Full Courses</a> · <a href="/exam-qa/">Mock Exams</a></p>
+  {{/* Video CTA */}}
+  <div style="margin-bottom:var(--space-6,24px);padding:var(--space-3,12px) var(--space-4,16px);background:var(--bg-elevated,#1A1A1A);border:1px solid var(--border,#262626);border-radius:var(--radius-sm,6px)">
+    <p style="margin:0;font-size:var(--zen-text-sm,0.875rem);color:var(--text-tertiary,#A3A3A3)">📺 Looking for video tutorials? Browse <a href="/ai-hub/" style="color:var(--accent);text-decoration:none">AI Hub</a> · <a href="/cloud-labs/" style="color:var(--accent);text-decoration:none">Cloud Labs</a> · <a href="/certifications/" style="color:var(--accent);text-decoration:none">Full Courses</a> · <a href="/exam-qa/" style="color:var(--accent);text-decoration:none">Mock Exams</a></p>
   </div>
 
-  <div class="blog-timeline" id="blog-list">
+  {{/* Article cards */}}
+  <div class="zt-blog-list" id="blog-list">
     {{ range .Pages.ByDate.Reverse }}
-    <a href="{{ .RelPermalink }}" class="blog-tl-item">
-      <div class="blog-tl-dot"></div>
-      <div class="blog-tl-card">
-        <div class="blog-tl-top">
-          {{ if .Params.card_tag }}<span class="blog-tl-tag {{ .Params.tag_class }}">{{ .Params.card_tag }}</span>{{ end }}
-          <span class="blog-tl-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
-        </div>
-        <h2>{{ .Title }}</h2>
-        {{ with .Description }}<p class="blog-tl-desc">{{ . | truncate 150 }}</p>{{ end }}
+    <a href="{{ .RelPermalink }}" class="zt-blog-card">
+      <div class="zt-blog-card-top">
+        {{ if .Params.card_tag }}<span class="zt-blog-card-tag">{{ .Params.card_tag }}</span>{{ end }}
+        <span class="zt-blog-card-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
       </div>
+      <h2 class="zt-blog-card-title">{{ .Title }}</h2>
+      {{ with .Description }}<p class="zt-blog-card-desc">{{ . | truncate 150 }}</p>{{ end }}
     </a>
     {{ end }}
   </div>
+
+  <p id="blog-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--zen-text-sm,0.875rem)">No posts found — try a different search term</p>
 </div>
 
 <script>
 document.getElementById('blog-search').addEventListener('input', function() {
   var q = this.value.toLowerCase();
   var visible = 0;
-  document.querySelectorAll('.blog-tl-item').forEach(function(el) {
+  document.querySelectorAll('.zt-blog-card').forEach(function(el) {
     var show = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
     el.style.display = show ? '' : 'none';
     if (show) visible++;
   });
-  var noResults = document.getElementById('blog-no-results');
-  if (!noResults) {
-    noResults = document.createElement('p');
-    noResults.id = 'blog-no-results';
-    noResults.style.cssText = 'text-align:center;color:rgba(255,255,255,0.35);padding:2rem 0;font-size:0.9rem;';
-    noResults.textContent = 'No posts found — try a different search term';
-    document.querySelector('.blog-timeline').after(noResults);
-  }
-  noResults.style.display = (q && visible === 0) ? '' : 'none';
+  document.getElementById('blog-no-results').style.display = (q && visible === 0) ? '' : 'none';
 });
 </script>
 
