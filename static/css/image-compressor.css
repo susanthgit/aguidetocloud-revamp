@@ -15,15 +15,15 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .imgcomp-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -34,9 +34,9 @@
   text-align: center;
   white-space: nowrap;
 }
-.imgcomp-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.imgcomp-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .imgcomp-tab.active {
-  color: #fff;
+  color: var(--text-primary);
   background: #818CF8;
   border-color: #818CF8;
   box-shadow: 0 2px 8px rgba(129, 140, 248, 0.3);
@@ -55,9 +55,7 @@
   padding: 0.65rem 1.1rem;
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary);
 }
 
 .imgcomp-privacy-icon {
@@ -73,8 +71,6 @@
   cursor: pointer;
   transition: all 0.25s ease;
   background: rgba(129,140,248,0.04);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   margin-bottom: 1.5rem;
   outline: none;
 }
@@ -100,7 +96,7 @@
 
 .imgcomp-upload-text {
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -112,7 +108,7 @@
 
 .imgcomp-upload-hint {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 /* ── Batch Controls ── */
@@ -131,7 +127,7 @@
 
 .imgcomp-batch-stats {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-primary);
 }
 
 .imgcomp-batch-stats strong {
@@ -168,14 +164,14 @@
 }
 
 .imgcomp-btn-ghost {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.7);
+  background: var(--bg-elevated);
+  border-color: var(--border);
+  color: var(--text-secondary);
 }
 
 .imgcomp-btn-ghost:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 .imgcomp-btn-danger {
@@ -208,19 +204,17 @@
 /* ── Apply to All / Advanced ── */
 .imgcomp-apply-all,
 .imgcomp-advanced {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 0.75rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .imgcomp-apply-all-toggle {
   padding: 0.85rem 1.25rem;
   cursor: pointer;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
+  color: var(--text-secondary);
   list-style: none;
   user-select: none;
   transition: color 0.2s;
@@ -242,7 +236,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 }
 
 .imgcomp-apply-all-toggle:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .imgcomp-apply-all-body {
@@ -273,18 +267,18 @@ details[open] > .imgcomp-apply-all-toggle::before {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-bottom: 0.35rem;
 }
 
 .imgcomp-input,
 .imgcomp-select {
   width: 100%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.55rem 0.75rem;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.85rem;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -310,12 +304,12 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-target-unit {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 .imgcomp-hint {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-top: 0.25rem;
 }
 
@@ -324,7 +318,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   margin-top: 2rem;
   padding: 0.75rem;
   border-radius: 14px;
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-elevated);
 }
 
 /* ── Slider ── */
@@ -340,7 +334,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
   outline: none;
 }
 
@@ -378,7 +372,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   cursor: pointer;
   min-width: 200px;
 }
@@ -402,12 +396,10 @@ details[open] > .imgcomp-apply-all-toggle::before {
 }
 
 .imgcomp-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1.25rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   transition: border-color 0.2s;
 }
 
@@ -434,7 +426,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   height: 100px;
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(0,0,0,0.3);
+  background: var(--bg-elevated);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -464,7 +456,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-filename {
   font-size: 0.95rem;
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -476,7 +468,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 .imgcomp-savings-badge {
@@ -502,14 +494,14 @@ details[open] > .imgcomp-apply-all-toggle::before {
 }
 
 .imgcomp-savings-badge.neutral {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
 }
 
 .imgcomp-time {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 /* ── Card actions (top-right) ── */
@@ -526,7 +518,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   gap: 0.75rem;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border);
 }
 
 .imgcomp-control {
@@ -539,7 +531,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-compare-wrap {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border);
 }
 
 .imgcomp-compare-toggle {
@@ -567,7 +559,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   overflow: hidden;
   user-select: none;
   touch-action: none;
-  background: rgba(0,0,0,0.3);
+  background: var(--bg-elevated);
   aspect-ratio: auto;
 }
 
@@ -624,7 +616,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.55rem;
-  color: #fff;
+  color: var(--text-primary);
   white-space: nowrap;
   z-index: 4;
   letter-spacing: 2px;
@@ -647,13 +639,13 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-compare-label-before {
   left: 8px;
   background: rgba(239,68,68,0.8);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .imgcomp-compare-label-after {
   right: 8px;
   background: rgba(74,222,128,0.8);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* ── Processing spinner ── */
@@ -686,13 +678,11 @@ details[open] > .imgcomp-apply-all-toggle::before {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(239,68,68,0.95);
-  color: #fff;
+  color: var(--text-primary);
   padding: 0.65rem 1.25rem;
   border-radius: 16px;
   font-size: 0.85rem;
   z-index: 9999;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   animation: imgcomp-toast-in 0.3s ease;
   max-width: 90vw;
   text-align: center;
@@ -712,7 +702,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-faq {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 
 .imgcomp-faq-title {
@@ -737,7 +727,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 }
 
 .imgcomp-faq-a {
-  color: rgba(255,255,255,0.75);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.6;
 }
@@ -863,7 +853,7 @@ body.page-image-compressor .site-nav {
 
 .imgcomp-presets-label {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   margin-bottom: 0.6rem;
   font-weight: 600;
 }
@@ -880,21 +870,19 @@ body.page-image-compressor .site-nav {
   align-items: center;
   gap: 0.15rem;
   padding: 0.7rem 0.5rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   font-family: inherit;
-  color: rgba(255,255,255,0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  color: var(--text-secondary);
 }
 
 .imgcomp-preset-btn:hover {
   background: rgba(129,140,248,0.1);
   border-color: rgba(129,140,248,0.35);
-  color: #fff;
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
@@ -915,7 +903,7 @@ body.page-image-compressor .site-nav {
 
 .imgcomp-preset-desc {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 /* ── Custom resize toggle ── */
@@ -933,8 +921,6 @@ body.page-image-compressor .site-nav {
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   z-index: 10000;
   display: flex;
   flex-direction: column;
@@ -949,13 +935,13 @@ body.page-image-compressor .site-nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 
 .imgcomp-modal-title {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.8);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -1044,7 +1030,7 @@ body.page-image-compressor .site-nav {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.6rem;
-  color: #fff;
+  color: var(--text-primary);
   white-space: nowrap;
   z-index: 4;
   letter-spacing: 3px;

@@ -99,8 +99,7 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.75rem;
   transition: border-color 0.2s;
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-}
+  }
 .cstudio-card:hover { border-color: rgba(var(--cstudio-accent-rgb), 0.3); }
 .cstudio-card-title {
   color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem;
@@ -141,8 +140,7 @@
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px; padding: 1rem; text-align: center;
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-}
+  }
 .cstudio-platform-card .cstudio-card-icon { font-size: 2rem; margin-bottom: 0.3rem; }
 .cstudio-platform-card h4 { color: #fff; font-size: 0.95rem; margin: 0.3rem 0; }
 .cstudio-platform-card p { color: rgba(255,255,255,0.5); font-size: 0.78rem; line-height: 1.4; }

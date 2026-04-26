@@ -379,7 +379,7 @@
     const maxScore = results[0].score;
     const labels = ['🥇 Best Match', '🥈 Runner Up', '🥉 Also Consider'];
 
-    let html = '<h2 style="color:#e2e8f0;text-align:center;margin-bottom:1.5rem;">Your Recommended Plans</h2>';
+    let html = '<h2 style="color:var(--text-primary);text-align:center;margin-bottom:1.5rem;">Your Recommended Plans</h2>';
 
     results.forEach((r, idx) => {
       const pct = Math.round((r.score / maxScore) * 100);
@@ -448,7 +448,7 @@
     // Sort by date descending
     const sorted = [...changelog].sort((a, b) => b.date.localeCompare(a.date));
 
-    let html = '<h2 style="color:#e2e8f0;margin-bottom:1.5rem;">Microsoft Licensing Changes</h2>';
+    let html = '<h2 style="color:var(--text-primary);margin-bottom:1.5rem;">Microsoft Licensing Changes</h2>';
 
     sorted.forEach(entry => {
       const dateStr = formatDate(entry.date);
@@ -727,7 +727,7 @@
     html += '</div></div>';
 
     // Available add-ons
-    html += '<h3 style="color:#e2e8f0;font-size:1rem;margin-bottom:0.8rem;">🧩 Available Add-ons</h3>';
+    html += '<h3 style="color:var(--text-primary);font-size:1rem;margin-bottom:0.8rem;">🧩 Available Add-ons</h3>';
 
     data.addons.forEach(addon => {
       const detailUrl = planMap[addon.id]?.detail_url || '';

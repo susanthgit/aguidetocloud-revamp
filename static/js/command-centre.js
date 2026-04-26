@@ -858,7 +858,7 @@
     social_github: 'Social: GitHub', social_kofi: 'Social: Ko-fi', share: 'Share Button'
   };
   var LINK_COLORS = {
-    free_tools: '#66ffff', ai_news: '#ff66ff', cert_guides: '#10B981', blog: '#0EA5E9',
+    free_tools: 'var(--accent)', ai_news: '#ff66ff', cert_guides: '#10B981', blog: '#0EA5E9',
     youtube_main: '#ff4444', youtube_bites: '#ff4444',
     kofi_shop: '#FBBF24', whatsapp: '#25D366', donate: '#FF5E5B',
     social_youtube: '#ff4444', social_linkedin: '#0077B5', social_github: '#fff', social_kofi: '#FF5E5B', share: '#64748B'
@@ -900,7 +900,7 @@
             datasets: [{
               data: d.trend.map(function(t) { return t.clicks; }),
               backgroundColor: 'rgba(102,255,255,0.3)',
-              borderColor: '#66ffff', borderWidth: 1, borderRadius: 3
+              borderColor: 'var(--accent)', borderWidth: 1, borderRadius: 3
             }]
           },
           options: {
@@ -920,7 +920,7 @@
       var maxClicks = d.clicks[0].clicks || 1;
       linksEl.innerHTML = d.clicks.map(function(c) {
         var label = LINK_LABELS[c.link_id] || c.link_id;
-        var color = LINK_COLORS[c.link_id] || '#66ffff';
+        var color = LINK_COLORS[c.link_id] || 'var(--accent)';
         var pct = Math.round((c.clicks / maxClicks) * 100);
         var share = d.totalClicks > 0 ? Math.round((c.clicks / d.totalClicks) * 1000) / 10 : 0;
         return '<div class="cc-bio-row">' +
@@ -935,10 +935,10 @@
 
     // By Section
     var secEl = document.getElementById('cc-bio-sections');
-    var secColors = { primary: '#66ffff', watch: '#ff4444', connect: '#25D366', social: '#a78bfa', footer: '#64748B' };
+    var secColors = { primary: 'var(--accent)', watch: '#ff4444', connect: '#25D366', social: '#a78bfa', footer: '#64748B' };
     if (d.sections && d.sections.length) {
       secEl.innerHTML = d.sections.map(function(s) {
-        var color = secColors[s.section] || '#66ffff';
+        var color = secColors[s.section] || 'var(--accent)';
         var share = d.totalClicks > 0 ? Math.round((s.clicks / d.totalClicks) * 1000) / 10 : 0;
         return '<div class="cc-bio-section-card" style="border-left:3px solid ' + color + '">' +
           '<span class="cc-bio-sec-name">' + esc(s.section) + '</span>' +

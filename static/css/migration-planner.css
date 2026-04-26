@@ -4,10 +4,6 @@
    ========================================================= */
 
 :root {
-  --tool-accent: #6478CC;
-  --tool-accent-rgb: 100, 120, 204;
-  --tool-accent-dim: rgba(100, 120, 204, 0.15);
-  --tool-accent-glow: rgba(100, 120, 204, 0.08);
 }
 
 /* ---- Layout ---- */
@@ -22,8 +18,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 2rem;
   overflow-x: auto;
@@ -36,7 +32,7 @@
   padding: 0.6rem 1rem;
   background: none;
   border: 1px solid transparent;
-  color: #aaa;
+  color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
@@ -46,15 +42,15 @@
   flex: 1;
   text-align: center;
 }
-.migplan-tab:hover { color: #ddd; background: rgba(255, 255, 255, 0.06); }
+.migplan-tab:hover { color: #ddd; background: var(--bg-elevated); }
 .migplan-tab[aria-selected="true"] {
-  color: #fff;
-  background: var(--tool-accent);
-  border-color: var(--tool-accent);
-  box-shadow: 0 2px 8px rgba(100, 120, 204, 0.3);
+  color: var(--text-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .migplan-tab:focus-visible {
-  outline: 2px solid var(--tool-accent);
+  outline: 2px solid var(--accent);
   outline-offset: -2px;
   border-radius: 14px;
 }
@@ -82,35 +78,35 @@
 .migplan-wizard-progress-bar {
   flex: 1;
   height: 6px;
-  background: rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
   border-radius: 3px;
   overflow: hidden;
 }
 .migplan-wizard-progress-fill {
   height: 100%;
-  background: var(--tool-accent);
+  background: var(--accent);
   border-radius: 3px;
   transition: width 0.4s ease;
 }
 .migplan-wizard-step-label {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--text-muted);
   white-space: nowrap;
 }
 
 .migplan-question {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .migplan-question-tip {
   font-size: 0.82rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
-.migplan-question-tip .tip-icon { color: var(--tool-accent); }
+.migplan-question-tip .tip-icon { color: var(--accent); }
 
 .migplan-options {
   display: grid;
@@ -119,29 +115,29 @@
   margin-bottom: 2rem;
 }
 .migplan-option {
-  background: rgba(100, 120, 204, 0.06);
-  border: 1.5px solid rgba(100, 120, 204, 0.18);
+  background: var(--accent-subtle);
+  border: 1.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 16px;
   padding: 1rem;
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
 }
 .migplan-option:hover {
-  background: rgba(100, 120, 204, 0.12);
-  border-color: rgba(100, 120, 204, 0.35);
-  color: #fff;
+  background: var(--accent-subtle);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--text-primary);
 }
 .migplan-option.selected {
-  background: rgba(100, 120, 204, 0.18);
-  border-color: var(--tool-accent);
-  color: #fff;
-  box-shadow: 0 0 12px rgba(100, 120, 204, 0.2);
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .migplan-option:focus-visible {
-  outline: 2px solid var(--tool-accent);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .migplan-option-emoji {
@@ -152,14 +148,14 @@
 .migplan-option-label { font-weight: 600; }
 .migplan-option-desc {
   font-size: 0.78rem;
-  color: #888;
+  color: var(--text-muted);
   margin-top: 0.3rem;
 }
 
 /* Multi-select checkbox style */
 .migplan-option.multi-select.selected::before {
   content: "✓ ";
-  color: var(--tool-accent);
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -179,8 +175,8 @@
   transition: all 0.2s;
 }
 .migplan-btn-primary {
-  background: var(--tool-accent);
-  color: #fff;
+  background: var(--accent);
+  color: var(--text-primary);
 }
 .migplan-btn-primary:hover { filter: brightness(1.15); }
 .migplan-btn-primary:disabled {
@@ -188,18 +184,18 @@
   cursor: not-allowed;
 }
 .migplan-btn-secondary {
-  background: rgba(255,255,255,0.06);
-  color: #aaa;
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
 }
-.migplan-btn-secondary:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.migplan-btn-secondary:hover { color: var(--text-primary); background: var(--border); }
 
 /* ---- Complexity Score ---- */
 .migplan-score-card {
   text-align: center;
   padding: 2.5rem 2rem;
-  background: rgba(100, 120, 204, 0.06);
-  border: 1px solid rgba(100, 120, 204, 0.2);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 16px;
   margin-bottom: 2rem;
 }
@@ -211,7 +207,7 @@
 }
 .migplan-score-label {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 .migplan-score-tier {
@@ -230,11 +226,11 @@
   gap: 2rem;
   flex-wrap: wrap;
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--text-muted);
   margin-top: 1rem;
 }
 .migplan-score-meta span { white-space: nowrap; }
-.migplan-score-meta strong { color: #fff; }
+.migplan-score-meta strong { color: var(--text-primary); }
 
 .migplan-score-narrative {
   font-size: 0.9rem;
@@ -262,17 +258,15 @@
   gap: 1.25rem;
 }
 .migplan-workload-card {
-  background: rgba(255,255,255,0.03);
-  -webkit-backdrop-filter: blur(var(--glass-blur-card));
-  backdrop-filter: blur(var(--glass-blur-card));
-  border: var(--glass-border);
-  border-radius: var(--glass-radius-card);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
   padding: 1.25rem;
   transition: border-color 0.2s;
 }
 .migplan-workload-card:hover {
-  border-color: rgba(100, 120, 204, 0.3);
-  box-shadow: 0 0 20px rgba(100, 120, 204, 0.1);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  box-shadow: 0 0 20px var(--accent-subtle);
 }
 .migplan-workload-header {
   display: flex;
@@ -283,7 +277,7 @@
 .migplan-workload-name {
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .migplan-workload-score-badge {
   padding: 0.2rem 0.6rem;
@@ -293,7 +287,7 @@
 }
 .migplan-workload-bar {
   height: 6px;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   border-radius: 3px;
   margin-bottom: 0.75rem;
   overflow: hidden;
@@ -312,7 +306,7 @@
   font-size: 0.82rem;
   color: #bbb;
   padding: 0.3rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border);
 }
 .migplan-workload-items li:last-child { border: none; }
 
@@ -320,7 +314,7 @@
 .migplan-toggle-btn {
   background: none;
   border: none;
-  color: var(--tool-accent);
+  color: var(--accent);
   font-size: 0.8rem;
   cursor: pointer;
   padding: 0.3rem 0;
@@ -345,7 +339,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(100, 120, 204, 0.2);
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .migplan-phase {
   position: relative;
@@ -360,7 +354,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--tool-accent);
+  background: var(--accent);
   border: 2px solid #060610;
 }
 .migplan-phase-header {
@@ -372,35 +366,35 @@
 .migplan-phase-name {
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .migplan-phase-duration {
   font-size: 0.8rem;
-  color: var(--tool-accent);
+  color: var(--accent);
   font-weight: 600;
 }
 .migplan-phase-desc {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }
 .migplan-phase-bar {
   height: 24px;
-  background: rgba(100, 120, 204, 0.1);
+  background: var(--accent-subtle);
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 0.75rem;
 }
 .migplan-phase-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--tool-accent), rgba(100, 120, 204, 0.5));
+  background: linear-gradient(90deg, var(--accent), var(--accent));
   border-radius: 6px;
   display: flex;
   align-items: center;
   padding-left: 0.5rem;
   font-size: 0.75rem;
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
   transition: width 0.6s ease;
 }
@@ -411,30 +405,30 @@
 }
 .migplan-milestones li {
   font-size: 0.8rem;
-  color: #aaa;
+  color: var(--text-muted);
   padding: 0.2rem 0;
 }
 .migplan-milestones li::before {
   content: "○ ";
-  color: var(--tool-accent);
+  color: var(--accent);
 }
 
 .migplan-timeline-total {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(100, 120, 204, 0.08);
-  border: 1px solid rgba(100, 120, 204, 0.2);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 16px;
   margin-top: 1.5rem;
 }
 .migplan-timeline-total-label {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
 }
 .migplan-timeline-total-value {
   font-size: 2rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
 }
 .migplan-timeline-feasibility {
   display: inline-block;
@@ -455,7 +449,7 @@
   gap: 1rem;
 }
 .migplan-risk-card {
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
   border-radius: 16px;
   padding: 1.25rem;
   border-left: 4px solid;
@@ -482,25 +476,25 @@
 .migplan-risk-title {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.4rem;
 }
 .migplan-risk-desc {
   font-size: 0.82rem;
-  color: #999;
+  color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 0.75rem;
 }
 .migplan-risk-mitigation {
   font-size: 0.8rem;
   color: #bbb;
-  background: rgba(100, 120, 204, 0.06);
+  background: var(--accent-subtle);
   padding: 0.6rem 0.8rem;
   border-radius: 14px;
   line-height: 1.5;
 }
 .migplan-risk-mitigation strong {
-  color: var(--tool-accent);
+  color: var(--accent);
   display: block;
   margin-bottom: 0.2rem;
   font-size: 0.72rem;
@@ -511,7 +505,7 @@
   display: inline-block;
   margin-top: 0.5rem;
   font-size: 0.78rem;
-  color: var(--tool-accent);
+  color: var(--accent);
   text-decoration: none;
 }
 .migplan-risk-link:hover { text-decoration: underline; }
@@ -528,16 +522,16 @@
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.04);
-  color: #aaa;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
   transition: all 0.2s;
 }
-.migplan-filter-chip:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
+.migplan-filter-chip:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
 .migplan-filter-chip.active {
-  background: var(--tool-accent-dim);
-  border-color: var(--tool-accent);
-  color: #fff;
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
 
 /* ---- Tool Recommender ---- */
@@ -547,8 +541,8 @@
   gap: 1.25rem;
 }
 .migplan-tool-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
 }
@@ -561,11 +555,11 @@
 .migplan-tool-name {
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .migplan-tool-vendor {
   font-size: 0.78rem;
-  color: #888;
+  color: var(--text-muted);
 }
 .migplan-tool-badge {
   padding: 0.2rem 0.5rem;
@@ -575,11 +569,11 @@
   text-transform: uppercase;
 }
 .migplan-tool-badge.native { background: rgba(16,185,129,0.15); color: #10B981; }
-.migplan-tool-badge.third-party { background: rgba(100,120,204,0.15); color: #6478CC; }
+.migplan-tool-badge.third-party { background: var(--accent-subtle); color: var(--accent); }
 
 .migplan-tool-cost {
   font-size: 0.85rem;
-  color: var(--tool-accent);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -599,7 +593,7 @@
   display: inline-block;
   margin-top: 0.5rem;
   font-size: 0.8rem;
-  color: var(--tool-accent);
+  color: var(--accent);
   text-decoration: none;
 }
 .migplan-tool-link:hover { text-decoration: underline; }
@@ -615,10 +609,10 @@
 .migplan-summary-section h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--tool-accent);
+  color: var(--accent);
   margin-bottom: 0.75rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(100, 120, 204, 0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .migplan-summary-grid {
   display: grid;
@@ -626,7 +620,7 @@
   gap: 0.75rem;
 }
 .migplan-summary-stat {
-  background: rgba(100, 120, 204, 0.06);
+  background: var(--accent-subtle);
   border-radius: 16px;
   padding: 1rem;
   text-align: center;
@@ -634,11 +628,11 @@
 .migplan-summary-stat-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
 }
 .migplan-summary-stat-label {
   font-size: 0.75rem;
-  color: #888;
+  color: var(--text-muted);
   margin-top: 0.2rem;
 }
 
@@ -653,7 +647,7 @@
 .migplan-empty {
   text-align: center;
   padding: 4rem 2rem;
-  color: #888;
+  color: var(--text-muted);
 }
 .migplan-empty-icon {
   font-size: 3rem;
@@ -665,7 +659,7 @@
   margin-bottom: 1rem;
 }
 .migplan-empty-cta {
-  color: var(--tool-accent);
+  color: var(--accent);
   font-weight: 600;
   cursor: pointer;
   background: none;
@@ -678,17 +672,17 @@
 .migplan-section-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .migplan-section-subtitle {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 .migplan-count {
   font-size: 0.82rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
@@ -721,14 +715,14 @@
 .migplan-decision-subtitle {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #aaa;
+  color: var(--text-muted);
   margin-top: 0.3rem;
 }
 
 /* ---- Discovery Import ---- */
 .migplan-discovery {
-  background: rgba(100,120,204,0.04);
-  border: 1px solid rgba(100,120,204,0.15);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -742,7 +736,7 @@
 .migplan-discovery-title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--tool-accent);
+  color: var(--accent);
 }
 .migplan-discovery-badge {
   font-size: 0.72rem;
@@ -760,12 +754,12 @@
 .migplan-discovery-workload {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border);
 }
 .migplan-discovery-workload:last-child { border: none; }
 .migplan-discovery-workload h4 {
   font-size: 0.85rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .migplan-discovery-fields {
@@ -780,20 +774,20 @@
 }
 .migplan-discovery-field label {
   font-size: 0.75rem;
-  color: #888;
+  color: var(--text-muted);
 }
 .migplan-discovery-field input {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.85rem;
   width: 100%;
 }
 .migplan-discovery-field input:focus {
   outline: none;
-  border-color: var(--tool-accent);
+  border-color: var(--accent);
 }
 .migplan-discovery-field input::placeholder { color: #555; }
 
@@ -803,7 +797,7 @@
 }
 .migplan-recent-title {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
 .migplan-recent-cards {
@@ -812,8 +806,8 @@
   flex-wrap: wrap;
 }
 .migplan-recent-card {
-  background: rgba(100,120,204,0.06);
-  border: 1px solid rgba(100,120,204,0.15);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   border-radius: 14px;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
@@ -822,8 +816,8 @@
   min-width: 150px;
 }
 .migplan-recent-card:hover {
-  border-color: var(--tool-accent);
-  background: rgba(100,120,204,0.12);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 .migplan-recent-card-score {
   font-size: 1.1rem;
@@ -831,7 +825,7 @@
 }
 .migplan-recent-card-label {
   font-size: 0.75rem;
-  color: #888;
+  color: var(--text-muted);
 }
 
 /* ---- Assumptions List ---- */
@@ -841,12 +835,12 @@
 }
 .migplan-assumptions li {
   font-size: 0.82rem;
-  color: #999;
+  color: var(--text-muted);
   padding: 0.25rem 0;
 }
 .migplan-assumptions li::before {
   content: "• ";
-  color: var(--tool-accent);
+  color: var(--accent);
 }
 
 /* ---- Responsive ---- */

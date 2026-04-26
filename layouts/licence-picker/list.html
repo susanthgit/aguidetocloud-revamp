@@ -42,11 +42,13 @@
 
 
 
-{{/* ── Tab Navigation ── */}}
-<div class="licpick-tabs zt-page" role="tablist" aria-label="Licence Picker sections">
+{{/* ── Zen wrapper: header OUTSIDE tabs ── */}}
+<div class="licpick-wrap zt-page">
 
 {{ partial "tool-header.html" (dict "page" . "title" "M365 Licence Picker") }}
 
+{{/* ── Tab Navigation ── */}}
+<div class="licpick-tabs" role="tablist" aria-label="Licence Picker sections">
   <button class="licpick-tab active" role="tab" aria-selected="true" aria-controls="tab-picker" data-tab="picker">Feature Picker</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-compare" data-tab="compare">Plan Comparison</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-addons" data-tab="addons">Add-on Calculator</button>
@@ -293,4 +295,5 @@
 </div>
 
 <script src="/js/licence-picker.js?v={{ site.Params.cache_version }}"></script>
+</div>{{/* close .licpick-wrap.zt-page */}}
 {{ end }}

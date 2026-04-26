@@ -323,7 +323,7 @@
 
     {{/* ═══ FAQ TAB ═══ */}}
     <div class="pvs-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
-      <div style="max-width:800px;margin:0 auto;padding:0 1rem">
+      <div class="zt-faq-wrap">
         {{ range $i, $f := .Params.faq }}
         <details open>
           <summary><strong>{{ $f.question }}</strong></summary>

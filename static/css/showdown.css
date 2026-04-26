@@ -8,10 +8,6 @@
   --showdown-accent-dim: var(--accent-subtle);
   --showdown-accent-mid: color-mix(in srgb, var(--accent) 30%, transparent);
   --showdown-bg: var(--bg-page);
-  --showdown-card-bg: var(--bg-surface);
-  --showdown-card-border: var(--border);
-  --showdown-text: var(--text-primary);
-  --showdown-text-dim: var(--text-secondary);
   --showdown-green: #22c55e;
   --showdown-red: #ef4444;
   --showdown-yellow: #eab308;
@@ -29,7 +25,7 @@
 .showdown-intro {
   padding: 1rem 0 0.5rem;
   font-size: 0.9rem;
-  color: var(--showdown-text);
+  color: var(--text-primary);
   line-height: 1.6;
   max-width: 800px;
 }
@@ -75,7 +71,7 @@
   background: none;
   border: 1px solid transparent;
   border-radius: 14px;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
@@ -102,7 +98,7 @@
   padding: 0.75rem 0;
   margin-bottom: 1rem;
   font-size: 0.85rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
 }
 .showdown-stat strong {
   color: var(--showdown-accent);
@@ -137,8 +133,8 @@
   flex: 1;
   min-width: 200px;
   padding: 0.6rem 1rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   color: var(--text-primary);
   font-size: 0.9rem;
@@ -151,8 +147,8 @@
 
 .showdown-select {
   padding: 0.6rem 1rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   color: var(--text-primary);
   font-size: 0.85rem;
@@ -171,8 +167,8 @@
 }
 
 .showdown-provider-card {
-  background: color-mix(in srgb, var(--showdown-accent) 8%, var(--showdown-card-bg));
-  border: 1px solid var(--showdown-card-border);
+  background: color-mix(in srgb, var(--showdown-accent) 8%, var(--bg-surface));
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   padding: 1.25rem;
   transition: all 0.2s;
@@ -206,7 +202,7 @@
 }
 .showdown-provider-desc {
   font-size: 0.82rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 0.75rem;
   display: -webkit-box;
@@ -251,7 +247,7 @@
 
 /* ── Compare Tab ── */
 .showdown-compare-intro {
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
@@ -264,10 +260,10 @@
 }
 .showdown-preset {
   padding: 0.4rem 0.8rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 20px;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -290,12 +286,12 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.7rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   cursor: pointer;
   font-size: 0.82rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   transition: all 0.2s;
 }
 .showdown-compare-check.selected {
@@ -319,7 +315,7 @@
 .showdown-compare-table th {
   position: sticky;
   top: 0;
-  background: var(--showdown-card-bg);
+  background: var(--bg-surface);
   padding: 0.75rem;
   text-align: center;
   border-bottom: 2px solid var(--showdown-accent-mid);
@@ -330,7 +326,7 @@
   padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--border);
   text-align: center;
-  color: var(--showdown-text);
+  color: var(--text-primary);
 }
 .showdown-compare-table td:first-child {
   text-align: left;
@@ -352,7 +348,7 @@
   font-size: 0.85rem;
 }
 .showdown-pricing-table th {
-  background: var(--showdown-card-bg);
+  background: var(--bg-surface);
   padding: 0.75rem;
   text-align: left;
   border-bottom: 2px solid var(--showdown-accent-mid);
@@ -363,7 +359,7 @@
 .showdown-pricing-table td {
   padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--border);
-  color: var(--showdown-text);
+  color: var(--text-primary);
 }
 .showdown-pricing-table tr:hover td {
   background: var(--showdown-accent-dim);
@@ -388,8 +384,8 @@
   gap: 1.25rem;
 }
 .showdown-strength-card {
-  background: color-mix(in srgb, var(--showdown-accent) 6%, var(--showdown-card-bg));
-  border: 1px solid var(--showdown-card-border);
+  background: color-mix(in srgb, var(--showdown-accent) 6%, var(--bg-surface));
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
 }
@@ -426,7 +422,7 @@
 }
 .showdown-strength-list li {
   font-size: 0.82rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   padding: 0.2rem 0;
   padding-left: 1.2rem;
   position: relative;
@@ -486,10 +482,10 @@
   display: block;
   width: 100%;
   padding: 0.8rem 1rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  color: var(--showdown-text);
+  color: var(--text-primary);
   font-size: 0.9rem;
   cursor: pointer;
   text-align: left;
@@ -515,12 +511,12 @@
 }
 .showdown-quiz-counter {
   font-size: 0.85rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
 }
 
 .showdown-btn {
   padding: 0.6rem 1.2rem;
-  border: 1px solid var(--showdown-card-border);
+  border: 1px solid var(--border);
   border-radius: 14px;
   font-size: 0.85rem;
   cursor: pointer;
@@ -542,7 +538,7 @@
 }
 .showdown-btn-secondary {
   background: transparent;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
 }
 .showdown-btn-secondary:hover:not(:disabled) {
   color: var(--showdown-accent);
@@ -555,8 +551,8 @@
   margin: 0 auto;
 }
 .showdown-result-card {
-  background: color-mix(in srgb, var(--showdown-accent) 10%, var(--showdown-card-bg));
-  border: 1px solid var(--showdown-card-border);
+  background: color-mix(in srgb, var(--showdown-accent) 10%, var(--bg-surface));
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -588,7 +584,7 @@
 }
 .showdown-result-reason {
   font-size: 0.85rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 .showdown-result-actions {
@@ -608,7 +604,7 @@
   font-size: 0.82rem;
 }
 .showdown-enterprise-table th {
-  background: var(--showdown-card-bg);
+  background: var(--bg-surface);
   padding: 0.6rem;
   text-align: center;
   border-bottom: 2px solid var(--showdown-accent-mid);
@@ -648,12 +644,12 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.3rem 0.7rem;
-  background: var(--showdown-card-bg);
-  border: 1px solid var(--showdown-card-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.78rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   transition: all 0.2s;
 }
 .showdown-req-check.active {
@@ -670,8 +666,8 @@
   gap: 0.75rem;
 }
 .showdown-changelog-entry {
-  background: color-mix(in srgb, var(--showdown-accent) 5%, var(--showdown-card-bg));
-  border: 1px solid var(--showdown-card-border);
+  background: color-mix(in srgb, var(--showdown-accent) 5%, var(--bg-surface));
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem 1.25rem;
 }
@@ -684,7 +680,7 @@
 }
 .showdown-changelog-date {
   font-size: 0.75rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
 }
 .showdown-changelog-provider-badge {
   padding: 0.15rem 0.5rem;
@@ -713,7 +709,7 @@
 }
 .showdown-changelog-desc {
   font-size: 0.82rem;
-  color: var(--showdown-text-dim);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 .showdown-changelog-source {

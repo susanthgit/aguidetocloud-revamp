@@ -108,7 +108,7 @@ if(audience!=='me'&&audience!==''&&tier==='free')tier='paygo';
   w.document.write('<tr><td>Minimum Licence</td><td><span class="badge badge-'+tier+'">'+esc(TIER_NAMES[tier])+'</span></td></tr>');
   w.document.write('</table>');
   w.document.write('<h2>Next Steps</h2><ol><li>Confirm licence tier with your IT admin</li><li>Prepare your knowledge source content</li><li>Write agent instructions (use our <a href="https://www.aguidetocloud.com/agent-instructions/">Instruction Builder</a>)</li><li>Build in Agent Builder at microsoft365.com/chat</li><li>Test with 2-3 colleagues before sharing widely</li></ol>');
-  w.document.write('<p style="color:#888;font-size:0.8rem">Generated '+new Date().toLocaleDateString()+' &middot; aguidetocloud.com</p>');
+  w.document.write('<p style="color:var(--text-muted);font-size:0.8rem">Generated '+new Date().toLocaleDateString()+' &middot; aguidetocloud.com</p>');
   w.document.write('</body></html>');w.document.close();
 };
 

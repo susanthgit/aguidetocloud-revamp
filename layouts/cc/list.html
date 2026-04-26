@@ -18,7 +18,10 @@
 </div>
 
 <!-- COMMAND CENTRE -->
-<div id="cc-main" style="display:none">
+<div id="cc-main" class="zt-page" style="display:none">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Command Centre") }}
+
   <!-- Welcome Overlay (first visit only) -->
   <div class="cc-welcome" id="cc-welcome" style="display:none">
     <div class="cc-welcome-card">

@@ -6,15 +6,6 @@
    ────────────────────────────────────────── */
 
 :root {
-  --sh-accent: #EA580C;
-  --sh-accent-dim: rgba(249, 115, 22, 0.15);
-  --sh-accent-hover: #FB923C;
-  --sh-bg: #141118;
-  --sh-card: #1e1b24;
-  --sh-card-hover: #252230;
-  --sh-border: #2a2733;
-  --sh-text: #e0dce6;
-  --sh-text-dim: #9e98a8;
   --sh-green: #22C55E;
   --sh-yellow: #EAB308;
   --sh-red: #EF4444;
@@ -33,8 +24,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -44,7 +35,7 @@
 .shealth-tab {
   background: none;
   border: 1px solid transparent;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   font-family: var(--font-heading, 'Inter', sans-serif);
   font-size: 0.85rem;
   font-weight: 600;
@@ -57,20 +48,20 @@
   text-align: center;
 }
 .shealth-tab:hover {
-  color: var(--sh-text);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .shealth-tab.active {
-  color: #000;
-  background: var(--sh-accent);
-  border-color: var(--sh-accent);
+  color: var(--accent-foreground, #fff);
+  background: var(--accent);
+  border-color: var(--accent);
   box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
 }
 .shealth-tab-badge {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 1.3em; height: 1.3em; padding: 0 0.35em; margin-left: 0.4em;
   border-radius: 10px; font-size: 0.72rem; font-weight: 800;
-  background: #EF4444; color: #fff; line-height: 1;
+  background: #EF4444; color: var(--text-primary); line-height: 1;
 }
 .shealth-panel { display: none; }
 .shealth-panel.active { display: block; }
@@ -83,11 +74,11 @@
   flex-wrap: wrap;
   padding: 0.8rem 1rem;
   margin-bottom: 1rem;
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   font-size: 0.82rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
 }
 .shealth-summary-item {
   display: flex;
@@ -97,11 +88,11 @@
 .shealth-summary-value {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--sh-text);
+  color: var(--text-primary);
 }
 .shealth-summary-value.shealth-red { color: var(--sh-red); }
 .shealth-summary-value.shealth-green { color: var(--sh-green); }
-.shealth-summary-value.shealth-accent { color: var(--sh-accent); }
+.shealth-summary-value.shealth-accent { color: var(--accent); }
 
 .shealth-all-ok {
   text-align: center;
@@ -121,13 +112,13 @@
 .shealth-grid-label {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .shealth-grid-hint {
   font-size: 0.7rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   opacity: 0.6;
 }
 
@@ -139,13 +130,13 @@
   margin: 1.2rem 0 0.5rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--sh-text);
+  color: var(--text-primary);
 }
 .shealth-section-active { color: var(--sh-red); }
 .shealth-active-count {
   font-size: 0.75rem;
   background: var(--sh-red);
-  color: #fff;
+  color: var(--text-primary);
   padding: 0.1rem 0.5rem;
   border-radius: 16px;
   font-weight: 700;
@@ -166,8 +157,8 @@
 /* ── Clear Filters Button ── */
 .shealth-clear-btn {
   background: none;
-  border: 1px solid var(--sh-border);
-  color: var(--sh-text-dim);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   font-size: 0.72rem;
@@ -175,8 +166,8 @@
   transition: all 0.2s;
 }
 .shealth-clear-btn:hover {
-  border-color: var(--sh-accent);
-  color: var(--sh-accent);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Month Dividers ── */
@@ -187,7 +178,7 @@
   margin: 1rem 0 0.5rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--sh-accent);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -195,7 +186,7 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--sh-border);
+  background: var(--border);
 }
 
 /* ── Status Grid ── */
@@ -207,8 +198,8 @@
 }
 
 .shealth-svc-card {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 0.65rem 0.6rem;
   text-align: center;
@@ -218,7 +209,7 @@
   overflow: hidden;
 }
 .shealth-svc-card:hover {
-  border-color: var(--sh-accent);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 .shealth-svc-card[data-severity="0"] { border-left: 3px solid var(--sh-green); }
@@ -227,7 +218,7 @@
 .shealth-svc-card[data-severity="3"] { border-left: 3px solid var(--sh-red); }
 
 .shealth-svc-icon { font-size: 1.3rem; margin-bottom: 0.2rem; }
-.shealth-svc-name { font-size: 0.72rem; color: var(--sh-text); font-weight: 500; line-height: 1.2; }
+.shealth-svc-name { font-size: 0.72rem; color: var(--text-primary); font-weight: 500; line-height: 1.2; }
 .shealth-svc-status {
   font-size: 0.65rem;
   margin-top: 0.25rem;
@@ -251,31 +242,31 @@
   flex: 2;
   min-width: 200px;
   padding: 0.6rem 1rem;
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  color: var(--sh-text);
+  color: var(--text-primary);
   font-size: 0.9rem;
 }
 .shealth-search:focus {
   outline: none;
-  border-color: var(--sh-accent);
-  box-shadow: 0 0 0 2px var(--sh-accent-dim);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
 }
-.shealth-search::placeholder { color: var(--sh-text-dim); }
+.shealth-search::placeholder { color: var(--text-secondary); }
 
 .shealth-select {
   flex: 1;
   min-width: 130px;
   padding: 0.6rem 0.75rem;
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  color: var(--sh-text);
+  color: var(--text-primary);
   font-size: 0.84rem;
   cursor: pointer;
 }
-.shealth-select:focus { outline: none; border-color: var(--sh-accent); }
+.shealth-select:focus { outline: none; border-color: var(--accent); }
 
 /* ── Meta line ── */
 .shealth-meta {
@@ -284,11 +275,11 @@
   align-items: center;
   margin-bottom: 0.8rem;
   font-size: 0.78rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.shealth-meta-count { font-weight: 600; color: var(--sh-text); }
+.shealth-meta-count { font-weight: 600; color: var(--text-primary); }
 
 /* ── Timeline / Incident Cards ── */
 .shealth-timeline {
@@ -298,14 +289,14 @@
 }
 
 .shealth-incident {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 0.85rem 1rem;
   transition: border-color 0.2s;
   cursor: pointer;
 }
-.shealth-incident:hover { border-color: var(--sh-accent); }
+.shealth-incident:hover { border-color: var(--accent); }
 .shealth-incident[data-active="true"] { border-left: 3px solid var(--sh-red); }
 
 .shealth-incident-header {
@@ -320,7 +311,7 @@
 .shealth-incident-title {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--sh-text);
+  color: var(--text-primary);
   margin: 0 0 0.3rem;
   line-height: 1.3;
 }
@@ -331,7 +322,7 @@
   flex-wrap: wrap;
   align-items: center;
   font-size: 0.75rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
 }
 
 .shealth-badge {
@@ -346,11 +337,11 @@
 }
 .shealth-badge-service {
   background: rgba(249, 115, 22, 0.12);
-  color: var(--sh-accent);
+  color: var(--accent);
   border: 1px solid rgba(249, 115, 22, 0.25);
 }
 .shealth-badge-status {
-  border: 1px solid var(--sh-border);
+  border: 1px solid var(--border);
 }
 
 .shealth-incident-right {
@@ -363,18 +354,18 @@
 
 .shealth-incident-time {
   font-size: 0.72rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 .shealth-incident-duration {
   font-size: 0.68rem;
-  color: var(--sh-accent);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .shealth-incident-impact {
   font-size: 0.78rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   margin-top: 0.4rem;
   line-height: 1.4;
   display: -webkit-box;
@@ -388,20 +379,20 @@
 .shealth-load-btn {
   padding: 0.6rem 2rem;
   background: transparent;
-  border: 1px solid var(--sh-accent);
-  color: var(--sh-accent);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   border-radius: 14px;
   font-size: 0.85rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-.shealth-load-btn:hover { background: var(--sh-accent); color: #000; }
+.shealth-load-btn:hover { background: var(--accent); color: var(--accent-foreground, #fff); }
 
 /* ── Footer ── */
 .shealth-footer {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--sh-border);
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -410,19 +401,19 @@
 }
 .shealth-footer-links { display: flex; gap: 1rem; }
 .shealth-footer-links a {
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.8rem;
 }
-.shealth-footer-links a:hover { color: var(--sh-accent); }
-.shealth-freshness { font-size: 0.75rem; color: var(--sh-text-dim); }
+.shealth-footer-links a:hover { color: var(--accent); }
+.shealth-freshness { font-size: 0.75rem; color: var(--text-secondary); }
 
 /* ── Modal ── */
 .shealth-modal-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--bg-surface);
   z-index: 10000;
   overflow-y: auto;
   padding: 2rem 1rem;
@@ -430,8 +421,8 @@
 .shealth-modal-overlay.active { display: flex; justify-content: center; align-items: flex-start; }
 
 .shealth-modal {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   max-width: 700px;
   width: 100%;
@@ -445,7 +436,7 @@
   right: 0.8rem;
   background: none;
   border: none;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   font-size: 1.2rem;
   cursor: pointer;
   width: 32px;
@@ -455,12 +446,12 @@
   justify-content: center;
   border-radius: 50%;
 }
-.shealth-modal-close:hover { background: var(--sh-card-hover); color: var(--sh-text); }
+.shealth-modal-close:hover { background: var(--bg-elevated); color: var(--text-primary); }
 
 .shealth-modal-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--sh-text);
+  color: var(--text-primary);
   margin: 0 0 0.5rem;
   padding-right: 2rem;
 }
@@ -470,47 +461,47 @@
   flex-wrap: wrap;
   margin-bottom: 1rem;
   font-size: 0.8rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
 }
 .shealth-modal-impact {
   font-size: 0.85rem;
-  color: var(--sh-text);
+  color: var(--text-primary);
   line-height: 1.5;
   margin-bottom: 1.2rem;
   padding: 0.75rem;
   background: rgba(249, 115, 22, 0.06);
   border-radius: 14px;
-  border-left: 3px solid var(--sh-accent);
+  border-left: 3px solid var(--accent);
 }
 
 /* Modal update timeline */
 .shealth-updates-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--sh-accent);
+  color: var(--accent);
   margin-bottom: 0.6rem;
 }
 .shealth-update {
   padding: 0.6rem 0;
-  border-bottom: 1px solid var(--sh-border);
+  border-bottom: 1px solid var(--border);
   font-size: 0.8rem;
-  color: var(--sh-text);
+  color: var(--text-primary);
   line-height: 1.5;
 }
 .shealth-update:last-child { border-bottom: none; }
 .shealth-update-time {
   font-size: 0.72rem;
-  color: var(--sh-accent);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
-.shealth-update-content { color: var(--sh-text-dim); }
+.shealth-update-content { color: var(--text-secondary); }
 
 /* ── Skeleton ── */
 .shealth-skeleton { display: flex; flex-direction: column; gap: 0.5rem; }
 .shealth-skeleton-row {
   height: 60px;
-  background: linear-gradient(90deg, var(--sh-card) 25%, var(--sh-card-hover) 50%, var(--sh-card) 75%);
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-elevated) 50%, var(--bg-surface) 75%);
   background-size: 200% 100%;
   animation: shealth-shimmer 1.5s infinite;
   border-radius: 16px;
@@ -522,8 +513,8 @@
 
 /* Trend Chart */
 .shealth-trend {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
   margin-bottom: 0.75rem;
@@ -531,7 +522,7 @@
 .shealth-trend-title {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   margin-bottom: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -554,7 +545,7 @@
 .shealth-trend-bar {
   width: 100%;
   border-radius: 4px 4px 0 0;
-  background: var(--sh-accent);
+  background: var(--accent);
   min-height: 2px;
   transition: height 0.4s ease;
   position: relative;
@@ -562,12 +553,12 @@
 .shealth-trend-bar:hover { opacity: 0.8; }
 .shealth-trend-bar-val {
   font-size: 0.65rem;
-  color: var(--sh-text);
+  color: var(--text-primary);
   font-weight: 600;
 }
 .shealth-trend-bar-label {
   font-size: 0.6rem;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
@@ -581,15 +572,15 @@
 
 /* Most Affected Widget */
 .shealth-most-affected {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
 }
 .shealth-ma-title {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   margin-bottom: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -612,37 +603,37 @@
   font-weight: 700;
   flex-shrink: 0;
 }
-.shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: #fff; }
-.shealth-ma-rank.shealth-r2 { background: var(--sh-orange); color: #fff; }
+.shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: var(--text-primary); }
+.shealth-ma-rank.shealth-r2 { background: var(--sh-orange); color: var(--text-primary); }
 .shealth-ma-rank.shealth-r3 { background: var(--sh-yellow); color: #000; }
-.shealth-ma-rank.shealth-r4,.shealth-ma-rank.shealth-r5 { background: var(--sh-border); color: var(--sh-text-dim); }
-.shealth-ma-name { flex: 1; color: var(--sh-text); }
-.shealth-ma-count { font-weight: 700; color: var(--sh-accent); }
+.shealth-ma-rank.shealth-r4,.shealth-ma-rank.shealth-r5 { background: var(--border); color: var(--text-secondary); }
+.shealth-ma-name { flex: 1; color: var(--text-primary); }
+.shealth-ma-count { font-weight: 700; color: var(--accent); }
 .shealth-ma-bar-track {
   width: 60px;
   height: 5px;
-  background: var(--sh-border);
+  background: var(--border);
   border-radius: 3px;
   overflow: hidden;
 }
 .shealth-ma-bar-fill {
   height: 100%;
   border-radius: 3px;
-  background: var(--sh-accent);
+  background: var(--accent);
   transition: width 0.5s ease;
 }
 
 /* Scorecard */
 .shealth-scorecard {
-  background: var(--sh-card);
-  border: 1px solid var(--sh-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
 }
 .shealth-sc-title {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--sh-text-dim);
+  color: var(--text-secondary);
   margin-bottom: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -653,11 +644,11 @@
   align-items: center;
   padding: 0.35rem 0;
   font-size: 0.8rem;
-  border-bottom: 1px solid var(--sh-border);
+  border-bottom: 1px solid var(--border);
 }
 .shealth-sc-item:last-child { border-bottom: none; }
-.shealth-sc-label { color: var(--sh-text-dim); }
-.shealth-sc-value { font-weight: 700; color: var(--sh-text); }
+.shealth-sc-label { color: var(--text-secondary); }
+.shealth-sc-value { font-weight: 700; color: var(--text-primary); }
 
 /* Date Lookup */
 .shealth-date-lookup {
@@ -687,13 +678,13 @@
 .shealth-date-result-bad {
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.25);
-  color: var(--sh-text);
+  color: var(--text-primary);
 }
 
 /* Duration Bar */
 .shealth-duration-bar {
   height: 4px;
-  background: var(--sh-border);
+  background: var(--border);
   border-radius: 2px;
   margin-top: 0.4rem;
   overflow: hidden;

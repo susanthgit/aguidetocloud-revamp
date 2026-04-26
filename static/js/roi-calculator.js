@@ -587,7 +587,7 @@
 
     $('roi-custom-result').innerHTML =
       '<div style="display:flex;gap:2rem;flex-wrap:wrap">' +
-      '<div><span style="color:var(--text-muted);font-size:0.75rem">3-Year Savings</span><br><strong style="font-size:1.1rem;color:var(--tool-accent-bright)">' + fmt(total) + '</strong></div>' +
+      '<div><span style="color:var(--text-muted);font-size:0.75rem">3-Year Savings</span><br><strong style="font-size:1.1rem;color:var(--accent-hover)">' + fmt(total) + '</strong></div>' +
       '<div><span style="color:var(--text-muted);font-size:0.75rem">3-Year ROI</span><br><strong style="font-size:1.1rem">' + pct(roi) + '</strong></div>' +
       '<div><span style="color:var(--text-muted);font-size:0.75rem">Net Gain</span><br><strong style="font-size:1.1rem;color:' + (net >= 0 ? 'var(--roi-green)' : 'var(--roi-red)') + '">' + fmt(net) + '</strong></div></div>';
   }

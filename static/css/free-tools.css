@@ -6,7 +6,7 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--neon-cyan);
+  color: var(--accent);
   margin: 0 0 0.4rem;
 }
 .ft-cat-desc {
@@ -65,9 +65,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.8rem;
-  background: rgba(0, 0, 0, 0.45);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: var(--bg-elevated);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 50px;
   width: fit-content;
@@ -124,7 +122,7 @@
   margin: 0 auto;
 }
 .free-tools-about a {
-  color: var(--neon-cyan);
+  color: var(--accent);
 }
 @media (max-width: 768px) {
   .free-tools-grid { grid-template-columns: 1fr; }

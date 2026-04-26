@@ -24,8 +24,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -36,7 +36,7 @@
 .pvs-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -49,9 +49,9 @@
   position: relative;
   font-family: inherit;
 }
-.pvs-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.pvs-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .pvs-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: var(--pvs-accent);
   border-color: var(--pvs-accent);
   box-shadow: 0 2px 8px rgba(var(--pvs-accent-rgb), 0.3);
@@ -62,7 +62,7 @@
   align-items: center;
   justify-content: center;
   background: #EF4444;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.65rem;
   font-weight: 700;
   min-width: 18px;
@@ -78,7 +78,7 @@
 .pvs-panel.active { display: block; }
 
 .pvs-panel-desc {
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -100,20 +100,20 @@
 }
 .pvs-btn--primary {
   background: var(--pvs-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
 }
 .pvs-btn--primary:hover {
   filter: brightness(1.1);
   box-shadow: 0 4px 12px rgba(var(--pvs-accent-rgb), 0.3);
 }
 .pvs-btn--secondary {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.8);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 .pvs-btn--secondary:hover {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 .pvs-btn--sm {
   padding: 0.4rem 0.8rem;
@@ -130,12 +130,12 @@
   margin-bottom: 1rem;
 }
 .pvs-coming-soon h2 {
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-size: 1.4rem;
 }
 .pvs-coming-soon p {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   max-width: 500px;
   margin: 0 auto 1rem;
   line-height: 1.6;
@@ -149,14 +149,12 @@
 }
 
 .pvs-kit-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   cursor: pointer;
   transition: all 0.25s ease;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 .pvs-kit-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.4);
@@ -180,16 +178,16 @@
 .pvs-kit-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .pvs-kit-target {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-muted);
   margin-top: 2px;
 }
 
 .pvs-kit-desc {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -209,8 +207,8 @@
   border-radius: 6px;
   font-size: 0.78rem;
   font-weight: 600;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
 }
 .pvs-kit-stat--labels { color: var(--pvs-accent); }
 .pvs-kit-stat--dlp { color: #60A5FA; }
@@ -241,7 +239,7 @@
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--border);
 }
 .pvs-kit-card.pvs-kit-expanded .pvs-kit-details {
   display: block;
@@ -250,7 +248,7 @@
 .pvs-kit-section-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 1rem 0 0.5rem;
@@ -268,7 +266,7 @@
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
   border-left: 3px solid;
   font-size: 0.85rem;
 }
@@ -278,7 +276,7 @@
 }
 .pvs-label-name {
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
 }
 .pvs-label-badges {
   display: flex;
@@ -291,8 +289,8 @@
   border-radius: 4px;
   font-size: 0.68rem;
   font-weight: 600;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.6);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
 }
 .pvs-label-badge--encrypt { background: rgba(239,68,68,0.15); color: #F87171; }
 .pvs-label-badge--mark { background: rgba(96,165,250,0.15); color: #60A5FA; }
@@ -318,7 +316,7 @@
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
   font-size: 0.85rem;
 }
 .pvs-dlp-action {
@@ -335,7 +333,7 @@
 .pvs-dlp-action--label { background: rgba(132,204,22,0.2); color: #84CC16; }
 
 .pvs-dlp-desc {
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   flex: 1;
 }
 .pvs-dlp-workloads {
@@ -347,8 +345,8 @@
   font-size: 0.7rem;
   padding: 0.1rem 0.35rem;
   border-radius: 3px;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.5);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
 }
 
 /* ── Kit CTA ── */
@@ -369,7 +367,7 @@
   gap: 0.5rem;
 }
 .pvs-deploy-header h2 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.3rem;
 }
 .pvs-deploy-header h2 span {
@@ -388,12 +386,12 @@
   margin-bottom: 2rem;
 }
 .pvs-deploy-section h3 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
 }
 .pvs-deploy-note {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   margin-bottom: 1rem;
   font-style: italic;
@@ -411,10 +409,8 @@
   gap: 1rem;
   padding: 1rem 1.25rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .pvs-step-num {
   display: flex;
@@ -431,18 +427,18 @@
 }
 .pvs-step-content { flex: 1; }
 .pvs-step-title {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
 }
 .pvs-step-desc {
-  color: rgba(255,255,255,0.55);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: 1.5;
 }
 .pvs-step-duration {
-  color: rgba(255,255,255,0.35);
+  color: var(--text-muted);
   font-size: 0.75rem;
   margin-top: 0.25rem;
 }
@@ -451,7 +447,7 @@
 .pvs-code-block {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   margin-bottom: 1rem;
 }
 .pvs-code-header {
@@ -459,14 +455,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.6rem 1rem;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 .pvs-code {
   padding: 1rem;
   margin: 0;
-  background: rgba(0,0,0,0.3);
+  background: var(--bg-elevated);
   color: #A5F3FC;
   font-family: 'Cascadia Code', 'Fira Code', monospace;
   font-size: 0.82rem;
@@ -484,8 +480,8 @@
 }
 .pvs-email-card {
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 .pvs-email-header {
@@ -497,23 +493,23 @@
   user-select: none;
 }
 .pvs-email-header:hover {
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
 }
 .pvs-email-title {
   display: flex;
   flex-direction: column;
 }
 .pvs-email-name {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.9rem;
 }
 .pvs-email-audience {
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   font-size: 0.78rem;
 }
 .pvs-email-chevron {
-  color: rgba(255,255,255,0.3);
+  color: var(--text-muted);
   transition: transform 0.2s;
   font-size: 0.8rem;
 }
@@ -534,11 +530,11 @@
   margin-bottom: 0.5rem;
 }
 .pvs-email-content {
-  color: rgba(255,255,255,0.65);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: 1.6;
   white-space: pre-line;
-  background: rgba(0,0,0,0.2);
+  background: var(--bg-elevated);
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 0.75rem;
@@ -560,17 +556,17 @@
 .pvs-licence-table th {
   text-align: left;
   padding: 0.6rem 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid var(--border);
 }
 .pvs-licence-table td {
   padding: 0.6rem 0.75rem;
-  color: rgba(255,255,255,0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
 }
 
 /* ── Cross-tool links ── */
@@ -584,12 +580,10 @@
   flex-direction: column;
   padding: 1rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   text-decoration: none;
   transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 .pvs-cross-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.3);
@@ -600,12 +594,12 @@
   margin-bottom: 0.5rem;
 }
 .pvs-cross-card strong {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
 }
 .pvs-cross-card p {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   line-height: 1.4;
   margin: 0;
@@ -615,11 +609,11 @@
 .pvs-custom-section {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
 }
 .pvs-custom-section:last-of-type { border-bottom: none; }
 .pvs-custom-section-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -638,7 +632,7 @@
   flex-wrap: wrap;
 }
 .pvs-lb-templates-label {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -652,9 +646,9 @@
   border-radius: 6px;
   font-size: 0.78rem;
   font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.65);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-family: inherit;
@@ -662,7 +656,7 @@
 .pvs-lb-tpl-btn:hover {
   background: rgba(var(--pvs-accent-rgb), 0.15);
   border-color: rgba(var(--pvs-accent-rgb), 0.3);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .pvs-lb-layout {
@@ -683,7 +677,7 @@
   min-height: 120px;
 }
 .pvs-lb-empty p {
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   font-size: 0.88rem;
   text-align: center;
   padding: 2rem 0;
@@ -694,26 +688,26 @@
   gap: 0.5rem;
   padding: 0.6rem 0.75rem;
   border-radius: 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-left: 3px solid;
   cursor: pointer;
   transition: all 0.2s;
 }
 .pvs-lb-card:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.15);
+  background: var(--bg-elevated);
+  border-color: var(--border);
 }
 .pvs-lb-card--child { margin-left: 1.5rem; border-left-style: dashed; }
-.pvs-lb-card-name { font-weight: 600; color: #fff; font-size: 0.88rem; flex: 1; }
+.pvs-lb-card-name { font-weight: 600; color: var(--text-primary); font-size: 0.88rem; flex: 1; }
 .pvs-lb-card-badges { display: flex; gap: 0.25rem; flex-shrink: 0; }
 .pvs-lb-card-actions { display: flex; gap: 0.2rem; flex-shrink: 0; }
 .pvs-lb-card-btn {
   width: 26px; height: 26px;
   border-radius: 6px;
   border: none;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.5);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.72rem;
   cursor: pointer;
   display: flex;
@@ -722,7 +716,7 @@
   transition: all 0.15s;
   font-family: inherit;
 }
-.pvs-lb-card-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.pvs-lb-card-btn:hover { background: var(--border); color: var(--text-primary); }
 .pvs-lb-card-btn--del:hover { background: rgba(239,68,68,0.2); color: #F87171; }
 
 .pvs-lb-deploy-cta { margin-top: 1rem; }
@@ -732,11 +726,11 @@
 .pvs-lb-preview-card {
   padding: 1rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .pvs-lb-preview-card h3 {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -745,16 +739,16 @@
 .pvs-lb-ribbon {
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
 }
 .pvs-lb-ribbon-bar {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.75rem;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
 }
 .pvs-lb-ribbon-arrow { margin-left: auto; font-size: 0.7rem; }
 .pvs-lb-ribbon-dropdown {
@@ -767,8 +761,8 @@
   gap: 0.5rem;
   padding: 0.4rem 0.75rem;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.65);
-  border-top: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
 }
 .pvs-lb-ribbon-item--child { padding-left: 1.75rem; }
 .pvs-lb-ribbon-dot {
@@ -787,9 +781,7 @@
 .pvs-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: var(--bg-surface);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -798,7 +790,7 @@
 }
 .pvs-modal {
   background: #0a0a14;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--border);
   border-radius: 16px;
   width: 100%;
   max-width: 480px;
@@ -810,13 +802,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
 }
-.pvs-modal-header h3 { color: #fff; font-size: 1.05rem; margin: 0; }
+.pvs-modal-header h3 { color: var(--text-primary); font-size: 1.05rem; margin: 0; }
 .pvs-modal-close {
   background: none;
   border: none;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 1.1rem;
   cursor: pointer;
   padding: 0.25rem;
@@ -828,14 +820,14 @@
   justify-content: flex-end;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--border);
 }
 .pvs-lb-field {
   margin-bottom: 1rem;
 }
 .pvs-lb-field label {
   display: block;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
@@ -844,9 +836,9 @@
   width: 100%;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: #fff;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-size: 0.88rem;
   font-family: inherit;
   margin-bottom: 0.3rem;
@@ -858,9 +850,9 @@
 .pvs-select {
   padding: 0.45rem 0.65rem;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: #fff;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-size: 0.82rem;
   font-family: inherit;
 }
@@ -874,7 +866,7 @@
   width: 40px;
   height: 22px;
   border-radius: 11px;
-  background: rgba(255,255,255,0.12);
+  background: var(--bg-elevated);
   border: none;
   cursor: pointer;
   position: relative;
@@ -911,7 +903,7 @@
   transition: all 0.15s;
 }
 .pvs-lb-colour-btn:hover { transform: scale(1.15); }
-.pvs-lb-colour-btn.active { border-color: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+.pvs-lb-colour-btn.active { border-color: #fff; box-shadow: 0 0 8px var(--border-emphasis); }
 
 /* ═══ DLP SCENARIOS (Phase 2) ═══ */
 .pvs-dlp-summary {
@@ -920,12 +912,12 @@
   justify-content: space-between;
   padding: 0.75rem 1rem;
   border-radius: 10px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   margin-bottom: 1.25rem;
 }
 .pvs-dlp-summary span {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   font-weight: 600;
 }
@@ -933,12 +925,12 @@
 .pvs-dlp-cat-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
 }
 .pvs-dlp-cat-grid { display: flex; flex-direction: column; gap: 0.5rem; }
 .pvs-dlp-scenario-card {
@@ -947,8 +939,8 @@
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   border-radius: 10px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   transition: all 0.2s;
 }
 .pvs-dlp-scenario-card.pvs-dlp-enabled {
@@ -961,13 +953,13 @@
 }
 .pvs-dlp-scenario-body { flex: 1; min-width: 0; }
 .pvs-dlp-scenario-name {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 0.2rem;
 }
 .pvs-dlp-scenario-desc {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.45;
   margin-bottom: 0.4rem;
@@ -997,7 +989,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: var(--pvs-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   font-weight: 600;
@@ -1016,12 +1008,12 @@
   margin-bottom: 0.75rem;
   padding: 1rem 1.25rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .pvs-panel details summary {
   cursor: pointer;
-  color: #fff;
+  color: var(--text-primary);
   list-style: none;
   font-size: 0.95rem;
 }
@@ -1037,7 +1029,7 @@
   transform: rotate(90deg);
 }
 .pvs-panel details p {
-  color: rgba(255,255,255,0.65);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.6;
   margin-top: 0.75rem;
@@ -1135,7 +1127,7 @@
   gap: 0.5rem;
   white-space: nowrap;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -1144,7 +1136,7 @@
   pointer-events: auto;
 }
 .pvs-kit-e3-note {
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   font-size: 0.78rem;
   font-style: italic;
   margin-top: 0.25rem;
@@ -1157,7 +1149,7 @@
   justify-content: space-between;
   margin-bottom: 0.75rem;
 }
-.pvs-checklist-header h3 { color: #fff; font-size: 1.1rem; margin: 0; }
+.pvs-checklist-header h3 { color: var(--text-primary); font-size: 1.1rem; margin: 0; }
 .pvs-checklist-progress { font-size: 0.82rem; font-weight: 600; }
 .pvs-step-check {
   display: flex;
@@ -1189,17 +1181,17 @@
   border-radius: 6px;
   font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.55);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-family: inherit;
 }
-.pvs-export-tab:hover { color: #fff; }
+.pvs-export-tab:hover { color: var(--text-primary); }
 .pvs-export-tab.active {
   background: var(--pvs-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border-color: var(--pvs-accent);
 }
 
@@ -1209,24 +1201,24 @@
 .pvs-compare th, .pvs-compare td {
   padding: 0.5rem 0.65rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
 }
 .pvs-compare th {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.78rem;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid var(--border);
 }
 .pvs-compare td:first-child { text-align: left; }
-.pvs-compare td { color: rgba(255,255,255,0.65); }
+.pvs-compare td { color: var(--text-secondary); }
 
 /* ── Compliance mapping (V9) ── */
 .pvs-compliance-fw {
   margin-bottom: 1.25rem;
   padding: 1rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .pvs-compliance-header {
   display: flex;
@@ -1234,11 +1226,11 @@
   align-items: center;
   margin-bottom: 0.5rem;
 }
-.pvs-compliance-score { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.pvs-compliance-score { font-size: 0.82rem; color: var(--text-secondary); }
 .pvs-compliance-bar {
   height: 6px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
   margin-bottom: 0.75rem;
   overflow: hidden;
 }
@@ -1253,10 +1245,10 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-muted);
   padding: 0.2rem 0;
 }
-.pvs-cc-met { color: rgba(255,255,255,0.7); }
+.pvs-cc-met { color: var(--text-secondary); }
 
 /* ── What-if analyser (V10) ── */
 .pvs-whatif-grid {
@@ -1267,10 +1259,10 @@
 .pvs-whatif-col {
   padding: 1rem;
   border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
-.pvs-whatif-col h4 { color: #fff; font-size: 0.9rem; margin: 0 0 0.5rem; }
+.pvs-whatif-col h4 { color: var(--text-primary); font-size: 0.9rem; margin: 0 0 0.5rem; }
 .pvs-whatif-lost { border-color: rgba(239,68,68,0.2); }
 .pvs-whatif-kept { border-color: rgba(var(--pvs-accent-rgb), 0.2); }
 .pvs-whatif-item {
@@ -1279,10 +1271,10 @@
   align-items: center;
   padding: 0.3rem 0;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
 }
-.pvs-whatif-reason { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+.pvs-whatif-reason { font-size: 0.72rem; color: var(--text-muted); }
 
 /* ── Import labels (V11) ── */
 .pvs-import-row {
@@ -1295,9 +1287,9 @@
   flex: 1;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: #fff;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-family: 'Cascadia Code', monospace;
   font-size: 0.82rem;
   resize: vertical;
@@ -1306,19 +1298,19 @@
 .pvs-import-found {
   padding: 0.75rem;
   border-radius: 10px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .pvs-import-label {
   padding: 0.3rem 0;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
 }
 
 /* ═══ PRINT ═══ */
 @media print {
-  body { background: #fff !important; color: #000 !important; }
+  body { background: #fff !important; color: var(--accent-foreground, #fff) !important; }
   .site-nav, .pvs-tabs, .tool-hero, .tool-eco, .pvs-cross-links,
   .pvs-deploy-header-actions, .pvs-copy-btn, #pvs-download-ps,
   .pvs-email-actions, .pvs-goto-kits, .global-btt, .feedback-fab,

@@ -868,7 +868,7 @@
     $result.innerHTML =
       '<div class="ptest-duel-your-score">' + emoji + ' Your score: <span class="' + scoreClass(userScore) + '">' + userScore + '</span>/100</div>' +
       '<div class="ptest-duel-ref">Reference score: ' + refScore + '/100 — ' + msg + '</div>' +
-      '<details style="margin-top:0.8rem;text-align:left"><summary style="cursor:pointer;color:var(--tool-accent);font-size:0.82rem">Show reference prompt</summary>' +
+      '<details style="margin-top:0.8rem;text-align:left"><summary style="cursor:pointer;color:var(--accent);font-size:0.82rem">Show reference prompt</summary>' +
       '<div style="margin-top:0.5rem;padding:0.6rem;background:rgba(255,255,255,0.04);border-radius:8px;font-size:0.8rem;color:rgba(255,255,255,0.7);white-space:pre-wrap">' + escapeHtml(currentDuel.ref) + '</div></details>' +
       '<button class="ptest-btn-secondary" onclick="document.getElementById(\'ptest-input-a\').value=document.getElementById(\'ptest-duel-input\').value;' +
       'document.getElementById(\'ptest-input-b\').value=' + JSON.stringify(currentDuel.ref) + ';' +

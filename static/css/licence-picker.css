@@ -8,13 +8,6 @@
   --lp-accent: var(--accent);
   --lp-accent-dim: var(--accent-subtle);
   --lp-accent-glow: transparent;
-  --lp-glass: var(--bg-elevated);
-  --lp-glass-border: var(--border);
-  --lp-glass-hover: var(--border);
-  --lp-text: var(--text-primary);
-  --lp-text-dim: var(--text-secondary);
-  --lp-surface: var(--bg-surface);
-  --lp-card: var(--bg-surface);
   --lp-radius: 14px;
   --lp-radius-sm: 8px;
 }

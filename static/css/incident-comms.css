@@ -19,8 +19,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -31,7 +31,7 @@
 .icomms-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -43,11 +43,11 @@
   white-space: nowrap;
 }
 .icomms-tab:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .icomms-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: var(--icomms-accent);
   border-color: var(--icomms-accent);
   box-shadow: 0 2px 8px rgba(255,143,102,0.3);
@@ -58,8 +58,8 @@
 
 /* Glass Card */
 .icomms-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
 }
@@ -67,7 +67,7 @@
 /* Buttons */
 .icomms-btn-primary {
   background: var(--icomms-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
@@ -78,9 +78,9 @@
 .icomms-btn-primary:hover { opacity: 0.85; }
 
 .icomms-btn-secondary {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
@@ -88,14 +88,14 @@
   transition: all 0.2s ease;
 }
 .icomms-btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 /* Form */
 .icomms-form {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -104,15 +104,15 @@
 }
 
 .icomms-select {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  color: #fff;
+  color: var(--text-primary);
   padding: 0.55rem 0.8rem;
   font-size: 0.88rem;
   outline: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='var(--text-secondary)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
   padding-right: 2.2rem;
@@ -124,7 +124,7 @@
 }
 .icomms-select option {
   background: #141420;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* Toggle */
@@ -135,7 +135,7 @@
 }
 .icomms-toggle-label {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   font-weight: 600;
 }
 .icomms-toggle-switch {
@@ -152,7 +152,7 @@
 .icomms-toggle-slider {
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
   border-radius: 24px;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -183,8 +183,8 @@
 
 /* Output */
 .icomms-output {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 1rem;
@@ -198,14 +198,14 @@
 }
 .icomms-output-block .phase-label {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 .icomms-output-block .message {
-  color: rgba(255,255,255,0.9);
+  color: var(--text-primary);
   font-size: 0.92rem;
   line-height: 1.7;
 }
@@ -213,7 +213,7 @@
 .icomms-subject {
   font-weight: 700;
   font-size: 1rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.6rem;
 }
 
@@ -241,8 +241,8 @@
 }
 
 .icomms-gallery-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
   cursor: pointer;
@@ -250,7 +250,7 @@
 }
 .icomms-gallery-card:hover {
   border-color: rgba(255,143,102,0.3);
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
 }
 .icomms-gallery-card .icomms-gallery-icon {
   font-size: 1.3rem;
@@ -266,17 +266,17 @@
 }
 .icomms-gallery-card .icomms-gallery-preview {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
 /* FAQ */
 .icomms-panel details {
-  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+  margin-bottom: 1rem; padding: 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
-.icomms-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
-.icomms-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+.icomms-panel details summary { cursor: pointer; color: var(--text-primary); }
+.icomms-panel details div { color: var(--text-secondary); margin-top: 0.5rem; }
 
 /* Mobile */
 @media (max-width: 640px) {
@@ -309,7 +309,7 @@
 /* Generate Button */
 .icomms-generate-btn {
   background: var(--icomms-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border: none;
   border-radius: 8px;
   padding: 0.7rem 1.4rem;
@@ -334,9 +334,9 @@
   font-weight: 600;
   padding: 0.25rem 0.7rem;
   border-radius: 16px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.7);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
 }
 .icomms-sev-p1 { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: #f87171; }
 .icomms-sev-p2 { background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.3); color: #fb923c; }
@@ -345,15 +345,15 @@
 
 /* Section Cards (generated per phase) */
 .icomms-section-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
   margin-bottom: 1rem;
 }
 .icomms-section-phase {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
@@ -362,17 +362,17 @@
 .icomms-section-subject {
   font-weight: 600;
   font-size: 0.92rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .icomms-section-body {
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
   font-family: inherit;
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-primary);
   white-space: pre-wrap;
   line-height: 1.7;
   margin: 0;
@@ -386,9 +386,9 @@
 /* Copy / Mailto Buttons */
 .icomms-copy-btn,
 .icomms-mailto-btn {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.4rem 0.9rem;
   font-size: 0.8rem;
@@ -398,8 +398,8 @@
 }
 .icomms-copy-btn:hover,
 .icomms-mailto-btn:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 /* Creative Divider */
@@ -417,7 +417,7 @@
 .icomms-placeholder {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -434,9 +434,9 @@
 }
 .icomms-gallery-use {
   display: inline-block;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.4rem 0.9rem;
   font-size: 0.8rem;
@@ -447,14 +447,14 @@
 }
 .icomms-gallery-use:hover {
   background: var(--icomms-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border-color: var(--icomms-accent);
 }
 
 /* Copy All Phases */
 .icomms-copy-all { margin: 1rem 0; text-align: right; }
 .icomms-copy-all-btn {
-  background: var(--icomms-accent); color: #000; border: none; border-radius: 8px;
+  background: var(--icomms-accent); color: var(--accent-foreground, #fff); border: none; border-radius: 8px;
   padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.85rem;
 }
 .icomms-copy-all-btn:hover { opacity: 0.85; }
@@ -474,9 +474,9 @@
   margin-top: 1rem;
 }
 .icomms-action-btn {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -485,7 +485,7 @@
   transition: all 0.2s ease;
 }
 .icomms-action-btn:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 

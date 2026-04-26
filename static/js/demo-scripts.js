@@ -857,7 +857,7 @@
     if (wizardRec) {
       wizardRec.innerHTML =
         '<div style="text-align:center;margin-bottom:0.75rem"><span style="font-size:2.5rem">' + sc.icon + '</span></div>' +
-        '<div style="font-size:1.15rem;font-weight:700;color:#e2e8f0;text-align:center">' + esc(sc.name) + '</div>' +
+        '<div style="font-size:1.15rem;font-weight:700;color:var(--text-primary);text-align:center">' + esc(sc.name) + '</div>' +
         '<div style="color:#94a3b8;font-size:0.88rem;text-align:center;margin:0.35rem 0">' + esc(sc.tagline) + '</div>' +
         '<div style="color:#64748b;font-size:0.8rem;text-align:center">' +
         '\u23f1\ufe0f ' + wizardChoices.duration + ' min' +

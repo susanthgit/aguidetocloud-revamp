@@ -7,17 +7,17 @@
 
 .rename-tabs {
   display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 12px; margin-bottom: 1.5rem;
 }
 .rename-tab {
-  background: none; border: 1px solid transparent; color: rgba(255,255,255,0.5);
+  background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
   border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
 }
-.rename-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.rename-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .rename-tab.active {
-  color: #fff; background: var(--rename-accent); border-color: var(--rename-accent);
+  color: var(--text-primary); background: var(--rename-accent); border-color: var(--rename-accent);
   box-shadow: 0 2px 8px rgba(176,125,79,0.3);
 }
 .rename-panel { display: none; }
@@ -26,57 +26,56 @@
 .rename-search-box { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .rename-input {
   flex: 1; min-width: 200px; padding: 0.6rem 1rem; border-radius: 10px;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  color: #fff; font-size: 0.9rem; outline: none;
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
+  color: var(--text-primary); font-size: 0.9rem; outline: none;
 }
-.rename-input::placeholder { color: rgba(255,255,255,0.3); }
+.rename-input::placeholder { color: var(--text-muted); }
 .rename-input:focus { border-color: var(--rename-accent); box-shadow: 0 0 0 2px rgba(176,125,79,0.2); }
 .rename-select {
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.7); padding: 0.6rem; border-radius: 10px; font-size: 0.85rem;
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
+  color: var(--text-secondary); padding: 0.6rem; border-radius: 10px; font-size: 0.85rem;
 }
-.rename-select option { background: #0a0a14; color: #fff; }
-.rename-count { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-bottom: 1rem; }
+.rename-select option { background: #0a0a14; color: var(--text-primary); }
+.rename-count { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem; }
 
 .rename-card {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 12px; padding: 1.2rem; margin-bottom: 0.8rem;
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   border-left: 3px solid var(--rename-accent);
 }
 .rename-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-.rename-card-name { font-size: 1.1rem; font-weight: 700; color: #fff; }
+.rename-card-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
 .rename-card-cat {
   padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.65rem;
   background: rgba(176,125,79,0.15); color: var(--rename-accent); text-transform: uppercase;
 }
-.rename-card-desc { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 0.8rem; }
+.rename-card-desc { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.8rem; }
 .rename-card-link { color: var(--rename-accent); font-size: 0.8rem; text-decoration: none; }
 .rename-card-link:hover { text-decoration: underline; }
 
 .rename-timeline { padding-left: 1.2rem; border-left: 2px solid rgba(176,125,79,0.3); margin-top: 0.5rem; }
 .rename-event {
   position: relative; padding: 0.4rem 0 0.6rem 1rem; font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
 }
 .rename-event::before {
   content: ''; position: absolute; left: -1.35rem; top: 0.6rem;
   width: 8px; height: 8px; border-radius: 50%; background: var(--rename-accent);
 }
 .rename-event-date { color: var(--rename-accent); font-weight: 600; }
-.rename-event-names { color: rgba(255,255,255,0.8); }
+.rename-event-names { color: var(--text-primary); }
 .rename-event-names .old { text-decoration: line-through; opacity: 0.5; }
 .rename-event-names .arrow { color: var(--rename-accent); margin: 0 0.3rem; }
-.rename-event-note { color: rgba(255,255,255,0.4); font-size: 0.75rem; font-style: italic; }
+.rename-event-note { color: var(--text-muted); font-size: 0.75rem; font-style: italic; }
 
 /* Leaderboard */
 .rename-lb-item {
   display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 10px; margin-bottom: 0.5rem;
 }
 .rename-lb-rank { font-size: 1.5rem; font-weight: 800; color: var(--rename-accent); min-width: 2rem; text-align: center; }
-.rename-lb-name { font-weight: 600; color: #fff; flex: 1; }
+.rename-lb-name { font-weight: 600; color: var(--text-primary); flex: 1; }
 .rename-lb-count {
   padding: 0.2rem 0.6rem; border-radius: 12px;
   background: rgba(176,125,79,0.15); color: var(--rename-accent);
@@ -84,11 +83,11 @@
 }
 
 .rename-panel details {
-  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+  margin-bottom: 1rem; padding: 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
-.rename-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
-.rename-panel details p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+.rename-panel details summary { cursor: pointer; color: var(--text-primary); }
+.rename-panel details p { color: var(--text-secondary); margin-top: 0.5rem; }
 
 @media (max-width: 480px) {
   .rename-search-box { flex-direction: column; }

@@ -635,9 +635,9 @@
       const prevTier = prevScore <= 25 ? '🟢 Simple' : prevScore <= 50 ? '🟡 Moderate' : prevScore <= 75 ? '🟠 Complex' : '🔴 Critical';
       livePreviewHtml = `
         <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:10px;padding:0.75rem 1rem;margin-bottom:1.5rem;display:flex;justify-content:space-around;text-align:center;flex-wrap:wrap;gap:0.5rem">
-          <div><div style="font-size:1.2rem;font-weight:800;color:var(--tool-accent)">${Math.min(prevScore, 100)}</div><div style="font-size:0.7rem;color:#888">Score so far</div></div>
-          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${prevTier}</div><div style="font-size:0.7rem;color:#888">Complexity</div></div>
-          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${(S.workloads || []).length}</div><div style="font-size:0.7rem;color:#888">Workloads</div></div>
+          <div><div style="font-size:1.2rem;font-weight:800;color:var(--accent)">${Math.min(prevScore, 100)}</div><div style="font-size:0.7rem;color:var(--text-muted)">Score so far</div></div>
+          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${prevTier}</div><div style="font-size:0.7rem;color:var(--text-muted)">Complexity</div></div>
+          <div><div style="font-size:0.9rem;font-weight:700;color:#fff">${(S.workloads || []).length}</div><div style="font-size:0.7rem;color:var(--text-muted)">Workloads</div></div>
         </div>`;
     }
 
@@ -738,7 +738,7 @@
     const breakdownHtml = (S.scoreBreakdown || []).slice(0, 6).map(b =>
       `<div style="display:flex;justify-content:space-between;align-items:center;padding:0.25rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
         <span style="font-size:0.8rem;color:#aaa">${b.label}</span>
-        <span style="font-size:0.8rem;font-weight:700;color:var(--tool-accent)">+${b.points}</span>
+        <span style="font-size:0.8rem;font-weight:700;color:var(--accent)">+${b.points}</span>
       </div>`
     ).join('');
 
@@ -758,7 +758,7 @@
 
         <button class="migplan-toggle-btn" style="margin:1rem auto;display:block;font-size:0.85rem" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score breakdown':'📊 Why this score?'">📊 Why this score?</button>
         <div class="migplan-toggle-content" style="max-width:400px;margin:0 auto;background:rgba(99,102,241,0.06);border-radius:10px;padding:1rem">
-          <div style="font-size:0.78rem;font-weight:700;color:#888;text-transform:uppercase;margin-bottom:0.5rem">Score Breakdown</div>
+          <div style="font-size:0.78rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:0.5rem">Score Breakdown</div>
           ${breakdownHtml}
           <div style="display:flex;justify-content:space-between;padding:0.4rem 0;margin-top:0.3rem;border-top:1px solid rgba(99,102,241,0.2)">
             <span style="font-size:0.85rem;font-weight:700;color:#fff">Total</span>
@@ -853,7 +853,7 @@
           <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.5rem">${w ? w.emoji + ' ' + w.name : wid}</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.5rem">
             ${fields.map(f => `<div>
-              <label style="font-size:0.72rem;color:#888;display:block;margin-bottom:0.2rem">${f.label}</label>
+              <label style="font-size:0.72rem;color:var(--text-muted);display:block;margin-bottom:0.2rem">${f.label}</label>
               <input type="number" class="migplan-discovery-input" data-wid="${wid}" data-key="${f.key}"
                 value="${existing[f.key] || ''}" placeholder="${f.placeholder}"
                 style="width:100%;padding:0.4rem 0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#fff;font-size:0.82rem">
@@ -901,7 +901,7 @@
           <button class="migplan-toggle-btn" style="font-size:0.78rem;margin-top:0.5rem"
             onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score detail':'📊 Why this score?'">📊 Why this score?</button>
           <div class="migplan-toggle-content" style="background:rgba(99,102,241,0.06);border-radius:8px;padding:0.75rem;margin-top:0.25rem">
-            <div style="display:flex;justify-content:space-between;padding:0.2rem 0;margin-bottom:0.3rem"><span style="font-size:0.75rem;color:#888">Base score</span><span style="font-size:0.75rem;font-weight:700;color:#10B981">75</span></div>
+            <div style="display:flex;justify-content:space-between;padding:0.2rem 0;margin-bottom:0.3rem"><span style="font-size:0.75rem;color:var(--text-muted)">Base score</span><span style="font-size:0.75rem;font-weight:700;color:#10B981">75</span></div>
             ${bdRows}
             <div style="display:flex;justify-content:space-between;padding:0.3rem 0;margin-top:0.3rem;border-top:1px solid rgba(99,102,241,0.2)"><span style="font-size:0.78rem;font-weight:700;color:#fff">Final</span><span style="font-size:0.78rem;font-weight:700;color:${scoreColor}">${score}</span></div>
           </div>`;
@@ -924,7 +924,7 @@
           <button class="migplan-toggle-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Less detail':'▼ More detail'">▼ More detail</button>
           <div class="migplan-toggle-content">
             <div style="margin-top:0.5rem">
-              <strong style="font-size:0.8rem;color:var(--tool-accent);">📋 Discovery Checklist:</strong>
+              <strong style="font-size:0.8rem;color:var(--accent);">📋 Discovery Checklist:</strong>
               <ul class="migplan-workload-items">${checklistHtml}</ul>
             </div>
             <div style="margin-top:0.5rem">
@@ -1089,15 +1089,15 @@
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center">
           <div>
             <div style="font-size:1.3rem;font-weight:800;color:#10B981">$0</div>
-            <div style="font-size:0.75rem;color:#888">Native tools only</div>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Native tools only</div>
           </div>
           <div>
-            <div style="font-size:1.3rem;font-weight:800;color:var(--tool-accent)">$${(minCost).toLocaleString()}</div>
-            <div style="font-size:0.75rem;color:#888">Low estimate</div>
+            <div style="font-size:1.3rem;font-weight:800;color:var(--accent)">$${(minCost).toLocaleString()}</div>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Low estimate</div>
           </div>
           <div>
             <div style="font-size:1.3rem;font-weight:800;color:#F97316">$${(maxCost).toLocaleString()}</div>
-            <div style="font-size:0.75rem;color:#888">High estimate</div>
+            <div style="font-size:0.75rem;color:var(--text-muted)">High estimate</div>
           </div>
         </div>
         <div style="font-size:0.75rem;color:#666;margin-top:0.5rem;text-align:center">Based on per-user tool pricing × estimated user count. Actual costs depend on licensing model.</div>
@@ -1253,14 +1253,14 @@
         <div class="migplan-summary-section">
           <h3>Migration Profile</h3>
           <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
-            <tr><td style="color:#888;padding:0.4rem 0">Scenario</td><td style="color:#fff;padding:0.4rem 0">${sc ? sc.emoji + ' ' + sc.name : S.scenario}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Approach</td><td style="color:#fff;padding:0.4rem 0">${ap ? ap.name : S.approach}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Driver</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('reason', S.reason)}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Deadline</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('deadline', S.deadline)}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Compliance</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('compliance', S.compliance)}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Geography</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('multiGeo', S.multiGeo)}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Directory</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('directory', S.directory)}</td></tr>
-            <tr><td style="color:#888;padding:0.4rem 0">Experience</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('experience', S.experience)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Scenario</td><td style="color:#fff;padding:0.4rem 0">${sc ? sc.emoji + ' ' + sc.name : S.scenario}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Approach</td><td style="color:#fff;padding:0.4rem 0">${ap ? ap.name : S.approach}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Driver</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('reason', S.reason)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Deadline</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('deadline', S.deadline)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Compliance</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('compliance', S.compliance)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Geography</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('multiGeo', S.multiGeo)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Directory</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('directory', S.directory)}</td></tr>
+            <tr><td style="color:var(--text-muted);padding:0.4rem 0">Experience</td><td style="color:#fff;padding:0.4rem 0">${humanLabel('experience', S.experience)}</td></tr>
           </table>
         </div>
 
@@ -1268,9 +1268,9 @@
         <div class="migplan-summary-section">
           <h3>💰 Budget Estimate</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;margin-bottom:0.75rem">
-            <div><div style="font-size:1.1rem;font-weight:800;color:#10B981">$0</div><div style="font-size:0.72rem;color:#888">Native only</div></div>
-            <div><div style="font-size:1.1rem;font-weight:800;color:var(--tool-accent)">$${minCost.toLocaleString()}</div><div style="font-size:0.72rem;color:#888">Low estimate</div></div>
-            <div><div style="font-size:1.1rem;font-weight:800;color:#F97316">$${maxCost.toLocaleString()}</div><div style="font-size:0.72rem;color:#888">High estimate</div></div>
+            <div><div style="font-size:1.1rem;font-weight:800;color:#10B981">$0</div><div style="font-size:0.72rem;color:var(--text-muted)">Native only</div></div>
+            <div><div style="font-size:1.1rem;font-weight:800;color:var(--accent)">$${minCost.toLocaleString()}</div><div style="font-size:0.72rem;color:var(--text-muted)">Low estimate</div></div>
+            <div><div style="font-size:1.1rem;font-weight:800;color:#F97316">$${maxCost.toLocaleString()}</div><div style="font-size:0.72rem;color:var(--text-muted)">High estimate</div></div>
           </div>
           <div style="font-size:0.75rem;color:#666;text-align:center">Tool licensing only. Excludes labour, training, and change management.</div>
         </div>
@@ -1279,7 +1279,7 @@
         <div class="migplan-summary-section">
           <h3>⏰ Deadline Feasibility</h3>
           <p style="font-size:0.85rem;color:#bbb">${feasProse}</p>
-          ${S.deadline !== 'none' ? `<div style="font-size:0.82rem;color:#888;margin-top:0.3rem">Deadline: ${humanLabel('deadline', S.deadline)} · Estimated: ${S.timelineWeeks} weeks</div>` : ''}
+          ${S.deadline !== 'none' ? `<div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem">Deadline: ${humanLabel('deadline', S.deadline)} · Estimated: ${S.timelineWeeks} weeks</div>` : ''}
         </div>
 
         <!-- #13 Disruption Level -->
@@ -1329,7 +1329,7 @@
         </div>
 
         <div style="margin-top:2rem;text-align:center;font-size:0.78rem;color:#666">
-          Generated by <a href="https://www.aguidetocloud.com/migration-planner/" style="color:var(--tool-accent)">aguidetocloud.com/migration-planner</a> · ${new Date().toLocaleDateString()}
+          Generated by <a href="https://www.aguidetocloud.com/migration-planner/" style="color:var(--accent)">aguidetocloud.com/migration-planner</a> · ${new Date().toLocaleDateString()}
         </div>
       </div>
     `;

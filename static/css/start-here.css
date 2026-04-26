@@ -19,7 +19,7 @@
 }
 
 .sh-hero h1 .sh-hero-accent {
-  color: var(--neon-cyan, #00e5ff);
+  color: var(--accent);
 }
 
 .sh-hero-sub {
@@ -42,7 +42,7 @@
 }
 
 .sh-hero-stat strong {
-  color: var(--neon-cyan, #00e5ff);
+  color: var(--accent);
   font-size: 0.95rem;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .sh-credit a:hover {
-  color: var(--neon-cyan, #00e5ff);
+  color: var(--accent);
 }
 
 /* ── Quick-Jump Pills ── */
@@ -79,9 +79,7 @@
   font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.25s;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
+  }
 
 .sh-jump-pill:hover {
   background: color-mix(in srgb, var(--sh-accent) 20%, transparent);
@@ -117,7 +115,7 @@
 }
 
 .sh-fallback a {
-  color: var(--neon-cyan, #00e5ff);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -439,9 +437,7 @@
   border: 1px solid rgba(255, 255, 255, 0.07);
   text-decoration: none;
   transition: border-color 0.25s, transform 0.2s;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
+  }
 
 .sh-also-card:hover {
   border-color: color-mix(in srgb, var(--sh-accent) 35%, rgba(255, 255, 255, 0.1));
@@ -503,7 +499,7 @@
 
 .sh-tool-card {
   background:
-    radial-gradient(ellipse at 50% -20%, rgba(102, 255, 255, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% -20%, var(--accent-subtle) 0%, transparent 55%),
     rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 18px;
@@ -514,11 +510,11 @@
 }
 
 .sh-tool-card:hover {
-  border-color: rgba(102, 255, 255, 0.2);
+  border-color: var(--accent-subtle);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(102, 255, 255, 0.06);
+  box-shadow: 0 8px 24px var(--accent-subtle);
   background:
-    radial-gradient(ellipse at 50% -20%, rgba(102, 255, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% -20%, var(--accent-subtle) 0%, transparent 60%),
     rgba(0, 0, 0, 0.5);
 }
 

@@ -9,11 +9,6 @@
   --pomo-dim: rgba(239, 68, 68, 0.12);
   --pomo-glow: rgba(239, 68, 68, 0.25);
   --pomo-bg: var(--bg-page);
-  --pomo-card: var(--bg-surface);
-  --pomo-card-hover: var(--bg-elevated);
-  --pomo-border: var(--border);
-  --pomo-text: var(--text-primary);
-  --pomo-text-dim: var(--text-secondary);
   --pomo-green: #34D399;
   --pomo-blue: #3B82F6;
   --pomo-focus: #EF4444;
@@ -44,9 +39,9 @@
   margin-bottom: 1rem;
 }
 .pomo-preset {
-  background: var(--pomo-card);
-  border: 1px solid var(--pomo-border);
-  color: var(--pomo-text-dim);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
   padding: 0.35rem 0.85rem;
   border-radius: 2rem;
   font-size: 0.8rem;
@@ -54,7 +49,7 @@
   transition: all 0.2s;
   font-weight: 500;
 }
-.pomo-preset:hover { border-color: var(--pomo); color: var(--pomo-text); }
+.pomo-preset:hover { border-color: var(--pomo); color: var(--text-primary); }
 .pomo-preset.active {
   background: var(--pomo-dim);
   border-color: var(--pomo);
@@ -82,7 +77,7 @@
   margin: 0 auto 1rem;
 }
 .pomo-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
-.pomo-ring-bg { fill: none; stroke: var(--pomo-border); stroke-width: 8; }
+.pomo-ring-bg { fill: none; stroke: var(--border); stroke-width: 8; }
 .pomo-ring-progress {
   fill: none; stroke: var(--pomo-focus); stroke-width: 8; stroke-linecap: round;
   stroke-dasharray: 753.98; stroke-dashoffset: 0;
@@ -91,7 +86,7 @@
 .pomo-time {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   font-size: 3.5rem; font-weight: 700; font-variant-numeric: tabular-nums;
-  color: var(--pomo-text); letter-spacing: 0.05em;
+  color: var(--text-primary); letter-spacing: 0.05em;
 }
 
 /* Session dots */
@@ -99,7 +94,7 @@
   display: flex; justify-content: center; gap: 0.6rem;
   margin-bottom: 1rem; font-size: 1.2rem;
 }
-.pomo-dot { color: var(--pomo-text-dim); transition: color 0.3s; }
+.pomo-dot { color: var(--text-secondary); transition: color 0.3s; }
 .pomo-dot.filled { color: var(--pomo-focus); }
 
 /* Controls */
@@ -116,9 +111,9 @@
 .pomo-btn-primary { background: var(--pomo); color: var(--text-primary); }
 .pomo-btn-primary:hover { background: #DC2626; transform: translateY(-1px); box-shadow: 0 4px 16px var(--pomo-glow); }
 .pomo-btn-secondary {
-  background: var(--pomo-card); color: var(--pomo-text); border: 1px solid var(--pomo-border);
+  background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border);
 }
-.pomo-btn-secondary:hover { background: var(--pomo-card-hover); border-color: var(--pomo); }
+.pomo-btn-secondary:hover { background: var(--bg-elevated); border-color: var(--pomo); }
 .pomo-btn-danger {
   background: rgba(239, 68, 68, 0.15); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3);
 }
@@ -126,7 +121,7 @@
 .pomo-btn-sm { padding: 0.4rem 0.85rem; font-size: 0.82rem; }
 .pomo-btn-xs {
   padding: 0.2rem 0.5rem; font-size: 0.75rem;
-  background: var(--pomo-card); color: var(--pomo-text-dim); border: 1px solid var(--pomo-border);
+  background: var(--bg-surface); color: var(--text-secondary); border: 1px solid var(--border);
   border-radius: 0.3rem; cursor: pointer; margin-left: 0.4rem;
 }
 .pomo-btn-xs:hover { border-color: var(--pomo); color: var(--pomo); }
@@ -142,7 +137,7 @@
 }
 .pomo-focus-task-display:hover { background: var(--bg-elevated); }
 .pomo-focus-label { font-size: 0.9rem; }
-.pomo-focus-name { font-size: 0.9rem; color: var(--pomo-text-dim); }
+.pomo-focus-name { font-size: 0.9rem; color: var(--text-secondary); }
 .pomo-focus-task.has-task .pomo-focus-name { color: var(--pomo); font-weight: 600; }
 .pomo-focus-task-input {
   display: flex; gap: 0.4rem; justify-content: center; align-items: center;
@@ -197,36 +192,36 @@
   display: flex; justify-content: space-between; align-items: center;
   padding: 0 0.25rem;
 }
-.pomo-today-count { font-size: 0.85rem; color: var(--pomo-text-dim); }
+.pomo-today-count { font-size: 0.85rem; color: var(--text-secondary); }
 .pomo-today-count strong { color: var(--pomo); }
 .pomo-timer-actions { display: flex; gap: 0.35rem; align-items: center; }
 .pomo-icon-btn {
-  background: none; border: 1px solid var(--pomo-border); color: var(--pomo-text-dim);
+  background: none; border: 1px solid var(--border); color: var(--text-secondary);
   width: 34px; height: 34px; border-radius: 0.5rem; font-size: 1rem;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: all 0.2s;
 }
 .pomo-icon-btn:hover { border-color: var(--pomo); color: var(--pomo); }
 .pomo-auto-label {
-  font-size: 0.78rem; color: var(--pomo-text-dim); display: flex; align-items: center; gap: 0.3rem; cursor: pointer;
+  font-size: 0.78rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.3rem; cursor: pointer;
 }
 .pomo-auto-label input { accent-color: var(--pomo); width: 14px; height: 14px; }
 
 /* Quote */
 .pomo-quote {
   text-align: center; padding: 0.75rem 0.5rem 0; margin-top: 0.5rem;
-  border-top: 1px solid var(--pomo-border);
-  font-style: italic; color: var(--pomo-text-dim); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  font-style: italic; color: var(--text-secondary); font-size: 0.85rem;
 }
 .pomo-quote span { display: block; margin-top: 0.25rem; font-size: 0.75rem; opacity: 0.6; font-style: normal; }
 
 /* Shortcuts */
 .pomo-shortcuts {
-  text-align: center; font-size: 0.72rem; color: var(--pomo-text-dim);
+  text-align: center; font-size: 0.72rem; color: var(--text-secondary);
   opacity: 0.4; margin-top: 0.75rem; line-height: 2;
 }
 .pomo-shortcuts span {
-  display: inline-block; background: var(--pomo-card); border: 1px solid var(--pomo-border);
+  display: inline-block; background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 3px; padding: 0.1rem 0.35rem; font-family: monospace; font-size: 0.68rem;
   margin: 0 0.08rem;
 }
@@ -245,12 +240,12 @@
 }
 .pomo-tabs::-webkit-scrollbar { display: none; }
 .pomo-tab {
-  background: none; border: 1px solid transparent; color: var(--pomo-text-dim);
+  background: none; border: 1px solid transparent; color: var(--text-secondary);
   padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; cursor: pointer;
   white-space: nowrap; border-radius: 14px; transition: all 0.2s ease;
   flex: 1; text-align: center;
 }
-.pomo-tab:hover { color: var(--pomo-text); background: var(--bg-elevated); }
+.pomo-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .pomo-tab.active {
   color: var(--text-primary); background: var(--pomo); border-color: var(--pomo);
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3); font-weight: 600;
@@ -260,7 +255,7 @@
 
 /* ── Section titles ── */
 .pomo-section-title {
-  font-size: 1rem; font-weight: 600; color: var(--pomo-text); margin: 1.25rem 0 0.6rem;
+  font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 1.25rem 0 0.6rem;
 }
 .pomo-section-title:first-child { margin-top: 0; }
 
@@ -270,52 +265,52 @@
 .pomo-tasks-header {
   display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;
 }
-.pomo-task-count { font-size: 0.82rem; color: var(--pomo-text-dim); }
+.pomo-task-count { font-size: 0.82rem; color: var(--text-secondary); }
 .pomo-task-input-row { display: flex; gap: 0.4rem; margin-bottom: 0.75rem; }
 .pomo-input {
-  background: var(--pomo-card); border: 1px solid var(--pomo-border); color: var(--pomo-text);
+  background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-primary);
   border-radius: 0.5rem; padding: 0.55rem 0.7rem; font-size: 0.88rem; outline: none;
   transition: border-color 0.2s;
 }
 .pomo-input:focus { border-color: var(--pomo); }
-.pomo-input::placeholder { color: var(--pomo-text-dim); }
+.pomo-input::placeholder { color: var(--text-secondary); }
 #pomo-task-input { flex: 1; }
 .pomo-est-input { width: 55px; text-align: center; }
 .pomo-task-list { min-height: 40px; }
 .pomo-task-item {
   display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.5rem 0.65rem; background: var(--pomo-card); border: 1px solid var(--pomo-border);
+  padding: 0.5rem 0.65rem; background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 0.5rem; margin-bottom: 0.35rem; cursor: grab; transition: all 0.2s;
 }
 .pomo-task-item:hover { border-color: rgba(239, 68, 68, 0.3); }
 .pomo-task-item.active-task { border-color: var(--pomo); background: var(--pomo-dim); }
 .pomo-task-item.done .pomo-task-name { text-decoration: line-through; opacity: 0.45; }
 .pomo-task-item.dragging { opacity: 0.5; border: 1px dashed var(--pomo); }
-.pomo-task-drag { color: var(--pomo-text-dim); cursor: grab; font-size: 0.85rem; user-select: none; }
+.pomo-task-drag { color: var(--text-secondary); cursor: grab; font-size: 0.85rem; user-select: none; }
 .pomo-task-check {
-  width: 18px; height: 18px; border: 2px solid var(--pomo-border); border-radius: 50%;
+  width: 18px; height: 18px; border: 2px solid var(--border); border-radius: 50%;
   background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
   font-size: 0.65rem; color: transparent; transition: all 0.2s; flex-shrink: 0;
 }
 .pomo-task-check:hover { border-color: var(--pomo-green); }
 .pomo-task-item.done .pomo-task-check { border-color: var(--pomo-green); background: var(--pomo-green); color: var(--text-primary); }
-.pomo-task-name { flex: 1; color: var(--pomo-text); font-size: 0.88rem; cursor: pointer; }
-.pomo-task-pomos { font-size: 0.72rem; color: var(--pomo-text-dim); white-space: nowrap; }
+.pomo-task-name { flex: 1; color: var(--text-primary); font-size: 0.88rem; cursor: pointer; }
+.pomo-task-pomos { font-size: 0.72rem; color: var(--text-secondary); white-space: nowrap; }
 .pomo-task-pomos strong { color: var(--pomo); }
 .pomo-task-del {
-  background: none; border: none; color: var(--pomo-text-dim); cursor: pointer;
+  background: none; border: none; color: var(--text-secondary); cursor: pointer;
   font-size: 0.95rem; padding: 0.15rem; opacity: 0; transition: all 0.2s;
 }
 .pomo-task-item:hover .pomo-task-del { opacity: 1; }
 .pomo-task-del:hover { color: #EF4444; }
 .pomo-task-move {
-  background: none; border: none; color: var(--pomo-text-dim);
+  background: none; border: none; color: var(--text-secondary);
   cursor: pointer; font-size: 0.75rem; padding: 0.1rem 0.25rem; line-height: 1;
 }
 .pomo-task-move:hover { color: var(--pomo); }
 .pomo-task-moves { display: none; flex-direction: column; gap: 0; }
 @media (max-width: 640px) { .pomo-task-moves { display: flex; } .pomo-task-drag { display: none; } }
-.pomo-task-hint { font-size: 0.75rem; color: var(--pomo-text-dim); opacity: 0.5; text-align: center; margin-top: 0.4rem; }
+.pomo-task-hint { font-size: 0.75rem; color: var(--text-secondary); opacity: 0.5; text-align: center; margin-top: 0.4rem; }
 
 /* ═══════════════════════════════════════════
    SETTINGS MODAL
@@ -326,39 +321,39 @@
   padding: 1rem;
 }
 .pomo-modal {
-  background: var(--pomo-bg); border: 1px solid var(--pomo-border);
+  background: var(--pomo-bg); border: 1px solid var(--border);
   border-radius: 1rem; width: 100%; max-width: 520px; max-height: 85vh;
   overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 .pomo-modal-header {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 1.25rem; border-bottom: 1px solid var(--pomo-border);
+  padding: 1rem 1.25rem; border-bottom: 1px solid var(--border);
   position: sticky; top: 0; background: var(--pomo-bg); z-index: 1;
 }
-.pomo-modal-header h2 { margin: 0; font-size: 1.1rem; color: var(--pomo-text); }
+.pomo-modal-header h2 { margin: 0; font-size: 1.1rem; color: var(--text-primary); }
 .pomo-modal-close {
-  background: none; border: none; color: var(--pomo-text-dim); font-size: 1.5rem;
+  background: none; border: none; color: var(--text-secondary); font-size: 1.5rem;
   cursor: pointer; padding: 0; line-height: 1;
 }
 .pomo-modal-close:hover { color: var(--pomo); }
 .pomo-modal-body { padding: 1rem 1.25rem 1.5rem; }
 .pomo-settings-grid { display: grid; gap: 0.85rem; }
-.pomo-setting label { display: block; font-size: 0.82rem; color: var(--pomo-text-dim); margin-bottom: 0.3rem; }
+.pomo-setting label { display: block; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.3rem; }
 .pomo-slider-row { display: flex; align-items: center; gap: 0.6rem; }
 .pomo-slider { flex: 1; accent-color: var(--pomo); height: 5px; }
 .pomo-slider-val { min-width: 65px; font-size: 0.82rem; color: var(--pomo); font-weight: 600; text-align: right; }
 .pomo-settings-toggles { display: flex; flex-direction: column; gap: 0.6rem; }
 .pomo-toggle-row {
   display: flex; align-items: center; gap: 0.4rem;
-  color: var(--pomo-text-dim); font-size: 0.82rem; cursor: pointer;
+  color: var(--text-secondary); font-size: 0.82rem; cursor: pointer;
 }
 .pomo-toggle-row input[type="checkbox"] { accent-color: var(--pomo); width: 15px; height: 15px; }
 .pomo-sound-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .pomo-pill {
-  background: var(--pomo-card); border: 1px solid var(--pomo-border); color: var(--pomo-text-dim);
+  background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-secondary);
   padding: 0.35rem 0.65rem; border-radius: 2rem; font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
 }
-.pomo-pill:hover { border-color: var(--pomo); color: var(--pomo-text); }
+.pomo-pill:hover { border-color: var(--pomo); color: var(--text-primary); }
 .pomo-pill.active { background: var(--pomo-dim); border-color: var(--pomo); color: var(--pomo); }
 
 /* ═══════════════════════════════════════════
@@ -367,13 +362,13 @@
 .pomo-stats-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-bottom: 0.75rem; }
 @media (max-width: 640px) { .pomo-stats-cards { grid-template-columns: repeat(2, 1fr); } }
 .pomo-stat-card {
-  background: var(--pomo-card); border: 1px solid var(--pomo-border);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 0.5rem; padding: 0.6rem; text-align: center;
 }
 .pomo-stat-num { font-size: 1.4rem; font-weight: 700; color: var(--pomo); font-variant-numeric: tabular-nums; }
-.pomo-stat-label { font-size: 0.7rem; color: var(--pomo-text-dim); margin-top: 0.15rem; }
+.pomo-stat-label { font-size: 0.7rem; color: var(--text-secondary); margin-top: 0.15rem; }
 .pomo-chart-wrap {
-  background: var(--pomo-card); border: 1px solid var(--pomo-border);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.75rem;
 }
 .pomo-heatmap-wrap { margin-bottom: 1rem; }
@@ -381,13 +376,13 @@
   display: grid; grid-template-columns: repeat(53, 1fr); gap: 2px;
   margin-bottom: 0.4rem; overflow-x: auto;
 }
-.pomo-heat-cell { width: 100%; aspect-ratio: 1; border-radius: 2px; background: var(--pomo-card); min-width: 8px; }
+.pomo-heat-cell { width: 100%; aspect-ratio: 1; border-radius: 2px; background: var(--bg-surface); min-width: 8px; }
 .pomo-heat-cell[data-level="1"] { background: rgba(239, 68, 68, 0.2); }
 .pomo-heat-cell[data-level="2"] { background: rgba(239, 68, 68, 0.4); }
 .pomo-heat-cell[data-level="3"] { background: rgba(239, 68, 68, 0.65); }
 .pomo-heat-cell[data-level="4"] { background: rgba(239, 68, 68, 0.9); }
-.pomo-heatmap-legend { display: flex; align-items: center; justify-content: flex-end; gap: 3px; font-size: 0.68rem; color: var(--pomo-text-dim); }
-.pomo-heat-box { width: 11px; height: 11px; border-radius: 2px; display: inline-block; background: var(--pomo-card); }
+.pomo-heatmap-legend { display: flex; align-items: center; justify-content: flex-end; gap: 3px; font-size: 0.68rem; color: var(--text-secondary); }
+.pomo-heat-box { width: 11px; height: 11px; border-radius: 2px; display: inline-block; background: var(--bg-surface); }
 .pomo-heat-box[data-level="1"] { background: rgba(239, 68, 68, 0.2); }
 .pomo-heat-box[data-level="2"] { background: rgba(239, 68, 68, 0.4); }
 .pomo-heat-box[data-level="3"] { background: rgba(239, 68, 68, 0.65); }
@@ -397,10 +392,10 @@
 /* ═══════════════════════════════════════════
    FAQ
    ═══════════════════════════════════════════ */
-.pomo-faq { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--pomo-border); }
-.pomo-faq-item { background: var(--pomo-card); border: 1px solid var(--pomo-border); border-radius: 0.5rem; padding: 0.85rem; margin-bottom: 0.6rem; }
+.pomo-faq { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.pomo-faq-item { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 0.5rem; padding: 0.85rem; margin-bottom: 0.6rem; }
 .pomo-faq-q { font-size: 0.92rem; font-weight: 600; color: var(--pomo); margin-bottom: 0.3rem; }
-.pomo-faq-a { font-size: 0.85rem; color: var(--pomo-text-dim); line-height: 1.6; }
+.pomo-faq-a { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
 
 /* ═══════════════════════════════════════════
    FULLSCREEN MODE

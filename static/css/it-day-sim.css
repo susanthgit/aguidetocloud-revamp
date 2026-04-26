@@ -19,8 +19,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -31,7 +31,7 @@
 .itday-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -43,11 +43,11 @@
   white-space: nowrap;
 }
 .itday-tab:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .itday-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: var(--itday-accent);
   border-color: var(--itday-accent);
   box-shadow: 0 2px 8px rgba(194,123,160,0.3);
@@ -58,8 +58,8 @@
 
 /* Glass Card */
 .itday-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
 }
@@ -67,7 +67,7 @@
 /* Buttons */
 .itday-btn-primary {
   background: var(--itday-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
@@ -78,9 +78,9 @@
 .itday-btn-primary:hover { opacity: 0.85; }
 
 .itday-btn-secondary {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
@@ -88,14 +88,14 @@
   transition: all 0.2s ease;
 }
 .itday-btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 /* Start Screen */
 .itday-start-screen {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2.5rem 2rem;
   text-align: center;
@@ -105,12 +105,12 @@
 .itday-start-screen .itday-start-title {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.8rem;
 }
 .itday-start-screen .itday-start-desc {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -123,8 +123,8 @@
 
 /* Scenario Card */
 .itday-scenario-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.8rem 1.5rem;
   margin-bottom: 1.2rem;
@@ -132,7 +132,7 @@
 .itday-scenario-card .itday-scenario-text {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
@@ -144,11 +144,11 @@
   margin-bottom: 1.2rem;
 }
 .itday-choice-btn {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1rem 1.2rem;
-  color: rgba(255,255,255,0.8);
+  color: var(--text-primary);
   font-size: 0.92rem;
   text-align: left;
   cursor: pointer;
@@ -158,18 +158,18 @@
 }
 .itday-choice-btn:hover {
   border-color: rgba(194,123,160,0.4);
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   transform: translateY(-2px);
 }
 
 /* Choice Result */
 .itday-choice-result {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
   margin-bottom: 1.2rem;
-  color: rgba(255,255,255,0.8);
+  color: var(--text-primary);
   font-size: 0.92rem;
   line-height: 1.6;
 }
@@ -193,8 +193,8 @@
 
 /* Score Tracker */
 .itday-score-tracker {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.6rem 1.2rem;
   display: flex;
@@ -209,7 +209,7 @@
 }
 .itday-score-tracker .itday-scenario-count {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 /* Progress Bar */
@@ -220,7 +220,7 @@
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
   overflow: hidden;
 }
 .itday-progress-fill {
@@ -248,13 +248,13 @@
 .itday-result-screen .itday-tier-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 .itday-result-screen .itday-tier-desc {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   line-height: 1.6;
   max-width: 460px;
   margin: 0 auto 1.5rem;
@@ -262,8 +262,8 @@
 
 /* Result Card (downloadable) */
 .itday-result-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2rem;
   max-width: 420px;
@@ -278,18 +278,18 @@
   margin: 1.5rem auto 0;
 }
 .itday-summary-item {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem 1rem;
   margin-bottom: 0.6rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 .itday-summary-item .itday-summary-scenario {
   font-weight: 600;
-  color: rgba(255,255,255,0.9);
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
 }
 
@@ -299,12 +299,12 @@
   align-items: center;
   gap: 1rem;
   padding: 0.7rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
   font-size: 0.85rem;
 }
 .itday-history-item:last-child { border-bottom: none; }
 .itday-history-date {
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   min-width: 90px;
   flex-shrink: 0;
 }
@@ -314,12 +314,12 @@
   min-width: 50px;
 }
 .itday-history-tier {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 /* Traits */
 .itday-traits { margin-top: 1.5rem; }
-.itday-traits h4 { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 0.6rem; }
+.itday-traits h4 { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.6rem; }
 .itday-trait-list { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
 .itday-trait-pill {
   padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;
@@ -333,34 +333,32 @@
 }
 .itday-lobby-icon {
   width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  font-size: 1.8rem; background: var(--border); border: 1px solid var(--border);
   border-radius: 14px; animation: itday-pulse 3s ease-in-out infinite;
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-}
+  }
 .itday-lobby-icon:nth-child(3) { animation-delay: 1s; }
 .itday-lobby-icon:nth-child(5) { animation-delay: 2s; }
 @keyframes itday-pulse {
-  0%, 100% { transform: scale(1); border-color: rgba(255,255,255,0.1); }
+  0%, 100% { transform: scale(1); border-color: var(--border); }
   50% { transform: scale(1.06); border-color: rgba(194,123,160,0.35); box-shadow: 0 0 16px rgba(194,123,160,0.1); }
 }
-.itday-lobby-arrow { color: rgba(255,255,255,0.2); font-size: 1.2rem; }
+.itday-lobby-arrow { color: var(--text-muted); font-size: 1.2rem; }
 .itday-lobby-stats {
   display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;
-  padding: 0.6rem 1rem; background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+  padding: 0.6rem 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
 .itday-lstat { text-align: center; min-width: 55px; }
 .itday-lstat-num { display: block; font-size: 1rem; font-weight: 700; color: #C27BA0; }
-.itday-lstat-label { display: block; font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; }
-.itday-lobby-heading { font-size: 0.88rem; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; font-weight: 500; }
+.itday-lstat-label { display: block; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.itday-lobby-heading { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem; font-weight: 500; }
 .itday-lobby-modes {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.2rem;
 }
 .itday-lobby-card {
-  position: relative; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  position: relative; background: var(--border); border: 1px solid var(--border);
   border-radius: 14px; padding: 1.2rem 0.8rem; cursor: pointer; text-align: center;
-  transition: all 0.25s ease; overflow: hidden; color: #fff;
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: all 0.25s ease; overflow: hidden; color: var(--text-primary);
   animation: itday-card-in 0.4s ease backwards;
 }
 .itday-lobby-card:nth-child(2) { animation-delay: 0.08s; }
@@ -382,23 +380,23 @@
 .itday-lobby-card:focus-visible { outline: 2px solid #C27BA0; outline-offset: 2px; }
 .itday-lc-icon { font-size: 1.8rem; margin-bottom: 0.4rem; position: relative; }
 .itday-lc-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; position: relative; }
-.itday-lc-desc { font-size: 0.73rem; color: rgba(255,255,255,0.5); line-height: 1.4; position: relative; }
+.itday-lc-desc { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.4; position: relative; }
 .itday-lc-time { margin-top: 0.4rem; font-size: 0.68rem; color: #C27BA0; font-weight: 600; position: relative; }
 .itday-lc-featured { border-color: rgba(194,123,160,0.25); }
 .itday-lc-badge {
   position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.58rem; font-weight: 700;
-  text-transform: uppercase; background: #C27BA0; color: #fff;
+  text-transform: uppercase; background: #C27BA0; color: var(--text-primary);
   padding: 0.15rem 0.5rem; border-radius: 20px; letter-spacing: 0.5px; z-index: 1;
 }
-.itday-lobby-source { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+.itday-lobby-source { font-size: 0.72rem; color: var(--text-muted); }
 
 /* FAQ */
 .itday-panel details {
-  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+  margin-bottom: 1rem; padding: 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
-.itday-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
-.itday-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+.itday-panel details summary { cursor: pointer; color: var(--text-primary); }
+.itday-panel details div { color: var(--text-secondary); margin-top: 0.5rem; }
 
 /* Mobile */
 @media (max-width: 640px) {

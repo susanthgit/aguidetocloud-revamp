@@ -4,9 +4,6 @@
 /* Tool accent tokens — used by shared components */
 .rdmap-hero,
 .rdmap-container {
-  --tool-accent: #E5A00D;
-  --tool-accent-dim: rgba(229, 160, 13, 0.15);
-  --tool-accent-glow: rgba(229, 160, 13, 0.25);
 }
 
 /* ══════════════════════════════════════════════
@@ -15,23 +12,26 @@
    Design: Minimal, data-first, no clutter
    ══════════════════════════════════════════════ */
 
-/* ── Glass Pill Tabs (top-level) ── */
+/* ── Zen Underline Tabs (top-level) ── */
 .rdmap-top-tabs {
-  display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px; margin-bottom: 1.5rem;
+  display: flex; gap: 0; padding: 0;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 1.5rem;
 }
 .rdmap-top-tab {
-  background: none; border: 1px solid transparent;
-  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary); font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  flex: 1; text-align: center; white-space: nowrap;
 }
-.rdmap-top-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.rdmap-top-tab:hover { color: var(--text-primary); }
 .rdmap-top-tab.active {
-  color: #000; background: #E5A00D; border-color: #E5A00D;
-  box-shadow: 0 2px 8px rgba(229,160,13, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 .rdmap-top-panel { display: none; }
 .rdmap-top-panel.active { display: block; }
@@ -47,7 +47,7 @@
 }
 .rdmap-hero-sub { color: #8B8594; font-size: 0.92rem; margin: 0 0 1.5rem; }
 .rdmap-breadcrumbs { font-size: 0.85rem; margin-bottom: 0.8rem; color: #8B8594; }
-.rdmap-breadcrumbs a { color: #E5A00D; text-decoration: none; }
+.rdmap-breadcrumbs a { color: var(--accent); text-decoration: none; }
 .rdmap-breadcrumbs a:hover { text-decoration: underline; }
 
 /* Status bar */
@@ -69,13 +69,13 @@
   flex: 2; min-width: 200px; padding: 0.6rem 1rem; border-radius: 14px;
   border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.9rem;
 }
-.rdmap-search:focus { outline: none; border-color: #E5A00D; box-shadow: 0 0 0 2px rgba(229,160,13,0.12); }
+.rdmap-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-subtle); }
 .rdmap-search::placeholder { color: #504A59; }
 .rdmap-select {
   flex: 1; min-width: 130px; padding: 0.6rem 0.8rem; border-radius: 14px;
   border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.84rem; cursor: pointer;
 }
-.rdmap-select:focus { outline: none; border-color: #E5A00D; }
+.rdmap-select:focus { outline: none; border-color: var(--accent); }
 
 /* Product chips */
 .rdmap-chips {
@@ -89,8 +89,8 @@
   background: #1C1924; border: 1px solid #2A2533; color: #8B8594;
   cursor: pointer; white-space: nowrap; transition: all 0.15s; flex-shrink: 0;
 }
-.rdmap-chip:hover { border-color: var(--chip-c, #E5A00D); color: #D4D0DA; }
-.rdmap-chip.active { background: var(--chip-c, #E5A00D); color: #fff; border-color: var(--chip-c, #E5A00D); }
+.rdmap-chip:hover { border-color: var(--chip-c, var(--accent)); color: #D4D0DA; }
+.rdmap-chip.active { background: var(--chip-c, #E5A00D); color: var(--text-primary); border-color: var(--chip-c, var(--accent)); }
 .rdmap-chip:focus-visible, .rdmap-select:focus-visible, .rdmap-search:focus-visible, .rdmap-load-more:focus-visible {
   outline: 2px solid #E5A00D; outline-offset: 2px;
 }
@@ -98,17 +98,17 @@
 
 /* List info */
 .rdmap-list-info { font-size: 0.78rem; color: #6B6575; margin-bottom: 0.5rem; }
-.rdmap-list-info b { color: #E5A00D; }
+.rdmap-list-info b { color: var(--accent); }
 .rdmap-clear-btn { background: none; border: 1px solid #6B6575; color: #8B8594; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
-.rdmap-clear-btn:hover { border-color: #E5A00D; color: #E5A00D; }
+.rdmap-clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 /* List — card-style rows */
 .rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-row-wrap { position: relative; }
 .rdmap-fav { position: absolute; left: -0.3rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: #3D3648; font-size: 1rem; cursor: pointer; padding: 0.3rem; transition: all 0.2s; opacity: 0.3; }
 .rdmap-row-wrap:hover .rdmap-fav, .rdmap-fav:focus { opacity: 0.7; }
-.rdmap-fav:hover { color: #E5A00D; opacity: 1 !important; }
-.rdmap-fav-active { color: #E5A00D !important; opacity: 1 !important; }
+.rdmap-fav:hover { color: var(--accent); opacity: 1 !important; }
+.rdmap-fav-active { color: var(--accent) !important; opacity: 1 !important; }
 .rdmap-row {
   display: grid; grid-template-columns: 100px 1fr auto;
   padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
@@ -116,11 +116,11 @@
   border-left: 3px solid transparent; transition: all 0.15s;
   text-decoration: none; color: inherit; cursor: pointer; text-shadow: none;
 }
-.rdmap-row:hover { border-color: #3D3648; border-left-color: #E5A00D; background: #211E29; text-shadow: none; color: inherit; }
+.rdmap-row:hover { border-color: #3D3648; border-left-color: var(--accent); background: #211E29; text-shadow: none; color: inherit; }
 .rdmap-row-status { padding-top: 0.15rem; }
 .rdmap-st {
   display: inline-block; font-size: 0.7rem; font-weight: 600;
-  padding: 0.2rem 0.5rem; border-radius: 4px; color: #fff; white-space: nowrap;
+  padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--text-primary); white-space: nowrap;
 }
 .rdmap-row-main { min-width: 0; padding: 0 1rem 0 0; }
 .rdmap-row-title { color: #E8E4ED; font-weight: 500; font-size: 0.95rem; line-height: 1.45; }
@@ -136,18 +136,18 @@
   background: #1C1924; border: 1px dashed #3D3648; border-radius: 16px;
   color: #8B8594; font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
 }
-.rdmap-load-more:hover { border-color: #E5A00D; color: #E5A00D; background: #211E29; }
+.rdmap-load-more:hover { border-color: var(--accent); color: var(--accent); background: #211E29; }
 
 /* Footer */
 .rdmap-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2533; }
 .rdmap-footer-links { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: 0.8rem; margin-bottom: 0.6rem; }
 .rdmap-footer-links a { color: #6B6575; text-decoration: none; }
-.rdmap-footer-links a:hover { color: #E5A00D; }
+.rdmap-footer-links a:hover { color: var(--accent); }
 .rdmap-footer-btn { background: none; border: 1px solid #3D3648; color: #6B6575; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; }
-.rdmap-footer-btn:hover { border-color: #E5A00D; color: #E5A00D; }
+.rdmap-footer-btn:hover { border-color: var(--accent); color: var(--accent); }
 .rdmap-browse { font-size: 0.78rem; color: #6B6575; line-height: 1.8; margin-bottom: 0.4rem; }
 .rdmap-browse a { color: #8B8594; text-decoration: none; }
-.rdmap-browse a:hover { color: #E5A00D; }
+.rdmap-browse a:hover { color: var(--accent); }
 .rdmap-freshness { font-size: 0.75rem; color: #6B6575; }
 
 /* Empty + skeleton */
@@ -164,13 +164,13 @@
 .rdmap-btt {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
   width: 42px; height: 42px; border-radius: 50%;
-  background: #E5A00D; color: #141118; border: none;
+  background: var(--accent); color: #141118; border: none;
   font-size: 1.2rem; font-weight: 700; cursor: pointer;
-  box-shadow: 0 2px 12px rgba(229,160,13,0.3);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 25%, transparent);
   opacity: 0; transform: translateY(20px); transition: all 0.3s; pointer-events: none;
 }
 .rdmap-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px rgba(229,160,13,0.5); }
+.rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px var(--accent); }
 
 /* Responsive */
 @media (max-width: 768px) {

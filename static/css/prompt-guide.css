@@ -4,15 +4,6 @@
 */
 
 .pguide-page {
-  --tool-accent: #84CC16;
-  --tool-accent-dim: rgba(132, 204, 22, 0.15);
-  --tool-accent-glow: rgba(132, 204, 22, 0.25);
-  --tool-accent-text: #A3E635;
-  --bg-card: rgba(255,255,255,0.04);
-  --bg-card-hover: rgba(255,255,255,0.07);
-  --border-subtle: rgba(255,255,255,0.08);
-  --text-primary: #e6edf3;
-  --text-secondary: rgba(255,255,255,0.6);
 }
 
 /* ── Container ── */
@@ -22,39 +13,29 @@
   padding: 0 1.5rem 4rem;
 }
 
-/* ── Tabs ── */
+/* ── Zen Underline Tabs ── */
 .pguide-tabs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  display: flex; gap: 0; padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 2rem;
 }
 .pguide-tab {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--text-secondary);
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary);
   font-family: var(--font-heading, 'Inter', sans-serif);
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  border-radius: 14px;
-  transition: all 0.2s ease;
-  flex: 1;
-  text-align: center;
+  font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  flex: 1; text-align: center;
 }
-.pguide-tab:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.06);
-}
+.pguide-tab:hover { color: var(--text-primary); }
 .pguide-tab.active {
-  color: #000;
-  background: var(--tool-accent);
-  border-color: var(--tool-accent);
-  box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 .pguide-panel { display: none; }
 .pguide-panel.active { display: block; }
@@ -69,14 +50,14 @@
 .pguide-progress-bar {
   flex: 1;
   height: 8px;
-  background: var(--border-subtle);
+  background: var(--border);
   border-radius: 4px;
   overflow: hidden;
 }
 .pguide-progress-fill {
   height: 100%;
   width: 0%;
-  background: var(--tool-accent);
+  background: var(--accent);
   border-radius: 4px;
   transition: width 0.5s ease;
 }
@@ -94,8 +75,8 @@
   flex-wrap: wrap;
 }
 .pguide-filter {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   color: var(--text-secondary);
   padding: 0.4rem 1rem;
   border-radius: 20px;
@@ -103,10 +84,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
-.pguide-filter:hover { border-color: var(--tool-accent); color: var(--text-primary); }
+.pguide-filter:hover { border-color: var(--accent); color: var(--text-primary); }
 .pguide-filter.active {
-  background: var(--tool-accent-dim);
-  border-color: var(--tool-accent);
+  background: var(--accent-subtle);
+  border-color: var(--accent);
   color: var(--tool-accent-text);
 }
 
@@ -118,8 +99,8 @@
   margin-bottom: 3rem;
 }
 .pguide-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   text-decoration: none;
@@ -130,9 +111,9 @@
   position: relative;
 }
 .pguide-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--tool-accent);
-  box-shadow: 0 0 20px var(--tool-accent-glow);
+  background: var(--border);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-subtle);
   transform: translateY(-2px);
 }
 .pguide-card.pguide-card-hidden { display: none; }
@@ -209,18 +190,18 @@
   margin: 0 auto;
 }
 .pguide-eco-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s;
 }
-.pguide-eco-card:hover { border-color: var(--tool-accent); }
+.pguide-eco-card:hover { border-color: var(--accent); }
 .pguide-eco-card.pguide-eco-active {
-  border-color: var(--tool-accent);
-  background: var(--tool-accent-dim);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 .pguide-eco-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
 .pguide-eco-card strong { display: block; margin-bottom: 0.25rem; }
@@ -255,8 +236,8 @@
 }
 .pguide-builder-templates select,
 #pguide-audience, #pguide-tone {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.5rem 0.75rem;
   border-radius: 14px;
@@ -266,15 +247,15 @@
 .pguide-builder-templates select option,
 #pguide-audience option, #pguide-tone option {
   background: #0a0a14;
-  color: #e6edf3;
+  color: var(--text-primary);
 }
 
 /* Steps */
 .pguide-step {
   margin-bottom: 1.25rem;
   padding: 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
 }
 .pguide-step-header {
@@ -287,8 +268,8 @@
 .pguide-step-num {
   width: 24px;
   height: 24px;
-  background: var(--tool-accent);
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -315,8 +296,8 @@
 }
 .pguide-input {
   width: 100%;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   color: var(--text-primary);
   padding: 0.6rem 0.75rem;
@@ -325,9 +306,9 @@
   resize: vertical;
 }
 .pguide-input:focus {
-  border-color: var(--tool-accent);
+  border-color: var(--accent);
   outline: none;
-  box-shadow: 0 0 0 2px var(--tool-accent-glow);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
 }
 
 /* Format radio */
@@ -344,7 +325,7 @@
   align-items: center;
   gap: 0.3rem;
 }
-.pguide-radio input[type="radio"] { accent-color: var(--tool-accent); }
+.pguide-radio input[type="radio"] { accent-color: var(--accent); }
 
 /* Constraint toggles */
 .pguide-constraint-toggles {
@@ -360,11 +341,11 @@
   gap: 0.5rem;
   cursor: pointer;
 }
-.pguide-toggle input[type="checkbox"] { accent-color: var(--tool-accent); }
+.pguide-toggle input[type="checkbox"] { accent-color: var(--accent); }
 .pguide-constraint-val {
   width: 70px;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-primary);
   padding: 0.25rem 0.5rem;
@@ -388,8 +369,8 @@
   color: var(--tool-accent-text);
 }
 .pguide-preview-box {
-  background: rgba(0,0,0,0.3);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   min-height: 200px;
@@ -416,16 +397,16 @@
   transition: all 0.2s;
 }
 .pguide-btn-primary {
-  background: var(--tool-accent);
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
 }
 .pguide-btn-primary:hover { filter: brightness(1.1); }
 .pguide-btn-secondary {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   color: var(--text-primary);
 }
-.pguide-btn-secondary:hover { border-color: var(--tool-accent); }
+.pguide-btn-secondary:hover { border-color: var(--accent); }
 .pguide-preview-stats {
   display: flex;
   gap: 1.5rem;
@@ -473,8 +454,8 @@
   line-height: 1.5;
 }
 .pguide-mark-complete {
-  background: var(--tool-accent-dim);
-  border: 1px solid var(--tool-accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   color: var(--tool-accent-text);
   padding: 0.5rem 1rem;
   border-radius: 14px;
@@ -482,10 +463,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
-.pguide-mark-complete:hover { background: var(--tool-accent-glow); }
+.pguide-mark-complete:hover { background: var(--accent-subtle); }
 .pguide-mark-complete.completed {
-  background: var(--tool-accent);
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
 }
 
 /* Technique Layout */
@@ -526,10 +507,10 @@
   line-height: 1.6;
 }
 .pguide-technique-content blockquote {
-  border-left: 3px solid var(--tool-accent);
+  border-left: 3px solid var(--accent);
   padding: 0.75rem 1rem;
   margin: 1rem 0;
-  background: var(--tool-accent-dim);
+  background: var(--accent-subtle);
   border-radius: 0 8px 8px 0;
 }
 .pguide-technique-content blockquote p { margin: 0; }
@@ -543,8 +524,8 @@
 /* Sidebar */
 .pguide-technique-sidebar { position: sticky; top: 5rem; }
 .pguide-toc {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -578,22 +559,22 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s;
 }
-.pguide-next-card:hover { border-color: var(--tool-accent); }
+.pguide-next-card:hover { border-color: var(--accent); }
 .pguide-next-emoji { font-size: 1.5rem; }
 .pguide-next-title { font-weight: 600; font-size: 0.9rem; }
 
 /* ── Sandbox ── */
 .pguide-sandbox {
-  background: var(--bg-card);
-  border: 2px solid var(--tool-accent);
+  background: var(--bg-surface);
+  border: 2px solid var(--accent);
   border-radius: 16px;
   padding: 1.5rem;
   margin: 2rem 0;
@@ -616,8 +597,8 @@
 }
 .pguide-sandbox-textarea {
   width: 100%;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   color: var(--text-primary);
   padding: 0.75rem;
@@ -627,9 +608,9 @@
   line-height: 1.5;
 }
 .pguide-sandbox-textarea:focus {
-  border-color: var(--tool-accent);
+  border-color: var(--accent);
   outline: none;
-  box-shadow: 0 0 0 2px var(--tool-accent-glow);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
 }
 .pguide-sandbox-criteria {
   margin-top: 1rem;
@@ -671,8 +652,8 @@
 }
 .pguide-sandbox-feedback.show { display: block; }
 .pguide-sandbox-feedback.success {
-  background: rgba(132, 204, 22, 0.15);
-  border: 1px solid var(--tool-accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   color: var(--tool-accent-text);
 }
 .pguide-sandbox-feedback.partial {
@@ -685,12 +666,12 @@
 .pguide-faq {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border);
 }
 .pguide-faq h2 { margin-bottom: 1rem; }
 .pguide-faq-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   margin-bottom: 0.75rem;
 }
@@ -721,8 +702,8 @@
   margin-top: 3rem;
 }
 .pguide-cta-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   text-decoration: none;
@@ -730,7 +711,7 @@
   transition: all 0.2s;
   text-align: center;
 }
-.pguide-cta-card:hover { border-color: var(--tool-accent); }
+.pguide-cta-card:hover { border-color: var(--accent); }
 .pguide-cta-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
 .pguide-cta-card strong { display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
 .pguide-cta-card p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
@@ -764,7 +745,7 @@
 .pguide-filter:focus-visible,
 .pguide-btn:focus-visible,
 .pguide-mark-complete:focus-visible {
-  outline: 2px solid var(--tool-accent);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -780,18 +761,18 @@
   flex-wrap: wrap;
 }
 .pguide-hero-step {
-  background: rgba(132, 204, 22, 0.15);
-  border: 1px solid rgba(132, 204, 22, 0.35);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
   font-size: 0.85rem;
   color: #A3E635;
 }
-.pguide-hero-step b { color: #fff; }
-.pguide-hero-sep { color: rgba(255,255,255,0.3); font-size: 0.9rem; }
+.pguide-hero-step b { color: var(--text-primary); }
+.pguide-hero-sep { color: var(--text-muted); font-size: 0.9rem; }
 .pguide-hero-meta {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -801,8 +782,8 @@
 
 /* ══ Quick Win Demo (fix #13) ══ */
 .pguide-quickwin {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -830,8 +811,8 @@
   border: 1px solid rgba(220, 38, 38, 0.25);
 }
 .pguide-ba-after {
-  background: rgba(132, 204, 22, 0.08);
-  border: 1px solid rgba(132, 204, 22, 0.25);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .pguide-ba-label {
   font-size: 0.75rem;
@@ -844,7 +825,7 @@
 .pguide-ba-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
 .pguide-ba-arrow {
   font-size: 1.5rem;
-  color: var(--tool-accent);
+  color: var(--accent);
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -856,8 +837,8 @@
 
 /* ══ Copy Small Button ══ */
 .pguide-copy-small {
-  background: var(--tool-accent-dim);
-  border: 1px solid var(--tool-accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   color: var(--tool-accent-text);
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
@@ -866,13 +847,13 @@
   transition: all 0.2s;
   margin-top: 0.5rem;
 }
-.pguide-copy-small:hover { background: var(--tool-accent-glow); }
+.pguide-copy-small:hover { background: var(--accent-subtle); }
 
 /* ══ Card Number Badge (fix #12) ══ */
 .pguide-card-num {
   font-size: 0.7rem;
   color: var(--text-secondary);
-  background: var(--border-subtle);
+  background: var(--border);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   margin-left: auto;
@@ -884,15 +865,15 @@
   color: var(--text-secondary);
   margin: 0 0 1rem;
   padding: 0.5rem 0.75rem;
-  background: var(--tool-accent-dim);
+  background: var(--accent-subtle);
   border-radius: 14px;
-  border-left: 3px solid var(--tool-accent);
+  border-left: 3px solid var(--accent);
 }
 
 /* ══ Combine Callout (fix #9) ══ */
 .pguide-combine-callout {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
@@ -908,8 +889,8 @@
   flex-wrap: wrap;
 }
 .pguide-combine-tag {
-  background: var(--tool-accent-dim);
-  border: 1px solid var(--tool-accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   color: var(--tool-accent-text);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
@@ -918,8 +899,8 @@
 }
 .pguide-combine-plus, .pguide-combine-eq { color: var(--text-secondary); font-weight: 700; }
 .pguide-combine-result {
-  background: var(--tool-accent);
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   padding: 0.3rem 0.8rem;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -937,7 +918,7 @@
 }
 .pguide-btn-small {
   background: none;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   color: var(--text-secondary);
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
@@ -945,13 +926,13 @@
   cursor: pointer;
   transition: all 0.2s;
 }
-.pguide-btn-small:hover { border-color: var(--tool-accent); color: var(--text-primary); }
+.pguide-btn-small:hover { border-color: var(--accent); color: var(--text-primary); }
 
 /* ══ Show Answer Reveal (fix #8) ══ */
 .pguide-sandbox-reveal {
   margin-top: 1rem;
-  background: rgba(132, 204, 22, 0.05);
-  border: 1px solid var(--border-subtle);
+  background: var(--accent-subtle);
+  border: 1px solid var(--border);
   border-radius: 14px;
 }
 .pguide-sandbox-reveal summary {
@@ -978,8 +959,8 @@
 
 /* ══ Heatmap Card — V2 ══ */
 .pguide-heatmap-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -995,8 +976,8 @@
 
 /* ══ Certificate — V2 ══ */
 .pguide-certificate {
-  background: linear-gradient(135deg, rgba(132,204,22,0.1), rgba(132,204,22,0.02));
-  border: 2px solid var(--tool-accent);
+  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  border: 2px solid var(--accent);
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -1010,14 +991,14 @@
   max-width: 500px;
   margin: 1.5rem auto 0;
   background: linear-gradient(135deg, #1a2a1a, #050510);
-  border: 2px solid var(--tool-accent);
+  border: 2px solid var(--accent);
   border-radius: 16px;
   overflow: hidden;
 }
 .pguide-cert-card-inner { padding: 2rem; }
 .pguide-cert-top { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 0.5rem; }
 .pguide-cert-card h4 { color: var(--tool-accent-text); font-size: 1.3rem; margin: 0 0 1rem; }
-.pguide-cert-name { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 0.75rem; }
+.pguide-cert-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.75rem; }
 .pguide-cert-detail { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 0.5rem; }
 .pguide-cert-date { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
 
@@ -1026,8 +1007,8 @@
 .pguide-quiz-container h2 { margin: 0 0 0.5rem; }
 .pguide-quiz-container > p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 .pguide-quiz-q {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -1037,7 +1018,7 @@
 .pguide-quiz-options { display: flex; flex-direction: column; gap: 0.4rem; }
 .pguide-quiz-opt {
   background: rgba(0,0,0,0.15);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.6rem 1rem;
   border-radius: 14px;
@@ -1046,16 +1027,16 @@
   text-align: left;
   transition: all 0.2s;
 }
-.pguide-quiz-opt:hover { border-color: var(--tool-accent); }
+.pguide-quiz-opt:hover { border-color: var(--accent); }
 .pguide-quiz-opt.selected {
-  background: var(--tool-accent-dim);
-  border-color: var(--tool-accent);
+  background: var(--accent-subtle);
+  border-color: var(--accent);
   color: var(--tool-accent-text);
 }
 .pguide-quiz-results { max-width: 700px; margin: 0 auto; }
 .pguide-quiz-result-card {
-  background: var(--bg-card);
-  border: 1px solid var(--tool-accent);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent);
   border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 0.75rem;
@@ -1080,8 +1061,8 @@
 .pguide-challenge-container h2 { margin: 0 0 0.5rem; }
 .pguide-challenge-container > p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 .pguide-challenge-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.25rem;
@@ -1093,8 +1074,8 @@
   gap: 1rem;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
-  background: rgba(132, 204, 22, 0.08);
-  border: 1px solid rgba(132, 204, 22, 0.25);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 16px;
 }
 .pguide-challenge-hero-icon {
@@ -1104,7 +1085,7 @@
   margin-top: 0.1rem;
 }
 .pguide-challenge-hero-callout strong {
-  color: #84CC16;
+  color: var(--accent);
   font-size: 0.95rem;
 }
 .pguide-challenge-hero-callout p {
@@ -1124,16 +1105,16 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
-  background: rgba(132, 204, 22, 0.15);
-  color: #84CC16;
-  border: 1px solid rgba(132, 204, 22, 0.3);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 6px;
   pointer-events: none;
   z-index: 1;
 }
 .pguide-challenge-scenario {
-  background: rgba(0,0,0,0.2);
-  border-left: 3px solid var(--tool-accent);
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
   padding: 0.75rem 1rem;
   border-radius: 0 8px 8px 0;
   margin-bottom: 1rem;
@@ -1151,12 +1132,12 @@
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   color: var(--text-secondary);
 }
 .pguide-challenge-tag.detected {
-  border-color: var(--tool-accent);
-  background: var(--tool-accent-dim);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
   color: var(--tool-accent-text);
 }
 .pguide-challenge-feedback {
@@ -1166,12 +1147,12 @@
 }
 
 /* ══ Nav Accent (fix #19) ══ */
-.page-prompt-guide .site-nav { border-bottom-color: #84CC16; }
+.page-prompt-guide .site-nav { border-bottom-color: var(--accent); }
 
 /* ══ TL;DR Box (fix K) ══ */
 .pguide-tldr {
-  background: linear-gradient(135deg, rgba(132,204,22,0.12), rgba(132,204,22,0.04));
-  border: 1px solid var(--tool-accent);
+  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  border: 1px solid var(--accent);
   border-radius: 16px;
   padding: 1rem 1.25rem;
   margin-bottom: 2rem;
@@ -1180,8 +1161,8 @@
   gap: 0.75rem;
 }
 .pguide-tldr-label {
-  background: var(--tool-accent);
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   font-weight: 700;
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
@@ -1194,8 +1175,8 @@
 /* ══ Platform Accordion (fix B) ══ */
 .pguide-platform-accordion { margin: 0.5rem 0 1.5rem; }
 .pguide-platform-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 14px;
   margin-bottom: 0.5rem;
   overflow: hidden;
@@ -1215,7 +1196,7 @@
 .pguide-platform-item[open] summary::before { content: '▾ '; }
 .pguide-platform-body {
   padding: 0 1rem 0.75rem;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border);
 }
 .pguide-platform-body ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
 .pguide-platform-body li { margin-bottom: 0.3rem; font-size: 0.9rem; line-height: 1.5; }
@@ -1224,7 +1205,7 @@
 .pguide-technique-content h2.pguide-section-divided {
   padding-top: 1.5rem;
   margin-top: 2rem;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border);
 }
 .pguide-technique-content h2.pguide-section-divided:first-of-type {
   border-top: none;
@@ -1233,8 +1214,8 @@
 
 /* ══ Quiz Answered State (fix F) ══ */
 .pguide-quiz-q.pguide-quiz-answered {
-  border-color: var(--tool-accent);
-  background: rgba(132,204,22,0.04);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 .pguide-quiz-q.pguide-quiz-answered::after {
   content: '✅';
@@ -1254,7 +1235,7 @@
 .pguide-challenge-diff {
   font-size: 0.75rem;
   color: var(--text-secondary);
-  background: var(--border-subtle);
+  background: var(--border);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   white-space: nowrap;
@@ -1289,7 +1270,7 @@
   .pguide-preview-actions, .pguide-quickwin, .pguide-print-btn,
   .pguide-combine-callout, .pguide-intro { display: none; }
   .pguide-technique-hero { background: none !important; }
-  .pguide-page { color: #000; }
+  .pguide-page { color: var(--accent-foreground, #fff); }
   .pguide-card { break-inside: avoid; border: 1px solid #ccc; }
   .pguide-panel { display: block !important; }
   .pguide-grid { grid-template-columns: 1fr 1fr; }
@@ -1307,11 +1288,11 @@
 .pguide-open-link {
   font-size: 0.75rem;
   color: var(--tool-accent-text);
-  background: var(--tool-accent-dim);
-  border: 1px solid var(--tool-accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.2s;
 }
-.pguide-open-link:hover { background: var(--tool-accent-glow); }
+.pguide-open-link:hover { background: var(--accent-subtle); }

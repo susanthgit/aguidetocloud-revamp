@@ -19,8 +19,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -31,7 +31,7 @@
 .badges-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -43,11 +43,11 @@
   white-space: nowrap;
 }
 .badges-tab:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .badges-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: var(--badges-accent);
   border-color: var(--badges-accent);
   box-shadow: 0 2px 8px rgba(255,213,79,0.3);
@@ -58,8 +58,8 @@
 
 /* Glass Card */
 .badges-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
   text-align: center;
@@ -75,13 +75,13 @@
 }
 .badges-card .badges-name {
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
 }
 .badges-card .badges-desc {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -115,8 +115,8 @@
 
 /* Counter */
 .badges-counter {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.2rem;
   text-align: center;
@@ -130,7 +130,7 @@
 }
 .badges-counter .badges-counter-label {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-top: 0.3rem;
 }
 
@@ -142,9 +142,9 @@
   margin-bottom: 1.2rem;
 }
 .badges-filter {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 0.35rem 0.8rem;
   font-size: 0.78rem;
@@ -153,12 +153,12 @@
   transition: all 0.2s ease;
 }
 .badges-filter:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .badges-filter.active {
   background: var(--badges-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border-color: var(--badges-accent);
 }
 
@@ -181,7 +181,7 @@
 /* Download Button */
 .badges-download-btn {
   background: var(--badges-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
@@ -193,9 +193,9 @@
 
 /* Secondary Button */
 .badges-btn-secondary {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
@@ -203,17 +203,17 @@
   transition: all 0.2s ease;
 }
 .badges-btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 /* FAQ */
 .badges-panel details {
-  margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+  margin-bottom: 1rem; padding: 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
-.badges-panel details summary { cursor: pointer; color: rgba(255,255,255,0.9); }
-.badges-panel details div { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+.badges-panel details summary { cursor: pointer; color: var(--text-primary); }
+.badges-panel details div { color: var(--text-secondary); margin-top: 0.5rem; }
 
 /* Mobile */
 @media (max-width: 640px) {
@@ -240,7 +240,7 @@
 .badges-daily { margin-bottom: 1.5rem; }
 .badges-daily-label {
   font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.4); margin-bottom: 0.5rem;
+  color: var(--text-muted); margin-bottom: 0.5rem;
 }
 .badges-daily-card {
   background: rgba(255,213,79,0.06); border: 1px solid rgba(255,213,79,0.2);
@@ -249,15 +249,15 @@
 .badges-daily-card.badges-daily--done { opacity: 0.5; }
 .badges-daily-emoji { font-size: 2rem; }
 .badges-daily-info { flex: 1; }
-.badges-daily-info strong { display: block; color: #fff; }
-.badges-daily-info p { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin: 0.2rem 0 0; }
+.badges-daily-info strong { display: block; color: var(--text-primary); }
+.badges-daily-info p { color: var(--text-secondary); font-size: 0.85rem; margin: 0.2rem 0 0; }
 
 /* Badge Wall Items */
 .badges-wall-item { text-align: center; }
 .badges-wall-emoji { font-size: 1.6rem; }
-.badges-wall-name { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+.badges-wall-name { font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem; }
 .badges-empty, .badges-empty-wall {
-  text-align: center; padding: 2rem; color: rgba(255,255,255,0.4);
+  text-align: center; padding: 2rem; color: var(--text-muted);
 }
 
 /* Share button */
@@ -270,15 +270,15 @@
 
 /* Stories */
 .badges-story {
-  font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem;
+  font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem;
   min-height: 1em; outline: none; border-bottom: 1px dashed transparent;
   transition: border-color 0.2s;
 }
 .badges-story:focus {
-  color: rgba(255,255,255,0.7); border-bottom-color: var(--badges-accent);
+  color: var(--text-secondary); border-bottom-color: var(--badges-accent);
 }
 .badges-story[placeholder]:empty:before {
-  content: attr(placeholder); color: rgba(255,255,255,0.2); font-style: italic;
+  content: attr(placeholder); color: var(--text-muted); font-style: italic;
 }
 
 /* Suggested next */
@@ -293,16 +293,16 @@
 .badges-category-group { margin-bottom: 1.5rem; }
 .badges-cat-header {
   display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;
-  padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0.5rem 0; border-bottom: 1px solid var(--border);
 }
 .badges-cat-header-name {
-  font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.85);
+  font-size: 0.9rem; font-weight: 700; color: var(--text-primary);
 }
 .badges-cat-header-count {
   font-size: 0.75rem; color: var(--badges-accent); font-weight: 600;
 }
 .badges-cat-progress {
-  flex: 1; height: 4px; background: rgba(255,255,255,0.08);
+  flex: 1; height: 4px; background: var(--border);
   border-radius: 2px; overflow: hidden; max-width: 120px;
 }
 .badges-cat-progress-fill {
@@ -313,14 +313,14 @@
 /* Total progress bar */
 .badges-total-progress {
   display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;
-  padding: 0.7rem 1rem; background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+  padding: 0.7rem 1rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 10px;
 }
 .badges-total-count {
   font-size: 0.85rem; font-weight: 700; color: var(--badges-accent); white-space: nowrap;
 }
 .badges-total-bar {
-  flex: 1; height: 6px; background: rgba(255,255,255,0.08);
+  flex: 1; height: 6px; background: var(--border);
   border-radius: 3px; overflow: hidden;
 }
 .badges-total-bar-fill {
@@ -328,18 +328,18 @@
   transition: width 0.4s ease;
 }
 .badges-total-label {
-  font-size: 0.72rem; color: rgba(255,255,255,0.4); white-space: nowrap;
+  font-size: 0.72rem; color: var(--text-muted); white-space: nowrap;
 }
 
 /* Card extras */
 .badges-card { position: relative; }
 .badges-card-meta { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
 .badges-cat-label, .badges-cat-pill {
-  font-size: 0.7rem; color: rgba(255,255,255,0.4);
+  font-size: 0.7rem; color: var(--text-muted);
 }
 .badges-earn-btn {
   display: inline-block; margin-top: 0.6rem; padding: 0.3rem 0.8rem;
-  background: var(--badges-accent); color: #000; border: none; border-radius: 6px;
+  background: var(--badges-accent); color: var(--accent-foreground, #fff); border: none; border-radius: 6px;
   font-size: 0.75rem; font-weight: 600; cursor: pointer;
 }
 .badges-earn-btn:hover { opacity: 0.85; }
@@ -351,20 +351,19 @@
   border: 1px solid rgba(255,213,79,0.15); border-radius: 10px;
 }
 .badges-career-level { font-size: 0.95rem; font-weight: 700; color: var(--badges-accent); white-space: nowrap; }
-.badges-career-pts { font-size: 0.78rem; color: rgba(255,255,255,0.5); white-space: nowrap; }
-.badges-career-next { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-left: auto; white-space: nowrap; }
+.badges-career-pts { font-size: 0.78rem; color: var(--text-secondary); white-space: nowrap; }
+.badges-career-next { font-size: 0.72rem; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
 .badges-career-display { text-align: center; }
 
 /* Earn Modal */
 .badges-modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000;
+  position: fixed; inset: 0; background: var(--bg-surface); z-index: 1000;
   display: flex; align-items: center; justify-content: center; padding: 1rem;
 }
 .badges-modal {
   background: #0a0a14; border: 1px solid rgba(255,213,79,0.2);
   border-radius: 16px; max-width: 480px; width: 100%; padding: 2rem;
   text-align: center; position: relative;
-  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   animation: badges-modal-in 0.3s ease;
 }
 @keyframes badges-modal-in {
@@ -373,40 +372,40 @@
 }
 .badges-modal-close {
   position: absolute; top: 0.8rem; right: 0.8rem; background: none;
-  border: none; color: rgba(255,255,255,0.4); font-size: 1.5rem;
+  border: none; color: var(--border-emphasis); font-size: 1.5rem;
   cursor: pointer; line-height: 1; padding: 0.2rem;
 }
-.badges-modal-close:hover { color: #fff; }
+.badges-modal-close:hover { color: var(--text-primary); }
 .badges-modal-emoji { font-size: 3.5rem; margin-bottom: 0.5rem; }
-.badges-modal-name { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 0.2rem; }
+.badges-modal-name { font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.2rem; }
 .badges-modal-rarity { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
 .badges-modal-story {
-  color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.65;
+  color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65;
   margin: 1.2rem 0; text-align: left; font-style: italic;
   padding: 0 0.5rem;
 }
 .badges-modal-confirm {
   background: rgba(255,213,79,0.08); border: 1px solid rgba(255,213,79,0.2);
   border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.85rem;
-  color: rgba(255,255,255,0.85); margin: 1rem 0; font-weight: 500;
+  color: var(--text-primary); margin: 1rem 0; font-weight: 500;
 }
 .badges-modal-actions { display: flex; gap: 0.6rem; justify-content: center; margin-top: 1rem; }
 .badges-modal-earn {
-  background: var(--badges-accent); color: #000; border: none; border-radius: 10px;
+  background: var(--badges-accent); color: var(--accent-foreground, #fff); border: none; border-radius: 10px;
   padding: 0.7rem 1.5rem; font-weight: 700; font-size: 0.9rem; cursor: pointer;
   transition: all 0.2s;
 }
 .badges-modal-earn:hover { box-shadow: 0 4px 16px rgba(255,213,79,0.3); }
 .badges-modal-skip {
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.7); border-radius: 10px; padding: 0.7rem 1.5rem;
+  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
+  color: var(--text-secondary); border-radius: 10px; padding: 0.7rem 1.5rem;
   font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
 }
-.badges-modal-skip:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.badges-modal-skip:hover { background: var(--border); color: var(--text-primary); }
 
 /* Daily challenge preview */
 .badges-daily-preview {
-  color: rgba(255,255,255,0.5); font-size: 0.8rem; font-style: italic;
+  color: var(--text-secondary); font-size: 0.8rem; font-style: italic;
   margin: 0.3rem 0 0.5rem; line-height: 1.4;
 }
 
@@ -432,7 +431,7 @@
 /* Share section */
 .badges-share-section { text-align: center; margin-top: 1.5rem; }
 .badges-share-profile-btn {
-  background: var(--badges-accent); color: #000; border: none; border-radius: 8px;
+  background: var(--badges-accent); color: var(--accent-foreground, #fff); border: none; border-radius: 8px;
   padding: 0.6rem 1.5rem; font-weight: 600; font-size: 0.85rem; cursor: pointer;
   transition: all 0.2s;
 }
@@ -442,7 +441,7 @@
 .badges-shared-banner {
   margin-top: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;
   background: rgba(255,213,79,0.08); border: 1px solid rgba(255,213,79,0.15);
-  font-size: 0.8rem; color: rgba(255,255,255,0.6);
+  font-size: 0.8rem; color: var(--text-secondary);
 }
 
 /* Tool link in modal */

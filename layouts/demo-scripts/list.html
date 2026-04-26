@@ -24,10 +24,7 @@
 
 
 <!-- ═══ WIZARD MODAL ═══ -->
-<div class="demoscr-wizard-overlay zt-page" id="wizard-overlay" style="display:none">
-
-{{ partial "tool-header.html" (dict "page" . "title" "Copilot Demo Script Builder") }}
-
+<div class="demoscr-wizard-overlay" id="wizard-overlay" style="display:none">
   <div class="demoscr-wizard">
     <button class="demoscr-wizard-close" id="wizard-close">&times;</button>
     <h2>🧙 Find Your Perfect Demo</h2>
@@ -76,7 +73,10 @@
   </div>
 </div>
 
-<div class="demoscr-page">
+<div class="demoscr-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Demo Script Builder") }}
+
   <!-- ═══ GLOBAL SEARCH ═══ -->
   <div class="demoscr-search-bar">
     <input type="text" id="demoscr-search" class="demoscr-search-input" placeholder="Search scenarios, prompts, tips..." aria-label="Search Demo Script Builder">
