@@ -1,251 +1,180 @@
 {{ define "main" }}
 
+{{ $navData := index .Site.Data "toolkit_nav" }}
+{{ $allTools := $navData.tools }}
+{{ $toolCount := 0 }}
+{{ range $allTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
+
 {{ partial "welcome-strip.html" . }}
 
 <div class="container">
 
-  <!-- 🎯 Guided — Interactive Certification Prep Platform -->
-  <section class="hp-guided">
-    <div class="hp-guided-inner">
-      <div class="hp-guided-content">
-        <span class="hp-guided-badge">🎯 126 Certs · 13 Vendors · Free to Start</span>
-        <h2 class="hp-guided-title">Certification prep that's actually <span class="hp-guided-accent">interactive</span></h2>
-
-        <div class="hp-guided-stats">
-          <div class="hp-guided-stat"><span class="hp-guided-stat-num">35</span><span class="hp-guided-stat-label">Free Study Guides</span></div>
-          <div class="hp-guided-stat"><span class="hp-guided-stat-num">25K+</span><span class="hp-guided-stat-label">Practice Questions</span></div>
-          <div class="hp-guided-stat"><span class="hp-guided-stat-num">3</span><span class="hp-guided-stat-label">Study Modes</span></div>
-        </div>
-
-        <div class="hp-guided-pills">
-          <span>🧠 Spaced Repetition</span>
-          <span>⏱️ Exam Simulation</span>
-          <span>🃏 Flashcards</span>
-          <span>📊 Progress Tracking</span>
-        </div>
-
-        <div class="hp-guided-ctas">
-          <a href="/guided/explore/" class="hp-guided-btn-primary">Start Free →</a>
-          <a href="/guided/az-900/practice/" class="hp-guided-btn-secondary">Try 20 Free Questions →</a>
-        </div>
-        <p class="hp-guided-note">Study guides free forever · Full access from $19/cert</p>
-      </div>
-
-      <div class="hp-guided-preview" aria-hidden="true">
-        <div class="hp-guided-window">
-          <div class="hp-guided-window-bar">
-            <span class="hp-guided-dot" style="background:#EF4444"></span>
-            <span class="hp-guided-dot" style="background:#F59E0B"></span>
-            <span class="hp-guided-dot" style="background:#10B981"></span>
-            <span class="hp-guided-window-tab">Guided — AZ-900</span>
-          </div>
-          <div class="hp-guided-slides">
-            <div class="hp-guided-slide hp-gs-1">
-              <div class="hp-gs-badges"><span class="hp-gs-b hp-gs-b-study">Study Mode</span><span class="hp-gs-b hp-gs-b-domain">Domain 1</span></div>
-              <p class="hp-gs-q">Which cloud model uses a shared infrastructure managed by a third-party provider?</p>
-              <div class="hp-gs-opts">
-                <div class="hp-gs-opt">Private Cloud</div>
-                <div class="hp-gs-opt hp-gs-opt-correct">Public Cloud ✓</div>
-                <div class="hp-gs-opt">Hybrid Cloud</div>
-              </div>
-              <div class="hp-gs-explain">✅ <strong>Correct!</strong> Public cloud resources are shared across multiple tenants and managed by the provider.</div>
-            </div>
-            <div class="hp-guided-slide hp-gs-2">
-              <div class="hp-gs-badges"><span class="hp-gs-b hp-gs-b-flash">🃏 Flashcards</span><span class="hp-gs-b hp-gs-b-sr">SM-2 Algorithm</span></div>
-              <div class="hp-gs-card">
-                <p class="hp-gs-card-q">What is IaaS?</p>
-                <div class="hp-gs-card-div"></div>
-                <p class="hp-gs-card-a">Infrastructure as a Service — you manage VMs, networking, and storage. The provider manages physical hardware.</p>
-              </div>
-              <div class="hp-gs-fc-btns">
-                <span style="border-color:rgba(239,68,68,0.4);color:#EF4444">Again</span>
-                <span style="border-color:rgba(245,158,11,0.4);color:#F59E0B">Hard</span>
-                <span style="border-color:rgba(59,130,246,0.4);color:#3B82F6">Good</span>
-                <span style="border-color:rgba(16,185,129,0.4);color:#10B981">Easy</span>
-              </div>
-            </div>
-            <div class="hp-guided-slide hp-gs-3">
-              <div class="hp-gs-badges"><span class="hp-gs-b hp-gs-b-progress">📊 Your Progress</span></div>
-              <div class="hp-gs-progress">
-                <div class="hp-gs-ring">
-                  <svg viewBox="0 0 60 60" width="60" height="60"><circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/><circle cx="30" cy="30" r="26" fill="none" stroke="#10B981" stroke-width="5" stroke-dasharray="163.4" stroke-dashoffset="49" stroke-linecap="round" transform="rotate(-90 30 30)"/></svg>
-                  <span class="hp-gs-ring-txt">70%</span>
-                </div>
-                <div class="hp-gs-bars">
-                  <div class="hp-gs-bar-row"><span>Domain 1</span><div class="hp-gs-bar"><div style="width:85%"></div></div><span>85%</span></div>
-                  <div class="hp-gs-bar-row"><span>Domain 2</span><div class="hp-gs-bar"><div style="width:62%"></div></div><span>62%</span></div>
-                  <div class="hp-gs-bar-row"><span>Domain 3</span><div class="hp-gs-bar"><div style="width:71%"></div></div><span>71%</span></div>
-                </div>
-              </div>
-              <div class="hp-gs-xp"><span>🏆 1,240 XP</span><span>🔥 7-day streak</span><span>🎖️ 4 badges</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- ── BENTO PATHWAYS — "What are you looking for?" ── -->
+  <section class="hp-bento-section">
+    <div class="hp-bento">
+      <a href="/guided/explore/" class="hp-bento-card">
+        <div class="hp-bento-icon">🎯</div>
+        <h3>Practice Exams</h3>
+        <p>Flashcards, exam simulation & spaced repetition across 13 vendors</p>
+        <span class="hp-bento-link">Explore certs →</span>
+      </a>
+      <a href="/free-tools/" class="hp-bento-card">
+        <div class="hp-bento-icon">🛠️</div>
+        <h3>Free Tools</h3>
+        <p>Prompt builders, readiness checks, policy generators — zero sign-up</p>
+        <span class="hp-bento-link">Browse tools →</span>
+      </a>
+      <a href="/cert-tracker/" class="hp-bento-card">
+        <div class="hp-bento-icon">📚</div>
+        <h3>Study Guides</h3>
+        <p>Free interactive guides with domain breakdowns and learning paths</p>
+        <span class="hp-bento-link">Start studying →</span>
+      </a>
+      <a href="/ai-hub/" class="hp-bento-card">
+        <div class="hp-bento-icon">📺</div>
+        <h3>Video Courses</h3>
+        <p>Full certification courses and step-by-step tutorials on YouTube</p>
+        <span class="hp-bento-link">Watch free →</span>
+      </a>
     </div>
   </section>
 
-  <!-- RAYCAST-STYLE TOOLKIT SHOWCASE -->
-  <section class="section hp-ray-section">
+  <!-- ── VENDOR LOGOS BAR ── -->
+  <div class="hp-vendors">
+    <div class="hp-vendors-track">
+      <span class="hp-vendor">Microsoft</span>
+      <span class="hp-vendor">AWS</span>
+      <span class="hp-vendor">Google Cloud</span>
+      <span class="hp-vendor">CompTIA</span>
+      <span class="hp-vendor">Cisco</span>
+      <span class="hp-vendor">CNCF / Kubernetes</span>
+      <span class="hp-vendor">HashiCorp</span>
+      <span class="hp-vendor">ISC²</span>
+      <span class="hp-vendor">ISACA</span>
+      <span class="hp-vendor">EC-Council</span>
+      <span class="hp-vendor">Fortinet</span>
+      <span class="hp-vendor">Juniper</span>
+      <span class="hp-vendor">Palo Alto</span>
+    </div>
+  </div>
+
+  <!-- TOOLKIT — Category Directory -->
+  <section class="section hp-toolkit-dir">
     <div class="section-header">
       <h2 class="section-title">Toolkit</h2>
-      <a href="/free-tools/" class="section-link">View all →</a>
-      <p class="section-desc">Free tools built for IT pros — from Copilot readiness assessments to AI comparisons to certification study guides. No sign-up, no ads, runs in your browser.</p>
+      <a href="/free-tools/" class="section-link">Browse all {{ $toolCount }} tools →</a>
+      <p class="section-desc">Free browser-based tools for IT pros — no sign-up, no ads. Pick a category to explore.</p>
     </div>
 
-    <div class="hp-ray-filters" role="toolbar" aria-label="Filter tools by category">
-      <button class="hp-ray-pill active" data-cat="all" aria-pressed="true">All</button>
-      <button class="hp-ray-pill" data-cat="prompt" aria-pressed="false">✨ Prompts</button>
-      <button class="hp-ray-pill" data-cat="agent" aria-pressed="false">🤖 Agents</button>
-      <button class="hp-ray-pill" data-cat="planning" aria-pressed="false">🎯 Planning</button>
-      <button class="hp-ray-pill" data-cat="informed" aria-pressed="false">📡 Informed</button>
-      <button class="hp-ray-pill" data-cat="security" aria-pressed="false">🛡️ Security</button>
-      <button class="hp-ray-pill" data-cat="admin-ops" aria-pressed="false">⚙️ Admin Ops</button>
-      <button class="hp-ray-pill" data-cat="certs" aria-pressed="false">📚 Certs</button>
-      <button class="hp-ray-pill" data-cat="community" aria-pressed="false">🎮 Fun & Utils</button>
+    {{/* Count tools per category */}}
+    {{ $catCounts := dict "prompt" 0 "agent" 0 "planning" 0 "informed" 0 "security" 0 "admin-ops" 0 "certs" 0 "community" 0 }}
+    {{ range $allTools }}{{ if .is_tool }}
+      {{ $c := .category }}
+      {{ if isset $catCounts $c }}{{ $catCounts = merge $catCounts (dict $c (add (index $catCounts $c) 1)) }}{{ end }}
+    {{ end }}{{ end }}
+
+    <div class="hp-cat-grid">
+      {{ $cats := slice
+        (dict "key" "prompt"   "emoji" "✨" "name" "Prompts"    "desc" "Libraries, builders & testing")
+        (dict "key" "agent"    "emoji" "🤖" "name" "Agents"     "desc" "Copilot agents & automation")
+        (dict "key" "planning" "emoji" "🎯" "name" "Planning"   "desc" "Migration, policy & readiness")
+        (dict "key" "informed" "emoji" "📡" "name" "Informed"   "desc" "News, roadmaps & deprecations")
+        (dict "key" "security" "emoji" "🛡️" "name" "Security"   "desc" "Compliance & threat training")
+        (dict "key" "admin-ops" "emoji" "⚙️" "name" "Admin Ops" "desc" "PowerShell, SLA & incident")
+        (dict "key" "certs"    "emoji" "📚" "name" "Certs"      "desc" "Study guides & cert compass")
+        (dict "key" "community" "emoji" "🎮" "name" "Fun & Utils" "desc" "QR, passwords, timers & games")
+      }}
+      {{ range $cats }}
+        <a href="/free-tools/#{{ .key }}" class="hp-cat-card">
+          <div class="hp-cat-top">
+            <span class="hp-cat-emoji">{{ .emoji }}</span>
+            <span class="hp-cat-count">{{ index $catCounts .key }}</span>
+          </div>
+          <h3 class="hp-cat-name">{{ .name }}</h3>
+          <p class="hp-cat-desc">{{ .desc }}</p>
+        </a>
+      {{ end }}
     </div>
+  </section>
 
-    {{/* ── SVG illustration library — dramatic contrast (bright highlights + dim background) ── */}}
-    {{ $vis := dict "lines" "<svg viewBox='0 0 200 80' fill='none'><rect x='0' y='4' width='150' height='7' rx='3.5' fill='currentColor' opacity='0.6'/><rect x='0' y='22' width='110' height='7' rx='3.5' fill='currentColor' opacity='0.1'/><rect x='0' y='40' width='170' height='7' rx='3.5' fill='currentColor' opacity='0.5'/><rect x='0' y='58' width='90' height='7' rx='3.5' fill='currentColor' opacity='0.08'/><rect x='0' y='70' width='130' height='7' rx='3.5' fill='currentColor' opacity='0.12'/></svg>" }}
-    {{ $vis = merge $vis (dict "bars" "<svg viewBox='0 0 200 100' fill='none'><rect x='15' y='65' width='24' height='35' rx='4' fill='currentColor' opacity='0.1'/><rect x='50' y='45' width='24' height='55' rx='4' fill='currentColor' opacity='0.15'/><rect x='85' y='25' width='24' height='75' rx='4' fill='currentColor' opacity='0.22'/><rect x='120' y='10' width='24' height='90' rx='4' fill='currentColor' opacity='0.6'/><rect x='155' y='30' width='24' height='70' rx='4' fill='currentColor' opacity='0.12'/></svg>") }}
-    {{ $vis = merge $vis (dict "grid" "<svg viewBox='0 0 200 100' fill='none'><rect x='10' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='38' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.55'/><rect x='66' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.1'/><rect x='94' y='10' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='10' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.12'/><rect x='38' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='66' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.5'/><rect x='94' y='38' width='18' height='18' rx='4' fill='currentColor' opacity='0.12'/><rect x='10' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.45'/><rect x='38' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/><rect x='66' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.1'/><rect x='94' y='66' width='18' height='18' rx='4' fill='currentColor' opacity='0.08'/></svg>") }}
-    {{ $vis = merge $vis (dict "gauge" "<svg viewBox='0 0 200 110' fill='none'><path d='M30 95 A70 70 0 0 1 170 95' stroke='currentColor' stroke-width='8' opacity='0.08' stroke-linecap='round' fill='none'/><path d='M30 95 A70 70 0 0 1 145 40' stroke='currentColor' stroke-width='8' opacity='0.5' stroke-linecap='round' fill='none'/><circle cx='145' cy='40' r='7' fill='currentColor' opacity='0.8'/></svg>") }}
-    {{ $vis = merge $vis (dict "timeline" "<svg viewBox='0 0 200 60' fill='none'><line x1='15' y1='30' x2='185' y2='30' stroke='currentColor' stroke-width='2' opacity='0.06'/><circle cx='15' cy='30' r='9' fill='currentColor' opacity='0.6'/><circle cx='70' cy='30' r='7' fill='currentColor' opacity='0.25'/><circle cx='125' cy='30' r='6' fill='currentColor' opacity='0.12'/><circle cx='175' cy='30' r='5' fill='currentColor' opacity='0.06'/></svg>") }}
-    {{ $vis = merge $vis (dict "wave" "<svg viewBox='0 0 200 80' fill='none'><polyline points='0,40 25,40 40,15 55,65 70,25 85,55 100,40 130,40 145,20 160,60 175,35 200,40' stroke='currentColor' stroke-width='2.5' opacity='0.15' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='40' cy='15' r='4' fill='currentColor' opacity='0.7'/><circle cx='70' cy='25' r='3' fill='currentColor' opacity='0.5'/><circle cx='145' cy='20' r='3.5' fill='currentColor' opacity='0.6'/></svg>") }}
-    {{ $vis = merge $vis (dict "blocks" "<svg viewBox='0 0 200 90' fill='none'><rect x='20' y='55' width='165' height='30' rx='6' fill='currentColor' opacity='0.06'/><rect x='10' y='30' width='165' height='30' rx='6' fill='currentColor' opacity='0.12'/><rect x='0' y='5' width='165' height='30' rx='6' fill='currentColor' opacity='0.55'/></svg>") }}
-    {{ $vis = merge $vis (dict "scatter" "<svg viewBox='0 0 200 100' fill='none'><circle cx='30' cy='25' r='18' fill='currentColor' opacity='0.08'/><circle cx='100' cy='18' r='14' fill='currentColor' opacity='0.55'/><circle cx='165' cy='38' r='22' fill='currentColor' opacity='0.06'/><circle cx='55' cy='72' r='12' fill='currentColor' opacity='0.1'/><circle cx='140' cy='78' r='10' fill='currentColor' opacity='0.45'/></svg>") }}
-    {{ $vis = merge $vis (dict "circles" "<svg viewBox='0 0 200 120' fill='none'><circle cx='100' cy='60' r='52' stroke='currentColor' stroke-width='2' opacity='0.05'/><circle cx='100' cy='60' r='36' stroke='currentColor' stroke-width='2.5' opacity='0.1'/><circle cx='100' cy='60' r='20' stroke='currentColor' stroke-width='3' opacity='0.5'/><circle cx='100' cy='60' r='6' fill='currentColor' opacity='0.75'/></svg>") }}
-    {{ $vis = merge $vis (dict "keys" "<svg viewBox='0 0 200 100' fill='none'><rect x='5' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.08'/><rect x='40' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.5'/><rect x='75' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.1'/><rect x='110' y='8' width='30' height='22' rx='4' fill='currentColor' opacity='0.06'/><rect x='15' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.1'/><rect x='50' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.08'/><rect x='85' y='38' width='30' height='22' rx='4' fill='currentColor' opacity='0.45'/><rect x='35' y='68' width='70' height='22' rx='4' fill='currentColor' opacity='0.2'/></svg>") }}
-
-    {{/* Read tools from single source of truth: toolkit_nav.toml */}}
-    {{ $allTools := (index hugo.Data "toolkit_nav").tools }}
-    {{ $toolCount := 0 }}
-    {{ range $allTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
-
-    <div class="hp-ray-wrapper">
-      <button class="hp-ray-nav hp-ray-nav-left" aria-label="Scroll left" disabled>‹</button>
-      <div class="hp-ray-grid" id="hp-ray-grid">
-        {{ range $allTools }}
-          {{ if .is_tool }}
-          {{ $slug := strings.TrimPrefix "/" .url | strings.TrimSuffix "/" }}
-          <a href="{{ .url }}" class="hp-ray-card" data-cat="{{ .category }}" style="--ray-color: {{ .color }}">
-            {{ with .date_added }}{{ if gt (time .).Unix (now.AddDate 0 0 -30).Unix }}<span class="hp-ray-badge-new">New</span>{{ end }}{{ end }}
-            <div class="hp-ray-head">
-              <span class="hp-ray-emoji">{{ .emoji }}</span>
-              <span class="hp-ray-name">{{ .name }}</span>
-              <span class="hp-ray-arrow">→</span>
-            </div>
-            <p class="hp-ray-desc">{{ .desc }}</p>
-            <div class="hp-ray-visual" aria-hidden="true">
-              <div class="hp-ray-visual-inner">
-                <img class="hp-ray-preview" src="/images/tool-previews/{{ $slug }}.webp" alt="" loading="lazy" decoding="async">
-              </div>
-            </div>
+  <!-- Latest Content — tabbed blog + video -->
+  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+  {{ $aiHub := where (where .Site.RegularPages "Section" "ai-hub") "Params.youtube_id" "!=" nil }}
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Latest Content</h2>
+      <a href="/blog/" class="section-link hp-tab-link" data-for="blog">View all {{ len $blogPosts }} posts →</a>
+      <a href="/ai-hub/" class="section-link hp-tab-link" data-for="videos" hidden>View all videos →</a>
+      <p class="section-desc">Practical guides and step-by-step tutorials on Microsoft 365 Copilot, Azure, and AI — written and recorded by someone who does this daily.</p>
+    </div>
+    <div class="hp-content-tabs" role="tablist">
+      <button class="hp-content-tab active" role="tab" aria-selected="true" data-tab="blog">📝 Articles</button>
+      <button class="hp-content-tab" role="tab" aria-selected="false" data-tab="videos">🎬 Videos</button>
+    </div>
+    <div class="hp-content-panel" data-panel="blog" role="tabpanel">
+      <div class="hp-hscroll-wrapper">
+        <button class="hp-hscroll-nav hp-hscroll-nav-left" aria-label="Scroll left" disabled>‹</button>
+        <div class="hp-hscroll-track">
+          {{ range $i, $post := first 6 $blogPosts }}
+          <a href="{{ $post.RelPermalink }}" class="hp-blog-card">
+            {{ with $post.Params.card_tag }}<span class="hp-blog-tag">{{ . }}</span>{{ end }}
+            <time class="hp-blog-date">{{ $post.Date.Format "Jan 2, 2006" }}</time>
+            <h3>{{ $post.Title }}</h3>
+            {{ with $post.Description }}<p>{{ . | truncate 120 }}</p>{{ end }}
           </a>
           {{ end }}
-        {{ end }}
+        </div>
+        <button class="hp-hscroll-nav hp-hscroll-nav-right" aria-label="Scroll right">›</button>
       </div>
-      <button class="hp-ray-nav hp-ray-nav-right" aria-label="Scroll right">›</button>
     </div>
-    <a href="/free-tools/" class="hp-ray-browse">Browse all {{ $toolCount }} tools →</a>
-  </section>
-
-  <!-- From the Blog — moved up for SEO dwell time -->
-  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-  {{ if gt (len $blogPosts) 0 }}
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">From the Blog</h2>
-      <a href="/blog/" class="section-link">View all {{ len $blogPosts }} posts →</a>
-      <p class="section-desc">Practical guides for IT admins who need to deploy, manage, and get value from Microsoft 365 Copilot, Azure, and AI — written by someone who does this daily.</p>
-    </div>
-    <div class="hp-blog-grid">
-      {{ range $i, $post := first 8 $blogPosts }}
-      <a href="{{ $post.RelPermalink }}" class="hp-blog-card">
-        {{ if eq $i 0 }}<span class="hp-blog-badge-new">What's New</span>{{ end }}
-        <time class="hp-blog-date">{{ $post.Date.Format "Jan 2, 2006" }}</time>
-        <h3>{{ $post.Title }}</h3>
-        {{ with $post.Description }}<p>{{ . | truncate 160 }}</p>{{ end }}
-        <span class="hp-blog-read">Read more →</span>
-      </a>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-
-  <!-- Watch & Learn — videos after blog to keep visitors on-site first -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">Watch & Learn</h2>
-      <a href="/ai-hub/" class="section-link">View all →</a>
-      <p class="section-desc">Step-by-step video tutorials on Microsoft 365, Azure certifications, and AI tools — from beginner walkthroughs to advanced admin deep dives.</p>
-    </div>
-    <div class="video-grid">
-      {{ $aiHub := where (where .Site.RegularPages "Section" "ai-hub") "Params.youtube_id" "!=" nil }}
-      {{ range first 8 $aiHub.ByDate.Reverse }}
-        {{ partial "video-card.html" . }}
-      {{ end }}
+    <div class="hp-content-panel" data-panel="videos" role="tabpanel" hidden>
+      <div class="hp-hscroll-wrapper">
+        <button class="hp-hscroll-nav hp-hscroll-nav-left" aria-label="Scroll left" disabled>‹</button>
+        <div class="hp-hscroll-track">
+          {{ range first 6 $aiHub.ByDate.Reverse }}
+            {{ partial "video-card.html" . }}
+          {{ end }}
+        </div>
+        <button class="hp-hscroll-nav hp-hscroll-nav-right" aria-label="Scroll right">›</button>
+      </div>
     </div>
   </section>
 
-  <!-- ⭐ SOCIAL PROOF — stats + testimonials -->
+  <!-- ⭐ SOCIAL PROOF — testimonials -->
   <section class="section">
     <div class="section-header">
       <h2 class="section-title">What People Say</h2>
-      <p class="section-desc">Real feedback from the YouTube community — IT pros, students, and cloud practitioners who use these resources daily.</p>
+      <p class="section-desc">Real feedback from IT pros, students, and cloud practitioners who use these resources daily.</p>
     </div>
-    {{/* Dynamic stat counts */}}
-    {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
-    {{ $toolCount2 := 0 }}
-    {{ range $allNavTools }}{{ if .is_tool }}{{ $toolCount2 = add $toolCount2 1 }}{{ end }}{{ end }}
-    {{ $videoCount := 0 }}
-    {{ range (slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music") }}
-      {{ $videoCount = add $videoCount (len (where $.Site.RegularPages "Section" .)) }}
-    {{ end }}
-    {{ $promptCount := len (where .Site.RegularPages "Section" "prompts") }}
-    {{ $certCount := len (where .Site.RegularPages "Section" "cert-tracker") }}
-    <div class="hp-proof-stats-inline">
-      <strong>{{ $toolCount2 }}</strong> free tools · <strong>{{ $videoCount }}</strong> tutorials · <strong>{{ $promptCount }}</strong> prompts · <strong>{{ $certCount }}</strong> cert guides
-    </div>
-    <div class="hp-testimonials-track">
-      <div class="hp-testimonials-scroll" aria-label="Testimonials">
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">P</span><div><strong>@pablonleon</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-          <p>"I work at Microsoft and I have passed many of my exams using your videos, thank you for such a great content my friend!"</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">W</span><div><strong>@waldirpaulino</strong><span class="hp-testimonial-source">YouTube · AZ-900 Full Course</span></div></div>
-          <p>"Susanth, you have made a difference in the lives of hundreds of people (myself included), so this is the most valuable part of your excellent course. May God reward your generous heart."</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">K</span><div><strong>@kaivalyakulkarni</strong><span class="hp-testimonial-source">YouTube · DP-900 Full Course</span></div></div>
-          <p>"This is the best DP-900 course I found for free. It has helped me to clear the exam and I recommend this course to everyone who is targeting this exam."</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">L</span><div><strong>@lalitds</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-          <p>"Even the paid courses do not organize and say the stuff this way. Clarity and depth are more than the other tutors. Kudos man and thanks for helping and supporting the community."</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">V</span><div><strong>@vishnusoman</strong><span class="hp-testimonial-source">YouTube · AI-900 Full Course</span></div></div>
-          <p>"Thank you, I passed the exam. Repeatedly watched the class 3-4 times and made a strong base."</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@stewarthoward</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-          <p>"This course for AZ-104 is still the best out there. I just cleared the exam with 954/1000."</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@Stazmartinez</strong><span class="hp-testimonial-source">YouTube · PL-900 Full Course</span></div></div>
-          <p>"Your videos have helped me pass AZ-900, AZ-104, and PL-900 — thank you!!"</p>
-        </div>
-        <div class="hp-testimonial">
-          <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">J</span><div><strong>@joec7740</strong><span class="hp-testimonial-source">YouTube · AI-900 Full Course</span></div></div>
-          <p>"Another great video Susanth, passed my AI-900 with ease today. Thanks for your efforts in helping so many people."</p>
-        </div>
+    <div class="hp-testimonials-grid">
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">P</span><div><strong>@pablonleon</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
+        <p>"I work at Microsoft and I have passed many of my exams using your videos, <strong>thank you for such great content</strong> my friend!"</p>
+      </div>
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">W</span><div><strong>@waldirpaulino</strong><span class="hp-testimonial-source">YouTube · AZ-900 Full Course</span></div></div>
+        <p>"Susanth, you have <strong>made a difference in the lives of hundreds of people</strong> (myself included). May God reward your generous heart."</p>
+      </div>
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">K</span><div><strong>@kaivalyakulkarni</strong><span class="hp-testimonial-source">YouTube · DP-900 Full Course</span></div></div>
+        <p>"This is the best DP-900 course I found for free. It has helped me to clear the exam."</p>
+      </div>
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">L</span><div><strong>@lalitds</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
+        <p>"Even the paid courses do not organize the stuff this way. <strong>Clarity and depth are more than the other tutors.</strong>"</p>
+      </div>
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@stewarthoward</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
+        <p>"This course for AZ-104 is still the best out there. I just cleared the exam with <strong>954/1000</strong>."</p>
+      </div>
+      <div class="hp-testimonial">
+        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@Stazmartinez</strong><span class="hp-testimonial-source">YouTube · PL-900 Full Course</span></div></div>
+        <p>"Your videos have helped me pass <strong>AZ-900, AZ-104, and PL-900</strong> — thank you!!"</p>
       </div>
     </div>
   </section>
 
-  <!-- ☁️ The Cloud Brief — Newsletter Signup -->
+  <!-- ☁️ Newsletter Signup -->
   <section class="hp-newsletter" id="newsletter">
     <div class="hp-newsletter-inner">
       <div class="hp-newsletter-content">
@@ -274,25 +203,11 @@
     </div>
   </section>
 
-  <!-- Trust bar + Search -->
-  <div class="hp-trust-bar">
-    <span>Built by a <strong>Microsoft Engineer</strong></span>
-    <span class="hp-trust-dot">·</span>
-    <span>100% Free Tools</span>
-    <span class="hp-trust-dot">·</span>
-    <span><strong>126</strong> Practice Exams</span>
-    <span class="hp-trust-dot">·</span>
-    <span>No Sign-up Required</span>
-  </div>
   {{ partial "page-search.html" . }}
-
-  <!-- Final CTA -->
-  <section class="hp-final-cta">
 
   <script>
   (function() {
     var BEEHIIV_URL = 'https://guided-weekly.beehiiv.com/subscribe';
-
     function setupForm(formId, emailId, successId) {
       var form = document.getElementById(formId);
       if (!form) return;
@@ -302,9 +217,7 @@
         if (!email) return;
         var btn = form.querySelector('button[type="submit"]');
         if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
-        // Open Beehiiv subscribe in hidden iframe with email pre-filled
         var w = window.open(BEEHIIV_URL + '?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
-        // Show success after short delay
         setTimeout(function() {
           form.hidden = true;
           document.getElementById(successId).hidden = false;
@@ -314,42 +227,6 @@
     setupForm('hp-newsletter-form', 'hp-newsletter-email', 'hp-newsletter-success');
   })();
   </script>
-    <h2>Ready to level up?</h2>
-    <p>Pick a tool and start building, learning, or planning — it takes 30 seconds.</p>
-    <div class="hp-final-cta-row">
-      <a href="/start/" class="hp-final-btn hp-final-primary">Start Here →</a>
-      <a href="/free-tools/" class="hp-final-btn hp-final-secondary">Browse All Tools</a>
-    </div>
-  </section>
-
-  <!-- Connect -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">Connect</h2>
-    </div>
-    <div class="ecosystem">
-      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <img src="/images/logo_agtc_dark_1.webp" alt="Main Channel" class="eco-logo" loading="lazy">
-        <h3>A Guide to Cloud & AI</h3>
-        <p>Full tutorials & masterclasses</p>
-      </a>
-      <a href="https://www.youtube.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <img src="/images/logo_agtc_dark_2.webp" alt="Bites Channel" class="eco-logo" loading="lazy">
-        <h3>Cloud & AI — Bites</h3>
-        <p>Quick 10–20 min lessons</p>
-      </a>
-      <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <div class="eco-icon">💼</div>
-        <h3>Connect on LinkedIn</h3>
-        <p>Join the community & stay updated</p>
-      </a>
-      <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer" class="eco-card">
-        <div class="eco-icon">☕</div>
-        <h3>Download Resources</h3>
-        <p>Study notes, practice labs & guides</p>
-      </a>
-    </div>
-  </section>
 
 </div>
 {{ end }}

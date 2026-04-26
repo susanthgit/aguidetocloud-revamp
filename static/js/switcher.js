@@ -1,5 +1,6 @@
 // Mobile hamburger menu toggle — V5.1: Whizlabs-style tab drawer
 document.addEventListener('DOMContentLoaded', function() {
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hamburger = document.getElementById('hamburger-btn');
   const drawer = document.getElementById('nav-drawer');
   const backdrop = document.getElementById('nav-drawer-backdrop');
@@ -249,121 +250,81 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 
-  // ── Raycast toolkit category filter with sliding indicator ──
-  var filterBar = document.querySelector('.hp-ray-filters');
-  var rayGrid = document.getElementById('hp-ray-grid');
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (filterBar && rayGrid) {
-    // One-time entrance animation
-    if (!prefersReduced) rayGrid.classList.add('hp-ray-animate');
-    rayGrid.addEventListener('animationend', function() {
-      rayGrid.classList.remove('hp-ray-animate');
-    }, { once: true });
-    var indicator = document.createElement('div');
-    indicator.className = 'hp-ray-indicator';
-    filterBar.appendChild(indicator);
+  // ── Generic horizontal scroll carousels (blog + video sections) ──
+  function initCarousel(wrapper) {
+    var track = wrapper.querySelector('.hp-hscroll-track');
+    var btnLeft = wrapper.querySelector('.hp-hscroll-nav-left');
+    var btnRight = wrapper.querySelector('.hp-hscroll-nav-right');
+    if (!track) return;
 
-    function moveIndicator(pill) {
-      indicator.style.width = pill.offsetWidth + 'px';
-      indicator.style.transform = 'translateX(' + pill.offsetLeft + 'px)';
-    }
-
-    // Initialize position without transition, then enable it
-    var initPill = filterBar.querySelector('.hp-ray-pill.active');
-    if (initPill) {
-      moveIndicator(initPill);
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          indicator.style.transition = prefersReduced
-            ? 'none'
-            : 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-      });
-    }
-
-    // Re-position on resize
-    window.addEventListener('resize', function() {
-      var active = filterBar.querySelector('.hp-ray-pill.active');
-      if (active) moveIndicator(active);
-    });
-
-    filterBar.addEventListener('click', function(e) {
-      var pill = e.target.closest('.hp-ray-pill');
-      if (!pill) return;
-      var cat = pill.dataset.cat;
-      filterBar.querySelectorAll('.hp-ray-pill').forEach(function(p) {
-        p.classList.remove('active');
-        p.setAttribute('aria-pressed', 'false');
-      });
-      pill.classList.add('active');
-      pill.setAttribute('aria-pressed', 'true');
-      moveIndicator(pill);
-      // Only scrollIntoView the pill on desktop — on mobile it fights with touch scrolling
-      if (window.innerWidth > 768) {
-        pill.scrollIntoView({ behavior: prefersReduced ? 'instant' : 'smooth', inline: 'center', block: 'nearest' });
-      }
-      rayGrid.querySelectorAll('.hp-ray-card').forEach(function(card) {
-        if (cat === 'all' || card.dataset.cat === cat) {
-          card.setAttribute('data-hidden', 'false');
-        } else {
-          card.setAttribute('data-hidden', 'true');
-        }
-      });
-      if (cat === 'all') { rayGrid.classList.remove('hp-ray-filtered'); }
-      else { rayGrid.classList.add('hp-ray-filtered'); }
-      // Dynamic rows: mobile = always 1 row; desktop = 1 row if ≤4 visible, 2 rows otherwise
-      var visibleCount = rayGrid.querySelectorAll('.hp-ray-card:not([data-hidden="true"])').length;
-      var isMobile = window.innerWidth <= 768;
-      rayGrid.style.gridTemplateRows = (isMobile || visibleCount <= 4) ? '1fr' : 'repeat(2, auto)';
-      rayGrid.scrollLeft = 0;
-      updateNavButtons();
-    });
-  }
-
-  // ── Carousel scroll navigation ──
-  var rayWrapper = document.querySelector('.hp-ray-wrapper');
-  if (rayWrapper && rayGrid) {
-    var btnLeft = rayWrapper.querySelector('.hp-ray-nav-left');
-    var btnRight = rayWrapper.querySelector('.hp-ray-nav-right');
-
-    function updateNavButtons() {
+    function updateNav() {
       if (!btnLeft || !btnRight) return;
-      var canScroll = rayGrid.scrollWidth > rayGrid.clientWidth + 5;
+      var canScroll = track.scrollWidth > track.clientWidth + 5;
       btnLeft.style.display = canScroll ? '' : 'none';
       btnRight.style.display = canScroll ? '' : 'none';
       if (canScroll) {
-        btnLeft.disabled = rayGrid.scrollLeft <= 5;
-        btnRight.disabled = rayGrid.scrollLeft + rayGrid.clientWidth >= rayGrid.scrollWidth - 5;
+        btnLeft.disabled = track.scrollLeft <= 5;
+        btnRight.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
       }
     }
 
-    updateNavButtons();
-    rayGrid.addEventListener('scroll', updateNavButtons, { passive: true });
+    updateNav();
+    track.addEventListener('scroll', updateNav, { passive: true });
 
     if (btnLeft) btnLeft.addEventListener('click', function() {
-      rayGrid.scrollBy({ left: -rayGrid.clientWidth * 0.8, behavior: prefersReduced ? 'instant' : 'smooth' });
+      track.scrollBy({ left: -track.clientWidth * 0.8, behavior: prefersReduced ? 'instant' : 'smooth' });
     });
     if (btnRight) btnRight.addEventListener('click', function() {
-      rayGrid.scrollBy({ left: rayGrid.clientWidth * 0.8, behavior: prefersReduced ? 'instant' : 'smooth' });
+      track.scrollBy({ left: track.clientWidth * 0.8, behavior: prefersReduced ? 'instant' : 'smooth' });
     });
   }
 
-  // ── Testimonials infinite scroll (clone cards for seamless loop) ──
-  var testimonialScroll = document.querySelector('.hp-testimonials-scroll');
-  if (testimonialScroll) {
-    var items = testimonialScroll.innerHTML;
-    testimonialScroll.innerHTML = items + items;
+  document.querySelectorAll('.hp-hscroll-wrapper').forEach(initCarousel);
+
+  // ── Content tabs: Articles / Videos toggle ──
+  var contentTabs = document.querySelectorAll('.hp-content-tab');
+  if (contentTabs.length) {
+    contentTabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var target = tab.dataset.tab;
+        // Update tab active states
+        contentTabs.forEach(function(t) {
+          t.classList.toggle('active', t.dataset.tab === target);
+          t.setAttribute('aria-selected', t.dataset.tab === target ? 'true' : 'false');
+        });
+        // Show/hide panels
+        document.querySelectorAll('.hp-content-panel').forEach(function(panel) {
+          panel.hidden = panel.dataset.panel !== target;
+        });
+        // Toggle section links (view all posts / view all videos)
+        document.querySelectorAll('.hp-tab-link').forEach(function(link) {
+          link.hidden = link.dataset.for !== target;
+        });
+        // Re-init carousels in newly visible panel (clientWidth was 0 while hidden)
+        requestAnimationFrame(function() {
+          var activePanel = document.querySelector('.hp-content-panel:not([hidden])');
+          if (activePanel) {
+            activePanel.querySelectorAll('.hp-hscroll-wrapper').forEach(initCarousel);
+          }
+        });
+      });
+    });
   }
 
-  // ── Cursor glow effect (homepage only, desktop only) ──
-  if (document.body.classList.contains('is-home') && window.innerWidth > 768 && !prefersReduced) {
-    var glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-    document.addEventListener('mousemove', function(e) {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    }, { passive: true });
+  // ── Testimonials: static grid — no scroll animation needed ──
+
+  // ── 🌸 Zen Theme Toggle ──
+  var themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+      // Update theme-color meta for mobile browsers
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.content = next === 'dark' ? '#0A0A0A' : '#FAFAFA';
+    });
   }
 });
 
