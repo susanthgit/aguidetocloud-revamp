@@ -172,11 +172,11 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.badges-rarity-badge.common { background: rgba(160,160,160,0.15); color: #a0a0a0; }
-.badges-rarity-badge.uncommon { background: rgba(76,175,80,0.15); color: #4CAF50; }
-.badges-rarity-badge.rare { background: rgba(33,150,243,0.15); color: #2196F3; }
-.badges-rarity-badge.epic { background: rgba(156,39,176,0.15); color: #9C27B0; }
-.badges-rarity-badge.legendary { background: rgba(255,213,79,0.15); color: var(--badges-accent); }
+.badges-rarity-badge.common { background: rgba(160,160,160,0.15); color: var(--text-tertiary); }
+.badges-rarity-badge.uncommon { background: rgba(76,175,80,0.15); color: var(--badge-green); }
+.badges-rarity-badge.rare { background: rgba(33,150,243,0.15); color: var(--badge-blue); }
+.badges-rarity-badge.epic { background: rgba(156,39,176,0.15); color: var(--badge-purple); }
+.badges-rarity-badge.legendary { background: rgba(255,213,79,0.15); color: var(--badge-amber); }
 
 /* Download Button */
 .badges-download-btn {

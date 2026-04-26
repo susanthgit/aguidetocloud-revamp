@@ -61,7 +61,7 @@
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 1.3em; height: 1.3em; padding: 0 0.35em; margin-left: 0.4em;
   border-radius: 10px; font-size: 0.72rem; font-weight: 800;
-  background: #EF4444; color: var(--text-primary); line-height: 1;
+  background: var(--error); color: #fff; line-height: 1;
 }
 .shealth-panel { display: none; }
 .shealth-panel.active { display: block; }
@@ -336,9 +336,9 @@
   white-space: nowrap;
 }
 .shealth-badge-service {
-  background: rgba(249, 115, 22, 0.12);
+  background: var(--accent-subtle);
   color: var(--accent);
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  border: 1px solid var(--border);
 }
 .shealth-badge-status {
   border: 1px solid var(--border);
@@ -603,8 +603,8 @@
   font-weight: 700;
   flex-shrink: 0;
 }
-.shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: var(--text-primary); }
-.shealth-ma-rank.shealth-r2 { background: var(--sh-orange); color: var(--text-primary); }
+.shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: #fff; }
+.shealth-ma-rank.shealth-r2 { background: var(--sh-orange); color: #fff; }
 .shealth-ma-rank.shealth-r3 { background: var(--sh-yellow); color: #000; }
 .shealth-ma-rank.shealth-r4,.shealth-ma-rank.shealth-r5 { background: var(--border); color: var(--text-secondary); }
 .shealth-ma-name { flex: 1; color: var(--text-primary); }

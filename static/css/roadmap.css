@@ -1,16 +1,4 @@
-/* ── M365 Roadmap Tracker Styles ─────────── */
-/* Extracted from style.css for maintainability */
-
-/* Tool accent tokens — used by shared components */
-.rdmap-hero,
-.rdmap-container {
-}
-
-/* ══════════════════════════════════════════════
-   M365 ROADMAP TRACKER — "Amber Command" palette
-   Accent: Warm Gold (#E5A00D) on charcoal (#141118)
-   Design: Minimal, data-first, no clutter
-   ══════════════════════════════════════════════ */
+/* ── M365 Roadmap Tracker — Zen tokens ─────────── */
 
 /* ── Zen Underline Tabs (top-level) ── */
 .rdmap-top-tabs {
@@ -37,27 +25,26 @@
 .rdmap-top-panel.active { display: block; }
 
 .rdmap-hero {
-  background: linear-gradient(180deg, #1a1510 0%, #141118 100%);
+  background: var(--bg-surface);
   padding: 2.5rem 1rem 1.8rem; text-align: center;
 }
 .rdmap-hero h1 {
   font-size: 1.9rem; margin: 0 0 0.3rem;
-  background: linear-gradient(135deg, #E5A00D 0%, #F4C542 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  color: var(--text-primary);
 }
-.rdmap-hero-sub { color: #8B8594; font-size: 0.92rem; margin: 0 0 1.5rem; }
-.rdmap-breadcrumbs { font-size: 0.85rem; margin-bottom: 0.8rem; color: #8B8594; }
+.rdmap-hero-sub { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 1.5rem; }
+.rdmap-breadcrumbs { font-size: 0.85rem; margin-bottom: 0.8rem; color: var(--text-muted); }
 .rdmap-breadcrumbs a { color: var(--accent); text-decoration: none; }
 .rdmap-breadcrumbs a:hover { text-decoration: underline; }
 
 /* Status bar */
 .rdmap-status-bar { max-width: 700px; margin: 0 auto; }
-.rdmap-bar-track { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: #2A2533; margin-bottom: 0.7rem; }
+.rdmap-bar-track { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--bg-elevated); margin-bottom: 0.7rem; }
 .rdmap-bar-seg { transition: width 0.6s ease; min-width: 3px; }
 .rdmap-bar-legend { display: flex; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
-.rdmap-legend-item { font-size: 0.75rem; color: #8B8594; display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
-.rdmap-legend-item:hover { color: #D4D0DA; }
-.rdmap-legend-item b { color: #D4D0DA; }
+.rdmap-legend-item { font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+.rdmap-legend-item:hover { color: var(--text-secondary); }
+.rdmap-legend-item b { color: var(--text-secondary); }
 .rdmap-legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
 /* Container */
@@ -67,13 +54,13 @@
 .rdmap-controls { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
 .rdmap-search {
   flex: 2; min-width: 200px; padding: 0.6rem 1rem; border-radius: 14px;
-  border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.9rem;
+  border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-primary); font-size: 0.9rem;
 }
 .rdmap-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-subtle); }
-.rdmap-search::placeholder { color: #504A59; }
+.rdmap-search::placeholder { color: var(--text-muted); }
 .rdmap-select {
   flex: 1; min-width: 130px; padding: 0.6rem 0.8rem; border-radius: 14px;
-  border: 1px solid #2A2533; background: #1C1924; color: #E8E4ED; font-size: 0.84rem; cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-primary); font-size: 0.84rem; cursor: pointer;
 }
 .rdmap-select:focus { outline: none; border-color: var(--accent); }
 
@@ -86,76 +73,77 @@
 .rdmap-chip {
   display: inline-flex; align-items: center; gap: 0.3rem;
   padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.78rem;
-  background: #1C1924; border: 1px solid #2A2533; color: #8B8594;
+  background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-muted);
   cursor: pointer; white-space: nowrap; transition: all 0.15s; flex-shrink: 0;
 }
-.rdmap-chip:hover { border-color: var(--chip-c, var(--accent)); color: #D4D0DA; }
-.rdmap-chip.active { background: var(--chip-c, #E5A00D); color: var(--text-primary); border-color: var(--chip-c, var(--accent)); }
+.rdmap-chip:hover { border-color: var(--chip-c, var(--accent)); color: var(--text-secondary); }
+.rdmap-chip.active { background: var(--chip-c, var(--accent)); color: #fff; border-color: var(--chip-c, var(--accent)); }
 .rdmap-chip:focus-visible, .rdmap-select:focus-visible, .rdmap-search:focus-visible, .rdmap-load-more:focus-visible {
-  outline: 2px solid #E5A00D; outline-offset: 2px;
+  outline: 2px solid var(--accent); outline-offset: 2px;
 }
 .rdmap-chip span { opacity: 0.6; font-size: 0.72rem; }
 
 /* List info */
-.rdmap-list-info { font-size: 0.78rem; color: #6B6575; margin-bottom: 0.5rem; }
+.rdmap-list-info { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; }
 .rdmap-list-info b { color: var(--accent); }
-.rdmap-clear-btn { background: none; border: 1px solid #6B6575; color: #8B8594; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
+.rdmap-clear-btn { background: none; border: 1px solid var(--border-emphasis); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
 .rdmap-clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 /* List — card-style rows */
 .rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-row-wrap { position: relative; }
-.rdmap-fav { position: absolute; left: -0.3rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: #3D3648; font-size: 1rem; cursor: pointer; padding: 0.3rem; transition: all 0.2s; opacity: 0.3; }
+.rdmap-fav { position: absolute; left: -0.3rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: var(--border-emphasis); font-size: 1rem; cursor: pointer; padding: 0.3rem; transition: all 0.2s; opacity: 0.3; }
 .rdmap-row-wrap:hover .rdmap-fav, .rdmap-fav:focus { opacity: 0.7; }
 .rdmap-fav:hover { color: var(--accent); opacity: 1 !important; }
 .rdmap-fav-active { color: var(--accent) !important; opacity: 1 !important; }
 .rdmap-row {
   display: grid; grid-template-columns: 100px 1fr auto;
   padding: 1rem 1.2rem; align-items: start; font-size: 0.9rem;
-  background: #1C1924; border: 1px solid #2A2533; border-radius: 16px;
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px;
   border-left: 3px solid transparent; transition: all 0.15s;
   text-decoration: none; color: inherit; cursor: pointer; text-shadow: none;
 }
-.rdmap-row:hover { border-color: #3D3648; border-left-color: var(--accent); background: #211E29; text-shadow: none; color: inherit; }
+.rdmap-row:hover { border-color: var(--border-emphasis); border-left-color: var(--accent); background: var(--bg-elevated); text-shadow: none; color: inherit; }
 .rdmap-row-status { padding-top: 0.15rem; }
+/* Status badges get saturated bg via JS inline styles — white text is safe on all status colours */
 .rdmap-st {
   display: inline-block; font-size: 0.7rem; font-weight: 600;
-  padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--text-primary); white-space: nowrap;
+  padding: 0.2rem 0.5rem; border-radius: 4px; color: #fff; white-space: nowrap;
 }
 .rdmap-row-main { min-width: 0; padding: 0 1rem 0 0; }
-.rdmap-row-title { color: #E8E4ED; font-weight: 500; font-size: 0.95rem; line-height: 1.45; }
-.rdmap-row-desc { font-size: 0.84rem; color: #9B95A5; margin-top: 0.25rem; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rdmap-row-title { color: var(--text-primary); font-weight: 500; font-size: 0.95rem; line-height: 1.45; }
+.rdmap-row-desc { font-size: 0.84rem; color: var(--text-tertiary); margin-top: 0.25rem; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .rdmap-row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; white-space: nowrap; }
 .rdmap-row-product { font-size: 0.78rem; }
-.rdmap-row-date { font-size: 0.78rem; color: #8B8594; }
-.rdmap-delayed { font-size: 0.62rem; font-weight: 700; color: #EF4444; background: rgba(239,68,68,0.1); padding: 0.1rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; letter-spacing: 0.03em; }
+.rdmap-row-date { font-size: 0.78rem; color: var(--text-muted); }
+.rdmap-delayed { font-size: 0.62rem; font-weight: 700; color: var(--error); background: rgba(239,68,68,0.1); padding: 0.1rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; letter-spacing: 0.03em; }
 
 /* Load more */
 .rdmap-load-more {
   display: block; width: 100%; padding: 0.7rem; margin-top: 0.6rem;
-  background: #1C1924; border: 1px dashed #3D3648; border-radius: 16px;
-  color: #8B8594; font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
+  background: var(--bg-surface); border: 1px dashed var(--border-emphasis); border-radius: 16px;
+  color: var(--text-muted); font-size: 0.85rem; cursor: pointer; transition: all 0.15s;
 }
-.rdmap-load-more:hover { border-color: var(--accent); color: var(--accent); background: #211E29; }
+.rdmap-load-more:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-elevated); }
 
 /* Footer */
-.rdmap-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2533; }
+.rdmap-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
 .rdmap-footer-links { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: 0.8rem; margin-bottom: 0.6rem; }
-.rdmap-footer-links a { color: #6B6575; text-decoration: none; }
+.rdmap-footer-links a { color: var(--text-muted); text-decoration: none; }
 .rdmap-footer-links a:hover { color: var(--accent); }
-.rdmap-footer-btn { background: none; border: 1px solid #3D3648; color: #6B6575; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; }
+.rdmap-footer-btn { background: none; border: 1px solid var(--border-emphasis); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; }
 .rdmap-footer-btn:hover { border-color: var(--accent); color: var(--accent); }
-.rdmap-browse { font-size: 0.78rem; color: #6B6575; line-height: 1.8; margin-bottom: 0.4rem; }
-.rdmap-browse a { color: #8B8594; text-decoration: none; }
+.rdmap-browse { font-size: 0.78rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.4rem; }
+.rdmap-browse a { color: var(--text-tertiary); text-decoration: none; }
 .rdmap-browse a:hover { color: var(--accent); }
-.rdmap-freshness { font-size: 0.75rem; color: #6B6575; }
+.rdmap-freshness { font-size: 0.75rem; color: var(--text-muted); }
 
 /* Empty + skeleton */
-.rdmap-empty { color: #6B6575; text-align: center; padding: 3rem; }
+.rdmap-empty { color: var(--text-muted); text-align: center; padding: 3rem; }
 .rdmap-skeleton { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-skeleton-row {
   height: 70px; border-radius: 16px;
-  background: linear-gradient(110deg, #1C1924 40%, #2A2533 50%, #1C1924 60%);
+  background: linear-gradient(110deg, var(--bg-elevated) 40%, var(--border) 50%, var(--bg-elevated) 60%);
   background-size: 200% 100%; animation: rdmap-shimmer 1.5s infinite;
 }
 @keyframes rdmap-shimmer { to { background-position: -200% 0; } }
@@ -164,13 +152,13 @@
 .rdmap-btt {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--accent); color: #141118; border: none;
+  background: var(--accent); color: #fff; border: none;
   font-size: 1.2rem; font-weight: 700; cursor: pointer;
   box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 25%, transparent);
   opacity: 0; transform: translateY(20px); transition: all 0.3s; pointer-events: none;
 }
 .rdmap-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.rdmap-btt:hover { background: #FBBF24; box-shadow: 0 4px 20px var(--accent); }
+.rdmap-btt:hover { background: var(--accent-hover); box-shadow: 0 4px 20px var(--accent); }
 
 /* Responsive */
 @media (max-width: 768px) {

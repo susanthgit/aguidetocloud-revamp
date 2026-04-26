@@ -312,10 +312,10 @@
   white-space: nowrap;
 }
 
-.deptime-badge-critical { background: rgba(220,38,38,0.2); color: #DC2626; border: 1px solid rgba(220,38,38,0.3); }
-.deptime-badge-warning { background: rgba(249,115,22,0.2); color: #C2410C; border: 1px solid rgba(249,115,22,0.3); }
-.deptime-badge-watch { background: rgba(234,179,8,0.2); color: #A16207; border: 1px solid rgba(234,179,8,0.3); }
-.deptime-badge-future { background: rgba(34,197,94,0.2); color: #15803D; border: 1px solid rgba(34,197,94,0.3); }
+.deptime-badge-critical { background: rgba(220,38,38,0.2); color: var(--badge-red); border: 1px solid rgba(220,38,38,0.3); }
+.deptime-badge-warning { background: rgba(249,115,22,0.2); color: var(--badge-orange); border: 1px solid rgba(249,115,22,0.3); }
+.deptime-badge-watch { background: rgba(234,179,8,0.2); color: var(--badge-amber); border: 1px solid rgba(234,179,8,0.3); }
+.deptime-badge-future { background: rgba(34,197,94,0.2); color: var(--badge-green); border: 1px solid rgba(34,197,94,0.3); }
 .deptime-badge-passed { background: rgba(107,114,128,0.2); color: var(--text-secondary); border: 1px solid rgba(107,114,128,0.3); }
 
 .deptime-badge-type {
@@ -369,10 +369,10 @@
   font-weight: 600;
 }
 
-.deptime-countdown-critical { background: rgba(220,38,38,0.15); color: #DC2626; }
-.deptime-countdown-warning { background: rgba(249,115,22,0.15); color: #C2410C; }
-.deptime-countdown-watch { background: rgba(234,179,8,0.15); color: #A16207; }
-.deptime-countdown-future { background: rgba(34,197,94,0.15); color: #15803D; }
+.deptime-countdown-critical { background: rgba(220,38,38,0.15); color: var(--badge-red); }
+.deptime-countdown-warning { background: rgba(249,115,22,0.15); color: var(--badge-orange); }
+.deptime-countdown-watch { background: rgba(234,179,8,0.15); color: var(--badge-amber); }
+.deptime-countdown-future { background: rgba(34,197,94,0.15); color: var(--badge-green); }
 .deptime-countdown-passed { background: rgba(107,114,128,0.15); color: var(--text-secondary); }
 
 .deptime-card-actions {
@@ -447,10 +447,10 @@
 
 .deptime-timeline-item:hover { opacity: 0.8; }
 
-.deptime-timeline-item-critical { background: rgba(220,38,38,0.2); border-left: 3px solid var(--dt-critical); color: #DC2626; }
-.deptime-timeline-item-warning { background: rgba(249,115,22,0.2); border-left: 3px solid var(--dt-warning); color: #C2410C; }
-.deptime-timeline-item-watch { background: rgba(234,179,8,0.2); border-left: 3px solid var(--dt-watch); color: #A16207; }
-.deptime-timeline-item-future { background: rgba(34,197,94,0.2); border-left: 3px solid var(--dt-future); color: #15803D; }
+.deptime-timeline-item-critical { background: rgba(220,38,38,0.2); border-left: 3px solid var(--dt-critical); color: var(--badge-red); }
+.deptime-timeline-item-warning { background: rgba(249,115,22,0.2); border-left: 3px solid var(--dt-warning); color: var(--badge-orange); }
+.deptime-timeline-item-watch { background: rgba(234,179,8,0.2); border-left: 3px solid var(--dt-watch); color: var(--badge-amber); }
+.deptime-timeline-item-future { background: rgba(34,197,94,0.2); border-left: 3px solid var(--dt-future); color: var(--badge-green); }
 .deptime-timeline-item-passed { background: rgba(107,114,128,0.15); border-left: 3px solid var(--dt-passed); color: var(--text-secondary); }
 
 .deptime-timeline-date {
@@ -718,10 +718,10 @@
   transition: opacity 0.2s;
 }
 .deptime-month-item:hover { opacity: 0.7; }
-.deptime-month-item-critical { background: rgba(220,38,38,0.12); color: #DC2626; }
-.deptime-month-item-warning { background: rgba(249,115,22,0.12); color: #C2410C; }
-.deptime-month-item-watch { background: rgba(234,179,8,0.12); color: #A16207; }
-.deptime-month-item-future { background: rgba(34,197,94,0.12); color: #15803D; }
+.deptime-month-item-critical { background: rgba(220,38,38,0.12); color: var(--badge-red); }
+.deptime-month-item-warning { background: rgba(249,115,22,0.12); color: var(--badge-orange); }
+.deptime-month-item-watch { background: rgba(234,179,8,0.12); color: var(--badge-amber); }
+.deptime-month-item-future { background: rgba(34,197,94,0.12); color: var(--badge-green); }
 .deptime-month-date { font-weight: 600; margin-right: 0.3rem; }
 .deptime-month-empty { font-size: 0.75rem; color: var(--text-secondary); padding: 0.3rem 0; }
 .deptime-month-more { font-size: 0.7rem; color: var(--text-secondary); padding: 0.2rem 0; }

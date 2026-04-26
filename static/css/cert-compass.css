@@ -89,7 +89,7 @@
   border: 1px solid rgba(var(--compass-accent-rgb), 0.3);
 }
 .compass-badge-fee { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.25); }
-.compass-badge-diff { background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25); }
+.compass-badge-diff { background: rgba(251,191,36,0.12); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.25); }
 .compass-card-expand {
   color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; font-size: 0.8rem;
 }
@@ -128,7 +128,7 @@
 .compass-match-title { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); }
 .compass-match-badges { display: flex; gap: 0.4rem; margin-left: auto; }
 .compass-badge-role { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.25); }
-.compass-badge-mixed { background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25); }
+.compass-badge-mixed { background: rgba(251,191,36,0.12); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.25); }
 .compass-match-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
 .compass-match-cert {
   padding: 0.85rem; border-radius: 10px;
@@ -351,7 +351,7 @@
   margin: 0.15rem 0.1rem; font-weight: 500;
 }
 .compass-skill-shared { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
-.compass-skill-new { background: rgba(251,191,36,0.1); color: #FBBF24; border: 1px solid rgba(251,191,36,0.2); }
+.compass-skill-new { background: rgba(251,191,36,0.1); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.2); }
 .compass-skill-savings {
   font-size: 0.75rem; color: #059669; margin-top: 0.5rem; font-weight: 600;
   padding: 0.3rem 0.6rem; border-radius: 6px;

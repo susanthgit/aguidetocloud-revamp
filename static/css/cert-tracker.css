@@ -375,9 +375,9 @@
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
 }
-.cert-card-status-retiring { color: #FCD34D; background: rgba(245, 158, 11, 0.08); }
-.cert-card-status-retired { color: #FCA5A5; background: rgba(239, 68, 68, 0.08); }
-.cert-card-status-beta { color: #C4B5FD; background: rgba(139, 92, 246, 0.08); }
+.cert-card-status-retiring { color: var(--badge-amber); background: rgba(245, 158, 11, 0.08); }
+.cert-card-status-retired { color: var(--badge-red); background: rgba(239, 68, 68, 0.08); }
+.cert-card-status-beta { color: var(--badge-purple); background: rgba(139, 92, 246, 0.08); }
 
 /* ── Modal ── */
 .cert-modal {
@@ -586,11 +586,11 @@
 }
 
 /* ── Status badges ── */
-.cert-badge-retiring { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
-.cert-badge-retired { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
-.cert-badge-beta { background: rgba(139, 92, 246, 0.15); color: #8B5CF6; }
-.cert-badge-guided { background: rgba(16, 185, 129, 0.12); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.65rem; }
-.cert-badge-upcoming { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+.cert-badge-retiring { background: rgba(245, 158, 11, 0.15); color: var(--badge-amber); }
+.cert-badge-retired { background: rgba(239, 68, 68, 0.15); color: var(--badge-red); }
+.cert-badge-beta { background: rgba(139, 92, 246, 0.15); color: var(--badge-purple); }
+.cert-badge-guided { background: rgba(16, 185, 129, 0.12); color: var(--badge-green); border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.65rem; }
+.cert-badge-upcoming { background: rgba(59, 130, 246, 0.15); color: var(--badge-blue); }
 
 /* Status card overlay */
 .cert-card-retiring { border-left: 3px solid #F59E0B; }
@@ -1655,11 +1655,11 @@ a.cert-video-card:hover .cert-video-play svg {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.gp-badge-study { background: rgba(16, 185, 129, 0.15); color: #34D399; }
-.gp-badge-domain { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
-.gp-badge-flash { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
-.gp-badge-sr { background: rgba(139, 92, 246, 0.15); color: #A78BFA; }
-.gp-badge-progress { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+.gp-badge-study { background: rgba(16, 185, 129, 0.15); color: var(--badge-green); }
+.gp-badge-domain { background: rgba(59, 130, 246, 0.15); color: var(--badge-blue); }
+.gp-badge-flash { background: rgba(245, 158, 11, 0.15); color: var(--badge-amber); }
+.gp-badge-sr { background: rgba(139, 92, 246, 0.15); color: var(--badge-purple); }
+.gp-badge-progress { background: rgba(16, 185, 129, 0.15); color: var(--badge-green); }
 
 /* Question preview */
 .gp-question {

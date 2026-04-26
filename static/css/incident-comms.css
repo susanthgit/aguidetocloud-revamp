@@ -338,10 +338,10 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
 }
-.icomms-sev-p1 { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: #f87171; }
-.icomms-sev-p2 { background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.3); color: #fb923c; }
-.icomms-sev-p3 { background: rgba(250,204,21,0.15); border-color: rgba(250,204,21,0.3); color: #facc15; }
-.icomms-sev-p4 { background: rgba(74,222,128,0.15); border-color: rgba(74,222,128,0.3); color: #4ade80; }
+.icomms-sev-p1 { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: var(--badge-red); }
+.icomms-sev-p2 { background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.3); color: var(--badge-orange); }
+.icomms-sev-p3 { background: rgba(250,204,21,0.15); border-color: rgba(250,204,21,0.3); color: var(--badge-amber); }
+.icomms-sev-p4 { background: rgba(74,222,128,0.15); border-color: rgba(74,222,128,0.3); color: var(--badge-green); }
 
 /* Section Cards (generated per phase) */
 .icomms-section-card {
@@ -427,8 +427,8 @@
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
   border-radius: 12px;
-  background: rgba(255,143,102,0.12);
-  color: var(--icomms-accent);
+  background: var(--accent-subtle);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.6rem;
 }

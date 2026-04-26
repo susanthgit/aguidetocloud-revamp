@@ -106,9 +106,13 @@
       submitBtn.disabled = true;
       submitText.textContent = 'Sending…';
 
+      var controller = new AbortController();
+      var timeoutId = setTimeout(function () { controller.abort(); }, 15000);
+
       fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
         body: JSON.stringify({
           name: document.getElementById('fb-name').value.trim(),
           email: document.getElementById('fb-email').value.trim(),
@@ -116,6 +120,7 @@
           subject: subject, message: message
         })
       }).then(function (res) {
+        clearTimeout(timeoutId);
         if (res.ok) {
           return res.json().then(function (result) {
             sessionStorage.setItem('fb_last_submit', Date.now().toString());
@@ -129,8 +134,9 @@
         return res.json().catch(function () { return {}; }).then(function (err) {
           showStatus('error', err.error || 'Something went wrong.');
         });
-      }).catch(function () {
-        showStatus('error', 'Network error — check your connection.');
+      }).catch(function (e) {
+        clearTimeout(timeoutId);
+        showStatus('error', e.name === 'AbortError' ? 'Request timed out — please try again.' : 'Network error — check your connection.');
       }).finally(function () {
         submitBtn.disabled = false;
         submitText.textContent = 'Send Feedback';
@@ -224,7 +230,11 @@
     return row;
   }
 
-  fetch('/api/discussions').then(function (res) {
+  var discCtrl = new AbortController();
+  var discTimeout = setTimeout(function () { discCtrl.abort(); }, 10000);
+
+  fetch('/api/discussions', { signal: discCtrl.signal }).then(function (res) {
+    clearTimeout(discTimeout);
     if (!res.ok) throw new Error('fail');
     return res.json();
   }).then(function (data) {
