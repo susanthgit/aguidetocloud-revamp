@@ -121,36 +121,22 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 
 ```mermaid
 flowchart TD
-    A["🆓 Copilot Chat<br/>(Free with M365)"] -->|"Web-grounded AI"| B["💬 Chat"]
-    A --> C["📄 File Upload"]
-    A --> D["🖼️ Create"]
-    A --> E["📝 Pages"]
-    A --> F["🤖 Agents"]
-    A --> G["🧠 Memory"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style C fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style D fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style E fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style F fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style G fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    A["🆓 Copilot Chat<br/>(Free with M365)"] -->|"Web-grounded AI"| B["Chat"]
+    A --> C["File Upload"]
+    A --> D["️ Create"]
+    A --> E["Pages"]
+    A --> F["Agents"]
+    A --> G["Memory"]
 ```
 
 ```mermaid
 flowchart TD
-    A["💳 M365 Copilot<br/>($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
-    B --> C["📊 Work Data via Graph"]
-    B --> D["📱 Deep App Integration"]
-    B --> E["🔬 Researcher & Analyst"]
-    B --> F["📓 Notebooks"]
-    B --> G["🧬 Anthropic Model Choice"]
-    style A fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style B fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style C fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style D fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style E fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style F fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style G fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
+    A["M365 Copilot<br/>($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
+    B --> C["Work Data via Graph"]
+    B --> D["Deep App Integration"]
+    B --> E["Researcher & Analyst"]
+    B --> F["Notebooks"]
+    B --> G["Anthropic Model Choice"]
 ```
 
 ### The Two Tiers at a Glance
@@ -194,15 +180,10 @@ Think of it like your phone's encryption — it protects everything automaticall
 
 ```mermaid
 flowchart TD
-    A["👤 User sends<br/>a prompt"] --> B["🔒 Enterprise Data<br/>Protection (EDP)"]
-    B --> C["🧠 AI processes<br/>the request"]
-    C --> D["🔒 Response protected<br/>by EDP"]
-    D --> E["👤 User receives<br/>secure response"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style C fill:#2a2a3a,stroke:#A78BFA,color:#ffffff
-    style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style E fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
+    A["User sends<br/>a prompt"] --> B["Enterprise Data<br/>Protection (EDP)"]
+    B --> C["AI processes<br/>the request"]
+    C --> D["Response protected<br/>by EDP"]
+    D --> E["User receives<br/>secure response"]
 ```
 
 ### The Five EDP Promises
@@ -249,17 +230,11 @@ Microsoft is pulling back free Copilot Chat from some Office apps on April 15. W
 
 ```mermaid
 flowchart TD
-    A["🏢 Your Org Size"] --> B{"≥ 2,000 paid<br/>M365 seats?"}
-    B -->|"Yes"| C["🔴 Copilot removed from<br/>Word, Excel, PPT, OneNote<br/>for unlicensed users"]
-    B -->|"No"| D["🟡 Copilot stays but<br/>under standard access<br/>(possible throttling)"]
-    C --> E["✅ Keeps: Web chat,<br/>Outlook, Teams, WXP agents"]
-    D --> F["✅ Keeps: Everything,<br/>but may see upgrade prompts"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#3a3a1a,stroke:#ffaa00,color:#ffffff
-    style C fill:#5c1a1a,stroke:#ff6666,color:#ffffff
-    style D fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
-    style E fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style F fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    A["Your Org Size"] --> B{"≥ 2,000 paid<br/>M365 seats?"}
+    B -->|"Yes"| C["Copilot removed from<br/>Word, Excel, PPT, OneNote<br/>for unlicensed users"]
+    B -->|"No"| D["Copilot stays but<br/>under standard access<br/>(possible throttling)"]
+    C --> E["Keeps: Web chat,<br/>Outlook, Teams, WXP agents"]
+    D --> F["Keeps: Everything,<br/>but may see upgrade prompts"]
 ```
 
 ### What Changes by Organisation Size
@@ -297,29 +272,17 @@ Now let's get into the features your users can use **today**. Even as a free too
 
 ```mermaid
 flowchart TD
-    A["🆓 Copilot Chat<br/>Features"] --> B["💬 Chat"]
-    A --> C["📄 File Upload"]
-    A --> D["💡 Suggested Prompts"]
-    A --> E["⭐ Save Prompts"]
-    A --> F["⚙️ Custom Instructions"]
-    A --> G["🧠 Memory"]
-    A --> H["🎨 Create"]
-    A --> I["📝 Pages"]
-    A --> J["🤖 Agents"]
-    A --> K["🔍 Search"]
-    A --> L["🧪 Model Choice"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style C fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style D fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style E fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style F fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style G fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style H fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style I fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style J fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style K fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style L fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
+    A["🆓 Copilot Chat<br/>Features"] --> B["Chat"]
+    A --> C["File Upload"]
+    A --> D["Suggested Prompts"]
+    A --> E["Save Prompts"]
+    A --> F["️ Custom Instructions"]
+    A --> G["Memory"]
+    A --> H["Create"]
+    A --> I["Pages"]
+    A --> J["Agents"]
+    A --> K["Search"]
+    A --> L["Model Choice"]
 ```
 
 ---
@@ -615,15 +578,10 @@ The ability to **create** agents depends on your organisation's decisions:
 
 ```mermaid
 flowchart TD
-    A["🤖 Agent Creation<br/>for Free Users"] --> B{"What grounding<br/>does the agent need?"}
-    B -->|"Web only"| C["✅ Possible<br/>(if admin allows)"]
-    B -->|"Documents /<br/>SharePoint"| D["💰 Requires<br/>billing plan"]
+    A["Agent Creation<br/>for Free Users"] --> B{"What grounding<br/>does the agent need?"}
+    B -->|"Web only"| C["Possible<br/>(if admin allows)"]
+    B -->|"Documents /<br/>SharePoint"| D["Requires<br/>billing plan"]
     D --> E["Pay-as-you-go<br/>or<br/>Copilot credits"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#3a3a1a,stroke:#ffaa00,color:#ffffff
-    style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style D fill:#5c1a1a,stroke:#ff6666,color:#ffffff
-    style E fill:#3a2a1a,stroke:#ff9900,color:#ffffff
 ```
 
 <div class="trainer-tip">

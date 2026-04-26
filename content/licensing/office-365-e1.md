@@ -80,17 +80,13 @@ E1 is the **cheapest enterprise plan with no user limit** — for organisations 
 
 ```mermaid
 flowchart LR
-    E1["📧 O365 E1\n$10/mo\nWeb apps + email"]
-    E3["📧 O365 E3\n$26/mo\n+ Desktop apps\n+ basic compliance"]
-    M3["🏢 M365 E3\n$39/mo\n+ Security\n+ Windows"]
-    M5["🏢 M365 E5\n$60/mo\n+ Advanced security"]
+    E1["O365 E1<br/>$10/mo<br/>Web apps + email"]
+    E3["O365 E3<br/>$26/mo<br/>+ Desktop apps<br/>+ basic compliance"]
+    M3["M365 E3<br/>$39/mo<br/>+ Security<br/>+ Windows"]
+    M5["M365 E5<br/>$60/mo<br/>+ Advanced security"]
     E1 -->|"+$16"| E3
     E3 -->|"+$13"| M3
     M3 -->|"+$21"| M5
-    style E1 fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style M3 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style M5 fill:#1e293b,stroke:#a855f7,color:#ffffff
 ```
 
 | Feature | E1 ($10) | [O365 E3](/licensing/office-365-e3/) ($26) | [M365 E3](/licensing/microsoft-365-e3/) ($39) | [M365 E5](/licensing/microsoft-365-e5/) ($60) |

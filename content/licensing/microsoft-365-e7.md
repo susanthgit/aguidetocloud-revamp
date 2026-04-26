@@ -59,20 +59,15 @@ E7 is four products in one SKU. Everything in [E5](/licensing/microsoft-365-e5/)
 
 ```mermaid
 flowchart LR
-    E7["🏢 Microsoft 365 E7\n$99/user/mo"]
-    E5["🏢 Everything in E5\nFull Security + Compliance\n+ Teams Phone + Power BI"]
-    COP["🤖 Microsoft 365 Copilot\nAI in every Office app\n+ Copilot Studio"]
-    AGT["🤖 Agent 365\nAI agent governance\nat enterprise scale"]
-    ENT["🔐 Full Entra Suite\nZTNA + Internet Access\n+ Verified ID + Governance"]
+    E7["Microsoft 365 E7<br/>$99/user/mo"]
+    E5["Everything in E5<br/>Full Security + Compliance<br/>+ Teams Phone + Power BI"]
+    COP["Microsoft 365 Copilot<br/>AI in every Office app<br/>+ Copilot Studio"]
+    AGT["Agent 365<br/>AI agent governance<br/>at enterprise scale"]
+    ENT["Full Entra Suite<br/>ZTNA + Internet Access<br/>+ Verified ID + Governance"]
     E7 --> E5
     E7 --> COP
     E7 --> AGT
     E7 --> ENT
-    style E7 fill:#1e3a5f,stroke:#F43F5E,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style COP fill:#1e293b,stroke:#a855f7,color:#ffffff
-    style AGT fill:#1e293b,stroke:#f59e0b,color:#ffffff
-    style ENT fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 ### What You Inherit from E5
@@ -159,14 +154,11 @@ For a 1,000-user deployment, that's **$18,000/month saved** — or $216,000 annu
 
 ```mermaid
 flowchart LR
-    E3["🏢 E3\n$39/mo\nProductivity\n+ Basic Security"]
-    E5["🏢 E5\n$60/mo\nE3 + Advanced\nSecurity & Compliance"]
-    E7["🏢 E7\n$99/mo\nE5 + Copilot\n+ Agent 365 + Entra Suite"]
+    E3["E3<br/>$39/mo<br/>Productivity<br/>+ Basic Security"]
+    E5["E5<br/>$60/mo<br/>E3 + Advanced<br/>Security & Compliance"]
+    E7["E7<br/>$99/mo<br/>E5 + Copilot<br/>+ Agent 365 + Entra Suite"]
     E3 -->|"+$21"| E5
     E5 -->|"+$39"| E7
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style E7 fill:#1e293b,stroke:#F43F5E,color:#ffffff
 ```
 
 | What You Get | [E3](/licensing/microsoft-365-e3/) ($39) | [E5](/licensing/microsoft-365-e5/) ($60) | E7 ($99) |

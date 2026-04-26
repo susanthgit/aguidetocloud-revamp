@@ -52,15 +52,10 @@ Four major products, one SKU:
 
 ```mermaid
 flowchart TD
-    A["🏢 Microsoft 365 E7<br/>$99/user/month"] --> B["📦 Microsoft 365 E5<br/>Productivity + Security"]
-    A --> C["🤖 Microsoft 365 Copilot<br/>AI Assistant"]
-    A --> D["🔐 Microsoft Entra Suite<br/>Identity + Zero Trust"]
-    A --> E["🧠 Agent 365<br/>AI Governance Platform"]
-    style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style E fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
+    A["Microsoft 365 E7<br/>$99/user/month"] --> B["Microsoft 365 E5<br/>Productivity + Security"]
+    A --> C["Microsoft 365 Copilot<br/>AI Assistant"]
+    A --> D["Microsoft Entra Suite<br/>Identity + Zero Trust"]
+    A --> E["Agent 365<br/>AI Governance Platform"]
 ```
 
 Here's what each component brings:
@@ -134,9 +129,6 @@ Here's how the three enterprise tiers stack up:
 flowchart TD
     A["E3 — $39/mo<br/>Secure Productivity"] -->|"+$21"| B["E5 — $60/mo<br/>Advanced Security + Analytics"]
     B -->|"+$39"| C["E7 — $99/mo<br/>AI-Powered Enterprise +<br/>Agent Governance"]
-    style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style B fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style C fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
 ```
 
 Or as the internal Microsoft talk track puts it:
@@ -231,11 +223,8 @@ Microsoft is offering introductory CSP discounts:
 
 ```mermaid
 flowchart TD
-    A["📢 March 9, 2026<br/>Public announcement"] -->|"23 days"| B["💰 April 1, 2026<br/>EA/EAS price list<br/>available"]
-    B -->|"30 days"| C["🚀 May 1, 2026<br/>GA — E7 + Agent 365<br/>transactable"]
-    style A fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style B fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
-    style C fill:#1a4a2a,stroke:#66ff99,color:#ffffff
+    A["March 9, 2026<br/>Public announcement"] -->|"23 days"| B["April 1, 2026<br/>EA/EAS price list<br/>available"]
+    B -->|"30 days"| C["May 1, 2026<br/>GA — E7 + Agent 365<br/>transactable"]
 ```
 
 | Date | Milestone |
@@ -262,11 +251,8 @@ Here's my honest take — not every organisation needs E7 right now.
 flowchart TD
     A{"Already on E5<br/>+ Copilot?"} -->|"Yes"| B{"Deploying AI<br/>agents at scale?"}
     A -->|"No"| C["Probably not<br/>ready for E7 yet"]
-    B -->|"Yes"| D["✅ E7 makes<br/>financial + strategic<br/>sense"]
+    B -->|"Yes"| D["E7 makes<br/>financial + strategic<br/>sense"]
     B -->|"Not yet"| E["⏳ Wait — revisit<br/>when agent adoption<br/>grows"]
-    style C fill:#1e3a5f,stroke:#66ffff,color:#ffffff
-    style D fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style E fill:#4a3a0a,stroke:#ffaa00,color:#ffffff
 ```
 
 ### E7 Makes Sense If You…

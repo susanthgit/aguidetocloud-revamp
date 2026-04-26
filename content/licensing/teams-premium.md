@@ -38,14 +38,11 @@ Teams Premium is for organisations that want to **level up their meeting experie
 
 ```mermaid
 flowchart LR
-    STD["💬 Teams\nIncluded in M365\nChat + Meetings"]
-    PRE["💬 Teams Premium\n+$10/mo\nAI + Branding + Security"]
-    FEAT["✨ Premium Adds:\n• AI recap + chapters\n• Custom branding\n• Advanced webinars\n• Watermarking\n• E2E encryption\n• Virtual appointments"]
+    STD["Teams<br/>Included in M365<br/>Chat + Meetings"]
+    PRE["Teams Premium<br/>+$10/mo<br/>AI + Branding + Security"]
+    FEAT["Premium Adds:<br/>AI recap + chapters<br/>Custom branding<br/>Advanced webinars<br/>Watermarking<br/>E2E encryption<br/>Virtual appointments"]
     STD -->|"+$10"| PRE
     PRE --- FEAT
-    style STD fill:#1e293b,stroke:#6366f1,color:#ffffff
-    style PRE fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style FEAT fill:#1e293b,stroke:#f59e0b,color:#ffffff
 ```
 
 | Feature | Standard Teams | Teams Premium (+$10) |

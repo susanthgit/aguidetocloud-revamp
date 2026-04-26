@@ -44,14 +44,11 @@ Business Standard is the **most popular SMB plan** — the one you get when you 
 
 ```mermaid
 flowchart LR
-    BAS["💼 Basic\n$7/mo\nWeb apps only"]
-    STD["💼 Standard\n$14/mo\nDesktop apps"]
-    PRE["💼 Premium\n$22/mo\nDesktop apps\n+ Security"]
+    BAS["Basic<br/>$7/mo<br/>Web apps only"]
+    STD["Standard<br/>$14/mo<br/>Desktop apps"]
+    PRE["Premium<br/>$22/mo<br/>Desktop apps<br/>+ Security"]
     BAS -->|"+$7"| STD
     STD -->|"+$8"| PRE
-    style BAS fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style STD fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style PRE fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | Basic ($7) | Standard ($14) | Premium ($22) |

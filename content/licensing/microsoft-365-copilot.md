@@ -30,17 +30,13 @@ Copilot is an **AI assistant embedded directly in the Office apps you use every 
 
 ```mermaid
 flowchart LR
-    COP["🤖 M365 Copilot\n$30/user/mo"]
-    GRAPH["📊 Microsoft Graph\nYour emails, files,\nmeetings, calendar"]
-    APPS["📧 Where It Works\nWord · Excel · PPT\nOutlook · Teams\nOneNote · Loop"]
-    LLM["🧠 AI Model\nGPT-4 class\nEnterprise-grade"]
+    COP["M365 Copilot<br/>$30/user/mo"]
+    GRAPH["Microsoft Graph<br/>Your emails, files,<br/>meetings, calendar"]
+    APPS["Where It Works<br/>Word · Excel · PPT<br/>Outlook · Teams<br/>OneNote · Loop"]
+    LLM["AI Model<br/>GPT-4 class<br/>Enterprise-grade"]
     COP --> GRAPH
     COP --> APPS
     COP --> LLM
-    style COP fill:#1e3a5f,stroke:#8b5cf6,color:#ffffff
-    style GRAPH fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style APPS fill:#1e293b,stroke:#22c55e,color:#ffffff
-    style LLM fill:#1e293b,stroke:#f59e0b,color:#ffffff
 ```
 
 ### What It Does in Each App
@@ -102,13 +98,10 @@ Most organisations don't deploy Copilot to everyone at once. The recommended app
 
 ```mermaid
 flowchart LR
-    P1["Phase 1\n5-10% of users\nExecutives + Champions\n1-2 months"]
-    P2["Phase 2\n20-30% of users\nKnowledge workers\n2-3 months"]
-    P3["Phase 3\n50-100% of users\nBroad rollout\nOngoing"]
+    P1["Phase 1<br/>5-10% of users<br/>Executives + Champions<br/>1-2 months"]
+    P2["Phase 2<br/>20-30% of users<br/>Knowledge workers<br/>2-3 months"]
+    P3["Phase 3<br/>50-100% of users<br/>Broad rollout<br/>Ongoing"]
     P1 --> P2 --> P3
-    style P1 fill:#1e293b,stroke:#f59e0b,color:#ffffff
-    style P2 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style P3 fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 ## Frequently Asked Questions

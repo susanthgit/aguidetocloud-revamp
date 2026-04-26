@@ -54,17 +54,13 @@ Think of E3 as **three products bundled together**:
 
 ```mermaid
 flowchart LR
-    E3["🏢 Microsoft 365 E3\n$39/user/mo"]
-    O365["📧 Office 365 E3\nApps + Email + Teams"]
-    EMS["🔐 EMS E3\nIntune + Entra ID P1"]
-    WIN["🪟 Windows E3\nEnterprise + Defender P1"]
+    E3["Microsoft 365 E3<br/>$39/user/mo"]
+    O365["Office 365 E3<br/>Apps + Email + Teams"]
+    EMS["EMS E3<br/>Intune + Entra ID P1"]
+    WIN["Windows E3<br/>Enterprise + Defender P1"]
     E3 --> O365
     E3 --> EMS
     E3 --> WIN
-    style E3 fill:#1e3a5f,stroke:#F43F5E,color:#ffffff
-    style O365 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style EMS fill:#1e293b,stroke:#ef4444,color:#ffffff
-    style WIN fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 ### 📧 Productivity & Communication
@@ -119,14 +115,11 @@ This is the **#1 question** IT admins ask. Here's the honest answer:
 
 ```mermaid
 flowchart LR
-    E3["🏢 E3\n$39/mo"]
-    E5["🏢 E5\n$60/mo"]
-    DIFF["🔑 E5 Adds:\n• Entra ID P2 (PIM)\n• Defender P2 (EDR)\n• Insider Risk Mgmt\n• eDiscovery Premium\n• Teams Phone\n• Power BI Pro\n• Audio Conferencing"]
+    E3["E3<br/>$39/mo"]
+    E5["E5<br/>$60/mo"]
+    DIFF["E5 Adds:<br/>Entra ID P2 (PIM)<br/>Defender P2 (EDR)<br/>Insider Risk Mgmt<br/>eDiscovery Premium<br/>Teams Phone<br/>Power BI Pro<br/>Audio Conferencing"]
     E3 -->|"+$21/mo"| E5
     E5 --- DIFF
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style DIFF fill:#1e293b,stroke:#f59e0b,color:#ffffff
 ```
 
 | Feature | E3 ($39) | E5 ($60) |
@@ -161,14 +154,11 @@ This is the **second most confusing** licensing question. Here's the simple vers
 
 ```mermaid
 flowchart LR
-    O365["📧 Office 365 E3\n$26/mo\nApps + Email + Teams"]
-    M365["🏢 Microsoft 365 E3\n$39/mo\nEverything in O365 E3\n+ Security + Windows"]
-    EXTRA["🔐 M365 E3 Adds:\n• Intune P1\n• Entra ID P1\n• Defender for Endpoint P1\n• Windows 11 Enterprise E3\n• Information Protection"]
+    O365["Office 365 E3<br/>$26/mo<br/>Apps + Email + Teams"]
+    M365["Microsoft 365 E3<br/>$39/mo<br/>Everything in O365 E3<br/>+ Security + Windows"]
+    EXTRA["M365 E3 Adds:<br/>Intune P1<br/>Entra ID P1<br/>Defender for Endpoint P1<br/>Windows 11 Enterprise E3<br/>Information Protection"]
     O365 -->|"+$13/mo"| M365
     M365 --- EXTRA
-    style O365 fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style M365 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style EXTRA fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 **In short:** Microsoft 365 E3 = Office 365 E3 + Windows + Security. The extra $13/user/month gets you Intune, Entra ID P1, Defender, and Windows Enterprise. For most organisations, this is worth it.

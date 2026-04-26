@@ -82,23 +82,14 @@ The paid licence transforms Copilot from a **web-grounded chat tool** into an **
 
 ```mermaid
 flowchart TD
-    A["💳 M365 Copilot Licence"] --> B["📊 Work Data<br/>via Microsoft Graph"]
-    A --> C["📱 Deep App<br/>Integration"]
-    A --> D["🔬 Researcher<br/>& Analyst"]
-    A --> E["📓 Notebooks"]
-    A --> F["🤖 Full Agent<br/>Capabilities"]
-    A --> G["🧬 Anthropic<br/>Model Choice"]
-    A --> H["🔍 Enterprise<br/>Search"]
-    A --> I["⚡ Priority<br/>Access"]
-    style A fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style B fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style C fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style D fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style E fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style F fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style G fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style H fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
-    style I fill:#1a2a4a,stroke:#60A5FA,color:#ffffff
+    A["M365 Copilot Licence"] --> B["Work Data<br/>via Microsoft Graph"]
+    A --> C["Deep App<br/>Integration"]
+    A --> D["Researcher<br/>& Analyst"]
+    A --> E["Notebooks"]
+    A --> F["Full Agent<br/>Capabilities"]
+    A --> G["Anthropic<br/>Model Choice"]
+    A --> H["Enterprise<br/>Search"]
+    A --> I["Priority<br/>Access"]
 ```
 
 ### Everything from Copilot Chat — Plus These Exclusive Features
@@ -190,21 +181,13 @@ This is the diagram I always show in training sessions. It helps people understa
 
 ```mermaid
 flowchart TD
-    A["👤 User sends<br/>a prompt"] --> B["🔒 EDP Layer<br/>Identity + Permissions<br/>+ Sensitivity Labels"]
-    B --> C["🧠 Microsoft 365<br/>Copilot Orchestrator"]
-    C --> D["📊 Microsoft Graph<br/>(Emails, Files,<br/>Meetings, Chats)"]
-    C --> E["🌐 Web Search<br/>(Bing, if enabled)"]
-    C --> F["🤖 AI Model<br/>(GPT-5 or Claude<br/>via Azure)"]
-    F --> G["🔒 EDP Layer<br/>Content filtering<br/>+ Label inheritance"]
-    G --> H["👤 User receives<br/>secure response"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style C fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style D fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style E fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style F fill:#2a1a3a,stroke:#A78BFA,color:#ffffff
-    style G fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style H fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
+    A["User sends<br/>a prompt"] --> B["EDP Layer<br/>Identity + Permissions<br/>+ Sensitivity Labels"]
+    B --> C["Microsoft 365<br/>Copilot Orchestrator"]
+    C --> D["Microsoft Graph<br/>(Emails, Files,<br/>Meetings, Chats)"]
+    C --> E["Web Search<br/>(Bing, if enabled)"]
+    C --> F["AI Model<br/>(GPT-5 or Claude<br/>via Azure)"]
+    F --> G["EDP Layer<br/>Content filtering<br/>+ Label inheritance"]
+    G --> H["User receives<br/>secure response"]
 ```
 
 ### Step-by-Step Data Flow
@@ -235,23 +218,14 @@ This is the **single biggest difference** between Copilot Chat and the paid lice
 
 ```mermaid
 flowchart TD
-    A["👤 User Prompt"] --> B["🧠 Microsoft 365<br/>Copilot"]
-    B --> C["🌐 Web Data"]
-    B --> D["📊 Microsoft Graph"]
-    D --> E["📧 Emails"]
-    D --> F["📄 SharePoint<br/>& OneDrive"]
-    D --> G["📅 Calendar"]
-    D --> H["💬 Teams Chats<br/>& Meetings"]
-    D --> I["👥 People &<br/>Org Chart"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style C fill:#1a3a3a,stroke:#14B8A6,color:#ffffff
-    style D fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style E fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style F fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style G fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style H fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style I fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
+    A["User Prompt"] --> B["Microsoft 365<br/>Copilot"]
+    B --> C["Web Data"]
+    B --> D["Microsoft Graph"]
+    D --> E["Emails"]
+    D --> F["SharePoint<br/>& OneDrive"]
+    D --> G["Calendar"]
+    D --> H["Teams Chats<br/>& Meetings"]
+    D --> I["People &<br/>Org Chart"]
 ```
 
 ### What Copilot Can Access Through Microsoft Graph
@@ -302,19 +276,12 @@ Copilot in Word transforms document creation from a blank page into an AI-assist
 
 ```mermaid
 flowchart TD
-    A["📝 Copilot<br/>in Word"] --> B["✍️ Draft"]
-    A --> C["🔄 Rewrite"]
-    A --> D["📋 Summarise"]
-    A --> E["📊 Visualise<br/>as Table"]
-    A --> F["🖼️ Generate<br/>Images"]
-    A --> G["📎 Reference<br/>Other Files"]
-    style A fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style B fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style C fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style D fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style E fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style F fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style G fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
+    A["Copilot<br/>in Word"] --> B["️ Draft"]
+    A --> C["Rewrite"]
+    A --> D["Summarise"]
+    A --> E["Visualise<br/>as Table"]
+    A --> F["️ Generate<br/>Images"]
+    A --> G["Reference<br/>Other Files"]
 ```
 
 <div class="trainer-tip">
@@ -422,19 +389,12 @@ Copilot in Teams is where many users experience the **most immediate time saving
 
 ```mermaid
 flowchart TD
-    A["👥 Copilot<br/>in Teams"] --> B["📋 Meeting<br/>Recaps"]
-    A --> C["✅ Action<br/>Items"]
-    A --> D["💬 Chat<br/>Summaries"]
-    A --> E["📢 Channel<br/>Summaries"]
-    A --> F["✍️ Compose<br/>Messages"]
-    A --> G["❓ Live<br/>Q&A"]
-    style A fill:#2a1a4a,stroke:#A78BFA,color:#ffffff
-    style B fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style C fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style D fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style E fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style F fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
-    style G fill:#1a2a3a,stroke:#60A5FA,color:#ffffff
+    A["Copilot<br/>in Teams"] --> B["Meeting<br/>Recaps"]
+    A --> C["Action<br/>Items"]
+    A --> D["Chat<br/>Summaries"]
+    A --> E["Channel<br/>Summaries"]
+    A --> F["️ Compose<br/>Messages"]
+    A --> G["Live<br/>Q&A"]
 ```
 
 <div class="trainer-tip">
@@ -648,17 +608,11 @@ Microsoft 365 Copilot now offers **model choice** — users can select between *
 
 ```mermaid
 flowchart TD
-    A["🔐 Admin Centre"] --> B["Copilot → Settings<br/>→ View All"]
+    A["Admin Centre"] --> B["Copilot → Settings<br/>→ View All"]
     B --> C["AI providers operating<br/>as Microsoft subprocessors"]
     C --> D{"Anthropic<br/>toggle"}
-    D -->|"Enable"| E["✅ Claude available<br/>for users"]
-    D -->|"Disable"| F["❌ Claude hidden<br/>from users"]
-    style A fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style B fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style C fill:#1a3a4a,stroke:#60A5FA,color:#ffffff
-    style D fill:#3a3a1a,stroke:#ffaa00,color:#ffffff
-    style E fill:#1a4a2a,stroke:#66ff99,color:#ffffff
-    style F fill:#5c1a1a,stroke:#ff6666,color:#ffffff
+    D -->|"Enable"| E["Claude available<br/>for users"]
+    D -->|"Disable"| F["Claude hidden<br/>from users"]
 ```
 
 **Step-by-step:**

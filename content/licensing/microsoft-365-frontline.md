@@ -52,11 +52,9 @@ Frontline plans are for **workers who don't sit at desks** — retail associates
 
 ```mermaid
 flowchart LR
-    F1["👷 F1\n$3/mo\nView only + Teams"]
-    F3["👷 F3\n$10/mo\nFull web apps\n+ Windows + Intune"]
+    F1["F1<br/>$3/mo<br/>View only + Teams"]
+    F3["F3<br/>$10/mo<br/>Full web apps<br/>+ Windows + Intune"]
     F1 -->|"+$7"| F3
-    style F1 fill:#1e293b,stroke:#f97316,color:#ffffff
-    style F3 fill:#1e293b,stroke:#ef4444,color:#ffffff
 ```
 
 | Feature | F1 ($3) | F3 ($10) |
@@ -94,17 +92,13 @@ These features are designed specifically for frontline workers and work across b
 
 ```mermaid
 flowchart LR
-    F1["👷 F1\n$3/mo"]
-    F3["👷 F3\n$10/mo"]
-    E3["🏢 M365 E3\n$39/mo"]
-    E5["🏢 M365 E5\n$60/mo"]
+    F1["F1<br/>$3/mo"]
+    F3["F3<br/>$10/mo"]
+    E3["M365 E3<br/>$39/mo"]
+    E5["M365 E5<br/>$60/mo"]
     F1 -->|"Need editing"| F3
     F3 -->|"Need desktop apps\nor 100GB mailbox"| E3
     E3 -->|"Need advanced\nsecurity"| E5
-    style F1 fill:#1e293b,stroke:#f97316,color:#ffffff
-    style F3 fill:#1e293b,stroke:#ef4444,color:#ffffff
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | F1 ($3) | F3 ($10) | [E3](/licensing/microsoft-365-e3/) ($39) | [E5](/licensing/microsoft-365-e5/) ($60) |

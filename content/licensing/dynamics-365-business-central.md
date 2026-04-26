@@ -43,14 +43,11 @@ Business Central is the **ERP for growing SMBs** — the natural step up from sp
 
 ```mermaid
 flowchart LR
-    TM["📦 Team Member\n$8/mo\nRead-only"]
-    ESS["📦 Essentials\n$70/mo\nFull ERP"]
-    PRE["📦 Premium\n$100/mo\nERP + Manufacturing\n+ Service Mgmt"]
+    TM["Team Member<br/>$8/mo<br/>Read-only"]
+    ESS["Essentials<br/>$70/mo<br/>Full ERP"]
+    PRE["Premium<br/>$100/mo<br/>ERP + Manufacturing<br/>+ Service Mgmt"]
     TM --- ESS
     ESS -->|"+$30"| PRE
-    style TM fill:#1e293b,stroke:#64748b,color:#ffffff
-    style ESS fill:#1e293b,stroke:#14b8a6,color:#ffffff
-    style PRE fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | Team ($8) | Essentials ($70) | Premium ($100) |

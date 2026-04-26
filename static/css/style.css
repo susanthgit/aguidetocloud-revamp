@@ -3749,23 +3749,38 @@ body.is-home .section {
 .content-body > .trainer-script:has(strong:first-child) {
   margin: 0.5rem 0;
 }
-.content-body .mermaid {
+/* 🌸 Zen: Light dot-grid canvas container for Mermaid diagrams */
+.content-body .mermaid,
+.lic-single-content .mermaid {
   margin: 2rem 0;
-  padding: 1.5rem;
-  background: rgba(13, 17, 23, 0.6);
-  border: 1px solid rgba(102, 255, 255, 0.1);
-  border-radius: 16px;
+  padding: 2rem;
+  background:
+    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
   text-align: center;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative;
   max-width: none;
+}
+/* Rounded node corners — Stripe-style soft pills */
+.content-body .mermaid .node rect,
+.content-body .mermaid .node polygon,
+.lic-single-content .mermaid .node rect,
+.lic-single-content .mermaid .node polygon {
+  rx: 12 !important;
+  ry: 12 !important;
 }
 /* Override Mermaid v11 inline max-width on SVG — prevents diagrams
    from rendering at their small natural width inside the larger container.
    flowchart LR diagrams are particularly affected (400-600px natural width
    inside a 900px blog container). Applies site-wide (blog + licensing). */
 pre.mermaid svg,
-.content-body .mermaid svg {
+.content-body .mermaid svg,
+.lic-single-content .mermaid svg {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;

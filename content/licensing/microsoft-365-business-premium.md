@@ -52,14 +52,11 @@ Business Premium is the **"grown-up" plan for SMBs** — the one IT consultants 
 
 ```mermaid
 flowchart LR
-    STD["💼 Business Standard\n$14/mo\nApps + Email + Teams"]
-    PRE["💼 Business Premium\n$22/mo\nStandard + Security"]
-    SEC["🔐 Premium Adds:\n• Intune P1\n• Defender for Business\n• Defender for O365 P1\n• Entra ID P1\n• DLP + Info Protection"]
+    STD["Business Standard<br/>$14/mo<br/>Apps + Email + Teams"]
+    PRE["Business Premium<br/>$22/mo<br/>Standard + Security"]
+    SEC["Premium Adds:<br/>Intune P1<br/>Defender for Business<br/>Defender for O365 P1<br/>Entra ID P1<br/>DLP + Info Protection"]
     STD -->|"+$8/mo"| PRE
     PRE --- SEC
-    style STD fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style PRE fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style SEC fill:#1e293b,stroke:#ef4444,color:#ffffff
 ```
 
 | Feature | [Standard](/licensing/microsoft-365-business-standard/) ($14) | Premium ($22) |
@@ -121,17 +118,13 @@ If you hit the **300-user limit** or need more advanced features, here's the upg
 
 ```mermaid
 flowchart LR
-    PRE["💼 Business Premium\n$22/mo\n≤300 users"]
-    E3["🏢 M365 E3\n$39/mo\nUnlimited users"]
-    E5["🏢 M365 E5\n$60/mo\n+ Advanced security"]
-    E7["🏢 M365 E7\n$99/mo\n+ Copilot + AI"]
+    PRE["Business Premium<br/>$22/mo<br/>≤300 users"]
+    E3["M365 E3<br/>$39/mo<br/>Unlimited users"]
+    E5["M365 E5<br/>$60/mo<br/>+ Advanced security"]
+    E7["M365 E7<br/>$99/mo<br/>+ Copilot + AI"]
     PRE -->|"300+ users"| E3
     E3 -->|"+security"| E5
     E5 -->|"+AI"| E7
-    style PRE fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E3 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#a855f7,color:#ffffff
-    style E7 fill:#1e293b,stroke:#F43F5E,color:#ffffff
 ```
 
 | Need | Business Premium ($22) | Enterprise Alternative |

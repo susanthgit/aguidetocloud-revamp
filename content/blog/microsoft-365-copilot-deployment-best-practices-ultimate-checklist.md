@@ -67,16 +67,11 @@ Back to the moving house analogy. Here are your five phases — and what goes wr
 
 ```mermaid
 flowchart TD
-    A["📋 Phase 1<br/>Plan & Assess"] --> B["🔒 Phase 2<br/>Secure & Govern"]
-    B --> C["⚙️ Phase 3<br/>Configure & Deploy"]
-    C --> D["🎓 Phase 4<br/>Adopt & Train"]
-    D --> E["📊 Phase 5<br/>Monitor & Optimise"]
+    A["Phase 1<br/>Plan & Assess"] --> B["Phase 2<br/>Secure & Govern"]
+    B --> C["️ Phase 3<br/>Configure & Deploy"]
+    C --> D["Phase 4<br/>Adopt & Train"]
+    D --> E["Phase 5<br/>Monitor & Optimise"]
     
-    style A fill:#1a1a2e,stroke:#3B82F6,color:#fff
-    style B fill:#1a1a2e,stroke:#EF4444,color:#fff
-    style C fill:#1a1a2e,stroke:#F59E0B,color:#fff
-    style D fill:#1a1a2e,stroke:#10B981,color:#fff
-    style E fill:#1a1a2e,stroke:#8B5CF6,color:#fff
 ```
 
 | Phase | Key Action | If You Skip This... |
@@ -457,15 +452,11 @@ You've moved in, unpacked, and everyone knows where the kitchen is. Now you trac
 
 ```mermaid
 flowchart TD
-    A["📊 Measure usage<br/>& satisfaction"] --> B["🔍 Identify gaps<br/>& low-adoption areas"]
-    B --> C["🎓 Targeted training<br/>& new scenarios"]
-    C --> D["🔧 Adjust config<br/>& governance"]
+    A["Measure usage<br/>& satisfaction"] --> B["Identify gaps<br/>& low-adoption areas"]
+    B --> C["Targeted training<br/>& new scenarios"]
+    C --> D["Adjust config<br/>& governance"]
     D --> A
     
-    style A fill:#1a1a2e,stroke:#8B5CF6,color:#fff
-    style B fill:#1a1a2e,stroke:#EF4444,color:#fff
-    style C fill:#1a1a2e,stroke:#10B981,color:#fff
-    style D fill:#1a1a2e,stroke:#F59E0B,color:#fff
 ```
 
 ---

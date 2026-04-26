@@ -106,17 +106,12 @@ Without a Brand Kit, asking Copilot to "create a customer proposal" gives you ge
 
 ```mermaid
 flowchart TD
-    A["🏢 Admin<br/>Brand Manager policy +<br/>Optional OAL setup"]
-    B["👔 Brand Manager<br/>Creates & publishes<br/>Brand Kit"]
-    C["🎨 Copilot<br/>Reads Brand Kit<br/>when generating content"]
-    D["📊 On-Brand<br/>Presentations, documents,<br/>images, posters"]
-    E["🔍 Brand Checker<br/>Scans & fixes<br/>any issues"]
+    A["Admin<br/>Brand Manager policy +<br/>Optional OAL setup"]
+    B["Brand Manager<br/>Creates & publishes<br/>Brand Kit"]
+    C["Copilot<br/>Reads Brand Kit<br/>when generating content"]
+    D["On-Brand<br/>Presentations, documents,<br/>images, posters"]
+    E["Brand Checker<br/>Scans & fixes<br/>any issues"]
     A --> B --> C --> D --> E
-    style A fill:#3B82F6,color:#ffffff
-    style B fill:#8B5CF6,color:#ffffff
-    style C fill:#14B8A6,color:#ffffff
-    style D fill:#F59E0B,color:#000000
-    style E fill:#EF4444,color:#ffffff
 ```
 
 ## What's Inside a Brand Kit?
@@ -262,15 +257,10 @@ When generating images, banners, and posters through the Create tab, Copilot use
 
 ```mermaid
 flowchart TD
-    A["📊 PowerPoint<br/>★★★★★<br/>PowerPoint Agent, Narrative Builder,<br/>Brand Checker, Templates"] --> E["🎨 Brand Kit"]
-    B["📝 Word<br/>★★★☆☆<br/>Word Agent +<br/>Templates + Copilot side panel"] --> E
-    C["📗 Excel<br/>★★☆☆☆<br/>Template-level<br/>branding only"] --> E
-    D["✨ Create Tab<br/>★★★★☆<br/>Images, banners, posters,<br/>templates hub"] --> E
-    style A fill:#ED7D31,color:#ffffff
-    style B fill:#4472C4,color:#ffffff
-    style C fill:#70AD47,color:#ffffff
-    style D fill:#A78BFA,color:#ffffff
-    style E fill:#FF66FF,color:#000000
+    A["PowerPoint<br/><br/>PowerPoint Agent, Narrative Builder,<br/>Brand Checker, Templates"] --> E["Brand Kit"]
+    B["Word<br/><br/>Word Agent +<br/>Templates + Copilot side panel"] --> E
+    C["Excel<br/><br/>Template-level<br/>branding only"] --> E
+    D["Create Tab<br/><br/>Images, banners, posters,<br/>templates hub"] --> E
 ```
 
 ## The Three Types of Brand Kits

@@ -36,14 +36,11 @@ Copilot Pro is Microsoft's **personal AI subscription** — the consumer equival
 
 ```mermaid
 flowchart LR
-    FREE["💬 Copilot (Free)\nBasic chat\nNo Office integration"]
-    PRO["⭐ Copilot Pro\n$20/mo\nAI in Office apps\n+ Priority models"]
-    M365["🏢 M365 Copilot\n$30/mo\nAI + enterprise data\n+ Teams + Graph"]
+    FREE["Copilot (Free)<br/>Basic chat<br/>No Office integration"]
+    PRO["Copilot Pro<br/>$20/mo<br/>AI in Office apps<br/>+ Priority models"]
+    M365["M365 Copilot<br/>$30/mo<br/>AI + enterprise data<br/>+ Teams + Graph"]
     FREE -->|"+$20"| PRO
     PRO -.->|"Different product"| M365
-    style FREE fill:#1e293b,stroke:#64748b,color:#ffffff
-    style PRO fill:#1e293b,stroke:#a855f7,color:#ffffff
-    style M365 fill:#1e293b,stroke:#3b82f6,color:#ffffff
 ```
 
 ## What You Get with Copilot Pro

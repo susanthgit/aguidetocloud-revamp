@@ -39,14 +39,11 @@ Office 365 E3 is the **productivity-only enterprise plan** — full desktop Offi
 
 ```mermaid
 flowchart LR
-    O365["📧 Office 365 E3\n$26/mo\nApps + Email + Teams"]
-    M365["🏢 Microsoft 365 E3\n$39/mo\nO365 E3 + Security"]
-    ADDS["🔐 M365 E3 Adds:\n• Intune P1\n• Entra ID P1\n• Defender for Endpoint P1\n• Windows 11 Enterprise E3\n• Information Protection"]
+    O365["Office 365 E3<br/>$26/mo<br/>Apps + Email + Teams"]
+    M365["Microsoft 365 E3<br/>$39/mo<br/>O365 E3 + Security"]
+    ADDS["M365 E3 Adds:<br/>Intune P1<br/>Entra ID P1<br/>Defender for Endpoint P1<br/>Windows 11 Enterprise E3<br/>Information Protection"]
     O365 -->|"+$13/mo"| M365
     M365 --- ADDS
-    style O365 fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style M365 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style ADDS fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 > **💡 Plain English:** Office 365 E3 is like buying a car without insurance. Microsoft 365 E3 is the car WITH insurance. For $13 more, most organisations should get the insurance.

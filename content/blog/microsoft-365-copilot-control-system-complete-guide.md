@@ -107,12 +107,9 @@ When I explain CCS to customers, I break it into three buckets. Each one answers
 
 ```mermaid
 flowchart LR
-    A["🔐 Security &<br/>Governance"] --- B["⚙️ Management<br/>Controls"]
-    B --- C["📊 Measurement<br/>& Reporting"]
+    A["Security &<br/>Governance"] --- B["️ Management<br/>Controls"]
+    B --- C["Measurement<br/>& Reporting"]
     
-    style A fill:#1a1a2e,stroke:#EF4444,color:#fff
-    style B fill:#1a1a2e,stroke:#3B82F6,color:#fff
-    style C fill:#1a1a2e,stroke:#10B981,color:#fff
 ```
 
 ### 🔐 Pillar 1: Security & Governance

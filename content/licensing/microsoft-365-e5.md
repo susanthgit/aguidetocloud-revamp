@@ -53,20 +53,15 @@ Think of E5 as **E3 + the full security/compliance/analytics upgrade**:
 
 ```mermaid
 flowchart LR
-    E3["🏢 M365 E3\n$39/mo\nProductivity + Basic Security"]
-    E5["🏢 M365 E5\n$60/mo\nE3 + Advanced Everything"]
-    SEC["🛡️ Security Upgrade\n• Defender P2 (EDR)\n• Entra ID P2 (PIM)\n• CASB\n• Identity Protection"]
-    COMP["📋 Compliance Upgrade\n• Insider Risk Mgmt\n• eDiscovery Premium\n• Advanced Audit\n• Endpoint DLP"]
-    ANA["📊 Analytics + Voice\n• Power BI Pro\n• Teams Phone\n• Audio Conferencing"]
+    E3["M365 E3<br/>$39/mo<br/>Productivity + Basic Security"]
+    E5["M365 E5<br/>$60/mo<br/>E3 + Advanced Everything"]
+    SEC["️ Security Upgrade<br/>Defender P2 (EDR)<br/>Entra ID P2 (PIM)<br/>CASB<br/>Identity Protection"]
+    COMP["Compliance Upgrade<br/>Insider Risk Mgmt<br/>eDiscovery Premium<br/>Advanced Audit<br/>Endpoint DLP"]
+    ANA["Analytics + Voice<br/>Power BI Pro<br/>Teams Phone<br/>Audio Conferencing"]
     E3 -->|"+$21/mo"| E5
     E5 --> SEC
     E5 --> COMP
     E5 --> ANA
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style SEC fill:#1e293b,stroke:#ef4444,color:#ffffff
-    style COMP fill:#1e293b,stroke:#f59e0b,color:#ffffff
-    style ANA fill:#1e293b,stroke:#22c55e,color:#ffffff
 ```
 
 ## Security Features — The E5 Advantage
@@ -110,14 +105,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    E3["🏢 E3\n$39/mo\nProductivity\n+ Basic Security"]
-    E5["🏢 E5\n$60/mo\nE3 + Advanced\nSecurity & Compliance"]
-    E7["🏢 E7\n$99/mo\nE5 + Copilot\n+ Agent 365 + Entra Suite"]
+    E3["E3<br/>$39/mo<br/>Productivity<br/>+ Basic Security"]
+    E5["E5<br/>$60/mo<br/>E3 + Advanced<br/>Security & Compliance"]
+    E7["E7<br/>$99/mo<br/>E5 + Copilot<br/>+ Agent 365 + Entra Suite"]
     E3 -->|"+$21"| E5
     E5 -->|"+$39"| E7
-    style E3 fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style E5 fill:#1e293b,stroke:#8b5cf6,color:#ffffff
-    style E7 fill:#1e293b,stroke:#F43F5E,color:#ffffff
 ```
 
 | What You Get | E3 ($39) | E5 ($60) | E7 ($99) |

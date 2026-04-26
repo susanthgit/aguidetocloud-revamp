@@ -1,0 +1,1712 @@
+[
+  {
+    "slug": "acronym-battle",
+    "url": "http://localhost:1314/acronym-battle/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "admin-badges",
+    "url": "http://localhost:1314/admin-badges/",
+    "light": {
+      "contrast": [
+        {
+          "tag": "BUTTON",
+          "text": "All",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(255,213,79)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "My Badges",
+        "mode": "light",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "Download Badge Wall",
+            "color": "rgb(255, 255, 255)",
+            "bg": "rgb(255,213,79)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "All Badges",
+        "mode": "light",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "All",
+            "color": "rgb(255, 255, 255)",
+            "bg": "rgb(255,213,79)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "admin-bingo",
+    "url": "http://localhost:1314/admin-bingo/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "admin-comms",
+    "url": "http://localhost:1314/admin-comms/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "agent-365-planner",
+    "url": "http://localhost:1314/agent-365-planner/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "agent-builder-guide",
+    "url": "http://localhost:1314/agent-builder-guide/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "ai-cost-calculator",
+    "url": "http://localhost:1314/ai-cost-calculator/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "ai-mapper",
+    "url": "http://localhost:1314/ai-mapper/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "ai-news",
+    "url": "http://localhost:1314/ai-news/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": [
+      "Tab \"Today\": elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "Tab \"This Month\": elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    ]
+  },
+  {
+    "slug": "ai-showdown",
+    "url": "http://localhost:1314/ai-showdown/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 8,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [
+        {
+          "tag": "BUTTON",
+          "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(26,26,26)",
+          "severity": "critical"
+        },
+        {
+          "tag": "SPAN",
+          "text": "🔍",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(0,0,0)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 8,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Overview",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "Compare",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "Enterprise",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "Pricing",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "Strengths",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "What Changed",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "Which AI?",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "tab": "FAQ",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🔍\n    Search videos, articles, prompts...\n    Ctr",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(26,26,26)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "🔍",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "FAIL",
+    "errors": []
+  },
+  {
+    "slug": "ca-builder",
+    "url": "http://localhost:1314/ca-builder/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "cc",
+    "url": "http://localhost:1314/cc/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 0,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 0,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "cert-compass",
+    "url": "http://localhost:1314/cert-compass/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 7,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 7,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "cert-tracker",
+    "url": "http://localhost:1314/cert-tracker/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "cli-quiz",
+    "url": "http://localhost:1314/cli-quiz/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "color-palette",
+    "url": "http://localhost:1314/color-palette/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Generate",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "SPAN",
+            "text": "#34D399",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "Emerald",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "#FB923C",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          },
+          {
+            "tag": "SPAN",
+            "text": "Orange",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "compliance-passport",
+    "url": "http://localhost:1314/compliance-passport/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "copilot-matrix",
+    "url": "http://localhost:1314/copilot-matrix/",
+    "light": {
+      "contrast": [],
+      "backdrop": [
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        }
+      ],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "value": "blur(12px)"
+        }
+      ],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "FAIL",
+    "errors": []
+  },
+  {
+    "slug": "copilot-readiness",
+    "url": "http://localhost:1314/copilot-readiness/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "countdown",
+    "url": "http://localhost:1314/countdown/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [
+        {
+          "tag": "BUTTON",
+          "text": "🎂",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "🎄",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "💒",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "🚀",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "🎓",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "📝",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "✈️",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "🎉",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "⚽",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(20,20,20)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Countdowns",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "🎂",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "🎄",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "💒",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "🚀",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "🎓",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "📝",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "✈️",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "🎉",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "⚽",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(20,20,20)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "FAIL",
+    "errors": []
+  },
+  {
+    "slug": "cs-companion",
+    "url": "http://localhost:1314/cs-companion/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Governance & Sharing",
+        "mode": "light",
+        "contrastIssues": [
+          {
+            "tag": "SPAN",
+            "text": "Recommended",
+            "color": "rgb(212, 212, 212)",
+            "bg": "rgb(229,229,229)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "demo-scripts",
+    "url": "http://localhost:1314/demo-scripts/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "deprecation-timeline",
+    "url": "http://localhost:1314/deprecation-timeline/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "feature-roulette",
+    "url": "http://localhost:1314/feature-roulette/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "feedback",
+    "url": "http://localhost:1314/feedback/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": null
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": null
+    },
+    "tabScreenshots": [],
+    "status": "ERROR",
+    "errors": [
+      "page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:1314/feedback/\", waiting until \"networkidle\"\u001b[22m\n"
+    ]
+  },
+  {
+    "slug": "image-compressor",
+    "url": "http://localhost:1314/image-compressor/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "incident-comms",
+    "url": "http://localhost:1314/incident-comms/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "instruct-builder",
+    "url": "http://localhost:1314/instruct-builder/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "it-day-sim",
+    "url": "http://localhost:1314/it-day-sim/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "licence-picker",
+    "url": "http://localhost:1314/licence-picker/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [
+        {
+          "tag": "SPAN",
+          "text": "✓",
+          "color": "rgba(0, 0, 0, 0)",
+          "bg": "rgb(0,0,0)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Feature Picker",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "SPAN",
+            "text": "✓",
+            "color": "rgba(0, 0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "licensing",
+    "url": "http://localhost:1314/licensing/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "m365-roadmap",
+    "url": "http://localhost:1314/m365-roadmap/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "migration-planner",
+    "url": "http://localhost:1314/migration-planner/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 7,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 7,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "password-generator",
+    "url": "http://localhost:1314/password-generator/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [
+        {
+          "tag": "BUTTON",
+          "text": "📋",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(0,0,0)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Generate",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "📋",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "phishing-test",
+    "url": "http://localhost:1314/phishing-test/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "policy-tester",
+    "url": "http://localhost:1314/policy-tester/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "pomodoro",
+    "url": "http://localhost:1314/pomodoro/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "prompt-guide",
+    "url": "http://localhost:1314/prompt-guide/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "prompt-lab",
+    "url": "http://localhost:1314/prompt-lab/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "prompt-polisher",
+    "url": "http://localhost:1314/prompt-polisher/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "prompt-tester",
+    "url": "http://localhost:1314/prompt-tester/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "prompts",
+    "url": "http://localhost:1314/prompts/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "ps-builder",
+    "url": "http://localhost:1314/ps-builder/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "purview-starter",
+    "url": "http://localhost:1314/purview-starter/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "qr-generator",
+    "url": "http://localhost:1314/qr-generator/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "rename-tracker",
+    "url": "http://localhost:1314/rename-tracker/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 3,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "roi-calculator",
+    "url": "http://localhost:1314/roi-calculator/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 6,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "security-toolkit",
+    "url": "http://localhost:1314/security-toolkit/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "service-health",
+    "url": "http://localhost:1314/service-health/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "sla-calculator",
+    "url": "http://localhost:1314/sla-calculator/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "typing-test",
+    "url": "http://localhost:1314/typing-test/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 4,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  },
+  {
+    "slug": "wifi-qr",
+    "url": "http://localhost:1314/wifi-qr/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [
+        {
+          "tag": "BUTTON",
+          "text": "👁️",
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(0,0,0)",
+          "severity": "critical"
+        }
+      ],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 2,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [
+      {
+        "tab": "Create WiFi Card",
+        "mode": "dark",
+        "contrastIssues": [
+          {
+            "tag": "BUTTON",
+            "text": "👁️",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgb(0,0,0)",
+            "severity": "critical"
+          }
+        ]
+      }
+    ],
+    "status": "WARN",
+    "errors": []
+  },
+  {
+    "slug": "world-clock",
+    "url": "http://localhost:1314/world-clock/",
+    "light": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "dark": {
+      "contrast": [],
+      "backdrop": [],
+      "tabs": {
+        "tabCount": 5,
+        "issues": []
+      }
+    },
+    "tabScreenshots": [],
+    "status": "GOOD",
+    "errors": []
+  }
+]

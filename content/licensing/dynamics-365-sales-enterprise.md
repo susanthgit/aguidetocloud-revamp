@@ -38,14 +38,11 @@ D365 Sales Enterprise is the **go-to CRM for mid-to-large sales organisations** 
 
 ```mermaid
 flowchart LR
-    PRO["🤝 Professional\n$65/mo\nBasic CRM"]
-    ENT["🤝 Enterprise\n$95/mo\nAI + Customisation"]
-    PRE["🤝 Premium\n$135/mo\nEnterprise + Copilot\n+ Conversation Intel"]
+    PRO["Professional<br/>$65/mo<br/>Basic CRM"]
+    ENT["Enterprise<br/>$95/mo<br/>AI + Customisation"]
+    PRE["Premium<br/>$135/mo<br/>Enterprise + Copilot<br/>+ Conversation Intel"]
     PRO -->|"+$30"| ENT
     ENT -->|"+$40"| PRE
-    style PRO fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style ENT fill:#1e293b,stroke:#0ea5e9,color:#ffffff
-    style PRE fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | Professional ($65) | Enterprise ($95) | Premium ($135) |

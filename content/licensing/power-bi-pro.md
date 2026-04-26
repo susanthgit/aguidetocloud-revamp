@@ -37,14 +37,11 @@ Power BI Pro is for **analysts and business users** who create and share interac
 
 ```mermaid
 flowchart LR
-    FREE["📊 Power BI Free\n$0\nPersonal use only"]
-    PRO["📊 Power BI Pro\n$10/mo\nShare + Collaborate"]
-    PPU["📊 Premium per User\n$20/mo\nPro + AI + Large Data"]
+    FREE["Power BI Free<br/>$0<br/>Personal use only"]
+    PRO["Power BI Pro<br/>$10/mo<br/>Share + Collaborate"]
+    PPU["Premium per User<br/>$20/mo<br/>Pro + AI + Large Data"]
     FREE -->|"+$10"| PRO
     PRO -->|"+$10"| PPU
-    style FREE fill:#1e293b,stroke:#64748b,color:#ffffff
-    style PRO fill:#1e293b,stroke:#a855f7,color:#ffffff
-    style PPU fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | Free | Pro ($10) | Premium/User ($20) |

@@ -38,20 +38,15 @@ Power Apps per User is for **citizen developers and power users** who build or u
 
 ```mermaid
 flowchart LR
-    PA["⚡ Power Apps per User\n$20/user/mo"]
-    APPS["📱 Unlimited Apps\nCanvas + Model-driven\n+ Power Pages"]
-    DATA["🗃️ Dataverse\nRelational cloud database\n+ 250 MB per user"]
-    CONN["🔌 Premium Connectors\nSAP, Salesforce, SQL\n+ 400 more"]
-    AI["🤖 AI Builder\n500 credits/month\nDocument processing, prediction"]
+    PA["Power Apps per User<br/>$20/user/mo"]
+    APPS["Unlimited Apps<br/>Canvas + Model-driven<br/>+ Power Pages"]
+    DATA["️ Dataverse<br/>Relational cloud database<br/>+ 250 MB per user"]
+    CONN["Premium Connectors<br/>SAP, Salesforce, SQL<br/>+ 400 more"]
+    AI["AI Builder<br/>500 credits/month<br/>Document processing, prediction"]
     PA --> APPS
     PA --> DATA
     PA --> CONN
     PA --> AI
-    style PA fill:#1e3a5f,stroke:#a855f7,color:#ffffff
-    style APPS fill:#1e293b,stroke:#22c55e,color:#ffffff
-    style DATA fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style CONN fill:#1e293b,stroke:#f59e0b,color:#ffffff
-    style AI fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | M365 Included (Basic) | Per User ($20) |

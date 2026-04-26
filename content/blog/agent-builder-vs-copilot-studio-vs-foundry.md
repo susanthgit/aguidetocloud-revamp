@@ -90,15 +90,15 @@ Think of Microsoft's three platforms as three different kitchens. They all make 
 
 ```mermaid
 flowchart TD
-    A["🤔 I need an AI agent"] --> B{"Do I need<br/>workflows or<br/>API connections?"}
-    B -->|No| C["🏠 Agent Builder<br/>No-code, inside M365"]
+    A["I need an AI agent"] --> B{"Do I need<br/>workflows or<br/>API connections?"}
+    B -->|No| C["Agent Builder<br/>No-code, inside M365"]
     C --> D{"Need more<br/>power later?"}
     D -->|Yes| E["Promote to<br/>Copilot Studio"]
     B -->|Yes| F{"Do I have<br/>developers?"}
-    F -->|No| G["🍳 Copilot Studio<br/>Low-code, visual designer"]
+    F -->|No| G["Copilot Studio<br/>Low-code, visual designer"]
     F -->|Yes| H{"Need custom models,<br/>fine-tuning, or<br/>multi-agent systems?"}
     H -->|No| G
-    H -->|Yes| I["👨‍🍳 Azure AI Foundry<br/>Pro-code, full control"]
+    H -->|Yes| I["‍Azure AI Foundry<br/>Pro-code, full control"]
 ```
 
 ## What Licence Do You Need? {#licensing}
@@ -262,14 +262,14 @@ Microsoft designed these as a ladder, not a choice. Most organisations use more 
 
 ```mermaid
 flowchart TD
-    A["💡 I need an AI agent"] --> B["🏠 Agent Builder<br/>10 min, test the concept"]
+    A["I need an AI agent"] --> B["Agent Builder<br/>10 min, test the concept"]
     B --> C{"Works?"}
-    C -->|"Needs more"| D["🍳 Copilot Studio<br/>Add workflows + connectors"]
-    C -->|"Perfect"| E["✅ Ship it"]
+    C -->|"Needs more"| D["Copilot Studio<br/>Add workflows + connectors"]
+    C -->|"Perfect"| E["Ship it"]
     D --> F{"Need custom<br/>models?"}
-    F -->|Yes| G["👨‍🍳 Foundry backend<br/>via Copilot Studio"]
-    F -->|No| H["✅ Ship it"]
-    G --> I["✅ Full deploy"]
+    F -->|Yes| G["‍Foundry backend<br/>via Copilot Studio"]
+    F -->|No| H["Ship it"]
+    G --> I["Full deploy"]
 ```
 
 > 💡 **Tip:** Many orgs use hybrid — quick agents in Agent Builder, departmental solutions in Copilot Studio, complex AI in Foundry. Agent 365 ties them together. Use our [ROI Calculator](/roi-calculator/) to build the business case.

@@ -882,6 +882,133 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
+   🌸 ZEN DIAGRAMS — Light dot-grid canvas + fullscreen
+   Stripe Docs style: light canvas, white nodes, soft lines.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Dot-grid container — light canvas like Stripe Docs */
+.zt-reading-body .mermaid {
+  margin: 2rem 0;
+  padding: 2rem;
+  background:
+    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  text-align: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  max-width: none;
+}
+/* Rounded node corners */
+.zt-reading-body .mermaid .node rect,
+.zt-reading-body .mermaid .node polygon {
+  rx: 12 !important;
+  ry: 12 !important;
+}
+
+/* SVG always fits container */
+.zt-reading-body .mermaid svg,
+.content-body .mermaid svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Fullscreen button — subtle, appears on hover */
+.zt-diagram-fs {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  color: #A3A3A3;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.mermaid:hover .zt-diagram-fs {
+  opacity: 1;
+}
+
+.zt-diagram-fs:hover {
+  color: #414552;
+  border-color: #D4D4D4;
+}
+
+/* Fullscreen — light canvas fills screen */
+.mermaid:fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #FAFAFA;
+}
+
+.mermaid:fullscreen svg {
+  width: auto !important;
+  max-width: 95vw !important;
+  max-height: 90vh !important;
+  height: auto !important;
+}
+
+.mermaid:fullscreen .zt-diagram-fs {
+  opacity: 1;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+/* iOS Safari fallback */
+.mermaid.zt-diagram-fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #FAFAFA;
+}
+
+.mermaid.zt-diagram-fullscreen svg {
+  width: auto !important;
+  max-width: 95vw !important;
+  max-height: 90vh !important;
+}
+
+.mermaid.zt-diagram-fullscreen .zt-diagram-fs {
+  opacity: 1;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════
    🌸 ZEN CERT READING — Study guide sidebar layout
    Extends zt-reading for cert-tracker single pages.
    Left: cert navigation. Center: study guide. Right: exam CTA.

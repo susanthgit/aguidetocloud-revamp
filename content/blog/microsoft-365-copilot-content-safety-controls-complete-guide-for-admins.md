@@ -103,10 +103,6 @@ flowchart TD
     B --> C["Layer 3: Data Access Controls<br/><i>Permissions + sensitivity labels</i>"]
     C --> D["Layer 4: Web Search Controls<br/><i>Controls external web grounding</i>"]
     
-    style A fill:#1a1a2e,stroke:#EF4444,color:#fff
-    style B fill:#1a1a2e,stroke:#F59E0B,color:#fff
-    style C fill:#1a1a2e,stroke:#3B82F6,color:#fff
-    style D fill:#1a1a2e,stroke:#10B981,color:#fff
 ```
 
 | Layer | What It Controls | Can Be Disabled? | Where to Configure |
@@ -176,9 +172,6 @@ flowchart TD
     B --> C["Copilot responds to<br/>sensitive queries"]
     C --> D["Conversation ends<br/>Toggle resets ON"]
     
-    style B fill:#1a1a2e,stroke:#F59E0B,color:#fff
-    style C fill:#1a1a2e,stroke:#EF4444,color:#fff
-    style D fill:#1a1a2e,stroke:#10B981,color:#fff
 ```
 
 **What you need to know:**
@@ -218,9 +211,6 @@ flowchart TD
     D --> F["All interactions auditable<br/>via Microsoft Purview"]
     E --> F
     
-    style B fill:#1a1a2e,stroke:#10B981,color:#fff
-    style C fill:#1a1a2e,stroke:#F59E0B,color:#fff
-    style F fill:#1a1a2e,stroke:#3B82F6,color:#fff
 ```
 
 **Key details:**
@@ -297,8 +287,6 @@ flowchart TD
     B --> D["Violence, sexual content<br/>hate speech, self-harm"]
     C --> E["SharePoint permissions<br/>Sensitivity labels<br/>Encryption"]
     
-    style B fill:#1a1a2e,stroke:#F59E0B,color:#fff
-    style C fill:#1a1a2e,stroke:#3B82F6,color:#fff
 ```
 
 | | Content Safety | Data Access |

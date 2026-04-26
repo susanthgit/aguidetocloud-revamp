@@ -77,14 +77,11 @@ Business Basic is the **cheapest way to get Teams and business email** under you
 
 ```mermaid
 flowchart LR
-    BAS["💼 Basic\n$7/mo\nWeb apps only"]
-    STD["💼 Standard\n$14/mo\n+ Desktop apps"]
-    PRE["💼 Premium\n$22/mo\n+ Security suite"]
+    BAS["Basic<br/>$7/mo<br/>Web apps only"]
+    STD["Standard<br/>$14/mo<br/>+ Desktop apps"]
+    PRE["Premium<br/>$22/mo<br/>+ Security suite"]
     BAS -->|"+$7"| STD
     STD -->|"+$8"| PRE
-    style BAS fill:#1e293b,stroke:#06b6d4,color:#ffffff
-    style STD fill:#1e293b,stroke:#3b82f6,color:#ffffff
-    style PRE fill:#1e293b,stroke:#8b5cf6,color:#ffffff
 ```
 
 | Feature | Basic ($7) | [Standard](/licensing/microsoft-365-business-standard/) ($14) | [Premium](/licensing/microsoft-365-business-premium/) ($22) |
