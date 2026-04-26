@@ -5,11 +5,11 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Page wrapper — marker class for tab/FAQ scoping ──
-   Sets a comfortable default width. Per-tool CSS can override. */
+   Uses Zen --max-page for comfortable wide layout. */
 .zt-page {
-  max-width: 1200px;
+  max-width: var(--max-page, 1320px);
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 0 var(--space-8, 32px) var(--space-12, 48px);
 }
 
 /* ── Header: title + counter + subtitle ── */

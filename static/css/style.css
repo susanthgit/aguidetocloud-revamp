@@ -144,11 +144,7 @@ body.is-home::after {
 .theme-icon--moon { display: block; }
 [data-theme="dark"] .theme-icon--sun { display: block; }
 [data-theme="dark"] .theme-icon--moon { display: none; }
-.nav-item--theme {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
+/* .nav-item--theme removed — toggle now in .nav-right */
 
 /* ============================================
    Legacy Theme (non-homepage pages — migrating to Zen in later phases)
@@ -280,32 +276,39 @@ a:hover {
   text-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* ── NAV ────────────────────────────────── */
+/* ── NAV — 🌸 Zen full-width ───────────── */
 .site-nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 0.5rem 1rem;
-  background: transparent;
-  border: none;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
 }
 .nav-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  position: relative; /* anchor for mega-menus */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 60px;
+  padding: 0 var(--space-8);
+}
+.nav-scrolled {
+  border-bottom-color: var(--border-emphasis);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.nav-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 0 2rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  gap: 0.6rem;
+  justify-self: start;
 }
-.nav-scrolled .nav-inner {
-  background: var(--bg-surface);
-  border-color: var(--border-emphasis);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.nav-left .nav-live { margin-left: 0; }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  justify-self: end;
 }
 .site-logo {
   font-size: 1.2rem;
@@ -392,15 +395,24 @@ a:hover {
   color: var(--accent);
 }
 .nav-cta {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-  font-weight: 700 !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  white-space: nowrap;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 200ms ease-out, border-color 200ms ease-out;
 }
 .nav-cta:hover {
-  background: var(--accent-hover) !important;
-  border-color: var(--accent-hover) !important;
-  color: #fff !important;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
 }
 
 /* ── NAV DROPDOWN ───────────────────────── */
@@ -409,6 +421,10 @@ a:hover {
   align-self: stretch;
   display: flex;
   align-items: center;
+}
+/* Mega-menu parents: static so menus anchor to .nav-inner */
+.nav-dropdown--mega {
+  position: static;
 }
 .dropdown-toggle {
   cursor: pointer;
@@ -457,6 +473,7 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 !important;
+  max-width: calc(100vw - var(--space-8) * 2);
 }
 .mega-header {
   padding: 0.5rem 1rem;
@@ -3852,30 +3869,15 @@ pre.mermaid {
 
 /* ── RESPONSIVE: NAV COLLAPSE ───────────── */
 @media (max-width: 1024px) {
-  .site-nav {
-    padding: 0;
-    background: var(--bg-surface);
-  }
   .nav-inner {
-    border-radius: 0;
-    border: none;
-    background: transparent;
+    display: flex;
+    justify-content: space-between;
     height: 56px;
-    padding: 0 1.5rem;
-  }
-  .nav-scrolled .nav-inner {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-  }
-  .nav-scrolled.site-nav,
-  .site-nav.nav-scrolled {
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 0 var(--space-4);
   }
   .hamburger { display: block; }
-  /* V5.1: Hide desktop nav-links on mobile, show drawer instead */
   .nav-links { display: none !important; }
+  .nav-right .nav-cta { display: none; }
   .nav-drawer-backdrop { display: block; }
   body.nav-open { overflow: hidden; }
 
