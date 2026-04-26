@@ -38,9 +38,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Pomodoro Focus Timer" "accent" "#EF4444") }}
 
-<div class="pomo-page">
+
+<div class="pomo-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Pomodoro Focus Timer") }}
+
 
   {{/* ═══════════════════════════════════════
        TIMER — always visible, the hero
@@ -312,7 +315,9 @@
   {{ end }}
   </div>
 
-  {{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 </div>
 

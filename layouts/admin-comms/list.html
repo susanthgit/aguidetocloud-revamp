@@ -22,9 +22,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "IT Admin Comms Templates" "accent" "#5B9BD5") }}
 
-<div class="comms-page">
+
+<div class="comms-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "IT Admin Comms Templates") }}
+
   <div class="comms-tabs" role="tablist">
     <button class="comms-tab active" role="tab" aria-selected="true" data-tab="templates">Templates</button>
     <button class="comms-tab" role="tab" aria-selected="false" data-tab="editor">Editor</button>
@@ -75,8 +78,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "admin-comms") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__commsTemplates = {{ $templates | jsonify | safeJS }};

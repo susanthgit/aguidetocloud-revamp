@@ -72,9 +72,12 @@
 <div class="lic-page">
 
   {{/* ── HERO ── */}}
-  {{ partial "tool-hero.html" (dict "title" "Microsoft Licensing Simplifier" "accent" "#F43F5E") }}
 
-  <div class="lic-container">
+
+  <div class="lic-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Microsoft Licensing Simplifier") }}
+
 
   {{/* ── TABS ── */}}
   <div class="lic-tabs" role="tablist">
@@ -218,8 +221,9 @@
 
 </div><!-- /.lic-page -->
 
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "licensing") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script src="/js/licensing.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

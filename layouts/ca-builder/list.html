@@ -30,9 +30,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Entra ID CA Policy Builder" "accent" "#7C3AED") }}
 
-<div class="cab-page">
+
+<div class="cab-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Entra ID CA Policy Builder") }}
+
 
   <div class="cab-container">
 
@@ -300,8 +303,9 @@
     <p>⚠️ <strong>Design-time tool only.</strong> This tool helps you plan Conditional Access policies offline. It does not connect to your tenant, does not read real data, and cannot enforce policies. All analysis is heuristic-based — always test in Report-Only mode before enabling. Compliance mappings are illustrative and do not constitute certification guidance. Refer to <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the most up-to-date information.</p>
   </div>
 
-  {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "ca-builder") }}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
   </div>{{/* .cab-container */}}
 
 {{/* ── Inject TOML data into JS ── */}}

@@ -50,9 +50,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Copilot Feature Matrix" "accent" "#60A5FA") }}
 
-<div class="cpmatrix-container">
+
+<div class="cpmatrix-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Feature Matrix") }}
+
 
   {{/* ── Tab Navigation ── */}}
   <div class="cpmatrix-tabs" role="tablist" aria-label="Feature Matrix Views">
@@ -202,8 +205,9 @@
   <p>Data last verified: April 2026. Have a correction? <a href="https://github.com/susanthgit/aguidetocloud-revamp/issues" target="_blank" rel="noopener noreferrer">Open an issue</a>.</p>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "features") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script src="/js/copilot-matrix.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

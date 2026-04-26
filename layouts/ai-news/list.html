@@ -27,8 +27,11 @@
   }
 }
 </script>
-{{ partial "tool-hero.html" (dict "title" .Title "accent" "#ff66ff" "freshness" "/data/ainews/latest.json") }}
-<div class="container">
+
+<div class="container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" .Title) }}
+
   {{/* ── Glass Pill Tabs (top-level) ── */}}
   <div class="ainews-top-tabs" role="tablist" aria-label="AI News sections">
     <button class="ainews-top-tab active" data-tab="main" role="tab" aria-selected="true">News Feed</button>
@@ -73,7 +76,6 @@
 </div>
 
 {{ partial "bookmark-cta.html" (dict "tool" "AI News" "accent" "#ff66ff") }}
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "ainews") }}
 
 <script>
 window.__ainewsCategoryConfig = {
@@ -95,5 +97,7 @@ document.querySelectorAll('.ainews-top-tab').forEach(function(tab) {
 });
 </script>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

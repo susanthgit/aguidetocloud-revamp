@@ -21,10 +21,13 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Copilot Demo Script Builder" "accent" "#F97316") }}
+
 
 <!-- ═══ WIZARD MODAL ═══ -->
-<div class="demoscr-wizard-overlay" id="wizard-overlay" style="display:none">
+<div class="demoscr-wizard-overlay zt-page" id="wizard-overlay" style="display:none">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Demo Script Builder") }}
+
   <div class="demoscr-wizard">
     <button class="demoscr-wizard-close" id="wizard-close">&times;</button>
     <h2>🧙 Find Your Perfect Demo</h2>
@@ -408,6 +411,7 @@
 </script>
 <script src="/js/demo-scripts.js?v={{ site.Params.cache_version }}"></script>
 
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "demo-scripts") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "All Tools") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

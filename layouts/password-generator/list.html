@@ -26,9 +26,9 @@
 
 {{/* FAQ Schema emitted by baseof seo-jsonld.html partial — no duplicate needed */}}
 
-{{ partial "tool-hero.html" (dict "title" "Password Generator" "accent" "#D946EF") }}
+<div class="pwgen-page zt-page">
 
-<div class="pwgen-page">
+{{ partial "tool-header.html" (dict "page" . "title" "Password Generator") }}
 
   {{/* ── Tabs ── */}}
   <div class="pwgen-tabs" role="tablist">
@@ -359,24 +359,15 @@
   {{ end }}
   </div>
 
-  {{/* ── Cross-links ── */}}
-  <div class="pwgen-crosslinks">
-    <h2 class="pwgen-crosslinks-title">🔧 Related Tools</h2>
-    <div class="pwgen-crosslinks-grid">
-      <a href="/qr-generator/" class="pwgen-crosslink-card"><span>📱</span><strong>QR Code Generator</strong><p>Share passwords as scannable codes</p></a>
-      <a href="/wifi-qr/" class="pwgen-crosslink-card"><span>📶</span><strong>WiFi QR Cards</strong><p>Generate printable WiFi cards</p></a>
-      <a href="/prompts/" class="pwgen-crosslink-card"><span>✨</span><strong>AI Prompt Library</strong><p>84 prompts for M365 Copilot & more</p></a>
-    </div>
-    <p class="pwgen-feedback-line">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
-  </div>
-
-  {{ partial "back-nav" . }}
-
   {{/* ── Pagefind searchable block ── */}}
   <div class="pwgen-searchable" data-pagefind-body style="display:none" aria-hidden="true">
     <h2>Password Generator</h2>
     <p>Generate strong secure passwords passphrases PINs. Free online password generator with strength meter, crack time estimates, and passphrase builder. Privacy-first, 100% client-side, no data sent to servers. EFF diceware word list. Pronounceable passwords.</p>
   </div>
+
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 </div>
 

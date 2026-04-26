@@ -32,9 +32,12 @@
 {{/* ═══ MAIN TOOL ═══ */}}
 <div class="agplan-page" id="agplan-dashboard">
 
-  {{ partial "tool-hero.html" (dict "title" "Agent 365 Governance Planner" "accent" "#00A4EF") }}
 
-  <div class="agplan-container">
+
+  <div class="agplan-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Agent 365 Governance Planner") }}
+
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="agplan-tabs" role="tablist" aria-label="Agent 365 Governance Planner sections">
@@ -395,7 +398,9 @@
     </p>
   </div>
 
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 </div>{{/* end agplan-dashboard */}}
 

@@ -7,12 +7,15 @@
   <p>Features: urgency scoring (critical, warning, watch, future), timeline and grid views, action required filter, search by title or Message Center ID, detail modal with migration steps, CSV export, RSS feed, keyboard shortcuts.</p>
 </div>
 
-{{ partial "tool-hero.html" (dict "accent" "#DC2626" "title" "M365 Deprecation Timeline" "freshness" "/data/deprecation-timeline/latest.json") }}
+
 
 <link rel="stylesheet" href="/css/deptime.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Deprecation Timeline RSS" href="/data/deprecation-timeline/feed.xml">
 
-<div class="deptime-container">
+<div class="deptime-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Deprecation Timeline") }}
+
 
   <!-- Tab Navigation -->
   <div class="deptime-tabs" role="tablist" aria-label="Deprecation Timeline views">
@@ -191,8 +194,9 @@
 }
 </script>
 
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "deprecation") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script src="/js/deptime.js?v={{ site.Params.cache_version }}"></script>
 

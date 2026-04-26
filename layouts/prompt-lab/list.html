@@ -4,8 +4,11 @@
 {{ $c := index hugo.Data "prompt_lab" "combinations" "combinations" }}
 {{ $q := index hugo.Data "prompt_lab" "quiz" "questions" }}
 {{ $faq := .Params.faq }}
-{{ partial "tool-hero.html" (dict "Page" . "title" "Advanced Prompt Lab" "subtitle" "12 advanced techniques, hands-on exercises, combination builder" "accent" "#2DD4BF") }}
-<div class="plab-page">
+
+<div class="plab-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Advanced Prompt Lab") }}
+
 <div class="plab-tabs" role="tablist">
 <button class="plab-tab active" role="tab" aria-selected="true" data-tab="techniques">Techniques</button>
 <button class="plab-tab" role="tab" aria-selected="false" data-tab="lab">Lab</button>
@@ -64,7 +67,6 @@
 </div>
 </div>
 </div>
-{{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "prompt-lab") }}
 <div data-pagefind-bodyaria-hidden="true" style="display:none"><h2>Prompt Lab</h2><p>Learn 12 advanced AI prompting techniques: Tree of Thought, Prompt Chaining, Skeleton Prompting, Mega Prompting, Self-Ask, Meta Prompting, Self-Reflection, Chain of Verification, Least-to-Most, Generated Knowledge, ReAct, Iterative Refinement.</p></div>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }},"url":"{{ .Permalink }}","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 {{ if $faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $item := $faq }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $item.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $item.answer | jsonify }}}}{{ end }}]}</script>{{ end }}

@@ -61,9 +61,12 @@
   };
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "M365 Migration Planner" "accent" "#6478CC") }}
 
-<div class="migplan-page">
+
+<div class="migplan-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Migration Planner") }}
+
 
   <div class="migplan-container">
 
@@ -173,8 +176,9 @@
 
   </div>{{/* end .migplan-container */}}
 
-  {{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "migration") }}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script src="/js/migration-planner.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

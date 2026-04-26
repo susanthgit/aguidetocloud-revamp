@@ -5,8 +5,11 @@
 {{ $gallery := (index hugo.Data "agent_builder_guide").gallery }}
 {{ $cmp := (index hugo.Data "agent_builder_guide").comparison }}
 <link rel="stylesheet" href="/css/agent-builder-guide.css?v={{ site.Params.cache_version }}">
-{{ partial "tool-hero.html" (dict "title" "M365 Agent Builder Helper" "accent" "#00A4EF") }}
-<div class="abguide-page">
+
+<div class="abguide-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Agent Builder Helper") }}
+
 <div class="abguide-search-wrap"><input type="text" id="abguide-search" class="abguide-search" placeholder="Search across all tabs..." aria-label="Search across all tabs"></div>
 <div class="abguide-tabs" role="tablist" aria-label="Agent Builder Helper sections">
 <button class="abguide-tab active" role="tab" id="tab-scenarios" aria-selected="true" aria-controls="panel-scenarios" data-tab="scenarios">Can I Build This?</button>
@@ -232,7 +235,6 @@
 {{ range $tips.changelog }}<div class="abguide-changelog-entry"><span class="abguide-changelog-badge">{{ .version }}</span><span class="abguide-changelog-date">{{ .date }}</span><ul>{{ range .changes }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
 </div>
 </div>
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "agent-builder-guide") }}
 </div>
 <button class="abguide-progress-toggle" id="progress-toggle" aria-label="Toggle progress tracker">&#128203;</button>
 <div class="abguide-progress-bar" id="progress-bar">

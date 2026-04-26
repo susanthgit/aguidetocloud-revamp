@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Global Meeting Planner & World Clock" "accent" "#0EA5E9") }}
 
-<div class="wclk-page">
+
+<div class="wclk-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Global Meeting Planner & World Clock") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="wclk-tabs" role="tablist">
@@ -289,9 +292,10 @@
   </div>
 
   {{/* ── Cross-links ── */}}
-  {{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "world-clock") }}
 
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "← Back to Cloud & AI Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 </div>
 
 <script src="/js/world-clock.js?v={{ site.Params.cache_version }}"></script>

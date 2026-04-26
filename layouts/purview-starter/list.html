@@ -29,9 +29,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Purview Starter Kit" "accent" "#84CC16") }}
 
-<div class="pvs-page">
+
+<div class="pvs-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Purview Starter Kit") }}
+
   <div class="pvs-container">
 
     {{/* ── Tab Navigation ── */}}
@@ -334,7 +337,6 @@
 </div>
 
 {{/* ── Ecosystem Cross-links (after all panels) ── */}}
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "purview") }}
 
 {{/* ── Pagefind SEO block ── */}}
 <div data-pagefind-body aria-hidden="true" style="display:none">

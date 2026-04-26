@@ -23,9 +23,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "CLI Command Quiz" "accent" "#7E57C2") }}
 
-<div class="cliquiz-page">
+
+<div class="cliquiz-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "CLI Command Quiz") }}
+
   <div class="cliquiz-tabs" role="tablist" aria-label="CLI Quiz tabs">
     <button class="cliquiz-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
     <button class="cliquiz-tab" role="tab" aria-selected="false" data-tab="stats" aria-label="Stats tab">Stats</button>
@@ -58,8 +61,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "cli-quiz") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>window.__cliCommands = {{ $commands | jsonify | safeJS }};</script>
 <script defer src="/js/cli-quiz.js?v={{ site.Params.cache_version }}"></script>

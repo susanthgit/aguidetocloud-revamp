@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Colour Palette Generator" "accent" "#F472B6") }}
 
-<div class="palette-page">
+
+<div class="palette-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Colour Palette Generator") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="palette-tabs" role="tablist">
@@ -311,7 +314,9 @@
     <p>Colour palette generator. Generate colour palettes with harmony modes. Extract colours from images. WCAG contrast checker. Colour blindness simulator. Export to CSS Tailwind SCSS. Free online colour tool.</p>
   </div>
 
-  {{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 </div>
 
 <script src="/js/color-palette.js?v={{ site.Params.cache_version }}"></script>

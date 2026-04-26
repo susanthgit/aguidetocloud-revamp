@@ -40,10 +40,13 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "M365 Licence Picker" "accent" "#5AA830") }}
+
 
 {{/* ── Tab Navigation ── */}}
-<div class="licpick-tabs" role="tablist" aria-label="Licence Picker sections">
+<div class="licpick-tabs zt-page" role="tablist" aria-label="Licence Picker sections">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Licence Picker") }}
+
   <button class="licpick-tab active" role="tab" aria-selected="true" aria-controls="tab-picker" data-tab="picker">Feature Picker</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-compare" data-tab="compare">Plan Comparison</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-addons" data-tab="addons">Add-on Calculator</button>
@@ -251,7 +254,6 @@
 </div>
 
 {{/* ── Ecosystem Cross-link ── */}}
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "licence-picker") }}
 
 {{/* ── Related Tools ── */}}
 <div class="licpick-related">

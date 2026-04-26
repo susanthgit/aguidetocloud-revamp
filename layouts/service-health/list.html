@@ -9,9 +9,12 @@
 <link rel="stylesheet" href="/css/service-health.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="Microsoft Service Health Incidents" href="/data/service-health/feed.xml">
 
-{{ partial "tool-hero.html" (dict "title" "Microsoft Service Health Tracker" "accent" "#EA580C" "freshness" "/data/service-health/latest.json") }}
 
-<div class="shealth-container">
+
+<div class="shealth-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Microsoft Service Health Tracker") }}
+
 
   <!-- Tab Navigation -->
   <div class="shealth-tabs" role="tablist" aria-label="Service Health views">
@@ -148,6 +151,7 @@
 </script>
 <script src="/js/service-health.js?v={{ site.Params.cache_version }}"></script>
 
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "health") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

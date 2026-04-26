@@ -1,0 +1,44 @@
+{{/* 🌸 Zen Tool Header — Minimal title + counter + subtitle
+     Replaces tool-hero.html for Zen Phase 4.
+     Usage: {{ partial "tool-header.html" (dict "page" . "title" "Tool Name") }}
+     - page: required — the Hugo page context (for counter/subtitle auto-lookup)
+     - title: optional override (defaults to page .Title)
+*/}}
+{{ $p := .page | default page }}
+{{ $title := .title | default $p.Title }}
+{{ $url := $p.RelPermalink }}
+
+{{/* Auto-lookup subtitle from toolkit_nav.toml */}}
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+{{ $subtitle := "" }}
+{{ range $tools }}
+  {{ if eq .url $url }}{{ $subtitle = .desc }}{{ end }}
+{{ end }}
+
+{{/* Auto-lookup counter from tool_counters.toml */}}
+{{ $counters := (index hugo.Data "tool_counters").tools }}
+{{ $counterBase := 0 }}
+{{ $counterVerb := "" }}
+{{ range $counters }}
+  {{ if eq .url $url }}
+    {{ $counterBase = .base }}
+    {{ $counterVerb = .verb }}
+  {{ end }}
+{{ end }}
+
+{{/* Load Zen tool CSS — AFTER per-tool CSS in the template */}}
+<link rel="stylesheet" href="/css/zt-tools.css?v={{ site.Params.cache_version }}">
+
+<header class="zt-header">
+  <div class="zt-header-row">
+    <h1 class="zt-title">{{ $title }}</h1>
+    {{ if gt $counterBase 0 }}
+    <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
+      <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>
+      <span class="tool-counter-verb">{{ $counterVerb }}</span>
+    </div>
+    <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
+    {{ end }}
+  </div>
+  {{ with $subtitle }}<p class="zt-subtitle">{{ . }}</p>{{ end }}
+</header>

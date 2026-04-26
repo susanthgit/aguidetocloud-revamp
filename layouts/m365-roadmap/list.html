@@ -8,8 +8,11 @@
 </div>
 <link rel="stylesheet" href="/css/roadmap.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="M365 Roadmap Updates" href="/data/roadmap/feed.xml">
-{{ partial "tool-hero.html" (dict "title" "M365 Roadmap Tracker" "accent" "#E5A00D" "freshness" "/data/roadmap/latest.json") }}
-<div class="rdmap-container">
+
+<div class="rdmap-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Roadmap Tracker") }}
+
   {{/* ── Glass Pill Tabs (top-level) ── */}}
   <div class="rdmap-top-tabs" role="tablist" aria-label="Roadmap Tracker sections">
     <button class="rdmap-top-tab active" data-tab="main" role="tab" aria-selected="true">Roadmap</button>
@@ -97,6 +100,7 @@ document.querySelectorAll('.rdmap-top-tab').forEach(function(tab) {
 </script>
 
 {{ partial "bookmark-cta.html" (dict "tool" "M365 Roadmap" "accent" "#E5A00D") }}
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "roadmap") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

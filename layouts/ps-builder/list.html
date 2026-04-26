@@ -24,9 +24,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "PowerShell Command Builder" "accent" "#4ADE80") }}
 
-<div class="psb-page">
+
+<div class="psb-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "PowerShell Command Builder") }}
+
 
   <div class="psb-container">
 
@@ -187,8 +190,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "ps-builder") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 <script>
 window.__psBuilderData = {
   modules: {{ index hugo.Data "ps_builder" "modules" "modules" | jsonify | safeJS }},

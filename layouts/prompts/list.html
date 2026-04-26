@@ -45,9 +45,12 @@
 <div class="prompts-page">
 
   {{ if $isMainPage }}
-  {{ partial "tool-hero.html" (dict "title" "AI Prompt Library" "accent" "#A78BFA") }}
+
   {{ else }}
-  <div class="tool-hero" style="--hero-accent: #A78BFA">
+  <div class="tool-hero zt-page" style="--hero-accent: #A78BFA">
+
+{{ partial "tool-header.html" (dict "page" . "title" "AI Prompt Library") }}
+
     <div class="tool-hero-inner">
       <nav class="prompts-back-nav"><a href="/prompts/">← All Prompts</a></nav>
       <h1 class="tool-hero-title">{{ .Title }}</h1>
@@ -257,7 +260,9 @@
   {{ partial "back-nav" (dict "Page" . "URL" "/prompts/" "Label" "Prompt Library") }}
   {{ else }}
   {{ partial "bookmark-cta.html" (dict "tool" "Prompt Library" "accent" "#A78BFA") }}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
   {{ end }}
 </div>
 

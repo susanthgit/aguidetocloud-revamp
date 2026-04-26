@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Image Compressor" "accent" "#818CF8") }}
 
-<div class="imgcomp-page">
+
+<div class="imgcomp-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Image Compressor") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="imgcomp-tabs" role="tablist">
@@ -243,7 +246,9 @@
     <div class="imgcomp-modal-body" id="imgcomp-modal-body"></div>
   </div>
 
-  {{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 </div>
 
 <script src="/js/image-compressor.js?v={{ site.Params.cache_version }}"></script>

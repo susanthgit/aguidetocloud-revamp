@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "QR Code Generator" "accent" "#EC4899") }}
 
-<div class="qrgen-page">
+
+<div class="qrgen-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "QR Code Generator") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="qrgen-tabs" role="tablist">
@@ -426,7 +429,9 @@ Hello World,text,Greeting
   </div>
 
   {{/* ── Back nav ── */}}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
   {{/* ── Pagefind searchable content ── */}}
   <div class="qrgen-searchable" data-pagefind-body>

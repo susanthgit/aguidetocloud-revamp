@@ -46,9 +46,12 @@
 
 <div class="sectool-page">
 
-  {{ partial "tool-hero.html" (dict "title" "M365 Security Toolkit" "accent" "#41A235") }}
 
-  <div class="sectool-container">
+
+  <div class="sectool-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Security Toolkit") }}
+
 
     {{/* ── Glass Pill Tabs (only functional tabs shown) ── */}}
     <div class="sectool-tabs" role="tablist" aria-label="Security Toolkit sections">
@@ -339,7 +342,9 @@
   <p style="text-align:center;margin-top:1.5rem;color:rgba(255,255,255,0.4);font-size:0.85rem">💬 Got feedback? <a href="/feedback/" style="color:var(--sectool-accent)">Share it here →</a></p>
 </div>
 
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 {{/* ── Pagefind searchable block ── */}}
 <div data-pagefind-body aria-hidden="true" style="display:none">

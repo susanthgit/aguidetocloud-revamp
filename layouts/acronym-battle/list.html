@@ -22,9 +22,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Tech Acronym Battle" "accent" "#9B59B6") }}
 
-<div class="acro-page">
+
+<div class="acro-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Tech Acronym Battle") }}
+
   <div class="acro-tabs" role="tablist">
     <button class="acro-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
     <button class="acro-tab" role="tab" aria-selected="false" data-tab="stats">Stats</button>
@@ -157,8 +160,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "acronym-battle") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__acronyms = {{ $acronyms | jsonify | safeJS }};

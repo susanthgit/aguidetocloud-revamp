@@ -23,9 +23,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "SLA Uptime Calculator" "accent" "#4ECDC4") }}
 
-<div class="slacalc-page">
+
+<div class="slacalc-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "SLA Uptime Calculator") }}
+
   <div class="slacalc-tabs" role="tablist">
     <button class="slacalc-tab active" role="tab" aria-selected="true" id="tab-calc" aria-controls="panel-calc" data-tab="calc">Calculator</button>
     <button class="slacalc-tab" role="tab" aria-selected="false" id="tab-compare" aria-controls="panel-compare" data-tab="compare">Compare</button>
@@ -182,8 +185,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "sla-calculator") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__slaTiers = {{ $tiers | jsonify | safeJS }};

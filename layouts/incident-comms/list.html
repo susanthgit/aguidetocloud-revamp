@@ -23,9 +23,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Incident Comms Generator" "accent" "#FF8F66") }}
 
-<div class="icomms-page">
+
+<div class="icomms-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Incident Comms Generator") }}
+
   <div class="icomms-tabs" role="tablist" aria-label="Incident Comms Generator tabs">
     <button class="icomms-tab active" role="tab" aria-selected="true" aria-controls="panel-generate" id="tab-generate" data-tab="generate">Generate</button>
     <button class="icomms-tab" role="tab" aria-selected="false" aria-controls="panel-gallery" id="tab-gallery" data-tab="gallery">Templates Gallery</button>
@@ -102,8 +105,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "incident-comms") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__incidentTemplates = {{ $templates | jsonify | safeJS }};

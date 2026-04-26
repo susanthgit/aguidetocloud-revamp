@@ -26,9 +26,12 @@
 
 <div class="readiness-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Copilot Readiness Checker" "accent" "#3B82F6") }}
 
-  <div class="readiness-container">
+
+  <div class="readiness-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Readiness Checker") }}
+
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="readiness-tabs" role="tablist" aria-label="Copilot Readiness sections">
@@ -202,6 +205,7 @@ document.querySelectorAll('.readiness-tab').forEach(function(tab) {
 </div>
 {{ end }}
 
-{{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "readiness") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

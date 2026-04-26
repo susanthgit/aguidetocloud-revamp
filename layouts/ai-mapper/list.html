@@ -13,9 +13,12 @@
 {{ $quiz := index $dataDir "quiz" | default dict }}
 {{ $changelog := index $dataDir "changelog" | default dict }}
 
-{{ partial "tool-hero.html" (dict "title" "AI Service Mapper" "accent" "#38BDF8") }}
 
-<div class="aimap-page">
+
+<div class="aimap-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "AI Service Mapper") }}
+
 
   {{/* Favourites bar — rendered by JS */}}
   <div class="aimap-fav-bar" id="aimap-fav-bar" style="display:none;">
@@ -316,7 +319,8 @@ window.__aimapData = {
 
 <script src="/js/ai-mapper.js?v={{ site.Params.cache_version }}"></script>
 
-{{ partial "tool-ecosystem.html" (dict "group" "ai-compare" "active" "mapper") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 {{ end }}

@@ -5,9 +5,12 @@
 {{ $practices := $data.practices.practices }}
 <link rel="stylesheet" href="/css/agent-instructions.css?v={{ site.Params.cache_version }}">
 
-{{ partial "tool-hero.html" (dict "title" "Agent Instruction Builder" "accent" "#E0976B") }}
 
-<div class="aginst-page">
+
+<div class="aginst-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Agent Instruction Builder") }}
+
   <div class="aginst-tabs" role="tablist">
     <button class="aginst-tab active" role="tab" aria-selected="true" data-tab="build">Quick Build</button>
     <button class="aginst-tab" role="tab" aria-selected="false" data-tab="templates">Templates</button>
@@ -215,7 +218,9 @@
   </div>
 </div>
 
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__aginstPlatforms = {{ $platforms | jsonify | safeJS }};

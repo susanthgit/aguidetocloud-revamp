@@ -27,9 +27,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "IT Admin Badges" "accent" "#FFD54F") }}
 
-<div class="badges-page">
+
+<div class="badges-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "IT Admin Badges") }}
+
   <div class="badges-tabs" role="tablist" aria-label="IT Admin Badges tabs">
     <button class="badges-tab" role="tab" aria-selected="false" aria-controls="panel-my-badges" id="tab-my-badges" data-tab="my-badges">My Badges</button>
     <button class="badges-tab active" role="tab" aria-selected="true" aria-controls="panel-all-badges" id="tab-all-badges" data-tab="all-badges">All Badges</button>
@@ -72,8 +75,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "admin-badges") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <div class="badges-modal-overlay" id="badges-modal" style="display:none" role="dialog" aria-modal="true">
   <div class="badges-modal" id="badges-modal-content"></div>

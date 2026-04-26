@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Typing Speed Test" "accent" "#34D399") }}
 
-<div class="typist-page">
+
+<div class="typist-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Typing Speed Test") }}
+
 
   {{/* ── Toolbar: theme + sound ── */}}
   <div class="typist-toolbar">
@@ -273,7 +276,9 @@
   </div>
 
   {{/* ── Back nav ── */}}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
   {{/* ── Pagefind ── */}}
   <div class="typist-searchable" data-pagefind-body>

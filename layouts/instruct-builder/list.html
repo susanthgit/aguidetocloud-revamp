@@ -18,9 +18,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Agent Instruction Builder" "accent" "#2DD4BF") }}
 
-<div class="instruct-page instruct-v3">
+
+<div class="instruct-page instruct-v3 zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Agent Instruction Builder") }}
+
 
   {{/* Keyboard hint */}}
   <div class="instruct-kbd-bar"><kbd>Tab</kbd> fields · <kbd>Ctrl+Enter</kbd> generate · <kbd>?</kbd> shortcuts</div>
@@ -245,8 +248,9 @@
 
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "instruct-builder") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__instructPlatforms = {{ $platforms | jsonify | safeJS }};

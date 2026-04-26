@@ -10,8 +10,11 @@
 </div>
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
 <link rel="alternate" type="application/rss+xml" title="Cert Study Guide Updates" href="/data/cert-tracker/rss.xml">
-{{ partial "tool-hero.html" (dict "title" "Certification Study Guides & Practice Exams" "accent" "#10B981" "freshness" "/data/cert-tracker/latest.json") }}
-<div class="cert-container">
+
+<div class="cert-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Certification Study Guides & Practice Exams") }}
+
 
   {{/* ── Tab Navigation ── */}}
   <div class="cert-tabs" role="tablist" aria-label="Cert Study Guides views">
@@ -198,6 +201,7 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
 })();
 </script>
 
-{{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "certs") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

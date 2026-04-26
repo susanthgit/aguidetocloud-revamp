@@ -26,9 +26,12 @@
 
 <div class="polisher-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Prompt Polisher" "accent" "#EC4899") }}
 
-  <div class="polisher-container">
+
+  <div class="polisher-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Prompt Polisher") }}
+
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="polisher-tabs" role="tablist" aria-label="Prompt Polisher sections">
@@ -235,5 +238,7 @@ document.querySelectorAll('.polisher-tab').forEach(function(tab) {
   <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

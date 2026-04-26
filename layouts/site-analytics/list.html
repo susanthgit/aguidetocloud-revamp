@@ -20,11 +20,14 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Site Analytics" "accent" "#64748B") }}
+
 
 {{ $navTools := (index hugo.Data "toolkit_nav").tools }}{{ $tc := 0 }}{{ range $navTools }}{{ if .is_tool }}{{ $tc = add $tc 1 }}{{ end }}{{ end }}
 
-<div class="siteana-page">
+<div class="siteana-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Site Analytics") }}
+
 
   <!-- Live Stats Bar -->
   <div class="siteana-stats-bar">
@@ -603,7 +606,6 @@
     {{ end }}
   </div>
 
-  {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "site-analytics") }}
 </div>
 
 <!-- Pagefind: hidden searchable content -->
@@ -1402,5 +1404,7 @@
 })();
 </script>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 {{ end }}

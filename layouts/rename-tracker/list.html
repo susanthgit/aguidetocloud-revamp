@@ -22,9 +22,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "What Did They Call It Now?" "accent" "#B07D4F") }}
 
-<div class="rename-page">
+
+<div class="rename-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "What Did They Call It Now?") }}
+
   <div class="rename-tabs" role="tablist">
     <button class="rename-tab active" role="tab" aria-selected="true" data-tab="search">Search</button>
     <button class="rename-tab" role="tab" aria-selected="false" data-tab="leaderboard">Most Renamed</button>
@@ -66,8 +69,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "rename-tracker") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__renameProducts = {{ $products | jsonify | safeJS }};

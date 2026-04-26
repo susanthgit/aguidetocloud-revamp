@@ -22,9 +22,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "IT Admin Bingo" "accent" "#E91E8E") }}
 
-<div class="bingo-page">
+
+<div class="bingo-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "IT Admin Bingo") }}
+
   <div class="bingo-tabs" role="tablist">
     <button class="bingo-tab active" role="tab" aria-selected="true" data-tab="play">Play</button>
     <button class="bingo-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
@@ -71,8 +74,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "admin-bingo") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__bingoSquares = {{ $squares | jsonify | safeJS }};

@@ -24,9 +24,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "My IT Day Simulator" "accent" "#C27BA0") }}
 
-<div class="itday-page">
+
+<div class="itday-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "My IT Day Simulator") }}
+
   <div class="itday-tabs" role="tablist" aria-label="IT Day Simulator tabs">
     <button class="itday-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
     <button class="itday-tab" role="tab" aria-selected="false" data-tab="history" aria-label="Results History tab">Results History</button>
@@ -57,8 +60,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "community" "active" "it-day-sim") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__scenarios = {{ $scenarios | jsonify | safeJS }};

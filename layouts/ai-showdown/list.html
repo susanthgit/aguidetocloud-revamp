@@ -25,10 +25,13 @@
 </script>
 
 {{/* ── Hero ── */}}
-{{ partial "tool-hero.html" (dict "title" "AI SaaS Showdown" "accent" "#D4A853") }}
+
 
 {{/* ── Tab Navigation ── */}}
-<div class="showdown-container">
+<div class="showdown-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "AI SaaS Showdown") }}
+
 
   <div class="showdown-tabs" role="tablist">
     <button class="showdown-tab active" role="tab" data-tab="overview" aria-selected="true">Overview</button>
@@ -214,10 +217,11 @@ window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | json
 
 {{ partial "page-search.html" . }}
 
-{{ partial "tool-ecosystem.html" (dict "group" "ai-compare" "active" "showdown") }}
 
 {{/* ── Back Nav (bottom) ── */}}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script src="/js/showdown.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

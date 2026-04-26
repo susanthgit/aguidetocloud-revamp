@@ -16,9 +16,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "WiFi QR Code Generator" "accent" "#22D3EE") }}
 
-<div class="wifiqr-page">
+
+<div class="wifiqr-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "WiFi QR Code Generator") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="wifiqr-tabs" role="tablist">
@@ -168,7 +171,9 @@
   </div>
 
   {{/* ── Back nav ── */}}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
   {{/* ── Pagefind ── */}}
   <div class="wifiqr-searchable" data-pagefind-body>

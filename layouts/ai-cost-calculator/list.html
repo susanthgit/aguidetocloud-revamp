@@ -35,9 +35,12 @@
 
 <div class="aicost-page">
 
-  {{ partial "tool-hero.html" (dict "title" "AI Cost Calculator" "accent" "#66C559") }}
 
-  <div class="aicost-container">
+
+  <div class="aicost-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "AI Cost Calculator") }}
+
 
     {{/* ── Tab Navigation ── */}}
     <div class="aicost-tabs" role="tablist" aria-label="AI Cost Calculator sections">
@@ -533,7 +536,9 @@
     </div>
   </div>
 
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
   {{/* Hidden block for Pagefind search indexing */}}
   <div data-pagefind-body aria-hidden="true" style="display:none">

@@ -20,9 +20,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "M365 Feature Roulette" "accent" "#F39C12") }}
 
-<div class="roulette-page">
+
+<div class="roulette-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "M365 Feature Roulette") }}
+
   <div class="roulette-tabs" role="tablist">
     <button class="roulette-tab active" role="tab" aria-selected="true" data-tab="play">Discover</button>
     <button class="roulette-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
@@ -114,8 +117,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "m365-admin" "active" "feature-roulette") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script defer src="/js/feature-roulette.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

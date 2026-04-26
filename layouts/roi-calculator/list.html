@@ -68,10 +68,13 @@
 
 <div class="roi-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Copilot ROI Calculator" "accent" "#14B8A6") }}
+
 
   {{/* ── Tab Navigation ── */}}
-  <div class="roi-container">
+  <div class="roi-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot ROI Calculator") }}
+
     <div class="roi-tabs" role="tablist" aria-label="ROI Calculator sections">
       <button class="roi-tab roi-tab-active" role="tab" aria-selected="true" aria-controls="tab-quick" id="tab-btn-quick" data-tab="quick">⚡ Quick Calculator</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-roles" id="tab-btn-roles" data-tab="roles">👥 By Role</button>
@@ -579,8 +582,9 @@
 
   </div>{{/* .roi-container */}}
 
-  {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "roi") }}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 </div>{{/* .roi-page */}}
 

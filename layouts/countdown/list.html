@@ -46,9 +46,12 @@
 </script>
 {{ end }}
 
-{{ partial "tool-hero.html" (dict "title" "Countdown Timer & Event Countdown" "accent" "#FB923C") }}
 
-<div class="cdown-page">
+
+<div class="cdown-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Countdown Timer & Event Countdown") }}
+
 
   {{/* ── Tabs ── */}}
   <div class="cdown-tabs" role="tablist">
@@ -224,7 +227,9 @@
   </div>
 
   {{/* ── Back nav ── */}}
-  {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Cloud & AI Toolkit") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
   {{/* ── Pagefind ── */}}
   <div class="cdown-sr-only" data-pagefind-body>

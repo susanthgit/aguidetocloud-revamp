@@ -1,0 +1,18 @@
+{{/* 🌸 Zen Tool FAQ — Collapsed <details> driven by .Params.faq
+     Usage: {{ partial "tool-faq.html" . }}
+     Reads FAQ items from the page's front matter faq array.
+     Renders as a collapsed <details> with id="faq" for hash linking.
+*/}}
+{{ if .Params.faq }}
+<details class="zt-faq" id="faq">
+  <summary>Frequently Asked Questions</summary>
+  <div class="zt-faq-list">
+    {{ range .Params.faq }}
+    <div class="zt-faq-item">
+      <h3>{{ .question }}</h3>
+      <p>{{ .answer }}</p>
+    </div>
+    {{ end }}
+  </div>
+</details>
+{{ end }}

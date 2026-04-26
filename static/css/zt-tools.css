@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════════════════════════
+   🌸 ZEN TOOL PAGES — Universal tool page styles
+   Loaded AFTER per-tool CSS to guarantee cascade override.
+   All values use Zen design tokens from style.css :root.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Page wrapper — marker class for tab/FAQ scoping ──
+   Sets a comfortable default width. Per-tool CSS can override. */
+.zt-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+/* ── Header: title + counter + subtitle ── */
+.zt-header {
+  margin-bottom: 20px;
+  padding-top: 24px;
+}
+
+.zt-header-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.zt-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #fff);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.zt-subtitle {
+  color: var(--text-secondary, #a3a3a3);
+  font-size: 0.875rem;
+  margin: 4px 0 0;
+  line-height: 1.4;
+  max-width: 640px;
+}
+
+/* Counter — keeps .tool-counter class for JS compatibility */
+.zt-header .tool-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  color: var(--text-tertiary, #a3a3a3);
+  background: var(--bg-elevated, #1a1a1a);
+  border: 1px solid var(--border, #262626);
+  border-radius: 999px;
+}
+
+.zt-header .tool-counter-num {
+  font-weight: 700;
+  color: var(--accent, #818CF8);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+}
+
+.zt-header .tool-counter-verb {
+  opacity: 0.7;
+  margin-left: 0;
+}
+
+/* ── Tabs — underline style via ARIA selectors ── */
+.zt-page [role="tablist"] {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  margin: 0 0 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border, #262626);
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.zt-page [role="tablist"]::-webkit-scrollbar {
+  display: none;
+}
+
+.zt-page [role="tablist"] > [role="tab"] {
+  /* Full visual reset */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  outline: none;
+  /* Reset per-tool layout overrides */
+  flex: none;
+  text-align: left;
+  min-width: auto;
+  /* Zen tab styling */
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-tertiary, #a3a3a3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.zt-page [role="tablist"] > [role="tab"]:hover {
+  color: var(--text-primary, #fff);
+}
+
+/* Active tab — targets both ARIA attribute and .active class */
+.zt-page [role="tablist"] > [role="tab"][aria-selected="true"],
+.zt-page [role="tablist"] > [role="tab"].active {
+  color: var(--accent, #818CF8);
+  border-bottom-color: var(--accent, #818CF8);
+  background: transparent;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+/* Tab emoji/icon spans — subtle, not dominant */
+.zt-page [role="tab"] .cpmatrix-tab-emoji,
+.zt-page [role="tab"] [class*="-tab-emoji"],
+.zt-page [role="tab"] [class*="-tab-icon"] {
+  margin-right: 4px;
+}
+
+/* ── FAQ — collapsed at bottom ── */
+.zt-faq {
+  margin-top: 48px;
+  border-top: 1px solid var(--border, #262626);
+  padding-top: 24px;
+}
+
+.zt-faq > summary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+  cursor: pointer;
+  padding: 8px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zt-faq > summary::-webkit-details-marker {
+  display: none;
+}
+
+.zt-faq > summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform 150ms ease-out;
+  font-size: 0.875rem;
+  color: var(--text-tertiary, #a3a3a3);
+}
+
+.zt-faq[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.zt-faq-list {
+  max-width: 720px;
+  padding-top: 16px;
+}
+
+.zt-faq-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border, #262626);
+}
+
+.zt-faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.zt-faq-item h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.zt-faq-item p {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #a3a3a3);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Bottom nav ── */
+.zt-nav {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border, #262626);
+  display: flex;
+  justify-content: center;
+}
+
+.zt-nav a {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary, #a3a3a3);
+  text-decoration: none;
+  transition: color 150ms ease-out;
+}
+
+.zt-nav a:hover {
+  color: var(--accent, #818CF8);
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 768px) {
+  .zt-title {
+    font-size: 1.25rem;
+  }
+
+  .zt-header-row {
+    gap: 8px;
+  }
+
+  .zt-page [role="tablist"] > [role="tab"] {
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+  }
+}

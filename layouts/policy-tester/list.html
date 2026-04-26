@@ -24,9 +24,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Password Policy Tester" "accent" "#26A69A") }}
 
-<div class="ptester-page">
+
+<div class="ptester-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Password Policy Tester") }}
+
   <div class="ptester-tabs" role="tablist" aria-label="Password Policy Tester tabs">
     <button class="ptester-tab active" role="tab" aria-selected="true" aria-controls="panel-assess" id="tab-assess" data-tab="assess">Assess</button>
     <button class="ptester-tab" role="tab" aria-selected="false" aria-controls="panel-compare" id="tab-compare" data-tab="compare">Compare Standards</button>
@@ -115,8 +118,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "policy-tester") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__policyStandards = {{ $standards | jsonify | safeJS }};

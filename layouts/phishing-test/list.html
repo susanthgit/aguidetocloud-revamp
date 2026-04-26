@@ -22,9 +22,12 @@
 }
 </script>
 
-{{ partial "tool-hero.html" (dict "title" "Is This Phishing?" "accent" "#E74C3C") }}
 
-<div class="phish-page">
+
+<div class="phish-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Is This Phishing?") }}
+
   <div class="phish-tabs" role="tablist" aria-label="Phishing Test tabs">
     <button class="phish-tab active" role="tab" aria-selected="true" data-tab="play" aria-label="Play tab">Play</button>
     <button class="phish-tab" role="tab" aria-selected="false" data-tab="faq" aria-label="FAQ tab">FAQ</button>
@@ -131,8 +134,9 @@
   </div>
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "admin" "active" "phishing-test") }}
-{{ partial "back-nav" . }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <script>
 window.__phishScenarios = {{ $scenarios | jsonify | safeJS }};

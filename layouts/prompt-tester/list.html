@@ -18,9 +18,12 @@
 
 <div class="ptest-page">
 
-  {{ partial "tool-hero.html" (dict "title" "Prompt Tester" "accent" "#F97316") }}
 
-  <div class="ptest-container">
+
+  <div class="ptest-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Prompt Tester") }}
+
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="ptest-tabs" role="tablist" aria-label="Prompt Tester sections">
@@ -308,7 +311,6 @@
 
   </div>
 
-  {{ partial "tool-ecosystem.html" (dict "group" "prompt" "active" "prompt-tester") }}
 
 </div>
 

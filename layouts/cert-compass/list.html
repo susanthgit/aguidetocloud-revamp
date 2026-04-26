@@ -10,9 +10,12 @@
 {{- $topicDefs := $data.topics.topics -}}
 {{- $certTopics := $data.topics.cert_topics -}}
 
-{{ partial "tool-hero.html" (dict "Page" . "title" .Title "subtitle" "Find equivalent certs across Azure, AWS & Google Cloud — 40 certs · 12 match groups · 8 career paths" "accent" "#6366F1" "counter_base" (len $certs) "counter_verb" "Certifications") }}
 
-<div class="compass-page">
+
+<div class="compass-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" .Title) }}
+
   <!-- My Certs banner -->
   <div class="compass-mycerts-bar" id="mycerts-bar" style="display:none">
     <span class="compass-mycerts-label">My Certs:</span>
@@ -187,8 +190,9 @@
 
 </div>
 
-{{ partial "tool-ecosystem.html" (dict "group" "cert" "active" "cert-compass") }}
-{{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Free Tools") }}
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
 
 <!-- Pagefind searchable block -->
 <div data-pagefind-body aria-hidden="true" style="display:none">
