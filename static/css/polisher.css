@@ -1,31 +1,35 @@
 /* ── Prompt Polisher ──
-   Accent: Hot Pink #EC4899
+   🌸 Zen Phase 4 — uses design tokens only.
+   Accent: var(--accent) (indigo). No per-tool colors.
    Namespace: .polisher-*
 */
 
 .polisher-page {
-  --tool-accent: #EC4899;
-  --tool-accent-dim: rgba(255, 107, 107, 0.15);
-  --tool-accent-glow: rgba(255, 107, 107, 0.25);
+  /* No per-tool accent — uses global --accent */
 }
 
-/* ── Glass Pill Tabs ── */
+/* ── Glass Pill Tabs — visual overridden by zt-tools.css cascade ── */
+/* Keep classes for JS hooks; visual styles handled by .zt-page [role="tablist"] */
 .polisher-tabs {
-  display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px; margin-bottom: 1.5rem;
+  display: flex; gap: 0; padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 1.5rem;
 }
 .polisher-tab {
-  background: none; border: 1px solid transparent;
-  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary); font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  text-align: left; white-space: nowrap;
 }
-.polisher-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.polisher-tab:hover { color: var(--text-primary); }
 .polisher-tab.active {
-  color: #000; background: #EC4899; border-color: #EC4899;
-  box-shadow: 0 2px 8px rgba(236,72,153, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 .polisher-panel { display: none; }
 .polisher-panel.active { display: block; }
@@ -46,11 +50,9 @@
   max-width: 700px;
   margin: 0 auto 1.5rem;
   padding: 1rem 1.5rem;
-  background: rgba(236, 72, 153, 0.08);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(236, 72, 153, 0.2);
-  border-radius: var(--glass-radius-card, 16px);
+  background: var(--accent-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
 }
 .polisher-hero-step {
   display: flex;
@@ -67,8 +69,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #EC4899;
-  color: #000;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   font-weight: 800;
   font-size: 0.85rem;
   font-family: var(--font-heading);
@@ -77,15 +79,15 @@
 .polisher-hero-step strong {
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 .polisher-hero-desc {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   line-height: 1.3;
 }
 .polisher-hero-arrow {
-  color: rgba(236, 72, 153, 0.5);
+  color: var(--text-muted);
   font-size: 1.2rem;
   font-weight: 700;
   flex-shrink: 0;
@@ -119,9 +121,9 @@
   width: 100%;
   min-height: 140px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.95rem;
   font-family: inherit;
@@ -132,8 +134,8 @@
 }
 .polisher-textarea:focus {
   outline: none;
-  border-color: var(--tool-accent);
-  box-shadow: 0 0 0 3px var(--tool-accent-dim);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
 }
 .polisher-textarea::placeholder {
   color: var(--text-muted);
@@ -157,28 +159,27 @@
 .polisher-shortcut-hint kbd {
   display: inline-block;
   padding: 0.1rem 0.35rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 3px;
   font-family: var(--font-heading);
   font-size: 0.68rem;
 }
 .polisher-btn-primary {
   padding: 0.7rem 1.5rem;
-  background: var(--tool-accent);
-  color: #0a0a1a;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md, 10px);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s ease-out, transform 0.2s ease-out;
 }
 .polisher-btn-primary:hover:not(:disabled) {
-  filter: brightness(1.15);
+  background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px var(--tool-accent-glow);
 }
 .polisher-btn-primary:disabled {
   opacity: 0.4;
@@ -188,25 +189,25 @@
   padding: 0.5rem 1rem;
   background: transparent;
   color: var(--text-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.82rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.15s ease-out, border-color 0.15s ease-out;
 }
 .polisher-btn-secondary:hover {
-  border-color: var(--tool-accent);
-  color: var(--tool-accent);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Platform Selector ── */
 .polisher-platform-select {
   padding: 0.5rem 0.8rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   color: var(--text-secondary);
   font-family: var(--font-heading);
   font-size: 0.82rem;
@@ -215,20 +216,20 @@
   transition: border-color 0.2s;
 }
 .polisher-platform-select:focus {
-  border-color: var(--tool-accent);
+  border-color: var(--accent);
   outline: none;
 }
 .polisher-platform-select option {
-  background: #1e1e30;
+  background: var(--bg-surface);
   color: var(--text-primary);
 }
 
 /* ── View Toggle (Polished / Before-After) ── */
 .polisher-view-toggle {
   display: flex;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 .polisher-toggle-btn {
@@ -240,11 +241,11 @@
   font-weight: 600;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.15s ease-out, background 0.15s ease-out;
 }
 .polisher-toggle-btn.active {
-  background: var(--tool-accent);
-  color: #0a0a1a;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
 }
 .polisher-toggle-btn:hover:not(.active) {
   color: var(--text-primary);
@@ -258,9 +259,9 @@
 }
 .polisher-compare-col {
   padding: 1rem;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md, 10px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
 }
 .polisher-compare-label {
   font-family: var(--font-heading);
@@ -279,7 +280,7 @@
   word-wrap: break-word;
 }
 .polisher-compare-after {
-  color: #22c55e;
+  color: var(--success);
 }
 
 /* ── Examples Dropdown ── */
@@ -290,10 +291,10 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  background: #1e1e30;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   z-index: 20;
   min-width: 220px;
   overflow: hidden;
@@ -311,8 +312,8 @@
   transition: background 0.15s;
 }
 .polisher-examples-menu button:hover {
-  background: var(--tool-accent-dim);
-  color: var(--tool-accent);
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 /* ── Results Section ── */
@@ -326,9 +327,9 @@
 
 /* ── Score Dashboard ── */
 .polisher-score-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -394,7 +395,7 @@
 }
 .polisher-pillar-bar {
   height: 8px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-elevated);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -440,10 +441,10 @@
   display: flex;
   gap: 0.8rem;
   padding: 1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--tool-accent);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  border-left: 3px solid var(--accent);
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.65;
@@ -461,7 +462,7 @@
 .polisher-no-tips {
   padding: 1rem;
   text-align: center;
-  color: #22c55e;
+  color: var(--success);
   font-weight: 600;
   font-family: var(--font-heading);
 }
@@ -469,9 +470,9 @@
 /* ── Output Section ── */
 .polisher-output-section {
   margin-bottom: 2rem;
-  background: rgba(255, 107, 107, 0.04);
-  border: 2px solid rgba(255, 107, 107, 0.25);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md, 10px);
   padding: 1.5rem;
 }
 .polisher-output-header {
@@ -491,9 +492,9 @@
 }
 .polisher-output {
   padding: 1.2rem;
-  background: rgba(255, 107, 107, 0.06);
-  border: 1px solid rgba(255, 107, 107, 0.2);
-  border-radius: var(--radius);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.92rem;
   line-height: 1.7;
@@ -508,7 +509,7 @@
 
 /* ── CRAFTS Framework Cards ── */
 .polisher-about {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border);
   padding-top: 2.5rem;
   margin-top: 1rem;
   text-align: center;
@@ -517,13 +518,21 @@
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--tool-accent);
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 .polisher-about > p {
   color: var(--text-secondary);
   font-size: 0.92rem;
   margin-bottom: 1.5rem;
+}
+.polisher-crafts-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.polisher-crafts-link:hover {
+  text-decoration: underline;
 }
 .polisher-crafts-grid {
   display: grid;
@@ -533,9 +542,9 @@
 }
 .polisher-craft-card {
   padding: 1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
 }
 .polisher-craft-card .polisher-craft-letter {
   display: inline-block;
@@ -543,8 +552,8 @@
   height: 28px;
   line-height: 28px;
   text-align: center;
-  background: var(--tool-accent);
-  color: #0a0a1a;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   border-radius: 6px;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -576,14 +585,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.6rem 0.8rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   transition: background 0.15s;
 }
 .polisher-history-item:hover {
-  background: var(--tool-accent-dim);
+  background: var(--accent-subtle);
 }
 .polisher-history-text {
   font-size: 0.82rem;
@@ -620,8 +629,8 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: var(--tool-accent-dim);
-  color: var(--tool-accent);
+  background: var(--accent-subtle);
+  color: var(--accent);
   border-radius: 50%;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -644,15 +653,15 @@
 .polisher-delta-badge {
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  background: rgba(34, 197, 94, 0.08);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--success) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
+  border-radius: var(--radius-md, 10px);
   font-family: var(--font-heading);
   font-size: 0.88rem;
   color: var(--text-secondary);
 }
 .polisher-delta-up {
-  color: #22c55e;
+  color: var(--success);
   font-weight: 700;
   margin-left: 0.3rem;
 }
@@ -671,20 +680,19 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  background: rgba(167, 139, 250, 0.08);
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  border-radius: var(--radius);
-  color: #A78BFA;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  color: var(--accent);
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.82rem;
-  transition: all 0.2s;
+  transition: border-color 0.15s ease-out, background 0.15s ease-out;
 }
 .polisher-related-item:hover {
-  background: rgba(167, 139, 250, 0.18);
-  border-color: rgba(167, 139, 250, 0.4);
-  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: var(--accent);
 }
 .polisher-related-arrow {
   opacity: 0.5;
@@ -696,38 +704,33 @@
 
 /* ── Added text legend ── */
 .polisher-added-legend {
-  color: #22c55e;
+  color: var(--success);
   font-weight: 600;
 }
 
 /* ── Diff highlighting in output ── */
 .polisher-output .polisher-added {
-  color: #22c55e;
+  color: var(--success);
 }
 
 /* ── Bigger copy button ── */
 .polisher-btn-copy {
   padding: 0.55rem 1.2rem;
-  background: var(--tool-accent);
-  color: #0a0a1a;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md, 10px);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.15s ease-out;
   min-height: 44px;
-}
-
-/* ── Nav accent ── */
-.page-polisher .site-nav {
-  --nav-accent: rgba(255, 107, 107, 0.35);
 }
 
 /* ── Focus visible ── */
 .polisher-page :focus-visible {
-  outline: 2px solid var(--tool-accent);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -755,23 +758,59 @@
   .polisher-actions .polisher-btn-primary { text-align: center; }
 }
 
+/* ── FAQ (Zen-tokenised) ── */
+.polisher-faq-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.polisher-faq-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.polisher-faq-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  margin-bottom: 0.75rem;
+}
+.polisher-faq-item summary {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+.polisher-faq-item summary::-webkit-details-marker { display: none; }
+.polisher-faq-item p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  padding: 0 1.25rem 1rem;
+  margin: 0;
+}
+
 /* ══ Prompt Toolkit Cross-Links ══ */
 .polisher-ecosystem { text-align: center; padding: 2rem 0; max-width: 700px; margin: 0 auto; }
-.polisher-ecosystem h2 { color: #e6edf3; margin-bottom: 1rem; font-size: 1.2rem; }
+.polisher-ecosystem h2 { color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem; }
 .polisher-eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .polisher-eco-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
   padding: 1.25rem 1rem;
   text-decoration: none;
-  color: #e6edf3;
-  transition: all 0.2s;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease-out, background 0.15s ease-out;
   text-align: center;
 }
-.polisher-eco-card:hover { border-color: #EC4899; }
-.polisher-eco-card.polisher-eco-active { border-color: #EC4899; background: rgba(236, 72, 153, 0.1); }
+.polisher-eco-card:hover { border-color: var(--accent); }
+.polisher-eco-card.polisher-eco-active { border-color: var(--accent); background: var(--accent-subtle); }
 .polisher-eco-card span { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
 .polisher-eco-card strong { display: block; margin-bottom: 0.25rem; }
-.polisher-eco-card p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 0; }
+.polisher-eco-card p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
 @media (max-width: 480px) { .polisher-eco-grid { grid-template-columns: 1fr; } }

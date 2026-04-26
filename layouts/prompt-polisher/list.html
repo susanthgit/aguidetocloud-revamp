@@ -148,7 +148,7 @@
     <div class="polisher-about">
       <h2>The CRAFTS Framework</h2>
       <p>Every great AI prompt includes six elements. The Prompt Polisher scores yours against each one.<br>
-      Need ready-made prompts? Browse our <a href="/prompts/" style="color: var(--tool-accent); font-weight: 600;">AI Prompt Library →</a></p>
+      Need ready-made prompts? Browse our <a href="/prompts/" class="polisher-crafts-link">AI Prompt Library →</a></p>
       <div class="polisher-crafts-grid">
         <div class="polisher-craft-card">
           <span class="polisher-craft-letter">C</span>
@@ -196,12 +196,12 @@
     {{/* ── FAQ Panel ── */}}
     <div class="polisher-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
-    <div style="max-width:800px;margin:0 auto;padding:0 1rem">
-      <h2 style="color:#EC4899;margin-bottom:1rem">Frequently Asked Questions</h2>
+    <div class="polisher-faq-wrap">
+      <h2 class="polisher-faq-title">Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
-      <details open style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
-        <summary style="color:#EC4899;font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+      <details open class="polisher-faq-item">
+        <summary>{{ add $i 1 }}. {{ $q.question }}</summary>
+        <p>{{ $q.answer }}</p>
       </details>
       {{ end }}
     </div>

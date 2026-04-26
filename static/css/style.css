@@ -96,8 +96,9 @@ body.is-home {
 
 /* 🌸 Force dark Zen tokens on non-migrated pages (Phase 3).
    Legacy pages keep dark appearance regardless of theme toggle.
-   Remove per-page as they migrate in Phase 4+. */
-body:not(.is-home) {
+   Pages with .zen-migrated opt out and get full light/dark support.
+   Remove this rule entirely when all pages are migrated (Phase 4 complete). */
+body:not(.is-home):not(.zen-migrated) {
   --bg-page: #0A0A0A;
   --bg-surface: #141414;
   --bg-elevated: #1A1A1A;
@@ -116,6 +117,27 @@ body:not(.is-home) {
 }
 body.is-home::before,
 body.is-home::after {
+  content: none;
+}
+
+/* 🌸 Zen-migrated pages — full light/dark mode support (Phase 4).
+   These pages use only Zen tokens. They respond to theme toggle. */
+body.zen-migrated {
+  --text-primary: #1A1A1A;
+  --text-secondary: #404040;
+  --text-muted: #A3A3A3;
+  --accent-foreground: #FFFFFF;
+  background: var(--bg-page);
+  color: var(--text-secondary);
+}
+[data-theme="dark"] body.zen-migrated {
+  --text-primary: #F5F5F5;
+  --text-secondary: #D4D4D4;
+  --text-muted: #737373;
+  --accent-foreground: #0A0A0A;
+}
+body.zen-migrated::before,
+body.zen-migrated::after {
   content: none;
 }
 
