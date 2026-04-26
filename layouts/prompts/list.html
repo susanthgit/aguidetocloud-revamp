@@ -42,21 +42,18 @@
 </script>
 {{ end }}
 
-<div class="prompts-page">
+<div class="prompts-page zt-page">
 
   {{ if $isMainPage }}
 
-  {{ else }}
-  <div class="tool-hero zt-page" style="--hero-accent: #A78BFA">
-
 {{ partial "tool-header.html" (dict "page" . "title" "AI Prompt Library") }}
 
-    <div class="tool-hero-inner">
-      <nav class="prompts-back-nav"><a href="/prompts/">← All Prompts</a></nav>
-      <h1 class="tool-hero-title">{{ .Title }}</h1>
-      {{ with .Description }}<p class="tool-hero-subtitle">{{ . }}</p>{{ end }}
-    </div>
-  </div>
+  {{ else }}
+  <header class="zt-header">
+    <nav class="prompts-back-nav"><a href="/prompts/">← All Prompts</a></nav>
+    <h1 class="zt-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="zt-subtitle">{{ . }}</p>{{ end }}
+  </header>
   {{ end }}
 
   <div class="prompts-container">
