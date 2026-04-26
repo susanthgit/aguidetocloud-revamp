@@ -14,15 +14,15 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 .wifiqr-tab {
   background: none;
   border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.6rem 1.1rem;
@@ -33,9 +33,9 @@
   text-align: center;
   white-space: nowrap;
 }
-.wifiqr-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.wifiqr-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .wifiqr-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: #22D3EE;
   border-color: #22D3EE;
   box-shadow: 0 2px 8px rgba(34, 211, 238, 0.3);
@@ -58,12 +58,10 @@
 }
 
 .wifiqr-form {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -86,18 +84,18 @@
 
 .wifiqr-label {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
 .wifiqr-input,
 .wifiqr-select {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.65rem 0.85rem;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -110,7 +108,7 @@
 }
 
 .wifiqr-input::placeholder {
-  color: rgba(255,255,255,0.3);
+  color: var(--text-muted);
 }
 
 .wifiqr-select {
@@ -136,7 +134,7 @@
 
 .wifiqr-check-row label {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
 }
 
 /* ── Password field with toggle ── */
@@ -174,11 +172,11 @@
 }
 
 .wifiqr-template-btn {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.5rem 1rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.85rem;
@@ -280,11 +278,11 @@
 /* ── Card Themes ── */
 .wifiqr-card.theme-home {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #e2e8f0;
-  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 .wifiqr-card.theme-home .wifiqr-card-qr {
-  background: rgba(255,255,255,0.95);
+  background: var(--text-primary);
 }
 
 .wifiqr-card.theme-cafe {
@@ -302,7 +300,7 @@
   border: 1px solid rgba(224,231,255,0.12);
 }
 .wifiqr-card.theme-hotel .wifiqr-card-qr {
-  background: rgba(255,255,255,0.95);
+  background: var(--text-primary);
 }
 
 .wifiqr-card.theme-office {
@@ -329,7 +327,7 @@
   border: 1px solid rgba(34,211,238,0.3);
   border-radius: 14px;
   padding: 0.6rem 1.25rem;
-  color: #22D3EE;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.85rem;
@@ -361,10 +359,10 @@
   text-align: center;
   margin-top: 2rem;
   padding: 1.25rem;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.88rem;
 }
 
@@ -389,7 +387,7 @@
 
 .wifiqr-option-label {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -399,7 +397,7 @@
 .wifiqr-hint {
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
+  color: var(--text-muted);
   margin-top: 0.5rem;
 }
 
@@ -413,7 +411,7 @@
 .wifiqr-color-input {
   width: 40px;
   height: 36px;
-  border: 2px solid rgba(255,255,255,0.15);
+  border: 2px solid var(--border);
   border-radius: 14px;
   cursor: pointer;
   background: none;
@@ -424,11 +422,11 @@
 .wifiqr-color-input::-webkit-color-swatch { border: none; border-radius: 5px; }
 
 .wifiqr-color-hex {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
-  color: #fff;
+  color: var(--text-primary);
   font-family: monospace;
   font-size: 0.85rem;
   width: 90px;

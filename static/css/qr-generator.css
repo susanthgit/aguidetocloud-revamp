@@ -10,45 +10,35 @@
   padding: 0 1.25rem 3rem;
 }
 
-/* ── Tabs ── */
+/* ── Zen Underline Tabs ── */
 .qrgen-tabs {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  display: flex; gap: 0; padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
   margin-bottom: 1.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .qrgen-tab {
-  background: none;
-  border: 1px solid transparent;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.6rem 1.1rem;
-  cursor: pointer;
-  border-radius: 14px;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  font-family: inherit;
-  flex: 1;
-  text-align: center;
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary);
+  font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  white-space: nowrap; font-family: inherit;
+  flex: 1; text-align: center;
 }
 
-.qrgen-tab:hover {
-  color: rgba(255,255,255,0.8);
-  background: rgba(255, 255, 255, 0.06);
-}
+.qrgen-tab:hover { color: var(--text-primary); }
 
 .qrgen-tab.active {
-  color: #fff;
-  background: #EC4899;
-  border-color: #EC4899;
-  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 
 .qrgen-panel {
@@ -82,19 +72,17 @@
 
 /* ── Section headers ── */
 .qrgen-section {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .qrgen-section-title {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #EC4899;
+  color: var(--accent);
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -108,11 +96,11 @@
 }
 
 .qrgen-type-pill {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.5rem 1rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.85rem;
@@ -122,13 +110,13 @@
 .qrgen-type-pill:hover {
   background: rgba(236,72,153,0.1);
   border-color: rgba(236,72,153,0.3);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .qrgen-type-pill.active {
   background: rgba(236,72,153,0.15);
-  border-color: #EC4899;
-  color: #EC4899;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Form fields ── */
@@ -146,7 +134,7 @@
 
 .qrgen-label {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -154,11 +142,11 @@
 .qrgen-input,
 .qrgen-select,
 .qrgen-textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.65rem 0.85rem;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -168,7 +156,7 @@
 .qrgen-select:focus,
 .qrgen-textarea:focus {
   outline: none;
-  border-color: #EC4899;
+  border-color: var(--accent);
 }
 
 .qrgen-textarea {
@@ -182,7 +170,7 @@
 }
 
 .qrgen-input::placeholder {
-  color: rgba(255,255,255,0.3);
+  color: var(--text-muted);
 }
 
 /* ── Row layout for compact fields ── */
@@ -207,11 +195,11 @@
 }
 
 .qrgen-preset {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.4rem 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.8rem;
@@ -225,8 +213,8 @@
 
 .qrgen-preset.active {
   background: rgba(236,72,153,0.15);
-  border-color: #EC4899;
-  color: #EC4899;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Colour pickers ── */
@@ -239,7 +227,7 @@
 .qrgen-color-input {
   width: 40px;
   height: 36px;
-  border: 2px solid rgba(255,255,255,0.15);
+  border: 2px solid var(--border);
   border-radius: 14px;
   cursor: pointer;
   background: none;
@@ -256,11 +244,11 @@
 }
 
 .qrgen-color-hex {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
-  color: #fff;
+  color: var(--text-primary);
   font-family: monospace;
   font-size: 0.85rem;
   width: 90px;
@@ -268,7 +256,7 @@
 
 .qrgen-color-hex:focus {
   outline: none;
-  border-color: #EC4899;
+  border-color: var(--accent);
 }
 
 /* ── Style dropdowns row ── */
@@ -286,7 +274,7 @@
 
 /* ── Logo upload ── */
 .qrgen-logo-area {
-  border: 2px dashed rgba(255,255,255,0.12);
+  border: 2px dashed var(--border);
   border-radius: 16px;
   padding: 1rem;
   text-align: center;
@@ -306,7 +294,7 @@
 }
 
 .qrgen-logo-hint {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.85rem;
 }
 
@@ -326,7 +314,7 @@
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  color: #fff;
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 0.75rem;
   line-height: 1;
@@ -346,7 +334,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 .qrgen-slider {
@@ -355,7 +343,7 @@
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
   outline: none;
 }
 
@@ -365,7 +353,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #EC4899;
+  background: var(--accent);
   cursor: pointer;
   border: 2px solid #fff;
 }
@@ -374,7 +362,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #EC4899;
+  background: var(--accent);
   cursor: pointer;
   border: 2px solid #fff;
 }
@@ -388,11 +376,11 @@
 .qrgen-ec-pill {
   flex: 1;
   text-align: center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.5rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.8rem;
@@ -405,14 +393,14 @@
 
 .qrgen-ec-pill.active {
   background: rgba(236,72,153,0.15);
-  border-color: #EC4899;
-  color: #EC4899;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .qrgen-ec-pill small {
   display: block;
   font-size: 0.65rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-top: 0.15rem;
 }
 
@@ -423,13 +411,11 @@
 }
 
 .qrgen-preview-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .qrgen-preview-box {
@@ -442,7 +428,7 @@
 }
 
 .qrgen-preview-placeholder {
-  color: rgba(255,255,255,0.25);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -477,7 +463,7 @@
   border: 1px solid rgba(236,72,153,0.3);
   border-radius: 14px;
   padding: 0.6rem 1.25rem;
-  color: #EC4899;
+  color: var(--accent);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.85rem;
@@ -489,13 +475,13 @@
 
 .qrgen-btn:hover {
   background: rgba(236,72,153,0.25);
-  border-color: #EC4899;
+  border-color: var(--accent);
 }
 
 .qrgen-btn-primary {
-  background: #EC4899;
-  color: #fff;
-  border-color: #EC4899;
+  background: var(--accent);
+  color: var(--text-primary);
+  border-color: var(--accent);
 }
 
 .qrgen-btn-primary:hover {
@@ -521,7 +507,7 @@
    ══════════════════════════════════════════════════════════ */
 
 .qrgen-batch-intro {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 1.25rem;
   line-height: 1.6;
@@ -534,11 +520,11 @@
 }
 
 .qrgen-batch-textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
-  color: #fff;
+  color: var(--text-primary);
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.85rem;
   min-height: 200px;
@@ -547,7 +533,7 @@
 
 .qrgen-batch-textarea:focus {
   outline: none;
-  border-color: #EC4899;
+  border-color: var(--accent);
 }
 
 .qrgen-batch-actions {
@@ -565,8 +551,8 @@
 }
 
 .qrgen-batch-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
   text-align: center;
@@ -580,7 +566,7 @@
 
 .qrgen-batch-card-label {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-top: 0.5rem;
   word-break: break-all;
   max-height: 2.2em;
@@ -588,7 +574,7 @@
 }
 
 .qrgen-batch-progress {
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   border-radius: 4px;
   height: 6px;
   margin-top: 1rem;
@@ -602,7 +588,7 @@
 
 .qrgen-batch-progress-bar {
   height: 100%;
-  background: #EC4899;
+  background: var(--accent);
   border-radius: 4px;
   transition: width 0.3s;
   width: 0%;
@@ -618,7 +604,7 @@
 }
 
 .qrgen-scan-drop {
-  border: 2px dashed rgba(255,255,255,0.12);
+  border: 2px dashed var(--border);
   border-radius: 14px;
   padding: 3rem 2rem;
   text-align: center;
@@ -639,19 +625,19 @@
 }
 
 .qrgen-scan-text {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
 .qrgen-scan-subtext {
-  color: rgba(255,255,255,0.3);
+  color: var(--text-muted);
   font-size: 0.8rem;
 }
 
 .qrgen-scan-result {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   display: none;
@@ -663,17 +649,17 @@
 
 .qrgen-scan-result-label {
   font-size: 0.8rem;
-  color: #EC4899;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.75rem;
 }
 
 .qrgen-scan-result-text {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elevated);
   border-radius: 14px;
   padding: 0.85rem;
-  color: #fff;
+  color: var(--text-primary);
   word-break: break-all;
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -700,7 +686,7 @@
 .qrgen-style-toggle {
   background: none;
   border: none;
-  color: #EC4899;
+  color: var(--accent);
   cursor: pointer;
   font-size: 0.85rem;
   padding: 0.5rem 0;
@@ -712,7 +698,7 @@
 }
 
 .qrgen-style-toggle:hover {
-  color: #F472B6;
+  color: var(--accent);
 }
 
 .qrgen-style-body {
@@ -794,7 +780,7 @@
   border: 1px solid rgba(236,72,153,0.15);
   border-radius: 14px;
   padding: 0.45rem 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.8rem;
@@ -804,7 +790,7 @@
 .qrgen-try-card:hover {
   background: rgba(236,72,153,0.15);
   border-color: rgba(236,72,153,0.4);
-  color: #EC4899;
+  color: var(--accent);
 }
 
 .qrgen-try-icon { font-size: 1rem; }
@@ -819,13 +805,14 @@
 }
 
 .qrgen-bg-btn {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
   font-size: 0.85rem;
   transition: all 0.2s;
+  color: var(--text-secondary);
 }
 
 .qrgen-bg-btn:hover {
@@ -833,7 +820,7 @@
 }
 
 .qrgen-bg-btn.active {
-  border-color: #EC4899;
+  border-color: var(--accent);
   background: rgba(236,72,153,0.1);
 }
 
@@ -844,7 +831,7 @@
 }
 
 .qrgen-preview-box.bg-transparent {
-  background: repeating-conic-gradient(rgba(255,255,255,0.06) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
+  background: repeating-conic-gradient(var(--bg-elevated) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
   border-radius: 16px;
   padding: 1rem;
 }
@@ -853,7 +840,7 @@
 .qrgen-size-info {
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   font-family: monospace;
 }
@@ -883,8 +870,6 @@
   border: 2px solid rgba(236,72,153,0.3);
   border-radius: 14px;
   padding: 0.5rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   align-items: center;
   justify-content: center;

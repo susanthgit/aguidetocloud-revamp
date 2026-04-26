@@ -14,27 +14,24 @@
 .demoscr-section-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #f1f1f1;
+  color: var(--text-primary);
   margin: 2rem 0 0.75rem;
 }
 
 .demoscr-tip {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1.25rem;
   line-height: 1.5;
 }
 
-/* ── Glass Pill Tabs ──────────────────────────────────────────────────── */
+/* ── Zen Underline Tabs ──────────────────────────────────────────────── */
 .demoscr-tabs {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  display: flex; gap: 0; padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
   max-width: 700px;
   margin: 1.5rem auto;
   overflow-x: auto;
@@ -42,28 +39,28 @@
 
 .demoscr-tab {
   flex: 1;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 999px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
   background: transparent;
-  color: #94a3b8;
-  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
   white-space: nowrap;
 }
 
 .demoscr-tab:hover {
-  color: #e2e8f0;
-  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
 }
 
 .demoscr-tab.active {
-  background: rgba(249,115,22,0.2);
-  color: #F97316;
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
   font-weight: 600;
-  box-shadow: 0 0 12px rgba(249,115,22,0.15);
+  box-shadow: none;
 }
 
 /* ── Panels ───────────────────────────────────────────────────────────── */
@@ -93,24 +90,25 @@
   align-items: center;
   gap: 0.35rem;
   padding: 1rem 0.75rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.25s ease;
   text-align: center;
+  color: var(--text-primary);
 }
 
 .demoscr-scenario-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(249,115,22,0.3);
+  background: var(--bg-elevated);
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
 .demoscr-scenario-card.active {
-  background: rgba(249,115,22,0.12);
-  border-color: #F97316;
-  box-shadow: 0 0 16px rgba(249,115,22,0.2);
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-subtle);
 }
 
 .demoscr-scenario-icon {
@@ -120,7 +118,7 @@
 .demoscr-scenario-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
 }
 
 .demoscr-scenario-cat {
@@ -132,12 +130,11 @@
 
 /* ── Configuration Panel ──────────────────────────────────────────────── */
 .demoscr-config {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1.5rem;
-  backdrop-filter: blur(8px);
 }
 
 .demoscr-config-grid {
@@ -159,7 +156,7 @@
 .demoscr-config-label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -173,24 +170,24 @@
 
 .demoscr-pill {
   padding: 0.4rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .demoscr-pill:hover {
-  background: rgba(255,255,255,0.08);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 .demoscr-pill.active {
   background: rgba(249,115,22,0.18);
   border-color: rgba(249,115,22,0.5);
-  color: #F97316;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -210,29 +207,29 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .demoscr-app-chip:hover {
-  background: rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
 }
 
 .demoscr-app-toggle input:checked + .demoscr-app-chip {
-  background: rgba(249,115,22,0.15);
+  background: var(--accent-subtle);
   border-color: rgba(249,115,22,0.4);
-  color: #F97316;
+  color: var(--accent);
 }
 
 /* ── Script Display ───────────────────────────────────────────────────── */
 .demoscr-script-wrapper {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
 }
@@ -242,8 +239,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: rgba(255,255,255,0.03);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
   gap: 0.75rem;
 }
@@ -261,19 +258,19 @@
 
 .demoscr-btn {
   padding: 0.4rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  color: #cbd5e1;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .demoscr-btn:hover {
-  background: rgba(249,115,22,0.15);
+  background: var(--accent-subtle);
   border-color: rgba(249,115,22,0.4);
-  color: #F97316;
+  color: var(--accent);
 }
 
 .demoscr-btn.copied {
@@ -289,7 +286,7 @@
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: #64748b;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border);
 }
 
 .demoscr-script-meta span {
@@ -306,15 +303,15 @@
 .demoscr-intro, .demoscr-closing {
   padding: 1rem 1.25rem;
   background: rgba(249,115,22,0.06);
-  border-left: 3px solid #F97316;
+  border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
   margin-bottom: 1.5rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .demoscr-intro h3, .demoscr-closing h3 {
-  color: #F97316;
+  color: var(--accent);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -323,8 +320,8 @@
 
 /* ── Step Cards ───────────────────────────────────────────────────────── */
 .demoscr-step {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -333,11 +330,11 @@
 }
 
 .demoscr-step:hover {
-  border-color: rgba(255,255,255,0.12);
+  border-color: var(--border);
 }
 
 .demoscr-step.wow {
-  border-color: rgba(249,115,22,0.3);
+  border-color: var(--accent);
   box-shadow: 0 0 20px rgba(249,115,22,0.08);
 }
 
@@ -355,8 +352,8 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: rgba(249,115,22,0.15);
-  color: #F97316;
+  background: var(--accent-subtle);
+  color: var(--accent);
   font-weight: 700;
   font-size: 0.85rem;
   flex-shrink: 0;
@@ -365,40 +362,40 @@
 .demoscr-step-title {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   flex: 1;
 }
 
 .demoscr-step-app {
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   font-size: 0.7rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .demoscr-wow-badge {
-  color: #F97316;
+  color: var(--accent);
   font-size: 1.1rem;
   animation: demoscr-glow 2s ease-in-out infinite;
 }
 
 @keyframes demoscr-glow {
-  0%, 100% { text-shadow: 0 0 4px rgba(249,115,22,0.3); }
+  0%, 100% { text-shadow: 0 0 4px var(--accent); }
   50%      { text-shadow: 0 0 12px rgba(249,115,22,0.6); }
 }
 
 .demoscr-step-action {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   margin-bottom: 0.75rem;
   padding-left: 0.75rem;
-  border-left: 2px solid rgba(255,255,255,0.08);
+  border-left: 2px solid var(--border);
 }
 
 .demoscr-step-prompt {
-  background: rgba(0,0,0,0.3);
-  border: 1px solid rgba(249,115,22,0.2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent-subtle);
   border-radius: 8px;
   padding: 0.85rem 1rem;
   margin-bottom: 0.75rem;
@@ -409,12 +406,12 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #F97316;
+  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
 .demoscr-step-prompt-text {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -426,18 +423,18 @@
   top: 0.5rem;
   right: 0.5rem;
   padding: 0.25rem 0.5rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: rgba(255,255,255,0.05);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.7rem;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .demoscr-copy-prompt:hover {
-  background: rgba(249,115,22,0.2);
-  color: #F97316;
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 .demoscr-step-expected {
@@ -459,7 +456,7 @@
 .demoscr-step-talk {
   padding: 0.6rem 0.85rem;
   background: rgba(249,115,22,0.05);
-  border-left: 2px solid rgba(249,115,22,0.3);
+  border-left: 2px solid var(--accent);
   border-radius: 0 6px 6px 0;
   font-size: 0.85rem;
   color: #c4a98a;
@@ -467,7 +464,7 @@
 }
 
 .demoscr-step-talk strong {
-  color: #F97316;
+  color: var(--accent);
   font-size: 0.7rem;
   text-transform: uppercase;
 }
@@ -484,14 +481,14 @@
 }
 
 .demoscr-step-fallback summary:hover {
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .demoscr-step-fallback p {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   padding: 0.5rem 0.75rem;
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-elevated);
   border-radius: 6px;
   margin-top: 0.35rem;
   line-height: 1.5;
@@ -502,7 +499,7 @@
   color: #64748b;
   font-size: 0.75rem;
   padding: 0.5rem 0;
-  border-top: 1px dashed rgba(255,255,255,0.06);
+  border-top: 1px dashed var(--border);
   margin: 1rem 0;
 }
 
@@ -516,24 +513,24 @@
 
 .demoscr-filter-btn {
   padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .demoscr-filter-btn:hover {
-  background: rgba(255,255,255,0.08);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 .demoscr-filter-btn.active {
   background: rgba(249,115,22,0.18);
   border-color: rgba(249,115,22,0.4);
-  color: #F97316;
+  color: var(--accent);
 }
 
 .demoscr-prompt-grid {
@@ -543,15 +540,15 @@
 }
 
 .demoscr-prompt-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem 1.25rem;
   transition: border-color 0.2s;
 }
 
 .demoscr-prompt-card:hover {
-  border-color: rgba(249,115,22,0.3);
+  border-color: var(--accent);
 }
 
 .demoscr-prompt-card-header {
@@ -565,8 +562,8 @@
   font-size: 0.7rem;
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
 }
 
 .demoscr-prompt-card-reliability {
@@ -589,7 +586,7 @@
 .demoscr-prompt-card-text {
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.88rem;
-  color: #e2e8f0;
+  color: var(--text-primary);
   line-height: 1.5;
   margin-bottom: 0.5rem;
   cursor: pointer;
@@ -611,10 +608,10 @@
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.35rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: rgba(255,255,255,0.03);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.75rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -622,8 +619,8 @@
 }
 
 .demoscr-prompt-copy-btn:hover {
-  background: rgba(249,115,22,0.15);
-  color: #F97316;
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 /* ── Tips Section ─────────────────────────────────────────────────────── */
@@ -635,8 +632,8 @@
 }
 
 .demoscr-rule-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
   text-align: center;
@@ -650,13 +647,13 @@
 
 .demoscr-rule-card h3 {
   font-size: 0.95rem;
-  color: #F97316;
+  color: var(--accent);
   margin: 0 0 0.5rem;
 }
 
 .demoscr-rule-card p {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -671,8 +668,8 @@
   display: flex;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   align-items: flex-start;
 }
@@ -684,13 +681,13 @@
 }
 
 .demoscr-tip-card h4 {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin: 0 0 0.25rem;
 }
 
 .demoscr-tip-card p {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: 1.5;
   margin: 0;
@@ -705,20 +702,20 @@
 }
 
 .demoscr-audience-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
 }
 
 .demoscr-audience-card h3 {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 1rem;
   margin: 0 0 0.35rem;
 }
 
 .demoscr-audience-approach {
-  color: #F97316;
+  color: var(--accent);
   font-size: 0.85rem;
   font-style: italic;
   margin: 0 0 0.75rem;
@@ -730,7 +727,7 @@
 }
 
 .demoscr-audience-card li {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.5;
   margin-bottom: 0.35rem;
@@ -749,20 +746,20 @@
   align-items: flex-start;
   gap: 0.65rem;
   padding: 0.65rem 0.85rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .demoscr-check-item:hover {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elevated);
 }
 
 .demoscr-check-item input[type="checkbox"] {
   margin-top: 0.15rem;
-  accent-color: #F97316;
+  accent-color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -771,7 +768,7 @@
 }
 
 .demoscr-check-text strong {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.88rem;
   display: block;
 }
@@ -820,8 +817,8 @@
 }
 
 .demoscr-trap-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -842,18 +839,18 @@
   font-size: 0.65rem;
   padding: 0.1rem 0.4rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
 }
 
 .demoscr-trap-desc {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.88rem;
   margin: 0 0 0.5rem;
 }
 
 .demoscr-trap-fix {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.5;
   margin: 0;
@@ -872,8 +869,8 @@
 }
 
 .demoscr-faq-item {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -881,7 +878,7 @@
 .demoscr-faq-item summary {
   padding: 0.85rem 1.25rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 0.95rem;
   list-style: none;
@@ -889,7 +886,7 @@
 
 .demoscr-faq-item summary::before {
   content: '▸ ';
-  color: #F97316;
+  color: var(--accent);
 }
 
 .demoscr-faq-item[open] summary::before {
@@ -898,7 +895,7 @@
 
 .demoscr-faq-item p {
   padding: 0 1.25rem 1rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0;
@@ -919,7 +916,7 @@
 
   body { background: #fff !important; color: #000 !important; }
   .demoscr-section-title, .demoscr-step-title { color: #000; }
-  .demoscr-intro, .demoscr-closing { background: #f9f9f9; border-color: #F97316; }
+  .demoscr-intro, .demoscr-closing { background: #f9f9f9; border-color: var(--accent); }
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
@@ -980,24 +977,24 @@
 
 .demoscr-cat-pill {
   padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #94a3b8;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .demoscr-cat-pill:hover {
-  background: rgba(255,255,255,0.08);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
 }
 
 .demoscr-cat-pill.active {
   background: rgba(249,115,22,0.18);
   border-color: rgba(249,115,22,0.4);
-  color: #F97316;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -1018,13 +1015,13 @@
 .demoscr-custom-scenario {
   margin: 1.5rem 0;
   padding: 1.25rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px;
 }
 
 .demoscr-custom-scenario h3 {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 1rem;
   margin: 0 0 0.35rem;
 }
@@ -1032,10 +1029,10 @@
 .demoscr-custom-input {
   width: 100%;
   padding: 0.7rem 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(0,0,0,0.3);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
@@ -1056,10 +1053,10 @@
   gap: 0.15rem;
   width: 100%;
   padding: 0.6rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255,255,255,0.03);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-size: 0.85rem;
   cursor: pointer;
   text-align: left;
@@ -1069,7 +1066,7 @@
 
 .demoscr-custom-match:hover {
   background: rgba(249,115,22,0.1);
-  border-color: rgba(249,115,22,0.3);
+  border-color: var(--accent);
 }
 
 .demoscr-custom-match-meta {
@@ -1087,10 +1084,10 @@
 .demoscr-search-input {
   width: 100%;
   padding: 0.6rem 1rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #e2e8f0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   font-size: 0.85rem;
   outline: none;
   transition: border-color 0.2s;
@@ -1099,7 +1096,7 @@
 
 .demoscr-search-input:focus {
   border-color: rgba(249,115,22,0.4);
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
 }
 
 .demoscr-search-results {
@@ -1109,13 +1106,12 @@
   right: 0;
   margin-top: 0.35rem;
   background: rgba(15,15,25,0.97);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.5rem;
   max-height: 350px;
   overflow-y: auto;
   z-index: 100;
-  backdrop-filter: blur(16px);
 }
 
 .demoscr-search-item {
@@ -1127,7 +1123,7 @@
   border: none;
   border-radius: 8px;
   background: transparent;
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.82rem;
   cursor: pointer;
   text-align: left;
@@ -1162,7 +1158,7 @@
   font-size: 0.6rem;
   padding: 0.1rem 0.4rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
   color: #64748b;
   text-transform: uppercase;
   flex-shrink: 0;
@@ -1192,7 +1188,7 @@
   gap: 1rem;
   padding: 1rem 2rem;
   background: rgba(15,15,25,0.98);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
   position: sticky;
   top: 0;
@@ -1203,12 +1199,12 @@
   font-family: 'Consolas', monospace;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #F97316;
+  color: var(--accent);
   min-width: 5rem;
 }
 
 .demoscr-practice-progress {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   flex: 1;
 }
@@ -1242,10 +1238,10 @@
 .demoscr-practice-wow {
   display: inline-block;
   padding: 0.25rem 0.65rem;
-  background: rgba(249,115,22,0.15);
-  border: 1px solid rgba(249,115,22,0.3);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
   border-radius: 999px;
-  color: #F97316;
+  color: var(--accent);
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -1253,27 +1249,27 @@
 
 .demoscr-practice-step h2 {
   font-size: 2rem;
-  color: #f1f1f1;
+  color: var(--text-primary);
   margin: 0 0 0.5rem;
 }
 
 .demoscr-practice-app {
   font-size: 1rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
 .demoscr-practice-action {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   padding: 0.75rem 1rem;
-  border-left: 3px solid rgba(255,255,255,0.1);
+  border-left: 3px solid var(--border);
 }
 
 .demoscr-practice-prompt {
-  background: rgba(0,0,0,0.4);
-  border: 2px solid rgba(249,115,22,0.3);
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -1283,7 +1279,7 @@
 .demoscr-practice-prompt-text {
   font-family: 'Consolas', monospace;
   font-size: 1.3rem;
-  color: #e2e8f0;
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
@@ -1301,7 +1297,7 @@
   line-height: 1.6;
   padding: 0.75rem 1rem;
   background: rgba(249,115,22,0.06);
-  border-left: 3px solid rgba(249,115,22,0.3);
+  border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
 }
 
@@ -1315,7 +1311,7 @@
 .demoscr-related {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 
 .demoscr-related-grid {
@@ -1329,16 +1325,16 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.25s;
 }
 
 .demoscr-related-card:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: var(--rel-accent, rgba(255,255,255,0.15));
+  background: var(--bg-elevated);
+  border-color: var(--rel-accent, var(--border));
   transform: translateY(-2px);
 }
 
@@ -1353,7 +1349,7 @@
 }
 
 .demoscr-related-card strong {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.9rem;
 }
 
@@ -1376,21 +1372,21 @@
   #panel-prompts, #panel-tips, #panel-faq { display: none !important; }
 
   .demoscr-step { break-inside: avoid; border: 1px solid #ccc; margin-bottom: 0.75rem; }
-  .demoscr-step-prompt { background: #f0f0f0 !important; border-color: #F97316 !important; }
+  .demoscr-step-prompt { background: #f0f0f0 !important; border-color: var(--accent) !important; }
   .demoscr-step-prompt-text { color: #000 !important; }
-  .demoscr-step-prompt-label { color: #F97316 !important; }
+  .demoscr-step-prompt-label { color: var(--accent) !important; }
 
   body { background: #fff !important; }
   .demoscr-section-title, .demoscr-step-title, .demoscr-step-num { color: #000 !important; }
   .demoscr-step-action, .demoscr-step-expected, .demoscr-step-talk { color: #333 !important; }
   .demoscr-step-expected strong, .demoscr-step-talk strong { color: #000 !important; }
-  .demoscr-intro, .demoscr-closing { background: #f9f9f9 !important; border-color: #F97316 !important; color: #333 !important; }
-  .demoscr-intro h3, .demoscr-closing h3 { color: #F97316 !important; }
+  .demoscr-intro, .demoscr-closing { background: #f9f9f9 !important; border-color: var(--accent) !important; color: #333 !important; }
+  .demoscr-intro h3, .demoscr-closing h3 { color: var(--accent) !important; }
   .demoscr-timing-cue { color: #666 !important; border-color: #ccc !important; }
   .demoscr-script-meta { color: #666 !important; }
   .demoscr-script-wrapper { border: none !important; }
   .demoscr-script-header { background: none !important; border: none !important; padding-left: 0 !important; }
-  .demoscr-wow-badge { color: #F97316 !important; }
+  .demoscr-wow-badge { color: var(--accent) !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1406,12 +1402,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
 }
 
 .demoscr-wizard {
   background: rgba(20,20,35,0.98);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2rem 2.5rem;
   max-width: 600px;
@@ -1422,7 +1417,7 @@
 }
 
 .demoscr-wizard h2 {
-  color: #f1f1f1;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin: 0 0 0.5rem;
 }
@@ -1438,13 +1433,13 @@
   cursor: pointer;
 }
 
-.demoscr-wizard-close:hover { color: #e2e8f0; }
+.demoscr-wizard-close:hover { color: var(--text-primary); }
 
 .demoscr-wizard-step { display: none; margin-top: 1.25rem; }
 .demoscr-wizard-step.active { display: block; animation: demoscr-fadeIn 0.3s ease; }
 
 .demoscr-wizard-step h3 {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 1.05rem;
   margin: 0 0 0.75rem;
 }
@@ -1457,10 +1452,10 @@
 
 .demoscr-wizard-opt {
   padding: 0.65rem 1rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: 10px;
-  background: rgba(255,255,255,0.04);
-  color: #cbd5e1;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   cursor: pointer;
   text-align: left;
@@ -1469,13 +1464,13 @@
 
 .demoscr-wizard-opt:hover {
   background: rgba(249,115,22,0.1);
-  border-color: rgba(249,115,22,0.3);
+  border-color: var(--accent);
 }
 
 .demoscr-wizard-opt.selected {
   background: rgba(249,115,22,0.18);
-  border-color: #F97316;
-  color: #F97316;
+  border-color: var(--accent);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -1483,19 +1478,19 @@
   margin-top: 1.5rem;
   padding: 1.25rem;
   background: rgba(249,115,22,0.06);
-  border: 1px solid rgba(249,115,22,0.2);
+  border: 1px solid var(--accent-subtle);
   border-radius: 12px;
 }
 
 .demoscr-wizard-result h3 {
-  color: #F97316;
+  color: var(--accent);
   margin: 0 0 0.75rem;
 }
 
 .demoscr-btn-primary {
-  background: rgba(249,115,22,0.2);
-  border-color: #F97316;
-  color: #F97316;
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
   font-weight: 600;
   margin-top: 0.75rem;
 }
@@ -1505,9 +1500,9 @@
 }
 
 .demoscr-btn-accent {
-  background: rgba(249,115,22,0.12);
-  border-color: rgba(249,115,22,0.3);
-  color: #F97316;
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
   margin-bottom: 0.75rem;
 }
 
@@ -1518,13 +1513,13 @@
 /* ── V3: Before/After Visualiser ─────────────────────────────────────── */
 .demoscr-before-after {
   padding: 1.25rem 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 
 .demoscr-ba-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
@@ -1564,7 +1559,7 @@
 .demoscr-ba-time {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--text-primary);
 }
 
 .demoscr-ba-saving {
@@ -1592,13 +1587,13 @@
 .demoscr-qa-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
 .demoscr-qa-item {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 8px;
   margin-bottom: 0.4rem;
   overflow: hidden;
@@ -1606,7 +1601,7 @@
 
 .demoscr-qa-item summary {
   padding: 0.65rem 1rem;
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.88rem;
   cursor: pointer;
   font-weight: 500;
@@ -1618,7 +1613,7 @@
 
 .demoscr-qa-item p {
   padding: 0 1rem 0.85rem 1rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: 1.55;
   margin: 0;
@@ -1633,8 +1628,8 @@
 }
 
 .demoscr-seeder-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1rem 1.25rem;
 }
@@ -1651,13 +1646,13 @@
 }
 
 .demoscr-seeder-header h4 {
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 0.95rem;
   margin: 0;
 }
 
 .demoscr-seeder-action {
-  color: #cbd5e1;
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.5;
   margin: 0 0 0.35rem;
@@ -1679,7 +1674,7 @@
 }
 
 .demoscr-practice-scorecard h2 {
-  color: #f1f1f1;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin: 0 0 1.25rem;
   text-align: center;
@@ -1716,7 +1711,7 @@
 
 .demoscr-scorecard-stat-label {
   font-size: 0.7rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   text-transform: uppercase;
 }
 
@@ -1732,10 +1727,10 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.5rem 0.75rem;
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
   border-radius: 8px;
   font-size: 0.85rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .demoscr-scorecard-step-time {
@@ -1747,10 +1742,10 @@
 .demoscr-scorecard-timing {
   text-align: center;
   padding: 0.75rem;
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-elevated);
   border-radius: 10px;
   margin-bottom: 1rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
@@ -1769,17 +1764,17 @@
 
 .demoscr-rate-btn {
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255,255,255,0.04);
-  color: #cbd5e1;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.demoscr-rate-btn:hover { background: rgba(255,255,255,0.08); }
-.demoscr-rate-btn.selected { border-color: #F97316; color: #F97316; background: rgba(249,115,22,0.15); }
+.demoscr-rate-btn:hover { background: var(--border); }
+.demoscr-rate-btn.selected { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
 
 /* ── V3: Recording Mode ──────────────────────────────────────────────── */
 .demoscr-recording-overlay {
@@ -1797,7 +1792,6 @@
   padding: 0.5rem 1.25rem;
   background: rgba(20,20,30,0.95);
   border-bottom: 2px solid #ef4444;
-  backdrop-filter: blur(12px);
 }
 
 .demoscr-recording-dot {
@@ -1822,13 +1816,13 @@
 
 .demoscr-recording-timer {
   font-family: 'Consolas', monospace;
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 1rem;
   font-weight: 600;
 }
 
 .demoscr-recording-step {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.8rem;
   flex: 1;
 }

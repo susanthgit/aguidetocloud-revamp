@@ -8,12 +8,12 @@
   --pomo: #EF4444;
   --pomo-dim: rgba(239, 68, 68, 0.12);
   --pomo-glow: rgba(239, 68, 68, 0.25);
-  --pomo-bg: #141118;
-  --pomo-card: #1e1b24;
-  --pomo-card-hover: #252230;
-  --pomo-border: #2a2733;
-  --pomo-text: #e0dce6;
-  --pomo-text-dim: #9e98a8;
+  --pomo-bg: var(--bg-page);
+  --pomo-card: var(--bg-surface);
+  --pomo-card-hover: var(--bg-elevated);
+  --pomo-border: var(--border);
+  --pomo-text: var(--text-primary);
+  --pomo-text-dim: var(--text-secondary);
   --pomo-green: #34D399;
   --pomo-blue: #3B82F6;
   --pomo-focus: #EF4444;
@@ -29,8 +29,6 @@
    ═══════════════════════════════════════════ */
 .pomo-timer-card {
   background: rgba(30, 27, 36, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(239, 68, 68, 0.1);
   border-radius: 1.25rem;
   padding: 1.5rem;
@@ -112,9 +110,10 @@
 .pomo-btn {
   border: none; border-radius: 0.6rem; padding: 0.6rem 1.2rem;
   font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+  color: var(--text-primary);
 }
 .pomo-btn-big { padding: 0.75rem 2.5rem; font-size: 1.15rem; border-radius: 3rem; }
-.pomo-btn-primary { background: var(--pomo); color: #fff; }
+.pomo-btn-primary { background: var(--pomo); color: var(--text-primary); }
 .pomo-btn-primary:hover { background: #DC2626; transform: translateY(-1px); box-shadow: 0 4px 16px var(--pomo-glow); }
 .pomo-btn-secondary {
   background: var(--pomo-card); color: var(--pomo-text); border: 1px solid var(--pomo-border);
@@ -141,7 +140,7 @@
   cursor: pointer; padding: 0.4rem 0.75rem; border-radius: 0.5rem;
   transition: background 0.2s;
 }
-.pomo-focus-task-display:hover { background: rgba(255,255,255,0.04); }
+.pomo-focus-task-display:hover { background: var(--bg-elevated); }
 .pomo-focus-label { font-size: 0.9rem; }
 .pomo-focus-name { font-size: 0.9rem; color: var(--pomo-text-dim); }
 .pomo-focus-task.has-task .pomo-focus-name { color: var(--pomo); font-weight: 600; }
@@ -238,8 +237,8 @@
    ═══════════════════════════════════════════ */
 .pomo-tabs {
   display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 1rem; overflow-x: auto;
   -webkit-overflow-scrolling: touch; scrollbar-width: none;
@@ -251,9 +250,9 @@
   white-space: nowrap; border-radius: 14px; transition: all 0.2s ease;
   flex: 1; text-align: center;
 }
-.pomo-tab:hover { color: var(--pomo-text); background: rgba(255,255,255,0.06); }
+.pomo-tab:hover { color: var(--pomo-text); background: var(--bg-elevated); }
 .pomo-tab.active {
-  color: #fff; background: var(--pomo); border-color: var(--pomo);
+  color: var(--text-primary); background: var(--pomo); border-color: var(--pomo);
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3); font-weight: 600;
 }
 .pomo-panel { display: none; }
@@ -299,7 +298,7 @@
   font-size: 0.65rem; color: transparent; transition: all 0.2s; flex-shrink: 0;
 }
 .pomo-task-check:hover { border-color: var(--pomo-green); }
-.pomo-task-item.done .pomo-task-check { border-color: var(--pomo-green); background: var(--pomo-green); color: #fff; }
+.pomo-task-item.done .pomo-task-check { border-color: var(--pomo-green); background: var(--pomo-green); color: var(--text-primary); }
 .pomo-task-name { flex: 1; color: var(--pomo-text); font-size: 0.88rem; cursor: pointer; }
 .pomo-task-pomos { font-size: 0.72rem; color: var(--pomo-text-dim); white-space: nowrap; }
 .pomo-task-pomos strong { color: var(--pomo); }
@@ -322,8 +321,7 @@
    SETTINGS MODAL
    ═══════════════════════════════════════════ */
 .pomo-modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  position: fixed; inset: 0; background: var(--bg-surface);
   z-index: 1000; display: flex; align-items: center; justify-content: center;
   padding: 1rem;
 }

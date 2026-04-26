@@ -4,14 +4,14 @@
    ================================================================ */
 
 :root {
-  --showdown-accent: #D4A853;
-  --showdown-accent-dim: rgba(212, 168, 83, 0.15);
-  --showdown-accent-mid: rgba(212, 168, 83, 0.3);
-  --showdown-bg: #060610;
-  --showdown-card-bg: #0a0a14;
-  --showdown-card-border: rgba(132, 204, 22, 0.2);
-  --showdown-text: #e0e0e0;
-  --showdown-text-dim: #999;
+  --showdown-accent: var(--accent);
+  --showdown-accent-dim: var(--accent-subtle);
+  --showdown-accent-mid: color-mix(in srgb, var(--accent) 30%, transparent);
+  --showdown-bg: var(--bg-page);
+  --showdown-card-bg: var(--bg-surface);
+  --showdown-card-border: var(--border);
+  --showdown-text: var(--text-primary);
+  --showdown-text-dim: var(--text-secondary);
   --showdown-green: #22c55e;
   --showdown-red: #ef4444;
   --showdown-yellow: #eab308;
@@ -43,7 +43,7 @@
   gap: 0.75rem;
   margin-top: 0.75rem;
   padding-top: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 .showdown-card-link {
   font-size: 0.75rem;
@@ -60,8 +60,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 16px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -85,11 +85,11 @@
   text-align: center;
 }
 .showdown-tab:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 .showdown-tab.active {
-  color: #000;
+  color: var(--accent-foreground, #fff);
   background: var(--showdown-accent);
   border-color: var(--showdown-accent);
   box-shadow: 0 2px 8px rgba(212, 168, 83, 0.35);
@@ -140,7 +140,7 @@
   background: var(--showdown-card-bg);
   border: 1px solid var(--showdown-card-border);
   border-radius: 14px;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
 }
 .showdown-search:focus {
@@ -154,7 +154,7 @@
   background: var(--showdown-card-bg);
   border: 1px solid var(--showdown-card-border);
   border-radius: 14px;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.85rem;
   cursor: pointer;
 }
@@ -172,10 +172,8 @@
 
 .showdown-provider-card {
   background: color-mix(in srgb, var(--showdown-accent) 8%, var(--showdown-card-bg));
-  -webkit-backdrop-filter: blur(var(--glass-blur-card));
-  backdrop-filter: blur(var(--glass-blur-card));
   border: 1px solid var(--showdown-card-border);
-  border-radius: var(--glass-radius-card);
+  border-radius: var(--radius-lg, 16px);
   padding: 1.25rem;
   transition: all 0.2s;
   cursor: pointer;
@@ -199,7 +197,7 @@
 .showdown-provider-name {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .showdown-provider-product {
   font-size: 0.8rem;
@@ -330,14 +328,14 @@
 }
 .showdown-compare-table td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
   text-align: center;
   color: var(--showdown-text);
 }
 .showdown-compare-table td:first-child {
   text-align: left;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   white-space: nowrap;
 }
 .showdown-compare-table tr:hover td {
@@ -364,7 +362,7 @@
 }
 .showdown-pricing-table td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
   color: var(--showdown-text);
 }
 .showdown-pricing-table tr:hover td {
@@ -375,7 +373,7 @@
   font-weight: 700;
 }
 .showdown-price-value {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
 }
 .showdown-price-custom {
@@ -404,7 +402,7 @@
 .showdown-strength-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
 .showdown-strength-section {
   margin-bottom: 0.75rem;
@@ -462,7 +460,7 @@
 }
 .showdown-quiz-progress {
   height: 6px;
-  background: rgba(255,255,255,0.1);
+  background: var(--bg-elevated);
   border-radius: 3px;
   margin-bottom: 2rem;
   overflow: hidden;
@@ -476,7 +474,7 @@
 }
 .showdown-quiz-question h3 {
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 1rem;
 }
 .showdown-quiz-options {
@@ -513,7 +511,7 @@
   align-items: center;
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 .showdown-quiz-counter {
   font-size: 0.85rem;
@@ -527,6 +525,7 @@
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
+  color: var(--text-primary);
 }
 .showdown-btn:disabled {
   opacity: 0.4;
@@ -534,7 +533,7 @@
 }
 .showdown-btn-primary {
   background: var(--showdown-accent);
-  color: #000;
+  color: var(--accent-foreground, #fff);
   border-color: var(--showdown-accent);
   font-weight: 600;
 }
@@ -579,7 +578,7 @@
 .showdown-result-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
 }
 .showdown-result-score {
@@ -623,13 +622,13 @@
 }
 .showdown-enterprise-table td {
   padding: 0.5rem 0.6rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
   text-align: center;
 }
 .showdown-enterprise-table td:first-child {
   text-align: left;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   white-space: nowrap;
 }
 .showdown-enterprise-table tr:hover td {
@@ -709,7 +708,7 @@
 .showdown-changelog-title {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
 }
 .showdown-changelog-desc {
