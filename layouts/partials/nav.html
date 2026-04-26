@@ -1,7 +1,7 @@
 <nav class="site-nav" data-pagefind-ignore>
   <div class="nav-inner">
     <a href="/" class="site-logo">
-      <span class="site-logo-img-wrap border-beam-circle"><img src="/images/logo_agtc_dark_1.webp" alt="A Guide to Cloud & AI" class="site-logo-img" width="32" height="32"></span>
+      <span class="site-logo-img-wrap"><img src="/images/logo_agtc_dark_1.webp" alt="A Guide to Cloud & AI" class="site-logo-img" width="32" height="32"></span>
       A Guide to <span>Cloud</span> & <span>AI</span>
     </a>
     <span class="nav-live" id="nav-live" style="display:none" aria-label="Live visitors on site">
@@ -118,7 +118,7 @@
                 {{ $catTools := where (where $allNavTools "is_tool" true) "category" $cat.key }}
                 {{ if gt (len $catTools) 0 }}
                 <div class="mega-toolkit-cat">
-                  <div class="mega-toolkit-cat-label" style="--cat-accent: {{ (index $catTools 0).color }}">{{ $cat.emoji }} {{ $cat.label }}</div>
+                  <div class="mega-toolkit-cat-label">{{ $cat.emoji }} {{ $cat.label }}</div>
                   {{ range $i, $tool := $catTools }}
                     {{ if lt $i 6 }}
                     <a href="{{ $tool.url }}"{{ if hasPrefix $.RelPermalink $tool.url }} class="nav-active"{{ end }}>{{ $tool.name }}</a>
@@ -192,7 +192,7 @@
         </div>
         {{ end }}
         {{ end }}
-        <a href="/pricing/" class="drawer-link" style="margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08);">💳 Pricing</a>
+        <a href="/pricing/" class="drawer-link drawer-link--divider">💳 Pricing</a>
       </div>
 
       {{/* ── Explore tab ── */}}
