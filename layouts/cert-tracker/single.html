@@ -1,307 +1,227 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
-{{/* Compute per-page counter base from exam level + code number */}}
-{{ $numStr := replaceRE `[^0-9]` "" .Params.exam_code }}
-{{ $examNum := int $numStr }}
-{{ $levelBase := 120 }}
-{{ if eq .Params.exam_level "beginner" }}{{ $levelBase = 280 }}{{ else if eq .Params.exam_level "intermediate" }}{{ $levelBase = 180 }}{{ end }}
-{{ $cBase := add $levelBase (mod (mul $examNum 7) 120) }}
-{{ partial "tool-hero.html" (dict "title" (printf "%s Study Guide" .Params.exam_code) "subtitle" .Params.exam_title "accent" "#10B981" "counter_base" $cBase "counter_verb" "study sessions") }}
+{{/* 🌸 Zen Z3 — Study Guide Reading Room (Stripe Docs pattern) */}}
 
-<div class="cert-container cert-single">
+{{ $vendorSlug := .Params.vendor | default "microsoft" }}
+{{ $vendorName := "" }}
+{{ range site.Data.vendors.vendor }}
+  {{ if eq .slug $vendorSlug }}{{ $vendorName = .short_name }}{{ end }}
+{{ end }}
+{{ $guidedSlug := .Params.guided_slug | default (lower .Params.exam_code) }}
+{{ $guidedCert := index site.Data.all_certs.cert_map $guidedSlug }}
+{{ if not $guidedCert }}{{ $guidedCert = index site.Data.guided_certs $guidedSlug }}{{ end }}
 
-  {{/* Breadcrumbs — vendor-aware */}}
-  {{ $vendorName := "" }}
-  {{ $vendorSlug := .Params.vendor | default "microsoft" }}
-  {{ range site.Data.vendors.vendor }}
-    {{ if eq .slug $vendorSlug }}{{ $vendorName = .short_name }}{{ end }}
-  {{ end }}
-  <nav class="cert-breadcrumb" aria-label="Breadcrumb">
-    <a href="/">Home</a> <span>›</span>
-    <a href="/cert-tracker/">Certifications</a> <span>›</span>
-    {{ if and $vendorName (ne $vendorSlug "microsoft") }}
-    <a href="/cert-tracker/?vendor={{ $vendorSlug }}">{{ $vendorName }}</a> <span>›</span>
+<div class="zt-reading zt-reading--cert">
+
+  {{/* ── LEFT: Cert navigation sidebar ── */}}
+  <aside class="zt-sidebar zt-sidebar--cert" aria-label="Certification navigation">
+    {{ partial "cert-nav.html" . }}
+  </aside>
+
+  {{/* ── CENTER: Study guide content ── */}}
+  <article class="zt-reading-content">
+
+    {{/* Header — replaces hero */}}
+    <nav class="zt-cert-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/study-guides/">Study Guides</a> <span>›</span>
+      {{ if and $vendorName (ne $vendorSlug "microsoft") }}
+      <a href="/study-guides/#vendor-{{ $vendorSlug }}">{{ $vendorName }}</a> <span>›</span>
+      {{ end }}
+      <span>{{ .Params.exam_code }}</span>
+    </nav>
+
+    <h1 class="zt-cert-title">{{ .Params.exam_code }}: {{ .Params.exam_title }}</h1>
+
+    <div class="zt-cert-badges">
+      <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">
+        {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if eq .Params.exam_level "intermediate" }}Associate{{ else }}Expert{{ end }}
+      </span>
+      <span class="zt-cert-badge zt-cert-badge--category">{{ .Params.exam_category }}</span>
+      {{ if and $vendorName (ne $vendorSlug "microsoft") }}<span class="zt-cert-badge">{{ $vendorName }}</span>{{ end }}
+      {{ if eq .Params.exam_status "retiring" }}<span class="zt-cert-badge zt-cert-badge--retiring">⚠️ Retiring</span>{{ end }}
+      {{ if eq .Params.exam_status "retired" }}<span class="zt-cert-badge zt-cert-badge--retired">🚫 Retired</span>{{ end }}
+      {{ if eq .Params.exam_status "beta" }}<span class="zt-cert-badge zt-cert-badge--beta">🧪 Beta</span>{{ end }}
+      {{ if eq .Params.exam_status "upcoming" }}<span class="zt-cert-badge zt-cert-badge--upcoming">🔜 Upcoming</span>{{ end }}
+    </div>
+
+    {{/* Status banner */}}
+    {{ if eq .Params.exam_status "retiring" }}
+    <div class="zt-cert-status zt-cert-status--retiring">
+      ⚠️ <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
+      {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+      {{ with .Params.retirement_date }}<div id="cert-countdown" data-date="{{ . }}"></div>{{ end }}
+    </div>
+    {{ else if eq .Params.exam_status "retired" }}
+    <div class="zt-cert-status zt-cert-status--retired">
+      🚫 <strong>This exam was retired{{ with .Params.retirement_date }} on {{ . }}{{ end }}</strong>
+      {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+    </div>
+    {{ else if eq .Params.exam_status "beta" }}
+    <div class="zt-cert-status zt-cert-status--beta">
+      🧪 <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — typically offered at 80% discount.
+      {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
+    </div>
+    {{ else if eq .Params.exam_status "upcoming" }}
+    <div class="zt-cert-status zt-cert-status--upcoming">
+      🔜 <strong>This exam has been announced but is not yet available.</strong>
+    </div>
     {{ end }}
-    <span>{{ .Params.exam_code }}</span>
-  </nav>
 
-  {{/* Status banner */}}
-  {{ if eq .Params.exam_status "retiring" }}
-  <div class="cert-status-banner cert-status-retiring">
-    ⚠️ <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
-    {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
-    {{ with .Params.retirement_date }}<div class="cert-countdown" id="cert-countdown" data-date="{{ . }}"></div>{{ end }}
-  </div>
-  {{ else if eq .Params.exam_status "retired" }}
-  <div class="cert-status-banner cert-status-retired">
-    🚫 <strong>This exam was retired {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
-    {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
-  </div>
-  {{ else if eq .Params.exam_status "beta" }}
-  <div class="cert-status-banner cert-status-beta">
-    🧪 <strong>Currently in Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong>
-    — Beta exams typically offered at 80% discount.
-    {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
-  </div>
-  {{ else if eq .Params.exam_status "upcoming" }}
-  <div class="cert-status-banner cert-status-beta">
-    🔜 <strong>This exam has been announced but is not yet available.</strong>
-    Check the official exam page for availability updates.
-  </div>
-  {{ end }}
-
-  {{/* Exam meta badges */}}
-  <div class="cert-single-meta">
-    <span class="cert-badge cert-badge-{{ .Params.exam_level }}">
-      {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if eq .Params.exam_level "intermediate" }}Associate{{ else }}Expert{{ end }}
-    </span>
-    <span class="cert-badge cert-badge-category">{{ .Params.exam_category }}</span>
-    {{ if and $vendorName (ne $vendorSlug "microsoft") }}<span class="cert-badge" style="background:rgba(255,255,255,0.06)">{{ $vendorName }}</span>{{ end }}
-    {{ if eq .Params.exam_status "retiring" }}<span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>{{ end }}
-    {{ if eq .Params.exam_status "retired" }}<span class="cert-badge cert-badge-retired">🚫 Retired</span>{{ end }}
-    {{ if eq .Params.exam_status "beta" }}<span class="cert-badge cert-badge-beta">🧪 Beta</span>{{ end }}
-    {{ if eq .Params.exam_status "upcoming" }}<span class="cert-badge cert-badge-upcoming">🔜 Upcoming</span>{{ end }}
-  </div>
-
-  {{/* ═══════ PRODUCT LAYOUT: 2-column grid ═══════ */}}
-  {{ $guidedSlug := .Params.guided_slug | default (lower .Params.exam_code) }}
-  {{ $certMapData := index site.Data.all_certs.cert_map $guidedSlug }}
-  {{ $guidedCert := $certMapData }}
-  {{ if not $guidedCert }}{{ $guidedCert = index site.Data.guided_certs $guidedSlug }}{{ end }}
-
-  <div class="cert-product-layout">
-    {{/* ── LEFT: Main Content with Tabs ── */}}
-    <div class="cert-product-main">
-
-      {{/* Tab bar */}}
-      <div class="cert-product-tabs" role="tablist">
-        <button class="cert-product-tab active" role="tab" data-ptab="study-guide" aria-selected="true">📚 Study Guide</button>
-        {{ if $guidedCert }}<button class="cert-product-tab" role="tab" data-ptab="practice" aria-selected="false">🎯 Practice Exam</button>{{ end }}
-        <button class="cert-product-tab" role="tab" data-ptab="resources" aria-selected="false">📖 Resources</button>
-        <button class="cert-product-tab" role="tab" data-ptab="faq" aria-selected="false">❓ FAQ</button>
+    {{/* Mobile cert nav (hidden on desktop) */}}
+    <details class="zt-toc-mobile">
+      <summary>Browse certifications</summary>
+      <div class="zt-toc-mobile-inner">
+        {{ partial "cert-nav.html" . }}
       </div>
+    </details>
 
-      {{/* ── Tab: Study Guide (DEFAULT) ── */}}
-      <div class="cert-product-panel active" id="ptab-study-guide">
-        {{/* Prep time + print */}}
-        <div class="cert-toolbar">
-          <span class="cert-prep-time" id="cert-prep-time"></span>
-          <button class="cert-print-btn" onclick="window.print()" aria-label="Print study checklist">🖨️ Print Checklist</button>
-        </div>
+    {{/* Study progress bar */}}
+    <div class="cert-progress-wrap" id="cert-progress-wrap" style="display:none">
+      <div class="cert-progress-header">
+        <span>📚 Your Study Progress</span>
+        <span class="cert-progress-text" id="cert-progress-text">0%</span>
+      </div>
+      <div class="cert-progress-bar"><div class="cert-progress-fill" id="cert-progress-fill"></div></div>
+      <button class="cert-progress-reset" id="cert-progress-reset">Reset progress</button>
+    </div>
 
-        {{/* Study progress bar */}}
-        <div class="cert-progress-wrap" id="cert-progress-wrap" style="display:none">
-          <div class="cert-progress-header">
-            <span>📚 Your Study Progress</span>
-            <span class="cert-progress-text" id="cert-progress-text">0%</span>
-          </div>
-          <div class="cert-progress-bar"><div class="cert-progress-fill" id="cert-progress-fill"></div></div>
-          <button class="cert-progress-reset" id="cert-progress-reset">Reset progress</button>
-        </div>
+    {{/* ── Study guide body (one scrollable page, no tabs) ── */}}
+    <div class="zt-reading-body">
 
-        {{/* Interactive Study Guide Curriculum — Microsoft certs with modules */}}
-        {{ $studyModules := index site.Data.study_modules $guidedSlug }}
-        {{ if $studyModules }}
-        <div class="cert-curriculum">
-          <h2 style="font-size:1.15rem;margin-bottom:0.25rem">📖 Interactive Study Guide</h2>
-          <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:1rem">
-            {{ len $studyModules }} modules with flashcards, quizzes, and ELI5 explanations.
-            <span style="color:#10B981">🆓 = Free</span>
-          </p>
-          {{/* Group modules by domain */}}
-          {{ $currentDomain := "" }}
-          {{ $domainNum := 0 }}
-          {{ range $studyModules }}
-            {{ if ne .domain $currentDomain }}
-              {{ if ne $currentDomain "" }}</div>{{ end }}
-              {{ $currentDomain = .domain }}
-              {{ $domainNum = .domain_number }}
-              <details class="cert-curriculum-domain"{{ if eq .domain_number 1 }} open{{ end }}>
-                <summary class="cert-curriculum-domain-title">
-                  <span>Domain {{ .domain_number }}: {{ .domain }}</span>
-                  <span class="cert-curriculum-chevron">›</span>
-                </summary>
-                <div class="cert-curriculum-modules">
-            {{ end }}
-            <a href="{{ .url }}" class="cert-curriculum-module" target="_blank" rel="noopener">
-              {{ if .is_free }}<span class="cert-curriculum-free">🆓</span>{{ else }}<span class="cert-curriculum-paid">🔒</span>{{ end }}
-              <span class="cert-curriculum-module-title">{{ .title }}</span>
-              {{ if .estimated_minutes }}<span class="cert-curriculum-time">{{ .estimated_minutes }}m</span>{{ end }}
-            </a>
+      {{/* Interactive Study Guide Curriculum */}}
+      {{ $studyModules := index site.Data.study_modules $guidedSlug }}
+      {{ if $studyModules }}
+      <div class="cert-curriculum">
+        <h2>📖 Interactive Study Guide</h2>
+        <p class="zt-cert-intro">
+          {{ len $studyModules }} modules with flashcards, quizzes, and ELI5 explanations.
+          <span class="zt-cert-free-label">🆓 = Free</span>
+        </p>
+        {{ $currentDomain := "" }}
+        {{ range $studyModules }}
+          {{ if ne .domain $currentDomain }}
+            {{ if ne $currentDomain "" }}</div>{{ end }}
+            {{ $currentDomain = .domain }}
+            <details class="cert-curriculum-domain"{{ if eq .domain_number 1 }} open{{ end }}>
+              <summary class="cert-curriculum-domain-title">
+                <span>Domain {{ .domain_number }}: {{ .domain }}</span>
+                <span class="cert-curriculum-chevron">›</span>
+              </summary>
+              <div class="cert-curriculum-modules">
           {{ end }}
-          {{ if ne $currentDomain "" }}</div></details>{{ end }}
-        </div>
+          <a href="{{ .url }}" class="cert-curriculum-module" target="_blank" rel="noopener">
+            {{ if .is_free }}<span class="cert-curriculum-free">🆓</span>{{ else }}<span class="cert-curriculum-paid">🔒</span>{{ end }}
+            <span class="cert-curriculum-module-title">{{ .title }}</span>
+            {{ if .estimated_minutes }}<span class="cert-curriculum-time">{{ .estimated_minutes }}m</span>{{ end }}
+          </a>
         {{ end }}
-
-        {{/* Main study guide content (from .md body) */}}
-        <div class="cert-single-content">
-          {{ .Content }}
-        </div>
-      </div>
-
-      {{/* ── Tab: Practice Exam ── */}}
-      {{ if $guidedCert }}
-      <div class="cert-product-panel" id="ptab-practice">
-        <div class="guided-promo-stats" style="margin-bottom:1.5rem">
-          <div class="guided-promo-stat">
-            <span class="guided-promo-stat-num">{{ $guidedCert.questions }}</span>
-            <span class="guided-promo-stat-label">Practice Qs</span>
-          </div>
-          <div class="guided-promo-stat">
-            <span class="guided-promo-stat-num">{{ $guidedCert.domains }}</span>
-            <span class="guided-promo-stat-label">Domains</span>
-          </div>
-          <div class="guided-promo-stat">
-            <span class="guided-promo-stat-num">20</span>
-            <span class="guided-promo-stat-label">Free Questions</span>
-          </div>
-          {{ if $guidedCert.modules }}
-          <div class="guided-promo-stat">
-            <span class="guided-promo-stat-num">{{ $guidedCert.modules }}</span>
-            <span class="guided-promo-stat-label">Study Modules</span>
-          </div>
-          {{ end }}
-        </div>
-
-        <h2 style="font-size:1.2rem;margin-bottom:0.75rem">Practice {{ .Params.exam_code }} with exam simulation</h2>
-        <p style="color:rgba(255,255,255,0.65);margin-bottom:1rem">Every question includes detailed explanations and maps to official exam objectives. Start with 20 free questions — no account needed.</p>
-
-        <div class="guided-promo-features" style="margin-bottom:1.5rem">
-          <span class="guided-promo-pill">🧠 Spaced Repetition</span>
-          <span class="guided-promo-pill">⏱️ Exam Simulation</span>
-          <span class="guided-promo-pill">📊 Progress Tracking</span>
-          <span class="guided-promo-pill">📝 Detailed Explanations</span>
-          <span class="guided-promo-pill">🃏 Flashcards</span>
-          <span class="guided-promo-pill">🏆 XP & Badges</span>
-        </div>
-
-        <div class="guided-promo-ctas">
-          <a href="/guided/{{ $guidedSlug }}/practice/" class="guided-promo-btn guided-promo-btn-secondary">Try 20 Free Questions →</a>
-          <a href="/guided/{{ $guidedSlug }}/" class="guided-promo-btn guided-promo-btn-primary">Start Practice Exam →</a>
-        </div>
-        <p class="guided-promo-note" style="margin-top:0.75rem">No account needed · Free forever · Study guides + 20 practice questions included</p>
+        {{ if ne $currentDomain "" }}</div></details>{{ end }}
       </div>
       {{ end }}
 
-      {{/* ── Tab: Resources ── */}}
-      <div class="cert-product-panel" id="ptab-resources">
-        {{/* Study Plan Generator */}}
-        {{ if not (or (eq .Params.exam_status "beta") (eq .Params.exam_status "upcoming")) }}
-        <details class="cert-planner" id="cert-planner">
-          <summary class="cert-planner-toggle">📅 Generate a Study Plan</summary>
-          <div class="cert-planner-body">
-            <label class="cert-planner-label">When is your exam?
-              <input type="date" id="cert-exam-date" class="cert-planner-input">
-            </label>
-            <button class="cert-planner-btn" id="cert-planner-go">Generate Plan</button>
-            <div id="cert-plan-output"></div>
-          </div>
-        </details>
-        {{ end }}
-
-        {{/* Video Resources */}}
-        {{ if or .Params.cert_video_id .Params.qa_video_id }}
-        {{ $videoCount := 0 }}{{ with .Params.cert_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}{{ with .Params.qa_video_id }}{{ $videoCount = add $videoCount 1 }}{{ end }}
-        <div class="cert-video-section">
-          <h2 class="cert-video-heading">Watch & Learn</h2>
-          <p class="cert-video-intro">Video courses to help you prepare — watch to learn, then test yourself with practice questions.</p>
-          <div class="cert-video-grid{{ if eq $videoCount 1 }} cert-video-single{{ end }}">
-            {{ with .Params.cert_video_id }}
-            <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Full Course video">
-              <div class="cert-video-thumb">
-                <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Full Course thumbnail" loading="lazy" decoding="async" width="480" height="270">
-                <div class="cert-video-play" aria-hidden="true">
-                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
-                </div>
-                <span class="cert-video-badge cert-video-badge-course">Full Course</span>
-              </div>
-              <div class="cert-video-info">
-                <span class="cert-video-title">{{ $.Params.exam_code }} Full Course — Certification Training</span>
-              </div>
-            </a>
-            {{ end }}
-            {{ with .Params.qa_video_id }}
-            <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Mock Exam Questions video">
-              <div class="cert-video-thumb">
-                <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Mock Exam Questions thumbnail" loading="lazy" decoding="async" width="480" height="270">
-                <div class="cert-video-play" aria-hidden="true">
-                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
-                </div>
-                <span class="cert-video-badge cert-video-badge-qa">Mock Exam</span>
-              </div>
-              <div class="cert-video-info">
-                <span class="cert-video-title">{{ $.Params.exam_code }} Mock Exam — Practice Questions with Answers</span>
-              </div>
-            </a>
-            {{ end }}
-          </div>
-        </div>
-        {{ end }}
-
-        {{/* Related exams */}}
-        <div id="cert-related" class="cert-detail-section" style="display:none">
-          <h2 id="what-to-study-next">What to Study Next</h2>
-          <p style="color:var(--cert-text-dim);font-size:0.88rem;margin-bottom:0.75rem;">Based on this exam, here are related certifications to consider:</p>
-          <div id="cert-related-list"></div>
-        </div>
-
-        {{/* Cert Compass cross-link (Microsoft only) */}}
-        {{ if eq $vendorSlug "microsoft" }}
-        {{ $examCode := .Params.exam_code | default "" }}
-        <div class="cert-compass-cta" style="margin:1.5rem 0;padding:1rem;border-radius:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);text-align:center">
-          <p style="font-size:0.88rem;color:#fff;margin:0 0 0.5rem"><strong>🧭 How does {{ $examCode }} compare across AWS & Google Cloud?</strong></p>
-          <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin:0 0 0.75rem">See closest matches, skill overlap, and cost comparison.</p>
-          <a href="/cert-compass/?tab=matches" style="display:inline-block;padding:0.5rem 1.2rem;border-radius:8px;background:#6366F1;color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none">Open Cert Compass →</a>
-        </div>
-        {{ end }}
+      {{/* Main study guide content (markdown body) */}}
+      <div class="cert-single-content">
+        {{ .Content }}
       </div>
 
-      {{/* ── Tab: FAQ ── */}}
-      <div class="cert-product-panel" id="ptab-faq">
-        {{ if .Params.faq }}
+      {{/* Video Resources */}}
+      {{ if or .Params.cert_video_id .Params.qa_video_id }}
+      <div class="cert-video-section">
+        <h2>🎬 Watch & Learn</h2>
+        <p class="zt-cert-intro">Video courses to help you prepare.</p>
+        <div class="cert-video-grid{{ if not (and .Params.cert_video_id .Params.qa_video_id) }} cert-video-single{{ end }}">
+          {{ with .Params.cert_video_id }}
+          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Full Course">
+            <div class="cert-video-thumb">
+              <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Full Course" loading="lazy" decoding="async" width="480" height="270">
+              <div class="cert-video-play" aria-hidden="true">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+              </div>
+              <span class="cert-video-badge cert-video-badge-course">Full Course</span>
+            </div>
+            <div class="cert-video-info"><span class="cert-video-title">{{ $.Params.exam_code }} Full Course</span></div>
+          </a>
+          {{ end }}
+          {{ with .Params.qa_video_id }}
+          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Mock Exam">
+            <div class="cert-video-thumb">
+              <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Mock Exam" loading="lazy" decoding="async" width="480" height="270">
+              <div class="cert-video-play" aria-hidden="true">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+              </div>
+              <span class="cert-video-badge cert-video-badge-qa">Mock Exam</span>
+            </div>
+            <div class="cert-video-info"><span class="cert-video-title">{{ $.Params.exam_code }} Mock Exam</span></div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{/* Related exams (JS-populated) */}}
+      <div id="cert-related" class="cert-detail-section" style="display:none">
+        <h2>🎯 What to Study Next</h2>
+        <div id="cert-related-list"></div>
+      </div>
+
+      {{/* Cert Compass cross-link (Microsoft only) */}}
+      {{ if eq $vendorSlug "microsoft" }}
+      <div class="zt-cert-compass-cta">
+        <p><strong>🧭 How does {{ .Params.exam_code }} compare across AWS & Google Cloud?</strong></p>
+        <a href="/cert-compass/?tab=matches" class="zt-cert-btn zt-cert-btn--accent">Open Cert Compass →</a>
+      </div>
+      {{ end }}
+
+      {{/* FAQ */}}
+      {{ if .Params.faq }}
+      <div class="zt-cert-faq">
+        <h2>❓ Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
-        <details{{ if eq $i 0 }} open{{ end }} style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
-          <summary style="color:var(--tool-accent, #10B981);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.6;padding:0 1.25rem 1rem">{{ $q.answer }}</p>
+        <details{{ if eq $i 0 }} open{{ end }} class="zt-cert-faq-item">
+          <summary>{{ add $i 1 }}. {{ $q.question }}</summary>
+          <p>{{ $q.answer }}</p>
         </details>
         {{ end }}
-        {{ else }}
-        <p style="color:rgba(255,255,255,0.5)">No FAQ available for this exam yet. <a href="/feedback/" style="color:#10B981">Suggest a question →</a></p>
-        {{ end }}
-      </div>
-
-    </div>{{/* end cert-product-main */}}
-
-    {{/* ── RIGHT: Sticky Sidebar ── */}}
-    <aside class="cert-product-sidebar" id="cert-sidebar">
-      <div class="cert-sidebar-code">{{ .Params.exam_code }}</div>
-      <div class="cert-sidebar-title">{{ .Params.exam_title }}</div>
-
-      {{ if $guidedCert }}
-      <div class="cert-sidebar-stats">
-        <div class="cert-sidebar-stat">
-          <span class="cert-sidebar-stat-num">{{ $guidedCert.questions }}</span>
-          <span class="cert-sidebar-stat-label">Questions</span>
-        </div>
-        <div class="cert-sidebar-stat">
-          <span class="cert-sidebar-stat-num">{{ $guidedCert.domains }}</span>
-          <span class="cert-sidebar-stat-label">Domains</span>
-        </div>
-        <div class="cert-sidebar-stat">
-          <span class="cert-sidebar-stat-num">20</span>
-          <span class="cert-sidebar-stat-label">Free Qs</span>
-        </div>
-      </div>
-
-      <div class="cert-sidebar-price">From <strong>${{ $guidedCert.price_practice }}</strong>/cert</div>
-
-      <div class="cert-sidebar-ctas">
-        <a href="/guided/{{ $guidedSlug }}/practice/" class="cert-sidebar-btn cert-sidebar-btn-secondary">Try Free →</a>
-        <a href="/guided/{{ $guidedSlug }}/" class="cert-sidebar-btn cert-sidebar-btn-primary">Buy Now →</a>
       </div>
       {{ end }}
 
-      <ul class="cert-sidebar-features">
+    </div>{{/* end zt-reading-body */}}
+
+    {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Certifications") }}
+  </article>
+
+  {{/* ── RIGHT: Practice exam companion sidebar ── */}}
+  <aside class="zt-companion zt-companion--cert" id="cert-sidebar" aria-label="Practice exam">
+    <div class="zt-cert-exam-card">
+      <div class="zt-cert-exam-code">{{ .Params.exam_code }}</div>
+      <div class="zt-cert-exam-title">{{ .Params.exam_title }}</div>
+
+      {{ if $guidedCert }}
+      <div class="zt-cert-exam-stats">
+        <div class="zt-cert-exam-stat">
+          <span class="zt-cert-exam-stat-num">{{ $guidedCert.questions }}</span>
+          <span class="zt-cert-exam-stat-label">Questions</span>
+        </div>
+        <div class="zt-cert-exam-stat">
+          <span class="zt-cert-exam-stat-num">{{ $guidedCert.domains }}</span>
+          <span class="zt-cert-exam-stat-label">Domains</span>
+        </div>
+        <div class="zt-cert-exam-stat">
+          <span class="zt-cert-exam-stat-num">20</span>
+          <span class="zt-cert-exam-stat-label">Free Qs</span>
+        </div>
+      </div>
+
+      <div class="zt-cert-exam-price">From <strong>${{ $guidedCert.price_practice }}</strong>/cert</div>
+
+      <div class="zt-cert-exam-ctas">
+        <a href="/guided/{{ $guidedSlug }}/practice/" class="zt-cert-btn zt-cert-btn--secondary">Try Free →</a>
+        <a href="/guided/{{ $guidedSlug }}/" class="zt-cert-btn zt-cert-btn--primary">Start Practice →</a>
+      </div>
+      {{ end }}
+
+      <ul class="zt-cert-exam-features">
         <li>✓ Exam simulation mode</li>
         <li>✓ Spaced repetition</li>
         <li>✓ Progress tracking</li>
@@ -310,16 +230,27 @@
       </ul>
 
       {{ if $guidedCert }}
-      <div class="cert-sidebar-plans">
-        <a href="/pricing/">See all plans →</a>
-      </div>
+      <div class="zt-cert-exam-plans"><a href="/pricing/">See all plans →</a></div>
       {{ end }}
-    </aside>
+    </div>
 
-  </div>{{/* end cert-product-layout */}}
+    {{/* Prep time estimate */}}
+    <div class="zt-cert-prep" id="cert-prep-time"></div>
 
-  {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Certifications") }}
-</div>
+    {{/* Study Plan Generator */}}
+    {{ if not (or (eq .Params.exam_status "beta") (eq .Params.exam_status "upcoming")) }}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">📅 Study planner</p>
+      <label class="zt-cert-planner-label">Exam date:
+        <input type="date" id="cert-exam-date" class="zt-cert-date-input">
+      </label>
+      <button id="cert-planner-go" class="zt-cert-btn zt-cert-btn--secondary" style="margin-top:var(--space-2,8px);width:100%">Generate Plan</button>
+      <div id="cert-plan-output"></div>
+    </div>
+    {{ end }}
+  </aside>
+
+</div>{{/* end zt-reading */}}
 
 {{/* Mobile floating bottom bar */}}
 {{ if $guidedCert }}
@@ -329,7 +260,7 @@
 </div>
 {{ end }}
 
-{{/* SEO structured data — vendor-aware */}}
+{{/* SEO structured data */}}
 {{ $vendorOrgName := "Microsoft" }}
 {{ $vendorOrgUrl := "https://learn.microsoft.com" }}
 {{ range site.Data.vendors.vendor }}
@@ -354,47 +285,31 @@
   }
 }
 </script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+
 <script>
 (function(){
   var code = {{ .Params.exam_code | jsonify }};
   var level = {{ .Params.exam_level | jsonify }};
   var status = {{ (default "active" .Params.exam_status) | jsonify }};
-
-  // ── Product tab switching ──
-  document.querySelectorAll('.cert-product-tab').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var target = this.getAttribute('data-ptab');
-      document.querySelectorAll('.cert-product-tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      document.querySelectorAll('.cert-product-panel').forEach(function(p) { p.classList.remove('active'); });
-      this.classList.add('active');
-      this.setAttribute('aria-selected', 'true');
-      var panel = document.getElementById('ptab-' + target);
-      if (panel) panel.classList.add('active');
-    });
-  });
-
-  // ── Mobile floating bar: show when sidebar not visible ──
-  var floatBar = document.getElementById('cert-floating-bar');
-  var sidebar = document.getElementById('cert-sidebar');
-  if (floatBar && sidebar) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        floatBar.classList.toggle('visible', !entry.isIntersecting);
-      });
-    }, { threshold: 0 });
-    observer.observe(sidebar);
-  } else if (floatBar) {
-    // No sidebar (mobile) — show after scrolling past hero
-    var hero = document.querySelector('.tool-hero');
-    if (hero) {
-      var heroObs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          floatBar.classList.toggle('visible', !entry.isIntersecting);
-        });
-      }, { threshold: 0 });
-      heroObs.observe(hero);
-    }
-  }
 
   // ── Prep time estimate ──
   var prepEl = document.getElementById("cert-prep-time");
@@ -402,7 +317,7 @@
     var prepTimes = { beginner: "2–4 weeks", intermediate: "4–8 weeks", advanced: "6–12 weeks" };
     var t = prepTimes[level];
     if (t && status !== "beta" && status !== "upcoming") {
-      prepEl.innerHTML = '⏱️ Typical prep time: <strong>' + t + '</strong>';
+      prepEl.innerHTML = '⏱️ Typical prep: <strong>' + t + '</strong>';
     }
   }
 
@@ -412,10 +327,22 @@
     var retDate = new Date(cdEl.dataset.date + "T23:59:59");
     var diff = retDate - new Date();
     if (diff > 0) {
-      cdEl.innerHTML = '<strong>' + Math.ceil(diff / 86400000) + ' days remaining</strong> to take this exam';
+      cdEl.innerHTML = '<strong>' + Math.ceil(diff / 86400000) + ' days remaining</strong>';
     } else {
-      cdEl.innerHTML = '<strong>This exam has been retired.</strong>';
+      cdEl.innerHTML = '<strong>Retired.</strong>';
     }
+  }
+
+  // ── Mobile floating bar ──
+  var floatBar = document.getElementById('cert-floating-bar');
+  var sidebar = document.getElementById('cert-sidebar');
+  if (floatBar && sidebar) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        floatBar.classList.toggle('visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    observer.observe(sidebar);
   }
 
   // ── Study progress checklist ──
@@ -500,46 +427,38 @@
       });
 
       if (domains.length === 0) {
-        document.getElementById("cert-plan-output").innerHTML = '<p style="color:var(--cert-text-dim)">Could not detect skill domains on this page.</p>';
+        document.getElementById("cert-plan-output").innerHTML = '<p style="color:var(--text-muted)">Could not detect skill domains.</p>';
         return;
       }
 
       var totalObj = domains.reduce(function(s, d) { return s + d.objectives; }, 0);
-      var plan = [];
-      var domIdx = 0;
-      var remaining = domains[0].objectives;
-
+      var plan = []; var domIdx = 0; var remaining = domains[0].objectives;
       for (var w = 0; w < weeks; w++) {
         var weekObj = Math.round(totalObj / weeks);
-        var weekItems = [];
-        var allocated = 0;
+        var weekItems = []; var allocated = 0;
         while (domIdx < domains.length && allocated < weekObj) {
           var take = Math.min(remaining, weekObj - allocated);
-          weekItems.push({ name: domains[domIdx].name, count: take, total: domains[domIdx].objectives });
-          allocated += take;
-          remaining -= take;
+          weekItems.push({ name: domains[domIdx].name, count: take });
+          allocated += take; remaining -= take;
           if (remaining <= 0) { domIdx++; if (domIdx < domains.length) remaining = domains[domIdx].objectives; }
         }
         plan.push({ week: w + 1, items: weekItems });
       }
       while (domIdx < domains.length) {
-        plan[plan.length - 1].items.push({ name: domains[domIdx].name, count: remaining, total: domains[domIdx].objectives });
+        plan[plan.length - 1].items.push({ name: domains[domIdx].name, count: remaining });
         domIdx++; if (domIdx < domains.length) remaining = domains[domIdx].objectives;
       }
 
-      var html = '<div class="cert-plan-result">';
-      html += '<p><strong>' + weeks + '-week study plan</strong> for ' + code + ' (' + diffDays + ' days until exam)</p>';
+      var html = '<div class="cert-plan-result"><p><strong>' + weeks + '-week plan</strong> (' + diffDays + ' days)</p>';
       plan.forEach(function(w) {
         html += '<div class="cert-plan-week"><strong>Week ' + w.week + '</strong>';
-        if (w.week === weeks) html += ' — Review + Practice Assessment';
+        if (w.week === weeks) html += ' — Review';
         html += '<ul>';
         w.items.forEach(function(item) {
-          var shortName = item.name.length > 50 ? item.name.substring(0, 47) + "..." : item.name;
-          html += '<li>' + shortName + ' <span style="color:var(--cert-accent)">(' + item.count + ' objectives)</span></li>';
+          html += '<li>' + (item.name.length > 40 ? item.name.substring(0,37) + '...' : item.name) + ' (' + item.count + ')</li>';
         });
         html += '</ul></div>';
       });
-      html += '<p style="color:var(--cert-text-dim);font-size:0.82rem;margin-top:0.5rem;">💡 Reserve the final week for practice assessments and review of weak areas.</p>';
       html += '</div>';
       document.getElementById("cert-plan-output").innerHTML = html;
     });
@@ -553,16 +472,12 @@
       if (!/^[\w-]{11}$/.test(yt)) return;
       var thumb = card.querySelector(".cert-video-thumb");
       if (!thumb || thumb.querySelector("iframe")) return;
-      var grid = card.closest(".cert-video-grid");
-      if (grid) { grid.querySelectorAll("iframe").forEach(function(f) { f.parentNode.innerHTML = ""; }); }
       var iframe = document.createElement("iframe");
       iframe.src = "https://www.youtube-nocookie.com/embed/" + yt + "?autoplay=1&rel=0";
       iframe.setAttribute("allow", "autoplay; encrypted-media");
       iframe.setAttribute("allowfullscreen", "");
-      iframe.setAttribute("title", card.querySelector(".cert-video-title").textContent);
       thumb.innerHTML = "";
       thumb.appendChild(iframe);
-      iframe.focus();
     });
   });
 
@@ -573,8 +488,7 @@
       var siblings = [];
       var el = h3.nextElementSibling;
       while (el && el.tagName !== "H3" && el.tagName !== "H2" && el.tagName !== "HR") {
-        siblings.push(el);
-        el = el.nextElementSibling;
+        siblings.push(el); el = el.nextElementSibling;
       }
       if (siblings.length < 2) return;
       var wrapper = document.createElement("div");
@@ -601,19 +515,25 @@
       if (!d || !d.related_exams || !d.related_exams.length) return;
       var levelLabels = {beginner:"Fundamentals",intermediate:"Associate",advanced:"Expert"};
       var html = d.related_exams.map(function(r){
-        var st = "";
-        if (r.status === "retiring") st = ' <span class="cert-badge cert-badge-retiring">⚠️ Retiring</span>';
-        else if (r.status === "beta") st = ' <span class="cert-badge cert-badge-beta">🧪 Beta</span>';
         return '<a href="/cert-tracker/' + r.code.toLowerCase() + '/" class="cert-related-card">'
           + '<span class="cert-card-code">' + r.code + '</span> '
           + '<span class="cert-card-title">' + r.title + '</span>'
-          + '<span class="cert-badge cert-badge-' + r.level + '">' + (levelLabels[r.level]||r.level) + '</span>'
-          + st + '</a>';
+          + '<span class="zt-cert-badge zt-cert-badge--' + r.level + '">' + (levelLabels[r.level]||r.level) + '</span>'
+          + '</a>';
       }).join("");
       document.getElementById("cert-related-list").innerHTML = html;
       document.getElementById("cert-related").style.display = "block";
     })
     .catch(function(){});
+
+  // ── Left nav: scroll active cert into view ──
+  var nav = document.querySelector('.zt-sidebar--cert .zt-cert-nav');
+  if (nav) {
+    var activeLink = nav.querySelector('.zt-cert-link.active');
+    if (activeLink) {
+      setTimeout(function() { activeLink.scrollIntoView({ block: 'center', behavior: 'instant' }); }, 100);
+    }
+  }
 })();
 </script>
 {{ end }}

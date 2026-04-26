@@ -1,0 +1,164 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — Study Guides Landing Page */}}
+
+{{ $certPages := where site.RegularPages "Section" "cert-tracker" }}
+{{ $vendors := site.Data.vendors.vendor }}
+
+<div class="zt-sg-landing">
+
+  {{/* Hero section */}}
+  <header class="zt-sg-hero">
+    <h1 class="zt-sg-hero-title">Certification Study Guides</h1>
+    <p class="zt-sg-hero-sub">
+      Free study guides for <strong>{{ len $certPages }} certifications</strong> across {{ len $vendors }} vendors.
+      Every exam objective linked to official resources. Progress tracking, practice exams, and study plans included.
+    </p>
+    <div class="zt-sg-hero-stats">
+      {{ range $vendors }}
+        {{ $vSlug := .slug }}
+        {{ $count := 0 }}
+        {{ range $certPages }}
+          {{ if eq (.Params.vendor | default "microsoft") $vSlug }}{{ $count = add $count 1 }}{{ end }}
+        {{ end }}
+        {{ if gt $count 0 }}
+        <a href="#vendor-{{ $vSlug }}" class="zt-sg-vendor-pill">
+          <span>{{ .logo_emoji }}</span>
+          <span>{{ .short_name }}</span>
+          <span class="zt-sg-vendor-pill-count">{{ $count }}</span>
+        </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </header>
+
+  {{/* Search */}}
+  <div class="zt-sg-search-wrap">
+    <input type="search" id="sg-search" class="zt-sg-search" placeholder="Search certifications… (e.g. AZ-900, AWS, Security)" autocomplete="off">
+  </div>
+
+  {{/* Vendor sections */}}
+  {{ range $vendors }}
+    {{ $vSlug := .slug }}
+    {{ $vName := .name }}
+    {{ $vShort := .short_name }}
+    {{ $vEmoji := .logo_emoji }}
+    {{ $vAccent := .accent }}
+
+    {{ $vCerts := slice }}
+    {{ range $certPages }}
+      {{ if eq (.Params.vendor | default "microsoft") $vSlug }}
+        {{ $vCerts = $vCerts | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if $vCerts }}
+    <section class="zt-sg-vendor" id="vendor-{{ $vSlug }}">
+      <div class="zt-sg-vendor-header">
+        <h2 class="zt-sg-vendor-title">{{ $vEmoji }} {{ $vName }}</h2>
+        <span class="zt-sg-vendor-count-badge">{{ len $vCerts }} guides</span>
+      </div>
+
+      {{ if eq $vSlug "microsoft" }}
+        {{/* Microsoft: group by category */}}
+        {{ $categories := slice "Azure" "AI" "Security" "Data" "Microsoft 365" "Power Platform" "Dynamics 365" }}
+        {{ range $cat := $categories }}
+          {{ $catCerts := slice }}
+          {{ range $vCerts }}
+            {{ if eq .Params.exam_category $cat }}
+              {{ $catCerts = $catCerts | append . }}
+            {{ end }}
+          {{ end }}
+          {{ if $catCerts }}
+          <div class="zt-sg-category">
+            <h3 class="zt-sg-category-title">{{ $cat }}</h3>
+            <div class="zt-sg-grid">
+              {{ range sort $catCerts "Params.exam_code" }}
+              <a href="{{ .RelPermalink }}" class="zt-sg-card" data-code="{{ .Params.exam_code }}" data-title="{{ .Params.exam_title }}" data-level="{{ .Params.exam_level }}" data-status="{{ .Params.exam_status | default "active" }}">
+                <div class="zt-sg-card-top">
+                  <span class="zt-sg-card-code">{{ .Params.exam_code }}</span>
+                  <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">
+                    {{ if eq .Params.exam_level "beginner" }}Fund.{{ else if eq .Params.exam_level "intermediate" }}Assoc.{{ else }}Expert{{ end }}
+                  </span>
+                </div>
+                <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
+                {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">⚠️ Retiring</span>{{ end }}
+                {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">🧪 Beta</span>{{ end }}
+                {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">🔜 Upcoming</span>{{ end }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{/* Other vendors: flat grid */}}
+        <div class="zt-sg-grid">
+          {{ range sort $vCerts "Params.exam_code" }}
+          <a href="{{ .RelPermalink }}" class="zt-sg-card" data-code="{{ .Params.exam_code }}" data-title="{{ .Params.exam_title }}" data-level="{{ .Params.exam_level }}" data-status="{{ .Params.exam_status | default "active" }}">
+            <div class="zt-sg-card-top">
+              <span class="zt-sg-card-code">{{ .Params.exam_code }}</span>
+              <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">
+                {{ if eq .Params.exam_level "beginner" }}Fund.{{ else if eq .Params.exam_level "intermediate" }}Assoc.{{ else }}Expert{{ end }}
+              </span>
+            </div>
+            <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
+            {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">⚠️ Retiring</span>{{ end }}
+            {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">🧪 Beta</span>{{ end }}
+            {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">🔜 Upcoming</span>{{ end }}
+          </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  {{ end }}
+
+</div>
+
+{{/* Search JS */}}
+<script>
+(function(){
+  var input = document.getElementById('sg-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-sg-card');
+  var vendors = document.querySelectorAll('.zt-sg-vendor');
+  var categories = document.querySelectorAll('.zt-sg-category');
+
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    cards.forEach(function(c) {
+      var match = !q ||
+        (c.dataset.code || '').toLowerCase().includes(q) ||
+        (c.dataset.title || '').toLowerCase().includes(q);
+      c.style.display = match ? '' : 'none';
+    });
+    // Hide empty categories and vendors
+    categories.forEach(function(cat) {
+      var visible = cat.querySelectorAll('.zt-sg-card[style=""], .zt-sg-card:not([style])');
+      cat.style.display = visible.length ? '' : 'none';
+    });
+    vendors.forEach(function(v) {
+      var visible = v.querySelectorAll('.zt-sg-card[style=""], .zt-sg-card:not([style])');
+      v.style.display = visible.length ? '' : 'none';
+    });
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Certification Study Guides",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "numberOfItems": {{ len $certPages }},
+  "provider": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "https://aguidetocloud.com"
+  }
+}
+</script>
+{{ end }}

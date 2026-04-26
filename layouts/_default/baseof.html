@@ -56,7 +56,7 @@
   <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
   {{ if hasPrefix .RelPermalink "/guided/" }}<link rel="stylesheet" href="/css/guided.css?v={{ site.Params.cache_version }}">{{ end }}
-  {{ if eq .Section "blog" }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
+  {{ if or (eq .Section "blog") (and (eq .Section "cert-tracker") .IsPage) (eq .Section "study-guides") }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -101,7 +101,7 @@
 
   <script src="/js/tool-counter.js?v={{ site.Params.cache_version }}" defer></script>
   {{ if eq .Section "blog" }}<script src="/js/blog-enhance.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
-  {{ if and (eq .Section "blog") .IsPage }}<script src="/js/zt-toc.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
+  {{ if and (or (eq .Section "blog") (eq .Section "cert-tracker")) .IsPage }}<script src="/js/zt-toc.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js" crossorigin="anonymous" integrity="sha384-rbtjAdnIQE/aQJGEgXrVUlMibdfTSa4PQju4HDhN3sR2PmaKFzhEafuePsl9H/9I"></script>
   <script>

@@ -1,0 +1,81 @@
+{{/*
+  cert-nav.html — Left sidebar navigation for cert study guides.
+  Shows all certs grouped by vendor → category (Microsoft) or flat (others).
+  Current cert highlighted. Current vendor expanded by default.
+
+  Usage: {{ partial "cert-nav.html" . }}
+*/}}
+
+{{ $currentVendor := .Params.vendor | default "microsoft" }}
+{{ $currentPermalink := .RelPermalink }}
+{{ $allCerts := where site.RegularPages "Section" "cert-tracker" }}
+
+<nav class="zt-cert-nav" aria-label="Certification navigation">
+
+{{ range site.Data.vendors.vendor }}
+  {{ $vSlug := .slug }}
+  {{ $vName := .short_name }}
+  {{ $vEmoji := .logo_emoji }}
+  {{ $isCurrentVendor := eq $vSlug $currentVendor }}
+
+  {{/* Collect certs for this vendor */}}
+  {{ $certs := slice }}
+  {{ range $allCerts }}
+    {{ $pageVendor := .Params.vendor | default "microsoft" }}
+    {{ if eq $pageVendor $vSlug }}
+      {{ $certs = $certs | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $certs }}
+  <details class="zt-cert-vendor"{{ if $isCurrentVendor }} open{{ end }}>
+    <summary class="zt-cert-vendor-name">
+      <span>{{ $vEmoji }} {{ $vName }}</span>
+      <span class="zt-cert-vendor-count">{{ len $certs }}</span>
+    </summary>
+    <div class="zt-cert-vendor-body">
+
+    {{ if eq $vSlug "microsoft" }}
+      {{/* Microsoft: group by exam_category */}}
+      {{ $categories := slice "Azure" "AI" "Security" "Data" "Microsoft 365" "Power Platform" "Dynamics 365" }}
+      {{ range $cat := $categories }}
+        {{ $catCerts := slice }}
+        {{ range $certs }}
+          {{ if eq .Params.exam_category $cat }}
+            {{ $catCerts = $catCerts | append . }}
+          {{ end }}
+        {{ end }}
+        {{ if $catCerts }}
+        <div class="zt-cert-category">
+          <span class="zt-cert-category-name">{{ $cat }}</span>
+          {{ range sort $catCerts "Params.exam_code" }}
+          <a href="{{ .RelPermalink }}" class="zt-cert-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
+             title="{{ .Params.exam_code }}: {{ .Params.exam_title }}">
+            <span class="zt-cert-link-code">{{ .Params.exam_code }}</span>
+            {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">⚠️</span>{{ end -}}
+            {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">🧪</span>{{ end -}}
+            {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">🔜</span>{{ end -}}
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{/* Other vendors: flat list sorted by exam_code */}}
+      {{ range sort $certs "Params.exam_code" }}
+      <a href="{{ .RelPermalink }}" class="zt-cert-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
+         title="{{ .Params.exam_code }}: {{ .Params.exam_title }}">
+        <span class="zt-cert-link-code">{{ .Params.exam_code }}</span>
+        {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">⚠️</span>{{ end -}}
+        {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">🧪</span>{{ end -}}
+        {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">🔜</span>{{ end -}}
+      </a>
+      {{ end }}
+    {{ end }}
+
+    </div>
+  </details>
+  {{ end }}
+{{ end }}
+
+</nav>

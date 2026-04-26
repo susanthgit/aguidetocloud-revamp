@@ -20,7 +20,7 @@
       <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">⌘K</button></li>
 
       {{/* ── Learn mega-dropdown: vendor-based like Whizlabs ── */}}
-      <li class="nav-dropdown nav-dropdown--mega nav-item--learn{{ if or (hasPrefix $.RelPermalink "/guided/") (hasPrefix $.RelPermalink "/pricing/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") (hasPrefix $.RelPermalink "/blog/") (hasPrefix $.RelPermalink "/start/") }} nav-dropdown-active{{ end }}">
+      <li class="nav-dropdown nav-dropdown--mega nav-item--learn{{ if or (hasPrefix $.RelPermalink "/guided/") (hasPrefix $.RelPermalink "/pricing/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") (hasPrefix $.RelPermalink "/blog/") (hasPrefix $.RelPermalink "/start/") }} nav-dropdown-active{{ end }}">
         <a href="/cert-tracker/" class="dropdown-toggle">Learn ▾</a>
         <div class="dropdown-menu mega-menu mega-menu--learn">
           <div class="mega-learn-layout">
@@ -77,10 +77,10 @@
             </div>
           </div>
           <div class="mega-learn-bottom">
-            <a href="/cert-tracker/">📚 All {{ len $certPages }} Certifications</a>
+            <a href="/study-guides/">📖 Study Guides ({{ len $certPages }})</a>
+            <a href="/cert-tracker/">📚 Cert Tracker</a>
             <a href="/guided/explore/">🎯 Practice Exams</a>
             <a href="/pricing/">💳 Pricing</a>
-            <a href="/ai-hub/">📺 Videos</a>
             <a href="/blog/">📝 Blog</a>
           </div>
         </div>
