@@ -942,12 +942,12 @@
 }
 .cpmatrix-badge-consumer {
   background: rgba(167, 139, 250, 0.2);
-  color: #C4B5FD;
+  color: var(--badge-purple);
   border: 1px solid rgba(167, 139, 250, 0.3);
 }
 .cpmatrix-badge-enterprise {
   background: rgba(59, 130, 246, 0.2);
-  color: #93C5FD;
+  color: var(--badge-blue);
   border: 1px solid rgba(59, 130, 246, 0.3);
 }
 

@@ -322,9 +322,9 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.cert-badge-beginner { background: rgba(16, 185, 129, 0.15); color: var(--cert-badge-beginner); }
-.cert-badge-intermediate { background: rgba(59, 130, 246, 0.15); color: var(--cert-badge-intermediate); }
-.cert-badge-advanced { background: rgba(245, 158, 11, 0.15); color: var(--cert-badge-advanced); }
+.cert-badge-beginner { background: rgba(16, 185, 129, 0.15); color: var(--badge-green); }
+.cert-badge-intermediate { background: rgba(59, 130, 246, 0.15); color: var(--badge-blue); }
+.cert-badge-advanced { background: rgba(245, 158, 11, 0.15); color: var(--badge-amber); }
 .cert-badge-category {
   background: var(--bg-elevated);
   color: var(--text-secondary);

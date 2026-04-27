@@ -63,7 +63,7 @@
 
   function diffDots(n) {
     let s = '';
-    for (let i = 1; i <= 5; i++) s += `<span style="color:${i <= n ? '#FBBF24' : 'rgba(255,255,255,0.15)'}">●</span>`;
+    for (let i = 1; i <= 5; i++) s += `<span style="color:${i <= n ? 'var(--accent)' : 'var(--border)'}">●</span>`;
     return s;
   }
 
@@ -115,7 +115,7 @@
   }
 
   function renderCertGrid(certs) {
-    if (!certs.length) { certGrid.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">No certifications match your filters.</p>'; return; }
+    if (!certs.length) { certGrid.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem">No certifications match your filters.</p>'; return; }
     certGrid.innerHTML = certs.map(c => {
       const pc = providerColor(c.provider);
       const validity = c.validity_override || (c.validity_years + ' year' + (c.validity_years !== 1 ? 's' : ''));
@@ -210,26 +210,26 @@
     const pairHtml = pairs.map(p => {
       const avgStudy = Math.round(((p.a.study_hours_min + p.a.study_hours_max) / 2 + (p.b.study_hours_min + p.b.study_hours_max) / 2) / 2);
       const savedHours = Math.round(avgStudy * p.pct / 100);
-      const barColor = p.pct >= 70 ? '#10B981' : p.pct >= 40 ? '#FBBF24' : '#EF4444';
+      const barColor = p.pct >= 70 ? 'var(--success)' : p.pct >= 40 ? 'var(--warning)' : 'var(--error)';
       return `<div class="compass-skill-pair">
         <div class="compass-skill-pair-header">
-          <span style="color:${providerColor(p.a.provider)}">${esc(p.a.exam_code)}</span>
+          <span style="color:var(--text-secondary)">${esc(p.a.exam_code)}</span>
           <span class="compass-skill-arrow">↔</span>
-          <span style="color:${providerColor(p.b.provider)}">${esc(p.b.exam_code)}</span>
+          <span style="color:var(--text-secondary)">${esc(p.b.exam_code)}</span>
           <span class="compass-skill-pct" style="color:${barColor}">${p.pct}% overlap</span>
         </div>
         <div class="compass-skill-bar"><div class="compass-skill-bar-fill" style="width:${p.pct}%;background:${barColor}"></div></div>
         <div class="compass-skill-detail">
           <div class="compass-skill-col">
-            <strong style="color:#10B981">Shared skills (${p.shared.length})</strong>
+            <strong style="color:var(--success)">Shared skills (${p.shared.length})</strong>
             ${p.shared.map(t => `<span class="compass-skill-tag compass-skill-shared">${esc(topicNameMap[t] || t)}</span>`).join('')}
           </div>
           ${p.onlyB.length ? `<div class="compass-skill-col">
-            <strong style="color:#FBBF24">New to learn for ${esc(p.b.exam_code)} (${p.onlyB.length})</strong>
+            <strong style="color:var(--badge-amber)">New to learn for ${esc(p.b.exam_code)} (${p.onlyB.length})</strong>
             ${p.onlyB.map(t => `<span class="compass-skill-tag compass-skill-new">${esc(topicNameMap[t] || t)}</span>`).join('')}
           </div>` : ''}
           ${p.onlyA.length ? `<div class="compass-skill-col">
-            <strong style="color:#FBBF24">New to learn for ${esc(p.a.exam_code)} (${p.onlyA.length})</strong>
+            <strong style="color:var(--badge-amber)">New to learn for ${esc(p.a.exam_code)} (${p.onlyA.length})</strong>
             ${p.onlyA.map(t => `<span class="compass-skill-tag compass-skill-new">${esc(topicNameMap[t] || t)}</span>`).join('')}
           </div>` : ''}
         </div>
@@ -252,10 +252,10 @@
 
       const cols = certs.map(c => {
         const pc = providerColor(c.provider);
-        const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA;font-size:0.7rem">[study guide]</a>` : '';
-        const guided = c.guided_slug ? ` <a href="/guided/${esc(c.guided_slug)}/practice/" style="color:#34D399;font-size:0.7rem">[practice exam]</a>` : '';
+        const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.7rem">[study guide]</a>` : '';
+        const guided = c.guided_slug ? ` <a href="/guided/${esc(c.guided_slug)}/practice/" style="color:var(--accent);font-size:0.7rem">[practice exam]</a>` : '';
         return `<div class="compass-match-cert" style="border-left: 3px solid ${pc}">
-          <div class="compass-match-cert-provider" style="color:${pc}">${esc(providerName(c.provider))}</div>
+          <div class="compass-match-cert-provider" style="color:var(--text-primary)">${esc(providerName(c.provider))}</div>
           <div class="compass-match-cert-name">${esc(c.name)}${tracker}${guided}</div>
           <div class="compass-match-cert-code">${esc(c.exam_code)}</div>
           <div class="compass-match-cert-stats">
@@ -274,7 +274,7 @@
           <span class="compass-match-title">${esc(g.name)}</span>
           <div class="compass-match-badges">${roleBadge} ${levelBadge}</div>
         </div>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin:0 0 0.75rem">${esc(g.description)}</p>
+        <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0 0 0.75rem">${esc(g.description)}</p>
         <div class="compass-match-cols">${cols}</div>
         <div class="compass-match-notes">${esc(g.comparison_notes)}</div>
         <div class="compass-match-rec">💡 ${esc(g.recommendation)}</div>
@@ -369,12 +369,12 @@
       const r = 40, circ = 2 * Math.PI * r, offset = circ - (circ * pct / 100);
       return `<div class="compass-dash-ring-card">
         <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="${r}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="${r}" fill="none" stroke="var(--border)" stroke-width="8"/>
           <circle cx="50" cy="50" r="${r}" fill="none" stroke="${p.hex}" stroke-width="8" stroke-dasharray="${circ}" stroke-dashoffset="${offset}" transform="rotate(-90 50 50)" stroke-linecap="round"/>
-          <text x="50" y="48" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">${pct}%</text>
-          <text x="50" y="64" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10">${have}/${total}</text>
+          <text x="50" y="48" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="700">${pct}%</text>
+          <text x="50" y="64" text-anchor="middle" fill="var(--text-tertiary)" font-size="10">${have}/${total}</text>
         </svg>
-        <span style="color:${p.hex};font-weight:600;font-size:0.82rem">${p.emoji} ${p.name}</span>
+        <span style="color:var(--text-primary);font-weight:600;font-size:0.82rem">${p.emoji} ${p.name}</span>
       </div>`;
     }).join('');
 
@@ -392,10 +392,10 @@
     document.getElementById('dash-gaps').innerHTML = gaps.length ? gaps.map(g => `
       <div class="compass-dash-gap">
         <strong>${g.group.icon} ${esc(g.group.name)}</strong>
-        <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">You have: ${g.have.map(c => `<span style="color:${providerColor(c.provider)}">${esc(c.exam_code)}</span>`).join(', ')}</span>
-        <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">Missing: ${g.missing.map(c => `<span style="color:${providerColor(c.provider)}">${esc(c.exam_code)} ($${c.fee_usd})</span>`).join(', ')}</span>
+        <span style="color:var(--text-tertiary);font-size:0.78rem">You have: ${g.have.map(c => `<span style="color:var(--text-secondary)">${esc(c.exam_code)}</span>`).join(', ')}</span>
+        <span style="color:var(--text-tertiary);font-size:0.78rem">Missing: ${g.missing.map(c => `<span style="color:var(--text-secondary)">${esc(c.exam_code)} ($${c.fee_usd})</span>`).join(', ')}</span>
       </div>
-    `).join('') : '<p style="color:rgba(255,255,255,0.4)">No cross-cloud gaps detected. Nice coverage!</p>';
+    `).join('') : '<p style="color:var(--text-muted)">No cross-cloud gaps detected. Nice coverage!</p>';
 
     // Recommended next
     const notOwned = CERTS.filter(c => !ownedIds.has(c.id));
@@ -415,8 +415,8 @@
       const c = s.cert;
       return `<div class="compass-dash-rec-card" style="border-left:3px solid ${providerColor(c.provider)}">
         <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.3rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100${c.trending === 'up' ? ' ↑' : ''}</div>
-        ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA;font-size:0.75rem">Study guide available →</a>` : ''}
+        <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.3rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100${c.trending === 'up' ? ' ↑' : ''}</div>
+        ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.75rem">Study guide available →</a>` : ''}
       </div>`;
     }).join('');
 
@@ -426,8 +426,8 @@
       <div class="compass-dash-invest-grid">
         <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">$${totalCost}</span><span>Exam Fees Spent</span></div>
         <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">~${Math.round(totalHours)}h</span><span>Study Hours</span></div>
-        <div class="compass-dash-invest-card" style="border-color:rgba(16,185,129,0.3)"><span class="compass-dash-stat-num" style="color:#10B981">+$${(salaryBoost/1000).toFixed(0)}K</span><span>Est. Salary Premium</span></div>
-        <div class="compass-dash-invest-card" style="border-color:rgba(16,185,129,0.3)"><span class="compass-dash-stat-num" style="color:#10B981">${salaryBoost > 0 ? ((salaryBoost / totalCost) * 100).toFixed(0) + '×' : '—'}</span><span>ROI (premium ÷ cost)</span></div>
+        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">+$${(salaryBoost/1000).toFixed(0)}K</span><span>Est. Salary Premium</span></div>
+        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">${salaryBoost > 0 ? ((salaryBoost / totalCost) * 100).toFixed(0) + '×' : '—'}</span><span>ROI (premium ÷ cost)</span></div>
       </div>
     `;
   }
@@ -442,7 +442,7 @@
     const tipName = tipCert ? (providerEmoji(tipCert.provider) + ' ' + tipCert.name + ' (' + tipCert.exam_code + ')') : path.if_only_one;
 
     let html = `<button class="compass-career-back" onclick="document.getElementById('career-detail').style.display='none'">← Back to all roles</button>`;
-    html += `<h3 style="color:#fff;font-size:1.1rem;margin-bottom:1rem">${path.icon} ${esc(path.name)} — Certification Path</h3>`;
+    html += `<h3 style="color:var(--text-primary);font-size:1.1rem;margin-bottom:1rem">${path.icon} ${esc(path.name)} — Certification Path</h3>`;
 
     // Cost/time comparison table
     const providerCosts = (path.recommended_order || []).map(po => {
@@ -461,13 +461,13 @@
     }).filter(Boolean);
 
     html += `<div class="compass-cost-compare"><table class="compass-compare-table">
-      <thead><tr><th></th>${providerCosts.map(pc => `<th style="color:${pc.prov.hex}">${pc.prov.emoji} ${esc(pc.prov.name)}</th>`).join('')}</tr></thead>
+      <thead><tr><th></th>${providerCosts.map(pc => `<th style="color:var(--text-primary)">${pc.prov.emoji} ${esc(pc.prov.name)}</th>`).join('')}</tr></thead>
       <tbody>
         <tr><td>Exams</td>${providerCosts.map(pc => `<td>${pc.certs.length}</td>`).join('')}</tr>
         <tr><td>Exam Fees</td>${providerCosts.map(pc => `<td>$${pc.totalFee}</td>`).join('')}</tr>
         <tr><td>Study Hours</td>${providerCosts.map(pc => `<td>${pc.totalHoursMin}–${pc.totalHoursMax}h</td>`).join('')}</tr>
         <tr><td>Yearly Renewal</td>${providerCosts.map(pc => `<td>${pc.renewalYearly === 0 ? 'Free' : '$' + pc.renewalYearly + '/yr'}</td>`).join('')}</tr>
-        <tr style="font-weight:700"><td>3-Year Total</td>${providerCosts.map(pc => `<td style="color:#10B981">$${pc.threeYearCost}</td>`).join('')}</tr>
+        <tr style="font-weight:700"><td>3-Year Total</td>${providerCosts.map(pc => `<td style="color:var(--success)">$${pc.threeYearCost}</td>`).join('')}</tr>
       </tbody>
     </table></div>`;
 
@@ -477,17 +477,17 @@
       const steps = (po.certs || []).map(cid => {
         const c = certMap[cid];
         if (!c) return '';
-        const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA;font-size:0.72rem">[guide]</a>` : '';
-        return `<div class="compass-career-step" style="border-left:3px solid ${prov.hex}">${esc(c.name)}<br><span style="font-size:0.7rem;color:rgba(255,255,255,0.4)">${esc(c.exam_code)} · $${c.fee_usd}</span>${tracker}</div>`;
+        const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.72rem">[guide]</a>` : '';
+        return `<div class="compass-career-step" style="border-left:3px solid ${prov.hex}">${esc(c.name)}<br><span style="font-size:0.7rem;color:var(--text-muted)">${esc(c.exam_code)} · $${c.fee_usd}</span>${tracker}</div>`;
       }).filter(Boolean);
 
       html += `<div class="compass-career-provider">
-        <div class="compass-career-provider-name" style="color:${prov.hex}">${prov.emoji} ${esc(prov.name)}</div>
+        <div class="compass-career-provider-name" style="color:var(--text-primary)">${prov.emoji} ${esc(prov.name)}</div>
         <div class="compass-career-steps">${steps.join('<span class="compass-career-arrow">→</span>')}</div>
       </div>`;
     });
 
-    html += `<div class="compass-career-tip"><strong>If you only have time for one:</strong> ${esc(tipName)}<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.5)">${esc(path.if_only_one_reason)}</span></div>`;
+    html += `<div class="compass-career-tip"><strong>If you only have time for one:</strong> ${esc(tipName)}<br><span style="font-size:0.78rem;color:var(--text-tertiary)">${esc(path.if_only_one_reason)}</span></div>`;
 
     careerDetail.innerHTML = html;
     careerDetail.style.display = 'block';
@@ -522,12 +522,12 @@
   function renderCompareTable() {
     const wrap = document.getElementById('compare-table-wrap');
     const ids = Array.from(selectedCompare);
-    if (ids.length < 2) { wrap.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">Select at least 2 certifications above to compare.</p>'; return; }
+    if (ids.length < 2) { wrap.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem">Select at least 2 certifications above to compare.</p>'; return; }
 
     const certs = ids.map(id => certMap[id]).filter(Boolean);
 
     const rows = [
-      { label: 'Provider', fn: c => `<span style="color:${providerColor(c.provider)}">${esc(providerName(c.provider))}</span>` },
+      { label: 'Provider', fn: c => `<span style="color:var(--text-primary)">${esc(providerName(c.provider))}</span>` },
       { label: 'Level', fn: c => esc(c.level) },
       { label: 'Exam Fee', fn: c => `$${c.fee_usd}` },
       { label: 'Study Hours', fn: c => `${c.study_hours_min}–${c.study_hours_max}` },
@@ -536,12 +536,12 @@
       { label: 'Prerequisites', fn: c => (c.prerequisites && c.prerequisites.length) ? c.prerequisites.map(pid => { const p = certMap[pid]; return p ? esc(p.exam_code) : esc(pid); }).join(', ') : 'None' },
       { label: 'Focus Areas', fn: c => (c.focus_areas || []).map(f => esc(f.replace(/-/g, ' '))).join(', ') },
       { label: 'Official Page', fn: c => `<a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" style="color:var(--compass-accent)">View →</a>` },
-      { label: 'Study Guide', fn: c => c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:#60A5FA">Available →</a>` : '<span style="color:rgba(255,255,255,0.3)">—</span>' },
-      { label: 'Practice Exam', fn: c => c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" style="color:#34D399">200 Questions →</a>` : '<span style="color:rgba(255,255,255,0.3)">—</span>' }
+      { label: 'Study Guide', fn: c => c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent)">Available →</a>` : '<span style="color:var(--text-muted)">—</span>' },
+      { label: 'Practice Exam', fn: c => c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" style="color:var(--accent)">200 Questions →</a>` : '<span style="color:var(--text-muted)">—</span>' }
     ];
 
     let html = '<table class="compass-compare-table"><thead><tr><th></th>';
-    certs.forEach(c => { html += `<th class="compass-compare-header-cell"><span style="color:${providerColor(c.provider)}">${providerEmoji(c.provider)} ${esc(c.name)}</span><span class="compass-card-code">${esc(c.exam_code)}</span></th>`; });
+    certs.forEach(c => { html += `<th class="compass-compare-header-cell"><span style="color:var(--text-primary)">${providerEmoji(c.provider)} ${esc(c.name)}</span><span class="compass-card-code">${esc(c.exam_code)}</span></th>`; });
     html += '</tr></thead><tbody>';
     rows.forEach(r => {
       html += `<tr><td>${esc(r.label)}</td>`;
@@ -694,10 +694,10 @@
             <span style="font-size:1.5rem">${medal}</span>
             <div>
               <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
-              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.2rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100</div>
+              <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100</div>
             </div>
           </div>
-          <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0.5rem 0 0">${esc(c.description)}</p>
+          <p style="font-size:0.82rem;color:var(--text-secondary);margin:0.5rem 0 0">${esc(c.description)}</p>
           <div style="margin-top:0.5rem;display:flex;gap:0.4rem">
             <a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" class="compass-btn compass-btn-primary" style="font-size:0.75rem">Official Page</a>
             ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" class="compass-btn compass-btn-ms" style="font-size:0.75rem">Study Guide</a>` : ''}

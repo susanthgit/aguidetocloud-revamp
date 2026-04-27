@@ -130,7 +130,7 @@
             <div class="aicost-range-row">
               <input type="range" id="in-discount-range" min="0" max="30" value="0" step="1" aria-hidden="true">
               <input type="number" id="in-discount" min="0" max="50" value="0" class="aicost-num-input" aria-label="Negotiated discount percentage" style="width:60px">
-              <span style="color:rgba(255,255,255,0.5);font-size:0.85rem">%</span>
+              <span style="color:var(--text-muted);font-size:0.85rem">%</span>
             </div>
             <span class="aicost-field-hint">Negotiated volume discount off list price (0% = list price)</span>
           </div>
@@ -182,9 +182,9 @@
             <div id="other-cost-wrap" style="display:none" class="aicost-custom-row">
               <label for="in-other-cost" class="aicost-field-hint">Monthly cost per user for other tools:</label>
               <div class="aicost-range-row" style="margin-top:0.3rem">
-                <span style="color:rgba(255,255,255,0.5)">$</span>
+                <span style="color:var(--text-muted)">$</span>
                 <input type="number" id="in-other-cost" min="0" max="500" value="20" step="1" class="aicost-num-input" aria-label="Other AI tools cost per user per month">
-                <span style="color:rgba(255,255,255,0.4);font-size:0.78rem">/user/mo</span>
+                <span style="color:var(--text-muted);font-size:0.78rem">/user/mo</span>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
             <div class="aicost-range-row">
               <input type="range" id="in-rollout-range" min="10" max="100" value="30" step="5" aria-hidden="true">
               <input type="number" id="in-rollout" min="1" max="100" value="30" class="aicost-num-input" aria-label="Rollout percentage" style="width:60px">
-              <span style="color:rgba(255,255,255,0.5);font-size:0.85rem">%</span>
+              <span style="color:var(--text-muted);font-size:0.85rem">%</span>
             </div>
             <span class="aicost-field-hint">What % of users get AI tools in Year 1</span>
           </div>
@@ -240,7 +240,7 @@
             <div class="aicost-range-row">
               <input type="range" id="in-hours-range" min="0.5" max="6" value="2" step="0.5" aria-hidden="true">
               <input type="number" id="in-hours" min="0" max="10" value="2" step="0.5" class="aicost-num-input" aria-label="Hours saved per user per week" style="width:60px">
-              <span style="color:rgba(255,255,255,0.5);font-size:0.82rem">hrs/wk</span>
+              <span style="color:var(--text-muted);font-size:0.82rem">hrs/wk</span>
             </div>
             <span class="aicost-field-hint">UK Gov trial: 2.2 hrs/wk, Microsoft Research: 2.5 hrs/wk</span>
           </div>

@@ -40,7 +40,7 @@
     {{ if $cert.match_group }}
     <h2 style="color:var(--compass-accent);font-size:1.1rem;margin-bottom:0.75rem">Cross-Cloud Closest Matches</h2>
     {{ range $groups }}{{ if eq .id $cert.match_group }}
-    <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem">{{ .description }}</p>
+    <p style="font-size:0.82rem;color:var(--text-tertiary);margin-bottom:0.75rem">{{ .description }}</p>
     <div class="compass-match-cols" style="margin-bottom:1.5rem">
       {{ range .cert_ids }}
         {{ $cid := . }}
@@ -50,7 +50,7 @@
           {{ $pName := cond (eq .provider "microsoft") "Microsoft" (cond (eq .provider "aws") "AWS" "Google Cloud") }}
           <a href="/cert-compass/{{ .id }}/" class="compass-match-cert" style="border-left:3px solid {{ $pHex }};text-decoration:none;display:block{{ if eq .id $certId }};opacity:0.5{{ end }}">
             <div class="compass-match-cert-provider" style="color:{{ $pHex }}">{{ $pName }}</div>
-            <div class="compass-match-cert-name" style="color:#fff">{{ .name }}</div>
+            <div class="compass-match-cert-name" style="color:var(--text-primary)">{{ .name }}</div>
             <div class="compass-match-cert-code">{{ .exam_code }}</div>
             <div class="compass-match-cert-stats"><span>${{ .fee_usd }}</span><span>{{ .study_hours_min }}–{{ .study_hours_max }}h</span></div>
           </a>
@@ -58,7 +58,7 @@
         {{ end }}
       {{ end }}
     </div>
-    <p style="font-size:0.82rem;color:rgba(255,255,255,0.5)">{{ .comparison_notes }}</p>
+    <p style="font-size:0.82rem;color:var(--text-tertiary)">{{ .comparison_notes }}</p>
     <p style="color:var(--compass-accent);font-size:0.82rem;font-weight:600;margin-top:0.5rem">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} {{ .recommendation }}</p>
     {{ end }}{{ end }}
     <a href="/cert-compass/?tab=matches" class="compass-btn compass-btn-outline" style="margin-top:0.75rem">See All Matches →</a>

@@ -6,10 +6,16 @@
    ────────────────────────────────────────── */
 
 :root {
-  --sh-green: #22C55E;
-  --sh-yellow: #EAB308;
-  --sh-red: #EF4444;
-  --sh-orange: #EA580C;
+  --sh-green: #15803D;
+  --sh-yellow: #A16207;
+  --sh-red: #DC2626;
+  --sh-orange: #C2410C;
+}
+[data-theme="dark"] {
+  --sh-green: #4ADE80;
+  --sh-yellow: #FACC15;
+  --sh-red: #F87171;
+  --sh-orange: #FB923C;
 }
 
 /* ── Container ── */

@@ -122,7 +122,7 @@
   <div class="compass-panel" id="panel-dashboard">
     <div id="dashboard-empty" style="text-align:center;padding:2rem">
       <p style="font-size:1.2rem;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} Your Cloud Journey Starts Here</p>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:1rem">Mark certifications you hold using the "I Have This" button on the Explore tab. Your progress, gaps, and recommendations will appear here.</p>
+      <p style="color:var(--text-tertiary);font-size:0.85rem;margin-bottom:1rem">Mark certifications you hold using the "I Have This" button on the Explore tab. Your progress, gaps, and recommendations will appear here.</p>
       <button class="compass-btn compass-btn-primary" onclick="window.__compassSwitchTab('explore')">Browse Certifications</button>
     </div>
     <div id="dashboard-content" style="display:none">
@@ -162,19 +162,19 @@
       {{ with $examPrep }}
       <details open>
         <summary><strong>{{ .universal.title }}</strong></summary>
-        <ul style="margin-top:0.5rem">{{ range .universal.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+        <ul style="margin-top:0.5rem">{{ range .universal.items }}<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
       </details>
       <details>
         <summary><strong>{{ .microsoft.title }}</strong></summary>
-        <ul style="margin-top:0.5rem">{{ range .microsoft.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+        <ul style="margin-top:0.5rem">{{ range .microsoft.items }}<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
       </details>
       <details>
         <summary><strong>{{ .aws.title }}</strong></summary>
-        <ul style="margin-top:0.5rem">{{ range .aws.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+        <ul style="margin-top:0.5rem">{{ range .aws.items }}<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
       </details>
       <details>
         <summary><strong>{{ .gcp.title }}</strong></summary>
-        <ul style="margin-top:0.5rem">{{ range .gcp.items }}<li style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
+        <ul style="margin-top:0.5rem">{{ range .gcp.items }}<li style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.3rem">{{ . }}</li>{{ end }}</ul>
       </details>
       {{ end }}
 
