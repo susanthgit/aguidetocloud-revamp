@@ -55,7 +55,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-section-toggle>div{padding:0 1rem 1rem}
 .instruct-examples,.instruct-blocks{display:flex;flex-direction:column;gap:.75rem}
 .instruct-example-pair{background:var(--bg-elevated);border-radius:8px;padding:.75rem}
-.instruct-badge-good{font-size:.68rem;background:rgba(34,197,94,.15);color:#4ade80;padding:.15rem .4rem;border-radius:4px;font-weight:600}
+.instruct-badge-good{font-size:.68rem;background:rgba(34,197,94,.15);color: var(--accent);padding:.15rem .4rem;border-radius:4px;font-weight:600}
 .instruct-badge-refuse{font-size:.68rem;background:rgba(248,113,113,.12);color: var(--text-primary);padding:.15rem .4rem;border-radius:4px;font-weight:600}
 
 /* Custom blocks */
@@ -73,7 +73,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-btn-sm{padding:.35rem .65rem;font-size:.78rem}
 .instruct-btn-primary{color:var(--accent-foreground);background:var(--instruct-accent);border-color:var(--instruct-accent)}
 .instruct-btn-primary:hover{background:var(--accent-hover);box-shadow:0 4px 16px var(--accent-subtle)}
-.instruct-btn-primary.copied{background:#22c55e;border-color:#22c55e}
+.instruct-btn-primary.copied{background:var(--accent);border-color:var(--accent)}
 .instruct-btn-generate{flex:1;justify-content:center;padding:.7rem;font-size:.95rem;color:var(--accent-foreground);background:var(--instruct-accent);border-color:var(--instruct-accent)}
 .instruct-btn-generate:hover{background:var(--accent-hover);box-shadow:0 4px 20px var(--accent-subtle);transform:translateY(-1px)}
 .instruct-btn-example{flex-shrink:0}
@@ -108,7 +108,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-output-badge{display:inline-flex;align-items:center;gap:.25rem;padding:.25rem .6rem;border-radius:6px;font-size:.75rem;font-weight:600;background:var(--accent-subtle);color:var(--instruct-accent);border:1px solid var(--accent-subtle)}
 .instruct-output-chars{font-size:.75rem;color:var(--text-tertiary);font-variant-numeric:tabular-nums}
 .instruct-output-limit{margin-bottom:.6rem;padding:.4rem .65rem;border-radius:8px;font-size:.78rem;font-weight:600}
-.instruct-output-limit.warn{background:rgba(234,88,12,.12);border:1px solid rgba(234,88,12,.3);color:#fb923c}
+.instruct-output-limit.warn{background:rgba(234,88,12,.12);border:1px solid rgba(234,88,12,.3);color: var(--accent)}
 .instruct-output-limit.ok{background:var(--accent-subtle);border:1px solid var(--accent-subtle);color:var(--instruct-accent)}
 .instruct-output-text{background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:1rem;color:var(--text-primary);font-size:.82rem;line-height:1.6;white-space:pre-wrap;word-wrap:break-word;font-family:inherit;width:100%;box-sizing:border-box;resize:vertical;min-height:180px;max-height:500px;margin-bottom:.75rem}
 .instruct-output-text:focus{outline:none;border-color:var(--instruct-accent);box-shadow:0 0 0 2px var(--accent-subtle)}
@@ -150,7 +150,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 
 /* Diff */
 .instruct-diff-content{font-size:.8rem;line-height:1.6;font-family:inherit;white-space:pre-wrap}
-.instruct-diff-add{background:rgba(34,197,94,.12);color:#4ade80;padding:0 2px;border-radius:2px}
+.instruct-diff-add{background:rgba(34,197,94,.12);color: var(--accent);padding:0 2px;border-radius:2px}
 .instruct-diff-del{background:rgba(248,113,113,.12);color: var(--text-primary);text-decoration:line-through;padding:0 2px;border-radius:2px}
 
 /* Share modal */

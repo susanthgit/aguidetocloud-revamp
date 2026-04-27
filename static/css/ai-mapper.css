@@ -325,7 +325,7 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
-.aimap-card-price.aimap-free { color: #4ade80; }
+.aimap-card-price.aimap-free { color: var(--accent); }
 .aimap-card-price.aimap-paid { color: var(--text-primary); }
 .aimap-card-price.aimap-sub { color: var(--text-primary); }
 
@@ -576,7 +576,7 @@
   color: var(--text-primary);
 }
 .aimap-pricing-table tr:hover td { background: var(--bg-elevated); }
-.aimap-pricing-table .aimap-price-free { color: #4ade80; font-weight: 600; }
+.aimap-pricing-table .aimap-price-free { color: var(--accent); font-weight: 600; }
 .aimap-pricing-table a { color: var(--aimap-accent); text-decoration: none; }
 .aimap-pricing-table a:hover { text-decoration: underline; }
 
@@ -718,13 +718,13 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-status-badge {
   font-size: var(--text-caption, 0.75rem); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600;
 }
-.aimap-status-badge.preview { background: rgba(168,85,247,0.15); color: #c084fc; }
+.aimap-status-badge.preview { background: rgba(168,85,247,0.15); color: var(--accent); }
 .aimap-status-badge.deprecated { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 
 .aimap-cap-dots { font-size: 0.6rem; margin-left: 0.15rem; letter-spacing: -1px; }
 .aimap-cap-badge.strong .aimap-cap-dots { color: var(--aimap-accent); }
 
-.aimap-card-updated { font-size: 0.7rem; color: #4ade80; }
+.aimap-card-updated { font-size: 0.7rem; color: var(--accent); }
 
 .aimap-card-name-link { text-decoration: none; color: inherit; }
 .aimap-card-name-link:hover .aimap-card-name { color: var(--aimap-accent); }
@@ -760,7 +760,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 
 .aimap-modal-features { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .aimap-modal-feat { font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 6px; }
-.aimap-modal-feat.yes { background: rgba(74,222,128,0.1); color: #4ade80; }
+.aimap-modal-feat.yes { background: rgba(74,222,128,0.1); color: var(--accent); }
 .aimap-modal-feat.no { background: var(--bg-elevated); color: #666; }
 
 .aimap-modal-alts { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
@@ -786,7 +786,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 
 /* ---- Quiz reasoning (#3) ---- */
 .aimap-quiz-reasons { display: flex; flex-direction: column; gap: 0.2rem; margin-top: 0.5rem; }
-.aimap-quiz-reason { font-size: 0.78rem; color: #4ade80; }
+.aimap-quiz-reason { font-size: 0.78rem; color: var(--accent); }
 
 /* ---- Heatmap (#7) ---- */
 .aimap-heatmap-scroll { overflow-x: auto; }
@@ -827,7 +827,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 }
 .aimap-cost-card-name { font-weight: 600; color: var(--text-primary); font-size: 0.85rem; }
 .aimap-cost-card-provider { font-size: 0.75rem; color: var(--aimap-text-muted); }
-.aimap-cost-card-price { font-size: 1.1rem; font-weight: 700; color: #4ade80; margin-top: 0.2rem; }
+.aimap-cost-card-price { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-top: 0.2rem; }
 
 /* ---- Changelog (#12) ---- */
 .aimap-changelog-entry {

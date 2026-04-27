@@ -215,7 +215,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.migplan-score-tier.simple { color: #10B981; }
+.migplan-score-tier.simple { color: var(--accent); }
 .migplan-score-tier.moderate { color: var(--text-primary); }
 .migplan-score-tier.complex { color: var(--text-primary); }
 .migplan-score-tier.critical { color: var(--text-primary); }
@@ -438,7 +438,7 @@
   font-size: 0.8rem;
   font-weight: 700;
 }
-.migplan-timeline-feasibility.feasible { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-timeline-feasibility.feasible { background: rgba(16,185,129,0.15); color: var(--accent); }
 .migplan-timeline-feasibility.tight { background: rgba(234,179,8,0.15); color: var(--text-primary); }
 .migplan-timeline-feasibility.risky { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 
@@ -457,9 +457,9 @@
 }
 .migplan-risk-card:hover { transform: translateY(-2px); }
 .migplan-risk-card.critical { border-left-color: #EF4444; }
-.migplan-risk-card.high { border-left-color: #F97316; }
-.migplan-risk-card.medium { border-left-color: #EAB308; }
-.migplan-risk-card.low { border-left-color: #10B981; }
+.migplan-risk-card.high { border-left-color: var(--accent); }
+.migplan-risk-card.medium { border-left-color: var(--accent); }
+.migplan-risk-card.low { border-left-color: var(--accent); }
 
 .migplan-risk-severity {
   font-size: 0.72rem;
@@ -471,7 +471,7 @@
 .migplan-risk-severity.critical { color: var(--text-primary); }
 .migplan-risk-severity.high { color: var(--text-primary); }
 .migplan-risk-severity.medium { color: var(--text-primary); }
-.migplan-risk-severity.low { color: #10B981; }
+.migplan-risk-severity.low { color: var(--accent); }
 
 .migplan-risk-title {
   font-size: 0.95rem;
@@ -568,7 +568,7 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-.migplan-tool-badge.native { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-tool-badge.native { background: rgba(16,185,129,0.15); color: var(--accent); }
 .migplan-tool-badge.third-party { background: var(--accent-subtle); color: var(--accent); }
 
 .migplan-tool-cost {
@@ -695,9 +695,9 @@
   font-weight: 700;
   margin-top: 0.5rem;
 }
-.migplan-confidence.high { background: rgba(16,185,129,0.15); color: #10B981; }
+.migplan-confidence.high { background: rgba(16,185,129,0.15); color: var(--accent); }
 .migplan-confidence.moderate { background: rgba(234,179,8,0.15); color: var(--text-primary); }
-.migplan-confidence.low { background: rgba(249,115,22,0.15); color: var(--text-primary); }
+.migplan-confidence.low { background: var(--accent-subtle); color: var(--text-primary); }
 
 /* ---- Decision Status Banner ---- */
 .migplan-decision {
@@ -708,9 +708,9 @@
   font-size: 0.95rem;
   text-align: center;
 }
-.migplan-decision.go { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10B981; }
+.migplan-decision.go { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: var(--accent); }
 .migplan-decision.go-conditions { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); color: var(--text-primary); }
-.migplan-decision.conditional { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: var(--text-primary); }
+.migplan-decision.conditional { background: var(--accent-subtle); border: 1px solid var(--accent-subtle); color: var(--text-primary); }
 .migplan-decision.not-recommended { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--text-primary); }
 .migplan-decision-subtitle {
   font-size: 0.8rem;
@@ -743,7 +743,7 @@
   padding: 0.2rem 0.5rem;
   border-radius: 16px;
   background: rgba(16,185,129,0.15);
-  color: #10B981;
+  color: var(--accent);
   font-weight: 700;
 }
 .migplan-discovery-content {

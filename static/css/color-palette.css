@@ -5,7 +5,7 @@
 
 /* ── Accent tokens ── */
 :root {
-  --palette-accent: #F472B6;
+  --palette-accent: var(--accent);
   --palette-accent-dim: rgba(244,114,182,0.15);
   --palette-accent-border: rgba(244,114,182,0.3);
   --palette-accent-hover: rgba(244,114,182,0.25);
@@ -129,8 +129,8 @@
   border-color: var(--palette-accent);
 }
 .palette-btn-primary:hover {
-  background: #EC4899;
-  border-color: #EC4899;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .palette-pill {
@@ -762,7 +762,7 @@
   font-weight: 700;
   font-size: 0.85rem;
 }
-.palette-badge.pass .palette-badge-status { color: #34D399; }
+.palette-badge.pass .palette-badge-status { color: var(--accent); }
 .palette-badge.fail .palette-badge-status { color: var(--text-primary); }
 
 .palette-contrast-preview {
@@ -853,7 +853,7 @@
   border: 1px solid rgba(52,211,153,0.3);
   border-radius: 16px;
   padding: 1rem;
-  color: #34D399;
+  color: var(--accent);
   font-size: 0.85rem;
   display: flex;
   align-items: center;

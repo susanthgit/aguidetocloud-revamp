@@ -4,7 +4,7 @@
    Namespace: .abguide-*
    ═══════════════════════════════════════════════════════════════ */
 
-:root { --abguide-accent: #00A4EF; --abguide-accent-rgb: 0,164,239; }
+:root { --abguide-accent: var(--accent); --abguide-accent-rgb: 99,102,241; }
 
 .abguide-page { max-width: 960px; margin: 0 auto; padding: 0 1rem 2rem; }
 .abguide-panel-intro { text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem; }
@@ -311,7 +311,7 @@
 .abguide-decision-card li { margin-bottom: 0.15rem; }
 .abguide-decision--free { border-top: 3px solid #6B7280; }
 .abguide-decision--paygo { border-top: 3px solid #F59E0B; }
-.abguide-decision--paid { border-top: 3px solid #10B981; }
+.abguide-decision--paid { border-top: 3px solid var(--accent); }
 .abguide-decision-admin { font-size: 0.78rem; color: var(--text-muted); display: block; margin-top: auto; }
 .abguide-verified { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; }
 .abguide-verified a { color: var(--abguide-accent); text-decoration: none; }

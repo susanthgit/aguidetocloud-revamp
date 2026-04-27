@@ -2,7 +2,7 @@
    Compliance Passport — .passport-* namespace
    Accent: #2ECC71 (Emerald Green)
    ============================================================================ */
-:root { --passport-accent: #2ECC71; }
+:root { --passport-accent: var(--accent); }
 .passport-page { max-width: 700px; margin: 0 auto; padding: 0 1rem 3rem; }
 
 .passport-tabs {

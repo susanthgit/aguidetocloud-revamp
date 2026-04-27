@@ -4,7 +4,7 @@
    ============================================ */
 
 :root {
-  --cliquiz-accent: #7E57C2;
+  --cliquiz-accent: var(--accent);
 }
 
 /* Layout */
@@ -440,14 +440,14 @@
 .cliquiz-try-link {
   display: inline-block; margin-top: 0.6rem; padding: 0.4rem 0.8rem;
   background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
-  border-radius: 6px; color: #4ade80; font-size: 0.82rem; font-weight: 600;
+  border-radius: 6px; color: var(--accent); font-size: 0.82rem; font-weight: 600;
   text-decoration: none;
 }
 .cliquiz-try-link:hover { background: rgba(74,222,128,0.15); }
 
 /* Timer States */
 .cliquiz-timer-warn {
-  background: #fbbf24 !important;
+  background: var(--accent) !important;
 }
 .cliquiz-timer-expired {
   background: #EF5350 !important;
@@ -519,7 +519,7 @@
 }
 .cliquiz-input:focus { border-color: var(--cliquiz-accent); }
 .cliquiz-input--correct { border-color: #4CAF50; background: rgba(76,175,80,0.08); }
-.cliquiz-input--close { border-color: #fbbf24; background: rgba(251,191,36,0.08); }
+.cliquiz-input--close { border-color: var(--accent); background: rgba(251,191,36,0.08); }
 .cliquiz-input--wrong { border-color: #EF5350; background: rgba(239,83,80,0.08); }
 
 /* Buttons */

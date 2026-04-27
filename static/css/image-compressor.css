@@ -131,7 +131,7 @@
 }
 
 .imgcomp-batch-stats strong {
-  color: #4ade80;
+  color: var(--accent);
 }
 
 .imgcomp-batch-actions {
@@ -193,12 +193,12 @@
 .imgcomp-btn-success {
   background: rgba(74,222,128,0.12);
   border-color: rgba(74,222,128,0.35);
-  color: #4ade80;
+  color: var(--accent);
 }
 
 .imgcomp-btn-success:hover {
   background: rgba(74,222,128,0.2);
-  border-color: #4ade80;
+  border-color: var(--accent);
 }
 
 /* ── Apply to All / Advanced ── */
@@ -294,7 +294,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-input-sm { max-width: 100px; }
 
-.imgcomp-select option { background: #0a0a14; }
+.imgcomp-select option { background: var(--bg-surface); }
 
 .imgcomp-target-row {
   display: flex;
@@ -483,7 +483,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-savings-badge.positive {
   background: rgba(74,222,128,0.12);
-  color: #4ade80;
+  color: var(--accent);
   border: 1px solid rgba(74,222,128,0.25);
 }
 

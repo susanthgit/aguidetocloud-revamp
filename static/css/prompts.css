@@ -200,15 +200,15 @@
 }
 /* Category-specific accent colors on headings */
 .prompts-category-group[data-category="writing"] .prompts-category-heading           { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
-.prompts-category-group[data-category="email"] .prompts-category-heading             { color: #0284C7; border-bottom-color: rgba(56,189,248,0.25); }
-.prompts-category-group[data-category="data-analysis"] .prompts-category-heading     { color: #0891B2; border-bottom-color: rgba(34,211,238,0.25); }
-.prompts-category-group[data-category="meetings"] .prompts-category-heading          { color: #2563EB; border-bottom-color: rgba(96,165,250,0.25); }
-.prompts-category-group[data-category="research"] .prompts-category-heading          { color: #059669; border-bottom-color: rgba(52,211,153,0.25); }
-.prompts-category-group[data-category="presentations"] .prompts-category-heading     { color: #C2410C; border-bottom-color: rgba(251,146,60,0.25); }
-.prompts-category-group[data-category="summarising"] .prompts-category-heading       { color: #BE185D; border-bottom-color: rgba(244,114,182,0.25); }
-.prompts-category-group[data-category="project-management"] .prompts-category-heading{ color: #A16207; border-bottom-color: rgba(250,204,21,0.25); }
-.prompts-category-group[data-category="brainstorming"] .prompts-category-heading     { color: #7C3AED; border-bottom-color: rgba(192,132,252,0.25); }
-.prompts-category-group[data-category="customer-service"] .prompts-category-heading  { color: #0D9488; border-bottom-color: rgba(45,212,191,0.25); }
+.prompts-category-group[data-category="email"] .prompts-category-heading             { color: var(--accent); border-bottom-color: rgba(56,189,248,0.25); }
+.prompts-category-group[data-category="data-analysis"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(34,211,238,0.25); }
+.prompts-category-group[data-category="meetings"] .prompts-category-heading          { color: var(--accent); border-bottom-color: rgba(96,165,250,0.25); }
+.prompts-category-group[data-category="research"] .prompts-category-heading          { color: var(--accent); border-bottom-color: rgba(52,211,153,0.25); }
+.prompts-category-group[data-category="presentations"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(251,146,60,0.25); }
+.prompts-category-group[data-category="summarising"] .prompts-category-heading       { color: var(--accent); border-bottom-color: rgba(244,114,182,0.25); }
+.prompts-category-group[data-category="project-management"] .prompts-category-heading{ color: var(--accent); border-bottom-color: rgba(250,204,21,0.25); }
+.prompts-category-group[data-category="brainstorming"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(192,132,252,0.25); }
+.prompts-category-group[data-category="customer-service"] .prompts-category-heading  { color: var(--accent); border-bottom-color: rgba(45,212,191,0.25); }
 .prompts-category-group[data-category="image-generation"] .prompts-category-heading  { color: #DC2626; border-bottom-color: rgba(248,113,113,0.25); }
 .prompts-category-emoji {
   font-size: 1.1rem;
@@ -361,15 +361,15 @@
 
 /* ── Category colour accents on prompt text border ── */
 .prompt-card[data-usecase="writing"] .prompt-text            { border-left-color: var(--accent); }
-.prompt-card[data-usecase="email"] .prompt-text              { border-left-color: #0284C7; }
-.prompt-card[data-usecase="data-analysis"] .prompt-text      { border-left-color: #0891B2; }
-.prompt-card[data-usecase="meetings"] .prompt-text           { border-left-color: #2563EB; }
-.prompt-card[data-usecase="research"] .prompt-text           { border-left-color: #059669; }
-.prompt-card[data-usecase="presentations"] .prompt-text      { border-left-color: #C2410C; }
-.prompt-card[data-usecase="summarising"] .prompt-text        { border-left-color: #BE185D; }
-.prompt-card[data-usecase="project-management"] .prompt-text { border-left-color: #A16207; }
-.prompt-card[data-usecase="brainstorming"] .prompt-text      { border-left-color: #7C3AED; }
-.prompt-card[data-usecase="customer-service"] .prompt-text   { border-left-color: #0D9488; }
+.prompt-card[data-usecase="email"] .prompt-text              { border-left-color: var(--accent); }
+.prompt-card[data-usecase="data-analysis"] .prompt-text      { border-left-color: var(--accent); }
+.prompt-card[data-usecase="meetings"] .prompt-text           { border-left-color: var(--accent); }
+.prompt-card[data-usecase="research"] .prompt-text           { border-left-color: var(--accent); }
+.prompt-card[data-usecase="presentations"] .prompt-text      { border-left-color: var(--accent); }
+.prompt-card[data-usecase="summarising"] .prompt-text        { border-left-color: var(--accent); }
+.prompt-card[data-usecase="project-management"] .prompt-text { border-left-color: var(--accent); }
+.prompt-card[data-usecase="brainstorming"] .prompt-text      { border-left-color: var(--accent); }
+.prompt-card[data-usecase="customer-service"] .prompt-text   { border-left-color: var(--accent); }
 .prompt-card[data-usecase="image-generation"] .prompt-text   { border-left-color: #DC2626; }
 
 /* Card footer */
@@ -516,15 +516,15 @@
 
 /* Category card left-accent colours */
 .prompts-category-card[data-cat="writing"]            { border-left: 3px solid var(--accent); }
-.prompts-category-card[data-cat="email"]              { border-left: 3px solid #38BDF8; }
-.prompts-category-card[data-cat="data-analysis"]      { border-left: 3px solid #22D3EE; }
-.prompts-category-card[data-cat="meetings"]           { border-left: 3px solid #60A5FA; }
-.prompts-category-card[data-cat="research"]           { border-left: 3px solid #34D399; }
-.prompts-category-card[data-cat="presentations"]      { border-left: 3px solid #FB923C; }
+.prompts-category-card[data-cat="email"]              { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="data-analysis"]      { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="meetings"]           { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="research"]           { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="presentations"]      { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="summarising"]        { border-left: 3px solid #F472B6; }
 .prompts-category-card[data-cat="project-management"] { border-left: 3px solid #FACC15; }
-.prompts-category-card[data-cat="brainstorming"]      { border-left: 3px solid #C084FC; }
-.prompts-category-card[data-cat="customer-service"]   { border-left: 3px solid #2DD4BF; }
+.prompts-category-card[data-cat="brainstorming"]      { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="customer-service"]   { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="image-generation"]   { border-left: 3px solid #F87171; }
 
 /* ── SINGLE PROMPT PAGE ─────────────────────── */
@@ -990,7 +990,7 @@
   padding: 0.15rem 0.5rem; border-radius: 10px; text-transform: uppercase;
   letter-spacing: 0.03em; flex-shrink: 0;
 }
-.prompt-diff-badge[data-level="beginner"] { background: rgba(52,211,153,0.12); color: #059669; border: 1px solid rgba(52,211,153,0.25); }
+.prompt-diff-badge[data-level="beginner"] { background: rgba(52,211,153,0.12); color: var(--accent); border: 1px solid rgba(52,211,153,0.25); }
 .prompt-diff-badge[data-level="intermediate"] { background: rgba(251,191,36,0.12); color: var(--text-primary); border: 1px solid rgba(251,191,36,0.25); }
 .prompt-diff-badge[data-level="advanced"] { background: rgba(239,68,68,0.12); color: var(--text-primary); border: 1px solid rgba(239,68,68,0.25); }
 
@@ -1043,7 +1043,7 @@
 
 /* ══ V3: Fav Badge ══ */
 .prompts-fav-badge {
-  background: #FBBF24; color: var(--accent-foreground); font-size: 0.6rem; font-weight: 800;
+  background: var(--accent); color: var(--accent-foreground); font-size: 0.6rem; font-weight: 800;
   padding: 0.1rem 0.4rem; border-radius: 8px; margin-left: 0.3rem;
   vertical-align: middle;
 }
@@ -1099,7 +1099,7 @@
 .prompts-wizard-copy:hover { /* z5-removed: glow shadow */ }
 .prompts-wizard-copy.copied { background: var(--success); }
 .prompts-wizard-polish {
-  background: rgba(236,72,153,0.1); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 10px;
   font-weight: 700; font-family: var(--font-heading); font-size: 0.85rem;
   cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;

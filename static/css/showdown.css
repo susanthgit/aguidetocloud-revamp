@@ -241,7 +241,7 @@
   border: 1px solid var(--showdown-accent-mid);
 }
 .showdown-badge-open {
-  background: rgba(34, 197, 94, 0.15);
+  background: var(--accent-subtle);
   color: var(--showdown-green);
 }
 
@@ -697,7 +697,7 @@
   font-weight: 600;
 }
 .showdown-type-price_change { background: rgba(234,179,8,0.15); color: var(--showdown-yellow); }
-.showdown-type-new_plan { background: rgba(34,197,94,0.15); color: var(--showdown-green); }
+.showdown-type-new_plan { background: var(--accent-subtle); color: var(--showdown-green); }
 .showdown-type-new_model { background: rgba(59,130,246,0.15); color: var(--showdown-blue); }
 .showdown-type-new_feature { background: rgba(168,85,247,0.15); color: #a855f7; }
 .showdown-type-breaking { background: rgba(239,68,68,0.15); color: var(--showdown-red); }

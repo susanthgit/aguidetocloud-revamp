@@ -55,7 +55,7 @@
   color: var(--accent-foreground, #fff);
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 2px 8px var(--accent-subtle);
 }
 .shealth-tab-badge {
   display: inline-flex; align-items: center; justify-content: center;
@@ -469,7 +469,7 @@
   line-height: 1.5;
   margin-bottom: 1.2rem;
   padding: 0.75rem;
-  background: rgba(249, 115, 22, 0.06);
+  background: var(--accent-subtle);
   border-radius: var(--radius-md, 10px);
   border-left: 3px solid var(--accent);
 }
@@ -671,7 +671,7 @@
   line-height: 1.5;
 }
 .shealth-date-result-ok {
-  background: rgba(34, 197, 94, 0.08);
+  background: var(--accent-subtle);
   border: 1px solid rgba(34, 197, 94, 0.25);
   color: var(--sh-green);
 }

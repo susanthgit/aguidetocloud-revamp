@@ -4,7 +4,7 @@
    Namespace: .aginst-*
    ═══════════════════════════════════════════════════════════════ */
 
-:root { --aginst-accent: #E0976B; --aginst-accent-rgb: 224,151,107; }
+:root { --aginst-accent: var(--accent); --aginst-accent-rgb: 99,102,241; }
 
 .aginst-page { max-width: 900px; margin: 0 auto; padding: 0 1rem 2rem; }
 
@@ -169,7 +169,7 @@ textarea.aginst-input { resize: vertical; min-height: 60px; }
   border-radius: 10px; padding: 0.75rem; margin-bottom: 0.75rem;
 }
 .aginst-badge-good {
-  font-size: var(--text-caption, 0.75rem); background: rgba(16,185,129,0.2); color: #10B981;
+  font-size: var(--text-caption, 0.75rem); background: rgba(16,185,129,0.2); color: var(--accent);
   padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 600;
 }
 .aginst-badge-refuse {
@@ -263,7 +263,7 @@ textarea.aginst-input { resize: vertical; min-height: 60px; }
 .aginst-compare-row:last-child { border: none; }
 .aginst-compare-label { color: var(--text-secondary); }
 .aginst-compare-val { color: var(--text-primary); font-weight: 600; }
-.aginst-cc-yes { color: #10B981; }
+.aginst-cc-yes { color: var(--accent); }
 .aginst-cc-no { color: var(--text-muted); }
 
 /* ── Decider ── */
@@ -321,7 +321,7 @@ textarea.aginst-input { resize: vertical; min-height: 60px; }
 }
 .aginst-practice-priority.critical { background: rgba(239,68,68,0.2); color: var(--text-primary); }
 .aginst-practice-priority.high { background: rgba(251,191,36,0.2); color: var(--text-primary); }
-.aginst-practice-priority.medium { background: rgba(96,165,250,0.2); color: #60A5FA; }
+.aginst-practice-priority.medium { background: rgba(96,165,250,0.2); color: var(--accent); }
 .aginst-practice-detail {
   padding: 0 0.8rem 0.75rem; display: none;
 }

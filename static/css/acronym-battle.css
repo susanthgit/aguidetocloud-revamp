@@ -2,7 +2,7 @@
    Tech Acronym Battle — .acro-* namespace
    Accent: #9B59B6 (Amethyst)
    ============================================================================ */
-:root { --acro-accent: #9B59B6; }
+:root { --acro-accent: var(--accent); }
 
 .acro-page { max-width: 650px; margin: 0 auto; padding: 0 1rem 3rem; }
 
@@ -112,7 +112,7 @@
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); padding: 0.45rem 0.7rem; border-radius: 8px; font-size: 0.8rem;
 }
-.acro-cat-select option { background: #0a0a14; color: var(--text-primary); }
+.acro-cat-select option { background: var(--bg-surface); color: var(--text-primary); }
 
 /* Lobby count */
 .acro-lobby-count { text-align: center; font-size: 0.75rem; color: var(--text-muted); }

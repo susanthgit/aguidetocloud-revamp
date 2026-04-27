@@ -178,7 +178,7 @@
   box-shadow: 0 0 0 3px var(--accent-subtle);
 }
 .roi-select-sm { width: auto; }
-.roi-select option { background: #0a0a14; color: var(--text-primary); }
+.roi-select option { background: var(--bg-surface); color: var(--text-primary); }
 
 /* ── Radio Group ── */
 .roi-radio-group {
@@ -292,7 +292,7 @@
 }
 .roi-badge-low { background: rgba(239,68,68,0.2); color: var(--text-primary); }
 .roi-badge-mid { background: rgba(234,179,8,0.2); color: var(--text-primary); }
-.roi-badge-high { background: rgba(34,197,94,0.2); color: #22c55e; }
+.roi-badge-high { background: rgba(34,197,94,0.2); color: var(--accent); }
 
 /* ── Big Number ── */
 .roi-big-number {
@@ -473,7 +473,7 @@
   color: var(--text-primary);
   font-size: 0.85rem;
 }
-.roi-roles-table select option { background: #0a0a14; }
+.roi-roles-table select option { background: var(--bg-surface); }
 .roi-role-remove {
   background: none;
   border: none;
@@ -1012,7 +1012,7 @@
   margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
 }
 .roi-bench-above {
-  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.2);
   color: var(--roi-green);
 }
 .roi-bench-below {

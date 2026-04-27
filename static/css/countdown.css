@@ -582,7 +582,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: #0a0812;
+  background: var(--bg-surface);
   display: flex;
   align-items: center;
   justify-content: center;

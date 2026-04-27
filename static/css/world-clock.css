@@ -416,7 +416,7 @@
   margin-top: 0.25rem;
   display: inline-block;
 }
-.wclk-result-biz.biz-green { background: rgba(34,197,94,0.12); color: var(--wclk-green); }
+.wclk-result-biz.biz-green { background: var(--accent-subtle); color: var(--wclk-green); }
 .wclk-result-biz.biz-yellow { background: rgba(234,179,8,0.12); color: var(--wclk-yellow); }
 .wclk-result-biz.biz-red { background: rgba(239,68,68,0.12); color: var(--wclk-red); }
 
@@ -646,9 +646,9 @@
   flex: 1;
   min-width: 160px;
 }
-.wclk-slider-card.period-morning { border-left: 3px solid #FBBF24; }
-.wclk-slider-card.period-day { border-left: 3px solid #22C55E; }
-.wclk-slider-card.period-evening { border-left: 3px solid #F97316; }
+.wclk-slider-card.period-morning { border-left: 3px solid var(--accent); }
+.wclk-slider-card.period-day { border-left: 3px solid var(--accent); }
+.wclk-slider-card.period-evening { border-left: 3px solid var(--accent); }
 .wclk-slider-card.period-night { border-left: 3px solid #8B5CF6; }
 .wclk-sc-flag { font-size: 1.2rem; }
 .wclk-sc-info { flex: 1; min-width: 0; }
@@ -671,8 +671,8 @@
   white-space: nowrap;
 }
 .wclk-sc-period.morning { background: rgba(251,191,36,0.12); color: var(--text-primary); }
-.wclk-sc-period.day { background: rgba(34,197,94,0.12); color: #22C55E; }
-.wclk-sc-period.evening { background: rgba(249,115,22,0.12); color: var(--text-primary); }
+.wclk-sc-period.day { background: var(--accent-subtle); color: var(--accent); }
+.wclk-sc-period.evening { background: var(--accent-subtle); color: var(--text-primary); }
 .wclk-sc-period.night { background: rgba(139,92,246,0.12); color: #8B5CF6; }
 
 /* Timeline */
@@ -711,7 +711,7 @@
 }
 .wclk-timeline-hour.period-day { background: rgba(34, 197, 94, 0.35); }
 .wclk-timeline-hour.period-morning { background: rgba(251, 191, 36, 0.25); }
-.wclk-timeline-hour.period-evening { background: rgba(249, 115, 22, 0.2); }
+.wclk-timeline-hour.period-evening { background: var(--accent-subtle); }
 .wclk-timeline-hour.period-night { background: rgba(139, 92, 246, 0.15); }
 .wclk-timeline-hour.golden { box-shadow: inset 0 0 0 2px var(--wclk-green); }
 .wclk-timeline-hour.slider-active {
@@ -775,7 +775,7 @@
   margin-bottom: 1rem;
 }
 .wclk-golden-box {
-  background: rgba(34, 197, 94, 0.08);
+  background: var(--accent-subtle);
   border: 1px solid rgba(34, 197, 94, 0.25);
   border-radius: 16px;
   padding: 1rem 1.2rem;

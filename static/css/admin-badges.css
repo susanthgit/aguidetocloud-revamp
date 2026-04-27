@@ -4,7 +4,7 @@
    ============================================ */
 
 :root {
-  --badges-accent: #FFD54F;
+  --badges-accent: var(--accent);
 }
 
 /* Layout */
@@ -361,7 +361,7 @@
   display: flex; align-items: center; justify-content: center; padding: 1rem;
 }
 .badges-modal {
-  background: #0a0a14; border: 1px solid rgba(255,213,79,0.2);
+  background: var(--bg-surface); border: 1px solid rgba(255,213,79,0.2);
   border-radius: 16px; max-width: 480px; width: 100%; padding: 2rem;
   text-align: center; position: relative;
   animation: badges-modal-in 0.3s ease;

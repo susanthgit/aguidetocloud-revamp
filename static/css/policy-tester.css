@@ -4,7 +4,7 @@
    ============================================ */
 
 :root {
-  --ptester-accent: #26A69A;
+  --ptester-accent: var(--accent);
 }
 
 /* Layout */
@@ -247,9 +247,9 @@
   line-height: 1.5;
 }
 .ptester-rec-critical { border-left: 3px solid #ef4444; }
-.ptester-rec-warning  { border-left: 3px solid #fb923c; }
-.ptester-rec-info     { border-left: 3px solid #3b82f6; }
-.ptester-rec-success  { border-left: 3px solid #4ade80; }
+.ptester-rec-warning  { border-left: 3px solid var(--accent); }
+.ptester-rec-info     { border-left: 3px solid var(--accent); }
+.ptester-rec-success  { border-left: 3px solid var(--accent); }
 
 /* Compare Table */
 .ptester-compare-table {
@@ -340,8 +340,8 @@
 }
 .ptester-delta-card .before { color: var(--text-secondary); }
 .ptester-delta-card .arrow { color: var(--ptester-accent); font-size: 1.2rem; margin: 0 0.5rem; }
-.ptester-delta-card .after { color: #4ade80; font-weight: 700; font-size: 1.3rem; }
-.ptester-delta-card .gain { color: #4ade80; font-weight: 600; }
+.ptester-delta-card .after { color: var(--accent); font-weight: 700; font-size: 1.3rem; }
+.ptester-delta-card .gain { color: var(--accent); font-weight: 600; }
 
 /* Export Button */
 .ptester-export-btn {

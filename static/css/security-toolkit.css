@@ -4,7 +4,7 @@
 */
 
 .sectool-page {
-  --sectool-accent: #41A235;
+  --sectool-accent: var(--accent);
   --sectool-accent-dim: rgba(65, 162, 53, 0.15);
   --sectool-accent-glow: rgba(65, 162, 53, 0.25);
   --sectool-accent-bright: #5BC44A;
@@ -181,7 +181,7 @@
 .sectool-delta {
   font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem;
 }
-.sectool-delta .up { color: #22C55E; }
+.sectool-delta .up { color: var(--accent); }
 .sectool-delta .down { color: var(--text-primary); }
 
 /* Category bars */
@@ -360,8 +360,8 @@
   border-radius: 4px; flex-shrink: 0;
 }
 .sectool-dmarc-policy-badge.none { background: rgba(234,179,8,0.15); color: var(--text-primary); }
-.sectool-dmarc-policy-badge.quarantine { background: rgba(249,115,22,0.15); color: var(--text-primary); }
-.sectool-dmarc-policy-badge.reject { background: rgba(34,197,94,0.15); color: #22C55E; }
+.sectool-dmarc-policy-badge.quarantine { background: var(--accent-subtle); color: var(--text-primary); }
+.sectool-dmarc-policy-badge.reject { background: var(--accent-subtle); color: var(--accent); }
 .sectool-dmarc-action { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4; }
 
 /* ══════════════════════════════════════════════════════════════ */
@@ -381,9 +381,9 @@
   border-radius: var(--radius-md, 10px); padding: 1.25rem; border-left: 4px solid;
 }
 .sectool-action-card.critical { border-left-color: #EF4444; }
-.sectool-action-card.high { border-left-color: #F97316; }
-.sectool-action-card.medium { border-left-color: #EAB308; }
-.sectool-action-card.low { border-left-color: #22C55E; }
+.sectool-action-card.high { border-left-color: var(--accent); }
+.sectool-action-card.medium { border-left-color: var(--accent); }
+.sectool-action-card.low { border-left-color: var(--accent); }
 
 .sectool-action-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
 .sectool-action-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); flex: 1; }
@@ -393,9 +393,9 @@
   border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
 }
 .sectool-badge-impact { background: rgba(239,68,68,0.12); color: var(--text-primary); }
-.sectool-badge-impact.high { background: rgba(249,115,22,0.12); color: var(--text-primary); }
+.sectool-badge-impact.high { background: var(--accent-subtle); color: var(--text-primary); }
 .sectool-badge-impact.medium { background: rgba(234,179,8,0.12); color: var(--text-primary); }
-.sectool-badge-impact.low { background: rgba(34,197,94,0.12); color: #22C55E; }
+.sectool-badge-impact.low { background: var(--accent-subtle); color: var(--accent); }
 .sectool-badge-effort { background: var(--bg-elevated); color: var(--text-secondary); }
 
 .sectool-action-why {
@@ -435,7 +435,7 @@
 
 /* Risk quantifier */
 .sectool-risk-quantifier {
-  background: rgba(249,115,22,0.06); border: 1px solid rgba(249,115,22,0.15);
+  background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
   border-radius: var(--radius-md, 10px); padding: 1.5rem; margin-top: 1.5rem;
 }
 .sectool-risk-quantifier h3 {

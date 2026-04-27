@@ -4,8 +4,8 @@
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --pvs-accent: #84CC16;
-  --pvs-accent-rgb: 132, 204, 22;
+  --pvs-accent: var(--accent);
+  --pvs-accent-rgb: 99,102,241;
   --pvs-accent-dim: rgba(132, 204, 22, 0.15);
 }
 
@@ -211,7 +211,7 @@
   color: var(--text-secondary);
 }
 .pvs-kit-stat--labels { color: var(--pvs-accent); }
-.pvs-kit-stat--dlp { color: #60A5FA; }
+.pvs-kit-stat--dlp { color: var(--accent); }
 
 .pvs-kit-licence {
   display: inline-flex;
@@ -230,9 +230,9 @@
   margin-top: 0.25rem;
 }
 
-.pvs-licence-e3{ background: rgba(74,222,128,0.15); color: #4ADE80; }
-.pvs-licence-e5 { background: rgba(96,165,250,0.15); color: #60A5FA; }
-.pvs-licence-e5-compliance { background: rgba(192,132,252,0.15); color: #C084FC; }
+.pvs-licence-e3{ background: rgba(74,222,128,0.15); color: var(--accent); }
+.pvs-licence-e5 { background: rgba(96,165,250,0.15); color: var(--accent); }
+.pvs-licence-e5-compliance { background: rgba(192,132,252,0.15); color: var(--accent); }
 
 /* ── Kit expanded details ── */
 .pvs-kit-details {
@@ -293,16 +293,16 @@
   color: var(--text-secondary);
 }
 .pvs-label-badge--encrypt { background: rgba(239,68,68,0.15); color: var(--text-primary); }
-.pvs-label-badge--mark { background: rgba(96,165,250,0.15); color: #60A5FA; }
-.pvs-label-badge--auto { background: rgba(132,204,22,0.15); color: #84CC16; }
+.pvs-label-badge--mark { background: rgba(96,165,250,0.15); color: var(--accent); }
+.pvs-label-badge--auto { background: rgba(132,204,22,0.15); color: var(--accent); }
 
 /* Label colour borders */
-.pvs-label-colour-green { border-color: #4ADE80; }
-.pvs-label-colour-blue { border-color: #60A5FA; }
-.pvs-label-colour-yellow { border-color: #FBBF24; }
-.pvs-label-colour-orange { border-color: #FB923C; }
+.pvs-label-colour-green { border-color: var(--accent); }
+.pvs-label-colour-blue { border-color: var(--accent); }
+.pvs-label-colour-yellow { border-color: var(--accent); }
+.pvs-label-colour-orange { border-color: var(--accent); }
 .pvs-label-colour-red { border-color: #F87171; }
-.pvs-label-colour-purple { border-color: #C084FC; }
+.pvs-label-colour-purple { border-color: var(--accent); }
 
 /* ── DLP rules list ── */
 .pvs-dlp-list {
@@ -329,8 +329,8 @@
 }
 .pvs-dlp-action--block { background: rgba(239,68,68,0.2); color: var(--text-primary); }
 .pvs-dlp-action--warn { background: rgba(251,191,36,0.2); color: var(--text-primary); }
-.pvs-dlp-action--log { background: rgba(96,165,250,0.2); color: #60A5FA; }
-.pvs-dlp-action--label { background: rgba(132,204,22,0.2); color: #84CC16; }
+.pvs-dlp-action--log { background: rgba(96,165,250,0.2); color: var(--accent); }
+.pvs-dlp-action--label { background: rgba(132,204,22,0.2); color: var(--accent); }
 
 .pvs-dlp-desc {
   color: var(--text-secondary);
@@ -770,12 +770,12 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-.pvs-lb-ribbon-dot--green { background: #4ADE80; }
-.pvs-lb-ribbon-dot--blue { background: #60A5FA; }
-.pvs-lb-ribbon-dot--yellow { background: #FBBF24; }
-.pvs-lb-ribbon-dot--orange { background: #FB923C; }
+.pvs-lb-ribbon-dot--green { background: var(--accent); }
+.pvs-lb-ribbon-dot--blue { background: var(--accent); }
+.pvs-lb-ribbon-dot--yellow { background: var(--accent); }
+.pvs-lb-ribbon-dot--orange { background: var(--accent); }
 .pvs-lb-ribbon-dot--red { background: #F87171; }
-.pvs-lb-ribbon-dot--purple { background: #C084FC; }
+.pvs-lb-ribbon-dot--purple { background: var(--accent); }
 
 /* Modal */
 .pvs-modal-overlay {
@@ -789,7 +789,7 @@
   padding: 1rem;
 }
 .pvs-modal {
-  background: #0a0a14;
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 16px;
   width: 100%;

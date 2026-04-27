@@ -27,7 +27,7 @@
 }
 .plab-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .plab-tab.active {
-  color: var(--accent-foreground, #fff); background: #2DD4BF; border-color: #2DD4BF;
+  color: var(--accent-foreground, #fff); background: var(--accent); border-color: var(--accent);
   box-shadow: 0 2px 8px rgba(45,212,191,0.3);
 }
 .plab-panel { display: none; }
@@ -38,10 +38,10 @@
   color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;
   margin-bottom: 1.5rem; max-width: 700px;
 }
-.plab-intro a { color: #2DD4BF; text-decoration: underline; }
+.plab-intro a { color: var(--accent); text-decoration: underline; }
 
 .plab-section-title {
-  color: #2DD4BF; font-size: 1.1rem; font-weight: 700;
+  color: var(--accent); font-size: 1.1rem; font-weight: 700;
   margin: 0 0 1rem; padding: 0;
 }
 
@@ -61,7 +61,7 @@
   overflow: hidden; margin-bottom: 0.25rem;
 }
 .plab-progress-fill {
-  height: 100%; background: #2DD4BF; border-radius: 3px;
+  height: 100%; background: var(--accent); border-radius: 3px;
   transition: width 0.4s ease; width: 0;
 }
 .plab-progress-text {
@@ -77,7 +77,7 @@
   cursor: pointer;
 }
 .plab-card:hover { border-color: rgba(45,212,191,0.3); }
-.plab-card.explored { border-left: 3px solid #2DD4BF; }
+.plab-card.explored { border-left: 3px solid var(--accent); }
 
 .plab-card-header {
   display: flex; align-items: center; gap: 0.75rem;
@@ -95,10 +95,10 @@
   font-size: var(--text-caption, 0.75rem); font-weight: 600; padding: 0.2rem 0.5rem;
   border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;
 }
-.plab-badge-diff-1 { background: rgba(45,212,191,0.15); color: #2DD4BF; }
+.plab-badge-diff-1 { background: rgba(45,212,191,0.15); color: var(--accent); }
 .plab-badge-diff-2 { background: rgba(245,158,11,0.15); color: var(--text-primary); }
 .plab-badge-diff-3 { background: rgba(239,68,68,0.15); color: var(--text-primary); }
-.plab-badge-explored { background: rgba(45,212,191,0.2); color: #2DD4BF; }
+.plab-badge-explored { background: rgba(45,212,191,0.2); color: var(--accent); }
 
 .plab-card-chevron {
   color: var(--text-muted); font-size: 0.8rem; transition: transform 0.2s;
@@ -111,7 +111,7 @@
 .plab-card.open .plab-card-body { display: block; }
 
 .plab-card-body h4 {
-  color: #2DD4BF; font-size: 0.82rem; font-weight: 700;
+  color: var(--accent); font-size: 0.82rem; font-weight: 700;
   margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em;
 }
 
@@ -123,7 +123,7 @@
   padding-left: 1.2rem; position: relative;
 }
 .plab-when-list li::before {
-  content: '→'; position: absolute; left: 0; color: #2DD4BF;
+  content: '→'; position: absolute; left: 0; color: var(--accent);
 }
 
 .plab-pattern-box {
@@ -140,13 +140,13 @@
   border-left: 3px solid;
 }
 .plab-ba-before { border-color: #EF4444; }
-.plab-ba-after { border-color: #2DD4BF; }
+.plab-ba-after { border-color: var(--accent); }
 .plab-ba-label {
   font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
   margin-bottom: 0.3rem; letter-spacing: 0.04em;
 }
 .plab-ba-before .plab-ba-label { color: var(--text-primary); }
-.plab-ba-after .plab-ba-label { color: #2DD4BF; }
+.plab-ba-after .plab-ba-label { color: var(--accent); }
 .plab-ba-prompt {
   font-size: 0.78rem; color: var(--text-primary); line-height: 1.5;
   font-style: italic; margin: 0.3rem 0;
@@ -166,14 +166,14 @@
 
 .plab-card-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
 .plab-btn {
-  background: #2DD4BF; color: var(--accent-foreground, #fff); border: none; padding: 0.5rem 1rem;
+  background: var(--accent); color: var(--accent-foreground, #fff); border: none; padding: 0.5rem 1rem;
   border-radius: 8px; font-size: 0.82rem; font-weight: 600;
   cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
 .plab-btn:hover { background: #5EEAD4; }
 .plab-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .plab-btn-outline {
-  background: none; color: #2DD4BF; border: 1px solid rgba(45,212,191,0.3);
+  background: none; color: var(--accent); border: 1px solid rgba(45,212,191,0.3);
   padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
   cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
@@ -183,7 +183,7 @@
 .plab-prereq {
   font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;
 }
-.plab-prereq a { color: #2DD4BF; }
+.plab-prereq a { color: var(--accent); }
 
 /* ── Lab Tab ────────────────────────────────────────────────────────────── */
 .plab-lab-controls {
@@ -196,7 +196,7 @@
   color: var(--text-primary); padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem;
   font-family: inherit; min-width: 240px;
 }
-.plab-select option { background: #0a0a14; }
+.plab-select option { background: var(--bg-surface); }
 .plab-exercise-count { font-size: 0.75rem; color: var(--text-muted); }
 
 .plab-lab-empty {
@@ -241,7 +241,7 @@
   resize: vertical; line-height: 1.5; margin-bottom: 0.75rem;
 }
 .plab-textarea:focus {
-  outline: none; border-color: #2DD4BF;
+  outline: none; border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(45,212,191,0.2);
 }
 
@@ -254,8 +254,8 @@
 .plab-criteria li::before {
   content: '○'; position: absolute; left: 0; font-size: 0.85rem;
 }
-.plab-criteria li.met { color: #2DD4BF; }
-.plab-criteria li.met::before { content: '●'; color: #2DD4BF; }
+.plab-criteria li.met { color: var(--accent); }
+.plab-criteria li.met::before { content: '●'; color: var(--accent); }
 
 /* Hints */
 .plab-hints-toggle {
@@ -263,7 +263,7 @@
   background: none; border: none; padding: 0; font-family: inherit;
   margin-bottom: 0.5rem;
 }
-.plab-hints-toggle:hover { color: #2DD4BF; }
+.plab-hints-toggle:hover { color: var(--accent); }
 .plab-hints-list {
   font-size: 0.78rem; color: var(--text-secondary); margin: 0 0 0.5rem;
   padding-left: 1.2rem;
@@ -277,7 +277,7 @@
 }
 .plab-answer-box.visible { display: block; }
 .plab-answer-label {
-  font-size: 0.72rem; font-weight: 700; color: #2DD4BF;
+  font-size: 0.72rem; font-weight: 700; color: var(--accent);
   text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .plab-answer-text {
@@ -303,7 +303,7 @@
 }
 .plab-combo-step {
   font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.5rem;
-  background: rgba(45,212,191,0.1); color: #2DD4BF; border-radius: 4px;
+  background: rgba(45,212,191,0.1); color: var(--accent); border-radius: 4px;
 }
 .plab-combo-arrow { color: var(--text-muted); font-size: 0.75rem; }
 
@@ -338,7 +338,7 @@
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--bg-elevated); transition: background 0.3s;
 }
-.plab-quiz-dot.active { background: #2DD4BF; }
+.plab-quiz-dot.active { background: var(--accent); }
 .plab-quiz-dot.done { background: rgba(45,212,191,0.4); }
 
 .plab-quiz-question {
@@ -356,12 +356,12 @@
   background: rgba(45,212,191,0.06);
 }
 .plab-quiz-option.selected {
-  border-color: #2DD4BF; color: var(--text-primary); background: rgba(45,212,191,0.1);
+  border-color: var(--accent); color: var(--text-primary); background: rgba(45,212,191,0.1);
 }
 
 /* Quiz results */
 .plab-results-title {
-  font-size: 1.1rem; font-weight: 700; color: #2DD4BF; margin-bottom: 1rem;
+  font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem;
 }
 .plab-result-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
@@ -369,7 +369,7 @@
   display: flex; align-items: flex-start; gap: 0.75rem;
 }
 .plab-result-rank {
-  font-size: 1.5rem; font-weight: 800; color: #2DD4BF; flex-shrink: 0;
+  font-size: 1.5rem; font-weight: 800; color: var(--accent); flex-shrink: 0;
   width: 2rem; text-align: center;
 }
 .plab-result-rank.gold { color: var(--text-primary); }
@@ -396,7 +396,7 @@
 /* ── Toast ───────────────────────────────────────────────────────────────── */
 .plab-toast {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
-  background: #2DD4BF; color: #000; padding: 0.6rem 1rem;
+  background: var(--accent); color: #000; padding: 0.6rem 1rem;
   border-radius: 8px; font-size: 0.82rem; font-weight: 600;
   z-index: 1000; opacity: 0; transition: opacity 0.3s;
   pointer-events: none;

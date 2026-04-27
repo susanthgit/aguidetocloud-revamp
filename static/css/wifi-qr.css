@@ -36,8 +36,8 @@
 .wifiqr-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .wifiqr-tab.active {
   color: var(--accent-foreground, #fff);
-  background: #22D3EE;
-  border-color: #22D3EE;
+  background: var(--accent);
+  border-color: var(--accent);
   box-shadow: 0 2px 8px rgba(34, 211, 238, 0.3);
 }
 .wifiqr-panel { display: none; }
@@ -71,7 +71,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #22D3EE;
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
@@ -104,7 +104,7 @@
 .wifiqr-input:focus,
 .wifiqr-select:focus {
   outline: none;
-  border-color: #22D3EE;
+  border-color: var(--accent);
 }
 
 .wifiqr-input::placeholder {
@@ -193,8 +193,8 @@
 
 .wifiqr-template-btn.active {
   background: rgba(34,211,238,0.15);
-  border-color: #22D3EE;
-  color: #22D3EE;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Preview Card ── */
@@ -339,19 +339,19 @@
 
 .wifiqr-btn:hover {
   background: rgba(34,211,238,0.25);
-  border-color: #22D3EE;
+  border-color: var(--accent);
 }
 
 .wifiqr-btn-primary {
-  background: #22D3EE;
+  background: var(--accent);
   color: #0f172a;
-  border-color: #22D3EE;
+  border-color: var(--accent);
   font-weight: 600;
 }
 
 .wifiqr-btn-primary:hover {
-  background: #06b6d4;
-  border-color: #06b6d4;
+  background: var(--bg-surface);
+  border-color: var(--accent);
 }
 
 /* ── Cross-link to full QR generator ── */
@@ -367,7 +367,7 @@
 }
 
 .wifiqr-upsell a {
-  color: #22D3EE;
+  color: var(--accent);
   text-decoration: none;
 }
 

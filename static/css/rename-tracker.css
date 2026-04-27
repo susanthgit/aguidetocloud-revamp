@@ -2,7 +2,7 @@
    Rename Tracker — .rename-* namespace
    Accent: #B07D4F (Warm Bronze)
    ============================================================================ */
-:root { --rename-accent: #B07D4F; }
+:root { --rename-accent: var(--accent); }
 .rename-page { max-width: 750px; margin: 0 auto; padding: 0 1rem 3rem; }
 
 .rename-tabs {
@@ -35,7 +35,7 @@
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); padding: 0.6rem; border-radius: 10px; font-size: 0.85rem;
 }
-.rename-select option { background: #0a0a14; color: var(--text-primary); }
+.rename-select option { background: var(--bg-surface); color: var(--text-primary); }
 .rename-count { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem; }
 
 .rename-card {

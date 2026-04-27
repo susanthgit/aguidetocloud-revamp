@@ -1308,10 +1308,10 @@
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  .licpick-rec-badge { background: #22c55e !important; }
+  .licpick-rec-badge { background: var(--accent) !important; }
   .licpick-price-big { color: #16a34a !important; }
   .licpick-bd-line { border-color: #e5e7eb !important; color: #374151 !important; }
-  .licpick-bd-total { border-color: #22c55e !important; color: #16a34a !important; }
+  .licpick-bd-total { border-color: var(--accent) !important; color: #16a34a !important; }
   .licpick-rec-annual, .licpick-rec-nzd { color: #6b7280 !important; }
   .licpick-rec-coverage { color: #374151 !important; }
 

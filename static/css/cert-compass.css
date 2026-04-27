@@ -4,7 +4,7 @@
    Namespace: .compass-*
    ============================================================================ */
 
-:root { --compass-accent: #6366F1; --compass-accent-rgb: 99,102,241; }
+:root { --compass-accent: var(--accent); --compass-accent-rgb: 99,102,241; }
 
 .compass-page { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 3rem; }
 
@@ -88,7 +88,7 @@
   color: rgb(var(--compass-accent-rgb));
   border: 1px solid rgba(var(--compass-accent-rgb), 0.3);
 }
-.compass-badge-fee { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.25); }
+.compass-badge-fee { background: rgba(16,185,129,0.12); color: var(--accent); border: 1px solid rgba(16,185,129,0.25); }
 .compass-badge-diff { background: rgba(251,191,36,0.12); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.25); }
 .compass-card-expand {
   color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; font-size: 0.8rem;
@@ -108,8 +108,8 @@
 .compass-btn-primary:hover { filter: brightness(1.15); }
 .compass-btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-secondary); }
 .compass-btn-outline:hover { border-color: var(--compass-accent); color: var(--text-primary); }
-.compass-btn-ms { background: rgba(0,120,212,0.15); color: #60A5FA; border: 1px solid rgba(0,120,212,0.3); }
-.compass-btn-guided { background: rgba(16,185,129,0.12); color: #34D399; border: 1px solid rgba(16,185,129,0.25); }
+.compass-btn-ms { background: rgba(0,120,212,0.15); color: var(--accent); border: 1px solid rgba(0,120,212,0.3); }
+.compass-btn-guided { background: rgba(16,185,129,0.12); color: var(--accent); border: 1px solid rgba(16,185,129,0.25); }
 .compass-btn-guided:hover { background: rgba(16,185,129,0.22); border-color: rgba(16,185,129,0.5); }
 
 /* ── Matches ──────────────────────────────────────────────────────────── */
@@ -127,7 +127,7 @@
 .compass-match-icon { font-size: 1.5rem; }
 .compass-match-title { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); }
 .compass-match-badges { display: flex; gap: 0.4rem; margin-left: auto; }
-.compass-badge-role { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.25); }
+.compass-badge-role { background: rgba(16,185,129,0.12); color: var(--accent); border: 1px solid rgba(16,185,129,0.25); }
 .compass-badge-mixed { background: rgba(251,191,36,0.12); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.25); }
 .compass-match-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
 .compass-match-cert {
@@ -270,12 +270,12 @@
   background: transparent; border: 1px solid rgba(16,185,129,0.3); color: rgba(16,185,129,0.7);
   font-size: 0.72rem; padding: 0.3rem 0.65rem;
 }
-.compass-btn-have:hover { background: rgba(16,185,129,0.1); color: #059669; }
-.compass-btn-have.owned { background: rgba(16,185,129,0.15); color: #059669; border-color: #059669; }
+.compass-btn-have:hover { background: rgba(16,185,129,0.1); color: var(--accent); }
+.compass-btn-have.owned { background: rgba(16,185,129,0.15); color: var(--accent); border-color: var(--accent); }
 
 /* ── Demand & Salary Badges ──────────────────────────────────────────── */
 .compass-badge-demand { background: rgba(var(--compass-accent-rgb), 0.12); color: rgb(var(--compass-accent-rgb)); border: 1px solid rgba(var(--compass-accent-rgb), 0.25); }
-.compass-badge-salary { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.25); }
+.compass-badge-salary { background: rgba(16,185,129,0.12); color: var(--accent); border: 1px solid rgba(16,185,129,0.25); }
 
 /* ── Dashboard ───────────────────────────────────────────────────────── */
 .compass-dash-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
@@ -350,10 +350,10 @@
   display: inline-block; font-size: var(--text-caption, 0.75rem); padding: 0.15rem 0.45rem; border-radius: 5px;
   margin: 0.15rem 0.1rem; font-weight: 500;
 }
-.compass-skill-shared { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
+.compass-skill-shared { background: rgba(16,185,129,0.1); color: var(--accent); border: 1px solid rgba(16,185,129,0.2); }
 .compass-skill-new { background: rgba(251,191,36,0.1); color: var(--badge-amber); border: 1px solid rgba(251,191,36,0.2); }
 .compass-skill-savings {
-  font-size: 0.75rem; color: #059669; margin-top: 0.5rem; font-weight: 600;
+  font-size: 0.75rem; color: var(--accent); margin-top: 0.5rem; font-weight: 600;
   padding: 0.3rem 0.6rem; border-radius: 6px;
   background: rgba(16,185,129,0.08); display: inline-block;
 }

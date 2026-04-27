@@ -108,13 +108,13 @@
 }
 
 .qrgen-type-pill:hover {
-  background: rgba(236,72,153,0.1);
-  border-color: rgba(236,72,153,0.3);
+  background: var(--accent-subtle);
+  border-color: var(--accent-subtle);
   color: var(--text-primary);
 }
 
 .qrgen-type-pill.active {
-  background: rgba(236,72,153,0.15);
+  background: var(--accent-subtle);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -207,12 +207,12 @@
 }
 
 .qrgen-preset:hover {
-  background: rgba(236,72,153,0.1);
-  border-color: rgba(236,72,153,0.3);
+  background: var(--accent-subtle);
+  border-color: var(--accent-subtle);
 }
 
 .qrgen-preset.active {
-  background: rgba(236,72,153,0.15);
+  background: var(--accent-subtle);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -284,13 +284,13 @@
 }
 
 .qrgen-logo-area:hover {
-  border-color: rgba(236,72,153,0.4);
-  background: rgba(236,72,153,0.05);
+  border-color: var(--accent-subtle);
+  background: var(--accent-subtle);
 }
 
 .qrgen-logo-area.has-logo {
   border-style: solid;
-  border-color: rgba(236,72,153,0.3);
+  border-color: var(--accent-subtle);
 }
 
 .qrgen-logo-hint {
@@ -388,11 +388,11 @@
 }
 
 .qrgen-ec-pill:hover {
-  background: rgba(236,72,153,0.1);
+  background: var(--accent-subtle);
 }
 
 .qrgen-ec-pill.active {
-  background: rgba(236,72,153,0.15);
+  background: var(--accent-subtle);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -459,8 +459,8 @@
 }
 
 .qrgen-btn {
-  background: rgba(236,72,153,0.15);
-  border: 1px solid rgba(236,72,153,0.3);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   border-radius: var(--radius-md, 10px);
   padding: 0.6rem 1.25rem;
   color: var(--accent);
@@ -474,7 +474,7 @@
 }
 
 .qrgen-btn:hover {
-  background: rgba(236,72,153,0.25);
+  background: var(--accent-subtle);
   border-color: var(--accent);
 }
 
@@ -615,8 +615,8 @@
 
 .qrgen-scan-drop:hover,
 .qrgen-scan-drop.dragover {
-  border-color: rgba(236,72,153,0.4);
-  background: rgba(236,72,153,0.05);
+  border-color: var(--accent-subtle);
+  background: var(--accent-subtle);
 }
 
 .qrgen-scan-icon {
@@ -776,8 +776,8 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(236,72,153,0.06);
-  border: 1px solid rgba(236,72,153,0.15);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   border-radius: var(--radius-md, 10px);
   padding: 0.45rem 0.85rem;
   color: var(--text-secondary);
@@ -788,8 +788,8 @@
 }
 
 .qrgen-try-card:hover {
-  background: rgba(236,72,153,0.15);
-  border-color: rgba(236,72,153,0.4);
+  background: var(--accent-subtle);
+  border-color: var(--accent-subtle);
   color: var(--accent);
 }
 
@@ -816,12 +816,12 @@
 }
 
 .qrgen-bg-btn:hover {
-  border-color: rgba(236,72,153,0.3);
+  border-color: var(--accent-subtle);
 }
 
 .qrgen-bg-btn.active {
   border-color: var(--accent);
-  background: rgba(236,72,153,0.1);
+  background: var(--accent-subtle);
 }
 
 .qrgen-preview-box.bg-light {
@@ -867,7 +867,7 @@
   right: 1rem;
   z-index: 90;
   background: rgba(3,3,8,0.9);
-  border: 2px solid rgba(236,72,153,0.3);
+  border: 2px solid var(--accent-subtle);
   border-radius: var(--radius-md, 10px);
   padding: 0.5rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);

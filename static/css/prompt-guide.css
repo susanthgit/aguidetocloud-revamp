@@ -168,7 +168,7 @@
 }
 .pguide-badge-beginner {
   background: rgba(59, 130, 246, 0.15);
-  color: #60A5FA;
+  color: var(--accent);
 }
 .pguide-badge-intermediate {
   background: rgba(251, 191, 36, 0.15);
@@ -246,7 +246,7 @@
 }
 .pguide-builder-templates select option,
 #pguide-audience option, #pguide-tone option {
-  background: #0a0a14;
+  background: var(--bg-surface);
   color: var(--text-primary);
 }
 
@@ -658,7 +658,7 @@
 }
 .pguide-sandbox-feedback.partial {
   background: rgba(251, 191, 36, 0.15);
-  border: 1px solid #FBBF24;
+  border: 1px solid var(--accent);
   color: var(--text-primary);
 }
 
@@ -950,7 +950,7 @@
 /* ══ Fix This Prompt — V2 ══ */
 .pguide-fix-exercise {
   background: rgba(251, 191, 36, 0.06);
-  border: 2px solid #FBBF24;
+  border: 2px solid var(--accent);
   border-radius: 16px;
   padding: 1.5rem;
   margin: 2rem 0;

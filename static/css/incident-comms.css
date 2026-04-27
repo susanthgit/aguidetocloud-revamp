@@ -4,7 +4,7 @@
    ============================================ */
 
 :root {
-  --icomms-accent: #FF8F66;
+  --icomms-accent: var(--accent);
 }
 
 /* Layout */
@@ -123,7 +123,7 @@
   border-color: var(--icomms-accent);
 }
 .icomms-select option {
-  background: #141420;
+  background: var(--bg-elevated);
   color: var(--text-primary);
 }
 
@@ -219,7 +219,7 @@
 
 /* Creative Mode */
 .icomms-creative .icomms-output {
-  border-image: linear-gradient(135deg, var(--icomms-accent), #FF6B9D, var(--icomms-accent)) 1;
+  border-image: linear-gradient(135deg, var(--icomms-accent), var(--accent-hover), var(--icomms-accent)) 1;
   border-width: 1px;
   border-style: solid;
   background: rgba(255,143,102,0.03);

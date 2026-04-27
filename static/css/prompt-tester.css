@@ -93,8 +93,8 @@
 .ptest-live-score .ptest-live-val { font-weight: 700; }
 .ptest-live-val.ptest-score-low { color: var(--text-primary); }
 .ptest-live-val.ptest-score-med { color: var(--text-primary); }
-.ptest-live-val.ptest-score-good { color: #22c55e; }
-.ptest-live-val.ptest-score-great { color: #10b981; }
+.ptest-live-val.ptest-score-good { color: var(--accent); }
+.ptest-live-val.ptest-score-great { color: var(--accent); }
 
 /* ── Action buttons ── */
 .ptest-actions {
@@ -160,8 +160,8 @@
 .ptest-score-label { display: block; font-size: 0.75rem; margin-top: 0.2rem; color: var(--text-secondary); }
 .ptest-score-low { color: var(--text-primary); }
 .ptest-score-med { color: var(--text-primary); }
-.ptest-score-good { color: #22c55e; }
-.ptest-score-great { color: #10b981; }
+.ptest-score-good { color: var(--accent); }
+.ptest-score-great { color: var(--accent); }
 
 /* ── Verdict ── */
 .ptest-verdict {
@@ -175,7 +175,7 @@
 .ptest-verdict-delta {
   font-size: 0.78rem; color: var(--text-muted);
 }
-.ptest-verdict-win { color: #22c55e; }
+.ptest-verdict-win { color: var(--accent); }
 .ptest-verdict-tie { color: var(--text-primary); }
 
 /* ── Breakdown bars ── */
@@ -196,12 +196,12 @@
   height: 100%; border-radius: 4px; transition: width 0.6s ease;
 }
 .ptest-bar-a .ptest-criterion-fill { background: var(--accent); }
-.ptest-bar-b .ptest-criterion-fill { background: #60a5fa; }
+.ptest-bar-b .ptest-criterion-fill { background: var(--accent); }
 .ptest-criterion-score {
   font-size: 0.75rem; font-weight: 700; text-align: center;
   color: var(--text-secondary);
 }
-.ptest-criterion-better { color: #22c55e; font-weight: 800; }
+.ptest-criterion-better { color: var(--accent); font-weight: 800; }
 .ptest-criterion-worse { color: var(--text-muted); }
 
 /* ── Explanation ── */
@@ -244,7 +244,7 @@
 .ptest-improved-score {
   font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.6rem;
 }
-.ptest-improved-score strong { color: #22c55e; }
+.ptest-improved-score strong { color: var(--accent); }
 
 /* ── V2: Keyboard shortcut hint ── */
 .ptest-shortcut-hint {
@@ -272,7 +272,7 @@
   color: var(--text-secondary);
 }
 .ptest-radar-legend-a { color: var(--accent); }
-.ptest-radar-legend-b { color: #60a5fa; }
+.ptest-radar-legend-b { color: var(--accent); }
 
 /* ── V2: Side-by-side rewrite ── */
 .ptest-improved-grid {
@@ -314,7 +314,7 @@
   text-align: center; padding: 1rem; font-size: 1.1rem; font-weight: 700;
   border-radius: 12px; margin-bottom: 1rem;
 }
-.ptest-blind-correct { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: #86efac; }
+.ptest-blind-correct { background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.3); color: #86efac; }
 .ptest-blind-wrong { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: var(--text-primary); }
 
 /* ── V3: Prompt Duel/Challenge ── */
@@ -379,10 +379,10 @@
 .ptest-heat-cold .ptest-heatmap-letter { color: var(--text-primary); }
 .ptest-heat-cool { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); }
 .ptest-heat-cool .ptest-heatmap-letter { color: var(--text-primary); }
-.ptest-heat-warm { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); }
-.ptest-heat-warm .ptest-heatmap-letter { color: #22c55e; }
+.ptest-heat-warm { background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.2); }
+.ptest-heat-warm .ptest-heatmap-letter { color: var(--accent); }
 .ptest-heat-hot { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); }
-.ptest-heat-hot .ptest-heatmap-letter { color: #10b981; }
+.ptest-heat-hot .ptest-heatmap-letter { color: var(--accent); }
 
 /* ── V3: Library link ── */
 .ptest-lib-link { text-decoration: none; display: inline-flex; align-items: center; }
@@ -449,7 +449,7 @@
 }
 .ptest-level-low { background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444; }
 .ptest-level-mid { background: rgba(245,158,11,0.08); border-left: 3px solid #f59e0b; }
-.ptest-level-high { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
+.ptest-level-high { background: var(--accent-subtle); border-left: 3px solid var(--accent); }
 .ptest-guide-tip {
   background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
   border-radius: 12px; padding: 1rem; font-size: 0.85rem; line-height: 1.6;

@@ -2,7 +2,7 @@
    M365 Feature Roulette — .roulette-* namespace
    Accent: #F39C12 (Marigold)
    ============================================================================ */
-:root { --roulette-accent: #F39C12; }
+:root { --roulette-accent: var(--accent); }
 
 .roulette-page { max-width: 650px; margin: 0 auto; padding: 0 1rem 3rem; }
 
@@ -45,7 +45,7 @@
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); padding: 0.55rem; border-radius: 8px; font-size: 0.85rem;
 }
-.roulette-select option { background: #0a0a14; color: var(--text-primary); }
+.roulette-select option { background: var(--bg-surface); color: var(--text-primary); }
 .roulette-score-pill {
   margin-left: auto; padding: 0.4rem 0.8rem; border-radius: var(--radius-lg, 16px);
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);

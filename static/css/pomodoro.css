@@ -5,15 +5,15 @@
    ────────────────────────────────────────── */
 
 :root {
-  --pomo: #EF4444;
-  --pomo-dim: rgba(239, 68, 68, 0.12);
-  --pomo-glow: rgba(239, 68, 68, 0.25);
+  --pomo: var(--accent);
+  --pomo-dim: var(--accent-subtle);
+  --pomo-glow: transparent;
   --pomo-bg: var(--bg-page);
-  --pomo-green: #34D399;
-  --pomo-blue: #3B82F6;
-  --pomo-focus: #EF4444;
-  --pomo-short: #34D399;
-  --pomo-long: #3B82F6;
+  --pomo-green: var(--success);
+  --pomo-blue: var(--accent);
+  --pomo-focus: var(--accent);
+  --pomo-short: var(--success);
+  --pomo-long: var(--accent);
 }
 
 /* ── Page ── */
@@ -109,7 +109,7 @@
 }
 .pomo-btn-big { padding: 0.75rem 2.5rem; font-size: 1.15rem; border-radius: 3rem; }
 .pomo-btn-primary { background: var(--pomo); color: var(--text-primary); }
-.pomo-btn-primary:hover { background: #DC2626; transform: translateY(-1px); box-shadow: 0 4px 16px var(--pomo-glow); }
+.pomo-btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 4px 16px var(--pomo-glow); }
 .pomo-btn-secondary {
   background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border);
 }
@@ -117,7 +117,7 @@
 .pomo-btn-danger {
   background: rgba(239, 68, 68, 0.15); color: var(--text-primary); border: 1px solid rgba(239, 68, 68, 0.3);
 }
-.pomo-btn-danger:hover { background: rgba(239, 68, 68, 0.25); }
+.pomo-btn-danger:hover { background: transparent; }
 .pomo-btn-sm { padding: 0.4rem 0.85rem; font-size: 0.82rem; }
 .pomo-btn-xs {
   padding: 0.2rem 0.5rem; font-size: 0.75rem;

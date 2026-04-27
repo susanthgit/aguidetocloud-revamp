@@ -89,7 +89,7 @@
 
 .siteana-wow-up {
   background: rgba(16,185,129,0.15);
-  color: #10B981;
+  color: var(--accent);
   border: 1px solid rgba(16,185,129,0.3);
 }
 
@@ -504,7 +504,7 @@
 .siteana-rising-pct {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #10B981;
+  color: var(--accent);
   background: rgba(16,185,129,0.12);
   border: 1px solid rgba(16,185,129,0.25);
   padding: 0.15rem 0.6rem;
@@ -588,7 +588,7 @@
 
 .siteana-pos-blue {
   background: rgba(56,189,248,0.12);
-  color: #38BDF8;
+  color: var(--accent);
   border-color: rgba(56,189,248,0.25);
 }
 
@@ -726,7 +726,7 @@
 
 .siteana-ms-next .siteana-ms-marker {
   background: transparent;
-  border: 2px solid #FBBF24;
+  border: 2px solid var(--accent);
   box-shadow: 0 0 8px rgba(251,191,36,0.3);
 }
 
@@ -804,7 +804,7 @@
   margin: 0;
 }
 
-.siteana-journey-inner > p strong { color: #A78BFA; }
+.siteana-journey-inner > p strong { color: var(--accent); }
 
 .siteana-journey-privacy {
   font-size: 0.75rem !important;
@@ -814,8 +814,8 @@
 
 /* ── BUILT IN PUBLIC CARD ────────── */
 .siteana-bip-card {
-  border-color: rgba(20,184,166,0.25);
-  background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(20,184,166,0.01));
+  border-color: var(--accent-subtle);
+  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
 }
 
 .siteana-bip-header {
@@ -830,9 +830,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #14B8A6;
-  background: rgba(20,184,166,0.12);
-  border: 1px solid rgba(20,184,166,0.25);
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   padding: 0.2rem 0.65rem;
   border-radius: var(--radius-lg, 16px);
 }
@@ -877,7 +877,7 @@
 
 .siteana-bip-cost {
   font-weight: 700;
-  color: #10B981;
+  color: var(--accent);
   text-align: right;
   min-width: 70px;
 }
@@ -890,7 +890,7 @@
 }
 
 .siteana-bip-total .siteana-bip-label { color: var(--text-primary); font-weight: 700; }
-.siteana-bip-total .siteana-bip-cost { font-size: 1.1rem; color: #10B981; }
+.siteana-bip-total .siteana-bip-cost { font-size: 1.1rem; color: var(--accent); }
 
 .siteana-bip-footnote {
   font-size: 0.75rem;
@@ -902,10 +902,10 @@
 .siteana-bip-cta {
   display: inline-block;
   padding: 0.55rem 1.25rem;
-  background: rgba(20,184,166,0.15);
-  border: 1px solid rgba(20,184,166,0.3);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   border-radius: 10px;
-  color: #14B8A6;
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
@@ -913,8 +913,8 @@
 }
 
 .siteana-bip-cta:hover {
-  background: rgba(20,184,166,0.25);
-  border-color: rgba(20,184,166,0.5);
+  background: var(--accent-subtle);
+  border-color: var(--accent-subtle);
 }
 
 @media (max-width: 640px) {
@@ -967,7 +967,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #38BDF8;
+  color: var(--accent);
 }
 
 .siteana-impact-label {
@@ -1000,7 +1000,7 @@
   padding: 0.65rem 1rem;
   font-family: 'Fira Code', 'Consolas', monospace;
   font-size: 0.82rem;
-  color: #10B981;
+  color: var(--accent);
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -1097,7 +1097,7 @@
   text-align: center;
 }
 
-.siteana-since-inner strong { color: #10B981; }
+.siteana-since-inner strong { color: var(--accent); }
 
 /* ── HEALTH SCORE ─────────────────── */
 .siteana-grid-health {
@@ -1519,7 +1519,7 @@
   font-size: 0.82rem;
 }
 
-.siteana-mover-up .siteana-mover-diff { color: #10B981; }
+.siteana-mover-up .siteana-mover-diff { color: var(--accent); }
 .siteana-mover-down .siteana-mover-diff { color: var(--text-primary); }
 
 .siteana-mover-pct {
@@ -1546,12 +1546,12 @@
 
 .siteana-action-medium {
   background: rgba(251,191,36,0.06);
-  border-left-color: #FBBF24;
+  border-left-color: var(--accent);
 }
 
 .siteana-action-low {
   background: rgba(16,185,129,0.06);
-  border-left-color: #10B981;
+  border-left-color: var(--accent);
 }
 
 .siteana-action-icon {
@@ -1662,7 +1662,7 @@
 }
 
 .siteana-modal {
-  background: #0d0d1a;
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   width: 95%;
@@ -1991,7 +1991,7 @@
 
 .siteana-row-highlight td { color: var(--text-primary); font-weight: 600; }
 
-.siteana-change-up { color: #10B981; font-weight: 600; }
+.siteana-change-up { color: var(--accent); font-weight: 600; }
 .siteana-change-down { color: var(--text-primary); font-weight: 600; }
 
 /* ── BEFORE/AFTER ─────────────────── */
@@ -2139,7 +2139,7 @@
   min-width: 2rem;
 }
 
-.siteana-pos-top3 { background: rgba(16,185,129,0.15); color: #10B981; border: 1px solid rgba(16,185,129,0.3); }
+.siteana-pos-top3 { background: rgba(16,185,129,0.15); color: var(--accent); border: 1px solid rgba(16,185,129,0.3); }
 .siteana-pos-top10 { background: rgba(251,191,36,0.15); color: var(--text-primary); border: 1px solid rgba(251,191,36,0.3); }
 .siteana-pos-top20 { background: rgba(251,146,60,0.15); color: var(--text-primary); border: 1px solid rgba(251,146,60,0.3); }
 .siteana-pos-deep { background: rgba(239,68,68,0.15); color: var(--text-primary); border: 1px solid rgba(239,68,68,0.3); }
@@ -2187,7 +2187,7 @@
 
 .siteana-opp-uplift {
   font-size: 0.82rem;
-  color: #10B981;
+  color: var(--accent);
   font-weight: 600;
   margin-top: 0.2rem;
 }
@@ -2225,9 +2225,9 @@
 }
 
 /* ── Right Now — Live per-page bar chart (sa-rt-*) ── */
-.sa-rt-card { background: var(--border); border: 1px solid var(--border); border-left: 3px solid #22c55e; border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+.sa-rt-card { background: var(--border); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
 .sa-rt-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
-.sa-rt-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: sa-rt-pulse 1.5s ease-in-out infinite; }
+.sa-rt-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: sa-rt-pulse 1.5s ease-in-out infinite; }
 @keyframes sa-rt-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .sa-rt-title { font-size: 0.95rem; color: var(--text-primary); }
 .sa-rt-total { margin-left: auto; font-size: 0.82rem; color: var(--text-muted); }
@@ -2237,7 +2237,7 @@
 .sa-rt-name { font-size: 0.82rem; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sa-rt-bar-wrap { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
 .sa-rt-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #22c55e, #4ade80); transition: width 0.5s ease; }
-.sa-rt-count { font-size: 0.82rem; font-weight: 700; color: #22c55e; text-align: right; }
+.sa-rt-count { font-size: 0.82rem; font-weight: 700; color: var(--accent); text-align: right; }
 @media (max-width: 768px) { .sa-rt-row { grid-template-columns: minmax(80px, 1fr) minmax(60px, 1.5fr) 28px; } .sa-rt-name { font-size: 0.78rem; } }
 
 /* ── LEADERBOARD TOGGLE ──────────── */
@@ -2269,7 +2269,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #10B981;
+  color: var(--accent);
   background: rgba(16,185,129,0.15);
   border: 1px solid rgba(16,185,129,0.3);
   padding: 0.1rem 0.4rem;
@@ -2293,7 +2293,7 @@
 
 /* ── SEARCH CTR COLUMN ───────────── */
 .siteana-search-ctr {
-  color: #10B981 !important;
+  color: var(--accent) !important;
   min-width: 38px;
   text-align: right;
 }
@@ -2341,7 +2341,7 @@
 
 .siteana-blog-cat-tag {
   font-weight: 700;
-  color: #0EA5E9;
+  color: var(--accent);
   font-size: 0.88rem;
 }
 
@@ -2392,7 +2392,7 @@
   min-width: 0;
 }
 
-.siteana-blog-tl-title:hover { color: #0EA5E9; }
+.siteana-blog-tl-title:hover { color: var(--accent); }
 
 /* Reading estimates */
 .siteana-blog-reading {
@@ -2434,7 +2434,7 @@
 .siteana-blog-read-time {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #0EA5E9;
+  color: var(--accent);
   text-align: right;
   white-space: nowrap;
 }
@@ -2485,8 +2485,8 @@
 
 /* ── GUIDED TAB ───────────────────── */
 .siteana-guided-hero {
-  border-color: rgba(0,164,239,0.2);
-  background: linear-gradient(135deg, rgba(0,164,239,0.06), rgba(0,164,239,0.01));
+  border-color: var(--accent-subtle);
+  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
 }
 
 .siteana-guided-header {
@@ -2500,9 +2500,9 @@
   margin-left: auto;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #00A4EF;
-  background: rgba(0,164,239,0.12);
-  border: 1px solid rgba(0,164,239,0.3);
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-subtle);
   padding: 0.35rem 1rem;
   border-radius: 10px;
   text-decoration: none;
@@ -2511,7 +2511,7 @@
 }
 
 .siteana-guided-badge:hover {
-  background: rgba(0,164,239,0.25);
+  background: var(--accent-subtle);
   color: var(--text-primary);
 }
 
@@ -2570,7 +2570,7 @@
 }
 
 .siteana-gp-live {
-  color: #10B981;
+  color: var(--accent);
   background: rgba(16,185,129,0.12);
   border: 1px solid rgba(16,185,129,0.25);
 }
@@ -2734,3 +2734,4 @@
   .siteana-tabs, .siteana-transparency, .siteana-range-bar { display: none; }
   .siteana-panel { display: block !important; page-break-inside: avoid; }
 }
+

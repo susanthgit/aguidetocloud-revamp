@@ -5,7 +5,7 @@
 
 /* ── Body class overrides ── */
 .page-copilot-matrix {
-  --nav-accent: #60A5FA;
+  --nav-accent: var(--accent);
 }
 
 /* ── Container ── */
@@ -232,7 +232,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #1e1e36;
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md, 10px);
   padding: 0.5rem 0.75rem;

@@ -414,12 +414,12 @@
 /* Score colours */
 .polisher-score-low { color: var(--text-primary); }
 .polisher-score-med { color: var(--text-primary); }
-.polisher-score-good { color: #22c55e; }
-.polisher-score-great { color: #3b82f6; }
+.polisher-score-good { color: var(--accent); }
+.polisher-score-great { color: var(--accent); }
 .polisher-fill-low { background: #ef4444; }
 .polisher-fill-med { background: #f59e0b; }
-.polisher-fill-good { background: #22c55e; }
-.polisher-fill-great { background: #3b82f6; }
+.polisher-fill-good { background: var(--accent); }
+.polisher-fill-great { background: var(--accent); }
 
 /* ── Tips Section ── */
 .polisher-tips-section {
@@ -502,7 +502,7 @@
   word-wrap: break-word;
 }
 .polisher-output .polisher-added {
-  background: rgba(34, 197, 94, 0.15);
+  background: var(--accent-subtle);
   border-radius: 3px;
   padding: 0 2px;
 }

@@ -2,7 +2,7 @@
    IT Admin Comms — .comms-* namespace
    Accent: #5B9BD5 (Corporate Blue)
    ============================================================================ */
-:root { --comms-accent: #5B9BD5; }
+:root { --comms-accent: var(--accent); }
 .comms-page { max-width: 800px; margin: 0 auto; padding: 0 1rem 3rem; }
 
 .comms-tabs {
@@ -28,7 +28,7 @@
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); padding: 0.5rem; border-radius: 8px; font-size: 0.85rem;
 }
-.comms-select option { background: #0a0a14; color: var(--text-primary); }
+.comms-select option { background: var(--bg-surface); color: var(--text-primary); }
 
 .comms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.8rem; }
 .comms-card {

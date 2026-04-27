@@ -2,7 +2,7 @@
    Phishing Simulator — .phish-* namespace
    Accent: #E74C3C (Alert Red)
    ============================================================================ */
-:root { --phish-accent: #E74C3C; }
+:root { --phish-accent: var(--accent); }
 .phish-page { max-width: 700px; margin: 0 auto; padding: 0 1rem 3rem; }
 
 .phish-tabs {

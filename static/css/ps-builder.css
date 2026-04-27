@@ -83,7 +83,7 @@
   text-transform: uppercase; letter-spacing: 0.3px;
 }
 .psb-badge-service { background: var(--accent-subtle); color: var(--accent); }
-.psb-badge-beginner { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.psb-badge-beginner { background: var(--accent-subtle); color: var(--accent); }
 .psb-badge-intermediate { background: rgba(234, 179, 8, 0.15); color: var(--text-primary); }
 .psb-badge-advanced { background: rgba(239, 68, 68, 0.15); color: var(--text-primary); }
 .psb-recipe-desc { padding: 0 1.25rem 0.75rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
@@ -189,10 +189,10 @@
 
 /* Syntax highlight classes */
 .psb-syn-cmdlet { color: var(--accent); font-weight: 700; }
-.psb-syn-param { color: #60A5FA; }
+.psb-syn-param { color: var(--accent); }
 .psb-syn-value { color: var(--text-primary); }
 .psb-syn-comment { color: #6B7280; font-style: italic; }
-.psb-syn-pipe { color: #A78BFA; font-weight: 700; }
+.psb-syn-pipe { color: var(--accent); font-weight: 700; }
 .psb-syn-variable { color: var(--text-primary); }
 
 /* ═══════ REFERENCE ═══════ */
@@ -370,8 +370,8 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
   color: var(--text-secondary); transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; flex-shrink: 0; line-height: 1;
 }
 .psb-fav-btn:hover, .psb-fav-btn.active { color: var(--text-primary); }
-.psb-recipe-card.psb-fav { border-left: 3px solid #FBBF24; }
-.psb-quick-fav { border-color: #FBBF24; background: rgba(251, 191, 36, 0.1); }
+.psb-recipe-card.psb-fav { border-left: 3px solid var(--accent); }
+.psb-quick-fav { border-color: var(--accent); background: rgba(251, 191, 36, 0.1); }
 
 /* ═══════ B1 TAGS ═══════ */
 .psb-recipe-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0 1.25rem 0.5rem; }
@@ -381,7 +381,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 .psb-highlight { background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--text-primary); padding: 0 2px; border-radius: 2px; }
 
 /* ═══════ B3 NEW BADGE ═══════ */
-.psb-badge-new { background: rgba(34, 197, 94, 0.2); color: #22c55e; font-size: var(--text-caption, 0.75rem); animation: psbPulse 2s ease-in-out infinite; }
+.psb-badge-new { background: rgba(34, 197, 94, 0.2); color: var(--accent); font-size: var(--text-caption, 0.75rem); animation: psbPulse 2s ease-in-out infinite; }
 @keyframes psbPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
 /* ═══════ B4 VIEW TOGGLE ═══════ */
