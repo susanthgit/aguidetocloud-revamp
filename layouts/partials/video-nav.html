@@ -12,7 +12,6 @@
 <nav class="zt-lic-nav" aria-label="Video navigation">
 
 <a href="/videos/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "video" "size" 16 "stroke" 1.5) }} All Video Tutorials</a>
-<a href="/guided/explore/" class="zt-lic-nav-tool-link">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Practice Exams →</a>
 
 {{ range $cat := $categories }}
   {{ $pages := where site.RegularPages "Section" $cat.section }}

@@ -1524,7 +1524,7 @@
 .zt-cert-vendor-body {
   margin-left: 23px;
   padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-3, 12px);
-  border-left: 1px solid var(--border-emphasis, #404040);
+  border-left: 1px solid color-mix(in srgb, var(--accent, #818CF8) 30%, transparent);
 }
 
 /* Category labels (Microsoft sub-groups — collapsible) */
@@ -1581,7 +1581,7 @@
 .zt-cert-category-links {
   margin-left: 6px;
   padding: var(--space-1, 4px) 0 var(--space-1, 4px) var(--space-3, 12px);
-  border-left: 1px solid var(--border-emphasis, #404040);
+  border-left: 1px solid color-mix(in srgb, var(--accent, #818CF8) 30%, transparent);
 }
 
 /* Cert links */
@@ -2524,7 +2524,7 @@
 .zt-lic-nav-links {
   margin-left: 23px;
   padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-3, 12px);
-  border-left: 1px solid var(--border-emphasis, #404040);
+  border-left: 1px solid color-mix(in srgb, var(--accent, #818CF8) 30%, transparent);
 }
 
 .zt-lic-nav-link {
