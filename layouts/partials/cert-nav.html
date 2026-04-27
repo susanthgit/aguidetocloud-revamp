@@ -14,7 +14,7 @@
 <nav class="zt-cert-nav" aria-label="Certification navigation">
 
 {{/* Study Guides header link */}}
-<a href="/study-guides/" class="zt-cert-nav-header{{ if $isLanding }} active{{ end }}">📚 All Study Guides</a>
+<a href="/study-guides/" class="zt-cert-nav-header{{ if $isLanding }} active{{ end }}">{{ partial "icon.html" (dict "name" "book-open" "size" 16 "stroke" 1.5) }} All Study Guides</a>
 
 {{ range site.Data.vendors.vendor }}
   {{ $vSlug := .slug }}
@@ -34,7 +34,7 @@
   {{ if $certs }}
   <details class="zt-cert-vendor"{{ if or $isCurrentVendor (and $isLanding (eq $vSlug "microsoft")) }} open{{ end }}>
     <summary class="zt-cert-vendor-name">
-      <span>{{ $vEmoji }} {{ $vName }}</span>
+      <span>{{ partial "icon.html" (dict "name" (printf "vendor-%s" $vSlug) "size" 14 "stroke" 1.5 "fallback" $vEmoji) }} {{ $vName }}</span>
       <span class="zt-cert-vendor-count">{{ len $certs }}</span>
     </summary>
     <div class="zt-cert-vendor-body">
@@ -59,9 +59,9 @@
           <a href="{{ .RelPermalink }}" class="zt-cert-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
              title="{{ .Params.exam_code }}: {{ .Params.exam_title }}">
             <span class="zt-cert-link-code">{{ .Params.exam_code }}</span>
-            {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">⚠️</span>{{ end -}}
-            {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">🧪</span>{{ end -}}
-            {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">🔜</span>{{ end -}}
+            {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }}</span>{{ end -}}
+            {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }}</span>{{ end -}}
+            {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }}</span>{{ end -}}
           </a>
           {{ end }}
           </div>
@@ -74,9 +74,9 @@
       <a href="{{ .RelPermalink }}" class="zt-cert-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
          title="{{ .Params.exam_code }}: {{ .Params.exam_title }}">
         <span class="zt-cert-link-code">{{ .Params.exam_code }}</span>
-        {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">⚠️</span>{{ end -}}
-        {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">🧪</span>{{ end -}}
-        {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">🔜</span>{{ end -}}
+        {{- if eq (.Params.exam_status | default "active") "retiring" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }}</span>{{ end -}}
+        {{- if eq (.Params.exam_status | default "active") "beta" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }}</span>{{ end -}}
+        {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }}</span>{{ end -}}
       </a>
       {{ end }}
     {{ end }}

@@ -92,7 +92,7 @@
     <div class="migplan-panel" id="panel-workloads" role="tabpanel" aria-labelledby="tab-workloads">
       <div id="migplan-workloads-content">
         <div class="migplan-empty">
-          <div class="migplan-empty-icon">📊</div>
+          <div class="migplan-empty-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</div>
           <div class="migplan-empty-text">Complete the Migration Wizard first to see your workload assessments.</div>
           <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
         </div>
@@ -103,7 +103,7 @@
     <div class="migplan-panel" id="panel-timeline" role="tabpanel" aria-labelledby="tab-timeline">
       <div id="migplan-timeline-content">
         <div class="migplan-empty">
-          <div class="migplan-empty-icon">📅</div>
+          <div class="migplan-empty-icon">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }}</div>
           <div class="migplan-empty-text">Complete the Migration Wizard first to see your estimated timeline.</div>
           <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
         </div>
@@ -114,7 +114,7 @@
     <div class="migplan-panel" id="panel-risks" role="tabpanel" aria-labelledby="tab-risks">
       <div id="migplan-risks-content">
         <div class="migplan-empty">
-          <div class="migplan-empty-icon">⚠️</div>
+          <div class="migplan-empty-icon">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</div>
           <div class="migplan-empty-text">Complete the Migration Wizard first to see your risk assessment.</div>
           <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
         </div>
@@ -125,7 +125,7 @@
     <div class="migplan-panel" id="panel-tools" role="tabpanel" aria-labelledby="tab-tools">
       <div id="migplan-tools-content">
         <div class="migplan-empty">
-          <div class="migplan-empty-icon">🔧</div>
+          <div class="migplan-empty-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }}</div>
           <div class="migplan-empty-text">Complete the Migration Wizard first to see tool recommendations.</div>
           <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
         </div>
@@ -136,7 +136,7 @@
     <div class="migplan-panel migplan-panel-summary" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
       <div id="migplan-summary-content">
         <div class="migplan-empty">
-          <div class="migplan-empty-icon">📄</div>
+          <div class="migplan-empty-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</div>
           <div class="migplan-empty-text">Complete the Migration Wizard to generate your Executive Summary.</div>
           <button class="migplan-empty-cta" onclick="MIGPLAN.switchTab('wizard')">→ Start the Wizard</button>
         </div>
@@ -160,12 +160,12 @@
 
     {{/* ── Cross-tool Links ── */}}
     <div style="margin-top:2.5rem;text-align:center;">
-      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">🔗 Explore our other free tools</p>
+      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Explore our other free tools</p>
       <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/licensing/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">📜 Licensing Simplifier</a>
-        <a href="/copilot-readiness/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">✅ Copilot Readiness</a>
-        <a href="/deprecation-timeline/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">⏰ Deprecation Timeline</a>
-        <a href="/roi-calculator/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">💰 ROI Calculator</a>
+        <a href="/licensing/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Licensing Simplifier</a>
+        <a href="/copilot-readiness/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Copilot Readiness</a>
+        <a href="/deprecation-timeline/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Deprecation Timeline</a>
+        <a href="/roi-calculator/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} ROI Calculator</a>
       </div>
     </div>
 

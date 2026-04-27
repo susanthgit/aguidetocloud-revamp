@@ -244,12 +244,12 @@
   <div class="prompts-ecosystem">
     <h2>Your Prompt Engineering Toolkit</h2>
     <div class="prompts-eco-grid">
-      <a href="/prompt-guide/" class="prompts-eco-card"><span>🎓</span><strong>Guide</strong><p>Learn techniques</p></a>
-      <a href="/prompt-polisher/" class="prompts-eco-card"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
-      <a href="/prompt-tester/" class="prompts-eco-card"><span>🔬</span><strong>Tester</strong><p>A/B compare</p></a>
-      <a href="/prompts/" class="prompts-eco-card prompts-eco-active"><span>💡</span><strong>Library</strong><p>{{ len $allPrompts }} ready prompts</p></a>
+      <a href="/prompt-guide/" class="prompts-eco-card"><span>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span><strong>Guide</strong><p>Learn techniques</p></a>
+      <a href="/prompt-polisher/" class="prompts-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Polisher</strong><p>Score & rewrite</p></a>
+      <a href="/prompt-tester/" class="prompts-eco-card"><span>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }}</span><strong>Tester</strong><p>A/B compare</p></a>
+      <a href="/prompts/" class="prompts-eco-card prompts-eco-active"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Library</strong><p>{{ len $allPrompts }} ready prompts</p></a>
     </div>
-    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
   {{ if not $isMainPage }}

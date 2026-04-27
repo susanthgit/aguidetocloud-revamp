@@ -57,7 +57,7 @@
           <h2>Quick Start — Get a Zero Trust Baseline in 1 Click</h2>
           <p>Microsoft recommends <strong>6 Starting Point policies</strong> as the minimum for every organisation. Add them all instantly, then review and export.</p>
           <div class="cab-quickstart-actions">
-            <button class="cab-btn cab-btn--primary" onclick="window.__cab.quickStartBaseline()">🟢 Add All Starting Point Policies</button>
+            <button class="cab-btn cab-btn--primary" onclick="window.__cab.quickStartBaseline()">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Add All Starting Point Policies</button>
             <span class="cab-quickstart-or">or browse individual templates below</span>
           </div>
         </div>
@@ -69,9 +69,9 @@
           <input type="text" class="cab-search" id="cab-tpl-search" placeholder="Search templates..." aria-label="Search templates">
           <select class="cab-select" id="cab-tpl-tier-filter" aria-label="Filter by tier">
             <option value="all">All Tiers</option>
-            <option value="starting-point">🟢 Starting Point</option>
-            <option value="enterprise">🟡 Enterprise</option>
-            <option value="specialised">🔴 Specialised</option>
+            <option value="starting-point">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Starting Point</option>
+            <option value="enterprise">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Enterprise</option>
+            <option value="specialised">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Specialised</option>
           </select>
           <span class="cab-result-count" id="cab-tpl-count"></span>
         </div>
@@ -130,10 +130,10 @@
 
       {{/* Empty state */}}
       <div class="cab-review-empty" id="cab-review-empty">
-        <div class="cab-review-empty-icon">🛡️</div>
+        <div class="cab-review-empty-icon">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</div>
         <h3>No policies yet</h3>
         <p>Add policies from the <strong>Templates</strong> tab or create one in the <strong>Build</strong> tab to start reviewing your set.</p>
-        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">📋 Browse Templates</button>
+        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Browse Templates</button>
       </div>
 
       {{/* Review dashboard (hidden until policies added) */}}
@@ -150,12 +150,12 @@
             </svg>
           </div>
           <div class="cab-zt-score-detail">
-            <h3 id="cab-zt-tier-label">🔴 Minimal</h3>
+            <h3 id="cab-zt-tier-label">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Minimal</h3>
             <p id="cab-zt-tier-desc">Add more policies to improve your Zero Trust posture.</p>
             <div class="cab-zt-bars">
-              <div class="cab-zt-bar-row"><span>🟢 Starting Point</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill" id="cab-zt-bar-sp" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-sp">0/40</span></div>
-              <div class="cab-zt-bar-row"><span>🟡 Enterprise</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--ent" id="cab-zt-bar-ent" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-ent">0/35</span></div>
-              <div class="cab-zt-bar-row"><span>🔴 Specialised</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--spec" id="cab-zt-bar-spec" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-spec">0/25</span></div>
+              <div class="cab-zt-bar-row"><span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Starting Point</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill" id="cab-zt-bar-sp" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-sp">0/40</span></div>
+              <div class="cab-zt-bar-row"><span>{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Enterprise</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--ent" id="cab-zt-bar-ent" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-ent">0/35</span></div>
+              <div class="cab-zt-bar-row"><span>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Specialised</span><div class="cab-zt-bar"><div class="cab-zt-bar-fill cab-zt-bar-fill--spec" id="cab-zt-bar-spec" style="width:0"></div></div><span class="cab-zt-bar-val" id="cab-zt-val-spec">0/25</span></div>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
 
         {{/* #19: Share button */}}
         <div class="cab-share-section">
-          <button class="cab-btn cab-btn--secondary" onclick="navigator.clipboard.writeText(window.__cab.getShareURL()).then(() => { const t = document.querySelector('.cab-toast'); if(t){t.textContent='📋 Share link copied!';t.classList.add('cab-toast--show');setTimeout(()=>t.classList.remove('cab-toast--show'),2500)} })">🔗 Copy Shareable Link</button>
+          <button class="cab-btn cab-btn--secondary" onclick="navigator.clipboard.writeText(window.__cab.getShareURL()).then(() => { const t = document.querySelector('.cab-toast'); if(t){t.textContent='{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Share link copied!';t.classList.add('cab-toast--show');setTimeout(()=>t.classList.remove('cab-toast--show'),2500)} })">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Copy Shareable Link</button>
         </div>
       </div>
     </div>
@@ -190,23 +190,23 @@
       </div>
 
       <div class="cab-export-empty" id="cab-export-empty">
-        <div class="cab-review-empty-icon">📤</div>
+        <div class="cab-review-empty-icon">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }}</div>
         <h3>Nothing to export</h3>
         <p>Add policies first, then come back to export.</p>
-        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">📋 Browse Templates</button>
+        <button class="cab-btn cab-btn--primary" onclick="document.querySelector('[data-tab=templates]').click()">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Browse Templates</button>
       </div>
 
       <div class="cab-export-dashboard" id="cab-export-dashboard" style="display:none">
         <div class="cab-export-format-tabs">
-          <button class="cab-export-tab cab-export-tab--active" data-format="powershell">⚡ PowerShell</button>
-          <button class="cab-export-tab" data-format="json">📋 Graph API JSON</button>
-          <button class="cab-export-tab" data-format="csv">📊 CSV Summary</button>
-          <button class="cab-export-tab" data-format="docs">📄 Documentation</button>
-          <button class="cab-export-tab" data-format="rollout">🚀 Rollout Plan</button>
+          <button class="cab-export-tab cab-export-tab--active" data-format="powershell">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} PowerShell</button>
+          <button class="cab-export-tab" data-format="json">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Graph API JSON</button>
+          <button class="cab-export-tab" data-format="csv">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} CSV Summary</button>
+          <button class="cab-export-tab" data-format="docs">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Documentation</button>
+          <button class="cab-export-tab" data-format="rollout">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Rollout Plan</button>
         </div>
         <div class="cab-export-actions">
-          <button class="cab-btn cab-btn--primary" id="cab-export-copy">📋 Copy to Clipboard</button>
-          <button class="cab-btn cab-btn--secondary" id="cab-export-download">💾 Download</button>
+          <button class="cab-btn cab-btn--primary" id="cab-export-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy to Clipboard</button>
+          <button class="cab-btn cab-btn--secondary" id="cab-export-download">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download</button>
         </div>
         <pre class="cab-export-output" id="cab-export-output"></pre>
         {{/* #10: What to do next */}}
@@ -216,10 +216,10 @@
       {{/* #14: Import from JSON */}}
       <div class="cab-import-section">
         <details>
-          <summary style="cursor:pointer;color:var(--cab-accent);font-size:0.9rem">📥 Import existing policies from Graph API JSON</summary>
+          <summary style="cursor:pointer;color:var(--cab-accent);font-size:0.9rem">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Import existing policies from Graph API JSON</summary>
           <p style="font-size:0.82rem;color:var(--cab-text-dim);margin:0.5rem 0">Paste your exported Graph API JSON array to review existing policies.</p>
           <textarea class="cab-form-textarea" id="cab-import-input" aria-label="Paste Graph API JSON" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]' style="min-height:80px"></textarea>
-          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-top:0.5rem" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">📥 Import</button>
+          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-top:0.5rem" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Import</button>
         </details>
       </div>
     </div>
@@ -227,18 +227,18 @@
     {{/* #8: How many policies helper */}}
     <div class="cab-how-many">
       <details>
-        <summary><strong>🤔 How many policies do I need?</strong></summary>
+        <summary><strong>{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} How many policies do I need?</strong></summary>
         <div class="cab-how-many-content">
           <table class="cab-how-many-table">
             <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
             <tbody>
-              <tr><td>🏢 Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
-              <tr><td>🏦 Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
-              <tr><td>🏫 Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
-              <tr><td>🔒 High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
+              <tr><td>{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
+              <tr><td>{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
+              <tr><td>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }} Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
+              <tr><td>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
             </tbody>
           </table>
-          <p style="font-size:0.82rem;color:var(--cab-text-dim)">💡 Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
+          <p style="font-size:0.82rem;color:var(--cab-text-dim)">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
         </div>
       </details>
     </div>
@@ -271,7 +271,7 @@
           </div>
           <div class="cab-help-card">
             <h4>Common Mistakes</h4>
-            <p>❌ No break-glass exclusion · ❌ Block policy too broad · ❌ Skipping report-only · ❌ Forgetting legacy auth · ❌ Not blocking admin sign-ins from untrusted locations</p>
+            <p>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} No break-glass exclusion · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Block policy too broad · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Skipping report-only · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Forgetting legacy auth · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Not blocking admin sign-ins from untrusted locations</p>
           </div>
         </div>
       </div>
@@ -295,12 +295,12 @@
 
   {{/* #18: Blog/YouTube CTA */}}
   <div class="cab-content-cta">
-    <p>📺 <strong>Learn more:</strong> Watch our <a href="/blog/">tutorials</a> on Conditional Access, Zero Trust, and Microsoft Entra ID. Follow <a href="https://youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">A Guide to Cloud & AI</a> for step-by-step walkthroughs.</p>
+    <p>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <strong>Learn more:</strong> Watch our <a href="/blog/">tutorials</a> on Conditional Access, Zero Trust, and Microsoft Entra ID. Follow <a href="https://youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">A Guide to Cloud & AI</a> for step-by-step walkthroughs.</p>
   </div>
 
   {{/* ── Disclaimer ── */}}
   <div class="cab-disclaimer">
-    <p>⚠️ <strong>Design-time tool only.</strong> This tool helps you plan Conditional Access policies offline. It does not connect to your tenant, does not read real data, and cannot enforce policies. All analysis is heuristic-based — always test in Report-Only mode before enabling. Compliance mappings are illustrative and do not constitute certification guidance. Refer to <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the most up-to-date information.</p>
+    <p>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} <strong>Design-time tool only.</strong> This tool helps you plan Conditional Access policies offline. It does not connect to your tenant, does not read real data, and cannot enforce policies. All analysis is heuristic-based — always test in Report-Only mode before enabling. Compliance mappings are illustrative and do not constitute certification guidance. Refer to <a href="https://learn.microsoft.com/entra/identity/conditional-access/overview" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the most up-to-date information.</p>
   </div>
 
   <nav class="zt-nav" aria-label="Tools navigation">

@@ -3,12 +3,12 @@
 
   <!-- Hero -->
   <section class="guided-hero">
-    <span class="guided-badge">✨ Early Preview Available</span>
+    <span class="guided-badge">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Early Preview Available</span>
     <h1 class="guided-title">Guided</h1>
     <p class="guided-subtitle">Interactive study guides for Microsoft certifications</p>
     <p class="guided-tagline">Flashcards. Quizzes. Real explanations. Built to make you pass.</p>
     <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1.5rem;">
-      <a href="#preview-access" class="guided-preview-btn" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg,#2DD4BF,#0F766E);color:#fff;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;letter-spacing:0.01em;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(45,212,191,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">🔒 Preview the Platform</a>
+      <a href="#preview-access" class="guided-preview-btn" style="display:inline-block;padding:0.75rem 2rem;background:linear-gradient(135deg,#2DD4BF,#0F766E);color:#fff;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;letter-spacing:0.01em;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(45,212,191,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Preview the Platform</a>
       <a href="#guided-waitlist" style="display:inline-block;padding:0.75rem 2rem;border:1px solid rgba(255,255,255,0.15);color:#e2e8f0;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(45,212,191,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'">Join the Waitlist</a>
     </div>
   </section>
@@ -37,31 +37,31 @@
 
     <div class="guided-products">
       <div class="guided-product-card guided-product-guide">
-        <span class="guided-product-icon">📖</span>
+        <span class="guided-product-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
         <h3>Interactive Study Guide</h3>
         <p>25–35 modules per certification, each with:</p>
         <ul>
-          <li>☕ <strong>Simple explanations</strong> — real-world analogies that make concepts click</li>
-          <li>📚 <strong>Full deep dives</strong> — expand when you want more detail</li>
+          <li>{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} <strong>Simple explanations</strong> — real-world analogies that make concepts click</li>
+          <li>{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} <strong>Full deep dives</strong> — expand when you want more detail</li>
           <li>🃏 <strong>Flashcards</strong> — key terms you can flip, review, and master</li>
-          <li>✅ <strong>Knowledge checks</strong> — mini-quizzes after every module</li>
-          <li>📊 <strong>Interactive diagrams</strong> — clickable architecture visuals, not static images</li>
-          <li>🎬 <strong>Video companions</strong> — bite-sized explainers for complex topics</li>
-          <li>📱 <strong>Mobile-first</strong> — study on the bus, in bed, during lunch</li>
+          <li>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} <strong>Knowledge checks</strong> — mini-quizzes after every module</li>
+          <li>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} <strong>Interactive diagrams</strong> — clickable architecture visuals, not static images</li>
+          <li>{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} <strong>Video companions</strong> — bite-sized explainers for complex topics</li>
+          <li>{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }} <strong>Mobile-first</strong> — study on the bus, in bed, during lunch</li>
         </ul>
       </div>
 
       <div class="guided-product-card guided-product-practice">
-        <span class="guided-product-icon">🎯</span>
+        <span class="guided-product-icon">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
         <h3>Practice Lab</h3>
         <p>200 exam-style questions per certification, with:</p>
         <ul>
-          <li>📝 <strong>Study Mode</strong> — one question at a time, instant feedback + detailed explanations</li>
-          <li>⏱️ <strong>Exam Mode</strong> — timed, scored, realistic exam simulation</li>
-          <li>📈 <strong>Performance analytics</strong> — see your weak areas and track improvement</li>
-          <li>🔄 <strong>Spaced repetition</strong> — missed questions come back until you master them</li>
+          <li>{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} <strong>Study Mode</strong> — one question at a time, instant feedback + detailed explanations</li>
+          <li>{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} <strong>Exam Mode</strong> — timed, scored, realistic exam simulation</li>
+          <li>{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} <strong>Performance analytics</strong> — see your weak areas and track improvement</li>
+          <li>{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} <strong>Spaced repetition</strong> — missed questions come back until you master them</li>
           <li>🏆 <strong>Streaks & badges</strong> — gamification that keeps you coming back</li>
-          <li>🔍 <strong>Domain filtering</strong> — focus on the areas you need most</li>
+          <li>{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} <strong>Domain filtering</strong> — focus on the areas you need most</li>
         </ul>
       </div>
     </div>
@@ -116,27 +116,27 @@
 
     <div class="guided-preview-module">
       <div class="guided-preview-header">
-        <span class="guided-preview-path">☁️ AZ-900 · Domain 1 · Module 3</span>
+        <span class="guided-preview-path">{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} AZ-900 · Domain 1 · Module 3</span>
         <h3>What is IaaS, PaaS, and SaaS?</h3>
         <div class="guided-preview-meta">
-          <span>⏱️ 8 min</span>
-          <span>🟢 Beginner</span>
+          <span>{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} 8 min</span>
+          <span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Beginner</span>
           <span>Module 3 of 10</span>
         </div>
       </div>
 
       <div class="guided-preview-section">
-        <h4>☕ The Simple Version</h4>
+        <h4>{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} The Simple Version</h4>
         <div class="guided-preview-analogy">
           <p>Imagine you need pizza tonight...</p>
-          <p>🏠 <strong>Made at home (IaaS)</strong> — You buy ingredients, make the dough, bake it yourself. Maximum control, maximum effort.</p>
+          <p>{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} <strong>Made at home (IaaS)</strong> — You buy ingredients, make the dough, bake it yourself. Maximum control, maximum effort.</p>
           <p>🍕 <strong>Take & bake (PaaS)</strong> — You buy a pre-made pizza, put it in YOUR oven. They did the hard part, you just cook it.</p>
           <p>🛵 <strong>Delivered (SaaS)</strong> — It shows up at your door, ready to eat. You just enjoy it.</p>
         </div>
       </div>
 
       <div class="guided-preview-section">
-        <h4>📖 The Full Picture</h4>
+        <h4>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} The Full Picture</h4>
         <div class="guided-preview-expandable">
           <div class="guided-preview-expand-item">
             <span class="guided-preview-expand-arrow">▶</span> Infrastructure as a Service (IaaS)
@@ -173,7 +173,7 @@
       </div>
 
       <div class="guided-preview-section">
-        <h4>✅ Knowledge Check</h4>
+        <h4>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Knowledge Check</h4>
         <div class="guided-preview-quiz">
           <p class="guided-preview-quiz-q">Which service model gives you the <strong>most control</strong> over infrastructure?</p>
           <div class="guided-preview-quiz-options">
@@ -200,19 +200,19 @@
     <h2 class="guided-section-title">Launching With</h2>
     <div class="guided-certs">
       <div class="guided-cert-card">
-        <span class="guided-cert-icon">🤖</span>
+        <span class="guided-cert-icon">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}</span>
         <h3>AB-900</h3>
         <p>M365 Copilot & Admin Fundamentals</p>
-        <span class="guided-cert-status" style="background:rgba(16,185,129,0.15);color:#10B981;">✅ Available Now</span>
+        <span class="guided-cert-status" style="background:rgba(16,185,129,0.15);color:#10B981;">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Available Now</span>
       </div>
       <div class="guided-cert-card">
-        <span class="guided-cert-icon">🧠</span>
+        <span class="guided-cert-icon">{{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }}</span>
         <h3>AI-901</h3>
         <p>Azure AI Fundamentals</p>
         <span class="guided-cert-status guided-cert-building">🔨 Building Now</span>
       </div>
       <div class="guided-cert-card">
-        <span class="guided-cert-icon">☁️</span>
+        <span class="guided-cert-icon">{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }}</span>
         <h3>AZ-900</h3>
         <p>Azure Fundamentals</p>
         <span class="guided-cert-status guided-cert-planned">Coming Next</span>
@@ -251,9 +251,9 @@
     </p>
   </section>
 
-  <!-- 🔒 Preview Access — Password Gate -->
+  <!-- {{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Preview Access — Password Gate -->
   <section class="guided-section guided-cta-section" id="preview-access">
-    <h2 class="guided-section-title">🔒 Preview Access</h2>
+    <h2 class="guided-section-title">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Preview Access</h2>
     <p class="guided-section-desc">Guided is in early preview. If you have an access code, enter it below to explore the full platform — interactive modules, practice quizzes, and flashcards.</p>
     <div style="max-width:400px;margin:1.5rem auto;text-align:center;">
       <div style="display:flex;gap:0.5rem;">
@@ -298,11 +298,11 @@ function guidedQuizCheck(btn) {
   opts.forEach(function(o) { o.disabled = true; });
   if (btn.getAttribute('data-correct') === 'true') {
     btn.classList.add('guided-quiz-correct');
-    result.innerHTML = '<strong>✅ Correct!</strong> IaaS gives you the most control — you manage the OS, apps, and runtime. The provider only handles the physical hardware and virtualisation.';
+    result.innerHTML = '<strong>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Correct!</strong> IaaS gives you the most control — you manage the OS, apps, and runtime. The provider only handles the physical hardware and virtualisation.';
   } else {
     btn.classList.add('guided-quiz-wrong');
     opts.forEach(function(o) { if (o.getAttribute('data-correct') === 'true') o.classList.add('guided-quiz-correct'); });
-    result.innerHTML = '<strong>❌ Not quite.</strong> IaaS gives you the most control — you manage the OS, apps, and runtime. SaaS gives you the least control (fully managed).';
+    result.innerHTML = '<strong>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Not quite.</strong> IaaS gives you the most control — you manage the OS, apps, and runtime. SaaS gives you the least control (fully managed).';
   }
   result.hidden = false;
 }

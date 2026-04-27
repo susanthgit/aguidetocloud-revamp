@@ -59,17 +59,17 @@
         <h2 class="agplan-section-title">What describes you best?</h2>
         <div class="agplan-persona-grid">
           <button class="agplan-persona-card" data-persona="admin" data-goto="assessment">
-            <span class="agplan-persona-icon">🛡️</span>
+            <span class="agplan-persona-icon">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span>
             <strong>IT Admin</strong>
             <span>Score your readiness and build your governance checklist</span>
           </button>
           <button class="agplan-persona-card" data-persona="security" data-goto="checklist">
-            <span class="agplan-persona-icon">🔒</span>
+            <span class="agplan-persona-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
             <strong>Security / Compliance</strong>
             <span>Review data access and monitoring best practices</span>
           </button>
           <button class="agplan-persona-card" data-persona="decision-maker" data-goto="reference">
-            <span class="agplan-persona-icon">📊</span>
+            <span class="agplan-persona-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
             <strong>Decision Maker</strong>
             <span>Understand licensing, roles, and what agents can do</span>
           </button>
@@ -88,19 +88,19 @@
       <div class="agplan-analogy-card">
         <div class="agplan-analogy-row">
           <div class="agplan-analogy-col">
-            <span class="agplan-analogy-icon">👥</span>
+            <span class="agplan-analogy-icon">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }}</span>
             <strong>Users</strong>
             <span>Human Workforce</span>
           </div>
           <div class="agplan-analogy-divider">+</div>
           <div class="agplan-analogy-col">
-            <span class="agplan-analogy-icon">🤖</span>
+            <span class="agplan-analogy-icon">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}</span>
             <strong>Agents</strong>
             <span>Digital Workforce</span>
           </div>
           <div class="agplan-analogy-divider">=</div>
           <div class="agplan-analogy-col">
-            <span class="agplan-analogy-icon">🏢</span>
+            <span class="agplan-analogy-icon">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }}</span>
             <strong>Agent 365</strong>
             <span>HR Department for Agents</span>
           </div>
@@ -156,7 +156,7 @@
         </div>
 
         <div class="agplan-assess-pillar-indicator" id="agplan-pillar-indicator">
-          <span id="agplan-pillar-icon">🏗️</span>
+          <span id="agplan-pillar-icon">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }}</span>
           <span id="agplan-pillar-name">Agent Creation Policies</span>
         </div>
 
@@ -212,17 +212,17 @@
         {{/* Cross-tool CTAs in results */}}
         <div class="agplan-result-crosslinks">
           <a href="/copilot-readiness/" class="agplan-crosslink-card">
-            <span class="agplan-crosslink-icon">📋</span>
+            <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
             <strong>Check Copilot Readiness</strong>
             <span>Score your org across 7 Copilot deployment pillars</span>
           </a>
           <a href="/ca-builder/" class="agplan-crosslink-card">
-            <span class="agplan-crosslink-icon">🔐</span>
+            <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
             <strong>Plan Conditional Access</strong>
             <span>Build CA policies for agent governance</span>
           </a>
           <a href="/licensing/" class="agplan-crosslink-card">
-            <span class="agplan-crosslink-icon">📜</span>
+            <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
             <strong>Understand Licensing</strong>
             <span>Compare M365 plans including Agent 365 and E7</span>
           </a>
@@ -268,7 +268,7 @@
           <p>Agents from ServiceNow, SAP, Workday, and other partners. Available through the Agent Store. IT controls which partner agents are allowed in the tenant.</p>
         </details>
         <details class="agplan-type-card">
-          <summary><span class="agplan-type-icon">🏢</span> <strong>Org-Published Agents</strong> — Custom agents approved by your IT</summary>
+          <summary><span class="agplan-type-icon">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }}</span> <strong>Org-Published Agents</strong> — Custom agents approved by your IT</summary>
           <p>Agents built by your organisation's developers or power users, reviewed and published through your approval workflow. These are your custom knowledge bots, process agents, and department helpers.</p>
         </details>
         <details class="agplan-type-card">
@@ -378,23 +378,23 @@
     <h2 class="agplan-crosslinks-heading">Continue Your Journey</h2>
     <div class="agplan-crosslinks-grid">
       <a href="/copilot-readiness/" class="agplan-crosslink-card">
-        <span class="agplan-crosslink-icon">📋</span>
+        <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
         <strong>Check Your Copilot Readiness</strong>
         <span>Score your org across 7 Copilot deployment pillars</span>
       </a>
       <a href="/ca-builder/" class="agplan-crosslink-card">
-        <span class="agplan-crosslink-icon">🔐</span>
+        <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
         <strong>Plan Conditional Access</strong>
         <span>Build Zero Trust policies for agents and users</span>
       </a>
       <a href="/licensing/" class="agplan-crosslink-card">
-        <span class="agplan-crosslink-icon">📜</span>
+        <span class="agplan-crosslink-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
         <strong>Understand M365 Licensing</strong>
         <span>Compare plans including Agent 365 and M365 E7</span>
       </a>
     </div>
     <p style="text-align:center;margin-top:1rem;color:rgba(255,255,255,0.4);font-size:0.82rem">
-      💬 Got feedback? <a href="/feedback/" style="color:#00A4EF">Share it here →</a>
+      {{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/" style="color:#00A4EF">Share it here →</a>
     </p>
   </div>
 

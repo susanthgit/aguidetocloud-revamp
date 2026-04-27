@@ -44,7 +44,7 @@
       {{ range $cat := $categories }}
         {{ $catPages := where site.RegularPages "Section" $cat.section }}
         {{ if $catPages }}
-        <a href="#cat-{{ $cat.section }}" class="zt-lic-pill">{{ $cat.emoji }} {{ $cat.name }}</a>
+        <a href="#cat-{{ $cat.section }}" class="zt-lic-pill">{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 14 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</a>
         {{ end }}
       {{ end }}
     </nav>
@@ -55,7 +55,7 @@
       {{ if $catPages }}
       <section class="zt-vid-cat-section" id="cat-{{ $cat.section }}">
         <div class="zt-lic-cat-header">
-          <h2 class="zt-lic-cat-title">{{ $cat.emoji }} {{ $cat.name }}</h2>
+          <h2 class="zt-lic-cat-title">{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 16 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</h2>
           <span class="zt-lic-cat-count">{{ len $catPages }} videos</span>
         </div>
         <div class="zt-vid-grid">

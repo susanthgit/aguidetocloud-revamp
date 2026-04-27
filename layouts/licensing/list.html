@@ -93,7 +93,7 @@
     <div class="lic-panel active" id="panel-compare">
       <div class="lic-search-wrap">
         <input type="text" id="lic-search" class="lic-search" placeholder="Search plans... (e.g. E5, Power BI, Business Central, Copilot)" autocomplete="off" aria-label="Search licensing plans">
-        <span class="lic-search-icon">🔍</span>
+        <span class="lic-search-icon">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}</span>
         <div class="lic-search-results" id="lic-search-results"></div>
       </div>
       <div id="lic-compare-content">
@@ -134,7 +134,7 @@
 
         {{/* Actions */}}
         <div class="lic-calc-actions">
-          <button class="lic-btn lic-btn-primary" id="lic-calc-copy">📋 Copy Summary</button>
+          <button class="lic-btn lic-btn-primary" id="lic-calc-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Summary</button>
           <button class="lic-btn" id="lic-calc-reset">🗑️ Reset</button>
         </div>
       </div>
@@ -202,12 +202,12 @@
 
     {{/* ── DISCLAIMER ── */}}
     <div class="lic-disclaimer">
-      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. All pricing is in <strong>USD (list price, per user, per month)</strong> and was sourced from official Microsoft pricing pages as of <strong>April 2026</strong> — pricing, features, and availability are subject to change. Enterprise Agreement (EA), CSP, and nonprofit pricing may differ. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
+      <strong>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. All pricing is in <strong>USD (list price, per user, per month)</strong> and was sourced from official Microsoft pricing pages as of <strong>April 2026</strong> — pricing, features, and availability are subject to change. Enterprise Agreement (EA), CSP, and nonprofit pricing may differ. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
     </div>
 
     {{/* ── ATTRIBUTION ── */}}
     <div class="lic-attribution">
-      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
+      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with {{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} by <a href="/about/">A Guide to Cloud & AI</a>
     </div>
 
   </div><!-- /.lic-container -->

@@ -32,7 +32,7 @@
 {{ end }}
 
 <nav class="zt-tool-nav" aria-label="Tool navigation">
-  <a href="/free-tools/" class="zt-tool-nav-header{{ if eq $currentURL "/free-tools/" }} active{{ end }}">🧰 All Tools</a>
+  <a href="/free-tools/" class="zt-tool-nav-header{{ if eq $currentURL "/free-tools/" }} active{{ end }}">{{ partial "icon.html" (dict "name" "wrench" "size" 16 "stroke" 1.5) }} All Tools</a>
 
   {{ range $cat := $catOrder }}
     {{/* Collect tools in this category */}}
@@ -54,7 +54,7 @@
         {{ range $catTools }}
         <a href="{{ .url }}" class="zt-tool-nav-link{{ if eq .url $currentURL }} active{{ end }}"
            title="{{ .name }}">
-          <span class="zt-tool-nav-emoji">{{ .emoji }}</span>
+          <span class="zt-tool-nav-emoji">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 14 "stroke" 1.5 "fallback" .emoji) }}</span>
           <span class="zt-tool-nav-name">{{ .name }}</span>
         </a>
         {{ end }}

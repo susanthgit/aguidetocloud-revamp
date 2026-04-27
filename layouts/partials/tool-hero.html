@@ -46,7 +46,7 @@
       <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
       {{ end }}
       {{ with .freshness }}<span class="tool-freshness" data-src="{{ . }}"></span>{{ end }}
-      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Support</a>
     </div>
     {{ end }}
     {{ with $.extra_html }}{{ . | safeHTML }}{{ end }}

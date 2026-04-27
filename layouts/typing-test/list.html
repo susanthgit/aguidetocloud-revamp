@@ -60,7 +60,7 @@
   </div>
 
   {{/* ── Mobile hint (dismissible) ── */}}
-  <div class="typist-mobile-hint" id="typist-mobile-hint">⌨️ Use a physical keyboard for best results <button class="typist-mobile-dismiss" id="typist-mobile-dismiss" aria-label="Dismiss">✕</button></div>
+  <div class="typist-mobile-hint" id="typist-mobile-hint">{{ partial "icon.html" (dict "name" "keyboard" "size" 14 "stroke" 1.5) }} Use a physical keyboard for best results <button class="typist-mobile-dismiss" id="typist-mobile-dismiss" aria-label="Dismiss">✕</button></div>
 
   {{/* ── Real-time stats bar ── */}}
   <div class="typist-stats-bar" id="typist-stats-bar">
@@ -143,11 +143,11 @@
         <canvas id="typist-sparkline" width="500" height="100"></canvas>
       </div>
       <div class="typist-results-actions">
-        <button class="typist-btn typist-btn-primary" id="typist-restart">🔄 Try Again</button>
+        <button class="typist-btn typist-btn-primary" id="typist-restart">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Try Again</button>
         <button class="typist-btn" id="typist-next-test">⏭️ Next Test</button>
-        <button class="typist-btn" id="typist-share-btn">📸 Share Result</button>
+        <button class="typist-btn" id="typist-share-btn">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }} Share Result</button>
       </div>
-      <div class="typist-cheat-warning typist-hidden" id="typist-cheat-warning">⚠️ Unusually high WPM detected — result not saved.</div>
+      <div class="typist-cheat-warning typist-hidden" id="typist-cheat-warning">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Unusually high WPM detected — result not saved.</div>
     </div>
   </div>
 
@@ -165,7 +165,7 @@
       <div class="typist-config-row">
         <span class="typist-config-label">Mode</span>
         <div class="typist-config-pills" id="typist-test-mode-pills">
-          <button class="typist-pill active" data-tmode="time">⏱️ Time</button>
+          <button class="typist-pill active" data-tmode="time">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Time</button>
           <button class="typist-pill" data-tmode="wordcount">🔤 Words</button>
         </div>
       </div>
@@ -200,10 +200,10 @@
   {{/* ══════════════ TAB 2: PRACTICE ══════════════ */}}
   <div class="typist-panel" id="panel-practice" role="tabpanel">
     <div class="typist-mode-pills" id="typist-mode-pills">
-      <button class="typist-mode active" data-mode="quote">💬 Quotes</button>
-      <button class="typist-mode" data-mode="code">💻 Code</button>
-      <button class="typist-mode" data-mode="custom">✏️ Custom</button>
-      <button class="typist-mode" data-mode="numbers">🔢 Numbers &amp; Symbols</button>
+      <button class="typist-mode active" data-mode="quote">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Quotes</button>
+      <button class="typist-mode" data-mode="code">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Code</button>
+      <button class="typist-mode" data-mode="custom">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Custom</button>
+      <button class="typist-mode" data-mode="numbers">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Numbers &amp; Symbols</button>
     </div>
 
     {{/* Code language selector */}}
@@ -228,18 +228,18 @@
     </div>
 
     <div class="typist-stats-section">
-      <h3 class="typist-section-title">📈 WPM Trend</h3>
+      <h3 class="typist-section-title">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} WPM Trend</h3>
       <canvas id="typist-trend-chart" width="600" height="200"></canvas>
     </div>
 
     <div class="typist-stats-section">
-      <h3 class="typist-section-title">⌨️ Problem Keys</h3>
+      <h3 class="typist-section-title">{{ partial "icon.html" (dict "name" "keyboard" "size" 14 "stroke" 1.5) }} Problem Keys</h3>
       <p class="typist-stats-hint">Keys coloured by error rate: <span style="color:#34D399">green</span> = accurate, <span style="color:#f87171">red</span> = needs work</p>
       <div id="typist-keyboard-heatmap"></div>
     </div>
 
     <div class="typist-stats-section">
-      <h3 class="typist-section-title">📋 Recent Tests</h3>
+      <h3 class="typist-section-title">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Recent Tests</h3>
       <div id="typist-history-table"></div>
     </div>
 
@@ -265,14 +265,14 @@
 
   {{/* ── Cross-links ── */}}
   <div class="tool-eco" style="--eco-accent: #34D399">
-    <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
+    <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
     <div class="tool-eco-grid tool-eco-4">
-      <a href="/prompt-polisher/" class="tool-eco-card"><span>✨</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
-      <a href="/world-clock/" class="tool-eco-card"><span>🌍</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
-      <a href="/qr-generator/" class="tool-eco-card"><span>📱</span><strong>QR Code Generator</strong><p>Create beautiful QR codes</p></a>
-      <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
+      <a href="/prompt-polisher/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
+      <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
+      <a href="/qr-generator/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}</span><strong>QR Code Generator</strong><p>Create beautiful QR codes</p></a>
+      <a href="/cert-tracker/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
     </div>
-    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
   {{/* ── Back nav ── */}}

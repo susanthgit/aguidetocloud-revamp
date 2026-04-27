@@ -13,19 +13,19 @@
 <div class="zt-companion-section">
   <p class="zt-companion-title">Licensing tools</p>
   <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">📊</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">Licensing Simplifier</span>
   </a>
   <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">🎯</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">Licence Picker</span>
   </a>
   <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">💰</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">ROI Calculator</span>
   </a>
   <a href="/ai-cost-calculator/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">🧮</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">AI Cost Calculator</span>
   </a>
 </div>
@@ -43,7 +43,7 @@
   <p class="zt-companion-title">Compare {{ $currentCat }}</p>
   {{ range $sameCat }}
   <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">⚖️</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">{{ .Params.plan_name }}</span>
   </a>
   {{ end }}
@@ -57,13 +57,13 @@
   <p class="zt-companion-title">Official resources</p>
   {{ with .Params.ms_official }}
   <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">📄</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">Microsoft pricing page</span>
   </a>
   {{ end }}
   {{ with .Params.m365maps }}
   <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">🗺️</span>
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }}</span>
     <span class="zt-companion-link-title">M365 Maps feature map</span>
   </a>
   {{ end }}
@@ -88,8 +88,8 @@
 <div class="zt-companion-section">
   <p class="zt-companion-title">Explore more</p>
   <div class="zt-companion-cta">
-    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
-    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
-    <a href="/feedback/" class="zt-companion-cta-btn">💬 Feedback</a>
+    <a href="/guided/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Practice Exams</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
+    <a href="/feedback/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Feedback</a>
   </div>
 </div>

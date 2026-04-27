@@ -13,11 +13,11 @@
     {{ if .Params.card_tag }}
       <span class="card-tag {{ .Params.tag_class | default "" }}">{{ .Params.card_tag }}</span>
     {{ else if eq .Section "ai-hub" }}
-      <span class="card-tag ai">🤖 AI Hub</span>
+      <span class="card-tag ai">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI Hub</span>
     {{ else if eq .Section "cloud-labs" }}
-      <span class="card-tag cloud">☁️ Cloud Lab</span>
+      <span class="card-tag cloud">{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Cloud Lab</span>
     {{ else if eq .Section "certifications" }}
-      <span class="card-tag cert">📜 Certification</span>
+      <span class="card-tag cert">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Certification</span>
     {{ end }}
     <h3 class="card-title">{{ .Title }}</h3>
     <p class="card-date">{{ .Date.Format "Jan 2006" }}</p>

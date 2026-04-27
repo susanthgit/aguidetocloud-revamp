@@ -72,9 +72,9 @@
         <div class="qrgen-section">
           <div class="qrgen-section-title">Content Type</div>
           <div class="qrgen-type-pills" id="qrgen-type-pills">
-            <button class="qrgen-type-pill active" data-type="url">🔗 URL</button>
-            <button class="qrgen-type-pill" data-type="text">📝 Text</button>
-            <button class="qrgen-type-pill" data-type="wifi">📶 WiFi</button>
+            <button class="qrgen-type-pill active" data-type="url">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} URL</button>
+            <button class="qrgen-type-pill" data-type="text">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Text</button>
+            <button class="qrgen-type-pill" data-type="wifi">{{ partial "icon.html" (dict "name" "wifi" "size" 14 "stroke" 1.5) }} WiFi</button>
             <button class="qrgen-type-pill" data-type="email">✉️ Email</button>
             <button class="qrgen-type-pill" data-type="phone">📞 Phone</button>
             <button class="qrgen-type-pill" data-type="vcard">👤 vCard</button>
@@ -106,7 +106,7 @@
               <label class="qrgen-label" for="qrgen-wifi-pass">Password</label>
               <div style="position:relative">
                 <input type="password" class="qrgen-input" id="qrgen-wifi-pass" placeholder="Enter password" style="padding-right:2.5rem">
-                <button type="button" class="qrgen-pass-toggle" id="qrgen-wifi-pass-toggle" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+                <button type="button" class="qrgen-pass-toggle" id="qrgen-wifi-pass-toggle" title="Show/hide password" aria-label="Toggle password visibility">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}</button>
               </div>
             </div>
             <div class="qrgen-field">
@@ -185,14 +185,14 @@
 
           {{/* ── Try It: Quick Start Examples ── */}}
           <div class="qrgen-try-cards" id="qrgen-try-cards">
-            <span class="qrgen-label" style="margin-bottom:0.25rem">⚡ Quick Start</span>
+            <span class="qrgen-label" style="margin-bottom:0.25rem">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Start</span>
             <div class="qrgen-try-grid">
               <button class="qrgen-try-card" data-try="website">
                 <span class="qrgen-try-icon">🌐</span>
                 <span class="qrgen-try-name">My Website</span>
               </button>
               <button class="qrgen-try-card" data-try="wifi">
-                <span class="qrgen-try-icon">📶</span>
+                <span class="qrgen-try-icon">{{ partial "icon.html" (dict "name" "wifi" "size" 14 "stroke" 1.5) }}</span>
                 <span class="qrgen-try-name">Share WiFi</span>
               </button>
               <button class="qrgen-try-card" data-try="vcard">
@@ -206,7 +206,7 @@
         {{/* Style Section — Collapsible */}}
         <div class="qrgen-section">
           <button class="qrgen-style-toggle" id="qrgen-style-toggle" aria-expanded="true" aria-controls="qrgen-style-body">
-            <span>🎨</span> <span>Customise Style</span> <span id="qrgen-style-chevron">▼</span>
+            <span>{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }}</span> <span>Customise Style</span> <span id="qrgen-style-chevron">▼</span>
           </button>
 
           <div class="qrgen-style-body open" id="qrgen-style-body">
@@ -316,14 +316,14 @@
       <div class="qrgen-preview-panel">
         <div class="qrgen-preview-card">
           <div class="qrgen-warning" id="qrgen-warning">
-            <span>⚠️</span>
+            <span>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</span>
             <span id="qrgen-warning-text">Warning text</span>
           </div>
           {{/* Dark/Light preview toggle */}}
           <div class="qrgen-preview-bg-toggle">
             <button class="qrgen-bg-btn active" data-bg="dark" title="Dark background">🌙</button>
             <button class="qrgen-bg-btn" data-bg="light" title="Light background (print preview)">☀️</button>
-            <button class="qrgen-bg-btn" data-bg="transparent" title="Transparent (checkerboard)">🔲</button>
+            <button class="qrgen-bg-btn" data-bg="transparent" title="Transparent (checkerboard)">{{ partial "icon.html" (dict "name" "qr-code" "size" 14 "stroke" 1.5) }}</button>
           </div>
           <div class="qrgen-preview-box" id="qrgen-preview-box">
             <div class="qrgen-preview-placeholder">Your QR code will appear here</div>
@@ -332,10 +332,10 @@
           <div class="qrgen-actions">
             <button class="qrgen-btn-primary qrgen-btn" id="qrgen-download-png">⬇ PNG</button>
             <button class="qrgen-btn" id="qrgen-download-svg">⬇ SVG</button>
-            <button class="qrgen-btn-small qrgen-btn" id="qrgen-copy-img" title="Copy image to clipboard">📋 Copy</button>
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-copy-img" title="Copy image to clipboard">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
           </div>
           <div class="qrgen-share-row">
-            <button class="qrgen-btn-small qrgen-btn" id="qrgen-share" title="Copy shareable link">🔗 Share</button>
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-share" title="Copy shareable link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
           </div>
         </div>
 
@@ -361,9 +361,9 @@ https://www.google.com,url,Google
 Hello World,text,Greeting
 +1234567890,phone,Support Line"></textarea>
         <div class="qrgen-batch-actions">
-          <button class="qrgen-btn-primary qrgen-btn" id="qrgen-batch-generate">🔄 Generate All</button>
-          <button class="qrgen-btn" id="qrgen-batch-download-zip">📦 Download ZIP</button>
-          <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-template">📄 Download Template CSV</button>
+          <button class="qrgen-btn-primary qrgen-btn" id="qrgen-batch-generate">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Generate All</button>
+          <button class="qrgen-btn" id="qrgen-batch-download-zip">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download ZIP</button>
+          <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-template">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Download Template CSV</button>
           <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-clear">🗑️ Clear</button>
           <input type="file" id="qrgen-batch-file" accept=".csv,.txt" style="display:none">
           <button class="qrgen-btn-small qrgen-btn" id="qrgen-batch-upload">📁 Upload CSV</button>
@@ -392,9 +392,9 @@ Hello World,text,Greeting
           <div class="qrgen-scan-result-label">Scanned Content</div>
           <div class="qrgen-scan-result-text" id="qrgen-scan-result-text"></div>
           <div class="qrgen-scan-result-actions">
-            <button class="qrgen-btn-primary qrgen-btn" id="qrgen-scan-copy">📋 Copy</button>
-            <button class="qrgen-btn" id="qrgen-scan-open" style="display:none">🔗 Open URL</button>
-            <button class="qrgen-btn-small qrgen-btn" id="qrgen-scan-create">🎨 Create QR from this</button>
+            <button class="qrgen-btn-primary qrgen-btn" id="qrgen-scan-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
+            <button class="qrgen-btn" id="qrgen-scan-open" style="display:none">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Open URL</button>
+            <button class="qrgen-btn-small qrgen-btn" id="qrgen-scan-create">{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }} Create QR from this</button>
           </div>
         </div>
       </div>
@@ -418,14 +418,14 @@ Hello World,text,Greeting
 
   {{/* ── Cross-links — Community Tools ── */}}
   <div class="tool-eco" style="--eco-accent: #EC4899">
-    <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
+    <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
     <div class="tool-eco-grid tool-eco-4">
-      <a href="/world-clock/" class="tool-eco-card"><span>🌍</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
-      <a href="/prompt-polisher/" class="tool-eco-card"><span>✨</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
-      <a href="/prompts/" class="tool-eco-card"><span>💡</span><strong>Prompt Library</strong><p>Ready-made prompts</p></a>
-      <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
+      <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
+      <a href="/prompt-polisher/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
+      <a href="/prompts/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Library</strong><p>Ready-made prompts</p></a>
+      <a href="/cert-tracker/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
     </div>
-    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
   {{/* ── Back nav ── */}}

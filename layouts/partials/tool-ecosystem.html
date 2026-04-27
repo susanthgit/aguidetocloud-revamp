@@ -10,100 +10,100 @@
 
 {{ if eq $group "copilot" }}
 <div class="tool-eco" style="--eco-accent: #3B82F6">
-  <h2 class="tool-eco-title">🤖 Your Copilot Decision Toolkit</h2>
+  <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} Your Copilot Decision Toolkit</h2>
   <div class="tool-eco-grid tool-eco-7">
-    <a href="/copilot-readiness/" class="tool-eco-card{{ if eq $active "readiness" }} tool-eco-active{{ end }}"><span>🎯</span><strong>Readiness</strong><p>Are you ready?</p></a>
-    <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>📊</span><strong>Features</strong><p>What can it do?</p></a>
-    <a href="/roi-calculator/" class="tool-eco-card{{ if eq $active "roi" }} tool-eco-active{{ end }}"><span>💰</span><strong>ROI</strong><p>Is it worth it?</p></a>
-    <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>📜</span><strong>Licensing</strong><p>What licence?</p></a>
-    <a href="/licence-picker/" class="tool-eco-card{{ if eq $active "licence-picker" }} tool-eco-active{{ end }}"><span>🛒</span><strong>Licence Picker</strong><p>Cheapest combo</p></a>
-    <a href="/demo-scripts/" class="tool-eco-card{{ if eq $active "demo-scripts" }} tool-eco-active{{ end }}"><span>🎬</span><strong>Demo Scripts</strong><p>Show the value</p></a>
-    <a href="/cs-companion/" class="tool-eco-card{{ if eq $active "copilot-studio" }} tool-eco-active{{ end }}"><span>⚙️</span><strong>Studio</strong><p>Build agents</p></a>
+    <a href="/copilot-readiness/" class="tool-eco-card{{ if eq $active "readiness" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span><strong>Readiness</strong><p>Are you ready?</p></a>
+    <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span><strong>Features</strong><p>What can it do?</p></a>
+    <a href="/roi-calculator/" class="tool-eco-card{{ if eq $active "roi" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span><strong>ROI</strong><p>Is it worth it?</p></a>
+    <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span><strong>Licensing</strong><p>What licence?</p></a>
+    <a href="/licence-picker/" class="tool-eco-card{{ if eq $active "licence-picker" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "shopping-cart" "size" 14 "stroke" 1.5) }}</span><strong>Licence Picker</strong><p>Cheapest combo</p></a>
+    <a href="/demo-scripts/" class="tool-eco-card{{ if eq $active "demo-scripts" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }}</span><strong>Demo Scripts</strong><p>Show the value</p></a>
+    <a href="/cs-companion/" class="tool-eco-card{{ if eq $active "copilot-studio" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }}</span><strong>Studio</strong><p>Build agents</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "m365-admin" }}
 <div class="tool-eco" style="--eco-accent: #E5A00D">
-  <h2 class="tool-eco-title">📋 Your M365 Admin Toolkit</h2>
+  <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Your M365 Admin Toolkit</h2>
   <div class="tool-eco-grid tool-eco-5">
-    <a href="/ai-news/" class="tool-eco-card{{ if eq $active "ai-news" }} tool-eco-active{{ end }}"><span>📰</span><strong>AI News</strong><p>What's new?</p></a>
-    <a href="/m365-roadmap/" class="tool-eco-card{{ if eq $active "roadmap" }} tool-eco-active{{ end }}"><span>📋</span><strong>Roadmap</strong><p>What's coming?</p></a>
-    <a href="/deprecation-timeline/" class="tool-eco-card{{ if eq $active "deprecation" }} tool-eco-active{{ end }}"><span>⏰</span><strong>Deprecations</strong><p>What's retiring?</p></a>
-    <a href="/service-health/" class="tool-eco-card{{ if eq $active "health" }} tool-eco-active{{ end }}"><span>🏥</span><strong>Service Health</strong><p>Is it working?</p></a>
-    <a href="/rename-tracker/" class="tool-eco-card{{ if eq $active "rename-tracker" }} tool-eco-active{{ end }}"><span>🔄</span><strong>Rename Tracker</strong><p>Name changes</p></a>
+    <a href="/ai-news/" class="tool-eco-card{{ if eq $active "ai-news" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }}</span><strong>AI News</strong><p>What's new?</p></a>
+    <a href="/m365-roadmap/" class="tool-eco-card{{ if eq $active "roadmap" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span><strong>Roadmap</strong><p>What's coming?</p></a>
+    <a href="/deprecation-timeline/" class="tool-eco-card{{ if eq $active "deprecation" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }}</span><strong>Deprecations</strong><p>What's retiring?</p></a>
+    <a href="/service-health/" class="tool-eco-card{{ if eq $active "health" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "hospital" "size" 14 "stroke" 1.5) }}</span><strong>Service Health</strong><p>Is it working?</p></a>
+    <a href="/rename-tracker/" class="tool-eco-card{{ if eq $active "rename-tracker" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }}</span><strong>Rename Tracker</strong><p>Name changes</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "ai-compare" }}
 <div class="tool-eco" style="--eco-accent: #38BDF8">
-  <h2 class="tool-eco-title">🔍 Your AI Comparison Toolkit</h2>
+  <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Your AI Comparison Toolkit</h2>
   <div class="tool-eco-grid tool-eco-4">
-    <a href="/ai-mapper/" class="tool-eco-card{{ if eq $active "mapper" }} tool-eco-active{{ end }}"><span>🗺️</span><strong>Service Mapper</strong><p>Which platform?</p></a>
-    <a href="/ai-showdown/" class="tool-eco-card{{ if eq $active "showdown" }} tool-eco-active{{ end }}"><span>🥊</span><strong>SaaS Showdown</strong><p>Which subscription?</p></a>
-    <a href="/ai-cost-calculator/" class="tool-eco-card{{ if eq $active "ai-cost" }} tool-eco-active{{ end }}"><span>💰</span><strong>AI Cost Calc</strong><p>Total AI cost</p></a>
-    <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>📊</span><strong>Copilot Features</strong><p>What's in M365?</p></a>
+    <a href="/ai-mapper/" class="tool-eco-card{{ if eq $active "mapper" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }}</span><strong>Service Mapper</strong><p>Which platform?</p></a>
+    <a href="/ai-showdown/" class="tool-eco-card{{ if eq $active "showdown" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "boxing" "size" 14 "stroke" 1.5) }}</span><strong>SaaS Showdown</strong><p>Which subscription?</p></a>
+    <a href="/ai-cost-calculator/" class="tool-eco-card{{ if eq $active "ai-cost" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span><strong>AI Cost Calc</strong><p>Total AI cost</p></a>
+    <a href="/copilot-matrix/" class="tool-eco-card{{ if eq $active "features" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span><strong>Copilot Features</strong><p>What's in M365?</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "cert" }}
 <div class="tool-eco" style="--eco-accent: #10B981">
   <h2 class="tool-eco-title">Your Certification Toolkit</h2>
   <div class="tool-eco-grid tool-eco-4">
-    <a href="/cert-tracker/" class="tool-eco-card{{ if eq $active "certs" }} tool-eco-active{{ end }}"><span>📖</span><strong>Study Guides</strong><p>52 Microsoft exams</p></a>
-    <a href="/guided/explore/" class="tool-eco-card{{ if eq $active "guided" }} tool-eco-active{{ end }}"><span>🎯</span><strong>Guided Platform</strong><p>126 certs · Interactive</p></a>
-    <a href="/cert-compass/" class="tool-eco-card{{ if eq $active "cert-compass" }} tool-eco-active{{ end }}"><span>🧭</span><strong>Cert Compass</strong><p>Multi-cloud navigator</p></a>
-    <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>📜</span><strong>Licensing</strong><p>Know the plans</p></a>
+    <a href="/cert-tracker/" class="tool-eco-card{{ if eq $active "certs" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Study Guides</strong><p>52 Microsoft exams</p></a>
+    <a href="/guided/explore/" class="tool-eco-card{{ if eq $active "guided" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span><strong>Guided Platform</strong><p>126 certs · Interactive</p></a>
+    <a href="/cert-compass/" class="tool-eco-card{{ if eq $active "cert-compass" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }}</span><strong>Cert Compass</strong><p>Multi-cloud navigator</p></a>
+    <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span><strong>Licensing</strong><p>Know the plans</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "admin" }}
 <div class="tool-eco" style="--eco-accent: #7C3AED">
   <h2 class="tool-eco-title">Your Admin Toolkit</h2>
   <div class="tool-eco-grid tool-eco-5">
-    <a href="/ca-builder/" class="tool-eco-card{{ if eq $active "ca-builder" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>Entra ID CA</strong><p>Conditional Access</p></a>
-    <a href="/purview-starter/" class="tool-eco-card{{ if eq $active "purview" }} tool-eco-active{{ end }}"><span>🔐</span><strong>Purview</strong><p>Labels & DLP</p></a>
-    <a href="/ps-builder/" class="tool-eco-card{{ if eq $active "ps-builder" }} tool-eco-active{{ end }}"><span>⚡</span><strong>PowerShell</strong><p>Script builder</p></a>
-    <a href="/security-toolkit/" class="tool-eco-card{{ if eq $active "security-toolkit" }} tool-eco-active{{ end }}"><span>🛡️</span><strong>Security</strong><p>CIS assessment</p></a>
-    <a href="/sla-calculator/" class="tool-eco-card{{ if eq $active "sla-calculator" }} tool-eco-active{{ end }}"><span>📐</span><strong>SLA Calc</strong><p>Uptime budget</p></a>
-    <a href="/policy-tester/" class="tool-eco-card{{ if eq $active "policy-tester" }} tool-eco-active{{ end }}"><span>🔑</span><strong>Policy Tester</strong><p>Score your policy</p></a>
-    <a href="/incident-comms/" class="tool-eco-card{{ if eq $active "incident-comms" }} tool-eco-active{{ end }}"><span>📢</span><strong>Incident Comms</strong><p>Status updates</p></a>
-    <a href="/migration-planner/" class="tool-eco-card{{ if eq $active "migration" }} tool-eco-active{{ end }}"><span>🚀</span><strong>Migration</strong><p>Plan your move</p></a>
-    <a href="/admin-comms/" class="tool-eco-card{{ if eq $active "admin-comms" }} tool-eco-active{{ end }}"><span>📧</span><strong>Admin Comms</strong><p>Draft emails</p></a>
-    <a href="/compliance-passport/" class="tool-eco-card{{ if eq $active "compliance-passport" }} tool-eco-active{{ end }}"><span>📋</span><strong>Compliance</strong><p>Framework passport</p></a>
+    <a href="/ca-builder/" class="tool-eco-card{{ if eq $active "ca-builder" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span><strong>Entra ID CA</strong><p>Conditional Access</p></a>
+    <a href="/purview-starter/" class="tool-eco-card{{ if eq $active "purview" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span><strong>Purview</strong><p>Labels & DLP</p></a>
+    <a href="/ps-builder/" class="tool-eco-card{{ if eq $active "ps-builder" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</span><strong>PowerShell</strong><p>Script builder</p></a>
+    <a href="/security-toolkit/" class="tool-eco-card{{ if eq $active "security-toolkit" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span><strong>Security</strong><p>CIS assessment</p></a>
+    <a href="/sla-calculator/" class="tool-eco-card{{ if eq $active "sla-calculator" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }}</span><strong>SLA Calc</strong><p>Uptime budget</p></a>
+    <a href="/policy-tester/" class="tool-eco-card{{ if eq $active "policy-tester" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span><strong>Policy Tester</strong><p>Score your policy</p></a>
+    <a href="/incident-comms/" class="tool-eco-card{{ if eq $active "incident-comms" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "megaphone" "size" 14 "stroke" 1.5) }}</span><strong>Incident Comms</strong><p>Status updates</p></a>
+    <a href="/migration-planner/" class="tool-eco-card{{ if eq $active "migration" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }}</span><strong>Migration</strong><p>Plan your move</p></a>
+    <a href="/admin-comms/" class="tool-eco-card{{ if eq $active "admin-comms" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }}</span><strong>Admin Comms</strong><p>Draft emails</p></a>
+    <a href="/compliance-passport/" class="tool-eco-card{{ if eq $active "compliance-passport" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span><strong>Compliance</strong><p>Framework passport</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "community" }}
 <div class="tool-eco" style="--eco-accent: #C27BA0">
   <h2 class="tool-eco-title">More Fun Tools</h2>
   <div class="tool-eco-grid tool-eco-4">
-    <a href="/admin-bingo/" class="tool-eco-card{{ if eq $active "admin-bingo" }} tool-eco-active{{ end }}"><span>🎯</span><strong>IT Bingo</strong><p>Relatable admin moments</p></a>
-    <a href="/acronym-battle/" class="tool-eco-card{{ if eq $active "acronym-battle" }} tool-eco-active{{ end }}"><span>🧠</span><strong>Acronym Battle</strong><p>Test your knowledge</p></a>
-    <a href="/cli-quiz/" class="tool-eco-card{{ if eq $active "cli-quiz" }} tool-eco-active{{ end }}"><span>💻</span><strong>CLI Quiz</strong><p>Guess the command</p></a>
-    <a href="/it-day-sim/" class="tool-eco-card{{ if eq $active "it-day-sim" }} tool-eco-active{{ end }}"><span>🎮</span><strong>My IT Day</strong><p>Choose your adventure</p></a>
-    <a href="/admin-badges/" class="tool-eco-card{{ if eq $active "admin-badges" }} tool-eco-active{{ end }}"><span>🏅</span><strong>Admin Badges</strong><p>Claim achievements</p></a>
-    <a href="/phishing-test/" class="tool-eco-card{{ if eq $active "phishing-test" }} tool-eco-active{{ end }}"><span>🎣</span><strong>Phishing Test</strong><p>Spot the fakes</p></a>
-    <a href="/feature-roulette/" class="tool-eco-card{{ if eq $active "feature-roulette" }} tool-eco-active{{ end }}"><span>🎰</span><strong>Feature Roulette</strong><p>Discover features</p></a>
+    <a href="/admin-bingo/" class="tool-eco-card{{ if eq $active "admin-bingo" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span><strong>IT Bingo</strong><p>Relatable admin moments</p></a>
+    <a href="/acronym-battle/" class="tool-eco-card{{ if eq $active "acronym-battle" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }}</span><strong>Acronym Battle</strong><p>Test your knowledge</p></a>
+    <a href="/cli-quiz/" class="tool-eco-card{{ if eq $active "cli-quiz" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }}</span><strong>CLI Quiz</strong><p>Guess the command</p></a>
+    <a href="/it-day-sim/" class="tool-eco-card{{ if eq $active "it-day-sim" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "gamepad" "size" 14 "stroke" 1.5) }}</span><strong>My IT Day</strong><p>Choose your adventure</p></a>
+    <a href="/admin-badges/" class="tool-eco-card{{ if eq $active "admin-badges" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "medal" "size" 14 "stroke" 1.5) }}</span><strong>Admin Badges</strong><p>Claim achievements</p></a>
+    <a href="/phishing-test/" class="tool-eco-card{{ if eq $active "phishing-test" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "fishing" "size" 14 "stroke" 1.5) }}</span><strong>Phishing Test</strong><p>Spot the fakes</p></a>
+    <a href="/feature-roulette/" class="tool-eco-card{{ if eq $active "feature-roulette" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }}</span><strong>Feature Roulette</strong><p>Discover features</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ else if eq $group "prompt" }}
 <div class="tool-eco" style="--eco-accent: #A78BFA">
   <h2 class="tool-eco-title">Your Prompt Engineering Suite</h2>
   <div class="tool-eco-grid tool-eco-5">
-    <a href="/prompts/" class="tool-eco-card{{ if eq $active "prompts" }} tool-eco-active{{ end }}"><span>💡</span><strong>Library</strong><p>84 ready-to-use prompts</p></a>
-    <a href="/prompt-polisher/" class="tool-eco-card{{ if eq $active "prompt-polisher" }} tool-eco-active{{ end }}"><span>✨</span><strong>Polisher</strong><p>Score and rewrite</p></a>
-    <a href="/prompt-tester/" class="tool-eco-card{{ if eq $active "prompt-tester" }} tool-eco-active{{ end }}"><span>🔬</span><strong>Tester</strong><p>A/B compare</p></a>
-    <a href="/prompt-guide/" class="tool-eco-card{{ if eq $active "prompt-guide" }} tool-eco-active{{ end }}"><span>📖</span><strong>Guide</strong><p>8 fundamentals</p></a>
-    <a href="/prompt-lab/" class="tool-eco-card{{ if eq $active "prompt-lab" }} tool-eco-active{{ end }}"><span>🧪</span><strong>Advanced Lab</strong><p>12 expert techniques</p></a>
+    <a href="/prompts/" class="tool-eco-card{{ if eq $active "prompts" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Library</strong><p>84 ready-to-use prompts</p></a>
+    <a href="/prompt-polisher/" class="tool-eco-card{{ if eq $active "prompt-polisher" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Polisher</strong><p>Score and rewrite</p></a>
+    <a href="/prompt-tester/" class="tool-eco-card{{ if eq $active "prompt-tester" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }}</span><strong>Tester</strong><p>A/B compare</p></a>
+    <a href="/prompt-guide/" class="tool-eco-card{{ if eq $active "prompt-guide" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Guide</strong><p>8 fundamentals</p></a>
+    <a href="/prompt-lab/" class="tool-eco-card{{ if eq $active "prompt-lab" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }}</span><strong>Advanced Lab</strong><p>12 expert techniques</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
 {{ end }}

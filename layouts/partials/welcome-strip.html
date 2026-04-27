@@ -1,7 +1,7 @@
 <div class="welcome-strip">
   <div class="welcome-inner">
     <div class="welcome-text-block">
-      <span class="welcome-trust-badge">🛡️ Built by a Microsoft Engineer</span>
+      <span class="welcome-trust-badge">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Built by a Microsoft Engineer</span>
       <h1 class="welcome-title">Cloud & AI Certification<br><span class="welcome-accent">Made Simple</span></h1>
       <p class="welcome-subtitle">Free tools, interactive study guides, and practice exams for 126 certifications across Microsoft, AWS, Google Cloud, CompTIA, Cisco, and more.</p>
       <div class="welcome-stats">
@@ -13,10 +13,10 @@
       <div class="welcome-cta-row">
         <a href="/guided/explore/" class="welcome-cta-primary">Explore Certifications →</a>
         <a href="/free-tools/" class="welcome-cta-secondary">Browse Free Tools</a>
-        <a href="/study-guides/" class="welcome-cta-secondary">📖 Study Guides</a>
+        <a href="/study-guides/" class="welcome-cta-secondary">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Study Guides</a>
       </div>
     </div>
-    <!-- 🎬 Product showcase placeholder — will be a GIF/video of tools, flashcards, practice exams after redesign -->
+    <!-- {{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} Product showcase placeholder — will be a GIF/video of tools, flashcards, practice exams after redesign -->
     <div class="welcome-showcase" aria-hidden="true"></div>
   </div>
 </div>

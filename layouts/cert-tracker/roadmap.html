@@ -47,12 +47,12 @@
   var expertExams = ["AZ-305","AZ-400","AZ-802","SC-100","MS-102","PL-600","SC-500","SC-730"];
 
   var rows = [
-    { key: "azure", label: "☁️ Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },
-    { key: "ai", label: "🤖 AI & Data", color: "#8B5CF6", css: "kanban-row-ai", cats: ["AI", "Data"] },
-    { key: "security", label: "🔒 Security", color: "#EF4444", css: "kanban-row-security", cats: ["Security"] },
-    { key: "m365", label: "📧 M365", color: "#F59E0B", css: "kanban-row-m365", cats: ["Microsoft 365"] },
-    { key: "power", label: "⚡ Power", color: "#A855F7", css: "kanban-row-power", cats: ["Power Platform"] },
-    { key: "d365", label: "💼 D365", color: "#14B8A6", css: "kanban-row-d365", cats: ["Dynamics 365"] }
+    { key: "azure", label: "{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },
+    { key: "ai", label: "{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI & Data", color: "#8B5CF6", css: "kanban-row-ai", cats: ["AI", "Data"] },
+    { key: "security", label: "{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Security", color: "#EF4444", css: "kanban-row-security", cats: ["Security"] },
+    { key: "m365", label: "{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} M365", color: "#F59E0B", css: "kanban-row-m365", cats: ["Microsoft 365"] },
+    { key: "power", label: "{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Power", color: "#A855F7", css: "kanban-row-power", cats: ["Power Platform"] },
+    { key: "d365", label: "{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} D365", color: "#14B8A6", css: "kanban-row-d365", cats: ["Dynamics 365"] }
   ];
 
   function getLevel(code) {
@@ -65,8 +65,8 @@
     var s = e.status || "active";
     var cls = s !== "active" ? " kanban-card-" + s : "";
     var badge = "";
-    if (s === "retiring") badge = '<span class="kanban-card-badge cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️</span>';
-    else if (s === "beta") badge = '<span class="kanban-card-badge cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪</span>';
+    if (s === "retiring") badge = '<span class="kanban-card-badge cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</span>';
+    else if (s === "beta") badge = '<span class="kanban-card-badge cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }}</span>';
     else if (s === "retired") badge = '<span class="kanban-card-badge cert-badge cert-badge-retired" style="font-size:0.55rem;padding:0.05rem 0.3rem">🚫</span>';
     var t = e.title.length > 30 ? e.title.substring(0, 27) + "..." : e.title;
     return '<a href="/cert-tracker/' + e.code.toLowerCase() + '/" class="kanban-card' + cls + '" title="' + e.code + ': ' + e.title + '">'
@@ -94,9 +94,9 @@
       var html = '<div class="kanban">';
       // Headers
       html += '<div class="kanban-header kanban-header-cat"></div>';
-      html += '<div class="kanban-header kanban-header-fund">🟢 Fundamentals</div>';
+      html += '<div class="kanban-header kanban-header-fund">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Fundamentals</div>';
       html += '<div class="kanban-header kanban-header-assoc">🔵 Associate</div>';
-      html += '<div class="kanban-header kanban-header-expert">🟡 Expert & Beta</div>';
+      html += '<div class="kanban-header kanban-header-expert">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Expert & Beta</div>';
 
       // Rows
       rows.forEach(function(row) {

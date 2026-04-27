@@ -46,9 +46,9 @@
 
   {{/* ── Stats Bar ── */}}
   <div class="showdown-stats">
-    <span class="showdown-stat">🏢 <strong id="providerCount">0</strong> Providers</span>
-    <span class="showdown-stat">📋 <strong id="planCount">0</strong> Plans</span>
-    <span class="showdown-stat">🔄 Updated <strong>April 2026</strong></span>
+    <span class="showdown-stat">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} <strong id="providerCount">0</strong> Providers</span>
+    <span class="showdown-stat">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} <strong id="planCount">0</strong> Plans</span>
+    <span class="showdown-stat">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Updated <strong>April 2026</strong></span>
   </div>
 
   {{/* ── Tab Panels ── */}}
@@ -69,9 +69,9 @@
     <div class="showdown-compare-presets">
       <button class="showdown-preset active" data-preset="big3">🏆 The Big 3</button>
       <button class="showdown-preset" data-preset="budget">💸 Budget Picks</button>
-      <button class="showdown-preset" data-preset="enterprise">🏢 Enterprise</button>
-      <button class="showdown-preset" data-preset="coding">💻 Coding</button>
-      <button class="showdown-preset" data-preset="research">🔍 Research</button>
+      <button class="showdown-preset" data-preset="enterprise">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise</button>
+      <button class="showdown-preset" data-preset="coding">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Coding</button>
+      <button class="showdown-preset" data-preset="research">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Research</button>
     </div>
     <div class="showdown-compare-selector" id="compareSelector">
       <!-- JS renders checkboxes -->
@@ -173,11 +173,11 @@
       </select>
       <select id="changelogType" class="showdown-select" aria-label="Filter by type">
         <option value="all">All Types</option>
-        <option value="price_change">💰 Price Changes</option>
+        <option value="price_change">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Price Changes</option>
         <option value="new_plan">🆕 New Plans</option>
-        <option value="new_model">🤖 New Models</option>
-        <option value="new_feature">✨ New Features</option>
-        <option value="breaking">⚠️ Breaking Changes</option>
+        <option value="new_model">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} New Models</option>
+        <option value="new_feature">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} New Features</option>
+        <option value="breaking">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Breaking Changes</option>
       </select>
     </div>
     <div class="showdown-changelog-list" id="changelogList">

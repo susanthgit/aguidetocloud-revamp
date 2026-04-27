@@ -35,11 +35,11 @@
 
   <div class="bingo-panel active" id="panel-play">
     <div class="bingo-controls">
-      <button class="bingo-btn bingo-btn-primary" id="btn-new-game" aria-label="Generate new random bingo card">🎲 New Game</button>
-      <button class="bingo-btn" id="btn-daily" aria-label="Get today's daily challenge card">📅 Daily</button>
+      <button class="bingo-btn bingo-btn-primary" id="btn-new-game" aria-label="Generate new random bingo card">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} New Game</button>
+      <button class="bingo-btn" id="btn-daily" aria-label="Get today's daily challenge card">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Daily</button>
       <button class="bingo-btn" id="btn-weekly" aria-label="Get this week's challenge card">📆 Weekly</button>
-      <button class="bingo-btn" id="btn-share" aria-label="Share this card">🔗 Share</button>
-      <button class="bingo-btn" id="btn-print" aria-label="Print this card" onclick="window.print()">🖨️ Print</button>
+      <button class="bingo-btn" id="btn-share" aria-label="Share this card">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
+      <button class="bingo-btn" id="btn-print" aria-label="Print this card" onclick="window.print()">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print</button>
     </div>
 
     <div class="bingo-theme-bar">

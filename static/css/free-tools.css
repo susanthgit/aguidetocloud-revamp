@@ -13,6 +13,11 @@
   padding-left: var(--space-3, 12px);
   border-left: 3px solid var(--accent);
 }
+.ft-cat-title svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 2px;
+}
 .ft-cat-desc {
   font-size: var(--text-sm, 0.875rem);
   color: var(--text-tertiary);
@@ -46,6 +51,8 @@
 .free-tool-icon {
   font-size: var(--text-h3, 1.25rem);
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 .free-tool-card h3 {
   font-family: var(--font-heading);
@@ -87,6 +94,11 @@
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.01em;
+}
+.free-tool-features span::before {
+  content: "·";
+  margin-right: 4px;
+  opacity: 0.5;
 }
 .free-tool-cta {
   color: var(--accent);
@@ -156,6 +168,9 @@
   gap: var(--space-2, 8px);
 }
 .ft-hero-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 4px);
   font-size: var(--text-caption, 0.75rem);
   font-weight: 500;
   color: var(--text-tertiary);
@@ -165,6 +180,9 @@
   border-radius: var(--radius-full);
   letter-spacing: 0.01em;
   line-height: 1.5;
+}
+.ft-hero-stat svg {
+  flex-shrink: 0;
 }
 .page-free-tools .container {
   max-width: none;

@@ -58,9 +58,9 @@
           </select>
           <select id="psb-difficulty-select" class="psb-filter-select" aria-label="Filter by difficulty">
             <option value="all">All Levels</option>
-            <option value="beginner">🟢 Beginner</option>
-            <option value="intermediate">🟡 Intermediate</option>
-            <option value="advanced">🔴 Advanced</option>
+            <option value="beginner">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Beginner</option>
+            <option value="intermediate">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Intermediate</option>
+            <option value="advanced">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Advanced</option>
           </select>
         </div>
 
@@ -73,7 +73,7 @@
 
       {{/* Suggest a recipe CTA */}}
       <div class="psb-suggest-cta">
-        <p>Can't find what you need? <a href="/feedback/">💬 Suggest a recipe</a> and we'll add it.</p>
+        <p>Can't find what you need? <a href="/feedback/">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Suggest a recipe</a> and we'll add it.</p>
       </div>
     </div>
 
@@ -86,8 +86,8 @@
         <label class="psb-step-label"><span class="psb-step-num">1</span> Choose a Module</label>
         <div class="psb-module-cats" id="psb-module-cats">
           <button class="psb-pill-sm active" data-cat="all">All</button>
-          <button class="psb-pill-sm" data-cat="cloud">☁️ Cloud</button>
-          <button class="psb-pill-sm" data-cat="onprem">🏢 On-Prem</button>
+          <button class="psb-pill-sm" data-cat="cloud">{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Cloud</button>
+          <button class="psb-pill-sm" data-cat="onprem">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} On-Prem</button>
           <button class="psb-pill-sm" data-cat="windows">🖥️ Windows</button>
         </div>
         <div class="psb-module-grid" id="psb-module-grid"></div>
@@ -106,7 +106,7 @@
         <label class="psb-step-label"><span class="psb-step-num">3</span> Fill Parameters</label>
         <div class="psb-params-form" id="psb-params-form"></div>
         <div class="psb-build-actions">
-          <button class="psb-btn-primary" id="psb-build-btn">⚡ Build Command</button>
+          <button class="psb-btn-primary" id="psb-build-btn">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Build Command</button>
           <button class="psb-btn-secondary" id="psb-reset-btn">↩ Reset</button>
         </div>
       </div>
@@ -117,9 +117,9 @@
         <div class="psb-output-block">
           <pre class="psb-output-code" id="psb-output-code"></pre>
           <div class="psb-output-actions">
-            <button class="psb-btn-copy" id="psb-copy-btn" title="Copy to clipboard">📋 Copy</button>
-            <button class="psb-btn-download" id="psb-download-btn" title="Download as .ps1 file">💾 .ps1</button>
-            <button class="psb-btn-share" id="psb-share-btn" title="Copy shareable link">🔗 Share</button>
+            <button class="psb-btn-copy" id="psb-copy-btn" title="Copy to clipboard">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
+            <button class="psb-btn-download" id="psb-download-btn" title="Download as .ps1 file">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} .ps1</button>
+            <button class="psb-btn-share" id="psb-share-btn" title="Copy shareable link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
 
     {{/* ── HISTORY (collapsible, above FAQ) ── */}}
     <details class="psb-history" id="psb-history">
-      <summary class="psb-history-title">📜 Recent Commands <span class="psb-history-badge" id="psb-history-badge"></span></summary>
+      <summary class="psb-history-title">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Recent Commands <span class="psb-history-badge" id="psb-history-badge"></span></summary>
       <div class="psb-history-list" id="psb-history-list">
         <p class="psb-history-empty">No commands yet. Build or use a recipe to get started.</p>
       </div>
@@ -165,22 +165,22 @@
       <h3>Related Tools</h3>
       <div class="psb-cross-grid">
         <a href="/licensing/" class="psb-cross-card">
-          <span class="psb-cross-emoji">💰</span>
+          <span class="psb-cross-emoji">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
           <span class="psb-cross-name">Licensing Simplifier</span>
           <span class="psb-cross-desc">Check which licence includes the modules you need</span>
         </a>
         <a href="/cert-tracker/" class="psb-cross-card">
-          <span class="psb-cross-emoji">📚</span>
+          <span class="psb-cross-emoji">{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }}</span>
           <span class="psb-cross-name">Cert Study Guides</span>
           <span class="psb-cross-desc">Study for MS-102, AZ-104, and more</span>
         </a>
         <a href="/prompts/" class="psb-cross-card">
-          <span class="psb-cross-emoji">✨</span>
+          <span class="psb-cross-emoji">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span>
           <span class="psb-cross-name">Prompt Library</span>
           <span class="psb-cross-desc">AI prompts for M365 Copilot and more</span>
         </a>
         <a href="/copilot-readiness/" class="psb-cross-card">
-          <span class="psb-cross-emoji">🎯</span>
+          <span class="psb-cross-emoji">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
           <span class="psb-cross-name">Copilot Readiness</span>
           <span class="psb-cross-desc">Check if your tenant is ready for M365 Copilot</span>
         </a>

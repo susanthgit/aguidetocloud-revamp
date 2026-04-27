@@ -31,7 +31,7 @@
       <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $readBase }}</span>
       <span class="tool-counter-verb">reads</span>
     </div>
-    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+    <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Support</a>
   </div>
   {{ end }}
   {{ partial "blog-prev-next.html" . }}
@@ -53,7 +53,7 @@
 
   {{ if $isBlog }}
   <div class="blog-actions">
-    <button class="blog-share-btn" aria-label="Share this article" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(()=>{this.textContent='✅ Copied!';setTimeout(()=>{this.textContent='🔗 Share'},2000)})}">🔗 Share</button>
+    <button class="blog-share-btn" aria-label="Share this article" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(()=>{this.textContent='{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Copied!';setTimeout(()=>{this.textContent='{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share'},2000)})}">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
   </div>
   {{ end }}
 
@@ -75,9 +75,9 @@
         {{ end }}
       </div>
       <div class="blog-end-subscribe">
-        <a href="/index.xml" class="blog-end-sub-btn">📡 RSS Feed</a>
-        <a href="{{ .Site.Params.youtube_channel }}" class="blog-end-sub-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
-        <a href="/free-tools/" class="blog-end-sub-btn">🧰 Free Tools</a>
+        <a href="/index.xml" class="blog-end-sub-btn">{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} RSS Feed</a>
+        <a href="{{ .Site.Params.youtube_channel }}" class="blog-end-sub-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
+        <a href="/free-tools/" class="blog-end-sub-btn">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Free Tools</a>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@
 
   {{ if .Params.resources }}
   <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(26, 26, 46, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.08);">
-    <h2 style="color: var(--neon-cyan); margin-bottom: 1rem;">📥 Resources</h2>
+    <h2 style="color: var(--neon-cyan); margin-bottom: 1rem;">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Resources</h2>
     <ul>
       {{ range .Params.resources }}
         <li><a href="{{ .url }}">{{ .name }}</a></li>

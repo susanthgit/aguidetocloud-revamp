@@ -4,59 +4,69 @@
 [[sections]]
 url = "/start/"
 emoji = "🚀"
+icon = "rocket"
 name = "Start Here"
 short = "Start"
 
 [[sections]]
 url = "/ai-hub/"
 emoji = "🤖"
+icon = "robot"
 name = "AI Hub"
 short = "AI Hub"
 
 [[sections]]
 url = "/free-tools/"
 emoji = "🧰"
+icon = "wrench"
 name = "Free Tools"
 short = "Tools"
 
 [[sections]]
 url = "/blog/"
 emoji = "📝"
+icon = "edit-3"
 name = "Blog"
 short = "Blog"
 
 [[sections]]
 url = "/cloud-labs/"
 emoji = "☁️"
+icon = "cloud"
 name = "Cloud Labs"
 short = "Labs"
 
 [[sections]]
 url = "/certifications/"
 emoji = "📜"
+icon = "scroll"
 name = "Certifications"
 short = "Certs"
 
 [[sections]]
 url = "/exam-qa/"
 emoji = "📝"
+icon = "edit-3"
 name = "Exam Q&A"
 short = "Q&A"
 
 [[sections]]
 url = "/interview-prep/"
 emoji = "💼"
+icon = "briefcase"
 name = "Interview Prep"
 short = "Interview"
 
 [[sections]]
 url = "/music/"
 emoji = "🎵"
+icon = "music"
 name = "Study Music"
 short = "Music"
 
 [[sections]]
 url = "/about/"
 emoji = "👋"
+icon = "heart"
 name = "About"
 short = "About"

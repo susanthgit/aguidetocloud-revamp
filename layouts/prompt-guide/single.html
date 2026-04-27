@@ -28,7 +28,7 @@
     <div class="pguide-technique-hero-inner">
       <div class="pguide-technique-meta">
         <span class="pguide-badge pguide-badge-{{ .Params.difficulty }}">{{ if eq .Params.difficulty "beginner" }}⭐ Beginner{{ else }}⭐⭐ Intermediate{{ end }}</span>
-        <span class="pguide-technique-time">⏱️ {{ .Params.read_time }} read</span>
+        <span class="pguide-technique-time">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} {{ .Params.read_time }} read</span>
         <span class="pguide-technique-academic" title="Academic name">{{ .Params.academic_name }}</span>
       </div>
       <h1 class="pguide-technique-title">{{ .Title }}</h1>
@@ -44,7 +44,7 @@
     {{/* ── TL;DR Box (fix K) ── */}}
     {{ with .Params.tldr }}
     <div class="pguide-tldr">
-      <span class="pguide-tldr-label">⚡ TL;DR</span>
+      <span class="pguide-tldr-label">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} TL;DR</span>
       <p>{{ . }}</p>
     </div>
     {{ end }}
@@ -57,7 +57,7 @@
 
         {{/* ══ Interactive Sandbox — MOVED UP (fix #4) ══ */}}
         <div class="pguide-sandbox" id="pguide-sandbox">
-          <h2>🧪 Try It Yourself</h2>
+          <h2>{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} Try It Yourself</h2>
           <p>Rewrite this vague prompt using the <strong>{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</strong> technique:</p>
 
           <div class="pguide-sandbox-starter">
@@ -69,7 +69,7 @@
             <label for="pguide-sandbox-input" class="pguide-sandbox-label">Your improved version:</label>
             <textarea id="pguide-sandbox-input" class="pguide-sandbox-textarea" rows="4" placeholder="Rewrite the prompt above using what you just learned..."></textarea>
             <div class="pguide-sandbox-actions">
-              <button class="pguide-btn-small" id="pguide-sandbox-reset" title="Clear and start over">🔄 Reset</button>
+              <button class="pguide-btn-small" id="pguide-sandbox-reset" title="Clear and start over">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Reset</button>
             </div>
           </div>
 
@@ -89,10 +89,10 @@
           {{/* Show answer reveal (fix #8) */}}
           {{ with .Params.sandbox_answer }}
           <details class="pguide-sandbox-reveal">
-            <summary>💡 Stuck? Show example answer</summary>
+            <summary>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Stuck? Show example answer</summary>
             <div class="pguide-sandbox-answer">
               <p>{{ . }}</p>
-              <button class="pguide-copy-small" data-copy="{{ . }}" title="Copy example">📋 Copy</button>
+              <button class="pguide-copy-small" data-copy="{{ . }}" title="Copy example">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
             </div>
           </details>
           {{ end }}
@@ -101,7 +101,7 @@
         {{/* ══ Fix This Prompt — V2 ══ */}}
         {{ with .Params.fix_prompt }}
         <div class="pguide-fix-exercise">
-          <h2>🔧 Fix This Prompt</h2>
+          <h2>{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Fix This Prompt</h2>
           <p>This prompt is broken. Can you spot what's wrong and fix it?</p>
           <div class="pguide-sandbox-bad">{{ . }}</div>
           <textarea id="pguide-fix-input" class="pguide-sandbox-textarea" rows="3" placeholder="Write your fixed version here..." aria-label="Write your fixed prompt version"></textarea>
@@ -128,7 +128,7 @@
 
         {{/* Technique heatmap — V2 */}}
         <div class="pguide-heatmap-card">
-          <h3>📊 Best for</h3>
+          <h3>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Best for</h3>
           {{ with .Params.best_for }}
           <ul class="pguide-best-for">
             {{ range . }}<li>{{ . }}</li>{{ end }}
@@ -160,7 +160,7 @@
     {{/* ── FAQ ── */}}
     {{ with .Params.faq }}
     <div class="pguide-faq">
-      <h2>❓ Frequently Asked Questions</h2>
+      <h2>{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
       {{ range . }}
       <details class="pguide-faq-item">
         <summary>{{ .question }}</summary>
@@ -172,10 +172,10 @@
 
     {{/* ── Cross-tool CTAs ── */}}
     <div class="pguide-cross-cta">
-      <a href="/prompt-polisher/" class="pguide-cta-card"><span>✨</span><strong>Practice with Prompt Polisher</strong><p>Score and rewrite your own prompts</p></a>
-      <a href="/prompt-tester/" class="pguide-cta-card"><span>🔬</span><strong>Compare with Prompt Tester</strong><p>A/B test your before vs after</p></a>
-      <a href="/prompts/" class="pguide-cta-card"><span>💡</span><strong>Browse Prompt Library</strong><p>84 ready-to-use prompts</p></a>
-      <a href="/prompt-guide/" class="pguide-cta-card"><span>🎓</span><strong>Back to All Techniques</strong><p>Explore all 8 techniques</p></a>
+      <a href="/prompt-polisher/" class="pguide-cta-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Practice with Prompt Polisher</strong><p>Score and rewrite your own prompts</p></a>
+      <a href="/prompt-tester/" class="pguide-cta-card"><span>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }}</span><strong>Compare with Prompt Tester</strong><p>A/B test your before vs after</p></a>
+      <a href="/prompts/" class="pguide-cta-card"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Browse Prompt Library</strong><p>84 ready-to-use prompts</p></a>
+      <a href="/prompt-guide/" class="pguide-cta-card"><span>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span><strong>Back to All Techniques</strong><p>Explore all 8 techniques</p></a>
     </div>
 
   </div>

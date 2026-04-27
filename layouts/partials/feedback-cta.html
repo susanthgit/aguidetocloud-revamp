@@ -9,6 +9,6 @@
 <div class="feedback-cta-bar">
   <p class="feedback-cta-text">Have a question, idea, or found a bug?</p>
   <a href="/feedback/?category=tool-feedback&tool={{ $tool }}" class="feedback-cta-btn" aria-label="Share feedback on {{ $label }}">
-    💬 Share Feedback on {{ $label }}
+    {{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Share Feedback on {{ $label }}
   </a>
 </div>

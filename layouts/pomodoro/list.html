@@ -55,7 +55,7 @@
       <button class="pomo-preset active" data-w="25" data-s="5" data-l="15">25 / 5</button>
       <button class="pomo-preset" data-w="50" data-s="10" data-l="30">50 / 10</button>
       <button class="pomo-preset" data-w="90" data-s="15" data-l="30">90 / 15</button>
-      <button class="pomo-preset" data-w="0">⚙️ Custom</button>
+      <button class="pomo-preset" data-w="0">{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} Custom</button>
     </div>
 
     {{/* Phase indicator */}}
@@ -83,7 +83,7 @@
     {{/* Current task — inline */}}
     <div class="pomo-focus-task" id="pomo-focus-task">
       <div class="pomo-focus-task-display" id="pomo-focus-task-display">
-        <span class="pomo-focus-label">🎯</span>
+        <span class="pomo-focus-label">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
         <span class="pomo-focus-name" id="pomo-focus-name">Click to add a task…</span>
       </div>
       <div class="pomo-focus-task-input" id="pomo-focus-task-input" style="display:none">
@@ -107,12 +107,12 @@
 
     {{/* Bottom row: actions + today count */}}
     <div class="pomo-timer-bottom">
-      <div class="pomo-today-count">🍅 <strong id="pomo-today-num">0</strong> today</div>
+      <div class="pomo-today-count">{{ partial "icon.html" (dict "name" "tomato" "size" 14 "stroke" 1.5) }} <strong id="pomo-today-num">0</strong> today</div>
       <div class="pomo-timer-actions">
         <label class="pomo-auto-label"><input type="checkbox" id="pomo-auto-start"> Auto</label>
         <button class="pomo-icon-btn" id="pomo-mute-btn" title="Mute (M)">🔊</button>
         <button class="pomo-icon-btn" id="pomo-fullscreen" title="Fullscreen (F)">⛶</button>
-        <button class="pomo-icon-btn" id="pomo-settings-btn" title="Settings">⚙️</button>
+        <button class="pomo-icon-btn" id="pomo-settings-btn" title="Settings">{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }}</button>
       </div>
     </div>
 
@@ -141,7 +141,7 @@
 
     <div class="pomo-task-input-row">
       <input type="text" class="pomo-input" id="pomo-task-input" placeholder="Add a task and press Enter…" maxlength="200" aria-label="New task">
-      <input type="number" class="pomo-input pomo-est-input" id="pomo-task-est" min="1" max="99" value="1" title="Estimated 🍅" aria-label="Estimated pomodoros">
+      <input type="number" class="pomo-input pomo-est-input" id="pomo-task-est" min="1" max="99" value="1" title="Estimated {{ partial "icon.html" (dict "name" "tomato" "size" 14 "stroke" 1.5) }}" aria-label="Estimated pomodoros">
       <button class="pomo-btn pomo-btn-primary pomo-btn-sm" id="pomo-task-add">Add</button>
     </div>
 
@@ -152,7 +152,7 @@
   {{/* ── STATS TAB ── */}}
   <div class="pomo-panel" id="panel-stats" role="tabpanel">
 
-    <h2 class="pomo-section-title">📊 Today</h2>
+    <h2 class="pomo-section-title">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Today</h2>
     <div class="pomo-stats-cards">
       <div class="pomo-stat-card">
         <div class="pomo-stat-num" id="pomo-stat-focus">0 min</div>
@@ -172,7 +172,7 @@
       </div>
     </div>
 
-    <h2 class="pomo-section-title">📈 This Week</h2>
+    <h2 class="pomo-section-title">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} This Week</h2>
     <div class="pomo-chart-wrap">
       <canvas id="pomo-week-chart" height="180"></canvas>
     </div>
@@ -223,12 +223,12 @@
   <div class="pomo-modal-overlay" id="pomo-modal-overlay" style="display:none">
     <div class="pomo-modal" id="pomo-modal">
       <div class="pomo-modal-header">
-        <h2>⚙️ Settings</h2>
+        <h2>{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} Settings</h2>
         <button class="pomo-modal-close" id="pomo-modal-close">&times;</button>
       </div>
       <div class="pomo-modal-body">
 
-        <h3 class="pomo-section-title">⏱️ Timer Durations</h3>
+        <h3 class="pomo-section-title">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Timer Durations</h3>
         <div class="pomo-settings-grid">
           <div class="pomo-setting">
             <label>Focus Duration</label>

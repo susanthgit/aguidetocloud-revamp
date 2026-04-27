@@ -566,8 +566,8 @@
     <!-- What's New -->
     <div class="whats-new" id="whats-new">
       <div class="whats-new-item active">🔥 New: <a href="/security-toolkit/" data-link-id="banner_security" data-link-section="banner">M365 Security Toolkit</a> just launched</div>
-      <div class="whats-new-item">💬 Just launched: <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" data-link-id="banner_whatsapp" data-link-section="banner" target="_blank" rel="noopener noreferrer">WhatsApp Community</a> — join the conversation</div>
-      <div class="whats-new-item">📰 <a href="/ai-news/" data-link-id="banner_ainews" data-link-section="banner">AI News</a> — updated 4× daily from 33 sources</div>
+      <div class="whats-new-item">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Just launched: <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" data-link-id="banner_whatsapp" data-link-section="banner" target="_blank" rel="noopener noreferrer">WhatsApp Community</a> — join the conversation</div>
+      <div class="whats-new-item">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }} <a href="/ai-news/" data-link-id="banner_ainews" data-link-section="banner">AI News</a> — updated 4× daily from 33 sources</div>
     </div>
 
     <!-- Primary Links -->
@@ -575,7 +575,7 @@
 
     <a href="/free-tools/" class="link-btn featured" style="--btn-accent: #66ffff;"
        data-link-id="free_tools" data-link-section="primary">
-      <span class="link-icon">🧰</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Free Cloud & AI Tools<span class="badge-new">New</span></span>
         <span class="meta">30+ tools — zero cost, zero login</span>
@@ -585,7 +585,7 @@
 
     <a href="/ai-news/" class="link-btn featured" style="--btn-accent: #ff66ff;"
        data-link-id="ai_news" data-link-section="primary">
-      <span class="link-icon">📰</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">AI News — Updated Daily</span>
         <span class="meta">Real-time from 33 sources · 20 categories</span>
@@ -595,7 +595,7 @@
 
     <a href="/cert-tracker/" class="link-btn" style="--btn-accent: #10B981;"
        data-link-id="cert_guides" data-link-section="primary">
-      <span class="link-icon">📜</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Cert Study Guides</span>
         <span class="meta">52 free Microsoft exam guides</span>
@@ -605,7 +605,7 @@
 
     <a href="/blog/" class="link-btn" style="--btn-accent: #0EA5E9;"
        data-link-id="blog" data-link-section="primary">
-      <span class="link-icon">📝</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Blog</span>
         <span class="meta">Deep dives on Copilot, licensing & security</span>
@@ -618,7 +618,7 @@
 
     <a href="https://www.youtube.com/@SusanthSutheesh" class="link-btn" style="--btn-accent: #ff4444;"
        data-link-id="youtube_main" data-link-section="watch" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">🎬</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">YouTube — Full Courses</span>
         <span class="meta">74 videos · Azure, M365, Copilot & Security</span>
@@ -628,7 +628,7 @@
 
     <a href="https://www.youtube.com/@AGuideToCloud" class="link-btn" style="--btn-accent: #ff4444;"
        data-link-id="youtube_bites" data-link-section="watch" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">⚡</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">YouTube — Quick Bites</span>
         <span class="meta">730+ short exam prep clips</span>
@@ -641,7 +641,7 @@
 
     <a href="https://ko-fi.com/aguidetocloud/shop" class="link-btn" style="--btn-accent: #FBBF24;"
        data-link-id="kofi_shop" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">📦</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Downloads</span>
         <span class="meta">Study guides, flash cards & practice tests</span>
@@ -651,7 +651,7 @@
 
     <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" class="link-btn" style="--btn-accent: #25D366;"
        data-link-id="whatsapp" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">💬</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Community<span class="badge-new">New</span></span>
         <span class="meta">Join the WhatsApp community</span>
@@ -661,7 +661,7 @@
 
     <a href="https://ko-fi.com/aguidetocloud" class="link-btn" style="--btn-accent: #FF5E5B;"
        data-link-id="donate" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">☕</span>
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Support My Work</span>
         <span class="meta">Buy me a coffee on Ko-fi</span>

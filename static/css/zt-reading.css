@@ -932,7 +932,10 @@
 }
 
 .zt-companion-cta-btn {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2, 8px);
   padding: var(--space-2, 8px) var(--space-3, 12px);
   background: var(--bg-elevated, #1A1A1A);
   border: 1px solid var(--border, #262626);
@@ -1541,6 +1544,30 @@
 
 .zt-cert-link-flag {
   font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* SVG icon alignment in sidebar contexts */
+.zt-cert-nav-header svg,
+.zt-cert-vendor-name svg {
+  display: inline-block;
+  vertical-align: -2px;
+  flex-shrink: 0;
+}
+
+.zt-cert-link-flag svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.zt-companion-link-tag svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.zt-companion-cta-btn svg {
+  flex-shrink: 0;
 }
 
 /* ── Cert header (replaces hero) ── */
@@ -2879,6 +2906,15 @@
   font-weight: 600;
   color: var(--text-primary, #1A1A1A);
   margin: 0;
+}
+.zt-lic-cat-title svg,
+.zt-lic-pill svg,
+.zt-lic-nav-header svg,
+.zt-lic-nav-tool-link svg,
+.zt-lic-nav-cat svg {
+  display: inline-block;
+  vertical-align: -2px;
+  flex-shrink: 0;
 }
 
 .zt-lic-cat-count {

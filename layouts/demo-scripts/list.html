@@ -33,40 +33,40 @@
       <div class="demoscr-wizard-step active" data-wstep="1">
         <h3>1. What industry is your customer?</h3>
         <div class="demoscr-wizard-options" id="wiz-industry">
-          <button class="demoscr-wizard-opt" data-val="Sales">📊 Sales / Revenue</button>
-          <button class="demoscr-wizard-opt" data-val="HR">👥 HR / People</button>
-          <button class="demoscr-wizard-opt" data-val="IT">🔧 IT / Technology</button>
-          <button class="demoscr-wizard-opt" data-val="Finance">💰 Finance / Accounting</button>
-          <button class="demoscr-wizard-opt" data-val="Marketing">🎯 Marketing / Comms</button>
+          <button class="demoscr-wizard-opt" data-val="Sales">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Sales / Revenue</button>
+          <button class="demoscr-wizard-opt" data-val="HR">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} HR / People</button>
+          <button class="demoscr-wizard-opt" data-val="IT">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} IT / Technology</button>
+          <button class="demoscr-wizard-opt" data-val="Finance">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Finance / Accounting</button>
+          <button class="demoscr-wizard-opt" data-val="Marketing">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Marketing / Comms</button>
           <button class="demoscr-wizard-opt" data-val="Executive">👔 Executive / Leadership</button>
-          <button class="demoscr-wizard-opt" data-val="Legal">⚖️ Legal / Compliance</button>
+          <button class="demoscr-wizard-opt" data-val="Legal">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Legal / Compliance</button>
           <button class="demoscr-wizard-opt" data-val="Operations">🏭 Operations / Supply Chain</button>
-          <button class="demoscr-wizard-opt" data-val="Service">🎧 Customer Service</button>
-          <button class="demoscr-wizard-opt" data-val="Education">🎓 Education</button>
+          <button class="demoscr-wizard-opt" data-val="Service">{{ partial "icon.html" (dict "name" "music" "size" 14 "stroke" 1.5) }} Customer Service</button>
+          <button class="demoscr-wizard-opt" data-val="Education">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }} Education</button>
         </div>
       </div>
       <div class="demoscr-wizard-step" data-wstep="2">
         <h3>2. What's their biggest pain point?</h3>
         <div class="demoscr-wizard-options" id="wiz-pain">
-          <button class="demoscr-wizard-opt" data-val="meetings">📅 Too many meetings, no action items</button>
-          <button class="demoscr-wizard-opt" data-val="email">📧 Email overload, can't keep up</button>
-          <button class="demoscr-wizard-opt" data-val="content">📝 Slow content creation (docs, decks)</button>
-          <button class="demoscr-wizard-opt" data-val="data">📊 Manual data analysis takes forever</button>
-          <button class="demoscr-wizard-opt" data-val="search">🔍 Can't find information quickly</button>
-          <button class="demoscr-wizard-opt" data-val="comms">📢 Inconsistent internal communications</button>
+          <button class="demoscr-wizard-opt" data-val="meetings">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Too many meetings, no action items</button>
+          <button class="demoscr-wizard-opt" data-val="email">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Email overload, can't keep up</button>
+          <button class="demoscr-wizard-opt" data-val="content">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Slow content creation (docs, decks)</button>
+          <button class="demoscr-wizard-opt" data-val="data">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Manual data analysis takes forever</button>
+          <button class="demoscr-wizard-opt" data-val="search">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Can't find information quickly</button>
+          <button class="demoscr-wizard-opt" data-val="comms">{{ partial "icon.html" (dict "name" "megaphone" "size" 14 "stroke" 1.5) }} Inconsistent internal communications</button>
         </div>
       </div>
       <div class="demoscr-wizard-step" data-wstep="3">
         <h3>3. How long is your demo slot?</h3>
         <div class="demoscr-wizard-options" id="wiz-duration">
-          <button class="demoscr-wizard-opt" data-val="5">⚡ 5 minutes (executive teaser)</button>
-          <button class="demoscr-wizard-opt" data-val="15">⏱️ 15 minutes (standard demo)</button>
+          <button class="demoscr-wizard-opt" data-val="5">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} 5 minutes (executive teaser)</button>
+          <button class="demoscr-wizard-opt" data-val="15">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} 15 minutes (standard demo)</button>
           <button class="demoscr-wizard-opt" data-val="30">🕐 30 minutes (deep dive)</button>
         </div>
       </div>
     </div>
     <div class="demoscr-wizard-result" id="wizard-result" style="display:none">
-      <h3>✨ Recommended Demo</h3>
+      <h3>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Recommended Demo</h3>
       <div id="wizard-recommendation"></div>
       <button class="demoscr-btn demoscr-btn-primary" id="wizard-apply">Load This Script →</button>
     </div>
@@ -102,16 +102,16 @@
     <!-- Category Filter -->
     <div class="demoscr-cat-filter" id="cat-filter">
       <button class="demoscr-cat-pill active" data-cat="all">All</button>
-      <button class="demoscr-cat-pill" data-cat="Sales">📊 Sales</button>
-      <button class="demoscr-cat-pill" data-cat="HR">👥 HR</button>
-      <button class="demoscr-cat-pill" data-cat="IT">🔧 IT</button>
-      <button class="demoscr-cat-pill" data-cat="Finance">💰 Finance</button>
-      <button class="demoscr-cat-pill" data-cat="Marketing">🎯 Marketing</button>
+      <button class="demoscr-cat-pill" data-cat="Sales">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Sales</button>
+      <button class="demoscr-cat-pill" data-cat="HR">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} HR</button>
+      <button class="demoscr-cat-pill" data-cat="IT">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} IT</button>
+      <button class="demoscr-cat-pill" data-cat="Finance">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Finance</button>
+      <button class="demoscr-cat-pill" data-cat="Marketing">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Marketing</button>
       <button class="demoscr-cat-pill" data-cat="Executive">👔 Executive</button>
-      <button class="demoscr-cat-pill" data-cat="Legal">⚖️ Legal</button>
+      <button class="demoscr-cat-pill" data-cat="Legal">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Legal</button>
       <button class="demoscr-cat-pill" data-cat="Operations">🏭 Ops</button>
-      <button class="demoscr-cat-pill" data-cat="Service">🎧 Service</button>
-      <button class="demoscr-cat-pill" data-cat="Education">🎓 Education</button>
+      <button class="demoscr-cat-pill" data-cat="Service">{{ partial "icon.html" (dict "name" "music" "size" 14 "stroke" 1.5) }} Service</button>
+      <button class="demoscr-cat-pill" data-cat="Education">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }} Education</button>
     </div>
 
     <div class="demoscr-scenario-grid" id="scenario-grid">
@@ -129,7 +129,7 @@
 
     <!-- Custom Scenario -->
     <div class="demoscr-custom-scenario">
-      <h3>🔧 Build a Custom Script</h3>
+      <h3>{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Build a Custom Script</h3>
       <p class="demoscr-tip">Describe your demo scenario and we'll assemble steps from our library that match.</p>
       <input type="text" id="custom-input" class="demoscr-custom-input" placeholder="e.g. 'Show HR how to onboard new hires and answer policy questions using Teams and Word'">
       <div id="custom-results" class="demoscr-custom-results" style="display:none"></div>
@@ -142,8 +142,8 @@
         <div class="demoscr-config-group">
           <label class="demoscr-config-label">Audience</label>
           <div class="demoscr-pill-group" data-config="audience">
-            <button class="demoscr-pill" data-value="technical">⚙️ Technical</button>
-            <button class="demoscr-pill active" data-value="business">💼 Business</button>
+            <button class="demoscr-pill" data-value="technical">{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} Technical</button>
+            <button class="demoscr-pill active" data-value="business">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} Business</button>
             <button class="demoscr-pill" data-value="executive">👔 Executive</button>
           </div>
         </div>
@@ -158,9 +158,9 @@
         <div class="demoscr-config-group">
           <label class="demoscr-config-label">Wow Factor</label>
           <div class="demoscr-pill-group" data-config="risk">
-            <button class="demoscr-pill" data-value="low">🟢 Safe</button>
-            <button class="demoscr-pill active" data-value="medium">🟡 Moderate</button>
-            <button class="demoscr-pill" data-value="high">🔴 Bold</button>
+            <button class="demoscr-pill" data-value="low">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Safe</button>
+            <button class="demoscr-pill active" data-value="medium">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Moderate</button>
+            <button class="demoscr-pill" data-value="high">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Bold</button>
           </div>
         </div>
         <div class="demoscr-config-group demoscr-config-apps">
@@ -182,13 +182,13 @@
       <div class="demoscr-script-header">
         <h2 class="demoscr-section-title" id="script-title">Loading...</h2>
         <div class="demoscr-script-actions">
-          <button class="demoscr-btn" id="btn-record" title="Recording mode — minimal timer overlay">🔴 Record</button>
-          <button class="demoscr-btn" id="btn-practice" title="Practice mode — step by step with timer">🎯 Practice</button>
-          <button class="demoscr-btn" id="btn-copy-script" title="Copy full script">📋 Copy Script</button>
-          <button class="demoscr-btn" id="btn-copy-prompts" title="Copy just the prompts">💬 Copy Prompts</button>
-          <button class="demoscr-btn" id="btn-export-md" title="Export as Markdown">📄 Export MD</button>
-          <button class="demoscr-btn" id="btn-share" title="Copy shareable link">🔗 Share</button>
-          <button class="demoscr-btn" id="btn-print" title="Print-friendly version">🖨️ Print</button>
+          <button class="demoscr-btn" id="btn-record" title="Recording mode — minimal timer overlay">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Record</button>
+          <button class="demoscr-btn" id="btn-practice" title="Practice mode — step by step with timer">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Practice</button>
+          <button class="demoscr-btn" id="btn-copy-script" title="Copy full script">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Script</button>
+          <button class="demoscr-btn" id="btn-copy-prompts" title="Copy just the prompts">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Copy Prompts</button>
+          <button class="demoscr-btn" id="btn-export-md" title="Export as Markdown">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Export MD</button>
+          <button class="demoscr-btn" id="btn-share" title="Copy shareable link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
+          <button class="demoscr-btn" id="btn-print" title="Print-friendly version">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print</button>
         </div>
       </div>
       <div class="demoscr-script-meta" id="script-meta"></div>
@@ -302,7 +302,7 @@
       {{ range $d.tips.traps }}
       <div class="demoscr-trap-card">
         <div class="demoscr-trap-header">
-          <span class="demoscr-trap-label">⚠️ Trap</span>
+          <span class="demoscr-trap-label">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Trap</span>
           {{ if ne .scenario "all" }}<span class="demoscr-trap-app">{{ .scenario }}</span>{{ end }}
         </div>
         <p class="demoscr-trap-desc">{{ .trap }}</p>
@@ -346,19 +346,19 @@
     <h2 class="demoscr-section-title">Related Tools</h2>
     <div class="demoscr-related-grid">
       <a href="/copilot-readiness/" class="demoscr-related-card" style="--rel-accent:#3B82F6">
-        <span class="demoscr-related-icon">🎯</span>
+        <span class="demoscr-related-icon">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
         <div><strong>Copilot Readiness</strong><span>Score your org's readiness across 7 pillars</span></div>
       </a>
       <a href="/copilot-matrix/" class="demoscr-related-card" style="--rel-accent:#60A5FA">
-        <span class="demoscr-related-icon">📊</span>
+        <span class="demoscr-related-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
         <div><strong>Feature Matrix</strong><span>Compare Copilot features across every app &amp; tier</span></div>
       </a>
       <a href="/roi-calculator/" class="demoscr-related-card" style="--rel-accent:#14B8A6">
-        <span class="demoscr-related-icon">💰</span>
+        <span class="demoscr-related-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
         <div><strong>ROI Calculator</strong><span>Estimate ROI by role with realistic adoption curves</span></div>
       </a>
       <a href="/prompts/" class="demoscr-related-card" style="--rel-accent:#A78BFA">
-        <span class="demoscr-related-icon">💡</span>
+        <span class="demoscr-related-icon">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span>
         <div><strong>Prompt Library</strong><span>500 tested prompts across 5 AI platforms</span></div>
       </a>
     </div>
@@ -378,10 +378,10 @@
   </div>
   <div class="demoscr-practice-body" id="practice-body"></div>
   <div class="demoscr-practice-scorecard" id="practice-scorecard" style="display:none">
-    <h2>📊 Practice Scorecard</h2>
+    <h2>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Practice Scorecard</h2>
     <div id="scorecard-body"></div>
     <div class="demoscr-scorecard-actions">
-      <button class="demoscr-btn" id="scorecard-restart">🔄 Practice Again</button>
+      <button class="demoscr-btn" id="scorecard-restart">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Practice Again</button>
       <button class="demoscr-btn" id="scorecard-exit">✕ Close</button>
     </div>
   </div>

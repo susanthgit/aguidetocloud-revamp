@@ -6,19 +6,19 @@
 
 {{/* Category display order + emoji */}}
 {{ $categories := slice
-  (dict "name" "Enterprise" "emoji" "🏢")
-  (dict "name" "Business (≤300 users)" "emoji" "💼")
-  (dict "name" "Copilot & AI" "emoji" "🤖")
-  (dict "name" "Security Add-ons" "emoji" "🛡️")
-  (dict "name" "Power Platform" "emoji" "⚡")
-  (dict "name" "Dynamics 365 CRM" "emoji" "🤝")
-  (dict "name" "Dynamics 365 ERP" "emoji" "📊")
-  (dict "name" "Teams Add-ons" "emoji" "💬")
-  (dict "name" "Microsoft Viva" "emoji" "🧠")
-  (dict "name" "Project & Visio" "emoji" "📋")
-  (dict "name" "Windows & Dev" "emoji" "🖥️")
-  (dict "name" "Frontline" "emoji" "👷")
-  (dict "name" "Education" "emoji" "🎓")
+  (dict "name" "Enterprise" "emoji" "🏢" "icon" "lic-enterprise")
+  (dict "name" "Business (≤300 users)" "emoji" "💼" "icon" "lic-business")
+  (dict "name" "Copilot & AI" "emoji" "🤖" "icon" "lic-copilot")
+  (dict "name" "Security Add-ons" "emoji" "🛡️" "icon" "lic-security")
+  (dict "name" "Power Platform" "emoji" "⚡" "icon" "lic-power")
+  (dict "name" "Dynamics 365 CRM" "emoji" "🤝" "icon" "lic-crm")
+  (dict "name" "Dynamics 365 ERP" "emoji" "📊" "icon" "lic-erp")
+  (dict "name" "Teams Add-ons" "emoji" "💬" "icon" "lic-teams")
+  (dict "name" "Microsoft Viva" "emoji" "🧠" "icon" "lic-viva")
+  (dict "name" "Project & Visio" "emoji" "📋" "icon" "lic-project")
+  (dict "name" "Windows & Dev" "emoji" "🖥️" "icon" "lic-windows")
+  (dict "name" "Frontline" "emoji" "👷" "icon" "lic-frontline")
+  (dict "name" "Education" "emoji" "🎓" "icon" "lic-education")
 }}
 
 <div class="zt-reading zt-reading--lic">
@@ -39,9 +39,9 @@
         Pricing, features, honest recommendations, and FAQ — written in plain English.
       </p>
       <div class="ft-hero-meta">
-        <span class="ft-hero-stat">📄 {{ len $allPlans }} plan guides</span>
-        <span class="ft-hero-stat">🏷️ {{ len $categories }} categories</span>
-        <span class="ft-hero-stat">💰 USD pricing included</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} {{ len $allPlans }} plan guides</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }} {{ len $categories }} categories</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} USD pricing included</span>
       </div>
     </header>
 
@@ -60,7 +60,7 @@
           {{ if eq .Params.plan_category $catName }}{{ $catPlans = $catPlans | append . }}{{ end }}
         {{ end }}
         {{ if $catPlans }}
-        <a href="#cat-{{ $catName | urlize }}" class="zt-lic-pill">{{ $catEmoji }} {{ $catName }}</a>
+        <a href="#cat-{{ $catName | urlize }}" class="zt-lic-pill">{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</a>
         {{ end }}
       {{ end }}
     </nav>
@@ -80,7 +80,7 @@
       {{ if $catPlans }}
       <section class="zt-lic-cat-section" id="cat-{{ $catName | urlize }}" data-category="{{ $catName }}">
         <div class="zt-lic-cat-header">
-          <h2 class="zt-lic-cat-title">{{ $catEmoji }} {{ $catName }}</h2>
+          <h2 class="zt-lic-cat-title">{{ partial "icon.html" (dict "name" $cat.icon "size" 16 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</h2>
           <span class="zt-lic-cat-count">{{ len $catPlans }} plans</span>
         </div>
         <div class="zt-lic-grid">
@@ -109,15 +109,15 @@
     <div class="zt-companion-section">
       <p class="zt-companion-title">Licensing tools</p>
       <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">📊</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">Licensing Simplifier</span>
       </a>
       <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">🎯</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">Licence Picker</span>
       </a>
       <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">💰</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">ROI Calculator</span>
       </a>
     </div>
@@ -140,9 +140,9 @@
     <div class="zt-companion-section">
       <p class="zt-companion-title">Explore more</p>
       <div class="zt-companion-cta">
-        <a href="/study-guides/" class="zt-companion-cta-btn">📚 Study Guides</a>
-        <a href="/free-tools/" class="zt-companion-cta-btn">🧰 All Tools</a>
-        <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+        <a href="/study-guides/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Study Guides</a>
+        <a href="/free-tools/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} All Tools</a>
+        <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
       </div>
     </div>
   </aside>

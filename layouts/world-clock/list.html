@@ -97,7 +97,7 @@
 
       <div class="wclk-presets-bar">
         <div class="wclk-presets-list" id="wclk-presets-list"></div>
-        <button class="wclk-preset" id="wclk-save-preset" title="Save current cities as a team preset">💾 Save Team</button>
+        <button class="wclk-preset" id="wclk-save-preset" title="Save current cities as a team preset">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Save Team</button>
       </div>
 
       {{/* Clock cards */}}
@@ -221,7 +221,7 @@
     <div class="wclk-dst-content">
 
       <div class="wclk-dst-intro">
-        <h2>🌞 What is Daylight Saving Time?</h2>
+        <h2>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} What is Daylight Saving Time?</h2>
         <p>Daylight Saving Time (DST) is when clocks are moved forward by one hour during warmer months to extend evening daylight. When DST ends, clocks "fall back" one hour to standard time.</p>
         <div class="wclk-dst-tldr">
           <strong>The simple version:</strong> In spring, you lose an hour of sleep. In autumn, you gain one. Your 3 PM meeting with London might suddenly be at 2 PM or 4 PM — and that's why this tool exists! 😄
@@ -229,7 +229,7 @@
       </div>
 
       <div class="wclk-dst-section">
-        <h3>⚠️ Common Gotchas</h3>
+        <h3>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Common Gotchas</h3>
         <div class="wclk-dst-gotchas">
           <div class="wclk-dst-card">
             <strong>🗓️ Not everyone changes on the same date</strong>
@@ -244,14 +244,14 @@
             <p>Most of Asia, Africa, and South America don't use DST. India, China, Japan, Singapore, UAE — their clocks never change.</p>
           </div>
           <div class="wclk-dst-card">
-            <strong>📅 Your recurring meeting might shift</strong>
+            <strong>{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Your recurring meeting might shift</strong>
             <p>A weekly meeting at "3 PM Auckland / 8 AM Mumbai" stays stable (neither uses DST). But "3 PM Auckland / 3 AM London" shifts by an hour twice a year.</p>
           </div>
         </div>
       </div>
 
       <div class="wclk-dst-section">
-        <h3>🔍 Check DST for Any Time Zone</h3>
+        <h3>{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Check DST for Any Time Zone</h3>
         <div class="wclk-field">
           <input type="text" class="wclk-search" id="wclk-dst-search" placeholder="Search a city or time zone..." autocomplete="off" aria-label="Search DST info">
           <div class="wclk-search-results" id="wclk-dst-results"></div>
@@ -260,14 +260,14 @@
       </div>
 
       <div class="wclk-dst-section">
-        <h3>🗺️ Who Observes DST?</h3>
+        <h3>{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }} Who Observes DST?</h3>
         <div class="wclk-dst-map">
           <div class="wclk-dst-group">
-            <h4>✅ Observes DST</h4>
+            <h4>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Observes DST</h4>
             <p>USA, Canada, most of Europe, UK, Australia (most states), New Zealand, parts of Mexico, Chile, Paraguay</p>
           </div>
           <div class="wclk-dst-group">
-            <h4>❌ Does NOT Observe DST</h4>
+            <h4>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Does NOT Observe DST</h4>
             <p>Japan, China, India, Singapore, UAE, South Korea, most of Africa, most of South America, Iceland, Russia, Turkey, Queensland (Australia)</p>
           </div>
         </div>

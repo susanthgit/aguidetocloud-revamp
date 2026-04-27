@@ -32,6 +32,7 @@
 [[tools]]
 url = "/prompts/"
 emoji = "💡"
+icon = "lightbulb"
 name = "AI Prompt Library"
 short = "Prompts"
 desc = "500 tested prompts for M365 Copilot, ChatGPT, Claude & more"
@@ -43,6 +44,7 @@ is_tool = true
 [[tools]]
 url = "/prompt-polisher/"
 emoji = "✨"
+icon = "sparkles"
 name = "AI Prompt Polisher"
 short = "Polisher"
 desc = "Score & rewrite any prompt with the CRAFTS framework"
@@ -54,6 +56,7 @@ is_tool = true
 [[tools]]
 url = "/prompt-guide/"
 emoji = "📖"
+icon = "graduation-cap"
 name = "Prompt Engineering Guide"
 short = "Prompt Guide"
 desc = "Learn 8 techniques with hands-on practice"
@@ -65,6 +68,7 @@ is_tool = true
 [[tools]]
 url = "/prompt-lab/"
 emoji = "🧪"
+icon = "flask"
 name = "Advanced Prompt Lab"
 short = "Prompt Lab"
 desc = "Master 12 advanced prompting techniques with hands-on exercises"
@@ -76,6 +80,7 @@ is_tool = true
 [[tools]]
 url = "/prompt-tester/"
 emoji = "🔬"
+icon = "microscope"
 name = "Prompt Tester"
 short = "Tester"
 desc = "A/B compare two prompts with CRAFTS scoring — see which is better"
@@ -87,6 +92,7 @@ is_tool = true
 [[tools]]
 url = "/copilot-readiness/"
 emoji = "🎯"
+icon = "target"
 name = "M365 Copilot Readiness"
 short = "Readiness"
 desc = "Score your org across 7 pillars — 0 to 100"
@@ -98,6 +104,7 @@ is_tool = true
 [[tools]]
 url = "/copilot-matrix/"
 emoji = "📊"
+icon = "chart-bar"
 name = "Copilot Feature Matrix"
 short = "Features"
 desc = "Feature comparison across every app & licence tier"
@@ -109,6 +116,7 @@ is_tool = true
 [[tools]]
 url = "/roi-calculator/"
 emoji = "💰"
+icon = "dollar-sign"
 name = "Copilot ROI Calculator"
 short = "ROI"
 desc = "Estimate ROI by role with realistic adoption curves"
@@ -120,6 +128,7 @@ is_tool = true
 [[tools]]
 url = "/ai-news/"
 emoji = "📰"
+icon = "newspaper"
 name = "AI News"
 short = "AI News"
 desc = "Daily AI digest across 20 categories — updated 4× daily"
@@ -131,6 +140,7 @@ is_tool = true
 [[tools]]
 url = "/m365-roadmap/"
 emoji = "📋"
+icon = "map"
 name = "M365 Roadmap"
 short = "Roadmap"
 desc = "Track every M365 feature with change detection & alerts"
@@ -142,6 +152,7 @@ is_tool = true
 [[tools]]
 url = "/service-health/"
 emoji = "🏥"
+icon = "hospital"
 name = "M365 Service Health"
 short = "Health"
 desc = "32 M365 + Azure services tracked every 2 hours"
@@ -153,6 +164,7 @@ is_tool = true
 [[tools]]
 url = "/deprecation-timeline/"
 emoji = "⏰"
+icon = "timer"
 name = "Deprecation Timeline"
 short = "Deprecations"
 desc = "Urgency-scored retirements with countdown timers"
@@ -164,6 +176,7 @@ is_tool = true
 [[tools]]
 url = "/ai-mapper/"
 emoji = "🗺️"
+icon = "map"
 name = "AI Service Mapper"
 short = "AI Mapper"
 desc = "Compare 25+ AI services — pricing & capabilities"
@@ -175,6 +188,7 @@ is_tool = true
 [[tools]]
 url = "/ai-showdown/"
 emoji = "🥊"
+icon = "boxing"
 name = "AI SaaS Showdown"
 short = "Showdown"
 desc = "Head-to-head AI platform comparison & quiz"
@@ -186,6 +200,7 @@ is_tool = true
 [[tools]]
 url = "/ai-cost-calculator/"
 emoji = "💰"
+icon = "dollar"
 name = "AI Cost Calculator"
 short = "AI Cost"
 desc = "Total AI adoption cost — licensing, tokens, training, governance, budget timelines"
@@ -197,6 +212,7 @@ is_tool = true
 [[tools]]
 url = "/licence-picker/"
 emoji = "🛒"
+icon = "shopping-cart"
 name = "M365 Licence Picker"
 short = "Licence Picker"
 desc = "Pick features you need — get the cheapest M365 plan instantly"
@@ -208,6 +224,7 @@ is_tool = true
 [[tools]]
 url = "/licensing/"
 emoji = "📜"
+icon = "scroll"
 name = "M365 Licensing Simplifier"
 short = "Licensing"
 desc = "Compare M365 plans in plain English with pricing"
@@ -219,6 +236,7 @@ is_tool = true
 [[tools]]
 url = "/ca-builder/"
 emoji = "🛡️"
+icon = "shield"
 name = "Entra ID CA Policy Builder"
 short = "CA Builder"
 desc = "Design Entra ID Conditional Access policies visually"
@@ -230,6 +248,7 @@ is_tool = true
 [[tools]]
 url = "/ps-builder/"
 emoji = "⚡"
+icon = "bolt"
 name = "M365 PowerShell Builder"
 short = "PS Builder"
 desc = "Build M365 & Azure admin commands — 60 recipes"
@@ -241,6 +260,7 @@ is_tool = true
 [[tools]]
 url = "/purview-starter/"
 emoji = "🔐"
+icon = "key"
 name = "Purview DLP Starter Kit"
 short = "Purview"
 desc = "Plan sensitivity labels & DLP with pre-built kits"
@@ -252,6 +272,7 @@ is_tool = true
 [[tools]]
 url = "/security-toolkit/"
 emoji = "🛡️"
+icon = "shield"
 name = "M365 Security Toolkit"
 short = "Security"
 desc = "CIS-aligned security assessment, email DNS generator & remediation scripts"
@@ -263,6 +284,7 @@ is_tool = true
 [[tools]]
 url = "/agent-365-planner/"
 emoji = "🤖"
+icon = "robot"
 name = "Agent 365 Governance Planner"
 short = "Agent Gov"
 desc = "Plan your AI agent governance, registry, and deployment strategy"
@@ -274,6 +296,7 @@ is_tool = true
 [[tools]]
 url = "/agent-builder-guide/"
 emoji = "🏗️"
+icon = "building"
 name = "M365 Agent Builder Helper"
 short = "Agent Builder"
 desc = "Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio"
@@ -285,6 +308,7 @@ is_tool = true
 [[tools]]
 url = "/cs-companion/"
 emoji = "⚙️"
+icon = "settings"
 name = "Copilot Studio Companion"
 short = "Studio Companion"
 desc = "Evaluate scenarios, explore capabilities, navigate governance, and design agent architectures"
@@ -296,6 +320,7 @@ is_tool = true
 [[tools]]
 url = "/migration-planner/"
 emoji = "🚀"
+icon = "rocket"
 name = "M365 Migration Planner"
 short = "Migration"
 desc = "Plan your M365 migration with risk scoring"
@@ -307,6 +332,7 @@ is_tool = true
 [[tools]]
 url = "/cert-tracker/"
 emoji = "🎓"
+icon = "chart-bar"
 name = "Microsoft Cert Study Guides"
 short = "Cert Guides"
 desc = "Every Microsoft cert — objectives deep-linked to Learn"
@@ -318,6 +344,7 @@ is_tool = true
 [[tools]]
 url = "/cert-compass/"
 emoji = "🧭"
+icon = "compass"
 name = "Multi-Cloud Cert Compass"
 short = "Compass"
 desc = "Navigate certs across Azure, AWS & Google Cloud"
@@ -329,6 +356,7 @@ is_tool = true
 [[tools]]
 url = "/world-clock/"
 emoji = "🌍"
+icon = "globe"
 name = "Meeting Planner"
 short = "Planner"
 desc = "Find the best meeting time across time zones"
@@ -340,6 +368,7 @@ is_tool = true
 [[tools]]
 url = "/qr-generator/"
 emoji = "🔲"
+icon = "qr-code"
 name = "QR Code Generator"
 short = "QR Code"
 desc = "Beautiful QR codes with custom colours & logos"
@@ -351,6 +380,7 @@ is_tool = true
 [[tools]]
 url = "/wifi-qr/"
 emoji = "📶"
+icon = "wifi"
 name = "WiFi QR Cards"
 short = "WiFi QR"
 desc = "Printable WiFi cards — guests scan to connect"
@@ -362,6 +392,7 @@ is_tool = true
 [[tools]]
 url = "/password-generator/"
 emoji = "🔐"
+icon = "key"
 name = "Password Generator"
 short = "Passwords"
 desc = "Unbreakable passwords & strength analyser"
@@ -373,6 +404,7 @@ is_tool = true
 [[tools]]
 url = "/image-compressor/"
 emoji = "🖼️"
+icon = "image"
 name = "Image Compressor"
 short = "Compress"
 desc = "Compress, resize & convert — 100% in your browser"
@@ -384,6 +416,7 @@ is_tool = true
 [[tools]]
 url = "/typing-test/"
 emoji = "⌨️"
+icon = "keyboard"
 name = "Typing Speed Test"
 short = "Typing"
 desc = "Test WPM & accuracy — quotes, code & tracking"
@@ -395,6 +428,7 @@ is_tool = true
 [[tools]]
 url = "/countdown/"
 emoji = "⏳"
+icon = "hourglass"
 name = "Countdown Timer"
 short = "Countdown"
 desc = "Flip-clock countdowns & full-screen mode"
@@ -406,6 +440,7 @@ is_tool = true
 [[tools]]
 url = "/color-palette/"
 emoji = "🎨"
+icon = "palette"
 name = "Colour Palette Generator"
 short = "Palette"
 desc = "Generate palettes, extract & check contrast"
@@ -417,6 +452,7 @@ is_tool = true
 [[tools]]
 url = "/pomodoro/"
 emoji = "🍅"
+icon = "tomato"
 name = "Pomodoro Focus Timer"
 short = "Pomodoro"
 desc = "Focus timer with ambient sounds & stats"
@@ -428,6 +464,7 @@ is_tool = true
 [[tools]]
 url = "/admin-bingo/"
 emoji = "🎯"
+icon = "target"
 name = "IT Admin Bingo"
 short = "Bingo"
 desc = "Relatable IT admin scenario bingo — daily cards, print & share"
@@ -439,6 +476,7 @@ is_tool = true
 [[tools]]
 url = "/acronym-battle/"
 emoji = "🧠"
+icon = "brain"
 name = "Tech Acronym Battle"
 short = "Acronyms"
 desc = "Test your IT acronym knowledge — timed quiz with streaks"
@@ -450,6 +488,7 @@ is_tool = true
 [[tools]]
 url = "/feature-roulette/"
 emoji = "🎰"
+icon = "dice"
 name = "M365 Feature Roulette"
 short = "Roulette"
 desc = "Discover M365 features you never knew existed"
@@ -461,6 +500,7 @@ is_tool = true
 [[tools]]
 url = "/rename-tracker/"
 emoji = "🔄"
+icon = "refresh-cw"
 name = "Microsoft Rename Tracker"
 short = "Renames"
 desc = "Track every Microsoft product rename in one place"
@@ -472,6 +512,7 @@ is_tool = true
 [[tools]]
 url = "/admin-comms/"
 emoji = "📧"
+icon = "mail"
 name = "Admin Email Templates"
 short = "Comms"
 desc = "Ready-made email templates for M365 admins"
@@ -483,6 +524,7 @@ is_tool = true
 [[tools]]
 url = "/compliance-passport/"
 emoji = "📋"
+icon = "file-text"
 name = "Compliance Passport"
 short = "Compliance"
 desc = "Which compliance frameworks apply to your org?"
@@ -494,6 +536,7 @@ is_tool = true
 [[tools]]
 url = "/phishing-test/"
 emoji = "🎣"
+icon = "fishing"
 name = "Phishing Simulator"
 short = "Phishing"
 desc = "Spot the fakes — 30 realistic email scenarios"
@@ -505,6 +548,7 @@ is_tool = true
 [[tools]]
 url = "/site-analytics/"
 emoji = "📊"
+icon = "chart-bar"
 name = "Site Analytics"
 short = "Analytics"
 desc = "Live transparent usage stats — tool leaderboard & trends"
@@ -516,6 +560,7 @@ is_tool = true
 [[tools]]
 url = "/sla-calculator/"
 emoji = "📐"
+icon = "ruler"
 name = "SLA Uptime Calculator"
 short = "SLA Calc"
 desc = "Enter SLA % — see exact downtime budget per year, month, week, day"
@@ -527,6 +572,7 @@ is_tool = true
 [[tools]]
 url = "/admin-badges/"
 emoji = "🏅"
+icon = "medal"
 name = "IT Admin Badges"
 short = "Badges"
 desc = "Unlock 55 achievement badges for real IT admin milestones"
@@ -538,6 +584,7 @@ is_tool = true
 [[tools]]
 url = "/policy-tester/"
 emoji = "🔑"
+icon = "key"
 name = "Password Policy Tester"
 short = "Policy Test"
 desc = "Score your password policy against NIST, CIS & Microsoft"
@@ -549,6 +596,7 @@ is_tool = true
 [[tools]]
 url = "/incident-comms/"
 emoji = "📢"
+icon = "megaphone"
 name = "Incident Comms Generator"
 short = "Incident"
 desc = "Generate professional outage updates in seconds"
@@ -560,6 +608,7 @@ is_tool = true
 [[tools]]
 url = "/cli-quiz/"
 emoji = "💻"
+icon = "laptop"
 name = "CLI Command Quiz"
 short = "CLI Quiz"
 desc = "Guess the PowerShell command — timed quiz with mastery tracking"
@@ -571,6 +620,7 @@ is_tool = true
 [[tools]]
 url = "/it-day-sim/"
 emoji = "🎮"
+icon = "gamepad"
 name = "My IT Day"
 short = "IT Day"
 desc = "Choose-your-adventure as an IT admin — every choice has consequences"
@@ -582,6 +632,7 @@ is_tool = true
 [[tools]]
 url = "/instruct-builder/"
 emoji = "📝"
+icon = "edit-3"
 name = "Agent Instruction Builder"
 short = "Instruct Builder"
 desc = "Generate platform-optimised AI agent instructions in seconds"
@@ -593,6 +644,7 @@ is_tool = true
 [[tools]]
 url = "/demo-scripts/"
 emoji = "🎬"
+icon = "clapperboard"
 name = "Copilot Demo Script Builder"
 short = "Demo Scripts"
 desc = "Generate ready-to-deliver M365 Copilot demo scripts with prompts, talking points & timing"
@@ -604,6 +656,7 @@ is_tool = true
 [[tools]]
 url = "/feedback/"
 emoji = "💬"
+icon = "message-square"
 name = "Community Feedback"
 short = "Feedback"
 desc = "Share ideas, report bugs, request features"

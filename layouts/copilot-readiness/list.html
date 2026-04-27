@@ -35,9 +35,9 @@
 
     {{/* ── Glass Pill Tabs ── */}}
     <div class="readiness-tabs" role="tablist" aria-label="Copilot Readiness sections">
-      <button class="readiness-tab active" data-tab="main" role="tab" aria-selected="true">📋 Assessment</button>
-      <button class="readiness-tab" data-tab="resources" role="tab" aria-selected="false">📖 Resources</button>
-      <button class="readiness-tab" data-tab="faq" role="tab" aria-selected="false">❓ FAQ</button>
+      <button class="readiness-tab active" data-tab="main" role="tab" aria-selected="true">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Assessment</button>
+      <button class="readiness-tab" data-tab="resources" role="tab" aria-selected="false">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Resources</button>
+      <button class="readiness-tab" data-tab="faq" role="tab" aria-selected="false">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} FAQ</button>
     </div>
 
     <div class="readiness-panel active" id="panel-main" role="tabpanel">
@@ -57,7 +57,7 @@
 
       {{/* Pillar indicator */}}
       <div class="readiness-pillar-indicator" id="readiness-pillar-indicator">
-        <span class="readiness-pillar-icon" id="readiness-current-pillar-icon">🔑</span>
+        <span class="readiness-pillar-icon" id="readiness-current-pillar-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
         <span class="readiness-pillar-name" id="readiness-current-pillar-name">Licensing & Subscription</span>
       </div>
 
@@ -123,22 +123,22 @@
         <h2>Continue Your Copilot Journey</h2>
         <div class="readiness-links-grid">
           <a href="/copilot-matrix/" class="readiness-link-card readiness-link-featured">
-            <span class="readiness-link-icon">📊</span>
+            <span class="readiness-link-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
             <span>Copilot Feature Matrix</span>
             <small>See exactly what Copilot can do across every app and licence tier</small>
           </a>
           <a href="/roi-calculator/" class="readiness-link-card readiness-link-featured">
-            <span class="readiness-link-icon">💰</span>
+            <span class="readiness-link-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
             <span>Copilot ROI Calculator</span>
             <small>Estimate your savings by role with realistic adoption curves</small>
           </a>
           <a href="/licensing/" class="readiness-link-card">
-            <span class="readiness-link-icon">📜</span>
+            <span class="readiness-link-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
             <span>Licensing Simplifier</span>
             <small>Compare M365 plans & find the right licence</small>
           </a>
           <a href="/prompts/" class="readiness-link-card">
-            <span class="readiness-link-icon">💡</span>
+            <span class="readiness-link-icon">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span>
             <span>AI Prompt Library</span>
             <small>84 tested prompts to kickstart Copilot training</small>
           </a>
@@ -147,9 +147,9 @@
 
       {{/* Actions */}}
       <div class="readiness-actions">
-        <button id="readiness-share-btn" class="readiness-btn-primary">🔗 Copy Shareable Link</button>
-        <button id="readiness-print-btn" class="readiness-btn-secondary">🖨️ Print Report</button>
-        <button id="readiness-restart-btn" class="readiness-btn-secondary">🔄 Retake Assessment</button>
+        <button id="readiness-share-btn" class="readiness-btn-primary">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Copy Shareable Link</button>
+        <button id="readiness-print-btn" class="readiness-btn-secondary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print Report</button>
+        <button id="readiness-restart-btn" class="readiness-btn-secondary">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Retake Assessment</button>
       </div>
 
     </div>
@@ -174,7 +174,7 @@
     <div class="readiness-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:#3B82F6;margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      <h2 style="color:#3B82F6;margin-bottom:1rem">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
       <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
       {{ end }}

@@ -40,7 +40,7 @@
         <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $readBase }}</span>
         <span class="tool-counter-verb">reads</span>
       </div>
-      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">☕ Support</a>
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Support</a>
     </div>
 
     {{/* Meta line */}}
@@ -63,7 +63,7 @@
     {{/* Reading toolbar: share + font controls + warm tint + focus */}}
     <div class="zt-reading-actions">
       <div class="zt-reading-toolbar">
-        <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✅ Copied!';var b=this;setTimeout(function(){b.textContent='🔗 Share'},2000)}.bind(this))}">🔗 Share</button>
+        <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Copied!';var b=this;setTimeout(function(){b.textContent='{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share'},2000)}.bind(this))}">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
 
         {{/* Z22: Font size controls */}}
         <div class="zt-toolbar-group" role="group" aria-label="Font size">
@@ -76,7 +76,7 @@
         <button aria-label="Toggle warm reading mode" class="zt-toolbar-btn zt-warm-toggle" title="Warm tint">☀️ Warm</button>
 
         {{/* Z24: Focus mode toggle (hidden on mobile via CSS) */}}
-        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">👁 Focus</button>
+        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Focus</button>
       </div>
     </div>
 
@@ -109,7 +109,7 @@
     {{/* Resources */}}
     {{ if .Params.resources }}
     <div class="zt-reading-resources">
-      <h2>📥 Resources</h2>
+      <h2>{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Resources</h2>
       <ul>
         {{ range .Params.resources }}
         <li><a href="{{ .url }}">{{ .name }}</a></li>
@@ -137,7 +137,7 @@
         <div class="zt-companion-video-play">▶</div>
       </div>
       <button class="zt-companion-video-collapse" id="zt-video-collapse" style="display:none" onclick="var p=document.getElementById('zt-video-player'),f=p.querySelector('iframe');f.src='';p.classList.remove('is-active');document.getElementById('zt-video-thumb').style.display='block';this.style.display='none'">Collapse video</button>
-      <p class="zt-companion-video-label">📺 Watch this guide</p>
+      <p class="zt-companion-video-label">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} Watch this guide</p>
     </div>
     {{ end }}
 
@@ -157,9 +157,9 @@
     <div class="zt-companion-section">
       <p class="zt-companion-title">Stay updated</p>
       <div class="zt-companion-cta">
-        <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
-        <a href="{{ .Site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
-        <a href="/free-tools/" class="zt-companion-cta-btn">🧰 Free Tools</a>
+        <a href="/index.xml" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} RSS Feed</a>
+        <a href="{{ .Site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
+        <a href="/free-tools/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Free Tools</a>
       </div>
     </div>
   </aside>

@@ -69,24 +69,24 @@
 
       {{/* ── Action buttons ── */}}
       <div class="ptest-actions">
-        <button id="ptest-compare-btn" class="ptest-btn-primary" disabled>🔬 Compare Prompts</button>
+        <button id="ptest-compare-btn" class="ptest-btn-primary" disabled>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }} Compare Prompts</button>
         <span class="ptest-shortcut-hint">Ctrl+Enter</span>
         <div class="ptest-examples-wrap">
-          <button id="ptest-examples-btn" class="ptest-btn-secondary">💡 Try an example</button>
+          <button id="ptest-examples-btn" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Try an example</button>
           <div id="ptest-examples-menu" class="ptest-examples-menu" hidden></div>
         </div>
         <div class="ptest-examples-wrap">
-          <button id="ptest-template-btn" class="ptest-btn-secondary">📝 Use a template</button>
+          <button id="ptest-template-btn" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Use a template</button>
           <div id="ptest-template-menu" class="ptest-examples-menu" hidden></div>
         </div>
-        <button id="ptest-blind-toggle" class="ptest-btn-secondary">🎲 Blind Mode</button>
-        <button id="ptest-duel-btn" class="ptest-btn-secondary">⚡ Challenge</button>
+        <button id="ptest-blind-toggle" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Blind Mode</button>
+        <button id="ptest-duel-btn" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Challenge</button>
         <button id="ptest-clear-btn" class="ptest-btn-secondary" style="display:none">✕ Clear</button>
       </div>
 
       {{/* ── V3: Blind Mode reveal bar ── */}}
       <div id="ptest-blind-bar" class="ptest-blind-bar" style="display:none">
-        <span>🎲 Blind Mode active — scores hidden until you guess</span>
+        <span>{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Blind Mode active — scores hidden until you guess</span>
         <button id="ptest-blind-guess-a" class="ptest-btn-secondary">I think left is better</button>
         <button id="ptest-blind-guess-b" class="ptest-btn-secondary">I think right is better</button>
       </div>
@@ -94,7 +94,7 @@
       {{/* ── V3: Challenge/Duel mode ── */}}
       <div id="ptest-duel" class="ptest-duel" style="display:none">
         <div class="ptest-duel-header">
-          <h3>⚡ Prompt Challenge</h3>
+          <h3>{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Prompt Challenge</h3>
           <button id="ptest-duel-close" class="ptest-btn-secondary">✕ Exit</button>
         </div>
         <div class="ptest-duel-task" id="ptest-duel-task"></div>
@@ -147,15 +147,15 @@
 
         {{/* ── Diff view ── */}}
         <div class="ptest-diff-section" id="ptest-diff-section" style="display:none">
-          <h3 class="ptest-section-title">📝 Word Diff</h3>
+          <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Word Diff</h3>
           <div class="ptest-diff" id="ptest-diff"></div>
         </div>
 
         {{/* ── Action row ── */}}
         <div class="ptest-result-actions">
-          <button id="ptest-copy-winner" class="ptest-btn-primary">📋 Copy Stronger Prompt</button>
-          <button id="ptest-improve" class="ptest-btn-secondary">✨ Improve Weaker Prompt</button>
-          <button id="ptest-fix-both" class="ptest-btn-secondary">🔧 Fix Both &amp; Re-Compare</button>
+          <button id="ptest-copy-winner" class="ptest-btn-primary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Stronger Prompt</button>
+          <button id="ptest-improve" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Improve Weaker Prompt</button>
+          <button id="ptest-fix-both" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Fix Both &amp; Re-Compare</button>
           <select id="ptest-platform" class="ptest-platform-select" aria-label="Optimise for platform">
             <option value="general">Any AI platform</option>
             <option value="copilot">M365 Copilot</option>
@@ -163,15 +163,15 @@
             <option value="claude">Claude</option>
             <option value="gemini">Gemini</option>
           </select>
-          <button id="ptest-share" class="ptest-btn-secondary">🔗 Share</button>
-          <button id="ptest-export-img" class="ptest-btn-secondary">📸 Export Image</button>
-          <button id="ptest-presenter" class="ptest-btn-secondary">📺 Presenter</button>
-          <a href="/prompts/" class="ptest-btn-secondary ptest-lib-link">📚 Browse Prompt Library</a>
+          <button id="ptest-share" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
+          <button id="ptest-export-img" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }} Export Image</button>
+          <button id="ptest-presenter" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} Presenter</button>
+          <a href="/prompts/" class="ptest-btn-secondary ptest-lib-link">{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} Browse Prompt Library</a>
         </div>
 
         {{/* ── Improved prompt output (side-by-side) ── */}}
         <div id="ptest-improved" class="ptest-improved" style="display:none">
-          <h3 class="ptest-section-title">✨ Improved Version</h3>
+          <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Improved Version</h3>
           <div class="ptest-improved-grid">
             <div class="ptest-improved-side">
               <span class="ptest-improved-label">Original</span>
@@ -183,7 +183,7 @@
             </div>
           </div>
           <div class="ptest-improved-score" id="ptest-improved-score"></div>
-          <button id="ptest-copy-improved" class="ptest-btn-secondary">📋 Copy Improved</button>
+          <button id="ptest-copy-improved" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Improved</button>
         </div>
 
         {{/* ── Confetti canvas ── */}}
@@ -199,7 +199,7 @@
         <h2>Comparison History</h2>
         <p class="ptest-subtle">Stored locally in this browser only. Nothing leaves your device.</p>
         <div class="ptest-history-actions">
-          <button id="ptest-export-history" class="ptest-btn-secondary">📥 Export All</button>
+          <button id="ptest-export-history" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Export All</button>
           <button id="ptest-clear-history" class="ptest-btn-secondary ptest-btn-danger">🗑️ Clear History</button>
         </div>
       </div>
@@ -209,7 +209,7 @@
 
       {{/* V3: Score History Chart */}}
       <div id="ptest-chart-section" class="ptest-chart-section" style="display:none">
-        <h3 class="ptest-section-title">📈 Score Trend</h3>
+        <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} Score Trend</h3>
         <svg id="ptest-chart" viewBox="0 0 600 200" class="ptest-chart-svg"></svg>
       </div>
 
@@ -290,7 +290,7 @@
         </div>
 
         <div class="ptest-guide-tip">
-          <p>🎯 <strong>Pro tip:</strong> You don't need a perfect 100 for every prompt. Aim for 60+ on important prompts. The biggest gains come from adding <strong>Role</strong> (often forgotten) and <strong>Scope</strong> (most underused).</p>
+          <p>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} <strong>Pro tip:</strong> You don't need a perfect 100 for every prompt. Aim for 60+ on important prompts. The biggest gains come from adding <strong>Role</strong> (often forgotten) and <strong>Scope</strong> (most underused).</p>
           <p>Want to practise? Try our <a href="/prompt-guide/" class="zt-accent-link">Prompt Engineering Guide</a> or score a single prompt with the <a href="/prompt-polisher/" class="zt-accent-link">Prompt Polisher</a>.</p>
         </div>
       </div>

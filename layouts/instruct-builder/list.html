@@ -87,7 +87,7 @@
 
           {{/* Example Q&A (collapsible) */}}
           <details class="instruct-section-toggle" id="section-examples">
-            <summary>💬 Example Interactions <span class="instruct-optional">(recommended)</span></summary>
+            <summary>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Example Interactions <span class="instruct-optional">(recommended)</span></summary>
             <div class="instruct-examples">
               <div class="instruct-example-pair">
                 <div class="instruct-field"><label>User question <span class="instruct-badge-good">Happy path</span></label>
@@ -110,15 +110,15 @@
             <div class="instruct-blocks" id="blocks-container">
               <label class="instruct-block-toggle"><input type="checkbox" data-block="greeting"><span>👋 Greeting Message</span></label>
               <label class="instruct-block-toggle"><input type="checkbox" data-block="escalation"><span>🚨 Escalation Rules</span></label>
-              <label class="instruct-block-toggle"><input type="checkbox" data-block="formatting"><span>📝 Response Format</span></label>
+              <label class="instruct-block-toggle"><input type="checkbox" data-block="formatting"><span>{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Response Format</span></label>
               <label class="instruct-block-toggle"><input type="checkbox" data-block="language"><span>🌐 Language / Locale</span></label>
               <div id="blocks-fields"></div>
             </div>
           </details>
 
           <div class="instruct-form-actions">
-            <button class="instruct-btn instruct-btn-generate" id="btn-generate">⚡ Generate Instructions</button>
-            <button class="instruct-btn instruct-btn-example" id="btn-try-example">💡 Try Example</button>
+            <button class="instruct-btn instruct-btn-generate" id="btn-generate">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Generate Instructions</button>
+            <button class="instruct-btn instruct-btn-example" id="btn-try-example">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Try Example</button>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
       {{/* ── RIGHT: Live Preview ── */}}
       <div class="instruct-split-preview" id="preview-pane">
         <div class="instruct-preview-empty" id="preview-empty">
-          <div class="instruct-preview-empty-icon">📝</div>
+          <div class="instruct-preview-empty-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }}</div>
           <p>Start typing to see a live preview</p>
           <p class="instruct-subtle">Or click <strong>Try Example</strong> to see it in action</p>
         </div>
@@ -163,17 +163,17 @@
 
           {{/* Actions */}}
           <div class="instruct-output-actions">
-            <button class="instruct-btn instruct-btn-primary" id="btn-copy">📋 Copy</button>
+            <button class="instruct-btn instruct-btn-primary" id="btn-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
             <button class="instruct-btn" id="btn-download-all" title="Export for all platforms">⬇ Export All</button>
             <button class="instruct-btn" id="btn-optimize" title="Shorten without losing meaning">✂ Optimize</button>
-            <button class="instruct-btn" id="btn-share" title="Share as link">🔗 Share</button>
-            <button class="instruct-btn" id="btn-history" title="View version history">📜 History</button>
+            <button class="instruct-btn" id="btn-share" title="Share as link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
+            <button class="instruct-btn" id="btn-history" title="View version history">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} History</button>
             <button class="instruct-btn" id="btn-start-over">↺ Reset</button>
           </div>
 
           {{/* Starters */}}
           <div class="instruct-starters" id="output-starters" style="display:none">
-            <h4>💬 Suggested Conversation Starters</h4>
+            <h4>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Suggested Conversation Starters</h4>
             <div class="instruct-starters-list" id="starters-list"></div>
           </div>
 
@@ -186,7 +186,7 @@
     {{/* History Drawer */}}
     <div class="instruct-drawer" id="history-drawer" style="display:none">
       <div class="instruct-drawer-header">
-        <h4>📜 Version History</h4>
+        <h4>{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Version History</h4>
         <button class="instruct-btn instruct-btn-sm" id="btn-history-close">✕ Close</button>
       </div>
       <div class="instruct-drawer-body" id="history-list"></div>
@@ -195,7 +195,7 @@
     {{/* Diff View */}}
     <div class="instruct-drawer" id="diff-drawer" style="display:none">
       <div class="instruct-drawer-header">
-        <h4>📊 What Changed</h4>
+        <h4>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} What Changed</h4>
         <button class="instruct-btn instruct-btn-sm" id="btn-diff-close">✕ Close</button>
       </div>
       <div class="instruct-drawer-body instruct-diff-content" id="diff-content"></div>
@@ -204,10 +204,10 @@
     {{/* Share Modal */}}
     <div class="instruct-share-modal" id="share-modal" style="display:none">
       <div class="instruct-share-inner">
-        <h4>🔗 Share Your Agent Instructions</h4>
+        <h4>{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share Your Agent Instructions</h4>
         <input type="text" class="instruct-input" id="share-url" readonly>
         <div class="instruct-share-actions">
-          <button class="instruct-btn instruct-btn-primary" id="btn-share-copy">📋 Copy Link</button>
+          <button class="instruct-btn instruct-btn-primary" id="btn-share-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Link</button>
           <button class="instruct-btn" id="btn-share-close">Close</button>
         </div>
       </div>
@@ -224,7 +224,7 @@
   <div class="instruct-panel" id="panel-quiz" role="tabpanel">
     <div class="instruct-quiz" id="quiz-container">
       <div class="instruct-quiz-intro" id="quiz-intro">
-        <div class="instruct-quiz-icon">🤔</div>
+        <div class="instruct-quiz-icon">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</div>
         <h3>Which platform is right for you?</h3>
         <p>Answer 3 quick questions to find your best fit.</p>
         <button class="instruct-btn instruct-btn-primary" id="btn-quiz-start">Start Quiz</button>

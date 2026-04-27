@@ -5,7 +5,7 @@
 <div class="bookmark-cta" style="--bm-accent: {{ .accent | default "#64748B" }}">
   <div class="bookmark-cta-inner">
     <p class="bookmark-cta-text">
-      <span class="bookmark-cta-icon">🔖</span>
+      <span class="bookmark-cta-icon">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }}</span>
       <strong>Come back often?</strong> Bookmark this page or add it to your home screen — it's always free.
     </p>
     <div class="bookmark-cta-actions">

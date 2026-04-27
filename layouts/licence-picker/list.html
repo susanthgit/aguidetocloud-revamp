@@ -75,7 +75,7 @@
       </div>
       <div class="licpick-segments" id="licpick-segments">
         <div class="licpick-segments-header">
-          <h3 class="licpick-segments-title">👥 User Segments</h3>
+          <h3 class="licpick-segments-title">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} User Segments</h3>
           <button class="licpick-segment-add" id="licpick-add-segment">+ Add Segment</button>
         </div>
         <div class="licpick-segments-list" id="licpick-segments-list"></div>
@@ -83,15 +83,15 @@
       </div>
       <div class="licpick-toolbar">
         <div class="licpick-outcomes" aria-label="Outcome shortcuts">
-          <button class="licpick-outcome-btn" data-outcome="secure-signin">🔐 Secure sign-in</button>
-          <button class="licpick-outcome-btn" data-outcome="enable-copilot">🤖 Enable Copilot</button>
+          <button class="licpick-outcome-btn" data-outcome="secure-signin">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Secure sign-in</button>
+          <button class="licpick-outcome-btn" data-outcome="enable-copilot">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} Enable Copilot</button>
           <button class="licpick-outcome-btn" data-outcome="replace-phone">📞 Replace phone system</button>
-          <button class="licpick-outcome-btn" data-outcome="full-security">🛡️ Full security</button>
-          <button class="licpick-outcome-btn" data-outcome="compliance-ready">📋 Compliance ready</button>
-          <button class="licpick-outcome-btn" data-outcome="remote-workers">💻 Remote workers</button>
+          <button class="licpick-outcome-btn" data-outcome="full-security">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Full security</button>
+          <button class="licpick-outcome-btn" data-outcome="compliance-ready">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Compliance ready</button>
+          <button class="licpick-outcome-btn" data-outcome="remote-workers">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Remote workers</button>
         </div>
         <div class="licpick-search-row">
-          <input type="search" id="licpick-search" class="licpick-search" placeholder="🔍 Search features (e.g. Copilot, MFA, DLP...)" aria-label="Search features">
+          <input type="search" id="licpick-search" class="licpick-search" placeholder="{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Search features (e.g. Copilot, MFA, DLP...)" aria-label="Search features">
         </div>
         <div class="licpick-combos" aria-label="Quick select presets">
           {{ range $combos }}
@@ -134,14 +134,14 @@
     {{/* Right: Results Panel */}}
     <div class="licpick-results-col" id="licpick-results" aria-live="polite">
       <div class="licpick-results-empty">
-        <div class="licpick-results-empty-icon">🛒</div>
+        <div class="licpick-results-empty-icon">{{ partial "icon.html" (dict "name" "shopping-cart" "size" 14 "stroke" 1.5) }}</div>
         <h3>Pick your features</h3>
         <p>Toggle the features you need on the left, and we'll find the cheapest plan instantly.</p>
         <p class="licpick-hint">Try a quick preset: <button class="licpick-inline-combo" data-combo="e3-essentials">E3 Essentials</button></p>
       </div>
       <div class="licpick-results-active" style="display:none">
         <div class="licpick-result-card licpick-recommended" id="licpick-rec">
-          <div class="licpick-rec-badge">✅ Recommended</div>
+          <div class="licpick-rec-badge">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Recommended</div>
           <h3 id="licpick-rec-name"></h3>
           <div class="licpick-rec-price">
             <span class="licpick-price-big" id="licpick-rec-price"></span>
@@ -159,10 +159,10 @@
         <div class="licpick-chart" id="licpick-chart"></div>
         <div class="licpick-tips" id="licpick-tips"></div>
         <div class="licpick-actions">
-          <button class="licpick-action-btn" id="licpick-copy" aria-label="Copy summary to clipboard">📋 Copy Summary</button>
-          <button class="licpick-action-btn" id="licpick-share" aria-label="Copy share link">🔗 Share Link</button>
-          <button class="licpick-action-btn" id="licpick-email" aria-label="Generate procurement email">📧 Email</button>
-          <button class="licpick-action-btn" id="licpick-print" aria-label="Print recommendation" style="display:none">🖨️ Print</button>
+          <button class="licpick-action-btn" id="licpick-copy" aria-label="Copy summary to clipboard">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Summary</button>
+          <button class="licpick-action-btn" id="licpick-share" aria-label="Copy share link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share Link</button>
+          <button class="licpick-action-btn" id="licpick-email" aria-label="Generate procurement email">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Email</button>
+          <button class="licpick-action-btn" id="licpick-print" aria-label="Print recommendation" style="display:none">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print</button>
         </div>
       </div>
     </div>
@@ -234,7 +234,7 @@
       {{ if gt .monthly_cost 0 }}
       <div class="licpick-scenario-cost">${{ .monthly_cost }}/user/month</div>
       {{ end }}
-      <div class="licpick-scenario-rec">💡 {{ .recommended }}</div>
+      <div class="licpick-scenario-rec">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} {{ .recommended }}</div>
       <button class="licpick-scenario-try" data-scenario="{{ .id }}">Try this →</button>
     </div>
     {{ end }}
@@ -262,17 +262,17 @@
   <h3>Related Tools</h3>
   <div class="licpick-related-grid">
     <a href="/licensing/" class="licpick-related-card">
-      <span class="licpick-related-icon">📋</span>
+      <span class="licpick-related-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
       <strong>Licensing Simplifier</strong>
       <p>Deep-dive into every M365 plan with full feature breakdowns</p>
     </a>
     <a href="/roi-calculator/" class="licpick-related-card">
-      <span class="licpick-related-icon">💰</span>
+      <span class="licpick-related-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
       <strong>Copilot ROI Calculator</strong>
       <p>Estimate ROI from deploying Copilot by role</p>
     </a>
     <a href="/copilot-readiness/" class="licpick-related-card">
-      <span class="licpick-related-icon">🎯</span>
+      <span class="licpick-related-icon">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
       <strong>Copilot Readiness</strong>
       <p>Score your organisation across 7 readiness pillars</p>
     </a>
@@ -283,12 +283,12 @@
 <div class="licpick-modal-overlay" id="licpick-email-modal" style="display:none" role="dialog" aria-label="Procurement email generator">
   <div class="licpick-modal">
     <div class="licpick-modal-header">
-      <h3>📧 Procurement Email</h3>
+      <h3>{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Procurement Email</h3>
       <button class="licpick-modal-close" id="licpick-modal-close" aria-label="Close">&times;</button>
     </div>
     <textarea class="licpick-modal-body" id="licpick-email-body" rows="18"></textarea>
     <div class="licpick-modal-actions">
-      <button class="licpick-action-btn" id="licpick-email-copy">📋 Copy to Clipboard</button>
+      <button class="licpick-action-btn" id="licpick-email-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy to Clipboard</button>
       <a class="licpick-action-btn licpick-email-mailto" id="licpick-email-mailto" href="#">✉️ Open in Email Client</a>
     </div>
   </div>

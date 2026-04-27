@@ -17,7 +17,7 @@
     <div class="aimap-single-meta">
       <span class="aimap-card-provider">{{ $s.provider }}</span>
       <span class="aimap-card-category">{{ $cat.emoji }} {{ $cat.name }}</span>
-      {{ if eq ($s.status | default "ga") "preview" }}<span class="aimap-status-badge preview">🧪 Preview</span>{{ end }}
+      {{ if eq ($s.status | default "ga") "preview" }}<span class="aimap-status-badge preview">{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} Preview</span>{{ end }}
       {{ if $s.last_updated }}<span class="aimap-card-updated">✓ Verified {{ $s.last_updated }}</span>{{ end }}
     </div>
     <h1>{{ $s.name | default .Title }}</h1>
@@ -52,21 +52,21 @@
       </div>
 
       <div class="aimap-modal-section">
-        <h2>💰 Pricing</h2>
+        <h2>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Pricing</h2>
         <p>{{ $s.price_note }}</p>
         {{ if $s.free_tier }}<p style="color:#4ade80">🆓 {{ $s.free_tier_detail }}</p>{{ end }}
         {{ with $s.pricing_url }}<p><a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="aimap-btn">View official pricing →</a></p>{{ end }}
       </div>
 
       <div class="aimap-modal-section">
-        <h2>🏷️ Best For</h2>
+        <h2>{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }} Best For</h2>
         <div class="aimap-card-best">
           {{ range $s.best_for }}<span class="aimap-best-tag">{{ . }}</span>{{ end }}
         </div>
       </div>
 
       <div class="aimap-modal-section">
-        <h2>🎯 Use Cases</h2>
+        <h2>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Use Cases</h2>
         <div class="aimap-card-best">
           {{ range $s.use_cases }}<span class="aimap-best-tag">{{ replace . "-" " " }}</span>{{ end }}
         </div>
@@ -99,46 +99,46 @@
           <dt>Provider</dt><dd>{{ $s.provider }}</dd>
           <dt>Category</dt><dd>{{ $cat.emoji }} {{ $cat.name }}</dd>
           <dt>Pricing</dt><dd>{{ $s.pricing_model }}</dd>
-          <dt>Free Tier</dt><dd>{{ if $s.free_tier }}✅ Yes{{ else }}❌ No{{ end }}</dd>
+          <dt>Free Tier</dt><dd>{{ if $s.free_tier }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Yes{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} No{{ end }}</dd>
           {{ with $s.context_window }}<dt>Context</dt><dd>{{ . }}</dd>{{ end }}
-          <dt>Multimodal</dt><dd>{{ if $s.multimodal }}✅{{ else }}❌{{ end }}</dd>
-          <dt>Fine-tuning</dt><dd>{{ if $s.fine_tuning }}✅{{ else }}❌{{ end }}</dd>
-          <dt>Function Calling</dt><dd>{{ if $s.function_calling }}✅{{ else }}❌{{ end }}</dd>
+          <dt>Multimodal</dt><dd>{{ if $s.multimodal }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }}</dd>
+          <dt>Fine-tuning</dt><dd>{{ if $s.fine_tuning }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }}</dd>
+          <dt>Function Calling</dt><dd>{{ if $s.function_calling }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }}</dd>
           {{ with $s.sla }}<dt>SLA</dt><dd>{{ . }}</dd>{{ end }}
         </dl>
       </div>
 
       <div class="aimap-single-info-box">
-        <h3>🔒 Compliance</h3>
+        <h3>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Compliance</h3>
         <div class="aimap-modal-features">
-          <span class="aimap-modal-feat {{ if $s.soc2 }}yes{{ else }}no{{ end }}">{{ if $s.soc2 }}✅{{ else }}❌{{ end }} SOC 2</span>
-          <span class="aimap-modal-feat {{ if $s.hipaa }}yes{{ else }}no{{ end }}">{{ if $s.hipaa }}✅{{ else }}❌{{ end }} HIPAA</span>
-          <span class="aimap-modal-feat {{ if $s.gdpr }}yes{{ else }}no{{ end }}">{{ if $s.gdpr }}✅{{ else }}❌{{ end }} GDPR</span>
-          <span class="aimap-modal-feat {{ if $s.data_residency }}yes{{ else }}no{{ end }}">{{ if $s.data_residency }}✅{{ else }}❌{{ end }} Data Residency</span>
-          <span class="aimap-modal-feat {{ if $s.private_networking }}yes{{ else }}no{{ end }}">{{ if $s.private_networking }}✅{{ else }}❌{{ end }} Private Network</span>
+          <span class="aimap-modal-feat {{ if $s.soc2 }}yes{{ else }}no{{ end }}">{{ if $s.soc2 }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} SOC 2</span>
+          <span class="aimap-modal-feat {{ if $s.hipaa }}yes{{ else }}no{{ end }}">{{ if $s.hipaa }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} HIPAA</span>
+          <span class="aimap-modal-feat {{ if $s.gdpr }}yes{{ else }}no{{ end }}">{{ if $s.gdpr }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} GDPR</span>
+          <span class="aimap-modal-feat {{ if $s.data_residency }}yes{{ else }}no{{ end }}">{{ if $s.data_residency }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} Data Residency</span>
+          <span class="aimap-modal-feat {{ if $s.private_networking }}yes{{ else }}no{{ end }}">{{ if $s.private_networking }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} Private Network</span>
         </div>
       </div>
 
       {{ if $s.regions }}
       <div class="aimap-single-info-box">
-        <h3>🌍 Regions</h3>
+        <h3>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }} Regions</h3>
         <p style="font-size:0.85rem;color:#ccc">{{ delimit $s.regions ", " }}</p>
       </div>
       {{ end }}
 
       <div class="aimap-single-info-box">
-        <h3>🔗 Integration</h3>
+        <h3>{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Integration</h3>
         <div class="aimap-modal-features">
-          <span class="aimap-modal-feat {{ if $s.integration_m365 }}yes{{ else }}no{{ end }}">{{ if $s.integration_m365 }}✅{{ else }}❌{{ end }} M365</span>
-          <span class="aimap-modal-feat {{ if $s.integration_azure }}yes{{ else }}no{{ end }}">{{ if $s.integration_azure }}✅{{ else }}❌{{ end }} Azure</span>
-          <span class="aimap-modal-feat {{ if $s.integration_aws }}yes{{ else }}no{{ end }}">{{ if $s.integration_aws }}✅{{ else }}❌{{ end }} AWS</span>
-          <span class="aimap-modal-feat {{ if $s.integration_gcp }}yes{{ else }}no{{ end }}">{{ if $s.integration_gcp }}✅{{ else }}❌{{ end }} GCP</span>
+          <span class="aimap-modal-feat {{ if $s.integration_m365 }}yes{{ else }}no{{ end }}">{{ if $s.integration_m365 }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} M365</span>
+          <span class="aimap-modal-feat {{ if $s.integration_azure }}yes{{ else }}no{{ end }}">{{ if $s.integration_azure }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} Azure</span>
+          <span class="aimap-modal-feat {{ if $s.integration_aws }}yes{{ else }}no{{ end }}">{{ if $s.integration_aws }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} AWS</span>
+          <span class="aimap-modal-feat {{ if $s.integration_gcp }}yes{{ else }}no{{ end }}">{{ if $s.integration_gcp }}{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}{{ else }}{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}{{ end }} GCP</span>
         </div>
       </div>
 
       <div class="aimap-single-actions">
         <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer" class="aimap-btn aimap-btn-primary" style="width:100%;text-align:center;display:block">Visit {{ $s.name }} →</a>
-        {{ with $s.docs_url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="aimap-btn" style="width:100%;text-align:center;display:block;margin-top:0.5rem">📄 Documentation</a>{{ end }}
+        {{ with $s.docs_url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="aimap-btn" style="width:100%;text-align:center;display:block;margin-top:0.5rem">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Documentation</a>{{ end }}
       </div>
     </aside>
   </div>

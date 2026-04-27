@@ -103,7 +103,7 @@
               <h3>What Users See in Office</h3>
               <div class="pvs-lb-ribbon">
                 <div class="pvs-lb-ribbon-bar">
-                  <span class="pvs-lb-ribbon-icon">🏷️</span>
+                  <span class="pvs-lb-ribbon-icon">{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }}</span>
                   <span class="pvs-lb-ribbon-text">Sensitivity</span>
                   <span class="pvs-lb-ribbon-arrow">▾</span>
                 </div>
@@ -219,7 +219,7 @@
 
       {{/* Empty state */}}
       <div class="pvs-deploy-empty" id="pvs-deploy-empty">
-        <div class="pvs-coming-icon">📦</div>
+        <div class="pvs-coming-icon">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }}</div>
         <h2>No kit selected yet</h2>
         <p>Choose a starter kit first, then come back here for your deployment plan, PowerShell commands, and change management emails.</p>
         <button class="pvs-btn pvs-btn--primary pvs-goto-kits">Choose a Starter Kit</button>
@@ -297,22 +297,22 @@
           <h3>Next Steps</h3>
           <div class="pvs-cross-links">
             <a href="/ca-builder/" class="pvs-cross-card">
-              <span class="pvs-cross-icon">🛡️</span>
+              <span class="pvs-cross-icon">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span>
               <strong>Protect with Conditional Access</strong>
               <p>Add label-aware CA policies to block unmanaged device access to labelled content</p>
             </a>
             <a href="/licensing/" class="pvs-cross-card">
-              <span class="pvs-cross-icon">📜</span>
+              <span class="pvs-cross-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
               <strong>Check Licensing</strong>
               <p>Compare M365 plans to find which includes the Purview features you need</p>
             </a>
             <a href="/copilot-readiness/" class="pvs-cross-card">
-              <span class="pvs-cross-icon">🎯</span>
+              <span class="pvs-cross-icon">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
               <strong>Copilot Readiness</strong>
               <p>Labels are a key Copilot prerequisite — check your readiness score</p>
             </a>
             <a href="/copilot-matrix/" class="pvs-cross-card">
-              <span class="pvs-cross-icon">📊</span>
+              <span class="pvs-cross-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
               <strong>Copilot Features</strong>
               <p>See which Copilot features respect sensitivity labels</p>
             </a>

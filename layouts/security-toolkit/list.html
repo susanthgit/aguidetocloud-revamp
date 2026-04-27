@@ -87,7 +87,7 @@
         </div>
 
         <div class="sectool-cat-indicator" id="sectool-cat-indicator">
-          <span class="sectool-cat-icon" id="sectool-current-cat-icon">🔐</span>
+          <span class="sectool-cat-icon" id="sectool-current-cat-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
           <span class="sectool-cat-name" id="sectool-current-cat-name">Identity & Authentication</span>
         </div>
 
@@ -149,22 +149,22 @@
           <h2>What To Do Next</h2>
           <div class="sectool-links-grid">
             <a href="/ca-builder/" class="sectool-link-card">
-              <span class="sectool-link-icon">🔐</span>
+              <span class="sectool-link-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
               <span>Build CA Policies</span>
               <small>Create Conditional Access policies for your identified gaps</small>
             </a>
             <a href="/ps-builder/" class="sectool-link-card">
-              <span class="sectool-link-icon">💻</span>
+              <span class="sectool-link-icon">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }}</span>
               <span>PowerShell Scripts</span>
               <small>Find ready-made remediation scripts for M365 admin tasks</small>
             </a>
             <a href="/copilot-readiness/" class="sectool-link-card">
-              <span class="sectool-link-icon">🤖</span>
+              <span class="sectool-link-icon">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}</span>
               <span>Copilot Readiness</span>
               <small>Hardened your tenant? Now check if you are ready for Copilot</small>
             </a>
             <a href="/licensing/" class="sectool-link-card">
-              <span class="sectool-link-icon">📜</span>
+              <span class="sectool-link-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
               <span>Licensing Simplifier</span>
               <small>Understand which security features your licence includes</small>
             </a>
@@ -270,7 +270,7 @@
     {{/* ═══════════════════════════════════════════════════════ */}}
     <div class="sectool-panel" id="panel-actions" role="tabpanel">
       <div id="sectool-actions-gate" class="sectool-actions-gate">
-        <span class="sectool-gate-icon">📋</span>
+        <span class="sectool-gate-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
         <h2>Prioritised Remediation Actions</h2>
         <p>Complete the security assessment first to generate your personalised action plan with priority rankings, remediation scripts, and compliance mappings.</p>
         <button class="sectool-btn-primary sectool-goto-assessment">Start Assessment</button>
@@ -288,7 +288,7 @@
     {{/* ═══════════════════════════════════════════════════════ */}}
     <div class="sectool-panel" id="panel-export" role="tabpanel">
       <div id="sectool-export-gate" class="sectool-actions-gate">
-        <span class="sectool-gate-icon">📄</span>
+        <span class="sectool-gate-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
         <h2>Export Security Scorecard</h2>
         <p>Complete the assessment to generate a printable security scorecard with your score, category breakdown, top priority actions, and compliance coverage.</p>
         <button class="sectool-btn-primary sectool-goto-assessment">Start Assessment</button>
@@ -334,12 +334,12 @@
 <div style="max-width:900px;margin:2rem auto;padding:0 1.5rem">
   <h2 style="color:rgba(255,255,255,0.7);font-size:1.1rem;text-align:center;margin-bottom:1.5rem">More Security & Admin Tools</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-    <a href="/ca-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🔐</span><span style="color:#fff;font-weight:600;font-size:0.9rem">CA Policy Builder</span><br><small style="color:rgba(255,255,255,0.5)">Design Entra ID Conditional Access policies</small></a>
-    <a href="/ps-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">💻</span><span style="color:#fff;font-weight:600;font-size:0.9rem">PowerShell Builder</span><br><small style="color:rgba(255,255,255,0.5)">Generate M365 admin scripts</small></a>
-    <a href="/purview-starter/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🏷️</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Purview Starter Kit</span><br><small style="color:rgba(255,255,255,0.5)">Plan sensitivity labels & DLP</small></a>
-    <a href="/copilot-readiness/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">🤖</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Copilot Readiness</span><br><small style="color:rgba(255,255,255,0.5)">Check Copilot deployment readiness</small></a>
+    <a href="/ca-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span><span style="color:#fff;font-weight:600;font-size:0.9rem">CA Policy Builder</span><br><small style="color:rgba(255,255,255,0.5)">Design Entra ID Conditional Access policies</small></a>
+    <a href="/ps-builder/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }}</span><span style="color:#fff;font-weight:600;font-size:0.9rem">PowerShell Builder</span><br><small style="color:rgba(255,255,255,0.5)">Generate M365 admin scripts</small></a>
+    <a href="/purview-starter/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }}</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Purview Starter Kit</span><br><small style="color:rgba(255,255,255,0.5)">Plan sensitivity labels & DLP</small></a>
+    <a href="/copilot-readiness/" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}</span><span style="color:#fff;font-weight:600;font-size:0.9rem">Copilot Readiness</span><br><small style="color:rgba(255,255,255,0.5)">Check Copilot deployment readiness</small></a>
   </div>
-  <p style="text-align:center;margin-top:1.5rem;color:rgba(255,255,255,0.4);font-size:0.85rem">💬 Got feedback? <a href="/feedback/" style="color:var(--sectool-accent)">Share it here →</a></p>
+  <p style="text-align:center;margin-top:1.5rem;color:rgba(255,255,255,0.4);font-size:0.85rem">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/" style="color:var(--sectool-accent)">Share it here →</a></p>
 </div>
 
   <nav class="zt-nav" aria-label="Tools navigation">

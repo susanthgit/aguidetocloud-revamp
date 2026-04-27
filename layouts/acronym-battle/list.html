@@ -51,7 +51,7 @@
 
       <div class="acro-modes-grid">
         <button class="acro-mode-card" data-mode="quick">
-          <div class="acro-mc-icon">⚡</div>
+          <div class="acro-mc-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</div>
           <div class="acro-mc-title">Quick 10</div>
           <div class="acro-mc-desc">10 random acronyms — fast and fun</div>
           <div class="acro-mc-time">~2 min</div>
@@ -64,13 +64,13 @@
         </button>
         <button class="acro-mode-card acro-mc-featured" data-mode="daily">
           <div class="acro-mc-badge">Today</div>
-          <div class="acro-mc-icon">📅</div>
+          <div class="acro-mc-icon">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }}</div>
           <div class="acro-mc-title">Daily Challenge</div>
           <div class="acro-mc-desc">Same 10 for everyone today</div>
           <div class="acro-mc-time">~2 min</div>
         </button>
         <button class="acro-mode-card" data-mode="learn">
-          <div class="acro-mc-icon">📚</div>
+          <div class="acro-mc-icon">{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }}</div>
           <div class="acro-mc-title">Learn Mode</div>
           <div class="acro-mc-desc">Browse answers at your own pace</div>
           <div class="acro-mc-time">No timer</div>
@@ -128,7 +128,7 @@
       <div class="acro-results-actions">
         <button class="acro-btn acro-btn-primary" id="btn-play-again">Play Again</button>
         <button class="acro-btn" id="btn-share-score">Share Score</button>
-        <button class="acro-btn" id="btn-share-card">📸 Download Card</button>
+        <button class="acro-btn" id="btn-share-card">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }} Download Card</button>
       </div>
     </div>
   </div>

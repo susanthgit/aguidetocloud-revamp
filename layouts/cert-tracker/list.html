@@ -29,7 +29,7 @@
     {{/* Guided platform promo banner */}}
     <div class="cert-guided-banner">
       <div class="cert-guided-banner-content">
-        <span class="cert-guided-banner-icon">📖</span>
+        <span class="cert-guided-banner-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
         <div>
           <strong>New: Interactive Study Guides</strong> — Flashcards, exam simulation, spaced repetition, progress tracking. Free forever across 126 certs.
         </div>
@@ -59,8 +59,8 @@
       <select id="cert-status-filter" class="cert-select">
         <option value="all">All Statuses</option>
         <option value="active">Active</option>
-        <option value="retiring">⚠️ Retiring</option>
-        <option value="beta">🧪 Beta</option>
+        <option value="retiring">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Retiring</option>
+        <option value="beta">{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} Beta</option>
         <option value="upcoming">🔜 Upcoming</option>
         <option value="retired">🚫 Retired</option>
       </select>
@@ -88,11 +88,11 @@
     </div>
 
     <div class="cert-updates-section" style="margin-top:2rem">
-      <h2>📡 Stay Updated</h2>
+      <h2>{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} Stay Updated</h2>
       <p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">Get notified when exam objectives change or new exams are announced.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📡 RSS Feed</a>
-        <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">📋 Official Credentials</a>
+        <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} RSS Feed</a>
+        <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Official Credentials</a>
       </div>
     </div>
   </div>
@@ -149,12 +149,12 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
   var fundExams = ["AZ-900","AI-900","DP-900","SC-900","MS-900","PL-900","MB-910","MB-920"];
   var expertExams = ["AZ-305","AZ-400","AZ-802","SC-100","MS-102","PL-600","SC-500","SC-730"];
   var rows = [
-    { key: "azure", label: "☁️ Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },
-    { key: "ai", label: "🤖 AI & Data", color: "#8B5CF6", css: "kanban-row-ai", cats: ["AI", "Data"] },
-    { key: "security", label: "🔒 Security", color: "#EF4444", css: "kanban-row-security", cats: ["Security"] },
-    { key: "m365", label: "📧 M365", color: "#F59E0B", css: "kanban-row-m365", cats: ["Microsoft 365"] },
-    { key: "power", label: "⚡ Power", color: "#A855F7", css: "kanban-row-power", cats: ["Power Platform"] },
-    { key: "d365", label: "💼 D365", color: "#14B8A6", css: "kanban-row-d365", cats: ["Dynamics 365"] }
+    { key: "azure", label: "{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },
+    { key: "ai", label: "{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI & Data", color: "#8B5CF6", css: "kanban-row-ai", cats: ["AI", "Data"] },
+    { key: "security", label: "{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Security", color: "#EF4444", css: "kanban-row-security", cats: ["Security"] },
+    { key: "m365", label: "{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} M365", color: "#F59E0B", css: "kanban-row-m365", cats: ["Microsoft 365"] },
+    { key: "power", label: "{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Power", color: "#A855F7", css: "kanban-row-power", cats: ["Power Platform"] },
+    { key: "d365", label: "{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} D365", color: "#14B8A6", css: "kanban-row-d365", cats: ["Dynamics 365"] }
   ];
   function getLevel(code) {
     if (fundExams.indexOf(code) !== -1) return "fund";
@@ -163,8 +163,8 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
   }
   function renderCard(e) {
     var s = e.status || "active", cls = s !== "active" ? " kanban-card-" + s : "", badge = "";
-    if (s === "retiring") badge = '<span class="kanban-card-badge cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">⚠️</span>';
-    else if (s === "beta") badge = '<span class="kanban-card-badge cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">🧪</span>';
+    if (s === "retiring") badge = '<span class="kanban-card-badge cert-badge cert-badge-retiring" style="font-size:0.55rem;padding:0.05rem 0.3rem">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</span>';
+    else if (s === "beta") badge = '<span class="kanban-card-badge cert-badge cert-badge-beta" style="font-size:0.55rem;padding:0.05rem 0.3rem">{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }}</span>';
     var t = e.title.length > 30 ? e.title.substring(0, 27) + "..." : e.title;
     return '<a href="/cert-tracker/' + e.code.toLowerCase() + '/" class="kanban-card' + cls + '" title="' + e.code + ': ' + e.title + '"><span class="kanban-card-code">' + e.code + '</span><span class="kanban-card-title">' + t + '</span>' + badge + '</a>';
   }
@@ -179,9 +179,9 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
     });
     var html = '<div class="kanban">';
     html += '<div class="kanban-header kanban-header-cat"></div>';
-    html += '<div class="kanban-header kanban-header-fund">🟢 Fundamentals</div>';
+    html += '<div class="kanban-header kanban-header-fund">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Fundamentals</div>';
     html += '<div class="kanban-header kanban-header-assoc">🔵 Associate</div>';
-    html += '<div class="kanban-header kanban-header-expert">🟡 Expert & Beta</div>';
+    html += '<div class="kanban-header kanban-header-expert">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Expert & Beta</div>';
     rows.forEach(function(row) {
       var g = grid[row.key];
       html += '<div class="kanban-lane-label" style="--lane-color:' + row.color + '"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';

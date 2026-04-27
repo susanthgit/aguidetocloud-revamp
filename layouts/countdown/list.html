@@ -65,7 +65,7 @@
 
     {{/* Quick Start Templates — first */}}
     <div class="cdown-tpl-section" id="cdown-tpl-section">
-      <div class="cdown-section-title">📋 Quick Start Templates</div>
+      <div class="cdown-section-title">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Quick Start Templates</div>
       <div class="cdown-tpl-grid" id="cdown-tpl-grid"></div>
     </div>
 
@@ -108,7 +108,7 @@
         <label class="cdown-label" for="cdown-message">Custom Message <span style="opacity:0.5">(optional — shows in full screen)</span></label>
         <input type="text" class="cdown-input" id="cdown-message" placeholder="e.g. Welcome to our wedding!" maxlength="120">
       </div>
-      <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">⏳ Create Countdown</button>
+      <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">{{ partial "icon.html" (dict "name" "hourglass" "size" 14 "stroke" 1.5) }} Create Countdown</button>
     </div>
 
     {{/* Sort */}}
@@ -128,8 +128,8 @@
 
     {{/* Mode toggle */}}
     <div class="cdown-mode-toggle">
-      <button class="cdown-mode-btn active" data-mode="timer" id="cdown-mode-timer">⏱️ Timer</button>
-      <button class="cdown-mode-btn" data-mode="stopwatch" id="cdown-mode-sw">🔄 Stopwatch</button>
+      <button class="cdown-mode-btn active" data-mode="timer" id="cdown-mode-timer">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Timer</button>
+      <button class="cdown-mode-btn" data-mode="stopwatch" id="cdown-mode-sw">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Stopwatch</button>
     </div>
 
     {{/* Timer display */}}
@@ -216,14 +216,14 @@
 
   {{/* ── Cross-links ── */}}
   <div class="tool-eco" style="--eco-accent: #FB923C">
-    <h2 class="tool-eco-title">🧰 More Handy Tools</h2>
+    <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
     <div class="tool-eco-grid tool-eco-4">
-      <a href="/world-clock/" class="tool-eco-card"><span>🌍</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
-      <a href="/prompt-polisher/" class="tool-eco-card"><span>✨</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
-      <a href="/qr-generator/" class="tool-eco-card"><span>📱</span><strong>QR Code Generator</strong><p>Create styled QR codes</p></a>
-      <a href="/cert-tracker/" class="tool-eco-card"><span>📖</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
+      <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
+      <a href="/prompt-polisher/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
+      <a href="/qr-generator/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}</span><strong>QR Code Generator</strong><p>Create styled QR codes</p></a>
+      <a href="/cert-tracker/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
     </div>
-    <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
   {{/* ── Back nav ── */}}

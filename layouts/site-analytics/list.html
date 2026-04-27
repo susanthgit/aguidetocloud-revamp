@@ -342,18 +342,18 @@
       <p class="siteana-hint">How recently each content area was updated</p>
       <div class="siteana-freshness" id="sa-freshness">
         {{ $sections := slice
-          (dict "name" "AI News" "icon" "📰" "freq" "4× daily" "color" "#ff66ff")
-          (dict "name" "M365 Roadmap" "icon" "🗺️" "freq" "Daily" "color" "#E5A00D")
-          (dict "name" "Service Health" "icon" "🩺" "freq" "Every 2 hours" "color" "#EA580C")
-          (dict "name" "Cert Study Guides" "icon" "📚" "freq" "Weekly" "color" "#10B981")
-          (dict "name" "Deprecation Timeline" "icon" "⏰" "freq" "Daily" "color" "#DC2626")
-          (dict "name" "Blog Posts" "icon" "📝" "freq" "As written" "color" "#0EA5E9")
-          (dict "name" "Licensing Data" "icon" "💳" "freq" "Bi-weekly check" "color" "#F43F5E")
-          (dict "name" "Copilot Matrix" "icon" "📊" "freq" "Bi-weekly check" "color" "#60A5FA")
+          (dict "name" "AI News" "iconName" "newspaper" "freq" "4× daily" "color" "#ff66ff")
+          (dict "name" "M365 Roadmap" "iconName" "map" "freq" "Daily" "color" "#E5A00D")
+          (dict "name" "Service Health" "iconName" "hospital" "freq" "Every 2 hours" "color" "#EA580C")
+          (dict "name" "Cert Study Guides" "iconName" "book" "freq" "Weekly" "color" "#10B981")
+          (dict "name" "Deprecation Timeline" "iconName" "timer" "freq" "Daily" "color" "#DC2626")
+          (dict "name" "Blog Posts" "iconName" "edit-3" "freq" "As written" "color" "#0EA5E9")
+          (dict "name" "Licensing Data" "iconName" "dollar-sign" "freq" "Bi-weekly check" "color" "#F43F5E")
+          (dict "name" "Copilot Matrix" "iconName" "chart-bar" "freq" "Bi-weekly check" "color" "#60A5FA")
         }}
         {{ range $sections }}
         <div class="siteana-fresh-item">
-          <span class="siteana-fresh-icon">{{ .icon }}</span>
+          <span class="siteana-fresh-icon">{{ partial "icon.html" (dict "name" .iconName "size" 14 "stroke" 1.5) }}</span>
           <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
           <span class="siteana-fresh-name">{{ .name }}</span>
           <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
@@ -405,14 +405,14 @@
     <!-- Trend + Mode split -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">📈 Daily Engagement</h3>
+        <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} Daily Engagement</h3>
         <p class="siteana-hint">Page views and users on /guided/ (30 days)</p>
         <div style="position:relative;height:220px">
           <canvas id="gd-trend-chart"></canvas>
         </div>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">🎯 Quiz Mode Distribution</h3>
+        <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Quiz Mode Distribution</h3>
         <p class="siteana-hint">How learners prefer to study</p>
         <div style="position:relative;height:220px;display:flex;align-items:center;justify-content:center">
           <canvas id="gd-mode-chart"></canvas>
@@ -423,7 +423,7 @@
 
     <!-- Cert Performance Table -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">🎓 Certification Performance</h3>
+      <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }} Certification Performance</h3>
       <p class="siteana-hint">Practice page engagement per certification (30 days)</p>
       <div id="gd-cert-table">
         <p class="siteana-hint" style="padding:1rem 0">Loading certification data...</p>
@@ -433,14 +433,14 @@
     <!-- Event Breakdown + Top Pages -->
     <div class="siteana-grid-2">
       <div class="siteana-card">
-        <h3 class="siteana-card-title">⚡ Event Breakdown</h3>
+        <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Event Breakdown</h3>
         <p class="siteana-hint">All tracked user actions (30 days)</p>
         <div id="gd-events">
           <p class="siteana-hint" style="padding:1rem 0">Loading events...</p>
         </div>
       </div>
       <div class="siteana-card">
-        <h3 class="siteana-card-title">📄 Top Guided Pages</h3>
+        <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Top Guided Pages</h3>
         <p class="siteana-hint">Most viewed pages in the platform</p>
         <div id="gd-top-pages">
           <p class="siteana-hint" style="padding:1rem 0">Loading pages...</p>
@@ -474,7 +474,7 @@
 
     <!-- SEO Opportunities -->
     <div class="siteana-card" style="border-color:rgba(251,191,36,0.2);background:linear-gradient(135deg,rgba(251,191,36,0.04),rgba(251,191,36,0.01))">
-      <h3 class="siteana-card-title">🎯 SEO Opportunities</h3>
+      <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} SEO Opportunities</h3>
       <p class="siteana-hint">Queries ranking #4–10 with high impressions — one optimisation away from page 1</p>
       <div id="sa-seo-opps"><p class="siteana-hint">Loading...</p></div>
     </div>
@@ -1082,14 +1082,14 @@
     var tv = ga4.totals.views || 0;
     var tu = ga4.totals.users || 0;
     var toolCount = Object.keys(TOOLS).length;
-    if (tv > 0) facts.push({ icon: '📖', text: 'In the last 30 days, our pages were viewed <strong>' + roundK(tv) + ' times</strong> — that\'s like reading a 300-page book ' + Math.round(tv / 300) + ' times.' });
-    if (tu > 0 && ga4.countries && ga4.countries.length > 3) facts.push({ icon: '🌍', text: 'Visitors from <strong>' + ga4.countries.length + ' countries</strong> used our tools this month. The internet is beautiful.' });
+    if (tv > 0) facts.push({ icon: '{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}', text: 'In the last 30 days, our pages were viewed <strong>' + roundK(tv) + ' times</strong> — that\'s like reading a 300-page book ' + Math.round(tv / 300) + ' times.' });
+    if (tu > 0 && ga4.countries && ga4.countries.length > 3) facts.push({ icon: '{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}', text: 'Visitors from <strong>' + ga4.countries.length + ' countries</strong> used our tools this month. The internet is beautiful.' });
     facts.push({ icon: '🛠️', text: 'Every single one of our <strong>' + toolCount + ' tools</strong> runs 100% in your browser — zero server calls, zero data collected, zero cost.' });
     if (ga4.today && ga4.today.views > 0) facts.push({ icon: '☀️', text: 'Today alone, <strong>' + ga4.today.views + ' pages</strong> were viewed. Thanks for being one of them!' });
     var avgPerTool = ga4.leaderboard ? Math.round(tv / Math.max(ga4.leaderboard.length, 1)) : 0;
-    if (avgPerTool > 0) facts.push({ icon: '📊', text: 'Each tool averages <strong>' + roundK(avgPerTool) + ' views/month</strong>. Our most popular tool gets ' + roundK(ga4.leaderboard[0].views) + '.' });
+    if (avgPerTool > 0) facts.push({ icon: '{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}', text: 'Each tool averages <strong>' + roundK(avgPerTool) + ' views/month</strong>. Our most popular tool gets ' + roundK(ga4.leaderboard[0].views) + '.' });
     facts.push({ icon: '💸', text: 'Total cost to run all ' + toolCount + ' tools: <strong>$0/month</strong>. Client-side JavaScript + open data = free forever.' });
-    if (ga4.devices) { var mobile = ga4.devices.find(function(d){return d.device.toLowerCase()==='mobile';}); if (mobile) facts.push({ icon: '📱', text: '<strong>' + Math.round(mobile.users / tu * 100) + '%</strong> of visitors are on mobile. Yes, all our tools work great on phones!' }); }
+    if (ga4.devices) { var mobile = ga4.devices.find(function(d){return d.device.toLowerCase()==='mobile';}); if (mobile) facts.push({ icon: '{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}', text: '<strong>' + Math.round(mobile.users / tu * 100) + '%</strong> of visitors are on mobile. Yes, all our tools work great on phones!' }); }
     // Show 4 random facts (seeded by day so they rotate daily)
     var rng = mulberry32(todaySeed() + 99);
     for (var i = facts.length - 1; i > 0; i--) { var j = Math.floor(rng() * (i + 1)); var tmp = facts[i]; facts[i] = facts[j]; facts[j] = tmp; }
@@ -1219,12 +1219,12 @@
     var el = document.getElementById('sa-impact'); if (!el) return;
     var findTool = function(slug) { var t = lb.find(function(x){return x.tool===slug;}); return t ? t.views : 0; };
     var items = [
-      { icon: '⏱️', label: 'Hours saved by IT admins', lo: Math.round(totals.users * 2 / 60), hi: Math.round(totals.users * 5 / 60), note: '2–5 min per successful tool use' },
-      { icon: '📋', label: 'Prompts polished', lo: Math.round(findTool('prompt-polisher') * 0.3), hi: Math.round(findTool('prompt-polisher') * 0.5), note: '30–50% of page visitors use the tool' },
-      { icon: '🔐', label: 'CA policies designed', lo: Math.round(findTool('ca-builder') * 0.2), hi: Math.round(findTool('ca-builder') * 0.4), note: '20–40% export a policy' },
-      { icon: '📊', label: 'ROI calculations run', lo: Math.round(findTool('roi-calculator') * 0.4), hi: Math.round(findTool('roi-calculator') * 0.6), note: '40–60% engagement rate' },
-      { icon: '🎓', label: 'Cert study sessions', lo: Math.round(findTool('cert-tracker') * 0.5), hi: Math.round(findTool('cert-tracker') * 0.7), note: '50–70% of cert visitors study' },
-      { icon: '📱', label: 'QR codes generated', lo: Math.round(findTool('qr-generator') * 0.5), hi: Math.round(findTool('qr-generator') * 0.7), note: '50–70% create a code' }
+      { icon: '{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }}', label: 'Hours saved by IT admins', lo: Math.round(totals.users * 2 / 60), hi: Math.round(totals.users * 5 / 60), note: '2–5 min per successful tool use' },
+      { icon: '{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}', label: 'Prompts polished', lo: Math.round(findTool('prompt-polisher') * 0.3), hi: Math.round(findTool('prompt-polisher') * 0.5), note: '30–50% of page visitors use the tool' },
+      { icon: '{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}', label: 'CA policies designed', lo: Math.round(findTool('ca-builder') * 0.2), hi: Math.round(findTool('ca-builder') * 0.4), note: '20–40% export a policy' },
+      { icon: '{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}', label: 'ROI calculations run', lo: Math.round(findTool('roi-calculator') * 0.4), hi: Math.round(findTool('roi-calculator') * 0.6), note: '40–60% engagement rate' },
+      { icon: '{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}', label: 'Cert study sessions', lo: Math.round(findTool('cert-tracker') * 0.5), hi: Math.round(findTool('cert-tracker') * 0.7), note: '50–70% of cert visitors study' },
+      { icon: '{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}', label: 'QR codes generated', lo: Math.round(findTool('qr-generator') * 0.5), hi: Math.round(findTool('qr-generator') * 0.7), note: '50–70% create a code' }
     ];
     el.innerHTML = items.map(function(item) {
       return '<div class="siteana-impact-item">'

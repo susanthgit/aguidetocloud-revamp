@@ -13,8 +13,8 @@
 
   {{/* ── Tabs ── */}}
   <div class="feedback-tabs" role="tablist">
-    <button class="feedback-tab active" role="tab" aria-selected="true" data-tab="submit">💬 Submit Feedback</button>
-    <button class="feedback-tab" role="tab" aria-selected="false" data-tab="faq">❓ FAQ</button>
+    <button class="feedback-tab active" role="tab" aria-selected="true" data-tab="submit">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Submit Feedback</button>
+    <button class="feedback-tab" role="tab" aria-selected="false" data-tab="faq">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} FAQ</button>
   </div>
 
   <div class="feedback-panel active" id="panel-submit" role="tabpanel">
@@ -38,29 +38,29 @@
           <label class="feedback-label" for="fb-category">Category</label>
           <select class="feedback-select" id="fb-category" name="category" required>
             <option value="">Select a category…</option>
-            <option value="questions">❓ Questions</option>
-            <option value="feature-requests">💡 Feature Requests</option>
-            <option value="video-requests">🎬 Video Requests</option>
+            <option value="questions">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Questions</option>
+            <option value="feature-requests">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Feature Requests</option>
+            <option value="video-requests">{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} Video Requests</option>
             <option value="bug-reports">🐛 Bug Reports</option>
-            <option value="tool-feedback">🔧 Tool Feedback</option>
-            <option value="content-ideas">📝 Content Ideas</option>
-            <option value="general">💬 General</option>
+            <option value="tool-feedback">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Tool Feedback</option>
+            <option value="content-ideas">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Content Ideas</option>
+            <option value="general">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} General</option>
           </select>
         </div>
         <div class="feedback-field">
           <label class="feedback-label" for="fb-tool">Related Tool <span class="optional">(optional)</span></label>
           <select class="feedback-select" id="fb-tool" name="tool">
             <option value="">Not specific to a tool</option>
-            <option value="ai-news">📰 AI News</option>
-            <option value="m365-roadmap">🗺️ M365 Roadmap Tracker</option>
-            <option value="prompts">💡 AI Prompt Library</option>
-            <option value="prompt-polisher">✨ Prompt Polisher</option>
-            <option value="prompt-tester">🔬 Prompt Tester</option>
-            <option value="cert-tracker">📊 Cert Study Guides</option>
-            <option value="licensing">📜 Licensing Simplifier</option>
-            <option value="service-health">🏥 Service Health Tracker</option>
-            <option value="copilot-readiness">🎯 Copilot Readiness Checker</option>
-            <option value="copilot-matrix">📊 Copilot Feature Matrix</option>
+            <option value="ai-news">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }} AI News</option>
+            <option value="m365-roadmap">{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }} M365 Roadmap Tracker</option>
+            <option value="prompts">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} AI Prompt Library</option>
+            <option value="prompt-polisher">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Prompt Polisher</option>
+            <option value="prompt-tester">{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }} Prompt Tester</option>
+            <option value="cert-tracker">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Cert Study Guides</option>
+            <option value="licensing">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Licensing Simplifier</option>
+            <option value="service-health">{{ partial "icon.html" (dict "name" "hospital" "size" 14 "stroke" 1.5) }} Service Health Tracker</option>
+            <option value="copilot-readiness">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Copilot Readiness Checker</option>
+            <option value="copilot-matrix">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Copilot Feature Matrix</option>
           </select>
         </div>
       </div>
@@ -108,7 +108,7 @@
   <!-- Past Discussions -->
   <div class="feedback-recent" id="feedback-recent">
     <div class="feedback-recent-header">
-      <div class="feedback-recent-title">💬 Past Questions & Answers</div>
+      <div class="feedback-recent-title">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Past Questions & Answers</div>
       <div class="feedback-search-wrap">
         <input type="text" class="feedback-search" id="fb-search" placeholder="Search discussions…" aria-label="Search past discussions">
       </div>

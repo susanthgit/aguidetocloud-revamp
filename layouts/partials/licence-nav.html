@@ -11,19 +11,19 @@
 
 {{/* Category display order + emoji */}}
 {{ $categories := slice
-  (dict "name" "Enterprise" "emoji" "🏢")
-  (dict "name" "Business (≤300 users)" "emoji" "💼")
-  (dict "name" "Copilot & AI" "emoji" "🤖")
-  (dict "name" "Security Add-ons" "emoji" "🛡️")
-  (dict "name" "Power Platform" "emoji" "⚡")
-  (dict "name" "Dynamics 365 CRM" "emoji" "🤝")
-  (dict "name" "Dynamics 365 ERP" "emoji" "📊")
-  (dict "name" "Teams Add-ons" "emoji" "💬")
-  (dict "name" "Microsoft Viva" "emoji" "🧠")
-  (dict "name" "Project & Visio" "emoji" "📋")
-  (dict "name" "Windows & Dev" "emoji" "🖥️")
-  (dict "name" "Frontline" "emoji" "👷")
-  (dict "name" "Education" "emoji" "🎓")
+  (dict "name" "Enterprise" "emoji" "🏢" "icon" "lic-enterprise")
+  (dict "name" "Business (≤300 users)" "emoji" "💼" "icon" "lic-business")
+  (dict "name" "Copilot & AI" "emoji" "🤖" "icon" "lic-copilot")
+  (dict "name" "Security Add-ons" "emoji" "🛡️" "icon" "lic-security")
+  (dict "name" "Power Platform" "emoji" "⚡" "icon" "lic-power")
+  (dict "name" "Dynamics 365 CRM" "emoji" "🤝" "icon" "lic-crm")
+  (dict "name" "Dynamics 365 ERP" "emoji" "📊" "icon" "lic-erp")
+  (dict "name" "Teams Add-ons" "emoji" "💬" "icon" "lic-teams")
+  (dict "name" "Microsoft Viva" "emoji" "🧠" "icon" "lic-viva")
+  (dict "name" "Project & Visio" "emoji" "📋" "icon" "lic-project")
+  (dict "name" "Windows & Dev" "emoji" "🖥️" "icon" "lic-windows")
+  (dict "name" "Frontline" "emoji" "👷" "icon" "lic-frontline")
+  (dict "name" "Education" "emoji" "🎓" "icon" "lic-education")
 }}
 
 {{/* Find current plan's category */}}
@@ -34,8 +34,8 @@
 
 <nav class="zt-lic-nav" aria-label="Licensing plan navigation">
 
-<a href="/licensing-docs/" class="zt-lic-nav-header">📄 All Plan Guides</a>
-<a href="/licensing/" class="zt-lic-nav-tool-link">📊 Open Licensing Simplifier →</a>
+<a href="/licensing-docs/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "file-text" "size" 16 "stroke" 1.5) }} All Plan Guides</a>
+<a href="/licensing/" class="zt-lic-nav-tool-link">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Open Licensing Simplifier →</a>
 
 {{ range $cat := $categories }}
   {{ $catName := $cat.name }}
@@ -53,7 +53,7 @@
   {{ $isCurrentCat := eq $catName $currentCat }}
   <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
-      <span>{{ $catEmoji }} {{ $catName }}</span>
+      <span>{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</span>
       <span class="zt-lic-nav-count">{{ len $plans }}</span>
     </summary>
     <div class="zt-lic-nav-links">

@@ -49,7 +49,7 @@
       </div>
       <textarea id="polisher-input" class="polisher-textarea" placeholder="Paste your AI prompt here...&#10;&#10;Example: &quot;write me a blog post about AI&quot;" rows="6" aria-label="Enter your AI prompt"></textarea>
       <div class="polisher-actions">
-        <button id="polisher-btn" class="polisher-btn-primary" disabled>✨ Polish My Prompt</button>
+        <button id="polisher-btn" class="polisher-btn-primary" disabled>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Polish My Prompt</button>
         <select id="polisher-platform" class="polisher-platform-select" aria-label="Optimise for platform">
           <option value="general">Any AI platform</option>
           <option value="copilot">M365 Copilot</option>
@@ -59,13 +59,13 @@
         </select>
         <button id="polisher-clear" class="polisher-btn-secondary" style="display:none">✕ Clear</button>
         <div class="polisher-examples-wrap">
-          <button id="polisher-examples-btn" class="polisher-btn-secondary">💡 Try an example</button>
+          <button id="polisher-examples-btn" class="polisher-btn-secondary">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Try an example</button>
           <div id="polisher-examples-menu" class="polisher-examples-menu" hidden>
             <button data-example="0">🖊️ Vague blog request</button>
-            <button data-example="1">❓ Simple question</button>
-            <button data-example="2">📄 Resume help</button>
-            <button data-example="3">📧 Email draft</button>
-            <button data-example="4">📊 Data analysis</button>
+            <button data-example="1">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Simple question</button>
+            <button data-example="2">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Resume help</button>
+            <button data-example="3">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Email draft</button>
+            <button data-example="4">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Data analysis</button>
           </div>
         </div>
       </div>
@@ -98,10 +98,10 @@
           <h2 class="polisher-section-title">Your Polished Prompt — Ready to Copy</h2>
           <div class="polisher-output-actions">
             <div class="polisher-view-toggle" id="polisher-view-toggle">
-              <button class="polisher-toggle-btn active" data-view="polished">✨ Polished</button>
-              <button class="polisher-toggle-btn" data-view="compare">⚡ Before / After</button>
+              <button class="polisher-toggle-btn active" data-view="polished">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Polished</button>
+              <button class="polisher-toggle-btn" data-view="compare">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Before / After</button>
             </div>
-            <button id="polisher-copy" class="polisher-btn-copy">📋 Copy Prompt</button>
+            <button id="polisher-copy" class="polisher-btn-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Prompt</button>
           </div>
         </div>
         <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
@@ -110,11 +110,11 @@
         </div>
         <div class="polisher-compare" id="polisher-compare" style="display:none">
           <div class="polisher-compare-col">
-            <div class="polisher-compare-label">❌ Before</div>
+            <div class="polisher-compare-label">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Before</div>
             <div class="polisher-compare-text" id="polisher-compare-before"></div>
           </div>
           <div class="polisher-compare-col">
-            <div class="polisher-compare-label">✅ After</div>
+            <div class="polisher-compare-label">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} After</div>
             <div class="polisher-compare-text polisher-compare-after" id="polisher-compare-after"></div>
           </div>
         </div>
@@ -122,7 +122,7 @@
           {{/* Rendered by JS — shows "Original: 22 → Polished: 78 (+56 points)" */}}
         </div>
         <div class="polisher-output-footer">
-          <button id="polisher-edit-btn" class="polisher-btn-secondary">✏️ Edit & re-polish</button>
+          <button id="polisher-edit-btn" class="polisher-btn-secondary">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Edit & re-polish</button>
         </div>
       </div>
 
@@ -227,15 +227,15 @@ document.querySelectorAll('.polisher-tab').forEach(function(tab) {
 
 {{/* ── Prompt Toolkit Cross-Links ── */}}
 <div class="polisher-ecosystem">
-  <h2>🔗 Your Prompt Engineering Toolkit</h2>
+  <h2>{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Your Prompt Engineering Toolkit</h2>
   <div class="polisher-eco-grid">
-    <a href="/prompt-guide/" class="polisher-eco-card"><span>🎓</span><strong>Guide</strong><p>Learn techniques</p></a>
-    <a href="/prompt-polisher/" class="polisher-eco-card polisher-eco-active"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
-    <a href="/prompt-tester/" class="polisher-eco-card"><span>🔬</span><strong>Tester</strong><p>A/B compare</p></a>
-    <a href="/prompt-lab/" class="polisher-eco-card"><span>🧪</span><strong>Advanced Lab</strong><p>12 techniques</p></a>
-    <a href="/prompts/" class="polisher-eco-card"><span>💡</span><strong>Library</strong><p>84 ready prompts</p></a>
+    <a href="/prompt-guide/" class="polisher-eco-card"><span>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span><strong>Guide</strong><p>Learn techniques</p></a>
+    <a href="/prompt-polisher/" class="polisher-eco-card polisher-eco-active"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Polisher</strong><p>Score & rewrite</p></a>
+    <a href="/prompt-tester/" class="polisher-eco-card"><span>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }}</span><strong>Tester</strong><p>A/B compare</p></a>
+    <a href="/prompt-lab/" class="polisher-eco-card"><span>{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }}</span><strong>Advanced Lab</strong><p>12 techniques</p></a>
+    <a href="/prompts/" class="polisher-eco-card"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Library</strong><p>84 ready prompts</p></a>
   </div>
-  <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
+  <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
 </div>
 
   <nav class="zt-nav" aria-label="Tools navigation">

@@ -76,12 +76,12 @@
 {{ partial "tool-header.html" (dict "page" . "title" "Copilot ROI Calculator") }}
 
     <div class="roi-tabs" role="tablist" aria-label="ROI Calculator sections">
-      <button class="roi-tab roi-tab-active" role="tab" aria-selected="true" aria-controls="tab-quick" id="tab-btn-quick" data-tab="quick">⚡ Quick Calculator</button>
-      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-roles" id="tab-btn-roles" data-tab="roles">👥 By Role</button>
+      <button class="roi-tab roi-tab-active" role="tab" aria-selected="true" aria-controls="tab-quick" id="tab-btn-quick" data-tab="quick">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Calculator</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-roles" id="tab-btn-roles" data-tab="roles">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} By Role</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-costs" id="tab-btn-costs" data-tab="costs">💳 Cost Breakdown</button>
-      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" id="tab-btn-scenarios" data-tab="scenarios">📊 Scenarios</button>
-      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-summary" id="tab-btn-summary" data-tab="summary">📄 Executive Summary</button>
-      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-btn-faq" data-tab="faq">❓ FAQ</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" id="tab-btn-scenarios" data-tab="scenarios">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Scenarios</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-summary" id="tab-btn-summary" data-tab="summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Executive Summary</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-btn-faq" data-tab="faq">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} FAQ</button>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
@@ -135,7 +135,7 @@
               <span class="roi-custom-cost-prefix">$</span>
               <input type="number" id="roi-custom-cost" min="1" max="200" step="0.50" placeholder="30.00" class="roi-num-input roi-num-sm" aria-label="Your Copilot cost per user per month">
               <span class="roi-custom-cost-suffix">/user/mo</span>
-              <span class="roi-field-hint">💡 Don't know your price? Leave unchecked to use the public RRP ($30/user/mo).</span>
+              <span class="roi-field-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Don't know your price? Leave unchecked to use the public RRP ($30/user/mo).</span>
             </div>
           </div>
 
@@ -143,8 +143,8 @@
             <label>Adoption scenario</label>
             <div class="roi-radio-group" role="radiogroup" aria-label="Adoption scenario">
               <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative"> 🐢 Conservative</label>
-              <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked> ⚖️ Moderate</label>
-              <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive"> 🚀 Aggressive</label>
+              <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked> {{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</label>
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive"> {{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</label>
             </div>
           </div>
 
@@ -235,14 +235,14 @@
 
           {{/* Cross-tool CTAs */}}
           <div class="roi-cross-tools">
-            <a href="/copilot-readiness/" class="roi-cross-link">🎯 Check Copilot Readiness</a>
-            <a href="/copilot-matrix/" class="roi-cross-link">📊 See Copilot Features</a>
-            <a href="/licensing/" class="roi-cross-link">📜 Compare M365 Plans</a>
-            <button class="roi-cross-link" id="roi-share-url">🔗 Share Link</button>
+            <a href="/copilot-readiness/" class="roi-cross-link">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Check Copilot Readiness</a>
+            <a href="/copilot-matrix/" class="roi-cross-link">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} See Copilot Features</a>
+            <a href="/licensing/" class="roi-cross-link">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Compare M365 Plans</a>
+            <button class="roi-cross-link" id="roi-share-url">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share Link</button>
           </div>
 
           <p class="roi-source-note">
-            📊 Based on <a href="https://tei.forrester.com/go/microsoft/M365Copilot/" target="_blank" rel="noopener noreferrer">Forrester TEI</a>,
+            {{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Based on <a href="https://tei.forrester.com/go/microsoft/M365Copilot/" target="_blank" rel="noopener noreferrer">Forrester TEI</a>,
             <a href="https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/" target="_blank" rel="noopener noreferrer">UK Gov</a> &amp;
             <a href="https://www.microsoft.com/en-us/research/publication/early-impacts-of-m365-copilot/" target="_blank" rel="noopener noreferrer">Microsoft Research</a> data.
             All calculations run in your browser — your data never leaves this page.
@@ -262,8 +262,8 @@
         <div class="roi-roles-controls">
           <select id="roi-role-scenario" class="roi-select roi-select-sm" aria-label="Adoption scenario for roles">
             <option value="conservative">🐢 Conservative</option>
-            <option value="moderate" selected>⚖️ Moderate</option>
-            <option value="aggressive">🚀 Aggressive</option>
+            <option value="moderate" selected>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</option>
+            <option value="aggressive">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</option>
           </select>
           <button class="roi-btn-accent" id="roi-add-role">+ Add Role</button>
         </div>
@@ -429,7 +429,7 @@
 
           {{/* Break-even indicator */}}
           <div class="roi-breakeven" id="roi-breakeven">
-            <span class="roi-breakeven-icon">⏱️</span>
+            <span class="roi-breakeven-icon">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }}</span>
             <span>Break-even in <strong id="roi-breakeven-months">—</strong> months</span>
           </div>
 
@@ -476,14 +476,14 @@
 
       {{/* 3-year projection table */}}
       <div class="roi-projection-table-wrap">
-        <h3 class="roi-card-subtitle">📅 3-Year Projection</h3>
+        <h3 class="roi-card-subtitle">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} 3-Year Projection</h3>
         <table class="roi-projection-table" id="roi-projection-table">
           <thead>
             <tr>
               <th></th>
               <th>🐢 Conservative</th>
-              <th>⚖️ Moderate</th>
-              <th>🚀 Aggressive</th>
+              <th>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</th>
+              <th>{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</th>
             </tr>
           </thead>
           <tbody id="roi-projection-tbody">
@@ -548,19 +548,19 @@
         </div>
 
         <p class="roi-summary-disclaimer">
-          ⚠️ This calculator provides estimates based on published research and industry benchmarks. Actual ROI depends on adoption rate, use cases, training investment, and organisational readiness. All calculations run client-side — no data is transmitted or stored externally.
+          {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} This calculator provides estimates based on published research and industry benchmarks. Actual ROI depends on adoption rate, use cases, training investment, and organisational readiness. All calculations run client-side — no data is transmitted or stored externally.
         </p>
       </div>
 
       <div class="roi-summary-actions">
-        <button class="roi-btn-accent" id="roi-copy-summary">📋 Copy Summary</button>
-        <button class="roi-btn-secondary" id="roi-print-summary">🖨️ Print</button>
-        <button class="roi-btn-secondary" id="roi-save-history">💾 Save to History</button>
+        <button class="roi-btn-accent" id="roi-copy-summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Summary</button>
+        <button class="roi-btn-secondary" id="roi-print-summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print</button>
+        <button class="roi-btn-secondary" id="roi-save-history">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Save to History</button>
       </div>
 
       {{/* History */}}
       <div class="roi-history" id="roi-history" style="display:none">
-        <h3 class="roi-card-subtitle">📜 Saved Calculations</h3>
+        <h3 class="roi-card-subtitle">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Saved Calculations</h3>
         <div class="roi-history-list" id="roi-history-list"></div>
         <button class="roi-btn-danger" id="roi-clear-history">Clear History</button>
       </div>
@@ -569,7 +569,7 @@
     <div class="roi-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-btn-faq">
     {{ if .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">❓ Frequently Asked Questions</h2>
+      <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
       <details open class="zt-faq-detail">
         <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>

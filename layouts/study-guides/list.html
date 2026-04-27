@@ -23,9 +23,9 @@
         Every exam objective linked to official resources. Progress tracking, practice exams, and study plans included.
       </p>
       <div class="ft-hero-meta">
-        <span class="ft-hero-stat">📚 {{ len $certPages }} study guides</span>
-        <span class="ft-hero-stat">🏢 {{ len $vendors }} vendors</span>
-        <span class="ft-hero-stat">🔗 Linked to official resources</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} {{ len $certPages }} study guides</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} {{ len $vendors }} vendors</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Linked to official resources</span>
       </div>
     </header>
 
@@ -51,7 +51,7 @@
       {{ if $vCerts }}
       <section class="zt-sg-vendor" id="vendor-{{ $vSlug }}">
         <div class="zt-sg-vendor-header">
-          <h2 class="zt-sg-vendor-title">{{ $vEmoji }} {{ $vName }}</h2>
+          <h2 class="zt-sg-vendor-title">{{ partial "icon.html" (dict "name" (printf "vendor-%s" $vSlug) "size" 16 "stroke" 1.5 "fallback" $vEmoji) }} {{ $vName }}</h2>
           <span class="zt-sg-vendor-count-badge">{{ len $vCerts }} guides</span>
         </div>
 
@@ -78,9 +78,9 @@
                     </span>
                   </div>
                   <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
-                  {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">⚠️ Retiring</span>{{ end }}
-                  {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">🧪 Beta</span>{{ end }}
-                  {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">🔜 Upcoming</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }} Retiring</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }} Beta</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }} Upcoming</span>{{ end }}
                 </a>
                 {{ end }}
               </div>
@@ -99,9 +99,9 @@
                 </span>
               </div>
               <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
-              {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">⚠️ Retiring</span>{{ end }}
-              {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">🧪 Beta</span>{{ end }}
-              {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">🔜 Upcoming</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }} Retiring</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }} Beta</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }} Upcoming</span>{{ end }}
             </a>
             {{ end }}
           </div>

@@ -11,20 +11,20 @@
 
 {{/* Category display order + labels */}}
 {{ $categories := slice
-  (dict "key" "prompt"    "name" "Prompt Engineering" "emoji" "✨"  "anchor" "prompts")
-  (dict "key" "certs"     "name" "Certification"      "emoji" "📚"  "anchor" "certs")
-  (dict "key" "informed"  "name" "Stay Informed"      "emoji" "📡"  "anchor" "informed")
-  (dict "key" "agent"     "name" "Agent Builders"     "emoji" "🤖"  "anchor" "agents")
-  (dict "key" "planning"  "name" "Copilot & AI"       "emoji" "🎯"  "anchor" "planning")
-  (dict "key" "copilot"   "name" "Copilot Tools"      "emoji" "💡"  "anchor" "planning")
-  (dict "key" "security"  "name" "Security"           "emoji" "🛡️"  "anchor" "security")
-  (dict "key" "admin-ops" "name" "Admin Operations"   "emoji" "⚙️"  "anchor" "admin-ops")
-  (dict "key" "community" "name" "Utilities & Fun"    "emoji" "🎮"  "anchor" "utilities")
+  (dict "key" "prompt"    "name" "Prompt Engineering" "icon" "sparkles"  "anchor" "prompts")
+  (dict "key" "certs"     "name" "Certification"      "icon" "book"      "anchor" "certs")
+  (dict "key" "informed"  "name" "Stay Informed"      "icon" "satellite" "anchor" "informed")
+  (dict "key" "agent"     "name" "Agent Builders"     "icon" "robot"     "anchor" "agents")
+  (dict "key" "planning"  "name" "Copilot & AI"       "icon" "target"    "anchor" "planning")
+  (dict "key" "copilot"   "name" "Copilot Tools"      "icon" "lightbulb" "anchor" "planning")
+  (dict "key" "security"  "name" "Security"           "icon" "shield"    "anchor" "security")
+  (dict "key" "admin-ops" "name" "Admin Operations"   "icon" "settings"  "anchor" "admin-ops")
+  (dict "key" "community" "name" "Utilities & Fun"    "icon" "gamepad"   "anchor" "utilities")
 }}
 
 <nav class="zt-lic-nav" aria-label="Tools navigation">
 
-<a href="/free-tools/" class="zt-lic-nav-header">🧰 All Free Tools</a>
+<a href="/free-tools/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "wrench" "size" 16 "stroke" 1.5) }} All Free Tools</a>
 
 {{ range $cat := $categories }}
   {{/* Collect tools in this category */}}
@@ -39,7 +39,7 @@
   {{ $isFirst := eq $cat.key "prompt" }}
   <details class="zt-lic-nav-group"{{ if $isFirst }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
-      <span>{{ $cat.emoji }} {{ $cat.name }}</span>
+      <span>{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5) }} {{ $cat.name }}</span>
       <span class="zt-lic-nav-count">{{ len $catTools }}</span>
     </summary>
     <div class="zt-lic-nav-links">

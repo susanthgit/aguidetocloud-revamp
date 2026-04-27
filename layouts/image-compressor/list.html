@@ -63,7 +63,7 @@
 
   {{/* ── Privacy Badge ── */}}
   <div class="imgcomp-privacy-badge">
-    <span class="imgcomp-privacy-icon">🔒</span>
+    <span class="imgcomp-privacy-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>
     <span>Your images never leave your browser — all processing happens locally on your device</span>
   </div>
 
@@ -81,7 +81,7 @@
 
   {{/* ══════════════ SMART PRESETS ══════════════ */}}
   <div class="imgcomp-presets imgcomp-hidden" id="imgcomp-presets">
-    <div class="imgcomp-presets-label">⚡ Quick Presets</div>
+    <div class="imgcomp-presets-label">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Presets</div>
     <div class="imgcomp-presets-row">
       <button class="imgcomp-preset-btn" data-preset="web" title="Optimised for websites: WebP, max 1920px, quality 82%">
         <span class="imgcomp-preset-icon">🌐</span>
@@ -94,17 +94,17 @@
         <span class="imgcomp-preset-desc">JPEG · 1200px · q70</span>
       </button>
       <button class="imgcomp-preset-btn" data-preset="social" title="Social media ready: JPEG, max 1080px, quality 85%">
-        <span class="imgcomp-preset-icon">📱</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Social</span>
         <span class="imgcomp-preset-desc">JPEG · 1080px · q85</span>
       </button>
       <button class="imgcomp-preset-btn" data-preset="thumbnail" title="Tiny thumbnails: WebP, max 400px, quality 75%">
-        <span class="imgcomp-preset-icon">🖼️</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Thumbnail</span>
         <span class="imgcomp-preset-desc">WebP · 400px · q75</span>
       </button>
       <button class="imgcomp-preset-btn" data-preset="print" title="High quality for printing: PNG, max 4096px, quality 95%">
-        <span class="imgcomp-preset-icon">🖨️</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Print</span>
         <span class="imgcomp-preset-desc">PNG · 4096px · q95</span>
       </button>
@@ -129,7 +129,7 @@
 
     {{/* ── Apply to All ── */}}
     <details class="imgcomp-apply-all" id="imgcomp-apply-all">
-      <summary class="imgcomp-apply-all-toggle">⚙️ Apply to All Images</summary>
+      <summary class="imgcomp-apply-all-toggle">{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} Apply to All Images</summary>
       <div class="imgcomp-apply-all-body">
         <div class="imgcomp-apply-row">
           <div class="imgcomp-apply-field">
@@ -173,7 +173,7 @@
         </div>
         <div class="imgcomp-apply-row">
           <div class="imgcomp-apply-field">
-            <label class="imgcomp-label">🎯 Target File Size</label>
+            <label class="imgcomp-label">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Target File Size</label>
             <div class="imgcomp-target-row">
               <input type="number" id="imgcomp-global-target" class="imgcomp-input imgcomp-input-sm" placeholder="e.g. 200" min="10">
               <span class="imgcomp-target-unit">KB</span>
@@ -189,11 +189,11 @@
 
     {{/* ── Advanced Options ── */}}
     <details class="imgcomp-advanced" id="imgcomp-advanced">
-      <summary class="imgcomp-apply-all-toggle">🔧 Advanced Options</summary>
+      <summary class="imgcomp-apply-all-toggle">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Advanced Options</summary>
       <div class="imgcomp-apply-all-body">
         <div class="imgcomp-apply-row">
           <label class="imgcomp-toggle-label imgcomp-toggle-info">
-            <span>🔒 EXIF metadata (GPS, camera info) is automatically removed during compression</span>
+            <span>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} EXIF metadata (GPS, camera info) is automatically removed during compression</span>
           </label>
           <label class="imgcomp-toggle-label">
             <input type="checkbox" id="imgcomp-preserve-alpha" checked>
@@ -208,7 +208,7 @@
   <div class="imgcomp-list" id="imgcomp-list"></div>
 
   {{/* ── Large file warning ── */}}
-  <div class="imgcomp-hint imgcomp-large-hint">💡 Very large files (>50 MB) may be slow to process in-browser. For best performance, keep individual images under 20 MB.</div>
+  <div class="imgcomp-hint imgcomp-large-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Very large files (>50 MB) may be slow to process in-browser. For best performance, keep individual images under 20 MB.</div>
   </div>
 
   {{/* ══════════════ FAQ TAB ══════════════ */}}
@@ -237,8 +237,8 @@
     <div class="imgcomp-modal-header">
       <span class="imgcomp-modal-title" id="imgcomp-modal-title"></span>
       <div class="imgcomp-modal-controls">
-        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-in" aria-label="Zoom in">🔍+</button>
-        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-out" aria-label="Zoom out">🔍−</button>
+        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-in" aria-label="Zoom in">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}+</button>
+        <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-zoom-out" aria-label="Zoom out">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}−</button>
         <span class="imgcomp-modal-zoom-val" id="imgcomp-modal-zoom-val">100%</span>
         <button class="imgcomp-btn imgcomp-btn-ghost imgcomp-btn-sm" id="imgcomp-modal-close" aria-label="Close comparison">✕ Close</button>
       </div>

@@ -31,8 +31,8 @@
         <h1 class="zt-about-name">Susanth Sutheesh</h1>
         <p class="zt-about-role">Sr AI Solution Engineer at Microsoft · Auckland, New Zealand 🇳🇿</p>
         <div class="zt-about-actions">
-          <a href="/images/about/susanth-sutheesh-resume.pdf" download class="zt-about-btn">📄 Download Resume</a>
-          <a href="/links/" class="zt-about-btn zt-about-btn--secondary">🔗 All My Links</a>
+          <a href="/images/about/susanth-sutheesh-resume.pdf" download class="zt-about-btn">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Download Resume</a>
+          <a href="/links/" class="zt-about-btn zt-about-btn--secondary">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} All My Links</a>
         </div>
       </div>
     </div>
@@ -135,11 +135,11 @@
     <h2 id="join">Join the Journey</h2>
 
     <ul>
-      <li>🚀 <a href="/start/">New to this site? Start here</a> — find the right resource in 30 seconds</li>
-      <li>📺 <a href="https://www.youtube.com/susanthsutheesh">YouTube — A Guide to Cloud & AI</a> (full tutorials & masterclasses)</li>
-      <li>📺 <a href="https://www.youtube.com/aguidetocloud">YouTube — Bites</a> (quick 10–20 min lessons)</li>
-      <li>💼 <a href="https://www.linkedin.com/in/susanthsutheesh/">LinkedIn</a></li>
-      <li>☕ <a href="https://ko-fi.com/aguidetocloud/shop">Support my work</a></li>
+      <li>{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} <a href="/start/">New to this site? Start here</a> — find the right resource in 30 seconds</li>
+      <li>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <a href="https://www.youtube.com/susanthsutheesh">YouTube — A Guide to Cloud & AI</a> (full tutorials & masterclasses)</li>
+      <li>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <a href="https://www.youtube.com/aguidetocloud">YouTube — Bites</a> (quick 10–20 min lessons)</li>
+      <li>{{ partial "icon.html" (dict "name" "linkedin" "size" 14 "stroke" 1.5) }} <a href="https://www.linkedin.com/in/susanthsutheesh/">LinkedIn</a></li>
+      <li>{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} <a href="https://ko-fi.com/aguidetocloud/shop">Support my work</a></li>
     </ul>
 
     <hr>
@@ -167,19 +167,19 @@
     <div class="zt-companion-section">
       <p class="zt-companion-title">Connect</p>
       <a href="https://www.youtube.com/susanthsutheesh" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
-        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">YouTube (Main)</span>
       </a>
       <a href="https://www.youtube.com/aguidetocloud" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
-        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">YouTube (Bites)</span>
       </a>
       <a href="https://www.linkedin.com/in/susanthsutheesh/" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
-        <span class="zt-companion-link-tag">💼</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "linkedin" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">LinkedIn</span>
       </a>
       <a href="https://ko-fi.com/aguidetocloud" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
-        <span class="zt-companion-link-tag">☕</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">Ko-fi</span>
       </a>
     </div>
@@ -189,19 +189,19 @@
       <p class="zt-companion-title">This site</p>
       {{ $tools := (index hugo.Data "toolkit_nav").tools }}
       <a href="/free-tools/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">🧰</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">{{ len $tools }} free tools</span>
       </a>
       <a href="/videos/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">78+ video tutorials</span>
       </a>
       <a href="/study-guides/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">📚</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">149+ study guides</span>
       </a>
       <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">🎯</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">126 practice exams</span>
       </a>
     </div>
@@ -224,8 +224,8 @@
     <div class="zt-companion-section">
       <p class="zt-companion-title">Explore</p>
       <div class="zt-companion-cta">
-        <a href="/start/" class="zt-companion-cta-btn">🚀 Start Here</a>
-        <a href="/feedback/" class="zt-companion-cta-btn">💬 Share Feedback</a>
+        <a href="/start/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Start Here</a>
+        <a href="/feedback/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Share Feedback</a>
       </div>
     </div>
 

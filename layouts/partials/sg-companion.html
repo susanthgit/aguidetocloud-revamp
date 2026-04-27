@@ -13,7 +13,7 @@
     {{ range $allCerts }}
       {{ if eq .Params.exam_code $code }}
       <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">📘</span>
+        <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }}</span>
         <span class="zt-companion-link-title">{{ .Params.exam_code }}</span>
       </a>
       {{ end }}
@@ -39,8 +39,8 @@
 <div class="zt-companion-section">
   <p class="zt-companion-title">Study resources</p>
   <div class="zt-companion-cta">
-    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
-    <a href="/cert-compass/" class="zt-companion-cta-btn">🧭 Cert Compass</a>
-    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+    <a href="/guided/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Practice Exams</a>
+    <a href="/cert-compass/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} Cert Compass</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "play" "size" 14 "stroke" 1.5) }} YouTube</a>
   </div>
 </div>

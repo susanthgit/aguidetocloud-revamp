@@ -59,7 +59,7 @@
       {{ end }}
     </div>
     <p style="font-size:0.82rem;color:rgba(255,255,255,0.5)">{{ .comparison_notes }}</p>
-    <p style="color:var(--compass-accent);font-size:0.82rem;font-weight:600;margin-top:0.5rem">💡 {{ .recommendation }}</p>
+    <p style="color:var(--compass-accent);font-size:0.82rem;font-weight:600;margin-top:0.5rem">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} {{ .recommendation }}</p>
     {{ end }}{{ end }}
     <a href="/cert-compass/?tab=matches" class="compass-btn compass-btn-outline" style="margin-top:0.75rem">See All Matches →</a>
     {{ end }}

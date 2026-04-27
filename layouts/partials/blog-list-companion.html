@@ -11,7 +11,7 @@
   {{ range $tools }}
     {{ if lt $count 5 }}
     <a href="{{ .url }}" class="zt-companion-link zt-companion-link--inline">
-      <span class="zt-companion-link-tag">{{ .emoji }}</span>
+      <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 14 "stroke" 1.5 "fallback" .emoji) }}</span>
       <span class="zt-companion-link-title">{{ .name }}</span>
     </a>
     {{ $count = add $count 1 }}
@@ -23,9 +23,9 @@
 <div class="zt-companion-section">
   <p class="zt-companion-title">Learn & certify</p>
   <div class="zt-companion-cta">
-    <a href="/study-guides/" class="zt-companion-cta-btn">📚 Study Guides</a>
-    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
-    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
-    <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
+    <a href="/study-guides/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Study Guides</a>
+    <a href="/guided/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Practice Exams</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
+    <a href="/index.xml" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "rss" "size" 14 "stroke" 1.5) }} RSS Feed</a>
   </div>
 </div>

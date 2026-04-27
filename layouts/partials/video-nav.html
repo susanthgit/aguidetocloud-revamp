@@ -11,8 +11,8 @@
 
 <nav class="zt-lic-nav" aria-label="Video navigation">
 
-<a href="/videos/" class="zt-lic-nav-header">📺 All Video Tutorials</a>
-<a href="/guided/explore/" class="zt-lic-nav-tool-link">🎯 Practice Exams →</a>
+<a href="/videos/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "video" "size" 16 "stroke" 1.5) }} All Video Tutorials</a>
+<a href="/guided/explore/" class="zt-lic-nav-tool-link">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Practice Exams →</a>
 
 {{ range $cat := $categories }}
   {{ $pages := where site.RegularPages "Section" $cat.section }}
@@ -20,7 +20,7 @@
   {{ $isCurrentCat := eq $cat.section $currentSection }}
   <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
-      <span>{{ $cat.emoji }} {{ $cat.name }}</span>
+      <span>{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 14 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</span>
       <span class="zt-lic-nav-count">{{ len $pages }}</span>
     </summary>
     <div class="zt-lic-nav-links">

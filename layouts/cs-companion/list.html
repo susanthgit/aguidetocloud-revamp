@@ -30,9 +30,9 @@
   <!-- ═══ PERSONA SWITCHER (#8) ═══ -->
   <div class="cscomp-persona-bar" id="persona-bar">
     <span class="cscomp-persona-label">I am:</span>
-    <button class="cscomp-persona-btn active" data-persona="admin" aria-label="IT Admin persona">🔧 IT Admin</button>
-    <button class="cscomp-persona-btn" data-persona="maker" aria-label="Maker persona">🏗️ Maker</button>
-    <button class="cscomp-persona-btn" data-persona="architect" aria-label="Architect persona">📐 Architect</button>
+    <button class="cscomp-persona-btn active" data-persona="admin" aria-label="IT Admin persona">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} IT Admin</button>
+    <button class="cscomp-persona-btn" data-persona="maker" aria-label="Maker persona">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Maker</button>
+    <button class="cscomp-persona-btn" data-persona="architect" aria-label="Architect persona">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Architect</button>
   </div>
 
   <!-- ═══ PAGE SEARCH (#12) ═══ -->
@@ -82,7 +82,7 @@
 
     <!-- Custom Scenario Input (#3) -->
     <div class="cscomp-custom-input">
-      <h3>🔍 Describe Your Scenario</h3>
+      <h3>{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Describe Your Scenario</h3>
       <input type="text" id="custom-scenario" class="cscomp-custom-scenario-input" placeholder="e.g. 'I want an agent that creates ServiceNow tickets from Teams'" aria-label="Describe your agent scenario">
       <div id="custom-scenario-result" class="cscomp-custom-result" style="display:none"></div>
     </div>
@@ -91,7 +91,7 @@
     <p class="cscomp-tip">Browse pre-built scenarios to see which platform is right — and which components you'll need.</p>
     <div class="cscomp-scenario-filter" id="scenario-filter">
       <button class="cscomp-filter-btn active" data-filter="all">All</button>
-      <button class="cscomp-filter-btn" data-filter="builder">🟢 Agent Builder</button>
+      <button class="cscomp-filter-btn" data-filter="builder">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Agent Builder</button>
       <button class="cscomp-filter-btn" data-filter="studio">🟣 Copilot Studio</button>
       <button class="cscomp-filter-btn" data-filter="foundry">🔵 AI Foundry</button>
     </div>
@@ -104,7 +104,7 @@
           <span class="cscomp-verdict-badge cscomp-verdict-{{ .verdict }}">{{ .verdict_label }}</span>
         </div>
         <p class="cscomp-scenario-desc">{{ .description }}</p>
-        {{ with .risks }}<div class="cscomp-risk-badges">{{ range . }}<span class="cscomp-risk-badge">⚠️ {{ . }}</span>{{ end }}</div>{{ end }}
+        {{ with .risks }}<div class="cscomp-risk-badges">{{ range . }}<span class="cscomp-risk-badge">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} {{ . }}</span>{{ end }}</div>{{ end }}
         <details class="cscomp-scenario-detail">
           <summary>Why this platform?</summary>
           <p>{{ .explanation }}</p>
@@ -119,7 +119,7 @@
     </div>
 
     <div class="cscomp-cost-strip">
-      <h3>💰 Quick Cost Comparison</h3>
+      <h3>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Quick Cost Comparison</h3>
       <div class="cscomp-cost-grid">
         {{ range $d.scenarios.cost_models }}
         <div class="cscomp-cost-card">
@@ -133,13 +133,13 @@
 
     <!-- Shareable Decision Summary (#6) -->
     <div class="cscomp-share-row">
-      <button class="cscomp-btn cscomp-btn-primary" id="btn-share-summary">📋 Copy Decision Summary</button>
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-share-summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Decision Summary</button>
     </div>
 
     <div class="cscomp-cta-row">
-      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">🚀 Open Copilot Studio</a>
-      <a href="/agent-builder-guide/" class="cscomp-cta">🤖 Agent Builder Guide — the simpler option</a>
-      <a href="/blog/agent-builder-vs-copilot-studio-vs-foundry/" class="cscomp-cta">📖 Read the full comparison blog</a>
+      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Open Copilot Studio</a>
+      <a href="/agent-builder-guide/" class="cscomp-cta">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} Agent Builder Guide — the simpler option</a>
+      <a href="/blog/agent-builder-vs-copilot-studio-vs-foundry/" class="cscomp-cta">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Read the full comparison blog</a>
     </div>
   </div>
 
@@ -150,22 +150,22 @@
 
     <!-- Comparison Table (#4) -->
     <details class="cscomp-compare-toggle">
-      <summary><strong>📊 Quick Comparison: Agent Builder vs Studio vs Foundry</strong></summary>
+      <summary><strong>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Quick Comparison: Agent Builder vs Studio vs Foundry</strong></summary>
       <div class="cscomp-compare-table-wrap">
         <table class="cscomp-compare-table">
           <thead><tr><th>Capability</th><th>Agent Builder</th><th>Copilot Studio</th><th>AI Foundry</th></tr></thead>
           <tbody>
-            <tr><td>Topics & conversation flow</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅ (code)</td></tr>
-            <tr><td>Knowledge grounding</td><td class="cscomp-cell-green">✅ M365</td><td class="cscomp-cell-green">✅ Multi-source</td><td class="cscomp-cell-green">✅ Custom RAG</td></tr>
-            <tr><td>Model selection</td><td class="cscomp-cell-red">❌ Default only</td><td class="cscomp-cell-green">✅ 6+ models</td><td class="cscomp-cell-green">✅ 1800+ models</td></tr>
-            <tr><td>Adaptive Cards</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅ (custom)</td></tr>
-            <tr><td>Connectors (1000+)</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-amber">Via code</td></tr>
-            <tr><td>Power Automate</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅ Native</td><td class="cscomp-cell-red">❌</td></tr>
-            <tr><td>Tools & MCP servers</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅</td></tr>
-            <tr><td>Multi-channel deploy</td><td class="cscomp-cell-red">❌ M365 only</td><td class="cscomp-cell-green">✅ 8+ channels</td><td class="cscomp-cell-green">✅ Any</td></tr>
-            <tr><td>Computer Use</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-red">❌</td></tr>
-            <tr><td>Fine-tuning</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-red">❌</td><td class="cscomp-cell-green">✅</td></tr>
-            <tr><td>No-code authoring</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-green">✅</td><td class="cscomp-cell-red">❌</td></tr>
+            <tr><td>Topics & conversation flow</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} (code)</td></tr>
+            <tr><td>Knowledge grounding</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} M365</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Multi-source</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Custom RAG</td></tr>
+            <tr><td>Model selection</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Default only</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} 6+ models</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} 1800+ models</td></tr>
+            <tr><td>Adaptive Cards</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} (custom)</td></tr>
+            <tr><td>Connectors (1000+)</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-amber">Via code</td></tr>
+            <tr><td>Power Automate</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Native</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td></tr>
+            <tr><td>Tools & MCP servers</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td></tr>
+            <tr><td>Multi-channel deploy</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} M365 only</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} 8+ channels</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Any</td></tr>
+            <tr><td>Computer Use</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td></tr>
+            <tr><td>Fine-tuning</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td></tr>
+            <tr><td>No-code authoring</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-green">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</td><td class="cscomp-cell-red">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }}</td></tr>
           </tbody>
         </table>
       </div>
@@ -179,7 +179,7 @@
     {{ range sort $d.capabilities.capabilities "order" }}
     <div class="cscomp-cap-section" id="cap-{{ .id }}">
       <h3 class="cscomp-cap-title"><span class="cscomp-cap-icon">{{ .icon }}</span> {{ .title }}</h3>
-      <div class="cscomp-cap-analogy">💡 <em>{{ .analogy }}</em></div>
+      <div class="cscomp-cap-analogy">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} <em>{{ .analogy }}</em></div>
       <div class="cscomp-cap-body">
         <p>{{ .what_it_is }}</p>
         <details class="cscomp-cap-when">
@@ -191,10 +191,10 @@
           <ul>{{ range .key_facts }}<li>{{ . }}</li>{{ end }}</ul>
         </div>
         <details class="cscomp-cap-gotchas">
-          <summary><strong>⚠️ Gotchas &amp; Limitations</strong></summary>
+          <summary><strong>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Gotchas &amp; Limitations</strong></summary>
           <ul>{{ range .gotchas }}<li>{{ . }}</li>{{ end }}</ul>
         </details>
-        <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Microsoft Learn docs →</a>
+        <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Microsoft Learn docs →</a>
       </div>
     </div>
     {{ end }}
@@ -220,8 +220,8 @@
     </div>
 
     <div class="cscomp-cta-row" style="margin-top:1.5rem">
-      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">🚀 Open Copilot Studio</a>
-      <a href="https://learn.microsoft.com/microsoft-copilot-studio/" target="_blank" rel="noopener" class="cscomp-cta">📚 Full documentation</a>
+      <a href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener" class="cscomp-cta">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Open Copilot Studio</a>
+      <a href="https://learn.microsoft.com/microsoft-copilot-studio/" target="_blank" rel="noopener" class="cscomp-cta">{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} Full documentation</a>
     </div>
   </div>
 
@@ -244,7 +244,7 @@
           </div>
           <p class="cscomp-prereq-check">{{ .status_check }}</p>
           <details><summary>Details</summary><p>{{ .detail }}</p>
-          <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Learn more →</a></details>
+          <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Learn more →</a></details>
         </div>
         {{ end }}
       </div>
@@ -253,18 +253,18 @@
     {{ range sort $d.governance.sections "order" }}
     <div class="cscomp-gov-section" id="gov-{{ .id }}">
       <h3 class="cscomp-gov-title"><span class="cscomp-gov-icon">{{ .icon }}</span> {{ .title }}</h3>
-      <div class="cscomp-gov-analogy">💡 <em>{{ .analogy }}</em></div>
+      <div class="cscomp-gov-analogy">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} <em>{{ .analogy }}</em></div>
       <p class="cscomp-gov-explanation">{{ .explanation }}</p>
       <div class="cscomp-gov-checklist">
-        <h4>✅ Admin Checklist</h4>
+        <h4>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Admin Checklist</h4>
         <ul>{{ range .checklist }}<li>{{ . }}</li>{{ end }}</ul>
       </div>
-      <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">📄 Microsoft Learn docs →</a>
+      <a href="{{ .learn_url }}" target="_blank" rel="noopener" class="cscomp-learn-link">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Microsoft Learn docs →</a>
     </div>
     {{ end }}
     <div class="cscomp-gov-export-row">
-      <button class="cscomp-btn cscomp-btn-primary" id="btn-export-checklist">📋 Copy All Checklists</button>
-      <button class="cscomp-btn" id="btn-reset-checklist">🔄 Reset Progress</button>
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-export-checklist">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy All Checklists</button>
+      <button class="cscomp-btn" id="btn-reset-checklist">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Reset Progress</button>
     </div>
   </div>
 
@@ -300,14 +300,14 @@
         <h4>How to Build It</h4>
         <ol>{{ range .steps }}<li>{{ . }}</li>{{ end }}</ol>
       </div>
-      {{ with .what_carries_over }}<div class="cscomp-migration-detail"><h4>✅ What Carries Over</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
+      {{ with .what_carries_over }}<div class="cscomp-migration-detail"><h4>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} What Carries Over</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
       {{ with .what_needs_rebuilding }}<div class="cscomp-migration-detail"><h4>🔨 What Needs Rebuilding</h4><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>{{ end }}
-      <div class="cscomp-pattern-tips"><h4>💡 Tips</h4><ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul></div>
+      <div class="cscomp-pattern-tips"><h4>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Tips</h4><ul>{{ range .tips }}<li>{{ . }}</li>{{ end }}</ul></div>
     </div>
     {{ end }}
 
     <div class="cscomp-export-row">
-      <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-pattern">📋 Copy Pattern as Markdown</button>
+      <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-pattern">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Pattern as Markdown</button>
     </div>
 
     <!-- Anti-Patterns (#14) -->
@@ -319,7 +319,7 @@
         <div class="cscomp-antipattern-top"><span>{{ .icon }}</span> <strong>{{ .title }}</strong></div>
         <p class="cscomp-antipattern-desc">{{ .description }}</p>
         <div class="cscomp-antipattern-why"><strong>Why it fails:</strong> {{ .why_bad }}</div>
-        <div class="cscomp-antipattern-fix"><strong>✅ Instead:</strong> {{ .instead }}</div>
+        <div class="cscomp-antipattern-fix"><strong>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Instead:</strong> {{ .instead }}</div>
       </div>
       {{ end }}
     </div>
@@ -358,15 +358,15 @@
     </div>
 
     <div class="cscomp-planner-output" id="planner-output" style="display:none">
-      <h3>📋 Your Agent Build Plan</h3>
+      <h3>{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Your Agent Build Plan</h3>
       <div id="planner-result"></div>
       <div class="cscomp-export-row">
-        <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-plan">📋 Copy Plan as Markdown</button>
-        <button class="cscomp-btn" id="btn-restart-planner">🔄 Start Over</button>
+        <button class="cscomp-btn cscomp-btn-primary" id="btn-copy-plan">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Plan as Markdown</button>
+        <button class="cscomp-btn" id="btn-restart-planner">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Start Over</button>
       </div>
     </div>
 
-    <h2 class="cscomp-section-title" style="margin-top:2.5rem">💰 Credit Estimator</h2>
+    <h2 class="cscomp-section-title" style="margin-top:2.5rem">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Credit Estimator</h2>
     <p class="cscomp-tip">Estimate your monthly Copilot Studio credit consumption.</p>
 
     <div class="cscomp-estimator">
@@ -409,7 +409,7 @@
       {{ end }}
 
       <!-- Changelog (#9) -->
-      <h2 class="cscomp-section-title" style="margin-top:2rem">📝 What's New in Copilot Studio</h2>
+      <h2 class="cscomp-section-title" style="margin-top:2rem">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} What's New in Copilot Studio</h2>
       {{ range $d.changelog.entries }}
       <details class="cscomp-faq-item">
         <summary><strong>{{ .date }}</strong></summary>

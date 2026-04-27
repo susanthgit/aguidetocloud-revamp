@@ -43,19 +43,19 @@
     {{/* Scenario quick-start buttons (#1) */}}
     <div class="aimap-scenarios">
       <span class="aimap-scenarios-label">Quick start:</span>
-      <button class="aimap-scenario-btn" data-scenario="enterprise">🏢 Enterprise AI evaluation</button>
-      <button class="aimap-scenario-btn" data-scenario="coding">💻 Coding assistant</button>
-      <button class="aimap-scenario-btn" data-scenario="images">🎨 Image generation</button>
+      <button class="aimap-scenario-btn" data-scenario="enterprise">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise AI evaluation</button>
+      <button class="aimap-scenario-btn" data-scenario="coding">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Coding assistant</button>
+      <button class="aimap-scenario-btn" data-scenario="images">{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }} Image generation</button>
       <button class="aimap-scenario-btn" data-scenario="free">🆓 Free options only</button>
-      <button class="aimap-scenario-btn" data-scenario="agents">🤖 AI agents</button>
+      <button class="aimap-scenario-btn" data-scenario="agents">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI agents</button>
       <button class="aimap-scenario-btn" data-scenario="voice">🎙️ Voice & audio</button>
-      <button class="aimap-scenario-btn" data-scenario="documents">📄 Document processing</button>
+      <button class="aimap-scenario-btn" data-scenario="documents">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Document processing</button>
     </div>
 
     {{/* View toggle: cards vs heatmap (#7) */}}
     <div class="aimap-view-toggle">
       <button class="aimap-view-btn active" data-view="cards" title="Card view">🃏 Cards</button>
-      <button class="aimap-view-btn" data-view="heatmap" title="Heatmap view">📊 Heatmap</button>
+      <button class="aimap-view-btn" data-view="heatmap" title="Heatmap view">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Heatmap</button>
     </div>
 
     <div class="aimap-explore-layout">
@@ -85,48 +85,48 @@
           <div class="aimap-filter-options" id="filter-pricing">
             <label class="aimap-filter-check"><input type="checkbox" value="free"> 🆓 Free tier available</label>
             <label class="aimap-filter-check"><input type="checkbox" value="pay-per-use"> 💳 Pay-per-use</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="subscription"> 📅 Subscription</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="subscription"> {{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Subscription</label>
           </div>
         </div>
 
         <div class="aimap-filter-group">
           <h4>Capabilities</h4>
           <div class="aimap-filter-options" id="filter-capabilities">
-            <label class="aimap-filter-check"><input type="checkbox" value="text_generation"> 💬 Text</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="code_generation"> 💻 Code</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="image_generation"> 🎨 Image</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="text_generation"> {{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Text</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="code_generation"> {{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Code</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="image_generation"> {{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }} Image</label>
             <label class="aimap-filter-check"><input type="checkbox" value="audio_speech"> 🎙️ Audio</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="video_generation"> 🎬 Video</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="reasoning"> 🧠 Reasoning</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="video_generation"> {{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} Video</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="reasoning"> {{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }} Reasoning</label>
           </div>
         </div>
 
         <div class="aimap-filter-group">
           <h4>Enterprise</h4>
           <div class="aimap-filter-options" id="filter-enterprise">
-            <label class="aimap-filter-check"><input type="checkbox" value="soc2"> 🔒 SOC 2</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="hipaa"> 🏥 HIPAA</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="soc2"> {{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} SOC 2</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="hipaa"> {{ partial "icon.html" (dict "name" "hospital" "size" 14 "stroke" 1.5) }} HIPAA</label>
             <label class="aimap-filter-check"><input type="checkbox" value="gdpr"> 🇪🇺 GDPR</label>
             <label class="aimap-filter-check"><input type="checkbox" value="data_residency"> 📍 Data residency</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="private_networking"> 🔐 Private network</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="private_networking"> {{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Private network</label>
           </div>
         </div>
 
         <div class="aimap-filter-group">
           <h4>Integration</h4>
           <div class="aimap-filter-options" id="filter-integration">
-            <label class="aimap-filter-check"><input type="checkbox" value="integration_m365"> 📧 Microsoft 365</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="integration_azure"> ☁️ Azure</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="integration_aws"> ☁️ AWS</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="integration_gcp"> ☁️ Google Cloud</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_m365"> {{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Microsoft 365</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_azure"> {{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Azure</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_aws"> {{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} AWS</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="integration_gcp"> {{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Google Cloud</label>
           </div>
         </div>
 
         <div class="aimap-filter-group">
           <h4>Status</h4>
           <div class="aimap-filter-options" id="filter-status">
-            <label class="aimap-filter-check"><input type="checkbox" value="ga"> ✅ Generally Available</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="preview"> 🧪 Preview / Beta</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="ga"> {{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Generally Available</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="preview"> {{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} Preview / Beta</label>
           </div>
         </div>
       </aside>
@@ -143,10 +143,10 @@
               <option value="category">Category</option>
             </select>
           </div>
-          <button class="aimap-compare-btn" id="aimap-open-compare" disabled>⚖️ Compare (<span id="aimap-compare-count">0</span>)</button>
+          <button class="aimap-compare-btn" id="aimap-open-compare" disabled>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Compare (<span id="aimap-compare-count">0</span>)</button>
         </div>
 
-        <button class="aimap-mobile-filter-toggle" id="aimap-mobile-filter-toggle">🔍 Filters</button>
+        <button class="aimap-mobile-filter-toggle" id="aimap-mobile-filter-toggle">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Filters</button>
 
         <div class="aimap-grid" id="aimap-grid"></div>
         <div class="aimap-heatmap" id="aimap-heatmap" style="display:none;"></div>
@@ -168,16 +168,16 @@
   {{/* ============ TAB 2: COMPARE ============ */}}
   <div class="aimap-panel" id="panel-compare" role="tabpanel">
     <div class="aimap-compare-header">
-      <h2>⚖️ Compare Services Side-by-Side</h2>
+      <h2>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Compare Services Side-by-Side</h2>
       <p>Select 2–4 services to compare, or use a preset below.</p>
       {{/* Comparison presets (#9) */}}
       <div class="aimap-presets">
         <span class="aimap-presets-label">Presets:</span>
-        <button class="aimap-preset-btn" data-preset="big3-llm">🧠 Big 3 LLM Platforms</button>
-        <button class="aimap-preset-btn" data-preset="agents">🤖 Agent Builders</button>
-        <button class="aimap-preset-btn" data-preset="coding">💻 Coding Assistants</button>
-        <button class="aimap-preset-btn" data-preset="consumer-chat">💬 Consumer Chat AIs</button>
-        <button class="aimap-preset-btn" data-preset="documents">📄 Document Processing</button>
+        <button class="aimap-preset-btn" data-preset="big3-llm">{{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }} Big 3 LLM Platforms</button>
+        <button class="aimap-preset-btn" data-preset="agents">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} Agent Builders</button>
+        <button class="aimap-preset-btn" data-preset="coding">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Coding Assistants</button>
+        <button class="aimap-preset-btn" data-preset="consumer-chat">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Consumer Chat AIs</button>
+        <button class="aimap-preset-btn" data-preset="documents">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Document Processing</button>
       </div>
       <div class="aimap-compare-pickers" id="aimap-compare-pickers"></div>
     </div>
@@ -185,8 +185,8 @@
       <p class="aimap-compare-empty" id="aimap-compare-empty">Select at least 2 services to compare.</p>
     </div>
     <div class="aimap-compare-actions" id="aimap-compare-actions" style="display:none;">
-      <button class="aimap-btn" id="aimap-copy-compare">📋 Copy as Markdown</button>
-      <button class="aimap-btn" id="aimap-share-compare">🔗 Share comparison</button>
+      <button class="aimap-btn" id="aimap-copy-compare">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy as Markdown</button>
+      <button class="aimap-btn" id="aimap-share-compare">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share comparison</button>
     </div>
   </div>
 
@@ -194,7 +194,7 @@
   <div class="aimap-panel" id="panel-quiz" role="tabpanel">
     <div class="aimap-quiz-container" id="aimap-quiz-container">
       <div class="aimap-quiz-intro" id="aimap-quiz-intro">
-        <h2>🧭 Which AI Service Should You Use?</h2>
+        <h2>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} Which AI Service Should You Use?</h2>
         <p>Answer 7 quick questions and get a personalised recommendation based on your needs, budget, and environment.</p>
         <button class="aimap-btn aimap-btn-primary" id="aimap-quiz-start">Start the Quiz →</button>
       </div>
@@ -207,8 +207,8 @@
         <h2>Your Top Recommendations</h2>
         <div id="aimap-quiz-results-list"></div>
         <div class="aimap-quiz-results-actions">
-          <button class="aimap-btn" id="aimap-quiz-retake">🔄 Retake Quiz</button>
-          <button class="aimap-btn" id="aimap-quiz-compare-results">⚖️ Compare These</button>
+          <button class="aimap-btn" id="aimap-quiz-retake">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Retake Quiz</button>
+          <button class="aimap-btn" id="aimap-quiz-compare-results">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Compare These</button>
         </div>
       </div>
     </div>
@@ -216,7 +216,7 @@
 
   {{/* ============ TAB 4: PRICING + COST ESTIMATOR ============ */}}
   <div class="aimap-panel" id="panel-pricing" role="tabpanel">
-    <h2>💰 Pricing Snapshot</h2>
+    <h2>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Pricing Snapshot</h2>
     <p class="aimap-pricing-disclaimer">Pricing as of April 2026. Always verify on vendor pricing pages. Prices in USD.</p>
 
     {{/* Cost estimator (#13) */}}
@@ -263,7 +263,7 @@
 
   {{/* ============ TAB 5: GLOSSARY ============ */}}
   <div class="aimap-panel" id="panel-glossary" role="tabpanel">
-    <h2>📚 AI Glossary</h2>
+    <h2>{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} AI Glossary</h2>
     <p>Quick reference for AI terms used throughout this tool — in plain English.</p>
     <input type="text" id="aimap-glossary-search" class="aimap-search" placeholder="Search terms..." aria-label="Search glossary">
     <div class="aimap-glossary-list" id="aimap-glossary-list"></div>

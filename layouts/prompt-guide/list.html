@@ -48,7 +48,7 @@
       {{/* Completion certificate (V2 — hidden until all 8 done) */}}
       <div class="pguide-certificate" id="pguide-certificate" style="display:none">
         <div class="pguide-cert-inner">
-          <span class="pguide-cert-badge">🎓</span>
+          <span class="pguide-cert-badge">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span>
           <h3>Congratulations! You've explored all 8 techniques!</h3>
           <p>You now understand the core prompt engineering skills. Generate your certificate:</p>
           <div class="pguide-cert-form">
@@ -63,7 +63,7 @@
               <p class="pguide-cert-detail">Has completed all 8 prompt engineering techniques:<br>Clear Instructions · Role · Context · Format · Examples · Step-by-Step · Constraints · Audience & Tone</p>
               <p class="pguide-cert-date" id="pguide-cert-date"></p>
             </div>
-            <button class="pguide-btn pguide-btn-secondary" id="pguide-cert-copy">📋 Copy as Text</button>
+            <button class="pguide-btn pguide-btn-secondary" id="pguide-cert-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy as Text</button>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
       </div>
 
       {{/* Learning path hint (fix #12) */}}
-      <p class="pguide-path-hint">💡 <strong>Recommended order:</strong> Start with the 4 beginner techniques (top row), then move to intermediate.</p>
+      <p class="pguide-path-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} <strong>Recommended order:</strong> Start with the 4 beginner techniques (top row), then move to intermediate.</p>
 
       {{/* Technique Cards Grid — fix #2: strip subtitle after "—" */}}
       <div class="pguide-grid" id="pguide-grid">
@@ -85,7 +85,7 @@
           <div class="pguide-card-header">
             <span class="pguide-card-emoji">{{ .Params.emoji }}</span>
             <span class="pguide-card-num">#{{ .Weight }}</span>
-            <span class="pguide-card-check" aria-label="Completed">✅</span>
+            <span class="pguide-card-check" aria-label="Completed">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span>
           </div>
           <h2 class="pguide-card-title">{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</h2>
           <p class="pguide-card-desc">{{ .Description | truncate 100 }}</p>
@@ -100,32 +100,32 @@
 
       {{/* Combine techniques callout (fix #9) */}}
       <div class="pguide-combine-callout">
-        <h3>🧩 The Real Power: Combining Techniques</h3>
+        <h3>{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} The Real Power: Combining Techniques</h3>
         <p>The best prompts combine 3-4 techniques. Once you've learned the basics, use the <strong>Prompt Builder</strong> tab to combine them step by step.</p>
         <div class="pguide-combine-example">
           <span class="pguide-combine-tag">🎭 Role</span>
           <span class="pguide-combine-plus">+</span>
-          <span class="pguide-combine-tag">📋 Context</span>
+          <span class="pguide-combine-tag">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Context</span>
           <span class="pguide-combine-plus">+</span>
-          <span class="pguide-combine-tag">🎯 Instructions</span>
+          <span class="pguide-combine-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Instructions</span>
           <span class="pguide-combine-plus">+</span>
-          <span class="pguide-combine-tag">📐 Format</span>
+          <span class="pguide-combine-tag">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Format</span>
           <span class="pguide-combine-eq">=</span>
-          <span class="pguide-combine-result">🚀 Great prompt</span>
+          <span class="pguide-combine-result">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Great prompt</span>
         </div>
       </div>
 
       {{/* Ecosystem + Print (fix #18) */}}
       <div class="pguide-ecosystem">
-        <h2>🔗 Your Prompt Engineering Toolkit</h2>
+        <h2>{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Your Prompt Engineering Toolkit</h2>
         <div class="pguide-eco-grid">
-          <a href="/prompt-guide/" class="pguide-eco-card pguide-eco-active"><span>🎓</span><strong>Guide</strong><p>Learn techniques</p></a>
-          <a href="/prompt-polisher/" class="pguide-eco-card"><span>✨</span><strong>Polisher</strong><p>Score & rewrite</p></a>
-          <a href="/prompt-tester/" class="pguide-eco-card"><span>🔬</span><strong>Tester</strong><p>A/B compare</p></a>
-          <a href="/prompts/" class="pguide-eco-card"><span>💡</span><strong>Library</strong><p>84 ready prompts</p></a>
+          <a href="/prompt-guide/" class="pguide-eco-card pguide-eco-active"><span>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span><strong>Guide</strong><p>Learn techniques</p></a>
+          <a href="/prompt-polisher/" class="pguide-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Polisher</strong><p>Score & rewrite</p></a>
+          <a href="/prompt-tester/" class="pguide-eco-card"><span>{{ partial "icon.html" (dict "name" "microscope" "size" 14 "stroke" 1.5) }}</span><strong>Tester</strong><p>A/B compare</p></a>
+          <a href="/prompts/" class="pguide-eco-card"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Library</strong><p>84 ready prompts</p></a>
         </div>
-        <p class="tool-eco-feedback">💬 Got feedback? <a href="/feedback/">Share it here →</a></p>
-        <button class="pguide-btn pguide-btn-secondary pguide-print-btn" onclick="window.print()">🖨️ Print Cheat Sheet</button>
+        <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
+        <button class="pguide-btn pguide-btn-secondary pguide-print-btn" onclick="window.print()">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print Cheat Sheet</button>
       </div>
     </div>
 
@@ -136,20 +136,20 @@
 
       {{/* ══ Quick Win Demo (shows value immediately) ══ */}}
       <div class="pguide-quickwin">
-        <h2>⚡ See the Difference One Technique Makes</h2>
+        <h2>{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} See the Difference One Technique Makes</h2>
         <div class="pguide-ba-cards">
           <div class="pguide-ba-card pguide-ba-before">
-            <span class="pguide-ba-label">❌ Before</span>
+            <span class="pguide-ba-label">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Before</span>
             <p>Help me with my presentation</p>
           </div>
           <div class="pguide-ba-arrow">→</div>
           <div class="pguide-ba-card pguide-ba-after">
-            <span class="pguide-ba-label">✅ After (using 3 techniques)</span>
+            <span class="pguide-ba-label">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} After (using 3 techniques)</span>
             <p>You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides.</p>
-            <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">📋</button>
+            <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</button>
           </div>
         </div>
-        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>🎯 Instructions</strong> + <strong>🚧 Constraints</strong>. Try building your own below 👇</p>
+        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Instructions</strong> + <strong>🚧 Constraints</strong>. Try building your own below 👇</p>
       </div>
 
       <div class="pguide-builder-layout">
@@ -160,13 +160,13 @@
             <label>Start with a template:</label>
             <select id="pguide-template-select" aria-label="Prompt template">
               <option value="">— Choose a template —</option>
-              <option value="email">📧 Professional Email</option>
-              <option value="summary">📋 Meeting Summary</option>
-              <option value="analysis">📊 Data Analysis</option>
-              <option value="troubleshoot">🔧 Troubleshooting</option>
-              <option value="presentation">📽️ Presentation Content</option>
-              <option value="document">📄 Document Draft</option>
-              <option value="brainstorm">💡 Brainstorming Ideas</option>
+              <option value="email">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Professional Email</option>
+              <option value="summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Meeting Summary</option>
+              <option value="analysis">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Data Analysis</option>
+              <option value="troubleshoot">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Troubleshooting</option>
+              <option value="presentation">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} Presentation Content</option>
+              <option value="document">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Document Draft</option>
+              <option value="brainstorm">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Brainstorming Ideas</option>
             </select>
           </div>
           {{/* Step 1 */}}
@@ -174,7 +174,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">1</span>
               <label for="pguide-goal">What's your goal?</label>
-              <a href="/prompt-guide/give-clear-instructions/" class="pguide-step-technique">🎯 Learn this →</a>
+              <a href="/prompt-guide/give-clear-instructions/" class="pguide-step-technique">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Learn this →</a>
             </div>
             <textarea id="pguide-goal" class="pguide-input" rows="4" placeholder="e.g. Draft a follow-up email to a client who hasn't responded to our proposal in 2 weeks"></textarea>
           </div>
@@ -192,7 +192,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">3</span>
               <label for="pguide-context">Add context <span class="pguide-optional">(optional)</span></label>
-              <a href="/prompt-guide/add-context/" class="pguide-step-technique">📋 Learn this →</a>
+              <a href="/prompt-guide/add-context/" class="pguide-step-technique">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Learn this →</a>
             </div>
             <textarea id="pguide-context" class="pguide-input" rows="4" placeholder="e.g. The client is a mid-sized logistics company. We proposed a $45K cloud migration project."></textarea>
           </div>
@@ -201,7 +201,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">4</span>
               <label>Define the format</label>
-              <a href="/prompt-guide/define-the-format/" class="pguide-step-technique">📐 Learn this →</a>
+              <a href="/prompt-guide/define-the-format/" class="pguide-step-technique">{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Learn this →</a>
             </div>
             <div class="pguide-format-options">
               <label class="pguide-radio"><input type="radio" name="pguide-format" value=""> None</label>
@@ -259,14 +259,14 @@
         {{/* Right: Live Preview */}}
         <div class="pguide-builder-preview">
           <div class="pguide-preview-sticky">
-            <h3>📝 Your Prompt</h3>
+            <h3>{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Your Prompt</h3>
             <div class="pguide-preview-box" id="pguide-preview">
               <p class="pguide-preview-placeholder">Start filling in the steps to see your prompt build in real time...</p>
             </div>
             <div class="pguide-preview-actions">
-              <button class="pguide-btn pguide-btn-primary" id="pguide-copy-btn">📋 Copy Prompt</button>
-              <button class="pguide-btn pguide-btn-secondary" id="pguide-polish-btn">✨ Polish It →</button>
-              <button class="pguide-btn pguide-btn-secondary" id="pguide-similar-btn">💡 Find Similar →</button>
+              <button class="pguide-btn pguide-btn-primary" id="pguide-copy-btn">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Prompt</button>
+              <button class="pguide-btn pguide-btn-secondary" id="pguide-polish-btn">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Polish It →</button>
+              <button class="pguide-btn pguide-btn-secondary" id="pguide-similar-btn">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Find Similar →</button>
             </div>
             <div class="pguide-preview-stats">
               <span>Techniques used: <strong id="pguide-tech-count">0</strong>/6</span>
@@ -282,7 +282,7 @@
          ══════════════════════════════════════════ */}}
     <div class="pguide-panel" id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz">
       <div class="pguide-quiz-container">
-        <h2>🧭 Which Technique Do You Need?</h2>
+        <h2>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} Which Technique Do You Need?</h2>
         <p>Answer 5 quick questions about your situation — we'll recommend the best techniques.</p>
         <div class="pguide-quiz-body" id="pguide-quiz-body">
           {{/* Questions injected by JS */}}
@@ -300,7 +300,7 @@
       <div class="pguide-challenge-container">
         <h2>🏆 Prompt Challenges</h2>
         <div class="pguide-challenge-hero-callout">
-          <span class="pguide-challenge-hero-icon">⚡</span>
+          <span class="pguide-challenge-hero-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</span>
           <div>
             <strong>Real-time AI technique detection</strong>
             <p>Type your prompt and watch us detect which techniques you're using — scored live as you type. No button to press, no waiting.</p>

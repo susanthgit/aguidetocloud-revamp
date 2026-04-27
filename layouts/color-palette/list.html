@@ -68,10 +68,10 @@
 
     {{/* Harmony mode selector + Generate button */}}
     <div class="palette-harmony-bar">
-      <button class="palette-btn palette-btn-primary palette-generate-btn" id="palette-generate-btn">🎲 Generate</button>
+      <button class="palette-btn palette-btn-primary palette-generate-btn" id="palette-generate-btn">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Generate</button>
       <label class="palette-harmony-label">Harmony</label>
       <div class="palette-harmony-pills" id="palette-harmony-pills">
-        <button class="palette-pill active" data-mode="random">🎲 Random</button>
+        <button class="palette-pill active" data-mode="random">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Random</button>
         <button class="palette-pill" data-mode="complementary">↔️ Complementary</button>
         <button class="palette-pill" data-mode="analogous">🌈 Analogous</button>
         <button class="palette-pill" data-mode="triadic">△ Triadic</button>
@@ -92,12 +92,12 @@
     <div class="palette-actions">
       <button class="palette-btn" id="palette-add-swatch" title="Add swatch">＋ Add</button>
       <button class="palette-btn" id="palette-remove-swatch" title="Remove swatch">− Remove</button>
-      <button class="palette-btn" id="palette-copy-all" title="Copy all hex codes">📋 Copy All</button>
+      <button class="palette-btn" id="palette-copy-all" title="Copy all hex codes">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy All</button>
       <div class="palette-actions-spacer"></div>
       <button class="palette-btn" id="palette-save-fav">⭐ Save</button>
-      <button class="palette-btn" id="palette-share">🔗 Share</button>
+      <button class="palette-btn" id="palette-share">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
       <div class="palette-export-wrap">
-        <button class="palette-btn palette-btn-primary" id="palette-export-btn">📥 Export ▾</button>
+        <button class="palette-btn palette-btn-primary" id="palette-export-btn">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Export ▾</button>
         <div class="palette-export-menu" id="palette-export-menu">
           <button data-fmt="css">CSS Variables</button>
           <button data-fmt="scss">SCSS Variables</button>
@@ -107,7 +107,7 @@
           <button data-fmt="svg">SVG</button>
         </div>
       </div>
-      <button class="palette-btn" id="palette-print" title="Print palette">🖨️</button>
+      <button class="palette-btn" id="palette-print" title="Print palette">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</button>
     </div>
 
     {{/* Expanded colour detail (hidden by default, shown on swatch click) */}}
@@ -164,7 +164,7 @@
   <div class="palette-panel" id="panel-extract" role="tabpanel">
     <div class="palette-extract-layout">
       <div class="palette-extract-upload" id="palette-drop-zone">
-        <div class="palette-extract-icon">🖼️</div>
+        <div class="palette-extract-icon">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }}</div>
         <p class="palette-extract-text">Drop an image here or click to upload</p>
         <p class="palette-extract-sub">JPEG, PNG, WebP supported</p>
         <input type="file" id="palette-image-input" accept="image/jpeg,image/png,image/webp" hidden>
@@ -234,7 +234,7 @@
           <div class="palette-badge" data-level="aaa-normal"><span class="palette-badge-label">AAA Normal</span><span class="palette-badge-status">✓ Pass</span></div>
           <div class="palette-badge" data-level="aaa-large"><span class="palette-badge-label">AAA Large</span><span class="palette-badge-status">✓ Pass</span></div>
         </div>
-        <button class="palette-btn" id="palette-suggest-fix">💡 Suggest Fix</button>
+        <button class="palette-btn" id="palette-suggest-fix">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Suggest Fix</button>
       </div>
 
       <div class="palette-contrast-preview" id="palette-contrast-preview">
@@ -270,12 +270,12 @@
         <button class="palette-pill" data-cat="neon">💜 Neon</button>
         <button class="palette-pill" data-cat="pastel">🍬 Pastel</button>
         <button class="palette-pill" data-cat="retro">📻 Retro</button>
-        <button class="palette-pill" data-cat="corporate">💼 Corporate</button>
+        <button class="palette-pill" data-cat="corporate">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} Corporate</button>
         <button class="palette-pill" data-cat="dark">🌙 Dark Mode</button>
         <button class="palette-pill" data-cat="warm">🔥 Warm</button>
         <button class="palette-pill" data-cat="cool">❄️ Cool</button>
-        <button class="palette-pill" data-cat="teams">💬 Teams</button>
-        <button class="palette-pill" data-cat="dashboard">📊 Dashboard</button>
+        <button class="palette-pill" data-cat="teams">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Teams</button>
+        <button class="palette-pill" data-cat="dashboard">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Dashboard</button>
       </div>
     </div>
 

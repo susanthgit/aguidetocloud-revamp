@@ -17,15 +17,15 @@
       <h1 class="ft-hero-title">Blog</h1>
       <p class="ft-hero-subtitle">Practical guides for IT pros — Microsoft 365 Copilot, Azure, AI, licensing, and more. Written in plain English by <a href="/about/">Susanth</a>.</p>
       <div class="ft-hero-meta">
-        <span class="ft-hero-stat">📝 {{ len .Pages }} articles</span>
-        <span class="ft-hero-stat">☕ Long-form guides</span>
-        <span class="ft-hero-stat">🔄 Updated regularly</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} {{ len .Pages }} articles</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Long-form guides</span>
+        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Updated regularly</span>
       </div>
     </header>
 
     {{/* Search */}}
     <div class="zt-sg-search-wrap">
-      <input type="text" id="blog-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search blog posts" class="zt-sg-search">
+      <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off" aria-label="Search blog posts" class="zt-sg-search">
     </div>
 
     {{/* Article cards */}}

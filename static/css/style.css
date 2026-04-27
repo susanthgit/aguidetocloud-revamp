@@ -1380,6 +1380,9 @@ body.is-home .section {
   flex-wrap: wrap;
 }
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   color: var(--text-muted);
   font-size: 0.9rem;
 }

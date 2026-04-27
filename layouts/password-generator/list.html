@@ -44,13 +44,13 @@
     {{/* ── Quick Start ── */}}
     <div class="pwgen-quickstart">
       <div class="pwgen-quickstart-grid" id="pwgen-quickstart">
-        <button class="pwgen-qs-card" data-preset="banking"><span class="pwgen-qs-icon">🏦</span><span class="pwgen-qs-name">Strong for banking</span></button>
-        <button class="pwgen-qs-card" data-preset="pin"><span class="pwgen-qs-icon">📱</span><span class="pwgen-qs-name">Phone PIN</span></button>
-        <button class="pwgen-qs-card" data-preset="memorable"><span class="pwgen-qs-icon">🧠</span><span class="pwgen-qs-name">Easy to remember</span></button>
-        <button class="pwgen-qs-card" data-preset="wifi"><span class="pwgen-qs-icon">📶</span><span class="pwgen-qs-name">Wi-Fi password</span></button>
-        <button class="pwgen-qs-card" data-preset="entra"><span class="pwgen-qs-icon">🔒</span><span class="pwgen-qs-name">Entra ID policy</span></button>
-        <button class="pwgen-qs-card" data-preset="m365admin"><span class="pwgen-qs-icon">🛡️</span><span class="pwgen-qs-name">M365 Admin</span></button>
-        <button class="pwgen-qs-card" data-preset="service"><span class="pwgen-qs-icon">⚙️</span><span class="pwgen-qs-name">Service account</span></button>
+        <button class="pwgen-qs-card" data-preset="banking"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Strong for banking</span></button>
+        <button class="pwgen-qs-card" data-preset="pin"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Phone PIN</span></button>
+        <button class="pwgen-qs-card" data-preset="memorable"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Easy to remember</span></button>
+        <button class="pwgen-qs-card" data-preset="wifi"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "wifi" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Wi-Fi password</span></button>
+        <button class="pwgen-qs-card" data-preset="entra"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Entra ID policy</span></button>
+        <button class="pwgen-qs-card" data-preset="m365admin"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">M365 Admin</span></button>
+        <button class="pwgen-qs-card" data-preset="service"><span class="pwgen-qs-icon">{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }}</span><span class="pwgen-qs-name">Service account</span></button>
       </div>
     </div>
 
@@ -58,9 +58,9 @@
     <div class="pwgen-section">
       <div class="pwgen-section-title">Mode</div>
       <div class="pwgen-mode-pills" id="pwgen-mode-pills">
-        <button class="pwgen-pill active" data-mode="random">🎲 Random</button>
-        <button class="pwgen-pill" data-mode="passphrase">📖 Passphrase</button>
-        <button class="pwgen-pill" data-mode="pin">🔢 PIN</button>
+        <button class="pwgen-pill active" data-mode="random">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Random</button>
+        <button class="pwgen-pill" data-mode="passphrase">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Passphrase</button>
+        <button class="pwgen-pill" data-mode="pin">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} PIN</button>
         <button class="pwgen-pill" data-mode="pronounceable">🗣️ Pronounceable</button>
         <button class="pwgen-pill" data-mode="recipe">🧾 Recipe</button>
       </div>
@@ -74,7 +74,7 @@
       </div>
       <div class="pwgen-password-wrap" id="pwgen-password-wrap">
         <div class="pwgen-password" id="pwgen-password" aria-live="polite" aria-label="Generated password">••••••••••••</div>
-        <button class="pwgen-eye-btn" id="pwgen-eye-btn" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+        <button class="pwgen-eye-btn" id="pwgen-eye-btn" title="Show/hide password" aria-label="Toggle password visibility">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}</button>
       </div>
       <div class="pwgen-strength-bar-wrap">
         <div class="pwgen-strength-bar" id="pwgen-strength-bar"></div>
@@ -85,12 +85,12 @@
         <span class="pwgen-crack-time" id="pwgen-crack-time"></span>
       </div>
       <div class="pwgen-display-actions">
-        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-copy-btn" aria-label="Copy password">📋 Copy</button>
-        <button class="pwgen-btn" id="pwgen-regen-btn" aria-label="Generate new password">🎲 Regenerate</button>
-        <button class="pwgen-btn" id="pwgen-bulk-btn" aria-label="Generate multiple passwords">📦 Generate 10</button>
-        <button class="pwgen-btn" id="pwgen-qr-btn" aria-label="Create QR code of password">📱 QR Code</button>
+        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-copy-btn" aria-label="Copy password">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
+        <button class="pwgen-btn" id="pwgen-regen-btn" aria-label="Generate new password">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Regenerate</button>
+        <button class="pwgen-btn" id="pwgen-bulk-btn" aria-label="Generate multiple passwords">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Generate 10</button>
+        <button class="pwgen-btn" id="pwgen-qr-btn" aria-label="Create QR code of password">{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }} QR Code</button>
       </div>
-      <div class="pwgen-tip" id="pwgen-tip">✅ Now store this in your password manager — <strong>never reuse passwords</strong></div>
+      <div class="pwgen-tip" id="pwgen-tip">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Now store this in your password manager — <strong>never reuse passwords</strong></div>
     </div>
 
     {{/* ── Controls ── */}}
@@ -132,7 +132,7 @@
             <span>10</span>
           </div>
         </div>
-        <div class="pwgen-word-hint" id="pwgen-word-hint">💡 5+ words recommended for strong security</div>
+        <div class="pwgen-word-hint" id="pwgen-word-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} 5+ words recommended for strong security</div>
         <div class="pwgen-section-title" style="margin-top:1rem">Options</div>
         <div class="pwgen-field">
           <label class="pwgen-label" for="pwgen-separator">Word Separator</label>
@@ -211,7 +211,7 @@
         <div class="pwgen-section-title">Bulk Generated Passwords</div>
         <div class="pwgen-bulk-list" id="pwgen-bulk-list"></div>
         <div class="pwgen-bulk-actions">
-          <button class="pwgen-btn" id="pwgen-bulk-copy-all">📋 Copy All</button>
+          <button class="pwgen-btn" id="pwgen-bulk-copy-all">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy All</button>
           <button class="pwgen-btn" id="pwgen-bulk-download">⬇ Download .txt</button>
           <button class="pwgen-btn" id="pwgen-bulk-close">✕ Close</button>
         </div>
@@ -238,10 +238,10 @@
       <div class="pwgen-section-title">Enter a password to analyse</div>
       <div class="pwgen-password-input-wrap">
         <input type="password" class="pwgen-input pwgen-check-input" id="pwgen-check-input" placeholder="Type or paste a password…" autocomplete="off" spellcheck="false" aria-label="Password to check">
-        <button class="pwgen-eye-btn" id="pwgen-check-eye" title="Show/hide password" aria-label="Toggle password visibility">👁️</button>
+        <button class="pwgen-eye-btn" id="pwgen-check-eye" title="Show/hide password" aria-label="Toggle password visibility">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }}</button>
       </div>
       <div class="pwgen-privacy-badge">
-        <span>🛡️</span> Your password is analysed locally — <strong>never sent to our servers</strong>
+        <span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span> Your password is analysed locally — <strong>never sent to our servers</strong>
       </div>
     </div>
 
@@ -271,7 +271,7 @@
 
       {{/* Warnings */}}
       <div class="pwgen-section" id="pwgen-warnings-section" style="display:none">
-        <div class="pwgen-section-title">⚠️ Pattern Warnings</div>
+        <div class="pwgen-section-title">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Pattern Warnings</div>
         <div class="pwgen-warnings" id="pwgen-warnings"></div>
       </div>
 
@@ -289,7 +289,7 @@
 
       {{/* Suggestions */}}
       <div class="pwgen-section" id="pwgen-suggestions-section" style="display:none">
-        <div class="pwgen-section-title">💡 Suggestions</div>
+        <div class="pwgen-section-title">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Suggestions</div>
         <div class="pwgen-suggestions" id="pwgen-suggestions"></div>
       </div>
 
@@ -309,10 +309,10 @@
       <div class="pwgen-pp-chips" id="pwgen-pp-chips" aria-label="Passphrase words"></div>
       <div class="pwgen-pp-full" id="pwgen-pp-full" aria-live="polite"></div>
       <div class="pwgen-pp-entropy" id="pwgen-pp-entropy"></div>
-      <div class="pwgen-word-hint" id="pwgen-pp-word-hint">💡 5+ words recommended for strong security</div>
+      <div class="pwgen-word-hint" id="pwgen-pp-word-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} 5+ words recommended for strong security</div>
       <div class="pwgen-pp-actions">
-        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-pp-copy">📋 Copy Passphrase</button>
-        <button class="pwgen-btn" id="pwgen-pp-reroll">🎲 Reroll All</button>
+        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-pp-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Passphrase</button>
+        <button class="pwgen-btn" id="pwgen-pp-reroll">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Reroll All</button>
         <button class="pwgen-btn" id="pwgen-pp-add-word">+ Add Word</button>
         <button class="pwgen-btn" id="pwgen-pp-remove-word">− Remove Word</button>
       </div>

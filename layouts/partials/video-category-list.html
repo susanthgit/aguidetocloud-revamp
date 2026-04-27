@@ -3,12 +3,13 @@
   Used by all 6 video section list.html templates.
   Eliminates 6× duplication.
 
-  Usage: {{ partial "video-category-list.html" (dict "page" . "title" "AI & Copilot Tutorials" "emoji" "🤖") }}
+  Usage: {{ partial "video-category-list.html" (dict "page" . "title" "AI & Copilot Tutorials" "icon" "robot") }}
 */}}
 
 {{ $page := .page }}
 {{ $title := .title }}
-{{ $emoji := .emoji }}
+{{ $emoji := .emoji | default "" }}
+{{ $icon := .icon | default "" }}
 
 <div class="zt-reading zt-reading--vid">
 
@@ -19,7 +20,7 @@
   <div class="zt-reading-content zt-vid-landing">
 
     <header class="ft-hero">
-      <h1 class="ft-hero-title">{{ $emoji }} {{ $title }}</h1>
+      <h1 class="ft-hero-title">{{ if $icon }}{{ partial "icon.html" (dict "name" $icon "size" 20) }}{{ else }}{{ $emoji }}{{ end }} {{ $title }}</h1>
       <p class="ft-hero-subtitle">
         {{ len $page.Pages }} free videos in this category. Part of our <a href="/videos/" class="zt-vid-backlink">Video Tutorials</a> collection.
       </p>

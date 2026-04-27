@@ -48,7 +48,7 @@
 
     {{/* Last verified + reading time */}}
     <p class="zt-lic-meta">
-      {{ with .Params.last_verified }}<span>✅ Verified: {{ . }}</span>{{ end }}
+      {{ with .Params.last_verified }}<span>{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Verified: {{ . }}</span>{{ end }}
       <span>·</span>
       <span>{{ $readTime }} min read</span>
     </p>
@@ -56,7 +56,7 @@
     {{/* In this guide — inline TOC for pages with 5+ headings */}}
     {{ if ge $headingCount 5 }}
     <details class="zt-lic-toc">
-      <summary>📑 In this guide</summary>
+      <summary>{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} In this guide</summary>
       <div class="zt-lic-toc-inner">
         {{ .TableOfContents }}
       </div>
@@ -65,9 +65,9 @@
 
     {{/* Quick links */}}
     <div class="zt-lic-links">
-      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn zt-lic-btn--primary">📄 Official Microsoft Page</a>{{ end }}
-      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn">🗺️ M365 Maps</a>{{ end }}
-      <a href="/licensing/" class="zt-lic-btn">📊 Compare Plans</a>
+      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn zt-lic-btn--primary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Official Microsoft Page</a>{{ end }}
+      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn">{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }} M365 Maps</a>{{ end }}
+      <a href="/licensing/" class="zt-lic-btn">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Compare Plans</a>
     </div>
 
     {{/* Mobile plan nav (hidden on desktop) */}}
@@ -94,7 +94,7 @@
     {{ end }}
     {{ if len $matched }}
     <div class="zt-lic-related">
-      <h2>📝 Related Blog Posts</h2>
+      <h2>{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Related Blog Posts</h2>
       <div class="zt-lic-related-list">
         {{ range first 3 $matched }}
         <a href="{{ .RelPermalink }}" class="zt-lic-related-link">
@@ -110,12 +110,12 @@
 
     {{/* Disclaimer */}}
     <div class="zt-lic-disclaimer">
-      <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
+      <strong>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
     </div>
 
     {{/* Attribution */}}
     <div class="zt-lic-attribution">
-      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
+      Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with {{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} by <a href="/about/">A Guide to Cloud & AI</a>
     </div>
 
   </article>
