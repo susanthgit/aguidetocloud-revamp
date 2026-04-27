@@ -1486,19 +1486,28 @@
   padding: 0 var(--space-2, 8px) var(--space-2, 8px);
 }
 
-/* Category labels (Microsoft sub-groups) */
+/* Category labels (Microsoft sub-groups — collapsible) */
 .zt-cert-category {
   margin-top: var(--space-2, 8px);
 }
 
 .zt-cert-category-name {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-1, 4px) var(--space-3, 12px);
   font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
   color: var(--text-muted, #737373);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  list-style: none;
+}
+.zt-cert-category-name::-webkit-details-marker { display: none; }
+.zt-cert-category-name .zt-lic-nav-count {
+  font-size: 0.65rem;
+  text-transform: none;
 }
 
 /* Cert links */

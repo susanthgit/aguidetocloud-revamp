@@ -32,7 +32,7 @@
   {{ end }}
 
   {{ if $certs }}
-  <details class="zt-cert-vendor"{{ if or $isCurrentVendor $isLanding }} open{{ end }}>
+  <details class="zt-cert-vendor"{{ if or $isCurrentVendor (and $isLanding (eq $vSlug "microsoft")) }} open{{ end }}>
     <summary class="zt-cert-vendor-name">
       <span>{{ $vEmoji }} {{ $vName }}</span>
       <span class="zt-cert-vendor-count">{{ len $certs }}</span>
@@ -50,8 +50,11 @@
           {{ end }}
         {{ end }}
         {{ if $catCerts }}
-        <div class="zt-cert-category">
-          <span class="zt-cert-category-name">{{ $cat }}</span>
+        {{ $isCurrent := false }}
+        {{ range $catCerts }}{{ if eq .RelPermalink $currentPermalink }}{{ $isCurrent = true }}{{ end }}{{ end }}
+        <details class="zt-cert-category"{{ if or $isCurrent (and $isLanding (eq $cat "Azure")) }} open{{ end }}>
+          <summary class="zt-cert-category-name">{{ $cat }} <span class="zt-lic-nav-count">{{ len $catCerts }}</span></summary>
+          <div class="zt-cert-category-links">
           {{ range sort $catCerts "Params.exam_code" }}
           <a href="{{ .RelPermalink }}" class="zt-cert-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
              title="{{ .Params.exam_code }}: {{ .Params.exam_title }}">
@@ -61,7 +64,8 @@
             {{- if eq (.Params.exam_status | default "active") "upcoming" }} <span class="zt-cert-link-flag">🔜</span>{{ end -}}
           </a>
           {{ end }}
-        </div>
+          </div>
+        </details>
         {{ end }}
       {{ end }}
     {{ else }}
