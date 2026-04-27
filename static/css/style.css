@@ -2373,6 +2373,11 @@ pre.mermaid {
 }
 
 
+/* Mobile drawer + backdrop: hidden on desktop */
+.nav-drawer { display: none; }
+.nav-drawer-backdrop { display: none; position: fixed; inset: 0; z-index: 9998; background: rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transition: opacity 200ms ease-out; }
+.nav-drawer-backdrop.active { opacity: 1; pointer-events: auto; }
+
 /* ── RESPONSIVE: NAV COLLAPSE ───────────── */
 @media (max-width: 1024px) {
   .nav-inner {
