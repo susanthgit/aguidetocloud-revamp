@@ -51,7 +51,8 @@
 
   {{ if $plans }}
   {{ $isCurrentCat := eq $catName $currentCat }}
-  <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
+  {{ $isFirst := and (not $currentCat) (eq $catName "Enterprise") }}
+  <details class="zt-lic-nav-group"{{ if or $isCurrentCat $isFirst }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
       <span>{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</span>
       <span class="zt-lic-nav-count">{{ len $plans }}</span>

@@ -18,7 +18,9 @@
   {{ $pages := where site.RegularPages "Section" $cat.section }}
   {{ if $pages }}
   {{ $isCurrentCat := eq $cat.section $currentSection }}
-  <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
+  {{ $isLanding := eq $currentPermalink "/videos/" }}
+  {{ $isFirst := eq $cat.section (index (index $categories 0) "section") }}
+  <details class="zt-lic-nav-group"{{ if or $isCurrentCat (and $isLanding $isFirst) }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
       <span>{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 14 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</span>
       <span class="zt-lic-nav-count">{{ len $pages }}</span>
