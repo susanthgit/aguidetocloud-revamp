@@ -1,0 +1,48 @@
+{{/*
+  tool-companion.html — Right companion sidebar for tool pages.
+  Shows popular tools, recent blog posts, and CTAs.
+
+  Usage: {{ partial "tool-companion.html" . }}
+*/}}
+
+{{ $currentURL := .RelPermalink }}
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+
+{{/* Popular tools — deterministic list (first 6 from toolkit_nav, excluding current) */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Popular tools</p>
+  {{ $count := 0 }}
+  {{ range $tools }}
+    {{ if and (ne .url $currentURL) (lt $count 5) }}
+      <a href="{{ .url }}" class="zt-companion-link">
+        <span class="zt-companion-link-tag">{{ .emoji }}</span>
+        <span class="zt-companion-link-title">{{ .name }}</span>
+      </a>
+      {{ $count = add $count 1 }}
+    {{ end }}
+  {{ end }}
+</div>
+
+{{/* Recent blog posts */}}
+{{ $recentPosts := first 3 (where site.RegularPages "Section" "blog") }}
+{{ if $recentPosts }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Recent articles</p>
+  {{ range $recentPosts }}
+  <a href="{{ .Permalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* CTAs */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Stay updated</p>
+  <div class="zt-companion-cta">
+    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+    <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
+  </div>
+</div>

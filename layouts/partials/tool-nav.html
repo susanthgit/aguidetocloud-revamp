@@ -1,0 +1,65 @@
+{{/*
+  tool-nav.html — Left sidebar navigation for tool pages.
+  Shows all tools grouped by category from toolkit_nav.toml.
+  Current tool highlighted. Current category expanded by default.
+
+  Usage: {{ partial "tool-nav.html" . }}
+*/}}
+
+{{ $currentURL := .RelPermalink }}
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+
+{{/* Build category display names */}}
+{{ $catNames := dict
+  "prompt" "Prompts & AI"
+  "copilot" "Copilot"
+  "informed" "Stay Informed"
+  "planning" "Planning"
+  "security" "Security"
+  "admin-ops" "Admin Fun"
+  "agent" "Agents"
+  "certs" "Certifications"
+  "community" "Community"
+}}
+
+{{/* Category display order */}}
+{{ $catOrder := slice "prompt" "copilot" "informed" "planning" "security" "admin-ops" "agent" "certs" "community" }}
+
+{{/* Find current tool's category */}}
+{{ $currentCat := "" }}
+{{ range $tools }}
+  {{ if eq .url $currentURL }}{{ $currentCat = .category }}{{ end }}
+{{ end }}
+
+<nav class="zt-tool-nav" aria-label="Tool navigation">
+  <a href="/free-tools/" class="zt-tool-nav-header">🧰 All Tools</a>
+
+  {{ range $cat := $catOrder }}
+    {{/* Collect tools in this category */}}
+    {{ $catTools := slice }}
+    {{ range $tools }}
+      {{ if eq .category $cat }}
+        {{ $catTools = $catTools | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if $catTools }}
+    {{ $isCurrentCat := eq $cat $currentCat }}
+    <details class="zt-tool-nav-group"{{ if $isCurrentCat }} open{{ end }}>
+      <summary class="zt-tool-nav-cat">
+        <span>{{ index $catNames $cat }}</span>
+        <span class="zt-tool-nav-count">{{ len $catTools }}</span>
+      </summary>
+      <div class="zt-tool-nav-links">
+        {{ range $catTools }}
+        <a href="{{ .url }}" class="zt-tool-nav-link{{ if eq .url $currentURL }} active{{ end }}"
+           title="{{ .name }}">
+          <span class="zt-tool-nav-emoji">{{ .emoji }}</span>
+          <span class="zt-tool-nav-name">{{ .name }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </details>
+    {{ end }}
+  {{ end }}
+</nav>
