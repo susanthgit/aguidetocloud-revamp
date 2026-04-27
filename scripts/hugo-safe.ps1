@@ -29,7 +29,24 @@ if (Test-Path $lockFile) {
     Write-Host "🔓 Removed stale .hugo_build.lock" -ForegroundColor Cyan
 }
 
-# 3. Run Hugo with the passed arguments
+# 3. Pre-push cache_version check (build mode only, skip for server)
+$isServer = $HugoArgs -contains "server"
+if (-not $isServer) {
+    $changedFiles = git -C $root diff --name-only origin/main HEAD 2>$null
+    $cssJsChanged = $changedFiles | Where-Object { $_ -match '\.(css|js)$' -and $_ -match '^static/' }
+    if ($cssJsChanged) {
+        $tomlDiff = git -C $root diff origin/main HEAD -- hugo.toml 2>$null
+        if (-not ($tomlDiff -match 'cache_version')) {
+            Write-Host "❌ BLOCKED: CSS/JS changed but cache_version not bumped in hugo.toml!" -ForegroundColor Red
+            $cssJsChanged | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+            Write-Host "  Fix: bump cache_version in hugo.toml before building." -ForegroundColor Yellow
+            Pop-Location
+            exit 1
+        }
+    }
+}
+
+# 4. Run Hugo with the passed arguments
 Push-Location $root
 try {
     Write-Host "🔨 Running: hugo $($HugoArgs -join ' ')" -ForegroundColor Green
@@ -37,8 +54,7 @@ try {
     $exitCode = $LASTEXITCODE
 }
 finally {
-    # 4. Clean up lock after build (not for server mode — server holds it intentionally)
-    $isServer = $HugoArgs -contains "server"
+    # 5. Clean up lock after build (not for server mode — server holds it intentionally)
     if (-not $isServer -and (Test-Path $lockFile)) {
         Remove-Item $lockFile -Force -ErrorAction SilentlyContinue
     }
