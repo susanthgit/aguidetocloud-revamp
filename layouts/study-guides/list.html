@@ -17,10 +17,9 @@
 
     {{/* Hero section — left-aligned Zen style */}}
     <header class="ft-hero">
-      <h1 class="ft-hero-title">Certification Study Guides</h1>
+      <h1 class="ft-hero-title">Study Guides</h1>
       <p class="ft-hero-subtitle">
-        Free study guides for <strong>{{ len $certPages }} certifications</strong> across {{ len $vendors }} vendors.
-        Every exam objective linked to official resources. Progress tracking, practice exams, and study plans included.
+        Some of these I wrote while studying for the exam myself. Others I built because people kept asking. Each one goes objective by objective, linked to the official docs. <strong>{{ len $certPages }} guides</strong> across {{ len $vendors }} vendors — if anything's out of date or wrong, <a href="/feedback/">let me know</a>.
       </p>
       <div class="ft-hero-meta">
         <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} {{ len $certPages }} study guides</span>

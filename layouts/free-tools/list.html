@@ -14,7 +14,7 @@
 
 <header class="ft-hero">
   <h1 class="ft-hero-title">Cloud & AI Toolkit</h1>
-  <p class="ft-hero-subtitle">Professional-grade tools for IT pros — built by <a href="/about/">Susanth</a>. No sign-up, no ads.</p>
+  <p class="ft-hero-subtitle">Some of these I built for work, others just because they seemed useful. They all run in your browser, need no sign-up, and cost nothing. <a href="/feedback/">Feedback always welcome</a>.</p>
   <div class="ft-hero-meta">
     {{ $tools := (index hugo.Data "toolkit_nav").tools }}
     <span class="ft-hero-stat">{{ len $tools }} free tools</span>
@@ -29,7 +29,7 @@
 
   <div class="ft-category" id="prompts">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "sparkles" "size" 18 "stroke" 1.5) }} Prompt Engineering</h2>
-    <p class="ft-cat-desc">Write better prompts for any AI platform — learn the techniques, practice them, and polish every prompt you write.</p>
+    <p class="ft-cat-desc">The prompt tools I reach for most — a library, a polisher, a tester, and a full learning guide.</p>
     <div class="free-tools-grid">
       <a href="/prompts/" class="free-tool-card" style="--card-accent: #A78BFA">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "lightbulb" "size" 20) }}</span><h3>AI Prompt Library</h3></div>
@@ -94,7 +94,7 @@
 
   <div class="ft-category" id="certs">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "book" "size" 18 "stroke" 1.5) }} Certification</h2>
-    <p class="ft-cat-desc">Study smarter for Microsoft, AWS, and Google Cloud certifications — with structured guides and cross-cloud navigation.</p>
+    <p class="ft-cat-desc">The study tools I wish I had when I started certifying.</p>
     <div class="free-tools-grid">
       <a href="/cert-tracker/" class="free-tool-card" style="--card-accent: #10B981">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 20) }}</span><h3>Microsoft Cert Study Guides</h3></div>
@@ -127,7 +127,7 @@
 
   <div class="ft-category" id="informed">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "satellite" "size" 18 "stroke" 1.5) }} Stay Informed</h2>
-    <p class="ft-cat-desc">Real-time intelligence dashboards — track AI news, Microsoft 365 features, service incidents, and upcoming retirements before they catch you off guard.</p>
+    <p class="ft-cat-desc">Dashboards I built so I never get surprised by a deprecation or outage again.</p>
     <div class="free-tools-grid">
       <a href="/ai-news/" class="free-tool-card" style="--card-accent: #ff66ff">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 20) }}</span><h3>AI News</h3></div>
@@ -201,7 +201,7 @@
 
   <div class="ft-category" id="agents">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "robot" "size" 18 "stroke" 1.5) }} Agent Builders</h2>
-    <p class="ft-cat-desc">Everything you need to build, instruct, and govern AI agents — from generating instructions to planning your governance strategy.</p>
+    <p class="ft-cat-desc">I'm learning agents at work — these tools capture what I've figured out so far.</p>
     <div class="free-tools-grid">
       <a href="/instruct-builder/" class="free-tool-card" style="--card-accent: #2DD4BF">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 20) }}</span><h3>Agent Instruction Builder</h3></div>
@@ -255,7 +255,7 @@
 
   <div class="ft-category" id="planning">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "target" "size" 18 "stroke" 1.5) }} Copilot & AI Planning</h2>
-    <p class="ft-cat-desc">Evaluating AI tools for your org? Assess readiness, compare platforms, calculate costs, and build the business case.</p>
+    <p class="ft-cat-desc">The tools I use when a customer asks "is Copilot worth it?" — readiness checks, cost breakdowns, ROI, and comparisons.</p>
     <div class="free-tools-grid">
       <a href="/copilot-readiness/" class="free-tool-card" style="--card-accent: #3B82F6">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "target" "size" 20) }}</span><h3>M365 Copilot Readiness Checker</h3></div>
@@ -364,7 +364,7 @@
 
   <div class="ft-category" id="security">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "shield" "size" 18 "stroke" 1.5) }} Security & Compliance</h2>
-    <p class="ft-cat-desc">Assess your security posture, design access policies, plan data protection, and map compliance frameworks — all visually.</p>
+    <p class="ft-cat-desc">Policy builders, security checks, and compliance tools — the stuff I reach for during customer engagements.</p>
     <div class="free-tools-grid">
       <a href="/ca-builder/" class="free-tool-card" style="--card-accent: #7C3AED">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "shield" "size" 20) }}</span><h3>Entra ID CA Policy Builder</h3></div>
@@ -434,7 +434,7 @@
 
   <div class="ft-category" id="admin-ops">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "settings" "size" 18 "stroke" 1.5) }} Admin Operations</h2>
-    <p class="ft-cat-desc">Day-to-day admin tools — build commands, plan migrations, draft comms, and calculate SLAs without the guesswork.</p>
+    <p class="ft-cat-desc">My old sysadmin life, distilled — PowerShell builders, migration planners, and email templates.</p>
     <div class="free-tools-grid">
       <a href="/ps-builder/" class="free-tool-card" style="--card-accent: #4ADE80">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 20) }}</span><h3>M365 PowerShell Builder</h3></div>
@@ -498,7 +498,7 @@
 
   <div class="ft-category" id="utilities">
     <h2 class="ft-cat-title">{{ partial "icon.html" (dict "name" "gamepad" "size" 18 "stroke" 1.5) }} Utilities & Fun</h2>
-    <p class="ft-cat-desc">Handy productivity tools, IT-themed games, and community contributions — your feedback drives what we build next.</p>
+    <p class="ft-cat-desc">Side projects, useful utilities, and IT games — because not everything has to be serious.</p>
     <div class="free-tools-grid">
       <a href="/world-clock/" class="free-tool-card" style="--card-accent: #0EA5E9">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "globe" "size" 20) }}</span><h3>World Clock & Meeting Planner</h3></div>
@@ -596,7 +596,7 @@
       </a>
       <a href="/feedback/" class="free-tool-card" style="--card-accent: #FBBF24">
         <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 20) }}</span><h3>Community Feedback</h3></div>
-        <p>Ask questions, suggest features, request videos, or report bugs — your voice shapes our tools and content.</p>
+        <p>Ask questions, suggest features, request videos, or report bugs — your feedback shapes what I build next.</p>
         <div class="free-tool-features"><span>Ask questions</span><span>Request features</span><span>Request videos</span><span>Report bugs</span></div>
         <span class="free-tool-cta">Share Feedback →</span>
       </a>
@@ -613,9 +613,9 @@
 
 
   <div class="free-tools-about">
-    <h2>Built with Passion, Shaped by You</h2>
-    <p>Every tool here started as a V1 — built with care to solve a real problem. But they can only get better with <strong>your</strong> help. Tell us what's working, what's not, what you'd love to see next, and what improvements would make these tools genuinely useful for your day-to-day work.</p>
-    <p style="margin-top: 0.75rem"><a href="/feedback/">Share your feedback →</a> — it takes 30 seconds and shapes what we build next.</p>
+    <h2>These tools grow with your feedback</h2>
+    <p>Every tool started as a V1. Your feedback on what works, what's broken, and what's missing shapes what I build next.</p>
+    <p style="margin-top: 0.75rem"><a href="/feedback/">Share your feedback →</a> — it takes 30 seconds.</p>
   </div>
 </div>
 
