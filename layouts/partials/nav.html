@@ -20,6 +20,7 @@
       <li><a href="/licensing-docs/"{{ if or (hasPrefix $.RelPermalink "/licensing-docs/") (hasPrefix $.RelPermalink "/licensing/") }} class="nav-active"{{ end }}>Licensing Wiki</a></li>
       <li><a href="/blog/"{{ if hasPrefix $.RelPermalink "/blog/" }} class="nav-active"{{ end }}>Blog</a></li>
       <li><a href="/videos/"{{ if or (hasPrefix $.RelPermalink "/videos/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active"{{ end }}>Videos</a></li>
+      <li><a href="/about/"{{ if eq $.RelPermalink "/about/" }} class="nav-active"{{ end }}>About</a></li>
     </ul>
 
     {{/* ═══════ RIGHT ZONE: theme toggle + CTA ═══════ */}}

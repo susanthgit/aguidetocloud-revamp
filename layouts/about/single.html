@@ -1,0 +1,235 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — About Page (3-column reading room) */}}
+
+<div class="zt-reading zt-reading--about">
+
+  {{/* ── LEFT: Page navigation ── */}}
+  <aside class="zt-sidebar" aria-label="Page navigation" data-pagefind-ignore>
+    <nav class="zt-lic-nav" aria-label="About navigation">
+      <a href="/about/" class="zt-lic-nav-header">About</a>
+      <a href="#intro" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Introduction</span></a>
+      <a href="#why" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Why I Started This</span></a>
+      <a href="#ai-pivot" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">The AI Pivot</span></a>
+      <a href="#beyond" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Beyond Technology</span></a>
+      <a href="#career" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Career Journey</span></a>
+      <a href="#awards" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Awards & Recognition</span></a>
+      <a href="#certs" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Certifications</span></a>
+      <a href="#join" class="zt-lic-nav-link"><span class="zt-lic-nav-link-name">Join the Journey</span></a>
+    </nav>
+  </aside>
+
+  {{/* ── CENTER: About content ── */}}
+  <article class="zt-reading-content">
+
+    {{/* Hero card */}}
+    <div class="zt-about-hero" id="intro">
+      <div class="zt-about-photo-wrap">
+        <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" class="zt-about-headshot" width="140" height="140">
+      </div>
+      <div class="zt-about-info">
+        <h1 class="zt-about-name">Susanth Sutheesh</h1>
+        <p class="zt-about-role">Sr AI Solution Engineer at Microsoft · Auckland, New Zealand 🇳🇿</p>
+        <div class="zt-about-actions">
+          <a href="/images/about/susanth-sutheesh-resume.pdf" download class="zt-about-btn">📄 Download Resume</a>
+          <a href="/links/" class="zt-about-btn zt-about-btn--secondary">🔗 All My Links</a>
+        </div>
+      </div>
+    </div>
+
+    {{/* Mobile TOC */}}
+    <details class="zt-toc-mobile">
+      <summary>On this page</summary>
+      <div class="zt-toc-mobile-inner">
+        <a href="#why" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Why I Started This</a>
+        <a href="#ai-pivot" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">The AI Pivot</a>
+        <a href="#career" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Career Journey</a>
+        <a href="#certs" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Certifications</a>
+        <a href="#join" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Join the Journey</a>
+      </div>
+    </details>
+
+    <div class="zt-reading-body">
+
+    <p>Hi, I'm <strong><a href="https://www.linkedin.com/in/susanthsutheesh/">Susanth Sutheesh</a></strong> — a lifelong learner passionate about simplifying complex technology. With 18+ years in AI, Microsoft 365, Azure, and the cloud ecosystem, I help businesses and professionals unlock value quickly.</p>
+
+    <p>I specialise in breaking down emerging solutions — like Copilot, Copilot Studio, and AI agents — into simple, actionable insights. Whether through solution design, customer enablement, or content creation, I focus on turning innovation into real-world impact.</p>
+
+    <h2 id="why">Why I Started This</h2>
+
+    <p>Back in 2020, I started <strong>A Guide to Cloud & AI</strong> as a passion project to share everything I've learned working in the cloud space. As someone who came from a non-English-speaking background, I know how difficult it can be to get started in tech — especially when resources are complex or expensive.</p>
+
+    <p>That's why I create <strong>beginner-friendly tutorials</strong>, hands-on labs, and job interview prep videos — all focused on <strong>real-world learning</strong>.</p>
+
+    <h2 id="ai-pivot">The AI Pivot</h2>
+
+    <p>Today, most of my content is <strong>AI-first</strong> — from Microsoft 365 Copilot to GitHub Copilot, Copilot Studio, MCP Servers, and Azure AI Foundry. That's where the industry is heading, and I want to share what I learn day to day so others can benefit. The future is AI, and I want to help you navigate it.</p>
+
+    <h2 id="beyond">Beyond Technology</h2>
+
+    <p>Outside of work, I ground myself through <strong>yoga, meditation, and study of ancient spiritual texts</strong>. As a certified yoga instructor, I spend much of my time contemplating life and the deeper spiritual realm — it helps me stay balanced while navigating the fast-moving world of technology.</p>
+
+    <p>Most importantly, I cherish time with my <strong>wife and daughter</strong> — my greatest source of inspiration and joy.</p>
+
+    <h2 id="career">Career Journey</h2>
+
+    <div class="zt-timeline">
+      <div class="zt-timeline-item zt-timeline-item--current">
+        <span class="zt-timeline-date">Aug 2024 – Present</span>
+        <strong class="zt-timeline-role">Sr AI Solution Engineer — Copilot & Agentic AI</strong>
+        <span class="zt-timeline-company">Microsoft New Zealand</span>
+        <p class="zt-timeline-desc">Leading value realisation and adoption of Microsoft 365 Copilot, Copilot Studio, and AI Agents across enterprise and public sector customers in New Zealand.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Sep 2022 – Aug 2024</span>
+        <strong class="zt-timeline-role">Technical Specialist — Windows 365, AVD & Intune</strong>
+        <span class="zt-timeline-company">Microsoft New Zealand</span>
+        <p class="zt-timeline-desc">Helped customers adopt cloud-based VDI, modern endpoint security, and Microsoft 365 management.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Mar 2022 – Aug 2022</span>
+        <strong class="zt-timeline-role">Senior Manager, Cloud Technology Consulting</strong>
+        <span class="zt-timeline-company">EY</span>
+        <p class="zt-timeline-desc">Led cloud transformation programs using Azure, Microsoft 365, and AI-driven migration planning.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Apr 2017 – Mar 2022</span>
+        <strong class="zt-timeline-role">Cloud Solutions Architect — Azure & Microsoft 365</strong>
+        <span class="zt-timeline-company">Ingram Micro</span>
+        <p class="zt-timeline-desc">Supported Microsoft partners with Azure and M365 architecture, adoption, and training.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Apr 2014 – Mar 2017</span>
+        <strong class="zt-timeline-role">Partner Technical Consultant</strong>
+        <span class="zt-timeline-company">Microsoft</span>
+        <p class="zt-timeline-desc">Worked with partners and enterprise customers globally to implement Azure, EMS, and Windows solutions.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Jun 2012 – Apr 2014</span>
+        <strong class="zt-timeline-role">Senior Technical Specialist</strong>
+        <span class="zt-timeline-company">Allianz</span>
+        <p class="zt-timeline-desc">Led large-scale Windows migration across European operations using SCCM 2012.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Feb 2010 – Jun 2012</span>
+        <strong class="zt-timeline-role">Technical Consultant</strong>
+        <span class="zt-timeline-company">Capgemini</span>
+        <p class="zt-timeline-desc">Led endpoint modernisation and OS upgrade projects for enterprise clients globally.</p>
+      </div>
+      <div class="zt-timeline-item">
+        <span class="zt-timeline-date">Feb 2006 – Feb 2010</span>
+        <strong class="zt-timeline-role">Technical Lead, End User Services</strong>
+        <span class="zt-timeline-company">EY</span>
+        <p class="zt-timeline-desc">Where it all began — advanced through four roles, building deep expertise in desktop management and enterprise IT operations.</p>
+      </div>
+    </div>
+
+    <h2 id="awards">Awards & Recognition</h2>
+
+    <p>Microsoft Vision Award · Microsoft PET (Perfect Every Time) · Microsoft Power Player ×3 · Microsoft ACE ×2 · Capgemini Project Star · EY Best Performer</p>
+
+    <h2 id="certs">Certifications</h2>
+
+    <p>Azure Solutions Architect Expert · M365 Enterprise Administrator · M365 Security Administrator · Azure Administrator · MCSA: Office 365 · Azure Fundamentals · M365 Fundamentals · AWS Cloud Practitioner · ITIL Practitioner · CCNA</p>
+
+    <h2 id="join">Join the Journey</h2>
+
+    <ul>
+      <li>🚀 <a href="/start/">New to this site? Start here</a> — find the right resource in 30 seconds</li>
+      <li>📺 <a href="https://www.youtube.com/susanthsutheesh">YouTube — A Guide to Cloud & AI</a> (full tutorials & masterclasses)</li>
+      <li>📺 <a href="https://www.youtube.com/aguidetocloud">YouTube — Bites</a> (quick 10–20 min lessons)</li>
+      <li>💼 <a href="https://www.linkedin.com/in/susanthsutheesh/">LinkedIn</a></li>
+      <li>☕ <a href="https://ko-fi.com/aguidetocloud/shop">Support my work</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>Disclaimer</h2>
+
+    <p>I work at Microsoft as a Sr AI Solution Engineer, but <strong>the views, opinions, and content shared on this website and my YouTube channels are entirely my own</strong> and do not represent the official positions, strategies, or endorsements of Microsoft.</p>
+
+    <ul>
+      <li>All pricing mentioned is in USD and sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change</li>
+      <li>Product information, features, and roadmap details are based on publicly available information and may not reflect the latest updates</li>
+      <li>This site is a personal project and is not affiliated with, endorsed by, or sponsored by Microsoft</li>
+    </ul>
+
+    <p>Always refer to <a href="https://learn.microsoft.com">official Microsoft documentation</a> for the most accurate and up-to-date information.</p>
+
+    </div>
+
+  </article>
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Connect" data-pagefind-ignore>
+
+    {{/* Connect */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Connect</p>
+      <a href="https://www.youtube.com/susanthsutheesh" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-title">YouTube (Main)</span>
+      </a>
+      <a href="https://www.youtube.com/aguidetocloud" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-title">YouTube (Bites)</span>
+      </a>
+      <a href="https://www.linkedin.com/in/susanthsutheesh/" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag">💼</span>
+        <span class="zt-companion-link-title">LinkedIn</span>
+      </a>
+      <a href="https://ko-fi.com/aguidetocloud" class="zt-companion-link zt-companion-link--inline" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag">☕</span>
+        <span class="zt-companion-link-title">Ko-fi</span>
+      </a>
+    </div>
+
+    {{/* Site stats */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">This site</p>
+      {{ $tools := (index hugo.Data "toolkit_nav").tools }}
+      <a href="/free-tools/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">🧰</span>
+        <span class="zt-companion-link-title">{{ len $tools }} free tools</span>
+      </a>
+      <a href="/videos/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">📺</span>
+        <span class="zt-companion-link-title">78+ video tutorials</span>
+      </a>
+      <a href="/study-guides/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">📚</span>
+        <span class="zt-companion-link-title">149+ study guides</span>
+      </a>
+      <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">🎯</span>
+        <span class="zt-companion-link-title">126 practice exams</span>
+      </a>
+    </div>
+
+    {{/* Recent blog posts */}}
+    {{ $recentPosts := first 3 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+    {{ if $recentPosts }}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Recent articles</p>
+      {{ range $recentPosts }}
+      <a href="{{ .Permalink }}" class="zt-companion-link">
+        <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+        <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Explore */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Explore</p>
+      <div class="zt-companion-cta">
+        <a href="/start/" class="zt-companion-cta-btn">🚀 Start Here</a>
+        <a href="/feedback/" class="zt-companion-cta-btn">💬 Share Feedback</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+{{ end }}
