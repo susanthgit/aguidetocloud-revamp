@@ -1,17 +1,29 @@
 ﻿{{ define "main" }}
 <link rel="stylesheet" href="/css/free-tools.css?v={{ site.Params.cache_version }}">
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+
+<div class="zt-reading zt-reading--tools">
+
+  {{/* ── LEFT: Tool category navigation ── */}}
+  <aside class="zt-sidebar zt-sidebar--tools" aria-label="Tool categories" data-pagefind-ignore>
+    {{ partial "tools-nav.html" . }}
+  </aside>
+
+  {{/* ── CENTER: Tool catalog ── */}}
+  <div class="zt-reading-content zt-tools-landing">
+
 <header class="ft-hero">
   <h1 class="ft-hero-title">Cloud & AI Toolkit</h1>
   <p class="ft-hero-subtitle">Professional-grade tools for IT pros — built by <a href="/about/">Susanth</a>. No sign-up, no ads.</p>
   <div class="ft-hero-meta">
     {{ $tools := (index hugo.Data "toolkit_nav").tools }}
-    <span class="ft-hero-stat">🛠️ {{ len $tools }} free tools</span>
-    <span class="ft-hero-stat">🔒 100% client-side</span>
-    <span class="ft-hero-stat">🚫 No sign-up required</span>
+    <span class="ft-hero-stat">{{ len $tools }} free tools</span>
+    <span class="ft-hero-stat">100% client-side</span>
+    <span class="ft-hero-stat">No sign-up required</span>
   </div>
 </header>
 
-<div class="container">
+<div class="ft-tools-body">
 
 
 
@@ -607,5 +619,13 @@
   </div>
 </div>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/" "Label" "Home") }}
+  </div>{{/* end .zt-reading-content */}}
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "tools-companion.html" . }}
+  </aside>
+
+</div>{{/* end .zt-reading */}}
+
 {{ end }}

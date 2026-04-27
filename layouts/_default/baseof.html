@@ -58,7 +58,7 @@
   {{ if hasPrefix .RelPermalink "/guided/" }}<link rel="stylesheet" href="/css/guided.css?v={{ site.Params.cache_version }}">{{ end }}
   {{ $videoSections := slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music" "videos" }}
   {{ $isVideoSection := in $videoSections .Section }}
-  {{ if or (eq .Section "blog") (and (eq .Section "cert-tracker") .IsPage) (eq .Section "study-guides") (and (eq .Section "licensing") .IsPage) (eq .Section "licensing-docs") $isVideoSection }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
+  {{ if or (eq .Section "blog") (and (eq .Section "cert-tracker") .IsPage) (eq .Section "study-guides") (and (eq .Section "licensing") .IsPage) (eq .Section "licensing-docs") (eq .Section "free-tools") $isVideoSection }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -86,8 +86,7 @@
   {{ range (index hugo.Data "toolkit_nav").tools }}
     {{ if eq .url $pageURL }}{{ $isToolPage = true }}{{ end }}
   {{ end }}
-  {{/* Also include the toolkit index page in the grid */}}
-  {{ if eq $pageURL "/free-tools/" }}{{ $isToolPage = true }}{{ end }}
+  {{/* Note: /free-tools/ has its own zt-reading grid in list.html — not wrapped here */}}
   <main id="main-content" data-pagefind-body>
     {{ if $isToolPage }}
     {{/* Load zt-tools.css for the grid — covers pages that don't include tool-header.html */}}

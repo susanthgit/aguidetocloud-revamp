@@ -1,0 +1,57 @@
+{{/*
+  tools-nav.html — Left sidebar navigation for free tools page.
+  Pulls tools from toolkit_nav.toml, grouped by category with
+  collapsible <details> — same pattern as licence-nav.html.
+
+  Usage: {{ partial "tools-nav.html" . }}
+*/}}
+
+{{ $allTools := (index hugo.Data "toolkit_nav").tools }}
+{{ $currentURL := .RelPermalink }}
+
+{{/* Category display order + labels */}}
+{{ $categories := slice
+  (dict "key" "prompt"    "name" "Prompt Engineering" "emoji" "✨"  "anchor" "prompts")
+  (dict "key" "certs"     "name" "Certification"      "emoji" "📚"  "anchor" "certs")
+  (dict "key" "informed"  "name" "Stay Informed"      "emoji" "📡"  "anchor" "informed")
+  (dict "key" "agent"     "name" "Agent Builders"     "emoji" "🤖"  "anchor" "agents")
+  (dict "key" "planning"  "name" "Copilot & AI"       "emoji" "🎯"  "anchor" "planning")
+  (dict "key" "copilot"   "name" "Copilot Tools"      "emoji" "💡"  "anchor" "planning")
+  (dict "key" "security"  "name" "Security"           "emoji" "🛡️"  "anchor" "security")
+  (dict "key" "admin-ops" "name" "Admin Operations"   "emoji" "⚙️"  "anchor" "admin-ops")
+  (dict "key" "community" "name" "Utilities & Fun"    "emoji" "🎮"  "anchor" "utilities")
+}}
+
+<nav class="zt-lic-nav" aria-label="Tools navigation">
+
+<a href="/free-tools/" class="zt-lic-nav-header">🧰 All Free Tools</a>
+
+{{ range $cat := $categories }}
+  {{/* Collect tools in this category */}}
+  {{ $catTools := slice }}
+  {{ range $allTools }}
+    {{ if eq .category $cat.key }}
+      {{ $catTools = $catTools | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $catTools }}
+  {{ $isFirst := eq $cat.key "prompt" }}
+  <details class="zt-lic-nav-group"{{ if $isFirst }} open{{ end }}>
+    <summary class="zt-lic-nav-cat">
+      <span>{{ $cat.emoji }} {{ $cat.name }}</span>
+      <span class="zt-lic-nav-count">{{ len $catTools }}</span>
+    </summary>
+    <div class="zt-lic-nav-links">
+      {{ range $catTools }}
+      <a href="{{ .url }}" class="zt-lic-nav-link{{ if eq .url $currentURL }} active{{ end }}"
+         title="{{ .name }}">
+        <span class="zt-lic-nav-link-name">{{ .name }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+{{ end }}
+
+</nav>

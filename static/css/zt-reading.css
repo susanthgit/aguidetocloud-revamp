@@ -3159,3 +3159,20 @@
     display: none;
   }
 }
+
+/* ──────────────────────────────────────────
+   🧰 FREE TOOLS READING ROOM
+   Override reading-content padding for the
+   wider card grids used on the tools page.
+   ────────────────────────────────────────── */
+.zt-reading--tools .zt-reading-content {
+  padding: var(--space-6, 24px) var(--space-8, 32px) var(--space-12, 48px);
+}
+.zt-tools-landing .ft-tools-body {
+  max-width: none;
+}
+/* Make the container inside tools page transparent to the grid */
+.zt-tools-landing .container {
+  max-width: none;
+  padding: 0;
+}

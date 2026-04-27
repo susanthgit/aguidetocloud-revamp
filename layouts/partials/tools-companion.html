@@ -1,0 +1,64 @@
+{{/*
+  tools-companion.html — Right companion sidebar for free tools page.
+  Practice exams, study guides, blog, videos CTAs.
+
+  Usage: {{ partial "tools-companion.html" . }}
+*/}}
+
+{{/* Practice exams */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Practice exams</p>
+  <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">🎯</span>
+    <span class="zt-companion-link-title">Browse 126 practice exams</span>
+  </a>
+  <a href="/guided/az-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📘</span>
+    <span class="zt-companion-link-title">AZ-900 Practice Exam</span>
+  </a>
+  <a href="/guided/sc-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📘</span>
+    <span class="zt-companion-link-title">SC-900 Practice Exam</span>
+  </a>
+</div>
+
+{{/* Study guides */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Study guides</p>
+  <a href="/study-guides/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📚</span>
+    <span class="zt-companion-link-title">All study guides</span>
+  </a>
+  <a href="/cert-tracker/az-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">☁️</span>
+    <span class="zt-companion-link-title">AZ-900 Study Guide</span>
+  </a>
+  <a href="/cert-tracker/az-104/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">☁️</span>
+    <span class="zt-companion-link-title">AZ-104 Study Guide</span>
+  </a>
+</div>
+
+{{/* Recent blog posts (sorted by date desc) */}}
+{{ $recentPosts := first 3 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+{{ if $recentPosts }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Recent articles</p>
+  {{ range $recentPosts }}
+  <a href="{{ .Permalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* CTAs */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Explore more</p>
+  <div class="zt-companion-cta">
+    <a href="/videos/" class="zt-companion-cta-btn">📺 Video Tutorials</a>
+    <a href="/licensing-docs/" class="zt-companion-cta-btn">📋 Licensing Wiki</a>
+    <a href="/feedback/" class="zt-companion-cta-btn">💬 Share Feedback</a>
+  </div>
+</div>
