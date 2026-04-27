@@ -21,7 +21,7 @@
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   padding: var(--space-6, 24px) var(--space-6, 24px) var(--space-6, 24px) var(--space-8, 32px);
-  border-right: 1px solid var(--border, #262626);
+  border-right: 1px solid var(--border-emphasis, #404040);
   background: var(--bg-elevated, #1A1A1A);
   scrollbar-width: thin;
   scrollbar-color: var(--border, #262626) transparent;
@@ -65,7 +65,9 @@
 }
 
 .zt-toc #TableOfContents ul ul {
-  padding-left: var(--space-4, 16px);
+  margin-left: 6px;
+  padding-left: var(--space-3, 12px);
+  border-left: 1px solid var(--border-emphasis, #404040);
 }
 
 .zt-toc #TableOfContents a {
@@ -237,6 +239,9 @@
   color: var(--text-secondary, #D4D4D4);
   overflow-wrap: break-word;
   word-break: break-word;
+  max-width: var(--max-reading, 720px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Z18: Prose max-width — constrain reading text to ~72 chars/line */
@@ -473,10 +478,15 @@
 .zt-reading-content .blog-pn-link {
   border-color: var(--border, #262626);
   background: var(--bg-surface, #141414);
+  color: var(--text-tertiary, #A3A3A3);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 .zt-reading-content .blog-pn-link:hover {
   border-color: var(--border-emphasis, #404040);
+  color: var(--accent, #818CF8);
 }
 
 /* ── End-of-post CTA ── */
@@ -758,7 +768,7 @@
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   padding: var(--space-6, 24px) var(--space-8, 32px) var(--space-6, 24px) var(--space-6, 24px);
-  border-left: 1px solid var(--border, #262626);
+  border-left: 1px solid var(--border-emphasis, #404040);
   scrollbar-width: none;
 }
 
@@ -1459,7 +1469,7 @@
 .zt-cert-vendor > summary {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-2, 8px);
   padding: var(--space-2, 8px) var(--space-4, 16px);
   font-size: var(--zen-text-sm, 0.875rem);
   font-weight: 600;
@@ -1483,10 +1493,38 @@
   background: var(--bg-elevated, #1A1A1A);
   padding: 1px 6px;
   border-radius: var(--radius-full, 9999px);
+  margin-left: auto;
+}
+
+/* ── Tree View: +/− toggles and connector lines ── */
+.zt-cert-vendor > summary::before {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
+}
+.zt-cert-vendor[open] > summary::before {
+  content: '−';
+}
+.zt-cert-vendor > summary:hover::before {
+  color: var(--text-secondary);
+  border-color: var(--border-emphasis);
 }
 
 .zt-cert-vendor-body {
-  padding: 0 var(--space-2, 8px) var(--space-2, 8px);
+  margin-left: 23px;
+  padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-3, 12px);
+  border-left: 1px solid var(--border-emphasis, #404040);
 }
 
 /* Category labels (Microsoft sub-groups — collapsible) */
@@ -1497,8 +1535,8 @@
 .zt-cert-category-name {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-1, 4px) var(--space-3, 12px);
+  gap: var(--space-2, 8px);
+  padding: var(--space-1, 4px) 0;
   font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
   color: var(--text-muted, #737373);
@@ -1511,6 +1549,39 @@
 .zt-cert-category-name .zt-lic-nav-count {
   font-size: 0.65rem;
   text-transform: none;
+  margin-left: auto;
+}
+
+/* Tree View: +/− toggle on category */
+.zt-cert-category > summary::before {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
+}
+.zt-cert-category[open] > summary::before {
+  content: '−';
+}
+.zt-cert-category > summary:hover::before {
+  color: var(--text-secondary);
+  border-color: var(--border-emphasis);
+}
+
+/* Tree View: connector line for cert links inside a category */
+.zt-cert-category-links {
+  margin-left: 6px;
+  padding: var(--space-1, 4px) 0 var(--space-1, 4px) var(--space-3, 12px);
+  border-left: 1px solid var(--border-emphasis, #404040);
 }
 
 /* Cert links */
@@ -2396,7 +2467,7 @@
 .zt-lic-nav-cat {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-2, 8px);
   padding: var(--space-2, 8px) var(--space-4, 16px);
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
@@ -2422,10 +2493,38 @@
   background: var(--bg-elevated, #F5F5F5);
   padding: 1px var(--space-2, 8px);
   border-radius: var(--radius-full, 9999px);
+  margin-left: auto;
+}
+
+/* ── Tree View: +/− toggles and connector lines ── */
+.zt-lic-nav-cat::before {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
+}
+.zt-lic-nav-group[open] > .zt-lic-nav-cat::before {
+  content: '−';
+}
+.zt-lic-nav-cat:hover::before {
+  color: var(--text-secondary);
+  border-color: var(--border-emphasis);
 }
 
 .zt-lic-nav-links {
-  padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-4, 16px);
+  margin-left: 23px;
+  padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-3, 12px);
+  border-left: 1px solid var(--border-emphasis, #404040);
 }
 
 .zt-lic-nav-link {

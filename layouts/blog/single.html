@@ -144,7 +144,7 @@
     {{/* Related articles */}}
     <div class="zt-companion-section">
       <p class="zt-companion-title">More articles</p>
-      {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
+      {{ $related := first 10 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
       {{ range $related }}
       <a href="{{ .Permalink }}" class="zt-companion-link">
         <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
