@@ -50,8 +50,8 @@
   {{ with .Section }}<meta property="article:section" content="{{ . | title }}">{{ end }}
   {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}">{{ end }}
   {{ end }}
-  <script>/* Anti-FOUC: set theme before CSS loads */
-  (function(){try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light')}})()</script>
+  <script>/* Anti-FOUC: set theme before CSS loads — dark by default */
+  (function(){try{var t=localStorage.getItem('theme');if(!t)t='dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})()</script>
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">

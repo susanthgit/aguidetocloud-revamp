@@ -22,7 +22,7 @@
   overflow-y: auto;
   padding: var(--space-6, 24px) var(--space-6, 24px) var(--space-6, 24px) var(--space-8, 32px);
   border-right: 1px solid var(--border-emphasis, #404040);
-  background: var(--bg-elevated, #1A1A1A);
+  background: var(--bg-page, #0A0A0A);
   scrollbar-width: thin;
   scrollbar-color: var(--border, #262626) transparent;
 }
@@ -1436,7 +1436,6 @@
 
 /* ── Cert left sidebar nav ── */
 .zt-sidebar--cert {
-  background: var(--bg-page, #0A0A0A);
   padding: var(--space-4, 16px) 0;
 }
 
