@@ -12,7 +12,6 @@
 
     {{/* ═══════ DESKTOP NAV — clean direct links (no mega-menus) ═══════ */}}
     <ul class="nav-links" id="nav-links">
-      <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">⌘K</button></li>
 
       <li><a href="/study-guides/"{{ if or (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/cert-tracker/") }} class="nav-active"{{ end }}>Cert Study Guides</a></li>
       <li><a href="/guided/explore/"{{ if hasPrefix $.RelPermalink "/guided/" }} class="nav-active"{{ end }}>Cert Practice Exams</a></li>
