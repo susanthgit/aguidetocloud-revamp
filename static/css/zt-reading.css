@@ -2135,7 +2135,7 @@
    ═══════════════════════════════════════════════════════════ */
 
 .zt-sg-landing {
-  padding: var(--space-4, 16px) 0 var(--space-16, 64px);
+  padding: var(--space-6, 24px) var(--space-12, 48px) var(--space-16, 64px);
 }
 
 /* Hero — reuses ft-hero from free-tools.css (loaded via baseof.html) */
