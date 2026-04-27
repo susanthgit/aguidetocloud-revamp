@@ -950,6 +950,85 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
+   🌸 BLOG LIST NAV — Left sidebar for /blog/ index page
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-nav-section {
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border-bottom: 1px solid var(--border, #262626);
+}
+.zt-blog-nav-label {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 600;
+  color: var(--text-muted, #737373);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-2, 8px);
+}
+.zt-blog-nav-cat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-1, 4px) var(--space-2, 8px);
+  margin-bottom: 2px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm, 6px);
+  color: var(--text-secondary, #A3A3A3);
+  font-size: var(--zen-text-sm, 0.875rem);
+  cursor: pointer;
+  transition: background 150ms ease-out, border-color 150ms ease-out;
+}
+.zt-blog-nav-cat:hover {
+  background: var(--bg-elevated, #1A1A1A);
+}
+.zt-blog-nav-cat.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.zt-blog-nav-count {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+}
+.zt-blog-nav-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+  padding: var(--space-1, 4px) var(--space-2, 8px);
+  margin-bottom: 1px;
+  text-decoration: none;
+  border-radius: var(--radius-sm, 6px);
+  transition: background 150ms ease-out;
+}
+.zt-blog-nav-link:hover {
+  background: var(--bg-elevated, #1A1A1A);
+}
+.zt-blog-nav-link-title {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-secondary, #A3A3A3);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zt-blog-nav-link:hover .zt-blog-nav-link-title {
+  color: var(--text-primary, #F5F5F5);
+}
+.zt-blog-nav-link-date {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Blog landing center column */
+.zt-blog-landing {
+  padding-top: var(--space-4, 16px);
+}
+
+/* ═══════════════════════════════════════════════════════════
    🌸 Z22: FONT SIZE CONTROLS — A+ / A- reader adjustment
    ═══════════════════════════════════════════════════════════ */
 .zt-reading-toolbar {

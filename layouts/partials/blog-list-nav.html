@@ -1,0 +1,43 @@
+{{/*
+  blog-list-nav.html — Left sidebar navigation for blog index page.
+  Shows categories with counts + all articles listed by date.
+*/}}
+
+{{ $allPosts := where site.RegularPages "Section" "blog" }}
+{{ $currentURL := .RelPermalink }}
+
+<nav class="zt-blog-nav" aria-label="Blog navigation">
+
+{{/* Header */}}
+<a href="/blog/" class="zt-cert-nav-header active">📄 All Articles</a>
+
+{{/* Categories */}}
+<div class="zt-blog-nav-section">
+  <p class="zt-blog-nav-label">Categories</p>
+  {{ $tags := dict }}
+  {{ range $allPosts }}
+    {{ with .Params.card_tag }}
+      {{ $count := index $tags . | default 0 }}
+      {{ $tags = merge $tags (dict . (add $count 1)) }}
+    {{ end }}
+  {{ end }}
+  {{ range $tag, $count := $tags }}
+  <button class="zt-blog-nav-cat" data-filter="{{ $tag }}">
+    <span>{{ $tag }}</span>
+    <span class="zt-blog-nav-count">{{ $count }}</span>
+  </button>
+  {{ end }}
+</div>
+
+{{/* All posts */}}
+<div class="zt-blog-nav-section">
+  <p class="zt-blog-nav-label">All articles</p>
+  {{ range $allPosts.ByDate.Reverse }}
+  <a href="{{ .RelPermalink }}" class="zt-blog-nav-link">
+    <span class="zt-blog-nav-link-title">{{ .Title | truncate 40 }}</span>
+    <span class="zt-blog-nav-link-date">{{ .Date.Format "Jan 06" }}</span>
+  </a>
+  {{ end }}
+</div>
+
+</nav>

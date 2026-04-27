@@ -1,0 +1,31 @@
+{{/*
+  blog-list-companion.html — Right companion sidebar for blog index page.
+  Shows popular articles, study guides CTA, and YouTube.
+*/}}
+
+{{/* Popular tools */}}
+{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Popular tools</p>
+  {{ $count := 0 }}
+  {{ range $tools }}
+    {{ if lt $count 5 }}
+    <a href="{{ .url }}" class="zt-companion-link zt-companion-link--inline">
+      <span class="zt-companion-link-tag">{{ .emoji }}</span>
+      <span class="zt-companion-link-title">{{ .name }}</span>
+    </a>
+    {{ $count = add $count 1 }}
+    {{ end }}
+  {{ end }}
+</div>
+
+{{/* Study guides CTA */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Learn & certify</p>
+  <div class="zt-companion-cta">
+    <a href="/study-guides/" class="zt-companion-cta-btn">📚 Study Guides</a>
+    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+    <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
+  </div>
+</div>

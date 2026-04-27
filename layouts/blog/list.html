@@ -1,47 +1,91 @@
 {{ define "main" }}
-<div class="zt-page">
-  {{ partial "tool-header.html" (dict "page" . "title" .Title "counter_base" (len .Pages) "counter_verb" "articles") }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — Blog Index (3-column grid matching blog single pages) */}}
 
-  {{/* Search */}}
-  <div style="max-width:600px;margin-bottom:var(--space-6,24px)">
-    <input type="text" id="blog-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search blog posts"
-      style="width:100%;padding:var(--space-2,8px) var(--space-3,12px);border-radius:var(--radius-sm,6px);border:1px solid var(--border,#262626);background:var(--bg-elevated,#1A1A1A);color:var(--text-primary,#F5F5F5);font-size:var(--zen-text-sm,0.875rem);outline:none;transition:border-color var(--transition,150ms ease-out)"
-      onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
-  </div>
+<div class="zt-reading">
 
-  {{/* Video CTA */}}
-  <div style="margin-bottom:var(--space-6,24px);padding:var(--space-3,12px) var(--space-4,16px);background:var(--bg-elevated,#1A1A1A);border:1px solid var(--border,#262626);border-radius:var(--radius-sm,6px)">
-    <p style="margin:0;font-size:var(--zen-text-sm,0.875rem);color:var(--text-tertiary,#A3A3A3)">📺 Looking for video tutorials? Browse <a href="/ai-hub/" style="color:var(--accent);text-decoration:none">AI Hub</a> · <a href="/cloud-labs/" style="color:var(--accent);text-decoration:none">Cloud Labs</a> · <a href="/certifications/" style="color:var(--accent);text-decoration:none">Full Courses</a> · <a href="/exam-qa/" style="color:var(--accent);text-decoration:none">Mock Exams</a></p>
-  </div>
+  {{/* ── LEFT: Blog navigation sidebar ── */}}
+  <aside class="zt-sidebar" aria-label="Blog navigation" data-pagefind-ignore>
+    {{ partial "blog-list-nav.html" . }}
+  </aside>
 
-  {{/* Article cards */}}
-  <div class="zt-blog-list" id="blog-list">
-    {{ range .Pages.ByDate.Reverse }}
-    <a href="{{ .RelPermalink }}" class="zt-blog-card">
-      <div class="zt-blog-card-top">
-        {{ if .Params.card_tag }}<span class="zt-blog-card-tag">{{ .Params.card_tag }}</span>{{ end }}
-        <span class="zt-blog-card-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
+  {{/* ── CENTER: Blog listing ── */}}
+  <div class="zt-reading-content zt-blog-landing">
+
+    {{/* Hero */}}
+    <header class="ft-hero">
+      <h1 class="ft-hero-title">Blog</h1>
+      <p class="ft-hero-subtitle">Practical guides for IT pros — Microsoft 365 Copilot, Azure, AI, licensing, and more. Written in plain English by <a href="/about/">Susanth</a>.</p>
+      <div class="ft-hero-meta">
+        <span class="ft-hero-stat">📝 {{ len .Pages }} articles</span>
+        <span class="ft-hero-stat">☕ Long-form guides</span>
+        <span class="ft-hero-stat">🔄 Updated regularly</span>
       </div>
-      <h2 class="zt-blog-card-title">{{ .Title }}</h2>
-      {{ with .Description }}<p class="zt-blog-card-desc">{{ . | truncate 150 }}</p>{{ end }}
-    </a>
-    {{ end }}
+    </header>
+
+    {{/* Search */}}
+    <div class="zt-sg-search-wrap">
+      <input type="text" id="blog-search" placeholder="🔍 Search articles..." autocomplete="off" aria-label="Search blog posts" class="zt-sg-search">
+    </div>
+
+    {{/* Article cards */}}
+    <div class="zt-blog-list" id="blog-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}" class="zt-blog-card" data-tag="{{ .Params.card_tag }}">
+        <div class="zt-blog-card-top">
+          {{ if .Params.card_tag }}<span class="zt-blog-card-tag">{{ .Params.card_tag }}</span>{{ end }}
+          <span class="zt-blog-card-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
+        </div>
+        <h2 class="zt-blog-card-title">{{ .Title }}</h2>
+        {{ with .Description }}<p class="zt-blog-card-desc">{{ . | truncate 150 }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+
+    <p id="blog-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--text-sm,0.875rem)">No posts found — try a different search term</p>
   </div>
 
-  <p id="blog-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--zen-text-sm,0.875rem)">No posts found — try a different search term</p>
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "blog-list-companion.html" . }}
+  </aside>
+
 </div>
 
 <script>
-document.getElementById('blog-search').addEventListener('input', function() {
-  var q = this.value.toLowerCase();
-  var visible = 0;
-  document.querySelectorAll('.zt-blog-card').forEach(function(el) {
-    var show = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
-    el.style.display = show ? '' : 'none';
-    if (show) visible++;
+(function(){
+  // Text search
+  var search = document.getElementById('blog-search');
+  var cards = document.querySelectorAll('.zt-blog-card');
+  var noResults = document.getElementById('blog-no-results');
+
+  function filterCards() {
+    var q = search.value.toLowerCase();
+    var activeFilter = document.querySelector('.zt-blog-nav-cat.active');
+    var filterTag = activeFilter ? activeFilter.dataset.filter : '';
+    var visible = 0;
+    cards.forEach(function(el) {
+      var matchSearch = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var matchTag = !filterTag || el.dataset.tag === filterTag;
+      var show = matchSearch && matchTag;
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = (visible === 0) ? '' : 'none';
+  }
+
+  search.addEventListener('input', filterCards);
+
+  // Category filter buttons
+  document.querySelectorAll('.zt-blog-nav-cat').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var wasActive = this.classList.contains('active');
+      document.querySelectorAll('.zt-blog-nav-cat').forEach(function(b) { b.classList.remove('active'); });
+      if (!wasActive) this.classList.add('active');
+      filterCards();
+    });
   });
-  document.getElementById('blog-no-results').style.display = (q && visible === 0) ? '' : 'none';
-});
+})();
 </script>
 
 {{ partial "back-nav" (dict "Page" . "URL" "/" "Label" "Home") }}
