@@ -8,7 +8,7 @@
   /* No per-tool accent — uses global --accent */
 }
 
-/* ── Glass Pill Tabs — visual overridden by zt-tools.css cascade ── */
+/* ── Glass Pill Tabs — visual overridden by zt-reading.css tab selectors (higher specificity) ── */
 /* Keep classes for JS hooks; visual styles handled by .zt-page [role="tablist"] */
 .polisher-tabs {
   display: flex; gap: 0; padding: 0;

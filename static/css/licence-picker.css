@@ -14,7 +14,7 @@
 
 /* ── Tabs ──────────────────────────────────────── */
 /* Zen underline tabs — the .zt-page [role="tablist"] selectors
-   in zt-tools.css handle most styling. These are just fallbacks. */
+   in zt-reading.css handle most styling. These are just fallbacks. */
 .licpick-tabs {
   max-width: 900px;
   margin: 0 auto;
