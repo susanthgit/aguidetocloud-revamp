@@ -17,7 +17,7 @@
   display: flex; gap: 0.5rem; padding: 0.35rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px; margin-bottom: 1.5rem;
+  border-radius: var(--radius-md); margin-bottom: 1.5rem;
 }
 .prompts-tab-btn {
   background: none; border: 1px solid transparent;
@@ -200,16 +200,16 @@
 }
 /* Category-specific accent colors on headings */
 .prompts-category-group[data-category="writing"] .prompts-category-heading           { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
-.prompts-category-group[data-category="email"] .prompts-category-heading             { color: var(--accent); border-bottom-color: rgba(56,189,248,0.25); }
-.prompts-category-group[data-category="data-analysis"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(34,211,238,0.25); }
-.prompts-category-group[data-category="meetings"] .prompts-category-heading          { color: var(--accent); border-bottom-color: rgba(96,165,250,0.25); }
-.prompts-category-group[data-category="research"] .prompts-category-heading          { color: var(--accent); border-bottom-color: rgba(52,211,153,0.25); }
-.prompts-category-group[data-category="presentations"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(251,146,60,0.25); }
-.prompts-category-group[data-category="summarising"] .prompts-category-heading       { color: var(--accent); border-bottom-color: rgba(244,114,182,0.25); }
-.prompts-category-group[data-category="project-management"] .prompts-category-heading{ color: var(--accent); border-bottom-color: rgba(250,204,21,0.25); }
-.prompts-category-group[data-category="brainstorming"] .prompts-category-heading     { color: var(--accent); border-bottom-color: rgba(192,132,252,0.25); }
-.prompts-category-group[data-category="customer-service"] .prompts-category-heading  { color: var(--accent); border-bottom-color: rgba(45,212,191,0.25); }
-.prompts-category-group[data-category="image-generation"] .prompts-category-heading  { color: #DC2626; border-bottom-color: rgba(248,113,113,0.25); }
+.prompts-category-group[data-category="email"] .prompts-category-heading             { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="data-analysis"] .prompts-category-heading     { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="meetings"] .prompts-category-heading          { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="research"] .prompts-category-heading          { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="presentations"] .prompts-category-heading     { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="summarising"] .prompts-category-heading       { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="project-management"] .prompts-category-heading{ color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="brainstorming"] .prompts-category-heading     { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="customer-service"] .prompts-category-heading  { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.prompts-category-group[data-category="image-generation"] .prompts-category-heading  { color: var(--accent); border-bottom-color: color-mix(in srgb, var(--accent) 25%, transparent); }
 .prompts-category-emoji {
   font-size: 1.1rem;
 }
@@ -370,7 +370,7 @@
 .prompt-card[data-usecase="project-management"] .prompt-text { border-left-color: var(--accent); }
 .prompt-card[data-usecase="brainstorming"] .prompt-text      { border-left-color: var(--accent); }
 .prompt-card[data-usecase="customer-service"] .prompt-text   { border-left-color: var(--accent); }
-.prompt-card[data-usecase="image-generation"] .prompt-text   { border-left-color: #DC2626; }
+.prompt-card[data-usecase="image-generation"] .prompt-text   { border-left-color: var(--accent); }
 
 /* Card footer */
 .prompt-card-footer {
@@ -388,7 +388,7 @@
 .prompt-platform-badge {
   font-size: var(--text-caption, 0.75rem);
   padding: 0.12rem 0.45rem;
-  border-radius: 16px;
+  border-radius: var(--radius-full);
   background: var(--bg-elevated);
   color: var(--text-muted);
   font-family: var(--font-heading);
@@ -521,11 +521,11 @@
 .prompts-category-card[data-cat="meetings"]           { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="research"]           { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="presentations"]      { border-left: 3px solid var(--accent); }
-.prompts-category-card[data-cat="summarising"]        { border-left: 3px solid #F472B6; }
-.prompts-category-card[data-cat="project-management"] { border-left: 3px solid #FACC15; }
+.prompts-category-card[data-cat="summarising"]        { border-left: 3px solid var(--accent); }
+.prompts-category-card[data-cat="project-management"] { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="brainstorming"]      { border-left: 3px solid var(--accent); }
 .prompts-category-card[data-cat="customer-service"]   { border-left: 3px solid var(--accent); }
-.prompts-category-card[data-cat="image-generation"]   { border-left: 3px solid #F87171; }
+.prompts-category-card[data-cat="image-generation"]   { border-left: 3px solid var(--accent); }
 
 /* ── SINGLE PROMPT PAGE ─────────────────────── */
 
@@ -1154,7 +1154,7 @@ select.wiz-input { cursor: pointer; }
 .prompts-eco-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: var(--text-primary);
