@@ -24,7 +24,7 @@
 .agplan-tab {
   background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
-  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+  border-radius: 8px; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
   white-space: nowrap;
 }
 .agplan-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
@@ -46,7 +46,7 @@
 .agplan-btn-primary {
   padding: 0.7rem 1.5rem; font-size: 0.9rem; font-weight: 700; border: none;
   border-radius: 10px; cursor: pointer; background: var(--agplan-accent); color: var(--text-primary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .agplan-btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
 .agplan-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; filter: none; }
@@ -54,7 +54,7 @@
   padding: 0.7rem 1.5rem; font-size: 0.9rem; font-weight: 600; cursor: pointer;
   border-radius: 10px; background: var(--border);
   border: 1px solid var(--border); color: var(--text-secondary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .agplan-btn-secondary:hover { background: var(--border); color: var(--text-primary); }
 .agplan-btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
@@ -70,7 +70,7 @@
   display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
   padding: 1.25rem 1rem; text-align: center;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; cursor: pointer; transition: all 0.2s;
+  border-radius: var(--radius-md, 10px); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4;
 }
 .agplan-persona-card:hover {
@@ -91,7 +91,7 @@
 /* Analogy card */
 .agplan-analogy-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.25rem; margin-bottom: 1.25rem;
+  border-radius: var(--radius-md, 10px); padding: 1.25rem; margin-bottom: 1.25rem;
 }
 .agplan-analogy-row {
   display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
@@ -241,7 +241,7 @@
 
 .agplan-assess-question {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem;
+  border-radius: var(--radius-md, 10px); padding: 1.5rem; margin-bottom: 1rem;
 }
 .agplan-assess-question h3 {
   font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 1rem; line-height: 1.4;
@@ -250,7 +250,7 @@
   display: block; width: 100%; text-align: left; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 8px; color: var(--text-secondary); font-size: 0.88rem;
-  cursor: pointer; transition: all 0.15s;
+  cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .agplan-option:hover {
   background: var(--bg-elevated); border-color: var(--bg-elevated);
@@ -364,13 +364,13 @@
   flex-shrink: 0; width: 32px; height: 24px; border-radius: 6px; cursor: pointer;
   font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 24px;
   border: 1px solid var(--border); background: var(--border);
-  color: var(--text-muted); transition: all 0.15s; user-select: none;
+  color: var(--text-muted); transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out; user-select: none;
 }
 .agplan-checklist-toggle[data-state="done"] {
   background: rgba(76,206,59,0.15); border-color: var(--agplan-accent); color: var(--agplan-accent);
 }
 .agplan-checklist-toggle[data-state="partial"] {
-  background: rgba(251,191,36,0.15); border-color: #FBBF24; color: #FBBF24;
+  background: rgba(251,191,36,0.15); border-color: #FBBF24; color: var(--text-primary);
 }
 .agplan-checklist-toggle[data-state="not-done"] {
   background: var(--bg-elevated); border-color: var(--bg-elevated);
@@ -384,11 +384,11 @@
   font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;
 }
 .agplan-checklist-severity {
-  flex-shrink: 0; font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  flex-shrink: 0; font-size: var(--text-caption, 0.75rem); font-weight: 700; text-transform: uppercase;
   padding: 0.15rem 0.4rem; border-radius: 4px; letter-spacing: 0.03em;
 }
-.agplan-severity-critical { background: rgba(239,68,68,0.15); color: #f87171; }
-.agplan-severity-high { background: rgba(251,191,36,0.15); color: #FBBF24; }
+.agplan-severity-critical { background: rgba(239,68,68,0.15); color: var(--text-primary); }
+.agplan-severity-high { background: rgba(251,191,36,0.15); color: var(--text-primary); }
 .agplan-severity-medium { background: rgba(96,165,250,0.15); color: #60A5FA; }
 
 .agplan-gov-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
@@ -396,7 +396,7 @@
 /* ── Tab 4: Decision Tree ──────────────────────────────────────────────── */
 .agplan-tree-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.75rem; text-align: center; max-width: 600px;
+  border-radius: var(--radius-md, 10px); padding: 1.75rem; text-align: center; max-width: 600px;
   margin: 0 auto 1.5rem;
 }
 .agplan-tree-question {
@@ -405,7 +405,7 @@
 .agplan-tree-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 .agplan-tree-btn {
   padding: 0.65rem 2rem; font-size: 0.9rem; font-weight: 600; border-radius: 10px;
-  cursor: pointer; transition: all 0.15s; border: 1px solid var(--border);
+  cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out; border: 1px solid var(--border);
   background: var(--bg-elevated); color: var(--text-primary);
 }
 .agplan-tree-btn:hover { background: var(--border); border-color: var(--border-emphasis); }
@@ -417,7 +417,7 @@
 .agplan-tree-result-card {
   max-width: 600px; margin: 0 auto 1rem; padding: 1.5rem;
   background: var(--bg-elevated); border: 1px solid var(--agplan-accent);
-  border-radius: 14px; text-align: center;
+  border-radius: var(--radius-md, 10px); text-align: center;
 }
 .agplan-tree-result-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
 .agplan-tree-result-title {
@@ -444,7 +444,7 @@
 .agplan-tree-result-link {
   display: inline-block; margin-top: 0.75rem; padding: 0.5rem 1.25rem;
   font-size: 0.85rem; font-weight: 600; color: var(--text-primary); background: var(--agplan-accent);
-  border-radius: 8px; text-decoration: none; transition: all 0.2s;
+  border-radius: 8px; text-decoration: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .agplan-tree-result-link:hover { filter: brightness(1.1); }
 
@@ -474,7 +474,7 @@
 .agplan-crosslink-card {
   display: flex; flex-direction: column; gap: 0.25rem; padding: 1rem 1.1rem;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; text-decoration: none; transition: all 0.2s;
+  border-radius: 12px; text-decoration: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .agplan-crosslink-card:hover {
   background: var(--bg-elevated); border-color: var(--bg-elevated);

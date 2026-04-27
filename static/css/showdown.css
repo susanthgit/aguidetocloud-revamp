@@ -70,13 +70,13 @@
   padding: 0.6rem 1rem;
   background: none;
   border: 1px solid transparent;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-secondary);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
 }
@@ -135,7 +135,7 @@
   padding: 0.6rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
 }
@@ -149,7 +149,7 @@
   padding: 0.6rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.85rem;
   cursor: pointer;
@@ -171,7 +171,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   padding: 1.25rem;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   cursor: pointer;
 }
 .showdown-provider-card:hover {
@@ -219,7 +219,7 @@
 .showdown-badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-weight: 600;
   font-size: 0.72rem;
 }
@@ -262,11 +262,11 @@
   padding: 0.4rem 0.8rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .showdown-preset:hover,
 .showdown-preset.active {
@@ -288,11 +288,11 @@
   padding: 0.35rem 0.7rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   font-size: 0.82rem;
   color: var(--text-secondary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .showdown-compare-check.selected {
   border-color: var(--showdown-accent);
@@ -484,12 +484,12 @@
   padding: 0.8rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .showdown-quiz-option:hover {
   border-color: var(--showdown-accent);
@@ -517,10 +517,10 @@
 .showdown-btn {
   padding: 0.6rem 1.2rem;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   color: var(--text-primary);
 }
 .showdown-btn:disabled {
@@ -646,11 +646,11 @@
   padding: 0.3rem 0.7rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   cursor: pointer;
   font-size: 0.78rem;
   color: var(--text-secondary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .showdown-req-check.active {
   border-color: var(--showdown-accent);

@@ -108,7 +108,7 @@
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
   font-family: inherit;
 }
 .aicost-conf-btn:hover { background: var(--border); color: var(--text-primary); }
@@ -328,7 +328,7 @@
   color: var(--text-secondary);
   font-size: 0.82rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .aicost-radio:hover { background: var(--bg-elevated); color: var(--text-primary); }
 .aicost-radio.selected {
@@ -355,7 +355,7 @@
   color: var(--text-secondary);
   font-size: 0.82rem;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .aicost-check:hover { background: var(--bg-elevated); }
 .aicost-check.checked {
@@ -397,7 +397,7 @@
 .aicost-metric {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1rem;
   text-align: center;
 }
@@ -465,7 +465,7 @@
 .aicost-category {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   margin-bottom: 0.75rem;
   overflow: hidden;
 }
@@ -540,7 +540,7 @@
 .aicost-table tr.expensive td { color: var(--aicost-amber); }
 .aicost-badge {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 700;
   padding: 0.15rem 0.45rem;
   border-radius: 6px;
@@ -561,13 +561,13 @@
 .aicost-scenario {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.25rem;
   text-align: center;
 }
 .aicost-scenario.recommended {
   border-color: var(--accent);
-  box-shadow: 0 0 16px var(--accent-subtle);
+  /* z5-removed: glow shadow */
 }
 .aicost-scenario-title {
   color: var(--text-primary);
@@ -627,7 +627,7 @@
 .aicost-bundle-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.25rem;
   margin-bottom: 0.75rem;
 }
@@ -685,7 +685,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .aicost-preset-btn:hover {
   background: var(--bg-elevated);
@@ -814,7 +814,7 @@
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
   font-family: inherit;
 }
 .aicost-btn-accent {
@@ -846,7 +846,7 @@
   color: var(--text-secondary);
   font-size: 0.78rem;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .aicost-usecase-btn:hover { background: var(--border); color: var(--text-primary); }
 .aicost-usecase-btn.active {
@@ -918,7 +918,7 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
   font-family: inherit;
 }
 .aicost-cross-link:hover {

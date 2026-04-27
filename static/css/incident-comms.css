@@ -37,7 +37,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -85,7 +85,7 @@
   padding: 0.6rem 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .icomms-btn-secondary:hover {
   background: var(--bg-elevated);
@@ -394,7 +394,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .icomms-copy-btn:hover,
 .icomms-mailto-btn:hover {
@@ -442,7 +442,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   margin-top: 0.5rem;
 }
 .icomms-gallery-use:hover {
@@ -482,7 +482,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .icomms-action-btn:hover {
   background: var(--bg-elevated);

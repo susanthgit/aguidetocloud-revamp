@@ -6,7 +6,7 @@
 .aimap-page {
   --aimap-accent: var(--accent);
   --aimap-accent-hover: var(--accent-hover, var(--accent));
-  --aimap-accent-glow: color-mix(in srgb, var(--accent) 25%, transparent);
+  --aimap-accent-glow: transparent;
   --aimap-accent-dim: var(--accent-subtle);
   --aimap-accent-border: color-mix(in srgb, var(--accent) 25%, transparent);
   --aimap-bg: var(--bg-page);
@@ -41,8 +41,8 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   font-family: inherit;
   flex: 1;
   text-align: center;
@@ -107,7 +107,7 @@
   padding: 0.6rem 0.8rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
   font-family: inherit;
@@ -185,7 +185,7 @@
   border: 1px solid var(--aimap-accent-border);
   color: var(--aimap-accent);
   padding: 0.4rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   font-size: 0.85rem;
   font-family: inherit;
@@ -269,7 +269,7 @@
   gap: 0.3rem;
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   background: var(--bg-elevated);
   color: var(--text-primary);
   width: fit-content;
@@ -306,7 +306,7 @@
 .aimap-best-tag {
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   background: var(--accent-subtle);
   color: var(--accent);
   border: 1px solid var(--accent-subtle);
@@ -326,8 +326,8 @@
   font-weight: 500;
 }
 .aimap-card-price.aimap-free { color: #4ade80; }
-.aimap-card-price.aimap-paid { color: #fbbf24; }
-.aimap-card-price.aimap-sub { color: #f97316; }
+.aimap-card-price.aimap-paid { color: var(--text-primary); }
+.aimap-card-price.aimap-sub { color: var(--text-primary); }
 
 .aimap-card-link {
   font-size: 0.8rem;
@@ -358,7 +358,7 @@
   border: 1px solid var(--aimap-accent-border);
   color: var(--aimap-accent);
   padding: 0.5rem 1.2rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   font-size: 0.9rem;
   font-family: inherit;
@@ -532,7 +532,7 @@
   margin-top: 0.5rem;
   font-size: 0.8rem;
   padding: 0.15rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   background: var(--aimap-accent-dim);
   color: var(--aimap-accent);
 }
@@ -608,7 +608,7 @@
   margin-bottom: 1rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
   cursor: pointer;
@@ -671,12 +671,12 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
   border-radius: 16px;
   flex-wrap: wrap;
 }
-.aimap-fav-bar-label { font-size: 0.85rem; color: #fbbf24; font-weight: 600; white-space: nowrap; }
+.aimap-fav-bar-label { font-size: 0.85rem; color: var(--text-primary); font-weight: 600; white-space: nowrap; }
 .aimap-fav-bar-items { display: flex; gap: 0.4rem; flex-wrap: wrap; flex: 1; }
 .aimap-fav-chip {
   display: inline-flex; align-items: center; gap: 0.3rem;
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem; color: var(--text-primary); cursor: pointer;
+  border-radius: var(--radius-lg, 16px); padding: 0.2rem 0.6rem; font-size: 0.78rem; color: var(--text-primary); cursor: pointer;
 }
 .aimap-fav-chip:hover { border-color: var(--aimap-accent); }
 .aimap-fav-chip-x { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.9rem; padding: 0; font-family: inherit; }
@@ -689,7 +689,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-scenarios-label { font-size: 0.82rem; color: var(--aimap-text-muted); margin-right: 0.3rem; }
 .aimap-scenario-btn {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 20px; padding: 0.35rem 0.8rem; font-size: 0.8rem;
+  border-radius: var(--radius-lg, 16px); padding: 0.35rem 0.8rem; font-size: 0.8rem;
   color: var(--text-primary); cursor: pointer; font-family: inherit; transition: border-color 0.2s, background 0.2s;
 }
 .aimap-scenario-btn:hover { border-color: var(--aimap-accent-border); background: var(--aimap-accent-dim); }
@@ -713,13 +713,13 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
   background: none; border: none; font-size: 1.1rem; cursor: pointer; color: #555;
   padding: 0; line-height: 1; transition: color 0.2s;
 }
-.aimap-fav-btn:hover, .aimap-fav-btn.active { color: #fbbf24; }
+.aimap-fav-btn:hover, .aimap-fav-btn.active { color: var(--text-primary); }
 
 .aimap-status-badge {
-  font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600;
+  font-size: var(--text-caption, 0.75rem); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600;
 }
 .aimap-status-badge.preview { background: rgba(168,85,247,0.15); color: #c084fc; }
-.aimap-status-badge.deprecated { background: rgba(239,68,68,0.15); color: #f87171; }
+.aimap-status-badge.deprecated { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 
 .aimap-cap-dots { font-size: 0.6rem; margin-left: 0.15rem; letter-spacing: -1px; }
 .aimap-cap-badge.strong .aimap-cap-dots { color: var(--aimap-accent); }
@@ -768,7 +768,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-modal-alt-cards { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .aimap-modal-alt-card {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 14px; padding: 0.6rem 0.8rem; cursor: pointer; transition: border-color 0.2s;
+  border-radius: var(--radius-md, 10px); padding: 0.6rem 0.8rem; cursor: pointer; transition: border-color 0.2s;
 }
 .aimap-modal-alt-card:hover { border-color: var(--aimap-accent); }
 
@@ -779,7 +779,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-presets-label { font-size: 0.82rem; color: var(--aimap-text-muted); }
 .aimap-preset-btn {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem;
+  border-radius: var(--radius-lg, 16px); padding: 0.3rem 0.8rem; font-size: 0.8rem;
   color: var(--text-primary); cursor: pointer; font-family: inherit;
 }
 .aimap-preset-btn:hover { border-color: var(--aimap-accent); background: var(--aimap-accent-dim); }
@@ -800,7 +800,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-hm-provider { color: var(--aimap-text-muted); padding: 0.4rem; white-space: nowrap; }
 .aimap-hm-cell { text-align: center; padding: 0.4rem; font-weight: 600; border-bottom: 1px solid var(--border); }
 .aimap-hm-high { background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--accent); }
-.aimap-hm-med { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.aimap-hm-med { background: rgba(251,191,36,0.12); color: var(--text-primary); }
 .aimap-hm-low { background: var(--bg-elevated); color: var(--text-muted); }
 .aimap-hm-none { color: #444; }
 .aimap-heatmap-row:hover td { background: var(--bg-elevated); }
@@ -823,7 +823,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-cost-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.75rem; }
 .aimap-cost-card {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 14px; padding: 0.6rem 0.8rem; display: flex; flex-direction: column; gap: 0.15rem;
+  border-radius: var(--radius-md, 10px); padding: 0.6rem 0.8rem; display: flex; flex-direction: column; gap: 0.15rem;
 }
 .aimap-cost-card-name { font-weight: 600; color: var(--text-primary); font-size: 0.85rem; }
 .aimap-cost-card-provider { font-size: 0.75rem; color: var(--aimap-text-muted); }

@@ -42,8 +42,8 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
 }
@@ -163,7 +163,7 @@
   border-radius: 6px;
   font-size: 0.72rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .shealth-clear-btn:hover {
   border-color: var(--accent);
@@ -220,7 +220,7 @@
 .shealth-svc-icon { font-size: 1.3rem; margin-bottom: 0.2rem; }
 .shealth-svc-name { font-size: 0.72rem; color: var(--text-primary); font-weight: 500; line-height: 1.2; }
 .shealth-svc-status {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   margin-top: 0.25rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -244,7 +244,7 @@
   padding: 0.6rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
 }
@@ -261,7 +261,7 @@
   padding: 0.6rem 0.75rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.84rem;
   cursor: pointer;
@@ -330,8 +330,8 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0.15rem 0.5rem;
-  border-radius: 20px;
-  font-size: 0.68rem;
+  border-radius: var(--radius-lg, 16px);
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -358,7 +358,7 @@
   white-space: nowrap;
 }
 .shealth-incident-duration {
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--accent);
   font-weight: 600;
 }
@@ -381,7 +381,7 @@
   background: transparent;
   border: 1px solid var(--accent);
   color: var(--accent);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
@@ -423,7 +423,7 @@
 .shealth-modal {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   max-width: 700px;
   width: 100%;
   padding: 1.5rem;
@@ -470,7 +470,7 @@
   margin-bottom: 1.2rem;
   padding: 0.75rem;
   background: rgba(249, 115, 22, 0.06);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   border-left: 3px solid var(--accent);
 }
 
@@ -552,7 +552,7 @@
 }
 .shealth-trend-bar:hover { opacity: 0.8; }
 .shealth-trend-bar-val {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -666,7 +666,7 @@
 }
 .shealth-date-result-msg {
   padding: 0.75rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   line-height: 1.5;
 }
@@ -700,7 +700,7 @@
   .shealth-status-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.4rem; }
   .shealth-svc-card { padding: 0.5rem 0.4rem; }
   .shealth-svc-icon { font-size: 1.1rem; }
-  .shealth-svc-name { font-size: 0.65rem; }
+  .shealth-svc-name { font-size: var(--text-caption, 0.75rem); }
   .shealth-incident-header { flex-direction: column; }
   .shealth-incident-right { flex-direction: row; align-items: center; gap: 0.5rem; }
   .shealth-controls { flex-direction: column; }

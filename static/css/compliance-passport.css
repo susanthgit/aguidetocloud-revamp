@@ -13,7 +13,7 @@
 .passport-tab {
   background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
-  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+  border-radius: 8px; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
 }
 .passport-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .passport-tab.active {
@@ -35,7 +35,7 @@
 .passport-preset {
   background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.25);
   color: var(--passport-accent); padding: 0.35rem 0.7rem; border-radius: 8px;
-  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: all 0.2s;
+  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .passport-preset:hover {
   background: rgba(46,204,113,0.2); border-color: var(--passport-accent);
@@ -51,7 +51,7 @@
 .passport-q-opt {
   display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 8px; cursor: pointer; transition: all 0.2s;
+  border-radius: 8px; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   color: var(--text-secondary); font-size: 0.85rem;
 }
 .passport-q-opt:hover { background: var(--bg-elevated); color: var(--text-primary); }
@@ -61,7 +61,7 @@
 .passport-btn {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-primary); padding: 0.6rem 1.2rem; border-radius: 8px;
-  cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+  cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .passport-btn:hover { background: var(--border); color: var(--text-primary); }
 .passport-btn-primary { background: var(--passport-accent); color: var(--accent-foreground, #fff); border-color: var(--passport-accent); font-weight: 700; }
@@ -80,10 +80,10 @@
 .passport-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
 .passport-card-name { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
 .passport-card-badge {
-  padding: 0.15rem 0.5rem; border-radius: 10px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+  padding: 0.15rem 0.5rem; border-radius: 10px; font-size: var(--text-caption, 0.75rem); font-weight: 600; text-transform: uppercase;
 }
 .passport-card-badge.likely { background: rgba(46,204,113,0.2); color: var(--passport-accent); }
-.passport-card-badge.possibly { background: rgba(243,156,18,0.2); color: #F39C12; }
+.passport-card-badge.possibly { background: rgba(243,156,18,0.2); color: var(--text-primary); }
 .passport-card-badge.unlikely { background: var(--bg-elevated); color: var(--text-muted); }
 .passport-card-region { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.3rem; }
 .passport-card-desc { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.6rem; }
@@ -91,7 +91,7 @@
 .passport-feature-pill {
   padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.7rem;
   background: rgba(46,204,113,0.1); color: rgba(46,204,113,0.8);
-  text-decoration: none; transition: all 0.2s; cursor: pointer;
+  text-decoration: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; cursor: pointer;
 }
 .passport-feature-pill:hover {
   background: rgba(46,204,113,0.2); color: #2ECC71; text-decoration: underline;

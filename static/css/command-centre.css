@@ -73,7 +73,7 @@ body { background: var(--bg-page) !important; }
 .cc-view {
   background: none; border: none; color: var(--text-muted); font-family: var(--cc-mono);
   font-size: 0.78rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 6px;
-  cursor: pointer; transition: all 0.15s;
+  cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cc-view:hover { color: var(--text-primary); }
 .cc-view.active { color: var(--accent-foreground, #fff); background: var(--cc-green); }
@@ -102,7 +102,7 @@ body { background: var(--bg-page) !important; }
 .cc-metrics-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 .cc-metric { text-align: center; }
 .cc-metric-num { font-family: var(--cc-mono); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); display: block; }
-.cc-metric-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.cc-metric-label { font-size: var(--text-caption, 0.75rem); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* Action items */
 .cc-action {
@@ -114,7 +114,7 @@ body { background: var(--bg-page) !important; }
 .cc-action-medium { background: rgba(245,158,11,0.06); border-left-color: var(--cc-amber); }
 .cc-action-low { background: rgba(34,197,94,0.06); border-left-color: var(--cc-green); }
 .cc-action-tag {
-  font-family: var(--cc-mono); font-size: 0.65rem; font-weight: 700;
+  font-family: var(--cc-mono); font-size: var(--text-caption, 0.75rem); font-weight: 700;
   padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase;
   flex-shrink: 0; margin-top: 0.15rem;
 }
@@ -142,7 +142,7 @@ body { background: var(--bg-page) !important; }
 .cc-bet-topic { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
 .cc-bet-reason { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
 .cc-bet-format {
-  font-family: var(--cc-mono); font-size: 0.65rem; font-weight: 600;
+  font-family: var(--cc-mono); font-size: var(--text-caption, 0.75rem); font-weight: 600;
   background: rgba(59,130,246,0.15); color: var(--cc-blue); padding: 0.1rem 0.4rem;
   border-radius: 4px; display: inline-block; margin-top: 0.25rem;
 }
@@ -168,7 +168,7 @@ body { background: var(--bg-page) !important; }
 
 /* Title issues */
 .cc-title-issues { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
-.cc-title-issue { font-size: 0.68rem; color: var(--cc-amber); background: rgba(245,158,11,0.08); padding: 0.1rem 0.4rem; border-radius: 4px; }
+.cc-title-issue { font-size: var(--text-caption, 0.75rem); color: var(--cc-amber); background: rgba(245,158,11,0.08); padding: 0.1rem 0.4rem; border-radius: 4px; }
 
 /* Scorecard grid */
 .cc-scorecard { display: grid; grid-template-columns: 1fr repeat(3, auto); gap: 0; font-size: 0.85rem; }
@@ -191,7 +191,7 @@ body { background: var(--bg-page) !important; }
 .cc-pos { font-family: var(--cc-mono); font-size: 0.72rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px; }
 .cc-pos-top3 { background: rgba(34,197,94,0.15); color: var(--cc-green); }
 .cc-pos-top10 { background: rgba(245,158,11,0.15); color: var(--cc-amber); }
-.cc-pos-top20 { background: rgba(251,146,60,0.15); color: #fb923c; }
+.cc-pos-top20 { background: rgba(251,146,60,0.15); color: var(--text-primary); }
 .cc-pos-deep { background: rgba(239,68,68,0.15); color: var(--cc-red); }
 
 /* SEO filter */
@@ -255,7 +255,7 @@ body { background: var(--bg-page) !important; }
   display: flex; align-items: center; justify-content: center;
 }
 .cc-help-card {
-  background: var(--bg-page); border: 1px solid var(--border); border-radius: 14px;
+  background: var(--bg-page); border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
   max-width: 580px; width: 90%; max-height: 80vh; overflow-y: auto;
 }
 .cc-help-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
@@ -273,7 +273,7 @@ body { background: var(--bg-page) !important; }
 /* UX: Section Tips */
 .cc-tip {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 18px; height: 18px; border-radius: 50%; font-size: 0.65rem; font-weight: 700;
+  width: 18px; height: 18px; border-radius: 50%; font-size: var(--text-caption, 0.75rem); font-weight: 700;
   background: var(--bg-elevated); color: var(--text-muted); cursor: pointer;
   margin-left: 0.4rem; vertical-align: middle; border: 1px solid var(--border);
 }
@@ -326,9 +326,9 @@ body { background: var(--bg-page) !important; }
   padding: 0.35rem; min-height: 60px; font-size: 0.72rem;
 }
 .cc-cal-today { border-color: var(--cc-green); background: rgba(34,197,94,0.04); }
-.cc-cal-date { color: var(--text-muted); font-family: var(--cc-mono); font-size: 0.65rem; display: block; margin-bottom: 0.2rem; }
+.cc-cal-date { color: var(--text-muted); font-family: var(--cc-mono); font-size: var(--text-caption, 0.75rem); display: block; margin-bottom: 0.2rem; }
 .cc-cal-item {
-  font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.3rem; border-radius: 3px;
+  font-size: var(--text-caption, 0.75rem); font-weight: 600; padding: 0.15rem 0.3rem; border-radius: 3px;
   margin-top: 0.15rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .cc-cal-blog { background: rgba(59,130,246,0.2); color: var(--cc-blue); }
@@ -358,7 +358,7 @@ body { background: var(--bg-page) !important; }
 .cc-wow-up { border-color: rgba(34,197,94,0.2); }
 .cc-wow-down { border-color: rgba(239,68,68,0.2); }
 .cc-wow-val { font-family: var(--cc-mono); font-size: 1.3rem; font-weight: 700; color: var(--text-primary); display: block; }
-.cc-wow-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.cc-wow-label { font-size: var(--text-caption, 0.75rem); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .cc-wow-chg { font-family: var(--cc-mono); font-size: 0.72rem; display: block; margin-top: 0.15rem; }
 .cc-wow-up .cc-wow-chg { color: var(--cc-green); }
 .cc-wow-down .cc-wow-chg { color: var(--cc-red); }

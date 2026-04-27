@@ -37,7 +37,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -85,7 +85,7 @@
   padding: 0.6rem 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .ptester-btn-secondary:hover {
   background: var(--bg-elevated);
@@ -278,12 +278,12 @@
 }
 .ptester-cell-partial {
   background: rgba(255,183,77,0.15);
-  color: #FFB74D;
+  color: var(--text-primary);
   border-radius: 4px;
 }
 .ptester-cell-fail {
   background: rgba(239,83,80,0.15);
-  color: #EF5350;
+  color: var(--text-primary);
   border-radius: 4px;
 }
 .ptester-standard-header {
@@ -316,7 +316,7 @@
   padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 600;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 6px; color: var(--text-secondary); cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .ptester-preset:hover { color: var(--text-primary); border-color: var(--ptester-accent); }
 
@@ -328,7 +328,7 @@
   padding: 0.4rem 0.8rem; font-size: 0.8rem; font-weight: 600;
   background: rgba(38,166,154,0.1); border: 1px solid rgba(38,166,154,0.3);
   border-radius: 6px; color: var(--ptester-accent); cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .ptester-fix-btn:hover { background: var(--ptester-accent); color: var(--accent-foreground, #fff); }
 
@@ -348,7 +348,7 @@
   background: var(--bg-elevated); color: var(--text-secondary);
   border: 1px solid var(--border); border-radius: 8px;
   padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; font-size: 0.82rem;
-  margin-top: 0.8rem; transition: all 0.2s;
+  margin-top: 0.8rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .ptester-export-btn:hover { background: var(--border); color: var(--text-primary); }
 

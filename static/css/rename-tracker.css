@@ -13,7 +13,7 @@
 .rename-tab {
   background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
-  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+  border-radius: 8px; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
 }
 .rename-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .rename-tab.active {
@@ -46,7 +46,7 @@
 .rename-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .rename-card-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
 .rename-card-cat {
-  padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.65rem;
+  padding: 0.15rem 0.5rem; border-radius: 12px; font-size: var(--text-caption, 0.75rem);
   background: rgba(176,125,79,0.15); color: var(--rename-accent); text-transform: uppercase;
 }
 .rename-card-desc { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.8rem; }

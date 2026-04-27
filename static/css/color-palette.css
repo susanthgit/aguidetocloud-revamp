@@ -41,8 +41,8 @@
   font-weight: 600;
   padding: 0.6rem 1rem;
   cursor: pointer;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
   font-family: inherit;
   flex: 1;
@@ -72,7 +72,7 @@
 .palette-input {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.6rem 0.85rem;
   color: var(--text-primary);
   font-size: 0.9rem;
@@ -87,7 +87,7 @@
 .palette-select {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem 0.75rem;
   color: var(--text-primary);
   font-size: 0.85rem;
@@ -107,11 +107,11 @@
 .palette-btn {
   background: var(--palette-accent-dim);
   border: 1px solid var(--palette-accent-border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.55rem 1.1rem;
   color: var(--palette-accent);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.85rem;
   font-family: inherit;
   display: inline-flex;
@@ -136,11 +136,11 @@
 .palette-pill {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.4rem 0.85rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.8rem;
   font-family: inherit;
   white-space: nowrap;
@@ -198,7 +198,7 @@
   font-size: 0.85rem;
   z-index: 999;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   pointer-events: none;
 }
 .palette-toast.visible {
@@ -328,7 +328,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   pointer-events: auto;
   z-index: 3;
 }
@@ -428,7 +428,7 @@
   display: none;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.25rem;
   margin-top: 1rem;
 }
@@ -492,7 +492,7 @@
   cursor: pointer;
   font-size: 0.75rem;
   font-family: inherit;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .palette-copy-btn:hover {
   background: var(--palette-accent-hover);
@@ -509,7 +509,7 @@
   gap: 0.5rem;
 }
 .palette-picker-sv {
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: crosshair;
   border: 1px solid var(--border);
   width: 220px;
@@ -587,11 +587,11 @@
 
 .palette-extract-upload {
   border: 2px dashed var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 3rem 2rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .palette-extract-upload:hover,
 .palette-extract-upload.dragover {
@@ -648,7 +648,7 @@
   border-radius: 16px;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   position: relative;
 }
 .palette-extract-swatch:hover {
@@ -661,7 +661,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: monospace;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--text-secondary);
   white-space: nowrap;
 }
@@ -704,7 +704,7 @@
 .palette-color-swatch-input {
   width: 44px; height: 40px;
   border: 2px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   background: none;
   padding: 2px;
@@ -716,7 +716,7 @@
 .palette-contrast-result {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.5rem;
   text-align: center;
 }
@@ -744,7 +744,7 @@
 .palette-badge {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -763,12 +763,12 @@
   font-size: 0.85rem;
 }
 .palette-badge.pass .palette-badge-status { color: #34D399; }
-.palette-badge.fail .palette-badge-status { color: #EF4444; }
+.palette-badge.fail .palette-badge-status { color: var(--text-primary); }
 
 .palette-contrast-preview {
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 2rem;
-  transition: all 0.3s;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
   min-height: 140px;
 }
 .palette-contrast-preview h2 { font-size: 1.4rem; }
@@ -776,7 +776,7 @@
 .palette-contrast-preview-btn {
   padding: 0.55rem 1.5rem;
   border: 2px solid currentColor;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   background: transparent;
   color: inherit;
   font-size: 0.9rem;
@@ -823,7 +823,7 @@
 .palette-blindness-swatches {
   display: flex;
   gap: 0;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   overflow: hidden;
   height: 56px;
 }
@@ -840,7 +840,7 @@
   border: 1px solid rgba(251,191,36,0.3);
   border-radius: 16px;
   padding: 1rem;
-  color: #FBBF24;
+  color: var(--text-primary);
   font-size: 0.85rem;
   margin-bottom: 0.75rem;
   display: flex;
@@ -891,7 +891,7 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .palette-explore-card:hover {
   border-color: var(--palette-accent-border);
@@ -930,7 +930,7 @@
   width: 22px; height: 22px;
   color: var(--text-primary);
   cursor: pointer;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -962,7 +962,7 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .palette-history-card:hover {
   border-color: var(--palette-accent-border);
@@ -975,7 +975,7 @@
 .palette-history-hex {
   padding: 0.4rem 0.6rem;
   font-family: monospace;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--text-muted);
   overflow: hidden;
   text-overflow: ellipsis;

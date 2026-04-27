@@ -27,8 +27,8 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -93,7 +93,7 @@
 .wifiqr-select {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.65rem 0.85rem;
   color: var(--text-primary);
   font-size: 0.9rem;
@@ -174,11 +174,11 @@
 .wifiqr-template-btn {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem 1rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.85rem;
   font-family: inherit;
   display: flex;
@@ -211,7 +211,7 @@
 
 /* ── The WiFi Card (the thing people print) ── */
 .wifiqr-card {
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   padding: 2rem;
   text-align: center;
   position: relative;
@@ -222,7 +222,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  transition: all 0.3s;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .wifiqr-card-icon {
@@ -251,7 +251,7 @@
 .wifiqr-card-qr svg {
   max-width: 180px;
   height: auto;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
 }
 
 .wifiqr-card-network {
@@ -270,7 +270,7 @@
 }
 
 .wifiqr-card-footer {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   opacity: 0.4;
   margin-top: 0.5rem;
 }
@@ -287,7 +287,7 @@
 
 .wifiqr-card.theme-cafe {
   background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
-  color: #fef3c7;
+  color: var(--text-primary);
   border: 1px solid rgba(254,243,199,0.15);
 }
 .wifiqr-card.theme-cafe .wifiqr-card-qr {
@@ -296,7 +296,7 @@
 
 .wifiqr-card.theme-hotel {
   background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-  color: #e0e7ff;
+  color: var(--text-primary);
   border: 1px solid rgba(224,231,255,0.12);
 }
 .wifiqr-card.theme-hotel .wifiqr-card-qr {
@@ -325,11 +325,11 @@
 .wifiqr-btn {
   background: rgba(34,211,238,0.15);
   border: 1px solid rgba(34,211,238,0.3);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.6rem 1.25rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.85rem;
   font-family: inherit;
   display: inline-flex;
@@ -412,7 +412,7 @@
   width: 40px;
   height: 36px;
   border: 2px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   background: none;
   padding: 2px;

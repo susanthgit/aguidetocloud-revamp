@@ -22,7 +22,7 @@
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s ease; flex: 1; text-align: center;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
 }
 .bingo-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .bingo-tab.active {
@@ -44,8 +44,8 @@
 }
 .bingo-theme {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  color: var(--text-secondary); padding: 0.35rem 0.7rem; border-radius: 20px;
-  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: all 0.2s;
+  color: var(--text-secondary); padding: 0.35rem 0.7rem; border-radius: var(--radius-lg, 16px);
+  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .bingo-theme:hover { color: var(--text-primary); background: var(--border); }
 .bingo-theme.active {
@@ -56,7 +56,7 @@
   border: 1px solid var(--border);
   color: var(--text-primary); padding: 0.5rem 1rem;
   border-radius: 8px; cursor: pointer; font-size: 0.85rem;
-  transition: all 0.2s; font-weight: 500;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-weight: 500;
 }
 .bingo-btn:hover { background: var(--border); color: var(--text-primary); }
 .bingo-btn-primary {
@@ -90,7 +90,7 @@
   border-radius: 10px; cursor: pointer;
   font-size: 0.7rem; line-height: 1.3;
   color: var(--text-secondary);
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   user-select: none;
 }
 .bingo-cell:hover {

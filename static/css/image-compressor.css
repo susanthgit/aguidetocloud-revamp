@@ -28,8 +28,8 @@
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -69,7 +69,7 @@
   padding: 3rem 2rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
   background: rgba(129,140,248,0.04);
   margin-bottom: 1.5rem;
   outline: none;
@@ -143,12 +143,12 @@
 /* ── Buttons ── */
 .imgcomp-btn {
   padding: 0.5rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   cursor: pointer;
   border: 1px solid transparent;
   font-family: inherit;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   white-space: nowrap;
 }
 
@@ -177,7 +177,7 @@
 .imgcomp-btn-danger {
   background: rgba(239,68,68,0.1);
   border-color: rgba(239,68,68,0.3);
-  color: #f87171;
+  color: var(--text-primary);
 }
 
 .imgcomp-btn-danger:hover {
@@ -276,7 +276,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.55rem 0.75rem;
   color: var(--text-primary);
   font-size: 0.85rem;
@@ -317,7 +317,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   text-align: center;
   margin-top: 2rem;
   padding: 0.75rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   background: var(--bg-elevated);
 }
 
@@ -398,7 +398,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.25rem;
   transition: border-color 0.2s;
 }
@@ -424,7 +424,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-thumb-wrap {
   width: 140px;
   height: 100px;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   overflow: hidden;
   background: var(--bg-elevated);
   display: flex;
@@ -476,7 +476,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   align-items: center;
   gap: 0.3rem;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -489,7 +489,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 
 .imgcomp-savings-badge.negative {
   background: rgba(239,68,68,0.1);
-  color: #f87171;
+  color: var(--text-primary);
   border: 1px solid rgba(239,68,68,0.25);
 }
 
@@ -822,7 +822,7 @@ body.page-image-compressor .site-nav {
 }
 
 .imgcomp-card-error {
-  color: #f87171;
+  color: var(--text-primary);
   background: rgba(239,68,68,0.06);
   border-left-color: rgba(239,68,68,0.4);
 }
@@ -874,7 +874,7 @@ body.page-image-compressor .site-nav {
   border: 1px solid var(--border);
   border-radius: 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-family: inherit;
   color: var(--text-secondary);
 }

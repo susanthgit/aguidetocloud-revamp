@@ -44,8 +44,8 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
 }
@@ -92,7 +92,7 @@
   padding: 0.6rem 0.8rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.9rem;
   transition: border-color 0.2s ease;
@@ -136,7 +136,7 @@
   padding: 0.7rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   font-size: 0.95rem;
   box-sizing: border-box;
@@ -212,7 +212,7 @@
   font-size: 0.78rem;
   color: var(--wclk);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
 }
 .wclk-quick-btn:hover, .wclk-preset:hover {
@@ -233,7 +233,7 @@
   color: var(--text-primary);
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .wclk-toggle:hover {
   border-color: var(--wclk);
@@ -288,7 +288,7 @@
   border-radius: 16px;
   padding: 1rem 1.2rem;
   position: relative;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .wclk-card:hover {
   border-color: rgba(14, 165, 233, 0.3);
@@ -313,7 +313,7 @@
   font-size: 1rem;
   padding: 0.1rem 0.3rem;
   border-radius: 4px;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
   line-height: 1;
 }
 .wclk-card-remove:hover {
@@ -428,7 +428,7 @@
   font-size: 0.85rem;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .wclk-result-remove:hover {
   color: var(--wclk-red);
@@ -532,7 +532,7 @@
   font-size: 0.7rem;
   padding: 0.1rem 0.2rem;
   border-radius: 3px;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .wclk-preset-del:hover {
   color: var(--wclk-red);
@@ -541,12 +541,12 @@
 
 /* Work hours editor */
 .wclk-hours-edit {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--wclk);
   cursor: pointer;
   border-bottom: 1px dashed rgba(14,165,233,0.4);
   padding-bottom: 1px;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
 .wclk-hours-edit:hover {
   color: var(--text-primary);
@@ -610,7 +610,7 @@
   border-radius: 50%;
   background: var(--wclk);
   cursor: grab;
-  box-shadow: 0 0 8px var(--wclk-glow);
+  /* z5-removed: glow shadow */
 }
 .wclk-slider::-moz-range-thumb {
   width: 22px;
@@ -619,12 +619,12 @@
   background: var(--wclk);
   cursor: grab;
   border: none;
-  box-shadow: 0 0 8px var(--wclk-glow);
+  /* z5-removed: glow shadow */
 }
 .wclk-slider-endpoints {
   display: flex;
   justify-content: space-between;
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--text-secondary);
 }
 
@@ -642,7 +642,7 @@
   padding: 0.5rem 0.8rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   flex: 1;
   min-width: 160px;
 }
@@ -665,14 +665,14 @@
   opacity: 0.7;
 }
 .wclk-sc-period {
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   white-space: nowrap;
 }
-.wclk-sc-period.morning { background: rgba(251,191,36,0.12); color: #FBBF24; }
+.wclk-sc-period.morning { background: rgba(251,191,36,0.12); color: var(--text-primary); }
 .wclk-sc-period.day { background: rgba(34,197,94,0.12); color: #22C55E; }
-.wclk-sc-period.evening { background: rgba(249,115,22,0.12); color: #F97316; }
+.wclk-sc-period.evening { background: rgba(249,115,22,0.12); color: var(--text-primary); }
 .wclk-sc-period.night { background: rgba(139,92,246,0.12); color: #8B5CF6; }
 
 /* Timeline */
@@ -809,13 +809,13 @@
 .wclk-copy-btn {
   background: var(--wclk-dim);
   border: 1px solid transparent;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.6rem 1.2rem;
   color: var(--wclk);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .wclk-copy-btn:hover {
   background: var(--wclk-glow);
@@ -944,7 +944,7 @@
   .wclk-convert-results { grid-template-columns: 1fr; }
   .wclk-dst-gotchas { grid-template-columns: 1fr; }
   .wclk-tab { padding: 0.6rem 0.7rem; font-size: 0.8rem; }
-  .wclk-timeline-label { min-width: 70px; font-size: 0.68rem; }
+  .wclk-timeline-label { min-width: 70px; font-size: var(--text-caption, 0.75rem); }
   .wclk-timeline-hours { margin-left: calc(70px + 0.5rem); }
   .wclk-presets-bar { flex-direction: column; align-items: flex-start; }
 }

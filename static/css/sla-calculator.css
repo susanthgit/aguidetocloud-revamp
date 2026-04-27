@@ -13,7 +13,7 @@
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .slacalc-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .slacalc-tab.active {
@@ -32,7 +32,7 @@
 .slacalc-mode {
   flex: 1; padding: 0.5rem 0.8rem; border: none; background: none;
   color: var(--text-secondary); font-size: 0.82rem; font-weight: 600;
-  border-radius: 8px; cursor: pointer; transition: all 0.2s;
+  border-radius: 8px; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .slacalc-mode:hover { color: var(--text-primary); }
 .slacalc-mode.active { background: var(--slacalc-accent); color: var(--accent-foreground, #fff); }
@@ -64,7 +64,7 @@
   padding: 0.4rem 0.8rem; font-size: 0.8rem; font-weight: 600;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 6px; color: var(--text-secondary); cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .slacalc-preset:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
 .slacalc-preset.active { background: var(--slacalc-accent); color: var(--accent-foreground, #fff); border-color: var(--slacalc-accent); }
@@ -130,7 +130,7 @@
 .slacalc-breach-item .badge {
   padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;
 }
-.slacalc-breach-item.breached .badge { background: rgba(239,68,68,0.15); color: #EF4444; }
+.slacalc-breach-item.breached .badge { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 .slacalc-breach-item.safe .badge { background: rgba(16,185,129,0.15); color: #10B981; }
 
 /* Table */
@@ -178,7 +178,7 @@
   background: none; border: none; color: var(--border-emphasis);
   cursor: pointer; font-size: 0.9rem;
 }
-.slacalc-log-entry .del:hover { color: #ef4444; }
+.slacalc-log-entry .del:hover { color: var(--text-primary); }
 .slacalc-export-btn {
   background: var(--bg-elevated); color: var(--text-secondary);
   border: 1px solid var(--border); border-radius: 8px;

@@ -32,7 +32,7 @@
 .cab-tab {
   padding: 0.6rem 1.1rem; background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap;
-  border-radius: 14px; transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px); transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   font-family: inherit; position: relative; flex: 1; text-align: center;
 }
 .cab-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
@@ -59,7 +59,7 @@
 }
 .cab-search, .cab-select {
   padding: 0.6rem 1rem; background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: 14px; color: var(--text-primary); font-size: 0.9rem; font-family: inherit;
+  border-radius: var(--radius-md, 10px); color: var(--text-primary); font-size: 0.9rem; font-family: inherit;
 }
 .cab-search { flex: 1; min-width: 200px; }
 .cab-search:focus, .cab-select:focus {
@@ -70,8 +70,8 @@
 
 /* ── Buttons ── */
 .cab-btn {
-  padding: 0.6rem 1.2rem; border-radius: 14px; font-size: 0.9rem; font-weight: 600;
-  cursor: pointer; border: none; transition: all 0.2s; font-family: inherit;
+  padding: 0.6rem 1.2rem; border-radius: var(--radius-md, 10px); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; border: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
 .cab-btn--primary { background: var(--cab-accent); color: var(--text-primary); }
 .cab-btn--primary:hover { background: #6D28D9; transform: translateY(-1px); }
@@ -80,7 +80,7 @@
 .cab-btn--secondary:hover { background: var(--border); }
 .cab-btn--secondary:disabled { opacity: 0.4; cursor: not-allowed; }
 .cab-btn--sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
-.cab-btn--danger { background: rgba(239,68,68,0.15); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+.cab-btn--danger { background: rgba(239,68,68,0.15); color: var(--text-primary); border: 1px solid rgba(239,68,68,0.3); }
 .cab-btn--danger:hover { background: rgba(239,68,68,0.25); }
 
 /* ── Template Grid ── */
@@ -119,7 +119,7 @@
 .cab-scenario-btn {
   display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
   padding: 1rem; background: var(--border); border: 2px solid var(--border);
-  border-radius: 16px; cursor: pointer; transition: all 0.2s; text-align: center;
+  border-radius: 16px; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; text-align: center;
   font-family: inherit; color: var(--text-primary);
 }
 .cab-scenario-btn:hover { border-color: var(--cab-accent); background: var(--cab-accent-dim); transform: translateY(-2px); }
@@ -134,23 +134,23 @@
 
 /* #13: Popular badge */
 .cab-popular-badge {
-  display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.65rem;
-  font-weight: 700; background: rgba(245,158,11,0.15); color: #F59E0B; margin-right: 4px;
+  display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: var(--text-caption, 0.75rem);
+  font-weight: 700; background: rgba(245,158,11,0.15); color: var(--text-primary); margin-right: 4px;
 }
 .cab-card-badges { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 
 /* #9: Dependency hints */
-.cab-dep-hint { font-size: 0.78rem; color: #F59E0B; margin: 0.25rem 0 0.5rem; }
+.cab-dep-hint { font-size: 0.78rem; color: var(--text-primary); margin: 0.25rem 0 0.5rem; }
 
 /* ── Policy Card (shared between templates + review) ── */
 .cab-policy-card {
   background: color-mix(in srgb, var(--cab-accent) 6%, var(--bg-surface));
   border: 1px solid color-mix(in srgb, var(--cab-accent) 18%, transparent);
-  border-radius: var(--radius-lg, 16px); padding: 1.25rem; transition: all 0.2s;
+  border-radius: var(--radius-lg, 16px); padding: 1.25rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cab-policy-card:hover {
   border-color: color-mix(in srgb, var(--cab-accent) 35%, transparent);
-  box-shadow: 0 0 20px var(--cab-accent-glow);
+  /* z5-removed: glow shadow */
 }
 /* #13: Tier-tinted borders */
 .cab-policy-card--sp { border-color: rgba(16,185,129,0.25); }
@@ -223,8 +223,8 @@
 .cab-wizard-step-btn {
   display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
   padding: 0.4rem 0.6rem; background: var(--border); border: 1px solid var(--border);
-  border-radius: 14px; cursor: pointer; font-family: inherit; color: var(--text-secondary);
-  font-size: 0.7rem; min-width: 60px; transition: all 0.15s;
+  border-radius: var(--radius-md, 10px); cursor: pointer; font-family: inherit; color: var(--text-secondary);
+  font-size: 0.7rem; min-width: 60px; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cab-wizard-step-btn:hover { background: var(--border); }
 .cab-wizard-step-btn--active { background: var(--cab-accent-dim); border-color: var(--cab-accent); color: var(--cab-accent); }
@@ -247,7 +247,7 @@
 /* #10: Next steps */
 .cab-next-steps {
   background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);
-  border-radius: 14px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.88rem;
+  border-radius: var(--radius-md, 10px); padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.88rem;
 }
 .cab-next-steps h4 { margin: 0 0 0.5rem; color: var(--cab-safe); }
 .cab-next-steps ol { margin: 0; padding-left: 1.25rem; }
@@ -275,7 +275,7 @@
 .cab-content-cta {
   margin-top: 1.5rem; padding: 0.75rem 1.25rem; background: var(--cab-accent-dim);
   border: 1px solid color-mix(in srgb, var(--cab-accent) 25%, transparent);
-  border-radius: 14px; font-size: 0.88rem; color: var(--text-primary);
+  border-radius: var(--radius-md, 10px); font-size: 0.88rem; color: var(--text-primary);
 }
 .cab-content-cta a { color: var(--cab-accent); }
 
@@ -304,7 +304,7 @@
 .cab-form-hint { display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
 .cab-form-input, .cab-form-select, .cab-form-textarea {
   width: 100%; padding: 0.6rem 0.75rem; background: var(--bg-elevated);
-  border: 1px solid var(--border); border-radius: 14px; color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: var(--radius-md, 10px); color: var(--text-primary);
   font-size: 0.9rem; font-family: inherit; box-sizing: border-box;
 }
 .cab-form-input:focus, .cab-form-select:focus, .cab-form-textarea:focus {
@@ -317,7 +317,7 @@
 .cab-check-item {
   display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem;
   background: var(--bg-elevated); border-radius: 6px; cursor: pointer;
-  border: 1px solid transparent; transition: all 0.15s;
+  border: 1px solid transparent; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cab-check-item:hover { background: var(--border); border-color: var(--border); }
 .cab-check-item input { accent-color: var(--cab-accent); }
@@ -328,14 +328,14 @@
 .cab-radio-card {
   display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem;
   background: var(--bg-elevated); border: 2px solid var(--border);
-  border-radius: 16px; cursor: pointer; transition: all 0.15s;
+  border-radius: 16px; cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cab-radio-card--selected { border-color: var(--cab-accent); background: var(--cab-accent-dim); }
 .cab-radio-card__icon { font-size: 1.3rem; }
 
 /* Operator toggle */
 .cab-operator-toggle {
-  display: inline-flex; border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+  display: inline-flex; border-radius: var(--radius-md, 10px); overflow: hidden; border: 1px solid var(--border);
   margin-top: 0.5rem;
 }
 .cab-operator-btn {
@@ -376,7 +376,7 @@
 /* #18: Linter summary counts */
 .cab-linter-summary {
   display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem;
-  padding: 0.5rem 0.75rem; background: var(--border); border-radius: 14px;
+  padding: 0.5rem 0.75rem; background: var(--border); border-radius: var(--radius-md, 10px);
 }
 .cab-linter-count { font-size: 0.85rem; font-weight: 600; }
 .cab-linter-count--critical { color: var(--cab-danger); }
@@ -385,7 +385,7 @@
 .cab-linter-count--pass { color: var(--cab-safe); }
 .cab-linter-item {
   display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.6rem 0.75rem;
-  border-radius: 14px; margin-bottom: 0.5rem; font-size: 0.88rem;
+  border-radius: var(--radius-md, 10px); margin-bottom: 0.5rem; font-size: 0.88rem;
 }
 .cab-linter-item--critical { background: rgba(239,68,68,0.1); border-left: 3px solid var(--cab-danger); }
 .cab-linter-item--warning { background: rgba(245,158,11,0.1); border-left: 3px solid var(--cab-warn); }
@@ -416,7 +416,7 @@
   gap: 1rem; padding: 0 1.25rem 1.25rem;
 }
 .cab-compliance-fw {
-  background: var(--bg-elevated); border-radius: 14px; padding: 1rem;
+  background: var(--bg-elevated); border-radius: var(--radius-md, 10px); padding: 1rem;
   border: 1px solid var(--border);
 }
 .cab-compliance-fw h4 { margin: 0 0 0.75rem; color: var(--cab-accent); font-size: 0.9rem; }
@@ -449,7 +449,7 @@
 .cab-export-tab--active { color: var(--cab-accent); border-bottom-color: var(--cab-accent); }
 .cab-export-actions { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
 .cab-export-output {
-  background: #0d0d1a; border: 1px solid var(--border); border-radius: 14px;
+  background: #0d0d1a; border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
   padding: 1.25rem; color: var(--text-secondary); font-size: 0.82rem; line-height: 1.6;
   overflow-x: auto; max-height: 500px; overflow-y: auto; white-space: pre-wrap;
   font-family: 'Cascadia Code', 'Fira Code', monospace;
@@ -471,7 +471,7 @@
 .cab-help-content { padding: 0 1.25rem 1.25rem; }
 .cab-help-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
 .cab-help-card {
-  background: var(--bg-elevated); border-radius: 14px; padding: 1rem;
+  background: var(--bg-elevated); border-radius: var(--radius-md, 10px); padding: 1rem;
   border: 1px solid var(--border);
 }
 .cab-help-card h4 { margin: 0 0 0.5rem; color: var(--cab-accent); font-size: 0.9rem; }
@@ -480,7 +480,7 @@
 /* ── Disclaimer ── */
 .cab-disclaimer {
   margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(245,158,11,0.08);
-  border: 1px solid rgba(245,158,11,0.2); border-radius: 14px; font-size: 0.82rem;
+  border: 1px solid rgba(245,158,11,0.2); border-radius: var(--radius-md, 10px); font-size: 0.82rem;
   color: var(--text-secondary); line-height: 1.6;
 }
 .cab-disclaimer a { color: var(--cab-accent); }
@@ -488,9 +488,9 @@
 /* ── Toast ── */
 .cab-toast {
   position: fixed; bottom: 80px; right: 20px; background: var(--cab-accent); color: var(--text-primary);
-  padding: 0.75rem 1.25rem; border-radius: 14px; font-size: 0.9rem; font-weight: 600;
+  padding: 0.75rem 1.25rem; border-radius: var(--radius-md, 10px); font-size: 0.9rem; font-weight: 600;
   z-index: 9999; opacity: 0; transform: translateY(10px);
-  transition: all 0.3s ease; pointer-events: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; pointer-events: none;
 }
 .cab-toast--show { opacity: 1; transform: translateY(0); }
 .cab-toast-undo {

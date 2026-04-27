@@ -45,7 +45,7 @@
 .psb-search-wrap { margin-bottom: 1rem; }
 .psb-search {
   width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: 14px; color: var(--text-primary); font-size: 0.95rem; transition: border-color 0.2s;
+  border-radius: var(--radius-md, 10px); color: var(--text-primary); font-size: 0.95rem; transition: border-color 0.2s;
 }
 .psb-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-subtle); }
 .psb-search-sm { max-width: 400px; }
@@ -54,13 +54,13 @@
 /* ═══════ FILTER PILLS ═══════ */
 .psb-filter-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
 .psb-pill {
-  padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem; border-radius: var(--radius-lg, 16px); border: 1px solid var(--border);
   background: var(--bg-surface); color: var(--text-secondary); font-size: 0.85rem;
-  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; white-space: nowrap;
 }
 .psb-pill:hover { border-color: var(--accent); color: var(--text-primary); }
 .psb-pill.active { background: var(--accent-subtle); border-color: var(--accent); color: var(--accent); font-weight: 600; }
-.psb-pill-sm { padding: 0.3rem 0.7rem; font-size: 0.8rem; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+.psb-pill-sm { padding: 0.3rem 0.7rem; font-size: 0.8rem; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-secondary); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; }
 .psb-pill-sm:hover { border-color: var(--accent); color: var(--text-primary); }
 .psb-pill-sm.active { background: var(--accent-subtle); border-color: var(--accent); color: var(--accent); }
 .psb-filter-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
@@ -74,7 +74,7 @@
   border: 1px solid var(--border); border-radius: var(--radius-lg, 16px);
   overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; cursor: pointer;
 }
-.psb-recipe-card:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--accent-subtle); }
+.psb-recipe-card:hover { border-color: var(--accent); /* z5-removed: glow shadow */ }
 .psb-recipe-header { padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
 .psb-recipe-title { font-weight: 600; color: var(--text-primary); flex: 1; font-size: 0.95rem; }
 .psb-recipe-badges { display: flex; gap: 0.4rem; flex-shrink: 0; }
@@ -84,8 +84,8 @@
 }
 .psb-badge-service { background: var(--accent-subtle); color: var(--accent); }
 .psb-badge-beginner { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-.psb-badge-intermediate { background: rgba(234, 179, 8, 0.15); color: #eab308; }
-.psb-badge-advanced { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.psb-badge-intermediate { background: rgba(234, 179, 8, 0.15); color: var(--text-primary); }
+.psb-badge-advanced { background: rgba(239, 68, 68, 0.15); color: var(--text-primary); }
 .psb-recipe-desc { padding: 0 1.25rem 0.75rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
 
 .psb-recipe-detail { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); display: none; }
@@ -100,7 +100,7 @@
 .psb-module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
 .psb-module-card {
   padding: 1rem; background: var(--bg-surface); border: 2px solid var(--border);
-  border-radius: 16px; cursor: pointer; transition: all 0.2s; text-align: center;
+  border-radius: 16px; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; text-align: center;
 }
 .psb-module-card:hover { border-color: var(--accent); background: var(--bg-elevated); }
 .psb-module-card.active { border-color: var(--accent); background: var(--accent-subtle); }
@@ -109,7 +109,7 @@
 .psb-module-desc { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.3rem; }
 
 .psb-module-info {
-  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
   padding: 1rem 1.25rem; margin-bottom: 1.5rem;
 }
 .psb-module-info-title { font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
@@ -124,7 +124,7 @@
 .psb-cmdlet-list { display: grid; grid-template-columns: 1fr; gap: 0.4rem; max-height: 300px; overflow-y: auto; }
 .psb-cmdlet-item {
   padding: 0.6rem 1rem; background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; transition: all 0.15s;
+  border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .psb-cmdlet-item:hover { border-color: var(--accent); background: var(--bg-elevated); }
 .psb-cmdlet-item.active { border-color: var(--accent); background: var(--accent-subtle); }
@@ -135,11 +135,11 @@
 .psb-build-step { margin-bottom: 1.5rem; }
 .psb-step-label { display: block; font-weight: 700; color: var(--text-primary); font-size: 1rem; margin-bottom: 0.75rem; }
 .psb-params-form { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-.psb-param-group { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem 1rem; }
+.psb-param-group { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 0.75rem 1rem; }
 .psb-param-group.required { border-left: 3px solid var(--accent); }
 .psb-param-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
 .psb-param-name { font-weight: 600; color: var(--text-primary); font-family: 'Consolas', monospace; font-size: 0.9rem; }
-.psb-param-required-badge { font-size: 0.65rem; background: var(--accent-subtle); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+.psb-param-required-badge { font-size: var(--text-caption, 0.75rem); background: var(--accent-subtle); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
 .psb-param-type { font-size: 0.7rem; color: var(--text-secondary); background: var(--bg-elevated); padding: 0.1rem 0.4rem; border-radius: 4px; }
 .psb-param-desc { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
 .psb-param-input {
@@ -159,17 +159,17 @@
 /* ═══════ BUTTONS ═══════ */
 .psb-btn-primary {
   padding: 0.65rem 1.5rem; background: var(--accent); color: var(--accent-foreground, #fff); border: none;
-  border-radius: 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+  border-radius: var(--radius-md, 10px); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-btn-primary:hover { background: var(--accent-hover, var(--accent)); box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 25%, transparent); }
 .psb-btn-secondary {
   padding: 0.65rem 1.5rem; background: transparent; color: var(--text-secondary);
-  border: 1px solid var(--border); border-radius: 14px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+  border: 1px solid var(--border); border-radius: var(--radius-md, 10px); font-size: 0.9rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-btn-secondary:hover { border-color: var(--accent); color: var(--text-primary); }
 .psb-btn-copy, .psb-btn-download, .psb-btn-share {
   padding: 0.45rem 0.9rem; background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: 6px; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+  border-radius: 6px; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-btn-copy:hover, .psb-btn-download:hover, .psb-btn-share:hover { border-color: var(--accent); color: var(--accent); }
 .psb-btn-text { background: none; border: none; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; padding: 0.25rem 0; }
@@ -190,10 +190,10 @@
 /* Syntax highlight classes */
 .psb-syn-cmdlet { color: var(--accent); font-weight: 700; }
 .psb-syn-param { color: #60A5FA; }
-.psb-syn-value { color: #F59E0B; }
+.psb-syn-value { color: var(--text-primary); }
 .psb-syn-comment { color: #6B7280; font-style: italic; }
 .psb-syn-pipe { color: #A78BFA; font-weight: 700; }
-.psb-syn-variable { color: #F472B6; }
+.psb-syn-variable { color: var(--text-primary); }
 
 /* ═══════ REFERENCE ═══════ */
 .psb-ref-modules { display: grid; gap: 0.75rem; }
@@ -237,7 +237,7 @@
 /* ═══════ FAQ ═══════ */
 .psb-faq { margin-top: 3rem; }
 .psb-faq-list { display: grid; gap: 0.5rem; }
-.psb-faq-item { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.psb-faq-item { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md, 10px); overflow: hidden; }
 .psb-faq-q { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; color: var(--accent); font-size: 0.95rem; list-style: none; }
 .psb-faq-q::-webkit-details-marker { display: none; }
 .psb-faq-q::before { content: '▸ '; }
@@ -250,7 +250,7 @@
 .psb-cross-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; }
 .psb-cross-card {
   padding: 1rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px;
-  text-decoration: none; display: flex; gap: 0.75rem; align-items: flex-start; transition: all 0.2s;
+  text-decoration: none; display: flex; gap: 0.75rem; align-items: flex-start; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-cross-card:hover { border-color: var(--accent); box-shadow: 0 2px 10px var(--accent-subtle); }
 .psb-cross-emoji { font-size: 1.5rem; flex-shrink: 0; }
@@ -260,7 +260,7 @@
 /* ═══════ TOAST ═══════ */
 .psb-toast {
   position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); padding: 0.6rem 1.5rem;
-  background: var(--accent); color: var(--accent-foreground, #fff); border-radius: 14px; font-weight: 600; font-size: 0.85rem;
+  background: var(--accent); color: var(--accent-foreground, #fff); border-radius: var(--radius-md, 10px); font-weight: 600; font-size: 0.85rem;
   z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none;
 }
 .psb-toast.show { opacity: 1; }
@@ -280,7 +280,7 @@
 .psb-search-filter-row .psb-search { flex: 1; min-width: 0; }
 .psb-filter-select {
   padding: 0.6rem 0.75rem; background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: 14px; color: var(--text-primary); font-size: 0.85rem; cursor: pointer;
+  border-radius: var(--radius-md, 10px); color: var(--text-primary); font-size: 0.85rem; cursor: pointer;
   min-width: 140px; appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 0.6rem center;
@@ -316,8 +316,8 @@
 .psb-quick-item {
   display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem;
   background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 20px; color: var(--text-primary); font-size: 0.8rem; cursor: pointer;
-  transition: all 0.2s; white-space: nowrap;
+  border-radius: var(--radius-lg, 16px); color: var(--text-primary); font-size: 0.8rem; cursor: pointer;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; white-space: nowrap;
 }
 .psb-quick-item:hover { background: color-mix(in srgb, var(--accent) 25%, transparent); border-color: var(--accent); }
 .psb-quick-emoji { font-size: 0.9rem; }
@@ -367,9 +367,9 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 /* ═══════ D1 FAVOURITES ═══════ */
 .psb-fav-btn {
   background: none; border: none; font-size: 1.1rem; cursor: pointer; padding: 0 0.3rem;
-  color: var(--text-secondary); transition: all 0.2s; flex-shrink: 0; line-height: 1;
+  color: var(--text-secondary); transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; flex-shrink: 0; line-height: 1;
 }
-.psb-fav-btn:hover, .psb-fav-btn.active { color: #FBBF24; }
+.psb-fav-btn:hover, .psb-fav-btn.active { color: var(--text-primary); }
 .psb-recipe-card.psb-fav { border-left: 3px solid #FBBF24; }
 .psb-quick-fav { border-color: #FBBF24; background: rgba(251, 191, 36, 0.1); }
 
@@ -381,7 +381,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 .psb-highlight { background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--text-primary); padding: 0 2px; border-radius: 2px; }
 
 /* ═══════ B3 NEW BADGE ═══════ */
-.psb-badge-new { background: rgba(34, 197, 94, 0.2); color: #22c55e; font-size: 0.65rem; animation: psbPulse 2s ease-in-out infinite; }
+.psb-badge-new { background: rgba(34, 197, 94, 0.2); color: #22c55e; font-size: var(--text-caption, 0.75rem); animation: psbPulse 2s ease-in-out infinite; }
 @keyframes psbPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
 /* ═══════ B4 VIEW TOGGLE ═══════ */
@@ -394,7 +394,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 
 /* ═══════ A1 HOW TO RUN GUIDE ═══════ */
 .psb-how-to-run {
-  background: var(--bg-elevated); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 14px;
+  background: var(--bg-elevated); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: var(--radius-md, 10px);
   margin-bottom: 1rem; overflow: hidden;
 }
 .psb-how-to-run summary {
@@ -423,7 +423,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 .psb-breakdown-toggle {
   background: none; border: 1px dashed var(--border); border-radius: 6px;
   color: var(--accent); padding: 0.4rem 0.8rem; font-size: 0.8rem; cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-breakdown-toggle:hover { border-color: var(--accent); color: var(--accent); }
 .psb-breakdown-steps { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
@@ -443,7 +443,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
   background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; border-radius: 0 6px 6px 0;
   padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.5;
 }
-.psb-recipe-mistake strong { color: #ef4444; }
+.psb-recipe-mistake strong { color: var(--text-primary); }
 
 /* ═══════ D3 SHARE RECIPE ═══════ */
 .psb-share-recipe-btn { font-size: 0.8rem; }
@@ -452,7 +452,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 .psb-random-btn {
   background: none; border: 1px solid var(--border); border-radius: 16px;
   padding: 0.2rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary);
-  cursor: pointer; margin-left: 0.5rem; transition: all 0.2s;
+  cursor: pointer; margin-left: 0.5rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .psb-random-btn:hover { border-color: var(--accent); color: var(--accent); }
 

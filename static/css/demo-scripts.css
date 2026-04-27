@@ -94,7 +94,7 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
   text-align: center;
   color: var(--text-primary);
 }
@@ -108,7 +108,7 @@
 .demoscr-scenario-card.active {
   background: var(--accent-subtle);
   border-color: var(--accent);
-  box-shadow: 0 0 16px var(--accent-subtle);
+  /* z5-removed: glow shadow */
 }
 
 .demoscr-scenario-icon {
@@ -176,7 +176,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .demoscr-pill:hover {
@@ -213,7 +213,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .demoscr-app-chip:hover {
@@ -264,7 +264,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .demoscr-btn:hover {
@@ -381,8 +381,8 @@
 }
 
 @keyframes demoscr-glow {
-  0%, 100% { text-shadow: 0 0 4px var(--accent); }
-  50%      { text-shadow: 0 0 12px rgba(249,115,22,0.6); }
+  0%, 100% { /* z5-removed: text glow */ }
+  50%      { /* z5-removed: text glow */ }
 }
 
 .demoscr-step-action {
@@ -429,7 +429,7 @@
   color: var(--text-secondary);
   font-size: 0.7rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-copy-prompt:hover {
@@ -519,7 +519,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-filter-btn:hover {
@@ -567,7 +567,7 @@
 }
 
 .demoscr-prompt-card-reliability {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   padding: 0.15rem 0.45rem;
   border-radius: 999px;
   font-weight: 600;
@@ -580,7 +580,7 @@
 
 .demoscr-reliability-medium {
   background: rgba(234,179,8,0.15);
-  color: #eab308;
+  color: var(--text-primary);
 }
 
 .demoscr-prompt-card-text {
@@ -614,7 +614,7 @@
   color: var(--text-secondary);
   font-size: 0.75rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   text-align: center;
 }
 
@@ -780,7 +780,7 @@
 }
 
 .demoscr-check-priority {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   padding: 0.15rem 0.45rem;
   border-radius: 999px;
   font-weight: 600;
@@ -790,12 +790,12 @@
 
 .demoscr-priority-critical {
   background: rgba(239,68,68,0.15);
-  color: #ef4444;
+  color: var(--text-primary);
 }
 
 .demoscr-priority-high {
   background: rgba(234,179,8,0.15);
-  color: #eab308;
+  color: var(--text-primary);
 }
 
 .demoscr-priority-medium {
@@ -836,7 +836,7 @@
 }
 
 .demoscr-trap-app {
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   padding: 0.1rem 0.4rem;
   border-radius: 999px;
   background: var(--bg-elevated);
@@ -983,7 +983,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-cat-pill:hover {
@@ -1061,7 +1061,7 @@
   cursor: pointer;
   text-align: left;
   margin-bottom: 0.4rem;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-custom-match:hover {
@@ -1329,7 +1329,7 @@
   border: 1px solid var(--border);
   border-radius: 10px;
   text-decoration: none;
-  transition: all 0.25s;
+  transition: color 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.25s ease-out, opacity 0.25s ease-out;
 }
 
 .demoscr-related-card:hover {
@@ -1407,7 +1407,7 @@
 .demoscr-wizard {
   background: rgba(20,20,35,0.98);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   padding: 2rem 2.5rem;
   max-width: 600px;
   width: 90%;
@@ -1459,7 +1459,7 @@
   font-size: 0.88rem;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-wizard-opt:hover {
@@ -1553,7 +1553,7 @@
   margin-bottom: 0.35rem;
 }
 
-.demoscr-ba-without .demoscr-ba-label { color: #ef4444; }
+.demoscr-ba-without .demoscr-ba-label { color: var(--text-primary); }
 .demoscr-ba-with .demoscr-ba-label { color: #22c55e; }
 
 .demoscr-ba-time {
@@ -1706,8 +1706,8 @@
 }
 
 .demoscr-scorecard-stat-nailed .demoscr-scorecard-stat-num { color: #22c55e; }
-.demoscr-scorecard-stat-ok .demoscr-scorecard-stat-num { color: #eab308; }
-.demoscr-scorecard-stat-struggled .demoscr-scorecard-stat-num { color: #ef4444; }
+.demoscr-scorecard-stat-ok .demoscr-scorecard-stat-num { color: var(--text-primary); }
+.demoscr-scorecard-stat-struggled .demoscr-scorecard-stat-num { color: var(--text-primary); }
 
 .demoscr-scorecard-stat-label {
   font-size: 0.7rem;
@@ -1770,7 +1770,7 @@
   color: var(--text-secondary);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .demoscr-rate-btn:hover { background: var(--border); }
@@ -1808,7 +1808,7 @@
 }
 
 .demoscr-recording-label {
-  color: #ef4444;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.1em;

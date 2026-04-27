@@ -43,8 +43,8 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
 }
@@ -88,7 +88,7 @@
   width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   padding: 0.6rem 0.75rem;
   font-size: 0.9rem;
@@ -109,10 +109,10 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.55rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   white-space: nowrap;
 }
 .cdown-btn:hover { background: var(--bg-elevated); border-color: var(--cdown); }
@@ -157,7 +157,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 .cdown-icon-btn {
   width: 40px;
   height: 40px;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   border: 2px solid var(--border);
   background: var(--bg-surface);
   font-size: 1.2rem;
@@ -165,7 +165,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cdown-icon-btn:hover { border-color: var(--text-secondary); }
 .cdown-icon-btn.active { border-color: var(--cdown); background: var(--cdown-dim); }
@@ -182,7 +182,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
   box-shadow: 0 0 0 2px transparent;
 }
 .cdown-color-btn:hover { transform: scale(1.15); }
@@ -204,7 +204,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border-radius: 6px;
   font-size: 0.78rem;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cdown-sort-btn:hover { color: var(--text-primary); }
 .cdown-sort-btn.active { color: var(--cdown); border-color: var(--cdown); background: var(--cdown-dim); }
@@ -321,7 +321,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   width: var(--dw);
   height: var(--dh);
   perspective: 250px;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   isolation: isolate;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -427,10 +427,10 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border: none;
   color: var(--text-secondary);
   padding: 0.5rem 1.25rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.88rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cdown-mode-btn.active {
   background: var(--cdown);
@@ -461,10 +461,10 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.5rem 0.9rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.82rem;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cdown-preset-btn:hover { border-color: var(--cdown); color: var(--cdown); }
 
@@ -562,12 +562,12 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border: 1px solid rgba(251,146,60,0.3);
   color: var(--cdown);
   padding: 0.4rem 0.8rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .cdown-tpl-btn:hover { background: rgba(251,146,60,0.25); }
 .cdown-tpl-custom { margin-top: 0.5rem; }
@@ -661,7 +661,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--cdown);
-  text-shadow: 0 0 40px rgba(251,146,60,0.4);
+  /* z5-removed: text glow */
 }
 
 @keyframes cdownBounce {
@@ -679,12 +679,12 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   background: var(--cdown);
   color: #000;
   padding: 0.6rem 1.5rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.88rem;
   font-weight: 600;
   z-index: 10001;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   pointer-events: none;
 }
 .cdown-toast.show {
@@ -740,7 +740,7 @@ body.page-countdown .site-nav { border-bottom-color: var(--cdown); }
 .cdown-banner-preview img {
   max-width: 200px;
   max-height: 80px;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   display: block;
   object-fit: contain;
 }

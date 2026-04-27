@@ -37,8 +37,8 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
 }
@@ -52,7 +52,7 @@
 .migplan-tab:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
 }
 
 /* ---- Tab Panels ---- */
@@ -122,7 +122,7 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   text-align: center;
 }
 .migplan-option:hover {
@@ -167,12 +167,12 @@
 }
 .migplan-btn {
   padding: 0.6rem 1.5rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .migplan-btn-primary {
   background: var(--accent);
@@ -216,9 +216,9 @@
   margin-bottom: 1rem;
 }
 .migplan-score-tier.simple { color: #10B981; }
-.migplan-score-tier.moderate { color: #EAB308; }
-.migplan-score-tier.complex { color: #F97316; }
-.migplan-score-tier.critical { color: #EF4444; }
+.migplan-score-tier.moderate { color: var(--text-primary); }
+.migplan-score-tier.complex { color: var(--text-primary); }
+.migplan-score-tier.critical { color: var(--text-primary); }
 
 .migplan-score-meta {
   display: flex;
@@ -266,7 +266,7 @@
 }
 .migplan-workload-card:hover {
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  box-shadow: 0 0 20px var(--accent-subtle);
+  /* z5-removed: glow shadow */
 }
 .migplan-workload-header {
   display: flex;
@@ -434,13 +434,13 @@
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.8rem;
   font-weight: 700;
 }
 .migplan-timeline-feasibility.feasible { background: rgba(16,185,129,0.15); color: #10B981; }
-.migplan-timeline-feasibility.tight { background: rgba(234,179,8,0.15); color: #EAB308; }
-.migplan-timeline-feasibility.risky { background: rgba(239,68,68,0.15); color: #EF4444; }
+.migplan-timeline-feasibility.tight { background: rgba(234,179,8,0.15); color: var(--text-primary); }
+.migplan-timeline-feasibility.risky { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 
 /* ---- Risk Cards ---- */
 .migplan-risk-grid {
@@ -468,9 +468,9 @@
   letter-spacing: 0.05em;
   margin-bottom: 0.3rem;
 }
-.migplan-risk-severity.critical { color: #EF4444; }
-.migplan-risk-severity.high { color: #F97316; }
-.migplan-risk-severity.medium { color: #EAB308; }
+.migplan-risk-severity.critical { color: var(--text-primary); }
+.migplan-risk-severity.high { color: var(--text-primary); }
+.migplan-risk-severity.medium { color: var(--text-primary); }
 .migplan-risk-severity.low { color: #10B981; }
 
 .migplan-risk-title {
@@ -490,7 +490,7 @@
   color: #bbb;
   background: var(--accent-subtle);
   padding: 0.6rem 0.8rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   line-height: 1.5;
 }
 .migplan-risk-mitigation strong {
@@ -518,14 +518,14 @@
 }
 .migplan-filter-chip {
   padding: 0.35rem 0.8rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-muted);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .migplan-filter-chip:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
 .migplan-filter-chip.active {
@@ -690,14 +690,14 @@
 .migplan-confidence {
   display: inline-block;
   padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.78rem;
   font-weight: 700;
   margin-top: 0.5rem;
 }
 .migplan-confidence.high { background: rgba(16,185,129,0.15); color: #10B981; }
-.migplan-confidence.moderate { background: rgba(234,179,8,0.15); color: #EAB308; }
-.migplan-confidence.low { background: rgba(249,115,22,0.15); color: #F97316; }
+.migplan-confidence.moderate { background: rgba(234,179,8,0.15); color: var(--text-primary); }
+.migplan-confidence.low { background: rgba(249,115,22,0.15); color: var(--text-primary); }
 
 /* ---- Decision Status Banner ---- */
 .migplan-decision {
@@ -709,9 +709,9 @@
   text-align: center;
 }
 .migplan-decision.go { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10B981; }
-.migplan-decision.go-conditions { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); color: #EAB308; }
-.migplan-decision.conditional { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: #F97316; }
-.migplan-decision.not-recommended { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
+.migplan-decision.go-conditions { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); color: var(--text-primary); }
+.migplan-decision.conditional { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: var(--text-primary); }
+.migplan-decision.not-recommended { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--text-primary); }
 .migplan-decision-subtitle {
   font-size: 0.8rem;
   font-weight: 400;
@@ -808,10 +808,10 @@
 .migplan-recent-card {
   background: var(--accent-subtle);
   border: 1px solid var(--accent-subtle);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   flex: 1;
   min-width: 150px;
 }

@@ -42,7 +42,7 @@
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -63,7 +63,7 @@
   justify-content: center;
   background: #EF4444;
   color: var(--text-primary);
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 700;
   min-width: 18px;
   height: 18px;
@@ -95,7 +95,7 @@
   font-size: 0.9rem;
   cursor: pointer;
   border: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   font-family: inherit;
 }
 .pvs-btn--primary {
@@ -154,7 +154,7 @@
   border-radius: 16px;
   padding: 1.5rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
 }
 .pvs-kit-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.4);
@@ -287,12 +287,12 @@
 .pvs-label-badge {
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
   background: var(--bg-elevated);
   color: var(--text-secondary);
 }
-.pvs-label-badge--encrypt { background: rgba(239,68,68,0.15); color: #F87171; }
+.pvs-label-badge--encrypt { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 .pvs-label-badge--mark { background: rgba(96,165,250,0.15); color: #60A5FA; }
 .pvs-label-badge--auto { background: rgba(132,204,22,0.15); color: #84CC16; }
 
@@ -327,8 +327,8 @@
   text-transform: uppercase;
   flex-shrink: 0;
 }
-.pvs-dlp-action--block { background: rgba(239,68,68,0.2); color: #F87171; }
-.pvs-dlp-action--warn { background: rgba(251,191,36,0.2); color: #FBBF24; }
+.pvs-dlp-action--block { background: rgba(239,68,68,0.2); color: var(--text-primary); }
+.pvs-dlp-action--warn { background: rgba(251,191,36,0.2); color: var(--text-primary); }
 .pvs-dlp-action--log { background: rgba(96,165,250,0.2); color: #60A5FA; }
 .pvs-dlp-action--label { background: rgba(132,204,22,0.2); color: #84CC16; }
 
@@ -583,7 +583,7 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .pvs-cross-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.3);
@@ -650,7 +650,7 @@
   background: var(--bg-elevated);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-family: inherit;
 }
 .pvs-lb-tpl-btn:hover {
@@ -692,7 +692,7 @@
   border: 1px solid var(--border);
   border-left: 3px solid;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pvs-lb-card:hover {
   background: var(--bg-elevated);
@@ -713,11 +713,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
   font-family: inherit;
 }
 .pvs-lb-card-btn:hover { background: var(--border); color: var(--text-primary); }
-.pvs-lb-card-btn--del:hover { background: rgba(239,68,68,0.2); color: #F87171; }
+.pvs-lb-card-btn--del:hover { background: rgba(239,68,68,0.2); color: var(--text-primary); }
 
 .pvs-lb-deploy-cta { margin-top: 1rem; }
 
@@ -900,7 +900,7 @@
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .pvs-lb-colour-btn:hover { transform: scale(1.15); }
 .pvs-lb-colour-btn.active { border-color: #fff; box-shadow: 0 0 8px var(--border-emphasis); }
@@ -941,7 +941,7 @@
   border-radius: 10px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pvs-dlp-scenario-card.pvs-dlp-enabled {
   border-color: rgba(var(--pvs-accent-rgb), 0.35);
@@ -974,7 +974,7 @@
   display: inline-block;
   padding: 0.1rem 0.45rem;
   border-radius: 4px;
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
   background: rgba(var(--pvs-accent-rgb), 0.15);
   color: var(--pvs-accent);
@@ -1185,7 +1185,7 @@
   background: var(--bg-elevated);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-family: inherit;
 }
 .pvs-export-tab:hover { color: var(--text-primary); }

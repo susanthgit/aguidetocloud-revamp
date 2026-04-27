@@ -7,7 +7,7 @@
 .prompts-page {
   
   
-  --prompt-accent-glow: color-mix(in srgb, var(--accent) 25%, transparent);
+  --prompt-accent-glow: transparent;
   --prompt-accent-border: color-mix(in srgb, var(--accent) 25%, transparent);
   --prompt-accent-subtle: var(--accent-subtle);
   /* Shared tool accent tokens */
@@ -22,8 +22,8 @@
 .prompts-tab-btn {
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 14px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .prompts-tab-btn:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .prompts-tab-btn.active {
@@ -47,7 +47,7 @@
 }
 .prompts-hero h1 {
   font-family: var(--font-heading);
-  font-size: 2.6rem;
+  font-size: var(--text-display, 2.5rem);
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
@@ -55,7 +55,7 @@
 }
 .prompts-hero h1 span {
   color: var(--accent);
-  text-shadow: 0 0 30px var(--prompt-accent-glow);
+  /* z5-removed: text glow */
 }
 .prompts-subtitle {
   color: var(--text-secondary);
@@ -105,7 +105,7 @@
 .prompts-search:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 15px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
 }
 .prompts-select {
   padding: 0.6rem 0.8rem;
@@ -142,7 +142,7 @@
   padding: 0 0 0.8rem;
 }
 .prompts-filter-info b { color: var(--accent); }
-.prompts-clear-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; }
+.prompts-clear-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-left: 0.5rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; }
 .prompts-clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 .prompts-filter-label {
   font-family: var(--font-heading);
@@ -155,7 +155,7 @@
 }
 .prompts-chip {
   padding: 0.3rem 0.75rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text-secondary);
@@ -163,7 +163,7 @@
   font-family: var(--font-heading);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
 }
 .prompts-chip:hover {
@@ -175,7 +175,7 @@
   background: var(--accent-subtle);
   border-color: var(--accent);
   color: var(--accent);
-  box-shadow: 0 0 12px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
 }
 .prompts-chip:focus-visible, .prompts-search:focus-visible, .prompts-select:focus-visible, .prompt-copy-btn:focus-visible, .prompt-row-header:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 2px;
@@ -236,11 +236,11 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   margin-bottom: 0.5rem;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .prompt-row:hover {
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  box-shadow: 0 0 15px var(--accent-subtle);
+  /* z5-removed: glow shadow */
 }
 
 .prompt-row-header {
@@ -292,7 +292,7 @@
   display: inline-block;
   background: var(--accent);
   color: var(--text-primary);
-  font-size: 0.58rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 800;
   padding: 1px 5px;
   border-radius: 3px;
@@ -386,7 +386,7 @@
   flex-wrap: wrap;
 }
 .prompt-platform-badge {
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   padding: 0.12rem 0.45rem;
   border-radius: 16px;
   background: var(--bg-elevated);
@@ -407,19 +407,19 @@
   border: 1px solid var(--border);
   color: var(--accent);
   padding: 0.4rem 0.9rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.82rem;
   font-family: var(--font-heading);
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
 .prompt-copy-btn:hover {
   background: var(--accent);
   color: var(--accent-foreground);
-  box-shadow: 0 0 15px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
 }
 .prompt-copy-btn.copied {
   background: var(--success);
@@ -431,12 +431,12 @@
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--accent);
   padding: 0.4rem 0.9rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.82rem;
   font-family: var(--font-heading);
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
   text-decoration: none;
@@ -493,7 +493,7 @@
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -501,7 +501,7 @@
 .prompts-category-card:hover {
   border-color: var(--border);
   color: var(--accent);
-  box-shadow: 0 0 12px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
   text-shadow: none;
   transform: translateY(-1px);
 }
@@ -546,7 +546,7 @@
   text-decoration: none;
 }
 .prompt-breadcrumbs a:hover {
-  text-shadow: 0 0 8px var(--prompt-accent-glow);
+  /* z5-removed: text glow */
 }
 
 /* Single page header */
@@ -601,7 +601,7 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 1.2rem 1.4rem;
   padding-right: 4rem;
   white-space: pre-wrap;
@@ -620,10 +620,10 @@
   font-family: var(--font-heading);
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .prompt-full-copy:hover {
-  box-shadow: 0 0 20px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
   transform: scale(1.05);
 }
 .prompt-full-copy.copied {
@@ -654,7 +654,7 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.3rem 0.7rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   font-size: 0.82rem;
@@ -741,12 +741,12 @@
   text-decoration: none;
   padding: 0.3rem 0.7rem;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md, 10px);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .prompts-back-nav a:hover {
   background: var(--accent-subtle);
-  box-shadow: 0 0 10px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
   text-shadow: none;
 }
 
@@ -774,18 +774,18 @@
   padding: 0.4rem 0.8rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-secondary);
   font-size: 0.82rem;
   font-family: var(--font-heading);
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .prompt-open-btn:hover {
   border-color: var(--border);
   color: var(--accent);
-  box-shadow: 0 0 10px var(--prompt-accent-glow);
+  /* z5-removed: glow shadow */
   text-shadow: none;
 }
 .prompt-open-note {
@@ -797,7 +797,7 @@
 /* ── RESPONSIVE ─────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .prompt-row-platforms { font-size: 0.65rem; gap: 0.15rem; }
+  .prompt-row-platforms { font-size: var(--text-caption, 0.75rem); gap: 0.15rem; }
   .prompt-platform-badge { padding: 0.1rem 0.35rem; font-size: 0.6rem; }
 }
 
@@ -879,7 +879,7 @@
   background: var(--accent); color: var(--accent-foreground); border: none;
   font-size: 1.2rem; font-weight: 700; cursor: pointer;
   box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 25%, transparent);
-  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  opacity: 0; transform: translateY(20px); transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
   pointer-events: none;
   display: flex; align-items: center; justify-content: center;
 }
@@ -896,10 +896,10 @@
   border: 1px solid var(--border); border-radius: var(--radius-lg, 16px);
   padding: 1.1rem; cursor: pointer; text-align: left;
   display: flex; flex-direction: column; gap: 0.3rem;
-  transition: all 0.2s; font-family: var(--font-heading);
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: var(--font-heading);
 }
 .prompts-cat-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 25%, transparent); box-shadow: 0 0 20px var(--accent-subtle);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent); /* z5-removed: glow shadow */
   transform: translateY(-2px);
 }
 .prompts-cat-card-emoji { font-size: 1.6rem; }
@@ -910,7 +910,7 @@
 .prompts-back-cats {
   background: none; border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); color: var(--accent);
   padding: 0.3rem 0.7rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
-  font-family: var(--font-heading); cursor: pointer; transition: all 0.2s;
+  font-family: var(--font-heading); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .prompts-back-cats:hover { background: var(--accent-subtle); }
 .prompts-active-cat {
@@ -953,7 +953,7 @@
 .prompts-view-btn {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-muted); padding: 0.3rem 0.7rem; border-radius: 8px;
-  font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+  font-size: 0.78rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-family: var(--font-heading); font-weight: 600;
 }
 .prompts-view-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -966,9 +966,9 @@
   background: var(--bg-surface);
   border: 1px solid var(--border); border-radius: var(--radius-lg, 16px);
   padding: 1.1rem; display: flex; flex-direction: column; gap: 0.5rem;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-.prompts-card:hover { border-color: color-mix(in srgb, var(--accent) 25%, transparent); box-shadow: 0 0 15px var(--accent-subtle); }
+.prompts-card:hover { border-color: color-mix(in srgb, var(--accent) 25%, transparent); /* z5-removed: glow shadow */ }
 .prompts-card-top { display: flex; justify-content: space-between; align-items: center; }
 .prompts-card-title {
   font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700;
@@ -986,29 +986,29 @@
 
 /* ══ V3: Difficulty Badge ══ */
 .prompt-diff-badge {
-  font-size: 0.65rem; font-weight: 700; font-family: var(--font-heading);
+  font-size: var(--text-caption, 0.75rem); font-weight: 700; font-family: var(--font-heading);
   padding: 0.15rem 0.5rem; border-radius: 10px; text-transform: uppercase;
   letter-spacing: 0.03em; flex-shrink: 0;
 }
 .prompt-diff-badge[data-level="beginner"] { background: rgba(52,211,153,0.12); color: #059669; border: 1px solid rgba(52,211,153,0.25); }
-.prompt-diff-badge[data-level="intermediate"] { background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25); }
-.prompt-diff-badge[data-level="advanced"] { background: rgba(239,68,68,0.12); color: #EF4444; border: 1px solid rgba(239,68,68,0.25); }
+.prompt-diff-badge[data-level="intermediate"] { background: rgba(251,191,36,0.12); color: var(--text-primary); border: 1px solid rgba(251,191,36,0.25); }
+.prompt-diff-badge[data-level="advanced"] { background: rgba(239,68,68,0.12); color: var(--text-primary); border: 1px solid rgba(239,68,68,0.25); }
 
 /* ══ V3: Favorite Button ══ */
 .prompt-fav-btn {
   background: none; border: none; cursor: pointer; font-size: 1.1rem;
-  color: var(--text-muted); transition: all 0.2s; padding: 0.1rem 0.3rem;
+  color: var(--text-muted); transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; padding: 0.1rem 0.3rem;
   flex-shrink: 0; line-height: 1;
 }
-.prompt-fav-btn:hover { color: #FBBF24; transform: scale(1.2); }
-.prompt-fav-btn.active { color: #FBBF24; text-shadow: 0 0 8px rgba(251,191,36,0.4); }
+.prompt-fav-btn:hover { color: var(--text-primary); transform: scale(1.2); }
+.prompt-fav-btn.active { color: var(--text-primary); /* z5-removed: text glow */ }
 
 /* ══ V3: Customize Button ══ */
 .prompt-customize-btn {
   background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  color: var(--accent); padding: 0.35rem 0.7rem; border-radius: 14px;
+  color: var(--accent); padding: 0.35rem 0.7rem; border-radius: var(--radius-md, 10px);
   font-size: 0.78rem; font-family: var(--font-heading); font-weight: 700;
-  cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; white-space: nowrap; flex-shrink: 0;
 }
 .prompt-customize-btn:hover { background: var(--accent); color: var(--accent-foreground); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 25%, transparent); }
 
@@ -1028,7 +1028,7 @@
   background: radial-gradient(circle, var(--accent-subtle) 0%, transparent 70%);
 }
 .prompts-potd-label {
-  font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
+  font-size: var(--text-caption, 0.75rem); font-weight: 800; text-transform: uppercase;
   letter-spacing: 0.1em; color: var(--accent);
   background: var(--accent-subtle); display: inline-block;
   padding: 0.2rem 0.6rem; border-radius: 6px; margin-bottom: 0.5rem;
@@ -1059,7 +1059,7 @@
   background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--accent); padding: 0.4rem 0.8rem; border-radius: 10px;
   font-size: 0.78rem; font-family: var(--font-heading); font-weight: 700;
-  cursor: pointer; transition: all 0.2s; margin-left: auto;
+  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; margin-left: auto;
 }
 .prompts-export-btn:hover { background: var(--accent); color: var(--accent-foreground); }
 
@@ -1071,7 +1071,7 @@
 .prompts-wizard-overlay[hidden] { display: none; }
 .prompts-wizard-modal {
   background: var(--accent-foreground); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 20px; width: 100%; max-width: 640px; max-height: 85vh;
+  border-radius: var(--radius-lg, 16px); width: 100%; max-width: 640px; max-height: 85vh;
   display: flex; flex-direction: column; overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
@@ -1094,15 +1094,15 @@
   background: var(--accent); border: none; color: var(--accent-foreground, #fff);
   padding: 0.5rem 1.2rem; border-radius: 10px; font-weight: 700;
   font-family: var(--font-heading); font-size: 0.85rem; cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-.prompts-wizard-copy:hover { box-shadow: 0 0 15px var(--prompt-accent-glow); }
+.prompts-wizard-copy:hover { /* z5-removed: glow shadow */ }
 .prompts-wizard-copy.copied { background: var(--success); }
 .prompts-wizard-polish {
   background: rgba(236,72,153,0.1); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 10px;
   font-weight: 700; font-family: var(--font-heading); font-size: 0.85rem;
-  cursor: pointer; transition: all 0.2s;
+  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .prompts-wizard-polish:hover { background: var(--accent); color: var(--accent-foreground); }
 
@@ -1119,7 +1119,7 @@
   color: var(--text-primary); font-family: var(--font-body); font-size: 0.9rem;
   transition: border-color 0.2s;
 }
-.wiz-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 10px var(--prompt-accent-glow); }
+.wiz-input:focus { outline: none; border-color: var(--accent); /* z5-removed: glow shadow */ }
 .wiz-input::placeholder { color: var(--text-muted); }
 select.wiz-input { cursor: pointer; }
 .wiz-preview-label {
@@ -1158,7 +1158,7 @@ select.wiz-input { cursor: pointer; }
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   text-align: center;
 }
 .prompts-eco-card:hover { border-color: var(--accent); }

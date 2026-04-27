@@ -21,7 +21,7 @@
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
   font-family: inherit;
 }
 .compass-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
@@ -48,7 +48,7 @@
 .compass-pill {
   padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  color: var(--text-secondary); cursor: pointer; transition: all 0.2s; font-family: inherit;
+  color: var(--text-secondary); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
 .compass-pill:hover { color: var(--text-primary); background: var(--border); }
 .compass-pill.active { color: var(--text-primary); background: var(--compass-accent); border-color: var(--compass-accent); }
@@ -65,7 +65,7 @@
 .compass-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
 .compass-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; overflow: hidden; transition: all 0.25s;
+  border-radius: var(--radius-md, 10px); overflow: hidden; transition: color 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.25s ease-out, opacity 0.25s ease-out;
   }
 .compass-card:hover { border-color: var(--border); transform: translateY(-2px); }
 .compass-card-header {
@@ -80,7 +80,7 @@
 .compass-card-code { font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
 .compass-card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
 .compass-badge {
-  font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 6px;
+  font-size: var(--text-caption, 0.75rem); padding: 0.15rem 0.5rem; border-radius: 6px;
   font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
 }
 .compass-badge-level {
@@ -102,7 +102,7 @@
 .compass-card-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
 .compass-btn {
   padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
-  border: none; cursor: pointer; transition: all 0.2s; font-family: inherit; text-decoration: none;
+  border: none; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit; text-decoration: none;
 }
 .compass-btn-primary { background: var(--compass-accent); color: var(--text-primary); }
 .compass-btn-primary:hover { filter: brightness(1.15); }
@@ -122,7 +122,7 @@
 .compass-matches-grid { display: flex; flex-direction: column; gap: 1.25rem; }
 .compass-match-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.25rem; }
+  border-radius: var(--radius-md, 10px); padding: 1.25rem; }
 .compass-match-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
 .compass-match-icon { font-size: 1.5rem; }
 .compass-match-title { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); }
@@ -146,7 +146,7 @@
 .compass-careers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
 .compass-career-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.2rem; cursor: pointer; transition: all 0.25s;
+  border-radius: var(--radius-md, 10px); padding: 1.2rem; cursor: pointer; transition: color 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.25s ease-out, opacity 0.25s ease-out;
   }
 .compass-career-card:hover { border-color: var(--compass-accent); transform: translateY(-2px); }
 .compass-career-card.active { border-color: var(--compass-accent); box-shadow: 0 0 16px rgba(var(--compass-accent-rgb), 0.15); }
@@ -181,7 +181,7 @@
 .compass-preset {
   padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  color: var(--text-secondary); cursor: pointer; transition: all 0.2s; font-family: inherit;
+  color: var(--text-secondary); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
 .compass-preset:hover { color: var(--text-primary); border-color: var(--compass-accent); }
 .compass-preset.active { background: var(--compass-accent); color: var(--text-primary); border-color: var(--compass-accent); }
@@ -191,7 +191,7 @@
 }
 .compass-chip {
   padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
-  cursor: pointer; transition: all 0.15s; border: 1px solid var(--border);
+  cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out; border: 1px solid var(--border);
   background: var(--bg-elevated); color: var(--text-secondary);
 }
 .compass-chip:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
@@ -261,7 +261,7 @@
 .compass-quick-btn {
   padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
   background: rgba(var(--compass-accent-rgb), 0.08); border: 1px solid rgba(var(--compass-accent-rgb), 0.2);
-  color: var(--compass-accent); cursor: pointer; transition: all 0.2s; font-family: inherit;
+  color: var(--compass-accent); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
 }
 .compass-quick-btn:hover { background: rgba(var(--compass-accent-rgb), 0.15); }
 
@@ -313,7 +313,7 @@
 .compass-quiz-opt {
   padding: 0.65rem 1rem; border-radius: 10px; text-align: left;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  color: var(--text-secondary); cursor: pointer; transition: all 0.15s; font-size: 0.85rem; font-family: inherit;
+  color: var(--text-secondary); cursor: pointer; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out; font-size: 0.85rem; font-family: inherit;
 }
 .compass-quiz-opt:hover { border-color: rgba(var(--compass-accent-rgb), 0.3); color: var(--text-primary); }
 .compass-quiz-opt.selected { background: rgba(var(--compass-accent-rgb), 0.12); border-color: var(--compass-accent); color: var(--text-primary); }
@@ -347,7 +347,7 @@
 .compass-skill-col { flex: 1; min-width: 180px; }
 .compass-skill-col strong { display: block; font-size: 0.72rem; margin-bottom: 0.3rem; }
 .compass-skill-tag {
-  display: inline-block; font-size: 0.68rem; padding: 0.15rem 0.45rem; border-radius: 5px;
+  display: inline-block; font-size: var(--text-caption, 0.75rem); padding: 0.15rem 0.45rem; border-radius: 5px;
   margin: 0.15rem 0.1rem; font-weight: 500;
 }
 .compass-skill-shared { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }

@@ -2713,22 +2713,20 @@ body.is-home .section {
   display: inline-flex;
   align-items: center;
   padding: 0.15rem 0.55rem;
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 700;
-  color: #fff;
-  background: rgba(255, 94, 91, 0.15);
-  border: 1px solid rgba(255, 94, 91, 0.5);
+  color: var(--badge-red, #B91C1C);
+  background: rgba(255, 94, 91, 0.1);
+  border: 1px solid rgba(255, 94, 91, 0.3);
   border-radius: 999px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   white-space: nowrap;
 }
 .kofi-btn:hover, .kofi-btn:focus-visible {
-  background: rgba(255, 94, 91, 0.3);
-  border-color: rgba(255, 94, 91, 0.8);
-  box-shadow: 0 0 20px rgba(255, 94, 91, 0.3);
-  color: #fff;
-  transform: translateY(-1px);
+  background: rgba(255, 94, 91, 0.2);
+  border-color: rgba(255, 94, 91, 0.5);
+  color: var(--badge-red, #B91C1C);
 }
 
 /* Footer Ko-fi button */

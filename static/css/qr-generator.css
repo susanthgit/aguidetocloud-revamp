@@ -98,11 +98,11 @@
 .qrgen-type-pill {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem 1rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.85rem;
   font-family: inherit;
 }
@@ -144,7 +144,7 @@
 .qrgen-textarea {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.65rem 0.85rem;
   color: var(--text-primary);
   font-size: 0.9rem;
@@ -197,11 +197,11 @@
 .qrgen-preset {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.4rem 0.85rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.8rem;
   font-family: inherit;
 }
@@ -228,7 +228,7 @@
   width: 40px;
   height: 36px;
   border: 2px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   background: none;
   padding: 2px;
@@ -279,7 +279,7 @@
   padding: 1rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   position: relative;
 }
 
@@ -378,11 +378,11 @@
   text-align: center;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.8rem;
   font-family: inherit;
 }
@@ -399,7 +399,7 @@
 
 .qrgen-ec-pill small {
   display: block;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   color: var(--text-secondary);
   margin-top: 0.15rem;
 }
@@ -436,9 +436,9 @@
 .qrgen-warning {
   background: rgba(251,191,36,0.1);
   border: 1px solid rgba(251,191,36,0.3);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.6rem 0.85rem;
-  color: #FBBF24;
+  color: var(--text-primary);
   font-size: 0.8rem;
   margin-bottom: 1rem;
   display: none;
@@ -461,11 +461,11 @@
 .qrgen-btn {
   background: rgba(236,72,153,0.15);
   border: 1px solid rgba(236,72,153,0.3);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.6rem 1.25rem;
   color: var(--accent);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.85rem;
   font-family: inherit;
   display: inline-flex;
@@ -605,11 +605,11 @@
 
 .qrgen-scan-drop {
   border: 2px dashed var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 3rem 2rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   margin-bottom: 1.5rem;
 }
 
@@ -657,7 +657,7 @@
 
 .qrgen-scan-result-text {
   background: var(--bg-elevated);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.85rem;
   color: var(--text-primary);
   word-break: break-all;
@@ -778,11 +778,11 @@
   gap: 0.4rem;
   background: rgba(236,72,153,0.06);
   border: 1px solid rgba(236,72,153,0.15);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.45rem 0.85rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   font-size: 0.8rem;
   font-family: inherit;
 }
@@ -811,7 +811,7 @@
   padding: 0.3rem 0.6rem;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   color: var(--text-secondary);
 }
 
@@ -855,7 +855,7 @@
 .qrgen-preview-box svg {
   max-width: 100%;
   height: auto;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   animation: qrgen-scaleIn 0.25s ease-out;
 }
 
@@ -868,7 +868,7 @@
   z-index: 90;
   background: rgba(3,3,8,0.9);
   border: 2px solid rgba(236,72,153,0.3);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   padding: 0.5rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   align-items: center;

@@ -163,7 +163,7 @@
   border: 1px solid var(--border);
   border-radius: 3px;
   font-family: var(--font-heading);
-  font-size: 0.68rem;
+  font-size: var(--text-caption, 0.75rem);
 }
 .polisher-btn-primary {
   padding: 0.7rem 1.5rem;
@@ -412,8 +412,8 @@
 }
 
 /* Score colours */
-.polisher-score-low { color: #ef4444; }
-.polisher-score-med { color: #f59e0b; }
+.polisher-score-low { color: var(--text-primary); }
+.polisher-score-med { color: var(--text-primary); }
 .polisher-score-good { color: #22c55e; }
 .polisher-score-great { color: #3b82f6; }
 .polisher-fill-low { background: #ef4444; }

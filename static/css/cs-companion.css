@@ -21,7 +21,7 @@
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
 }
 .cscomp-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .cscomp-tab.active {
@@ -51,7 +51,7 @@
   gap: 0.5rem; margin-bottom: 0.5rem; margin-left: auto;
   width: fit-content; padding-right: 0.5rem;
 }
-.cscomp-eval-plat { text-align: center; font-size: 0.68rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; min-width: 20px; }
+.cscomp-eval-plat { text-align: center; font-size: var(--text-caption, 0.75rem); color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; min-width: 20px; }
 .cscomp-eval-row {
   display: flex; align-items: center; gap: 0.75rem;
   padding: 0.55rem 0.5rem; border-radius: 8px;
@@ -69,7 +69,7 @@
   width: 18px; height: 18px; border-radius: 4px;
   border: 2px solid var(--border-emphasis);
   background: var(--bg-elevated);
-  cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; flex-shrink: 0;
 }
 .cscomp-eval-check:checked {
   background: var(--cscomp-accent);
@@ -85,7 +85,7 @@
 .cscomp-dot {
   width: 20px; height: 20px; border-radius: 50%;
   background: var(--bg-elevated);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 .cscomp-dot.green { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
 .cscomp-dot.amber { background: #f59e0b; box-shadow: 0 0 8px rgba(245,158,11,0.4); }
@@ -130,7 +130,7 @@
 .cscomp-scenario-desc { color: var(--text-secondary); font-size: 0.82rem; margin: 0 0 0.5rem; }
 .cscomp-verdict-badge {
   font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem;
-  border-radius: 20px; white-space: nowrap;
+  border-radius: var(--radius-lg, 16px); white-space: nowrap;
 }
 .cscomp-verdict-builder { background: rgba(34,197,94,0.15); color: #22c55e; }
 .cscomp-verdict-studio { background: rgba(var(--cscomp-accent-rgb),0.15); color: var(--cscomp-accent); }
@@ -180,8 +180,8 @@
 .cscomp-filter-btn {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); font-size: 0.78rem; font-weight: 600;
-  padding: 0.35rem 0.75rem; border-radius: 20px; cursor: pointer;
-  transition: all 0.2s;
+  padding: 0.35rem 0.75rem; border-radius: var(--radius-lg, 16px); cursor: pointer;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cscomp-filter-btn:hover { color: var(--text-primary); background: var(--border); }
 .cscomp-filter-btn.active { color: var(--text-primary); background: rgba(var(--cscomp-accent-rgb),0.3); border-color: rgba(var(--cscomp-accent-rgb),0.5); }
@@ -195,7 +195,7 @@
   background: rgba(var(--cscomp-accent-rgb), 0.1);
   border: 1px solid rgba(var(--cscomp-accent-rgb), 0.2);
   color: var(--cscomp-accent); font-size: 0.82rem; font-weight: 600;
-  text-decoration: none; transition: all 0.2s;
+  text-decoration: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cscomp-cta:hover { background: rgba(var(--cscomp-accent-rgb), 0.2); color: var(--text-primary); }
 
@@ -208,7 +208,7 @@
 }
 .cscomp-cap-nav a {
   font-size: 0.78rem; color: var(--text-muted); text-decoration: none;
-  padding: 0.4rem 0.7rem; border-radius: 7px; transition: all 0.2s;
+  padding: 0.4rem 0.7rem; border-radius: 7px; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   white-space: nowrap;
 }
 .cscomp-cap-nav a:hover { color: var(--text-primary); background: var(--bg-elevated); }
@@ -303,7 +303,7 @@
   background: none; border: 1px solid transparent;
   color: var(--text-muted); font-size: 0.8rem; font-weight: 600;
   padding: 0.5rem 0.9rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; white-space: nowrap; flex-shrink: 0;
 }
 .cscomp-pattern-btn:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .cscomp-pattern-btn.active {
@@ -316,11 +316,11 @@
 .cscomp-pattern-header { margin-bottom: 1rem; }
 .cscomp-pattern-complexity {
   display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem;
-  border-radius: 20px; margin-bottom: 0.5rem;
+  border-radius: var(--radius-lg, 16px); margin-bottom: 0.5rem;
 }
 .cscomp-complexity-low { background: rgba(34,197,94,0.15); color: #22c55e; }
-.cscomp-complexity-medium { background: rgba(245,158,11,0.15); color: #f59e0b; }
-.cscomp-complexity-medium-high { background: rgba(239,68,68,0.15); color: #f87171; }
+.cscomp-complexity-medium { background: rgba(245,158,11,0.15); color: var(--text-primary); }
+.cscomp-complexity-medium-high { background: rgba(239,68,68,0.15); color: var(--text-primary); }
 .cscomp-pattern-header p { color: var(--text-secondary); font-size: 0.9rem; margin: 0; }
 
 .cscomp-pattern-when { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem; }
@@ -332,7 +332,7 @@
   display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.5rem;
   background: rgba(var(--cscomp-accent-rgb), 0.1);
   border: 1px solid rgba(var(--cscomp-accent-rgb), 0.2);
-  border-radius: 20px; color: var(--cscomp-accent);
+  border-radius: var(--radius-lg, 16px); color: var(--cscomp-accent);
   margin: 0.25rem 0.2rem 0 0;
 }
 
@@ -366,7 +366,7 @@
   padding: 0.55rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
   cursor: pointer; border: 1px solid var(--border);
   background: var(--bg-elevated); color: var(--text-secondary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cscomp-btn:hover { background: var(--border); color: var(--text-primary); }
 .cscomp-btn-primary {
@@ -393,7 +393,7 @@
   position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px);
   background: var(--cscomp-accent); color: var(--text-primary); padding: 0.6rem 1.2rem;
   border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-  opacity: 0; transition: all 0.3s ease; pointer-events: none; z-index: 999;
+  opacity: 0; transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; pointer-events: none; z-index: 999;
 }
 .cscomp-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
@@ -431,7 +431,7 @@
 .cscomp-persona-btn {
   background: none; border: 1px solid transparent; color: var(--border-emphasis);
   font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.7rem;
-  border-radius: 20px; cursor: pointer; transition: all 0.2s;
+  border-radius: var(--radius-lg, 16px); cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cscomp-persona-btn:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .cscomp-persona-btn.active { color: var(--text-primary); background: rgba(var(--cscomp-accent-rgb),0.25); border-color: rgba(var(--cscomp-accent-rgb),0.4); }
@@ -478,8 +478,8 @@
 /* ── Risk Badges (#7) ───────────────────────────────────────── */
 .cscomp-risk-badges { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.4rem 0; }
 .cscomp-risk-badge {
-  font-size: 0.68rem; padding: 0.15rem 0.5rem; border-radius: 20px;
-  background: rgba(239,68,68,0.1); color: #f87171; border: 1px solid rgba(239,68,68,0.2);
+  font-size: var(--text-caption, 0.75rem); padding: 0.15rem 0.5rem; border-radius: var(--radius-lg, 16px);
+  background: rgba(239,68,68,0.1); color: var(--text-primary); border: 1px solid rgba(239,68,68,0.2);
 }
 
 /* ── Shareable Summary (#6) ─────────────────────────────────── */
@@ -506,7 +506,7 @@
   border-bottom: 1px solid var(--border);
 }
 .cscomp-cell-green { color: #22c55e; }
-.cscomp-cell-amber { color: #f59e0b; }
+.cscomp-cell-amber { color: var(--text-primary); }
 .cscomp-cell-red { color: var(--text-muted); }
 
 /* ── Connector Explorer (#15) ───────────────────────────────── */
@@ -533,8 +533,8 @@
 .cscomp-connector-top strong { color: var(--text-primary); font-size: 0.82rem; flex: 1; }
 .cscomp-tier-badge { font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 10px; font-weight: 700; }
 .cscomp-tier-standard { background: rgba(34,197,94,0.15); color: #22c55e; }
-.cscomp-tier-premium { background: rgba(245,158,11,0.15); color: #f59e0b; }
-.cscomp-connector-cat { font-size: 0.68rem; color: var(--text-muted); }
+.cscomp-tier-premium { background: rgba(245,158,11,0.15); color: var(--text-primary); }
+.cscomp-connector-cat { font-size: var(--text-caption, 0.75rem); color: var(--text-muted); }
 .cscomp-connector-uses { margin: 0.25rem 0 0; padding-left: 1rem; }
 .cscomp-connector-uses li { font-size: 0.72rem; color: var(--text-muted); }
 
@@ -551,7 +551,7 @@
 .cscomp-prereq-required { border-left: 3px solid #f59e0b; }
 .cscomp-prereq-top { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem; }
 .cscomp-prereq-top strong { color: var(--text-primary); font-size: 0.85rem; flex: 1; }
-.cscomp-prereq-req { font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 10px; background: rgba(245,158,11,0.15); color: #f59e0b; font-weight: 700; }
+.cscomp-prereq-req { font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 10px; background: rgba(245,158,11,0.15); color: var(--text-primary); font-weight: 700; }
 .cscomp-prereq-opt { font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 10px; background: var(--border); color: var(--border-emphasis); font-weight: 700; }
 .cscomp-prereq-check { color: var(--text-secondary); font-size: 0.82rem; margin: 0 0 0.3rem; font-style: italic; }
 .cscomp-prereq-card details summary { color: var(--text-muted); font-size: 0.78rem; cursor: pointer; }
@@ -582,9 +582,9 @@
 .cscomp-planner-steps::-webkit-scrollbar { display: none; }
 .cscomp-planner-step {
   display: flex; align-items: center; gap: 0.4rem;
-  padding: 0.4rem 0.7rem; border-radius: 20px;
+  padding: 0.4rem 0.7rem; border-radius: var(--radius-lg, 16px);
   background: var(--bg-elevated); color: var(--text-muted);
-  font-size: 0.75rem; white-space: nowrap; transition: all 0.2s;
+  font-size: 0.75rem; white-space: nowrap; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cscomp-planner-step.active { background: rgba(var(--cscomp-accent-rgb),0.2); color: var(--text-primary); }
 .cscomp-planner-step.done { background: rgba(34,197,94,0.15); color: #22c55e; }
@@ -592,7 +592,7 @@
   width: 20px; height: 20px; border-radius: 50%;
   background: var(--bg-elevated); display: flex;
   align-items: center; justify-content: center;
-  font-size: 0.68rem; font-weight: 700;
+  font-size: var(--text-caption, 0.75rem); font-weight: 700;
 }
 .cscomp-planner-step.active .cscomp-step-num { background: var(--cscomp-accent); }
 .cscomp-planner-step.done .cscomp-step-num { background: #22c55e; }
@@ -604,7 +604,7 @@
   background: var(--bg-elevated); border: 2px solid var(--bg-elevated);
   border-radius: 10px; padding: 0.75rem; cursor: pointer;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;
-  transition: all 0.2s; text-align: left;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; text-align: left;
 }
 .cscomp-planner-option:hover { border-color: rgba(var(--cscomp-accent-rgb),0.4); color: var(--text-primary); }
 .cscomp-planner-option.selected { border-color: var(--cscomp-accent); background: rgba(var(--cscomp-accent-rgb),0.1); color: var(--text-primary); }

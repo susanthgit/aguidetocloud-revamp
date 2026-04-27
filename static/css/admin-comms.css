@@ -13,7 +13,7 @@
 .comms-tab {
   background: none; border: 1px solid transparent; color: var(--text-secondary);
   font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; cursor: pointer;
-  border-radius: 8px; transition: all 0.2s ease; flex: 1; text-align: center;
+  border-radius: 8px; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
 }
 .comms-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .comms-tab.active {
@@ -33,7 +33,7 @@
 .comms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.8rem; }
 .comms-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 1rem; cursor: pointer; transition: all 0.2s;
+  border-radius: 12px; padding: 1rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   border-left: 3px solid var(--comms-accent);
   }
 .comms-card:hover { background: var(--border); border-color: var(--border); transform: translateY(-2px); }
@@ -41,14 +41,14 @@
 .comms-card-cat {
   display: inline-block; padding: 0.15rem 0.5rem; border-radius: 10px;
   background: rgba(91,155,213,0.15); color: var(--comms-accent);
-  font-size: 0.65rem; text-transform: uppercase; margin-bottom: 0.3rem;
+  font-size: var(--text-caption, 0.75rem); text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .comms-card-hint { color: var(--text-muted); font-size: 0.8rem; }
 
 .comms-btn {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-primary); padding: 0.5rem 1rem; border-radius: 8px;
-  cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;
+  cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .comms-btn:hover { background: var(--border); color: var(--text-primary); }
 .comms-btn-primary { background: var(--comms-accent); color: var(--text-primary); border-color: var(--comms-accent); font-weight: 600; }
@@ -56,12 +56,12 @@
 
 .comms-editor-wrap {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 14px; padding: 1.5rem;
+  border-radius: var(--radius-md, 10px); padding: 1.5rem;
 }
 .comms-editor-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .comms-editor-cat {
   padding: 0.15rem 0.5rem; border-radius: 10px; background: rgba(91,155,213,0.15);
-  color: var(--comms-accent); font-size: 0.65rem; text-transform: uppercase;
+  color: var(--comms-accent); font-size: var(--text-caption, 0.75rem); text-transform: uppercase;
 }
 .comms-editor-hint { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem; font-style: italic; }
 

@@ -79,10 +79,10 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
   padding: 0.4rem 1rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-filter:hover { border-color: var(--accent); color: var(--text-primary); }
 .pguide-filter.active {
@@ -105,7 +105,7 @@
   padding: 1.5rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -113,7 +113,7 @@
 .pguide-card:hover {
   background: var(--border);
   border-color: var(--accent);
-  box-shadow: 0 0 20px var(--accent-subtle);
+  /* z5-removed: glow shadow */
   transform: translateY(-2px);
 }
 .pguide-card.pguide-card-hidden { display: none; }
@@ -172,7 +172,7 @@
 }
 .pguide-badge-intermediate {
   background: rgba(251, 191, 36, 0.15);
-  color: #FBBF24;
+  color: var(--text-primary);
 }
 
 /* ── Ecosystem Section ── */
@@ -196,7 +196,7 @@
   padding: 1.25rem 1rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-eco-card:hover { border-color: var(--accent); }
 .pguide-eco-card.pguide-eco-active {
@@ -240,7 +240,7 @@
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.5rem 0.75rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.9rem;
   width: 100%;
 }
@@ -298,7 +298,7 @@
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   padding: 0.6rem 0.75rem;
   font-size: 0.9rem;
@@ -388,13 +388,13 @@
 }
 .pguide-btn {
   padding: 0.6rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   border: none;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-btn-primary {
   background: var(--accent);
@@ -458,10 +458,10 @@
   border: 1px solid var(--accent);
   color: var(--tool-accent-text);
   padding: 0.5rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-mark-complete:hover { background: var(--accent-subtle); }
 .pguide-mark-complete.completed {
@@ -565,7 +565,7 @@
   padding: 1rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-next-card:hover { border-color: var(--accent); }
 .pguide-next-emoji { font-size: 1.5rem; }
@@ -589,9 +589,9 @@
 .pguide-sandbox-bad {
   background: rgba(220, 38, 38, 0.1);
   border: 1px solid rgba(220, 38, 38, 0.3);
-  color: #FCA5A5;
+  color: var(--text-primary);
   padding: 0.75rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -599,7 +599,7 @@
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   padding: 0.75rem;
   font-size: 0.95rem;
@@ -645,7 +645,7 @@
 .pguide-sandbox-feedback {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   font-size: 0.9rem;
   font-weight: 600;
   display: none;
@@ -659,7 +659,7 @@
 .pguide-sandbox-feedback.partial {
   background: rgba(251, 191, 36, 0.15);
   border: 1px solid #FBBF24;
-  color: #FBBF24;
+  color: var(--text-primary);
 }
 
 /* ── FAQ ── */
@@ -672,7 +672,7 @@
 .pguide-faq-item {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   margin-bottom: 0.75rem;
 }
 .pguide-faq-item summary {
@@ -708,7 +708,7 @@
   padding: 1.25rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   text-align: center;
 }
 .pguide-cta-card:hover { border-color: var(--accent); }
@@ -764,7 +764,7 @@
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   padding: 0.3rem 0.75rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 16px);
   font-size: 0.85rem;
   color: #A3E635;
 }
@@ -820,7 +820,7 @@
   display: block;
   margin-bottom: 0.5rem;
 }
-.pguide-ba-before .pguide-ba-label { color: #FCA5A5; }
+.pguide-ba-before .pguide-ba-label { color: var(--text-primary); }
 .pguide-ba-after .pguide-ba-label { color: var(--tool-accent-text); }
 .pguide-ba-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
 .pguide-ba-arrow {
@@ -844,7 +844,7 @@
   border-radius: 6px;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
   margin-top: 0.5rem;
 }
 .pguide-copy-small:hover { background: var(--accent-subtle); }
@@ -866,7 +866,7 @@
   margin: 0 0 1rem;
   padding: 0.5rem 0.75rem;
   background: var(--accent-subtle);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   border-left: 3px solid var(--accent);
 }
 
@@ -924,7 +924,7 @@
   border-radius: 6px;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-btn-small:hover { border-color: var(--accent); color: var(--text-primary); }
 
@@ -933,7 +933,7 @@
   margin-top: 1rem;
   background: var(--accent-subtle);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
 }
 .pguide-sandbox-reveal summary {
   padding: 0.75rem 1rem;
@@ -955,7 +955,7 @@
   padding: 1.5rem;
   margin: 2rem 0;
 }
-.pguide-fix-exercise h2 { margin-top: 0; color: #FBBF24; }
+.pguide-fix-exercise h2 { margin-top: 0; color: var(--text-primary); }
 
 /* ══ Heatmap Card — V2 ══ */
 .pguide-heatmap-card {
@@ -1021,11 +1021,11 @@
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.6rem 1rem;
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   cursor: pointer;
   font-size: 0.9rem;
   text-align: left;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .pguide-quiz-opt:hover { border-color: var(--accent); }
 .pguide-quiz-opt.selected {
@@ -1100,7 +1100,7 @@
   position: absolute;
   top: -10px;
   right: 12px;
-  font-size: 0.65rem;
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1177,7 +1177,7 @@
 .pguide-platform-item {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-md, 10px);
   margin-bottom: 0.5rem;
   overflow: hidden;
 }
