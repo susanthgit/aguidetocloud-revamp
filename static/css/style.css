@@ -499,7 +499,7 @@ a:hover {
 
 .nav-links {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.3rem;
   list-style: none;
   align-items: center;
   flex-wrap: nowrap;
@@ -508,7 +508,7 @@ a:hover {
   color: var(--text-secondary);
   font-size: 0.88rem;
   font-weight: 500;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.9rem;
   white-space: nowrap;
   border: 1px solid transparent;
   border-radius: 6px;
