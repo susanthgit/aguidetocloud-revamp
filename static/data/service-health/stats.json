@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T06:39:48.590840+00:00",
+  "generated_at": "2026-04-27T10:26:03.082820+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -46,9 +46,9 @@
       "short_name": "Defender",
       "icon": "🛡️",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 10500,
-      "last_incident": "2026-04-23T08:33:11.653000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 9789,
+      "last_incident": "2026-04-23T06:36:00+00:00",
       "classifications": {
         "advisory": 7
       }
