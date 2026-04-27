@@ -10,136 +10,16 @@
       </span>
     </div>
 
-    {{/* ═══════ Shared data for both desktop + mobile nav ═══════ */}}
-    {{ $certPages := where .Site.RegularPages "Section" "cert-tracker" }}
-    {{ $vendors := site.Data.vendors.vendor }}
-    {{ $msCats := slice "Azure" "Security" "AI" "Microsoft 365" "Data" "Power Platform" "Dynamics 365" }}
-
-    {{/* ═══════ DESKTOP NAV (hidden on mobile) ═══════ */}}
+    {{/* ═══════ DESKTOP NAV — clean direct links (no mega-menus) ═══════ */}}
     <ul class="nav-links" id="nav-links">
       <li class="nav-search-li"><button id="search-btn" class="search-btn" aria-label="Search">⌘K</button></li>
 
-      {{/* ── Learn mega-dropdown: vendor-based like Whizlabs ── */}}
-      <li class="nav-dropdown nav-dropdown--mega nav-item--learn{{ if or (hasPrefix $.RelPermalink "/guided/") (hasPrefix $.RelPermalink "/pricing/") (hasPrefix $.RelPermalink "/cert-tracker/") (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") (hasPrefix $.RelPermalink "/blog/") (hasPrefix $.RelPermalink "/start/") }} nav-dropdown-active{{ end }}">
-        <a href="/cert-tracker/" class="dropdown-toggle">Learn ▾</a>
-        <div class="dropdown-menu mega-menu mega-menu--learn">
-          <div class="mega-learn-layout">
-            {{/* Left: Vendor tabs from data/vendors.toml */}}
-            <div class="mega-learn-vendors">
-              {{ range $i, $v := $vendors }}
-              {{/* Count certs: Microsoft uses sub-categories, others use vendor name as exam_category */}}
-              {{ $vCertCount := 0 }}
-              {{ if eq $v.slug "microsoft" }}
-                {{ range $msCats }}
-                  {{ $vCertCount = add $vCertCount (len (where $certPages "Params.exam_category" .)) }}
-                {{ end }}
-              {{ else }}
-                {{ $vCertCount = len (where $certPages "Params.exam_category" $v.short_name) }}
-              {{ end }}
-              {{ if gt $vCertCount 0 }}
-              <button class="mega-vendor-tab{{ if eq $i 0 }} active{{ end }}" data-vendor="{{ $v.slug }}" style="--vendor-color: {{ $v.accent }}">
-                <span class="mega-vendor-emoji">{{ $v.logo_emoji }}</span>
-                <span class="mega-vendor-name">{{ $v.short_name }}</span>
-                <span class="mega-vendor-count">{{ $vCertCount }}</span>
-              </button>
-              {{ end }}
-              {{ end }}
-            </div>
-            {{/* Right: Cert panels (one per vendor, JS switches) */}}
-            <div class="mega-learn-certs">
-              {{ range $i, $v := $vendors }}
-              {{ $vCerts := slice }}
-              {{ if eq $v.slug "microsoft" }}
-                {{ range $msCats }}
-                  {{ $catCerts := where $certPages "Params.exam_category" . }}
-                  {{ $vCerts = $vCerts | append $catCerts }}
-                {{ end }}
-              {{ else }}
-                {{ $vCerts = where $certPages "Params.exam_category" $v.short_name }}
-              {{ end }}
-              {{ if gt (len $vCerts) 0 }}
-              <div class="mega-cert-panel{{ if eq $i 0 }} active{{ end }}" data-vendor="{{ $v.slug }}">
-                {{ range $j, $cert := $vCerts }}
-                {{ if lt $j 5 }}
-                <a href="{{ $cert.RelPermalink }}" class="mega-cert-link">
-                  <span class="mega-cert-code">{{ $cert.Params.exam_code }}</span>
-                  <span class="mega-cert-title">{{ $cert.Params.exam_title }}</span>
-                </a>
-                {{ end }}
-                {{ end }}
-                {{ if gt (len $vCerts) 5 }}
-                <a href="/cert-tracker/?vendor={{ $v.slug }}" class="mega-cert-more">More {{ $v.short_name }} certs ({{ len $vCerts }}) →</a>
-                {{ end }}
-                <a href="/guided/explore/" class="mega-cert-cta">🎯 Practice these exams →</a>
-              </div>
-              {{ end }}
-              {{ end }}
-            </div>
-          </div>
-          <div class="mega-learn-bottom">
-            <a href="/study-guides/">📖 Study Guides ({{ len $certPages }})</a>
-            <a href="/cert-tracker/">📚 Cert Tracker</a>
-            <a href="/guided/explore/">🎯 Practice Exams</a>
-            <a href="/pricing/">💳 Pricing</a>
-            <a href="/blog/">📝 Blog</a>
-          </div>
-        </div>
-      </li>
-
-      {{/* ── Toolkit wide mega-menu (data-driven from toolkit_nav.toml) ── */}}
-      {{ $allNavTools := (index hugo.Data "toolkit_nav").tools }}
-      {{ $toolCount := 0 }}{{ range $allNavTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
-      {{ $catDefs := slice
-        (dict "key" "prompt" "label" "Prompt Engineering" "emoji" "✨")
-        (dict "key" "agent" "label" "Agent Builders" "emoji" "🤖")
-        (dict "key" "planning" "label" "Copilot & AI" "emoji" "🎯")
-        (dict "key" "copilot" "label" "Copilot" "emoji" "💻")
-        (dict "key" "security" "label" "Security" "emoji" "🛡️")
-        (dict "key" "admin-ops" "label" "Admin Ops" "emoji" "⚙️")
-        (dict "key" "informed" "label" "Stay Informed" "emoji" "📡")
-        (dict "key" "certs" "label" "Certification" "emoji" "📚")
-        (dict "key" "community" "label" "Fun & Utils" "emoji" "🎮")
-      }}
-      <li class="nav-dropdown nav-dropdown--mega nav-item--toolkit{{ if or (hasPrefix $.RelPermalink "/ai-news/") (hasPrefix $.RelPermalink "/m365-roadmap/") (hasPrefix $.RelPermalink "/prompts/") (hasPrefix $.RelPermalink "/prompt-polisher/") (hasPrefix $.RelPermalink "/prompt-guide/") (hasPrefix $.RelPermalink "/prompt-lab/") (hasPrefix $.RelPermalink "/licensing/") (hasPrefix $.RelPermalink "/service-health/") (hasPrefix $.RelPermalink "/copilot-readiness/") (hasPrefix $.RelPermalink "/copilot-matrix/") (hasPrefix $.RelPermalink "/deprecation-timeline/") (hasPrefix $.RelPermalink "/roi-calculator/") (hasPrefix $.RelPermalink "/ai-mapper/") (hasPrefix $.RelPermalink "/ai-showdown/") (hasPrefix $.RelPermalink "/ps-builder/") (hasPrefix $.RelPermalink "/migration-planner/") (hasPrefix $.RelPermalink "/free-tools/") (hasPrefix $.RelPermalink "/feedback/") (hasPrefix $.RelPermalink "/site-analytics/") (hasPrefix $.RelPermalink "/password-generator/") (hasPrefix $.RelPermalink "/image-compressor/") (hasPrefix $.RelPermalink "/typing-test/") (hasPrefix $.RelPermalink "/countdown/") (hasPrefix $.RelPermalink "/color-palette/") (hasPrefix $.RelPermalink "/pomodoro/") (hasPrefix $.RelPermalink "/world-clock/") (hasPrefix $.RelPermalink "/qr-generator/") (hasPrefix $.RelPermalink "/wifi-qr/") (hasPrefix $.RelPermalink "/ca-builder/") (hasPrefix $.RelPermalink "/purview-starter/") (hasPrefix $.RelPermalink "/security-toolkit/") (hasPrefix $.RelPermalink "/agent-365-planner/") (hasPrefix $.RelPermalink "/admin-bingo/") (hasPrefix $.RelPermalink "/acronym-battle/") (hasPrefix $.RelPermalink "/feature-roulette/") (hasPrefix $.RelPermalink "/rename-tracker/") (hasPrefix $.RelPermalink "/admin-comms/") (hasPrefix $.RelPermalink "/compliance-passport/") (hasPrefix $.RelPermalink "/phishing-test/") (hasPrefix $.RelPermalink "/cert-compass/") (hasPrefix $.RelPermalink "/ai-cost-calculator/") (hasPrefix $.RelPermalink "/sla-calculator/") (hasPrefix $.RelPermalink "/admin-badges/") (hasPrefix $.RelPermalink "/policy-tester/") (hasPrefix $.RelPermalink "/incident-comms/") (hasPrefix $.RelPermalink "/cli-quiz/") (hasPrefix $.RelPermalink "/it-day-sim/") (hasPrefix $.RelPermalink "/instruct-builder/") (hasPrefix $.RelPermalink "/cs-companion/") (hasPrefix $.RelPermalink "/agent-builder-guide/") (hasPrefix $.RelPermalink "/prompt-tester/") (hasPrefix $.RelPermalink "/licence-picker/") (hasPrefix $.RelPermalink "/demo-scripts/") }} nav-dropdown-active{{ end }}">
-        <a href="/free-tools/" class="dropdown-toggle">Toolkit ▾</a>
-        <div class="dropdown-menu mega-menu mega-menu--toolkit">
-          <div class="mega-toolkit-search">
-            <input type="text" id="mega-tool-search" placeholder="Search {{ $toolCount }} tools..." aria-label="Search tools" autocomplete="off">
-          </div>
-          <div class="mega-toolkit-results" id="mega-search-results" style="display:none"></div>
-          <div class="mega-toolkit-body" id="mega-smart-body">
-            <div class="mega-toolkit-recent" id="mega-recent-section" style="display:none">
-              <div class="mega-toolkit-recent-label">Recently visited</div>
-              <div class="mega-toolkit-recent-list" id="mega-recent-list"></div>
-            </div>
-            <div class="mega-toolkit-grid">
-              {{ range $cat := $catDefs }}
-                {{ $catTools := where (where $allNavTools "is_tool" true) "category" $cat.key }}
-                {{ if gt (len $catTools) 0 }}
-                <div class="mega-toolkit-cat">
-                  <div class="mega-toolkit-cat-label">{{ $cat.emoji }} {{ $cat.label }}</div>
-                  {{ range $i, $tool := $catTools }}
-                    {{ if lt $i 6 }}
-                    <a href="{{ $tool.url }}"{{ if hasPrefix $.RelPermalink $tool.url }} class="nav-active"{{ end }}>{{ $tool.name }}</a>
-                    {{ end }}
-                  {{ end }}
-                  {{ if gt (len $catTools) 6 }}
-                  <a href="/free-tools/#{{ $cat.key }}" class="mega-toolkit-more">+ {{ sub (len $catTools) 6 }} more →</a>
-                  {{ end }}
-                </div>
-                {{ end }}
-              {{ end }}
-            </div>
-          </div>
-          <div class="mega-toolkit-footer">
-            <a href="/free-tools/"><strong>Browse all {{ $toolCount }} tools →</strong></a>
-            <a href="/feedback/">Feedback</a>
-          </div>
-        </div>
-      </li>
-
-      {{/* ── About ── */}}
-      <li class="nav-item--about"><a href="/about/"{{ if hasPrefix $.RelPermalink "/about/" }} aria-current="page" class="nav-active"{{ end }}>About</a></li>
+      <li><a href="/study-guides/"{{ if or (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/cert-tracker/") }} class="nav-active"{{ end }}>Study Guides</a></li>
+      <li><a href="/guided/explore/"{{ if hasPrefix $.RelPermalink "/guided/" }} class="nav-active"{{ end }}>Practice Exams</a></li>
+      <li><a href="/free-tools/"{{ if eq $.RelPermalink "/free-tools/" }} class="nav-active"{{ end }}>Free Tools</a></li>
+      <li><a href="/licensing-docs/"{{ if or (hasPrefix $.RelPermalink "/licensing-docs/") (hasPrefix $.RelPermalink "/licensing/") }} class="nav-active"{{ end }}>Licensing Wiki</a></li>
+      <li><a href="/blog/"{{ if hasPrefix $.RelPermalink "/blog/" }} class="nav-active"{{ end }}>Blog</a></li>
+      <li><a href="/ai-hub/"{{ if or (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active"{{ end }}>Videos</a></li>
     </ul>
 
     {{/* ═══════ RIGHT ZONE: theme toggle + CTA ═══════ */}}
@@ -155,72 +35,17 @@
       <span class="hamburger-icon"></span>
     </button>
 
-    {{/* ═══════ MOBILE DRAWER (hidden on desktop) ═══════ */}}
+    {{/* ═══════ MOBILE DRAWER — clean direct links ═══════ */}}
     <div class="nav-drawer" id="nav-drawer">
-      <div class="drawer-tabs">
-        <button class="drawer-tab active" data-tab="exams" aria-pressed="true">Practice Exams</button>
-        <button class="drawer-tab" data-tab="explore" aria-pressed="false">Explore</button>
-      </div>
-
-      {{/* ── Practice Exams tab: 13 vendors with expandable certs ── */}}
-      <div class="drawer-panel active" id="drawer-panel-exams">
-        {{ range $i, $v := $vendors }}
-        {{/* Collect certs for this vendor */}}
-        {{ $vCerts := slice }}
-        {{ if eq $v.slug "microsoft" }}
-          {{ range $msCats }}
-            {{ $vCerts = $vCerts | append (where $certPages "Params.exam_category" .) }}
-          {{ end }}
-        {{ else }}
-          {{ $vCerts = where $certPages "Params.exam_category" $v.short_name }}
-        {{ end }}
-        {{ if gt (len $vCerts) 0 }}
-        <div class="drawer-group{{ if eq $i 0 }} drawer-group--open{{ end }}">
-          <button class="drawer-group-toggle" aria-expanded="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
-            <span>{{ $v.logo_emoji }} {{ $v.short_name }} <span class="drawer-group-count">({{ len $vCerts }})</span></span>
-            <span class="drawer-group-chevron">›</span>
-          </button>
-          <div class="drawer-group-content{{ if eq $i 0 }} open{{ end }}">
-            {{ range $j, $cert := $vCerts }}
-            {{ if lt $j 5 }}
-            <a href="{{ $cert.RelPermalink }}" class="drawer-link">{{ $cert.Params.exam_code }}: {{ $cert.Params.exam_title }}</a>
-            {{ end }}
-            {{ end }}
-            {{ if gt (len $vCerts) 5 }}
-            <a href="/cert-tracker/?vendor={{ $v.slug }}" class="drawer-link drawer-link--more">More {{ $v.short_name }} →</a>
-            {{ end }}
-          </div>
-        </div>
-        {{ end }}
-        {{ end }}
-        <a href="/pricing/" class="drawer-link drawer-link--divider">💳 Pricing</a>
-      </div>
-
-      {{/* ── Explore tab ── */}}
-      <div class="drawer-panel" id="drawer-panel-explore">
-        {{/* Videos — expandable section */}}
-        <div class="drawer-group">
-          <button class="drawer-group-toggle" aria-expanded="false">
-            <span>📺 Videos</span>
-            <span class="drawer-group-chevron">›</span>
-          </button>
-          <div class="drawer-group-content">
-            <a href="/ai-hub/" class="drawer-link">AI Hub</a>
-            <a href="/cloud-labs/" class="drawer-link">Cloud Labs</a>
-            <a href="/certifications/" class="drawer-link">Certifications</a>
-            <a href="/exam-qa/" class="drawer-link">Exam Q&A</a>
-            <a href="/interview-prep/" class="drawer-link">Interview Prep</a>
-            <a href="/music/" class="drawer-link">Study Music</a>
-          </div>
-        </div>
-
-        <a href="/cert-tracker/" class="drawer-link">📚 Cert Study Guides</a>
+      <div class="drawer-panel active">
+        <a href="/study-guides/" class="drawer-link">📚 Cert Study Guides</a>
+        <a href="/guided/explore/" class="drawer-link">🎯 Cert Practice Exams</a>
+        <a href="/free-tools/" class="drawer-link">🧰 Free Tools</a>
+        <a href="/licensing-docs/" class="drawer-link">📄 M365 Licensing Wiki</a>
         <a href="/blog/" class="drawer-link">📝 Blog</a>
-        <a href="/free-tools/" class="drawer-link">🛠️ Free Toolkit ({{ len (where (index hugo.Data "toolkit_nav").tools "is_tool" true) }} tools)</a>
-        <a href="/about/" class="drawer-link">ℹ️ About</a>
-        <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer" class="drawer-link">☕ Downloads</a>
+        <a href="/ai-hub/" class="drawer-link">📺 Video Tutorials</a>
+        <a href="/about/" class="drawer-link drawer-link--divider">ℹ️ About</a>
       </div>
-
       <a href="/guided/explore/" class="drawer-cta">Start Free →</a>
     </div>
 
