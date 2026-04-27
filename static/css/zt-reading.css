@@ -2312,3 +2312,646 @@
     gap: var(--space-2, 8px);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 LICENSING READING ROOMS — Left sidebar nav + plan page styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Licence Navigation (Left Sidebar) ── */
+.zt-lic-nav {
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.zt-lic-nav-header {
+  display: block;
+  padding: var(--space-2, 8px) var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--accent, #818CF8);
+  text-decoration: none;
+  margin-bottom: var(--space-3, 12px);
+  transition: color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-nav-header:hover {
+  color: var(--accent-hover, #6366F1);
+}
+
+.zt-lic-nav-tool-link {
+  display: block;
+  padding: var(--space-1, 4px) var(--space-4, 16px);
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  text-decoration: none;
+  margin-bottom: var(--space-4, 16px);
+  padding-bottom: var(--space-3, 12px);
+  border-bottom: 1px solid var(--border, #E5E5E5);
+  transition: color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-nav-tool-link:hover {
+  color: var(--accent, #818CF8);
+}
+
+.zt-lic-nav-group {
+  margin-bottom: var(--space-1, 4px);
+}
+
+.zt-lic-nav-cat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2, 8px) var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-secondary, #D4D4D4);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-sm, 6px);
+  transition: background-color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-nav-cat::-webkit-details-marker {
+  display: none;
+}
+
+.zt-lic-nav-cat:hover {
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+.zt-lic-nav-count {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-muted, #737373);
+  background: var(--bg-elevated, #F5F5F5);
+  padding: 1px var(--space-2, 8px);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.zt-lic-nav-links {
+  padding: var(--space-1, 4px) 0 var(--space-2, 8px) var(--space-4, 16px);
+}
+
+.zt-lic-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  color: var(--text-tertiary, #A3A3A3);
+  text-decoration: none;
+  font-size: var(--text-sm, 0.875rem);
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-nav-link:hover {
+  color: var(--text-primary, #F5F5F5);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+.zt-lic-nav-link.active {
+  color: var(--accent, #818CF8);
+  font-weight: 600;
+  border-left-color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+.zt-lic-nav-link-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.zt-lic-nav-link-price {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.zt-lic-nav-link.active .zt-lic-nav-link-price {
+  color: var(--accent, #818CF8);
+}
+
+/* ── Licensing Reading Room — Plan page styles ── */
+.zt-lic-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #737373);
+  margin-bottom: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+.zt-lic-breadcrumb a {
+  color: var(--text-tertiary, #A3A3A3);
+  text-decoration: none;
+  transition: color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-breadcrumb a:hover {
+  color: var(--accent, #818CF8);
+}
+
+.zt-lic-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4, 16px);
+  margin-bottom: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+.zt-lic-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.zt-lic-price {
+  font-size: var(--text-h1, 2rem);
+  font-weight: 600;
+  color: var(--accent, #818CF8);
+  letter-spacing: -0.02em;
+}
+
+.zt-lic-price-unit {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #737373);
+}
+
+.zt-lic-price-note {
+  display: block;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--warning, #EAB308);
+  margin-top: var(--space-1, 4px);
+}
+
+.zt-lic-badges {
+  display: flex;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.zt-lic-badge {
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 600;
+  color: var(--text-tertiary, #A3A3A3);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.zt-lic-badge--highlight {
+  color: var(--accent, #818CF8);
+  border-color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+.zt-lic-tagline {
+  font-size: var(--text-body, 1rem);
+  color: var(--text-secondary, #D4D4D4);
+  margin-bottom: var(--space-2, 8px);
+  line-height: 1.6;
+}
+
+.zt-lic-verified {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  margin-bottom: var(--space-6, 24px);
+}
+
+/* Meta line (verified + reading time) */
+.zt-lic-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  margin-bottom: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+/* Inline TOC — "In this guide" collapsible */
+.zt-lic-toc {
+  margin-bottom: var(--space-6, 24px);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+  background: var(--bg-elevated, #F5F5F5);
+}
+
+.zt-lic-toc > summary {
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-secondary, #D4D4D4);
+  cursor: pointer;
+  list-style: none;
+}
+
+.zt-lic-toc > summary::-webkit-details-marker {
+  display: none;
+}
+
+.zt-lic-toc > summary::before {
+  content: '▸ ';
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+}
+
+.zt-lic-toc[open] > summary::before {
+  content: '▾ ';
+}
+
+.zt-lic-toc-inner {
+  padding: 0 var(--space-4, 16px) var(--space-3, 12px);
+}
+
+.zt-lic-toc-inner #TableOfContents {
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+}
+
+.zt-lic-toc-inner #TableOfContents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zt-lic-toc-inner #TableOfContents ul ul {
+  padding-left: var(--space-4, 16px);
+}
+
+.zt-lic-toc-inner #TableOfContents a {
+  display: block;
+  padding: var(--space-1, 4px) 0;
+  color: var(--text-tertiary, #A3A3A3);
+  text-decoration: none;
+  transition: color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-toc-inner #TableOfContents a:hover {
+  color: var(--accent, #818CF8);
+}
+
+.zt-lic-links {
+  display: flex;
+  gap: var(--space-3, 12px);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6, 24px);
+}
+
+.zt-lic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-2, 8px) var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-secondary, #D4D4D4);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-btn:hover {
+  color: var(--text-primary, #F5F5F5);
+  border-color: var(--border-emphasis, #D4D4D4);
+}
+
+.zt-lic-btn--primary {
+  background: var(--accent, #6366F1);
+  color: #fff;
+  border-color: var(--accent, #6366F1);
+}
+
+.zt-lic-btn--primary:hover {
+  background: var(--accent-hover, #4F46E5);
+  color: #fff;
+  border-color: var(--accent-hover, #4F46E5);
+}
+
+/* Related blogs in center column */
+.zt-lic-related {
+  margin-top: var(--space-12, 48px);
+  padding-top: var(--space-8, 32px);
+  border-top: 1px solid var(--border, #E5E5E5);
+}
+
+.zt-lic-related h2 {
+  font-size: var(--text-h3, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary, #1A1A1A);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.zt-lic-related-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.zt-lic-related-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none;
+  transition: border-color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-related-link:hover {
+  border-color: var(--accent, #818CF8);
+}
+
+.zt-lic-related-title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-primary, #1A1A1A);
+}
+
+.zt-lic-related-date {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  white-space: nowrap;
+  margin-left: var(--space-4, 16px);
+}
+
+/* FAQ section */
+.zt-lic-faq {
+  margin-top: var(--space-12, 48px);
+  padding-top: var(--space-8, 32px);
+  border-top: 1px solid var(--border, #E5E5E5);
+}
+
+.zt-lic-faq h2 {
+  font-size: var(--text-h3, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary, #1A1A1A);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.zt-lic-faq-item {
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-sm, 6px);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.zt-lic-faq-item > summary {
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-primary, #1A1A1A);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.zt-lic-faq-item > summary::before {
+  content: '▸ ';
+  color: var(--text-muted, #737373);
+  transition: transform var(--transition, 150ms ease-out);
+}
+
+.zt-lic-faq-item[open] > summary::before {
+  content: '▾ ';
+}
+
+.zt-lic-faq-item > summary:hover {
+  color: var(--accent, #818CF8);
+}
+
+.zt-lic-faq-item > p {
+  padding: 0 var(--space-4, 16px) var(--space-3, 12px);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-secondary, #D4D4D4);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Disclaimer + attribution */
+.zt-lic-disclaimer {
+  margin-top: var(--space-12, 48px);
+  padding: var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-tertiary, #A3A3A3);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-left: 3px solid var(--warning, #EAB308);
+  border-radius: var(--radius-sm, 6px);
+  line-height: 1.6;
+}
+
+.zt-lic-disclaimer strong {
+  color: var(--text-primary, #1A1A1A);
+}
+
+.zt-lic-disclaimer a {
+  color: var(--accent, #818CF8);
+  text-decoration: none;
+}
+
+.zt-lic-disclaimer a:hover {
+  text-decoration: underline;
+}
+
+.zt-lic-attribution {
+  margin-top: var(--space-4, 16px);
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  text-align: center;
+}
+
+.zt-lic-attribution a {
+  color: var(--accent, #818CF8);
+  text-decoration: none;
+}
+
+.zt-lic-attribution a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive: licensing reading room ── */
+@media (max-width: 1024px) {
+  .zt-reading--lic .zt-sidebar--lic {
+    display: none;
+  }
+  .zt-reading--lic .zt-companion {
+    display: none;
+  }
+  .zt-reading--lic {
+    grid-template-columns: 1fr;
+  }
+  .zt-lic-header {
+    flex-direction: column;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 LICENSING LANDING PAGE — /licensing-docs/ card grid
+   ═══════════════════════════════════════════════════════════ */
+
+.zt-lic-landing {
+  padding-bottom: var(--space-16, 64px);
+}
+
+/* Category quick-jump pills */
+.zt-lic-pills {
+  display: flex;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8, 32px);
+  padding-bottom: var(--space-4, 16px);
+  border-bottom: 1px solid var(--border, #E5E5E5);
+}
+
+.zt-lic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 4px);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-tertiary, #A3A3A3);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-full, 9999px);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+}
+
+.zt-lic-pill:hover {
+  color: var(--accent, #818CF8);
+  border-color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+@media (max-width: 640px) {
+  .zt-lic-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-3, 12px);
+  }
+  .zt-lic-pills::-webkit-scrollbar { display: none; }
+}
+
+.zt-lic-cat-section {
+  margin-bottom: var(--space-8, 32px);
+}
+
+.zt-lic-cat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.zt-lic-cat-title {
+  font-size: var(--text-h3, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary, #1A1A1A);
+  margin: 0;
+}
+
+.zt-lic-cat-count {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-muted, #737373);
+  background: var(--bg-elevated, #F5F5F5);
+  padding: 2px var(--space-2, 8px);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.zt-lic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3, 12px);
+}
+
+.zt-lic-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+  padding: var(--space-4, 16px);
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+  text-decoration: none;
+  transition: border-color var(--transition, 150ms ease-out), transform var(--transition, 150ms ease-out);
+}
+
+.zt-lic-card:hover {
+  border-color: var(--accent, #818CF8);
+  transform: translateY(-1px);
+}
+
+.zt-lic-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 8px);
+}
+
+.zt-lic-card-price {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 700;
+  color: var(--accent, #818CF8);
+}
+
+.zt-lic-card-badge {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+  padding: 1px var(--space-2, 8px);
+  border-radius: var(--radius-full, 9999px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.zt-lic-card-name {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-primary, #1A1A1A);
+  line-height: 1.3;
+}
+
+.zt-lic-card-tagline {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary, #A3A3A3);
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .zt-lic-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2, 8px);
+  }
+  .zt-lic-card {
+    padding: var(--space-3, 12px);
+  }
+  .zt-lic-card-tagline {
+    display: none;
+  }
+}

@@ -1,0 +1,197 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — Licensing Guides Landing Page (3-column grid) */}}
+
+{{ $allPlans := where site.RegularPages "Section" "licensing" }}
+
+{{/* Category display order + emoji */}}
+{{ $categories := slice
+  (dict "name" "Enterprise" "emoji" "🏢")
+  (dict "name" "Business (≤300 users)" "emoji" "💼")
+  (dict "name" "Copilot & AI" "emoji" "🤖")
+  (dict "name" "Security Add-ons" "emoji" "🛡️")
+  (dict "name" "Power Platform" "emoji" "⚡")
+  (dict "name" "Dynamics 365 CRM" "emoji" "🤝")
+  (dict "name" "Dynamics 365 ERP" "emoji" "📊")
+  (dict "name" "Teams Add-ons" "emoji" "💬")
+  (dict "name" "Microsoft Viva" "emoji" "🧠")
+  (dict "name" "Project & Visio" "emoji" "📋")
+  (dict "name" "Windows & Dev" "emoji" "🖥️")
+  (dict "name" "Frontline" "emoji" "👷")
+  (dict "name" "Education" "emoji" "🎓")
+}}
+
+<div class="zt-reading zt-reading--lic">
+
+  {{/* ── LEFT: Licence navigation sidebar ── */}}
+  <aside class="zt-sidebar zt-sidebar--lic" aria-label="Licensing plan navigation" data-pagefind-ignore>
+    {{ partial "licence-nav.html" . }}
+  </aside>
+
+  {{/* ── CENTER: Landing page content ── */}}
+  <div class="zt-reading-content zt-lic-landing">
+
+    {{/* Hero */}}
+    <header class="ft-hero">
+      <h1 class="ft-hero-title">Microsoft 365 Licensing Guides</h1>
+      <p class="ft-hero-subtitle">
+        Deep-dive guides for <strong>{{ len $allPlans }} Microsoft plans</strong> across {{ len $categories }} categories.
+        Pricing, features, honest recommendations, and FAQ — written in plain English.
+      </p>
+      <div class="ft-hero-meta">
+        <span class="ft-hero-stat">📄 {{ len $allPlans }} plan guides</span>
+        <span class="ft-hero-stat">🏷️ {{ len $categories }} categories</span>
+        <span class="ft-hero-stat">💰 USD pricing included</span>
+      </div>
+    </header>
+
+    {{/* Search */}}
+    <div class="zt-sg-search-wrap">
+      <input type="search" id="lic-search" class="zt-sg-search" placeholder="Search plans… (e.g. E5, Copilot, Dynamics)" autocomplete="off">
+    </div>
+
+    {{/* Category quick-jump pills */}}
+    <nav class="zt-lic-pills" aria-label="Jump to category">
+      {{ range $cat := $categories }}
+        {{ $catName := $cat.name }}
+        {{ $catEmoji := $cat.emoji }}
+        {{ $catPlans := slice }}
+        {{ range $allPlans }}
+          {{ if eq .Params.plan_category $catName }}{{ $catPlans = $catPlans | append . }}{{ end }}
+        {{ end }}
+        {{ if $catPlans }}
+        <a href="#cat-{{ $catName | urlize }}" class="zt-lic-pill">{{ $catEmoji }} {{ $catName }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+
+    {{/* Category sections */}}
+    {{ range $cat := $categories }}
+      {{ $catName := $cat.name }}
+      {{ $catEmoji := $cat.emoji }}
+
+      {{ $catPlans := slice }}
+      {{ range $allPlans }}
+        {{ if eq .Params.plan_category $catName }}
+          {{ $catPlans = $catPlans | append . }}
+        {{ end }}
+      {{ end }}
+
+      {{ if $catPlans }}
+      <section class="zt-lic-cat-section" id="cat-{{ $catName | urlize }}" data-category="{{ $catName }}">
+        <div class="zt-lic-cat-header">
+          <h2 class="zt-lic-cat-title">{{ $catEmoji }} {{ $catName }}</h2>
+          <span class="zt-lic-cat-count">{{ len $catPlans }} plans</span>
+        </div>
+        <div class="zt-lic-grid">
+          {{ range sort $catPlans "Params.plan_name" }}
+          <a href="{{ .RelPermalink }}" class="zt-lic-card" data-plan="{{ .Params.plan_name }}" data-category="{{ .Params.plan_category }}">
+            <div class="zt-lic-card-top">
+              <span class="zt-lic-card-price">{{ if eq .Params.price 0 }}Free{{ else }}${{ .Params.price }}/mo{{ end }}</span>
+              {{ with .Params.badge }}<span class="zt-lic-card-badge">{{ . }}</span>{{ end }}
+            </div>
+            <span class="zt-lic-card-name">{{ .Params.plan_name }}</span>
+            {{ with .Params.tagline }}<span class="zt-lic-card-tagline">{{ . | truncate 80 }}</span>{{ end }}
+          </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    {{ end }}
+
+    <p id="lic-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--text-sm,0.875rem)">No plans found — try a different search term</p>
+
+  </div>
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{/* Tools */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Licensing tools</p>
+      <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">📊</span>
+        <span class="zt-companion-link-title">Licensing Simplifier</span>
+      </a>
+      <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">🎯</span>
+        <span class="zt-companion-link-title">Licence Picker</span>
+      </a>
+      <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">💰</span>
+        <span class="zt-companion-link-title">ROI Calculator</span>
+      </a>
+    </div>
+
+    {{/* Recent blog posts */}}
+    {{ $recentPosts := first 3 (where site.RegularPages "Section" "blog") }}
+    {{ if $recentPosts }}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Recent articles</p>
+      {{ range $recentPosts }}
+      <a href="{{ .Permalink }}" class="zt-companion-link">
+        <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+        <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* CTAs */}}
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Explore more</p>
+      <div class="zt-companion-cta">
+        <a href="/study-guides/" class="zt-companion-cta-btn">📚 Study Guides</a>
+        <a href="/free-tools/" class="zt-companion-cta-btn">🧰 All Tools</a>
+        <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+{{/* Search JS */}}
+<script>
+(function(){
+  var input = document.getElementById('lic-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-lic-card');
+  var sections = document.querySelectorAll('.zt-lic-cat-section');
+  var noResults = document.getElementById('lic-no-results');
+
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(c) {
+      var match = !q ||
+        (c.dataset.plan || '').toLowerCase().includes(q) ||
+        (c.dataset.category || '').toLowerCase().includes(q) ||
+        (c.textContent || '').toLowerCase().includes(q);
+      c.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    sections.forEach(function(s) {
+      var vis = s.querySelectorAll('.zt-lic-card[style=""], .zt-lic-card:not([style])');
+      s.style.display = vis.length ? '' : 'none';
+    });
+    noResults.style.display = (visible === 0) ? '' : 'none';
+  });
+})();
+</script>
+
+{{/* SEO: CollectionPage JSON-LD */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Microsoft 365 Licensing Guides",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "numberOfItems": {{ len $allPlans }},
+  "provider": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "https://aguidetocloud.com"
+  }
+}
+</script>
+{{ end }}

@@ -1,0 +1,95 @@
+{{/*
+  licence-companion.html — Right companion sidebar for licensing plan pages.
+  Shows related tools, compare links, official links, and CTAs.
+
+  Usage: {{ partial "licence-companion.html" . }}
+*/}}
+
+{{ $currentCat := .Params.plan_category }}
+{{ $currentPermalink := .RelPermalink }}
+{{ $allPlans := where site.RegularPages "Section" "licensing" }}
+
+{{/* Related tools */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Licensing tools</p>
+  <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📊</span>
+    <span class="zt-companion-link-title">Licensing Simplifier</span>
+  </a>
+  <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">🎯</span>
+    <span class="zt-companion-link-title">Licence Picker</span>
+  </a>
+  <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">💰</span>
+    <span class="zt-companion-link-title">ROI Calculator</span>
+  </a>
+  <a href="/ai-cost-calculator/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">🧮</span>
+    <span class="zt-companion-link-title">AI Cost Calculator</span>
+  </a>
+</div>
+
+{{/* Compare with — other plans in same category */}}
+{{ if $currentCat }}
+{{ $sameCat := slice }}
+{{ range $allPlans }}
+  {{ if and (eq .Params.plan_category $currentCat) (ne .RelPermalink $currentPermalink) }}
+    {{ $sameCat = $sameCat | append . }}
+  {{ end }}
+{{ end }}
+{{ if $sameCat }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Compare {{ $currentCat }}</p>
+  {{ range $sameCat }}
+  <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">⚖️</span>
+    <span class="zt-companion-link-title">{{ .Params.plan_name }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
+
+{{/* Official links from front matter */}}
+{{ if or .Params.ms_official .Params.m365maps }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Official resources</p>
+  {{ with .Params.ms_official }}
+  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📄</span>
+    <span class="zt-companion-link-title">Microsoft pricing page</span>
+  </a>
+  {{ end }}
+  {{ with .Params.m365maps }}
+  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">🗺️</span>
+    <span class="zt-companion-link-title">M365 Maps feature map</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Recent blog posts */}}
+{{ $recentPosts := first 3 (where site.RegularPages "Section" "blog") }}
+{{ if $recentPosts }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Recent articles</p>
+  {{ range $recentPosts }}
+  <a href="{{ .Permalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* CTAs */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Explore more</p>
+  <div class="zt-companion-cta">
+    <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+    <a href="/feedback/" class="zt-companion-cta-btn">💬 Feedback</a>
+  </div>
+</div>

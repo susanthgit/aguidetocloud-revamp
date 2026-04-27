@@ -1,50 +1,89 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/licensing.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — Licensing Reading Room (3-column Stripe Docs layout) */}}
 
-<div class="lic-page">
+{{ $readTime := div (add .WordCount 200) 250 }}
+{{ $headingCount := len (findRE `<h[2-4]` (.Content) ) }}
 
-  {{/* ── HERO ── */}}
-  {{ partial "tool-hero.html" (dict "title" .Params.plan_name "subtitle" .Params.tagline "accent" "#F43F5E") }}
+<div class="zt-reading zt-reading--lic">
 
-  <div class="lic-container lic-single">
+  {{/* ── LEFT: Licence navigation sidebar (desktop) ── */}}
+  <aside class="zt-sidebar zt-sidebar--lic" aria-label="Licensing plan navigation" data-pagefind-ignore>
+    {{ partial "licence-nav.html" . }}
+  </aside>
 
-    {{/* ── BREADCRUMB ── */}}
-    <nav class="lic-breadcrumb" aria-label="Breadcrumb">
-      <a href="/licensing/">← All Plans</a>
-      <span>›</span>
+  {{/* ── CENTER: Plan content ── */}}
+  <article class="zt-reading-content">
+
+    {{/* Breadcrumb */}}
+    <nav class="zt-lic-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/licensing-docs/">Licensing</a> <span>›</span>
+      {{ with .Params.plan_category }}<span>{{ . }}</span> <span>›</span>{{ end }}
       <span>{{ .Params.plan_name }}</span>
     </nav>
 
-    {{/* ── PRICE + BADGES ── */}}
-    <div class="lic-single-header">
-      <div class="lic-single-price-block">
+    {{/* Title */}}
+    <h1>{{ .Params.plan_name }}</h1>
+
+    {{/* Price + badges */}}
+    <div class="zt-lic-header">
+      <div class="zt-lic-price-block">
         {{ if eq .Params.price 0 }}
-        <span class="lic-single-price">Free</span>
+        <span class="zt-lic-price">Free</span>
         {{ else }}
-        <span class="lic-single-price">${{ .Params.price }}</span>
-        <span class="lic-single-price-unit">per user / month (USD)</span>
+        <span class="zt-lic-price">${{ .Params.price }}</span>
+        <span class="zt-lic-price-unit">per user / month (USD)</span>
         {{ end }}
-        {{ with .Params.price_note }}<span class="lic-single-price-note">{{ . }}</span>{{ end }}
+        {{ with .Params.price_note }}<span class="zt-lic-price-note">{{ . }}</span>{{ end }}
       </div>
-      <div class="lic-single-badges">
-        {{ with .Params.plan_category }}<span class="lic-single-badge">{{ . }}</span>{{ end }}
-        {{ with .Params.badge }}<span class="lic-single-badge lic-single-badge-highlight">{{ . }}</span>{{ end }}
+      <div class="zt-lic-badges">
+        {{ with .Params.plan_category }}<span class="zt-lic-badge">{{ . }}</span>{{ end }}
+        {{ with .Params.badge }}<span class="zt-lic-badge zt-lic-badge--highlight">{{ . }}</span>{{ end }}
       </div>
     </div>
 
-    {{/* ── QUICK LINKS ── */}}
-    <div class="lic-single-links">
-      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="lic-btn lic-btn-primary">📄 Official Microsoft Page</a>{{ end }}
-      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="lic-btn">🗺️ M365 Maps Feature Map</a>{{ end }}
-      <a href="/licensing/" class="lic-btn">📊 Compare All Plans</a>
+    {{/* Tagline */}}
+    {{ with .Params.tagline }}<p class="zt-lic-tagline">{{ . }}</p>{{ end }}
+
+    {{/* Last verified + reading time */}}
+    <p class="zt-lic-meta">
+      {{ with .Params.last_verified }}<span>✅ Verified: {{ . }}</span>{{ end }}
+      <span>·</span>
+      <span>{{ $readTime }} min read</span>
+    </p>
+
+    {{/* In this guide — inline TOC for pages with 5+ headings */}}
+    {{ if ge $headingCount 5 }}
+    <details class="zt-lic-toc">
+      <summary>📑 In this guide</summary>
+      <div class="zt-lic-toc-inner">
+        {{ .TableOfContents }}
+      </div>
+    </details>
+    {{ end }}
+
+    {{/* Quick links */}}
+    <div class="zt-lic-links">
+      {{ with .Params.ms_official }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn zt-lic-btn--primary">📄 Official Microsoft Page</a>{{ end }}
+      {{ with .Params.m365maps }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="zt-lic-btn">🗺️ M365 Maps</a>{{ end }}
+      <a href="/licensing/" class="zt-lic-btn">📊 Compare Plans</a>
     </div>
 
-    {{/* ── MAIN CONTENT (Markdown → HTML) ── */}}
-    <div class="lic-single-content">
+    {{/* Mobile plan nav (hidden on desktop) */}}
+    <details class="zt-toc-mobile">
+      <summary>Browse all plans</summary>
+      <div class="zt-toc-mobile-inner">
+        {{ partial "licence-nav.html" . }}
+      </div>
+    </details>
+
+    {{/* Main content (Markdown → HTML) */}}
+    <div class="zt-reading-body">
       {{ .Content }}
     </div>
 
-    {{/* ── RELATED BLOG POSTS ── */}}
+    {{/* Related blog posts (center column for mobile access) */}}
     {{ $planName := .Params.plan_name }}
     {{ $related := where site.RegularPages "Section" "blog" }}
     {{ $matched := slice }}
@@ -54,33 +93,39 @@
       {{ end }}
     {{ end }}
     {{ if len $matched }}
-    <div class="lic-related">
+    <div class="zt-lic-related">
       <h2>📝 Related Blog Posts</h2>
-      <div class="lic-related-list">
+      <div class="zt-lic-related-list">
         {{ range first 3 $matched }}
-        <a href="{{ .RelPermalink }}" class="lic-related-link">
-          <span class="lic-related-title">{{ .Title }}</span>
-          <span class="lic-related-date">{{ .Date.Format "Jan 2006" }}</span>
+        <a href="{{ .RelPermalink }}" class="zt-lic-related-link">
+          <span class="zt-lic-related-title">{{ .Title }}</span>
+          <span class="zt-lic-related-date">{{ .Date.Format "Jan 2006" }}</span>
         </a>
         {{ end }}
       </div>
     </div>
     {{ end }}
 
-    {{/* ── DISCLAIMER ── */}}
-    <div class="lic-disclaimer">
+    {{/* FAQ rendered from .Content above — front matter faq: used for JSON-LD only */}}
+
+    {{/* Disclaimer */}}
+    <div class="zt-lic-disclaimer">
       <strong>⚠️ Disclaimer:</strong> The views and opinions expressed on this page are personal and do not represent the official positions of Microsoft. Pricing is in <strong>USD (list price, per user, per month)</strong> sourced from official Microsoft pricing pages as of <strong>{{ .Params.last_verified }}</strong> — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and <strong>contact your Microsoft representative</strong> for local pricing, volume discounts, and tailored offers.
     </div>
 
-    {{/* ── ATTRIBUTION ── */}}
-    <div class="lic-attribution">
+    {{/* Attribution */}}
+    <div class="zt-lic-attribution">
       Detailed visual feature maps by <a href="https://m365maps.com/" target="_blank" rel="noopener noreferrer">M365 Maps</a> (Aaron Dinnage) · Built with ☕ by <a href="/about/">A Guide to Cloud & AI</a>
     </div>
 
-  </div>
-</div>
+  </article>
 
-{{ partial "back-nav" (dict "Page" . "URL" "/licensing/" "Label" "All Plans") }}
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "licence-companion.html" . }}
+  </aside>
+
+</div>
 
 {{/* ── SEO: Product JSON-LD ── */}}
 <script type="application/ld+json">

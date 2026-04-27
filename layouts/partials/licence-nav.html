@@ -1,0 +1,72 @@
+{{/*
+  licence-nav.html — Left sidebar navigation for licensing plan pages.
+  Shows all plans grouped by category (hardcoded order).
+  Current plan highlighted. Current category expanded by default.
+
+  Usage: {{ partial "licence-nav.html" . }}
+*/}}
+
+{{ $currentPermalink := .RelPermalink }}
+{{ $allPlans := where site.RegularPages "Section" "licensing" }}
+
+{{/* Category display order + emoji */}}
+{{ $categories := slice
+  (dict "name" "Enterprise" "emoji" "🏢")
+  (dict "name" "Business (≤300 users)" "emoji" "💼")
+  (dict "name" "Copilot & AI" "emoji" "🤖")
+  (dict "name" "Security Add-ons" "emoji" "🛡️")
+  (dict "name" "Power Platform" "emoji" "⚡")
+  (dict "name" "Dynamics 365 CRM" "emoji" "🤝")
+  (dict "name" "Dynamics 365 ERP" "emoji" "📊")
+  (dict "name" "Teams Add-ons" "emoji" "💬")
+  (dict "name" "Microsoft Viva" "emoji" "🧠")
+  (dict "name" "Project & Visio" "emoji" "📋")
+  (dict "name" "Windows & Dev" "emoji" "🖥️")
+  (dict "name" "Frontline" "emoji" "👷")
+  (dict "name" "Education" "emoji" "🎓")
+}}
+
+{{/* Find current plan's category */}}
+{{ $currentCat := "" }}
+{{ range $allPlans }}
+  {{ if eq .RelPermalink $currentPermalink }}{{ $currentCat = .Params.plan_category }}{{ end }}
+{{ end }}
+
+<nav class="zt-lic-nav" aria-label="Licensing plan navigation">
+
+<a href="/licensing-docs/" class="zt-lic-nav-header">📄 All Plan Guides</a>
+<a href="/licensing/" class="zt-lic-nav-tool-link">📊 Open Licensing Simplifier →</a>
+
+{{ range $cat := $categories }}
+  {{ $catName := $cat.name }}
+  {{ $catEmoji := $cat.emoji }}
+
+  {{/* Collect plans in this category */}}
+  {{ $plans := slice }}
+  {{ range $allPlans }}
+    {{ if eq .Params.plan_category $catName }}
+      {{ $plans = $plans | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $plans }}
+  {{ $isCurrentCat := eq $catName $currentCat }}
+  <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
+    <summary class="zt-lic-nav-cat">
+      <span>{{ $catEmoji }} {{ $catName }}</span>
+      <span class="zt-lic-nav-count">{{ len $plans }}</span>
+    </summary>
+    <div class="zt-lic-nav-links">
+      {{ range sort $plans "Params.plan_name" }}
+      <a href="{{ .RelPermalink }}" class="zt-lic-nav-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
+         title="{{ .Params.plan_name }}">
+        <span class="zt-lic-nav-link-name">{{ .Params.plan_name }}</span>
+        {{ if .Params.price }}<span class="zt-lic-nav-link-price">${{ .Params.price }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+{{ end }}
+
+</nav>
