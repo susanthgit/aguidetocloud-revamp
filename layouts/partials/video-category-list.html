@@ -26,10 +26,6 @@
       </p>
     </header>
 
-    <div class="zt-sg-search-wrap">
-      <input type="search" id="video-search" class="zt-sg-search" placeholder="Search videos…" autocomplete="off">
-    </div>
-
     <div class="zt-vid-grid">
       {{ range $page.Pages.ByDate.Reverse }}
       <a href="{{ .RelPermalink }}" class="zt-vid-card" data-title="{{ lower .Title }}" data-tags="{{ delimit .Params.tags " " | lower }}">
@@ -44,8 +40,6 @@
       {{ end }}
     </div>
 
-    <p id="video-no-results" class="zt-vid-no-results">No videos found.</p>
-
   </div>
 
   <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
@@ -54,21 +48,4 @@
 
 </div>
 
-<script>
-(function(){
-  var input = document.getElementById('video-search');
-  if (!input) return;
-  var cards = document.querySelectorAll('.zt-vid-card');
-  var noResults = document.getElementById('video-no-results');
-  input.addEventListener('input', function() {
-    var q = this.value.toLowerCase().trim();
-    var visible = 0;
-    cards.forEach(function(c) {
-      var show = !q || (c.dataset.title || '').includes(q) || (c.dataset.tags || '').includes(q);
-      c.hidden = !show;
-      if (show) visible++;
-    });
-    noResults.hidden = (visible > 0);
-  });
-})();
-</script>
+

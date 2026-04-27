@@ -23,12 +23,7 @@
       </div>
     </header>
 
-    {{/* Search */}}
-    <div class="zt-sg-search-wrap">
-      <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off" aria-label="Search blog posts" class="zt-sg-search">
-    </div>
-
-    {{/* Article cards */}}
+    {{/* Article cards */}}}
     <div class="zt-blog-list" id="blog-list">
       {{ range .Pages.ByDate.Reverse }}
       <a href="{{ .RelPermalink }}" class="zt-blog-card" data-tag="{{ .Params.card_tag }}">
@@ -42,7 +37,6 @@
       {{ end }}
     </div>
 
-    <p id="blog-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--text-sm,0.875rem)">No posts found — try a different search term</p>
   </div>
 
   {{/* ── RIGHT: Companion sidebar ── */}}
@@ -54,29 +48,17 @@
 
 <script>
 (function(){
-  // Text search
-  var search = document.getElementById('blog-search');
+  // Category filter buttons
   var cards = document.querySelectorAll('.zt-blog-card');
-  var noResults = document.getElementById('blog-no-results');
-
   function filterCards() {
-    var q = search.value.toLowerCase();
     var activeFilter = document.querySelector('.zt-blog-nav-cat.active');
     var filterTag = activeFilter ? activeFilter.dataset.filter : '';
-    var visible = 0;
     cards.forEach(function(el) {
-      var matchSearch = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
       var matchTag = !filterTag || el.dataset.tag === filterTag;
-      var show = matchSearch && matchTag;
-      el.style.display = show ? '' : 'none';
-      if (show) visible++;
+      el.style.display = matchTag ? '' : 'none';
     });
-    noResults.style.display = (visible === 0) ? '' : 'none';
   }
 
-  search.addEventListener('input', filterCards);
-
-  // Category filter buttons
   document.querySelectorAll('.zt-blog-nav-cat').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var wasActive = this.classList.contains('active');

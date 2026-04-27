@@ -215,9 +215,6 @@ window.__showdownQuiz = {{ (index hugo.Data "ai-showdown").quiz | jsonify | safe
 window.__showdownChangelog = {{ (index hugo.Data "ai-showdown").changelog | jsonify | safeJS }};
 </script>
 
-{{ partial "page-search.html" . }}
-
-
 {{/* ── Back Nav (bottom) ── */}}
   <nav class="zt-nav" aria-label="Tools navigation">
     <a href="/free-tools/">← All Tools</a>

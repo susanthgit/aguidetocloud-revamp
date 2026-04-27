@@ -29,12 +29,7 @@
       </div>
     </header>
 
-    {{/* Search */}}
-    <div class="zt-sg-search-wrap">
-      <input type="search" id="sg-search" class="zt-sg-search" placeholder="Search certifications… (e.g. AZ-900, AWS, Security)" autocomplete="off">
-    </div>
-
-    {{/* Vendor sections */}}
+    {{/* Vendor sections */}}}
     {{ range $vendors }}
       {{ $vSlug := .slug }}
       {{ $vName := .name }}
@@ -118,35 +113,6 @@
   </aside>
 
 </div>
-
-{{/* Search JS */}}
-<script>
-(function(){
-  var input = document.getElementById('sg-search');
-  if (!input) return;
-  var cards = document.querySelectorAll('.zt-sg-card');
-  var vendors = document.querySelectorAll('.zt-sg-vendor');
-  var categories = document.querySelectorAll('.zt-sg-category');
-
-  input.addEventListener('input', function() {
-    var q = this.value.toLowerCase().trim();
-    cards.forEach(function(c) {
-      var match = !q ||
-        (c.dataset.code || '').toLowerCase().includes(q) ||
-        (c.dataset.title || '').toLowerCase().includes(q);
-      c.style.display = match ? '' : 'none';
-    });
-    categories.forEach(function(cat) {
-      var visible = cat.querySelectorAll('.zt-sg-card[style=""], .zt-sg-card:not([style])');
-      cat.style.display = visible.length ? '' : 'none';
-    });
-    vendors.forEach(function(v) {
-      var visible = v.querySelectorAll('.zt-sg-card[style=""], .zt-sg-card:not([style])');
-      v.style.display = visible.length ? '' : 'none';
-    });
-  });
-})();
-</script>
 
 <script type="application/ld+json">
 {

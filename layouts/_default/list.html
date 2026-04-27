@@ -4,7 +4,6 @@
 {{ $accent := index $accents .Section | default "#9333EA" }}
 {{ partial "tool-hero.html" (dict "title" .Title "subtitle" .Description "accent" $accent "hide_badges" true) }}
 <div class="container">
-  {{ partial "page-search.html" . }}
   <section class="section">
     {{ with .Content }}
       <div style="margin-bottom: 2rem; color: var(--text-secondary);">{{ . }}</div>

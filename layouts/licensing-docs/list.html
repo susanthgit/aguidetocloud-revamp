@@ -45,11 +45,6 @@
       </div>
     </header>
 
-    {{/* Search */}}
-    <div class="zt-sg-search-wrap">
-      <input type="search" id="lic-search" class="zt-sg-search" placeholder="Search plans… (e.g. E5, Copilot, Dynamics)" autocomplete="off">
-    </div>
-
     {{/* Category quick-jump pills */}}
     <nav class="zt-lic-pills" aria-label="Jump to category">
       {{ range $cat := $categories }}
@@ -99,8 +94,6 @@
       {{ end }}
     {{ end }}
 
-    <p id="lic-no-results" style="display:none;text-align:center;color:var(--text-muted);padding:var(--space-8,32px) 0;font-size:var(--text-sm,0.875rem)">No plans found — try a different search term</p>
-
   </div>
 
   {{/* ── RIGHT: Companion sidebar ── */}}
@@ -148,35 +141,6 @@
   </aside>
 
 </div>
-
-{{/* Search JS */}}
-<script>
-(function(){
-  var input = document.getElementById('lic-search');
-  if (!input) return;
-  var cards = document.querySelectorAll('.zt-lic-card');
-  var sections = document.querySelectorAll('.zt-lic-cat-section');
-  var noResults = document.getElementById('lic-no-results');
-
-  input.addEventListener('input', function() {
-    var q = this.value.toLowerCase().trim();
-    var visible = 0;
-    cards.forEach(function(c) {
-      var match = !q ||
-        (c.dataset.plan || '').toLowerCase().includes(q) ||
-        (c.dataset.category || '').toLowerCase().includes(q) ||
-        (c.textContent || '').toLowerCase().includes(q);
-      c.style.display = match ? '' : 'none';
-      if (match) visible++;
-    });
-    sections.forEach(function(s) {
-      var vis = s.querySelectorAll('.zt-lic-card[style=""], .zt-lic-card:not([style])');
-      s.style.display = vis.length ? '' : 'none';
-    });
-    noResults.style.display = (visible === 0) ? '' : 'none';
-  });
-})();
-</script>
 
 {{/* SEO: CollectionPage JSON-LD */}}
 <script type="application/ld+json">
