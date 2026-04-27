@@ -1,18 +1,17 @@
 <footer class="site-footer" data-pagefind-ignore>
   <div class="container">
     <p class="footer-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
-    <p class="footer-kofi"><a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Support on Ko-fi</a></p>
+    <p class="footer-kofi"><a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer"><img src="https://storage.ko-fi.com/cdn/kofi2.png?v=3" alt="Support on Ko-fi" height="36" loading="lazy" style="border:0;height:36px;" /></a></p>
     <div class="footer-links">
       <a href="{{ .Site.Params.youtube_channel }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
       <a href="{{ .Site.Params.youtube_bites }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} Bites</a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "linkedin" "size" 14 "stroke" 1.5) }} LinkedIn</a>
       <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Ko-fi Shop</a>
-      <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Downloads</a>
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "github" "size" 14 "stroke" 1.5) }} GitHub</a>
       <a href="/links/">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} All Links</a>
     </div>
     <p class="footer-disclaimer">The views and opinions expressed on this site are my own and do not represent the official positions of Microsoft. Always refer to <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the latest information.</p>
-    <p class="footer-legal">This site uses anonymous analytics (Google Analytics & Microsoft Clarity) to improve content. No personal data is collected. <a href="/privacy-policy/">Privacy Policy</a></p>
-    <p class="footer-copy">© {{ now.Format "2006" }} A Guide to Cloud & AI — Built with {{ partial "icon.html" (dict "name" "heart" "size" 14 "stroke" 1.5) }} by <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener noreferrer">Susanth Sutheesh</a></p>
+    <p class="footer-legal">This site uses analytics (Google Analytics &amp; Microsoft Clarity) to improve content. <a href="/privacy-policy/">Privacy Policy</a></p>
+    <p class="footer-copy">© {{ now.Format "2006" }} A Guide to Cloud &amp; AI — Built with {{ partial "icon.html" (dict "name" "heart" "size" 14 "stroke" 1.5) }} by <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener noreferrer">Susanth Sutheesh</a></p>
   </div>
 </footer>

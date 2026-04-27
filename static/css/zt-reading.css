@@ -2430,12 +2430,13 @@
 
 .zt-lic-nav-header {
   display: block;
-  padding: var(--space-2, 8px) var(--space-4, 16px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
   color: var(--accent, #818CF8);
   text-decoration: none;
-  margin-bottom: var(--space-3, 12px);
+  border-left: 3px solid var(--accent, #818CF8);
+  border-bottom: 1px solid var(--border, #E5E5E5);
   transition: color var(--transition, 150ms ease-out);
 }
 

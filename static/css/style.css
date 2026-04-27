@@ -1376,53 +1376,56 @@ body.is-home .section {
 /* ── FOOTER ─────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 3rem 2rem;
+  padding: var(--space-12) var(--space-8);
   text-align: center;
   background: var(--bg-elevated);
 }
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: var(--space-8);
+  margin-bottom: var(--space-4);
   flex-wrap: wrap;
 }
 .footer-links a {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: var(--zen-text-sm);
+  transition: color 150ms ease-out;
 }
 .footer-links a:hover {
   color: var(--accent);
 }
 .footer-copy {
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: var(--zen-text-sm);
 }
 .footer-disclaimer {
   color: var(--text-muted);
-  font-size: 0.72rem;
-  opacity: 0.8;
+  font-size: var(--text-caption);
   max-width: 600px;
-  margin: 0 auto 0.8rem;
+  margin: 0 auto var(--space-3);
   line-height: 1.5;
 }
 .footer-legal {
-  font-size: 0.72rem;
-  margin: 0 auto 0.5rem;
+  color: var(--text-muted);
+  font-size: var(--text-caption);
+  margin: 0 auto var(--space-2);
 }
 .footer-legal a {
   color: var(--text-muted);
-  opacity: 0.7;
   text-decoration: underline;
+  transition: color 150ms ease-out;
 }
-.footer-legal a:hover { opacity: 1; }
+.footer-legal a:hover { color: var(--accent); }
 .footer-disclaimer a {
   color: var(--text-muted);
   text-decoration: underline;
+  transition: color 150ms ease-out;
 }
+.footer-disclaimer a:hover { color: var(--accent); }
 
 /* ── SECTION PAGE ───────────────────────── */
 /* ── SHARED: TOOL HERO ──────────────────── */
@@ -1536,21 +1539,21 @@ body.is-home .section {
 .kofi-btn {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-1);
   padding: 0.15rem 0.55rem;
-  font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
-  color: var(--badge-red, #B91C1C);
-  background: rgba(255, 94, 91, 0.1);
-  border: 1px solid rgba(255, 94, 91, 0.3);
-  border-radius: 999px;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
   text-decoration: none;
-  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out;
   white-space: nowrap;
 }
 .kofi-btn:hover, .kofi-btn:focus-visible {
-  background: rgba(255, 94, 91, 0.2);
-  border-color: rgba(255, 94, 91, 0.5);
-  color: var(--badge-red, #B91C1C);
+  background: var(--accent-subtle);
+  color: var(--accent-hover);
 }
 
 /* Footer Ko-fi button */
@@ -3709,16 +3712,17 @@ pre.mermaid {
 /* ══ Footer Feedback Line (global) ══ */
 .footer-feedback {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: var(--zen-text-sm);
   color: var(--text-tertiary);
-  margin: 0 0 1.25rem;
-  padding-bottom: 1.25rem;
+  margin: 0 0 var(--space-6);
+  padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
 }
 .footer-feedback a {
   color: var(--text-secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: color 150ms ease-out;
 }
 .footer-feedback a:hover { color: var(--accent); }
 
