@@ -1,0 +1,15 @@
+{{/*
+  video-categories.html — Single source of truth for video category metadata.
+  Returns a slice of dicts with: section, name, emoji, url
+
+  Usage: {{ $categories := partial "video-categories.html" . }}
+*/}}
+
+{{ return slice
+  (dict "section" "ai-hub" "name" "AI & Copilot" "emoji" "🤖" "url" "/ai-hub/")
+  (dict "section" "cloud-labs" "name" "Cloud Labs" "emoji" "☁️" "url" "/cloud-labs/")
+  (dict "section" "certifications" "name" "Certification Courses" "emoji" "🎓" "url" "/certifications/")
+  (dict "section" "exam-qa" "name" "Exam Q&A" "emoji" "📝" "url" "/exam-qa/")
+  (dict "section" "interview-prep" "name" "Interview Prep" "emoji" "💼" "url" "/interview-prep/")
+  (dict "section" "music" "name" "Study Music" "emoji" "🎵" "url" "/music/")
+}}

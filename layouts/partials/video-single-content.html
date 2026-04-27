@@ -1,0 +1,126 @@
+{{/*
+  video-single-content.html — Shared single video page content.
+  Used by all 6 video section single.html templates.
+  Eliminates 6× duplication.
+
+  Usage: {{ partial "video-single-content.html" . }}
+*/}}
+
+{{ $categories := partial "video-categories.html" . }}
+{{ $catNames := dict "ai-hub" "AI & Copilot" "cloud-labs" "Cloud Labs" "certifications" "Certification Courses" "exam-qa" "Exam Q&A" "interview-prep" "Interview Prep" "music" "Study Music" }}
+
+<div class="zt-reading zt-reading--vid">
+
+  {{/* ── LEFT: Video navigation sidebar ── */}}
+  <aside class="zt-sidebar zt-sidebar--vid" aria-label="Video navigation" data-pagefind-ignore>
+    {{ partial "video-nav.html" . }}
+  </aside>
+
+  {{/* ── CENTER: Video content ── */}}
+  <article class="zt-reading-content">
+
+    {{/* Breadcrumb */}}
+    <nav class="zt-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/videos/">Videos</a> <span>›</span>
+      {{ $secName := index $catNames .Section | default .Section }}
+      <a href="/{{ .Section }}/">{{ $secName }}</a> <span>›</span>
+      <span>{{ .Title | truncate 40 }}</span>
+    </nav>
+
+    <h1>{{ .Title }}</h1>
+
+    {{/* Meta */}}
+    <p class="zt-vid-meta">
+      {{ with .Params.card_tag }}<span>{{ . }}</span><span>·</span>{{ end }}
+      <span>{{ .Date.Format "2 January 2006" }}</span>
+      {{ with .Params.views }}<span>·</span><span>{{ lang.FormatNumberCustom 0 . }} views</span>{{ end }}
+      {{ with .Params.likes }}<span>·</span><span>{{ lang.FormatNumberCustom 0 . }} likes</span>{{ end }}
+    </p>
+
+    {{/* YouTube embed */}}
+    {{ with .Params.youtube_id }}
+    <div class="zt-vid-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}?rel=0"
+              title="{{ $.Title }}" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    {{ end }}
+
+    {{/* Mobile video nav */}}
+    <details class="zt-toc-mobile">
+      <summary>Browse all videos</summary>
+      <div class="zt-toc-mobile-inner">
+        {{ partial "video-nav.html" . }}
+      </div>
+    </details>
+
+    {{/* Content body */}}
+    {{ if .Content }}
+    <div class="zt-reading-body">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{/* Tags */}}
+    {{ with .Params.tags }}
+    <div class="zt-vid-tags">
+      {{ range . }}
+      <span class="zt-vid-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Related videos from same section (sorted by date, excluding current) */}}
+    {{ $sameSection := where site.RegularPages "Section" .Section }}
+    {{ $others := where $sameSection "RelPermalink" "ne" .RelPermalink }}
+    {{ $related := first 4 (sort $others "Date" "desc") }}
+    {{ if $related }}
+    <div class="zt-vid-related">
+      <h2>More {{ index $catNames .Section | default .Section }} Videos</h2>
+      <div class="zt-vid-related-list">
+        {{ range $related }}
+        <a href="{{ .RelPermalink }}" class="zt-vid-related-link">
+          <span class="zt-vid-related-title">{{ .Title | truncate 60 }}</span>
+          <span class="zt-vid-related-date">{{ .Date.Format "Jan 2006" }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* Attribution */}}
+    <div class="zt-vid-attribution">
+      Free video tutorial by <a href="/about/">Susanth Sutheesh</a> · <a href="{{ site.Params.youtube_channel }}" target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a>
+    </div>
+
+  </article>
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "video-companion.html" . }}
+  </aside>
+
+</div>
+
+{{/* VideoObject JSON-LD */}}
+{{ with .Params.youtube_id }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": {{ $.Title | jsonify }},
+  "description": {{ $.Description | jsonify }},
+  "thumbnailUrl": "https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg",
+  "uploadDate": "{{ $.Date.Format "2006-01-02" }}",
+  "contentUrl": "https://www.youtube.com/watch?v={{ . }}",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/{{ . }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "logo": { "@type": "ImageObject", "url": "https://aguidetocloud.com/images/logo_agtc_dark_1.webp" }
+  }
+}
+</script>
+{{ end }}

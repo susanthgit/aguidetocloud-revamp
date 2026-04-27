@@ -1,0 +1,73 @@
+{{/*
+  video-category-list.html — Shared category list page for video sections.
+  Used by all 6 video section list.html templates.
+  Eliminates 6× duplication.
+
+  Usage: {{ partial "video-category-list.html" (dict "page" . "title" "AI & Copilot Tutorials" "emoji" "🤖") }}
+*/}}
+
+{{ $page := .page }}
+{{ $title := .title }}
+{{ $emoji := .emoji }}
+
+<div class="zt-reading zt-reading--vid">
+
+  <aside class="zt-sidebar zt-sidebar--vid" aria-label="Video navigation" data-pagefind-ignore>
+    {{ partial "video-nav.html" $page }}
+  </aside>
+
+  <div class="zt-reading-content zt-vid-landing">
+
+    <header class="ft-hero">
+      <h1 class="ft-hero-title">{{ $emoji }} {{ $title }}</h1>
+      <p class="ft-hero-subtitle">
+        {{ len $page.Pages }} free videos in this category. Part of our <a href="/videos/" class="zt-vid-backlink">Video Tutorials</a> collection.
+      </p>
+    </header>
+
+    <div class="zt-sg-search-wrap">
+      <input type="search" id="video-search" class="zt-sg-search" placeholder="Search videos…" autocomplete="off">
+    </div>
+
+    <div class="zt-vid-grid">
+      {{ range $page.Pages.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}" class="zt-vid-card" data-title="{{ lower .Title }}" data-tags="{{ delimit .Params.tags " " | lower }}">
+        {{ with .Params.youtube_id }}
+        <img class="zt-vid-card-thumb" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="" loading="lazy">
+        {{ end }}
+        <div class="zt-vid-card-body">
+          <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
+          <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }} · {{ end }}{{ .Date.Format "Jan 2006" }}{{ with .Params.views }} · {{ lang.FormatNumberCustom 0 . }} views{{ end }}</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+
+    <p id="video-no-results" class="zt-vid-no-results">No videos found.</p>
+
+  </div>
+
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "video-companion.html" $page }}
+  </aside>
+
+</div>
+
+<script>
+(function(){
+  var input = document.getElementById('video-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-vid-card');
+  var noResults = document.getElementById('video-no-results');
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(c) {
+      var show = !q || (c.dataset.title || '').includes(q) || (c.dataset.tags || '').includes(q);
+      c.hidden = !show;
+      if (show) visible++;
+    });
+    noResults.hidden = (visible > 0);
+  });
+})();
+</script>

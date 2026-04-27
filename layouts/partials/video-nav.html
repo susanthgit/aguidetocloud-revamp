@@ -1,0 +1,38 @@
+{{/*
+  video-nav.html — Left sidebar navigation for video pages.
+  Shows all 6 video categories with counts. Current section highlighted.
+
+  Usage: {{ partial "video-nav.html" . }}
+*/}}
+
+{{ $currentSection := .Section }}
+{{ $currentPermalink := .RelPermalink }}
+{{ $categories := partial "video-categories.html" . }}
+
+<nav class="zt-lic-nav" aria-label="Video navigation">
+
+<a href="/videos/" class="zt-lic-nav-header">📺 All Video Tutorials</a>
+<a href="/guided/explore/" class="zt-lic-nav-tool-link">🎯 Practice Exams →</a>
+
+{{ range $cat := $categories }}
+  {{ $pages := where site.RegularPages "Section" $cat.section }}
+  {{ if $pages }}
+  {{ $isCurrentCat := eq $cat.section $currentSection }}
+  <details class="zt-lic-nav-group"{{ if $isCurrentCat }} open{{ end }}>
+    <summary class="zt-lic-nav-cat">
+      <span>{{ $cat.emoji }} {{ $cat.name }}</span>
+      <span class="zt-lic-nav-count">{{ len $pages }}</span>
+    </summary>
+    <div class="zt-lic-nav-links">
+      {{ range sort $pages "Date" "desc" }}
+      <a href="{{ .RelPermalink }}" class="zt-lic-nav-link{{ if eq .RelPermalink $currentPermalink }} active{{ end }}"
+         title="{{ .Title }}">
+        <span class="zt-lic-nav-link-name">{{ .Title | truncate 35 }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+{{ end }}
+
+</nav>

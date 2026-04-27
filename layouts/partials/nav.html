@@ -19,7 +19,7 @@
       <li><a href="/free-tools/"{{ if eq $.RelPermalink "/free-tools/" }} class="nav-active"{{ end }}>Free Tools</a></li>
       <li><a href="/licensing-docs/"{{ if or (hasPrefix $.RelPermalink "/licensing-docs/") (hasPrefix $.RelPermalink "/licensing/") }} class="nav-active"{{ end }}>Licensing Wiki</a></li>
       <li><a href="/blog/"{{ if hasPrefix $.RelPermalink "/blog/" }} class="nav-active"{{ end }}>Blog</a></li>
-      <li><a href="/ai-hub/"{{ if or (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active"{{ end }}>Videos</a></li>
+      <li><a href="/videos/"{{ if or (hasPrefix $.RelPermalink "/videos/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active"{{ end }}>Videos</a></li>
     </ul>
 
     {{/* ═══════ RIGHT ZONE: theme toggle + CTA ═══════ */}}
@@ -43,7 +43,7 @@
         <a href="/free-tools/" class="drawer-link">🧰 Free Tools</a>
         <a href="/licensing-docs/" class="drawer-link">📄 M365 Licensing Wiki</a>
         <a href="/blog/" class="drawer-link">📝 Blog</a>
-        <a href="/ai-hub/" class="drawer-link">📺 Video Tutorials</a>
+        <a href="/videos/" class="drawer-link">📺 Video Tutorials</a>
         <a href="/about/" class="drawer-link drawer-link--divider">ℹ️ About</a>
       </div>
       <a href="/guided/explore/" class="drawer-cta">Start Free →</a>

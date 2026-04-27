@@ -1,0 +1,133 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen — Video Tutorials Landing Page (unified across 6 categories) */}}
+
+{{ $categories := partial "video-categories.html" . }}
+
+{{ $allVideos := slice }}
+{{ range $cat := $categories }}
+  {{ range where site.RegularPages "Section" $cat.section }}
+    {{ $allVideos = $allVideos | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="zt-reading zt-reading--vid">
+
+  {{/* ── LEFT: Video category navigation ── */}}
+  <aside class="zt-sidebar zt-sidebar--vid" aria-label="Video navigation" data-pagefind-ignore>
+    {{ partial "video-nav.html" . }}
+  </aside>
+
+  {{/* ── CENTER: Unified video catalog ── */}}
+  <div class="zt-reading-content zt-vid-landing">
+
+    <header class="ft-hero">
+      <h1 class="ft-hero-title">Video Tutorials</h1>
+      <p class="ft-hero-subtitle">
+        <strong>{{ len $allVideos }} free videos</strong> across {{ len $categories }} categories.
+        Certification courses, hands-on labs, exam Q&A, Copilot tutorials — all on YouTube, free forever.
+      </p>
+      <div class="ft-hero-meta">
+        <span class="ft-hero-stat">{{ len $allVideos }} videos</span>
+        <span class="ft-hero-stat">{{ len (where site.RegularPages "Section" "certifications") }} full courses</span>
+        <span class="ft-hero-stat">100% free</span>
+      </div>
+    </header>
+
+    {{/* Search */}}
+    <div class="zt-sg-search-wrap">
+      <input type="search" id="video-search" class="zt-sg-search" placeholder="Search videos… (e.g. AZ-900, Copilot, Azure)" autocomplete="off">
+    </div>
+
+    {{/* Category quick-jump pills */}}
+    <nav class="zt-lic-pills" aria-label="Jump to category">
+      {{ range $cat := $categories }}
+        {{ $catPages := where site.RegularPages "Section" $cat.section }}
+        {{ if $catPages }}
+        <a href="#cat-{{ $cat.section }}" class="zt-lic-pill">{{ $cat.emoji }} {{ $cat.name }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+
+    {{/* Video cards grouped by category */}}
+    {{ range $cat := $categories }}
+      {{ $catPages := where site.RegularPages "Section" $cat.section }}
+      {{ if $catPages }}
+      <section class="zt-vid-cat-section" id="cat-{{ $cat.section }}">
+        <div class="zt-lic-cat-header">
+          <h2 class="zt-lic-cat-title">{{ $cat.emoji }} {{ $cat.name }}</h2>
+          <span class="zt-lic-cat-count">{{ len $catPages }} videos</span>
+        </div>
+        <div class="zt-vid-grid">
+          {{ range sort $catPages "Date" "desc" }}
+          <a href="{{ .RelPermalink }}" class="zt-vid-card" data-title="{{ lower .Title }}" data-tags="{{ delimit .Params.tags " " | lower }}" data-section="{{ $cat.section }}">
+            {{ with .Params.youtube_id }}
+            <img class="zt-vid-card-thumb" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="" loading="lazy">
+            {{ end }}
+            <div class="zt-vid-card-body">
+              <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
+              <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }} · {{ end }}{{ .Date.Format "Jan 2006" }}{{ with .Params.views }} · {{ lang.FormatNumberCustom 0 . }} views{{ end }}</span>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    {{ end }}
+
+    <p id="video-no-results" class="zt-vid-no-results">No videos found — try a different search term</p>
+
+  </div>
+
+  {{/* ── RIGHT: Companion sidebar ── */}}
+  <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+    {{ partial "video-companion.html" . }}
+  </aside>
+
+</div>
+
+{{/* Search JS — uses hidden attribute instead of style manipulation */}}
+<script>
+(function(){
+  var input = document.getElementById('video-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-vid-card');
+  var sections = document.querySelectorAll('.zt-vid-cat-section');
+  var noResults = document.getElementById('video-no-results');
+
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(c) {
+      var show = !q ||
+        (c.dataset.title || '').includes(q) ||
+        (c.dataset.tags || '').includes(q) ||
+        (c.textContent || '').toLowerCase().includes(q);
+      c.hidden = !show;
+      if (show) visible++;
+    });
+    sections.forEach(function(s) {
+      var vis = s.querySelectorAll('.zt-vid-card:not([hidden])');
+      s.hidden = (vis.length === 0);
+    });
+    noResults.hidden = (visible > 0);
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Video Tutorials — A Guide to Cloud & AI",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "numberOfItems": {{ len $allVideos }},
+  "provider": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "url": "https://aguidetocloud.com"
+  }
+}
+</script>
+{{ end }}

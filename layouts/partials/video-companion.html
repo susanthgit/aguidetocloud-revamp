@@ -1,0 +1,64 @@
+{{/*
+  video-companion.html — Right companion sidebar for video pages.
+  Practice exam CTAs, free tools, related blog posts.
+
+  Usage: {{ partial "video-companion.html" . }}
+*/}}
+
+{{/* Practice exams */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Practice exams</p>
+  <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">🎯</span>
+    <span class="zt-companion-link-title">Browse 126 practice exams</span>
+  </a>
+  <a href="/guided/az-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📘</span>
+    <span class="zt-companion-link-title">AZ-900 Practice Exam</span>
+  </a>
+  <a href="/guided/sc-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📘</span>
+    <span class="zt-companion-link-title">SC-900 Practice Exam</span>
+  </a>
+</div>
+
+{{/* Free tools */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Free tools</p>
+  <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">📊</span>
+    <span class="zt-companion-link-title">Licensing Simplifier</span>
+  </a>
+  <a href="/prompts/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">💡</span>
+    <span class="zt-companion-link-title">AI Prompt Library</span>
+  </a>
+  <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">💰</span>
+    <span class="zt-companion-link-title">ROI Calculator</span>
+  </a>
+</div>
+
+{{/* Recent blog posts (sorted by date desc) */}}
+{{ $recentPosts := first 3 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+{{ if $recentPosts }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Recent articles</p>
+  {{ range $recentPosts }}
+  <a href="{{ .Permalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* CTAs */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Explore more</p>
+  <div class="zt-companion-cta">
+    <a href="/study-guides/" class="zt-companion-cta-btn">📚 Study Guides</a>
+    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube Channel</a>
+    <a href="/free-tools/" class="zt-companion-cta-btn">🧰 All Tools</a>
+  </div>
+</div>
