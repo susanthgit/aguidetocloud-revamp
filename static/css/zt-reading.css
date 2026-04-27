@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: var(--sidebar-width, 250px) 1fr 280px;
   min-height: calc(100vh - 200px);
+  --reading-font-size: var(--text-body, 1rem);
   /* Sidebars fixed, content fills ALL remaining space */
 }
 
@@ -231,14 +232,31 @@
 
 /* ── Content body — Zen typography ── */
 .zt-reading-body {
-  font-size: var(--text-body, 1rem);
+  font-size: var(--reading-font-size);
   line-height: 1.7;
   color: var(--text-secondary, #D4D4D4);
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
+/* Z18: Prose max-width — constrain reading text to ~72 chars/line */
+.zt-reading-body > p,
+.zt-reading-body > ul,
+.zt-reading-body > ol,
+.zt-reading-body > blockquote,
+.zt-reading-body > dl,
+.zt-reading-body > details,
+.zt-reading-body > figure,
+.zt-reading-body > h2,
+.zt-reading-body > h3,
+.zt-reading-body > h4,
+.zt-reading-body > h5 {
+  max-width: var(--max-reading, 720px);
+}
+/* Wide elements stay full-width: tables, pre, img, .mermaid, hr, div */
+
 /* Headings — all use --text-primary, sized by token scale */
+/* Z20: H2 left accent border — visual scanning aid */
 .zt-reading-body h2 {
   font-size: var(--text-h2, 1.5rem);
   font-weight: 600;
@@ -247,8 +265,10 @@
   letter-spacing: -0.01em;
   margin-top: 2.5em;
   margin-bottom: 0.75em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid var(--border, #262626);
+  padding-bottom: 0;
+  border-bottom: none;
+  border-left: 3px solid var(--accent, #818CF8);
+  padding-left: var(--space-3, 12px);
   scroll-margin-top: 5rem;
 }
 
@@ -345,8 +365,24 @@
   margin-bottom: 0;
 }
 
-/* Tables */
-.zt-reading-body table {
+/* Tables — Z21: wrapped in .zt-table-wrap by JS */
+.zt-table-wrap {
+  border: 1px solid var(--border, #262626);
+  border-radius: var(--radius-md, 10px);
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.zt-table-wrap table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: var(--zen-text-sm, 0.875rem);
+}
+
+/* Unwrapped table fallback (before JS runs) */
+.zt-reading-body > table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5em 0;
@@ -526,6 +562,144 @@
   background: var(--bg-elevated, #1A1A1A);
   border: 1px solid var(--border, #262626);
   border-radius: var(--radius-md, 10px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 ZEN OVERRIDES — Legacy blog components in reading context
+   Replaces glassmorphism with Zen tokens for light/dark support
+   ═══════════════════════════════════════════════════════════ */
+
+/* Living doc banner — Zen version */
+.zt-reading-body .living-doc-banner {
+  background: var(--bg-elevated, #1A1A1A);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--border, #262626);
+  border-left: 3px solid var(--warning, #EAB308);
+  border-radius: var(--radius-md, 10px);
+  padding: var(--space-4, 16px) var(--space-6, 24px);
+  margin: var(--space-4, 16px) 0 var(--space-6, 24px);
+  color: var(--text-secondary, #D4D4D4);
+  max-width: var(--max-reading, 720px);
+}
+
+.zt-reading-body .living-doc-banner strong {
+  color: var(--text-primary, #F5F5F5);
+}
+
+.zt-reading-body .living-doc-banner a {
+  color: var(--accent, #818CF8);
+}
+
+/* Prompt example cards — Zen version */
+.zt-reading-body .prompt-example {
+  background: var(--bg-elevated, #1A1A1A);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--border, #262626);
+  border-left: 3px solid var(--accent, #818CF8);
+  border-radius: var(--radius-md, 10px);
+  padding: var(--space-4, 16px) var(--space-6, 24px);
+  margin: var(--space-3, 12px) 0;
+  color: var(--text-secondary, #D4D4D4);
+  font-style: italic;
+}
+
+.zt-reading-body .prompt-example strong {
+  color: var(--accent, #818CF8);
+  font-style: normal;
+}
+
+/* Prompt cards (blockquotes) — Zen version */
+.zt-reading-body .prompt-cards blockquote {
+  border-left: 3px solid var(--accent, #818CF8);
+  background: var(--bg-elevated, #1A1A1A);
+  border-radius: 0 var(--radius-sm, 6px) var(--radius-sm, 6px) 0;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  margin: var(--space-2, 8px) 0;
+  color: var(--text-secondary, #D4D4D4);
+  font-size: var(--zen-text-sm, 0.875rem);
+}
+
+.zt-reading-body .prompt-cards blockquote p { color: var(--text-secondary, #D4D4D4); }
+.zt-reading-body .prompt-cards blockquote strong { color: var(--accent, #818CF8); }
+.zt-reading-body .prompt-cards blockquote em { color: var(--text-tertiary, #A3A3A3); font-style: normal; }
+
+/* Cowork scenario cards — Zen version */
+.zt-reading-body .cowork-scenario blockquote {
+  border-left: 3px solid var(--accent, #818CF8);
+  background: var(--bg-elevated, #1A1A1A);
+  border-radius: 0 var(--radius-sm, 6px) var(--radius-sm, 6px) 0;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  margin: var(--space-2, 8px) 0;
+  color: var(--text-secondary, #D4D4D4);
+  font-size: var(--zen-text-sm, 0.875rem);
+}
+
+.zt-reading-body .cowork-scenario blockquote p { color: var(--text-secondary, #D4D4D4); }
+.zt-reading-body .cowork-scenario blockquote strong { color: var(--text-primary, #F5F5F5); }
+.zt-reading-body .cowork-scenario blockquote em { color: var(--accent, #818CF8); font-style: normal; }
+
+/* Instruction cards — Zen version */
+.zt-reading-body .instruction-cards blockquote {
+  border-left: 3px solid var(--success, #22C55E);
+  background: var(--bg-elevated, #1A1A1A);
+  border-radius: 0 var(--radius-sm, 6px) var(--radius-sm, 6px) 0;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  margin: var(--space-2, 8px) 0;
+  color: var(--text-secondary, #D4D4D4);
+  font-size: var(--zen-text-sm, 0.875rem);
+}
+
+.zt-reading-body .instruction-cards blockquote p { color: var(--text-secondary, #D4D4D4); }
+.zt-reading-body .instruction-cards blockquote strong { color: var(--success, #22C55E); }
+
+/* Cowork persona pills — Zen: use accent for all, not per-color */
+.zt-reading-body .cowork-persona {
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+  color: var(--accent, #818CF8);
+  border: 1px solid var(--accent, #818CF8);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 600;
+  padding: 2px var(--space-3, 12px);
+}
+
+/* FAQ section — Zen override for neon magenta */
+.zt-reading-body .blog-faq p > strong:first-child:last-child {
+  color: var(--accent, #818CF8);
+  border-top-color: var(--border, #262626);
+}
+
+/* Counter + Ko-fi pills — Zen version in blog context */
+.zt-reading-badges .tool-counter {
+  background: var(--bg-elevated, #1A1A1A);
+  border: 1px solid var(--border, #262626);
+  color: var(--text-muted, #737373);
+}
+
+.zt-reading-badges .tool-counter-num {
+  color: var(--text-secondary, #D4D4D4);
+}
+
+.zt-reading-badges .tool-counter-verb {
+  color: var(--text-muted, #737373);
+  opacity: 1;
+}
+
+.zt-reading-badges .kofi-btn {
+  background: var(--bg-elevated, #1A1A1A);
+  border: 1px solid var(--border, #262626);
+  color: var(--text-tertiary, #A3A3A3);
+}
+
+.zt-reading-badges .kofi-btn:hover,
+.zt-reading-badges .kofi-btn:focus-visible {
+  border-color: var(--border-emphasis, #404040);
+  color: var(--text-primary, #F5F5F5);
+  background: var(--bg-surface, #141414);
+  box-shadow: none;
+  transform: none;
 }
 
 .zt-reading-resources h2 {
@@ -763,6 +937,135 @@
   border-color: var(--border-emphasis, #404040);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   🌸 Z22: FONT SIZE CONTROLS — A+ / A- reader adjustment
+   ═══════════════════════════════════════════════════════════ */
+.zt-reading-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.zt-toolbar-group {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border, #262626);
+  border-radius: var(--radius-sm, 6px);
+  overflow: hidden;
+}
+
+.zt-toolbar-group button {
+  background: var(--bg-elevated, #1A1A1A);
+  border: none;
+  border-right: 1px solid var(--border, #262626);
+  color: var(--text-tertiary, #A3A3A3);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  font-size: var(--zen-text-sm, 0.875rem);
+  cursor: pointer;
+  transition: color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+  line-height: 1.4;
+}
+
+.zt-toolbar-group button:last-child {
+  border-right: none;
+}
+
+.zt-toolbar-group button:hover {
+  color: var(--text-primary, #F5F5F5);
+  background: var(--bg-surface, #141414);
+}
+
+.zt-toolbar-group button.is-active {
+  color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+/* Stand-alone toolbar buttons */
+.zt-toolbar-btn {
+  background: var(--bg-elevated, #1A1A1A);
+  border: 1px solid var(--border, #262626);
+  color: var(--text-tertiary, #A3A3A3);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--zen-text-sm, 0.875rem);
+  cursor: pointer;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+}
+
+.zt-toolbar-btn:hover {
+  color: var(--text-primary, #F5F5F5);
+  border-color: var(--border-emphasis, #404040);
+}
+
+.zt-toolbar-btn.is-active {
+  color: var(--accent, #818CF8);
+  border-color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.1));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Z23: KINDLE WARM TINT — sepia/warm reading mode
+   Scoped to .zt-reading to avoid bleeding into tools/nav.
+   Works independently of light/dark theme.
+   ═══════════════════════════════════════════════════════════ */
+.zt-reading.zt-reading--warm {
+  --bg-page: #FFF8F0;
+  --bg-surface: #FBF4E8;
+  --bg-elevated: #F5ECD8;
+  --border: #E5D9C3;
+  --border-emphasis: #D4C4A8;
+  --text-secondary: #5C4E3C;
+  --text-tertiary: #7A6B58;
+  --text-muted: #9A8B78;
+}
+
+/* Dark + warm */
+[data-theme="dark"] .zt-reading.zt-reading--warm {
+  --bg-page: #1A1710;
+  --bg-surface: #1F1B14;
+  --bg-elevated: #252018;
+  --border: #3D3528;
+  --border-emphasis: #524838;
+  --text-secondary: #D4C8B0;
+  --text-tertiary: #A89880;
+  --text-muted: #7A6B58;
+}
+
+/* Warm tint on the content area background */
+.zt-reading.zt-reading--warm .zt-reading-content {
+  background: var(--bg-page);
+}
+
+.zt-reading.zt-reading--warm .zt-sidebar {
+  background: var(--bg-elevated);
+  border-right-color: var(--border);
+}
+
+.zt-reading.zt-reading--warm .zt-companion {
+  background: var(--bg-elevated);
+  border-left-color: var(--border);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Z24: FOCUS MODE — hide sidebars, center content
+   ═══════════════════════════════════════════════════════════ */
+.zt-reading.zt-reading--focused {
+  grid-template-columns: 1fr;
+}
+
+.zt-reading--focused .zt-sidebar,
+.zt-reading--focused .zt-companion {
+  display: none;
+}
+
+.zt-reading--focused .zt-reading-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: var(--space-8, 32px);
+  padding-right: var(--space-8, 32px);
+}
+
 /* ── Mobile responsive ── */
 @media (max-width: 1024px) {
   .zt-reading {
@@ -790,6 +1093,11 @@
   .zt-reading-video-mobile {
     display: block;
     margin-bottom: var(--space-6, 24px);
+  }
+
+  /* Z24: Focus mode redundant on mobile — hide button */
+  .zt-focus-toggle {
+    display: none;
   }
 }
 
@@ -897,10 +1205,18 @@
   border: 1px solid #E5E5E5;
   border-radius: 10px;
   text-align: center;
-  overflow-x: auto;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   position: relative;
   max-width: none;
+  max-height: 800px;
+}
+
+/* Scale oversized SVGs to fit the container — user can ⛶ fullscreen for detail */
+.zt-reading-body .mermaid svg {
+  max-height: 740px;
+  width: auto;
+  height: auto;
 }
 /* Rounded node corners */
 .zt-reading-body .mermaid .node rect,

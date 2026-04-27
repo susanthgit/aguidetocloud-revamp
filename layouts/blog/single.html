@@ -9,6 +9,17 @@
 {{ $readBase := add (mul $daysSince 8) (div $wordCount 50) }}
 
 <div class="zt-reading">
+  {{/* 🌸 Flash prevention: apply saved reading prefs before paint */}}
+  <script>
+    (function(){
+      var r=document.querySelector('.zt-reading');if(!r)return;
+      var fs=localStorage.getItem('zt-reading-font-size');
+      if(fs==='14'||fs==='18'){r.querySelector('.zt-reading-body')&&(function(){})();
+        r.style.setProperty('--reading-font-size',fs+'px');}
+      if(localStorage.getItem('zt-reading-warm')==='1')r.classList.add('zt-reading--warm');
+      if(localStorage.getItem('zt-reading-focus')==='1')r.classList.add('zt-reading--focused');
+    })();
+  </script>
   {{/* ── LEFT: Sidebar with TOC (desktop only) ── */}}
   <aside class="zt-sidebar" aria-label="Table of contents">
     <nav class="zt-toc">
@@ -49,9 +60,24 @@
     {{ end }}
     {{ end }}
 
-    {{/* Share button */}}
+    {{/* Reading toolbar: share + font controls + warm tint + focus */}}
     <div class="zt-reading-actions">
-      <button aria-label="Share this article" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✅ Copied!';var b=this;setTimeout(function(){b.textContent='🔗 Share'},2000)}.bind(this))}">🔗 Share</button>
+      <div class="zt-reading-toolbar">
+        <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✅ Copied!';var b=this;setTimeout(function(){b.textContent='🔗 Share'},2000)}.bind(this))}">🔗 Share</button>
+
+        {{/* Z22: Font size controls */}}
+        <div class="zt-toolbar-group" role="group" aria-label="Font size">
+          <button aria-label="Small text" data-fontsize="14" title="Small (14px)">A<small>−</small></button>
+          <button aria-label="Default text" data-fontsize="16" title="Default (16px)" class="is-active">A</button>
+          <button aria-label="Large text" data-fontsize="18" title="Large (18px)">A<small>+</small></button>
+        </div>
+
+        {{/* Z23: Warm tint toggle */}}
+        <button aria-label="Toggle warm reading mode" class="zt-toolbar-btn zt-warm-toggle" title="Warm tint">☀️ Warm</button>
+
+        {{/* Z24: Focus mode toggle (hidden on mobile via CSS) */}}
+        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">👁 Focus</button>
+      </div>
     </div>
 
     {{/* Mobile TOC (hidden on desktop) */}}

@@ -46,7 +46,7 @@ This is a living document. Bookmark this page rather than printing it — the AI
 
 </div>
 
-### Table of Contents
+**Table of Contents**
 
 - [What Does the Copilot Licence Unlock?](#what-does-the-microsoft-365-copilot-licence-unlock)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)

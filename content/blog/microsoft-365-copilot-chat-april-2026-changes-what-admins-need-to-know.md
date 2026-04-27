@@ -56,7 +56,7 @@ Two things to know as we approach go-live:
 
 </div>
 
-### The Short Version of What Happened
+## The Short Version of What Happened
 
 Think of it like a free trial on your phone. Microsoft gave everyone free access to a premium app feature in September 2025, hoping people would get hooked and upgrade. Six months later, only about 3% of customers actually paid. So the free trial is ending.
 

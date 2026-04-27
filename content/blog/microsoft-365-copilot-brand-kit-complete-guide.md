@@ -45,7 +45,7 @@ If you've been wondering the same thing, this guide is for you.
 
 </div>
 
-### Quick Links
+**Quick Links**
 
 - [The Hotel Analogy — What Brand Kit Actually Is](#the-hotel-analogy--what-brand-kit-actually-is)
 - [What's Inside a Brand Kit?](#whats-inside-a-brand-kit)

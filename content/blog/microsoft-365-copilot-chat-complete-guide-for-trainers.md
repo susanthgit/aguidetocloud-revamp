@@ -48,7 +48,7 @@ This is a living document. The AI landscape changes fast — features get added,
 
 </div>
 
-### Table of Contents
+**Table of Contents**
 
 - [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)
