@@ -1028,7 +1028,7 @@
 
 /* Blog landing center column */
 .zt-blog-landing {
-  padding-top: var(--space-4, 16px);
+  padding-top: var(--space-6, 24px);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1221,12 +1221,12 @@
 .zt-blog-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3, 12px);
+  gap: var(--space-4, 16px);
 }
 
 .zt-blog-card {
   display: block;
-  padding: var(--space-4, 16px) var(--space-6, 24px);
+  padding: var(--space-6, 24px);
   background: var(--bg-surface, #141414);
   border: 1px solid var(--border, #262626);
   border-radius: var(--radius-md, 10px);
@@ -2177,8 +2177,8 @@
 /* Hero — reuses ft-hero from free-tools.css (loaded via baseof.html) */
 /* Shared hero pattern — also used by study guides & blog landing */
 .ft-hero {
-  padding: var(--space-6, 24px) 0 var(--space-6, 24px);
-  margin: 0 0 var(--space-8, 32px);
+  padding: var(--space-8, 32px) 0 var(--space-6, 24px);
+  margin: 0 0 var(--space-12, 48px);
   border-bottom: 1px solid var(--border);
 }
 .ft-hero-title {
@@ -2249,15 +2249,15 @@
 
 /* Vendor sections */
 .zt-sg-vendor {
-  margin-bottom: var(--space-8, 32px);
+  margin-bottom: var(--space-12, 48px);
 }
 
 .zt-sg-vendor-header {
   display: flex;
   align-items: center;
   gap: var(--space-3, 12px);
-  margin-bottom: var(--space-4, 16px);
-  padding-bottom: var(--space-2, 8px);
+  margin-bottom: var(--space-6, 24px);
+  padding-bottom: var(--space-3, 12px);
   border-bottom: 1px solid var(--border, #262626);
 }
 
@@ -2278,7 +2278,7 @@
 
 /* Category sub-headers (Microsoft) */
 .zt-sg-category {
-  margin-bottom: var(--space-4, 16px);
+  margin-bottom: var(--space-6, 24px);
 }
 
 .zt-sg-category-title {
@@ -2287,21 +2287,21 @@
   color: var(--text-muted, #737373);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin: 0 0 var(--space-2, 8px);
+  margin: 0 0 var(--space-3, 12px);
 }
 
 /* Card grid */
 .zt-sg-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--space-2, 8px);
+  gap: var(--space-3, 12px);
 }
 
 .zt-sg-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-1, 4px);
-  padding: var(--space-3, 12px) var(--space-4, 16px);
+  padding: var(--space-4, 16px);
   background: var(--bg-surface, #141414);
   border: 1px solid var(--border, #262626);
   border-radius: var(--radius-md, 10px);
@@ -2891,14 +2891,14 @@
 }
 
 .zt-lic-cat-section {
-  margin-bottom: var(--space-8, 32px);
+  margin-bottom: var(--space-12, 48px);
 }
 
 .zt-lic-cat-header {
   display: flex;
   align-items: center;
   gap: var(--space-3, 12px);
-  margin-bottom: var(--space-4, 16px);
+  margin-bottom: var(--space-6, 24px);
 }
 
 .zt-lic-cat-title {
@@ -2929,7 +2929,7 @@
 .zt-lic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-3, 12px);
+  gap: var(--space-4, 16px);
 }
 
 .zt-lic-card {
