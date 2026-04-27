@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 17:39:54 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 19:46:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users in North America may be unable to access Microsoft Copilot (Microsoft 365)</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1293219</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1293219</guid>
+      <pubDate>Mon, 27 Apr 2026 16:19:46 +0000</pubDate>
+    </item>
     <item>
       <title>[Azure] Azure incident affecting East US</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-20260401-1</link>
@@ -108,15 +117,6 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Admins are unable to progress mailbox migrations in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1280763</link>
-      <description>[Exchange Online] Admins are unable to progress mailbox migrations in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1280763</guid>
-      <pubDate>Wed, 15 Apr 2026 08:36:58 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1280167</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delays when accessing Copilot Suggested Notebooks.</description>
@@ -133,6 +133,15 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1279815</guid>
       <pubDate>Tue, 14 Apr 2026 16:22:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Admins may be unable to progress mailbox migrations in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1280763</link>
+      <description>[Exchange Online] Admins may have been unable to progress mailbox migrations in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1280763</guid>
+      <pubDate>Tue, 14 Apr 2026 11:20:00 +0000</pubDate>
     </item>
     <item>
       <title>[Universal Print] Some users may be intermittently unable to create some printer shares in Universal Print</title>
@@ -448,15 +457,6 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1266872</guid>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins may be unable to create shared mailboxes in Exchange Online </title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1256744</link>
-      <description>[Exchange Online] Admins may have been unable to create shared mailboxes in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1256744</guid>
-      <pubDate>Fri, 20 Mar 2026 06:10:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
