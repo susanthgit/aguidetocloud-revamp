@@ -165,42 +165,38 @@ body.zen-migrated::after {
   content: none;
 }
 
-/* 🌸 Zen: Floating action buttons on zen-migrated pages */
-body.zen-migrated .global-btt {
+/* 🌸 Zen: Floating action buttons — uses Zen tokens directly */
+.global-btt {
   background: var(--bg-surface);
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-body.zen-migrated .global-btt:hover {
+.global-btt:hover {
   background: var(--bg-elevated);
   border-color: var(--border-emphasis);
   color: var(--text-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
-[data-theme="dark"] body.zen-migrated .global-btt {
+[data-theme="dark"] .global-btt {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-[data-theme="dark"] body.zen-migrated .global-btt:hover {
+[data-theme="dark"] .global-btt:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-body.zen-migrated .feedback-fab {
+.feedback-fab {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-body.zen-migrated .feedback-fab:hover {
+.feedback-fab:hover {
   background: var(--accent-subtle);
   border-color: var(--accent);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
   transform: scale(1.05);
 }
-[data-theme="dark"] body.zen-migrated .feedback-fab {
+[data-theme="dark"] .feedback-fab {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -855,35 +851,32 @@ body.is-home .section {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1.1rem;
-  border: 1px solid var(--neon-cyan);
+  border: 1px solid var(--accent);
   border-radius: 14px;
   color: var(--accent);
   text-decoration: none;
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
-  transition: all 0.2s;
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
 }
 .back-nav-link:hover {
-  background: var(--neon-cyan);
-  color: #000;
+  background: var(--accent);
+  color: var(--bg-page);
 }
 
 /* ── GLOBAL: BACK TO TOP ────────────────── */
 .global-btt {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
   width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06); color: rgba(255, 255, 255, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
-  backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.3rem; font-weight: 900; cursor: pointer;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-  opacity: 0; transform: translateY(20px); transition: all 0.3s;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 200ms ease-out, transform 200ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
   pointer-events: none;
   display: flex; align-items: center; justify-content: center;
 }
 .global-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.global-btt:hover { background: rgba(255, 255, 255, 0.12); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
+.global-btt:hover { /* visual overrides in Zen block above */ }
 
 /* ── Feedback FAB (floating action button) ── */
 .feedback-fab {
@@ -894,25 +887,15 @@ body.is-home .section {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(var(--glass-blur-subtle));
-  backdrop-filter: blur(var(--glass-blur-subtle));
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 3px 15px rgba(255, 102, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
 }
-.feedback-fab:hover {
-  background: rgba(255, 102, 255, 0.25);
-  box-shadow: 0 4px 25px rgba(255, 102, 255, 0.4);
-  border-color: rgba(255, 102, 255, 0.5);
-  transform: scale(1.1);
-}
+.feedback-fab:hover { /* visual overrides in Zen block above */ }
 @media (max-width: 640px) {
   .feedback-fab { display: none; }
 }
@@ -2229,9 +2212,9 @@ pre.mermaid {
   left: 0;
   width: 0%;
   height: 3px;
-  background: var(--neon-cyan);
+  background: var(--accent);
   z-index: 9999;
-  transition: width 50ms linear;
+  transition: width 50ms linear;  /* exception: width animation IS the bar */
   pointer-events: none;
 }
 
@@ -2519,7 +2502,7 @@ pre.mermaid {
 
 /* ── ACCESSIBILITY: Global focus-visible ─ */
 :focus-visible {
-  outline: 2px solid var(--neon-cyan);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 /* Suppress default outline when not keyboard-navigating */
