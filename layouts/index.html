@@ -1,232 +1,182 @@
 {{ define "main" }}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+{{/* 🌸 Zen Homepage — The river. One truth per screen. */}}
 
-{{ $navData := index .Site.Data "toolkit_nav" }}
-{{ $allTools := $navData.tools }}
 {{ $toolCount := 0 }}
-{{ range $allTools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
+{{ range (index hugo.Data "toolkit_nav").tools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
+{{ $certPages := where site.RegularPages "Section" "cert-tracker" }}
+{{ $blogPosts := first 3 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
 
-{{ partial "welcome-strip.html" . }}
+<div class="zh">
 
-<div class="container">
-
-  <!-- ── BENTO PATHWAYS — "What are you looking for?" ── -->
-  <section class="hp-bento-section">
-    <div class="hp-bento">
-      <a href="/guided/explore/" class="hp-bento-card">
-        <div class="hp-bento-icon">🎯</div>
-        <h3>Practice Exams</h3>
-        <p>Flashcards, exam simulation & spaced repetition across 13 vendors</p>
-        <span class="hp-bento-link">Explore certs →</span>
-      </a>
-      <a href="/free-tools/" class="hp-bento-card">
-        <div class="hp-bento-icon">🛠️</div>
-        <h3>Free Tools</h3>
-        <p>Prompt builders, readiness checks, policy generators — zero sign-up</p>
-        <span class="hp-bento-link">Browse tools →</span>
-      </a>
-      <a href="/study-guides/" class="hp-bento-card">
-        <div class="hp-bento-icon">📚</div>
-        <h3>Study Guides</h3>
-        <p>Free interactive guides with domain breakdowns and learning paths</p>
-        <span class="hp-bento-link">Start studying →</span>
-      </a>
-      <a href="/ai-hub/" class="hp-bento-card">
-        <div class="hp-bento-icon">📺</div>
-        <h3>Video Courses</h3>
-        <p>Full certification courses and step-by-step tutorials on YouTube</p>
-        <span class="hp-bento-link">Watch free →</span>
-      </a>
-    </div>
+  {{/* ── THE WELCOME ── */}}
+  <section class="zh-welcome">
+    <h1 class="zh-title">A Guide to Cloud & AI</h1>
+    <p class="zh-subtitle">Everything I learn about cloud & AI at work — and in my own time — I share here. Sometimes as a study guide. Sometimes as a tool. Sometimes as a video or a blog post. Six ways to learn, one honest source.</p>
+    <span class="zh-badge">Built by a Microsoft Engineer</span>
+    <p class="zh-audience">For IT pros, students, and anyone studying for cloud & AI certifications.</p>
   </section>
 
-  <!-- ── VENDOR LOGOS BAR ── -->
-  <div class="hp-vendors">
-    <div class="hp-vendors-track">
-      <span class="hp-vendor">Microsoft</span>
-      <span class="hp-vendor">AWS</span>
-      <span class="hp-vendor">Google Cloud</span>
-      <span class="hp-vendor">CompTIA</span>
-      <span class="hp-vendor">Cisco</span>
-      <span class="hp-vendor">CNCF / Kubernetes</span>
-      <span class="hp-vendor">HashiCorp</span>
-      <span class="hp-vendor">ISC²</span>
-      <span class="hp-vendor">ISACA</span>
-      <span class="hp-vendor">EC-Council</span>
-      <span class="hp-vendor">Fortinet</span>
-      <span class="hp-vendor">Juniper</span>
-      <span class="hp-vendor">Palo Alto</span>
-    </div>
-  </div>
+  {{/* ── THE 6 PATHWAYS ── */}}
+  <section class="zh-pathways">
 
-  <!-- TOOLKIT — Category Directory -->
-  <section class="section hp-toolkit-dir">
-    <div class="section-header">
-      <h2 class="section-title">Toolkit</h2>
-      <a href="/free-tools/" class="section-link">Browse all {{ $toolCount }} tools →</a>
-      <p class="section-desc">Free browser-based tools for IT pros — no sign-up, no ads. Pick a category to explore.</p>
-    </div>
+    <a href="/study-guides/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Study Guides</span>
+        <span class="zh-path-desc">Handcrafted guides for every exam objective — linked to <em class="zh-hl">official resources</em>. Covers Microsoft, AWS, Google Cloud & more.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
 
-    {{/* Count tools per category */}}
-    {{ $catCounts := dict "prompt" 0 "agent" 0 "planning" 0 "informed" 0 "security" 0 "admin-ops" 0 "certs" 0 "community" 0 }}
-    {{ range $allTools }}{{ if .is_tool }}
-      {{ $c := .category }}
-      {{ if isset $catCounts $c }}{{ $catCounts = merge $catCounts (dict $c (add (index $catCounts $c) 1)) }}{{ end }}
-    {{ end }}{{ end }}
+    <a href="/guided/explore/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Practice Exams</span>
+        <span class="zh-path-desc">Interactive exams with handcrafted questions. Instant feedback, domain breakdown. <em class="zh-hl">All certs from $9</em>.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
 
-    <div class="hp-cat-grid">
-      {{ $cats := slice
-        (dict "key" "prompt"   "emoji" "✨" "name" "Prompts"    "desc" "Libraries, builders & testing")
-        (dict "key" "agent"    "emoji" "🤖" "name" "Agents"     "desc" "Copilot agents & automation")
-        (dict "key" "planning" "emoji" "🎯" "name" "Planning"   "desc" "Migration, policy & readiness")
-        (dict "key" "informed" "emoji" "📡" "name" "Informed"   "desc" "News, roadmaps & deprecations")
-        (dict "key" "security" "emoji" "🛡️" "name" "Security"   "desc" "Compliance & threat training")
-        (dict "key" "admin-ops" "emoji" "⚙️" "name" "Admin Ops" "desc" "PowerShell, SLA & incident")
-        (dict "key" "certs"    "emoji" "📚" "name" "Certs"      "desc" "Study guides & cert compass")
-        (dict "key" "community" "emoji" "🎮" "name" "Fun & Utils" "desc" "QR, passwords, timers & games")
-      }}
-      {{ range $cats }}
-        <a href="/free-tools/#{{ .key }}" class="hp-cat-card">
-          <div class="hp-cat-top">
-            <span class="hp-cat-emoji">{{ .emoji }}</span>
-            <span class="hp-cat-count">{{ index $catCounts .key }}</span>
-          </div>
-          <h3 class="hp-cat-name">{{ .name }}</h3>
-          <p class="hp-cat-desc">{{ .desc }}</p>
-        </a>
+    <a href="/free-tools/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Free Tools</span>
+        <span class="zh-path-desc">Tools for everyday IT challenges — prompt builders, policy generators, calculators. <em class="zh-hl">No sign-up</em>, runs in your browser.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/licensing-docs/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Licensing Wiki</span>
+        <span class="zh-path-desc">50 M365 plans explained in <em class="zh-hl">plain English</em>. Stop guessing, start understanding.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/videos/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Video Tutorials</span>
+        <span class="zh-path-desc">Certification courses, Copilot tutorials, hands-on labs. <em class="zh-hl">Free forever</em> on YouTube.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/blog/" class="zh-path">
+      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Blog</span>
+        <span class="zh-path-desc">Deep-dive articles on what I work on day to day — the questions customers ask me, answered <em class="zh-hl">in detail</em>.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+  </section>
+
+  <p class="zh-nudge">Not sure where to start? <a href="/study-guides/">Browse study guides →</a> or <a href="/free-tools/">explore free tools →</a></p>
+
+  {{/* ── LATEST ── */}}
+  {{ if $blogPosts }}
+  <section class="zh-latest">
+    <h2 class="zh-section-title">Latest</h2>
+    <div class="zh-latest-list">
+      {{ range $blogPosts }}
+      <a href="{{ .RelPermalink }}" class="zh-latest-item">
+        <time class="zh-latest-date">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <span class="zh-latest-title">{{ .Title }}</span>
+      </a>
       {{ end }}
     </div>
   </section>
+  {{ end }}
 
-  <!-- Latest Content — tabbed blog + video -->
-  {{ $blogPosts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-  {{ $aiHub := where (where .Site.RegularPages "Section" "ai-hub") "Params.youtube_id" "!=" nil }}
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">Latest Content</h2>
-      <a href="/blog/" class="section-link hp-tab-link" data-for="blog">View all {{ len $blogPosts }} posts →</a>
-      <a href="/ai-hub/" class="section-link hp-tab-link" data-for="videos" hidden>View all videos →</a>
-      <p class="section-desc">Practical guides and step-by-step tutorials on Microsoft 365 Copilot, Azure, and AI — written and recorded by someone who does this daily.</p>
-    </div>
-    <div class="hp-content-tabs" role="tablist">
-      <button class="hp-content-tab active" role="tab" aria-selected="true" data-tab="blog">📝 Articles</button>
-      <button class="hp-content-tab" role="tab" aria-selected="false" data-tab="videos">🎬 Videos</button>
-    </div>
-    <div class="hp-content-panel" data-panel="blog" role="tabpanel">
-      <div class="hp-hscroll-wrapper">
-        <button class="hp-hscroll-nav hp-hscroll-nav-left" aria-label="Scroll left" disabled>‹</button>
-        <div class="hp-hscroll-track">
-          {{ range $i, $post := first 6 $blogPosts }}
-          <a href="{{ $post.RelPermalink }}" class="hp-blog-card">
-            {{ with $post.Params.card_tag }}<span class="hp-blog-tag">{{ . }}</span>{{ end }}
-            <time class="hp-blog-date">{{ $post.Date.Format "Jan 2, 2006" }}</time>
-            <h3>{{ $post.Title }}</h3>
-            {{ with $post.Description }}<p>{{ . | truncate 120 }}</p>{{ end }}
-          </a>
-          {{ end }}
-        </div>
-        <button class="hp-hscroll-nav hp-hscroll-nav-right" aria-label="Scroll right">›</button>
-      </div>
-    </div>
-    <div class="hp-content-panel" data-panel="videos" role="tabpanel" hidden>
-      <div class="hp-hscroll-wrapper">
-        <button class="hp-hscroll-nav hp-hscroll-nav-left" aria-label="Scroll left" disabled>‹</button>
-        <div class="hp-hscroll-track">
-          {{ range first 6 $aiHub.ByDate.Reverse }}
-            {{ partial "video-card.html" . }}
-          {{ end }}
-        </div>
-        <button class="hp-hscroll-nav hp-hscroll-nav-right" aria-label="Scroll right">›</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⭐ SOCIAL PROOF — testimonials -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">What People Say</h2>
-      <p class="section-desc">Real feedback from IT pros, students, and cloud practitioners who use these resources daily.</p>
-    </div>
-    <div class="hp-testimonials-grid">
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">P</span><div><strong>@pablonleon</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-        <p>"I work at Microsoft and I have passed many of my exams using your videos, <strong>thank you for such great content</strong> my friend!"</p>
-      </div>
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">W</span><div><strong>@waldirpaulino</strong><span class="hp-testimonial-source">YouTube · AZ-900 Full Course</span></div></div>
-        <p>"Susanth, you have <strong>made a difference in the lives of hundreds of people</strong> (myself included). May God reward your generous heart."</p>
-      </div>
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">K</span><div><strong>@kaivalyakulkarni</strong><span class="hp-testimonial-source">YouTube · DP-900 Full Course</span></div></div>
-        <p>"This is the best DP-900 course I found for free. It has helped me to clear the exam."</p>
-      </div>
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">L</span><div><strong>@lalitds</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-        <p>"Even the paid courses do not organize the stuff this way. <strong>Clarity and depth are more than the other tutors.</strong>"</p>
-      </div>
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@stewarthoward</strong><span class="hp-testimonial-source">YouTube · AZ-104 Full Course</span></div></div>
-        <p>"This course for AZ-104 is still the best out there. I just cleared the exam with <strong>954/1000</strong>."</p>
-      </div>
-      <div class="hp-testimonial">
-        <div class="hp-testimonial-head"><span class="hp-testimonial-avatar">S</span><div><strong>@Stazmartinez</strong><span class="hp-testimonial-source">YouTube · PL-900 Full Course</span></div></div>
+  {{/* ── VOICES (no heading — let them speak) ── */}}
+  <section class="zh-voices">
+    <div class="zh-voices-grid">
+      <blockquote class="zh-voice">
+        <p>"I work at Microsoft and I have passed many of my exams using your videos. <strong>Thank you for such great content.</strong>"</p>
+        <cite>— @pablonleon · YouTube</cite>
+      </blockquote>
+      <blockquote class="zh-voice">
+        <p>"Even the paid courses do not organize the stuff this way. <strong>Clarity and depth are more than other tutors.</strong>"</p>
+        <cite>— @lalitds · YouTube</cite>
+      </blockquote>
+      <blockquote class="zh-voice">
         <p>"Your videos have helped me pass <strong>AZ-900, AZ-104, and PL-900</strong> — thank you!!"</p>
-      </div>
+        <cite>— @Stazmartinez · YouTube</cite>
+      </blockquote>
     </div>
   </section>
 
-  <!-- ☁️ Newsletter Signup -->
-  <section class="hp-newsletter" id="newsletter">
-    <div class="hp-newsletter-inner">
-      <div class="hp-newsletter-content">
-        <span class="hp-newsletter-badge">📬 Free Weekly Newsletter</span>
-        <h2>Guided Weekly</h2>
-        <p class="hp-newsletter-tagline">Cloud & AI insights, every Sunday — in 2 minutes.</p>
-        <div class="hp-newsletter-benefits">
-          <div class="hp-newsletter-benefit">📰 <span>Top AI & cloud stories, curated by a Microsoft Engineer</span></div>
-          <div class="hp-newsletter-benefit">🛠️ <span>Free tool spotlights from our {{ $toolCount }}+ toolkit</span></div>
-          <div class="hp-newsletter-benefit">🎓 <span>Cert tips, exam updates & career advice</span></div>
-          <div class="hp-newsletter-benefit">🎬 <span>Latest tutorials, straight to your inbox</span></div>
-        </div>
-        <form class="hp-newsletter-form" id="hp-newsletter-form" aria-label="Newsletter signup">
-          <div class="hp-newsletter-input-row">
-            <input type="email" id="hp-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
-            <button type="submit" class="hp-newsletter-btn">Subscribe — It's Free</button>
-          </div>
-          <p class="hp-newsletter-trust">Join cloud professionals worldwide. Unsubscribe anytime. No spam, ever.</p>
-        </form>
-        <div class="hp-newsletter-success" id="hp-newsletter-success" hidden>
-          <span class="hp-newsletter-success-icon">✅</span>
-          <p><strong>You're in!</strong> Check your inbox to confirm. Your first Guided Weekly arrives this Sunday.</p>
-        </div>
-        <a href="https://guided-weekly.beehiiv.com" target="_blank" rel="noopener noreferrer" class="hp-newsletter-preview-link">Visit Guided Weekly →</a>
-      </div>
+  {{/* ── NEWSLETTER ── */}}
+  <section class="zh-newsletter">
+    <h2 class="zh-section-title">Stay in the loop</h2>
+    <p class="zh-newsletter-desc">Cloud & AI insights, every Sunday — in 2 minutes. Free.</p>
+    <form class="zh-newsletter-form" id="zh-newsletter-form" aria-label="Newsletter signup">
+      <input type="email" id="zh-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" class="zh-newsletter-input">
+      <button type="submit" class="zh-newsletter-btn">Subscribe</button>
+    </form>
+    <div class="zh-newsletter-success" id="zh-newsletter-success" hidden>
+      <p>You're in — check your inbox to confirm.</p>
     </div>
+    <p class="zh-newsletter-trust">Join cloud professionals worldwide. No spam, unsubscribe anytime.</p>
   </section>
 
-  {{ partial "page-search.html" . }}
-
-  <script>
-  (function() {
-    var BEEHIIV_URL = 'https://guided-weekly.beehiiv.com/subscribe';
-    function setupForm(formId, emailId, successId) {
-      var form = document.getElementById(formId);
-      if (!form) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = document.getElementById(emailId).value.trim();
-        if (!email) return;
-        var btn = form.querySelector('button[type="submit"]');
-        if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
-        var w = window.open(BEEHIIV_URL + '?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
-        setTimeout(function() {
-          form.hidden = true;
-          document.getElementById(successId).hidden = false;
-        }, 1500);
-      });
-    }
-    setupForm('hp-newsletter-form', 'hp-newsletter-email', 'hp-newsletter-success');
-  })();
-  </script>
+  {{/* ── WHO ── */}}
+  <section class="zh-who">
+    <p class="zh-who-text">Built by <a href="/about/">Susanth Sutheesh</a>, Sr AI Solution Engineer at Microsoft New Zealand.</p>
+    <div class="zh-who-links">
+      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener">Ko-fi</a>
+    </div>
+  </section>
 
 </div>
+
+{{ partial "page-search.html" . }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "A Guide to Cloud & AI",
+  "url": "https://aguidetocloud.com",
+  "description": "Free study guides, practice exams, tools and video tutorials for cloud and AI certifications.",
+  "author": {
+    "@type": "Person",
+    "name": "Susanth Sutheesh",
+    "jobTitle": "Sr AI Solution Engineer",
+    "worksFor": { "@type": "Organization", "name": "Microsoft" },
+    "url": "https://aguidetocloud.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Guide to Cloud & AI",
+    "logo": { "@type": "ImageObject", "url": "https://aguidetocloud.com/images/logo_agtc_dark_1.webp" }
+  }
+}
+</script>
+
+<script>
+(function() {
+  var form = document.getElementById('zh-newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('zh-newsletter-email').value.trim();
+    if (!email) return;
+    var btn = form.querySelector('button');
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
+    window.open('https://guided-weekly.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
+    setTimeout(function() {
+      form.hidden = true;
+      document.getElementById('zh-newsletter-success').hidden = false;
+    }, 1500);
+  });
+})();
+</script>
 {{ end }}

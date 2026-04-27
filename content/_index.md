@@ -1,6 +1,6 @@
 ---
-title: "A Guide to Cloud & AI — Free Cloud, AI & Microsoft 365 Tools for IT Pros"
-description: "27 free tools for Microsoft 365, Azure & AI — Copilot Readiness Checker, AI News Dashboard, ROI Calculator, cert study guides, tutorials & more."
+title: "A Guide to Cloud & AI — Free Study Guides, Practice Exams, Tools & Tutorials for Cloud Certifications"
+description: "Free certification study guides, practice exams, IT tools, M365 licensing wiki, video tutorials and blog — for IT pros, students, and anyone studying for cloud & AI certifications. Built by a Microsoft Engineer."
 images:
   - "images/og/sections/homepage.jpg"
 sitemap:

@@ -3187,6 +3187,327 @@
 }
 
 /* ──────────────────────────────────────────
+   🏠 ZEN HOMEPAGE — The river
+   One truth per section. Maximum breathing room.
+   ────────────────────────────────────────── */
+.zh {
+  max-width: var(--max-reading, 720px);
+  margin: 0 auto;
+  padding: 0 var(--space-6, 24px);
+}
+
+/* Welcome */
+.zh-welcome {
+  padding: var(--space-16, 64px) 0 var(--space-12, 48px);
+  text-align: center;
+}
+.zh-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #171717);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 var(--space-4, 16px);
+}
+.zh-subtitle {
+  font-size: var(--text-lg, 1.125rem);
+  color: var(--text-secondary, #525252);
+  line-height: 1.7;
+  margin: 0 0 var(--space-4, 16px);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.zh-badge {
+  display: inline-block;
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-tertiary, #737373);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-full, 9999px);
+}
+.zh-audience {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #A3A3A3);
+  margin: var(--space-3, 12px) 0 0;
+}
+
+/* Pathways — individual cards with gaps */
+.zh-pathways {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-16, 64px);
+}
+.zh-path {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4, 16px);
+  padding: var(--space-6, 24px) var(--space-8, 32px);
+  background: var(--bg-surface, #FAFAFA);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+.zh-path:hover {
+  border-color: var(--accent, #6366F1);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
+}
+.zh-path-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--text-primary, #171717);
+  background: var(--bg-elevated, #F5F5F5);
+  border-radius: var(--radius-sm, 6px);
+}
+.zh-path-text {
+  flex: 1;
+  min-width: 0;
+}
+.zh-path-label {
+  display: block;
+  font-size: var(--text-body, 1rem);
+  font-weight: 600;
+  color: var(--text-primary, #171717);
+  margin-bottom: var(--space-1, 4px);
+}
+.zh-path-desc {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-secondary, #525252);
+  line-height: 1.5;
+  flex: 1;
+}
+.zh-path-go {
+  font-size: 1.25rem;
+  color: var(--text-muted, #A3A3A3);
+  transition: color 200ms ease-out, transform 200ms ease-out;
+  flex-shrink: 0;
+}
+.zh-path:hover .zh-path-go {
+  color: var(--accent, #6366F1);
+  transform: translateX(4px);
+}
+/* Highlighted keywords inside cards */
+.zh-hl {
+  font-style: normal;
+  color: var(--accent, #6366F1);
+  font-weight: 600;
+}
+
+/* Nudge — "not sure where to start?" */
+.zh-nudge {
+  text-align: center;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #A3A3A3);
+  margin: var(--space-4, 16px) 0 var(--space-16, 64px);
+}
+.zh-nudge a {
+  color: var(--accent, #6366F1);
+  text-decoration: none;
+}
+.zh-nudge a:hover {
+  text-decoration: underline;
+}
+
+/* Practice Exams card — subtle distinction as the paid offering */
+.zh-path[href*="guided"] {
+  border-left: 3px solid var(--accent, #6366F1);
+}
+
+/* Section titles */
+.zh-section-title {
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: 600;
+  color: var(--text-primary, #171717);
+  margin: 0 0 var(--space-6, 24px);
+  letter-spacing: -0.01em;
+}
+
+/* Latest */
+.zh-latest {
+  margin-bottom: var(--space-16, 64px);
+}
+.zh-latest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border, #E5E5E5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+  overflow: hidden;
+}
+.zh-latest-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4, 16px);
+  padding: var(--space-4, 16px) var(--space-6, 24px);
+  background: var(--bg-surface, #FAFAFA);
+  text-decoration: none;
+  color: inherit;
+  transition: background 200ms ease-out;
+}
+.zh-latest-item:hover {
+  background: var(--bg-elevated, #F5F5F5);
+}
+.zh-latest-date {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #A3A3A3);
+  white-space: nowrap;
+  min-width: 90px;
+}
+.zh-latest-title {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-primary, #171717);
+  font-weight: 500;
+}
+.zh-latest-item:hover .zh-latest-title {
+  color: var(--accent, #6366F1);
+}
+
+/* Voices */
+.zh-voices {
+  margin-bottom: var(--space-16, 64px);
+}
+.zh-voices-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+.zh-voice {
+  margin: 0;
+  padding: var(--space-6, 24px);
+  background: var(--bg-surface, #FAFAFA);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+}
+.zh-voice p {
+  margin: 0 0 var(--space-2, 8px);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-primary, #171717);
+  line-height: 1.6;
+  font-style: italic;
+}
+.zh-voice cite {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #A3A3A3);
+  font-style: normal;
+}
+
+/* Newsletter */
+.zh-newsletter {
+  text-align: center;
+  margin-bottom: var(--space-16, 64px);
+  padding: var(--space-8, 32px);
+  background: var(--bg-surface, #FAFAFA);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+}
+.zh-newsletter-desc {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-secondary, #525252);
+  margin: 0 0 var(--space-4, 16px);
+}
+.zh-newsletter-form {
+  display: flex;
+  gap: var(--space-2, 8px);
+  max-width: 400px;
+  margin: 0 auto var(--space-3, 12px);
+}
+.zh-newsletter-input {
+  flex: 1;
+  padding: var(--space-2, 8px) var(--space-4, 16px);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-md, 10px);
+  background: var(--bg-page, #FFFFFF);
+  color: var(--text-primary, #171717);
+  font-size: var(--text-sm, 0.875rem);
+}
+.zh-newsletter-input:focus {
+  outline: none;
+  border-color: var(--accent, #6366F1);
+}
+.zh-newsletter-btn {
+  padding: var(--space-2, 8px) var(--space-6, 24px);
+  background: var(--accent, #6366F1);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md, 10px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease-out;
+}
+.zh-newsletter-btn:hover { background: var(--accent-hover, #4F46E5); }
+.zh-newsletter-trust {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #A3A3A3);
+  margin: 0;
+}
+.zh-newsletter-success p {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--success, #10B981);
+  margin: 0;
+}
+
+/* Who */
+.zh-who {
+  text-align: center;
+  padding: var(--space-12, 48px) 0 var(--space-16, 64px);
+  border-top: 1px solid var(--border, #E5E5E5);
+}
+.zh-who-text {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-secondary, #525252);
+  margin: 0 0 var(--space-4, 16px);
+}
+.zh-who-text a {
+  color: var(--text-primary, #171717);
+  font-weight: 600;
+  text-decoration: none;
+}
+.zh-who-text a:hover {
+  color: var(--accent, #6366F1);
+}
+.zh-who-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6, 24px);
+}
+.zh-who-links a {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #A3A3A3);
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+.zh-who-links a:hover {
+  color: var(--accent, #6366F1);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .zh-title { font-size: 1.75rem; }
+  .zh-welcome { padding: var(--space-12, 48px) 0 var(--space-8, 32px); }
+  .zh-path {
+    flex-wrap: wrap;
+    gap: var(--space-3, 12px);
+  }
+  .zh-path-go { display: none; }
+  .zh-latest-item { flex-direction: column; gap: var(--space-1, 4px); }
+  .zh-latest-date { min-width: auto; }
+}
+
+/* Hide site name text in nav — logo icon is enough */
+.site-logo-text { display: none; }
+
+/* ──────────────────────────────────────────
    👤 ABOUT PAGE
    Hero card, timeline, Zen tokens.
    ────────────────────────────────────────── */
