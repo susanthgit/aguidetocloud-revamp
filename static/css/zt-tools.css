@@ -355,6 +355,11 @@
 .zt-tool-nav-header:hover {
   color: var(--accent, #818CF8);
 }
+.zt-tool-nav-header.active {
+  color: var(--accent, #818CF8);
+  border-left: 3px solid var(--accent, #818CF8);
+  padding-left: calc(var(--space-6, 24px) - 3px);
+}
 
 /* Category group */
 .zt-tool-nav-group {
@@ -486,6 +491,18 @@
 }
 .zt-reading--tool .zt-companion-link:hover .zt-companion-link-title {
   color: var(--text-primary, #F5F5F5);
+}
+
+/* Inline variant — emoji + name on same line (for popular tools) */
+.zt-reading--tool .zt-companion-link--inline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+.zt-reading--tool .zt-companion-link--inline .zt-companion-link-tag {
+  display: inline;
+  font-size: var(--text-body, 1rem);
+  margin-bottom: 0;
 }
 
 .zt-reading--tool .zt-companion-cta {

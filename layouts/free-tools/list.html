@@ -1,11 +1,15 @@
 ﻿{{ define "main" }}
 <link rel="stylesheet" href="/css/free-tools.css?v={{ site.Params.cache_version }}">
-<div class="page-hero">
-  <h1>Cloud & AI Toolkit</h1>
-  <p class="hero-subtitle">Professional-grade tools for IT pros — built by <a href="/about/">Susanth</a>. No sign-up, no ads.</p>
-  {{ partial "section-prev-next.html" . }}
-  {{ partial "page-search.html" . }}
-</div>
+<header class="ft-hero">
+  <h1 class="ft-hero-title">Cloud & AI Toolkit</h1>
+  <p class="ft-hero-subtitle">Professional-grade tools for IT pros — built by <a href="/about/">Susanth</a>. No sign-up, no ads.</p>
+  <div class="ft-hero-meta">
+    {{ $tools := (index hugo.Data "toolkit_nav").tools }}
+    <span class="ft-hero-stat">🛠️ {{ len $tools }} free tools</span>
+    <span class="ft-hero-stat">🔒 100% client-side</span>
+    <span class="ft-hero-stat">🚫 No sign-up required</span>
+  </div>
+</header>
 
 <div class="container">
 
@@ -599,7 +603,7 @@
   <div class="free-tools-about">
     <h2>Built with Passion, Shaped by You</h2>
     <p>Every tool here started as a V1 — built with care to solve a real problem. But they can only get better with <strong>your</strong> help. Tell us what's working, what's not, what you'd love to see next, and what improvements would make these tools genuinely useful for your day-to-day work.</p>
-    <p style="margin-top: 0.75rem"><a href="/feedback/" style="color: var(--neon-magenta, #ff66ff); font-weight: 600; text-decoration: underline">Share your feedback →</a> — it takes 30 seconds and shapes what we build next.</p>
+    <p style="margin-top: 0.75rem"><a href="/feedback/">Share your feedback →</a> — it takes 30 seconds and shapes what we build next.</p>
   </div>
 </div>
 

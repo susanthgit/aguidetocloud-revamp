@@ -1,130 +1,203 @@
-/* ── FREE TOOLS / TOOLKIT PAGE ────────────── */
+/* ── FREE TOOLS / TOOLKIT PAGE — Zen Design System ── */
 .ft-category {
   margin-bottom: 2.5rem;
 }
 .ft-cat-title {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 0 0 0.4rem;
+  font-size: var(--text-h3, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1, 4px);
+  letter-spacing: 0;
+  line-height: 1.4;
+  padding-left: var(--space-3, 12px);
+  border-left: 3px solid var(--accent);
 }
 .ft-cat-desc {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1.5;
-  margin: 0 0 1rem;
-  max-width: 700px;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-4, 16px);
+  max-width: var(--max-reading, 720px);
 }
 .free-tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 16px);
 }
 .free-tool-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.6rem 1.5rem;
+  gap: var(--space-3, 12px);
+  padding: var(--space-6, 24px);
   text-decoration: none;
   color: inherit;
-  border-radius: 20px;
-  border: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
-  background:
-    radial-gradient(ellipse at 20% -15%, color-mix(in srgb, var(--card-accent) 45%, transparent) 0%, transparent 55%),
-    #000;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 150ms ease-out, transform 150ms ease-out;
 }
 .free-tool-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--card-accent) 50%, transparent);
-  box-shadow:
-    0 12px 40px color-mix(in srgb, var(--card-accent) 15%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--card-accent) 8%, transparent);
-  background:
-    radial-gradient(ellipse at 20% -15%, color-mix(in srgb, var(--card-accent) 58%, transparent) 0%, transparent 60%),
-    #000;
-  text-shadow: none;
+  border-color: var(--border-emphasis);
+  transform: translateY(-1px);
 }
 .free-tool-icon {
-  font-size: 1.4rem;
+  font-size: var(--text-h3, 1.25rem);
   line-height: 1;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 }
 .free-tool-card h3 {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0;
 }
 .free-tool-head {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.8rem;
+  gap: var(--space-2, 8px);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
   background: var(--bg-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 50px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
   width: fit-content;
 }
 .free-tool-card p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.88rem;
-  line-height: 1.55;
+  color: var(--text-secondary);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.6;
   margin: 0;
   flex-grow: 1;
 }
 .free-tool-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.3rem;
+  gap: var(--space-1, 4px);
+  margin-top: var(--space-1, 4px);
 }
 .free-tool-features span {
-  font-size: 0.72rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--card-accent) 12%, rgba(255,255,255,0.03));
-  border: 1px solid color-mix(in srgb, var(--card-accent) 10%, transparent);
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 600;
+  font-size: var(--text-caption, 0.75rem);
+  padding: var(--space-1, 4px) var(--space-2, 8px);
+  border-radius: var(--radius-sm);
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 .free-tool-cta {
-  color: var(--card-accent);
+  color: var(--accent);
   font-weight: 600;
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
+  font-size: var(--text-sm, 0.875rem);
+  margin-top: var(--space-1, 4px);
   opacity: 0.7;
-  transition: opacity 0.3s;
+  transition: opacity 150ms ease-out;
 }
 .free-tool-card:hover .free-tool-cta {
   opacity: 1;
 }
 .free-tools-about {
   text-align: center;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 1rem;
+  padding: var(--space-8, 32px) 0;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-6, 24px);
 }
 .free-tools-about h2 {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: var(--text-h3, 1.25rem);
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2, 8px);
 }
 .free-tools-about p {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
 }
 .free-tools-about a {
   color: var(--accent);
 }
+
+/* ── Toolkit hero (clean Zen — no page-hero dependency) ── */
+.ft-hero {
+  padding: var(--space-6, 24px) 0 var(--space-6, 24px);
+  margin: 0 0 var(--space-8, 32px);
+  border-bottom: 1px solid var(--border);
+}
+.ft-hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1, 2rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2, 8px);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.ft-hero-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-body, 1rem);
+  line-height: 1.7;
+  margin: 0 0 var(--space-4, 16px);
+  max-width: var(--max-reading, 720px);
+}
+.ft-hero-subtitle a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ft-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+}
+.ft-hero-stat {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.page-free-tools .container {
+  max-width: none;
+  padding: 0;
+}
+/* Override section-prev-next nav (if used elsewhere) */
+.page-free-tools .section-pn {
+  margin-top: var(--space-3, 12px);
+}
+.page-free-tools .section-pn-link {
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.page-free-tools .section-pn-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+/* ── Bottom CTA section ── */
+.free-tools-about a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   .free-tools-grid { grid-template-columns: 1fr; }
-  .free-tool-card { padding: 1.4rem; }
+  .free-tool-card { padding: var(--space-4, 16px); }
+  .ft-hero-title { font-size: 1.5rem; }
+  .ft-hero-meta { gap: var(--space-1, 4px); }
+  .ft-hero-stat { font-size: 0.7rem; padding: 3px var(--space-2, 8px); }
 }

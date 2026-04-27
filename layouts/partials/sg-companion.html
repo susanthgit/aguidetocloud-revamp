@@ -1,24 +1,22 @@
 {{/*
-  tool-companion.html — Right companion sidebar for tool pages.
-  Shows popular tools, recent blog posts, and CTAs.
-
-  Usage: {{ partial "tool-companion.html" . }}
+  sg-companion.html — Right companion sidebar for study guides pages.
+  Shows popular certs, recent blog posts, and CTAs.
 */}}
 
-{{ $currentURL := .RelPermalink }}
-{{ $tools := (index hugo.Data "toolkit_nav").tools }}
+{{ $allCerts := where site.RegularPages "Section" "cert-tracker" }}
 
-{{/* Popular tools — deterministic list (first 6 from toolkit_nav, excluding current) */}}
+{{/* Popular certs — curated top exams */}}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Popular tools</p>
-  {{ $count := 0 }}
-  {{ range $tools }}
-    {{ if and (ne .url $currentURL) (lt $count 5) }}
-      <a href="{{ .url }}" class="zt-companion-link zt-companion-link--inline">
-        <span class="zt-companion-link-tag">{{ .emoji }}</span>
-        <span class="zt-companion-link-title">{{ .name }}</span>
+  <p class="zt-companion-title">Popular exams</p>
+  {{ $popular := slice "AZ-900" "AZ-104" "SC-900" "AI-900" "AZ-305" }}
+  {{ range $code := $popular }}
+    {{ range $allCerts }}
+      {{ if eq .Params.exam_code $code }}
+      <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+        <span class="zt-companion-link-tag">📘</span>
+        <span class="zt-companion-link-title">{{ .Params.exam_code }}</span>
       </a>
-      {{ $count = add $count 1 }}
+      {{ end }}
     {{ end }}
   {{ end }}
 </div>
@@ -39,10 +37,10 @@
 
 {{/* CTAs */}}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Stay updated</p>
+  <p class="zt-companion-title">Study resources</p>
   <div class="zt-companion-cta">
     <a href="/guided/" class="zt-companion-cta-btn">📝 Practice Exams</a>
+    <a href="/cert-compass/" class="zt-companion-cta-btn">🧭 Cert Compass</a>
     <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
-    <a href="/index.xml" class="zt-companion-cta-btn">📡 RSS Feed</a>
   </div>
 </div>

@@ -9,8 +9,12 @@
 {{ $currentVendor := .Params.vendor | default "microsoft" }}
 {{ $currentPermalink := .RelPermalink }}
 {{ $allCerts := where site.RegularPages "Section" "cert-tracker" }}
+{{ $isLanding := eq .RelPermalink "/study-guides/" }}
 
 <nav class="zt-cert-nav" aria-label="Certification navigation">
+
+{{/* Study Guides header link */}}
+<a href="/study-guides/" class="zt-cert-nav-header{{ if $isLanding }} active{{ end }}">📚 All Study Guides</a>
 
 {{ range site.Data.vendors.vendor }}
   {{ $vSlug := .slug }}
@@ -28,7 +32,7 @@
   {{ end }}
 
   {{ if $certs }}
-  <details class="zt-cert-vendor"{{ if $isCurrentVendor }} open{{ end }}>
+  <details class="zt-cert-vendor"{{ if or $isCurrentVendor $isLanding }} open{{ end }}>
     <summary class="zt-cert-vendor-name">
       <span>{{ $vEmoji }} {{ $vName }}</span>
       <span class="zt-cert-vendor-count">{{ len $certs }}</span>
