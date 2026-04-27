@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 14:24:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 17:39:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Azure] Azure incident affecting East US</title>
@@ -27,9 +27,9 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <pubDate>Fri, 24 Apr 2026 15:04:41 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Defender XDR] Admins may encounter delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submissions page</title>
+      <title>[Microsoft Defender XDR] Admins may have encountered delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submission</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1289015</link>
-      <description>[Microsoft Defender XDR] Admins may encounter delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submissions page.</description>
+      <description>[Microsoft Defender XDR] Admins may have encountered delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submission</description>
       <category>Microsoft Defender XDR</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1289015</guid>
