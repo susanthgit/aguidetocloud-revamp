@@ -34,15 +34,6 @@
 
     <h1>{{ .Title }}</h1>
 
-    {{/* Badges: counter + Ko-fi */}}
-    <div class="zt-reading-badges">
-      <div class="tool-counter" data-base="{{ $readBase }}" aria-hidden="true">
-        <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $readBase }}</span>
-        <span class="tool-counter-verb">reads</span>
-      </div>
-      <a href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support on Ko-fi">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Support</a>
-    </div>
-
     {{/* Meta line */}}
     <p class="zt-reading-meta">
       {{ if .Params.card_tag }}<span class="zt-tag">{{ .Params.card_tag }}</span>{{ end }}
@@ -73,10 +64,10 @@
         </div>
 
         {{/* Z23: Warm tint toggle */}}
-        <button aria-label="Toggle warm reading mode" class="zt-toolbar-btn zt-warm-toggle" title="Warm tint">☀️ Warm</button>
+        <button aria-label="Toggle warm reading mode" class="zt-toolbar-btn zt-warm-toggle" title="Warm tint">Warm</button>
 
         {{/* Z24: Focus mode toggle (hidden on mobile via CSS) */}}
-        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Focus</button>
+        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">Focus</button>
       </div>
     </div>
 
@@ -109,7 +100,7 @@
     {{/* Resources */}}
     {{ if .Params.resources }}
     <div class="zt-reading-resources">
-      <h2>{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Resources</h2>
+      <h2>Resources</h2>
       <ul>
         {{ range .Params.resources }}
         <li><a href="{{ .url }}">{{ .name }}</a></li>
@@ -144,7 +135,7 @@
     {{/* Related articles */}}
     <div class="zt-companion-section">
       <p class="zt-companion-title">More articles</p>
-      {{ $related := first 10 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
+      {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
       {{ range $related }}
       <a href="{{ .Permalink }}" class="zt-companion-link">
         <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
@@ -166,4 +157,92 @@
 </div>
 
 <div class="zt-reading-progress" aria-hidden="true"></div>
+
+{{/* Blog enhancements: prompt copy, heading anchors, code copy, TOC highlight */}}
+<script>
+(function(){
+  var body = document.querySelector('.zt-reading-body');
+  if (!body) return;
+
+  // ── 1. Prompt card copy buttons ──
+  document.querySelectorAll('.prompt-cards').forEach(function(card) {
+    var bq = card.querySelector('blockquote');
+    if (!bq) return;
+    var btn = document.createElement('button');
+    btn.className = 'prompt-copy-btn';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy prompt to clipboard');
+    btn.addEventListener('click', function() {
+      var text = bq.innerText.replace(/^\s*Prompt:\s*/i, '').trim();
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = '✓ Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      }).catch(function() {
+        btn.textContent = 'Failed';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+    card.appendChild(btn);
+  });
+
+  // ── 2. Heading anchor links (hover to see #) ──
+  body.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function(h) {
+    var link = document.createElement('a');
+    link.href = '#' + h.id;
+    link.className = 'heading-anchor';
+    link.setAttribute('aria-label', 'Link to this section');
+    link.textContent = '#';
+    h.appendChild(link);
+  });
+
+  // ── 3. Code block copy buttons ──
+  body.querySelectorAll('pre').forEach(function(pre) {
+    var code = pre.querySelector('code');
+    if (!code) return;
+    var btn = document.createElement('button');
+    btn.className = 'code-copy-btn';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy code to clipboard');
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        btn.textContent = '✓ Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      }).catch(function() {
+        btn.textContent = 'Failed';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+
+  // ── 4. TOC active section highlight ──
+  var tocLinks = document.querySelectorAll('.zt-toc a, .zt-toc-mobile a');
+  var headings = [];
+  tocLinks.forEach(function(link) {
+    var id = link.getAttribute('href');
+    if (id && id.startsWith('#')) {
+      var target = document.getElementById(id.substring(1));
+      if (target) headings.push({ el: target, link: link });
+    }
+  });
+
+  if (headings.length > 0) {
+    var activeClass = 'toc-active';
+    function updateTOC() {
+      var scrollPos = window.scrollY + 120;
+      var current = headings[0];
+      for (var i = 0; i < headings.length; i++) {
+        if (headings[i].el.offsetTop <= scrollPos) current = headings[i];
+      }
+      tocLinks.forEach(function(l) { l.classList.remove(activeClass); });
+      if (current) current.link.classList.add(activeClass);
+    }
+    window.addEventListener('scroll', updateTOC, { passive: true });
+    updateTOC();
+  }
+})();
+</script>
 {{ end }}
