@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Apr 2026 17:55:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 19:54:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>
@@ -137,11 +137,11 @@ The issue initially began with impact to a subset of custom</description>
     <item>
       <title>[Exchange Online] Admins' search parameters may be missing after performing a group search in the Exchange admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1279815</link>
-      <description>[Exchange Online] Admins' search parameters may be missing after performing a group search in the Exchange admin center.</description>
+      <description>[Exchange Online] Admins' search parameters may have been missing after performing a group search in the Exchange admin center.</description>
       <category>Exchange Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1279815</guid>
-      <pubDate>Tue, 14 Apr 2026 16:22:39 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2026 11:37:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Admins may be unable to progress mailbox migrations in Exchange Online</title>
