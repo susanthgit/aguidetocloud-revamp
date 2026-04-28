@@ -89,7 +89,7 @@
 }
 .cscomp-dot.green { background: var(--accent); box-shadow: 0 0 8px rgba(34,197,94,0.4); }
 .cscomp-dot.amber { background: #f59e0b; box-shadow: 0 0 8px rgba(245,158,11,0.4); }
-.cscomp-dot.red { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,0.4); }
+.cscomp-dot.red { background: var(--error); box-shadow: 0 0 8px rgba(239,68,68,0.4); }
 
 .cscomp-eval-tip {
   display: none; font-size: 0.75rem; color: var(--text-muted);

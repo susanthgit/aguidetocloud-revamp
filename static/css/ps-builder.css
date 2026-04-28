@@ -84,8 +84,8 @@
 }
 .psb-badge-service { background: var(--accent-subtle); color: var(--accent); }
 .psb-badge-beginner { background: var(--accent-subtle); color: var(--accent); }
-.psb-badge-intermediate { background: rgba(234, 179, 8, 0.15); color: var(--text-primary); }
-.psb-badge-advanced { background: rgba(239, 68, 68, 0.15); color: var(--text-primary); }
+.psb-badge-intermediate { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--text-primary); }
+.psb-badge-advanced { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--text-primary); }
 .psb-recipe-desc { padding: 0 1.25rem 0.75rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
 
 .psb-recipe-detail { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); display: none; }
@@ -440,7 +440,7 @@ details.psb-history > .psb-btn-text { margin: 0 1.25rem 0.75rem; }
 
 /* ═══════ C3 COMMON MISTAKES ═══════ */
 .psb-recipe-mistake {
-  background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--error) 10%, transparent); border-left: 3px solid var(--error); border-radius: 0 6px 6px 0;
   padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.5;
 }
 .psb-recipe-mistake strong { color: var(--text-primary); }

@@ -34,17 +34,17 @@
 .instruct-input::placeholder{color:var(--text-muted)}
 textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-select option{background: var(--bg-surface);color: var(--text-primary)}
-.instruct-input.instruct-error{border-color:#f87171;animation:instruct-shake .4s ease}
+.instruct-input.instruct-error{border-color:var(--error);animation:instruct-shake .4s ease}
 @keyframes instruct-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
 /* Tone pills */
 .instruct-tone-group{display:flex;flex-wrap:wrap;gap:.35rem}
 .instruct-tone-pill{cursor:pointer}
 .instruct-tone-pill input{display:none}
-.instruct-tone-pill span{display:inline-block;padding:.4rem .9rem;border-radius: var(--radius-lg, 16px);font-size:.8rem;font-weight:600;color:var(--text-tertiary);background:var(--bg-elevated);border:1px solid var(--border);transition:all .2s}
+.instruct-tone-pill span{display:inline-block;padding:.4rem .9rem;border-radius: var(--radius-lg, 16px);font-size:.8rem;font-weight:600;color:var(--text-tertiary);background:var(--bg-elevated);border:1px solid var(--border);transition:color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out}
 .instruct-tone-pill:hover span{color: var(--text-primary);background:var(--bg-elevated)}
 .instruct-tone-pill input:checked+span{color:var(--accent-foreground);background:var(--instruct-accent);border-color:var(--instruct-accent);box-shadow:0 2px 8px var(--accent-subtle)}
-.instruct-tone-desc{margin-top:.35rem;font-size:.75rem;color:var(--text-muted);font-style:italic;min-height:1.1em;transition:all .2s}
+.instruct-tone-desc{margin-top:.35rem;font-size:.75rem;color:var(--text-muted);font-style:italic;min-height:1.1em;transition:color .2s ease-out, opacity .2s ease-out}
 
 /* Section toggles */
 .instruct-section-toggle{background:var(--instruct-glass);border:1px solid var(--instruct-border);border-radius:10px;margin-bottom:1rem;overflow:hidden}
@@ -123,7 +123,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-starters{margin-top:.75rem;padding:.75rem;background:var(--accent-subtle);border:1px solid var(--accent-subtle);border-radius:10px}
 .instruct-starters h4{color:var(--instruct-accent);font-size:.82rem;margin:0 0 .5rem}
 .instruct-starters-list{display:flex;flex-direction:column;gap:.3rem}
-.instruct-starter-item{display:flex;align-items:center;gap:.4rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:.4rem .65rem;color:var(--text-secondary);font-size:.8rem;cursor:pointer;transition:all .2s}
+.instruct-starter-item{display:flex;align-items:center;gap:.4rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:.4rem .65rem;color:var(--text-secondary);font-size:.8rem;cursor:pointer;transition:color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out}
 .instruct-starter-item:hover{background:var(--accent-subtle);border-color:var(--accent-subtle);color: var(--text-primary)}
 .instruct-starter-item .copy-icon{margin-left:auto;opacity:.3;font-size:.7rem;flex-shrink:0}
 .instruct-starter-item:hover .copy-icon{opacity:.7}
@@ -140,7 +140,7 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .instruct-drawer-header h4{color: var(--text-primary);margin:0;font-size:.92rem}
 .instruct-drawer-body{max-height:300px;overflow-y:auto}
-.instruct-history-item{display:flex;align-items:center;gap:.6rem;padding:.5rem;background:var(--bg-elevated);border-radius:8px;margin-bottom:.4rem;cursor:pointer;transition:all .2s}
+.instruct-history-item{display:flex;align-items:center;gap:.6rem;padding:.5rem;background:var(--bg-elevated);border-radius:8px;margin-bottom:.4rem;cursor:pointer;transition:color .2s ease-out, background-color .2s ease-out}
 .instruct-history-item:hover{background:var(--accent-subtle)}
 .instruct-history-meta{flex:1;min-width:0}
 .instruct-history-platform{font-size:.78rem;font-weight:600;color:var(--text-secondary)}

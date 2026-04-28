@@ -171,14 +171,14 @@
   border-radius: 50%;
   background: var(--palette-accent);
   cursor: pointer;
-  border: 2px solid #fff;
+  border: 2px solid var(--accent-foreground);
 }
 .palette-slider::-moz-range-thumb {
   width: 18px; height: 18px;
   border-radius: 50%;
   background: var(--palette-accent);
   cursor: pointer;
-  border: 2px solid #fff;
+  border: 2px solid var(--accent-foreground);
 }
 
 .palette-hidden { display: none !important; }

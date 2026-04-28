@@ -159,7 +159,7 @@
 }
 .acro-timer-fill {
   height: 100%; width: 100%; border-radius: 2px;
-  background: linear-gradient(90deg, var(--acro-accent), #E74C3C);
+  background: linear-gradient(90deg, var(--acro-accent), var(--error));
 }
 .acro-learn-answer {
   text-align: center; padding: 1.5rem;
@@ -174,8 +174,8 @@
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; text-align: left;
 }
 .acro-option:hover { background: var(--border); border-color: var(--border-emphasis); color: var(--text-primary); }
-.acro-option.correct { background: rgba(46,204,113,0.2); border-color: #2ECC71; color: #2ECC71; }
-.acro-option.wrong { background: rgba(231,76,60,0.2); border-color: #E74C3C; color: var(--text-primary); }
+.acro-option.correct { background: color-mix(in srgb, var(--success) 20%, transparent); border-color: var(--success); color: var(--success); }
+.acro-option.wrong { background: rgba(231,76,60,0.2); border-color: var(--error); color: var(--text-primary); }
 .acro-option.disabled { pointer-events: none; opacity: 0.5; }
 
 /* ── Feedback ─────────────────────────────────────────────────────────────── */

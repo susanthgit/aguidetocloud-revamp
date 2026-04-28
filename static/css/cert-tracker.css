@@ -593,8 +593,8 @@
 .cert-badge-upcoming { background: rgba(59, 130, 246, 0.15); color: var(--badge-blue); }
 
 /* Status card overlay */
-.cert-card-retiring { border-left: 3px solid #F59E0B; }
-.cert-card-retired { opacity: 0.7; border-left: 3px solid #EF4444; }
+.cert-card-retiring { border-left: 3px solid var(--warning); }
+.cert-card-retired { opacity: 0.7; border-left: 3px solid var(--error); }
 .cert-card-beta { border-left: 3px solid #8B5CF6; }
 
 /* ── Single exam page — Product Layout ── */
@@ -1270,7 +1270,7 @@ details[open] > .cert-curriculum-domain-title .cert-curriculum-chevron {
 .kanban-header-cat { text-align: left; color: var(--text-secondary); font-size: 0.8rem; }
 .kanban-header-fund { color: var(--accent); border-bottom-color: var(--accent); }
 .kanban-header-assoc { color: var(--accent); border-bottom-color: var(--accent); }
-.kanban-header-expert { color: var(--text-primary); border-bottom-color: #F59E0B; }
+.kanban-header-expert { color: var(--text-primary); border-bottom-color: var(--warning); }
 
 .kanban-lane-label {
   padding: 0.75rem 0.5rem;
@@ -1306,7 +1306,7 @@ details[open] > .cert-curriculum-domain-title .cert-curriculum-chevron {
 .kanban-row-power .kanban-card-code { color: #A855F7; }
 .kanban-row-d365 .kanban-card-code { color: var(--accent); }
 
-.kanban-card-retiring { border-left: 3px solid #F59E0B; }
+.kanban-card-retiring { border-left: 3px solid var(--warning); }
 .kanban-card-retired { opacity: 0.45; }
 .kanban-card-beta { border-left: 3px solid #8B5CF6; border-left-style: dashed; }
 

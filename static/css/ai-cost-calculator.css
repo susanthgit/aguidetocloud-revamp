@@ -124,9 +124,9 @@
   gap: 0.6rem;
   align-items: flex-start;
   padding: 0.75rem 1rem;
-  background: rgba(245, 158, 11, 0.06);
-  border: 1px solid rgba(245, 158, 11, 0.15);
-  border-left: 3px solid #F59E0B;
+  background: color-mix(in srgb, var(--warning) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warning) 15%, transparent);
+  border-left: 3px solid var(--warning);
   border-radius: 0 10px 10px 0;
   margin-bottom: 0.5rem;
   font-size: 0.82rem;
@@ -548,8 +548,8 @@
   letter-spacing: 0.02em;
 }
 .aicost-badge-green { background: var(--accent-subtle); color: var(--aicost-green); }
-.aicost-badge-amber { background: rgba(245, 158, 11, 0.15); color: var(--aicost-amber); }
-.aicost-badge-red { background: rgba(239, 68, 68, 0.15); color: var(--aicost-red); }
+.aicost-badge-amber { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--aicost-amber); }
+.aicost-badge-red { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--aicost-red); }
 
 /* ── Scenario Columns ── */
 .aicost-scenarios {

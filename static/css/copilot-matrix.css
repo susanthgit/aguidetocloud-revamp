@@ -397,8 +397,8 @@
 .cpmatrix-tier-note {
   margin-top: 0.75rem;
   padding: 0.5rem 0.75rem;
-  background: rgba(239, 68, 68, 0.1);
-  border-left: 3px solid #ef4444;
+  background: color-mix(in srgb, var(--error) 10%, transparent);
+  border-left: 3px solid var(--error);
   border-radius: 4px;
   font-size: 0.78rem;
   color: var(--text-primary);
@@ -472,7 +472,7 @@
 }
 
 .cpmatrix-timeline-item[data-impact="high"]::before {
-  background: #ef4444;
+  background: var(--error);
 }
 
 .cpmatrix-timeline-date {

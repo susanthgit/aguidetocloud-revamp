@@ -118,9 +118,9 @@ body { background: var(--bg-page) !important; }
   padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase;
   flex-shrink: 0; margin-top: 0.15rem;
 }
-.cc-action-high .cc-action-tag { background: var(--cc-red); color: #000; }
-.cc-action-medium .cc-action-tag { background: var(--cc-amber); color: #000; }
-.cc-action-low .cc-action-tag { background: var(--cc-green); color: #000; }
+.cc-action-high .cc-action-tag { background: var(--cc-red); color: var(--bg-page); }
+.cc-action-medium .cc-action-tag { background: var(--cc-amber); color: var(--bg-page); }
+.cc-action-low .cc-action-tag { background: var(--cc-green); color: var(--bg-page); }
 
 /* Working/Fixing items */
 .cc-item {
@@ -239,7 +239,7 @@ body { background: var(--bg-page) !important; }
 .cc-welcome-item strong { color: var(--text-primary); display: block; margin-bottom: 0.2rem; }
 .cc-welcome-key {
   display: inline-block; font-family: var(--cc-mono); font-weight: 700; font-size: 0.72rem;
-  background: var(--cc-green); color: #000; width: 22px; height: 22px; line-height: 22px;
+  background: var(--cc-green); color: var(--bg-page); width: 22px; height: 22px; line-height: 22px;
   text-align: center; border-radius: 4px; margin-right: 0.4rem; vertical-align: middle;
 }
 .cc-welcome-tip { color: var(--text-muted); font-size: 0.78rem; margin: 0 0 1.25rem; }
@@ -295,7 +295,7 @@ body { background: var(--bg-page) !important; }
 .cc-routine-step { font-family: var(--cc-mono); font-weight: 700; color: var(--cc-green); font-size: 0.78rem; white-space: nowrap; }
 .cc-routine-text { flex: 1; color: var(--text-primary); }
 .cc-routine-next {
-  background: var(--cc-green); border: none; color: #000; font-weight: 700; font-family: var(--cc-mono);
+  background: var(--cc-green); border: none; color: var(--bg-page); font-weight: 700; font-family: var(--cc-mono);
   font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 5px; cursor: pointer; white-space: nowrap;
 }
 .cc-routine-skip { background: none; border: none; color: var(--text-muted); font-size: 1.1rem; cursor: pointer; padding: 0; }

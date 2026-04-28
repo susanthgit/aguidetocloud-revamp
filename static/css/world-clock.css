@@ -550,7 +550,7 @@
 }
 .wclk-hours-edit:hover {
   color: var(--text-primary);
-  border-bottom-color: #fff;
+  border-bottom-color: var(--text-primary);
 }
 
 /* Compromise slots */

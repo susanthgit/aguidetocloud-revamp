@@ -592,15 +592,15 @@
 .ainews-why {
   font-size: 0.9rem;
   color: var(--text-primary);
-  background: rgba(57, 255, 20, 0.06);
-  border-left: 4px solid #39ff14;
+  background: color-mix(in srgb, var(--success) 6%, transparent);
+  border-left: 4px solid var(--success);
   padding: 0.7rem 1rem;
   border-radius: 0 8px 8px 0;
   line-height: 1.6;
   margin-top: 0.3rem;
 }
 .ainews-why strong {
-  color: #39ff14;
+  color: var(--success);
   font-weight: 800;
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -618,7 +618,7 @@
 }
 /* Deep dive cards — magenta */
 .ainews-deepdive-grid .ainews-why {
-  background: rgba(255, 0, 255, 0.06);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
   border-left-color: #9333EA;
 }
 .ainews-deepdive-grid .ainews-why strong {
@@ -645,7 +645,7 @@
 }
 .ainews-quick-item:hover {
   border-color: #B45309;
-  background: rgba(255, 215, 0, 0.03);
+  background: color-mix(in srgb, var(--warning) 3%, transparent);
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.25), 0 0 25px rgba(255, 215, 0, 0.1);
 }
@@ -1054,7 +1054,7 @@
 /* ── AI NEWS: NEW BADGE ─────────────────── */
 .ainews-new-badge {
   display: inline-block;
-  background: #ff00ff;
+  background: var(--accent);
   color: var(--text-primary);
   font-size: 0.6rem;
   font-weight: 800;

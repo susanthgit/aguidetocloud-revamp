@@ -184,7 +184,7 @@
 }
 .itday-score-change.positive {
   background: rgba(76,175,80,0.15);
-  color: #66BB6A;
+  color: var(--success);
 }
 .itday-score-change.negative {
   background: rgba(239,83,80,0.15);
@@ -349,7 +349,7 @@
   border: 1px solid var(--border); border-radius: 10px;
 }
 .itday-lstat { text-align: center; min-width: 55px; }
-.itday-lstat-num { display: block; font-size: 1rem; font-weight: 700; color: #C27BA0; }
+.itday-lstat-num { display: block; font-size: 1rem; font-weight: 700; color: var(--accent); }
 .itday-lstat-label { display: block; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 .itday-lobby-heading { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem; font-weight: 500; }
 .itday-lobby-modes {
@@ -377,15 +377,15 @@
   box-shadow: 0 8px 24px rgba(194,123,160,0.12);
 }
 .itday-lobby-card:active { transform: translateY(0); }
-.itday-lobby-card:focus-visible { outline: 2px solid #C27BA0; outline-offset: 2px; }
+.itday-lobby-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .itday-lc-icon { font-size: 1.8rem; margin-bottom: 0.4rem; position: relative; }
 .itday-lc-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; position: relative; }
 .itday-lc-desc { font-size: 0.73rem; color: var(--text-secondary); line-height: 1.4; position: relative; }
-.itday-lc-time { margin-top: 0.4rem; font-size: var(--text-caption, 0.75rem); color: #C27BA0; font-weight: 600; position: relative; }
+.itday-lc-time { margin-top: 0.4rem; font-size: var(--text-caption, 0.75rem); color: var(--accent); font-weight: 600; position: relative; }
 .itday-lc-featured { border-color: rgba(194,123,160,0.25); }
 .itday-lc-badge {
   position: absolute; top: 0.5rem; right: 0.5rem; font-size: var(--text-caption, 0.75rem); font-weight: 700;
-  text-transform: uppercase; background: #C27BA0; color: var(--text-primary);
+  text-transform: uppercase; background: var(--accent); color: var(--text-primary);
   padding: 0.15rem 0.5rem; border-radius: var(--radius-lg, 16px); letter-spacing: 0.5px; z-index: 1;
 }
 .itday-lobby-source { font-size: 0.72rem; color: var(--text-muted); }

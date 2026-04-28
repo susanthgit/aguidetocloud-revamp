@@ -61,7 +61,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #EF4444;
+  background: var(--error);
   color: var(--text-primary);
   font-size: var(--text-caption, 0.75rem);
   font-weight: 700;
@@ -292,7 +292,7 @@
   background: var(--bg-elevated);
   color: var(--text-secondary);
 }
-.pvs-label-badge--encrypt { background: rgba(239,68,68,0.15); color: var(--text-primary); }
+.pvs-label-badge--encrypt { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--text-primary); }
 .pvs-label-badge--mark { background: rgba(96,165,250,0.15); color: var(--accent); }
 .pvs-label-badge--auto { background: rgba(132,204,22,0.15); color: var(--accent); }
 
@@ -301,7 +301,7 @@
 .pvs-label-colour-blue { border-color: var(--accent); }
 .pvs-label-colour-yellow { border-color: var(--accent); }
 .pvs-label-colour-orange { border-color: var(--accent); }
-.pvs-label-colour-red { border-color: #F87171; }
+.pvs-label-colour-red { border-color: var(--error); }
 .pvs-label-colour-purple { border-color: var(--accent); }
 
 /* ── DLP rules list ── */
@@ -327,7 +327,7 @@
   text-transform: uppercase;
   flex-shrink: 0;
 }
-.pvs-dlp-action--block { background: rgba(239,68,68,0.2); color: var(--text-primary); }
+.pvs-dlp-action--block { background: color-mix(in srgb, var(--error) 20%, transparent); color: var(--text-primary); }
 .pvs-dlp-action--warn { background: rgba(251,191,36,0.2); color: var(--text-primary); }
 .pvs-dlp-action--log { background: rgba(96,165,250,0.2); color: var(--accent); }
 .pvs-dlp-action--label { background: rgba(132,204,22,0.2); color: var(--accent); }
@@ -717,7 +717,7 @@
   font-family: inherit;
 }
 .pvs-lb-card-btn:hover { background: var(--border); color: var(--text-primary); }
-.pvs-lb-card-btn--del:hover { background: rgba(239,68,68,0.2); color: var(--text-primary); }
+.pvs-lb-card-btn--del:hover { background: color-mix(in srgb, var(--error) 20%, transparent); color: var(--text-primary); }
 
 .pvs-lb-deploy-cta { margin-top: 1rem; }
 
@@ -774,7 +774,7 @@
 .pvs-lb-ribbon-dot--blue { background: var(--accent); }
 .pvs-lb-ribbon-dot--yellow { background: var(--accent); }
 .pvs-lb-ribbon-dot--orange { background: var(--accent); }
-.pvs-lb-ribbon-dot--red { background: #F87171; }
+.pvs-lb-ribbon-dot--red { background: var(--error); }
 .pvs-lb-ribbon-dot--purple { background: var(--accent); }
 
 /* Modal */
@@ -903,7 +903,7 @@
   transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 .pvs-lb-colour-btn:hover { transform: scale(1.15); }
-.pvs-lb-colour-btn.active { border-color: #fff; box-shadow: 0 0 8px var(--border-emphasis); }
+.pvs-lb-colour-btn.active { border-color: var(--border-emphasis); box-shadow: 0 0 8px var(--border-emphasis); }
 
 /* ═══ DLP SCENARIOS (Phase 2) ═══ */
 .pvs-dlp-summary {
@@ -1263,7 +1263,7 @@
   border: 1px solid var(--border);
 }
 .pvs-whatif-col h4 { color: var(--text-primary); font-size: 0.9rem; margin: 0 0 0.5rem; }
-.pvs-whatif-lost { border-color: rgba(239,68,68,0.2); }
+.pvs-whatif-lost { border-color: color-mix(in srgb, var(--error) 20%, transparent); }
 .pvs-whatif-kept { border-color: rgba(var(--pvs-accent-rgb), 0.2); }
 .pvs-whatif-item {
   display: flex;

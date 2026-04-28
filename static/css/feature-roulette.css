@@ -37,8 +37,8 @@
   background: var(--roulette-accent); color: var(--accent-foreground, #fff); border-color: var(--roulette-accent); font-weight: 700;
 }
 .roulette-btn-primary:hover { box-shadow: 0 2px 12px rgba(243,156,18,0.4); }
-.roulette-btn-knew { border-color: #2ECC71; color: #2ECC71; }
-.roulette-btn-knew:hover { background: rgba(46,204,113,0.15); }
+.roulette-btn-knew { border-color: var(--success); color: var(--success); }
+.roulette-btn-knew:hover { background: color-mix(in srgb, var(--success) 15%, transparent); }
 .roulette-btn-new { border-color: var(--roulette-accent); color: var(--roulette-accent); }
 .roulette-btn-new:hover { background: rgba(243,156,18,0.15); }
 .roulette-select {

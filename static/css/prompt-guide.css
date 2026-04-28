@@ -766,7 +766,7 @@
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-lg, 16px);
   font-size: 0.85rem;
-  color: #A3E635;
+  color: var(--success);
 }
 .pguide-hero-step b { color: var(--text-primary); }
 .pguide-hero-sep { color: var(--text-muted); font-size: 0.9rem; }

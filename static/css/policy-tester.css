@@ -246,7 +246,7 @@
   color: var(--text-primary);
   line-height: 1.5;
 }
-.ptester-rec-critical { border-left: 3px solid #ef4444; }
+.ptester-rec-critical { border-left: 3px solid var(--error); }
 .ptester-rec-warning  { border-left: 3px solid var(--accent); }
 .ptester-rec-info     { border-left: 3px solid var(--accent); }
 .ptester-rec-success  { border-left: 3px solid var(--accent); }
@@ -273,7 +273,7 @@
 }
 .ptester-cell-pass {
   background: rgba(76,175,80,0.15);
-  color: #66BB6A;
+  color: var(--success);
   border-radius: 4px;
 }
 .ptester-cell-partial {

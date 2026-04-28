@@ -263,7 +263,7 @@
   box-shadow: 0 0 0 3px var(--sectool-accent-dim);
 }
 .sectool-form-group select option { background: var(--bg-surface); color: var(--text-primary); }
-.sectool-input-error { border-color: #EF4444 !important; }
+.sectool-input-error { border-color: var(--error) !important; }
 .sectool-validation-msg {
   display: block; font-size: 0.75rem; color: var(--text-primary);
   margin-top: 0.3rem;
@@ -380,7 +380,7 @@
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: var(--radius-md, 10px); padding: 1.25rem; border-left: 4px solid;
 }
-.sectool-action-card.critical { border-left-color: #EF4444; }
+.sectool-action-card.critical { border-left-color: var(--error); }
 .sectool-action-card.high { border-left-color: var(--accent); }
 .sectool-action-card.medium { border-left-color: var(--accent); }
 .sectool-action-card.low { border-left-color: var(--accent); }
