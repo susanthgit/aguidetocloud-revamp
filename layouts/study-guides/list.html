@@ -15,18 +15,19 @@
   {{/* ── CENTER: Study guides content ── */}}
   <div class="zt-reading-content zt-sg-landing">
 
-    {{/* Hero section — left-aligned Zen style */}}
-    <header class="ft-hero">
-      <h1 class="ft-hero-title">Study Guides</h1>
-      <p class="ft-hero-subtitle">
-        Some of these I wrote while studying for the exam myself. Others I built because people kept asking. Each one goes objective by objective, linked to the official docs. <strong>{{ len $certPages }} guides</strong> across {{ len $vendors }} vendors — if anything's out of date or wrong, <a href="/feedback/">let me know</a>.
-      </p>
-      <div class="ft-hero-meta">
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} {{ len $certPages }} study guides</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} {{ len $vendors }} vendors</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Linked to official resources</span>
+    {{/* Compact header */}}
+    <header class="zt-blog-header">
+      <div class="zt-blog-header-row">
+        <h1 class="zt-blog-header-title">Study Guides</h1>
+        <span class="zt-blog-header-count">{{ len $certPages }} guides</span>
       </div>
+      <p class="zt-blog-header-desc">Objective-by-objective, linked to official docs. <a href="/feedback/">Report issues</a>.</p>
     </header>
+
+    {{/* Search */}}
+    <div class="zt-sg-search-wrap">
+      <input type="search" class="zt-sg-search" id="sg-search" placeholder="Search guides... (e.g. AZ-104, security, Azure)" aria-label="Search study guides">
+    </div>
 
     {{/* Vendor sections */}}
     {{ range $vendors }}
@@ -45,7 +46,7 @@
       {{ if $vCerts }}
       <section class="zt-sg-vendor" id="vendor-{{ $vSlug }}">
         <div class="zt-sg-vendor-header">
-          <h2 class="zt-sg-vendor-title">{{ partial "icon.html" (dict "name" (printf "vendor-%s" $vSlug) "size" 16 "stroke" 1.5 "fallback" $vEmoji) }} {{ $vName }}</h2>
+          <h2 class="zt-sg-vendor-title">{{ $vName }}</h2>
           <span class="zt-sg-vendor-count-badge">{{ len $vCerts }} guides</span>
         </div>
 
@@ -72,9 +73,9 @@
                     </span>
                   </div>
                   <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
-                  {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }} Retiring</span>{{ end }}
-                  {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }} Beta</span>{{ end }}
-                  {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }} Upcoming</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag zt-sg-card-flag--retiring">Retiring</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag zt-sg-card-flag--beta">Beta</span>{{ end }}
+                  {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag zt-sg-card-flag--upcoming">Upcoming</span>{{ end }}
                 </a>
                 {{ end }}
               </div>
@@ -93,9 +94,9 @@
                 </span>
               </div>
               <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
-              {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 12 "stroke" 1.5 "label" "Retiring") }} Retiring</span>{{ end }}
-              {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "flask" "size" 12 "stroke" 1.5 "label" "Beta") }} Beta</span>{{ end }}
-              {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag">{{ partial "icon.html" (dict "name" "clock" "size" 12 "stroke" 1.5 "label" "Upcoming") }} Upcoming</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "retiring" }}<span class="zt-sg-card-flag zt-sg-card-flag--retiring">Retiring</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "beta" }}<span class="zt-sg-card-flag zt-sg-card-flag--beta">Beta</span>{{ end }}
+              {{ if eq (.Params.exam_status | default "active") "upcoming" }}<span class="zt-sg-card-flag zt-sg-card-flag--upcoming">Upcoming</span>{{ end }}
             </a>
             {{ end }}
           </div>
@@ -112,6 +113,35 @@
   </aside>
 
 </div>
+
+</div>
+
+<script>
+(function(){
+  var input = document.getElementById('sg-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-sg-card');
+  var categories = document.querySelectorAll('.zt-sg-category');
+  var vendors = document.querySelectorAll('.zt-sg-vendor');
+
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    cards.forEach(function(card) {
+      var code = (card.dataset.code || '').toLowerCase();
+      var title = (card.dataset.title || '').toLowerCase();
+      card.style.display = (!q || code.indexOf(q) !== -1 || title.indexOf(q) !== -1) ? '' : 'none';
+    });
+    categories.forEach(function(cat) {
+      var visible = cat.querySelectorAll('.zt-sg-card:not([style*="display: none"])').length;
+      cat.style.display = visible ? '' : 'none';
+    });
+    vendors.forEach(function(v) {
+      var visible = v.querySelectorAll('.zt-sg-card:not([style*="display: none"])').length;
+      v.style.display = visible ? '' : 'none';
+    });
+  });
+})();
+</script>
 
 <script type="application/ld+json">
 {
