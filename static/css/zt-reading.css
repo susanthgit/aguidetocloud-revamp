@@ -3171,6 +3171,11 @@
 .zt-lic-landing {
   padding-bottom: var(--space-16, 64px);
 }
+@media (max-width: 1024px) {
+  .zt-lic-landing {
+    padding: var(--space-4, 16px) var(--space-4, 16px) var(--space-12, 48px);
+  }
+}
 
 /* Category quick-jump pills */
 .zt-lic-pills {
@@ -3228,7 +3233,7 @@
 
 .zt-lic-cat-title {
   font-size: var(--text-h3, 1.25rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary, #1A1A1A);
   margin: 0;
 }
@@ -3246,9 +3251,6 @@
   font-size: var(--text-caption, 0.75rem);
   font-weight: 500;
   color: var(--text-muted, #737373);
-  background: var(--bg-elevated, #F5F5F5);
-  padding: 2px var(--space-2, 8px);
-  border-radius: var(--radius-full, 9999px);
 }
 
 .zt-lic-grid {
@@ -3266,43 +3268,63 @@
   border: 1px solid var(--border, #E5E5E5);
   border-radius: var(--radius-md, 10px);
   text-decoration: none;
-  transition: border-color var(--transition, 150ms ease-out), transform var(--transition, 150ms ease-out);
+  transition: border-color var(--transition, 150ms ease-out);
 }
 
 .zt-lic-card:hover {
   border-color: var(--accent, #818CF8);
-  transform: translateY(-1px);
 }
 
-.zt-lic-card-top {
+.zt-lic-card-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: var(--space-2, 8px);
 }
 
+.zt-lic-card-value {
+  font-size: var(--text-caption, 0.75rem);
+  white-space: nowrap;
+}
+
 .zt-lic-card-price {
-  font-size: var(--text-sm, 0.875rem);
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--success, #10B981);
+}
+
+.zt-lic-card-price--free {
+  font-weight: 600;
   color: var(--accent, #818CF8);
 }
 
 .zt-lic-card-badge {
-  font-size: 0.625rem;
+  display: inline-block;
+  font-size: 0.6rem;
   font-weight: 600;
-  color: var(--accent, #818CF8);
-  background: var(--accent-subtle, rgba(99,102,241,0.1));
   padding: 1px var(--space-2, 8px);
   border-radius: var(--radius-full, 9999px);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 120px;
+  margin-top: var(--space-1, 4px);
+}
+.zt-lic-badge--popular {
+  color: var(--accent, #818CF8);
+  background: var(--accent-subtle, rgba(99,102,241,0.08));
+  border: 1px solid rgba(99,102,241,0.3);
+}
+.zt-lic-badge--value {
+  color: var(--success, #10B981);
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+.zt-lic-badge--coming {
+  color: #F59E0B;
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.3);
 }
 
 .zt-lic-card-name {
   font-size: var(--text-sm, 0.875rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary, #1A1A1A);
   line-height: 1.3;
 }

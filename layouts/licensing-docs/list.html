@@ -31,30 +31,30 @@
   {{/* ── CENTER: Landing page content ── */}}
   <div class="zt-reading-content zt-lic-landing">
 
-    {{/* Hero */}}
-    <header class="ft-hero">
-      <h1 class="ft-hero-title">M365 Licensing Guides</h1>
-      <p class="ft-hero-subtitle">
-        Microsoft licensing is confusing — I know because I explain it to customers all the time. These guides break down <strong>{{ len $allPlans }} plans</strong> in plain English, with pricing and honest recommendations. Spot something wrong? <a href="/feedback/">Let me know</a>.
-      </p>
-      <div class="ft-hero-meta">
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} {{ len $allPlans }} plan guides</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }} {{ len $categories }} categories</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} USD pricing included</span>
+    {{/* Compact header */}}
+    <header class="zt-blog-header">
+      <div class="zt-blog-header-row">
+        <h1 class="zt-blog-header-title">M365 Licensing Guides</h1>
+        <span class="zt-blog-header-count">{{ len $allPlans }} plans</span>
       </div>
+      <p class="zt-blog-header-desc">Every plan in plain English, with pricing. <a href="/feedback/">Report issues</a>.</p>
     </header>
+
+    {{/* Search */}}
+    <div class="zt-sg-search-wrap">
+      <input type="search" class="zt-sg-search" id="lic-search" placeholder="Search plans... (e.g. E5, Business, Copilot)" aria-label="Search licensing guides">
+    </div>
 
     {{/* Category quick-jump pills */}}
     <nav class="zt-lic-pills" aria-label="Jump to category">
       {{ range $cat := $categories }}
         {{ $catName := $cat.name }}
-        {{ $catEmoji := $cat.emoji }}
         {{ $catPlans := slice }}
         {{ range $allPlans }}
           {{ if eq .Params.plan_category $catName }}{{ $catPlans = $catPlans | append . }}{{ end }}
         {{ end }}
         {{ if $catPlans }}
-        <a href="#cat-{{ $catName | urlize }}" class="zt-lic-pill">{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</a>
+        <a href="#cat-{{ $catName | urlize }}" class="zt-lic-pill">{{ $catName }}</a>
         {{ end }}
       {{ end }}
     </nav>
@@ -62,7 +62,6 @@
     {{/* Category sections */}}
     {{ range $cat := $categories }}
       {{ $catName := $cat.name }}
-      {{ $catEmoji := $cat.emoji }}
 
       {{ $catPlans := slice }}
       {{ range $allPlans }}
@@ -74,18 +73,18 @@
       {{ if $catPlans }}
       <section class="zt-lic-cat-section" id="cat-{{ $catName | urlize }}" data-category="{{ $catName }}">
         <div class="zt-lic-cat-header">
-          <h2 class="zt-lic-cat-title">{{ partial "icon.html" (dict "name" $cat.icon "size" 16 "stroke" 1.5 "fallback" $catEmoji) }} {{ $catName }}</h2>
+          <h2 class="zt-lic-cat-title">{{ $catName }}</h2>
           <span class="zt-lic-cat-count">{{ len $catPlans }} plans</span>
         </div>
         <div class="zt-lic-grid">
           {{ range sort $catPlans "Params.plan_name" }}
           <a href="{{ .RelPermalink }}" class="zt-lic-card" data-plan="{{ .Params.plan_name }}" data-category="{{ .Params.plan_category }}">
-            <div class="zt-lic-card-top">
-              <span class="zt-lic-card-price">{{ if eq .Params.price 0 }}Free{{ else }}${{ .Params.price }}/mo{{ end }}</span>
-              {{ with .Params.badge }}<span class="zt-lic-card-badge">{{ . }}</span>{{ end }}
+            <div class="zt-lic-card-row">
+              <span class="zt-lic-card-name">{{ .Params.plan_name }}</span>
+              <span class="zt-lic-card-value">{{ if eq .Params.price 0 }}<span class="zt-lic-card-price--free">Free</span>{{ else }}<span class="zt-lic-card-price">${{ .Params.price }}/mo</span>{{ end }}</span>
             </div>
-            <span class="zt-lic-card-name">{{ .Params.plan_name }}</span>
             {{ with .Params.tagline }}<span class="zt-lic-card-tagline">{{ . | truncate 80 }}</span>{{ end }}
+            {{ with .Params.badge }}<span class="zt-lic-card-badge{{ if (findRE `(?i)popular|favourite` .) }} zt-lic-badge--popular{{ else if (findRE `(?i)best value` .) }} zt-lic-badge--value{{ else if (findRE `(?i)coming` .) }} zt-lic-badge--coming{{ end }}">{{ . }}</span>{{ end }}
           </a>
           {{ end }}
         </div>
@@ -140,6 +139,27 @@
   </aside>
 
 </div>
+
+<script>
+(function(){
+  var input = document.getElementById('lic-search');
+  if (!input) return;
+  var cards = document.querySelectorAll('.zt-lic-card');
+  var sections = document.querySelectorAll('.zt-lic-cat-section');
+
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    cards.forEach(function(c) {
+      var text = ((c.dataset.plan || '') + ' ' + (c.dataset.category || '')).toLowerCase();
+      c.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+    });
+    sections.forEach(function(s) {
+      var visible = s.querySelectorAll('.zt-lic-card:not([style*="display: none"])').length;
+      s.style.display = visible ? '' : 'none';
+    });
+  });
+})();
+</script>
 
 {{/* SEO: CollectionPage JSON-LD */}}
 <script type="application/ld+json">
