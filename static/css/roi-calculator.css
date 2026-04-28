@@ -1,12 +1,12 @@
 /* ── Copilot ROI Calculator ──
-   Accent: Teal #14B8A6
+   Zen Design System — uses design tokens only
    Namespace: .roi-*
 */
 
 .roi-page {
-  --roi-red: #ef4444;
-  --roi-yellow: #eab308;
-  --roi-green: #22c55e;
+  /* Zen: removed --roi-red, use --error */
+  /* Zen: removed --roi-yellow, use --warning */
+  /* Zen: removed --roi-green, use --success */
 }
 
 /* ── Container ── */
@@ -23,7 +23,7 @@
   padding: 0.35rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   margin-bottom: 2rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -35,13 +35,13 @@
   background: none;
   border: 1px solid transparent;
   color: var(--text-muted);
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   flex: 1;
   text-align: center;
@@ -51,20 +51,20 @@
   background: var(--bg-elevated);
 }
 .roi-tab-active {
-  color: var(--accent-foreground, #fff);
+  color: #fff;
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 25%, transparent);
+  /* Zen: no glow on tabs */
 }
 .roi-tab:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
 }
 
 /* ── Panels ── */
 .roi-panel { display: none; }
-.roi-panel-active { display: block; animation: roiFadeIn 0.25s ease-out; }
+.roi-panel-active { display: block; animation: roiFadeIn 150ms ease-out; }
 @keyframes roiFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   .roi-panel-active { animation: none; }
@@ -85,24 +85,24 @@
 .roi-input-card, .roi-results-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg, 16px);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
 }
 .roi-results-card {
-  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: var(--accent);
   background: var(--accent-subtle);
 }
 .roi-card-title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 1.25rem;
 }
 .roi-card-subtitle {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 600;
   color: var(--text-primary);
   margin: 1.5rem 0 1rem;
 }
@@ -113,13 +113,13 @@
 }
 .roi-field label {
   display: block;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 0.4rem;
 }
 .roi-field-hint {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-top: 0.25rem;
   display: block;
@@ -136,8 +136,8 @@
   height: 6px;
 }
 .roi-range-val {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--accent-hover);
   min-width: 80px;
   text-align: right;
@@ -148,12 +148,12 @@
   padding: 0.5rem 0.75rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   text-align: right;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono);
 }
 .roi-num-input:focus {
   outline: none;
@@ -167,9 +167,9 @@
   padding: 0.5rem 0.75rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   cursor: pointer;
 }
 .roi-select:focus {
@@ -193,8 +193,8 @@
   padding: 0.4rem 0.85rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg, 16px);
-  font-size: 0.8rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
   color: var(--text-secondary);
@@ -223,16 +223,16 @@
   flex-wrap: wrap;
 }
 .roi-presets-label {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .roi-preset-btn {
   padding: 0.3rem 0.7rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
@@ -245,7 +245,7 @@
 /* ── Tooltip ── */
 .roi-tooltip {
   cursor: help;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   opacity: 0.6;
 }
 
@@ -260,12 +260,12 @@
   text-align: center;
   padding: 1rem 0.5rem;
   background: var(--bg-elevated);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
 .roi-metric-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -273,39 +273,39 @@
 }
 .roi-metric-value {
   display: block;
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .roi-metric-highlight {
   color: var(--accent-hover);
-  font-size: 1.5rem;
+  font-size: var(--text-h2);
 }
 .roi-metric-badge {
   display: inline-block;
-  font-size: var(--text-caption, 0.75rem);
+  font-size: var(--text-caption);
   padding: 0.15rem 0.5rem;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   margin-top: 0.3rem;
-  font-weight: 700;
+  font-weight: 600;
 }
-.roi-badge-low { background: rgba(239,68,68,0.2); color: var(--text-primary); }
-.roi-badge-mid { background: rgba(234,179,8,0.2); color: var(--text-primary); }
-.roi-badge-high { background: rgba(34,197,94,0.2); color: var(--accent); }
+.roi-badge-low { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--error); }
+.roi-badge-mid { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); }
+.roi-badge-high { background: color-mix(in srgb, var(--success) 15%, transparent); color: var(--success); }
 
 /* ── Big Number ── */
 .roi-big-number {
   text-align: center;
   padding: 1.25rem;
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 16px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
   margin-bottom: 1.5rem;
 }
 .roi-big-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -313,9 +313,9 @@
 }
 .roi-big-value {
   display: block;
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 900;
+  font-family: var(--font-sans);
+  font-size: var(--text-h1);
+  font-weight: 600;
   color: var(--accent-hover);
 }
 
@@ -331,7 +331,7 @@
 }
 .roi-bar-label {
   width: 55px;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   text-align: right;
 }
@@ -345,12 +345,12 @@
 .roi-bar {
   height: 100%;
   border-radius: 4px;
-  transition: width 0.6s ease-out;
+  transition: width 300ms ease-out;
 }
 .roi-bar-cost { background: var(--error); }
-.roi-bar-savings { background: var(--teal); }
+.roi-bar-savings { background: var(--success); }
 .roi-bar-val {
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   color: var(--text-muted);
   min-width: 70px;
@@ -358,7 +358,7 @@
 
 /* ── Source Note ── */
 .roi-source-note {
-  font-size: 0.7rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   opacity: 0.7;
   line-height: 1.5;
@@ -366,7 +366,7 @@
 .roi-source-note a {
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  text-decoration-color: var(--accent);
 }
 
 /* ════════════════════════════════════════════════
@@ -376,7 +376,7 @@
   margin-bottom: 1.5rem;
 }
 .roi-roles-desc {
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin: 0.5rem 0 1rem;
   line-height: 1.5;
@@ -390,11 +390,11 @@
 .roi-btn-accent {
   padding: 0.5rem 1.25rem;
   background: var(--accent);
-  color: var(--accent-foreground, #fff);
+  color: #fff;
   border: none;
-  border-radius: var(--radius-md, 10px);
-  font-size: 0.85rem;
-  font-weight: 700;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
@@ -406,8 +406,8 @@
   background: var(--bg-elevated);
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
-  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
@@ -416,15 +416,15 @@
 
 .roi-btn-danger {
   padding: 0.4rem 1rem;
-  background: rgba(239,68,68,0.1);
+  background: color-mix(in srgb, var(--error) 10%, transparent);
   color: var(--text-primary);
-  border: 1px solid rgba(239,68,68,0.2);
-  border-radius: var(--radius-md, 10px);
-  font-size: 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--error) 20%, transparent);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
   cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-.roi-btn-danger:hover { background: rgba(239,68,68,0.2); }
+.roi-btn-danger:hover { background: color-mix(in srgb, var(--error) 20%, transparent); }
 
 /* ── Roles Table ── */
 .roi-roles-table-wrap {
@@ -434,11 +434,11 @@
 .roi-roles-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 .roi-roles-table th {
   text-align: left;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -458,7 +458,7 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   text-align: right;
 }
 .roi-roles-table input:focus {
@@ -471,7 +471,7 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 .roi-roles-table select option { background: var(--bg-surface); }
 .roi-role-remove {
@@ -485,8 +485,8 @@
 }
 .roi-role-remove:hover { opacity: 1; color: var(--text-primary); }
 .roi-roles-total-row td {
-  border-top: 2px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  font-weight: 700;
+  border-top: 2px solid var(--accent);
+  font-weight: 600;
   color: var(--accent-hover);
 }
 
@@ -494,12 +494,12 @@
 .roi-top-roles {
   background: var(--accent-subtle);
   border: 1px solid var(--accent-subtle);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
 }
 .roi-top-roles h3 {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin: 0 0 0.75rem;
   color: var(--accent-hover);
 }
@@ -513,16 +513,16 @@
   flex-direction: column;
   padding: 0.5rem 1rem;
   background: var(--bg-elevated);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   min-width: 140px;
 }
 .roi-top-role-name {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .roi-top-role-val {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: var(--text-h3);
+  font-weight: 600;
   color: var(--accent-hover);
 }
 
@@ -538,7 +538,7 @@
 }
 .roi-role-bar-name {
   width: 120px;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   text-align: right;
   overflow: hidden;
@@ -554,12 +554,12 @@
 }
 .roi-role-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  background: var(--accent);
   border-radius: 3px;
-  transition: width 0.5s ease-out;
+  transition: width 150ms ease-out;
 }
 .roi-role-bar-val {
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   color: var(--text-muted);
   min-width: 70px;
@@ -587,9 +587,9 @@
   padding: 0.2rem 0.6rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--text-muted);
-  font-size: var(--text-caption, 0.75rem);
+  font-size: var(--text-caption);
   cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
@@ -606,7 +606,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
 }
@@ -621,8 +621,16 @@
   padding: 1rem 0;
   font-size: 1rem;
 }
-.roi-cost-val { font-weight: 700; }
-.roi-val-positive { color: var(--roi-green); }
+.roi-cost-val { font-weight: 600; }
+.roi-val-positive { color: var(--success); }
+.roi-val-negative { color: var(--error); }
+.roi-val-accent { color: var(--accent); }
+
+/* Custom scenario result grid (JS-rendered) */
+.roi-custom-result-grid { display: flex; gap: 2rem; flex-wrap: wrap; }
+.roi-custom-result-item { }
+.roi-custom-result-label { color: var(--text-muted); font-size: var(--text-caption); }
+.roi-custom-result-val { font-size: var(--text-h3); }
 .roi-cost-divider {
   height: 1px;
   background: var(--bg-elevated);
@@ -636,12 +644,12 @@
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   background: var(--accent-subtle);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   margin: 1rem 0;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
-.roi-breakeven-icon { font-size: 1.2rem; }
+.roi-breakeven-icon { font-size: var(--text-h3); }
 
 /* Timeline */
 .roi-timeline {
@@ -656,9 +664,9 @@
 }
 .roi-timeline-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--roi-red), var(--roi-yellow), var(--roi-green));
+  background: var(--accent);
   border-radius: 4px;
-  transition: width 0.6s ease-out;
+  transition: width 300ms ease-out;
 }
 .roi-timeline-marker {
   position: absolute;
@@ -666,17 +674,17 @@
   width: 16px;
   height: 16px;
   background: var(--accent);
-  border: 2px solid #fff;
+  border: 2px solid var(--bg-surface);
   border-radius: 50%;
   transform: translateX(-50%);
-  transition: left 0.6s ease-out;
+  transition: left 300ms ease-out;
   z-index: 1;
 }
 .roi-timeline-labels {
   display: flex;
   justify-content: space-between;
   margin-top: 0.3rem;
-  font-size: var(--text-caption, 0.75rem);
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 
@@ -695,18 +703,18 @@
 .roi-scenario-col {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 1.25rem;
   text-align: center;
 }
 .roi-scenario-col-highlight {
-  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: var(--accent);
   background: var(--accent-subtle);
 }
 .roi-scenario-name {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.75rem;
 }
 .roi-scenario-stat {
@@ -714,15 +722,15 @@
 }
 .roi-scenario-stat-label {
   display: block;
-  font-size: var(--text-caption, 0.75rem);
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
 }
 .roi-scenario-stat-val {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .roi-scenario-stat-val-accent { color: var(--accent-hover); }
@@ -731,13 +739,13 @@
 .roi-custom-scenario {
   background: var(--bg-elevated);
   border: 1px dashed var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
 .roi-custom-result {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 
@@ -748,11 +756,11 @@
 .roi-projection-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 .roi-projection-table th {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--border);
@@ -775,7 +783,7 @@
 .roi-summary-page {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
 }
 .roi-summary-header {
@@ -785,12 +793,12 @@
   border-bottom: 1px solid var(--border);
 }
 .roi-summary-header h2 {
-  font-size: 1.3rem;
+  font-size: var(--text-h3);
   color: var(--text-primary);
   margin: 0 0 0.5rem;
 }
 .roi-summary-subtitle {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .roi-summary-subtitle a { color: var(--accent); }
@@ -800,7 +808,7 @@
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 .roi-summary-param {
@@ -808,7 +816,7 @@
   gap: 0.4rem;
 }
 .roi-summary-param-label { color: var(--text-muted); }
-.roi-summary-param-val { font-weight: 700; color: var(--text-primary); }
+.roi-summary-param-val { font-weight: 600; color: var(--text-primary); }
 
 .roi-summary-metrics {
   display: grid;
@@ -823,21 +831,21 @@
   text-align: center;
   padding: 1rem;
   background: var(--accent-subtle);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--accent-subtle);
 }
 .roi-summary-metric-label {
   display: block;
-  font-size: var(--text-caption, 0.75rem);
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
   margin-bottom: 0.3rem;
 }
 .roi-summary-metric-val {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: 600;
   color: var(--accent-hover);
 }
 
@@ -845,17 +853,17 @@
   margin-bottom: 2rem;
 }
 .roi-summary-table-wrap h3 {
-  font-size: 0.95rem;
+  font-size: var(--text-body);
   margin-bottom: 0.75rem;
 }
 .roi-summary-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 .roi-summary-table th {
   text-align: right;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   color: var(--text-muted);
   padding: 0.5rem 0.75rem;
@@ -869,11 +877,11 @@
   border-bottom: 1px solid var(--border);
 }
 .roi-summary-table td:first-child { text-align: left; font-weight: 600; color: var(--text-primary); }
-.roi-summary-table .roi-row-positive td { color: var(--roi-green); }
+.roi-summary-table .roi-row-positive td { color: var(--success); }
 .roi-summary-table .roi-row-positive td:first-child { color: var(--text-primary); }
 .roi-summary-table .roi-row-total td {
-  font-weight: 800;
-  border-top: 2px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  font-weight: 600;
+  border-top: 2px solid var(--accent);
   color: var(--accent-hover);
 }
 .roi-summary-table .roi-row-total td:first-child { color: var(--text-primary); }
@@ -882,32 +890,32 @@
   margin-bottom: 1.5rem;
 }
 .roi-summary-assumptions h3 {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin-bottom: 0.5rem;
 }
 .roi-summary-assumptions ul {
   list-style: disc;
   padding-left: 1.25rem;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   line-height: 1.7;
 }
 
 .roi-summary-sources h3 {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin-bottom: 0.5rem;
 }
 .roi-summary-sources ul {
   list-style: none;
   padding: 0;
-  font-size: 0.78rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   line-height: 1.7;
 }
 .roi-summary-sources a { color: var(--accent); }
 
 .roi-summary-disclaimer {
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   opacity: 0.7;
   margin-top: 1.5rem;
@@ -939,13 +947,13 @@
   align-items: center;
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   cursor: pointer;
   transition: color 0.2s;
 }
 .roi-history-item:hover { color: var(--accent-hover); }
-.roi-history-date { font-size: 0.7rem; color: var(--text-muted); }
+.roi-history-date { font-size: var(--text-caption); color: var(--text-muted); }
 
 /* ════════════════════════════════════════════════
    PRINT STYLES
@@ -969,21 +977,21 @@
 .roi-custom-cost-field { margin-bottom: 1rem; }
 .roi-toggle-label {
   display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.82rem; color: var(--text-secondary); cursor: pointer;
+  font-size: var(--text-sm); color: var(--text-secondary); cursor: pointer;
 }
 .roi-toggle-label input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px; }
 .roi-custom-cost-row {
   display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap;
 }
-.roi-custom-cost-prefix { font-size: 0.9rem; font-weight: 700; color: var(--accent-hover); }
-.roi-custom-cost-suffix { font-size: 0.8rem; color: var(--text-muted); }
-.roi-rrp-hint { font-size: 0.7rem; color: var(--text-muted); opacity: 0.7; }
+.roi-custom-cost-prefix { font-size: var(--text-sm); font-weight: 600; color: var(--accent-hover); }
+.roi-custom-cost-suffix { font-size: var(--text-sm); color: var(--text-muted); }
+.roi-rrp-hint { font-size: var(--text-caption); color: var(--text-muted); opacity: 0.7; }
 .roi-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
 /* ── Tooltip Button ── */
 .roi-tooltip-btn {
   background: none; border: none; padding: 0; cursor: help;
-  font-size: 0.75rem; opacity: 0.6; vertical-align: middle;
+  font-size: var(--text-caption); opacity: 0.6; vertical-align: middle;
   color: var(--text-secondary);
 }
 
@@ -998,31 +1006,31 @@
   border-radius: 6px; border: 1px solid var(--border);
 }
 .roi-per-user-label {
-  display: block; font-size: 0.62rem; text-transform: uppercase;
+  display: block; font-size: var(--text-caption); text-transform: uppercase;
   letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 0.2rem;
 }
 .roi-per-user-val {
-  font-family: var(--font-heading); font-size: 0.95rem;
-  font-weight: 700; color: var(--text-primary);
+  font-family: var(--font-sans); font-size: var(--text-body);
+  font-weight: 600; color: var(--text-primary);
 }
 
 /* ── Benchmark Comparison ── */
 .roi-benchmark {
-  padding: 0.6rem 1rem; border-radius: var(--radius-md, 10px); font-size: 0.82rem;
+  padding: 0.6rem 1rem; border-radius: var(--radius-md); font-size: var(--text-sm);
   margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
 }
 .roi-bench-above {
-  background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.2);
-  color: var(--roi-green);
+  background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
+  color: var(--success);
 }
 .roi-bench-below {
-  background: rgba(234,179,8,0.08); border: 1px solid rgba(234,179,8,0.2);
-  color: var(--roi-yellow);
+  background: color-mix(in srgb, var(--warning) 8%, transparent); border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);
+  color: var(--warning);
 }
 
 /* ── Narrative ── */
 .roi-narrative {
-  font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;
+  font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6;
   padding: 0.75rem 1rem; background: var(--accent-subtle);
   border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
   margin-bottom: 1.25rem;
@@ -1036,8 +1044,8 @@
 }
 .roi-cross-link {
   padding: 0.35rem 0.8rem; background: var(--bg-elevated);
-  border: 1px solid var(--border); border-radius: 16px;
-  color: var(--text-muted); font-size: 0.72rem; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  color: var(--text-muted); font-size: var(--text-caption); cursor: pointer;
   text-decoration: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; display: inline-block;
   font-family: inherit;
 }
@@ -1048,7 +1056,7 @@
 
 /* ── Roles Net Row ── */
 .roi-roles-net {
-  font-size: 0.85rem; color: var(--text-secondary);
+  font-size: var(--text-sm); color: var(--text-secondary);
   padding: 0.75rem 1rem; background: var(--bg-elevated);
-  border-radius: var(--radius-md, 10px); margin-bottom: 1rem;
+  border-radius: var(--radius-md); margin-bottom: 1rem;
 }

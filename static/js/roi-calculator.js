@@ -276,10 +276,10 @@
     const benchEl = $('roi-benchmark');
     if (benchEl) {
       if (roi > benchRef) {
-        benchEl.innerHTML = '📈 <strong>Above</strong> ' + benchLabel + ' (' + pct(benchRef) + ' ROI)';
+        benchEl.innerHTML = ' <strong>Above</strong> ' + benchLabel + ' (' + pct(benchRef) + ' ROI)';
         benchEl.className = 'roi-benchmark roi-bench-above';
       } else {
-        benchEl.innerHTML = '📉 <strong>Below</strong> ' + benchLabel + ' (' + pct(benchRef) + ' ROI)';
+        benchEl.innerHTML = ' <strong>Below</strong> ' + benchLabel + ' (' + pct(benchRef) + ' ROI)';
         benchEl.className = 'roi-benchmark roi-bench-below';
       }
     }
@@ -354,8 +354,8 @@
     if (shareBtn) {
       shareBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(window.location.href).then(() => {
-          shareBtn.textContent = '✅ Link copied!';
-          setTimeout(() => { shareBtn.textContent = '🔗 Share Link'; }, 2000);
+          shareBtn.textContent = 'Link copied!';
+          setTimeout(() => { shareBtn.textContent = 'Share Link'; }, 2000);
         });
       });
     }
@@ -427,7 +427,7 @@
     const rolesNetEl = $('roi-roles-net');
     if (rolesNetEl) {
       const net = totalSavings - roleLicenceCost;
-      rolesNetEl.innerHTML = 'Annual licence cost: ' + fmt(roleLicenceCost) + ' &nbsp;|&nbsp; <strong style="color:' + (net >= 0 ? 'var(--roi-green)' : 'var(--roi-red)') + '">Net: ' + fmt(net) + '/yr</strong>';
+      rolesNetEl.innerHTML = 'Annual licence cost: ' + fmt(roleLicenceCost) + ' &nbsp;|&nbsp; <strong style="color:' + (net >= 0 ? 'var(--success)' : 'var(--error)') + '">Net: ' + fmt(net) + '/yr</strong>';
     }
 
     // top 3
@@ -493,7 +493,7 @@
     const net = totalValue - total3yrCost;
     const netEl = $('roi-cost-net');
     netEl.innerHTML = '<strong>' + fmtFull(net) + '</strong>';
-    netEl.style.color = net >= 0 ? 'var(--roi-green)' : 'var(--roi-red)';
+    netEl.style.color = net >= 0 ? 'var(--success)' : 'var(--error)';
 
     const pb = S.payback();
     $('roi-breakeven-months').textContent = pb > 0 ? pb : '36+';
@@ -528,7 +528,7 @@
 
   function calcScenarios() {
     readCostInputs(); // ensure impl costs are current
-    const labels = { conservative: '\uD83D\uDC22 Conservative', moderate: '\u2696\uFE0F Moderate', aggressive: '\uD83D\uDE80 Aggressive' };
+    const labels = { conservative: 'Conservative', moderate: 'Moderate', aggressive: 'Aggressive' };
     const grid = $('roi-scenario-grid');
 
     grid.innerHTML = ['conservative', 'moderate', 'aggressive'].map(s => {
@@ -559,7 +559,7 @@
       ['Year 3 Savings', s => fmt(S.y(2, s))],
       ['3-Year Savings', s => fmt(S.total3yr(s))],
       ['3-Year Cost (licence + impl.)', s => fmt(S.cost3yr(s) + S.implCost)],
-      ['3-Year Net Gain', s => { const n = S.net3yr(s); return '<strong style="color:' + (n >= 0 ? 'var(--roi-green)' : 'var(--roi-red)') + '">' + fmt(n) + '</strong>'; }]
+      ['3-Year Net Gain', s => { const n = S.net3yr(s); return '<strong class="' + (n >= 0 ? 'roi-val-positive' : 'roi-val-negative') + '">' + fmt(n) + '</strong>'; }]
     ];
     tbody.innerHTML = rows.map(([label, fn]) =>
       '<tr><td>' + label + '</td>' + ['conservative', 'moderate', 'aggressive'].map(s => '<td>' + fn(s) + '</td>').join('') + '</tr>'
@@ -586,10 +586,10 @@
     const roi = cost > 0 ? ((total - cost) / cost) * 100 : 0;
 
     $('roi-custom-result').innerHTML =
-      '<div style="display:flex;gap:2rem;flex-wrap:wrap">' +
-      '<div><span style="color:var(--text-muted);font-size:0.75rem">3-Year Savings</span><br><strong style="font-size:1.1rem;color:var(--accent-hover)">' + fmt(total) + '</strong></div>' +
-      '<div><span style="color:var(--text-muted);font-size:0.75rem">3-Year ROI</span><br><strong style="font-size:1.1rem">' + pct(roi) + '</strong></div>' +
-      '<div><span style="color:var(--text-muted);font-size:0.75rem">Net Gain</span><br><strong style="font-size:1.1rem;color:' + (net >= 0 ? 'var(--roi-green)' : 'var(--roi-red)') + '">' + fmt(net) + '</strong></div></div>';
+      '<div class="roi-custom-result-grid">' +
+      '<div class="roi-custom-result-item"><span class="roi-custom-result-label">3-Year Savings</span><br><strong class="roi-custom-result-val roi-val-accent">' + fmt(total) + '</strong></div>' +
+      '<div class="roi-custom-result-item"><span class="roi-custom-result-label">3-Year ROI</span><br><strong class="roi-custom-result-val">' + pct(roi) + '</strong></div>' +
+      '<div class="roi-custom-result-item"><span class="roi-custom-result-label">Net Gain</span><br><strong class="roi-custom-result-val ' + (net >= 0 ? 'roi-val-positive' : 'roi-val-negative') + '">' + fmt(net) + '</strong></div></div>';
   }
 
   function initScenarios() {
@@ -650,8 +650,8 @@
     $('roi-copy-summary').addEventListener('click', () => {
       const text = $('roi-summary-page').innerText;
       navigator.clipboard.writeText(text).then(() => {
-        $('roi-copy-summary').textContent = '\u2705 Copied!';
-        setTimeout(() => $('roi-copy-summary').textContent = '\uD83D\uDCCB Copy Summary', 2000);
+        $('roi-copy-summary').textContent = 'Copied!';
+        setTimeout(() => $('roi-copy-summary').textContent = 'Copy Summary', 2000);
       });
     });
     $('roi-print-summary').addEventListener('click', () => window.print());
@@ -667,8 +667,8 @@
       hist.unshift(entry);
       if (hist.length > 10) hist.pop();
       localStorage.setItem('roi-history', JSON.stringify(hist));
-      $('roi-save-history').textContent = '\u2705 Saved!';
-      setTimeout(() => $('roi-save-history').textContent = '\uD83D\uDCBE Save to History', 2000);
+      $('roi-save-history').textContent = 'Saved!';
+      setTimeout(() => $('roi-save-history').textContent = 'Save to History', 2000);
       loadHistory();
     });
     $('roi-clear-history').addEventListener('click', () => { localStorage.removeItem('roi-history'); loadHistory(); });

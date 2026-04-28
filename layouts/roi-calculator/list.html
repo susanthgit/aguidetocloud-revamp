@@ -78,7 +78,7 @@
     <div class="roi-tabs" role="tablist" aria-label="ROI Calculator sections">
       <button class="roi-tab roi-tab-active" role="tab" aria-selected="true" aria-controls="tab-quick" id="tab-btn-quick" data-tab="quick">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Calculator</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-roles" id="tab-btn-roles" data-tab="roles">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} By Role</button>
-      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-costs" id="tab-btn-costs" data-tab="costs">💳 Cost Breakdown</button>
+      <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-costs" id="tab-btn-costs" data-tab="costs">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Cost Breakdown</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" id="tab-btn-scenarios" data-tab="scenarios">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Scenarios</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="tab-summary" id="tab-btn-summary" data-tab="summary">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Executive Summary</button>
       <button class="roi-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-btn-faq" data-tab="faq">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} FAQ</button>
@@ -104,7 +104,7 @@
 
           <div class="roi-field">
             <label for="roi-salary">Average annual salary (USD)
-              <span class="roi-tooltip" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">ℹ️</span>
+              <span class="roi-tooltip" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-salary-range" min="30000" max="300000" value="75000" step="5000" aria-hidden="true">
@@ -142,7 +142,7 @@
           <div class="roi-field">
             <label>Adoption scenario</label>
             <div class="roi-radio-group" role="radiogroup" aria-label="Adoption scenario">
-              <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative"> 🐢 Conservative</label>
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative"> Conservative</label>
               <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked> {{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</label>
               <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive"> {{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</label>
             </div>
@@ -150,7 +150,7 @@
 
           <div class="roi-field">
             <label for="roi-overhead">Overhead multiplier
-              <button type="button" class="roi-tooltip-btn" aria-label="Overhead accounts for benefits, taxes, office costs on top of base salary. 30% is the industry standard.">ℹ️</button>
+              <button type="button" class="roi-tooltip-btn" aria-label="Overhead accounts for benefits, taxes, office costs on top of base salary. 30% is the industry standard.">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</button>
             </label>
             <select id="roi-overhead" class="roi-select roi-select-sm" aria-label="Salary overhead multiplier">
               <option value="1.0">Salary only (no overhead)</option>
@@ -261,7 +261,7 @@
         <p class="roi-roles-desc">Add roles to see where Copilot delivers the most value. Time savings are pre-filled from research — adjust to match your organisation.</p>
         <div class="roi-roles-controls">
           <select id="roi-role-scenario" class="roi-select roi-select-sm" aria-label="Adoption scenario for roles">
-            <option value="conservative">🐢 Conservative</option>
+            <option value="conservative">Conservative</option>
             <option value="moderate" selected>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</option>
             <option value="aggressive">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</option>
           </select>
@@ -299,7 +299,7 @@
 
       {{/* Top 3 callout */}}
       <div class="roi-top-roles" id="roi-top-roles" style="display:none">
-        <h3>🏆 Highest-Value Roles</h3>
+        <h3>Highest-Value Roles</h3>
         <div class="roi-top-roles-list" id="roi-top-roles-list"></div>
       </div>
 
@@ -323,7 +323,7 @@
 
           <div class="roi-field">
             <label for="roi-training">Training per user
-              <span class="roi-tooltip" aria-label="Includes workshops, e-learning, and champions programme">ℹ️</span>
+              <span class="roi-tooltip" aria-label="Includes workshops, e-learning, and champions programme">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-training-range" min="0" max="300" value="100" step="10" aria-hidden="true">
@@ -338,7 +338,7 @@
 
           <div class="roi-field">
             <label for="roi-change-mgmt">Change management consulting
-              <span class="roi-tooltip" aria-label="External consultancy or internal programme for adoption">ℹ️</span>
+              <span class="roi-tooltip" aria-label="External consultancy or internal programme for adoption">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-change-mgmt-range" min="0" max="100000" value="20000" step="5000" aria-hidden="true">
@@ -352,8 +352,8 @@
           </div>
 
           <div class="roi-field">
-            <label for="roi-data-gov">Data governance & cleanup
-              <span class="roi-tooltip" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">ℹ️</span>
+            <label for="roi-data-gov">Data governance &amp; cleanup
+              <span class="roi-tooltip" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-data-gov-range" min="0" max="150000" value="40000" step="5000" aria-hidden="true">
@@ -463,7 +463,7 @@
       </div>
 
       <div class="roi-custom-scenario">
-        <h3 class="roi-card-subtitle">🎛️ Custom "What-If" Scenario</h3>
+        <h3 class="roi-card-subtitle">Custom "What-If" Scenario</h3>
         <div class="roi-field">
           <label for="roi-custom-adoption">Custom adoption rate at Month 12</label>
           <div class="roi-range-row">
@@ -481,7 +481,7 @@
           <thead>
             <tr>
               <th></th>
-              <th>🐢 Conservative</th>
+              <th>Conservative</th>
               <th>{{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</th>
               <th>{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</th>
             </tr>
@@ -569,7 +569,7 @@
     <div class="roi-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-btn-faq">
     {{ if .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
+      <h2 class="roi-card-title">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
       <details open class="zt-faq-detail">
         <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
