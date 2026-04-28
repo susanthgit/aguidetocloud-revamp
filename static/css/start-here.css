@@ -8,12 +8,12 @@
   text-align: center;
   padding: 2rem 1.5rem 1.2rem;
   background: linear-gradient(160deg, rgba(0, 229, 255, 0.06) 0%, rgba(139, 92, 246, 0.04) 40%, rgba(3, 3, 8, 0.98) 70%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border);
 }
 
 .sh-hero h1 {
   font-size: 1.7rem;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0 0 0.4rem;
   font-weight: 700;
 }
@@ -25,7 +25,7 @@
 .sh-hero-sub {
   font-weight: 400;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-tertiary);
 }
 
 .sh-hero-stats {
@@ -38,7 +38,7 @@
 
 .sh-hero-stat {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
 }
 
 .sh-hero-stat strong {
@@ -47,13 +47,13 @@
 }
 
 .sh-credit {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.72rem;
   margin: 0;
 }
 
 .sh-credit a {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   text-decoration: none;
 }
 
@@ -73,18 +73,18 @@
   display: inline-block;
   padding: 0.45rem 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.75);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-emphasis);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   text-decoration: none;
-  transition: all 0.25s;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
   }
 
 .sh-jump-pill:hover {
   background: color-mix(in srgb, var(--sh-accent) 20%, transparent);
   border-color: var(--sh-accent);
-  color: #fff;
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
@@ -92,7 +92,7 @@
 .sh-badge {
   display: inline-block;
   font-size: 0.62rem;
-  background: rgba(255, 215, 0, 0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   color: #fbbf24;
   padding: 0.15rem 0.5rem;
   border-radius: 18px;
@@ -110,7 +110,7 @@
 }
 
 .sh-fallback p {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.9rem;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .sh-fallback a:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* ── Content ── */
@@ -145,7 +145,7 @@
   border-left: 4px solid var(--sh-accent, #00e5ff);
   border-radius: 20px;
   padding: 1.5rem;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out, transform 200ms ease-out;
   position: relative;
   overflow: hidden;
 }
@@ -183,12 +183,12 @@
 
 .sh-path-head h2 {
   font-size: 1.15rem;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0;
 }
 
 .sh-path-head p {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-tertiary);
   font-size: 0.88rem;
   margin: 0.2rem 0 0;
 }
@@ -206,15 +206,15 @@
   gap: 0.7rem;
   padding: 0.75rem 0.9rem;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   text-decoration: none;
   transition: background 0.25s, border-color 0.25s, transform 0.2s;
 }
 
 .sh-link:hover {
-  background: color-mix(in srgb, var(--sh-accent) 10%, rgba(255, 255, 255, 0.04));
-  border-color: color-mix(in srgb, var(--sh-accent) 30%, rgba(255, 255, 255, 0.1));
+  background: color-mix(in srgb, var(--sh-accent) 10%, var(--bg-elevated));
+  border-color: color-mix(in srgb, var(--sh-accent) 30%, var(--border-emphasis));
   transform: translateY(-1px);
 }
 
@@ -227,10 +227,10 @@
 
 .sh-link strong {
   display: block;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.88rem;
   margin-bottom: 0.15rem;
-  transition: color 0.2s;
+  transition: color 200ms ease-out;
 }
 
 .sh-link:hover strong {
@@ -239,7 +239,7 @@
 
 .sh-link span {
   display: block;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.76rem;
   line-height: 1.35;
 }
@@ -252,16 +252,16 @@
   gap: 1.5rem;
   padding: 1.5rem 0;
   margin-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border);
 }
 
 .sh-stat {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.85rem;
 }
 
 .sh-stat strong {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
 }
 
 /* ── Hero CTA Buttons ── */
@@ -279,11 +279,11 @@
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   background: linear-gradient(135deg, #8B5CF6, #6D28D9);
-  color: #fff;
+  color: var(--accent-foreground);
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
   box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
 }
 
@@ -296,18 +296,18 @@
   display: inline-block;
   padding: 0.45rem 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.65);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-emphasis);
+  color: var(--text-secondary);
   font-size: 0.82rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 
 .sh-cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--bg-elevated);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 /* ── Featured Path Card ── */
@@ -331,8 +331,8 @@
   top: 12px;
   right: 16px;
   font-size: 0.7rem;
-  background: rgba(139, 92, 246, 0.2);
-  color: #A78BFA;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
   padding: 0.2rem 0.7rem;
   border-radius: 18px;
   font-weight: 600;
@@ -350,7 +350,7 @@
   border: 1px solid color-mix(in srgb, var(--sh-accent) 20%, transparent);
   text-decoration: none;
   margin-bottom: 0.8rem;
-  transition: all 0.25s;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 
 .sh-primary-link:hover {
@@ -368,14 +368,14 @@
 
 .sh-primary-link strong {
   display: block;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.95rem;
   margin-bottom: 0.2rem;
 }
 
 .sh-primary-link span {
   display: block;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-tertiary);
   font-size: 0.8rem;
   line-height: 1.35;
 }
@@ -388,19 +388,19 @@
 }
 
 .sh-secondary-links a {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.78rem;
   padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  background: color-mix(in srgb, var(--sh-accent) 6%, rgba(255, 255, 255, 0.02));
-  border: 1px solid color-mix(in srgb, var(--sh-accent) 15%, rgba(255, 255, 255, 0.06));
-  transition: all 0.25s;
+  background: color-mix(in srgb, var(--sh-accent) 6%, var(--bg-surface));
+  border: 1px solid color-mix(in srgb, var(--sh-accent) 15%, var(--border));
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 
 .sh-secondary-links a:hover {
-  color: #fff;
-  background: color-mix(in srgb, var(--sh-accent) 15%, rgba(255, 255, 255, 0.04));
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--sh-accent) 15%, var(--bg-elevated));
   border-color: var(--sh-accent);
   box-shadow: 0 0 12px color-mix(in srgb, var(--sh-accent) 20%, transparent);
 }
@@ -412,7 +412,7 @@
 
 .sh-also h2 {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin: 0 0 1rem;
 }
 
@@ -433,14 +433,14 @@
   gap: 0.8rem;
   padding: 1.2rem;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   text-decoration: none;
   transition: border-color 0.25s, transform 0.2s;
   }
 
 .sh-also-card:hover {
-  border-color: color-mix(in srgb, var(--sh-accent) 35%, rgba(255, 255, 255, 0.1));
+  border-color: color-mix(in srgb, var(--sh-accent) 35%, var(--border-emphasis));
   transform: translateY(-2px);
 }
 
@@ -451,13 +451,13 @@
 
 .sh-also-card strong {
   display: block;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-bottom: 0.2rem;
 }
 
 .sh-also-card div span {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.8rem;
   line-height: 1.4;
 }
@@ -471,12 +471,12 @@
 
 .sh-community h2 {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0 0 0.3rem;
 }
 
 .sh-community > p {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.85rem;
   margin: 0 0 1rem;
 }
@@ -487,13 +487,13 @@
   gap: 0.8rem;
 }
 .sh-community-label {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-tertiary);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   margin: 1.5rem 0 0.6rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border);
 }
 .sh-community-label:first-of-type { margin-top: 0.5rem; }
 
@@ -501,12 +501,12 @@
   background:
     radial-gradient(ellipse at 50% -20%, var(--accent-subtle) 0%, transparent 55%),
     rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1rem;
   text-decoration: none;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 
 .sh-tool-card:hover {
@@ -526,13 +526,13 @@
 
 .sh-tool-card strong {
   display: block;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.82rem;
   margin-bottom: 0.15rem;
 }
 
 .sh-tool-card span {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   font-size: 0.72rem;
   line-height: 1.3;
 }

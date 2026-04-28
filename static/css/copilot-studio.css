@@ -11,21 +11,21 @@
 /* ── Main Tabs ── */
 .cstudio-tabs {
   display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px; margin-bottom: 1.5rem;
   overflow-x: auto; scrollbar-width: none;
 }
 .cstudio-tabs::-webkit-scrollbar { display: none; }
 .cstudio-tab {
   background: none; border: 1px solid transparent;
-  color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600;
+  color: var(--text-tertiary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out; flex: 1; text-align: center; white-space: nowrap;
 }
-.cstudio-tab:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.cstudio-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .cstudio-tab.active {
-  color: #fff; background: var(--cstudio-accent);
+  color: var(--accent-foreground); background: var(--cstudio-accent);
   border-color: var(--cstudio-accent);
   box-shadow: 0 2px 8px rgba(var(--cstudio-accent-rgb), 0.3);
 }
@@ -35,21 +35,21 @@
 /* ── Sub Tabs (Features & Limits) ── */
 .cstudio-subtabs {
   display: flex; gap: 0.35rem; padding: 0.25rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 10px; margin-bottom: 1.2rem;
   overflow-x: auto; scrollbar-width: none;
 }
 .cstudio-subtabs::-webkit-scrollbar { display: none; }
 .cstudio-subtab {
   background: none; border: 1px solid transparent;
-  color: rgba(255,255,255,0.4); font-size: 0.78rem; font-weight: 600;
+  color: var(--text-tertiary); font-size: 0.78rem; font-weight: 600;
   padding: 0.45rem 0.9rem; cursor: pointer; border-radius: 7px;
-  transition: all 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out; flex: 1; text-align: center; white-space: nowrap;
 }
-.cstudio-subtab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.cstudio-subtab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .cstudio-subtab.active {
-  color: #fff; background: rgba(var(--cstudio-accent-rgb), 0.25);
+  color: var(--text-primary); background: rgba(var(--cstudio-accent-rgb), 0.25);
   border-color: rgba(var(--cstudio-accent-rgb), 0.4);
 }
 .cstudio-subpanel { display: none; }
@@ -57,10 +57,10 @@
 
 /* ── Section Titles ── */
 .cstudio-section-title {
-  color: #fff; font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem;
+  color: var(--text-primary); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem;
 }
 .cstudio-tip {
-  color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: -0.5rem 0 1rem;
+  color: var(--text-tertiary); font-size: 0.82rem; margin: -0.5rem 0 1rem;
 }
 
 /* ── Feature Checker (Decide Tab) ── */
@@ -68,14 +68,14 @@
 .cstudio-check-row {
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0.6rem 0.75rem; border-radius: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border);
   transition: background 0.15s;
 }
-.cstudio-check-row:hover { background: rgba(255,255,255,0.03); }
-.cstudio-check-label { flex: 1; color: rgba(255,255,255,0.8); font-size: 0.85rem; cursor: pointer; }
+.cstudio-check-row:hover { background: var(--bg-surface); }
+.cstudio-check-label { flex: 1; color: var(--text-primary); font-size: 0.85rem; cursor: pointer; }
 .cstudio-check-toggle {
   width: 36px; height: 20px; border-radius: 10px;
-  background: rgba(255,255,255,0.1); position: relative;
+  background: var(--bg-elevated); position: relative;
   cursor: pointer; transition: background 0.2s; flex-shrink: 0;
 }
 .cstudio-check-toggle.on { background: var(--cstudio-accent); }
@@ -91,21 +91,21 @@
 .cstudio-dot.green { background: #4ade80; }
 .cstudio-dot.amber { background: #fbbf24; }
 .cstudio-dot.red { background: #f87171; }
-.cstudio-dot.off { background: rgba(255,255,255,0.1); }
+.cstudio-dot.off { background: var(--bg-elevated); }
 
 /* ── Cards ── */
 .cstudio-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.75rem;
   transition: border-color 0.2s;
   }
 .cstudio-card:hover { border-color: rgba(var(--cstudio-accent-rgb), 0.3); }
 .cstudio-card-title {
-  color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem;
+  color: var(--text-primary); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem;
   display: flex; align-items: center; gap: 0.5rem;
 }
-.cstudio-card-desc { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; }
+.cstudio-card-desc { color: var(--text-secondary); font-size: 0.82rem; line-height: 1.5; }
 .cstudio-card-icon { font-size: 1.2rem; }
 .cstudio-badge {
   display: inline-block; padding: 0.15rem 0.5rem; border-radius: 6px;
@@ -120,14 +120,14 @@
 
 /* ── Expandable Details ── */
 .cstudio-card details summary {
-  cursor: pointer; color: rgba(255,255,255,0.5); font-size: 0.78rem;
+  cursor: pointer; color: var(--text-tertiary); font-size: 0.78rem;
   margin-top: 0.5rem; list-style: none;
 }
 .cstudio-card details summary::before { content: '▸ '; }
 .cstudio-card details[open] summary::before { content: '▾ '; }
 .cstudio-card details .cstudio-detail-content {
   margin-top: 0.5rem; padding-top: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 
 /* ── Grid Layouts ── */
@@ -137,18 +137,18 @@
 
 /* ── Platform Compare Cards ── */
 .cstudio-platform-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 12px; padding: 1rem; text-align: center;
   }
 .cstudio-platform-card .cstudio-card-icon { font-size: 2rem; margin-bottom: 0.3rem; }
-.cstudio-platform-card h4 { color: #fff; font-size: 0.95rem; margin: 0.3rem 0; }
-.cstudio-platform-card p { color: rgba(255,255,255,0.5); font-size: 0.78rem; line-height: 1.4; }
+.cstudio-platform-card h4 { color: var(--text-primary); font-size: 0.95rem; margin: 0.3rem 0; }
+.cstudio-platform-card p { color: var(--text-tertiary); font-size: 0.78rem; line-height: 1.4; }
 
 /* ── Upgrade Trigger Cards ── */
 .cstudio-trigger-card {
   display: flex; gap: 0.75rem; align-items: flex-start;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
   border-left: 3px solid var(--cstudio-accent);
 }
@@ -157,13 +157,13 @@
 /* ── Knowledge Source Cards ── */
 .cstudio-knowledge-card .cstudio-limit-row {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 0.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 0.25rem 0; border-bottom: 1px solid var(--border);
   font-size: 0.78rem;
 }
-.cstudio-limit-label { color: rgba(255,255,255,0.5); }
-.cstudio-limit-value { color: #fff; font-weight: 600; }
+.cstudio-limit-label { color: var(--text-tertiary); }
+.cstudio-limit-value { color: var(--text-primary); font-weight: 600; }
 .cstudio-gotcha {
-  color: rgba(255,255,255,0.5); font-size: 0.75rem; line-height: 1.4;
+  color: var(--text-tertiary); font-size: 0.75rem; line-height: 1.4;
   padding-left: 0.75rem; position: relative;
 }
 .cstudio-gotcha::before { content: '⚠️'; position: absolute; left: 0; }
@@ -171,15 +171,15 @@
 /* ── Model Table ── */
 .cstudio-model-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
 .cstudio-model-table th {
-  text-align: left; color: rgba(255,255,255,0.5); font-weight: 600;
-  padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: left; color: var(--text-tertiary); font-weight: 600;
+  padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border-emphasis);
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em;
 }
 .cstudio-model-table td {
-  color: rgba(255,255,255,0.8); padding: 0.5rem 0.6rem;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-primary); padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border);
 }
-.cstudio-model-table tr:hover td { background: rgba(255,255,255,0.03); }
+.cstudio-model-table tr:hover td { background: var(--bg-surface); }
 
 /* ── Wizard ── */
 .cstudio-steps-bar {
@@ -188,21 +188,21 @@
 }
 .cstudio-step-dot {
   width: 30px; height: 30px; border-radius: 50%;
-  background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 700;
+  background: var(--bg-elevated); border: 2px solid var(--border-emphasis);
+  color: var(--text-tertiary); font-size: 0.75rem; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all 0.2s;
+  cursor: pointer; transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 .cstudio-step-dot.active {
   background: var(--cstudio-accent); border-color: var(--cstudio-accent);
-  color: #fff; box-shadow: 0 0 10px rgba(var(--cstudio-accent-rgb), 0.4);
+  color: var(--accent-foreground); box-shadow: 0 0 10px rgba(var(--cstudio-accent-rgb), 0.4);
 }
 .cstudio-step-dot.done {
   background: rgba(var(--cstudio-accent-rgb), 0.2); border-color: var(--cstudio-accent);
   color: var(--cstudio-accent);
 }
 .cstudio-step-line {
-  width: 30px; height: 2px; background: rgba(255,255,255,0.1);
+  width: 30px; height: 2px; background: var(--bg-elevated);
 }
 .cstudio-wizard-step { display: none; }
 .cstudio-wizard-step.active { display: block; }
@@ -210,47 +210,47 @@
 /* ── Form Controls ── */
 .cstudio-field { margin-bottom: 0.75rem; }
 .cstudio-field label {
-  display: block; color: rgba(255,255,255,0.6); font-size: 0.8rem;
+  display: block; color: var(--text-secondary); font-size: 0.8rem;
   font-weight: 600; margin-bottom: 0.3rem;
 }
 .cstudio-input {
   width: 100%; padding: 0.6rem 0.8rem; border-radius: 8px;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  color: #fff; font-size: 0.85rem; font-family: inherit;
+  background: var(--bg-elevated); border: 1px solid var(--border-emphasis);
+  color: var(--text-primary); font-size: 0.85rem; font-family: inherit;
   transition: border-color 0.2s; box-sizing: border-box;
 }
 .cstudio-input:focus { border-color: var(--cstudio-accent); outline: none; }
-.cstudio-input::placeholder { color: rgba(255,255,255,0.3); }
+.cstudio-input::placeholder { color: var(--text-muted); }
 .cstudio-select {
   padding: 0.5rem 0.8rem; border-radius: 8px;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  color: #fff; font-size: 0.82rem; cursor: pointer;
+  background: var(--bg-elevated); border: 1px solid var(--border-emphasis);
+  color: var(--text-primary); font-size: 0.82rem; cursor: pointer;
 }
 .cstudio-radio-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .cstudio-radio {
   display: flex; align-items: center; gap: 0.35rem;
-  color: rgba(255,255,255,0.7); font-size: 0.82rem; cursor: pointer;
+  color: var(--text-secondary); font-size: 0.82rem; cursor: pointer;
   padding: 0.4rem 0.7rem; border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.15s;
+  border: 1px solid var(--border);
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
 .cstudio-radio:has(input:checked) {
   border-color: var(--cstudio-accent);
   background: rgba(var(--cstudio-accent-rgb), 0.1);
-  color: #fff;
+  color: var(--text-primary);
 }
 .cstudio-radio input { accent-color: var(--cstudio-accent); }
 
 /* ── Buttons ── */
 .cstudio-btn {
   padding: 0.55rem 1.1rem; border-radius: 8px; font-size: 0.82rem;
-  font-weight: 600; cursor: pointer; border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8);
-  transition: all 0.2s;
+  font-weight: 600; cursor: pointer; border: 1px solid var(--border-emphasis);
+  background: var(--bg-elevated); color: var(--text-primary);
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, transform 200ms ease-out;
 }
-.cstudio-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.cstudio-btn:hover { background: var(--bg-elevated); color: var(--text-primary); }
 .cstudio-btn-primary {
-  background: var(--cstudio-accent); color: #fff;
+  background: var(--cstudio-accent); color: var(--accent-foreground);
   border-color: var(--cstudio-accent);
 }
 .cstudio-btn-primary:hover {
@@ -264,7 +264,7 @@
 
 /* ── Credits Estimator ── */
 .cstudio-estimator {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 1.2rem;
 }
 .cstudio-estimator-result {
@@ -277,10 +277,10 @@
   font-size: 2rem; font-weight: 800; color: var(--cstudio-accent);
 }
 .cstudio-estimator-result .cstudio-small-text {
-  color: rgba(255,255,255,0.5); font-size: 0.78rem;
+  color: var(--text-tertiary); font-size: 0.78rem;
 }
 .cstudio-bar {
-  height: 8px; border-radius: 4px; background: rgba(255,255,255,0.08);
+  height: 8px; border-radius: 4px; background: var(--bg-elevated);
   margin-top: 0.5rem; overflow: hidden;
 }
 .cstudio-bar-fill {
@@ -292,14 +292,14 @@
 
 /* ── Topic Map ── */
 .cstudio-topic-item {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
   display: flex; align-items: center; gap: 0.75rem;
 }
-.cstudio-topic-name { color: #fff; font-weight: 600; font-size: 0.85rem; flex: 1; }
-.cstudio-topic-meta { color: rgba(255,255,255,0.4); font-size: 0.72rem; }
+.cstudio-topic-name { color: var(--text-primary); font-weight: 600; font-size: 0.85rem; flex: 1; }
+.cstudio-topic-meta { color: var(--text-tertiary); font-size: 0.72rem; }
 .cstudio-topic-remove {
-  background: none; border: none; color: rgba(255,255,255,0.3);
+  background: none; border: none; color: var(--text-muted);
   cursor: pointer; font-size: 1rem; padding: 0 0.3rem;
 }
 .cstudio-topic-remove:hover { color: #f87171; }
@@ -307,7 +307,7 @@
 /* ── Toast ── */
 .cstudio-toast {
   position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
-  background: rgba(var(--cstudio-accent-rgb), 0.9); color: #fff;
+  background: rgba(var(--cstudio-accent-rgb), 0.9); color: var(--accent-foreground);
   padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.82rem;
   font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none;
   z-index: 9999;
@@ -316,14 +316,14 @@
 
 /* ── FAQ ── */
 .cstudio-panel details {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 0.5rem;
 }
 .cstudio-panel details summary {
-  color: #fff; font-size: 0.9rem; cursor: pointer; list-style: none;
+  color: var(--text-primary); font-size: 0.9rem; cursor: pointer; list-style: none;
 }
 .cstudio-panel details summary::-webkit-details-marker { display: none; }
-.cstudio-panel details p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; margin: 0.5rem 0 0; }
+.cstudio-panel details p { color: var(--text-secondary); font-size: 0.82rem; line-height: 1.6; margin: 0.5rem 0 0; }
 .cstudio-panel details a { color: var(--cstudio-accent); }
 
 /* ── Learn Link ── */

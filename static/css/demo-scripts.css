@@ -123,7 +123,7 @@
 
 .demoscr-scenario-cat {
   font-size: 0.7rem;
-  color: #64748b;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -274,8 +274,8 @@
 }
 
 .demoscr-btn.copied {
-  background: rgba(34,197,94,0.2);
-  border-color: rgba(34,197,94,0.5);
+  background: color-mix(in srgb, var(--success) 20%, transparent);
+  border-color: color-mix(in srgb, var(--success) 50%, transparent);
   color: var(--accent);
 }
 
@@ -285,7 +285,7 @@
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   border-bottom: 1px solid var(--border);
 }
 
@@ -439,11 +439,11 @@
 
 .demoscr-step-expected {
   padding: 0.6rem 0.85rem;
-  background: rgba(34,197,94,0.06);
-  border-left: 2px solid rgba(34,197,94,0.4);
+  background: color-mix(in srgb, var(--success) 6%, transparent);
+  border-left: 2px solid color-mix(in srgb, var(--success) 40%, transparent);
   border-radius: 0 6px 6px 0;
   font-size: 0.85rem;
-  color: #a7c4b5;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
@@ -459,7 +459,7 @@
   border-left: 2px solid var(--accent);
   border-radius: 0 6px 6px 0;
   font-size: 0.85rem;
-  color: #c4a98a;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
@@ -475,7 +475,7 @@
 
 .demoscr-step-fallback summary {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   cursor: pointer;
   padding: 0.3rem 0;
 }
@@ -496,7 +496,7 @@
 
 .demoscr-timing-cue {
   text-align: center;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.75rem;
   padding: 0.5rem 0;
   border-top: 1px dashed var(--border);
@@ -579,7 +579,7 @@
 }
 
 .demoscr-reliability-medium {
-  background: rgba(234,179,8,0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   color: var(--text-primary);
 }
 
@@ -594,13 +594,13 @@
 
 .demoscr-prompt-card-expected {
   font-size: 0.8rem;
-  color: #a7c4b5;
+  color: var(--text-secondary);
   margin-bottom: 0.35rem;
 }
 
 .demoscr-prompt-card-talk {
   font-size: 0.8rem;
-  color: #c4a98a;
+  color: var(--text-secondary);
 }
 
 .demoscr-prompt-copy-btn {
@@ -774,7 +774,7 @@
 }
 
 .demoscr-check-text em {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.78rem;
   font-style: normal;
 }
@@ -789,23 +789,23 @@
 }
 
 .demoscr-priority-critical {
-  background: rgba(239,68,68,0.15);
+  background: color-mix(in srgb, var(--error) 15%, transparent);
   color: var(--text-primary);
 }
 
 .demoscr-priority-high {
-  background: rgba(234,179,8,0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   color: var(--text-primary);
 }
 
 .demoscr-priority-medium {
-  background: rgba(59,130,246,0.15);
+  background: color-mix(in srgb, var(--info) 15%, transparent);
   color: var(--accent);
 }
 
 .demoscr-priority-low {
-  background: rgba(100,116,139,0.15);
-  color: #64748b;
+  background: color-mix(in srgb, var(--text-muted) 15%, transparent);
+  color: var(--text-muted);
 }
 
 /* ── Traps ────────────────────────────────────────────────────────────── */
@@ -1001,7 +1001,7 @@
 /* ── V2: Scenario Tagline ────────────────────────────────────────────── */
 .demoscr-scenario-tagline {
   font-size: 0.7rem;
-  color: #64748b;
+  color: var(--text-muted);
   line-height: 1.3;
   display: none;
 }
@@ -1071,7 +1071,7 @@
 
 .demoscr-custom-match-meta {
   font-size: 0.7rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 /* ── V2: Search Bar ──────────────────────────────────────────────────── */
@@ -1105,7 +1105,7 @@
   left: 0;
   right: 0;
   margin-top: 0.35rem;
-  background: rgba(15,15,25,0.97);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.5rem;
@@ -1151,7 +1151,7 @@
 
 .demoscr-search-item div span {
   font-size: 0.7rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .demoscr-search-type {
@@ -1159,14 +1159,14 @@
   padding: 0.1rem 0.4rem;
   border-radius: 999px;
   background: var(--bg-elevated);
-  color: #64748b;
+  color: var(--text-muted);
   text-transform: uppercase;
   flex-shrink: 0;
 }
 
 .demoscr-search-empty {
   padding: 0.75rem;
-  color: #64748b;
+  color: var(--text-muted);
   text-align: center;
   font-size: 0.85rem;
 }
@@ -1175,7 +1175,7 @@
 .demoscr-practice-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(3,3,8,0.97);
+  background: var(--bg-page);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -1187,7 +1187,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  background: rgba(15,15,25,0.98);
+  background: var(--bg-surface);
   border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
   position: sticky;
@@ -1229,7 +1229,7 @@
 
 .demoscr-practice-step-num {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
@@ -1285,14 +1285,14 @@
 
 .demoscr-practice-expected {
   font-size: 1rem;
-  color: #a7c4b5;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   line-height: 1.5;
 }
 
 .demoscr-practice-talk {
   font-size: 1.1rem;
-  color: #c4a98a;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   line-height: 1.6;
   padding: 0.75rem 1rem;
@@ -1303,7 +1303,7 @@
 
 .demoscr-practice-fallback {
   font-size: 0.9rem;
-  color: #64748b;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
@@ -1354,7 +1354,7 @@
 }
 
 .demoscr-related-card span {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.75rem;
 }
 
@@ -1397,7 +1397,7 @@
 .demoscr-wizard-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(3,3,8,0.92);
+  background: var(--bg-page);
   z-index: 9998;
   display: flex;
   align-items: center;
@@ -1405,7 +1405,7 @@
 }
 
 .demoscr-wizard {
-  background: rgba(20,20,35,0.98);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   padding: 2rem 2.5rem;
@@ -1428,7 +1428,7 @@
   right: 1.25rem;
   background: none;
   border: none;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -1537,13 +1537,13 @@
 }
 
 .demoscr-ba-without {
-  background: rgba(239,68,68,0.08);
-  border: 1px solid rgba(239,68,68,0.2);
+  background: color-mix(in srgb, var(--error) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--error) 20%, transparent);
 }
 
 .demoscr-ba-with {
   background: var(--accent-subtle);
-  border: 1px solid rgba(34,197,94,0.2);
+  border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
 }
 
 .demoscr-ba-label {
@@ -1567,7 +1567,7 @@
   margin-top: 0.75rem;
   padding: 0.4rem 0.85rem;
   background: var(--accent-subtle);
-  border: 1px solid rgba(34,197,94,0.3);
+  border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
   border-radius: 999px;
   display: inline-block;
   color: var(--accent);
@@ -1659,7 +1659,7 @@
 }
 
 .demoscr-seeder-detail {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.8rem;
   line-height: 1.5;
   margin: 0;
@@ -1695,9 +1695,9 @@
   min-width: 100px;
 }
 
-.demoscr-scorecard-stat-nailed { background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.3); }
-.demoscr-scorecard-stat-ok { background: rgba(234,179,8,0.12); border: 1px solid rgba(234,179,8,0.3); }
-.demoscr-scorecard-stat-struggled { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); }
+.demoscr-scorecard-stat-nailed { background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--success) 30%, transparent); }
+.demoscr-scorecard-stat-ok { background: color-mix(in srgb, var(--warning) 12%, transparent); border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent); }
+.demoscr-scorecard-stat-struggled { background: color-mix(in srgb, var(--error) 12%, transparent); border: 1px solid color-mix(in srgb, var(--error) 30%, transparent); }
 
 .demoscr-scorecard-stat-num {
   font-size: 1.5rem;
@@ -1734,7 +1734,7 @@
 }
 
 .demoscr-scorecard-step-time {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.75rem;
   margin-left: auto;
 }
@@ -1790,15 +1790,15 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 1.25rem;
-  background: rgba(20,20,30,0.95);
-  border-bottom: 2px solid #ef4444;
+  background: var(--bg-surface);
+  border-bottom: 2px solid var(--error);
 }
 
 .demoscr-recording-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ef4444;
+  background: var(--error);
   animation: demoscr-blink 1s ease-in-out infinite;
 }
 
