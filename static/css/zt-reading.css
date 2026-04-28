@@ -1038,7 +1038,87 @@
 
 /* Blog landing center column */
 .zt-blog-landing {
-  padding-top: var(--space-6, 24px);
+  padding-top: var(--space-4, 16px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Phase 12: Compact blog header — replaces heavy ft-hero
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-header {
+  margin: 0 0 var(--space-4, 16px);
+}
+.zt-blog-header-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3, 12px);
+}
+.zt-blog-header-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1, 2rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.zt-blog-header-count {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.zt-blog-header-desc {
+  font-size: var(--zen-text-sm, 0.875rem);
+  color: var(--text-tertiary);
+  margin: var(--space-1, 4px) 0 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Phase 12: Inline category filters (visible on all viewports)
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+  margin-bottom: var(--space-6, 24px);
+  padding-bottom: var(--space-4, 16px);
+  border-bottom: 1px solid var(--border);
+}
+.zt-blog-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 4px);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full, 9999px);
+  color: var(--text-secondary);
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms ease-out, border-color 150ms ease-out, color 150ms ease-out;
+}
+.zt-blog-filter:hover {
+  border-color: var(--border-emphasis);
+  color: var(--text-primary);
+}
+.zt-blog-filter.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.zt-blog-filter-count {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+.zt-blog-filter.active .zt-blog-filter-count {
+  color: var(--accent);
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .zt-blog-header-title { font-size: 1.5rem; }
+  .zt-blog-filters { gap: var(--space-1, 4px); }
+  .zt-blog-filter { font-size: 0.7rem; padding: 3px var(--space-2, 8px); }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1236,7 +1316,7 @@
 
 .zt-blog-card {
   display: block;
-  padding: var(--space-6, 24px);
+  padding: var(--space-4, 16px) var(--space-6, 24px);
   background: var(--bg-surface, #141414);
   border: 1px solid var(--border, #262626);
   border-radius: var(--radius-md, 10px);
@@ -1291,6 +1371,121 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Phase 12: OPTION C — Title-First List (no cards, no desc)
+   Title is the headline. Metadata sits below it, muted.
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-list--titlefirst {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.zt-blog-entry {
+  display: block;
+  padding: var(--space-4, 16px) 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border, #262626);
+  transition: background 150ms ease-out;
+}
+.zt-blog-entry:first-child {
+  padding-top: 0;
+}
+.zt-blog-entry:hover {
+  background: var(--bg-elevated, #1A1A1A);
+  padding-left: var(--space-3, 12px);
+  padding-right: var(--space-3, 12px);
+  margin-left: calc(-1 * var(--space-3, 12px));
+  margin-right: calc(-1 * var(--space-3, 12px));
+  border-radius: var(--radius-sm, 6px);
+}
+.zt-blog-entry-title {
+  font-size: var(--zen-text-base, 1rem);
+  font-weight: 600;
+  color: var(--text-primary, #F5F5F5);
+  line-height: 1.5;
+  margin: 0 0 var(--space-1, 4px);
+}
+.zt-blog-entry:hover .zt-blog-entry-title {
+  color: var(--accent, #818CF8);
+}
+.zt-blog-entry-meta {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  margin: 0;
+  line-height: 1.4;
+}
+.zt-blog-entry-tag {
+  color: var(--accent, #818CF8);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🌸 Phase 12: OPTION A — River Rows (lightest, no cards)
+   Tag + date on top line, title below, 1px separator. That's it.
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-list--river {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.zt-blog-row {
+  display: block;
+  padding: var(--space-4, 16px) var(--space-3, 12px);
+  margin-left: calc(-1 * var(--space-3, 12px));
+  margin-right: calc(-1 * var(--space-3, 12px));
+  text-decoration: none;
+  border-bottom: 1px solid var(--border, #262626);
+  border-radius: var(--radius-sm, 6px);
+  transition: background 150ms ease-out;
+}
+.zt-blog-row:last-child {
+  border-bottom: none;
+}
+.zt-blog-row:hover {
+  background: var(--bg-elevated, #1A1A1A);
+  border-left: 2px solid var(--accent, #818CF8);
+  padding-left: calc(var(--space-3, 12px) - 2px);
+}
+.zt-blog-row-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 2px;
+}
+.zt-blog-row-tag {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 600;
+  color: var(--accent, #818CF8);
+}
+.zt-blog-row-date {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+}
+.zt-blog-row-title {
+  font-size: var(--zen-text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-primary, #F5F5F5);
+  line-height: 1.5;
+  margin: 0;
+}
+.zt-blog-row:hover .zt-blog-row-title {
+  color: var(--accent, #818CF8);
+}
+
+/* "New" badge */
+.zt-blog-row-new {
+  color: var(--success, #22C55E);
+  font-weight: 600;
+  font-size: var(--text-caption, 0.75rem);
+}
+
+/* Filter status text */
+.zt-blog-filter-status {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted, #737373);
+  margin: calc(-1 * var(--space-2, 8px)) 0 var(--space-4, 16px);
 }
 
 /* ═══════════════════════════════════════════════════════════

@@ -1,6 +1,6 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
-{{/* 🌸 Zen — Blog Index (3-column grid matching blog single pages) */}}
+{{/* 🌸 Zen Phase 12 — Blog Index: Content Canvas as a river */}}
 
 <div class="zt-reading">
 
@@ -12,27 +12,41 @@
   {{/* ── CENTER: Blog listing ── */}}
   <div class="zt-reading-content zt-blog-landing">
 
-    {{/* Hero */}}
-    <header class="ft-hero">
-      <h1 class="ft-hero-title">Blog</h1>
-      <p class="ft-hero-subtitle">The questions customers ask me at work, answered in detail. Copilot, Azure, licensing, AI — if I've had to explain it more than once, it becomes a post. Found something wrong? <a href="/feedback/">Tell me</a>.</p>
-      <div class="ft-hero-meta">
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} {{ len .Pages }} articles</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} Long-form guides</span>
-        <span class="ft-hero-stat">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 14 "stroke" 1.5) }} Updated regularly</span>
+    {{/* Compact header — content visible within 200px */}}
+    <header class="zt-blog-header">
+      <div class="zt-blog-header-row">
+        <h1 class="zt-blog-header-title">Blog</h1>
+        <span class="zt-blog-header-count">{{ len .Pages }} articles</span>
       </div>
+      <p class="zt-blog-header-desc">Copilot, Azure, licensing, and AI — explained.</p>
     </header>
 
-    {{/* Article cards */}}
-    <div class="zt-blog-list" id="blog-list">
+    {{/* Inline category filters */}}
+    {{ $tags := dict }}
+    {{ range .Pages }}
+      {{ with .Params.card_tag }}
+        {{ $count := index $tags . | default 0 }}
+        {{ $tags = merge $tags (dict . (add $count 1)) }}
+      {{ end }}
+    {{ end }}
+    <div class="zt-blog-filters" role="group" aria-label="Filter by category">
+      <button class="zt-blog-filter active" data-filter="">All</button>
+      {{ range $tag, $count := $tags }}
+      <button class="zt-blog-filter" data-filter="{{ $tag }}">{{ $tag }} <span class="zt-blog-filter-count">{{ $count }}</span></button>
+      {{ end }}
+    </div>
+
+    {{/* Filter status — shows count when sidebar filter is active */}}
+    <p class="zt-blog-filter-status" id="blog-filter-status" hidden></p>
+
+    {{/* Article listing — River Rows */}}
+    <div class="zt-blog-list zt-blog-list--river" id="blog-list">
       {{ range .Pages.ByDate.Reverse }}
-      <a href="{{ .RelPermalink }}" class="zt-blog-card" data-tag="{{ .Params.card_tag }}">
-        <div class="zt-blog-card-top">
-          {{ if .Params.card_tag }}<span class="zt-blog-card-tag">{{ .Params.card_tag }}</span>{{ end }}
-          <span class="zt-blog-card-date">{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
+      <a href="{{ .RelPermalink }}" class="zt-blog-row" data-tag="{{ .Params.card_tag }}">
+        <div class="zt-blog-row-meta">
+          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag">{{ . }}</span> · {{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min{{ if gt (div (sub now.Unix .Date.Unix) 86400) 0 }}{{ if le (div (sub now.Unix .Date.Unix) 86400) 14 }} · <span class="zt-blog-row-new">New</span>{{ end }}{{ end }}</span>
         </div>
-        <h2 class="zt-blog-card-title">{{ .Title }}</h2>
-        {{ with .Description }}<p class="zt-blog-card-desc">{{ . | truncate 150 }}</p>{{ end }}
+        <h2 class="zt-blog-row-title">{{ .Title }}</h2>
       </a>
       {{ end }}
     </div>
@@ -48,25 +62,56 @@
 
 <script>
 (function(){
-  // Category filter buttons
-  var cards = document.querySelectorAll('.zt-blog-card');
-  function filterCards() {
-    var activeFilter = document.querySelector('.zt-blog-nav-cat.active');
-    var filterTag = activeFilter ? activeFilter.dataset.filter : '';
-    cards.forEach(function(el) {
-      var matchTag = !filterTag || el.dataset.tag === filterTag;
-      el.style.display = matchTag ? '' : 'none';
+  var cards = document.querySelectorAll('.zt-blog-row, .zt-blog-entry, .zt-blog-card');
+  var allPills = document.querySelectorAll('.zt-blog-filter, .zt-blog-nav-cat');
+  var statusEl = document.getElementById('blog-filter-status');
+  var totalCount = cards.length;
+  var currentTag = '';
+
+  // Initialize from URL ?tag= param
+  var params = new URLSearchParams(window.location.search);
+  if (params.has('tag')) currentTag = params.get('tag');
+
+  function setFilter(tag) {
+    currentTag = tag;
+    // Update URL without reload
+    var url = new URL(window.location);
+    if (tag) { url.searchParams.set('tag', tag); } else { url.searchParams.delete('tag'); }
+    history.replaceState(null, '', url);
+
+    // Sync all pill sets (inline + sidebar)
+    allPills.forEach(function(b) {
+      var isMatch = (b.dataset.filter || '') === tag;
+      b.classList.toggle('active', isMatch);
     });
+
+    // Filter cards with fade
+    var visibleCount = 0;
+    cards.forEach(function(el) {
+      var show = !tag || el.dataset.tag === tag;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+
+    // Update filter status
+    if (tag && statusEl) {
+      statusEl.textContent = 'Showing ' + visibleCount + ' of ' + totalCount + ' articles';
+      statusEl.hidden = false;
+    } else if (statusEl) {
+      statusEl.hidden = true;
+    }
   }
 
-  document.querySelectorAll('.zt-blog-nav-cat').forEach(function(btn) {
+  // Bind all filter buttons
+  allPills.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var wasActive = this.classList.contains('active');
-      document.querySelectorAll('.zt-blog-nav-cat').forEach(function(b) { b.classList.remove('active'); });
-      if (!wasActive) this.classList.add('active');
-      filterCards();
+      var tag = this.dataset.filter || '';
+      setFilter(this.classList.contains('active') && tag ? '' : tag);
     });
   });
+
+  // Apply initial filter
+  if (currentTag) setFilter(currentTag);
 })();
 </script>
 
