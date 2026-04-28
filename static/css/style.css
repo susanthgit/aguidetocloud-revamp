@@ -285,32 +285,15 @@ select option {
   --bg-secondary: #060610;
   --bg-card: #0a0a14;
   --bg-card-hover: #10101e;
-  --neon-cyan: #66ffff;
-  --neon-magenta: #ff66ff;
-  --neon-green: #39ff14;
-  --neon-yellow: #ffe600;
   --text-primary: #e0e0f0;
   --text-secondary: #a0a0c0;
   --text-muted: #8a8aaa;
   --border-glow: rgba(102, 255, 255, 0.3);
-  --shadow-neon: 0 0 15px rgba(102, 255, 255, 0.2);
-  --shadow-neon-strong: 0 0 30px rgba(102, 255, 255, 0.4);
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
   --max-width: 1280px;
   --radius: 16px;
-  /* Glassmorphism Design Tokens */
-  --glass-blur-card: 12px;
-  --glass-blur-overlay: 20px;
-  --glass-blur-subtle: 8px;
-  --glass-bg-card: rgba(255, 255, 255, 0.03);
-  --glass-bg-overlay: rgba(3, 3, 8, 0.75);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.15);
-  --glass-radius-card: 16px;
-  --glass-radius-pill: 20px;
-  --glass-radius-button: 12px;
   /* Typography Scale (1.25 ratio) */
   --text-xs: 0.64rem;
   --text-sm: 0.8rem;
@@ -1809,17 +1792,15 @@ body.is-home .section {
 
 /* Card on the timeline */
 .blog-tl-card {
-  background:
-    radial-gradient(ellipse at 20% -15%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-    rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(56, 189, 248, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1.3rem 1.5rem;
-  transition: all 0.25s ease;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
 }
 .blog-tl-item:hover .blog-tl-card {
-  border-color: rgba(56, 189, 248, 0.22);
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.06);
+  border-color: var(--border-emphasis);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   transform: translateX(4px);
 }
 .blog-tl-top {
@@ -1851,7 +1832,7 @@ body.is-home .section {
   font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   line-height: 1.4;
   margin: 0;
   display: -webkit-box;
@@ -2002,17 +1983,17 @@ body.is-home .section {
 
 /* ── PROMPT CARDS (standout prompt boxes) ─── */
 .prompt-cards blockquote {
-  border-left: 4px solid #A78BFA;
-  background: linear-gradient(135deg, rgba(40, 15, 70, 0.45) 0%, rgba(55, 20, 90, 0.3) 100%);
+  border-left: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
   border-radius: 0 12px 12px 0;
   padding: 0.8rem 1.2rem;
   margin: 0.6rem 0;
-  color: #E0D4FF;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
-.prompt-cards blockquote p { color: #E0D4FF; margin-bottom: 0; }
-.prompt-cards blockquote strong { color: #C4B5FD; }
-.prompt-cards blockquote em { color: #B8A9E8; font-style: normal; opacity: 0.8; }
+.prompt-cards blockquote p { color: var(--text-secondary); margin-bottom: 0; }
+.prompt-cards blockquote strong { color: var(--accent); }
+.prompt-cards blockquote em { color: var(--text-tertiary); font-style: normal; opacity: 0.8; }
 
 /* Instruction/template cards — teal variant */
 .instruction-cards blockquote {
@@ -2052,8 +2033,8 @@ body.is-home .section {
   margin-bottom: 0.5rem;
 }
 .cowork-persona.it { background: color-mix(in srgb, var(--info) 15%, transparent); color: var(--info); border: 1px solid color-mix(in srgb, var(--info) 30%, transparent); }
-.cowork-persona.sales { background: rgba(251,146,60,0.15); color: #FB923C; border: 1px solid rgba(251,146,60,0.3); }
-.cowork-persona.hr { background: rgba(244,114,182,0.15); color: #F472B6; border: 1px solid rgba(244,114,182,0.3); }
+.cowork-persona.sales { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent); }
+.cowork-persona.hr { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--error); border: 1px solid color-mix(in srgb, var(--error) 30%, transparent); }
 .cowork-persona.finance { background: color-mix(in srgb, var(--teal) 15%, transparent); color: var(--teal); border: 1px solid color-mix(in srgb, var(--teal) 30%, transparent); }
 .cowork-persona.marketing { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent); }
 .cowork-persona.exec { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
