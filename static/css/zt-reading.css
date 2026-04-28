@@ -4283,6 +4283,9 @@ pre:hover .code-copy-btn { opacity: 1; }
   margin: 0 auto;
   padding: 0 var(--space-8, 32px) var(--space-12, 48px);
 }
+@media (max-width: 640px) {
+  .zt-page { padding: 0 var(--space-3, 12px) var(--space-8, 32px); }
+}
 
 /* ── Header: title + counter + subtitle ── */
 .zt-header {

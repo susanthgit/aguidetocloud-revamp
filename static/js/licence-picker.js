@@ -139,10 +139,6 @@
       const grid = document.getElementById('grid-' + f.category);
       if (!grid) return;
 
-      // Dependency badge text
-      const deps = featureDeps[f.id];
-      const depBadge = deps ? '<span class="licpick-tile-dep" title="Requires ' + deps.map(d => featureMap[d] ? featureMap[d].name : d).join(', ') + '">⚡ Requires ' + (featureMap[deps[0]] ? featureMap[deps[0]].name : deps[0]) + '</span>' : '';
-
       const tile = document.createElement('div');
       tile.className = 'licpick-tile';
       tile.dataset.feature = f.id;
@@ -151,24 +147,22 @@
       tile.setAttribute('aria-checked', 'false');
       tile.setAttribute('aria-label', f.name + ': ' + f.description);
       tile.tabIndex = 0;
-      // V3: Build tooltip content
+      // Tooltip with full detail (description, plans, add-on price, deps)
       var plansIncluding = plans.filter(function(p) { return planCoverage[p.id] && planCoverage[p.id].has(f.id); }).map(function(p) { return p.short; });
       var addonInfo = addons.filter(function(a) { return (a.provides || []).includes(f.id); });
+      var deps = featureDeps[f.id];
       var tooltipHTML = '<div class="licpick-tooltip">' +
         '<span class="licpick-tooltip-name">' + esc(f.name) + '</span>' +
         '<span>' + esc(f.description) + '</span>' +
+        (deps ? '<div class="licpick-tooltip-dep">Requires ' + deps.map(d => featureMap[d] ? featureMap[d].name : d).join(', ') + '</div>' : '') +
         '<div class="licpick-tooltip-plans">Included in: ' + (plansIncluding.length ? esc(plansIncluding.join(', ')) : 'No base plan') + '</div>' +
         (addonInfo.length ? '<div class="licpick-tooltip-addon">Add-on: ' + formatPrice(getPrice(addonInfo[0])) + '/mo (' + esc(addonInfo[0].name) + ')</div>' : '') +
         '</div>';
 
+      // Compact tile: name + checkbox only (description in tooltip)
       tile.innerHTML =
-        '<span class="licpick-tile-icon">' + esc(f.icon) + '</span>' +
-        '<span class="licpick-tile-info">' +
-          '<span class="licpick-tile-name">' + esc(f.name) + '</span>' +
-          '<span class="licpick-tile-desc">' + esc(f.description) + '</span>' +
-          depBadge +
-        '</span>' +
-        '<span class="licpick-tile-check">✓</span>' +
+        '<span class="licpick-tile-name">' + esc(f.name) + '</span>' +
+        '<span class="licpick-tile-check">\u2713</span>' +
         tooltipHTML;
       tile.addEventListener('click', () => toggleFeature(f.id));
       tile.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFeature(f.id); } });
@@ -609,7 +603,7 @@
 
     // Group features by category
     const catGroups = {};
-    categories.forEach(c => { catGroups[c.id] = { label: c.icon + ' ' + c.label, features: [] }; });
+    categories.forEach(c => { catGroups[c.id] = { label: c.label, features: [] }; });
     features.forEach(f => {
       if (filterCat !== 'all' && f.category !== filterCat) return;
       if (catGroups[f.category]) catGroups[f.category].features.push(f);
@@ -631,7 +625,7 @@
 
         const isSelected = selected.has(f.id);
         const rowHL = isSelected ? ' class="licpick-row-highlight"' : '';
-        catRows += '<tr' + rowHL + '><td>' + esc(f.icon) + ' ' + esc(f.name) + '</td>';
+        catRows += '<tr' + rowHL + '><td>' + esc(f.name) + '</td>';
         sortedPlans.forEach(p => {
           const has = planCoverage[p.id].has(f.id);
           const colHL = p.id === recPlanId ? ' licpick-col-highlight' : '';

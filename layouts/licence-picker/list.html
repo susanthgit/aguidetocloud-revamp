@@ -63,72 +63,65 @@
   <div class="licpick-picker-layout">
     {{/* Left: Feature Grid */}}
     <div class="licpick-features-col">
-      <div class="licpick-persona-row">
-        <label for="licpick-persona">I'm planning for...</label>
-        <select id="licpick-persona">
-          <option value="all">All users</option>
-          <option value="knowledge">Knowledge workers</option>
-          <option value="frontline">Frontline workers</option>
-          <option value="executives">Executives</option>
-          <option value="security">Security admins</option>
+      {{/* Compact toolbar: search + currency + users + count */}}
+      <div class="licpick-toolbar-compact">
+        <input type="search" id="licpick-search" class="licpick-search" placeholder="Search features..." aria-label="Search features">
+        <select id="licpick-currency" class="licpick-currency-inline" aria-label="Currency">
+          <option value="usd">USD</option>
+          <option value="aud">AUD</option>
+          <option value="nzd" selected>NZD</option>
+          <option value="gbp">GBP</option>
+          <option value="eur">EUR</option>
         </select>
+        <div class="licpick-seat-input" id="licpick-seat-wrap">
+          <label for="licpick-seats" class="licpick-sr-only">Users</label>
+          <input type="number" id="licpick-seats" min="0" max="100000" placeholder="Users" aria-label="Number of users">
+        </div>
+        <div class="licpick-selected-count"><span id="licpick-count">0</span> selected</div>
       </div>
-      <div class="licpick-segments" id="licpick-segments">
-        <div class="licpick-segments-header">
-          <h3 class="licpick-segments-title">{{ partial "icon.html" (dict "name" "briefcase" "size" 14 "stroke" 1.5) }} User Segments</h3>
-          <button class="licpick-segment-add" id="licpick-add-segment">+ Add Segment</button>
-        </div>
-        <div class="licpick-segments-list" id="licpick-segments-list"></div>
-        <div class="licpick-segments-total" id="licpick-segments-total" style="display:none"></div>
+
+      {{/* Quick Start: merged outcomes + presets in one row */}}
+      <div class="licpick-quickstart" aria-label="Quick start presets">
+        <button class="licpick-outcome-btn" data-outcome="enable-copilot">Enable Copilot</button>
+        <button class="licpick-outcome-btn" data-outcome="full-security">Full security</button>
+        <button class="licpick-outcome-btn" data-outcome="compliance-ready">Compliance</button>
+        <button class="licpick-outcome-btn" data-outcome="remote-workers">Remote workers</button>
+        <button class="licpick-outcome-btn" data-outcome="secure-signin">Secure sign-in</button>
+        <button class="licpick-outcome-btn" data-outcome="replace-phone">Phone system</button>
+        {{ range $combos }}
+        <button class="licpick-combo-btn" data-combo="{{ .id }}" title="{{ .description }}">{{ .name }}</button>
+        {{ end }}
+        <button class="licpick-combo-btn licpick-clear-btn" data-combo="clear" title="Clear all selections">Clear All</button>
       </div>
-      <div class="licpick-toolbar">
-        <div class="licpick-outcomes" aria-label="Outcome shortcuts">
-          <button class="licpick-outcome-btn" data-outcome="secure-signin">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} Secure sign-in</button>
-          <button class="licpick-outcome-btn" data-outcome="enable-copilot">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} Enable Copilot</button>
-          <button class="licpick-outcome-btn" data-outcome="replace-phone">{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }} Replace phone system</button>
-          <button class="licpick-outcome-btn" data-outcome="full-security">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Full security</button>
-          <button class="licpick-outcome-btn" data-outcome="compliance-ready">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Compliance ready</button>
-          <button class="licpick-outcome-btn" data-outcome="remote-workers">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Remote workers</button>
+
+      {{/* Feature grid — compact tiles */}}
+      {{ range $categories }}
+      <div class="licpick-category" data-category="{{ .id }}">
+        <h3 class="licpick-cat-title">{{ .label }}</h3>
+        <div class="licpick-feature-grid" id="grid-{{ .id }}">
+          {{/* Features injected by JS */}}
         </div>
-        <div class="licpick-search-row">
-          <input type="search" id="licpick-search" class="licpick-search" placeholder="{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Search features (e.g. Copilot, MFA, DLP...)" aria-label="Search features">
-        </div>
-        <div class="licpick-combos" aria-label="Quick select presets">
-          {{ range $combos }}
-          <button class="licpick-combo-btn" data-combo="{{ .id }}" title="{{ .description }}">{{ .name }}</button>
-          {{ end }}
-          <button class="licpick-combo-btn licpick-clear-btn" data-combo="clear" title="Clear all selections">Clear All</button>
-        </div>
-        <div class="licpick-filters-row">
-          <div class="licpick-seat-input" id="licpick-seat-wrap">
-            <label for="licpick-seats">Users:</label>
-            <input type="number" id="licpick-seats" min="0" max="100000" placeholder="e.g. 500" aria-label="Number of users">
-          </div>
-          <div class="licpick-currency-select">
-            <label for="licpick-currency">Currency:</label>
-            <select id="licpick-currency" aria-label="Select currency">
-              <option value="usd">🇺🇸 USD</option>
-              <option value="aud">🇦🇺 AUD</option>
-              <option value="nzd" selected>🇳🇿 NZD</option>
-              <option value="gbp">🇬🇧 GBP</option>
-              <option value="eur">🇪🇺 EUR</option>
-            </select>
-          </div>
+      </div>
+      {{ end }}
+
+      {{/* Advanced: segments + preview toggle — collapsed */}}
+      <details class="licpick-advanced-section">
+        <summary>Advanced options</summary>
+        <div class="licpick-advanced-inner">
           <label class="licpick-toggle-label">
             <input type="checkbox" id="licpick-preview-toggle" checked>
             <span>Include preview plans (E7)</span>
           </label>
-          <div class="licpick-selected-count"><span id="licpick-count">0</span> selected</div>
+          <div class="licpick-segments" id="licpick-segments">
+            <div class="licpick-segments-header">
+              <h4 class="licpick-segments-title">Multi-segment planning</h4>
+              <button class="licpick-segment-add" id="licpick-add-segment">+ Add Segment</button>
+            </div>
+            <div class="licpick-segments-list" id="licpick-segments-list"></div>
+            <div class="licpick-segments-total" id="licpick-segments-total" style="display:none"></div>
+          </div>
         </div>
-      </div>
-      {{ range $categories }}
-      <div class="licpick-category" data-category="{{ .id }}">
-        <h3 class="licpick-cat-title"><span class="licpick-cat-icon">{{ .icon }}</span> {{ .label }}</h3>
-        <div class="licpick-feature-grid" id="grid-{{ .id }}">
-          {{/* Features injected by JS based on category */}}
-        </div>
-      </div>
-      {{ end }}
+      </details>
     </div>
 
     {{/* Right: Results Panel */}}
@@ -178,7 +171,7 @@
     <select id="licpick-cat-filter" aria-label="Filter features by category">
       <option value="all">All Categories</option>
       {{ range $categories }}
-      <option value="{{ .id }}">{{ .icon }} {{ .label }}</option>
+      <option value="{{ .id }}">{{ .label }}</option>
       {{ end }}
     </select>
     <label class="licpick-toggle-label licpick-diff-toggle">
@@ -227,14 +220,16 @@
   <div class="licpick-scenarios-grid">
     {{ range $scenarios }}
     <div class="licpick-scenario-card" data-scenario="{{ .id }}">
-      <div class="licpick-scenario-icon">{{ .icon }}</div>
       <h3 class="licpick-scenario-title">{{ .title }}</h3>
-      <p class="licpick-scenario-q">{{ .question }}</p>
-      <div class="licpick-scenario-answer">{{ .answer | safeHTML }}</div>
       {{ if gt .monthly_cost 0 }}
-      <div class="licpick-scenario-cost">${{ .monthly_cost }}/user/month</div>
+      <div class="licpick-scenario-cost">{{ .monthly_cost }}/user/month · {{ .recommended }}</div>
+      {{ else }}
+      <div class="licpick-scenario-cost">{{ .recommended }}</div>
       {{ end }}
-      <div class="licpick-scenario-rec">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} {{ .recommended }}</div>
+      <details class="licpick-scenario-details">
+        <summary>Details</summary>
+        <div class="licpick-scenario-answer">{{ .answer | safeHTML }}</div>
+      </details>
       <button class="licpick-scenario-try" data-scenario="{{ .id }}">Try this →</button>
     </div>
     {{ end }}
@@ -289,7 +284,7 @@
     <textarea class="licpick-modal-body" id="licpick-email-body" rows="18"></textarea>
     <div class="licpick-modal-actions">
       <button class="licpick-action-btn" id="licpick-email-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy to Clipboard</button>
-      <a class="licpick-action-btn licpick-email-mailto" id="licpick-email-mailto" href="#">✉️ Open in Email Client</a>
+      <a class="licpick-action-btn licpick-email-mailto" id="licpick-email-mailto" href="#">Open in Email Client</a>
     </div>
   </div>
 </div>
