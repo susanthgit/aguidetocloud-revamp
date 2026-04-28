@@ -258,7 +258,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
-  background: var(--glass-bg-card);
+  background: var(--bg-surface);
   border: 2px solid var(--border);
   border-radius: var(--radius-md, 10px);
   cursor: pointer;

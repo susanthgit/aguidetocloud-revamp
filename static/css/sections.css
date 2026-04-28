@@ -12,8 +12,8 @@
   position: relative;
   padding: 2rem 1.8rem;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.4s ease;
+  border: 1px solid var(--border);
+  transition: border-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -24,28 +24,24 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  transition: box-shadow 0.3s ease;
 }
 .showcase-ai {
-  background: linear-gradient(160deg, rgba(255,0,229,0.06) 0%, var(--bg-surface) 40%);
+  background: color-mix(in srgb, var(--accent) 4%, var(--bg-surface));
 }
-.showcase-ai::before { background: linear-gradient(90deg, #ff00e5, transparent); }
+.showcase-ai::before { background: linear-gradient(90deg, var(--accent), transparent); }
 .showcase-cloud {
-  background: linear-gradient(160deg, rgba(0,229,255,0.06) 0%, var(--bg-surface) 40%);
+  background: color-mix(in srgb, var(--info) 4%, var(--bg-surface));
 }
-.showcase-cloud::before { background: linear-gradient(90deg, #00e5ff, transparent); }
+.showcase-cloud::before { background: linear-gradient(90deg, var(--info), transparent); }
 .showcase-cert {
-  background: linear-gradient(160deg, rgba(57,255,20,0.06) 0%, var(--bg-surface) 40%);
+  background: color-mix(in srgb, var(--success) 4%, var(--bg-surface));
 }
-.showcase-cert::before { background: linear-gradient(90deg, #39ff14, transparent); }
+.showcase-cert::before { background: linear-gradient(90deg, var(--success), transparent); }
 
 .showcase-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.15);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-}
-.showcase-card:hover::before {
-  box-shadow: 0 0 20px currentColor;
+  border-color: var(--border-emphasis);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 .showcase-icon {
   font-size: 2.5rem;
@@ -55,7 +51,7 @@
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
 }
 .showcase-card p {
   font-size: 0.92rem;
@@ -79,7 +75,7 @@
   color: var(--accent);
   opacity: 0;
   transform: translateX(-8px);
-  transition: all 0.3s ease;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 .showcase-card:hover .showcase-arrow {
   opacity: 1;
@@ -102,8 +98,8 @@
   left: 1rem;
   z-index: 2;
   padding: 0.35rem 0.9rem;
-  background: rgba(255, 171, 64, 0.9);
-  color: #0f0c08;
+  background: var(--warning);
+  color: var(--bg-page);
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 800;
@@ -114,12 +110,12 @@
   display: block;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--border-glow);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
 }
 .featured-video:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-neon);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 .featured-video img {
   width: 100%;
@@ -135,7 +131,7 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0.4rem 0;
 }
 .featured-info p {
@@ -164,8 +160,8 @@
   padding: 0.9rem 1.1rem;
   border-radius: 14px;
   background: var(--bg-surface);
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  transition: border-color 200ms ease-out, background-color 200ms ease-out, transform 200ms ease-out;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.92rem;
@@ -173,22 +169,21 @@
 }
 .sidebar-link:hover {
   border-color: var(--accent);
-  background: var(--bg-card-hover);
+  background: var(--bg-elevated);
   transform: translateX(4px);
-  text-shadow: none;
-  color: #fff;
+  color: var(--text-primary);
 }
 .sidebar-count {
   font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 700;
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-elevated);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
 }
-.sidebar-ai:hover { border-color: #ff00ff; }
-.sidebar-cloud:hover { border-color: #ffd700; }
-.sidebar-cert:hover { border-color: #39ff14; }
+.sidebar-ai:hover { border-color: var(--accent); }
+.sidebar-cloud:hover { border-color: var(--info); }
+.sidebar-cert:hover { border-color: var(--success); }
 .sidebar-news:hover { border-color: var(--accent); }
 
 /* ═══ OPTION C: LEARNING PATHS ═══ */
@@ -201,8 +196,8 @@
   background: var(--bg-surface);
   border-radius: var(--radius);
   padding: 2rem 1.8rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.4s ease;
+  border: 1px solid var(--border);
+  transition: border-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -212,7 +207,7 @@
 .path-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-neon);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 .path-level {
   font-family: var(--font-heading);
@@ -230,7 +225,7 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-primary);
 }
 .path-card p {
   font-size: 0.9rem;
@@ -243,7 +238,7 @@
   flex-direction: column;
   gap: 0.3rem;
   padding: 0.8rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 }
 .path-steps span {
   font-size: 0.82rem;
@@ -256,9 +251,6 @@
   font-weight: 700;
   color: var(--accent);
   margin-top: 0.3rem;
-}
-.path-card:hover .path-cta {
-  text-shadow: 0 0 10px var(--accent);
 }
 
 /* ═══ OPTION D: TRENDING ═══ */
@@ -274,19 +266,18 @@
   padding: 0.8rem;
   border-radius: 16px;
   background: var(--bg-surface);
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  transition: border-color 200ms ease-out, background-color 200ms ease-out;
 }
 .trending-card:hover {
   border-color: var(--accent);
-  background: var(--bg-card-hover);
-  text-shadow: none;
+  background: var(--bg-elevated);
 }
 .trending-rank {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 900;
-  color: rgba(255,255,255,0.08);
+  color: var(--border);
   min-width: 36px;
   text-align: center;
 }
@@ -308,7 +299,7 @@
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   line-height: 1.3;
 }
 
