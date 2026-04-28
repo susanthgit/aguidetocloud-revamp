@@ -21,16 +21,13 @@
   {{/* ── CENTER: Unified video catalog ── */}}
   <div class="zt-reading-content zt-vid-landing">
 
-    <header class="ft-hero">
-      <h1 class="ft-hero-title">Video Tutorials</h1>
-      <p class="ft-hero-subtitle">
-        Cert courses, Copilot demos, hands-on labs — <strong>{{ len $allVideos }} videos</strong> on YouTube, all free. If something's unclear or outdated, drop a comment.
-      </p>
-      <div class="ft-hero-meta">
-        <span class="ft-hero-stat">{{ len $allVideos }} videos</span>
-        <span class="ft-hero-stat">{{ len (where site.RegularPages "Section" "certifications") }} full courses</span>
-        <span class="ft-hero-stat">100% free</span>
+    {{/* Compact header */}}
+    <header class="zt-blog-header">
+      <div class="zt-blog-header-row">
+        <h1 class="zt-blog-header-title">Video Tutorials</h1>
+        <span class="zt-blog-header-count">{{ len $allVideos }} videos</span>
       </div>
+      <p class="zt-blog-header-desc">Cert courses, Copilot demos, hands-on labs — all free on YouTube.</p>
     </header>
 
     {{/* Category quick-jump pills */}}
@@ -38,7 +35,7 @@
       {{ range $cat := $categories }}
         {{ $catPages := where site.RegularPages "Section" $cat.section }}
         {{ if $catPages }}
-        <a href="#cat-{{ $cat.section }}" class="zt-lic-pill">{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 14 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</a>
+        <a href="#cat-{{ $cat.section }}" class="zt-lic-pill">{{ $cat.name }}</a>
         {{ end }}
       {{ end }}
     </nav>
@@ -49,7 +46,7 @@
       {{ if $catPages }}
       <section class="zt-vid-cat-section" id="cat-{{ $cat.section }}">
         <div class="zt-lic-cat-header">
-          <h2 class="zt-lic-cat-title">{{ partial "icon.html" (dict "name" ($cat.icon | default "") "size" 16 "stroke" 1.5 "fallback" $cat.emoji) }} {{ $cat.name }}</h2>
+          <h2 class="zt-lic-cat-title">{{ $cat.name }}</h2>
           <span class="zt-lic-cat-count">{{ len $catPages }} videos</span>
         </div>
         <div class="zt-vid-grid">
@@ -60,7 +57,7 @@
             {{ end }}
             <div class="zt-vid-card-body">
               <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
-              <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }} · {{ end }}{{ .Date.Format "Jan 2006" }}{{ with .Params.views }} · {{ lang.FormatNumberCustom 0 . }} views{{ end }}</span>
+              <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }}{{ end }}{{ with .Params.views }}{{ if ge . 1000 }} · {{ lang.FormatNumberCustom 0 (div . 1000) }}K views{{ else }} · {{ . }} views{{ end }}{{ end }}</span>
             </div>
           </a>
           {{ end }}

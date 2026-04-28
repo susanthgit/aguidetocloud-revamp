@@ -19,11 +19,12 @@
 
   <div class="zt-reading-content zt-vid-landing">
 
-    <header class="ft-hero">
-      <h1 class="ft-hero-title">{{ if $icon }}{{ partial "icon.html" (dict "name" $icon "size" 20) }}{{ else }}{{ $emoji }}{{ end }} {{ $title }}</h1>
-      <p class="ft-hero-subtitle">
-        {{ len $page.Pages }} free videos in this category. Part of our <a href="/videos/" class="zt-vid-backlink">Video Tutorials</a> collection.
-      </p>
+    <header class="zt-blog-header">
+      <div class="zt-blog-header-row">
+        <h1 class="zt-blog-header-title">{{ $title }}</h1>
+        <span class="zt-blog-header-count">{{ len $page.Pages }} videos</span>
+      </div>
+      <p class="zt-blog-header-desc">Part of our <a href="/videos/" class="zt-vid-backlink">Video Tutorials</a> collection.</p>
     </header>
 
     <div class="zt-vid-grid">
@@ -34,7 +35,7 @@
         {{ end }}
         <div class="zt-vid-card-body">
           <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
-          <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }} · {{ end }}{{ .Date.Format "Jan 2006" }}{{ with .Params.views }} · {{ lang.FormatNumberCustom 0 . }} views{{ end }}</span>
+          <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }}{{ end }}{{ with .Params.views }}{{ if ge . 1000 }} · {{ lang.FormatNumberCustom 0 (div . 1000) }}K views{{ else }} · {{ . }} views{{ end }}{{ end }}</span>
         </div>
       </a>
       {{ end }}

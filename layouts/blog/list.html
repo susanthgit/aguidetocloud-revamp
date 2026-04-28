@@ -44,7 +44,7 @@
       {{ range .Pages.ByDate.Reverse }}
       <a href="{{ .RelPermalink }}" class="zt-blog-row" data-tag="{{ .Params.card_tag }}">
         <div class="zt-blog-row-meta">
-          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag">{{ . }}</span> · {{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min{{ if gt (div (sub now.Unix .Date.Unix) 86400) 0 }}{{ if le (div (sub now.Unix .Date.Unix) 86400) 14 }} · <span class="zt-blog-row-new">New</span>{{ end }}{{ end }}</span>
+          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min{{ if gt (div (sub now.Unix .Date.Unix) 86400) 0 }}{{ if le (div (sub now.Unix .Date.Unix) 86400) 14 }} · <span class="zt-blog-row-new">New</span>{{ end }}{{ end }}</span>
         </div>
         <h2 class="zt-blog-row-title">{{ .Title }}</h2>
       </a>
