@@ -306,10 +306,10 @@
           uncoverable.map(f => esc(featureMap[f] ? featureMap[f].name : f)).join(', ') + '</strong></p>';
       }
       if (seatCount > 300) {
-        msg += '<p style="margin:4px 0 0;font-size:0.8rem">💡 Business plans are excluded because you set >300 users.</p>';
+        msg += '<p class="licpick-tip-note">Business plans are excluded because you set >300 users.</p>';
       }
       if (!includePreview) {
-        msg += '<p style="margin:4px 0 0;font-size:0.8rem">💡 Preview plans (E7) are excluded. Toggle "Include preview" to see more options.</p>';
+        msg += '<p class="licpick-tip-note">Preview plans (E7) are excluded. Toggle "Include preview" to see more options.</p>';
       }
       document.getElementById('licpick-rec-name').textContent = 'No plan found';
       document.getElementById('licpick-rec-price').textContent = '—';
@@ -449,7 +449,7 @@
     // Why this plan + extras
     let covHTML = '';
     const covPct = Math.round((rec.coverage / needed.length) * 100);
-    covHTML += '<div>Covers all ' + rec.coverage + ' selected features ✅</div>';
+    covHTML += '<div>Covers all ' + rec.coverage + ' selected features</div>';
 
     // Show bonus features user gets for free
     if (rec.extras > 0) {
@@ -464,13 +464,13 @@
         if (!neededSet.has(f) && featureMap[f]) bonusFeats.push(featureMap[f].name);
       });
       if (bonusFeats.length) {
-        covHTML += '<div style="margin-top:8px;font-size:0.78rem;color:#94a3b8"><strong>🎁 Bonus features included:</strong> ' + bonusFeats.slice(0, 8).join(', ') + (bonusFeats.length > 8 ? ' +' + (bonusFeats.length - 8) + ' more' : '') + '</div>';
+        covHTML += '<div class="licpick-bonus-note"><strong>Bonus features included:</strong> ' + bonusFeats.slice(0, 8).join(', ') + (bonusFeats.length > 8 ? ' +' + (bonusFeats.length - 8) + ' more' : '') + '</div>';
       }
     }
 
     // Warnings
-    if (rec.plan.seat_max) covHTML += '<div style="margin-top:6px">⚠️ ' + esc(rec.plan.name) + ' is limited to ' + rec.plan.seat_max + ' users</div>';
-    if (rec.plan.status === 'preview') covHTML += '<div style="margin-top:6px">🆕 ' + esc(rec.plan.name) + ' is in preview (GA May 2026)</div>';
+    if (rec.plan.seat_max) covHTML += '<div class="licpick-coverage-note">' + esc(rec.plan.name) + ' is limited to ' + rec.plan.seat_max + ' users</div>';
+    if (rec.plan.status === 'preview') covHTML += '<div class="licpick-coverage-note">' + esc(rec.plan.name) + ' is in preview (GA May 2026)</div>';
 
     // Why cheaper plans failed
     if (allResults.length > 0) {
@@ -479,7 +479,7 @@
         const example = cheaperPlans[cheaperPlans.length - 1];
         const exMissing = needed.filter(f => !planCoverage[example.id].has(f));
         if (exMissing.length) {
-          covHTML += '<div style="margin-top:8px;font-size:0.78rem;color:#94a3b8">💡 <strong>Why not ' + esc(example.short) + ' (' + formatPrice(getPrice(example)) + ')?</strong> Missing: ' + exMissing.slice(0, 3).map(f => featureMap[f] ? featureMap[f].name : f).join(', ') + (exMissing.length > 3 ? ' +' + (exMissing.length - 3) + ' more' : '') + '</div>';
+          covHTML += '<div class="licpick-bonus-note"><strong>Why not ' + esc(example.short) + ' (' + formatPrice(getPrice(example)) + ')?</strong> Missing: ' + exMissing.slice(0, 3).map(f => featureMap[f] ? featureMap[f].name : f).join(', ') + (exMissing.length > 3 ? ' +' + (exMissing.length - 3) + ' more' : '') + '</div>';
         }
       }
     }
@@ -521,7 +521,7 @@
     if (!best.addons.length && results.length > 1) {
       const cheaperCombo = results.find(r => r.addons.length > 0 && r.total < best.total);
       if (cheaperCombo) {
-        tips.push('💡 <strong>' + esc(cheaperCombo.plan.short) + ' + add-ons</strong> is ' + formatPrice(best.total - cheaperCombo.total) + '/mo cheaper than ' + esc(best.plan.short));
+        tips.push('<strong>' + esc(cheaperCombo.plan.short) + ' + add-ons</strong> is ' + formatPrice(best.total - cheaperCombo.total) + '/mo cheaper than ' + esc(best.plan.short));
       }
     }
 
@@ -529,20 +529,20 @@
     if (best.addons.length && results.length > 1) {
       const simpler = results.find(r => r.addons.length === 0 && r.total <= best.total * 1.15);
       if (simpler && simpler !== best) {
-        tips.push('🎯 <strong>' + esc(simpler.plan.short) + '</strong> (' + formatPrice(simpler.total) + ') covers everything with zero add-ons — only ' + formatPrice(simpler.total - best.total) + '/mo more');
+        tips.push('<strong>' + esc(simpler.plan.short) + '</strong> (' + formatPrice(simpler.total) + ') covers everything with zero add-ons — only ' + formatPrice(simpler.total - best.total) + '/mo more');
       }
     }
 
     // Seat limit warning
     if (best.plan.seat_max) {
-      tips.push('⚠️ ' + esc(best.plan.name) + ' is limited to ' + best.plan.seat_max + ' users. Need more? Look at Enterprise plans.');
+      tips.push('' + esc(best.plan.name) + ' is limited to ' + best.plan.seat_max + ' users. Need more? Look at Enterprise plans.');
     }
 
     // E3+addons vs E5 breakpoint
     const e3combo = results.find(r => r.plan.id === 'm365-e3' && r.addons.length > 0);
     const e5solo = results.find(r => r.plan.id === 'm365-e5' && r.addons.length === 0);
     if (e3combo && e5solo && e3combo.total > e5solo.total) {
-      tips.push('💰 E3 + add-ons (' + formatPrice(e3combo.total) + ') > E5 (' + formatPrice(e5solo.total) + '). <strong>Go with E5!</strong>');
+      tips.push('E3 + add-ons (' + formatPrice(e3combo.total) + ') > E5 (' + formatPrice(e5solo.total) + '). <strong>Go with E5!</strong>');
     }
 
     // Matching scenario hint
@@ -551,7 +551,7 @@
       return needed.some(f => words.includes((featureMap[f] || {}).name?.toLowerCase() || ''));
     });
     if (scenarioMatch) {
-      tips.push('📖 Related scenario: <strong>' + esc(scenarioMatch.title) + '</strong> — check the Scenarios tab');
+      tips.push('Related scenario: <strong>' + esc(scenarioMatch.title) + '</strong> — check the Scenarios tab');
     }
 
     const el = document.getElementById('licpick-tips');
@@ -635,7 +635,7 @@
         sortedPlans.forEach(p => {
           const has = planCoverage[p.id].has(f.id);
           const colHL = p.id === recPlanId ? ' licpick-col-highlight' : '';
-          catRows += '<td class="' + (has ? 'lp-yes' : 'lp-no') + colHL + '">' + (has ? '✅' : '—') + '</td>';
+          catRows += '<td class="' + (has ? 'lp-yes' : 'lp-no') + colHL + '">' + (has ? 'Yes' : '—') + '</td>';
         });
         catRows += '</tr>';
       });
@@ -724,7 +724,7 @@
           '<span class="licpick-addon-price">' + (alreadyIn ? 'Included' : (!eligible ? 'N/A' : '+' + formatPrice(getPrice(a)))) + '</span>' +
         '</div>' +
         '<p class="licpick-addon-desc">' + esc(a.description) + '</p>' +
-        (alreadyIn ? '<div class="licpick-addon-conflict-msg">✅ Already included in ' + esc(plan.short) + ' — don\'t buy separately!</div>' : '') +
+        (alreadyIn ? '<div class="licpick-addon-conflict-msg">Already included in ' + esc(plan.short) + ' — don\'t buy separately!</div>' : '') +
         reasonHTML +
         (a.note && !alreadyIn ? '<div class="licpick-addon-conflict-msg">' + esc(a.note) + '</div>' : '') +
         unlocksHTML +
@@ -802,9 +802,9 @@
         'Features: ' + feats + '\n' +
         'Generated by aguidetocloud.com/licence-picker/';
       navigator.clipboard.writeText(text).then(() => {
-        copyBtn.textContent = '✅ Copied!';
-        setTimeout(() => { copyBtn.textContent = '📋 Copy Summary'; }, 2000);
-      }).catch(() => { copyBtn.textContent = '❌ Failed'; setTimeout(() => { copyBtn.textContent = '📋 Copy Summary'; }, 2000); });
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy Summary'; }, 2000);
+      }).catch(() => { copyBtn.textContent = 'Failed'; setTimeout(() => { copyBtn.textContent = 'Copy Summary'; }, 2000); });
     });
   }
 
@@ -817,9 +817,9 @@
       if (currency !== 'nzd') params.set('cur', currency);
       const url = location.origin + '/licence-picker/?' + params.toString();
       navigator.clipboard.writeText(url).then(() => {
-        shareBtn.textContent = '✅ Link Copied!';
-        setTimeout(() => { shareBtn.textContent = '🔗 Share Link'; }, 2000);
-      }).catch(() => { shareBtn.textContent = '❌ Failed'; setTimeout(() => { shareBtn.textContent = '🔗 Share Link'; }, 2000); });
+        shareBtn.textContent = 'Link copied!';
+        setTimeout(() => { shareBtn.textContent = 'Share Link'; }, 2000);
+      }).catch(() => { shareBtn.textContent = 'Failed'; setTimeout(() => { shareBtn.textContent = 'Share Link'; }, 2000); });
     });
   }
 
@@ -1052,11 +1052,11 @@
 
     copyBtn.addEventListener('click', function() {
       navigator.clipboard.writeText(bodyEl.value).then(function() {
-        copyBtn.textContent = '✅ Copied!';
-        setTimeout(function() { copyBtn.textContent = '📋 Copy to Clipboard'; }, 2000);
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function() { copyBtn.textContent = 'Copy to Clipboard'; }, 2000);
       }).catch(function() {
-        copyBtn.textContent = '❌ Failed';
-        setTimeout(function() { copyBtn.textContent = '📋 Copy to Clipboard'; }, 2000);
+        copyBtn.textContent = 'Failed';
+        setTimeout(function() { copyBtn.textContent = 'Copy to Clipboard'; }, 2000);
       });
     });
   }
@@ -1118,7 +1118,7 @@
     var maxPrice = Math.max.apply(null, top5.map(function(r) { return r.total; }));
     if (maxPrice <= 0) { el.innerHTML = ''; return; }
 
-    var html = '<div class="licpick-chart-title">📊 Cost Comparison (per user/month)</div>';
+    var html = '<div class="licpick-chart-title">Cost Comparison (per user/month)</div>';
     top5.forEach(function(r, i) {
       var pct = (r.total / maxPrice) * 100;
       var label = r.addons.length ? r.plan.short + ' +' + r.addons.length : r.plan.short;
@@ -1280,7 +1280,7 @@
     restoreFromURL();
   } else {
     if (restoreFromLocalStorage()) {
-      showToast('🔄 Restored from last session');
+      showToast('Restored from last session');
     }
   }
 

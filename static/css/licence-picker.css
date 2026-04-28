@@ -1,15 +1,15 @@
 /* ═══════════════════════════════════════════════
    M365 Licence Picker — CSS
    Namespace: .licpick-*
-   Accent: #5AA830 (Value Green)
+   Zen Design System - uses design tokens only
    ═══════════════════════════════════════════════ */
 
 :root {
   --lp-accent: var(--accent);
   --lp-accent-dim: var(--accent-subtle);
   --lp-accent-glow: transparent;
-  --lp-radius: 14px;
-  --lp-radius-sm: 8px;
+  --lp-radius: var(--radius-md);
+  --lp-radius-sm: var(--radius-sm);
 }
 
 /* ── Tabs ──────────────────────────────────────── */
@@ -25,7 +25,7 @@
   cursor: pointer;
   white-space: nowrap;
 }
-.licpick-panel { animation: lpFadeIn 0.3s ease; }
+.licpick-panel { animation: lpFadeIn 150ms ease; }
 @keyframes lpFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 /* ── Tab 1: Feature Picker Layout ──────────────── */
@@ -94,7 +94,7 @@
   align-items: center;
   gap: 8px;
 }
-.licpick-cat-icon { font-size: 1.1rem; }
+.licpick-cat-icon { font-size: var(--text-h3); }
 
 /* ── Feature Grid ──────────────────────────────── */
 .licpick-feature-grid {
@@ -117,14 +117,14 @@
 .licpick-tile:hover {
   background: var(--border);
   border-color: var(--border);
-  transform: translateY(-1px);
 }
+
 .licpick-tile.selected {
   background: var(--accent-subtle);
   border-color: var(--accent);
   box-shadow: 0 0 12px transparent;
 }
-.licpick-tile-icon { font-size: 1.3rem; flex-shrink: 0; }
+.licpick-tile-icon { font-size: var(--text-h3); flex-shrink: 0; }
 .licpick-tile-info { flex: 1; min-width: 0; }
 .licpick-tile-name {
   font: 600 0.82rem/1.3 inherit;
@@ -149,7 +149,7 @@
   align-items: center;
   justify-content: center;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
-  font-size: 0.7rem;
+  font-size: var(--text-caption);
   color: transparent;
 }
 .licpick-tile.selected .licpick-tile-check {
@@ -172,10 +172,10 @@
 .licpick-results-empty {
   text-align: center;
 }
-.licpick-results-empty-icon { font-size: 3rem; margin-bottom: 0.5rem; }
-.licpick-results-empty h3 { font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--text-primary); }
-.licpick-results-empty p { color: var(--text-secondary); font-size: 0.85rem; margin: 0 0 0.5rem; }
-.licpick-hint { font-size: 0.78rem; color: var(--text-secondary); }
+.licpick-results-empty-icon { font-size: var(--text-h1); margin-bottom: 0.5rem; }
+.licpick-results-empty h3 { font-size: var(--text-h3); margin: 0 0 0.5rem; color: var(--text-primary); }
+.licpick-results-empty p { color: var(--text-secondary); font-size: var(--text-sm); margin: 0 0 0.5rem; }
+.licpick-hint { font-size: var(--text-sm); color: var(--text-secondary); }
 .licpick-inline-combo {
   background: none;
   border: none;
@@ -209,16 +209,16 @@
   color: var(--accent);
 }
 .licpick-price-period {
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 .licpick-rec-nzd {
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin: 4px 0 1rem;
 }
 .licpick-rec-breakdown {
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -230,7 +230,7 @@
   border-bottom: 1px solid var(--border);
 }
 .licpick-rec-breakdown .licpick-bd-total {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   border-bottom: none;
   border-top: 2px solid var(--accent);
@@ -238,7 +238,7 @@
   padding-top: 8px;
 }
 .licpick-rec-coverage {
-  font-size: 0.78rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 .licpick-coverage-bar {
@@ -252,7 +252,7 @@
   height: 100%;
   border-radius: 3px;
   background: var(--accent);
-  transition: width 0.4s ease;
+  transition: width 200ms ease;
 }
 
 /* ── Alternatives ──────────────────────────────── */
@@ -281,10 +281,10 @@
 }
 .licpick-alt-name { font: 600 0.85rem/1.3 inherit; color: var(--text-primary); }
 .licpick-alt-price { font: 700 0.85rem/1.3 inherit; color: var(--accent); }
-.licpick-alt-note { font-size: 0.75rem; color: var(--text-secondary); }
+.licpick-alt-note { font-size: var(--text-caption); color: var(--text-secondary); }
 .licpick-alt-overkill {
-  background: rgba(234,179,8,0.1);
-  border-color: rgba(234,179,8,0.3);
+  background: color-mix(in srgb, var(--warning) 10%, transparent);
+  border-color: color-mix(in srgb, var(--warning) 30%, transparent);
 }
 .licpick-alt-overkill .licpick-alt-name::before { content: "⚠️ "; }
 
@@ -292,14 +292,19 @@
 .licpick-tips {
   margin-top: 1rem;
   padding: 12px;
-  background: rgba(234,179,8,0.08);
-  border: 1px solid rgba(234,179,8,0.2);
+  background: color-mix(in srgb, var(--warning) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);
   border-radius: var(--lp-radius-sm);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-primary);
   line-height: 1.5;
 }
 .licpick-tips:empty { display: none; }
+
+/* ── JS-rendered helper classes ────────────────── */
+.licpick-tip-note { margin: 4px 0 0; font-size: var(--text-sm); }
+.licpick-bonus-note { margin-top: 8px; font-size: var(--text-sm); color: var(--text-muted); }
+.licpick-coverage-note { margin-top: 6px; }
 
 /* ── Actions ───────────────────────────────────── */
 .licpick-actions {
@@ -332,7 +337,7 @@
   padding: 0 1rem;
 }
 .licpick-compare-controls label {
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-right: 8px;
 }
@@ -358,7 +363,7 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 .licpick-compare-table th,
 .licpick-compare-table td {
@@ -372,7 +377,7 @@
   top: 0;
   background: var(--bg-surface);
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 600;
   z-index: 2;
 }
 .licpick-compare-table th:first-child,
@@ -385,16 +390,16 @@
   min-width: 180px;
 }
 .licpick-compare-table td:first-child { color: var(--text-primary); font-weight: 500; }
-.licpick-compare-table .lp-yes { color: var(--accent); font-weight: 700; }
+.licpick-compare-table .lp-yes { color: var(--accent); font-weight: 600; }
 .licpick-compare-table .lp-no { color: var(--text-muted); }
 .licpick-compare-table .lp-price-row td {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   border-top: 2px solid var(--accent);
 }
 .licpick-compare-table .lp-cat-row td {
   background: var(--accent-subtle);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   text-align: left;
 }
@@ -402,13 +407,13 @@
   display: inline-block;
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
   margin-left: 4px;
 }
-.licpick-badge-popular { background: var(--accent); color: var(--accent-foreground); }
-.licpick-badge-new { background: var(--accent); color: var(--accent-foreground); }
-.licpick-badge-security { background: var(--error); color: var(--accent-foreground); }
+.licpick-badge-popular { background: var(--accent); color: #fff; }
+.licpick-badge-new { background: var(--accent); color: #fff; }
+.licpick-badge-security { background: var(--error); color: #fff; }
 
 /* ══════════════════════════════════════════════════
    TAB 3 — ADD-ON CALCULATOR
@@ -463,8 +468,8 @@
 }
 .licpick-addon-card.disabled { opacity: 0.4; pointer-events: none; }
 .licpick-addon-card.conflict {
-  border-color: rgba(234,179,8,0.3);
-  background: rgba(234,179,8,0.05);
+  border-color: color-mix(in srgb, var(--warning) 30%, transparent);
+  background: color-mix(in srgb, var(--warning) 5%, transparent);
 }
 .licpick-addon-card.selected {
   border-color: var(--accent);
@@ -478,9 +483,9 @@
 }
 .licpick-addon-name { font: 600 0.85rem/1.3 inherit; color: var(--text-primary); }
 .licpick-addon-price { font: 700 0.85rem/1.3 inherit; color: var(--accent); }
-.licpick-addon-desc { font-size: 0.78rem; color: var(--text-secondary); margin: 0; }
+.licpick-addon-desc { font-size: var(--text-sm); color: var(--text-secondary); margin: 0; }
 .licpick-addon-conflict-msg {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-primary);
   margin-top: 6px;
 }
@@ -498,7 +503,7 @@
   display: flex;
   justify-content: space-between;
   padding: 6px 0;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-primary);
   border-bottom: 1px solid var(--border);
 }
@@ -512,7 +517,7 @@
   color: var(--accent);
 }
 .licpick-stack-annual {
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-top: 6px;
   text-align: right;
@@ -535,7 +540,7 @@
   border: 1px solid var(--border);
   border-radius: var(--lp-radius);
 }
-.licpick-scenario-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.licpick-scenario-icon { font-size: var(--text-h1); margin-bottom: 0.5rem; }
 .licpick-scenario-title {
   font: 700 1rem/1.3 inherit;
   color: var(--text-primary);
@@ -547,7 +552,7 @@
   margin: 0 0 0.75rem;
 }
 .licpick-scenario-answer {
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -563,7 +568,7 @@
 }
 .licpick-scenario-rec {
   margin-top: 0.75rem;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 
@@ -596,7 +601,7 @@
 .licpick-faq-item[open] summary::before { content: "▾ "; }
 .licpick-faq-item p {
   margin: 0.75rem 0 0;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -635,12 +640,12 @@
   display: block;
   margin: 0.5rem 0 0.25rem;
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
 }
 .licpick-related-card p {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 /* ── Search Box ─────────────────────────────────── */
@@ -717,10 +722,10 @@
   background: var(--accent);
   color: var(--text-primary);
   font: 600 0.82rem/1.3 inherit;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--text-primary) 20%, transparent);
   z-index: 9999;
   opacity: 0;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, transform 150ms ease, opacity 150ms ease;
   pointer-events: none;
 }
 .licpick-toast.show {
@@ -753,8 +758,8 @@
   color: var(--text-primary);
   border-color: var(--accent);
   box-shadow: 0 0 16px transparent;
-  transform: translateY(-1px);
 }
+
 .licpick-outcome-btn:active {
   transform: scale(0.97);
 }
@@ -830,10 +835,10 @@
   border: 1px solid var(--border);
   border-radius: var(--lp-radius-sm);
   z-index: 100;
-  font-size: 0.78rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.5;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15), inset 0 1px 0 var(--border);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--text-primary) 10%, transparent), inset 0 1px 0 var(--border);
   pointer-events: none;
 }
 .licpick-tile .licpick-tooltip::before {
@@ -853,7 +858,7 @@
   display: block;
 }
 .licpick-tooltip-name {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 4px;
   display: block;
@@ -862,11 +867,11 @@
   margin-top: 6px;
   padding-top: 6px;
   border-top: 1px solid var(--border);
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
 }
 .licpick-tooltip-addon {
   color: var(--accent);
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   margin-top: 4px;
 }
 
@@ -917,7 +922,7 @@
    V3 — ANNUAL COST DISPLAY
    ══════════════════════════════════════════════════ */
 .licpick-rec-annual {
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -942,7 +947,7 @@
   cursor: default;
 }
 .licpick-addon-reason {
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   color: var(--text-primary);
   margin-top: 4px;
   font-style: italic;
@@ -952,12 +957,12 @@
 }
 .licpick-addon-unlocks {
   display: none;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   color: var(--accent);
   margin-top: 6px;
 }
 .licpick-stack-features {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   margin-top: 10px;
   padding-top: 10px;
@@ -995,7 +1000,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--text-primary) 10%, transparent);
 }
 .licpick-modal-header {
   display: flex;
@@ -1075,13 +1080,13 @@
   .licpick-scenarios-grid { grid-template-columns: 1fr; }
   .licpick-tile-desc { display: none; }
   .licpick-outcomes { gap: 6px; }
-  .licpick-outcome-btn { padding: 8px 12px; font-size: 0.78rem; }
+  .licpick-outcome-btn { padding: 8px 12px; font-size: var(--text-sm); }
   .licpick-tile .licpick-tooltip { width: 220px; left: 0; transform: none; }
   .licpick-modal { padding: 1rem; }
 }
 @media (max-width: 480px) {
   .licpick-feature-grid { grid-template-columns: 1fr; }
-  .licpick-tab { padding: 8px 12px; font-size: 0.78rem; }
+  .licpick-tab { padding: 8px 12px; font-size: var(--text-sm); }
 }
 
 /* ══════════════════════════════════════════════════
