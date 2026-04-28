@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T10:24:43.812470+00:00",
+  "generated_at": "2026-04-28T17:55:43.193211+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -33,9 +33,9 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 18,
-      "active_incidents": 1,
-      "avg_duration_minutes": 3180,
-      "last_incident": "2026-04-27T23:59:44.973000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 3010,
+      "last_incident": "2026-04-28T00:00:00+00:00",
       "classifications": {
         "advisory": 9,
         "incident": 9
