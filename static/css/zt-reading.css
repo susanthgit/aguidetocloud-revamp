@@ -3995,7 +3995,7 @@
 .zt-timeline-role {
   display: block;
   font-size: var(--text-body, 1rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary, #171717);
   margin: var(--space-1, 4px) 0;
 }
@@ -4018,6 +4018,52 @@
     text-align: center;
   }
   .zt-about-actions { justify-content: center; }
+}
+
+/* About page pills (awards, certs) */
+.zt-about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+  margin-bottom: var(--space-6, 24px);
+}
+.zt-about-pill {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-secondary, #525252);
+  padding: var(--space-1, 4px) var(--space-3, 12px);
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-radius: var(--radius-full, 9999px);
+}
+
+/* Mobile TOC links */
+.zt-toc-mobile-link {
+  display: block;
+  padding: 6px 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm, 0.875rem);
+}
+
+/* About stats row */
+.zt-about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-4, 16px) 0;
+  margin-bottom: var(--space-4, 16px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.zt-about-stat {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.zt-about-stat-dot {
+  color: var(--text-muted);
 }
 
 /* ═══════════════════════════════════════════════════════════

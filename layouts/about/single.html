@@ -41,11 +41,11 @@
     <details class="zt-toc-mobile">
       <summary>On this page</summary>
       <div class="zt-toc-mobile-inner">
-        <a href="#why" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Why I Started This</a>
-        <a href="#ai-pivot" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">The AI Pivot</a>
-        <a href="#career" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Career Journey</a>
-        <a href="#certs" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Certifications</a>
-        <a href="#join" style="display:block;padding:6px 12px;color:var(--text-secondary);text-decoration:none;font-size:0.875rem">Join the Journey</a>
+        <a href="#why" class="zt-toc-mobile-link">Why I Started This</a>
+        <a href="#ai-pivot" class="zt-toc-mobile-link">The AI Pivot</a>
+        <a href="#career" class="zt-toc-mobile-link">Career Journey</a>
+        <a href="#certs" class="zt-toc-mobile-link">Certifications</a>
+        <a href="#join" class="zt-toc-mobile-link">Join the Journey</a>
       </div>
     </details>
 
@@ -126,25 +126,45 @@
 
     <h2 id="awards">Awards & Recognition</h2>
 
-    <p>Microsoft Vision Award · Microsoft PET (Perfect Every Time) · Microsoft Power Player ×3 · Microsoft ACE ×2 · Capgemini Project Star · EY Best Performer</p>
+    <div class="zt-about-pills">
+      <span class="zt-about-pill">Microsoft Vision Award</span>
+      <span class="zt-about-pill">Microsoft PET</span>
+      <span class="zt-about-pill">Microsoft Power Player ×3</span>
+      <span class="zt-about-pill">Microsoft ACE ×2</span>
+      <span class="zt-about-pill">Capgemini Project Star</span>
+      <span class="zt-about-pill">EY Best Performer</span>
+    </div>
 
     <h2 id="certs">Certifications</h2>
 
-    <p>Azure Solutions Architect Expert · M365 Enterprise Administrator · M365 Security Administrator · Azure Administrator · MCSA: Office 365 · Azure Fundamentals · M365 Fundamentals · AWS Cloud Practitioner · ITIL Practitioner · CCNA</p>
+    <div class="zt-about-pills">
+      <span class="zt-about-pill">Azure Solutions Architect Expert</span>
+      <span class="zt-about-pill">M365 Enterprise Administrator</span>
+      <span class="zt-about-pill">M365 Security Administrator</span>
+      <span class="zt-about-pill">Azure Administrator</span>
+      <span class="zt-about-pill">MCSA: Office 365</span>
+      <span class="zt-about-pill">Azure Fundamentals</span>
+      <span class="zt-about-pill">M365 Fundamentals</span>
+      <span class="zt-about-pill">AWS Cloud Practitioner</span>
+      <span class="zt-about-pill">ITIL Practitioner</span>
+      <span class="zt-about-pill">CCNA</span>
+    </div>
 
     <h2 id="join">Join the Journey</h2>
 
     <ul>
-      <li>{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} <a href="/start/">New to this site? Start here</a> — find the right resource in 30 seconds</li>
-      <li>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <a href="https://www.youtube.com/susanthsutheesh">YouTube — A Guide to Cloud & AI</a> (full tutorials & masterclasses)</li>
-      <li>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <a href="https://www.youtube.com/aguidetocloud">YouTube — Bites</a> (quick 10–20 min lessons)</li>
-      <li>{{ partial "icon.html" (dict "name" "linkedin" "size" 14 "stroke" 1.5) }} <a href="https://www.linkedin.com/in/susanthsutheesh/">LinkedIn</a></li>
-      <li>{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }} <a href="https://ko-fi.com/aguidetocloud/shop">Support my work</a></li>
+      <li><a href="/start/">New to this site? Start here</a> — find the right resource in 30 seconds</li>
+      <li><a href="https://www.youtube.com/susanthsutheesh">YouTube — A Guide to Cloud & AI</a> (full tutorials & masterclasses)</li>
+      <li><a href="https://www.youtube.com/aguidetocloud">YouTube — Bites</a> (quick 10–20 min lessons)</li>
+      <li><a href="https://www.linkedin.com/in/susanthsutheesh/">LinkedIn</a></li>
+      <li><a href="https://ko-fi.com/aguidetocloud/shop">Support my work</a></li>
     </ul>
 
     <hr>
 
-    <h2>Disclaimer</h2>
+    <details>
+      <summary style="font-size:var(--text-sm);color:var(--text-muted);cursor:pointer">Disclaimer</summary>
+      <div style="margin-top:var(--space-3, 12px)">
 
     <p>I work at Microsoft as a Sr AI Solution Engineer, but <strong>the views, opinions, and content shared on this website and my YouTube channels are entirely my own</strong> and do not represent the official positions, strategies, or endorsements of Microsoft.</p>
 
@@ -155,6 +175,9 @@
     </ul>
 
     <p>Always refer to <a href="https://learn.microsoft.com">official Microsoft documentation</a> for the most accurate and up-to-date information.</p>
+
+      </div>
+    </details>
 
     </div>
 
