@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Apr 2026 23:08:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 06:42:18 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft Copilot usage reports</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1293524</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft Copilot usage reports.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1293524</guid>
+      <pubDate>Mon, 27 Apr 2026 23:59:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in North America may be unable to access Microsoft Copilot (Microsoft 365)</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1293219</link>
@@ -18,12 +27,12 @@
     </item>
     <item>
       <title>[Azure] Azure incident affecting East US</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260401-1</link>
-      <description>[Azure] Between 11:39 UTC on 24th April and 00:15 UTC on 25 April 2026, a platform issue resulted in an impact to a subset of Azure services in the East US region. Impacted customers experienced failures or delays when provisioning, scaling, or updating Azure resources. Intermittent connectivity issues may also be seen on existing running workloads in Virtual Machines and Azure Virtual Desktop sessions.
-Impact initially began in a single Availability Zone (physical AZ01) in East US. As allocation demand</description>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-5GP8-W0G</link>
+      <description>[Azure] Between 11:30 UTC on 24 April and 00:15 UTC on 25 April 2026, customers may have experienced failures or delays when attempting to provision, scale, or update resources in East US. Beyond this, a smaller subset of impacted customers may have experienced intermittent connectivity issues on existing workloads (including Virtual Machines and Azure Virtual Desktop sessions) for scenarios dependent on unhealthy internal service dependencies.
+The issue initially began with impact to a subset of custom</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260401-1</guid>
+      <guid isPermaLink="false">AZ-5GP8-W0G</guid>
       <pubDate>Sat, 25 Apr 2026 00:15:00 +0000</pubDate>
     </item>
     <item>
@@ -151,6 +160,15 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <category>serviceDegradation</category>
       <guid isPermaLink="false">UP1287359</guid>
       <pubDate>Tue, 14 Apr 2026 04:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to reply to email messages from a pop-up window in Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1281449</link>
+      <description>[Exchange Online] Users may be unable reply to email messages from a pop-up window in Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>restoringService</category>
+      <guid isPermaLink="false">EX1281449</guid>
+      <pubDate>Tue, 14 Apr 2026 02:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
@@ -439,24 +457,6 @@ Impact initially began in a single Availability Zone (physical AZ01) in East US.
       <category>investigationSuspended</category>
       <guid isPermaLink="false">EX1260260</guid>
       <pubDate>Tue, 24 Mar 2026 09:37:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may have been unable to access their Exchange Online mailboxes using the Outlook desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1260428</link>
-      <description>[Exchange Online] Users may have been unable to access their Exchange Online mailboxes using the Outlook desktop client.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1260428</guid>
-      <pubDate>Tue, 24 Mar 2026 05:40:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Admins may notice excessive memory usage on their Windows Server 2016 machines</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1266872</link>
-      <description>[Microsoft Defender XDR] Admins may have noticed excessive memory usage on their Windows Server 2016 machines.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1266872</guid>
-      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
