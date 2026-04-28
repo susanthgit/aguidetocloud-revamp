@@ -25,6 +25,14 @@
     featureCategories: {{ $featureCats | jsonify | safeJS }},
     changelog: {{ $changelog | jsonify | safeJS }}
   };
+  {{/* Pre-render SVG icons for JS — Hugo partial → inline SVG strings */}}
+  window.__cpIcons = {
+    {{- range $apps -}}
+      {{- if .icon -}}
+        "{{ .id }}": {{ (partial "icon.html" (dict "name" .icon "size" 16 "stroke" 1.5)) | jsonify | safeJS }},
+      {{- end -}}
+    {{- end -}}
+  };
 </script>
 
 {{/* ── SEO: JSON-LD ── */}}
@@ -87,26 +95,26 @@
         <select id="cpmatrix-cat-filter" class="cpmatrix-select" aria-label="Filter by category">
           <option value="all">All Categories</option>
         </select>
-        <select id="cpmatrix-app-filter" class="cpmatrix-select cpmatrix-desktop-only" aria-label="Filter by app">
-          <option value="all">All Apps</option>
+        <select id="cpmatrix-app-filter" class="cpmatrix-select" aria-label="Select app">
+          <option value="teams" selected>Teams</option>
         </select>
         <select id="cpmatrix-licence-filter" class="cpmatrix-select" aria-label="I have this licence">
           <option value="all">All Tiers</option>
-          <option value="free">🆓 I have: Free Copilot</option>
-          <option value="chat">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} I have: Copilot Chat</option>
-          <option value="pro">⭐ I have: Copilot Pro</option>
-          <option value="m365">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} I have: M365 Copilot</option>
+          <option value="free">I have: Free Copilot</option>
+          <option value="chat">I have: Copilot Chat</option>
+          <option value="pro">I have: Copilot Pro</option>
+          <option value="m365">I have: M365 Copilot</option>
         </select>
       </div>
     </div>
 
     {{/* Quick Filter Buttons */}}
     <div class="cpmatrix-quick-filters">
-      <button class="cpmatrix-quick-btn" data-filter="free-only" title="Show only features available without paying">🆓 What's Free?</button>
-      <button class="cpmatrix-quick-btn" data-filter="m365-only" title="Show M365 Copilot exclusive features">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} M365 Only</button>
-      <button class="cpmatrix-quick-btn" data-filter="new" title="Features added or changed in the last 60 days">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} New</button>
-      <button class="cpmatrix-quick-btn" data-filter="clear" title="Clear all filters">✖ Clear</button>
-      <button class="cpmatrix-quick-btn cpmatrix-print-btn" onclick="window.print()" title="Print this matrix">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print</button>
+      <button class="cpmatrix-quick-btn" data-filter="free-only" title="Show only features available without paying">Free</button>
+      <button class="cpmatrix-quick-btn" data-filter="m365-only" title="Show M365 Copilot exclusive features">M365 Only</button>
+      <button class="cpmatrix-quick-btn" data-filter="new" title="Features added or changed in the last 60 days">New</button>
+      <button class="cpmatrix-quick-btn" data-filter="clear" title="Clear all filters">Clear</button>
+      <button class="cpmatrix-quick-btn cpmatrix-print-btn" onclick="window.print()" title="Print this matrix">Print</button>
     </div>
 
     {{/* Mobile: App Picker */}}
@@ -168,7 +176,7 @@
   <div class="cpmatrix-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
     {{ end }}
@@ -178,23 +186,23 @@
 
 </div>
 
-{{/* ── Copilot Journey Cross-Links ── */}}
-<div class="cpmatrix-container" style="margin-top:2rem">
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;max-width:900px;margin:0 auto">
-    <a href="/copilot-readiness/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(59,130,246,0.2);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
-      <span style="font-size:1.3rem">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
-      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Copilot Readiness Checker</span>
-      <small style="font-size:0.75rem;color:#9ca3af">Score your org's readiness across 7 pillars</small>
+{{/* ── Related Tools ── */}}
+<div class="cpmatrix-container" style="margin-top:var(--space-8)">
+  <div class="cpmatrix-related-grid">
+    <a href="/copilot-readiness/" class="cpmatrix-related-link">
+      <span class="cpmatrix-related-icon">{{ partial "icon.html" (dict "name" "target" "size" 16 "stroke" 1.5) }}</span>
+      <span class="cpmatrix-related-name">Copilot Readiness Checker</span>
+      <small class="cpmatrix-related-desc">Score your org's readiness across 7 pillars</small>
     </a>
-    <a href="/roi-calculator/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(20,184,166,0.2);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
-      <span style="font-size:1.3rem">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
-      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Copilot ROI Calculator</span>
-      <small style="font-size:0.75rem;color:#9ca3af">Estimate savings by role with adoption curves</small>
+    <a href="/roi-calculator/" class="cpmatrix-related-link">
+      <span class="cpmatrix-related-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 16 "stroke" 1.5) }}</span>
+      <span class="cpmatrix-related-name">Copilot ROI Calculator</span>
+      <small class="cpmatrix-related-desc">Estimate savings by role with adoption curves</small>
     </a>
-    <a href="/licensing/" style="display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:rgba(255,255,255,0.03);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;text-decoration:none;color:inherit;transition:all 0.2s">
-      <span style="font-size:1.3rem">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
-      <span style="font-weight:700;font-size:0.9rem;color:#e0e0e0">Licensing Simplifier</span>
-      <small style="font-size:0.75rem;color:#9ca3af">Compare M365 plans & find the right licence</small>
+    <a href="/licensing/" class="cpmatrix-related-link">
+      <span class="cpmatrix-related-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 16 "stroke" 1.5) }}</span>
+      <span class="cpmatrix-related-name">Licensing Simplifier</span>
+      <small class="cpmatrix-related-desc">Compare M365 plans and find the right licence</small>
     </a>
   </div>
 </div>

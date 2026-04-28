@@ -170,7 +170,7 @@
   D.featureCategories.forEach(c => {
     const opt = document.createElement('option');
     opt.value = c.id;
-    opt.textContent = `${c.emoji} ${c.name}`;
+    opt.textContent = c.name;
     catFilter.appendChild(opt);
   });
 
@@ -178,12 +178,12 @@
     const count = countFeaturesForApp(a.id);
     const opt1 = document.createElement('option');
     opt1.value = a.id;
-    opt1.textContent = `${a.emoji} ${a.name} (${count})`;
+    opt1.textContent = `${a.name} (${count})`;
     appFilter.appendChild(opt1);
 
     const opt2 = document.createElement('option');
     opt2.value = a.id;
-    opt2.textContent = `${a.emoji} ${a.name} (${count})`;
+    opt2.textContent = `${a.name} (${count})`;
     mobileAppSelect.appendChild(opt2);
   });
 
@@ -251,14 +251,11 @@
       return true;
     });
 
-    // Determine visible apps
-    let visibleApps;
-    if (isMobile()) {
-      visibleApps = activeApps.filter(a => a.id === mobileApp);
-      if (!visibleApps.length) visibleApps = [activeApps[0]];
-    } else {
-      visibleApps = appVal === 'all' ? activeApps : activeApps.filter(a => a.id === appVal);
-    }
+    // Determine visible app — single app at a time (not all 15)
+    let selectedApp = appVal;
+    if (selectedApp === 'all') selectedApp = 'teams'; // default to Teams
+    let visibleApps = activeApps.filter(a => a.id === selectedApp);
+    if (!visibleApps.length) visibleApps = [activeApps[0]];
 
     // Determine visible tiers
     let visibleTiers = TIER_ORDER;
@@ -278,8 +275,8 @@
     // Stats
     const totalFeatures = filtered.length;
     const newCount = filtered.filter(isNew).length;
-    let statsHtml = `<span>📊 <strong>${totalFeatures}</strong> features shown</span>`;
-    if (newCount > 0) statsHtml += `<span>✨ <strong>${newCount}</strong> new</span>`;
+    let statsHtml = `<span><strong>${totalFeatures}</strong> features shown</span>`;
+    if (newCount > 0) statsHtml += `<span><strong>${newCount}</strong> new</span>`;
     if (activeQuickFilter) statsHtml += `<span class="cpmatrix-stats-filter">Filter: ${activeQuickFilter.replace('-', ' ')}</span>`;
     statsEl.innerHTML = statsHtml;
 
@@ -300,12 +297,14 @@
     // Build table
     let html = '<table class="cpmatrix-table">';
 
-    // Header row
+    // Header row — use SVG icons for apps
+    var matrixIcons = window.__cpIcons || {};
     html += '<thead><tr><th class="cpmatrix-feature-name">Feature</th>';
     visibleApps.forEach(app => {
       const count = countFeaturesForApp(app.id);
+      const appIcon = matrixIcons[app.id] || '';
       html += `<th colspan="${visibleTiers.length}">`;
-      html += `<span class="cpmatrix-app-emoji">${app.emoji}</span>${app.name}`;
+      html += `<span class="cpmatrix-app-icon">${appIcon}</span>${escHtml(app.name)}`;
       html += `<span class="cpmatrix-app-count">${count}</span>`;
       html += '</th>';
     });
@@ -316,7 +315,7 @@
     visibleApps.forEach(() => {
       visibleTiers.forEach(tid => {
         const tier = tierMap[tid];
-        html += `<th style="color:${tier.colour};font-size:0.7rem;">${tier.short_name}</th>`;
+        html += `<th class="cpmatrix-tier-subhdr">${tier.short_name}</th>`;
       });
     });
     html += '</tr></thead>';
@@ -328,7 +327,7 @@
       if (!groups[catId]) return;
       const cat = catMap[catId];
       const colSpan = 1 + visibleApps.length * visibleTiers.length;
-      html += `<tr class="cpmatrix-cat-row"><td colspan="${colSpan}">${cat.emoji} ${cat.name}</td></tr>`;
+      html += `<tr class="cpmatrix-cat-row"><td colspan="${colSpan}">${escHtml(cat.name)}</td></tr>`;
 
       groups[catId].forEach(f => {
         const fNew = isNew(f);
@@ -346,16 +345,12 @@
         visibleApps.forEach(app => {
           visibleTiers.forEach(tid => {
             const cell = getCell(f, app.id, tid);
-            if (!cell) {
-              html += '<td class="cpmatrix-cell" data-state="none"><span class="cpmatrix-cell-inner"><span class="cpmatrix-cell-dot"></span></span></td>';
-              return;
-            }
-            const state = cell.state || 'none';
-            const note = cell.note || '';
-            html += `<td class="cpmatrix-cell" data-state="${state}" tabindex="0">`;
-            html += `<span class="cpmatrix-cell-inner"><span class="cpmatrix-cell-dot"></span></span>`;
-            const ttNote = note ? `<div>${escHtml(note)}</div>` : '';
-            html += `<div class="cpmatrix-tooltip"><div class="cpmatrix-tooltip-state" data-state="${state}">${STATE_LABELS[state]}</div>${ttNote}</div>`;
+            const state = cell ? (cell.state || 'none') : 'none';
+            const note = cell ? (cell.note || '') : '';
+            const label = STATE_LABELS[state] || '—';
+            html += `<td class="cpmatrix-cell" data-state="${state}" tabindex="0" title="${escHtml(note)}">`;
+            html += `<span class="cpmatrix-cell-text cpmatrix-cell-${state}">${label}</span>`;
+            if (note) html += `<div class="cpmatrix-tooltip"><div class="cpmatrix-tooltip-state" data-state="${state}">${label}</div><div>${escHtml(note)}</div></div>`;
             html += '</td>';
           });
         });
@@ -381,93 +376,84 @@
   window.addEventListener('resize', debounce(renderMatrix, 300));
 
   // ═══════════════════════════════════════════════
-  // TAB 2: Compare Tiers (with cross-links)
+  // TAB 2: Compare Tiers — Consumer vs Enterprise split (Zen)
   // ═══════════════════════════════════════════════
 
   function renderTiers() {
-    const el = document.getElementById('cpmatrix-tiers');
-
-    // Count features per tier
-    function countForTier(tierId) {
-      let full = 0, partial = 0, apps = new Set();
-      D.features.forEach(function (f) {
-        if (!f.availability) return;
-        Object.keys(f.availability).forEach(function (appId) {
-          var cell = f.availability[appId][tierId];
-          if (!cell) return;
-          var st = typeof cell === 'string' ? cell : cell.state;
-          if (st === 'full') { full++; apps.add(appId); }
-          else if (st === 'partial' || st === 'preview') { partial++; apps.add(appId); }
-        });
-      });
-      return { full: full, partial: partial, apps: apps.size };
-    }
+    var el = document.getElementById('cpmatrix-tiers');
 
     var consumerTiers = D.tiers.filter(function (t) { return t.id === 'free' || t.id === 'pro'; });
     var enterpriseTiers = D.tiers.filter(function (t) { return t.id === 'chat' || t.id === 'm365'; });
 
-    // Build comparison table
     var html = '';
 
-    // Consumer section
-    html += '<div class="cpmatrix-tier-section cpmatrix-tier-consumer">';
-    html += '<div class="cpmatrix-tier-section-label"><span class="cpmatrix-tier-badge-type cpmatrix-badge-consumer">👤 Consumer</span> For individuals & personal use</div>';
-    html += '<div class="cpmatrix-tiers-compare">';
-    html += buildTierColumn(consumerTiers[0], countForTier(consumerTiers[0].id), false);
-    html += '<div class="cpmatrix-tier-vs">VS</div>';
-    html += buildTierColumn(consumerTiers[1], countForTier(consumerTiers[1].id), false);
-    html += '</div>';
+    // Tier details at the top — ordered to match tables below: Consumer (Free, Pro) then Enterprise (Chat, M365)
+    var tierDisplayOrder = ['free', 'pro', 'chat', 'm365'];
+    var tiersByIdMap = {};
+    D.tiers.forEach(function (t) { tiersByIdMap[t.id] = t; });
 
-    // Feature comparison rows for consumer
-    html += '<div class="cpmatrix-compare-table">';
-    html += '<div class="cpmatrix-compare-header"><span>Feature</span><span>' + escHtml(consumerTiers[0].short_name) + '</span><span>' + escHtml(consumerTiers[1].short_name) + '</span></div>';
-    var consumerFeatures = getCompareFeatures(['free', 'pro']);
-    consumerFeatures.forEach(function (row) {
-      html += '<div class="cpmatrix-compare-row">';
-      html += '<span class="cpmatrix-compare-feat">' + escHtml(row.name) + '</span>';
-      html += cellBadge(row.states.free || 'none');
-      html += cellBadge(row.states.pro || 'none');
+    html += '<details class="cpmatrix-tier-details" open><summary>Tier overview</summary>';
+    html += '<div class="cpmatrix-tier-details-grid">';
+    tierDisplayOrder.forEach(function (tid) {
+      var t = tiersByIdMap[tid];
+      if (!t) return;
+      var isRec = t.id === 'm365';
+      html += '<div class="cpmatrix-tier-detail-card' + (isRec ? ' cpmatrix-tier-detail-recommended' : '') + '">';
+      html += '<div class="cpmatrix-tier-detail-name">' + escHtml(t.short_name) + '</div>';
+      html += '<div class="cpmatrix-tier-detail-price">' + escHtml(t.price) + '</div>';
+      html += '<div class="cpmatrix-tier-detail-note">' + escHtml(t.price_note) + '</div>';
+      if (t.data_access) html += '<div class="cpmatrix-tier-detail-access">' + escHtml(t.data_access) + '</div>';
+      if (t.important_note) html += '<div class="cpmatrix-tier-detail-warning">' + escHtml(t.important_note) + '</div>';
       html += '</div>';
     });
-    html += '</div></div>';
+    html += '</div></details>';
+
+    // Consumer vs Enterprise comparison tables
+    html += '<div class="cpmatrix-compare-split">';
+
+    // Consumer section
+    html += '<div class="cpmatrix-compare-section">';
+    html += '<div class="cpmatrix-compare-section-label">Consumer</div>';
+    html += buildCompareTable(consumerTiers);
+    html += '</div>';
 
     // Enterprise section
-    html += '<div class="cpmatrix-tier-section cpmatrix-tier-enterprise">';
-    html += '<div class="cpmatrix-tier-section-label"><span class="cpmatrix-tier-badge-type cpmatrix-badge-enterprise">🏢 Enterprise</span> For organisations & teams</div>';
-    html += '<div class="cpmatrix-tiers-compare">';
-    html += buildTierColumn(enterpriseTiers[0], countForTier(enterpriseTiers[0].id), false);
-    html += '<div class="cpmatrix-tier-vs">VS</div>';
-    html += buildTierColumn(enterpriseTiers[1], countForTier(enterpriseTiers[1].id), true);
+    html += '<div class="cpmatrix-compare-section">';
+    html += '<div class="cpmatrix-compare-section-label">Enterprise</div>';
+    html += buildCompareTable(enterpriseTiers);
     html += '</div>';
 
-    html += '<div class="cpmatrix-compare-table">';
-    html += '<div class="cpmatrix-compare-header"><span>Feature</span><span>' + escHtml(enterpriseTiers[0].short_name) + '</span><span>' + escHtml(enterpriseTiers[1].short_name) + '</span></div>';
-    var entFeatures = getCompareFeatures(['chat', 'm365']);
-    entFeatures.forEach(function (row) {
-      html += '<div class="cpmatrix-compare-row">';
-      html += '<span class="cpmatrix-compare-feat">' + escHtml(row.name) + '</span>';
-      html += cellBadge(row.states.chat || 'none');
-      html += cellBadge(row.states.m365 || 'none');
-      html += '</div>';
-    });
-    html += '</div></div>';
+    html += '</div>';
 
     el.innerHTML = html;
 
-    function buildTierColumn(tier, counts, recommended) {
-      var h = '<div class="cpmatrix-tier-col' + (recommended ? ' cpmatrix-recommended' : '') + '" style="--tier-color:' + tier.colour + '">';
-      if (recommended) h += '<div class="cpmatrix-tier-badge">★ Most Complete</div>';
-      h += '<div class="cpmatrix-tier-emoji">' + tier.emoji + '</div>';
-      h += '<div class="cpmatrix-tier-name">' + escHtml(tier.name) + '</div>';
-      h += '<div class="cpmatrix-tier-price" style="color:' + tier.colour + '">' + tier.price + '</div>';
-      h += '<div class="cpmatrix-tier-price-note">' + escHtml(tier.price_note) + '</div>';
-      h += '<div class="cpmatrix-tier-mini-stats">';
-      h += '<span><strong style="color:var(--cp-full)">' + counts.full + '</strong> full</span>';
-      h += '<span><strong style="color:var(--cp-partial)">' + counts.partial + '</strong> partial</span>';
-      h += '<span><strong>' + counts.apps + '</strong> apps</span>';
+    function buildCompareTable(tiers) {
+      var tierIds = tiers.map(function (t) { return t.id; });
+      var features = getCompareFeatures(tierIds);
+      var stateLabels = { full: 'Full', partial: 'Partial', preview: 'Preview', none: '—' };
+      var stateClasses = { full: 'cpmatrix-cell-full', partial: 'cpmatrix-cell-partial', preview: 'cpmatrix-cell-preview', none: 'cpmatrix-cell-none' };
+
+      var h = '<div class="cpmatrix-compare-table">';
+
+      // Header with tier name + price
+      h += '<div class="cpmatrix-compare-header">';
+      h += '<span>Feature</span>';
+      tiers.forEach(function (t) {
+        h += '<span class="cpmatrix-tier-hdr"><strong>' + escHtml(t.short_name) + '</strong><small>' + escHtml(t.price) + '</small></span>';
+      });
       h += '</div>';
-      h += '<div class="cpmatrix-tier-bestfor">💡 ' + escHtml(tier.best_for) + '</div>';
-      if (tier.important_note) h += '<div class="cpmatrix-tier-note">⚠️ ' + escHtml(tier.important_note) + '</div>';
+
+      // Feature rows
+      features.forEach(function (row) {
+        h += '<div class="cpmatrix-compare-row">';
+        h += '<span class="cpmatrix-compare-feat">' + escHtml(row.name) + '</span>';
+        tierIds.forEach(function (tid) {
+          var st = row.states[tid] || 'none';
+          h += '<span class="cpmatrix-compare-cell ' + stateClasses[st] + '">' + stateLabels[st] + '</span>';
+        });
+        h += '</div>';
+      });
+
       h += '</div>';
       return h;
     }
@@ -486,7 +472,7 @@
             if (!cell) return;
             var st = typeof cell === 'string' ? cell : cell.state;
             if (st === 'full') best = 'full';
-            else if (st === 'partial' && best !== 'full') best = 'partial';
+            else if (st === 'partial' && best !== 'full') best = st;
             else if (st === 'preview' && best === 'none') best = 'preview';
           });
           states[tid] = best;
@@ -498,12 +484,6 @@
         }
       });
       return rows;
-    }
-
-    function cellBadge(state) {
-      var labels = { full: '✅', partial: '⚠️', preview: '🧪', none: '❌' };
-      var cls = 'cpmatrix-compare-cell cpmatrix-cell-' + state;
-      return '<span class="' + cls + '">' + (labels[state] || '❌') + '</span>';
     }
   }
 
@@ -522,7 +502,7 @@
     if (filter === 'high') items = items.filter(e => e.impact === 'high');
 
     if (!items.length) {
-      el.innerHTML = '<p style="color:var(--cp-text-muted);text-align:center;">No changes match this filter.</p>';
+      el.innerHTML = '<p style="color:var(--text-muted);text-align:center;">No changes match this filter.</p>';
       return;
     }
 
@@ -533,24 +513,26 @@
       const isFuture = d > new Date();
 
       html += `<div class="cpmatrix-timeline-item" data-impact="${entry.impact}">`;
-      html += `<div class="cpmatrix-timeline-date">${isFuture ? '🔮 Upcoming: ' : ''}${dateStr}</div>`;
+      html += `<div class="cpmatrix-timeline-date">${isFuture ? 'Upcoming: ' : ''}${dateStr}</div>`;
       html += `<span class="cpmatrix-timeline-type" data-type="${entry.type}">${entry.type}</span>`;
-      html += `<span style="font-size:0.75rem;color:var(--cp-text-muted);">${entry.scope}</span>`;
+      html += `<span class="cpmatrix-timeline-scope">${escHtml(entry.scope)}</span>`;
       html += `<div class="cpmatrix-timeline-title">${escHtml(entry.title)}</div>`;
       html += `<div class="cpmatrix-timeline-summary">${escHtml(entry.summary)}</div>`;
 
       if (entry.apps && entry.apps.length) {
         html += '<div class="cpmatrix-timeline-apps">';
+        var tlIcons = window.__cpIcons || {};
         entry.apps.forEach(appId => {
           const app = appMap[appId];
-          const label = app ? `${app.emoji} ${app.name}` : appId;
+          const icon = tlIcons[appId] || '';
+          const label = app ? `${icon} ${escHtml(app.name)}` : escHtml(appId);
           html += `<span class="cpmatrix-timeline-app-badge">${label}</span>`;
         });
         html += '</div>';
       }
 
       if (entry.source) {
-        html += `<a href="${escHtml(entry.source)}" target="_blank" rel="noopener noreferrer" class="cpmatrix-timeline-source">📖 Source →</a>`;
+        html += `<a href="${escHtml(entry.source)}" target="_blank" rel="noopener noreferrer" class="cpmatrix-timeline-source">Source →</a>`;
       }
 
       html += '</div>';
@@ -570,10 +552,12 @@
     if (!grid) return;
 
     var html = '';
+    var icons = window.__cpIcons || {};
     activeApps.forEach(function (a) {
       var count = countFeaturesForApp(a.id);
-      html += '<button class="cpmatrix-appgrid-btn" data-app="' + a.id + '" style="--app-color:' + a.colour + '">';
-      html += '<span class="cpmatrix-appgrid-emoji">' + a.emoji + '</span>';
+      var icon = icons[a.id] || escHtml(a.emoji);
+      html += '<button class="cpmatrix-appgrid-btn" data-app="' + a.id + '">';
+      html += '<span class="cpmatrix-appgrid-icon">' + icon + '</span>';
       html += '<span class="cpmatrix-appgrid-name">' + escHtml(a.name) + '</span>';
       html += '<span class="cpmatrix-appgrid-count">(' + count + ')</span>';
       html += '</button>';
@@ -616,19 +600,21 @@
       if (hasAny) features.push(f);
     });
 
-    var stateEmoji = { full: '✅', partial: '⚠️', preview: '🧪', none: '❌' };
+    var icons = window.__cpIcons || {};
+    var appIcon = (icons[appId] || escHtml(app.emoji)).replace('width="16"', 'width="28"').replace('height="16"', 'height="28"');
+    var stateLabels = { full: 'Full', partial: 'Partial', preview: 'Preview', none: '—' };
 
-    var html = '<div class="cpmatrix-appdetail-header" style="border-color:' + app.colour + '">';
-    html += '<span class="cpmatrix-appdetail-emoji">' + app.emoji + '</span>';
+    var html = '<div class="cpmatrix-appdetail-header">';
+    html += '<span class="cpmatrix-appdetail-icon">' + appIcon + '</span>';
     html += '<div><h3>' + escHtml(app.name) + '</h3>';
-    html += '<p>' + escHtml(app.description) + ' · <strong>' + features.length + ' Copilot features</strong></p></div>';
+    html += '<p>' + escHtml(app.description) + ' · <strong>' + features.length + ' features</strong></p></div>';
     html += '</div>';
 
     html += '<div class="cpmatrix-appdetail-list">';
     html += '<div class="cpmatrix-appdetail-row cpmatrix-appdetail-hdr"><span>Feature</span>';
     TIER_ORDER.forEach(function (tid) {
       var t = tierMap[tid];
-      html += '<span style="color:' + t.colour + '">' + t.short_name + '</span>';
+      html += '<span>' + t.short_name + '</span>';
     });
     html += '</div>';
 
@@ -643,7 +629,7 @@
           st = typeof cell === 'string' ? cell : (cell.state || 'none');
           note = (typeof cell === 'object' && cell.note) ? cell.note : '';
         }
-        html += '<span class="cpmatrix-appdetail-cell cpmatrix-cell-' + st + '" title="' + escHtml(note) + '">' + (stateEmoji[st] || '❌') + '</span>';
+        html += '<span class="cpmatrix-appdetail-cell cpmatrix-cell-' + st + '" title="' + escHtml(note) + '">' + (stateLabels[st] || '—') + '</span>';
       });
       html += '</div>';
     });
@@ -682,9 +668,9 @@
     var freeBtn = document.querySelector('.cpmatrix-quick-btn[data-filter="free-only"]');
     var m365Btn = document.querySelector('.cpmatrix-quick-btn[data-filter="m365-only"]');
     var newBtn = document.querySelector('.cpmatrix-quick-btn[data-filter="new"]');
-    if (freeBtn) freeBtn.textContent = '🆓 Free (' + freeCount + ')';
-    if (m365Btn) m365Btn.textContent = '🚀 M365 Only (' + m365Count + ')';
-    if (newBtn) newBtn.textContent = '✨ New (' + newCount + ')';
+    if (freeBtn) freeBtn.textContent = 'Free (' + freeCount + ')';
+    if (m365Btn) m365Btn.textContent = 'M365 Only (' + m365Count + ')';
+    if (newBtn) newBtn.textContent = 'New (' + newCount + ')';
   }
 
   // ═══════════════════════════════════════════════
