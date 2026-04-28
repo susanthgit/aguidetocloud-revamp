@@ -5,7 +5,7 @@
 .ft-cat-title {
   font-family: var(--font-heading);
   font-size: var(--text-h3, 1.25rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
   margin: 0 0 var(--space-1, 4px);
   letter-spacing: 0;
@@ -35,18 +35,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3, 12px);
-  padding: var(--space-6, 24px);
+  padding: var(--space-4, 16px);
   text-decoration: none;
   color: inherit;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--bg-surface);
   overflow: hidden;
-  transition: border-color 150ms ease-out, transform 150ms ease-out;
+  transition: border-color 150ms ease-out;
 }
 .free-tool-card:hover {
   border-color: var(--border-emphasis);
-  transform: translateY(-1px);
 }
 .free-tool-icon {
   font-size: var(--text-h3, 1.25rem);
@@ -65,11 +64,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-2, 8px);
-  padding: var(--space-1, 4px) var(--space-3, 12px);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  width: fit-content;
 }
 .free-tool-card p {
   color: var(--text-secondary);
@@ -218,4 +212,206 @@
   .ft-hero-title { font-size: 1.5rem; }
   .ft-hero-meta { gap: var(--space-1, 4px); }
   .ft-hero-stat { font-size: 0.7rem; padding: 3px var(--space-2, 8px); }
+}
+
+/* ── Concept 1: App Launcher Grid ── */
+.ft-launcher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-4, 16px);
+}
+.ft-launcher-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-4, 16px) var(--space-2, 8px);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background 150ms ease-out;
+}
+.ft-launcher-item:hover {
+  background: var(--bg-elevated);
+}
+.ft-launcher-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+.ft-launcher-item:hover .ft-launcher-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.ft-launcher-name {
+  font-size: var(--text-caption, 0.75rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.3;
+}
+.ft-launcher-item:hover .ft-launcher-name {
+  color: var(--text-primary);
+}
+@media (max-width: 480px) {
+  .ft-launcher-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Concept 3: River List ── */
+.ft-river-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-4, 16px);
+}
+.ft-river-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4, 16px);
+  padding: var(--space-3, 12px);
+  margin-left: calc(-1 * var(--space-3, 12px));
+  margin-right: calc(-1 * var(--space-3, 12px));
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: background 150ms ease-out;
+}
+.ft-river-row:last-child {
+  border-bottom: none;
+}
+.ft-river-row:hover {
+  background: var(--bg-elevated);
+  border-left: 2px solid var(--accent);
+  padding-left: calc(var(--space-3, 12px) - 2px);
+}
+.ft-river-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-shrink: 0;
+}
+.ft-river-icon {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+.ft-river-row:hover .ft-river-icon {
+  color: var(--accent);
+}
+.ft-river-name {
+  font-size: var(--zen-text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.ft-river-row:hover .ft-river-name {
+  color: var(--accent);
+}
+.ft-river-desc {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted);
+  text-align: right;
+  line-height: 1.4;
+}
+@media (max-width: 640px) {
+  .ft-river-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .ft-river-desc {
+    text-align: left;
+  }
+}
+.ft-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-4, 16px);
+}
+.ft-mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+  padding: var(--space-3, 12px);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  transition: border-color 150ms ease-out;
+}
+.ft-mini-card:hover {
+  border-color: var(--border-emphasis);
+}
+.ft-mini-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+.ft-mini-icon {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+.ft-mini-card:hover .ft-mini-icon {
+  color: var(--accent);
+}
+.ft-mini-name {
+  font-size: var(--zen-text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.ft-mini-desc {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  .ft-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2, 8px);
+  }
+  /* Transform mini cards → app launcher on mobile */
+  .ft-mini-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-3, 12px) var(--space-2, 8px);
+    border: none;
+    background: none;
+  }
+  .ft-mini-card:hover {
+    background: var(--bg-elevated);
+    border: none;
+  }
+  .ft-mini-head {
+    flex-direction: column;
+    gap: var(--space-2, 8px);
+  }
+  .ft-mini-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+  }
+  .ft-mini-name {
+    font-size: var(--text-caption, 0.75rem);
+    line-height: 1.3;
+  }
+  .ft-mini-desc {
+    display: none;
+  }
 }

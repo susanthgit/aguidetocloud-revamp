@@ -3537,6 +3537,11 @@
 .zt-reading--tools .zt-reading-content {
   padding: var(--space-6, 24px) var(--space-8, 32px) var(--space-12, 48px);
 }
+@media (max-width: 1024px) {
+  .zt-reading--tools .zt-reading-content {
+    padding: var(--space-4, 16px) var(--space-4, 16px) var(--space-12, 48px);
+  }
+}
 .zt-tools-landing .ft-tools-body {
   max-width: none;
 }
