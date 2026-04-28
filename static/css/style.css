@@ -288,7 +288,6 @@ select option {
   --text-primary: #e0e0f0;
   --text-secondary: #a0a0c0;
   --text-muted: #8a8aaa;
-  --border-glow: rgba(102, 255, 255, 0.3);
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
@@ -746,12 +745,12 @@ body.is-home .section {
 .about-photo {
   width: 100%;
   border-radius: var(--radius);
-  border: 2px solid var(--border-glow);
+  border: 2px solid var(--border);
 }
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 .about-text p {
   margin-bottom: 1rem;
@@ -1612,10 +1611,10 @@ body.is-home .section {
 .error-404-links a {
   color: var(--text-secondary);
   padding: 0.5rem 1rem;
-  border: 1px solid var(--border-glow);
+  border: 1px solid var(--border);
   border-radius: 14px;
   font-size: 0.88rem;
-  transition: all 0.3s ease;
+  transition: border-color 150ms ease-out, color 150ms ease-out, background-color 150ms ease-out;
   text-decoration: none;
 }
 .error-404-links a:hover {
@@ -1627,8 +1626,8 @@ body.is-home .section {
   margin-bottom: 2.5rem;
 }
 .error-404-help {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(251, 191, 36, 0.15);
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--warning) 15%, transparent);
   border-radius: 16px;
   padding: 1.5rem 2rem;
   max-width: 600px;
@@ -1641,24 +1640,23 @@ body.is-home .section {
   margin-bottom: 1.2rem;
 }
 .error-404-help .error-404-section-title {
-  color: #FBBF24;
+  color: var(--warning);
 }
 .error-404-feedback-btn {
   display: inline-block;
   padding: 0.7rem 1.5rem;
-  background: rgba(251, 191, 36, 0.12);
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent);
   border-radius: 14px;
-  color: #FBBF24;
+  color: var(--warning);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out;
 }
 .error-404-feedback-btn:hover {
-  background: rgba(251, 191, 36, 0.2);
-  border-color: #FBBF24;
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+  background: color-mix(in srgb, var(--warning) 20%, transparent);
+  border-color: var(--warning);
   transform: translateY(-1px);
 }
 @media (max-width: 640px) {
@@ -1676,7 +1674,7 @@ body.is-home .section {
   color: var(--text-secondary);
   padding: 0.35rem 0.55rem;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: color 150ms ease-out;
   line-height: 1;
 }
 .search-btn:hover {
@@ -1690,7 +1688,7 @@ body.is-home .section {
 .comments-section {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-glow);
+  border-top: 1px solid var(--border);
 }
 .comments-section .giscus {
   margin-top: 1rem;
@@ -1856,14 +1854,14 @@ body.is-home .section {
   .blog-timeline { padding-left: 2rem; }
   .blog-tl-dot { left: -1.68rem; }
 }
-/* Blog content body links — purple, subtle and elegant */
+/* Blog content body links */
 .content-body a {
-  color: #a78bfa;
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(167, 139, 250, 0.35);
-  transition: color 0.2s, text-decoration-color 0.2s;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
 }
 .content-body a:hover {
   color: var(--text-primary);
@@ -2794,11 +2792,11 @@ pre.mermaid {
 }
 .hp-gs-badges { display:flex; gap:0.35rem; margin-bottom:0.5rem; }
 .hp-gs-b { font-size:0.58rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:12px; text-transform:uppercase; letter-spacing:0.04em; }
-.hp-gs-b-study { background:rgba(16,185,129,0.15); color:#34D399; }
-.hp-gs-b-domain { background:rgba(59,130,246,0.15); color:#60A5FA; }
-.hp-gs-b-flash { background:rgba(245,158,11,0.15); color:#FBBF24; }
-.hp-gs-b-sr { background:rgba(139,92,246,0.15); color:#A78BFA; }
-.hp-gs-b-progress { background:rgba(16,185,129,0.15); color:#34D399; }
+.hp-gs-b-study { background: color-mix(in srgb, var(--teal) 15%, transparent); color: var(--teal); }
+.hp-gs-b-domain { background: color-mix(in srgb, var(--info) 15%, transparent); color: var(--info); }
+.hp-gs-b-flash { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); }
+.hp-gs-b-sr { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }
+.hp-gs-b-progress { background: color-mix(in srgb, var(--teal) 15%, transparent); color: var(--teal); }
 .hp-gs-q { font-size:0.75rem; color:#e0dce6; font-weight:600; margin:0 0 0.5rem; line-height:1.4; }
 .hp-gs-opts { display:flex; flex-direction:column; gap:0.3rem; margin-bottom:0.4rem; }
 .hp-gs-opt { font-size:0.68rem; padding:0.35rem 0.6rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.45); background:rgba(255,255,255,0.02); }
@@ -3124,7 +3122,7 @@ pre.mermaid {
   color: var(--text-primary, #171717);
   font-style: italic;
 }
-.prompt-example strong { color: #A78BFA; font-style: normal; }
+.prompt-example strong { color: var(--accent); font-style: normal; }
 .prompt-example code { background: rgba(167,139,250,0.15); padding: 2px 6px; border-radius: 4px; font-style: normal; }
 
 /* ============================================
