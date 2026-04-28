@@ -33,8 +33,7 @@
     {{/* Meta */}}
     <p class="zt-vid-meta">
       {{ with .Params.card_tag }}<span>{{ . }}</span><span>·</span>{{ end }}
-      <span>{{ .Date.Format "2 January 2006" }}</span>
-      {{ with .Params.views }}<span>·</span><span>{{ lang.FormatNumberCustom 0 . }} views</span>{{ end }}
+      {{ with .Params.views }}<span>{{ lang.FormatNumberCustom 0 . }} views</span>{{ end }}
       {{ with .Params.likes }}<span>·</span><span>{{ lang.FormatNumberCustom 0 . }} likes</span>{{ end }}
     </p>
 
@@ -63,16 +62,7 @@
     </div>
     {{ end }}
 
-    {{/* Tags */}}
-    {{ with .Params.tags }}
-    <div class="zt-vid-tags">
-      {{ range . }}
-      <span class="zt-vid-tag">{{ . }}</span>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{/* Related videos from same section (sorted by date, excluding current) */}}
+    {{/* Related videosfrom same section (sorted by views, excluding current) */}}
     {{ $sameSection := where site.RegularPages "Section" .Section }}
     {{ $others := where $sameSection "RelPermalink" "ne" .RelPermalink }}
     {{ $related := first 4 (sort $others "Date" "desc") }}
@@ -83,7 +73,6 @@
         {{ range $related }}
         <a href="{{ .RelPermalink }}" class="zt-vid-related-link">
           <span class="zt-vid-related-title">{{ .Title | truncate 60 }}</span>
-          <span class="zt-vid-related-date">{{ .Date.Format "Jan 2006" }}</span>
         </a>
         {{ end }}
       </div>

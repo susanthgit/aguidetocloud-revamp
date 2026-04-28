@@ -3107,16 +3107,26 @@
 }
 
 /* Disclaimer + attribution */
-.zt-lic-disclaimer {
+/* Disclaimer — progressive disclosure */
+.zt-lic-disclaimer-wrap {
   margin-top: var(--space-12, 48px);
+}
+.zt-lic-disclaimer-toggle {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, #737373);
+  cursor: pointer;
+  padding: var(--space-2, 8px) 0;
+}
+.zt-lic-disclaimer-toggle:hover { color: var(--text-secondary); }
+.zt-lic-disclaimer {
   padding: var(--space-4, 16px);
   font-size: var(--text-sm, 0.875rem);
   color: var(--text-tertiary, #A3A3A3);
   background: var(--bg-elevated, #F5F5F5);
   border: 1px solid var(--border, #E5E5E5);
-  border-left: 3px solid var(--warning, #EAB308);
   border-radius: var(--radius-sm, 6px);
   line-height: 1.6;
+  margin-top: var(--space-2, 8px);
 }
 
 .zt-lic-disclaimer strong {
