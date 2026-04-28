@@ -49,8 +49,8 @@
 
 {{/* ── Tab Navigation ── */}}
 <div class="licpick-tabs" role="tablist" aria-label="Licence Picker sections">
-  <button class="licpick-tab active" role="tab" aria-selected="true" aria-controls="tab-picker" data-tab="picker">Feature Picker</button>
-  <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-compare" data-tab="compare">Plan Comparison</button>
+  <button class="licpick-tab active" role="tab" aria-selected="true" aria-controls="tab-compare" data-tab="compare">Plan Comparison</button>
+  <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-picker" data-tab="picker">Feature Picker</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-addons" data-tab="addons">Add-on Calculator</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-scenarios" data-tab="scenarios">Common Scenarios</button>
   <button class="licpick-tab" role="tab" aria-selected="false" aria-controls="tab-faq" data-tab="faq">FAQ</button>
@@ -59,7 +59,7 @@
 {{/* ══════════════════════════════════════════════
      TAB 1 — FEATURE PICKER
      ══════════════════════════════════════════════ */}}
-<div id="tab-picker" class="licpick-panel active" role="tabpanel">
+<div id="tab-picker" class="licpick-panel" role="tabpanel" style="display:none">
   <div class="licpick-picker-layout">
     {{/* Left: Feature Grid */}}
     <div class="licpick-features-col">
@@ -165,7 +165,7 @@
 {{/* ══════════════════════════════════════════════
      TAB 2 — PLAN COMPARISON
      ══════════════════════════════════════════════ */}}
-<div id="tab-compare" class="licpick-panel" role="tabpanel" style="display:none">
+<div id="tab-compare" class="licpick-panel active" role="tabpanel">
   <div class="licpick-compare-controls">
     <label for="licpick-cat-filter">Filter by category:</label>
     <select id="licpick-cat-filter" aria-label="Filter features by category">
