@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Apr 2026 07:27:15 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 12:25:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText</title>
-      <link>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</link>
-      <description>The new continuous checkpointing feature in Orbax and MaxText improves model training reliability and performance by optimizing I/O bandwidth and reducing failure risks. This innovation addresses limitations of traditional fixed-frequency checkpointing methods.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</guid>
-    </item>
-    <item>
-      <title>ADK Go 1.0 Arrives!</title>
-      <link>https://developers.googleblog.com/adk-go-10-arrives/</link>
-      <description>The launch of ADK Go 1.0 transitions AI scripts to production-ready services, emphasizing observability and security with features like OpenTelemetry integration and a new plugin system. This release aims to improve safety and efficiency in AI operations.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/adk-go-10-arrives/</guid>
-    </item>
-    <item>
-      <title>Developer’s Guide to Building ADK Agents with Skills</title>
-      <link>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</link>
-      <description>The ADK SkillToolset introduces a modular architecture for AI agents, allowing them to load expertise on demand and reduce token usage. This innovative approach enables dynamic capability expansion during runtime.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</guid>
-    </item>
-    <item>
-      <title>Bring state-of-the-art agentic skills to the edge with Gemma 4</title>
-      <link>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</link>
-      <description>Google DeepMind's Gemma 4 launch features advanced open models for multi-step planning and on-device workflows, enhancing autonomous capabilities. The release supports over 140 languages and is designed for various hardware.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</guid>
-    </item>
-    <item>
-      <title>Supporting Google Account username change in your app</title>
-      <link>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</link>
-      <description>Google now allows U.S. users to change their @gmail.com usernames while preserving account data, impacting app developers who rely on email for identification. This change necessitates a shift to using 'subject ID' for user identification.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</guid>
-    </item>
-    <item>
-      <title>TorchTPU: Running PyTorch Natively on TPUs at Google Scale</title>
-      <link>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</link>
-      <description>TorchTPU is a new stack enabling high-performance PyTorch workloads on Google’s TPU infrastructure, aiming to simplify code changes and optimize distributed training. Future plans include reducing compilation overhead and enhancing support for dynamic shapes.</description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Apr 2026 07:25:33 +0000</pubDate>
-      <guid>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</guid>
-    </item>
-    <item>
-      <title>Australia threatens tech companies with 2.25 percent tax if they don’t pay publishers</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/australia_news_bargaining_incentive/</link>
-      <description>Australia proposes a 2.25 percent tax on tech companies' revenue to ensure they support journalism, offering an alternative to direct payments to local media. This move could reshape the financial responsibilities of social media and search platforms.</description>
+      <title>Two men charged over series of arson attacks on 5G masts</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/5g_belfast_arrests/</link>
+      <description>Two men have been charged with arson for attacking 5G masts over two years, fueled by conspiracy theories. This highlights ongoing tensions surrounding 5G technology.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 28 Apr 2026 07:20:24 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/australia_news_bargaining_incentive/</guid>
+      <pubDate>Tue, 28 Apr 2026 11:14:28 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/5g_belfast_arrests/</guid>
     </item>
     <item>
-      <title>‘AI deflation’ comes to India’s tech services giants and puts downward pressure on revenue</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/tcs_infosys_wipro_hcl_fy26/</link>
-      <description>AI is starting to impact revenue models for India's major tech services firms, leading to potential job cuts despite stable headcounts. This trend indicates a shift in how these companies operate amid increasing automation.</description>
+      <title>Microsoft Outlook for iOS still down and out for many after 'service change'</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/a_service_change_takes_down/</link>
+      <description>Microsoft Outlook for iOS continues to face issues with sign-in failures and unexpected logouts, over 24 hours after a service change. Despite a rollback, many users are still affected.</description>
       <category>Top Stories</category>
-      <pubDate>Tue, 28 Apr 2026 05:34:57 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/tcs_infosys_wipro_hcl_fy26/</guid>
+      <pubDate>Tue, 28 Apr 2026 10:32:32 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/a_service_change_takes_down/</guid>
     </item>
     <item>
-      <title>China blocks Zuck’s acquisition of AI outfit Manus</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/china_blocks_meta_manus_acquisition/</link>
-      <description>China has blocked Meta's acquisition of AI startup Manus, forcing the company to reconsider its AI strategy. This decision highlights ongoing regulatory challenges for foreign tech companies in China.</description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Apr 2026 02:09:58 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/china_blocks_meta_manus_acquisition/</guid>
-    </item>
-    <item>
-      <title>My 5 favorite open source operating systems that aren't Linux</title>
-      <link>https://www.zdnet.com/article/my-5-favorite-open-source-operating-systems-that-arent-linux/</link>
-      <description>The article lists five notable open-source operating systems that are not based on Linux, showcasing diverse options for users interested in alternatives. It highlights both historical and innovative projects.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 28 Apr 2026 02:00:40 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/my-5-favorite-open-source-operating-systems-that-arent-linux/</guid>
-    </item>
-    <item>
-      <title>This hidden TV feature tracks your viewing - here's how to turn it off (no matter what brand)</title>
-      <link>https://www.zdnet.com/article/how-to-disable-acr-tv/</link>
-      <description>Samsung, LG, and Sony TVs have a hidden feature that tracks viewing habits, raising privacy concerns. Users can disable this feature to protect their data.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 28 Apr 2026 01:01:11 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-disable-acr-tv/</guid>
-    </item>
-    <item>
-      <title>77% of IT managers say their AI agents are out of control - 5 ways to rein in yours</title>
-      <link>https://www.zdnet.com/article/it-managers-say-ai-agents-are-out-of-control/</link>
-      <description>A survey reveals that 77% of IT managers believe their AI agents are out of control, leading to unsanctioned applications. The article suggests five strategies to manage AI effectively.</description>
-      <category>Industry</category>
-      <pubDate>Tue, 28 Apr 2026 01:00:47 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/it-managers-say-ai-agents-are-out-of-control/</guid>
-    </item>
-    <item>
-      <title>Some Musk v. Altman Jurors Don't Like Elon Musk</title>
-      <link>https://www.wired.com/story/some-musk-v-altman-jurors-dont-like-elon-musk/</link>
-      <description>Elon Musk's lawsuit against OpenAI is complicated by potential jurors' negative opinions about him, which could impact the trial's outcome.</description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 28 Apr 2026 00:39:30 +0000</pubDate>
-      <guid>https://www.wired.com/story/some-musk-v-altman-jurors-dont-like-elon-musk/</guid>
-    </item>
-    <item>
-      <title>Microsoft's GitHub shifts to metered AI billing amid cost crisis</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/microsofts_github_shifts_to_metered/</link>
-      <description>Microsoft's GitHub is shifting to metered billing for its AI services, ending the unlimited access model. This change reflects the company's need to manage costs amid rising expenses.</description>
+      <title>An update on GitHub availability</title>
+      <link>https://github.blog/news-insights/company-news/an-update-on-github-availability/</link>
+      <description>GitHub has provided an update on its availability and reliability improvements. The post outlines both completed and ongoing efforts to enhance service.</description>
       <category>GitHub Copilot</category>
-      <pubDate>Tue, 28 Apr 2026 00:31:01 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/microsofts_github_shifts_to_metered/</guid>
+      <pubDate>Tue, 28 Apr 2026 10:01:37 +0000</pubDate>
+      <guid>https://github.blog/news-insights/company-news/an-update-on-github-availability/</guid>
     </item>
     <item>
-      <title>Adaptive Ultrasound Imaging with Physics-Informed NV-Raw2Insights-US AI</title>
-      <link>https://huggingface.co/blog/nvidia/raw2insights-adaptive-ultrasound-imaging</link>
-      <description>The article discusses advancements in ultrasound imaging using a new AI approach called NV-Raw2Insights-US, which integrates physics-informed techniques.</description>
-      <category>Open Source</category>
-      <pubDate>Tue, 28 Apr 2026 00:28:13 +0000</pubDate>
-      <guid>https://huggingface.co/blog/nvidia/raw2insights-adaptive-ultrasound-imaging</guid>
+      <title>SUSE's sovereignty pitch meets an inconvenient $6 billion question</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/sovereignty_its_all_about_the/</link>
+      <description>At SUSECON, Linux vendor SUSE emphasized its focus on European sovereignty amid reports that its majority stakeholder is considering a $6 billion sale to an American firm.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 10:00:07 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/sovereignty_its_all_about_the/</guid>
     </item>
     <item>
-      <title>Jury selection in Musk v. Altman: ‘People don’t like him’</title>
-      <link>https://www.theverge.com/tech/919469/elon-musk-dont-like</link>
-      <description>During jury selection for Musk v. Altman, many jurors expressed negative feelings about Musk, which could affect the trial's dynamics.</description>
+      <title>Locked, stocked, and losing budget: AI vendor lock-in bites back</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/locked_stocked_and_losing_budget/</link>
+      <description>C-suite executives are realizing that switching AI models is becoming more difficult due to vendor lock-in and rising costs, challenging previous assumptions about flexibility.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 09:15:10 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/locked_stocked_and_losing_budget/</guid>
+    </item>
+    <item>
+      <title>UK govt dept sent a document 'in error.' Now it's being used in a £370M contract lawsuit</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/28/dwp_sent_document_in_error/</link>
+      <description>The UK's pensions ministry is embroiled in a £370 million lawsuit after an internal document was accidentally shared, leading to legal complications with its outsourcing provider.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 08:30:09 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/28/dwp_sent_document_in_error/</guid>
+    </item>
+    <item>
+      <title>The Bloomberg Terminal Is Getting an AI Makeover, Like It or Not</title>
+      <link>https://www.wired.com/story/the-bloomberg-terminal-is-getting-an-ai-makeover-like-it-or-not/</link>
+      <description>Bloomberg's Terminal is set to undergo significant changes with AI integrations, as discussed by the company's CTO. This aims to enhance the platform's functionality for traders.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/the-bloomberg-terminal-is-getting-an-ai-makeover-like-it-or-not/</guid>
+    </item>
+    <item>
+      <title>Google and Pentagon reportedly agree on deal for ‘any lawful’ use of AI</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal</link>
+      <description>Google has reportedly signed a classified agreement with the Pentagon allowing the use of its AI models for any lawful government purpose, amidst employee concerns.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 07:09:32 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal</guid>
+    </item>
+    <item>
+      <title>Attack of the killer script kiddies</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/915660/mythos-script-kiddies-hackers-attack-cybersecurity-ai</link>
+      <description>Cybersecurity teams showcased their AI bug-finding systems at DARPA's AI Cyber Challenge, demonstrating the effectiveness of these tools on millions of lines of code.</description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Apr 2026 07:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/915660/mythos-script-kiddies-hackers-attack-cybersecurity-ai</guid>
+    </item>
+    <item>
+      <title>WHCD shooting, DOJ ends Powell probe, Musk vs. Altman and more in Morning Squawk</title>
+      <link>https://www.cnbc.com/2026/04/27/5-things-to-know-before-the-market-opens.html</link>
+      <description>A roundup of key news for investors includes updates on various topics, including the WHCD shooting and the DOJ's conclusion of the Powell probe.</description>
       <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 23:39:33 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/919469/elon-musk-dont-like</guid>
+      <pubDate>Mon, 27 Apr 2026 12:22:02 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/04/27/5-things-to-know-before-the-market-opens.html</guid>
     </item>
     <item>
-      <title>Google is testing AI chatbot search for YouTube</title>
-      <link>https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search</link>
-      <description>Google is testing a new AI-driven search experience for YouTube that aims to make searching feel more conversational and interactive.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Apr 2026 20:01:54 -0400</pubDate>
-      <guid>https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search</guid>
+      <title>Show HN: Gnosis, a knowledge base for what the code can't tell you</title>
+      <link>https://github.com/skorokithakis/gnosis</link>
+      <description>Gnosis is a new knowledge base aimed at improving product documentation by capturing insights that code alone cannot convey. This tool addresses a common frustration in tech teams about understanding the rationale behind decisions.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Apr 2026 12:21:13 +0000</pubDate>
+      <guid>https://github.com/skorokithakis/gnosis</guid>
     </item>
     <item>
-      <title>Rebuilding the data stack for AI</title>
-      <link>https://www.technologyreview.com/2026/04/27/1136322/rebuilding-the-data-stack-for-ai/</link>
-      <description>Many enterprises face challenges in adopting AI due to inadequate data management, highlighting the need for a robust data infrastructure.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Apr 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/04/27/1136322/rebuilding-the-data-stack-for-ai/</guid>
+      <title>Sora’s downfall signals broader problems with AI’s creative utility</title>
+      <link>https://theconversation.com/soras-downfall-signals-broader-problems-with-ais-creative-utility-280013</link>
+      <description>Sora's decline highlights significant issues with AI's ability to create compelling and original visual content. This raises questions about the future utility of AI in creative fields.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:15:45 +0000</pubDate>
+      <guid>https://theconversation.com/soras-downfall-signals-broader-problems-with-ais-creative-utility-280013</guid>
     </item>
     <item>
-      <title>Cybersec is a thankless job: expanding workload and shrinking pay packet</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/04/27/from_a_massive_skills_gap/</link>
-      <description>A report shows that cybersecurity professionals are experiencing stagnant wages despite increasing workloads and responsibilities, highlighting a disparity in the industry.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Apr 2026 12:22:58 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/04/27/from_a_massive_skills_gap/</guid>
+      <title>Show HN: Groundtruth – Stop hook that blocks Claude Code from saying done</title>
+      <link>https://github.com/vnmoorthy/groundtruth</link>
+      <description>Groundtruth is a tool designed to prevent Claude Code from prematurely indicating completion in coding tasks. It aims to improve user experience by ensuring accurate feedback.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Apr 2026 12:14:54 +0000</pubDate>
+      <guid>https://github.com/vnmoorthy/groundtruth</guid>
     </item>
     <item>
-      <title>Canva apologizes after its AI tool replaces ‘Palestine’ in designs</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/919028/canva-magic-layers-ai-replacing-palestine</link>
-      <description>Canva faced backlash after its AI tool inadvertently replaced the word 'Palestine' in user designs, raising concerns about AI's impact on content integrity.</description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Apr 2026 10:29:23 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/919028/canva-magic-layers-ai-replacing-palestine</guid>
+      <title>Alleged Correspondents' Dinner shooter to appear in court. And, Charles III visits U.S.</title>
+      <link>https://www.npr.org/2026/04/27/g-s1-118874/up-first-newsletter-white-house-correspondence-dinner-cole-allen-king-charles-spacex-openai-elon-musk</link>
+      <description>The suspect in the shooting incident at the White House Correspondents' Dinner is scheduled to appear in federal court. Meanwhile, King Charles III and Queen Camilla are visiting the U.S.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:11:18 +0000</pubDate>
+      <guid>https://www.npr.org/2026/04/27/g-s1-118874/up-first-newsletter-white-house-correspondence-dinner-cole-allen-king-charles-spacex-openai-elon-musk</guid>
     </item>
     <item>
-      <title>repowire 0.10.2</title>
-      <link>https://pypi.org/project/repowire/0.10.2/</link>
-      <description>The release of repowire 0.10.2 introduces a mesh network that allows AI coding agents like Claude Code and Codex to communicate effectively. This advancement enhances collaboration among AI systems, potentially improving coding efficiency.</description>
+      <title>llama-index-callbacks-hdp 0.1.1</title>
+      <link>https://pypi.org/project/llama-index-callbacks-hdp/0.1.1/</link>
+      <description>The release of HDP 0.1.1 introduces cryptographic authorization provenance for LlamaIndex agents, enhancing security and accountability in AI operations.</description>
+      <category>Meta</category>
+      <pubDate>Mon, 27 Apr 2026 12:09:52 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-index-callbacks-hdp/0.1.1/</guid>
+    </item>
+    <item>
+      <title>hdp-langchain 0.1.1</title>
+      <link>https://pypi.org/project/hdp-langchain/0.1.1/</link>
+      <description>HDP 0.1.1 middleware for LangChain offers a cryptographic audit trail for multi-agent delegation, ensuring transparency in AI interactions.</description>
+      <category>Open Source</category>
+      <pubDate>Mon, 27 Apr 2026 12:09:29 +0000</pubDate>
+      <guid>https://pypi.org/project/hdp-langchain/0.1.1/</guid>
+    </item>
+    <item>
+      <title>Qualcomm jumps 12% on report it’s partnering with OpenAI on smartphone AI chip</title>
+      <link>https://www.cnbc.com/2026/04/27/qualcomm-qcom-openai-smartphone-chip-partnership-stock.html</link>
+      <description>Qualcomm's stock surged 12% following reports of a partnership with OpenAI to develop an AI chip for smartphones, indicating strong market interest in AI technology.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:09:27 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/04/27/qualcomm-qcom-openai-smartphone-chip-partnership-stock.html</guid>
+    </item>
+    <item>
+      <title>hdp-grok 0.1.2</title>
+      <link>https://pypi.org/project/hdp-grok/0.1.2/</link>
+      <description>HDP 0.1.2 middleware for Grok/xAI API enhances cryptographic delegation capabilities, furthering the security of AI applications.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:09:07 +0000</pubDate>
+      <guid>https://pypi.org/project/hdp-grok/0.1.2/</guid>
+    </item>
+    <item>
+      <title>Would You Want a ChatGPT Phone? Report Says OpenAI Considers Mobile Chipset</title>
+      <link>https://me.pcmag.com/en/ai/36782/would-you-want-a-chatgpt-phone-report-says-openai-considers-mobile-chipset</link>
+      <description>Reports suggest OpenAI is exploring the development of a mobile chipset to facilitate easier access to ChatGPT, indicating a potential shift towards dedicated AI devices.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:08:41 +0000</pubDate>
+      <guid>https://me.pcmag.com/en/ai/36782/would-you-want-a-chatgpt-phone-report-says-openai-considers-mobile-chipset</guid>
+    </item>
+    <item>
+      <title>Malicious AI Prompt Injection Attacks Increasing, but Sophistication Still Low: Google</title>
+      <link>https://www.securityweek.com/malicious-ai-prompt-injection-attacks-increasing-but-sophistication-still-low-google/</link>
+      <description>Google reports an increase in malicious AI prompt injection attacks, although most attempts remain unsophisticated. This highlights ongoing security challenges in AI systems.</description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Apr 2026 12:08:19 +0000</pubDate>
+      <guid>https://www.securityweek.com/malicious-ai-prompt-injection-attacks-increasing-but-sophistication-still-low-google/</guid>
+    </item>
+    <item>
+      <title>cc-sentiment 0.2.96</title>
+      <link>https://pypi.org/project/cc-sentiment/0.2.96/</link>
+      <description>The cc-sentiment 0.2.96 update introduces a local scoring system for Claude Code sessions, enhancing sentiment analysis metrics. This improvement allows for better evaluation of AI-generated content.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Apr 2026 12:08:15 +0000</pubDate>
+      <guid>https://pypi.org/project/cc-sentiment/0.2.96/</guid>
+    </item>
+    <item>
+      <title>openclaw-managed-agents 0.2.0</title>
+      <link>https://pypi.org/project/openclaw-managed-agents/0.2.0/</link>
+      <description>The openclaw-managed-agents 0.2.0 release provides a Python SDK for OpenClaw Managed Agents, positioning it as an open alternative to Claude Managed Agents. This development promotes flexibility and accessibility in AI agent management.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Apr 2026 12:07:37 +0000</pubDate>
+      <guid>https://pypi.org/project/openclaw-managed-agents/0.2.0/</guid>
+    </item>
+    <item>
+      <title>Gemini’s upcoming daily assistant feature could get a logical new name</title>
+      <link>https://www.androidauthority.com/gemini-daily-brief-apk-teardown-3661094/</link>
+      <description>Google is set to rename its Gemini proactive tool 'Your day' to 'Daily brief' ahead of the Google I/O 2026 event. This change reflects an effort to enhance user experience and clarity.</description>
       <category>Google</category>
-      <pubDate>Mon, 27 Apr 2026 07:25:18 +0000</pubDate>
-      <guid>https://pypi.org/project/repowire/0.10.2/</guid>
+      <pubDate>Mon, 27 Apr 2026 12:06:52 +0000</pubDate>
+      <guid>https://www.androidauthority.com/gemini-daily-brief-apk-teardown-3661094/</guid>
     </item>
     <item>
-      <title>DeepSeek cuts V4-Pro prices by 75% and slashes cache costs across its entire API to a tenth</title>
-      <link>https://thenextweb.com/news/deepseek-v4-pro-price-cut-75-percent/</link>
-      <description>DeepSeek has drastically reduced the prices of its V4-Pro API by 75%, challenging competitors like GPT-5.5 and Claude Opus. This move aims to attract users by offering lower costs until May 2026.</description>
+      <title>Qualcomm surges on report of OpenAI tie-up for AI smartphone processors</title>
+      <link>https://finance.yahoo.com/sectors/technology/articles/qualcomm-surges-report-openai-tie-120527138.html</link>
+      <description>Qualcomm's stock surged 13% following reports of a collaboration with OpenAI and MediaTek to develop AI smartphone processors. This partnership could significantly impact the mobile AI landscape.</description>
       <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 07:25:07 +0000</pubDate>
-      <guid>https://thenextweb.com/news/deepseek-v4-pro-price-cut-75-percent/</guid>
+      <pubDate>Mon, 27 Apr 2026 12:05:27 +0000</pubDate>
+      <guid>https://finance.yahoo.com/sectors/technology/articles/qualcomm-surges-report-openai-tie-120527138.html</guid>
     </item>
     <item>
-      <title>Elon Musk vs Sam Altman Trial Kicks Off: Jury Selection Begins in High-Stakes OpenAI Lawsuit</title>
-      <link>https://www.ibtimes.com.au/elon-musk-vs-sam-altman-trial-kicks-off-jury-selection-begins-high-stakes-openai-lawsuit-1867586</link>
-      <description>The trial between Elon Musk and Sam Altman regarding OpenAI has commenced, with jury selection underway. This case could significantly impact the AI industry and financial stakes involved.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 07:25:02 +0000</pubDate>
-      <guid>https://www.ibtimes.com.au/elon-musk-vs-sam-altman-trial-kicks-off-jury-selection-begins-high-stakes-openai-lawsuit-1867586</guid>
-    </item>
-    <item>
-      <title>AI-Maxxing Is Hotly Trending But Getting On People’s Nerves</title>
-      <link>https://www.forbes.com/sites/lanceeliot/2026/04/27/ai-maxxing-is-hotly-trending-but-getting-on-peoples-nerves/</link>
-      <description>The trend of 'AI-maxxing' is gaining popularity, where individuals increasingly rely on AI for various tasks. However, this obsession is causing frustration among some people.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 07:24:38 +0000</pubDate>
-      <guid>https://www.forbes.com/sites/lanceeliot/2026/04/27/ai-maxxing-is-hotly-trending-but-getting-on-peoples-nerves/</guid>
-    </item>
-    <item>
-      <title>llama-cpp-py-sync 0.8943</title>
-      <link>https://pypi.org/project/llama-cpp-py-sync/0.8943/</link>
-      <description>The llama-cpp-py-sync 0.8943 release provides auto-synchronized Python bindings for llama.cpp, enhancing compatibility and functionality for developers using CFFI ABI mode.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Apr 2026 07:24:14 +0000</pubDate>
-      <guid>https://pypi.org/project/llama-cpp-py-sync/0.8943/</guid>
-    </item>
-    <item>
-      <title>graqle 0.52.1</title>
-      <link>https://pypi.org/project/graqle/0.52.1/</link>
-      <description>The graqle 0.52.1 update introduces architecture-aware reasoning for AI tools, enabling users to build knowledge graphs from codebases. This feature enhances dependency and impact analysis.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Apr 2026 07:23:50 +0000</pubDate>
-      <guid>https://pypi.org/project/graqle/0.52.1/</guid>
-    </item>
-    <item>
-      <title>llm-notebook 1.3.71</title>
-      <link>https://pypi.org/project/llm-notebook/1.3.71/</link>
-      <description>The llm-notebook 1.3.71 offers a Karpathy-style LLM wiki that integrates with various coding sessions, allowing users to compile and access knowledge efficiently.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Apr 2026 07:18:05 +0000</pubDate>
-      <guid>https://pypi.org/project/llm-notebook/1.3.71/</guid>
-    </item>
-    <item>
-      <title>Dharma, Data and Deception: An LLM-Powered Rhetorical Analysis of Cow-Urine Health Claims on YouTube</title>
-      <link>https://arxiv.org/abs/2604.22606</link>
-      <description>A rhetorical analysis using LLMs examines health misinformation related to cow-urine claims on YouTube, highlighting the intersection of cultural beliefs and scientific information.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 07:15:31 +0000</pubDate>
-      <guid>https://arxiv.org/abs/2604.22606</guid>
-    </item>
-    <item>
-      <title>zh-ocr-mcp added to PyPI</title>
-      <link>https://pypi.org/project/zh-ocr-mcp/</link>
-      <description>The zh-ocr-mcp has been added to PyPI, providing a server for converting documents to Markdown format, enhancing accessibility and usability for developers.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Apr 2026 07:15:19 +0000</pubDate>
-      <guid>https://pypi.org/project/zh-ocr-mcp/</guid>
-    </item>
-    <item>
-      <title>Elon Musk vs Sam Altman trial begins today: What's at stake, key allegations, and all you need to know</title>
-      <link>https://www.livemint.com/companies/news/elon-musk-vs-sam-altman-trial-begins-today-whats-at-stake-key-allegations-and-all-you-need-to-know-11777268742715.html</link>
-      <description>The trial between Elon Musk and OpenAI is officially underway, with Musk alleging that OpenAI has strayed from its original mission for profit, seeking $134 billion in damages.</description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Apr 2026 07:14:12 +0000</pubDate>
-      <guid>https://www.livemint.com/companies/news/elon-musk-vs-sam-altman-trial-begins-today-whats-at-stake-key-allegations-and-all-you-need-to-know-11777268742715.html</guid>
-    </item>
-    <item>
-      <title>BlueFocus Reports 2025 Results as AI-Driven Revenue Reaches USD 546.05 Million and Token Usage Surpasses One Trillion</title>
-      <link>https://en.antaranews.com/news/413707/bluefocus-reports-2025-results-as-ai-driven-revenue-reaches-usd-54605-million-and-token-usage-surpasses-one-trillion</link>
-      <description>BlueFocus reported a significant revenue of USD 10.07 billion for 2025, with AI-driven revenue reaching USD 546.05 million and token usage surpassing one trillion. This highlights the growing impact of AI in their business model.</description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 27 Apr 2026 07:13:42 +0000</pubDate>
-      <guid>https://en.antaranews.com/news/413707/bluefocus-reports-2025-results-as-ai-driven-revenue-reaches-usd-54605-million-and-token-usage-surpasses-one-trillion</guid>
-    </item>
-    <item>
-      <title>synsci-delphi-proxy added to PyPI</title>
-      <link>https://pypi.org/project/synsci-delphi-proxy/</link>
-      <description>The synsci-delphi-proxy has been added to PyPI, allowing standard input/output MCP clients to connect with a Delphi HTTP API. This enhances interoperability for developers working with these tools.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Apr 2026 07:06:32 +0000</pubDate>
-      <guid>https://pypi.org/project/synsci-delphi-proxy/</guid>
-    </item>
-    <item>
-      <title>cafitac-hermit-agent 0.3.49</title>
-      <link>https://pypi.org/project/cafitac-hermit-agent/0.3.49/</link>
-      <description>The cafitac-hermit-agent 0.3.49 has been released, enabling Claude Code or Codex to handle repetitive coding tasks using more cost-effective local models. This can streamline coding workflows.</description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Apr 2026 07:04:31 +0000</pubDate>
-      <guid>https://pypi.org/project/cafitac-hermit-agent/0.3.49/</guid>
-    </item>
-    <item>
-      <title>cyllama-vulkan 0.2.14</title>
-      <link>https://pypi.org/project/cyllama-vulkan/0.2.14/</link>
-      <description>Cyllama-vulkan 0.2.14 is a new Python library for local AI inference, supporting llama, whisper, and stable-diffusion models without dependencies. This simplifies the setup for developers.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Apr 2026 07:04:06 +0000</pubDate>
-      <guid>https://pypi.org/project/cyllama-vulkan/0.2.14/</guid>
-    </item>
-    <item>
-      <title>pyg-nightly 2.8.0.dev20260427</title>
-      <link>https://pypi.org/project/pyg-nightly/2.8.0.dev20260427/</link>
-      <description>The pyg-nightly 2.8.0.dev20260427 is a Graph Neural Network Library for PyTorch, providing tools for developers working on graph-based AI applications. This enhances the capabilities of PyTorch for specific use cases.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Apr 2026 07:02:20 +0000</pubDate>
-      <guid>https://pypi.org/project/pyg-nightly/2.8.0.dev20260427/</guid>
-    </item>
-    <item>
-      <title>langchain-keeperhub 0.1.0</title>
-      <link>https://pypi.org/project/langchain-keeperhub/0.1.0/</link>
-      <description>Langchain-keeperhub 0.1.0 has been introduced, offering a toolkit for reliable Web3 execution via KeeperHub. This supports developers in building decentralized applications.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Apr 2026 07:01:52 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-keeperhub/0.1.0/</guid>
-    </item>
-    <item>
-      <title>cyllama-sycl 0.2.14</title>
-      <link>https://pypi.org/project/cyllama-sycl/0.2.14/</link>
-      <description>Cyllama-sycl 0.2.14 is another version of the cyllama library for local AI inference, similar to cyllama-vulkan, emphasizing ease of use for developers. This reinforces the library's versatility.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Apr 2026 07:00:11 +0000</pubDate>
-      <guid>https://pypi.org/project/cyllama-sycl/0.2.14/</guid>
-    </item>
-    <item>
-      <title>Microsoft Adds Policy to Let IT Admins Uninstall Copilot From Enterprise Windows 11 Devices</title>
-      <link>https://www.ghacks.net/2026/04/27/microsoft-adds-policy-to-let-it-admins-uninstall-copilot-from-enterprise-windows-11-devices/</link>
-      <description>Microsoft has introduced a policy allowing IT administrators to uninstall the Copilot app from enterprise Windows 11 devices. This gives organizations more control over their software environment.</description>
+      <title>Microsoft says Outlook.com outage is causing sign‑in failures</title>
+      <link>https://www.bleepingcomputer.com/news/microsoft/microsoft-says-outlookcom-outage-is-causing-sign-in-failures/</link>
+      <description>Microsoft is addressing an ongoing outage affecting Outlook.com, which is causing sign-in failures for users. The issue highlights the challenges tech companies face in maintaining service reliability.</description>
       <category>Microsoft</category>
-      <pubDate>Mon, 27 Apr 2026 06:55:40 +0000</pubDate>
-      <guid>https://www.ghacks.net/2026/04/27/microsoft-adds-policy-to-let-it-admins-uninstall-copilot-from-enterprise-windows-11-devices/</guid>
+      <pubDate>Mon, 27 Apr 2026 12:03:46 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/news/microsoft/microsoft-says-outlookcom-outage-is-causing-sign-in-failures/</guid>
     </item>
     <item>
-      <title>stryda-langgraph added to PyPI</title>
-      <link>https://pypi.org/project/stryda-langgraph/</link>
-      <description>The stryda-langgraph has been added to PyPI, enabling governance integration as a LangGraph node between LLM agents and tool executors. This enhances governance in AI workflows.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Apr 2026 06:53:44 +0000</pubDate>
-      <guid>https://pypi.org/project/stryda-langgraph/</guid>
+      <title>aicraft 0.1.1</title>
+      <link>https://pypi.org/project/aicraft/0.1.1/</link>
+      <description>The aicraft 0.1.1 release allows users to run various coding agents in container sandboxes, facilitating experimentation with AI models. This tool enhances the versatility of AI development environments.</description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Apr 2026 12:03:20 +0000</pubDate>
+      <guid>https://pypi.org/project/aicraft/0.1.1/</guid>
     </item>
     <item>
-      <title>stryda-langchain added to PyPI</title>
-      <link>https://pypi.org/project/stryda-langchain/</link>
-      <description>Stryda-langchain has been released, allowing Stryda governance to be integrated into LangChain agents. This facilitates better governance and management of AI tools.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Apr 2026 06:53:42 +0000</pubDate>
-      <guid>https://pypi.org/project/stryda-langchain/</guid>
-    </item>
-    <item>
-      <title>stryda-langchain 0.1.0</title>
-      <link>https://pypi.org/project/stryda-langchain/0.1.0/</link>
-      <description>Stryda governance has been integrated into a LangChain agent, allowing for enhanced functionality through BaseTool wrapping or callback attachments.</description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Apr 2026 06:53:42 +0000</pubDate>
-      <guid>https://pypi.org/project/stryda-langchain/0.1.0/</guid>
-    </item>
-    <item>
-      <title>simp-protocol added to PyPI</title>
-      <link>https://pypi.org/project/simp-protocol/</link>
-      <description>The Standardized Intent Messaging Protocol has been added to PyPI, providing a communication framework for AI agents.</description>
-      <category>Perplexity</category>
-      <pubDate>Mon, 27 Apr 2026 06:52:46 +0000</pubDate>
-      <guid>https://pypi.org/project/simp-protocol/</guid>
-    </item>
-    <item>
-      <title>アメリカ国務省がDeepSeekなど中国AI企業による「技術窃盗」を警戒、各国に異例の通達</title>
-      <link>https://news.livedoor.com/article/detail/31112696/</link>
-      <description>The US State Department has issued a global warning about alleged technology theft by Chinese AI firms, including DeepSeek.</description>
-      <category>DeepSeek</category>
-      <pubDate>Mon, 27 Apr 2026 06:30:00 +0000</pubDate>
-      <guid>https://news.livedoor.com/article/detail/31112696/</guid>
-    </item>
-    <item>
-      <title>socratic-nexus 0.4.0</title>
-      <link>https://pypi.org/project/socratic-nexus/0.4.0/</link>
-      <description>Socratic Nexus 0.4.0 has been released as a universal LLM client compatible with various AI models, featuring integrations with popular frameworks.</description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Apr 2026 06:25:42 +0000</pubDate>
-      <guid>https://pypi.org/project/socratic-nexus/0.4.0/</guid>
-    </item>
-    <item>
-      <title>4 Excel AI Tools Tested and Microsoft Copilot Finished Last</title>
-      <link>https://www.geeky-gadgets.com/ranking-excel-ai-assistants-2026/</link>
-      <description>A recent test of four AI tools for Excel revealed that Microsoft Copilot performed the worst in handling complex tasks.</description>
+      <title>Questions and Answers from Running a Local LLM</title>
+      <link>https://voiceofthedba.com/2026/04/27/questions-and-answers-from-running-a-local-llm/</link>
+      <description>A Q&amp;A session from the Houston AI-lytics 2026 event provided insights on running local LLMs on personal laptops. This discussion addresses common challenges and solutions for AI enthusiasts.</description>
       <category>Microsoft</category>
-      <pubDate>Mon, 27 Apr 2026 06:15:00 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/ranking-excel-ai-assistants-2026/</guid>
+      <pubDate>Mon, 27 Apr 2026 12:03:00 +0000</pubDate>
+      <guid>https://voiceofthedba.com/2026/04/27/questions-and-answers-from-running-a-local-llm/</guid>
     </item>
     <item>
-      <title>Samsung Mobile Division Faces First-Ever Net Loss as AI-Driven Memory Costs Squeeze Smartphone Margins</title>
-      <link>https://www.ghacks.net/2026/04/27/samsung-mobile-division-faces-first-ever-net-loss-as-ai-driven-memory-costs-squeeze-smartphone-margins/</link>
-      <description>Samsung's mobile division is projected to face its first net loss due to rising AI-driven memory costs affecting smartphone margins.</description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 27 Apr 2026 06:10:37 +0000</pubDate>
-      <guid>https://www.ghacks.net/2026/04/27/samsung-mobile-division-faces-first-ever-net-loss-as-ai-driven-memory-costs-squeeze-smartphone-margins/</guid>
+      <title>We analyzed billions of web visits: How AI is reshaping traffic channels</title>
+      <link>https://www.semrush.com/blog/traffic-channel-mix-study/</link>
+      <description>An analysis of billions of web visits reveals how AI is reshaping traffic channels across industries, highlighting growth and decline trends. This data is crucial for understanding digital marketing strategies.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 12:03:00 +0000</pubDate>
+      <guid>https://www.semrush.com/blog/traffic-channel-mix-study/</guid>
     </item>
     <item>
-      <title>The cost math behind routing Claude Code through Ollama (~90% cut)</title>
-      <link>https://github.com/Coherence-Daddy/use-ollama-to-enhance-claude</link>
-      <description>A method to route Claude Code through Ollama has been developed, potentially reducing costs by approximately 90%.</description>
-      <category>DeepSeek</category>
-      <pubDate>Mon, 27 Apr 2026 06:09:09 +0000</pubDate>
-      <guid>https://github.com/Coherence-Daddy/use-ollama-to-enhance-claude</guid>
+      <title>comfy-env 0.3.10</title>
+      <link>https://pypi.org/project/comfy-env/0.3.10/</link>
+      <description>The comfy-env 0.3.10 update focuses on environment management for ComfyUI custom nodes, enhancing CUDA wheel resolution and process isolation. This update is significant for developers working with custom AI interfaces.</description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 27 Apr 2026 12:02:34 +0000</pubDate>
+      <guid>https://pypi.org/project/comfy-env/0.3.10/</guid>
     </item>
     <item>
-      <title>The iOS 26.5 Fix Every iPhone User Has Been Waiting For</title>
-      <link>https://www.geeky-gadgets.com/ios-26-5-new-features-2/</link>
-      <description>The upcoming iOS 26.5 update promises performance enhancements, better battery life, and new customization features for iPhone users.</description>
+      <title>Get an Inside Look at the 'Air Taxi' Set to Revolutionize Travel</title>
+      <link>https://www.today.com/video/see-the-first-of-its-kind-air-taxi-that-s-set-to-revolutionize-travel-262157893867</link>
+      <description>Joby's electric-powered Air Taxi promises to revolutionize travel by significantly reducing travel time for urban commutes. This innovation could transform transportation logistics and urban mobility.</description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 27 Apr 2026 06:00:42 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/ios-26-5-new-features-2/</guid>
+      <pubDate>Mon, 27 Apr 2026 12:02:33 +0000</pubDate>
+      <guid>https://www.today.com/video/see-the-first-of-its-kind-air-taxi-that-s-set-to-revolutionize-travel-262157893867</guid>
     </item>
     <item>
-      <title>Revolutionary AI breakthrough: Brain-inspired nanoelectronics slash energy consumption</title>
-      <link>https://www.naturalnews.com/2026-04-27-breakthrough-brain-inspired-nanoelectronics-slash-energy-consumption.html</link>
-      <description>Researchers have created a brain-inspired memristor that reduces AI energy consumption by up to 70%, merging memory and processing.</description>
+      <title>What is Google DeepMind doing in Seoul? #tech</title>
+      <link>https://alltoc.com/tech/what-is-google-deepmind-doing-in-seoul</link>
+      <description>Google DeepMind is set to open its first AI campus in Seoul, South Korea, following a memorandum of understanding with the Ministry of Science and ICT. This move signifies DeepMind's commitment to expanding its presence in Asia and fostering local AI talent.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 12:02:21 +0000</pubDate>
+      <guid>https://alltoc.com/tech/what-is-google-deepmind-doing-in-seoul</guid>
+    </item>
+    <item>
+      <title>Safe Pro to Demonstrate AI-Powered Mission Planning at U.S. Army Fort Leonard Wood Maneuver Support Center of Excellence Event</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/27/3281587/0/en/Safe-Pro-to-Demonstrate-AI-Powered-Mission-Planning-at-U-S-Army-Fort-Leonard-Wood-Maneuver-Support-Center-of-Excellence-Event.html</link>
+      <description>Safe Pro will showcase its AI-powered mission planning capabilities at a U.S. Army event in Fort Leonard Wood. This demonstration highlights the increasing integration of AI in military operations.</description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 27 Apr 2026 12:01:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/27/3281587/0/en/Safe-Pro-to-Demonstrate-AI-Powered-Mission-Planning-at-U-S-Army-Fort-Leonard-Wood-Maneuver-Support-Center-of-Excellence-Event.html</guid>
+    </item>
+    <item>
+      <title>Google I/O 2026: What to Expect</title>
+      <link>https://www.cnet.com/tech/services-and-software/google-io-2026-everything-to-know/</link>
+      <description>Google I/O 2026 is anticipated to feature significant AI announcements, with speculation about new tools and technologies that will enhance developer capabilities. The event will likely showcase Google's latest innovations in AI.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 12:00:36 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/services-and-software/google-io-2026-everything-to-know/</guid>
+    </item>
+    <item>
+      <title>The Technical SEO Audit Needs A New Layer via @sejournal, @slobodanmanic</title>
+      <link>https://www.searchenginejournal.com/technical-seo-audit-new-layer/571583/</link>
+      <description>The article discusses the evolving landscape of technical SEO audits, emphasizing the need for a new layer that considers AI visibility and server-rendered content. This shift is crucial for optimizing web content for AI crawlers.</description>
       <category>Top Stories</category>
-      <pubDate>Mon, 27 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.naturalnews.com/2026-04-27-breakthrough-brain-inspired-nanoelectronics-slash-energy-consumption.html</guid>
+      <pubDate>Mon, 27 Apr 2026 12:00:10 +0000</pubDate>
+      <guid>https://www.searchenginejournal.com/technical-seo-audit-new-layer/571583/</guid>
     </item>
     <item>
-      <title>The AI Paradox: Decentralized revolution vs. technocratic tyranny</title>
-      <link>https://www.naturalnews.com/2026-04-27-the-ai-paradox-decentralized-revolution-technocratic-tyranny.html</link>
-      <description>The book 'The AI Paradox' explores the dual nature of AI development, emphasizing the tension between decentralized empowerment and centralized control.</description>
-      <category>Mistral</category>
-      <pubDate>Mon, 27 Apr 2026 06:00:00 +0000</pubDate>
-      <guid>https://www.naturalnews.com/2026-04-27-the-ai-paradox-decentralized-revolution-technocratic-tyranny.html</guid>
+      <title>The Apple Fold Could Cut Short the Motorola Razr Fold's Big Moment</title>
+      <link>https://www.cnet.com/tech/mobile/the-motorola-razr-folds-big-moment-could-be-cut-short-by-the-apple-fold/</link>
+      <description>The upcoming Apple Fold is expected to overshadow the Motorola Razr Fold shortly after its release, indicating a competitive landscape in the foldable smartphone market. This rivalry could impact consumer choices and market dynamics.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Mon, 27 Apr 2026 12:00:00 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/mobile/the-motorola-razr-folds-big-moment-could-be-cut-short-by-the-apple-fold/</guid>
+    </item>
+    <item>
+      <title>Evaxion promotes Birgitte Rønø to joint role of Chief Scientific and Chief Operating Officer</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/27/3281538/0/en/Evaxion-promotes-Birgitte-R%C3%B8n%C3%B8-to-joint-role-of-Chief-Scientific-and-Chief-Operating-Officer.html</link>
+      <description>Evaxion A/S has promoted Birgitte Rønø to the dual role of Chief Scientific and Chief Operating Officer, reflecting the company's growth in developing AI-driven vaccines. This leadership change aims to enhance operational efficiency.</description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 27 Apr 2026 12:00:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/27/3281538/0/en/Evaxion-promotes-Birgitte-R%C3%B8n%C3%B8-to-joint-role-of-Chief-Scientific-and-Chief-Operating-Officer.html</guid>
+    </item>
+    <item>
+      <title>sphWarpCore 0.2.1</title>
+      <link>https://pypi.org/project/sphwarpcore/0.2.1/</link>
+      <description>The release of sphWarpCore 0.2.1 introduces GPU-accelerated SPH neighbor search and operators, built with NVIDIA Warp and PyTorch. This update enhances computational efficiency for scientific simulations.</description>
+      <category>Meta</category>
+      <pubDate>Mon, 27 Apr 2026 11:58:13 +0000</pubDate>
+      <guid>https://pypi.org/project/sphwarpcore/0.2.1/</guid>
+    </item>
+    <item>
+      <title>Google to build AI campus in South Korea, presidential office says</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/google-to-build-ai-campus-in-south-korea-presidential-office-says/articleshow/130553619.cms</link>
+      <description>Google and South Korea are collaborating to build a new AI campus in Seoul, aimed at fostering innovation and cooperation with local engineers and startups. This initiative includes training programs and internships.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 11:54:33 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/google-to-build-ai-campus-in-south-korea-presidential-office-says/articleshow/130553619.cms</guid>
+    </item>
+    <item>
+      <title>AI Crawler Visibility Checker — Free SEO &amp; Marketing Tools</title>
+      <link>https://realmrook.com/utilities/ai-crawler-visibility</link>
+      <description>The AI Crawler Visibility Checker tool allows users to see how various AI crawlers interact with their URLs, providing insights into SEO and content visibility. This tool can help optimize web presence.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 11:50:28 +0000</pubDate>
+      <guid>https://realmrook.com/utilities/ai-crawler-visibility</guid>
+    </item>
+    <item>
+      <title>How a chance encounter in Texas sparked a $1 billion Kleiner Perkins-backed AI startup</title>
+      <link>https://fortune.com/2026/04/27/avoca-ai-agents-missed-calls-hvac-plumbing-roofing-kleiner-perkins-chen-shrivastava-braswell/</link>
+      <description>A chance encounter in Texas led to the founding of Avoca, an AI startup backed by Kleiner Perkins, focusing on bringing advanced technology to traditional trades like plumbing and HVAC. This highlights the potential for AI in diverse industries.</description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Apr 2026 11:50:18 +0000</pubDate>
+      <guid>https://fortune.com/2026/04/27/avoca-ai-agents-missed-calls-hvac-plumbing-roofing-kleiner-perkins-chen-shrivastava-braswell/</guid>
+    </item>
+    <item>
+      <title>S. Korea's President Lee, Google DeepMind CEO discuss responsible use of AI - www.lokmattimes.com</title>
+      <link>https://www.lokmattimes.com/business/s-koreas-president-lee-google-deepmind-ceo-discuss-responsible-use-of-ai-1/</link>
+      <description>South Korea's President Lee Jae Myung met with Google DeepMind CEO Demis Hassabis to discuss the responsible use of AI, highlighting the importance of ethical AI development. This meeting underscores the growing global dialogue on AI governance.</description>
+      <category>Google</category>
+      <pubDate>Mon, 27 Apr 2026 11:49:20 +0000</pubDate>
+      <guid>https://www.lokmattimes.com/business/s-koreas-president-lee-google-deepmind-ceo-discuss-responsible-use-of-ai-1/</guid>
+    </item>
+    <item>
+      <title>AirPods Pro 3 just dropped back down to one of the best prices in months at Amazon</title>
+      <link>http://9to5toys.com/2026/04/27/airpods-pro-3-drop-down-price-deal/</link>
+      <description>Amazon has reduced the price of Apple’s AirPods Pro 3 to one of the lowest prices seen in months, making them more accessible to consumers. This price drop is significant for tech enthusiasts looking for deals on popular gadgets.</description>
+      <category>Apple</category>
+      <pubDate>Mon, 27 Apr 2026 11:47:00 +0000</pubDate>
+      <guid>http://9to5toys.com/2026/04/27/airpods-pro-3-drop-down-price-deal/</guid>
+    </item>
+    <item>
+      <title>Monday: Hili dialogue</title>
+      <link>https://whyevolutionistrue.com/2026/04/27/monday-hili-dialogue-566/</link>
+      <description>This article reflects on the significance of April 27, 2026, marking National Babe Ruth Day, while also mentioning contemporary baseball players. It serves as a cultural commentary on sports history.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 27 Apr 2026 11:45:26 +0000</pubDate>
+      <guid>https://whyevolutionistrue.com/2026/04/27/monday-hili-dialogue-566/</guid>
+    </item>
+    <item>
+      <title>AI Productivity Growth Won’t Match the Computer Revolution</title>
+      <link>https://www.project-syndicate.org/commentary/ai-productivity-will-not-match-computer-revolution-by-carl-benedikt-frey-2026-04</link>
+      <description>The article argues that AI's contribution to productivity growth may not match the transformative effects seen during the computer revolution of the late 20th century. It suggests that while AI is powerful, it may create operational bottlenecks.</description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Apr 2026 11:38:01 +0000</pubDate>
+      <guid>https://www.project-syndicate.org/commentary/ai-productivity-will-not-match-computer-revolution-by-carl-benedikt-frey-2026-04</guid>
+    </item>
+    <item>
+      <title>It: Welcome to Derry, Gen V &amp; 60 Minutes/Trump: BCTV Daily Dispatch</title>
+      <link>https://bleedingcool.com/tv/it-welcome-to-derry-gen-v-60-minutes-trump-bctv-daily-dispatch/</link>
+      <description>This piece provides a roundup of entertainment news, including updates on various shows and cultural events. It serves as a light-hearted recap of recent happenings in the entertainment industry.</description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Mon, 27 Apr 2026 11:37:09 +0000</pubDate>
+      <guid>https://bleedingcool.com/tv/it-welcome-to-derry-gen-v-60-minutes-trump-bctv-daily-dispatch/</guid>
+    </item>
+    <item>
+      <title>licos-agent-runtime 0.2.3</title>
+      <link>https://pypi.org/project/licos-agent-runtime/0.2.3/</link>
+      <description>The article discusses the release of version 0.2.3 of the LICOS Python agent runtime, which is designed for LangGraph and LangChain projects. This update signifies ongoing development in AI programming tools.</description>
+      <category>Open Source</category>
+      <pubDate>Mon, 27 Apr 2026 11:36:19 +0000</pubDate>
+      <guid>https://pypi.org/project/licos-agent-runtime/0.2.3/</guid>
+    </item>
+    <item>
+      <title>Musk vs Altman: Silicon Valley's biggest trial opens — here are the key witnesses</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/musk-vs-altman-silicon-valleys-biggest-trial-opens-here-are-the-key-witnesses/articleshow/130553178.cms</link>
+      <description>A major federal trial has begun with Elon Musk suing OpenAI's Sam Altman and Greg Brockman for over $130 billion, claiming they betrayed the nonprofit mission of the company. This case could have significant implications for the future of AI governance.</description>
+      <category>xAI</category>
+      <pubDate>Mon, 27 Apr 2026 11:35:41 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/musk-vs-altman-silicon-valleys-biggest-trial-opens-here-are-the-key-witnesses/articleshow/130553178.cms</guid>
+    </item>
+    <item>
+      <title>China says it will reverse major AI acquisition by Meta - The Washington Post</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=182985826</link>
+      <description>China has ordered the reversal of Meta's $2 billion acquisition of an AI startup, citing regulatory concerns. This decision reflects the tightening grip of Chinese authorities on foreign tech investments.</description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 27 Apr 2026 11:32:48 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=182985826</guid>
+    </item>
+    <item>
+      <title>maximem-synap-langchain 0.2.0</title>
+      <link>https://pypi.org/project/maximem-synap-langchain/0.2.0/</link>
+      <description>The article announces version 0.2.0 of the maximem-synap memory integration for LangChain, which enhances the functionality of AI applications. This update is part of ongoing improvements in AI integration tools.</description>
+      <category>Open Source</category>
+      <pubDate>Mon, 27 Apr 2026 11:26:01 +0000</pubDate>
+      <guid>https://pypi.org/project/maximem-synap-langchain/0.2.0/</guid>
+    </item>
+    <item>
+      <title>zyndai-agent 0.4.0</title>
+      <link>https://pypi.org/project/zyndai-agent/0.4.0/</link>
+      <description>The release of version 0.4.0 of the zyndai-agent SDK introduces multi-framework support for various AI networks, enhancing interoperability among AI systems. This development is significant for developers working with diverse AI tools.</description>
+      <category>Open Source</category>
+      <pubDate>Mon, 27 Apr 2026 11:25:25 +0000</pubDate>
+      <guid>https://pypi.org/project/zyndai-agent/0.4.0/</guid>
     </item>
   </channel>
 </rss>
