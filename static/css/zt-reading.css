@@ -4309,3 +4309,18 @@
     display: none;
   }
 }
+
+/* ── Tool DETAIL pages (baseof.html wrapping, uses .zt-reading grid) ── */
+.zt-reading--tool-detail .zt-reading-content {
+  min-width: 0;
+}
+.zt-reading--tool-detail .zt-reading-content .zt-page {
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+}
+.zt-reading--tool-detail .zt-reading-content [class*="-container"],
+.zt-reading--tool-detail .zt-reading-content [class*="-page"],
+.zt-reading--tool-detail .zt-reading-content [class*="-wrap"] {
+  max-width: none;
+}

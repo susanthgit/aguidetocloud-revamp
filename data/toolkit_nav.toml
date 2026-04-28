@@ -37,7 +37,7 @@ name = "AI Prompt Library"
 short = "Prompts"
 desc = "500 tested prompts for M365 Copilot, ChatGPT, Claude & more"
 color = "#A78BFA"
-category = "prompt"
+category = "copilot-ai"
 visual = "lines"
 is_tool = true
 
@@ -49,7 +49,7 @@ name = "AI Prompt Polisher"
 short = "Polisher"
 desc = "Score & rewrite any prompt with the CRAFTS framework"
 color = "#EC4899"
-category = "prompt"
+category = "copilot-ai"
 visual = "gauge"
 is_tool = true
 
@@ -61,7 +61,7 @@ name = "Prompt Engineering Guide"
 short = "Prompt Guide"
 desc = "Learn 8 techniques with hands-on practice"
 color = "#84CC16"
-category = "prompt"
+category = "copilot-ai"
 visual = "blocks"
 is_tool = true
 
@@ -73,7 +73,7 @@ name = "Advanced Prompt Lab"
 short = "Prompt Lab"
 desc = "Master 12 advanced prompting techniques with hands-on exercises"
 color = "#2DD4BF"
-category = "prompt"
+category = "copilot-ai"
 visual = "scatter"
 is_tool = true
 
@@ -85,7 +85,7 @@ name = "Prompt Tester"
 short = "Tester"
 desc = "A/B compare two prompts with CRAFTS scoring — see which is better"
 color = "#F97316"
-category = "prompt"
+category = "copilot-ai"
 visual = "bars"
 is_tool = true
 
@@ -97,7 +97,7 @@ name = "M365 Copilot Readiness"
 short = "Readiness"
 desc = "Score your org across 7 pillars — 0 to 100"
 color = "#3B82F6"
-category = "planning"
+category = "copilot-ai"
 visual = "gauge"
 is_tool = true
 
@@ -109,7 +109,7 @@ name = "Copilot Feature Matrix"
 short = "Features"
 desc = "Feature comparison across every app & licence tier"
 color = "#60A5FA"
-category = "planning"
+category = "copilot-ai"
 visual = "grid"
 is_tool = true
 
@@ -121,7 +121,7 @@ name = "Copilot ROI Calculator"
 short = "ROI"
 desc = "Estimate ROI by role with realistic adoption curves"
 color = "#14B8A6"
-category = "planning"
+category = "copilot-ai"
 visual = "bars"
 is_tool = true
 
@@ -133,7 +133,7 @@ name = "AI News"
 short = "AI News"
 desc = "Daily AI digest across 20 categories — updated 4× daily"
 color = "#ff66ff"
-category = "informed"
+category = "copilot-ai"
 visual = "lines"
 is_tool = true
 
@@ -145,7 +145,7 @@ name = "M365 Roadmap"
 short = "Roadmap"
 desc = "Track every M365 feature with change detection & alerts"
 color = "#E5A00D"
-category = "informed"
+category = "copilot-ai"
 visual = "timeline"
 is_tool = true
 
@@ -157,7 +157,7 @@ name = "M365 Service Health"
 short = "Health"
 desc = "32 M365 + Azure services tracked every 2 hours"
 color = "#EA580C"
-category = "informed"
+category = "copilot-ai"
 visual = "wave"
 is_tool = true
 
@@ -169,7 +169,7 @@ name = "Deprecation Timeline"
 short = "Deprecations"
 desc = "Urgency-scored retirements with countdown timers"
 color = "#DC2626"
-category = "informed"
+category = "copilot-ai"
 visual = "timeline"
 is_tool = true
 
@@ -181,7 +181,7 @@ name = "AI Service Mapper"
 short = "AI Mapper"
 desc = "Compare 25+ AI services — pricing & capabilities"
 color = "#38BDF8"
-category = "planning"
+category = "copilot-ai"
 visual = "grid"
 is_tool = true
 
@@ -193,7 +193,7 @@ name = "AI SaaS Showdown"
 short = "Showdown"
 desc = "Head-to-head AI platform comparison & quiz"
 color = "#D4A853"
-category = "planning"
+category = "copilot-ai"
 visual = "bars"
 is_tool = true
 
@@ -205,7 +205,7 @@ name = "AI Cost Calculator"
 short = "AI Cost"
 desc = "Total AI adoption cost — licensing, tokens, training, governance, budget timelines"
 color = "#66C559"
-category = "planning"
+category = "copilot-ai"
 visual = "gauge"
 is_tool = true
 
@@ -217,7 +217,7 @@ name = "M365 Licence Picker"
 short = "Licence Picker"
 desc = "Pick features you need — get the cheapest M365 plan instantly"
 color = "#5AA830"
-category = "planning"
+category = "admin-security"
 visual = "grid"
 is_tool = true
 
@@ -229,7 +229,7 @@ name = "M365 Licensing Simplifier"
 short = "Licensing"
 desc = "Compare M365 plans in plain English with pricing"
 color = "#F43F5E"
-category = "planning"
+category = "admin-security"
 visual = "blocks"
 is_tool = true
 
@@ -241,7 +241,7 @@ name = "Entra ID CA Policy Builder"
 short = "CA Builder"
 desc = "Design Entra ID Conditional Access policies visually"
 color = "#7C3AED"
-category = "security"
+category = "admin-security"
 visual = "blocks"
 is_tool = true
 
@@ -253,7 +253,7 @@ name = "M365 PowerShell Builder"
 short = "PS Builder"
 desc = "Build M365 & Azure admin commands — 60 recipes"
 color = "#4ADE80"
-category = "admin-ops"
+category = "admin-security"
 visual = "lines"
 is_tool = true
 
@@ -265,7 +265,7 @@ name = "Purview DLP Starter Kit"
 short = "Purview"
 desc = "Plan sensitivity labels & DLP with pre-built kits"
 color = "#84CC16"
-category = "security"
+category = "admin-security"
 visual = "blocks"
 is_tool = true
 
@@ -277,7 +277,7 @@ name = "M365 Security Toolkit"
 short = "Security"
 desc = "CIS-aligned security assessment, email DNS generator & remediation scripts"
 color = "#41A235"
-category = "security"
+category = "admin-security"
 visual = "grid"
 is_tool = true
 
@@ -289,7 +289,7 @@ name = "Agent 365 Governance Planner"
 short = "Agent Gov"
 desc = "Plan your AI agent governance, registry, and deployment strategy"
 color = "#00A4EF"
-category = "agent"
+category = "copilot-ai"
 visual = "grid"
 is_tool = true
 
@@ -301,7 +301,7 @@ name = "M365 Agent Builder Helper"
 short = "Agent Builder"
 desc = "Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio"
 color = "#00A4EF"
-category = "agent"
+category = "copilot-ai"
 visual = "blocks"
 is_tool = true
 
@@ -313,7 +313,7 @@ name = "Copilot Studio Companion"
 short = "Studio Companion"
 desc = "Evaluate scenarios, explore capabilities, navigate governance, and design agent architectures"
 color = "#9055E3"
-category = "agent"
+category = "copilot-ai"
 visual = "grid"
 is_tool = true
 
@@ -325,7 +325,7 @@ name = "M365 Migration Planner"
 short = "Migration"
 desc = "Plan your M365 migration with risk scoring"
 color = "#6478CC"
-category = "admin-ops"
+category = "admin-security"
 visual = "timeline"
 is_tool = true
 
@@ -361,7 +361,7 @@ name = "Meeting Planner"
 short = "Planner"
 desc = "Find the best meeting time across time zones"
 color = "#0EA5E9"
-category = "community"
+category = "utilities"
 visual = "circles"
 is_tool = true
 
@@ -373,7 +373,7 @@ name = "QR Code Generator"
 short = "QR Code"
 desc = "Beautiful QR codes with custom colours & logos"
 color = "#EC4899"
-category = "community"
+category = "utilities"
 visual = "grid"
 is_tool = true
 
@@ -385,7 +385,7 @@ name = "WiFi QR Cards"
 short = "WiFi QR"
 desc = "Printable WiFi cards — guests scan to connect"
 color = "#22D3EE"
-category = "community"
+category = "utilities"
 visual = "wave"
 is_tool = true
 
@@ -397,7 +397,7 @@ name = "Password Generator"
 short = "Passwords"
 desc = "Unbreakable passwords & strength analyser"
 color = "#D946EF"
-category = "community"
+category = "utilities"
 visual = "scatter"
 is_tool = true
 
@@ -409,7 +409,7 @@ name = "Image Compressor"
 short = "Compress"
 desc = "Compress, resize & convert — 100% in your browser"
 color = "#818CF8"
-category = "community"
+category = "utilities"
 visual = "blocks"
 is_tool = true
 
@@ -421,7 +421,7 @@ name = "Typing Speed Test"
 short = "Typing"
 desc = "Test WPM & accuracy — quotes, code & tracking"
 color = "#34D399"
-category = "community"
+category = "utilities"
 visual = "keys"
 is_tool = true
 
@@ -433,7 +433,7 @@ name = "Countdown Timer"
 short = "Countdown"
 desc = "Flip-clock countdowns & full-screen mode"
 color = "#FB923C"
-category = "community"
+category = "utilities"
 visual = "circles"
 is_tool = true
 
@@ -445,7 +445,7 @@ name = "Colour Palette Generator"
 short = "Palette"
 desc = "Generate palettes, extract & check contrast"
 color = "#F472B6"
-category = "community"
+category = "utilities"
 visual = "scatter"
 is_tool = true
 
@@ -457,7 +457,7 @@ name = "Pomodoro Focus Timer"
 short = "Pomodoro"
 desc = "Focus timer with ambient sounds & stats"
 color = "#EF4444"
-category = "community"
+category = "utilities"
 visual = "circles"
 is_tool = true
 
@@ -469,7 +469,7 @@ name = "IT Admin Bingo"
 short = "Bingo"
 desc = "Relatable IT admin scenario bingo — daily cards, print & share"
 color = "#E91E8E"
-category = "community"
+category = "utilities"
 visual = "blocks"
 is_tool = true
 
@@ -481,7 +481,7 @@ name = "Tech Acronym Battle"
 short = "Acronyms"
 desc = "Test your IT acronym knowledge — timed quiz with streaks"
 color = "#9B59B6"
-category = "community"
+category = "utilities"
 visual = "scatter"
 is_tool = true
 
@@ -493,7 +493,7 @@ name = "M365 Feature Roulette"
 short = "Roulette"
 desc = "Discover M365 features you never knew existed"
 color = "#F39C12"
-category = "informed"
+category = "copilot-ai"
 visual = "timeline"
 is_tool = true
 
@@ -505,7 +505,7 @@ name = "Microsoft Rename Tracker"
 short = "Renames"
 desc = "Track every Microsoft product rename in one place"
 color = "#B07D4F"
-category = "informed"
+category = "copilot-ai"
 visual = "timeline"
 is_tool = true
 
@@ -517,7 +517,7 @@ name = "Admin Email Templates"
 short = "Comms"
 desc = "Ready-made email templates for M365 admins"
 color = "#5B9BD5"
-category = "admin-ops"
+category = "admin-security"
 visual = "lines"
 is_tool = true
 
@@ -529,7 +529,7 @@ name = "Compliance Passport"
 short = "Compliance"
 desc = "Which compliance frameworks apply to your org?"
 color = "#2ECC71"
-category = "security"
+category = "admin-security"
 visual = "grid"
 is_tool = true
 
@@ -541,7 +541,7 @@ name = "Phishing Simulator"
 short = "Phishing"
 desc = "Spot the fakes — 30 realistic email scenarios"
 color = "#E74C3C"
-category = "security"
+category = "admin-security"
 visual = "blocks"
 is_tool = true
 
@@ -553,7 +553,7 @@ name = "Site Analytics"
 short = "Analytics"
 desc = "Live transparent usage stats — tool leaderboard & trends"
 color = "#64748B"
-category = "community"
+category = "utilities"
 visual = "bars"
 is_tool = true
 
@@ -565,7 +565,7 @@ name = "SLA Uptime Calculator"
 short = "SLA Calc"
 desc = "Enter SLA % — see exact downtime budget per year, month, week, day"
 color = "#4ECDC4"
-category = "admin-ops"
+category = "admin-security"
 visual = "bars"
 is_tool = true
 
@@ -577,7 +577,7 @@ name = "IT Admin Badges"
 short = "Badges"
 desc = "Unlock 55 achievement badges for real IT admin milestones"
 color = "#FFD54F"
-category = "community"
+category = "utilities"
 visual = "grid"
 is_tool = true
 
@@ -589,7 +589,7 @@ name = "Password Policy Tester"
 short = "Policy Test"
 desc = "Score your password policy against NIST, CIS & Microsoft"
 color = "#26A69A"
-category = "security"
+category = "admin-security"
 visual = "gauge"
 is_tool = true
 
@@ -601,7 +601,7 @@ name = "Incident Comms Generator"
 short = "Incident"
 desc = "Generate professional outage updates in seconds"
 color = "#FF8F66"
-category = "admin-ops"
+category = "admin-security"
 visual = "lines"
 is_tool = true
 
@@ -613,7 +613,7 @@ name = "CLI Command Quiz"
 short = "CLI Quiz"
 desc = "Guess the PowerShell command — timed quiz with mastery tracking"
 color = "#7E57C2"
-category = "community"
+category = "utilities"
 visual = "keys"
 is_tool = true
 
@@ -625,7 +625,7 @@ name = "My IT Day"
 short = "IT Day"
 desc = "Choose-your-adventure as an IT admin — every choice has consequences"
 color = "#C27BA0"
-category = "community"
+category = "utilities"
 visual = "blocks"
 is_tool = true
 
@@ -637,7 +637,7 @@ name = "Agent Instruction Builder"
 short = "Instruct Builder"
 desc = "Generate platform-optimised AI agent instructions in seconds"
 color = "#2DD4BF"
-category = "agent"
+category = "copilot-ai"
 visual = "lines"
 is_tool = true
 
@@ -649,7 +649,7 @@ name = "Copilot Demo Script Builder"
 short = "Demo Scripts"
 desc = "Generate ready-to-deliver M365 Copilot demo scripts with prompts, talking points & timing"
 color = "#F97316"
-category = "copilot"
+category = "copilot-ai"
 visual = "lines"
 is_tool = true
 
@@ -661,6 +661,6 @@ name = "Community Feedback"
 short = "Feedback"
 desc = "Share ideas, report bugs, request features"
 color = "#FBBF24"
-category = "community"
+category = "utilities"
 visual = "circles"
 is_tool = false

@@ -90,11 +90,11 @@
   {{/* Note: /free-tools/ has its own zt-reading grid in list.html — not wrapped here */}}
   <main id="main-content" data-pagefind-body>
     {{ if $isToolPage }}
-    <div class="zt-reading--tool">
-      <aside class="zt-tool-nav" aria-label="Tool navigation" data-pagefind-ignore>
-        {{ partial "tool-nav.html" . }}
+    <div class="zt-reading zt-reading--tool-detail">
+      <aside class="zt-sidebar zt-sidebar--tools" aria-label="Tool navigation" data-pagefind-ignore>
+        {{ partial "tools-nav.html" . }}
       </aside>
-      <div class="zt-tool-center">
+      <div class="zt-reading-content zt-tool-center">
         {{ block "main" . }}{{ end }}
       </div>
       <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>

@@ -1,7 +1,8 @@
 {{/*
-  tools-nav.html — Left sidebar navigation for free tools page.
-  Pulls tools from toolkit_nav.toml, grouped by category with
-  collapsible <details> — same pattern as licence-nav.html.
+  tools-nav.html — Left sidebar navigation for ALL tool pages.
+  Shows tools grouped by 4 categories from toolkit_nav.toml.
+  Used on both /free-tools/ landing AND individual tool pages (via baseof.html).
+  Current tool highlighted + its category auto-expanded.
 
   Usage: {{ partial "tools-nav.html" . }}
 */}}
@@ -9,17 +10,18 @@
 {{ $allTools := (index hugo.Data "toolkit_nav").tools }}
 {{ $currentURL := .RelPermalink }}
 
-{{/* Category display order + labels */}}
+{{/* Find current tool's category */}}
+{{ $currentCat := "" }}
+{{ range $allTools }}
+  {{ if eq .url $currentURL }}{{ $currentCat = .category }}{{ end }}
+{{ end }}
+
+{{/* 4 Zen categories — maps to toolkit_nav.toml category field */}}
 {{ $categories := slice
-  (dict "key" "prompt"    "name" "Prompt Engineering" "icon" "sparkles"  "anchor" "prompts")
-  (dict "key" "certs"     "name" "Certification"      "icon" "book"      "anchor" "certs")
-  (dict "key" "informed"  "name" "Stay Informed"      "icon" "satellite" "anchor" "informed")
-  (dict "key" "agent"     "name" "Agent Builders"     "icon" "robot"     "anchor" "agents")
-  (dict "key" "planning"  "name" "Copilot & AI"       "icon" "target"    "anchor" "planning")
-  (dict "key" "copilot"   "name" "Copilot Tools"      "icon" "lightbulb" "anchor" "planning")
-  (dict "key" "security"  "name" "Security"           "icon" "shield"    "anchor" "security")
-  (dict "key" "admin-ops" "name" "Admin Operations"   "icon" "settings"  "anchor" "admin-ops")
-  (dict "key" "community" "name" "Utilities & Fun"    "icon" "gamepad"   "anchor" "utilities")
+  (dict "key" "copilot-ai"      "name" "Copilot & AI"       "icon" "sparkles")
+  (dict "key" "admin-security"   "name" "Admin & Security"   "icon" "shield")
+  (dict "key" "certs"            "name" "Certifications"     "icon" "book")
+  (dict "key" "utilities"        "name" "Utilities"          "icon" "wrench")
 }}
 
 <nav class="zt-lic-nav" aria-label="Tools navigation">
@@ -36,8 +38,10 @@
   {{ end }}
 
   {{ if $catTools }}
-  {{ $isFirst := eq $cat.key "prompt" }}
-  <details class="zt-lic-nav-group"{{ if $isFirst }} open{{ end }}>
+  {{ $isCurrentCat := eq $cat.key $currentCat }}
+  {{ $isLanding := eq $currentURL "/free-tools/" }}
+  {{ $isFirst := eq $cat.key "copilot-ai" }}
+  <details class="zt-lic-nav-group"{{ if or $isCurrentCat (and $isLanding $isFirst) }} open{{ end }}>
     <summary class="zt-lic-nav-cat">
       <span>{{ partial "icon.html" (dict "name" $cat.icon "size" 14 "stroke" 1.5) }} {{ $cat.name }}</span>
       <span class="zt-lic-nav-count">{{ len $catTools }}</span>
