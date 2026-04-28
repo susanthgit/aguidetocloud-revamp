@@ -347,8 +347,8 @@
   border-radius: 4px;
   transition: width 0.6s ease-out;
 }
-.roi-bar-cost { background: linear-gradient(90deg, #ef4444, #f87171); }
-.roi-bar-savings { background: linear-gradient(90deg, #14B8A6, #2dd4bf); }
+.roi-bar-cost { background: var(--error); }
+.roi-bar-savings { background: var(--teal); }
 .roi-bar-val {
   font-size: 0.72rem;
   font-weight: 600;

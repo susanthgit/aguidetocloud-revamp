@@ -139,7 +139,7 @@
   background: var(--bg-elevated); border-radius: 8px; padding: 0.75rem;
   border-left: 3px solid;
 }
-.plab-ba-before { border-color: #EF4444; }
+.plab-ba-before { border-color: var(--error); }
 .plab-ba-after { border-color: var(--accent); }
 .plab-ba-label {
   font-size: 0.7rem; font-weight: 700; text-transform: uppercase;

@@ -64,7 +64,7 @@
   border-color: var(--bingo-accent); font-weight: 600;
 }
 .bingo-btn-primary:hover {
-  background: #d4177f; box-shadow: 0 2px 12px rgba(233,30,142,0.4);
+  background: var(--accent-hover); box-shadow: 0 2px 12px rgba(233,30,142,0.4);
 }
 .bingo-select {
   background: var(--bg-elevated);

@@ -854,7 +854,7 @@
   border: 3px solid #0f172a;
   }
 .lic-change-dot.major  {
-   background: #ef4444;
+   background: var(--error);
   }
 .lic-change-dot.moderate  {
    background: #f59e0b;

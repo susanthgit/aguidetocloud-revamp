@@ -131,13 +131,13 @@
 }
 .feedback-disclaimer {
   font-size: 0.72rem;
-  color: #6b6577;
+  color: var(--text-muted);
   line-height: 1.4;
   padding: 0.5rem 0.75rem;
   margin-bottom: 1rem;
   background: none;
   border: none;
-  border-left: 2px solid #3a3545;
+  border-left: 2px solid var(--border);
 }
 .feedback-form-row {
   display: grid;
@@ -215,7 +215,7 @@
 }
 .feedback-submit {
   background: var(--fb-accent);
-  color: #0f0d13;
+  color: var(--accent-foreground);
   border: none;
   border-radius: var(--radius-md, 10px);
   padding: 0.7rem 1.8rem;
@@ -237,14 +237,14 @@
 }
 .feedback-submit-hint {
   font-size: 0.72rem;
-  color: #6b6577;
+  color: var(--text-muted);
 }
 .feedback-submit-hints {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
   font-size: 0.72rem;
-  color: #6b6577;
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -344,7 +344,7 @@
 }
 .feedback-sl-wont-fix {
   background: rgba(107, 101, 119, 0.15);
-  color: #6b6577;
+  color: var(--text-muted);
 }
 
 /* ── Pinned items ── */
@@ -469,7 +469,7 @@
 }
 .feedback-cta-btn {
   background: var(--accent);
-  color: #0f0d13;
+  color: var(--accent-foreground);
   border: none;
   border-radius: 6px;
   padding: 0.45rem 1.1rem;
@@ -503,7 +503,7 @@
   height: 2rem;
   border-radius: 50%;
   background: var(--fb-accent);
-  color: #0f0d13;
+  color: var(--accent-foreground);
   font-weight: 800;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;

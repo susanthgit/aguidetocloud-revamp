@@ -442,7 +442,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   justify-content: center;
   margin-bottom: 2rem;
   padding: 1.5rem 0;
-  background: rgba(255,255,255,0.015);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 16px;
 }
@@ -677,7 +677,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   left: 50%;
   transform: translateX(-50%) translateY(1rem);
   background: var(--cdown);
-  color: #000;
+  color: var(--accent-foreground);
   padding: 0.6rem 1.5rem;
   border-radius: var(--radius-md, 10px);
   font-size: 0.88rem;
