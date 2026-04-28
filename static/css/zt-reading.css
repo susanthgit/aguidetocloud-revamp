@@ -1881,7 +1881,7 @@
   color: var(--text-primary, #F5F5F5);
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin: 0 0 var(--space-3, 12px);
+  margin: 0 0 var(--space-4, 16px);
 }
 
 /* Badges */
@@ -1889,7 +1889,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2, 8px);
-  margin-bottom: var(--space-4, 16px);
+  margin-bottom: var(--space-6, 24px);
 }
 
 .zt-cert-badge {

@@ -37,34 +37,34 @@
       <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">
         {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if eq .Params.exam_level "intermediate" }}Associate{{ else }}Expert{{ end }}
       </span>
-      <span class="zt-cert-badge zt-cert-badge--category">{{ .Params.exam_category }}</span>
+      <span class="zt-cert-badge">{{ .Params.exam_category }}</span>
       {{ if and $vendorName (ne $vendorSlug "microsoft") }}<span class="zt-cert-badge">{{ $vendorName }}</span>{{ end }}
-      {{ if eq .Params.exam_status "retiring" }}<span class="zt-cert-badge zt-cert-badge--retiring">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Retiring</span>{{ end }}
-      {{ if eq .Params.exam_status "retired" }}<span class="zt-cert-badge zt-cert-badge--retired">🚫 Retired</span>{{ end }}
-      {{ if eq .Params.exam_status "beta" }}<span class="zt-cert-badge zt-cert-badge--beta">{{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} Beta</span>{{ end }}
-      {{ if eq .Params.exam_status "upcoming" }}<span class="zt-cert-badge zt-cert-badge--upcoming">🔜 Upcoming</span>{{ end }}
+      {{ if eq .Params.exam_status "retiring" }}<span class="zt-cert-badge zt-cert-badge--retiring">Retiring</span>{{ end }}
+      {{ if eq .Params.exam_status "retired" }}<span class="zt-cert-badge zt-cert-badge--retired">Retired</span>{{ end }}
+      {{ if eq .Params.exam_status "beta" }}<span class="zt-cert-badge zt-cert-badge--beta">Beta</span>{{ end }}
+      {{ if eq .Params.exam_status "upcoming" }}<span class="zt-cert-badge zt-cert-badge--upcoming">Upcoming</span>{{ end }}
     </div>
 
     {{/* Status banner */}}
     {{ if eq .Params.exam_status "retiring" }}
     <div class="zt-cert-status zt-cert-status--retiring">
-      {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
+      <strong>Retiring {{ with .Params.retirement_date }}on {{ . }}{{ end }}</strong>
       {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
       {{ with .Params.retirement_date }}<div id="cert-countdown" data-date="{{ . }}"></div>{{ end }}
     </div>
     {{ else if eq .Params.exam_status "retired" }}
     <div class="zt-cert-status zt-cert-status--retired">
-      🚫 <strong>This exam was retired{{ with .Params.retirement_date }} on {{ . }}{{ end }}</strong>
+      <strong>This exam was retired{{ with .Params.retirement_date }} on {{ . }}{{ end }}</strong>
       {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
     </div>
     {{ else if eq .Params.exam_status "beta" }}
     <div class="zt-cert-status zt-cert-status--beta">
-      {{ partial "icon.html" (dict "name" "flask" "size" 14 "stroke" 1.5) }} <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — typically offered at 80% discount.
+      <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — typically offered at 80% discount.
       {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
     </div>
     {{ else if eq .Params.exam_status "upcoming" }}
     <div class="zt-cert-status zt-cert-status--upcoming">
-      🔜 <strong>This exam has been announced but is not yet available.</strong>
+      <strong>This exam has been announced but is not yet available.</strong>
     </div>
     {{ end }}
 
@@ -76,49 +76,96 @@
       </div>
     </details>
 
-    {{/* Study progress bar */}}
-    <div class="cert-progress-wrap" id="cert-progress-wrap" style="display:none">
-      <div class="cert-progress-header">
-        <span>{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} Your Study Progress</span>
-        <span class="cert-progress-text" id="cert-progress-text">0%</span>
-      </div>
-      <div class="cert-progress-bar"><div class="cert-progress-fill" id="cert-progress-fill"></div></div>
-      <button class="cert-progress-reset" id="cert-progress-reset">Reset progress</button>
-    </div>
+    {{/* Study progress — powered by Guided localStorage */}}
+    {{ $studyModules := index site.Data.study_modules $guidedSlug }}
+    {{ if $studyModules }}
+    {{/* Compute total study time */}}
+    {{ $totalMinutes := 0 }}{{ range $studyModules }}{{ $totalMinutes = add $totalMinutes (default 0 .estimated_minutes) }}{{ end }}
+    {{ $totalHours := div $totalMinutes 60 }}{{ $remainMins := mod $totalMinutes 60 }}
 
-    {{/* ── Study guide body (one scrollable page, no tabs) ── */}}
+    <div class="cert-study-hero" id="cert-study-hero">
+      <div class="cert-study-hero-left">
+        <div class="cert-study-hero-stat">
+          <span class="cert-study-hero-num">{{ len $studyModules }}</span> modules
+        </div>
+        <span class="cert-study-hero-dot">·</span>
+        <div class="cert-study-hero-stat">
+          <span class="cert-study-hero-num">~{{ if gt $totalHours 0 }}{{ $totalHours }}h {{ end }}{{ if gt $remainMins 0 }}{{ $remainMins }}m{{ end }}</span> study time
+        </div>
+        <span class="cert-study-hero-dot">·</span>
+        <div class="cert-study-hero-stat" id="cert-study-progress-stat">
+          <span class="cert-study-hero-num" id="cert-study-done-count">0</span> completed
+        </div>
+      </div>
+      <a href="#" class="cert-study-continue" id="cert-study-continue" style="display:none">
+        Continue: <span id="cert-study-continue-title"></span> →
+      </a>
+    </div>
+    {{ end }}
+
+    {{/* ── SECTION 1: Interactive Study Guide ── */}}
     <div class="zt-reading-body">
 
-      {{/* Interactive Study Guide Curriculum */}}
-      {{ $studyModules := index site.Data.study_modules $guidedSlug }}
-      {{ if $studyModules }}
+      {{ $studyModules2 := index site.Data.study_modules $guidedSlug }}
+      {{ if $studyModules2 }}
+      {{/* In dev mode, iframes point to the Astro dev server; in prod, same-origin proxy */}}
+      {{ $embedBase := "" }}{{ if hugo.IsDevelopment }}{{ $embedBase = "http://localhost:4322" }}{{ end }}
+
+      <div class="cert-section-header">
+        <h2>Interactive Study Guide</h2>
+        <p>Each module covers one exam topic with plain-English explanations, real-world scenarios, and built-in practice. Everything you need to understand and retain the material — no tab-switching required.</p>
+      </div>
+
+      {{/* What's inside — compact feature list */}}
+      <div class="cert-whats-inside">
+        <div class="cert-feature-pill">📖 ELI5 explanations</div>
+        <div class="cert-feature-pill">🔄 Flashcards</div>
+        <div class="cert-feature-pill">✅ Knowledge checks</div>
+        <div class="cert-feature-pill">📊 Compare tables</div>
+        <div class="cert-feature-pill">💡 Exam tips</div>
+        <div class="cert-feature-pill">📍 Progress tracking</div>
+      </div>
+
+      {{/* Curriculum accordion */}}
       <div class="cert-curriculum">
-        <h2>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Interactive Study Guide</h2>
-        <p class="zt-cert-intro">
-          {{ len $studyModules }} modules with flashcards, quizzes, and ELI5 explanations.
-          <span class="zt-cert-free-label">🆓 = Free</span>
-        </p>
         {{ $currentDomain := "" }}
-        {{ range $studyModules }}
+        {{ range $i, $mod := $studyModules2 }}
           {{ if ne .domain $currentDomain }}
-            {{ if ne $currentDomain "" }}</div>{{ end }}
+            {{ if ne $currentDomain "" }}</div></details>{{ end }}
             {{ $currentDomain = .domain }}
-            <details class="cert-curriculum-domain"{{ if eq .domain_number 1 }} open{{ end }}>
+            <details class="cert-curriculum-domain" data-domain="{{ .domain_number }}"{{ if eq .domain_number 1 }} open{{ end }}>
               <summary class="cert-curriculum-domain-title">
                 <span>Domain {{ .domain_number }}: {{ .domain }}</span>
+                <span class="cert-curriculum-domain-progress" id="cert-domain-progress-{{ .domain_number }}"></span>
                 <span class="cert-curriculum-chevron">›</span>
               </summary>
               <div class="cert-curriculum-modules">
           {{ end }}
-          <a href="{{ .url }}" class="cert-curriculum-module" target="_blank" rel="noopener">
-            {{ if .is_free }}<span class="cert-curriculum-free">🆓</span>{{ else }}<span class="cert-curriculum-paid">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span>{{ end }}
-            <span class="cert-curriculum-module-title">{{ .title }}</span>
-            {{ if .estimated_minutes }}<span class="cert-curriculum-time">{{ .estimated_minutes }}m</span>{{ end }}
-          </a>
+          {{ $embedUrl := replace .url "/guided/" "/guided/embed/" }}
+          {{ $moduleId := strings.TrimPrefix "/guided/" .url | strings.TrimSuffix "/" }}
+          <details class="cert-embed-module" data-url="{{ $embedBase }}{{ $embedUrl }}" data-module-id="{{ $moduleId }}" data-domain="{{ .domain_number }}">
+            <summary class="cert-curriculum-module">
+              <span class="cert-curriculum-module-title">{{ .title }}</span>
+              {{ if .estimated_minutes }}<span class="cert-curriculum-time">{{ .estimated_minutes }}m</span>{{ end }}
+            </summary>
+            <div class="cert-embed-frame">
+              <div class="cert-embed-loading">Loading module…</div>
+            </div>
+          </details>
         {{ end }}
         {{ if ne $currentDomain "" }}</div></details>{{ end }}
       </div>
       {{ end }}
+
+    </div>{{/* end section 1 reading-body */}}
+
+    {{/* ── SECTION 2: Exam Resources & Official Content ── */}}
+    <div class="zt-reading-body cert-resources-section">
+
+      <div class="cert-section-header">
+        <h2>Exam Resources</h2>
+        <p>Official learning paths, exam details, skills measured, and community resources to supplement your study.</p>
+      </div>
 
       {{/* Main study guide content (markdown body) */}}
       <div class="cert-single-content">
@@ -128,7 +175,7 @@
       {{/* Video Resources */}}
       {{ if or .Params.cert_video_id .Params.qa_video_id }}
       <div class="cert-video-section">
-        <h2>{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} Watch & Learn</h2>
+        <h2>Watch & Learn</h2>
         <p class="zt-cert-intro">Video courses to help you prepare.</p>
         <div class="cert-video-grid{{ if not (and .Params.cert_video_id .Params.qa_video_id) }} cert-video-single{{ end }}">
           {{ with .Params.cert_video_id }}
@@ -161,22 +208,19 @@
 
       {{/* Related exams (JS-populated) */}}
       <div id="cert-related" class="cert-detail-section" style="display:none">
-        <h2>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} What to Study Next</h2>
+        <h2>What to Study Next</h2>
         <div id="cert-related-list"></div>
       </div>
 
-      {{/* Cert Compass cross-link (Microsoft only) */}}
+      {{/* Cert Compass cross-link (Microsoft only) — quiet inline */}}
       {{ if eq $vendorSlug "microsoft" }}
-      <div class="zt-cert-compass-cta">
-        <p><strong>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} How does {{ .Params.exam_code }} compare across AWS & Google Cloud?</strong></p>
-        <a href="/cert-compass/?tab=matches" class="zt-cert-btn zt-cert-btn--accent">Open Cert Compass →</a>
-      </div>
+      <p class="cert-compass-link">Compare {{ .Params.exam_code }} across AWS & Google Cloud → <a href="/cert-compass/?tab=matches">Cert Compass</a></p>
       {{ end }}
 
       {{/* FAQ */}}
       {{ if .Params.faq }}
       <div class="zt-cert-faq">
-        <h2>{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
         <details{{ if eq $i 0 }} open{{ end }} class="zt-cert-faq-item">
           <summary>{{ add $i 1 }}. {{ $q.question }}</summary>
@@ -186,7 +230,7 @@
       </div>
       {{ end }}
 
-    </div>{{/* end zt-reading-body */}}
+    </div>{{/* end section 2 reading-body */}}
 
     {{ partial "back-nav" (dict "Page" . "URL" "/cert-tracker/" "Label" "All Certifications") }}
   </article>
@@ -240,7 +284,7 @@
     {{/* Study Plan Generator */}}
     {{ if not (or (eq .Params.exam_status "beta") (eq .Params.exam_status "upcoming")) }}
     <div class="zt-companion-section">
-      <p class="zt-companion-title">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Study planner</p>
+      <p class="zt-companion-title">Study planner</p>
       <label class="zt-cert-planner-label">Exam date:
         <input type="date" id="cert-exam-date" class="zt-cert-date-input">
       </label>
@@ -255,8 +299,8 @@
 {{/* Mobile floating bottom bar */}}
 {{ if $guidedCert }}
 <div class="cert-floating-bar" id="cert-floating-bar">
-  <a href="/guided/{{ $guidedSlug }}/practice/" class="cert-float-try">Try Free</a>
-  <a href="/guided/{{ $guidedSlug }}/" class="cert-float-buy">Buy Now →</a>
+  <a href="/guided/{{ $guidedSlug }}/practice/" class="cert-float-try">20 Free Questions</a>
+  <a href="/guided/{{ $guidedSlug }}/" class="cert-float-buy">Practice Exam ${{ $guidedCert.price_practice }} →</a>
 </div>
 {{ end }}
 
@@ -317,7 +361,7 @@
     var prepTimes = { beginner: "2–4 weeks", intermediate: "4–8 weeks", advanced: "6–12 weeks" };
     var t = prepTimes[level];
     if (t && status !== "beta" && status !== "upcoming") {
-      prepEl.innerHTML = '{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Typical prep: <strong>' + t + '</strong>';
+      prepEl.innerHTML = 'Typical prep: <strong>' + t + '</strong>';
     }
   }
 
@@ -534,6 +578,153 @@
       setTimeout(function() { activeLink.scrollIntoView({ block: 'center', behavior: 'instant' }); }, 100);
     }
   }
+
+  // ── Embed module accordion: lazy-load iframes on expand ──
+  var embedModules = document.querySelectorAll('.cert-embed-module');
+
+  // Progress tracking from Guided localStorage
+  var PROGRESS_KEY = 'guided_progress';
+  function getGuidedProgress() {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}'); } catch(e) { return {}; }
+  }
+
+  // Build module list for continue/progress tracking
+  var moduleList = [];
+  embedModules.forEach(function(details) {
+    moduleList.push({
+      el: details,
+      id: details.dataset.moduleId,
+      domain: details.dataset.domain,
+      title: details.querySelector('.cert-curriculum-module-title').textContent.trim()
+    });
+  });
+
+  // Update all progress indicators
+  function updateStudyProgress() {
+    var progress = getGuidedProgress();
+    var doneCount = 0;
+    var domainCounts = {};
+    var domainTotals = {};
+    var firstIncomplete = null;
+
+    moduleList.forEach(function(mod) {
+      var isDone = progress[mod.id] === true;
+      mod.el.classList.toggle('is-done', isDone);
+      if (isDone) doneCount++;
+      if (!isDone && !firstIncomplete) firstIncomplete = mod;
+
+      // Domain tracking
+      if (!domainTotals[mod.domain]) { domainTotals[mod.domain] = 0; domainCounts[mod.domain] = 0; }
+      domainTotals[mod.domain]++;
+      if (isDone) domainCounts[mod.domain]++;
+    });
+
+    // Update hero stats
+    var doneEl = document.getElementById('cert-study-done-count');
+    if (doneEl) doneEl.textContent = doneCount;
+
+    // Update continue button
+    var continueBtn = document.getElementById('cert-study-continue');
+    var continueTitle = document.getElementById('cert-study-continue-title');
+    if (continueBtn && firstIncomplete) {
+      continueTitle.textContent = firstIncomplete.title;
+      continueBtn.style.display = '';
+      continueBtn.onclick = function(e) {
+        e.preventDefault();
+        // Open the domain if closed
+        var domainDetails = firstIncomplete.el.closest('.cert-curriculum-domain');
+        if (domainDetails && !domainDetails.open) domainDetails.open = true;
+        // Open the module
+        if (!firstIncomplete.el.open) firstIncomplete.el.open = true;
+        // Scroll into view
+        setTimeout(function() {
+          firstIncomplete.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      };
+    } else if (continueBtn && !firstIncomplete && doneCount > 0) {
+      // All complete!
+      continueBtn.style.display = '';
+      continueBtn.textContent = '🎉 All modules complete — Take practice exam →';
+      continueBtn.href = '/guided/' + code.toLowerCase() + '/practice/';
+      continueBtn.onclick = null;
+    }
+
+    // Update domain counters
+    Object.keys(domainTotals).forEach(function(d) {
+      var el = document.getElementById('cert-domain-progress-' + d);
+      if (!el) return;
+      var done = domainCounts[d] || 0;
+      var total = domainTotals[d];
+      if (done === 0) {
+        el.textContent = '';
+      } else if (done === total) {
+        el.textContent = '✓ Complete';
+        el.classList.add('all-done');
+      } else {
+        el.textContent = done + ' / ' + total;
+        el.classList.remove('all-done');
+      }
+    });
+  }
+
+  // Initial progress render
+  updateStudyProgress();
+
+  // Lazy-load iframes + auto-scroll on expand
+  embedModules.forEach(function(details) {
+    var loaded = false;
+    details.addEventListener('toggle', function() {
+      if (!details.open) return;
+      if (!loaded) {
+        loaded = true;
+        var url = details.dataset.url;
+        if (!url) return;
+        var frameWrap = details.querySelector('.cert-embed-frame');
+        if (!frameWrap) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.title = details.querySelector('.cert-curriculum-module-title').textContent.trim();
+        iframe.loading = 'lazy';
+        iframe.style.height = '400px';
+        frameWrap.innerHTML = '';
+        frameWrap.appendChild(iframe);
+      }
+      // Auto-scroll expanded module into view
+      setTimeout(function() {
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    });
+
+    // Hover prefetch — preload iframe URL on hover
+    var prefetched = false;
+    details.querySelector('summary').addEventListener('mouseenter', function() {
+      if (prefetched || loaded) return;
+      prefetched = true;
+      var link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = details.dataset.url;
+      document.head.appendChild(link);
+    });
+  });
+
+  // ── Listen for height + progress messages from embedded iframes ──
+  window.addEventListener('message', function(e) {
+    if (!e.data) return;
+    if (e.data.type === 'embed-height') {
+      var iframes = document.querySelectorAll('.cert-embed-frame iframe');
+      iframes.forEach(function(iframe) {
+        try {
+          if (iframe.contentWindow === e.source) {
+            iframe.style.height = e.data.height + 'px';
+          }
+        } catch(err) {}
+      });
+    }
+    if (e.data.type === 'embed-progress') {
+      // Module done/undone from iframe — update parent UI
+      updateStudyProgress();
+    }
+  });
 })();
 </script>
 {{ end }}

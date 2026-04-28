@@ -107,7 +107,6 @@
   color: var(--accent-foreground, #fff);
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 .cert-panel { display: none; }
 .cert-panel.active { display: block; }
@@ -281,9 +280,7 @@
   color: inherit;
 }
 .cert-card:hover {
-  border-color: rgba(16, 185, 129, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+  border-color: var(--accent);
 }
 
 .cert-card-header {
@@ -689,7 +686,7 @@
   background: var(--bg-elevated);
   color: var(--text-primary);
 }
-.cert-sidebar-btn-primary:hover { background: var(--bg-surface); transform: translateY(-1px); }
+.cert-sidebar-btn-primary:hover { background: var(--bg-surface); }
 .cert-sidebar-btn-secondary {
   background: transparent;
   color: var(--accent);
@@ -755,7 +752,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(3,3,8,0.95);
+  background: var(--bg-surface);
   border-top: 1px solid var(--border);
   padding: 0.75rem 1rem;
   padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
@@ -815,8 +812,8 @@
   align-items: center;
   padding: 0.85rem 1.1rem;
   font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 600;
+  color: var(--accent);
   cursor: pointer;
   list-style: none;
 }
@@ -855,6 +852,190 @@ details[open] > .cert-curriculum-domain-title .cert-curriculum-chevron {
   color: var(--text-muted);
   white-space: nowrap;
 }
+
+/* ── Embeddable module accordion ── */
+.cert-embed-module {
+  border-bottom: 1px solid var(--border);
+}
+.cert-embed-module:last-child { border-bottom: none; }
+.cert-embed-module > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.cert-embed-module > summary::-webkit-details-marker { display: none; }
+.cert-embed-module[open] > summary {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+.cert-embed-module[open] > summary .cert-curriculum-module-title {
+  color: var(--accent);
+}
+.cert-embed-frame {
+  min-height: 120px;
+  position: relative;
+}
+.cert-embed-frame iframe {
+  width: 100%;
+  border: none;
+  display: block;
+  min-height: 200px;
+  transition: height 0.2s ease-out;
+}
+.cert-embed-loading {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.cert-curriculum-free {
+  font-size: 0.7rem;
+  color: var(--success, #10B981);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cert-curriculum-paid {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Study hero bar (progress + continue) ── */
+.cert-study-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  margin-bottom: var(--space-6, 24px);
+}
+.cert-study-hero-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.cert-study-hero-num {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.cert-study-hero-dot {
+  color: var(--text-muted);
+}
+.cert-study-continue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--accent);
+  color: var(--accent-foreground, #fff);
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease-out;
+}
+.cert-study-continue:hover { opacity: 0.9; }
+@media (max-width: 640px) {
+  .cert-study-hero { flex-direction: column; align-items: flex-start; }
+  .cert-study-continue { width: 100%; justify-content: center; }
+}
+
+/* ── Domain progress counter ── */
+.cert-curriculum-domain-progress {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: auto;
+  margin-right: var(--space-2, 8px);
+}
+.cert-curriculum-domain-progress.all-done {
+  color: var(--success, #10B981);
+}
+
+/* ── Module done indicator ── */
+.cert-embed-module.is-done > summary .cert-curriculum-module-title {
+  color: var(--text-muted);
+}
+.cert-embed-module.is-done > summary::after {
+  content: '✓';
+  color: var(--success, #10B981);
+  font-size: 0.8rem;
+  margin-left: auto;
+  padding-right: 0.5rem;
+}
+
+/* ── Section header (Interactive Guide / Exam Resources) ── */
+.cert-section-header {
+  margin-bottom: var(--space-6, 24px);
+  margin-left: calc(-1 * var(--space-6, 24px));
+  padding-left: var(--space-4, 16px);
+  border-left: 3px solid var(--accent);
+}
+.cert-section-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2, 8px);
+}
+.cert-section-header p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+@media (max-width: 1024px) {
+  .cert-section-header {
+    margin-left: 0;
+    padding-left: var(--space-3, 12px);
+  }
+}
+
+/* ── Exam Resources section — visual separator ── */
+.cert-resources-section {
+  margin-top: var(--space-12, 48px);
+  padding-top: var(--space-8, 32px);
+  border-top: 1px solid var(--border);
+}
+
+/* ── What's inside — feature pills ── */
+.cert-whats-inside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+  margin-bottom: var(--space-6, 24px);
+}
+.cert-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full, 9999px);
+}
+
+/* ── Cert Compass quiet link ── */
+.cert-compass-link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: var(--space-4, 16px);
+}
+.cert-compass-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.cert-compass-link a:hover { text-decoration: underline; }
 
 /* Keep legacy single-column for backward compat on pages without product layout */
 
