@@ -362,7 +362,7 @@
       <div class="zt-faq-wrap">
         <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
-        <details open class="zt-faq-detail">
+        <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
           <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
           <p class="zt-faq-answer">{{ $q.answer }}</p>
         </details>
@@ -394,7 +394,7 @@
       </a>
     </div>
     <p style="text-align:center;margin-top:1rem;color:rgba(255,255,255,0.4);font-size:0.82rem">
-      {{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/" style="color:#00A4EF">Share it here →</a>
+      {{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/" class="zt-accent-link">Share it here →</a>
     </p>
   </div>
 
