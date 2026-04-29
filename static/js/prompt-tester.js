@@ -860,7 +860,7 @@
     var $result = document.getElementById('ptest-duel-result');
     $result.hidden = false;
 
-    var emoji = userScore >= refScore ? '🏆' : userScore >= refScore - 10 ? '' : '📈';
+    var emoji = '';
     var msg = userScore >= refScore ? 'Amazing! You beat the reference prompt!'
       : userScore >= refScore - 10 ? 'So close! Just ' + (refScore - userScore) + ' points behind.'
       : 'Room to grow! Check the reference to see what CRAFTS elements you missed.';

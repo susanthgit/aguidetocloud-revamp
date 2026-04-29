@@ -231,7 +231,7 @@
 
 .plab-exercise {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: var(--radius-sm, 6px); padding: 10px; margin-bottom: 0.75rem;
+  border-radius: var(--radius-sm, 6px); padding: 8px; margin-bottom: 0.75rem;
 }
 .plab-exercise-header {
   display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;
@@ -311,16 +311,15 @@
 }
 
 /* ── Combine Tab ────────────────────────────────────────────────────────── */
-.plab-combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; }
+.plab-combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px; }
 
 .plab-combo-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: var(--radius-sm, 6px); padding: 8px; cursor: pointer; transition: border-color 150ms ease-out;
 }
 .plab-combo-card:hover { border-color: var(--accent); }
-.plab-combo-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
-.plab-combo-name { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; }
-.plab-combo-desc { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.plab-combo-name { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem; }
+.plab-combo-desc { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.4rem; }
 
 .plab-combo-flow {
   display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;
@@ -358,8 +357,7 @@
 /* ── Quiz Tab ───────────────────────────────────────────────────────────── */
 .plab-quiz-progress {
   display: flex; gap: 0.4rem; margin-bottom: 0.75rem;
-}
-.plab-quiz-dot {
+}.plab-quiz-dot {
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--bg-elevated); transition: background 150ms ease-out;
 }

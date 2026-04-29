@@ -14,7 +14,7 @@
   var S = {
     explored: {},
     exerciseDone: {},
-    activeTab: 'techniques',
+    activeTab: 'quiz',
     labTechnique: '',
     quizStep: 0,
     quizAnswers: {}
@@ -75,7 +75,7 @@
   /* ── URL State ─────────────────────────────────────────────────────────── */
   function updateUrl() {
     var params = new URLSearchParams();
-    if (S.activeTab !== 'techniques') params.set('tab', S.activeTab);
+    if (S.activeTab !== 'quiz') params.set('tab', S.activeTab);
     if (S.labTechnique) params.set('technique', S.labTechnique);
     var qs = params.toString();
     var url = window.location.pathname + (qs ? '?' + qs : '');
@@ -324,7 +324,6 @@
       });
 
       return '<div class="plab-combo-card" data-combo="' + esc(c.id) + '">' +
-        '<div class="plab-combo-icon">' + esc(c.icon) + '</div>' +
         '<div class="plab-combo-name">' + esc(c.name) + '</div>' +
         '<div class="plab-combo-desc">' + esc(c.description) + '</div>' +
         '<div class="plab-combo-flow">' + flowHtml + '</div>' +
@@ -506,7 +505,7 @@
             card.classList.add('explored');
             var badges = card.querySelector('.plab-card-badges');
             if (badges && !badges.querySelector('.plab-badge-explored')) {
-              badges.insertAdjacentHTML('afterbegin', '<span class="plab-badge plab-badge-explored">✓</span>');
+              badges.insertAdjacentHTML('afterbegin', '<span class="plab-badge plab-badge-explored">Done</span>');
             }
             save();
             updateProgress();
