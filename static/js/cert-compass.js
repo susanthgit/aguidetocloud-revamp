@@ -69,7 +69,7 @@
 
   function providerColor(pid) { return providerMap[pid] ? providerMap[pid].hex : '#6366F1'; }
   function providerName(pid) { return providerMap[pid] ? providerMap[pid].name : pid; }
-  function providerEmoji(pid) { return providerMap[pid] ? providerMap[pid].emoji : ''; }
+  function providerEmoji(pid) { return ''; }
 
   // ── Tab Switching ─────────────────────────────────────────────────────
   const tabs = document.querySelectorAll('.compass-tab');
@@ -130,13 +130,11 @@
         <div class="compass-card-header">
           <div class="compass-card-provider" style="background:${pc}"></div>
           <div class="compass-card-info">
-            <div class="compass-card-name">${providerEmoji(c.provider)} ${esc(c.name)}</div>
+            <div class="compass-card-name">${esc(c.name)}</div>
             <div class="compass-card-code">${esc(c.exam_code)}</div>
             <div class="compass-card-badges">
               <span class="compass-badge compass-badge-level">${esc(c.normalized_level)}</span>
               <span class="compass-badge compass-badge-fee">$${c.fee_usd}</span>
-              <span class="compass-badge compass-badge-diff">${diffDots(c.difficulty)}</span>
-              ${demandBadge}${salaryBadge}
             </div>
           </div>
           <span class="compass-card-expand">▼</span>
@@ -147,6 +145,9 @@
             <span><strong>Provider:</strong> ${esc(providerName(c.provider))}</span>
             <span><strong>Study:</strong> ${c.study_hours_min}–${c.study_hours_max}h</span>
             <span><strong>Validity:</strong> ${esc(validity)}</span>
+            <span><strong>Difficulty:</strong> ${diffDots(c.difficulty)}</span>
+            ${c.demand_score ? `<span><strong>Demand:</strong> ${c.demand_score} ${trendIcon}</span>` : ''}
+            ${c.salary_premium ? `<span><strong>Salary:</strong> +$${(c.salary_premium/1000).toFixed(0)}K</span>` : ''}
             <span><strong>Focus:</strong> ${(c.focus_areas||[]).map(f => esc(f.replace(/-/g,' '))).join(', ')}</span>
           </div>
           <div class="compass-card-actions">
@@ -277,7 +278,7 @@
         <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0 0 0.75rem">${esc(g.description)}</p>
         <div class="compass-match-cols">${cols}</div>
         <div class="compass-match-notes">${esc(g.comparison_notes)}</div>
-        <div class="compass-match-rec">💡 ${esc(g.recommendation)}</div>
+        <div class="compass-match-rec">${esc(g.recommendation)}</div>
         ${renderSkillsTranslator(certs)}
         <div class="compass-match-cta" style="margin-top:0.75rem">
           <button class="compass-btn compass-btn-primary" onclick="window.__compassCompare('${esc(compareIds)}')">Deep Compare</button>
@@ -300,8 +301,8 @@
   function renderProviderStats() {
     PROVIDERS.forEach(p => {
       const count = CERTS.filter(c => c.provider === p.id).length;
-      const el = document.querySelector(`.compass-pcard-stat[data-provider="${p.id}"]`);
-      if (el) el.textContent = count + ' certifications';
+      const el = document.querySelector(`.compass-pstat-count[data-provider="${p.id}"]`);
+      if (el) el.textContent = count + ' certs';
     });
   }
 
@@ -332,7 +333,6 @@
   function renderCareers() {
     careersGrid.innerHTML = PATHS.map(p => `
       <div class="compass-career-card" data-path="${esc(p.id)}">
-        <div class="compass-career-icon">${p.icon || '📋'}</div>
         <div class="compass-career-name">${esc(p.name)}</div>
         <div class="compass-career-desc">${esc(p.description)}</div>
         <div class="compass-career-demand">${esc(p.demand)} Demand</div>
@@ -374,7 +374,7 @@
           <text x="50" y="48" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="700">${pct}%</text>
           <text x="50" y="64" text-anchor="middle" fill="var(--text-tertiary)" font-size="10">${have}/${total}</text>
         </svg>
-        <span style="color:var(--text-primary);font-weight:600;font-size:0.82rem">${p.emoji} ${p.name}</span>
+        <span style="color:var(--text-primary);font-weight:600;font-size:var(--text-caption)">${p.name}</span>
       </div>`;
     }).join('');
 
@@ -439,7 +439,7 @@
 
     careersGrid.querySelectorAll('.compass-career-card').forEach(c => c.classList.toggle('active', c.dataset.path === pathId));
     const tipCert = certMap[path.if_only_one];
-    const tipName = tipCert ? (providerEmoji(tipCert.provider) + ' ' + tipCert.name + ' (' + tipCert.exam_code + ')') : path.if_only_one;
+    const tipName = tipCert ? (tipCert.name + ' (' + tipCert.exam_code + ')') : path.if_only_one;
 
     let html = `<button class="compass-career-back" onclick="document.getElementById('career-detail').style.display='none'">← Back to all roles</button>`;
     html += `<h3 style="color:var(--text-primary);font-size:1.1rem;margin-bottom:1rem">${path.icon} ${esc(path.name)} — Certification Path</h3>`;
@@ -752,6 +752,8 @@
     renderDashboard();
     renderQuiz();
     restoreState();
+    // Auto-select Cloud Admin career path on first load
+    showCareerDetail('cloud-admin');
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

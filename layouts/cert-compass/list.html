@@ -25,10 +25,10 @@
 
   <!-- Tabs -->
   <div class="compass-tabs" role="tablist">
+    <button class="compass-tab active" role="tab" aria-selected="true" data-tab="careers">Career Paths</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="explore">Explore</button>
-    <button class="compass-tab active" role="tab" aria-selected="true" data-tab="matches">Closest Matches</button>
-    <button class="compass-tab" role="tab" aria-selected="false" data-tab="careers">Career Paths</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="compare">Compare</button>
+    <button class="compass-tab" role="tab" aria-selected="false" data-tab="matches">Closest Matches</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="dashboard">My Journey</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="quiz">Which Cert?</button>
     <button class="compass-tab" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
@@ -36,15 +36,14 @@
 
   <!-- ═══ EXPLORE TAB ═══ -->
   <div class="compass-panel" id="panel-explore">
-    <!-- Provider summary cards -->
-    <div class="compass-provider-cards">
+    <!-- Provider stats (compact inline) -->
+    <div class="compass-provider-stats">
       {{ range $providers }}
-      <div class="compass-pcard" style="--pcard-accent: {{ .hex }}">
-        <span class="compass-pcard-emoji">{{ .emoji }}</span>
-        <strong class="compass-pcard-name">{{ .name }}</strong>
-        <span class="compass-pcard-stat" data-provider="{{ .id }}"></span>
-        <span class="compass-pcard-price">${{ .fee_fundamentals | default .fee_foundational }}–${{ .fee_expert | default .fee_professional | default .fee_specialty }}</span>
-      </div>
+      <span class="compass-pstat" style="border-left: 3px solid {{ .hex }}">
+        <strong>{{ .name }}</strong>
+        <span class="compass-pstat-count" data-provider="{{ .id }}"></span>
+        <span class="compass-pstat-price">${{ .fee_fundamentals | default .fee_foundational }}–${{ .fee_expert | default .fee_professional | default .fee_specialty }}</span>
+      </span>
       {{ end }}
     </div>
     <!-- Quick scenarios -->
@@ -60,7 +59,7 @@
         <div class="compass-pill-group" id="provider-filter" role="group" aria-label="Filter by provider">
           <button class="compass-pill active" data-provider="all">All</button>
           {{ range $providers }}
-          <button class="compass-pill" data-provider="{{ .id }}" style="--pill-accent: {{ .hex }}">{{ .emoji }} {{ .short }}</button>
+          <button class="compass-pill" data-provider="{{ .id }}" style="--pill-accent: {{ .hex }}">{{ .short }}</button>
           {{ end }}
         </div>
         <select class="compass-select" id="level-filter" aria-label="Filter by level">
@@ -90,13 +89,13 @@
   </div>
 
   <!-- ═══ CLOSEST MATCHES TAB ═══ -->
-  <div class="compass-panel active" id="panel-matches">
+  <div class="compass-panel" id="panel-matches">
     <p class="compass-disclaimer">These are closest role/level matches — not official cross-vendor equivalencies. Match confidence badges show how close the alignment is.</p>
     <div class="compass-matches-grid" id="matches-grid"></div>
   </div>
 
   <!-- ═══ CAREER PATHS TAB ═══ -->
-  <div class="compass-panel" id="panel-careers">
+  <div class="compass-panel active" id="panel-careers">
     <p class="compass-subtitle">Choose your role to see the recommended certification path across all three providers.</p>
     <div class="compass-careers-grid" id="careers-grid"></div>
     <div class="compass-career-detail" id="career-detail" style="display:none"></div>
