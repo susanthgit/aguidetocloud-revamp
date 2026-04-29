@@ -185,6 +185,16 @@ css_namespace = "aicost-*"
 body_class = "page-ai-cost-calculator"
 # NOTE: Hue 113° is 29° from Prompt Guide (84°) and PS Builder (142°) — accepted compromise, max equidistant in largest gap
 
+[[tools]]
+name = "AI Token Calculator"
+slug = "token-calculator"
+hex = "#22D3EE"
+hue = 187
+name_friendly = "Cyan"
+category = "Compare"
+css_namespace = "tokcalc-*"
+body_class = "page-token-calculator"
+
 # ── Admin & Security ──────────────────────────────────────────────────────────
 
 [[tools]]

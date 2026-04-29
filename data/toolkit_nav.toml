@@ -203,10 +203,22 @@ emoji = "💰"
 icon = "dollar"
 name = "AI Cost Calculator"
 short = "AI Cost"
-desc = "Total AI adoption cost — licensing, tokens, training, governance, budget timelines"
+desc = "Total AI adoption cost — licensing, training, governance, budget timelines"
 color = "#66C559"
 category = "copilot-ai"
 visual = "gauge"
+is_tool = true
+
+[[tools]]
+url = "/token-calculator/"
+emoji = "🪙"
+icon = "dollar-sign"
+name = "AI Token Calculator"
+short = "Token Calc"
+desc = "Compare API token pricing across GPT, Claude, Gemini, DeepSeek, Mistral"
+color = "#22D3EE"
+category = "copilot-ai"
+visual = "table"
 is_tool = true
 
 [[tools]]

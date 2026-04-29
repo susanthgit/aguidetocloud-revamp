@@ -212,6 +212,11 @@ base = 180
 verb = "cost estimates calculated"
 
 [[tools]]
+url = "/token-calculator/"
+base = 80
+verb = "token comparisons run"
+
+[[tools]]
 url = "/purview-starter/"
 base = 110
 verb = "starter kits deployed"

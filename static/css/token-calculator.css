@@ -1,0 +1,352 @@
+/* ── Token Calculator ──
+   Accent: Cyan #22D3EE
+   Namespace: .tokcalc-*
+*/
+
+/* ── Container ── */
+.tokcalc-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Zen Underline Tabs ── */
+.tokcalc-tabs {
+  display: flex; gap: 0; padding: 0;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.tokcalc-tabs::-webkit-scrollbar { display: none; }
+.tokcalc-tab {
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary);
+  font-family: var(--font-heading, Inter, sans-serif);
+  font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer;
+  white-space: nowrap; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  flex: 1; text-align: center;
+}
+.tokcalc-tab:hover { color: var(--text-primary); }
+.tokcalc-tab.active {
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
+}
+.tokcalc-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* ── Panels ── */
+.tokcalc-panel { display: none; }
+.tokcalc-panel.active { display: block; animation: tokcalcFadeIn 150ms ease-out; }
+@keyframes tokcalcFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .tokcalc-panel.active { animation: none; } }
+
+/* ── Global Settings Bar ── */
+.tokcalc-global-bar {
+  display: flex; gap: 1rem; align-items: flex-end;
+  margin-bottom: 0.75rem; padding: 8px 10px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); flex-wrap: wrap;
+}
+.tokcalc-global-item label {
+  display: block; color: var(--text-secondary);
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+.tokcalc-select-sm { width: auto; padding: 0.4rem 0.6rem; font-size: 0.82rem; }
+
+/* ── Card ── */
+.tokcalc-card {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px); padding: 10px;
+  margin-bottom: 0.75rem;
+}
+.tokcalc-card-title {
+  color: var(--text-primary); font-size: 1.05rem;
+  font-weight: 600; margin: 0 0 0.5rem;
+}
+
+/* ── Form Elements ── */
+.tokcalc-field { margin-bottom: 0.75rem; }
+.tokcalc-field > label {
+  display: block; color: var(--text-secondary);
+  font-size: 0.82rem; font-weight: 600; margin-bottom: 0.4rem;
+}
+.tokcalc-select {
+  width: 100%; padding: 0.5rem 0.7rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); color: var(--text-primary);
+  font-size: 0.85rem; font-family: inherit;
+  cursor: pointer; appearance: auto; color-scheme: light dark;
+}
+.tokcalc-select option { background: var(--bg-surface); color: var(--text-primary); }
+.tokcalc-select:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.tokcalc-range-row { display: flex; align-items: center; gap: 0.75rem; }
+.tokcalc-range-row input[type="range"] { flex: 1; accent-color: var(--accent); height: 6px; }
+.tokcalc-num-input {
+  width: 90px; padding: 0.4rem 0.5rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); color: var(--text-primary);
+  font-size: 0.85rem; font-family: inherit; text-align: right;
+}
+.tokcalc-num-input-sm { width: 60px; }
+.tokcalc-num-input:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.tokcalc-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+/* ── Textarea ── */
+.tokcalc-textarea {
+  width: 100%; min-height: 100px; padding: 0.6rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); color: var(--text-primary);
+  font-size: 0.85rem; font-family: inherit; resize: vertical;
+}
+.tokcalc-textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.tokcalc-token-count { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem; }
+
+/* ── Use Case Preset Buttons ── */
+.tokcalc-usecase-presets { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.tokcalc-usecase-btn {
+  padding: 0.35rem 0.7rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: var(--radius-sm, 6px);
+  color: var(--text-secondary); font-size: 0.78rem; cursor: pointer;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.tokcalc-usecase-btn:hover { background: var(--border); color: var(--text-primary); }
+.tokcalc-usecase-btn.active {
+  background: var(--accent-subtle); border-color: var(--accent); color: var(--accent-hover);
+}
+
+/* ── Metrics Row ── */
+.tokcalc-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px; margin-bottom: 0.75rem;
+}
+.tokcalc-metric {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); padding: 8px; text-align: center;
+}
+.tokcalc-metric-label {
+  display: block; color: var(--text-secondary);
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+.tokcalc-metric-value {
+  display: block; color: var(--text-primary);
+  font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em;
+}
+.tokcalc-metric.highlight .tokcalc-metric-value { color: var(--accent-hover); }
+
+/* ── Table ── */
+.tokcalc-table-wrap { overflow-x: auto; }
+.tokcalc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.tokcalc-table th {
+  text-align: left; color: var(--text-secondary); font-weight: 600;
+  padding: 4px 8px; border-bottom: 1px solid var(--border);
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.tokcalc-table th.right, .tokcalc-table td.right { text-align: right; }
+.tokcalc-table td { color: var(--text-secondary); padding: 4px 8px; border-bottom: 1px solid var(--border); }
+.tokcalc-table tr:last-child td { border-bottom: none; }
+.tokcalc-table tr.cheapest td { color: var(--success, #22C55E); }
+.tokcalc-table tr.expensive td { color: var(--warning, #F59E0B); }
+.tokcalc-badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  padding: 0.12rem 0.4rem; border-radius: var(--radius-sm, 6px);
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+.tokcalc-badge-green { background: var(--accent-subtle); color: var(--success, #22C55E); }
+.tokcalc-badge-amber { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning, #F59E0B); }
+
+/* ── Disclaimer ── */
+.tokcalc-disclaimer {
+  color: var(--text-muted); font-size: 0.75rem; line-height: 1.5;
+  margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border);
+}
+
+/* ── Cross-tool CTAs ── */
+.tokcalc-cross-tools {
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+  margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);
+}
+.tokcalc-cross-link {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 5px 14px; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: var(--radius-sm, 6px);
+  color: var(--text-secondary); font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.tokcalc-cross-link:hover { border-color: var(--accent); color: var(--accent-hover); }
+
+/* ── FAQ ── */
+.tokcalc-faq-heading {
+  color: var(--text-primary); font-size: 1.05rem;
+  font-weight: 600; margin-bottom: 0.75rem;
+}
+
+/* ── Presets Bar (promoted to top) ── */
+.tokcalc-presets-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+
+/* ── Compact Inputs Row ── */
+.tokcalc-inputs-row {
+  display: flex; gap: 0.75rem; align-items: flex-end;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+.tokcalc-inputs-row .tokcalc-field { margin-bottom: 0; flex: 1; min-width: 120px; }
+
+/* ── Unified Filter Bar ── */
+.tokcalc-filter-bar {
+  display: flex; align-items: center; gap: 0.75rem;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+
+/* ── Advanced Settings (collapsed) ── */
+.tokcalc-advanced, .tokcalc-paste-expand, .tokcalc-ctx-expand {
+  margin-bottom: 0.75rem;
+}
+.tokcalc-advanced-trigger {
+  color: var(--text-secondary); font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; list-style: none; padding: 4px 0;
+}
+.tokcalc-advanced-trigger::-webkit-details-marker { display: none; }
+.tokcalc-advanced-trigger::before { content: '▸ '; }
+details[open] > .tokcalc-advanced-trigger::before { content: '▾ '; }
+.tokcalc-advanced-body { padding: 8px 0 0; }
+.tokcalc-adv-row {
+  display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;
+}
+.tokcalc-adv-row .tokcalc-field { margin-bottom: 0; }
+.tokcalc-paste-body { padding: 8px 0 0; }
+
+/* ── Tier Filter (Feature 2) ── */
+.tokcalc-tier-wrap {
+  display: flex; gap: 0.4rem; align-items: center;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+.tokcalc-tier-label {
+  color: var(--text-muted); font-size: 0.78rem; font-weight: 600;
+  margin-right: 0.25rem;
+}
+.tokcalc-tier-btn {
+  padding: 0.3rem 0.6rem; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: var(--radius-sm, 6px);
+  color: var(--text-secondary); font-size: 0.75rem; font-weight: 600;
+  cursor: pointer;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.tokcalc-tier-btn:hover { background: var(--border); color: var(--text-primary); }
+.tokcalc-tier-btn.active {
+  background: var(--accent-subtle); border-color: var(--accent); color: var(--accent-hover);
+}
+
+/* ── Verdict Card (Feature 1) ── */
+.tokcalc-verdict {
+  background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
+  border-radius: var(--radius-sm, 6px); padding: 8px 10px;
+  color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.tokcalc-verdict:empty { display: none; }
+.tokcalc-verdict strong { color: var(--accent-hover); }
+.tokcalc-verdict-warn { color: var(--warning); }
+
+/* ── Over-budget rows (Feature 3) ── */
+.tokcalc-table tr.over-budget td { opacity: 0.4; }
+.tokcalc-table tr.over-budget:hover td { opacity: 0.7; }
+
+/* ── Toggle label ── */
+.tokcalc-toggle-label {
+  display: flex; align-items: center; gap: 0.4rem;
+  color: var(--text-secondary); font-size: 0.82rem; cursor: pointer;
+}
+.tokcalc-toggle-label input[type="checkbox"] { accent-color: var(--accent); }
+.tokcalc-field-hint {
+  display: block; color: var(--text-muted); font-size: 0.72rem; margin-top: 0.15rem;
+}
+.tokcalc-unit-label { color: var(--text-muted); font-size: 0.78rem; }
+
+/* ── Trust Badge (Feature 6) ── */
+.tokcalc-trust-badge {
+  display: inline-block; padding: 4px 10px;
+  background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
+  border-radius: var(--radius-sm, 6px); color: var(--text-secondary);
+  font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem;
+}
+
+/* ── Capability Filter (Feature 4) ── */
+.tokcalc-capability-bar {
+  display: flex; gap: 0.5rem; align-items: center;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+.tokcalc-cap-check {
+  display: flex; align-items: center; gap: 0.3rem;
+  color: var(--text-secondary); font-size: 0.78rem; cursor: pointer;
+}
+.tokcalc-cap-check input { accent-color: var(--accent); }
+
+/* ── Context Window Bars (Feature 2) ── */
+.tokcalc-ctx-row {
+  display: grid; grid-template-columns: 160px 1fr 100px;
+  gap: 8px; align-items: center; padding: 3px 0;
+}
+.tokcalc-ctx-model {
+  color: var(--text-secondary); font-size: 0.78rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.tokcalc-ctx-window { color: var(--text-muted); font-weight: 400; font-size: 0.72rem; }
+.tokcalc-ctx-bar-wrap {
+  height: 8px; background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 4px; overflow: hidden;
+}
+.tokcalc-ctx-bar { height: 100%; border-radius: 4px; transition: width 150ms ease-out; }
+.tokcalc-ctx-label { color: var(--text-muted); font-size: 0.72rem; text-align: right; }
+
+/* ── Routing Models (Feature 1-new) ── */
+.tokcalc-routing-models {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Source link ── */
+.tokcalc-src-link {
+  color: var(--text-muted); font-size: 0.68rem; text-decoration: none;
+  margin-left: 0.3rem; opacity: 0.6;
+}
+.tokcalc-src-link:hover { color: var(--accent); opacity: 1; }
+
+/* ── Share Bar (Feature 5) ── */
+.tokcalc-share-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.tokcalc-btn {
+  padding: 5px 14px; background: var(--accent); color: #fff;
+  border: none; border-radius: var(--radius-sm, 6px);
+  font-size: 0.82rem; font-weight: 600; cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+.tokcalc-btn:hover { background: var(--accent-hover); }
+.tokcalc-share-status { color: var(--success, #22C55E); font-size: 0.78rem; font-weight: 600; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tokcalc-two-col { grid-template-columns: 1fr; }
+  .tokcalc-inputs-row { flex-direction: column; }
+  .tokcalc-inputs-row .tokcalc-field { min-width: 100%; }
+  .tokcalc-metrics { grid-template-columns: repeat(2, 1fr); }
+  .tokcalc-container { padding: 0 1rem 3rem; }
+  .tokcalc-routing-models { grid-template-columns: 1fr; }
+  .tokcalc-ctx-row { grid-template-columns: 120px 1fr 80px; }
+  .tokcalc-filter-bar { flex-direction: column; align-items: flex-start; }
+  .tokcalc-adv-row { flex-direction: column; align-items: flex-start; }
+}

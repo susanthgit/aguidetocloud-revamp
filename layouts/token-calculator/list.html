@@ -1,0 +1,327 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/token-calculator.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="tokcalc-page">
+  <div class="tokcalc-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "AI Token Calculator") }}
+
+    {{/* ── Tab Navigation ── */}}
+    <div class="tokcalc-tabs" role="tablist" aria-label="Token Calculator sections">
+      <button class="tokcalc-tab active" role="tab" aria-selected="true" aria-controls="panel-tokens" id="tab-btn-tokens" data-tab="tokens">Token Pricing</button>
+      <button class="tokcalc-tab" role="tab" aria-selected="false" aria-controls="panel-routing" id="tab-btn-routing" data-tab="routing">Smart Routing</button>
+      <button class="tokcalc-tab" role="tab" aria-selected="false" aria-controls="panel-conversation" id="tab-btn-conversation" data-tab="conversation">Cost per Conversation</button>
+      <button class="tokcalc-tab" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-btn-faq" data-tab="faq">FAQ</button>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 1: TOKEN CALCULATOR
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="tokcalc-panel active" role="tabpanel" id="panel-tokens" aria-labelledby="tab-btn-tokens">
+
+      {{/* ── Trust Badge ── */}}
+      <div class="tokcalc-trust-badge">Prices verified: {{ (index hugo.Data "ai_cost").tokens.meta.last_verified }} · Sources linked per model</div>
+
+      {{/* ── Use Case Presets (promoted to top — one click to value) ── */}}
+      <div class="tokcalc-presets-bar">
+        <span class="tokcalc-tier-label">Quick start:</span>
+        <div class="tokcalc-usecase-presets" id="usecase-presets"></div>
+      </div>
+
+      {{/* ── Compact Inputs Row ── */}}
+      <div class="tokcalc-inputs-row">
+        <div class="tokcalc-field">
+          <label for="tok-queries">Queries/day</label>
+          <div class="tokcalc-range-row">
+            <input type="range" id="tok-queries-range" min="10" max="10000" value="100" step="10" aria-hidden="true">
+            <input type="number" id="tok-queries" min="1" max="100000" value="100" class="tokcalc-num-input tokcalc-num-input-sm" aria-label="Queries per day">
+          </div>
+        </div>
+        <div class="tokcalc-field">
+          <label for="tok-input-len">Input length</label>
+          <select id="tok-input-len" class="tokcalc-select tokcalc-select-sm" aria-label="Average input length">
+            <option value="100">Short (~100)</option>
+            <option value="500" selected>Medium (~500)</option>
+            <option value="2000">Long (~2K)</option>
+            <option value="8000">Very Long (~8K)</option>
+          </select>
+        </div>
+        <div class="tokcalc-field">
+          <label for="tok-output-len">Output length</label>
+          <select id="tok-output-len" class="tokcalc-select tokcalc-select-sm" aria-label="Average output length">
+            <option value="100">Short (~100)</option>
+            <option value="500" selected>Medium (~500)</option>
+            <option value="2000">Long (~2K)</option>
+            <option value="8000">Very Long (~8K)</option>
+          </select>
+        </div>
+        <div class="tokcalc-field">
+          <label for="tok-currency">Currency</label>
+          <select id="tok-currency" class="tokcalc-select tokcalc-select-sm" aria-label="Display currency">
+            <option value="USD" selected>$ USD</option>
+            <option value="GBP">£ GBP</option>
+            <option value="EUR">€ EUR</option>
+            <option value="AUD">A$ AUD</option>
+            <option value="NZD">NZ$ NZD</option>
+          </select>
+        </div>
+      </div>
+
+      {{/* ── Filter bar (tier + caps unified) + Advanced toggle ── */}}
+      <div class="tokcalc-filter-bar">
+        <div class="tokcalc-tier-wrap" id="tier-filters">
+          <button class="tokcalc-tier-btn active" data-tier="all">All</button>
+          <button class="tokcalc-tier-btn" data-tier="budget">Budget</button>
+          <button class="tokcalc-tier-btn" data-tier="flagship">Flagship</button>
+          <button class="tokcalc-tier-btn" data-tier="reasoning">Reasoning</button>
+        </div>
+        <div class="tokcalc-capability-bar" id="capability-filters">
+          <label class="tokcalc-cap-check"><input type="checkbox" value="vision"> Vision</label>
+          <label class="tokcalc-cap-check"><input type="checkbox" value="function-calling"> Functions</label>
+          <label class="tokcalc-cap-check"><input type="checkbox" value="json-mode"> JSON</label>
+        </div>
+      </div>
+
+      {{/* ── Advanced Settings (collapsed by default) ── */}}
+      <details class="tokcalc-advanced">
+        <summary class="tokcalc-advanced-trigger">Advanced settings</summary>
+        <div class="tokcalc-advanced-body">
+          <div class="tokcalc-adv-row">
+            <div class="tokcalc-field">
+              <label for="tok-days">Working days/mo</label>
+              <input type="number" id="tok-days" min="1" max="31" value="22" class="tokcalc-num-input tokcalc-num-input-sm" aria-label="Working days per month">
+            </div>
+            <div class="tokcalc-field">
+              <label for="tok-budget">Budget cap</label>
+              <div class="tokcalc-range-row">
+                <input type="number" id="tok-budget" min="0" max="100000" value="0" class="tokcalc-num-input tokcalc-num-input-sm" aria-label="Monthly budget cap" placeholder="0">
+                <span class="tokcalc-unit-label">/mo</span>
+              </div>
+            </div>
+            <label class="tokcalc-toggle-label">
+              <input type="checkbox" id="tok-cached"> Cached pricing
+            </label>
+            <label class="tokcalc-toggle-label">
+              <input type="checkbox" id="tok-batch"> Batch API (50% off)
+            </label>
+          </div>
+        </div>
+      </details>
+
+      {{/* ── Verdict + Metrics (combined, compact) ── */}}
+      <div class="tokcalc-verdict" id="verdict-card" aria-live="polite"></div>
+
+      <div class="tokcalc-metrics" id="tokcalc-metrics">
+        <div class="tokcalc-metric highlight">
+          <span class="tokcalc-metric-label">Cheapest / Month</span>
+          <span class="tokcalc-metric-value" id="m-cheapest">$0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">Most Expensive / Month</span>
+          <span class="tokcalc-metric-value" id="m-expensive">$0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">Monthly Queries</span>
+          <span class="tokcalc-metric-value" id="m-queries">0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">Tokens / Query</span>
+          <span class="tokcalc-metric-value" id="m-tokens">0</span>
+        </div>
+      </div>
+
+      {{/* ── THE TABLE (the answer) ── */}}
+      <div class="tokcalc-table-wrap">
+        <table class="tokcalc-table" id="table-tokens">
+          <thead><tr><th>Provider</th><th>Model</th><th class="right">Input $/1M</th><th class="right">Output $/1M</th><th class="right">Monthly Est.</th><th class="right">Annual Est.</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      {{/* ── Paste Text (collapsed — power feature) ── */}}
+      <details class="tokcalc-paste-expand">
+        <summary class="tokcalc-advanced-trigger">Paste text to count tokens</summary>
+        <div class="tokcalc-paste-body">
+          <textarea id="token-text" class="tokcalc-textarea" placeholder="Paste a sample prompt, document, or message..." aria-label="Paste text to count tokens"></textarea>
+          <div class="tokcalc-token-count" id="token-text-count"></div>
+        </div>
+      </details>
+
+      {{/* ── Context Window Fit Check ── */}}
+      <details class="tokcalc-ctx-expand">
+        <summary class="tokcalc-advanced-trigger">Context window fit check</summary>
+        <div id="context-fit-bars"></div>
+      </details>
+
+      {{/* ── Share + Disclaimer ── */}}
+      <div class="tokcalc-share-bar">
+        <button class="tokcalc-btn" id="btn-share-url">Copy Share Link</button>
+        <span class="tokcalc-share-status" id="share-status"></span>
+      </div>
+      <p class="tokcalc-disclaimer">Token estimates: 1 English word ≈ 1.3 tokens. Actual tokenisation varies by model. Prices from official vendor pages as of April 2026. All calculations run in your browser — your data never leaves this page.</p>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 2: SMART ROUTING (Feature 1-new)
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="tokcalc-panel" id="panel-routing" role="tabpanel" aria-labelledby="tab-btn-routing">
+      <div class="tokcalc-card">
+        <h2 class="tokcalc-card-title">Route queries to different models by complexity</h2>
+        <p class="tokcalc-field-hint">Production systems route simple queries to cheap models and complex ones to powerful models. Set your split to see the blended cost.</p>
+
+        <div class="tokcalc-routing-models">
+          <div class="tokcalc-field">
+            <label for="route-simple-model">Simple queries model</label>
+            <select id="route-simple-model" class="tokcalc-select" aria-label="Model for simple queries"></select>
+          </div>
+          <div class="tokcalc-field">
+            <label for="route-complex-model">Complex queries model</label>
+            <select id="route-complex-model" class="tokcalc-select" aria-label="Model for complex queries"></select>
+          </div>
+        </div>
+
+        <div class="tokcalc-field">
+          <label for="route-split-range">Simple / Complex split</label>
+          <div class="tokcalc-range-row">
+            <span class="tokcalc-unit-label" id="route-simple-pct">70%</span>
+            <input type="range" id="route-split-range" min="0" max="100" value="70" step="5" aria-label="Percentage of simple queries">
+            <span class="tokcalc-unit-label" id="route-complex-pct">30%</span>
+          </div>
+        </div>
+        <div class="tokcalc-field">
+          <label for="route-queries">Total queries per day</label>
+          <div class="tokcalc-range-row">
+            <input type="range" id="route-queries-range" min="10" max="10000" value="500" step="10" aria-hidden="true">
+            <input type="number" id="route-queries" min="1" max="100000" value="500" class="tokcalc-num-input" aria-label="Total queries per day">
+          </div>
+        </div>
+      </div>
+
+      {{/* ── Routing Results ── */}}
+      <div class="tokcalc-metrics" id="routing-metrics">
+        <div class="tokcalc-metric highlight">
+          <span class="tokcalc-metric-label">Blended / Month</span>
+          <span class="tokcalc-metric-value" id="route-blended">$0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">All-Simple / Month</span>
+          <span class="tokcalc-metric-value" id="route-all-simple">$0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">All-Complex / Month</span>
+          <span class="tokcalc-metric-value" id="route-all-complex">$0</span>
+        </div>
+        <div class="tokcalc-metric">
+          <span class="tokcalc-metric-label">Savings vs All-Complex</span>
+          <span class="tokcalc-metric-value" id="route-savings">$0</span>
+        </div>
+      </div>
+      <div class="tokcalc-verdict" id="routing-verdict" aria-live="polite"></div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 3: COST PER CONVERSATION (Feature 5)
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="tokcalc-panel" id="panel-conversation" role="tabpanel" aria-labelledby="tab-btn-conversation">
+      <div class="tokcalc-card">
+        <h2 class="tokcalc-card-title">How much does one conversation cost?</h2>
+        <p class="tokcalc-field-hint">Model a real conversation — set average turns and message length to see the cost across all providers.</p>
+        <div class="tokcalc-two-col">
+          <div class="tokcalc-field">
+            <label for="conv-turns">Turns per conversation</label>
+            <div class="tokcalc-range-row">
+              <input type="range" id="conv-turns-range" min="1" max="30" value="5" step="1" aria-hidden="true">
+              <input type="number" id="conv-turns" min="1" max="100" value="5" class="tokcalc-num-input tokcalc-num-input-sm" aria-label="Turns per conversation">
+            </div>
+            <span class="tokcalc-field-hint">User message + AI response = 1 turn</span>
+          </div>
+          <div class="tokcalc-field">
+            <label for="conv-msg-len">Avg words per message</label>
+            <input type="number" id="conv-msg-len" min="10" max="5000" value="200" class="tokcalc-num-input" aria-label="Average words per message">
+            <span class="tokcalc-field-hint">Both user and AI messages</span>
+          </div>
+        </div>
+        <div class="tokcalc-token-count" id="conv-total-tokens"></div>
+      </div>
+      <div id="conv-results"></div>
+    </div>
+
+    {{/* ════════════════════════════════════════════════════════════════
+         TAB 3: FAQ
+         ════════════════════════════════════════════════════════════════ */}}
+    <div class="tokcalc-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-btn-faq">
+    {{ if .Params.faq }}
+    <div class="zt-faq-wrap">
+      <h2 class="tokcalc-faq-heading">Frequently Asked Questions</h2>
+      {{ range $i, $q := .Params.faq }}
+      <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
+        <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
+        <p class="zt-faq-answer">{{ $q.answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+    </div>
+
+  </div>{{/* .tokcalc-container */}}
+
+  {{/* ── Cross-tool CTAs ── */}}
+  <div class="tokcalc-container">
+    <div class="tokcalc-cross-tools">
+      <a href="/ai-cost-calculator/" class="tokcalc-cross-link">{{ partial "icon.html" (dict "name" "dollar" "size" 14 "stroke" 1.5) }} Full AI Cost Calculator</a>
+      <a href="/ai-showdown/" class="tokcalc-cross-link">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Compare AI Platforms</a>
+      <a href="/ai-mapper/" class="tokcalc-cross-link">{{ partial "icon.html" (dict "name" "map" "size" 14 "stroke" 1.5) }} Map AI Services</a>
+    </div>
+  </div>
+
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">← All Tools</a>
+  </nav>
+
+  {{/* Hidden block for Pagefind search indexing */}}
+  <div data-pagefind-body aria-hidden="true" style="display:none">
+    <h2>AI Token Calculator</h2>
+    <p>Compare AI API token pricing across GPT-4o, Claude Sonnet, Gemini Pro, DeepSeek, Mistral, Azure OpenAI. Paste text to count tokens. Usage profile presets for chatbot, content writer, data analyst, search RAG, agent loops. Monthly and annual cost estimates. 5 currencies: USD GBP EUR AUD NZD.</p>
+  </div>
+
+</div>{{/* .tokcalc-page */}}
+
+{{/* ── Data Injection from TOML ── */}}
+{{ $tokens := (index hugo.Data "ai_cost").tokens }}
+<script>
+window.__tokCalcData = {{ $tokens | jsonify | safeJS }};
+</script>
+<script src="/js/token-calculator.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}

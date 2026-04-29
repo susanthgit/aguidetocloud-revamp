@@ -45,7 +45,6 @@
     {{/* ── Tab Navigation ── */}}
     <div class="aicost-tabs" role="tablist" aria-label="AI Cost Calculator sections">
       <button class="aicost-tab active" role="tab" aria-selected="true" aria-controls="panel-total" id="tab-btn-total" data-tab="total">Total Cost</button>
-      <button class="aicost-tab" role="tab" aria-selected="false" aria-controls="panel-tokens" id="tab-btn-tokens" data-tab="tokens">Token Calculator</button>
       <button class="aicost-tab" role="tab" aria-selected="false" aria-controls="panel-licence" id="tab-btn-licence" data-tab="licence">Licence Optimizer</button>
       <button class="aicost-tab" role="tab" aria-selected="false" aria-controls="panel-timeline" id="tab-btn-timeline" data-tab="timeline">Budget Timeline</button>
       <button class="aicost-tab" role="tab" aria-selected="false" aria-controls="panel-export" id="tab-btn-export" data-tab="export">Compare & Export</button>
@@ -320,63 +319,7 @@
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
-         TAB 2: TOKEN CALCULATOR
-         ════════════════════════════════════════════════════════════════ */}}
-    <div class="aicost-panel" role="tabpanel" id="panel-tokens" aria-labelledby="tab-btn-tokens">
-      <div class="aicost-card">
-        <h2 class="aicost-card-title">Paste Text to Estimate Tokens</h2>
-        <textarea id="token-text" class="aicost-textarea" placeholder="Paste a sample prompt, document, or message to count tokens and see costs across all providers..." aria-label="Paste text to count tokens"></textarea>
-        <div class="aicost-token-count" id="token-text-count"></div>
-      </div>
-
-      <div class="aicost-card">
-        <h2 class="aicost-card-title">Or Set a Usage Profile</h2>
-        <div class="aicost-usecase-presets" id="usecase-presets"></div>
-        <div class="aicost-two-col">
-          <div class="aicost-field">
-            <label for="tok-queries">Queries per day</label>
-            <div class="aicost-range-row">
-              <input type="range" id="tok-queries-range" min="10" max="10000" value="100" step="10" aria-hidden="true">
-              <input type="number" id="tok-queries" min="1" max="100000" value="100" class="aicost-num-input" aria-label="Queries per day">
-            </div>
-          </div>
-          <div class="aicost-field">
-            <label for="tok-days">Working days / month</label>
-            <input type="number" id="tok-days" min="1" max="31" value="22" class="aicost-num-input aicost-num-input-sm" aria-label="Working days per month">
-          </div>
-          <div class="aicost-field">
-            <label for="tok-input-len">Avg input length</label>
-            <select id="tok-input-len" class="aicost-select" aria-label="Average input length">
-              <option value="100">Short (~100 tokens)</option>
-              <option value="500" selected>Medium (~500 tokens)</option>
-              <option value="2000">Long (~2,000 tokens)</option>
-              <option value="8000">Very Long (~8,000 tokens)</option>
-            </select>
-          </div>
-          <div class="aicost-field">
-            <label for="tok-output-len">Avg output length</label>
-            <select id="tok-output-len" class="aicost-select" aria-label="Average output length">
-              <option value="100">Short (~100 tokens)</option>
-              <option value="500" selected>Medium (~500 tokens)</option>
-              <option value="2000">Long (~2,000 tokens)</option>
-              <option value="8000">Very Long (~8,000 tokens)</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="aicost-card-title">Provider Comparison</h2>
-      <div class="aicost-table-wrap">
-        <table class="aicost-table" id="table-tokens">
-          <thead><tr><th>Provider</th><th>Model</th><th class="right">Input $/1M</th><th class="right">Output $/1M</th><th class="right">Monthly Est.</th><th class="right">Annual Est.</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <p class="aicost-disclaimer aicost-section-gap">Token estimates: 1 English word ≈ 1.3 tokens. Actual tokenisation varies by model. Prices from official vendor pages as of April 2026.</p>
-    </div>
-
-    {{/* ════════════════════════════════════════════════════════════════
-         TAB 3: LICENCE OPTIMIZER
+         TAB 2: LICENCE OPTIMIZER
          ════════════════════════════════════════════════════════════════ */}}
     <div class="aicost-panel" role="tabpanel" id="panel-licence" aria-labelledby="tab-btn-licence">
       <div class="aicost-card">
@@ -529,6 +472,7 @@
   {{/* ── Cross-tool CTAs (after all panels) ── */}}
   <div class="aicost-container">
     <div class="aicost-cross-tools">
+      <a href="/token-calculator/" class="aicost-cross-link">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Token Pricing Calculator</a>
       <a href="/roi-calculator/" class="aicost-cross-link">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Calculate Copilot ROI</a>
       <a href="/ai-showdown/" class="aicost-cross-link">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Compare AI Platforms</a>
       <a href="/licensing/" class="aicost-cross-link">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Understand M365 Licensing</a>
