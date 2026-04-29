@@ -1,30 +1,30 @@
 {
-  "generated": "2026-04-28T07:42:54.292618+00:00",
+  "generated": "2026-04-29T07:37:01.634108+00:00",
   "total": 52,
-  "active": 38,
-  "passed": 14,
-  "action_required": 37,
+  "active": 37,
+  "passed": 15,
+  "action_required": 36,
   "urgency": {
-    "critical": 3,
+    "critical": 2,
     "warning": 29,
     "watch": 6
   },
   "categories": {
-    "azure": 19,
     "sharepoint": 4,
+    "azure": 18,
     "windows": 6,
     "office-apps": 6,
     "exchange": 2,
     "entra": 1
   },
   "types": {
-    "retirement": 18,
+    "retirement": 17,
     "end-of-support": 20
   },
   "next_deadline": {
-    "title": "Azure Application Gateway V1 Retirement",
-    "deadline": "2026-04-28",
-    "days_remaining": 0,
+    "title": "SharePoint Online Legacy Information Management Features Retirement",
+    "deadline": "2026-04-30",
+    "days_remaining": 1,
     "urgency": "critical"
   },
   "category_meta": {
