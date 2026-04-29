@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Apr 2026 19:50:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 21:17:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[SharePoint Online] Users may be unable to view analytics for SharePoint Online sites</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1295361</link>
-      <description>[SharePoint Online] Users may be unable to view analytics for SharePoint Online sites. </description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1295361</guid>
-      <pubDate>Wed, 29 Apr 2026 18:55:16 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1293524</link>
@@ -52,6 +43,15 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1290422</guid>
       <pubDate>Fri, 24 Apr 2026 15:04:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to view analytics for SharePoint Online sites</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1295361</link>
+      <description>[SharePoint Online] Users may have been unable to view analytics for SharePoint Online sites.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1295361</guid>
+      <pubDate>Fri, 24 Apr 2026 12:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may have encountered delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submission</title>
