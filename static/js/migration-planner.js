@@ -53,127 +53,127 @@
   const QUESTIONS = [
     {
       id: 'scenario', question: 'What type of migration are you planning?',
-      tip: '💡 Choose the scenario that best matches your situation.',
+      tip: 'Choose the scenario that best matches your situation.',
       options: [
-        { value: 'onprem-cloud', emoji: '🏢', label: 'On-Premises → Cloud', desc: 'Exchange, SharePoint, file servers to M365' },
-        { value: 'tenant-tenant', emoji: '🔄', label: 'Tenant-to-Tenant', desc: 'M365 to M365 (M&A, divestiture)' },
-        { value: 'google-m365', emoji: '🔀', label: 'Google Workspace → M365', desc: 'Gmail, Drive, Groups to Microsoft 365' },
-        { value: 'hybrid', emoji: '🔗', label: 'Hybrid Setup', desc: 'Long-term on-prem + cloud coexistence' },
-        { value: 'other-source', emoji: '📦', label: 'Other Source', desc: 'Lotus Notes, Zimbra, etc.' }
+        { value: 'onprem-cloud', label: 'On-Premises → Cloud', desc: 'Exchange, SharePoint, file servers to M365' },
+        { value: 'tenant-tenant', label: 'Tenant-to-Tenant', desc: 'M365 to M365 (M&A, divestiture)' },
+        { value: 'google-m365', label: 'Google Workspace → M365', desc: 'Gmail, Drive, Groups to Microsoft 365' },
+        { value: 'hybrid', label: 'Hybrid Setup', desc: 'Long-term on-prem + cloud coexistence' },
+        { value: 'other-source', label: 'Other Source', desc: 'Lotus Notes, Zimbra, etc.' }
       ]
     },
     {
       id: 'reason', question: 'What is driving this migration?',
-      tip: '💡 This helps identify compliance and timeline risks.',
+      tip: 'This helps identify compliance and timeline risks.',
       options: [
-        { value: 'merger', emoji: '🤝', label: 'Merger / Acquisition' },
-        { value: 'divestiture', emoji: '✂️', label: 'Divestiture / Spin-off' },
-        { value: 'modernise', emoji: '🚀', label: 'Modernisation' },
-        { value: 'compliance', emoji: '📋', label: 'Compliance / Regulatory' },
-        { value: 'cost', emoji: '💰', label: 'Cost Reduction' },
-        { value: 'consolidation', emoji: '🔗', label: 'Tenant Consolidation' }
+        { value: 'merger', label: 'Merger / Acquisition' },
+        { value: 'divestiture', label: 'Divestiture / Spin-off' },
+        { value: 'modernise', label: 'Modernisation' },
+        { value: 'compliance', label: 'Compliance / Regulatory' },
+        { value: 'cost', label: 'Cost Reduction' },
+        { value: 'consolidation', label: 'Tenant Consolidation' }
       ]
     },
     {
       id: 'userCount', question: 'How many users are you migrating?',
-      tip: '💡 Include service accounts, shared mailboxes, and room mailboxes in your count.',
+      tip: 'Include service accounts, shared mailboxes, and room mailboxes in your count.',
       options: [
-        { value: 'tiny', emoji: '👤', label: 'Under 50', desc: 'Small team or startup' },
-        { value: 'small', emoji: '👥', label: '50 – 500', desc: 'Small to mid-size org' },
-        { value: 'medium', emoji: '🏢', label: '500 – 5,000', desc: 'Mid-size organisation' },
-        { value: 'large', emoji: '🏙️', label: '5,000 – 50,000', desc: 'Large enterprise' },
-        { value: 'enterprise', emoji: '🌍', label: '50,000+', desc: 'Global enterprise' }
+        { value: 'tiny', label: 'Under 50', desc: 'Small team or startup' },
+        { value: 'small', label: '50 – 500', desc: 'Small to mid-size org' },
+        { value: 'medium', label: '500 – 5,000', desc: 'Mid-size organisation' },
+        { value: 'large', label: '5,000 – 50,000', desc: 'Large enterprise' },
+        { value: 'enterprise', label: '50,000+', desc: 'Global enterprise' }
       ]
     },
     {
       id: 'workloads', question: 'Which workloads are in scope?',
-      tip: '💡 Select all that apply. More workloads = more complexity.',
+      tip: 'Select all that apply. More workloads = more complexity.',
       multi: true,
       options: D.workloads.map(w => ({ value: w.id, emoji: w.emoji, label: w.name }))
     },
     {
       id: 'dataVolume', question: 'What is your estimated total data volume?',
-      tip: '💡 Include email, SharePoint, OneDrive, and file shares. Check admin center for usage reports.',
+      tip: 'Include email, SharePoint, OneDrive, and file shares. Check admin center for usage reports.',
       options: [
-        { value: 'tiny', emoji: '📁', label: 'Under 100 GB' },
-        { value: 'small', emoji: '📂', label: '100 GB – 1 TB' },
-        { value: 'medium', emoji: '💾', label: '1 – 10 TB' },
-        { value: 'large', emoji: '🗄️', label: '10 – 50 TB' },
-        { value: 'massive', emoji: '☁️', label: '50 TB+' },
-        { value: 'unsure', emoji: '🤷', label: "I'm not sure yet" }
+        { value: 'tiny', label: 'Under 100 GB' },
+        { value: 'small', label: '100 GB – 1 TB' },
+        { value: 'medium', label: '1 – 10 TB' },
+        { value: 'large', label: '10 – 50 TB' },
+        { value: 'massive', label: '50 TB+' },
+        { value: 'unsure', label: "I'm not sure yet" }
       ]
     },
     {
       id: 'largestMailbox', question: 'What is your largest mailbox size?',
-      tip: '💡 Mailboxes over 50 GB need special handling. Check with Get-MailboxStatistics.',
+      tip: 'Mailboxes over 50 GB need special handling. Check with Get-MailboxStatistics.',
       options: [
-        { value: 'small', emoji: '📧', label: 'Under 2 GB' },
-        { value: 'medium', emoji: '📧', label: '2 – 10 GB' },
-        { value: 'large', emoji: '📧', label: '10 – 50 GB' },
-        { value: 'xlarge', emoji: '📧', label: '50 – 100 GB' },
-        { value: 'xxlarge', emoji: '📧', label: '100 GB+' },
-        { value: 'unsure', emoji: '🤷', label: "I'm not sure yet" }
+        { value: 'small', label: 'Under 2 GB' },
+        { value: 'medium', label: '2 – 10 GB' },
+        { value: 'large', label: '10 – 50 GB' },
+        { value: 'xlarge', label: '50 – 100 GB' },
+        { value: 'xxlarge', label: '100 GB+' },
+        { value: 'unsure', label: "I'm not sure yet" }
       ]
     },
     {
       id: 'customApps', question: 'How many custom apps and integrations do you have?',
-      tip: '💡 Include Power Apps, Power Automate flows, Teams apps, third-party connectors, and LOB integrations.',
+      tip: 'Include Power Apps, Power Automate flows, Teams apps, third-party connectors, and LOB integrations.',
       options: [
-        { value: 'none', emoji: '✨', label: 'None', desc: 'Standard M365 usage' },
-        { value: 'few', emoji: '🔧', label: 'A Few (< 10)', desc: 'Some custom workflows' },
-        { value: 'many', emoji: '⚙️', label: 'Many (10 – 50)', desc: 'Significant automation' },
-        { value: 'complex', emoji: '🏗️', label: 'Complex (50+)', desc: 'Heavy customisation' },
-        { value: 'unsure', emoji: '🤷', label: "I'm not sure yet" }
+        { value: 'none', label: 'None', desc: 'Standard M365 usage' },
+        { value: 'few', label: 'A Few (< 10)', desc: 'Some custom workflows' },
+        { value: 'many', label: 'Many (10 – 50)', desc: 'Significant automation' },
+        { value: 'complex', label: 'Complex (50+)', desc: 'Heavy customisation' },
+        { value: 'unsure', label: "I'm not sure yet" }
       ]
     },
     {
       id: 'compliance', question: 'What are your compliance requirements?',
-      tip: '💡 This affects data handling, retention, and legal hold strategy.',
+      tip: 'This affects data handling, retention, and legal hold strategy.',
       options: [
-        { value: 'none', emoji: '✅', label: 'Standard', desc: 'No special requirements' },
-        { value: 'basic', emoji: '📋', label: 'Basic', desc: 'DLP, basic retention' },
-        { value: 'advanced', emoji: '⚖️', label: 'Advanced', desc: 'Legal holds, eDiscovery, audit' },
-        { value: 'regulated', emoji: '🏛️', label: 'Regulated Industry', desc: 'HIPAA, SOX, GDPR, etc.' },
-        { value: 'unsure', emoji: '🤷', label: "I'm not sure yet" }
+        { value: 'none', label: 'Standard', desc: 'No special requirements' },
+        { value: 'basic', label: 'Basic', desc: 'DLP, basic retention' },
+        { value: 'advanced', label: 'Advanced', desc: 'Legal holds, eDiscovery, audit' },
+        { value: 'regulated', label: 'Regulated Industry', desc: 'HIPAA, SOX, GDPR, etc.' },
+        { value: 'unsure', label: "I'm not sure yet" }
       ]
     },
     {
       id: 'deadline', question: 'Do you have a migration deadline?',
-      tip: '💡 Deadlines affect approach selection and risk tolerance.',
+      tip: 'Deadlines affect approach selection and risk tolerance.',
       options: [
-        { value: 'none', emoji: '🕐', label: 'No Deadline', desc: 'Flexible timeline' },
-        { value: '1m', emoji: '⚡', label: '1 Month', desc: 'Urgent' },
-        { value: '3m', emoji: '📅', label: '3 Months', desc: 'Standard' },
-        { value: '6m', emoji: '📆', label: '6 Months', desc: 'Comfortable' },
-        { value: '12m', emoji: '🗓️', label: '12 Months', desc: 'Long-term' }
+        { value: 'none', label: 'No Deadline', desc: 'Flexible timeline' },
+        { value: '1m', label: '1 Month', desc: 'Urgent' },
+        { value: '3m', label: '3 Months', desc: 'Standard' },
+        { value: '6m', label: '6 Months', desc: 'Comfortable' },
+        { value: '12m', label: '12 Months', desc: 'Long-term' }
       ]
     },
     {
       id: 'multiGeo', question: 'What is your geographic scope?',
-      tip: '💡 Multi-geo and data residency requirements add complexity and cost.',
+      tip: 'Multi-geo and data residency requirements add complexity and cost.',
       options: [
-        { value: 'single', emoji: '📍', label: 'Single Region', desc: 'One country/region' },
-        { value: 'multi', emoji: '🌏', label: 'Multiple Regions', desc: 'Offices in several countries' },
-        { value: 'residency', emoji: '🏛️', label: 'Data Residency Required', desc: 'Sovereignty/regulation' }
+        { value: 'single', label: 'Single Region', desc: 'One country/region' },
+        { value: 'multi', label: 'Multiple Regions', desc: 'Offices in several countries' },
+        { value: 'residency', label: 'Data Residency Required', desc: 'Sovereignty/regulation' }
       ]
     },
     {
       id: 'directory', question: 'What is your current directory setup?',
-      tip: '💡 This determines identity migration complexity.',
+      tip: 'This determines identity migration complexity.',
       options: [
-        { value: 'onprem-ad', emoji: '🖥️', label: 'On-Prem AD Only' },
-        { value: 'hybrid', emoji: '🔗', label: 'Hybrid AD + Entra' },
-        { value: 'cloud-entra', emoji: '☁️', label: 'Cloud-Only (Entra ID)' },
-        { value: 'google', emoji: '🔀', label: 'Google Directory' }
+        { value: 'onprem-ad', label: 'On-Prem AD Only' },
+        { value: 'hybrid', label: 'Hybrid AD + Entra' },
+        { value: 'cloud-entra', label: 'Cloud-Only (Entra ID)' },
+        { value: 'google', label: 'Google Directory' }
       ]
     },
     {
       id: 'experience', question: 'What is your team\'s migration experience?',
-      tip: '💡 This helps tailor recommendations and risk assessment.',
+      tip: 'This helps tailor recommendations and risk assessment.',
       options: [
-        { value: 'first', emoji: '🌱', label: 'First Time', desc: 'Never done an M365 migration' },
-        { value: 'done-one', emoji: '✅', label: 'Done One Before', desc: 'Some experience' },
-        { value: 'experienced', emoji: '🎯', label: 'Experienced', desc: 'Multiple migrations completed' }
+        { value: 'first', label: 'First Time', desc: 'Never done an M365 migration' },
+        { value: 'done-one', label: 'Done One Before', desc: 'Some experience' },
+        { value: 'experienced', label: 'Experienced', desc: 'Multiple migrations completed' }
       ]
     }
   ];
@@ -212,9 +212,9 @@
   }
 
   function confidenceBadge() {
-    if (S.discoveryApplied) return '<span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">🟢 High — based on actual discovery data</span>';
-    if (S.confidenceLevel === 0) return '<span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">🟢 High confidence</span>';
-    if (S.confidenceLevel <= 2) return '<span style="background:rgba(234,179,8,0.15);color:#EAB308;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">🟡 Moderate — some estimates</span>';
+    if (S.discoveryApplied) return '<span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">High — based on actual discovery data</span>';
+    if (S.confidenceLevel === 0) return '<span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">High confidence</span>';
+    if (S.confidenceLevel <= 2) return '<span style="background:rgba(234,179,8,0.15);color:#EAB308;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">Moderate — some estimates</span>';
     return '<span style="background:rgba(249,115,22,0.15);color:#F97316;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.78rem;font-weight:700">🟠 Low — refine with discovery data</span>';
   }
 
@@ -287,7 +287,7 @@
   }
 
   function getTierLabel(tier) {
-    return { simple: '🟢 Simple Migration', moderate: '🟡 Moderate Migration', complex: '🟠 Complex Migration', critical: '🔴 Critical Migration' }[tier] || tier;
+    return { simple: 'Simple Migration', moderate: 'Moderate Migration', complex: '🟠 Complex Migration', critical: 'Critical Migration' }[tier] || tier;
   }
 
   function tierColor(tier) {
@@ -420,7 +420,7 @@
 
     // #10 — if hybrid approach, inject coexistence setup phase
     if (isHybrid) {
-      phases.push({ id: 'coexistence', name: 'Coexistence Setup', emoji: '🔗', description: 'Configure hybrid coexistence: cross-tenant routing, shared calendars, address book sync.', weeks: 4, milestones: ['Cross-tenant mail routing configured', 'Free/busy sharing established', 'Address book sync validated', 'Coexistence tested end-to-end'] });
+      phases.push({ id: 'coexistence', name: 'Coexistence Setup', description: 'Configure hybrid coexistence: cross-tenant routing, shared calendars, address book sync.', weeks: 4, milestones: ['Cross-tenant mail routing configured', 'Free/busy sharing established', 'Address book sync validated', 'Coexistence tested end-to-end'] });
       totalWeeks += 4;
     }
 
@@ -592,7 +592,7 @@
         if (hist.length > 0) {
           const cards = hist.slice(0, 3).map((h, i) => {
             const sc = D.scenarios.find(s => s.id === h.scenario);
-            const emoji = sc ? sc.emoji : '📦';
+            const emoji = sc ? sc.name : sc ? sc.name : 'Other';
             const name = sc ? sc.name : h.scenario;
             const date = h.savedAt ? new Date(h.savedAt).toLocaleDateString() : '';
             return `<button class="migplan-option" data-restore="${i}" style="text-align:left;padding:0.75rem 1rem">
@@ -603,7 +603,7 @@
           }).join('');
           recentPlansHtml = `
             <div style="margin-bottom:2rem;padding:1.25rem;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:12px">
-              <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.75rem">📋 Recent Plans</div>
+              <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.75rem">Recent Plans</div>
               <div style="display:flex;flex-direction:column;gap:0.5rem">${cards}</div>
             </div>`;
         }
@@ -632,7 +632,7 @@
         (SCORE_MAP.dataVolume[S.dataVolume] || 0) + Math.min((S.workloads || []).length * 2, 15) +
         (SCORE_MAP.customApps[S.customApps] || 0) + (SCORE_MAP.compliance[S.compliance] || 0) +
         (SCORE_MAP.reason[S.reason] || 0) + (SCORE_MAP.experience[S.experience] || 0);
-      const prevTier = prevScore <= 25 ? '🟢 Simple' : prevScore <= 50 ? '🟡 Moderate' : prevScore <= 75 ? '🟠 Complex' : '🔴 Critical';
+      const prevTier = prevScore <= 25 ? 'Simple' : prevScore <= 50 ? 'Moderate' : prevScore <= 75 ? '🟠 Complex' : 'Critical';
       livePreviewHtml = `
         <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:10px;padding:0.75rem 1rem;margin-bottom:1.5rem;display:flex;justify-content:space-around;text-align:center;flex-wrap:wrap;gap:0.5rem">
           <div><div style="font-size:1.2rem;font-weight:800;color:var(--accent)">${Math.min(prevScore, 100)}</div><div style="font-size:0.7rem;color:var(--text-muted)">Score so far</div></div>
@@ -660,7 +660,7 @@
           ? '<button class="migplan-btn migplan-btn-secondary" id="wizard-back">← Back</button>'
           : '<div></div>'}
         <button class="migplan-btn migplan-btn-primary" id="wizard-next" ${canNext ? '' : 'disabled'}>
-          ${isLast ? '🚀 Generate Plan' : 'Next →'}
+          ${isLast ? 'Generate Plan' : 'Next →'}
         </button>
       </div>
     `;
@@ -750,13 +750,13 @@
         <div style="text-align:center;margin:0.5rem 0">${confidenceBadge()}</div>
         <div class="migplan-score-meta">
           <span>${sc ? sc.emoji : ''} <strong>${sc ? sc.name : S.scenario}</strong></span>
-          <span>👥 <strong>${userLabel} users</strong></span>
-          <span>📦 <strong>${S.workloads.length} workloads</strong></span>
-          <span>📋 <strong>${ap ? ap.name : S.approach}</strong></span>
+          <span><strong>${userLabel} users</strong></span>
+          <span><strong>${S.workloads.length} workloads</strong></span>
+          <span><strong>${ap ? ap.name : S.approach}</strong></span>
         </div>
         <div class="migplan-score-narrative">${generateNarrative()}</div>
 
-        <button class="migplan-toggle-btn" style="margin:1rem auto;display:block;font-size:0.85rem" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score breakdown':'📊 Why this score?'">📊 Why this score?</button>
+        <button class="migplan-toggle-btn" style="margin:1rem auto;display:block;font-size:0.85rem" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score breakdown':'Why this score?'">Why this score?</button>
         <div class="migplan-toggle-content" style="max-width:400px;margin:0 auto;background:rgba(99,102,241,0.06);border-radius:10px;padding:1rem">
           <div style="font-size:0.78rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:0.5rem">Score Breakdown</div>
           ${breakdownHtml}
@@ -767,7 +767,7 @@
         </div>
 
         <div class="migplan-score-actions">
-          <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('workloads')">📊 View Workloads</button>
+          <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('workloads')">View Workloads</button>
           <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('timeline')">📅 View Timeline</button>
           <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.switchTab('summary')">📄 Executive Summary</button>
           <button class="migplan-btn migplan-btn-secondary" onclick="MIGPLAN.editAnswers()">✏️ Edit Answers</button>
@@ -790,8 +790,8 @@
 
     if (S.workloads.length > 5) parts.push(`With ${S.workloads.length} workloads in scope, a phased approach is recommended.`);
     if (S.compliance === 'regulated') parts.push('Regulated industry compliance adds constraints that must be addressed early.');
-    if (S.deadline === '1m') parts.push('⚠️ Your 1-month deadline is extremely aggressive — consider negotiating more time.');
-    if (S.deadline === '3m' && S.complexityScore > 50) parts.push('⚠️ A 3-month deadline for this complexity level will require parallel workstreams.');
+    if (S.deadline === '1m') parts.push('Your 1-month deadline is extremely aggressive — consider negotiating more time.');
+    if (S.deadline === '3m' && S.complexityScore > 50) parts.push('A 3-month deadline for this complexity level will require parallel workstreams.');
     if (S.customApps === 'complex') parts.push('Your extensive custom apps will need thorough testing and remediation.');
     if (S.reason === 'merger' || S.reason === 'divestiture') parts.push('M&A migrations often have hard deadlines — start domain transfer planning early.');
     if (S.reason === 'compliance') parts.push('Compliance-driven migrations require thorough documentation of every step.');
@@ -799,7 +799,7 @@
     if (S.experience === 'experienced') parts.push('Your experience will help, but every environment has surprises — don\'t skip the pilot phase.');
     if (S.directory === 'onprem-ad') parts.push('Your on-premises AD will need Entra Connect setup — plan this in the preparation phase.');
     if (S.directory === 'google' && S.scenario !== 'google-m365') parts.push('Your Google directory will need to be migrated to Entra ID.');
-    if (S.confidenceLevel >= 3) parts.push('⚠️ Several answers are estimated — run a discovery assessment to increase plan accuracy.');
+    if (S.confidenceLevel >= 3) parts.push('Several answers are estimated — run a discovery assessment to increase plan accuracy.');
 
     return parts.join(' ');
   }
@@ -864,11 +864,11 @@
 
       discoveryHtml = `
         <div style="margin-bottom:1.5rem">
-          <button class="migplan-toggle-btn" style="font-size:0.85rem;margin-bottom:0.75rem" id="discovery-toggle">📥 Refine with actual data${S.discoveryApplied ? ' <span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.15rem 0.5rem;border-radius:4px;font-size:0.7rem;margin-left:0.5rem">📊 Applied</span>' : ''}</button>
+          <button class="migplan-toggle-btn" style="font-size:0.85rem;margin-bottom:0.75rem" id="discovery-toggle">📥 Refine with actual data${S.discoveryApplied ? ' <span style="background:rgba(16,185,129,0.15);color:#10B981;padding:0.15rem 0.5rem;border-radius:4px;font-size:0.7rem;margin-left:0.5rem">Applied</span>' : ''}</button>
           <div class="migplan-toggle-content" id="discovery-panel" style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:12px;padding:1.25rem">
             <p style="font-size:0.82rem;color:#999;margin-bottom:1rem">Enter numbers from your discovery assessment to get more precise scores and timelines. All processing stays in your browser — nothing is sent anywhere.</p>
             ${fieldsHtml}
-            <button class="migplan-btn migplan-btn-primary" id="apply-discovery" style="margin-top:0.75rem">✅ Apply Discovery Data</button>
+            <button class="migplan-btn migplan-btn-primary" id="apply-discovery" style="margin-top:0.75rem">Apply Discovery Data</button>
           </div>
         </div>`;
     }
@@ -880,9 +880,9 @@
       const scoreLabel = score >= 70 ? 'Ready' : score >= 40 ? 'Needs Work' : 'At Risk';
       const scoreColor = score >= 70 ? '#10B981' : score >= 40 ? '#EAB308' : '#EF4444';
 
-      const migrateHtml = w.migrates.slice(0, 4).map(m => `<li>✅ ${m}</li>`).join('');
-      const noMigrateHtml = w.does_not_migrate.slice(0, 4).map(m => `<li>❌ ${m}</li>`).join('');
-      const blockerHtml = w.common_blockers.slice(0, 3).map(b => `<li>⚠️ ${b}</li>`).join('');
+      const migrateHtml = w.migrates.slice(0, 4).map(m => `<li>${m}</li>`).join('');
+      const noMigrateHtml = w.does_not_migrate.slice(0, 4).map(m => `<li>${m}</li>`).join('');
+      const blockerHtml = w.common_blockers.slice(0, 3).map(b => `<li>${b}</li>`).join('');
       const checklistHtml = (w.assessment_items || []).map(item =>
         `<li style="padding:0.3rem 0">☐ <strong>${item.label}</strong><br><span style="font-size:0.75rem;color:#777">${item.tip}</span></li>`
       ).join('');
@@ -899,7 +899,7 @@
         ).join('');
         breakdownToggle = `
           <button class="migplan-toggle-btn" style="font-size:0.78rem;margin-top:0.5rem"
-            onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score detail':'📊 Why this score?'">📊 Why this score?</button>
+            onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Hide score detail':'Why this score?'">Why this score?</button>
           <div class="migplan-toggle-content" style="background:rgba(99,102,241,0.06);border-radius:8px;padding:0.75rem;margin-top:0.25rem">
             <div style="display:flex;justify-content:space-between;padding:0.2rem 0;margin-bottom:0.3rem"><span style="font-size:0.75rem;color:var(--text-muted)">Base score</span><span style="font-size:0.75rem;font-weight:700;color:#10B981">75</span></div>
             ${bdRows}
@@ -924,7 +924,7 @@
           <button class="migplan-toggle-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ Less detail':'▼ More detail'">▼ More detail</button>
           <div class="migplan-toggle-content">
             <div style="margin-top:0.5rem">
-              <strong style="font-size:0.8rem;color:var(--accent);">📋 Discovery Checklist:</strong>
+              <strong style="font-size:0.8rem;color:var(--accent);">Discovery Checklist:</strong>
               <ul class="migplan-workload-items">${checklistHtml}</ul>
             </div>
             <div style="margin-top:0.5rem">
@@ -941,7 +941,7 @@
     }).join('');
 
     el.innerHTML = `
-      <h2 class="migplan-section-title">📊 Workload Assessment</h2>
+      <h2 class="migplan-section-title">Workload Assessment</h2>
       <p class="migplan-section-subtitle">Readiness score for each workload in your migration scope</p>
       <p class="migplan-count">Showing ${S.workloads.length} workloads</p>
       ${discoveryHtml}
@@ -1007,9 +1007,9 @@
     }).join('');
 
     const deadlineWeeks = getDeadlineWeeks();
-    let feasibility = 'feasible', feasLabel = '✅ Feasible';
-    if (S.timelineWeeks > deadlineWeeks) { feasibility = 'risky'; feasLabel = '🔴 Timeline exceeds deadline'; }
-    else if (S.timelineWeeks > deadlineWeeks * 0.8) { feasibility = 'tight'; feasLabel = '🟡 Tight — minimal buffer'; }
+    let feasibility = 'feasible', feasLabel = 'Feasible';
+    if (S.timelineWeeks > deadlineWeeks) { feasibility = 'risky'; feasLabel = 'Timeline exceeds deadline'; }
+    else if (S.timelineWeeks > deadlineWeeks * 0.8) { feasibility = 'tight'; feasLabel = 'Tight — minimal buffer'; }
 
     el.innerHTML = `
       <h2 class="migplan-section-title">📅 Estimated Timeline</h2>
@@ -1051,7 +1051,7 @@
     `).join('');
 
     el.innerHTML = `
-      <h2 class="migplan-section-title">⚠️ Risk Assessment</h2>
+      <h2 class="migplan-section-title">Risk Assessment</h2>
       <p class="migplan-section-subtitle">${S.risks.length} risks identified for your migration scenario</p>
       <div class="migplan-risk-filters">${filterHtml}</div>
       <div class="migplan-risk-grid">${cardsHtml}</div>
@@ -1085,7 +1085,7 @@
     const maxCost = thirdParty.length > 0 ? Math.max(...thirdParty.map(t => t.cost_per_user || 0)) * estUsers : 0;
     const costEstHtml = `
       <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:1.25rem;margin-bottom:1.5rem">
-        <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.5rem">💰 Estimated Tool Costs (${estUsers.toLocaleString()} users)</div>
+        <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.5rem">Estimated Tool Costs (${estUsers.toLocaleString()} users)</div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center">
           <div>
             <div style="font-size:1.3rem;font-weight:800;color:#10B981">$0</div>
@@ -1119,7 +1119,7 @@
               <div class="migplan-tool-name">${t.name}</div>
               <div class="migplan-tool-vendor">${t.vendor}</div>
             </div>
-            <span class="migplan-tool-badge ${t.type}">${t.type === 'native' ? '🟢 Native' : '🟣 3rd Party'}</span>
+            <span class="migplan-tool-badge ${t.type}">${t.type === 'native' ? 'Native' : '🟣 3rd Party'}</span>
           </div>
           <div class="migplan-tool-cost">${t.cost_model}${t.cost_per_user > 0 ? ` (~$${t.cost_per_user}/user)` : ''}</div>
           <div style="margin-bottom:0.5rem">${workloadBadges}</div>
@@ -1128,13 +1128,13 @@
             <div><ul class="migplan-tool-pros">${prosHtml}</ul></div>
             <div><ul class="migplan-tool-cons">${consHtml}</ul></div>
           </div>
-          <a class="migplan-tool-link" href="${t.url}" target="_blank" rel="noopener noreferrer">🔗 Visit tool page →</a>
+          <a class="migplan-tool-link" href="${t.url}" target="_blank" rel="noopener noreferrer">Visit tool page →</a>
         </div>
       `;
     }).join('');
 
     el.innerHTML = `
-      <h2 class="migplan-section-title">🔧 Tool Recommendations</h2>
+      <h2 class="migplan-section-title">Tool Recommendations</h2>
       <p class="migplan-section-subtitle">${relevant.length} tools matched to your scenario and workloads</p>
       ${costEstHtml}
       <div class="migplan-tool-grid">${cardsHtml}</div>
@@ -1157,10 +1157,10 @@
 
     // #13 — Decision Status
     let decisionStatus;
-    if (S.complexityScore <= 40) decisionStatus = { icon: '🟢', label: 'GO', desc: 'Low complexity, proceed with standard planning' };
-    else if (S.complexityScore <= 65) decisionStatus = { icon: '🟡', label: 'GO WITH CONDITIONS', desc: 'Engage specialist support for complex workloads' };
-    else if (S.complexityScore <= 80) decisionStatus = { icon: '🟠', label: 'CONDITIONAL', desc: 'High complexity requires experienced migration partner' };
-    else decisionStatus = { icon: '🔴', label: 'NOT RECOMMENDED', desc: 'without significant preparation' };
+    if (S.complexityScore <= 40) decisionStatus = { icon: '', label: 'GO', desc: 'Low complexity, proceed with standard planning' };
+    else if (S.complexityScore <= 65) decisionStatus = { icon: '', label: 'GO WITH CONDITIONS', desc: 'Engage specialist support for complex workloads' };
+    else if (S.complexityScore <= 80) decisionStatus = { icon: '', label: 'CONDITIONAL', desc: 'High complexity requires experienced migration partner' };
+    else decisionStatus = { icon: '', label: 'NOT RECOMMENDED', desc: 'without significant preparation' };
 
     // #13 — Budget Estimate (reuse tool costs)
     const estUsers = { tiny: 25, small: 250, medium: 2500, large: 25000, enterprise: 75000 }[S.userCount] || 1000;
@@ -1174,9 +1174,9 @@
     let feasProse = 'No deadline set — timeline is flexible.';
     if (S.deadline !== 'none') {
       const diff = S.timelineWeeks - deadlineWeeks;
-      if (diff > 0) feasProse = `🔴 Not credible — timeline exceeds deadline by ${diff} week${diff > 1 ? 's' : ''}. Reduce scope or negotiate more time.`;
-      else if (S.timelineWeeks > deadlineWeeks * 0.7) feasProse = '🟡 Feasible with parallel workstreams and aggressive scheduling.';
-      else feasProse = '✅ Feasible within the stated deadline.';
+      if (diff > 0) feasProse = `Not credible — timeline exceeds deadline by ${diff} week${diff > 1 ? 's' : ''}. Reduce scope or negotiate more time.`;
+      else if (S.timelineWeeks > deadlineWeeks * 0.7) feasProse = 'Feasible with parallel workstreams and aggressive scheduling.';
+      else feasProse = 'Feasible within the stated deadline.';
     }
 
     // #13 — Key Assumptions
@@ -1213,7 +1213,7 @@
 
     // #1 — Top risks with displaySeverity
     const topRisks = S.risks.slice(0, 5).map(r => {
-      const icon = { critical: '🔴', high: '🟠', medium: '🟡', low: '🟢' }[r.displaySeverity] || '⚪';
+      const icon = { critical: '🔴', high: '🟠', medium: '🟡', low: '🟢' }[r.displaySeverity] || '';
       return `<div style="margin-bottom:0.5rem"><span>${icon}</span> <strong style="color:#fff;font-size:0.85rem">${r.title}</strong><br><span style="font-size:0.78rem;color:#999">${r.mitigation.substring(0, 120)}...</span></div>`;
     }).join('');
 
@@ -1266,7 +1266,7 @@
 
         <!-- #13 Budget Estimate -->
         <div class="migplan-summary-section">
-          <h3>💰 Budget Estimate</h3>
+          <h3>Budget Estimate</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;margin-bottom:0.75rem">
             <div><div style="font-size:1.1rem;font-weight:800;color:#10B981">$0</div><div style="font-size:0.72rem;color:var(--text-muted)">Native only</div></div>
             <div><div style="font-size:1.1rem;font-weight:800;color:var(--accent)">$${minCost.toLocaleString()}</div><div style="font-size:0.72rem;color:var(--text-muted)">Low estimate</div></div>
@@ -1322,9 +1322,9 @@
         </div>
 
         <div class="migplan-summary-actions">
-          <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.copyMarkdown()">📋 Copy as Markdown</button>
+          <button class="migplan-btn migplan-btn-primary" onclick="MIGPLAN.copyMarkdown()">Copy as Markdown</button>
           <button class="migplan-btn migplan-btn-primary" onclick="window.print()">🖨️ Print</button>
-          <button class="migplan-btn migplan-btn-secondary" onclick="MIGPLAN.shareURL()">🔗 Share Link</button>
+          <button class="migplan-btn migplan-btn-secondary" onclick="MIGPLAN.shareURL()">Share Link</button>
           <button class="migplan-btn migplan-btn-secondary" onclick="MIGPLAN.editAnswers()">✏️ Edit Answers</button>
         </div>
 
@@ -1379,7 +1379,7 @@
 
     navigator.clipboard.writeText(md).then(() => {
       const btn = document.querySelector('.migplan-summary-actions .migplan-btn-primary');
-      if (btn) { btn.textContent = '✅ Copied!'; setTimeout(() => { btn.textContent = '📋 Copy as Markdown'; }, 2000); }
+      if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy as Markdown'; }, 2000); }
     });
     if (window.clarity) window.clarity('event', 'migplan_copy_markdown');
   }
@@ -1388,7 +1388,7 @@
     const url = window.location.href;
     navigator.clipboard.writeText(url).then(() => {
       const btn = document.querySelector('.migplan-summary-actions .migplan-btn-secondary');
-      if (btn) { btn.textContent = '✅ Link Copied!'; setTimeout(() => { btn.textContent = '🔗 Share Link'; }, 2000); }
+      if (btn) { btn.textContent = 'Link Copied!'; setTimeout(() => { btn.textContent = 'Share Link'; }, 2000); }
     });
     if (window.clarity) window.clarity('event', 'migplan_share_url');
   }

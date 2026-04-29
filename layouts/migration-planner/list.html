@@ -149,7 +149,7 @@
       <div class="zt-faq-wrap">
         <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
         {{ range $i, $q := . }}
-        <details open class="zt-faq-detail">
+        <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
           <summary class="zt-faq-summary">{{ add $i 1 }}. {{ index $q "question" }}</summary>
           <p class="zt-faq-answer">{{ index $q "answer" }}</p>
         </details>
@@ -159,19 +159,19 @@
     </div>
 
     {{/* ── Cross-tool Links ── */}}
-    <div style="margin-top:2.5rem;text-align:center;">
-      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Explore our other free tools</p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/licensing/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Licensing Simplifier</a>
-        <a href="/copilot-readiness/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Copilot Readiness</a>
-        <a href="/deprecation-timeline/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "timer" "size" 14 "stroke" 1.5) }} Deprecation Timeline</a>
-        <a href="/roi-calculator/" style="color:var(--tool-accent);font-size:0.82rem;text-decoration:none;">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} ROI Calculator</a>
+    <div class="migplan-crosslinks">
+      <p class="migplan-crosslinks-label">Explore our other free tools</p>
+      <div class="migplan-crosslinks-grid">
+        <a href="/licensing/">Licensing Simplifier</a>
+        <a href="/copilot-readiness/">Copilot Readiness</a>
+        <a href="/deprecation-timeline/">Deprecation Timeline</a>
+        <a href="/roi-calculator/">ROI Calculator</a>
       </div>
     </div>
 
     {{/* ── Disclaimer ── */}}
-    <div style="margin-top:2.5rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:10px;font-size:0.78rem;color:#777;line-height:1.6;">
-      <strong>Disclaimer:</strong> This tool provides general guidance for migration planning. Actual migration complexity, timelines, and costs depend on your specific environment. Always validate with your own testing and consider engaging Microsoft FastTrack or a certified partner for complex migrations. Tool pricing is approximate and subject to change. The views expressed are personal and do not represent Microsoft. Always refer to <a href="https://learn.microsoft.com" class="zt-accent-link">official Microsoft documentation</a> for the most up-to-date information.
+    <div class="migplan-disclaimer">
+      <strong>Disclaimer:</strong> This tool provides general guidance for migration planning. Actual migration complexity, timelines, and costs depend on your specific environment. Always validate with your own testing and consider engaging Microsoft FastTrack or a certified partner for complex migrations. Refer to <a href="https://learn.microsoft.com" class="zt-accent-link">official Microsoft documentation</a> for the most up-to-date information.
     </div>
 
   </div>{{/* end .migplan-container */}}
@@ -179,6 +179,8 @@
   <nav class="zt-nav" aria-label="Tools navigation">
     <a href="/free-tools/">← All Tools</a>
   </nav>
+
+</div>{{/* end .migplan-page */}}
 
 <script src="/js/migration-planner.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

@@ -10,18 +10,13 @@
 .migplan-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 0 var(--space-3) var(--space-8);
 }
 
 /* ---- Tabs ---- */
 .migplan-tabs {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-bottom: 2rem;
+  gap: 0; padding: 0; border-bottom: 1px solid var(--border); margin-bottom: var(--space-4); background: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -29,26 +24,12 @@
 .migplan-tabs::-webkit-scrollbar { display: none; }
 
 .migplan-tab {
-  padding: 0.6rem 1rem;
-  background: none;
-  border: 1px solid transparent;
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  border-radius: var(--radius-md, 10px);
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  padding: 8px 14px; transition: color 150ms ease-out, border-color 150ms ease-out;
   flex: 1;
   text-align: center;
 }
 .migplan-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
-.migplan-tab[aria-selected="true"] {
-  color: var(--text-primary);
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 25%, transparent);
-}
+.migplan-tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); background: none; }
 .migplan-tab:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
@@ -57,11 +38,9 @@
 
 /* ---- Tab Panels ---- */
 .migplan-panel { display: none; }
-.migplan-panel.active { display: block; animation: migplanFadeIn 0.3s ease; }
+.migplan-panel.active { display: block; animation: migplanFadeIn 150ms ease-out; }
 
-@keyframes migplanFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+
 }
 
 /* ---- Wizard ---- */
@@ -86,22 +65,22 @@
   height: 100%;
   background: var(--accent);
   border-radius: 3px;
-  transition: width 0.4s ease;
+  transition: width 300ms ease;
 }
 .migplan-wizard-step-label {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   white-space: nowrap;
 }
 
 .migplan-question {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: var(--text-body);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .migplan-question-tip {
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 1.5rem;
   line-height: 1.5;
@@ -117,12 +96,12 @@
 .migplan-option {
   background: var(--accent-subtle);
   border: 1.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: var(--radius-sm);
+  padding: 8px;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   text-align: center;
 }
 .migplan-option:hover {
@@ -134,20 +113,20 @@
   background: color-mix(in srgb, var(--accent) 25%, transparent);
   border-color: var(--accent);
   color: var(--text-primary);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 25%, transparent);
+  
 }
 .migplan-option:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .migplan-option-emoji {
-  font-size: 1.5rem;
+  font-size: 0; display: none;
   display: block;
   margin-bottom: 0.4rem;
 }
 .migplan-option-label { font-weight: 600; }
 .migplan-option-desc {
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-top: 0.3rem;
 }
@@ -156,7 +135,7 @@
 .migplan-option.multi-select.selected::before {
   content: "✓ ";
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .migplan-wizard-nav {
@@ -166,13 +145,13 @@
   margin-top: 1rem;
 }
 .migplan-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 5px 14px;
   border-radius: var(--radius-md, 10px);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
 }
 .migplan-btn-primary {
   background: var(--accent);
@@ -193,26 +172,26 @@
 /* ---- Complexity Score ---- */
 .migplan-score-card {
   text-align: center;
-  padding: 2.5rem 2rem;
+  padding: var(--space-4) var(--space-3);
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   margin-bottom: 2rem;
 }
 .migplan-score-number {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
   margin-bottom: 0.2rem;
 }
 .migplan-score-label {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 .migplan-score-tier {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 .migplan-score-tier.simple { color: var(--accent); }
@@ -225,7 +204,7 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-top: 1rem;
 }
@@ -233,7 +212,7 @@
 .migplan-score-meta strong { color: var(--text-primary); }
 
 .migplan-score-narrative {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-top: 1.25rem;
@@ -275,15 +254,15 @@
   margin-bottom: 0.75rem;
 }
 .migplan-workload-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .migplan-workload-score-badge {
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
 }
 .migplan-workload-bar {
   height: 6px;
@@ -303,7 +282,7 @@
   margin: 0;
 }
 .migplan-workload-items li {
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   padding: 0.3rem 0;
   border-bottom: 1px solid var(--border);
@@ -315,7 +294,7 @@
   background: none;
   border: none;
   color: var(--accent);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   cursor: pointer;
   padding: 0.3rem 0;
   margin-top: 0.5rem;
@@ -364,17 +343,17 @@
   margin-bottom: 0.5rem;
 }
 .migplan-phase-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .migplan-phase-duration {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--accent);
   font-weight: 600;
 }
 .migplan-phase-desc {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 0.75rem;
   line-height: 1.5;
@@ -393,7 +372,7 @@
   display: flex;
   align-items: center;
   padding-left: 0.5rem;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-primary);
   font-weight: 600;
   transition: width 0.6s ease;
@@ -404,7 +383,7 @@
   margin: 0;
 }
 .migplan-milestones li {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   padding: 0.2rem 0;
 }
@@ -418,16 +397,16 @@
   padding: 1.5rem;
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   margin-top: 1.5rem;
 }
 .migplan-timeline-total-label {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .migplan-timeline-total-value {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
 }
 .migplan-timeline-feasibility {
@@ -435,8 +414,8 @@
   margin-top: 0.5rem;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-lg, 16px);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
 }
 .migplan-timeline-feasibility.feasible { background: rgba(16,185,129,0.15); color: var(--accent); }
 .migplan-timeline-feasibility.tight { background: rgba(234,179,8,0.15); color: var(--text-primary); }
@@ -450,7 +429,7 @@
 }
 .migplan-risk-card {
   background: var(--bg-elevated);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.25rem;
   border-left: 4px solid;
   transition: transform 0.15s;
@@ -463,7 +442,7 @@
 
 .migplan-risk-severity {
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.3rem;
@@ -475,18 +454,18 @@
 
 .migplan-risk-title {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
 }
 .migplan-risk-desc {
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 0.75rem;
 }
 .migplan-risk-mitigation {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   background: var(--accent-subtle);
   padding: 0.6rem 0.8rem;
@@ -504,7 +483,7 @@
 .migplan-risk-link {
   display: inline-block;
   margin-top: 0.5rem;
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   color: var(--accent);
   text-decoration: none;
 }
@@ -519,13 +498,13 @@
 .migplan-filter-chip {
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-lg, 16px);
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   cursor: pointer;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-muted);
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
 }
 .migplan-filter-chip:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
 .migplan-filter-chip.active {
@@ -543,7 +522,7 @@
 .migplan-tool-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.25rem;
 }
 .migplan-tool-header {
@@ -553,26 +532,26 @@
   margin-bottom: 0.75rem;
 }
 .migplan-tool-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .migplan-tool-vendor {
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .migplan-tool-badge {
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
 }
 .migplan-tool-badge.native { background: rgba(16,185,129,0.15); color: var(--accent); }
 .migplan-tool-badge.third-party { background: var(--accent-subtle); color: var(--accent); }
 
 .migplan-tool-cost {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -583,7 +562,7 @@
   margin: 0 0 0.5rem 0;
 }
 .migplan-tool-pros li, .migplan-tool-cons li {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   padding: 0.2rem 0;
 }
 .migplan-tool-pros li::before { content: "✅ "; }
@@ -592,7 +571,7 @@
 .migplan-tool-link {
   display: inline-block;
   margin-top: 0.5rem;
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--accent);
   text-decoration: none;
 }
@@ -607,8 +586,8 @@
   margin-bottom: 2rem;
 }
 .migplan-summary-section h3 {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.75rem;
   padding-bottom: 0.4rem;
@@ -621,17 +600,17 @@
 }
 .migplan-summary-stat {
   background: var(--accent-subtle);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1rem;
   text-align: center;
 }
 .migplan-summary-stat-value {
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
 }
 .migplan-summary-stat-label {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-top: 0.2rem;
 }
@@ -655,7 +634,7 @@
   opacity: 0.5;
 }
 .migplan-empty-text {
-  font-size: 1rem;
+  font-size: var(--text-sm);
   margin-bottom: 1rem;
 }
 .migplan-empty-cta {
@@ -670,18 +649,18 @@
 
 /* ---- Utility ---- */
 .migplan-section-title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--text-body);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .migplan-section-subtitle {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 .migplan-count {
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
@@ -691,8 +670,8 @@
   display: inline-block;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-lg, 16px);
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
   margin-top: 0.5rem;
 }
 .migplan-confidence.high { background: rgba(16,185,129,0.15); color: var(--accent); }
@@ -702,9 +681,9 @@
 /* ---- Decision Status Banner ---- */
 .migplan-decision {
   padding: 1rem 1.25rem;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
   text-align: center;
 }
@@ -713,7 +692,7 @@
 .migplan-decision.conditional { background: var(--accent-subtle); border: 1px solid var(--accent-subtle); color: var(--text-primary); }
 .migplan-decision.not-recommended { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--text-primary); }
 .migplan-decision-subtitle {
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   font-weight: 400;
   color: var(--text-muted);
   margin-top: 0.3rem;
@@ -723,7 +702,7 @@
 .migplan-discovery {
   background: var(--accent-subtle);
   border: 1px solid var(--accent-subtle);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -734,17 +713,17 @@
   cursor: pointer;
 }
 .migplan-discovery-title {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--accent);
 }
 .migplan-discovery-badge {
   font-size: 0.72rem;
   padding: 0.2rem 0.5rem;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: rgba(16,185,129,0.15);
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 .migplan-discovery-content {
   display: none;
@@ -758,7 +737,7 @@
 }
 .migplan-discovery-workload:last-child { border: none; }
 .migplan-discovery-workload h4 {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
@@ -773,7 +752,7 @@
   gap: 0.2rem;
 }
 .migplan-discovery-field label {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 .migplan-discovery-field input {
@@ -782,7 +761,7 @@
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   width: 100%;
 }
 .migplan-discovery-field input:focus {
@@ -796,7 +775,7 @@
   margin-bottom: 1.5rem;
 }
 .migplan-recent-title {
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
@@ -811,7 +790,7 @@
   border-radius: var(--radius-md, 10px);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   flex: 1;
   min-width: 150px;
 }
@@ -820,11 +799,11 @@
   background: var(--accent-subtle);
 }
 .migplan-recent-card-score {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: var(--text-body);
+  font-weight: 600;
 }
 .migplan-recent-card-label {
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
 }
 
@@ -834,7 +813,7 @@
   padding: 0;
 }
 .migplan-assumptions li {
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   padding: 0.25rem 0;
 }
@@ -846,7 +825,7 @@
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   .migplan-tabs { gap: 0; }
-  .migplan-tab { padding: 0.6rem 0.7rem; font-size: 0.78rem; }
+  .migplan-tab { padding: 0.6rem 0.7rem; font-size: var(--text-caption); }
   .migplan-options { grid-template-columns: 1fr 1fr; }
   .migplan-workload-grid { grid-template-columns: 1fr; }
   .migplan-risk-grid { grid-template-columns: 1fr; }
@@ -869,8 +848,24 @@
 
 /* ---- Reduced Motion ---- */
 @media (prefers-reduced-motion: reduce) {
-  .migplan-panel.active { animation: none; }
   .migplan-workload-bar-fill,
   .migplan-phase-bar-fill,
   .migplan-wizard-progress-fill { transition: none; }
 }
+
+/* ---- Disclaimer ---- */
+.migplan-disclaimer {
+  margin-top: var(--space-6); padding: 8px 14px;
+  background: color-mix(in srgb, var(--warning) 6%, var(--bg-surface));
+  border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);
+  border-radius: var(--radius-md); font-size: var(--text-caption);
+  color: var(--text-secondary); line-height: 1.5;
+}
+.migplan-disclaimer a { color: var(--accent); }
+
+/* ---- Cross-links ---- */
+.migplan-crosslinks { margin-top: var(--space-6); text-align: center; }
+.migplan-crosslinks-label { font-size: var(--text-caption); color: var(--text-tertiary); margin-bottom: var(--space-2); }
+.migplan-crosslinks-grid { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; }
+.migplan-crosslinks-grid a { color: var(--accent); font-size: var(--text-caption); text-decoration: none; }
+.migplan-crosslinks-grid a:hover { text-decoration: underline; }
