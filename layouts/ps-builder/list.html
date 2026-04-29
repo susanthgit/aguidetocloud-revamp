@@ -35,21 +35,27 @@
 
     {{/* ── TAB NAVIGATION ── */}}
     <div class="psb-tabs" role="tablist" aria-label="PowerShell Builder sections">
-      <button class="psb-tab active" role="tab" aria-selected="true" aria-controls="psb-panel-recipes" data-tab="recipes">Recipes</button>
-      <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-build" data-tab="build">Build</button>
+      <button class="psb-tab active" role="tab" aria-selected="true" aria-controls="psb-panel-build" data-tab="build">Build</button>
+      <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-recipes" data-tab="recipes">Recipes</button>
       <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-reference" data-tab="reference">Reference</button>
       <button class="psb-tab" role="tab" aria-selected="false" aria-controls="psb-panel-faq" data-tab="faq">FAQ</button>
     </div>
 
     {{/* ── RECIPES TAB ── */}}
-    <div class="psb-panel active" id="psb-panel-recipes" role="tabpanel">
+    <div class="psb-panel" id="psb-panel-recipes" role="tabpanel" hidden>
+      {{/* Service picker — "What are you managing?" */}}
+      <div class="psb-service-picker" id="psb-service-picker">
+        <p class="psb-service-label">Show recipes for:</p>
+        <div class="psb-service-grid" id="psb-service-grid"></div>
+      </div>
+
       <div class="psb-recipes-header">
 
         {{/* Search + filters + quick-start in one row using dropdowns */}}
         <div class="psb-search-filter-row">
           <input type="text" id="psb-recipe-search" class="psb-search" placeholder="Search recipes... (e.g. 'shared mailbox', 'firewall')" aria-label="Search recipes">
           <select id="psb-quick-select" class="psb-filter-select" aria-label="Most common tasks">
-            <option value="">🔥 Common Tasks</option>
+            <option value="">Common Tasks</option>
             {{/* Options populated by JS */}}
           </select>
           <select id="psb-service-select" class="psb-filter-select" aria-label="Filter by service">
@@ -78,7 +84,7 @@
     </div>
 
     {{/* ── BUILD TAB ── */}}
-    <div class="psb-panel" id="psb-panel-build" role="tabpanel" hidden>
+    <div class="psb-panel active" id="psb-panel-build" role="tabpanel">
       <h2 class="psb-section-title">Build a Command</h2>
 
       {{/* Module categories */}}
@@ -88,7 +94,7 @@
           <button class="psb-pill-sm active" data-cat="all">All</button>
           <button class="psb-pill-sm" data-cat="cloud">{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Cloud</button>
           <button class="psb-pill-sm" data-cat="onprem">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} On-Prem</button>
-          <button class="psb-pill-sm" data-cat="windows">🖥️ Windows</button>
+          <button class="psb-pill-sm" data-cat="windows">Windows</button>
         </div>
         <div class="psb-module-grid" id="psb-module-grid"></div>
         <div class="psb-module-info" id="psb-module-info" hidden></div>
@@ -150,9 +156,9 @@
         <h2 class="psb-section-title">Frequently Asked Questions</h2>
         <div class="psb-faq-list">
           {{ range $i, $faq := . }}
-          <details class="psb-faq-item" open>
-            <summary class="psb-faq-q">{{ $faq.question }}</summary>
-            <p class="psb-faq-a">{{ $faq.answer }}</p>
+          <details class="zt-faq-detail"{{ if eq $i 0 }} open{{ end }}>
+            <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $faq.question }}</summary>
+            <p class="zt-faq-answer">{{ $faq.answer }}</p>
           </details>
           {{ end }}
         </div>

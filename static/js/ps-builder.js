@@ -40,7 +40,7 @@
   };
 
   const S = {
-    activeTab: 'recipes',
+    activeTab: 'build',
     selectedModule: null,
     selectedCmdlet: null,
     recipeFilter: 'all',
@@ -73,7 +73,7 @@
   }
 
   function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => toast('✅ Copied to clipboard!'));
+    navigator.clipboard.writeText(text).then(() => toast('Copied to clipboard!'));
   }
 
   function downloadPS1(text, filename) {
@@ -83,7 +83,7 @@
     a.download = filename || 'command.ps1';
     a.click();
     URL.revokeObjectURL(a.href);
-    toast('💾 Downloaded!');
+    toast('Downloaded!');
   }
 
   function timeAgo(ts) {
@@ -243,7 +243,7 @@
         const mod = moduleById(r.module);
         const opt = document.createElement('option');
         opt.value = r.id;
-        opt.textContent = (mod ? mod.emoji + ' ' : '') + r.title + (r.fav ? ' ⭐' : '');
+        opt.textContent = (mod ? '' : '') + r.title + (r.fav ? ' ⭐' : '');
         quickSelect.appendChild(opt);
       });
       // Add surprise option
@@ -283,7 +283,7 @@
       const mod = D.modules.find(m => m.display_name === svc);
       const opt = document.createElement('option');
       opt.value = svc;
-      opt.textContent = (mod ? mod.emoji + ' ' : '') + svc + ` (${counts[svc]})`;
+      opt.textContent = (mod ? '' : '') + svc + ` (${counts[svc]})`;
       select.appendChild(opt);
     });
   }
@@ -350,7 +350,7 @@
       filtered.forEach(r => { (byService[r.service] = byService[r.service] || []).push(r); });
       grid.innerHTML = Object.keys(byService).sort().map(svc => {
         const mod = D.modules.find(m => m.display_name === svc);
-        return `<div class="psb-group-header">${mod ? mod.emoji + ' ' : ''}${esc(svc)} <span class="psb-group-count">(${byService[svc].length})</span></div>
+        return `<div class="psb-group-header">${mod ? '' : ''}${esc(svc)} <span class="psb-group-count">(${byService[svc].length})</span></div>
         ${byService[svc].map(r => renderRecipeCard(r, q)).join('')}`;
       }).join('');
     } else {
@@ -374,7 +374,7 @@
 
     // C3 — Common mistakes
     const mistake = COMMON_MISTAKES[r.id];
-    const mistakeHTML = mistake ? `<div class="psb-recipe-mistake">⚠️ <strong>Common mistake:</strong> ${esc(mistake)}</div>` : '';
+    const mistakeHTML = mistake ? `<div class="psb-recipe-mistake"><strong>Common mistake:</strong> ${esc(mistake)}</div>` : '';
 
     // C1 — Pipeline breakdown
     const breakdownHTML = pipelineBreakdown(r.command);
@@ -410,7 +410,7 @@
         <span class="psb-recipe-title">${title}</span>
         <div class="psb-recipe-badges">
           ${newBadge}
-          <span class="psb-badge psb-badge-service">${mod ? mod.emoji + ' ' : ''}${esc(r.service)}</span>
+          <span class="psb-badge psb-badge-service">${mod ? '' : ''}${esc(r.service)}</span>
           <span class="psb-badge psb-badge-${r.difficulty}">${r.difficulty}</span>
         </div>
         <span class="psb-recipe-chevron">${isExpanded ? '▾' : '▸'}</span>
@@ -428,11 +428,11 @@
         ${r.prerequisites ? `<div class="psb-recipe-prereq"><strong>Prerequisites:</strong> ${esc(r.prerequisites)}</div>` : ''}
         ${relatedHTML}
         <div class="psb-recipe-actions">
-          <button class="psb-btn-copy" data-recipe-id="${r.id}">📋 Copy</button>
-          <button class="psb-btn-copy" data-recipe-id="${r.id}" data-with-prereqs="1">📋 + Prerequisites</button>
-          <button class="psb-btn-download" data-recipe-id="${r.id}">💾 .ps1</button>
-          <button class="psb-btn-secondary psb-share-recipe-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔗 Share</button>
-          <button class="psb-btn-secondary psb-customise-btn" data-recipe-id="${r.id}" style="font-size:0.8rem;padding:0.4rem 0.8rem;">🔧 Customise →</button>
+          <button class="psb-btn-copy" data-recipe-id="${r.id}">Copy</button>
+          <button class="psb-btn-copy" data-recipe-id="${r.id}" data-with-prereqs="1">+ Prerequisites</button>
+          <button class="psb-btn-download" data-recipe-id="${r.id}">.ps1</button>
+          <button class="psb-btn-secondary psb-share-recipe-btn" data-recipe-id="${r.id}">Share</button>
+          <button class="psb-btn-secondary psb-customise-btn" data-recipe-id="${r.id}">Customise →</button>
         </div>
       </div>
     </div>
@@ -449,9 +449,7 @@
 
     grid.innerHTML = filtered.map(m => `
       <div class="psb-module-card${S.selectedModule === m.id ? ' active' : ''}" data-module="${m.id}" tabindex="0" role="button">
-        <span class="psb-module-emoji">${m.emoji}</span>
         <div class="psb-module-name">${esc(m.display_name)}</div>
-        <div class="psb-module-desc">${esc(m.description).substring(0, 60)}…</div>
       </div>
     `).join('');
   }
@@ -465,7 +463,7 @@
     const info = $('#psb-module-info');
     info.hidden = false;
 
-    let html = `<div class="psb-module-info-title">${mod.emoji} ${esc(mod.display_name)} — Setup</div>`;
+    let html = `<div class="psb-module-info-title">${esc(mod.display_name)} — Setup</div>`;
     if (mod.install_command) {
       html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Install:</span><code class="psb-module-info-value">${esc(mod.install_command)}</code></div>`;
     }
@@ -476,7 +474,7 @@
       html += `<div class="psb-module-info-row"><span class="psb-module-info-label">Docs:</span><a href="${mod.learn_url}" target="_blank" rel="noopener" class="psb-module-info-link">Microsoft Learn ↗</a></div>`;
     }
     if (mod.install_note) {
-      html += `<div class="psb-module-info-note">💡 ${esc(mod.install_note)}</div>`;
+      html += `<div class="psb-module-info-note">${esc(mod.install_note)}</div>`;
     }
     info.innerHTML = html;
 
@@ -625,7 +623,7 @@
       return `
         <div class="psb-ref-module${q ? ' open' : ''}">
           <div class="psb-ref-module-header">
-            <span class="psb-module-emoji" style="font-size:1.2rem;margin:0">${mod.emoji}</span>
+            <span>${esc(mod.display_name)}</span>
             <span class="psb-ref-module-title">${esc(mod.display_name)}</span>
             <span class="psb-ref-module-count">${cmdlets.length} cmdlets</span>
             <span class="psb-ref-module-arrow">▸</span>
@@ -958,6 +956,43 @@
   /* ═══════ #20 — PRINT STYLES ═══════ */
   // Print is handled via CSS @media print in the stylesheet
 
+  /* ═══════ SERVICE PICKER ═══════ */
+  function buildServicePicker() {
+    const grid = $('#psb-service-grid');
+    if (!grid) return;
+    const serviceSet = {};
+    D.recipes.forEach(r => { if (r.service) serviceSet[r.service] = (serviceSet[r.service] || 0) + 1; });
+    const sorted = Object.entries(serviceSet).sort((a, b) => b[1] - a[1]);
+    let html = '';
+    sorted.forEach(([svc, count]) => {
+      html += '<button class="psb-service-card" data-service="' + esc(svc) + '">' +
+        '<strong>' + esc(svc) + '</strong>' +
+        '<span class="psb-service-count">' + count + ' recipes</span>' +
+      '</button>';
+    });
+    html += '<button class="psb-service-card psb-service-card--all" data-service="all">' +
+      '<strong>All Recipes</strong>' +
+      '<span class="psb-service-count">' + D.recipes.length + ' total</span>' +
+    '</button>';
+    grid.innerHTML = html;
+    grid.querySelectorAll('.psb-service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        S.recipeFilter = card.dataset.service;
+        const svcSelect = $('#psb-service-select');
+        if (svcSelect) svcSelect.value = S.recipeFilter;
+        renderRecipes();
+        updateServicePickerState();
+      });
+    });
+  }
+  function updateServicePickerState() {
+    const grid = $('#psb-service-grid');
+    if (!grid) return;
+    grid.querySelectorAll('.psb-service-card').forEach(card => {
+      card.classList.toggle('active', card.dataset.service === S.recipeFilter);
+    });
+  }
+
   /* ═══════ INIT ═══════ */
   function init() {
     readURL();
@@ -968,7 +1003,11 @@
     renderStats();
     renderQuickStart();
     renderRecipeFilters();
+    buildServicePicker();
+    // Auto-select Exchange Online in Recipes for instant value
+    S.recipeFilter = 'Exchange Online';
     renderRecipes();
+    updateServicePickerState();
     renderModuleGrid();
     renderReference();
     renderHistory();
@@ -984,6 +1023,9 @@
     if (S.selectedModule) {
       selectModule(S.selectedModule);
       if (S.selectedCmdlet) setTimeout(() => selectCmdlet(S.selectedCmdlet), 50);
+    } else {
+      // Auto-select first module (Exchange Online) for instant value
+      if (D.modules && D.modules.length) selectModule(D.modules[0].id);
     }
 
     // #19 — Auto-expand and scroll to deep-linked recipe
