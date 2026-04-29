@@ -63,9 +63,9 @@
 
       html += `<div class="lic-category" id="cat-${cat.id}" style="--cat-accent:${accent}">`;
       html += `<div class="lic-category-header">
-        <h2 class="lic-category-toggle" data-cat="${cat.id}">${cat.emoji} ${esc(cat.name)} <span style="color:#475569;font-size:0.85rem;font-weight:400;">(${catPlans.length})</span></h2>`;
+        <h2 class="lic-category-toggle" data-cat="${cat.id}">${esc(cat.name)} <span class="lic-category-count">${catPlans.length}</span></h2>`;
       if (cat.m365maps_all) {
-        html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener noreferrer">🗺️ View all on M365 Maps →</a>`;
+        html += `<a class="lic-category-link" href="${cat.m365maps_all}" target="_blank" rel="noopener noreferrer">M365 Maps →</a>`;
       }
       html += `</div>`;
       html += `<p class="lic-category-desc">${esc(cat.description)}</p>`;
@@ -130,13 +130,13 @@
     // Build action buttons
     let actions = '';
     if (plan.detail_url) {
-      actions += `<a class="lic-btn lic-btn-primary" href="${plan.detail_url}">📖 View Details</a>`;
+      actions += `<a class="lic-btn lic-btn-primary" href="${plan.detail_url}">Details</a>`;
     }
     if (plan.m365maps) {
-      actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener noreferrer">🗺️ M365 Maps</a>`;
+      actions += `<a class="lic-btn" href="${plan.m365maps}" target="_blank" rel="noopener noreferrer">M365 Maps</a>`;
     }
     if (plan.ms_official) {
-      actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener noreferrer">📄 Microsoft</a>`;
+      actions += `<a class="lic-btn" href="${plan.ms_official}" target="_blank" rel="noopener noreferrer">Microsoft</a>`;
     }
 
     return `
@@ -153,8 +153,7 @@
         <div class="lic-card-price">${priceDisplay}${noteHtml}</div>
       </div>
       <p class="lic-card-tagline">${esc(plan.tagline)}</p>
-      <p class="lic-card-who">${esc(plan.who)}</p>
-      ${featHtml}
+      ${featHtml ? `<details class="lic-card-feat-details"><summary>Key features</summary>${featHtml}</details>` : ''}
       <div class="lic-card-actions">${actions}</div>
     </div>`;
   }
@@ -229,7 +228,7 @@
 
     // Show share link
     const shareHtml = `<div style="margin-top:1rem;text-align:center;">
-      <button class="lic-btn" id="lic-share-compare" style="font-size:0.8rem;">🔗 Copy Share Link</button>
+      <button class="lic-btn" id="lic-share-compare" style="font-size:0.8rem;">Copy Share Link</button>
     </div>`;
     const existingShare = $('#lic-share-compare');
     if (!existingShare) {
@@ -238,8 +237,8 @@
         const btn = $('#lic-share-compare');
         if (btn) btn.addEventListener('click', () => {
           navigator.clipboard.writeText(url.toString()).then(() => {
-            btn.textContent = '✅ Link copied!';
-            setTimeout(() => { btn.textContent = '🔗 Copy Share Link'; }, 2000);
+            btn.textContent = 'Link copied!';
+            setTimeout(() => { btn.textContent = 'Copy Share Link'; }, 2000);
           });
         });
       }, 50);
@@ -413,7 +412,7 @@
       if (topPlan && topPlan.id !== 'm365-e7' && !topPlan.features?.includes('copilot-full')) {
         html += `
         <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:1.2rem;margin-top:1rem;">
-          <strong style="color:#F43F5E;">💡 Copilot Add-on Recommended</strong>
+          <strong style="color:#F43F5E;">Copilot Add-on Recommended</strong>
           <p style="color:#94a3b8;font-size:0.9rem;margin:0.4rem 0 0;">Since you want Copilot, add the <strong>Microsoft 365 Copilot</strong> add-on ($30/user/month) to your plan. Or consider <strong>Microsoft 365 E7</strong> ($99/user/month) which includes Copilot built in.</p>
         </div>`;
       }
@@ -701,6 +700,12 @@
       const planId = select.value;
       renderAddonsResults(planId);
     });
+
+    // Pre-select M365 E3
+    if (select) {
+      select.value = 'm365-e3';
+      renderAddonsResults('m365-e3');
+    }
   }
 
   function renderAddonsResults(planId) {
@@ -719,7 +724,7 @@
 
     // What's already included
     html += '<div style="margin-bottom:1.5rem;">';
-    html += '<h3 style="color:#22c55e;font-size:1rem;margin-bottom:0.6rem;">✅ Already included in ' + plan.name + '</h3>';
+    html += '<h3 style="color:#22c55e;font-size:1rem;margin-bottom:0.6rem;">Already included in ' + plan.name + '</h3>';
     html += '<div style="display:flex;flex-wrap:wrap;gap:0.4rem;">';
     data.has.forEach(item => {
       html += `<span style="padding:0.25rem 0.6rem;border-radius:99px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;font-size:0.78rem;">${item}</span>`;
@@ -748,7 +753,7 @@
     if (data.upgrade) {
       const u = data.upgrade;
       html += `<div class="lic-addons-upgrade">
-        <strong>💡 Consider upgrading to ${u.plan} ($${u.price}/mo)</strong>
+        <strong>Consider upgrading to ${u.plan} ($${u.price}/mo)</strong>
         <p>${u.note}</p>
         <a href="${planMap[u.id]?.detail_url || '/licensing/'}" class="lic-btn lic-btn-primary" style="margin-top:0.5rem;">View ${u.plan} Details →</a>
       </div>`;
@@ -771,8 +776,13 @@
     if (copyBtn) copyBtn.addEventListener('click', copyCalcSummary);
     if (resetBtn) resetBtn.addEventListener('click', resetCalc);
 
-    // Start with one empty row
-    addCalcRow();
+    // Pre-populate with typical enterprise mix
+    addCalcRow('m365-e3');
+    const firstInput = document.querySelector('.lic-calc-users');
+    if (firstInput) { firstInput.value = 100; firstInput.dispatchEvent(new Event('input')); }
+    addCalcRow('m365-e5');
+    const inputs = document.querySelectorAll('.lic-calc-users');
+    if (inputs[1]) { inputs[1].value = 20; inputs[1].dispatchEvent(new Event('input')); }
   }
 
   function addCalcRow(preselectedId) {
@@ -787,7 +797,7 @@
     categories.forEach(cat => {
       const catPlans = plans.filter(p => p.category === cat.id && p.price > 0);
       if (!catPlans.length) return;
-      options += `<optgroup label="${cat.emoji} ${cat.name}">`;
+      options += `<optgroup label="${cat.name}">`;
       catPlans.sort((a, b) => b.price - a.price);
       catPlans.forEach(p => {
         const sel = (p.id === preselectedId) ? ' selected' : '';
@@ -897,7 +907,7 @@
     if (julyNote) {
       html += `
       <div class="lic-calc-impact">
-        <div class="lic-calc-impact-title">⚠️ July 2026 Price Changes</div>
+        <div class="lic-calc-impact-title">July 2026 Price Changes</div>
         <p class="lic-calc-impact-detail">Some of your selected plans have price increases effective July 1, 2026. The prices shown above reflect the new pricing. Check the <a href="/licensing/#changelog" style="color:var(--lic-accent);">changelog</a> for details on what changed.</p>
       </div>`;
     }
@@ -928,7 +938,7 @@
 
     navigator.clipboard.writeText(text).then(() => {
       const btn = $('#lic-calc-copy');
-      if (btn) { btn.textContent = '✅ Copied!'; setTimeout(() => { btn.textContent = '📋 Copy Summary'; }, 2000); }
+      if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy Summary'; }, 2000); }
     });
   }
 

@@ -16,8 +16,8 @@
   }
 .lic-hero h1  {
     font-family: var(--font-heading);
-  font-size: var(--text-display, 2.5rem);
-  font-weight: 800;
+  font-size: var(--text-h1);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
   letter-spacing: -0.5px;
@@ -27,11 +27,11 @@
   /* z5-removed: text glow */}
 .lic-hero-subtitle  {
     color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: var(--text-body);
   margin-bottom: 0.5rem;
   }
 .lic-hero-meta  {
-    font-size: 0.85rem;
+    font-size: var(--text-caption);
   color: var(--text-tertiary);
   }
 .lic-hero-meta a  {
@@ -47,7 +47,7 @@
   margin-bottom: 1.2rem;
   }
 .lic-hero-stats  {
-    font-size: 1rem;
+    font-size: var(--text-sm);
   font-weight: 600;
   color: var(--lic-accent);
   margin-bottom: 0.2rem;
@@ -65,7 +65,7 @@
   border: 1px solid var(--border);
   background: var(--bg-elevated, 0.55);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: var(--text-sm);
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   }
@@ -80,7 +80,7 @@
   left: 0.8rem;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1rem;
+  font-size: var(--text-sm);
   pointer-events: none;
   }
 .lic-search-results  {
@@ -116,16 +116,16 @@
 .lic-search-result-name  {
    color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   }
 .lic-search-result-cat  {
    color: var(--text-tertiary);
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   }
 .lic-search-result-price  {
    color: var(--lic-accent);
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: var(--text-sm);
   }
 /* ── QUICK COMPARE PRESETS ─────────────────── */.lic-presets  {
     display: flex;
@@ -138,12 +138,12 @@
   padding: 0.8rem 1rem;
   background: var(--bg-elevated, 0.5);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   }
 .lic-presets-label  {
     color: var(--lic-accent);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
   }
 .lic-preset-btn  {
     padding: 0.4rem 0.9rem;
@@ -151,17 +151,17 @@
   border: 1px solid var(--lic-accent-border);
   background: var(--lic-accent-subtle);
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   white-space: nowrap;
   }
 .lic-preset-btn:hover  {
     border-color: var(--lic-accent);
   color: var(--text-primary);
   background: var(--lic-accent);
-  transform: translateY(-1px);
+  
   }
 /* ── COLLAPSIBLE CATEGORIES ────────────────── */.lic-category-toggle  {
     cursor: pointer;
@@ -169,7 +169,7 @@
   }
 .lic-category-toggle::after  {
     content: ' ▾';
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   transition: transform 0.2s;
   }
@@ -200,7 +200,7 @@
   }
 .lic-calc-intro p  {
    color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   }
 .lic-calc-intro strong  {
    color: var(--lic-accent);
@@ -214,7 +214,7 @@
   margin-bottom: 0.5rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border-emphasis);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   transition: border-color 0.2s;
   }
 .lic-calc-row:hover  {
@@ -226,7 +226,7 @@
   border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   padding: 0.5rem 0.8rem;
-  font-size: 0.88rem;
+  font-size: var(--text-sm);
   width: 100%;
   cursor: pointer;
   }
@@ -240,7 +240,7 @@
   border-radius: var(--radius-md, 10px);
   color: var(--text-primary);
   padding: 0.5rem 0.6rem;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   width: 100%;
   text-align: center;
   }
@@ -250,8 +250,8 @@
   }
 .lic-calc-line-cost  {
     color: var(--lic-accent);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: var(--text-sm);
   text-align: right;
   white-space: nowrap;
   }
@@ -277,7 +277,7 @@
   border-style: dashed;
   border-color: var(--border);
   color: var(--text-tertiary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   }
 #lic-calc-add:hover  {
    border-color: var(--lic-accent);
@@ -286,7 +286,7 @@
 /* Totals card */.lic-calc-totals  {
     background: var(--bg-elevated);
   border: 2px solid var(--lic-accent-border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   }
@@ -298,7 +298,7 @@
   margin-bottom: 1rem;
   }
 .lic-calc-total-box h3  {
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -306,7 +306,7 @@
   }
 .lic-calc-total-box .lic-calc-amount  {
     font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--lic-accent);
   font-family: var(--font-heading);
   }
@@ -322,11 +322,11 @@
   background: var(--accent-subtle);
   border: 1px solid var(--lic-accent-border);
   border-radius: var(--radius-md, 10px);
-  font-size: 0.88rem;
+  font-size: var(--text-sm);
   }
 .lic-calc-impact-title  {
     color: var(--lic-accent);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.4rem;
   }
 .lic-calc-impact-detail  {
@@ -336,7 +336,7 @@
     margin-top: 1rem;
   border-top: 1px solid var(--border-emphasis);
   padding-top: 1rem;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   }
 .lic-calc-summary-row  {
@@ -360,7 +360,7 @@
     text-align: center;
   padding: 3rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   }
 @media (max-width: 768px)  {
     .lic-calc-row  {
@@ -379,7 +379,7 @@
 /* ── QUIZ SCOPE NOTICE ─────────────────────── */.lic-quiz-scope  {
     text-align: center;
   color: var(--text-tertiary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin-bottom: 1.5rem;
   padding: 0.8rem 1rem;
   background: var(--bg-elevated, 0.5);
@@ -391,11 +391,7 @@
   }
 /* ── TABS ──────────────────────────────────── */.lic-tabs  {
     display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  gap: 0; padding: 0; border-bottom: 1px solid var(--border); background: none;
   margin: 1.5rem 0 2rem;
   flex-wrap: wrap;
   }
@@ -405,10 +401,10 @@
   border: 1px solid transparent;
   background: none;
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   cursor: pointer;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -421,7 +417,7 @@
     color: var(--text-primary);
   background: var(--lic-accent);
   border-color: var(--lic-accent);
-  box-shadow: 0 2px 8px var(--accent-subtle);
+  
   }
 /* ── TAB PANELS ────────────────────────────── */.lic-panel  {
    display: none;
@@ -436,46 +432,40 @@
   }
 .lic-presets-grid .lic-preset-btn  {
     padding: 1rem 1.25rem;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   text-align: left;
   }
 /* ── CATEGORY SECTIONS ─────────────────────── */.lic-category  {
-    margin-bottom: 2.5rem;
-  border-left: 3px solid var(--cat-accent, var(--lic-accent));
-  padding-left: 1.2rem;
+    margin-bottom: var(--space-4);
+  padding-left: 0;
   position: relative;
+  border-left: none;
   }
-.lic-category::before  {
-    content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(135deg, var(--accent-subtle));
-  border-radius: 0 12px 0 0;
-  pointer-events: none;
-  }
+.lic-category::before  { display: none; }
 .lic-category-header  {
     display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.3rem;
-  position: relative;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cat-accent, var(--accent));
+  border-radius: var(--radius-sm);
   }
 .lic-category-header h2  {
-    font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cat-accent, #e2e8f0);
+    font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--cat-accent, var(--text-primary));
   margin: 0;
   }
 .lic-category-desc  {
-    color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+    color: var(--text-tertiary);
+  font-size: var(--text-caption);
+  margin-bottom: var(--space-2);
   }
 .lic-category-link  {
-    font-size: 0.85rem;
+    font-size: var(--text-caption);
   color: var(--lic-accent);
   text-decoration: none;
   margin-left: 0.5rem;
@@ -486,78 +476,78 @@
 /* ── PLAN CARDS GRID ───────────────────────── */.lic-cards  {
     display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.2rem;
+  gap: 6px;
   }
 .lic-card  {
-    background: var(--bg-elevated, 0.55);
+    background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-top: 2px solid var(--cat-accent, var(--lic-accent));
-  border-radius: var(--radius-lg, 16px);
-  padding: 1.4rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  transition: border-color 150ms ease-out;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   }
 .lic-card:hover  {
     border-color: var(--accent-subtle);
-  box-shadow: 0 0 20px var(--accent-subtle);
   }
 .lic-card.highlighted  {
-    border-color: var(--lic-accent);
-  /* z5-removed: glow shadow */}
+    border-color: var(--accent);
+  }
 /* Badge (Most Popular, Best Value, etc.) */.lic-badge  {
     position: absolute;
-  top: -10px;
-  right: 16px;
-  background: var(--lic-accent);
-  color: var(--accent-foreground, #fff);
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.2rem 0.7rem;
+  top: -8px;
+  left: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  padding: 1px 8px;
   border-radius: 99px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   }
 .lic-badge.coming-soon  {
-    background: #f59e0b;
-  color: #000;
+    background: var(--success);
+  color: #fff;
   }
 /* Card header */.lic-card-head  {
     display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.6rem;
   }
 .lic-card-name  {
-    font-size: 1.15rem;
-  font-weight: 700;
+    font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0;
   }
 .lic-card-price  {
-    font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--lic-accent);
+    font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--accent);
   white-space: nowrap;
   }
 .lic-card-price .lic-price-unit  {
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
   font-weight: 400;
   color: var(--text-secondary);
   }
 .lic-card-price .lic-price-note  {
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--text-tertiary);
   display: block;
   }
 .lic-card-tagline  {
     color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
+  font-size: var(--text-caption);
+  margin: 0;
   }
 .lic-card-who  {
     color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   margin-bottom: 1rem;
   line-height: 1.4;
   }
@@ -570,7 +560,7 @@
   gap: 0.3rem 0.8rem;
   }
 .lic-card-features li  {
-    font-size: 0.82rem;
+    font-size: var(--text-caption);
   color: var(--text-secondary);
   padding: 0.15rem 0;
   }
@@ -587,13 +577,12 @@
     color: var(--lic-accent) !important;
   font-weight: 500;
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   }
 /* Card actions */.lic-card-actions  {
     display: flex;
-  gap: 0.5rem;
+  gap: 4px;
   flex-wrap: wrap;
-  margin-top: 0.8rem;
   }
 .lic-btn  {
     display: inline-flex;
@@ -601,10 +590,10 @@
   gap: 0.3rem;
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-md, 10px);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   border: 1px solid var(--border-emphasis);
   color: var(--text-secondary);
   background: transparent;
@@ -645,30 +634,28 @@
 .lic-compare-count  {
     color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   }
 /* Compare checkbox + label on cards */.lic-compare-check  {
-    position: absolute;
-  top: 12px;
-  left: 12px;
+    align-self: flex-end;
   }
 .lic-compare-label  {
     display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 4px;
   cursor: pointer;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   color: var(--text-tertiary);
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 150ms ease-out;
   }
 .lic-compare-label:hover  {
-   color: var(--lic-accent);
+   color: var(--accent);
   }
 .lic-compare-label input[type="checkbox"]  {
-    accent-color: var(--lic-accent);
-  width: 15px;
-  height: 15px;
+    accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
   cursor: pointer;
   }
 /* ── COMPARISON TABLE (side-by-side) ───────── */.lic-compare-table-wrap  {
@@ -678,7 +665,7 @@
 .lic-compare-table  {
     width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   }
 .lic-compare-table th  {
     background: var(--bg-elevated);
@@ -715,57 +702,57 @@
   }
 .lic-quiz-question  {
     background: var(--bg-elevated);
-  border: 1px solid var(--border-emphasis);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin-bottom: 6px;
   }
 .lic-quiz-question h3  {
     color: var(--text-primary);
-  font-size: 1.1rem;
+  font-size: var(--text-sm);
   font-weight: 600;
-  margin: 0 0 0.3rem;
+  margin: 0 0 2px;
   }
 .lic-quiz-help  {
     color: var(--text-tertiary);
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  font-size: var(--text-caption);
+  margin-bottom: var(--space-2);
   }
 .lic-quiz-options  {
     display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 4px;
   }
 .lic-quiz-option  {
     display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--border-emphasis);
-  border-radius: var(--radius-md, 10px);
+  gap: var(--space-2);
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: border-color 150ms ease-out, background-color 150ms ease-out;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--text-caption);
   }
 .lic-quiz-option:hover  {
-    border-color: var(--lic-accent-border);
-  background: var(--lic-accent-subtle);
+    border-color: var(--accent-subtle);
+  background: var(--accent-subtle);
   }
 .lic-quiz-option.selected  {
-    border-color: var(--lic-accent);
-  background: var(--lic-accent-subtle);
+    border-color: var(--accent);
+  background: var(--accent-subtle);
   color: var(--text-primary);
   }
 .lic-quiz-option input[type="radio"]  {
-    accent-color: var(--lic-accent);
-  width: 16px;
-  height: 16px;
+    accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
   }
 .lic-quiz-progress  {
     display: flex;
-  gap: 0.4rem;
-  margin-bottom: 1.5rem;
+  gap: 4px;
+  margin-bottom: var(--space-3);
   justify-content: center;
   }
 .lic-quiz-dot  {
@@ -789,7 +776,7 @@
 .lic-result-card  {
     background: var(--bg-elevated);
   border: 2px solid var(--lic-accent-border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-bottom: 1rem;
   }
@@ -797,8 +784,8 @@
     border-color: var(--lic-accent);
   /* z5-removed: glow shadow */}
 .lic-result-rank  {
-    font-size: 0.8rem;
-  font-weight: 700;
+    font-size: var(--text-caption);
+  font-weight: 600;
   color: var(--lic-accent);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -806,19 +793,19 @@
   }
 .lic-result-name  {
     font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.3rem;
   }
 .lic-result-price  {
-    font-size: 1.1rem;
-  font-weight: 700;
+    font-size: var(--text-body);
+  font-weight: 600;
   color: var(--lic-accent);
   margin-bottom: 0.6rem;
   }
 .lic-result-why  {
     color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   line-height: 1.5;
   margin-bottom: 0.8rem;
   }
@@ -860,7 +847,7 @@
    background: #f59e0b;
   }
 .lic-change-date  {
-    font-size: 0.8rem;
+    font-size: var(--text-caption);
   color: var(--text-tertiary);
   font-weight: 600;
   text-transform: uppercase;
@@ -868,14 +855,14 @@
   margin-bottom: 0.3rem;
   }
 .lic-change-title  {
-    font-size: 1.1rem;
-  font-weight: 700;
+    font-size: var(--text-body);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
   }
 .lic-change-desc  {
     color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   line-height: 1.5;
   }
 .lic-change-affected  {
@@ -911,7 +898,7 @@
   }
   .lic-tab  {
    padding: 0.5rem 1rem;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   }
   .lic-compare-bar  {
    padding: 0.6rem 1rem;
@@ -929,12 +916,20 @@
    display: none;
   }
   .lic-search  {
-   font-size: 0.9rem;
+   font-size: var(--text-sm);
   padding: 0.7rem 1rem 0.7rem 2.3rem;
   }
   .lic-hero-stats  {
-   font-size: 0.85rem;
+   font-size: var(--text-caption);
   }
 }
 
 
+
+/* ── Zen tightening additions ── */
+.lic-category-count { font-size: var(--text-caption); color: var(--text-tertiary); font-weight: 400; margin-left: 4px; }
+.lic-card-feat-details { margin: var(--space-1) 0; }
+.lic-card-feat-details summary { font-size: var(--text-caption); color: var(--accent); cursor: pointer; list-style: none; }
+.lic-card-feat-details summary::-webkit-details-marker { display: none; }
+.lic-card-feat-details summary::before { content: '▸ '; }
+.lic-card-feat-details[open] summary::before { content: '▾ '; }
