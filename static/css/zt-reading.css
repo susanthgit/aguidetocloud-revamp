@@ -1838,6 +1838,46 @@ pre:hover .code-copy-btn { opacity: 1; }
   right: 24px;
 }
 
+/* ── Dark mode diagrams ── */
+[data-theme="dark"] .zt-reading-body .mermaid,
+[data-theme="dark"] .content-body .mermaid {
+  background:
+    radial-gradient(circle, #404040 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #1A1A1A;
+  border-color: #262626;
+}
+[data-theme="dark"] .zt-diagram-fs {
+  background: #262626;
+  border-color: #404040;
+  color: #A3A3A3;
+}
+[data-theme="dark"] .zt-diagram-fs:hover {
+  color: #D4D4D4;
+  border-color: #525252;
+}
+[data-theme="dark"] .mermaid:fullscreen,
+[data-theme="dark"] .mermaid.zt-diagram-fullscreen {
+  background:
+    radial-gradient(circle, #404040 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #1A1A1A;
+}
+
+/* Diagram shared — bold edge labels, transparent clusters */
+.zt-reading-body .mermaid .edgeLabel,
+.content-body .mermaid .edgeLabel {
+  font-weight: 600 !important;
+}
+.zt-reading-body .mermaid .cluster rect,
+.content-body .mermaid .cluster rect {
+  fill: transparent !important;
+}
+.zt-reading-body .mermaid .label-container,
+.content-body .mermaid .label-container {
+  fill: transparent !important;
+}
+
 /* ═══════════════════════════════════════════════════════════
    🌸 ZEN CERT READING — Study guide sidebar layout
    Extends zt-reading for cert-tracker single pages.

@@ -130,52 +130,97 @@
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js" crossorigin="anonymous" integrity="sha384-rbtjAdnIQE/aQJGEgXrVUlMibdfTSa4PQju4HDhN3sR2PmaKFzhEafuePsl9H/9I"></script>
   <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'base',
-      themeVariables: {
+    (function() {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var lightVars = {
         darkMode: false,
+        background: 'transparent',
+        fontFamily: '"Inter", sans-serif',
+        fontSize: '14px',
+        primaryColor: '#262626',
+        primaryTextColor: '#F5F5F5',
+        primaryBorderColor: '#404040',
+        secondaryColor: '#1F1F1F',
+        secondaryTextColor: '#F5F5F5',
+        secondaryBorderColor: '#404040',
+        tertiaryColor: '#333333',
+        tertiaryTextColor: '#F5F5F5',
+        tertiaryBorderColor: '#404040',
+        lineColor: '#525252',
+        textColor: '#414552',
+        mainBkg: '#262626',
+        nodeBorder: '#404040',
+        nodeTextColor: '#F5F5F5',
+        clusterBkg: 'transparent',
+        clusterBorder: '#404040',
+        titleColor: '#414552',
+        edgeLabelBackground: 'transparent',
+        actorTextColor: '#F5F5F5',
+        actorBkg: '#262626',
+        actorBorder: '#404040',
+        labelBoxBkgColor: '#262626',
+        labelBoxBorderColor: '#404040',
+        labelTextColor: '#F5F5F5',
+        noteBkgColor: '#1F1F1F',
+        noteTextColor: '#F5F5F5',
+        noteBorderColor: '#404040',
+        activationBkgColor: '#262626',
+        activationBorderColor: '#6366F1',
+        cScale0: '#262626',
+        cScale1: '#1F1F1F',
+        cScale2: '#333333',
+        cScaleLabel0: '#F5F5F5',
+        cScaleLabel1: '#F5F5F5',
+        cScaleLabel2: '#F5F5F5'
+      };
+      var darkVars = {
+        darkMode: true,
         background: 'transparent',
         fontFamily: '"Inter", sans-serif',
         fontSize: '14px',
         primaryColor: '#FFFFFF',
         primaryTextColor: '#414552',
-        primaryBorderColor: '#E5E5E5',
+        primaryBorderColor: '#D4D4D4',
         secondaryColor: '#F5F5F5',
         secondaryTextColor: '#414552',
-        secondaryBorderColor: '#E5E5E5',
+        secondaryBorderColor: '#D4D4D4',
         tertiaryColor: '#FAFAFA',
         tertiaryTextColor: '#414552',
-        tertiaryBorderColor: '#E5E5E5',
-        lineColor: '#C4C8D0',
-        textColor: '#414552',
+        tertiaryBorderColor: '#D4D4D4',
+        lineColor: '#A3A3A3',
+        textColor: '#D4D4D4',
         mainBkg: '#FFFFFF',
-        nodeBorder: '#E5E5E5',
+        nodeBorder: '#D4D4D4',
         nodeTextColor: '#414552',
-        clusterBkg: '#F5F5F5',
-        clusterBorder: '#E5E5E5',
-        titleColor: '#414552',
-        edgeLabelBackground: '#FAFAFA',
+        clusterBkg: 'transparent',
+        clusterBorder: '#D4D4D4',
+        titleColor: '#D4D4D4',
+        edgeLabelBackground: 'transparent',
         actorTextColor: '#414552',
         actorBkg: '#FFFFFF',
-        actorBorder: '#E5E5E5',
+        actorBorder: '#D4D4D4',
         labelBoxBkgColor: '#FFFFFF',
-        labelBoxBorderColor: '#E5E5E5',
+        labelBoxBorderColor: '#D4D4D4',
         labelTextColor: '#414552',
         noteBkgColor: '#F5F5F5',
         noteTextColor: '#414552',
-        noteBorderColor: '#E5E5E5',
+        noteBorderColor: '#D4D4D4',
         activationBkgColor: '#FFFFFF',
-        activationBorderColor: '#6366F1',
+        activationBorderColor: '#818CF8',
         cScale0: '#FFFFFF',
         cScale1: '#F5F5F5',
         cScale2: '#FAFAFA',
         cScaleLabel0: '#414552',
         cScaleLabel1: '#414552',
         cScaleLabel2: '#414552'
-      },
-      flowchart: { curve: 'basis', padding: 15 }
-    });
+      };
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: isDark ? lightVars : darkVars,
+        flowchart: { curve: 'basis', padding: 15 }
+      });
+    })();
   </script>
   <script src="/js/zt-diagram.js?v={{ site.Params.cache_version }}" defer></script>
   {{ end }}
