@@ -111,18 +111,22 @@
     container.innerHTML = techs.map(function (t) {
       var explored = S.explored[t.id];
       var diffLabel = t.difficulty === 1 ? 'Easy' : t.difficulty === 2 ? 'Medium' : 'Hard';
+      var patternPreview = (t.pattern || '').length > 80 ? t.pattern.substring(0, 80) + '...' : (t.pattern || '');
       return '<div class="plab-card' + (explored ? ' explored' : '') + '" data-id="' + esc(t.id) + '">' +
         '<div class="plab-card-header">' +
-          '<span class="plab-card-emoji">' + esc(t.emoji) + '</span>' +
           '<div class="plab-card-info">' +
             '<div class="plab-card-name">' + esc(t.name) + '</div>' +
             '<div class="plab-card-tagline">' + esc(t.tagline) + '</div>' +
           '</div>' +
           '<div class="plab-card-badges">' +
-            (explored ? '<span class="plab-badge plab-badge-explored">✓</span>' : '') +
+            (explored ? '<span class="plab-badge plab-badge-explored">Done</span>' : '') +
             '<span class="plab-badge plab-badge-diff-' + t.difficulty + '">' + diffLabel + '</span>' +
           '</div>' +
           '<span class="plab-card-chevron">▸</span>' +
+        '</div>' +
+        '<div class="plab-card-pattern-preview">' +
+          '<code>' + esc(patternPreview) + '</code>' +
+          '<button class="plab-copy-pattern-btn" data-action="copy-pattern" data-technique="' + esc(t.id) + '" title="Copy full pattern">Copy</button>' +
         '</div>' +
         '<div class="plab-card-body">' + renderCardBody(t) + '</div>' +
       '</div>';
@@ -197,11 +201,11 @@
     var optHtml = '<option value="">— Select a technique —</option>';
     optHtml += '<optgroup label="Intermediate">';
     intermediate.forEach(function (t) {
-      optHtml += '<option value="' + esc(t.id) + '">' + esc(t.emoji + ' ' + t.name) + '</option>';
+      optHtml += '<option value="' + esc(t.id) + '">' + esc(t.name) + '</option>';
     });
     optHtml += '</optgroup><optgroup label="Expert">';
     expert.forEach(function (t) {
-      optHtml += '<option value="' + esc(t.id) + '">' + esc(t.emoji + ' ' + t.name) + '</option>';
+      optHtml += '<option value="' + esc(t.id) + '">' + esc(t.name) + '</option>';
     });
     optHtml += '</optgroup>';
     picker.innerHTML = optHtml;
@@ -340,7 +344,7 @@
 
     var opts = '<option value="">—</option>';
     T.forEach(function (t) {
-      opts += '<option value="' + esc(t.id) + '">' + esc(t.emoji + ' ' + t.name) + '</option>';
+      opts += '<option value="' + esc(t.id) + '">' + esc(t.name) + '</option>';
     });
     selects.forEach(function (sel) {
       if (sel) sel.innerHTML = sel === selects[2]
@@ -382,13 +386,13 @@
 
     var flowHtml = techs.map(function (t, i) {
       return (i > 0 ? ' <span class="plab-combo-arrow">→</span> ' : '') +
-        '<span class="plab-combo-step">' + esc(t.emoji + ' ' + t.name) + '</span>';
+        '<span class="plab-combo-step">' + esc(t.name) + '</span>';
     }).join('');
 
     result.innerHTML = '<div class="plab-combo-flow" style="margin-bottom:0.75rem">' + flowHtml + '</div>' +
       '<div class="plab-combo-template">' + esc(template) + '</div>' +
       '<button class="plab-btn" data-action="copy-custom">Copy Combined Template</button>';
-    result.style.display = 'block';
+    result.hidden = false;
   }
 
   /* ── Quiz Tab ──────────────────────────────────────────────────────────── */
@@ -404,8 +408,8 @@
     var progress = $('quiz-progress');
     if (!container) return;
 
-    if (results) results.style.display = 'none';
-    container.style.display = '';
+    if (results) results.hidden = true;
+    container.hidden = false;
 
     // Progress dots
     if (progress) {
@@ -446,8 +450,8 @@
     var container = $('quiz-container');
     var results = $('quiz-results');
     if (!results) return;
-    if (container) container.style.display = 'none';
-    results.style.display = '';
+    if (container) container.hidden = true;
+    results.hidden = false;
 
     // Tally scores
     var scores = {};
@@ -475,7 +479,7 @@
       h += '<div class="plab-result-card">';
       h += '<div class="plab-result-rank' + (i === 0 ? ' gold' : '') + '">#' + (i + 1) + '</div>';
       h += '<div>';
-      h += '<div class="plab-result-name">' + esc(t.emoji + ' ' + t.name) + '</div>';
+      h += '<div class="plab-result-name">' + esc(t.name) + '</div>';
       h += '<div class="plab-result-score">Score: ' + scores[tid] + ' points</div>';
       h += '<div class="plab-result-why">' + esc(t.tagline) + '</div>';
       h += '<div style="margin-top:0.5rem"><button class="plab-btn" data-action="try-lab" data-technique="' + esc(tid) + '" style="font-size:0.78rem;padding:0.35rem 0.75rem">Try in Lab →</button></div>';

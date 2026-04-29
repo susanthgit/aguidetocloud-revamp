@@ -9,26 +9,30 @@
   padding: 0 1.5rem 3rem;
 }
 
-/* ── Glass Pill Tabs ────────────────────────────────────────────────────── */
+/* ── Zen Underline Tabs ────────────────────────────────────────────────── */
 .plab-tabs {
-  display: flex; gap: 0.5rem; padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 12px; margin-bottom: 1.5rem;
+  display: flex; gap: 0; padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 0.75rem;
   overflow-x: auto; scrollbar-width: none;
 }
 .plab-tabs::-webkit-scrollbar { display: none; }
 .plab-tab {
-  background: none; border: 1px solid transparent;
-  color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
-  padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center; white-space: nowrap;
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary); font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  flex: 1; text-align: center; white-space: nowrap;
   font-family: inherit;
 }
-.plab-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
+.plab-tab:hover { color: var(--text-primary); }
 .plab-tab.active {
-  color: var(--accent-foreground, #fff); background: var(--accent); border-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(45,212,191,0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  font-weight: 600;
 }
 .plab-panel { display: none; }
 .plab-panel.active { display: block; }
@@ -36,24 +40,25 @@
 /* ── Intro + Section Headings ───────────────────────────────────────────── */
 .plab-intro {
   color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;
-  margin-bottom: 1.5rem; max-width: 700px;
+  margin-bottom: 0.75rem; max-width: 700px;
 }
 .plab-intro a { color: var(--accent); text-decoration: underline; }
 
 .plab-section-title {
-  color: var(--accent); font-size: 1.1rem; font-weight: 700;
-  margin: 0 0 1rem; padding: 0;
+  color: var(--accent); font-size: 1.05rem; font-weight: 600;
+  margin: 0 0 0.75rem; padding: 0;
 }
 
 .plab-tier-heading {
-  color: var(--text-primary); font-size: 1rem; font-weight: 700;
-  margin: 2rem 0 0.25rem; padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--tier-color, #2DD4BF);
+  color: var(--text-primary); font-size: 0.95rem; font-weight: 600;
+  margin: 1.5rem 0 0.25rem; padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--accent);
   display: flex; align-items: center; gap: 0.5rem;
 }
 .plab-tier-desc {
-  color: var(--text-secondary); font-size: 0.82rem; margin: 0 0 1rem;
+  color: var(--text-secondary); font-size: 0.82rem; margin: 0 0 0.75rem;
 }
+.plab-section-gap { margin-top: 1.5rem; }
 
 /* ── Progress Bar ───────────────────────────────────────────────────────── */
 .plab-progress-bar {
@@ -62,26 +67,26 @@
 }
 .plab-progress-fill {
   height: 100%; background: var(--accent); border-radius: 3px;
-  transition: width 0.4s ease; width: 0;
+  transition: width 150ms ease-out; width: 0;
 }
 .plab-progress-text {
-  font-size: 0.75rem; color: var(--text-muted); margin: 0 0 1.5rem;
+  font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.75rem;
 }
 
 /* ── Technique Cards ────────────────────────────────────────────────────── */
-.plab-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; }
+.plab-grid { display: flex; flex-direction: column; gap: 6px; margin-bottom: 0.75rem; }
 
 .plab-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+  border-radius: var(--radius-sm, 6px); overflow: hidden; transition: border-color 150ms ease-out;
   cursor: pointer;
 }
-.plab-card:hover { border-color: rgba(45,212,191,0.3); }
+.plab-card:hover { border-color: var(--accent); }
 .plab-card.explored { border-left: 3px solid var(--accent); }
 
 .plab-card-header {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.85rem 1rem; user-select: none;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 8px 10px; user-select: none;
 }
 .plab-card-emoji { font-size: 1.3rem; flex-shrink: 0; }
 .plab-card-info { flex: 1; min-width: 0; }
@@ -101,17 +106,37 @@
 .plab-badge-explored { background: rgba(45,212,191,0.2); color: var(--accent); }
 
 .plab-card-chevron {
-  color: var(--text-muted); font-size: 0.8rem; transition: transform 0.2s;
+  color: var(--text-muted); font-size: 0.8rem; transition: transform 150ms ease-out;
   flex-shrink: 0;
 }
 .plab-card.open .plab-card-chevron { transform: rotate(90deg); }
 
+/* ── Pattern Preview (visible on collapsed card) ── */
+.plab-card-pattern-preview {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0 10px 6px; overflow: hidden;
+}
+.plab-card-pattern-preview code {
+  flex: 1; font-size: 0.72rem; color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  background: none; padding: 0;
+}
+.plab-copy-pattern-btn {
+  flex-shrink: 0; padding: 3px 10px;
+  background: var(--accent-subtle); border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px); color: var(--accent);
+  font-size: 0.72rem; font-weight: 600; cursor: pointer;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.plab-copy-pattern-btn:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
+.plab-card.open .plab-card-pattern-preview { display: none; }
+
 /* Card expanded content */
-.plab-card-body { display: none; padding: 0 1rem 1rem; }
+.plab-card-body { display: none; padding: 0 10px 10px; }
 .plab-card.open .plab-card-body { display: block; }
 
 .plab-card-body h4 {
-  color: var(--accent); font-size: 0.82rem; font-weight: 700;
+  color: var(--accent); font-size: 0.82rem; font-weight: 600;
   margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em;
 }
 
@@ -128,21 +153,21 @@
 
 .plab-pattern-box {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 8px; padding: 0.75rem 1rem; font-family: 'JetBrains Mono', monospace;
+  border-radius: var(--radius-sm, 6px); padding: 0.75rem 1rem; font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem; line-height: 1.6; color: var(--text-primary);
   white-space: pre-wrap; margin: 0.5rem 0;
 }
 
 /* Before/After */
-.plab-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 0.5rem 0; }
+.plab-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 0.5rem 0; }
 .plab-ba-card {
-  background: var(--bg-elevated); border-radius: 8px; padding: 0.75rem;
+  background: var(--bg-elevated); border-radius: var(--radius-sm, 6px); padding: 0.75rem;
   border-left: 3px solid;
 }
 .plab-ba-before { border-color: var(--error); }
 .plab-ba-after { border-color: var(--accent); }
 .plab-ba-label {
-  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
   margin-bottom: 0.3rem; letter-spacing: 0.04em;
 }
 .plab-ba-before .plab-ba-label { color: var(--text-primary); }
@@ -167,17 +192,17 @@
 .plab-card-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
 .plab-btn {
   background: var(--accent); color: var(--accent-foreground, #fff); border: none; padding: 0.5rem 1rem;
-  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
-  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
+  border-radius: var(--radius-sm, 6px); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out; font-family: inherit;
 }
-.plab-btn:hover { background: #5EEAD4; }
+.plab-btn:hover { background: var(--accent-hover); }
 .plab-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .plab-btn-outline {
-  background: none; color: var(--accent); border: 1px solid rgba(45,212,191,0.3);
-  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
-  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-family: inherit;
+  background: none; color: var(--accent); border: 1px solid var(--accent);
+  padding: 0.5rem 1rem; border-radius: var(--radius-sm, 6px); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out; font-family: inherit;
 }
-.plab-btn-outline:hover { background: rgba(45,212,191,0.1); }
+.plab-btn-outline:hover { background: var(--accent-subtle); }
 
 /* Prerequisite link */
 .plab-prereq {
@@ -187,13 +212,13 @@
 
 /* ── Lab Tab ────────────────────────────────────────────────────────────── */
 .plab-lab-controls {
-  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 0.75rem;
   flex-wrap: wrap;
 }
 .plab-label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; }
 .plab-select {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  color: var(--text-primary); padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem;
+  color: var(--text-primary); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm, 6px); font-size: 0.85rem;
   font-family: inherit; min-width: 240px;
 }
 .plab-select option { background: var(--bg-surface); }
@@ -206,7 +231,7 @@
 
 .plab-exercise {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem;
+  border-radius: var(--radius-sm, 6px); padding: 10px; margin-bottom: 0.75rem;
 }
 .plab-exercise-header {
   display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;
@@ -214,18 +239,18 @@
 .plab-exercise-title { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); }
 
 .plab-exercise-scenario {
-  background: var(--bg-elevated); border-radius: 8px; padding: 0.75rem;
+  background: var(--bg-elevated); border-radius: var(--radius-sm, 6px); padding: 0.75rem;
   font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;
-  border-left: 3px solid rgba(45,212,191,0.3);
+  border-left: 3px solid var(--accent);
 }
 
 .plab-exercise-starter {
   background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
-  border-radius: 8px; padding: 0.6rem 0.75rem; margin-bottom: 0.5rem;
+  border-radius: var(--radius-sm, 6px); padding: 0.6rem 0.75rem; margin-bottom: 0.5rem;
   font-size: 0.82rem; color: var(--text-secondary); font-style: italic;
 }
 .plab-exercise-starter::before {
-  content: 'Starter prompt: '; font-weight: 700; color: var(--text-primary);
+  content: 'Starter prompt: '; font-weight: 600; color: var(--text-primary);
   font-style: normal; font-size: 0.72rem; text-transform: uppercase;
 }
 
@@ -236,20 +261,20 @@
 
 .plab-textarea {
   width: 100%; min-height: 100px; background: var(--bg-elevated);
-  border: 1px solid var(--border); border-radius: 8px;
+  border: 1px solid var(--border); border-radius: var(--radius-sm, 6px);
   color: var(--text-primary); padding: 0.75rem; font-size: 0.85rem; font-family: inherit;
   resize: vertical; line-height: 1.5; margin-bottom: 0.75rem;
 }
 .plab-textarea:focus {
   outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(45,212,191,0.2);
+  
 }
 
 /* Criteria checklist */
 .plab-criteria { list-style: none; padding: 0; margin: 0 0 0.75rem; }
 .plab-criteria li {
   font-size: 0.8rem; color: var(--text-secondary); padding: 0.3rem 0;
-  padding-left: 1.5rem; position: relative; transition: color 0.2s;
+  padding-left: 1.5rem; position: relative; transition: color 150ms ease-out;
 }
 .plab-criteria li::before {
   content: '○'; position: absolute; left: 0; font-size: 0.85rem;
@@ -259,7 +284,7 @@
 
 /* Hints */
 .plab-hints-toggle {
-  font-size: 0.78rem; color: rgba(45,212,191,0.7); cursor: pointer;
+  font-size: 0.78rem; color: var(--accent); cursor: pointer;
   background: none; border: none; padding: 0; font-family: inherit;
   margin-bottom: 0.5rem;
 }
@@ -272,12 +297,12 @@
 /* Sample answer reveal */
 .plab-answer-box {
   display: none; background: rgba(45,212,191,0.05);
-  border: 1px solid rgba(45,212,191,0.2); border-radius: 8px;
+  border: 1px solid rgba(45,212,191,0.2); border-radius: var(--radius-sm, 6px);
   padding: 0.75rem; margin-top: 0.5rem;
 }
 .plab-answer-box.visible { display: block; }
 .plab-answer-label {
-  font-size: 0.72rem; font-weight: 700; color: var(--accent);
+  font-size: 0.72rem; font-weight: 600; color: var(--accent);
   text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .plab-answer-text {
@@ -286,13 +311,13 @@
 }
 
 /* ── Combine Tab ────────────────────────────────────────────────────────── */
-.plab-combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+.plab-combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; }
 
 .plab-combo-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 1rem; cursor: pointer; transition: border-color 0.2s;
+  border-radius: var(--radius-sm, 6px); padding: 8px; cursor: pointer; transition: border-color 150ms ease-out;
 }
-.plab-combo-card:hover { border-color: rgba(45,212,191,0.3); }
+.plab-combo-card:hover { border-color: var(--accent); }
 .plab-combo-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
 .plab-combo-name { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; }
 .plab-combo-desc { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
@@ -303,7 +328,7 @@
 }
 .plab-combo-step {
   font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.5rem;
-  background: rgba(45,212,191,0.1); color: var(--accent); border-radius: 4px;
+  background: var(--accent-subtle); color: var(--accent); border-radius: 4px;
 }
 .plab-combo-arrow { color: var(--text-muted); font-size: 0.75rem; }
 
@@ -313,7 +338,7 @@
 
 .plab-combo-template {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 8px; padding: 0.75rem; font-size: 0.78rem;
+  border-radius: var(--radius-sm, 6px); padding: 0.75rem; font-size: 0.78rem;
   color: var(--text-primary); white-space: pre-wrap; line-height: 1.5;
   font-family: 'JetBrains Mono', monospace; margin-bottom: 0.5rem;
 }
@@ -324,52 +349,52 @@
   display: flex; align-items: center; gap: 0.5rem;
   flex-wrap: wrap; margin-bottom: 0.75rem;
 }
-.plab-flow-arrow { color: var(--text-muted); font-size: 1.1rem; font-weight: 700; }
+.plab-flow-arrow { color: var(--text-muted); font-size: 1.1rem; font-weight: 600; }
 .plab-custom-result {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 8px; padding: 1rem; margin-top: 0.75rem;
+  border-radius: var(--radius-sm, 6px); padding: 8px; margin-top: 0.75rem;
 }
 
 /* ── Quiz Tab ───────────────────────────────────────────────────────────── */
 .plab-quiz-progress {
-  display: flex; gap: 0.4rem; margin-bottom: 1.5rem;
+  display: flex; gap: 0.4rem; margin-bottom: 0.75rem;
 }
 .plab-quiz-dot {
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--bg-elevated); transition: background 0.3s;
+  background: var(--bg-elevated); transition: background 150ms ease-out;
 }
 .plab-quiz-dot.active { background: var(--accent); }
-.plab-quiz-dot.done { background: rgba(45,212,191,0.4); }
+.plab-quiz-dot.done { background: var(--accent); }
 
 .plab-quiz-question {
-  font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;
+  font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;
 }
 .plab-quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
 .plab-quiz-option {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 10px; padding: 0.75rem 1rem; cursor: pointer;
-  font-size: 0.88rem; color: var(--text-secondary); transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  border-radius: var(--radius-sm, 6px); padding: 0.75rem 1rem; cursor: pointer;
+  font-size: 0.88rem; color: var(--text-secondary); transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   text-align: left; font-family: inherit;
 }
 .plab-quiz-option:hover {
-  border-color: rgba(45,212,191,0.4); color: var(--text-primary);
-  background: rgba(45,212,191,0.06);
+  border-color: var(--accent); color: var(--text-primary);
+  background: var(--accent-subtle);
 }
 .plab-quiz-option.selected {
-  border-color: var(--accent); color: var(--text-primary); background: rgba(45,212,191,0.1);
+  border-color: var(--accent); color: var(--text-primary); background: var(--accent-subtle);
 }
 
 /* Quiz results */
 .plab-results-title {
-  font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem;
+  font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem;
 }
 .plab-result-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 1rem; margin-bottom: 0.75rem;
-  display: flex; align-items: flex-start; gap: 0.75rem;
+  border-radius: var(--radius-sm, 6px); padding: 8px; margin-bottom: 0.75rem;
+  display: flex; align-items: flex-start; gap: 6px;
 }
 .plab-result-rank {
-  font-size: 1.5rem; font-weight: 800; color: var(--accent); flex-shrink: 0;
+  font-size: 1.5rem; font-weight: 600; color: var(--accent); flex-shrink: 0;
   width: 2rem; text-align: center;
 }
 .plab-result-rank.gold { color: var(--text-primary); }
@@ -380,25 +405,25 @@
 /* ── FAQ ─────────────────────────────────────────────────────────────────── */
 #panel-faq details {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 10px; margin-bottom: 0.75rem; padding: 0;
+  border-radius: var(--radius-sm, 6px); margin-bottom: 0.75rem; padding: 0;
   overflow: hidden;
 }
 #panel-faq summary {
   font-size: 0.9rem; font-weight: 600; color: var(--text-primary);
-  padding: 0.85rem 1rem; cursor: pointer; list-style: none;
+  padding: 6px 8px; cursor: pointer; list-style: none;
 }
 #panel-faq summary::-webkit-details-marker { display: none; }
 #panel-faq details p {
   font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;
-  padding: 0 1rem 0.85rem; margin: 0;
+  padding: 0 8px 6px; margin: 0;
 }
 
 /* ── Toast ───────────────────────────────────────────────────────────────── */
 .plab-toast {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
   background: var(--accent); color: #000; padding: 0.6rem 1rem;
-  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
-  z-index: 1000; opacity: 0; transition: opacity 0.3s;
+  border-radius: var(--radius-sm, 6px); font-size: 0.82rem; font-weight: 600;
+  z-index: 1000; opacity: 0; transition: opacity 150ms ease-out;
   pointer-events: none;
 }
 .plab-toast.show { opacity: 1; }
