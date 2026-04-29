@@ -261,7 +261,7 @@
 
       <div class="zt-cert-exam-ctas">
         <a href="/guided/{{ $guidedSlug }}/practice/" class="zt-cert-btn zt-cert-btn--secondary">Try Free →</a>
-        <a href="/guided/{{ $guidedSlug }}/" class="zt-cert-btn zt-cert-btn--primary">Start Practice →</a>
+        <a href="/guided/{{ $guidedSlug }}/?checkout=1" class="zt-cert-btn zt-cert-btn--buy">Unlock ${{ $guidedCert.price_practice }} →</a>
       </div>
       {{ end }}
 

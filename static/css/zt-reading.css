@@ -2245,7 +2245,7 @@ pre:hover .code-copy-btn { opacity: 1; }
 
 .zt-cert-exam-price strong {
   font-size: 1.25rem;
-  color: var(--text-primary, #F5F5F5);
+  color: var(--success, #22C55E);
 }
 
 .zt-cert-exam-ctas {
@@ -2301,6 +2301,14 @@ pre:hover .code-copy-btn { opacity: 1; }
 
 .zt-cert-btn--accent:hover {
   background: var(--accent-hover, #6366F1);
+}
+
+.zt-cert-btn--buy {
+  background: var(--success, #22C55E);
+  color: #fff;
+}
+.zt-cert-btn--buy:hover {
+  opacity: 0.85;
 }
 
 .zt-cert-exam-features {
