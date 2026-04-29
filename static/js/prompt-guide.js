@@ -168,10 +168,10 @@
         feedback.textContent = '';
       } else if (metCount === criteria.length) {
         feedback.className = 'pguide-sandbox-feedback show success';
-        feedback.textContent = '🎉 Great job! Your prompt hits all the criteria. Try applying this technique to your own work!';
+        feedback.textContent = 'Great job! Your prompt hits all the criteria. Try applying this technique to your own work!';
       } else if (metCount > 0) {
         feedback.className = 'pguide-sandbox-feedback show partial';
-        feedback.textContent = '👍 Good start! You\'ve got ' + metCount + ' of ' + criteria.length + ' — keep going!';
+        feedback.textContent = 'Good start! You\'ve got ' + metCount + ' of ' + criteria.length + ' — keep going!';
       } else {
         feedback.className = 'pguide-sandbox-feedback';
         feedback.textContent = '';
@@ -479,10 +479,10 @@
       if (!text) { feedback.className = 'pguide-sandbox-feedback'; feedback.textContent = ''; }
       else if (met === criteria.length) {
         feedback.className = 'pguide-sandbox-feedback show success';
-        feedback.textContent = '🎉 Excellent fix! You identified and resolved all the issues!';
+        feedback.textContent = 'Excellent fix! You identified and resolved all the issues!';
       } else if (met > 0) {
         feedback.className = 'pguide-sandbox-feedback show partial';
-        feedback.textContent = '👍 Getting there! Fixed ' + met + ' of ' + criteria.length + ' issues.';
+        feedback.textContent = 'Getting there! Fixed ' + met + ' of ' + criteria.length + ' issues.';
       } else { feedback.className = 'pguide-sandbox-feedback'; feedback.textContent = ''; }
     });
   }
@@ -519,10 +519,10 @@
       copyBtn.addEventListener('click', () => {
         const name = display.textContent;
         const date = dateEl.textContent;
-        const text = `🎓 Prompt Engineering Certificate\n\nAwarded to: ${name}\nDate: ${date}\n\nCompleted all 8 prompt engineering techniques:\n✅ Clear Instructions · Role · Context · Format · Examples · Step-by-Step · Constraints · Audience & Tone\n\nIssued by: A Guide to Cloud & AI\nhttps://www.aguidetocloud.com/prompt-guide/`;
+        const text = `Prompt Engineering Certificate\n\nAwarded to: ${name}\nDate: ${date}\n\nCompleted all 8 prompt engineering techniques:\nClear Instructions · Role · Context · Format · Examples · Step-by-Step · Constraints · Audience & Tone\n\nIssued by: A Guide to Cloud & AI\nhttps://www.aguidetocloud.com/prompt-guide/`;
         navigator.clipboard.writeText(text).then(() => {
           copyBtn.textContent = '✅ Copied!';
-          setTimeout(() => { copyBtn.textContent = '📋 Copy as Text'; }, 2000);
+          setTimeout(() => { copyBtn.textContent = 'Copy as Text'; }, 2000);
         });
       });
     }
@@ -568,14 +568,14 @@
     ];
 
     const TECH_INFO = {
-      'give-clear-instructions': { emoji: '🎯', name: 'Give Clear Instructions', url: '/prompt-guide/give-clear-instructions/' },
-      'set-a-role': { emoji: '🎭', name: 'Set a Role', url: '/prompt-guide/set-a-role/' },
-      'add-context': { emoji: '📋', name: 'Add Context', url: '/prompt-guide/add-context/' },
-      'define-the-format': { emoji: '📐', name: 'Define the Format', url: '/prompt-guide/define-the-format/' },
-      'give-examples': { emoji: '💡', name: 'Give Examples', url: '/prompt-guide/give-examples/' },
-      'think-step-by-step': { emoji: '🧠', name: 'Think Step by Step', url: '/prompt-guide/think-step-by-step/' },
-      'set-constraints': { emoji: '🚧', name: 'Set Constraints', url: '/prompt-guide/set-constraints/' },
-      'specify-audience-and-tone': { emoji: '🗣️', name: 'Specify Audience & Tone', url: '/prompt-guide/specify-audience-and-tone/' }
+      'give-clear-instructions': { name: 'Give Clear Instructions', url: '/prompt-guide/give-clear-instructions/' },
+      'set-a-role': { name: 'Set a Role', url: '/prompt-guide/set-a-role/' },
+      'add-context': { name: 'Add Context', url: '/prompt-guide/add-context/' },
+      'define-the-format': { name: 'Define the Format', url: '/prompt-guide/define-the-format/' },
+      'give-examples': { name: 'Give Examples', url: '/prompt-guide/give-examples/' },
+      'think-step-by-step': { name: 'Think Step by Step', url: '/prompt-guide/think-step-by-step/' },
+      'set-constraints': { name: 'Set Constraints', url: '/prompt-guide/set-constraints/' },
+      'specify-audience-and-tone': { name: 'Specify Audience & Tone', url: '/prompt-guide/specify-audience-and-tone/' }
     };
 
     let answers = [];
@@ -588,7 +588,7 @@
             ${q.opts.map((o, j) => `<button class="pguide-quiz-opt" data-qi="${i}" data-oi="${j}">${o.text}</button>`).join('')}
           </div>
         </div>`
-      ).join('') + `<button class="pguide-btn pguide-btn-primary" id="pguide-quiz-submit" style="margin-top:1rem" disabled>🧭 Get My Recommendations</button>`;
+      ).join('') + `<button class="pguide-btn pguide-btn-primary" id="pguide-quiz-submit" disabled>Get My Recommendations</button>`;
 
       body.addEventListener('click', e => {
         const opt = e.target.closest('.pguide-quiz-opt');
@@ -629,19 +629,19 @@
       });
       const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]).slice(0, 3);
       results.style.display = '';
-      results.innerHTML = '<h3>🎯 Your Top Recommended Techniques</h3>' +
+      results.innerHTML = '<h3>Your Top Recommended Techniques</h3>' +
         sorted.map(([id, score], i) => {
           const t = TECH_INFO[id];
           return `<div class="pguide-quiz-result-card">
             <div class="pguide-quiz-result-rank">#${i + 1}</div>
             <div class="pguide-quiz-result-info">
-              <strong>${t.emoji} ${t.name}</strong>
+              <strong>${t.name}</strong>
               <p>Relevance score: ${score} points</p>
               <a href="${t.url}">Learn this technique →</a>
             </div>
           </div>`;
         }).join('') +
-        `<button class="pguide-btn pguide-btn-secondary" style="margin-top:1rem" onclick="location.reload()">🔄 Retake Quiz</button>`;
+        `<button class="pguide-btn pguide-btn-secondary" onclick="location.reload()">Retake Quiz</button>`;
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -657,36 +657,36 @@
 
     const CHALLENGES = [
       {
-        title: '📧 The Follow-Up Email',
+        title: 'The Follow-Up Email',
         scenario: 'Your client hasn\'t responded to your proposal in 2 weeks. Write a prompt that gets AI to draft the perfect follow-up email — polite but with urgency.',
         techniques: ['give-clear-instructions', 'set-a-role', 'specify-audience-and-tone', 'set-constraints']
       },
       {
-        title: '🔧 The Outage Report',
+        title: 'The Outage Report',
         scenario: 'Your company had a 2-hour Teams outage this morning. You need to communicate to both customers AND your IT team. Write a prompt that produces both versions.',
         techniques: ['specify-audience-and-tone', 'add-context', 'define-the-format', 'set-constraints']
       },
       {
-        title: '📊 The Migration Decision',
+        title: 'The Migration Decision',
         scenario: 'Your boss asks: "Should we move from on-prem Exchange to M365?" Write a prompt that gets AI to give a thorough, well-reasoned analysis.',
         techniques: ['think-step-by-step', 'add-context', 'set-a-role', 'define-the-format']
       },
       {
-        title: '📋 The Ticket Sorter',
+        title: 'The Ticket Sorter',
         scenario: 'You have 50 support tickets to categorize. Write a prompt that teaches AI your exact categorization system with examples.',
         techniques: ['give-examples', 'give-clear-instructions', 'define-the-format']
       }
     ];
 
     const TECH_PATTERNS = {
-      'give-clear-instructions': { label: '🎯 Clear', re: /\b(write|create|draft|compose|generate|summarize|analyse|explain|list)\b/i },
-      'set-a-role': { label: '🎭 Role', re: /(?:you are|act as|as a|your role)/i },
-      'add-context': { label: '📋 Context', re: /(?:\d+|week|month|team|project|company|users?|employees?|budget|\$)/i },
-      'define-the-format': { label: '📐 Format', re: /\b(table|bullet|numbered|email|paragraph|list|heading|column)\b/i },
-      'give-examples': { label: '💡 Examples', re: /(?:example|e\.g\.|for instance|like this|→|->)/i },
-      'think-step-by-step': { label: '🧠 Steps', re: /\b(step.by.step|walk me through|think through|break down|reason|first.*then|1\.|2\.)/i },
-      'set-constraints': { label: '🚧 Constraints', re: /\b(maximum|max|no more|under \d|don.?t|avoid|plain English|without)\b/i },
-      'specify-audience-and-tone': { label: '🗣️ Tone', re: /\b(for (?:my|the|our)|tone|professional|friendly|formal|audience|readers?)\b/i }
+      'give-clear-instructions': { label: 'Clear', re: /\b(write|create|draft|compose|generate|summarize|analyse|explain|list)\b/i },
+      'set-a-role': { label: 'Role', re: /(?:you are|act as|as a|your role)/i },
+      'add-context': { label: 'Context', re: /(?:\d+|week|month|team|project|company|users?|employees?|budget|\$)/i },
+      'define-the-format': { label: 'Format', re: /\b(table|bullet|numbered|email|paragraph|list|heading|column)\b/i },
+      'give-examples': { label: 'Examples', re: /(?:example|e\.g\.|for instance|like this|→|->)/i },
+      'think-step-by-step': { label: 'Steps', re: /\b(step.by.step|walk me through|think through|break down|reason|first.*then|1\.|2\.)/i },
+      'set-constraints': { label: 'Constraints', re: /\b(maximum|max|no more|under \d|don.?t|avoid|plain English|without)\b/i },
+      'specify-audience-and-tone': { label: 'Tone', re: /\b(for (?:my|the|our)|tone|professional|friendly|formal|audience|readers?)\b/i }
     };
 
     list.innerHTML = CHALLENGES.map((c, i) =>
@@ -727,10 +727,10 @@
       const fb = $(`.pguide-challenge-feedback[data-ci="${ci}"]`);
       if (!text) { fb.textContent = ''; fb.style.color = ''; }
       else if (detected === challenge.techniques.length) {
-        fb.textContent = `🏆 Perfect! You used all ${detected} recommended techniques!`;
+        fb.textContent = `Perfect! You used all ${detected} recommended techniques!`;
         fb.style.color = '#A3E635';
       } else if (detected > 0) {
-        fb.textContent = `👍 ${detected}/${challenge.techniques.length} techniques detected — keep going!`;
+        fb.textContent = `${detected}/${challenge.techniques.length} techniques detected — keep going!`;
         fb.style.color = '#FBBF24';
       } else {
         fb.textContent = 'Start writing — we\'ll detect which techniques you use...';
@@ -839,7 +839,7 @@
             const btn = document.createElement('button');
             btn.className = 'pguide-copy-small';
             btn.dataset.copy = text;
-            btn.textContent = '📋 Copy';
+            btn.textContent = 'Copy';
             btn.title = 'Copy this prompt';
             el.appendChild(btn);
           }

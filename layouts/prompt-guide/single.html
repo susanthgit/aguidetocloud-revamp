@@ -149,7 +149,6 @@
         <div class="pguide-next-technique">
           <span class="pguide-next-label">Next technique →</span>
           <a href="{{ .RelPermalink }}" class="pguide-next-card">
-            <span class="pguide-next-emoji">{{ .Params.emoji }}</span>
             <span class="pguide-next-title">{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</span>
           </a>
         </div>

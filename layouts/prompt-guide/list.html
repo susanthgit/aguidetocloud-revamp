@@ -46,16 +46,16 @@
       </div>
 
       {{/* Completion certificate (V2 — hidden until all 8 done) */}}
-      <div class="pguide-certificate" id="pguide-certificate" style="display:none">
+      <div class="pguide-certificate" id="pguide-certificate" hidden>
         <div class="pguide-cert-inner">
           <span class="pguide-cert-badge">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }}</span>
           <h3>Congratulations! You've explored all 8 techniques!</h3>
           <p>You now understand the core prompt engineering skills. Generate your certificate:</p>
           <div class="pguide-cert-form">
             <input type="text" id="pguide-cert-name" class="pguide-input" placeholder="Your name" maxlength="50" aria-label="Your name for certificate">
-            <button class="pguide-btn pguide-btn-primary" id="pguide-cert-btn">🏆 Generate Certificate</button>
+            <button class="pguide-btn pguide-btn-primary" id="pguide-cert-btn">Generate Certificate</button>
           </div>
-          <div class="pguide-cert-card" id="pguide-cert-card" style="display:none">
+          <div class="pguide-cert-card" id="pguide-cert-card" hidden>
             <div class="pguide-cert-card-inner">
               <p class="pguide-cert-top">A Guide to Cloud & AI</p>
               <h4>Prompt Engineering Certificate</h4>
@@ -71,8 +71,8 @@
       {{/* Filters */}}
       <div class="pguide-filters">
         <button class="pguide-filter active" data-difficulty="all">All</button>
-        <button class="pguide-filter" data-difficulty="beginner">⭐ Beginner (start here)</button>
-        <button class="pguide-filter" data-difficulty="intermediate">⭐⭐ Intermediate</button>
+        <button class="pguide-filter" data-difficulty="beginner">Beginner (start here)</button>
+        <button class="pguide-filter" data-difficulty="intermediate">Intermediate</button>
       </div>
 
       {{/* Learning path hint (fix #12) */}}
@@ -83,14 +83,13 @@
         {{ range .Pages.ByWeight }}
         <a href="{{ .RelPermalink }}" class="pguide-card" data-difficulty="{{ .Params.difficulty }}" data-technique="{{ .Params.technique_id }}">
           <div class="pguide-card-header">
-            <span class="pguide-card-emoji">{{ .Params.emoji }}</span>
             <span class="pguide-card-num">#{{ .Weight }}</span>
             <span class="pguide-card-check" aria-label="Completed">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span>
           </div>
           <h2 class="pguide-card-title">{{ .Title | replaceRE "^[^ ]+ " "" | replaceRE " —.*$" "" }}</h2>
           <p class="pguide-card-desc">{{ .Description | truncate 100 }}</p>
           <div class="pguide-card-meta">
-            <span class="pguide-badge pguide-badge-{{ .Params.difficulty }}">{{ if eq .Params.difficulty "beginner" }}⭐ Beginner{{ else }}⭐⭐ Intermediate{{ end }}</span>
+            <span class="pguide-badge pguide-badge-{{ .Params.difficulty }}">{{ if eq .Params.difficulty "beginner" }}Beginner{{ else }}Intermediate{{ end }}</span>
             <span class="pguide-card-time">{{ .Params.read_time }}</span>
           </div>
           <span class="pguide-card-cta">Learn this technique →</span>
@@ -103,7 +102,7 @@
         <h3>{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }} The Real Power: Combining Techniques</h3>
         <p>The best prompts combine 3-4 techniques. Once you've learned the basics, use the <strong>Prompt Builder</strong> tab to combine them step by step.</p>
         <div class="pguide-combine-example">
-          <span class="pguide-combine-tag">🎭 Role</span>
+          <span class="pguide-combine-tag">Role</span>
           <span class="pguide-combine-plus">+</span>
           <span class="pguide-combine-tag">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Context</span>
           <span class="pguide-combine-plus">+</span>
@@ -149,7 +148,7 @@
             <button class="pguide-copy-small" data-copy="You are a senior presentation coach. Review my Q2 cloud migration slide deck and suggest improvements for a C-level audience. Focus on storytelling, keep it under 15 slides." title="Copy prompt">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</button>
           </div>
         </div>
-        <p class="pguide-quickwin-note">That prompt used <strong>🎭 Role</strong> + <strong>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Instructions</strong> + <strong>🚧 Constraints</strong>. Try building your own below 👇</p>
+        <p class="pguide-quickwin-note">That prompt used <strong>Role</strong> + <strong>Instructions</strong> + <strong>Constraints</strong>. Try building your own below.</p>
       </div>
 
       <div class="pguide-builder-layout">
@@ -183,7 +182,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">2</span>
               <label for="pguide-role">Set a role <span class="pguide-optional">(optional)</span></label>
-              <a href="/prompt-guide/set-a-role/" class="pguide-step-technique">🎭 Learn this →</a>
+              <a href="/prompt-guide/set-a-role/" class="pguide-step-technique">Learn this →</a>
             </div>
             <textarea id="pguide-role" class="pguide-input" rows="3" placeholder="e.g. You are a senior account manager with 10 years of client relations experience"></textarea>
           </div>
@@ -217,7 +216,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">5</span>
               <label>Set constraints <span class="pguide-optional">(optional)</span></label>
-              <a href="/prompt-guide/set-constraints/" class="pguide-step-technique">🚧 Learn this →</a>
+              <a href="/prompt-guide/set-constraints/" class="pguide-step-technique">Learn this →</a>
             </div>
             <div class="pguide-constraint-toggles">
               <label class="pguide-toggle"><input type="checkbox" data-constraint="word-limit"> Word limit <input type="number" class="pguide-constraint-val" data-for="word-limit" placeholder="150" min="10" max="5000" style="display:none"></label>
@@ -230,7 +229,7 @@
             <div class="pguide-step-header">
               <span class="pguide-step-num">6</span>
               <label>Audience & tone <span class="pguide-optional">(optional)</span></label>
-              <a href="/prompt-guide/specify-audience-and-tone/" class="pguide-step-technique">🗣️ Learn this →</a>
+              <a href="/prompt-guide/specify-audience-and-tone/" class="pguide-step-technique">Learn this →</a>
             </div>
             <div class="pguide-tone-row">
               <select id="pguide-audience" aria-label="Target audience">
@@ -287,7 +286,7 @@
         <div class="pguide-quiz-body" id="pguide-quiz-body">
           {{/* Questions injected by JS */}}
         </div>
-        <div class="pguide-quiz-results" id="pguide-quiz-results" style="display:none">
+        <div class="pguide-quiz-results" id="pguide-quiz-results" hidden>
           {{/* Results injected by JS */}}
         </div>
       </div>
@@ -298,7 +297,7 @@
          ══════════════════════════════════════════ */}}
     <div class="pguide-panel" id="panel-challenges" role="tabpanel" aria-labelledby="tab-challenges">
       <div class="pguide-challenge-container">
-        <h2>🏆 Prompt Challenges</h2>
+        <h2>Prompt Challenges</h2>
         <div class="pguide-challenge-hero-callout">
           <span class="pguide-challenge-hero-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</span>
           <div>
@@ -317,10 +316,10 @@
       {{ with .Params.faq }}
       <div class="zt-faq-wrap">
         <h2>Frequently Asked Questions</h2>
-        {{ range . }}
-        <details open class="pguide-faq-item">
-          <summary>{{ .question }}</summary>
-          <p>{{ .answer }}</p>
+        {{ range $i, $q := . }}
+        <details{{ if eq $i 0 }} open{{ end }} class="pguide-faq-item">
+          <summary>{{ $q.question }}</summary>
+          <p>{{ $q.answer }}</p>
         </details>
         {{ end }}
       </div>
