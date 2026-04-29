@@ -39,17 +39,17 @@
 
   <div class="cab-container">
 
-    {{/* ── Tab Navigation ── */}}
+    {{/* ── Tab Navigation (Templates first = instant value) ── */}}
     <div class="cab-tabs" role="tablist" aria-label="Entra ID CA Policy Builder sections">
-      <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="build" id="tab-build" aria-controls="panel-build">Build</button>
+      <button class="cab-tab cab-tab--active" role="tab" aria-selected="true" data-tab="templates" id="tab-templates" aria-controls="panel-templates">Templates</button>
+      <button class="cab-tab" role="tab" aria-selected="false" data-tab="build" id="tab-build" aria-controls="panel-build">Build</button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="review" id="tab-review" aria-controls="panel-review">Review <span class="cab-badge" id="cab-policy-count" style="display:none">0</span></button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="export" id="tab-export" aria-controls="panel-export">Export</button>
-      <button class="cab-tab" role="tab" aria-selected="false" data-tab="templates" id="tab-templates" aria-controls="panel-templates">Templates</button>
       <button class="cab-tab" role="tab" aria-selected="false" data-tab="faq" id="tab-faq" aria-controls="panel-faq">FAQ</button>
     </div>
 
-    {{/* ═══ TEMPLATES TAB ═══ */}}
-    <div class="cab-panel" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates" hidden>
+    {{/* ═══ TEMPLATES TAB (default — instant value) ═══ */}}
+    <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates">
 
       {{/* #5: Quick-start onboarding */}}
       <div class="cab-quickstart" id="cab-quickstart">
@@ -78,13 +78,67 @@
       </div>
 
       <div class="cab-tpl-grid" id="cab-tpl-grid"></div>
+
+      {{/* How many policies helper — moved inside Templates tab */}}
+      <div class="cab-how-many">
+        <details>
+          <summary><strong>How many policies do I need?</strong></summary>
+          <div class="cab-how-many-content">
+            <table class="cab-how-many-table">
+              <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
+              <tbody>
+                <tr><td>Small business (&lt; 100 users)</td><td>6–8</td><td>Starting Point + MFA for guests</td></tr>
+                <tr><td>Enterprise (Intune, E3/E5)</td><td>12–16</td><td>Starting Point + Enterprise tier</td></tr>
+                <tr><td>Education (students + staff)</td><td>8–12</td><td>Starting Point + approved apps + ToU</td></tr>
+                <tr><td>High security (finance, gov)</td><td>16–20</td><td>All three tiers</td></tr>
+              </tbody>
+            </table>
+            <p class="cab-how-many-hint">Start with fewer policies and add as needed. Every policy you add increases complexity.</p>
+          </div>
+        </details>
+      </div>
     </div>
 
     {{/* ═══ BUILD TAB ═══ */}}
-    <div class="cab-panel cab-panel--active" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+    <div class="cab-panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build" hidden>
 
       <div class="cab-panel-header">
         <p class="cab-panel-desc">Build a custom Conditional Access policy step by step. The preview updates live as you make selections.</p>
+      </div>
+
+      {{/* CA Quick Reference — moved inside Build tab */}}
+      <div class="cab-help-section">
+        <details class="cab-help-details">
+          <summary><strong>Conditional Access Quick Reference</strong></summary>
+          <div class="cab-help-content">
+            <div class="cab-help-grid">
+              <div class="cab-help-card">
+                <h4>What is Conditional Access?</h4>
+                <p>An if-then policy engine in Microsoft Entra ID. <strong>If</strong> a user matches conditions (who, where, device), <strong>then</strong> enforce controls (MFA, block, compliant device). Multiple policies combine with AND logic.</p>
+              </div>
+              <div class="cab-help-card">
+                <h4>The Two Phases</h4>
+                <p><strong>Phase 1:</strong> Collect session details (location, device, risk). <strong>Phase 2:</strong> Enforce — if any policy blocks, access is denied. Otherwise, all grant controls from all matching policies must be satisfied.</p>
+              </div>
+              <div class="cab-help-card">
+                <h4>Break-Glass Accounts</h4>
+                <p>Emergency access accounts excluded from ALL CA policies. At least 2 cloud-only accounts with Global Admin, using phishing-resistant MFA. Test monthly.</p>
+              </div>
+              <div class="cab-help-card">
+                <h4>Report-Only Mode</h4>
+                <p>Test a policy without enforcing it. Sign-in logs show what <em>would</em> happen. Run for 1-2 weeks before enabling. Up to 20 policies in report-only simultaneously.</p>
+              </div>
+              <div class="cab-help-card">
+                <h4>Key Requirement</h4>
+                <p><strong>Entra ID P1</strong> (included in M365 E3/E5, Business Premium). Risk-based policies need <strong>P2</strong> (included in E5). Device compliance needs <strong>Intune</strong>.</p>
+              </div>
+              <div class="cab-help-card">
+                <h4>Common Mistakes</h4>
+                <p>No break-glass exclusion · Block policy too broad · Skipping report-only · Forgetting legacy auth · Not blocking admin sign-ins from untrusted locations</p>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
 
       <div class="cab-build-layout">
@@ -143,8 +197,8 @@
         <div class="cab-zt-score-section">
           <div class="cab-zt-score-ring-wrap">
             <svg class="cab-zt-ring" viewBox="0 0 120 120" aria-label="Zero Trust Score">
-              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-              <circle cx="60" cy="60" r="52" fill="none" stroke="#7C3AED" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327" id="cab-zt-ring-fill" transform="rotate(-90 60 60)"/>
+              <circle cx="60" cy="60" r="52" fill="none" class="cab-zt-ring-bg" stroke-width="10"/>
+              <circle cx="60" cy="60" r="52" fill="none" class="cab-zt-ring-progress" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327" id="cab-zt-ring-fill" transform="rotate(-90 60 60)"/>
               <text x="60" y="55" text-anchor="middle" class="cab-zt-score-num" id="cab-zt-score-num">0</text>
               <text x="60" y="72" text-anchor="middle" class="cab-zt-score-label">/ 100</text>
             </svg>
@@ -177,7 +231,7 @@
 
         {{/* #19: Share button */}}
         <div class="cab-share-section">
-          <button class="cab-btn cab-btn--secondary" onclick="navigator.clipboard.writeText(window.__cab.getShareURL()).then(() => { const t = document.querySelector('.cab-toast'); if(t){t.textContent='{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Share link copied!';t.classList.add('cab-toast--show');setTimeout(()=>t.classList.remove('cab-toast--show'),2500)} })">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Copy Shareable Link</button>
+          <button class="cab-btn cab-btn--secondary" onclick="navigator.clipboard.writeText(window.__cab.getShareURL()).then(() => { const t = document.querySelector('.cab-toast'); if(t){t.textContent='Share link copied';t.classList.add('cab-toast--show');setTimeout(()=>t.classList.remove('cab-toast--show'),2500)} })">Copy Shareable Link</button>
         </div>
       </div>
     </div>
@@ -216,86 +270,29 @@
       {{/* #14: Import from JSON */}}
       <div class="cab-import-section">
         <details>
-          <summary style="cursor:pointer;color:var(--cab-accent);font-size:0.9rem">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Import existing policies from Graph API JSON</summary>
-          <p style="font-size:0.82rem;color:var(--cab-text-dim);margin:0.5rem 0">Paste your exported Graph API JSON array to review existing policies.</p>
-          <textarea class="cab-form-textarea" id="cab-import-input" aria-label="Paste Graph API JSON" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]' style="min-height:80px"></textarea>
-          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-top:0.5rem" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Import</button>
+          <summary class="cab-import-summary">Import existing policies from Graph API JSON</summary>
+          <p class="cab-import-hint">Paste your exported Graph API JSON array to review existing policies.</p>
+          <textarea class="cab-form-textarea" id="cab-import-input" aria-label="Paste Graph API JSON" placeholder='[{"displayName":"CA001-SP-MFA","grantControls":{"builtInControls":["mfa"]}}]'></textarea>
+          <button class="cab-btn cab-btn--primary cab-btn--sm cab-import-btn" onclick="window.__cab.importPolicies(document.getElementById('cab-import-input').value)">Import</button>
         </details>
       </div>
     </div>
 
-    {{/* #8: How many policies helper */}}
-    <div class="cab-how-many">
-      <details>
-        <summary><strong>{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} How many policies do I need?</strong></summary>
-        <div class="cab-how-many-content">
-          <table class="cab-how-many-table">
-            <thead><tr><th>Organisation Type</th><th>Recommended</th><th>Typical Range</th></tr></thead>
-            <tbody>
-              <tr><td>{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Small business (< 100 users)</td><td>6-8</td><td>Starting Point + MFA for guests</td></tr>
-              <tr><td>{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise (Intune, E3/E5)</td><td>12-16</td><td>Starting Point + Enterprise tier</td></tr>
-              <tr><td>{{ partial "icon.html" (dict "name" "graduation-cap" "size" 14 "stroke" 1.5) }} Education (students + staff)</td><td>8-12</td><td>Starting Point + approved apps + ToU</td></tr>
-              <tr><td>{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }} High security (finance, gov)</td><td>16-20</td><td>All three tiers</td></tr>
-            </tbody>
-          </table>
-          <p style="font-size:0.82rem;color:var(--cab-text-dim)">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Start with fewer policies and add as needed. Every policy you add increases complexity — only add what you'll actively maintain.</p>
-        </div>
-      </details>
-    </div>
-
-    {{/* ── Inline Help ── */}}
-    <div class="cab-help-section">
-      <details class="cab-help-details">
-        <summary><strong>Conditional Access Quick Reference</strong></summary>
-      <div class="cab-help-content">
-        <div class="cab-help-grid">
-          <div class="cab-help-card">
-            <h4>What is Conditional Access?</h4>
-            <p>An if-then policy engine in Microsoft Entra ID. <strong>If</strong> a user matches conditions (who, where, device), <strong>then</strong> enforce controls (MFA, block, compliant device). Multiple policies combine with AND logic.</p>
-          </div>
-          <div class="cab-help-card">
-            <h4>The Two Phases</h4>
-            <p><strong>Phase 1:</strong> Collect session details (location, device, risk). <strong>Phase 2:</strong> Enforce — if any policy blocks, access is denied. Otherwise, all grant controls from all matching policies must be satisfied.</p>
-          </div>
-          <div class="cab-help-card">
-            <h4>Break-Glass Accounts</h4>
-            <p>Emergency access accounts excluded from ALL CA policies. At least 2 cloud-only accounts with Global Admin, using phishing-resistant MFA. Test monthly.</p>
-          </div>
-          <div class="cab-help-card">
-            <h4>Report-Only Mode</h4>
-            <p>Test a policy without enforcing it. Sign-in logs show what <em>would</em> happen. Run for 1-2 weeks before enabling. Up to 20 policies in report-only simultaneously.</p>
-          </div>
-          <div class="cab-help-card">
-            <h4>Key Requirement</h4>
-            <p><strong>Entra ID P1</strong> (included in M365 E3/E5, Business Premium). Risk-based policies need <strong>P2</strong> (included in E5). Device compliance needs <strong>Intune</strong>.</p>
-          </div>
-          <div class="cab-help-card">
-            <h4>Common Mistakes</h4>
-            <p>{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} No break-glass exclusion · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Block policy too broad · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Skipping report-only · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Forgetting legacy auth · {{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Not blocking admin sign-ins from untrusted locations</p>
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>
+    {{/* Old floating sections removed — moved into their respective tabs */}}
 
   {{/* ═══ FAQ TAB ═══ */}}
   <div class="cab-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
     {{ with .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:#7C3AED;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+      <h2>Frequently Asked Questions</h2>
       {{ range $i, $f := . }}
-      <details open class="zt-faq-detail">
+      <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
         <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $f.q }}</summary>
         <p class="zt-faq-answer">{{ $f.a }}</p>
       </details>
       {{ end }}
     </div>
     {{ end }}
-  </div>
-
-  {{/* #18: Blog/YouTube CTA */}}
-  <div class="cab-content-cta">
-    <p>{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} <strong>Learn more:</strong> Watch our <a href="/blog/">tutorials</a> on Conditional Access, Zero Trust, and Microsoft Entra ID. Follow <a href="https://youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">A Guide to Cloud & AI</a> for step-by-step walkthroughs.</p>
   </div>
 
   {{/* ── Disclaimer ── */}}

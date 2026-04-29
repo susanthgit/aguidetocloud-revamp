@@ -24,15 +24,15 @@
 
   /* ── Scenario Presets (Big Idea) ── */
   const SCENARIOS = [
-    { id: 'small-biz', label: '🏢 Small Business', desc: 'Under 100 users, no Intune, M365 Business Premium', count: 6,
+    { id: 'small-biz', title: 'Small Business', desc: 'Under 100 users, no Intune, M365 Business Premium', count: 6,
       templates: ['sp-mfa-all', 'sp-block-legacy', 'sp-mfa-admins', 'sp-secure-registration', 'sp-block-high-risk', 'sp-mfa-medium-risk'] },
-    { id: 'enterprise', label: '🏦 Enterprise', desc: 'Intune-managed devices, E3/E5 licences', count: 14,
+    { id: 'enterprise', title: 'Enterprise', desc: 'Intune-managed devices, E3/E5 licences', count: 14,
       templates: ['sp-mfa-all', 'sp-block-legacy', 'sp-mfa-admins', 'sp-secure-registration', 'sp-block-high-risk', 'sp-mfa-medium-risk',
                   'ent-compliant-device', 'ent-block-unsupported', 'ent-sign-in-frequency', 'ent-no-persistent-unmanaged', 'ent-approved-apps', 'ent-guest-mfa', 'ent-location-block', 'ent-terms-of-use'] },
-    { id: 'education', label: '🏫 Education', desc: 'Students + staff, mixed devices, A3/A5', count: 10,
+    { id: 'education', title: 'Education', desc: 'Students + staff, mixed devices, A3/A5', count: 10,
       templates: ['sp-mfa-all', 'sp-block-legacy', 'sp-mfa-admins', 'sp-secure-registration', 'sp-block-high-risk', 'sp-mfa-medium-risk',
                   'ent-approved-apps', 'ent-guest-mfa', 'ent-sign-in-frequency', 'ent-terms-of-use'] },
-    { id: 'high-security', label: '🔒 High Security', desc: 'Finance, healthcare, government — full Zero Trust', count: 18,
+    { id: 'high-security', title: 'High Security', desc: 'Finance, healthcare, government — full Zero Trust', count: 18,
       templates: ['sp-mfa-all', 'sp-block-legacy', 'sp-mfa-admins', 'sp-secure-registration', 'sp-block-high-risk', 'sp-mfa-medium-risk',
                   'ent-compliant-device', 'ent-block-unsupported', 'ent-sign-in-frequency', 'ent-no-persistent-unmanaged', 'ent-approved-apps', 'ent-guest-mfa', 'ent-location-block', 'ent-terms-of-use',
                   'spec-phishing-resistant-admins', 'spec-compliant-all-apps', 'spec-token-lifetime', 'spec-azure-management'] }
@@ -71,9 +71,9 @@
     });
 
     const tiers = [
-      { key: 'starting-point', label: '🟢 Starting Point — Minimum for all organisations', cls: 'sp' },
-      { key: 'enterprise', label: '🟡 Enterprise — Managed devices & stronger posture', cls: 'ent' },
-      { key: 'specialised', label: '🔴 Specialised — High-security & privileged access', cls: 'spec' }
+      { key: 'starting-point', label: 'Starting Point — Minimum for all organisations', cls: 'sp' },
+      { key: 'enterprise', label: 'Enterprise — Managed devices & stronger posture', cls: 'ent' },
+      { key: 'specialised', label: 'Specialised — High-security & privileged access', cls: 'spec' }
     ];
 
     let html = '';
@@ -87,9 +87,9 @@
         html += `<div class="cab-tier-section">
           <div class="cab-tier-header cab-tier-header--${t.cls}">
             <h3>${t.label}</h3>
-            <button class="cab-btn cab-btn--sm ${allAdded ? 'cab-btn--secondary' : 'cab-btn--primary'}" onclick="window.__cab.addAllTier('${t.key}')" ${allAdded ? 'disabled' : ''}>
-              ${allAdded ? '✅ All Added' : `➕ Add All ${tierItems.length}`}
-            </button>
+            ${allAdded
+              ? `<button class="cab-btn cab-btn--sm cab-btn--danger" onclick="window.__cab.removeAllTier('${t.key}')">Remove All</button>`
+              : `<button class="cab-btn cab-btn--sm cab-btn--primary" onclick="window.__cab.addAllTier('${t.key}')">Add All ${tierItems.length}</button>`}
           </div>
           <div class="cab-tpl-tier-grid">${tierItems.map(renderTemplateCard).join('')}</div>
         </div>`;
@@ -120,27 +120,29 @@
         <div class="cab-policy-card__header">
           <h4 class="cab-policy-card__name">${t.name}</h4>
           <div class="cab-card-badges">
-            ${popular ? '<span class="cab-popular-badge">⭐ Popular</span>' : ''}
+            ${popular ? '<span class="cab-popular-badge">Popular</span>' : ''}
             <span class="cab-tier-badge cab-tier-badge--${tierClass(t.tier)}">${t.tier_label}</span>
           </div>
         </div>
         <p class="cab-policy-card__desc">${t.description}</p>
-        ${deps.length ? `<p class="cab-dep-hint">🔗 Requires: ${deps.join(', ')}</p>` : ''}
-        <p class="cab-policy-card__risk">💡 ${t.risk}</p>
+        ${deps.length ? `<p class="cab-dep-hint">Requires: ${deps.join(', ')}</p>` : ''}
         <details class="cab-card-details"><summary>Show policy details</summary>
           <div class="cab-policy-card__details">
-            <div class="cab-detail-row"><span class="cab-detail-label">👥 Users</span><span class="cab-detail-value">${t.users}</span></div>
-            <div class="cab-detail-row"><span class="cab-detail-label">🎯 Target</span><span class="cab-detail-value">${t.target_apps}</span></div>
-            ${t.conditions.length ? `<div class="cab-detail-row"><span class="cab-detail-label">📋 When</span><span class="cab-detail-value">${t.conditions.join(', ')}</span></div>` : ''}
-            <div class="cab-detail-row"><span class="cab-detail-label">✅ Controls</span><span class="cab-detail-value">${t.grant_controls.join(', ')}</span></div>
-            ${t.session_controls.length ? `<div class="cab-detail-row"><span class="cab-detail-label">⏱️ Session</span><span class="cab-detail-value">${t.session_controls.join(', ')}</span></div>` : ''}
-            <div class="cab-detail-row"><span class="cab-detail-label">🚫 Excludes</span><span class="cab-detail-value">${t.exclusions.join(', ')}</span></div>
+            <p class="cab-policy-card__risk">${t.risk}</p>
+            <div class="cab-detail-row"><span class="cab-detail-label">Users</span><span class="cab-detail-value">${t.users}</span></div>
+            <div class="cab-detail-row"><span class="cab-detail-label">Target</span><span class="cab-detail-value">${t.target_apps}</span></div>
+            ${t.conditions.length ? `<div class="cab-detail-row"><span class="cab-detail-label">When</span><span class="cab-detail-value">${t.conditions.join(', ')}</span></div>` : ''}
+            <div class="cab-detail-row"><span class="cab-detail-label">Controls</span><span class="cab-detail-value">${t.grant_controls.join(', ')}</span></div>
+            ${t.session_controls.length ? `<div class="cab-detail-row"><span class="cab-detail-label">Session</span><span class="cab-detail-value">${t.session_controls.join(', ')}</span></div>` : ''}
+            <div class="cab-detail-row"><span class="cab-detail-label">Excludes</span><span class="cab-detail-value">${t.exclusions.join(', ')}</span></div>
           </div>
         </details>
         <div class="cab-policy-card__actions">
-          <button class="cab-btn cab-btn--primary cab-btn--sm" onclick="window.__cab.addTemplate('${t.id}')" ${added ? 'disabled' : ''}>${added ? '✅ Added' : '➕ Add'}</button>
-          <button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="window.__cab.customizeTemplate('${t.id}')">✏️ Customize</button>
-          <a href="${t.learn_url}" target="_blank" rel="noopener" class="cab-btn cab-btn--secondary cab-btn--sm">📖</a>
+          ${added
+            ? `<button class="cab-btn cab-btn--danger cab-btn--sm" onclick="window.__cab.removeTemplateById('${t.id}')">Remove</button>`
+            : `<button class="cab-btn cab-btn--primary cab-btn--sm" onclick="window.__cab.addTemplate('${t.id}')">Add</button>`}
+          <button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="window.__cab.customizeTemplate('${t.id}')">Customize</button>
+          <a href="${t.learn_url}" target="_blank" rel="noopener" class="cab-btn cab-btn--secondary cab-btn--sm">Docs</a>
         </div>
       </div>`;
   }
@@ -156,32 +158,30 @@
 
     if (policySet.length === 0) {
       qs.innerHTML = `<div class="cab-quickstart-content">
-        <h2>🚀 Quick Start — Choose Your Scenario</h2>
+        <h2>Quick Start — Choose Your Scenario</h2>
         <p>Select your organisation type to get the right policy mix, or browse individual templates below.</p>
         <div class="cab-scenario-grid">
           ${SCENARIOS.map(s => `
             <button class="cab-scenario-btn" onclick="window.__cab.applyScenario('${s.id}')">
-              <span class="cab-scenario-icon">${s.label.split(' ')[0]}</span>
-              <strong>${s.label.substring(s.label.indexOf(' ') + 1)}</strong>
+              <strong>${s.title}</strong>
               <span class="cab-scenario-desc">${s.desc}</span>
               <span class="cab-scenario-count">${s.count} policies</span>
             </button>
           `).join('')}
         </div>
-        <p class="cab-quickstart-or">or browse individual templates below ↓</p>
       </div>`;
       qs.style.display = '';
     } else if (spAdded && !entAdded) {
       qs.innerHTML = `<div class="cab-quickstart-content cab-nudge">
-        <p>✅ <strong>Starting Point baseline added!</strong> Ready for the next level?</p>
-        <button class="cab-btn cab-btn--primary cab-btn--sm" onclick="window.__cab.addAllTier('enterprise')">🟡 Add All Enterprise Policies →</button>
-        <button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="document.querySelector('[data-tab=review]').click()">🔍 Review My Set</button>
+        <p><strong>Starting Point baseline added.</strong> Ready for the next level?</p>
+        <button class="cab-btn cab-btn--primary cab-btn--sm" onclick="window.__cab.addAllTier('enterprise')">Add All Enterprise Policies</button>
+        <button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="document.querySelector('[data-tab=review]').click()">Review My Set</button>
       </div>`;
       qs.style.display = '';
     } else if (policySet.length > 0) {
       qs.innerHTML = `<div class="cab-quickstart-content cab-nudge">
-        <p>🛡️ <strong>${policySet.length} policies</strong> in your set.
-          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-left:0.5rem" onclick="document.querySelector('[data-tab=review]').click()">🔍 Review & Export</button>
+        <p><strong>${policySet.length} policies</strong> in your set.
+          <button class="cab-btn cab-btn--primary cab-btn--sm" style="margin-left:0.5rem" onclick="document.querySelector('[data-tab=review]').click()">Review & Export</button>
         </p>
       </div>`;
       qs.style.display = '';
@@ -200,7 +200,7 @@
       }
     });
     savePolicies(); updateBadge();
-    showToast(`✅ ${scenario.label} — added ${added} policies`);
+    showToast(`${scenario.title} — added ${added} policies`);
     renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all');
     trackEvent('scenario_' + id);
   }
@@ -215,10 +215,10 @@
   function addTemplate(id) {
     const t = TEMPLATES.find(x => x.id === id);
     if (!t) return;
-    if (policySet.find(p => p.id === id)) { showToast('⚠️ Already in your set'); return; }
+    if (policySet.find(p => p.id === id)) { showToast('Already in your set'); return; }
     policySet.push({ id: t.id, name: t.name, tier: t.tier, tier_label: t.tier_label, description: t.description, users: t.users, exclusions: [...t.exclusions], target_apps: t.target_apps, conditions: [...t.conditions], grant_controls: [...t.grant_controls], grant_operator: t.grant_operator || 'OR', session_controls: [...t.session_controls], source: 'template' });
     savePolicies(); updateBadge();
-    showToast(`✅ Added: ${t.name}`);
+    showToast(`Added: ${t.name}`);
     renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all');
     trackEvent('add_template');
   }
@@ -233,7 +233,7 @@
       }
     });
     savePolicies(); updateBadge();
-    showToast(`✅ Added ${added} ${tier} policies`);
+    showToast(`Added ${added} ${tier} policies`);
     renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all');
   }
 
@@ -256,20 +256,20 @@
     wizardStep = 0;
     $('[data-tab="build"]').click();
     renderWizard();
-    showToast('✏️ Template loaded — customize and add');
+    showToast('Template loaded — customize and add');
   }
 
   /* ═══════════════════════════════════════════════════════
      BUILD TAB
      ═══════════════════════════════════════════════════════ */
   const WIZARD_STEPS = [
-    { title: 'Name & Intent', icon: '📝', render: renderStepName, validate: () => wizardData.name.trim().length >= 3 ? null : 'Policy name must be at least 3 characters' },
-    { title: 'Users & Groups', icon: '👥', render: renderStepWho, validate: () => null },
-    { title: 'Target Apps', icon: '🎯', render: renderStepWhat, validate: () => null },
-    { title: 'Conditions', icon: '📋', render: renderStepConditions, validate: () => null },
-    { title: 'Grant Controls', icon: '✅', render: renderStepGrant, validate: () => wizardData.grantType === 'grant' && wizardData.grantControls.length === 0 ? 'Select at least one grant control' : null },
-    { title: 'Session', icon: '⏱️', render: renderStepSession, validate: () => null },
-    { title: 'Review & Add', icon: '🚀', render: renderStepSummary, validate: () => null }
+    { title: 'Name & Intent', icon: '1', render: renderStepName, validate: () => wizardData.name.trim().length >= 3 ? null : 'Policy name must be at least 3 characters' },
+    { title: 'Users & Groups', icon: '2', render: renderStepWho, validate: () => null },
+    { title: 'Target Apps', icon: '3', render: renderStepWhat, validate: () => null },
+    { title: 'Conditions', icon: '4', render: renderStepConditions, validate: () => null },
+    { title: 'Grant Controls', icon: '5', render: renderStepGrant, validate: () => wizardData.grantType === 'grant' && wizardData.grantControls.length === 0 ? 'Select at least one grant control' : null },
+    { title: 'Session', icon: '6', render: renderStepSession, validate: () => null },
+    { title: 'Review & Add', icon: '7', render: renderStepSummary, validate: () => null }
   ];
 
   function resetWizardData() {
@@ -282,7 +282,7 @@
     fill.style.width = ((wizardStep + 1) / WIZARD_STEPS.length * 100) + '%';
     label.textContent = `Step ${wizardStep + 1} of ${WIZARD_STEPS.length} — ${WIZARD_STEPS[wizardStep].title}`;
     prevBtn.disabled = wizardStep === 0;
-    nextBtn.textContent = wizardStep === WIZARD_STEPS.length - 1 ? (editingIndex >= 0 ? '✅ Save Changes' : '✅ Add to My Set') : 'Next →';
+    nextBtn.textContent = wizardStep === WIZARD_STEPS.length - 1 ? (editingIndex >= 0 ? 'Save Changes' : 'Add to My Set') : 'Next →';
     // #6: Mobile step label
     if (mobileLabel) mobileLabel.textContent = WIZARD_STEPS[wizardStep].title;
     if (stepsEl) {
@@ -300,7 +300,7 @@
   if ($('#cab-wizard-next')) {
     $('#cab-wizard-next').addEventListener('click', () => {
       const err = WIZARD_STEPS[wizardStep].validate();
-      if (err) { showToast('⚠️ ' + err); return; }
+      if (err) { showToast(err); return; }
       if (wizardStep < WIZARD_STEPS.length - 1) { wizardStep++; renderWizard(); }
       else { editingIndex >= 0 ? saveEditedPolicy() : addCustomPolicy(); }
     });
@@ -331,7 +331,7 @@
 
   function renderStepWhat(el) {
     const apps = CONDITIONS.target_apps || [], actions = CONDITIONS.target_actions || [];
-    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Target resources</label><div class="cab-check-group">${apps.map(a => `<div class="cab-check-item"><input type="radio" name="wiz-app" value="${a.id}" ${wizardData.targetApp === a.id ? 'checked' : ''}><label>${a.label}</label><span class="cab-check-desc">${a.description}</span></div>`).join('')}${actions.map(a => `<div class="cab-check-item"><input type="radio" name="wiz-app" value="${a.id}" ${wizardData.targetApp === a.id ? 'checked' : ''}><label>📋 ${a.label}</label><span class="cab-check-desc">${a.description}</span></div>`).join('')}</div></div>
+    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Target resources</label><div class="cab-check-group">${apps.map(a => `<div class="cab-check-item"><input type="radio" name="wiz-app" value="${a.id}" ${wizardData.targetApp === a.id ? 'checked' : ''}><label>${a.label}</label><span class="cab-check-desc">${a.description}</span></div>`).join('')}${actions.map(a => `<div class="cab-check-item"><input type="radio" name="wiz-app" value="${a.id}" ${wizardData.targetApp === a.id ? 'checked' : ''}><label>${a.label}</label><span class="cab-check-desc">${a.description}</span></div>`).join('')}</div></div>
       <div class="cab-form-group" id="wiz-app-custom" style="${wizardData.targetApp === 'selected-apps' ? '' : 'display:none'}"><label class="cab-form-label">Which apps?</label><input class="cab-form-input" id="wiz-app-text" value="${esc(wizardData.targetCustom)}" placeholder="Salesforce, ServiceNow..."></div>`;
     $$('input[name="wiz-app"]').forEach(r => r.addEventListener('change', e => { wizardData.targetApp = e.target.value; const c = $('#wiz-app-custom'); if(c) c.style.display = e.target.value === 'selected-apps' ? '' : 'none'; updateBuildPreview(); }));
     bind('wiz-app-text', 'input', e => { wizardData.targetCustom = e.target.value; updateBuildPreview(); });
@@ -339,7 +339,7 @@
 
   function renderStepConditions(el) {
     const conds = CONDITIONS.conditions || [];
-    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Conditions (optional)</label><span class="cab-form-hint">Leave blank = any</span>${conds.map(c => { const single = !c.multi_select; return `<details class="cab-cond-detail" style="margin-bottom:0.75rem"><summary style="cursor:pointer;padding:0.5rem;background:rgba(255,255,255,0.03);border-radius:6px;font-size:0.9rem;color:#fff">${c.label} ${c.requires ? `<span style="font-size:0.75rem;color:#F59E0B">(${c.requires})</span>` : ''}</summary><div class="cab-check-group" style="padding:0.5rem 0 0 1rem">${single ? `<div class="cab-check-item"><input type="radio" name="wiz-cond-${c.id}" class="wiz-cond" data-cond="${c.id}" value=""><label>— None —</label></div>` : ''}${c.options.map(o => `<div class="cab-check-item"><input type="${single ? 'radio' : 'checkbox'}" name="${single ? 'wiz-cond-' + c.id : ''}" class="wiz-cond" data-cond="${c.id}" value="${o}" ${isCondChecked(c.id, o) ? 'checked' : ''}><label>${o}</label></div>`).join('')}</div></details>`; }).join('')}</div>`;
+    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Conditions (optional)</label><span class="cab-form-hint">Leave blank = any</span>${conds.map(c => { const single = !c.multi_select; return `<details class="cab-cond-detail"><summary class="cab-cond-summary">${c.label} ${c.requires ? `<span class="cab-check-desc--warn">(${c.requires})</span>` : ''}</summary><div class="cab-check-group cab-cond-options">${single ? `<div class="cab-check-item"><input type="radio" name="wiz-cond-${c.id}" class="wiz-cond" data-cond="${c.id}" value=""><label>— None —</label></div>` : ''}${c.options.map(o => `<div class="cab-check-item"><input type="${single ? 'radio' : 'checkbox'}" name="${single ? 'wiz-cond-' + c.id : ''}" class="wiz-cond" data-cond="${c.id}" value="${o}" ${isCondChecked(c.id, o) ? 'checked' : ''}><label>${o}</label></div>`).join('')}</div></details>`; }).join('')}</div>`;
     $$('.wiz-cond').forEach(cb => cb.addEventListener('change', () => { syncConditions(); updateBuildPreview(); }));
   }
 
@@ -354,14 +354,14 @@
 
   function renderStepGrant(el) {
     const ctrls = (CONDITIONS.grant_controls || []).filter(c => !c.is_block);
-    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Access decision *</label><div style="display:flex;gap:0.75rem;flex-wrap:wrap"><div class="cab-radio-card ${wizardData.grantType === 'block' ? 'cab-radio-card--selected' : ''}" onclick="window.__cab.setGrantType('block')"><span class="cab-radio-card__icon">🚫</span><div><strong>Block</strong><br><small style="color:var(--cab-text-dim)">Prevent access</small></div></div><div class="cab-radio-card ${wizardData.grantType === 'grant' ? 'cab-radio-card--selected' : ''}" onclick="window.__cab.setGrantType('grant')"><span class="cab-radio-card__icon">✅</span><div><strong>Grant with controls</strong><br><small style="color:var(--cab-text-dim)">Allow if met</small></div></div></div></div>
-      <div id="wiz-grant-controls" style="${wizardData.grantType === 'block' ? 'display:none' : ''}"><div class="cab-form-group"><label class="cab-form-label">Required controls (≥1)</label><div class="cab-check-group">${ctrls.map(c => `<div class="cab-check-item"><input type="checkbox" class="wiz-gc" value="${c.id}" ${wizardData.grantControls.includes(c.id) ? 'checked' : ''}><label>${c.label}</label>${c.requires ? `<span class="cab-check-desc" style="color:#F59E0B">${c.requires}</span>` : ''}</div>`).join('')}</div></div><div class="cab-form-group"><label class="cab-form-label">Multiple controls</label><div class="cab-operator-toggle"><button class="cab-operator-btn ${wizardData.grantOperator === 'AND' ? 'cab-operator-btn--active' : ''}" onclick="window.__cab.setOperator('AND')">ALL (AND)</button><button class="cab-operator-btn ${wizardData.grantOperator === 'OR' ? 'cab-operator-btn--active' : ''}" onclick="window.__cab.setOperator('OR')">ONE (OR)</button></div></div></div>`;
+    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Access decision *</label><div style="display:flex;gap:0.75rem;flex-wrap:wrap"><div class="cab-radio-card ${wizardData.grantType === 'block' ? 'cab-radio-card--selected' : ''}" onclick="window.__cab.setGrantType('block')"><div><strong>Block</strong><br><small class="cab-form-hint">Prevent access</small></div></div><div class="cab-radio-card ${wizardData.grantType === 'grant' ? 'cab-radio-card--selected' : ''}" onclick="window.__cab.setGrantType('grant')"><div><strong>Grant with controls</strong><br><small class="cab-form-hint">Allow if met</small></div></div></div></div>
+      <div id="wiz-grant-controls" style="${wizardData.grantType === 'block' ? 'display:none' : ''}"><div class="cab-form-group"><label class="cab-form-label">Required controls (≥1)</label><div class="cab-check-group">${ctrls.map(c => `<div class="cab-check-item"><input type="checkbox" class="wiz-gc" value="${c.id}" ${wizardData.grantControls.includes(c.id) ? 'checked' : ''}><label>${c.label}</label>${c.requires ? `<span class="cab-check-desc cab-check-desc--warn">${c.requires}</span>` : ''}</div>`).join('')}</div></div><div class="cab-form-group"><label class="cab-form-label">Multiple controls</label><div class="cab-operator-toggle"><button class="cab-operator-btn ${wizardData.grantOperator === 'AND' ? 'cab-operator-btn--active' : ''}" onclick="window.__cab.setOperator('AND')">ALL (AND)</button><button class="cab-operator-btn ${wizardData.grantOperator === 'OR' ? 'cab-operator-btn--active' : ''}" onclick="window.__cab.setOperator('OR')">ONE (OR)</button></div></div></div>`;
     $$('.wiz-gc').forEach(cb => cb.addEventListener('change', () => { wizardData.grantControls = [...$$('.wiz-gc:checked')].map(c => c.value); updateBuildPreview(); }));
   }
 
   function renderStepSession(el) {
     const sc = CONDITIONS.session_controls || [];
-    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Session controls (optional)</label>${sc.map(s => `<div style="margin-bottom:0.75rem"><label class="cab-form-label" style="font-size:0.85rem">${s.label} ${s.requires ? `<span style="color:#F59E0B;font-size:0.75rem">(${s.requires})</span>` : ''}</label><p style="font-size:0.8rem;color:var(--cab-text-dim);margin:0 0 0.4rem">${s.description}</p><select class="cab-form-select wiz-session" data-sc="${s.id}" style="max-width:300px"><option value="">— Not configured —</option>${s.options.map(o => `<option value="${o}" ${getSV(s.id) === o ? 'selected' : ''}>${o}</option>`).join('')}</select></div>`).join('')}</div>`;
+    el.innerHTML = `<div class="cab-form-group"><label class="cab-form-label">Session controls (optional)</label>${sc.map(s => `<div class="cab-session-item"><label class="cab-form-label cab-form-label--sm">${s.label} ${s.requires ? `<span class="cab-check-desc--warn">(${s.requires})</span>` : ''}</label><p class="cab-form-hint">${s.description}</p><select class="cab-form-select wiz-session" data-sc="${s.id}" style="max-width:300px"><option value="">— Not configured —</option>${s.options.map(o => `<option value="${o}" ${getSV(s.id) === o ? 'selected' : ''}>${o}</option>`).join('')}</select></div>`).join('')}</div>`;
     $$('.wiz-session').forEach(sel => sel.addEventListener('change', () => { syncSession(); updateBuildPreview(); }));
   }
 
@@ -370,7 +370,7 @@
 
   function renderStepSummary(el) {
     const p = buildPolicyFromWizard();
-    el.innerHTML = `<h3 style="margin:0 0 1rem">📋 ${editingIndex >= 0 ? 'Edit' : 'New'} Policy Summary</h3><div class="cab-policy-card">${renderPolicyCardHTML(p)}</div><p style="margin-top:1rem;color:var(--cab-text-dim);font-size:0.85rem">Click the button below to ${editingIndex >= 0 ? 'save changes' : 'add to your set'}.</p>`;
+    el.innerHTML = `<h3 class="cab-summary-heading">${editingIndex >= 0 ? 'Edit' : 'New'} Policy Summary</h3><div class="cab-policy-card">${renderPolicyCardHTML(p)}</div><p class="cab-summary-hint">Click the button below to ${editingIndex >= 0 ? 'save changes' : 'add to your set'}.</p>`;
   }
 
   function buildPolicyFromWizard() {
@@ -389,11 +389,11 @@
   // #4: Duplicate detection
   function addCustomPolicy() {
     const p = buildPolicyFromWizard();
-    if (!p.name || p.name === 'Untitled') { showToast('⚠️ Enter a policy name'); wizardStep = 0; renderWizard(); return; }
+    if (!p.name || p.name === 'Untitled') { showToast('Enter a policy name'); wizardStep = 0; renderWizard(); return; }
     const dupe = policySet.find(x => x.name.toLowerCase() === p.name.toLowerCase());
     if (dupe && !confirm(`A policy named "${dupe.name}" already exists. Add anyway?`)) return;
     policySet.push(p); savePolicies(); updateBadge();
-    showToast(`✅ Added: ${p.name}`); wizardData = resetWizardData(); editingIndex = -1; wizardStep = 0; renderWizard();
+    showToast(`Added: ${p.name}`); wizardData = resetWizardData(); editingIndex = -1; wizardStep = 0; renderWizard();
     $('[data-tab="review"]').click();
   }
 
@@ -401,7 +401,7 @@
   function saveEditedPolicy() {
     const p = buildPolicyFromWizard();
     policySet[editingIndex] = p; savePolicies(); updateBadge();
-    showToast(`✅ Updated: ${p.name}`); wizardData = resetWizardData(); editingIndex = -1; wizardStep = 0; renderWizard();
+    showToast(`Updated: ${p.name}`); wizardData = resetWizardData(); editingIndex = -1; wizardStep = 0; renderWizard();
     $('[data-tab="review"]').click();
   }
 
@@ -424,7 +424,7 @@
     wizardData.grantOperator = p.grant_operator || 'OR';
     editingIndex = index; wizardStep = 0;
     $('[data-tab="build"]').click(); renderWizard();
-    showToast('✏️ Editing: ' + p.name);
+    showToast('Editing: ' + p.name);
   }
 
   function updateBuildPreview() {
@@ -455,11 +455,11 @@
     if (ring) { const c = 2 * Math.PI * 52; ring.style.strokeDashoffset = c - (total / 100) * c; }
     if (numEl) numEl.textContent = total;
     const tL = $('#cab-zt-tier-label'), tD = $('#cab-zt-tier-desc');
-    if (total >= 86) { tL.textContent = '🌟 Comprehensive'; tD.textContent = 'Excellent Zero Trust alignment.'; }
-    else if (total >= 71) { tL.textContent = '🟢 Strong'; tD.textContent = 'Covers most recommendations.'; }
-    else if (total >= 51) { tL.textContent = '🟡 Developing'; tD.textContent = 'Good foundation — some gaps.'; }
-    else if (total >= 31) { tL.textContent = '🟠 Basic'; tD.textContent = 'Needs Enterprise controls.'; }
-    else { tL.textContent = '🔴 Minimal'; tD.textContent = 'Critical gaps.'; }
+    if (total >= 86) { tL.textContent = 'Comprehensive'; tD.textContent = 'Excellent Zero Trust alignment.'; }
+    else if (total >= 71) { tL.textContent = 'Strong'; tD.textContent = 'Covers most recommendations.'; }
+    else if (total >= 51) { tL.textContent = 'Developing'; tD.textContent = 'Good foundation — some gaps.'; }
+    else if (total >= 31) { tL.textContent = 'Basic'; tD.textContent = 'Needs Enterprise controls.'; }
+    else { tL.textContent = 'Minimal'; tD.textContent = 'Critical gaps.'; }
     setBar('cab-zt-bar-sp', sp / spM * 100, 'cab-zt-val-sp', `${sp} of ${spM} (${Math.round(sp / spM * 100)}%)`);
     setBar('cab-zt-bar-ent', ent / entM * 100, 'cab-zt-val-ent', `${ent} of ${entM} (${Math.round(ent / entM * 100)}%)`);
     setBar('cab-zt-bar-spec', spec / specM * 100, 'cab-zt-val-spec', `${spec} of ${specM} (${Math.round(spec / specM * 100)}%)`);
@@ -475,20 +475,20 @@
       blockAll = policySet.some(p => p.grant_controls.includes('Block access') && p.target_apps === 'All cloud apps' && p.users.includes('All users')),
       azMgmt = policySet.some(p => p.target_apps && p.target_apps.toLowerCase().includes('azure'));
     // Break-glass
-    if (noBG.length === 0) r.push({ level: 'pass', icon: '✅', title: 'Break-glass excluded', message: 'All policies exclude emergency accounts.' });
-    else if (noBG.length === policySet.length) r.push({ level: 'critical', icon: '🔴', title: 'No break-glass exclusion', message: 'No policy excludes emergency accounts.' });
-    else r.push({ level: 'warning', icon: '🟠', title: 'Partial break-glass', message: `${noBG.length} policies missing: ${noBG.map(p => '"' + p.name + '"').slice(0, 3).join(', ')}${noBG.length > 3 ? '...' : ''}` });
-    if (blockAll && noBG.length > 0) r.push({ level: 'critical', icon: '🔴', title: 'Admin lockout risk', message: 'Block-all policy without break-glass exclusion.' });
-    if (blockAll) r.push({ level: 'warning', icon: '🟠', title: 'Broad block', message: 'Blocks all users from all apps — verify conditions narrow scope.' });
-    r.push({ level: 'info', icon: '🔵', title: 'Report-Only first', message: 'Deploy new policies in Report-Only mode for 1-2 weeks.' });
+    if (noBG.length === 0) r.push({ level: 'pass', icon: '', title: 'Break-glass excluded', message: 'All policies exclude emergency accounts.' });
+    else if (noBG.length === policySet.length) r.push({ level: 'critical', icon: '', title: 'No break-glass exclusion', message: 'No policy excludes emergency accounts.' });
+    else r.push({ level: 'warning', icon: '', title: 'Partial break-glass', message: `${noBG.length} policies missing: ${noBG.map(p => '"' + p.name + '"').slice(0, 3).join(', ')}${noBG.length > 3 ? '...' : ''}` });
+    if (blockAll && noBG.length > 0) r.push({ level: 'critical', icon: '', title: 'Admin lockout risk', message: 'Block-all policy without break-glass exclusion.' });
+    if (blockAll) r.push({ level: 'warning', icon: '', title: 'Broad block', message: 'Blocks all users from all apps — verify conditions narrow scope.' });
+    r.push({ level: 'info', icon: '', title: 'Report-Only first', message: 'Deploy new policies in Report-Only mode for 1-2 weeks.' });
     // Conflicts
     const blocks = policySet.filter(p => p.grant_controls.includes('Block access')), grants = policySet.filter(p => !p.grant_controls.includes('Block access'));
-    blocks.forEach(bp => grants.forEach(gp => { if ((bp.users === gp.users || bp.users.includes('All users') || gp.users.includes('All users')) && (bp.target_apps === gp.target_apps || bp.target_apps === 'All cloud apps' || gp.target_apps === 'All cloud apps')) r.push({ level: 'warning', icon: '🟠', title: 'Conflict', message: `"${bp.name}" blocks vs "${gp.name}" grants for overlapping scope.` }); }));
-    if (!azMgmt) r.push({ level: 'info', icon: '🔵', title: 'Azure unprotected', message: 'No policy targets Azure portal/CLI.' });
-    if (!hasLB) r.push({ level: 'warning', icon: '🟠', title: 'Legacy auth open', message: 'No legacy auth block — #1 spray vector.' });
-    else r.push({ level: 'pass', icon: '✅', title: 'Legacy blocked', message: 'Legacy protocols blocked.' });
-    if (!adminMFA && !allMFA) r.push({ level: 'critical', icon: '🔴', title: 'No admin MFA', message: 'No MFA for admins or all users.' });
-    else r.push({ level: 'pass', icon: '✅', title: 'Admin MFA', message: adminMFA ? 'Admin-specific MFA exists.' : 'All-user MFA covers admins.' });
+    blocks.forEach(bp => grants.forEach(gp => { if ((bp.users === gp.users || bp.users.includes('All users') || gp.users.includes('All users')) && (bp.target_apps === gp.target_apps || bp.target_apps === 'All cloud apps' || gp.target_apps === 'All cloud apps')) r.push({ level: 'warning', icon: '', title: 'Conflict', message: `"${bp.name}" blocks vs "${gp.name}" grants for overlapping scope.` }); }));
+    if (!azMgmt) r.push({ level: 'info', icon: '', title: 'Azure unprotected', message: 'No policy targets Azure portal/CLI.' });
+    if (!hasLB) r.push({ level: 'warning', icon: '', title: 'Legacy auth open', message: 'No legacy auth block — #1 spray vector.' });
+    else r.push({ level: 'pass', icon: '', title: 'Legacy blocked', message: 'Legacy protocols blocked.' });
+    if (!adminMFA && !allMFA) r.push({ level: 'critical', icon: '', title: 'No admin MFA', message: 'No MFA for admins or all users.' });
+    else r.push({ level: 'pass', icon: '', title: 'Admin MFA', message: adminMFA ? 'Admin-specific MFA exists.' : 'All-user MFA covers admins.' });
     return r;
   }
 
@@ -496,23 +496,23 @@
     const el = $('#cab-linter-results'); if (!el) return;
     const checks = runLinter(), counts = { critical: 0, warning: 0, info: 0, pass: 0 };
     checks.forEach(c => counts[c.level]++);
-    let h = `<div class="cab-linter-summary">${counts.critical ? `<span class="cab-linter-count cab-linter-count--critical">🔴 ${counts.critical}</span>` : ''}${counts.warning ? `<span class="cab-linter-count cab-linter-count--warning">🟠 ${counts.warning}</span>` : ''}${counts.info ? `<span class="cab-linter-count cab-linter-count--info">🔵 ${counts.info}</span>` : ''}${counts.pass ? `<span class="cab-linter-count cab-linter-count--pass">✅ ${counts.pass}</span>` : ''}</div>`;
+    let h = `<div class="cab-linter-summary">${counts.critical ? `<span class="cab-linter-count cab-linter-count--critical">Critical ${counts.critical}</span>` : ''}${counts.warning ? `<span class="cab-linter-count cab-linter-count--warning">Warning ${counts.warning}</span>` : ''}${counts.info ? `<span class="cab-linter-count cab-linter-count--info">Info ${counts.info}</span>` : ''}${counts.pass ? `<span class="cab-linter-count cab-linter-count--pass">Pass ${counts.pass}</span>` : ''}</div>`;
     h += checks.map(c => `<div class="cab-linter-item cab-linter-item--${c.level}"><span class="cab-linter-icon">${c.icon}</span><span class="cab-linter-text"><strong>${c.title}</strong> — ${c.message}</span></div>`).join('');
     el.innerHTML = h;
   }
 
-  function renderCompliance() { const el = $('#cab-compliance-section'); if (!el || !COMPLIANCE.length) return; let h = `<details class="cab-compliance-details"><summary><strong>📜 Compliance Mapping (Illustrative)</strong></summary><p style="font-size:0.8rem;color:var(--cab-text-dim);margin:0.5rem 0">⚠️ Shows objectives your policies <em>support</em> — not certify.</p><div class="cab-compliance-grid">`; COMPLIANCE.forEach(fw => { h += `<div class="cab-compliance-fw"><h4>${fw.name}</h4>`; (fw.controls || []).forEach(c => { h += `<div class="cab-compliance-ctrl"><strong>${c.label}</strong><br><span style="font-size:0.78rem;color:var(--cab-text-dim)">${c.ca_relevance}</span></div>`; }); h += `</div>`; }); h += `</div></details>`; el.innerHTML = h; }
+  function renderCompliance() { const el = $('#cab-compliance-section'); if (!el || !COMPLIANCE.length) return; let h = `<details class="cab-compliance-details"><summary><strong>Compliance Mapping (Illustrative)</strong></summary><p class="cab-compliance-note">Shows objectives your policies <em>support</em> — not certify.</p><div class="cab-compliance-grid">`; COMPLIANCE.forEach(fw => { h += `<div class="cab-compliance-fw"><h4>${fw.name}</h4>`; (fw.controls || []).forEach(c => { h += `<div class="cab-compliance-ctrl"><strong>${c.label}</strong><br><span class="cab-compliance-desc">${c.ca_relevance}</span></div>`; }); h += `</div>`; }); h += `</div></details>`; el.innerHTML = h; }
 
   function renderReviewPolicies() {
     const grid = $('#cab-review-grid'), cnt = $('#cab-review-count'); if (!grid) return;
     cnt.textContent = policySet.length;
     // #9: Dependency hints in review
-    let h = `<div class="cab-review-actions"><button class="cab-btn cab-btn--danger cab-btn--sm" onclick="window.__cab.clearAll()">🗑️ Clear All</button></div>`;
+    let h = `<div class="cab-review-actions"><button class="cab-btn cab-btn--danger cab-btn--sm" onclick="window.__cab.clearAll()">Clear All</button></div>`;
     h += policySet.map((p, i) => {
       const deps = [];
       if ((p.grant_controls || []).some(g => g.includes('compliant'))) deps.push('Intune');
       if ((p.conditions || []).some(c => c.toLowerCase().includes('risk'))) deps.push('Entra ID P2');
-      return `<div class="cab-policy-card cab-policy-card--${tierClass(p.tier)}">${renderPolicyCardHTML(p)}${deps.length ? `<p class="cab-dep-hint">🔗 Requires: ${deps.join(', ')}</p>` : ''}<div class="cab-policy-card__actions" style="margin-top:0.75rem"><button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="window.__cab.editPolicy(${i})">✏️ Edit</button><button class="cab-btn cab-btn--danger cab-btn--sm" onclick="window.__cab.removePolicy(${i})">🗑️</button></div></div>`;
+      return `<div class="cab-policy-card cab-policy-card--${tierClass(p.tier)}">${renderPolicyCardHTML(p)}${deps.length ? `<p class="cab-dep-hint">Requires: ${deps.join(', ')}</p>` : ''}<div class="cab-policy-card__actions" style="margin-top:0.75rem"><button class="cab-btn cab-btn--secondary cab-btn--sm" onclick="window.__cab.editPolicy(${i})">Edit</button><button class="cab-btn cab-btn--danger cab-btn--sm" onclick="window.__cab.removePolicy(${i})">Remove</button></div></div>`;
     }).join('');
     grid.innerHTML = h;
   }
@@ -555,9 +555,9 @@
     // #10: What to do next
     if (nextSteps) {
       if (currentExportFormat === 'powershell') {
-        nextSteps.innerHTML = `<div class="cab-next-steps"><h4>📋 What to do next</h4><ol><li>Open PowerShell as admin</li><li>Run <code>Install-Module Microsoft.Graph -Scope CurrentUser</code></li><li>Run <code>Connect-MgGraph -Scopes "Policy.ReadWrite.ConditionalAccess"</code></li><li>Paste and run each policy command</li><li>Check <strong>Report-Only insights</strong> in Entra portal after 1 week</li><li>If clean, switch policies from Report-Only to <strong>On</strong></li></ol></div>`;
+        nextSteps.innerHTML = `<div class="cab-next-steps"><h4>What to do next</h4><ol><li>Open PowerShell as admin</li><li>Run <code>Install-Module Microsoft.Graph -Scope CurrentUser</code></li><li>Run <code>Connect-MgGraph -Scopes "Policy.ReadWrite.ConditionalAccess"</code></li><li>Paste and run each policy command</li><li>Check <strong>Report-Only insights</strong> in Entra portal after 1 week</li><li>If clean, switch policies from Report-Only to <strong>On</strong></li></ol></div>`;
       } else if (currentExportFormat === 'json') {
-        nextSteps.innerHTML = `<div class="cab-next-steps"><h4>📋 What to do next</h4><ol><li>Replace all <code>&lt;role-id&gt;</code>, <code>&lt;group-id&gt;</code>, <code>&lt;app-id&gt;</code> placeholders</li><li>POST each object to <code>https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies</code></li><li>Use Graph Explorer or your automation tool</li><li>Verify in Entra portal → Conditional Access → Report-Only</li></ol></div>`;
+        nextSteps.innerHTML = `<div class="cab-next-steps"><h4>What to do next</h4><ol><li>Replace all <code>&lt;role-id&gt;</code>, <code>&lt;group-id&gt;</code>, <code>&lt;app-id&gt;</code> placeholders</li><li>POST each object to <code>https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies</code></li><li>Use Graph Explorer or your automation tool</li><li>Verify in Entra portal → Conditional Access → Report-Only</li></ol></div>`;
       } else nextSteps.innerHTML = '';
     }
   }
@@ -579,7 +579,7 @@
   }
 
   function generatePowerShell() {
-    let ps = `# ═══════════════════════════════════════════════════════\n# Conditional Access Policies — PowerShell\n# Generated: ${new Date().toLocaleDateString()} by aguidetocloud.com/ca-builder\n# ⚠️ DEPLOY IN REPORT-ONLY MODE FIRST\n# ═══════════════════════════════════════════════════════\n\n# Install-Module Microsoft.Graph -Scope CurrentUser\n# Connect-MgGraph -Scopes "Policy.ReadWrite.ConditionalAccess"\n\n`;
+    let ps = `# ═══════════════════════════════════════════════════════\n# Conditional Access Policies — PowerShell\n# Generated: ${new Date().toLocaleDateString()} by aguidetocloud.com/ca-builder\n# DEPLOY IN REPORT-ONLY MODE FIRST\n# ═══════════════════════════════════════════════════════\n\n# Install-Module Microsoft.Graph -Scope CurrentUser\n# Connect-MgGraph -Scopes "Policy.ReadWrite.ConditionalAccess"\n\n`;
     policySet.forEach((p, i) => {
       const num = String(i + 1).padStart(3, '0'), nm = `CA${num}-${tierShort(p.tier)}-${slugify(p.name)}`, isBlock = p.grant_controls.includes('Block access');
       ps += `# ── Policy ${i + 1}: ${p.name} ──\n$params${i + 1} = @{\n    DisplayName = "${nm}"\n    State = "enabledForReportingButNotEnforced"\n    Conditions = @{\n`;
@@ -637,7 +637,7 @@
 
   function generateCSV() { let c = 'Policy Name,Tier,Users,Target,Conditions,Controls,Session,Exclusions\n'; policySet.forEach(p => { c += `"${p.name}","${p.tier_label}","${p.users}","${p.target_apps}","${(p.conditions || []).join('; ')}","${p.grant_controls.join('; ')}","${(p.session_controls || []).join('; ')}","${(p.exclusions || []).join('; ')}"\n`; }); return c; }
   function generateDocs() { let d = `CONDITIONAL ACCESS POLICY DOCUMENTATION\n${'═'.repeat(45)}\nGenerated: ${new Date().toLocaleDateString()}\nPolicies: ${policySet.length}\n\n`; policySet.forEach((p, i) => { d += `${'─'.repeat(45)}\nPOLICY ${i + 1}: ${p.name}\n${'─'.repeat(45)}\nTier: ${p.tier_label}\nIntent: ${p.description || 'N/A'}\nUsers: ${p.users}\nExclusions: ${(p.exclusions || []).join(', ') || 'None'}\nTarget: ${p.target_apps}\nConditions: ${(p.conditions || []).join(', ') || 'None'}\nControls: ${p.grant_controls.join(' ' + (p.grant_operator || 'OR') + ' ')}\nSession: ${(p.session_controls || []).join(', ') || 'None'}\n\n`; }); return d; }
-  function generateRollout() { return `ROLLOUT PLAN\n${'═'.repeat(40)}\n\n⚠️ Follow this sequence.\n\n1. PREPARE\n${'─'.repeat(30)}\n□ Create 2 break-glass accounts (Global Admin, FIDO2)\n□ Create break-glass security group\n□ Test break-glass sign-in\n\n2. REPORT-ONLY\n${'─'.repeat(30)}\n` + policySet.map(p => `□ "${p.name}" → Report-Only\n`).join('') + `□ Monitor 1-2 weeks\n\n3. PILOT\n${'─'.repeat(30)}\n□ Create pilot group (10-20 users)\n□ Enable for pilot only\n\n4. DEPLOY\n${'─'.repeat(30)}\n` + policySet.filter(p => p.tier === 'starting-point').map(p => `  1. ${p.name}\n`).join('') + policySet.filter(p => p.tier === 'enterprise').map(p => `  2. ${p.name}\n`).join('') + policySet.filter(p => !['starting-point', 'enterprise'].includes(p.tier)).map(p => `  3. ${p.name}\n`).join('') + `\n5. ONGOING\n${'─'.repeat(30)}\n□ Review quarterly\n□ Test break-glass monthly\n`; }
+  function generateRollout() { return `ROLLOUT PLAN\n${'═'.repeat(40)}\n\nFollow this sequence.\n\n1. PREPARE\n${'─'.repeat(30)}\n□ Create 2 break-glass accounts (Global Admin, FIDO2)\n□ Create break-glass security group\n□ Test break-glass sign-in\n\n2. REPORT-ONLY\n${'─'.repeat(30)}\n` + policySet.map(p => `□ "${p.name}" → Report-Only\n`).join('') + `□ Monitor 1-2 weeks\n\n3. PILOT\n${'─'.repeat(30)}\n□ Create pilot group (10-20 users)\n□ Enable for pilot only\n\n4. DEPLOY\n${'─'.repeat(30)}\n` + policySet.filter(p => p.tier === 'starting-point').map(p => `  1. ${p.name}\n`).join('') + policySet.filter(p => p.tier === 'enterprise').map(p => `  2. ${p.name}\n`).join('') + policySet.filter(p => !['starting-point', 'enterprise'].includes(p.tier)).map(p => `  3. ${p.name}\n`).join('') + `\n5. ONGOING\n${'─'.repeat(30)}\n□ Review quarterly\n□ Test break-glass monthly\n`; }
 
   // #14: Import from JSON
   function importPolicies(jsonStr) {
@@ -652,9 +652,9 @@
         }
       });
       savePolicies(); updateBadge();
-      showToast(`✅ Imported ${added} policies`);
+      showToast(`Imported ${added} policies`);
       $('[data-tab="review"]').click();
-    } catch (e) { showToast('⚠️ Invalid JSON: ' + e.message); }
+    } catch (e) { showToast('Invalid JSON: ' + e.message); }
   }
 
   // #15: Compare sets
@@ -662,17 +662,17 @@
     const sets = JSON.parse(localStorage.getItem(LS_SETS_KEY) || '[]');
     sets.push({ name: name || `Set ${sets.length + 1}`, date: new Date().toISOString(), policies: JSON.parse(JSON.stringify(policySet)) });
     localStorage.setItem(LS_SETS_KEY, JSON.stringify(sets));
-    showToast('💾 Set saved: ' + (name || `Set ${sets.length}`));
+    showToast('Set saved: ' + (name || `Set ${sets.length}`));
   }
 
   /* Export buttons */
-  if ($('#cab-export-copy')) $('#cab-export-copy').addEventListener('click', () => { const el = $('#cab-export-output'); navigator.clipboard.writeText(el.textContent || el.innerText).then(() => showToast('📋 Copied!')); });
+  if ($('#cab-export-copy')) $('#cab-export-copy').addEventListener('click', () => { const el = $('#cab-export-output'); navigator.clipboard.writeText(el.textContent || el.innerText).then(() => showToast('Copied to clipboard')); });
   if ($('#cab-export-download')) $('#cab-export-download').addEventListener('click', () => { const ext = { powershell: 'ps1', json: 'json', csv: 'csv', docs: 'txt', rollout: 'txt' }; const el = $('#cab-export-output'); const b = new Blob([el.textContent || el.innerText], { type: 'text/plain' }); const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `ca-policies.${ext[currentExportFormat] || 'txt'}`; a.click(); URL.revokeObjectURL(a.href); });
 
   /* ═══════════════════════════════════════════════════════
      HELPERS
      ═══════════════════════════════════════════════════════ */
-  function renderPolicyCardHTML(p) { return `<div class="cab-policy-card__header"><h4 class="cab-policy-card__name">${esc(p.name || 'Untitled')}</h4><span class="cab-tier-badge cab-tier-badge--${tierClass(p.tier)}">${p.tier_label || 'Custom'}</span></div>${p.description ? `<p class="cab-policy-card__desc">${esc(p.description)}</p>` : ''}<div class="cab-policy-card__details"><div class="cab-detail-row"><span class="cab-detail-label">👥</span><span class="cab-detail-value">${esc(p.users || 'Not set')}</span></div><div class="cab-detail-row"><span class="cab-detail-label">🎯</span><span class="cab-detail-value">${esc(p.target_apps || 'Not set')}</span></div>${(p.conditions || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">📋</span><span class="cab-detail-value">${esc(p.conditions.join(', '))}</span></div>` : ''}<div class="cab-detail-row"><span class="cab-detail-label">✅</span><span class="cab-detail-value">${esc((p.grant_controls || []).join(' ' + (p.grant_operator || 'OR') + ' '))}</span></div>${(p.session_controls || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">⏱️</span><span class="cab-detail-value">${esc(p.session_controls.join(', '))}</span></div>` : ''}${(p.exclusions || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">🚫</span><span class="cab-detail-value">${esc(p.exclusions.join(', '))}</span></div>` : ''}</div>`; }
+  function renderPolicyCardHTML(p) { return `<div class="cab-policy-card__header"><h4 class="cab-policy-card__name">${esc(p.name || 'Untitled')}</h4><span class="cab-tier-badge cab-tier-badge--${tierClass(p.tier)}">${p.tier_label || 'Custom'}</span></div>${p.description ? `<p class="cab-policy-card__desc">${esc(p.description)}</p>` : ''}<div class="cab-policy-card__details"><div class="cab-detail-row"><span class="cab-detail-label">Users</span><span class="cab-detail-value">${esc(p.users || 'Not set')}</span></div><div class="cab-detail-row"><span class="cab-detail-label">Target</span><span class="cab-detail-value">${esc(p.target_apps || 'Not set')}</span></div>${(p.conditions || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">When</span><span class="cab-detail-value">${esc(p.conditions.join(', '))}</span></div>` : ''}<div class="cab-detail-row"><span class="cab-detail-label">Controls</span><span class="cab-detail-value">${esc((p.grant_controls || []).join(' ' + (p.grant_operator || 'OR') + ' '))}</span></div>${(p.session_controls || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">Session</span><span class="cab-detail-value">${esc(p.session_controls.join(', '))}</span></div>` : ''}${(p.exclusions || []).length ? `<div class="cab-detail-row"><span class="cab-detail-label">Excludes</span><span class="cab-detail-value">${esc(p.exclusions.join(', '))}</span></div>` : ''}</div>`; }
 
   function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function bind(id, ev, fn) { const el = document.getElementById(id); if (el) el.addEventListener(ev, fn); }
@@ -680,19 +680,39 @@
   function slugify(s) { return (s || '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 30); }
   function savePolicies() { try { localStorage.setItem(LS_KEY, JSON.stringify(policySet)); } catch (e) {} }
   function loadPolicies() { try { const d = localStorage.getItem(LS_KEY); return d ? JSON.parse(d) : []; } catch (e) { return []; } }
-  function removePolicy(i) { lastRemoved = { p: policySet[i], i }; policySet.splice(i, 1); savePolicies(); updateBadge(); renderReview(); showToastUndo('🗑️ Removed', () => { if (lastRemoved) { policySet.splice(lastRemoved.i, 0, lastRemoved.p); savePolicies(); updateBadge(); renderReview(); lastRemoved = null; } }); }
-  function clearAll() { if (!confirm('Remove all ' + policySet.length + ' policies?')) return; const bk = [...policySet]; policySet = []; savePolicies(); updateBadge(); renderReview(); renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all'); showToastUndo('🗑️ Cleared all', () => { policySet = bk; savePolicies(); updateBadge(); renderReview(); }); }
+  function removePolicy(i) { lastRemoved = { p: policySet[i], i }; policySet.splice(i, 1); savePolicies(); updateBadge(); renderReview(); showToastUndo('Removed', () => { if (lastRemoved) { policySet.splice(lastRemoved.i, 0, lastRemoved.p); savePolicies(); updateBadge(); renderReview(); lastRemoved = null; } }); }
+  function clearAll() { if (!confirm('Remove all ' + policySet.length + ' policies?')) return; const bk = [...policySet]; policySet = []; savePolicies(); updateBadge(); renderReview(); renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all'); showToastUndo('Cleared all', () => { policySet = bk; savePolicies(); updateBadge(); renderReview(); }); }
   function updateBadge() { const b = $('#cab-policy-count'); if (b) { b.textContent = policySet.length; b.style.display = policySet.length > 0 ? 'inline-flex' : 'none'; } }
   function showToast(m) { let t = $('.cab-toast'); if (!t) { t = document.createElement('div'); t.className = 'cab-toast'; document.body.appendChild(t); } t.innerHTML = esc(m); t.classList.add('cab-toast--show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('cab-toast--show'), 2500); }
   function showToastUndo(m, fn) { let t = $('.cab-toast'); if (!t) { t = document.createElement('div'); t.className = 'cab-toast'; document.body.appendChild(t); } t.innerHTML = `${esc(m)} <button class="cab-toast-undo" onclick="this.parentElement._u()">Undo</button>`; t._u = () => { fn(); t.classList.remove('cab-toast--show'); }; t.classList.add('cab-toast--show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('cab-toast--show'), 5000); }
   function setGrantType(t) { wizardData.grantType = t; renderWizard(); }
   function setOperator(o) { wizardData.grantOperator = o; renderWizard(); }
   function updateURL() { const u = new URL(window.location), a = $('.cab-tab--active'); if (a) u.searchParams.set('tab', a.dataset.tab); history.replaceState(null, '', u); }
-  function restoreURL() { const p = new URLSearchParams(window.location.search), tab = p.get('tab'); if (tab) { const b = $(`.cab-tab[data-tab="${tab}"]`); if (b) b.click(); } const s = p.get('set'); if (s && policySet.length === 0) { try { atob(s).split(',').forEach(id => addTemplate(id)); showToast('📋 Loaded shared set'); } catch (e) {} } }
+  function restoreURL() { const p = new URLSearchParams(window.location.search), tab = p.get('tab'); if (tab) { const b = $(`.cab-tab[data-tab="${tab}"]`); if (b) b.click(); } const s = p.get('set'); if (s && policySet.length === 0) { try { atob(s).split(',').forEach(id => addTemplate(id)); showToast('Loaded shared set'); } catch (e) {} } }
   function getShareURL() { const u = new URL(window.location); u.searchParams.set('tab', 'review'); const ids = policySet.filter(p => p.source === 'template').map(p => p.id); if (ids.length) u.searchParams.set('set', btoa(ids.join(','))); return u.toString(); }
+  function removeTemplateById(id) {
+    const idx = policySet.findIndex(p => p.id === id);
+    if (idx < 0) return;
+    policySet.splice(idx, 1);
+    savePolicies(); updateBadge();
+    showToast('Removed');
+    renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all');
+  }
+
+  function removeAllTier(tier) {
+    const tierIds = TEMPLATES.filter(t => t.tier === tier).map(t => t.id);
+    let removed = 0;
+    for (let i = policySet.length - 1; i >= 0; i--) {
+      if (tierIds.includes(policySet[i].id)) { policySet.splice(i, 1); removed++; }
+    }
+    savePolicies(); updateBadge();
+    showToast(`Removed ${removed} ${tier} policies`);
+    renderTemplates(tplSearch ? tplSearch.value : '', tplTier ? tplTier.value : 'all');
+  }
+
   function trackEvent(n) { if (window.clarity) window.clarity('event', 'cab_' + n); }
 
-  window.__cab = { addTemplate, removePolicy, setGrantType, setOperator, addAllTier, customizeTemplate, clearAll, goToStep, editPolicy, applyScenario, importPolicies, saveCurrentSet, getShareURL };
+  window.__cab = { addTemplate, removePolicy, removeTemplateById, removeAllTier, setGrantType, setOperator, addAllTier, customizeTemplate, clearAll, goToStep, editPolicy, applyScenario, importPolicies, saveCurrentSet, getShareURL };
 
   renderTemplates(); renderWizard(); updateBadge(); restoreURL(); trackEvent('load');
 })();
