@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Apr 2026 17:47:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 19:50:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Users may be unable to view analytics for SharePoint Online sites</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1295361</link>
+      <description>[SharePoint Online] Users may be unable to view analytics for SharePoint Online sites. </description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1295361</guid>
+      <pubDate>Wed, 29 Apr 2026 18:55:16 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1293524</link>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1262553</guid>
       <pubDate>Thu, 26 Mar 2026 11:09:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to access archived email messages in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1260260</link>
-      <description>[Exchange Online] Users may be unable to access archived email messages in Outlook on the web. </description>
-      <category>Exchange Online</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">EX1260260</guid>
-      <pubDate>Tue, 24 Mar 2026 09:37:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
