@@ -44,7 +44,7 @@
 .ptest-context-input {
   width: 100%; padding: 0.6rem 0.8rem; font-size: 0.85rem;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 10px; color: var(--text-primary); outline: none; transition: border-color 0.2s;
+  border-radius: var(--radius-sm, 6px); color: var(--text-primary); outline: none; transition: border-color 150ms ease-out;
 }
 .ptest-context-input:focus { border-color: var(--accent); }
 
@@ -61,15 +61,15 @@
   margin-bottom: 0.4rem;
 }
 .ptest-label {
-  font-size: 0.9rem; font-weight: 700; color: var(--text-primary);
+  font-size: 0.9rem; font-weight: 600; color: var(--text-primary);
   font-family: var(--font-heading, 'Inter', sans-serif);
 }
 .ptest-char-count { font-size: 0.75rem; color: var(--text-muted); }
 .ptest-textarea {
   width: 100%; padding: 0.8rem; font-size: 0.85rem; font-family: inherit;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; color: var(--text-primary); outline: none; resize: vertical;
-  transition: border-color 0.2s; min-height: 180px;
+  border-radius: var(--radius-sm, 6px); color: var(--text-primary); outline: none; resize: vertical;
+  transition: border-color 150ms ease-out; min-height: 180px;
 }
 .ptest-textarea:focus { border-color: var(--accent); }
 
@@ -80,7 +80,7 @@
 .ptest-swap-btn {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); font-size: 1.4rem; width: 44px; height: 44px;
-  border-radius: 50%; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  border-radius: 50%; cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   display: flex; align-items: center; justify-content: center;
 }
 .ptest-swap-btn:hover { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
@@ -90,7 +90,7 @@
   min-height: 1.4rem; margin-top: 0.4rem;
   font-size: 0.78rem; color: var(--text-secondary);
 }
-.ptest-live-score .ptest-live-val { font-weight: 700; }
+.ptest-live-score .ptest-live-val { font-weight: 600; }
 .ptest-live-val.ptest-score-low { color: var(--text-primary); }
 .ptest-live-val.ptest-score-med { color: var(--text-primary); }
 .ptest-live-val.ptest-score-good { color: var(--accent); }
@@ -103,8 +103,8 @@
 }
 .ptest-btn-primary {
   background: var(--accent); color: var(--accent-foreground, #fff); border: none;
-  padding: 0.7rem 1.4rem; font-size: 0.9rem; font-weight: 700;
-  border-radius: 12px; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  padding: 0.7rem 1.4rem; font-size: 0.9rem; font-weight: 600;
+  border-radius: var(--radius-sm, 6px); cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   font-family: var(--font-heading, 'Inter', sans-serif);
 }
 .ptest-btn-primary:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
@@ -112,8 +112,8 @@
 .ptest-btn-secondary {
   background: var(--bg-elevated); color: var(--text-secondary);
   border: 1px solid var(--border); padding: 0.55rem 1rem;
-  font-size: 0.82rem; font-weight: 600; border-radius: 10px;
-  cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  font-size: 0.82rem; font-weight: 600; border-radius: var(--radius-sm, 6px);
+  cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .ptest-btn-secondary:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
 .ptest-btn-danger { color: var(--text-primary); border-color: rgba(239,68,68,0.3); }
@@ -124,14 +124,14 @@
 .ptest-examples-menu {
   position: absolute; top: 100%; left: 0; z-index: 20;
   background: rgba(15,15,25,0.95); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 0.4rem; min-width: 260px;
+  border-radius: var(--radius-sm, 6px); padding: 0.4rem; min-width: 260px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5); margin-top: 0.3rem;
 }
 .ptest-example-item {
   display: block; width: 100%; text-align: left;
   padding: 0.55rem 0.8rem; background: none; border: none;
   color: var(--text-secondary); font-size: 0.82rem; cursor: pointer;
-  border-radius: 8px; transition: background 0.15s;
+  border-radius: var(--radius-sm, 6px); transition: background 0.15s;
 }
 .ptest-example-item:hover { background: var(--accent-subtle); color: var(--text-primary); }
 
@@ -143,7 +143,7 @@
 .ptest-score-banner {
   display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm, 6px); padding: 1.5rem; margin-bottom: 1.5rem;
   align-items: center;
 }
 .ptest-score-side { text-align: center; }
@@ -152,7 +152,7 @@
   letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.3rem;
 }
 .ptest-score-number {
-  display: block; font-size: 3rem; font-weight: 800; line-height: 1;
+  display: block; font-size: 3rem; font-weight: 600; line-height: 1;
   font-family: var(--font-heading, 'Inter', sans-serif);
   transition: color 0.3s;
 }
@@ -169,7 +169,7 @@
   gap: 0.3rem; padding: 0 0.5rem;
 }
 .ptest-verdict-text {
-  font-size: 1.1rem; font-weight: 800; text-align: center;
+  font-size: 1.1rem; font-weight: 600; text-align: center;
   font-family: var(--font-heading, 'Inter', sans-serif);
 }
 .ptest-verdict-delta {
@@ -198,16 +198,16 @@
 .ptest-bar-a .ptest-criterion-fill { background: var(--accent); }
 .ptest-bar-b .ptest-criterion-fill { background: var(--accent); }
 .ptest-criterion-score {
-  font-size: 0.75rem; font-weight: 700; text-align: center;
+  font-size: 0.75rem; font-weight: 600; text-align: center;
   color: var(--text-secondary);
 }
-.ptest-criterion-better { color: var(--accent); font-weight: 800; }
+.ptest-criterion-better { color: var(--accent); font-weight: 600; }
 .ptest-criterion-worse { color: var(--text-muted); }
 
 /* ── Explanation ── */
 .ptest-explanation {
   background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
-  border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm, 6px); padding: 1rem 1.2rem; margin-bottom: 1.5rem;
   font-size: 0.85rem; line-height: 1.6; color: var(--text-primary);
 }
 .ptest-explanation strong { color: var(--accent); }
@@ -215,12 +215,12 @@
 /* ── Diff ── */
 .ptest-diff-section { margin-bottom: 1.5rem; }
 .ptest-section-title {
-  font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem;
+  font-size: 0.95rem; font-weight: 600; margin-bottom: 0.6rem;
   color: var(--text-primary);
 }
 .ptest-diff {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 1rem; font-size: 0.82rem;
+  border-radius: var(--radius-sm, 6px); padding: 1rem; font-size: 0.82rem;
   line-height: 1.7; word-wrap: break-word; color: var(--text-secondary);
 }
 .ptest-diff-add { background: rgba(34,197,94,0.2); color: #86efac; border-radius: 3px; padding: 0.05em 0.2em; }
@@ -237,7 +237,7 @@
   border-radius: var(--radius-md, 10px); padding: 1.2rem; margin-bottom: 1.5rem;
 }
 .ptest-improved-text {
-  background: var(--bg-elevated); border-radius: 10px; padding: 1rem;
+  background: var(--bg-elevated); border-radius: var(--radius-sm, 6px); padding: 1rem;
   font-size: 0.85rem; line-height: 1.7; color: var(--text-primary);
   white-space: pre-wrap; margin-bottom: 0.8rem;
 }
@@ -258,7 +258,7 @@
 .ptest-platform-select {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   color: var(--text-secondary); padding: 0.5rem 0.7rem; font-size: 0.78rem;
-  border-radius: 8px; cursor: pointer; outline: none;
+  border-radius: var(--radius-sm, 6px); cursor: pointer; outline: none;
 }
 .ptest-platform-select:focus { border-color: var(--accent); }
 .ptest-platform-select option { background: var(--bg-surface); color: var(--text-primary); }
@@ -280,7 +280,7 @@
 }
 .ptest-improved-side { display: flex; flex-direction: column; }
 .ptest-improved-label {
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 0.3rem;
 }
 
@@ -298,7 +298,7 @@
 .ptest-blind-bar {
   display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
   background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25);
-  border-radius: 12px; padding: 0.7rem 1rem; margin-bottom: 1rem;
+  border-radius: var(--radius-sm, 6px); padding: 0.7rem 1rem; margin-bottom: 1rem;
   font-size: 0.82rem; color: var(--text-secondary);
 }
 .ptest-blind-bar span { flex: 1; }
@@ -311,8 +311,8 @@
 .ptest-blind-revealed .ptest-explanation,
 .ptest-blind-revealed .ptest-radar-section { filter: none; pointer-events: auto; }
 .ptest-blind-result {
-  text-align: center; padding: 1rem; font-size: 1.1rem; font-weight: 700;
-  border-radius: 12px; margin-bottom: 1rem;
+  text-align: center; padding: 1rem; font-size: 1.1rem; font-weight: 600;
+  border-radius: var(--radius-sm, 6px); margin-bottom: 1rem;
 }
 .ptest-blind-correct { background: var(--accent-subtle); border: 1px solid rgba(34,197,94,0.3); color: #86efac; }
 .ptest-blind-wrong { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: var(--text-primary); }
@@ -320,17 +320,17 @@
 /* ── V3: Prompt Duel/Challenge ── */
 .ptest-duel {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm, 6px); padding: 1.5rem; margin-bottom: 1.5rem;
 }
 .ptest-duel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
 .ptest-duel-header h3 { margin: 0; font-size: 1.1rem; }
 .ptest-duel-task {
   background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.9rem;
+  border-radius: var(--radius-sm, 6px); padding: 0.8rem 1rem; font-size: 0.9rem;
   color: var(--text-primary); margin-bottom: 0.8rem; line-height: 1.5;
 }
 .ptest-duel-timer {
-  text-align: center; font-size: 2.5rem; font-weight: 800;
+  text-align: center; font-size: 2.5rem; font-weight: 600;
   font-family: var(--font-heading, 'Inter', sans-serif);
   color: var(--accent); margin-bottom: 0.5rem;
   font-variant-numeric: tabular-nums;
@@ -338,10 +338,10 @@
 .ptest-duel-timer.ptest-timer-warn { color: var(--text-primary); animation: ptest-pulse 0.5s infinite; }
 @keyframes ptest-pulse { 50% { opacity: 0.5; } }
 .ptest-duel-result {
-  background: var(--bg-elevated); border-radius: 12px;
+  background: var(--bg-elevated); border-radius: var(--radius-sm, 6px);
   padding: 1rem; margin-top: 0.8rem; text-align: center;
 }
-.ptest-duel-result .ptest-duel-your-score { font-size: 2rem; font-weight: 800; }
+.ptest-duel-result .ptest-duel-your-score { font-size: 2rem; font-weight: 600; }
 .ptest-duel-result .ptest-duel-ref { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.3rem; }
 
 /* ── V3: Presenter mode ── */
@@ -357,7 +357,7 @@
 .ptest-chart-section { margin-top: 1.5rem; }
 .ptest-chart-svg {
   width: 100%; max-width: 600px; height: auto;
-  background: var(--bg-elevated); border-radius: 10px;
+  background: var(--bg-elevated); border-radius: var(--radius-sm, 6px);
 }
 
 /* ── V3: Weakness Heatmap ── */
@@ -366,15 +366,15 @@
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem;
 }
 .ptest-heatmap-cell {
-  text-align: center; border-radius: 10px; padding: 0.8rem 0.4rem;
+  text-align: center; border-radius: var(--radius-sm, 6px); padding: 0.8rem 0.4rem;
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 .ptest-heatmap-letter {
-  display: block; font-size: 1.4rem; font-weight: 800;
+  display: block; font-size: 1.4rem; font-weight: 600;
   font-family: var(--font-heading, 'Inter', sans-serif);
 }
 .ptest-heatmap-label { display: block; font-size: var(--text-caption, 0.75rem); color: var(--text-secondary); margin-top: 0.15rem; }
-.ptest-heatmap-pct { display: block; font-size: 0.85rem; font-weight: 700; margin-top: 0.2rem; }
+.ptest-heatmap-pct { display: block; font-size: 0.85rem; font-weight: 600; margin-top: 0.2rem; }
 .ptest-heat-cold { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); }
 .ptest-heat-cold .ptest-heatmap-letter { color: var(--text-primary); }
 .ptest-heat-cool { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); }
@@ -404,14 +404,14 @@
 
 .ptest-history-card {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 0.8rem 1rem; cursor: pointer; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  border-radius: var(--radius-sm, 6px); padding: 0.8rem 1rem; cursor: pointer; transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .ptest-history-card:hover { border-color: var(--accent); background: var(--accent-subtle); }
 .ptest-history-top {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 0.3rem;
 }
-.ptest-history-scores { font-size: 0.85rem; font-weight: 700; }
+.ptest-history-scores { font-size: 0.85rem; font-weight: 600; }
 .ptest-history-date { font-size: 0.72rem; color: var(--text-muted); }
 .ptest-history-previews {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
@@ -436,7 +436,7 @@
 .ptest-guide-letter {
   display: inline-flex; align-items: center; justify-content: center;
   width: 28px; height: 28px; border-radius: 50%; background: var(--accent);
-  color: var(--accent-foreground, #fff); font-weight: 800; font-size: 0.8rem;
+  color: var(--accent-foreground, #fff); font-weight: 600; font-size: 0.8rem;
 }
 .ptest-guide-weight {
   margin-left: auto; font-size: 0.72rem; color: var(--text-muted);
@@ -452,7 +452,7 @@
 .ptest-level-high { background: var(--accent-subtle); border-left: 3px solid var(--accent); }
 .ptest-guide-tip {
   background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
-  border-radius: 12px; padding: 1rem; font-size: 0.85rem; line-height: 1.6;
+  border-radius: var(--radius-sm, 6px); padding: 1rem; font-size: 0.85rem; line-height: 1.6;
   color: var(--text-secondary);
 }
 .ptest-guide-tip p { margin-bottom: 0.5rem; }
@@ -463,8 +463,8 @@
 .ptest-faq h2 { font-size: 1.3rem; margin-bottom: 1rem; }
 .ptest-faq details {
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
-  border-radius: 12px; padding: 0; margin-bottom: 0.6rem;
-  overflow: hidden; transition: border-color 0.2s;
+  border-radius: var(--radius-sm, 6px); padding: 0; margin-bottom: 0.6rem;
+  overflow: hidden; transition: border-color 150ms ease-out;
 }
 .ptest-faq details[open] { border-color: color-mix(in srgb, var(--accent) 25%, transparent); }
 .ptest-faq summary {

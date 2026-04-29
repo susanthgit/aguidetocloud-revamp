@@ -1,5 +1,5 @@
 /**
- * 🔬 Prompt Tester — A/B Comparison UI Engine
+ * Prompt Tester — A/B Comparison UI Engine
  * Uses shared PromptCrafts core for analysis + rewrite
  */
 (function () {
@@ -193,8 +193,8 @@
     saveComparison(textA, textB, lastAnalysisA.total, lastAnalysisB.total);
     renderHistoryTab();
 
-    document.getElementById('ptest-clear-btn').style.display = '';
-    document.getElementById('ptest-improved').style.display = 'none';
+    document.getElementById('ptest-clear-btn').hidden = false;
+    document.getElementById('ptest-improved').hidden = true;
 
     // Confetti for high scores
     if (lastAnalysisA.total >= 90 || lastAnalysisB.total >= 90) {
@@ -222,15 +222,15 @@
     var $verdict = document.getElementById('ptest-verdict');
 
     if (Math.abs(diff) < 5) {
-      $verdictText.textContent = '🤝 Too close to call';
+      $verdictText.textContent = 'Too close to call';
       $verdictText.className = 'ptest-verdict-text ptest-verdict-tie';
       $verdictDelta.textContent = 'Difference: ' + Math.abs(diff) + ' point' + (Math.abs(diff) !== 1 ? 's' : '');
     } else if (diff > 0) {
-      $verdictText.textContent = '🏆 Prompt B is more complete';
+      $verdictText.textContent = 'Prompt B is more complete';
       $verdictText.className = 'ptest-verdict-text ptest-verdict-win';
       $verdictDelta.textContent = '+' + diff + ' points';
     } else {
-      $verdictText.textContent = '🏆 Prompt A is more complete';
+      $verdictText.textContent = 'Prompt A is more complete';
       $verdictText.className = 'ptest-verdict-text ptest-verdict-win';
       $verdictDelta.textContent = '+' + Math.abs(diff) + ' points';
     }
@@ -296,9 +296,9 @@
       lines.push('<strong>Prompt A is more CRAFTS-complete.</strong>');
     }
 
-    if (improved.length > 0) lines.push('📈 <strong>B scores higher on:</strong> ' + improved.join(', '));
-    if (regressed.length > 0) lines.push('📉 <strong>A scores higher on:</strong> ' + regressed.join(', '));
-    if (tied.length > 0) lines.push('🤝 <strong>Tied on:</strong> ' + tied.join(', '));
+    if (improved.length > 0) lines.push('<strong>B scores higher on:</strong> ' + improved.join(', '));
+    if (regressed.length > 0) lines.push('<strong>A scores higher on:</strong> ' + regressed.join(', '));
+    if (tied.length > 0) lines.push('<strong>Tied on:</strong> ' + tied.join(', '));
 
     // V3: AI-powered detailed explanation
     var details = generateDetailedExplanation(a, b);
@@ -589,8 +589,8 @@
     var shareUrl = url.toString();
     navigator.clipboard.writeText(shareUrl).then(function() {
       var btn = document.getElementById('ptest-share');
-      btn.textContent = '✅ Link copied!';
-      setTimeout(function() { btn.textContent = '🔗 Share'; }, 2000);
+      btn.textContent = 'Link copied!';
+      setTimeout(function() { btn.textContent = 'Share'; }, 2000);
     });
     if (window.clarity) window.clarity('event', 'ptest_share');
   }
@@ -629,7 +629,7 @@
     // Header
     ctx.fillStyle = '#F97316';
     ctx.font = 'bold 24px Inter, system-ui, sans-serif';
-    ctx.fillText('🔬 Prompt Tester — CRAFTS Comparison', 30, 40);
+    ctx.fillText('Prompt Tester — CRAFTS Comparison', 30, 40);
 
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '12px Inter, system-ui, sans-serif';
@@ -664,8 +664,8 @@
     ctx.textAlign = 'center';
     ctx.font = 'bold 16px Inter, system-ui, sans-serif';
     ctx.fillStyle = Math.abs(diff) < 5 ? '#f59e0b' : '#22c55e';
-    var verdictStr = Math.abs(diff) < 5 ? '🤝 Too close to call' :
-      (diff > 0 ? '🏆 Prompt B wins by ' + diff + ' pts' : '🏆 Prompt A wins by ' + Math.abs(diff) + ' pts');
+    var verdictStr = Math.abs(diff) < 5 ? 'Too close to call' :
+      (diff > 0 ? 'Prompt B wins by ' + diff + ' pts' : 'Prompt A wins by ' + Math.abs(diff) + ' pts');
     ctx.fillText(verdictStr, W / 2, 140);
     ctx.textAlign = 'left';
 
@@ -724,12 +724,12 @@
      ════════════════════════════════════════════ */
 
   var TEMPLATES = [
-    { label: '📧 Email', text: 'Write an email to [recipient] about [topic].' },
-    { label: '📝 Blog Post', text: 'Write a blog post about [topic].' },
-    { label: '💻 Code Review', text: 'Review my code for [language/framework].' },
-    { label: '📊 Data Analysis', text: 'Analyze [dataset] and give me insights.' },
-    { label: '📋 Meeting Prep', text: 'Help me prepare for my [meeting type] meeting.' },
-    { label: '📄 Report', text: 'Write a report about [topic] for [audience].' }
+    { label: 'Email', text: 'Write an email to [recipient] about [topic].' },
+    { label: 'Blog Post', text: 'Write a blog post about [topic].' },
+    { label: 'Code Review', text: 'Review my code for [language/framework].' },
+    { label: 'Data Analysis', text: 'Analyze [dataset] and give me insights.' },
+    { label: 'Meeting Prep', text: 'Help me prepare for my [meeting type] meeting.' },
+    { label: 'Report', text: 'Write a report about [topic] for [audience].' }
   ];
 
   /* ════════════════════════════════════════════
@@ -749,8 +749,8 @@
       blindSwapped = Math.random() < 0.5;
       $page.classList.add('ptest-blind-active');
       $page.classList.remove('ptest-blind-revealed');
-      $bar.style.display = '';
-      $toggle.textContent = '🎲 Exit Blind';
+      $bar.hidden = false;
+      $toggle.textContent = 'Exit Blind';
       // Swap visually if randomized
       if (blindSwapped) {
         var $la = document.querySelector('[for="ptest-input-a"]');
@@ -763,8 +763,8 @@
       if (old) old.remove();
     } else {
       $page.classList.remove('ptest-blind-active', 'ptest-blind-revealed');
-      $bar.style.display = 'none';
-      $toggle.textContent = '🎲 Blind Mode';
+      $bar.hidden = true;
+      $toggle.textContent = 'Blind Mode';
       var $la = document.querySelector('[for="ptest-input-a"]');
       var $lb = document.querySelector('[for="ptest-input-b"]');
       if ($la) $la.textContent = 'Prompt A';
@@ -792,11 +792,11 @@
     msg.id = 'ptest-blind-result-msg';
     msg.className = 'ptest-blind-result ' + (correct ? 'ptest-blind-correct' : 'ptest-blind-wrong');
     msg.textContent = correct
-      ? '✅ Correct! You identified the stronger prompt.'
-      : '❌ Surprise! The other prompt actually scored higher. Check the breakdown to see why.';
+      ? 'Correct! You identified the stronger prompt.'
+      : 'Surprise! The other prompt actually scored higher. Check the breakdown to see why.';
     var $bar = document.getElementById('ptest-blind-bar');
     $bar.parentNode.insertBefore(msg, $bar.nextSibling);
-    $bar.style.display = 'none';
+    $bar.hidden = true;
 
     // Restore labels
     var $la = document.querySelector('[for="ptest-input-a"]');
@@ -824,12 +824,12 @@
   function startDuel() {
     currentDuel = DUEL_TASKS[Math.floor(Math.random() * DUEL_TASKS.length)];
     duelSeconds = 60;
-    document.getElementById('ptest-duel').style.display = '';
-    document.getElementById('ptest-duel-task').textContent = '📋 Your task: ' + currentDuel.task;
+    document.getElementById('ptest-duel').hidden = false;
+    document.getElementById('ptest-duel-task').textContent = 'Your task: ' + currentDuel.task;
     document.getElementById('ptest-duel-timer').textContent = '60';
     document.getElementById('ptest-duel-timer').classList.remove('ptest-timer-warn');
     document.getElementById('ptest-duel-input').value = '';
-    document.getElementById('ptest-duel-result').style.display = 'none';
+    document.getElementById('ptest-duel-result').hidden = true;
     document.getElementById('ptest-duel-submit').disabled = false;
     document.getElementById('ptest-duel-input').focus();
 
@@ -858,15 +858,15 @@
 
     document.getElementById('ptest-duel-submit').disabled = true;
     var $result = document.getElementById('ptest-duel-result');
-    $result.style.display = '';
+    $result.hidden = false;
 
-    var emoji = userScore >= refScore ? '🏆' : userScore >= refScore - 10 ? '💪' : '📈';
+    var emoji = userScore >= refScore ? '🏆' : userScore >= refScore - 10 ? '' : '📈';
     var msg = userScore >= refScore ? 'Amazing! You beat the reference prompt!'
       : userScore >= refScore - 10 ? 'So close! Just ' + (refScore - userScore) + ' points behind.'
       : 'Room to grow! Check the reference to see what CRAFTS elements you missed.';
 
     $result.innerHTML =
-      '<div class="ptest-duel-your-score">' + emoji + ' Your score: <span class="' + scoreClass(userScore) + '">' + userScore + '</span>/100</div>' +
+      '<div class="ptest-duel-your-score">Your score: <span class="' + scoreClass(userScore) + '">' + userScore + '</span>/100</div>' +
       '<div class="ptest-duel-ref">Reference score: ' + refScore + '/100 — ' + msg + '</div>' +
       '<details style="margin-top:0.8rem;text-align:left"><summary style="cursor:pointer;color:var(--accent);font-size:0.82rem">Show reference prompt</summary>' +
       '<div style="margin-top:0.5rem;padding:0.6rem;background:rgba(255,255,255,0.04);border-radius:8px;font-size:0.8rem;color:rgba(255,255,255,0.7);white-space:pre-wrap">' + escapeHtml(currentDuel.ref) + '</div></details>' +
@@ -874,14 +874,14 @@
       'document.getElementById(\'ptest-input-b\').value=' + JSON.stringify(currentDuel.ref) + ';' +
       'document.getElementById(\'ptest-input-a\').dispatchEvent(new Event(\'input\'));' +
       'document.getElementById(\'ptest-input-b\').dispatchEvent(new Event(\'input\'));' +
-      'document.getElementById(\'ptest-duel\').style.display=\'none\'" style="margin-top:0.6rem">🔬 Compare in Tester</button>';
+      'document.getElementById(\'ptest-duel\').style.display=\'none\'" style="margin-top:0.6rem">Compare in Tester</button>';
 
     if (window.clarity) window.clarity('event', 'ptest_duel');
   }
 
   function closeDuel() {
     clearInterval(duelTimer);
-    document.getElementById('ptest-duel').style.display = 'none';
+    document.getElementById('ptest-duel').hidden = true;
   }
 
   /* ════════════════════════════════════════════
@@ -892,7 +892,7 @@
   function togglePresenter() {
     presenterActive = !presenterActive;
     document.querySelector('.ptest-page').classList.toggle('ptest-presenter-mode', presenterActive);
-    document.getElementById('ptest-presenter').textContent = presenterActive ? '📺 Exit Presenter' : '📺 Presenter';
+    document.getElementById('ptest-presenter').textContent = presenterActive ? 'Exit Presenter' : 'Presenter';
   }
 
   /* ════════════════════════════════════════════
@@ -1044,7 +1044,7 @@
     }
     if (weakest && weakestScore < 0.4) {
       var meta = PILLAR_META[weakest];
-      details.push('💡 <strong>Tip:</strong> Both prompts are weak on <strong>' + meta.label + '</strong> — ' + explanations[weakest].worse + '.');
+      details.push('<strong>Tip:</strong> Both prompts are weak on <strong>' + meta.label + '</strong> — ' + explanations[weakest].worse + '.');
     }
 
     return details;
@@ -1131,7 +1131,7 @@
       document.getElementById('ptest-live-a').innerHTML = '';
       document.getElementById('ptest-live-b').innerHTML = '';
       document.getElementById('ptest-results').hidden = true;
-      document.getElementById('ptest-improved').style.display = 'none';
+      document.getElementById('ptest-improved').hidden = true;
       $compareBtn.disabled = true;
       this.style.display = 'none';
       $inputA.focus();
@@ -1172,8 +1172,8 @@
       var winner = lastAnalysisA.total >= lastAnalysisB.total ? lastTextA : lastTextB;
       navigator.clipboard.writeText(winner).then(function() {
         var btn = document.getElementById('ptest-copy-winner');
-        btn.textContent = '✅ Copied!';
-        setTimeout(function() { btn.textContent = '📋 Copy Stronger Prompt'; }, 2000);
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy Stronger Prompt'; }, 2000);
       });
     });
 
@@ -1232,8 +1232,8 @@
       var text = document.getElementById('ptest-improved-text').textContent;
       navigator.clipboard.writeText(text).then(function() {
         var btn = document.getElementById('ptest-copy-improved');
-        btn.textContent = '✅ Copied!';
-        setTimeout(function() { btn.textContent = '📋 Copy Improved'; }, 2000);
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy Improved'; }, 2000);
       });
     });
 

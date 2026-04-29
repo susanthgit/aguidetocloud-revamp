@@ -81,27 +81,27 @@
         </div>
         <button id="ptest-blind-toggle" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Blind Mode</button>
         <button id="ptest-duel-btn" class="ptest-btn-secondary">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Challenge</button>
-        <button id="ptest-clear-btn" class="ptest-btn-secondary" style="display:none">✕ Clear</button>
+        <button id="ptest-clear-btn" class="ptest-btn-secondary" hidden>Clear</button>
       </div>
 
       {{/* ── V3: Blind Mode reveal bar ── */}}
-      <div id="ptest-blind-bar" class="ptest-blind-bar" style="display:none">
+      <div id="ptest-blind-bar" class="ptest-blind-bar" hidden>
         <span>{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Blind Mode active — scores hidden until you guess</span>
         <button id="ptest-blind-guess-a" class="ptest-btn-secondary">I think left is better</button>
         <button id="ptest-blind-guess-b" class="ptest-btn-secondary">I think right is better</button>
       </div>
 
       {{/* ── V3: Challenge/Duel mode ── */}}
-      <div id="ptest-duel" class="ptest-duel" style="display:none">
+      <div id="ptest-duel" class="ptest-duel" hidden>
         <div class="ptest-duel-header">
           <h3>{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Prompt Challenge</h3>
-          <button id="ptest-duel-close" class="ptest-btn-secondary">✕ Exit</button>
+          <button id="ptest-duel-close" class="ptest-btn-secondary">Exit</button>
         </div>
         <div class="ptest-duel-task" id="ptest-duel-task"></div>
         <div class="ptest-duel-timer" id="ptest-duel-timer">60</div>
         <textarea id="ptest-duel-input" class="ptest-textarea" rows="6" placeholder="Write your best prompt for this task..."></textarea>
         <button id="ptest-duel-submit" class="ptest-btn-primary">🏁 Submit &amp; Score</button>
-        <div id="ptest-duel-result" class="ptest-duel-result" style="display:none"></div>
+        <div id="ptest-duel-result" class="ptest-duel-result" hidden></div>
       </div>
 
       {{/* ── Results ── */}}
@@ -146,7 +146,7 @@
         <div class="ptest-explanation" id="ptest-explanation"></div>
 
         {{/* ── Diff view ── */}}
-        <div class="ptest-diff-section" id="ptest-diff-section" style="display:none">
+        <div class="ptest-diff-section" id="ptest-diff-section" hidden>
           <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Word Diff</h3>
           <div class="ptest-diff" id="ptest-diff"></div>
         </div>
@@ -170,7 +170,7 @@
         </div>
 
         {{/* ── Improved prompt output (side-by-side) ── */}}
-        <div id="ptest-improved" class="ptest-improved" style="display:none">
+        <div id="ptest-improved" class="ptest-improved" hidden>
           <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Improved Version</h3>
           <div class="ptest-improved-grid">
             <div class="ptest-improved-side">
@@ -208,13 +208,13 @@
       </div>
 
       {{/* V3: Score History Chart */}}
-      <div id="ptest-chart-section" class="ptest-chart-section" style="display:none">
+      <div id="ptest-chart-section" class="ptest-chart-section" hidden>
         <h3 class="ptest-section-title">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} Score Trend</h3>
         <svg id="ptest-chart" viewBox="0 0 600 200" class="ptest-chart-svg"></svg>
       </div>
 
       {{/* V3: CRAFTS Weakness Heatmap */}}
-      <div id="ptest-heatmap-section" class="ptest-heatmap-section" style="display:none">
+      <div id="ptest-heatmap-section" class="ptest-heatmap-section" hidden>
         <h3 class="ptest-section-title">🔥 Your CRAFTS Weaknesses</h3>
         <p class="ptest-subtle">Based on your Prompt A entries (the "before" prompts). Most people forget the same pillars.</p>
         <div id="ptest-heatmap" class="ptest-heatmap"></div>
@@ -300,10 +300,10 @@
     <div class="ptest-panel" id="panel-faq" role="tabpanel">
       <div class="ptest-faq">
         <h2>Frequently Asked Questions</h2>
-        {{ range .Params.faq }}
-        <details open>
-          <summary>{{ .question }}</summary>
-          <p>{{ .answer | markdownify }}</p>
+        {{ range $i, $q := .Params.faq }}
+        <details{{ if eq $i 0 }} open{{ end }}>
+          <summary>{{ $q.question }}</summary>
+          <p>{{ $q.answer | markdownify }}</p>
         </details>
         {{ end }}
       </div>
