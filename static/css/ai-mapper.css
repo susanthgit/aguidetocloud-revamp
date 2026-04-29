@@ -6,57 +6,48 @@
 .aimap-page {
   --aimap-accent: var(--accent);
   --aimap-accent-hover: var(--accent-hover, var(--accent));
-  --aimap-accent-glow: transparent;
   --aimap-accent-dim: var(--accent-subtle);
   --aimap-accent-border: color-mix(in srgb, var(--accent) 25%, transparent);
-  --aimap-bg: var(--bg-page);
-  --aimap-text-muted: var(--text-muted);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem 3rem;
+  padding: 0 var(--space-3) var(--space-8);
   color: var(--text-primary);
 }
 
-/* ---- Tabs ---- */
+/* ---- Tabs (underline) ---- */
 .aimap-tabs {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-bottom: 1.5rem;
+  gap: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-4);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  background: none;
 }
 .aimap-tabs::-webkit-scrollbar { display: none; }
 
 .aimap-tab {
   background: none;
-  border: 1px solid transparent;
-  color: var(--aimap-text-muted);
-  padding: 0.6rem 1.1rem;
-  font-size: 0.88rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-radius: var(--radius-md, 10px);
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
   font-family: inherit;
-  flex: 1;
   text-align: center;
 }
 .aimap-tab:hover {
   color: var(--text-primary);
-  background: var(--bg-elevated);
 }
 .aimap-tab.active {
-  color: var(--accent-foreground, #fff);
-  background: var(--aimap-accent);
-  border-color: var(--aimap-accent);
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 25%, transparent);
-  font-weight: 600;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* ---- Panels ---- */
@@ -116,9 +107,9 @@
 .aimap-search:focus {
   outline: none;
   border-color: var(--aimap-accent);
-  box-shadow: 0 0 0 3px var(--aimap-accent-glow);
+  box-shadow: 0 0 0 3px transparent;
 }
-.aimap-search::placeholder { color: var(--aimap-text-muted); }
+.aimap-search::placeholder { color: var(--text-secondary); }
 
 .aimap-filter-group {
   margin-bottom: 1.2rem;
@@ -128,7 +119,7 @@
 .aimap-filter-group h4 {
   margin: 0 0 0.5rem;
   font-size: 0.85rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -160,14 +151,14 @@
 }
 #aimap-count {
   font-size: 0.9rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 .aimap-sort {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 .aimap-sort select {
   background: var(--bg-elevated);
@@ -189,7 +180,7 @@
   cursor: pointer;
   font-size: 0.85rem;
   font-family: inherit;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 150ms ease-out;
 }
 .aimap-compare-btn:hover:not(:disabled) {
   background: color-mix(in srgb, var(--accent) 25%, transparent);
@@ -234,7 +225,7 @@
 }
 .aimap-card-provider {
   font-size: 0.75rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   background: var(--bg-elevated);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
@@ -255,7 +246,7 @@
 
 .aimap-card-desc {
   font-size: 0.82rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   line-height: 1.45;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -289,7 +280,7 @@
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
   background: var(--bg-elevated);
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 .aimap-cap-badge.strong {
   background: var(--aimap-accent-dim);
@@ -340,7 +331,7 @@
 .aimap-no-results {
   text-align: center;
   padding: 3rem 1rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 .aimap-clear-link {
   background: none;
@@ -362,7 +353,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   font-family: inherit;
-  transition: background 0.2s;
+  transition: background 150ms ease-out;
 }
 .aimap-btn:hover {
   background: color-mix(in srgb, var(--accent) 25%, transparent);
@@ -380,7 +371,7 @@
 /* ---- Compare tab ---- */
 .aimap-compare-header { margin-bottom: 1.5rem; }
 .aimap-compare-header h2 { color: var(--text-primary); margin-bottom: 0.5rem; }
-.aimap-compare-header p { color: var(--aimap-text-muted); font-size: 0.9rem; }
+.aimap-compare-header p { color: var(--text-secondary); font-size: 0.9rem; }
 
 .aimap-compare-pickers {
   display: flex;
@@ -403,7 +394,7 @@
 .aimap-compare-empty {
   text-align: center;
   padding: 2rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 
 .aimap-compare-table {
@@ -419,7 +410,7 @@
   vertical-align: top;
 }
 .aimap-compare-table th {
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   font-weight: 600;
   background: var(--bg-elevated);
   white-space: nowrap;
@@ -446,7 +437,7 @@
 
 .aimap-quiz-intro { text-align: center; padding: 2rem 0; }
 .aimap-quiz-intro h2 { color: var(--text-primary); margin-bottom: 0.75rem; }
-.aimap-quiz-intro p { color: var(--aimap-text-muted); margin-bottom: 1.5rem; }
+.aimap-quiz-intro p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 
 .aimap-quiz-progress {
   display: flex;
@@ -477,12 +468,12 @@
 .aimap-quiz-option {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 0.9rem 1.2rem;
   cursor: pointer;
   font-size: 0.95rem;
   color: var(--text-primary);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, background 150ms ease-out;
   text-align: left;
   font-family: inherit;
   display: flex;
@@ -507,7 +498,7 @@
 .aimap-quiz-result-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.25rem;
   margin-bottom: 1rem;
   display: flex;
@@ -525,7 +516,7 @@
 .aimap-quiz-result-info p {
   margin: 0;
   font-size: 0.85rem;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
 }
 .aimap-quiz-result-score {
   display: inline-block;
@@ -546,7 +537,7 @@
 
 /* ---- Pricing tab ---- */
 .aimap-pricing-disclaimer {
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   font-size: 0.82rem;
   font-style: italic;
   margin-bottom: 1rem;
@@ -562,7 +553,7 @@
 .aimap-pricing-table th {
   padding: 0.7rem 0.8rem;
   text-align: left;
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   border-bottom: 2px solid var(--aimap-accent-border);
   cursor: pointer;
   white-space: nowrap;
@@ -595,7 +586,7 @@
   margin-bottom: 0.3rem;
 }
 .aimap-glossary-def {
-  color: var(--aimap-text-muted);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.5;
 }
@@ -668,7 +659,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
   margin-bottom: 1rem;
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   flex-wrap: wrap;
 }
 .aimap-fav-bar-label { font-size: 0.85rem; color: var(--text-primary); font-weight: 600; white-space: nowrap; }
@@ -686,11 +677,11 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-scenarios {
   display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem;
 }
-.aimap-scenarios-label { font-size: 0.82rem; color: var(--aimap-text-muted); margin-right: 0.3rem; }
+.aimap-scenarios-label { font-size: 0.82rem; color: var(--text-secondary); margin-right: 0.3rem; }
 .aimap-scenario-btn {
   background: var(--bg-elevated); border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px); padding: 0.35rem 0.8rem; font-size: 0.8rem;
-  color: var(--text-primary); cursor: pointer; font-family: inherit; transition: border-color 0.2s, background 0.2s;
+  color: var(--text-primary); cursor: pointer; font-family: inherit; transition: border-color 0.2s, background 150ms ease-out;
 }
 .aimap-scenario-btn:hover { border-color: var(--aimap-accent-border); background: var(--aimap-accent-dim); }
 .aimap-scenario-btn.active { border-color: var(--aimap-accent); background: var(--accent-subtle); color: var(--text-primary); }
@@ -700,7 +691,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-view-btn {
   background: var(--bg-elevated); border: 1px solid var(--border);
   border-radius: 6px; padding: 0.3rem 0.7rem; font-size: 0.8rem;
-  color: var(--aimap-text-muted); cursor: pointer; font-family: inherit;
+  color: var(--text-secondary); cursor: pointer; font-family: inherit;
 }
 .aimap-view-btn.active { background: var(--aimap-accent-dim); border-color: var(--aimap-accent); color: var(--aimap-accent); }
 
@@ -711,7 +702,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-card-actions { display: flex; align-items: center; gap: 0.4rem; }
 .aimap-fav-btn {
   background: none; border: none; font-size: 1.1rem; cursor: pointer; color: #555;
-  padding: 0; line-height: 1; transition: color 0.2s;
+  padding: 0; line-height: 1; transition: color 150ms ease-out;
 }
 .aimap-fav-btn:hover, .aimap-fav-btn.active { color: var(--text-primary); }
 
@@ -753,10 +744,10 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-modal-section h4 { color: var(--text-primary); margin: 0 0 0.5rem; font-size: 0.95rem; }
 .aimap-modal-caps { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
 .aimap-modal-cap-row { display: flex; align-items: center; gap: 0.5rem; }
-.aimap-modal-cap-label { width: 130px; font-size: 0.82rem; color: var(--aimap-text-muted); flex-shrink: 0; }
+.aimap-modal-cap-label { width: 130px; font-size: 0.82rem; color: var(--text-secondary); flex-shrink: 0; }
 .aimap-modal-cap-bar { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
 .aimap-modal-cap-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
-.aimap-modal-cap-val { width: 35px; text-align: right; font-size: 0.78rem; color: var(--aimap-text-muted); }
+.aimap-modal-cap-val { width: 35px; text-align: right; font-size: 0.78rem; color: var(--text-secondary); }
 
 .aimap-modal-features { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .aimap-modal-feat { font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 6px; }
@@ -768,7 +759,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-modal-alt-cards { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .aimap-modal-alt-card {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px); padding: 0.6rem 0.8rem; cursor: pointer; transition: border-color 0.2s;
+  border-radius: var(--radius-md, 10px); padding: 0.6rem 0.8rem; cursor: pointer; transition: border-color 150ms ease-out;
 }
 .aimap-modal-alt-card:hover { border-color: var(--aimap-accent); }
 
@@ -776,7 +767,7 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 
 /* ---- Comparison presets (#9) ---- */
 .aimap-presets { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin: 1rem 0; }
-.aimap-presets-label { font-size: 0.82rem; color: var(--aimap-text-muted); }
+.aimap-presets-label { font-size: 0.82rem; color: var(--text-secondary); }
 .aimap-preset-btn {
   background: var(--bg-elevated); border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px); padding: 0.3rem 0.8rem; font-size: 0.8rem;
@@ -792,12 +783,12 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-heatmap-scroll { overflow-x: auto; }
 .aimap-heatmap-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
 .aimap-heatmap-table th {
-  padding: 0.5rem; text-align: center; color: var(--aimap-text-muted);
+  padding: 0.5rem; text-align: center; color: var(--text-secondary);
   border-bottom: 2px solid var(--border); font-weight: 600; white-space: nowrap;
 }
 .aimap-heatmap-table th:first-child, .aimap-heatmap-table th:nth-child(2) { text-align: left; }
 .aimap-hm-name { font-weight: 600; color: var(--text-primary); white-space: nowrap; padding: 0.4rem 0.6rem; }
-.aimap-hm-provider { color: var(--aimap-text-muted); padding: 0.4rem; white-space: nowrap; }
+.aimap-hm-provider { color: var(--text-secondary); padding: 0.4rem; white-space: nowrap; }
 .aimap-hm-cell { text-align: center; padding: 0.4rem; font-weight: 600; border-bottom: 1px solid var(--border); }
 .aimap-hm-high { background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--accent); }
 .aimap-hm-med { background: rgba(251,191,36,0.12); color: var(--text-primary); }
@@ -808,12 +799,12 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 /* ---- Cost estimator (#13) ---- */
 .aimap-cost-estimator {
   background: var(--accent-subtle); border: 1px solid var(--accent-subtle);
-  border-radius: 16px; padding: 1.25rem; margin-bottom: 1.5rem;
+  border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;
 }
 .aimap-cost-estimator h3 { color: var(--text-primary); margin: 0 0 0.75rem; font-size: 1rem; }
 .aimap-cost-inputs { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; }
 .aimap-cost-field { display: flex; flex-direction: column; gap: 0.3rem; }
-.aimap-cost-field label { font-size: 0.8rem; color: var(--aimap-text-muted); }
+.aimap-cost-field label { font-size: 0.8rem; color: var(--text-secondary); }
 .aimap-cost-field input, .aimap-cost-field select {
   background: var(--bg-elevated); border: 1px solid var(--border);
   color: var(--text-primary); padding: 0.4rem 0.6rem; border-radius: 6px; font-family: inherit; font-size: 0.85rem;
@@ -826,15 +817,15 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
   border-radius: var(--radius-md, 10px); padding: 0.6rem 0.8rem; display: flex; flex-direction: column; gap: 0.15rem;
 }
 .aimap-cost-card-name { font-weight: 600; color: var(--text-primary); font-size: 0.85rem; }
-.aimap-cost-card-provider { font-size: 0.75rem; color: var(--aimap-text-muted); }
-.aimap-cost-card-price { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-top: 0.2rem; }
+.aimap-cost-card-provider { font-size: 0.75rem; color: var(--text-secondary); }
+.aimap-cost-card-price { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-top: 0.2rem; }
 
 /* ---- Changelog (#12) ---- */
 .aimap-changelog-entry {
   display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
 }
-.aimap-changelog-date { font-size: 0.8rem; color: var(--aimap-text-muted); min-width: 90px; flex-shrink: 0; }
+.aimap-changelog-date { font-size: 0.8rem; color: var(--text-secondary); min-width: 90px; flex-shrink: 0; }
 .aimap-changelog-type { font-size: 1rem; }
 .aimap-changelog-text { font-size: 0.88rem; color: var(--text-primary); }
 
@@ -863,11 +854,11 @@ body.page-ai-mapper .site-nav { border-bottom-color: var(--accent); }
 .aimap-single-sidebar { display: flex; flex-direction: column; gap: 1rem; }
 .aimap-single-info-box {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 16px; padding: 1rem;
+  border-radius: var(--radius-md); padding: 1rem;
 }
 .aimap-single-info-box h3 { color: var(--text-primary); font-size: 0.95rem; margin: 0 0 0.75rem; }
 .aimap-single-facts { display: grid; grid-template-columns: 130px 1fr; gap: 0.3rem 0.5rem; }
-.aimap-single-facts dt { font-size: 0.82rem; color: var(--aimap-text-muted); }
+.aimap-single-facts dt { font-size: 0.82rem; color: var(--text-secondary); }
 .aimap-single-facts dd { font-size: 0.82rem; color: var(--text-primary); margin: 0; }
 .aimap-single-actions { margin-top: 0.5rem; }
 

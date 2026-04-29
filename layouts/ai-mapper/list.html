@@ -22,7 +22,7 @@
 
   {{/* Favourites bar — rendered by JS */}}
   <div class="aimap-fav-bar" id="aimap-fav-bar" style="display:none;">
-    <span class="aimap-fav-bar-label">⭐ Your Shortlist</span>
+    <span class="aimap-fav-bar-label">Your Shortlist</span>
     <div class="aimap-fav-bar-items" id="aimap-fav-bar-items"></div>
     <button class="aimap-fav-clear" id="aimap-fav-clear">Clear all</button>
   </div>
@@ -33,7 +33,6 @@
     <button class="aimap-tab" data-tab="compare" role="tab" aria-selected="false">Compare</button>
     <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">Which AI?</button>
     <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">Pricing</button>
-    <button class="aimap-tab" data-tab="glossary" role="tab" aria-selected="false">Glossary</button>
     <button class="aimap-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
@@ -46,15 +45,15 @@
       <button class="aimap-scenario-btn" data-scenario="enterprise">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise AI evaluation</button>
       <button class="aimap-scenario-btn" data-scenario="coding">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Coding assistant</button>
       <button class="aimap-scenario-btn" data-scenario="images">{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }} Image generation</button>
-      <button class="aimap-scenario-btn" data-scenario="free">🆓 Free options only</button>
+      <button class="aimap-scenario-btn" data-scenario="free">Free options only</button>
       <button class="aimap-scenario-btn" data-scenario="agents">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI agents</button>
-      <button class="aimap-scenario-btn" data-scenario="voice">🎙️ Voice & audio</button>
+      <button class="aimap-scenario-btn" data-scenario="voice">{{ partial "icon.html" (dict "name" "mic" "size" 14 "stroke" 1.5) }} Voice & audio</button>
       <button class="aimap-scenario-btn" data-scenario="documents">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Document processing</button>
     </div>
 
     {{/* View toggle: cards vs heatmap (#7) */}}
     <div class="aimap-view-toggle">
-      <button class="aimap-view-btn active" data-view="cards" title="Card view">🃏 Cards</button>
+      <button class="aimap-view-btn active" data-view="cards" title="Card view">Cards</button>
       <button class="aimap-view-btn" data-view="heatmap" title="Heatmap view">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Heatmap</button>
     </div>
 
@@ -83,8 +82,8 @@
         <div class="aimap-filter-group">
           <h4>Pricing</h4>
           <div class="aimap-filter-options" id="filter-pricing">
-            <label class="aimap-filter-check"><input type="checkbox" value="free"> 🆓 Free tier available</label>
-            <label class="aimap-filter-check"><input type="checkbox" value="pay-per-use"> 💳 Pay-per-use</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="free"> Free tier available</label>
+            <label class="aimap-filter-check"><input type="checkbox" value="pay-per-use"> Pay-per-use</label>
             <label class="aimap-filter-check"><input type="checkbox" value="subscription"> {{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Subscription</label>
           </div>
         </div>
@@ -261,25 +260,23 @@
     </div>
   </div>
 
-  {{/* ============ TAB 5: GLOSSARY ============ */}}
-  <div class="aimap-panel" id="panel-glossary" role="tabpanel">
-    <h2>{{ partial "icon.html" (dict "name" "book" "size" 14 "stroke" 1.5) }} AI Glossary</h2>
-    <p>Quick reference for AI terms used throughout this tool — in plain English.</p>
-    <input type="text" id="aimap-glossary-search" class="aimap-search" placeholder="Search terms..." aria-label="Search glossary">
-    <div class="aimap-glossary-list" id="aimap-glossary-list"></div>
-  </div>
-
-  {{/* ============ TAB 6: CHANGELOG (#12) ============ */}}
-
+  {{/* ============ TAB 5: FAQ + GLOSSARY ============ */}}
   <div class="aimap-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
+    <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
     {{ end }}
   </div>
   {{ end }}
+
+  {{/* Glossary — collapsed section inside FAQ */}}
+  <details class="aimap-glossary-collapse">
+    <summary>AI Glossary — 20 terms in plain English</summary>
+    <input type="text" id="aimap-glossary-search" class="aimap-search" placeholder="Search terms..." aria-label="Search glossary" style="margin:8px 0">
+    <div class="aimap-glossary-list" id="aimap-glossary-list"></div>
+  </details>
   </div>
 
 </div>

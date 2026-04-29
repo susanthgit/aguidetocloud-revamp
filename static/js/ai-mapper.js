@@ -171,7 +171,7 @@
     if (!container) return;
     const filtered = getFilteredServices().sort((a,b) => (a.name||'').localeCompare(b.name||''));
     const caps = ['text_generation','code_generation','image_generation','audio_speech','video_generation','reasoning'];
-    const capLabels = ['💬 Text','💻 Code','🎨 Image','🎙️ Audio','🎬 Video','🧠 Reason'];
+    const capLabels = ['Text','Code','Image','Audio','Video','Reason'];
 
     let html = '<div class="aimap-heatmap-scroll"><table class="aimap-heatmap-table"><thead><tr><th>Service</th><th>Provider</th>';
     capLabels.forEach(l => html += '<th>' + l + '</th>');
@@ -284,14 +284,14 @@
 
     // Status badge (#10)
     var statusBadge = '';
-    if (s.status === 'preview') statusBadge = '<span class="aimap-status-badge preview">🧪 Preview</span>';
-    else if (s.status === 'deprecated') statusBadge = '<span class="aimap-status-badge deprecated">⚠️ Deprecated</span>';
+    if (s.status === 'preview') statusBadge = '<span class="aimap-status-badge preview">Preview</span>';
+    else if (s.status === 'deprecated') statusBadge = '<span class="aimap-status-badge deprecated">Deprecated</span>';
 
     // Capability badges
     var caps = [
-      { label: '💬', val: s.text_generation }, { label: '💻', val: s.code_generation },
-      { label: '🎨', val: s.image_generation }, { label: '🎙️', val: s.audio_speech },
-      { label: '🎬', val: s.video_generation }, { label: '🧠', val: s.reasoning },
+      { label: 'Txt', val: s.text_generation }, { label: 'Code', val: s.code_generation },
+      { label: 'Img', val: s.image_generation }, { label: 'Aud', val: s.audio_speech },
+      { label: 'Vid', val: s.video_generation }, { label: 'AI', val: s.reasoning },
     ].filter(function(c) { return c.val > 0; });
 
     var capsHTML = caps.map(function(c) {
@@ -301,8 +301,8 @@
     var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('');
 
     var priceClass = 'aimap-paid', priceText = esc(s.price_note || s.pricing_model || '');
-    if (s.free_tier && s.pricing_model === 'free') { priceClass = 'aimap-free'; priceText = '🆓 Free'; }
-    else if (s.free_tier) { priceClass = 'aimap-free'; priceText = '🆓 Free tier'; }
+    if (s.free_tier && s.pricing_model === 'free') { priceClass = 'aimap-free'; priceText = 'Free'; }
+    else if (s.free_tier) { priceClass = 'aimap-free'; priceText = 'Free tier'; }
     else if (s.pricing_model === 'subscription') { priceClass = 'aimap-sub'; }
 
     // Last updated (#8)
@@ -385,8 +385,8 @@
     }
 
     var statusBadge = '';
-    if (s.status === 'preview') statusBadge = ' <span class="aimap-status-badge preview">🧪 Preview</span>';
-    else if (s.status === 'deprecated') statusBadge = ' <span class="aimap-status-badge deprecated">⚠️ Deprecated</span>';
+    if (s.status === 'preview') statusBadge = ' <span class="aimap-status-badge preview">Preview</span>';
+    else if (s.status === 'deprecated') statusBadge = ' <span class="aimap-status-badge deprecated">Deprecated</span>';
 
     content.innerHTML =
       '<div class="aimap-modal-header">' +
@@ -397,16 +397,16 @@
       '<h2>' + esc(s.name) + '</h2>' +
       '<p style="color:#ccc;line-height:1.6">' + esc(s.description||'') + '</p>' +
       capsHTML +
-      '<div class="aimap-modal-section"><h4>💰 Pricing</h4>' +
+      '<div class="aimap-modal-section"><h4>Pricing</h4>' +
         '<p>' + esc(s.price_note || s.pricing_model || 'N/A') + '</p>' +
-        (s.free_tier ? '<p style="color:#4ade80">🆓 ' + esc(s.free_tier_detail || 'Free tier available') + '</p>' : '') +
+        (s.free_tier ? '<p class="aimap-free-detail">'  + esc(s.free_tier_detail || 'Free tier available') + '</p>' : '') +
         (s.pricing_url ? '<a href="' + s.pricing_url + '" target="_blank" rel="noopener noreferrer" class="aimap-card-link">View pricing page →</a>' : '') +
       '</div>' +
       '<div class="aimap-modal-section"><h4>🔧 Features</h4>' + featHTML + '</div>' +
       (s.context_window ? '<div class="aimap-modal-section"><h4>📏 Context Window</h4><p>' + esc(s.context_window) + '</p></div>' : '') +
       (s.regions && s.regions.length ? '<div class="aimap-modal-section"><h4>🌍 Available Regions</h4><p>' + (s.regions||[]).map(esc).join(', ') + '</p></div>' : '') +
       (s.sla ? '<div class="aimap-modal-section"><h4>📊 SLA</h4><p>' + esc(s.sla) + '</p></div>' : '') +
-      '<div class="aimap-modal-section"><h4>🏷️ Best For</h4><div class="aimap-card-best">' + (s.best_for||[]).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('') + '</div></div>' +
+      '<div class="aimap-modal-section"><h4>Best For</h4><div class="aimap-card-best">' + (s.best_for||[]).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('') + '</div></div>' +
       '<div class="aimap-modal-section"><h4>🎯 Use Cases</h4><div class="aimap-card-best">' + (s.use_cases||[]).map(function(u) { return '<span class="aimap-best-tag">' + esc(u.replace(/-/g,' ')) + '</span>'; }).join('') + '</div></div>' +
       altHTML +
       '<div class="aimap-modal-actions">' +
@@ -622,7 +622,7 @@
 
     var rows = [
       { label: 'Provider', key: function(s) { return s.provider; } },
-      { label: 'Status', key: function(s) { var st = s.status || 'ga'; return st === 'ga' ? '✅ GA' : st === 'preview' ? '🧪 Preview' : '⚠️ ' + st; } },
+      { label: 'Status', key: function(s) { var st = s.status || 'ga'; return st === 'ga' ? 'GA' : st === 'preview' ? 'Preview' : st; } },
       { label: 'Pricing Model', key: function(s) { return s.pricing_model || 'N/A'; } },
       { label: 'Free Tier', key: function(s) { return s.free_tier ? '✅ ' + (s.free_tier_detail || '') : '❌'; } },
       { label: 'Input / 1M tokens', key: function(s) { return s.price_input || 'N/A'; } },
@@ -679,7 +679,7 @@
         var vals = selected.map(function(s) { return String(row.key(s)).replace(/[●○]/g, '').trim(); });
         md += '| ' + row.label + ' | ' + vals.join(' | ') + ' |\n';
       });
-      navigator.clipboard.writeText(md).then(function() { btn.textContent = '✅ Copied!'; setTimeout(function() { btn.textContent = '📋 Copy as Markdown'; }, 2000); });
+      navigator.clipboard.writeText(md).then(function() { btn.textContent = 'Copied!'; setTimeout(function() { btn.textContent = 'Copy as Markdown'; }, 2000); });
     };
   }
 
@@ -917,7 +917,7 @@
     var listEl = document.getElementById('aimap-changelog-list');
     if (!listEl || !changelogEntries.length) return;
 
-    var typeEmoji = { launch: '🚀', added: '➕', updated: '🔄', removed: '🗑️', fixed: '🐛' };
+    var typeEmoji = { launch: '', added: '', updated: '', removed: '', fixed: '' };
     listEl.innerHTML = changelogEntries.map(function(e) {
       return '<div class="aimap-changelog-entry">' +
         '<span class="aimap-changelog-date">' + e.date + '</span>' +
