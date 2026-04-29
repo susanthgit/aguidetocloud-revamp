@@ -137,14 +137,14 @@
       return '<div class="pvs-kit-card' + (isSelected ? ' pvs-kit-selected' : '') + (isExpanded ? ' pvs-kit-expanded' : '') + (e3Only ? ' pvs-kit-dimmed' : '') + '" data-kit="' + esc(kit.id) + '">' +
         (isRecommended ? '<span class="pvs-kit-recommended">Most Popular</span>' : '') +
         '<div class="pvs-kit-header">' +
-          '<span class="pvs-kit-emoji">' + esc(kit.emoji) + '</span>' +
+          '<span class="pvs-kit-emoji">' + '</span>' +
           '<div><div class="pvs-kit-title">' + esc(kit.name) + '</div>' +
           '<div class="pvs-kit-target">' + esc(kit.target) + '</div></div>' +
         '</div>' +
         '<div class="pvs-kit-desc">' + esc(kit.description) + '</div>' +
         '<div class="pvs-kit-stats">' +
-          '<span class="pvs-kit-stat pvs-kit-stat--labels">🏷️ ' + (kit.labels ? kit.labels.length : kit.label_count) + ' labels</span>' +
-          '<span class="pvs-kit-stat pvs-kit-stat--dlp">🛡️ ' + (kit.dlp_rules ? kit.dlp_rules.length : kit.dlp_count) + ' DLP rules</span>' +
+          '<span class="pvs-kit-stat pvs-kit-stat--labels">' + (kit.labels ? kit.labels.length : kit.label_count) + ' labels</span>' +
+          '<span class="pvs-kit-stat pvs-kit-stat--dlp">' + (kit.dlp_rules ? kit.dlp_rules.length : kit.dlp_count) + ' DLP rules</span>' +
           licBadge(kit.licence) +
         '</div>' +
         (e3Only ? '<div class="pvs-kit-e3-note">Requires ' + esc(kit.licence === 'e5' ? 'E5' : 'E5 Compliance') + ' licence</div>' : '') +
@@ -203,7 +203,7 @@
 
   function renderLabelItem(label, isChild) {
     const badges = [];
-    if (label.encrypt) badges.push('<span class="pvs-label-badge pvs-label-badge--encrypt">🔒 Encrypted</span>');
+    if (label.encrypt) badges.push('<span class="pvs-label-badge pvs-label-badge--encrypt">Encrypted</span>');
     if (label.mark) badges.push('<span class="pvs-label-badge pvs-label-badge--mark">📝 Marked</span>');
     if (label.auto_apply) badges.push('<span class="pvs-label-badge pvs-label-badge--auto">⚡ Auto</span>');
     return '<div class="pvs-label-item' + (isChild ? ' pvs-label-item--child' : '') + ' pvs-label-colour-' + esc(label.colour) + '">' +
@@ -468,10 +468,10 @@
     const selectedKit = S.selectedKit ? getKit(S.selectedKit) : null;
     let html = '';
     if (selectedKit && S.customLabels.length === 0) {
-      html += '<button class="pvs-lb-tpl-btn" data-kit="' + esc(selectedKit.id) + '" style="background:rgba(var(--pvs-accent-rgb),0.15);border-color:rgba(var(--pvs-accent-rgb),0.3);color:var(--pvs-accent)">' + esc(selectedKit.emoji) + ' Start from ' + esc(selectedKit.name) + ' (selected)</button>';
+      html += '<button class="pvs-lb-tpl-btn" data-kit="' + esc(selectedKit.id) + '" style="background:rgba(var(--pvs-accent-rgb),0.15);border-color:rgba(var(--pvs-accent-rgb),0.3);color:var(--pvs-accent)">' + 'Start from ' + esc(selectedKit.name) + ' (selected)</button>';
     }
     html += KITS.map(kit =>
-      '<button class="pvs-lb-tpl-btn" data-kit="' + esc(kit.id) + '">' + esc(kit.emoji) + ' ' + esc(kit.name) + '</button>'
+      '<button class="pvs-lb-tpl-btn" data-kit="' + esc(kit.id) + '">' + esc(kit.name) + '</button>'
     ).join('');
     el.innerHTML = html;
   }
@@ -965,14 +965,14 @@
     });
 
     let html = '<div class="pvs-whatif-grid">';
-    html += '<div class="pvs-whatif-col pvs-whatif-lost"><h4>❌ Lost with E3 only (' + lost.length + ')</h4>';
+    html += '<div class="pvs-whatif-col pvs-whatif-lost"><h4>Lost with E3 only (' + lost.length + ')</h4>';
     if (lost.length) {
       lost.forEach(l => { html += '<div class="pvs-whatif-item"><span>' + esc(l.name) + '</span><span class="pvs-whatif-reason">' + esc(l.reason) + '</span></div>'; });
     } else {
       html += '<p>Nothing lost!</p>';
     }
     html += '</div>';
-    html += '<div class="pvs-whatif-col pvs-whatif-kept"><h4>✅ Kept with E3 (' + kept.length + ')</h4>';
+    html += '<div class="pvs-whatif-col pvs-whatif-kept"><h4>Kept with E3 (' + kept.length + ')</h4>';
     kept.forEach(k => { html += '<div class="pvs-whatif-item"><span>' + esc(k) + '</span></div>'; });
     html += '</div></div>';
     el.innerHTML = html;
@@ -1003,7 +1003,7 @@
         const missing = entKit.labels.filter(l => !existingNames.includes(l.name.toLowerCase()));
         const already = entKit.labels.filter(l => existingNames.includes(l.name.toLowerCase()));
         if (already.length) {
-          html += '<p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.3rem">✅ You already have: ' + already.map(l => esc(l.name)).join(', ') + '</p>';
+          html += '<p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.3rem">You already have: ' + already.map(l => esc(l.name)).join(', ') + '</p>';
         }
         if (missing.length) {
           html += '<p style="color:#FBBF24;font-size:0.82rem;margin-top:0.3rem">➕ Enterprise kit would add: ' + missing.map(l => esc(l.name)).join(', ') + '</p>';

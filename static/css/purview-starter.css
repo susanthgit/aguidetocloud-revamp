@@ -26,7 +26,7 @@
   padding: 0.35rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -37,12 +37,12 @@
   background: none;
   border: 1px solid transparent;
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   padding: 0.6rem 1.1rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -54,7 +54,7 @@
   color: var(--accent-foreground, #fff);
   background: var(--pvs-accent);
   border-color: var(--pvs-accent);
-  box-shadow: 0 2px 8px rgba(var(--pvs-accent-rgb), 0.3);
+  
 }
 
 .pvs-badge {
@@ -64,7 +64,7 @@
   background: var(--error);
   color: var(--text-primary);
   font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
+  font-weight: 600;
   min-width: 18px;
   height: 18px;
   border-radius: 9px;
@@ -79,7 +79,7 @@
 
 .pvs-panel-desc {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -92,10 +92,10 @@
   padding: 0.65rem 1.3rem;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   cursor: pointer;
   border: none;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   font-family: inherit;
 }
 .pvs-btn--primary {
@@ -117,7 +117,7 @@
 }
 .pvs-btn--sm {
   padding: 0.4rem 0.8rem;
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
 }
 
 /* ── Coming Soon (Phase 2 placeholders) ── */
@@ -144,44 +144,44 @@
 /* ═══ STARTER KITS ═══ */
 .pvs-kits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px;
 }
 
 .pvs-kit-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  padding: 10px;
   cursor: pointer;
-  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+  transition: border-color 150ms ease-out;
 }
 .pvs-kit-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.4);
-  box-shadow: 0 4px 20px rgba(var(--pvs-accent-rgb), 0.1);
-  transform: translateY(-2px);
+  
+  
 }
 .pvs-kit-card.pvs-kit-selected {
   border-color: var(--pvs-accent);
-  box-shadow: 0 0 20px rgba(var(--pvs-accent-rgb), 0.2);
+  
 }
 
 .pvs-kit-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 .pvs-kit-emoji {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 .pvs-kit-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: var(--text-body);
+  font-weight: 600;
   color: var(--text-primary);
 }
 .pvs-kit-target {
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   margin-top: 2px;
 }
@@ -205,7 +205,7 @@
   gap: 0.3rem;
   padding: 0.3rem 0.65rem;
   border-radius: 6px;
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   background: var(--bg-elevated);
   color: var(--text-secondary);
@@ -219,7 +219,7 @@
   gap: 0.3rem;
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   font-weight: 600;
 }
 
@@ -246,8 +246,8 @@
 }
 
 .pvs-kit-section-title {
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -268,7 +268,7 @@
   border-radius: 8px;
   background: var(--bg-elevated);
   border-left: 3px solid;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
 }
 .pvs-label-item--child {
   margin-left: 1.5rem;
@@ -317,13 +317,13 @@
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   background: var(--bg-elevated);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
 }
 .pvs-dlp-action {
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   flex-shrink: 0;
 }
@@ -387,12 +387,12 @@
 }
 .pvs-deploy-section h3 {
   color: var(--text-primary);
-  font-size: 1.1rem;
+  font-size: var(--text-body);
   margin-bottom: 0.75rem;
 }
 .pvs-deploy-note {
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   margin-bottom: 1rem;
   font-style: italic;
 }
@@ -408,7 +408,7 @@
   display: flex;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
@@ -421,31 +421,31 @@
   border-radius: 50%;
   background: rgba(var(--pvs-accent-rgb), 0.15);
   color: var(--pvs-accent);
-  font-weight: 800;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: var(--text-sm);
   flex-shrink: 0;
 }
 .pvs-step-content { flex: 1; }
 .pvs-step-title {
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: var(--text-sm);
   margin-bottom: 0.25rem;
 }
 .pvs-step-desc {
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   line-height: 1.5;
 }
 .pvs-step-duration {
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   margin-top: 0.25rem;
 }
 
 /* ── Code block ── */
 .pvs-code-block {
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border);
   margin-bottom: 1rem;
@@ -456,7 +456,7 @@
   justify-content: space-between;
   padding: 0.6rem 1rem;
   background: var(--bg-elevated);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
 }
 .pvs-code {
@@ -465,7 +465,7 @@
   background: var(--bg-elevated);
   color: #A5F3FC;
   font-family: 'Cascadia Code', 'Fira Code', monospace;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   line-height: 1.6;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -479,7 +479,7 @@
   gap: 0.75rem;
 }
 .pvs-email-card {
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -502,16 +502,16 @@
 .pvs-email-name {
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
 }
 .pvs-email-audience {
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
 }
 .pvs-email-chevron {
   color: var(--text-muted);
   transition: transform 0.2s;
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
 }
 .pvs-email-card.pvs-email-expanded .pvs-email-chevron {
   transform: rotate(180deg);
@@ -526,12 +526,12 @@
 .pvs-email-subject {
   color: var(--pvs-accent);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   margin-bottom: 0.5rem;
 }
 .pvs-email-content {
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   line-height: 1.6;
   white-space: pre-line;
   background: var(--bg-elevated);
@@ -551,14 +551,14 @@
 .pvs-licence-table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
 }
 .pvs-licence-table th {
   text-align: left;
   padding: 0.6rem 0.75rem;
   color: var(--text-secondary);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   border-bottom: 1px solid var(--border);
@@ -579,15 +579,15 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
 }
 .pvs-cross-card:hover {
   border-color: rgba(var(--pvs-accent-rgb), 0.3);
-  transform: translateY(-2px);
+  
 }
 .pvs-cross-icon {
   font-size: 1.4rem;
@@ -595,27 +595,27 @@
 }
 .pvs-cross-card strong {
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin-bottom: 0.3rem;
 }
 .pvs-cross-card p {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   line-height: 1.4;
   margin: 0;
 }
 
 /* ═══ BUILD YOUR OWN ═══ */
 .pvs-custom-section {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-4);
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
 }
 .pvs-custom-section:last-of-type { border-bottom: none; }
 .pvs-custom-section-title {
   color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--text-body);
+  font-weight: 600;
   margin-bottom: 0.75rem;
 }
 .pvs-custom-deploy-cta {
@@ -633,7 +633,7 @@
 }
 .pvs-lb-templates-label {
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   font-weight: 600;
 }
 .pvs-lb-templates-btns {
@@ -644,13 +644,13 @@
 .pvs-lb-tpl-btn {
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   font-family: inherit;
 }
 .pvs-lb-tpl-btn:hover {
@@ -692,7 +692,7 @@
   border: 1px solid var(--border);
   border-left: 3px solid;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
 }
 .pvs-lb-card:hover {
   background: var(--bg-elevated);
@@ -725,13 +725,13 @@
 .pvs-lb-preview-col { position: sticky; top: 6rem; }
 .pvs-lb-preview-card {
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
 .pvs-lb-preview-card h3 {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
@@ -747,7 +747,7 @@
   gap: 0.4rem;
   padding: 0.5rem 0.75rem;
   background: var(--bg-elevated);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
 }
 .pvs-lb-ribbon-arrow { margin-left: auto; font-size: 0.7rem; }
@@ -760,7 +760,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.75rem;
-  font-size: 0.8rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   border-top: 1px solid var(--border);
 }
@@ -791,7 +791,7 @@
 .pvs-modal {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   width: 100%;
   max-width: 480px;
   max-height: 90vh;
@@ -809,7 +809,7 @@
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: var(--text-body);
   cursor: pointer;
   padding: 0.25rem;
   font-family: inherit;
@@ -828,7 +828,7 @@
 .pvs-lb-field label {
   display: block;
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   margin-bottom: 0.4rem;
 }
@@ -853,7 +853,7 @@
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-primary);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   font-family: inherit;
 }
 .pvs-lb-toggle-row {
@@ -923,8 +923,8 @@
 }
 .pvs-dlp-scenarios { display: flex; flex-direction: column; gap: 1.5rem; }
 .pvs-dlp-cat-title {
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: var(--text-caption);
+  font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -941,7 +941,7 @@
   border-radius: 10px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
 }
 .pvs-dlp-scenario-card.pvs-dlp-enabled {
   border-color: rgba(var(--pvs-accent-rgb), 0.35);
@@ -955,12 +955,12 @@
 .pvs-dlp-scenario-name {
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   margin-bottom: 0.2rem;
 }
 .pvs-dlp-scenario-desc {
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   line-height: 1.45;
   margin-bottom: 0.4rem;
 }
@@ -993,9 +993,9 @@
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  transition: transform 150ms ease-out;
   z-index: 999;
   pointer-events: none;
 }
@@ -1007,7 +1007,7 @@
 .pvs-panel details {
   margin-bottom: 0.75rem;
   padding: 1rem 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
@@ -1015,7 +1015,7 @@
   cursor: pointer;
   color: var(--text-primary);
   list-style: none;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
 }
 .pvs-panel details summary::-webkit-details-marker { display: none; }
 .pvs-panel details summary::before {
@@ -1046,7 +1046,7 @@
   }
   .pvs-tab {
     padding: 0.5rem 0.7rem;
-    font-size: 0.78rem;
+    font-size: var(--text-caption);
   }
   .pvs-kits-grid {
     grid-template-columns: 1fr;
@@ -1095,7 +1095,7 @@
 /* ── Nav accent override ── */
 .page-purview-starter .nav-scrolled .nav-inner {
   border-color: rgba(var(--pvs-accent-rgb), 0.25);
-  box-shadow: 0 0 20px rgba(var(--pvs-accent-rgb), 0.08);
+  
 }
 
 /* ── Recommended badge ── */
@@ -1104,7 +1104,7 @@
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   background: rgba(var(--pvs-accent-rgb), 0.15);
@@ -1126,7 +1126,7 @@
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   cursor: pointer;
   flex-shrink: 0;
@@ -1137,7 +1137,7 @@
 }
 .pvs-kit-e3-note {
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   font-style: italic;
   margin-top: 0.25rem;
 }
@@ -1149,8 +1149,8 @@
   justify-content: space-between;
   margin-bottom: 0.75rem;
 }
-.pvs-checklist-header h3 { color: var(--text-primary); font-size: 1.1rem; margin: 0; }
-.pvs-checklist-progress { font-size: 0.82rem; font-weight: 600; }
+.pvs-checklist-header h3 { color: var(--text-primary); font-size: var(--text-body); margin: 0; }
+.pvs-checklist-progress { font-size: var(--text-caption); font-weight: 600; }
 .pvs-step-check {
   display: flex;
   align-items: center;
@@ -1179,13 +1179,13 @@
 .pvs-export-tab {
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, opacity 150ms ease-out;
   font-family: inherit;
 }
 .pvs-export-tab:hover { color: var(--text-primary); }
@@ -1197,7 +1197,7 @@
 
 /* ── Compare modal ── */
 .pvs-modal--wide { max-width: 900px; }
-.pvs-compare { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.pvs-compare { width: 100%; border-collapse: collapse; font-size: var(--text-caption); }
 .pvs-compare th, .pvs-compare td {
   padding: 0.5rem 0.65rem;
   text-align: center;
@@ -1205,7 +1205,7 @@
 }
 .pvs-compare th {
   color: var(--text-primary);
-  font-size: 0.78rem;
+  font-size: var(--text-caption);
   white-space: nowrap;
   border-bottom: 1px solid var(--border);
 }
@@ -1216,7 +1216,7 @@
 .pvs-compliance-fw {
   margin-bottom: 1.25rem;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
@@ -1226,7 +1226,7 @@
   align-items: center;
   margin-bottom: 0.5rem;
 }
-.pvs-compliance-score { font-size: 0.82rem; color: var(--text-secondary); }
+.pvs-compliance-score { font-size: var(--text-caption); color: var(--text-secondary); }
 .pvs-compliance-bar {
   height: 6px;
   border-radius: 3px;
@@ -1244,7 +1244,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-muted);
   padding: 0.2rem 0;
 }
@@ -1258,11 +1258,11 @@
 }
 .pvs-whatif-col {
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
-.pvs-whatif-col h4 { color: var(--text-primary); font-size: 0.9rem; margin: 0 0 0.5rem; }
+.pvs-whatif-col h4 { color: var(--text-primary); font-size: var(--text-sm); margin: 0 0 0.5rem; }
 .pvs-whatif-lost { border-color: color-mix(in srgb, var(--error) 20%, transparent); }
 .pvs-whatif-kept { border-color: rgba(var(--pvs-accent-rgb), 0.2); }
 .pvs-whatif-item {
@@ -1270,7 +1270,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 0;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
 }
@@ -1291,7 +1291,7 @@
   background: var(--bg-elevated);
   color: var(--text-primary);
   font-family: 'Cascadia Code', monospace;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   resize: vertical;
 }
 .pvs-import-textarea:focus { outline: none; border-color: var(--pvs-accent); }
@@ -1303,7 +1303,7 @@
 }
 .pvs-import-label {
   padding: 0.3rem 0;
-  font-size: 0.85rem;
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
 }
@@ -1330,7 +1330,7 @@
   .pvs-step-desc, .pvs-step-duration { color: #444; }
   .pvs-code-block { border: 1px solid #ddd; }
   .pvs-code-header { background: #f5f5f5; color: #333; }
-  .pvs-code { background: #fafafa; color: #000; font-size: 0.75rem; }
+  .pvs-code { background: #fafafa; color: #000; font-size: var(--text-caption); }
   .pvs-email-card { border: 1px solid #ddd; page-break-inside: avoid; }
   .pvs-email-body { display: block !important; }
   .pvs-email-content { background: #fafafa; color: #000; }
@@ -1343,3 +1343,5 @@
   .pvs-licence-table td { color: #000; border-bottom: 1px solid #eee; }
   .pvs-kit-licence { border: 1px solid #ccc; color: #333; background: #f0f0f0; }
 }
+
+.pvs-btn--danger { color: var(--error); }

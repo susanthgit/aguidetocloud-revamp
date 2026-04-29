@@ -232,7 +232,7 @@
           <h2>Deployment Plan: <span id="pvs-deploy-kit-name"></span></h2>
           <div class="pvs-deploy-header-actions">
             <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-change-kit">Change Kit</button>
-            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm" id="pvs-reset-plan" style="color:#F87171">Reset Plan</button>
+            <button class="pvs-btn pvs-btn--secondary pvs-btn--sm pvs-btn--danger" id="pvs-reset-plan">Reset Plan</button>
           </div>
         </div>
 
@@ -325,9 +325,9 @@
     <div class="pvs-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
       <div class="zt-faq-wrap">
         {{ range $i, $f := .Params.faq }}
-        <details open>
-          <summary><strong>{{ $f.question }}</strong></summary>
-          <p>{{ $f.answer | markdownify }}</p>
+        <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
+          <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $f.question }}</summary>
+          <p class="zt-faq-answer">{{ $f.answer | markdownify }}</p>
         </details>
         {{ end }}
       </div>
