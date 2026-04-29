@@ -1248,7 +1248,6 @@
       }).join('');
 
       container.innerHTML += '<div class="aicost-action-card">' +
-        '<div class="aicost-action-icon">' + (action.icon || '🤖') + '</div>' +
         '<div class="aicost-action-name">' + esc(action.name) + '</div>' +
         '<div class="aicost-action-tokens">~' + action.est_tokens.toLocaleString() + ' tokens</div>' +
         '<div class="aicost-action-costs">' + pillsHtml + '</div>' +
@@ -1385,7 +1384,7 @@
     }
 
     el.innerHTML = warnings.map(function (w) {
-      return '<div class="aicost-warning"><span class="aicost-warning-icon">⚠️</span><span>' + esc(w) + '</span></div>';
+      return '<div class="aicost-warning"><span class="aicost-warning-icon">!</span><span>' + esc(w) + '</span></div>';
     }).join('');
   }
 
