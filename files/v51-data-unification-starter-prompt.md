@@ -56,7 +56,7 @@ I have two platforms that need to feel like one product:
 2. **Guided platform** (`C:\ssClawy\guided`) — Astro, proxied at `/guided/`
    - 126 practice exam certs across 13 vendors (Microsoft, AWS, CompTIA, Cisco, GCP, ISC², ISACA, CNCF, HashiCorp, Juniper, Palo Alto, EC-Council, Fortinet)
    - Individual cert pages at `/guided/{cert-slug}/`
-   - Stripe payments live ($19/$59/$149 tiers)
+   - Stripe payments live ($9/$59/$149 tiers)
    - Vendor data in `src/data/vendors.toml` and `src/data/vendors.ts`
    - Cert data in `src/content/certs/*.toml` (126 files)
 
@@ -167,7 +167,7 @@ Like Whizlabs mobile nav — EXACT pattern from `wiz-mobile-nav-open.png`:
 │                              │  │ 20 Free Qs      │  │
 │  (tab content — server-      │  └────────────────┘  │
 │   rendered for SEO)          │                      │
-│                              │  From $19/cert       │
+│                              │  From $9/cert        │
 │                              │                      │
 │                              │  [Try Free →]        │
 │                              │  [Buy Now →]         │
@@ -185,7 +185,7 @@ Like Whizlabs mobile nav — EXACT pattern from `wiz-mobile-nav-open.png`:
 - Tab content is server-rendered (Hugo generates all panels, JS toggles visibility)
 - **Study Guide is the DEFAULT tab** — it's the SEO payload and the free value
 - Keep free study guide content ABOVE the fold — never bury it behind paywall CTAs
-- Users must see: "this study guide is free, practice exams start at $19" — clear separation
+- Users must see: "this study guide is free, practice exams start at $9" — clear separation
 
 #### Mobile layout:
 ```
@@ -226,9 +226,9 @@ Like Whizlabs mobile nav — EXACT pattern from `wiz-mobile-nav-open.png`:
 - The page still functions as a conversion funnel → Guided practice exams
 
 #### Pricing simplification:
-- Individual cert pages show ONE price: "$19 for this cert" with "Buy Now →"
+- Individual cert pages show ONE price: "$9 for this cert" with "Buy Now →"
 - **No tier comparison on individual cert pages** — that confuses buyers
-- Dedicated `/pricing/` page handles tier comparison (Single $19 / 5-Pack $59 / All Access $149)
+- Dedicated `/pricing/` page handles tier comparison (Single $9 / 5-Pack $59 / All Access $149)
 - Individual page has small "See all plans →" link for users who want to compare
 - **One-click purchase:** "Buy Now" → Stripe checkout → done. No cart, no intermediate pages.
 
