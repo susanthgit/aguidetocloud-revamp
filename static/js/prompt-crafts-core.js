@@ -421,14 +421,14 @@
     if (pillars.role.score < 10) {
       var role = ROLE_SUGGESTIONS[domain] || ROLE_SUGGESTIONS.general;
       tips.push({
-        icon: '🎭', pillar: 'Role',
+        icon: 'R', pillar: 'Role',
         text: 'Add a role to guide the AI\'s expertise. Try starting with: <strong>"You are ' + role + '."</strong>'
       });
     }
 
     if (pillars.context.score < 8) {
       tips.push({
-        icon: '📋', pillar: 'Context',
+        icon: 'C', pillar: 'Context',
         text: 'Give the AI some background. Who is this for? What\'s the situation? <strong>Add 1-2 sentences of context</strong> so the AI doesn\'t have to guess.'
       });
     }
@@ -436,12 +436,12 @@
     if (pillars.action.score < 15) {
       if (!pillars.action.hasVerb) {
         tips.push({
-          icon: '🎯', pillar: 'Action',
+          icon: 'A', pillar: 'Action',
           text: 'Start with a clear action verb like <strong>Write, Create, Analyse, Compare, Explain, or List</strong>. Vague requests like "help me with" give vague results.'
         });
       } else {
         tips.push({
-          icon: '🎯', pillar: 'Action',
+          icon: 'A', pillar: 'Action',
           text: 'Your task is visible but could be more specific. <strong>Add details</strong> — what exactly should be covered? What\'s the desired outcome?'
         });
       }
@@ -450,21 +450,21 @@
     if (pillars.format.score < 8) {
       var firstWord = pillars.action.hasVerb ? '' : 'After adding an action verb, ';
       tips.push({
-        icon: '📐', pillar: 'Format',
+        icon: 'F', pillar: 'Format',
         text: firstWord + 'Tell the AI <strong>how to structure the output</strong> — bullet points, table, step-by-step, numbered list, or paragraphs with headings.'
       });
     }
 
     if (pillars.tone.score < 5) {
       tips.push({
-        icon: '🎤', pillar: 'Tone',
+        icon: 'T', pillar: 'Tone',
         text: 'Define your audience and tone. Try: <strong>"Use a professional tone suitable for IT managers"</strong> or <strong>"Explain in simple terms for beginners."</strong>'
       });
     }
 
     if (pillars.scope.score < 8) {
       tips.push({
-        icon: '📏', pillar: 'Scope',
+        icon: 'S', pillar: 'Scope',
         text: 'Set boundaries. Try: <strong>"Keep it under 300 words"</strong>, <strong>"Focus on the top 5 options"</strong>, or <strong>"Don\'t include pricing details."</strong>'
       });
     }
@@ -477,12 +477,12 @@
      ════════════════════════════════════════════ */
 
   var PILLAR_META = {
-    context: { letter: 'C', label: 'Context', icon: '📋', weight: '20%' },
-    role:    { letter: 'R', label: 'Role',    icon: '🎭', weight: '15%' },
-    action:  { letter: 'A', label: 'Action',  icon: '🎯', weight: '20%' },
-    format:  { letter: 'F', label: 'Format',  icon: '📐', weight: '15%' },
-    tone:    { letter: 'T', label: 'Tone',    icon: '🎤', weight: '15%' },
-    scope:   { letter: 'S', label: 'Scope',   icon: '📏', weight: '15%' }
+    context: { letter: 'C', label: 'Context', weight: '20%' },
+    role:    { letter: 'R', label: 'Role',    weight: '15%' },
+    action:  { letter: 'A', label: 'Action',  weight: '20%' },
+    format:  { letter: 'F', label: 'Format',  weight: '15%' },
+    tone:    { letter: 'T', label: 'Tone',    weight: '15%' },
+    scope:   { letter: 'S', label: 'Scope',   weight: '15%' }
   };
 
   /* ════════════════════════════════════════════

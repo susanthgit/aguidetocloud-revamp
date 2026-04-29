@@ -36,6 +36,7 @@
     {{/* ── Glass Pill Tabs ── */}}
     <div class="polisher-tabs" role="tablist" aria-label="Prompt Polisher sections">
       <button class="polisher-tab active" data-tab="main" role="tab" aria-selected="true">Polisher</button>
+      <button class="polisher-tab" data-tab="builder" role="tab" aria-selected="false">Build a Prompt</button>
       <button class="polisher-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
     </div>
 
@@ -45,7 +46,7 @@
     <div class="polisher-input-section">
       <div class="polisher-input-header">
         <label for="polisher-input" class="polisher-label">Your prompt</label>
-        <span class="polisher-char-count" id="polisher-char-count">0 characters</span>
+        <span class="polisher-char-count" id="polisher-char-count">0 characters · ~0 tokens</span>
       </div>
       <textarea id="polisher-input" class="polisher-textarea" placeholder="Paste your AI prompt here...&#10;&#10;Example: &quot;write me a blog post about AI&quot;" rows="6" aria-label="Enter your AI prompt"></textarea>
       <div class="polisher-actions">
@@ -57,11 +58,11 @@
           <option value="claude">Claude</option>
           <option value="gemini">Gemini</option>
         </select>
-        <button id="polisher-clear" class="polisher-btn-secondary" style="display:none">✕ Clear</button>
+        <button id="polisher-clear" class="polisher-btn-secondary" hidden>Clear</button>
         <div class="polisher-examples-wrap">
           <button id="polisher-examples-btn" class="polisher-btn-secondary">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Try an example</button>
           <div id="polisher-examples-menu" class="polisher-examples-menu" hidden>
-            <button data-example="0">🖊️ Vague blog request</button>
+            <button data-example="0">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Vague blog request</button>
             <button data-example="1">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Simple question</button>
             <button data-example="2">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Resume help</button>
             <button data-example="3">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Email draft</button>
@@ -104,11 +105,11 @@
             <button id="polisher-copy" class="polisher-btn-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Prompt</button>
           </div>
         </div>
-        <p class="polisher-output-hint">This is your improved prompt with missing CRAFTS elements added. <span class="polisher-added-legend">Green text</span> = what we added.</p>
+        <p class="polisher-output-hint"><span class="polisher-added-legend">Green text</span> = what we added</p>
         <div class="polisher-output" id="polisher-output">
           {{/* Rendered by JS */}}
         </div>
-        <div class="polisher-compare" id="polisher-compare" style="display:none">
+        <div class="polisher-compare" id="polisher-compare" hidden>
           <div class="polisher-compare-col">
             <div class="polisher-compare-label">{{ partial "icon.html" (dict "name" "alert-triangle" "size" 14 "stroke" 1.5) }} Before</div>
             <div class="polisher-compare-text" id="polisher-compare-before"></div>
@@ -118,7 +119,7 @@
             <div class="polisher-compare-text polisher-compare-after" id="polisher-compare-after"></div>
           </div>
         </div>
-        <div class="polisher-score-delta" id="polisher-score-delta" style="display:none">
+        <div class="polisher-score-delta" id="polisher-score-delta" hidden>
           {{/* Rendered by JS — shows "Original: 22 → Polished: 78 (+56 points)" */}}
         </div>
         <div class="polisher-output-footer">
@@ -135,7 +136,7 @@
       </div>
 
       {{/* ── RELATED PROMPTS ── */}}
-      <div class="polisher-related-section" id="polisher-related" style="display:none">
+      <div class="polisher-related-section" id="polisher-related" hidden>
         <h2 class="polisher-section-title">Related prompts from our library</h2>
         <div class="polisher-related-list" id="polisher-related-list">
           {{/* Rendered by JS */}}
@@ -144,9 +145,9 @@
 
     </div>
 
-    {{/* ── CRAFTS FRAMEWORK EXPLAINER ── */}}
-    <div class="polisher-about">
-      <h2>The CRAFTS Framework</h2>
+    {{/* ── CRAFTS FRAMEWORK EXPLAINER (collapsed) ── */}}
+    <details class="polisher-about">
+      <summary class="polisher-about-trigger">What is the CRAFTS framework?</summary>
       <p>Every great AI prompt includes six elements. The Prompt Polisher scores yours against each one.<br>
       Need ready-made prompts? Browse our <a href="/prompts/" class="polisher-crafts-link">AI Prompt Library →</a></p>
       <div class="polisher-crafts-grid">
@@ -181,11 +182,11 @@
           <p>Constraints — length, focus areas, what to include or exclude</p>
         </div>
       </div>
-    </div>
+    </details>
 
     {{/* ── HISTORY ── */}}
-    <div class="polisher-history-section" id="polisher-history-section" style="display:none">
-      <h2 class="polisher-section-title">🕐 Recent prompts</h2>
+    <div class="polisher-history-section" id="polisher-history-section" hidden>
+      <h2 class="polisher-section-title">Recent prompts</h2>
       <div class="polisher-history" id="polisher-history">
         {{/* Rendered by JS */}}
       </div>
@@ -193,13 +194,119 @@
 
     </div>{{/* end panel-main */}}
 
+    {{/* ── Build a Prompt Panel ── */}}
+    <div class="polisher-panel" id="panel-builder" role="tabpanel">
+
+      <p class="polisher-builder-intro">Fill in what you know — the prompt builds live below. Only Action is required.</p>
+
+      <div class="polisher-builder-form">
+        <div class="polisher-builder-field">
+          <label for="builder-action">
+            <span class="polisher-craft-letter-sm">A</span> Action — what do you want the AI to do?
+          </label>
+          <textarea id="builder-action" class="polisher-builder-input" rows="2" placeholder="e.g. 'Create a step-by-step migration checklist with rollback procedures'"></textarea>
+        </div>
+
+        <div class="polisher-builder-field">
+          <label for="builder-context">
+            <span class="polisher-craft-letter-sm">C</span> Context
+          </label>
+          <textarea id="builder-context" class="polisher-builder-input" rows="2" placeholder="Background or situation. e.g. 'I'm an IT admin migrating 500 users to Microsoft 365'"></textarea>
+        </div>
+
+        <div class="polisher-builder-field">
+          <label for="builder-role">
+            <span class="polisher-craft-letter-sm">R</span> Role
+          </label>
+          <select id="builder-role" class="polisher-builder-select">
+            <option value="">Choose a role...</option>
+            <option value="expert">Expert / Specialist</option>
+            <option value="teacher">Teacher / Explainer</option>
+            <option value="analyst">Data Analyst</option>
+            <option value="writer">Content Writer</option>
+            <option value="advisor">Strategic Advisor</option>
+            <option value="developer">Developer / Engineer</option>
+            <option value="editor">Editor / Proofreader</option>
+            <option value="coach">Coach / Mentor</option>
+            <option value="researcher">Researcher</option>
+            <option value="translator">Translator</option>
+          </select>
+          <input type="text" id="builder-role-custom" class="polisher-builder-input-sm" placeholder="Or type a custom role..." />
+        </div>
+
+        <div class="polisher-builder-two-col">
+          <div class="polisher-builder-field">
+            <label for="builder-format">
+              <span class="polisher-craft-letter-sm">F</span> Format
+            </label>
+            <select id="builder-format" class="polisher-builder-select">
+              <option value="">Choose a format...</option>
+              <option value="bullets">Bullet points</option>
+              <option value="numbered">Numbered list</option>
+              <option value="table">Table</option>
+              <option value="email">Email</option>
+              <option value="report">Report with sections</option>
+              <option value="code">Code / script</option>
+              <option value="essay">Essay / paragraphs</option>
+              <option value="checklist">Checklist</option>
+              <option value="comparison">Comparison (pros/cons)</option>
+              <option value="summary">Summary / TL;DR</option>
+            </select>
+          </div>
+
+          <div class="polisher-builder-field">
+            <label for="builder-tone">
+              <span class="polisher-craft-letter-sm">T</span> Tone
+            </label>
+            <select id="builder-tone" class="polisher-builder-select">
+              <option value="">Choose a tone...</option>
+              <option value="professional">Professional</option>
+              <option value="casual">Casual / Conversational</option>
+              <option value="technical">Technical</option>
+              <option value="beginner">Beginner-friendly</option>
+              <option value="executive">Executive / C-suite</option>
+              <option value="academic">Academic</option>
+              <option value="persuasive">Persuasive</option>
+              <option value="empathetic">Empathetic / Supportive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="polisher-builder-field">
+          <label for="builder-scope">
+            <span class="polisher-craft-letter-sm">S</span> Scope / Constraints
+          </label>
+          <textarea id="builder-scope" class="polisher-builder-input" rows="2" placeholder="Length, focus areas, what to include/exclude. e.g. 'Keep under 500 words. Focus on Exchange Online.'"></textarea>
+        </div>
+      </div>
+
+      {{/* ── Builder Output ── */}}
+      <div id="builder-output-section" class="polisher-builder-output-section" hidden>
+        <div class="polisher-builder-output-header">
+          <h2 class="polisher-section-title">Your CRAFTS Prompt</h2>
+          <div class="polisher-builder-score">
+            <span class="polisher-builder-score-label">CRAFTS Score:</span>
+            <span class="polisher-builder-score-value" id="builder-score">0</span>
+            <span class="polisher-builder-score-max">/100</span>
+          </div>
+        </div>
+        <div class="polisher-output" id="builder-prompt-output"></div>
+        <div class="polisher-builder-actions">
+          <button id="builder-copy" class="polisher-btn-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Prompt</button>
+          <button id="builder-to-polisher" class="polisher-btn-secondary">{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }} Send to Polisher</button>
+          <span class="polisher-builder-tokens" id="builder-tokens"></span>
+        </div>
+      </div>
+
+    </div>{{/* end panel-builder */}}
+
     {{/* ── FAQ Panel ── */}}
     <div class="polisher-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div class="polisher-faq-wrap">
       <h2 class="polisher-faq-title">Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
-      <details open class="polisher-faq-item">
+      <details{{ if eq $i 0 }} open{{ end }} class="polisher-faq-item">
         <summary>{{ add $i 1 }}. {{ $q.question }}</summary>
         <p>{{ $q.answer }}</p>
       </details>

@@ -92,7 +92,7 @@
       // Start bars at 0 width, animate in via CSS transition
       html += `
         <div class="polisher-pillar">
-          <span class="polisher-pillar-name"><span class="polisher-craft-icon">${meta.icon}</span> ${meta.label}</span>
+          <span class="polisher-pillar-name">${meta.label}</span>
           <div class="polisher-pillar-bar">
             <div class="polisher-pillar-fill polisher-fill-${cls}" style="width: 0%" data-target="${Math.round(pct * 100)}"></div>
           </div>
@@ -114,9 +114,9 @@
       const diff = polishedAnalysis.total - analysis.total;
       if (diff > 0) {
         $delta.innerHTML = `<span class="polisher-delta-badge">Original: <strong>${analysis.total}</strong> → Polished: <strong class="polisher-score-good">${polishedAnalysis.total}</strong> <span class="polisher-delta-up">+${diff} points</span></span>`;
-        $delta.style.display = '';
+        $delta.hidden = false;
       } else {
-        $delta.style.display = 'none';
+        $delta.hidden = true;
       }
     }
   }
@@ -143,13 +143,12 @@
     const $section = document.getElementById('polisher-tips-section');
 
     if (tips.length === 0) {
-      $tips.innerHTML = '<div class="polisher-no-tips">🎉 Your prompt covers all CRAFTS elements — nice work!</div>';
+      $tips.innerHTML = '<div class="polisher-no-tips">Your prompt covers all CRAFTS elements — nice work!</div>';
       return;
     }
 
     $tips.innerHTML = tips.map(t =>
       `<div class="polisher-tip">
-        <span class="polisher-tip-icon">${t.icon}</span>
         <div><strong>${t.pillar}:</strong> ${t.text}</div>
       </div>`
     ).join('');
@@ -193,11 +192,11 @@
     });
 
     if (view === 'compare') {
-      $output.style.display = 'none';
-      if ($compare) $compare.style.display = '';
+      $output.hidden = true;
+      if ($compare) $compare.hidden = false;
     } else {
-      $output.style.display = '';
-      if ($compare) $compare.style.display = 'none';
+      $output.hidden = false;
+      if ($compare) $compare.hidden = true;
     }
   }
 
@@ -247,8 +246,8 @@
     const $section = document.getElementById('polisher-related');
     if (!$section) return;
     const prompts = DOMAIN_TO_PROMPTS[domain];
-    if (!prompts) { $section.style.display = 'none'; return; }
-    $section.style.display = '';
+    if (!prompts) { $section.hidden = true; return; }
+    $section.hidden = false;
     document.getElementById('polisher-related-list').innerHTML = prompts.map(p =>
       `<a href="${p.path}" class="polisher-related-item">
         <span>${escapeHtml(p.title)}</span><span class="polisher-related-arrow">→</span>
@@ -262,11 +261,11 @@
     const $list = document.getElementById('polisher-history');
 
     if (history.length === 0) {
-      $section.style.display = 'none';
+      $section.hidden = true;
       return;
     }
 
-    $section.style.display = '';
+    $section.hidden = false;
     $list.innerHTML = history.map((h, i) => {
       const cls = totalScoreClass(h.score);
       const preview = h.text.length > 70 ? h.text.slice(0, 70) + '…' : h.text;
@@ -301,7 +300,7 @@
     const $results = document.getElementById('polisher-results');
     $results.hidden = false;
     const $howItWorks = document.getElementById('polisher-how-it-works');
-    if ($howItWorks) $howItWorks.style.display = 'none';
+    if ($howItWorks) $howItWorks.hidden = true;
 
     renderScore(analysis, polishedAnalysis);
     renderTips(tips);
@@ -311,7 +310,7 @@
     renderHistory();
 
     // Show clear button
-    document.getElementById('polisher-clear').style.display = '';
+    document.getElementById('polisher-clear').hidden = false;
 
     // Scroll to results
     $results.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -337,8 +336,10 @@
     // Enable/disable button based on input
     $input.addEventListener('input', function () {
       const len = this.value.length;
+      const words = this.value.trim() ? this.value.trim().split(/\s+/).length : 0;
+      const tokens = Math.round(words * 1.3);
       $btn.disabled = len === 0;
-      $charCount.textContent = len + ' character' + (len !== 1 ? 's' : '');
+      $charCount.textContent = len + ' characters · ~' + tokens + ' tokens';
     });
 
     // Polish button
@@ -356,11 +357,11 @@
     $clear.addEventListener('click', function () {
       $input.value = '';
       $btn.disabled = true;
-      $charCount.textContent = '0 characters';
+      $charCount.textContent = '0 characters · ~0 tokens';
       document.getElementById('polisher-results').hidden = true;
       const $howItWorks = document.getElementById('polisher-how-it-works');
-      if ($howItWorks) $howItWorks.style.display = '';
-      this.style.display = 'none';
+      if ($howItWorks) $howItWorks.hidden = false;
+      this.hidden = true;
       $input.focus();
     });
 
@@ -386,8 +387,8 @@
     $copy.addEventListener('click', function () {
       if (!currentPolished) return;
       navigator.clipboard.writeText(currentPolished).then(() => {
-        this.textContent = '✅ Copied!';
-        setTimeout(() => { this.textContent = '📋 Copy'; }, 2000);
+        this.textContent = 'Copied!';
+        setTimeout(() => { this.textContent = 'Copy'; }, 2000);
         if (window.clarity) window.clarity('event', 'polisher_copy');
       });
     });
@@ -444,7 +445,7 @@
     var urlText = new URLSearchParams(location.search).get('text');
     if (urlText && urlText.trim()) {
       $input.value = urlText.trim();
-      $charCount.textContent = $input.value.length + ' characters';
+      $charCount.textContent = $input.value.length + ' characters · ~' + Math.round($input.value.trim().split(/\s+/).length * 1.3) + ' tokens';
       $btn.disabled = false;
       polish();
       // Clean URL
@@ -452,7 +453,7 @@
     } else if (!$input.value.trim()) {
       // Auto-demo: show the email example polished on first visit
       $input.value = EXAMPLES[3].text;
-      $charCount.textContent = $input.value.length + ' characters';
+      $charCount.textContent = $input.value.length + ' characters · ~' + Math.round($input.value.trim().split(/\s+/).length * 1.3) + ' tokens';
       $btn.disabled = false;
       polish();
     }
@@ -466,11 +467,152 @@
     setTimeout(function() { window.scrollTo(0, 0); }, 300);
   }
 
+  /* ════════════════════════════════════════════
+     GUIDED BUILDER
+     ════════════════════════════════════════════ */
+
+  const ROLE_MAP = {
+    expert: 'Act as a subject-matter expert',
+    teacher: 'Act as a patient teacher who explains concepts clearly',
+    analyst: 'Act as a data analyst',
+    writer: 'Act as a professional content writer',
+    advisor: 'Act as a strategic advisor',
+    developer: 'Act as a senior software developer',
+    editor: 'Act as an experienced editor and proofreader',
+    coach: 'Act as a supportive coach and mentor',
+    researcher: 'Act as a thorough researcher',
+    translator: 'Act as an expert translator'
+  };
+
+  const FORMAT_MAP = {
+    bullets: 'Format the output as bullet points.',
+    numbered: 'Format the output as a numbered list.',
+    table: 'Format the output as a table.',
+    email: 'Format the output as a professional email.',
+    report: 'Format the output as a structured report with clear section headings.',
+    code: 'Format the output as clean, commented code.',
+    essay: 'Format the output as well-structured paragraphs.',
+    checklist: 'Format the output as a checklist with checkboxes.',
+    comparison: 'Format the output as a pros and cons comparison.',
+    summary: 'Format the output as a concise summary (TL;DR style).'
+  };
+
+  const TONE_MAP = {
+    professional: 'Use a professional tone.',
+    casual: 'Use a casual, conversational tone.',
+    technical: 'Use a technical tone with precise terminology.',
+    beginner: 'Use a beginner-friendly tone — avoid jargon, explain acronyms.',
+    executive: 'Use an executive tone — concise, data-driven, decision-focused.',
+    academic: 'Use an academic tone with proper citations style.',
+    persuasive: 'Use a persuasive, compelling tone.',
+    empathetic: 'Use a warm, empathetic tone.'
+  };
+
+  function initBuilder() {
+    const $copy = document.getElementById('builder-copy');
+    const $toPolisher = document.getElementById('builder-to-polisher');
+    const builderFields = ['builder-action', 'builder-context', 'builder-role', 'builder-role-custom', 'builder-format', 'builder-tone', 'builder-scope'];
+
+    function assemblePrompt() {
+      const context = (document.getElementById('builder-context') || {}).value || '';
+      const roleKey = (document.getElementById('builder-role') || {}).value || '';
+      const roleCustom = (document.getElementById('builder-role-custom') || {}).value || '';
+      const action = (document.getElementById('builder-action') || {}).value || '';
+      const formatKey = (document.getElementById('builder-format') || {}).value || '';
+      const toneKey = (document.getElementById('builder-tone') || {}).value || '';
+      const scope = (document.getElementById('builder-scope') || {}).value || '';
+
+      if (!action.trim()) return '';
+
+      var parts = [];
+      var role = roleCustom.trim() ? 'Act as ' + roleCustom.trim() + '.' : (ROLE_MAP[roleKey] ? ROLE_MAP[roleKey] + '.' : '');
+      if (role) parts.push(role);
+      if (context.trim()) parts.push('Context: ' + context.trim());
+      parts.push(action.trim());
+      if (FORMAT_MAP[formatKey]) parts.push(FORMAT_MAP[formatKey]);
+      if (TONE_MAP[toneKey]) parts.push(TONE_MAP[toneKey]);
+      if (scope.trim()) parts.push('Constraints: ' + scope.trim());
+
+      return parts.join('\n\n');
+    }
+
+    function updatePreview() {
+      var prompt = assemblePrompt();
+      var $output = document.getElementById('builder-prompt-output');
+      var $section = document.getElementById('builder-output-section');
+      var $score = document.getElementById('builder-score');
+      var $tokens = document.getElementById('builder-tokens');
+
+      if (!prompt) {
+        if ($section) $section.hidden = true;
+        return;
+      }
+
+      if ($output) $output.textContent = prompt;
+      if ($section) $section.hidden = false;
+
+      if (window.PromptCrafts && window.PromptCrafts.analyse) {
+        var analysis = window.PromptCrafts.analyse(prompt);
+        if ($score) {
+          $score.textContent = analysis.total;
+          $score.className = 'polisher-builder-score-value ' + totalScoreClass(analysis.total);
+        }
+      }
+
+      var words = prompt.trim().split(/\s+/).length;
+      if ($tokens) $tokens.textContent = '~' + Math.round(words * 1.3) + ' tokens';
+    }
+
+    // Live preview on any field change
+    builderFields.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', updatePreview);
+        el.addEventListener('change', updatePreview);
+      }
+    });
+
+    // Copy
+    if ($copy) {
+      $copy.addEventListener('click', function () {
+        var text = (document.getElementById('builder-prompt-output') || {}).textContent || '';
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(function () {
+          $copy.textContent = 'Copied!';
+          setTimeout(function () { $copy.textContent = 'Copy Prompt'; }, 2000);
+        }).catch(function () {});
+      });
+    }
+
+    // Send to polisher
+    if ($toPolisher) {
+      $toPolisher.addEventListener('click', function () {
+        var text = (document.getElementById('builder-prompt-output') || {}).textContent || '';
+        if (!text) return;
+        var $input = document.getElementById('polisher-input');
+        if ($input) {
+          $input.value = text;
+          $input.dispatchEvent(new Event('input'));
+        }
+        // Switch to polisher tab
+        document.querySelectorAll('.polisher-tab').forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.polisher-panel').forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
+        var mainTab = document.querySelector('[data-tab="main"]');
+        var mainPanel = document.getElementById('panel-main');
+        if (mainTab) { mainTab.classList.add('active'); mainTab.setAttribute('aria-selected', 'true'); }
+        if (mainPanel) { mainPanel.classList.add('active'); mainPanel.hidden = false; }
+        // Polish it
+        polish();
+      });
+    }
+  }
+
   // Run when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function () { init(); initBuilder(); });
   } else {
     init();
+    initBuilder();
   }
 
 })();
