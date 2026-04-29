@@ -32,12 +32,36 @@
     };
   }
 
+  // === ROLE GROUPS ===
+  var ROLE_GROUPS = [
+    { id: 'it-security', title: 'IT & Security', roles: ['it-admin', 'cybersecurity', 'developer', 'architect', 'data-engineer'] },
+    { id: 'leadership', title: 'Leadership & Ops', roles: ['manager', 'team-lead', 'executive', 'executive-assistant', 'operations', 'strategy'] },
+    { id: 'project-product', title: 'Project & Product', roles: ['project-manager', 'product-manager', 'scrum-master'] },
+    { id: 'marketing', title: 'Marketing & Content', roles: ['marketing', 'content-creator', 'creative', 'editor', 'communications'] },
+    { id: 'hr-people', title: 'HR & People', roles: ['hr', 'hiring-manager', 'recruiter', 'trainer'] },
+    { id: 'sales-customer', title: 'Sales & Customer', roles: ['sales', 'customer-success', 'support', 'consultant', 'procurement'] },
+    { id: 'finance-compliance', title: 'Finance & Compliance', roles: ['finance', 'legal', 'compliance', 'analyst'] }
+  ];
+
+  // === CATEGORY SUPER-GROUPS (most valuable first) ===
+  var CATEGORY_GROUPS = [
+    { id: 'm365-apps', title: 'M365 Apps', cats: ['excel', 'word', 'powerpoint', 'presentations', 'teams', 'loop', 'onenote'] },
+    { id: 'email-meetings', title: 'Email & Meetings', cats: ['email', 'meetings', 'outlook-copilot', 'summarising'] },
+    { id: 'writing-content', title: 'Writing & Content', cats: ['writing', 'creative', 'communication', 'social-media', 'marketing'] },
+    { id: 'business', title: 'Business & Planning', cats: ['project-management', 'planning', 'productivity', 'finance', 'legal', 'sales'] },
+    { id: 'it-security', title: 'IT & Security', cats: ['it-admin', 'cybersecurity', 'troubleshooting', 'automation', 'coding'] },
+    { id: 'data-research', title: 'Data & Research', cats: ['data-analysis', 'research', 'analyst-agent', 'researcher-agent'] },
+    { id: 'hr-people', title: 'HR & People', cats: ['hr', 'onboarding', 'training', 'customer-service', 'customer-support'] },
+    { id: 'ai-agents', title: 'AI Agents & Creative', cats: ['copilot-cowork', 'claude-cowork', 'brainstorming', 'image-generation'] }
+  ];
+
   // === STATE ===
   var S = {
     search: '',
     platform: '',
     difficulty: '',
     role: '',
+    roleGroup: '',
     view: 'list',
     tab: 'browse',
     favorites: []
@@ -64,6 +88,8 @@
     D.filterPlatform = document.getElementById('filter-platform');
     D.filterDifficulty = document.getElementById('filter-difficulty');
     D.filterRole = document.getElementById('filter-role');
+    D.roleGrid = document.getElementById('prompts-role-grid');
+    D.rolePicker = document.getElementById('prompts-role-picker');
     D.rows = document.querySelectorAll('#prompts-list-view .prompt-row');
     D.groups = document.querySelectorAll('#prompts-list-view .prompts-category-group');
   }
@@ -80,6 +106,98 @@
       localStorage.setItem('prompts_favorites', JSON.stringify(S.favorites));
       localStorage.setItem('prompts_view', S.view);
     } catch (e) { /* quota or private */ }
+  }
+
+  // === BUILD ROLE PICKER ===
+  function buildCategoryGroups() {
+    if (!D.listView) return;
+    var catEls = {};
+    D.groups.forEach(function (g) { catEls[g.dataset.category] = g; });
+
+    // Build super-group wrappers
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < CATEGORY_GROUPS.length; i++) {
+      var sg = CATEGORY_GROUPS[i];
+      var wrapper = document.createElement('details');
+      wrapper.className = 'prompts-super-group';
+      wrapper.dataset.superGroup = sg.id;
+      var summary = document.createElement('summary');
+      summary.className = 'prompts-super-heading';
+      var count = 0;
+      sg.cats.forEach(function (c) { if (catEls[c]) count += catEls[c].querySelectorAll('.prompt-row').length; });
+      summary.innerHTML = '<strong>' + esc(sg.title) + '</strong><span class="prompts-super-count">' + count + '</span>';
+      wrapper.appendChild(summary);
+      var inner = document.createElement('div');
+      inner.className = 'prompts-super-inner';
+      sg.cats.forEach(function (c) { if (catEls[c]) inner.appendChild(catEls[c]); });
+      wrapper.appendChild(inner);
+      if (i < 2) wrapper.setAttribute('open', '');
+      frag.appendChild(wrapper);
+    }
+    // Any uncategorized leftovers
+    var remaining = D.listView.querySelectorAll('.prompts-category-group');
+    if (remaining.length > 0) {
+      var other = document.createElement('details');
+      other.className = 'prompts-super-group';
+      var otherSum = document.createElement('summary');
+      otherSum.className = 'prompts-super-heading';
+      otherSum.innerHTML = '<strong>Other</strong>';
+      other.appendChild(otherSum);
+      var otherInner = document.createElement('div');
+      otherInner.className = 'prompts-super-inner';
+      remaining.forEach(function (g) { otherInner.appendChild(g); });
+      other.appendChild(otherInner);
+      frag.appendChild(other);
+    }
+    D.listView.innerHTML = '';
+    D.listView.appendChild(frag);
+
+    // Re-cache groups after DOM restructure
+    D.groups = document.querySelectorAll('#prompts-list-view .prompts-category-group');
+    D.superGroups = document.querySelectorAll('#prompts-list-view .prompts-super-group');
+  }
+
+  function buildRolePicker() {
+    if (!D.roleGrid) return;
+    var html = '';
+    for (var i = 0; i < ROLE_GROUPS.length; i++) {
+      var g = ROLE_GROUPS[i];
+      // Count prompts matching this group
+      var count = 0;
+      for (var j = 0; j < PROMPTS.length; j++) {
+        var pr = PROMPTS[j].roles || [];
+        if (pr.indexOf('all') !== -1) { count++; continue; }
+        for (var k = 0; k < g.roles.length; k++) {
+          if (pr.indexOf(g.roles[k]) !== -1) { count++; break; }
+        }
+      }
+      html += '<button class="prompts-role-card" data-role-group="' + g.id + '">' +
+        '<strong>' + esc(g.title) + '</strong>' +
+        '<span class="prompts-role-count">' + count + ' prompts</span>' +
+      '</button>';
+    }
+    html += '<button class="prompts-role-card prompts-role-card--all" data-role-group="">' +
+      '<strong>All Prompts</strong>' +
+      '<span class="prompts-role-count">' + TOTAL + ' prompts</span>' +
+    '</button>';
+    D.roleGrid.innerHTML = html;
+
+    // Click handlers
+    D.roleGrid.querySelectorAll('.prompts-role-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        S.roleGroup = card.dataset.roleGroup;
+        S.role = '';
+        if (D.filterRole) D.filterRole.value = '';
+        applyFilters();
+      });
+    });
+  }
+
+  function updateRolePickerState() {
+    if (!D.roleGrid) return;
+    D.roleGrid.querySelectorAll('.prompts-role-card').forEach(function (card) {
+      card.classList.toggle('active', card.dataset.roleGroup === S.roleGroup);
+    });
   }
 
   // === BUILD FILTER DROPDOWNS ===
@@ -109,7 +227,22 @@
       }
       if (S.platform && (p.platforms || []).indexOf(S.platform) === -1) return false;
       if (S.difficulty && p.difficulty !== S.difficulty) return false;
-      if (S.role && (p.roles || []).indexOf(S.role) === -1) return false;
+      // Role group filter (OR across group roles)
+      if (S.roleGroup) {
+        var grp = ROLE_GROUPS.find(function (g) { return g.id === S.roleGroup; });
+        if (grp) {
+          var pRoles = p.roles || [];
+          var match = pRoles.indexOf('all') !== -1;
+          if (!match) {
+            for (var gi = 0; gi < grp.roles.length; gi++) {
+              if (pRoles.indexOf(grp.roles[gi]) !== -1) { match = true; break; }
+            }
+          }
+          if (!match) return false;
+        }
+      } else if (S.role && (p.roles || []).indexOf(S.role) === -1) {
+        return false;
+      }
       return true;
     });
   }
@@ -119,12 +252,14 @@
     var filteredIds = {};
     for (var f = 0; f < filtered.length; f++) filteredIds[filtered[f].id] = true;
 
+    var firstVisibleGroup = null;
+
     // Update list view (show/hide server-rendered rows)
     if (D.listView) {
       D.rows.forEach(function (row) {
         row.style.display = filteredIds[row.dataset.pid] ? '' : 'none';
       });
-      // Update category group visibility + counts
+      // Update category group visibility + counts, auto-open first matching
       D.groups.forEach(function (group) {
         var visible = 0;
         group.querySelectorAll('.prompt-row').forEach(function (r) {
@@ -133,15 +268,43 @@
         group.style.display = visible > 0 ? '' : 'none';
         var countEl = group.querySelector('.prompts-category-count');
         if (countEl) countEl.textContent = visible;
+        // Close all groups first
+        group.removeAttribute('open');
+        if (visible > 0 && !firstVisibleGroup) firstVisibleGroup = group;
       });
+      // Auto-open first matching category
+      if (firstVisibleGroup && (S.search || S.platform || S.difficulty || S.role || S.roleGroup)) {
+        firstVisibleGroup.setAttribute('open', '');
+        // Also open the parent super-group
+        var parentSG = firstVisibleGroup.closest('.prompts-super-group');
+        if (parentSG) parentSG.setAttribute('open', '');
+      }
+      // Update super-group visibility + counts
+      if (D.superGroups) {
+        D.superGroups.forEach(function (sg) {
+          var visibleInGroup = 0;
+          sg.querySelectorAll('.prompt-row').forEach(function (r) {
+            if (r.style.display !== 'none') visibleInGroup++;
+          });
+          sg.style.display = visibleInGroup > 0 ? '' : 'none';
+          var sgCount = sg.querySelector('.prompts-super-count');
+          if (sgCount) sgCount.textContent = visibleInGroup;
+        });
+      }
     }
 
     // Update grid view
     if (S.view === 'grid') renderGridView(filtered);
 
     // Clear button
-    var hasFilters = S.search || S.platform || S.difficulty || S.role;
+    var hasFilters = S.search || S.platform || S.difficulty || S.role || S.roleGroup;
     if (D.clear) D.clear.hidden = !hasFilters;
+
+    // Update count
+    if (D.count) D.count.textContent = filtered.length;
+
+    // Update role picker active state
+    updateRolePickerState();
 
     syncUrl();
   }
@@ -189,8 +352,8 @@
       if (S.favorites.indexOf(PROMPTS[i].id) !== -1) favPrompts.push(PROMPTS[i]);
     }
     var html = '<div class="prompts-my-header">' +
-      '<h2 style="color:#A78BFA;margin:0">Your Saved Prompts</h2>' +
-      '<span style="color:rgba(255,255,255,0.5);font-size:0.85rem">' + favPrompts.length + ' prompt' + (favPrompts.length !== 1 ? 's' : '') + '</span>' +
+      '<h2>Your Saved Prompts</h2>' +
+      '<span class="prompts-my-count">' + favPrompts.length + ' prompt' + (favPrompts.length !== 1 ? 's' : '') + '</span>' +
       '<button class="prompts-export-btn" id="export-favs">Export as Markdown</button>' +
     '</div>';
     html += '<div class="prompts-grid">';
@@ -364,27 +527,8 @@
   }
 
   // === PROMPT OF THE DAY ===
-  function renderPOTD() {
-    if (!D.potd || PROMPTS.length === 0) return;
-    var today = new Date();
-    var seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    var rng = mulberry32(seed);
-    var idx = Math.floor(rng() * PROMPTS.length);
-    var p = PROMPTS[idx];
-    var hasVars = /\[[A-Z]/.test(p.prompt);
-
-    D.potd.innerHTML =
-      '<div class="prompts-potd-card">' +
-        '<div class="prompts-potd-label">Prompt of the Day</div>' +
-        '<h3 class="prompts-potd-title"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a></h3>' +
-        '<p class="prompts-potd-desc">' + esc(p.description) + '</p>' +
-        '<div class="prompts-potd-actions">' +
-          (hasVars ? '<button class="prompt-customize-btn" data-pid="' + esc(p.id) + '">Customize</button>' : '') +
-          '<button class="prompt-copy-btn" data-pid="' + esc(p.id) + '">Copy</button>' +
-          '<a href="' + esc(p.url) + '" class="prompts-potd-link">View full prompt →</a>' +
-        '</div>' +
-      '</div>';
-  }
+  // POTD removed — role picker replaces it
+  function renderPOTD() { }
 
   // === TABS ===
   function switchTab(tabId) {
@@ -440,6 +584,7 @@
     if (S.platform) p.set('platform', S.platform);
     if (S.difficulty) p.set('difficulty', S.difficulty);
     if (S.role) p.set('role', S.role);
+    if (S.roleGroup) p.set('rg', S.roleGroup);
     if (S.tab !== 'browse') p.set('tab', S.tab);
     var str = p.toString();
     history.replaceState(null, '', str ? '?' + str : location.pathname);
@@ -451,6 +596,7 @@
     if (p.get('platform')) { S.platform = p.get('platform'); if (D.filterPlatform) D.filterPlatform.value = S.platform; }
     if (p.get('difficulty')) { S.difficulty = p.get('difficulty'); if (D.filterDifficulty) D.filterDifficulty.value = S.difficulty; }
     if (p.get('role')) { S.role = p.get('role'); if (D.filterRole) D.filterRole.value = S.role; }
+    if (p.get('rg')) S.roleGroup = p.get('rg');
     if (p.get('tab')) S.tab = p.get('tab');
   }
 
@@ -481,7 +627,7 @@
 
     // Clear filters
     if (D.clear) D.clear.addEventListener('click', function () {
-      S.search = ''; S.platform = ''; S.difficulty = ''; S.role = '';
+      S.search = ''; S.platform = ''; S.difficulty = ''; S.role = ''; S.roleGroup = '';
       if (D.search) D.search.value = '';
       if (D.filterPlatform) D.filterPlatform.value = '';
       if (D.filterDifficulty) D.filterDifficulty.value = '';
@@ -591,10 +737,29 @@
     cacheDom();
     loadState();
     buildFilterDropdowns();
-    renderPOTD();
+    buildCategoryGroups();
+    buildRolePicker();
     readUrl();
     if (S.tab !== 'browse') switchTab(S.tab);
+    // Re-cache rows after category restructure
+    D.rows = document.querySelectorAll('#prompts-list-view .prompt-row');
     applyFilters();
+    // Auto-expand first 2 prompt rows so users see the format
+    var opened = 0;
+    for (var r = 0; r < D.rows.length && opened < 2; r++) {
+      if (D.rows[r].style.display !== 'none') {
+        var body = D.rows[r].querySelector('.prompt-row-body');
+        var arrow = D.rows[r].querySelector('.prompt-row-arrow');
+        var header = D.rows[r].querySelector('.prompt-row-header');
+        if (body) { body.hidden = false; }
+        if (arrow) { arrow.textContent = '▾'; }
+        if (header) { header.setAttribute('aria-expanded', 'true'); }
+        // Also open parent category
+        var parentCat = D.rows[r].closest('.prompts-category-group');
+        if (parentCat) parentCat.setAttribute('open', '');
+        opened++;
+      }
+    }
     updateFavButtons();
     updateFavBadge();
     bindEvents();
