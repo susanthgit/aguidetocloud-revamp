@@ -90,7 +90,7 @@
       html += `
         <div class="showdown-provider-card" data-provider="${key}" tabindex="0" role="button" aria-label="Compare ${esc(p.name)}">
           <div class="showdown-provider-header">
-            <span class="showdown-provider-emoji">${p.logo_emoji}</span>
+            <span class="showdown-provider-initial">${esc(p.name.charAt(0))}</span>
             <div>
               <div class="showdown-provider-name">${esc(p.name)}</div>
               <div class="showdown-provider-product">${esc(p.product)} — <em>${esc(p.tagline)}</em></div>
@@ -100,7 +100,7 @@
           <div class="showdown-provider-meta">
             <span class="showdown-badge showdown-badge-price">${priceLabel}</span>
             <span class="showdown-badge showdown-badge-model">${esc(p.flagship_model)}</span>
-            <span class="showdown-badge showdown-badge-context">📏 ${esc(p.context_window)}</span>
+            <span class="showdown-badge showdown-badge-context">${esc(p.context_window)}</span>
             ${p.open_source ? '<span class="showdown-badge showdown-badge-open">Open Source</span>' : ''}
           </div>
           <div class="showdown-card-actions">
@@ -162,7 +162,7 @@
         } else if (selectedProviders.length < 4) {
           selectedProviders.push(k);
         } else {
-          showToast('⚠️ Max 4 providers — deselect one first');
+          showToast('Max 4 providers — deselect one first');
           return;
         }
         renderCompareSelector();
@@ -208,7 +208,7 @@
       }
       case 'flagship_model': return prov.flagship_model;
       case 'context_window': return prov.context_window;
-      case 'free_tier': return getProviderBestPlan(provKey, 'free') ? '✅ Yes' : '❌ No';
+      case 'free_tier': return getProviderBestPlan(provKey, 'free') ? 'Yes' : 'No';
       case 'image_generation': return plan && plan.image_generation ? '✅' : '❌';
       case 'voice_mode': return plan && plan.voice_mode ? '✅' : '❌';
       case 'web_browsing': return plan && plan.web_browsing ? '✅' : '❌';
@@ -367,19 +367,19 @@
             <span class="showdown-strength-title">${esc(prov.name)} (${esc(prov.product)})</span>
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label showdown-label-pros">✅ STRENGTHS</div>
+            <div class="showdown-strength-label showdown-label-pros">STRENGTHS</div>
             ${mkList(s.strengths, 'pros')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label showdown-label-cons">❌ WEAKNESSES</div>
+            <div class="showdown-strength-label showdown-label-cons">WEAKNESSES</div>
             ${mkList(s.weaknesses, 'cons')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label showdown-label-bestfor">🎯 BEST FOR</div>
+            <div class="showdown-strength-label showdown-label-bestfor">BEST FOR</div>
             ${mkList(s.best_for, 'bestfor')}
           </div>
           <div class="showdown-strength-section">
-            <div class="showdown-strength-label showdown-label-watchout">⚠️ WATCH OUT</div>
+            <div class="showdown-strength-label showdown-label-watchout">WATCH OUT</div>
             ${mkList(s.watch_out, 'watchout')}
           </div>
         </div>`;
@@ -449,7 +449,7 @@
     if (counter) counter.textContent = `Question ${quizIndex + 1} of ${questions.length}`;
     if (progress) progress.style.width = `${((quizIndex + 1) / questions.length) * 100}%`;
     if (prevBtn) prevBtn.disabled = quizIndex === 0;
-    if (nextBtn) nextBtn.textContent = quizIndex === questions.length - 1 ? 'See Results 🎉' : 'Next →';
+    if (nextBtn) nextBtn.textContent = quizIndex === questions.length - 1 ? 'See Results' : 'Next →';
   }
 
   function calculateQuizResults() {
@@ -501,15 +501,15 @@
           </div>`;
       }).join('')}
       <div style="text-align:center;margin-top:1.5rem">
-        <button class="showdown-btn showdown-btn-secondary" id="quizRetake">🔄 Retake Quiz</button>
+        <button class="showdown-btn showdown-btn-secondary" id="quizRetake">Retake Quiz</button>
       </div>
       <div class="showdown-cross-tools">
-        <p style="color:var(--showdown-text-dim);font-size:0.85rem;margin-top:2rem">🔗 <strong>Explore more tools:</strong></p>
+        <p style="color:var(--showdown-text-dim);font-size:0.85rem;margin-top:2rem"><strong>Explore more tools:</strong></p>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem">
-          <a href="/copilot-matrix/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">📊 Copilot Feature Matrix</a>
+          <a href="/copilot-matrix/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">Copilot Feature Matrix</a>
           <a href="/licensing/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">📜 M365 Licensing</a>
           <a href="/ai-mapper/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">🗺️ AI Service Mapper</a>
-          <a href="/roi-calculator/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">💰 Copilot ROI Calculator</a>
+          <a href="/roi-calculator/" class="showdown-btn showdown-btn-secondary" style="text-decoration:none;font-size:0.8rem">Copilot ROI Calculator</a>
         </div>
       </div>`;
 
@@ -632,11 +632,11 @@
   }
 
   const TYPE_LABELS = {
-    price_change: '💰 Price Change',
+    price_change: 'Price Change',
     new_plan: '🆕 New Plan',
-    new_model: '🤖 New Model',
+    new_model: 'New Model',
     new_feature: '✨ New Feature',
-    breaking: '⚠️ Breaking Change'
+    breaking: 'Breaking Change'
   };
 
   function renderChangelog() {
@@ -658,7 +658,7 @@
             <span class="showdown-changelog-date">${e.date}</span>
             <span class="showdown-changelog-provider-badge">${prov.logo_emoji || ''} ${esc(prov.name || e.provider)}</span>
             <span class="showdown-changelog-type-badge showdown-type-${e.type}">${TYPE_LABELS[e.type] || esc(e.type)}</span>
-            ${e.impact === 'high' ? '<span class="showdown-badge" style="background:rgba(239,68,68,0.15);color:#ef4444">🔴 High Impact</span>' : ''}
+            ${e.impact === 'high' ? '<span class="showdown-badge" style="background:rgba(239,68,68,0.15);color:#ef4444">High Impact</span>' : ''}
           </div>
           <div class="showdown-changelog-title">${esc(e.title)}</div>
           <div class="showdown-changelog-desc">${esc(e.description)}</div>

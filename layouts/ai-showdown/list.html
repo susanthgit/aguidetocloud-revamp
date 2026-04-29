@@ -34,10 +34,10 @@
 
 
   <div class="showdown-tabs" role="tablist">
-    <button class="showdown-tab active" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button class="showdown-tab active" role="tab" data-tab="pricing" aria-selected="true">Pricing</button>
+    <button class="showdown-tab" role="tab" data-tab="overview">Overview</button>
     <button class="showdown-tab" role="tab" data-tab="compare">Compare</button>
     <button class="showdown-tab" role="tab" data-tab="enterprise">Enterprise</button>
-    <button class="showdown-tab" role="tab" data-tab="pricing">Pricing</button>
     <button class="showdown-tab" role="tab" data-tab="strengths">Strengths</button>
     <button class="showdown-tab" role="tab" data-tab="changelog">What Changed</button>
     <button class="showdown-tab" role="tab" data-tab="quiz">Which AI?</button>
@@ -53,8 +53,8 @@
 
   {{/* ── Tab Panels ── */}}
 
-  {{/* TAB 1: Overview */}}
-  <div class="showdown-panel active" id="panel-overview" role="tabpanel">
+  {{/* TAB: Overview */}}
+  <div class="showdown-panel" id="panel-overview" role="tabpanel">
     <div class="showdown-filters">
       <input type="text" class="showdown-search" id="overviewSearch" placeholder="Search providers..." aria-label="Search providers">
     </div>
@@ -67,8 +67,8 @@
   <div class="showdown-panel" id="panel-compare" role="tabpanel">
     <p class="showdown-compare-intro">Select 2–4 providers to compare side-by-side.</p>
     <div class="showdown-compare-presets">
-      <button class="showdown-preset active" data-preset="big3">🏆 The Big 3</button>
-      <button class="showdown-preset" data-preset="budget">💸 Budget Picks</button>
+      <button class="showdown-preset active" data-preset="big3">The Big 3</button>
+      <button class="showdown-preset" data-preset="budget">Budget Picks</button>
       <button class="showdown-preset" data-preset="enterprise">{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }} Enterprise</button>
       <button class="showdown-preset" data-preset="coding">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }} Coding</button>
       <button class="showdown-preset" data-preset="research">{{ partial "icon.html" (dict "name" "search" "size" 14 "stroke" 1.5) }} Research</button>
@@ -82,7 +82,7 @@
   </div>
 
   {{/* TAB 3: Pricing */}}
-  <div class="showdown-panel" id="panel-pricing" role="tabpanel">
+  <div class="showdown-panel active" id="panel-pricing" role="tabpanel">
     <div class="showdown-pricing-filters">
       <select id="pricingTier" class="showdown-select" aria-label="Filter by tier">
         <option value="all">All Tiers</option>
@@ -188,9 +188,9 @@
   <div class="showdown-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
+    <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
     {{ end }}
   </div>
   {{ end }}
@@ -199,10 +199,8 @@
 </div>
 
 {{/* ── Disclaimer ── */}}
-<div class="showdown-container" style="margin-top:2rem">
-  <blockquote style="border-left:3px solid var(--showdown-accent);padding:0.75rem 1rem;font-size:0.8rem;color:var(--showdown-text-dim);background:rgba(212,168,83,0.05);border-radius:0 8px 8px 0">
-    <strong>Disclaimer:</strong> The views and opinions expressed in this tool are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official provider pricing pages at the time of writing — pricing, features, and availability are subject to change. Always refer to each provider's official website for the most up-to-date information.
-  </blockquote>
+<div class="showdown-disclaimer">
+  <strong>Disclaimer:</strong> The views expressed are personal and do not represent Microsoft. Pricing in USD, sourced from official pages at time of writing — subject to change. Always verify on each provider's website.
 </div>
 
 {{/* ── Inject TOML Data as JS ── */}}
