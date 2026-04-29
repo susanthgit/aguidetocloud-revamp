@@ -27,17 +27,17 @@
     <button class="aimap-fav-clear" id="aimap-fav-clear">Clear all</button>
   </div>
 
-  {{/* Tabs */}}
+  {{/* Tabs — Pricing first (instant value) */}}
   <div class="aimap-tabs" role="tablist">
-    <button class="aimap-tab active" data-tab="explore" role="tab" aria-selected="true">Explore</button>
+    <button class="aimap-tab active" data-tab="pricing" role="tab" aria-selected="true">Pricing</button>
+    <button class="aimap-tab" data-tab="explore" role="tab" aria-selected="false">Explore</button>
     <button class="aimap-tab" data-tab="compare" role="tab" aria-selected="false">Compare</button>
     <button class="aimap-tab" data-tab="quiz" role="tab" aria-selected="false">Which AI?</button>
-    <button class="aimap-tab" data-tab="pricing" role="tab" aria-selected="false">Pricing</button>
     <button class="aimap-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
   {{/* ============ TAB 1: EXPLORE ============ */}}
-  <div class="aimap-panel active" id="panel-explore" role="tabpanel">
+  <div class="aimap-panel" id="panel-explore" role="tabpanel">
 
     {{/* Scenario quick-start buttons (#1) */}}
     <div class="aimap-scenarios">
@@ -47,7 +47,7 @@
       <button class="aimap-scenario-btn" data-scenario="images">{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }} Image generation</button>
       <button class="aimap-scenario-btn" data-scenario="free">Free options only</button>
       <button class="aimap-scenario-btn" data-scenario="agents">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }} AI agents</button>
-      <button class="aimap-scenario-btn" data-scenario="voice">{{ partial "icon.html" (dict "name" "mic" "size" 14 "stroke" 1.5) }} Voice & audio</button>
+      <button class="aimap-scenario-btn" data-scenario="voice">{{ partial "icon.html" (dict "name" "audio-lines" "size" 14 "stroke" 1.5) }} Voice & audio</button>
       <button class="aimap-scenario-btn" data-scenario="documents">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Document processing</button>
     </div>
 
@@ -193,7 +193,7 @@
   <div class="aimap-panel" id="panel-quiz" role="tabpanel">
     <div class="aimap-quiz-container" id="aimap-quiz-container">
       <div class="aimap-quiz-intro" id="aimap-quiz-intro">
-        <h2>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }} Which AI Service Should You Use?</h2>
+        <h2>Which AI Service Should You Use?</h2>
         <p>Answer 7 quick questions and get a personalised recommendation based on your needs, budget, and environment.</p>
         <button class="aimap-btn aimap-btn-primary" id="aimap-quiz-start">Start the Quiz →</button>
       </div>
@@ -214,30 +214,23 @@
   </div>
 
   {{/* ============ TAB 4: PRICING + COST ESTIMATOR ============ */}}
-  <div class="aimap-panel" id="panel-pricing" role="tabpanel">
-    <h2>{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Pricing Snapshot</h2>
+  <div class="aimap-panel active" id="panel-pricing" role="tabpanel">
     <p class="aimap-pricing-disclaimer">Pricing as of April 2026. Always verify on vendor pricing pages. Prices in USD.</p>
 
-    {{/* Cost estimator (#13) */}}
-    <div class="aimap-cost-estimator">
-      <h3>Quick Cost Estimator</h3>
+    {{/* Cost estimator — compact inline */}}
+    <details class="aimap-cost-estimator">
+      <summary>Quick Cost Estimator</summary>
       <div class="aimap-cost-inputs">
-        <div class="aimap-cost-field">
-          <label for="aimap-cost-messages">Messages per day</label>
-          <input type="number" id="aimap-cost-messages" value="100" min="1" max="100000">
-        </div>
-        <div class="aimap-cost-field">
-          <label for="aimap-cost-tokens">Avg tokens per message</label>
-          <select id="aimap-cost-tokens">
-            <option value="500">Short (~500 tokens)</option>
-            <option value="1500" selected>Medium (~1,500 tokens)</option>
-            <option value="4000">Long (~4,000 tokens)</option>
-          </select>
-        </div>
+        <label class="aimap-cost-inline">Messages/day <input type="number" id="aimap-cost-messages" value="100" min="1" max="100000"></label>
+        <label class="aimap-cost-inline">Tokens/msg <select id="aimap-cost-tokens">
+          <option value="500">Short 500</option>
+          <option value="1500" selected>Med 1,500</option>
+          <option value="4000">Long 4,000</option>
+        </select></label>
         <button class="aimap-btn aimap-btn-primary" id="aimap-cost-calc">Calculate</button>
       </div>
       <div class="aimap-cost-results" id="aimap-cost-results" style="display:none;"></div>
-    </div>
+    </details>
 
     <div class="aimap-pricing-filters">
       <label class="aimap-filter-check"><input type="checkbox" id="pricing-free-only"> Show only services with free tier</label>

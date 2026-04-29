@@ -219,7 +219,7 @@
     container.innerHTML = catEntries.map(function(entry) {
       var id = entry[0], cat = entry[1];
       var count = services.filter(function(s) { return s.category === id; }).length;
-      return '<label class="aimap-filter-check"><input type="checkbox" value="' + id + '"> ' + cat.emoji + ' ' + esc(cat.name) + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
+      return '<label class="aimap-filter-check"><input type="checkbox" value="' + id + '"> ' + esc(cat.name) + ' <span class="aimap-filter-count">(' + count + ')</span></label>';
     }).join('');
   }
 
@@ -279,15 +279,12 @@
 
   function cardHTML(s) {
     var cat = categories[s.category] || {};
-    var catColor = cat.colour || '#38BDF8';
     var isFav = favourites.has(s.id);
 
-    // Status badge (#10)
     var statusBadge = '';
     if (s.status === 'preview') statusBadge = '<span class="aimap-status-badge preview">Preview</span>';
     else if (s.status === 'deprecated') statusBadge = '<span class="aimap-status-badge deprecated">Deprecated</span>';
 
-    // Capability badges
     var caps = [
       { label: 'Txt', val: s.text_generation }, { label: 'Code', val: s.code_generation },
       { label: 'Img', val: s.image_generation }, { label: 'Aud', val: s.audio_speech },
@@ -295,35 +292,27 @@
     ].filter(function(c) { return c.val > 0; });
 
     var capsHTML = caps.map(function(c) {
-      return '<span class="aimap-cap-badge' + (c.val >= 4 ? ' strong' : '') + '" title="' + c.val + '/5">' + c.label + '<span class="aimap-cap-dots">' + '●'.repeat(c.val) + '○'.repeat(5-c.val) + '</span></span>';
+      return '<span class="aimap-cap-badge' + (c.val >= 4 ? ' strong' : '') + '" title="' + c.val + '/5">' + c.label + ' ' + '●'.repeat(c.val) + '○'.repeat(5-c.val) + '</span>';
     }).join('');
-
-    var bestHTML = (s.best_for || []).map(function(b) { return '<span class="aimap-best-tag">' + esc(b) + '</span>'; }).join('');
 
     var priceClass = 'aimap-paid', priceText = esc(s.price_note || s.pricing_model || '');
     if (s.free_tier && s.pricing_model === 'free') { priceClass = 'aimap-free'; priceText = 'Free'; }
     else if (s.free_tier) { priceClass = 'aimap-free'; priceText = 'Free tier'; }
     else if (s.pricing_model === 'subscription') { priceClass = 'aimap-sub'; }
 
-    // Last updated (#8)
-    var updatedHTML = s.last_updated ? '<span class="aimap-card-updated" title="Data last verified">✓ ' + esc(s.last_updated) + '</span>' : '';
+    var updatedHTML = s.last_updated ? '<span class="aimap-card-updated">' + esc(s.last_updated) + '</span>' : '';
 
-    return '<div class="aimap-card" style="--card-cat-color:' + catColor + '">' +
+    return '<div class="aimap-card">' +
       '<div class="aimap-card-top">' +
-        '<div class="aimap-card-identity">' +
-          '<span class="aimap-card-provider">' + esc(s.provider) + '</span>' +
-          statusBadge +
-        '</div>' +
+        '<span class="aimap-card-provider">' + esc(s.provider) + '</span>' +
+        statusBadge +
         '<div class="aimap-card-actions">' +
           '<button class="aimap-fav-btn' + (isFav ? ' active' : '') + '" data-id="' + s.id + '" title="' + (isFav ? 'Remove from' : 'Add to') + ' shortlist">' + (isFav ? '★' : '☆') + '</button>' +
-          '<input type="checkbox" class="aimap-card-compare" data-id="' + s.id + '" title="Add to compare" aria-label="Compare ' + esc(s.name) + '">' +
+          '<input type="checkbox" class="aimap-card-compare" data-id="' + s.id + '" title="Compare" aria-label="Compare ' + esc(s.name) + '">' +
         '</div>' +
       '</div>' +
       '<a href="#" class="aimap-card-name-link" data-id="' + s.id + '"><h3 class="aimap-card-name">' + esc(s.name) + '</h3></a>' +
-      '<span class="aimap-card-category">' + (cat.emoji || '') + ' ' + esc(cat.name || s.category) + '</span>' +
-      '<p class="aimap-card-desc">' + esc(s.description || '') + '</p>' +
       '<div class="aimap-card-caps">' + capsHTML + '</div>' +
-      '<div class="aimap-card-best">' + bestHTML + '</div>' +
       '<div class="aimap-card-footer">' +
         '<span class="aimap-card-price ' + priceClass + '">' + priceText + '</span>' +
         updatedHTML +
@@ -391,7 +380,7 @@
     content.innerHTML =
       '<div class="aimap-modal-header">' +
         '<span class="aimap-card-provider">' + esc(s.provider) + '</span>' + statusBadge +
-        '<span class="aimap-card-category">' + (cat.emoji||'') + ' ' + esc(cat.name||'') + '</span>' +
+        '<span class="aimap-card-category">' + esc(cat.name||'') + '</span>' +
         (s.last_updated ? '<span class="aimap-card-updated">✓ Verified ' + esc(s.last_updated) + '</span>' : '') +
       '</div>' +
       '<h2>' + esc(s.name) + '</h2>' +
@@ -723,7 +712,7 @@
       return '<div class="aimap-quiz-progress-dot ' + (i < quizStep ? 'done' : i === quizStep ? 'current' : '') + '"></div>';
     }).join('');
     document.getElementById('aimap-quiz-options').innerHTML = (q.options||[]).map(function(opt) {
-      return '<button class="aimap-quiz-option" data-value="' + opt.value + '"><span class="aimap-quiz-option-icon">' + (opt.icon||'') + '</span><span>' + opt.label + '</span></button>';
+      return '<button class="aimap-quiz-option" data-value="' + opt.value + '"><span>' + opt.label + '</span></button>';
     }).join('');
     document.querySelectorAll('.aimap-quiz-option').forEach(function(btn) {
       btn.addEventListener('click', function() { quizAnswers[q.id] = btn.dataset.value; quizStep++; renderQuizStep(); });
@@ -739,7 +728,7 @@
       return { service: s, score: result.score, reasons: result.reasons };
     }).sort(function(a,b) { return b.score - a.score; }).slice(0, 3);
 
-    var medals = ['🥇','🥈','🥉'];
+    var medals = ['1st','2nd','3rd'];
     document.getElementById('aimap-quiz-results-list').innerHTML = scored.map(function(item, i) {
       var s = item.service;
       var cat = categories[s.category] || {};
@@ -750,8 +739,8 @@
       return '<div class="aimap-quiz-result-card" data-id="' + s.id + '">' +
         '<div class="aimap-quiz-result-medal">' + medals[i] + '</div>' +
         '<div class="aimap-quiz-result-info"><h3>' + s.name + '</h3>' +
-        '<p>' + s.provider + ' · ' + (cat.emoji||'') + ' ' + (cat.name||'') + '</p>' +
-        '<p style="color:#ccc;font-size:0.85rem">' + (s.description||'') + '</p>' +
+        '<p>' + s.provider + ' · ' + (cat.name||'') + '</p>' +
+        '<p class="aimap-quiz-result-desc">' + (s.description||'') + '</p>' +
         reasonsHTML +
         '<span class="aimap-quiz-result-score">' + item.score + ' point match</span></div></div>';
     }).join('');
@@ -768,53 +757,53 @@
     var needKey = needMap[answers['primary-need']];
     if (needKey) {
       var val = s[needKey];
-      if (typeof val === 'number' && val >= 3) { score += val * 4; reasons.push('✅ Strong ' + (needLabels[answers['primary-need']]||'') + ' (' + val + '/5)'); }
-      else if (val === true) { score += 16; reasons.push('✅ Supports ' + (needLabels[answers['primary-need']]||'')); }
+      if (typeof val === 'number' && val >= 3) { score += val * 4; reasons.push('Strong ' + (needLabels[answers['primary-need']]||'') + ' (' + val + '/5)'); }
+      else if (val === true) { score += 16; reasons.push('Supports ' + (needLabels[answers['primary-need']]||'')); }
     }
 
     var catMap = { text: 'llm-platform', code: 'code-development', images: 'image-generation',
       documents: 'document-processing', voice: 'voice-audio', agents: 'agent-platform', search: 'search-knowledge', video: 'video-generation' };
-    if (s.category === catMap[answers['primary-need']]) { score += 10; reasons.push('✅ Purpose-built for this use case'); }
+    if (s.category === catMap[answers['primary-need']]) { score += 10; reasons.push('Purpose-built for this use case'); }
 
     var provMap = { azure: 'integration_azure', aws: 'integration_aws', gcp: 'integration_gcp' };
     var provLabels = { azure: 'Azure', aws: 'AWS', gcp: 'Google Cloud' };
     var provKey = provMap[answers['cloud-provider']];
-    if (provKey && s[provKey]) { score += 12; reasons.push('✅ Integrates with ' + (provLabels[answers['cloud-provider']]||'')); }
+    if (provKey && s[provKey]) { score += 12; reasons.push('Integrates with ' + (provLabels[answers['cloud-provider']]||'')); }
 
-    if (answers.budget === 'free' && s.free_tier) { score += 10; reasons.push('✅ Has free tier'); }
+    if (answers.budget === 'free' && s.free_tier) { score += 10; reasons.push('Has free tier'); }
     if (answers.budget === 'free' && s.pricing_model === 'free') { score += 5; }
-    if (answers.budget === 'enterprise' && s.sla && s.sla !== 'N/A') { score += 8; reasons.push('✅ Enterprise SLA (' + s.sla + ')'); }
+    if (answers.budget === 'enterprise' && s.sla && s.sla !== 'N/A') { score += 8; reasons.push('Enterprise SLA (' + s.sla + ')'); }
 
     if (answers.compliance === 'strict') {
       var complianceHits = [];
       if (s.hipaa) { score += 5; complianceHits.push('HIPAA'); }
       if (s.gdpr) { score += 5; complianceHits.push('GDPR'); }
       if (s.data_residency) { score += 5; complianceHits.push('data residency'); }
-      if (complianceHits.length) reasons.push('✅ Compliance: ' + complianceHits.join(', '));
+      if (complianceHits.length) reasons.push('Compliance: ' + complianceHits.join(', '));
     } else if (answers.compliance === 'basic') {
       if (s.soc2) { score += 5; }
       if (s.gdpr) { score += 3; }
-      if (s.soc2 || s.gdpr) reasons.push('✅ Basic compliance (SOC 2/GDPR)');
+      if (s.soc2 || s.gdpr) reasons.push('Basic compliance (SOC 2/GDPR)');
     }
 
     if (answers['technical-level'] === 'non-technical') {
-      if (['subscription','free'].includes(s.pricing_model)) { score += 6; reasons.push('✅ Ready-to-use (no API needed)'); }
+      if (['subscription','free'].includes(s.pricing_model)) { score += 6; reasons.push('Ready-to-use (no API needed)'); }
     }
     if (answers['technical-level'] === 'developer') {
       if (s.function_calling) { score += 4; }
-      if (s.fine_tuning) { score += 3; reasons.push('✅ Supports fine-tuning & API access'); }
+      if (s.fine_tuning) { score += 3; reasons.push('Supports fine-tuning & API access'); }
     }
 
     var ecoMap = { m365: 'integration_m365', 'google-workspace': 'integration_gcp', github: 'integration_azure', 'aws-ecosystem': 'integration_aws' };
     var ecoLabels = { m365: 'Microsoft 365', 'google-workspace': 'Google Workspace', github: 'GitHub/Azure', 'aws-ecosystem': 'AWS' };
     var ecoKey = ecoMap[answers.ecosystem];
-    if (ecoKey && s[ecoKey]) { score += 8; reasons.push('✅ Works with ' + (ecoLabels[answers.ecosystem]||'')); }
+    if (ecoKey && s[ecoKey]) { score += 8; reasons.push('Works with ' + (ecoLabels[answers.ecosystem]||'')); }
 
     if (answers['data-location'] !== 'anywhere' && s.data_residency) {
       var regionMap = { us: ['US'], eu: ['EU'], apac: ['Australia','Japan','Singapore'] };
       var needed = regionMap[answers['data-location']];
       if (needed && s.regions && needed.some(function(r) { return s.regions.indexOf(r) >= 0; })) {
-        score += 8; reasons.push('✅ Available in your required region');
+        score += 8; reasons.push('Available in your required region');
       }
     }
 
