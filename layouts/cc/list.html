@@ -419,10 +419,11 @@
   var g=document.getElementById('cc-gate'),m=document.getElementById('cc-main'),p=document.getElementById('cc-pass'),b=document.getElementById('cc-submit'),e=document.getElementById('cc-error');
   if(sessionStorage.getItem('cc-ok')==='1'){unlock();}else if(p){setTimeout(function(){p.focus();},200);}
   async function hash(s){var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');}
-  async function tryUnlock(){var h=await hash(p.value);if(h===H){sessionStorage.setItem('cc-ok','1');unlock();}else{p.value='';if(e)e.style.display='block';setTimeout(function(){if(e)e.style.display='none';},2000);}}
+  async function tryUnlock(){var h=await hash(p.value);if(h===H){sessionStorage.setItem('cc-ok','1');guidedLogin(p.value);unlock();}else{p.value='';if(e)e.style.display='block';setTimeout(function(){if(e)e.style.display='none';},2000);}}
   if(b)b.addEventListener('click',tryUnlock);
   if(p)p.addEventListener('keydown',function(ev){if(ev.key==='Enter')tryUnlock();});
   function unlock(){if(g)g.style.display='none';if(m)m.style.display='block';}
+  function guidedLogin(pwd){fetch('/guided/api/admin',{method:'POST',credentials:'include',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pwd})}).catch(function(){});}
 })();
 </script>
 {{ end }}
