@@ -203,9 +203,9 @@
   <div class="cdown-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:#FB923C;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+    <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="zt-faq-detail">
+    <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail">
       <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
       <p class="zt-faq-answer">{{ $q.answer }}</p>
     </details>
@@ -215,7 +215,7 @@
   </div>
 
   {{/* ── Cross-links ── */}}
-  <div class="tool-eco" style="--eco-accent: #FB923C">
+  <div class="tool-eco" style="--eco-accent: var(--accent)">
     <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
     <div class="tool-eco-grid tool-eco-4">
       <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>

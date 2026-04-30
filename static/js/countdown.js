@@ -556,7 +556,7 @@ function editEvent(id) {
   } else {
     clearBannerUI('cdown-banner-preview', 'cdown-banner-drop', 'cdown-banner-img', 'cdown-banner-file');
   }
-  document.getElementById('cdown-create-btn').textContent = '✏️ Update Countdown';
+  document.getElementById('cdown-create-btn').textContent = 'Update Countdown';
   document.getElementById('cdown-create').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -605,7 +605,7 @@ function openTimerFullscreen() {
   S.fsId = '__timer__';
   var label = (document.getElementById('cdown-timer-label') || {}).value || (S.timerMode === 'stopwatch' ? 'Stopwatch' : 'Timer');
   var banner = S.timerBanner;
-  showFsOverlay('⏱️', label, banner, '', false);
+  showFsOverlay('', label, banner, '', false);
   // Show timer controls in FS
   var ctrls = document.getElementById('cdown-fs-timer-ctrls');
   if (ctrls) ctrls.style.display = 'flex';
@@ -1117,7 +1117,7 @@ function updatePageTitle() {
   if (!S.events.length) return;
   var sorted = S.events.slice().sort(function (a, b) { return new Date(a.date) - new Date(b.date); });
   var next = sorted.find(function (ev) { return !calcDiff(ev.date).done; });
-  if (!next) { document.title = '🎉 All events reached! | Countdown'; return; }
+  if (!next) { document.title = 'All events reached! | Countdown'; return; }
   var d = calcDiff(next.date);
   var parts = [];
   if (d.days > 0) parts.push(d.days + 'd');
