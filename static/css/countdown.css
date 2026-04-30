@@ -1,17 +1,7 @@
 /* ──────────────────────────────────────────
    Countdown Timer — uses Zen accent (indigo)
-   Accent: #FB923C (Tangerine)
    Namespace: .cdown-*
    ────────────────────────────────────────── */
-
-:root {
-  --cdown: #FB923C;
-  --cdown-dim: rgba(251, 146, 60, 0.12);
-  --cdown-glow: rgba(251, 146, 60, 0.25);
-  --cdown-bg: var(--bg-page);
-  --cdown-green: #22C55E;
-  --cdown-red: #EF4444;
-}
 
 /* ── Page container ── */
 .cdown-page {
@@ -556,7 +546,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   white-space: nowrap;
   transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
 }
-.cdown-tpl-btn:hover { background: rgba(251,146,60,0.25); }
+.cdown-tpl-btn:hover { background: color-mix(in srgb, var(--accent) 25%, transparent); }
 .cdown-tpl-custom { margin-top: 0.5rem; }
 .cdown-tpl-empty {
   color: var(--text-secondary);
@@ -821,3 +811,5 @@ body.page-countdown .site-nav { border-bottom-color: var(--accent); }
   .cdown-flap-unfold { transform: rotateX(0deg); }
   .cdown-fs-done-icon { animation: none !important; }
 }
+
+.cdown-hint-text { opacity: 0.5; }

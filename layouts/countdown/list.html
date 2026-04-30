@@ -70,7 +70,7 @@
     </div>
 
     {{/* Create Form — below templates */}}
-    <div class="cdown-create" id="cdown-create" style="margin-top:1.5rem">
+    <div class="cdown-create" id="cdown-create">
       <div class="cdown-section-title">Create a Countdown</div>
       <div class="cdown-create-grid">
         <div class="cdown-field">
@@ -91,28 +91,28 @@
         <div class="cdown-color-grid" id="cdown-color-grid"></div>
       </div>
       <div class="cdown-field">
-        <label class="cdown-label">Banner Image <span style="opacity:0.5">(optional — shows in full screen)</span></label>
+        <label class="cdown-label">Banner Image <span class="cdown-hint-text">(optional — shows in full screen)</span></label>
         <div class="cdown-banner-upload" id="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-banner-preview" style="display:none">
+          <div class="cdown-banner-preview" id="cdown-banner-preview" hidden>
             <img id="cdown-banner-img" alt="Banner preview">
             <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-banner-remove">✕ Remove</button>
           </div>
           <label class="cdown-banner-drop" id="cdown-banner-drop">
-            <span>📷 Click or drag an image (max 200 KB)</span>
-            <input type="file" accept="image/*" id="cdown-banner-file" style="display:none">
+            <span>Click or drag an image (max 200 KB)</span>
+            <input type="file" accept="image/*" id="cdown-banner-file" hidden>
           </label>
-          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">🗜️ Compress it free →</a></div>
+          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">Compress it free →</a></div>
         </div>
       </div>
       <div class="cdown-field">
-        <label class="cdown-label" for="cdown-message">Custom Message <span style="opacity:0.5">(optional — shows in full screen)</span></label>
+        <label class="cdown-label" for="cdown-message">Custom Message <span class="cdown-hint-text">(optional — shows in full screen)</span></label>
         <input type="text" class="cdown-input" id="cdown-message" placeholder="e.g. Welcome to our wedding!" maxlength="120">
       </div>
       <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">{{ partial "icon.html" (dict "name" "hourglass" "size" 14 "stroke" 1.5) }} Create Countdown</button>
     </div>
 
     {{/* Sort */}}
-    <div class="cdown-sort" id="cdown-sort" style="display:none">
+    <div class="cdown-sort" id="cdown-sort" hidden>
       <span class="cdown-sort-label">Sort:</span>
       <button class="cdown-sort-btn active" data-sort="soonest">Soonest</button>
       <button class="cdown-sort-btn" data-sort="newest">Newest</button>
@@ -157,8 +157,8 @@
     {{/* Controls */}}
     <div class="cdown-timer-ctrls">
       <button class="cdown-btn cdown-btn-primary" id="cdown-start">▶ Start</button>
-      <button class="cdown-btn" id="cdown-pause" disabled>⏸ Pause</button>
-      <button class="cdown-btn" id="cdown-reset">↺ Reset</button>
+      <button class="cdown-btn" id="cdown-pause" disabled>Pause</button>
+      <button class="cdown-btn" id="cdown-reset">Reset</button>
       <button class="cdown-btn" id="cdown-plus1">+1 min</button>
       <button class="cdown-btn" id="cdown-lap">🏁 Lap</button>
       <button class="cdown-btn" id="cdown-timer-fs">🖥️ Full Screen</button>
@@ -167,21 +167,21 @@
     {{/* Timer display name + message for fullscreen */}}
     <div class="cdown-timer-extras">
       <div class="cdown-field" style="max-width:400px;margin:0 auto">
-        <label class="cdown-label" for="cdown-timer-label">Display Name <span style="opacity:0.5">(shows in full screen)</span></label>
+        <label class="cdown-label" for="cdown-timer-label">Display Name <span class="cdown-hint-text">(shows in full screen)</span></label>
         <input type="text" class="cdown-input" id="cdown-timer-label" placeholder="e.g. Presentation Timer" maxlength="60">
       </div>
       <div class="cdown-field" style="max-width:400px;margin:0.5rem auto 0">
-        <label class="cdown-label">Banner Image <span style="opacity:0.5">(shows in full screen)</span></label>
+        <label class="cdown-label">Banner Image <span class="cdown-hint-text">(shows in full screen)</span></label>
         <div class="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" style="display:none">
+          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" hidden>
             <img id="cdown-timer-banner-img" alt="Banner preview">
             <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-timer-banner-remove">✕ Remove</button>
           </div>
           <label class="cdown-banner-drop" id="cdown-timer-banner-drop">
-            <span>📷 Click or drag an image (max 200 KB)</span>
-            <input type="file" accept="image/*" id="cdown-timer-banner-file" style="display:none">
+            <span>Click or drag an image (max 200 KB)</span>
+            <input type="file" accept="image/*" id="cdown-timer-banner-file" hidden>
           </label>
-          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">🗜️ Compress it free →</a></div>
+          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">Compress it free →</a></div>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@
     </div>
 
     {{/* Laps */}}
-    <div class="cdown-laps" id="cdown-laps" style="display:none">
+    <div class="cdown-laps" id="cdown-laps" hidden>
       <div class="cdown-label">Laps</div>
       <div class="cdown-laps-list" id="cdown-laps-list"></div>
     </div>
@@ -214,18 +214,6 @@
   {{ end }}
   </div>
 
-  {{/* ── Cross-links ── */}}
-  <div class="tool-eco" style="--eco-accent: var(--accent)">
-    <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
-    <div class="tool-eco-grid tool-eco-4">
-      <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
-      <a href="/prompt-polisher/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
-      <a href="/qr-generator/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}</span><strong>QR Code Generator</strong><p>Create styled QR codes</p></a>
-      <a href="/cert-tracker/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
-    </div>
-    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
-  </div>
-
   {{/* ── Back nav ── */}}
   <nav class="zt-nav" aria-label="Tools navigation">
     <a href="/free-tools/">← All Tools</a>
@@ -240,10 +228,10 @@
 </div>
 
 {{/* ── Fullscreen overlay ── */}}
-<div class="cdown-fs" id="cdown-fs" style="display:none">
+<div class="cdown-fs" id="cdown-fs" hidden>
   <canvas class="cdown-fs-canvas" id="cdown-fs-canvas"></canvas>
   <div class="cdown-fs-body">
-    <div class="cdown-fs-banner" id="cdown-fs-banner" style="display:none">
+    <div class="cdown-fs-banner" id="cdown-fs-banner" hidden>
       <img id="cdown-fs-banner-img" alt="">
     </div>
     <div class="cdown-fs-icon" id="cdown-fs-icon"></div>
@@ -255,13 +243,13 @@
     <div class="cdown-fs-msg" id="cdown-fs-msg"></div>
     <div class="cdown-fs-tz" id="cdown-fs-tz"></div>
     {{/* Timer controls in fullscreen */}}
-    <div class="cdown-fs-timer-ctrls" id="cdown-fs-timer-ctrls" style="display:none">
-      <button class="cdown-btn" id="cdown-fs-pause">⏸ Pause</button>
-      <button class="cdown-btn" id="cdown-fs-reset">↺ Reset</button>
+    <div class="cdown-fs-timer-ctrls" id="cdown-fs-timer-ctrls" hidden>
+      <button class="cdown-btn" id="cdown-fs-pause">Pause</button>
+      <button class="cdown-btn" id="cdown-fs-reset">Reset</button>
       <button class="cdown-btn" id="cdown-fs-plus1">+1 min</button>
     </div>
   </div>
-  <div class="cdown-fs-done" id="cdown-fs-done" style="display:none">
+  <div class="cdown-fs-done" id="cdown-fs-done" hidden>
     <div class="cdown-fs-done-icon">🎉</div>
     <div class="cdown-fs-done-text">It's time!</div>
   </div>

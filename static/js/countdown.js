@@ -27,7 +27,7 @@ const COLORS = [
 
 var VALID_EMOJIS = ICONS.map(function(i){ return i.emoji; });
 function safeIcon(icon) { return VALID_EMOJIS.indexOf(icon) >= 0 ? icon : '📅'; }
-function safeColor(color) { return /^#[0-9A-Fa-f]{6}$/.test(color) ? color : '#FB923C'; }
+function safeColor(color) { return /^#[0-9A-Fa-f]{6}$/.test(color) ? color : '#6366F1'; }
 
 const TIMER_PRESETS = [
   { label: '1 min', secs: 60 },
