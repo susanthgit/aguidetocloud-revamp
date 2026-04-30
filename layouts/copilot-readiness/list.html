@@ -159,12 +159,12 @@
     {{/* ── Resources Panel — accessible without completing assessment ── */}}
     <div class="readiness-panel" id="panel-resources" role="tabpanel">
       <div class="zt-faq-wrap">
-        <h2 style="color:#3B82F6;margin-bottom:0.5rem">Microsoft Learn Resources for Copilot Deployment</h2>
-        <p style="color:rgba(255,255,255,0.55);font-size:0.88rem;margin-bottom:2rem">Curated official resources organised by deployment phase. No assessment needed — jump straight to what you need.</p>
+        <h2 class="readiness-resources-heading">Microsoft Learn Resources for Copilot Deployment</h2>
+        <p class="readiness-resources-intro">Curated official resources organised by deployment phase. No assessment needed — jump straight to what you need.</p>
         <div id="readiness-resources-steps"></div>
 
-        <div style="margin-top:2.5rem;padding:1.5rem;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);border-radius:12px;text-align:center">
-          <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin:0 0 1rem">Want to know exactly where your org stands?</p>
+        <div class="readiness-resources-cta">
+          <p>Want to know exactly where your org stands?</p>
           <button class="readiness-btn-primary readiness-start-from-resources" onclick="document.querySelector('.readiness-tab[data-tab=&quot;main&quot;]').click()">Take the Assessment →</button>
         </div>
       </div>
@@ -174,9 +174,9 @@
     <div class="readiness-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:#3B82F6;margin-bottom:1rem">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
+      <h2>{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
-      <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
+      <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
       {{ end }}
     </div>
     {{ end }}
@@ -200,7 +200,7 @@ document.querySelectorAll('.readiness-tab').forEach(function(tab) {
 
 {{/* ── FAQ Section ── */}}
 {{ if .Params.faq }}
-<div style="display:none">
+<div hidden>
 {{/* FAQ data preserved for SEO JSON-LD — visible rendering moved to FAQ tab */}}
 </div>
 {{ end }}

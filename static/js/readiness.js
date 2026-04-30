@@ -8,6 +8,37 @@
 (function () {
   'use strict';
 
+  // ─── Inline SVG Icon Helper (monochrome, currentColor) ───
+  function svgIcon(name, size) {
+    size = size || 16;
+    var inner = SVG_ICONS[name] || '';
+    if (!inner) return '';
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + inner + '</svg>';
+  }
+  var SVG_ICONS = {
+    'key': '<path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>',
+    'shield': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+    'folder': '<path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/>',
+    'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+    'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+    'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    'bar-chart': '<line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>',
+    'clipboard': '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>',
+    'book': '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+    'target': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+    'lightbulb': '<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>',
+    'star': '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+    'scroll': '<path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/>',
+    'megaphone': '<path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+    'refresh': '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
+    'settings': '<circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2m-9-11h2m18 0h2m-3.3-6.7-1.4 1.4M6.7 17.3l-1.4 1.4m0-13.4 1.4 1.4m10.6 10.6 1.4 1.4"/>',
+    'link': '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    'search': '<circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/>',
+    'check': '<path d="M20 6 9 17l-5-5"/>',
+    'arrow-up': '<line x1="12" x2="12" y1="19" y2="5"/><polyline points="5 12 12 5 19 12"/>',
+    'arrow-down': '<line x1="12" x2="12" y1="5" y2="19"/><polyline points="19 12 12 19 5 12"/>'
+  };
+
   // ─── Industry Benchmarks (approximate, based on field experience) ───
   const BENCHMARKS = {
     licensing: 72, identity: 65, data: 45, security: 52,
@@ -16,13 +47,13 @@
 
   // ─── Question Data ───
   const PILLARS = [
-    { id: 'licensing', icon: '🔑', name: 'Licensing & Subscription', weight: 1 },
-    { id: 'identity',  icon: '🛡️', name: 'Identity & Access',       weight: 1 },
-    { id: 'data',      icon: '📂', name: 'Data Governance',         weight: 1 },
-    { id: 'security',  icon: '🔒', name: 'Security & Compliance',   weight: 1 },
-    { id: 'network',   icon: '🌐', name: 'Network & Apps',          weight: 1 },
-    { id: 'change',    icon: '👥', name: 'Change Management',       weight: 1 },
-    { id: 'monitoring',icon: '📊', name: 'Monitoring & Optimisation', weight: 1 }
+    { id: 'licensing', icon: 'key',       name: 'Licensing & Subscription', weight: 1 },
+    { id: 'identity',  icon: 'shield',    name: 'Identity & Access',       weight: 1 },
+    { id: 'data',      icon: 'folder',    name: 'Data Governance',         weight: 1 },
+    { id: 'security',  icon: 'lock',      name: 'Security & Compliance',   weight: 1 },
+    { id: 'network',   icon: 'globe',     name: 'Network & Apps',          weight: 1 },
+    { id: 'change',    icon: 'users',     name: 'Change Management',       weight: 1 },
+    { id: 'monitoring',icon: 'bar-chart', name: 'Monitoring & Optimisation', weight: 1 }
   ];
 
   const QUESTIONS = [
@@ -374,11 +405,11 @@
 
   // ─── Score Tiers ───
   const TIERS = [
-    { min: 0,  max: 30,  label: '🔴 Not Ready',      color: '#EF4444', desc: 'Critical gaps need immediate attention before deploying Copilot. Focus on licensing, security, and data governance first.' },
-    { min: 31, max: 50,  label: '🟠 Early Stage',     color: '#F97316', desc: 'Foundation is building but significant work remains. Good for planning — not yet ready for pilot.' },
-    { min: 51, max: 70,  label: '🟡 Getting Ready',   color: '#EAB308', desc: 'Good progress! You\'re ready for a controlled pilot — address the highlighted gaps before scaling.' },
-    { min: 71, max: 85,  label: '🟢 Nearly Ready',    color: '#22C55E', desc: 'Strong position — minor improvements needed. You\'re ready for a broader phased rollout.' },
-    { min: 86, max: 100, label: '🌟 Copilot Ready!',  color: '#3B82F6', desc: 'Excellent readiness — you\'re positioned for fast scaling and maximum value from Copilot.' }
+    { min: 0,  max: 30,  label: 'Not Ready',      color: '#EF4444', desc: 'Critical gaps need immediate attention before deploying Copilot. Focus on licensing, security, and data governance first.' },
+    { min: 31, max: 50,  label: 'Early Stage',     color: '#F97316', desc: 'Foundation is building but significant work remains. Good for planning — not yet ready for pilot.' },
+    { min: 51, max: 70,  label: 'Getting Ready',   color: '#EAB308', desc: 'Good progress! You\'re ready for a controlled pilot — address the highlighted gaps before scaling.' },
+    { min: 71, max: 85,  label: 'Nearly Ready',    color: '#22C55E', desc: 'Strong position — minor improvements needed. You\'re ready for a broader phased rollout.' },
+    { min: 86, max: 100, label: 'Copilot Ready!',  color: '#3B82F6', desc: 'Excellent readiness — you\'re positioned for fast scaling and maximum value from Copilot.' }
   ];
 
   // ─── Recommendations per pillar (shown when score is low) ───
@@ -392,7 +423,7 @@
         { title: 'Review the Copilot readiness report', desc: 'Go to M365 admin centre → Reports → Usage → Copilot Readiness to see prerequisite coverage and gaps.' },
         { title: 'Plan licence reclamation', desc: 'Set a 60-90 day review to reassign unused Copilot licences based on usage data.' }
       ],
-      good: '✅ Licensing is in good shape — you have qualifying licences and Copilot assigned.'
+      good: 'Licensing is in good shape — you have qualifying licences and Copilot assigned.'
     },
     identity: {
       high: [
@@ -403,7 +434,7 @@
         { title: 'Upgrade from Security Defaults to Conditional Access', desc: 'Conditional Access gives granular control over device compliance, location, and risk-based sign-in.' },
         { title: 'Audit external and guest access', desc: 'Review who has guest access to your tenant — external users can surface content through Copilot.' }
       ],
-      good: '✅ Identity & access controls are well configured — MFA is enforced and access is governed.'
+      good: 'Identity & access controls are well configured — MFA is enforced and access is governed.'
     },
     data: {
       high: [
@@ -414,7 +445,7 @@
         { title: 'Clean up ROT content', desc: 'Remove or archive redundant, obsolete, and trivial content — especially in the top 20-30% most accessed SharePoint sites.' },
         { title: 'Enable Restricted SharePoint Search', desc: 'Limit which sites Copilot can ground on during initial rollout — expand as governance matures.' }
       ],
-      good: '✅ Data governance is solid — sensitivity labels, DLP, and access controls are in place.'
+      good: 'Data governance is solid — sensitivity labels, DLP, and access controls are in place.'
     },
     security: {
       high: [
@@ -425,7 +456,7 @@
         { title: 'Configure Defender for Cloud Apps', desc: 'Set up Copilot-specific monitoring policies to detect unusual AI usage patterns.' },
         { title: 'Test eDiscovery with Copilot content', desc: 'Ensure Copilot-generated content is discoverable via Content Search and eDiscovery cases.' }
       ],
-      good: '✅ Security posture is strong — audit logging and monitoring are active.'
+      good: 'Security posture is strong — audit logging and monitoring are active.'
     },
     network: {
       high: [
@@ -436,7 +467,7 @@
         { title: 'Test WebSocket connectivity', desc: 'Copilot requires WSS connections to *.cloud.microsoft and *.office.com — verify these aren\'t blocked by your proxy.' },
         { title: 'Update Microsoft 365 Apps', desc: 'Ensure all target devices are running the latest M365 Apps version.' }
       ],
-      good: '✅ Network and apps are configured correctly for Copilot.'
+      good: 'Network and apps are configured correctly for Copilot.'
     },
     change: {
       high: [
@@ -447,7 +478,7 @@
         { title: 'Build a training programme', desc: 'Prepare Microsoft Learn paths, role-specific prompt guides, and a prompt library. <a href="/prompts/">See our Prompt Library</a> for inspiration.' },
         { title: 'Define success metrics now', desc: 'Agree on KPIs before launch: adoption rate, time saved, NPS, business outcomes. You can\'t improve what you don\'t measure.' }
       ],
-      good: '✅ Change management is well planned — sponsor, pilot group, training, and metrics are ready.'
+      good: 'Change management is well planned — sponsor, pilot group, training, and metrics are ready.'
     },
     monitoring: {
       high: [
@@ -458,7 +489,7 @@
         { title: 'Plan licence optimisation reviews', desc: 'Schedule 60 and 90-day reviews to expand Copilot to power users and reclaim from inactive ones.' },
         { title: 'Follow the M365 Roadmap', desc: 'New Copilot features ship frequently. <a href="/m365-roadmap/">Use our M365 Roadmap Tracker</a> to stay current.' }
       ],
-      good: '✅ Monitoring and optimisation plans are in place — you\'re set for continuous improvement.'
+      good: 'Monitoring and optimisation plans are in place — you\'re set for continuous improvement.'
     }
   };
 
@@ -555,12 +586,12 @@
         card.className = 'readiness-ns-card';
         if (isExternal) { card.target = '_blank'; card.rel = 'noopener'; }
         card.innerHTML = `
-          <span class="readiness-ns-icon">${item.icon}</span>
+          <span class="readiness-ns-icon">${svgIcon(item.icon, 16)}</span>
           <div class="readiness-ns-text">
             <strong>${item.title}</strong>
             <small>${item.desc}</small>
           </div>
-          ${isExternal ? '<span class="readiness-ns-ext">↗</span>' : ''}
+          ${isExternal ? '<span class="readiness-ns-ext">\u2197</span>' : ''}
         `;
         grid.appendChild(card);
       });
@@ -578,7 +609,7 @@
       const btn = document.createElement('button');
       btn.className = 'readiness-rpn-item';
       btn.dataset.pillar = p.id;
-      btn.innerHTML = `<span class="readiness-rpn-icon">${p.icon}</span><span class="readiness-rpn-score" id="rpn-score-${p.id}"></span>`;
+      btn.innerHTML = `<span class="readiness-rpn-icon">${svgIcon(p.icon, 16)}</span><span class="readiness-rpn-score" id="rpn-score-${p.id}"></span>`;
       btn.title = p.name;
       btn.addEventListener('click', () => jumpToPillar(p.id));
       nav.appendChild(btn);
@@ -635,7 +666,7 @@
     $('readiness-progress-text').textContent = `Q${qInPillar} of ${range.count} in ${pillar.name} · ${currentQuestion + 1}/${QUESTIONS.length} overall`;
 
     // Pillar indicator
-    $('readiness-current-pillar-icon').textContent = pillar.icon;
+    $('readiness-current-pillar-icon').innerHTML = svgIcon(pillar.icon, 14);
     $('readiness-current-pillar-name').textContent = pillar.name;
 
     // Question text
@@ -643,13 +674,13 @@
 
     // "Why this matters" expandable context
     const ctxEl = $('readiness-question-context');
-    ctxEl.innerHTML = `<button class="readiness-why-toggle" aria-expanded="false">💡 Why this matters <span class="readiness-why-arrow">▸</span></button><div class="readiness-why-detail" hidden>${q.context}</div>`;
+    ctxEl.innerHTML = `<button class="readiness-why-toggle" aria-expanded="false">Why this matters <span class="readiness-why-arrow">&#x25B8;</span></button><div class="readiness-why-detail" hidden>${q.context}</div>`;
     ctxEl.querySelector('.readiness-why-toggle').addEventListener('click', function() {
       const detail = this.nextElementSibling;
       const expanded = detail.hidden;
       detail.hidden = !expanded;
       this.setAttribute('aria-expanded', expanded);
-      this.querySelector('.readiness-why-arrow').textContent = expanded ? '▾' : '▸';
+      this.querySelector('.readiness-why-arrow').textContent = expanded ? '\u25BE' : '\u25B8';
     });
 
     // Options
@@ -688,7 +719,7 @@
     const isLast = currentQuestion === QUESTIONS.length - 1;
     const isAnswered = answers[currentQuestion] >= 0;
     btn.disabled = !isAnswered;
-    btn.textContent = isLast ? '✨ See Results' : 'Next →';
+    btn.textContent = isLast ? 'See Results' : 'Next \u2192';
   }
 
   function nextQuestion() {
@@ -759,7 +790,7 @@
     if (previousScore !== null && previousScore !== overallScore) {
       const delta = overallScore - previousScore;
       const deltaClass = delta > 0 ? 'readiness-delta-up' : 'readiness-delta-down';
-      const deltaIcon = delta > 0 ? '📈' : '📉';
+      const deltaIcon = delta > 0 ? '\u2191' : '\u2193';
       descHtml += ` <span class="readiness-delta ${deltaClass}">${deltaIcon} ${delta > 0 ? '+' : ''}${delta} points since last assessment</span>`;
     }
     $('readiness-score-desc').innerHTML = descHtml;
@@ -769,8 +800,8 @@
     if (benchEl) {
       const diff = overallScore - BENCHMARKS.overall;
       benchEl.innerHTML = diff >= 0
-        ? `📊 You're <strong>${diff} points above</strong> the typical organisation score of ${BENCHMARKS.overall}`
-        : `📊 The typical organisation scores ${BENCHMARKS.overall} — you're <strong>${Math.abs(diff)} points below</strong>. Focus on the red areas below.`;
+        ? `You're <strong>${diff} points above</strong> the typical organisation score of ${BENCHMARKS.overall}`
+        : `The typical organisation scores ${BENCHMARKS.overall} — you're <strong>${Math.abs(diff)} points below</strong>. Focus on the red areas below.`;
       benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'readiness-bench-above' : 'readiness-bench-below');
     }
 
@@ -790,7 +821,7 @@
       row.className = 'readiness-pillar-row';
       row.id = `pillar-${p.id}`;
       row.innerHTML = `
-        <span class="readiness-pillar-label">${p.icon} ${p.name}</span>
+        <span class="readiness-pillar-label">${svgIcon(p.icon, 14)} ${p.name}</span>
         <div class="readiness-bar-track">
           <div class="readiness-bar-fill" style="background:${barColor}"></div>
           <div class="readiness-bar-benchmark" style="left:${bench}%" title="Typical: ${bench}%"></div>
@@ -812,11 +843,11 @@
       const rec = RECOMMENDATIONS[p.id];
 
       if (pct >= 80) {
-        appendRec(recsContainer, 'good', p.icon, p.name, rec.good, recIdx++);
+        appendRec(recsContainer, 'good', 'check', p.name, rec.good, recIdx++);
       } else if (pct < 50) {
-        rec.high.forEach(r => appendRec(recsContainer, 'high', '🔴', r.title, r.desc, recIdx++));
+        rec.high.forEach(r => appendRec(recsContainer, 'high', null, r.title, r.desc, recIdx++));
       } else {
-        rec.medium.forEach(r => appendRec(recsContainer, 'medium', '🟠', r.title, r.desc, recIdx++));
+        rec.medium.forEach(r => appendRec(recsContainer, 'medium', null, r.title, r.desc, recIdx++));
       }
     });
 
@@ -825,7 +856,7 @@
       const header = document.createElement('div');
       header.className = 'readiness-rec-item readiness-priority-investigate';
       header.innerHTML = `
-        <span class="readiness-rec-icon">🔍</span>
+        <span class="readiness-rec-icon"><span class="readiness-priority-dot dot-investigate"></span></span>
         <div class="readiness-rec-content">
           <div class="readiness-rec-title">Items to Investigate</div>
           <div class="readiness-rec-desc">You answered "Not sure" on ${investigateItems.length} question${investigateItems.length > 1 ? 's' : ''}. These need investigation before deployment:<ul>${investigateItems.map(item => `<li>${item.question}</li>`).join('')}</ul></div>
@@ -840,12 +871,14 @@
     $('readiness-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function appendRec(container, priority, icon, title, desc, idx) {
+  function appendRec(container, priority, iconName, title, desc, idx) {
+    var dotClass = priority === 'high' ? 'dot-high' : priority === 'medium' ? 'dot-medium' : priority === 'good' ? 'dot-good' : 'dot-info';
+    var iconHtml = iconName ? svgIcon(iconName, 14) : '<span class="readiness-priority-dot ' + dotClass + '"></span>';
     const item = document.createElement('div');
     item.className = `readiness-rec-item readiness-priority-${priority}`;
     item.id = `rec-${idx}`;
     item.innerHTML = `
-      <span class="readiness-rec-icon">${icon}</span>
+      <span class="readiness-rec-icon">${iconHtml}</span>
       <div class="readiness-rec-content">
         <div class="readiness-rec-title">${title}</div>
         <div class="readiness-rec-desc">${desc}</div>
@@ -857,53 +890,53 @@
   // ─── Next Steps Resources ───
   const NEXT_STEPS = [
     {
-      phase: '🔍 Phase 1 — Get Ready',
+      phase: 'Phase 1 — Get Ready',
       desc: 'Assess your current state and prepare your environment',
       items: [
-        { icon: '📊', title: 'Copilot Optimisation Assessment', desc: 'Official Microsoft assessment for data governance maturity and security controls', url: 'https://www.microsoft.com/solutionassessments/' },
-        { icon: '🛡️', title: 'Configure Secure Data Foundation', desc: 'Remediate oversharing, apply sensitivity labels, set up DLP', url: 'https://learn.microsoft.com/copilot/microsoft-365/configure-secure-governed-data-foundation-microsoft-365-copilot' },
-        { icon: '📂', title: 'SharePoint Advanced Management', desc: 'Permission reports, access reviews, restricted access control', url: 'https://learn.microsoft.com/sharepoint/get-ready-copilot-sharepoint-advanced-management' },
-        { icon: '📋', title: 'Copilot Readiness Report', desc: 'Built-in report in M365 admin centre showing prerequisite coverage', url: 'https://learn.microsoft.com/microsoft-365/admin/activity-reports/microsoft-365-copilot-readiness' }
+        { icon: 'bar-chart', title: 'Copilot Optimisation Assessment', desc: 'Official Microsoft assessment for data governance maturity and security controls', url: 'https://www.microsoft.com/solutionassessments/' },
+        { icon: 'shield', title: 'Configure Secure Data Foundation', desc: 'Remediate oversharing, apply sensitivity labels, set up DLP', url: 'https://learn.microsoft.com/copilot/microsoft-365/configure-secure-governed-data-foundation-microsoft-365-copilot' },
+        { icon: 'folder', title: 'SharePoint Advanced Management', desc: 'Permission reports, access reviews, restricted access control', url: 'https://learn.microsoft.com/sharepoint/get-ready-copilot-sharepoint-advanced-management' },
+        { icon: 'clipboard', title: 'Copilot Readiness Report', desc: 'Built-in report in M365 admin centre showing prerequisite coverage', url: 'https://learn.microsoft.com/microsoft-365/admin/activity-reports/microsoft-365-copilot-readiness' }
       ]
     },
     {
-      phase: '🚀 Phase 2 — Deploy',
+      phase: 'Phase 2 — Deploy',
       desc: 'Set up Copilot and assign licences',
       items: [
-        { icon: '⚙️', title: 'Copilot Setup Guide (Admin)', desc: 'Step-by-step: update channels, MFA, audit logging, licence assignment', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-setup' },
-        { icon: '🔑', title: 'Licensing Options', desc: 'All qualifying base plans + Copilot add-on details', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-licensing' },
-        { icon: '🌐', title: 'App & Network Requirements', desc: 'Required endpoints, WebSocket support, update channels', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-requirements' },
-        { icon: '🔄', title: 'Change Update Channel for Copilot', desc: 'Switch from Semi-Annual to Current or Monthly Enterprise', url: 'https://learn.microsoft.com/microsoft-365-apps/updates/change-channel-for-copilot' }
+        { icon: 'settings', title: 'Copilot Setup Guide (Admin)', desc: 'Step-by-step: update channels, MFA, audit logging, licence assignment', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-setup' },
+        { icon: 'key', title: 'Licensing Options', desc: 'All qualifying base plans + Copilot add-on details', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-licensing' },
+        { icon: 'globe', title: 'App & Network Requirements', desc: 'Required endpoints, WebSocket support, update channels', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-requirements' },
+        { icon: 'refresh', title: 'Change Update Channel for Copilot', desc: 'Switch from Semi-Annual to Current or Monthly Enterprise', url: 'https://learn.microsoft.com/microsoft-365-apps/updates/change-channel-for-copilot' }
       ]
     },
     {
-      phase: '📣 Phase 3 — Adopt',
+      phase: 'Phase 3 — Adopt',
       desc: 'Drive user adoption and enablement',
       items: [
-        { icon: '📖', title: 'Copilot Adoption Guide', desc: '5-step adoption framework: ready, licence, apps, setup, welcome', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enablement-resources' },
-        { icon: '🎯', title: 'Microsoft Adoption Portal', desc: 'Success Kit, Launch Day kit, Interactive Scenario Library', url: 'https://adoption.microsoft.com/copilot' },
-        { icon: '👋', title: 'Welcome Users & Enable Feedback', desc: 'Welcome email templates and feedback collection setup', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enable-users' },
-        { icon: '💡', title: 'Copilot Prompt Gallery', desc: 'Official prompt examples across Word, Excel, Teams, Outlook', url: 'https://copilot.cloud.microsoft/prompts' }
+        { icon: 'book', title: 'Copilot Adoption Guide', desc: '5-step adoption framework: ready, licence, apps, setup, welcome', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enablement-resources' },
+        { icon: 'target', title: 'Microsoft Adoption Portal', desc: 'Success Kit, Launch Day kit, Interactive Scenario Library', url: 'https://adoption.microsoft.com/copilot' },
+        { icon: 'users', title: 'Welcome Users & Enable Feedback', desc: 'Welcome email templates and feedback collection setup', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-enable-users' },
+        { icon: 'lightbulb', title: 'Copilot Prompt Gallery', desc: 'Official prompt examples across Word, Excel, Teams, Outlook', url: 'https://copilot.cloud.microsoft/prompts' }
       ]
     },
     {
-      phase: '🔒 Phase 4 — Govern & Optimise',
+      phase: 'Phase 4 — Govern & Optimise',
       desc: 'Monitor, protect, and maximise value',
       items: [
-        { icon: '🛡️', title: 'Microsoft Purview for Copilot', desc: 'Sensitivity labels, DLP, audit, eDiscovery for Copilot content', url: 'https://learn.microsoft.com/purview/ai-microsoft-365-copilot' },
-        { icon: '📊', title: 'Copilot Usage Reports', desc: 'Admin centre dashboards: adoption, active users, feature usage', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-reports-for-admins' },
-        { icon: '🔐', title: 'Security Copilot in E5', desc: 'Included Security Copilot compute units for E5 customers', url: 'https://learn.microsoft.com/copilot/security/security-copilot-inclusion' },
-        { icon: '📋', title: 'Copilot Deployment Blueprint', desc: 'End-to-end deployment guide with security and governance', url: 'https://learn.microsoft.com/copilot/microsoft-365/secure-govern-copilot-foundational-deployment-guidance' }
+        { icon: 'shield', title: 'Microsoft Purview for Copilot', desc: 'Sensitivity labels, DLP, audit, eDiscovery for Copilot content', url: 'https://learn.microsoft.com/purview/ai-microsoft-365-copilot' },
+        { icon: 'bar-chart', title: 'Copilot Usage Reports', desc: 'Admin centre dashboards: adoption, active users, feature usage', url: 'https://learn.microsoft.com/copilot/microsoft-365/microsoft-365-copilot-reports-for-admins' },
+        { icon: 'lock', title: 'Security Copilot in E5', desc: 'Included Security Copilot compute units for E5 customers', url: 'https://learn.microsoft.com/copilot/security/security-copilot-inclusion' },
+        { icon: 'clipboard', title: 'Copilot Deployment Blueprint', desc: 'End-to-end deployment guide with security and governance', url: 'https://learn.microsoft.com/copilot/microsoft-365/secure-govern-copilot-foundational-deployment-guidance' }
       ]
     },
     {
-      phase: '🎓 Training Modules',
+      phase: 'Training Modules',
       desc: 'Free Microsoft Learn courses for your team',
       items: [
-        { icon: '📚', title: 'Implement Microsoft 365 Copilot', desc: 'Prerequisites, SAM, data prep, licence assignment, extensibility', url: 'https://learn.microsoft.com/training/modules/implement-microsoft-365-copilot/' },
-        { icon: '🌟', title: 'Explore Possibilities with Copilot', desc: 'Practical usage across M365 apps for all users', url: 'https://learn.microsoft.com/training/modules/explore-possibilities-microsoft-365-copilot/' },
-        { icon: '📜', title: 'Our Licensing Simplifier', desc: 'Compare M365 plans, take a quiz, find the right licence', url: '/licensing/' },
-        { icon: '💡', title: 'Our AI Prompt Library', desc: '84 tested prompts across 8 platforms — ready to use', url: '/prompts/' }
+        { icon: 'book', title: 'Implement Microsoft 365 Copilot', desc: 'Prerequisites, SAM, data prep, licence assignment, extensibility', url: 'https://learn.microsoft.com/training/modules/implement-microsoft-365-copilot/' },
+        { icon: 'star', title: 'Explore Possibilities with Copilot', desc: 'Practical usage across M365 apps for all users', url: 'https://learn.microsoft.com/training/modules/explore-possibilities-microsoft-365-copilot/' },
+        { icon: 'scroll', title: 'Our Licensing Simplifier', desc: 'Compare M365 plans, take a quiz, find the right licence', url: '/licensing/' },
+        { icon: 'lightbulb', title: 'Our AI Prompt Library', desc: '84 tested prompts across 8 platforms — ready to use', url: '/prompts/' }
       ]
     }
   ];
@@ -929,12 +962,12 @@
         card.className = 'readiness-ns-card';
         if (isExternal) { card.target = '_blank'; card.rel = 'noopener'; }
         card.innerHTML = `
-          <span class="readiness-ns-icon">${item.icon}</span>
+          <span class="readiness-ns-icon">${svgIcon(item.icon, 16)}</span>
           <div class="readiness-ns-text">
             <strong>${item.title}</strong>
             <small>${item.desc}</small>
           </div>
-          ${isExternal ? '<span class="readiness-ns-ext">↗</span>' : ''}
+          ${isExternal ? '<span class="readiness-ns-ext">\u2197</span>' : ''}
         `;
         grid.appendChild(card);
       });
@@ -1003,7 +1036,7 @@
     url.searchParams.set('pillars', pillarPcts);
 
     navigator.clipboard.writeText(url.toString()).then(() => {
-      showToast('🔗 Link copied to clipboard!');
+      showToast('Link copied to clipboard');
     }).catch(() => { prompt('Copy this link:', url.toString()); });
   }
 
@@ -1037,8 +1070,8 @@
     if (benchEl) {
       const diff = score - BENCHMARKS.overall;
       benchEl.innerHTML = diff >= 0
-        ? `📊 This org is <strong>${diff} points above</strong> the typical score of ${BENCHMARKS.overall}`
-        : `📊 This org is <strong>${Math.abs(diff)} points below</strong> the typical score of ${BENCHMARKS.overall}`;
+        ? `This org is <strong>${diff} points above</strong> the typical score of ${BENCHMARKS.overall}`
+        : `This org is <strong>${Math.abs(diff)} points below</strong> the typical score of ${BENCHMARKS.overall}`;
       benchEl.className = 'readiness-benchmark ' + (diff >= 0 ? 'readiness-bench-above' : 'readiness-bench-below');
     }
 
@@ -1056,7 +1089,7 @@
       const row = document.createElement('div');
       row.className = 'readiness-pillar-row';
       row.innerHTML = `
-        <span class="readiness-pillar-label">${p.icon} ${p.name}</span>
+        <span class="readiness-pillar-label">${svgIcon(p.icon, 14)} ${p.name}</span>
         <div class="readiness-bar-track">
           <div class="readiness-bar-fill" style="background:${barColor}"></div>
           <div class="readiness-bar-benchmark" style="left:${bench}%" title="Typical: ${bench}%"></div>
@@ -1068,14 +1101,14 @@
     });
 
     const recsContainer = $('readiness-recommendations-list');
-    recsContainer.innerHTML = '<div class="readiness-rec-item readiness-priority-low"><span class="readiness-rec-icon">ℹ️</span><div class="readiness-rec-content"><div class="readiness-rec-title">Shared results view</div><div class="readiness-rec-desc">This is a shared score. To get personalised recommendations, <a href="/copilot-readiness/">take the full assessment</a>.</div></div></div>';
+    recsContainer.innerHTML = '<div class="readiness-rec-item readiness-priority-low"><span class="readiness-rec-icon"><span class="readiness-priority-dot dot-info"></span></span><div class="readiness-rec-content"><div class="readiness-rec-title">Shared results view</div><div class="readiness-rec-desc">This is a shared score. To get personalised recommendations, <a href="/copilot-readiness/">take the full assessment</a>.</div></div></div>';
 
     // Still render Next Steps for shared view
     renderNextSteps(score);
 
-    $('readiness-share-btn').style.display = 'none';
-    $('readiness-print-btn').style.display = 'none';
-    $('readiness-restart-btn').textContent = '🚀 Take the Full Assessment';
+    $('readiness-share-btn').hidden = true;
+    $('readiness-print-btn').hidden = true;
+    $('readiness-restart-btn').textContent = 'Take the Full Assessment';
     $('readiness-restart-btn').addEventListener('click', () => {
       window.location.href = '/copilot-readiness/';
     });

@@ -72,8 +72,8 @@
 .readiness-pillar-preview-item {
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-radius: var(--radius-md, 10px);
-  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
   font-size: 0.85rem;
   font-family: var(--font-heading);
   font-weight: 600;
@@ -110,7 +110,7 @@
   border-radius: 50%;
   background: var(--accent);
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.8rem;
   flex-shrink: 0;
 }
@@ -129,43 +129,39 @@
 .readiness-btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
+  gap: 0.4rem;
+  padding: 6px 16px;
   background: var(--accent);
-  color: var(--text-primary);
+  color: #fff;
   border: none;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out;
 }
 .readiness-btn-primary:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px var(--accent-subtle);
 }
 .readiness-btn-primary:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 .readiness-btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.5rem;
+  gap: 0.4rem;
+  padding: 6px 16px;
   background: var(--bg-elevated);
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out;
 }
 .readiness-btn-secondary:hover {
   background: var(--bg-elevated);
@@ -214,11 +210,11 @@
   padding: 0.6rem 1rem;
   background: var(--accent-subtle);
   border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-md, 10px) var(--radius-md, 10px) 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 .readiness-pillar-indicator .readiness-pillar-name {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   color: var(--accent-hover);
 }
@@ -227,17 +223,17 @@
 .readiness-question-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  min-height: 280px;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  min-height: 240px;
 }
 .readiness-question-text {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   line-height: 1.5;
 }
 .readiness-question-context {
@@ -256,13 +252,13 @@
 .readiness-option {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.85rem 1rem;
+  gap: 0.5rem;
+  padding: 8px 10px;
   background: var(--bg-surface);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   text-align: left;
   width: 100%;
   color: var(--text-secondary);
@@ -287,7 +283,7 @@
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 2px;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   position: relative;
 }
 .readiness-option.selected .readiness-option-radio {
@@ -302,7 +298,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--bg-page);
 }
 
 /* ── Navigation ── */
@@ -312,9 +308,9 @@
   gap: 1rem;
 }
 
-/* ── Results Section ── */
+/* ── Margins tightened ── */
 .readiness-score-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .readiness-score-header {
   display: flex;
@@ -358,7 +354,7 @@
 .readiness-score-number {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
 }
@@ -373,7 +369,7 @@
 .readiness-score-label h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 0.4rem;
 }
@@ -387,7 +383,7 @@
 
 /* ── Pillar Breakdown Bars ── */
 .readiness-breakdown {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .readiness-breakdown h2 {
   font-family: var(--font-heading);
@@ -398,7 +394,7 @@
 .readiness-pillar-bars {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 6px;
 }
 .readiness-pillar-row {
   display: grid;
@@ -429,14 +425,14 @@
 }
 .readiness-pillar-pct {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.85rem;
   text-align: right;
 }
 
 /* ── Recommendations ── */
 .readiness-recommendations {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .readiness-recommendations h2 {
   font-family: var(--font-heading);
@@ -447,17 +443,17 @@
 .readiness-recs-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 6px;
 }
 .readiness-rec-item {
   display: flex;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius-md, 10px);
+  gap: 0.5rem;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
   align-items: flex-start;
 }
 .readiness-rec-item.readiness-priority-high {
-  background: rgba(239, 68, 68, 0.1);
+  background: color-mix(in srgb, var(--score-red) 10%, transparent);
   border-left: 3px solid var(--score-red);
 }
 .readiness-rec-item.readiness-priority-medium {
@@ -482,7 +478,7 @@
 }
 .readiness-rec-title {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
@@ -499,7 +495,7 @@
 
 /* ── Cross-links ── */
 .readiness-crosslinks {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .readiness-crosslinks h2 {
   font-family: var(--font-heading);
@@ -510,25 +506,23 @@
 .readiness-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  gap: 6px;
 }
 .readiness-link-card {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 1.2rem;
+  gap: 0.2rem;
+  padding: 10px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .readiness-link-card:hover {
   background: var(--accent-subtle);
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  /* z5-removed: glow shadow */
-  transform: translateY(-2px);
 }
 .readiness-link-featured {
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
@@ -539,7 +533,7 @@
 }
 .readiness-link-card span {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
 }
@@ -568,13 +562,13 @@
   background: var(--accent);
   color: var(--text-primary);
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.85rem;
   z-index: 1000;
   opacity: 0;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
   pointer-events: none;
 }
 .readiness-toast.show {
@@ -625,12 +619,12 @@
   flex-direction: column;
   align-items: center;
   gap: 0.15rem;
-  padding: 0.5rem 0.7rem;
+  padding: 6px 8px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   min-width: 56px;
   font-size: 0.7rem;
   color: var(--text-muted);
@@ -648,10 +642,48 @@
 }
 .readiness-rpn-item.rpn-done {
   background: var(--accent-subtle);
-  border-color: rgba(34, 197, 94, 0.25);
+  border-color: color-mix(in srgb, var(--score-green) 25%, transparent);
 }
-.readiness-rpn-icon { font-size: 1.2rem; }
-.readiness-rpn-score { font-size: 0.7rem; font-weight: 700; min-height: 1em; }
+.readiness-rpn-icon { font-size: 1.2rem; line-height: 1; }
+.readiness-rpn-icon svg { display: block; width: 16px; height: 16px; }
+.readiness-rpn-score { font-size: 0.7rem; font-weight: 600; min-height: 1em; }
+
+/* ── Priority Dot (replaces emoji indicators in recs) ── */
+.readiness-priority-dot {
+  display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; flex-shrink: 0; margin-top: 3px;
+}
+.readiness-priority-dot.dot-high { background: var(--score-red); }
+.readiness-priority-dot.dot-medium { background: var(--score-orange); }
+.readiness-priority-dot.dot-good { background: var(--score-green); }
+.readiness-priority-dot.dot-investigate { background: var(--accent); }
+.readiness-priority-dot.dot-info { background: var(--text-muted); }
+
+/* ── SVG icons in pillar labels and ns icons ── */
+.readiness-pillar-label svg, .readiness-ns-icon svg,
+.readiness-link-icon svg, .readiness-pillar-icon svg,
+.readiness-rec-icon svg {
+  display: inline-block; width: 16px; height: 16px; vertical-align: -2px;
+}
+.readiness-ns-icon { flex-shrink: 0; margin-top: 2px; line-height: 1; }
+
+/* ── Resources Panel Styles ── */
+.readiness-resources-heading {
+  color: var(--accent); margin-bottom: 0.5rem;
+  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600;
+}
+.readiness-resources-intro {
+  color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;
+}
+.readiness-resources-cta {
+  margin-top: 1.5rem; padding: 1rem;
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  border-radius: var(--radius-md); text-align: center;
+}
+.readiness-resources-cta p {
+  color: var(--text-secondary); font-size: 0.85rem; margin: 0 0 0.75rem;
+}
 
 /* ── "Why this matters" toggle ── */
 .readiness-why-toggle {
@@ -673,7 +705,7 @@
   padding: 0.75rem 1rem;
   background: var(--accent-subtle);
   border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-md, 10px) var(--radius-md, 10px) 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -707,7 +739,7 @@
   border-radius: 4px;
   background: var(--bg-elevated);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   flex-shrink: 0;
   font-family: var(--font-heading);
@@ -721,7 +753,7 @@
 .readiness-benchmark {
   text-align: center;
   padding: 0.75rem 1rem;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
   margin-top: 1.5rem;
   line-height: 1.5;
@@ -729,7 +761,7 @@
 }
 .readiness-bench-above {
   background: var(--accent-subtle);
-  border: 1px solid rgba(34, 197, 94, 0.2);
+  border: 1px solid color-mix(in srgb, var(--score-green) 20%, transparent);
 }
 .readiness-bench-below {
   background: var(--accent-subtle);
@@ -777,7 +809,7 @@
 
 /* ── Next Steps Section ── */
 .readiness-next-steps-wrap {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .readiness-next-steps-wrap h2 {
   font-family: var(--font-heading);
@@ -796,7 +828,7 @@
 .readiness-ns-phase h3 {
   font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent-hover);
   margin: 0 0 0.25rem;
 }
@@ -808,24 +840,23 @@
 .readiness-ns-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0.75rem;
+  gap: 6px;
 }
 .readiness-ns-card {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 10px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .readiness-ns-card:hover {
   background: var(--accent-subtle);
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  transform: translateY(-2px);
 }
 .readiness-ns-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
 .readiness-ns-text { flex: 1; }
