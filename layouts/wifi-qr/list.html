@@ -87,7 +87,7 @@
             <label class="wifiqr-label" for="wifiqr-layout">Card Layout</label>
             <select class="wifiqr-select" id="wifiqr-layout">
               <option value="portrait" selected>{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }} Portrait</option>
-              <option value="landscape">🖥️ Landscape</option>
+              <option value="landscape">Landscape</option>
             </select>
           </div>
           <div class="wifiqr-field">
@@ -145,8 +145,8 @@
       <div class="wifiqr-actions">
         <button class="wifiqr-btn-primary wifiqr-btn" id="wifiqr-print">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print Card</button>
         <button class="wifiqr-btn" id="wifiqr-print-multi" title="Print 4 cards per A4 page">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Print 4-up</button>
-        <button class="wifiqr-btn" id="wifiqr-download-card">⬇ Download Card</button>
-        <button class="wifiqr-btn" id="wifiqr-download">⬇ QR Only</button>
+        <button class="wifiqr-btn" id="wifiqr-download-card">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download Card</button>
+        <button class="wifiqr-btn" id="wifiqr-download">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} QR Only</button>
         <button class="wifiqr-btn" id="wifiqr-share">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
       </div>
       <div class="wifiqr-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} "Download Card" saves the full styled card as PNG. "Print 4-up" prints 4 copies on one A4 sheet.</div>
@@ -159,9 +159,9 @@
   <div class="wifiqr-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:#22D3EE;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+    <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="zt-faq-detail">
+    <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail">
       <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
       <p class="zt-faq-answer">{{ $q.answer }}</p>
     </details>

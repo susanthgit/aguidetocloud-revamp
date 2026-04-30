@@ -12,10 +12,10 @@
 
   /* ── Card themes ── */
   const THEMES = {
-    home:   { icon: '📶', heading: 'WiFi Password', instruction: 'Point your phone camera at the QR code to connect', qrFg: '#1e293b', qrBg: '#ffffff' },
-    cafe:   { icon: '☕', heading: 'Free WiFi', instruction: 'Scan with your phone camera — enjoy free WiFi!', qrFg: '#451a03', qrBg: '#fef3c7' },
-    hotel:  { icon: '🏨', heading: 'Guest WiFi', instruction: 'Welcome! Scan to connect to our WiFi network', qrFg: '#312e81', qrBg: '#ffffff' },
-    office: { icon: '🏢', heading: 'Office WiFi', instruction: 'Scan with your phone to join the network', qrFg: '#1e293b', qrBg: '#ffffff' }
+    home:   { icon: '', heading: 'WiFi Password', instruction: 'Point your phone camera at the QR code to connect', qrFg: '#1e293b', qrBg: '#ffffff' },
+    cafe:   { icon: '', heading: 'Free WiFi', instruction: 'Scan with your phone camera — enjoy free WiFi!', qrFg: '#451a03', qrBg: '#fef3c7' },
+    hotel:  { icon: '', heading: 'Guest WiFi', instruction: 'Welcome! Scan to connect to our WiFi network', qrFg: '#312e81', qrBg: '#ffffff' },
+    office: { icon: '', heading: 'Office WiFi', instruction: 'Scan with your phone to join the network', qrFg: '#1e293b', qrBg: '#ffffff' }
   };
 
   let currentTheme = 'home';
@@ -51,7 +51,7 @@
     passToggle.addEventListener('click', () => {
       const showing = passInput.type === 'text';
       passInput.type = showing ? 'password' : 'text';
-      passToggle.textContent = showing ? '👁️' : '🙈';
+      passToggle.textContent = showing ? 'Hide' : 'Show';
     });
   }
 
