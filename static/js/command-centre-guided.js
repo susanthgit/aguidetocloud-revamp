@@ -37,6 +37,24 @@
   }
 
   function showAuthModal(callback) {
+    // Try silent auth with stored CC password first
+    var storedPwd = null;
+    try { storedPwd = sessionStorage.getItem('cc-p'); } catch(e) {}
+    if (storedPwd) {
+      fetch('/guided/api/admin', {
+        method: 'POST', credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: storedPwd })
+      }).then(function(r) { return r.json(); }).then(function(d) {
+        if (d.admin) { guidedAuthed = true; if (callback) callback(); }
+        else { showAuthPrompt(callback); }
+      }).catch(function() { showAuthPrompt(callback); });
+      return;
+    }
+    showAuthPrompt(callback);
+  }
+
+  function showAuthPrompt(callback) {
     var modal = document.getElementById('cc-guided-auth');
     var passEl = document.getElementById('cc-guided-pass');
     var btn = document.getElementById('cc-guided-login');
