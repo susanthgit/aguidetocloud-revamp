@@ -106,6 +106,8 @@
     <button class="cc-view" data-view="guided-sales">💰 Sales</button>
     <button class="cc-view" data-view="guided-licences">🔑 Licences</button>
     <button class="cc-view" data-view="guided-analytics">📈 Analytics</button>
+    <button class="cc-view" data-view="guided-kofi">☕ Ko-fi</button>
+    <button class="cc-view" data-view="guided-total">📊 Total</button>
   </div>
 
   <!-- VIEW: Dashboard -->
@@ -427,6 +429,52 @@
     </section>
     <section class="cc-section" id="cc-analytics-msg-section" style="display:none">
       <div id="cc-analytics-msg" class="cc-analytics-msg"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Ko-fi Sales -->
+  <div class="cc-panel" id="cc-guided-kofi">
+    <section class="cc-section">
+      <div class="cc-guided-kpis" id="cc-kofi-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Revenue Trend</h2>
+      <canvas id="cc-kofi-chart" height="160"></canvas>
+    </section>
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">By Price Tier</h3>
+          <div id="cc-kofi-tiers"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">By Product (webhook data)</h3>
+          <div id="cc-kofi-products"></div>
+        </div>
+      </div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Monthly Breakdown</h2>
+      <div id="cc-kofi-monthly"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Total Revenue -->
+  <div class="cc-panel" id="cc-guided-total">
+    <section class="cc-section">
+      <div class="cc-guided-kpis" id="cc-total-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Revenue Split</h2>
+      <div id="cc-revenue-split"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Monthly Revenue (All Sources)</h2>
+      <canvas id="cc-total-chart" height="180"></canvas>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Month-by-Month</h2>
+      <div id="cc-monthly-table"></div>
     </section>
   </div>
 

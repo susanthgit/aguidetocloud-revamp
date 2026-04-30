@@ -786,13 +786,203 @@
   }
 
   // ══════════════════════════════════════════════════════════
+  // ── KO-FI & TOTAL REVENUE TABS ──
+  // ══════════════════════════════════════════════════════════
+
+  var revenueData = null;
+  var _kofiChart = null;
+  var _totalChart = null;
+
+  function fetchRevenue() {
+    showLoading(['cc-kofi-kpis', 'cc-total-kpis']);
+    fetchWithTimeout('/guided/api/cc/revenue?days=730', { credentials: 'include' }, 25000)
+      .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(data) { revenueData = data; renderKofi(data); renderTotalRevenue(data); })
+      .catch(function(e) {
+        var msg = e.name === 'AbortError' ? 'Request timed out' : 'Failed: ' + e.message;
+        ['cc-kofi-kpis', 'cc-total-kpis'].forEach(function(id) {
+          var el = document.getElementById(id); if (el) el.innerHTML = '<p class="cc-err">' + esc(msg) + '</p>';
+        });
+      });
+  }
+
+  function renderKofi(data) {
+    if (!data) return;
+    var s = data.summary;
+
+    renderKPIs('cc-kofi-kpis', [
+      { value: money(s.kofiRevenue), label: 'Ko-fi Total' },
+      { value: money(s.kofiOneTimeRevenue), label: 'Downloads & Tips' },
+      { value: money(s.kofiMembershipRevenue), label: 'Memberships' },
+      { value: numFmt(s.kofiCount), label: 'Transactions' }
+    ]);
+
+    // Ko-fi daily chart
+    renderKofiChart(data.kofiByDay);
+
+    // Price tiers
+    var tierEl = document.getElementById('cc-kofi-tiers');
+    if (tierEl && data.kofiTiers) {
+      var maxTier = data.kofiTiers.length ? data.kofiTiers[0].total : 1;
+      tierEl.innerHTML = data.kofiTiers.map(function(t) {
+        var w = Math.max(10, Math.round((t.total / maxTier) * 100));
+        return '<div class="cc-bar-item"><div class="cc-bar-head"><span>$' + t.amount + ' tier</span><span>' + t.count + ' sales · ' + money(t.total) + '</span></div><div class="cc-bar-track"><div class="cc-bar-fill" style="width:' + w + '%"></div></div></div>';
+      }).join('');
+    }
+
+    // Products (from webhook enrichment)
+    var prodEl = document.getElementById('cc-kofi-products');
+    if (prodEl) {
+      if (data.kofiProducts && data.kofiProducts.length) {
+        prodEl.innerHTML = data.kofiProducts.map(function(p) {
+          return '<div class="cc-bar-item"><div class="cc-bar-head"><span>' + esc(p.name) + '</span><span>' + p.count + ' · ' + money(p.revenue) + '</span></div></div>';
+        }).join('');
+      } else {
+        prodEl.innerHTML = '<p class="cc-muted">No webhook data yet — set webhook URL in Ko-fi settings to:<br><code>https://www.aguidetocloud.com/guided/api/kofi/webhook</code></p>';
+      }
+    }
+
+    // Monthly breakdown
+    renderKofiMonthly(data.months);
+  }
+
+  function renderKofiChart(byDay) {
+    var ctx = document.getElementById('cc-kofi-chart');
+    if (!ctx || !byDay || !byDay.length) return;
+    if (_kofiChart) { _kofiChart.destroy(); _kofiChart = null; }
+
+    // Aggregate to weekly for readability if > 60 days
+    var chartData = byDay;
+    if (byDay.length > 60) {
+      var weekly = {};
+      byDay.forEach(function(d) {
+        var dt = new Date(d.date);
+        var weekStart = new Date(dt); weekStart.setDate(dt.getDate() - dt.getDay());
+        var wk = weekStart.toISOString().slice(0, 10);
+        if (!weekly[wk]) weekly[wk] = { date: wk, amount: 0 };
+        weekly[wk].amount += d.amount;
+      });
+      chartData = Object.values(weekly);
+    }
+
+    _kofiChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: chartData.map(function(d) { return d.date.slice(2, 10); }),
+        datasets: [{
+          data: chartData.map(function(d) { return d.amount; }),
+          backgroundColor: 'rgba(255,95,31,0.5)', borderColor: 'rgba(255,95,31,1)',
+          borderWidth: 1, borderRadius: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return '$' + c.parsed.y.toFixed(2); } } } },
+        scales: { x: { ticks: { color: 'var(--text-muted)', maxTicksLimit: 12 }, grid: { display: false } }, y: { beginAtZero: true, ticks: { color: 'var(--text-muted)', callback: function(v) { return '$' + v; } }, grid: { color: 'rgba(128,128,128,0.1)' } } }
+      }
+    });
+  }
+
+  function renderKofiMonthly(months) {
+    var el = document.getElementById('cc-kofi-monthly');
+    if (!el || !months) return;
+    var kofiMonths = months.filter(function(m) { return m.kofi > 0 || m.membership > 0; });
+    if (!kofiMonths.length) { el.innerHTML = '<p class="cc-muted">No monthly data</p>'; return; }
+
+    var html = '<div class="cc-table"><div class="cc-table-header"><span class="cc-th" style="width:80px">Month</span><span class="cc-th cc-th-num">Downloads</span><span class="cc-th cc-th-num">Memberships</span><span class="cc-th cc-th-num">Total</span></div>';
+    kofiMonths.reverse().forEach(function(m) {
+      html += '<div class="cc-table-row" style="cursor:default"><span class="cc-td" style="width:80px">' + m.month + '</span><span class="cc-td cc-th-num">' + money(m.kofi) + '</span><span class="cc-td cc-th-num">' + money(m.membership) + '</span><span class="cc-td cc-th-num" style="font-weight:700">' + money(m.kofi + m.membership) + '</span></div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  // ── Total Revenue ──
+  function renderTotalRevenue(data) {
+    if (!data) return;
+    var s = data.summary;
+
+    var kofiPct = s.totalRevenue > 0 ? Math.round((s.kofiRevenue / s.totalRevenue) * 100) : 0;
+    var guidedPct = s.totalRevenue > 0 ? Math.round((s.guidedRevenue / s.totalRevenue) * 100) : 0;
+
+    renderKPIs('cc-total-kpis', [
+      { value: money(s.totalRevenue), label: 'All-Time Revenue' },
+      { value: money(s.kofiRevenue), label: 'Ko-fi (' + kofiPct + '%)' },
+      { value: money(s.guidedRevenue), label: 'Guided (' + guidedPct + '%)' },
+      { value: numFmt(s.kofiCount + s.guidedCount), label: 'Total Sales' }
+    ]);
+
+    // Revenue split bars
+    var splitEl = document.getElementById('cc-revenue-split');
+    if (splitEl) {
+      var sources = [
+        { name: '☕ Ko-fi Downloads & Tips', amount: s.kofiOneTimeRevenue, color: 'rgba(255,95,31,0.7)' },
+        { name: '☕ Ko-fi Memberships', amount: s.kofiMembershipRevenue, color: 'rgba(255,95,31,0.4)' },
+        { name: '🎓 Guided Sales', amount: s.guidedRevenue, color: 'rgba(99,102,241,0.7)' }
+      ];
+      if (s.testRevenue > 0) sources.push({ name: '🧪 Test Purchases', amount: s.testRevenue, color: 'rgba(128,128,128,0.3)' });
+      var maxAmt = Math.max.apply(null, sources.map(function(s) { return s.amount; })) || 1;
+      splitEl.innerHTML = sources.map(function(src) {
+        var w = Math.max(5, Math.round((src.amount / maxAmt) * 100));
+        var pctOfTotal = s.totalRevenue > 0 ? pct(src.amount, s.totalRevenue + s.testRevenue) : 0;
+        return '<div class="cc-bar-item"><div class="cc-bar-head"><span>' + src.name + '</span><span>' + money(src.amount) + ' (' + pctOfTotal + '%)</span></div><div class="cc-bar-track"><div class="cc-bar-fill" style="width:' + w + '%;background:' + src.color + '"></div></div></div>';
+      }).join('');
+    }
+
+    // Stacked monthly chart
+    renderTotalChart(data.months);
+
+    // Monthly table
+    renderMonthlyTable(data.months);
+  }
+
+  function renderTotalChart(months) {
+    var ctx = document.getElementById('cc-total-chart');
+    if (!ctx || !months || !months.length) return;
+    if (_totalChart) { _totalChart.destroy(); _totalChart = null; }
+
+    _totalChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months.map(function(m) { return m.month; }),
+        datasets: [
+          { label: 'Ko-fi', data: months.map(function(m) { return m.kofi; }), backgroundColor: 'rgba(255,95,31,0.6)' },
+          { label: 'Membership', data: months.map(function(m) { return m.membership; }), backgroundColor: 'rgba(255,95,31,0.3)' },
+          { label: 'Guided', data: months.map(function(m) { return m.guided; }), backgroundColor: 'rgba(99,102,241,0.6)' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: 'var(--text-muted)', font: { size: 11 } } } },
+        scales: {
+          x: { stacked: true, ticks: { color: 'var(--text-muted)' }, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true, ticks: { color: 'var(--text-muted)', callback: function(v) { return '$' + v; } }, grid: { color: 'rgba(128,128,128,0.1)' } }
+        }
+      }
+    });
+  }
+
+  function renderMonthlyTable(months) {
+    var el = document.getElementById('cc-monthly-table');
+    if (!el || !months) return;
+    var html = '<div class="cc-table"><div class="cc-table-header"><span class="cc-th" style="width:80px">Month</span><span class="cc-th cc-th-num">Ko-fi</span><span class="cc-th cc-th-num">Membership</span><span class="cc-th cc-th-num">Guided</span><span class="cc-th cc-th-num">Total</span></div>';
+    months.slice().reverse().forEach(function(m) {
+      html += '<div class="cc-table-row" style="cursor:default"><span class="cc-td" style="width:80px">' + m.month + '</span><span class="cc-td cc-th-num">' + money(m.kofi) + '</span><span class="cc-td cc-th-num">' + money(m.membership) + '</span><span class="cc-td cc-th-num">' + money(m.guided) + '</span><span class="cc-td cc-th-num" style="font-weight:700">' + money(m.total) + '</span></div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  // ══════════════════════════════════════════════════════════
   // ── TAB WIRING ──
   // ══════════════════════════════════════════════════════════
 
   var guidedViews = {
     'guided-sales': function() { if (!salesData) fetchSales(); },
     'guided-licences': function() { if (!licenceData) fetchLicences(); },
-    'guided-analytics': function() { if (!analyticsData) fetchAnalytics(); }
+    'guided-analytics': function() { if (!analyticsData) fetchAnalytics(); },
+    'guided-kofi': function() { if (!revenueData) fetchRevenue(); else renderKofi(revenueData); },
+    'guided-total': function() { if (!revenueData) fetchRevenue(); else renderTotalRevenue(revenueData); }
   };
 
   // Listen for view switches
