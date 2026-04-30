@@ -84,12 +84,12 @@
     <div class="imgcomp-presets-label">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Presets</div>
     <div class="imgcomp-presets-row">
       <button class="imgcomp-preset-btn" data-preset="web" title="Optimised for websites: WebP, max 1920px, quality 82%">
-        <span class="imgcomp-preset-icon">🌐</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Web</span>
         <span class="imgcomp-preset-desc">WebP · 1920px · q82</span>
       </button>
       <button class="imgcomp-preset-btn" data-preset="email" title="Small enough for email: JPEG, max 1200px, quality 70%">
-        <span class="imgcomp-preset-icon">✉️</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Email</span>
         <span class="imgcomp-preset-desc">JPEG · 1200px · q70</span>
       </button>
@@ -109,7 +109,7 @@
         <span class="imgcomp-preset-desc">PNG · 4096px · q95</span>
       </button>
       <button class="imgcomp-preset-btn" data-preset="max" title="Maximum compression: WebP, max 1600px, quality 60%">
-        <span class="imgcomp-preset-icon">🗜️</span>
+        <span class="imgcomp-preset-icon">{{ partial "icon.html" (dict "name" "minimize-2" "size" 14 "stroke" 1.5) }}</span>
         <span class="imgcomp-preset-name">Max Shrink</span>
         <span class="imgcomp-preset-desc">WebP · 1600px · q60</span>
       </button>
@@ -121,9 +121,9 @@
     <div class="imgcomp-batch-header">
       <div class="imgcomp-batch-stats" id="imgcomp-batch-stats"></div>
       <div class="imgcomp-batch-actions">
-        <button class="imgcomp-btn imgcomp-btn-accent" id="imgcomp-download-zip" title="Download all as ZIP">⬇ Download All (ZIP)</button>
-        <button class="imgcomp-btn imgcomp-btn-ghost" id="imgcomp-download-all" title="Download all individually">⬇ Download Each</button>
-        <button class="imgcomp-btn imgcomp-btn-danger" id="imgcomp-clear-all" title="Remove all images">✕ Clear All</button>
+        <button class="imgcomp-btn imgcomp-btn-accent" id="imgcomp-download-zip" title="Download all as ZIP">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download All (ZIP)</button>
+        <button class="imgcomp-btn imgcomp-btn-ghost" id="imgcomp-download-all" title="Download all individually">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download Each</button>
+        <button class="imgcomp-btn imgcomp-btn-danger" id="imgcomp-clear-all" title="Remove all images">Clear All</button>
       </div>
     </div>
 
@@ -214,10 +214,10 @@
   {{/* ══════════════ FAQ TAB ══════════════ */}}
   <div class="imgcomp-panel" id="panel-faq" role="tabpanel">
   {{ if .Params.faq }}
-  <div style="max-width:800px;margin:0 auto;padding:0 1rem" id="faq">
-    <h2 style="color:#818CF8;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+  <div class="zt-faq-wrap" id="faq">
+    <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="zt-faq-detail">
+    <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail">
       <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
       <p class="zt-faq-answer">{{ $q.answer }}</p>
     </details>
@@ -227,7 +227,7 @@
   </div>
 
   {{/* ── Pagefind hidden block ── */}}
-  <div data-pagefind-body style="display:none" aria-hidden="true">
+  <div data-pagefind-body hidden aria-hidden="true">
     <h2>Image Compressor</h2>
     <p>Free online image compressor. Compress JPEG, PNG, WebP, AVIF, GIF, HEIC images. Batch compression, resize, convert formats, strip EXIF metadata. Smart presets for web, email, social media, thumbnails. Before/after comparison. Privacy-first — images never leave your browser.</p>
   </div>

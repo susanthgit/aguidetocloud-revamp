@@ -1,45 +1,35 @@
 /* ══════════════════════════════════════════════════════════
-   Image Compressor — Periwinkle #818CF8
+   Image Compressor — uses Zen accent (indigo)
    CSS namespace: .imgcomp-*
    ══════════════════════════════════════════════════════════ */
 
 /* ── Page wrapper ── */
 .imgcomp-page {
-  max-width: 1100px;
+  
   margin: 0 auto;
   padding: 0 1.25rem 3rem;
 }
 
-/* ── Tabs ── */
+/* ── Zen Underline Tabs ── */
 .imgcomp-tabs {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-bottom: 1.5rem;
+  display: flex; gap: 0; padding: 0;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 1.5rem;
 }
 .imgcomp-tab {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.6rem 1.1rem;
-  cursor: pointer;
-  border-radius: var(--radius-md, 10px);
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
-  flex: 1;
-  text-align: center;
-  white-space: nowrap;
+  background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary); font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  flex: 1; text-align: center; white-space: nowrap;
 }
-.imgcomp-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
+.imgcomp-tab:hover { color: var(--text-primary); }
 .imgcomp-tab.active {
-  color: var(--text-primary);
-  background: #818CF8;
-  border-color: #818CF8;
-  box-shadow: 0 2px 8px rgba(129, 140, 248, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 .imgcomp-panel { display: none; }
 .imgcomp-panel.active { display: block; }
@@ -49,9 +39,9 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(129,140,248,0.08);
-  border: 1px solid rgba(129,140,248,0.2);
-  border-radius: 16px;
+  background: var(--accent-subtle);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--radius-md);
   padding: 0.65rem 1.1rem;
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
@@ -65,7 +55,7 @@
 /* ── Upload Zone ── */
 .imgcomp-upload-zone {
   border: 2px dashed rgba(129,140,248,0.35);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 3rem 2rem;
   text-align: center;
   cursor: pointer;
@@ -77,15 +67,15 @@
 
 .imgcomp-upload-zone:hover,
 .imgcomp-upload-zone:focus-visible {
-  border-color: #818CF8;
-  background: rgba(129,140,248,0.08);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
   box-shadow: 0 0 30px rgba(129,140,248,0.1);
 }
 
 .imgcomp-upload-zone.dragover {
-  border-color: #818CF8;
-  background: rgba(129,140,248,0.12);
-  box-shadow: 0 0 40px rgba(129,140,248,0.15);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 15%, transparent);
   transform: scale(1.01);
 }
 
@@ -143,24 +133,24 @@
 /* ── Buttons ── */
 .imgcomp-btn {
   padding: 0.5rem 1rem;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
   cursor: pointer;
   border: 1px solid transparent;
   font-family: inherit;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   white-space: nowrap;
 }
 
 .imgcomp-btn-accent {
-  background: rgba(129,140,248,0.15);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
   border-color: rgba(129,140,248,0.4);
   color: #818CF8;
 }
 
 .imgcomp-btn-accent:hover {
-  background: rgba(129,140,248,0.25);
-  border-color: #818CF8;
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: var(--accent);
 }
 
 .imgcomp-btn-ghost {
@@ -206,7 +196,7 @@
 .imgcomp-advanced {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   margin-bottom: 0.75rem;
 }
 
@@ -217,7 +207,7 @@
   color: var(--text-secondary);
   list-style: none;
   user-select: none;
-  transition: color 0.2s;
+  transition: color 150ms ease-out;
 }
 
 .imgcomp-apply-all-toggle::-webkit-details-marker { display: none; }
@@ -227,7 +217,7 @@
   display: inline-block;
   margin-right: 0.5rem;
   font-size: 0.7rem;
-  transition: transform 0.2s;
+  transition: transform 150ms ease-out;
   color: #818CF8;
 }
 
@@ -276,20 +266,20 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   padding: 0.55rem 0.75rem;
   color: var(--text-primary);
   font-size: 0.85rem;
   font-family: inherit;
-  transition: border-color 0.2s;
+  transition: border-color 150ms ease-out;
   box-sizing: border-box;
 }
 
 .imgcomp-input:focus,
 .imgcomp-select:focus {
   outline: none;
-  border-color: #818CF8;
-  box-shadow: 0 0 0 2px rgba(129,140,248,0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .imgcomp-input-sm { max-width: 100px; }
@@ -317,7 +307,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   text-align: center;
   margin-top: 2rem;
   padding: 0.75rem;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
 }
 
@@ -343,7 +333,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #818CF8;
+  background: var(--accent);
   cursor: pointer;
   border: 2px solid #0a0a14;
   box-shadow: 0 0 6px rgba(129,140,248,0.4);
@@ -353,7 +343,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #818CF8;
+  background: var(--accent);
   cursor: pointer;
   border: 2px solid #0a0a14;
 }
@@ -398,13 +388,13 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
-  padding: 1.25rem;
-  transition: border-color 0.2s;
+  border-radius: var(--radius-md);
+  padding: 10px;
+  transition: border-color 150ms ease-out;
 }
 
 .imgcomp-card:hover {
-  border-color: rgba(129,140,248,0.2);
+  border-color: color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .imgcomp-card-top {
@@ -424,7 +414,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-thumb-wrap {
   width: 140px;
   height: 100px;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg-elevated);
   display: flex;
@@ -476,7 +466,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   align-items: center;
   gap: 0.3rem;
   padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-lg, 16px);
+  border-radius: var(--radius-md);
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -555,7 +545,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 100%;
   max-width: 600px;
   margin: 0.75rem auto 0;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   user-select: none;
   touch-action: none;
@@ -589,7 +579,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   top: 0;
   width: 4px;
   height: 100%;
-  background: #818CF8;
+  background: var(--accent);
   cursor: ew-resize;
   z-index: 3;
   box-shadow: 0 0 8px rgba(129,140,248,0.5);
@@ -604,7 +594,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #818CF8;
+  background: var(--accent);
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
@@ -661,7 +651,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-spinner {
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(129,140,248,0.2);
+  border: 2px solid color-mix(in srgb, var(--accent) 20%, transparent);
   border-top-color: #818CF8;
   border-radius: 50%;
   animation: imgcomp-spin 0.7s linear infinite;
@@ -680,7 +670,7 @@ details[open] > .imgcomp-apply-all-toggle::before {
   background: rgba(239,68,68,0.95);
   color: var(--text-primary);
   padding: 0.65rem 1.25rem;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
   z-index: 9999;
   animation: imgcomp-toast-in 0.3s ease;
@@ -714,13 +704,13 @@ details[open] > .imgcomp-apply-all-toggle::before {
 .imgcomp-faq-item {
   background: rgba(129,140,248,0.04);
   border: 1px solid rgba(129,140,248,0.1);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
 }
 
 .imgcomp-faq-q {
-  font-weight: 700;
+  font-weight: 600;
   color: #818CF8;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
@@ -872,9 +862,9 @@ body.page-image-compressor .site-nav {
   padding: 0.7rem 0.5rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   font-family: inherit;
   color: var(--text-secondary);
 }
@@ -887,8 +877,8 @@ body.page-image-compressor .site-nav {
 }
 
 .imgcomp-preset-btn.active {
-  background: rgba(129,140,248,0.15);
-  border-color: #818CF8;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: var(--accent);
   color: #818CF8;
 }
 
@@ -908,7 +898,7 @@ body.page-image-compressor .site-nav {
 
 /* ── Custom resize toggle ── */
 .imgcomp-custom-resize {
-  transition: opacity 0.2s;
+  transition: opacity 150ms ease-out;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1003,7 +993,7 @@ body.page-image-compressor .site-nav {
   top: 0;
   width: 4px;
   height: 100%;
-  background: #818CF8;
+  background: var(--accent);
   cursor: ew-resize;
   z-index: 3;
   box-shadow: 0 0 12px rgba(129,140,248,0.6);
@@ -1018,7 +1008,7 @@ body.page-image-compressor .site-nav {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #818CF8;
+  background: var(--accent);
   border: 3px solid #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
