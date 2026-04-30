@@ -631,6 +631,37 @@ p.cc-muted { color: var(--text-muted); font-size: 0.82rem; font-family: var(--cc
 .cc-traffic-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .cc-traffic-pages { margin-top: 0.5rem; }
 
+/* Mini funnel (activation) */
+.cc-mini-funnel-step {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;
+}
+.cc-mini-funnel-icon { font-size: 1rem; flex-shrink: 0; width: 1.5rem; text-align: center; }
+.cc-mini-funnel-bar {
+  background: var(--accent); border-radius: 4px; padding: 0.3rem 0.6rem;
+  color: #fff; font-family: var(--cc-mono); font-size: 0.75rem; font-weight: 700;
+  min-width: 25%; transition: width 0.3s ease-out;
+}
+.cc-mini-funnel-label { font-family: var(--cc-mono); font-size: 0.72rem; color: var(--text-muted); }
+
+/* Customer intelligence */
+.cc-cust-stats { margin-bottom: 0.75rem; }
+.cc-cust-stat { font-family: var(--cc-mono); font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.3rem; }
+.cc-cust-num { font-weight: 700; color: var(--text-primary); }
+.cc-cust-repeat { font-size: 0.75rem; }
+.cc-cust-repeat strong { color: var(--text-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; display: block; margin-bottom: 0.3rem; }
+.cc-cust-row {
+  display: flex; justify-content: space-between; gap: 0.5rem;
+  padding: 0.35rem 0; border-bottom: 1px solid var(--border);
+  font-family: var(--cc-mono); font-size: 0.72rem; color: var(--text-secondary);
+}
+
+/* Marketing export button */
+.cc-marketing-btn {
+  margin-top: 0.5rem; padding: 0.5rem 1rem;
+  background: var(--accent); color: #fff; border: none; border-radius: 6px;
+  font-family: var(--cc-mono); font-size: 0.75rem; font-weight: 600; cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .cc-guided-kpis { grid-template-columns: repeat(2, 1fr); }

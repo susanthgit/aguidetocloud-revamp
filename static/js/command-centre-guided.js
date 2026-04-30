@@ -180,6 +180,18 @@
     // Revenue by cert
     renderRevenueByCert(data.revenueByCert);
 
+    // Activation funnel
+    renderActivationFunnel(data.activationFunnel);
+
+    // Geo revenue
+    renderGeoRevenue(data.revenueByCurrency);
+
+    // Customer intelligence
+    renderCustomers(data.customers);
+
+    // Marketing export
+    renderMarketing(data.customers);
+
     // Sales table
     renderSalesTable(data.sales);
   }
@@ -403,6 +415,12 @@
       }
     }
 
+    // Dormant keys (purchased but never activated)
+    if (data.dormantKeys && data.dormantKeys.length > 0) {
+      var dormant = data.dormantKeys;
+      alerts.push({ type: 'danger', text: dormant.length + ' key(s) never activated — customers paid but aren\'t using the product. Oldest: ' + dormant[0].daysSince + ' days ago (' + dormant[0].email + ', ' + dormant[0].certCode.toUpperCase() + ')', icon: '🔑' });
+    }
+
     // No alerts = good news
     if (!alerts.length) {
       section.style.display = 'none';
@@ -413,6 +431,84 @@
     el.innerHTML = alerts.map(function(a) {
       return '<div class="cc-alert cc-alert-' + a.type + '"><span class="cc-alert-icon">' + a.icon + '</span><span>' + esc(a.text) + '</span></div>';
     }).join('');
+  }
+
+  // ── Activation Funnel ──
+  function renderActivationFunnel(funnel) {
+    var el = document.getElementById('cc-activation-funnel');
+    if (!el || !funnel) return;
+    var steps = [
+      { label: 'Keys Generated', value: funnel.generated, icon: '🔑' },
+      { label: 'Emails Sent', value: funnel.emailed, icon: '📧' },
+      { label: 'Keys Activated', value: funnel.activated, icon: '✅' }
+    ];
+    var maxVal = Math.max.apply(null, steps.map(function(s) { return s.value; })) || 1;
+    el.innerHTML = steps.map(function(step, i) {
+      var w = Math.max(25, Math.round((step.value / maxVal) * 100));
+      var rate = i > 0 && steps[i - 1].value > 0 ? ' (' + pct(step.value, steps[i - 1].value) + '%)' : '';
+      return '<div class="cc-mini-funnel-step"><span class="cc-mini-funnel-icon">' + step.icon + '</span><div class="cc-mini-funnel-bar" style="width:' + w + '%"><span>' + numFmt(step.value) + '</span></div><span class="cc-mini-funnel-label">' + step.label + rate + '</span></div>';
+    }).join('');
+  }
+
+  // ── Geo Revenue ──
+  function renderGeoRevenue(byCurrency) {
+    var el = document.getElementById('cc-geo-revenue');
+    if (!el || !byCurrency) return;
+    var currencies = Object.keys(byCurrency).sort(function(a, b) { return byCurrency[b] - byCurrency[a]; });
+    if (!currencies.length) { el.innerHTML = '<p class="cc-muted">No data</p>'; return; }
+    var total = currencies.reduce(function(s, c) { return s + byCurrency[c]; }, 0);
+    el.innerHTML = currencies.map(function(c) {
+      var w = total > 0 ? Math.round((byCurrency[c] / total) * 100) : 0;
+      return '<div class="cc-bar-item"><div class="cc-bar-head"><span>' + esc(c) + '</span><span>' + money(byCurrency[c]) + ' (' + w + '%)</span></div><div class="cc-bar-track"><div class="cc-bar-fill" style="width:' + w + '%"></div></div></div>';
+    }).join('');
+  }
+
+  // ── Customer Intelligence ──
+  function renderCustomers(customers) {
+    var el = document.getElementById('cc-customers');
+    if (!el || !customers) return;
+    var html = '<div class="cc-cust-stats">';
+    html += '<div class="cc-cust-stat"><span class="cc-cust-num">' + numFmt(customers.total) + '</span> unique customers</div>';
+    html += '<div class="cc-cust-stat"><span class="cc-cust-num">' + numFmt(customers.repeat) + '</span> repeat buyers';
+    if (customers.total > 0) html += ' (' + pct(customers.repeat, customers.total) + '%)';
+    html += '</div></div>';
+    if (customers.repeatList && customers.repeatList.length) {
+      html += '<div class="cc-cust-repeat"><strong>Upgrade paths:</strong>';
+      customers.repeatList.forEach(function(c) {
+        html += '<div class="cc-cust-row"><span>' + esc(c.email) + '</span><span>' + c.purchases + ' purchases · ' + money(c.totalSpent) + ' · ' + c.types.join(' → ') + '</span></div>';
+      });
+      html += '</div>';
+    }
+    el.innerHTML = html;
+  }
+
+  // ── Marketing Export ──
+  function renderMarketing(customers) {
+    var el = document.getElementById('cc-marketing');
+    if (!el || !customers) return;
+    var html = '<div class="cc-cust-stats">';
+    html += '<div class="cc-cust-stat"><span class="cc-cust-num">' + numFmt(customers.marketingConsent) + '</span> opted in to marketing</div>';
+    html += '</div>';
+    html += '<button class="cc-export-btn cc-marketing-btn" id="cc-export-marketing">Export Marketing List (CSV)</button>';
+    el.innerHTML = html;
+    var btn = document.getElementById('cc-export-marketing');
+    if (btn) btn.addEventListener('click', exportMarketingCSV);
+  }
+
+  function exportMarketingCSV() {
+    if (!salesData || !salesData.sales) return;
+    var consented = salesData.sales.filter(function(s) { return s.marketingConsent; });
+    var seen = {};
+    var unique = consented.filter(function(s) { if (seen[s.fullEmail]) return false; seen[s.fullEmail] = true; return true; });
+    var header = 'Email,Name,Cert,Product Type,Purchase Date\n';
+    var rows = unique.map(function(s) {
+      return [s.fullEmail, '"' + (s.customerName || '') + '"', s.certCode, s.productType, s.date.slice(0, 10)].join(',');
+    }).join('\n');
+    var blob = new Blob([header + rows], { type: 'text/csv' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'guided-marketing-list-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.click();
   }
 
   // ══════════════════════════════════════════════════════════
