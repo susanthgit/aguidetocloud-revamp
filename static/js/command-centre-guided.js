@@ -155,14 +155,21 @@
     if (!data) return;
     var s = data.summary;
 
-    // KPIs
+    // KPIs with month-over-month comparison
     var monthChange = s.lastMonthRevenue > 0 ? Math.round(((s.thisMonthRevenue - s.lastMonthRevenue) / s.lastMonthRevenue) * 100) : null;
+    var countChange = s.lastMonthCount > 0 ? Math.round(((s.thisMonthCount - s.lastMonthCount) / s.lastMonthCount) * 100) : null;
     renderKPIs('cc-sales-kpis', [
       { value: money(s.totalRevenue), label: 'Total Revenue' },
       { value: money(s.thisMonthRevenue), label: 'This Month', change: monthChange },
-      { value: numFmt(s.salesCount), label: 'Sales' },
+      { value: numFmt(s.thisMonthCount), label: 'Sales This Month', change: countChange },
       { value: money(s.avgOrder), label: 'Avg Order' }
     ]);
+
+    // Revenue projection
+    renderProjection(data);
+
+    // Alerts
+    renderAlerts(data);
 
     // Revenue chart
     renderRevenueChart(data.revenueByDay);
@@ -303,6 +310,111 @@
     a.click();
   }
 
+  function exportSalesCSV() {
+    if (!salesData || !salesData.sales || !salesData.sales.length) return;
+    var header = 'Date,Customer,Email,Cert,Type,Amount,Currency,Licence Key,Expiry,Activations,Email Status,Marketing Consent\n';
+    var rows = salesData.sales.map(function(s) {
+      return [
+        s.date, '"' + (s.customerName || '') + '"', s.fullEmail, s.certCode, s.productType,
+        s.amount, s.currency, s.licenceKey || '', s.keyExpiry || '',
+        s.activations + '/' + s.maxActivations, s.emailStatus, s.marketingConsent ? 'yes' : 'no'
+      ].join(',');
+    }).join('\n');
+    var blob = new Blob([header + rows], { type: 'text/csv' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'guided-sales-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.click();
+  }
+
+  // ── Revenue Projection ──
+  function renderProjection(data) {
+    var el = document.getElementById('cc-sales-projection');
+    if (!el || !data.revenueByDay) return;
+
+    var now = new Date();
+    var daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    var dayOfMonth = now.getDate();
+
+    // Get this month's daily revenue
+    var monthPrefix = now.toISOString().slice(0, 7); // "2026-04"
+    var monthDays = data.revenueByDay.filter(function(d) { return d.date.indexOf(monthPrefix) === 0; });
+    var monthTotal = monthDays.reduce(function(s, d) { return s + d.amount; }, 0);
+    var dailyRate = dayOfMonth > 0 ? monthTotal / dayOfMonth : 0;
+    var projected = Math.round(dailyRate * daysInMonth * 100) / 100;
+
+    // Best day this month
+    var bestDay = monthDays.reduce(function(best, d) { return d.amount > (best ? best.amount : 0) ? d : best; }, null);
+    var salesDays = monthDays.filter(function(d) { return d.amount > 0; }).length;
+    var zeroDays = dayOfMonth - salesDays;
+
+    var html = '<div class="cc-projection">';
+    html += '<div class="cc-proj-main"><span class="cc-proj-amount">' + money(projected) + '</span>';
+    html += '<span class="cc-proj-label">Projected this month</span></div>';
+    html += '<div class="cc-proj-details">';
+    html += '<span>' + money(dailyRate) + '/day avg</span>';
+    html += '<span>' + salesDays + ' sale days / ' + zeroDays + ' zero days</span>';
+    if (bestDay) html += '<span>Best: ' + bestDay.date.slice(5) + ' (' + money(bestDay.amount) + ')</span>';
+    html += '</div>';
+
+    // Progress bar: actual vs projected
+    var pctDone = projected > 0 ? Math.min(100, Math.round((monthTotal / projected) * 100)) : 0;
+    html += '<div class="cc-proj-progress"><div class="cc-proj-progress-fill" style="width:' + pctDone + '%"></div></div>';
+    html += '<div class="cc-proj-footer"><span>' + money(monthTotal) + ' earned</span><span>' + pctDone + '% of projection</span><span>' + (daysInMonth - dayOfMonth) + ' days left</span></div>';
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  // ── Alerts ──
+  function renderAlerts(data) {
+    var section = document.getElementById('cc-sales-alerts-section');
+    var el = document.getElementById('cc-sales-alerts');
+    if (!el || !section) return;
+
+    var alerts = [];
+
+    // Check for email delivery issues
+    if (data.sales) {
+      var noEmail = data.sales.filter(function(s) { return s.emailStatus === 'no_record'; });
+      if (noEmail.length > 0) {
+        alerts.push({ type: 'warning', text: noEmail.length + ' sale(s) with no email delivery record — check Resend logs', icon: '📧' });
+      }
+    }
+
+    // Check for zero-sale streaks
+    if (data.revenueByDay) {
+      var recent = data.revenueByDay.slice(-7);
+      var zeroStreak = 0;
+      for (var i = recent.length - 1; i >= 0; i--) {
+        if (recent[i].count === 0) zeroStreak++;
+        else break;
+      }
+      if (zeroStreak >= 3) {
+        alerts.push({ type: 'danger', text: zeroStreak + '-day zero-sale streak — consider promotion or outreach', icon: '📉' });
+      }
+    }
+
+    // Revenue anomaly: today much lower than average
+    if (data.revenueByDay && data.revenueByDay.length > 7) {
+      var avg7d = data.revenueByDay.slice(-8, -1).reduce(function(s, d) { return s + d.amount; }, 0) / 7;
+      var today = data.revenueByDay[data.revenueByDay.length - 1];
+      if (avg7d > 0 && today && today.amount < avg7d * 0.3 && new Date().getHours() > 18) {
+        alerts.push({ type: 'info', text: 'Today\'s revenue (' + money(today.amount) + ') is well below 7-day average (' + money(avg7d) + ')', icon: '💡' });
+      }
+    }
+
+    // No alerts = good news
+    if (!alerts.length) {
+      section.style.display = 'none';
+      return;
+    }
+
+    section.style.display = '';
+    el.innerHTML = alerts.map(function(a) {
+      return '<div class="cc-alert cc-alert-' + a.type + '"><span class="cc-alert-icon">' + a.icon + '</span><span>' + esc(a.text) + '</span></div>';
+    }).join('');
+  }
+
   // ══════════════════════════════════════════════════════════
   // ── LICENCES TAB ──
   // ══════════════════════════════════════════════════════════
@@ -343,6 +455,12 @@
 
     html += data.licences.map(function(l, i) {
       var statusColor = STATUS_COLORS[l.status];
+      var statusText = l.status;
+      // Highlight expiring soon (within 30 days)
+      if (l.status === 'active') {
+        var daysLeft = Math.round((new Date(l.expiresAt).getTime() - Date.now()) / 86400000);
+        if (daysLeft <= 30) { statusText = daysLeft + 'd left'; statusColor = 'var(--cc-amber)'; }
+      }
       var row = '<div class="cc-table-row cc-expandable" data-lic-idx="' + i + '">'
         + '<span class="cc-td cc-th-key-wide cc-mono">' + esc(l.key) + '</span>'
         + '<span class="cc-td cc-th-name" title="' + esc(l.email) + '">' + esc(l.customerName || l.email) + '</span>'
@@ -351,7 +469,7 @@
         + '<span class="cc-td cc-th-date">' + fmtDate(l.createdAt) + '</span>'
         + '<span class="cc-td cc-th-date">' + fmtDate(l.expiresAt) + '</span>'
         + '<span class="cc-td cc-th-act">' + l.activations + '/' + l.maxActivations + '</span>'
-        + '<span class="cc-td cc-th-status" style="color:' + statusColor + '">' + l.status + '</span>'
+        + '<span class="cc-td cc-th-status" style="color:' + statusColor + '">' + statusText + '</span>'
         + '</div>';
 
       row += '<div class="cc-expand-detail" id="cc-lic-detail-' + i + '" style="display:none">'
@@ -427,6 +545,7 @@
     renderFunnel(data.funnel);
     renderModeBreakdown(data.modeBreakdown);
     renderQuizTrend(data.dailyQuizzes);
+    fetchGuidedTraffic(); // GA4 data from main site stats
   }
 
   function renderCertTable(certs) {
@@ -511,6 +630,63 @@
         scales: { x: { display: false }, y: { display: false, beginAtZero: true } }
       }
     });
+  }
+
+  // ── GA4 Traffic for Guided pages ──
+  var guidedTrafficLoaded = false;
+  function fetchGuidedTraffic() {
+    if (guidedTrafficLoaded) return;
+    guidedTrafficLoaded = true;
+    var el = document.getElementById('cc-guided-traffic');
+    if (!el) return;
+    el.innerHTML = SPINNER;
+
+    fetchWithTimeout('/api/stats?range=30d', {}, 10000)
+      .then(function(r) { return r.json(); })
+      .then(function(data) { renderGuidedTraffic(data, el); })
+      .catch(function() { el.innerHTML = '<p class="cc-muted">GA4 data unavailable</p>'; });
+  }
+
+  function renderGuidedTraffic(data, el) {
+    if (!data || !data.ga4) { el.innerHTML = '<p class="cc-muted">No GA4 data</p>'; return; }
+    var ga4 = data.ga4;
+
+    // Extract /guided/ pages from GA4 page data
+    var guidedPages = [];
+    if (ga4.pages) {
+      guidedPages = ga4.pages.filter(function(p) { return p.path && p.path.indexOf('/guided/') === 0; });
+    }
+
+    var totalViews = guidedPages.reduce(function(s, p) { return s + (p.views || 0); }, 0);
+    var totalUsers = guidedPages.reduce(function(s, p) { return s + (p.users || 0); }, 0);
+
+    var html = '<div class="cc-traffic-summary">';
+    html += '<div class="cc-traffic-stat"><span class="cc-traffic-num">' + numFmt(totalViews) + '</span><span class="cc-traffic-label">Guided Page Views (30d)</span></div>';
+    html += '<div class="cc-traffic-stat"><span class="cc-traffic-num">' + numFmt(totalUsers) + '</span><span class="cc-traffic-label">Unique Users</span></div>';
+
+    // Site-wide context
+    if (ga4.totals) {
+      var pctOfSite = ga4.totals.views > 0 ? pct(totalViews, ga4.totals.views) : 0;
+      html += '<div class="cc-traffic-stat"><span class="cc-traffic-num">' + pctOfSite + '%</span><span class="cc-traffic-label">of Total Site Traffic</span></div>';
+    }
+    html += '</div>';
+
+    // Top guided pages
+    if (guidedPages.length) {
+      guidedPages.sort(function(a, b) { return (b.views || 0) - (a.views || 0); });
+      html += '<div class="cc-traffic-pages">';
+      guidedPages.slice(0, 10).forEach(function(p) {
+        var name = p.path.replace('/guided/', '').replace(/\/$/, '') || 'home';
+        html += '<div class="cc-bar-item"><div class="cc-bar-head"><span>' + esc(name) + '</span><span>' + numFmt(p.views) + ' views</span></div>';
+        var w = totalViews > 0 ? Math.max(5, Math.round((p.views / totalViews) * 100)) : 0;
+        html += '<div class="cc-bar-track"><div class="cc-bar-fill" style="width:' + w + '%"></div></div></div>';
+      });
+      html += '</div>';
+    } else {
+      html += '<p class="cc-muted">No /guided/ pages found in GA4 data</p>';
+    }
+
+    el.innerHTML = html;
   }
 
   // ══════════════════════════════════════════════════════════

@@ -594,6 +594,43 @@ p.cc-muted { color: var(--text-muted); font-size: 0.82rem; font-family: var(--cc
 }
 @keyframes cc-spin { to { transform: rotate(360deg); } }
 
+/* Revenue projection */
+.cc-projection { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+.cc-proj-main { text-align: center; margin-bottom: 0.75rem; }
+.cc-proj-amount { display: block; font-family: var(--cc-mono); font-size: 2rem; font-weight: 700; color: var(--text-primary); }
+.cc-proj-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.cc-proj-details {
+  display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+  font-family: var(--cc-mono); font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.75rem;
+}
+.cc-proj-progress { height: 8px; background: var(--bg-elevated); border-radius: 4px; overflow: hidden; }
+.cc-proj-progress-fill { height: 100%; background: var(--cc-green); border-radius: 4px; transition: width 0.3s ease-out; }
+.cc-proj-footer {
+  display: flex; justify-content: space-between;
+  font-family: var(--cc-mono); font-size: 0.68rem; color: var(--text-muted); margin-top: 0.4rem;
+}
+
+/* Alerts */
+.cc-alert {
+  display: flex; align-items: flex-start; gap: 0.5rem;
+  padding: 0.6rem 0.8rem; margin-bottom: 0.4rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 6px; font-size: 0.78rem; color: var(--text-secondary);
+}
+.cc-alert-icon { font-size: 1rem; flex-shrink: 0; }
+.cc-alert-warning { border-left: 3px solid var(--cc-amber); }
+.cc-alert-danger { border-left: 3px solid var(--cc-red); }
+.cc-alert-info { border-left: 3px solid var(--cc-blue); }
+
+/* GA4 Traffic */
+.cc-traffic-summary {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-bottom: 1rem;
+}
+.cc-traffic-stat { text-align: center; }
+.cc-traffic-num { display: block; font-family: var(--cc-mono); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
+.cc-traffic-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.cc-traffic-pages { margin-top: 0.5rem; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .cc-guided-kpis { grid-template-columns: repeat(2, 1fr); }
